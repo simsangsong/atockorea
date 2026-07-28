@@ -174,7 +174,7 @@ UI를 건드렸으면 **여기에 렌더 증거를 더한다** — Playwright �
 컷 없이 "고쳤다"고 하지 않는다. 이 세션에서 코드는 맞고 화면은 틀린 경우가 세 번 있었다.
 
 **하니스:** `qa-smartapp-walk.mjs`(손님) · `qa-cockpit-walk.mjs`(콕핏) · `qa-ops-walk.mjs`(관제) ·
-`qa-cjk-scan.mjs` · `qa-coverage-audit.mjs` · `qa-unfilled-props.mjs` ·
+`qa-cjk-scan.ts` · `qa-coverage-audit.mjs` · `qa-unfilled-props.mjs` ·
 `qa-prod-tour-room.ts` / `qa-prod-surfaces.ts`(프로덕션)
 
 **커밋 규칙:** 푸터는 `Co-Authored-By: Claude <noreply@anthropic.com>` 만 —
