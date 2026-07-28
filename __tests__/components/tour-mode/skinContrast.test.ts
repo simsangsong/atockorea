@@ -179,6 +179,33 @@ describe('skin contrast gate (T-D7)', () => {
     expect(failures).toEqual([]);
   });
 
+  /**
+   * The tinted-chip pairing: `--tr-accent-deep` ink on an `--tr-accent-soft`
+   * wash. Used all over the room, and since 2026-07-28 it is also the whole
+   * surface of `.tr-cta-hero` — the guide console's 운행 시작 button — so a skin
+   * that washes out here loses the day's primary action, not just a chip.
+   *
+   * Dark skins express accent-soft as rgba() over an unknown backdrop, which
+   * WCAG math on two hex values cannot judge; those are skipped rather than
+   * guessed at. The light side, where the wash is opaque, is fully covered.
+   */
+  it('accent-deep stays readable on the accent-soft wash wherever both are opaque', () => {
+    const failures: string[] = [];
+    for (const skin of TOUR_SKINS) {
+      for (const theme of THEMES) {
+        const tokens = resolve(skin, theme);
+        const r = ratio(tokens['accent-deep'], tokens['accent-soft']);
+        if (Number.isNaN(r)) continue; // rgba wash — not decidable here
+        if (r < 4.5) {
+          failures.push(
+            `${skin}/${theme}: accent-deep(${tokens['accent-deep']}) on accent-soft(${tokens['accent-soft']}) = ${r.toFixed(2)} < 4.5`,
+          );
+        }
+      }
+    }
+    expect(failures).toEqual([]);
+  });
+
   it('the planner scope (.tr-plan-root) clears the same floors', () => {
     const failures: string[] = [];
     // accent-soft is an opaque wash in this scope, so the chip ink is gated too.

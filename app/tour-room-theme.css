@@ -1204,6 +1204,85 @@
   filter: none;
 }
 
+/* Hero action — the one big physical CTA on a screen.
+ *
+ * Why it is a WASH and not a slab (사용자 확정 2026-07-28, "너무 찐한 색상은
+ * 말고"): the guide console already spends its saturated ink on the 손님 안내
+ * tile and its accent on 전체 공지. A third saturated block would compete with
+ * both and still not read as "the thing you press to start the day". Prominence
+ * here comes from SIZE and press physics — 58px tall, full width, an accent
+ * ring and a real bottoming-out press — not from more pigment.
+ *
+ * accent-soft + accent-deep is the pairing every skin already uses for tinted
+ * chips, so this inherits ten skins × two themes for free instead of needing
+ * its own gradient stop in twenty blocks. */
+.tr-cta-hero {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 12px;
+  min-height: 58px;
+  padding: 10px 16px;
+  border-radius: 18px;
+  text-align: left;
+  color: var(--tr-accent-deep);
+  background-color: var(--tr-accent-soft);
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 1px 2px rgba(24, 40, 34, 0.06),
+    0 6px 16px rgba(24, 40, 34, 0.09);
+  transition:
+    transform var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    box-shadow var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),
+    filter var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease);
+}
+
+.tr-cta-hero:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 2px 5px rgba(24, 40, 34, 0.14);
+  filter: brightness(0.98);
+}
+
+.tr-cta-hero:disabled {
+  opacity: 0.5;
+  transform: none;
+  filter: none;
+}
+
+/* Dark: the light-mode inner highlight and drop shadow both disappear against
+ * a dark canvas, so the ring carries the whole affordance. */
+.dark .tr-cta-hero,
+.tr-root.dark .tr-cta-hero {
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.dark .tr-cta-hero:active:not(:disabled),
+.tr-root.dark .tr-cta-hero:active:not(:disabled) {
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 2px 6px rgba(0, 0, 0, 0.45);
+}
+
+/* The glyph tile inside the hero — solid accent so the icon anchors the button
+ * without the whole surface going saturated. */
+.tr-cta-hero-glyph {
+  display: flex;
+  height: 38px;
+  width: 38px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  color: var(--tr-on-accent);
+  background-color: var(--tr-accent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
 .tr-btn-flat {
   background: var(--tr-surface-2);
   color: var(--tr-ink);
@@ -1326,12 +1405,14 @@
   .tr-plan-course-card,
   .tr-plan-btn,
   .tr-plan-chip,
-  .tr-plan-seg-item {
+  .tr-plan-seg-item,
+  .tr-cta-hero {
     transition: none;
   }
   /* The press translate is motion too — the shadow change still reads. */
   .tr-plan-btn:active,
-  .tr-plan-chip:active {
+  .tr-plan-chip:active,
+  .tr-cta-hero:active {
     transform: none;
   }
 }
