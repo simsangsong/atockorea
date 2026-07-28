@@ -34,6 +34,14 @@ export async function insertExtraCapsule(
   bookingId: string,
   extra: ExtraRow,
   status: ExtraStatus,
+  /**
+   * §11.D D5 — whole hours the GUEST bought forward with [시간 추가].
+   * Present only on that capsule, and deliberately not derived from the
+   * amount: the driver logs post-hoc overtime through the same ledger kind,
+   * and shifting the countdown for that would move the clock for time the
+   * party already spent. Only a purchase moves the clock.
+   */
+  extendHours?: number,
 ) {
   // T2-2 — translate the operator's typed item so a Korean expense label reads
   // in each guest's language (banner + card). R-6: on failure, verbatim.
@@ -69,6 +77,7 @@ export async function insertExtraCapsule(
         ...(itemByLocale ? { item_i18n: itemByLocale } : {}),
         amount_krw: extra.amount_krw,
         extra_kind: extra.kind,
+        ...(typeof extendHours === 'number' && extendHours > 0 ? { extend_hours: extendHours } : {}),
         payer: extra.payer,
         status,
         // T1-3 — the receipt travels on the capsule so the guest card can show

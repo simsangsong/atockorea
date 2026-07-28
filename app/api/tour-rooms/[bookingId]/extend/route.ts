@@ -110,7 +110,7 @@ export async function POST(
 
     // Drop the 5-locale logged capsule into the guest feed (renders as the
     // ExtraLedgerCard via the broadcast).
-    const message = await insertExtraCapsule(supabase, room, booking.id, extra as ExtraRow, 'logged');
+    const message = await insertExtraCapsule(supabase, room, booking.id, extra as ExtraRow, 'logged', hours);
 
     // Best-effort — the ledger insert must not fail if push throws.
     void sendDriverRoomPush(supabase, booking.id, {

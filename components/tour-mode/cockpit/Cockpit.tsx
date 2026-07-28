@@ -72,7 +72,6 @@ import {
 } from 'lucide-react';
 import {
   IconDone,
-  IconDrawer,
   IconExplore,
   IconMic,
   IconPaperclip,
@@ -392,7 +391,6 @@ export default function Cockpit({
   // Chat focus mode: tap anywhere in the feed → the feed takes the button
   // rows' space so a long exchange is readable at a glance; one button
   // restores the grids. Pinch on the feed adjusts the chat font zoom.
-  const [chatExpanded, setChatExpanded] = useState(false);
   const [chatZoom, setChatZoom] = useState(1);
   const chatZoomRef = useRef(1);
   const feedRef = useRef<HTMLDivElement | null>(null);
@@ -534,13 +532,6 @@ export default function Cockpit({
     };
   }, []);
 
-  // Entering focus mode (or a new message while near the bottom) keeps the
-  // feed pinned to the latest bubble.
-  useEffect(() => {
-    const el = feedRef.current;
-    if (!el) return;
-    el.scrollTop = el.scrollHeight;
-  }, [chatExpanded]);
   useEffect(() => {
     const el = feedRef.current;
     if (!el) return;
@@ -1574,11 +1565,6 @@ export default function Cockpit({
           follow-up in §D-5. */}
       <div
         ref={feedRef}
-        onClick={(event) => {
-          if (chatExpanded) return;
-          if ((event.target as HTMLElement).closest('button, a, input, textarea')) return;
-          setChatExpanded(true);
-        }}
         /* C5 — the scroll now belongs to ChatFeed (it owns the window, the
            "show earlier" control and the near-bottom follow). This wrapper only
            donates height, the pinch-zoom and the tap-to-focus gesture; leaving
@@ -1868,21 +1854,23 @@ export default function Cockpit({
         </div>
       )}
 
-      {chatExpanded ? (
-        /* chat focus mode — ONE button puts every action back where it was */
-        <div className="px-4 pb-3">
-          <button
-            type="button"
-            onClick={() => setChatExpanded(false)}
-            className="tr-btn-flat tr-body flex w-full items-center justify-center gap-2 rounded-2xl py-3.5 font-bold text-[var(--tr-ink)]"
-            data-testid="cockpit-chat-collapse"
-          >
-            <IconDrawer size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
-            기능 버튼 보이기
-          </button>
-        </div>
-      ) : (
-        <>
+      {/* C7 — chat focus mode is gone (§D-5).
+
+          It existed to escape the feed's 8-message cap; C5 deleted the cap, and
+          the walk then measured the mode as strictly WORSE than the normal view
+          (bottom stack 179→241px, visible 9→8) because it kept the composer and
+          the mic and merely added a collapse button.
+
+          Repairing it would mean actually folding the bottom stack — i.e.
+          hiding the MIC on a surface whose primary input is voice while the
+          vehicle is moving. That is a worse screen than the one it replaces, so
+          the mode is removed rather than fixed. Scrolling reaches the whole
+          conversation now, which is what the mode was for.
+
+          Removing it also frees the feed's tap: the wrapper used to swallow
+          every tap to enter the mode, which would now fight ChatFeed's own
+          long-press → reply/react sheet. */}
+      <>
       {/* Kakao-grade action tray — folded by default (the "+" in the composer).
           These twelve used to be three permanently-open grids of identical grey
           buttons, eating the chat's vertical space in a moving vehicle. */}
@@ -1892,7 +1880,6 @@ export default function Cockpit({
         items={driverActions}
       />
         </>
-      )}
 
       {/* sheets */}
       {sheet === 'assist' ? (
