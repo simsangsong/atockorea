@@ -36,7 +36,13 @@ export async function POST(req: NextRequest) {
     }
 
     // 이메일 본문의 투어명(선택) — 없어도 발송은 진행.
-    const { data: tour } = await supabase.from('tours').select('title').eq('id', tourId).maybeSingle();
+    // L2: price_type도 같이 읽는다. 전세('vehicle') 상품만 당일 현금 청구가
+    // 가능하므로, 그 상품에만 안내 한 줄이 붙는다.
+    const { data: tour } = await supabase
+      .from('tours')
+      .select('title, price_type')
+      .eq('id', tourId)
+      .maybeSingle();
 
     const outcome = await buildBulkInvite({
       supabase: supabase as unknown as BulkInviteDb,
@@ -44,6 +50,7 @@ export async function POST(req: NextRequest) {
       tourId,
       tourDate,
       tourTitle: (tour as { title?: string | null } | null)?.title ?? null,
+      priceType: (tour as { price_type?: string | null } | null)?.price_type ?? null,
       send: sendEmail,
     });
 

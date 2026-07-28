@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { formatBookingPrice } from '@/lib/format/currency';
+import { cashExtrasNoticeFor } from '@/lib/tour-product/cashExtrasNotice';
+import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 
 /**
  * GET /api/bookings/[id]/receipt
@@ -52,6 +54,17 @@ export async function GET(
      *  would have printed `$340000.00` (wrong symbol + decimal mess). */
     const currency = (booking as { currency?: string }).currency ?? 'usd';
     const formattedTotal = formatBookingPrice(Number(booking.final_price ?? 0), currency);
+
+    /* L2 — the voucher is what a guest actually opens on the day, and it is the
+       last surface before a guide asks them for money. Same constant as the
+       listing (L1) and the confirmation email, same gate: charter products only,
+       decided by `cashExtrasNoticeFor` so the promise tracks `/extend`'s own
+       condition rather than restating it. In the guest's own language, since the
+       booking already records one. */
+    const cashNotice = cashExtrasNoticeFor(
+      (booking.tours as { price_type?: string | null } | null)?.price_type ?? null,
+      normalizeRoomLocale(booking.preferred_language),
+    );
     const guests = booking.number_of_guests || 1;
     const status = String(booking.status || '').toUpperCase();
 
@@ -109,6 +122,7 @@ export async function GET(
       <div class="row"><span class="label">Payment method</span><span class="value">${escape(booking.payment_method || '—')}</span></div>
       <div class="row total"><span class="label">Total paid</span><span class="value">${escape(formattedTotal)}</span></div>
     </div>
+    ${cashNotice ? `<div class="section" style="background:#faf7f0;border:1px solid #e7e0d4;border-radius:9px;padding:11px 13px;font-size:12px;line-height:19px;color:#475569;">${escape(cashNotice)}</div>` : ''}
     <div class="no-print" style="margin-top:28px; text-align:right;">
       <a href="#" class="no-print-btn" onclick="window.print();return false;">Print / Save PDF</a>
     </div>
