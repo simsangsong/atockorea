@@ -3557,7 +3557,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         </div>
       )}
 
-      {/* sticky submit bar */}
+      {/* sticky submit bar
+       *
+       * bottom-dock: the planner is a standalone page — no composer, no tab bar —
+       * so this bar owns the bottom edge legitimately. Clearance for it is
+       * reserved on the scroll container above (search `paddingBottom: 'calc(8rem`),
+       * without which the last stop card sits under the bar and cannot be tapped.
+       * Move one and you must move the other. */}
       {canEdit && !isConfirmed && tab !== 'delegate' && stops.length > 0 && (
         <div className="tr-safe-bottom fixed inset-x-0 bottom-0 border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)]/95 px-4 py-3 backdrop-blur">
           <div className="mx-auto flex w-full max-w-xl items-center gap-3">

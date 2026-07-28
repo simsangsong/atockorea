@@ -193,11 +193,34 @@ export default function InstallBanner({
   };
 
   return (
+    /*
+     * 🔴 This was `fixed` and pinned to the bottom of the viewport, which put it
+     * on top of the two controls directly beneath it. Hit-tested with
+     * elementFromPoint on a seeded room at iPhone 13 size, three points across
+     * each control:
+     *
+     *   composer textarea  y 557-599   all 3 points hit the banner's <p>
+     *   tab bar            y 607-664   centre and right hit the banner
+     *
+     * So during the D-1 window a guest could not type a message and could not
+     * change tabs. The only way out was a small grey "Not now" — and a guest who
+     * reads it as chrome rather than as the thing blocking them never taps it.
+     *
+     * It is already mounted in the docked bottom stack, above QuickSignalBar, so
+     * the fix is simply to stop removing it from that flow. Then nothing can
+     * overlap, by construction rather than by z-index bookkeeping.
+     *
+     * `role="dialog"` went with it. There is no backdrop, no focus trap and no
+     * `aria-modal` here, and there never should be — it is a nudge, not a
+     * decision the guest has to make before continuing. Announcing it as a
+     * dialog told screen-reader users the opposite.
+     */
     <div
-      role="dialog"
+      role="region"
       aria-label={copy.title}
-      className="fixed inset-x-3 z-40 mx-auto max-w-2xl rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] p-4"
-      style={{ bottom: 'calc(env(safe-area-inset-bottom, 0px) + 12px)', boxShadow: 'var(--tr-shadow-overlay)' }}
+      data-testid="install-banner"
+      className="mx-auto mb-2 w-full max-w-2xl rounded-[var(--tr-radius-card)] bg-[var(--tr-surface)] p-3.5"
+      style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
     >
       <div className="flex items-start gap-3">
         {/* eslint-disable-next-line @next/next/no-img-element */}
