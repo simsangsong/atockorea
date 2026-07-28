@@ -162,10 +162,27 @@ export default function NowCard({
 
   return (
     <section
+      /**
+       * I3 / U-D26 — `key` on the state, so React REMOUNTS when the moment
+       * changes and the entrance animation actually runs. Without it React
+       * reconciles in place, the text swaps with no transition, and the one
+       * piece of feedback this screen has is lost.
+       *
+       * Keyed on state, not on content: a countdown ticking from 25 to 24
+       * minutes is the same moment, and re-animating every minute would turn
+       * ambient feedback into a distraction.
+       */
+      key={result.state}
       data-testid={testId ?? 'home-now-card'}
       data-now-state={result.state}
-      className={`tr-home-card tr-card-hero mb-2 border px-4 py-4 ${TONE_CLASS[result.tone]}`}
+      className={`tr-home-card tr-card-hero tr-now-swap mb-2 border px-4 py-4 ${TONE_CLASS[result.tone]}`}
+      /**
+       * A guest using a screen reader gets the change announced, and urgency
+       * decides how rudely: `assertive` interrupts, which is right when the
+       * group is already waiting and wrong for "next stop in 20 minutes".
+       */
       aria-live={result.tone === 'danger' ? 'assertive' : 'polite'}
+      aria-atomic="true"
     >
       {eyebrow && (
         <p className="tr-meta text-cjk-safe font-semibold uppercase tracking-[0.08em] text-[var(--tr-ink-3)]">
