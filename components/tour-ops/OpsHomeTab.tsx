@@ -17,10 +17,8 @@ import {
   GraduationCap,
   History,
   Inbox,
-  LayoutDashboard,
   Link2,
   MailCheck,
-  Map as MapIcon,
 } from 'lucide-react';
 import { isRecent, type OpsRoom, type SosInfo } from '@/components/tour-ops/opsShared';
 import type { AttentionItem } from '@/lib/tour-ops/attention';
@@ -120,15 +118,6 @@ export default function OpsHomeTab({
       onClick: onOpenManager,
     },
     {
-      key: 'monitor',
-      title: '실시간 모니터링',
-      desc: '룸 피드 · 응대 큐 · 안읽음',
-      icon: LayoutDashboard,
-      badge: unreadTotal + attention.length,
-      badgeTone: attention.length ? 'amber' : 'blue',
-      onClick: () => onNavigate('dashboard'),
-    },
-    {
       key: 'inbox',
       title: '메시지 모아보기',
       desc: '모든 룸의 메시지를 한 타임라인으로',
@@ -171,13 +160,6 @@ export default function OpsHomeTab({
       onClick: onOpenSchedule,
     },
     {
-      key: 'map',
-      title: '위치 보기',
-      desc: '가이드 · 손님 실시간 지도',
-      icon: MapIcon,
-      onClick: () => onNavigate('map'),
-    },
-    {
       key: 'qa',
       title: '문답 학습',
       desc: '컨시어지 Q&A 검토 · 승인 · 학습',
@@ -212,7 +194,18 @@ export default function OpsHomeTab({
       {/* Vitals */}
       <div className="grid grid-cols-5 gap-1.5" data-testid="ops-home-stats">
         {stats.map(({ label, value, tone }) => (
-          <div key={label} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-1 py-2.5 text-center">
+          <div
+            key={label}
+            data-testid={`ops-kpi-${label}`}
+            data-kpi-tone={value ? (tone ?? 'none') : 'none'}
+            className={`rounded-xl border px-1 py-2.5 text-center ${
+              tone === 'red' && value
+                ? 'border-[var(--tr-danger)] bg-[var(--tr-danger-soft)]'
+                : tone === 'amber' && value
+                  ? 'border-[var(--tr-warn)] bg-[var(--tr-warn-soft)]'
+                  : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
+            }`}
+          >
             <p
               className={`tr-title font-bold tabular-nums ${
                 tone === 'red' && value
@@ -263,8 +256,24 @@ export default function OpsHomeTab({
           const body = (
             <>
               <span className="relative inline-flex">
-                <span className="flex size-9 items-center justify-center rounded-xl bg-[var(--tr-surface-2)]">
-                  <Icon className="size-[18px] text-[var(--tr-ink-2)]" />
+                <span
+                  className={`flex size-9 items-center justify-center rounded-xl ${
+                    badge && badgeTone === 'amber'
+                      ? 'bg-[var(--tr-warn-soft)]'
+                      : badge && badgeTone === 'red'
+                        ? 'bg-[var(--tr-danger-soft)]'
+                        : 'bg-[var(--tr-surface-2)]'
+                  }`}
+                >
+                  <Icon
+                    className={`size-[18px] ${
+                      badge && badgeTone === 'amber'
+                        ? 'text-[var(--tr-warn)]'
+                        : badge && badgeTone === 'red'
+                          ? 'text-[var(--tr-danger)]'
+                          : 'text-[var(--tr-ink-2)]'
+                    }`}
+                  />
                 </span>
                 {badge ? (
                   <span

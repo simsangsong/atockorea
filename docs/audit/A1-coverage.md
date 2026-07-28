@@ -108,6 +108,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `SettingsTab.tsx` | A1.6 | ✅ |
 | `SosButton.tsx` | A1.6 | P1 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourModeComingSoon.tsx` | A1.6 | ✅ |
+| `NowCard.tsx` | A1.6 | ✅ (I2에서 신설 — 홈 히어로. 상태·톤은 리졸버가, 문구는 `nowCardCopy` 10로케일이 갖는다) |
 | `TourModeEntry.tsx` | A1.6 | P2 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourRoomClient.tsx` | A1.6 | ✅ (lint은 A4.5) → `A1-6-entry-shell-misc.md` |
 | `TravelTimeline.tsx` | A1.6 | ✅ |

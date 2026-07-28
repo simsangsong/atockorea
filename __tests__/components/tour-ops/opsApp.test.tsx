@@ -204,14 +204,19 @@ describe('OpsApp home hub', () => {
 
     // Task tiles.
     const tiles = screen.getByTestId('ops-home-tiles');
-    for (const title of ['배정 · 룸 · 링크', '실시간 모니터링', '메시지 모아보기', '위치 보기', '문답 학습', '챗봇 분석']) {
+    for (const title of ['배정 · 룸 · 링크', '메시지 모아보기', '문답 학습', '챗봇 분석']) {
       expect(within(tiles).getByText(title)).toBeInTheDocument();
     }
     // Learning tiles deep-link into the admin tools.
     expect(within(tiles).getByText('문답 학습').closest('a')).toHaveAttribute('href', '/admin/qa-review');
 
-    // 모니터링 tile navigates to the dashboard tab.
-    fireEvent.click(within(tiles).getByText('실시간 모니터링'));
+    // I4 / U-D24 — 실시간 모니터링 and 위치 보기 are gone from the grid because
+    // they lead where the bottom bar already leads. That is only defensible if
+    // the destination still works, so this now goes through the tab that owns
+    // it rather than through a tile that duplicated it.
+    expect(within(tiles).queryByText('실시간 모니터링')).not.toBeInTheDocument();
+    expect(within(tiles).queryByText('위치 보기')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('ops-tab-dashboard'));
     await waitFor(() => expect(screen.getAllByTestId('ops-room-card')).toHaveLength(2));
   });
 
