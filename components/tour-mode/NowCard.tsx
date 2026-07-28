@@ -52,8 +52,19 @@ const TONE_CLASS: Record<NowCardResult['tone'], string> = {
   base: 'border-transparent',
 };
 
+/**
+ * 🔴 I5 — the danger title is INK, not red.
+ *
+ * Red-on-red-wash measured 3.95:1 in light across all ten skins, against a 4.5
+ * floor. The urgency is carried by the border, the wash and the icon, all of
+ * which are non-text and cleared their own bar; making the sentence red as well
+ * bought nothing and cost legibility — on the one card a guest reads while
+ * their group is already waiting for them.
+ *
+ * Caught by extending the standing gate before shipping, not by looking at it.
+ */
 const TONE_INK: Record<NowCardResult['tone'], string> = {
-  danger: 'text-[var(--tr-danger)]',
+  danger: 'text-[var(--tr-ink)]',
   warn: 'text-[var(--tr-ink)]',
   accent: 'text-[var(--tr-ink)]',
   base: 'text-[var(--tr-ink)]',
