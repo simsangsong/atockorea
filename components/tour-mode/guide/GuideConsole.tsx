@@ -562,6 +562,50 @@ export default function GuideConsole() {
         </p>
       )}
 
+      {/* 운행 시작 — the day's primary action, on the first screen.
+       *
+       * It used to be a 44px pill in near-black (`--tr-ink`) on the THIRD tab,
+       * which is both too small and too dark for the control a guide presses at
+       * the start of every tour (사용자 리포트 2026-07-28, with a screenshot).
+       * Size and press physics carry the prominence; the surface stays a wash.
+       *
+       * One booking is the private-charter norm, so one tap starts driving.
+       * With several, the button cannot know which vehicle — it hands over to
+       * the 운행 tab where the per-room entries live, rather than guessing.
+       * Hidden once the day has ended: a start button for a finished tour is
+       * an invitation to a dead screen. */}
+      {overview.lifecycle !== 'ended' && rooms.length > 0 && (
+        <button
+          type="button"
+          onClick={() => {
+            if (rooms.length === 1) void enterDrive(rooms[0].booking_id);
+            else setStaffTab('ops');
+          }}
+          disabled={Boolean(driveBusy)}
+          className="tr-cta-hero mt-3"
+          data-testid="drive-hero"
+        >
+          <span className="tr-cta-hero-glyph" aria-hidden>
+            <IconVehicle size={TR_ICON.action} />
+          </span>
+          <span className="min-w-0 flex-1">
+            <span className="tr-body text-cjk-safe block font-bold">
+              {driveBusy
+                ? '운전 모드 여는 중…'
+                : overview.lifecycle === 'live'
+                  ? '운행 중 · 콕핏 열기'
+                  : '운행 시작'}
+            </span>
+            <span className="tr-meta mt-0.5 block truncate opacity-80">
+              {rooms.length === 1
+                ? '내비·손님 위치·통역이 한 화면에'
+                : `차량 ${rooms.length}대 — 운행 탭에서 고르기`}
+            </span>
+          </span>
+          <IconChevronRight size={TR_ICON.chip} className="shrink-0 opacity-60" aria-hidden />
+        </button>
+      )}
+
       {/* C-D7 — pinned channel rows (카톡 채팅탭의 상단 고정 문법): 안내 발송
           도구들이 대화 리스트와 같은 행 문법으로 산다. */}
       <div className="tr-card mt-3 divide-y divide-[var(--tr-hairline)] overflow-hidden border border-[var(--tr-hairline)]">
@@ -1110,7 +1154,10 @@ export default function GuideConsole() {
             type="button"
             onClick={() => void enterDrive(room.booking_id)}
             disabled={driveBusy === room.booking_id}
-            className="tr-label text-cjk-safe flex min-h-[44px] shrink-0 items-center gap-1.5 rounded-xl bg-[var(--tr-ink)] px-4 font-bold text-[var(--tr-canvas)] active:scale-95 disabled:opacity-50"
+            /* Was near-black (`--tr-ink`) — the same "찐한 색" the hero button
+               above replaced. Kept as the compact per-room variant of the same
+               material so the two entries read as one control, not two. */
+            className="tr-cta-hero tr-label text-cjk-safe !min-h-[44px] !w-auto shrink-0 justify-center !gap-1.5 !rounded-xl !px-4 font-bold"
             data-testid="ops-drive"
           >
             <IconVehicle size={TR_ICON.chip} aria-hidden />
