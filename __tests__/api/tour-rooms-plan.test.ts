@@ -521,3 +521,72 @@ describe('GET /api/tour-rooms/[bookingId]/plan — viewer meta', () => {
     expect(body.viewer).toMatchObject({ is_lead: false, can_edit: false });
   });
 });
+
+/**
+ * 🔴 Reported from a real phone on 2026-07-29: the same system capsule three
+ * times in one feed, "You've left today's course to the guide". A live room
+ * held six.
+ *
+ * The delegate path had no idempotency at all. `submit` has had a re-click
+ * guard since it shipped, and its comment says exactly what it is for —
+ * "Re-clicks and retried submits must not create duplicate feed capsules" —
+ * but it keys on `existingStatus === 'guest_submitted'`, and delegating does
+ * not change the status. So neither that guard nor the A8 lock beneath it could
+ * ever fire for delegate, and every press inserted another capsule.
+ */
+describe('PUT /plan — delegate is idempotent (2026-07-29 report)', () => {
+  function delegatedDb(guideCurated: boolean) {
+    const base = fakeDb({ isLead: true });
+    const original = base.from.bind(base);
+    return {
+      ...base,
+      from(table: string) {
+        if (table === 'bookings') {
+          return {
+            select: () => ({
+              eq: () => ({
+                maybeSingle: async () => ({ data: { itinerary: { guide_curated: guideCurated } }, error: null }),
+                single: async () => ({ data: { ...BOOKING, itinerary: { guide_curated: guideCurated } }, error: null }),
+              }),
+            }),
+            update: () => ({ eq: async () => ({ data: null, error: null }) }),
+          };
+        }
+        return original(table);
+      },
+    } as never;
+  }
+
+  it('🔴 a second delegate posts no second capsule', async () => {
+    createServerClientMock.mockReturnValue(delegatedDb(true));
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': customerSession() }, json: { delegate: true } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    await expect(res.json()).resolves.toMatchObject({ already_delegated: true });
+    expect(recordRoomEventMock).not.toHaveBeenCalled();
+  });
+
+  it('🔴 but delegating AFTER picking stops does — that is a new decision', async () => {
+    // The flag is cleared by a direct stop write, so this is not a re-click; it
+    // is the guest changing their mind back, and the room should hear about it.
+    createServerClientMock.mockReturnValue(delegatedDb(false));
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': customerSession() }, json: { delegate: true } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    await expect(res.json()).resolves.not.toMatchObject({ already_delegated: true });
+  });
+
+  it('does not block staff — a guide is not double-clicking a guest button', async () => {
+    createServerClientMock.mockReturnValue(delegatedDb(true));
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': guideSession() }, json: { delegate: true } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    await expect(res.json()).resolves.not.toMatchObject({ already_delegated: true });
+  });
+});
