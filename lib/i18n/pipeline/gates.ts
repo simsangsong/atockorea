@@ -197,12 +197,30 @@ export function checkNumbers(source: string, target: string, pointer: string): F
  */
 const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
 
+/** ISO 코드 ↔ 기호는 같은 통화다. 비교 전에 한쪽으로 모은다. */
+const CURRENCY_ALIAS: Record<string, string> = {
+  KRW: '₩',
+  EUR: '€',
+  USD: '$',
+  JPY: '¥',
+  GBP: '£',
+  RUB: '₽',
+  CNY: '¥',
+};
+
+function normalizeCurrency(token: string): string {
+  return CURRENCY_ALIAS[token.toUpperCase()] ?? token;
+}
+
 /** G4 — 통화 기호·ISO 코드 동일 + 단위 변환 검출. */
 export function checkCurrencyAndUnits(source: string, target: string, pointer: string): Finding[] {
   const findings: Finding[] = [];
 
-  const a = multiset(source, CURRENCY_RE);
-  const b = multiset(target, CURRENCY_RE);
+  // 코드와 기호는 **같은 통화의 다른 표기**다. `KRW` → `₩` 는 값도 통화도 바뀌지
+  // 않았는데 문자열 비교로는 불일치였다(2026-07-28 실측, 프랑스어 다수 탈락).
+  // 정규화 후 비교하므로 `₩` → `€` 같은 진짜 통화 변조는 그대로 잡힌다.
+  const a = multiset(source, CURRENCY_RE).map(normalizeCurrency).sort();
+  const b = multiset(target, CURRENCY_RE).map(normalizeCurrency).sort();
   if (!sameMultiset(a, b)) {
     findings.push({
       gate: 'G4',

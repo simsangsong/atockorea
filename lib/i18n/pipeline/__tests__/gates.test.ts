@@ -324,3 +324,20 @@ describe('G3 연대 축약 (2026-07-28 실측)', () => {
     expect(f.some((x) => x.severity === 'fail')).toBe(true);
   });
 });
+
+describe('G4 통화 표기 정규화 (2026-07-28 실측)', () => {
+  it('ISO 코드 ↔ 기호는 같은 통화로 본다 — KRW → ₩', () => {
+    expect(checkCurrencyAndUnits('entry KRW 5,000', 'entrée 5 000 ₩', '/p')).toEqual([]);
+    expect(checkCurrencyAndUnits('₩5,000', 'KRW 5.000', '/p')).toEqual([]);
+  });
+
+  it('통화가 실제로 바뀌면 여전히 fail', () => {
+    const f = checkCurrencyAndUnits('KRW 70,000', '€70,000', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('통화가 통째로 사라지면 여전히 fail', () => {
+    const f = checkCurrencyAndUnits('entry KRW 5,000', 'ingresso 5.000 won', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+});
