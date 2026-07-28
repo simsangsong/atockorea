@@ -122,7 +122,22 @@ export function resolveProviderChain(purpose: AiPurpose): ResolvedProvider[] {
 function timeoutMsFor(purpose: AiPurpose): number {
   const configured = Number(envFor(purpose, 'TIMEOUT_MS'));
   if (Number.isFinite(configured) && configured > 0) return configured;
-  return purpose === 'caption' ? 3_000 : 8_000;
+  /**
+   * 🔴 Vision was sharing the text budget, and could not fit in it.
+   *
+   * Measured from `ops_ai_usage` (1,800 rows): the same model answering a
+   * TEXT-only batch averages 5,794ms. A vision call adds several megabytes of
+   * base64 upload and an image to read before the first token — so 8s was not a
+   * safety margin, it was a coin flip, and losing it looked identical to an
+   * outage because both legs then timed out and the ladder reported total
+   * failure.
+   *
+   * 20s fits inside the route's own 30s duration with room for the second
+   * provider to be attempted rather than pre-empted.
+   */
+  if (purpose === 'caption') return 3_000;
+  if (purpose === 'vision') return 20_000;
+  return 8_000;
 }
 
 export interface ChatMessageContentPart {
