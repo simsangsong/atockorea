@@ -382,7 +382,7 @@ export default function QuickSignalBar({
             type="button"
             disabled={busy !== null}
             onClick={() => void fire(type)}
-            className="tr-label tr-press shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-3 py-1.5 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
+            className="tr-label tr-chip-tap tr-chip-tap--urgent shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-3.5 py-2 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
             data-testid={`signal-${type}`}
           >
             {busy === type ? '…' : label}
@@ -413,7 +413,7 @@ export default function QuickSignalBar({
         <button
           type="button"
           onClick={() => photoInputRef.current?.click()}
-          className="tr-meta tr-press shrink-0 rounded-full bg-[var(--tr-surface-2)] px-3 py-1.5 font-semibold text-[var(--tr-ink)]"
+          className="tr-meta tr-chip-tap tr-chip-tap--urgent shrink-0 rounded-full bg-[var(--tr-surface-2)] px-3.5 py-2 font-semibold text-[var(--tr-ink)]"
           data-testid="meet-photo-hint"
         >
           📷 {copy.photoAsk}

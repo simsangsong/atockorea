@@ -609,7 +609,10 @@ export default function RoomShell({
 
         {/* ---- Tab panels + floating banner zone --------------------- */}
         <div
-          className={`relative flex min-h-0 flex-1 flex-col ${
+          /* tr-atmos: one light source over whichever skin is on. See the
+             block in tour-room-theme.css — it is a ::before, so it adds no
+             element and cannot take a tap. */
+          className={`tr-atmos relative flex min-h-0 flex-1 flex-col ${
             tab === 'home' ? '[background:var(--tr-home-canvas)]' : ''
           }`}
         >

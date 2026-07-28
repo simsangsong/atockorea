@@ -592,8 +592,11 @@ export default function HomeTab({
           busPayload={busPayload}
         />
       )}
+      {/* tr-card-hero: the one card on this screen allowed to be loud.
+          Everything else on home is a door; this is the answer to the only
+          question a guest opens the app to ask. */}
       {lifecycle === 'live' && (
-        <div className="tr-home-card mb-2 px-4 py-3.5" data-testid="home-status-live">
+        <div className="tr-home-card tr-card-hero mb-2 px-4 py-3.5" data-testid="home-status-live">
           {nowStop || nextStop ? (
             <div className="flex flex-col gap-1.5">
               {nowStop && (
