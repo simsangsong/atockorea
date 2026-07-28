@@ -97,7 +97,7 @@ export default function ExperimentsListPage() {
         <button
           type="button"
           onClick={() => setShowCreate(!showCreate)}
-          className="rounded-md bg-slate-900 inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-white hover:bg-slate-700"
+          className="text-cjk-safe rounded-md bg-slate-900 inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-white hover:bg-slate-700"
         >
           {showCreate ? '취소' : '+ 새 실험'}
         </button>
@@ -204,7 +204,7 @@ export default function ExperimentsListPage() {
               type="button"
               onClick={handleCreate}
               disabled={creating || variantA.weight + variantB.weight !== 100 || !newKey}
-              className="rounded-md bg-slate-900 inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-white disabled:opacity-50"
+              className="text-cjk-safe rounded-md bg-slate-900 inline-flex min-h-11 items-center justify-center px-4 text-sm font-medium text-white disabled:opacity-50"
             >
               {creating ? '생성 중…' : '생성 (status=draft)'}
             </button>

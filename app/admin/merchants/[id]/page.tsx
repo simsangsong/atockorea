@@ -228,7 +228,7 @@ export default function MerchantDetailPage() {
             onClick={handleVerifyToggle}
             disabled={updating}
             className={cn(
-              'inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold transition-colors disabled:opacity-50',
+              'text-cjk-safe inline-flex min-h-11 items-center gap-1.5 rounded-lg px-3 text-sm font-semibold transition-colors disabled:opacity-50',
               merchant.is_verified
                 ? 'bg-emerald-100 text-emerald-800 hover:bg-emerald-200'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200',
@@ -310,7 +310,7 @@ export default function MerchantDetailPage() {
                     <td className="px-4 py-3 text-sm tabular-nums text-slate-900">₩{parseFloat(String(tour.price)).toLocaleString()}</td>
                     <td className="px-4 py-3">
                       <span className={cn(
-                        'rounded-full px-2 py-1 text-xs font-semibold',
+                        'text-cjk-safe rounded-full px-2 py-1 text-xs font-semibold',
                         tour.is_active ? 'bg-emerald-100 text-emerald-800' : 'bg-slate-100 text-slate-700',
                       )}>
                         {tour.is_active ? '활성' : '비활성'}

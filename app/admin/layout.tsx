@@ -552,7 +552,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                   type="button"
                   onClick={() => toggleGroup(group.label)}
                   aria-expanded={open}
-                  className="flex h-8 w-full items-center gap-1.5 rounded-lg px-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-400 transition-colors hover:text-slate-200"
+                  className="text-cjk-safe flex h-8 w-full items-center gap-1.5 rounded-lg px-2.5 text-left text-[11px] font-semibold uppercase tracking-wide text-slate-400 transition-colors hover:text-slate-200"
                 >
                   <ChevronDown
                     className={`size-3.5 flex-shrink-0 transition-transform ${open ? '' : '-rotate-90'}`}
@@ -650,7 +650,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             <button
               type="button"
               onClick={() => window.dispatchEvent(new Event('admin-cmdk-open'))}
-              className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-200 px-2 text-xs font-medium text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800 md:px-2.5"
+              className="text-cjk-safe inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-200 px-2 text-xs font-medium text-slate-500 transition-colors hover:bg-slate-100 hover:text-slate-800 md:px-2.5"
               aria-label="검색 (Ctrl+K)"
             >
               <Search className="size-4" />
@@ -690,7 +690,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                         setUserMenuOpen(false);
                         router.push('/');
                       }}
-                      className="flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-50"
+                      className="text-cjk-safe flex w-full items-center gap-2 px-3 py-2 text-left text-sm text-slate-700 hover:bg-slate-50"
                     >
                       <LogOut className="size-4 text-slate-400" />
                       로그아웃
@@ -731,7 +731,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         <button
           type="button"
           onClick={() => setMobileNavOpen(true)}
-          className="flex flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium text-slate-500"
+          className="text-cjk-safe flex flex-1 flex-col items-center justify-center gap-0.5 text-[10px] font-medium text-slate-500"
           aria-label="더보기"
         >
           <Menu className="size-5 text-slate-400" />

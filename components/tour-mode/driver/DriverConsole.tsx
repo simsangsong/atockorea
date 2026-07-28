@@ -190,7 +190,7 @@ export default function DriverConsole() {
             type="button"
             disabled={pin.length !== 4 || joining}
             onClick={() => void join(pin)}
-            className="w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-2xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="text-cjk-safe w-full max-w-xs rounded-2xl bg-[var(--tr-bubble-me)] py-5 text-2xl font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             확인
           </button>
@@ -221,7 +221,7 @@ export default function DriverConsole() {
           <button
             type="button"
             onClick={() => setAudioUnlocked(true)}
-            className="mt-6 flex w-full max-w-sm items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-3xl font-bold text-[var(--tr-bubble-me-ink)]"
+            className="text-cjk-safe mt-6 flex w-full max-w-sm items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-8 text-3xl font-bold text-[var(--tr-bubble-me-ink)]"
             data-testid="driver-start"
           >
             <IconDriver size={TR_ICON.tile} aria-hidden />
@@ -352,7 +352,7 @@ function EndScreen({ overview, room }: { overview: DriverOverview; room: Cockpit
         {OPS_PHONE ? (
           <a
             href={`tel:${OPS_PHONE}`}
-            className="tr-display flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-4 text-center text-[var(--tr-ink)]"
+            className="text-cjk-safe tr-display flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-4 text-center text-[var(--tr-ink)]"
             data-testid="driver-ops-call"
           >
             <IconPhone size={TR_ICON.nav} aria-hidden />

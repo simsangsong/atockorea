@@ -479,7 +479,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
                     type="button"
                     disabled={busy}
                     onClick={() => void setGroupCapacity(capacity.headcount)}
-                    className="mt-2 h-9 rounded-lg bg-[var(--tr-warn)] px-3 tr-meta font-bold text-white disabled:opacity-40"
+                    className="text-cjk-safe mt-2 h-9 rounded-lg bg-[var(--tr-warn)] px-3 tr-meta font-bold text-white disabled:opacity-40"
                     data-testid="raise-group-capacity"
                   >
                     이 날짜만 정원 {capacity.headcount}로 올리기
@@ -517,7 +517,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
               type="button"
               onClick={() => void undo()}
               disabled={busy}
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              className="text-cjk-safe flex h-11 w-full items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
             >
               <RotateCcw className="size-3.5" /> 방금 변경 되돌리기
             </button>
@@ -536,7 +536,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
             <button
               type="button"
               onClick={() => setAdding(true)}
-              className="flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
+              className="text-cjk-safe flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
             >
               <Plus className="size-4" /> {vehicles.length > 0 ? `${vehicles.length + 1}호차 배정` : '차량 배정'}
             </button>
@@ -744,7 +744,7 @@ function VehicleCard({
         <Bus className="size-4 shrink-0 text-[var(--tr-ink-2)]" />
         {ordinal ? (
           <span
-            className="shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-accent)]"
+            className="text-cjk-safe shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 tr-meta font-bold text-[var(--tr-accent)]"
             data-testid="vehicle-ordinal"
           >
             {ordinal}호차
@@ -872,7 +872,7 @@ function VehicleCard({
               type="button"
               disabled={busy}
               onClick={onPhotoClear}
-              className="h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+              className="text-cjk-safe h-9 rounded-lg border border-[var(--tr-hairline)] px-2.5 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
               data-testid="vehicle-photo-clear"
             >
               사진 내리기
@@ -900,7 +900,7 @@ function VehicleCard({
       <div className="flex gap-2">
         <a
           href={`/admin/vehicle-layouts?override=${encodeURIComponent(vehicle.id)}`}
-          className="flex h-10 flex-1 items-center justify-center rounded-lg border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
+          className="text-cjk-safe flex h-10 flex-1 items-center justify-center rounded-lg border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
         >
           배치도 오버라이드
         </a>
@@ -917,7 +917,7 @@ function VehicleCard({
               driver_name: driverName,
             })
           }
-          className="flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+          className="text-cjk-safe flex h-10 flex-1 items-center justify-center gap-1.5 rounded-lg bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
         >
           {busy ? <Loader2 className="size-3.5 animate-spin" /> : null} 저장
         </button>
@@ -1017,7 +1017,7 @@ function NewVehicleForm({
             driver_name: driverName,
           })
         }
-        className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+        className="text-cjk-safe h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
       >
         배정하기
       </button>
@@ -1084,14 +1084,14 @@ function SeatShortfallSheet({
             type="button"
             disabled={busy || !ready}
             onClick={() => onProceed(reason.trim())}
-            className="h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
+            className="text-cjk-safe h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
           >
             사유를 남기고 진행
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
+            className="text-cjk-safe h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
           >
             취소하고 차를 먼저 붙이기
           </button>
@@ -1154,14 +1154,14 @@ function ConflictSheet({
             type="button"
             disabled={busy}
             onClick={() => onChoose('clear')}
-            className="h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
+            className="text-cjk-safe h-11 w-full rounded-xl border border-rose-300 tr-label font-semibold text-rose-600 disabled:opacity-40"
           >
             전 좌석 해제하고 다시 받기 ({conflict.assigned.length}석)
           </button>
           <button
             type="button"
             onClick={onCancel}
-            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
+            className="text-cjk-safe h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)]"
           >
             취소
           </button>

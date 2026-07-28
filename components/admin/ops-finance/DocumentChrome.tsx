@@ -68,7 +68,7 @@ export function DocumentShell({
         <button
           type="button"
           onClick={() => window.print()}
-          className="flex h-11 items-center gap-1.5 rounded-xl bg-neutral-900 px-4 text-sm font-bold text-white"
+          className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-neutral-900 px-4 text-sm font-bold text-white"
           data-testid="doc-print-button"
         >
           <Printer size={14} aria-hidden />

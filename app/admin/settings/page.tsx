@@ -222,7 +222,7 @@ export default function SettingsPage() {
           <button
             onClick={handleSave}
             disabled={!dirty || saving}
-            className="min-h-11 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold transition-colors hover:bg-blue-700 disabled:opacity-50"
+            className="text-cjk-safe min-h-11 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold transition-colors hover:bg-blue-700 disabled:opacity-50"
           >
             {saving ? '저장 중…' : 'Save Settings'}
           </button>

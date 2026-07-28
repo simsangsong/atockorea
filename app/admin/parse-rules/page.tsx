@@ -177,7 +177,7 @@ export default function ParseRulesPage() {
             {candidates.map((c) => (
               <li
                 key={c.template_hash}
-                className="rounded-xl border border-stone-200 bg-white p-3"
+                className="text-cjk-safe rounded-xl border border-stone-200 bg-white p-3"
                 data-testid={`candidate-${c.template_hash}`}
               >
                 <div className="flex items-start gap-3">
@@ -202,7 +202,7 @@ export default function ParseRulesPage() {
         )}
         {skipped.length > 0 && (
           <details className="mt-2">
-            <summary className="cursor-pointer text-xs text-stone-500">
+            <summary className="text-cjk-safe cursor-pointer text-xs text-stone-500">
               규칙으로 못 만든 뭉치 {skipped.length}건
             </summary>
             <ul className="mt-1 space-y-1 text-xs text-stone-500">
@@ -223,7 +223,7 @@ export default function ParseRulesPage() {
         ) : (
           <ul className="mt-2 space-y-2">
             {rules.map((r) => (
-              <li key={r.id} className="rounded-xl border border-stone-200 bg-white p-3" data-testid={`rule-${r.id}`}>
+              <li key={r.id} className="text-cjk-safe rounded-xl border border-stone-200 bg-white p-3" data-testid={`rule-${r.id}`}>
                 <div className="flex items-start gap-3">
                   <div className="min-w-0 flex-1">
                     <p className="break-all font-mono text-xs text-stone-700">{r.template_pattern}</p>

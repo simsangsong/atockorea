@@ -403,7 +403,7 @@ export default function OpsManifestView({
         <button
           type="button"
           onClick={() => setEditorOpen(true)}
-          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
+          className="text-cjk-safe flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
           data-testid="wa-template-edit"
         >
           <Pencil className="size-3.5" />
@@ -417,7 +417,7 @@ export default function OpsManifestView({
           }}
           disabled={emailBusy || emailEligible === 0}
           aria-label="룸 초대 이메일 일괄 발송"
-          className="flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)] disabled:opacity-40"
+          className="text-cjk-safe flex h-8 items-center gap-1 rounded-lg bg-[var(--tr-surface-2)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)] disabled:opacity-40"
         >
           <Mail className="size-3.5" />
           룸 초대 이메일
@@ -459,7 +459,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void sendBulkInvite()}
             disabled={emailBusy}
-            className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="text-cjk-safe h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           >
             {emailBusy ? '발송 중…' : '확인 발송'}
           </button>
@@ -467,7 +467,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => setEmailConfirm(false)}
             disabled={emailBusy}
-            className="h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
+            className="text-cjk-safe h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
           >
             취소
           </button>
@@ -487,7 +487,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void copyInviteLink()}
             aria-label="초대 링크 복사"
-            className="flex h-8 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-surface)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
+            className="text-cjk-safe flex h-8 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-surface)] px-2.5 tr-meta font-semibold text-[var(--tr-ink)]"
           >
             <Copy className="size-3.5" />
             복사
@@ -506,7 +506,7 @@ export default function OpsManifestView({
             type="button"
             onClick={() => void bulkNext()}
             disabled={bulkCursor >= bulkList.length}
-            className="h-8 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
+            className="text-cjk-safe h-8 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
           >
             {bulkCursor >= bulkList.length ? '완료' : `다음 열기 (${bulkCursor + 1}번째)`}
           </button>
@@ -516,7 +516,7 @@ export default function OpsManifestView({
               setSelected(new Set());
               setBulkCursor(0);
             }}
-            className="h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
+            className="text-cjk-safe h-8 rounded-lg px-2 tr-label text-[var(--tr-ink-2)]"
           >
             해제
           </button>
@@ -539,7 +539,7 @@ export default function OpsManifestView({
               <button
                 type="button"
                 onClick={() => toggleGroup(group.key)}
-                className="flex w-full items-center gap-2 px-3 py-2.5 text-left"
+                className="text-cjk-safe flex w-full items-center gap-2 px-3 py-2.5 text-left"
                 aria-expanded={!isCollapsed}
               >
                 <span className="min-w-0 flex-1 truncate tr-card-text font-bold text-[var(--tr-ink)]">
@@ -620,7 +620,7 @@ export default function OpsManifestView({
                           type="button"
                           onClick={() => void markSent(booking)}
                           disabled={sent}
-                          className={`flex h-9 shrink-0 items-center gap-1 rounded-lg px-2 tr-meta font-semibold ${
+                          className={`text-cjk-safe flex h-9 shrink-0 items-center gap-1 rounded-lg px-2 tr-meta font-semibold ${
                             sent
                               ? 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  '
                               : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]'
@@ -776,7 +776,7 @@ function WaTemplateEditor({
                 `${locale} 문구를 이 투어 전용으로 저장했어요.`,
               )
             }
-            className="h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+            className="text-cjk-safe h-11 w-full rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="wa-template-save"
           >
             이 투어 전용으로 저장
@@ -791,7 +791,7 @@ function WaTemplateEditor({
                 '기본 문구로 되돌렸어요.',
               )
             }
-            className="h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+            className="text-cjk-safe h-11 w-full rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
             data-testid="wa-template-revert"
           >
             기본으로 되돌리기

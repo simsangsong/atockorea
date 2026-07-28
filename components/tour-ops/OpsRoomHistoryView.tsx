@@ -213,7 +213,7 @@ export default function OpsRoomHistoryView({
                 <button
                   type="button"
                   onClick={() => onOpenRoom?.(r.id)}
-                  className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-left active:bg-[var(--tr-surface-2)]"
+                  className="text-cjk-safe w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-left active:bg-[var(--tr-surface-2)]"
                 >
                   <div className="flex items-start gap-2">
                     <div className="min-w-0 flex-1">

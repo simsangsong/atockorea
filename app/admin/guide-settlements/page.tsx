@@ -199,7 +199,7 @@ export default function GuideSettlementsPage() {
     [period],
   );
 
-  /** 응답 blob을 파일로 떨어뜨린다. 인증 헤더가 필요해 <a download>로는 안 된다. */
+  /** 응답 blob을 파일로 떨어뜨린다. 인증 헤더가 필요해 <a className="text-cjk-safe" download>로는 안 된다. */
   const saveBlob = useCallback(async (url: string, filename: string, label: string) => {
     try {
       const res = await authedFetch(url);
@@ -288,7 +288,7 @@ export default function GuideSettlementsPage() {
             type="button"
             onClick={() => void run()}
             disabled={running || !/^\d{4}-\d{2}$/.test(period)}
-            className="inline-flex h-11 items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 text-sm font-semibold text-white disabled:opacity-50"
+            className="text-cjk-safe inline-flex h-11 items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 text-sm font-semibold text-white disabled:opacity-50"
             data-testid="run-settlement-button"
           >
             {running ? <Loader2 className="size-4 animate-spin" /> : <Calculator className="size-4" />}
@@ -297,7 +297,7 @@ export default function GuideSettlementsPage() {
           <button
             type="button"
             onClick={() => void load()}
-            className="inline-flex h-11 items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+            className="text-cjk-safe inline-flex h-11 items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
           >
             <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             새로고침
@@ -355,15 +355,15 @@ export default function GuideSettlementsPage() {
         <table className="w-full min-w-[860px] text-sm">
           <thead>
             <tr className="border-b border-slate-200 text-xs text-slate-500">
-              <th className="px-3 py-2 text-left font-medium">가이드</th>
-              <th className="px-3 py-2 text-right font-medium">건수</th>
-              <th className="px-3 py-2 text-right font-medium">용역대가</th>
-              <th className="px-3 py-2 text-right font-medium">소득세</th>
-              <th className="px-3 py-2 text-right font-medium">지방소득세</th>
-              <th className="px-3 py-2 text-right font-medium">차감 지급액</th>
-              <th className="px-3 py-2 text-right font-medium">실비변상</th>
-              <th className="px-3 py-2 text-right font-medium">실지급</th>
-              <th className="px-3 py-2 text-left font-medium">상태</th>
+              <th className="text-cjk-safe px-3 py-2 text-left font-medium">가이드</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">건수</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">용역대가</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">소득세</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">지방소득세</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">차감 지급액</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">실비변상</th>
+              <th className="text-cjk-safe px-3 py-2 text-right font-medium">실지급</th>
+              <th className="text-cjk-safe px-3 py-2 text-left font-medium">상태</th>
               <th className="px-3 py-2" />
             </tr>
           </thead>
@@ -432,7 +432,7 @@ export default function GuideSettlementsPage() {
                       <button
                         type="button"
                         onClick={() => void downloadReceiptFor(row.guide_id, row.guide_name)}
-                        className="inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
+                        className="text-cjk-safe inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100"
                         title="이 가이드에게 교부할 원천징수영수증"
                         data-testid="settlement-receipt"
                       >
@@ -444,7 +444,7 @@ export default function GuideSettlementsPage() {
                           type="button"
                           onClick={() => void patch(row, { status: 'confirmed' }, '확인 처리했습니다.')}
                           disabled={busyId === row.id}
-                          className="inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-50"
+                          className="text-cjk-safe inline-flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-xs font-semibold text-slate-700 hover:bg-slate-100 disabled:opacity-50"
                         >
                           <BadgeCheck className="size-3.5" />
                           확인
@@ -458,7 +458,7 @@ export default function GuideSettlementsPage() {
                             setPayTarget(row);
                           }}
                           disabled={busyId === row.id}
-                          className="inline-flex h-8 items-center gap-1 rounded-lg bg-slate-900 px-2 text-xs font-semibold text-white disabled:opacity-50"
+                          className="text-cjk-safe inline-flex h-8 items-center gap-1 rounded-lg bg-slate-900 px-2 text-xs font-semibold text-white disabled:opacity-50"
                           title="시스템이 이체하지 않습니다 — 이미 지급했다는 기록입니다."
                         >
                           <Wallet className="size-3.5" />
@@ -504,7 +504,7 @@ export default function GuideSettlementsPage() {
                 <button
                   type="button"
                   onClick={() => void downloadForm(form, 'xlsx')}
-                  className="inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
+                  className="text-cjk-safe inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
                   data-testid={`form-xlsx-${form}`}
                 >
                   <FileSpreadsheet className="size-3.5" />
@@ -535,7 +535,7 @@ export default function GuideSettlementsPage() {
             <button
               type="button"
               onClick={() => void downloadPayoutSheet('xlsx')}
-              className="inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
+              className="text-cjk-safe inline-flex h-8 items-center gap-1 rounded-lg border border-emerald-200 bg-emerald-50 px-2 text-xs font-semibold text-emerald-700 hover:bg-emerald-100"
               data-testid="payout-sheet-xlsx"
             >
               <FileSpreadsheet className="size-3.5" />

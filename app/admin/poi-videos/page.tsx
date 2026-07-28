@@ -125,7 +125,7 @@ export default function PoiVideosPage() {
         <button
           type="button"
           onClick={() => void load(tab)}
-          className="ml-auto flex items-center gap-1.5 rounded-lg border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
+          className="text-cjk-safe ml-auto flex items-center gap-1.5 rounded-lg border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-700 hover:bg-stone-50"
         >
           <RefreshCw size={14} aria-hidden /> 새로고침
         </button>
@@ -190,7 +190,7 @@ export default function PoiVideosPage() {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'approved')}
-                            className="flex flex-1 items-center justify-center gap-1 rounded-lg bg-emerald-600 py-1.5 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
+                            className="text-cjk-safe flex flex-1 items-center justify-center gap-1 rounded-lg bg-emerald-600 py-1.5 text-sm font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
                           >
                             <Check size={14} aria-hidden /> 승인
                           </button>
@@ -198,7 +198,7 @@ export default function PoiVideosPage() {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'rejected')}
-                            className="flex flex-1 items-center justify-center gap-1 rounded-lg border border-stone-300 py-1.5 text-sm font-semibold text-stone-700 hover:bg-stone-50 disabled:opacity-50"
+                            className="text-cjk-safe flex flex-1 items-center justify-center gap-1 rounded-lg border border-stone-300 py-1.5 text-sm font-semibold text-stone-700 hover:bg-stone-50 disabled:opacity-50"
                           >
                             <X size={14} aria-hidden /> 거절
                           </button>
@@ -213,7 +213,7 @@ export default function PoiVideosPage() {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'pending_review')}
-                            className="flex items-center gap-1 rounded-lg border border-stone-300 px-2 py-1 text-xs font-medium text-stone-600 hover:bg-stone-50 disabled:opacity-50"
+                            className="text-cjk-safe flex items-center gap-1 rounded-lg border border-stone-300 px-2 py-1 text-xs font-medium text-stone-600 hover:bg-stone-50 disabled:opacity-50"
                           >
                             <RotateCcw size={12} aria-hidden /> 대기로
                           </button>

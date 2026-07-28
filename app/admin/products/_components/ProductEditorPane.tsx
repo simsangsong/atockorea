@@ -433,7 +433,7 @@ export function ProductEditorPane({
         <button
           type="button"
           onClick={onTogglePreview}
-          className={`inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-md border transition-colors ${
+          className={`text-cjk-safe inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium rounded-md border transition-colors ${
             previewOpen
               ? 'bg-blue-50 text-blue-700 border-blue-200'
               : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
@@ -448,7 +448,7 @@ export function ProductEditorPane({
             href={`/tour-product/${slug}${locale !== 'en' ? `?locale=${locale}` : ''}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50"
+            className="text-cjk-safe inline-flex items-center gap-1.5 px-2.5 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-md hover:bg-slate-50"
             title="새 탭에서 라이브 페이지 열기"
           >
             <ExternalLink className="size-3.5" /> 라이브
@@ -459,7 +459,7 @@ export function ProductEditorPane({
           type="button"
           onClick={onSave}
           disabled={!dirty || saving}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
+          className={`text-cjk-safe inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
             dirty && !saving
               ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
               : 'bg-slate-100 text-slate-400 cursor-not-allowed'
@@ -477,7 +477,7 @@ export function ProductEditorPane({
           <button
             type="button"
             onClick={onBackToList}
-            className="-ml-1 inline-flex h-9 items-center gap-1 rounded-lg px-2 text-sm font-medium text-slate-600 active:bg-slate-100"
+            className="text-cjk-safe -ml-1 inline-flex h-9 items-center gap-1 rounded-lg px-2 text-sm font-medium text-slate-600 active:bg-slate-100"
           >
             <ArrowLeft className="size-4" />
             목록
@@ -492,7 +492,7 @@ export function ProductEditorPane({
             type="button"
             onClick={onSave}
             disabled={!dirty || saving}
-            className={`inline-flex h-9 items-center gap-1.5 rounded-lg px-3.5 text-sm font-semibold transition-colors ${
+            className={`text-cjk-safe inline-flex h-9 items-center gap-1.5 rounded-lg px-3.5 text-sm font-semibold transition-colors ${
               dirty && !saving
                 ? 'bg-blue-600 text-white shadow-sm active:bg-blue-700'
                 : saving
@@ -512,7 +512,7 @@ export function ProductEditorPane({
             <button
               type="button"
               onClick={() => setDraft({ ...draft, is_published: !draft.is_published })}
-              className={`inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium border transition-colors ${
+              className={`text-cjk-safe inline-flex flex-shrink-0 items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium border transition-colors ${
                 draft.is_published
                   ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
                   : 'bg-slate-100 text-slate-600 border-slate-200'
@@ -527,7 +527,7 @@ export function ProductEditorPane({
               href={`/tour-product/${slug}${locale !== 'en' ? `?locale=${locale}` : ''}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
+              className="text-cjk-safe inline-flex flex-shrink-0 items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-700"
             >
               <ExternalLink className="size-3.5" /> 라이브
             </a>

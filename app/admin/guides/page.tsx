@@ -517,21 +517,21 @@ export default function AdminGuidesPage() {
     <div className="mx-auto w-full max-w-6xl px-4 py-5">
       <header className="mb-4 flex flex-wrap items-center gap-2">
         <h1 className="text-[20px] font-bold text-slate-900">가이드 관리</h1>
-        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-slate-500">
+        <span className="text-cjk-safe rounded-full bg-slate-100 px-2 py-0.5 text-[11px] font-bold text-slate-500">
           {guides.length}명
         </span>
         <div className="flex-1" />
         <button
           type="button"
           onClick={() => void loadGuides()}
-          className="flex h-11 items-center gap-1.5 rounded-xl bg-slate-100 px-3 text-[13px] font-semibold text-slate-700 hover:bg-slate-200"
+          className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-slate-100 px-3 text-[13px] font-semibold text-slate-700 hover:bg-slate-200"
         >
           <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} /> 새로고침
         </button>
         <button
           type="button"
           onClick={startCreate}
-          className="flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-4 text-[13px] font-bold text-white"
+          className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-4 text-[13px] font-bold text-white"
         >
           <Plus className="size-4" /> 가이드 추가
         </button>
@@ -549,7 +549,7 @@ export default function AdminGuidesPage() {
       {notice && (
         <p className="mb-3 flex items-start gap-2 rounded-xl bg-emerald-50 px-3 py-2 text-[13px] font-medium text-emerald-800">
           <span className="text-cjk-body min-w-0 flex-1">{notice}</span>
-          <button type="button" onClick={() => setNotice(null)} className="shrink-0 text-emerald-600">
+          <button type="button" onClick={() => setNotice(null)} className="text-cjk-safe shrink-0 text-emerald-600">
             닫기
           </button>
         </p>
@@ -602,7 +602,7 @@ export default function AdminGuidesPage() {
                         />
                       )}
                       {!g.active && (
-                        <span className="shrink-0 rounded-full bg-slate-200 px-1.5 py-0.5 text-[10px] font-bold text-slate-600">
+                        <span className="text-cjk-safe shrink-0 rounded-full bg-slate-200 px-1.5 py-0.5 text-[10px] font-bold text-slate-600">
                           비활성
                         </span>
                       )}
@@ -638,7 +638,7 @@ export default function AdminGuidesPage() {
                     setSelectedId(null);
                     setCreating(false);
                   }}
-                  className="flex h-11 items-center gap-1 rounded-xl bg-slate-100 px-3 text-[13px] font-semibold text-slate-700"
+                  className="text-cjk-safe flex h-11 items-center gap-1 rounded-xl bg-slate-100 px-3 text-[13px] font-semibold text-slate-700"
                 >
                   <ArrowLeft className="size-4" /> 목록
                 </button>
@@ -710,14 +710,14 @@ export default function AdminGuidesPage() {
                             type="button"
                             onClick={() => void submitReveal()}
                             disabled={busy || revealPurpose.trim().length < 2}
-                            className="flex h-11 items-center gap-1.5 rounded-xl bg-amber-600 px-4 text-[13px] font-bold text-white disabled:opacity-40"
+                            className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-amber-600 px-4 text-[13px] font-bold text-white disabled:opacity-40"
                           >
                             {busy && <Loader2 className="size-4 animate-spin" />} 열람
                           </button>
                           <button
                             type="button"
                             onClick={closeReveal}
-                            className="h-11 rounded-xl bg-white px-4 text-[13px] font-semibold text-amber-800"
+                            className="text-cjk-safe h-11 rounded-xl bg-white px-4 text-[13px] font-semibold text-amber-800"
                           >
                             취소
                           </button>
@@ -730,7 +730,7 @@ export default function AdminGuidesPage() {
                           <button
                             type="button"
                             onClick={closeReveal}
-                            className="h-11 rounded-xl bg-white px-4 text-[13px] font-semibold text-amber-800"
+                            className="text-cjk-safe h-11 rounded-xl bg-white px-4 text-[13px] font-semibold text-amber-800"
                           >
                             닫기
                           </button>
@@ -743,7 +743,7 @@ export default function AdminGuidesPage() {
                       type="button"
                       onClick={() => void saveProfile()}
                       disabled={busy}
-                      className="flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-5 text-[13px] font-bold text-white disabled:opacity-40"
+                      className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-5 text-[13px] font-bold text-white disabled:opacity-40"
                     >
                       {busy && <Loader2 className="size-4 animate-spin" />}
                       {creating ? '가이드 등록' : '저장'}
@@ -753,7 +753,7 @@ export default function AdminGuidesPage() {
                         type="button"
                         onClick={() => void mintScheduleLink()}
                         disabled={busy}
-                        className="flex h-11 items-center gap-1.5 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-700 hover:bg-slate-200 disabled:opacity-40"
+                        className="text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-700 hover:bg-slate-200 disabled:opacity-40"
                       >
                         <Link2 className="size-4" /> 셀프 스케줄 링크
                       </button>
@@ -762,7 +762,7 @@ export default function AdminGuidesPage() {
                       <button
                         type="button"
                         onClick={() => setCreating(false)}
-                        className="h-11 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-600"
+                        className="text-cjk-safe h-11 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-600"
                       >
                         취소
                       </button>

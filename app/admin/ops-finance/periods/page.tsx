@@ -142,7 +142,7 @@ export default function SettlementPeriodsPage() {
             type="button"
             onClick={() => void closeTarget()}
             disabled={closing || !/^\d{4}-\d{2}$/.test(target)}
-            className="inline-flex h-[34px] items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white disabled:opacity-50"
+            className="text-cjk-safe inline-flex h-[34px] items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white disabled:opacity-50"
             data-testid="close-period-button"
           >
             <CalendarCheck className="size-4" />
@@ -151,7 +151,7 @@ export default function SettlementPeriodsPage() {
           <button
             type="button"
             onClick={() => void load()}
-            className="inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+            className="text-cjk-safe inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
           >
             <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             새로고침

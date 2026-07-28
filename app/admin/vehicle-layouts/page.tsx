@@ -461,7 +461,7 @@ export default function VehicleLayoutsPage() {
                   key={row.id}
                   type="button"
                   onClick={() => void openSelection({ kind: 'model', id: row.id })}
-                  className={`flex w-full items-center gap-2 border-b border-admin-border px-3 py-2.5 text-left hover:bg-slate-50 ${
+                  className={`text-cjk-safe flex w-full items-center gap-2 border-b border-admin-border px-3 py-2.5 text-left hover:bg-slate-50 ${
                     selection?.kind === 'model' && selection.id === row.id ? 'bg-emerald-50' : ''
                   }`}
                 >
@@ -498,7 +498,7 @@ export default function VehicleLayoutsPage() {
                   key={row.room_vehicle_id}
                   type="button"
                   onClick={() => void openSelection({ kind: 'override', roomVehicleId: row.room_vehicle_id })}
-                  className={`flex w-full items-center gap-2 border-b border-admin-border px-3 py-2.5 text-left hover:bg-slate-50 ${
+                  className={`text-cjk-safe flex w-full items-center gap-2 border-b border-admin-border px-3 py-2.5 text-left hover:bg-slate-50 ${
                     selection?.kind === 'override' && selection.roomVehicleId === row.room_vehicle_id
                       ? 'bg-emerald-50'
                       : ''
@@ -559,7 +559,7 @@ export default function VehicleLayoutsPage() {
                   type="button"
                   disabled={busy || blocked || !dirty}
                   onClick={() => void save(false)}
-                  className="flex h-9 shrink-0 items-center gap-1.5 rounded-md bg-emerald-600 px-3 text-xs font-semibold text-white disabled:opacity-40"
+                  className="text-cjk-safe flex h-9 shrink-0 items-center gap-1.5 rounded-md bg-emerald-600 px-3 text-xs font-semibold text-white disabled:opacity-40"
                 >
                   {busy ? <Loader2 className="size-3.5 animate-spin" /> : <Save className="size-3.5" />}
                   저장
@@ -595,7 +595,7 @@ export default function VehicleLayoutsPage() {
                     <button
                       type="button"
                       onClick={() => mutate(renumberSeats(draft))}
-                      className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-white"
+                      className="text-cjk-safe flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-white"
                     >
                       <Shuffle className="size-3.5" /> 번호 다시매기기
                     </button>
@@ -606,7 +606,7 @@ export default function VehicleLayoutsPage() {
                           mutate(removeSeat(draft, selectedSeat));
                           setSelectedSeat(null);
                         }}
-                        className="flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-semibold text-rose-600 hover:bg-white"
+                        className="text-cjk-safe flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-xs font-semibold text-rose-600 hover:bg-white"
                       >
                         <Trash2 className="size-3.5" /> {selectedSeat}번 삭제
                       </button>
@@ -656,7 +656,7 @@ export default function VehicleLayoutsPage() {
                         setTotalSeats(draft.seats.length);
                         setDirty(true);
                       }}
-                      className="flex items-center gap-1 rounded border border-slate-300 px-2 py-1 text-xs font-semibold text-slate-600"
+                      className="text-cjk-safe flex items-center gap-1 rounded border border-slate-300 px-2 py-1 text-xs font-semibold text-slate-600"
                     >
                       <RotateCcw className="size-3" /> 좌석 수({draft.seats.length})에 맞추기
                     </button>
@@ -700,7 +700,7 @@ export default function VehicleLayoutsPage() {
                           type="button"
                           onClick={() => void clearOverride()}
                           disabled={busy}
-                          className="w-full rounded-md border border-slate-300 py-1.5 text-xs font-semibold text-slate-600 disabled:opacity-40"
+                          className="text-cjk-safe w-full rounded-md border border-slate-300 py-1.5 text-xs font-semibold text-slate-600 disabled:opacity-40"
                         >
                           표준 배치도로 되돌리기
                         </button>
@@ -838,7 +838,7 @@ function VerifyPanel({
             type="button"
             onClick={onUnverify}
             disabled={busy}
-            className="w-full rounded-md border border-slate-300 py-1.5 text-xs font-semibold text-slate-600 disabled:opacity-40"
+            className="text-cjk-safe w-full rounded-md border border-slate-300 py-1.5 text-xs font-semibold text-slate-600 disabled:opacity-40"
           >
             확정 해제
           </button>
@@ -859,7 +859,7 @@ function VerifyPanel({
             type="button"
             onClick={onVerify}
             disabled={busy || !hasPhoto || !photoMatched || dirty}
-            className="w-full rounded-md bg-slate-900 py-1.5 text-xs font-semibold text-white disabled:opacity-40"
+            className="text-cjk-safe w-full rounded-md bg-slate-900 py-1.5 text-xs font-semibold text-white disabled:opacity-40"
           >
             검수 확정
           </button>
@@ -912,7 +912,7 @@ function ConfirmInUseDialog({
           <button
             type="button"
             onClick={onCancel}
-            className="flex-1 rounded-md border border-slate-300 py-2 text-xs font-semibold text-slate-600"
+            className="text-cjk-safe flex-1 rounded-md border border-slate-300 py-2 text-xs font-semibold text-slate-600"
           >
             취소
           </button>
@@ -920,7 +920,7 @@ function ConfirmInUseDialog({
             type="button"
             onClick={onConfirm}
             disabled={busy}
-            className="flex-1 rounded-md bg-rose-600 py-2 text-xs font-semibold text-white disabled:opacity-40"
+            className="text-cjk-safe flex-1 rounded-md bg-rose-600 py-2 text-xs font-semibold text-white disabled:opacity-40"
           >
             확인하고 저장
           </button>

@@ -181,7 +181,7 @@ export default function QaReviewPage() {
                 key={m}
                 onClick={() => setMode(m)}
                 className={cn(
-                  "px-3 py-1.5 text-sm",
+                  "text-cjk-safe px-3 py-1.5 text-sm",
                   mode === m ? "bg-slate-900 text-white" : "bg-admin-surface text-slate-600 hover:bg-admin-surface-hover",
                 )}
               >
@@ -347,14 +347,14 @@ export default function QaReviewPage() {
             <button
               type="button"
               onClick={() => setBulkPending({ action: "reject" })}
-              className="inline-flex min-h-11 items-center rounded-lg border border-admin-border px-4 text-sm font-semibold text-slate-700 hover:bg-admin-surface-hover"
+              className="text-cjk-safe inline-flex min-h-11 items-center rounded-lg border border-admin-border px-4 text-sm font-semibold text-slate-700 hover:bg-admin-surface-hover"
             >
               거절
             </button>
             <button
               type="button"
               onClick={() => setBulkPending({ action: "approve" })}
-              className="inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700"
+              className="text-cjk-safe inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700"
             >
               승인
             </button>

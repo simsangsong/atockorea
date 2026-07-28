@@ -318,7 +318,7 @@ INFO `rls_enabled_no_policy` 60여건은 **정책 없음 = 아무도 못 읽음*
 세 번째 표면이 정확히 그렇게 어긋났다. → 로딩·저장을 `hooks/useGuestNotes.ts` 하나로 모았다.
 **이제 갈라질 두 번째 자리가 없다.**
 
-### 유형 ③ CJK 글자 단위 줄바꿈 → `scripts/qa-cjk-scan.mjs`
+### 유형 ③ CJK 글자 단위 줄바꿈 → `scripts/qa-cjk-scan.ts`
 폭 제한 컨테이너 안의 한국어인데 `truncate`/`nowrap`/`line-clamp`/`text-cjk-*` 가 **하나도 없는**
 조합을 찾는다. 후보 22건 중 **3건만 실제 위험**(폭을 두고 형제와 경쟁하는 라벨):
 가이드 콘솔 눈썹(바로 아래 h1 은 truncate 가 있는데 이건 없었다) · 관제센터 제목 · 배차 폼 제목.

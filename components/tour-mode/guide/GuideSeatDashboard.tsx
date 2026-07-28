@@ -313,7 +313,7 @@ export default function GuideSeatDashboard({
                 <button
                   type="button"
                   onClick={() => toggleGroup(group.key)}
-                  className="flex w-full items-center justify-between gap-2 px-3.5 py-2.5 text-left"
+                  className="text-cjk-safe flex w-full items-center justify-between gap-2 px-3.5 py-2.5 text-left"
                   data-testid="pickup-group-header"
                 >
                   <span className="min-w-0">
@@ -347,7 +347,7 @@ export default function GuideSeatDashboard({
                             onMouseEnter={() => setHoverBookingId(row.bookingId)}
                             onMouseLeave={() => setHoverBookingId((cur) => (cur === row.bookingId ? null : cur))}
                             onClick={() => setCardBookingId(row.bookingId)}
-                            className="flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
+                            className="text-cjk-safe flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
                             data-testid="roster-row"
                           >
                             <span
@@ -407,7 +407,7 @@ export default function GuideSeatDashboard({
               {pickupLegend.map((entry) => (
                 <li
                   key={entry.key}
-                  className="flex items-center gap-1.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1"
+                  className="text-cjk-safe flex items-center gap-1.5 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 py-1"
                   data-testid="pickup-legend-item"
                   data-pickup-key={entry.key}
                   data-pickup-color={entry.color ?? ''}
@@ -465,7 +465,7 @@ export default function GuideSeatDashboard({
         type="button"
         disabled={!gate.enabled || busy || Boolean(data?.started)}
         onClick={() => void startTour()}
-        className="tr-label flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-safe)] px-4 py-3 font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)] mt-5"
+        className="text-cjk-safe tr-label flex w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-safe)] px-4 py-3 font-bold text-white disabled:bg-[var(--tr-surface-2)] disabled:text-[var(--tr-ink-3)] mt-5"
         data-testid="start-gate-btn"
       >
         <IconPlay size={TR_ICON.chip} aria-hidden />
@@ -648,19 +648,19 @@ function SeatActionSheet({
                 </button>
               )}
               {a.absent_at ? (
-                <button type="button" disabled={busy} className={`${btn} bg-[var(--tr-surface-2)] text-[var(--tr-ink)]`} onClick={() => onAbsent('clear')} data-testid="act-absent-clear">
+                <button type="button" disabled={busy} className={`text-cjk-safe ${btn} bg-[var(--tr-surface-2)] text-[var(--tr-ink)]`} onClick={() => onAbsent('clear')} data-testid="act-absent-clear">
                   노쇼 취소
                 </button>
               ) : a.checked_in_at ? (
-                <button type="button" disabled={busy} className={`${btn} bg-[var(--tr-surface-2)] text-[var(--tr-ink)]`} onClick={() => onCheckin('undo')} data-testid="act-checkin-undo">
+                <button type="button" disabled={busy} className={`text-cjk-safe ${btn} bg-[var(--tr-surface-2)] text-[var(--tr-ink)]`} onClick={() => onCheckin('undo')} data-testid="act-checkin-undo">
                   체크인 취소
                 </button>
               ) : (
                 <>
-                  <button type="button" disabled={busy} className={`${btn} bg-[var(--tr-safe)] text-white`} onClick={() => onCheckin('checkin')} data-testid="act-checkin">
+                  <button type="button" disabled={busy} className={`text-cjk-safe ${btn} bg-[var(--tr-safe)] text-white`} onClick={() => onCheckin('checkin')} data-testid="act-checkin">
                     체크인 (현장)
                   </button>
-                  <button type="button" disabled={busy} className={`${btn} bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]`} onClick={() => onAbsent('mark')} data-testid="act-absent">
+                  <button type="button" disabled={busy} className={`text-cjk-safe ${btn} bg-[var(--tr-danger-soft)] text-[var(--tr-danger)]`} onClick={() => onAbsent('mark')} data-testid="act-absent">
                     노쇼 처리
                   </button>
                 </>
@@ -843,7 +843,7 @@ function NoShowEvidenceSheet({
         <button
           type="button"
           onClick={() => fileRef.current?.click()}
-          className="tr-label flex min-h-[52px] w-full items-center gap-2 rounded-xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-3 text-left font-bold text-[var(--tr-ink)]"
+          className="text-cjk-safe tr-label flex min-h-[52px] w-full items-center gap-2 rounded-xl border border-dashed border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-4 py-3 text-left font-bold text-[var(--tr-ink)]"
           data-testid="evidence-photo-btn"
         >
           <IconCamera size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
@@ -974,13 +974,13 @@ function CheckinQrOverlay({
             href={staticUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="tr-label rounded-xl bg-neutral-100 px-4 py-2.5 font-bold text-neutral-900"
+            className="text-cjk-safe tr-label rounded-xl bg-neutral-100 px-4 py-2.5 font-bold text-neutral-900"
             data-testid="qr-print"
           >
             인쇄용 QR
           </a>
         )}
-        <button type="button" onClick={onClose} className="tr-label rounded-xl bg-neutral-900 px-5 py-2.5 font-bold text-white" data-testid="qr-close">
+        <button type="button" onClick={onClose} className="text-cjk-safe tr-label rounded-xl bg-neutral-900 px-5 py-2.5 font-bold text-white" data-testid="qr-close">
           닫기
         </button>
       </div>

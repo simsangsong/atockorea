@@ -232,7 +232,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
                 <button
                   type="button"
                   onClick={() => setQuoteOpen(true)}
-                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
+                  className={`text-cjk-safe ${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3`}
                 >
                   예약하기 · 카드 등록
                   <ArrowRight className="h-4 w-4" aria-hidden />
@@ -240,7 +240,7 @@ export default function BuilderShell({ region, pois, center, mapId, apiKey, plac
               ) : (
                 <a
                   href="mailto:contact@atockorea.com?subject=DMZ%20group%20quote%20request"
-                  className={`${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 text-center`}
+                  className={`text-cjk-safe ${homeBtnPrimary} group mt-2 inline-flex items-center justify-center gap-2 shadow-md hover:gap-3 text-center`}
                 >
                   맞춤 견적 문의 · contact@atockorea.com
                 </a>

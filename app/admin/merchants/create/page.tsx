@@ -208,14 +208,14 @@ export default function CreateMerchantPage() {
         <button
           type="button"
           onClick={() => router.push('/admin/merchants')}
-          className="min-h-11 rounded-lg border border-admin-border px-5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
+          className="text-cjk-safe min-h-11 rounded-lg border border-admin-border px-5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50"
         >
           취소
         </button>
         <button
           type="submit"
           disabled={loading}
-          className="min-h-11 rounded-lg bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
+          className="text-cjk-safe min-h-11 rounded-lg bg-blue-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-blue-700 disabled:opacity-50"
         >
           {loading ? '생성 중…' : '업체 계정 생성'}
         </button>

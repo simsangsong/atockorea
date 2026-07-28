@@ -79,7 +79,7 @@ export default function HealthPage() {
         <button
           type="button"
           onClick={refresh}
-          className="ml-auto inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-design-sm border border-admin-border px-3 text-sm font-medium text-slate-700 hover:bg-admin-surface-hover"
+          className="text-cjk-safe ml-auto inline-flex min-h-11 shrink-0 items-center gap-1.5 rounded-design-sm border border-admin-border px-3 text-sm font-medium text-slate-700 hover:bg-admin-surface-hover"
         >
           <RefreshCw size={15} className={loading ? 'animate-spin' : ''} aria-hidden />
           새로고침

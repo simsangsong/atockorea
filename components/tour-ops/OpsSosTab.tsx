@@ -63,7 +63,7 @@ export default function OpsSosTab({
               <button
                 type="button"
                 onClick={() => onOpenRoom(room.id)}
-                className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger)] tr-card-text font-semibold text-white"
+                className="text-cjk-safe flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger)] tr-card-text font-semibold text-white"
               >
                 <MessageSquareText className="size-4" />
                 룸 열기
@@ -73,7 +73,7 @@ export default function OpsSosTab({
                   href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
+                  className="text-cjk-safe flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
                 >
                   <MapPin className="size-4" />
                   위치
@@ -86,7 +86,7 @@ export default function OpsSosTab({
               {phone ? (
                 <a
                   href={`tel:${phone}`}
-                  className="flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
+                  className="text-cjk-safe flex h-11 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-danger-soft)] tr-card-text font-semibold text-[var(--tr-danger)] "
                 >
                   <Phone className="size-4" />
                   전화

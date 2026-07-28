@@ -257,7 +257,7 @@ export function MediaSection({ state, onChange }: Props) {
           <button
             type="button"
             onClick={swapThumbAndHero}
-            className="inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors"
+            className="text-cjk-safe inline-flex items-center gap-1 px-2 py-0.5 text-[11px] font-medium text-slate-600 hover:text-blue-700 hover:bg-blue-50 rounded transition-colors"
             title="썸네일과 히어로 이미지 교체"
           >
             <ArrowLeftRight className="size-3" />
@@ -276,7 +276,7 @@ export function MediaSection({ state, onChange }: Props) {
             type="button"
             onClick={() => fileInputRef.current?.click()}
             disabled={uploading}
-            className="inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 disabled:opacity-50"
+            className="text-cjk-safe inline-flex items-center gap-1 px-2 py-1 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 disabled:opacity-50"
           >
             <Upload className="size-3.5" />
             업로드

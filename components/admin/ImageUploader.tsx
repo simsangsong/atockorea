@@ -186,7 +186,7 @@ export default function ImageUploader({
                     navigator.clipboard.writeText(url);
                     alert('이미지 URL이 클립보드에 복사되었습니다!');
                   }}
-                  className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center"
+                  className="text-cjk-safe absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity rounded-lg flex items-center justify-center"
                 >
                   <span className="text-white text-xs">URL 복사</span>
                 </button>
@@ -205,7 +205,7 @@ export default function ImageUploader({
                     navigator.clipboard.writeText(url);
                     alert('URL 복사됨!');
                   }}
-                  className="px-2 py-1 bg-indigo-600 text-white text-xs rounded hover:bg-indigo-700"
+                  className="text-cjk-safe px-2 py-1 bg-indigo-600 text-white text-xs rounded hover:bg-indigo-700"
                 >
                   복사
                 </button>

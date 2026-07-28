@@ -118,7 +118,7 @@ export function SavedViews({
           <button
             type="button"
             onClick={handleSave}
-            className="inline-flex h-9 items-center rounded-lg bg-blue-600 px-2.5 text-xs font-semibold text-white hover:bg-blue-700"
+            className="text-cjk-safe inline-flex h-9 items-center rounded-lg bg-blue-600 px-2.5 text-xs font-semibold text-white hover:bg-blue-700"
           >
             저장
           </button>
@@ -128,7 +128,7 @@ export function SavedViews({
               setNaming(false);
               setName('');
             }}
-            className="inline-flex h-9 items-center rounded-lg px-1.5 text-xs text-slate-500 hover:text-slate-800"
+            className="text-cjk-safe inline-flex h-9 items-center rounded-lg px-1.5 text-xs text-slate-500 hover:text-slate-800"
           >
             취소
           </button>
@@ -138,7 +138,7 @@ export function SavedViews({
           <button
             type="button"
             onClick={() => setNaming(true)}
-            className="inline-flex items-center gap-1 rounded-full border border-dashed border-admin-border px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-admin-surface-hover"
+            className="text-cjk-safe inline-flex items-center gap-1 rounded-full border border-dashed border-admin-border px-2.5 py-1 text-xs font-medium text-slate-500 hover:bg-admin-surface-hover"
           >
             <BookmarkPlus className="h-3.5 w-3.5" />
             현재 필터 저장

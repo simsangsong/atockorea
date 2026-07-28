@@ -212,7 +212,7 @@ export default function TourModeSpotsAdminPage() {
             type="button"
             onClick={() => void save()}
             disabled={saving || loading}
-            className="shrink-0 rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
+            className="text-cjk-safe shrink-0 rounded-lg bg-gray-900 px-4 py-2 text-sm font-semibold text-white disabled:opacity-50"
           >
             {saving ? '저장 중…' : '저장'}
           </button>
@@ -235,7 +235,7 @@ export default function TourModeSpotsAdminPage() {
                 <button
                   type="button"
                   onClick={() => removeSpot(index)}
-                  className="shrink-0 rounded-lg px-3 py-2 text-sm text-red-600"
+                  className="text-cjk-safe shrink-0 rounded-lg px-3 py-2 text-sm text-red-600"
                 >
                   삭제
                 </button>
@@ -302,7 +302,7 @@ export default function TourModeSpotsAdminPage() {
           <button
             type="button"
             onClick={addSpot}
-            className="w-full rounded-xl border border-dashed border-gray-300 py-3 text-sm font-medium text-gray-500"
+            className="text-cjk-safe w-full rounded-xl border border-dashed border-gray-300 py-3 text-sm font-medium text-gray-500"
           >
             + 스팟 추가
           </button>

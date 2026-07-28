@@ -141,7 +141,7 @@ export function PoiListPane({
                 type="button"
                 onClick={submitNew}
                 disabled={!newKeyValid || newKeyExists}
-                className="px-2.5 h-8 text-xs font-semibold rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400"
+                className="text-cjk-safe px-2.5 h-8 text-xs font-semibold rounded-md bg-blue-600 text-white hover:bg-blue-700 disabled:bg-slate-200 disabled:text-slate-400"
               >
                 만들기
               </button>

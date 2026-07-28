@@ -219,7 +219,7 @@ export default function InboxPage() {
             <button
               type="button"
               onClick={reloadInbox}
-              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+              className="text-cjk-safe inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
             >
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
@@ -233,7 +233,7 @@ export default function InboxPage() {
             onClick={() => setFilter('status', status === 'unread' ? 'all' : 'unread')}
             aria-pressed={status === 'unread'}
             className={cn(
-              'ml-auto inline-flex min-h-9 items-center gap-1.5 rounded-full px-3.5 text-xs font-semibold transition-colors',
+              'text-cjk-safe ml-auto inline-flex min-h-9 items-center gap-1.5 rounded-full px-3.5 text-xs font-semibold transition-colors',
               status === 'unread' ? 'bg-blue-600 text-white' : 'bg-admin-surface-hover text-slate-600 hover:bg-slate-200',
             )}
           >
@@ -304,7 +304,7 @@ export default function InboxPage() {
               type="button"
               onClick={loadMore}
               disabled={loadingMore}
-              className="min-h-11 w-full rounded-design-sm border border-admin-border bg-admin-surface text-sm font-medium text-slate-600 hover:bg-admin-surface-hover disabled:opacity-50"
+              className="text-cjk-safe min-h-11 w-full rounded-design-sm border border-admin-border bg-admin-surface text-sm font-medium text-slate-600 hover:bg-admin-surface-hover disabled:opacity-50"
             >
               {loadingMore ? '불러오는 중…' : '더 보기'}
             </button>
@@ -403,7 +403,7 @@ function DetailSheet({
           <button
             type="button"
             onClick={() => onSetRead(item, item.unread)}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-design-sm border border-admin-border px-3 text-sm font-medium text-slate-700 hover:bg-admin-surface-hover"
+            className="text-cjk-safe inline-flex min-h-11 items-center gap-1.5 rounded-design-sm border border-admin-border px-3 text-sm font-medium text-slate-700 hover:bg-admin-surface-hover"
           >
             <CheckCheck className="size-4" /> {item.unread ? '읽음 표시' : '안 읽음 표시'}
           </button>

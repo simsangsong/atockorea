@@ -277,7 +277,7 @@ export default function OpsScheduleCalendar({
                                   ? cell.issues.map((i) => ISSUE_LABEL[i]).join(' · ')
                                   : undefined
                               }
-                              className={`m-0.5 flex size-[22px] items-center justify-center rounded tr-meta font-bold tabular-nums ${
+                              className={`text-cjk-safe m-0.5 flex size-[22px] items-center justify-center rounded tr-meta font-bold tabular-nums ${
                                 issue
                                   ? ISSUE_TONE[issue]
                                   : resting
@@ -347,7 +347,7 @@ export default function OpsScheduleCalendar({
                 openCell.cell.items.map((item) => (
                   <li
                     key={item.id}
-                    className="rounded-lg border border-[var(--tr-hairline)] px-2.5 py-1.5 tr-label"
+                    className="text-cjk-safe rounded-lg border border-[var(--tr-hairline)] px-2.5 py-1.5 tr-label"
                   >
                     <span className={item.status === 'cancelled' ? 'line-through opacity-60' : ''}>{item.label}</span>
                     {item.startTime ? (
@@ -365,7 +365,7 @@ export default function OpsScheduleCalendar({
             <button
               type="button"
               onClick={() => setOpenCell(null)}
-              className="mt-3 h-11 w-full rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold"
+              className="text-cjk-safe mt-3 h-11 w-full rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold"
             >
               <span className="text-cjk-safe">닫기</span>
             </button>

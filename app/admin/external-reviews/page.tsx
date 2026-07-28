@@ -294,7 +294,7 @@ export default function ExternalReviewsAdminPage() {
             type="button"
             onClick={save}
             disabled={!canSave}
-            className="inline-flex h-9 items-center gap-1.5 rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-cjk-safe inline-flex h-9 items-center gap-1.5 rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Save className="size-4" />
             {saving ? '저장 중...' : '저장 (upsert)'}
@@ -302,7 +302,7 @@ export default function ExternalReviewsAdminPage() {
           <button
             type="button"
             onClick={() => setForm(EMPTY_FORM)}
-            className="inline-flex h-9 items-center rounded-lg border border-slate-300 px-4 text-sm font-medium text-slate-700 hover:bg-slate-50"
+            className="text-cjk-safe inline-flex h-9 items-center rounded-lg border border-slate-300 px-4 text-sm font-medium text-slate-700 hover:bg-slate-50"
           >
             초기화
           </button>
@@ -319,7 +319,7 @@ export default function ExternalReviewsAdminPage() {
           <button
             type="button"
             onClick={() => void load()}
-            className="inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-300 px-3 text-xs font-medium text-slate-600 hover:bg-slate-50"
+            className="text-cjk-safe inline-flex h-8 items-center gap-1.5 rounded-lg border border-slate-300 px-3 text-xs font-medium text-slate-600 hover:bg-slate-50"
           >
             <RotateCw className="size-3.5" />
             새로고침
@@ -341,7 +341,7 @@ export default function ExternalReviewsAdminPage() {
                   href={`/tour-product/${slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 text-[11px] font-medium text-blue-600 hover:underline"
+                  className="text-cjk-safe inline-flex items-center gap-1 text-[11px] font-medium text-blue-600 hover:underline"
                 >
                   페이지 <ExternalLink className="size-3" />
                 </a>
@@ -382,7 +382,7 @@ export default function ExternalReviewsAdminPage() {
                     <button
                       type="button"
                       onClick={() => editRow(r)}
-                      className="rounded-md px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-50"
+                      className="text-cjk-safe rounded-md px-2 py-1 text-xs font-medium text-blue-600 hover:bg-blue-50"
                     >
                       수정
                     </button>

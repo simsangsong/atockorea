@@ -1229,7 +1229,7 @@ export default function Cockpit({
               key={min}
               type="button"
               onClick={() => void signal({ type: 'eta_reply', minutes: min }, `${min}분 후 도착 안내 ✓`)}
-              className="tr-label rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 font-bold text-[var(--tr-bubble-me-ink)]"
+              className="text-cjk-safe tr-label rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 font-bold text-[var(--tr-bubble-me-ink)]"
               data-testid={`cockpit-eta-${min}`}
             >
               {min}분
@@ -1652,7 +1652,7 @@ export default function Cockpit({
         <button
           type="button"
           onClick={() => void retryFailed()}
-          className="tr-body mx-4 mb-1.5 flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-danger)] transition-transform active:scale-[0.99]"
+          className="text-cjk-safe tr-body mx-4 mb-1.5 flex items-center justify-center gap-2 rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-danger)] transition-transform active:scale-[0.99]"
           data-testid="cockpit-retry-failed"
         >
           <TriangleAlert size={TR_ICON.chip} strokeWidth={TR_STROKE.default} aria-hidden />
@@ -1769,7 +1769,7 @@ export default function Cockpit({
             <button
               type="button"
               onClick={startRecording}
-              className="tr-btn-raised flex w-full items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)]"
+              className="text-cjk-safe tr-btn-raised flex w-full items-center justify-center gap-2.5 rounded-3xl bg-[var(--tr-bubble-me)] py-4 text-2xl font-bold text-[var(--tr-bubble-me-ink)]"
               data-testid="driver-mic"
             >
               <IconMic size={TR_ICON.tile} aria-hidden />
@@ -1803,7 +1803,7 @@ export default function Cockpit({
           <button
             type="button"
             onClick={stopRecording}
-            className="w-full rounded-3xl bg-red-500 py-4 text-2xl font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+            className="text-cjk-safe w-full rounded-3xl bg-red-500 py-4 text-2xl font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
             data-testid="driver-mic"
           >
             ■ 말 끝났어요
@@ -1827,7 +1827,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={cancelPending}
-                className="tr-body-lg rounded-3xl bg-[var(--tr-surface-2)] py-3 font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
+                className="text-cjk-safe tr-body-lg rounded-3xl bg-[var(--tr-surface-2)] py-3 font-bold text-[var(--tr-ink)] transition-transform active:scale-[0.99]"
                 data-testid="cockpit-cancel-send"
               >
                 취소
@@ -1835,7 +1835,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => pending && void sendVoice(pending)}
-                className="tr-btn-raised tr-body-lg rounded-3xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
+                className="text-cjk-safe tr-btn-raised tr-body-lg rounded-3xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
                 data-testid="cockpit-confirm-send"
               >
                 보내기
@@ -1845,7 +1845,7 @@ export default function Cockpit({
             <button
               type="button"
               onClick={cancelPending}
-              className="relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-3 transition-transform active:scale-[0.99]"
+              className="text-cjk-safe relative w-full overflow-hidden rounded-3xl bg-[var(--tr-surface-2)] py-3 transition-transform active:scale-[0.99]"
               data-testid="cockpit-undo-send"
             >
               <span aria-hidden className="cockpit-fill absolute bottom-0 left-0 h-1.5 rounded-full bg-white/80" />
@@ -1912,7 +1912,7 @@ export default function Cockpit({
                   setSheet('none');
                   void signal({ type: 'delay', minutes }, `${minutes}분 지연 안내 완료 ✓`);
                 }}
-                className="rounded-2xl bg-[var(--tr-surface-2)] py-5 tr-display font-bold text-[var(--tr-ink)]"
+                className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] py-5 tr-display font-bold text-[var(--tr-ink)]"
               >
                 +{minutes}분
               </button>
@@ -1934,7 +1934,7 @@ export default function Cockpit({
                     setSheet('none');
                     void signal({ type: 'return_time', time }, `${time} 복귀 안내 완료 ✓`);
                   }}
-                  className="rounded-2xl bg-[var(--tr-surface-2)] py-5 tr-display font-bold text-[var(--tr-ink)]"
+                  className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] py-5 tr-display font-bold text-[var(--tr-ink)]"
                 >
                   +{minutes}분 <span className="text-[var(--tr-ink-2)]">({time})</span>
                 </button>
@@ -1962,7 +1962,7 @@ export default function Cockpit({
               setSheet('none');
               void signal({ type: 'return_time', cancel: true }, '복귀 타이머 해제 ✓');
             }}
-            className="tr-body-lg mt-3 w-full rounded-2xl bg-[var(--tr-surface-2)] py-4 font-semibold text-[var(--tr-ink-2)]"
+            className="text-cjk-safe tr-body-lg mt-3 w-full rounded-2xl bg-[var(--tr-surface-2)] py-4 font-semibold text-[var(--tr-ink-2)]"
           >
             타이머 해제
           </button>
@@ -1987,7 +1987,7 @@ export default function Cockpit({
                         onClick={() => {
                           window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
                         }}
-                        className="tr-body flex-1 rounded-xl bg-[#FEE500] py-3 text-center font-bold text-black"
+                        className="text-cjk-safe tr-body flex-1 rounded-xl bg-[#FEE500] py-3 text-center font-bold text-black"
                       >
                         내비
                       </a>
@@ -1995,7 +1995,7 @@ export default function Cockpit({
                     <button
                       type="button"
                       onClick={() => openArrivalSheet(item)}
-                      className="tr-body flex-1 rounded-xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
+                      className="text-cjk-safe tr-body flex-1 rounded-xl bg-[var(--tr-bubble-me)] py-3 font-bold text-[var(--tr-bubble-me-ink)]"
                       data-testid="cockpit-open-arrival"
                     >
                       도착 안내
@@ -2105,7 +2105,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={captureArrCoords}
-                className="tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-bold text-[var(--tr-ink)]"
+                className="text-cjk-safe tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-bold text-[var(--tr-ink)]"
               >
                 다시 캡처
               </button>
@@ -2126,7 +2126,7 @@ export default function Cockpit({
                         setArrNoMeeting(false);
                         setArrTime(time);
                       }}
-                      className={`tr-body rounded-xl py-3 text-center font-bold ${
+                      className={`text-cjk-safe tr-body rounded-xl py-3 text-center font-bold ${
                         selected
                           ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                           : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
@@ -2157,7 +2157,7 @@ export default function Cockpit({
                   setArrNoMeeting(!arrNoMeeting);
                   setArrTime('');
                 }}
-                className={`tr-label mt-2 w-full rounded-xl px-3 py-2.5 font-bold ${
+                className={`text-cjk-safe tr-label mt-2 w-full rounded-xl px-3 py-2.5 font-bold ${
                   arrNoMeeting
                     ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface)] text-[var(--tr-ink-2)]'
@@ -2194,7 +2194,7 @@ export default function Cockpit({
               <button
                 type="button"
                 onClick={() => setArrTicket(!arrTicket)}
-                className={`tr-body flex items-center justify-center gap-1.5 rounded-2xl px-3 py-3 font-bold ${
+                className={`text-cjk-safe tr-body flex items-center justify-center gap-1.5 rounded-2xl px-3 py-3 font-bold ${
                   arrTicket
                     ? 'bg-[var(--tr-bubble-me)] text-[var(--tr-bubble-me-ink)]'
                     : 'bg-[var(--tr-surface-2)] text-[var(--tr-ink)]'
@@ -2268,7 +2268,7 @@ export default function Cockpit({
               type="button"
               onClick={() => void sendArrivalBundle()}
               disabled={arrBusy || (!arrNoMeeting && !/^\d{2}:\d{2}$/.test(arrTime))}
-              className="tr-btn-raised tr-body-lg w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="text-cjk-safe tr-btn-raised tr-body-lg w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="arrival-send"
             >
               {arrBusy ? '전송 중…' : '전원 발송'}
@@ -2301,7 +2301,7 @@ export default function Cockpit({
                           href={e.receipt_photo_url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="ml-2 inline-flex items-center gap-1 align-[-2px] font-semibold text-[var(--tr-accent-deep)] underline"
+                          className="text-cjk-safe ml-2 inline-flex items-center gap-1 align-[-2px] font-semibold text-[var(--tr-accent-deep)] underline"
                         >
                           <IconReceipt size={TR_ICON.meta} aria-hidden />
                           영수증
@@ -2375,7 +2375,7 @@ export default function Cockpit({
               type="button"
               disabled={expBusy || !expItem.trim() || !expAmount.trim()}
               onClick={() => void logExpense()}
-              className="tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 tr-display font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="text-cjk-safe tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 tr-display font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="driver-expense-log"
             >
               {expBusy ? '기록 중…' : '기록'}
@@ -2417,7 +2417,7 @@ export default function Cockpit({
                   <button
                     type="button"
                     onClick={() => setOtEnd(kstPlusMinutes(0))}
-                    className="tr-label shrink-0 rounded-2xl bg-[var(--tr-surface-2)] px-3 py-3.5 font-bold text-[var(--tr-ink)]"
+                    className="text-cjk-safe tr-label shrink-0 rounded-2xl bg-[var(--tr-surface-2)] px-3 py-3.5 font-bold text-[var(--tr-ink)]"
                   >
                     지금
                   </button>
@@ -2429,7 +2429,7 @@ export default function Cockpit({
             <button
               type="button"
               onClick={() => setOtHours(otComputed.overtimeHours)}
-              className="tr-body rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-ink)]"
+              className="text-cjk-safe tr-body rounded-2xl bg-[var(--tr-surface-2)] py-2.5 font-bold text-[var(--tr-ink)]"
               data-testid="overtime-recompute"
             >
               시간으로 계산
@@ -2469,7 +2469,7 @@ export default function Cockpit({
               type="button"
               disabled={expBusy || otHours <= 0}
               onClick={() => void logOvertime()}
-              className="tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 tr-display font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="text-cjk-safe tr-btn-raised rounded-2xl bg-[var(--tr-bubble-me)] py-4 tr-display font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="overtime-log"
             >
               {expBusy ? '기록 중…' : `${formatKrw(otAmount)} 기록`}
@@ -2611,7 +2611,7 @@ function Sheet({ title, children, onClose }: { title: string; children: React.Re
         <div className="mx-auto mb-2.5 h-1 w-9 rounded-full bg-[var(--tr-bubble-system)]" aria-hidden />
         <p className="mb-4 tr-display font-bold text-[var(--tr-ink)]">{title}</p>
         {children}
-        <button type="button" onClick={onClose} className="tr-btn-flat mt-4 w-full rounded-2xl py-4 tr-display font-bold text-[var(--tr-ink)]">
+        <button type="button" onClick={onClose} className="text-cjk-safe tr-btn-flat mt-4 w-full rounded-2xl py-4 tr-display font-bold text-[var(--tr-ink)]">
           닫기
         </button>
       </motion.div>

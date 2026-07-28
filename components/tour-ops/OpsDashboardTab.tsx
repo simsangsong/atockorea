@@ -116,7 +116,7 @@ export default function OpsDashboardTab({
           <button
             type="button"
             onClick={onRetry}
-            className="mt-3 min-h-[44px] rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-5 tr-card-text font-semibold text-[var(--tr-ink)]"
+            className="text-cjk-safe mt-3 min-h-[44px] rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] px-5 tr-card-text font-semibold text-[var(--tr-ink)]"
           >
             다시 시도
           </button>
@@ -141,7 +141,7 @@ export default function OpsDashboardTab({
                   key={`${item.roomId}-${item.reason}`}
                   type="button"
                   onClick={() => onOpenRoom(item.roomId)}
-                  className="block w-full rounded-2xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)]   px-4 py-3 text-left"
+                  className="text-cjk-safe block w-full rounded-2xl border border-[var(--tr-warn-soft)] bg-[var(--tr-warn-soft)]   px-4 py-3 text-left"
                 >
                   <p className="flex items-center gap-2 tr-card-text font-semibold text-[var(--tr-warn)] ">
                     <span className="shrink-0 rounded-full bg-[var(--tr-warn-soft)] px-2 py-0.5 tr-meta font-bold">

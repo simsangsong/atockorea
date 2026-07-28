@@ -380,7 +380,7 @@ export default function GuidePlanPanel({
                           type="button"
                           disabled={busy === `arrive:${id}` || arrivedIds.has(id)}
                           onClick={() => void announceArrival(stop)}
-                          className={`tr-label rounded-lg px-2 py-1 font-semibold ${
+                          className={`text-cjk-safe tr-label rounded-lg px-2 py-1 font-semibold ${
                             arrivedIds.has(id) || stop.status === 'arrived'
                               ? 'bg-[var(--tr-accent-soft)] text-[var(--tr-safe)]'
                               : 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'
@@ -539,7 +539,7 @@ export default function GuidePlanPanel({
         <button
           type="submit"
           disabled={!addText.trim()}
-          className="tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-semibold text-[var(--tr-ink-2)] ring-1 ring-[var(--tr-hairline)] disabled:opacity-40"
+          className="text-cjk-safe tr-label shrink-0 rounded-xl bg-[var(--tr-surface)] px-3 py-2 font-semibold text-[var(--tr-ink-2)] ring-1 ring-[var(--tr-hairline)] disabled:opacity-40"
         >
           추가
         </button>

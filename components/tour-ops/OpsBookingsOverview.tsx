@@ -120,7 +120,13 @@ export default function OpsBookingsOverview({
   return (
     <div className="space-y-3 p-3" data-testid="ops-bookings-overview">
       {/* 뷰 전환 */}
-      <div className="flex items-center gap-2">
+      {/* X1 — `flex-wrap` matters here, not just cosmetically. Five chips do not
+          fit 390px, and without wrapping the only ways out are the two this
+          toolbar has already been through: characters breaking mid-word
+          (`투어일 / 기준`, the reported defect) or, once `.text-cjk-safe` stops
+          that, an ellipsis that hides WHICH axis is active — trading a broken
+          label for an unreadable one. Wrapping keeps every label whole. */}
+      <div className="flex flex-wrap items-center gap-2">
         {(['week', 'month'] as const).map((k) => (
           <button
             key={k}
@@ -144,7 +150,7 @@ export default function OpsBookingsOverview({
         <button
           type="button"
           onClick={() => setAxis((a) => (a === 'tour_date' ? 'created_at' : 'tour_date'))}
-          className="ml-auto min-h-[36px] rounded-full bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
+          className="text-cjk-safe ml-auto min-h-[36px] rounded-full bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           data-testid="axis-toggle"
         >
           {axis === 'tour_date' ? '투어일 기준' : '예약 유입일 기준'}
@@ -164,7 +170,7 @@ export default function OpsBookingsOverview({
             format: 'xlsx',
             ...(view === 'month' && month ? { month } : {}),
           })}`}
-          className="flex min-h-[36px] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
+          className="text-cjk-safe flex min-h-[36px] items-center gap-1 rounded-full bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           data-testid="xlsx-export"
         >
           <Download size={13} aria-hidden />
@@ -361,7 +367,7 @@ function MonthCalendar({
             <button
               key={day}
               type="button"
-              className="min-h-[46px] rounded-lg bg-[var(--tr-surface-2)] p-1 text-left"
+              className="text-cjk-safe min-h-[46px] rounded-lg bg-[var(--tr-surface-2)] p-1 text-left"
               data-testid="calendar-cell"
               data-date={day}
             >

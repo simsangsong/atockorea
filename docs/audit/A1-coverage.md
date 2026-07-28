@@ -113,6 +113,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `TravelTimeline.tsx` | A1.6 | ✅ |
 | `WebviewEscapeBanner.tsx` | A1.6 | ✅ |
 | `entryCopy.ts` | A1.6 | ✅ |
+| `useEntryLocale.ts` | A1.6 | ✅ (N6에서 신설 — 첫 렌더를 서버가 정한 로케일로 고정하고 그 뒤에만 기기 로케일로 갱신) |
 | `icons.ts` | A1.6 | ✅ |
 | `useKeyboardOpen.ts` | A1.6 | ✅ |
 

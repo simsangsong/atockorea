@@ -132,7 +132,7 @@ export function ProductsListPane({
               key={c}
               type="button"
               onClick={() => setCityFilter(c)}
-              className={`px-2 py-0.5 text-xs rounded-full border transition-colors ${
+              className={`text-cjk-safe px-2 py-0.5 text-xs rounded-full border transition-colors ${
                 cityFilter === c
                   ? 'bg-slate-900 text-white border-slate-900'
                   : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
@@ -148,7 +148,7 @@ export function ProductsListPane({
               key={s}
               type="button"
               onClick={() => setStatusFilter(s)}
-              className={`px-2 py-0.5 text-xs rounded-full border transition-colors ${
+              className={`text-cjk-safe px-2 py-0.5 text-xs rounded-full border transition-colors ${
                 statusFilter === s
                   ? 'bg-slate-900 text-white border-slate-900'
                   : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'

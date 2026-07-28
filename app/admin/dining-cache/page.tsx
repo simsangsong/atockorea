@@ -444,7 +444,7 @@ function ReportQueue({
                     href={row.place_url}
                     target="_blank"
                     rel="noreferrer"
-                    className="flex items-center gap-0.5 text-emerald-700 hover:underline"
+                    className="text-cjk-safe flex items-center gap-0.5 text-emerald-700 hover:underline"
                   >
                     카카오맵 <ExternalLink className="size-2.5" />
                   </a>
@@ -521,7 +521,7 @@ function CellList({
         return (
           <div key={row.cell} className="rounded-lg border border-admin-border bg-admin-surface p-3">
             <div className="flex flex-wrap items-start gap-2">
-              <button type="button" onClick={() => onOpenCell(row.cell)} className="min-w-0 flex-1 text-left">
+              <button type="button" onClick={() => onOpenCell(row.cell)} className="text-cjk-safe min-w-0 flex-1 text-left">
                 <div className="flex flex-wrap items-center gap-1.5">
                   <span className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-xs font-semibold text-slate-700">
                     {row.cell}
@@ -669,7 +669,7 @@ function CellDetail({
                         href={place.place_url}
                         target="_blank"
                         rel="noreferrer"
-                        className="flex items-center gap-0.5 text-emerald-700 hover:underline"
+                        className="text-cjk-safe flex items-center gap-0.5 text-emerald-700 hover:underline"
                       >
                         카카오맵 <ExternalLink className="size-2.5" />
                       </a>

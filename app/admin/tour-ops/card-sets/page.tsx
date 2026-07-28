@@ -182,7 +182,7 @@ function CardSetsPage() {
               <button
                 type="button"
                 onClick={() => router.push(`/admin/tour-ops/card-sets?tour_id=${encodeURIComponent(tour.id)}`)}
-                className="w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3 text-left"
+                className="text-cjk-safe w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3 text-left"
               >
                 <p className="text-[13px] font-bold text-[var(--tr-ink)]">{tour.title ?? tour.id}</p>
                 <p className="mt-0.5 text-[11px] text-[var(--tr-ink-2)]">
@@ -197,7 +197,7 @@ function CardSetsPage() {
             </li>
           ))}
           {tours.length === 0 && (
-            <li className="rounded-xl border border-dashed border-[var(--tr-hairline)] p-4 text-center text-[12px] text-[var(--tr-ink-3)]">
+            <li className="text-cjk-safe rounded-xl border border-dashed border-[var(--tr-hairline)] p-4 text-center text-[12px] text-[var(--tr-ink-3)]">
               투어 상품이 없어요.
             </li>
           )}
@@ -209,7 +209,7 @@ function CardSetsPage() {
           <button
             type="button"
             onClick={() => router.push('/admin/tour-ops/card-sets')}
-            className="flex h-9 items-center gap-1.5 text-[12px] font-semibold text-[var(--tr-ink-2)]"
+            className="text-cjk-safe flex h-9 items-center gap-1.5 text-[12px] font-semibold text-[var(--tr-ink-2)]"
           >
             <ArrowLeft className="size-3.5" /> 상품 목록
           </button>

@@ -128,7 +128,7 @@ export default function CardSetEditor({
   return (
     <div className="space-y-3">
       <div className="flex flex-wrap items-center gap-1.5">
-        <span className="rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 tr-meta font-semibold text-[var(--tr-ink-2)]">
+        <span className="text-cjk-safe rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 tr-meta font-semibold text-[var(--tr-ink-2)]">
           현재 적용: {SOURCE_LABEL[resolved.card_ids_source]}
         </span>
         <span className="tr-meta text-[var(--tr-ink-3)]">{cardIds.length}장 · 위에서부터 순서대로 발송</span>
@@ -139,7 +139,7 @@ export default function CardSetEditor({
           const card = BRIEFING_CARD_DESCRIPTORS.find((row) => row.id === id);
           if (!card) return null;
           return (
-            <li key={id} className="rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
+            <li key={id} className="text-cjk-safe rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] p-3">
               <div className="flex items-start gap-2">
                 <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent-soft)] tr-meta font-bold text-[var(--tr-accent-deep)]">
                   {index + 1}
@@ -178,7 +178,7 @@ export default function CardSetEditor({
                     type="button"
                     onClick={() => remove(id)}
                     disabled={busy || cardIds.length <= 1}
-                    className="h-8 rounded-lg border border-[var(--tr-hairline)] px-2 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-30"
+                    className="text-cjk-safe h-8 rounded-lg border border-[var(--tr-hairline)] px-2 tr-meta font-semibold text-[var(--tr-ink-2)] disabled:opacity-30"
                   >
                     제외
                   </button>
@@ -281,7 +281,7 @@ export default function CardSetEditor({
             type="button"
             onClick={onClear}
             disabled={busy}
-            className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+            className="text-cjk-safe flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl border border-[var(--tr-hairline)] tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
           >
             <RotateCcw className="size-3.5" /> {inheritLabel}으로 되돌리기
           </button>
@@ -290,7 +290,7 @@ export default function CardSetEditor({
           type="button"
           onClick={save}
           disabled={busy || !dirty}
-          className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+          className="text-cjk-safe flex h-11 flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
         >
           {busy ? <Loader2 className="size-3.5 animate-spin" /> : null} 저장
         </button>

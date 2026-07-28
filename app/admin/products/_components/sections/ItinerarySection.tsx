@@ -136,7 +136,7 @@ export function ItinerarySection({ stops, onChange }: Props) {
         <button
           type="button"
           onClick={addStop}
-          className="mt-3 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-blue-700 bg-blue-50 border border-dashed border-blue-300 rounded-lg hover:bg-blue-100 transition-colors"
+          className="text-cjk-safe mt-3 w-full inline-flex items-center justify-center gap-1.5 px-3 py-2 text-sm font-medium text-blue-700 bg-blue-50 border border-dashed border-blue-300 rounded-lg hover:bg-blue-100 transition-colors"
         >
           <Plus className="size-4" />
           스톱 추가

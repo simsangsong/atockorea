@@ -301,7 +301,7 @@ export default function AnalyticsOverviewPage() {
           <button
             type="button"
             onClick={() => setShowAllEvents((v) => !v)}
-            className="min-h-11 w-full border-t border-admin-border text-xs font-semibold text-blue-600 hover:bg-admin-surface-hover"
+            className="text-cjk-safe min-h-11 w-full border-t border-admin-border text-xs font-semibold text-blue-600 hover:bg-admin-surface-hover"
           >
             {showAllEvents ? '접기' : `모두 보기 (${topEvents.length})`}
           </button>

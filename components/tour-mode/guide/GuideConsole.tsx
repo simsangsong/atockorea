@@ -644,7 +644,7 @@ export default function GuideConsole() {
             setDaySeg('broadcast');
             setDayToolsOpen(true);
           }}
-          className="flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
+          className="text-cjk-safe flex min-h-[60px] w-full items-center gap-3 px-3.5 py-2 text-left active:bg-[var(--tr-surface-2)]"
           data-testid="daytools-open"
         >
           <span className="tr-chip tr-chip--accent flex h-11 w-11 shrink-0 items-center justify-center !rounded-[14px]">
@@ -852,7 +852,7 @@ export default function GuideConsole() {
                   recordingRef.current = null;
                   setVoiceState('idle');
                 }}
-                className="tr-label flex min-h-[44px] items-center gap-1 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
+                className="text-cjk-safe tr-label flex min-h-[44px] items-center gap-1 rounded-full px-3 font-medium text-[var(--tr-ink-2)]"
               >
                 <IconClose size={TR_ICON.meta} aria-hidden />
                 취소
@@ -860,7 +860,7 @@ export default function GuideConsole() {
               <button
                 type="button"
                 onClick={() => recordingRef.current?.stop()}
-                className="tr-label flex min-h-[44px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
+                className="text-cjk-safe tr-label flex min-h-[44px] items-center gap-1 rounded-full bg-[var(--tr-danger)] px-4 font-semibold text-white"
                 data-testid="guide-recording-done"
               >
                 <IconStop size={TR_ICON.meta} aria-hidden />
@@ -1008,7 +1008,7 @@ export default function GuideConsole() {
                   if (ok) setMeetPin(null);
                 })
               }
-              className="tr-label shrink-0 rounded-[var(--tr-radius-input)] bg-[var(--tr-accent)] px-3.5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+              className="text-cjk-safe tr-label shrink-0 rounded-[var(--tr-radius-input)] bg-[var(--tr-accent)] px-3.5 py-2.5 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
               data-testid="meeting-send"
             >
               공지
@@ -1037,7 +1037,7 @@ export default function GuideConsole() {
                 type="button"
                 disabled={busy === 'free'}
                 onClick={() => void startFreeTime(minutes)}
-                className="tr-label flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-ink)] disabled:opacity-40"
+                className="text-cjk-safe tr-label flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-ink)] disabled:opacity-40"
               >
                 {minutes}분
               </button>
@@ -1046,7 +1046,7 @@ export default function GuideConsole() {
               type="button"
               disabled={busy === 'free'}
               onClick={() => void send({ notice: { kind: 'free_time_timer', cancelled: true, point: freePoint } }, 'free')}
-              className="tr-label flex-1 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-danger)] disabled:opacity-40"
+              className="text-cjk-safe tr-label flex-1 rounded-xl border border-[var(--tr-danger-soft)] bg-[var(--tr-surface)] py-2.5 font-bold text-[var(--tr-danger)] disabled:opacity-40"
               data-testid="free-time-cancel"
             >
               종료

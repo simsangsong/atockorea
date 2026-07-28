@@ -151,7 +151,7 @@ export default function ReclaimQueuePage() {
       <div className="flex flex-wrap items-center gap-2">
         <ShieldCheck className="size-5 text-slate-700" />
         <h1 className="text-lg font-bold text-slate-900">재등록 승인 큐</h1>
-        <span className="rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700">
+        <span className="text-cjk-safe rounded-full bg-rose-100 px-2 py-0.5 text-xs font-semibold text-rose-700">
           대기 {pendingCount}
         </span>
         <div className="ml-auto flex items-center gap-2">
@@ -162,7 +162,7 @@ export default function ReclaimQueuePage() {
           <button
             type="button"
             onClick={() => void load()}
-            className="flex h-9 items-center gap-1.5 rounded-md border border-admin-border px-3 text-xs font-semibold text-slate-600"
+            className="text-cjk-safe flex h-9 items-center gap-1.5 rounded-md border border-admin-border px-3 text-xs font-semibold text-slate-600"
           >
             <RefreshCw className="size-3.5" /> 새로고침
           </button>
@@ -246,7 +246,7 @@ export default function ReclaimQueuePage() {
                             setStaged({ key: row.subject_key, decision: 'approve' });
                             setAcknowledged(false);
                           }}
-                          className="h-9 flex-1 rounded-md bg-slate-900 text-xs font-semibold text-white"
+                          className="text-cjk-safe h-9 flex-1 rounded-md bg-slate-900 text-xs font-semibold text-white"
                         >
                           승인 (기존 기기 폐기)
                         </button>
@@ -256,7 +256,7 @@ export default function ReclaimQueuePage() {
                             setStaged({ key: row.subject_key, decision: 'reject' });
                             setAcknowledged(false);
                           }}
-                          className="h-9 flex-1 rounded-md border border-slate-300 text-xs font-semibold text-slate-600"
+                          className="text-cjk-safe h-9 flex-1 rounded-md border border-slate-300 text-xs font-semibold text-slate-600"
                         >
                           거절
                         </button>
@@ -308,7 +308,7 @@ export default function ReclaimQueuePage() {
                               setStaged(null);
                               setAcknowledged(false);
                             }}
-                            className="h-9 flex-1 rounded-md border border-slate-300 text-xs font-semibold text-slate-600"
+                            className="text-cjk-safe h-9 flex-1 rounded-md border border-slate-300 text-xs font-semibold text-slate-600"
                           >
                             취소
                           </button>
@@ -316,7 +316,7 @@ export default function ReclaimQueuePage() {
                             type="button"
                             disabled={!acknowledged || busy}
                             onClick={() => void decide(row, staged.decision)}
-                            className={`flex h-9 flex-1 items-center justify-center gap-1.5 rounded-md text-xs font-semibold text-white disabled:opacity-40 ${
+                            className={`text-cjk-safe flex h-9 flex-1 items-center justify-center gap-1.5 rounded-md text-xs font-semibold text-white disabled:opacity-40 ${
                               staged.decision === 'approve' ? 'bg-emerald-600' : 'bg-rose-600'
                             }`}
                           >
@@ -376,7 +376,7 @@ function ApprovalPanel({ data }: { data: ApprovalResult }) {
               setCopied(false);
             }
           }}
-          className="flex h-8 shrink-0 items-center gap-1 rounded bg-emerald-600 px-2.5 text-[11px] font-semibold text-white"
+          className="text-cjk-safe flex h-8 shrink-0 items-center gap-1 rounded bg-emerald-600 px-2.5 text-[11px] font-semibold text-white"
         >
           <Copy className="size-3" /> {copied ? '복사됨' : '복사'}
         </button>

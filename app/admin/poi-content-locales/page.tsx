@@ -212,7 +212,7 @@ export default function PoiContentLocalesPage() {
         {visible.map((item) => {
           const key = `${item.poi_key}:${item.locale}`;
           return (
-            <li key={key} className="rounded-xl border border-stone-200 bg-white p-4">
+            <li key={key} className="text-cjk-safe rounded-xl border border-stone-200 bg-white p-4">
               <div className="mb-2 flex flex-wrap items-center gap-2">
                 <span className="text-cjk-safe rounded-full bg-stone-900 px-2 py-0.5 text-xs font-semibold text-white">
                   {item.locale}

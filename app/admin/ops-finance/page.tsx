@@ -178,7 +178,7 @@ export default function OpsFinancePage() {
           <button
             type="button"
             onClick={fetchLedger}
-            className="inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+            className="text-cjk-safe inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
           >
             <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             새로고침

@@ -251,7 +251,7 @@ export default function MerchantsPage() {
             </select>
             <button
               onClick={fetchMerchants}
-              className="inline-flex min-h-11 flex-shrink-0 items-center gap-2 rounded-lg bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800"
+              className="text-cjk-safe inline-flex min-h-11 flex-shrink-0 items-center gap-2 rounded-lg bg-slate-900 px-5 text-sm font-medium text-white transition-colors hover:bg-slate-800"
             >
               <Search className="size-4" />
               검색
@@ -281,7 +281,7 @@ export default function MerchantsPage() {
           <p className="text-sm font-medium text-red-800">오류: {error}</p>
           <button
             onClick={fetchMerchants}
-            className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
+            className="text-cjk-safe mt-4 inline-flex min-h-11 items-center gap-2 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
           >
             <RefreshCw className="size-4" />
             다시 시도
@@ -299,7 +299,7 @@ export default function MerchantsPage() {
                       <th
                         key={i}
                         className={cn(
-                          'px-6 py-3 text-xs font-medium uppercase tracking-wider text-slate-500',
+                          'text-cjk-safe px-6 py-3 text-xs font-medium uppercase tracking-wider text-slate-500',
                           i === 5 ? 'text-right' : 'text-left',
                         )}
                       >
@@ -361,7 +361,7 @@ export default function MerchantsPage() {
                           </Link>
                           <button
                             onClick={() => setPending({ kind: 'delete', merchant })}
-                            className="inline-flex items-center gap-1 text-red-600 hover:text-red-800"
+                            className="text-cjk-safe inline-flex items-center gap-1 text-red-600 hover:text-red-800"
                           >
                             <Trash2 className="size-4" />
                             삭제
@@ -426,7 +426,7 @@ export default function MerchantsPage() {
                       </Link>
                       <button
                         onClick={() => setPending({ kind: 'delete', merchant })}
-                        className="inline-flex min-h-9 items-center gap-1 text-sm font-medium text-red-600"
+                        className="text-cjk-safe inline-flex min-h-9 items-center gap-1 text-sm font-medium text-red-600"
                       >
                         <Trash2 className="size-4" />
                         삭제

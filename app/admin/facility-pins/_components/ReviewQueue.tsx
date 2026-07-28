@@ -208,7 +208,7 @@ export default function ReviewQueue({
         <button
           type="button"
           onClick={() => setFarFirst((v) => !v)}
-          className={`rounded-md border px-2 py-1.5 text-xs font-semibold ${
+          className={`text-cjk-safe rounded-md border px-2 py-1.5 text-xs font-semibold ${
             farFirst ? 'border-rose-300 bg-rose-50 text-rose-700' : 'border-slate-300 text-slate-600 hover:bg-slate-50'
           }`}
           title={`중심에서 ${FAR_THRESHOLD_M}m 넘는 핀은 오탐일 확률이 높아요`}
@@ -219,7 +219,7 @@ export default function ReviewQueue({
           type="button"
           onClick={() => void load()}
           disabled={loading}
-          className="ml-auto flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-semibold text-slate-500 hover:bg-slate-100 disabled:opacity-50"
+          className="text-cjk-safe ml-auto flex items-center gap-1 rounded-md px-2 py-1.5 text-xs font-semibold text-slate-500 hover:bg-slate-100 disabled:opacity-50"
         >
           <RefreshCw className={`size-3.5 ${loading ? 'animate-spin' : ''}`} /> 새로고침
         </button>
@@ -313,7 +313,7 @@ function ReviewPoiCard({
           <button
             type="button"
             onClick={onEdit}
-            className="flex items-center gap-1 rounded-md border border-slate-300 px-2 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-50"
+            className="text-cjk-safe flex items-center gap-1 rounded-md border border-slate-300 px-2 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-50"
           >
             <Pencil className="size-3" /> 지도편집
           </button>
@@ -321,7 +321,7 @@ function ReviewPoiCard({
             type="button"
             onClick={() => onVerify(pins.map((p) => p.id))}
             disabled={allBusy}
-            className="flex items-center gap-1 rounded-md bg-emerald-600 px-2.5 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
+            className="text-cjk-safe flex items-center gap-1 rounded-md bg-emerald-600 px-2.5 py-1.5 text-xs font-semibold text-white hover:bg-emerald-700 disabled:opacity-50"
           >
             <Check className="size-3.5" /> 전체 검수
           </button>

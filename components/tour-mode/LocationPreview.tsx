@@ -44,7 +44,7 @@ export default function LocationPreview({
       data-testid="location-preview"
       data-audience={audience}
     >
-      <a href={openHref} target="_blank" rel="noopener noreferrer" className="block">
+      <a href={openHref} target="_blank" rel="noopener noreferrer" className="text-cjk-safe block">
         {imgOk ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img

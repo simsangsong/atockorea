@@ -313,7 +313,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                                 log.id,
                               )
                             }
-                            className="h-9 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-white disabled:opacity-40"
+                            className="text-cjk-safe h-9 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             매핑 + 재커밋
                           </button>
@@ -328,7 +328,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                             type="button"
                             disabled={busyId === log.id}
                             onClick={() => void post({ action: 'approve', logId: log.id }, log.id)}
-                            className="h-9 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
+                            className="text-cjk-safe h-9 rounded-lg bg-[var(--tr-safe)] px-3 tr-label font-semibold text-white disabled:opacity-40"
                           >
                             승인 커밋
                           </button>
@@ -337,7 +337,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
                           type="button"
                           disabled={busyId === log.id}
                           onClick={() => void post({ action: 'ignore', logId: log.id }, log.id)}
-                          className="h-9 rounded-lg bg-[var(--tr-surface-2)] px-3 tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
+                          className="text-cjk-safe h-9 rounded-lg bg-[var(--tr-surface-2)] px-3 tr-label font-semibold text-[var(--tr-ink-2)] disabled:opacity-40"
                         >
                           무시
                         </button>
