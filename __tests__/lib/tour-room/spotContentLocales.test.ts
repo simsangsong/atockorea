@@ -16,6 +16,7 @@ import {
   resolveSpotContentFor,
   resolveSpotContentForLocales,
   speechSafe,
+  splitEmphasis,
 } from '@/lib/tour-room/spotContent';
 
 const CURATED = {
@@ -175,5 +176,34 @@ describe('composeSpotNarration — real-world shape', () => {
     const spoken = composeSpotNarration({ name: 'X', description: sentence.repeat(60) });
     expect(spoken.length).toBeLessThanOrEqual(1200);
     expect(spoken.endsWith('.')).toBe(true);
+  });
+});
+
+describe('splitEmphasis — display', () => {
+  it('turns **bold** into emphasis parts instead of literal asterisks', () => {
+    // 116 of 117 live English descriptions are written in markdown, and the
+    // card renders description as plain text — guests were reading asterisks.
+    expect(splitEmphasis('**9.81 Park** is Korea’s first **gravity-powered** kart facility')).toEqual([
+      { text: '9.81 Park', bold: true },
+      { text: ' is Korea’s first ', bold: false },
+      { text: 'gravity-powered', bold: true },
+      { text: ' kart facility', bold: false },
+    ]);
+  });
+
+  it('spans newlines, since the briefings are multi-paragraph', () => {
+    expect(splitEmphasis('a **b\nc** d').some((p) => p.bold && p.text === 'b\nc')).toBe(true);
+  });
+
+  it('leaves lone asterisks and underscores alone', () => {
+    // Measurements and transliterations use them in real prose.
+    expect(splitEmphasis('5 * 3 m and snake_case')).toEqual([
+      { text: '5 * 3 m and snake_case', bold: false },
+    ]);
+  });
+
+  it('is empty for empty input', () => {
+    expect(splitEmphasis('')).toEqual([]);
+    expect(splitEmphasis(null)).toEqual([]);
   });
 });

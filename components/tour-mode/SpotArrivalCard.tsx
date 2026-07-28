@@ -10,7 +10,7 @@
 
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { isAudioPrimed, primeAudio, speakNarration, stopSpeaking } from '@/lib/tour-room/tts';
-import { composeSpotNarration } from '@/lib/tour-room/spotContent';
+import { composeSpotNarration, splitEmphasis, stripMarkdown } from '@/lib/tour-room/spotContent';
 import {
   IconAdmission,
   IconArrived,
@@ -197,7 +197,17 @@ export default function SpotArrivalCard({
         {/* A2 — the story is the point of the card, so it is no longer folded
             behind "More details". A guide does not make you ask twice. */}
         {content.description && (
-          <p className="tr-card-text text-cjk-body mt-2 text-[var(--tr-ink)]">{content.description}</p>
+          <p className="tr-card-text text-cjk-body mt-2 text-[var(--tr-ink)]">
+            {splitEmphasis(content.description).map((part, index) =>
+              part.bold ? (
+                <strong key={index} className="font-semibold">
+                  {part.text}
+                </strong>
+              ) : (
+                <span key={index}>{part.text}</span>
+              ),
+            )}
+          </p>
         )}
 
         {highlights.length > 0 && (
@@ -208,7 +218,7 @@ export default function SpotArrivalCard({
                 className="tr-meta flex items-center gap-1 rounded-full bg-[var(--tr-accent-soft)] px-2.5 py-1 font-medium text-[var(--tr-accent-deep)]"
               >
                 <IconHighlight size={TR_ICON.meta} aria-hidden />
-                {highlight}
+                {stripMarkdown(highlight)}
               </span>
             ))}
           </div>
@@ -219,7 +229,7 @@ export default function SpotArrivalCard({
             {visibleRows.map((row, index) => (
               <li key={index} className="tr-label flex gap-2 leading-relaxed text-[var(--tr-ink-2)]">
                 <row.Icon size={TR_ICON.chip} strokeWidth={TR_STROKE.default} className="mt-0.5 shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
-                <span>{row.text}</span>
+                <span>{stripMarkdown(row.text)}</span>
               </li>
             ))}
           </ul>

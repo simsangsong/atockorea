@@ -17,6 +17,7 @@ import {
   checkUntranslated,
   checkVerbatim,
   numberMultiset,
+  romanNumeralValues,
   verifyUnit,
 } from '../gates';
 
@@ -93,7 +94,16 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
 
   it('천단위 구분기호는 합치고 날짜 구분점은 합치지 않는다', () => {
     expect(numberMultiset('1.100 m')).toEqual(['1100']);
-    expect(numberMultiset('02.07.2007')).toEqual(['02', '07', '2007']);
+    // 날짜는 여전히 세 개의 값으로 남는다(구분점을 합치지 않는다).
+    // 선행 0은 값이 아니라 서식이므로 정규화된다 — 아래 케이스가 그 이유다.
+    expect(numberMultiset('02.07.2007')).toEqual(['2', '2007', '7']);
+  });
+
+  it('날짜를 현지 표기로 다시 써도 값 소실로 보지 않는다', () => {
+    // 2026-07-28 실측: 원문 `6/18–7/5`(en) → `18/06–05/07`(fr). 같은 값인데
+    // `06`≠`6` 문자열 비교 때문에 4개 언어에서 동시에 G3 fail이 났다.
+    const f = checkNumbers('festival 6/18–7/5', 'festival du 18/06 au 05/07', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
   });
 });
 
@@ -233,8 +243,10 @@ describe('G10 문자셋 — 로케일 교차 오염 (H8)', () => {
   });
 
   it('러시아어인데 라틴문자만이면 fail', () => {
+    // 문구가 아니라 판정을 고정한다 — 키릴이 0자인 경우는 비율이 아니라
+    // "한 자도 없다"로 보고되지만, 어느 쪽이든 G10 fail이어야 한다.
     const f = checkCharset('Visit Gamcheon village at dawn', '/p', 'ru');
-    expect(f.some((x) => x.message.includes('키릴 비율'))).toBe(true);
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
   });
 
   it('러시아어에 라틴 고유명사가 일부 섞이는 것은 허용', () => {
@@ -293,5 +305,101 @@ describe('verifyUnit — 통합', () => {
       { locale: 'ru' },
     );
     expect(r.findings.map((f) => f.gate)).toEqual(['G1']);
+  });
+});
+
+describe('G3 연대 축약 (2026-07-28 실측)', () => {
+  it('4자리 연도가 두 자리로 줄어든 것은 fail이 아니라 flag', () => {
+    // `1970s-1980s`(en) → `anni '70-'80`(it). gemini·openai 둘 다 이렇게 쓴다.
+    const f = checkNumbers('boom of the 1970s-1980s', 'boom degli anni \u201970-\u201980', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+    expect(f.some((x) => x.message.includes('연대 축약'))).toBe(true);
+  });
+
+  it('연도가 아닌 값이 사라지면 여전히 fail', () => {
+    // 좁게 열었다는 확인 — 가격·거리·시간은 그대로 막힌다.
+    const f = checkNumbers('open 24 hours, 5000 won', 'aperto tutto il giorno', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('두 자리가 번역에 없으면 진짜 소실이므로 fail', () => {
+    const f = checkNumbers('built in 1970', 'costruito di recente', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+});
+
+describe('G4 통화 표기 정규화 (2026-07-28 실측)', () => {
+  it('ISO 코드 ↔ 기호는 같은 통화로 본다 — KRW → ₩', () => {
+    expect(checkCurrencyAndUnits('entry KRW 5,000', 'entrée 5 000 ₩', '/p')).toEqual([]);
+    expect(checkCurrencyAndUnits('₩5,000', 'KRW 5.000', '/p')).toEqual([]);
+  });
+
+  it('통화가 실제로 바뀌면 여전히 fail', () => {
+    const f = checkCurrencyAndUnits('KRW 70,000', '€70,000', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('통화가 통째로 사라지면 여전히 fail', () => {
+    const f = checkCurrencyAndUnits('entry KRW 5,000', 'ingresso 5.000 won', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+});
+
+describe('G3 로마 숫자 세기 (2026-07-28 실측)', () => {
+  it('세기를 로마 숫자로 쓴 것은 값 소실이 아니다', () => {
+    // `15th-17th century` → `XV-XVII secolo`. 이탈리아어·프랑스어의 정상 표기.
+    const f = checkNumbers('built 15th-17th century', 'costruito tra il XV e il XVII secolo', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  it('프랑스어 서수 접미사도 인식한다 — XVe', () => {
+    const f = checkNumbers('the 15th century hall', 'la salle du XVe siècle', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  it('한 글자 로마자는 세지 않는다 — 관사·머리글자 오탐 방지', () => {
+    // `I` 가 1로 읽히면 원문의 1이 사라져도 통과해버린다.
+    expect(romanNumeralValues('I giardini di D. Kim')).toEqual(new Set());
+    const f = checkNumbers('1 free shuttle', 'navetta gratuita', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('로마 숫자와 무관한 값 소실은 여전히 fail', () => {
+    const f = checkNumbers('XV secolo, 5000 won', 'XV secolo', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('값을 읽는다', () => {
+    expect(romanNumeralValues('XV, XVII, IX, MMXX')).toEqual(new Set(['15', '17', '9', '2020']));
+  });
+});
+
+describe('G10 키릴 비율 — 고유명사 공제 (2026-07-28 실측)', () => {
+  const src = 'Lost Valley **Audi Q5 safari** + Zoo-Topia';
+
+  it('고유명사가 빽빽한 문구는 올바른 번역도 60%에 못 닿는다 — 통과시킨다', () => {
+    // 실측: everland 26%, arte_museum 40%. 어떤 정답도 통과 못 하던 입력이다.
+    const f = checkCharset('Сафари Audi Q5 в Lost Valley + Zoo-Topia', '/p', 'ru', src);
+    expect(f).toEqual([]);
+  });
+
+  it('영어를 그대로 되돌려주면 여전히 fail — 공제가 연 구멍을 막는다', () => {
+    const f = checkCharset(src, '/p', 'ru', src);
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('원문에 없던 라틴어가 대량으로 남으면 여전히 fail', () => {
+    const f = checkCharset(
+      'The garden is open every day and the walk takes about twenty minutes',
+      '/p',
+      'ru',
+      'Сад открыт ежедневно',
+    );
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('평범한 러시아어 산문은 통과한다', () => {
+    const f = checkCharset('Сад открыт ежедневно с девяти утра', '/p', 'ru', 'The garden opens daily at nine');
+    expect(f).toEqual([]);
   });
 });

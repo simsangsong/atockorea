@@ -114,6 +114,33 @@ async function main(): Promise<void> {
       if (entry?.lang === locale) native[locale] = (native[locale] ?? 0) + 1;
     }
   }
+  // A5 — what is written but withheld. Without this line the coverage table
+  // below reads as "French is at 0%" with no hint that 114 briefings exist and
+  // are one approval away, which is the opposite of the useful reading.
+  const { data: gateRows } = await db
+    .from('match_pois')
+    .select('poi_key, content_locales, content_locale_status');
+  const pendingByLocale: Record<string, number> = {};
+  for (const row of (gateRows ?? []) as Array<{
+    poi_key: string;
+    content_locales: Record<string, unknown> | null;
+    content_locale_status: Record<string, string> | null;
+  }>) {
+    if (row.poi_key.startsWith('_')) continue;
+    for (const locale of Object.keys(row.content_locales ?? {})) {
+      if ((row.content_locale_status ?? {})[locale] !== 'approved') {
+        pendingByLocale[locale] = (pendingByLocale[locale] ?? 0) + 1;
+      }
+    }
+  }
+  const pendingTotal = Object.values(pendingByLocale).reduce((a, b) => a + b, 0);
+  if (pendingTotal > 0) {
+    console.log(`\n── 검수 대기 (A4 게이트가 보류 중 · /admin/poi-content-locales) ──`);
+    for (const [locale, n] of Object.entries(pendingByLocale).sort((a, b) => b[1] - a[1])) {
+      console.log(`  [${locale}] ${n} POI 대기`);
+    }
+  }
+
   console.log(`\n── POI master coverage (${keys.length} stops a charter can pick) ──`);
   console.log(`  tier: ${JSON.stringify(byTier)}`);
   for (const locale of ROOM) {

@@ -71,7 +71,13 @@ export function numberMultiset(text: string): string[] {
     new RegExp(`(\\d)${DIGIT_SEPARATORS.source}(\\d{3})(?!\\d)`, 'g'),
     '$1$2',
   );
-  return (collapsed.match(/\d+/g) ?? []).slice().sort();
+  // 🔴 선행 0은 값이 아니라 서식이다. 날짜를 현지 관례로 다시 쓰면 자리수가 채워진다 —
+  // 원문 `6/18–7/5`(en) → `18/06–05/07`(fr)은 **같은 값**인데, 문자열로 비교하면
+  // `06`≠`6`이라 "숫자 소실"로 잡혔다(2026-07-28 POI 번역 실측 오탐, 4개 언어 동시 탈락).
+  // 이 함수의 계약은 "서식은 무시하고 값만 비교한다"이므로 여기서 정규화한다.
+  return (collapsed.match(/\d+/g) ?? [])
+    .map((n) => n.replace(/^0+(?=\d)/, ''))
+    .sort();
 }
 
 /** 멀티셋 차집합 — a에는 있는데 b에는 없는 원소(중복 횟수까지 고려). */
@@ -137,8 +143,26 @@ export function checkNumbers(source: string, target: string, pointer: string): F
   if (sameMultiset(a, b)) return [];
 
   const findings: Finding[] = [];
-  const lost = missingFrom(a, b);
+  const lostRaw0 = missingFrom(a, b);
   const added = missingFrom(b, a);
+
+  // 로마 숫자는 다른 기수법이지 다른 값이 아니다. 이탈리아어·프랑스어는 세기를
+  // 이렇게 쓴다 — `15th-17th century` → `XV-XVII secolo` · `XVe-XVIIe siècle`.
+  // 아라비아 숫자만 세면 15와 17이 통째로 "소실"로 잡혀 이탈리아어 다수가 탈락했다
+  // (2026-07-28 실측). 천단위 구분기호를 이미 이해하는 것과 같은 층위의 처리다.
+  const romanValues = romanNumeralValues(target);
+  const lostRaw = lostRaw0.filter((n) => !romanValues.has(n));
+
+  // 연대 축약은 소실이 아니라 서식이다 — 위의 "월 이름 → 숫자" 선례와 같은 부류.
+  // `1970s-1980s`(en) → `anni '70-'80`(it) · `70er-80er`(de)는 그 언어의 정상
+  // 표기이고 독자가 잃는 정보가 없다. 2026-07-28 실측: gemini·openai **둘 다**
+  // 이렇게 쓴다 — 즉 모델을 바꿔 해결할 문제가 아니다. fail로 두면 이탈리아어
+  // 손님은 현지 관용구 대신 **영어 전문**을 받게 되어 더 나쁘다.
+  // 범위는 좁게: 원문의 4자리 연도(18xx~20xx)이고 그 뒤 두 자리가 번역에 있을 때만.
+  const shorthandYears = lostRaw.filter(
+    (n) => /^(1[89]|20)\d{2}$/.test(n) && added.includes(String(Number(n.slice(2)))),
+  );
+  const lost = lostRaw.filter((n) => !shorthandYears.includes(n));
 
   if (lost.length > 0) {
     findings.push({
@@ -146,6 +170,14 @@ export function checkNumbers(source: string, target: string, pointer: string): F
       severity: 'fail',
       pointer,
       message: `숫자 소실 — 원문의 [${lost.join(' ')}] 이 번역에 없다 (원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}])`,
+    });
+  }
+  if (shorthandYears.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'flag',
+      pointer,
+      message: `연대 축약 — 원문 [${shorthandYears.join(' ')}] 이 두 자리로 표기됐다 (현지 관례면 정상)`,
     });
   }
   if (added.length > 0) {
@@ -172,12 +204,61 @@ export function checkNumbers(source: string, target: string, pointer: string): F
  */
 const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
 
+/**
+ * 텍스트 안 로마 숫자의 값 집합.
+ *
+ * 좁게 잡는다 — 2글자 이상만 센다. 한 글자 `I`·`V`·`X`·`C`·`D`·`M`은 이탈리아어
+ * 관사·약어·머리글자와 충돌해서 오탐이 너무 많다(`I giardini`, `D. Kim`).
+ * 세기 표기는 언제나 두 글자 이상(`IX`·`XV`·`XVII`)이므로 실제 용도는 다 걸린다.
+ * 이탈리아어·프랑스어의 서수 접미사(`XVe`·`XVII°`)도 뒤에 붙을 수 있어 허용한다.
+ */
+const ROMAN_RE = /(?<![\p{L}])([IVXLCDM]{2,})(?:[eè°º]|er|ème|mo|esimo)?(?![\p{L}])/gu;
+const ROMAN_DIGITS: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+
+export function romanNumeralValues(text: string): Set<string> {
+  const values = new Set<string>();
+  for (const match of text.matchAll(ROMAN_RE)) {
+    const glyphs = match[1].toUpperCase();
+    let total = 0;
+    let valid = true;
+    for (let i = 0; i < glyphs.length; i += 1) {
+      const current = ROMAN_DIGITS[glyphs[i]];
+      const next = ROMAN_DIGITS[glyphs[i + 1]];
+      if (!current) {
+        valid = false;
+        break;
+      }
+      total += next && next > current ? -current : current;
+    }
+    if (valid && total > 0) values.add(String(total));
+  }
+  return values;
+}
+
+/** ISO 코드 ↔ 기호는 같은 통화다. 비교 전에 한쪽으로 모은다. */
+const CURRENCY_ALIAS: Record<string, string> = {
+  KRW: '₩',
+  EUR: '€',
+  USD: '$',
+  JPY: '¥',
+  GBP: '£',
+  RUB: '₽',
+  CNY: '¥',
+};
+
+function normalizeCurrency(token: string): string {
+  return CURRENCY_ALIAS[token.toUpperCase()] ?? token;
+}
+
 /** G4 — 통화 기호·ISO 코드 동일 + 단위 변환 검출. */
 export function checkCurrencyAndUnits(source: string, target: string, pointer: string): Finding[] {
   const findings: Finding[] = [];
 
-  const a = multiset(source, CURRENCY_RE);
-  const b = multiset(target, CURRENCY_RE);
+  // 코드와 기호는 **같은 통화의 다른 표기**다. `KRW` → `₩` 는 값도 통화도 바뀌지
+  // 않았는데 문자열 비교로는 불일치였다(2026-07-28 실측, 프랑스어 다수 탈락).
+  // 정규화 후 비교하므로 `₩` → `€` 같은 진짜 통화 변조는 그대로 잡힌다.
+  const a = multiset(source, CURRENCY_RE).map(normalizeCurrency).sort();
+  const b = multiset(target, CURRENCY_RE).map(normalizeCurrency).sort();
   if (!sameMultiset(a, b)) {
     findings.push({
       gate: 'G4',
@@ -354,12 +435,35 @@ export function checkCharset(
 
   if (locale === 'ru') {
     // 키릴 비율 하한. 라틴 고유명사가 섞이므로 60%.
-    if (letters >= 10 && cyrillic / letters < 0.6) {
+    //
+    // 🔴 원문에 그대로 있던 라틴 낱말은 분모에서 뺀다. 고유명사가 빽빽한 짧은
+    // 문구 — `Lost Valley Audi Q5 safari + Zoo-Topia` — 는 **올바르게 번역해도**
+    // 키릴 60%에 닿을 수 없다. 즉 어떤 정답도 통과 못 하는 입력이었다
+    // (2026-07-28 실측: everland 26%, arte_museum 40%).
+    // 원문에 없던 라틴 낱말이 그대로 남는 진짜 미번역은 그대로 잡힌다.
+    const kept = new Set(
+      (source.match(/[A-Za-z][A-Za-z'’-]*/g) ?? []).map((w) => w.toLowerCase()),
+    );
+    const latinFromSource = (target.match(/[A-Za-z][A-Za-z'’-]*/g) ?? [])
+      .filter((w) => kept.has(w.toLowerCase()))
+      .reduce((sum, w) => sum + (w.match(/\p{L}/gu) ?? []).length, 0);
+    const judged = letters - latinFromSource;
+    if (letters >= 10 && cyrillic === 0) {
+      // 🔴 위 공제가 열 뻔한 구멍: 영어를 통째로 되돌려주면 분모가 0이 되어
+      // 비율 검사를 건너뛴다 — G10 이 막으라고 있는 바로 그 경우다. 키릴이 한 자도
+      // 없으면 고유명사 밀도와 무관하게 미번역이다.
       findings.push({
         gate: 'G10',
         severity: 'fail',
         pointer,
-        message: `키릴 비율 ${((cyrillic / letters) * 100).toFixed(0)}% < 60% — 러시아어 미번역 의심`,
+        message: '키릴 문자가 하나도 없다 — 러시아어 미번역',
+      });
+    } else if (judged >= 10 && cyrillic / judged < 0.6) {
+      findings.push({
+        gate: 'G10',
+        severity: 'fail',
+        pointer,
+        message: `키릴 비율 ${((cyrillic / judged) * 100).toFixed(0)}% < 60% (원문 고유명사 ${latinFromSource}자 제외) — 러시아어 미번역 의심`,
       });
     }
   } else if (cyrillic > 0) {
