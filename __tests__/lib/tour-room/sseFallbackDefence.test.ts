@@ -14,6 +14,8 @@
  * and what the cache will and will not hold, and asserting those directly is
  * more honest than asserting them through a mocked clock.
  */
+import { readFileSync } from 'fs';
+import path from 'path';
 import {
   nextPollInterval,
   SSE_MAX_DURATION_S,
@@ -181,5 +183,31 @@ describe('K1a — reconnect cache', () => {
     expect(calls.n).toBe(1);
     await cachedEnsureRoom(client, { ...booking, tour_date: '2026-07-29' });
     expect(calls.n).toBe(2);
+  });
+});
+
+describe('K1a — the declared duration is a literal in the route', () => {
+  it('🔴 route and lib agree, and the route says a number out loud', () => {
+    // Next.js parses segment config statically, so `export const maxDuration =
+    // SSE_MAX_DURATION_S` is not a runtime concern — it fails the build with
+    // "Unknown identifier … at maxDuration", which is how it broke the
+    // production deploy on 2026-07-28. The literal is therefore duplicated on
+    // purpose, and this is what keeps the duplicate honest.
+    const source = readFileSync(
+      path.join(process.cwd(), 'app', 'api', 'tour-rooms', '[bookingId]', 'events', 'route.ts'),
+      'utf8',
+    );
+    const declared = /export const maxDuration = (\d+);/.exec(source);
+    expect(declared).not.toBeNull();
+    expect(Number(declared![1])).toBe(SSE_MAX_DURATION_S);
+    // And no identifier form sneaks back in. Only lines that are actually code
+    // are considered: the doc comment above the export quotes the broken form
+    // on purpose, and a check that cannot tell code from prose fails on its own
+    // explanation — which is exactly what the first version of this line did.
+    const codeLines = source
+      .split('\n')
+      .filter((l) => !/^\s*(\*|\/\/|\/\*)/.test(l))
+      .join('\n');
+    expect(codeLines).not.toMatch(/export const maxDuration = [A-Za-z_]/);
   });
 });
