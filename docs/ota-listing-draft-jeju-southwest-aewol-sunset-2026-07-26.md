@@ -42,6 +42,16 @@
 **What's included / not included:**
 - ✅ Private van + fuel + driver, Smart Guide app access, live ops support
 - ❌ Meals, entrance fees (O'sulloc free grounds / Camellia Hill ₩10,000 등 명기), gratuities
+- ❌ **Optional add-ons and time extensions arranged during the tour — these are paid in cash to your guide on the day.** ← **L1 필수 줄. 빼지 말 것.**
+
+> 🔴 **왜 이 줄이 필수인가 (L1).** 앱이 투어 중에 **실제 현금 청구를 만든다** — `/extend`(시간당 연장)와
+> `/extras`(가이드가 기록하고 손님이 앱에서 확인한 뒤 현금 수취). 그런데 2026-07-28까지
+> **어떤 리스팅에도 그 말이 없었다.** 그리고 예방 차원이 아니다: `/extend`는 전세 상품
+> (`price_type='vehicle'`)에서만 열리는데, 그 상품군의 라이브 예약은 **GYG 3 · Klook 2 · Viator 1 ·
+> test 1 · 자사 직판 0** — 그 기능을 쓸 수 있는 사람 **전원이 OTA 손님**이었다.
+> 선택적 현장 결제 자체는 대체로 허용되지만 **고지 없이 발생하면 심사에서 질문이 나온다.**
+> 자사 상품 페이지에서는 이 문장이 코드로 자동 삽입된다(`lib/tour-product/cashExtrasNotice.ts`) —
+> OTA 리스팅은 사람이 붙여넣으므로 **여기 템플릿이 정본**이다.
 
 **Important information (표기 리스크 방어 — 반드시 포함):**
 > Your driver ensures safe, comfortable travel and speaks Korean (basic English greetings). All sightseeing guidance is delivered through the Smart Guide app in your language, monitored live by our licensed multilingual operations team. This is not a walking-guide tour — it's better for travelers who want freedom at each stop without a guide hovering.

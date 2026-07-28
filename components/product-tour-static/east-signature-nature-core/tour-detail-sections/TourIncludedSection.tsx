@@ -9,6 +9,14 @@ import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSecti
 export type TourIncludedSectionProps = {
   practicalAccordionItems: readonly PracticalAccordionItem[];
   sectionUi: TourProductSectionUiV1;
+  /**
+   * L1 — appended to "not included" for products where the app can actually
+   * create a cash charge during the tour (`/extend`, `/extras`). Passed in
+   * rather than written into every product's content, because five products ×
+   * six locales of hand-copied text is five products × six locales that will
+   * disagree the first time the wording changes.
+   */
+  extraNotIncludedLine?: string | null;
 };
 
 // Matches opening "not included" / "excluded" markers in EN · KO · ZH · ZH-TW · JA · ES
@@ -16,13 +24,47 @@ export type TourIncludedSectionProps = {
 const NOT_INCLUDED_RX =
   /^(not included|excluded|excludes|not include|excl\.|does not include|불포함|미포함|不含|不包含|费用不含|含まれないもの|no incluye|no incluido|excluido)/i;
 
-export function TourIncludedSection({ practicalAccordionItems, sectionUi }: TourIncludedSectionProps) {
+export function TourIncludedSection({
+  practicalAccordionItems,
+  sectionUi,
+  extraNotIncludedLine,
+}: TourIncludedSectionProps) {
   const [open, setOpen] = useState(false);
 
   const item = practicalAccordionItems.find(
     (i) => i.variant === "included" || i.id === "inclusions",
   );
-  if (!item || !item.content?.length) return null;
+
+  /**
+   * 🔴 L1 — a disclosure cannot depend on content that may be missing.
+   *
+   * Measured 2026-07-28: `jeju-island-private-car-charter-tour` has an
+   * inclusions block in English and in NO other locale, so this component
+   * returned null and the Korean, Japanese and Spanish pages rendered an empty
+   * section. That is a pre-existing content gap (reported separately), but it
+   * would have silently swallowed the cash-payment notice on exactly the
+   * product family that needs it.
+   *
+   * So when there is nothing to accompany, the notice stands on its own.
+   */
+  if (!item || !item.content?.length) {
+    if (!extraNotIncludedLine) return null;
+    return (
+      <div className="space-y-4">
+        <div className="overflow-hidden rounded-[20px] px-4 py-4 shadow-[0_1px_2px_rgba(0,0,0,0.04)] sm:px-5" style={{ background: "#fff5f5" }}>
+          <div className="mb-2 flex items-center gap-2">
+            <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[color:var(--tpc-rose-wash)] ring-1 ring-slate-900/[0.06]">
+              <X className="h-3 w-3 text-[color:var(--tpc-rose-full)]" strokeWidth={2.5} />
+            </span>
+            <p className="text-[11px] font-semibold uppercase tracking-[0.10em] text-[color:var(--tpc-rose-deep)]">
+              {sectionUi.notIncludedLabel ?? "Not included"}
+            </p>
+          </div>
+          <p className="text-[13px] leading-snug text-foreground">{extraNotIncludedLine}</p>
+        </div>
+      </div>
+    );
+  }
 
   let includedItems: readonly string[];
   let excludedItems: readonly string[];
@@ -34,6 +76,12 @@ export function TourIncludedSection({ practicalAccordionItems, sectionUi }: Tour
   } else {
     includedItems = item.content.filter((c) => !NOT_INCLUDED_RX.test(c.trim()));
     excludedItems = item.content.filter((c) => NOT_INCLUDED_RX.test(c.trim()));
+  }
+
+  // Appended, never substituted — the product's own exclusions stay untouched.
+  // Guarded against a product that already spells it out in its own words.
+  if (extraNotIncludedLine && !excludedItems.some((line) => line.includes(extraNotIncludedLine))) {
+    excludedItems = [...excludedItems, extraNotIncludedLine];
   }
 
   return (
