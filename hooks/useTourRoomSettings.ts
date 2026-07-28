@@ -13,7 +13,7 @@
  *   - textScale: normal / large (senior-friendly, §E)
  */
 
-import { useCallback, useSyncExternalStore } from 'react';
+import { useCallback, useSyncExternalStore, type CSSProperties } from 'react';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 
 const STORAGE_KEY = 'tour_mode_settings';
@@ -182,6 +182,63 @@ export function useTourRoomSettings(): {
  * writes an explicit light/dark — a toggle that put 'system' back would be a
  * control the user cannot predict.
  */
+/**
+ * C1 (§D-5 U-D11) — the shell surface contract, in ONE place.
+ *
+ * Every `.tr-root` shell owes its subtree the same two things:
+ *   - `--tr-font-scale`, because every `tr-*` size is `calc(… * var(…, 1))`,
+ *   - `data-tr-skin`, because the skin token blocks key off that attribute.
+ *
+ * 🔴 It was written out by hand in RoomShell and StaffShell and simply MISSING
+ * from the cockpit's own root, so the five-step text size and all ten skins
+ * silently did nothing on the one screen a driver stares at (사용자 리포트
+ * 2026-07-28). Nothing failed loudly: the CSS fallback is `1` and an absent
+ * attribute matches no skin block, so the setting screen kept promising a
+ * change that never arrived. A setting one screen ignores is a lying setting.
+ *
+ * Hand-copied contracts drift on the NEXT shell, not the current one — which
+ * is exactly how this happened. So the shells consume this, and a jest guard
+ * asserts all three still do.
+ *
+ * `mode` exists because the cockpit does not follow the system: night driving
+ * defaults it to dark and only an explicit 'light' lifts it (A5). That is a
+ * theme decision, not a surface one, so it lives here rather than forking the
+ * contract.
+ */
+export function useShellSurface(options: {
+  /** 'system' (default) follows prefers-color-scheme; 'dark-first' = cockpit. */
+  mode?: 'system' | 'dark-first';
+  /** Caller-resolved theme (RoomShell resolves upstream and passes it down). */
+  theme?: 'light' | 'dark';
+} = {}): {
+  dark: boolean;
+  skin: TourSkin;
+  /** Spread onto the element that carries `.tr-root`. */
+  surfaceProps: { 'data-tr-skin': TourSkin; style: CSSProperties };
+} {
+  const { settings } = useTourRoomSettings();
+  const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
+  const resolved =
+    options.theme ??
+    (options.mode === 'dark-first'
+      ? settings.theme === 'light'
+        ? 'light'
+        : 'dark'
+      : settings.theme === 'system'
+        ? systemDark
+          ? 'dark'
+          : 'light'
+        : settings.theme);
+  return {
+    dark: resolved === 'dark',
+    skin: settings.skin,
+    surfaceProps: {
+      'data-tr-skin': settings.skin,
+      style: { '--tr-font-scale': textScaleFactor(settings.textScale) } as CSSProperties,
+    },
+  };
+}
+
 export function useResolvedTheme(): {
   theme: 'light' | 'dark';
   preference: TourRoomSettings['theme'];

@@ -14,7 +14,7 @@
  * and the `.dark .tr-root` token layer apply without touching <html>.
  */
 
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { useRouter } from 'next/navigation';
 import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -22,7 +22,7 @@ import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useBackTrap } from '@/hooks/useBackTrap';
-import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
+import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import {
   IconBack,
   IconConcierge,
@@ -328,7 +328,10 @@ export default function RoomShell({
   const keyboardOpen = useKeyboardOpen();
   // Device store: text scale + skin stamp. (The theme control itself lives in
   // the Settings tab and the drawer's 화면 모드 tile — C-D1 header diet.)
+  // `theme` is resolved by the caller here, so it is handed to the contract
+  // rather than re-derived.
   const { settings: deviceSettings } = useTourRoomSettings();
+  const { surfaceProps } = useShellSurface({ theme });
   const badge = LIFECYCLE_BADGE[lifecycle] ?? LIFECYCLE_BADGE.live;
   const labels = TAB_LABEL[locale];
   // The "now" marker on the schedule advances on a 1-min tick (kept out of
@@ -444,10 +447,10 @@ export default function RoomShell({
         className="tr-root mx-auto flex h-dvh w-full flex-col bg-[var(--tr-canvas)]"
         data-locale={locale}
         lang={locale}
-        // C-D5 — background skin: token overrides key off this attribute.
-        data-tr-skin={deviceSettings.skin}
-        // P1-6 — one variable scales the whole tour-room typography scale.
-        style={{ '--tr-font-scale': textScaleFactor(deviceSettings.textScale) } as CSSProperties}
+        // C1 — skin stamp (C-D5) + typography scale (P1-6) now come from the
+        // one shell surface contract, so a shell that forgets them is a test
+        // failure rather than a silently dead setting.
+        {...surfaceProps}
       >
         {/* ---- Slim header (C-D1/C-D2 — KakaoTalk grammar) --------------
             Chrome shares the canvas color (no white bar, no divider), the
