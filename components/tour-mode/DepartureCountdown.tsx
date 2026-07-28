@@ -23,6 +23,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import Sheet from '@/components/tour-mode/Sheet';
+import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { baseHoursForCity, overtimeAmount, parseHm, rateForCity } from '@/lib/tour-room/overtime';
 import { formatKrw } from '@/lib/tour-room/ledger';
 import { formatTargetTime } from '@/lib/tour-room/notices';
@@ -69,6 +70,10 @@ const ADD_COPY: Record<
     success: (h: number) => string;
     failure: string;
     cancel: string;
+    /** 🔴 Money confirmation — see the note at `addTime`. */
+    confirmTitle: string;
+    confirmBody: (hours: number, amount: string) => string;
+    confirmOk: string;
   }
 > = {
   en: {
@@ -79,6 +84,10 @@ const ADD_COPY: Record<
     success: (h) => `Added ${h} ${h === 1 ? 'hour' : 'hours'} ✓`,
     failure: 'Could not add time. Please try again.',
     cancel: 'Cancel',
+    confirmTitle: "Add extra time?",
+    confirmBody: (h, amt) =>
+      `+${h} ${h === 1 ? 'hour' : 'hours'} · ${amt} in cash\nYou pay the driver at the end of the tour.`,
+    confirmOk: "Add time",
   },
   ko: {
     button: '+ 시간추가',
@@ -88,6 +97,9 @@ const ADD_COPY: Record<
     success: (h) => `${h}시간 추가됐어요 ✓`,
     failure: '시간 추가에 실패했어요. 다시 시도해 주세요.',
     cancel: '취소',
+    confirmTitle: "시간을 추가할까요?",
+    confirmBody: (h, amt) => `+${h}시간 · 현금 ${amt}\n투어 종료 시 기사에게 드리면 돼요.`,
+    confirmOk: "추가하기",
   },
   ja: {
     button: '+ 時間追加',
@@ -97,6 +109,9 @@ const ADD_COPY: Record<
     success: (h) => `${h}時間追加しました ✓`,
     failure: '時間の追加に失敗しました。もう一度お試しください。',
     cancel: 'キャンセル',
+    confirmTitle: "時間を追加しますか？",
+    confirmBody: (h, amt) => `+${h}時間 · 現金 ${amt}\nツアー終了時にドライバーへお支払いください。`,
+    confirmOk: "追加する",
   },
   zh: {
     button: '+ 增加时间',
@@ -106,6 +121,9 @@ const ADD_COPY: Record<
     success: (h) => `已增加${h}小时 ✓`,
     failure: '增加时间失败，请重试。',
     cancel: '取消',
+    confirmTitle: "要增加时间吗？",
+    confirmBody: (h, amt) => `+${h}小时 · 现金 ${amt}\n行程结束时付给司机即可。`,
+    confirmOk: "增加时间",
   },
   'zh-TW': {
     button: '+ 增加時間',
@@ -115,6 +133,9 @@ const ADD_COPY: Record<
     success: (h) => `已增加${h}小時 ✓`,
     failure: '增加時間失敗，請重試。',
     cancel: '取消',
+    confirmTitle: "要增加時間嗎？",
+    confirmBody: (h, amt) => `+${h}小時 · 現金 ${amt}\n行程結束時付給司機即可。`,
+    confirmOk: "增加時間",
   },
   es: {
     button: '+ Añadir tiempo',
@@ -124,6 +145,10 @@ const ADD_COPY: Record<
     success: (h) => `Añadidas ${h} ${h === 1 ? 'hora' : 'horas'} ✓`,
     failure: 'No se pudo añadir tiempo. Inténtalo de nuevo.',
     cancel: 'Cancelar',
+    confirmTitle: "¿Añadir tiempo extra?",
+    confirmBody: (h, amt) =>
+      `+${h} ${h === 1 ? 'hora' : 'horas'} · ${amt} en efectivo\nPagas al conductor al terminar el tour.`,
+    confirmOk: "Añadir",
   },
   fr: {
     button: '+ Ajouter du temps',
@@ -133,6 +158,10 @@ const ADD_COPY: Record<
     success: (h) => `${h} ${h === 1 ? 'heure ajoutée' : 'heures ajoutées'} ✓`,
     failure: 'Impossible d’ajouter du temps. Veuillez réessayer.',
     cancel: 'Annuler',
+    confirmTitle: "Ajouter du temps ?",
+    confirmBody: (h, amt) =>
+      `+${h} ${h === 1 ? 'heure' : 'heures'} · ${amt} en espèces\nVous réglez le chauffeur à la fin du tour.`,
+    confirmOk: "Ajouter",
   },
   de: {
     button: '+ Zeit hinzufügen',
@@ -142,6 +171,10 @@ const ADD_COPY: Record<
     success: (h) => `${h} ${h === 1 ? 'Stunde' : 'Stunden'} hinzugefügt ✓`,
     failure: 'Zeit konnte nicht hinzugefügt werden. Bitte erneut versuchen.',
     cancel: 'Abbrechen',
+    confirmTitle: "Zeit verlängern?",
+    confirmBody: (h, amt) =>
+      `+${h} ${h === 1 ? 'Stunde' : 'Stunden'} · ${amt} in bar\nSie zahlen dem Fahrer am Ende der Tour.`,
+    confirmOk: "Verlängern",
   },
   ru: {
     button: '+ Добавить время',
@@ -151,6 +184,9 @@ const ADD_COPY: Record<
     success: (h) => `Добавлено ${h} ч ✓`,
     failure: 'Не удалось добавить время. Попробуйте еще раз.',
     cancel: 'Отмена',
+    confirmTitle: "Добавить время?",
+    confirmBody: (h, amt) => `+${h} ч · ${amt} наличными\nОплата водителю в конце тура.`,
+    confirmOk: "Добавить",
   },
   it: {
     button: '+ Aggiungi tempo',
@@ -160,6 +196,10 @@ const ADD_COPY: Record<
     success: (h) => `${h} ${h === 1 ? 'ora aggiunta' : 'ore aggiunte'} ✓`,
     failure: 'Impossibile aggiungere tempo. Riprova.',
     cancel: 'Annulla',
+    confirmTitle: "Aggiungere tempo?",
+    confirmBody: (h, amt) =>
+      `+${h} ${h === 1 ? 'ora' : 'ore'} · ${amt} in contanti\nPaga l'autista alla fine del tour.`,
+    confirmOk: "Aggiungi",
   },
 };
 
@@ -273,6 +313,12 @@ export default function DepartureCountdown({
   const [now, setNow] = useState(() => Date.now());
   const [sheetOpen, setSheetOpen] = useState(false);
   const [submitting, setSubmitting] = useState<number | null>(null);
+  // Money asks first — see the note at addTime. Labels follow the room locale
+  // so the confirm does not answer a French guest in English.
+  const { confirm, sheet: confirmSheetEl } = useConfirmSheet({
+    confirm: (ADD_COPY[locale] ?? ADD_COPY.en).confirmOk,
+    cancel: (ADD_COPY[locale] ?? ADD_COPY.en).cancel,
+  });
 
   // Calm, no-drift ticking: recompute every 30s and whenever the tab regains
   // focus (the value is fully derived from `now`, so a resync is free).
@@ -314,8 +360,28 @@ export default function DepartureCountdown({
   // §11.D D5 — the [시간추가] button shows only for a live guest with a session.
   const showAddTime = canExtend && Boolean(bookingId) && Boolean(roomSession);
 
+  /**
+   * 🔴 Money asks first (사용자 확정 2026-07-28).
+   *
+   * Tapping an hour used to POST immediately: one tap on a ₩30,000 cash charge,
+   * with no statement of the amount before it happened and no way back — the
+   * ledger entry is a real debt the guest settles with the driver in cash.
+   * The options row shows a price, but a price on a button is a label, not a
+   * decision. This is the same asymmetric-friction rule the no-show evidence
+   * sheet already follows: the irreversible direction gets the extra step.
+   *
+   * The amount shown here is a PREVIEW (city × hours). The server still
+   * recomputes the authoritative figure and ignores anything client-sent, so a
+   * stale preview can misinform but can never mischarge.
+   */
   const addTime = async (hours: number) => {
     if (!bookingId || !roomSession || submitting !== null) return;
+    const ok = await confirm({
+      title: addCopy.confirmTitle,
+      message: addCopy.confirmBody(hours, formatKrw(overtimeAmount(hours, previewRate))),
+      confirmLabel: addCopy.confirmOk,
+    });
+    if (!ok) return;
     setSubmitting(hours);
     try {
       const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/extend`, {
@@ -388,6 +454,10 @@ export default function DepartureCountdown({
               <p className="tr-meta mt-1 text-[var(--tr-ink-3)]">{addCopy.cashNote}</p>
             </div>
           </Sheet>
+          {/* Renders INSIDE the countdown, which sits inside the themed room
+              root — a sheet mounted outside `.tr-root` renders transparent
+              (2026-07-26 field incident). */}
+          {confirmSheetEl}
         </>
       )}
     </div>

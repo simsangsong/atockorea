@@ -106,18 +106,41 @@ describe('DepartureCountdown add-time (§11.D D5)', () => {
     expect(screen.getByTestId('add-time-option-2').textContent).toMatch(/₩80,000/);
   });
 
-  it('tapping an hour option POSTs { hours } (no client amount) and toasts success', async () => {
+  /**
+   * 🔴 Money asks first (사용자 확정 2026-07-28). Tapping an hour used to POST
+   * immediately — one tap on a ₩30,000+ cash debt the guest settles with the
+   * driver, with no statement of the amount before it happened and no way back.
+   * The tap now only OPENS the question; the charge needs the second press.
+   */
+  it('tapping an hour asks before charging — no POST until the confirm', async () => {
     fetchMock.mockResolvedValue({ ok: true, json: async () => ({ ok: true, hours: 2, amount_krw: 80000 }) });
     render(<DepartureCountdown {...guestProps} />);
     fireEvent.click(screen.getByTestId('add-time-button'));
     fireEvent.click(screen.getByTestId('add-time-option-2'));
+
+    // The question is up, the money has not moved.
+    expect(await screen.findByTestId('confirm-sheet')).toBeInTheDocument();
+    expect(fetchMock).not.toHaveBeenCalled();
+    // It names the amount, which the option row only labelled.
+    expect(screen.getByTestId('confirm-sheet').textContent).toMatch(/₩80,000/);
+
+    fireEvent.click(screen.getByTestId('confirm-sheet-ok'));
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1));
     const [url, init] = fetchMock.mock.calls[0];
     expect(url).toBe('/api/tour-rooms/booking-1/extend');
     expect(init.headers['x-tour-room-auth']).toBe('sess-abc');
-    const sent = JSON.parse(init.body);
-    expect(sent).toEqual({ hours: 2 }); // hours only — no amount_krw
+    expect(JSON.parse(init.body)).toEqual({ hours: 2 }); // hours only — no amount_krw
     await waitFor(() => expect(toastSuccess).toHaveBeenCalled());
+  });
+
+  it('cancelling the confirm charges nothing', async () => {
+    render(<DepartureCountdown {...guestProps} />);
+    fireEvent.click(screen.getByTestId('add-time-button'));
+    fireEvent.click(screen.getByTestId('add-time-option-2'));
+    fireEvent.click(await screen.findByTestId('confirm-sheet-cancel'));
+    await waitFor(() => expect(screen.queryByTestId('confirm-sheet')).toBeNull());
+    expect(fetchMock).not.toHaveBeenCalled();
+    expect(toastSuccess).not.toHaveBeenCalled();
   });
 
   it('toasts an error when the POST fails', async () => {
@@ -125,6 +148,7 @@ describe('DepartureCountdown add-time (§11.D D5)', () => {
     render(<DepartureCountdown {...guestProps} />);
     fireEvent.click(screen.getByTestId('add-time-button'));
     fireEvent.click(screen.getByTestId('add-time-option-1'));
+    fireEvent.click(await screen.findByTestId('confirm-sheet-ok'));
     await waitFor(() => expect(toastError).toHaveBeenCalled());
     expect(toastSuccess).not.toHaveBeenCalled();
   });
