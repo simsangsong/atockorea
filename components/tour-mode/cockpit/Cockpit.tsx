@@ -25,7 +25,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
-import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
@@ -2512,8 +2512,10 @@ export function Screen({ children }: { children: React.ReactNode }) {
   // A5 — the hardcoded `.dark` became settings-conditional, but the DRIVER
   // DEFAULT stays dark (night-driving glare): 'system' and 'dark' both resolve
   // dark here; only an explicit 'light' lifts it (header chip / settings).
-  const { settings } = useTourRoomSettings();
-  const dark = settings.theme !== 'light';
+  // C1 — the surface contract (text scale + skin) was MISSING here while both
+  // other shells planted it, so the size setting and all ten skins did nothing
+  // in the cockpit. `dark-first` keeps the night-driving default (A5).
+  const { dark, surfaceProps } = useShellSurface({ mode: 'dark-first' });
   return (
     <div className={dark ? 'dark' : ''}>
       <div
@@ -2524,6 +2526,12 @@ export function Screen({ children }: { children: React.ReactNode }) {
            drive controls under the home indicator. */
         className="tr-safe-top tr-safe-bottom tr-root relative mx-auto flex h-[100dvh] max-w-lg flex-col bg-[var(--tr-canvas)]"
         data-testid="driver-console"
+        // Staff copy here is Korean-only, same as StaffShell — this is what
+        // opts the cockpit into the ko line-height rule instead of the
+        // ja/zh scaffolding one.
+        data-locale="ko"
+        lang="ko"
+        {...surfaceProps}
       >
         {children}
       </div>

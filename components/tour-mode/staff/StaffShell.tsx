@@ -23,11 +23,10 @@
  */
 
 import Link from 'next/link';
-import { useEffect, useRef, useState, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
-import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { useTourRoomSettings, textScaleFactor } from '@/hooks/useTourRoomSettings';
+import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import {
   IconRefresh,
   IconSeat,
@@ -103,9 +102,10 @@ export default function StaffShell({
     if (controlledTab === undefined) setInternalTab(next);
   };
   const { settings: deviceSettings } = useTourRoomSettings();
-  const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
-  const theme =
-    deviceSettings.theme === 'system' ? (systemDark ? 'dark' : 'light') : deviceSettings.theme;
+  // C1 — the 'system' resolution used to be spelled out here; it now comes
+  // from the shared contract along with the skin stamp and the text scale.
+  const { dark, surfaceProps } = useShellSurface();
+  const theme = dark ? 'dark' : 'light';
   const keyboardOpen = useKeyboardOpen();
   const badge = LIFECYCLE_BADGE[lifecycle];
   // 적대적 리뷰 #1 — 네 탭이 스크롤 컨테이너 하나를 공유하므로, 전환 시
@@ -123,8 +123,8 @@ export default function StaffShell({
         className="tr-root tr-plan-root mx-auto flex h-dvh w-full max-w-xl flex-col bg-[var(--tr-canvas)]"
         data-locale="ko"
         lang="ko"
-        data-tr-skin={deviceSettings.skin}
-        style={{ '--tr-font-scale': textScaleFactor(deviceSettings.textScale) } as CSSProperties}
+        // C1 — skin stamp + typography scale from the one shell contract.
+        {...surfaceProps}
         data-testid="staff-shell"
       >
         {/* ---- Slim header (C-D1 diet: home · title · refresh — 2 icons).
