@@ -217,3 +217,91 @@ describe('HomeTab lifecycle variants (H2)', () => {
     expect(screen.getByText('settings-content')).toBeInTheDocument();
   });
 });
+
+/**
+ * I2 / U-D25 — the promise that makes the restructure safe.
+ *
+ * The first screen lost the tile grid. That is only acceptable if the grid is
+ * still THERE, one tap away, complete. A guest who learned a tile has not lost
+ * it; they have to press one more thing.
+ *
+ * 🔴 These assertions use toBeVisible(), not toBeInTheDocument(). The panel is
+ * hidden with the `hidden` attribute, so every tile is still in the DOM while
+ * collapsed — a presence check would pass whether the disclosure worked or not,
+ * and would keep passing if someone later made it permanently invisible. This
+ * codebase has been bitten by exactly that shape of green.
+ */
+describe('I2 — 더 보기 holds the whole grid (U-D25)', () => {
+  const ALWAYS_PRESENT = ['home-tile-chat', 'home-tile-schedule', 'home-tile-map', 'home-tile-pickup', 'home-tile-sos'];
+
+  it('the first screen is quieter: no grid until asked', () => {
+    renderRoom({ lifecycle: 'live' });
+    for (const id of ALWAYS_PRESENT) {
+      expect(screen.getByTestId(id)).not.toBeVisible();
+    }
+    expect(screen.getByTestId('home-more')).toBeVisible();
+    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
+  });
+
+  it('🔴 one tap and every destination is back, including the ones the tab bar duplicates', () => {
+    renderRoom({ lifecycle: 'live' });
+    fireEvent.click(screen.getByTestId('home-more'));
+
+    for (const id of [...ALWAYS_PRESENT, 'home-tile-smart-guide', 'home-tile-signal']) {
+      expect(screen.getByTestId(id)).toBeVisible();
+    }
+    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('settings and review moved into the same panel rather than a second one', () => {
+    // Two overflow containers for one screen is one too many; the old sheet is
+    // gone, so its rows have to be findable here or they are simply missing.
+    renderRoom({ lifecycle: 'ended' });
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(screen.getByTestId('home-more-review')).toBeVisible();
+    fireEvent.click(screen.getByText('설정 · 언어'));
+    expect(screen.getByText('settings-content')).toBeInTheDocument();
+  });
+
+  it('collapses again, so the choice is reversible', () => {
+    renderRoom({ lifecycle: 'live' });
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(screen.getByTestId('home-tile-map')).toBeVisible();
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(screen.getByTestId('home-tile-map')).not.toBeVisible();
+  });
+});
+
+describe('I2 — the now card is the hero', () => {
+  // The resolver only claims the hero when it HAS an answer. With no schedule
+  // and no events there is nothing to say, and the old now/next strip stays —
+  // which is the honest outcome, not a bug.
+  it('renders the resolver state as a data attribute, so a walk can read it', () => {
+    const schedule = [
+      { time: '00:00', title: 'Gamcheon Village' },
+      { time: '23:59', title: 'Night market' },
+    ];
+    renderRoom({ lifecycle: 'live', schedule });
+    const hero = screen.getByTestId('home-status-live');
+    expect(hero).toHaveAttribute('data-now-state');
+    expect(hero).toBeVisible();
+  });
+
+  it('🔴 keeps the vehicle line, which used to live inside the card it replaced', () => {
+    const schedule = [
+      { time: '00:00', title: 'Gamcheon Village' },
+      { time: '23:59', title: 'Night market' },
+    ];
+    renderRoom({ lifecycle: 'live', schedule });
+    expect(screen.getByTestId('home-vehicle')).toBeVisible();
+  });
+
+  it('offers exactly one primary action', () => {
+    const schedule = [
+      { time: '00:00', title: 'Gamcheon Village' },
+      { time: '23:59', title: 'Night market' },
+    ];
+    renderRoom({ lifecycle: 'live', schedule });
+    expect(screen.getAllByTestId('home-now-action')).toHaveLength(1);
+  });
+});

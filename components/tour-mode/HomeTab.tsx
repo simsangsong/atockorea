@@ -20,6 +20,9 @@ import { useEffect, useMemo, useState } from 'react';
 import Link from 'next/link';
 import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
+import NowCard, { type NowCardHandlers } from '@/components/tour-mode/NowCard';
+import { nowCard, roomNowCardContext } from '@/lib/tour-room/nowCard';
+import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
@@ -409,7 +412,7 @@ function stopLabel(item: ScheduleItem | undefined): string | null {
   return time ? `${time} · ${title}` : title;
 }
 
-type HomeSheet = 'pickup' | 'signal' | 'timeline' | 'more' | null;
+type HomeSheet = 'pickup' | 'signal' | 'timeline' | null;
 
 interface Tile {
   key: string;
@@ -478,6 +481,8 @@ export default function HomeTab({
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
+  // I6 default: collapsed. One boolean, so the owner's answer is a one-line change.
+  const [moreOpen, setMoreOpen] = useState(false);
   // Now marker advances on a 1-min tick, kept out of render so it stays pure
   // (Date.now() in render is impure/unstable) — mirrors RoomShell.
   const [nowMs, setNowMs] = useState(() => Date.now());
@@ -510,6 +515,59 @@ export default function HomeTab({
 
   const latest = messages.length > 0 ? messages[messages.length - 1] : null;
   const latestText = latest ? latest.translations?.[locale] || latest.source_text || '' : '';
+
+  /**
+   * I2 — the now card.
+   *
+   * The resolver is pure and the adapter reads only what the room already
+   * broadcasts, so this is a derivation, not a fetch. `moving` needs a next
+   * stop and `arrived` needs an arrival event; when neither exists the resolver
+   * answers `lobby`, and on a live tour that is the one state this screen does
+   * NOT want the hero to claim — the old now/next strip is a better answer
+   * there, because it can still show "first stop" before the day starts moving.
+   */
+  const nowCardResult = useMemo(() => {
+    const result = nowCard(
+      roomNowCardContext({
+        messages,
+        lifecycle,
+        tourDate,
+        locale,
+        nextStop: nextStop ? { name: nextStop, time: null } : null,
+        currentStop: nowStop ? { name: nowStop } : null,
+        // pickupBoardState needs the guide's live position and the full pickup
+        // sequence, which this tab does not hold; VehicleLocationCard owns that
+        // surface already, so the pickup state stays off until X15 threads it.
+        pickup: null,
+        contactPhone: OPS_PHONE,
+        nowMs,
+      }),
+    );
+    return result.state === 'lobby' ? null : result;
+  }, [messages, lifecycle, tourDate, locale, nextStop, nowStop, nowMs]);
+
+  const nowCardHandlers: NowCardHandlers = useMemo(
+    () => ({
+      onCall: (phone) => {
+        window.location.href = `tel:${phone}`;
+      },
+      onShareLocation: () => setSheet('signal'),
+      onRouteBack: () => api.selectTab('map'),
+      onListen: () => api.selectTab('chat'),
+      onMeetMeHere: () => setSheet('signal'),
+      onOpenMap: () => api.selectTab('map'),
+      onOpenPlan: () => api.selectTab('schedule'),
+      onOpenTimeline: () => setSheet('timeline'),
+      // Facility chips live in the map tab's pin layer; the meeting point and
+      // the next stop are both answered by surfaces that already exist.
+      onChip: (chip) => {
+        if (chip === 'meeting_point') setSheet('pickup');
+        else if (chip === 'next_stop') api.selectTab('schedule');
+        else api.selectTab('map');
+      },
+    }),
+    [api],
+  );
 
   const tiles: Tile[] = [];
   if (showConcierge) {
@@ -592,10 +650,41 @@ export default function HomeTab({
           busPayload={busPayload}
         />
       )}
-      {/* tr-card-hero: the one card on this screen allowed to be loud.
-          Everything else on home is a door; this is the answer to the only
-          question a guest opens the app to ask. */}
-      {lifecycle === 'live' && (
+      {/* I2 — the now card takes the hero slot whenever the resolver has an
+          answer for the minute the guest is living in. It keeps the
+          `home-status-live` testid because it replaces that card rather than
+          joining it: two hero cards would be two protagonists (U-D23). The
+          old now/next strip below is the fallback for the states the resolver
+          leaves to their existing owners (lobby → LobbyCard, ended → recap). */}
+      {lifecycle === 'live' && nowCardResult && (
+        <>
+          <NowCard
+            result={nowCardResult}
+            locale={locale}
+            testId="home-status-live"
+            nowLabel={copy.now}
+            handlers={nowCardHandlers}
+          />
+          {/* The vehicle line used to live inside the status card. It is a fact
+              about today, not a choice, so it survives the restructure verbatim
+              — testid included, because something watched it. */}
+          {vehicleLine && (
+            <p
+              className="tr-label -mt-1 mb-2 flex items-center gap-1.5 px-1 text-[var(--tr-ink-2)]"
+              data-testid="home-vehicle"
+            >
+              <IconPickup
+                size={TR_ICON.meta}
+                strokeWidth={TR_STROKE.small}
+                className="shrink-0 text-[var(--tr-ink-3)]"
+                aria-hidden
+              />
+              <span className="text-cjk-safe truncate">{vehicleLine}</span>
+            </p>
+          )}
+        </>
+      )}
+      {lifecycle === 'live' && !nowCardResult && (
         <div className="tr-home-card tr-card-hero mb-2 px-4 py-3.5" data-testid="home-status-live">
           {nowStop || nextStop ? (
             <div className="flex flex-col gap-1.5">
@@ -677,8 +766,36 @@ export default function HomeTab({
         <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </button>
 
+      {/* ---- 더 보기 ------------------------------------------------
+          U-D24: the bottom tab bar is always on screen, so a tile that
+          duplicates a tab adds a thing to read without adding a place to go.
+          U-D25: but a guest who learned a tile has not lost it — the ENTIRE
+          grid lives one tap away, unchanged, including the tabs' twins. The
+          first screen is what shrank; the app did not.
+
+          I6 (사장님 결정): collapsed by default. Flip `useState(false)` to
+          `true` if the answer comes back the other way — that is the whole
+          change. */}
+      <button
+        type="button"
+        onClick={() => setMoreOpen((v) => !v)}
+        data-testid="home-more"
+        aria-expanded={moreOpen}
+        aria-controls="home-more-panel"
+        className="tr-label text-cjk-safe mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
+      >
+        <IconMore size={TR_ICON.chip} aria-hidden />
+        {copy.more}
+        <IconChevronRight
+          size={TR_ICON.chip}
+          className={`transition-transform ${moreOpen ? 'rotate-90' : ''}`}
+          aria-hidden
+        />
+      </button>
+
+      <div id="home-more-panel" hidden={!moreOpen} data-testid="home-more-sheet">
       {/* ---- Feature grid ------------------------------------------- */}
-      <div className="tr-stagger grid grid-cols-3 gap-1.5" data-testid="home-grid">
+      <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5" data-testid="home-grid">
         {tiles.map((tile) =>
           tile.href && tile.external ? (
             <a
@@ -726,16 +843,41 @@ export default function HomeTab({
         </div>
       )}
 
-      {/* ---- More row ------------------------------------------------ */}
-      <button
-        type="button"
-        onClick={() => setSheet('more')}
-        data-testid="home-more"
-        className="tr-label mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
-      >
-        <IconMore size={TR_ICON.chip} aria-hidden />
-        {copy.more}
-      </button>
+      {/* Settings & review used to live in a separate overflow sheet. Two
+          overflow containers for one screen is one too many, so they join the
+          grid here — same destinations, one door. */}
+      <div className="mt-1 flex flex-col">
+        <button
+          type="button"
+          onClick={() => api.selectTab('settings')}
+          className="flex min-h-[52px] w-full items-center gap-3 text-left"
+        >
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
+            <IconTabSettings size={TR_ICON.action} aria-hidden />
+          </span>
+          <span className="tr-card-text text-cjk-safe flex-1 font-medium text-[var(--tr-ink)]">
+            {copy.settingsRow}
+          </span>
+          <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+        </button>
+        {reviewHref && (
+          <a
+            href={reviewHref}
+            {...reviewLinkProps}
+            data-testid="home-more-review"
+            className="flex min-h-[52px] w-full items-center gap-3 text-left"
+          >
+            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
+              <IconReview size={TR_ICON.action} aria-hidden />
+            </span>
+            <span className="tr-card-text text-cjk-safe flex-1 font-medium text-[var(--tr-ink)]">
+              {copy.reviewRow}
+            </span>
+            <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
+          </a>
+        )}
+      </div>
+      </div>
 
       {/* ---- Pickup sheet -------------------------------------------- */}
       <Sheet
@@ -792,49 +934,7 @@ export default function HomeTab({
         reviewPolicy={reviewPolicy}
       />
 
-      {/* ---- More sheet ---------------------------------------------- */}
-      <Sheet
-        open={sheet === 'more'}
-        onClose={() => setSheet(null)}
-        closeLabel={copy.close}
-        title={
-          <span className="flex items-center gap-2 text-[var(--tr-ink)]">
-            <IconMore size={TR_ICON.action} aria-hidden />
-            {copy.more}
-          </span>
-        }
-      >
-        <div className="flex flex-col" data-testid="home-more-sheet">
-          <button
-            type="button"
-            onClick={() => {
-              setSheet(null);
-              api.selectTab('settings');
-            }}
-            className="flex min-h-[52px] w-full items-center gap-3 text-left"
-          >
-            <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-              <IconTabSettings size={TR_ICON.action} aria-hidden />
-            </span>
-            <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.settingsRow}</span>
-            <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
-          </button>
-          {reviewHref && (
-            <a
-              href={reviewHref}
-              {...reviewLinkProps}
-              data-testid="home-more-review"
-              className="flex min-h-[52px] w-full items-center gap-3 text-left"
-            >
-              <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[var(--tr-surface-2)] text-[var(--tr-ink-2)]">
-                <IconReview size={TR_ICON.action} aria-hidden />
-              </span>
-              <span className="tr-card-text flex-1 font-medium text-[var(--tr-ink)]">{copy.reviewRow}</span>
-              <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
-            </a>
-          )}
-        </div>
-      </Sheet>
+
     </div>
   );
 }
