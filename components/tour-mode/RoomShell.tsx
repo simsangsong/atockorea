@@ -200,6 +200,10 @@ const HOME_TABS: Array<{ key: RoomTab; Icon: typeof IconTabChat }> = [{ key: 'ho
 
 /** A1 — device-scoped flag: the guest has opened the Smart Guide at least once. */
 const CONCIERGE_SEEN_KEY = 'tour_mode_concierge_seen';
+/** How long the first-visit Smart Guide hint stays on screen before retiring
+ *  itself. Long enough to read one short sentence, short enough that it is not
+ *  sitting on the guest's content while they try to use the page. */
+const CONCIERGE_HINT_MS = 6000;
 
 /**
  * U6.1 — index of the schedule item currently underway: the last stop whose
@@ -357,6 +361,32 @@ export default function RoomShell({
     };
     lightPulseIfUnseen();
   }, [concierge]);
+
+  /**
+   * 🔴 X4 — the hint used to retire ONLY when the guest opened the Smart Guide.
+   *
+   * It was already once-per-device, so it read as intentional; what it actually
+   * did was follow a guest who was not interested across every tab and every
+   * session, floating over the first card on the page ("Ask me anything" sitting
+   * on top of the settings banner in the 2026-07-28 walk). A hint you have to
+   * OBEY before it goes away is a nag, not a hint.
+   *
+   * It now shows once and retires itself. Seeing it is what counts as seen —
+   * the pulse ring on the icon stays for that session, so the affordance does
+   * not vanish, only the bubble covering the content does.
+   */
+  useEffect(() => {
+    if (!conciergePulse) return;
+    const id = window.setTimeout(() => {
+      setConciergePulse(false);
+      try {
+        window.localStorage.setItem(CONCIERGE_SEEN_KEY, '1');
+      } catch {
+        /* private mode — it simply shows again next time */
+      }
+    }, CONCIERGE_HINT_MS);
+    return () => window.clearTimeout(id);
+  }, [conciergePulse]);
 
   // Single opener (header button / chat entry row / home CTA) — opens the sheet
   // and retires the first-visit pulse for good.

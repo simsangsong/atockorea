@@ -57,7 +57,7 @@ export default function GuideSeatStrip({
   return (
     <>
       <div
-        className="flex items-center gap-1.5 overflow-x-auto py-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        className="tr-chiprow flex items-center gap-1.5 py-1"
         data-testid="seat-strip"
       >
         {chips.map((chip) => {

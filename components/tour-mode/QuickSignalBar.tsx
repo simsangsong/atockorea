@@ -350,7 +350,7 @@ export default function QuickSignalBar({
   }, [outcome]);
 
   return (
-    <div className="mb-1.5 flex items-center gap-1.5 overflow-x-auto" data-testid="quick-signal-bar">
+    <div className="tr-chiprow mb-1.5 flex items-center gap-1.5" data-testid="quick-signal-bar">
       {outcome ? (
         <span
           className={`tr-label shrink-0 whitespace-nowrap px-1 py-1 font-semibold ${

@@ -555,7 +555,7 @@ export default function Composer({
   return (
     <div className="-mx-3">
       {/* Quick replies ride the canvas just above the docked bar (A6: role-scoped set). */}
-      <div className="mb-1.5 flex gap-1.5 overflow-x-auto px-3 pb-1" data-testid="quick-replies">
+      <div className="tr-chiprow mb-1.5 flex gap-1.5 px-3 pb-1" data-testid="quick-replies">
         {quickRepliesForRole(viewerRole).map((preset) => (
           <button
             key={preset.key}
