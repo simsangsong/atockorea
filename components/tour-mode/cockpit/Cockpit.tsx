@@ -26,6 +26,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
+import NavBrandButton from '@/components/tour-mode/NavBrandButton';
 import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
@@ -2480,37 +2481,42 @@ export default function Cockpit({
 // ───────────────────────────────────────────────────────────────────────────
 
 function NavRow({ dest }: { dest: NavDestination }) {
+  /**
+   * 🔴 These used to paint TMAP blue and Naver green and then write the label
+   * in `--tr-ink` — which is near-BLACK in light mode. Dark text on a dark-blue
+   * button is unreadable, and the cockpit can be flipped to light from its own
+   * header. Brand ink now travels with brand colour (lib/tour-room/navBrand).
+   *
+   * The app-scheme buttons keep their web fallback: a scheme fails SILENTLY on
+   * a device without the app, so the timeout opens the web route behind it.
+   */
   return (
-    <div className="mt-2 grid grid-cols-4 gap-1.5">
-      <a
+    <div className="mt-2 flex flex-wrap gap-1.5">
+      <NavBrandButton
+        chipKey="kakao-navi"
+        label="카카오"
         href={kakaoNaviUrl(dest)}
         onClick={() => {
           window.setTimeout(() => window.open(kakaoWebRouteUrl(dest), '_blank'), 1200);
         }}
-        className="tr-label text-cjk-safe rounded-xl bg-[#FEE500] py-2.5 text-center font-bold text-black"
-      >
-        카카오
-      </a>
-      <a href={tmapUrl(dest)} className="tr-label text-cjk-safe rounded-xl bg-[#0f5bd6] py-2.5 text-center font-bold text-[var(--tr-ink)]">
-        티맵
-      </a>
-      <a
+        testId="nav-kakao"
+      />
+      <NavBrandButton chipKey="tmap" label="티맵" href={tmapUrl(dest)} testId="nav-tmap" />
+      <NavBrandButton
+        chipKey="naver"
+        label="네이버"
         href={naverCarUrl(dest)}
         onClick={() => {
           window.setTimeout(() => window.open(naverWebUrl(dest), '_blank'), 1200);
         }}
-        className="tr-label text-cjk-safe rounded-xl bg-[#03C75A] py-2.5 text-center font-bold text-[var(--tr-ink)]"
-      >
-        네이버
-      </a>
-      <a
+        testId="nav-naver"
+      />
+      <NavBrandButton
+        chipKey="google"
+        label="구글"
         href={googleDirectionsUrl(dest, 'driving')}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="tr-label text-cjk-safe rounded-xl bg-[var(--tr-surface-2)] py-2.5 text-center font-bold text-[var(--tr-ink)]"
-      >
-        구글
-      </a>
+        testId="nav-google"
+      />
     </div>
   );
 }
