@@ -118,6 +118,16 @@ export interface ResolveRoomActorOptions {
    * unauthenticated guest path. Return allowed=false to answer 429.
    */
   guestGate?: () => Promise<{ allowed: boolean; retryAfterMs: number }>;
+  /**
+   * K1a — a booking row the caller already has, to skip the lookup.
+   *
+   * Only the SSE fallback passes this, and only from
+   * `lib/tour-room/reconnectCache`. It exists because that route re-runs this
+   * whole function on every `EventSource` reconnect, and the booking row is the
+   * one input here that is identical for every caller. Authorisation is
+   * unchanged: the credential checks below still run in full against it.
+   */
+  booking?: RoomBooking | null;
 }
 
 function normalized(value: string | null | undefined): string {
@@ -259,8 +269,12 @@ export async function resolveRoomActor(
   options: ResolveRoomActorOptions,
 ): Promise<ResolveRoomActorResult> {
   const { supabase } = options;
-  const booking = await getBookingForRoom(supabase, bookingId);
+  const booking = options.booking ?? (await getBookingForRoom(supabase, bookingId));
   if (!booking) return { ok: false, status: 404, error: 'Booking not found' };
+  // A caller-supplied booking must still be the one that was asked for —
+  // otherwise this parameter would be a way to authorise against a different
+  // row than the URL names.
+  if (booking.id !== bookingId) return { ok: false, status: 404, error: 'Booking not found' };
 
   const user = await getAuthUser(req);
   const authUserId = user?.id ?? null;
