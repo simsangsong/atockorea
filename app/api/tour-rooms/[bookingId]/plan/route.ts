@@ -270,6 +270,34 @@ async function enrichStopCoords(supabase: RoomDbClient, stops: DayPlanStop[]): P
 // P-D13 lead judgement now lives in lib/tour-room/lead.ts — one authority
 // shared with the §5.2 C-6 companion-invite route (behaviour unchanged).
 
+/**
+ * Is this booking already delegated to the guide?
+ *
+ * 🔴 The delegate path had no idempotency of any kind. `submit` has had a
+ * re-click guard since it shipped ("Re-clicks and retried submits must not
+ * create duplicate feed capsules") — but that guard keys on
+ * `existingStatus === 'guest_submitted'`, and delegating does not change the
+ * status. So the A8 lock below it never fires either, and every press inserted
+ * another capsule. One live room holds six identical ones; the owner
+ * photographed three of them stacked in the feed.
+ *
+ * The dedupe key is the flag delegating already sets. That is not just
+ * convenient — it is correct for the one case a naive guard would break: a
+ * guest who delegates, then picks stops directly (which clears the flag), then
+ * delegates again. That IS a new delegation and should announce itself.
+ */
+async function isAlreadyDelegated(supabase: RoomDbClient, bookingId: string): Promise<boolean> {
+  try {
+    const { data } = await supabase.from('bookings').select('itinerary').eq('id', bookingId).maybeSingle();
+    const raw = (data as { itinerary?: unknown } | null)?.itinerary;
+    if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return false;
+    return (raw as Record<string, unknown>).guide_curated === true;
+  } catch {
+    // A read failure must not block the guest from delegating. Worst case we
+    // post one extra capsule, which is the behaviour we are replacing anyway.
+    return false;
+  }
+}
 async function setGuideCuratedFlag(supabase: RoomDbClient, bookingId: string, guideCurated: boolean): Promise<void> {
   try {
     const { data: bookingRow } = await supabase
@@ -461,6 +489,21 @@ export async function PUT(
           ...((existing as { feasibility?: FeasibilityResult } | null)?.feasibility
             ? { feasibility: (existing as { feasibility: FeasibilityResult }).feasibility }
             : {}),
+        },
+        { status: 200 },
+      );
+    }
+
+    // The same protection for "leave it to the guide". It could not key on
+    // status — delegating leaves the plan a guest_draft — so it keys on the
+    // flag that delegating sets.
+    if (!isStaff && delegate && (await isAlreadyDelegated(supabase, booking.id))) {
+      const existingStops = ((existing as { stops?: DayPlanStop[] } | null)?.stops ?? []) as DayPlanStop[];
+      return NextResponse.json(
+        {
+          day_plan: existing,
+          schedule: dayPlanStopsToSchedule(existingStops),
+          already_delegated: true,
         },
         { status: 200 },
       );
