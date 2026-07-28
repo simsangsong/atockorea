@@ -25,6 +25,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
+import ChatFeed from '@/components/tour-mode/ChatFeed';
 import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
@@ -38,13 +39,10 @@ import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { scheduleClock } from '@/lib/tour-room/time';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
-import LocationPreview from '@/components/tour-mode/LocationPreview';
 import Lightbox from '@/components/tour-mode/Lightbox';
-import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
 import {
   readMessageAttachment,
   isTranslationPending,
-  formatAttachmentBytes,
 } from '@/lib/tour-room/messageView';
 import { EXTRA_KIND_LABELS, formatKrw } from '@/lib/tour-room/ledger';
 import {
@@ -196,10 +194,6 @@ const ATTACH_MAX_FILE = 20 * 1024 * 1024;
 const CHAT_ZOOM_KEY = 'tr-cockpit-chat-zoom';
 const CHAT_ZOOM_MIN = 0.85;
 const CHAT_ZOOM_MAX = 1.8;
-
-function koText(message: RoomMessage): string {
-  return message.translations?.ko?.trim() || message.source_text;
-}
 
 function destFrom(item: CockpitScheduleItem | null): NavDestination | null {
   if (item && typeof item.lat === 'number' && typeof item.lng === 'number') {
@@ -1223,6 +1217,37 @@ export default function Cockpit({
       : null;
 
   const isPrep = lifecycle === 'lobby';
+  /**
+   * C5 — the one thing the shared feed does not know about: a guest pickup /
+   * drop-off request gets one-tap numeric ETA chips right under the capsule
+   * (A3). It rides ChatFeed's `renderMessageExtra` slot so consolidating the
+   * renderer does not quietly delete a driver control.
+   */
+  const renderEtaReply = useCallback(
+    (message: RoomMessage) => {
+      const wants =
+        message.metadata?.signal_type === 'pickup_request' ||
+        message.metadata?.signal_type === 'dropoff_change';
+      if (!wants) return null;
+      return (
+        <div className="mt-1.5 flex flex-wrap gap-1.5 pl-11" data-testid="cockpit-eta-reply">
+          {[3, 5, 10, 15, 20].map((min) => (
+            <button
+              key={min}
+              type="button"
+              onClick={() => void signal({ type: 'eta_reply', minutes: min }, `${min}분 후 도착 안내 ✓`)}
+              className="tr-label rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 font-bold text-[var(--tr-bubble-me-ink)]"
+              data-testid={`cockpit-eta-${min}`}
+            >
+              {min}분
+            </button>
+          ))}
+        </div>
+      );
+    },
+    [signal],
+  );
+
   const connected = connection === 'realtime' || connection === 'sse';
   const destLabel = isPrep && room.pickup ? '픽업' : '다음';
   const destTitle = isPrep && room.pickup
@@ -1272,7 +1297,14 @@ export default function Cockpit({
   }, [bookingId, session, say, confirmSheet, nextStop]);
 
   // Focus mode widens the window — the point is reading a long exchange.
-  const recent = messages.slice(chatExpanded ? -80 : -8);
+  /**
+   * 🔴 C5 — this used to be `messages.slice(chatExpanded ? -80 : -8)`, and the
+   * `-8` was the real answer to "채팅 내용이 몇 줄밖에 안 보인다": the ninth
+   * message was not off-screen, it was never mounted. ChatFeed windows at 60
+   * with a "show earlier" control, so the cap is now the component's job and
+   * the driver can scroll back instead of being silently truncated.
+   */
+  const recent = messages;
 
   // C1 — one glanceable word for the sharing state (denial is terminal).
   // 🔴 'watching' only means the device is emitting samples. Anything coarser
@@ -1529,25 +1561,17 @@ export default function Cockpit({
 
       {/* bubbles — tap anywhere to enter chat focus mode; pinch = font zoom */}
       <div className="relative flex min-h-0 flex-1 flex-col">
-      {/* 🔴 C3 — chat focus mode (80 messages, bottom stack folded away) existed
-          with NO affordance: the only way in was tapping the feed, and nothing
-          announced that. The owner reported "채팅 내용이 몇 줄밖에 안 보인다"
-          while a full-height reader sat one undiscoverable tap away.
-          It FLOATS over the feed rather than sitting in the destination block,
-          where it measured +17px: the app's 44px touch minimum applies to any
-          button, so a chip in a text row drags the whole row to 44px. On a
-          screen whose entire complaint is vertical budget, the affordance had
-          to cost zero — and over the feed is also where you look for it. */}
-      {!chatExpanded && messages.length > 0 ? (
-        <button
-          type="button"
-          onClick={() => setChatExpanded(true)}
-          className="tr-meta absolute right-3 top-1 z-10 rounded-full bg-[var(--tr-surface-2)] px-2.5 font-bold text-[var(--tr-ink-2)] shadow-[var(--tr-shadow-overlay)] active:scale-95"
-          data-testid="cockpit-chat-expand"
-        >
-          대화 전체
-        </button>
-      ) : null}
+      {/* 🔴 C3 added a "대화 전체" chip here and C5 removed it again — recorded
+          rather than quietly reverted, because the reasoning is the useful part.
+          C3's chip existed to advertise focus mode, whose whole value was
+          escaping the feed's `slice(-8)` cap. C5 deleted the cap, and the walk
+          then measured focus mode as STRICTLY WORSE than the normal view: it
+          keeps the quick chips, composer and mic and merely adds a collapse
+          button, so bottom stack 179px → 241px and visible messages 9 → 8.
+          A labelled control pointing at a worse screen is worse than no
+          control, so the chip is gone. Focus mode itself is left alone (tap the
+          feed) — deleting live behaviour is a separate decision, filed as a
+          follow-up in §D-5. */}
       <div
         ref={feedRef}
         onClick={(event) => {
@@ -1555,105 +1579,37 @@ export default function Cockpit({
           if ((event.target as HTMLElement).closest('button, a, input, textarea')) return;
           setChatExpanded(true);
         }}
-        className="flex flex-1 flex-col justify-end gap-2.5 overflow-y-auto px-4 py-3"
+        /* C5 — the scroll now belongs to ChatFeed (it owns the window, the
+           "show earlier" control and the near-bottom follow). This wrapper only
+           donates height, the pinch-zoom and the tap-to-focus gesture; leaving
+           `overflow-y-auto` here would nest two scrollers and the inner one
+           would never reach its own bottom. */
+        className="flex min-h-0 flex-1 flex-col px-2"
         style={{ zoom: chatZoom, touchAction: 'pan-y' }}
         data-testid="driver-feed"
       >
-        {recent.map((message) => {
-          const mine = message.sender_role === 'driver' || message.sender_role === 'guide';
-          const system = message.sender_role === 'system' || message.sender_role === 'admin';
-          // Optimistic echo state (T0-4): dim while sending, outline on failure.
-          const localCls =
-            message._local === 'failed'
-              ? 'opacity-60 outline outline-1 outline-[var(--tr-danger)]'
-              : message._local === 'sending'
-                ? 'opacity-60'
-                : '';
-          // A guest photo/file is a first-class message — render it, don't drop
-          // it into an empty grey bubble. A caption (if any) rides below.
-          const att = readMessageAttachment(message);
-          const text = koText(message);
-          // A location message (…q=lat,lng) becomes an inline map preview.
-          const loc = !att ? parseLocationMessage(text) : null;
-          // A3 — a guest pickup/drop-off request gets one-tap numeric ETA
-          // reply chips right under the capsule ("N분 후 도착").
-          const wantsEtaReply =
-            message.metadata?.signal_type === 'pickup_request' ||
-            message.metadata?.signal_type === 'dropoff_change';
-          return (
-            <div key={message.id} className={mine ? 'self-end' : 'self-start'}>
-              {!mine && !system ? <p className="tr-name mb-1 text-[var(--tr-ink-2)]">손님</p> : null}
-              {att ? (
-                <div className={`flex max-w-[85vw] flex-col gap-1.5 ${mine ? 'items-end' : 'items-start'}`}>
-                  {att.kind === 'image' ? (
-                    <button
-                      type="button"
-                      onClick={() => setLightbox({ url: att.url, name: att.name })}
-                      className="block overflow-hidden rounded-3xl"
-                      data-testid="cockpit-image"
-                    >
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={att.url} alt={att.name} loading="lazy" className="max-h-72 max-w-[80vw] object-cover" />
-                    </button>
-                  ) : (
-                    <a
-                      href={att.url}
-                      download={att.name || undefined}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-3 rounded-3xl bg-[var(--tr-surface-2)] px-5 py-4 text-[var(--tr-ink)]"
-                      data-testid="cockpit-file"
-                    >
-                      <FileText size={TR_ICON.tile} strokeWidth={TR_STROKE.default} aria-hidden />
-                      <span className="min-w-0 flex-1">
-                        <span className="tr-body-lg block truncate font-semibold">{att.name || '파일'}</span>
-                        {formatAttachmentBytes(att.size) ? (
-                          <span className="tr-card-text block text-[var(--tr-ink-2)]">{formatAttachmentBytes(att.size)}</span>
-                        ) : null}
-                      </span>
-                    </a>
-                  )}
-                  {text ? (
-                    <div className="rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-3 tr-body-lg font-medium text-[var(--tr-ink)]">
-                      {text}
-                    </div>
-                  ) : null}
-                </div>
-              ) : loc ? (
-                <div className="max-w-[85vw]">
-                  {/* M-D2 — the cockpit IS the driver: Kakao chips, always. */}
-                  <LocationPreview lat={loc.lat} lng={loc.lng} label={loc.label} url={loc.url} audience="staff" />
-                </div>
-              ) : (
-                <div
-                  className={`${
-                    mine
-                      ? 'max-w-[85vw] rounded-3xl rounded-br-md bg-[var(--tr-bubble-me)] px-5 py-4 tr-body-lg font-medium text-[var(--tr-bubble-me-ink)]'
-                      : system
-                        ? 'tr-body max-w-[85vw] rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3 text-[var(--tr-ink-2)]'
-                        : 'max-w-[85vw] rounded-3xl rounded-bl-md bg-[var(--tr-surface-2)] px-5 py-4 tr-body-lg font-semibold text-[var(--tr-ink)]'
-                  } ${localCls}`}
-                >
-                  {text}
-                </div>
-              )}
-              {wantsEtaReply ? (
-                <div className="mt-1.5 flex gap-1.5" data-testid="cockpit-eta-reply">
-                  {[3, 5, 10, 15, 20].map((min) => (
-                    <button
-                      key={min}
-                      type="button"
-                      onClick={() => void signal({ type: 'eta_reply', minutes: min }, `${min}분 후 도착 안내 ✓`)}
-                      className="tr-label rounded-xl bg-[var(--tr-bubble-me)] px-3 py-2 font-bold text-[var(--tr-bubble-me-ink)]"
-                    >
-                      {min}분
-                    </button>
-                  ))}
-                </div>
-              ) : null}
-            </div>
-          );
-        })}
+        {/* C5 (§D-5 U-D7/U-D15) — the shared feed, not a second renderer.
+
+            The cockpit carried ~95 lines of its own bubble code that had
+            drifted behind the room's: no reactions, no quoted replies, no
+            read state, and a hard `messages.slice(-8)` window — which is the
+            actual reason the owner saw "몇 줄밖에 안 보인다". A cap, not a
+            pixel shortage: no amount of trimming chrome could have shown a
+            ninth message.
+
+            ChatFeed already handles attachments, location cards and the
+            optimistic echo, and it windows at 60 with a "show earlier"
+            control. The driver's own ETA chips survive through
+            `renderMessageExtra`; the INPUT is untouched (U-D7 — voice-first
+            while the vehicle is moving). */}
+        <ChatFeed
+          messages={recent}
+          viewerLocale="ko"
+          viewerRole="driver"
+          textScale={deviceSettings.textScale}
+          variant="cockpit"
+          renderMessageExtra={renderEtaReply}
+        />
       </div>
       </div>
 
