@@ -69,6 +69,14 @@ function sameGroup(prev: RoomMessage, next: RoomMessage): boolean {
  * slice's first day is ambiguous when older messages are hidden — callers
  * still get the separator, which doubles as the "load earlier" anchor.
  */
+
+/**
+ * Staff roles share one seat in the room: the guide, the driver and ops all
+ * speak for the vehicle. Guests do not — see the note at the `mine` assignment.
+ */
+function isOperatorRole(role: string): boolean {
+  return role === 'guide' || role === 'driver' || role === 'admin';
+}
 export function buildFeedItems(messages: RoomMessage[], viewerRole: string): FeedItem[] {
   const items: FeedItem[] = [];
   let previous: RoomMessage | null = null;
@@ -91,7 +99,20 @@ export function buildFeedItems(messages: RoomMessage[], viewerRole: string): Fee
       key: message.id,
       message,
       system,
-      mine: !system && message.sender_role === viewerRole,
+      /**
+       * 🔴 C5 — "mine" is a SEAT, not a role string.
+       *
+       * The cockpit is one surface shared by the driver and by a guide who is
+       * driving today (P2 #355), and its old private renderer treated both
+       * staff roles as mine. Embedding this feed with an exact-string test made
+       * a guide's own announcements render as somebody else's, left-aligned
+       * with an avatar — caught in the C5 walk, not by any test.
+       *
+       * Guests stay exact: a customer must never see another customer's bubble
+       * as their own. Only the operator side collapses, because on that side
+       * the vehicle is the sender.
+       */
+      mine: !system && (isOperatorRole(viewerRole) ? isOperatorRole(message.sender_role) : message.sender_role === viewerRole),
       groupStart: system ? true : groupStart,
       groupEnd: system ? true : groupEnd,
     });

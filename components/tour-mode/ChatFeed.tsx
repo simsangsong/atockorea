@@ -18,7 +18,7 @@
  * - Auto-follows the bottom only when the user is already near it.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
@@ -244,6 +244,8 @@ export default function ChatFeed({
   lastReadByOthersAt = null,
   typingUsers = [],
   focusMessageId = null,
+  variant = 'room',
+  renderMessageExtra,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -273,11 +275,26 @@ export default function ChatFeed({
   typingUsers?: Array<{ role: string; displayName: string }>;
   /** Phase 3 — deep-link: scroll to + flash this message once it's in the feed. */
   focusMessageId?: string | null;
+  /**
+   * C5 (§D-5 U-D7/U-D15) — 'cockpit' raises the bubble-text floor one step.
+   * The driving surface is read at arm's length from behind a wheel, so its
+   * bubbles were 20px fixed; dropping them to the room's 15px default would
+   * trade a safety property for a shared component. The floor rises, the size
+   * setting still moves it — which is the whole point of C1/C4.
+   */
+  variant?: 'room' | 'cockpit';
+  /**
+   * Surface-specific follow-up rendered under a message (see the call site).
+   * Kept as a slot rather than a prop bag so the guest feed never learns what
+   * a driver's ETA chip is.
+   */
+  renderMessageExtra?: (message: RoomMessage) => ReactNode;
 }) {
   // P1-6 — --tr-font-scale already scales every size; the class bump gives the
   // top steps an extra jump in the bubble itself (senior-friendly, §E).
-  const bubbleText = textScale >= 4 ? 'tr-body-lg' : 'tr-body';
-  const systemText = textScale >= 4 ? 'tr-card-text' : 'tr-label';
+  const cockpit = variant === 'cockpit';
+  const bubbleText = textScale >= 4 || cockpit ? 'tr-body-lg' : 'tr-body';
+  const systemText = textScale >= 4 || cockpit ? 'tr-card-text' : 'tr-label';
   const [windowSize, setWindowSize] = useState(WINDOW);
   const [originals, setOriginals] = useState<Set<string>>(new Set());
   const [awayCount, setAwayCount] = useState(0);
@@ -911,6 +928,12 @@ export default function ChatFeed({
                   ))}
                 </div>
               )}
+              {/* C5 — a per-message slot for surface-specific follow-ups. The
+                  cockpit hangs its 3/5/10/15/20분 ETA chips off a guest pickup
+                  request here; without the slot, embedding this feed in the
+                  cockpit would have silently dropped a driver control, which is
+                  not a consolidation — it is a regression wearing one. */}
+              {renderMessageExtra?.(message) ?? null}
               {unreadDividerHere && (
                 <div className="my-3 flex items-center gap-2 px-2" data-testid="unread-divider">
                   <span className="h-px flex-1 bg-[var(--tr-danger)] opacity-40" />

@@ -133,21 +133,21 @@ describe('shared Cockpit', () => {
   });
 
   /**
-   * 🔴 C3 — chat focus mode (8 → 80 messages, bottom stack folded away) had no
-   * affordance at all: tapping the feed was the only way in and nothing said
-   * so. The owner reported "채팅 내용이 몇 줄밖에 안 보인다" with the reader one
-   * undiscoverable tap away.
+   * C5 — the feed no longer caps at 8 messages, so the whole conversation is
+   * reachable by scrolling and focus mode stopped being the escape hatch it
+   * was (C3 briefly advertised it; the walk then measured that mode as
+   * strictly worse, so the advert was withdrawn).
+   *
+   * What must not regress is the message COUNT: the cap was the actual reason
+   * the owner saw "몇 줄밖에 안 보인다", and a future slice() would bring it
+   * straight back with nothing else failing.
    */
-  it('offers a labelled way into chat focus mode, not just an unannounced tap', () => {
-    // Gated on there being something to read — an expand control over an empty
-    // feed would be an invitation to a blank screen.
-    mockChannelState.messages = [guestMsg({ source_text: '언제 출발해요?' })];
+  it('mounts every message, not a truncated tail', () => {
+    mockChannelState.messages = Array.from({ length: 25 }, (_, i) =>
+      guestMsg({ id: `bulk-${i}`, source_text: `메시지 ${i}` }),
+    );
     render(<Cockpit {...base} />);
-    const expand = screen.getByTestId('cockpit-chat-expand');
-    expect(expand).toBeInTheDocument();
-    fireEvent.click(expand);
-    expect(screen.getByTestId('cockpit-chat-collapse')).toBeInTheDocument();
-    expect(screen.queryByTestId('cockpit-chat-expand')).not.toBeInTheDocument();
+    expect(document.querySelectorAll('[data-msg-id]').length).toBe(25);
   });
 
   // A6 (plan §11.A) — the cockpit carries the DRIVER preset strip: one-tap
@@ -212,7 +212,11 @@ describe('shared Cockpit', () => {
       }),
     ];
     render(<Cockpit {...base} />);
-    const img = screen.getByTestId('cockpit-image').querySelector('img');
+    // C5 — the cockpit no longer renders its own bubbles; the shared ChatFeed
+    // does, so the id moved with the render. The ASSERTION is unchanged on
+    // purpose: what must not regress is that a caption-less guest photo still
+    // reaches the driver, not which component drew it.
+    const img = screen.getByTestId('chat-image').querySelector('img');
     expect(img).toHaveAttribute('src', 'https://x/att/a.jpg');
   });
 
@@ -225,7 +229,7 @@ describe('shared Cockpit', () => {
       }),
     ];
     render(<Cockpit {...base} />);
-    const chip = screen.getByTestId('cockpit-file');
+    const chip = screen.getByTestId('chat-file');
     expect(chip).toHaveAttribute('href', 'https://x/att/t.pdf');
     expect(screen.getByText('ticket.pdf')).toBeInTheDocument();
   });

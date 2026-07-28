@@ -55,11 +55,13 @@ const MEASURE = () => {
   if (!root || !feed) return { missing: true };
   const feedBox = feed.getBoundingClientRect();
 
-  // Direct children of the feed are one message each (the cockpit renders
-  // `recent.map(... <div key={message.id}>)`). Count the ones whose box is
-  // wholly inside the feed's visible area — a half-clipped bubble is not a
+  // C5 moved the bubbles into the shared ChatFeed, which stamps `data-msg-id`
+  // on each message wrapper. That is a more honest anchor than "direct children
+  // of the feed" was anyway — it counts messages, not layout nodes.
+  const bubbles = [...feed.querySelectorAll('[data-msg-id]')];
+  // Wholly inside the feed's visible box: a half-clipped bubble is not a
   // message you can read at a glance while driving.
-  const visible = [...feed.children].filter((child) => {
+  const visible = bubbles.filter((child) => {
     const b = child.getBoundingClientRect();
     return b.height > 0 && b.top >= feedBox.top - 0.5 && b.bottom <= feedBox.bottom + 0.5;
   }).length;
@@ -79,7 +81,7 @@ const MEASURE = () => {
     // Everything below the feed is the bottom stack (chips + composer + mic).
     bottomStackH: Math.round(rootBox.bottom - feedBox.bottom),
     aboveFeedH: Math.round(feedBox.top - rootBox.top),
-    totalMessages: feed.children.length,
+    totalMessages: bubbles.length,
     visibleMessages: visible,
     // Per-block breakdown of everything above the feed. A total alone tells you
     // the budget moved; it does not tell you which block moved it, and that is
