@@ -77,6 +77,27 @@ global.Response = class Response {
   async json() {
     return typeof this.body === 'string' ? JSON.parse(this.body) : this.body;
   }
+
+  async text() {
+    return typeof this.body === 'string' ? this.body : JSON.stringify(this.body);
+  }
+
+  /**
+   * 🔴 The STATIC form was missing, and `NextResponse.json()` calls it. Any
+   * route that returns `NextResponse.json(...)` — which is most of them — threw
+   * "Response.json is not a function" the moment a test imported its handler,
+   * so route tests had to mock `next/server` per file to exist at all.
+   *
+   * That is a plausible share of why 59 of 257 routes are reached by neither
+   * jest nor the production harness (route-coverage sweep, 2026-07-28): the
+   * cheapest way to test a route was blocked by the harness, not by the route.
+   */
+  static json(data, init) {
+    const res = new Response(JSON.stringify(data), init);
+    res.body = data;
+    if (!res.headers.get('content-type')) res.headers.set('content-type', 'application/json');
+    return res;
+  }
 }
 
 // Suppress console errors in tests (optional)

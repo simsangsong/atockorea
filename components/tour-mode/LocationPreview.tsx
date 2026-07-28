@@ -69,7 +69,7 @@ export default function LocationPreview({
       </a>
       {/* M-D2 — nav chips. App schemes fail silently without the app, so the
           web-fallback chip always sits beside the scheme chip. */}
-      <div className="tr-hairline-t flex flex-wrap gap-1 px-2 py-1.5" data-testid="location-nav-chips">
+      <div className="tr-hairline-t flex flex-wrap items-center gap-0.5 px-1.5 py-1" data-testid="location-nav-chips">
         {chips.map((chip) => (
           <NavBrandButton
             key={chip.key}
