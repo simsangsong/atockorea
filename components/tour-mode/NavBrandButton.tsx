@@ -25,7 +25,7 @@ function BrandMark({ brand }: { brand: ReturnType<typeof navBrandForKey> }) {
   if (brand === 'kakao') {
     // Kakao's speech bubble: a wide rounded body with a short tail.
     return (
-      <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden focusable="false">
+      <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden focusable="false">
         <path
           fill="currentColor"
           d="M8 2.2c-3.3 0-6 2-6 4.5 0 1.6 1.1 3 2.8 3.8l-.6 2.2c-.1.3.2.5.4.3l2.6-1.7c.3 0 .5.1.8.1 3.3 0 6-2 6-4.7S11.3 2.2 8 2.2Z"
@@ -35,7 +35,7 @@ function BrandMark({ brand }: { brand: ReturnType<typeof navBrandForKey> }) {
   }
   if (brand === 'tmap') {
     return (
-      <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden focusable="false">
+      <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden focusable="false">
         <path fill="currentColor" d="M3 3h10v2.3H9.2V13H6.8V5.3H3V3Z" />
       </svg>
     );
@@ -43,13 +43,13 @@ function BrandMark({ brand }: { brand: ReturnType<typeof navBrandForKey> }) {
   if (brand === 'naver') {
     // Naver's mark is its N.
     return (
-      <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden focusable="false">
+      <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden focusable="false">
         <path fill="currentColor" d="M3.4 3h3.3l2.6 4V3h3.3v10H9.3L6.7 9v4H3.4V3Z" />
       </svg>
     );
   }
   return (
-    <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden focusable="false">
+    <svg viewBox="0 0 16 16" width="11" height="11" aria-hidden focusable="false">
       <path
         fill="currentColor"
         d="M8 1.8a4.4 4.4 0 0 0-4.4 4.4c0 3.2 4 7.7 4.2 7.9a.3.3 0 0 0 .4 0c.2-.2 4.2-4.7 4.2-7.9A4.4 4.4 0 0 0 8 1.8Zm0 6a1.6 1.6 0 1 1 0-3.2 1.6 1.6 0 0 1 0 3.2Z"
@@ -85,7 +85,7 @@ export default function NavBrandButton({
       data-testid={testId}
     >
       <span
-        className="tr-meta text-cjk-safe inline-flex items-center gap-1 rounded-lg px-2 py-1 font-bold"
+        className="tr-meta text-cjk-safe inline-flex items-center gap-0.5 rounded-lg px-1.5 py-1 font-bold"
         style={{ backgroundColor: bg, color: ink }}
       >
         <BrandMark brand={brand} />

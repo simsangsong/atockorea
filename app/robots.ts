@@ -27,7 +27,8 @@ export default function robots(): MetadataRoute.Robots {
   ];
 
   // AI assistants/agents we explicitly welcome. They get the public site AND
-  // the agent channel (`/api/agent/`, `/llms.txt`) — but never the internal
+  // the agent channel (`/api/agent/`, `/llms.txt`, the `/feed/` product feed and
+  // the `/.well-known/` manifests) — but never the internal
   // API or private dashboards. Listing them by name is a discoverability +
   // trust signal: we want to be found and transacted with by these clients.
   const aiAgents = [
@@ -50,17 +51,17 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: ['/', '/api/agent/', '/llms.txt'],
+        allow: ['/', '/api/agent/', '/llms.txt', '/feed/', '/.well-known/'],
         disallow: ['/api/', ...privateDisallow],
       },
       {
         userAgent: 'Googlebot',
-        allow: ['/', '/api/agent/', '/llms.txt'],
+        allow: ['/', '/api/agent/', '/llms.txt', '/feed/', '/.well-known/'],
         disallow: ['/api/', '/admin/', '/merchant/', '/mypage/', '/auth/', '/dashboard/'],
       },
       {
         userAgent: aiAgents,
-        allow: ['/', '/api/agent/', '/llms.txt'],
+        allow: ['/', '/api/agent/', '/llms.txt', '/feed/', '/.well-known/'],
         disallow: ['/api/', ...privateDisallow],
       },
     ],

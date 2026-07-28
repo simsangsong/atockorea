@@ -51,12 +51,18 @@ export function GET() {
         openapi: `${base}/api/agent/openapi.json`,
         llms_txt: `${base}/llms.txt`,
         docs: `${base}/for-agents`,
+        // Flat product feed for agentic-commerce crawlers that read feeds
+        // rather than learn an API first.
+        product_feed: `${base}/feed/acp-products.json`,
       },
       mcp: {
         url: `${base}/api/agent/mcp`,
         transport: "streamable-http",
         protocol: "Model Context Protocol",
         tools: ["search_tours", "get_tour", "check_availability", "quote_price", "create_booking"],
+        // Conventional discovery path, so a client holding only the domain can
+        // find this server without reading our docs first.
+        server_card: `${base}/.well-known/mcp/server-card.json`,
       },
     },
     {
