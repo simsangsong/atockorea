@@ -5,7 +5,6 @@ import { resolveRoomActor } from '@/lib/tour-room/access';
 import { cachedBookingForRoom, cachedEnsureRoom } from '@/lib/tour-room/reconnectCache';
 import {
   nextPollInterval,
-  SSE_MAX_DURATION_S,
   SSE_POLL_MIN_MS,
   SSE_RECONNECT_HINT_MS,
   SSE_STREAM_BUDGET_MS,
@@ -49,8 +48,22 @@ export const dynamic = 'force-dynamic';
  * stampede against the auth path this route just finished paying for.
  */
 
-/** The cadence itself lives in lib/tour-room/sseFallback so a test can read it. */
-export const maxDuration = SSE_MAX_DURATION_S;
+/**
+ * 🔴 A LITERAL, and it has to stay one.
+ *
+ * Next.js reads segment config statically, before any module graph exists, so
+ * `export const maxDuration = SSE_MAX_DURATION_S` does not fail at runtime — it
+ * fails the BUILD: "Unknown identifier SSE_MAX_DURATION_S at maxDuration",
+ * followed by "Invalid segment configuration export detected". That is exactly
+ * how it shipped and broke the production deploy on 2026-07-28, because a local
+ * `next build` reports "Compiled successfully" first and only fails later in
+ * "Collecting page data" — a grep for the success line hides it.
+ *
+ * So the number is written twice on purpose, and `sseFallbackDefence.test.ts`
+ * asserts the two agree. A second copy with a test is a smaller problem than a
+ * build that cannot run.
+ */
+export const maxDuration = 60;
 
 const encoder = new TextEncoder();
 
