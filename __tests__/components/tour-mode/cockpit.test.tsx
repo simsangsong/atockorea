@@ -111,7 +111,43 @@ describe('shared Cockpit', () => {
     openActionTray();
     expect(screen.getByTestId('action-grid-board')).toBeInTheDocument();
     expect(screen.getByTestId('action-grid-expense')).toBeInTheDocument();
-    expect(screen.getByText('제주 동부 투어 · 연결됨')).toBeInTheDocument();
+    // C2 — the header split the title from the connection state: the tour name
+    // owns the width (it was truncating to "Jej…" on a real phone) and the
+    // state is a dot. The sentence still exists for screen readers, which is
+    // the only place it ever worked as a sentence.
+    expect(screen.getByTestId('cockpit-title')).toHaveTextContent('제주 동부 투어');
+    expect(screen.getByTestId('cockpit-connection')).toHaveTextContent('연결됨');
+  });
+
+  /**
+   * C3 — the send control is conditional now (messenger grammar): a permanent
+   * text button held ~80px for something unusable most of the time, and that
+   * width was why the input clipped its own placeholder. Pinned so a future
+   * "always show the button" does not quietly starve the field again.
+   */
+  it('reveals the send button only once there is a draft', async () => {
+    render(<Cockpit {...base} />);
+    expect(screen.queryByTestId('driver-text-send')).not.toBeInTheDocument();
+    fireEvent.change(screen.getByTestId('driver-text-input'), { target: { value: '출발합니다' } });
+    expect(await screen.findByTestId('driver-text-send')).toBeInTheDocument();
+  });
+
+  /**
+   * 🔴 C3 — chat focus mode (8 → 80 messages, bottom stack folded away) had no
+   * affordance at all: tapping the feed was the only way in and nothing said
+   * so. The owner reported "채팅 내용이 몇 줄밖에 안 보인다" with the reader one
+   * undiscoverable tap away.
+   */
+  it('offers a labelled way into chat focus mode, not just an unannounced tap', () => {
+    // Gated on there being something to read — an expand control over an empty
+    // feed would be an invitation to a blank screen.
+    mockChannelState.messages = [guestMsg({ source_text: '언제 출발해요?' })];
+    render(<Cockpit {...base} />);
+    const expand = screen.getByTestId('cockpit-chat-expand');
+    expect(expand).toBeInTheDocument();
+    fireEvent.click(expand);
+    expect(screen.getByTestId('cockpit-chat-collapse')).toBeInTheDocument();
+    expect(screen.queryByTestId('cockpit-chat-expand')).not.toBeInTheDocument();
   });
 
   // A6 (plan §11.A) — the cockpit carries the DRIVER preset strip: one-tap

@@ -51,12 +51,27 @@ const TEXT_ALLOWLIST: Record<string, { pattern: string; reason: string }[]> = {
     { pattern: 'text-2xl', reason: 'reaction picker emoji glyph size' },
   ],
   'Cockpit.tsx': [
-    // The cockpit is the DRIVING surface: its large text exists for at-arm's-
-    // length legibility behind the wheel (clock, party count, big touch labels,
-    // pinch-zoomed chat bubbles). Shrinking these to tr-display(20px) would
-    // trade driving safety for typographic purity — kept at their tuned sizes.
-    { pattern: 'text-xl', reason: 'driving-mode large label' },
-    { pattern: 'text-2xl', reason: 'driving-mode large label' },
+    /**
+     * C4 (§D-5 U-D12) — NARROWED, not removed.
+     *
+     * This used to be a blanket "driving-mode large label" over `text-xl`,
+     * `text-2xl` and `text-4xl`, which covered 20 sites. That blanket had a
+     * cost nobody had priced: a raw Tailwind size is a FIXED px value, so
+     * every one of those sites ignored `--tr-font-scale`. The owner reported
+     * the chat "폰트크기 설정을 안 받는다" and it was true twice over — the
+     * cockpit shell was not planting the variable (C1), and the bubbles would
+     * not have honoured it anyway because they were `text-xl` (2026-07-28).
+     *
+     * What is genuinely read at arm's length while the vehicle is moving is
+     * the mic button and the stop-recording button. Everything else — sheet
+     * inputs, overtime steppers, dialog titles — is used parked, and now
+     * rides `tr-display`/`tr-body-lg`, i.e. the same pixels by default and
+     * responsive to the size setting.
+     *
+     * If a future site needs raw size, the question to answer is "is this
+     * pressed while the car is moving?", not "is this in the cockpit?".
+     */
+    { pattern: 'text-2xl', reason: 'mic + stop-recording: pressed while moving' },
     { pattern: 'text-4xl', reason: 'driving-mode headcount display' },
   ],
   'DriverConsole.tsx': [
