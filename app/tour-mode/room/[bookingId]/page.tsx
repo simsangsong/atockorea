@@ -1,4 +1,5 @@
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import TourRoomClient from '@/components/tour-mode/TourRoomClient';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 
@@ -17,7 +18,9 @@ export default async function TourRoomPage({
 }) {
   const { bookingId } = await params;
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return (
+      <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />
+    );
   }
   return <TourRoomClient bookingId={bookingId} />;
 }

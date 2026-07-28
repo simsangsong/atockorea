@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation';
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import DriverConsole from '@/components/tour-mode/driver/DriverConsole';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 import { verifyRoomToken } from '@/lib/tour-room/token';
@@ -23,7 +24,7 @@ export default async function TourModeDriverPage({
   searchParams: Promise<{ rt?: string }>;
 }) {
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />;
   }
   const { rt } = await searchParams;
   if (rt && verifyRoomToken(rt)?.role === 'guide') {
