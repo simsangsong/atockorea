@@ -1421,20 +1421,99 @@
  * scroll hint (2026-07-28 guest walk: both rows clipped mid-chip at 390px).
  *
  * The fade is a mask, not an overlay: it costs no DOM, it cannot intercept a
- * tap, and it sits on the SCROLLER so it tracks the scroll position for free —
- * `--tr-chiprow-fade` is only applied on the right, and once the row is scrolled
- * to the end the last chip simply ends before the fade begins. Scrollbars stay
- * hidden because a mobile chip strip with a visible bar is worse than either.
+ * tap, and it sits on the SCROLLER. Scrollbars stay hidden because a mobile
+ * chip strip with a visible bar is worse than either.
+ *
+ * 🔴 2026-07-29 — that first version claimed "once the row is scrolled to the
+ * end the last chip simply ends before the fade begins". The precondition never
+ * held. A flex row inside a scroller puts nothing after its last item, so the
+ * mask had nothing to land on. Measured on a seeded room at 390px, each row
+ * scrolled as far as it will go:
+ *
+ *   quick-signal-bar  6 chips   trailing space 0px   → fade eats 28px of the last chip
+ *   quick-replies    12 chips   trailing space 12px  → fade eats 16px of the last chip
+ *
+ * So the final option in each row was ghosted permanently, no matter what the
+ * guest did — and on the signal row the final options are the ones a lost guest
+ * reaches for. Two fixes, and they are independent:
+ *
+ * 1. `::after` gives the mask its own runway, so at the end of the scroll the
+ *    fade falls on empty space and the last chip renders whole. This is the
+ *    part that had to work everywhere, so it is plain flexbox.
+ *
+ * 2. The fade now follows the scroll, so the LEFT edge fades once there is
+ *    something hidden to the left and the right edge stops fading once there
+ *    is not. Previously the left cut was hard the moment you scrolled — which
+ *    is the other half of the "clipped at both edges" report. This half is
+ *    progressive: without scroll-driven animation support the custom
+ *    properties keep their initial values, which reproduce the old mask
+ *    exactly, so nothing regresses on an older engine.
  */
+@property --tr-chiprow-lead {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tr-chiprow-trail {
+  syntax: '<length>';
+  inherits: false;
+  initial-value: 28px;
+}
 .tr-chiprow {
   overflow-x: auto;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
-  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
-  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--tr-chiprow-lead),
+    #000 calc(100% - var(--tr-chiprow-trail)),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 var(--tr-chiprow-lead),
+    #000 calc(100% - var(--tr-chiprow-trail)),
+    transparent 100%
+  );
+}
+/* The runway. Every `.tr-chiprow` is also a flex container, so this lands as a
+ * flex item and costs no DOM node and no tap target. */
+.tr-chiprow::after {
+  content: '';
+  flex: 0 0 28px;
 }
 .tr-chiprow::-webkit-scrollbar {
   display: none;
+}
+@supports (animation-timeline: scroll()) {
+  .tr-chiprow {
+    animation-name: tr-chiprow-edges;
+    animation-duration: auto;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: scroll(self inline);
+  }
+  @keyframes tr-chiprow-edges {
+    from {
+      --tr-chiprow-lead: 0px;
+      --tr-chiprow-trail: 28px;
+    }
+    to {
+      --tr-chiprow-lead: 28px;
+      --tr-chiprow-trail: 0px;
+    }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  /* Not motion — the mask does not move on its own, it tracks a finger. But an
+   * engine that reports reduced motion may also be one where we would rather
+   * not lean on a scroll timeline at all, and the initial values are a correct
+   * static fade. */
+  .tr-chiprow {
+    animation-name: none;
+  }
 }
 
 /**
