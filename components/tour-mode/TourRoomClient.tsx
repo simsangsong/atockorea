@@ -841,11 +841,9 @@ function TourRoomLive({
       {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
         <PlanNudgeModal bookingId={bookingId} roomSession={data.session} locale={locale} theme={theme} />
       )}
-      {/* A5 — one-time usage manual on first entry (shape follows the tour's
-          price model: shared → join manual, charter → private manual). */}
-      {viewerRole === 'customer' && !readOnly && (
-        <AppManual variant="auto" kind={manualKind} locale={locale} theme={theme} />
-      )}
+      {/* A5 — the manual no longer ambushes the guest on entry (owner's call,
+          2026-07-28). It now has two doors they choose to walk through: a
+          physical button on the home dashboard and the Settings accordion. */}
       <RoomShell
       title={snapshot.booking?.tours?.title ?? 'Your tour'}
       headerTitleSlot={
@@ -904,10 +902,11 @@ function TourRoomLive({
           bookingId={bookingId}
           roomSession={data.session}
           participants={
-            ((snapshot as { participants?: Array<{ role?: string; display_name?: string }> }).participants ?? [])
+            ((snapshot as { participants?: Array<{ id?: string; role?: string; display_name?: string }> }).participants ?? [])
               .filter((p) => p.display_name)
-              .map((p) => ({ role: p.role ?? 'customer', display_name: p.display_name! }))
+              .map((p) => ({ id: p.id, role: p.role ?? 'customer', display_name: p.display_name! }))
           }
+          myParticipantId={data.participant.id}
           onClose={api.close}
           onSelectTab={api.selectTab}
           /* readOnly 게이트 필수 — 컨시어지 시트 자체가 종료룸에선 null이라
@@ -1008,6 +1007,8 @@ function TourRoomLive({
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}
                 isPrivate={manualKind === 'private'}
+                manualKind={manualKind}
+                theme={theme}
                 locations={locations}
               />
             )

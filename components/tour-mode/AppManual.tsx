@@ -12,7 +12,7 @@
  */
 
 import { useEffect, useState } from 'react';
-import { IconManual, IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
+import { IconChevronRight, IconManual, IconScrollDown, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   MANUAL_CTA,
@@ -47,10 +47,16 @@ export default function AppManual({
   locale,
   theme = 'light',
 }: {
-  variant: 'auto' | 'inline';
+  /**
+   * 'inline' — the Settings accordion.
+   * 'button' — a physical button that OPENS the sheet on demand. The home
+   *            dashboard's door, and now the only thing that shows the manual
+   *            without the guest asking for it… by them asking for it.
+   */
+  variant: 'inline' | 'button';
   kind: ManualKind;
   locale: RoomLocale;
-  /** auto variant only — the sheet renders OUTSIDE RoomShell's `.tr-root`
+  /** button variant only — the sheet renders OUTSIDE RoomShell's `.tr-root`
    *  wrapper, so it must re-scope the token layer itself (like
    *  PlanNudgeModal); without it every tr-* var is undefined and the sheet
    *  paints transparent on top of the room. */
@@ -61,16 +67,26 @@ export default function AppManual({
   // stays scannable; the icon + title header is always visible.
   const [expanded, setExpanded] = useState(false);
 
-  // auto: first visit only — the flag is written on dismiss, not on show, so
-  // an accidental reload before reading doesn't burn the one-time slot.
-  useEffect(() => {
-    if (variant !== 'auto') return;
-    try {
-      if (!window.localStorage.getItem(MANUAL_SEEN_KEY)) setOpen(true);
-    } catch {
-      /* storage unavailable → stay closed; the Settings card still exists */
-    }
-  }, [variant]);
+  /**
+   * 🔴 The auto-open is gone (owner's call, 2026-07-28).
+   *
+   * It was the FIRST thing a guest met: 2,302 characters of prose in a modal,
+   * six sections, 216px still below the fold, and one way out at the bottom.
+   * Measured on the UX walk. That screen lands while someone is standing at a
+   * pickup point with a suitcase — nobody reads it, and the app's first
+   * impression is a wall of text with a dismiss button.
+   *
+   * The content did not get worse; it got a door instead of an ambush. The
+   * home dashboard carries a physical button to it, Settings keeps the
+   * accordion, and both open the SAME source (lib/tour-room/appManual).
+   *
+   * `MANUAL_SEEN_KEY` still exists and is still written on dismiss — nothing
+   * reads it to decide whether to show the sheet any more, but a returning
+   * guest's flag is not something to throw away silently in case a future
+   * "first time?" hint wants it.
+   */
+
+  const openSheet = () => setOpen(true);
 
   const dismiss = () => {
     setOpen(false);
@@ -123,25 +139,38 @@ export default function AppManual({
     );
   }
 
-  if (!open) return null;
-  return (
-    // `.tr-root.dark` matches the same-element rule in tour-room-theme.css;
-    // display:contents keeps the wrapper out of layout while the CSS vars
-    // still cascade into the fixed-position sheet.
-    <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
-      <Sheet open onClose={dismiss} title={MANUAL_TITLE[locale]}>
-        <div className="max-h-[60vh] overflow-y-auto pb-2" data-testid="app-manual-auto">
-          <SectionList kind={kind} locale={locale} />
-        </div>
+  if (variant === 'button') {
+    return (
+      <>
         <button
           type="button"
-          onClick={dismiss}
-          className="tr-title mt-4 w-full rounded-2xl bg-[var(--tr-accent)] py-3.5 font-bold text-[var(--tr-bubble-me-ink)]"
-          data-testid="app-manual-dismiss"
+          onClick={openSheet}
+          className="tr-btn-physical flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+          style={{ background: 'var(--tr-chip-grad-accent)' }}
+          data-testid="app-manual-open"
         >
-          {MANUAL_CTA[locale]}
+          <span
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] bg-white/15"
+            aria-hidden
+          >
+            <IconManual size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
+          </span>
+          <h3 className="tr-card-text text-cjk-safe min-w-0 flex-1 font-bold">{MANUAL_TITLE[locale]}</h3>
+          <IconChevronRight size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden className="shrink-0 opacity-80" />
         </button>
-      </Sheet>
-    </div>
-  );
+        {open && (
+          <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
+            <Sheet open onClose={dismiss} title={MANUAL_TITLE[locale]}>
+              <div className="max-h-[70vh] overflow-y-auto pb-2" data-testid="app-manual-auto">
+                <SectionList kind={kind} locale={locale} />
+              </div>
+            </Sheet>
+          </div>
+        )}
+      </>
+    );
+  }
+
+  // (the old `auto` branch lived here — deleted with the behaviour)
+  return null;
 }

@@ -13,6 +13,7 @@ import { useEffect, useRef, useState } from 'react';
 import { activeNotice, formatRemaining, formatTargetTime, noticeBannerMode, rallyStage } from '@/lib/tour-room/notices';
 import { kakaoWebRouteUrl } from '@/lib/tour-room/nav-links';
 import { IconFreeTime, IconMeeting, TR_ICON } from '@/components/tour-mode/icons';
+import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { speakWithDevice } from '@/lib/tour-room/tts';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
@@ -320,9 +321,12 @@ export default function NoticeBanner({
         {(stage === 'overdue' || stage === 'contact') && (
           <p data-testid="rally-stage-line" className="tr-label mt-0.5 font-semibold text-[var(--tr-danger)]">
             {stage === 'overdue' ? copy.waiting : copy.contact}
-            {stage === 'contact' && process.env.NEXT_PUBLIC_TOUR_OPS_PHONE && (
+            {/* The env behind this was never set, so the call chip on the rally
+                escalation — the exact moment a guest has lost the group and is
+                being told to phone someone — never rendered. */}
+            {stage === 'contact' && OPS_PHONE && (
               <a
-                href={`tel:${process.env.NEXT_PUBLIC_TOUR_OPS_PHONE}`}
+                href={`tel:${OPS_PHONE}`}
                 className="ml-2 rounded-full bg-[var(--tr-danger)] px-2.5 py-0.5 font-bold text-white"
               >
                 {copy.call}

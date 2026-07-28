@@ -49,8 +49,8 @@ function mount(over: Partial<React.ComponentProps<typeof RoomDrawer>> = {}) {
       bookingId="b1"
       roomSession="sess-1"
       participants={[
-        { role: 'guide', display_name: '가이드 김' },
-        { role: 'customer', display_name: 'Massimo' },
+        { id: 'p-guide', role: 'guide', display_name: '가이드 김' },
+        { id: 'p-me', role: 'customer', display_name: 'Massimo' },
       ]}
       onClose={jest.fn()}
       onSelectTab={jest.fn()}
@@ -70,23 +70,36 @@ describe('RoomDrawer (U4-D5)', () => {
     expect(calls.filter((u) => u.includes('/api/tour-rooms/b1/media'))).toHaveLength(3);
   });
 
-  it('drawer shortcuts close then act (tab switch / emergency)', async () => {
+  /**
+   * 🔴 These two guarded the navigation shortcuts (Today / Map / Settings /
+   * Smart Guide) that were removed on 2026-07-28: every one of them was
+   * already ONE tap away on the tab bar or header, so reaching them through a
+   * drawer was two taps to the same place. What must stay guarded now is the
+   * inverse — that they are GONE, and that the one shortcut kept for safety
+   * still works.
+   */
+  it('no longer duplicates the tab bar', async () => {
+    mockMedia();
+    mount();
+    for (const key of ['schedule', 'map', 'settings', 'concierge']) {
+      expect(screen.queryByTestId(`drawer-shortcut-${key}`)).not.toBeInTheDocument();
+    }
+  });
+
+  it('keeps the emergency shortcut and it closes then acts', async () => {
     mockMedia();
     const onClose = jest.fn();
-    const onSelectTab = jest.fn();
     const onOpenEmergency = jest.fn();
-    mount({ onClose, onSelectTab, onOpenEmergency });
-    fireEvent.click(screen.getByTestId('drawer-shortcut-schedule'));
-    expect(onClose).toHaveBeenCalled();
-    expect(onSelectTab).toHaveBeenCalledWith('schedule');
+    mount({ onClose, onOpenEmergency });
     fireEvent.click(screen.getByTestId('drawer-shortcut-emergency'));
+    expect(onClose).toHaveBeenCalled();
     expect(onOpenEmergency).toHaveBeenCalled();
   });
 
-  it('hides the Smart Guide shortcut without the callback (staff view)', async () => {
+  it('marks the viewer in the member list', async () => {
     mockMedia();
-    mount({ onOpenConcierge: undefined });
-    expect(screen.queryByTestId('drawer-shortcut-concierge')).not.toBeInTheDocument();
+    mount({ myParticipantId: 'p-me' });
+    expect(screen.getByTestId('drawer-member-me')).toBeInTheDocument();
   });
 
   it('lists members with role badges', async () => {

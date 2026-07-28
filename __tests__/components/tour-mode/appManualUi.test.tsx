@@ -30,18 +30,27 @@ describe('AppManual inline accordion (A4)', () => {
     expect(screen.queryByTestId('app-manual-body')).not.toBeInTheDocument();
   });
 
-  it('auto variant still opens the one-time sheet for a first-time guest', () => {
+  /**
+   * 🔴 These two used to assert the OPPOSITE: that the manual opened itself on
+   * first entry. It did — 2,302 characters of it, before the guest had touched
+   * anything. Retired 2026-07-28 (owner's call after the UX walk), so the
+   * contract to protect now is that the manual appears ONLY when asked for.
+   */
+  it('the button variant does not show the manual until it is tapped', () => {
     window.localStorage.removeItem(MANUAL_SEEN_KEY);
-    render(<AppManual variant="auto" kind="join" locale="ko" />);
-    expect(screen.getByTestId('app-manual-auto')).toBeInTheDocument();
+    render(<AppManual variant="button" kind="join" locale="ko" />);
+    expect(screen.queryByTestId('app-manual-auto')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByTestId('app-manual-dismiss'));
-    expect(window.localStorage.getItem(MANUAL_SEEN_KEY)).toBeTruthy();
+    fireEvent.click(screen.getByTestId('app-manual-open'));
+    expect(screen.getByTestId('app-manual-auto')).toBeInTheDocument();
   });
 
-  it('auto variant never re-opens once dismissed', () => {
+  it('the button variant keeps working for a returning guest', () => {
+    // The old auto sheet burned itself out after one dismissal. A door does
+    // not: a guest who read the manual on day one can still open it on day two.
     window.localStorage.setItem(MANUAL_SEEN_KEY, String(Date.now()));
-    render(<AppManual variant="auto" kind="join" locale="ko" />);
-    expect(screen.queryByTestId('app-manual-auto')).not.toBeInTheDocument();
+    render(<AppManual variant="button" kind="join" locale="ko" />);
+    fireEvent.click(screen.getByTestId('app-manual-open'));
+    expect(screen.getByTestId('app-manual-auto')).toBeInTheDocument();
   });
 });

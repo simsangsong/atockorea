@@ -23,6 +23,7 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
@@ -100,7 +101,7 @@ import {
 /** Undo-send window after a clip/utterance finishes — a calm hold, not a
  *  3·2·1 countdown. The progress line fills over exactly this long. */
 const UNDO_WINDOW_MS = 2400;
-export const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '';
+export { OPS_PHONE };
 const VAPID_PUBLIC = process.env.NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY ?? '';
 
 /** What a finished voice capture will send. Both device STT and the audio
