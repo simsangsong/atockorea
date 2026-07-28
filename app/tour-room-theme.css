@@ -98,6 +98,39 @@
   --tr-home-tile: #fcfcfb;
   --tr-home-card-line: rgba(37, 42, 44, 0.06);
   --tr-tile-shadow: 0 1px 2px rgba(37, 42, 44, 0.03), 0 10px 26px rgba(37, 42, 44, 0.07);
+
+  /* ── Elevation scale (2026-07-28) ────────────────────────────────────────
+   *
+   * `.tr-card` — the workhorse behind the status card, the chat preview, every
+   * settings section, every stop card and the drawer — was `background` plus
+   * `border-radius` and NOTHING else. Meanwhile the home tiles already had a
+   * hairline and a two-layer shadow. So half the app read as physical objects
+   * and the other half as flat patches of a slightly different colour, which
+   * is most of why the surface felt cheap next to its own tiles.
+   *
+   * Two layers per step, because that is what makes a surface look lit rather
+   * than outlined: a tight, dark CONTACT shadow that says "this touches the
+   * page here", and a wide, faint AMBIENT one that says "there is a room
+   * around it". One blurry shadow reads as a sticker; two read as an object.
+   *
+   * The rim is the other half. In light the card gets a 1px inset highlight on
+   * its TOP edge only — light comes from above, so that is the edge that
+   * catches it. In dark, shadows barely register on a near-black canvas, so
+   * separation has to come from the rim instead and it gets stronger, not
+   * weaker. Same variable, opposite job, which is why both modes declare it.
+   */
+  --tr-elev-1:
+    0 1px 2px rgba(37, 42, 44, 0.04),
+    0 4px 12px rgba(37, 42, 44, 0.05);
+  --tr-elev-2:
+    0 1px 2px rgba(37, 42, 44, 0.05),
+    0 10px 26px rgba(37, 42, 44, 0.08);
+  --tr-elev-3:
+    0 2px 4px rgba(37, 42, 44, 0.06),
+    0 18px 44px rgba(37, 42, 44, 0.12);
+  --tr-rim: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  --tr-card-line: rgba(37, 42, 44, 0.05);
+
   --tr-chip-ink: #fcfcfb;
   --tr-chip-shadow: rgba(37, 42, 44, 0.2);
   --tr-chip-grad: linear-gradient(140deg, #3a4144 0%, #181c1e 100%);
@@ -147,6 +180,23 @@
   --tr-home-tile: #1d2020;
   --tr-home-card-line: rgba(244, 245, 242, 0.06);
   --tr-tile-shadow: 0 1px 2px rgba(0, 0, 0, 0.28), 0 6px 16px rgba(0, 0, 0, 0.32);
+
+  /* Dark counterpart of the elevation scale. A shadow on a near-black canvas
+   * is nearly free of information, so the work shifts to the rim: the card is
+   * separated by a lit top edge, not by a dark halo. Shadows stay to hold the
+   * contact edge; the rim is what you actually see. */
+  --tr-elev-1:
+    0 1px 2px rgba(0, 0, 0, 0.3),
+    0 4px 12px rgba(0, 0, 0, 0.24);
+  --tr-elev-2:
+    0 1px 2px rgba(0, 0, 0, 0.34),
+    0 10px 26px rgba(0, 0, 0, 0.3);
+  --tr-elev-3:
+    0 2px 4px rgba(0, 0, 0, 0.4),
+    0 18px 44px rgba(0, 0, 0, 0.4);
+  --tr-rim: inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  --tr-card-line: rgba(244, 245, 242, 0.07);
+
   --tr-chip-ink: #f4f5f2;
   --tr-chip-shadow: rgba(0, 0, 0, 0.4);
   --tr-chip-grad: linear-gradient(135deg, #434b4e 0%, #202526 100%);
@@ -770,6 +820,31 @@
 .tr-card {
   background: var(--tr-surface);
   border-radius: var(--tr-radius-card);
+  /* See the elevation block at the top of this file. This used to be the two
+   * lines above and nothing else, which is why the app's own home tiles looked
+   * like objects and everything else looked like coloured paper. */
+  border: 1px solid var(--tr-card-line);
+  box-shadow: var(--tr-rim), var(--tr-elev-1);
+}
+
+/* Opt-outs, because not every `.tr-card` is a card that floats.
+ *   flat  — it sits inside another card, or against a chrome bar; a shadow
+ *           there reads as a seam, not as depth.
+ *   raise — it IS the subject of the screen (the sheet, the now card). */
+.tr-card--flat {
+  box-shadow: none;
+}
+.tr-card--raise {
+  box-shadow: var(--tr-rim), var(--tr-elev-3);
+}
+
+/* High-contrast skin keeps the geometry and drops the atmosphere: the whole
+ * point of that skin is hard edges, and a soft ambient shadow works against
+ * a border that is trying to be unmistakable. */
+.tr-root[data-tr-skin='contrast'] .tr-card,
+.tr-root[data-tr-skin='contrast'] .tr-card--raise {
+  box-shadow: none;
+  border-color: var(--tr-home-card-line);
 }
 
 /* Plan picker (/tour-mode/plan) — 2026-07-28 refresh.
@@ -1084,11 +1159,46 @@
 /* Home dashboard card (H2.1): cool tile surface + hairline + soft elevation.
  * The one shadowed card family in the room — launcher grammar, not feed
  * grammar. */
+/* One card material for the whole app.
+ *
+ * Home tiles and `.tr-card` had grown two different recipes — tiles carried a
+ * border and `--tr-tile-shadow`, cards carried nothing — so moving between the
+ * home screen and any other tab meant moving between two material languages.
+ * Both now read from the same elevation scale, and tiles gain the lit top edge
+ * they never had. `--tr-tile-shadow` stays defined for the skins that override
+ * it (contrast sets it to `none`), and it is what elev-2 was modelled on, so
+ * the tiles look the same weight they always did — just lit. */
 .tr-home-card {
   background: var(--tr-home-tile);
   border: 1px solid var(--tr-home-card-line);
   border-radius: var(--tr-radius-card);
-  box-shadow: var(--tr-tile-shadow);
+  box-shadow: var(--tr-rim), var(--tr-tile-shadow);
+}
+.tr-root[data-tr-skin='contrast'] .tr-home-card {
+  box-shadow: none;
+}
+
+/**
+ * The protagonist card.
+ *
+ * A home screen where every card is the same weight has no protagonist, and a
+ * guest has to read all of it to find the one line they opened the app for.
+ * This lifts exactly one card: a warmer accent hairline, a step more
+ * elevation, and a hair more of the light source at its top edge.
+ *
+ * Restraint is the whole mechanism — if a second element ever takes this
+ * class, both stop meaning anything. There is one per screen.
+ */
+.tr-card-hero {
+  border-color: var(--tr-accent-soft);
+  box-shadow:
+    var(--tr-rim),
+    0 0 0 1px var(--tr-accent-soft),
+    var(--tr-elev-2);
+}
+.tr-root[data-tr-skin='contrast'] .tr-card-hero {
+  box-shadow: none;
+  border-color: var(--tr-ink);
 }
 
 /* Home tile icon chip: gradient squircle with a gloss highlight — the "tech"
@@ -1327,6 +1437,53 @@
   display: none;
 }
 
+/**
+ * 🔴 N1 — the chips in those rows did not look like chips.
+ *
+ * Measured on 2026-07-28, chip fill against the page behind it:
+ *   light signal 1.04 · dark signal 1.36 · light reply 1.11 · dark reply 1.09
+ * against WCAG 1.4.11's 3.0 for a control boundary, with `border-width: 0` on
+ * the signal row. The TEXT was fine (13–15). The problem was that nothing
+ * described an edge, so the chips read as words lying on the background.
+ *
+ * That row is "Meet me here" / "Running late" / "Need a stop" — what a guest
+ * taps when they are lost. The least tappable-looking control in the app was
+ * the most urgent one.
+ *
+ * `skinContrast` never saw it because that gate reads text pairs only. The
+ * fix is a rim + a hairline + a real contact shadow: a boundary you can see
+ * without changing any colour token, so all ten skins keep their palette.
+ */
+/* First attempt used `--tr-card-line` and it was not enough: the chips LOOKED
+ * fixed in a screenshot (the new shadow reads as an edge to the eye) while the
+ * measured boundary only moved 1.04 → 1.14. Borrowing the chip's own text
+ * colour instead gives a line that is genuinely of the control rather than a
+ * faint neutral, and it inherits each skin's palette for free. */
+.tr-chip-tap {
+  border: 1px solid currentColor;
+  box-shadow: var(--tr-rim), var(--tr-elev-1);
+  transition:
+    transform var(--tr-dur-fast) var(--tr-ease-out),
+    box-shadow var(--tr-dur-fast) var(--tr-ease-out);
+}
+/* The signal row is the urgent one ("Meet me here" / "Running late"); it gets
+ * the full-strength edge. The quick-reply row is conversational, so it keeps
+ * the same shape at a quieter weight — hierarchy inside one family. */
+.tr-chip-tap--urgent {
+  border-color: currentColor;
+}
+.tr-chip-tap--quiet {
+  border-color: color-mix(in srgb, currentColor 72%, transparent);
+}
+.tr-chip-tap:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow: var(--tr-rim), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+.tr-root[data-tr-skin='contrast'] .tr-chip-tap {
+  border-color: var(--tr-ink);
+  box-shadow: none;
+}
+
 /* ---- Panel/section entrance (M-D5): enter-only, transform/opacity only.
  * Tab panels mount on switch, so a mount animation IS the transition —
  * no double-mount, chat scroll and map instances stay untouched. */
@@ -1342,6 +1499,42 @@
 }
 .tr-anim-panel-in {
   animation: tr-panel-in var(--tr-dur-base) var(--tr-ease-out);
+}
+
+/**
+ * Atmosphere (2026-07-28) — one light source over any skin.
+ *
+ * Every skin painted its backdrop as a flat colour or a two-stop vertical
+ * ramp, so the canvas was the same value corner to corner and the cards had
+ * nothing to sit IN. Real surfaces have a light source; the eye reads its
+ * absence as printed rather than lit.
+ *
+ * This is one layer, not twenty edits: a wide radial highlight biased to the
+ * top where a phone's own reflection would be, plus a barely-there floor
+ * darkening so the bottom of the screen recedes. It uses `--tr-accent-soft`,
+ * which every skin already defines in both modes, so all ten stay themselves —
+ * jeju stays mint, blossom stays pink — they just gain a sky.
+ *
+ * `pointer-events: none` and it sits under the panel wrapper, so nothing about
+ * hit-testing or the stacking-context trap above changes.
+ */
+.tr-atmos {
+  position: relative;
+  isolation: auto;
+}
+.tr-atmos::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(120% 62% at 50% -12%, var(--tr-accent-soft) 0%, transparent 68%),
+    radial-gradient(90% 40% at 50% 108%, rgba(0, 0, 0, 0.05) 0%, transparent 72%);
+  opacity: 0.85;
+}
+/* The high-contrast skin is a deliberate absence of atmosphere. */
+.tr-root[data-tr-skin='contrast'] .tr-atmos::before {
+  display: none;
 }
 
 /* Staggered section entrance for sheets/cards (60ms steps, first 8 children). */

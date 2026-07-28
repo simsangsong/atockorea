@@ -561,7 +561,7 @@ export default function Composer({
             key={preset.key}
             type="button"
             onClick={() => tapPreset(preset)}
-            className="tr-label tr-press shrink-0 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 py-2 text-[var(--tr-ink-2)]"
+            className="tr-label tr-chip-tap tr-chip-tap--quiet shrink-0 rounded-full bg-[var(--tr-surface)] px-3.5 py-2 text-[var(--tr-ink-2)]"
           >
             {preset.emoji} {preset.text[locale]}
           </button>

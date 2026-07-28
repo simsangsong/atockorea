@@ -142,21 +142,42 @@ export default function AppManual({
   if (variant === 'button') {
     return (
       <>
+        {/*
+         * 🔴 Emphasis, corrected (2026-07-28).
+         *
+         * This shipped as a full-width slab flooded with the accent gradient,
+         * because the ask was "make it unmissable". It worked too well: on the
+         * home screen it became the loudest object on the page, louder than the
+         * card telling the guest where they are right now — and on the warm
+         * skins (jeju's tangerine) it dominates outright. The least urgent
+         * thing was the biggest thing.
+         *
+         * Still a physical button, still full width, still pressable — the
+         * ACCENT moved from the slab to the icon chip. Colour marks it; it no
+         * longer outshouts the day. Emphasis is a budget, and the status card
+         * has first claim on it.
+         */}
         <button
           type="button"
           onClick={openSheet}
-          className="tr-btn-physical flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
-          style={{ background: 'var(--tr-chip-grad-accent)' }}
+          className="tr-home-card tr-press flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
           data-testid="app-manual-open"
         >
           <span
-            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-[12px] bg-white/15"
+            className="tr-chip tr-chip--accent flex h-9 w-9 shrink-0 items-center justify-center"
             aria-hidden
           >
             <IconManual size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
           </span>
-          <h3 className="tr-card-text text-cjk-safe min-w-0 flex-1 font-bold">{MANUAL_TITLE[locale]}</h3>
-          <IconChevronRight size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden className="shrink-0 opacity-80" />
+          <h3 className="tr-card-text text-cjk-safe min-w-0 flex-1 font-bold text-[var(--tr-ink)]">
+            {MANUAL_TITLE[locale]}
+          </h3>
+          <IconChevronRight
+            size={TR_ICON.action}
+            strokeWidth={TR_STROKE.default}
+            aria-hidden
+            className="shrink-0 text-[var(--tr-ink-3)]"
+          />
         </button>
         {open && (
           <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
