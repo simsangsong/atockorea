@@ -16,13 +16,51 @@
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import dynamicImport from 'next/dynamic';
+
+/**
+ * 🔴 The room shipped 56 static imports and ZERO dynamic ones, so a guest
+ * landing on the home dashboard downloaded, parsed and hydrated the guide's
+ * seat dashboard, the caption bar, the settings tab, the concierge panel, the
+ * drawer and the map tab before the app asked the server anything.
+ *
+ * Measured on a mid-tier phone (4x CPU) over slow 4G, 2026-07-28:
+ *   the first API call left at 5.5s and the day appeared at 5.8s —
+ *   i.e. ~95% of the guest's wait was client boot, not the server.
+ *
+ * Measured effect of THIS split, before and after, same build pipeline:
+ *   782KB → 746KB of JS, FCP 5892ms → 5808ms.
+ * Real, and small. It is worth keeping — a guest should not download the
+ * guide's seat dashboard — but it is NOT the lever. The lever is that the
+ * room inherits the marketing site's root layout (i18n messages, currency,
+ * session, analytics, toaster, chatbot shell), and that is ~700KB of the
+ * 746. Recorded in the plan; it needs a route-group split, not an import.
+ *
+ * Split by what the guest is actually looking at. Home renders eagerly; the
+ * rest arrives when its tab or sheet is opened, which is also when the network
+ * is idle. `ssr: false` on all of them: every one is behind a client-side
+ * interaction, so there is no server HTML to preserve, and skipping SSR keeps
+ * them out of the hydration pass too.
+ *
+ * NOT split: RoomShell, HomeTab, ChatFeed, Composer, LobbyCard, NoticeBanner.
+ * Chat is where a guest goes next; making them wait at that tap would move the
+ * delay rather than remove it.
+ */
+const GuideSeatStrip = dynamicImport(() => import('@/components/tour-mode/guide/GuideSeatStrip'), { ssr: false });
+const GuideSeatDashboard = dynamicImport(() => import('@/components/tour-mode/guide/GuideSeatDashboard'), { ssr: false });
+const GuideCaptionBar = dynamicImport(() => import('@/components/tour-mode/GuideCaptionBar'), { ssr: false });
+const SettingsTab = dynamicImport(() => import('@/components/tour-mode/SettingsTab'), { ssr: false });
+const ConciergePanel = dynamicImport(() => import('@/components/tour-mode/ConciergePanel'), { ssr: false });
+const RoomDrawer = dynamicImport(() => import('@/components/tour-mode/RoomDrawer'), { ssr: false });
+const RoomMapTab = dynamicImport(() => import('@/components/tour-mode/map/RoomMapTab'), { ssr: false });
+
 import Link from 'next/link';
 import CaptionBanner from '@/components/tour-mode/CaptionBanner';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
 import Composer from '@/components/tour-mode/Composer';
 import EndedCard from '@/components/tour-mode/EndedCard';
 import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
-import GuideCaptionBar from '@/components/tour-mode/GuideCaptionBar';
+
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import DepartureCountdown from '@/components/tour-mode/DepartureCountdown';
 import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
@@ -36,14 +74,12 @@ import type { ManualKind } from '@/lib/tour-room/appManual';
 import { tourKindFromPriceType } from '@/lib/tour-room/tourKind';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
-import RoomMapTab from '@/components/tour-mode/map/RoomMapTab';
+
 import RoomShell from '@/components/tour-mode/RoomShell';
-import RoomDrawer from '@/components/tour-mode/RoomDrawer';
-import GuideSeatStrip from '@/components/tour-mode/guide/GuideSeatStrip';
-import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
+
 import Sheet from '@/components/tour-mode/Sheet';
 import SosButton from '@/components/tour-mode/SosButton';
-import ConciergePanel from '@/components/tour-mode/ConciergePanel';
+
 import ConciergeInlineAnswer, { type InlineConciergeAnswer } from '@/components/tour-mode/ConciergeInlineAnswer';
 import {
   inlineConciergeAnswer,
@@ -114,7 +150,7 @@ const RETRY_COPY: Record<RoomLocale, (n: number) => string> = {
   ru: (n) => `Не отправлено: ${n} — нажмите, чтобы отправить снова`,
   it: (n) => `${n} non inviati — tocca per reinviare`,
 };
-import SettingsTab from '@/components/tour-mode/SettingsTab';
+
 import { useTourRoomSession, getOrCreateDeviceKey, type TourRoomJoinResult } from '@/hooks/useTourRoomSession';
 import { deriveChatLocale } from '@/lib/tour-room/chatLocale';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
