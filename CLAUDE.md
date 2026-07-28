@@ -1,11 +1,11 @@
 # CLAUDE.md — 프로젝트 메모리
 
-## 🔴 진행 중(최우선): 스마트앱 / 관제 통합 트랙 — 열린 티켓 50
+## 🔴 진행 중(최우선): 스마트앱 / 관제 통합 트랙 — 열린 티켓 56
 
 **직전 세션 기록:** `docs/SESSION-STATE-2026-07-28.md`
 **다음 세션 부트스트랩:** `docs/NEXT-SESSION-SMARTAPP-2026-07-28.md` ← **이 트랙이면 이걸 먼저.**
 단일 우선순위 · 작업 환경과 함정 5가지 · 첫 명령 · 머지 전 게이트가 거기 있다.
-**마스터 플랜(SoT, 왜 그렇게 하는가):** `docs/ops-staff-design-unification-master-plan-2026-07-27.md` (Part A~N)
+**마스터 플랜(SoT, 왜 그렇게 하는가):** `docs/ops-staff-design-unification-master-plan-2026-07-27.md` (Part A~O)
 
 **1순위 6건만 옮겨 적는다** — 지난 두 라운드가 이걸 열어둔 채 UI 연마를 했다:
 `K1a` SSE 폴백 방어(실시간이 한 번만 흔들리면 손님 1명당 2초마다 DB + 함수 수명마다 인증 한 벌이 **재연결 순환**으로 반복) ·
