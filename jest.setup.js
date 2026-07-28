@@ -57,6 +57,18 @@ jest.mock('@/lib/supabase', () => ({
 process.env.NODE_ENV = 'test'
 process.env.NEXT_PUBLIC_APP_URL = 'https://atockorea.com'
 
+/**
+ * 🔴 jsdom ships no TextEncoder/TextDecoder, and Node has had them as globals
+ * for years — so any route that writes a stream (`new TextEncoder()` at module
+ * scope) threw at IMPORT time, before a single assertion ran. Same failure class
+ * as the missing static `Response.json` below: the harness, not the route, is
+ * what made those routes untestable. Use Node's own implementations rather than
+ * a hand-rolled stub, so encoding behaviour in a test matches production.
+ */
+const { TextEncoder: NodeTextEncoder, TextDecoder: NodeTextDecoder } = require('util')
+if (typeof global.TextEncoder === 'undefined') global.TextEncoder = NodeTextEncoder
+if (typeof global.TextDecoder === 'undefined') global.TextDecoder = NodeTextDecoder
+
 // Mock Next.js Request/Response
 global.Request = class Request {
   constructor(input, init) {
