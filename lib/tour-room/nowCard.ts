@@ -25,8 +25,10 @@
  * renders them (I2); a resolver that also owned the wording would be the one
  * place a locale could go missing without tsc noticing (U-D10).
  */
-import type { RallyStage } from '@/lib/tour-room/notices';
+import { activeNotice, rallyStage, type RallyStage } from '@/lib/tour-room/notices';
 import type { RoomLifecycle } from '@/lib/tour-room/time';
+import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 export type NowCardState =
   | 'rally_overdue'
@@ -68,6 +70,7 @@ export interface NowCardResult {
     spotName?: string;
     stayMinutes?: number;
     nextStopName?: string;
+    currentStopName?: string;
     nextStopTime?: string;
     minutesLeft?: number;
     meetingPoint?: string;
@@ -99,6 +102,16 @@ export interface NowCardContext {
 
   /** Next scheduled stop, if the day has one left. */
   nextStop?: { name: string; time?: string | null } | null;
+
+  /**
+   * The stop the SCHEDULE says the guest is at, which is not the same claim as
+   * `arrived`: that one needs an operator to have tapped 도착, this one is
+   * wall-clock arithmetic. It never wins a state on its own — a schedule is a
+   * plan, and a plan is not evidence — but dropping it entirely was a
+   * regression: the card it replaces showed now AND next, and a guest who could
+   * see both could see one fewer thing afterwards.
+   */
+  currentStop?: { name: string } | null;
 
   /** Whole days until the tour; used only by the lobby state. */
   daysUntil?: number | null;
@@ -176,13 +189,26 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
   }
 
   // 5. Between stops — the commonest state, and the quietest.
-  if (ctx.lifecycle === 'live' && ctx.nextStop) {
+  //
+  // 🔴 `nextStop || currentStop`, not `nextStop` alone. A guest at the LAST
+  // stop of the day has no next one, and requiring it dropped them out of every
+  // state into the lobby fallback — which on a live tour meant the hero card
+  // vanished for the last hour of the tour. Caught by a walk against a seeded
+  // room whose schedule had run out, not by a unit test, because the fixtures
+  // all had a stop left.
+  if (ctx.lifecycle === 'live' && (ctx.nextStop || ctx.currentStop)) {
     return {
       state: 'moving',
       tone: 'base',
       action: { kind: 'open_map' },
-      chips: ['next_stop'],
-      data: { nextStopName: ctx.nextStop.name, nextStopTime: ctx.nextStop.time ?? undefined },
+      // On the last stop there is no next one, and a chip labelled "next stop"
+      // that opens a finished schedule is a promise the day cannot keep.
+      chips: ctx.nextStop ? ['next_stop'] : ['meeting_point'],
+      data: {
+        nextStopName: ctx.nextStop?.name,
+        nextStopTime: ctx.nextStop?.time ?? undefined,
+        currentStopName: ctx.currentStop?.name,
+      },
     };
   }
 
@@ -215,5 +241,102 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
       meetingPoint,
       meetingTime: ctx.meetingTime ?? undefined,
     },
+  };
+}
+
+// ---------------------------------------------------------------------------
+// Adapter: room state → NowCardContext
+//
+// Kept here rather than in the component for the same reason the resolver takes
+// derived inputs: HomeTab is 840 lines and growing, and a derivation that lives
+// in a component cannot be tested without rendering one. Everything below is
+// pure and reads only what the room already broadcasts.
+// ---------------------------------------------------------------------------
+
+/**
+ * How long an arrival keeps being "where the guest is".
+ *
+ * There is no departure event to close it — the operator taps 도착 and nothing
+ * else. Without a bound, a guest who arrived at 10:00 would still be told they
+ * are at that waterfall at 18:00. Three hours is longer than any single stop on
+ * these tours and short enough that a stale card cannot survive the day; a later
+ * arrival supersedes it immediately regardless.
+ */
+export const ARRIVAL_TTL_MS = 3 * 60 * 60 * 1000;
+
+const ARRIVAL_KINDS = new Set(['spot_arrival', 'arrival_bundle']);
+
+/** The spot the guest is standing at, if any. Newest wins. */
+export function latestArrival(
+  messages: readonly RoomMessage[],
+  nowMs = Date.now(),
+): { spotName: string; stayMinutes?: number | null } | null {
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const message = messages[i];
+    const meta = message.metadata as { kind?: string; spot_title?: string; stay_minutes?: number } | null | undefined;
+    if (!meta?.kind || !ARRIVAL_KINDS.has(meta.kind)) continue;
+    const at = new Date(message.created_at).getTime();
+    if (!Number.isFinite(at) || nowMs - at > ARRIVAL_TTL_MS) return null;
+    const spotName = typeof meta.spot_title === 'string' ? meta.spot_title.trim() : '';
+    if (!spotName) return null;
+    return {
+      spotName,
+      stayMinutes: typeof meta.stay_minutes === 'number' ? meta.stay_minutes : null,
+    };
+  }
+  return null;
+}
+
+/** Whole days from today (KST) to the tour date; null when undated. */
+export function daysUntilTour(tourDate: string | null | undefined, nowMs = Date.now()): number | null {
+  if (!tourDate) return null;
+  const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(tourDate);
+  if (!match) return null;
+  const KST = 9 * 60 * 60 * 1000;
+  const startOfTour = Date.UTC(Number(match[1]), Number(match[2]) - 1, Number(match[3])) - KST;
+  const today = new Date(nowMs + KST);
+  const startOfToday =
+    Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()) - KST;
+  return Math.round((startOfTour - startOfToday) / (24 * 60 * 60 * 1000));
+}
+
+export interface RoomNowCardInput {
+  messages: readonly RoomMessage[];
+  lifecycle: RoomLifecycle;
+  tourDate: string | null | undefined;
+  locale: RoomLocale;
+  nextStop?: { name: string; time?: string | null } | null;
+  currentStop?: { name: string } | null;
+  pickup?: NowCardContext['pickup'];
+  contactPhone?: string | null;
+  nowMs?: number;
+}
+
+/**
+ * Build the resolver's context from what the room already has.
+ *
+ * The notice does double duty and that is not an accident: `activeNotice`
+ * already owns "which timer is live", and both the rally ladder and the
+ * free-time countdown read it. Deriving them separately here would be the
+ * second copy that drifts.
+ */
+export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
+  const nowMs = input.nowMs ?? Date.now();
+  const notice = activeNotice([...input.messages], input.tourDate, nowMs);
+  const isFreeTime = notice?.kind === 'free_time_timer' && !notice.cancelled;
+
+  return {
+    lifecycle: input.lifecycle,
+    // A free-time timer is not a rally; only a meeting notice escalates.
+    rally: notice && notice.kind === 'meeting_notice' ? rallyStage(notice, nowMs) : null,
+    meetingPoint: notice?.pointI18n?.[input.locale] ?? notice?.point ?? null,
+    contactPhone: input.contactPhone ?? null,
+    freeTimeEndsAtMs: isFreeTime ? notice?.targetMs ?? null : null,
+    arrived: latestArrival(input.messages, nowMs),
+    pickup: input.pickup ?? null,
+    nextStop: input.nextStop ?? null,
+    currentStop: input.currentStop ?? null,
+    daysUntil: daysUntilTour(input.tourDate, nowMs),
+    nowMs,
   };
 }

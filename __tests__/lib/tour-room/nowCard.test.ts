@@ -184,3 +184,22 @@ describe('nowCard — every state is reachable', () => {
     );
   });
 });
+
+describe('nowCard — the last stop of the day', () => {
+  it('🔴 still has a card when there is no next stop left', () => {
+    // Found by a walk, not by these tests: every fixture here had a stop
+    // remaining, so requiring `nextStop` looked correct until a real room whose
+    // schedule had run out fell through to the lobby fallback — and the hero
+    // card disappeared for the last hour of the tour.
+    const result = nowCard(base({ lifecycle: 'live', nextStop: null, currentStop: { name: '용머리해안' } }));
+    expect(result.state).toBe('moving');
+    expect(result.data.currentStopName).toBe('용머리해안');
+    expect(result.data.nextStopName).toBeUndefined();
+    // and no chip promising a next stop the day does not have
+    expect(result.chips).toEqual(['meeting_point']);
+  });
+
+  it('still needs SOMETHING — a live tour with no schedule at all is lobby', () => {
+    expect(nowCard(base({ lifecycle: 'live', nextStop: null, currentStop: null })).state).toBe('lobby');
+  });
+});
