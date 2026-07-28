@@ -35,6 +35,7 @@ function renderRoom({
   isPrivate = true,
   locations,
   reviewPolicy = DIRECT_POLICY,
+  manualKind,
 }: {
   lifecycle: 'lobby' | 'live' | 'ended';
   withHome?: boolean;
@@ -44,6 +45,7 @@ function renderRoom({
   isPrivate?: boolean;
   locations?: Record<string, VehicleLocationLike>;
   reviewPolicy?: RoomReviewPolicy;
+  manualKind?: 'private' | 'join';
 }) {
   return render(
     <RoomShell
@@ -75,6 +77,7 @@ function renderRoom({
                 showConcierge={showConcierge}
                 isPrivate={isPrivate}
                 locations={locations}
+                manualKind={manualKind}
               />
             )
           : undefined
@@ -221,31 +224,63 @@ describe('HomeTab lifecycle variants (H2)', () => {
 });
 
 /**
- * I2 / U-D25 — the promise that makes the restructure safe.
+ * I7 / U-D25 — the promise that makes the restructure safe.
  *
- * The first screen lost the tile grid. That is only acceptable if the grid is
- * still THERE, one tap away, complete. A guest who learned a tile has not lost
- * it; they have to press one more thing.
+ * The shape changed on 2026-07-29. I6 collapsed the grid entirely; the owner's
+ * answer was that a guest reads "collapsed" as "there is nothing here", so the
+ * grid now shows three tiles with the next row peeking its icon heads. What
+ * did NOT change is the promise underneath: a guest who learned a tile has not
+ * lost it. Everything is still there, one tap away, complete — including the
+ * three the tab bar duplicates.
  *
- * 🔴 These assertions use toBeVisible(), not toBeInTheDocument(). The panel is
- * hidden with the `hidden` attribute, so every tile is still in the DOM while
- * collapsed — a presence check would pass whether the disclosure worked or not,
- * and would keep passing if someone later made it permanently invisible. This
- * codebase has been bitten by exactly that shape of green.
+ * 🔴 What these assertions can and cannot see. jsdom has no layout, so the peek
+ * clip — a max-height and a mask — is invisible to it, and `toBeVisible()` on a
+ * clipped tile would pass no matter what. So the contract is checked where it
+ * is actually expressible:
+ *
+ *   the extras panel   `hidden` attribute      → toBeVisible() means something
+ *   the peek strip     the class that clips it → asserted by name
+ *   which three        the pure resolver       → homeTileOrder.test.ts
+ *
+ * The rendered result of the clip is proven by a Playwright walk, not here.
+ * Asserting toBeVisible() on a peeked tile would be the shape of green this
+ * codebase has been bitten by before: true, and about nothing.
  */
-describe('I2 — 더 보기 holds the whole grid (U-D25)', () => {
+describe('I7 — the grid peeks, and 더 보기 holds all of it (U-D25)', () => {
   const ALWAYS_PRESENT = ['home-tile-chat', 'home-tile-schedule', 'home-tile-map', 'home-tile-pickup', 'home-tile-sos'];
 
-  it('the first screen is quieter: no grid until asked', () => {
+  it('shows three tiles without being asked, and none of them is a tab twin (U-D24)', () => {
     renderRoom({ lifecycle: 'live' });
-    for (const id of ALWAYS_PRESENT) {
-      expect(screen.getByTestId(id)).not.toBeVisible();
+    const open = screen.getByTestId('home-grid').firstElementChild!;
+    const peeked = [...open.children].map((el) => el.getAttribute('data-testid'));
+
+    expect(peeked).toHaveLength(3);
+    for (const twin of ['home-tile-chat', 'home-tile-schedule', 'home-tile-map']) {
+      expect(peeked).not.toContain(twin);
     }
-    expect(screen.getByTestId('home-more')).toBeVisible();
     expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('🔴 one tap and every destination is back, including the ones the tab bar duplicates', () => {
+  it('clips the next row while shut, and stops clipping it when open', () => {
+    renderRoom({ lifecycle: 'live' });
+    const rest = screen.getByTestId('home-grid-rest');
+    expect(rest.className).toContain('tr-home-grid-peek');
+
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(rest.className).not.toContain('tr-home-grid-peek');
+  });
+
+  it('keeps the extras behind the disclosure', () => {
+    // Install, settings and review are rows rather than tiles; they are not
+    // part of the peek and stay in the `hidden` panel, where toBeVisible() is
+    // a real question.
+    renderRoom({ lifecycle: 'ended' });
+    expect(screen.getByTestId('home-more-review')).not.toBeVisible();
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(screen.getByTestId('home-more-review')).toBeVisible();
+  });
+
+  it('🔴 every destination survives, including the ones the tab bar duplicates', () => {
     renderRoom({ lifecycle: 'live' });
     fireEvent.click(screen.getByTestId('home-more'));
 
@@ -256,8 +291,6 @@ describe('I2 — 더 보기 holds the whole grid (U-D25)', () => {
   });
 
   it('settings and review moved into the same panel rather than a second one', () => {
-    // Two overflow containers for one screen is one too many; the old sheet is
-    // gone, so its rows have to be findable here or they are simply missing.
     renderRoom({ lifecycle: 'ended' });
     fireEvent.click(screen.getByTestId('home-more'));
     expect(screen.getByTestId('home-more-review')).toBeVisible();
@@ -268,9 +301,28 @@ describe('I2 — 더 보기 holds the whole grid (U-D25)', () => {
   it('collapses again, so the choice is reversible', () => {
     renderRoom({ lifecycle: 'live' });
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-tile-map')).toBeVisible();
+    expect(screen.getByTestId('home-grid-rest').className).not.toContain('tr-home-grid-peek');
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-tile-map')).not.toBeVisible();
+    expect(screen.getByTestId('home-grid-rest').className).toContain('tr-home-grid-peek');
+  });
+
+  it('opens itself if focus reaches a clipped tile', () => {
+    // A keyboard or switch user must never be left operating a control they can
+    // only half see. This is why the peek strip is not aria-hidden and not
+    // inert: it stays reachable, and reaching it reveals it.
+    renderRoom({ lifecycle: 'live' });
+    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.focus(screen.getByTestId('home-tile-map'), { bubbles: true });
+    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'true');
+  });
+
+  it('the app manual is out of the overflow, on the first screen', () => {
+    // 사장님 결정: a guest who does not know what the app is will not go looking
+    // behind a "more" button to find out.
+    renderRoom({ lifecycle: 'live', manualKind: 'private' });
+    const slot = screen.queryByTestId('home-manual-slot');
+    expect(slot).not.toBeNull();
+    expect(slot!.closest('[data-testid="home-more-sheet"]')).toBeNull();
   });
 });
 
