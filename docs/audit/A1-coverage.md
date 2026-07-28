@@ -71,6 +71,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | 파일 | 티켓 | 판정 |
 |---|---|---|
 | `LocationPreview.tsx` | A1.4 | ✅ |
+| `NavBrandButton.tsx` | A1.4 | ✅ 신규(2026-07-28) — 지도 카드·콕핏 NavRow의 브랜드 딥링크 버튼. 전역 44px 최소치가 11px 라벨을 44×44 덩어리로 부풀리던 것을 시각/히트 분리로 해소, 브랜드 잉크를 색과 함께 고정 |
 | `map/FindGuideCard.tsx` | A1.4 | P1 → `A1-4-map-location.md` (수정 완료) |
 | `map/LocationShareCard.tsx` | A1.4 | ✅ |
 | `map/RoomMapCanvas.tsx` | A1.4 | ✅ |

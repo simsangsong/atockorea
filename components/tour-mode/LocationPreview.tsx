@@ -17,6 +17,7 @@
 import { useState } from 'react';
 import { IconArrived, IconOpenExternal, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import { staticMapUrl } from '@/lib/tour-room/locationMessage';
+import NavBrandButton from '@/components/tour-mode/NavBrandButton';
 import { kakaoWebRouteUrl, navChipsFor } from '@/lib/tour-room/nav-links';
 
 export default function LocationPreview({
@@ -70,16 +71,13 @@ export default function LocationPreview({
           web-fallback chip always sits beside the scheme chip. */}
       <div className="tr-hairline-t flex flex-wrap gap-1 px-2 py-1.5" data-testid="location-nav-chips">
         {chips.map((chip) => (
-          <a
+          <NavBrandButton
             key={chip.key}
+            chipKey={chip.key}
+            label={chip.label}
             href={chip.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="tr-meta tr-press rounded-full bg-[var(--tr-surface-2)] px-2.5 py-1 font-semibold text-[var(--tr-ink)]"
-            data-testid={`nav-chip-${chip.key}`}
-          >
-            {chip.label}
-          </a>
+            testId={`nav-chip-${chip.key}`}
+          />
         ))}
       </div>
     </div>
