@@ -15,6 +15,7 @@
  */
 import { CASH_EXTRAS_NOTICE, cashExtrasNoticeFor } from '@/lib/tour-product/cashExtrasNotice';
 import { TOUR_PRODUCT_PAGE_LOCALES } from '@/lib/tour-product/tourProductPageLocale';
+import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
 
 describe('cash extras notice — locale coverage', () => {
   it('exists for every locale a product page can render', () => {
@@ -24,8 +25,28 @@ describe('cash extras notice — locale coverage', () => {
     }
   });
 
-  it('has no locale the page cannot render (and no missing one)', () => {
-    expect(new Set(Object.keys(CASH_EXTRAS_NOTICE))).toEqual(new Set([...TOUR_PRODUCT_PAGE_LOCALES]));
+  it('covers every listing locale, and nothing here is unreachable', () => {
+    // L2 widened this constant from the six listing locales to all ten room
+    // locales, because the confirmation email and the voucher speak the guest's
+    // room language. So an exact set equality against the listing locales is no
+    // longer the right claim — that would now fail for a correct constant.
+    //
+    // The two claims that still hold, and that catch the failures that matter:
+    const keys = new Set(Object.keys(CASH_EXTRAS_NOTICE));
+    for (const locale of TOUR_PRODUCT_PAGE_LOCALES) {
+      // 1. Nothing a listing can render is missing.
+      expect({ locale, present: keys.has(locale) }).toEqual({ locale, present: true });
+    }
+    // 2. Nothing here is a language no surface can reach. `ROOM_LOCALES` is the
+    //    widest audience the sentence has, so anything outside it is dead copy —
+    //    and dead copy is what stops being maintained.
+    for (const key of keys) {
+      expect({ key, reachable: (ROOM_LOCALES as readonly string[]).includes(key) }).toEqual({
+        key,
+        reachable: true,
+      });
+    }
+    expect(keys.size).toBe(ROOM_LOCALES.length);
   });
 
   it('says all three things in every language: optional, cash, on the day', () => {
@@ -38,7 +59,16 @@ describe('cash extras notice — locale coverage', () => {
       zh: [/另行选择|可选/, /现金/, /导游/],
       'zh-TW': [/另行選擇|可選/, /現金/, /導遊/],
       es: [/opcional/i, /efectivo/i, /guía/i],
+      // L2 added these four for the confirmation email and the voucher. They
+      // are held to the same three words, not merely to "differs from English".
+      fr: [/facultati/i, /espèces/i, /guide/i],
+      de: [/optional/i, /\bbar\b/i, /Reiseleitung|Guide/],
+      ru: [/дополнительн/i, /наличными/i, /гиду|гид/i],
+      it: [/facoltativ/i, /contanti/i, /guida/i],
     };
+    // Every locale in the constant has to appear above — otherwise a new one
+    // slips in checked by nothing.
+    expect(Object.keys(required).sort()).toEqual(Object.keys(CASH_EXTRAS_NOTICE).sort());
     for (const [locale, patterns] of Object.entries(required)) {
       const text = CASH_EXTRAS_NOTICE[locale as keyof typeof CASH_EXTRAS_NOTICE];
       for (const pattern of patterns) {

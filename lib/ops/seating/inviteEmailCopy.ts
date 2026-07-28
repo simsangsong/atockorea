@@ -13,12 +13,24 @@
 
 import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { renderTemplate, type MessageVars } from '@/lib/ops/messaging/template';
+import { cashExtrasNoticeFor } from '@/lib/tour-product/cashExtrasNotice';
 
 export interface InviteEmailVars {
   guestName: string;
   tourTitle: string;
   tourDate: string;
   inviteUrl: string;
+  /**
+   * L2 — `tours.price_type`. Charter products can bill cash on the day through
+   * `/extend` and `/extras`, and the guest has to know that before the day
+   * rather than when a guide asks for money.
+   *
+   * Optional so existing callers keep compiling; absent means the line is
+   * omitted, which is correct for a product that cannot generate the charge.
+   * The decision of WHICH products lives in `cashExtrasNoticeFor`, mirroring
+   * `/extend`'s own gate, so the promise and the billing cannot drift.
+   */
+  priceType?: string | null;
 }
 
 export interface InviteEmailContent {
@@ -202,6 +214,11 @@ export function buildInviteEmail(rawLocale: string | null | undefined, vars: Inv
   const url = vars.inviteUrl;
   const safeUrl = escapeHtml(url);
 
+  /* L2 — the sentence the listing carries (L1), repeated here because a guest
+     does not re-read a listing after booking. Same constant, same gate: if the
+     product cannot bill on the day, nothing is added. */
+  const cashNotice = cashExtrasNoticeFor(vars.priceType, locale);
+
   const html = `<!DOCTYPE html>
 <html lang="${locale}">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"></head>
@@ -216,14 +233,34 @@ export function buildInviteEmail(rawLocale: string | null | undefined, vars: Inv
       </div>
       <p style="margin:0 0 6px;font-size:12px;line-height:18px;color:#6b7280;">${escapeHtml(fallback)}</p>
       <p style="margin:0 0 20px;font-size:12px;line-height:18px;word-break:break-all;"><a href="${safeUrl}" style="color:#2563eb;text-decoration:underline;">${safeUrl}</a></p>
-      <p style="margin:0;font-size:14px;line-height:22px;color:#374151;">${escapeHtml(closing)}</p>
+${
+        cashNotice
+          ? `      <p style="margin:0 0 18px;padding:11px 13px;background:#faf7f0;border:1px solid #e7e0d4;border-radius:9px;font-size:12px;line-height:19px;color:#4b5563;">${escapeHtml(cashNotice)}</p>
+`
+          : ''
+      }      <p style="margin:0;font-size:14px;line-height:22px;color:#374151;">${escapeHtml(closing)}</p>
       <p style="margin:6px 0 0;font-size:13px;line-height:20px;font-weight:700;color:#111827;">${escapeHtml(signoff)}</p>
     </div>
   </div>
 </body>
 </html>`;
 
-  const text = [greeting, '', intro, '', what, '', `${cta}: ${url}`, '', closing, signoff].join('\n');
+  const text = [
+    greeting,
+    '',
+    intro,
+    '',
+    what,
+    '',
+    `${cta}: ${url}`,
+    // The plain-text part is not a courtesy copy — some clients render only
+    // this, and a promise that exists in one half of a multipart mail is a
+    // promise that some guests never received.
+    ...(cashNotice ? ['', cashNotice] : []),
+    '',
+    closing,
+    signoff,
+  ].join('\n');
 
   return { subject, html, text };
 }

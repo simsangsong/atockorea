@@ -64,6 +64,13 @@ export interface BulkInviteDeps {
   tourId: string;
   tourDate: string;
   tourTitle?: string | null;
+  /**
+   * L2 — `tours.price_type`. Only charter ('vehicle') products can bill cash on
+   * the day, so only they carry the notice. Optional, and absent means no line:
+   * a guest on a per-person tour should not be told to bring cash for something
+   * that cannot happen.
+   */
+  priceType?: string | null;
   send: InviteSend;
   /** 타임스탬프 결정론용(테스트). 기본 Date.now(). */
   now?: number;
@@ -213,6 +220,7 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
         tourTitle: deps.tourTitle ?? '',
         tourDate,
         inviteUrl: personalUrl,
+        priceType: deps.priceType ?? null,
       });
       const result = await send({
         to: email,
