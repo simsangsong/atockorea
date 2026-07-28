@@ -589,8 +589,16 @@ export default function RoomShell({
           {/* In-flow (not an overlay) so a notice/parking banner never covers the
               Settings language picker or other tab content — it pushes content
               down instead of floating over it. */}
+          {/* 🔴 No z-index here either — same trap as the panel wrapper below,
+              left behind when that one was fixed. `z-20` made this a STACKING
+              CONTEXT, so a `fixed inset-0 z-50` Sheet opened by a banner child
+              resolved its z-50 INSIDE this box and lost to the tab bar (z-30):
+              the sheet was visible but its lower half was unclickable.
+              Found 2026-07-28 when the add-time confirm landed under the tab
+              bar. `relative` alone still paints above the z-0 scenery (later in
+              DOM order) without capturing descendants. */}
           {banner && (
-            <div className="relative z-20 mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
+            <div className="relative mx-auto w-full max-w-2xl shrink-0 px-3 pt-2">{banner}</div>
           )}
 
           {/* 🔴 No z-index here. `z-[1]` (added with the scenery layer) created a
