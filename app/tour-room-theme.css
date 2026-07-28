@@ -1606,11 +1606,38 @@
   animation: tr-concierge-pulse 1.8s ease-out infinite;
 }
 
+/**
+ * I3 / U-D26 — the now card changing IS the app's main feedback.
+ *
+ * Nothing else on the home screen moves. That is the point: when the card swaps
+ * because the guide tapped 도착, or the free-time timer started, the change is
+ * the app saying "I am following you". A card that simply blinked into a
+ * different sentence reads as a render glitch; one that crossfades reads as an
+ * update.
+ *
+ * One crossfade, ~220ms, no travel beyond 4px. Long enough to notice, short
+ * enough that a guest mid-tap is not waiting for it.
+ */
+@keyframes tr-now-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tr-now-swap {
+  animation: tr-now-in var(--tr-dur-slow, 220ms) var(--tr-ease-out, ease) both;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .tr-anim-bubble-in,
   .tr-skeleton,
   .tr-concierge-pulse,
   .tr-anim-panel-in,
+  .tr-now-swap,
   .tr-stagger > * {
     animation: none;
   }

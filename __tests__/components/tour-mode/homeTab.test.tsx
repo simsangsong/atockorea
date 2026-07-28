@@ -4,6 +4,8 @@
  * lifecycle, and the chat preview mirrors the latest bubble. Guides (no
  * `home` prop) keep the classic chat-first 4-tab shell.
  */
+import { readFileSync } from 'fs';
+import { join } from 'path';
 import { fireEvent, render, screen } from '@testing-library/react';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import HomeTab from '@/components/tour-mode/HomeTab';
@@ -303,5 +305,29 @@ describe('I2 — the now card is the hero', () => {
     ];
     renderRoom({ lifecycle: 'live', schedule });
     expect(screen.getAllByTestId('home-now-action')).toHaveLength(1);
+  });
+});
+
+describe('I3 — the state change is the feedback (U-D26)', () => {
+  it('the hero carries the swap animation and announces itself', () => {
+    const schedule = [
+      { time: '00:00', title: 'Gamcheon Village' },
+      { time: '23:59', title: 'Night market' },
+    ];
+    renderRoom({ lifecycle: 'live', schedule });
+    const hero = screen.getByTestId('home-status-live');
+    expect(hero.className).toContain('tr-now-swap');
+    // Polite for an ordinary change; assertive is reserved for the card that
+    // says the group is already waiting.
+    expect(hero).toHaveAttribute('aria-live', 'polite');
+    expect(hero).toHaveAttribute('aria-atomic', 'true');
+  });
+
+  it('🔴 reduced motion turns the animation off rather than shortening it', () => {
+    // Asserted against the shipped CSS, because a rule that only exists in a
+    // component comment is a rule nobody enforces.
+    const css = readFileSync(join(process.cwd(), 'app', 'tour-room-theme.css'), 'utf8');
+    const block = css.slice(css.indexOf('@media (prefers-reduced-motion: reduce)'));
+    expect(block).toContain('.tr-now-swap');
   });
 });
