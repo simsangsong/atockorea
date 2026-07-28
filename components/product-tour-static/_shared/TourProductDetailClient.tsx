@@ -5,6 +5,7 @@ import { Headphones, ShieldCheck, Zap } from "lucide-react";
 import type { TourProductDetailViewModel } from "./tourProductFullPageJsonTypes";
 import type { TourProductCheckoutContext } from "@/lib/tour-product/eastSignatureCheckoutContext";
 import type { PreferredLanguage } from "@/components/product-tour-static/_shared/bookingShared";
+import { cashExtrasNoticeFor } from "@/lib/tour-product/cashExtrasNotice";
 import {
   TourAtAGlance,
   TourAtmosphereGallery,
@@ -362,6 +363,11 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             <TourIncludedSection
               practicalAccordionItems={vm.practicalAccordionItems}
               sectionUi={vm.sectionUi}
+              /* L1 — vehicle-charter products are the ones whose guests can be
+                 asked for cash during the tour (/extend gates on exactly this
+                 price_type). Every live booking on one came from an OTA, so the
+                 whole user base of that feature had never been told. */
+              extraNotIncludedLine={cashExtrasNoticeFor(checkout?.priceType, locale)}
             />
           </div>
         </section>
