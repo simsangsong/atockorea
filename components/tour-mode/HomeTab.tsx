@@ -22,6 +22,7 @@ import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import NowCard, { type NowCardHandlers } from '@/components/tour-mode/NowCard';
 import { nowCard, roomNowCardContext } from '@/lib/tour-room/nowCard';
+import { orderHomeTiles, PEEK_COUNT, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import MeetSetCard from '@/components/tour-mode/MeetSetCard';
@@ -614,6 +615,17 @@ export default function HomeTab({
   }
   tiles.push({ key: 'sos', label: copy.tiles.sos, Icon: IconTileSos, tone: 'danger', onPress: api.openEmergency });
 
+  /* I7 — order the grid so the three tiles the guest can see without asking are
+     the ones this minute calls for. Ordering, never filtering: the same tiles
+     in the same sequence whether the grid is shut or open, so expanding reveals
+     rather than rearranges (U-D25). `orderHomeTiles` also keeps chat/today/map
+     out of the promoted slots, since the tab bar already holds them (U-D24). */
+  const orderedKeys = orderHomeTiles(
+    tiles.map((t) => t.key as HomeTileKey),
+    nowCardResult?.state ?? null,
+  );
+  tiles.sort((a, b) => orderedKeys.indexOf(a.key as HomeTileKey) - orderedKeys.indexOf(b.key as HomeTileKey));
+
   const tileClass =
     'tr-home-card flex min-h-[76px] flex-col items-center justify-center gap-1.5 px-2 py-2.5 text-center tr-press';
 
@@ -622,6 +634,34 @@ export default function HomeTab({
     `tr-chip relative flex h-11 w-11 items-center justify-center ${
       tone === 'danger' ? 'tr-chip--danger' : tone === 'accent' ? 'tr-chip--accent' : 'tr-chip--base'
     }`;
+
+  const renderTile = (tile: Tile) =>
+    tile.href && tile.external ? (
+      <a
+        key={tile.key}
+        href={tile.href}
+        target="_blank"
+        rel="noopener noreferrer"
+        data-testid={`home-tile-${tile.key}`}
+        className={tileClass}
+      >
+        {tileInner(tile)}
+      </a>
+    ) : tile.href ? (
+      <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>
+        {tileInner(tile)}
+      </Link>
+    ) : (
+      <button
+        key={tile.key}
+        type="button"
+        onClick={tile.onPress}
+        data-testid={`home-tile-${tile.key}`}
+        className={tileClass}
+      >
+        {tileInner(tile)}
+      </button>
+    );
 
   const tileInner = (tile: Tile) => (
     <>
@@ -766,82 +806,87 @@ export default function HomeTab({
         <IconChevronRight size={TR_ICON.action} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
       </button>
 
-      {/* ---- 더 보기 ------------------------------------------------
-          U-D24: the bottom tab bar is always on screen, so a tile that
-          duplicates a tab adds a thing to read without adding a place to go.
-          U-D25: but a guest who learned a tile has not lost it — the ENTIRE
-          grid lives one tap away, unchanged, including the tabs' twins. The
-          first screen is what shrank; the app did not.
+      {/* ---- "How this app works" (2026-07-28, moved 2026-07-29) ------
+          This REPLACES the modal that used to open itself on first entry.
+          I7 (사장님 결정) moved it out of the overflow and up here, directly
+          under the chat preview: a guest who does not know what the app is
+          will not go looking behind a "more" button to find out. Same content,
+          on request instead of on arrival. */}
+      {manualKind && (
+        <div className="mt-2" data-testid="home-manual-slot">
+          <AppManual variant="button" kind={manualKind} locale={locale} theme={theme} />
+        </div>
+      )}
 
-          I6 (사장님 결정): collapsed by default. Flip `useState(false)` to
-          `true` if the answer comes back the other way — that is the whole
-          change. */}
+      {/* ---- Action grid, as a peek (I7) -----------------------------
+          Three tiles open, the next row showing its icon heads, and a button
+          for the rest. Fully collapsed read as "there is nothing here"; fully
+          open is what I2 spent a wave undoing. A cropped icon says "more"
+          without spending a word on it — and without a word, it says the same
+          thing in all ten locales.
+
+          U-D24: which three is derived (`orderHomeTiles`), and a tile that
+          duplicates a bottom tab is never promoted into them.
+          U-D25: nothing is filtered. The grid holds every tile in both states;
+          shut, it is clipped. So expanding reveals rather than rebuilds, and
+          no tile a guest learned has moved.
+
+          The peeked tiles are real DOM, not a picture of tiles: focusable, in
+          the reading order, and not `aria-hidden`. `onFocusCapture` opens the
+          grid the moment focus reaches one, so a keyboard or switch user is
+          never left operating something they can only half see.
+
+          Two grids rather than one clipped grid, because the clip height has to
+          be exact and a single grid's first row is not a number we know. Tile
+          labels wrap to two lines in German and Russian, and a max-height
+          guessed from the English layout would slice row one in those locales.
+          Splitting means only the PEEK height is fixed — and 26px of a tile is
+          the icon's head by construction, whatever the label below it does.
+          Both grids are `grid-cols-3 gap-1.5` at the same width, so the columns
+          line up as if they were one. */}
+      <div
+        data-testid="home-grid"
+        data-peek={moreOpen ? 'open' : 'peek'}
+        onFocusCapture={() => setMoreOpen(true)}
+      >
+        <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5">
+          {tiles.slice(0, PEEK_COUNT).map(renderTile)}
+        </div>
+        {tiles.length > PEEK_COUNT && (
+          <div
+            className={`mt-1.5 grid grid-cols-3 gap-1.5 ${moreOpen ? '' : 'tr-home-grid-peek'}`}
+            data-testid="home-grid-rest"
+          >
+            {tiles.slice(PEEK_COUNT).map(renderTile)}
+          </div>
+        )}
+      </div>
+
+      {/* The door. It sits under the grid because that is what it opens — put
+          above, it reads as a heading for the three tiles rather than as the
+          way to the rest. */}
       <button
         type="button"
         onClick={() => setMoreOpen((v) => !v)}
         data-testid="home-more"
         aria-expanded={moreOpen}
         aria-controls="home-more-panel"
-        className="tr-label text-cjk-safe mt-2 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
+        className="tr-label text-cjk-safe mt-1.5 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
       >
         <IconMore size={TR_ICON.chip} aria-hidden />
         {copy.more}
         <IconChevronRight
           size={TR_ICON.chip}
-          className={`transition-transform ${moreOpen ? 'rotate-90' : ''}`}
+          className={`transition-transform ${moreOpen ? '-rotate-90' : 'rotate-90'}`}
           aria-hidden
         />
       </button>
 
       <div id="home-more-panel" hidden={!moreOpen} data-testid="home-more-sheet">
-      {/* ---- Feature grid ------------------------------------------- */}
-      <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5" data-testid="home-grid">
-        {tiles.map((tile) =>
-          tile.href && tile.external ? (
-            <a
-              key={tile.key}
-              href={tile.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid={`home-tile-${tile.key}`}
-              className={tileClass}
-            >
-              {tileInner(tile)}
-            </a>
-          ) : tile.href ? (
-            <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>
-              {tileInner(tile)}
-            </Link>
-          ) : (
-            <button
-              key={tile.key}
-              type="button"
-              onClick={tile.onPress}
-              data-testid={`home-tile-${tile.key}`}
-              className={tileClass}
-            >
-              {tileInner(tile)}
-            </button>
-          ),
-        )}
-      </div>
-
       {/* ---- Install entry (T-D2) — self-hides when no install path. -- */}
       <div className="mt-1.5">
         <InstallCard locale={locale} surface="home" />
       </div>
-
-      {/* ---- "How this app works" (2026-07-28) ------------------------
-          This REPLACES the modal that used to open itself on first entry.
-          It sits below the action grid on purpose: a guest arriving mid-day
-          wants the day, not the manual — but the button is full-width, in the
-          accent material, and pressable, so it is unmistakably a thing to tap
-          when they do want it. Same content, on request instead of on arrival. */}
-      {manualKind && (
-        <div className="mt-2">
-          <AppManual variant="button" kind={manualKind} locale={locale} theme={theme} />
-        </div>
-      )}
 
       {/* Settings & review used to live in a separate overflow sheet. Two
           overflow containers for one screen is one too many, so they join the
