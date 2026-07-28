@@ -5,7 +5,8 @@
  * keeps the standalone entry route free of the site i18n shell (§O-1 ②).
  */
 
-import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
+import { type RoomLocale } from '@/lib/tour-room/snapshot';
+import { normalizeEntryLocale } from '@/lib/tour-room/entryLocale';
 
 export interface EntryCopy {
   title: string;
@@ -221,6 +222,19 @@ export const ENTRY_COPY: Record<RoomLocale, EntryCopy> = {
 };
 
 /** Best-effort UI locale for the standalone tour-mode pages (client only). */
+/**
+ * Client-side locale detection.
+ *
+ * ⚠ N6: calling this during RENDER re-creates the hydration mismatch the server
+ * guard below was meant to fix — the server says 'en', the browser's first pass
+ * says the device locale, and React regenerates the tree. Measured on
+ * `/tour-mode` 2026-07-28: every non-English device, every load.
+ *
+ * Use `useEntryLocale(initialLocale)` instead, seeded from
+ * `resolveEntryLocale()` on the server. Calling this inside an EFFECT (as
+ * InstallBanner and WebviewEscapeBanner do) is fine — effects run after
+ * hydration, so there is nothing to mismatch.
+ */
 export function detectEntryLocale(): RoomLocale {
   // SSR determinism: Node ≥21 exposes a global `navigator` whose language is
   // the SERVER's locale — letting it leak into server render hydration-
@@ -239,14 +253,10 @@ export function detectEntryLocale(): RoomLocale {
   return 'en';
 }
 
-function normalize(value: string | undefined | null): RoomLocale | null {
-  if (!value) return null;
-  const lower = value.trim().toLowerCase();
-  // Traditional-script Chinese devices land on zh-TW (mirrors normalizeRoomLocale).
-  if (lower === 'zh-tw' || lower === 'zh-hk' || lower === 'zh-mo' || lower.startsWith('zh-hant')) {
-    return 'zh-TW';
-  }
-  const base = lower.split('-')[0];
-  // §D A4.1 — 정본은 ROOM_LOCALES 하나다. 사본은 순서까지 달랐다.
-  return ROOM_LOCALES.find((l) => l === base) ?? null;
-}
+/**
+ * N6 — this used to be a local copy of the normalisation rules. The server now
+ * has to reach the same verdict from `Accept-Language`, and two copies of a
+ * locale rule in this repo have never stayed in agreement (§8 lesson 3), so
+ * there is one implementation and both sides import it.
+ */
+const normalize = normalizeEntryLocale;

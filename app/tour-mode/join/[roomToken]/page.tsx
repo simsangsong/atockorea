@@ -1,4 +1,5 @@
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import JoinFlow from '@/components/tour-mode/join/JoinFlow';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 import { verifyRoomClaimToken } from '@/lib/ops/seating/claimToken';
@@ -20,7 +21,7 @@ export default async function TourModeJoinPage({
   params: Promise<{ roomToken: string }>;
 }) {
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />;
   }
   const { roomToken } = await params;
   const token = decodeURIComponent(roomToken);

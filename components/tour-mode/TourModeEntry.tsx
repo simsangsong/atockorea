@@ -10,11 +10,13 @@
  * room page.
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { detectEntryLocale, ENTRY_COPY } from '@/components/tour-mode/entryCopy';
+import { ENTRY_COPY } from '@/components/tour-mode/entryCopy';
+import { useEntryLocale } from '@/components/tour-mode/useEntryLocale';
 import { IconChevronRight, IconTabMap, TR_ICON } from '@/components/tour-mode/icons';
 import { isStandaloneDisplayMode } from '@/hooks/useStandaloneDisplayMode';
+import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 interface TourModeBooking {
   id: string;
@@ -27,9 +29,15 @@ interface TourModeBooking {
 
 export const GUEST_CREDS_STORAGE_PREFIX = 'tour_mode_guest_creds:';
 
-export default function TourModeEntry() {
+export default function TourModeEntry({ initialLocale = 'en' }: { initialLocale?: RoomLocale }) {
   const router = useRouter();
-  const copy = useMemo(() => ENTRY_COPY[detectEntryLocale()], []);
+  // 🔴 N6 — this was `detectEntryLocale()` during render. The server said 'en'
+  // and the browser's hydration pass said the device locale, so every guest who
+  // is not English threw away the server render of the app's public entry
+  // screen and rebuilt it — on the slowest page in the funnel. The server now
+  // resolves the same locale from the request, and this only re-checks in an
+  // effect, after hydration has nothing left to disagree with.
+  const copy = ENTRY_COPY[useEntryLocale(initialLocale)];
 
   const [bookings, setBookings] = useState<TourModeBooking[] | null>(null);
   const [signedIn, setSignedIn] = useState<boolean | null>(null);

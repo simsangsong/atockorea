@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { Route } from 'lucide-react';
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 
 export const dynamic = 'force-dynamic';
 
-export default function TourPlanIndexPage() {
+export default async function TourPlanIndexPage() {
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />;
   }
 
   return (

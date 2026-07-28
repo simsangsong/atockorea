@@ -1,4 +1,5 @@
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import CompanionJoin from '@/components/tour-mode/companion/CompanionJoin';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 import { verifyCompanionInviteToken } from '@/lib/tour-room/companionToken';
@@ -21,7 +22,7 @@ export default async function CompanionInvitePage({
   params: Promise<{ token: string }>;
 }) {
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />;
   }
   const { token: raw } = await params;
   const token = decodeURIComponent(raw);

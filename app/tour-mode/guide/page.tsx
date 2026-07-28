@@ -1,4 +1,5 @@
 import TourModeComingSoon from '@/components/tour-mode/TourModeComingSoon';
+import { entryLocaleFromRequest } from '@/lib/tour-room/entryLocaleServer';
 import GuideConsole from '@/components/tour-mode/guide/GuideConsole';
 import { isTourModeEnabled } from '@/lib/tour-room/flags';
 
@@ -9,9 +10,9 @@ export const dynamic = 'force-dynamic';
  * Standalone shell (§O-1 ② via the tour-mode layout), no login — the
  * tour-date token from the dispatch mail is the credential.
  */
-export default function TourModeGuidePage() {
+export default async function TourModeGuidePage() {
   if (!isTourModeEnabled()) {
-    return <TourModeComingSoon />;
+    return <TourModeComingSoon initialLocale={await entryLocaleFromRequest()} />;
   }
   return <GuideConsole />;
 }
