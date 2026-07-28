@@ -235,10 +235,43 @@
   }
 }
 
+/*
+ * 🔴 Latin punctuation must never be resolved by a CJK face.
+ *
+ * Reported from a real phone: "You’ ve left today’ s course to the guide" —
+ * a gap after every apostrophe. The data is clean; the gap is the glyph.
+ *
+ * Measured (headless Chromium, font-size 100px, advance of U+2019 isolated by
+ * width("nnn’n") − width("nnnn")):
+ *   Microsoft YaHei 1.000em · MS Gothic 1.000em · zh stack 1.000em
+ *   Arial 0.222em · Segoe UI 0.229em · Pretendard 0.231em · Batang 0.292em
+ * A fullwidth advance next to 0.23em letters reads as a space. 4.3x.
+ *
+ * Why only the apostrophe, and not quotes or dashes: the Pretendard webfont
+ * we load is the *dynamic subset* build, and its subsets split these apart.
+ * Verified in the shipped CSS at cdn.jsdelivr.net:
+ *   letters subset ... U+20-22, U+27-2a, U+41-4e, U+2013-2014, U+201c-201d
+ *   other subset   ... U+2010, U+2018-2019, U+201b, U+201f-2021
+ * So the straight quote, the double quotes and the dashes arrive *with* the
+ * letters and can never fall back alone. The curly apostrophe can, and does —
+ * which is why one character in an otherwise correct line goes fullwidth.
+ *
+ * The fix pins exactly that split-off set to a proportional Latin face. If a
+ * device has none of these locally the face is simply skipped and the normal
+ * stack applies, so there is no way for this to make things worse.
+ */
+@font-face {
+  font-family: "AtoC Latin Punctuation";
+  src:
+    local("Inter"), local("Segoe UI"), local("Helvetica Neue"), local("Roboto"),
+    local("Arial"), local("Liberation Sans"), local("DejaVu Sans");
+  unicode-range: U+02BC, U+2010, U+2018-2019, U+201B;
+  font-display: swap;
+}
 body {
   /* Background: @layer base + body::before (pastel mesh); keep font stack here */
   color: var(--foreground);
-  font-family: "Pretendard Variable", "Pretendard", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "AtoC Latin Punctuation", "Pretendard Variable", "Pretendard", var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
 /* Chinese Simplified — Noto Sans SC を先頭（Webfont で字形・メトリクス統一） */
@@ -246,7 +279,7 @@ html[lang="zh"] body,
 html[lang="zh-CN"] body,
 body:lang(zh),
 body.lang-zh {
-  font-family: "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
+  font-family: "AtoC Latin Punctuation", "Noto Sans SC", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "Source Han Sans SC", "Noto Sans CJK SC", sans-serif;
   font-feature-settings: "kern" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -256,7 +289,7 @@ body.lang-zh {
 html[lang="zh-TW"] body,
 body:lang(zh-TW),
 body.lang-zh-TW {
-  font-family: "Noto Sans TC", "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", "微軟正黑體", "Source Han Sans TC", "Noto Sans CJK TC", sans-serif;
+  font-family: "AtoC Latin Punctuation", "Noto Sans TC", "PingFang TC", "Hiragino Sans CNS", "Microsoft JhengHei", "微軟正黑體", "Source Han Sans TC", "Noto Sans CJK TC", sans-serif;
   font-feature-settings: "kern" 1;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -266,14 +299,14 @@ body.lang-zh-TW {
 html[lang="ko"] body,
 body:lang(ko),
 body.lang-ko {
-  font-family: "Pretendard Variable", "Pretendard", var(--font-inter), "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
+  font-family: "AtoC Latin Punctuation", "Pretendard Variable", "Pretendard", var(--font-inter), "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "맑은 고딕", sans-serif;
 }
 
 /* Japanese — 漢字含め Noto Sans JP でラテン混在を揃えやすい */
 html[lang="ja"] body,
 body:lang(ja),
 body.lang-ja {
-  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS PGothic", var(--font-inter), sans-serif;
+  font-family: "AtoC Latin Punctuation", "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", "MS PGothic", var(--font-inter), sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
 }
