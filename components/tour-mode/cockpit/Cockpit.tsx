@@ -1665,7 +1665,7 @@ export default function Cockpit({
           {/* A6 — driver quick messages: one tap sends the 5-locale capsule
               (zero LLM), sized for use at the wheel. */}
           <div
-            className="flex gap-1.5 overflow-x-auto px-4 pt-1.5"
+            className="tr-chiprow flex gap-1.5 px-4 pt-1.5"
             style={{ scrollbarWidth: 'none' }}
             data-testid="driver-quick-replies"
           >

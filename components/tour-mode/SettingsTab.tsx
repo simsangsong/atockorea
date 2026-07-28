@@ -333,7 +333,10 @@ function SegmentedControl<T extends string>({
           type="button"
           onClick={() => onChange(option.value)}
           aria-pressed={value === option.value}
-          className={`tr-label tr-press flex min-h-[44px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition-colors duration-[var(--tr-dur-fast)] ${
+          /* text-cjk-safe: 이건 탭이다. 라벨이 '라이트'/'자동'처럼 짧아 지금은 안
+             쪼개지지만, 폰트 배율 1.35 + 아이콘이 같이 들어가면 폭이 모자라고
+             CSS 기본값(word-break: normal)은 CJK를 글자 단위로 쪼갠다. */
+          className={`tr-label tr-press text-cjk-safe flex min-h-[44px] flex-1 items-center justify-center gap-1 rounded-lg font-medium transition-colors duration-[var(--tr-dur-fast)] ${
             value === option.value
               ? 'bg-[var(--tr-surface)] text-[var(--tr-ink)] shadow-sm'
               : 'text-[var(--tr-ink-2)]'
@@ -420,7 +423,15 @@ export default function SettingsTab({
                   </>
                 ),
               },
-              { value: 'system', label: copy.themeSystem },
+              {
+                // 셋 중 이것만 아이콘이 없어서 같은 벌로 안 읽혔다.
+                value: 'system',
+                label: (
+                  <>
+                    <IconThemeSystem size={TR_ICON.meta} aria-hidden /> {copy.themeSystem}
+                  </>
+                ),
+              },
             ]}
           />
         </div>

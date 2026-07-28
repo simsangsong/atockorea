@@ -44,7 +44,6 @@ import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard'
 import Sheet from '@/components/tour-mode/Sheet';
 import SosButton from '@/components/tour-mode/SosButton';
 import ConciergePanel from '@/components/tour-mode/ConciergePanel';
-import ConciergeEntryRow from '@/components/tour-mode/ConciergeEntryRow';
 import ConciergeInlineAnswer, { type InlineConciergeAnswer } from '@/components/tour-mode/ConciergeInlineAnswer';
 import {
   inlineConciergeAnswer,
@@ -1180,9 +1179,14 @@ function TourRoomLive({
               auth={{ bookingId, roomSession: data.session }}
             />
           )}
-          {viewerRole === 'customer' && !readOnly && (
-            <ConciergeEntryRow locale={locale} onOpen={chatApi.openConcierge} />
-          )}
+          {/* 🔴 X3 — the Smart Guide entry ROW is gone from the chat tab.
+              It was the THIRD entry point to the same sheet: the header carries
+              a ✨ button on every tab (with its own first-visit hint), and the
+              home screen carries a tile. Three doors to one room, and this one
+              charged ~60px of a bottom stack that already ran three rows deep
+              under an empty feed (2026-07-28 walk). The header button is always
+              on screen here, so nothing became unreachable — only shorter.
+              `chatApi.openConcierge` stays wired for the inline answer above. */}
           {!readOnly && (
             <Composer
               locale={locale}
@@ -1209,8 +1213,9 @@ function TourRoomLive({
               /* C — 손님 트레이. 콕핏의 "+" 트레이와 같은 자리에 손님도 스마트가이드와
                  긴급을 갖는다. 둘 다 **셸이 소유한 시트를 여는 것**이지 새 흐름이
                  아니다 — 긴급 동작이 두 벌이 되면 그중 하나는 반드시 썩는다.
-                 스마트가이드 진입 줄(ConciergeEntryRow)은 그대로 둔다: 스크롤로
-                 밀려나도 트레이에는 항상 있고, 트레이를 모르는 손님에게는 줄이 남는다. */
+                 X3(2026-07-28) — 이 트레이 항목이 **스마트가이드의 세 번째 문**이었다
+                 (헤더 ✨ · 홈 타일 · 여기). 네 번째였던 피드 아래 진입 줄은 지웠다:
+                 헤더 버튼이 이 탭에서 항상 보이므로 잃은 경로가 없다. */
               extraActions={
                 viewerRole === 'customer'
                   ? [

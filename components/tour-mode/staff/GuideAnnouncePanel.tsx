@@ -133,7 +133,7 @@ export default function GuideAnnouncePanel({
   return (
     <div className="flex flex-col gap-3" data-testid="guide-announce">
       {/* preset chips */}
-      <div className="flex gap-1.5 overflow-x-auto pb-0.5">
+      <div className="tr-chiprow flex gap-1.5 pb-0.5">
         {PRESETS.map((p) => (
           <button
             key={p.key}

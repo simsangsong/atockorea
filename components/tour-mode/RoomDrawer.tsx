@@ -412,7 +412,7 @@ export default function RoomDrawer({
             ) : images.length === 0 ? (
               <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">{copy.empty}</p>
             ) : (
-              <div className="mt-2 flex gap-1.5 overflow-x-auto pb-1" data-testid="drawer-images">
+              <div className="tr-chiprow mt-2 flex gap-1.5 pb-1" data-testid="drawer-images">
                 {images.map((item) => (
                   <button
                     key={item.id}

@@ -1303,6 +1303,30 @@
   transform: scale(0.97);
 }
 
+/* ---- X3 — horizontally scrolling chip strips (quick signals, quick replies).
+ *
+ * Both rows were plain `overflow-x-auto`: the last chip got sliced by the
+ * viewport edge with NOTHING saying more existed to the right, so a chip that
+ * happened to fall on the boundary read as a rendering bug rather than as a
+ * scroll hint (2026-07-28 guest walk: both rows clipped mid-chip at 390px).
+ *
+ * The fade is a mask, not an overlay: it costs no DOM, it cannot intercept a
+ * tap, and it sits on the SCROLLER so it tracks the scroll position for free —
+ * `--tr-chiprow-fade` is only applied on the right, and once the row is scrolled
+ * to the end the last chip simply ends before the fade begins. Scrollbars stay
+ * hidden because a mobile chip strip with a visible bar is worse than either.
+ */
+.tr-chiprow {
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+  mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent 100%);
+}
+.tr-chiprow::-webkit-scrollbar {
+  display: none;
+}
+
 /* ---- Panel/section entrance (M-D5): enter-only, transform/opacity only.
  * Tab panels mount on switch, so a mount animation IS the transition —
  * no double-mount, chat scroll and map instances stay untouched. */
