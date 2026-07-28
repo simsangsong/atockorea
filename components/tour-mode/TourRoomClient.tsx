@@ -954,6 +954,8 @@ function TourRoomLive({
               bookingId={bookingId}
               roomSession={data.session}
               canExtend={viewerRole === 'customer' && !readOnly}
+              /* Purchased hours live on the ledger capsules in this feed. */
+              messages={messages}
             />
           )}
           {viewerRole === 'customer' && (

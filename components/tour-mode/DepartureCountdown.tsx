@@ -20,7 +20,7 @@
  * preview; the server recomputes it from the tour's city × hours on POST.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { toast } from 'sonner';
 import Sheet from '@/components/tour-mode/Sheet';
 import { baseHoursForCity, overtimeAmount, parseHm, rateForCity } from '@/lib/tour-room/overtime';
@@ -43,6 +43,16 @@ interface DepartureCountdownProps {
   roomSession?: string | null;
   /** Show the [시간추가] add-time button (guest, live, not read-only). */
   canExtend?: boolean;
+  /**
+   * 🔴 The room feed, read only for hours the guest already BOUGHT.
+   *
+   * Without it the countdown was a pure function of departure_time + the city's
+   * base hours, so [시간 추가] took ₩30,000 and the clock kept counting to the
+   * original end — the money moved and the one thing the guest opened the sheet
+   * for did not. Verified end-to-end 2026-07-28: POST /extend 201, expense
+   * capsule delivered, "ENDS AROUND 6:00 PM" unchanged.
+   */
+  messages?: Array<{ metadata?: Record<string, unknown> | null }>;
 }
 
 /** Whole-hour options a guest may add in one tap (server clamps 1..8). */
@@ -233,7 +243,33 @@ export default function DepartureCountdown({
   bookingId,
   roomSession,
   canExtend = false,
+  messages,
 }: DepartureCountdownProps) {
+  /**
+   * Whole hours bought through [시간 추가], summed from the ledger capsules.
+   *
+   * Only capsules that carry `extend_hours` count — the driver logs post-hoc
+   * overtime through the same `extra_kind: 'overtime'`, and counting that would
+   * push the clock forward for time the party has already spent. A voided
+   * purchase stops counting: the newest capsule per extra_id wins, matching how
+   * ExtraLedgerCard and activeCard already read this feed.
+   */
+  const boughtHours = useMemo(() => {
+    if (!messages?.length) return 0;
+    const latest = new Map<string, { hours: number; status: string }>();
+    for (let i = messages.length - 1; i >= 0; i -= 1) {
+      const meta = messages[i]?.metadata as Record<string, unknown> | undefined;
+      if (!meta || meta.kind !== 'extra_ledger') continue;
+      const id = typeof meta.extra_id === 'string' ? meta.extra_id : null;
+      const hours = typeof meta.extend_hours === 'number' ? meta.extend_hours : 0;
+      if (!id || hours <= 0 || latest.has(id)) continue;
+      latest.set(id, { hours, status: typeof meta.status === 'string' ? meta.status : 'logged' });
+    }
+    let total = 0;
+    for (const { hours, status } of latest.values()) if (status !== 'voided') total += hours;
+    return total;
+  }, [messages]);
+
   const [now, setNow] = useState(() => Date.now());
   const [sheetOpen, setSheetOpen] = useState(false);
   const [submitting, setSubmitting] = useState<number | null>(null);
@@ -258,7 +294,7 @@ export default function DepartureCountdown({
   // Only on the tour day itself (pre-day lobby / post-day have nothing to count).
   if (kstToday(now) !== tourDate) return null;
 
-  const endMinutes = startMinutes + baseHoursForCity(city) * 60;
+  const endMinutes = startMinutes + (baseHoursForCity(city) + boughtHours) * 60;
   let targetMs: number;
   try {
     targetMs = kstStartOfDayMs(tourDate) + endMinutes * 60_000;
@@ -306,6 +342,7 @@ export default function DepartureCountdown({
       className="tr-card flex items-center justify-between gap-3 px-4 py-3"
       role="status"
       aria-live="polite"
+      data-testid="departure-countdown"
     >
       <div className="min-w-0">
         <p className="tr-meta font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">

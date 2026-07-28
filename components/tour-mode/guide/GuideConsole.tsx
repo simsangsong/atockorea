@@ -401,7 +401,6 @@ export default function GuideConsole() {
   const [drive, setDrive] = useState<DriveState | null>(null);
   const [driveBusy, setDriveBusy] = useState<string | null>(null);
   const [driveError, setDriveError] = useState<string | null>(null);
-  const cockpitDataRef = useRef<CockpitOverview | null>(null);
 
   const enterDrive = useCallback(async (bookingId: string) => {
     const t = tokenRef.current;
@@ -410,15 +409,23 @@ export default function GuideConsole() {
     setDriveBusy(bookingId);
     setDriveError(null);
     try {
-      // 1. cockpit day bundle (schedule + coords + pickup) — cached once
-      let data = cockpitDataRef.current;
-      if (!data) {
-        const res = await fetch(`/api/tour-mode/driver/overview?rt=${encodeURIComponent(t)}`, { cache: 'no-store' });
-        const json = (await res.json()) as CockpitOverview;
-        if (!res.ok) throw new Error('overview');
-        data = json;
-        cockpitDataRef.current = json;
-      }
+      /**
+       * 1. cockpit day bundle (schedule + coords + pickup).
+       *
+       * 🔴 This used to be "cached once" for the console's whole session, and
+       * the thing it caches is the DAY PLAN. A guide who reorders a stop, skips
+       * one, or has the plan confirmed between two drive-mode entries got the
+       * stale order back — while the guest was being told "오늘의 일정이
+       * 변경되었어요" by the capsule the same edit fires. The driver's
+       * destination header and the nav deep-link would then point at a stop the
+       * party is no longer going to, which is a navigation error, not a
+       * staleness nit.
+       *
+       * It is one GET behind an explicit tap. Correctness wins.
+       */
+      const res = await fetch(`/api/tour-mode/driver/overview?rt=${encodeURIComponent(t)}`, { cache: 'no-store' });
+      const data = (await res.json()) as CockpitOverview;
+      if (!res.ok) throw new Error('overview');
       const room = data.rooms.find((r) => r.booking_id === bookingId);
       if (!room) throw new Error('room');
 

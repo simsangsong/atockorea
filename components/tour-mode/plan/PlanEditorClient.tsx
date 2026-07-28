@@ -190,6 +190,7 @@ interface PlanCopy {
   needsHint: string;
   departureTitle: string;
   /** P3 — clear the chosen time from the wheel sheet. */
+  timeConfirm: string;
   timeClear: string;
   /** P4 — 좌석 3상태. 없는 기능을 있는 척하지 않고, 있는 정보는 숨기지 않는다. */
   seatTitle: string;
@@ -267,6 +268,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'About your party',
     needsHint: 'Helps your guide prepare — shared only with your guide.',
     departureTitle: 'Departure time (KST)',
+    timeConfirm: 'Set this time',
     timeClear: 'Clear time',
     seatTitle: 'Your seat',
     seatAssigned: (seat) => `Seat ${seat}`,
@@ -353,6 +355,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '여행 정보',
     needsHint: '가이드 준비에만 사용돼요 — 가이드에게만 공유됩니다.',
     departureTitle: '출발 시각 (KST)',
+    timeConfirm: '이 시각으로',
     timeClear: '시각 지우기',
     seatTitle: '내 좌석',
     seatAssigned: (seat) => `${seat}번 좌석`,
@@ -438,6 +441,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '旅の情報',
     needsHint: 'ガイドの準備にのみ使用され、ガイドにのみ共有されます。',
     departureTitle: '出発時刻 (KST)',
+    timeConfirm: 'この時刻にする',
     timeClear: '時刻をクリア',
     seatTitle: 'お座席',
     seatAssigned: (seat) => `${seat}番`,
@@ -522,6 +526,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '出行信息',
     needsHint: '仅用于导游准备,只与导游共享。',
     departureTitle: '出发时间 (KST)',
+    timeConfirm: '就用这个时间',
     timeClear: '清除时间',
     seatTitle: '我的座位',
     seatAssigned: (seat) => `${seat}号座`,
@@ -606,6 +611,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: '旅遊資訊',
     needsHint: '僅供導遊準備行程使用，只會與導遊分享。',
     departureTitle: '出發時間 (KST)',
+    timeConfirm: '就用這個時間',
     timeClear: '清除時間',
     seatTitle: '我的座位',
     seatAssigned: (seat) => `${seat}號座`,
@@ -690,6 +696,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Sobre tu grupo',
     needsHint: 'Solo para preparar tu tour; se comparte únicamente con tu guía.',
     departureTitle: 'Hora de salida (KST)',
+    timeConfirm: 'Usar esta hora',
     timeClear: 'Borrar la hora',
     seatTitle: 'Tu asiento',
     seatAssigned: (seat) => `Asiento ${seat}`,
@@ -776,6 +783,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Votre groupe',
     needsHint: 'Aide votre guide à se préparer — partagé uniquement avec lui.',
     departureTitle: 'Heure de départ (KST)',
+    timeConfirm: 'Choisir cette heure',
     timeClear: 'Effacer l’heure',
     seatTitle: 'Votre place',
     seatAssigned: (seat) => `Place ${seat}`,
@@ -862,6 +870,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Ihre Gruppe',
     needsHint: 'Hilft Ihrem Guide bei der Vorbereitung — nur mit ihm geteilt.',
     departureTitle: 'Abfahrtszeit (KST)',
+    timeConfirm: 'Diese Zeit wählen',
     timeClear: 'Zeit löschen',
     seatTitle: 'Ihr Sitzplatz',
     seatAssigned: (seat) => `Platz ${seat}`,
@@ -948,6 +957,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'О вашей группе',
     needsHint: 'Поможет гиду подготовиться — видит только ваш гид.',
     departureTitle: 'Время выезда (KST)',
+    timeConfirm: 'Выбрать это время',
     timeClear: 'Убрать время',
     seatTitle: 'Ваше место',
     seatAssigned: (seat) => `Место ${seat}`,
@@ -1034,6 +1044,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     needsTitle: 'Il tuo gruppo',
     needsHint: 'Aiuta la guida a prepararsi — condiviso solo con la tua guida.',
     departureTitle: 'Orario di partenza (KST)',
+    timeConfirm: 'Usa questo orario',
     timeClear: 'Cancella l’ora',
     seatTitle: 'Il suo posto',
     seatAssigned: (seat) => `Posto ${seat}`,
@@ -1639,6 +1650,11 @@ function GooglePlaceSearch({
 // ---------------------------------------------------------------------------
 // Main component
 // ---------------------------------------------------------------------------
+
+/** The time wheel's neutral resting row — what [이 시각으로] commits when the
+ *  guest never scrolled. Shared by the wheel and its confirm button so the
+ *  button can never promise a different time than the one on screen. */
+const WHEEL_REST = '09:00';
 
 type EditorTab = 'courses' | 'pick' | 'delegate';
 type LoadState = 'idle' | 'loading' | 'ready' | 'error';
@@ -3116,9 +3132,31 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   <TimeWheel
                     value={current}
                     onChange={commit}
-                    restAt="09:00"
+                    restAt={WHEEL_REST}
                     testId="plan-time-wheel"
                   />
+                  {/* 🔴 The wheel shows its RESTING row highlighted but does not
+                      commit it — by design, so an unset field is not silently
+                      given a value (TimeWheel's own contract: "the first scroll
+                      or tap commits"). The cost was a trap: the sheet opens
+                      looking like 09:00 is chosen, and the two ways out were
+                      ✕ and [시간 지우기], neither of which keeps it. A guest who
+                      wanted the default had no way to say so.
+                      That mattered beyond one field: departure_time is what
+                      gates the countdown AND the guest's "시간 추가" request, so
+                      the trap quietly disabled the whole overtime path (live:
+                      zero plans had it set). */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      commit(current && /^\d{2}:\d{2}$/.test(current) ? current : WHEEL_REST);
+                      setTimeSheetFor(null);
+                    }}
+                    className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body mt-3"
+                    data-testid="plan-time-confirm"
+                  >
+                    {copy.timeConfirm}
+                  </button>
                   <button
                     type="button"
                     onClick={() => {
@@ -3129,7 +3167,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         );
                       setTimeSheetFor(null);
                     }}
-                    className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--block tr-plan-btn--tap tr-label mt-3"
+                    className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--block tr-plan-btn--tap tr-label mt-2"
                     data-testid="plan-time-clear"
                   >
                     {copy.timeClear}
