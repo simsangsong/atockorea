@@ -366,14 +366,18 @@ async function main(): Promise<void> {
         continue;
       }
 
-      const nextLocales = { ...(row.content_locales ?? {}), [locale]: entry };
-      // A4 — pending, always. Nothing this script writes reaches a guest until
-      // a human approves it.
-      const nextStatus = { ...(row.content_locale_status ?? {}), [locale]: 'pending' };
-      const { error: writeError } = await db
-        .from('match_pois')
-        .update({ content_locales: nextLocales, content_locale_status: nextStatus })
-        .eq('poi_key', row.poi_key);
+      // 🔴 Merge inside the statement — never read-modify-write the whole
+      // object. Splicing one locale into the snapshot taken at process start
+      // means four concurrent locale runs each erase the other three; that
+      // silently destroyed ~70 paid translations before the row counts showed
+      // it. `p_status` is always 'pending': the A4 gate decides visibility, not
+      // this script.
+      const { error: writeError } = await db.rpc('merge_poi_content_locale', {
+        p_poi_key: row.poi_key,
+        p_locale: locale,
+        p_entry: entry,
+        p_status: 'pending',
+      });
       if (writeError) {
         console.log(`쓰기 실패 (${writeError.message})`);
         failed += 1;
