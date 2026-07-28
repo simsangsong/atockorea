@@ -218,20 +218,38 @@ export async function GET(req: NextRequest) {
     }
 
     try {
-      const pi = await stripe.paymentIntents.create({
-        amount: amountMinor,
-        currency: holdCurrency,
-        capture_method: 'manual',
-        customer: booking.stripe_customer_id as string,
-        payment_method: paymentMethodId,
-        confirm: true,
-        off_session: true,
-        payment_method_types: ['card'],
-        receipt_email: booking.contact_email ?? undefined,
-        description,
-        statement_descriptor_suffix: 'TOUR HOLD',
-        metadata: piMetadata,
-      });
+      /**
+       * 🔴 Idempotency key — without it a retry double-authorizes the guest.
+       *
+       * The window is real: Stripe can 5xx, or the network can drop, AFTER the
+       * PaymentIntent exists but BEFORE the DB update lands. The next cron run
+       * then sees `payment_intent_id IS NULL`, picks the same booking up, and
+       * places a SECOND hold on the same card. Re-issuing with the same key
+       * returns the original PI instead.
+       *
+       * Keyed by (booking, day) so a deliberate retry on a later day is still
+       * possible. Written 2026-05-29 on fix/recapture-holds-idempotency and
+       * never merged; main kept charging without it for two months.
+       */
+      const pi = await stripe.paymentIntents.create(
+        {
+          amount: amountMinor,
+          currency: holdCurrency,
+          capture_method: 'manual',
+          customer: booking.stripe_customer_id as string,
+          payment_method: paymentMethodId,
+          confirm: true,
+          off_session: true,
+          payment_method_types: ['card'],
+          receipt_email: booking.contact_email ?? undefined,
+          description,
+          statement_descriptor_suffix: 'TOUR HOLD',
+          metadata: piMetadata,
+        },
+        {
+          idempotencyKey: `reauth-${booking.id}-${todayYmd}`,
+        },
+      );
 
       const expiresAt = new Date(Date.now() + HOLD_VALIDITY_DAYS * MS_PER_DAY).toISOString();
 
