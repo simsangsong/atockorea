@@ -47,6 +47,27 @@ const ctx = await browser.newContext({
   locale: 'ko-KR',
 });
 
+/**
+ * 🔴 The Next.js dev overlay (<nextjs-portal>) parks a fixed badge in the
+ * bottom-left corner and its subtree swallows pointer events there, so any
+ * click that lands in that corner retries for 30s and then fails — a HARNESS
+ * failure that reads exactly like an app failure.
+ *
+ * There was already an `addStyleTag` for this, but a style tag belongs to one
+ * document: the first client-side navigation drops it and the block comes
+ * back. An init script re-applies on every document, which is what "hidden for
+ * the whole walk" actually requires.
+ */
+await ctx.addInitScript(() => {
+  const apply = () => {
+    const el = document.createElement('style');
+    el.textContent = 'nextjs-portal{display:none!important}';
+    document.head?.appendChild(el);
+  };
+  if (document.head) apply();
+  else document.addEventListener('DOMContentLoaded', apply);
+});
+
 // ---- admin session (cookie, not localStorage) ------------------------------
 try {
   const raw = `base64-${Buffer.from(JSON.stringify(fx.adminSession)).toString('base64')}`;
