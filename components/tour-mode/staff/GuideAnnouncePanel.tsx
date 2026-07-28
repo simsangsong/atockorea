@@ -143,10 +143,15 @@ export default function GuideAnnouncePanel({
               setCruiseCallId(null);
             }}
             aria-pressed={preset === p.key}
-            className={`tr-label text-cjk-safe shrink-0 rounded-full border px-3 py-2 font-bold active:scale-95 ${
+            /* N5 — the unselected state drew its edge from `--tr-hairline`
+               (10% ink), the same near-invisible boundary measured at 1.16–1.45
+               in the cockpit. `.tr-chip-tap--quiet` takes the edge from the
+               chip's own ink instead, so the selected chip keeps its accent
+               ring and the rest still read as controls. */
+            className={`tr-label text-cjk-safe tr-chip-tap tr-chip-tap--quiet shrink-0 rounded-full px-3 py-2 font-bold active:scale-95 ${
               preset === p.key
                 ? 'border-[var(--tr-accent)] bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]'
-                : 'border-[var(--tr-hairline)] text-[var(--tr-ink-2)]'
+                : 'text-[var(--tr-ink-2)]'
             }`}
             data-testid={`announce-preset-${p.key}`}
           >

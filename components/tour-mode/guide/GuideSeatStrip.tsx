@@ -73,7 +73,11 @@ export default function GuideSeatStrip({
               key={chip.key}
               type="button"
               onClick={() => setOpenBookingId(chip.bookingId)}
-              className={`tr-label shrink-0 whitespace-nowrap rounded-full px-2.5 py-1 font-semibold ${tone}`}
+              /* N5 — these had no edge at all, only a surface-2 fill roughly a
+                 tenth of a step from the panel behind them. The guide taps them
+                 on a moving bus to open a guest card, so "is this a button" has
+                 to be answerable at a glance. */
+              className={`tr-label tr-chip-tap tr-chip-tap--quiet shrink-0 whitespace-nowrap rounded-full px-2.5 py-1 font-semibold ${tone}`}
               data-testid={chip.unseated ? 'seat-chip-unseated' : 'seat-chip'}
             >
               {chip.seatNumber != null ? `${chip.seatNumber}번 ` : '－ '}

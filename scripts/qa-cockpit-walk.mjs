@@ -48,6 +48,20 @@ const CASES = [
   { label: 'light-classic-scale3', settings: { theme: 'light', skin: 'classic', textScale: 3 } },
 ];
 
+/**
+ * N5 — every skin, dark, because the cockpit is the one dark-FIXED surface and
+ * §E R6 records the trap: a skin's light block ties the base dark block on
+ * specificity and sits later in the file, so a token the skin sets only in its
+ * light block keeps the LIGHT value in dark mode. The static skinContrast gate
+ * catches that for the token pairs it lists; it cannot see what the rendered
+ * cockpit does with `.tr-card`'s new border + rim on a near-black canvas.
+ * Set SKIN_SWEEP=0 to skip (it costs one full navigation per skin).
+ */
+const SKIN_SWEEP = [
+  'classic', 'sky', 'winter', 'forest', 'meadow',
+  'jeju', 'seoul', 'busan', 'blossom', 'contrast',
+];
+
 /** Read the layout budget + how many bubbles are really on screen. */
 const MEASURE = () => {
   const root = document.querySelector('[data-testid="driver-console"]');
@@ -100,8 +114,109 @@ const MEASURE = () => {
   };
 };
 
+/**
+ * N5 — the material probe. The 2026-07-28 elevation upgrade gave `.tr-card` a
+ * hairline border, a rim highlight and a two-layer shadow GLOBALLY, and the
+ * cockpit is the only dark-fixed surface in the app. Shadows are nearly free of
+ * information on a near-black canvas, so what actually separates a card there is
+ * the rim and the border — and both are declared in the dark block, which a
+ * skin's light block can outrank (§E R6).
+ *
+ * So this reports the numbers that would move if that happened: how far a card's
+ * fill sits from the canvas behind it (WCAG 1.4.11 wants ≥3.0 for a control, but
+ * a passive card legitimately sits lower — the value here is the BEFORE/AFTER
+ * and the skin-to-skin spread, not a pass/fail line), and whether the card's own
+ * text still clears 4.5:1 on it.
+ */
+const MATERIAL = () => {
+  const root = document.querySelector('[data-testid="driver-console"]');
+  if (!root) return { missing: true };
+  const cs = getComputedStyle(root);
+  const tr = window.__tr;
+
+  const sample = (el) => {
+    if (!el) return null;
+    const s = getComputedStyle(el);
+    const surface = tr.surfaceVsBackdrop(el);
+    const boundary = tr.boundaryOf(el);
+    return {
+      surfaceVsCanvas: surface.ratio,
+      surface: surface.surface,
+      backdrop: surface.backdrop,
+      approx: surface.approx,
+      // The number that answers "does this read as a control": fill OR border,
+      // whichever the eye can actually find. Shadows excluded on purpose.
+      boundary: boundary.ratio,
+      boundaryVia: boundary.via,
+      borderWidth: boundary.borderWidth,
+      hasShadow: boundary.hasShadow,
+      // The rim is an INSET shadow; the elevation layers are not. Distinguishing
+      // them matters because on dark the rim is the part you can actually see.
+      hasRim: /inset/.test(s.boxShadow || ''),
+    };
+  };
+
+  /** Deepest text-bearing descendant, so ink is measured where it is painted. */
+  const inkIn = (el) => {
+    if (!el) return null;
+    const node = [...el.querySelectorAll('*')].find(
+      (n) => n.children.length === 0 && (n.textContent || '').trim().length > 1,
+    );
+    return node ? tr.inkVsSurface(node) : null;
+  };
+
+  const card = document.querySelector('[data-testid="driver-console"] .tr-card');
+  const chip = document.querySelector('[data-testid="driver-quick-rest_stop"]');
+  const feed = document.querySelector('[data-testid="driver-feed"]');
+  const bubble = feed ? feed.querySelector('[data-msg-id]') : null;
+
+  return {
+    skin: root.getAttribute('data-tr-skin'),
+    // The cockpit is dark-fixed (A5). If this ever says false on a light-theme
+    // device the guard below fires — that is a regression, not a preference.
+    darkClass: root.classList.contains('dark') || Boolean(root.closest('.dark')),
+    canvas: tr.hex(tr.surfaceOf(root).color),
+    // .tr-atmos is the light source added on 2026-07-28; N-j says the cockpit
+    // was never checked for it. Presence is a fact, not a judgement.
+    atmos: Boolean(document.querySelector('[data-testid="driver-console"] .tr-atmos, .tr-atmos')),
+    cardCount: document.querySelectorAll('[data-testid="driver-console"] .tr-card').length,
+    card: sample(card),
+    cardInk: inkIn(card),
+    chip: sample(chip),
+    chipInk: chip ? tr.inkVsSurface(chip) : null,
+    bubble: sample(bubble),
+    bubbleInk: bubble ? inkIn(bubble) : null,
+    header: (() => {
+      const h = root.querySelector('header') ?? root.firstElementChild;
+      return sample(h);
+    })(),
+    fontScale: cs.getPropertyValue('--tr-font-scale').trim() || '(unset)',
+  };
+};
+
+/**
+ * 🔴 Navigation. This used to be `click(drive-hero) → wait(driver-feed)` and it
+ * had stopped working: 운행 시작 does not open the cockpit, it switches the staff
+ * shell to the 운행 tab, where each room carries its own 운전 모드 button. The
+ * harness therefore timed out for anyone who ran it — a harness failure that
+ * reads exactly like an app failure (the G-d incident class, again).
+ */
+async function openCockpit(page) {
+  await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 120_000 });
+  const hero = page.locator('[data-testid="drive-hero"]').first();
+  if (await hero.count()) {
+    await hero.click();
+    await page.waitForTimeout(1_500);
+  }
+  const drive = page.locator('[data-testid="ops-drive"]').first();
+  await drive.waitFor({ state: 'visible', timeout: 60_000 });
+  await drive.click();
+  await page.waitForSelector('[data-testid="driver-feed"]', { timeout: 90_000 });
+}
+
 const browser = await chromium.launch();
 const results = [];
+const materials = [];
 const errors = [];
 
 for (const testCase of CASES) {
@@ -127,20 +242,38 @@ for (const testCase of CASES) {
       /* private mode — the case still renders at defaults */
     }
   }, testCase.settings);
+  await ctx.addInitScript({ path: path.join('scripts', 'qa-lib', 'contrast-inject.js') });
+  // The dev overlay eats clicks; addInitScript (not addStyleTag) so it survives
+  // client-side navigation — G-d, which cost a walk 30s of retries and then died.
+  await ctx.addInitScript(() => {
+    const inject = () => {
+      const style = document.createElement('style');
+      style.textContent = 'nextjs-portal{display:none !important}';
+      (document.head ?? document.documentElement)?.appendChild(style);
+    };
+    if (document.head) inject();
+    else document.addEventListener('DOMContentLoaded', inject);
+  });
   const page = await ctx.newPage();
   page.on('console', (m) => {
     if (m.type() === 'error') errors.push(`${testCase.label}: ${m.text()}`);
   });
 
   await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 120_000 });
-  await page.waitForSelector('[data-testid="drive-hero"]', { timeout: 90_000 });
-  await page.click('[data-testid="drive-hero"]');
-  await page.waitForSelector('[data-testid="driver-feed"]', { timeout: 60_000 });
+  await openCockpit(page);
   // The feed pins itself to the bottom after load; measure once it settles.
   await page.waitForTimeout(4_000);
 
   const measured = await page.evaluate(MEASURE);
   results.push({ case: testCase.label, ...measured });
+  materials.push({
+    case: testCase.label,
+    // A5 is "dark FIRST", not "dark always": 'system' and 'dark' both resolve
+    // dark, and an explicit 'light' is allowed to lift it (header chip). So the
+    // regression to guard is "dark was expected and did not happen".
+    expectDark: testCase.settings.theme !== 'light',
+    ...(await page.evaluate(MATERIAL)),
+  });
   await page.screenshot({ path: path.join(SHOTS, `${testCase.label}.png`), fullPage: false });
 
   /**
@@ -174,6 +307,52 @@ for (const testCase of CASES) {
   await ctx.close();
 }
 
+/**
+ * N5 skin sweep — dark only, one shot each, material numbers only. Separate
+ * from CASES because the question is different: CASES asks "does the cockpit
+ * still fit", this asks "did a global material change break the one surface that
+ * cannot follow the theme".
+ */
+if (process.env.SKIN_SWEEP !== '0') {
+  for (const skin of SKIN_SWEEP) {
+    const ctx = await browser.newContext({
+      viewport: VIEWPORT,
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true,
+      locale: 'ko-KR',
+      permissions: ['microphone'],
+    });
+    await ctx.addInitScript((s) => {
+      try {
+        localStorage.setItem('tour_mode_settings', JSON.stringify(s));
+      } catch {
+        /* defaults */
+      }
+    }, { theme: 'dark', skin, textScale: 3 });
+    await ctx.addInitScript({ path: path.join('scripts', 'qa-lib', 'contrast-inject.js') });
+    await ctx.addInitScript(() => {
+      const inject = () => {
+        const style = document.createElement('style');
+        style.textContent = 'nextjs-portal{display:none !important}';
+        (document.head ?? document.documentElement)?.appendChild(style);
+      };
+      if (document.head) inject();
+      else document.addEventListener('DOMContentLoaded', inject);
+    });
+    const page = await ctx.newPage();
+    page.on('console', (m) => {
+      if (m.type() === 'error') errors.push(`skin:${skin}: ${m.text()}`);
+    });
+    await page.goto(URL, { waitUntil: 'domcontentloaded', timeout: 120_000 });
+    await openCockpit(page);
+    await page.waitForTimeout(3_000);
+    materials.push({ case: `skin:${skin}`, expectDark: true, ...(await page.evaluate(MATERIAL)) });
+    await page.screenshot({ path: path.join(SHOTS, `skin-${skin}-dark.png`), fullPage: false });
+    await ctx.close();
+  }
+}
+
 await browser.close();
 
 const table = results.map((r) => ({
@@ -187,6 +366,65 @@ const table = results.map((r) => ({
   'msgs visible': `${r.visibleMessages}/${r.totalMessages}`,
 }));
 console.table(table);
+
+console.log('\nMATERIAL (N5) — card fill vs canvas, and ink on it:');
+console.table(
+  materials.map((m) => ({
+    case: m.case,
+    skin: m.skin,
+    dark: m.darkClass,
+    canvas: m.canvas,
+    atmos: m.atmos,
+    cards: m.cardCount,
+    'card fill': m.card ? m.card.surface : '—',
+    'card vs canvas': m.card ? m.card.surfaceVsCanvas : '—',
+    'card border': m.card ? m.card.borderWidth : '—',
+    rim: m.card ? m.card.hasRim : '—',
+    'card ink': m.cardInk ? m.cardInk.ratio : '—',
+    'chip fill': m.chip ? m.chip.surfaceVsCanvas : '—',
+    'chip boundary': m.chip ? `${m.chip.boundary} (${m.chip.boundaryVia})` : '—',
+    'chip ink': m.chipInk ? m.chipInk.ratio : '—',
+  })),
+);
+
+/**
+ * The regression this run exists to catch. Ink below 4.5:1 in the cockpit is a
+ * hard fail — a driver reads this at arm's length in a moving vehicle. Losing
+ * dark-fixed is a hard fail too: it means a skin's light block won the cascade.
+ */
+const materialFailures = [];
+for (const m of materials) {
+  if (m.missing) {
+    materialFailures.push(`${m.case}: cockpit did not render`);
+    continue;
+  }
+  if (m.expectDark && !m.darkClass) {
+    materialFailures.push(`${m.case}: cockpit lost its dark-first default (A5)`);
+  }
+  if (m.cardInk && m.cardInk.ratio !== null && m.cardInk.ratio < 4.5) {
+    materialFailures.push(`${m.case}: card ink ${m.cardInk.ratio} < 4.5`);
+  }
+  if (m.chipInk && m.chipInk.ratio !== null && m.chipInk.ratio < 4.5) {
+    materialFailures.push(`${m.case}: chip ink ${m.chipInk.ratio} < 4.5`);
+  }
+  if (m.bubbleInk && m.bubbleInk.ratio !== null && m.bubbleInk.ratio < 4.5) {
+    materialFailures.push(`${m.case}: bubble ink ${m.bubbleInk.ratio} < 4.5`);
+  }
+  // WCAG 1.4.11 for a control the driver taps while moving. N1 closed exactly
+  // this on the guest chips; the cockpit row was never measured until N5.
+  if (m.chip && m.chip.boundary !== null && m.chip.boundary < 3.0) {
+    materialFailures.push(
+      `${m.case}: quick-reply chip boundary ${m.chip.boundary} < 3.0 (via ${m.chip.boundaryVia})`,
+    );
+  }
+}
+if (materialFailures.length) {
+  console.log('\n🔴 MATERIAL FAILURES:');
+  for (const f of materialFailures) console.log('  ', f);
+} else {
+  console.log('\nmaterial: no ink below 4.5 and dark-fixed held in every case');
+}
+
 if (errors.length) {
   console.log('\nCONSOLE ERRORS:');
   for (const e of errors.slice(0, 10)) console.log(' ', e);
@@ -194,5 +432,9 @@ if (errors.length) {
   console.log('\nconsole clean');
 }
 
-writeFileSync(path.join(SHOTS, 'measurements.json'), JSON.stringify(results, null, 2));
+writeFileSync(
+  path.join(SHOTS, 'measurements.json'),
+  JSON.stringify({ layout: results, material: materials, errors }, null, 2),
+);
 console.log(`\nshots + measurements.json → ${SHOTS}`);
+if (materialFailures.length) process.exitCode = 1;

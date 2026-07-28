@@ -1680,7 +1680,15 @@ export default function Cockpit({
                     say(ok ? '전송 완료 ✓' : '전송 대기 — 아래 재전송을 눌러 주세요');
                   })();
                 }}
-                className="tr-body flex h-11 shrink-0 items-center gap-1 rounded-full border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3.5 font-semibold text-[var(--tr-ink)] transition-transform active:scale-95"
+                /* N5 — this row had the same defect N1 closed on the guest
+                   chips, and nobody had measured it: boundary 1.16 (light) /
+                   1.45 (dark) against WCAG 1.4.11's 3.0, because `--tr-hairline`
+                   is 10% ink. `.tr-chip-tap--quiet` swaps that for the chip's
+                   own text colour, which is legible on every skin by
+                   construction and needs no new token. Conversational row, so
+                   the quiet weight — the urgent full-strength edge belongs to
+                   the guest signal row. */
+                className="tr-body tr-chip-tap tr-chip-tap--quiet flex h-11 shrink-0 items-center gap-1 rounded-full bg-[var(--tr-surface)] px-3.5 font-semibold text-[var(--tr-ink)] transition-transform active:scale-95"
                 data-testid={`driver-quick-${preset.key}`}
               >
                 <span aria-hidden>{preset.emoji}</span>
