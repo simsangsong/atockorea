@@ -372,6 +372,17 @@ const COPY: Record<
   },
 };
 
+/**
+ * "Now" for surfaces outside this tab (the schedule cards), DERIVED from the
+ * map above rather than typed out again. A second hand-copied list of the same
+ * ten strings is a list that will diverge — this repo has already been bitten
+ * by exactly that (§D A4.1, a locale array whose copy had ja/es/zh in a
+ * different order).
+ */
+export const NOW_LABEL: Record<RoomLocale, string> = Object.fromEntries(
+  (Object.keys(COPY) as RoomLocale[]).map((l) => [l, COPY[l].now]),
+) as Record<RoomLocale, string>;
+
 function formatKstTime(iso: string): string {
   try {
     return new Intl.DateTimeFormat('en-GB', {
