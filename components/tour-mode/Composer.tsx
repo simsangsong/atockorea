@@ -26,6 +26,7 @@ import {
   type ActiveRecording,
 } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt, type DeviceSttHandle } from '@/lib/tour-room/deviceStt';
+import { downscaleForVision } from '@/lib/tour-room/imageDownscale';
 import { primeAudio, TTS_LANG } from '@/lib/tour-room/tts';
 import ReplyPreview from '@/components/tour-mode/ReplyPreview';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
@@ -186,28 +187,60 @@ export interface VoiceTranscribeResult {
   needsConfirmation: boolean;
 }
 
-/** T4.7 — photo-question hook provided by the room client. */
+/**
+ * T4.7 — photo-question hook provided by the room client.
+ *
+ * The failure arm is a REASON, not null. One null meant one sentence for five
+ * different causes, which is why nobody could tell whether the feature was
+ * broken, rate-limited, or handed a 12MB photo.
+ */
+export type VisionFailureReason =
+  | 'too_big'
+  | 'rate_limited'
+  | 'offline'
+  | 'unauthorized'
+  | 'ai_failed';
+
+export type VisionAskResult =
+  | { answer: string; shared: boolean }
+  | { reason: VisionFailureReason };
+
 export interface VisionAsk {
   ask: (
     file: File,
     options: { question: string; share: boolean },
-  ) => Promise<{ answer: string; shared: boolean } | null>;
+  ) => Promise<VisionAskResult | null>;
 }
 
 const VISION_COPY: Record<
   RoomLocale,
-  { placeholder: string; private_: string; share: string; ask: string; asking: string; failed: string; close: string }
+  {
+    placeholder: string;
+    private_: string;
+    share: string;
+    ask: string;
+    asking: string;
+    /** Generic fallback. Kept because an unknown failure is still a failure. */
+    failed: string;
+    /** 🔴 One sentence per cause. The single `failed` string made a 12MB photo,
+     *  an exhausted quota and an AI outage look identical — to the guest and
+     *  to whoever was asked why the feature does not work. */
+    failedTooBig: string;
+    failedRateLimited: string;
+    failedOffline: string;
+    close: string;
+  }
 > = {
-  en: { placeholder: 'Ask about this photo (optional)', private_: 'Only me', share: 'Share with room', ask: 'Ask', asking: 'Looking…', failed: 'Could not analyze — try again.', close: 'Close' },
-  ko: { placeholder: '사진에 대해 물어보세요 (선택)', private_: '나만 보기', share: '방에 공유', ask: '질문하기', asking: '살펴보는 중…', failed: '분석하지 못했어요 — 다시 시도해 주세요.', close: '닫기' },
-  ja: { placeholder: '写真について質問（任意）', private_: '自分だけ', share: 'ルームに共有', ask: '質問する', asking: '確認中…', failed: '分析できませんでした — もう一度お試しください。', close: '閉じる' },
-  es: { placeholder: 'Pregunta sobre la foto (opcional)', private_: 'Solo yo', share: 'Compartir', ask: 'Preguntar', asking: 'Analizando…', failed: 'No se pudo analizar — inténtalo de nuevo.', close: 'Cerrar' },
-  zh: { placeholder: '关于这张照片的问题（可选）', private_: '仅自己可见', share: '分享到房间', ask: '提问', asking: '识别中…', failed: '无法识别 — 请重试。', close: '关闭' },
-  'zh-TW': { placeholder: '關於這張照片的問題（選填）', private_: '僅自己可見', share: '分享到房間', ask: '提問', asking: '辨識中…', failed: '無法辨識 — 請重試。', close: '關閉' },
-  fr: { placeholder: 'Posez une question sur cette photo (facultatif)', private_: 'Moi uniquement', share: 'Partager avec le groupe', ask: 'Demander', asking: 'Analyse…', failed: 'Analyse impossible — réessayez.', close: 'Fermer' },
-  de: { placeholder: 'Frage zu diesem Foto (optional)', private_: 'Nur ich', share: 'Mit dem Raum teilen', ask: 'Fragen', asking: 'Wird geprüft…', failed: 'Analyse fehlgeschlagen — bitte erneut versuchen.', close: 'Schließen' },
-  ru: { placeholder: 'Спросите об этом фото (необязательно)', private_: 'Только мне', share: 'Поделиться с комнатой', ask: 'Спросить', asking: 'Смотрю…', failed: 'Не удалось распознать — попробуйте снова.', close: 'Закрыть' },
-  it: { placeholder: 'Chiedi qualcosa su questa foto (facoltativo)', private_: 'Solo io', share: 'Condividi con la stanza', ask: 'Chiedi', asking: 'Analizzo…', failed: 'Analisi non riuscita — riprova.', close: 'Chiudi' },
+  en: { placeholder: 'Ask about this photo (optional)', private_: 'Only me', share: 'Share with room', ask: 'Ask', asking: 'Looking…', failed: 'Could not analyze — try again.', failedTooBig: 'That photo is too large — try a smaller one.', failedRateLimited: 'Too many photo questions just now — try again shortly.', failedOffline: 'No connection — check your signal and try again.', close: 'Close' },
+  ko: { placeholder: '사진에 대해 물어보세요 (선택)', private_: '나만 보기', share: '방에 공유', ask: '질문하기', asking: '살펴보는 중…', failed: '분석하지 못했어요 — 다시 시도해 주세요.', failedTooBig: '사진이 너무 커요 — 조금 작은 사진으로 시도해 주세요.', failedRateLimited: '사진 질문을 너무 자주 했어요 — 잠시 후 다시 시도해 주세요.', failedOffline: '연결이 끊겼어요 — 신호를 확인하고 다시 시도해 주세요.', close: '닫기' },
+  ja: { placeholder: '写真について質問（任意）', private_: '自分だけ', share: 'ルームに共有', ask: '質問する', asking: '確認中…', failed: '分析できませんでした — もう一度お試しください。', failedTooBig: '写真が大きすぎます — 小さめの写真でお試しください。', failedRateLimited: '写真の質問が続きました — 少し時間をおいてお試しください。', failedOffline: '接続がありません — 電波を確認して再度お試しください。', close: '閉じる' },
+  es: { placeholder: 'Pregunta sobre la foto (opcional)', private_: 'Solo yo', share: 'Compartir', ask: 'Preguntar', asking: 'Analizando…', failed: 'No se pudo analizar — inténtalo de nuevo.', failedTooBig: 'La foto es demasiado grande — prueba con una más pequeña.', failedRateLimited: 'Demasiadas preguntas con foto — inténtalo en un momento.', failedOffline: 'Sin conexión — comprueba la señal e inténtalo de nuevo.', close: 'Cerrar' },
+  zh: { placeholder: '关于这张照片的问题（可选）', private_: '仅自己可见', share: '分享到房间', ask: '提问', asking: '识别中…', failed: '无法识别 — 请重试。', failedTooBig: '照片太大了 — 请换一张小一点的。', failedRateLimited: '刚才的照片提问太多了 — 请稍后再试。', failedOffline: '没有网络连接 — 请检查信号后重试。', close: '关闭' },
+  'zh-TW': { placeholder: '關於這張照片的問題（選填）', private_: '僅自己可見', share: '分享到房間', ask: '提問', asking: '辨識中…', failed: '無法辨識 — 請重試。', failedTooBig: '照片太大了 — 請換一張小一點的。', failedRateLimited: '剛才的照片提問太多了 — 請稍後再試。', failedOffline: '沒有網路連線 — 請確認訊號後重試。', close: '關閉' },
+  fr: { placeholder: 'Posez une question sur cette photo (facultatif)', private_: 'Moi uniquement', share: 'Partager avec le groupe', ask: 'Demander', asking: 'Analyse…', failed: 'Analyse impossible — réessayez.', failedTooBig: 'Cette photo est trop lourde — essayez-en une plus petite.', failedRateLimited: 'Trop de questions photo à la suite — réessayez dans un instant.', failedOffline: 'Pas de connexion — vérifiez votre réseau et réessayez.', close: 'Fermer' },
+  de: { placeholder: 'Frage zu diesem Foto (optional)', private_: 'Nur ich', share: 'Mit dem Raum teilen', ask: 'Fragen', asking: 'Wird geprüft…', failed: 'Analyse fehlgeschlagen — bitte erneut versuchen.', failedTooBig: 'Das Foto ist zu groß — bitte ein kleineres versuchen.', failedRateLimited: 'Zu viele Fotofragen hintereinander — bitte gleich noch einmal.', failedOffline: 'Keine Verbindung — bitte Empfang prüfen und erneut versuchen.', close: 'Schließen' },
+  ru: { placeholder: 'Спросите об этом фото (необязательно)', private_: 'Только мне', share: 'Поделиться с комнатой', ask: 'Спросить', asking: 'Смотрю…', failed: 'Не удалось распознать — попробуйте снова.', failedTooBig: 'Фото слишком большое — попробуйте поменьше.', failedRateLimited: 'Слишком много вопросов по фото — попробуйте чуть позже.', failedOffline: 'Нет соединения — проверьте связь и повторите.', close: 'Закрыть' },
+  it: { placeholder: 'Chiedi qualcosa su questa foto (facoltativo)', private_: 'Solo io', share: 'Condividi con la stanza', ask: 'Chiedi', asking: 'Analizzo…', failed: 'Analisi non riuscita — riprova.', failedTooBig: 'La foto è troppo grande — provane una più piccola.', failedRateLimited: 'Troppe domande con foto — riprova tra poco.', failedOffline: 'Nessuna connessione — controlli la rete e riprovi.', close: 'Chiudi' },
 };
 
 const MAX_TEXTAREA_PX = 128; // ~5 lines of tr-body
@@ -298,6 +331,18 @@ export default function Composer({
   const [visionShare, setVisionShare] = useState(false);
   const [visionState, setVisionState] = useState<'idle' | 'asking' | 'answered' | 'failed'>('idle');
   const [visionAnswer, setVisionAnswer] = useState('');
+  const [visionReason, setVisionReason] = useState<VisionFailureReason>('ai_failed');
+  // 'unauthorized' deliberately falls back to the generic sentence: telling a
+  // guest their session is invalid is not something they can act on, and the
+  // room reconnects on its own.
+  const visionFailureText =
+    visionReason === 'too_big'
+      ? VISION_COPY[locale].failedTooBig
+      : visionReason === 'rate_limited'
+        ? VISION_COPY[locale].failedRateLimited
+        : visionReason === 'offline'
+          ? VISION_COPY[locale].failedOffline
+          : VISION_COPY[locale].failed;
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
   // Kakao-grade attachment (Phase 2): pick a photo/file → preview + caption → send.
@@ -346,17 +391,29 @@ export default function Composer({
     if (!file) return;
     primeAudio();
     if (visionPreview) URL.revokeObjectURL(visionPreview);
-    setVisionFile(file);
+    // Preview the original immediately — resizing takes a moment on a phone and
+    // the guest should see their photo the instant they pick it.
     setVisionPreview(URL.createObjectURL(file));
     setVisionAnswer('');
     setVisionState('idle');
+    setVisionFile(file);
+    /**
+     * 🔴 Then shrink it. A phone camera writes 3-12MB; the request never reached
+     * the function, which is why `ops_ai_usage` has 1,898 rows and not one of
+     * them is a vision call. The attachment path has had a size check since it
+     * shipped — this path never did.
+     */
+    void downscaleForVision(file).then((smaller) => {
+      if (smaller !== file) setVisionFile(smaller);
+    });
   };
 
   const askVision = async () => {
     if (!vision || !visionFile) return;
     setVisionState('asking');
     const result = await vision.ask(visionFile, { question: visionQuestion.trim(), share: visionShare });
-    if (!result) {
+    if (!result || 'reason' in result) {
+      setVisionReason(result && 'reason' in result ? result.reason : 'ai_failed');
       setVisionState('failed');
       return;
     }
@@ -601,7 +658,7 @@ export default function Composer({
                 </>
               )}
               {visionState === 'failed' && (
-                <p className="tr-label mt-1 text-[var(--tr-danger)]">{VISION_COPY[locale].failed}</p>
+                <p className="tr-label mt-1 text-[var(--tr-danger)]">{visionFailureText}</p>
               )}
             </div>
           </div>

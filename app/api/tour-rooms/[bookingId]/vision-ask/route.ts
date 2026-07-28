@@ -22,7 +22,30 @@ export const dynamic = 'force-dynamic';
  * Budget: 10 asks / participant / day + an hourly room cap (O-12 spirit).
  */
 
-const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
+/**
+ * 🔴 Was 8MB, which was a limit this route could never actually enforce.
+ *
+ * A serverless request body is capped well below that by the platform, so a
+ * 5-8MB photo was rejected BEFORE this function ran — no log, no meter row, no
+ * way to tell it apart from an AI outage. `ops_ai_usage` holds 1,898 rows and
+ * not one has purpose='vision': the feature has never once completed in
+ * production, and the number in this constant is why nobody could see that.
+ *
+ * 2MB is comfortably inside the platform limit even after multipart overhead,
+ * and the client now downscales to ~1.2MB before sending, so a guest should
+ * never meet this at all. When they do, it answers 413 rather than 400 —
+ * "too large" is a different fact from "malformed request", and the composer
+ * now says so in the guest’s language.
+ */
+const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
+
+/**
+ * Vision costs more than text: the image is base64-inflated by 4/3 on the way
+ * to the provider and the model reads it before answering. Without this the
+ * platform default (10-15s) could kill the function mid-call — the same shape
+ * K1a found on the SSE route.
+ */
+export const maxDuration = 30;
 const PHOTOS_BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
 
 // 9 room locales (5 → 9 expansion, 2026-07-27). A missing entry silently
@@ -74,8 +97,25 @@ export async function POST(
     }
     const form = await req.formData();
     const image = form.get('image');
-    if (!(image instanceof File) || image.size === 0 || image.size > MAX_IMAGE_BYTES) {
-      return NextResponse.json({ error: 'image file is required (≤8MB)' }, { status: 400 });
+    if (!(image instanceof File) || image.size === 0) {
+      return NextResponse.json({ error: 'image file is required' }, { status: 400 });
+    }
+    if (image.size > MAX_IMAGE_BYTES) {
+      // 413, not 400: the client can act on "too large" and cannot act on
+      // "malformed". Collapsing them is how this failure stayed invisible.
+      return NextResponse.json(
+        { error: 'image_too_large', maxBytes: MAX_IMAGE_BYTES, gotBytes: image.size },
+        { status: 413 },
+      );
+    }
+    /**
+     * HEIC is what an iPhone writes by default and no provider in the ladder
+     * accepts it. Rejecting it here with a usable reason beats letting it reach
+     * the model and come back as a generic failure — and the client's downscale
+     * pass re-encodes it to JPEG, so this should only ever catch a bypass.
+     */
+    if (/heic|heif/i.test(image.type)) {
+      return NextResponse.json({ error: 'unsupported_image_format', got: image.type }, { status: 415 });
     }
 
     const resolved = await resolveRoomActor(req, bookingId, { supabase });

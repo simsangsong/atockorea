@@ -67,7 +67,10 @@ export default function ConciergePanel({
    * composer, so the sheet quietly lacked the button guests were told about.
    * Absent (read-only / ended rooms) hides the camera button.
    */
-  onVisionAsk?: (file: File, options: { question: string; share: boolean }) => Promise<{ answer: string } | null>;
+  onVisionAsk?: (
+    file: File,
+    options: { question: string; share: boolean },
+  ) => Promise<{ answer: string } | { reason: string } | null>;
 }) {
   const copy = CONCIERGE_COPY[locale];
   const [thread, setThread] = useState<ThreadEntry[]>([]);
@@ -151,7 +154,11 @@ export default function ConciergePanel({
     setBusy(true);
     try {
       const result = await onVisionAsk(file, { question, share: false });
-      push('assistant', result?.answer ?? copy.error);
+      // The sheet keeps its single generic sentence on purpose — it is a
+      // conversation, and 'that photo is too large' reads oddly as a reply from
+      // a guide. The composer panel, which shows a form, names the cause.
+      const answer = result && 'answer' in result ? result.answer : null;
+      push('assistant', answer ?? copy.error);
     } catch {
       push('assistant', copy.error);
     } finally {

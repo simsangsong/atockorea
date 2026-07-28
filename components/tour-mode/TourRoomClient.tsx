@@ -768,11 +768,36 @@ function TourRoomLive({
           headers: { 'x-tour-room-auth': data.session },
           body: form,
         });
-        if (!res.ok) return null;
+        if (!res.ok) {
+          /**
+           * 🔴 This used to be `return null` for every status, and the composer
+           * turned that one null into one sentence — so "your photo is too
+           * large", "you have used today's ten questions" and "the AI did not
+           * answer in time" were indistinguishable, to the guest AND to us.
+           *
+           * The server already distinguishes them: 400 carries a size message,
+           * 429 carries rate_limited, 500 carries the router's full attempt log.
+           * Nothing was reading any of it.
+           */
+          if (res.status === 413 || res.status === 415) return { reason: 'too_big' as const };
+          if (res.status === 429) return { reason: 'rate_limited' as const };
+          if (res.status === 400) return { reason: 'too_big' as const };
+          if (res.status === 401 || res.status === 403) return { reason: 'unauthorized' as const };
+          // Keep the real reason where a human can find it. The guest gets a
+          // sentence; whoever is debugging gets the router's attempt log.
+          const detail = await res.text().catch(() => '');
+          console.warn('[vision-ask] failed', res.status, detail.slice(0, 400));
+          return { reason: 'ai_failed' as const };
+        }
         const json = (await res.json()) as { answer?: string; shared?: boolean };
-        return json.answer ? { answer: json.answer, shared: Boolean(json.shared) } : null;
-      } catch {
-        return null;
+        return json.answer
+          ? { answer: json.answer, shared: Boolean(json.shared) }
+          : { reason: 'ai_failed' as const };
+      } catch (error) {
+        // A dropped connection on a bus is the commonest failure of all, and it
+        // was wearing the same message as an AI outage.
+        console.warn('[vision-ask] network', error);
+        return { reason: 'offline' as const };
       }
     },
     [bookingId, data.session, locale],
