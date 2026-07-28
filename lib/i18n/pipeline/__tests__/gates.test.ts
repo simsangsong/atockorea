@@ -17,6 +17,7 @@ import {
   checkUntranslated,
   checkVerbatim,
   numberMultiset,
+  romanNumeralValues,
   verifyUnit,
 } from '../gates';
 
@@ -339,5 +340,34 @@ describe('G4 통화 표기 정규화 (2026-07-28 실측)', () => {
   it('통화가 통째로 사라지면 여전히 fail', () => {
     const f = checkCurrencyAndUnits('entry KRW 5,000', 'ingresso 5.000 won', '/p');
     expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
+  });
+});
+
+describe('G3 로마 숫자 세기 (2026-07-28 실측)', () => {
+  it('세기를 로마 숫자로 쓴 것은 값 소실이 아니다', () => {
+    // `15th-17th century` → `XV-XVII secolo`. 이탈리아어·프랑스어의 정상 표기.
+    const f = checkNumbers('built 15th-17th century', 'costruito tra il XV e il XVII secolo', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  it('프랑스어 서수 접미사도 인식한다 — XVe', () => {
+    const f = checkNumbers('the 15th century hall', 'la salle du XVe siècle', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  it('한 글자 로마자는 세지 않는다 — 관사·머리글자 오탐 방지', () => {
+    // `I` 가 1로 읽히면 원문의 1이 사라져도 통과해버린다.
+    expect(romanNumeralValues('I giardini di D. Kim')).toEqual(new Set());
+    const f = checkNumbers('1 free shuttle', 'navetta gratuita', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('로마 숫자와 무관한 값 소실은 여전히 fail', () => {
+    const f = checkNumbers('XV secolo, 5000 won', 'XV secolo', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('값을 읽는다', () => {
+    expect(romanNumeralValues('XV, XVII, IX, MMXX')).toEqual(new Set(['15', '17', '9', '2020']));
   });
 });

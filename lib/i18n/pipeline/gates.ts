@@ -143,8 +143,15 @@ export function checkNumbers(source: string, target: string, pointer: string): F
   if (sameMultiset(a, b)) return [];
 
   const findings: Finding[] = [];
-  const lostRaw = missingFrom(a, b);
+  const lostRaw0 = missingFrom(a, b);
   const added = missingFrom(b, a);
+
+  // 로마 숫자는 다른 기수법이지 다른 값이 아니다. 이탈리아어·프랑스어는 세기를
+  // 이렇게 쓴다 — `15th-17th century` → `XV-XVII secolo` · `XVe-XVIIe siècle`.
+  // 아라비아 숫자만 세면 15와 17이 통째로 "소실"로 잡혀 이탈리아어 다수가 탈락했다
+  // (2026-07-28 실측). 천단위 구분기호를 이미 이해하는 것과 같은 층위의 처리다.
+  const romanValues = romanNumeralValues(target);
+  const lostRaw = lostRaw0.filter((n) => !romanValues.has(n));
 
   // 연대 축약은 소실이 아니라 서식이다 — 위의 "월 이름 → 숫자" 선례와 같은 부류.
   // `1970s-1980s`(en) → `anni '70-'80`(it) · `70er-80er`(de)는 그 언어의 정상
@@ -196,6 +203,37 @@ export function checkNumbers(source: string, target: string, pointer: string): F
  *    오탐이었다. 실제 단위 변환은 언제나 `30 miles` · `12 Fuß`처럼 수치를 동반한다.
  */
 const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
+
+/**
+ * 텍스트 안 로마 숫자의 값 집합.
+ *
+ * 좁게 잡는다 — 2글자 이상만 센다. 한 글자 `I`·`V`·`X`·`C`·`D`·`M`은 이탈리아어
+ * 관사·약어·머리글자와 충돌해서 오탐이 너무 많다(`I giardini`, `D. Kim`).
+ * 세기 표기는 언제나 두 글자 이상(`IX`·`XV`·`XVII`)이므로 실제 용도는 다 걸린다.
+ * 이탈리아어·프랑스어의 서수 접미사(`XVe`·`XVII°`)도 뒤에 붙을 수 있어 허용한다.
+ */
+const ROMAN_RE = /(?<![\p{L}])([IVXLCDM]{2,})(?:[eè°º]|er|ème|mo|esimo)?(?![\p{L}])/gu;
+const ROMAN_DIGITS: Record<string, number> = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+
+export function romanNumeralValues(text: string): Set<string> {
+  const values = new Set<string>();
+  for (const match of text.matchAll(ROMAN_RE)) {
+    const glyphs = match[1].toUpperCase();
+    let total = 0;
+    let valid = true;
+    for (let i = 0; i < glyphs.length; i += 1) {
+      const current = ROMAN_DIGITS[glyphs[i]];
+      const next = ROMAN_DIGITS[glyphs[i + 1]];
+      if (!current) {
+        valid = false;
+        break;
+      }
+      total += next && next > current ? -current : current;
+    }
+    if (valid && total > 0) values.add(String(total));
+  }
+  return values;
+}
 
 /** ISO 코드 ↔ 기호는 같은 통화다. 비교 전에 한쪽으로 모은다. */
 const CURRENCY_ALIAS: Record<string, string> = {
