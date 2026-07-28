@@ -105,9 +105,42 @@ function luminance(rgb: [number, number, number]): number {
   return 0.2126 * r + 0.7152 * g + 0.0722 * b;
 }
 
-function ratio(aHex: string, bHex: string): number {
-  const a = hexToRgb(aHex);
-  const b = hexToRgb(bHex);
+/**
+ * 🔴 rgba was being skipped, and skipping is not passing.
+ *
+ * Half the dark palette's soft washes are `rgba(…, 0.2)` over the canvas, and
+ * this gate returned NaN for them — so every pair involving one silently did
+ * not run. The suite was green about tokens it had never looked at, which is
+ * the shape G-b warned about: a guard that leaks is worse than none, because
+ * people stop looking.
+ *
+ * Compositing needs to know what is UNDER the wash. Everywhere these tokens are
+ * used that is the canvas, so the canvas is the backdrop.
+ */
+function parseColour(value: string, backdrop: [number, number, number] | null): [number, number, number] | null {
+  const hex = hexToRgb(value);
+  if (hex) return hex;
+  const rgba = /^rgba?\(\s*([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,/\s]+([\d.]+%?))?\s*\)$/i.exec(value.trim());
+  if (!rgba) return null;
+  const raw: [number, number, number] = [Number(rgba[1]), Number(rgba[2]), Number(rgba[3])];
+  const alphaRaw = rgba[4];
+  const alpha = alphaRaw === undefined ? 1 : alphaRaw.endsWith('%') ? parseFloat(alphaRaw) / 100 : Number(alphaRaw);
+  if (!Number.isFinite(alpha)) return null;
+  if (alpha >= 0.999) return raw;
+  if (!backdrop) return null; // translucent with nothing behind it is undecidable
+  return [
+    raw[0] * alpha + backdrop[0] * (1 - alpha),
+    raw[1] * alpha + backdrop[1] * (1 - alpha),
+    raw[2] * alpha + backdrop[2] * (1 - alpha),
+  ];
+}
+
+function ratio(aValue: string, bValue: string, canvas?: string): number {
+  const base = canvas ? hexToRgb(canvas) : null;
+  // The background composites onto the canvas; the foreground composites onto
+  // the composited background, which is what a reader's eye actually receives.
+  const b = parseColour(bValue, base);
+  const a = parseColour(aValue, b);
   if (!a || !b) return NaN;
   const la = luminance(a);
   const lb = luminance(b);
@@ -138,6 +171,19 @@ const PAIRS: Array<[string, string, number]> = [
   // 한 값이 10스킨 × 라이트/다크 전부에서 읽혀야 한다.
   ['warn', 'surface', 4.5],
   ['warn', 'canvas', 4.5],
+  /**
+   * I5 — the now card's two loud states paint INK ON THEIR OWN WASH, which is a
+   * pairing nothing above covered: `--tr-danger` text sitting on
+   * `--tr-danger-soft`, and ordinary ink on `--tr-warn-soft`.
+   *
+   * That card is the screen's protagonist, and its danger variant is the one a
+   * guest reads while their group is already waiting for them. A skin where the
+   * wash creeps toward the text turns the most urgent card in the app into the
+   * hardest one to read — the same failure N1 measured on the chips, one layer
+   * up. Ten skins × two themes, checked from the shipped CSS.
+   */
+  ['ink', 'danger-soft', 4.5],
+  ['ink', 'warn-soft', 4.5],
 ];
 
 const THEMES = ['light', 'dark'] as const;
@@ -165,7 +211,7 @@ describe('skin contrast gate (T-D7)', () => {
             failures.push(`${skin}/${theme}: missing token ${!fgv ? fg : bg}`);
             continue;
           }
-          const r = ratio(fgv, bgv);
+          const r = ratio(fgv, bgv, tokens.canvas);
           if (Number.isNaN(r)) {
             failures.push(`${skin}/${theme}: non-hex value for ${fg}(${fgv}) on ${bg}(${bgv})`);
             continue;
