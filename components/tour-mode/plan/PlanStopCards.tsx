@@ -59,6 +59,8 @@ export default function PlanStopCards({
   addedKeys,
   labels,
   onAddStop,
+  currentIndex,
+  nowLabel,
 }: {
   stops: ItineraryStop[];
   locale: RoomLocale;
@@ -68,6 +70,20 @@ export default function PlanStopCards({
   addedKeys?: Set<string>;
   labels: PlanStopCardsLabels;
   onAddStop?: (stop: ItineraryStop) => void;
+  /**
+   * 🔴 Where the day actually IS — index into `stops`, -1 when nothing is
+   * running. Omit in the planner (a plan being written has no "now").
+   *
+   * These cards replaced a plain timeline that DID know: it bolded the current
+   * row and greyed the finished ones. The prettier replacement dropped it, and
+   * because rich cards only appear when the tour has a product page — which is
+   * most real tours — the schedule screen the majority of guests actually see
+   * is the one that cannot answer "where are we right now". The home card knew;
+   * the schedule tab did not. (UX walk, 2026-07-28.)
+   */
+  currentIndex?: number;
+  /** "Now" in the guest's language; required to render the current-stop badge. */
+  nowLabel?: string;
 }) {
   const [drawerStop, setDrawerStop] = useState<ItineraryStop | null>(null);
   // A1.5 — dead asset URLs degrade to the Sparkles swatch below, not the
@@ -80,17 +96,23 @@ export default function PlanStopCards({
   return (
     <>
       <div className="flex flex-col gap-2.5">
-        {stops.map((stop) => {
+        {stops.map((stop, index) => {
           const rawPhoto = stopPhoto(stop);
           const photo = rawPhoto && !brokenPhotos.has(rawPhoto) ? rawPhoto : null;
           const time = stopTime(stop);
           const poiKey = stop._poi_meta?.poi_key ?? null;
           const added = poiKey ? Boolean(addedKeys?.has(poiKey)) : false;
+          const live = typeof currentIndex === 'number' && currentIndex >= 0;
+          const isNow = live && index === currentIndex;
+          const isDone = live && index < currentIndex;
           return (
             <article
               key={`${stop.number}-${stop.name}`}
-              className="tr-card overflow-hidden"
+              className={`tr-card overflow-hidden ${
+                isNow ? 'ring-2 ring-[var(--tr-accent)]' : isDone ? 'opacity-55' : ''
+              }`}
               data-testid="plan-tour-stop-card"
+              data-stop-state={isNow ? 'now' : isDone ? 'done' : 'upcoming'}
             >
               <button
                 type="button"
@@ -120,7 +142,14 @@ export default function PlanStopCards({
                   </span>
                 </div>
                 <div className="flex min-w-0 flex-1 flex-col justify-center px-3 py-2">
-                  <h3 className="tr-card-text truncate font-bold text-[var(--tr-ink)]">{stop.name}</h3>
+                  <h3 className="tr-card-text flex items-center gap-1.5 font-bold text-[var(--tr-ink)]">
+                    {isNow && nowLabel && (
+                      <span className="tr-meta text-cjk-safe shrink-0 rounded-full bg-[var(--tr-accent)] px-1.5 py-0.5 font-bold text-[var(--tr-on-accent)]">
+                        {nowLabel}
+                      </span>
+                    )}
+                    <span className="truncate">{stop.name}</span>
+                  </h3>
                   <div className="tr-meta mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5 text-[var(--tr-ink-2)]">
                     {time && (
                       <span className="inline-flex items-center gap-1 tabular-nums">

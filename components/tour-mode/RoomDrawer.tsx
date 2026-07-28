@@ -405,7 +405,7 @@ export default function RoomDrawer({
             </p>
           )}
           {/* ① 모아보기 — 사진/동영상 */}
-          <section>
+          <section className={images !== null && images.length === 0 ? 'hidden' : undefined}>
             <h3 className={sectionLabel}>{copy.media}</h3>
             {images === null ? (
               <div className="tr-skeleton mt-2 h-20 rounded-xl" />
@@ -429,7 +429,7 @@ export default function RoomDrawer({
           </section>
 
           {/* ① 모아보기 — 파일 */}
-          <section>
+          <section className={files !== null && files.length === 0 ? 'hidden' : undefined}>
             <h3 className={sectionLabel}>{copy.files}</h3>
             {files === null ? (
               <div className="tr-skeleton mt-2 h-12 rounded-xl" />
@@ -458,7 +458,7 @@ export default function RoomDrawer({
           </section>
 
           {/* ① 모아보기 — 링크 */}
-          <section>
+          <section className={links !== null && links.length === 0 ? 'hidden' : undefined}>
             <h3 className={sectionLabel}>{copy.links}</h3>
             {links === null ? (
               <div className="tr-skeleton mt-2 h-12 rounded-xl" />

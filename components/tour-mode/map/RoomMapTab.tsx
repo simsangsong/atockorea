@@ -193,6 +193,7 @@ export default function RoomMapTab({
           facilities={facilities}
           pickup={pickup}
           followGuide={followGuide}
+          locale={locale}
         />
         {followTarget && (
           <button

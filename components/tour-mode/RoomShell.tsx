@@ -20,6 +20,7 @@ import EmergencyCard from '@/components/tour-mode/EmergencyCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import SkinScenery from '@/components/tour-mode/scenery/SkinScenery';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
+import { NOW_LABEL } from '@/components/tour-mode/HomeTab';
 import { useKeyboardOpen } from '@/components/tour-mode/useKeyboardOpen';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
@@ -679,6 +680,10 @@ export default function RoomShell({
                   locale={locale}
                   canEdit={false}
                   labels={STOP_CARD_LABELS[locale]}
+                  /* The plain <ol> below has always known where the day is;
+                     these cards, which most guests actually get, did not. */
+                  currentIndex={currentIndex}
+                  nowLabel={NOW_LABEL[locale]}
                 />
               </div>
             )}
