@@ -435,12 +435,35 @@ export function checkCharset(
 
   if (locale === 'ru') {
     // 키릴 비율 하한. 라틴 고유명사가 섞이므로 60%.
-    if (letters >= 10 && cyrillic / letters < 0.6) {
+    //
+    // 🔴 원문에 그대로 있던 라틴 낱말은 분모에서 뺀다. 고유명사가 빽빽한 짧은
+    // 문구 — `Lost Valley Audi Q5 safari + Zoo-Topia` — 는 **올바르게 번역해도**
+    // 키릴 60%에 닿을 수 없다. 즉 어떤 정답도 통과 못 하는 입력이었다
+    // (2026-07-28 실측: everland 26%, arte_museum 40%).
+    // 원문에 없던 라틴 낱말이 그대로 남는 진짜 미번역은 그대로 잡힌다.
+    const kept = new Set(
+      (source.match(/[A-Za-z][A-Za-z'’-]*/g) ?? []).map((w) => w.toLowerCase()),
+    );
+    const latinFromSource = (target.match(/[A-Za-z][A-Za-z'’-]*/g) ?? [])
+      .filter((w) => kept.has(w.toLowerCase()))
+      .reduce((sum, w) => sum + (w.match(/\p{L}/gu) ?? []).length, 0);
+    const judged = letters - latinFromSource;
+    if (letters >= 10 && cyrillic === 0) {
+      // 🔴 위 공제가 열 뻔한 구멍: 영어를 통째로 되돌려주면 분모가 0이 되어
+      // 비율 검사를 건너뛴다 — G10 이 막으라고 있는 바로 그 경우다. 키릴이 한 자도
+      // 없으면 고유명사 밀도와 무관하게 미번역이다.
       findings.push({
         gate: 'G10',
         severity: 'fail',
         pointer,
-        message: `키릴 비율 ${((cyrillic / letters) * 100).toFixed(0)}% < 60% — 러시아어 미번역 의심`,
+        message: '키릴 문자가 하나도 없다 — 러시아어 미번역',
+      });
+    } else if (judged >= 10 && cyrillic / judged < 0.6) {
+      findings.push({
+        gate: 'G10',
+        severity: 'fail',
+        pointer,
+        message: `키릴 비율 ${((cyrillic / judged) * 100).toFixed(0)}% < 60% (원문 고유명사 ${latinFromSource}자 제외) — 러시아어 미번역 의심`,
       });
     }
   } else if (cyrillic > 0) {

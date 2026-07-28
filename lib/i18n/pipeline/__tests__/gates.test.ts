@@ -243,8 +243,10 @@ describe('G10 문자셋 — 로케일 교차 오염 (H8)', () => {
   });
 
   it('러시아어인데 라틴문자만이면 fail', () => {
+    // 문구가 아니라 판정을 고정한다 — 키릴이 0자인 경우는 비율이 아니라
+    // "한 자도 없다"로 보고되지만, 어느 쪽이든 G10 fail이어야 한다.
     const f = checkCharset('Visit Gamcheon village at dawn', '/p', 'ru');
-    expect(f.some((x) => x.message.includes('키릴 비율'))).toBe(true);
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
   });
 
   it('러시아어에 라틴 고유명사가 일부 섞이는 것은 허용', () => {
@@ -369,5 +371,35 @@ describe('G3 로마 숫자 세기 (2026-07-28 실측)', () => {
 
   it('값을 읽는다', () => {
     expect(romanNumeralValues('XV, XVII, IX, MMXX')).toEqual(new Set(['15', '17', '9', '2020']));
+  });
+});
+
+describe('G10 키릴 비율 — 고유명사 공제 (2026-07-28 실측)', () => {
+  const src = 'Lost Valley **Audi Q5 safari** + Zoo-Topia';
+
+  it('고유명사가 빽빽한 문구는 올바른 번역도 60%에 못 닿는다 — 통과시킨다', () => {
+    // 실측: everland 26%, arte_museum 40%. 어떤 정답도 통과 못 하던 입력이다.
+    const f = checkCharset('Сафари Audi Q5 в Lost Valley + Zoo-Topia', '/p', 'ru', src);
+    expect(f).toEqual([]);
+  });
+
+  it('영어를 그대로 되돌려주면 여전히 fail — 공제가 연 구멍을 막는다', () => {
+    const f = checkCharset(src, '/p', 'ru', src);
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('원문에 없던 라틴어가 대량으로 남으면 여전히 fail', () => {
+    const f = checkCharset(
+      'The garden is open every day and the walk takes about twenty minutes',
+      '/p',
+      'ru',
+      'Сад открыт ежедневно',
+    );
+    expect(f.some((x) => x.gate === 'G10' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('평범한 러시아어 산문은 통과한다', () => {
+    const f = checkCharset('Сад открыт ежедневно с девяти утра', '/p', 'ru', 'The garden opens daily at nine');
+    expect(f).toEqual([]);
   });
 });
