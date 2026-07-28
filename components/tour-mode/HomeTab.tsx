@@ -417,7 +417,7 @@ interface Tile {
   Icon: typeof IconTabChat;
   tone?: 'accent' | 'danger';
   href?: string;
-  /** href가 우리 오리진 밖(OTA 리스팅)이면 next/link 대신 새 탭 <a>로 연다. */
+  /** href가 우리 오리진 밖(OTA 리스팅)이면 next/link 대신 새 탭 <a className="text-cjk-safe">로 연다. */
   external?: boolean;
   onPress?: () => void;
   dot?: boolean;

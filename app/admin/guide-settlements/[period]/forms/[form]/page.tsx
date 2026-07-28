@@ -150,7 +150,7 @@ export default function TaxFormPrintPage() {
         <button
           type="button"
           onClick={() => void download('xlsx')}
-          className="inline-flex h-11 items-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 px-3 text-xs font-semibold text-emerald-700"
+          className="text-cjk-safe inline-flex h-11 items-center gap-1.5 rounded-xl border border-emerald-200 bg-emerald-50 px-3 text-xs font-semibold text-emerald-700"
           data-testid="form-download-xlsx"
         >
           <Download className="size-3.5" />
@@ -159,7 +159,7 @@ export default function TaxFormPrintPage() {
         <button
           type="button"
           onClick={() => void download('csv')}
-          className="inline-flex h-11 items-center gap-1.5 rounded-xl border border-neutral-200 px-3 text-xs font-semibold text-neutral-600"
+          className="text-cjk-safe inline-flex h-11 items-center gap-1.5 rounded-xl border border-neutral-200 px-3 text-xs font-semibold text-neutral-600"
         >
           <Download className="size-3.5" />
           <span className="text-cjk-safe">CSV 내려받기</span>

@@ -298,7 +298,7 @@ export default function VehicleRosterPanel({ layouts }: { layouts: LayoutOption[
         <button
           type="button"
           onClick={() => setDraft({ ...EMPTY_DRAFT })}
-          className="flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white hover:bg-slate-800"
+          className="text-cjk-safe flex h-10 shrink-0 items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white hover:bg-slate-800"
         >
           <Plus className="size-4" />
           <span className="text-cjk-safe">차량 등록</span>
@@ -432,7 +432,7 @@ export default function VehicleRosterPanel({ layouts }: { layouts: LayoutOption[
               <button
                 type="button"
                 onClick={() => setDraft(null)}
-                className="h-11 flex-1 rounded-lg border border-admin-border text-sm font-semibold text-slate-700 hover:bg-slate-50"
+                className="text-cjk-safe h-11 flex-1 rounded-lg border border-admin-border text-sm font-semibold text-slate-700 hover:bg-slate-50"
               >
                 <span className="text-cjk-safe">취소</span>
               </button>
@@ -440,7 +440,7 @@ export default function VehicleRosterPanel({ layouts }: { layouts: LayoutOption[
                 type="button"
                 onClick={() => void save()}
                 disabled={saving || !draft.plateNumber.trim()}
-                className="flex h-11 flex-1 items-center justify-center gap-1.5 rounded-lg bg-slate-900 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
+                className="text-cjk-safe flex h-11 flex-1 items-center justify-center gap-1.5 rounded-lg bg-slate-900 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
               >
                 {saving ? <Loader2 className="size-4 animate-spin" /> : <Check className="size-4" />}
                 <span className="text-cjk-safe">저장</span>

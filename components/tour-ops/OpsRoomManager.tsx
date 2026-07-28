@@ -343,7 +343,7 @@ export default function OpsRoomManager({
         <button
           type="button"
           onClick={() => setCreateOpen(true)}
-          className="flex h-9 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-bold text-white"
+          className="text-cjk-safe flex h-9 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-accent)] px-3 tr-label font-bold text-white"
           data-testid="manual-booking-open"
         >
           <Plus className="size-4" /> 예약 만들기
@@ -366,7 +366,7 @@ export default function OpsRoomManager({
             <button
               type="button"
               onClick={() => setCreateOpen(true)}
-              className="mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-5 tr-card-text font-bold text-white"
+              className="text-cjk-safe mt-4 inline-flex h-11 items-center gap-1.5 rounded-xl bg-[var(--tr-accent)] px-5 tr-card-text font-bold text-white"
               data-testid="manual-booking-open-empty"
             >
               <Plus className="size-4" /> OTA · 테스트 예약 만들기
@@ -391,7 +391,7 @@ export default function OpsRoomManager({
                         type="button"
                         onClick={() => room && onOpenRoom(room.id)}
                         disabled={!room}
-                        className="flex w-full items-start justify-between gap-2 text-left disabled:cursor-default"
+                        className="text-cjk-safe flex w-full items-start justify-between gap-2 text-left disabled:cursor-default"
                       >
                         <div className="min-w-0">
                           <p className="truncate tr-body font-semibold">
@@ -408,19 +408,19 @@ export default function OpsRoomManager({
                               </span>
                             )}
                             <span
-                              className={`rounded-full px-2 py-0.5 tr-meta font-semibold ${
+                              className={`text-cjk-safe rounded-full px-2 py-0.5 tr-meta font-semibold ${
                                 !room ? T.badgeNoRoom : room.status === 'closed' ? T.badgeClosed : T.badgeActive
                               }`}
                             >
                               {!room ? '룸 없음' : room.status === 'closed' ? '룸 닫힘' : '룸 활성'}
                             </span>
                             {booking.invite.customer_active && (
-                              <span className={`rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeCustomer}`}>
+                              <span className={`text-cjk-safe rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeCustomer}`}>
                                 손님 링크 발급됨
                               </span>
                             )}
                             {booking.invite.guide_active && (
-                              <span className={`rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeGuide}`}>
+                              <span className={`text-cjk-safe rounded-full px-2 py-0.5 tr-meta font-medium ${T.badgeGuide}`}>
                                 운영자 링크 발급됨
                               </span>
                             )}
@@ -434,7 +434,7 @@ export default function OpsRoomManager({
                           type="button"
                           onClick={() => void dispatchInvites(booking)}
                           disabled={busy === `${booking.id}:dispatch`}
-                          className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-white disabled:opacity-50"
+                          className="text-cjk-safe flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-white disabled:opacity-50"
                         >
                           {busy === `${booking.id}:dispatch` ? (
                             <Loader2 className="size-4 animate-spin" />
@@ -450,7 +450,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => onOpenRoom(room.id, 'vehicle')}
                             data-testid={`manager-vehicle-${booking.id}`}
-                            className="flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
+                            className="text-cjk-safe flex h-10 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-accent)] tr-label font-semibold text-[var(--tr-bubble-me-ink)]"
                           >
                             <CarFront className="size-4" />
                             차량 배정
@@ -461,7 +461,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => void setRoomStatus(booking, room.status === 'closed' ? 'active' : 'closed')}
                             disabled={busy === `${booking.id}:status`}
-                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
+                            className={`text-cjk-safe flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
                           >
                             {room.status === 'closed' ? '룸 재개' : '룸 닫기'}
                           </button>
@@ -470,7 +470,7 @@ export default function OpsRoomManager({
                             type="button"
                             onClick={() => void mintLink(booking, 'customer')}
                             disabled={busy === `${booking.id}:customer`}
-                            className={`flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
+                            className={`text-cjk-safe flex h-10 items-center justify-center gap-1.5 rounded-xl tr-label font-semibold disabled:opacity-50 ${T.secondaryBtn}`}
                           >
                             룸 만들기 + 링크
                           </button>
@@ -537,7 +537,7 @@ export default function OpsRoomManager({
                   ok ? toast.success('링크를 복사했습니다') : toast.error('복사 실패'),
                 );
               }}
-              className="mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold text-white"
+              className="text-cjk-safe mt-3 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] tr-card-text font-semibold text-white"
             >
               <Copy className="size-4" /> 링크 복사
             </button>
@@ -549,7 +549,7 @@ export default function OpsRoomManager({
                     ok ? toast.success('일정(/plan) 링크를 복사했습니다') : toast.error('복사 실패'),
                   );
                 }}
-                className="mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-warn)] tr-card-text font-semibold text-white"
+                className="text-cjk-safe mt-2 flex h-10 w-full items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-warn)] tr-card-text font-semibold text-white"
               >
                 <Copy className="size-4" /> 일정 만들기 링크 복사
               </button>
@@ -557,7 +557,7 @@ export default function OpsRoomManager({
             <button
               type="button"
               onClick={() => setQrOpen(null)}
-              className="mt-2 h-9 w-full rounded-xl tr-card-text font-medium text-[var(--tr-ink-3)]"
+              className="text-cjk-safe mt-2 h-9 w-full rounded-xl tr-card-text font-medium text-[var(--tr-ink-3)]"
             >
               닫기
             </button>
@@ -800,7 +800,7 @@ function ManualBookingSheet({
           type="button"
           onClick={() => void submit()}
           disabled={saving}
-          className="mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-accent)] tr-body font-bold text-white disabled:opacity-50"
+          className="text-cjk-safe mt-5 flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-accent)] tr-body font-bold text-white disabled:opacity-50"
           data-testid="mb-submit"
         >
           {saving ? <Loader2 className="size-5 animate-spin" /> : <Plus className="size-5" />}

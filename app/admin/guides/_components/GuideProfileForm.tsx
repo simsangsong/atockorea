@@ -205,7 +205,7 @@ export default function GuideProfileForm({
               if (code && !value.languages.includes(code)) set('languages', [...value.languages, code]);
               setLangInput('');
             }}
-            className="h-11 shrink-0 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-700 hover:bg-slate-200"
+            className="text-cjk-safe h-11 shrink-0 rounded-xl bg-slate-100 px-4 text-[13px] font-semibold text-slate-700 hover:bg-slate-200"
           >
             추가
           </button>
@@ -217,7 +217,7 @@ export default function GuideProfileForm({
           type="button"
           onClick={() => set('certified', !value.certified)}
           aria-pressed={value.certified}
-          className={`flex h-11 items-center gap-1.5 rounded-xl px-4 text-[13px] font-semibold transition ${
+          className={`text-cjk-safe flex h-11 items-center gap-1.5 rounded-xl px-4 text-[13px] font-semibold transition ${
             value.certified ? 'bg-emerald-600 text-white' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
           }`}
         >
@@ -227,7 +227,7 @@ export default function GuideProfileForm({
           type="button"
           onClick={() => set('active', !value.active)}
           aria-pressed={value.active}
-          className={`h-11 rounded-xl px-4 text-[13px] font-semibold transition ${
+          className={`text-cjk-safe h-11 rounded-xl px-4 text-[13px] font-semibold transition ${
             value.active ? 'bg-slate-900 text-white' : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
           }`}
         >
@@ -264,7 +264,7 @@ export default function GuideProfileForm({
                   <button
                     type="button"
                     onClick={() => onReveal('rrn')}
-                    className="rounded-lg bg-slate-200 px-2 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-300"
+                    className="text-cjk-safe rounded-lg bg-slate-200 px-2 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-300"
                   >
                     원문 보기
                   </button>
@@ -293,7 +293,7 @@ export default function GuideProfileForm({
                   <button
                     type="button"
                     onClick={() => onReveal('bank_account')}
-                    className="rounded-lg bg-slate-200 px-2 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-300"
+                    className="text-cjk-safe rounded-lg bg-slate-200 px-2 py-1 text-[11px] font-semibold text-slate-700 hover:bg-slate-300"
                   >
                     원문 보기
                   </button>

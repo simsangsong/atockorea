@@ -76,7 +76,7 @@ export default function MerchantLayout({ children }: { children: React.ReactNode
         <div className="absolute bottom-0 left-0 right-0 p-4 border-t border-gray-200">
           <button
             onClick={() => router.push('/')}
-            className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
+            className="text-cjk-safe w-full flex items-center gap-3 px-4 py-3 rounded-lg text-gray-700 hover:bg-gray-50 transition-colors"
           >
             <span>🏠</span>
             <span>返回首页</span>

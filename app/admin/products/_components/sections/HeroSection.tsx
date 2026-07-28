@@ -100,7 +100,7 @@ export function HeroSection({ state, onChange }: Props) {
               type="button"
               onClick={addPill}
               disabled={!draftPill.trim()}
-              className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 disabled:opacity-50"
+              className="text-cjk-safe inline-flex items-center gap-1 px-2.5 py-1 text-xs font-medium text-blue-700 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 disabled:opacity-50"
             >
               <Plus className="size-3" />
               추가

@@ -399,7 +399,7 @@ export default function OrdersPage() {
                   realtime.reset();
                   fetchBookings();
                 }}
-                className="inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+                className="text-cjk-safe inline-flex flex-shrink-0 items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
               >
                 <span className="relative flex size-1.5">
                   <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
@@ -413,7 +413,7 @@ export default function OrdersPage() {
             type="button"
             onClick={exportToExcel}
             disabled={exporting || filtered.length === 0}
-            className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-slate-100 px-3.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50"
+            className="text-cjk-safe inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-slate-100 px-3.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-200 disabled:cursor-not-allowed disabled:opacity-50"
           >
             <Download className="size-4" /> {exporting ? '내보내는 중…' : 'CSV'}
           </button>
@@ -430,7 +430,7 @@ export default function OrdersPage() {
             <p className="text-sm font-medium text-red-800">오류: {error}</p>
             <button
               onClick={fetchBookings}
-              className="mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
+              className="text-cjk-safe mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
             >
               다시 시도
             </button>
@@ -490,7 +490,7 @@ export default function OrdersPage() {
                             <td className="whitespace-nowrap px-5 py-4 font-mono text-xs text-slate-500">{booking.id.substring(0, 8)}…</td>
                             <td className="px-5 py-4">
                               {booking.source === 'itinerary_builder' ? (
-                                <span className="inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                                <span className="text-cjk-safe inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
                                   커스텀 일정
                                 </span>
                               ) : (
@@ -553,7 +553,7 @@ export default function OrdersPage() {
                       <div className="flex items-start justify-between gap-3">
                         <div className="min-w-0">
                           {booking.source === 'itinerary_builder' ? (
-                            <span className="inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
+                            <span className="text-cjk-safe inline-flex w-fit items-center rounded-full bg-emerald-50 px-2 py-0.5 text-[10px] font-semibold text-emerald-800 ring-1 ring-emerald-200">
                               커스텀 일정
                             </span>
                           ) : (
@@ -607,14 +607,14 @@ export default function OrdersPage() {
             <button
               type="button"
               onClick={() => setBulkPending('confirmed')}
-              className="inline-flex min-h-11 items-center rounded-lg border border-admin-border px-4 text-sm font-semibold text-slate-700 hover:bg-admin-surface-hover"
+              className="text-cjk-safe inline-flex min-h-11 items-center rounded-lg border border-admin-border px-4 text-sm font-semibold text-slate-700 hover:bg-admin-surface-hover"
             >
               확정
             </button>
             <button
               type="button"
               onClick={() => setBulkPending('completed')}
-              className="inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700"
+              className="text-cjk-safe inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700"
             >
               완료
             </button>

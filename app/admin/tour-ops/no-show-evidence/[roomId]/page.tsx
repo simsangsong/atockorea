@@ -110,7 +110,7 @@ export default function NoShowEvidenceSheetPage() {
         <button
           type="button"
           onClick={() => void load()}
-          className="nse-noprint flex h-11 items-center gap-1.5 rounded-xl bg-neutral-100 px-3 text-sm font-semibold text-neutral-700"
+          className="text-cjk-safe nse-noprint flex h-11 items-center gap-1.5 rounded-xl bg-neutral-100 px-3 text-sm font-semibold text-neutral-700"
           data-testid="evidence-sheet-refresh"
         >
           <RefreshCw size={14} className={loading ? 'animate-spin' : ''} aria-hidden />
@@ -119,7 +119,7 @@ export default function NoShowEvidenceSheetPage() {
         <button
           type="button"
           onClick={() => window.print()}
-          className="nse-noprint flex h-11 items-center gap-1.5 rounded-xl bg-neutral-900 px-4 text-sm font-bold text-white"
+          className="text-cjk-safe nse-noprint flex h-11 items-center gap-1.5 rounded-xl bg-neutral-900 px-4 text-sm font-bold text-white"
           data-testid="evidence-sheet-print"
         >
           <Printer size={14} aria-hidden />
@@ -189,7 +189,7 @@ export default function NoShowEvidenceSheetPage() {
             )}
             {item.watermarkedUrl && item.photoUrl && (
               <p className="nse-noprint mt-2 text-xs text-neutral-500">
-                <a href={item.photoUrl} target="_blank" rel="noopener noreferrer" className="underline">
+                <a href={item.photoUrl} target="_blank" rel="noopener noreferrer" className="text-cjk-safe underline">
                   워터마크 없는 원본 열기
                 </a>{' '}
                 (무결성 확인용)

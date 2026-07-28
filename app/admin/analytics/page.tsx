@@ -111,7 +111,7 @@ export default function AnalyticsPage() {
             <p className="text-sm font-medium text-red-800">오류: {error}</p>
             <button
               onClick={fetchStats}
-              className="mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
+              className="text-cjk-safe mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
             >
               다시 시도
             </button>

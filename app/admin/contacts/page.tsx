@@ -245,7 +245,7 @@ export default function AdminContactsPage() {
                 resetPage();
                 fetchInquiries();
               }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
+              className="text-cjk-safe inline-flex items-center gap-1.5 rounded-full bg-blue-50 px-2.5 py-1 text-xs font-semibold text-blue-700 ring-1 ring-blue-200 transition-colors hover:bg-blue-100"
             >
               <span className="relative flex size-1.5">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-blue-500 opacity-75" />
@@ -414,7 +414,7 @@ export default function AdminContactsPage() {
                     <button
                       type="button"
                       onClick={() => setSelectedInquiry(null)}
-                      className="-mr-1 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-slate-500 hover:bg-admin-surface-hover lg:hidden"
+                      className="text-cjk-safe -mr-1 inline-flex items-center gap-1 rounded-lg px-2 py-1 text-sm font-medium text-slate-500 hover:bg-admin-surface-hover lg:hidden"
                     >
                       목록 ✕
                     </button>

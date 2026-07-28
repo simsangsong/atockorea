@@ -92,7 +92,7 @@ export default function RetentionPage() {
               onClick={() => setWeeks(w)}
               aria-pressed={active}
               className={cn(
-                'min-h-9 rounded-full px-3.5 text-xs font-semibold transition-colors',
+                'text-cjk-safe min-h-9 rounded-full px-3.5 text-xs font-semibold transition-colors',
                 active ? 'bg-slate-900 text-white' : 'bg-admin-surface-hover text-slate-600 hover:bg-slate-200',
               )}
             >
@@ -130,10 +130,10 @@ export default function RetentionPage() {
           <table className="w-full min-w-[720px] text-xs">
             <thead>
               <tr className="bg-admin-surface-hover">
-                <th className={cn('px-3 py-2 text-left font-semibold text-slate-500', stickyHead)}>
+                <th className={cn('text-cjk-safe px-3 py-2 text-left font-semibold text-slate-500', stickyHead)}>
                   코호트 주
                 </th>
-                <th className="px-3 py-2 text-right font-semibold text-slate-500">크기</th>
+                <th className="text-cjk-safe px-3 py-2 text-right font-semibold text-slate-500">크기</th>
                 {Array.from({ length: weeks }, (_, i) => (
                   <th key={i} className="min-w-[44px] px-2 py-2 text-center font-semibold text-slate-500">
                     W+{i}

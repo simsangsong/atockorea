@@ -71,7 +71,7 @@ export default function UploadPage() {
               <button
                 type="button"
                 onClick={() => copyUrl(productImageUrl)}
-                className="inline-flex min-h-9 flex-shrink-0 items-center gap-1 rounded-design-sm bg-blue-600 px-3 text-xs font-medium text-white hover:bg-blue-700"
+                className="text-cjk-safe inline-flex min-h-9 flex-shrink-0 items-center gap-1 rounded-design-sm bg-blue-600 px-3 text-xs font-medium text-white hover:bg-blue-700"
               >
                 <Copy className="size-3.5" /> 복사
               </button>
@@ -102,7 +102,7 @@ export default function UploadPage() {
               <button
                 type="button"
                 onClick={copyAllUrls}
-                className="inline-flex min-h-9 items-center gap-1 rounded-design-sm bg-blue-600 px-3 text-xs font-medium text-white hover:bg-blue-700"
+                className="text-cjk-safe inline-flex min-h-9 items-center gap-1 rounded-design-sm bg-blue-600 px-3 text-xs font-medium text-white hover:bg-blue-700"
               >
                 <Copy className="size-3.5" /> 모든 URL 복사 (JSON)
               </button>
@@ -121,7 +121,7 @@ export default function UploadPage() {
                     type="button"
                     onClick={() => copyUrl(url)}
                     aria-label={`갤러리 이미지 ${index + 1} URL 복사`}
-                    className="absolute inset-0 flex items-center justify-center rounded bg-black/50 opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 sm:opacity-0"
+                    className="text-cjk-safe absolute inset-0 flex items-center justify-center rounded bg-black/50 opacity-0 transition-opacity group-hover:opacity-100 group-active:opacity-100 sm:opacity-0"
                   >
                     <span className="inline-flex items-center gap-1 text-xs text-white">
                       <Copy className="size-3.5" /> 복사

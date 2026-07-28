@@ -537,7 +537,7 @@ function Footer({
         <>
           <a
             href="mailto:contact@atockorea.com?subject=Custom%20itinerary%20quote%20request"
-            className={`${homeBtnPrimary} w-full text-center`}
+            className={`text-cjk-safe ${homeBtnPrimary} w-full text-center`}
           >
             맞춤 견적 문의하기 · contact@atockorea.com
           </a>

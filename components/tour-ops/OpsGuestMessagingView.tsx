@@ -362,7 +362,7 @@ export default function OpsGuestMessagingView({
                       setMode('email');
                       void loadPreview(g, preset);
                     }}
-                    className="flex w-full items-center gap-3 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-3 text-left active:bg-[var(--tr-surface-2)]"
+                    className="text-cjk-safe flex w-full items-center gap-3 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-3 text-left active:bg-[var(--tr-surface-2)]"
                   >
                     <Users className="size-4 shrink-0 text-[var(--tr-ink-3)]" />
                     <div className="min-w-0 flex-1">
@@ -547,7 +547,7 @@ export default function OpsGuestMessagingView({
                       type="button"
                       onClick={() => void send()}
                       disabled={sending || emailable === 0 || !subject.trim() || !body.trim()}
-                      className="flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-ink)] tr-body font-bold text-[var(--tr-canvas)] disabled:opacity-50"
+                      className="text-cjk-safe flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-[var(--tr-ink)] tr-body font-bold text-[var(--tr-canvas)] disabled:opacity-50"
                       data-testid="bulk-send"
                     >
                       {sending ? <Loader2 className="size-4 animate-spin" /> : <Send className="size-4" />}
@@ -592,7 +592,7 @@ export default function OpsGuestMessagingView({
                         </summary>
                         <ul className="mt-2 space-y-2">
                           {preview.recipients.map((r) => (
-                            <li key={r.bookingId} className="rounded-lg bg-[var(--tr-surface-2)] px-2.5 py-2">
+                            <li key={r.bookingId} className="text-cjk-safe rounded-lg bg-[var(--tr-surface-2)] px-2.5 py-2">
                               <p className="tr-label font-bold">
                                 {r.guestName}{' '}
                                 <span className="font-normal text-[var(--tr-ink-3)]">

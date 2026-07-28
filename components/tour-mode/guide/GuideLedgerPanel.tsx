@@ -154,7 +154,7 @@ export default function GuideLedgerPanel({
                     type="button"
                     disabled={busy !== null}
                     onClick={() => void transition(extra.id, 'settle')}
-                    className="tr-label inline-flex min-h-[44px] shrink-0 items-center rounded-lg bg-[var(--tr-accent)] px-3 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
+                    className="text-cjk-safe tr-label inline-flex min-h-[44px] shrink-0 items-center rounded-lg bg-[var(--tr-accent)] px-3 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
                     data-testid="extra-settle"
                   >
                     수취 완료
@@ -163,7 +163,7 @@ export default function GuideLedgerPanel({
                     type="button"
                     disabled={busy !== null}
                     onClick={() => void transition(extra.id, 'void')}
-                    className="tr-label inline-flex min-h-[44px] shrink-0 items-center rounded-lg bg-[var(--tr-surface-2)] px-3 font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
+                    className="text-cjk-safe tr-label inline-flex min-h-[44px] shrink-0 items-center rounded-lg bg-[var(--tr-surface-2)] px-3 font-semibold text-[var(--tr-ink-2)] disabled:opacity-50"
                   >
                     취소
                   </button>
@@ -207,7 +207,7 @@ export default function GuideLedgerPanel({
         <button
           type="submit"
           disabled={busy === 'log' || !item.trim() || !amount.trim()}
-          className="tr-label shrink-0 rounded-xl bg-[var(--tr-accent)] px-3 py-2 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+          className="text-cjk-safe tr-label shrink-0 rounded-xl bg-[var(--tr-accent)] px-3 py-2 font-semibold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
           data-testid="extra-log"
         >
           기록

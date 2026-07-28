@@ -369,7 +369,7 @@ export default function AdminCmsPage() {
             type="button"
             disabled={busy}
             onClick={saveSectionImages}
-            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+            className="text-cjk-safe px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
           >
             섹션 이미지 저장
           </button>
@@ -407,7 +407,7 @@ export default function AdminCmsPage() {
             type="button"
             disabled={busy}
             onClick={saveProductCards}
-            className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+            className="text-cjk-safe px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
           >
             카드 이미지 저장
           </button>
@@ -458,7 +458,7 @@ export default function AdminCmsPage() {
               type="button"
               disabled={busy}
               onClick={loadExportToOutput}
-              className="px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
+              className="text-cjk-safe px-4 py-2 rounded-lg bg-blue-600 text-white text-sm font-medium hover:bg-blue-700 disabled:opacity-50"
             >
               추출 → 출력창
             </button>
@@ -466,7 +466,7 @@ export default function AdminCmsPage() {
               type="button"
               disabled={busy}
               onClick={downloadExport}
-              className="px-4 py-2 rounded-lg bg-blue-100 text-blue-900 text-sm font-medium hover:bg-blue-200 disabled:opacity-50"
+              className="text-cjk-safe px-4 py-2 rounded-lg bg-blue-100 text-blue-900 text-sm font-medium hover:bg-blue-200 disabled:opacity-50"
             >
               파일로 다운로드
             </button>
@@ -483,7 +483,7 @@ export default function AdminCmsPage() {
                     setImportJsonText(exportJsonText);
                     setStatus('출력 내용을 입력창으로 옮겼습니다. 수정 후 「입력 내용 적용」을 누르세요.');
                   }}
-                  className="text-xs text-slate-700 hover:underline disabled:opacity-40"
+                  className="text-cjk-safe text-xs text-slate-700 hover:underline disabled:opacity-40"
                 >
                   출력 → 입력
                 </button>
@@ -494,7 +494,7 @@ export default function AdminCmsPage() {
                     void navigator.clipboard.writeText(exportJsonText);
                     setStatus('출력 내용을 클립보드에 복사했습니다.');
                   }}
-                  className="text-xs text-blue-600 hover:underline disabled:opacity-40"
+                  className="text-cjk-safe text-xs text-blue-600 hover:underline disabled:opacity-40"
                 >
                   전체 복사
                 </button>
@@ -517,7 +517,7 @@ export default function AdminCmsPage() {
                   type="button"
                   disabled={busy}
                   onClick={() => fileImportRef.current?.click()}
-                  className="text-xs px-2 py-1 rounded border border-slate-300 text-slate-700 hover:bg-admin-surface-hover"
+                  className="text-cjk-safe text-xs px-2 py-1 rounded border border-slate-300 text-slate-700 hover:bg-admin-surface-hover"
                 >
                   파일에서 불러오기
                 </button>
@@ -532,7 +532,7 @@ export default function AdminCmsPage() {
                   type="button"
                   disabled={busy}
                   onClick={applyImportFromInput}
-                  className="text-xs px-3 py-1.5 rounded-lg bg-slate-800 text-white font-medium hover:bg-slate-900 disabled:opacity-50"
+                  className="text-cjk-safe text-xs px-3 py-1.5 rounded-lg bg-slate-800 text-white font-medium hover:bg-slate-900 disabled:opacity-50"
                 >
                   입력 내용 적용
                 </button>

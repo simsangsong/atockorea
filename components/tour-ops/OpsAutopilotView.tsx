@@ -169,7 +169,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
             type="button"
             onClick={() => void runNow()}
             disabled={running}
-            className="flex h-10 items-center gap-1.5 rounded-lg bg-[var(--tr-ink)] px-3 tr-label font-bold text-[var(--tr-canvas)] disabled:opacity-60"
+            className="text-cjk-safe flex h-10 items-center gap-1.5 rounded-lg bg-[var(--tr-ink)] px-3 tr-label font-bold text-[var(--tr-canvas)] disabled:opacity-60"
             data-testid="autopilot-run"
           >
             {running ? <Loader2 className="size-3.5 animate-spin" /> : <RefreshCw className="size-3.5" />}
@@ -250,7 +250,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'done')}
-                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-safe)] disabled:opacity-50"
+                            className="text-cjk-safe flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-safe)] disabled:opacity-50"
                           >
                             <Check className="size-3" />
                             <span className="text-cjk-safe">처리함</span>
@@ -259,7 +259,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
                             type="button"
                             disabled={busyId === row.id}
                             onClick={() => void setStatus(row, 'dismissed')}
-                            className="flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
+                            className="text-cjk-safe flex items-center gap-1 rounded-md border border-[var(--tr-hairline)] px-2 py-1 tr-meta font-semibold text-[var(--tr-ink-3)] disabled:opacity-50"
                           >
                             <X className="size-3" />
                             <span className="text-cjk-safe">무시</span>

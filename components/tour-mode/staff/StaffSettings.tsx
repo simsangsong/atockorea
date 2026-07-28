@@ -81,7 +81,7 @@ export default function StaffSettings() {
           type="button"
           onClick={() => setManualOpen((v) => !v)}
           aria-expanded={manualOpen}
-          className="flex min-h-[52px] w-full items-center gap-3 px-4 text-left"
+          className="text-cjk-safe flex min-h-[52px] w-full items-center gap-3 px-4 text-left"
           data-testid="staff-manual-toggle"
         >
           <span className="tr-chip tr-chip--accent flex h-9 w-9 shrink-0 items-center justify-center !rounded-[13px]">
@@ -192,7 +192,7 @@ export default function StaffSettings() {
       {OPS_PHONE ? (
         <a
           href={`tel:${OPS_PHONE}`}
-          className="tr-card flex min-h-[52px] items-center gap-3 border border-[var(--tr-hairline)] px-4 text-[var(--tr-ink)]"
+          className="text-cjk-safe tr-card flex min-h-[52px] items-center gap-3 border border-[var(--tr-hairline)] px-4 text-[var(--tr-ink)]"
           data-testid="staff-ops-call"
         >
           <IconPhone size={TR_ICON.action} className="text-[var(--tr-ink-2)]" aria-hidden />

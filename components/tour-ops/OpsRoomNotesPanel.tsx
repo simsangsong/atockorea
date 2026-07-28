@@ -119,7 +119,7 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                   <button
                     type="button"
                     onClick={() => setEditing(null)}
-                    className="h-8 rounded-lg px-3 tr-meta font-medium text-[var(--tr-ink-2)]"
+                    className="text-cjk-safe h-8 rounded-lg px-3 tr-meta font-medium text-[var(--tr-ink-2)]"
                   >
                     취소
                   </button>
@@ -127,7 +127,7 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                     type="button"
                     disabled={busy}
                     onClick={() => void save(guest.bookingId, draft)}
-                    className="h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-meta font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                    className="text-cjk-safe h-8 rounded-lg bg-[var(--tr-accent)] px-3 tr-meta font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                   >
                     저장
                   </button>
@@ -140,7 +140,7 @@ export default function OpsRoomNotesPanel({ roomId, guests }: { roomId: string; 
                   setDraft(note?.note ?? '');
                   setEditing(guest.bookingId);
                 }}
-                className="mt-1 w-full text-left tr-label leading-relaxed text-[var(--tr-ink-2)]"
+                className="text-cjk-safe mt-1 w-full text-left tr-label leading-relaxed text-[var(--tr-ink-2)]"
               >
                 {note?.note ? (
                   <>

@@ -221,7 +221,7 @@ export default function SettlementPeriodDetailPage() {
           <button
             type="button"
             onClick={() => void load()}
-            className="ml-auto inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
+            className="text-cjk-safe ml-auto inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-200 px-2.5 text-sm font-medium text-slate-600 hover:bg-slate-100"
           >
             <RefreshCw className={`size-4 ${loading ? 'animate-spin' : ''}`} />
             새로고침
@@ -265,7 +265,7 @@ export default function SettlementPeriodDetailPage() {
               type="button"
               onClick={() => void generatePdf('statement')}
               disabled={busy !== null}
-              className="inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+              className="text-cjk-safe inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
               data-testid="statement-pdf-button"
             >
               <FileDown className="size-4" />
@@ -285,7 +285,7 @@ export default function SettlementPeriodDetailPage() {
                 type="button"
                 onClick={() => void generatePdf('invoice')}
                 disabled={busy !== null}
-                className="inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
+                className="text-cjk-safe inline-flex h-[38px] items-center gap-1.5 rounded-lg border border-slate-200 bg-white px-3 text-sm font-semibold text-slate-700 hover:bg-slate-50 disabled:opacity-50"
                 data-testid="invoice-pdf-button"
               >
                 <FileDown className="size-4" />
@@ -296,7 +296,7 @@ export default function SettlementPeriodDetailPage() {
                 type="button"
                 onClick={() => void issueInvoice()}
                 disabled={busy !== null}
-                className="inline-flex h-[38px] items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white disabled:opacity-50"
+                className="text-cjk-safe inline-flex h-[38px] items-center gap-1.5 rounded-lg bg-slate-900 px-3 text-sm font-semibold text-white disabled:opacity-50"
                 data-testid="issue-invoice-button"
               >
                 <Receipt className="size-4" />
@@ -316,7 +316,7 @@ export default function SettlementPeriodDetailPage() {
                 type="button"
                 onClick={() => void runReconcile()}
                 disabled={busy !== null}
-                className="inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-300 px-3 text-sm font-semibold text-slate-700 disabled:opacity-50"
+                className="text-cjk-safe inline-flex h-[34px] items-center gap-1.5 rounded-lg border border-slate-300 px-3 text-sm font-semibold text-slate-700 disabled:opacity-50"
                 data-testid="reconcile-button"
               >
                 {busy === 'reconcile' ? '대사 중…' : '대사 실행'}
@@ -389,7 +389,7 @@ export default function SettlementPeriodDetailPage() {
               type="button"
               onClick={() => void submitRemittance()}
               disabled={busy !== null || !wireDate || !amountUsd}
-              className="mt-3 inline-flex h-[38px] items-center rounded-lg bg-slate-900 px-4 text-sm font-semibold text-white disabled:opacity-50"
+              className="text-cjk-safe mt-3 inline-flex h-[38px] items-center rounded-lg bg-slate-900 px-4 text-sm font-semibold text-white disabled:opacity-50"
               data-testid="remittance-submit"
             >
               {busy === 'remittance' ? '등록 중…' : '송금 기록 등록'}
@@ -420,7 +420,7 @@ export default function SettlementPeriodDetailPage() {
                       <td className="py-1.5 pr-2 font-mono text-slate-500">{r.bank_ref || '-'}</td>
                       <td className="py-1.5">
                         {r.swift_doc_url ? (
-                          <a href={r.swift_doc_url} target="_blank" rel="noopener noreferrer" className="underline">
+                          <a href={r.swift_doc_url} target="_blank" rel="noopener noreferrer" className="text-cjk-safe underline">
                             사본
                           </a>
                         ) : (
@@ -445,11 +445,11 @@ export default function SettlementPeriodDetailPage() {
                 <table className="w-full text-left text-sm">
                   <thead className="border-b border-slate-200 bg-slate-50 text-xs font-semibold uppercase tracking-wide text-slate-500">
                     <tr>
-                      <th className="px-3 py-2">예약번호</th>
-                      <th className="px-3 py-2">투어일자</th>
-                      <th className="px-3 py-2 text-right">총액</th>
-                      <th className="px-3 py-2 text-right">커미션</th>
-                      <th className="px-3 py-2 text-right">송금분</th>
+                      <th className="text-cjk-safe px-3 py-2">예약번호</th>
+                      <th className="text-cjk-safe px-3 py-2">투어일자</th>
+                      <th className="text-cjk-safe px-3 py-2 text-right">총액</th>
+                      <th className="text-cjk-safe px-3 py-2 text-right">커미션</th>
+                      <th className="text-cjk-safe px-3 py-2 text-right">송금분</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">

@@ -88,14 +88,14 @@ export default function MerchantOrdersPage() {
         <table className="w-full">
           <thead className="bg-gray-50 border-b border-gray-200">
             <tr>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">订单ID</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">产品</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">客户</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">日期</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">人数</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">金额</th>
-              <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">状态</th>
-              <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">操作</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">订单ID</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">产品</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">客户</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">日期</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">人数</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">金额</th>
+              <th className="text-cjk-safe px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase">状态</th>
+              <th className="text-cjk-safe px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase">操作</th>
             </tr>
           </thead>
           <tbody className="divide-y divide-gray-200">
@@ -125,7 +125,7 @@ export default function MerchantOrdersPage() {
                     ₩{order.final_price.toLocaleString()}
                   </td>
                   <td className="px-6 py-4">
-                    <span className={`px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(order.status)}`}>
+                    <span className={`text-cjk-safe px-2 py-1 text-xs font-semibold rounded-full ${getStatusColor(order.status)}`}>
                       {order.status === 'pending' ? '待确认' :
                        order.status === 'confirmed' ? '已确认' :
                        order.status === 'completed' ? '已完成' : '已取消'}
@@ -133,11 +133,11 @@ export default function MerchantOrdersPage() {
                   </td>
                   <td className="px-6 py-4 text-right text-sm font-medium">
                     {order.status === 'pending' && (
-                      <button className="text-green-600 hover:text-green-900 mr-4">
+                      <button className="text-cjk-safe text-green-600 hover:text-green-900 mr-4">
                         确认
                       </button>
                     )}
-                    <button className="text-indigo-600 hover:text-indigo-900">
+                    <button className="text-cjk-safe text-indigo-600 hover:text-indigo-900">
                       详情
                     </button>
                   </td>

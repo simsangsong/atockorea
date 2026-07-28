@@ -108,7 +108,7 @@ export function PoiEditorPane({ poiKey, initialRow, isNew, onSaved, onBackToList
           type="button"
           onClick={onSave}
           disabled={!canSave}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
+          className={`text-cjk-safe inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-md transition-colors ${
             canSave
               ? 'bg-blue-600 text-white hover:bg-blue-700 shadow-sm'
               : 'bg-slate-100 text-slate-400 cursor-not-allowed'

@@ -634,7 +634,7 @@ export default function OrderDetailPage() {
             <div className="flex justify-between">
               <span className="text-slate-500">홀드 상태:</span>
               <span
-                className={`px-2 py-1 text-xs font-semibold rounded-full ${getPiStatusColor(
+                className={`text-cjk-safe px-2 py-1 text-xs font-semibold rounded-full ${getPiStatusColor(
                   booking.payment_intent_status,
                 )}`}
               >
@@ -716,7 +716,7 @@ export default function OrderDetailPage() {
                     })
                   }
                   disabled={settling}
-                  className="w-full min-h-11 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50"
+                  className="text-cjk-safe w-full min-h-11 px-4 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 disabled:opacity-50"
                 >
                   카드로 청구 (투어 완료)
                 </button>
@@ -733,7 +733,7 @@ export default function OrderDetailPage() {
                     })
                   }
                   disabled={settling}
-                  className="w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
+                  className="text-cjk-safe w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
                 >
                   현장 수금 완료 → hold 해제
                 </button>
@@ -750,7 +750,7 @@ export default function OrderDetailPage() {
                     })
                   }
                   disabled={settling}
-                  className="w-full min-h-11 px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
+                  className="text-cjk-safe w-full min-h-11 px-4 py-3 bg-red-600 text-white rounded-lg font-semibold hover:bg-red-700 disabled:opacity-50"
                 >
                   노쇼 수동 청구
                 </button>
@@ -775,7 +775,7 @@ export default function OrderDetailPage() {
                     })
                   }
                   disabled={settling}
-                  className="w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
+                  className="text-cjk-safe w-full min-h-11 px-4 py-3 bg-admin-surface border border-admin-border text-slate-700 rounded-lg font-semibold hover:bg-admin-surface-hover disabled:opacity-50"
                 >
                   현장 수금 완료 → 카드 해제
                 </button>
@@ -838,11 +838,11 @@ export default function OrderDetailPage() {
               <div className="flex items-center gap-2">
                 <span className="text-xs font-medium text-slate-500">카드 hold</span>
                 {holdExpired ? (
-                  <span className="rounded-full bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700">
+                  <span className="text-cjk-safe rounded-full bg-red-100 px-2 py-0.5 text-xs font-semibold text-red-700">
                     만료됨
                   </span>
                 ) : holdExpiringSoon ? (
-                  <span className="rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">
+                  <span className="text-cjk-safe rounded-full bg-amber-100 px-2 py-0.5 text-xs font-semibold text-amber-800">
                     {holdHoursLeft}h 남음
                   </span>
                 ) : null}
@@ -864,7 +864,7 @@ export default function OrderDetailPage() {
                 })
               }
               disabled={settling}
-              className="inline-flex min-h-11 flex-shrink-0 items-center gap-1.5 rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
+              className="text-cjk-safe inline-flex min-h-11 flex-shrink-0 items-center gap-1.5 rounded-lg bg-blue-600 px-4 text-sm font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
             >
               <CreditCard className="h-4 w-4" />
               카드 청구
@@ -894,7 +894,7 @@ export default function OrderDetailPage() {
                 })
               }
               disabled={dispatchingRoom}
-              className="inline-flex min-h-11 flex-shrink-0 items-center gap-1.5 rounded-lg bg-slate-900 px-4 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
+              className="text-cjk-safe inline-flex min-h-11 flex-shrink-0 items-center gap-1.5 rounded-lg bg-slate-900 px-4 text-sm font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
             >
               🧭 투어룸 발송
             </button>

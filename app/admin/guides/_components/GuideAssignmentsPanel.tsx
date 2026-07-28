@@ -149,7 +149,7 @@ export default function GuideAssignmentsPanel({
                 onDismissOverride();
                 setOverrideReason('');
               }}
-              className="h-10 flex-1 rounded-xl border border-amber-300 bg-white text-[13px] font-semibold text-amber-900"
+              className="text-cjk-safe h-10 flex-1 rounded-xl border border-amber-300 bg-white text-[13px] font-semibold text-amber-900"
             >
               <span className="text-cjk-safe">취소</span>
             </button>
@@ -162,7 +162,7 @@ export default function GuideAssignmentsPanel({
                 setOverrideReason('');
               }}
               disabled={busy || !overrideReason.trim()}
-              className="h-10 flex-1 rounded-xl bg-amber-600 text-[13px] font-bold text-white disabled:opacity-50"
+              className="text-cjk-safe h-10 flex-1 rounded-xl bg-amber-600 text-[13px] font-bold text-white disabled:opacity-50"
               data-testid="assignment-override-confirm"
             >
               <span className="text-cjk-safe">사유와 함께 배정</span>
@@ -238,7 +238,7 @@ export default function GuideAssignmentsPanel({
                       setSelected(new Set());
                     }}
                     disabled={busy}
-                    className="flex h-8 items-center gap-1 rounded-lg bg-slate-900 px-2 text-[11px] font-bold text-white disabled:opacity-50"
+                    className="text-cjk-safe flex h-8 items-center gap-1 rounded-lg bg-slate-900 px-2 text-[11px] font-bold text-white disabled:opacity-50"
                     data-testid="assignment-bulk-worked"
                   >
                     <Check className="size-3.5" />
@@ -251,7 +251,7 @@ export default function GuideAssignmentsPanel({
                       setSelected(new Set());
                     }}
                     disabled={busy}
-                    className="flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-700 disabled:opacity-50"
+                    className="text-cjk-safe flex h-8 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-700 disabled:opacity-50"
                     data-testid="assignment-notify"
                   >
                     <Mail className="size-3.5" />
@@ -314,7 +314,7 @@ export default function GuideAssignmentsPanel({
                       type="button"
                       onClick={() => onPatch(r.id, { status: 'worked' })}
                       disabled={busyId === r.id}
-                      className="flex h-9 items-center gap-1 rounded-lg bg-slate-900 px-2 text-[11px] font-bold text-white disabled:opacity-50"
+                      className="text-cjk-safe flex h-9 items-center gap-1 rounded-lg bg-slate-900 px-2 text-[11px] font-bold text-white disabled:opacity-50"
                       title="정산 대상이 됩니다"
                     >
                       <Check className="size-3.5" /> 일했음
@@ -324,7 +324,7 @@ export default function GuideAssignmentsPanel({
                       type="button"
                       onClick={() => onPatch(r.id, { status: 'planned' })}
                       disabled={busyId === r.id}
-                      className="flex h-9 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-600 disabled:opacity-50"
+                      className="text-cjk-safe flex h-9 items-center gap-1 rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-600 disabled:opacity-50"
                       title="정산 대상에서 뺍니다"
                     >
                       <Undo2 className="size-3.5" /> 되돌리기
@@ -335,7 +335,7 @@ export default function GuideAssignmentsPanel({
                       type="button"
                       onClick={() => onPatch(r.id, { status: 'cancelled' })}
                       disabled={busyId === r.id}
-                      className="flex h-9 items-center rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-500 disabled:opacity-50"
+                      className="text-cjk-safe flex h-9 items-center rounded-lg border border-slate-200 px-2 text-[11px] font-semibold text-slate-500 disabled:opacity-50"
                     >
                       취소
                     </button>
@@ -426,7 +426,7 @@ export default function GuideAssignmentsPanel({
           type="button"
           onClick={submit}
           disabled={busy}
-          className="mt-2 flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-slate-900 text-[14px] font-bold text-white disabled:opacity-50"
+          className="text-cjk-safe mt-2 flex h-11 w-full items-center justify-center gap-1.5 rounded-xl bg-slate-900 text-[14px] font-bold text-white disabled:opacity-50"
           data-testid="assignment-add"
         >
           {busy ? <Loader2 className="size-4 animate-spin" /> : <Plus className="size-4" />}

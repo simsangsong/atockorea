@@ -191,7 +191,7 @@ export default function PickupDictionaryPage() {
           </p>
           <ul className="mt-2 space-y-2">
             {queue.map((q) => (
-              <li key={q.id} className="rounded-xl border border-stone-200 bg-white p-3" data-testid={`queue-${q.id}`}>
+              <li key={q.id} className="text-cjk-safe rounded-xl border border-stone-200 bg-white p-3" data-testid={`queue-${q.id}`}>
                 <p className="break-all text-sm text-stone-800">{q.raw_value}</p>
                 <p className="mt-0.5 text-xs text-stone-500">{q.occurrence_count}회 등장</p>
                 <div className="mt-2 flex flex-wrap gap-1.5">

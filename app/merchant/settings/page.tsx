@@ -137,7 +137,7 @@ export default function MerchantSettingsPage() {
         <div className="flex justify-end">
           <button
             type="submit"
-            className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
+            className="text-cjk-safe px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors"
           >
             保存设置
           </button>

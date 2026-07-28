@@ -159,7 +159,7 @@ export default function MerchantLoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50"
+              className="text-cjk-safe w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50"
             >
               {loading ? '修改中...' : '修改密码并登录'}
             </button>
@@ -215,7 +215,7 @@ export default function MerchantLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50"
+            className="text-cjk-safe w-full px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors disabled:opacity-50"
           >
             {loading ? '登录中...' : '登录'}
           </button>

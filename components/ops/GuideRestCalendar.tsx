@@ -104,7 +104,7 @@ export default function GuideRestCalendar({
               aria-pressed={isRest}
               aria-label={`${cell.day}일${isRest ? ' 휴무' : ''}`}
               className={[
-                'relative flex h-11 flex-col items-center justify-center rounded-xl text-[13px] font-semibold transition',
+                'text-cjk-safe relative flex h-11 flex-col items-center justify-center rounded-xl text-[13px] font-semibold transition',
                 isRest
                   ? 'bg-rose-500 text-white shadow-sm'
                   : locked

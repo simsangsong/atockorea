@@ -47,7 +47,7 @@ export default function MerchantProductsPage() {
           <h1 className="text-3xl font-bold text-gray-900">产品管理</h1>
           <p className="text-gray-600 mt-2">管理您的旅游产品</p>
         </div>
-        <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
+        <button className="text-cjk-safe px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors">
           ➕ 添加新产品
         </button>
       </div>
@@ -59,7 +59,7 @@ export default function MerchantProductsPage() {
         ) : products.length === 0 ? (
           <div className="col-span-3 text-center py-12 text-gray-500">
             <p className="mb-4">还没有产品</p>
-            <button className="px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+            <button className="text-cjk-safe px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
               添加第一个产品
             </button>
           </div>
@@ -78,7 +78,7 @@ export default function MerchantProductsPage() {
                     <p className="text-sm text-gray-500">{product.city}</p>
                   </div>
                   <span
-                    className={`px-2 py-1 text-xs font-semibold rounded-full ${
+                    className={`text-cjk-safe px-2 py-1 text-xs font-semibold rounded-full ${
                       product.is_active
                         ? 'bg-green-100 text-green-800'
                         : 'bg-gray-100 text-gray-800'
@@ -101,7 +101,7 @@ export default function MerchantProductsPage() {
                     >
                       编辑
                     </Link>
-                    <button className="px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">
+                    <button className="text-cjk-safe px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 rounded-lg transition-colors">
                       {product.is_active ? '下架' : '上架'}
                     </button>
                   </div>

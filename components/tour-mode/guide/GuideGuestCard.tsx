@@ -186,7 +186,7 @@ export default function GuideGuestCard({
                   setDraft(note?.note ?? '');
                   setEditing(false);
                 }}
-                className="tr-label min-h-[44px] rounded-lg px-3 font-medium text-[var(--tr-ink-2)]"
+                className="text-cjk-safe tr-label min-h-[44px] rounded-lg px-3 font-medium text-[var(--tr-ink-2)]"
               >
                 취소
               </button>
@@ -203,7 +203,7 @@ export default function GuideGuestCard({
                     setSaving(false);
                   }
                 }}
-                className="tr-label min-h-[44px] rounded-lg bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                className="text-cjk-safe tr-label min-h-[44px] rounded-lg bg-[var(--tr-accent)] px-3 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
                 data-testid="guest-note-save"
               >
                 저장
@@ -219,7 +219,7 @@ export default function GuideGuestCard({
               setEditing(true);
             }}
             disabled={!onSaveNote}
-            className="tr-card-text mt-1 w-full text-left leading-relaxed text-[var(--tr-ink-2)] disabled:cursor-default"
+            className="text-cjk-safe tr-card-text mt-1 w-full text-left leading-relaxed text-[var(--tr-ink-2)] disabled:cursor-default"
             data-testid="guest-note-view"
           >
             {note?.note ? (
@@ -280,7 +280,7 @@ export default function GuideGuestCard({
           {row.contactPhone && (
             <a
               href={`tel:${row.contactPhone}`}
-              className="tr-label flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 font-bold text-[var(--tr-ink)] active:scale-[0.99]"
+              className="text-cjk-safe tr-label flex flex-1 items-center justify-center gap-1.5 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5 font-bold text-[var(--tr-ink)] active:scale-[0.99]"
               data-testid="guest-tel"
             >
               <IconPhone size={TR_ICON.meta} aria-hidden />

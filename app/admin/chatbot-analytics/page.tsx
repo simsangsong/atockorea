@@ -118,7 +118,7 @@ export default function ChatbotAnalyticsPage() {
           type="button"
           onClick={() => setDays(d)}
           className={cn(
-            "min-h-9 rounded-md px-3 text-xs font-semibold transition-colors",
+            "text-cjk-safe min-h-9 rounded-md px-3 text-xs font-semibold transition-colors",
             days === d ? "bg-slate-900 text-white" : "text-slate-600 hover:bg-slate-100",
           )}
         >
@@ -139,7 +139,7 @@ export default function ChatbotAnalyticsPage() {
         <button
           onClick={() => void load()}
           aria-label="새로고침"
-          className="inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-admin-border bg-admin-surface px-3 text-sm font-medium text-slate-600 hover:bg-slate-50"
+          className="text-cjk-safe inline-flex min-h-11 items-center gap-1.5 rounded-lg border border-admin-border bg-admin-surface px-3 text-sm font-medium text-slate-600 hover:bg-slate-50"
         >
           <RefreshCw className={cn("size-4", loading && "animate-spin")} /> 새로고침
         </button>
@@ -171,7 +171,7 @@ export default function ChatbotAnalyticsPage() {
           <p className="text-sm font-medium text-red-800">오류: {error}</p>
           <button
             onClick={() => void load()}
-            className="mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
+            className="text-cjk-safe mt-3 min-h-11 rounded-lg bg-red-600 px-4 text-sm font-medium text-white transition-colors hover:bg-red-700"
           >
             다시 시도
           </button>
@@ -274,7 +274,7 @@ export default function ChatbotAnalyticsPage() {
             <div><div className="text-xl font-bold tabular-nums text-emerald-600">{data.qa.approved ?? 0}</div><div className="text-xs text-slate-500">승인됨</div></div>
             <div><div className="text-xl font-bold tabular-nums text-sky-600">{data.qa.active ?? 0}</div><div className="text-xs text-slate-500">RAG 활성</div></div>
           </div>
-          <a href="/admin/qa-review" className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:underline">
+          <a href="/admin/qa-review" className="text-cjk-safe mt-3 inline-flex items-center gap-1 text-xs font-medium text-blue-600 hover:underline">
             검토하러 가기 <ArrowRight className="size-3" />
           </a>
         </div>
@@ -379,7 +379,7 @@ function GapList({
                 <button
                   disabled={busy === r.key}
                   onClick={() => onCreate(r.key, r.question, r.answer, r.tourSlug, r.locale)}
-                  className="min-h-9 flex-shrink-0 rounded-full bg-slate-900 px-2.5 text-[11px] font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
+                  className="text-cjk-safe min-h-9 flex-shrink-0 rounded-full bg-slate-900 px-2.5 text-[11px] font-semibold text-white hover:bg-slate-800 disabled:opacity-50"
                 >
                   {busy === r.key ? "…" : "Q&A 초안 만들기"}
                 </button>

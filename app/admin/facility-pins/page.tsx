@@ -543,7 +543,7 @@ function PinListRow({
               onRename(name.trim());
             }}
             disabled={busy}
-            className="shrink-0 rounded bg-emerald-600 px-2 py-1 text-[11px] font-semibold text-white"
+            className="text-cjk-safe shrink-0 rounded bg-emerald-600 px-2 py-1 text-[11px] font-semibold text-white"
           >
             저장
           </button>
@@ -584,7 +584,7 @@ function PinListRow({
                 onSoftDelete();
               }}
               disabled={busy}
-              className="flex items-center gap-0.5 rounded px-1.5 py-0.5 font-semibold text-slate-500 hover:bg-slate-100 hover:text-rose-600"
+              className="text-cjk-safe flex items-center gap-0.5 rounded px-1.5 py-0.5 font-semibold text-slate-500 hover:bg-slate-100 hover:text-rose-600"
             >
               <Trash2 className="size-3" /> 비활성
             </button>
@@ -597,7 +597,7 @@ function PinListRow({
                   onRestore();
                 }}
                 disabled={busy}
-                className="flex items-center gap-0.5 rounded px-1.5 py-0.5 font-semibold text-emerald-600 hover:bg-emerald-50"
+                className="text-cjk-safe flex items-center gap-0.5 rounded px-1.5 py-0.5 font-semibold text-emerald-600 hover:bg-emerald-50"
               >
                 <RotateCcw className="size-3" /> 복원
               </button>
@@ -608,7 +608,7 @@ function PinListRow({
                   onHardDelete();
                 }}
                 disabled={busy}
-                className="rounded px-1.5 py-0.5 font-semibold text-rose-600 hover:bg-rose-50"
+                className="text-cjk-safe rounded px-1.5 py-0.5 font-semibold text-rose-600 hover:bg-rose-50"
               >
                 완전삭제
               </button>

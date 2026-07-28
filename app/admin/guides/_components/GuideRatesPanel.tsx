@@ -67,7 +67,7 @@ export default function GuideRatesPanel({
                     {r.effectiveFrom}부터
                     {!isDefaultScope && (
                       <span
-                        className={`ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
+                        className={`text-cjk-safe ml-1.5 rounded-full px-1.5 py-0.5 text-[10px] font-bold ${
                           r.scope === 'guide'
                             ? 'bg-slate-900 text-white'
                             : 'bg-slate-100 text-slate-500'
@@ -131,7 +131,7 @@ export default function GuideRatesPanel({
           type="button"
           onClick={submit}
           disabled={busy || !amount.trim()}
-          className="mt-2 flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-4 text-[13px] font-bold text-white disabled:opacity-40"
+          className="text-cjk-safe mt-2 flex h-11 items-center gap-1.5 rounded-xl bg-slate-900 px-4 text-[13px] font-bold text-white disabled:opacity-40"
         >
           {busy ? <Loader2 className="size-4 animate-spin" /> : <Plus className="size-4" />} 단가 저장
         </button>
@@ -146,7 +146,7 @@ export default function GuideRatesPanel({
                 <span className="min-w-0 truncate text-slate-600">
                   {r.effective_from} · {r.tour_type}
                   {r.guide_id === null && (
-                    <span className="ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold text-slate-500">
+                    <span className="text-cjk-safe ml-1.5 rounded-full bg-slate-100 px-1.5 py-0.5 text-[10px] font-bold text-slate-500">
                       기본
                     </span>
                   )}

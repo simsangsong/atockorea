@@ -236,7 +236,7 @@ export default function OpsHomeTab({
         <button
           type="button"
           onClick={() => onNavigate('sos')}
-          className="flex w-full items-center justify-between rounded-2xl border border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)]   px-4 py-3 text-left"
+          className="text-cjk-safe flex w-full items-center justify-between rounded-2xl border border-[var(--tr-danger-soft)] bg-[var(--tr-danger-soft)]   px-4 py-3 text-left"
         >
           <span className="tr-card-text font-bold text-[var(--tr-danger)] ">
             <span className="animate-pulse">🆘</span> 활성 SOS {sosCount}건 — 지금 확인

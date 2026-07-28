@@ -197,7 +197,7 @@ export default function OpsRoomDrawer({
           )}
           <a
             href={`/admin/orders/${room.booking_id}`}
-            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
+            className="text-cjk-safe flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           >
             주문
           </a>
@@ -206,7 +206,7 @@ export default function OpsRoomDrawer({
             href={`/admin/tour-ops/no-show-evidence/${room.id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
+            className="text-cjk-safe flex h-11 shrink-0 items-center rounded-xl bg-[var(--tr-surface-2)] px-3 tr-label font-medium text-[var(--tr-ink-2)]"
           >
             증거
           </a>
@@ -277,7 +277,7 @@ export default function OpsRoomDrawer({
             </span>
             {typeof sos.metadata.latitude === 'number' && (
               <a
-                className="flex h-11 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-danger-soft)] px-3 font-semibold text-[var(--tr-danger)] "
+                className="text-cjk-safe flex h-11 shrink-0 items-center gap-1 rounded-lg bg-[var(--tr-danger-soft)] px-3 font-semibold text-[var(--tr-danger)] "
                 href={`https://maps.google.com/?q=${sos.metadata.latitude},${sos.metadata.longitude}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -359,7 +359,7 @@ export default function OpsRoomDrawer({
             <button
               type="submit"
               disabled={sending || !draft.trim()}
-              className="h-11 shrink-0 rounded-xl bg-[var(--tr-accent)] px-4 tr-body font-semibold text-white disabled:opacity-40"
+              className="text-cjk-safe h-11 shrink-0 rounded-xl bg-[var(--tr-accent)] px-4 tr-body font-semibold text-white disabled:opacity-40"
             >
               발신
             </button>

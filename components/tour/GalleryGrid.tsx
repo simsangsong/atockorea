@@ -77,7 +77,7 @@ export default function GalleryGrid({ images }: GalleryGridProps) {
           <button
             type="button"
             onClick={() => setShowAll(false)}
-            className="mt-2 text-xs text-gray-500 hover:text-gray-700"
+            className="text-cjk-safe mt-2 text-xs text-gray-500 hover:text-gray-700"
           >
             접기
           </button>
