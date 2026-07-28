@@ -48,6 +48,8 @@ const COPY: Record<
     links: string;
     shortcuts: string;
     members: string;
+    /** Marks the viewer in the member list. */
+    me: string;
     empty: string;
     schedule: string;
     map: string;
@@ -68,6 +70,7 @@ const COPY: Record<
     links: 'Links',
     shortcuts: 'Shortcuts',
     members: 'Members',
+    me: '(you)',
     empty: 'Nothing here yet',
     schedule: 'Today',
     map: 'Map',
@@ -85,6 +88,7 @@ const COPY: Record<
     links: '링크',
     shortcuts: '바로가기',
     members: '대화상대',
+    me: '(나)',
     empty: '아직 없어요',
     schedule: '오늘 일정',
     map: '지도',
@@ -102,6 +106,7 @@ const COPY: Record<
     links: 'リンク',
     shortcuts: 'ショートカット',
     members: 'メンバー',
+    me: '(自分)',
     empty: 'まだありません',
     schedule: '本日',
     map: '地図',
@@ -119,6 +124,7 @@ const COPY: Record<
     links: 'Enlaces',
     shortcuts: 'Accesos directos',
     members: 'Miembros',
+    me: '(tú)',
     empty: 'Aún no hay nada',
     schedule: 'Hoy',
     map: 'Mapa',
@@ -136,6 +142,7 @@ const COPY: Record<
     links: '链接',
     shortcuts: '快捷方式',
     members: '成员',
+    me: '(我)',
     empty: '暂时没有内容',
     schedule: '今日',
     map: '地图',
@@ -153,6 +160,7 @@ const COPY: Record<
     links: '連結',
     shortcuts: '捷徑',
     members: '成員',
+    me: '(我)',
     empty: '目前還沒有內容',
     schedule: '今日',
     map: '地圖',
@@ -170,6 +178,7 @@ const COPY: Record<
     links: 'Liens',
     shortcuts: 'Raccourcis',
     members: 'Membres',
+    me: '(vous)',
     empty: 'Rien pour l’instant',
     schedule: 'Aujourd’hui',
     map: 'Carte',
@@ -187,6 +196,7 @@ const COPY: Record<
     links: 'Links',
     shortcuts: 'Schnellzugriff',
     members: 'Mitglieder',
+    me: '(Sie)',
     empty: 'Noch nichts da',
     schedule: 'Heute',
     map: 'Karte',
@@ -204,6 +214,7 @@ const COPY: Record<
     links: 'Ссылки',
     shortcuts: 'Быстрый доступ',
     members: 'Участники',
+    me: '(вы)',
     empty: 'Пока пусто',
     schedule: 'Сегодня',
     map: 'Карта',
@@ -221,6 +232,7 @@ const COPY: Record<
     links: 'Link',
     shortcuts: 'Scorciatoie',
     members: 'Membri',
+    me: '(tu)',
     empty: 'Ancora niente qui',
     schedule: 'Oggi',
     map: 'Mappa',
@@ -235,6 +247,7 @@ const COPY: Record<
 };
 
 interface DrawerParticipant {
+  id?: string;
   role: string;
   display_name: string;
 }
@@ -253,6 +266,7 @@ export default function RoomDrawer({
   bookingId,
   roomSession,
   participants,
+  myParticipantId,
   onClose,
   onSelectTab,
   onOpenConcierge,
@@ -263,6 +277,12 @@ export default function RoomDrawer({
   bookingId: string;
   roomSession: string;
   participants: DrawerParticipant[];
+  /**
+   * The viewer's own participant row. Without it the member list was N
+   * identical rows all labelled by role — on a bus of twelve, a guest could
+   * not find themselves in the list of who is here.
+   */
+  myParticipantId?: string | null;
   onClose: () => void;
   onSelectTab: (tab: 'schedule' | 'map' | 'settings') => void;
   onOpenConcierge?: () => void;
@@ -341,12 +361,20 @@ export default function RoomDrawer({
     onPress: () => void;
     danger?: boolean;
   }> = [
-    { key: 'schedule', label: copy.schedule, Icon: IconTabSchedule, onPress: () => onSelectTab('schedule') },
-    { key: 'map', label: copy.map, Icon: IconTabMap, onPress: () => onSelectTab('map') },
-    { key: 'settings', label: copy.settings, Icon: IconTabSettings, onPress: () => onSelectTab('settings') },
-    ...(onOpenConcierge
-      ? [{ key: 'concierge', label: copy.concierge, Icon: IconConcierge, onPress: onOpenConcierge }]
-      : []),
+    /**
+     * 🔴 Today · Map · Settings · Smart Guide came out (owner's call,
+     * 2026-07-28). Every one of them was already ONE tap away — three on the
+     * tab bar directly below, the Smart Guide on the header of every tab and
+     * in the composer tray. Reaching them by opening a drawer and tapping a
+     * tile is strictly two taps for the same destination, and six tiles that
+     * mostly go nowhere new made the drawer read as a second, competing
+     * navigation. The drawer is now what only it can be: what the room
+     * CONTAINS (photos, files, links, who is here) plus the two device
+     * controls that genuinely live nowhere else.
+     *
+     * Emergency stays. Navigational redundancy is clutter; safety redundancy
+     * is not — a second door to the SOS sheet costs one tile and is worth it.
+     */
     { key: 'emergency', label: copy.emergency, Icon: IconEmergency, onPress: onOpenEmergency, danger: true },
   ];
 
@@ -558,17 +586,29 @@ export default function RoomDrawer({
               {copy.members} · {participants.length}
             </h3>
             <div className="mt-2 space-y-0.5" data-testid="drawer-members">
-              {participants.map((p, i) => (
-                <div key={`${p.role}-${p.display_name}-${i}`} className="flex min-h-[48px] items-center gap-2.5">
-                  <Avatar role={p.role} size={34} />
-                  <span className="tr-card-text min-w-0 flex-1 truncate font-medium text-[var(--tr-ink)]">
-                    {p.display_name}
-                  </span>
-                  <span className="tr-meta text-cjk-safe shrink-0 rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 font-semibold text-[var(--tr-ink-2)]">
-                    {copy.roles[p.role] ?? p.role}
-                  </span>
-                </div>
-              ))}
+              {participants.map((p, i) => {
+                const isMe = Boolean(myParticipantId && p.id && p.id === myParticipantId);
+                return (
+                  <div
+                    key={`${p.role}-${p.display_name}-${i}`}
+                    className={`flex min-h-[48px] items-center gap-2.5 ${isMe ? 'rounded-xl bg-[var(--tr-accent-soft)] px-2' : ''}`}
+                    data-testid={isMe ? 'drawer-member-me' : undefined}
+                  >
+                    <Avatar role={p.role} size={34} />
+                    <span className="tr-card-text min-w-0 flex-1 truncate font-medium text-[var(--tr-ink)]">
+                      {p.display_name}
+                      {isMe && (
+                        <span className="tr-meta text-cjk-safe ml-1.5 font-bold text-[var(--tr-accent-deep)]">
+                          {copy.me}
+                        </span>
+                      )}
+                    </span>
+                    <span className="tr-meta text-cjk-safe shrink-0 rounded-full bg-[var(--tr-surface-2)] px-2 py-0.5 font-semibold text-[var(--tr-ink-2)]">
+                      {copy.roles[p.role] ?? p.role}
+                    </span>
+                  </div>
+                );
+              })}
             </div>
           </section>
         </div>

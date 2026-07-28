@@ -25,6 +25,8 @@ import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
 import Sheet from '@/components/tour-mode/Sheet';
+import AppManual from '@/components/tour-mode/AppManual';
+import type { ManualKind } from '@/lib/tour-room/appManual';
 import { TravelTimelineSheet } from '@/components/tour-mode/TravelTimeline';
 import { currentScheduleIndex, type RoomShellHomeApi } from '@/components/tour-mode/RoomShell';
 import { buildTravelTimeline } from '@/lib/tour-room/timeline';
@@ -438,6 +440,8 @@ export default function HomeTab({
   showConcierge,
   isPrivate,
   locations,
+  manualKind,
+  theme,
 }: {
   api: RoomShellHomeApi;
   locale: RoomLocale;
@@ -467,6 +471,10 @@ export default function HomeTab({
    * the vehicle card; absent or vehicle-less simply renders nothing.
    */
   locations?: Record<string, VehicleLocationLike> | null;
+  /** Manual shape (join vs private). Absent → the manual button is hidden. */
+  manualKind?: ManualKind;
+  /** The sheet mounts outside .tr-root, so it re-scopes the token layer. */
+  theme?: 'light' | 'dark';
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
@@ -702,6 +710,18 @@ export default function HomeTab({
       <div className="mt-1.5">
         <InstallCard locale={locale} surface="home" />
       </div>
+
+      {/* ---- "How this app works" (2026-07-28) ------------------------
+          This REPLACES the modal that used to open itself on first entry.
+          It sits below the action grid on purpose: a guest arriving mid-day
+          wants the day, not the manual — but the button is full-width, in the
+          accent material, and pressable, so it is unmistakably a thing to tap
+          when they do want it. Same content, on request instead of on arrival. */}
+      {manualKind && (
+        <div className="mt-2">
+          <AppManual variant="button" kind={manualKind} locale={locale} theme={theme} />
+        </div>
+      )}
 
       {/* ---- More row ------------------------------------------------ */}
       <button

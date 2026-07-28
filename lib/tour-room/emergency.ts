@@ -8,6 +8,20 @@
 
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
+/**
+ * AtoC Korea operations line. E.164 so it dials from any country the guest's
+ * SIM is registered in — a domestic 010-… string does not, and every guest
+ * holding this screen is by definition roaming.
+ */
+export const OPS_PHONE_DEFAULT = '+821097808027';
+
+/**
+ * The single resolved ops number. Three surfaces used to each read the env
+ * themselves — the emergency sheet, the rally "call us" chip, and the staff
+ * cockpit — which is three chances to forget, and all three were dark.
+ */
+export const OPS_PHONE = process.env.NEXT_PUBLIC_TOUR_OPS_PHONE || OPS_PHONE_DEFAULT;
+
 export interface EmergencyContact {
   key: string;
   /** Dialable number (tel: target). Empty string = informational row. */
@@ -118,8 +132,20 @@ export const EMERGENCY_CONTACTS: readonly EmergencyContact[] = [
   },
   {
     key: 'atoc_ops',
-    // Real ops number comes from env (unset → informational row, no tel link).
-    tel: process.env.NEXT_PUBLIC_TOUR_OPS_PHONE ?? '',
+    /**
+     * 🔴 This was env-only, and the env was never set — so the ONE row on the
+     * emergency screen that reaches the people running the tour had no phone
+     * behind it, in production, for as long as the screen has existed. A guest
+     * in trouble got "message the room" and nothing to dial (UX walk,
+     * 2026-07-28). A launch gate hiding inside an emergency screen is not a
+     * launch gate, it is a hole.
+     *
+     * The number is the company's published operations line (owner, 2026-07-28),
+     * so it lives in code as the default and env only overrides it. Env can
+     * still point a staging build at a test line; an unset env can no longer
+     * silently disarm the row.
+     */
+    tel: OPS_PHONE,
     label: {
       en: 'AtoC Korea tour operations',
       ko: 'AtoC Korea 투어 운영센터',
