@@ -304,3 +304,23 @@ describe('verifyUnit — 통합', () => {
     expect(r.findings.map((f) => f.gate)).toEqual(['G1']);
   });
 });
+
+describe('G3 연대 축약 (2026-07-28 실측)', () => {
+  it('4자리 연도가 두 자리로 줄어든 것은 fail이 아니라 flag', () => {
+    // `1970s-1980s`(en) → `anni '70-'80`(it). gemini·openai 둘 다 이렇게 쓴다.
+    const f = checkNumbers('boom of the 1970s-1980s', 'boom degli anni \u201970-\u201980', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+    expect(f.some((x) => x.message.includes('연대 축약'))).toBe(true);
+  });
+
+  it('연도가 아닌 값이 사라지면 여전히 fail', () => {
+    // 좁게 열었다는 확인 — 가격·거리·시간은 그대로 막힌다.
+    const f = checkNumbers('open 24 hours, 5000 won', 'aperto tutto il giorno', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+
+  it('두 자리가 번역에 없으면 진짜 소실이므로 fail', () => {
+    const f = checkNumbers('built in 1970', 'costruito di recente', '/p');
+    expect(f.some((x) => x.severity === 'fail')).toBe(true);
+  });
+});

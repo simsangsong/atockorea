@@ -143,8 +143,19 @@ export function checkNumbers(source: string, target: string, pointer: string): F
   if (sameMultiset(a, b)) return [];
 
   const findings: Finding[] = [];
-  const lost = missingFrom(a, b);
+  const lostRaw = missingFrom(a, b);
   const added = missingFrom(b, a);
+
+  // 연대 축약은 소실이 아니라 서식이다 — 위의 "월 이름 → 숫자" 선례와 같은 부류.
+  // `1970s-1980s`(en) → `anni '70-'80`(it) · `70er-80er`(de)는 그 언어의 정상
+  // 표기이고 독자가 잃는 정보가 없다. 2026-07-28 실측: gemini·openai **둘 다**
+  // 이렇게 쓴다 — 즉 모델을 바꿔 해결할 문제가 아니다. fail로 두면 이탈리아어
+  // 손님은 현지 관용구 대신 **영어 전문**을 받게 되어 더 나쁘다.
+  // 범위는 좁게: 원문의 4자리 연도(18xx~20xx)이고 그 뒤 두 자리가 번역에 있을 때만.
+  const shorthandYears = lostRaw.filter(
+    (n) => /^(1[89]|20)\d{2}$/.test(n) && added.includes(String(Number(n.slice(2)))),
+  );
+  const lost = lostRaw.filter((n) => !shorthandYears.includes(n));
 
   if (lost.length > 0) {
     findings.push({
@@ -152,6 +163,14 @@ export function checkNumbers(source: string, target: string, pointer: string): F
       severity: 'fail',
       pointer,
       message: `숫자 소실 — 원문의 [${lost.join(' ')}] 이 번역에 없다 (원문 [${a.join(' ')}] vs 번역 [${b.join(' ')}])`,
+    });
+  }
+  if (shorthandYears.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'flag',
+      pointer,
+      message: `연대 축약 — 원문 [${shorthandYears.join(' ')}] 이 두 자리로 표기됐다 (현지 관례면 정상)`,
     });
   }
   if (added.length > 0) {
