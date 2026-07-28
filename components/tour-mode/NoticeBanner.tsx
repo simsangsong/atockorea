@@ -27,6 +27,13 @@ const COPY: Record<
     backBy: (t: string) => string;
     at: (p: string) => string;
     now: string;
+    /**
+     * The zero mark for the countdown capsule — a MARKER, not an instruction.
+     * Kept to a few characters on purpose: this element is `shrink-0`, so
+     * whatever goes in it takes width away from the text beside it. The
+     * instruction itself lives on the rally line, where it can wrap.
+     */
+    nowShort: string;
     warn: (m: number) => string;
     waiting: string;
     contact: string;
@@ -41,6 +48,7 @@ const COPY: Record<
     backBy: (t) => `Back by ${t}`,
     at: (p) => `at ${p}`,
     now: 'Please gather now',
+    nowShort: 'NOW',
     warn: (m) => `${m} minutes left — please head back to the meeting point.`,
     waiting: 'The party is waiting — please head to the meeting point.',
     contact: 'Can’t make it? Contact your guide now.',
@@ -54,6 +62,7 @@ const COPY: Record<
     backBy: (t) => `${t}까지 복귀`,
     at: (p) => `${p}에서`,
     now: '지금 모여주세요',
+    nowShort: '지금',
     warn: (m) => `${m}분 남았어요 — 집합 장소로 이동해 주세요.`,
     waiting: '일행이 기다리고 있어요 — 집합 장소로 와주세요.',
     contact: '어려우면 지금 가이드에게 연락해 주세요.',
@@ -67,6 +76,7 @@ const COPY: Record<
     backBy: (t) => `${t}までに戻る`,
     at: (p) => `${p}にて`,
     now: '今すぐお集まりください',
+    nowShort: '今',
     warn: (m) => `残り${m}分です — 集合場所へお戻りください。`,
     waiting: '皆さまお待ちです — 集合場所へお越しください。',
     contact: '難しい場合は今すぐガイドへご連絡ください。',
@@ -80,6 +90,7 @@ const COPY: Record<
     backBy: (t) => `Regreso a las ${t}`,
     at: (p) => `en ${p}`,
     now: 'Reúnanse ahora, por favor',
+    nowShort: 'YA',
     warn: (m) => `Quedan ${m} minutos — vuelve al punto de encuentro.`,
     waiting: 'El grupo está esperando; ve al punto de encuentro.',
     contact: '¿No puedes llegar? Contacta a tu guía ahora.',
@@ -93,6 +104,7 @@ const COPY: Record<
     backBy: (t) => `${t}前返回`,
     at: (p) => `地点：${p}`,
     now: '请现在集合',
+    nowShort: '现在',
     warn: (m) => `还剩${m}分钟 — 请返回集合地点。`,
     waiting: '同行者正在等待——请前往集合地点。',
     contact: '赶不到?请立即联系导游。',
@@ -106,6 +118,7 @@ const COPY: Record<
     backBy: (t) => `${t}前返回`,
     at: (p) => `地點：${p}`,
     now: '請現在集合',
+    nowShort: '現在',
     warn: (m) => `還剩${m}分鐘——請返回集合地點。`,
     waiting: '同行夥伴正在等候——請前往集合地點。',
     contact: '趕不上嗎？請立即聯絡導遊。',
@@ -119,6 +132,7 @@ const COPY: Record<
     backBy: (t) => `Retour pour ${t}`,
     at: (p) => `à ${p}`,
     now: 'Merci de vous rassembler maintenant',
+    nowShort: 'MAINT.',
     warn: (m) => `Plus que ${m} minutes — rejoignez le point de rendez-vous.`,
     waiting: 'Le groupe vous attend — rejoignez le point de rendez-vous.',
     contact: 'Un empêchement? Contactez votre guide maintenant.',
@@ -132,6 +146,7 @@ const COPY: Record<
     backBy: (t) => `Zurück bis ${t}`,
     at: (p) => `Treffpunkt: ${p}`,
     now: 'Bitte jetzt zum Treffpunkt kommen',
+    nowShort: 'JETZT',
     warn: (m) => `Noch ${m} Minuten — bitte zurück zum Treffpunkt.`,
     waiting: 'Die Gruppe wartet — bitte kommen Sie zum Treffpunkt.',
     contact: 'Sie schaffen es nicht? Kontaktieren Sie jetzt Ihren Guide.',
@@ -145,6 +160,7 @@ const COPY: Record<
     backBy: (t) => `Вернуться к ${t}`,
     at: (p) => `Место сбора: ${p}`,
     now: 'Подойдите к месту сбора',
+    nowShort: 'СЕЙЧАС',
     warn: (m) => `Осталось ${m} мин — возвращайтесь к месту сбора.`,
     waiting: 'Группа ждет — подойдите к месту сбора.',
     contact: 'Не успеваете? Свяжитесь с гидом прямо сейчас.',
@@ -158,6 +174,7 @@ const COPY: Record<
     backBy: (t) => `Rientro entro le ${t}`,
     at: (p) => `presso ${p}`,
     now: 'Radunatevi ora, per favore',
+    nowShort: 'ORA',
     warn: (m) => `Mancano ${m} minuti — torna al punto di ritrovo.`,
     waiting: 'Il gruppo ti sta aspettando — vai al punto di ritrovo.',
     contact: 'Non ce la fai? Contatta subito la guida.',
@@ -166,6 +183,13 @@ const COPY: Record<
     map: 'Mappa',
   },
 };
+
+/**
+ * Exported for the standing gate (noticeBannerZero.test). The capsule length
+ * rule is a property of the COPY itself, so the test reads the data rather
+ * than rendering ten locales to measure pixels it cannot measure in jsdom.
+ */
+export const NOTICE_COPY_FOR_TEST = COPY;
 
 export default function NoticeBanner({
   messages,
@@ -338,11 +362,13 @@ export default function NoticeBanner({
       {mode === 'countdown' && notice.remainingMs !== null && (
         <span
           data-testid="notice-countdown"
-          className={`tr-title tr-num tr-anim-panel-in shrink-0 rounded-full px-3 py-1.5 font-bold text-white ${
+          /* text-cjk-safe + a width cap so a long localized marker can never
+             again take the text column’s space (the 2026-07-29 report). */
+          className={`tr-title tr-num tr-anim-panel-in text-cjk-safe max-w-[38%] shrink-0 rounded-full px-3 py-1.5 font-bold text-white ${
             urgent ? 'animate-pulse bg-[var(--tr-danger)]' : 'bg-[var(--tr-accent)]'
           }`}
         >
-          {notice.remainingMs === 0 ? copy.now : formatRemaining(notice.remainingMs)}
+          {notice.remainingMs === 0 ? copy.nowShort : formatRemaining(notice.remainingMs)}
         </span>
       )}
     </div>
