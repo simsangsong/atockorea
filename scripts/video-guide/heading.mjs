@@ -23,10 +23,17 @@ const SRC_W = 1920, SRC_H = 1080;
 const SCALE = SRC_W / W;
 const BLK = 16, SEARCH = 14, STEP = 8;
 
-// how far ahead we look, in seconds, to see where the walk goes
-export const SAMPLES = [0.8, 1.6, 2.4, 3.2];
-const PAN_LIMIT = 0.86;         // above this the flow is uniform => a pan, not a walk
-const TURN_FRACTION = 0.08;     // heading drift beyond 8% of width means a real turn
+// How far ahead we look, in seconds. The first pass only reached 3.2s and a
+// 8%-of-width threshold, which classified two real turns as "straight": leaving
+// the car park the route goes straight then LEFT (straight on is the bus lot),
+// and the 108 steps bend left partway down. Both drifts were real but slower
+// than the window could see. Look further, and trust a smaller drift.
+export const SAMPLES = [0.8, 1.6, 2.4, 3.2, 4.2, 5.4, 6.6, 8.0];
+// Above this the flow field is too uniform to trust — the head turned rather than
+// the body walked. Loose values let wobble samples into the route fit and pulled
+// the car-park turn the wrong way, so this is deliberately strict.
+const PAN_LIMIT = 0.55;
+const TURN_FRACTION = 0.045;    // ~86px of drift across the window is already a turn
 
 function grayFrame(file, t) {
   const r = spawnSync('ffmpeg', [
@@ -144,16 +151,31 @@ export function routeAfter(file, t) {
   const pts = usable.map((dt) => ({ dt, ...headingAt(file, t + dt) })).filter((p) => p.ok);
   if (pts.length < 2) return { kind: 'unknown', why: '측정 표본 부족', pts };
   const xs = pts.map((p) => p.x);
-  const drift = xs[xs.length - 1] - xs[0];
   const limit = SRC_W * TURN_FRACTION;
-  if (Math.abs(drift) < limit) {
-    return { kind: 'straight', pts, drift, x: Math.round(xs.reduce((a, b) => a + b) / xs.length), y: Math.round(pts.reduce((s, p) => s + p.y, 0) / pts.length) };
-  }
-  // find where the drift starts — that is where the corner belongs
-  let idx = 1;
-  for (let i = 1; i < xs.length; i++) { if (Math.abs(xs[i] - xs[0]) > limit * 0.45) { idx = i; break; } }
+  const med = (a) => { const s = [...a].sort((p, q) => p - q); const m = s.length >> 1;
+    return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+
+  // Compare where the heading SETTLES against where it STARTED, both as medians.
+  // Two earlier attempts failed here: endpoint-only maths cancelled the car-park
+  // turn out entirely, and peak deviation let a single 169px sway at t+7.4 flip
+  // the whole call to the opposite direction. Medians survive both.
+  const cut = Math.max(1, Math.round(xs.length / 3));
+  const early = med(xs.slice(0, cut));
+  const late = med(xs.slice(cut));
+  const delta = late - early;
   const span = pts[pts.length - 1].dt;
-  return { kind: drift > 0 ? 'right' : 'left', pts, drift, cornerAt: pts[idx].dt / span, x: xs[xs.length - 1], y: pts[pts.length - 1].y };
+
+  if (Math.abs(delta) < limit) {
+    return {
+      kind: 'straight', pts, delta, x: Math.round(med(xs)),
+      y: Math.round(med(pts.map((p) => p.y))),
+    };
+  }
+  return {
+    kind: delta > 0 ? 'right' : 'left', pts, delta,
+    cornerAt: pts[cut - 1].dt / span,
+    x: Math.round(late), y: Math.round(med(pts.slice(cut).map((p) => p.y))),
+  };
 }
 
 // ---- CLI --------------------------------------------------------------
@@ -172,7 +194,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve(new URL(im
       const corner = r.cornerAt ? ` corner@${(r.cornerAt * 100).toFixed(0)}%` : '';
       console.log(
         `${b.id}    ${b.src}   ${String(b.at).padStart(5)}   ${String(r.kind).padEnd(9)} ` +
-        `${String(r.drift ?? '-').padStart(5)}  ${head.padEnd(14)} ${b.note ?? ''}${corner}`
+        `${String(r.peak ?? '-').padStart(6)}  ${head.padEnd(14)} ${b.title ?? ''}${corner}`
       );
     }
   } else {

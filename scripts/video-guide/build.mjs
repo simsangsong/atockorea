@@ -135,9 +135,22 @@ async function renderHold(beat, out) {
   let next = 1;
 
   if (beat.kind === 'closeup') {
-    const z = beat.zoom ?? 1.55, cx = beat.cx ?? 0.5, cy = beat.cy ?? 0.5;
-    filter += `crop=w='iw/(1+${(z - 1).toFixed(3)}*min(t/${dur},1))':h='ih/(1+${(z - 1).toFixed(3)}*min(t/${dur},1))':`
-      + `x='(iw-out_w)*${cx}':y='(ih-out_h)*${cy}',${VSCALE}[v];`;
+    // `focus` is the subject's rectangle in source pixels. The old cx/cy were a
+    // fraction of the leftover margin, which is the opposite of how anyone thinks
+    // about framing — it took three attempts to land one plaque and it still cut
+    // the other one in half. Give it the box; the renderer works out the path.
+    const [fx, fy, fw, fh] = beat.focus ?? [0, 0, 1920, 1080];
+    const pad = beat.focusPad ?? 1.16;
+    const zoom = Math.min(beat.maxZoom ?? 2.4, Math.max(1.05, Math.min(1920 / (fw * pad), 1080 / (fh * pad))));
+    const cxPx = fx + fw / 2, cyPx = fy + fh / 2;
+    // where the crop's top-left must sit at full zoom, clamped inside the frame
+    const endW = 1920 / zoom, endH = 1080 / zoom;
+    const ex = Math.max(0, Math.min(1920 - endW, cxPx - endW / 2));
+    const ey = Math.max(0, Math.min(1080 - endH, cyPx - endH / 2));
+    // ease-in-out so the push starts and lands softly instead of snapping on
+    const p = `(3*pow(min(t/${dur},1),2)-2*pow(min(t/${dur},1),3))`;
+    filter += `crop=w='iw/(1+${(zoom - 1).toFixed(4)}*${p})':h='ih/(1+${(zoom - 1).toFixed(4)}*${p})':`
+      + `x='${ex.toFixed(1)}*${p}':y='${ey.toFixed(1)}*${p}',${VSCALE}[v];`;
   } else if (beat.kind === 'polaroid') {
     const card = path.join(CACHE, `polaroid_${beat.id}.png`);
     await renderPolaroid({ framePath: still, outFile: card, opts: beat.polaroid ?? {} });

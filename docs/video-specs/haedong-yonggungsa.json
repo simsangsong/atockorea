@@ -24,9 +24,9 @@
   },
   "_notes": [
     "타임코드 정본은 docs/onetake-tour-video-edit-master-plan-2026-07-29.md §B",
-    "화살표 좌표는 1920x1080 원본 기준. 프레임을 바꾸면 좌표도 다시 잡아야 한다.",
-    "TODO: beat 15 전망대 좌회전 화살표 — 프레임 판독이 불확실해 v1에서 보류",
-    "영상 내 텍스트는 전부 영어 — 손님 100% 외국인 (사용자 확정 2026-07-29). 한국어는 10로케일 변형 중 하나일 뿐 마스터가 아니다."
+    "영상 내 텍스트는 전부 영어 — 손님 100% 외국인 (사용자 확정 2026-07-29).",
+    "화살표는 손으로 찍지 않는다. heading.mjs 측정 → authorArrows.mjs 자동 저작.",
+    "클로즈업은 focus:[x,y,w,h] 원본 픽셀 사각형. cx/cy(여백 비율)는 폐기됨."
   ],
   "beats": [
     {
@@ -34,54 +34,57 @@
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 6,
+      "out": 1,
       "speed": 1,
-      "note": "주차장 출발"
+      "title": "Leaving the car park"
     },
     {
       "id": "02",
       "kind": "arrow",
       "src": "A",
-      "at": 6,
-      "hold": 4,
-      "note": "직진 → 상가거리",
+      "at": 1,
+      "hold": 4.5,
+      "title": "Market Street",
+      "sub": "Straight, then bear left",
+      "caption": "Straight on is the bus park. Bear left into the food lane.",
       "arrows": [
         {
           "mode": "ribbon",
           "points": [
             {
-              "x": 1120,
-              "y": 1078
+              "x": 960,
+              "y": 1074
             },
             {
-              "x": 1220,
-              "y": 890
+              "x": 985.55,
+              "y": 954.888
             },
             {
-              "x": 1265,
-              "y": 790
+              "x": 915,
+              "y": 907.2432
             }
           ],
           "width": [
-            112,
-            22
+            128,
+            20
           ],
-          "headLen": 58,
-          "chevronSpacing": 118
+          "headLen": 56,
+          "chevronSpacing": 140,
+          "derivedFrom": "left",
+          "corner": 0.35
         }
       ],
-      "title": "Market Street",
-      "sub": "Head straight through the food stalls",
-      "caption": "Fishcake, hotteok, grilled mackerel. Keep going — the gate is at the end."
+      "turn": "left",
+      "turnAt": 0.34
     },
     {
       "id": "03",
       "kind": "clip",
       "src": "A",
-      "in": 6,
+      "in": 1,
       "out": 93,
       "speed": 6,
-      "note": "상가거리 통과 (6x)",
+      "title": "Through the food stalls",
       "ramp": {
         "seconds": 0.6
       }
@@ -92,8 +95,11 @@
       "src": "A",
       "in": 93,
       "out": 100,
-      "speed": 1,
-      "note": "12지신상 좌회전 팬"
+      "speed": 2,
+      "title": "Approaching the guardians",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "05",
@@ -101,81 +107,105 @@
       "src": "A",
       "at": 100,
       "hold": 5,
-      "note": "12지신상 포인팅 + 해설 카드 자리",
+      "title": "Twelve Zodiac Guardians",
+      "sub": "One for each animal of the zodiac",
+      "caption": "Twelve stone guardians along the wall. Find the one for your birth year.",
       "arrows": [
         {
-          "mode": "pointer",
-          "from": {
-            "x": 215,
-            "y": 285
-          },
-          "target": {
-            "x": 665,
-            "y": 790
-          },
-          "ring": 135,
-          "gap": 175,
-          "stem": 17,
-          "headLen": 58,
-          "headWidth": 50
+          "mode": "ribbon",
+          "points": [
+            {
+              "x": 960,
+              "y": 1074
+            },
+            {
+              "x": 963.85,
+              "y": 871.776
+            },
+            {
+              "x": 967,
+              "y": 706.3199999999999
+            }
+          ],
+          "width": [
+            128,
+            22
+          ],
+          "headLen": 62,
+          "chevronSpacing": 128,
+          "derivedFrom": "straight"
         }
-      ],
-      "title": "Twelve Zodiac Guardians",
-      "sub": "Stone guardians line the wall on your left",
-      "caption": "One stone guardian per zodiac animal. Find the one for your birth year."
+      ]
     },
     {
       "id": "06",
       "kind": "clip",
       "src": "A",
       "in": 100,
-      "out": 110,
-      "speed": 1.5,
-      "note": "석상 열"
+      "out": 105,
+      "speed": 1,
+      "title": "Along the wall"
     },
     {
       "id": "07",
-      "kind": "clip",
+      "kind": "closeup",
       "src": "A",
-      "in": 110,
-      "out": 135,
-      "speed": 3,
-      "note": "석탑·일주문 접근 (3x)",
-      "ramp": {
-        "seconds": 0.6
+      "at": 106,
+      "hold": 4.5,
+      "title": "Bodhidharma",
+      "sub": "The monk who brought Zen east",
+      "caption": "Bodhidharma — the Indian monk credited with bringing Zen to East Asia.",
+      "focus": [
+        560,
+        210,
+        700,
+        800
+      ],
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
       }
     },
     {
       "id": "08",
       "kind": "clip",
       "src": "A",
-      "in": 135,
-      "out": 139,
-      "speed": 1,
-      "note": "일주문 앞"
+      "in": 106,
+      "out": 117,
+      "speed": 2,
+      "title": "Onward to the stele",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "09",
       "kind": "closeup",
       "src": "A",
-      "at": 139,
-      "hold": 5,
-      "zoom": 1.6,
-      "cx": 0.42,
-      "cy": 0.3,
-      "note": "海東龍宮寺 현판 클로즈업",
-      "title": "The Main Gate",
-      "sub": "Haedong Yonggungsa — read the name plaque above you",
-      "caption": "The plaque reads Haedong Yonggungsa — Dragon Palace Temple of the East Sea."
+      "at": 117,
+      "hold": 4.5,
+      "title": "Gwaneum Stele",
+      "sub": "Goddess of Mercy, carved in relief",
+      "caption": "A relief of Gwaneum, Goddess of Mercy, standing on a lotus.",
+      "focus": [
+        640,
+        60,
+        620,
+        900
+      ],
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
     },
     {
       "id": "10",
       "kind": "clip",
       "src": "A",
-      "in": 139,
-      "out": 158,
-      "speed": 2,
-      "note": "석비 → 돌담 내리막 (2x)",
+      "in": 117,
+      "out": 137,
+      "speed": 2.5,
+      "title": "To the main gate",
       "ramp": {
         "seconds": 0.6
       }
@@ -184,354 +214,441 @@
       "id": "11",
       "kind": "clip",
       "src": "A",
-      "in": 158,
-      "out": 170,
-      "speed": 1.5,
-      "note": "석굴 통과"
+      "in": 137,
+      "out": 139,
+      "speed": 1,
+      "title": "The gate"
     },
     {
       "id": "12",
-      "kind": "clip",
+      "kind": "closeup",
       "src": "A",
-      "in": 170,
-      "out": 178,
-      "speed": 1,
-      "note": "석등길 진입"
+      "at": 139,
+      "hold": 5.5,
+      "title": "Haedong Yonggungsa",
+      "sub": "Dragon Palace Temple of the East Sea",
+      "caption": "\"Haedong\" means east of the sea, \"Yonggung\" the dragon king's palace — a temple built on the water, not in the mountains.",
+      "focus": [
+        120,
+        380,
+        1000,
+        420
+      ],
+      "maxZoom": 1.9,
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
     },
     {
       "id": "13",
-      "kind": "arrow",
+      "kind": "clip",
       "src": "A",
-      "at": 178,
-      "hold": 6,
-      "note": "108계단 하강 + 해설 카드 자리",
-      "arrows": [
-        {
-          "mode": "steps",
-          "points": [
-            {
-              "x": 830,
-              "y": 1078
-            },
-            {
-              "x": 950,
-              "y": 885
-            },
-            {
-              "x": 1030,
-              "y": 705
-            }
-          ],
-          "width": [
-            215,
-            58
-          ],
-          "steps": 7,
-          "perspective": 0.86
-        }
-      ],
-      "title": "The 108 Steps",
-      "sub": "Stone lanterns line the whole descent",
-      "caption": "108 steps for the 108 earthly desires. Stone lanterns the whole way down."
+      "in": 139,
+      "out": 172,
+      "speed": 3,
+      "title": "Down through the cave passage",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "14",
       "kind": "clip",
       "src": "A",
-      "in": 178,
-      "out": 196,
-      "speed": 1.5,
-      "note": "108계단 하강"
+      "in": 172,
+      "out": 178,
+      "speed": 1,
+      "title": "The lantern path"
     },
     {
       "id": "15",
-      "kind": "clip",
+      "kind": "arrow",
       "src": "A",
-      "in": 196,
-      "out": 218,
-      "speed": 1.4,
-      "note": "전망대 진입 — 좌회전 화살표 TODO"
-    },
-    {
-      "id": "16",
-      "kind": "polaroid",
-      "src": "A",
-      "at": 218,
-      "hold": 5,
-      "note": "전망대 바다 조망",
-      "polaroid": {
-        "width": 860,
-        "tilt": -2.4
-      },
-      "title": "Ocean Viewpoint",
-      "sub": "The deck out over the rocks",
-      "caption": "The deck hangs out over the surf. This temple faces east — come at sunrise."
-    },
-    {
-      "id": "17",
-      "kind": "clip",
-      "src": "B",
-      "in": 0,
-      "out": 39,
-      "speed": 1.8,
-      "note": "암반 하강",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      },
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "18",
-      "kind": "polaroid",
-      "src": "B",
-      "at": 39,
+      "at": 178,
       "hold": 6,
-      "note": "사찰 전경 + 바다",
-      "polaroid": {
-        "width": 900,
-        "tilt": 1.8
-      },
-      "title": "Temple Panorama",
-      "sub": "The whole temple, seen from the rocks",
-      "caption": "The one spot where the whole temple fits in a single frame."
-    },
-    {
-      "id": "19",
-      "kind": "arrow",
-      "src": "B",
-      "at": 39,
-      "hold": 4.5,
-      "note": "복귀 → 계단 위로",
-      "arrows": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 900,
-              "y": 1070
-            },
-            {
-              "x": 1190,
-              "y": 910
-            },
-            {
-              "x": 1420,
-              "y": 780
-            }
-          ],
-          "width": [
-            120,
-            18
-          ],
-          "headLen": 56,
-          "chevronSpacing": 130
-        }
-      ],
-      "title": "Head Back Up",
-      "sub": "Return the way you came, then keep descending",
-      "caption": "Dead end. Climb back up and rejoin the steps going down."
-    },
-    {
-      "id": "20",
-      "kind": "clip",
-      "src": "C",
-      "in": 0,
-      "out": 26,
-      "speed": 1.5,
-      "note": "108계단 재하강 → 다리 진입",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "21",
-      "kind": "arrow",
-      "src": "C",
-      "at": 26,
-      "hold": 4.5,
-      "note": "용문교 직진 → 다리 끝 우회전 (검증됨)",
-      "arrows": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 945,
-              "y": 1076
-            },
-            {
-              "x": 972,
-              "y": 700
-            },
-            {
-              "x": 988,
-              "y": 528
-            },
-            {
-              "x": 1215,
-              "y": 486
-            }
-          ],
-          "width": [
-            120,
-            16
-          ],
-          "headLen": 50,
-          "chevronSpacing": 150
-        }
-      ],
-      "title": "Yongmun Bridge",
-      "sub": "Cross it, then turn right at the far end",
-      "caption": "The bridge crosses open water. The main hall is up to the right."
-    },
-    {
-      "id": "22",
-      "kind": "clip",
-      "src": "C",
-      "in": 26,
-      "out": 45,
-      "speed": 1.3,
-      "note": "다리 도하 → 우회전"
-    },
-    {
-      "id": "23",
-      "kind": "clip",
-      "src": "C",
-      "in": 45,
-      "out": 78,
-      "speed": 2,
-      "note": "담장길 → 굴 → 대웅보전 계단 (2x)",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "24",
-      "kind": "clip",
-      "src": "C",
-      "in": 78,
-      "out": 86,
-      "speed": 1.5,
-      "note": "용 조각 계단"
-    },
-    {
-      "id": "25",
-      "kind": "closeup",
-      "src": "C",
-      "at": 86,
-      "hold": 5,
-      "zoom": 1.7,
-      "cx": 0.52,
-      "cy": 0,
-      "note": "大雄寶殿 현판 클로즈업 (86s에 현판이 온전히 들어온다)",
-      "title": "Daeungbojeon Hall",
-      "sub": "The main worship hall, under the lanterns",
-      "caption": "The main hall, under the lanterns. Shoes off if you step inside."
-    },
-    {
-      "id": "26",
-      "kind": "clip",
-      "src": "C",
-      "in": 86,
-      "out": 100,
-      "speed": 1,
-      "note": "대웅전 앞 연등"
-    },
-    {
-      "id": "27",
-      "kind": "clip",
-      "src": "C",
-      "in": 100,
-      "out": 163,
-      "speed": 3,
-      "note": "대웅전 에돌기 (3x)",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "28",
-      "kind": "arrow",
-      "src": "C",
-      "at": 163,
-      "hold": 5,
-      "note": "관음상行 계단 상승",
+      "title": "The 108 Steps",
+      "sub": "Straight down, then left",
+      "caption": "108 steps for the 108 earthly desires. Stone lanterns the whole way down.",
+      "stairs": true,
+      "stepCount": 7,
       "arrows": [
         {
           "mode": "steps",
           "points": [
             {
-              "x": 1020,
-              "y": 1078
+              "x": 960,
+              "y": 1074
             },
             {
-              "x": 1080,
-              "y": 930
+              "x": 984,
+              "y": 976.4399999999999
             },
             {
-              "x": 1115,
-              "y": 805
+              "x": 937,
+              "y": 748.8
             }
           ],
           "width": [
-            200,
-            60
+            230,
+            62
           ],
-          "steps": 6,
+          "steps": 7,
+          "perspective": 0.86,
+          "derivedFrom": "left"
+        }
+      ],
+      "turn": "left",
+      "turnAt": 0.3
+    },
+    {
+      "id": "16",
+      "kind": "clip",
+      "src": "A",
+      "in": 178,
+      "out": 218,
+      "speed": 2.2,
+      "title": "Down to the viewpoint",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "17",
+      "kind": "polaroid",
+      "src": "A",
+      "at": 218,
+      "hold": 5,
+      "title": "Ocean Viewpoint",
+      "sub": "The deck out over the rocks",
+      "caption": "The deck hangs over the surf. This temple faces east — come at sunrise.",
+      "polaroid": {
+        "width": 860,
+        "tilt": -2.4
+      }
+    },
+    {
+      "id": "18",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 39,
+      "speed": 2.2,
+      "title": "Out onto the rocks",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "19",
+      "kind": "polaroid",
+      "src": "B",
+      "at": 39,
+      "hold": 5.5,
+      "title": "Temple Panorama",
+      "sub": "The whole temple in one frame",
+      "caption": "The one spot where the entire temple fits in a single frame.",
+      "polaroid": {
+        "width": 900,
+        "tilt": 1.8
+      }
+    },
+    {
+      "id": "20",
+      "kind": "arrow",
+      "src": "B",
+      "at": 39,
+      "hold": 5,
+      "title": "Head Back Up",
+      "sub": "Right, then up the steps",
+      "caption": "Dead end. Turn right and climb the wooden steps back up.",
+      "arrowOverride": [
+        {
+          "mode": "ribbon",
+          "points": [
+            {
+              "x": 960,
+              "y": 1074
+            },
+            {
+              "x": 1120,
+              "y": 900
+            },
+            {
+              "x": 1330,
+              "y": 838
+            }
+          ],
+          "width": [
+            128,
+            26
+          ],
+          "headLen": 54
+        },
+        {
+          "mode": "steps",
+          "points": [
+            {
+              "x": 1330,
+              "y": 838
+            },
+            {
+              "x": 1450,
+              "y": 770
+            },
+            {
+              "x": 1560,
+              "y": 712
+            }
+          ],
+          "width": [
+            150,
+            52
+          ],
+          "steps": 5,
           "perspective": 0.86
         }
       ],
-      "title": "Steps to the Goddess",
-      "sub": "A short climb — take it slowly",
-      "caption": "Uneven stone — use the rail. Under a minute to the top."
+      "arrows": [
+        {
+          "mode": "ribbon",
+          "points": [
+            {
+              "x": 960,
+              "y": 1074
+            },
+            {
+              "x": 1120,
+              "y": 900
+            },
+            {
+              "x": 1330,
+              "y": 838
+            }
+          ],
+          "width": [
+            128,
+            26
+          ],
+          "headLen": 54
+        },
+        {
+          "mode": "steps",
+          "points": [
+            {
+              "x": 1330,
+              "y": 838
+            },
+            {
+              "x": 1450,
+              "y": 770
+            },
+            {
+              "x": 1560,
+              "y": 712
+            }
+          ],
+          "width": [
+            150,
+            52
+          ],
+          "steps": 5,
+          "perspective": 0.86
+        }
+      ]
     },
     {
-      "id": "29",
+      "id": "21",
+      "kind": "clip",
+      "src": "C",
+      "in": 0,
+      "out": 26,
+      "speed": 2.4,
+      "title": "Back down the steps",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "22",
+      "kind": "arrow",
+      "src": "C",
+      "at": 26,
+      "hold": 5,
+      "title": "Yongmun Bridge",
+      "sub": "Cross, then turn right",
+      "caption": "The bridge crosses open water. The main hall is up to the right.",
+      "arrows": [
+        {
+          "mode": "ribbon",
+          "points": [
+            {
+              "x": 960,
+              "y": 1074
+            },
+            {
+              "x": 943.9,
+              "y": 951.612
+            },
+            {
+              "x": 1206,
+              "y": 902.6568
+            }
+          ],
+          "width": [
+            128,
+            20
+          ],
+          "headLen": 56,
+          "chevronSpacing": 140,
+          "derivedFrom": "right",
+          "corner": 0.35
+        }
+      ]
+    },
+    {
+      "id": "23",
+      "kind": "clip",
+      "src": "C",
+      "in": 26,
+      "out": 45,
+      "speed": 1.4,
+      "title": "Crossing the bridge"
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "C",
+      "in": 45,
+      "out": 86,
+      "speed": 3,
+      "title": "Up to the main hall",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "C",
+      "in": 86,
+      "out": 100,
+      "speed": 1,
+      "title": "Daeungbojeon Hall"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "C",
+      "in": 100,
+      "out": 163,
+      "speed": 4,
+      "title": "Around the hall",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "27",
+      "kind": "arrow",
+      "src": "C",
+      "at": 163,
+      "hold": 5,
+      "title": "Steps to the Goddess",
+      "sub": "A short climb — take it slowly",
+      "caption": "Uneven stone with a handrail. Under a minute to the top.",
+      "stairs": true,
+      "stepCount": 6,
+      "arrows": [
+        {
+          "mode": "steps",
+          "points": [
+            {
+              "x": 960,
+              "y": 1074
+            },
+            {
+              "x": 965.4,
+              "y": 971.256
+            },
+            {
+              "x": 867,
+              "y": 731.52
+            }
+          ],
+          "width": [
+            230,
+            62
+          ],
+          "steps": 6,
+          "perspective": 0.86,
+          "derivedFrom": "left"
+        }
+      ]
+    },
+    {
+      "id": "28",
       "kind": "clip",
       "src": "C",
       "in": 163,
       "out": 193,
       "speed": 6,
-      "note": "🔴 흔들리는 돌계단 28초 → 5초 (6x)",
+      "title": "The climb",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "C",
+      "in": 193,
+      "out": 209,
+      "speed": 1.6,
+      "title": "Reaching the statue",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
       "id": "30",
-      "kind": "clip",
-      "src": "C",
-      "in": 193,
-      "out": 209,
-      "speed": 1.5,
-      "note": "해수관음대불"
-    },
-    {
-      "id": "31",
       "kind": "polaroid",
       "src": "C",
       "at": 209,
-      "hold": 6,
-      "note": "해수관음대불 전신 (209s) + 해설 카드 자리",
+      "hold": 5.5,
+      "title": "Haesu Gwaneum",
+      "sub": "Goddess of Mercy, facing the sea",
+      "caption": "She faces the open sea. Visitors come here to ask for one wish.",
       "polaroid": {
         "width": 880,
         "tilt": -1.6
-      },
-      "title": "Haesu Gwaneum",
-      "sub": "Goddess of Mercy, facing the open sea",
-      "caption": "The sea-facing Goddess of Mercy. Visitors come to ask for one wish."
+      }
+    },
+    {
+      "id": "31",
+      "kind": "clip",
+      "src": "C",
+      "in": 209,
+      "out": 226,
+      "speed": 1,
+      "title": "The view from the top"
     },
     {
       "id": "32",
       "kind": "clip",
       "src": "C",
-      "in": 209,
-      "out": 268,
-      "speed": 4,
-      "note": "🔴 하산 + 공사구간 (4x)",
+      "in": 226,
+      "out": 290,
+      "speed": 4.5,
+      "title": "Back down",
       "ramp": {
         "seconds": 0.6
       }
@@ -540,37 +657,39 @@
       "id": "33",
       "kind": "clip",
       "src": "C",
-      "in": 268,
-      "out": 306,
-      "speed": 2,
-      "note": "담장길 → 대나무길 (2x)",
-      "ramp": {
-        "seconds": 0.6
-      }
+      "in": 290,
+      "out": 312,
+      "speed": 1,
+      "title": "The bamboo path"
     },
     {
       "id": "34",
-      "kind": "clip",
+      "kind": "closeup",
       "src": "C",
-      "in": 306,
-      "out": 314,
-      "speed": 1,
-      "note": "석탑"
+      "at": 312,
+      "hold": 4.5,
+      "title": "Stone Pagoda",
+      "sub": "Near the exit gate",
+      "caption": "A seven-storey pagoda marks the way out. You have come full circle.",
+      "focus": [
+        560,
+        60,
+        560,
+        820
+      ],
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
     },
     {
       "id": "35",
-      "kind": "polaroid",
+      "kind": "clip",
       "src": "C",
-      "at": 314,
-      "hold": 4,
-      "note": "석탑",
-      "polaroid": {
-        "width": 820,
-        "tilt": 2.2
-      },
-      "title": "Stone Pagoda",
-      "sub": "You are back at the entrance gate",
-      "caption": "You are back at the gate. The pagoda marks the way out."
+      "in": 312,
+      "out": 320,
+      "speed": 1,
+      "title": "Toward the exit"
     },
     {
       "id": "36",
@@ -579,7 +698,7 @@
       "in": 139,
       "out": 147,
       "speed": 1,
-      "note": "엔딩 — 현판 재사용 (플랜 §C-3)",
+      "title": "Haedong Yonggungsa",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8

@@ -58,9 +58,11 @@ function ribbonLayer(TH, a, progress) {
 
   const body = ribbonPath(shaft, w0, w1, total);
   const head = shown > headLen * 0.9 ? headPath(withHead, tipW * 2.05, headLen) : '';
-  const chev = chevrons(shaft, w0, w1, total, a.chevronSpacing ?? 140, 70);
   const tipFade = Math.min(1, progress * 3.2);
 
+  // No chevrons. They were meant to read as "direction of travel" but inside a
+  // white ribbon they just look like a second, darker arrow pointing the same
+  // way — the client read them as a bug, and they were right.
   return `
     <g opacity="${(TH.opacity * tipFade).toFixed(3)}">
       <g transform="translate(0,7)" opacity="${TH.shadowOpacity.toFixed(2)}">
@@ -68,9 +70,6 @@ function ribbonLayer(TH, a, progress) {
       </g>
       <path d="${body}" fill="url(#grad)" stroke="${TH.rim}" stroke-width="${TH.rimWidth}" stroke-linejoin="round"/>
       ${head ? `<path d="${head}" fill="url(#grad)" stroke="${TH.rim}" stroke-width="${TH.rimWidth}" stroke-linejoin="round"/>` : ''}
-      <g fill="none" stroke="${TH.chev}" stroke-width="${TH.chevWidth}" stroke-linecap="round" stroke-linejoin="round">
-        ${chev.map((c) => `<path d="${c.d}"/>`).join('')}
-      </g>
     </g>`;
 }
 
@@ -145,8 +144,7 @@ function pointerLayer(TH, a, progress) {
   const base = { x: now.x - dir.x * headLen, y: now.y - dir.y * headLen };
   const p1 = { x: base.x + per.x * headW / 2, y: base.y + per.y * headW / 2 };
   const p2 = { x: base.x - per.x * headW / 2, y: base.y - per.y * headW / 2 };
-  const ringR = (a.ring ?? 0) * t;
-
+  const ringR = 0;   // the highlight ring read as clutter; the arrow alone points
   const stem = a.stem ?? 16;
   return `<g opacity="${(TH.opacity * t).toFixed(3)}">
     <g transform="translate(0,6)" opacity="${TH.shadowOpacity.toFixed(2)}">

@@ -28,7 +28,12 @@ export function authorArrow(route, opt = {}) {
   const t = opt.thickness ?? 1;
 
   if (opt.steps) {
-    const mid = { x: (start.x + route.x) / 2, y: (start.y + endY) / 2 };
+    // Stairs that bend still bend: the plates follow the corner rather than
+    // marching in a straight line past the turn.
+    const turning = route.kind === 'left' || route.kind === 'right';
+    const f = turning ? Math.min(0.7, Math.max(0.3, route.cornerAt ?? 0.4)) : 0.5;
+    const xPre = turning ? (route.pts?.[0]?.x ?? start.x) : (start.x + route.x) / 2;
+    const mid = { x: start.x + (xPre - start.x) * f, y: start.y + (endY - start.y) * f };
     return {
       mode: 'steps',
       points: [start, mid, { x: route.x, y: endY }],
