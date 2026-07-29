@@ -255,4 +255,22 @@ if (Math.abs(outDur - masterDur) > 1.2) {
     process.exit(1);
   }
 }
+/**
+ * A review copy, always.
+ *
+ * The delivery master is 200–300 MB, which nobody can watch over a chat
+ * window — that is how a finished cut ended up being shown as two stills.
+ * 720p at a capped bitrate lands near 35 MB, enough to answer "does it look
+ * right", while the full-size file stays for delivery.
+ */
+{
+  const review = OUT.replace(/\.mp4$/, '-review.mp4');
+  const [rw, rh] = WIDE_MODE ? [1280, 720] : [720, 1280];
+  run(['-i', OUT, '-vf', `scale=${rw}:${rh}:flags=lanczos`,
+    '-c:v', 'libx264', '-preset', 'fast', '-crf', '28',
+    '-maxrate', '1500k', '-bufsize', '3000k',
+    '-c:a', 'aac', '-b:a', '96k', '-movflags', '+faststart', review], 'review copy');
+  console.log(`  review  ${(fs.statSync(review).size / 1048576).toFixed(0)} MB  ${path.basename(review)}`);
+}
+
 console.log(`\n=> ${OUT}  (${outDur.toFixed(1)}s, 마스터 ${masterDur.toFixed(1)}s, 비트 ${tl.rows.length})`);
