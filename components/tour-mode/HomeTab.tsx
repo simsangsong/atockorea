@@ -757,7 +757,7 @@ export default function HomeTab({
         </div>
       )}
       {lifecycle === 'ended' && (
-        <div className="tr-home-card mb-2 px-4 py-4" data-testid="home-status-ended">
+        <div className="tr-home-card mb-2 px-4 py-4" data-testid="home-status-ended" data-tr-phase="ended">
           <p className="tr-title text-[var(--tr-ink)]">{copy.endedTitle}</p>
           <p className="tr-card-text mt-1 text-[var(--tr-ink-2)]">{copy.endedBody}</p>
         </div>
