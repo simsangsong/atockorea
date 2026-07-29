@@ -138,6 +138,140 @@ const EMPTY_COPY: Record<'customer' | 'operator', Record<RoomLocale, string>> = 
   },
 };
 
+/**
+ * N4 — the empty feed is a PLACE, not a gap.
+ *
+ * Measured before this: an empty chat was ~80% blank screen under one grey
+ * sentence. Blank is honest — there really are no messages — but it is the
+ * only screen in the app that gets a whole viewport to say what this room can
+ * do, and it was spending it on nothing. Every guest sees it exactly once, at
+ * the moment they have just arrived and know least.
+ *
+ * Three lines, and three is the budget on purpose: this is the quietest surface
+ * in the app and a fourth turns an orientation into a manual.
+ *
+ * Rules this copy follows:
+ *   · Only things that are true HERE. No line points at a screen the reader
+ *     cannot reach from this one.
+ *   · No duplicate chip row (U-D20v2). These are sentences, not controls — the
+ *     signal row is two thumb-widths below and does not need a twin.
+ *   · Role-aware, like EMPTY_COPY above: a guide reading "wait for your guide"
+ *     was the P1-4 bug, and this block would reproduce it at three times the
+ *     size.
+ *
+ * Typed as a 3-tuple per locale so tsc rejects a locale with two lines or four
+ * — the loose `Record<string, …>` shape is exactly what let fr/de/ru/it slip
+ * out of `WEATHER_LOCALES` silently (G1).
+ */
+type EmptyHints = readonly [string, string, string];
+
+const EMPTY_HINTS: Record<'customer' | 'operator', Record<RoomLocale, EmptyHints>> = {
+  customer: {
+    en: [
+      'Write in your own language — your guide reads it in theirs.',
+      'Send a photo to ask what something is — a menu, a sign, a dish.',
+      'Lost, late, or need a stop? One tap on the row below tells your guide.',
+    ],
+    ko: [
+      '편한 언어로 쓰세요 — 가이드에게는 가이드의 언어로 도착해요.',
+      '사진을 보내 물어보세요 — 메뉴판, 표지판, 처음 보는 음식도요.',
+      '길을 잃거나 늦거나 잠깐 멈춰야 할 땐, 아래 줄을 한 번만 누르세요.',
+    ],
+    ja: [
+      'お好きな言語でどうぞ — ガイドにはガイドの言語で届きます。',
+      '写真を送って聞けます — メニュー、標識、初めて見る料理も。',
+      '道に迷った・遅れる・少し止まりたいときは、下の列を一度タップ。',
+    ],
+    es: [
+      'Escribe en tu idioma: tu guía lo recibe en el suyo.',
+      'Envía una foto para preguntar qué es: una carta, un cartel, un plato.',
+      '¿Perdido, con retraso o necesitas parar? Toca la fila de abajo.',
+    ],
+    zh: [
+      '用你习惯的语言写就行 — 导游会以自己的语言收到。',
+      '拍张照片就能提问 — 菜单、路牌、没见过的菜都可以。',
+      '走散、迟到或想暂停？点一下下面那一行即可。',
+    ],
+    'zh-TW': [
+      '用你習慣的語言寫就行 — 導遊會以自己的語言收到。',
+      '拍張照片就能提問 — 菜單、路牌、沒見過的菜都可以。',
+      '走散、遲到或想暫停？點一下下面那一行即可。',
+    ],
+    fr: [
+      'Écrivez dans votre langue — votre guide la reçoit dans la sienne.',
+      'Envoyez une photo pour demander ce que c’est : une carte, un panneau, un plat.',
+      'Perdu, en retard, besoin d’une pause ? Un appui sur la ligne ci-dessous.',
+    ],
+    de: [
+      'Schreiben Sie in Ihrer Sprache — Ihr Guide liest es in seiner.',
+      'Schicken Sie ein Foto und fragen Sie nach — Karte, Schild, unbekanntes Gericht.',
+      'Verlaufen, verspätet, kurze Pause nötig? Ein Tipp auf die Zeile unten.',
+    ],
+    ru: [
+      'Пишите на своём языке — гид получит это на своём.',
+      'Пришлите фото и спросите, что это: меню, вывеска, незнакомое блюдо.',
+      'Заблудились, опаздываете, нужна остановка? Одно нажатие на строку ниже.',
+    ],
+    it: [
+      'Scriva nella Sua lingua — la guida la riceve nella sua.',
+      'Mandi una foto per chiedere che cos’è: un menu, un cartello, un piatto.',
+      'Perso, in ritardo o serve una sosta? Un tocco sulla riga qui sotto.',
+    ],
+  },
+  operator: {
+    en: [
+      'Write once — every guest reads it in their own language.',
+      'Hold the mic and speak; it arrives as text.',
+      'The quick replies below are pre-translated, so they send instantly.',
+    ],
+    ko: [
+      '한 번만 쓰면 손님마다 자기 언어로 받아요.',
+      '마이크를 누르고 말하면 글로 전해집니다.',
+      '아래 빠른 답장은 미리 번역돼 있어 기다림 없이 나갑니다.',
+    ],
+    ja: [
+      '一度書けば、お客様それぞれの言語で届きます。',
+      'マイクを押して話すと、文章になって伝わります。',
+      '下のクイック返信は翻訳済みなので、待たずに送れます。',
+    ],
+    es: [
+      'Escribe una vez: cada viajero lo recibe en su idioma.',
+      'Mantén pulsado el micro y habla; llega como texto.',
+      'Las respuestas rápidas de abajo ya están traducidas y salen al instante.',
+    ],
+    zh: [
+      '写一次即可 — 每位客人都会收到自己语言的版本。',
+      '按住麦克风说话，会以文字送达。',
+      '下面的快捷回复已预先翻译，发送无需等待。',
+    ],
+    'zh-TW': [
+      '寫一次即可 — 每位客人都會收到自己語言的版本。',
+      '按住麥克風說話，會以文字送達。',
+      '下面的快捷回覆已預先翻譯，傳送無需等待。',
+    ],
+    fr: [
+      'Écrivez une fois : chaque voyageur le reçoit dans sa langue.',
+      'Maintenez le micro et parlez ; cela arrive sous forme de texte.',
+      'Les réponses rapides ci-dessous sont déjà traduites et partent aussitôt.',
+    ],
+    de: [
+      'Einmal schreiben — jeder Gast liest es in seiner Sprache.',
+      'Mikrofon gedrückt halten und sprechen; es kommt als Text an.',
+      'Die Schnellantworten unten sind vorübersetzt und gehen sofort raus.',
+    ],
+    ru: [
+      'Напишите один раз — каждый гость получит это на своём языке.',
+      'Удерживайте микрофон и говорите: сообщение придёт текстом.',
+      'Быстрые ответы ниже уже переведены и уходят без задержки.',
+    ],
+    it: [
+      'Scriva una volta: ogni ospite lo riceve nella propria lingua.',
+      'Tenga premuto il microfono e parli; arriva come testo.',
+      'Le risposte rapide qui sotto sono già tradotte e partono subito.',
+    ],
+  },
+};
+
 function isOperatorViewer(role?: string): boolean {
   return role === 'guide' || role === 'driver' || role === 'admin';
 }
@@ -461,11 +595,39 @@ export default function ChatFeed({
           </button>
         )}
 
-        {messages.length === 0 && (
-          <p className="tr-card-text mx-auto max-w-[240px] pt-16 text-center leading-relaxed text-[var(--tr-ink-3)]">
-            {EMPTY_COPY[isOperatorViewer(viewerRole) ? 'operator' : 'customer'][viewerLocale]}
-          </p>
-        )}
+        {messages.length === 0 && (() => {
+          const role = isOperatorViewer(viewerRole) ? 'operator' : 'customer';
+          return (
+            <div
+              className="mx-auto max-w-[300px] pt-14 pb-4"
+              data-testid="chat-empty-state"
+            >
+              <p className="tr-card-text mx-auto max-w-[248px] text-center leading-relaxed text-[var(--tr-ink-2)]">
+                {EMPTY_COPY[role][viewerLocale]}
+              </p>
+              {/*
+                N4 — the three lines that turn the blank into a place.
+                Deliberately NOT buttons: the signal row already owns the taps
+                (U-D20v2), and a second set of chips here would make the two
+                rows compete. `aria-hidden` on the markers so a screen reader
+                hears three sentences, not three bullets.
+              */}
+              <ul className="mt-6 space-y-3 px-1" data-testid="chat-empty-hints">
+                {EMPTY_HINTS[role][viewerLocale].map((hint) => (
+                  <li key={hint} className="flex items-start gap-2.5">
+                    <span
+                      aria-hidden="true"
+                      className="mt-[0.5em] h-1 w-1 shrink-0 rounded-full bg-[var(--tr-ink-3)]"
+                    />
+                    <span className="tr-meta text-cjk-body leading-relaxed text-[var(--tr-ink-3)]">
+                      {hint}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          );
+        })()}
 
         {items.map((item) => {
           if (item.type === 'date') {
