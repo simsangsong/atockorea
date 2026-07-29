@@ -39,6 +39,7 @@ export function PoiThumb({
   name,
   className = '',
   rounded = 'rounded-2xl',
+  fill = false,
 }: {
   poi: PoiImageSource | null | undefined;
   /** Stable identity for the tint — the poi_key, never the localised name. */
@@ -48,18 +49,26 @@ export function PoiThumb({
   /** Size utilities, e.g. `h-12 w-12`. */
   className?: string;
   rounded?: string;
+  /**
+   * Row thumbnails are fixed-size and must not shrink; the course card's photo
+   * strip is the opposite — three of them share the width and each takes a
+   * third. Opting in rather than fighting `shrink-0` at the call site, because
+   * `shrink-0 flex-1` resolves by stylesheet order and would be a coin flip.
+   */
+  fill?: boolean;
 }) {
   // Tracked by URL rather than by index so that a re-ordered or re-fetched
   // candidate list cannot resurrect a URL already known to 404.
   const [broken, setBroken] = useState<ReadonlySet<string>>(NO_BROKEN);
 
+  const box = fill ? 'min-w-0 flex-1' : 'shrink-0';
   const candidates = poiImageCandidates(poi);
   const src = candidates.find((url) => !broken.has(url)) ?? null;
 
   if (src) {
     return (
       <div
-        className={`shrink-0 overflow-hidden bg-[var(--tr-surface-2)] ${rounded} ${className}`}
+        className={`${box} overflow-hidden bg-[var(--tr-surface-2)] ${rounded} ${className}`}
         data-testid="plan-poi-thumb"
         // Lets the walk harness count photos vs swatches EXACTLY. Counting
         // `.tr-card`s that happen to contain an <img> measured unrelated cards
@@ -83,7 +92,7 @@ export function PoiThumb({
   const tint = avatarColorFor(seed);
   return (
     <div
-      className={`flex shrink-0 items-center justify-center ${rounded} ${className}`}
+      className={`flex ${box} items-center justify-center ${rounded} ${className}`}
       style={{ backgroundColor: tint.bg, color: tint.ink }}
       data-testid="plan-poi-thumb"
       data-thumb="swatch"

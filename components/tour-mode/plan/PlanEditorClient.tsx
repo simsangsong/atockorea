@@ -2424,6 +2424,38 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   }, [pois, poiQuery, stops, locale]);
 
   const poiByKey = useMemo(() => new Map(pois.map((poi) => [poi.poi_key, poi])), [pois]);
+
+  /**
+   * P7.6 — up to three POIs per course option, for the card's photo strip.
+   *
+   * Keyed by course index rather than computed inline so the lookup does not
+   * rebuild on every keystroke in the search field, and so a course whose POIs
+   * have not loaded yet simply renders no strip instead of three swatches that
+   * would flip to photos a moment later.
+   */
+  const courseHeroPois = useMemo(() => {
+    const out = new Map<number, Array<{ key: string; poi: PickerPoi; name: string }>>();
+    for (const course of courseOptions ?? []) {
+      const keys = course.poiKeys.length > 0 ? course.poiKeys : course.candidatePoiKeys;
+      /**
+       * 🔴 Resolve FIRST, then take three — the same filter the preview line
+       * uses. A course's `constituent_pois` can name POIs outside the region
+       * list this screen loaded, and the first draft kept those: the card
+       * rendered a tinted "U" and "M" taken from the first letter of a database
+       * key, next to a preview line naming three entirely different places.
+       * A swatch is meant to say "this place has no photo yet", not to show a
+       * guest a letter from a primary key.
+       */
+      const resolved = keys
+        .map((key) => ({ key, poi: poiByKey.get(key) }))
+        .filter((entry): entry is { key: string; poi: PickerPoi } => Boolean(entry.poi))
+        .slice(0, 3)
+        .map((entry) => ({ ...entry, name: poiName(entry.poi, locale) }));
+      if (resolved.length === 0) continue;
+      out.set(course.index, resolved);
+    }
+    return out;
+  }, [courseOptions, locale, poiByKey]);
   const previewStops = useMemo(
     () => (previewTemplate ? toEditorStops(previewTemplate.stops, locale) : []),
     [locale, previewTemplate],
@@ -3058,13 +3090,50 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         return (
                           <article
                             key={course.index}
-                            className="tr-card tr-plan-course-card px-4 py-4"
+                            className="tr-card tr-plan-course-card overflow-hidden"
                             data-testid={`plan-course-option-${course.index}`}
                           >
-                            <div className="flex items-start gap-3">
-                              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl tr-plan-tile">
-                                <IconJourney size={TR_ICON.action} aria-hidden />
-                              </span>
+                            {/* 🔴 P7.6 (P7-D3 ② / H-6) — this is where the guest
+                                makes the most emotional decision of the trip:
+                                「UNESCO & K-Drama Coast」 vs 「Beaches, Tea &
+                                Cafe」 vs 「Waterfalls & Volcanic Coast」. The
+                                three cards carried the SAME icon, the SAME
+                                layout and the SAME button, and not one photo of
+                                the places involved — so the only thing to
+                                choose on was the name.
+                                Three thumbnails from the route's own POIs, so
+                                the cards differ at a glance. Photoless POIs
+                                fall to their tinted initial (P7.1), which still
+                                differs card to card rather than reading as an
+                                unfinished screen. */}
+                            {courseHeroPois.get(course.index)?.length ? (
+                              <div className="flex gap-0.5" aria-hidden>
+                                {courseHeroPois.get(course.index)!.map((entry, i) => (
+                                  <PoiThumb
+                                    key={`${course.index}-${entry.key}-${i}`}
+                                    poi={entry.poi}
+                                    seed={entry.key}
+                                    name={entry.name}
+                                    fill
+                                    rounded=""
+                                    className="h-[92px]"
+                                  />
+                                ))}
+                              </div>
+                            ) : null}
+                            {/* The generic journey icon is gone from cards that
+                                have a photo strip: it was identical on all
+                                three, which is half of why they read as the
+                                same card (§B-1). The strip is the identity now,
+                                and the title gets the width back. Cards without
+                                resolvable POIs keep the icon so they are not
+                                left with a bare title. */}
+                            <div className="flex items-start gap-3 px-4 pt-3.5">
+                              {!courseHeroPois.get(course.index)?.length && (
+                                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl tr-plan-tile">
+                                  <IconJourney size={TR_ICON.action} aria-hidden />
+                                </span>
+                              )}
                               <div className="min-w-0 flex-1">
                                 <h3 className="tr-title font-bold leading-snug text-[var(--tr-ink)]">
                                   {course.name}
@@ -3076,7 +3145,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                 )}
                               </div>
                             </div>
-                            <div className="mt-3 flex flex-wrap items-center gap-2">
+                            <div className="mt-3 flex flex-wrap items-center gap-2 px-4 pb-4">
                               {!course.isCustom && (
                                 <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-surface-2)] px-3 text-[var(--tr-ink-2)]">
                                   {copy.courseStops(places.length)}
@@ -3235,7 +3304,15 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     <div key={poi.poi_key} className="tr-card flex items-center gap-3 px-3 py-3">
                       <PoiThumb poi={poi} seed={poi.poi_key} name={name} className="h-12 w-12" />
                       <div className="min-w-0 flex-1">
-                        <p className="tr-card-text truncate font-medium text-[var(--tr-ink)]">{name}</p>
+                        {/* P7.6 (H-6) — `truncate` cut place names mid-word:
+                            「Jeju Tangerine Picking Experi…」. A guest choosing
+                            between places cannot choose on a name that stops.
+                            Two lines, and `text-cjk-body` so Korean/Japanese/
+                            Chinese break at word boundaries rather than
+                            anywhere (the repo's standing CJK rule). */}
+                        <p className="tr-card-text tr-plan-line-clamp-2 text-cjk-body font-medium text-[var(--tr-ink)]">
+                          {name}
+                        </p>
                         <p className="tr-meta text-[var(--tr-ink-3)]">
                           {poi.category ?? ''}
                           {poi.default_stay_minutes ? ` · ${copy.minutes(poi.default_stay_minutes)}` : ''}
