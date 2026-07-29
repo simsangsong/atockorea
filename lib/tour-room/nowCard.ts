@@ -406,11 +406,22 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
   const notice = activeNotice([...input.messages], input.tourDate, nowMs);
   const isFreeTime = notice?.kind === 'free_time_timer' && !notice.cancelled;
 
+  // SG-2d — free_time_timer's server default is the English literal
+  // 'the vehicle' with no pointI18n; on the rally hero that would leak to
+  // all ten locales, so the sentinel is omitted (the copy's own fallback
+  // sentence takes over). Real operator-typed points ride verbatim.
+  const rawPoint = notice?.pointI18n?.[input.locale] ?? notice?.point ?? null;
+  const meetingPoint = rawPoint === 'the vehicle' ? null : rawPoint;
+
   return {
     lifecycle: input.lifecycle,
-    // A free-time timer is not a rally; only a meeting notice escalates.
-    rally: notice && notice.kind === 'meeting_notice' ? rallyStage(notice, nowMs) : null,
-    meetingPoint: notice?.pointI18n?.[input.locale] ?? notice?.point ?? null,
+    // SG-2d — the ladder is kind-agnostic now: a solo driver's return timer
+    // escalates exactly like a guide's meeting notice. The banner already
+    // fired overdue capsules for both kinds; only this hero derivation was
+    // still split (the driver-solo scenario — this track's target — never
+    // saw the overage card). rallyStage itself handles cancelled → null.
+    rally: notice ? rallyStage(notice, nowMs) : null,
+    meetingPoint,
     // SG-1a — the notice's target feeds every countdown; a cancelled notice
     // must never feed a numeral, whatever its target says.
     meetingTargetMs: notice && !notice.cancelled ? notice.targetMs : null,

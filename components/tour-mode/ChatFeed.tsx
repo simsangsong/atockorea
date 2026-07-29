@@ -23,6 +23,7 @@ import AudioButton from '@/components/tour-mode/AudioButton';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
+import WaitEndedCard from '@/components/tour-mode/WaitEndedCard';
 import ApproachCard from '@/components/tour-mode/ApproachCard';
 import ArrivalBundleCard from '@/components/tour-mode/ArrivalBundleCard';
 import ArrivalVideoCard from '@/components/tour-mode/ArrivalVideoCard';
@@ -793,6 +794,18 @@ export default function ChatFeed({
                       autoPlay={isNew && speakArrivals}
                     />
                   ) : null}
+                </div>
+              );
+            }
+            // SG-2b-γ — the rejoin capsule. One branch, before the generic
+            // pill, exactly like every other typed capsule (기존 채팅 무변경).
+            if (message.metadata?.kind === 'wait_ended') {
+              return (
+                <div key={message.id} className="my-2 flex justify-center px-2">
+                  <WaitEndedCard
+                    meta={message.metadata as unknown as import('@/components/tour-mode/WaitEndedCard').WaitEndedMeta}
+                    locale={viewerLocale}
+                  />
                 </div>
               );
             }

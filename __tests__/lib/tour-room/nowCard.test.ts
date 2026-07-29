@@ -370,6 +370,42 @@ describe('roomNowCardContext — adapter threading (gate ⑦)', () => {
     expect(ctx.meetingTargetMs).toBeNull();
   });
 
+  it('SG-2d — a solo driver return timer escalates to the rally hero at T+5', () => {
+    // The driver-solo scenario (this track's target) never saw the overage
+    // card: the adapter derived rally from meeting_notice only. The rung is
+    // UNCHANGED — due stays quiet (crying wolf) — so entry is T+5, not T0.
+    const timer = systemMessage(
+      { kind: 'free_time_timer', until_time: '11:54' },
+      NOW - 40 * 60_000,
+    );
+    const ctx = roomNowCardContext({
+      messages: [timer],
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      nowMs: NOW, // 12:00 KST = T+6 past an 11:54 target
+    });
+    expect(ctx.rally).toBe('overdue');
+    const result = nowCard(ctx);
+    expect(result.state).toBe('rally_overdue');
+    expect(result.data.rallyTargetMs).toBe(Date.UTC(2026, 6, 28, 2, 54, 0));
+  });
+
+  it("SG-2d — the server's 'the vehicle' sentinel never reaches a hero", () => {
+    const timer = systemMessage(
+      { kind: 'free_time_timer', until_time: '11:54', meeting_point: 'the vehicle' },
+      NOW - 40 * 60_000,
+    );
+    const ctx = roomNowCardContext({
+      messages: [timer],
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      nowMs: NOW,
+    });
+    expect(ctx.meetingPoint).toBeNull();
+  });
+
   it('latestArrival stamps when the guest got here (the durable arrived source)', () => {
     const at = NOW - 20 * 60_000;
     const arrival = latestArrival(

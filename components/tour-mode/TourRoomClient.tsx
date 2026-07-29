@@ -64,6 +64,7 @@ import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import DepartureCountdown from '@/components/tour-mode/DepartureCountdown';
 import { RoomClockProvider } from '@/components/tour-mode/roomClock';
+import { RallyLadder } from '@/hooks/useRallyLadder';
 import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
 import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
@@ -904,6 +905,15 @@ function TourRoomLive({
 
   return (
     <RoomClockProvider serverNowMs={snapshot.server_now_ms}>
+      {/* SG-2a — guest-side rally firer (backup; the wake-locked cockpit is
+          primary). Headless: crossings fire even while chat is the open tab. */}
+      <RallyLadder
+        bookingId={bookingId}
+        roomSession={data.session}
+        messages={messages}
+        tourDate={snapshot.booking?.tour_date}
+        enabled={viewerRole === 'customer' && !readOnly}
+      />
       {/* Pre-tour planner nudge — most guests miss the email's secondary plan
           link, so the day plan never gets set. Lead guest, lobby only. */}
       {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
