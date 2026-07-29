@@ -88,44 +88,44 @@
     },
     {
       "id": "reviews",
-      "label": "**Reviews** → Reseñas"
+      "label": "Reseñas"
     }
   ],
   "glanceItems": [
     {
       "icon": "camera",
-      "label": "**Photo Value** → Valor fotográfico",
-      "value": "**Excellent** → Excelente",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
       "level": 5
     },
     {
       "icon": "mountain",
-      "label": "**Scenic** → Pintoresco",
-      "value": "**Good** → Bueno",
+      "label": "Pintoresco",
+      "value": "Bueno",
       "level": 4
     },
     {
       "icon": "footprints",
-      "label": "**Walking** → Caminata",
-      "value": "**Moderate** → Moderado",
+      "label": "Caminata",
+      "value": "Moderado",
       "level": 3
     },
     {
       "icon": "cloud-rain",
-      "label": "**Rain Safety** → Seguridad bajo la lluvia",
-      "value": "**Moderate** → Moderado",
+      "label": "Seguridad bajo la lluvia",
+      "value": "Moderado",
       "level": 3
     },
     {
       "icon": "users",
-      "label": "**Family Fit** → Apto para familias",
-      "value": "**Good** → Bueno",
+      "label": "Apto para familias",
+      "value": "Bueno",
       "level": 4
     },
     {
       "icon": "gauge",
-      "label": "**Balance** → Equilibrio",
-      "value": "**Balanced** → Equilibrado",
+      "label": "Equilibrio",
+      "value": "Equilibrado",
       "level": 4
     }
   ],
@@ -1934,7 +1934,7 @@
           },
           {
             "id": "reviews",
-            "label": "**Reviews** → Reseñas"
+            "label": "Reseñas"
           }
         ]
       }
@@ -1946,38 +1946,38 @@
         "glanceItems": [
           {
             "icon": "camera",
-            "label": "**Photo Value** → Valor fotográfico",
-            "value": "**Excellent** → Excelente",
+            "label": "Valor fotográfico",
+            "value": "Excelente",
             "level": 5
           },
           {
             "icon": "mountain",
-            "label": "**Scenic** → Pintoresco",
-            "value": "**Good** → Bueno",
+            "label": "Pintoresco",
+            "value": "Bueno",
             "level": 4
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → Caminata",
-            "value": "**Moderate** → Moderado",
+            "label": "Caminata",
+            "value": "Moderado",
             "level": 3
           },
           {
             "icon": "cloud-rain",
-            "label": "**Rain Safety** → Seguridad bajo la lluvia",
-            "value": "**Moderate** → Moderado",
+            "label": "Seguridad bajo la lluvia",
+            "value": "Moderado",
             "level": 3
           },
           {
             "icon": "users",
-            "label": "**Family Fit** → Apto para familias",
-            "value": "**Good** → Bueno",
+            "label": "Apto para familias",
+            "value": "Bueno",
             "level": 4
           },
           {
             "icon": "gauge",
-            "label": "**Balance** → Equilibrio",
-            "value": "**Balanced** → Equilibrado",
+            "label": "Equilibrio",
+            "value": "Equilibrado",
             "level": 4
           }
         ]

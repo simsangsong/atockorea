@@ -583,7 +583,7 @@
         "Vehículo privado (sedán, SUV o furgoneta según el tamaño del grupo)",
         "Conductor-guía autorizado con habla inglesa",
         "Recogida y entrega en hotel en cualquier punto de Jeju",
-        "Combustible y peajes para la ruta estándar",
+        "Combustible, peajes y aparcamiento para la ruta estándar",
         "Las tarifas de entrada no están incluidas; se pagan directamente en cada lugar",
         "Las comidas no están incluidas",
         "Las compras personales no están incluidas",
@@ -666,7 +666,7 @@
       "detail": "Confirmación de reserva con resumen del itinerario"
     },
     {
-      "timing": "12 horas antes > **Notes:** Items 20, 23, and 26 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS class names — kept as-is since they are code values, not translatable text. All proper nouns (Hyeopjae, Hamdeok, Hallasan, Seongsan, Camellia Hill, Jeju) are retained unchanged.",
+      "timing": "12 horas antes",
       "title": "Recordatorio de 12 horas",
       "detail": "Actualización del clima y ajustes de ruta"
     },
@@ -1555,7 +1555,7 @@
           {
             "icon": "route",
             "title": "Especialistas en rutas",
-            "description": "Itinerario diseñado a medida, no un circuito genérico > **Notes:** Lines **5, 7** (dashes), **12, 16, 20, 24** (CSS class names), **25** (component identifier), and **28** (Tailwind class) were kept as-is since they are technical/code tokens that should not be translated.",
+            "description": "Itinerario diseñado a medida, no un circuito genérico",
             "iconBg": "bg-sky-50/80 *(código CSS — sin cambios)*",
             "iconColor": "text-sky-600"
           },
@@ -1816,7 +1816,6 @@
     "currency": "USD",
     "unit": "vehicle",
     "durations": [
-      "4h",
       "5h",
       "6h",
       "7h",
@@ -1830,7 +1829,6 @@
         "paxMin": 1,
         "paxMax": 6,
         "prices": {
-          "4h": 149,
           "5h": 169,
           "6h": 189,
           "7h": 209,
@@ -1844,7 +1842,6 @@
         "paxMin": 7,
         "paxMax": 9,
         "prices": {
-          "4h": 182,
           "5h": 203,
           "6h": 223,
           "7h": 243,
@@ -1858,7 +1855,6 @@
         "paxMin": 10,
         "paxMax": 13,
         "prices": {
-          "4h": 250,
           "5h": 270,
           "6h": 291,
           "7h": 311,

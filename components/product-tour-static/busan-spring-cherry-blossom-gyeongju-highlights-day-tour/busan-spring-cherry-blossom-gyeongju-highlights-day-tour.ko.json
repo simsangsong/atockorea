@@ -1339,20 +1339,20 @@
     {
       "id": "subnav",
       "section_html_id": null,
-      "component": "**TourTabsNav** → 투어 탭 메뉴",
+      "component": "TourTabsNav",
       "props": {
         "subnavItems": [
           {
             "id": "overview",
-            "label": "**Overview** → 개요"
+            "label": "개요"
           },
           {
             "id": "itinerary",
-            "label": "**Itinerary** → 여행 일정"
+            "label": "여행 일정"
           },
           {
             "id": "details",
-            "label": "**Details** → 세부 정보"
+            "label": "세부 정보"
           },
           {
             "id": "faq",
@@ -1360,7 +1360,7 @@
           },
           {
             "id": "reviews",
-            "label": "**Reviews** → 리뷰"
+            "label": "리뷰"
           }
         ]
       }
@@ -1368,37 +1368,37 @@
     {
       "id": "overview",
       "section_html_id": "overview",
-      "component": "**TourAtAGlance** → 투어 한눈에 보기",
+      "component": "TourAtAGlance",
       "props": {
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "**Duration** → 소요 시간",
+            "label": "소요 시간",
             "value": "**≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)** → ≈ 11.5시간 (08:10 첫 픽업, ≈ 19:45 마지막 하차)"
           },
           {
             "icon": "users",
-            "label": "**Group** → 그룹",
+            "label": "그룹",
             "value": "**Small group, mini-van (typically up to ≈10 passengers)** → 소규모 그룹, 미니밴 (일반적으로 최대 ≈10명)"
           },
           {
             "icon": "subway",
-            "label": "**Pickup** → 픽업 장소",
+            "label": "픽업 장소",
             "value": "**Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)** → 부산역 4번 출구 (08:10), 서면 4번 출구 (08:30), 해운대 5번 출구 (09:10)"
           },
           {
             "icon": "calendar",
-            "label": "**Best season** → 최적 시즌",
+            "label": "최적 시즌",
             "value": "**Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)** → 연중 운영; 벚꽃 시즌 대체 코스 3월 중순~4월 중순 (아홉산 대신 해운대 달맞이고개 방문)"
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → 도보",
+            "label": "도보",
             "value": "**Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge.** → 보통 수준 — 총 ≈4~5km. 불국사 석단과 계단; 박물관, 한옥마을, 다리는 평지."
           },
           {
             "icon": "ticket",
-            "label": "**Includes** → 포함 사항",
+            "label": "포함 사항",
             "value": "**Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest.** → 왕복 교통편, 공인 가이드 포함. 입장료: 불국사 무료 (2023년 5월부터), 박물관 무료, 교촌 무료, 다리 무료; 아홉산만 현장 결제 (₩5,000). 점심 식사는 개인 부담."
           }
         ]
@@ -1407,7 +1407,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "**TourAtmosphereGallery** → 투어 분위기 갤러리",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
@@ -1417,7 +1417,7 @@
             "alt": "첨성대 — 갤러리 이미지",
             "caption": "첨성대",
             "location": "첨성대",
-            "atmosphere": "**Stone, wood, and 8th-century pagoda silhouettes** → 돌, 나무, 그리고 8세기 탑의 실루엣"
+            "atmosphere": "돌, 나무, 그리고 8세기 탑의 실루엣"
           }
         ]
       }

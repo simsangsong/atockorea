@@ -89,9 +89,16 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
             <p className="text-[15px] font-semibold tracking-tight text-foreground">
               {sectionUi.fitBestForLabel}
             </p>
-            <p className="mt-0.5 text-[12.5px] leading-snug text-muted-foreground">
-              {bestForItems.length} traveler types
-              {lessIdealItems.length > 0 && ` · ${lessIdealItems.length} less ideal`}
+            <p className="mt-0.5 text-[12.5px] leading-snug text-muted-foreground text-cjk-body">
+              {(sectionUi.fitBestForCountTemplate ?? "{count} traveler types").replace(
+                "{count}",
+                String(bestForItems.length),
+              )}
+              {lessIdealItems.length > 0 &&
+                ` · ${(sectionUi.fitLessIdealCountTemplate ?? "{count} less ideal").replace(
+                  "{count}",
+                  String(lessIdealItems.length),
+                )}`}
             </p>
           </div>
           <div

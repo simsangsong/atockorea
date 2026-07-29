@@ -782,7 +782,7 @@
     {
       "name": "Hotel en la Ciudad de Jeju",
       "type": "origin",
-      "theme": "Salida > **Notes:** Lines 1–3 are file paths/URLs and have been left unchanged, as they are technical identifiers that should not be translated. The `\n` tags in line 16 have been preserved as-is."
+      "theme": "Salida"
     },
     {
       "name": "Mirador de Hallasan",
@@ -1067,7 +1067,7 @@
     {
       "timing": "Inmediatamente",
       "title": "Confirmación inmediata",
-      "detail": "Confirmación de reserva con resumen del itinerario > **Notes:** Items **13**, **17**, and **21** (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS class names and were left untranslated as they are UI/code tokens, not display text.",
+      "detail": "Confirmación de reserva con resumen del itinerario",
       "description": "Confirmación instantánea con los detalles de recogida en el hotel de la ciudad de Jeju y la temporada de tours de diciembre a febrero."
     },
     {
@@ -1650,7 +1650,7 @@
           },
           {
             "icon": "users",
-            "label": "Grupo > **Notes:** > - Lines **9**, **17**, and **22** (`TourHeroSection`, `TourTabsNav`, `TourAtAGlance`) appear to be UI component/code identifiers — left untranslated as they are likely internal keys. > - Hotel and brand names (**Shilla Duty Free**, **LOTTE City Hotel**, **Ocean Suites Jeju Hotel**) are kept in their original form as proper nouns.",
+            "label": "Grupo",
             "value": "Grupo pequeño, guía de habla inglesa/china"
           },
           {
@@ -1732,7 +1732,7 @@
               "Mirador nevado del Hallasan",
               "El pico más alto de Corea (1.947 m)",
               "Carretera 1100 o Eorimok",
-              "No se requiere senderismo > **Notes:** > - Line **6** (TourTimelineSection) and line **21** (image file path) are kept unchanged as they are technical/code identifiers. > - Decimal separator changed to comma (1.947 m) per Spanish convention. > - \"Huéspedes\" used for \"guests\" in line 16, standard in travel/hospitality Spanish."
+              "No se requiere senderismo"
             ],
             "timeUsed": [
               "Llegada, compra de entradas e información de orientación",
@@ -2154,7 +2154,7 @@
             "timeUsed": [
               "Llegada, compra de entradas e introducción orientativa",
               "Exploración de la atracción principal con tiempo para fotografías",
-              "Cierre y reagrupamiento en el vehículo --- **Notes:** - Lines **1, 2, 19** (file paths/URLs) are left unchanged — paths must not be translated. - Line **15** (`60-90 min`) is identical in Spanish — *min* is the standard abbreviation. - *Columnar Joints* → **Juntas Columnares** (standard geological term in Spanish). - *Boardwalk paths* → **senderos entarimados** (wooden/planked walkway paths)."
+              "Cierre y reagrupamiento en el vehículo"
             ],
             "whyOnRoute": "Cascada de tres niveles y el puente Seonimgyo de las Siete Ninfas — la parada de cascada en bosque más fotografiada de Jeju. El caudal en invierno es menor, pero las fotografías del puente son las más nítidas.",
             "visitBasics": {
@@ -2598,7 +2598,7 @@
           },
           {
             "timing": "Durante el tour",
-            "title": "Consejos Parada por Parada --- **Notes:** - **Lines 2, 5, 8, 11** are a React component name and Tailwind CSS utility classes — left untouched as they are code identifiers, not display text. - **Line 7** — *\"Hand-tuned\"* rendered as *\"personalizado\"* (personalized/custom-crafted) for natural Spanish flow; alternatively *\"ajustado a mano\"* if a more literal tone is preferred. - **Line 10** — *\"Right-sized\"* rendered as *\"dimensionado\"* (properly sized/scaled); *\"adecuado en tamaño\"* is a softer alternative.",
+            "title": "Consejos Parada por Parada",
             "detail": "Orientación en tiempo real en cada lugar"
           },
           {
@@ -2724,7 +2724,7 @@
           "currency": "USD",
           "per": "person",
           "priceSource": "AtoC Korea direct rate",
-          "priceNote": "La tarifa final se confirma tras seleccionar tu fecha de viaje y el tamaño del grupo. La reserva directa está gestionada por AtoC Korea. **Notes:** - **Lines 3 & 4** are UI component identifiers (PascalCase). The translations above follow the same PascalCase convention for code consistency. If you need display-label versions instead, they would be: *Sección de Reseñas del Tour* and *Barra de Reserva Fija del Tour*. - **\"AtoC Korea\"** in line 6 was kept as a proper brand name (untranslated), as is standard practice.",
+          "priceNote": "La tarifa final se confirma tras seleccionar tu fecha de viaje y el tamaño del grupo. La reserva directa está gestionada por AtoC Korea.",
           "discountPercent": 10
         }
       }

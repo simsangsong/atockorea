@@ -2248,48 +2248,48 @@
           {
             "icon": "route",
             "title": "코스 전문가",
-            "description": "**Hand-tuned itinerary, not a generic loop** → 획일적인 코스가 아닌, 정성껏 짜인 맞춤 일정",
+            "description": "획일적인 코스가 아닌, 정성껏 짜인 맞춤 일정",
             "iconBg": "**bg-sky-50/80** → bg-sky-50/80 *(CSS 클래스명 — 번역 불필요)*",
             "iconColor": "text-sky-600"
           },
           {
             "icon": "users",
-            "title": "**Curated group size** → 엄선된 그룹 규모",
-            "description": "**Right-sized for the route** → 노선에 최적화된 인원",
+            "title": "엄선된 그룹 규모",
+            "description": "노선에 최적화된 인원",
             "iconBg": "**bg-amber-50/80** → bg-amber-50/80 *(CSS 클래스명 — 번역 불필요)*",
             "iconColor": "text-amber-600"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "**Immediately** → 즉시",
-            "title": "**Instant Confirmation** → 즉시 확인",
-            "detail": "**Booking confirmation with itinerary summary** → 일정 요약이 포함된 예약 확인서"
+            "timing": "즉시",
+            "title": "즉시 확인",
+            "detail": "일정 요약이 포함된 예약 확인서"
           },
           {
-            "timing": "**12 hours before** → 12시간 전",
-            "title": "**12-Hour Reminder** → 12시간 전 알림",
-            "detail": "**Weather update and any route adjustments** → 날씨 업데이트 및 노선 변경 사항 안내"
+            "timing": "12시간 전",
+            "title": "12시간 전 알림",
+            "detail": "날씨 업데이트 및 노선 변경 사항 안내"
           },
           {
-            "timing": "**Evening before** → 전날 저녁",
-            "title": "**Final Pickup Info** → 최종 픽업 정보",
-            "detail": "**Exact pickup time and driver contact** → 정확한 픽업 시간 및 기사 연락처"
+            "timing": "전날 저녁",
+            "title": "최종 픽업 정보",
+            "detail": "정확한 픽업 시간 및 기사 연락처"
           },
           {
-            "timing": "**Morning of tour** → 투어 당일 아침",
-            "title": "**Day-of Route Notes** → 당일 노선 안내",
-            "detail": "**Morning briefing based on live conditions** → 실시간 상황에 따른 아침 브리핑"
+            "timing": "투어 당일 아침",
+            "title": "당일 노선 안내",
+            "detail": "실시간 상황에 따른 아침 브리핑"
           },
           {
-            "timing": "**During tour** → 투어 진행 중",
-            "title": "**Stop-by-Stop Tips** → 장소별 현장 팁",
-            "detail": "**Real-time guidance at each location** → 각 방문지에서의 실시간 안내"
+            "timing": "투어 진행 중",
+            "title": "장소별 현장 팁",
+            "detail": "각 방문지에서의 실시간 안내"
           },
           {
-            "timing": "**After tour** → 투어 종료 후",
-            "title": "**Post-tour Support** → 투어 후 지원",
-            "detail": "**Follow-up and recommendations** → 사후 연락 및 추천 정보 제공"
+            "timing": "투어 종료 후",
+            "title": "투어 후 지원",
+            "detail": "사후 연락 및 추천 정보 제공"
           }
         ]
       }
@@ -2302,7 +2302,7 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "**What can I actually see at the DMZ on this route?** → 이 코스에서 DMZ에서 실제로 무엇을 볼 수 있나요?",
+            "question": "이 코스에서 DMZ에서 실제로 무엇을 볼 수 있나요?",
             "answer": "세 곳의 핵심 명소. 제3땅굴: 1978년에 발견된 길이 1,635미터의 지하 통로로, 북한이 서울을 향해 굴착한 것입니다. 도라산 전망대: 민간인이 접근 가능한 유일한 대북 조망 시설로, 개성시·선전 마을·기정동 깃발을 볼 수 있습니다. 임진각 평화공원: 망배단 제단, 1953년 재건된 자유의 다리, 총탄 자국이 남아 있는 증기 기관차가 있는 1972년 조성 기념 공원입니다. 사진 촬영 규정은 방문지마다 다르며, 가이드가 출발 전에 안내해 드립니다."
           },
           {

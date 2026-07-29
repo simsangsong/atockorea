@@ -1257,20 +1257,20 @@
     {
       "id": "subnav",
       "section_html_id": null,
-      "component": "**TourTabsNav** → ツアータブナビゲーション",
+      "component": "TourTabsNav",
       "props": {
         "subnavItems": [
           {
             "id": "overview",
-            "label": "**Overview** → 概要"
+            "label": "概要"
           },
           {
             "id": "itinerary",
-            "label": "**Itinerary** → 旅程"
+            "label": "旅程"
           },
           {
             "id": "details",
-            "label": "**Details** → 詳細"
+            "label": "詳細"
           },
           {
             "id": "faq",
@@ -1278,7 +1278,7 @@
           },
           {
             "id": "reviews",
-            "label": "**Reviews** → クチコミ"
+            "label": "クチコミ"
           }
         ]
       }
@@ -1286,37 +1286,37 @@
     {
       "id": "overview",
       "section_html_id": "overview",
-      "component": "**TourAtAGlance** → ツアー概要",
+      "component": "TourAtAGlance",
       "props": {
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "**Duration** → 所要時間",
+            "label": "所要時間",
             "value": "**≈ 11.5 hours (08:10 first pickup, ≈ 19:45 last drop)** → 約11.5時間（最初のお迎え 08:10、最終お送り 約19:45）"
           },
           {
             "icon": "users",
-            "label": "**Group** → グループ",
+            "label": "グループ",
             "value": "**Small group, mini-van (typically up to ≈10 passengers)** → 少人数グループ、ミニバン使用（通常最大約10名）"
           },
           {
             "icon": "subway",
-            "label": "**Pickup** → 乗車場所",
+            "label": "乗車場所",
             "value": "**Busan Station Exit 4 (08:10), Seomyeon Exit 4 (08:30), Haeundae Exit 5 (09:10)** → 釜山駅4番出口（08:10）、西面4番出口（08:30）、海雲台5番出口（09:10）"
           },
           {
             "icon": "calendar",
-            "label": "**Best season** → ベストシーズン",
+            "label": "ベストシーズン",
             "value": "**Year-round; cherry-blossom alt route mid-Mar to mid-Apr (Ahopsan replaced by Haeundae Dalmaji Hill)** → 通年；3月中旬〜4月中旬は桜の代替ルートあり（アホプサンの代わりに海雲台達磨峰コースへ変更）"
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → 徒歩",
+            "label": "徒歩",
             "value": "**Moderate — ≈4–5 km total. Bulguksa terraces and steps; flat at the museum, hanok village, and bridge.** → 普通 — 合計約4〜5km。仏国寺ではテラスや階段あり；博物館、韓屋村、橋は平坦。"
           },
           {
             "icon": "ticket",
-            "label": "**Includes** → 含まれるもの",
+            "label": "含まれるもの",
             "value": "**Round-trip transport, certified guide. Entry fees: Bulguksa free (since May 2023), museum free, Gyochon free, bridge free; only Ahopsan (₩5,000) is paid on-site. Lunch on guest.** → 往復送迎・公認ガイド込み。入場料：仏国寺（2023年5月より無料）、博物館無料、校村無料、橋無料；アホプサンのみ現地払い（₩5,000）。昼食はお客様各自のご負担。"
           }
         ]
@@ -1325,7 +1325,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "**TourAtmosphereGallery** → ツアー雰囲気ギャラリー",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
@@ -1335,7 +1335,7 @@
             "alt": "瞻星台 — ギャラリー画像",
             "caption": "瞻星台",
             "location": "瞻星台",
-            "atmosphere": "**Stone, wood, and 8th-century pagoda silhouettes** → 石・木・8世紀の石塔のシルエット"
+            "atmosphere": "石・木・8世紀の石塔のシルエット"
           }
         ]
       }

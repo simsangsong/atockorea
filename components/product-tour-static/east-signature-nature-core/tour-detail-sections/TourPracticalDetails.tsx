@@ -256,8 +256,13 @@ export function TourPracticalDetails({
     cur != null
       ? formatLiveTemp(cur.tempC, tempUnit)
       : convertStaticTempString(staticToday?.temp, tempUnit);
+  /* The day word comes from sectionUi and the condition from the forecast
+     payload — both used to be hardcoded English, so a Chinese page read
+     "Today · Mainly clear" under a fully translated heading. */
   const todayLabel =
-    cur != null ? `Today · ${cur.conditionLabel}` : (staticToday?.label ?? "");
+    cur != null
+      ? `${sectionUi.weatherTodayLabel ?? "Today"} · ${cur.conditionLabel}`
+      : (staticToday?.label ?? "");
   const tomorrowTemp =
     tomorrowDay != null
       ? tempUnit === "C"
@@ -266,17 +271,16 @@ export function TourPracticalDetails({
       : convertStaticTempString(staticTomorrow?.temp, tempUnit);
   const tomorrowLabel =
     tomorrowDay != null
-      ? `Tomorrow · ${tomorrowDay.conditionLabel}`
+      ? `${sectionUi.weatherTomorrowLabel ?? "Tomorrow"} · ${tomorrowDay.conditionLabel}`
       : (staticTomorrow?.label ?? "");
 
-  const weatherRegionFallback = locale === "ko" ? "제주 동쪽 지역" : "East Jeju region";
-  const weatherStripTitle = liveForecast?.areaLabel
-    ? locale === "ko"
-      ? `실시간 날씨 · ${liveForecast.areaLabel}`
-      : `Live weather · ${liveForecast.areaLabel}`
-    : locale === "ko"
-      ? `실시간 날씨 · ${weatherRegionFallback}`
-      : `Live weather · ${weatherRegionFallback}`;
+  /* This header used to branch on `locale === "ko"` only, so every other
+     non-English page printed "Live weather · 濟州島" — English label, translated
+     area. Both halves now come from the locale-resolved sectionUi. */
+  const weatherRegionFallback = sectionUi.weatherRegionFallback ?? "East Jeju region";
+  const weatherStripTitle = (
+    sectionUi.weatherLiveTitleTemplate ?? "Live weather · {area}"
+  ).replace("{area}", liveForecast?.areaLabel ?? weatherRegionFallback);
 
   /** API 응답 전·실패 시 기존 정적 카드와 동일: 좌 CloudSun, 우 CloudRain */
   const isTodayRain = !!(liveForecast && cur != null && isWmoPrecipitationCode(cur.weatherCode));

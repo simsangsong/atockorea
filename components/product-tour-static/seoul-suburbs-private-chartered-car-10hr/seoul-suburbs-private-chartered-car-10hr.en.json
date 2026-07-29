@@ -554,7 +554,7 @@
         "Private vehicle (sedan, SUV, or van based on group size)",
         "Licensed English-speaking driver-guide",
         "Free hotel pickup and drop-off in Seoul downtown",
-        "Fuel and tolls for the standard route",
+        "Fuel, tolls and parking fees for the standard route",
         "All admission fees are not included; pay directly at each venue",
         "Meals are not included",
         "Personal shopping is not included",
@@ -1904,7 +1904,6 @@
     "currency": "USD",
     "unit": "vehicle",
     "durations": [
-      "4h",
       "5h",
       "6h",
       "7h",
@@ -1918,7 +1917,6 @@
         "paxMin": 1,
         "paxMax": 6,
         "prices": {
-          "4h": 149,
           "5h": 169,
           "6h": 189,
           "7h": 209,
@@ -1932,7 +1930,6 @@
         "paxMin": 7,
         "paxMax": 9,
         "prices": {
-          "4h": 182,
           "5h": 203,
           "6h": 223,
           "7h": 243,
@@ -1946,7 +1943,6 @@
         "paxMin": 10,
         "paxMax": 13,
         "prices": {
-          "4h": 250,
           "5h": 270,
           "6h": 291,
           "7h": 311,

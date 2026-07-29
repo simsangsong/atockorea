@@ -34,8 +34,19 @@ export type TourProductSectionUiV1 = {
   fitSeniorsText: string;
   fitRouteLogicTitle: string;
   fitRouteLogicSubtitle: string;
+  /** "{count} traveler types" preview under the Best-for accordion. */
+  fitBestForCountTemplate: string;
+  /** " · {count} less ideal" tail of the same preview. */
+  fitLessIdealCountTemplate: string;
   practicalTitle: string;
   practicalSubtitle: string;
+  /** Weather card day labels — the forecast condition is localized separately. */
+  weatherTodayLabel: string;
+  weatherTomorrowLabel: string;
+  /** "Live weather · {area}" header of the practical weather card. */
+  weatherLiveTitleTemplate: string;
+  /** Region name used before the forecast resolves. */
+  weatherRegionFallback: string;
   seasonalTitle: string;
   seasonalSubtitle: string;
   bookingSupportTitle: string;
@@ -175,8 +186,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
     "Comfort levels vary by segment; use lighter options where offered and confirm walking expectations for this itinerary.",
   fitRouteLogicTitle: "Route logic",
   fitRouteLogicSubtitle: "Pacing, sequence, stop timing, and why the day flows this way",
+  fitBestForCountTemplate: "{count} traveler types",
+  fitLessIdealCountTemplate: "{count} less ideal",
   practicalTitle: "Practical details",
   practicalSubtitle: "Pickup, walking, weather, packing, and inclusions.",
+  weatherTodayLabel: "Today",
+  weatherTomorrowLabel: "Tomorrow",
+  weatherLiveTitleTemplate: "Live weather · {area}",
+  weatherRegionFallback: "East Jeju region",
   seasonalTitle: "Seasonal variations",
   seasonalSubtitle: "How this route feels through the year.",
   bookingSupportTitle: "Booking & support",
@@ -274,8 +291,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
     "구간별로 편차가 있습니다. 가벼운 옵션이 있으면 활용하고, 도보·계단은 실제 코스 기준으로 확인하세요.",
   fitRouteLogicTitle: "코스 설계",
   fitRouteLogicSubtitle: "템포, 순서, 정차 시간, 하루가 이렇게 흘러가는 이유",
+  fitBestForCountTemplate: "여행자 유형 {count}가지",
+  fitLessIdealCountTemplate: "덜 맞는 유형 {count}가지",
   practicalTitle: "실용 정보",
   practicalSubtitle: "픽업, 도보, 날씨, 준비물, 포함 사항.",
+  weatherTodayLabel: "오늘",
+  weatherTomorrowLabel: "내일",
+  weatherLiveTitleTemplate: "실시간 날씨 · {area}",
+  weatherRegionFallback: "제주 동쪽 지역",
   seasonalTitle: "계절별 느낌",
   seasonalSubtitle: "이 코스가 사계절에 어떻게 다가오는지.",
   bookingSupportTitle: "예약과 지원",
@@ -380,8 +403,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
     "区間ごとに差があります。軽めの見学があれば活用し、この行程の歩行イメージをご確認ください。",
   fitRouteLogicTitle: "ルートの考え方",
   fitRouteLogicSubtitle: "テンポ・順序・時間配分、なぜこの流れになるか",
+  fitBestForCountTemplate: "旅行者タイプ{count}種",
+  fitLessIdealCountTemplate: "合わない場合{count}件",
   practicalTitle: "実用情報",
   practicalSubtitle: "送迎・歩行・天候・持ち物・含まれるもの。",
+  weatherTodayLabel: "今日",
+  weatherTomorrowLabel: "明日",
+  weatherLiveTitleTemplate: "リアルタイム天気 · {area}",
+  weatherRegionFallback: "済州島東部",
   seasonalTitle: "季節ごとの雰囲気",
   seasonalSubtitle: "一年を通じてこのルートがどう感じられるか。",
   bookingSupportTitle: "予約とサポート",
@@ -484,8 +513,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   fitSeniorsText: "不同路段差异较大；如有更轻松的选择可优先采用，并请确认步行强度。",
   fitRouteLogicTitle: "路线逻辑",
   fitRouteLogicSubtitle: "节奏、顺序、停留时间，以及为什么这样走",
+  fitBestForCountTemplate: "{count} 种旅行者类型",
+  fitLessIdealCountTemplate: "{count} 项不太适合",
   practicalTitle: "实用信息",
   practicalSubtitle: "接送、步行、天气、穿着与包含项目。",
+  weatherTodayLabel: "今天",
+  weatherTomorrowLabel: "明天",
+  weatherLiveTitleTemplate: "实时天气 · {area}",
+  weatherRegionFallback: "济州岛东部",
   seasonalTitle: "四季感受",
   seasonalSubtitle: "这条路线在一年四季分别是什么体验。",
   bookingSupportTitle: "预订与支持",
@@ -588,8 +623,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   fitSeniorsText: "不同路段差異較大；如有更輕鬆的選擇可優先採用，並請確認步行強度。",
   fitRouteLogicTitle: "路線邏輯",
   fitRouteLogicSubtitle: "節奏、順序、停留時間，以及為什麼這樣走",
+  fitBestForCountTemplate: "{count} 種旅客類型",
+  fitLessIdealCountTemplate: "{count} 項較不適合",
   practicalTitle: "實用資訊",
   practicalSubtitle: "接送、步行、天氣、穿著與包含項目。",
+  weatherTodayLabel: "今天",
+  weatherTomorrowLabel: "明天",
+  weatherLiveTitleTemplate: "即時天氣 · {area}",
+  weatherRegionFallback: "濟州島東部",
   seasonalTitle: "四季感受",
   seasonalSubtitle: "這條路線在一年四季分別是什麼體驗。",
   bookingSupportTitle: "預訂與支援",
@@ -694,8 +735,14 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
     "El confort varía por tramo; usa opciones más ligeras si las hay y confirma el nivel de caminata de este itinerario.",
   fitRouteLogicTitle: "Lógica de la ruta",
   fitRouteLogicSubtitle: "Ritmo, orden, tiempos y por qué el día fluye así",
+  fitBestForCountTemplate: "{count} tipos de viajero",
+  fitLessIdealCountTemplate: "{count} menos ideales",
   practicalTitle: "Detalles prácticos",
   practicalSubtitle: "Recogida, caminata, clima, equipaje e inclusiones.",
+  weatherTodayLabel: "Hoy",
+  weatherTomorrowLabel: "Mañana",
+  weatherLiveTitleTemplate: "Tiempo en vivo · {area}",
+  weatherRegionFallback: "Este de Jeju",
   seasonalTitle: "Variaciones por estación",
   seasonalSubtitle: "Cómo se siente esta ruta a lo largo del año.",
   bookingSupportTitle: "Reserva y apoyo",

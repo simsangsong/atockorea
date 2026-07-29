@@ -592,7 +592,7 @@
   ],
   "routePhases": [
     {
-      "phase": "Apertura de la Isla Nami > **Notes:** Lines 8–10 are file paths and kept unchanged. Proper nouns (*Petite France*, *Italian Village*, *Gapyeong*, *Cheongpyeong*, *Saint-Exupéry*) are preserved as-is. \"My Love from the Star\" is rendered as *\"Mi amor de las estrellas\"*, its widely used Spanish title.",
+      "phase": "Apertura de la Isla Nami",
       "duration": "Parada 1",
       "description": "Mañana: Apertura en la Isla Nami"
     },
@@ -643,7 +643,7 @@
       {
         "title": "Cómo se siente realmente el esfuerzo de caminata",
         "icon": "footprints",
-        "iconBg": "bg-amber-50/80 > **Notes:** Lines **17** and **25** (`bg-sky-50/80`, `bg-amber-50/80`) appear to be Tailwind CSS utility classes and have been left unchanged, as they are not translatable content.",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -852,7 +852,7 @@
     {
       "timing": "Mañana del tour",
       "title": "Notas de Ruta del Día",
-      "detail": "Resumen matutino basado en las condiciones en tiempo real > **Notes:** Items **7**, **10**, and **13** (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are CSS utility class names — technical strings with no natural-language equivalent — so they are left untranslated as-is."
+      "detail": "Resumen matutino basado en las condiciones en tiempo real"
     },
     {
       "timing": "Durante el recorrido",
@@ -1278,43 +1278,43 @@
     {
       "id": "overview",
       "section_html_id": "overview",
-      "component": "**TourAtAGlance** → ResumenDelTour",
+      "component": "TourAtAGlance",
       "props": {
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "**Duration** → Duración",
+            "label": "Duración",
             "value": "**9–10 hours** → 9–10 horas"
           },
           {
             "icon": "camera",
-            "label": "**Photo Potential** → Potencial fotográfico",
-            "value": "**Very High** → Muy alto"
+            "label": "Potencial fotográfico",
+            "value": "Muy alto"
           },
           {
             "icon": "tree-pine",
-            "label": "**Scenery** → Paisaje",
-            "value": "**Garden & Forest** → Jardín y bosque"
+            "label": "Paisaje",
+            "value": "Jardín y bosque"
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → Caminata",
-            "value": "**Moderate** → Moderado"
+            "label": "Caminata",
+            "value": "Moderado"
           },
           {
             "icon": "users",
-            "label": "**Group Style** → Estilo de grupo",
-            "value": "**Private Only** → Solo privado"
+            "label": "Estilo de grupo",
+            "value": "Solo privado"
           },
           {
             "icon": "ticket",
-            "label": "**Admission Fees** → Tarifas de entrada",
-            "value": "**Pay Direct** → Pago directo"
+            "label": "Tarifas de entrada",
+            "value": "Pago directo"
           },
           {
             "icon": "gauge",
-            "label": "**Pace** → Ritmo",
-            "value": "**Relaxed Private Pace** → Ritmo privado relajado"
+            "label": "Ritmo",
+            "value": "Ritmo privado relajado"
           }
         ]
       }
@@ -1322,7 +1322,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "**TourAtmosphereGallery** → GaleríaDeAmbienteDelTour",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
@@ -1331,8 +1331,8 @@
             "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "**Avenue of tall metasequoia trees lining a straight path on Nami Island** → Avenida de altas metasecuoyas bordeando un camino recto en la Isla Nami",
             "caption": "**Nami Island metasequoia tree-lined road (Winter Sonata filming setting)** → Camino bordeado de metasecuoyas en la Isla Nami (escenario de filmación de Winter Sonata)",
-            "location": "**Nami Island** → Isla Nami",
-            "atmosphere": "**Tree-lined paths and Winter Sonata filming setting** → Caminos bordeados de árboles y escenario de filmación de Winter Sonata"
+            "location": "Isla Nami",
+            "atmosphere": "Caminos bordeados de árboles y escenario de filmación de Winter Sonata"
           }
         ]
       }
@@ -1744,7 +1744,7 @@
         "routePhases": [
           {
             "label": "Mañana",
-            "range": "1 **Notes:** - **Lines 7–8**: File paths kept unchanged (not translatable). - **Line 9, 12, 22**: *Petite France* is a proper noun and remains unchanged. - **Line 15**: `TourDayFlowSection` is a UI/component name and kept as-is. - **Line 25**: Numeral kept as-is.",
+            "range": "1",
             "theme": "Apertura de la Isla Nami",
             "bgClass": "bg-sky-50/70 *(clase CSS — sin cambios)*",
             "textClass": "text-sky-700",
@@ -1868,7 +1868,7 @@
             "title": "Recogida y regreso",
             "preview": "Recogida gratuita en hoteles del centro de Seúl; reunirse en el vestíbulo 10 minutos antes",
             "content": [
-              "La recogida gratuita en hotel está incluida para las zonas céntricas de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, Gangnam) > **Notes:** Lines **3** and **11** (`bg-amber-50/80`, `bg-slate-50/80`) are Tailwind CSS utility class names — kept as-is since they are code identifiers. Line **22** (`TourPracticalDetails`) is a component/code name and has also been left unchanged.",
+              "La recogida gratuita en hotel está incluida para las zonas céntricas de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, Gangnam)",
               "Los alojamientos fuera del centro de Seúl pueden incurrir en un cargo adicional por recogida",
               "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora de salida acordada",
               "La recogida suele comenzar entre las 08:30 y las 09:30",

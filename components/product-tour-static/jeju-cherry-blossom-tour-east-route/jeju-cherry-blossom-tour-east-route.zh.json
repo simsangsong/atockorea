@@ -852,7 +852,7 @@
     {
       "name": "绿山路",
       "type": "primary",
-      "theme": "田园花开 --- **Notes:** - **Lines 1–5**: File paths kept as-is (technical strings, not translatable). - **Line 21** *haenyeo* → **海女** — standard Chinese rendering of the Jeju female diver cultural term. - **Line 22** *Jeonnong-ro* → **典农路** — Hanja-based rendering (典農 + 路). - **Line 23** *Urban Bloom* → **都市花开** — natural Chinese equivalent for an urban floral scene. - **Line 24** *Noksan-ro* → **绿山路** — Hanja-based rendering (綠山 + 路). - **Line 25** *Country Bloom* → **田园花开** — standard Chinese phrasing for a rural blossom scene."
+      "theme": "田园花开"
     },
     {
       "name": "午餐",
@@ -1729,7 +1729,7 @@
           {
             "icon": "footprints",
             "label": "步行",
-            "value": "适中 > **Notes:** Items **7** (TourTabsNav) and **13** (TourAtAGlance) are UI component names and have been left untranslated, as they are typically used as code identifiers. Let me know if you'd like display-label versions for those as well."
+            "value": "适中"
           }
         ]
       }
@@ -2225,7 +2225,7 @@
             "icon": "snowflake",
             "description": "非当季 — 推荐我们全年运营的东部UNESCO遗产游路线",
             "tag": "淡季",
-            "bgClass": "bg-sky-50/70 > **Notes:** > - **Lines 13, 17, 21, 25** are Tailwind CSS class names (code values) and are left untranslated intentionally. > - **\"Micheongul\"** (line 4) is retained as a proper noun romanization, as no standard Chinese rendering exists for this specific cave name. > - **\"UNESCO\"** (lines 15, 19, 23) is kept as the internationally recognized acronym rather than spelled out as 联合国教科文组织 for readability in travel copy.",
+            "bgClass": "bg-sky-50/70",
             "iconColor": "text-sky-500"
           }
         ]
@@ -2234,56 +2234,56 @@
     {
       "id": "booking_support",
       "section_html_id": null,
-      "component": "**TourBookingSupportSection** → 旅游预订支持板块",
+      "component": "TourBookingSupportSection",
       "props": {
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "**Licensed local** → 持证本地导游",
-            "description": "**Jeju-licensed guiding** → 济州持证导览服务",
+            "title": "持证本地导游",
+            "description": "济州持证导览服务",
             "iconBg": "**bg-emerald-50/80** → bg-emerald-50/80 *(CSS 类名，保留原文)*",
             "iconColor": "text-emerald-600"
           },
           {
             "icon": "calendar",
-            "title": "**Season window flex** → 季节窗口弹性调整",
-            "description": "**Free rescheduling within bloom window** → 花期内免费改期",
+            "title": "季节窗口弹性调整",
+            "description": "花期内免费改期",
             "iconBg": "**bg-pink-50/80** → bg-pink-50/80 *(CSS 类名，保留原文)*",
             "iconColor": "text-pink-600"
           },
           {
             "icon": "shield",
-            "title": "**Weather guarantee** → 天气保障",
-            "description": "**Free reschedule on heavy rain** → 大雨天气免费改期",
+            "title": "天气保障",
+            "description": "大雨天气免费改期",
             "iconBg": "**bg-sky-50/80** → bg-sky-50/80 *(CSS 类名，保留原文)*",
             "iconColor": "text-sky-600"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "**Immediately** → 立即",
-            "title": "**Instant Confirmation** → 即时确认",
-            "detail": "**Booking confirmation with itinerary summary** → 含行程摘要的预订确认通知"
+            "timing": "立即",
+            "title": "即时确认",
+            "detail": "含行程摘要的预订确认通知"
           },
           {
-            "timing": "**2 days before** → 出发前 2 天",
-            "title": "**Weather Check-in** → 天气提醒",
+            "timing": "出发前 2 天",
+            "title": "天气提醒",
             "detail": "**We monitor forecast and reach out if rebooking is recommended** → 我们持续监测天气预报，如建议改期将主动联系您"
           },
           {
-            "timing": "**Day before** → 出发前一天",
-            "title": "**Vehicle & Guide Info** → 车辆及导游信息",
-            "detail": "**Pickup time, vehicle plate, and guide name via WhatsApp** → 通过 WhatsApp 发送接送时间、车牌号及导游姓名"
+            "timing": "出发前一天",
+            "title": "车辆及导游信息",
+            "detail": "通过 WhatsApp 发送接送时间、车牌号及导游姓名"
           },
           {
-            "timing": "**Morning of** → 出发当天早上",
-            "title": "**Pickup Confirmation** → 接送确认",
-            "detail": "**Driver checks in 10 minutes before arrival** → 司机在抵达前 10 分钟发送确认消息"
+            "timing": "出发当天早上",
+            "title": "接送确认",
+            "detail": "司机在抵达前 10 分钟发送确认消息"
           },
           {
-            "timing": "**During tour** → 游览期间",
-            "title": "**On-tour Support** → 随行客服支持",
-            "detail": "**Direct line to operations if anything comes up** → 如有任何问题，可直接联系运营团队"
+            "timing": "游览期间",
+            "title": "随行客服支持",
+            "detail": "如有任何问题，可直接联系运营团队"
           },
           {
             "timing": "行程结束后",
