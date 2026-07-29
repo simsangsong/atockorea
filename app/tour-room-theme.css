@@ -781,6 +781,21 @@
   font-variant-numeric: tabular-nums;
 }
 
+/* SG-D1 — the countdown/clock rung, above tr-display(20). At most ONE per
+ * screen: a second big number and neither is big. No size variants exist on
+ * purpose (the numeralScale suite enforces it); hierarchy between numbers is
+ * carried by tone, never by another rung. Weight rides :where() like the
+ * rest of the scale so call-site font-* utilities win. */
+.tr-numeral {
+  font-size: calc(34px * var(--tr-font-scale, 1));
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+:where(.tr-numeral) {
+  font-weight: 700;
+}
+
 /* CJK needs a touch more leading to breathe (§J). RoomShell stamps the
  * active room locale on the root as data-locale. */
 .tr-root[data-locale='ja'] .tr-body,

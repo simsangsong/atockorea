@@ -63,6 +63,7 @@ import TravelTimelineEntry from '@/components/tour-mode/TravelTimeline';
 
 import NoticeBanner from '@/components/tour-mode/NoticeBanner';
 import DepartureCountdown from '@/components/tour-mode/DepartureCountdown';
+import { RoomClockProvider } from '@/components/tour-mode/roomClock';
 import OfflineInfoCard from '@/components/tour-mode/OfflineInfoCard';
 import PushOptInBanner from '@/components/tour-mode/PushOptInBanner';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
@@ -457,6 +458,7 @@ function TourRoomLive({
   const systemDark = useMediaQuery('(prefers-color-scheme: dark)');
   const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
   const snapshot = data.snapshot as {
+    server_now_ms?: number;
     bus_detail?: { payload?: unknown } | null;
     booking?: {
       tours?: { title?: string; city?: string } | null;
@@ -896,7 +898,7 @@ function TourRoomLive({
   }, [messages, settings.autoRead, viewerRole, locale]);
 
   return (
-    <>
+    <RoomClockProvider serverNowMs={snapshot.server_now_ms}>
       {/* Pre-tour planner nudge — most guests miss the email's secondary plan
           link, so the day plan never gets set. Lead guest, lobby only. */}
       {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
@@ -1333,6 +1335,6 @@ function TourRoomLive({
           </Sheet>
         </div>
       )}
-    </>
+    </RoomClockProvider>
   );
 }
