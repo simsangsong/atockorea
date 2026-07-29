@@ -161,14 +161,66 @@ function innerOf(source: string, tag: string, openEnd: number): string {
  * Expressions that reference a variable still yield nothing here and stay
  * `suspect` — the honest answer for those.
  */
+/**
+ * 🔴 Everything that is NOT markup — i.e. the text positions only.
+ *
+ * Without this, the scanner read a descendant's ATTRIBUTES as its own label.
+ * `<button><div className={cn('flex h-10 w-10 …')}>…` reported the button's
+ * label as `{cn('flex h-10 w-10 …')}`, because the old code searched for
+ * `{…}` anywhere inside the element — including inside child opening tags.
+ *
+ * That is not merely noisy. It inflates both counts, and it would send the
+ * codemod at the wrong thing: the fix belongs on whatever actually holds the
+ * Korean, and a child's class list is not it. The certain branch had the same
+ * hole in a quieter form — a descendant's `aria-label="닫기"` or `title="저장"`
+ * made an ASCII-only parent look like it held CJK text.
+ *
+ * Tags are removed with the same quote- and brace-aware walk the opening-tag
+ * scanner uses, because a naive `/<[^>]*>/` stops at the `>` of an `=>` inside
+ * an `onClick`, and then everything after it reads as content.
+ */
+function stripMarkup(inner: string): string {
+  let out = '';
+  let i = 0;
+  while (i < inner.length) {
+    if (inner[i] !== '<') {
+      out += inner[i];
+      i += 1;
+      continue;
+    }
+    // Skip the whole tag, honouring quotes and braces.
+    let depth = 0;
+    let quote: string | null = null;
+    i += 1;
+    while (i < inner.length) {
+      const ch = inner[i];
+      if (quote) {
+        if (ch === '\\') i += 1;
+        else if (ch === quote) quote = null;
+      } else if (ch === '"' || ch === "'" || ch === '`') {
+        quote = ch;
+      } else if (ch === '{') depth += 1;
+      else if (ch === '}') depth -= 1;
+      else if (ch === '>' && depth === 0) {
+        i += 1;
+        break;
+      }
+      i += 1;
+    }
+    out += ' ';
+  }
+  return out;
+}
+
 function directText(inner: string): string {
+  const content = stripMarkup(inner);
   const literalsInExpressions: string[] = [];
-  for (const expr of inner.matchAll(/\{([^{}]*)\}/g)) {
+  for (const expr of content.matchAll(/\{([^{}]*)\}/g)) {
     for (const lit of expr[1].matchAll(/(['"`])((?:\\.|(?!\1)[\s\S])*)\1/g)) {
       literalsInExpressions.push(lit[2]);
     }
   }
-  const literalChildren = inner.replace(/<[^>]*>/g, ' ').replace(/\{[^{}]*\}/g, ' ');
+  const literalChildren = content.replace(/\{[^{}]*\}/g, ' ');
   return [literalChildren, ...literalsInExpressions].join(' ').replace(/\s+/g, ' ').trim();
 }
 
@@ -206,8 +258,12 @@ export function scanSource(file: string, source: string): CjkBreakHit[] {
     }
     // No literal text — but a control whose label is an expression is exactly
     // where a Korean string arrives at runtime. Reported, not counted as clean.
-    const expr = inner.match(/\{[^{}]{1,60}\}/);
-    if (expr && !CJK_PATTERN.test(inner) && /^(button|a|th)$/.test(tag)) {
+    //
+    // Searched in the TEXT positions only: a child's className is not this
+    // control's label, and reporting it sends the codemod at the wrong element.
+    const content = stripMarkup(inner);
+    const expr = content.match(/\{[^{}]{1,60}\}/);
+    if (expr && !CJK_PATTERN.test(content) && /^(button|a|th)$/.test(tag)) {
       hits.push({
         file,
         line,
