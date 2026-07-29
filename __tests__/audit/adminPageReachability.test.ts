@@ -17,7 +17,26 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const ADMIN_DIR = path.join(ROOT, 'app', 'admin');
+// X13: pages live under a route group now. Resolved rather than hard-coded so
+// the next move fails the build with a real message instead of an ENOENT.
+const ADMIN_DIR = ['(marketing)/admin', 'admin']
+  .map((rel) => path.join(ROOT, 'app', ...rel.split('/')))
+  .find((dir) => fs.existsSync(dir))!;
+
+/**
+ * Route-group segments are `(name)` and do NOT appear in the URL.
+ * X13 put every page under `(marketing)` or `(app)`; deriving the URL by string
+ * position rather than by meaning would have produced `/(marketing)/admin/...`,
+ * which is a path that does not exist and would have failed every check below
+ * for the wrong reason.
+ */
+function urlForPageDir(dir: string): string {
+  const segments = path
+    .relative(ROOT, dir)
+    .split(path.sep)
+    .filter((seg) => seg !== 'app' && !/^\(.*\)$/.test(seg));
+  return `/${segments.join('/')}`;
+}
 
 function adminPageUrls(): string[] {
   const out: string[] = [];
@@ -26,8 +45,7 @@ function adminPageUrls(): string[] {
       const full = path.join(dir, entry.name);
       if (entry.isDirectory()) walk(full);
       else if (entry.name === 'page.tsx') {
-        const url = '/' + path.relative(ROOT, dir).split(path.sep).join('/').replace(/^app\//, '');
-        out.push(url);
+        out.push(urlForPageDir(dir));
       }
     }
   };
@@ -51,7 +69,10 @@ function inboundLinks(url: string): string[] {
       if (!/\.(tsx|ts)$/.test(entry.name)) continue;
       if (rel.startsWith('__tests__/')) continue;
       // 자기 자신과 자기 하위 페이지의 언급은 "들어오는 링크"가 아니다.
-      if (rel.startsWith(url.replace(/^\//, 'app/') + '/')) continue;
+      // The page's own subtree. Compare by derived URL so a route group in the
+      // path does not make a self-mention look like an inbound link.
+      if (rel.startsWith('app/') && urlForPageDir(path.dirname(full)).startsWith(url + '/')) continue;
+      if (rel.startsWith('app/') && urlForPageDir(path.dirname(full)) === url) continue;
       const body = fs.readFileSync(full, 'utf8');
       if (body.includes(`'${url}'`) || body.includes(`"${url}"`) || body.includes('`' + url)) {
         hits.push(rel);
@@ -76,7 +97,7 @@ describe('🔴 DE2 — 완성된 어드민 화면은 반드시 열 수 있어야
     expect(
       links.length > 0
         ? true
-        : `${url} 는 어디서도 도달할 수 없다 — app/admin/layout.tsx 의 adminMenuGroups 에 ` +
+        : `${url} 는 어디서도 도달할 수 없다 — admin/layout.tsx 의 adminMenuGroups 에 ` +
           `추가하거나, 부모 화면에서 링크해라. (URL 직접 입력은 도달 경로가 아니다)`,
     ).toBe(true);
   });

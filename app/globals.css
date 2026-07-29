@@ -312,6 +312,73 @@ body.lang-ja {
 }
 
 /*
+ * Tour app (X13) — one stack for all ten locales.
+ *
+ * 🔴 Why this rule has to exist. The stacks above are switched by a `lang-*`
+ * class that `I18nProvider` writes onto <body>. The tour app has its own root
+ * layout and does NOT mount that provider (that is the whole point of X13 —
+ * the provider statically imports 169 KB of marketing copy). Without this rule
+ * the tour app falls through to Tailwind's `.font-sans`, and a Korean guest
+ * silently loses two things measured on production:
+ *
+ *   · "AtoC Latin Punctuation" — the face PR #580 added to stop Pretendard's
+ *     dynamic subset rendering apostrophes full-width (`You’ ve`). It is only
+ *     ever first in the `lang-*` stacks, so losing them loses the fix.
+ *   · the CJK fallbacks (Apple SD Gothic Neo / Noto Sans KR / JP / SC / TC).
+ *
+ * One combined stack rather than ten: font-family fallback is resolved PER
+ * GLYPH, so listing every CJK family together is correct — a Korean glyph finds
+ * Noto Sans KR, a Japanese one finds Noto Sans JP, and neither needs the
+ * document to have been told which language it is. That also suits a room where
+ * ten languages appear in the same message feed, which the marketing site never
+ * has to handle.
+ *
+ * `body.lang-tour-app` is (0,1,1) so it beats Tailwind's `.font-sans` (0,1,0) —
+ * the same specificity trick `body.lang-ko` already relies on.
+ */
+/*
+ * 🔴 The tour app does not get the marketing pastel mesh — and this rule is
+ * load-bearing, not tidiness.
+ *
+ * `body::before` is `position: fixed; z-index: 0`, and `body` itself is
+ * `position: relative; z-index: 1`. A POSITIONED pseudo-element with z-index 0
+ * paints ABOVE normal-flow content, so the mesh covers the page unless
+ * something lifts the content over it. On the marketing site that something is
+ * the root layout's `<div className="relative z-[1]">` wrapper.
+ *
+ * X13 gave the tour app its own root layout without that wrapper, and the
+ * entry screen rendered as a blank gradient with one washed-out button — while
+ * `getComputedStyle` cheerfully reported the <h1> as visible, colour
+ * rgb(26,29,33), 358x26 at y=40. The DOM was right and the paint was wrong;
+ * only a screenshot showed it. (The first draft of this change carried a
+ * comment claiming the wrapper was safe to drop, citing R8. R8 removed
+ * `z-[1]` from tab-panel wrappers INSIDE the room, which is a different
+ * element solving a different problem. The comment was wrong and is corrected
+ * here rather than quietly deleted.)
+ *
+ * Suppressing the layer beats re-adding the wrapper: the room paints its own
+ * `.tour-mode-canvas`, so the mesh was never wanted, and a wrapper would
+ * reintroduce the stacking context that traps the room's `fixed` overlays
+ * (z-[71]) beneath its chrome (z-30) — the actual R8 defect. It also saves a
+ * full-viewport fixed gradient repaint on a phone.
+ */
+body.lang-tour-app::before {
+  display: none;
+}
+
+body.lang-tour-app {
+  font-family:
+    "AtoC Latin Punctuation", "Pretendard Variable", "Pretendard", var(--font-inter),
+    "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic",
+    "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic",
+    "Noto Sans SC", "PingFang SC", "Microsoft YaHei",
+    "Noto Sans TC", "PingFang TC", "Microsoft JhengHei",
+    system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
  * Magazine-serif typography for Korean catalogue surfaces (CatalogueHero, etc.).
  * Noto Serif KR (본명조 / Source Han Serif KR equivalent) renders Korean glyphs
  * in a Vogue Korea / Kinfolk Korea premium myeongjo. Western fallback chain

@@ -20,7 +20,7 @@ import {
   TOUR_PRODUCT_FALLBACK_URL_LOCALES,
   tourProductDbLocaleFromUrlLocale,
   tourProductLocaleNeedsEnglishFallback,
-} from '@/app/tour-product/[slug]/tourProductPageBody';
+} from '@/app/(marketing)/tour-product/[slug]/tourProductPageBody';
 
 /** Read SUPPORTED_LOCALES straight out of middleware.ts — the real source. */
 function supportedLocalesFromMiddleware(): string[] {
