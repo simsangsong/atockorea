@@ -3,14 +3,31 @@
  * Change here to retarget flagship join / browse flows site-wide from the homepage.
  */
 
-/** Supabase `tours.slug` for the flagship join product (API fetch) — same as static tour product page. */
-export const FEATURED_JOIN_TOUR_SLUG = "east-signature-nature-core";
+/**
+ * Supabase `tours.slug` for the flagship join product (API fetch) — same as
+ * static tour product page.
+ *
+ * 🔴 2026-07-29 — retargeted from `east-signature-nature-core`, which the live
+ * database has carried as `is_active = false` with zero bookings ever. The home
+ * page was still selling it: a price card reading "From US$59 per person (was
+ * $69, 14% off)" for a product on the consumer blocklist, whose own link sends
+ * the guest back to the tour list.
+ *
+ * `jeju-grand-highlights-loop` replaces it because it is the same thing the old
+ * card claimed to be and actually is one: active, small group, Jeju, and the
+ * most-booked product in the catalogue (6 bookings, the highest of any row).
+ *
+ * `homeFeaturedProduct` asserts that whatever slug sits here is live and not
+ * hidden. Retarget by changing this line; if the new slug is retired, the gate
+ * says so rather than the home page quietly advertising it.
+ */
+export const FEATURED_JOIN_TOUR_SLUG = "jeju-grand-highlights-loop";
 
 /**
  * Canonical public URL for that product (static tour product page + checkout from there).
  * Old paths may still redirect via `next.config.js`.
  */
-export const HOME_CTA_FEATURED_JOIN_TOUR_HREF = "/tour-product/east-signature-nature-core";
+export const HOME_CTA_FEATURED_JOIN_TOUR_HREF = "/tour-product/jeju-grand-highlights-loop";
 
 export const HOME_CTA_BROWSE_TOURS_HREF = "/tours/list";
 /** Direct list + join filter — avoid `/tours/small-group` (server redirect) on client nav, which can fail to swap the RSC tree in production. */
