@@ -291,6 +291,28 @@ export default function PrivacyPolicyPage() {
                 </li>
               </ul>
             </LegalSection>
+
+            {/*
+              16. Conversation data.
+              🔴 Numbered 16 and appended, never inserted. The "15." in the
+              Google API heading above is quoted in our Google OAuth
+              verification submission — renumbering these sections would make
+              that filing point at the wrong text.
+              Keys are hardcoded, not mapped: `messages/*.json` holds each
+              bullet individually and a loop would hide a locale that is
+              missing one (tsc says nothing about a loose Record).
+            */}
+            <LegalSection title={t('privacy.s16.title')}>
+              <p>{t('privacy.s16.p1')}</p>
+              <ul>
+                <li>{t('privacy.s16.li1')}</li>
+                <li>{t('privacy.s16.li2')}</li>
+                <li>{t('privacy.s16.li3')}</li>
+                <li>{t('privacy.s16.li4')}</li>
+                <li>{t('privacy.s16.li5')}</li>
+              </ul>
+              <p>{t('privacy.s16.p2')}</p>
+            </LegalSection>
           </LegalDocumentShell>
 
           <nav className={legalDocFooterNavClass} aria-label="Related policies">
