@@ -1,0 +1,614 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>스마트 가이딩 앱 — 화면 목업 13종 (2026-07-29)</title>
+<style>
+:root{
+  --bg:#f6f5f1; --s1:#efeee9; --s2:#ffffff;
+  --ink:#252a2c; --ink2:#5f5e5a; --ink3:#8a8983;
+  --line:rgba(37,42,44,.12); --line2:rgba(37,42,44,.22);
+  --acc-bg:#e6f1fb; --acc-line:#85b7eb; --acc-ink:#0c447c; --acc-ink2:#185fa5;
+  --ok-bg:#e1f5ee; --ok-line:#5dcaa5; --ok-ink:#04342c; --ok-ink2:#0f6e56;
+  --warn-bg:#faeeda; --warn-line:#ef9f27; --warn-ink:#412402; --warn-ink2:#854f0b;
+  --dan-bg:#fcebeb; --dan-line:#f09595; --dan-ink:#501313; --dan-ink2:#a32d2d;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Malgun Gothic",sans-serif;
+  font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 80px}
+h1{font-size:20px;font-weight:600;margin:0 0 6px}
+.lead{color:var(--ink2);font-size:13px;margin:0 0 4px}
+.warnbar{background:var(--warn-bg);border:1px solid var(--warn-line);border-radius:8px;
+  padding:11px 14px;margin:18px 0 30px;color:var(--warn-ink);font-size:13px;line-height:1.6}
+.sec{margin:0 0 34px}
+.sec>h2{font-size:13px;font-weight:600;color:var(--ink2);margin:0 0 11px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(232px,1fr));gap:13px}
+.grid.w2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.pad{background:var(--s1);border-radius:13px;padding:11px}
+.cap{font-size:11px;color:var(--ink3);font-family:var(--mono);margin:0 0 8px}
+.f{background:var(--s2);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.fh{padding:11px 13px;border-bottom:1px solid var(--line)}
+.fb{padding:13px}
+.rowb{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.k{font-size:11px;color:var(--ink3);letter-spacing:.05em;margin:0 0 4px}
+.t{font-size:15px;font-weight:600;margin:0;line-height:1.35}
+.t.lg{font-size:18px}
+.s{font-size:12.5px;color:var(--ink2);margin:3px 0 0;line-height:1.5}
+.tiny{font-size:11px;color:var(--ink3);margin:0;line-height:1.5}
+.num{font-family:var(--mono);font-size:34px;font-weight:700;line-height:1.05;margin:0;
+  font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.num.sm{font-size:22px}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.box{border:1px solid var(--line);border-radius:8px;padding:10px;margin-bottom:7px}
+.box:last-child{margin-bottom:0}
+.box.acc{background:var(--acc-bg);border-color:var(--acc-line);color:var(--acc-ink)}
+.box.ok{background:var(--ok-bg);border-color:var(--ok-line);color:var(--ok-ink)}
+.box.warn{background:var(--warn-bg);border-color:var(--warn-line);color:var(--warn-ink)}
+.box.dan{background:var(--dan-bg);border-color:var(--dan-line);color:var(--dan-ink)}
+.box.acc .s{color:var(--acc-ink2)}.box.ok .s{color:var(--ok-ink2)}
+.box.warn .s{color:var(--warn-ink2)}.box.dan .s{color:var(--dan-ink2)}
+.btn{display:block;text-align:center;padding:9px 6px;border:1px solid var(--line2);
+  border-radius:8px;font-size:12px;background:var(--s2)}
+.btn.pri{background:var(--acc-bg);border-color:var(--acc-line);color:var(--acc-ink)}
+.btn.dan{border-color:var(--dan-line);color:var(--dan-ink2)}
+.btns{display:flex;gap:6px}.btns>*{flex:1}
+.chip{display:inline-block;font-size:11px;padding:4px 9px;border-radius:8px;
+  background:var(--s1);color:var(--ink2)}
+.pill{font-size:11px;padding:2px 8px;border-radius:8px}
+.pill.ok{background:var(--ok-bg);color:var(--ok-ink2)}
+.pill.warn{background:var(--warn-bg);color:var(--warn-ink2)}
+.ph{height:58px;background:var(--acc-bg);border-radius:6px;display:flex;
+  align-items:center;justify-content:center;color:var(--acc-ink2);font-size:11px}
+.ph.tall{height:74px}.ph.n{background:var(--s1);color:var(--ink3)}
+.hr{border-top:1px solid var(--line);margin:11px 0;padding-top:11px}
+.li{display:flex;gap:8px;align-items:flex-start;margin-bottom:7px;font-size:12.5px}
+.li:last-child{margin-bottom:0}
+.dot{width:7px;height:7px;border-radius:50%;flex:0 0 auto;margin-top:6px}
+.dot.g{background:#1d9e75}.dot.r{background:#e24b4a}.dot.y{background:#ef9f27}.dot.b{background:#378add}
+.seats{display:grid;grid-template-columns:1fr 1fr;gap:9px}
+.seatblk{border:1px solid var(--line);border-radius:8px;padding:8px}
+.seatrow{display:flex;gap:4px;margin-bottom:4px}
+.seat{flex:1;text-align:center;padding:5px 0;border-radius:4px;font-size:10.5px;
+  font-family:var(--mono);background:var(--ok-bg);color:var(--ok-ink);border:1px solid var(--ok-line)}
+.seat.x{background:var(--dan-bg);color:var(--dan-ink);border-color:var(--dan-line)}
+.aisle{width:11px;flex:0 0 auto}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.stat{background:var(--s1);border-radius:8px;padding:9px 10px}
+.stat p{margin:0}.stat .v{font-size:17px;font-weight:600;margin-top:2px}
+.sig{text-align:center;padding:9px 2px;border:1px solid var(--line);border-radius:8px;font-size:11px;color:var(--ink2)}
+.sign{text-align:center;padding:24px 12px}
+.sign .nm{font-size:25px;font-weight:600;line-height:1.25;margin:8px 0 0}
+table{width:100%;border-collapse:collapse;font-size:12.5px}
+td{padding:6px 0}td.r{text-align:right;font-family:var(--mono)}
+tr.tot td{border-top:1px solid var(--line);padding-top:9px;font-weight:600;font-size:14px}
+tr.no td{color:var(--ink3)}
+.strike{text-decoration:line-through;color:var(--ink3)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>스마트 가이딩 앱 — 화면 목업 13종</h1>
+<p class="lead">2026-07-29 · 짝 문서 <code>docs/smartapp-ui-fusion-plan-2026-07-29.md</code> · SoT <code>docs/smart-guiding-app-zero-based-design-2026-07-29.md</code></p>
+
+<div class="warnbar">
+<strong>재질은 참고하지 말 것.</strong> 카드·버튼·음영·질감·색은 현재 스마트앱이 기준이다.
+이 목업이 증명하는 것은 <strong>정보 배치와 위계</strong>뿐이다 — 특히 ② ⑤에서 숫자가 문장 밖으로 나와
+화면의 주인공이 되는 부분. 채팅 화면은 현행 유지 대상이라 여기 없다.
+</div>
+
+<!-- ── 기사 콘솔 ─────────────────────────────────────── -->
+<div class="sec">
+<h2>① ② ③ 기사 콘솔 — 한국어, 3탭 이내, 타이핑 없음</h2>
+<div class="grid">
+
+  <div class="pad">
+    <p class="cap">① 운행 중 · 발화 대기열</p>
+    <div class="f">
+      <div class="fh rowb"><span class="tiny">09:24 · 운행 중</span><span class="pill ok">정시</span></div>
+      <div class="fb">
+        <p class="k">다음</p>
+        <p class="t">성산일출봉 · 3.1km</p>
+        <p class="s">09:31 도착 · 주차 B · 하차 40분</p>
+        <p class="k" style="margin:12px 0 6px">지금 할 수 있는 말</p>
+        <div class="box acc rowb"><span style="font-size:12.5px">도착 안내 · 하차 40분 · 집합장소</span><span class="mono" style="font-size:11px;white-space:nowrap">자동 0:12</span></div>
+        <div class="box"><span style="font-size:12.5px">오른쪽 창밖 보세요, 저게 성산일출봉입니다</span></div>
+        <div class="box"><span style="font-size:12.5px">포토 스팟 3곳 · 찍어드릴까요?</span></div>
+        <div class="box"><span style="font-size:12.5px">화장실은 매표소 왼편입니다</span></div>
+        <div class="hr btns"><span class="btn">3자 통역</span><span class="btn">한마디 남기기</span><span class="btn dan" style="flex:0 0 auto;padding:9px 12px">비상</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">② 자유시간 관제 · 숫자가 주인공</p>
+    <div class="f">
+      <div class="fh rowb"><span class="tiny">성산일출봉 · 자유시간</span><span class="pill warn">집합 중</span></div>
+      <div class="fb">
+        <div style="text-align:center;padding:6px 0 12px;border-bottom:1px solid var(--line);margin-bottom:12px">
+          <p class="num">+04:12</p>
+          <p class="s">출발 10:15 · +15까지 대기</p>
+          <p class="tiny">10:30 대기 종료 선언</p>
+        </div>
+        <p class="k">일행 3팀 · 6명 중 4명 탑승</p>
+        <div class="box ok rowb"><span style="font-size:12.5px">Chen 일행 2명</span><span style="font-size:11px">탑승</span></div>
+        <div class="box ok rowb"><span style="font-size:12.5px">Dubois 일행 2명</span><span style="font-size:11px">탑승</span></div>
+        <div class="box dan">
+          <div class="rowb" style="margin-bottom:8px"><span style="font-size:12.5px">Emma 일행 2명</span><span style="font-size:11px;white-space:nowrap">340m · 6분</span></div>
+          <div class="btns"><span class="btn">코디 호출</span><span class="btn">재촉 알림</span></div>
+        </div>
+        <p class="tiny" style="text-align:center;margin-top:10px">출발 결정은 앱이 합니다</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">③ 신호 응답 + 오늘의 나</p>
+    <div class="f">
+      <div class="fh" style="background:var(--acc-bg)"><p class="t" style="font-size:13px;color:var(--acc-ink)">Emma · 화장실</p></div>
+      <div class="fb">
+        <p class="k">원탭 응답 · 손님 언어로 3초 안에</p>
+        <div class="box"><span style="font-size:12.5px">5분 뒤 휴게소에 세울게요</span></div>
+        <div class="box"><span style="font-size:12.5px">바로 세워드릴게요</span></div>
+        <div class="box"><span style="font-size:12.5px">다음 장소에 깨끗한 곳 있습니다</span></div>
+        <div class="hr">
+          <p class="k">오늘의 나 · 어제와 비교</p>
+          <div class="g2">
+            <div class="stat"><p class="tiny">정시 출발</p><p class="v mono">4 / 4</p></div>
+            <div class="stat"><p class="tiny">신호 응답</p><p class="v mono">평균 9초</p></div>
+            <div class="stat"><p class="tiny">들려준 해설</p><p class="v mono">17</p></div>
+            <div class="stat"><p class="tiny">찍어준 사진</p><p class="v mono">42</p></div>
+          </div>
+          <div class="box ok" style="margin-top:8px"><span style="font-size:12px">어제 클레임 건, 기록 확인했고 기사님 대응은 정상이었습니다</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── 손님 앱 + 코디 ─────────────────────────────────── -->
+<div class="sec">
+<h2>④ ⑤ 손님 앱 · ⑥ 코디네이터 — 지금 카드 하나, 설치 불필요</h2>
+<div class="grid">
+
+  <div class="pad">
+    <p class="cap">④ 이동 중 · 기사 귀속</p>
+    <div class="f">
+      <div class="fh rowb"><span class="t" style="font-size:13px">Jeju east day tour</span><span class="tiny">☰</span></div>
+      <div class="fb">
+        <p class="k">ON THE WAY</p>
+        <p class="num sm">7 min</p>
+        <p class="t" style="margin-top:4px">Seongsan Ilchulbong</p>
+        <p class="s">Arriving 09:31</p>
+        <div class="box" style="margin-top:12px">
+          <p style="font-size:12px;margin:0;line-height:1.45">Kim Minsu is telling you about the sunrise peak</p>
+          <p class="tiny" style="margin-top:2px">12 years driving Jeju · ▶ 재생</p>
+        </div>
+        <div class="box" style="background:var(--s1);border:0">
+          <p style="font-size:12px;color:var(--ink2);margin:0">Nothing to do right now. Look out the right window.</p>
+        </div>
+        <div class="box rowb"><span class="li" style="margin:0"><span class="dot g"></span><span style="font-size:12px">Sangsong, licensed guide</span></span><span class="tiny">replies in 1 min</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑤ 자유시간 · 카운트다운 주인공</p>
+    <div class="f">
+      <div class="fh rowb"><span class="t" style="font-size:13px">Free time</span><span class="tiny mono">10:09</span></div>
+      <div class="fb">
+        <div style="text-align:center;margin-bottom:12px">
+          <p class="k">FREE TIME</p>
+          <p class="num">18:41</p>
+          <p class="s">Bus leaves 10:15</p>
+          <p class="tiny" style="color:var(--warn-ink2)">Waits until 10:30, then goes</p>
+        </div>
+        <div class="box" style="padding:0;overflow:hidden">
+          <div class="ph tall">집합 장소 실사진 — 자산 부재</div>
+          <div style="padding:9px 10px">
+            <p style="font-size:12px;font-weight:600;margin:0">Meet at the blue gate</p>
+            <p class="tiny">6 min walk from you — leave by 10:09</p>
+          </div>
+        </div>
+        <p class="k" style="margin:11px 0 6px">Tap to tell your driver</p>
+        <div class="g3">
+          <span class="sig">Toilet</span><span class="sig">Hungry</span><span class="sig">Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑥ 코디네이터 · 사장님 폰</p>
+    <div class="f">
+      <div class="fh rowb"><span class="tiny">오늘 투어 4</span><span class="pill ok">대기중</span></div>
+      <div class="fb">
+        <p class="k">지금 나를 필요로 하는 것</p>
+        <div class="box dan">
+          <p style="font-size:12.5px;font-weight:600;margin:0">성산일출봉 · Emma 일행</p>
+          <p class="s" style="margin-bottom:9px">집합 +12분 · 340m · 출발까지 3분</p>
+          <div class="btns"><span class="btn">전화</span><span class="btn">메시지</span><span class="btn">예외 처리</span></div>
+        </div>
+        <div class="hr rowb" style="margin-bottom:9px">
+          <span style="font-size:12px">Chen 질문 답변함 — 해녀 공연 시간</span>
+          <span style="font-size:11px;color:var(--acc-ink2);white-space:nowrap">덱에 저장</span>
+        </div>
+        <p class="k">나머지 3건은 정상</p>
+        <div class="li"><span class="dot g"></span><span style="flex:1">한라산 · 김기사 · 4명</span><span class="tiny">정시</span></div>
+        <div class="li"><span class="dot g"></span><span style="flex:1">서귀포 · 박기사 · 2명</span><span class="tiny">정시</span></div>
+        <div class="li"><span class="dot g"></span><span style="flex:1">우도 · 이기사 · 6명</span><span class="tiny">정시</span></div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── 픽업 시퀀스 ───────────────────────────────────── -->
+<div class="sec">
+<h2>⑦ 픽업 시퀀스 — 상봉이 끝날 때까지 양쪽 화면이 서로를 향한다</h2>
+<div class="grid">
+
+  <div class="pad">
+    <p class="cap">T-30 · 손님</p>
+    <div class="f"><div class="fb">
+      <p class="k">TODAY</p>
+      <p class="t lg">Pickup at 09:00</p>
+      <p class="s">Lotte hotel, main lobby door</p>
+      <div class="box" style="padding:0;overflow:hidden;margin-top:11px">
+        <div class="ph">호텔 정문 사진</div>
+        <div style="padding:8px 10px"><p class="tiny">This door — not the side entrance</p></div>
+      </div>
+      <div class="li"><span class="dot b"></span><span>Rain after 2pm — umbrella is in the car</span></div>
+      <div class="li"><span class="dot b"></span><span>Walking shoes for the crater</span></div>
+      <div class="li"><span class="dot b"></span><span>Lunch is paid on site, about 15,000 won</span></div>
+    </div></div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">T-10 · 손님</p>
+    <div class="f">
+      <div class="fh" style="background:var(--acc-bg)">
+        <p class="t" style="font-size:14px;color:var(--acc-ink)">Come down now</p>
+        <p class="s" style="color:var(--acc-ink2)">Kim Minsu is 4 minutes away</p>
+      </div>
+      <div class="fb">
+        <div class="box rowb"><span><span style="font-size:12.5px;font-weight:600">Kim Minsu</span><br><span class="tiny">Jeju tour taxi, 12 years</span></span></div>
+        <div class="box" style="padding:0;overflow:hidden">
+          <div class="ph n">차량 사진</div>
+          <div class="rowb" style="padding:8px 10px"><span style="font-size:12px">White Carnival</span><span class="mono" style="font-size:13px;font-weight:600">12가 3456</span></div>
+        </div>
+        <span class="btn" style="margin-top:4px">I'm downstairs</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">T-0 · 기사 폰이 곧 사인</p>
+    <div class="f">
+      <div class="sign" style="border-bottom:1px solid var(--line)">
+        <p class="k">WELCOME</p>
+        <p class="nm">Emma<br>Whitfield</p>
+        <p class="s" style="margin-top:10px">Jeju east day tour · 2 guests</p>
+      </div>
+      <div class="fb">
+        <p class="k">기사님, 화면을 손님 쪽으로 들어주세요</p>
+        <div class="btns" style="margin-top:7px"><span class="btn">만났습니다</span><span class="btn">인사 재생</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">T+5 · 아직 못 만남</p>
+    <div class="f">
+      <div class="fh" style="background:var(--warn-bg)">
+        <p class="t" style="font-size:13.5px;color:var(--warn-ink)">Can't find each other</p>
+        <p class="s" style="color:var(--warn-ink2)">Leaving at 09:10</p>
+      </div>
+      <div class="fb">
+        <div class="box"><p style="font-size:12.5px;margin:0">Share where you are</p><p class="tiny">Once. Deleted after the tour</p></div>
+        <div class="box"><p style="font-size:12.5px;margin:0">Call Sangsong</p><p class="tiny">Speaks English, will talk to the driver</p></div>
+        <p class="tiny" style="margin-top:11px">If you miss the pickup, your booking is held for 24 hours. No charge today.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── 낙오 + 온보딩 ─────────────────────────────────── -->
+<div class="sec">
+<h2>⑧ 낙오 캡슐 · ⑨ D-1 온보딩 3장</h2>
+<div class="grid">
+
+  <div class="pad">
+    <p class="cap">⑧ 출발 선언과 동시에 자동 발사</p>
+    <div class="f">
+      <div class="fh">
+        <p class="t">The car left Seongsan at 10:30</p>
+        <p class="s">Here is how you rejoin. Sangsong has already been told.</p>
+      </div>
+      <div class="fb">
+        <div class="box acc">
+          <p class="k" style="color:var(--acc-ink2)">REJOIN AT</p>
+          <p style="font-size:14px;font-weight:600;margin:0">Seopjikoji parking lot</p>
+          <p class="s">11:05 · about 20 min by taxi</p>
+        </div>
+        <p class="k" style="margin:11px 0 6px">Show this to any taxi driver</p>
+        <div class="box" style="border-color:var(--line2);text-align:center;padding:13px">
+          <p style="font-size:17px;font-weight:600;margin:0;line-height:1.4">섭지코지 주차장으로<br>가주세요</p>
+          <p class="s">서귀포시 성산읍 섭지코지로 107</p>
+        </div>
+        <div class="g2" style="margin:11px 0">
+          <div class="stat"><p class="tiny">Taxi fare</p><p class="v mono">~18,000</p></div>
+          <div class="stat"><p class="tiny">We cover</p><p class="v">all of it</p></div>
+        </div>
+        <div class="btns"><span class="btn">Call a taxi</span><span class="btn">Talk to Sangsong</span></div>
+        <p class="tiny" style="margin-top:11px">Your group has been told you are on the way.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑨-1 약점을 먼저 말한다</p>
+    <div class="f"><div class="fb">
+      <p class="k mono">1 / 3</p>
+      <p class="t lg" style="margin-top:9px">Your driver doesn't speak English</p>
+      <p class="s" style="margin-bottom:12px">That's on purpose. We hire the drivers who know Jeju best, not the ones who happen to know English.</p>
+      <div class="box"><p style="font-size:12.5px;font-weight:600;margin:0">Kim Minsu</p><p class="tiny">12 years · oreum specialist · takes very good photos</p></div>
+    </div></div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑨-2 실제로 눌러보게 한다</p>
+    <div class="f"><div class="fb">
+      <p class="k mono">1 / 3 → 2 / 3</p>
+      <p class="t lg" style="margin-top:9px">This is how you talk to him</p>
+      <p class="s" style="margin-bottom:11px">Tap once. He answers in your language in about three seconds. Try it now.</p>
+      <div class="g2" style="margin-bottom:10px"><span class="sig">Toilet</span><span class="sig" style="background:var(--acc-bg);border-color:var(--acc-line);color:var(--acc-ink)">Photo</span></div>
+      <div class="box" style="background:var(--s1);border:0">
+        <p class="tiny">Kim Minsu</p>
+        <p style="font-size:12.5px;margin:2px 0 0;line-height:1.45">Sure — there's a good spot right there, I'll take it</p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑨-3 정직한 운영 시간 + 확인 체크</p>
+    <div class="f"><div class="fb">
+      <p class="k mono">3 / 3</p>
+      <p class="t lg" style="margin-top:9px">And a licensed guide is on call</p>
+      <div class="box" style="margin-top:11px">
+        <p style="font-size:12.5px;font-weight:600;margin:0">Sangsong</p>
+        <p class="tiny">National licensed tour guide, English and Chinese</p>
+        <div class="rowb" style="border-top:1px solid var(--line);margin-top:8px;padding-top:8px">
+          <span class="tiny">07:00 – 22:00</span><span class="tiny">replies in about 1 min</span>
+        </div>
+      </div>
+      <div class="box" style="background:var(--s1);border:0"><span style="font-size:11.5px;color:var(--ink2)">☐ I understand how this tour works</span></div>
+      <span class="btn" style="margin-top:4px">Start</span>
+    </div></div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── 버스 좌석 보드 ────────────────────────────────── -->
+<div class="sec">
+<h2>⑩ 40인 버스 좌석 보드 — 기사 태블릿, 이름 없는 좌석</h2>
+<div class="pad" style="max-width:640px">
+  <div class="f">
+    <div class="fh rowb">
+      <div><p class="t">36 확인 · 2 추정 · 2 미확인</p><p class="s">14팀 중 13팀 완료 · 비콘은 후보, 확정은 문 통과 태그</p></div>
+      <div style="text-align:right"><p class="num sm">+11:38</p><p class="tiny" style="color:var(--warn-ink2)">10:30 대기 종료</p></div>
+    </div>
+    <div class="fb">
+      <div style="margin-bottom:11px"><span class="chip">방송 4개 언어</span> <span class="chip">EN 22</span> <span class="chip">ZH 9</span> <span class="chip">JA 5</span> <span class="chip">DE 4</span></div>
+      <div class="seats" id="seats"></div>
+      <div class="box dan" style="margin-top:12px">
+        <div class="rowb" style="margin-bottom:8px"><span style="font-size:12px;font-weight:600">미탑승 1팀 · 2명 — 7C 7D · Emma 일행</span><span style="font-size:11px;white-space:nowrap">340m · 6분</span></div>
+        <div class="btns"><span class="btn">코디가 전화</span><span class="btn">일행 리더에게</span></div>
+      </div>
+      <div class="hr" style="display:flex;gap:14px;flex-wrap:wrap">
+        <span class="tiny">■ 확인(문 통과)</span><span class="tiny">■ 추정(근처·미태그)</span>
+        <span class="tiny">■ 신호 없음 — 미탑승 아님, 눈으로 확인</span><span class="tiny">· 느린 그룹 = 알림 10분 일찍</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── 지연 + 결제 ───────────────────────────────────── -->
+<div class="sec">
+<h2>⑪ 지연 자동 고지 · ⑫ 현장 결제</h2>
+<div class="grid w2">
+
+  <div class="pad">
+    <p class="cap">⑪ 기사 · 정차 중에만 뜬다</p>
+    <div class="f">
+      <div class="fh" style="background:var(--warn-bg)">
+        <p class="t" style="font-size:14px;color:var(--warn-ink)">12분 지연</p>
+        <p class="s" style="color:var(--warn-ink2)">이대로면 우도 배 17:00편을 놓칩니다</p>
+      </div>
+      <div class="fb">
+        <p class="k">하나 고르면 전원에게 4개 언어로 나갑니다</p>
+        <div class="box acc"><p style="font-size:12.5px;font-weight:600;margin:0">우도 체류 20분 단축</p><p class="s">배 시간 지킴 · 나머지 일정 그대로</p></div>
+        <div class="box"><p style="font-size:12.5px;margin:0">성산 해설 스팟 1곳 생략</p><p class="s">우도 온전히 확보</p></div>
+        <div class="box"><p style="font-size:12.5px;margin:0">종료 30분 연장</p><p class="s">손님 동의 필요 · 추가금 없음</p></div>
+        <span class="btn" style="margin-top:11px">판단 어려우면 코디에게</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑪ 손님 · 8초 뒤 자동 도착</p>
+    <div class="f">
+      <div class="fh">
+        <p class="k">SCHEDULE CHANGED</p>
+        <p class="t">Traffic on the coast road put us 12 minutes behind</p>
+        <p class="s">Kim Minsu shortened Udo by 20 minutes so we still make the 17:00 ferry.</p>
+      </div>
+      <div class="fb">
+        <div class="li"><span class="dot y"></span><span>Udo <span class="strike mono">90 min</span> <span class="mono">→ 70 min</span></span></div>
+        <div class="li"><span class="dot g"></span><span>Everything else unchanged · back at 18:30 as planned</span></div>
+        <div class="box" style="background:var(--s1);border:0;margin-top:11px">
+          <p style="font-size:11.5px;color:var(--ink2);margin:0">Not happy with this? Tell Sangsong — he can change it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑫ 기사 · 항목만 고른다</p>
+    <div class="f">
+      <div class="fh"><p class="t" style="font-size:13px">우도 도착 · 현장 항목</p><p class="s">가격은 앱에 고정 · 기사 임의 변경 불가</p></div>
+      <div class="fb">
+        <div class="box rowb"><span><span style="font-size:12.5px">전동카트 2인</span><br><span class="tiny">40분 · 우도 일주</span></span><span class="mono" style="font-size:13px">30,000</span></div>
+        <div class="box rowb"><span><span style="font-size:12.5px">땅콩아이스크림 2</span><br><span class="tiny">우도 명물</span></span><span class="mono" style="font-size:13px">10,000</span></div>
+        <div class="box rowb"><span><span style="font-size:12.5px">투어 30분 연장</span><br><span class="tiny">시간당 30,000 기준</span></span><span class="mono" style="font-size:13px">15,000</span></div>
+        <span class="btn" style="margin-top:11px">손님에게 보내기</span>
+        <p class="tiny" style="text-align:center;margin-top:9px">동의 전에는 기사에게 수취 버튼이 안 생깁니다</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">⑫ 손님 · 동의가 곧 원장 기록</p>
+    <div class="f">
+      <div class="fh"><p class="t">Optional today</p><p class="s">Cash to Kim Minsu on the spot. Nothing is charged to your card.</p></div>
+      <div class="fb">
+        <table>
+          <tr><td>Electric cart, 2 people</td><td class="r">30,000</td></tr>
+          <tr><td>Peanut ice cream, 2</td><td class="r">10,000</td></tr>
+          <tr class="no"><td>30 min extension</td><td class="r">declined</td></tr>
+          <tr class="tot"><td>Total</td><td class="r">40,000</td></tr>
+        </table>
+        <div class="btns" style="margin:11px 0 9px"><span class="btn">Not today</span><span class="btn pri">Agree</span></div>
+        <p class="tiny">ATM inside the ferry terminal, 200m. Card not accepted on Udo carts.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<!-- ── 플라이휠 + 종료 ───────────────────────────────── -->
+<div class="sec">
+<h2>⑬ 기사 지식 역류 · 종료 후 앨범과 리뷰</h2>
+<div class="grid w2">
+
+  <div class="pad">
+    <p class="cap">기사 · 10초 녹음</p>
+    <div class="f">
+      <div class="fh"><p class="t" style="font-size:13px">한마디 남기기</p><p class="s">우도 · 하고수동해변에 자동 태그</p></div>
+      <div class="fb">
+        <div style="text-align:center;padding:8px 0 14px">
+          <p class="num sm">0:07</p>
+          <p class="tiny">한국어로 편하게 말씀하세요</p>
+        </div>
+        <div class="hr" style="margin-top:0">
+          <p class="k">내가 올린 팁</p>
+          <div class="li"><span class="dot g"></span><span style="flex:1">10월엔 등대 쪽 역광 — 반대편</span><span class="tiny">18명 사용</span></div>
+          <div class="li"><span class="dot y"></span><span style="flex:1">검멀레 화장실 공사 중</span><span class="tiny">승인 대기</span></div>
+          <div class="li"><span class="dot b"></span><span style="flex:1">해녀 공연 14시 1회만</span><span class="tiny">내 대기열에는 이미</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">사장 · 주 1회 월요일 배치</p>
+    <div class="f">
+      <div class="fh rowb"><div><p class="t" style="font-size:13px">승인 큐 9건</p><p class="s">중복 4건 자동 병합됨</p></div><span class="pill warn">12분</span></div>
+      <div class="fb">
+        <div class="box">
+          <div class="rowb"><span style="font-size:12.5px;font-weight:600">검멀레 화장실 공사 중</span><span class="tiny">기사 3명</span></div>
+          <p class="s" style="margin-bottom:9px">우도 · 유효기간 필요 — 언제까지?</p>
+          <div class="btns"><span class="btn">승인 · 4주</span><span class="btn">보류</span></div>
+        </div>
+        <div class="box">
+          <div class="rowb"><span style="font-size:12.5px;font-weight:600">성산 매표소 왼편 화장실</span><span class="tiny">기사 1명</span></div>
+          <p class="s" style="margin-bottom:9px">이미 문구 덱에 있음 — 자동 중복</p>
+          <span class="btn">기각 · 기사에게 사유 전달</span>
+        </div>
+        <p class="tiny" style="text-align:center;margin-top:11px">승인분은 화요일 새벽 TTS 합성 후 전 기사 대기열에</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">손님 · 종료 후 앨범</p>
+    <div class="f">
+      <div class="fh"><p class="t">42 photos from today</p><p class="s">Taken by Kim Minsu. Yours to keep, no account needed.</p></div>
+      <div class="fb">
+        <div class="g3" style="margin-bottom:11px">
+          <div class="ph" style="height:64px">사진</div><div class="ph n" style="height:64px"></div><div class="ph n" style="height:64px"></div>
+          <div class="ph n" style="height:64px"></div><div class="ph n" style="height:64px"></div><div class="ph n" style="height:64px">+37</div>
+        </div>
+        <div class="rowb"><span class="tiny">Seongsan Ilchulbong</span><span class="tiny mono">14</span></div>
+        <div class="rowb"><span class="tiny">Udo, Hagosudong beach</span><span class="tiny mono">19</span></div>
+        <div class="rowb" style="margin-bottom:11px"><span class="tiny">Seopjikoji</span><span class="tiny mono">9</span></div>
+        <span class="btn">Download all</span>
+        <p class="tiny" style="margin-top:9px">Link stays live for 90 days, then deleted.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pad">
+    <p class="cap">손님 · 리뷰 (소스별 분기)</p>
+    <div class="f">
+      <div class="fh"><p class="t">How was Kim Minsu?</p><p class="s">He sees the weekly average, never who said what.</p></div>
+      <div class="fb">
+        <p style="text-align:center;font-size:24px;letter-spacing:4px;margin:4px 0 14px;color:var(--warn-line)">★★★★<span style="color:var(--ink3)">★</span></p>
+        <p class="k">What stood out</p>
+        <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px">
+          <span class="chip" style="background:var(--acc-bg);color:var(--acc-ink)">The photos</span>
+          <span class="chip">Never felt lost</span><span class="chip">Kept to time</span><span class="chip">Learned a lot</span>
+        </div>
+        <div class="box" style="background:var(--s1);border:0">
+          <p style="font-size:11.5px;color:var(--ink2);margin:0;line-height:1.55">Booked through Klook? We'll point you back there to post it — that's their review, not ours.</p>
+        </div>
+        <span class="btn" style="margin-top:4px">Send</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</div>
+<script>
+(function(){
+  var host=document.getElementById('seats'); if(!host) return;
+  var missing=['7C','7D'], est=['5A','5B'], nosig=['3C','9D'], slow=['2A','2B','9C'];
+  [[1,5],[6,10]].forEach(function(b){
+    var w=document.createElement('div'); w.className='seatblk';
+    var h=document.createElement('p'); h.className='cap'; h.textContent=b[0]+'열 – '+b[1]+'열'; w.appendChild(h);
+    for(var r=b[0];r<=b[1];r++){
+      var row=document.createElement('div'); row.className='seatrow';
+      ['A','B','|','C','D'].forEach(function(c){
+        var el=document.createElement('div');
+        if(c==='|'){el.className='aisle';row.appendChild(el);return;}
+        var code=r+c;
+        el.className='seat';
+        if(missing.indexOf(code)>=0){el.className='seat x';}
+        else if(est.indexOf(code)>=0){el.style.background='var(--warn-bg)';el.style.color='var(--warn-ink)';el.style.borderColor='var(--warn-line)';}
+        else if(nosig.indexOf(code)>=0){el.style.background='var(--s1)';el.style.color='var(--ink3)';el.style.borderColor='var(--line)';}
+        el.textContent=slow.indexOf(code)>=0?code+'·':code;
+        row.appendChild(el);
+      });
+      w.appendChild(row);
+    }
+    host.appendChild(w);
+  });
+})();
+</script>
+</body>
+</html>
