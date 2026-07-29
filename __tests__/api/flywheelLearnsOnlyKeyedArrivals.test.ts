@@ -42,16 +42,48 @@ const arrival = readFileSync(
   path.join(process.cwd(), 'app/api/tour-rooms/[bookingId]/manual-arrival/route.ts'),
   'utf8',
 );
+/** X18: the leg logic moved out of the cron so it could be unit-tested. */
+const matrix = readFileSync(path.join(process.cwd(), 'lib/tour-room/travelMatrix.ts'), 'utf8');
 
 describe('the travel-matrix flywheel', () => {
   it('🔴 learns only from arrivals that carry a place', () => {
     // Stated as a test so the next person reading "the matrix is empty" does
-    // not go looking for a broken insert.
-    expect(flywheel).toMatch(/if \(!from \|\| !to \|\| from === to\) continue;/);
+    // not go looking for a broken insert. The rule moved into `travelMatrix`
+    // with X18 (the cron delegates now) — the invariant did not move.
+    expect(matrix).toContain('if (from === to) continue;');
+    // Keyless points never reach the leg builder at all.
+    expect(matrix).toContain('if (!point.roomId || !point.poiKey || !point.at) continue;');
   });
 
   it('reads the key out of the arrival payload', () => {
     expect(flywheel).toContain('payload?.poi_key');
+  });
+
+  /**
+   * 🔴 X18 — the second source. There are two ways this app records an arrival
+   * and they land in different tables:
+   *
+   *   guide taps 도착  → tour_room_events      type='manual_arrival'
+   *   geofence trips   → tour_room_spot_events event_type='arrived'
+   *
+   * The learner read only the first. X15 put the geofence on the STAFF device,
+   * which makes it the path most arrivals will now come from, so reading one
+   * table would have kept the matrix empty for a new reason.
+   */
+  it('reads BOTH arrival sources, not just the manual tap', () => {
+    expect(flywheel).toContain("'tour_room_events'");
+    expect(flywheel).toContain("'tour_room_spot_events'");
+    expect(flywheel).toContain("event_type', 'arrived'");
+    // The geofence table has no poi_key of its own — it must join the spot.
+    expect(flywheel).toContain('tour_guide_spots(poi_key)');
+  });
+
+  /**
+   * "0 legs" used to be unreadable: broken learner, or nobody arrived? The
+   * response now says which, split by path.
+   */
+  it('reports how many arrivals it saw, so zero legs can be diagnosed', () => {
+    expect(flywheel).toContain('arrivals: arrivalCounts');
   });
 });
 

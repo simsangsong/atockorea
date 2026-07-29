@@ -1,5 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
+import {
+  buildLegSamples,
+  mergeArrivals,
+  nextRunningMean,
+  type ArrivalPoint,
+  type LegSample,
+} from '@/lib/tour-room/travelMatrix';
 import { checkCronAuth } from '@/lib/cron-auth';
 import { sendEmail } from '@/lib/email';
 import { kstToday } from '@/lib/tour-room/time';
@@ -31,14 +38,6 @@ export const dynamic = 'force-dynamic';
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
-function daypartOf(iso: string): 'am' | 'midday' | 'pm' | 'evening' {
-  const kstHour = (new Date(iso).getUTCHours() + 9) % 24;
-  if (kstHour < 11) return 'am';
-  if (kstHour < 14) return 'midday';
-  if (kstHour < 18) return 'pm';
-  return 'evening';
-}
-
 interface ArrivalEvent {
   room_id: string;
   created_at: string;
@@ -63,21 +62,63 @@ export async function GET(req: NextRequest) {
 
     // ── ① travel-matrix learn ────────────────────────────────────────────────
     let matrixUpserts = 0;
-    const legSamples: Array<{ from: string; to: string; daypart: string; minutes: number }> = [];
+    let legSamples: LegSample[] = [];
+    /** Reported so "0 legs" can be read as "no arrivals" rather than "broken". */
+    let arrivalCounts = { manual: 0, geofence: 0 };
     try {
-      const { data: events } = await supabase
-        .from('tour_room_events')
-        .select('room_id, created_at, payload')
-        .eq('type', 'manual_arrival')
-        .gte('created_at', weekAgoIso)
-        .order('created_at', { ascending: true });
+      /**
+       * 🔴 BOTH arrival sources, not one.
+       *
+       * `manual_arrival` is the guide tapping 도착; `tour_room_spot_events`
+       * with `event_type='arrived'` is the geofence firing by itself. X15 just
+       * put that geofence on the staff device, so it is about to become the
+       * common path — and the learner had never read it. Measured before this
+       * change: matrix 0 rows, manual_arrival 0 rows all time.
+       */
+      const [{ data: events }, { data: spotEvents }] = await Promise.all([
+        supabase
+          .from('tour_room_events')
+          .select('room_id, created_at, payload')
+          .eq('type', 'manual_arrival')
+          .gte('created_at', weekAgoIso)
+          .order('created_at', { ascending: true }),
+        supabase
+          .from('tour_room_spot_events')
+          .select('room_id, created_at, tour_guide_spots(poi_key)')
+          .eq('event_type', 'arrived')
+          .gte('created_at', weekAgoIso)
+          .order('created_at', { ascending: true }),
+      ]);
 
-      const byRoom = new Map<string, ArrivalEvent[]>();
-      for (const event of (events ?? []) as ArrivalEvent[]) {
-        const list = byRoom.get(event.room_id) ?? [];
-        list.push(event);
-        byRoom.set(event.room_id, list);
-      }
+      const manualPoints: ArrivalPoint[] = ((events ?? []) as ArrivalEvent[])
+        .map((event) => ({
+          roomId: event.room_id,
+          at: event.created_at,
+          poiKey: event.payload?.poi_key ?? '',
+          source: 'manual' as const,
+        }))
+        .filter((point) => Boolean(point.poiKey));
+
+      type SpotArrivalRow = {
+        room_id: string | null;
+        created_at: string;
+        tour_guide_spots?: { poi_key?: string | null } | Array<{ poi_key?: string | null }> | null;
+      };
+      const geofencePoints: ArrivalPoint[] = ((spotEvents ?? []) as SpotArrivalRow[])
+        .map((row) => {
+          // PostgREST returns the embedded row as an object or a one-element
+          // array depending on how it infers the relationship.
+          const joined = Array.isArray(row.tour_guide_spots) ? row.tour_guide_spots[0] : row.tour_guide_spots;
+          return {
+            roomId: row.room_id ?? '',
+            at: row.created_at,
+            poiKey: joined?.poi_key ?? '',
+            source: 'geofence' as const,
+          };
+        })
+        .filter((point) => Boolean(point.poiKey) && Boolean(point.roomId));
+
+      arrivalCounts = { manual: manualPoints.length, geofence: geofencePoints.length };
 
       // Planned stays for the gap correction (from the day's plans).
       const { data: plans } = await supabase
@@ -91,19 +132,7 @@ export async function GET(req: NextRequest) {
         }
       }
 
-      for (const arrivals of byRoom.values()) {
-        for (let i = 1; i < arrivals.length; i += 1) {
-          const from = arrivals[i - 1].payload?.poi_key;
-          const to = arrivals[i].payload?.poi_key;
-          if (!from || !to || from === to) continue;
-          const gapMin =
-            (new Date(arrivals[i].created_at).getTime() - new Date(arrivals[i - 1].created_at).getTime()) / 60_000;
-          const stay = stayByKey.get(from) ?? 60;
-          const drive = Math.round(gapMin - stay);
-          if (drive < 5 || drive > 240) continue; // out-of-band → noise, drop
-          legSamples.push({ from, to, daypart: daypartOf(arrivals[i - 1].created_at), minutes: drive });
-        }
-      }
+      legSamples = buildLegSamples(mergeArrivals(manualPoints, geofencePoints), stayByKey);
 
       for (const leg of legSamples) {
         const { data: existing } = await supabase
@@ -114,14 +143,13 @@ export async function GET(req: NextRequest) {
           .eq('daypart', leg.daypart)
           .maybeSingle();
         const prev = existing as { minutes_p50: number; samples: number } | null;
-        const samples = (prev?.samples ?? 0) + 1;
-        const mean = prev ? (Number(prev.minutes_p50) * prev.samples + leg.minutes) / samples : leg.minutes;
+        const { minutes_p50: mean, samples } = nextRunningMean(prev, leg.minutes);
         const { error } = await supabase.from('poi_travel_matrix').upsert(
           {
             from_key: leg.from,
             to_key: leg.to,
             daypart: leg.daypart,
-            minutes_p50: Math.round(mean * 10) / 10,
+            minutes_p50: mean,
             samples,
             updated_at: new Date().toISOString(),
           },
@@ -344,7 +372,17 @@ export async function GET(req: NextRequest) {
     }
 
     return NextResponse.json({
-      matrix: { legs: legSamples.length, upserts: matrixUpserts },
+      /**
+       * `arrivals` is reported alongside `legs` on purpose: for a long time
+       * this returned `legs: 0` and there was no way to tell "the learner is
+       * broken" from "nobody arrived anywhere this week". Now the answer is in
+       * the response, split by which path recorded it.
+       */
+      matrix: {
+        legs: legSamples.length,
+        upserts: matrixUpserts,
+        arrivals: arrivalCounts,
+      },
       digest: { closure_skips: closureSkips.length, google_picks: googlePicks.length },
       purge: {
         needs: needsPurged,
