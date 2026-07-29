@@ -985,6 +985,37 @@ export default function Cockpit({
   // Kakao-grade /messages attachment path — no new schema. Sent the evening
   // before (or at pickup) so the party recognizes the vehicle.
   const vehiclePhotoRef = useRef<HTMLInputElement | null>(null);
+  // SG-4d -- the meeting-point photo: same camera input as the vehicle
+  // photo, but it lands in the PUBLIC bucket via /meeting-photo and waits in
+  // the ops review queue. One tap at a stop fixes that POI forever.
+  const meetingPhotoRef = useRef<HTMLInputElement | null>(null);
+  const [meetingPhotoBusy, setMeetingPhotoBusy] = useState(false);
+  const sendMeetingPhoto = useCallback(
+    async (file: File) => {
+      const poiKey = typeof arrItem?.poi_key === 'string' ? arrItem.poi_key : null;
+      if (!poiKey) {
+        say('poi 정보가 없는 스팟이에요');
+        return;
+      }
+      setMeetingPhotoBusy(true);
+      try {
+        const form = new FormData();
+        form.append('photo', file);
+        form.append('poiKey', poiKey);
+        const res = await fetch(`/api/tour-rooms/${bookingId}/meeting-photo`, {
+          method: 'POST',
+          headers: { 'x-tour-room-auth': session },
+          body: form,
+        });
+        say(res.ok ? '집합장소 사진 접수 ✓ (검수 후 손님에게 보여요)' : '전송 실패 — 다시 시도해 주세요');
+      } catch {
+        say('네트워크 오류');
+      } finally {
+        setMeetingPhotoBusy(false);
+      }
+    },
+    [arrItem, bookingId, session, say],
+  );
   const sendVehiclePhoto = useCallback(
     async (file: File) => {
       try {
@@ -2407,6 +2438,31 @@ export default function Cockpit({
       {sheet === 'arrival' && arrItem ? (
         <Sheet onClose={() => setSheet('none')} title={`${itemTitle(arrItem)} 도착 안내`}>
           <div className="tr-stagger flex max-h-[62vh] flex-col gap-3 overflow-y-auto">
+            {typeof arrItem.poi_key === 'string' && arrItem.poi_key ? (
+              <>
+                <input
+                  ref={meetingPhotoRef}
+                  type="file"
+                  accept="image/*"
+                  capture="environment"
+                  className="hidden"
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    event.target.value = '';
+                    if (file) void sendMeetingPhoto(file);
+                  }}
+                />
+                <button
+                  type="button"
+                  data-testid="meeting-photo-capture"
+                  disabled={meetingPhotoBusy}
+                  onClick={() => meetingPhotoRef.current?.click()}
+                  className="tr-btn-physical text-cjk-safe flex min-h-[44px] w-full items-center justify-center rounded-2xl bg-[var(--tr-surface-2)] px-4 tr-label font-bold text-[var(--tr-ink)] disabled:opacity-50"
+                >
+                  {meetingPhotoBusy ? '전송 중…' : '📸 집합장소 사진 찍기 (한 번이면 영구 해결)'}
+                </button>
+              </>
+            ) : null}
             {/* B4 — operator prep: hours/closed/tips at a glance before sending */}
             {arrBriefing && arrBriefing.length > 0 ? (
               <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="arrival-briefing">

@@ -216,6 +216,8 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   'POST /api/tour-rooms/[bookingId]/location': { actor: 'guest', tier: 'free' },
   'DELETE /api/tour-rooms/[bookingId]/location': { actor: 'guest', tier: 'free' },
   'POST /api/tour-rooms/[bookingId]/driver-signal': { actor: 'driver', tier: 'free' },
+  // SG-4d — meeting-point photo capture (staff camera → public bucket → review queue).
+  'POST /api/tour-rooms/[bookingId]/meeting-photo': { actor: 'driver', tier: 'free' },
 
   // ── AI surfaces ────────────────────────────────────────────────────────────
   'POST /api/tour-rooms/[bookingId]/concierge': { actor: 'guest', tier: 'llm' },

@@ -21,6 +21,31 @@ const SHELL_ASSETS = [
   '/pwa/apple-touch-icon.png',
 ];
 
+/**
+ * SG-4e — PUBLIC content images only (`/images/**`, same-origin: measured
+ * 76/76 stored POI URLs are repo-local). Cache-first with a small LRU so a
+ * tunnel does not blank the hero band the guest just saw. Signed-URL media
+ * (chat photos, vehicle refs) never lands here — the URL churns, so caching
+ * it is both useless and a quota leak. HTML/API stay network-only, as ever.
+ */
+const IMAGE_CACHE = 'atoc-tour-mode-img-v1';
+const IMAGE_PATH_PREFIX = '/images/';
+const IMAGE_CACHE_MAX = 12;
+
+async function imageCacheFirst(request) {
+  const cache = await caches.open(IMAGE_CACHE);
+  const cached = await cache.match(request);
+  if (cached) return cached;
+  const response = await fetch(request);
+  if (response.ok) {
+    await cache.put(request, response.clone());
+    const keys = await cache.keys();
+    // FIFO trim is LRU enough at n=12: the band shows one photo at a time.
+    for (let i = 0; i < keys.length - IMAGE_CACHE_MAX; i += 1) await cache.delete(keys[i]);
+  }
+  return response;
+}
+
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches
@@ -48,6 +73,11 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
+  // SG-4e — before the shell check so content images get their own lane.
+  if (url.pathname.startsWith(IMAGE_PATH_PREFIX)) {
+    event.respondWith(imageCacheFirst(event.request));
+    return;
+  }
   if (!SHELL_ASSETS.includes(url.pathname)) return; // network-only for everything else
   event.respondWith(
     caches.match(event.request).then(

@@ -128,6 +128,7 @@ const adminMenuGroups: AdminMenuGroup[] = [
     items: [
       { path: '/admin/match-pois', label: '매칭 POI 관리', icon: MapPin },
       { path: '/admin/facility-pins', label: '편의시설 핀', icon: Toilet },
+      { path: '/admin/meeting-photos', label: '집합장소 사진', icon: Toilet },
       { path: '/admin/tour-mode-spots', label: '투어모드 스팟 좌표', icon: Crosshair },
       { path: '/admin/poi-videos', label: 'POI 동영상 검수', icon: Clapperboard },
       { path: '/admin/poi-content-locales', label: 'POI 해설 로케일 검수', icon: Languages },
