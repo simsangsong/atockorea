@@ -133,6 +133,10 @@ async function loadDietary(supabase: RoomDbClient, bookingId: string): Promise<s
 }
 
 interface TourMeta {
+  /** The tour's own id. Carried so `resolveDaySchedule` can reach stage 2.5 —
+   *  without it the stops come back with no `poi_key` and the schedule card
+   *  names times with no places. */
+  id: string;
   city: string | null;
   lunchIncluded: boolean;
   /** resolveDaySchedule stage ③ input — the legacy join-tour schedule. */
@@ -153,6 +157,7 @@ async function loadTourMeta(supabase: RoomDbClient, tourId: string): Promise<Tou
       | { city?: string | null; lunch_included?: boolean | null; schedule?: unknown; price_type?: string | null }
       | null;
     return {
+      id: tourId,
       city: row?.city ?? null,
       lunchIncluded: row?.lunch_included === true,
       schedule: row?.schedule ?? null,
@@ -160,7 +165,7 @@ async function loadTourMeta(supabase: RoomDbClient, tourId: string): Promise<Tou
     };
   } catch {
     // 조회 실패 = 안전 기본값 join (tourKind.ts의 판정 규칙과 동일한 방향).
-    return { city: null, lunchIncluded: false, schedule: null, kind: 'join' };
+    return { id: tourId, city: null, lunchIncluded: false, schedule: null, kind: 'join' };
   }
 }
 
@@ -226,6 +231,7 @@ async function buildRoomBriefingPlan(
         bookingId: args.bookingId,
         tourDate: args.tourDate,
         tourSchedule: args.tourMeta.schedule,
+        tourId: args.tourMeta.id,
       })
     : { source: 'none' as const, schedule: [], dayPlan: null };
 

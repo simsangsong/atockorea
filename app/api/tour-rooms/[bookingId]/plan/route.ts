@@ -348,6 +348,7 @@ export async function GET(
       tourDate: booking.tour_date,
       itinerary: (bookingRow as { itinerary?: unknown } | null)?.itinerary ?? null,
       tourSchedule: tourJoin?.schedule,
+      tourId: booking.tour_id ?? null,
     });
 
     // Drafts are invisible to the resolver — surface them here for editors.

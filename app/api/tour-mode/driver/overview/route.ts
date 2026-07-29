@@ -52,6 +52,22 @@ export async function GET(req: NextRequest) {
         tourDate,
         itinerary: (booking as { itinerary?: unknown }).itinerary ?? null,
         tourSchedule: tourJoin?.schedule,
+        /**
+         * 🔴 Without `tourId` the resolver skips stage ②.5 and falls through to
+         * `tours.schedule` — a single-language blob whose stops carry no
+         * `poi_key`. Every consumer downstream keys on `poi_key`: the nav
+         * coordinates two lines below, the arrival card's content, the facility
+         * pins. So the cockpit was showing a day with no places in it, and the
+         * arrival card had nothing to say when a guide tapped [도착].
+         *
+         * Measured 2026-07-29: poi_key coverage on this route was 0 stops. With
+         * the id it is ~143 stops across 32 tours — the same itinerary the guest
+         * read when they booked, already translated, at the cost of one query.
+         *
+         * The parameter existed and was simply never passed. It reads as a
+         * missing feature and is a missing argument.
+         */
+        tourId,
       });
 
       // Nav coords (W3.2): match_pois lat/lng for poi-keyed schedule items.

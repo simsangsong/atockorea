@@ -80,7 +80,9 @@ async function schedulePrewarm(
     const plans: Array<{ bookingId: string; schedule: unknown[]; locales: string[] }> = [];
     for (const b of bookings as Array<{ id: string; preferred_language?: string | null }>) {
       try {
-        const resolved = await resolveDaySchedule(supabase, { bookingId: b.id, tourDate });
+        // tourId unlocks stage 2.5 — without it the stops carry no poi_key,
+        // and this prewarm keys on exactly that.
+        const resolved = await resolveDaySchedule(supabase, { bookingId: b.id, tourDate, tourId });
         if (resolved.schedule.length === 0) continue;
         plans.push({
           bookingId: b.id,
