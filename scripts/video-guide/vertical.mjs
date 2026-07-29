@@ -1,110 +1,100 @@
 #!/usr/bin/env node
 /**
- * The 90-second vertical cut.
+ * The teaser — 60–90s vertical, money first (V6-D1 / B-7).
  *
- * Built from the finished wide master rather than re-rendering from source: the
- * grade, the pacing and the speed ramps are already correct there, so the vertical
- * only has to choose the highlights and dress them. Picking segments off the
- * master also means the two cuts can never drift apart.
+ * A shorts cut lives or dies in its first two seconds, so it does NOT open
+ * chronologically: segment one is the single best money beat (the panorama
+ * polaroid), then the claim, then chronology resumes. 1x/1.2x highlight clips
+ * are folded in at up to six seconds each until at least 80% of the budget is
+ * used — the old picker took stops only and shipped 54 of 90 seconds.
  *
- * Layout follows assets/howto/poi-overlay-yonggungsa-p5.html — 1080x1920, the
- * 16:9 band at y656, caption block above, protection line below — with the
- * margins filled by a blurred copy of the same frame rather than left dead.
+ * Segments are the full guide's own rendered beats (vfull.mjs must run first):
+ * shells, grade and pacing are identical across the two cuts by construction,
+ * and only trimmed segments re-encode.
+ *
+ * The E-5 gate lives here, after the encode, because it judges the output:
+ * budget fill ≥80% and a money opener — the build fails otherwise.
  *
  *   node scripts/video-guide/vertical.mjs docs/video-specs/<slug>.json
  */
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { chromium } from 'playwright';
-import { buildScene, CANVAS, BAND } from './scene.mjs';
+import { timelineOf, measuredTimeline, roleOf } from './lib/timeline.mjs';
 
 const specPath = process.argv[2];
 if (!specPath) { console.error('usage: vertical.mjs <spec.json>'); process.exit(1); }
 const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
 
 const ROOT = process.cwd();
-const MASTER = path.join(ROOT, 'out', 'video-guide', `${spec.slug}.mp4`);
-if (!fs.existsSync(MASTER)) { console.error(`먼저 가로 마스터를 렌더해야 한다: ${MASTER}`); process.exit(1); }
-const WORK = path.join(ROOT, '.cache', 'video-guide', `${spec.slug}-vertical`);
-const OUT = path.join(ROOT, 'out', 'video-guide', `${spec.slug}-vertical.mp4`);
+const VFULL = path.join(ROOT, '.cache', 'video-guide', `${spec.slug}-vfull`);
+const WORK = path.join(ROOT, '.cache', 'video-guide', `${spec.slug}-teaser`);
+const OUT = path.join(ROOT, 'out', 'video-guide', `${spec.slug}-teaser.mp4`);
 fs.mkdirSync(WORK, { recursive: true });
 
-const FPS = 30;
+const seg = (id) => path.join(VFULL, `v_${id}.mp4`);
+if (!fs.existsSync(seg(spec.beats[0].id))) {
+  console.error(`먼저 세로 풀 가이드를 렌더해야 한다 (vfull.mjs) — ${VFULL} 가 비어 있다`);
+  process.exit(1);
+}
+
 const run = (args, label) => {
   const r = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', ...args],
     { stdio: ['ignore', 'inherit', 'inherit'] });
   if (r.status !== 0) { console.error(`FAILED: ${label}`); process.exit(1); }
 };
 
-// Where each beat lands in the master, so highlights can be lifted by beat id.
-const offsets = {};
-let t = 0;
-for (const b of spec.beats) {
-  offsets[b.id] = t;
-  t += b.kind === 'clip' ? (b.out - b.in) / (b.speed ?? 1) : b.hold;
-}
+const BUDGET = spec.verticalSeconds ?? 90;
+const CLIP_CAP = 6;
+const tl = measuredTimeline(spec, path.join(ROOT, 'out', 'video-guide')) ?? timelineOf(spec);
+const durOf = Object.fromEntries(tl.rows.map((r) => [r.id, r.dur]));
 
-// The shorts cut is the stops plus the two views worth standing still for.
-const PICKS = (spec.verticalPicks ?? spec.beats
-  .filter((b) => b.kind !== 'clip' || (b.speed ?? 1) <= 1.05)
-  .map((b) => b.id));
+// money lead: explicit teaserLead, else the first polaroid
+const lead = spec.teaserLead ?? spec.beats.find((b) => b.kind === 'polaroid')?.id;
+const title = spec.beats.find((b) => roleOf(b) === 'title')?.id;
 
-const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: CANVAS.w, height: CANVAS.h } });
-const held = spec.beats.filter((b) => b.kind !== 'clip');
+const chronological = spec.beats.filter((b) => {
+  if (b.id === lead || b.id === title) return false;
+  const role = roleOf(b);
+  if (role === 'stop' || role === 'recap') return true;
+  return b.kind === 'clip' && (b.speed ?? 1) <= 1.3 && durOf[b.id] >= 3 && role === 'clean';
+}).map((b) => b.id);
+
+const order = [lead, title, ...chronological].filter(Boolean);
+
 const parts = [];
 let used = 0;
-const BUDGET = spec.verticalSeconds ?? 90;
-
-for (const id of PICKS) {
-  if (used >= BUDGET) break;
+for (const id of order) {
+  if (used >= BUDGET - 0.5) break;
   const beat = spec.beats.find((b) => b.id === id);
-  if (!beat) continue;
-  const full = beat.kind === 'clip' ? (beat.out - beat.in) / (beat.speed ?? 1) : beat.hold;
-  const take = Math.min(full, beat.kind === 'clip' ? 6 : full, BUDGET - used);
+  const full = durOf[id];
+  const cap = beat.kind === 'clip' && roleOf(beat) === 'clean' ? CLIP_CAP : full;
+  const take = +Math.min(full, cap, BUDGET - used).toFixed(2);
   if (take < 1.2) continue;
 
-  // overlay: title block, caption, watermark — arrows stay out of the shorts cut
-  const html = buildScene({
-    poi: { kicker: (spec.title?.en ?? '').toUpperCase(), title: beat.title ?? '', sub: beat.sub ?? '' },
-    point: beat.kind !== 'clip' ? { n: held.indexOf(beat) + 1, of: held.length } : null,
-    caption: beat.caption ?? '',
-    arrows: [],
-    durationMs: take * 1000,
-  });
-  const htmlFile = path.join(WORK, `s_${id}.html`);
-  fs.writeFileSync(htmlFile, html);
-  await page.goto('file://' + htmlFile.replace(/\\/g, '/'));
-  await page.waitForFunction(() => typeof window.__seek === 'function');
-
-  const frames = path.join(WORK, `f_${id}`);
-  fs.rmSync(frames, { recursive: true, force: true });
-  fs.mkdirSync(frames, { recursive: true });
-  const n = Math.round(take * FPS);
-  for (let i = 0; i < n; i++) {
-    await page.evaluate((ms) => window.__seek(ms), Math.round((i / FPS) * 1000));
-    await page.screenshot({ path: path.join(frames, `f${String(i).padStart(4, '0')}.png`), omitBackground: true });
+  if (take >= full - 0.05) {
+    parts.push(seg(id));
+  } else {
+    const t = path.join(WORK, `t_${id}.mp4`);
+    run(['-i', seg(id), '-t', String(take),
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
+      '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', t], `trim ${id}`);
+    parts.push(t);
   }
-
-  const seg = path.join(WORK, `v_${id}.mp4`);
-  run(['-ss', String(offsets[id] + 0.05), '-t', String(take), '-i', MASTER,
-    '-framerate', String(FPS), '-i', path.join(frames, 'f%04d.png'),
-    '-filter_complex',
-    `[0:v]scale=-2:${CANVAS.h},crop=${CANVAS.w}:${CANVAS.h},gblur=sigma=44,eq=brightness=-0.22:saturation=0.6[bg];`
-    + `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}[base];`
-    + `[base][1:v]overlay=0:0,fps=${FPS},format=yuv420p[v]`,
-    '-map', '[v]', '-map', '0:a', '-t', String(take),
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
-    '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', seg], `vertical ${id}`);
-
-  parts.push(seg);
   used += take;
-  console.log(`  ${id}  ${take.toFixed(1)}s  ${beat.title ?? ''}`);
+  console.log(`  ${id}  ${take.toFixed(1)}s  ${beat.stopLabel?.title ?? beat.title ?? ''}`);
 }
-await browser.close();
 
 const list = path.join(WORK, 'concat.txt');
 fs.writeFileSync(list, parts.map((p) => `file '${p.replace(/\\/g, '/')}'`).join('\n'));
 run(['-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', '-movflags', '+faststart', OUT], 'concat');
-console.log(`\n=> ${OUT}  (${used.toFixed(0)}s, ${parts.length} segments)`);
+
+// ---- gate E-5 — judged on the output, not the plan --------------------------
+const firstBeat = spec.beats.find((b) => b.id === order[0]);
+const money = firstBeat && (firstBeat.kind === 'polaroid' || (firstBeat.kind === 'clip' && (firstBeat.speed ?? 1) <= 1.05));
+const problems = [];
+if (used < BUDGET * 0.8) problems.push(`예산 ${BUDGET}s 중 ${used.toFixed(1)}s — 80% 미달`);
+if (!money) problems.push(`첫 세그먼트(${order[0]})가 머니 비트가 아니다 (polaroid/1x 여야 한다)`);
+if (problems.length) { for (const p of problems) console.error(`  FAIL ${p}`); process.exit(1); }
+
+console.log(`\n=> ${OUT}  (${used.toFixed(0)}s / ${BUDGET}s, ${parts.length} segments, lead=${order[0]})`);

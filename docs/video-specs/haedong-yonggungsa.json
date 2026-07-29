@@ -27,24 +27,74 @@
   ],
   "beats": [
     {
+      "id": "c1",
+      "kind": "clip",
+      "src": "B",
+      "in": 28,
+      "out": 31.2,
+      "speed": 1,
+      "role": "title",
+      "title": "The temple where Korea meets the sea",
+      "sub": "One walk, one temple, Busan",
+      "chapter": "The temple over the sea",
+      "mute": true
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "C",
+      "in": 26,
+      "out": 28.8,
+      "speed": 1,
+      "mute": true,
+      "title": "Cold open — the bridge",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "C",
+      "in": 209,
+      "out": 211.8,
+      "speed": 1,
+      "mute": true,
+      "title": "Cold open — Gwaneum",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
       "id": "01",
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 6,
+      "out": 4.5,
       "speed": 1.5,
-      "title": "Leaving the car park"
+      "title": "Leaving the car park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "role": "promise"
     },
     {
       "id": "02",
       "kind": "clip",
       "src": "A",
-      "in": 6,
+      "in": 4.5,
       "out": 93,
       "speed": 8,
       "title": "Through the food stalls",
       "ramp": {
         "seconds": 0.6
+      },
+      "snapped": {
+        "from": 6,
+        "pan": 0.689
       }
     },
     {
@@ -57,7 +107,8 @@
       "title": "Approaching the guardians",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.37)"
     },
     {
       "id": "04",
@@ -66,8 +117,8 @@
       "at": 100,
       "hold": 4,
       "title": "Twelve Zodiac Guardians",
-      "sub": "One for each animal of the zodiac",
-      "caption": "Twelve stone guardians along the wall. Find the one for your birth year.",
+      "sub": "Find your birth-year animal",
+      "caption": "Twelve guardians line the wall — find yours.",
       "arrowOverride": [
         {
           "mode": "pointer",
@@ -101,7 +152,8 @@
           "headLen": 26,
           "headWidth": 23
         }
-      ]
+      ],
+      "chapter": "Twelve Zodiac Guardians"
     },
     {
       "id": "05",
@@ -119,8 +171,8 @@
       "at": 106,
       "hold": 4.5,
       "title": "Bodhidharma",
-      "sub": "The monk who brought Zen east",
-      "caption": "Bodhidharma — the Indian monk credited with bringing Zen to East Asia.",
+      "sub": "The monk who carried Zen east",
+      "caption": "The Indian monk who carried Zen east.",
       "focus": [
         560,
         210,
@@ -151,8 +203,8 @@
       "at": 117,
       "hold": 4.5,
       "title": "Gwaneum Stele",
-      "sub": "Goddess of Mercy, carved in relief",
-      "caption": "A relief of Gwaneum, Goddess of Mercy, standing on a lotus.",
+      "sub": "Goddess of Mercy on a lotus",
+      "caption": "Gwaneum, Goddess of Mercy, carved on a lotus.",
       "focus": [
         660,
         70,
@@ -183,8 +235,8 @@
       "at": 139,
       "hold": 5,
       "title": "Haedong Yonggungsa",
-      "sub": "Dragon Palace Temple of the East Sea",
-      "caption": "\"Haedong\" is east of the sea, \"Yonggung\" the dragon king's palace — a temple built on the water, not in the mountains.",
+      "sub": "Dragon Palace of the East Sea",
+      "caption": "East of the sea — a temple on the water, not the hills.",
       "focus": [
         60,
         430,
@@ -194,14 +246,15 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.5
-      }
+      },
+      "chapter": "The name over the gate"
     },
     {
       "id": "11",
       "kind": "clip",
       "src": "A",
       "in": 139,
-      "out": 176,
+      "out": 174.9,
       "speed": 8,
       "title": "Down through the cave passage",
       "ramp": {
@@ -212,10 +265,19 @@
       "id": "12",
       "kind": "clip",
       "src": "A",
-      "in": 176,
+      "in": 174.9,
       "out": 180,
       "speed": 1.5,
-      "title": "Top of the 108 steps"
+      "title": "Top of the 108 steps",
+      "snapped": {
+        "from": 176,
+        "pan": 0.639
+      },
+      "stopLabel": {
+        "title": "The 108 Steps",
+        "sub": "One for each delusion of the mind"
+      },
+      "caption": "Stone lanterns all the way down."
     },
     {
       "id": "13",
@@ -227,22 +289,24 @@
       "title": "Down the 108 steps",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.51)"
     },
     {
       "id": "14",
       "kind": "polaroid",
       "src": "A",
       "at": 218,
-      "hold": 2.6,
+      "hold": 3.6,
       "photoHold": 1.2,
-      "title": "Ocean Viewpoint",
-      "sub": "The deck out over the rocks",
-      "caption": "The deck hangs over the surf. This temple faces east — come at sunrise.",
+      "title": "Walk out over the surf",
+      "sub": "The ocean viewpoint deck",
+      "caption": "The deck hangs over the surf.",
       "polaroid": {
         "width": 860,
         "tilt": -2.4
-      }
+      },
+      "chapter": "The ocean deck"
     },
     {
       "id": "15",
@@ -267,33 +331,19 @@
       "in": 18,
       "out": 39,
       "speed": 1.2,
-      "title": "Ocean one way, temple the other"
-    },
-    {
-      "id": "15p",
-      "kind": "polaroid",
-      "src": "B",
-      "at": 39,
-      "hold": 2.6,
-      "photoHold": 1.2,
-      "title": "Photo Point",
-      "sub": "Temple and open sea in one shot",
-      "caption": "Stand on the rock shelf — the whole temple lines up against the water.",
-      "polaroid": {
-        "width": 900,
-        "tilt": 1.6
-      }
+      "title": "Ocean one way, temple the other",
+      "nosnap": "no pan within ±1.5s (max 0.51)"
     },
     {
       "id": "16",
       "kind": "polaroid",
       "src": "B",
       "at": 39,
-      "hold": 2.6,
+      "hold": 3.6,
       "photoHold": 1.2,
-      "title": "Temple Panorama",
-      "sub": "The whole temple in one frame",
-      "caption": "The one spot where the entire temple fits in a single frame.",
+      "title": "The whole temple, one frame",
+      "sub": "Stand out on the rock shelf",
+      "caption": "The whole temple in one shot.",
       "polaroid": {
         "width": 900,
         "tilt": 1.8
@@ -320,29 +370,35 @@
       "kind": "clip",
       "src": "C",
       "in": 20,
-      "out": 26,
+      "out": 27.5,
       "speed": 1.5,
-      "title": "Onto Yongmun Bridge"
+      "title": "Onto Yongmun Bridge",
+      "nosnap": "no pan within ±1.5s (max 0.36)",
+      "chapter": "Yongmun Bridge"
     },
     {
       "id": "19",
       "kind": "clip",
       "src": "C",
-      "in": 26,
+      "in": 27.5,
       "out": 34,
       "speed": 1,
-      "title": "Crossing Yongmun Bridge"
+      "title": "Crossing Yongmun Bridge",
+      "snapped": {
+        "from": 26,
+        "pan": 0.749
+      }
     },
     {
       "id": "19p",
       "kind": "polaroid",
       "src": "C",
       "at": 34,
-      "hold": 2.6,
+      "hold": 2.8,
       "photoHold": 1.2,
-      "title": "Photo Point",
-      "sub": "Mid-bridge, looking back",
-      "caption": "Halfway across is the only angle with the bridge arch and the hall together.",
+      "title": "Mid-bridge, looking back",
+      "sub": "The arch and the hall align",
+      "caption": "The arch and hall line up.",
       "polaroid": {
         "width": 880,
         "tilt": 2.2
@@ -353,7 +409,7 @@
       "kind": "clip",
       "src": "C",
       "in": 34,
-      "out": 45,
+      "out": 44.1,
       "speed": 4,
       "title": "Off the bridge",
       "ramp": {
@@ -364,12 +420,16 @@
       "id": "20",
       "kind": "clip",
       "src": "C",
-      "in": 45,
+      "in": 44.1,
       "out": 86,
       "speed": 6,
       "title": "Up to the main hall",
       "ramp": {
         "seconds": 0.6
+      },
+      "snapped": {
+        "from": 45,
+        "pan": 0.721
       }
     },
     {
@@ -382,7 +442,9 @@
       "title": "Daeungbojeon Hall",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.55)",
+      "chapter": "The main hall"
     },
     {
       "id": "21b",
@@ -391,18 +453,19 @@
       "in": 92,
       "out": 100,
       "speed": 1.2,
-      "title": "Maitreya beside the hall"
+      "title": "Maitreya beside the hall",
+      "nosnap": "no pan within ±1.5s (max 0.42)"
     },
     {
       "id": "21p",
       "kind": "polaroid",
       "src": "C",
       "at": 100,
-      "hold": 2.6,
+      "hold": 2.8,
       "photoHold": 1.2,
-      "title": "Photo Point",
-      "sub": "Maitreya under the lanterns",
-      "caption": "The gilt Maitreya sits right of the hall, lanterns overhead.",
+      "title": "Photo spot — Maitreya",
+      "sub": "Right of the main hall",
+      "caption": "He smiles under the lanterns.",
       "polaroid": {
         "width": 860,
         "tilt": -2
@@ -413,7 +476,7 @@
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 125,
+      "out": 124.3,
       "speed": 8,
       "title": "Around the hall",
       "ramp": {
@@ -424,21 +487,29 @@
       "id": "22b",
       "kind": "clip",
       "src": "C",
-      "in": 125,
-      "out": 142,
+      "in": 124.3,
+      "out": 141.5,
       "speed": 1.2,
-      "title": "The little stone buddhas"
+      "title": "The little stone buddhas",
+      "snapped": {
+        "from": 125,
+        "pan": 0.741
+      }
     },
     {
       "id": "22c",
       "kind": "clip",
       "src": "C",
-      "in": 142,
+      "in": 141.5,
       "out": 160,
       "speed": 8,
       "title": "Back to the steps",
       "ramp": {
         "seconds": 0.6
+      },
+      "snapped": {
+        "from": 142,
+        "pan": 0.619
       }
     },
     {
@@ -448,7 +519,9 @@
       "in": 160,
       "out": 166,
       "speed": 1.5,
-      "title": "Foot of the stone steps"
+      "title": "Foot of the stone steps",
+      "nosnap": "no pan within ±1.5s (max 0.46)",
+      "chapter": "Up to Haesu Gwaneum"
     },
     {
       "id": "24",
@@ -460,7 +533,8 @@
       "title": "The climb",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.25)"
     },
     {
       "id": "25",
@@ -472,18 +546,19 @@
       "title": "Reaching the statue",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.28)"
     },
     {
       "id": "26",
       "kind": "polaroid",
       "src": "C",
       "at": 209,
-      "hold": 2.6,
+      "hold": 2.8,
       "photoHold": 1.2,
       "title": "Haesu Gwaneum",
-      "sub": "Goddess of Mercy, facing the sea",
-      "caption": "She faces the open sea. Visitors come here to ask for one wish.",
+      "sub": "She faces the open sea",
+      "caption": "Come to ask for one wish.",
       "polaroid": {
         "width": 880,
         "tilt": -1.6
@@ -508,7 +583,8 @@
       "title": "Back down",
       "ramp": {
         "seconds": 0.6
-      }
+      },
+      "nosnap": "no pan within ±1.5s (max 0.48)"
     },
     {
       "id": "29",
@@ -517,7 +593,14 @@
       "in": 290,
       "out": 308,
       "speed": 1,
-      "title": "The bamboo path"
+      "title": "The bamboo path",
+      "nosnap": "no pan within ±1.5s (max 0.49)",
+      "stopLabel": {
+        "title": "The Bamboo Path",
+        "sub": "The quiet way out"
+      },
+      "caption": "A bamboo corridor on the way out.",
+      "chapter": "The bamboo path"
     },
     {
       "id": "29b",
@@ -526,7 +609,8 @@
       "in": 308,
       "out": 312,
       "speed": 1.5,
-      "title": "Toward the pagoda"
+      "title": "Toward the pagoda",
+      "nosnap": "no pan within ±1.5s (max 0.35)"
     },
     {
       "id": "30",
@@ -535,8 +619,8 @@
       "at": 312,
       "hold": 4.5,
       "title": "Stone Pagoda",
-      "sub": "Near the exit gate",
-      "caption": "A seven-storey pagoda marks the way out. You have come full circle.",
+      "sub": "You have come full circle",
+      "caption": "A seven-storey pagoda marks the exit — full circle.",
       "focus": [
         600,
         80,
@@ -571,7 +655,16 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
-      }
+      },
+      "role": "recap",
+      "sub": "The temple where Korea meets the sea",
+      "chapter": "Full circle"
     }
-  ]
+  ],
+  "poster": {
+    "src": "B",
+    "at": 39
+  },
+  "city": "Busan",
+  "teaserLead": "16"
 }

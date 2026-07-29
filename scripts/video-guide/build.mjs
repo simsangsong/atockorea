@@ -18,6 +18,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { renderArrowFrames, renderPolaroid, pathLuma, sharp } from './lib/overlay.mjs';
 import { framing } from './framing.mjs';
+import { gradeChain } from './lib/grade.mjs';
 
 const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
@@ -42,23 +43,9 @@ const OUTDIR = path.join(ROOT, 'out', 'video-guide');
 fs.mkdirSync(CACHE, { recursive: true });
 fs.mkdirSync(OUTDIR, { recursive: true });
 
-const GRADE = (Array.isArray(spec.grade) ? spec.grade.join(',') : spec.grade) ?? [
-  // The phone's wide lens bows every railing and the horizon; straighten it first,
-  // then trim the black corners the correction leaves behind.
-  'lenscorrection=k1=-0.13:k2=0.008:i=bilinear',
-  'crop=iw*0.93:ih*0.93',
-  'eq=saturation=1.15:gamma=1.02',
-  // Split tone through the curves rather than colorbalance: a cool lift in the
-  // shadows and warmth pulled into the highlights, plus the contrast S. Summer
-  // haze here is blue-grey, so cooling the shadows and warming the sun separates
-  // the temple's reds and golds from the sea behind them.
-  "curves=r='0/0.012 0.25/0.238 0.5/0.512 0.75/0.780 1/0.996'"
-  + ":g='0/0.006 0.25/0.232 0.5/0.502 0.75/0.766 1/1'"
-  + ":b='0/0.030 0.25/0.252 0.5/0.492 0.75/0.735 1/0.972'",
-  'unsharp=5:5:0.48:5:5:0.0',
-  'noise=alls=5:allf=t+u',          // fine grain, kills the digital flatness
-  'vignette=a=PI/6.5',              // lighter than v1 — the corners were heavy
-].join(',');
+// One grade for every surface — poster.mjs runs the same chain on its frame,
+// so the definition lives in lib/grade.mjs. Drift here is drift on the poster.
+const GRADE = gradeChain(spec);
 
 const VSCALE = `scale=${OUT_W}:${OUT_H}:flags=lanczos,setsar=1,format=yuv420p`;
 const VENC = DRAFT
@@ -237,31 +224,45 @@ function probeDur(f) {
   return Number(String(r.stdout).trim()) || 0;
 }
 
+/**
+ * Entries are {file, startsBeat} — the annotation exists because a chain of
+ * dissolves rewrites file names: the previous beat's body gets popped and
+ * re-trimmed as `xf_<next>_a`, so parsing names to find where a beat starts
+ * mis-attributed five beats on the first attempt and the measured timeline
+ * came out with negative chapter gaps. Ownership travels with the entry.
+ */
 function applyTransitions(files) {
   const out = [];
   for (let i = 0; i < files.length; i++) {
     const beat = spec.beats[i];
     const d = beat.transition?.seconds;
-    if (!d || i === 0) { out.push(files[i]); continue; }
+    if (!d || i === 0) { out.push({ file: files[i], startsBeat: beat.id }); continue; }
 
     const prev = out.pop();
-    const prevDur = probeDur(prev);
+    const prevDur = probeDur(prev.file);
     const curDur = probeDur(files[i]);
-    if (prevDur <= d + 0.2 || curDur <= d + 0.2) { out.push(prev, files[i]); continue; }
+    if (prevDur <= d + 0.2 || curDur <= d + 0.2) {
+      out.push(prev, { file: files[i], startsBeat: beat.id });
+      continue;
+    }
 
     const base = path.join(CACHE, `xf_${beat.id}`);
     const pTrim = `${base}_a.mp4`, cTrim = `${base}_b.mp4`, fade = `${base}_x.mp4`;
 
-    run(['-i', prev, '-t', String(+(prevDur - d).toFixed(3)), ...VENC, ...AENC, pTrim], `trim ${beat.id}a`);
+    run(['-i', prev.file, '-t', String(+(prevDur - d).toFixed(3)), ...VENC, ...AENC, pTrim], `trim ${beat.id}a`);
     run(['-ss', String(d), '-i', files[i], ...VENC, ...AENC, cTrim], `trim ${beat.id}b`);
-    run(['-ss', String(+(prevDur - d).toFixed(3)), '-t', String(d), '-i', prev,
+    run(['-ss', String(+(prevDur - d).toFixed(3)), '-t', String(d), '-i', prev.file,
       '-t', String(d), '-i', files[i],
       '-filter_complex',
       `[0:v][1:v]xfade=transition=fade:duration=${d}:offset=0,fps=${FPS},${VSCALE}[v];`
       + `[0:a][1:a]acrossfade=d=${d}[a]`,
       '-map', '[v]', '-map', '[a]', ...VENC, ...AENC, fade], `xfade ${beat.id}`);
 
-    out.push(pTrim, fade, cTrim);
+    // the trimmed front keeps whatever beat it already started; the beat that
+    // owns the join starts on the fade's first frame
+    out.push({ file: pTrim, startsBeat: prev.startsBeat },
+      { file: fade, startsBeat: beat.id },
+      { file: cTrim, startsBeat: null });
     console.log(`  ~~  ${beat.id}  ${d}s dissolve across the ${spec.beats[i - 1].src}→${beat.src} join`);
   }
   return out;
@@ -270,10 +271,39 @@ function applyTransitions(files) {
 const joined = applyTransitions(parts);
 
 const listFile = path.join(CACHE, 'concat.txt');
-fs.writeFileSync(listFile, joined.map((p) => `file '${p.replace(/\\/g, '/')}'`).join('\n'));
+fs.writeFileSync(listFile, joined.map((p) => `file '${p.file.replace(/\\/g, '/')}'`).join('\n'));
 
 const silent = path.join(CACHE, 'joined.mp4');
 run(['-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silent], 'concat');
+
+/**
+ * Emit the timeline as MEASURED, not as planned.
+ *
+ * Per-segment AAC padding and frame rounding accumulate ~4s across the concat,
+ * so any consumer that maps beat → master time off the plan drifts. The encode
+ * is the truth: probe every concatenated part, walk the list, and record where
+ * each beat actually starts (ownership annotated by applyTransitions).
+ * Durations are start-to-start so they tile the master exactly. vfull /
+ * exportmeta / vertical all consume this file.
+ */
+{
+  const starts = {};
+  let t = 0;
+  for (const p of joined) {
+    if (p.startsBeat && starts[p.startsBeat] === undefined) starts[p.startsBeat] = t;
+    t += probeDur(p.file);
+  }
+  const missing = spec.beats.filter((b) => starts[b.id] === undefined).map((b) => b.id);
+  if (missing.length) { console.error(`timeline: 시작점 없는 비트 ${missing.join(',')}`); process.exit(1); }
+  const rows = spec.beats.map((b) => ({ id: b.id, start: +starts[b.id].toFixed(3) }));
+  for (let i = 0; i < rows.length; i++) {
+    rows[i].dur = +(((i + 1 < rows.length ? rows[i + 1].start : t) - rows[i].start)).toFixed(3);
+    if (rows[i].dur <= 0) { console.error(`timeline: ${rows[i].id} 길이 ${rows[i].dur}s — 순서가 꼬였다`); process.exit(1); }
+  }
+  fs.writeFileSync(path.join(OUTDIR, `${spec.slug}.timeline.json`),
+    JSON.stringify({ slug: spec.slug, total: +t.toFixed(3), rows }, null, 2) + '\n');
+  console.log(`  timeline: ${rows.length} beats · ${t.toFixed(2)}s measured`);
+}
 
 const finalOut = path.join(OUTDIR, `${spec.slug}${DRAFT ? '-draft' : ''}.mp4`);
 const bed = spec.audio?.bed && fs.existsSync(spec.audio.bed) ? spec.audio.bed : null;
