@@ -18,12 +18,12 @@
 
 | | |
 |---|---|
-| (메서드, 경로) 쌍 | **55** |
-| 주행 대상 | 54 |
+| (메서드, 경로) 쌍 | **56** |
+| 주행 대상 | 55 |
 | 설계상 건너뜀 | 1 |
 | 방 개수 | 20 |
-| 비용 등급 | free 42 · llm 12 · people 1 |
-| 행위자 | guest 39 · guide 11 · driver 3 · admin 2 |
+| 비용 등급 | free 43 · llm 12 · people 1 |
+| 행위자 | guest 40 · guide 11 · driver 3 · admin 2 |
 
 `room 0` = **모든 방**이 지난다(문이므로). `room —` = 건너뜀.
 
@@ -52,40 +52,41 @@
 | `GET` | `/api/tour-rooms/[bookingId]/tour-itinerary` | guest | free | 19 |  |
 | `GET` | `/api/tour-rooms/[bookingId]/tts` | guest | llm | 20 |  |
 | `GET` | `/api/tour-rooms/[bookingId]/vehicle-eta` | guest | free | 1 |  |
-| `PATCH` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 2 |  |
-| `POST` | `/api/tour-mode/driver/link` | admin | free | 3 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/approach` | guest | free | 4 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/arrival-bundle` | guide | llm | 5 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/captions` | guide | llm | 6 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/companion-invite` | guest | free | 7 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/companion-invite/redeem` | guest | free | 8 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/concierge` | guest | llm | 9 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/dining` | guest | llm | 10 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/dining/feedback` | guest | free | 11 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/driver-signal` | driver | free | 12 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/extend` | guide | free | 13 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 14 |  |
+| `GET` | `/api/tour-rooms/[bookingId]/vehicle-photo` | guest | free | 2 |  |
+| `PATCH` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 3 |  |
+| `POST` | `/api/tour-mode/driver/link` | admin | free | 4 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/approach` | guest | free | 5 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/arrival-bundle` | guide | llm | 6 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/captions` | guide | llm | 7 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/companion-invite` | guest | free | 8 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/companion-invite/redeem` | guest | free | 9 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/concierge` | guest | llm | 10 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/dining` | guest | llm | 11 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/dining/feedback` | guest | free | 12 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/driver-signal` | driver | free | 13 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/extend` | guide | free | 14 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 15 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/join` | guest | free | 전부 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/location` | guest | free | 15 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/manual-arrival` | guide | llm | 16 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/meeting-photo` | driver | free | 17 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/messages` | guest | llm | 18 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/messages/[messageId]/retranslate` | guest | llm | 19 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/morning-briefing` | guide | llm | 20 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/plan/claim-lead` | guest | free | 1 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/push-subscribe` | guest | free | 2 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/reactions` | guest | free | 3 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/read` | guest | free | 4 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/signals` | guest | free | 5 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/location` | guest | free | 16 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/manual-arrival` | guide | llm | 17 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/meeting-photo` | driver | free | 18 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/messages` | guest | llm | 19 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/messages/[messageId]/retranslate` | guest | llm | 20 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/morning-briefing` | guide | llm | 1 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/plan/claim-lead` | guest | free | 2 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/push-subscribe` | guest | free | 3 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/reactions` | guest | free | 4 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/read` | guest | free | 5 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/signals` | guest | free | 6 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/sos` | guest | people | — | SKIPPED BY DESIGN — rings a real on-call human (admin email + ops push). Run it only while the owner is watching. |
-| `POST` | `/api/tour-rooms/[bookingId]/spot-events` | guest | free | 6 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/stt` | guest | llm | 7 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/timeline-coupon` | guest | free | 8 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/typing` | guest | free | 9 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/vision-ask` | guest | llm | 10 |  |
-| `POST` | `/api/tour-rooms/broadcast` | guide | llm | 11 |  |
-| `PUT` | `/api/tour-rooms/[bookingId]/dietary` | guest | free | 12 |  |
-| `PUT` | `/api/tour-rooms/[bookingId]/plan` | guest | free | 13 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/spot-events` | guest | free | 7 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/stt` | guest | llm | 8 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/timeline-coupon` | guest | free | 9 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/typing` | guest | free | 10 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/vision-ask` | guest | llm | 11 |  |
+| `POST` | `/api/tour-rooms/broadcast` | guide | llm | 12 |  |
+| `PUT` | `/api/tour-rooms/[bookingId]/dietary` | guest | free | 13 |  |
+| `PUT` | `/api/tour-rooms/[bookingId]/plan` | guest | free | 14 |  |
 
 ## 🔴 이 주행이 재지 않는 것
 

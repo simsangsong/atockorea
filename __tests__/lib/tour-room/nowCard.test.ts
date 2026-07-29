@@ -406,6 +406,31 @@ describe('roomNowCardContext — adapter threading (gate ⑦)', () => {
     expect(ctx.meetingPoint).toBeNull();
   });
 
+  it('SG-5a — with no notice, the pickup board’s SCHEDULED time is the numeral target', () => {
+    const ctx = roomNowCardContext({
+      messages: [],
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      pickup: { visible: true, pickupTimeMs: NOW + 30 * 60_000 },
+      nowMs: NOW,
+    });
+    expect(ctx.meetingTargetMs).toBe(NOW + 30 * 60_000);
+    const result = nowCard(ctx);
+    expect(result.state).toBe('pickup_window');
+    expect(result.data.meetingTargetMs).toBe(NOW + 30 * 60_000);
+    // An invisible board must NOT leak a target into mid-tour states.
+    const hidden = roomNowCardContext({
+      messages: [],
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      pickup: { visible: false, pickupTimeMs: NOW + 30 * 60_000 },
+      nowMs: NOW,
+    });
+    expect(hidden.meetingTargetMs).toBeNull();
+  });
+
   it('latestArrival stamps when the guest got here (the durable arrived source)', () => {
     const at = NOW - 20 * 60_000;
     const arrival = latestArrival(

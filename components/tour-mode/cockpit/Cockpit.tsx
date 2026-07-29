@@ -349,7 +349,7 @@ export default function Cockpit({
   const [toast, setToast] = useState<string | null>(null);
   const [sheet, setSheet] = useState<
     | 'none' | 'delay' | 'schedule' | 'return' | 'expense' | 'overtime' | 'assist' | 'arrival'
-    | 'summary' | 'manifest'
+    | 'summary' | 'manifest' | 'welcome'
   >('none');
   const [pushOn, setPushOn] = useState(false);
   const [expItem, setExpItem] = useState('');
@@ -989,6 +989,23 @@ export default function Cockpit({
   // photo, but it lands in the PUBLIC bucket via /meeting-photo and waits in
   // the ops review queue. One tap at a stop fixes that POI forever.
   const meetingPhotoRef = useRef<HTMLInputElement | null>(null);
+  // SG-5b -- the T-0 name sign: the driver's phone IS the sign. Zero-language
+  // contact (제로베이스 §G-1): the guest reads their OWN name across the kerb.
+  const [welcomeName, setWelcomeName] = useState<string | null>(null);
+  const openWelcome = useCallback(async () => {
+    setSheet('welcome');
+    if (welcomeName !== null) return;
+    try {
+      const res = await fetch(`/api/tour-mode/room/${bookingId}/snapshot`, {
+        headers: { 'x-tour-room-auth': session },
+      });
+      const body = res.ok ? await res.json() : null;
+      const name = body?.booking?.contact_name;
+      setWelcomeName(typeof name === 'string' && name.trim() ? name.trim() : '');
+    } catch {
+      setWelcomeName('');
+    }
+  }, [bookingId, session, welcomeName]);
   const [meetingPhotoBusy, setMeetingPhotoBusy] = useState(false);
   const sendMeetingPhoto = useCallback(
     async (file: File) => {
@@ -2435,6 +2452,25 @@ export default function Cockpit({
         </Sheet>
       ) : null}
 
+      {sheet === 'welcome' ? (
+        <Sheet onClose={() => setSheet('none')} title="이름 사인 — 손님 쪽으로 들어주세요">
+          <div className="flex flex-col items-center px-2 pb-4 pt-6 text-center">
+            <p className="tr-meta font-bold uppercase tracking-[0.2em] text-[var(--tr-ink-3)]">WELCOME</p>
+            <p
+              data-testid="welcome-name"
+              className="text-cjk-safe mt-3 text-5xl font-bold leading-tight text-[var(--tr-ink)]"
+            >
+              {welcomeName === null ? '…' : welcomeName || '손님'}
+            </p>
+            {room.number_of_guests != null && (
+              <p className="tr-body-lg tr-num mt-3 text-[var(--tr-ink-2)]">{`${room.number_of_guests}명`}</p>
+            )}
+            <p className="tr-label text-cjk-body mt-6 text-[var(--tr-ink-3)]">
+              양쪽이 서로를 확인하면 상봉 끝 — 인사 음성은 [타세요] 안내로 이어가세요.
+            </p>
+          </div>
+        </Sheet>
+      ) : null}
       {sheet === 'arrival' && arrItem ? (
         <Sheet onClose={() => setSheet('none')} title={`${itemTitle(arrItem)} 도착 안내`}>
           <div className="tr-stagger flex max-h-[62vh] flex-col gap-3 overflow-y-auto">

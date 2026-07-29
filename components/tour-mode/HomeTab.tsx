@@ -21,7 +21,7 @@ import Link from 'next/link';
 import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import NowCard, { type NowCardHandlers } from '@/components/tour-mode/NowCard';
-import { nowCard, roomNowCardContext } from '@/lib/tour-room/nowCard';
+import { nowCard, roomNowCardContext, scheduleTargetMs } from '@/lib/tour-room/nowCard';
 import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { orderHomeTiles, PEEK_COUNT, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
@@ -450,6 +450,7 @@ export default function HomeTab({
   stopImages,
   heroPhotoUrl,
   meetingPhotos,
+  pickupBoard,
   reviewPolicy,
   canSignal,
   showConcierge,
@@ -476,6 +477,8 @@ export default function HomeTab({
   heroPhotoUrl?: string | null;
   /** SG-4d — poi_key → VERIFIED meeting photo for the free/rally band. */
   meetingPhotos?: Record<string, string> | null;
+  /** SG-5a — the pickup-morning board (TourRoomClient owns the derivation). */
+  pickupBoard?: import('@/lib/tour-room/pickup').PickupBoardState | null;
   /**
    * OTA 심사 대비 — 리뷰 CTA가 어디로 갈지(또는 아예 안 뜰지)와 자사 쿠폰
    * 허용 여부. 서버가 예약 채널로 정해 스냅샷에 실어 보낸다.
@@ -545,6 +548,25 @@ export default function HomeTab({
   // snapshot's stop_images map (stale-single-field trap: v1.2 2차 #19).
   const nextPoiKey = typeof nextItem?.poi_key === 'string' ? nextItem.poi_key : null;
   const nextPhotoUrl = nextPoiKey ? (stopImages?.[nextPoiKey] ?? null) : null;
+  // SG-5c -- the vehicle photo rides a short signed URL; fetched once per
+  // pickup morning, never SW-cached (it churns).
+  const [pickupPhotoUrl, setPickupPhotoUrl] = useState<string | null>(null);
+  useEffect(() => {
+    if (!pickupBoard?.visible) return;
+    let cancelled = false;
+    void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/vehicle-photo`, {
+      headers: { 'x-tour-room-auth': roomSession },
+    })
+      .then((res) => (res.ok ? res.json() : null))
+      .then((body) => {
+        if (!cancelled && body && typeof body.url === 'string') setPickupPhotoUrl(body.url);
+      })
+      .catch(() => undefined);
+    return () => {
+      cancelled = true;
+    };
+  }, [pickupBoard?.visible, bookingId, roomSession]);
+
   // SG-4e — prefetch exactly ONE photo (the next stop's) so a tunnel does
   // not blank the band; the request rides the SW's image lane and lands in
   // its 12-slot cache. Same-origin /images/** only — signed URLs churn.
@@ -577,10 +599,21 @@ export default function HomeTab({
           ? { name: nextTitle, time: nextTime, photoUrl: nextPhotoUrl, poiKey: nextPoiKey }
           : null,
         currentStop: nowStop ? { name: nowStop } : null,
-        // pickupBoardState needs the guide's live position and the full pickup
-        // sequence, which this tab does not hold; VehicleLocationCard owns that
-        // surface already, so the pickup state stays off until X15 threads it.
-        pickup: null,
+        // SG-5a — the board threads in from TourRoomClient now; the numeral
+        // target is the SCHEDULED pickup time, the sub keeps the vehicle line.
+        pickup: pickupBoard?.visible
+          ? {
+              visible: true,
+              vehicleLabel: vehicleLine,
+              driverName: driverNameFromPayload(busPayload),
+              plateTail: null,
+              pickupTimeMs: scheduleTargetMs(
+                tourDate,
+                pickupBoard.myStop?.pickup_time ? String(pickupBoard.myStop.pickup_time).slice(0, 5) : null,
+              ),
+              photoUrl: pickupPhotoUrl,
+            }
+          : null,
         contactPhone: OPS_PHONE,
         // E3 — the narration credit; the vehicle payload already knows who.
         driverName: driverNameFromPayload(busPayload),
@@ -589,7 +622,7 @@ export default function HomeTab({
       }),
     );
     return result.state === 'lobby' ? null : result;
-  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nextPhotoUrl, nextPoiKey, nowStop, busPayload, meetingPhotos, nowMs]);
+  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nextPhotoUrl, nextPoiKey, nowStop, busPayload, meetingPhotos, pickupBoard, pickupPhotoUrl, nowMs]);
 
   const nowCardHandlers: NowCardHandlers = useMemo(
     () => ({

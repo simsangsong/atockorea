@@ -73,6 +73,9 @@ const TEXT_ALLOWLIST: Record<string, { pattern: string; reason: string }[]> = {
      */
     { pattern: 'text-2xl', reason: 'mic + stop-recording: pressed while moving' },
     { pattern: 'text-4xl', reason: 'driving-mode headcount display' },
+    // SG-5b — the T-0 name sign is read ACROSS A KERB by the guest, not by
+    // the driver at arm's length; same rationale as the PIN/headcount rows.
+    { pattern: 'text-5xl', reason: 'welcome name sign — read across the kerb' },
   ],
   'DriverConsole.tsx': [
     // Same rationale as the cockpit it gates: PIN entry / 운행 시작 are read
