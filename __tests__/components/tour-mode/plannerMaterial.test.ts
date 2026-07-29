@@ -304,3 +304,59 @@ describe('plannerLayoutOrder (P7.4 H-6)', () => {
     expect(offenders).toEqual([]);
   });
 });
+
+/**
+ * P7.5 (H-5) — motion stays inside M-D3's vocabulary.
+ *
+ * M-D3 defines exactly four values: --tr-dur-fast 120ms, --tr-dur-base 200ms,
+ * --tr-ease-out and --tr-ease-spring. The planner had grown `160ms ease` (a
+ * duration in no scale), two `all 0s` declarations, and a raw Tailwind
+ * `active:scale-95` — four different ways of not using the system.
+ */
+describe('plannerMotionVocabulary (P7.5 H-5)', () => {
+  it('no planner rule hard-codes a duration or an easing', () => {
+    const offenders: string[] = [];
+    for (const rule of RULES) {
+      if (!rule.parts.some((p) => p.includes('.tr-plan-'))) continue;
+      const decl = /transition[^;]*;|animation[^;]*;/g;
+      let d: RegExpExecArray | null;
+      while ((d = decl.exec(rule.body))) {
+        const text = d[0];
+        // A literal ms/s that is not inside a var() fallback is off-scale.
+        const literals = text.replace(/var\([^)]*\)/g, '').match(/\b[0-9.]+m?s\b/g) ?? [];
+        if (literals.length > 0) offenders.push(`${rule.parts[0]} → ${literals.join(', ')}`);
+        if (/\b(ease|ease-in|ease-out|ease-in-out|linear)\b/.test(text.replace(/var\([^)]*\)/g, ''))) {
+          offenders.push(`${rule.parts[0]} → bare easing keyword`);
+        }
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  /** Raw Tailwind press bypasses the physics AND the reduced-motion block. */
+  it('the planner uses .tr-press, not a raw active:scale utility', () => {
+    const raw = PLANNER.split('\n')
+      .map((line, i) => ({ line: line.trim(), no: i + 1 }))
+      .filter(({ line }) => /\bactive:scale-/.test(line));
+    expect(raw.map((r) => `${r.no}: ${r.line.slice(0, 80)}`)).toEqual([]);
+    expect(PLANNER).toContain('tr-press');
+  });
+
+  it('the stop list animates on mount, reusing the room entrance', () => {
+    expect(PLANNER).toMatch(/className="tr-stagger[^"]*"/);
+    // The expand panel already spoke the vocabulary; keep it that way.
+    expect(PLANNER).toContain('tr-anim-panel-in');
+  });
+
+  /**
+   * Every planner class that moves must be in the reduced-motion block. A
+   * motion someone cannot turn off is an accessibility defect, not a flourish.
+   */
+  it('reduced-motion covers everything in the planner that moves', () => {
+    const block = /@media \(prefers-reduced-motion: reduce\) \{([\s\S]*?)\n\}/g;
+    const blocks = [...CSS.matchAll(block)].map((m) => m[1]).join('\n');
+    for (const cls of ['.tr-plan-course-card', '.tr-plan-btn', '.tr-plan-chip', '.tr-plan-seg-item', '.tr-press', '.tr-stagger']) {
+      expect(blocks).toContain(cls);
+    }
+  });
+});

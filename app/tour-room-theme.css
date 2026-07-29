@@ -996,15 +996,22 @@
   padding: 12px 14px;
 }
 
+/* P7.5 (H-5) — 160ms and `ease` are not in the vocabulary. M-D3 defines
+ * --tr-dur-fast 120ms / --tr-dur-base 200ms and two easings, and a value
+ * outside that set is a fourth motion language nobody chose.
+ *
+ * The press was `scale(0.995)`, which on a 358px-wide card moves each edge by
+ * 0.9px — a press you cannot see is not feedback, it is a rounding error. */
 .tr-plan-course-card {
   transition:
-    transform 160ms ease,
-    box-shadow 160ms ease,
-    border-color 160ms ease;
+    transform var(--tr-dur-fast) var(--tr-ease-out),
+    box-shadow var(--tr-dur-fast) var(--tr-ease-out),
+    border-color var(--tr-dur-fast) var(--tr-ease-out);
 }
 
 .tr-plan-course-card:active {
-  transform: scale(0.995);
+  transform: translateY(1px) scale(0.98);
+  filter: brightness(0.98);
 }
 
 /* ---- Planner buttons: four tiers, and the commit is the biggest -----------

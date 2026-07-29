@@ -2571,7 +2571,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               href={roomHref}
               aria-label="홈으로"
               data-testid="plan-home"
-              className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-plan-hero-chip)] text-[var(--tr-plan-hero-ink)] active:scale-95"
+              className="tr-press flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-[var(--tr-plan-hero-chip)] text-[var(--tr-plan-hero-ink)]"
             >
               <IconTabMap size={TR_ICON.nav} aria-hidden />
             </a>
@@ -2677,10 +2677,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               )}
             </div>
 
+            {/* P7.5 (H-5) — `tr-stagger` below is the room's existing entrance,
+                not a new one. CSS animations fire when an element MOUNTS, so
+                that single class covers two of the four transitions the spec
+                asks for: a course arriving animates every row in sequence, and
+                a place added later animates only its own row. 45ms apart,
+                capped at 300ms total. */}
             {stops.length === 0 ? (
               <p className="tr-label mt-2 text-[var(--tr-ink-2)]">{copy.emptyStops}</p>
             ) : (
-              <ol className="mt-2 flex flex-col gap-2">
+              <ol className="tr-stagger mt-2 flex flex-col gap-2">
                 {stops.map((stop, index) => {
                   const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
                   const expanded = expandedStopId === stop.id;
