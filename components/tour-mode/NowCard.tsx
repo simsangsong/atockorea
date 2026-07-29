@@ -37,6 +37,7 @@ import NumeralClock, {
   type NumeralClockFormat,
   type NumeralClockMode,
 } from '@/components/tour-mode/NumeralClock';
+import WalkBackLine from '@/components/tour-mode/WalkBackLine';
 import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { dayPhase } from '@/lib/tour-room/dayPhase';
 import { NOW_CARD_COPY } from '@/lib/tour-room/nowCardCopy';
@@ -378,6 +379,25 @@ export default function NowCard({
         {title}
       </p>
       {sub && <p className="tr-card-text text-cjk-body mt-1 text-[var(--tr-ink-2)]">{sub}</p>}
+      {/* E1 — the personal walk-back, opt-in and on-device (SG-D8). */}
+      {NUMERAL_V1_ON &&
+        result.state === 'free_time' &&
+        typeof result.data.meetingLat === 'number' &&
+        typeof result.data.meetingLng === 'number' &&
+        typeof result.data.freeTimeEndsAtMs === 'number' && (
+          <WalkBackLine
+            lat={result.data.meetingLat}
+            lng={result.data.meetingLng}
+            targetMs={result.data.freeTimeEndsAtMs}
+            locale={locale}
+          />
+        )}
+      {/* E3 — narration credit (N-3 확정: text attribution IS the final form). */}
+      {NUMERAL_V1_ON && result.state === 'arrived' && result.data.attributionName && (
+        <p data-testid="arrival-attribution" className="tr-meta text-cjk-body mt-1 text-[var(--tr-ink-3)]">
+          {copy.attribution(result.data.attributionName)}
+        </p>
+      )}
 
       {actionLabel && onAction && (
         <button

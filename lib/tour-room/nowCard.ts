@@ -115,6 +115,11 @@ export interface NowCardResult {
     freeTimeEndsAtMs?: number;
     meetingTargetMs?: number;
     nextStopTargetMs?: number;
+    /** E1 — meeting pin for the on-device walk-back (free_time only). */
+    meetingLat?: number;
+    meetingLng?: number;
+    /** E3 — the narration is a PERSON's act; the name makes it so. */
+    attributionName?: string;
   };
 }
 
@@ -130,6 +135,9 @@ export interface NowCardContext {
    * the rally overage; the adapter is the only writer.
    */
   meetingTargetMs?: number | null;
+  /** E1 — the notice's pin, for the ON-DEVICE walk-back (never sent anywhere). */
+  meetingLat?: number | null;
+  meetingLng?: number | null;
   /** Ops line for the rally escalation; null hides the call action. */
   contactPhone?: string | null;
 
@@ -157,6 +165,9 @@ export interface NowCardContext {
 
   /** Whole days until the tour; used only by the lobby state. */
   daysUntil?: number | null;
+
+  /** E3 — driver display name (from the vehicle line); arrived-state credit. */
+  driverName?: string | null;
 
   nowMs?: number;
 }
@@ -202,6 +213,9 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         minutesLeft: Math.max(0, Math.ceil((ctx.freeTimeEndsAtMs - nowMs) / 60_000)),
         meetingPoint,
         freeTimeEndsAtMs: ctx.freeTimeEndsAtMs,
+        ...(typeof ctx.meetingLat === 'number' && typeof ctx.meetingLng === 'number'
+          ? { meetingLat: ctx.meetingLat, meetingLng: ctx.meetingLng }
+          : {}),
       },
     };
   }
@@ -221,6 +235,9 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         ...(bandedTarget(ctx.meetingTargetMs, nowMs, ARRIVED_NUMERAL_MAX_MS) !== undefined
           ? { meetingTargetMs: ctx.meetingTargetMs as number }
           : {}),
+        // E3 — attribution: the narration the [해설 듣기] action opens is the
+        // DRIVER's act (제로베이스 명제 — N-3 확정으로 텍스트 귀속이 최종형).
+        ...(ctx.driverName ? { attributionName: ctx.driverName } : {}),
       },
     };
   }
@@ -390,6 +407,8 @@ export interface RoomNowCardInput {
   currentStop?: { name: string } | null;
   pickup?: NowCardContext['pickup'];
   contactPhone?: string | null;
+  /** E3 — driver display name for the arrived-state attribution. */
+  driverName?: string | null;
   nowMs?: number;
 }
 
@@ -425,6 +444,9 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
     // SG-1a — the notice's target feeds every countdown; a cancelled notice
     // must never feed a numeral, whatever its target says.
     meetingTargetMs: notice && !notice.cancelled ? notice.targetMs : null,
+    meetingLat: notice && !notice.cancelled ? notice.lat : null,
+    meetingLng: notice && !notice.cancelled ? notice.lng : null,
+    driverName: input.driverName ?? null,
     contactPhone: input.contactPhone ?? null,
     freeTimeEndsAtMs: isFreeTime ? notice?.targetMs ?? null : null,
     arrived: latestArrival(input.messages, nowMs),

@@ -31,6 +31,8 @@ const COPY: Record<
     pickupTitle: string;
     vehicleTitle: string;
     chatHint: string;
+    /** E4 (D4) — cost is baked into the price; UNSEEN it is pure loss. */
+    amenities: string;
   }
 > = {
   en: {
@@ -40,6 +42,7 @@ const COPY: Record<
     pickupTitle: 'Pickup',
     vehicleTitle: 'Your vehicle',
     chatHint: 'Messages from your guide will arrive here. Questions? Ask below anytime.',
+    amenities: 'Charger, Wi-Fi, water and umbrellas are ready in the car.',
   },
   ko: {
     dday: (n) => (n === 0 ? '오늘' : `D-${n}`),
@@ -48,6 +51,7 @@ const COPY: Record<
     pickupTitle: '픽업',
     vehicleTitle: '이용 차량',
     chatHint: '가이드의 안내 메시지가 여기에 도착해요. 궁금한 점은 지금 남겨도 좋아요.',
+    amenities: '충전기 · 와이파이 · 생수 · 우산이 차에 준비되어 있어요.',
   },
   ja: {
     dday: (n) => (n === 0 ? '本日' : `あと${n}日`),
@@ -56,6 +60,7 @@ const COPY: Record<
     pickupTitle: 'お迎え',
     vehicleTitle: 'ご利用の車両',
     chatHint: 'ガイドからのご案内はここに届きます。ご質問はいつでもどうぞ。',
+    amenities: '充電器・Wi-Fi・お水・傘を車内にご用意しています。',
   },
   es: {
     dday: (n) => (n === 0 ? 'Hoy' : n === 1 ? 'Falta 1 día' : `Faltan ${n} días`),
@@ -64,6 +69,7 @@ const COPY: Record<
     pickupTitle: 'Recogida',
     vehicleTitle: 'Tu vehículo',
     chatHint: 'Los mensajes de tu guía llegarán aquí. ¿Preguntas? Escríbenos abajo.',
+    amenities: 'Cargador, Wi-Fi, agua y paraguas listos en el vehículo.',
   },
   zh: {
     dday: (n) => (n === 0 ? '今天' : `还有${n}天`),
@@ -72,6 +78,7 @@ const COPY: Record<
     pickupTitle: '接送',
     vehicleTitle: '乘坐车辆',
     chatHint: '导游的通知会显示在这里。有问题随时在下方留言。',
+    amenities: '车内已备好充电器、Wi-Fi、饮用水和雨伞。',
   },
   'zh-TW': {
     dday: (n) => (n === 0 ? '今天' : `還有${n}天`),
@@ -80,6 +87,7 @@ const COPY: Record<
     pickupTitle: '接送',
     vehicleTitle: '乘坐車輛',
     chatHint: '導遊的通知會顯示在這裡。有問題隨時在下方留言。',
+    amenities: '車內已備好充電器、Wi-Fi、飲用水和雨傘。',
   },
   fr: {
     dday: (n) => (n === 0 ? 'Aujourd’hui' : `J-${n}`),
@@ -88,6 +96,7 @@ const COPY: Record<
     pickupTitle: 'Prise en charge',
     vehicleTitle: 'Votre véhicule',
     chatHint: 'Les messages de votre guide arriveront ici. Une question? Écrivez-nous quand vous voulez.',
+    amenities: 'Chargeur, Wi-Fi, eau et parapluies sont prêts dans le véhicule.',
   },
   de: {
     dday: (n) => (n === 0 ? 'Heute' : n === 1 ? 'Noch 1 Tag' : `Noch ${n} Tage`),
@@ -96,6 +105,7 @@ const COPY: Record<
     pickupTitle: 'Abholung',
     vehicleTitle: 'Ihr Fahrzeug',
     chatHint: 'Nachrichten Ihres Guides kommen hier an. Fragen? Schreiben Sie uns jederzeit.',
+    amenities: 'Ladegerät, WLAN, Wasser und Schirme liegen im Fahrzeug bereit.',
   },
   ru: {
     dday: (n) => (n === 0 ? 'Сегодня' : `Осталось ${n} дн.`),
@@ -104,6 +114,7 @@ const COPY: Record<
     pickupTitle: 'Трансфер',
     vehicleTitle: 'Ваш транспорт',
     chatHint: 'Сообщения гида будут приходить сюда. Есть вопросы? Пишите в любое время.',
+    amenities: 'Зарядка, Wi-Fi, вода и зонты уже в машине.',
   },
   it: {
     dday: (n) => (n === 0 ? 'Oggi' : n === 1 ? 'Manca 1 giorno' : `Mancano ${n} giorni`),
@@ -112,6 +123,7 @@ const COPY: Record<
     pickupTitle: 'Pick-up',
     vehicleTitle: 'Il tuo veicolo',
     chatHint: 'I messaggi della guida arriveranno qui. Domande? Scrivici quando vuoi.',
+    amenities: 'Caricatore, Wi-Fi, acqua e ombrelli sono pronti in auto.',
   },
 };
 
@@ -136,6 +148,17 @@ export function vehicleLineFromPayload(payload: unknown): string | null {
     pick(['driver_name', 'driver']),
   ].filter(Boolean);
   return parts.length > 0 ? parts.join(' · ') : null;
+}
+
+/** E3 — the driver's display name alone, for the arrived-state credit. */
+export function driverNameFromPayload(payload: unknown): string | null {
+  if (!payload || typeof payload !== 'object') return null;
+  const record = payload as Record<string, unknown>;
+  for (const key of ['driver_name', 'driver']) {
+    const value = record[key];
+    if (typeof value === 'string' && value.trim()) return value.trim();
+  }
+  return null;
 }
 
 /** Booking→pickup joins come back as an object or a 1-element array. */
@@ -241,6 +264,12 @@ export default function LobbyCard({
           <p className="tr-card-text mt-0.5 font-medium text-[var(--tr-ink)]">{vehicleLine}</p>
         </div>
       )}
+
+      {/* E4 (사장님 D4) — the cost is baked into the price; the line is the
+          only place the guest ever finds out. 자랑해야 손실이 아니다. */}
+      <p data-testid="lobby-amenities" className="tr-label text-cjk-body mt-2.5 text-[var(--tr-ink-2)]">
+        {copy.amenities}
+      </p>
 
       {/* P1-4 — "가이드의 안내 메시지가 여기에 도착해요" addresses a guest;
           a guide/driver reading their own lobby is not waiting on themselves. */}
