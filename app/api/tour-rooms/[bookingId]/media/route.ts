@@ -4,9 +4,16 @@ import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import {
   toAttachmentItem,
   toLinkItems,
+  type DrawerAttachmentItem,
   type DrawerKind,
   type DrawerMessageRow,
 } from '@/lib/tour-room/drawer';
+import {
+  ROOM_PHOTOS_BUCKET,
+  resolveStoragePath,
+  signRoomMediaBatch,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
 export const dynamic = 'force-dynamic';
 
@@ -79,7 +86,31 @@ export async function GET(
     const { data, error } = await query;
     if (error) throw error;
     const rows = (data ?? []) as DrawerMessageRow[];
-    const items = rows.map(toAttachmentItem).filter(Boolean);
+
+    /**
+     * Exit 4 of 5 — the drawer signs its own page.
+     *
+     * One batch call for the whole page rather than 30 round trips, and
+     * `storagePath` is stripped before the response so a path never leaves the
+     * server. An item whose signing failed is dropped: an empty slot is honest,
+     * a broken thumbnail is not.
+     */
+    const raw = rows.map(toAttachmentItem).filter((item): item is DrawerAttachmentItem => item !== null);
+    const signed = await signRoomMediaBatch(
+      supabase as unknown as RoomMediaStorageClient,
+      ROOM_PHOTOS_BUCKET,
+      raw
+        .map((item) => resolveStoragePath(item.storagePath, ROOM_PHOTOS_BUCKET))
+        .filter((p): p is string => Boolean(p)),
+    );
+    const items = raw
+      .map(({ storagePath, ...item }) => {
+        const path = resolveStoragePath(storagePath, ROOM_PHOTOS_BUCKET);
+        const url = path ? signed.get(path) : null;
+        return url ? { ...item, url } : null;
+      })
+      .filter(Boolean);
+
     const lastRow = rows[rows.length - 1];
     const nextCursor = rows.length === PAGE && lastRow ? lastRow.created_at : null;
     return NextResponse.json({ kind, items, nextCursor });

@@ -42,18 +42,26 @@ describe('extractLinks', () => {
 });
 
 describe('toAttachmentItem', () => {
-  it('maps an image row with caption', () => {
+  it('maps an image row with caption and reports the storage path to sign', () => {
     const item = toAttachmentItem(
       row({
         input_kind: 'image',
         source_text: '오늘 점심!',
         metadata: {
-          attachment: { url: 'https://cdn/x.webp', name: 'lunch.webp', mime: 'image/webp', size: 1234 },
+          attachment: {
+            path: 'att/room-1/x.webp',
+            name: 'lunch.webp',
+            mime: 'image/webp',
+            size: 1234,
+          },
         },
       }),
     );
     expect(item).toMatchObject({
-      url: 'https://cdn/x.webp',
+      // Empty until the route signs it — this module is pure and has no
+      // storage client. The path is what it hands up.
+      url: '',
+      storagePath: 'att/room-1/x.webp',
       name: 'lunch.webp',
       mime: 'image/webp',
       size: 1234,
@@ -61,7 +69,31 @@ describe('toAttachmentItem', () => {
     });
   });
 
-  it('returns null when the attachment url is missing (never a broken tile)', () => {
+  /**
+   * 🔴 The regression this test exists for.
+   *
+   * This function used to require a non-empty `attachment.url`, and the media
+   * route `.filter(Boolean)`s its output. The day attachments started storing
+   * a PATH, the drawer would have returned `[]` forever — no error, no 400, no
+   * console warning. An empty photo roundup is indistinguishable from a room
+   * where nobody sent a photo, so nothing would ever have reported it.
+   */
+  it('reads a path-only attachment (the drawer would silently empty otherwise)', () => {
+    const item = toAttachmentItem(
+      row({ input_kind: 'image', metadata: { attachment: { path: 'att/room-1/y.png' } } }),
+    );
+    expect(item).not.toBeNull();
+    expect(item?.storagePath).toBe('att/room-1/y.png');
+  });
+
+  it('still reads a legacy absolute-URL attachment (no backfill required)', () => {
+    const item = toAttachmentItem(
+      row({ input_kind: 'image', metadata: { attachment: { url: 'https://cdn/x.webp' } } }),
+    );
+    expect(item?.storagePath).toBe('https://cdn/x.webp');
+  });
+
+  it('returns null when there is neither a path nor a url (never a broken tile)', () => {
     expect(toAttachmentItem(row({ input_kind: 'image', metadata: { attachment: {} } }))).toBeNull();
     expect(toAttachmentItem(row({ input_kind: 'image', metadata: null }))).toBeNull();
   });

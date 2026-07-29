@@ -1,28 +1,42 @@
 /**
  * T2.3/T2.9 — server-side TTS generation into the M-5 room-shared cache.
  *
- * One generation per (message, locale): the cache row + the public
- * tour-audio object are shared by every listener in the room. Used by the
- * GET /tts route (on-demand) and by the guide-notice pre-generation hook
- * (§O-2: when participants reported tts_capable=false, their locales are
- * generated at send time so playback has zero first-listener latency).
+ * One generation per (message, locale): the cache row + the tour-audio object
+ * are shared by every listener in the room. Used by the GET /tts route
+ * (on-demand) and by the guide-notice pre-generation hook (§O-2: when
+ * participants reported tts_capable=false, their locales are generated at send
+ * time so playback has zero first-listener latency).
+ *
+ * 🔴 `tour-audio` is a PRIVATE bucket. These mp3s are guest and guide chat
+ * messages read aloud — the same content as the message rows, in a form anyone
+ * with the URL can play. The cache table has always stored a `storage_path`
+ * (not a URL), so making this private was a read-side change only: no
+ * migration, no backfill.
  */
 
 import { generateSpeechMp3 } from '@/lib/openai-server';
 import type { RoomDbClient } from '@/lib/tour-room/access';
+import {
+  ROOM_AUDIO_BUCKET,
+  signRoomMedia,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
-export const TTS_BUCKET = process.env.SUPABASE_TOUR_AUDIO_BUCKET || 'tour-audio';
+export const TTS_BUCKET = ROOM_AUDIO_BUCKET;
 export const MAX_TTS_TEXT_CHARS = 1200;
 
-export interface TtsStorageClient extends RoomDbClient {
-  storage: {
+export interface TtsStorageClient extends RoomDbClient, RoomMediaStorageClient {
+  storage: RoomMediaStorageClient['storage'] & {
     from(bucket: string): {
-      upload(
+      upload?(
         path: string,
         body: Buffer,
-        options: { contentType: string; upsert: boolean },
+        options: Record<string, unknown>,
       ): Promise<{ error: unknown }>;
-      getPublicUrl(path: string): { data: { publicUrl: string } };
+      createSignedUrl(
+        path: string,
+        expiresIn: number,
+      ): Promise<{ data: { signedUrl: string } | null; error: unknown }>;
     };
   };
 }
@@ -76,7 +90,7 @@ export async function ensureRoomTts(
     .eq('part', part)
     .maybeSingle();
   if (cached?.storage_path) {
-    return supabase.storage.from(TTS_BUCKET).getPublicUrl(cached.storage_path).data.publicUrl;
+    return signRoomMedia(supabase, TTS_BUCKET, cached.storage_path);
   }
 
   const text = (options.text ?? speakableText(message, locale)).trim().slice(0, MAX_TTS_TEXT_CHARS);
@@ -87,7 +101,7 @@ export async function ensureRoomTts(
   const storagePath = `tour-room-tts/${roomId}/${message.id}-${locale}${suffix}.mp3`;
   const { error: uploadError } = await supabase.storage
     .from(TTS_BUCKET)
-    .upload(storagePath, Buffer.from(audio), { contentType: 'audio/mpeg', upsert: true });
+    .upload!(storagePath, Buffer.from(audio), { contentType: 'audio/mpeg', upsert: true });
   if (uploadError) throw uploadError;
 
   await supabase
@@ -97,7 +111,7 @@ export async function ensureRoomTts(
       { onConflict: 'message_id,locale,part' },
     );
 
-  return supabase.storage.from(TTS_BUCKET).getPublicUrl(storagePath).data.publicUrl;
+  return signRoomMedia(supabase, TTS_BUCKET, storagePath);
 }
 
 /**

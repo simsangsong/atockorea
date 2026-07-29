@@ -23,7 +23,14 @@ export interface DrawerAttachmentItem {
   id: string;
   created_at: string;
   sender_role: string;
+  /**
+   * Signed, short-lived. Empty until the route signs it — this module is pure
+   * and has no storage client, so it reports `storagePath` and the route mints
+   * the URL. Never persist this value.
+   */
   url: string;
+  /** Bucket-relative path the route signs. Not sent to the client. */
+  storagePath: string | null;
   name: string | null;
   mime: string | null;
   size: number | null;
@@ -64,20 +71,37 @@ export function extractLinks(text: string | null | undefined): string[] {
 }
 
 interface AttachmentMeta {
+  path?: unknown;
   url?: unknown;
   name?: unknown;
   mime?: unknown;
   size?: unknown;
 }
 
+/**
+ * 🔴 This function is why the drawer is one of the five exits.
+ *
+ * It used to require a non-empty `metadata.attachment.url` and the route
+ * `.filter(Boolean)`s the result — so the day attachments started storing a
+ * PATH instead of a URL, the drawer would have returned `[]` forever. No error,
+ * no 400, no console warning, and no test would have caught it: an empty photo
+ * roundup looks exactly like a room where nobody sent a photo.
+ *
+ * It now reads `path` first and falls back to the legacy `url`, and reports the
+ * path up so the route can sign it.
+ */
 export function toAttachmentItem(row: DrawerMessageRow): DrawerAttachmentItem | null {
   const meta = (row.metadata?.attachment ?? null) as AttachmentMeta | null;
-  if (!meta || typeof meta.url !== 'string' || !meta.url) return null;
+  if (!meta) return null;
+  const path = typeof meta.path === 'string' && meta.path ? meta.path : null;
+  const legacyUrl = typeof meta.url === 'string' && meta.url ? meta.url : null;
+  if (!path && !legacyUrl) return null;
   return {
     id: row.id,
     created_at: row.created_at,
     sender_role: row.sender_role,
-    url: meta.url,
+    url: '',
+    storagePath: path ?? legacyUrl,
     name: typeof meta.name === 'string' ? meta.name : null,
     mime: typeof meta.mime === 'string' ? meta.mime : null,
     size: typeof meta.size === 'number' ? meta.size : null,

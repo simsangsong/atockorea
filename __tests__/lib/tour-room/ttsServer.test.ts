@@ -26,7 +26,7 @@ function fakeDb(config: FakeConfig = {}) {
           uploads.push(`${bucket}/${path}`);
           return { error: null };
         },
-        getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test/${path}` } }),
+        createSignedUrl: async (path: string) => ({ data: { signedUrl: `https://cdn.test/${path}?token=sig` }, error: null }),
       }),
     },
     from(table: string) {
@@ -85,7 +85,7 @@ describe('ensureRoomTts', () => {
   it('cache hit → public URL with zero generation', async () => {
     const db = fakeDb({ cache: { 'm1:ja': 'tour-room-tts/r1/m1-ja.mp3' } });
     const url = await ensureRoomTts(db, 'r1', MESSAGE, 'ja');
-    expect(url).toBe('https://cdn.test/tour-room-tts/r1/m1-ja.mp3');
+    expect(url).toBe('https://cdn.test/tour-room-tts/r1/m1-ja.mp3?token=sig');
     expect(speechMock).not.toHaveBeenCalled();
   });
 
@@ -128,7 +128,7 @@ describe('ensureRoomTts — narration track (A2)', () => {
   it('reuses a cached narration across every locale that shares the language', async () => {
     const db = fakeDb({ cache: { 'm1:en:narration': 'tour-room-tts/r1/m1-en-narration.mp3' } });
     const url = await ensureRoomTts(db, 'r1', MESSAGE, 'en', { part: 'narration', text: 'ignored' });
-    expect(url).toBe('https://cdn.test/tour-room-tts/r1/m1-en-narration.mp3');
+    expect(url).toBe('https://cdn.test/tour-room-tts/r1/m1-en-narration.mp3?token=sig');
     expect(speechMock).not.toHaveBeenCalled();
   });
 

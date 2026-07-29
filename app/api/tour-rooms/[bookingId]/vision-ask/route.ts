@@ -1,4 +1,3 @@
-import { randomUUID } from 'node:crypto';
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
@@ -6,6 +5,14 @@ import { chatCompletion } from '@/lib/ai/router';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
+import {
+  ROOM_PHOTOS_BUCKET,
+  ensureRoomPhotosBucket,
+  hydrateOneMessageMedia,
+  signRoomMedia,
+  visionPhotoPath,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
 export const dynamic = 'force-dynamic';
 
@@ -46,7 +53,7 @@ const MAX_IMAGE_BYTES = 2 * 1024 * 1024;
  * K1a found on the SSE route.
  */
 export const maxDuration = 30;
-const PHOTOS_BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
+const PHOTOS_BUCKET = ROOM_PHOTOS_BUCKET;
 
 // 9 room locales (5 → 9 expansion, 2026-07-27). A missing entry silently
 // answered a French guest's photo question in English — the prompt language
@@ -75,12 +82,16 @@ function promptFor(preset: string | null, locale: string, question: string, cont
   return `${base}${contextLine}${questionLine} Answer in ${language} only.`;
 }
 
-async function ensurePhotosBucket(supabase: ReturnType<typeof createServerClient>): Promise<string> {
-  const { data: buckets } = await supabase.storage.listBuckets();
-  if (!buckets?.some((bucket) => bucket.name === PHOTOS_BUCKET)) {
-    await supabase.storage.createBucket(PHOTOS_BUCKET, { public: true, fileSizeLimit: MAX_IMAGE_BYTES });
-  }
-  return PHOTOS_BUCKET;
+/**
+ * 🔴 This used to hard-code `{ public: true }`, and so did the chat attachment
+ * uploader. Two hard-coded creators of the same bucket means the privacy
+ * setting is decided by whichever route runs first after a bucket is deleted —
+ * i.e. it silently reverts. Both now go through the one private-by-contract
+ * helper. Fixing only one of them would have been worse than fixing neither,
+ * because the bucket would look correct until the day it didn't.
+ */
+function ensurePhotosBucket(supabase: ReturnType<typeof createServerClient>): Promise<string> {
+  return ensureRoomPhotosBucket(supabase as unknown as RoomMediaStorageClient);
 }
 
 export async function POST(
@@ -164,17 +175,25 @@ export async function POST(
     const answer = completion.content.trim();
 
     let imageUrl: string | null = null;
+    /**
+     * Stored on the row; `image_url` on the row is the SIGNED value and is
+     * re-minted on every read. The Travel Timeline rebuilds the trip recap from
+     * these `vision_answer` photos, so it reads whatever the five message exits
+     * hydrated — it never sees the path.
+     */
+    let imagePath: string | null = null;
     let message: Record<string, unknown> | null = null;
     if (share) {
       const room = await ensureRoom(supabase, booking);
       const bucket = await ensurePhotosBucket(supabase);
       const extension = mime.includes('png') ? 'png' : mime.includes('webp') ? 'webp' : 'jpg';
-      const path = `${room.id}/${randomUUID()}.${extension}`;
+      const path = visionPhotoPath(room.id, extension);
       const { error: uploadError } = await supabase.storage
         .from(bucket)
         .upload(path, bytes, { contentType: mime, upsert: false });
       if (!uploadError) {
-        imageUrl = supabase.storage.from(bucket).getPublicUrl(path).data.publicUrl;
+        imagePath = path;
+        imageUrl = await signRoomMedia(supabase as unknown as RoomMediaStorageClient, bucket, path);
       }
 
       const { data } = await supabase
@@ -191,7 +210,7 @@ export async function POST(
           target_locales: [locale],
           metadata: {
             kind: 'vision_answer',
-            image_url: imageUrl,
+            image_path: imagePath,
             question: question || null,
             preset,
             asked_by_role: actor.role,
@@ -200,8 +219,15 @@ export async function POST(
         .select()
         .single();
       if (data) {
-        message = data;
-        await broadcastToRoom(room, 'message', { message: data });
+        // Same rule as the chat attachment: the broadcast payload is signed,
+        // because the clients already in the room never re-fetch this row.
+        const wire =
+          (await hydrateOneMessageMedia(
+            supabase as unknown as RoomMediaStorageClient,
+            data as { metadata?: Record<string, unknown> | null },
+          )) ?? data;
+        message = wire as Record<string, unknown>;
+        await broadcastToRoom(room, 'message', { message: wire });
       }
     }
 

@@ -22,7 +22,7 @@ jest.mock('@/lib/tour-room/events', () => ({ recordRoomEvent: jest.fn(async () =
 jest.mock('@/lib/tour-room/realtime', () => ({ broadcastToRoom: jest.fn(async () => ({ ok: true })) }));
 jest.mock('@/lib/tour-room/attachments', () => ({
   classifyAttachment: jest.fn(() => ({ kind: 'image', ext: 'jpg' })),
-  uploadAttachment: jest.fn(async () => ({ url: 'https://x/att/receipt.jpg', mime: 'image/jpeg', name: 'r.jpg', size: 100 })),
+  uploadAttachment: jest.fn(async () => ({ path: 'att/room-1/receipt.jpg', mime: 'image/jpeg', name: 'r.jpg', size: 100 })),
 }));
 // T2-2 — capsules translate the item; echo by default so existing assertions
 // (which check amounts/status, not the item text) hold. Per-test overrides
@@ -189,8 +189,10 @@ describe('extras API', () => {
     } as never;
     const res = await extrasPOST(req, routeParams());
     expect(res.status).toBe(201);
-    expect(db.inserts.tour_room_extras[0]).toMatchObject({ kind: 'ticket', payer: 'driver', receipt_photo_url: 'https://x/att/receipt.jpg' });
-    expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ receipt_photo_url: 'https://x/att/receipt.jpg' });
+    // 🔴 A receipt is guest financial data. What lands on the row is a PATH —
+    // a stored public URL would outlive the room, the invite, and the message.
+    expect(db.inserts.tour_room_extras[0]).toMatchObject({ kind: 'ticket', payer: 'driver', receipt_photo_url: 'att/room-1/receipt.jpg' });
+    expect(db.inserts.tour_room_messages[0].metadata).toMatchObject({ receipt_photo_url: 'att/room-1/receipt.jpg' });
   });
 
   it('T2-2 — translates the ledger item into each locale on the capsule', async () => {

@@ -17,6 +17,11 @@ import { sendOpsPush } from '@/lib/tour-ops/push';
 import { sendDriverRoomPush } from '@/lib/tour-room/guestPush';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/lib/tour-room/attachments';
+import {
+  hydrateMessageMedia,
+  hydrateOneMessageMedia,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 import { buildReplySnapshot, type RepliableMessage } from '@/lib/tour-room/reply';
 
 export const dynamic = 'force-dynamic';
@@ -93,7 +98,14 @@ export async function GET(
       .order('created_at', { ascending: true });
     if (error) throw error;
 
-    return NextResponse.json({ room, messages: data ?? [] });
+    // Exit 1 of 5 — attachments are stored as private storage paths, so the
+    // signed URL is minted here, for this authorized reader, and expires.
+    const messages = await hydrateMessageMedia(
+      supabase as unknown as RoomMediaStorageClient,
+      (data ?? []) as Array<{ metadata?: Record<string, unknown> | null }>,
+    );
+
+    return NextResponse.json({ room, messages });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/messages error:', error);
     return NextResponse.json(
@@ -338,9 +350,25 @@ export async function POST(
 
     if (error) throw error;
 
+    /**
+     * Exits 2 and 3 of 5 — the POST response and the realtime broadcast.
+     *
+     * 🔴 The broadcast is the one that fails silently if forgotten: the row it
+     * carries goes straight into every open client, so an unhydrated payload
+     * renders a broken image for everyone who was in the room at send time,
+     * while the same photo looks fine to anyone who reloads (they hit the
+     * hydrated GET). Signed once, used for both — one round trip, and the
+     * sender and the room see the identical URL.
+     */
+    const wireMessage =
+      (await hydrateOneMessageMedia(
+        supabase as unknown as RoomMediaStorageClient,
+        message as { metadata?: Record<string, unknown> | null },
+      )) ?? message;
+
     // D-1/§O-7: push the committed row to the room channel; best-effort by
     // design — clients recover any gap via the after-cursor resync.
-    await broadcastToRoom(room, 'message', { message });
+    await broadcastToRoom(room, 'message', { message: wireMessage });
 
     // Language-agnostic bridge: remember what language this guest actually
     // writes in (detected by the translation router), so the NEXT fan-out —
@@ -410,7 +438,7 @@ export async function POST(
       }
     }
 
-    return NextResponse.json({ room, message }, { status: 201 });
+    return NextResponse.json({ room, message: wireMessage }, { status: 201 });
   } catch (error) {
     console.error('POST /api/tour-rooms/[bookingId]/messages error:', error);
     return NextResponse.json(

@@ -25,8 +25,16 @@ import {
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { isPrivateTour } from '@/lib/tour-room/tourKind';
 import type { RoomDbClient } from '@/lib/tour-room/access';
+import {
+  ROOM_PHOTOS_BUCKET,
+  ROOM_QR_SIGNED_TTL_SEC,
+  dispatchQrPath,
+  ensureRoomPhotosBucket,
+  signRoomMedia,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
-const QR_BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
+const QR_BUCKET = ROOM_PHOTOS_BUCKET;
 
 export interface DispatchDbClient extends RoomDbClient {
   storage: {
@@ -34,7 +42,10 @@ export interface DispatchDbClient extends RoomDbClient {
     createBucket(name: string, options: Record<string, unknown>): Promise<{ error: unknown }>;
     from(bucket: string): {
       upload(path: string, body: Buffer, options: Record<string, unknown>): Promise<{ error: unknown }>;
-      getPublicUrl(path: string): { data: { publicUrl: string } };
+      createSignedUrl(
+        path: string,
+        expiresIn: number,
+      ): Promise<{ data: { signedUrl: string } | null; error: unknown }>;
     };
   };
 }
@@ -92,6 +103,21 @@ async function recordInvite(
   if (error) throw error;
 }
 
+/**
+ * Render the guide's room link as a QR and return a URL a mail client can load.
+ *
+ * 🔴 This is the `qr/` path split the storage work is built around. The bucket
+ * is private, so `getPublicUrl` no longer resolves — but a QR lives in an
+ * INVITE EMAIL, fetched with no session, potentially months later. So `qr/`
+ * gets a long-lived signed URL (120 days) while `att/` gets six hours. Same
+ * bucket, two policies, split by path. Doing this at bucket granularity would
+ * have forced either a broken image in every archived invite or a public bucket
+ * holding an object that encodes a guide capability link.
+ *
+ * The path also gained a UUID: it used to be `{tourId}-{tourDate}-{Date.now()}`,
+ * every component of which is a known value or a millisecond inside a known
+ * day.
+ */
 async function uploadGuideQr(
   supabase: DispatchDbClient,
   tourId: string,
@@ -100,17 +126,18 @@ async function uploadGuideQr(
 ): Promise<string | null> {
   try {
     const png = await QRCode.toBuffer(url, { width: 420, margin: 1 });
-    const { data: buckets } = await supabase.storage.listBuckets();
-    if (!buckets?.some((bucket) => bucket.name === QR_BUCKET)) {
-      await supabase.storage.createBucket(QR_BUCKET, { public: true });
-    }
-    // Path derives from the mint time so a re-dispatch gets a fresh QR.
-    const path = `qr/${tourId}-${tourDate}-${Date.now()}.png`;
+    await ensureRoomPhotosBucket(supabase as unknown as RoomMediaStorageClient);
+    const path = dispatchQrPath(tourId, tourDate);
     const { error } = await supabase.storage
       .from(QR_BUCKET)
       .upload(path, png, { contentType: 'image/png', upsert: true });
     if (error) return null;
-    return supabase.storage.from(QR_BUCKET).getPublicUrl(path).data.publicUrl;
+    return signRoomMedia(
+      supabase as unknown as RoomMediaStorageClient,
+      QR_BUCKET,
+      path,
+      ROOM_QR_SIGNED_TTL_SEC,
+    );
   } catch {
     return null; // QR is a nice-to-have; the mail still carries the link
   }
