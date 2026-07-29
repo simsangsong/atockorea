@@ -993,7 +993,7 @@
   /* elev-2, one step above the ordinary cards below it — it is the screen's
    * masthead, so it should sit above them rather than beside them. */
   box-shadow: var(--tr-rim), var(--tr-elev-2);
-  padding: 15px 16px;
+  padding: 12px 14px;
 }
 
 .tr-plan-course-card {

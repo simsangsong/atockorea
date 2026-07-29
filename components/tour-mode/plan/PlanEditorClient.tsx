@@ -265,7 +265,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Add',
     added: 'Added',
     yourDay: 'Your day',
-    emptyStops: 'No stops yet — start from a course or pick places above.',
+    emptyStops: 'No stops yet — choose a route below, or add places one by one.',
     estimated: (total) => `Estimated ${total} incl. driving`,
     timeLabel: 'Time (KST)',
     durationLabel: 'Stay',
@@ -352,7 +352,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: '담기',
     added: '담음',
     yourDay: '나의 하루',
-    emptyStops: '아직 담은 곳이 없어요 — 추천 코스로 시작하거나 위에서 골라보세요.',
+    emptyStops: '아직 담은 곳이 없어요 — 아래에서 코스를 고르거나 장소를 하나씩 담아보세요.',
     estimated: (total) => `이동 포함 예상 ${total}`,
     timeLabel: '시간 (KST)',
     durationLabel: '체류',
@@ -438,7 +438,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: '追加',
     added: '追加済み',
     yourDay: '私の一日',
-    emptyStops: 'まだスポットがありません。コースから始めるか上で選んでください。',
+    emptyStops: 'まだスポットがありません。下からコースを選ぶか、場所を一つずつ追加してください。',
     estimated: (total) => `移動込みの目安 ${total}`,
     timeLabel: '時刻 (KST)',
     durationLabel: '滞在',
@@ -523,7 +523,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: '加入',
     added: '已加入',
     yourDay: '我的一天',
-    emptyStops: '还没有加入景点——从推荐路线开始或在上方挑选。',
+    emptyStops: '还没有加入景点——在下方选择路线，或逐个添加地点。',
     estimated: (total) => `含车程预计 ${total}`,
     timeLabel: '时间 (KST)',
     durationLabel: '停留',
@@ -608,7 +608,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: '加入',
     added: '已加入',
     yourDay: '我的一天',
-    emptyStops: '還沒有加入景點——從推薦路線開始，或在上方挑選。',
+    emptyStops: '還沒有加入景點——在下方選擇路線，或逐一加入地點。',
     estimated: (total) => `含車程預估 ${total}`,
     timeLabel: '時間 (KST)',
     durationLabel: '停留',
@@ -693,7 +693,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Añadir',
     added: 'Añadido',
     yourDay: 'Tu día',
-    emptyStops: 'Aún no hay paradas: empieza con una ruta o elige arriba.',
+    emptyStops: 'Aún no hay paradas: elige una ruta abajo o añade lugares uno a uno.',
     estimated: (total) => `Estimado ${total} incl. trayectos`,
     timeLabel: 'Hora (KST)',
     durationLabel: 'Estancia',
@@ -780,7 +780,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Ajouter',
     added: 'Ajouté',
     yourDay: 'Votre journée',
-    emptyStops: 'Aucune étape pour l’instant — partez d’un circuit ou choisissez des lieux ci-dessus.',
+    emptyStops: 'Aucune étape pour l’instant — choisissez un circuit ci-dessous ou ajoutez des lieux un à un.',
     estimated: (total) => `Environ ${total}, trajets inclus`,
     timeLabel: 'Heure (KST)',
     durationLabel: 'Sur place',
@@ -867,7 +867,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Hinzufügen',
     added: 'Hinzugefügt',
     yourDay: 'Ihr Tag',
-    emptyStops: 'Noch keine Stopps — starten Sie mit einer Route oder wählen Sie oben Orte.',
+    emptyStops: 'Noch keine Stopps — wählen Sie unten eine Route oder fügen Sie Orte einzeln hinzu.',
     estimated: (total) => `Geschätzt ${total} inkl. Fahrtzeit`,
     timeLabel: 'Zeit (KST)',
     durationLabel: 'Aufenthalt',
@@ -954,7 +954,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Добавить',
     added: 'Добавлено',
     yourDay: 'Ваш день',
-    emptyStops: 'Пока пусто — начните с маршрута или выберите места выше.',
+    emptyStops: 'Пока пусто — выберите маршрут ниже или добавляйте места по одному.',
     estimated: (total) => `Примерно ${total} с учетом дороги`,
     timeLabel: 'Время (KST)',
     durationLabel: 'На месте',
@@ -1041,7 +1041,7 @@ const COPY: Record<RoomLocale, PlanCopy> = {
     add: 'Aggiungi',
     added: 'Aggiunto',
     yourDay: 'La tua giornata',
-    emptyStops: 'Ancora nessuna tappa — parti da un percorso o scegli i luoghi qui sopra.',
+    emptyStops: 'Ancora nessuna tappa — scegli un percorso qui sotto o aggiungi i luoghi uno a uno.',
     estimated: (total) => `Totale stimato ${total}, spostamenti inclusi`,
     timeLabel: 'Ora (KST)',
     durationLabel: 'Sosta',
@@ -2576,19 +2576,23 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               <IconTabMap size={TR_ICON.nav} aria-hidden />
             </a>
           </div>
-          <div className="mt-4 flex flex-wrap gap-2">
+          {/* P7.4 (H-6) — the masthead was 164px, 19% of the viewport, before
+              any content began. Tightened rather than stripped: every chip the
+              guest had is still here (P7-D7 — removing information reads as a
+              feature disappearing), they just stop occupying a full band. */}
+          <div className="mt-2.5 flex flex-wrap gap-1.5">
             {plan.tour.date && (
-              <span className="tr-label inline-flex min-h-8 items-center gap-1.5 rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+              <span className="tr-label inline-flex min-h-7 items-center gap-1.5 rounded-full bg-[var(--tr-plan-hero-chip)] px-2.5 font-semibold text-[var(--tr-plan-hero-ink)]">
                 <IconTime size={TR_ICON.meta} aria-hidden />
                 {copy.tourDay} {plan.tour.date}
               </span>
             )}
             {plan.tour.total_hours && (
-              <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-3 font-semibold text-[var(--tr-plan-hero-ink)]">
+              <span className="tr-label inline-flex min-h-7 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-2.5 font-semibold text-[var(--tr-plan-hero-ink)]">
                 {copy.courseHours(plan.tour.total_hours)}
               </span>
             )}
-            <span className="tr-label inline-flex min-h-8 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-3 text-[var(--tr-plan-hero-muted)]">
+            <span className="tr-label inline-flex min-h-7 items-center rounded-full bg-[var(--tr-plan-hero-chip)] px-2.5 text-[var(--tr-plan-hero-muted)]">
               {copy.kstNote}
             </span>
           </div>
@@ -2636,6 +2640,353 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               {copy.claimLead}
             </button>
           </div>
+        )}
+
+        {/* the day (shared stop editor / read-only list)
+         *
+         * 🔴 P7.4 (H-6) — this section used to sit at the BOTTOM, under the
+         * hero, the tabs, the search field and a scrolling list of places:
+         * roughly the last screenful of a 1,860px scroll. The guest came here
+         * to build a day, and the day was the last thing on the page while the
+         * tools for making it were the first.
+         *
+         * It is also the screen's ONE `.tr-card-hero` (H-1: exactly one per
+         * screen, or the class stops meaning anything). It keeps its place when
+         * empty on purpose — N4's lesson that an empty thing is a place to say
+         * something, not a place to hide.
+         */}
+        {(stops.length > 0 || canEdit) && tab !== 'delegate' && (
+          <section className="tr-card tr-card-hero mt-4 px-4 py-4">
+            <div className="flex items-center justify-between gap-3">
+              {/* 🔴 P7.3 (H-4) — 「내 하루」 is what the guest came here to make,
+                  and it was set at the same 15px as every other section
+                  heading. The screen's type usage sat 62% in its two smallest
+                  steps (measured: tr-label 42 + tr-meta 26 of 110) with two
+                  uses of the largest — "조잡함" was never too many small words,
+                  it was no big ones. This is the protagonist; it gets 18px. */}
+              <h2 className="tr-body-lg flex items-center gap-2 font-bold text-[var(--tr-ink)]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl tr-plan-tile">
+                  <IconJourney size={TR_ICON.chip} aria-hidden />
+                </span>
+                {copy.yourDay}
+              </h2>
+              {stops.length > 0 && (
+                <span className="tr-meta rounded-full bg-[var(--tr-surface)] px-3 py-1.5 font-semibold text-[var(--tr-ink-3)] shadow-[var(--tr-rim),var(--tr-elev-1)]">
+                  {copy.estimated(formatMinutes(totalEstimateMin))}
+                </span>
+              )}
+            </div>
+
+            {stops.length === 0 ? (
+              <p className="tr-label mt-2 text-[var(--tr-ink-2)]">{copy.emptyStops}</p>
+            ) : (
+              <ol className="mt-2 flex flex-col gap-2">
+                {stops.map((stop, index) => {
+                  const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
+                  const expanded = expandedStopId === stop.id;
+                  const meta = [
+                    stop.arrival_planned ?? null,
+                    stop.duration_min ? copy.minutes(stop.duration_min) : null,
+                  ]
+                    .filter(Boolean)
+                    .join(' · ');
+                  return (
+                    /* `--flat` because these now sit INSIDE the hero card: a
+                       shadow on a card within a card reads as a seam, not as
+                       depth (H-1's third tier). */
+                    <li key={stop.id} className="tr-card tr-card--flat overflow-hidden">
+                      {/* P2 — the collapsed row is ONE line (~56px). It used to
+                          carry a time input, a stay select, a full-width request
+                          field and a three-tile action column at all times: ~430px
+                          per stop, so four stops filled two screens. */}
+                      <div className="flex items-center gap-2.5 px-3 py-2.5">
+                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl tr-plan-tile font-bold">
+                          {index + 1}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => setExpandedStopId(expanded ? null : stop.id)}
+                          aria-expanded={expanded}
+                          disabled={!canEdit}
+                          className="min-w-0 flex-1 text-left disabled:cursor-default"
+                          data-testid={`plan-stop-row-${index + 1}`}
+                        >
+                          {/* P7.3 (H-4) — 13px → 15px. This is the only proper
+                              noun on the screen: the place the guest is going.
+                              It was set one step below the body text around it,
+                              which is how a list of Jeju landmarks came to read
+                              like a table of rows. The row stays one line
+                              collapsed (P-D20 holds); only the protagonist
+                              inside it grows. */}
+                          <p className="tr-title text-cjk-safe font-semibold text-[var(--tr-ink)]">
+                            {stop.title}
+                            {stop.source === 'google' && (
+                              <span className="tr-meta ml-1.5 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
+                                Google
+                              </span>
+                            )}
+                          </p>
+                          {(meta || stopWarnings.length > 0) && (
+                            <p className="tr-meta mt-0.5 flex items-center gap-1.5 text-[var(--tr-ink-3)]">
+                              {stopWarnings.length > 0 && (
+                                <IconWarn
+                                  size={TR_ICON.meta}
+                                  aria-hidden
+                                  className="shrink-0 text-[var(--tr-danger)]"
+                                />
+                              )}
+                              {meta || copy.timeLabel}
+                            </p>
+                          )}
+                        </button>
+                        {canEdit && (
+                          <button
+                            type="button"
+                            aria-label={copy.stopActions}
+                            onClick={() => setActionStopId(stop.id)}
+                            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-xl text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
+                            data-testid={`plan-stop-actions-${index + 1}`}
+                          >
+                            <IconMore size={TR_ICON.action} aria-hidden />
+                          </button>
+                        )}
+                      </div>
+
+                      {canEdit && expanded && (
+                        <div
+                          className="tr-anim-panel-in border-t border-[var(--tr-hairline)] px-3 py-3"
+                          data-testid={`plan-stop-detail-${index + 1}`}
+                        >
+                          <div className="flex flex-wrap items-center gap-2">
+                            <span className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.timeLabel}
+                              <button
+                                type="button"
+                                onClick={() => setTimeSheetFor(stop.id)}
+                                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label font-semibold !text-[var(--tr-ink)]"
+                                data-testid={`plan-stop-time-${index + 1}`}
+                              >
+                                {stop.arrival_planned ?? '--:--'}
+                              </button>
+                            </span>
+                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
+                              {copy.durationLabel}
+                              <select
+                                value={stop.duration_min ?? 60}
+                                onChange={(e) =>
+                                  mutateStops((prev) =>
+                                    prev.map((s) =>
+                                      s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
+                                    ),
+                                  )
+                                }
+                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
+                              >
+                                {DURATION_OPTIONS.map((min) => (
+                                  <option key={min} value={min}>
+                                    {copy.minutes(min)}
+                                  </option>
+                                ))}
+                              </select>
+                            </label>
+                          </div>
+                          <input
+                            type="text"
+                            value={stop.memo_guest ?? ''}
+                            onChange={(e) =>
+                              mutateStops((prev) =>
+                                prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
+                              )
+                            }
+                            placeholder={copy.memoPlaceholder}
+                            maxLength={500}
+                            className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                          />
+                        </div>
+                      )}
+
+                      {stopWarnings.map((w) => (
+                        <p
+                          key={w.code}
+                          className="tr-meta flex items-center gap-1 border-t border-[var(--tr-hairline)] px-3 py-2 font-semibold text-[var(--tr-danger)]"
+                        >
+                          <IconWarn size={TR_ICON.meta} aria-hidden />
+                          {w.code === 'closed'
+                            ? copy.warnClosed(w.title ?? stop.title)
+                            : copy.warnOutOfRegion(w.title ?? stop.title)}
+                        </p>
+                      ))}
+                    </li>
+                  );
+                })}
+              </ol>
+            )}
+
+            {/* P2 — reorder + remove moved off the row into the app's ⋯ sheet
+                grammar (the same one the chat list uses). Three always-visible
+                tiles per stop were the bulk of the old row's height. */}
+            {actionStopId && canEdit && (() => {
+              const idx = stops.findIndex((s) => s.id === actionStopId);
+              if (idx < 0) return null;
+              const close = () => setActionStopId(null);
+              const act = (fn: (prev: EditorStop[]) => EditorStop[]) => {
+                mutateStops(fn);
+                close();
+              };
+              return (
+                <Sheet open onClose={close} title={stops[idx].title} closeLabel={ui.cancel}>
+                  <div className="tr-card divide-y divide-[var(--tr-hairline)] overflow-hidden">
+                    <button
+                      type="button"
+                      disabled={idx === 0}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx - 1], next[idx]] = [next[idx], next[idx - 1]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-up"
+                    >
+                      <IconMoveUp size={TR_ICON.action} aria-hidden />
+                      {copy.moveUp}
+                    </button>
+                    <button
+                      type="button"
+                      disabled={idx === stops.length - 1}
+                      onClick={() =>
+                        act((prev) => {
+                          const next = [...prev];
+                          [next[idx], next[idx + 1]] = [next[idx + 1], next[idx]];
+                          return next;
+                        })
+                      }
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
+                      data-testid="plan-stop-move-down"
+                    >
+                      <IconMoveDown size={TR_ICON.action} aria-hidden />
+                      {copy.moveDown}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => act((prev) => prev.filter((s) => s.id !== actionStopId))}
+                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left font-semibold text-[var(--tr-danger)]"
+                      data-testid="plan-stop-remove"
+                    >
+                      <IconTrash size={TR_ICON.action} aria-hidden />
+                      {copy.removeStop}
+                    </button>
+                  </div>
+                </Sheet>
+              );
+            })()}
+
+            {/* P3 — one wheel serves every time in this screen. The native
+                picker leaked the device locale into a 10-locale planner and drew
+                OS chrome inside an app that has its own. */}
+            {timeSheetFor && canEdit && (() => {
+              const forDeparture = timeSheetFor === 'departure';
+              const stop = forDeparture ? null : stops.find((s) => s.id === timeSheetFor);
+              if (!forDeparture && !stop) return null;
+              const current = forDeparture ? (departureTime ?? '') : (stop?.arrival_planned ?? '');
+              const commit = (hhmm: string) => {
+                if (forDeparture) {
+                  mutateDeparture(hhmm);
+                } else {
+                  mutateStops((prev) =>
+                    prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: hhmm } : s)),
+                  );
+                }
+              };
+              return (
+                <Sheet
+                  open
+                  onClose={() => setTimeSheetFor(null)}
+                  title={forDeparture ? copy.departureTitle : (stop?.title ?? copy.timeLabel)}
+                  closeLabel={ui.cancel}
+                >
+                  <TimeWheel
+                    value={current}
+                    onChange={commit}
+                    restAt={WHEEL_REST}
+                    testId="plan-time-wheel"
+                  />
+                  {/* 🔴 The wheel shows its RESTING row highlighted but does not
+                      commit it — by design, so an unset field is not silently
+                      given a value (TimeWheel's own contract: "the first scroll
+                      or tap commits"). The cost was a trap: the sheet opens
+                      looking like 09:00 is chosen, and the two ways out were
+                      ✕ and [시간 지우기], neither of which keeps it. A guest who
+                      wanted the default had no way to say so.
+                      That mattered beyond one field: departure_time is what
+                      gates the countdown AND the guest's "시간 추가" request, so
+                      the trap quietly disabled the whole overtime path (live:
+                      zero plans had it set). */}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      commit(current && /^\d{2}:\d{2}$/.test(current) ? current : WHEEL_REST);
+                      setTimeSheetFor(null);
+                    }}
+                    className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body mt-3"
+                    data-testid="plan-time-confirm"
+                  >
+                    {copy.timeConfirm}
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      if (forDeparture) mutateDeparture(null);
+                      else
+                        mutateStops((prev) =>
+                          prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: null } : s)),
+                        );
+                      setTimeSheetFor(null);
+                    }}
+                    className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--block tr-plan-btn--tap tr-label mt-2"
+                    data-testid="plan-time-clear"
+                  >
+                    {copy.timeClear}
+                  </button>
+                </Sheet>
+              );
+            })()}
+
+            {/* plan-wide warnings (overrun) */}
+            {warnings.some((w) => w.code === 'overrun') && plan.tour.total_hours && (
+              <div className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3">
+                <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-danger)]">{copy.warningsTitle}</p>
+                {warnings
+                  .filter((w) => w.code === 'overrun')
+                  .map((w, i) => (
+                    <p key={i} className="tr-label mt-1 text-[var(--tr-ink)]">
+                      {copy.warnOverrun(
+                        formatMinutes(Number(w.detail.over_min) || 0),
+                        copy.courseHours(plan.tour.total_hours as number),
+                      )}
+                    </p>
+                  ))}
+              </div>
+            )}
+
+            {/* plan-wide notice (Jeju cross-island 동+서/남) — notice only, never blocks */}
+            {warnings
+              .filter((w) => w.code === 'cross_island')
+              .map((w, i) => (
+                <div
+                  key={`cross-island-${i}`}
+                  className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3"
+                >
+                  <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-danger)]">
+                    {copy.warningsTitle}
+                  </p>
+                  <p className="tr-label mt-1 text-[var(--tr-ink)]">
+                    {copy.warnCrossIsland(`₩${Number(w.detail.surcharge_krw ?? 0).toLocaleString()}`)}
+                  </p>
+                </div>
+              ))}
+          </section>
         )}
 
         {/* tabs */}
@@ -2943,337 +3294,6 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           </>
         )}
 
-        {/* the day (shared stop editor / read-only list) */}
-        {(stops.length > 0 || canEdit) && tab !== 'delegate' && (
-          <section className="mt-6">
-            <div className="flex items-center justify-between gap-3">
-              {/* 🔴 P7.3 (H-4) — 「내 하루」 is what the guest came here to make,
-                  and it was set at the same 15px as every other section
-                  heading. The screen's type usage sat 62% in its two smallest
-                  steps (measured: tr-label 42 + tr-meta 26 of 110) with two
-                  uses of the largest — "조잡함" was never too many small words,
-                  it was no big ones. This is the protagonist; it gets 18px. */}
-              <h2 className="tr-body-lg flex items-center gap-2 font-bold text-[var(--tr-ink)]">
-                <span className="flex h-9 w-9 items-center justify-center rounded-xl tr-plan-tile">
-                  <IconJourney size={TR_ICON.chip} aria-hidden />
-                </span>
-                {copy.yourDay}
-              </h2>
-              {stops.length > 0 && (
-                <span className="tr-meta rounded-full bg-[var(--tr-surface)] px-3 py-1.5 font-semibold text-[var(--tr-ink-3)] shadow-[var(--tr-rim),var(--tr-elev-1)]">
-                  {copy.estimated(formatMinutes(totalEstimateMin))}
-                </span>
-              )}
-            </div>
-
-            {stops.length === 0 ? (
-              <p className="tr-label mt-2 text-[var(--tr-ink-2)]">{copy.emptyStops}</p>
-            ) : (
-              <ol className="mt-2 flex flex-col gap-2">
-                {stops.map((stop, index) => {
-                  const stopWarnings = warnings.filter((w) => w.stop_id === stop.id);
-                  const expanded = expandedStopId === stop.id;
-                  const meta = [
-                    stop.arrival_planned ?? null,
-                    stop.duration_min ? copy.minutes(stop.duration_min) : null,
-                  ]
-                    .filter(Boolean)
-                    .join(' · ');
-                  return (
-                    <li key={stop.id} className="tr-card overflow-hidden">
-                      {/* P2 — the collapsed row is ONE line (~56px). It used to
-                          carry a time input, a stay select, a full-width request
-                          field and a three-tile action column at all times: ~430px
-                          per stop, so four stops filled two screens. */}
-                      <div className="flex items-center gap-2.5 px-3 py-2.5">
-                        <span className="tr-label flex h-8 w-8 shrink-0 items-center justify-center rounded-xl tr-plan-tile font-bold">
-                          {index + 1}
-                        </span>
-                        <button
-                          type="button"
-                          onClick={() => setExpandedStopId(expanded ? null : stop.id)}
-                          aria-expanded={expanded}
-                          disabled={!canEdit}
-                          className="min-w-0 flex-1 text-left disabled:cursor-default"
-                          data-testid={`plan-stop-row-${index + 1}`}
-                        >
-                          {/* P7.3 (H-4) — 13px → 15px. This is the only proper
-                              noun on the screen: the place the guest is going.
-                              It was set one step below the body text around it,
-                              which is how a list of Jeju landmarks came to read
-                              like a table of rows. The row stays one line
-                              collapsed (P-D20 holds); only the protagonist
-                              inside it grows. */}
-                          <p className="tr-title text-cjk-safe font-semibold text-[var(--tr-ink)]">
-                            {stop.title}
-                            {stop.source === 'google' && (
-                              <span className="tr-meta ml-1.5 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
-                                Google
-                              </span>
-                            )}
-                          </p>
-                          {(meta || stopWarnings.length > 0) && (
-                            <p className="tr-meta mt-0.5 flex items-center gap-1.5 text-[var(--tr-ink-3)]">
-                              {stopWarnings.length > 0 && (
-                                <IconWarn
-                                  size={TR_ICON.meta}
-                                  aria-hidden
-                                  className="shrink-0 text-[var(--tr-danger)]"
-                                />
-                              )}
-                              {meta || copy.timeLabel}
-                            </p>
-                          )}
-                        </button>
-                        {canEdit && (
-                          <button
-                            type="button"
-                            aria-label={copy.stopActions}
-                            onClick={() => setActionStopId(stop.id)}
-                            className="flex h-11 w-9 shrink-0 items-center justify-center rounded-xl text-[var(--tr-ink-3)] active:bg-[var(--tr-surface-2)]"
-                            data-testid={`plan-stop-actions-${index + 1}`}
-                          >
-                            <IconMore size={TR_ICON.action} aria-hidden />
-                          </button>
-                        )}
-                      </div>
-
-                      {canEdit && expanded && (
-                        <div
-                          className="tr-anim-panel-in border-t border-[var(--tr-hairline)] px-3 py-3"
-                          data-testid={`plan-stop-detail-${index + 1}`}
-                        >
-                          <div className="flex flex-wrap items-center gap-2">
-                            <span className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                              {copy.timeLabel}
-                              <button
-                                type="button"
-                                onClick={() => setTimeSheetFor(stop.id)}
-                                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label font-semibold !text-[var(--tr-ink)]"
-                                data-testid={`plan-stop-time-${index + 1}`}
-                              >
-                                {stop.arrival_planned ?? '--:--'}
-                              </button>
-                            </span>
-                            <label className="tr-meta flex items-center gap-1 text-[var(--tr-ink-3)]">
-                              {copy.durationLabel}
-                              <select
-                                value={stop.duration_min ?? 60}
-                                onChange={(e) =>
-                                  mutateStops((prev) =>
-                                    prev.map((s) =>
-                                      s.id === stop.id ? { ...s, duration_min: Number.parseInt(e.target.value, 10) } : s,
-                                    ),
-                                  )
-                                }
-                                className="tr-label min-h-9 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2.5 text-[var(--tr-ink)]"
-                              >
-                                {DURATION_OPTIONS.map((min) => (
-                                  <option key={min} value={min}>
-                                    {copy.minutes(min)}
-                                  </option>
-                                ))}
-                              </select>
-                            </label>
-                          </div>
-                          <input
-                            type="text"
-                            value={stop.memo_guest ?? ''}
-                            onChange={(e) =>
-                              mutateStops((prev) =>
-                                prev.map((s) => (s.id === stop.id ? { ...s, memo_guest: e.target.value } : s)),
-                              )
-                            }
-                            placeholder={copy.memoPlaceholder}
-                            maxLength={500}
-                            className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
-                          />
-                        </div>
-                      )}
-
-                      {stopWarnings.map((w) => (
-                        <p
-                          key={w.code}
-                          className="tr-meta flex items-center gap-1 border-t border-[var(--tr-hairline)] px-3 py-2 font-semibold text-[var(--tr-danger)]"
-                        >
-                          <IconWarn size={TR_ICON.meta} aria-hidden />
-                          {w.code === 'closed'
-                            ? copy.warnClosed(w.title ?? stop.title)
-                            : copy.warnOutOfRegion(w.title ?? stop.title)}
-                        </p>
-                      ))}
-                    </li>
-                  );
-                })}
-              </ol>
-            )}
-
-            {/* P2 — reorder + remove moved off the row into the app's ⋯ sheet
-                grammar (the same one the chat list uses). Three always-visible
-                tiles per stop were the bulk of the old row's height. */}
-            {actionStopId && canEdit && (() => {
-              const idx = stops.findIndex((s) => s.id === actionStopId);
-              if (idx < 0) return null;
-              const close = () => setActionStopId(null);
-              const act = (fn: (prev: EditorStop[]) => EditorStop[]) => {
-                mutateStops(fn);
-                close();
-              };
-              return (
-                <Sheet open onClose={close} title={stops[idx].title} closeLabel={ui.cancel}>
-                  <div className="tr-card divide-y divide-[var(--tr-hairline)] overflow-hidden">
-                    <button
-                      type="button"
-                      disabled={idx === 0}
-                      onClick={() =>
-                        act((prev) => {
-                          const next = [...prev];
-                          [next[idx - 1], next[idx]] = [next[idx], next[idx - 1]];
-                          return next;
-                        })
-                      }
-                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
-                      data-testid="plan-stop-move-up"
-                    >
-                      <IconMoveUp size={TR_ICON.action} aria-hidden />
-                      {copy.moveUp}
-                    </button>
-                    <button
-                      type="button"
-                      disabled={idx === stops.length - 1}
-                      onClick={() =>
-                        act((prev) => {
-                          const next = [...prev];
-                          [next[idx], next[idx + 1]] = [next[idx + 1], next[idx]];
-                          return next;
-                        })
-                      }
-                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left text-[var(--tr-ink)] disabled:opacity-40"
-                      data-testid="plan-stop-move-down"
-                    >
-                      <IconMoveDown size={TR_ICON.action} aria-hidden />
-                      {copy.moveDown}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => act((prev) => prev.filter((s) => s.id !== actionStopId))}
-                      className="tr-card-text flex min-h-[52px] w-full items-center gap-3 px-4 text-left font-semibold text-[var(--tr-danger)]"
-                      data-testid="plan-stop-remove"
-                    >
-                      <IconTrash size={TR_ICON.action} aria-hidden />
-                      {copy.removeStop}
-                    </button>
-                  </div>
-                </Sheet>
-              );
-            })()}
-
-            {/* P3 — one wheel serves every time in this screen. The native
-                picker leaked the device locale into a 10-locale planner and drew
-                OS chrome inside an app that has its own. */}
-            {timeSheetFor && canEdit && (() => {
-              const forDeparture = timeSheetFor === 'departure';
-              const stop = forDeparture ? null : stops.find((s) => s.id === timeSheetFor);
-              if (!forDeparture && !stop) return null;
-              const current = forDeparture ? (departureTime ?? '') : (stop?.arrival_planned ?? '');
-              const commit = (hhmm: string) => {
-                if (forDeparture) {
-                  mutateDeparture(hhmm);
-                } else {
-                  mutateStops((prev) =>
-                    prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: hhmm } : s)),
-                  );
-                }
-              };
-              return (
-                <Sheet
-                  open
-                  onClose={() => setTimeSheetFor(null)}
-                  title={forDeparture ? copy.departureTitle : (stop?.title ?? copy.timeLabel)}
-                  closeLabel={ui.cancel}
-                >
-                  <TimeWheel
-                    value={current}
-                    onChange={commit}
-                    restAt={WHEEL_REST}
-                    testId="plan-time-wheel"
-                  />
-                  {/* 🔴 The wheel shows its RESTING row highlighted but does not
-                      commit it — by design, so an unset field is not silently
-                      given a value (TimeWheel's own contract: "the first scroll
-                      or tap commits"). The cost was a trap: the sheet opens
-                      looking like 09:00 is chosen, and the two ways out were
-                      ✕ and [시간 지우기], neither of which keeps it. A guest who
-                      wanted the default had no way to say so.
-                      That mattered beyond one field: departure_time is what
-                      gates the countdown AND the guest's "시간 추가" request, so
-                      the trap quietly disabled the whole overtime path (live:
-                      zero plans had it set). */}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      commit(current && /^\d{2}:\d{2}$/.test(current) ? current : WHEEL_REST);
-                      setTimeSheetFor(null);
-                    }}
-                    className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--block tr-plan-btn--tap tr-body mt-3"
-                    data-testid="plan-time-confirm"
-                  >
-                    {copy.timeConfirm}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      if (forDeparture) mutateDeparture(null);
-                      else
-                        mutateStops((prev) =>
-                          prev.map((s) => (s.id === timeSheetFor ? { ...s, arrival_planned: null } : s)),
-                        );
-                      setTimeSheetFor(null);
-                    }}
-                    className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--block tr-plan-btn--tap tr-label mt-2"
-                    data-testid="plan-time-clear"
-                  >
-                    {copy.timeClear}
-                  </button>
-                </Sheet>
-              );
-            })()}
-
-            {/* plan-wide warnings (overrun) */}
-            {warnings.some((w) => w.code === 'overrun') && plan.tour.total_hours && (
-              <div className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3">
-                <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-danger)]">{copy.warningsTitle}</p>
-                {warnings
-                  .filter((w) => w.code === 'overrun')
-                  .map((w, i) => (
-                    <p key={i} className="tr-label mt-1 text-[var(--tr-ink)]">
-                      {copy.warnOverrun(
-                        formatMinutes(Number(w.detail.over_min) || 0),
-                        copy.courseHours(plan.tour.total_hours as number),
-                      )}
-                    </p>
-                  ))}
-              </div>
-            )}
-
-            {/* plan-wide notice (Jeju cross-island 동+서/남) — notice only, never blocks */}
-            {warnings
-              .filter((w) => w.code === 'cross_island')
-              .map((w, i) => (
-                <div
-                  key={`cross-island-${i}`}
-                  className="tr-card mt-3 border border-[var(--tr-danger-soft,#f3d6d6)] px-4 py-3"
-                >
-                  <p className="tr-meta font-bold uppercase tracking-wide text-[var(--tr-danger)]">
-                    {copy.warningsTitle}
-                  </p>
-                  <p className="tr-label mt-1 text-[var(--tr-ink)]">
-                    {copy.warnCrossIsland(`₩${Number(w.detail.surcharge_krw ?? 0).toLocaleString()}`)}
-                  </p>
-                </div>
-              ))}
-          </section>
-        )}
 
         {/* needs (A10) */}
         {canEdit && !isConfirmed && (
