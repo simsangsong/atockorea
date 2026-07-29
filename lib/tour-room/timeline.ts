@@ -117,6 +117,19 @@ export interface TimelineCopy {
   rewardLogin: string;
   rewardUnavailable: string;
   rewardError: string;
+  /**
+   * X17 — the guest takes the day with them. Text only: the room's photos are
+   * behind short-lived signed URLs now, so a shared photo URL would be both a
+   * capability leak and a 404 by tomorrow. The LINK is decided by
+   * `reviewPolicy`, never restated here (see lib/tour-room/timelineShare.ts).
+   */
+  shareCta: string;
+  shareIntro: string;
+  shareLinkLead: string;
+  sharePhotos: (n: number) => string;
+  shareMoreStops: (n: number) => string;
+  shareCopied: string;
+  shareUnavailable: string;
 }
 
 export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
@@ -141,6 +154,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Log in with your booking email to claim your reward.',
     rewardUnavailable: 'Rewards are not available right now.',
     rewardError: 'Something went wrong. Please try again.',
+    shareCta: 'Share this day',
+    shareIntro: 'Where I went in Korea today',
+    shareLinkLead: 'The tour:',
+    sharePhotos: (n) => `${n} ${n === 1 ? 'photo' : 'photos'} along the way`,
+    shareMoreStops: (n) => `+${n} more`,
+    shareCopied: 'Copied — just paste it to a friend.',
+    shareUnavailable: 'Sharing is not available on this device.',
   },
   ko: {
     entry: '여행 타임라인 보기',
@@ -163,6 +183,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: '예약 이메일로 로그인하면 쿠폰을 받을 수 있어요.',
     rewardUnavailable: '지금은 쿠폰을 받을 수 없어요.',
     rewardError: '문제가 생겼어요. 다시 시도해 주세요.',
+    shareCta: '이 하루 공유하기',
+    shareIntro: '오늘 한국에서 다녀온 곳',
+    shareLinkLead: '이 투어예요:',
+    sharePhotos: (n) => `가는 길에 찍은 사진 ${n}장`,
+    shareMoreStops: (n) => `외 ${n}곳`,
+    shareCopied: '복사했어요 — 친구에게 붙여넣기만 하면 돼요.',
+    shareUnavailable: '이 기기에서는 공유를 쓸 수 없어요.',
   },
   ja: {
     entry: '旅のタイムラインを見る',
@@ -185,6 +212,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'ご予約のメールでログインするとクーポンを受け取れます。',
     rewardUnavailable: '現在クーポンは受け取れません。',
     rewardError: '問題が発生しました。もう一度お試しください。',
+    shareCta: 'この一日をシェア',
+    shareIntro: '今日、韓国でめぐった場所',
+    shareLinkLead: 'このツアーです：',
+    sharePhotos: (n) => `道すがら撮った写真 ${n}枚`,
+    shareMoreStops: (n) => `ほか${n}か所`,
+    shareCopied: 'コピーしました — 友だちに貼り付けるだけです。',
+    shareUnavailable: 'この端末では共有を利用できません。',
   },
   es: {
     entry: 'Ver tu línea de viaje',
@@ -207,6 +241,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Inicia sesión con el correo de tu reserva para reclamar tu recompensa.',
     rewardUnavailable: 'Las recompensas no están disponibles en este momento.',
     rewardError: 'Algo salió mal. Inténtalo de nuevo.',
+    shareCta: 'Comparte este día',
+    shareIntro: 'Dónde estuve hoy en Corea',
+    shareLinkLead: 'El tour:',
+    sharePhotos: (n) => `${n} ${n === 1 ? 'foto' : 'fotos'} por el camino`,
+    shareMoreStops: (n) => `y ${n} más`,
+    shareCopied: 'Copiado: solo pégalo y envíalo.',
+    shareUnavailable: 'Este dispositivo no permite compartir.',
   },
   zh: {
     entry: '查看你的旅行时间线',
@@ -229,6 +270,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: '使用预订邮箱登录即可领取奖励。',
     rewardUnavailable: '目前无法领取奖励。',
     rewardError: '出了点问题，请重试。',
+    shareCta: '分享这一天',
+    shareIntro: '今天我在韩国去过的地方',
+    shareLinkLead: '这是这趟行程：',
+    sharePhotos: (n) => `一路上拍了 ${n} 张照片`,
+    shareMoreStops: (n) => `另有 ${n} 处`,
+    shareCopied: '已复制 — 直接粘贴发给朋友就好。',
+    shareUnavailable: '此设备无法使用分享功能。',
   },
   'zh-TW': {
     entry: '查看你的旅程紀錄',
@@ -251,6 +299,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: '以預訂時的電子郵件登入即可領取獎勵。',
     rewardUnavailable: '目前無法領取獎勵。',
     rewardError: '出了點狀況，請再試一次。',
+    shareCta: '分享這一天',
+    shareIntro: '今天我在韓國去過的地方',
+    shareLinkLead: '這是這趟行程：',
+    sharePhotos: (n) => `一路上拍了 ${n} 張照片`,
+    shareMoreStops: (n) => `另有 ${n} 處`,
+    shareCopied: '已複製 — 直接貼上傳給朋友就好。',
+    shareUnavailable: '此裝置無法使用分享功能。',
   },
   fr: {
     entry: 'Voir le fil du voyage',
@@ -273,6 +328,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Connectez-vous avec l’e-mail de votre réservation pour récupérer votre récompense.',
     rewardUnavailable: 'Les récompenses ne sont pas disponibles pour le moment.',
     rewardError: 'Une erreur est survenue. Veuillez réessayer.',
+    shareCta: 'Partager cette journée',
+    shareIntro: 'Où je suis allé aujourd’hui en Corée',
+    shareLinkLead: 'Le circuit :',
+    sharePhotos: (n) => `${n} ${n === 1 ? 'photo prise' : 'photos prises'} en chemin`,
+    shareMoreStops: (n) => `et ${n} de plus`,
+    shareCopied: 'Copié — il ne reste qu’à le coller.',
+    shareUnavailable: 'Le partage n’est pas disponible sur cet appareil.',
   },
   de: {
     entry: 'Ihren Reiseverlauf ansehen',
@@ -295,6 +357,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Melden Sie sich mit Ihrer Buchungs-E-Mail an, um die Belohnung abzuholen.',
     rewardUnavailable: 'Belohnungen sind gerade nicht verfügbar.',
     rewardError: 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
+    shareCta: 'Diesen Tag teilen',
+    shareIntro: 'Wo ich heute in Korea war',
+    shareLinkLead: 'Die Tour:',
+    sharePhotos: (n) => `${n} ${n === 1 ? 'Foto' : 'Fotos'} unterwegs`,
+    shareMoreStops: (n) => `und ${n} weitere`,
+    shareCopied: 'Kopiert — einfach einfügen und senden.',
+    shareUnavailable: 'Teilen ist auf diesem Gerät nicht verfügbar.',
   },
   ru: {
     entry: 'Посмотреть ленту путешествия',
@@ -317,6 +386,13 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Войдите с почтой из бронирования, чтобы забрать награду.',
     rewardUnavailable: 'Награды сейчас недоступны.',
     rewardError: 'Что-то пошло не так. Попробуйте еще раз.',
+    shareCta: 'Поделиться этим днём',
+    shareIntro: 'Где я побывал сегодня в Корее',
+    shareLinkLead: 'Это была экскурсия:',
+    sharePhotos: (n) => `${n} фото по дороге`,
+    shareMoreStops: (n) => `и ещё ${n}`,
+    shareCopied: 'Скопировано — просто вставьте и отправьте.',
+    shareUnavailable: 'На этом устройстве поделиться нельзя.',
   },
   it: {
     entry: 'Guarda il tuo diario di viaggio',
@@ -339,5 +415,12 @@ export const TIMELINE_COPY: Record<RoomLocale, TimelineCopy> = {
     rewardLogin: 'Accedi con l’email della prenotazione per ritirare il premio.',
     rewardUnavailable: 'I premi non sono disponibili al momento.',
     rewardError: 'Qualcosa è andato storto. Riprova.',
+    shareCta: 'Condividi questa giornata',
+    shareIntro: 'Dove sono stato oggi in Corea',
+    shareLinkLead: 'Il tour:',
+    sharePhotos: (n) => `${n} ${n === 1 ? 'foto scattata' : 'foto scattate'} lungo il percorso`,
+    shareMoreStops: (n) => `e altri ${n}`,
+    shareCopied: 'Copiato — basta incollarlo e inviarlo.',
+    shareUnavailable: 'La condivisione non e disponibile su questo dispositivo.',
   },
 };

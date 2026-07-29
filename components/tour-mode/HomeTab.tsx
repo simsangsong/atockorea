@@ -446,6 +446,7 @@ export default function HomeTab({
   locations,
   manualKind,
   theme,
+  tourTitle,
 }: {
   api: RoomShellHomeApi;
   locale: RoomLocale;
@@ -463,6 +464,8 @@ export default function HomeTab({
    * 허용 여부. 서버가 예약 채널로 정해 스냅샷에 실어 보낸다.
    */
   reviewPolicy: RoomReviewPolicy;
+  /** X17 — a shared recap names the trip it came from. */
+  tourTitle?: string | null;
   canSignal: boolean;
   showConcierge: boolean;
   /**
@@ -977,6 +980,7 @@ export default function HomeTab({
         bookingId={bookingId}
         roomSession={roomSession}
         reviewPolicy={reviewPolicy}
+        tourTitle={tourTitle}
       />
 
 

@@ -1069,6 +1069,7 @@ function TourRoomLive({
                 showConcierge={!readOnly}
                 isPrivate={manualKind === 'private'}
                 manualKind={manualKind}
+                tourTitle={snapshot.booking?.tours?.title ?? undefined}
                 theme={theme}
                 locations={locations}
               />
@@ -1178,6 +1179,7 @@ function TourRoomLive({
               roomSession={data.session}
               reviewPolicy={reviewPolicy}
               variant={readOnly ? 'ended' : 'live'}
+              tourTitle={snapshot.booking?.tours?.title ?? undefined}
             />
           )}
           <ChatFeed
