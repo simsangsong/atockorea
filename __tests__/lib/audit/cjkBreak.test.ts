@@ -153,3 +153,60 @@ describe('scanSource — labels written as expressions', () => {
     expect(certain(`<button className="rounded-full px-3">{t('export.csv')}</button>`)).toHaveLength(0);
   });
 });
+
+/**
+ * 🔴 A descendant's attributes are not this control's label.
+ *
+ * Measured on the repo: this hole was reporting 135 phantom items — 27 certain
+ * and 108 suspect. Not merely noise. The codemod acts on what the scanner
+ * points at, so a hit whose "label" is a child's class list sends the fix to
+ * the wrong element, and a `.text-cjk-safe` on the wrong element is a nowrap
+ * with an ellipsis on something that was meant to wrap.
+ */
+describe('the scanner reads text positions, not descendant markup', () => {
+  it('does not report a child className as the label', () => {
+    const src = [
+      '<button type="button" onClick={handleLogout}>',
+      "  <div className={cn('flex h-10 w-10 shrink-0 items-center', ICON)}>",
+      '    <Icon />',
+      '  </div>',
+      '</button>',
+    ].join('\n');
+    expect(suspect(src)).toHaveLength(0);
+    expect(certain(src)).toHaveLength(0);
+  });
+
+  it('does not let a descendant attribute make an ASCII control look Korean', () => {
+    // The quieter half of the same hole: an aria-label or title on a CHILD made
+    // the parent look like it held CJK text it does not render.
+    const src = '<div className="flex-1"><button aria-label="닫기"><Icon /></button></div>';
+    const hits = certain(src);
+    expect(hits.map((h) => h.tag)).not.toContain('div');
+  });
+
+  it('still reports a real expression label on the control itself', () => {
+    // The thing this branch exists for must survive the narrowing.
+    const src = '<button className="flex-1 px-2">{t("mypage.dashboard.retry")}</button>';
+    expect(suspect(src)).toHaveLength(1);
+  });
+
+  it('still reports real CJK text inside a control', () => {
+    const src = '<button className="flex-1 px-2">저장하기</button>';
+    expect(certain(src)).toHaveLength(1);
+  });
+
+  it('is not fooled by an arrow function before the label', () => {
+    // A naive `/<[^>]*>/` stops at the `>` of `=>`, after which the remaining
+    // attributes read as content. The strip walks braces instead.
+    const src = '<button onClick={() => setOpen(true)} className="flex-1 px-2">닫기</button>';
+    const hits = certain(src);
+    expect(hits).toHaveLength(1);
+    expect(hits[0].text).toBe('닫기');
+  });
+
+  it('reads the label when it is split across children', () => {
+    // Narrowing must not go so far that a real label in a <span> is lost.
+    const src = '<button className="flex-1 px-2"><span>투어일</span> <span>기준</span></button>';
+    expect(certain(src)).not.toHaveLength(0);
+  });
+});
