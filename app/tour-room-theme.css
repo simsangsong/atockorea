@@ -162,12 +162,26 @@
 
   --tr-ink: #e8eaed;
   --tr-ink-2: #a6adb6;
-  /* 🔴 #7d858f measured 4.39 on this skin's card surface (#1d2020) — under
-   * WCAG 1.4.3's 4.5, and eyebrows are 11px so the large-text exemption does
-   * not apply. #848c96 is 4.82: the smallest nudge that clears the bar, and it
-   * keeps the ladder ordered (ink 14.4 > ink-2 8.9 > ink-3 4.8). Guarded by the
-   * ink-3/surface pair the gate was missing. */
-  --tr-ink-3: #848c96;
+  /* 🔴 Raised twice, and the first pass was both incomplete and inaccurate.
+   *
+   * #7d858f measured 4.39 on this skin's CARD surface (#1d2020) — under WCAG
+   * 1.4.3's 4.5. Eyebrows are 11px (`.tr-meta`, and 14.85px even at the largest
+   * text-scale step), so the large-text exemption never applies at any setting.
+   *
+   * ⚠ The first fix stopped at `--tr-surface` and missed `--tr-surface-2`, which
+   * is what LobbyCard's pickup and vehicle eyebrows and GuideGuestCard's
+   * `unseated` badge actually sit on. Nine dark skins were failing there
+   * (4.12–4.32), plus the planner in LIGHT (4.43).
+   *
+   * ⚠ And its ladder numbers were wrong: "ink 14.4 > ink-2 8.9 > ink-3 4.8" is
+   * not reproducible against any single background. Measured against this
+   * skin's surface: ink 13.62 · ink-2 7.25 · ink-3 4.82. The 14.4 came from the
+   * home-canvas gradient and the 8.9 from nowhere — an inference written in the
+   * shape of a measurement, which is the one thing this repo has a standing
+   * rule about. Corrected in place rather than in a later note.
+   *
+   * #8a929c now: 4.67 on surface-2, 5.21 on surface. Both pairs are gated. */
+  --tr-ink-3: #8a929c;
 
   --tr-accent: #8fbfa9;
   --tr-accent-deep: #ffffff;
@@ -255,7 +269,7 @@
   --tr-bubble-system-ink: #a7b2bc;
   --tr-ink: #e6ebf0;
   --tr-ink-2: #a7b2bc;
-  --tr-ink-3: #7e8a95;
+  --tr-ink-3: #85919c;
   /* Cascade gap fix (2026-07-27): the sky LIGHT block outranks the base dark
    * block for tokens it sets (equal specificity, later in file), so dark-sky
    * was inheriting the LIGHT accent-soft/safe family. Every token the light
@@ -307,7 +321,7 @@
   --tr-bubble-system-ink: #a5b1bd;
   --tr-ink: #e4eaf1;
   --tr-ink-2: #a5b1bd;
-  --tr-ink-3: #7d8996;
+  --tr-ink-3: #85919e;
   --tr-accent: #86aecb;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(134, 174, 203, 0.16);
@@ -358,7 +372,7 @@
   --tr-bubble-system-ink: #a9b29c;
   --tr-ink: #e7ebdd;
   --tr-ink-2: #a9b29c;
-  --tr-ink-3: #828b74;
+  --tr-ink-3: #8b947d;
   --tr-accent: #a4bd7e;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(164, 189, 126, 0.16);
@@ -410,7 +424,7 @@
   --tr-bubble-system-ink: #a3aea8;
   --tr-ink: #e3eae6;
   --tr-ink-2: #a3aea8;
-  --tr-ink-3: #7c8781;
+  --tr-ink-3: #85908a;
   --tr-accent: #8ec0ae;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(142, 192, 174, 0.16);
@@ -466,7 +480,7 @@
   --tr-bubble-system-ink: #a9b6ab;
   --tr-ink: #e4ece5;
   --tr-ink-2: #a9b6ab;
-  --tr-ink-3: #83917f;
+  --tr-ink-3: #8a9886;
   --tr-accent: #e0a878;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(224, 168, 120, 0.16);
@@ -515,7 +529,7 @@
   --tr-bubble-system-ink: #aaa8bc;
   --tr-ink: #e8e7f0;
   --tr-ink-2: #aaa8bc;
-  --tr-ink-3: #85829c;
+  --tr-ink-3: #8c89a3;
   --tr-accent: #a7a3dc;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(167, 163, 220, 0.16);
@@ -568,7 +582,7 @@
   --tr-bubble-system-ink: #a8b0b8;
   --tr-ink: #e9ecef;
   --tr-ink-2: #a8b0b8;
-  --tr-ink-3: #7f8993;
+  --tr-ink-3: #858f99;
   --tr-accent: #8fc0d8;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(143, 192, 216, 0.16);
@@ -619,7 +633,7 @@
   --tr-bubble-system-ink: #b7aab0;
   --tr-ink: #eee6e9;
   --tr-ink-2: #b7aab0;
-  --tr-ink-3: #8f8087;
+  --tr-ink-3: #988990;
   --tr-accent: #d8a3b4;
   --tr-accent-deep: #ffffff;
   --tr-accent-soft: rgba(216, 163, 180, 0.16);
@@ -877,7 +891,7 @@
   --tr-hairline: rgba(38, 62, 52, 0.1);
   --tr-ink: #1f2a26;
   --tr-ink-2: #556860;
-  --tr-ink-3: #5f7169;
+  --tr-ink-3: #5c6e66;
   --tr-accent: #42806a;
   --tr-accent-hi: #55977e;
   --tr-accent-deep: #275343;

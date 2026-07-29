@@ -170,6 +170,22 @@ const PAIRS: Array<[string, string, number]> = [
    * shape of a gap that looks like coverage.
    */
   ['ink-3', 'surface', 4.5],
+  /**
+   * 🔴 And the SECOND surface an eyebrow lands on, which the first pass missed.
+   *
+   * `--tr-surface-2` carries LobbyCard's pickup and vehicle eyebrows
+   * (`LobbyCard.tsx:192,213`) and GuideGuestCard's `unseated` badge — all
+   * `ink-3`, all 11px. Nine dark skins measured 4.12–4.32 there, and the
+   * PLANNER measured 4.43 in LIGHT, which the "dark only" reading of the first
+   * fix would have missed entirely: the planner test spreads this same array
+   * into `.tr-plan-root`, so a pair added here is gated in eleven scopes, not
+   * ten.
+   *
+   * Two pairs rather than one wider rule, because `surface` and `surface-2` are
+   * different colours per skin and a single check would only ever fail on
+   * whichever is worse.
+   */
+  ['ink-3', 'surface-2', 4.5],
   ['bubble-me-ink', 'bubble-me', 4.5],
   ['bubble-in-ink', 'bubble-in', 4.5],
   ['bubble-me-ink', 'accent', 4.5],
