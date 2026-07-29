@@ -1551,8 +1551,38 @@
 .tr-chip-tap--urgent {
   border-color: currentColor;
 }
+/* 80%, not 72%. Tinting the quiet fill (N4) moved it closer to the page and
+ * cost the edge 3.41 -> 3.29 against WCAG 1.4.11's 3.0 — still passing, but a
+ * compliance number should not go DOWN as a side effect of a material change.
+ * 80% pays it back and then some, measured across ten skins x light/dark, and
+ * the hierarchy against the urgent row now lives in fill, ink and weight rather
+ * than in a border nobody could see the difference in. */
 .tr-chip-tap--quiet {
-  border-color: color-mix(in srgb, currentColor 72%, transparent);
+  border-color: color-mix(in srgb, currentColor 80%, transparent);
+}
+
+/**
+ * N4 — the two rows were one SHAPE but two MATERIALS.
+ *
+ * N1 unified the edge: both rows carry `1px solid currentColor` plus a rim and
+ * a contact shadow, at full strength and at 72%. What it did not touch was the
+ * fill, and measured on a seeded room at 390px the fills were not two steps of
+ * one thing, they were two different things:
+ *
+ *   signal   fill #e4eee9 (a mint wash)      ink #111315   boundary 16.36   600
+ *   reply    fill #fcfcfb (near-white card)  ink #565d66   boundary  3.41   400
+ *
+ * Different hue, not just different strength — which is what §N-g meant by
+ * "하나는 채움, 하나는 테두리". 사장님 결정 2026-07-29 keeps both rows, because a
+ * tap on one notifies ops and a tap on the other sends a message and hiding
+ * that difference would be worse. So they stay two rows and become one family.
+ *
+ * The quiet fill is DERIVED from the urgent one rather than picked. That is the
+ * point: it cannot drift, and it inherits every skin's own accent for free —
+ * all ten, including the ones where accent-soft is an rgba rather than a hex.
+ */
+.tr-root {
+  --tr-chip-quiet-fill: color-mix(in srgb, var(--tr-accent-soft) 45%, var(--tr-surface));
 }
 .tr-chip-tap:active {
   transform: translateY(1px) scale(0.98);
