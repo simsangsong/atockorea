@@ -30,3 +30,34 @@ describe("support QA learning helpers", () => {
     ]);
   });
 });
+
+/**
+ * Over-redaction is a real failure too — it is just quieter.
+ *
+ * `BOOKING_RE` matched "ticket office", because `office` is four-plus
+ * characters of `[A-Z0-9-]` under the `i` flag. Surfaced by X20: a guide's
+ * answer "Behind the ticket office, on the left" was stored as "Behind the
+ * [booking], on the left", losing the only useful word in it. Nothing failed;
+ * the corpus just quietly filled with sentences that no longer say anything.
+ */
+describe('sanitizeQaText does not eat ordinary nouns', () => {
+  const KEPT = [
+    'Behind the ticket office, on the left',
+    'Fill in the booking form at the desk',
+    'Ask at the reservation desk downstairs',
+    'Your order details are in the email',
+  ];
+  it.each(KEPT)('keeps %s', (text) => {
+    expect(sanitizeQaText(text)).toBe(text);
+  });
+
+  const REDACTED: Array<[string, string]> = [
+    ['about booking ABCD-1234', 'about [booking]'],
+    ['ticket A1B2C3 please', '[booking] please'],
+    ['order 998877 was refunded', '[booking] was refunded'],
+    ['reservation #GYG-55210', '[booking]'],
+  ];
+  it.each(REDACTED)('still redacts %s', (input, expected) => {
+    expect(sanitizeQaText(input)).toBe(expected);
+  });
+});

@@ -30,7 +30,21 @@ type ChatMessageRow = {
 
 const EMAIL_RE = /[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}/gi;
 const PHONE_RE = /(?:\+?\d[\d\s().-]{7,}\d)/g;
-const BOOKING_RE = /\b(?:booking|reservation|ticket|order)\s*#?\s*[A-Z0-9-]{4,}\b/gi;
+/**
+ * A booking reference after one of those words.
+ *
+ * 🔴 The reference must contain a DIGIT. Without that clause this matched
+ * "ticket office", "booking form", "order details" and "reservation desk" —
+ * `office` is four-plus characters of `[A-Z0-9-]` under the `i` flag, so an
+ * ordinary English noun read as a reference number. Surfaced by X20, where a
+ * guide's answer "Behind the ticket office, on the left" came out as "Behind
+ * the [booking], on the left" and the corpus lost the only useful word in it.
+ *
+ * Every reference this needs to catch has digits — ours are UUID-derived, and
+ * the OTA formats (GetYourGuide, Klook, Viator) are alphanumeric. A purely
+ * alphabetic one would still be caught by the UUID pattern upstream.
+ */
+const BOOKING_RE = /\b(?:booking|reservation|ticket|order)\s*#?\s*(?=[A-Z0-9-]*\d)[A-Z0-9-]{4,}\b/gi;
 
 function compact(value: string): string {
   return value.replace(/\s+/g, " ").trim();
