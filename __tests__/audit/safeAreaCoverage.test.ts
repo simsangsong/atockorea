@@ -19,10 +19,11 @@
  *   (b) 자기 루트에서 tr-safe-* 또는 env(safe-area-inset-*)을 쓰거나
  * 둘 중 하나여야 한다.
  */
-import { readdirSync, readFileSync, statSync } from 'node:fs';
+import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 
-const PAGES_DIR = 'app/tour-mode';
+// X13: the tour app lives in its own route group with its own root layout.
+const PAGES_DIR = existsSync('app/(app)/tour-mode') ? 'app/(app)/tour-mode' : 'app/tour-mode';
 
 /** 인셋을 이미 처리하는 셸. 이걸 렌더하면 페이지는 물려받는다. */
 const INSET_AWARE_SHELLS = ['RoomShell', 'StaffShell', 'Screen'];
@@ -94,7 +95,7 @@ describe('🔴 R9 — /tour-mode PWA 표면은 세이프에어리어를 처리�
   it('레이아웃이 여전히 black-translucent다 — 아니면 이 게이트의 전제가 바뀐 것', () => {
     // 누군가 'default'로 바꾸면 웹뷰가 상태바 아래에서 시작하지 않으므로
     // 위 요구사항의 근거가 사라진다. 전제가 바뀌면 여기서 알려준다.
-    const layout = readFileSync('app/tour-mode/layout.tsx', 'utf8');
+    const layout = readFileSync(`${PAGES_DIR}/layout.tsx`, 'utf8');
     expect(layout).toContain('black-translucent');
   });
 });

@@ -87,7 +87,9 @@ describe('🔴 section numbering is append-only', () => {
 
 describe('the page renders every s16 key it was given', () => {
   const source = fs.readFileSync(
-    path.resolve(__dirname, '..', '..', 'app', 'privacy', 'page.tsx'),
+    ['(marketing)/privacy', 'privacy']
+      .map((rel) => path.resolve(__dirname, '..', '..', 'app', ...rel.split('/'), 'page.tsx'))
+      .find((p) => fs.existsSync(p))!,
     'utf8',
   );
 
