@@ -24,6 +24,7 @@ import {
   TR_ICON,
   TR_STROKE,
 } from '@/components/tour-mode/icons';
+import { dayPhase } from '@/lib/tour-room/dayPhase';
 import { NOW_CARD_COPY } from '@/lib/tour-room/nowCardCopy';
 import type { NowCardChip, NowCardResult } from '@/lib/tour-room/nowCard';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -164,6 +165,22 @@ export default function NowCard({
       return null;
   }
 
+  /**
+   * N2 — the day's arc. The now card already answers WHAT is happening; this
+   * lets the surface answer WHEN, with no word spent and so no translation.
+   *
+   * Derived at render rather than stored: it is a function of the clock, and a
+   * card that remounts on every state change (see `key` below) picks the new
+   * phase up for free.
+   *
+   * No lifecycle passed, and tsc is the reason: by this line `result.state` has
+   * been narrowed to the five live states, because the switch above returns null
+   * for lobby and ended. This component is never the ended card. The settled
+   * phase belongs to the recap that owns that moment, and it carries the
+   * attribute itself.
+   */
+  const phase = dayPhase({});
+
   const ActionIcon =
     result.state === 'pickup_window'
       ? IconPickup
@@ -186,6 +203,7 @@ export default function NowCard({
       key={result.state}
       data-testid={testId ?? 'home-now-card'}
       data-now-state={result.state}
+      data-tr-phase={phase}
       className={`tr-home-card tr-card-hero tr-now-swap mb-2 border px-4 py-4 ${TONE_CLASS[result.tone]}`}
       /**
        * A guest using a screen reader gets the change announced, and urgency
