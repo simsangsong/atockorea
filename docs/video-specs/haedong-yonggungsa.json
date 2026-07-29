@@ -249,8 +249,8 @@
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 39,
-      "speed": 6,
+      "out": 18,
+      "speed": 8,
       "title": "Out onto the rocks",
       "ramp": {
         "seconds": 0.6
@@ -258,6 +258,30 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
+      }
+    },
+    {
+      "id": "15b",
+      "kind": "clip",
+      "src": "B",
+      "in": 18,
+      "out": 39,
+      "speed": 1.2,
+      "title": "Ocean one way, temple the other"
+    },
+    {
+      "id": "15p",
+      "kind": "polaroid",
+      "src": "B",
+      "at": 39,
+      "hold": 2.6,
+      "photoHold": 1.2,
+      "title": "Photo Point",
+      "sub": "Temple and open sea in one shot",
+      "caption": "Stand on the rock shelf — the whole temple lines up against the water.",
+      "polaroid": {
+        "width": 900,
+        "tilt": 1.6
       }
     },
     {
@@ -305,9 +329,36 @@
       "kind": "clip",
       "src": "C",
       "in": 26,
-      "out": 45,
+      "out": 34,
       "speed": 1,
       "title": "Crossing Yongmun Bridge"
+    },
+    {
+      "id": "19p",
+      "kind": "polaroid",
+      "src": "C",
+      "at": 34,
+      "hold": 2.6,
+      "photoHold": 1.2,
+      "title": "Photo Point",
+      "sub": "Mid-bridge, looking back",
+      "caption": "Halfway across is the only angle with the bridge arch and the hall together.",
+      "polaroid": {
+        "width": 880,
+        "tilt": 2.2
+      }
+    },
+    {
+      "id": "19b",
+      "kind": "clip",
+      "src": "C",
+      "in": 34,
+      "out": 45,
+      "speed": 4,
+      "title": "Off the bridge",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "20",
@@ -326,7 +377,7 @@
       "kind": "clip",
       "src": "C",
       "in": 86,
-      "out": 100,
+      "out": 92,
       "speed": 4,
       "title": "Daeungbojeon Hall",
       "ramp": {
@@ -334,13 +385,58 @@
       }
     },
     {
+      "id": "21b",
+      "kind": "clip",
+      "src": "C",
+      "in": 92,
+      "out": 100,
+      "speed": 1.2,
+      "title": "Maitreya beside the hall"
+    },
+    {
+      "id": "21p",
+      "kind": "polaroid",
+      "src": "C",
+      "at": 100,
+      "hold": 2.6,
+      "photoHold": 1.2,
+      "title": "Photo Point",
+      "sub": "Maitreya under the lanterns",
+      "caption": "The gilt Maitreya sits right of the hall, lanterns overhead.",
+      "polaroid": {
+        "width": 860,
+        "tilt": -2
+      }
+    },
+    {
       "id": "22",
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 160,
+      "out": 125,
       "speed": 8,
       "title": "Around the hall",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "22b",
+      "kind": "clip",
+      "src": "C",
+      "in": 125,
+      "out": 142,
+      "speed": 1.2,
+      "title": "The little stone buddhas"
+    },
+    {
+      "id": "22c",
+      "kind": "clip",
+      "src": "C",
+      "in": 142,
+      "out": 160,
+      "speed": 8,
+      "title": "Back to the steps",
       "ramp": {
         "seconds": 0.6
       }
