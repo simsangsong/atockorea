@@ -58,21 +58,31 @@ describe('private-tour inclusions', () => {
   });
 });
 
-describe('Jeju sample itineraries', () => {
-  const jeju = () => getPrivateSampleItineraryConfig('jeju-island-private-car-charter-tour')!;
+describe('authored sample itineraries', () => {
+  /** Slugs whose courses name real places. Seoul/Incheon are still placeholders. */
+  const AUTHORED = [
+    'jeju-island-private-car-charter-tour',
+    'busan-private-car-charter-cruise-shore',
+  ] as const;
 
-  it('offers the east / southwest / south courses', () => {
-    expect(jeju().samples.map((s) => s.id)).toEqual([
+  it('the Jeju charter offers the east / southwest / south courses', () => {
+    const jeju = getPrivateSampleItineraryConfig(AUTHORED[0])!;
+    expect(jeju.samples.map((s) => s.id)).toEqual([
       'jeju-east',
       'jeju-southwest',
       'jeju-south',
     ]);
   });
 
-  it('names real places instead of numbered placeholders', () => {
-    for (const sample of jeju().samples) {
+  it('the Busan charter offers the coast / old-downtown courses', () => {
+    const busan = getPrivateSampleItineraryConfig(AUTHORED[1])!;
+    expect(busan.samples.map((s) => s.id)).toEqual(['busan-coast', 'busan-downtown']);
+  });
+
+  it.each(AUTHORED)('%s names real places instead of numbered placeholders', (slug) => {
+    for (const sample of getPrivateSampleItineraryConfig(slug)!.samples) {
       const stops = sample.slots.filter((s) => s.kind === 'stop');
-      expect(stops.length).toBeGreaterThanOrEqual(5);
+      expect(stops.length).toBeGreaterThanOrEqual(4);
       for (const stop of stops) {
         expect(stop.title.en).not.toMatch(/itinerary slot/i);
         expect(stop.note?.en ?? '').not.toMatch(/to be added/i);
@@ -81,20 +91,20 @@ describe('Jeju sample itineraries', () => {
   });
 
   /**
-   * The section is the one place a charter buyer can picture the day. Oedolgae
-   * is the single stop with no photograph on the site — it renders a numbered
-   * tile rather than borrowing another spot's picture, so the guard allows
-   * exactly one photo-less stop per course.
+   * The section is the one place a charter buyer can picture the day, so a stop
+   * without a photograph is a hole. The renderer still degrades to a numbered
+   * tile — it must never borrow another spot's picture — but every authored
+   * stop now has its own image.
    */
-  it('carries a photo on all but at most one stop per course', () => {
-    for (const sample of jeju().samples) {
-      const stops = sample.slots.filter((s) => s.kind === 'stop');
-      const missing = stops.filter((s) => !s.image);
-      expect(missing.length).toBeLessThanOrEqual(1);
-      for (const stop of stops) {
-        if (stop.image) expect(stop.image).toMatch(/^\/images\/tours\//);
+  it.each(AUTHORED)('%s carries a real photo on every stop', (slug) => {
+    const missing: string[] = [];
+    for (const sample of getPrivateSampleItineraryConfig(slug)!.samples) {
+      for (const stop of sample.slots.filter((s) => s.kind === 'stop')) {
+        if (!stop.image) missing.push(`${sample.id} :: ${stop.title.en}`);
+        else expect(stop.image).toMatch(/^\/images\/tours\//);
       }
     }
+    expect(missing).toEqual([]);
   });
 });
 

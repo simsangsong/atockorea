@@ -584,6 +584,7 @@ const JEJU_SOUTH_STOPS: SampleSlot[] = [
       "zh-TW": "自20公尺海蝕柱起步的海岸崖徑 — 想走多遠就走多遠",
       es: "Un sendero costero que arranca en el peñón de 20 m; camine solo lo que quiera",
     },
+    image: "/images/tours/oedolgae/oedolgae-sea-stack-beomseom.webp",
     stay: stayMinutes(50),
   },
   {
@@ -651,51 +652,195 @@ const JEJU_SOUTH_STOPS: SampleSlot[] = [
   },
 ];
 
+// ── Busan stops ─────────────────────────────────────────────────────────────
+//
+// Both courses open at Haedong Yonggungsa on the east coast and close at
+// Gamcheon in the west, so the day runs one direction across the city. Course A
+// takes the coastal/memorial line, course B the old-downtown market line.
+
+const HAEDONG_YONGGUNGSA: SampleSlot = {
+  kind: "stop",
+  title: {
+    ko: "해동용궁사",
+    en: "Haedong Yonggungsa",
+    ja: "海東龍宮寺",
+    zh: "海东龙宫寺",
+    "zh-TW": "海東龍宮寺",
+    es: "Templo Haedong Yonggungsa",
+  },
+  note: {
+    ko: "바위 절벽 위 바다 사찰 — 한국에서 드문 해안 법당",
+    en: "A seaside temple on the rocks — rare in Korea, where temples sit inland",
+    ja: "岩壁の上に建つ海の寺 — 韓国では珍しい海岸の伽藍",
+    zh: "建于岩崖之上的海边寺庙 — 在韩国极为少见",
+    "zh-TW": "建於岩崖之上的海邊寺廟 — 在韓國極為少見",
+    es: "Un templo junto al mar sobre las rocas, algo raro en Corea",
+  },
+  image: "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+  stay: stayMinutes(70),
+};
+
+const GAMCHEON: SampleSlot = {
+  kind: "stop",
+  title: {
+    ko: "감천문화마을",
+    en: "Gamcheon Culture Village",
+    ja: "甘川文化村",
+    zh: "甘川文化村",
+    "zh-TW": "甘川文化村",
+    es: "Aldea Cultural de Gamcheon",
+  },
+  note: {
+    ko: "산비탈에 층층이 쌓인 파스텔 마을 — 골목과 전망대",
+    en: "Pastel houses stacked up the hillside — lanes, murals and lookouts",
+    ja: "斜面に積み重なるパステルカラーの街 — 路地と展望台",
+    zh: "沿山坡层层叠起的彩色村落 — 巷弄与观景台",
+    "zh-TW": "沿山坡層層疊起的彩色村落 — 巷弄與觀景台",
+    es: "Casas pastel apiladas en la ladera, con callejones y miradores",
+  },
+  image: "/images/tours/gamcheon-culture-village/gamcheon-panorama.webp",
+  stay: stayMinutes(90),
+};
+
+const BUSAN_COAST_STOPS: SampleSlot[] = [
+  HAEDONG_YONGGUNGSA,
+  {
+    kind: "stop",
+    title: {
+      ko: "해운대 블루라인파크",
+      en: "Haeundae Blue Line Park",
+      ja: "海雲台ブルーラインパーク",
+      zh: "海云台蓝线公园",
+      "zh-TW": "海雲台藍線公園",
+      es: "Blue Line Park de Haeundae",
+    },
+    note: {
+      ko: "폐선 철길 위 해변열차와 스카이캡슐 — 청사포 구간이 백미",
+      en: "Beach train and sky capsules on a retired railway — the Cheongsapo stretch is the one",
+      ja: "廃線跡を走るビーチトレインとスカイカプセル — 青沙浦区間が見どころ",
+      zh: "废弃铁道上的海滨列车与天空胶囊 — 青沙浦段最精彩",
+      "zh-TW": "廢棄鐵道上的海濱列車與天空膠囊 — 青沙浦段最精彩",
+      es: "Tren de playa y cápsulas elevadas sobre una vía en desuso; el tramo de Cheongsapo es el mejor",
+    },
+    image: "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+    stay: stayMinutes(75),
+  },
+  {
+    kind: "stop",
+    title: {
+      ko: "유엔기념공원",
+      en: "UN Memorial Cemetery",
+      ja: "国連記念公園",
+      zh: "联合国纪念公园",
+      "zh-TW": "聯合國紀念公園",
+      es: "Cementerio Conmemorativo de la ONU",
+    },
+    note: {
+      ko: "세계 유일의 유엔군 묘지 — 한국전쟁 참전 21개국",
+      en: "The world's only United Nations cemetery — 21 nations of the Korean War",
+      ja: "世界で唯一の国連軍墓地 — 朝鮮戦争に参加した21カ国",
+      zh: "全球唯一的联合国军墓园 — 参与韩战的21个国家",
+      "zh-TW": "全球唯一的聯合國軍墓園 — 參與韓戰的21個國家",
+      es: "El único cementerio de la ONU del mundo: 21 países de la Guerra de Corea",
+    },
+    image: "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    stay: stayMinutes(50),
+  },
+  GAMCHEON,
+];
+
+const BUSAN_DOWNTOWN_STOPS: SampleSlot[] = [
+  HAEDONG_YONGGUNGSA,
+  {
+    kind: "stop",
+    title: {
+      ko: "남포동 · 자갈치시장 · 국제시장",
+      en: "Nampo-dong, Jagalchi & Gukje Market",
+      ja: "南浦洞・チャガルチ市場・国際市場",
+      zh: "南浦洞・札嘎其市场・国际市场",
+      "zh-TW": "南浦洞・札嘎其市場・國際市場",
+      es: "Nampo-dong, mercado Jagalchi y mercado Gukje",
+    },
+    note: {
+      ko: "부산 구도심 한 바퀴 — 수산시장, BIFF 광장 노점, 국제시장 골목",
+      en: "One loop of the old downtown — the fish market, BIFF Square food stalls, Gukje's alleys",
+      ja: "釜山旧市街をひと回り — 魚市場、BIFF広場の屋台、国際市場の路地",
+      zh: "旧城区一圈 — 海鲜市场、BIFF广场小吃摊、国际市场巷弄",
+      "zh-TW": "舊城區一圈 — 海鮮市場、BIFF廣場小吃攤、國際市場巷弄",
+      es: "Una vuelta por el centro antiguo: la lonja, los puestos de BIFF Square y los callejones de Gukje",
+    },
+    image: "/images/tours/jagalchi-market/jagalchi-i-love-sign-harbor.webp",
+    stay: stayMinutes(90),
+  },
+  {
+    kind: "stop",
+    title: {
+      ko: "송도 용궁구름다리",
+      en: "Songdo Yonggung Suspension Bridge",
+      ja: "松島龍宮雲橋",
+      zh: "松岛龙宫云桥",
+      "zh-TW": "松島龍宮雲橋",
+      es: "Puente colgante Songdo Yonggung",
+    },
+    note: {
+      ko: "바다 위 365m 구름다리 — 거북섬까지 걸어서 건넙니다",
+      en: "A 365 m walkway over open water, out to the offshore islet",
+      ja: "海上365mの吊り橋 — 沖の小島まで歩いて渡ります",
+      zh: "海上365米云桥 — 步行直达外海小岛",
+      "zh-TW": "海上365公尺雲橋 — 步行直達外海小島",
+      es: "Una pasarela de 365 m sobre el mar hasta el islote",
+    },
+    image: "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+    stay: stayMinutes(45),
+  },
+  GAMCHEON,
+];
+
 // ── Per-product config ──────────────────────────────────────────────────────
 
 const BUSAN_CONFIG: PrivateSampleItineraryConfig = {
   title: SAMPLE_TITLE,
   subtitle: SAMPLE_SUBTITLE,
   samples: [
-    placeholderDay(
-      "busan-city",
+    sampleDay(
+      "busan-coast",
       {
-        ko: "부산 시내",
-        en: "Busan City",
-        ja: "釜山市内",
-        zh: "釜山市区",
-        "zh-TW": "釜山市區",
-        es: "Ciudad de Busan",
+        ko: "해안 코스",
+        en: "Coast Route",
+        ja: "海岸コース",
+        zh: "海岸线路",
+        "zh-TW": "海岸路線",
+        es: "Ruta de la costa",
       },
       {
-        ko: "해운대·광안리·남포동 등 부산 시내 핵심 코스",
-        en: "Core Busan-city highlights — Haeundae, Gwangalli, Nampo-dong",
-        ja: "海雲台・広安里・南浦洞など釜山市内の主要コース",
-        zh: "海云台、广安里、南浦洞等釜山市区核心路线",
-        "zh-TW": "海雲台、廣安里、南浦洞等釜山市區核心路線",
-        es: "Lo esencial de Busan: Haeundae, Gwangalli y Nampo-dong",
+        ko: "해동용궁사에서 블루라인파크, 유엔기념공원을 지나 감천문화마을까지",
+        en: "Haedong Yonggungsa to Blue Line Park and the UN cemetery, closing at Gamcheon",
+        ja: "海東龍宮寺からブルーラインパーク、国連記念公園を経て甘川文化村へ",
+        zh: "自海东龙宫寺经蓝线公园、联合国纪念公园，至甘川文化村收尾",
+        "zh-TW": "自海東龍宮寺經藍線公園、聯合國紀念公園，至甘川文化村收尾",
+        es: "De Haedong Yonggungsa al Blue Line Park y el cementerio de la ONU, con final en Gamcheon",
       },
-      5,
+      BUSAN_COAST_STOPS,
     ),
-    placeholderDay(
-      "gyeongju",
+    sampleDay(
+      "busan-downtown",
       {
-        ko: "경주",
-        en: "Gyeongju",
-        ja: "慶州",
-        zh: "庆州",
-        "zh-TW": "慶州",
-        es: "Gyeongju",
+        ko: "구도심 코스",
+        en: "Old Downtown",
+        ja: "旧市街コース",
+        zh: "旧城区线路",
+        "zh-TW": "舊城區路線",
+        es: "Centro antiguo",
       },
       {
-        ko: "신라 천년 고도 경주 당일 코스 (별도 추가 요금)",
-        en: "Day trip to the ancient Silla capital of Gyeongju (surcharge applies)",
-        ja: "新羅千年の古都・慶州への日帰りコース（追加料金あり）",
-        zh: "新罗千年古都庆州一日线路（另收附加费）",
-        "zh-TW": "新羅千年古都慶州一日路線（另收附加費）",
-        es: "Excursión de un día a Gyeongju, antigua capital de Silla (con recargo)",
+        ko: "해동용궁사에서 남포동·자갈치·국제시장, 송도 구름다리를 지나 감천문화마을까지",
+        en: "Haedong Yonggungsa to the Nampo-dong markets and the Songdo bridge, closing at Gamcheon",
+        ja: "海東龍宮寺から南浦洞の市場群、松島の雲橋を経て甘川文化村へ",
+        zh: "自海东龙宫寺经南浦洞市场群、松岛云桥，至甘川文化村收尾",
+        "zh-TW": "自海東龍宮寺經南浦洞市場群、松島雲橋，至甘川文化村收尾",
+        es: "De Haedong Yonggungsa a los mercados de Nampo-dong y el puente de Songdo, con final en Gamcheon",
       },
-      5,
+      BUSAN_DOWNTOWN_STOPS,
     ),
   ],
   rulesTitle: RULES_TITLE,

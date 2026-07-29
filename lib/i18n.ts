@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useMemo, useCallback, useRef, createContext, useContext, ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 import { getCopy } from '@/lib/copy-messages';
 import type { Copy } from '@/src/design/copy';
 // Do not static-import supabase here: it triggers server bundle of @supabase/supabase-js
@@ -9,7 +10,7 @@ import type { Copy } from '@/src/design/copy';
 // §D A4.1 — 사이트 10로케일의 정본은 `lib/locale.ts` 하나다. 여기서 다시
 // 나열하면 로케일이 늘어나는 날 한쪽만 고쳐지고, 그 사실은 고친 사람도 모른다.
 // (이 파일은 'use client'라 별도로 존재하지만, **목록까지** 복제할 이유는 없다.)
-import { locales, defaultLocale, type Locale } from '@/lib/locale';
+import { locales, defaultLocale, appLocaleFromPathSegment, type Locale } from '@/lib/locale';
 
 export { locales, defaultLocale };
 export type { Locale };
@@ -134,6 +135,21 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       return;
     }
 
+    // 0) A locale prefix in the URL is the most explicit signal there is and
+    //    beats both the saved preference and the browser language. The server
+    //    already rendered this page in the prefix's locale; without this step a
+    //    visitor whose localStorage/navigator says `ko` got Korean client
+    //    components — the welcome-coupon popup, the sticky "check availability"
+    //    CTA — layered over Traditional-Chinese server copy on /zh-TW/*.
+    const urlLocale = appLocaleFromPathSegment(
+      window.location.pathname.split('/')[1] ?? '',
+    );
+    if (urlLocale) {
+      if (!userOverrideRef.current) setLocaleState(urlLocale);
+      setLoading(false);
+      return;
+    }
+
     // 1) Saved explicit preference wins — instant, no network and no supabase chunk.
     try {
       const savedLocale = localStorage.getItem('locale') as Locale | null;
@@ -210,6 +226,20 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       cancelled = true;
     };
   }, []);
+
+  /**
+   * Keep following the URL across client-side navigations. The provider lives
+   * in the layout, so the mount effect above runs once — without this, moving
+   * from /zh-TW/x to /ko/y inside the app would leave client components on the
+   * old locale. A prefixed URL always wins, including over `setLocale`, because
+   * the server already rendered that page in the prefix's locale.
+   */
+  const pathname = usePathname();
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const urlLocale = appLocaleFromPathSegment((pathname ?? '/').split('/')[1] ?? '');
+    if (urlLocale) setLocaleState(urlLocale);
+  }, [pathname]);
 
   // Stable reference: prevents downstream useEffect deps (e.g. LocaleHomeClient) from
   // re-firing on every provider render and clobbering the user's choice mid-click.

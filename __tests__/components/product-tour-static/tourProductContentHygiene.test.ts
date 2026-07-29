@@ -13,6 +13,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
 
 const ROOT = path.join(process.cwd(), "components", "product-tour-static");
 
@@ -73,6 +74,29 @@ describe("tour-product JSON content hygiene", () => {
       }
     }
     expect(offenders).toEqual([]);
+  });
+
+  it("every sample-itinerary photo exists on disk", () => {
+    // A typo'd path renders as a broken tile in the one section whose whole job
+    // is showing the guest what the day looks like.
+    const slugs = [
+      "jeju-island-private-car-charter-tour",
+      "busan-private-car-charter-cruise-shore",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "incheon-seoul-private-car-shore-excursion-cruise",
+    ];
+    const missing: string[] = [];
+    for (const slug of slugs) {
+      const cfg = getPrivateSampleItineraryConfig(slug);
+      for (const sample of cfg?.samples ?? []) {
+        for (const slot of sample.slots) {
+          if (!slot.image) continue;
+          const onDisk = path.join(process.cwd(), "public", slot.image);
+          if (!fs.existsSync(onDisk)) missing.push(`${slug}/${sample.id} :: ${slot.image}`);
+        }
+      }
+    }
+    expect(missing).toEqual([]);
   });
 
   it("charter pricing starts at 5 hours", () => {
