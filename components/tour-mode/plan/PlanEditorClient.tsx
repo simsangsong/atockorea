@@ -55,6 +55,7 @@ import {
 } from '@/lib/tour-room/courseOptions';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { PoiThumb } from '@/components/tour-mode/plan/PoiThumb';
+import { dayPhase } from '@/lib/tour-room/dayPhase';
 import { COPY, PLAN_STATUS_COPY, ROOM_LOCALE_VALUES } from '@/components/tour-mode/plan/planCopy';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import { MAX_PLAN_STOPS, tourStopToEditorStop } from '@/lib/tour-room/planTourStops';
@@ -516,6 +517,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    */
   const { surfaceProps } = useShellSurface({ theme });
   const surfaceStyle = surfaceProps.style;
+  /**
+   * 🔴 P7.8 (§N-9) — the skin half of the contract, which P7.1b deliberately
+   * held back until the palette consequences were designed and measured.
+   *
+   * `.tr-plan-root[data-tr-skin]` in the stylesheet decides what a skin is
+   * allowed to touch here: the neutral family travels with the skin, the
+   * planner keeps its deep-pine accent identity. See that block for why
+   * "background only" could not be implemented literally.
+   */
+  const surfaceSkin = surfaceProps['data-tr-skin'];
   const attempted = useRef(false);
   const [locale, setLocale] = useState<RoomLocale>(() => detectLocale());
   const copy = COPY[locale];
@@ -1161,6 +1172,19 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const poiByKey = useMemo(() => new Map(pois.map((poi) => [poi.poi_key, poi])), [pois]);
 
   /**
+   * P7.8 (H-7 / N2) — the day's grain, reused rather than rebuilt.
+   *
+   * N2 already answers "when" with a tone on the home card, using nothing but
+   * tokens the skin itself defines, and with no words in it — so it needs no
+   * translation. Widening its scope to 「내 하루」 is a selector change in the
+   * stylesheet plus this line; a second tone system would be a second thing to
+   * keep contrast-correct.
+   *
+   * `day` deliberately has no rule: tint every hour and no hour means anything.
+   */
+  const planDayPhase = useMemo(() => dayPhase({ nowMs: Date.now() }), []);
+
+  /**
    * P7.6 — up to three POIs per course option, for the card's photo strip.
    *
    * Keyed by course index rather than computed inline so the lookup does not
@@ -1212,6 +1236,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
       <div
         className={`tr-root mx-auto flex min-h-dvh w-full flex-col bg-[var(--tr-canvas)] ${themeClass}`}
         style={surfaceStyle}
+        data-tr-skin={surfaceSkin}
         aria-busy="true"
       >
         <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-3 px-4 pt-8">
@@ -1233,6 +1258,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
       <div
         className={`tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 ${themeClass}`}
         style={surfaceStyle}
+        data-tr-skin={surfaceSkin}
       >
         <div className="tr-card max-w-md px-5 py-6 text-center">
           <p className="tr-body text-[var(--tr-ink)]">{copy.joinError}</p>
@@ -1259,6 +1285,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16 ${themeClass}`}
         data-locale={locale}
         style={surfaceStyle}
+        data-tr-skin={surfaceSkin}
       >
         <div className="tr-safe-bottom mx-auto w-full max-w-xl px-4 pt-4">
           <header className="tr-plan-hero">
@@ -1322,6 +1349,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     <div
       className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] ${themeClass}`}
       data-locale={locale}
+      data-tr-skin={surfaceSkin}
       style={{ ...surfaceStyle, paddingBottom: 'calc(8rem + env(safe-area-inset-bottom, 0px))' }}
     >
       <div className="mx-auto w-full max-w-xl px-4 pt-4">
@@ -1423,7 +1451,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
          * something, not a place to hide.
          */}
         {(stops.length > 0 || canEdit) && tab !== 'delegate' && (
-          <section className="tr-card tr-card-hero mt-4 px-4 py-4">
+          <section className="tr-card tr-card-hero mt-4 px-4 py-4" data-tr-phase={planDayPhase}>
             <div className="flex items-center justify-between gap-3">
               {/* 🔴 P7.3 (H-4) — 「내 하루」 is what the guest came here to make,
                   and it was set at the same 15px as every other section

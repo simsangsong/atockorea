@@ -157,14 +157,28 @@ describe('shell surface contract (C1)', () => {
     });
 
     /**
-     * Deliberate, not forgotten. P7.8 flips this when §N-9 option B has decided
-     * which token families a skin may touch in this scope; until then stamping
-     * the attribute ships a gradient whose two stops come from different
-     * families (see PlanEditorClient's own note).
+     * 🔴 P7.8 flipped this ON PURPOSE, which is exactly why P7.1b pinned the
+     * "not yet" state instead of leaving the absence unstated: the change had
+     * to be a decision someone made, not a gap someone filled.
+     *
+     * It could only flip once `.tr-plan-root[data-tr-skin]` decided what a skin
+     * is allowed to touch here — and measuring that split is what showed
+     * "background only" to be unimplementable (a canvas and its ink are a
+     * pair). See skinContrast for the numbers.
      */
-    it('does NOT carry data-tr-skin yet — P7.8 owns that decision', () => {
+    it('carries data-tr-skin now that P7.8 has scoped what a skin may touch', () => {
       writeTourRoomSettings({ skin: 'jeju' });
-      expect(PLANNER().getAttribute('data-tr-skin')).toBeNull();
+      expect(PLANNER().getAttribute('data-tr-skin')).toBe('jeju');
+    });
+
+    /** All four roots, same as the font scale — a skin that reaches three of
+     *  them repaints the editor and leaves the dead-link screen behind. */
+    it('stamps the skin on ALL four root return paths', () => {
+      const source = readFileSync(
+        path.join(process.cwd(), 'components', 'tour-mode', 'plan', 'PlanEditorClient.tsx'),
+        'utf8',
+      );
+      expect(source.split('data-tr-skin={surfaceSkin}').length - 1).toBe(4);
     });
   });
 
