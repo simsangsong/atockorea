@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 86개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **86/86 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 6). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 87개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **87/87 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 7). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -117,6 +117,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `WalkBackLine.tsx` | SG-3a | ✅ (SG-3a에서 신설 — E1 온디바이스 도보 역산. 옵트인 칩→라인, fetch 0 단언, `walkBackLine.test.tsx`) |
 | `HeroMediaBand.tsx` | SG-4 | ✅ (SG-4에서 신설 — 공용 히어로 사진 밴드. 144px 고정 CLS 0·onError 스와치·contrast 스킨 숨김·글자 미탑재) |
 | `cockpit/SayQueueCard.tsx` | SG-6 | ✅ (SG-6에서 신설 — 발화 대기열 얼굴. 접힘 필 기본·제안만·발사 경로 신규 0, `sayQueue.test.ts`) |
+| `OnboardingCards.tsx` | SG-7b | ✅ (SG-7b에서 신설 — D-1 온보딩 3장. 약점 선언·로컬 에코 데모(전송 0)·운영시간/연차 미표기 N-3·N-4) |
 | `TourModeEntry.tsx` | A1.6 | P2 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourRoomClient.tsx` | A1.6 | ✅ (lint은 A4.5) → `A1-6-entry-shell-misc.md` |
 | `TravelTimeline.tsx` | A1.6 | ✅ |

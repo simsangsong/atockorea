@@ -398,6 +398,13 @@ export default function Cockpit({
     money: { logged_total: number; settled_total: number; unsettled_total: number; overtime_total: number; count: number };
     /** C5 — current-stop dwell vs the plan's recommended stay (advisory). */
     current?: { title: string; dwell_minutes: number; recommended_minutes: number | null } | null;
+    /** SG-7a — 오늘의 나 (순위 없음·손님 연결 없음, SG-D12). */
+    me?: {
+      ontime: { chains: number; departed: number };
+      response: { signals: number; median_seconds: number | null };
+      narration: number;
+      photos: number;
+    } | null;
   } | null>(null);
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   // Return-time dial (free wall-clock pick alongside the +N분 chips).
@@ -2432,6 +2439,34 @@ export default function Cockpit({
             <p className="tr-body-lg py-4 text-center text-[var(--tr-ink-2)]">불러오는 중…</p>
           ) : (
             <div className="flex max-h-[60vh] flex-col gap-3 overflow-y-auto" data-testid="day-summary">
+              {/* SG-7a — 오늘의 나: four honest numbers. No ranking, ever
+                  (사장님 D5/F-10). 정시는 상한 추정치다 — §H-1 각주. */}
+              {daySummary.me ? (
+                <div className="text-cjk-safe grid grid-cols-2 gap-2" data-testid="day-summary-me">
+                  <div className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                    <p className="tr-meta font-bold text-[var(--tr-ink-3)]">정시 출발</p>
+                    <p className="tr-body-lg tr-num mt-0.5 font-bold text-[var(--tr-ink)]">
+                      {daySummary.me.ontime.chains - daySummary.me.ontime.departed} / {daySummary.me.ontime.chains}
+                    </p>
+                  </div>
+                  <div className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                    <p className="tr-meta font-bold text-[var(--tr-ink-3)]">신호 응답</p>
+                    <p className="tr-body-lg tr-num mt-0.5 font-bold text-[var(--tr-ink)]">
+                      {daySummary.me.response.median_seconds != null
+                        ? `중앙값 ${daySummary.me.response.median_seconds}초`
+                        : `신호 ${daySummary.me.response.signals}건`}
+                    </p>
+                  </div>
+                  <div className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                    <p className="tr-meta font-bold text-[var(--tr-ink-3)]">들려준 해설</p>
+                    <p className="tr-body-lg tr-num mt-0.5 font-bold text-[var(--tr-ink)]">{daySummary.me.narration}</p>
+                  </div>
+                  <div className="text-cjk-safe rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3">
+                    <p className="tr-meta font-bold text-[var(--tr-ink-3)]">찍어준 사진</p>
+                    <p className="tr-body-lg tr-num mt-0.5 font-bold text-[var(--tr-ink)]">{daySummary.me.photos}</p>
+                  </div>
+                </div>
+              ) : null}
               {/* C5 — live dwell vs recommended, advisory only */}
               {daySummary.current ? (
                 <div className="rounded-2xl bg-[var(--tr-surface-2)] px-4 py-3" data-testid="day-summary-current">

@@ -72,7 +72,7 @@ export default function SayQueueCard({
         <button
           type="button"
           onClick={() => setExpanded(false)}
-          className="tr-meta font-bold text-[var(--tr-ink-3)]"
+          className="tr-meta text-cjk-safe font-bold text-[var(--tr-ink-3)]"
           aria-label="접기"
         >
           접기

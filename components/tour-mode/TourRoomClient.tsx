@@ -74,7 +74,9 @@ import PlanNudgeModal from '@/components/tour-mode/PlanNudgeModal';
 import AppManual from '@/components/tour-mode/AppManual';
 import type { ManualKind } from '@/lib/tour-room/appManual';
 import { tourKindFromPriceType } from '@/lib/tour-room/tourKind';
-import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
+import LobbyCard, { driverNameFromPayload, firstPickup } from '@/components/tour-mode/LobbyCard';
+import OnboardingCards from '@/components/tour-mode/OnboardingCards';
+import { daysUntilTour } from '@/lib/tour-room/nowCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 
 import RoomShell, { type RoomTab } from '@/components/tour-mode/RoomShell';
@@ -916,6 +918,22 @@ function TourRoomLive({
         tourDate={snapshot.booking?.tour_date}
         enabled={viewerRole === 'customer' && !readOnly}
       />
+      {/* SG-7b — D-1 onboarding, once per booking; lobby + customer + D≤1.
+          Inside the themed root like every overlay. */}
+      {viewerRole === 'customer' &&
+        data.lifecycle === 'lobby' &&
+        typeof daysUntilTour(snapshot.booking?.tour_date) === 'number' &&
+        (daysUntilTour(snapshot.booking?.tour_date) as number) <= 1 && (
+          <div className={`tr-root contents${theme === 'dark' ? ' dark' : ''}`}>
+            <OnboardingCards
+              bookingId={bookingId}
+              locale={locale}
+              driverName={driverNameFromPayload(
+                (snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload,
+              )}
+            />
+          </div>
+        )}
       {/* Pre-tour planner nudge — most guests miss the email's secondary plan
           link, so the day plan never gets set. Lead guest, lobby only. */}
       {viewerRole === 'customer' && !readOnly && data.lifecycle === 'lobby' && (
