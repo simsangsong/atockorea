@@ -30,6 +30,8 @@ import ChatFeed from '@/components/tour-mode/ChatFeed';
 import NavBrandButton from '@/components/tour-mode/NavBrandButton';
 import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
+import { useSpotGeofence } from '@/hooks/useSpotGeofence';
+import type { WatchableSpot } from '@/lib/tour-room/spotWatcher';
 import { DRIVER_QUICK_REPLIES } from '@/lib/tour-room/quickReplies';
 import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
@@ -451,10 +453,96 @@ export default function Cockpit({
       /* private-mode storage — the toggle just starts OFF */
     }
   }, [bookingId]);
+  /**
+   * ── X15 Phase 1: arrival detection on the STAFF device ─────────────────
+   *
+   * 🔴 Nothing here is new machinery. The geofence engine
+   * (`lib/tour-room/geo` + `spotWatcher`: enter radius, exit hysteresis, 60s
+   * dwell, bus-speed guard, nearest-spot, 120s cooldown) has existed and been
+   * unit-tested since T4.4, and this cockpit has been streaming position
+   * continuously since §11.C C1. They were simply never connected: the only
+   * consumer of the geofence was the GUEST map tab, behind a location share
+   * that is opt-in, default OFF, and foreground-only — so in practice arrivals
+   * were detected for almost nobody.
+   *
+   * The staff device is the right source anyway: the driver arriving IS the
+   * group arriving, and the driver already has a reason to share position (the
+   * guests' map shows the van). This rides that same opt-in stream — no new
+   * permission, no background tracking, and the toggle that stops the van also
+   * stops this.
+   *
+   * What it does NOT do: send anything to guests by itself. The arrival bundle
+   * carries a meeting time, and §A0 is explicit that there is no default
+   * meeting time — inventing one would be worse than the tap it saves. So the
+   * geofence OFFERS the sheet, prefilled, and the driver still decides.
+   */
+  const [geoSpots, setGeoSpots] = useState<WatchableSpot[]>([]);
+  const [arrivalPrompt, setArrivalPrompt] = useState<{ spotId: string; title: string } | null>(null);
+  const spotTitlesRef = useRef<Map<string, { title: string; poiKey: string | null }>>(new Map());
+
+  // Guide spots come from the room snapshot — the same rows the guest geofence
+  // uses, so a spot cannot be armed for one side and not the other. Fetched
+  // only once sharing is on: no location, no need for the radii.
+  useEffect(() => {
+    if (!shareLocation || geoSpots.length > 0) return;
+    let cancelled = false;
+    void (async () => {
+      try {
+        const res = await fetch(`/api/tour-mode/room/${encodeURIComponent(bookingId)}/snapshot`, {
+          headers: { 'x-tour-room-auth': session },
+        });
+        if (!res.ok) return;
+        const snap = (await res.json()) as { tour_guide_spots?: Array<Record<string, unknown>> };
+        if (cancelled) return;
+        const rows = snap.tour_guide_spots ?? [];
+        const titles = new Map<string, { title: string; poiKey: string | null }>();
+        const watchable: WatchableSpot[] = [];
+        for (const row of rows) {
+          const id = typeof row.id === 'string' ? row.id : null;
+          const lat = typeof row.latitude === 'number' ? row.latitude : null;
+          const lng = typeof row.longitude === 'number' ? row.longitude : null;
+          const radius = typeof row.trigger_radius_m === 'number' ? row.trigger_radius_m : null;
+          if (!id || lat === null || lng === null || radius === null) continue;
+          watchable.push({
+            id,
+            latitude: lat,
+            longitude: lng,
+            trigger_radius_m: radius,
+            exit_radius_m: typeof row.exit_radius_m === 'number' ? row.exit_radius_m : null,
+          });
+          titles.set(id, {
+            title: String(row.title ?? '').trim() || '이 스팟',
+            poiKey: typeof row.poi_key === 'string' ? row.poi_key : null,
+          });
+        }
+        spotTitlesRef.current = titles;
+        setGeoSpots(watchable);
+      } catch {
+        /* no radii → no auto-detection; the manual sheet is untouched */
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [shareLocation, geoSpots.length, bookingId, session]);
+
+  const { onSample: onGeofenceSample } = useSpotGeofence({
+    bookingId,
+    roomSession: session,
+    spots: geoSpots,
+    locale: 'ko',
+    enabled: shareLocation && geoSpots.length > 0,
+    onArrival: ({ spotId }) => {
+      const meta = spotTitlesRef.current.get(spotId);
+      setArrivalPrompt({ spotId, title: meta?.title ?? '이 스팟' });
+    },
+  });
+
   const { status: geoStatus, lastPublishedAtMs, accuracyBlocked, stopSharing } = useGeoWatcher({
     bookingId,
     roomSession: session,
     enabled: shareLocation,
+    onSample: onGeofenceSample,
   });
   const [actionsOpen, setActionsOpen] = useState(false);
   const toggleShareLocation = useCallback(() => {
@@ -1630,6 +1718,55 @@ export default function Cockpit({
           if (file) void sendAttachment(file);
         }}
       />
+
+      {/* X15 — arrival detected. An OFFER, never a send: one tap opens the same
+          prefilled sheet the driver would have opened by hand, and dismissing
+          it costs nothing. The geofence's own 120s cooldown stops this
+          reappearing while parked at the same stop. */}
+      {arrivalPrompt ? (
+        <div className="absolute inset-x-0 top-16 z-30 flex justify-center px-4">
+          <div
+            className="tr-anim-panel-in tr-card tr-card-hero flex w-full max-w-md items-center gap-3 px-4 py-3"
+            role="status"
+            data-testid="cockpit-arrival-prompt"
+          >
+            <div className="min-w-0 flex-1">
+              <p className="tr-meta font-bold uppercase text-[var(--tr-ink-3)]">도착 감지</p>
+              <p className="tr-title truncate font-bold text-[var(--tr-ink)]">{arrivalPrompt.title}</p>
+            </div>
+            <button
+              type="button"
+              className="tr-btn-physical tr-press tr-label shrink-0 px-4 py-2 font-bold"
+              data-testid="cockpit-arrival-open"
+              onClick={() => {
+                const meta = spotTitlesRef.current.get(arrivalPrompt.spotId);
+                // Match the schedule row by poi_key first (stable), then by
+                // title. A spot with no matching row still opens the sheet with
+                // the spot's own name rather than doing nothing.
+                const item =
+                  (meta?.poiKey ? room.schedule.find((it) => it.poi_key === meta.poiKey) : undefined) ??
+                  room.schedule.find((it) => itemTitle(it) === arrivalPrompt.title) ?? {
+                    title: arrivalPrompt.title,
+                    poi_key: meta?.poiKey ?? undefined,
+                  };
+                setArrivalPrompt(null);
+                openArrivalSheet(item);
+              }}
+            >
+              도착 안내
+            </button>
+            <button
+              type="button"
+              aria-label="닫기"
+              className="tr-press tr-label shrink-0 rounded-full px-3 py-2 text-[var(--tr-ink-3)]"
+              data-testid="cockpit-arrival-dismiss"
+              onClick={() => setArrivalPrompt(null)}
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      ) : null}
 
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
