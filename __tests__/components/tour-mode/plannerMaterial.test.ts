@@ -213,3 +213,56 @@ describe('plannerElevation (P7.2 H-1)', () => {
     }
   });
 });
+
+/**
+ * P7.3 (H-4) — the planner has a protagonist, and the place names are legible.
+ *
+ * §G-7 measured the real shape of "조잡함": 112 type-class uses, 69 of them in
+ * the two SMALLEST steps (tr-label 12px, tr-meta 11px), and the largest step
+ * used twice. Hierarchy does not come from shrinking the small things; it comes
+ * from something being big. Shrinking further — which the earlier prescription
+ * did, and which measured 44px rows — makes everything uniformly small, and
+ * uniform is exactly what "조잡하다" describes.
+ *
+ * So this gate does not cap small type. It requires the two elements that carry
+ * the screen's meaning to be above it.
+ */
+describe('plannerTypeHierarchy (P7.3 H-4)', () => {
+  const cls = (name: string) => new RegExp(`className="[^"]*\\b${name}\\b[^"]*"`);
+
+  it('「내 하루」 is the largest heading on the screen', () => {
+    const idx = PLANNER.indexOf('copy.yourDay');
+    expect(idx).toBeGreaterThan(-1);
+    const heading = PLANNER.slice(Math.max(0, idx - 500), idx);
+    expect(heading).toMatch(cls('tr-body-lg'));
+    // 18px vs the 15px every other section heading uses.
+    expect(heading).not.toMatch(cls('tr-card-text'));
+    expect(heading).not.toMatch(cls('tr-label'));
+  });
+
+  it('a stop name is not smaller than the body text around it', () => {
+    const idx = PLANNER.indexOf('data-testid={`plan-stop-row-${index + 1}`}');
+    expect(idx).toBeGreaterThan(-1);
+    // Wide enough to clear the explanatory comment that sits between the
+    // testid and the heading it describes.
+    const row = PLANNER.slice(idx, idx + 1200);
+    expect(row).toMatch(cls('tr-title'));
+    expect(row).not.toMatch(cls('tr-card-text'));
+  });
+
+  /**
+   * The ladder must actually be a ladder. Read from the shipped CSS so a future
+   * edit to the scale cannot silently collapse two steps into one.
+   */
+  it('the type steps this screen leans on are strictly ordered', () => {
+    const size = (name: string) => {
+      const m = new RegExp(`\\.${name}\\s*\\{[^}]*font-size:\\s*calc\\(\\s*([0-9.]+)px`).exec(CSS);
+      if (!m) throw new Error(`no font-size for .${name}`);
+      return Number(m[1]);
+    };
+    const ladder = ['tr-meta', 'tr-label', 'tr-card-text', 'tr-title', 'tr-body-lg', 'tr-display'];
+    const sizes = ladder.map(size);
+    expect(sizes).toEqual([11, 12, 13, 15, 18, 20]);
+    for (let i = 1; i < sizes.length; i++) expect(sizes[i]).toBeGreaterThan(sizes[i - 1]);
+  });
+});

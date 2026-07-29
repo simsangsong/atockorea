@@ -259,13 +259,53 @@ async function main() {
     }
   }
 
+  /**
+   * `--apply` fills the plan from a course so 「내 하루」 has stops in it. It is
+   * opt-in because it MUTATES the seeded booking: once a course is applied the
+   * course tab stops offering options, and the next run reports "not the
+   * editor". Re-seed between applied runs.
+   */
+  let myDay = null;
+  if (args.apply) {
+    const apply = page.locator('[data-testid="plan-course-apply-1"]');
+    if (await apply.count()) {
+      await apply.click();
+      await page.waitForTimeout(3000);
+      await page.waitForLoadState('networkidle').catch(() => {});
+      const row = page.locator('[data-testid="plan-stop-row-1"]');
+      await row.scrollIntoViewIfNeeded().catch(() => {});
+      await page.waitForTimeout(600);
+      myDay = await page.evaluate(() => {
+        const px = (sel) => {
+          const el = document.querySelector(sel);
+          return el ? Math.round(parseFloat(getComputedStyle(el).fontSize) * 100) / 100 : null;
+        };
+        const heading = Array.from(document.querySelectorAll('h2')).find((h) =>
+          h.className.includes('tr-body-lg'),
+        );
+        return {
+          stopRows: document.querySelectorAll('[data-testid^="plan-stop-row-"]').length,
+          stopNamePx: px('[data-testid="plan-stop-row-1"] p'),
+          myDayHeadingPx: heading
+            ? Math.round(parseFloat(getComputedStyle(heading).fontSize) * 100) / 100
+            : null,
+          rowHeight: (() => {
+            const r = document.querySelector('[data-testid="plan-stop-row-1"]')?.closest('li');
+            return r ? Math.round(r.getBoundingClientRect().height) : null;
+          })(),
+        };
+      });
+      await shot(page, '06-my-day');
+    }
+  }
+
   await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
   await page.waitForTimeout(800);
   await shot(page, '03-bottom');
 
   console.log(
     JSON.stringify(
-      { tag: TAG, locale: LOCALE, theme: THEME, textScale: TEXT_SCALE, skinSetting: SKIN, editorPresent, ...metrics, picker: pickerMetrics, swatch: swatchMetrics, coursePreview: coursePreviewMetrics, errors: errors.slice(0, 6) },
+      { tag: TAG, locale: LOCALE, theme: THEME, textScale: TEXT_SCALE, skinSetting: SKIN, editorPresent, ...metrics, picker: pickerMetrics, swatch: swatchMetrics, coursePreview: coursePreviewMetrics, myDay, errors: errors.slice(0, 6) },
       null,
       2,
     ),
