@@ -2947,8 +2947,14 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         {(stops.length > 0 || canEdit) && tab !== 'delegate' && (
           <section className="mt-6">
             <div className="flex items-center justify-between gap-3">
-              <h2 className="tr-body flex items-center gap-2 font-bold text-[var(--tr-ink)]">
-                <span className="flex h-8 w-8 items-center justify-center rounded-xl tr-plan-tile">
+              {/* 🔴 P7.3 (H-4) — 「내 하루」 is what the guest came here to make,
+                  and it was set at the same 15px as every other section
+                  heading. The screen's type usage sat 62% in its two smallest
+                  steps (measured: tr-label 42 + tr-meta 26 of 110) with two
+                  uses of the largest — "조잡함" was never too many small words,
+                  it was no big ones. This is the protagonist; it gets 18px. */}
+              <h2 className="tr-body-lg flex items-center gap-2 font-bold text-[var(--tr-ink)]">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl tr-plan-tile">
                   <IconJourney size={TR_ICON.chip} aria-hidden />
                 </span>
                 {copy.yourDay}
@@ -2991,7 +2997,14 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                           className="min-w-0 flex-1 text-left disabled:cursor-default"
                           data-testid={`plan-stop-row-${index + 1}`}
                         >
-                          <p className="tr-card-text text-cjk-safe font-semibold text-[var(--tr-ink)]">
+                          {/* P7.3 (H-4) — 13px → 15px. This is the only proper
+                              noun on the screen: the place the guest is going.
+                              It was set one step below the body text around it,
+                              which is how a list of Jeju landmarks came to read
+                              like a table of rows. The row stays one line
+                              collapsed (P-D20 holds); only the protagonist
+                              inside it grows. */}
+                          <p className="tr-title text-cjk-safe font-semibold text-[var(--tr-ink)]">
                             {stop.title}
                             {stop.source === 'google' && (
                               <span className="tr-meta ml-1.5 rounded bg-[var(--tr-surface-2)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
