@@ -26,6 +26,7 @@ import {
   IconPhotoNote,
   IconChevronRight,
   IconDone,
+  IconShare,
   TR_ICON,
 } from '@/components/tour-mode/icons';
 import {
@@ -35,6 +36,12 @@ import {
 } from '@/lib/tour-room/timeline';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
+import {
+  buildTimelineShareText,
+  shareTimelineText,
+  timelineShareHref,
+  type ShareOutcome,
+} from '@/lib/tour-room/timelineShare';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 const CLOSE_LABEL: Record<RoomLocale, string> = {
@@ -171,18 +178,90 @@ function RewardBlock({
   );
 }
 
+/**
+ * X17 — "take this day with you" (§H-3 gap 5).
+ *
+ * Text only, and that is a constraint rather than a shortcut: since the storage
+ * change the room's photos sit in a private bucket behind short-lived signed
+ * URLs, so putting one in a shared message would paste a capability URL to a
+ * guest's private photo into a group chat AND be dead within hours.
+ *
+ * The destination link is whatever `reviewPolicy` already decided for this
+ * booking — direct guests get our tour page, OTA guests get their own
+ * platform's listing, and an OTA booking with no known listing shares the recap
+ * with no link at all. Writing a second rule here is how the two would drift.
+ */
+function ShareBlock({
+  data,
+  copy,
+  reviewPolicy,
+  tourTitle,
+}: {
+  data: TravelTimelineData;
+  copy: (typeof TIMELINE_COPY)[RoomLocale];
+  reviewPolicy: RoomReviewPolicy;
+  tourTitle?: string | null;
+}) {
+  const [outcome, setOutcome] = useState<ShareOutcome | null>(null);
+
+  const onShare = async () => {
+    const href = timelineShareHref(
+      reviewPolicy,
+      typeof window === 'undefined' ? null : window.location.origin,
+    );
+    const text = buildTimelineShareText({ data, copy, tourTitle, href, formatTime });
+    const result = await shareTimelineText(
+      typeof navigator === 'undefined' ? undefined : navigator,
+      { title: copy.title, text },
+    );
+    setOutcome(result);
+  };
+
+  return (
+    <div className="mt-3">
+      <button
+        type="button"
+        onClick={() => void onShare()}
+        data-testid="timeline-share"
+        className="tr-label flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full border border-[var(--tr-hairline)] font-semibold text-[var(--tr-ink)]"
+      >
+        <IconShare size={TR_ICON.chip} className="text-[var(--tr-accent-deep)]" aria-hidden />
+        {copy.shareCta}
+      </button>
+      {/*
+        Say which of the two things happened. A native share sheet is obvious;
+        a silent clipboard write is not, and an unexplained "nothing visible
+        occurred" is worse than not offering the button. `aria-live` so it is
+        announced rather than only seen.
+      */}
+      {outcome === 'copied' && (
+        <p className="tr-meta mt-1.5 text-center text-[var(--tr-ink-3)]" role="status" aria-live="polite">
+          {copy.shareCopied}
+        </p>
+      )}
+      {outcome === 'unavailable' && (
+        <p className="tr-meta mt-1.5 text-center text-[var(--tr-ink-3)]" role="status" aria-live="polite">
+          {copy.shareUnavailable}
+        </p>
+      )}
+    </div>
+  );
+}
+
 function TimelineBody({
   data,
   copy,
   bookingId,
   roomSession,
   reviewPolicy,
+  tourTitle,
 }: {
   data: TravelTimelineData;
   copy: (typeof TIMELINE_COPY)[RoomLocale];
   bookingId: string;
   roomSession: string;
   reviewPolicy: RoomReviewPolicy;
+  tourTitle?: string | null;
 }) {
   const { reviewHref, reviewExternal, rewardAllowed } = reviewPolicy;
   return (
@@ -240,6 +319,11 @@ function TimelineBody({
         </>
       )}
 
+      {/* X17 — 이 하루를 가져갈 수 있게. 기록이 있을 때만 뜬다. */}
+      {(data.stopCount > 0 || data.photoCount > 0) && (
+        <ShareBlock data={data} copy={copy} reviewPolicy={reviewPolicy} tourTitle={tourTitle} />
+      )}
+
       {/* OTA 예약에는 자사 쿠폰을 제안하지 않는다 (reviewPolicy.ts). 라우트도
           같은 판단으로 발급을 거절하므로 여기는 화면 절제일 뿐이다. */}
       {rewardAllowed && (
@@ -279,6 +363,7 @@ export function TravelTimelineSheet({
   bookingId,
   roomSession,
   reviewPolicy,
+  tourTitle,
 }: {
   open: boolean;
   onClose: () => void;
@@ -287,6 +372,8 @@ export function TravelTimelineSheet({
   bookingId: string;
   roomSession: string;
   reviewPolicy: RoomReviewPolicy;
+  /** The tour's own name, so a shared recap says which trip it was. */
+  tourTitle?: string | null;
 }) {
   const data = useMemo(() => buildTravelTimeline(messages), [messages]);
   const copy = TIMELINE_COPY[locale];
@@ -309,6 +396,7 @@ export function TravelTimelineSheet({
         bookingId={bookingId}
         roomSession={roomSession}
         reviewPolicy={reviewPolicy}
+        tourTitle={tourTitle}
       />
     </Sheet>
   );
@@ -326,6 +414,7 @@ export default function TravelTimelineEntry({
   roomSession,
   reviewPolicy,
   variant,
+  tourTitle,
 }: {
   locale: RoomLocale;
   messages: RoomMessage[];
@@ -333,6 +422,8 @@ export default function TravelTimelineEntry({
   roomSession: string;
   reviewPolicy: RoomReviewPolicy;
   variant: 'live' | 'ended';
+  /** The tour's own name, so a shared recap says which trip it was. */
+  tourTitle?: string | null;
 }) {
   const [open, setOpen] = useState(false);
   const data = useMemo(() => buildTravelTimeline(messages), [messages]);
@@ -367,6 +458,7 @@ export default function TravelTimelineEntry({
         bookingId={bookingId}
         roomSession={roomSession}
         reviewPolicy={reviewPolicy}
+        tourTitle={tourTitle}
       />
     </>
   );
