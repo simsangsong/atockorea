@@ -869,7 +869,7 @@
     {
       "icon": "users",
       "title": "精選團體規模",
-      "description": "專為本路線量身調配的人數規模 > **Notes:** Lines 20 & 23 (`bg-emerald-50/80`, `bg-sky-50/80`) are Tailwind CSS class names — kept as-is since they are code tokens, not translatable text. Korean place names rendered in Hanja: 都羅展望台 (도라전망대 · Dora Observatory), 紺岳山 (감악산 · Gamaksan).",
+      "description": "專為本路線量身調配的人數規模",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -1358,7 +1358,7 @@
           },
           {
             "icon": "users",
-            "label": "適合家庭 --- **Notes:** - **Items 9 & 14** (`TourTabsNav`, `TourAtAGlance`) are kept as-is — they appear to be UI component identifiers, not display copy. - **坡州** is the standard Traditional Chinese rendering of 파주 (Paju). - **活力充沛** for \"Active\" conveys the physical engagement level typical in travel contexts; alternatively **積極活動** works if a more neutral tag style is preferred.",
+            "label": "適合家庭",
             "value": "適中"
           },
           {
@@ -1601,7 +1601,7 @@
               "當日非武裝地帶最佳拍照地點（允許攝影處）"
             ],
             "timeUsed": [
-              "從第三條隧道搭乘非武裝地帶接駁車 > **Notes:** > - Lines 4, 5, 6, 20 — image paths kept verbatim as requested. > - **DMZ** rendered as **非武裝地帶** throughout for consistency with Traditional Chinese travel copy. > - **Imjingak** → **臨津閣**; **Dora Observatory** → **都羅展望台**; **Kaesong** → **開城**; **Kijongdong** → **基正洞** (standard Han-character equivalents).",
+              "從第三條隧道搭乘非武裝地帶接駁車",
               "屋頂觀景台望遠鏡觀賞",
               "室內簡報區"
             ],
@@ -2184,7 +2184,7 @@
         "staticQuestions": [
           {
             "id": "q1",
-            "question": "在這條路線上，我實際上能在非軍事區（DMZ）看到什麼？ --- **Notes:** - Items **2**, **5**, and **24** are code tokens (Tailwind CSS classes and a React component name) — kept as-is since they should not be translated. - 「非軍事區（DMZ）」on line 25 retains the English acronym in parentheses for clarity, as it is widely recognised in travel contexts.",
+            "question": "在這條路線上，我實際上能在非軍事區（DMZ）看到什麼？",
             "answer": "三大核心景點。**第三條滲透隧道**：1978年發現的一條長達1,635公尺的地下通道，由北韓秘密挖掘、朝向首爾方向。**都羅山瞭望台**：唯一對一般民眾開放的北韓眺望點，可遠眺開城市、宣傳村及機井洞旗桿。**臨津閣和平公園**：建於1972年的紀念公園，園內設有望拜壇、1953年重建的自由橋，以及彈孔斑斑的蒸汽火車頭。各景點的拍照規定不盡相同，導遊將於到達前為您說明。"
           },
           {
@@ -2510,7 +2510,7 @@
         }
       },
       {
-        "paxLabel": "14–15 人 > **Note:** *pax* (travel industry term for passengers/persons) is rendered as **人** throughout. *Flat* is rendered as **統一價** (fixed/flat rate), appropriate for a pricing-tier context.",
+        "paxLabel": "14–15 人",
         "paxMin": 14,
         "paxMax": 15,
         "prices": {

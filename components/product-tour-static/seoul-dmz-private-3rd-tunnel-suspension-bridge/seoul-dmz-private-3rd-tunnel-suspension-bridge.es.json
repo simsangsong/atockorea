@@ -675,7 +675,7 @@
   ],
   "routePhases": [
     {
-      "phase": "Memorial y Túnel > **Note:** Lines 4–7 are file paths and have been left unchanged, as they are not translatable text. Lines 17 (*Imjingak*) and 18 (*Memorial*) are retained as-is — *Imjingak* is a proper noun, and *Memorial* is identical in Spanish.",
+      "phase": "Memorial y Túnel",
       "duration": "Paradas 1–2",
       "description": "Mañana: Memorial y Túnel"
     },
@@ -1418,7 +1418,7 @@
           },
           {
             "icon": "users",
-            "label": "Apto para Familias --- **Notes:** - **Line 9 & 14** (`TourTabsNav`, `TourAtAGlance`) appear to be UI component/code identifiers — left untranslated as they are likely system labels. Let me know if these should also be translated. - **Line 19** (`Scenic`) is translated as **Paisajístico** (adjective form) to match the label style; alternatively **Pintoresco** could be used. - **Line 21** (`Walking`) is translated as **Caminata** (noun/activity form); **A pie** is another valid option depending on context.",
+            "label": "Apto para Familias",
             "value": "Moderado"
           },
           {
@@ -1440,7 +1440,7 @@
     {
       "id": "itinerary",
       "section_html_id": "itinerary",
-      "component": "TourTimelineSection > **Notes:** Items **4** (`TourAtmosphereGallery`) and **25** (`TourTimelineSection`) are kept as-is since they appear to be UI component/code identifiers. The acronym **DMZ** is retained in items 13, 21, 22, and 24, as it is universally recognized in Spanish-language travel contexts.",
+      "component": "TourTimelineSection",
       "props": {
         "itineraryStops": [
           {
@@ -2237,7 +2237,7 @@
           },
           {
             "icon": "route",
-            "title": "Especialistas en rutas > **Notes:** Lines 8, 12, 16, 20, and 24 are CSS class names, and line 21 is a React component name — these are kept as-is since they are technical identifiers not intended for translation.",
+            "title": "Especialistas en rutas",
             "description": "Itinerario personalizado, no un recorrido genérico",
             "iconBg": "bg-sky-50/80 *(clase CSS — sin cambios)*",
             "iconColor": "text-sky-600"
@@ -2618,7 +2618,7 @@
         }
       },
       {
-        "paxLabel": "14–15 pax > **Note:** The abbreviation **pax** (from Latin *pax*, widely used in the travel industry to mean *pasajeros/personas*) is kept as-is in lines 2–13, as it is standard and universally understood in Spanish-language travel and tourism contexts. Line 1 **\"flat\"** is rendered as **\"tarifa fija\"** (fixed/flat rate), the standard Spanish travel industry term for a set price regardless of minor variable factors.",
+        "paxLabel": "14–15 pax",
         "paxMin": 14,
         "paxMax": 15,
         "prices": {

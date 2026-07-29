@@ -1441,7 +1441,7 @@
         {
           "name": "Return to Gangjeong Cruise Terminal (Seogwipo — south)",
           "category": "Cruise Return & All-Aboard",
-          "description": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit (Olle Maeil Market / Cheonjiyeon Falls / downtown Seogwipo area) the drive is short — **~10–15 min via local roads**. From Hallasan 1100 Highland the descent takes ~35 min via Route 1100 (the same highest-altitude national highway you ascended in the morning). Drop-off is timed to deliver guests **at least 60 minutes before your ship's all-aboard time**, matching cruise industry standard buffers. The vehicle pulls into the **53-bus outdoor parking area**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. Inside the terminal: tourist information center (multilingual), convenience store, currency exchange, lounge, tax-refund counter. If guests dock at Gangjeong with same-day evening flights, **Limousine Bus 800 / 800-1** connects from Gangjeong-area to Jeju International Airport via Seogwipo Innovation City (driver must be informed of destination before tap-in). The southern itinerary keeps stops within **30-min radius of the port** — the comfortable 8-hour window is built around this geography. **Note**: Anti-base activists hold daily Catholic mass + 100-bow protests at the main gate (separate from cruise-passenger areas, away from the terminal — cruise guests rarely encounter these activities on the standard arrival/departure path).",
+          "description": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit (Olle Maeil Market / Cheonjiyeon Falls / downtown Seogwipo area) the drive is short — **~10–15 min via local roads**. From Hallasan 1100 Highland the descent takes ~35 min via Route 1100 (the same highest-altitude national highway you ascended in the morning). Drop-off is timed to deliver guests **at least 60 minutes before your ship's all-aboard time**, matching cruise industry standard buffers. The vehicle pulls into the **53-bus outdoor parking area**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. Inside the terminal: tourist information center (multilingual), convenience store, currency exchange, lounge, tax-refund counter. If guests dock at Gangjeong with same-day evening flights, **Limousine Bus 800 / 800-1** connects from Gangjeong-area to Jeju International Airport via Seogwipo Innovation City (driver must be informed of destination before tap-in). The southern itinerary keeps stops within **30-min radius of the port** — the comfortable 8-hour window is built around this geography.",
           "highlights": [
             "**Drop-off 60+ min before all-aboard time** — cruise industry standard",
             "From Olle Market / Cheonjiyeon area: ~10–15 min drive (port-side circuit)",
@@ -1574,7 +1574,7 @@
         "items": [
           {
             "label": "Grupo pequeño en miniautobús",
-            "detail": "Grupo más pequeño, mayor atención del guía, ritmo más rápido en las paradas. > **Note:** Lines **20** and **28** (`bg-sky-50/80`, `bg-amber-50/80`) are CSS utility classes and have been left untranslated as they are technical code values, not natural language content."
+            "detail": "Grupo más pequeño, mayor atención del guía, ritmo más rápido en las paradas."
           }
         ]
       }
@@ -1711,7 +1711,7 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Inmediatamente > **Notes:** Lines 23, 26, and 29 are CSS utility class names (Tailwind) and have been kept as-is, since they are technical/code values and should not be translated.",
+      "timing": "Inmediatamente",
       "title": "Confirmación inmediata",
       "detail": "Confirmación de reserva con resumen del itinerario"
     },
@@ -2531,63 +2531,63 @@
         "routeFlowStops": [
           {
             "id": "01",
-            "name": "**Cruise Terminal** → Terminal de Cruceros",
-            "theme": "**Departure** → Salida"
+            "name": "Terminal de Cruceros",
+            "theme": "Salida"
           },
           {
             "id": "02",
-            "name": "**Sunrise Peak** → Pico del Amanecer",
-            "theme": "**Volcano** → Volcán"
+            "name": "Pico del Amanecer",
+            "theme": "Volcán"
           },
           {
             "id": "03",
             "name": "**Seopjikoji** → Seopjikoji *(nombre propio, sin cambios)*",
-            "theme": "**Coast** → Costa"
+            "theme": "Costa"
           },
           {
             "id": "04",
-            "name": "**Lunch** → Almuerzo",
-            "theme": "**Meal** → Comida"
+            "name": "Almuerzo",
+            "theme": "Comida"
           },
           {
             "id": "05",
-            "name": "**Folk Village** → Pueblo Tradicional",
-            "theme": "**Culture** → Cultura"
+            "name": "Pueblo Tradicional",
+            "theme": "Cultura"
           },
           {
             "id": "06",
-            "name": "**Cruise Terminal** → Terminal de Cruceros",
-            "theme": "**Return** → Regreso"
+            "name": "Terminal de Cruceros",
+            "theme": "Regreso"
           }
         ],
         "routePhases": [
           {
-            "label": "**Morning** → Mañana",
+            "label": "Mañana",
             "range": "**1-3** → 1-3 *(número, sin cambios)*",
-            "theme": "**UNESCO volcano + coast** → Volcán UNESCO + costa",
+            "theme": "Volcán UNESCO + costa",
             "bgClass": "**bg-sky-50/70** → bg-sky-50/70 *(clase CSS, sin cambios)*",
             "textClass": "text-sky-700",
             "dotClass": "bg-sky-500"
           },
           {
-            "label": "**Midday** → Mediodía",
+            "label": "Mediodía",
             "range": "**4** → 4 *(número, sin cambios)*",
-            "theme": "**Lunch** → Almuerzo",
+            "theme": "Almuerzo",
             "bgClass": "**bg-amber-50/70** → bg-amber-50/70 *(clase CSS, sin cambios)*",
             "textClass": "text-amber-700",
             "dotClass": "bg-amber-500"
           },
           {
-            "label": "**Afternoon** → Tarde",
+            "label": "Tarde",
             "range": "**5-6** → 5-6 *(número, sin cambios)*",
-            "theme": "**Folk culture + return** → Cultura tradicional + regreso",
+            "theme": "Cultura tradicional + regreso",
             "bgClass": "**bg-emerald-50/70** → bg-emerald-50/70 *(clase CSS, sin cambios)*",
             "textClass": "text-emerald-700",
             "dotClass": "bg-emerald-500"
           }
         ],
         "routeShapeIntro": {
-          "title": "**How this day flows** → Cómo transcurre este día",
+          "title": "Cómo transcurre este día",
           "subtitle": "**Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market.** → La ruta depende de tu puerto de crucero. El Puerto de Jeju (norte) recorre el este de la zona UNESCO; el Puerto de Gangjeong (sur) recorre el área alpina del Hallasan + el Mercado Olle."
         }
       }
@@ -2731,7 +2731,7 @@
             "iconColor": "text-pink-500"
           },
           {
-            "name": "Verano > **Notes:** > - Line 29 (`bg-spring`) is a technical/CSS class name and has been left untranslated, as it is likely a code token rather than display text. > - Lines 22 and 24 (`—`) are em-dashes used as placeholders and require no translation.",
+            "name": "Verano",
             "icon": "sun",
             "description": "Caluroso pero con brisa en la costa; Hallasan 1100, fresco refugio",
             "tag": "Temporada alta de cruceros",
@@ -2799,7 +2799,7 @@
           {
             "timing": "La noche anterior",
             "title": "Información final de recogida",
-            "detail": "Hora exacta de recogida y contacto del conductor --- **Notes:** - Lines **3, 7, 11** (`bg-summer`, `bg-autumn`, `bg-winter`) — kept as-is (CSS/Tailwind class names). - Lines **15, 18, 21** (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) — kept as-is (Tailwind utility classes). - Line **12** (`TourBookingSupportSection`) — kept as-is (React component name / code identifier)."
+            "detail": "Hora exacta de recogida y contacto del conductor"
           },
           {
             "timing": "Mañana del tour",

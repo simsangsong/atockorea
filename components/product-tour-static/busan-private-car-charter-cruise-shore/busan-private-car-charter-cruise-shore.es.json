@@ -2032,7 +2032,7 @@
           },
           {
             "label": "Día de Excursión",
-            "range": "2-4 > **Notes:** Items **14** (`TourDayFlowSection`) and **28** (`bg-sky-50/70`) are kept in their original form as they are a UI component identifier and a CSS/Tailwind class name, respectively — translating them would break functionality.",
+            "range": "2-4",
             "theme": "Elige Tu Ruta",
             "bgClass": "bg-emerald-50/70 *(clase CSS — sin cambios)*",
             "textClass": "text-emerald-700",
@@ -2298,7 +2298,7 @@
             "detail": "Confirmación de reserva con resumen del itinerario"
           },
           {
-            "timing": "12 horas antes > **Note:** Items 4, 8, 12, 16, 17, 20, 23, and 26 are code identifiers/CSS class names and have been left unchanged as they are not translatable text strings.",
+            "timing": "12 horas antes",
             "title": "Recordatorio de 12 Horas",
             "detail": "Actualización del clima y ajustes de ruta"
           },
@@ -2430,7 +2430,6 @@
     "currency": "USD",
     "unit": "vehicle",
     "durations": [
-      "4h",
       "5h",
       "6h",
       "7h",
@@ -2444,7 +2443,6 @@
         "paxMin": 1,
         "paxMax": 6,
         "prices": {
-          "4h": 149,
           "5h": 169,
           "6h": 189,
           "7h": 209,
@@ -2458,7 +2456,6 @@
         "paxMin": 7,
         "paxMax": 9,
         "prices": {
-          "4h": 182,
           "5h": 203,
           "6h": 223,
           "7h": 243,
@@ -2472,7 +2469,6 @@
         "paxMin": 10,
         "paxMax": 13,
         "prices": {
-          "4h": 250,
           "5h": 270,
           "6h": 291,
           "7h": 311,

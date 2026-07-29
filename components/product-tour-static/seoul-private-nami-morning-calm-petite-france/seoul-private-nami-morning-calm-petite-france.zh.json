@@ -592,7 +592,7 @@
   ],
   "routePhases": [
     {
-      "phase": "南怡岛开篇 > **Notes:** File paths (8–10) are left unchanged as they are technical strings. \"Reset\" (20) is rendered as **休整** (rest/recharge) to fit travel-itinerary context. \"Morning Calm\" (21) is rendered as **晨静**, aligning with the established Korean attraction name 晨静树木园 (Garden of Morning Calm).",
+      "phase": "南怡岛开篇",
       "duration": "第1站",
       "description": "上午：南怡岛开篇"
     },
@@ -852,7 +852,7 @@
     {
       "timing": "游览当天早晨",
       "title": "当日路线说明",
-      "detail": "根据实时路况的晨间行程简报 > **Notes:** Items 7, 10, and 13 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS utility class names — technical strings that are kept as-is since they are not natural-language content."
+      "detail": "根据实时路况的晨间行程简报"
     },
     {
       "timing": "游览中",
@@ -2017,7 +2017,7 @@
           {
             "timing": "立即",
             "title": "即时确认",
-            "detail": "含行程摘要的预订确认 > **Note:** Items 4, 8, 12, 13, 16, 19, and 22 are code identifiers (CSS class names / component names) and have been kept as-is, as they should not be translated."
+            "detail": "含行程摘要的预订确认"
           },
           {
             "timing": "出发前12小时",

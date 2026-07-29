@@ -348,7 +348,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         </section>
 
         {vm.pickup_dropoff ? (
-          <section id="pickup-dropoff" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">
+          <section id="pickup-dropoff" className="mx-3 mt-4 rounded-3xl bg-section-warm scroll-mt-24 lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourPickupDropoffSection
                 pickup_dropoff={vm.pickup_dropoff}
@@ -372,7 +372,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           </div>
         </section>
 
-        <section id="details" className="mx-3 mt-4 lg:mx-0">
+        <section id="details" className="mx-3 mt-4 rounded-3xl bg-section-warm lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
             <TourFitSection whyTourWorks={vm.whyTourWorks} sectionUi={vm.sectionUi} />
           </div>
@@ -392,7 +392,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
 
         {/* W2.5 — FAQ & After-you-book merged section: slim support stepline
             (+ W4.4 operated-by trust card) rides above the FAQ list. */}
-        <section id="faq" className="mx-3 mt-4 scroll-mt-24 lg:mx-0">
+        <section id="faq" className="mx-3 mt-4 rounded-3xl bg-section-warm scroll-mt-24 lg:mx-0">
           <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-5 pb-2">
             <TourBookingSupportSection
               bookingTrustItems={vm.bookingTrustItems}
@@ -425,7 +425,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             global OTAs, attributed + outbound-linked. Aggregate-only (no review
             prose copied, no competitor price). Renders nothing when unmapped. */}
         {SHOW_EXTERNAL_REVIEWS && externalReviews && externalReviews.length > 0 ? (
-          <section id="external-reviews" className="mx-3 mt-4 lg:mx-0">
+          <section id="external-reviews" className="mx-3 mt-4 rounded-3xl bg-section-warm lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourExternalReviewsSection
                 aggregates={externalReviews}
@@ -439,7 +439,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
             Previously: same tour on global OTA platforms, shown when the registry
             had verified links for this slug. */}
         {SHOW_PLATFORM_COMPARE && hasPlatformCompareLinks ? (
-          <section className="mx-3 mt-4 lg:mx-0">
+          <section className="mx-3 mt-4 rounded-3xl bg-section-alt lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <PlatformCompareBlock tourProductSlug={tourProductSlug} />
             </div>
@@ -447,7 +447,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
         ) : null}
 
         {recommendations && recommendations.length > 0 ? (
-          <section className="mx-3 mt-4 lg:mx-0">
+          <section className="mx-3 mt-4 rounded-3xl bg-section-alt lg:mx-0">
             <div className="mx-auto max-w-2xl px-4 sm:px-5 py-5">
               <TourRecommendationsSection recommendations={recommendations} sectionUi={vm.sectionUi} />
             </div>

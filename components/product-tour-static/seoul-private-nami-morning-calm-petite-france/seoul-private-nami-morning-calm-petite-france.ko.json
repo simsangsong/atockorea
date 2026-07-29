@@ -1744,7 +1744,7 @@
         "routePhases": [
           {
             "label": "오전",
-            "range": "1 **Notes:** - **7–8**: File paths left unchanged (no translation needed). - **15**: UI component name `TourDayFlowSection` left as-is. - **25**: Numeric `1` left as-is. - **17** \"Ferry & Forest\": 남이섬의 선착장(페리) 이동 + 자연 숲 이미지를 반영한 레이블. - **19** \"Reset\": 투어 흐름상 휴식/재충전 구간을 의미하므로 **휴식**으로 번역.",
+            "range": "1",
             "theme": "남이섬 오프너",
             "bgClass": "bg-sky-50/70",
             "textClass": "text-sky-700",
@@ -2017,7 +2017,7 @@
           {
             "timing": "즉시",
             "title": "즉시 확인",
-            "detail": "일정 요약이 포함된 예약 확인 > **Note:** Items 4, 8, 12, 16, 19, 22 (CSS class names) and item 13 (React component name) are kept as-is since they are code identifiers and should not be translated."
+            "detail": "일정 요약이 포함된 예약 확인"
           },
           {
             "timing": "출발 12시간 전",

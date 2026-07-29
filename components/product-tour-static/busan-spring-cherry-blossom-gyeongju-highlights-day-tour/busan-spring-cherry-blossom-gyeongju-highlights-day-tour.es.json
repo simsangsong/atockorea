@@ -1559,7 +1559,7 @@
             "timeUsed": [
               "Llegada, compra de entradas y orientación introductoria",
               "Exploración de la atracción principal con tiempo para fotografías",
-              "Cierre y reagrupación en el vehículo > **Note:** Lines 6, 7, 8, and 21 are file paths/URLs and have been left unchanged, as they are technical strings that do not require translation."
+              "Cierre y reagrupación en el vehículo"
             ],
             "whyOnRoute": "El pilar arquitectónico del día. Sin Bulguksa, ningún tour de día por Gyeongju puede reclamar el título de «Patrimonio de la UNESCO».",
             "_poi_meta": {
@@ -1694,7 +1694,7 @@
             "duration": "75 min",
             "name": "Museo Nacional de Gyeongju",
             "category": "Museo Nacional (Silla)",
-            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp > **Notes:** File paths (lines 2–4, 17, 25) and numeric values (lines 14, 22) were kept unchanged, as they are technical identifiers, not translatable content. Korean proper nouns (Bulguksa, Gyeongju, Silla, ssambap, banchan, bulgogi) are retained as-is per standard travel-content practice.",
+            "image": "/images/tours/cheomseongdae/chatgpt-image-2026-5-10-01-37-21.webp",
             "description": "El principal repositorio de Corea de artefactos de la era Silla, con entrada gratuita desde noviembre de 2008. Tres salas permanentes cubren los temas principales: Historia Silla, Arte Silla y la Sala Wolji (artefactos excavados del sitio del palacio del Estanque Wolji, anteriormente llamado Anapji). Los dos objetos individuales que más visitantes vienen a ver son la corona de oro de Cheonmachong (Tesoro Nacional n.º 188, recuperado en 1973 de la «Tumba del Caballo Celestial») y la Campana Sagrada del Gran Rey Seongdeok (Tesoro Nacional n.º 29, fundida en el año 771 d. C., 18,9 toneladas métricas — la campana coreana existente más grande, exhibida al aire libre cerca de la entrada). Los paneles de exhibición en inglés y chino están presentes en todo el recinto. Cerrado los lunes. Abierto de 10:00 a 18:00 entre semana, hasta las 19:00 los sábados.",
             "timeUsed": [
               "Llegada, registro de entradas y sesión informativa de orientación",
@@ -1965,7 +1965,7 @@
               "Exploración de la atracción principal con tiempo para fotografías",
               "Cruce del puente y mirador del reflejo"
             ],
-            "whyOnRoute": "Un cierre corto, de poca caminata y pintoresco para el día. Combina naturalmente con Gyochon, que está a 5 minutos a pie. --- **Notes:** File paths (lines 2–5, 21) and the duration (line 18) are left unchanged, as they are non-translatable technical values. Proper names (*Gyochon*, *Woljeonggyo*, *Silla*, *Namcheon*) are retained in their original form per standard travel-content convention.",
+            "whyOnRoute": "Un cierre corto, de poca caminata y pintoresco para el día. Combina naturalmente con Gyochon, que está a 5 minutos a pie.",
             "_poi_meta": {
               "poi_key": "woljeonggyo_bridge",
               "is_attraction": true,
@@ -2091,7 +2091,7 @@
           {
             "id": "rf_return",
             "name": "Bajada en el metro de Busan",
-            "theme": "Regreso > **Notes:** > - **Line 4** (image file path) and **Line 9** (`TourDayFlowSection`, a code/component name) are left untranslated as they are technical identifiers. > - Proper nouns such as *Ahopsan, Haeundae, Dalmaji, Bulguksa, Gyeongju, Gyochon, Woljeonggyo, Silla, Seomyeon, Haeundae, Busan* are retained as they are place/brand names. > - *ssambap* (Line 16) is kept as-is since it is a specific Korean dish name."
+            "theme": "Regreso"
           }
         ],
         "routePhases": [

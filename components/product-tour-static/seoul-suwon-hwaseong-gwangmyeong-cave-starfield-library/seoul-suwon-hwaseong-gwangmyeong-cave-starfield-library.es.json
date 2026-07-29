@@ -2341,63 +2341,63 @@
     {
       "id": "day_flow",
       "section_html_id": null,
-      "component": "**TourDayFlowSection** → SecciónFlujoDíaDeTour",
+      "component": "TourDayFlowSection",
       "props": {
         "routeFlowStops": [
           {
-            "name": "**Seoul** → Seúl",
+            "name": "Seúl",
             "type": "origin",
-            "theme": "**Departure** → Salida"
+            "theme": "Salida"
           },
           {
-            "name": "**Suwon Hwaseong Fortress** → Fortaleza Hwaseong de Suwon",
+            "name": "Fortaleza Hwaseong de Suwon",
             "type": "primary",
-            "theme": "**UNESCO Fortress** → Fortaleza UNESCO"
+            "theme": "Fortaleza UNESCO"
           },
           {
-            "name": "**Hwaseong Haenggung Palace** → Palacio Haenggung de Hwaseong",
+            "name": "Palacio Haenggung de Hwaseong",
             "type": "primary",
-            "theme": "**Heritage Palace** → Palacio Patrimonial"
+            "theme": "Palacio Patrimonial"
           },
           {
-            "name": "**Suwon Nammun Market** → Mercado Nammun de Suwon",
+            "name": "Mercado Nammun de Suwon",
             "type": "secondary",
-            "theme": "**Market** → Mercado"
+            "theme": "Mercado"
           },
           {
-            "name": "**Starfield Library Suwon** → Biblioteca Starfield Suwon",
+            "name": "Biblioteca Starfield Suwon",
             "type": "secondary",
-            "theme": "**Modern Korea** → Corea Moderna"
+            "theme": "Corea Moderna"
           },
           {
-            "name": "**Gwangmyeong Cave** → Cueva de Gwangmyeong",
+            "name": "Cueva de Gwangmyeong",
             "type": "primary",
-            "theme": "**Cave** → Cueva"
+            "theme": "Cueva"
           },
           {
-            "name": "**Seoul** → Seúl",
+            "name": "Seúl",
             "type": "return",
-            "theme": "**Return** → Regreso"
+            "theme": "Regreso"
           }
         ],
         "routePhases": [
           {
-            "phase": "**Outbound** → Ida",
+            "phase": "Ida",
             "duration": "**≈ 1 hour** → ≈ 1 hora",
             "description": "**Seoul → Suwon city via Gyeongbu Expressway.** → Seúl → Ciudad de Suwon por la Autopista Gyeongbu."
           },
           {
-            "phase": "**Heritage half** → Media jornada patrimonial",
+            "phase": "Media jornada patrimonial",
             "duration": "**≈ 3 hours** → ≈ 3 horas",
             "description": "**Suwon Hwaseong walls, Haenggung palace, and Nammun market — all within walking distance.** → Murallas de Hwaseong de Suwon, palacio Haenggung y mercado Nammun — todo a distancia a pie."
           },
           {
-            "phase": "**Modern hub** → Centro moderno",
+            "phase": "Centro moderno",
             "duration": "**≈ 1 hour** → ≈ 1 hora",
             "description": "**Drive 15 minutes to Starfield Suwon for the library and mall food hall.** → A 15 minutos en coche hasta Starfield Suwon, con biblioteca y patio de comidas del centro comercial."
           },
           {
-            "phase": "**Underground finale** → Final subterráneo",
+            "phase": "Final subterráneo",
             "duration": "≈ 1,5 horas",
             "description": "Conduzca 30 minutos hacia el noroeste hasta la Cueva de Gwangmyeong para visitar el parque temático iluminado con luces LED."
           },

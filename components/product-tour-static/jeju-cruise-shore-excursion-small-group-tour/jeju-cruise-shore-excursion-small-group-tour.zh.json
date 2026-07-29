@@ -1441,7 +1441,7 @@
         {
           "name": "Return to Gangjeong Cruise Terminal (Seogwipo — south)",
           "category": "Cruise Return & All-Aboard",
-          "description": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit (Olle Maeil Market / Cheonjiyeon Falls / downtown Seogwipo area) the drive is short — **~10–15 min via local roads**. From Hallasan 1100 Highland the descent takes ~35 min via Route 1100 (the same highest-altitude national highway you ascended in the morning). Drop-off is timed to deliver guests **at least 60 minutes before your ship's all-aboard time**, matching cruise industry standard buffers. The vehicle pulls into the **53-bus outdoor parking area**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. Inside the terminal: tourist information center (multilingual), convenience store, currency exchange, lounge, tax-refund counter. If guests dock at Gangjeong with same-day evening flights, **Limousine Bus 800 / 800-1** connects from Gangjeong-area to Jeju International Airport via Seogwipo Innovation City (driver must be informed of destination before tap-in). The southern itinerary keeps stops within **30-min radius of the port** — the comfortable 8-hour window is built around this geography. **Note**: Anti-base activists hold daily Catholic mass + 100-bow protests at the main gate (separate from cruise-passenger areas, away from the terminal — cruise guests rarely encounter these activities on the standard arrival/departure path).",
+          "description": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit (Olle Maeil Market / Cheonjiyeon Falls / downtown Seogwipo area) the drive is short — **~10–15 min via local roads**. From Hallasan 1100 Highland the descent takes ~35 min via Route 1100 (the same highest-altitude national highway you ascended in the morning). Drop-off is timed to deliver guests **at least 60 minutes before your ship's all-aboard time**, matching cruise industry standard buffers. The vehicle pulls into the **53-bus outdoor parking area**, guests disembark at the terminal entrance with luggage assistance from the driver/guide. Inside the terminal: tourist information center (multilingual), convenience store, currency exchange, lounge, tax-refund counter. If guests dock at Gangjeong with same-day evening flights, **Limousine Bus 800 / 800-1** connects from Gangjeong-area to Jeju International Airport via Seogwipo Innovation City (driver must be informed of destination before tap-in). The southern itinerary keeps stops within **30-min radius of the port** — the comfortable 8-hour window is built around this geography.",
           "highlights": [
             "**Drop-off 60+ min before all-aboard time** — cruise industry standard",
             "From Olle Market / Cheonjiyeon area: ~10–15 min drive (port-side circuit)",
@@ -1711,7 +1711,7 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "立即 > **Note:** Items 23, 26, and 29 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS class names and have been left untranslated as they are technical identifiers, not display text.",
+      "timing": "立即",
       "title": "即时确认",
       "detail": "含行程摘要的预订确认"
     },
@@ -2799,7 +2799,7 @@
           {
             "timing": "出发前一晚",
             "title": "最终接送信息",
-            "detail": "准确的接送时间及司机联系方式 > **Note:** Items 3, 7, 11, 12, 15, 18, and 21 are code identifiers (CSS class names / component names) and have been kept as-is."
+            "detail": "准确的接送时间及司机联系方式"
           },
           {
             "timing": "游览当天早晨",

@@ -592,7 +592,7 @@
   ],
   "routePhases": [
     {
-      "phase": "南怡島オープナー > **Notes:** File paths (8–10) are kept verbatim. Proper nouns — *Petite France, Nami Island (南怡島), Garden of Morning Calm (朝の静寂の庭), My Love from the Star (星から来たあなた), Saint-Exupéry, Gapyeong (加平), Cheongpyeong (清平)* — are rendered in their established Japanese equivalents or phonetic katakana where no standard kanji form exists.",
+      "phase": "南怡島オープナー",
       "duration": "ストップ 1",
       "description": "午前：南怡島（ナミソム）オープナー"
     },
@@ -1278,43 +1278,43 @@
     {
       "id": "overview",
       "section_html_id": "overview",
-      "component": "**TourAtAGlance** → ツアー概要",
+      "component": "TourAtAGlance",
       "props": {
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "**Duration** → 所要時間",
+            "label": "所要時間",
             "value": "**9–10 hours** → 9〜10時間"
           },
           {
             "icon": "camera",
-            "label": "**Photo Potential** → 撮影スポット",
-            "value": "**Very High** → 非常に高い"
+            "label": "撮影スポット",
+            "value": "非常に高い"
           },
           {
             "icon": "tree-pine",
-            "label": "**Scenery** → 景観",
-            "value": "**Garden & Forest** → 庭園と森"
+            "label": "景観",
+            "value": "庭園と森"
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → 徒歩",
-            "value": "**Moderate** → 普通"
+            "label": "徒歩",
+            "value": "普通"
           },
           {
             "icon": "users",
-            "label": "**Group Style** → グループスタイル",
-            "value": "**Private Only** → プライベート限定"
+            "label": "グループスタイル",
+            "value": "プライベート限定"
           },
           {
             "icon": "ticket",
-            "label": "**Admission Fees** → 入場料",
-            "value": "**Pay Direct** → 現地払い"
+            "label": "入場料",
+            "value": "現地払い"
           },
           {
             "icon": "gauge",
-            "label": "**Pace** → ペース",
-            "value": "**Relaxed Private Pace** → ゆったりプライベートペース"
+            "label": "ペース",
+            "value": "ゆったりプライベートペース"
           }
         ]
       }
@@ -1322,7 +1322,7 @@
     {
       "id": "atmosphere",
       "section_html_id": null,
-      "component": "**TourAtmosphereGallery** → ツアー雰囲気ギャラリー",
+      "component": "TourAtmosphereGallery",
       "props": {
         "galleryItems": [
           {
@@ -1331,8 +1331,8 @@
             "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
             "alt": "**Avenue of tall metasequoia trees lining a straight path on Nami Island** → 南怡島（ナミ島）の一直線の道に沿って立ち並ぶ、高いメタセコイア並木",
             "caption": "**Nami Island metasequoia tree-lined road (Winter Sonata filming setting)** → 南怡島メタセコイア並木道（冬のソナタのロケ地）",
-            "location": "**Nami Island** → 南怡島（ナミ島）",
-            "atmosphere": "**Tree-lined paths and Winter Sonata filming setting** → 並木道と冬のソナタのロケ地"
+            "location": "南怡島（ナミ島）",
+            "atmosphere": "並木道と冬のソナタのロケ地"
           }
         ]
       }
@@ -1744,7 +1744,7 @@
         "routePhases": [
           {
             "label": "朝",
-            "range": "1 **Notes:** - Lines **7–8**: File paths kept unchanged (not translatable). - Line **15**: UI component name kept as-is. - Line **25**: Numeral kept as-is. - \"Little Prince\" → **星の王子さま** (standard Japanese title). - \"Garden of Morning Calm\" → **ガーデン・オブ・モーニングカーム** (established transliteration used in Japanese tourism).",
+            "range": "1",
             "theme": "南怡島オープナー",
             "bgClass": "bg-sky-50/70",
             "textClass": "text-sky-700",

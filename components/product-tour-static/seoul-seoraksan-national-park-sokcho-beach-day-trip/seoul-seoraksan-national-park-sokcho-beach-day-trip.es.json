@@ -1181,8 +1181,8 @@
           ],
           "meta": {
             "duration": "12 horas",
-            "region": "**Seoraksan, Gangwon-do** → Seoraksan, Gangwon-do",
-            "stops": "**5 stops** → 5 paradas",
+            "region": "Seoraksan, Gangwon-do",
+            "stops": "5 paradas",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1197,15 +1197,15 @@
         "subnavItems": [
           {
             "id": "overview",
-            "label": "**Overview** → Descripción general"
+            "label": "Descripción general"
           },
           {
             "id": "itinerary",
-            "label": "**Itinerary** → Itinerario"
+            "label": "Itinerario"
           },
           {
             "id": "details",
-            "label": "**Details** → Detalles"
+            "label": "Detalles"
           },
           {
             "id": "faq",
@@ -1213,7 +1213,7 @@
           },
           {
             "id": "reviews",
-            "label": "**Reviews** → Reseñas"
+            "label": "Reseñas"
           }
         ]
       }
@@ -1226,38 +1226,38 @@
         "glanceItems": [
           {
             "icon": "clock",
-            "label": "**Duration** → Duración",
-            "value": "**12 hours** → 12 horas"
+            "label": "Duración",
+            "value": "12 horas"
           },
           {
             "icon": "camera",
-            "label": "**Photo Value** → Valor fotográfico",
-            "value": "**Very High** → Muy alto"
+            "label": "Valor fotográfico",
+            "value": "Muy alto"
           },
           {
             "icon": "mountain",
-            "label": "**Scenic** → Pintoresco",
-            "value": "**Very High** → Muy alto"
+            "label": "Pintoresco",
+            "value": "Muy alto"
           },
           {
             "icon": "footprints",
-            "label": "**Walking** → Caminata",
-            "value": "**Moderate** → Moderado"
+            "label": "Caminata",
+            "value": "Moderado"
           },
           {
             "icon": "cloud-rain",
-            "label": "**Rain Safety** → Seguridad bajo la lluvia",
-            "value": "**Moderate** → Moderado"
+            "label": "Seguridad bajo la lluvia",
+            "value": "Moderado"
           },
           {
             "icon": "users",
-            "label": "**Family Fit** → Apto para familias",
-            "value": "**Moderate** → Moderado"
+            "label": "Apto para familias",
+            "value": "Moderado"
           },
           {
             "icon": "scale",
-            "label": "**Pace** → Ritmo",
-            "value": "**Balanced** → Equilibrado"
+            "label": "Ritmo",
+            "value": "Equilibrado"
           }
         ]
       }

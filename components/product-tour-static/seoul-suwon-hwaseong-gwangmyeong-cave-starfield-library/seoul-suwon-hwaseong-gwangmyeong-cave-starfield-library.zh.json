@@ -2632,7 +2632,7 @@
     {
       "id": "sticky_booking",
       "section_html_id": null,
-      "component": "**TourStickyBookingBar** → 旅游悬浮预订栏",
+      "component": "TourStickyBookingBar",
       "props": {
         "note": "**checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。**",
         "price": {

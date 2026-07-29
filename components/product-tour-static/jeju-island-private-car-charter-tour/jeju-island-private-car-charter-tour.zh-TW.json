@@ -583,7 +583,7 @@
         "專屬私人車輛（依團體人數提供轎車、SUV或廂型車）",
         "持照英語司機導遊",
         "濟州島全島任一飯店接送服務",
-        "標準路線之油費及過路費",
+        "標準路線之油費、過路費及停車費",
         "所有門票費用均不含在內，須於各景點現場直接支付",
         "餐費不含在內",
         "個人購物費用不含在內",
@@ -666,7 +666,7 @@
       "detail": "附行程摘要的預訂確認"
     },
     {
-      "timing": "出發前12小時 > **Notes:** Items 20, 23, and 26 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are CSS class names and have been left untranslated. Jeju place names follow standard Traditional Chinese travel conventions: 狹才 (Hyeopjae), 咸德 (Hamdeok), 漢拏山 (Hallasan), 城山 (Seongsan).",
+      "timing": "出發前12小時",
       "title": "12小時提醒",
       "detail": "天氣更新及路線調整"
     },
@@ -1816,7 +1816,6 @@
     "currency": "USD",
     "unit": "vehicle",
     "durations": [
-      "4h",
       "5h",
       "6h",
       "7h",
@@ -1830,7 +1829,6 @@
         "paxMin": 1,
         "paxMax": 6,
         "prices": {
-          "4h": 149,
           "5h": 169,
           "6h": 189,
           "7h": 209,
@@ -1844,7 +1842,6 @@
         "paxMin": 7,
         "paxMax": 9,
         "prices": {
-          "4h": 182,
           "5h": 203,
           "6h": 223,
           "7h": 243,
@@ -1858,7 +1855,6 @@
         "paxMin": 10,
         "paxMax": 13,
         "prices": {
-          "4h": 250,
           "5h": 270,
           "6h": 291,
           "7h": 311,

@@ -2632,7 +2632,7 @@
     {
       "id": "sticky_booking",
       "section_html_id": null,
-      "component": "**TourStickyBookingBar** → ツアー固定予約バー",
+      "component": "TourStickyBookingBar",
       "props": {
         "note": "**checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.** → `checkout_tour_id` は Supabase／環境変数から実行時に解決されます。静的 JSONB には含まれません。",
         "price": {
