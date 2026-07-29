@@ -76,7 +76,7 @@ import { tourKindFromPriceType } from '@/lib/tour-room/tourKind';
 import LobbyCard, { firstPickup } from '@/components/tour-mode/LobbyCard';
 import PickupBoard from '@/components/tour-mode/PickupBoard';
 
-import RoomShell from '@/components/tour-mode/RoomShell';
+import RoomShell, { type RoomTab } from '@/components/tour-mode/RoomShell';
 
 import Sheet from '@/components/tour-mode/Sheet';
 import SosButton from '@/components/tour-mode/SosButton';
@@ -645,6 +645,11 @@ function TourRoomLive({
   // Phase 3 — deep link (?message=&reply=1). TourRoomLive is client-only (renders
   // after join), so a lazy read is hydration-safe.
   const [deepLink] = useState(readDeepLink);
+  // SG-1e — mirror of RoomShell's tab (initialTab logic included) so the
+  // banner knows when the guest is actually LOOKING at the home hero.
+  const [activeTab, setActiveTab] = useState<RoomTab>(
+    deepLink.focusMessageId ? 'chat' : viewerRole === 'customer' ? 'home' : 'chat',
+  );
   const replyPrefilledRef = useRef(false);
   useEffect(() => {
     // Nested so it isn't a bare effect-body setState; runs once when the target
@@ -948,6 +953,7 @@ function TourRoomLive({
       theme={theme}
       chatActivityKey={messages.length}
       initialTab={deepLink.focusMessageId ? 'chat' : undefined}
+      onTabChange={setActiveTab}
       homeHref={viewerRole === 'guide' ? '/tour-mode/guide' : viewerRole === 'driver' ? '/tour-mode/driver' : undefined}
       richStops={richStops}
       backHref={
@@ -1002,6 +1008,11 @@ function TourRoomLive({
             roomSession={data.session}
             canSignal={viewerRole === 'customer' && !readOnly}
             viewerRole={viewerRole}
+            heroOwnsCountdown={
+              viewerRole === 'customer' &&
+              activeTab === 'home' &&
+              process.env.NEXT_PUBLIC_TR_NUMERAL_V1 !== '0'
+            }
           />
           {/* §11.D D4 — PRIVATE-tour departure countdown (client-derived). Shows
               only for a private tour with a guest-set departure time; hidden for

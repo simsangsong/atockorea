@@ -707,6 +707,9 @@ export default function HomeTab({
           tourTime={tourTime}
           pickupPoints={pickupPoints}
           busPayload={busPayload}
+          // SG-1d — home mount only; the pickup-sheet and chat-tab mounts
+          // stay numeral-free (SG-D1: one big number per screen).
+          showHeroNumeral={process.env.NEXT_PUBLIC_TR_NUMERAL_V1 !== '0'}
         />
       )}
       {/* I2 — the now card takes the hero slot whenever the resolver has an

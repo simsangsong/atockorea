@@ -153,6 +153,7 @@ export default function LobbyCard({
   pickupPoints,
   busPayload,
   viewerRole,
+  showHeroNumeral = false,
 }: {
   locale: RoomLocale;
   tourDate: string | null;
@@ -162,6 +163,15 @@ export default function LobbyCard({
   busPayload?: unknown;
   /** P1-4 — the chat hint is written to a guest; operators must not see it. */
   viewerRole?: string | null;
+  /**
+   * SG-1d — the D-day numeral, HOME MOUNT ONLY. This card also mounts in
+   * the pickup sheet and the chat tab's lobby slot; a numeral there would
+   * either double the screen's one big number (SG-D1) or leak the redesign
+   * into the chat surface (owner invariant ①). The compact `D-3` form only —
+   * the localized D-day SENTENCES are 13–16 chars and cannot hold one line
+   * at 45.9px on a 320px viewport (measured, v1.2 2차 감사 #13).
+   */
+  showHeroNumeral?: boolean;
 }) {
   const copy = COPY[locale];
   const pickup = firstPickup(pickupPoints);
@@ -169,13 +179,29 @@ export default function LobbyCard({
   const days = tourDate ? kstDaysUntil(tourDate) : null;
   const time = tourTime ? String(tourTime).slice(0, 5) : null;
 
+  const heroNumeral = showHeroNumeral && days !== null && days >= 0;
+
   return (
     <div data-testid="lobby-card" className="tr-card mb-2 px-4 py-4">
+      {heroNumeral && (
+        <p
+          data-testid="lobby-dday-numeral"
+          aria-hidden="true"
+          className="tr-numeral tr-num text-[var(--tr-ink)]"
+        >
+          {`D-${days}`}
+        </p>
+      )}
       <div className="flex items-center justify-between gap-3">
         <p className="tr-title text-[var(--tr-ink)]">{copy.title}</p>
-        {days !== null && (
+        {days !== null && !heroNumeral && (
           <span className="tr-label shrink-0 rounded-full bg-[var(--tr-accent)] px-3 py-1 font-bold text-[var(--tr-bubble-me-ink)]">
             {copy.dday(days)}
+          </span>
+        )}
+        {heroNumeral && (
+          <span className="sr-only" role="status">
+            {copy.dday(days as number)}
           </span>
         )}
       </div>

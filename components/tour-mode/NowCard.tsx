@@ -13,9 +13,18 @@
  * old grid ended up with seven equally loud doors and a status line thinner
  * than any of them.
  *
+ * SG-1b — the four-row grammar (마스터 플랜 v1.2 §D). Each row answers one
+ * question: eyebrow WHAT is happening, numeral HOW LONG, title WHERE, sub
+ * what to DO. The numeral is a NumeralClock target from the resolver — when
+ * the resolver omitted the target (out of band, unknown, cancelled) the row
+ * simply does not exist, and the title keeps the pre-SG format. Everything
+ * rides the kill switch NEXT_PUBLIC_TR_NUMERAL_V1 (SG-D19): '0' restores
+ * the exact pre-SG render, because this ships straight to live guests.
+ *
  * No new tokens (I2 × I4). Tone maps onto the palette roles the app already
  * has, so the ops home can reuse this vocabulary without the two drifting.
  */
+import { useRef } from 'react';
 import {
   IconChevronRight,
   IconPickup,
@@ -24,10 +33,19 @@ import {
   TR_ICON,
   TR_STROKE,
 } from '@/components/tour-mode/icons';
+import NumeralClock, {
+  type NumeralClockFormat,
+  type NumeralClockMode,
+} from '@/components/tour-mode/NumeralClock';
+import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { dayPhase } from '@/lib/tour-room/dayPhase';
 import { NOW_CARD_COPY } from '@/lib/tour-room/nowCardCopy';
+import { PICKUP_GRACE_MS, RALLY_GRACE_MS, formatTargetTime } from '@/lib/tour-room/notices';
 import type { NowCardChip, NowCardResult } from '@/lib/tour-room/nowCard';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+
+/** SG-D19 — kill switch, default ON; '0' restores the pre-numeral card. */
+const NUMERAL_V1_ON = process.env.NEXT_PUBLIC_TR_NUMERAL_V1 !== '0';
 
 export interface NowCardHandlers {
   onCall: (phone: string) => void;
@@ -71,6 +89,18 @@ const TONE_INK: Record<NowCardResult['tone'], string> = {
   base: 'text-[var(--tr-ink)]',
 };
 
+interface NumeralRow {
+  mode: NumeralClockMode;
+  format: NumeralClockFormat;
+  targetMs: number;
+}
+
+/** " · "-joined, skipping the parts we do not actually have. */
+const dotJoin = (...parts: Array<string | null | undefined>): string | null => {
+  const joined = parts.filter(Boolean).join(' · ');
+  return joined || null;
+};
+
 export default function NowCard({
   result,
   locale,
@@ -87,6 +117,7 @@ export default function NowCard({
   nowLabel: string;
 }) {
   const copy = NOW_CARD_COPY[locale];
+  const roomNow = useRoomClock();
 
   const chipLabel = (chip: NowCardChip): string =>
     chip === 'toilet'
@@ -97,16 +128,35 @@ export default function NowCard({
           ? copy.chipMeeting
           : copy.chipNext;
 
+  const fmtTime = (ms: number) => formatTargetTime(ms, locale);
+
   let eyebrow: string | null = null;
   let title = '';
   let sub: string | null = null;
+  let numeral: NumeralRow | null = null;
+  /** What a screen reader hears on state entry — the numeral is aria-hidden. */
+  let srSentence = '';
   let actionLabel: string | null = null;
   let onAction: (() => void) | null = null;
 
   switch (result.state) {
-    case 'rally_overdue':
+    case 'rally_overdue': {
       title = copy.rallyTitle;
-      sub = result.data.meetingPoint ?? copy.rallySub;
+      srSentence = copy.rallyTitle;
+      if (NUMERAL_V1_ON) {
+        eyebrow = copy.rallyEyebrow;
+        if (typeof result.data.rallyTargetMs === 'number') {
+          numeral = { mode: 'up', format: 'clock', targetMs: result.data.rallyTargetMs };
+          sub = dotJoin(
+            result.data.meetingPoint,
+            copy.waitUntil(fmtTime(result.data.rallyTargetMs + RALLY_GRACE_MS)),
+          );
+        } else {
+          sub = result.data.meetingPoint ?? copy.rallySub;
+        }
+      } else {
+        sub = result.data.meetingPoint ?? copy.rallySub;
+      }
       if (result.action?.kind === 'call') {
         const phone = result.action.phone;
         actionLabel = copy.rallyCall;
@@ -116,45 +166,109 @@ export default function NowCard({
         onAction = handlers.onShareLocation;
       }
       break;
-    case 'free_time':
-      title = copy.freeTitle(result.data.minutesLeft ?? 0);
-      sub = result.data.meetingPoint ?? null;
+    }
+    case 'free_time': {
+      srSentence = copy.freeTitle(result.data.minutesLeft ?? 0);
+      if (NUMERAL_V1_ON) {
+        eyebrow = copy.freeEyebrow;
+        title = result.data.meetingPoint
+          ? copy.freeMeetAt(result.data.meetingPoint)
+          : copy.freeTitleNoPoint;
+        if (typeof result.data.freeTimeEndsAtMs === 'number') {
+          numeral = { mode: 'down', format: 'clock', targetMs: result.data.freeTimeEndsAtMs };
+          sub = copy.waitUntil(fmtTime(result.data.freeTimeEndsAtMs + RALLY_GRACE_MS));
+        } else {
+          // No target survived — fall back to the sentence the room shipped with.
+          title = copy.freeTitle(result.data.minutesLeft ?? 0);
+          sub = result.data.meetingPoint ?? null;
+        }
+      } else {
+        title = copy.freeTitle(result.data.minutesLeft ?? 0);
+        sub = result.data.meetingPoint ?? null;
+      }
       actionLabel = copy.freeAction;
       onAction = handlers.onRouteBack;
       break;
-    case 'arrived':
+    }
+    case 'arrived': {
       eyebrow = copy.arrivedEyebrow;
       title = result.data.spotName ?? '';
-      sub =
-        typeof result.data.stayMinutes === 'number' ? copy.arrivedStay(result.data.stayMinutes) : null;
+      srSentence = title;
+      if (NUMERAL_V1_ON && typeof result.data.meetingTargetMs === 'number') {
+        numeral = {
+          mode: 'down',
+          format: 'minutes',
+          targetMs: result.data.meetingTargetMs,
+        };
+        sub = copy.arrivedUntil(fmtTime(result.data.meetingTargetMs));
+      } else {
+        sub =
+          typeof result.data.stayMinutes === 'number'
+            ? copy.arrivedStay(result.data.stayMinutes)
+            : null;
+      }
       actionLabel = copy.arrivedAction;
       onAction = handlers.onListen;
       break;
-    case 'pickup_window':
+    }
+    case 'pickup_window': {
       title = copy.pickupTitle;
+      srSentence = copy.pickupTitle;
       // Whatever we actually know about the vehicle, in the order a guest
       // standing on a kerb would use it: plate last, because that is what they
       // check against the car in front of them.
-      sub =
+      const vehicleLine =
         [result.data.driverName, result.data.vehicleLabel, result.data.plateTail]
           .filter(Boolean)
-          .join(' · ') || result.data.meetingPoint || null;
+          .join(' · ') || null;
+      if (NUMERAL_V1_ON) {
+        eyebrow = copy.pickupEyebrow;
+        if (typeof result.data.meetingTargetMs === 'number') {
+          numeral = { mode: 'down', format: 'minutes', targetMs: result.data.meetingTargetMs };
+          sub = dotJoin(
+            vehicleLine ?? result.data.meetingPoint,
+            // Request-phrased, +10 — pickup has no enforcement capsule (F-4).
+            copy.pickupWaitUntil(fmtTime(result.data.meetingTargetMs + PICKUP_GRACE_MS)),
+          );
+        } else {
+          sub = vehicleLine ?? result.data.meetingPoint ?? null;
+        }
+      } else {
+        sub = vehicleLine ?? result.data.meetingPoint ?? null;
+      }
       actionLabel = copy.pickupAction;
       onAction = handlers.onMeetMeHere;
       break;
+    }
     case 'moving': {
       const hasNext = Boolean(result.data.nextStopName);
       // Last stop of the day: there is no 'next', so 'now' takes the title
       // rather than the card going blank.
       eyebrow = hasNext ? copy.movingEyebrow : nowLabel;
-      title = hasNext
+      const legacyTitle = hasNext
         ? [result.data.nextStopTime, result.data.nextStopName].filter(Boolean).join(' · ')
         : (result.data.currentStopName ?? '');
-      // The card this replaced showed now AND next. Where is next is the more
-      // useful of the two in transit, so it takes the title — but "now" stays,
-      // because a guest who could read both must not read fewer afterwards.
-      sub =
-        hasNext && result.data.currentStopName ? `${nowLabel} · ${result.data.currentStopName}` : null;
+      srSentence = legacyTitle;
+      if (NUMERAL_V1_ON) {
+        if (hasNext && typeof result.data.nextStopTargetMs === 'number') {
+          // The minutes carry the time; the title is just the place.
+          numeral = { mode: 'down', format: 'minutes', targetMs: result.data.nextStopTargetMs };
+          title = result.data.nextStopName ?? '';
+        } else {
+          title = legacyTitle;
+        }
+        sub = dotJoin(
+          result.data.currentStopName ? `${nowLabel} · ${result.data.currentStopName}` : null,
+          // "Nothing to do" is a real state (제로베이스 §D-B question 3).
+          copy.movingReassurance,
+        );
+      } else {
+        title = legacyTitle;
+        sub =
+          hasNext && result.data.currentStopName
+            ? `${nowLabel} · ${result.data.currentStopName}`
+            : null;
+      }
       actionLabel = copy.movingAction;
       onAction = handlers.onOpenMap;
       break;
@@ -188,7 +302,37 @@ export default function NowCard({
         ? IconQuickReply
         : IconTabMap;
 
-  return (
+  /**
+   * SG-D18 — the announcer. It lives OUTSIDE the <section> because the card
+   * is aria-atomic: an inner update would re-read the whole card. Text
+   * changes on state ENTRY (the numeral moved the minutes out of the spoken
+   * title — without this a screen-reader guest hears LESS than before) and
+   * at the free-time milestones the vibrate ladder also uses (T-10/5/1).
+   */
+  const minutesLeft = result.data.minutesLeft ?? null;
+  const srBucket =
+    result.state === 'free_time' && minutesLeft !== null
+      ? minutesLeft > 10
+        ? 'entry'
+        : minutesLeft > 5
+          ? 'm10'
+          : minutesLeft > 1
+            ? 'm5'
+            : 'm1'
+      : 'entry';
+  const srRef = useRef<{ state: string; bucket: string; text: string } | null>(null);
+  if (!srRef.current || srRef.current.state !== result.state || srRef.current.bucket !== srBucket) {
+    srRef.current = {
+      state: result.state,
+      bucket: srBucket,
+      text:
+        result.state === 'free_time' && srBucket !== 'entry'
+          ? copy.freeTitle(minutesLeft ?? 0)
+          : srSentence,
+    };
+  }
+
+  const card = (
     <section
       /**
        * I3 / U-D26 — `key` on the state, so React REMOUNTS when the moment
@@ -209,6 +353,7 @@ export default function NowCard({
        * A guest using a screen reader gets the change announced, and urgency
        * decides how rudely: `assertive` interrupts, which is right when the
        * group is already waiting and wrong for "next stop in 20 minutes".
+       * The ticking numeral is aria-hidden and therefore exempt.
        */
       aria-live={result.tone === 'danger' ? 'assertive' : 'polite'}
       aria-atomic="true"
@@ -217,6 +362,17 @@ export default function NowCard({
         <p className="tr-meta text-cjk-safe font-semibold uppercase tracking-[0.08em] text-[var(--tr-ink-3)]">
           {eyebrow}
         </p>
+      )}
+      {numeral && (
+        <NumeralClock
+          mode={numeral.mode}
+          format={numeral.format}
+          targetMs={numeral.targetMs}
+          unitLabel={numeral.format === 'minutes' ? copy.minuteUnitLabel : undefined}
+          initialNowMs={roomNow()}
+          nowMs={roomNow}
+          testId="home-now-numeral"
+        />
       )}
       <p className={`tr-title text-cjk-body mt-0.5 font-semibold leading-snug ${TONE_INK[result.tone]}`}>
         {title}
@@ -252,5 +408,22 @@ export default function NowCard({
         </div>
       )}
     </section>
+  );
+
+  if (!NUMERAL_V1_ON) return card;
+
+  return (
+    <>
+      <span
+        className="sr-only"
+        role="status"
+        aria-live={result.tone === 'danger' ? 'assertive' : 'polite'}
+        aria-atomic="true"
+        data-testid="home-now-sr"
+      >
+        {srRef.current.text}
+      </span>
+      {card}
+    </>
   );
 }

@@ -200,6 +200,7 @@ export default function NoticeBanner({
   roomSession,
   canSignal = false,
   viewerRole = 'customer',
+  heroOwnsCountdown = false,
 }: {
   messages: RoomMessage[];
   tourDate: string | null | undefined;
@@ -210,6 +211,13 @@ export default function NoticeBanner({
   canSignal?: boolean;
   /** M-D2 — staff open the gather pin in Kakao (car route), guests in Google. */
   viewerRole?: string;
+  /**
+   * SG-1e — true while the viewer is a guest LOOKING at the home tab, where
+   * the hero's numeral may already be this notice's clock. The banner still
+   * decides per-notice whether to yield; the parent only says where the
+   * guest is looking.
+   */
+  heroOwnsCountdown?: boolean;
 }) {
   // SG-0c — the room's corrected clock; device clock only outside a provider.
   const roomNow = useRoomClock();
@@ -226,6 +234,25 @@ export default function NoticeBanner({
   const copy = COPY[locale];
   const stage = rallyStage(notice, nowMs);
   const mode = noticeBannerMode(notice);
+
+  /**
+   * SG-1e — one target, one clock on screen. The capsule yields ONLY when
+   * the home hero's numeral reads this very notice: a running free-time
+   * countdown, or a meeting rally from overdue on (the hero enters rally at
+   * T+5 — SG-2d keeps 'due' quiet on purpose). In every other combination
+   * the capsule stays, because there the banner IS the only rally clock —
+   * suppressing it under a moving/arrived hero was v1.2's over-suppression
+   * finding (2차 감사 #6). Kill switch: the parent passes false when
+   * NEXT_PUBLIC_TR_NUMERAL_V1 is off, restoring today's banner everywhere.
+   */
+  const heroReadsThisClock =
+    !!notice &&
+    !notice.cancelled &&
+    notice.targetMs !== null &&
+    (notice.kind === 'free_time_timer'
+      ? notice.remainingMs !== null && notice.remainingMs > 0
+      : stage === 'overdue' || stage === 'contact');
+  const suppressCountdown = heroOwnsCountdown && heroReadsThisClock;
 
   // A1.2 — adaptive tick. The banner is 'hidden' for most of the tour day, so
   // ticking every second while drawing nothing was pure battery/render waste
@@ -362,7 +389,7 @@ export default function NoticeBanner({
           </p>
         )}
       </div>
-      {mode === 'countdown' && notice.remainingMs !== null && (
+      {mode === 'countdown' && notice.remainingMs !== null && !suppressCountdown && (
         <span
           data-testid="notice-countdown"
           /* text-cjk-safe + a width cap so a long localized marker can never
