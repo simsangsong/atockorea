@@ -23,11 +23,24 @@ export function useSpotGeofence(options: {
   spots: WatchableSpot[];
   locale: string;
   enabled: boolean;
+  /**
+   * X15 — fired locally when the geofence trips, in addition to the POST.
+   *
+   * The guest side has no use for this (the arrival card arrives over the
+   * realtime channel like everything else), but the STAFF device is the one
+   * that has to act: it needs to offer the driver the arrival sheet for the
+   * stop they just parked at. Optional, so the guest call site is unchanged.
+   */
+  onArrival?: (arrival: { spotId: string; distanceM: number }) => void;
 }): { onSample: (sample: GeoSample) => void } {
-  const { bookingId, roomSession, spots, locale, enabled } = options;
+  const { bookingId, roomSession, spots, locale, enabled, onArrival } = options;
   const stateRef = useRef<SpotWatchState>(INITIAL_SPOT_WATCH_STATE);
   const spotsRef = useRef(spots);
   spotsRef.current = spots;
+  // Kept in a ref so a changing callback identity cannot reset the geofence
+  // state machine mid-approach.
+  const onArrivalRef = useRef(onArrival);
+  onArrivalRef.current = onArrival;
 
   const onSample = useCallback(
     (sample: GeoSample) => {
@@ -35,6 +48,11 @@ export function useSpotGeofence(options: {
       const { state, arrival } = stepSpotWatch(stateRef.current, sample, spotsRef.current);
       stateRef.current = state;
       if (!arrival) return;
+      // Local first: the prompt must appear even if the POST is refused or the
+      // device is offline. The two are independent by design — a driver
+      // standing at the stop should not be told "no arrival" because a request
+      // failed.
+      onArrivalRef.current?.(arrival);
       void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/spot-events`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
