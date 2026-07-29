@@ -303,22 +303,48 @@ async function guestPass(bookingId: string, token: string, label: string, locale
     expect: [403, 400, 409],
   });
 
-  // 읽기 표면들
+  /**
+   * 읽기 표면들 — 진짜 GET 인 것만 남긴다.
+   *
+   * 🔴 여기 있던 다섯(모닝브리핑·다이닝·approach·spot-events·captions)은
+   * **POST 전용 라우트**인데 GET 으로 불리고 있었다. 405/404 가 돌아왔고
+   * `expect` 에 404 가 들어 있어서 **전부 초록으로 통과**했다 —
+   * 이 파일 머리의 계약 주석에 "POST 전용"이라고 적혀 있는데도 그랬다.
+   * 주석은 아무도 멈추지 않는다. 아래 postOnly 로 옮겨서 진짜로 친다.
+   */
   const reads: Array<[string, string]> = [
     ['투어 일정', `/api/tour-rooms/${bookingId}/tour-itinerary`],
     ['오늘 요약', `/api/tour-rooms/${bookingId}/day-summary`],
-    ['모닝 브리핑', `/api/tour-rooms/${bookingId}/morning-briefing`],
-    ['식당(다이닝)', `/api/tour-rooms/${bookingId}/dining`],
     ['식이 제한', `/api/tour-rooms/${bookingId}/dietary`],
     ['차량 ETA', `/api/tour-rooms/${bookingId}/vehicle-eta`],
-    ['접근(approach)', `/api/tour-rooms/${bookingId}/approach`],
     ['이벤트 로그', `/api/tour-rooms/${bookingId}/events`],
     ['정산 원장', `/api/tour-rooms/${bookingId}/extras`],
-    ['스팟 이벤트(타임라인)', `/api/tour-rooms/${bookingId}/spot-events`],
-    ['자막(captions)', `/api/tour-rooms/${bookingId}/captions`],
   ];
   for (const [name, p] of reads) {
-    await call(`${label} ${name}`, p, { headers: H, expect: [200, 204, 400, 403, 404], note: true });
+    // 🔴 404 를 기대에서 뺐다. GET 라우트가 404 를 주면 그건 통과가 아니라
+    // 라우트가 사라졌다는 뜻이다.
+    await call(`${label} ${name}`, p, { headers: H, expect: [200, 204, 400, 403], note: true });
+  }
+
+  /**
+   * POST 전용 표면 — 메서드와 바디를 실제 계약대로.
+   * 405 를 기대에 넣지 않는다. 405 가 나오면 그건 이 목록이 또 틀렸다는 뜻이다.
+   */
+  const postOnly: Array<[string, string, Record<string, unknown>]> = [
+    ['모닝 브리핑', `/api/tour-rooms/${bookingId}/morning-briefing`, { locale }],
+    ['식당(다이닝)', `/api/tour-rooms/${bookingId}/dining`, { locale }],
+    ['접근(approach)', `/api/tour-rooms/${bookingId}/approach`, { locale }],
+    ['스팟 이벤트(타임라인)', `/api/tour-rooms/${bookingId}/spot-events`, { locale }],
+    ['자막(captions)', `/api/tour-rooms/${bookingId}/captions`, { locale }],
+  ];
+  for (const [name, p, body] of postOnly) {
+    await call(`${label} ${name} (POST)`, p, {
+      method: 'POST',
+      headers: H,
+      body,
+      expect: [200, 201, 204, 400, 403, 429],
+      note: true,
+    });
   }
 
   // AI 컨시어지 — Tier0(무네트워크 칩은 클라이언트) / Tier1~2 서버
@@ -500,12 +526,29 @@ async function guidePass(bookingId: string) {
     note: true,
   });
 
-  await call('가이드 연장(extend)', `/api/tour-rooms/${bookingId}/extend`, {
+  /**
+   * 🔴 이 호출은 `{ minutes: 30 }` 을 보내고 있었다. 라우트는 `{ hours: 1..8 }`
+   * 만 읽으므로 **매번 400 `hours must be a whole number 1..8`** 이었고,
+   * `expect` 에 400 이 있어서 초록으로 통과했다. 즉 이 앱에서 **돈이 오가는
+   * 유일한 경로**(현금 시간연장 청구를 원장에 기록한다)를 한 번도 실제로
+   * 친 적이 없다.
+   *
+   * 400 을 기대에서 뺀다. 이 경로는 이제 성공하거나(200/201),
+   * 전세 상품이 아니라서 거절되거나(403 private_only), 실패로 보고된다.
+   */
+  await call('가이드 연장(extend, hours=1)', `/api/tour-rooms/${bookingId}/extend`, {
     method: 'POST',
     headers: H,
-    body: { minutes: 30 },
-    expect: [200, 201, 400, 403],
+    body: { hours: 1 },
+    expect: [200, 201, 403, 409],
     note: true,
+  });
+  // 계약 자체도 한 번 친다 — 범위 밖 값은 반드시 400 이어야 한다.
+  await call('가이드 연장 검증(hours=0 → 400)', `/api/tour-rooms/${bookingId}/extend`, {
+    method: 'POST',
+    headers: H,
+    body: { hours: 0 },
+    expect: 400,
   });
 
   return session;
