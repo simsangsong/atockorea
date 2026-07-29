@@ -123,13 +123,60 @@ async function main() {
       await service.auth.admin.deleteUser(fixtures.adminUserId).catch(() => undefined);
     }
 
-    // 3. Prove it. A cleanup that reports success while leaving orphans behind
-    //    is exactly the failure this rewrite exists to end.
+    /**
+     * 3. Prove it. A cleanup that reports success while leaving orphans behind
+     *    is exactly the failure this rewrite exists to end.
+     *
+     * 🔴 The booking count alone was not proof, and said so for months:
+     * `leftover: 0` was true of rows while 14 storage objects sat under rooms
+     * that no longer existed. The drain gate now asserts four things, and a
+     * non-zero on any of them exits 1 — K4v2 Phase 0 depends on this being a
+     * gate rather than a log line.
+     */
     const { count: leftover } = await service
       .from('bookings')
       .select('id', { count: 'exact', head: true })
       .eq('sim_tag', SIM_TAG);
-    console.log('sim cleanup done:', ids.length, 'bookings removed, leftover:', leftover ?? 0);
+
+    const referenced = new Set<string>();
+    for (const [bucket, prefixes] of [
+      ['tour-room-photos', ['att', 'vision']],
+      ['tour-audio', ['tour-room-tts']],
+    ] as const) {
+      for (const prefix of prefixes) {
+        const { data } = await service.storage.from(bucket).list(prefix, { limit: 1000 });
+        for (const entry of data ?? []) if (entry.name) referenced.add(entry.name);
+      }
+    }
+    let orphanMedia = 0;
+    if (referenced.size > 0) {
+      const { data: liveRooms } = await service
+        .from('tour_rooms')
+        .select('id')
+        .in('id', [...referenced]);
+      const live = new Set((liveRooms ?? []).map((r) => String(r.id)));
+      orphanMedia = [...referenced].filter((id) => !live.has(id)).length;
+    }
+
+    const { count: orphanRooms } = await service
+      .from('tour_rooms')
+      .select('id', { count: 'exact', head: true })
+      .is('booking_id', null);
+
+    console.log(
+      'sim cleanup done:',
+      ids.length,
+      'bookings removed · leftover bookings:',
+      leftover ?? 0,
+      '· orphan rooms:',
+      orphanRooms ?? 0,
+      '· orphan media rooms:',
+      orphanMedia,
+    );
+    if ((leftover ?? 0) > 0 || (orphanRooms ?? 0) > 0 || orphanMedia > 0) {
+      console.error('🔴 drain gate FAILED — the simulation did not fully drain.');
+      process.exitCode = 1;
+    }
     if (existsSync(OUT)) {
       try {
         unlinkSync(OUT);
