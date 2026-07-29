@@ -34,6 +34,28 @@ export const TYPE = {                 // px on the 1080-wide canvas — gate flo
   watermark: 23,                      // protection line — exempt from the floor
 };
 
+export const WIDE = { w: 1920, h: 1080 };
+
+/**
+ * 16:9 type scale. Not the vertical's numbers scaled down — the wide cut is
+ * watched on a laptop or a TV at a greater distance, so the presbyopia floor
+ * is set against apparent size, and the footage is full-bleed rather than
+ * banded, which means every string sits ON the picture and needs its own
+ * scrim rather than a dark margin to live in.
+ */
+export const TYPE_WIDE = {
+  kicker: 30,
+  chip: 36,
+  title: 76,
+  titleHero: 92,
+  sub: 42,
+  caption: 46,
+  captionLineHeight: 1.34,
+  captionMaxLines: 2,
+  titleMaxLines: 2,
+  watermark: 22,
+};
+
 const esc = (s) => String(s ?? '').replace(/[&<>]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
 
 /**
@@ -118,6 +140,102 @@ window.__measure = () => {
     bottomOverflow: bottom ? Math.max(0, bottom.scrollHeight - bottom.clientHeight) : 0,
     titleLines: lines(title, ${titlePx} * 1.14),
     captionLines: lines(caption, ${TYPE.caption} * ${TYPE.captionLineHeight}),
+  };
+};
+window.__seek(0);
+</script></body></html>`;
+}
+
+/**
+ * The 16:9 shell — same information, different room.
+ *
+ * The vertical has margins to put text in; the wide does not, so the layout is
+ * a corner block (who/where you are) and a lower third (what this is and why),
+ * both over gradient scrims rather than over bare footage. Cold open, promise
+ * and recap centre instead, because they are cards rather than labels.
+ *
+ * The clean master is never dressed in place — this shell is composited into a
+ * separate `-wide.mp4`, so the vertical can go on lifting an untouched band.
+ */
+export function buildWideScene(o) {
+  const T = TYPE_WIDE;
+  const hero = o.role === 'title' || o.role === 'promise' || o.role === 'recap';
+  const titlePx = o.role === 'title' ? T.titleHero : T.title;
+
+  return `<!doctype html>
+<html lang="en"><head><meta charset="utf-8"/><style>
+* { margin:0; padding:0; box-sizing:border-box; }
+html,body { width:${WIDE.w}px; height:${WIDE.h}px; overflow:hidden; background:transparent; }
+body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#fff; }
+.scrim-b { position:absolute; left:0; right:0; bottom:0; height:520px;
+  background:linear-gradient(to top, rgba(6,14,26,.86) 0%, rgba(6,14,26,.42) 44%, transparent 100%); }
+.scrim-t { position:absolute; inset:0;
+  background:radial-gradient(ellipse 1180px 520px at 0% 0%, rgba(6,14,26,.66), transparent 68%); }
+.scrim-hero { position:absolute; inset:0; background:rgba(6,14,26,.46); }
+.corner { position:absolute; left:72px; top:56px; height:132px;
+  display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.kicker { font-size:${T.kicker}px; font-weight:700; letter-spacing:.3em;
+  text-shadow:0 2px 14px rgba(0,0,0,.6); }
+.chip { display:inline-block; padding:9px 26px; border-radius:999px;
+  background:rgba(13,95,116,.92); font-size:${T.chip}px; font-weight:700; letter-spacing:.1em;
+  box-shadow:0 4px 16px rgba(0,0,0,.4); }
+.lower { position:absolute; left:72px; right:480px; bottom:72px; height:400px;
+  display:flex; flex-direction:column; justify-content:flex-end; gap:16px; }
+.hero { position:absolute; inset:0; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center; gap:22px; padding:0 160px; }
+.title { font-size:${titlePx}px; line-height:1.12; font-weight:700; letter-spacing:-.01em;
+  font-family:Georgia,'Malgun Gothic',serif; text-shadow:0 4px 22px rgba(0,0,0,.62); }
+.sub { font-size:${T.sub}px; opacity:.95; text-shadow:0 2px 14px rgba(0,0,0,.6); }
+.caption { font-size:${T.caption}px; line-height:${T.captionLineHeight}; font-weight:600;
+  text-shadow:0 2px 16px rgba(0,0,0,.66); }
+.prints { display:flex; gap:22px; justify-content:center; }
+.prints img { width:186px; box-shadow:0 10px 26px rgba(0,0,0,.5); border-radius:3px; }
+.prints img:nth-child(odd) { transform:rotate(-2.6deg); }
+.prints img:nth-child(even) { transform:rotate(2.2deg) translateY(9px); }
+.watermark { position:absolute; top:1026px; width:100%; text-align:center;
+  font-size:${T.watermark}px; font-weight:500; color:rgba(255,255,255,.74);
+  text-shadow:0 1px 8px rgba(0,0,0,.7); }
+</style></head><body>
+${hero ? '<div class="scrim-hero"></div>' : '<div class="scrim-t"></div><div class="scrim-b"></div>'}
+${hero ? `
+<div class="hero">
+  ${o.kicker ? `<div class="kicker">${esc(o.kicker)}</div>` : ''}
+  ${o.prints?.length ? `<div class="prints">${o.prints.map((p) => `<img src="${p}"/>`).join('')}</div>` : ''}
+  ${o.chip ? `<div class="chip">${esc(o.chip)}</div>` : ''}
+  ${o.title ? `<div class="title">${esc(o.title)}</div>` : ''}
+  ${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}
+  ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
+</div>` : `
+<div class="corner">
+  ${o.kicker ? `<div class="kicker">${esc(o.kicker)}</div>` : ''}
+  ${o.point ? `<div class="chip">POINT ${o.point.n} / ${o.point.of}</div>` : ''}
+  ${o.chip ? `<div class="chip">${esc(o.chip)}</div>` : ''}
+</div>
+<div class="lower">
+  ${o.title ? `<div class="title">${esc(o.title)}</div>` : ''}
+  ${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}
+  ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
+</div>`}
+<div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
+<script>
+const anims = [];
+const an = (el, delay) => { if (!el) return;
+  const a = el.animate(
+    [{ transform:'translateY(22px)', opacity:0 }, { transform:'translateY(0)', opacity:1 }],
+    { fill:'both', easing:'cubic-bezier(0.22,1,0.36,1)', delay, duration:780 });
+  a.pause(); anims.push(a); };
+let i = 0;
+for (const sel of ['.scrim-t','.scrim-b','.scrim-hero','.kicker','.chip','.prints','.title','.sub','.caption'])
+  document.querySelectorAll(sel).forEach((el) => an(el, 180 + (i++) * 130));
+window.__seek = (t) => anims.forEach((a) => { a.currentTime = t; });
+window.__measure = () => {
+  const lines = (el, lh) => el ? Math.round(el.scrollHeight / lh) : 0;
+  const over = (el) => el ? Math.max(0, el.scrollHeight - el.clientHeight) : 0;
+  return {
+    topOverflow: over(document.querySelector('.corner')) + over(document.querySelector('.hero')),
+    bottomOverflow: over(document.querySelector('.lower')),
+    titleLines: lines(document.querySelector('.title'), ${titlePx} * 1.12),
+    captionLines: lines(document.querySelector('.caption'), ${T.caption} * ${T.captionLineHeight}),
   };
 };
 window.__seek(0);

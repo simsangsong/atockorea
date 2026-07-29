@@ -28,7 +28,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { chromium } from 'playwright';
-import { buildScene, CANVAS, BAND, TYPE } from './scene.mjs';
+import { buildScene, buildWideScene, CANVAS, BAND, TYPE, WIDE, TYPE_WIDE } from './scene.mjs';
 import { measuredTimeline, stopsOf, promiseLineOf, transitLabel, roleOf } from './lib/timeline.mjs';
 import { BLUR_FILL } from './lib/grade.mjs';
 import { sharp } from './lib/overlay.mjs';
@@ -37,15 +37,25 @@ const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
 if (!specPath) { console.error('usage: vfull.mjs <spec.json> [--force]'); process.exit(1); }
 const FORCE = argv.includes('--force');
+// `--wide` dresses the same beats for 16:9. Both orientations share this loop,
+// the cache, and every gate — only the canvas, the shell and the composition
+// differ, so a fix to one can never quietly miss the other.
+const WIDE_MODE = argv.includes('--wide');
 const spec = JSON.parse(fs.readFileSync(specPath, 'utf8'));
 
 const ROOT = process.cwd();
 const MASTER = path.join(ROOT, 'out', 'video-guide', `${spec.slug}.mp4`);
 if (!fs.existsSync(MASTER)) { console.error(`먼저 와이드 마스터를 렌더해야 한다: ${MASTER}`); process.exit(1); }
-const WORK = path.join(ROOT, '.cache', 'video-guide', `${spec.slug}-vfull`);
+const WORK = path.join(ROOT, '.cache', 'video-guide', `${spec.slug}-${WIDE_MODE ? 'wfull' : 'vfull'}`);
 const POLAROIDS = path.join(ROOT, '.cache', 'video-guide', spec.slug);
-const OUT = path.join(ROOT, 'out', 'video-guide', `${spec.slug}-vertical.mp4`);
+const OUT = path.join(ROOT, 'out', 'video-guide', `${spec.slug}-${WIDE_MODE ? 'wide' : 'vertical'}.mp4`);
 fs.mkdirSync(WORK, { recursive: true });
+
+const FRAME = WIDE_MODE ? WIDE : CANVAS;
+const TYPESET = WIDE_MODE ? TYPE_WIDE : TYPE;
+const sceneOf = WIDE_MODE ? buildWideScene : buildScene;
+// the watermark row — the strip the shell-presence probe reads
+const MARK = WIDE_MODE ? { y: 1026, h: 36 } : { y: 1846, h: 44 };
 
 const FPS = 30;
 const ENTRANCE = 2.0;            // entrance anims settle by ~1.8s (220+5·150+820ms)
@@ -120,7 +130,7 @@ const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manife
 const hashOf = (o) => crypto.createHash('sha1').update(JSON.stringify(o)).digest('hex').slice(0, 12);
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: CANVAS.w, height: CANVAS.h } });
+const page = await browser.newPage({ viewport: { width: FRAME.w, height: FRAME.h } });
 
 const segs = [];
 for (const row of tl.rows) {
@@ -129,11 +139,13 @@ for (const row of tl.rows) {
   const seg = path.join(WORK, `v_${beat.id}.mp4`);
   // `v` covers everything the cache key cannot see — bump it whenever the
   // composition filter changes, or half the guide keeps the old look.
-  const h = hashOf({ props, start: row.start, dur: row.dur, TYPE, v: 6 });
+  // `scene` is bumped per orientation so a CSS change re-renders only that cut.
+  const h = hashOf({ props, start: row.start, dur: row.dur, TYPESET,
+    scene: WIDE_MODE ? 'w2' : 'v1', v: 6 });
   segs.push(seg);
   if (!FORCE && manifest[beat.id] === h && fs.existsSync(seg)) { console.log(`  ${beat.id}  cached`); continue; }
 
-  const html = buildScene({ ...props, durationMs: row.dur * 1000 });
+  const html = sceneOf({ ...props, durationMs: row.dur * 1000 });
   const htmlFile = path.join(WORK, `s_${beat.id}.html`);
   fs.writeFileSync(htmlFile, html);
   await page.goto(fileUri(htmlFile));
@@ -146,8 +158,8 @@ for (const row of tl.rows) {
   const bust = [];
   if (m.topOverflow > 0) bust.push(`상단 존 넘침 ${m.topOverflow}px`);
   if (m.bottomOverflow > 0) bust.push(`하단 존 넘침 ${m.bottomOverflow}px`);
-  if (m.titleLines > TYPE.titleMaxLines) bust.push(`타이틀 ${m.titleLines}줄`);
-  if (m.captionLines > TYPE.captionMaxLines) bust.push(`캡션 ${m.captionLines}줄`);
+  if (m.titleLines > TYPESET.titleMaxLines) bust.push(`타이틀 ${m.titleLines}줄`);
+  if (m.captionLines > TYPESET.captionMaxLines) bust.push(`캡션 ${m.captionLines}줄`);
   if (bust.length) { console.error(`FAIL ${beat.id} (${props.role}): ${bust.join(' · ')}`); process.exit(1); }
 
   // The shell is ONE image sequence: the entrance frames where a role has an
@@ -178,9 +190,12 @@ for (const row of tl.rows) {
   // the instant the sequence runs out), and `-loop 1` on the input deadlocks.
   const inputs = ['-ss', String(row.start), '-t', String(row.dur), '-i', MASTER,
     '-framerate', String(FPS), '-i', path.join(framesDir, 'f_%04d.png')];
-  const filter =
-    `[0:v]${BLUR_FILL(CANVAS.w, CANVAS.h)}[bg];`
-    + `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}[base];`
+  // Vertical builds a room for the footage; wide IS the footage, full bleed.
+  const base = WIDE_MODE
+    ? `[0:v]scale=${WIDE.w}:${WIDE.h}[base];`
+    : `[0:v]${BLUR_FILL(CANVAS.w, CANVAS.h)}[bg];`
+      + `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}[base];`;
+  const filter = base
     + `[1:v]tpad=stop_mode=clone:stop_duration=${row.dur}[shell];`
     + `[base][shell]overlay=0:0:format=auto,fps=${FPS},format=yuv420p[v]`;
 
@@ -225,7 +240,8 @@ if (Math.abs(outDur - masterDur) > 1.2) {
   for (const at of [probeAt[0], probeAt[Math.floor(probeAt.length / 2)], probeAt[probeAt.length - 1]]) {
     if (at === undefined || at > outDur - 0.3) continue;
     const probe = path.join(WORK, 'shellcheck.png');
-    run(['-ss', String(at), '-i', OUT, '-frames:v', '1', '-vf', 'crop=1080:44:0:1846', probe], 'shell probe');
+    run(['-ss', String(at), '-i', OUT, '-frames:v', '1',
+      '-vf', `crop=${FRAME.w}:${MARK.h}:0:${MARK.y}`, probe], 'shell probe');
     const { data } = await sharp(probe).greyscale().raw().toBuffer({ resolveWithObject: true });
     let sum = 0, sum2 = 0;
     for (const v of data) { sum += v; sum2 += v * v; }
