@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 80개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **80/80 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 82개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **82/82 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG-0 신규 2). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -111,6 +111,8 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `SosButton.tsx` | A1.6 | P1 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourModeComingSoon.tsx` | A1.6 | ✅ |
 | `NowCard.tsx` | A1.6 | ✅ (I2에서 신설 — 홈 히어로. 상태·톤은 리졸버가, 문구는 `nowCardCopy` 10로케일이 갖는다) |
+| `NumeralClock.tsx` | SG-0b | ✅ (SG-0b에서 신설 — 유일한 틱 시계. 적응 틱·visible 한정·SSR 결정론·aria-hidden, `numeralClock.test.tsx`) |
+| `roomClock.tsx` | SG-0c | ✅ (SG-0c에서 신설 — 스냅샷 server_now_ms 1회 앵커 오프셋 컨텍스트, `roomClock.test.tsx`) |
 | `TourModeEntry.tsx` | A1.6 | P2 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourRoomClient.tsx` | A1.6 | ✅ (lint은 A4.5) → `A1-6-entry-shell-misc.md` |
 | `TravelTimeline.tsx` | A1.6 | ✅ |

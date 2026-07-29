@@ -28,6 +28,7 @@ import { baseHoursForCity, overtimeAmount, parseHm, rateForCity } from '@/lib/to
 import { formatKrw } from '@/lib/tour-room/ledger';
 import { formatTargetTime } from '@/lib/tour-room/notices';
 import { kstStartOfDayMs, kstToday } from '@/lib/tour-room/time';
+import { useRoomClock } from '@/components/tour-mode/roomClock';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 interface DepartureCountdownProps {
@@ -310,7 +311,9 @@ export default function DepartureCountdown({
     return total;
   }, [messages]);
 
-  const [now, setNow] = useState(() => Date.now());
+  // SG-0c — the room's corrected clock; device clock only outside a provider.
+  const roomNow = useRoomClock();
+  const [now, setNow] = useState(() => roomNow());
   const [sheetOpen, setSheetOpen] = useState(false);
   const [submitting, setSubmitting] = useState<number | null>(null);
   // Money asks first — see the note at addTime. Labels follow the room locale
@@ -323,7 +326,7 @@ export default function DepartureCountdown({
   // Calm, no-drift ticking: recompute every 30s and whenever the tab regains
   // focus (the value is fully derived from `now`, so a resync is free).
   useEffect(() => {
-    const tick = () => setNow(Date.now());
+    const tick = () => setNow(roomNow());
     const id = setInterval(tick, 30_000);
     const onVisible = () => {
       if (document.visibilityState === 'visible') tick();
@@ -333,7 +336,7 @@ export default function DepartureCountdown({
       clearInterval(id);
       document.removeEventListener('visibilitychange', onVisible);
     };
-  }, []);
+  }, [roomNow]);
 
   const startMinutes = parseHm(departureTime);
   if (startMinutes === null || !tourDate) return null;

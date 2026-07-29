@@ -109,6 +109,13 @@ export async function getRoomTranslationTargets(
 export interface RoomSnapshot {
   room: TourRoom;
   lifecycle: RoomLifecycle;
+  /**
+   * SG-0c — the server's clock at build time. Injected HERE rather than in
+   * any one route because every snapshot consumer (join cold-start, the
+   * snapshot GET, the cockpit's own fetch) must carry it; the client derives
+   * one offset from it and every room countdown reads that corrected clock.
+   */
+  server_now_ms: number;
   booking: {
     id: string;
     booking_reference: string | null;
@@ -335,6 +342,7 @@ export async function buildRoomSnapshot(
   return {
     room,
     lifecycle: roomLifecycle(booking.tour_date),
+    server_now_ms: Date.now(),
     booking: bookingRow
       ? {
           id: bookingRow.id,

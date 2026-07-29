@@ -15,6 +15,7 @@ import { kakaoWebRouteUrl } from '@/lib/tour-room/nav-links';
 import { IconFreeTime, IconMeeting, TR_ICON } from '@/components/tour-mode/icons';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { speakWithDevice } from '@/lib/tour-room/tts';
+import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -210,7 +211,9 @@ export default function NoticeBanner({
   /** M-D2 — staff open the gather pin in Kakao (car route), guests in Google. */
   viewerRole?: string;
 }) {
-  const [nowMs, setNowMs] = useState(() => Date.now());
+  // SG-0c — the room's corrected clock; device clock only outside a provider.
+  const roomNow = useRoomClock();
+  const [nowMs, setNowMs] = useState(() => roomNow());
   const { settings } = useTourRoomSettings();
   const warnedRef = useRef<{ id: string | null; warned10: boolean; warned5: boolean }>({
     id: null,
@@ -230,7 +233,7 @@ export default function NoticeBanner({
   // detect the time-based transitions, so tick coarsely when hidden/quiet and
   // only at 1s during the live seconds-countdown; resync on tab return.
   useEffect(() => {
-    const tick = () => setNowMs(Date.now());
+    const tick = () => setNowMs(roomNow());
     const period = mode === 'countdown' ? 1_000 : mode === 'quiet' ? 15_000 : 30_000;
     const timer = setInterval(tick, period);
     const onVisible = () => {
@@ -241,7 +244,7 @@ export default function NoticeBanner({
       clearInterval(timer);
       document.removeEventListener('visibilitychange', onVisible);
     };
-  }, [mode]);
+  }, [mode, roomNow]);
 
   // W2.3 / P-D6 — the T+5 crossing fires exactly one room-wide event: every
   // customer client attempts it, the server's UNIQUE(subject_key) dedupes.

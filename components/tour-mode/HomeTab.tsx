@@ -22,6 +22,7 @@ import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
 import NowCard, { type NowCardHandlers } from '@/components/tour-mode/NowCard';
 import { nowCard, roomNowCardContext } from '@/lib/tour-room/nowCard';
+import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { orderHomeTiles, PEEK_COUNT, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
@@ -488,12 +489,14 @@ export default function HomeTab({
   // I6 default: collapsed. One boolean, so the owner's answer is a one-line change.
   const [moreOpen, setMoreOpen] = useState(false);
   // Now marker advances on a 1-min tick, kept out of render so it stays pure
-  // (Date.now() in render is impure/unstable) — mirrors RoomShell.
-  const [nowMs, setNowMs] = useState(() => Date.now());
+  // (a bare clock read in render is impure/unstable) — mirrors RoomShell.
+  // SG-0c: the source is the room's corrected clock, not the device's.
+  const roomNow = useRoomClock();
+  const [nowMs, setNowMs] = useState(() => roomNow());
   useEffect(() => {
-    const id = window.setInterval(() => setNowMs(Date.now()), 60_000);
+    const id = window.setInterval(() => setNowMs(roomNow()), 60_000);
     return () => window.clearInterval(id);
-  }, []);
+  }, [roomNow]);
 
   const timelineData = useMemo(() => buildTravelTimeline(messages), [messages]);
   const hasTimeline = timelineData.stopCount > 0 || timelineData.photoCount > 0;
