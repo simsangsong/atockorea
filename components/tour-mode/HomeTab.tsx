@@ -403,14 +403,21 @@ function formatKstTime(iso: string): string {
   }
 }
 
+// Schedule times are usually HH:MM(:SS) but ops sometimes write free text
+// ("≈ 08:30") — only truncate the strict clock form. Shared by the label and
+// the resolver threading so the two can never disagree about what "the time"
+// of a stop is.
+function stopTime(item: ScheduleItem | undefined): string | null {
+  const raw = typeof item?.time === 'string' ? item.time.trim() : '';
+  if (!raw) return null;
+  return /^\d{2}:\d{2}/.test(raw) ? raw.slice(0, 5) : raw;
+}
+
 function stopLabel(item: ScheduleItem | undefined): string | null {
   if (!item) return null;
   const title = String(item.title ?? item.name ?? '').trim();
   if (!title) return null;
-  // Schedule times are usually HH:MM(:SS) but ops sometimes write free text
-  // ("≈ 08:30") — only truncate the strict clock form.
-  const raw = typeof item.time === 'string' ? item.time.trim() : '';
-  const time = /^\d{2}:\d{2}/.test(raw) ? raw.slice(0, 5) : raw;
+  const time = stopTime(item);
   return time ? `${time} · ${title}` : title;
 }
 
@@ -517,8 +524,14 @@ export default function HomeTab({
   // Live now/next — same KST wall-clock derivation as the schedule tab.
   const currentIndex = currentScheduleIndex(schedule, lifecycle, nowMs);
   const nowStop = currentIndex >= 0 ? stopLabel(schedule[currentIndex]) : null;
-  const nextStop =
-    currentIndex >= 0 ? stopLabel(schedule[currentIndex + 1]) : stopLabel(schedule[0]);
+  const nextItem = currentIndex >= 0 ? schedule[currentIndex + 1] : schedule[0];
+  const nextStop = stopLabel(nextItem);
+  // SG-1a — the resolver gets name and time SEPARATELY (the label glues them
+  // for display); the time string is what the adapter turns into the moving
+  // numeral's wall-clock target. Rendered output is byte-identical to the
+  // glued label for every input the label accepted.
+  const nextTitle = nextItem ? String(nextItem.title ?? nextItem.name ?? '').trim() || null : null;
+  const nextTime = stopTime(nextItem);
 
   const latest = messages.length > 0 ? messages[messages.length - 1] : null;
   const latestText = latest ? latest.translations?.[locale] || latest.source_text || '' : '';
@@ -540,7 +553,7 @@ export default function HomeTab({
         lifecycle,
         tourDate,
         locale,
-        nextStop: nextStop ? { name: nextStop, time: null } : null,
+        nextStop: nextTitle ? { name: nextTitle, time: nextTime } : null,
         currentStop: nowStop ? { name: nowStop } : null,
         // pickupBoardState needs the guide's live position and the full pickup
         // sequence, which this tab does not hold; VehicleLocationCard owns that
@@ -551,7 +564,7 @@ export default function HomeTab({
       }),
     );
     return result.state === 'lobby' ? null : result;
-  }, [messages, lifecycle, tourDate, locale, nextStop, nowStop, nowMs]);
+  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nowStop, nowMs]);
 
   const nowCardHandlers: NowCardHandlers = useMemo(
     () => ({
@@ -694,6 +707,9 @@ export default function HomeTab({
           tourTime={tourTime}
           pickupPoints={pickupPoints}
           busPayload={busPayload}
+          // SG-1d — home mount only; the pickup-sheet and chat-tab mounts
+          // stay numeral-free (SG-D1: one big number per screen).
+          showHeroNumeral={process.env.NEXT_PUBLIC_TR_NUMERAL_V1 !== '0'}
         />
       )}
       {/* I2 — the now card takes the hero slot whenever the resolver has an

@@ -248,6 +248,7 @@ export default function RoomShell({
   theme = 'light',
   chatActivityKey,
   initialTab,
+  onTabChange,
   backHref,
   homeHref,
   richStops,
@@ -284,6 +285,12 @@ export default function RoomShell({
   chatActivityKey?: number;
   /** Phase 3 — deep-link: land on this tab instead of the default. */
   initialTab?: RoomTab;
+  /**
+   * SG-1e — fires on every tab move (taps AND back-pops) so the parent can
+   * key per-tab behavior (the banner's countdown row yields to the home
+   * hero's numeral only while the guest is actually looking at home).
+   */
+  onTabChange?: (tab: RoomTab) => void;
   /** Optional in-app back target (e.g. guide → console, guest → tour-mode home).
    *  Renders a back chevron so phone users aren't stuck exiting the whole app. */
   backHref?: string;
@@ -421,6 +428,7 @@ export default function RoomShell({
   const selectTab = (next: RoomTab) => {
     if (next !== tab) setTabStack((stack) => [...stack, tab]);
     setTab(next);
+    onTabChange?.(next);
     if (next === 'chat') setChatUnread(false);
   };
 
@@ -445,6 +453,7 @@ export default function RoomShell({
       const prev = tabStack[tabStack.length - 1];
       setTabStack((stack) => stack.slice(0, -1));
       setTab(prev);
+      onTabChange?.(prev);
       if (prev === 'chat') setChatUnread(false);
       return 'stayed';
     }

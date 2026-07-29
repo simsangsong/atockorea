@@ -27,7 +27,14 @@ export interface NoticeState {
   warn5: boolean;
 }
 
-function wallClockToMs(tourDate: string, hhmm: string): number | null {
+/**
+ * KST wall clock → epoch ms for a tour date. Exported since SG-1a so the
+ * now-card adapter parses schedule times through the SAME implementation the
+ * notice ladder uses — a second copy of this arithmetic is how clocks drift.
+ * Strict `HH:MM` only; callers with looser input (schedules hand-typed as
+ * `9:00`) normalize before calling.
+ */
+export function wallClockToMs(tourDate: string, hhmm: string): number | null {
   const match = /^(\d{2}):(\d{2})$/.exec(hhmm);
   if (!match) return null;
   return kstStartOfDayMs(tourDate) + (Number(match[1]) * 60 + Number(match[2])) * 60 * 1000;
@@ -38,35 +45,112 @@ function wallClockToMs(tourDate: string, hhmm: string): number | null {
  * message wins (a later cancel or extension supersedes earlier timers).
  * Expired notices (past target + 15min) return null.
  */
+/**
+ * SG-1c — the "+15" is POLICY, and policy is one constant. The notice
+ * expiry, the E2 "waits until" line, and the wait-ended firing window all
+ * read this value; if they ever read different numbers, the app shows a
+ * promise it does not keep. Pickup's "+10" exists only as request-phrased
+ * copy (F-4: a private pickup has nowhere to depart to), never as a fired
+ * capsule — which is why it is a separate constant, not a parameter.
+ */
+export const RALLY_GRACE_MS = 15 * 60 * 1000;
+export const PICKUP_GRACE_MS = 10 * 60 * 1000;
+/** How long past T+GRACE the departed crossing may still fire (SG-D6). */
+export const RALLY_FIRE_WINDOW_MS = 10 * 60 * 1000;
+
+/** E2 — the instant the wait ends; null for untimed/absent notices. */
+export function policyWaitUntilMs(
+  notice: Pick<NoticeState, 'targetMs'> | null | undefined,
+): number | null {
+  if (!notice || notice.targetMs === null) return null;
+  return notice.targetMs + RALLY_GRACE_MS;
+}
+
+/**
+ * The one scan both derivations share: newest message that IS a notice.
+ * A0 — an arrival bundle WITH a meeting time is a meeting notice (the
+ * countdown + rally ladder run unchanged off its metadata). A bundle
+ * without one (짧은 포토스톱) is not a notice and never clears an active
+ * timer, so skip it entirely.
+ */
+function latestNoticeMessage(
+  messages: readonly RoomMessage[],
+): { message: RoomMessage; kind: NoticeState['kind'] } | null {
+  for (let i = messages.length - 1; i >= 0; i -= 1) {
+    const message = messages[i];
+    let kind = message.metadata?.kind;
+    if (kind === 'arrival_bundle') {
+      if (typeof message.metadata?.meeting_time !== 'string' || !message.metadata.meeting_time) continue;
+      kind = 'meeting_notice';
+    }
+    if (kind !== 'meeting_notice' && kind !== 'free_time_timer') continue;
+    return { message, kind: kind as NoticeState['kind'] };
+  }
+  return null;
+}
+
+function noticeTargetMs(message: RoomMessage, tourDate: string): number | null {
+  const hhmm =
+    (message.metadata?.until_time as string | undefined) ??
+    (message.metadata?.meeting_time as string | undefined) ??
+    null;
+  return hhmm ? wallClockToMs(tourDate, hhmm) : null;
+}
+
+export interface RallyResolutionState {
+  noticeId: string;
+  targetMs: number;
+  /** 'window' is the only phase a departed crossing may POST in. */
+  phase: 'pending' | 'window' | 'closed';
+}
+
+/**
+ * SG-D6 — the FIRING derivation, deliberately separate from activeNotice:
+ * activeNotice returns null the instant `targetMs + GRACE` passes, which is
+ * exactly when the wait-ended crossing must still know the noticeId — on
+ * top of it the firing window has width zero (the v1.1 audit's P0). This
+ * reads the raw latest notice (same kind set, same bundle promotion),
+ * ignores UI expiry, and adds the backdate guard: a notice CREATED after
+ * its own target (a staff typo announcing a past time) never fires — the
+ * server re-derives all of this independently and refuses too, but the
+ * client should not even ask.
+ */
+export function rallyResolution(
+  messages: readonly RoomMessage[],
+  tourDate: string | null | undefined,
+  nowMs = Date.now(),
+): RallyResolutionState | null {
+  if (!tourDate) return null;
+  const latest = latestNoticeMessage(messages);
+  if (!latest) return null;
+  if (latest.message.metadata?.cancelled === true) return null;
+  const targetMs = noticeTargetMs(latest.message, tourDate);
+  if (targetMs === null) return null;
+  const createdMs = new Date(latest.message.created_at).getTime();
+  if (!Number.isFinite(createdMs) || createdMs >= targetMs) return null;
+  const past = nowMs - targetMs;
+  const phase: RallyResolutionState['phase'] =
+    past < RALLY_GRACE_MS ? 'pending' : past <= RALLY_GRACE_MS + RALLY_FIRE_WINDOW_MS ? 'window' : 'closed';
+  return { noticeId: latest.message.id, targetMs, phase };
+}
+
 export function activeNotice(
   messages: RoomMessage[],
   tourDate: string | null | undefined,
   nowMs = Date.now(),
 ): NoticeState | null {
   if (!tourDate) return null;
-  for (let i = messages.length - 1; i >= 0; i -= 1) {
-    const message = messages[i];
-    let kind = message.metadata?.kind;
-    // A0 — an arrival bundle WITH a meeting time is a meeting notice (the
-    // countdown + rally ladder run unchanged off its metadata). A bundle
-    // without one (짧은 포토스톱) is not a notice and never clears an active
-    // timer, so skip it entirely.
-    if (kind === 'arrival_bundle') {
-      if (typeof message.metadata?.meeting_time !== 'string' || !message.metadata.meeting_time) continue;
-      kind = 'meeting_notice';
-    }
-    if (kind !== 'meeting_notice' && kind !== 'free_time_timer') continue;
+  const latest = latestNoticeMessage(messages);
+  if (!latest) return null;
+  {
+    const { message, kind } = latest;
 
     const cancelled = message.metadata?.cancelled === true;
     const point = (message.metadata?.meeting_point as string | null | undefined) ?? null;
     const pointI18n = (message.metadata?.meeting_point_i18n as Record<string, string> | null | undefined) ?? null;
     const lat = typeof message.metadata?.meeting_lat === 'number' ? (message.metadata.meeting_lat as number) : null;
     const lng = typeof message.metadata?.meeting_lng === 'number' ? (message.metadata.meeting_lng as number) : null;
-    const hhmm =
-      (message.metadata?.until_time as string | undefined) ??
-      (message.metadata?.meeting_time as string | undefined) ??
-      null;
-    const targetMs = hhmm ? wallClockToMs(tourDate, hhmm) : null;
+    const targetMs = noticeTargetMs(message, tourDate);
 
     if (cancelled) {
       // A cancel banner stays up briefly, then the room is notice-free.
@@ -87,7 +171,7 @@ export function activeNotice(
       };
     }
 
-    if (targetMs !== null && nowMs > targetMs + 15 * 60 * 1000) return null; // long past — expire
+    if (targetMs !== null && nowMs > targetMs + RALLY_GRACE_MS) return null; // long past — expire
     const remainingMs = targetMs === null ? null : Math.max(0, targetMs - nowMs);
     return {
       kind: kind as NoticeState['kind'],
