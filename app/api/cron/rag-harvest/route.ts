@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { harvestQaCandidates } from "@/lib/rag/harvest";
+import { harvestRoomQaCandidates } from "@/lib/rag/roomHarvest.server";
 
 /**
  * GET /api/cron/rag-harvest — weekly Q&A harvest (W5.1 / C-5).
@@ -23,7 +24,8 @@ function isAuthorized(req: NextRequest): boolean {
 }
 
 /** Best-effort admin ping — review is the human half of the loop (G-3). */
-async function notifyTelegramDrafts(created: number): Promise<void> {
+async function notifyTelegramDrafts(counts: { chat: number; room: number }): Promise<void> {
+  const created = counts.chat + counts.room;
   const token = process.env.TELEGRAM_BOT_TOKEN?.trim();
   const chatId = (process.env.TELEGRAM_ADMIN_CHAT_ID || process.env.TELEGRAM_BOOKING_CHAT_ID)?.trim();
   if (!token || !chatId) return;
@@ -31,6 +33,10 @@ async function notifyTelegramDrafts(created: number): Promise<void> {
     `🧠 <b>챗봇 Q&A 하베스트</b>`,
     ``,
     `새 Q&A 초안 <b>${created}건</b>이 검토를 기다립니다.`,
+    // X20: two sources feed one queue now, and they need different eyes —
+    // a chat draft is a marketing answer, a room draft is what a guide
+    // actually told a guest standing somewhere.
+    `· 챗봇 대화 ${counts.chat}건 · 투어룸(손님 질문 → 가이드 답변) ${counts.room}건`,
     `승인하면 즉시 RAG 지식으로 반영됩니다.`,
     ``,
     `<a href="https://www.atockorea.com/admin/qa-review">/admin/qa-review 열기</a>`,
@@ -58,16 +64,32 @@ export async function GET(req: NextRequest) {
 
   const sb = createClient(url, key, { auth: { persistSession: false } });
   const lines: string[] = [];
+  const log = (line: string) => {
+    lines.push(line);
+    console.log(`[cron/rag-harvest] ${line}`);
+  };
   try {
-    const summary = await harvestQaCandidates(sb, {
-      limit: 40,
-      log: (line) => {
-        lines.push(line);
-        console.log(`[cron/rag-harvest] ${line}`);
-      },
-    });
-    if (summary.created > 0) await notifyTelegramDrafts(summary.created);
-    return NextResponse.json({ ok: true, summary, log: lines });
+    /**
+     * 🔴 X20 — the SECOND source joins this flywheel, it does not get its own.
+     *
+     * The owner's decision was explicit: "the existing rag:harvest flywheel
+     * already harvests concierge Q&A — do not build a second one. Widening it
+     * to guest questions and GUIDE answers is the ticket."
+     *
+     * `roomHarvest` was written and unit-tested and then called by nothing but
+     * its own tests, so the corpus it exists to grow was never growing. It runs
+     * here, on the same weekly schedule, feeding the same review queue — one
+     * loop, two sources.
+     *
+     * Room pairs are harvested FIRST and deliberately without an LLM: a guide
+     * answering a real guest in a real place is operational by construction,
+     * and the admin review queue is the judge that already exists.
+     */
+    const room = await harvestRoomQaCandidates(sb, { limit: 40, log });
+    const summary = await harvestQaCandidates(sb, { limit: 40, log });
+    const created = summary.created + room.created;
+    if (created > 0) await notifyTelegramDrafts({ chat: summary.created, room: room.created });
+    return NextResponse.json({ ok: true, summary, room, created, log: lines });
   } catch (e) {
     console.error("[cron/rag-harvest] failed:", e);
     return NextResponse.json({ ok: false, error: (e as Error).message, log: lines }, { status: 500 });

@@ -6,12 +6,17 @@
  *
  * The support-ticket path is already handled by createQaDraftFromSupportReply.
  *
+ * X20 — this runs BOTH sources, same as the cron: marketing chat turns, and
+ * tour-room pairs (a guest asked, a guide answered). One flywheel, two inputs;
+ * a second harvest command would drift from this one within a release.
+ *
  * Run:
  *   node --env-file=.env.local --import tsx scripts/harvest-qa-candidates.ts [--limit=40] [--dry-run]
  */
 
 import { createClient } from "@supabase/supabase-js";
 import { harvestQaCandidates } from "@/lib/rag/harvest";
+import { harvestRoomQaCandidates } from "@/lib/rag/roomHarvest.server";
 
 const argLimit = Number(process.argv.find((a) => a.startsWith("--limit="))?.split("=")[1] ?? 40);
 const DRY_RUN = process.argv.includes("--dry-run");
@@ -23,11 +28,20 @@ function client() {
   return createClient(url, key, { auth: { persistSession: false } });
 }
 
-harvestQaCandidates(client(), {
-  limit: Number.isFinite(argLimit) ? argLimit : 40,
-  dryRun: DRY_RUN,
-  log: (line) => console.log(line),
-}).catch((err) => {
+const limit = Number.isFinite(argLimit) ? argLimit : 40;
+const log = (line: string) => console.log(line);
+
+async function main() {
+  const sb = client();
+  const room = await harvestRoomQaCandidates(sb, { limit, dryRun: DRY_RUN, log });
+  const chat = await harvestQaCandidates(sb, { limit, dryRun: DRY_RUN, log });
+  console.log(
+    `[harvest] room drafts ${room.created} (rooms ${room.roomsScanned}, pairs ${room.pairsFound}, ` +
+      `dupes ${room.dupes}, thin ${room.tooThin}) · chat drafts ${chat.created}`,
+  );
+}
+
+main().catch((err) => {
   console.error(err);
   process.exit(1);
 });
