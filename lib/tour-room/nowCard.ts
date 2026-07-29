@@ -160,7 +160,16 @@ export interface NowCardContext {
   } | null;
 
   /** Pickup board, already resolved by `pickupBoardState()`. */
-  pickup?: { visible: boolean; vehicleLabel?: string | null; driverName?: string | null; plateTail?: string | null } | null;
+  pickup?: {
+    visible: boolean;
+    vehicleLabel?: string | null;
+    driverName?: string | null;
+    plateTail?: string | null;
+    /** SG-5a — the SCHEDULED pickup instant (pickup_sequence), numeral target. */
+    pickupTimeMs?: number | null;
+    /** SG-5c — signed vehicle photo (never SW-cached). */
+    photoUrl?: string | null;
+  } | null;
 
   /** Next scheduled stop, if the day has one left. */
   nextStop?: {
@@ -283,6 +292,7 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         ...(bandedTarget(ctx.meetingTargetMs, nowMs, PICKUP_NUMERAL_MAX_MS) !== undefined
           ? { meetingTargetMs: ctx.meetingTargetMs as number }
           : {}),
+        ...(ctx.pickup.photoUrl ? { photoUrl: ctx.pickup.photoUrl } : {}),
       },
     };
   }
@@ -487,6 +497,10 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
   // must return); verified-only by construction of the snapshot map.
   const meetingPhotoUrl =
     arrived?.poiKey && input.meetingPhotos ? (input.meetingPhotos[arrived.poiKey] ?? null) : null;
+  // SG-5a -- with no notice, the pickup board's SCHEDULED time is the target
+  // (visible mornings only, so it cannot leak into arrived/free mid-tour).
+  const noticeTargetMs = notice && !notice.cancelled ? notice.targetMs : null;
+  const pickupTargetMs = input.pickup?.visible ? (input.pickup.pickupTimeMs ?? null) : null;
 
   return {
     lifecycle: input.lifecycle,
@@ -499,7 +513,7 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
     meetingPoint,
     // SG-1a — the notice's target feeds every countdown; a cancelled notice
     // must never feed a numeral, whatever its target says.
-    meetingTargetMs: notice && !notice.cancelled ? notice.targetMs : null,
+    meetingTargetMs: noticeTargetMs ?? pickupTargetMs,
     meetingLat: notice && !notice.cancelled ? notice.lat : null,
     meetingLng: notice && !notice.cancelled ? notice.lng : null,
     driverName: input.driverName ?? null,

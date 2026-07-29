@@ -1091,6 +1091,7 @@ function TourRoomLive({
                 busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
                 stopImages={snapshot.stop_images ?? null}
                 meetingPhotos={snapshot.meeting_photos ?? null}
+                pickupBoard={pickup}
                 heroPhotoUrl={snapshot.booking?.tours?.image_url ?? null}
                 reviewPolicy={reviewPolicy}
                 canSignal={!readOnly && data.lifecycle === 'live'}
