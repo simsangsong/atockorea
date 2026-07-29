@@ -885,25 +885,43 @@
  *
  * Scoped so the live room keeps its existing bubble grammar. */
 .tr-plan-root {
+  /* §N-9 option B — the nine tokens a skin would otherwise take are held as
+   * PRIVATE values first, then aliased. `.tr-plan-root[data-tr-skin]` below
+   * re-asserts the aliases by reference, so the values exist exactly once and
+   * the two blocks cannot drift apart. */
+  --tr-plan-v-surface: #ffffff;
+  --tr-plan-v-surface-2: #e8efea;
+  --tr-plan-v-hairline: rgba(38, 62, 52, 0.1);
+  --tr-plan-v-ink: #1f2a26;
+  --tr-plan-v-ink-2: #556860;
+  --tr-plan-v-ink-3: #5c6e66;
+  --tr-plan-v-accent-soft: #e3efe8;
+  --tr-plan-v-accent: #42806a;
+  --tr-plan-v-accent-hi: #55977e;
+  --tr-plan-v-accent-deep: #275343;
+  --tr-plan-v-on-accent: #f7fdfa;
+  --tr-plan-v-safe: #667985;
+  --tr-plan-v-safe-soft: rgba(102, 121, 133, 0.16);
+
   --tr-canvas: #f1f4f1;
-  --tr-surface: #ffffff;
-  --tr-surface-2: #e8efea;
-  --tr-hairline: rgba(38, 62, 52, 0.1);
-  --tr-ink: #1f2a26;
-  --tr-ink-2: #556860;
-  --tr-ink-3: #5c6e66;
-  --tr-accent: #42806a;
-  --tr-accent-hi: #55977e;
-  --tr-accent-deep: #275343;
-  --tr-accent-soft: #e3efe8;
-  --tr-safe: #667985;
+  --tr-surface: var(--tr-plan-v-surface);
+  --tr-surface-2: var(--tr-plan-v-surface-2);
+  --tr-hairline: var(--tr-plan-v-hairline);
+  --tr-ink: var(--tr-plan-v-ink);
+  --tr-ink-2: var(--tr-plan-v-ink-2);
+  --tr-ink-3: var(--tr-plan-v-ink-3);
+  --tr-accent: var(--tr-plan-v-accent);
+  --tr-accent-hi: var(--tr-plan-v-accent-hi);
+  --tr-accent-deep: var(--tr-plan-v-accent-deep);
+  --tr-accent-soft: var(--tr-plan-v-accent-soft);
+  --tr-safe: var(--tr-plan-v-safe);
   /* safe를 슬레이트로 재정의하면 워시도 짝으로 — 파인 워시 위 슬레이트 글자는
      11px에서 AA 미달이었다 (교차표면 감사 #4). */
-  --tr-safe-soft: rgba(102, 121, 133, 0.16);
+  --tr-safe-soft: var(--tr-plan-v-safe-soft);
   --tr-danger: #b04a4a;
   --tr-danger-soft: rgba(176, 74, 74, 0.14);
-  --tr-bubble-me-ink: #f7fdfa;
-  --tr-on-accent: #f7fdfa;
+  --tr-bubble-me-ink: var(--tr-plan-v-on-accent);
+  --tr-on-accent: var(--tr-plan-v-on-accent);
   /* P7.2 (H-2) — 20px, the same card radius as the room. The planner was
    * running 20/16/14/13/11 simultaneously while the room finishes in four
    * values; radius is the strongest "same family" signal in a UI and this
@@ -940,23 +958,37 @@
  * already use the same `.dark X, X.dark` pairing for the same reason). */
 .dark .tr-plan-root,
 .tr-plan-root.dark {
+  --tr-plan-v-surface: #1c2120;
+  --tr-plan-v-surface-2: #252c29;
+  --tr-plan-v-hairline: rgba(226, 240, 234, 0.11);
+  --tr-plan-v-ink: #eef3f0;
+  --tr-plan-v-ink-2: #b2bdb8;
+  --tr-plan-v-ink-3: #97a49e;
+  --tr-plan-v-accent-soft: rgba(143, 191, 169, 0.16);
+  --tr-plan-v-accent: #8fbfa9;
+  --tr-plan-v-accent-hi: #a6d0bc;
+  --tr-plan-v-accent-deep: #a8d4c1;
+  --tr-plan-v-on-accent: #10201a;
+  --tr-plan-v-safe: #91a3aa;
+  --tr-plan-v-safe-soft: rgba(145, 163, 170, 0.18);
+
   --tr-canvas: #131716;
-  --tr-surface: #1c2120;
-  --tr-surface-2: #252c29;
-  --tr-hairline: rgba(226, 240, 234, 0.11);
-  --tr-ink: #eef3f0;
-  --tr-ink-2: #b2bdb8;
-  --tr-ink-3: #97a49e;
-  --tr-accent: #8fbfa9;
-  --tr-accent-hi: #a6d0bc;
-  --tr-accent-deep: #a8d4c1;
-  --tr-accent-soft: rgba(143, 191, 169, 0.16);
-  --tr-safe: #91a3aa;
-  --tr-safe-soft: rgba(145, 163, 170, 0.18);
+  --tr-surface: var(--tr-plan-v-surface);
+  --tr-surface-2: var(--tr-plan-v-surface-2);
+  --tr-hairline: var(--tr-plan-v-hairline);
+  --tr-ink: var(--tr-plan-v-ink);
+  --tr-ink-2: var(--tr-plan-v-ink-2);
+  --tr-ink-3: var(--tr-plan-v-ink-3);
+  --tr-accent: var(--tr-plan-v-accent);
+  --tr-accent-hi: var(--tr-plan-v-accent-hi);
+  --tr-accent-deep: var(--tr-plan-v-accent-deep);
+  --tr-accent-soft: var(--tr-plan-v-accent-soft);
+  --tr-safe: var(--tr-plan-v-safe);
+  --tr-safe-soft: var(--tr-plan-v-safe-soft);
   --tr-danger: #d27a7a;
   --tr-danger-soft: rgba(210, 122, 122, 0.18);
-  --tr-bubble-me-ink: #10201a;
-  --tr-on-accent: #10201a;
+  --tr-bubble-me-ink: var(--tr-plan-v-on-accent);
+  --tr-on-accent: var(--tr-plan-v-on-accent);
   --tr-plan-hero: linear-gradient(150deg, #1b2422 0%, #151d1b 60%, #121817 100%);
   --tr-plan-hero-ink: #eef3f0;
   --tr-plan-hero-muted: #a3b1ab;
@@ -985,6 +1017,48 @@
  * a rimless drop shadow, i.e. to opt this screen out of the app's material.
  * With it gone the planner's cards ARE the room's cards, which is the point:
  * the fix for two material systems is one material system, not a third. */
+
+/* ---- §N-9 option B — a skin reaches the planner's BACKGROUND only --------
+ *
+ * P7.1b stamped `--tr-font-scale` but deliberately withheld `data-tr-skin`,
+ * because a skin block (0,2,0) outranks `.tr-plan-root` (0,1,0) and would take
+ * canvas, surface, ink, safe AND accent-soft while leaving the planner-only
+ * tokens behind — a gradient whose two stops come from different families.
+ *
+ * Option B is the owner's decision: the skin sets the BACKGROUND and the
+ * planner keeps its own identity. This block is (0,2,0), the same weight as a
+ * skin block, and sits after every one of them, so it wins the tie on order —
+ * except for `--tr-canvas`, which is deliberately NOT re-asserted and is
+ * therefore the one thing a skin still changes here.
+ *
+ * 🔴 Values are referenced, never repeated. `--tr-plan-v-*` above holds them
+ * once; this block re-points the aliases. A second copy of nine colours is a
+ * second thing to keep correct, and this repo has been bitten by exactly that.
+ *
+ * Dark needs the (0,3,0) form to outrank `.dark .tr-root[data-tr-skin]`.
+ */
+.tr-plan-root[data-tr-skin] {
+  --tr-accent-soft: var(--tr-plan-v-accent-soft);
+  --tr-accent: var(--tr-plan-v-accent);
+  --tr-accent-hi: var(--tr-plan-v-accent-hi);
+  --tr-accent-deep: var(--tr-plan-v-accent-deep);
+  --tr-on-accent: var(--tr-plan-v-on-accent);
+  --tr-bubble-me-ink: var(--tr-plan-v-on-accent);
+  --tr-safe: var(--tr-plan-v-safe);
+  --tr-safe-soft: var(--tr-plan-v-safe-soft);
+}
+
+.dark .tr-plan-root[data-tr-skin],
+.tr-plan-root.dark[data-tr-skin] {
+  --tr-accent-soft: var(--tr-plan-v-accent-soft);
+  --tr-accent: var(--tr-plan-v-accent);
+  --tr-accent-hi: var(--tr-plan-v-accent-hi);
+  --tr-accent-deep: var(--tr-plan-v-accent-deep);
+  --tr-on-accent: var(--tr-plan-v-on-accent);
+  --tr-bubble-me-ink: var(--tr-plan-v-on-accent);
+  --tr-safe: var(--tr-plan-v-safe);
+  --tr-safe-soft: var(--tr-plan-v-safe-soft);
+}
 
 .tr-plan-hero {
   background: var(--tr-plan-hero);
@@ -1967,18 +2041,26 @@
  * `day`에는 규칙이 없다 — **그게 요점이다.** 모든 시간대에 색을 넣으면 어떤 색도
  * 뜻을 잃는다. 투어 한복판은 일부러 꾸미지 않는다.
  */
-.tr-home-card[data-tr-phase='morning'] {
+/* P7.8 (H-7) — 「내 하루」 joins N2's day arc. The SELECTOR is extended rather
+ * than the recipe copied: one rule, two surfaces, so the two can never drift.
+ * The hero card is the only planner surface that takes it — the day's grain
+ * belongs to the day being built, not to the tools around it. */
+.tr-home-card[data-tr-phase='morning'],
+.tr-plan-root .tr-card-hero[data-tr-phase='morning'] {
   background: color-mix(in srgb, var(--tr-accent-soft) 30%, var(--tr-surface));
 }
-.tr-home-card[data-tr-phase='dusk'] {
+.tr-home-card[data-tr-phase='dusk'],
+.tr-plan-root .tr-card-hero[data-tr-phase='dusk'] {
   background: color-mix(in srgb, var(--tr-warn-soft) 26%, var(--tr-surface));
 }
-.tr-home-card[data-tr-phase='ended'] {
+.tr-home-card[data-tr-phase='ended'],
+.tr-plan-root .tr-card-hero[data-tr-phase='ended'] {
   background: color-mix(in srgb, var(--tr-ink) 5%, var(--tr-surface));
 }
 /* 대비 게이트가 하나의 규칙만 볼 수 있게, contrast 스킨은 전부 뺀다 — 그 스킨의
  * 계약은 "타협 없는 대비"이고, 시간대 색조는 타협이다. */
-.tr-root[data-tr-skin='contrast'] .tr-home-card[data-tr-phase] {
+.tr-root[data-tr-skin='contrast'] .tr-home-card[data-tr-phase],
+.tr-root[data-tr-skin='contrast'] .tr-card-hero[data-tr-phase] {
   background: var(--tr-surface);
 }
 
@@ -2001,6 +2083,11 @@
  * 아니고, `skinContrast` 게이트가 지금 보는 쌍에도 안 들어 있다. 사장님 보고에
  * 올렸다.
  */
-.dark .tr-home-card[data-tr-phase] {
+/* ⚠ Dark stays excluded here for the same measured reason N2 recorded: the
+ * untinted dark baseline is already 4.39, so a tone layer spends headroom that
+ * does not exist. An emotional layer that costs contrast is a defect. */
+.dark .tr-home-card[data-tr-phase],
+.dark .tr-plan-root .tr-card-hero[data-tr-phase],
+.tr-plan-root.dark .tr-card-hero[data-tr-phase] {
   background: var(--tr-surface);
 }

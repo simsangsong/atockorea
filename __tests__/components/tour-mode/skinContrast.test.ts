@@ -106,6 +106,37 @@ function mergeMatching(wanted: string[]): Tokens {
   matched.sort((a, b) => a.spec - b.spec || a.order - b.order);
   const out: Tokens = {};
   for (const m of matched) Object.assign(out, m.tokens);
+  return derefVars(out);
+}
+
+/**
+ * 🔴 Resolve `var(--tr-x)` indirection before anything measures a colour.
+ *
+ * §N-9 option B stores the planner's palette once in `--tr-plan-v-*` and
+ * aliases the public tokens to it, so the shipped value of `--tr-surface` is
+ * literally the string `var(--tr-plan-v-surface)`. Without this step the WCAG
+ * math cannot parse it, returns NaN — and NaN is SKIPPED by these tests. The
+ * gate would have gone green while measuring nothing, which is the exact
+ * failure this file already carries a warning about ("skipping is not
+ * passing"). Aliasing is good for the stylesheet; it must not be invisible to
+ * the thing checking the stylesheet.
+ */
+function derefVars(tokens: Tokens): Tokens {
+  const out: Tokens = { ...tokens };
+  for (const key of Object.keys(out)) {
+    let value = out[key];
+    for (let hops = 0; hops < 8; hops++) {
+      const m = /^var\(\s*--tr-([a-z0-9-]+)\s*(?:,\s*([^)]*))?\)$/i.exec(value.trim());
+      if (!m) break;
+      const target = out[m[1]] ?? tokens[m[1]];
+      if (target === undefined) {
+        value = (m[2] ?? '').trim(); // declared fallback, or empty
+        break;
+      }
+      value = target;
+    }
+    out[key] = value;
+  }
   return out;
 }
 
@@ -157,10 +188,24 @@ function resolve(skin: TourSkin, theme: 'light' | 'dark'): Tokens {
  */
 function planSelectors(skin: TourSkin, theme: 'light' | 'dark'): string[] {
   const wanted = ['.tr-root', '.tr-plan-root'];
-  if (skin !== 'classic') wanted.push(`.tr-root[data-tr-skin='${skin}']`);
+  if (skin !== 'classic') {
+    wanted.push(`.tr-root[data-tr-skin='${skin}']`);
+    /**
+     * 🔴 P7.8 (§N-9 option B) — the planner now carries `data-tr-skin`, and
+     * this block re-asserts everything the skin would otherwise take EXCEPT
+     * `--tr-canvas`. It is (0,2,0), tying a skin block and winning on file
+     * order. Leaving it out of the resolver would make this gate measure a
+     * palette the browser never paints — the same class of error the
+     * specificity fix in P7.0 was written to prevent.
+     */
+    wanted.push('.tr-plan-root[data-tr-skin]');
+  }
   if (theme === 'dark') {
     wanted.push('.dark .tr-root', '.dark .tr-plan-root', '.tr-plan-root.dark');
-    if (skin !== 'classic') wanted.push(`.dark .tr-root[data-tr-skin='${skin}']`);
+    if (skin !== 'classic') {
+      wanted.push(`.dark .tr-root[data-tr-skin='${skin}']`);
+      wanted.push('.dark .tr-plan-root[data-tr-skin]', '.tr-plan-root.dark[data-tr-skin]');
+    }
   }
   return wanted;
 }
@@ -300,6 +345,12 @@ const PAIRS: Array<[string, string, number]> = [
 const THEMES = ['light', 'dark'] as const;
 
 describe('skin contrast gate (T-D7)', () => {
+  const PLAN_PAIRS: Array<[string, string, number]> = [
+    ...PAIRS,
+    ['accent-deep', 'accent-soft', 4.5],
+    ['ink-2', 'surface-2', 4.5],
+  ];
+
   it('every skin has light + dark CSS blocks (classic is the base itself)', () => {
     for (const skin of TOUR_SKINS) {
       if (skin === 'classic') continue;
@@ -368,11 +419,6 @@ describe('skin contrast gate (T-D7)', () => {
    * chip ink is gated too. Under a skin it may become rgba(), in which case the
    * composite is taken against that skin's canvas like everywhere else.
    */
-  const PLAN_PAIRS: Array<[string, string, number]> = [
-    ...PAIRS,
-    ['accent-deep', 'accent-soft', 4.5],
-    ['ink-2', 'surface-2', 4.5],
-  ];
 
   it('the planner scope (.tr-plan-root) clears the same floors in classic', () => {
     const failures: string[] = [];
@@ -441,21 +487,72 @@ describe('skin contrast gate (T-D7)', () => {
    * the skin must win where it outranks the planner block, and the planner must
    * keep what the skin never sets.
    */
-  it('the planner resolver actually mixes skin over planner (not a classic fallback)', () => {
-    const skyCanvas = resolve('sky', 'light').canvas;
-    const planCanvas = resolvePlan('classic', 'light').canvas;
-    const mixed = resolvePlan('sky', 'light');
+  /**
+   * 🔴 P7.8 (§N-9) — where the line between skin and planner actually falls,
+   * and why it is not where the plan guessed.
+   *
+   * §N-9 chose option B, "the skin sets the BACKGROUND only". Implemented
+   * literally — skin canvas, planner ink — it FAILED this gate, measured:
+   *
+   *     sky/light      ink-3 on canvas  3.31
+   *     winter/light   ink-3 on canvas  4.36
+   *     forest/light   4.31 · meadow 4.20 · seoul 4.35 · busan 4.21
+   *
+   * Because a canvas and its ink are a PAIR. Each skin picks an ink that clears
+   * its own background; pinning one screen's ink while swapping the background
+   * under it breaks the only relationship that made either value safe. Moving
+   * ink as well then failed on `ink-3 on surface-2` in dark (4.44 / 4.45 / 4.32
+   * / 4.23) for the same reason one level down.
+   *
+   * So the line is drawn where the palette itself is jointed: the NEUTRAL
+   * family travels together (canvas, surface, surface-2, hairline, ink x3), and
+   * the planner keeps its IDENTITY — the deep-pine accent family that makes its
+   * buttons and chips look like the planner's, plus its own plan-only tokens.
+   * All 20 combinations pass at that split.
+   *
+   * This still honours the owner's intent (a skin changes the backdrop; the
+   * planner still reads as the planner) without asking a palette to hold a
+   * relationship it does not have.
+   */
+  it('a skinned planner takes the skin NEUTRALS and keeps its accent identity', () => {
+    for (const skin of TOUR_SKINS) {
+      if (skin === 'classic') continue;
+      for (const theme of THEMES) {
+        const skinned = resolve(skin, theme);
+        const plain = resolvePlan('classic', theme);
+        const mixed = resolvePlan(skin, theme);
 
-    // The skin's attribute selector (0,2,0) beats .tr-plan-root (0,1,0).
-    expect(skyCanvas).not.toBe(planCanvas);
-    expect(mixed.canvas).toBe(skyCanvas);
+        // Backdrop family: the skin's, and jointly — never half of it.
+        for (const token of ['canvas', 'surface', 'surface-2', 'ink', 'ink-2', 'ink-3']) {
+          expect(`${skin}/${theme}/${token}=${mixed[token]}`).toBe(`${skin}/${theme}/${token}=${skinned[token]}`);
+        }
 
-    // ...and the planner keeps the tokens no skin declares.
-    expect(mixed['accent-deep']).toBe(resolvePlan('classic', 'light')['accent-deep']);
-    expect(mixed['plan-hero-ink']).toBeDefined();
+        // Identity: the planner's, even where the skin declares its own.
+        for (const token of ['accent', 'accent-hi', 'accent-deep', 'accent-soft', 'on-accent']) {
+          expect(`${skin}/${theme}/${token}=${mixed[token]}`).toBe(`${skin}/${theme}/${token}=${plain[token]}`);
+        }
+        expect(mixed['plan-hero-ink']).toBeDefined();
+      }
+    }
+  });
 
-    // Dark: the skin's dark block (0,3,0) is the top of this cascade.
-    expect(resolvePlan('sky', 'dark').canvas).toBe(resolve('sky', 'dark').canvas);
+  /**
+   * Aliasing must not become invisible. Every token these tests read has to
+   * resolve to a real colour, or the WCAG math returns NaN and NaN is skipped.
+   */
+  it('no measured token is left as an unresolved var()', () => {
+    const unresolved: string[] = [];
+    for (const skin of TOUR_SKINS) {
+      for (const theme of THEMES) {
+        const tokens = resolvePlan(skin, theme);
+        for (const [fg, bg] of PLAN_PAIRS) {
+          for (const key of [fg, bg]) {
+            if (/^var\(/.test(tokens[key] ?? '')) unresolved.push(`plan/${skin}/${theme}: ${key}`);
+          }
+        }
+      }
+    }
+    expect([...new Set(unresolved)]).toEqual([]);
   });
 
   it('scenery BAND fills keep timestamps readable (ink-3 ≥ 3.5) in both themes', () => {
