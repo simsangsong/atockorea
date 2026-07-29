@@ -25,12 +25,29 @@ interface Block {
   tokens: Tokens;
 }
 
-function parseBlocks(source: string): Block[] {
+/**
+ * 🔴 Comments come out BEFORE the brace scan, not after.
+ *
+ * This parser splits on `{` and `}`, so a brace inside a comment is read as a
+ * block boundary and every rule after it is misparsed. It happened for real:
+ * a P7.2 comment reading `--tr-plan-shadow-{soft,card,button}` desynchronised
+ * the scan and made `.tr-plan-root`'s tokens vanish from the resolver — the
+ * gate went from measuring a palette to measuring nothing, because of prose.
+ *
+ * A guard that a comment can switch off is worse than no guard, so the strip
+ * is global and first.
+ */
+function stripComments(source: string): string {
+  return source.replace(/\/\*[\s\S]*?\*\//g, '');
+}
+
+function parseBlocks(rawSource: string): Block[] {
+  const source = stripComments(rawSource);
   const blocks: Block[] = [];
   const blockRe = /([^{}]+)\{([^{}]*)\}/g;
   let m: RegExpExecArray | null;
   while ((m = blockRe.exec(source))) {
-    const selector = m[1].replace(/\/\*[\s\S]*?\*\//g, '').trim();
+    const selector = m[1].trim();
     const tokens: Tokens = {};
     const declRe = /--tr-([a-z0-9-]+)\s*:\s*([^;]+);/g;
     let d: RegExpExecArray | null;
