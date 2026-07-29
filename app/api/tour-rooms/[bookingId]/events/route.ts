@@ -7,7 +7,10 @@ import {
   nextPollInterval,
   SSE_POLL_MIN_MS,
   SSE_RECONNECT_HINT_MS,
+  SSE_STARTS_PER_HOUR,
+  SSE_STARTS_PER_MINUTE,
   SSE_STREAM_BUDGET_MS,
+  SSE_THROTTLED_RETRY_MS,
 } from '@/lib/tour-room/sseFallback';
 
 export const dynamic = 'force-dynamic';
@@ -116,6 +119,44 @@ export async function GET(
         );
       }
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
+    }
+
+    /**
+     * K1b — the ceiling on stream starts, applied to EVERY actor.
+     *
+     * The gate above is PA-4 and fires only on the guest email/name path, which
+     * means every token-bearing guest — every invite link — reached this stream
+     * with nothing counting. K1a taught our client to reconnect politely; this
+     * is for the clients we do not control.
+     *
+     * Keyed by booking and client, not by client alone: a coach with twelve
+     * guests behind one hotel NAT is not a loop, and a household's devices
+     * should share a budget rather than starve each other.
+     *
+     * It throttles rather than rejects — see SSE_THROTTLED_RETRY_MS for why a
+     * 429 here would silence the room instead of degrading it.
+     */
+    const startGate = await requestGate({
+      namespace: 'tour_room_sse_start',
+      key: `${bookingId}:${clientIpKey(req.headers)}`,
+      perMinute: SSE_STARTS_PER_MINUTE,
+      perHour: SSE_STARTS_PER_HOUR,
+    });
+    if (!startGate.allowed) {
+      return new Response(
+        // A comment frame, not an event: nothing downstream should try to parse
+        // it as a message, and the client's `message` listener never fires.
+        encoder.encode(`retry: ${SSE_THROTTLED_RETRY_MS}\n\n: throttled\n\n`),
+        {
+          headers: {
+            'Content-Type': 'text/event-stream; charset=utf-8',
+            'Cache-Control': 'no-cache, no-transform',
+            // Not read by EventSource — it is here for us, in logs and in any
+            // future non-browser consumer.
+            'X-Sse-Throttled': '1',
+          },
+        },
+      );
     }
 
     const room = await cachedEnsureRoom(supabase, resolved.booking);

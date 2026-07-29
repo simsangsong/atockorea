@@ -33,6 +33,40 @@ const SSE_POLL_GROWTH = 1.5;
 export const SSE_RECONNECT_HINT_MS = 5_000;
 
 /**
+ * K1b — the ceiling on how often ONE room+client may start a stream.
+ *
+ * K1a fixed how our client reconnects. It could not fix a client we do not
+ * control: a cached old bundle, a webview that ignores `retry:`, a tab left
+ * open for a day. And the server had no ceiling at all — the PA-4 rate gate
+ * fires only on the guest email/name path, so every token-bearing guest (which
+ * is every invite link) reached the stream ungated.
+ *
+ * A healthy client starts one stream per stream budget, about 1.1 per minute
+ * per device. Twelve leaves room for a four-device family plus reopened tabs
+ * and still catches the failure this exists for, which runs at roughly thirty.
+ */
+export const SSE_STARTS_PER_MINUTE = 12;
+export const SSE_STARTS_PER_HOUR = 120;
+
+/**
+ * 🔴 What happens at the ceiling, and why it is not a 429.
+ *
+ * `EventSource` cannot see a 429. Per spec a non-200 response fails the
+ * connection permanently — `readyState` goes to CLOSED and the browser does not
+ * reconnect. And this hook has exactly two transports, Realtime and SSE, with
+ * no polling client behind them. So rejecting the request does not degrade the
+ * room; it silences it, and the guest has no way back short of a reload they
+ * have no reason to perform.
+ *
+ * So the ceiling throttles instead of blocking: still 200, still
+ * `text/event-stream`, but the stream carries a long `retry:` and closes at
+ * once. The browser is happy, it waits a minute, and a two-second loop becomes
+ * one connection per minute — the cost collapses while the room stays alive and
+ * Realtime keeps running underneath.
+ */
+export const SSE_THROTTLED_RETRY_MS = 60_000;
+
+/**
  * Fast while the conversation is live, patient when it is not.
  *
  * Activity resets straight to the floor rather than easing down, because
