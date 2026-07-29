@@ -41,7 +41,7 @@ for (const beat of targets) {
 
   const durationMs = (beat.hold ?? 5) * 1000;
   const html = buildScene({
-    poi: { kicker: (spec.title?.en ?? '').toUpperCase(), titleKo: beat.titleKo ?? beat.note ?? '', titleEn: beat.titleEn ?? '' },
+    poi: { kicker: (spec.title?.en ?? '').toUpperCase(), title: beat.title ?? '', sub: beat.sub ?? '' },
     point: { n: held.indexOf(beat) + 1, of: held.length },
     caption: beat.caption ?? '',
     arrows: arrow ? [arrow] : [],

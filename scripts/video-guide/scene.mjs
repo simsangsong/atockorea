@@ -90,8 +90,11 @@ function stepsSvg(a, idx) {
 }
 
 /**
+ * Audience is 100% non-Korean, so every burned-in string is English. Korean is
+ * one of the ten locale variants, not the master.
+ *
  * @param {object} o
- *   poi        {kicker, titleKo, titleEn}
+ *   poi        {kicker, title, sub}   — all English
  *   point      {n, of}
  *   caption    string shown under the band (locale narration line)
  *   arrows     array of authored arrow specs (source coords), may be empty
@@ -132,10 +135,10 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; }
 </style></head><body>
 <div class="kicker">${esc(o.poi?.kicker)}</div>
 ${o.point ? `<div class="pointchip"><span>POINT ${o.point.n} / ${o.point.of}</span></div>` : ''}
-<div class="title"><h1>${esc(o.poi?.titleKo)}</h1><p>${esc(o.poi?.titleEn)}</p></div>
+<div class="title"><h1>${esc(o.poi?.title)}</h1>${o.poi?.sub ? `<p>${esc(o.poi.sub)}</p>` : ''}</div>
 ${svg}
 ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
-<div class="watermark">본 영상은 AtoC Korea의 자산입니다 · 무단 복제·배포 금지</div>
+<div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
 <script>
 window.__total = ${Math.round(o.durationMs)};
 const anims = [];
