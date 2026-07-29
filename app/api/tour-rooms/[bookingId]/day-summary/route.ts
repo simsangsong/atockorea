@@ -124,7 +124,90 @@ export async function GET(
       }
     }
 
-    return NextResponse.json({ visited, span, money, current });
+    // ── SG-7a — 오늘의 나 (SG-D12): four honest numbers, LLM 0, no ranking,
+    // no per-guest linkage (F-10). On-time folds rally CHAINS: an extended
+    // resolution replaces its notice, so one extension is one chain, and a
+    // chain is late only when it ended in `departed`. The count is an UPPER
+    // bound — if every firer slept, a departed may be missing (§H-1 각주).
+    const me = {
+      ontime: { chains: 0, departed: 0 },
+      response: { signals: 0, median_seconds: null as number | null },
+      narration: 0,
+      photos: 0,
+    };
+    try {
+      const { data: rallyEvents } = await supabase
+        .from('tour_room_events')
+        .select('type, subject_key, payload')
+        .eq('room_id', room.id)
+        .in('type', ['rally_resolution'])
+        .limit(200);
+      const rows = (rallyEvents ?? []) as Array<{ payload?: Record<string, unknown> }>;
+      const supersededIds = new Set(
+        rows
+          .map((row) => (typeof row.payload?.next_notice_id === 'string' ? row.payload.next_notice_id : null))
+          .filter(Boolean) as string[],
+      );
+      for (const row of rows) {
+        const outcome = row.payload?.outcome;
+        const noticeId = typeof row.payload?.notice_id === 'string' ? row.payload.notice_id : null;
+        // A notice that was replaced by an extension is the same chain — only
+        // the FINAL resolution of a chain counts.
+        if (noticeId && supersededIds.has(noticeId)) continue;
+        if (outcome === 'departed') {
+          me.ontime.chains += 1;
+          me.ontime.departed += 1;
+        } else if (outcome === 'all_aboard' || outcome === 'extended') {
+          me.ontime.chains += 1;
+        }
+      }
+    } catch {
+      /* partial */
+    }
+    try {
+      const { data: msgs } = await supabase
+        .from('tour_room_messages')
+        .select('sender_role, created_at, input_kind, metadata, attachment_url')
+        .eq('room_id', room.id)
+        .order('created_at', { ascending: true })
+        .limit(500);
+      const rows = (msgs ?? []) as Array<{
+        sender_role: string;
+        created_at: string;
+        input_kind?: string | null;
+        metadata?: Record<string, unknown> | null;
+        attachment_url?: string | null;
+      }>;
+      const gaps: number[] = [];
+      let pendingSignalAt: number | null = null;
+      for (const row of rows) {
+        const kind = row.metadata?.kind;
+        if (typeof kind === 'string' && (kind === 'arrival_bundle' || kind === 'spot_arrival')) {
+          me.narration += 1;
+        }
+        const staff = row.sender_role === 'driver' || row.sender_role === 'guide' || row.sender_role === 'admin';
+        if (staff && (row.input_kind === 'image' || Boolean(row.attachment_url))) me.photos += 1;
+        const isGuestSignal =
+          row.sender_role === 'system' && typeof kind === 'string' && kind.startsWith('guest_');
+        const at = new Date(row.created_at).getTime();
+        if (isGuestSignal) {
+          me.response.signals += 1;
+          if (pendingSignalAt === null) pendingSignalAt = at;
+        } else if (staff && pendingSignalAt !== null) {
+          const gapSec = Math.round((at - pendingSignalAt) / 1000);
+          if (gapSec >= 0 && gapSec <= 600) gaps.push(gapSec);
+          pendingSignalAt = null;
+        }
+      }
+      if (gaps.length > 0) {
+        gaps.sort((a, b) => a - b);
+        me.response.median_seconds = gaps[Math.floor(gaps.length / 2)];
+      }
+    } catch {
+      /* partial */
+    }
+
+    return NextResponse.json({ visited, span, money, current, me });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/day-summary error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
