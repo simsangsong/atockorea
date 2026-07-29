@@ -194,14 +194,28 @@ export function consumerTourCheckoutHref(tourId: string | null | undefined, slug
 }
 
 /**
- * Hide duplicate flagship rows from consumer tour lists (web + mobile + search).
+ * Hide flagship / duplicate rows from consumer tour lists (web + mobile + search).
  * Blocked tour ids are removed separately (`isTourIdBlockedFromConsumerSurfaces`).
+ *
+ * 🔴 B6 (2026-07-29, owner confirmed) — the whole East Signature family is
+ * hidden here now, including the canonical row. It used to be exempted, which
+ * was right while the family were duplicate SKUs for one live experience: keep
+ * one, hide the copies. That stopped being true when the product itself was
+ * retired — live DB reads `tours.is_active = false` and zero bookings, ever.
+ *
+ * The exemption is what kept it in `/api/tours`, the destinations feed and
+ * `/api/mypage/extras` anyway, because those filter on this function and the
+ * static catalogue never consults `is_active`. Two ways of saying "retired",
+ * and only one of them was being read.
+ *
+ * The detail page is deliberately unaffected — `consumerTourDetailHref` does
+ * not go through here, so existing links and search results still resolve
+ * rather than 404.
  */
 export function isTourSlugHiddenFromPublicCatalog(slug: unknown): boolean {
   if (slug == null || typeof slug !== "string") return false;
   const s = slug.trim().toLowerCase();
   if (!s) return false;
-  if (s === CANONICAL_EAST_SIGNATURE_CATALOG_SLUG) return false;
   if (s === "jeju-east-small-group-template-preview") return true;
   if (matchesEastSignatureSlugSegment(s)) return true;
   if (isTourSlugBlockedFromConsumerSurfaces(s)) return true;
