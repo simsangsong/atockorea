@@ -295,6 +295,7 @@ export async function POST(
       tourDate: booking.tour_date,
       itinerary: (bookingRow as { itinerary?: unknown } | null)?.itinerary ?? null,
       tourSchedule: tour?.schedule,
+      tourId: booking.tour_id ?? null,
     });
     const schedule: ScheduleItemLike[] = resolvedSchedule.schedule;
     const feed = ((recentMessages ?? []) as unknown as RoomMessage[]).reverse();

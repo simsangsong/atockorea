@@ -361,6 +361,9 @@ export async function POST(
       const { schedule } = await resolveDaySchedule(supabase, {
         bookingId: booking.id,
         tourDate: booking.tour_date ?? null,
+        // The next leg is found by comparing poi_key. Without tourId the stops
+        // have none, so `idx` was always -1 and there was never a next stop.
+        tourId: booking.tour_id ?? null,
       });
       const idx = spot.poi_key ? schedule.findIndex((item) => item.poi_key === spot.poi_key) : -1;
       const next =
