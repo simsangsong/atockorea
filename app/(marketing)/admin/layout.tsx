@@ -8,6 +8,7 @@ import type { LucideIcon } from 'lucide-react';
 import {
   BarChart3,
   Bot,
+  Route,
   Building2,
   Bus,
   ChevronDown,
@@ -131,6 +132,7 @@ const adminMenuGroups: AdminMenuGroup[] = [
       { path: '/admin/poi-videos', label: 'POI 동영상 검수', icon: Clapperboard },
       { path: '/admin/poi-content-locales', label: 'POI 해설 로케일 검수', icon: Languages },
       { path: '/admin/dining-cache', label: '다이닝 캐시', icon: Utensils },
+      { path: '/admin/travel-matrix', label: '이동시간 매트릭스', icon: Route },
       { path: '/admin/analytics', label: '데이터 분석', icon: BarChart3 },
       { path: '/admin/chatbot-analytics', label: '챗봇 분석', icon: Bot },
     ],
