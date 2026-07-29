@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 79개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **79/79 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 1). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 80개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **80/80 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -78,14 +78,15 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `map/RoomMapTab.tsx` | A1.4 | P1 → `A1-4-map-location.md` (수정 완료) |
 | `map/VehicleLocationCard.tsx` | A1.4 | ✅ |
 
-## A1.5 — 플래너 (4개)
+## A1.5 — 플래너 (5개)
 
 | 파일 | 티켓 | 판정 |
 |---|---|---|
-| `plan/PlanEditorClient.tsx` | A1.5 | P1 · P2 → `A1-5-planner.md` (수정 완료) |
+| `plan/PlanEditorClient.tsx` | A1.5 | P1 · P2 → `A1-5-planner.md` (수정 완료) · P7.7 로 3,750 → 2,491줄 |
 | `plan/PlanStopCards.tsx` | A1.5 | P2 → `A1-5-planner.md` (수정 완료) |
 | `plan/PlanTourItinerary.tsx` | A1.5 | ✅ |
 | `plan/PoiThumb.tsx` | P7.1 | ✅ 신규 — 사진 후보 체인 + 스와치 폴백. 커버리지 8.9% → 60.5% (실측) |
+| `plan/planCopy.ts` | P7.7 | ✅ 신규 — 10로케일 카피 테이블 분리(1,264줄). UI 없음, 문자열만 |
 
 ## A1.6 — 진입·설정·기타 (25개)
 
@@ -157,15 +158,17 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | A1.2 | 18 |
 | A1.3 | 4 |
 | A1.4 | 6 |
-| A1.5 | 3 |
+| A1.5 | 5 |
 | A1.6 | 25 |
 | A1.8 | 3 |
 | A2.1 | 7 |
 | A2.2 | 3 |
 | W2/W4 | 3 |
-| **합계** | **78** |
+| **합계** | **80** |
 
-A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규 3개.
+A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규 3개 · P7 신규 2개(`PoiThumb` · `planCopy`).
+
+⚠ 섹션 헤더의 개수와 실제 행 수가 어긋난 곳이 있다(A1.3·A1.4는 이 트랙 이전부터). 판정은 표가 하고, 개수는 `a1Coverage` 테스트가 파일 목록으로 직접 센다.
 
 ## W-트랙 신규 (2026-07-27, 스마트앱 UI 프리미엄 업그레이드 — SoT `docs/smartapp-ui-premium-upgrade-master-plan-2026-07-26.md`)
 

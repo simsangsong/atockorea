@@ -31,6 +31,11 @@ const PLANNER = readFileSync(
   path.join(process.cwd(), 'components', 'tour-mode', 'plan', 'PlanEditorClient.tsx'),
   'utf8',
 );
+/** P7.7 — the ten-locale copy tables live beside the component, not inside it. */
+const PLAN_COPY = readFileSync(
+  path.join(process.cwd(), 'components', 'tour-mode', 'plan', 'planCopy.ts'),
+  'utf8',
+);
 
 interface Rule {
   parts: string[];
@@ -298,7 +303,9 @@ describe('plannerLayoutOrder (P7.4 H-6)', () => {
    */
   it('the empty state does not point upward at a section that is now below', () => {
     const UPWARD = ['above', 'ci-dessus', 'oben', 'qui sopra', 'arriba', '위에서', '上方', '上で', 'выше'];
-    const lines = PLANNER.split('\n').filter((l) => l.trim().startsWith('emptyStops:'));
+    // P7.7 moved the copy tables out of the component. The "at least 10" guard
+    // below is what caught that move instead of letting this pass on 0 lines.
+    const lines = PLAN_COPY.split('\n').filter((l) => l.trim().startsWith('emptyStops:'));
     expect(lines.length).toBeGreaterThanOrEqual(10);
     const offenders = lines.filter((l) => UPWARD.some((w) => l.includes(w)));
     expect(offenders).toEqual([]);
@@ -394,5 +401,34 @@ describe('plannerCourseCards (P7.6)', () => {
     expect(idx).toBeGreaterThan(-1);
     // The old single-line truncate must be gone from that row.
     expect(PLANNER).not.toContain('tr-card-text truncate font-medium');
+  });
+});
+
+/**
+ * P7.7 (formerly P5) — the component stays a component.
+ */
+describe('plannerFileSplit (P7.7)', () => {
+  it('the ten-locale copy tables live outside the component', () => {
+    expect(PLAN_COPY).toContain('export const COPY');
+    expect(PLAN_COPY).toContain('export const PLAN_STATUS_COPY');
+    // Not re-declared back inside the component.
+    expect(PLANNER).not.toMatch(/^const COPY: Record</m);
+    expect(PLANNER).not.toMatch(/^const PLAN_STATUS_COPY: Record</m);
+  });
+
+  /**
+   * A ceiling, not a target. 3,750 lines is where this file became a place
+   * people scroll past rather than read; the number exists so the next thousand
+   * lines are a deliberate decision instead of an accident.
+   */
+  it('the component stays under 2,800 lines', () => {
+    const lines = PLANNER.split('\n').length;
+    expect(lines).toBeLessThan(2800);
+  });
+
+  it('the locale list is still derived, never re-typed', () => {
+    expect(PLAN_COPY).toContain('ROOM_LOCALES');
+    // A hand-copied second list is how a locale silently goes missing.
+    expect(PLAN_COPY).not.toMatch(/const ROOM_LOCALE_VALUES\s*=\s*\[/);
   });
 });
