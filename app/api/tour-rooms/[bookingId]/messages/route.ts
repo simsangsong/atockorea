@@ -3,6 +3,11 @@ import { createServerClient } from '@/lib/supabase';
 import { transcribeAudioFile, translateTextForLocales, type TranslationResult } from '@/lib/openai-server';
 import { ensureRoom, resolveRoomActor, type RoomActor, type RoomBooking } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
+import {
+  withTranslationBudget,
+  MESSAGE_ROUTE_MAX_DURATION_S,
+  TRANSLATION_BUDGET_MS,
+} from '@/lib/tour-room/translationBudget';
 import { CORE_TRANSLATION_LOCALES, getRoomTranslationTargets } from '@/lib/tour-room/snapshot';
 import { normalizeChatLocale, MAX_TRANSLATION_TARGETS } from '@/lib/tour-room/chatLocale';
 import { getQuickReplyPreset } from '@/lib/tour-room/quickReplies';
@@ -15,6 +20,21 @@ import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/
 import { buildReplySnapshot, type RepliableMessage } from '@/lib/tour-room/reply';
 
 export const dynamic = 'force-dynamic';
+
+/**
+ * 🔴 A LITERAL, and it must stay one.
+ *
+ * Next.js reads segment config statically. `export const maxDuration =
+ * MESSAGE_ROUTE_MAX_DURATION_S` does not fail at runtime — it fails the BUILD,
+ * with "Unknown identifier ... at maxDuration", and that broke production for
+ * hours on the SSE route in July. So the number is written twice on purpose and
+ * `segmentConfig`/`k5TranslationBudget` assert the two agree.
+ *
+ * Declaring it at all is the point: without it the platform chooses, and the
+ * platform's choice can land INSIDE the translation ladder — which killed the
+ * function before the insert and lost the guest's message outright.
+ */
+export const maxDuration = 30;
 
 // §D A4.1 — 로케일 목록은 ROOM_LOCALES 하나뿐이다. 여기 다시 적으면
 // 로케일이 하나 늘어나는 날 이 파일만 조용히 5개로 남는다.
@@ -273,7 +293,24 @@ export async function POST(
       translation = { source_locale: 'und', translations: {} };
     } else {
       try {
-        translation = await translateTextForLocales(text, targetLocales);
+        /**
+         * K5 — bounded, so the insert below is always reached.
+         *
+         * The router allows 8s per provider and walks a fallback ladder, so one
+         * hung provider can hold this await for 8s x chain length. Undeclared
+         * duration meant the platform could kill the function inside that
+         * window, and the row was never written: the message did not arrive
+         * late, it did not arrive at all, and nobody saw an error.
+         *
+         * A timeout lands in the same branch a throw already did — publish the
+         * original, mark it pending — and `/retranslate` repairs it. A message
+         * that shows up in its own language and gains its translation a minute
+         * later is fine. A message that never existed is not recoverable.
+         */
+        translation = await withTranslationBudget(
+          translateTextForLocales(text, targetLocales),
+          TRANSLATION_BUDGET_MS,
+        );
       } catch (translationError) {
         console.warn('tour-room message translation failed, publishing original first:', translationError);
         translation = { source_locale: 'und', translations: {} };
