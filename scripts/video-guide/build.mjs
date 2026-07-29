@@ -43,11 +43,21 @@ fs.mkdirSync(CACHE, { recursive: true });
 fs.mkdirSync(OUTDIR, { recursive: true });
 
 const GRADE = (Array.isArray(spec.grade) ? spec.grade.join(',') : spec.grade) ?? [
-  'eq=saturation=1.12:gamma=1.01',
-  "curves=all='0/0 0.22/0.19 0.5/0.51 0.78/0.82 1/1'",
-  'colorbalance=rh=0.020:bh=-0.018:rm=0.008:bm=-0.008',
-  'unsharp=5:5:0.40:5:5:0.0',
-  'vignette=a=PI/5.5',
+  // The phone's wide lens bows every railing and the horizon; straighten it first,
+  // then trim the black corners the correction leaves behind.
+  'lenscorrection=k1=-0.13:k2=0.008:i=bilinear',
+  'crop=iw*0.93:ih*0.93',
+  'eq=saturation=1.15:gamma=1.02',
+  // Split tone through the curves rather than colorbalance: a cool lift in the
+  // shadows and warmth pulled into the highlights, plus the contrast S. Summer
+  // haze here is blue-grey, so cooling the shadows and warming the sun separates
+  // the temple's reds and golds from the sea behind them.
+  "curves=r='0/0.012 0.25/0.238 0.5/0.512 0.75/0.780 1/0.996'"
+  + ":g='0/0.006 0.25/0.232 0.5/0.502 0.75/0.766 1/1'"
+  + ":b='0/0.030 0.25/0.252 0.5/0.492 0.75/0.735 1/0.972'",
+  'unsharp=5:5:0.48:5:5:0.0',
+  'noise=alls=5:allf=t+u',          // fine grain, kills the digital flatness
+  'vignette=a=PI/6.5',              // lighter than v1 — the corners were heavy
 ].join(',');
 
 const VSCALE = `scale=${OUT_W}:${OUT_H}:flags=lanczos,setsar=1,format=yuv420p`;
