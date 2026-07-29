@@ -139,18 +139,24 @@ async function renderHold(beat, out) {
     // fraction of the leftover margin, which is the opposite of how anyone thinks
     // about framing — it took three attempts to land one plaque and it still cut
     // the other one in half. Give it the box; the renderer works out the path.
+    // A statue or a plaque reads best when the frame travels across it — top-left
+    // down to bottom-right — rather than punching straight in. Zoom is held
+    // constant and the window slides, so the subject is discovered rather than
+    // arrived at. `focus` is the subject's rectangle in source pixels.
     const [fx, fy, fw, fh] = beat.focus ?? [0, 0, 1920, 1080];
-    const pad = beat.focusPad ?? 1.16;
-    const zoom = Math.min(beat.maxZoom ?? 2.4, Math.max(1.05, Math.min(1920 / (fw * pad), 1080 / (fh * pad))));
-    const cxPx = fx + fw / 2, cyPx = fy + fh / 2;
-    // where the crop's top-left must sit at full zoom, clamped inside the frame
-    const endW = 1920 / zoom, endH = 1080 / zoom;
-    const ex = Math.max(0, Math.min(1920 - endW, cxPx - endW / 2));
-    const ey = Math.max(0, Math.min(1080 - endH, cyPx - endH / 2));
-    // ease-in-out so the push starts and lands softly instead of snapping on
+    const zoom = Math.min(beat.maxZoom ?? 2.2, Math.max(1.12, Math.min(1920 / (fw * 1.25), 1080 / (fh * 0.62))));
+    const cw = 1920 / zoom, ch = 1080 / zoom;
+    const clampX = (v) => Math.max(0, Math.min(1920 - cw, v));
+    const clampY = (v) => Math.max(0, Math.min(1080 - ch, v));
+    const midX = fx + fw / 2;
+    const sx = clampX(midX - cw / 2 - fw * 0.18);
+    const ex = clampX(midX - cw / 2 + fw * 0.18);
+    const sy = clampY(fy - ch * 0.06);            // start high on the subject
+    const ey = clampY(fy + fh - ch * 0.94);       // finish low on it
     const p = `(3*pow(min(t/${dur},1),2)-2*pow(min(t/${dur},1),3))`;
-    filter += `crop=w='iw/(1+${(zoom - 1).toFixed(4)}*${p})':h='ih/(1+${(zoom - 1).toFixed(4)}*${p})':`
-      + `x='${ex.toFixed(1)}*${p}':y='${ey.toFixed(1)}*${p}',${VSCALE}[v];`;
+    filter += `crop=w=${Math.round(cw / 2) * 2}:h=${Math.round(ch / 2) * 2}:`
+      + `x='${sx.toFixed(1)}+${(ex - sx).toFixed(1)}*${p}':`
+      + `y='${sy.toFixed(1)}+${(ey - sy).toFixed(1)}*${p}',${VSCALE}[v];`;
   } else if (beat.kind === 'polaroid') {
     const card = path.join(CACHE, `polaroid_${beat.id}.png`);
     await renderPolaroid({ framePath: still, outFile: card, opts: beat.polaroid ?? {} });
@@ -158,7 +164,10 @@ async function renderHold(beat, out) {
     // Four beats, the way a real print behaves: shutter bloom, the print settles
     // in, it is held long enough to actually read, then it is pulled away to the
     // side. v1 stopped after the hold and the card just vanished on the cut.
-    const exit = +(dur - 0.78).toFixed(2);
+    // The print used to sit there for four seconds and the cut stalled. It now
+    // holds just long enough to register — the beat is the snapshot, not a pause.
+    const photoHold = beat.photoHold ?? 1.2;
+    const exit = +Math.min(dur - 0.7, 0.54 + photoHold).toFixed(2);
     const slide = Math.round(OUT_W * 1.25);
     filter += `eq=brightness='if(lt(t,0.14),(0.14-t)*5.5,-0.055)':saturation=0.92:eval=frame[bg];`
       + `[${next}:v]scale=${OUT_W}:${OUT_H},`

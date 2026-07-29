@@ -23,10 +23,11 @@
     "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29)"
   },
   "_notes": [
-    "타임코드 정본은 docs/onetake-tour-video-edit-master-plan-2026-07-29.md §B",
-    "영상 내 텍스트는 전부 영어 — 손님 100% 외국인 (사용자 확정 2026-07-29).",
-    "화살표는 손으로 찍지 않는다. heading.mjs 측정 → authorArrows.mjs 자동 저작.",
-    "클로즈업은 focus:[x,y,w,h] 원본 픽셀 사각형. cx/cy(여백 비율)는 폐기됨."
+    "영상 내 텍스트는 전부 영어 — 손님 100% 외국인.",
+    "🔴 정지+경로화살표 비트 폐지 (사용자 확정). 교차로는 배속을 1.2x로 늦춰서 알린다.",
+    "옵젝트 지시 화살표는 대상보다 작아야 한다 — stem 9 / head 30.",
+    "강조 옵젝트는 closeup: focus 사각형을 좌상→우하로 훑는다 (달마대사 방식).",
+    "폴라로이드는 1.2초만 머문다."
   ],
   "beats": [
     {
@@ -34,54 +35,15 @@
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 1,
+      "out": 6,
       "speed": 1,
       "title": "Leaving the car park"
     },
     {
       "id": "02",
-      "kind": "arrow",
-      "src": "A",
-      "at": 1,
-      "hold": 4.5,
-      "title": "Market Street",
-      "sub": "Straight, then bear left",
-      "caption": "Straight on is the bus park. Bear left into the food lane.",
-      "arrows": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 985.55,
-              "y": 954.888
-            },
-            {
-              "x": 915,
-              "y": 907.2432
-            }
-          ],
-          "width": [
-            128,
-            20
-          ],
-          "headLen": 56,
-          "chevronSpacing": 140,
-          "derivedFrom": "left",
-          "corner": 0.35
-        }
-      ],
-      "turn": "left",
-      "turnAt": 0.34
-    },
-    {
-      "id": "03",
       "kind": "clip",
       "src": "A",
-      "in": 1,
+      "in": 6,
       "out": 93,
       "speed": 6,
       "title": "Through the food stalls",
@@ -90,7 +52,7 @@
       }
     },
     {
-      "id": "04",
+      "id": "03",
       "kind": "clip",
       "src": "A",
       "in": 93,
@@ -102,52 +64,60 @@
       }
     },
     {
-      "id": "05",
+      "id": "04",
       "kind": "arrow",
       "src": "A",
       "at": 100,
-      "hold": 5,
+      "hold": 4,
       "title": "Twelve Zodiac Guardians",
       "sub": "One for each animal of the zodiac",
       "caption": "Twelve stone guardians along the wall. Find the one for your birth year.",
+      "arrowOverride": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 392,
+            "y": 452
+          },
+          "target": {
+            "x": 596,
+            "y": 664
+          },
+          "gap": 44,
+          "stem": 9,
+          "headLen": 30,
+          "headWidth": 26
+        }
+      ],
       "arrows": [
         {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 963.85,
-              "y": 871.776
-            },
-            {
-              "x": 967,
-              "y": 706.3199999999999
-            }
-          ],
-          "width": [
-            128,
-            22
-          ],
-          "headLen": 62,
-          "chevronSpacing": 128,
-          "derivedFrom": "straight"
+          "mode": "pointer",
+          "from": {
+            "x": 392,
+            "y": 452
+          },
+          "target": {
+            "x": 596,
+            "y": 664
+          },
+          "gap": 44,
+          "stem": 9,
+          "headLen": 30,
+          "headWidth": 26
         }
       ]
     },
     {
-      "id": "06",
+      "id": "05",
       "kind": "clip",
       "src": "A",
       "in": 100,
       "out": 105,
-      "speed": 1,
+      "speed": 1.2,
       "title": "Along the wall"
     },
     {
-      "id": "07",
+      "id": "06",
       "kind": "closeup",
       "src": "A",
       "at": 106,
@@ -167,7 +137,7 @@
       }
     },
     {
-      "id": "08",
+      "id": "07",
       "kind": "clip",
       "src": "A",
       "in": 106,
@@ -179,7 +149,7 @@
       }
     },
     {
-      "id": "09",
+      "id": "08",
       "kind": "closeup",
       "src": "A",
       "at": 117,
@@ -188,10 +158,10 @@
       "sub": "Goddess of Mercy, carved in relief",
       "caption": "A relief of Gwaneum, Goddess of Mercy, standing on a lotus.",
       "focus": [
-        640,
-        60,
-        620,
-        900
+        660,
+        70,
+        600,
+        880
       ],
       "transition": {
         "kind": "dissolve",
@@ -199,7 +169,7 @@
       }
     },
     {
-      "id": "10",
+      "id": "09",
       "kind": "clip",
       "src": "A",
       "in": 117,
@@ -211,7 +181,7 @@
       }
     },
     {
-      "id": "11",
+      "id": "10",
       "kind": "clip",
       "src": "A",
       "in": 137,
@@ -220,28 +190,28 @@
       "title": "The gate"
     },
     {
-      "id": "12",
+      "id": "11",
       "kind": "closeup",
       "src": "A",
       "at": 139,
-      "hold": 5.5,
+      "hold": 5,
       "title": "Haedong Yonggungsa",
       "sub": "Dragon Palace Temple of the East Sea",
-      "caption": "\"Haedong\" means east of the sea, \"Yonggung\" the dragon king's palace — a temple built on the water, not in the mountains.",
+      "caption": "\"Haedong\" is east of the sea, \"Yonggung\" the dragon king's palace — a temple built on the water, not in the mountains.",
       "focus": [
-        120,
-        380,
-        1000,
-        420
+        60,
+        430,
+        1060,
+        300
       ],
-      "maxZoom": 1.9,
       "transition": {
         "kind": "dissolve",
         "seconds": 0.5
-      }
+      },
+      "maxZoom": 1.7
     },
     {
-      "id": "13",
+      "id": "12",
       "kind": "clip",
       "src": "A",
       "in": 139,
@@ -253,72 +223,45 @@
       }
     },
     {
-      "id": "14",
+      "id": "13",
       "kind": "clip",
       "src": "A",
       "in": 172,
-      "out": 178,
-      "speed": 1,
-      "title": "The lantern path"
+      "out": 176,
+      "speed": 1.6,
+      "title": "The lantern path",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "A",
+      "in": 176,
+      "out": 182,
+      "speed": 1.2,
+      "title": "Top of the 108 steps"
     },
     {
       "id": "15",
-      "kind": "arrow",
-      "src": "A",
-      "at": 178,
-      "hold": 6,
-      "title": "The 108 Steps",
-      "sub": "Straight down, then left",
-      "caption": "108 steps for the 108 earthly desires. Stone lanterns the whole way down.",
-      "stairs": true,
-      "stepCount": 7,
-      "arrows": [
-        {
-          "mode": "steps",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 984,
-              "y": 976.4399999999999
-            },
-            {
-              "x": 937,
-              "y": 748.8
-            }
-          ],
-          "width": [
-            230,
-            62
-          ],
-          "steps": 7,
-          "perspective": 0.86,
-          "derivedFrom": "left"
-        }
-      ],
-      "turn": "left",
-      "turnAt": 0.3
-    },
-    {
-      "id": "16",
       "kind": "clip",
       "src": "A",
-      "in": 178,
+      "in": 182,
       "out": 218,
-      "speed": 2.2,
+      "speed": 2.4,
       "title": "Down to the viewpoint",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
-      "id": "17",
+      "id": "16",
       "kind": "polaroid",
       "src": "A",
       "at": 218,
-      "hold": 5,
+      "hold": 2.6,
+      "photoHold": 1.2,
       "title": "Ocean Viewpoint",
       "sub": "The deck out over the rocks",
       "caption": "The deck hangs over the surf. This temple faces east — come at sunrise.",
@@ -328,7 +271,7 @@
       }
     },
     {
-      "id": "18",
+      "id": "17",
       "kind": "clip",
       "src": "B",
       "in": 0,
@@ -344,11 +287,12 @@
       }
     },
     {
-      "id": "19",
+      "id": "18",
       "kind": "polaroid",
       "src": "B",
       "at": 39,
-      "hold": 5.5,
+      "hold": 2.6,
+      "photoHold": 1.2,
       "title": "Temple Panorama",
       "sub": "The whole temple in one frame",
       "caption": "The one spot where the entire temple fits in a single frame.",
@@ -358,115 +302,11 @@
       }
     },
     {
-      "id": "20",
-      "kind": "arrow",
-      "src": "B",
-      "at": 39,
-      "hold": 5,
-      "title": "Head Back Up",
-      "sub": "Right, then up the steps",
-      "caption": "Dead end. Turn right and climb the wooden steps back up.",
-      "arrowOverride": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 1120,
-              "y": 900
-            },
-            {
-              "x": 1330,
-              "y": 838
-            }
-          ],
-          "width": [
-            128,
-            26
-          ],
-          "headLen": 54
-        },
-        {
-          "mode": "steps",
-          "points": [
-            {
-              "x": 1330,
-              "y": 838
-            },
-            {
-              "x": 1450,
-              "y": 770
-            },
-            {
-              "x": 1560,
-              "y": 712
-            }
-          ],
-          "width": [
-            150,
-            52
-          ],
-          "steps": 5,
-          "perspective": 0.86
-        }
-      ],
-      "arrows": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 1120,
-              "y": 900
-            },
-            {
-              "x": 1330,
-              "y": 838
-            }
-          ],
-          "width": [
-            128,
-            26
-          ],
-          "headLen": 54
-        },
-        {
-          "mode": "steps",
-          "points": [
-            {
-              "x": 1330,
-              "y": 838
-            },
-            {
-              "x": 1450,
-              "y": 770
-            },
-            {
-              "x": 1560,
-              "y": 712
-            }
-          ],
-          "width": [
-            150,
-            52
-          ],
-          "steps": 5,
-          "perspective": 0.86
-        }
-      ]
-    },
-    {
-      "id": "21",
+      "id": "19",
       "kind": "clip",
       "src": "C",
       "in": 0,
-      "out": 26,
+      "out": 20,
       "speed": 2.4,
       "title": "Back down the steps",
       "ramp": {
@@ -478,53 +318,28 @@
       }
     },
     {
-      "id": "22",
-      "kind": "arrow",
-      "src": "C",
-      "at": 26,
-      "hold": 5,
-      "title": "Yongmun Bridge",
-      "sub": "Cross, then turn right",
-      "caption": "The bridge crosses open water. The main hall is up to the right.",
-      "arrows": [
-        {
-          "mode": "ribbon",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 943.9,
-              "y": 951.612
-            },
-            {
-              "x": 1206,
-              "y": 902.6568
-            }
-          ],
-          "width": [
-            128,
-            20
-          ],
-          "headLen": 56,
-          "chevronSpacing": 140,
-          "derivedFrom": "right",
-          "corner": 0.35
-        }
-      ]
-    },
-    {
-      "id": "23",
+      "id": "20",
       "kind": "clip",
       "src": "C",
-      "in": 26,
-      "out": 45,
-      "speed": 1.4,
-      "title": "Crossing the bridge"
+      "in": 20,
+      "out": 30,
+      "speed": 1.2,
+      "title": "Onto Yongmun Bridge"
     },
     {
-      "id": "24",
+      "id": "21",
+      "kind": "clip",
+      "src": "C",
+      "in": 30,
+      "out": 45,
+      "speed": 1.6,
+      "title": "Across the water",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "22",
       "kind": "clip",
       "src": "C",
       "in": 45,
@@ -536,7 +351,7 @@
       }
     },
     {
-      "id": "25",
+      "id": "23",
       "kind": "clip",
       "src": "C",
       "in": 86,
@@ -545,11 +360,11 @@
       "title": "Daeungbojeon Hall"
     },
     {
-      "id": "26",
+      "id": "24",
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 163,
+      "out": 160,
       "speed": 4,
       "title": "Around the hall",
       "ramp": {
@@ -557,48 +372,19 @@
       }
     },
     {
-      "id": "27",
-      "kind": "arrow",
-      "src": "C",
-      "at": 163,
-      "hold": 5,
-      "title": "Steps to the Goddess",
-      "sub": "A short climb — take it slowly",
-      "caption": "Uneven stone with a handrail. Under a minute to the top.",
-      "stairs": true,
-      "stepCount": 6,
-      "arrows": [
-        {
-          "mode": "steps",
-          "points": [
-            {
-              "x": 960,
-              "y": 1074
-            },
-            {
-              "x": 965.4,
-              "y": 971.256
-            },
-            {
-              "x": 867,
-              "y": 731.52
-            }
-          ],
-          "width": [
-            230,
-            62
-          ],
-          "steps": 6,
-          "perspective": 0.86,
-          "derivedFrom": "left"
-        }
-      ]
-    },
-    {
-      "id": "28",
+      "id": "25",
       "kind": "clip",
       "src": "C",
-      "in": 163,
+      "in": 160,
+      "out": 166,
+      "speed": 1.2,
+      "title": "Foot of the stone steps"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "C",
+      "in": 166,
       "out": 193,
       "speed": 6,
       "title": "The climb",
@@ -607,7 +393,7 @@
       }
     },
     {
-      "id": "29",
+      "id": "27",
       "kind": "clip",
       "src": "C",
       "in": 193,
@@ -619,11 +405,12 @@
       }
     },
     {
-      "id": "30",
+      "id": "28",
       "kind": "polaroid",
       "src": "C",
       "at": 209,
-      "hold": 5.5,
+      "hold": 2.6,
+      "photoHold": 1.2,
       "title": "Haesu Gwaneum",
       "sub": "Goddess of Mercy, facing the sea",
       "caption": "She faces the open sea. Visitors come here to ask for one wish.",
@@ -633,7 +420,7 @@
       }
     },
     {
-      "id": "31",
+      "id": "29",
       "kind": "clip",
       "src": "C",
       "in": 209,
@@ -642,7 +429,7 @@
       "title": "The view from the top"
     },
     {
-      "id": "32",
+      "id": "30",
       "kind": "clip",
       "src": "C",
       "in": 226,
@@ -654,7 +441,7 @@
       }
     },
     {
-      "id": "33",
+      "id": "31",
       "kind": "clip",
       "src": "C",
       "in": 290,
@@ -663,7 +450,7 @@
       "title": "The bamboo path"
     },
     {
-      "id": "34",
+      "id": "32",
       "kind": "closeup",
       "src": "C",
       "at": 312,
@@ -672,10 +459,10 @@
       "sub": "Near the exit gate",
       "caption": "A seven-storey pagoda marks the way out. You have come full circle.",
       "focus": [
-        560,
-        60,
-        560,
-        820
+        600,
+        80,
+        470,
+        800
       ],
       "transition": {
         "kind": "dissolve",
@@ -683,7 +470,7 @@
       }
     },
     {
-      "id": "35",
+      "id": "33",
       "kind": "clip",
       "src": "C",
       "in": 312,
@@ -692,7 +479,7 @@
       "title": "Toward the exit"
     },
     {
-      "id": "36",
+      "id": "34",
       "kind": "clip",
       "src": "A",
       "in": 139,
