@@ -15,6 +15,12 @@ import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
 import { classifyAttachment, uploadAttachment, type StorageClientLike } from '@/lib/tour-room/attachments';
 import { insertExtraCapsule, type ExtraRow } from '@/lib/tour-room/extraCapsule';
+import {
+  ROOM_PHOTOS_BUCKET,
+  resolveStoragePath,
+  signRoomMediaBatch,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
 export const dynamic = 'force-dynamic';
 
@@ -54,7 +60,26 @@ export async function GET(
     const unsettled = rows
       .filter((row) => row.status === 'logged' || row.status === 'confirmed')
       .reduce((sum, row) => sum + row.amount_krw, 0);
-    return NextResponse.json({ extras: rows, unsettled_krw: unsettled });
+
+    /**
+     * A receipt photo is guest financial data — the reason `tour-room-photos`
+     * is private and not merely unguessable. The column stores a path; the URL
+     * is minted here for this authorized reader and expires.
+     */
+    const signedReceipts = await signRoomMediaBatch(
+      supabase as unknown as RoomMediaStorageClient,
+      ROOM_PHOTOS_BUCKET,
+      rows
+        .map((row) => resolveStoragePath(row.receipt_photo_url, ROOM_PHOTOS_BUCKET))
+        .filter((p): p is string => Boolean(p)),
+    );
+    const hydrated = rows.map((row) => {
+      const path = resolveStoragePath(row.receipt_photo_url, ROOM_PHOTOS_BUCKET);
+      if (!path) return row;
+      return { ...row, receipt_photo_url: signedReceipts.get(path) ?? null };
+    });
+
+    return NextResponse.json({ extras: hydrated, unsettled_krw: unsettled });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/extras error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
@@ -175,7 +200,7 @@ export async function POST(
       return NextResponse.json({ message, total_krw: total }, { status: 201 });
     }
 
-    // T1-3 — upload the optional receipt (image only) and store its URL.
+    // T1-3 — upload the optional receipt (image only) and store its PATH.
     let receiptUrl: string | null = null;
     if (receiptFile) {
       const classified = classifyAttachment({
@@ -194,7 +219,7 @@ export async function POST(
           { bytes, type: receiptFile.type, name: receiptFile.name, size: receiptFile.size },
           classified.ext,
         );
-        receiptUrl = meta.url;
+        receiptUrl = meta.path;
       } catch (uploadError) {
         console.error('tour-room receipt upload failed:', uploadError);
         return NextResponse.json({ error: 'receipt upload failed' }, { status: 502 });

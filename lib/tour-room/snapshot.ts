@@ -20,6 +20,7 @@ import {
   resolveReviewPolicy,
   type RoomReviewPolicy,
 } from '@/lib/tour-room/reviewPolicy';
+import { hydrateMessageMedia, type RoomMediaStorageClient } from '@/lib/tour-room/roomMedia';
 import { roomLifecycle, type RoomLifecycle } from '@/lib/tour-room/time';
 
 /**
@@ -299,7 +300,18 @@ export async function buildRoomSnapshot(
     | null;
   const tour = bookingRow && Array.isArray(bookingRow.tours) ? bookingRow.tours[0] : bookingRow?.tours ?? null;
 
-  const messages = ((messagesRes?.data ?? []) as Array<Record<string, unknown>>).reverse();
+  /**
+   * Exit 5 of 5 — the snapshot carries the last 100 messages, `select('*')`,
+   * straight into the app's first paint. Miss this one and every photo the
+   * guest has already received renders broken on cold open, then repairs itself
+   * the moment the feed refetches — the worst kind of bug to reproduce.
+   */
+  const messages = await hydrateMessageMedia(
+    supabase as unknown as RoomMediaStorageClient,
+    ((messagesRes?.data ?? []) as Array<Record<string, unknown>>).reverse() as Array<{
+      metadata?: Record<string, unknown> | null;
+    }>,
+  );
 
   // W0.2 — the 4-stage resolver chain (§C-4). With no day plan and no
   // itinerary poi_keys this returns tour.schedule ?? [] exactly as before.

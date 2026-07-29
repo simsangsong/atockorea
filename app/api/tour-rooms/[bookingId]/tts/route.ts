@@ -5,6 +5,7 @@ import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { ensureRoomTts, TTS_BUCKET, type TtsPart, type TtsStorageClient } from '@/lib/tour-room/tts-server';
 import { normalizeRoomLocale } from '@/lib/tour-room/snapshot';
 import { composeSpotNarration, pickSpotContent } from '@/lib/tour-room/spotContent';
+import { signRoomMedia, type RoomMediaStorageClient } from '@/lib/tour-room/roomMedia';
 
 export const dynamic = 'force-dynamic';
 
@@ -83,8 +84,17 @@ export async function GET(
       .eq('part', part)
       .maybeSingle();
     if (cached?.storage_path) {
-      const { data: pub } = supabase.storage.from(TTS_BUCKET).getPublicUrl(cached.storage_path);
-      return NextResponse.json({ url: pub.publicUrl, cached: true, durationMs: cached.duration_ms ?? null });
+      // Private bucket — the cache hit still costs zero paid calls, it just
+      // hands back a URL that expires instead of one that never does.
+      const url = await signRoomMedia(
+        supabase as unknown as RoomMediaStorageClient,
+        TTS_BUCKET,
+        cached.storage_path,
+      );
+      if (!url) {
+        return NextResponse.json({ error: 'audio_unavailable' }, { status: 502 });
+      }
+      return NextResponse.json({ url, cached: true, durationMs: cached.duration_ms ?? null });
     }
 
     // Generation path — budget-guarded (§O-2 ②).

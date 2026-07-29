@@ -29,6 +29,7 @@ import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 import { signCustomerRoomToken, signGuideRoomToken } from '../lib/tour-room/token';
 import { kstToday } from '../lib/tour-room/time';
+import { purgeRoomMedia, type PurgeStorageClient } from '../lib/tour-room/mediaPurge';
 
 const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
 const SIM_ADMIN_EMAIL = 'sim-tour-ops-admin@atockorea.test';
@@ -85,6 +86,25 @@ async function main() {
         if (error && !/does not exist|schema cache/i.test(error.message)) {
           console.warn('cleanup: ' + table + '.' + column + ' -> ' + error.message);
         }
+      }
+    }
+
+    /**
+     * 1b. Storage objects — BEFORE the cascade, because after it nothing says
+     *     which paths belonged to these rooms.
+     *
+     * 🔴 This step did not exist, and its absence was invisible: cleanup
+     * printed `leftover: 0` (true, of rows) while twelve objects stayed in
+     * `tour-room-photos` under rooms that no longer existed. SQL cannot delete
+     * them — `storage.protect_delete()` refuses — so it has to be the Storage
+     * API, here, while the room ids are still knowable.
+     */
+    if (ids.length > 0) {
+      const { data: rooms } = await service.from('tour_rooms').select('id').in('booking_id', ids);
+      const roomIds = (rooms ?? []).map((r) => String(r.id));
+      if (roomIds.length > 0) {
+        const purged = await purgeRoomMedia(service as unknown as PurgeStorageClient, roomIds);
+        if (purged.total > 0) console.log('sim cleanup: storage objects removed:', purged.total);
       }
     }
 

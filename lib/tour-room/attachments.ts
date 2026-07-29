@@ -3,17 +3,27 @@
  *
  * A traveller/guide/driver sends a photo or file as a first-class message
  * (input_kind 'image' | 'file') — distinct from the vision "what is this?" Q&A.
- * Uploads land in the same public `tour-room-photos` bucket under an
- * unguessable UUID path; the object URL is the deliverable (public buckets
- * don't need a signed URL for read, and the UUID path is the gate).
+ *
+ * 🔴 Uploads land in the PRIVATE `tour-room-photos` bucket and this module
+ * returns a bucket-relative PATH, never a URL. An unguessable UUID path in a
+ * public bucket was the old gate; it is not a gate at all once the URL leaves
+ * the app, because a public object URL outlives the room, the invite, and the
+ * message. `att/` carries guest photos and expense receipts (guest financial
+ * data). Reads mint a short-lived signed URL at the five exits — see
+ * `lib/tour-room/roomMedia.ts`.
  *
  * Kept tiny and injectable so the messages route stays thin and this is
  * unit-testable without the real Supabase client.
  */
 
-import { randomUUID } from 'node:crypto';
+import {
+  ROOM_PHOTOS_BUCKET,
+  attachmentPath,
+  ensureRoomPhotosBucket,
+  type RoomMediaStorageClient,
+} from '@/lib/tour-room/roomMedia';
 
-const BUCKET = process.env.SUPABASE_TOUR_ROOM_PHOTOS_BUCKET || 'tour-room-photos';
+const BUCKET = ROOM_PHOTOS_BUCKET;
 
 export const MAX_IMAGE_BYTES = 8 * 1024 * 1024; // 8MB
 export const MAX_FILE_BYTES = 20 * 1024 * 1024; // 20MB
@@ -35,23 +45,20 @@ const IMAGE_MIME_EXT: Record<string, string> = {
 
 export type AttachmentKind = 'image' | 'file';
 
+/**
+ * What gets STORED on the message row.
+ *
+ * `path` (not `url`) is the deliverable. The wire shape the client reads still
+ * has `url` — `hydrateMessageMedia` adds it on the way out.
+ */
 export interface AttachmentMeta {
-  url: string;
+  path: string;
   mime: string;
   name: string;
   size: number;
 }
 
-export interface StorageClientLike {
-  storage: {
-    listBuckets(): Promise<{ data: Array<{ name: string }> | null }>;
-    createBucket(name: string, options: Record<string, unknown>): Promise<{ error: unknown }>;
-    from(bucket: string): {
-      upload(path: string, body: Buffer, options: Record<string, unknown>): Promise<{ error: unknown }>;
-      getPublicUrl(path: string): { data: { publicUrl: string } };
-    };
-  };
-}
+export type StorageClientLike = RoomMediaStorageClient;
 
 function extensionForFile(name: string, mime: string): string | null {
   const fromName = name.includes('.') ? name.split('.').pop()!.toLowerCase() : '';
@@ -79,13 +86,6 @@ export function classifyAttachment(
   return { kind: 'file', ext };
 }
 
-async function ensureBucket(supabase: StorageClientLike): Promise<void> {
-  const { data: buckets } = await supabase.storage.listBuckets();
-  if (!buckets?.some((bucket) => bucket.name === BUCKET)) {
-    await supabase.storage.createBucket(BUCKET, { public: true, fileSizeLimit: MAX_FILE_BYTES });
-  }
-}
-
 /**
  * Upload one attachment and return its message metadata. Throws only on a real
  * upload failure; callers translate that into a 502-ish response.
@@ -96,14 +96,13 @@ export async function uploadAttachment(
   file: { bytes: Buffer; type: string; name: string; size: number },
   ext: string,
 ): Promise<AttachmentMeta> {
-  await ensureBucket(supabase);
-  const path = `att/${roomId}/${randomUUID()}.${ext}`;
+  await ensureRoomPhotosBucket(supabase);
+  const path = attachmentPath(roomId, ext);
   const mime = file.type || 'application/octet-stream';
-  const { error } = await supabase.storage.from(BUCKET).upload(path, file.bytes, {
+  const { error } = await supabase.storage.from(BUCKET).upload!(path, file.bytes, {
     contentType: mime,
     upsert: false,
   });
   if (error) throw error instanceof Error ? error : new Error('attachment upload failed');
-  const url = supabase.storage.from(BUCKET).getPublicUrl(path).data.publicUrl;
-  return { url, mime, name: file.name || `attachment.${ext}`, size: file.size };
+  return { path, mime, name: file.name || `attachment.${ext}`, size: file.size };
 }

@@ -12,6 +12,7 @@ import { renderExtraCapsule, type ExtraStatus } from '@/lib/tour-room/ledger';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { translateTextForLocales } from '@/lib/openai-server';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { hydrateOneMessageMedia, type RoomMediaStorageClient } from '@/lib/tour-room/roomMedia';
 
 export interface ExtraRow {
   id: string;
@@ -87,6 +88,18 @@ export async function insertExtraCapsule(
     })
     .select()
     .single();
-  if (message) await broadcastToRoom(room, 'message', { message });
-  return message ?? null;
+  if (!message) return null;
+
+  /**
+   * The capsule carries the receipt path, so it needs the same hydration the
+   * five message exits do — the broadcast especially, since the guest card
+   * renders straight off the realtime payload and never refetches.
+   */
+  const wire =
+    (await hydrateOneMessageMedia(
+      supabase as unknown as RoomMediaStorageClient,
+      message as { metadata?: Record<string, unknown> | null },
+    )) ?? message;
+  await broadcastToRoom(room, 'message', { message: wire });
+  return wire as typeof message;
 }

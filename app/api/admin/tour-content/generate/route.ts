@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { generateCoursePayload, generateSpeechMp3 } from '@/lib/openai-server';
 import { validateLocalePayloads } from '@/lib/admin/content-generate-guard';
+import { ensureRoomAudioBucket, type RoomMediaStorageClient } from '@/lib/tour-room/roomMedia';
 
 export const dynamic = 'force-dynamic';
 
@@ -15,15 +16,19 @@ function getStops(course: Record<string, unknown>): Array<Record<string, unknown
   return Array.isArray(stops) ? (stops as Array<Record<string, unknown>>) : [];
 }
 
-async function ensureAudioBucket(supabase: ReturnType<typeof createServerClient>) {
-  const bucket = process.env.SUPABASE_TOUR_AUDIO_BUCKET || 'tour-audio';
-  const { data: buckets } = await supabase.storage.listBuckets();
-  if (!buckets?.some((b) => b.name === bucket)) {
-    await supabase.storage.createBucket(bucket, { public: true, fileSizeLimit: 20 * 1024 * 1024 });
-  }
-  return bucket;
+function ensureAudioBucket(supabase: ReturnType<typeof createServerClient>) {
+  return ensureRoomAudioBucket(supabase as unknown as RoomMediaStorageClient);
 }
 
+/**
+ * Upload spot narration and return the STORAGE PATH, not a URL.
+ *
+ * `tour-audio` is private now, so a URL written here would be a signed one —
+ * and this value is persisted to `tour_guide_spots.audio_url`, where it would
+ * quietly expire weeks later and the arrival card would go silent with no
+ * error. Storing the path moves URL minting to read time
+ * (`resolveSpotAudioUrl`), where expiry is harmless.
+ */
 async function uploadAudio(
   supabase: ReturnType<typeof createServerClient>,
   bucket: string,
@@ -34,8 +39,7 @@ async function uploadAudio(
     .from(bucket)
     .upload(path, Buffer.from(bytes), { contentType: 'audio/mpeg', upsert: true });
   if (error) throw error;
-  const { data } = supabase.storage.from(bucket).getPublicUrl(path);
-  return data.publicUrl;
+  return path;
 }
 
 export async function POST(req: NextRequest) {
@@ -126,7 +130,9 @@ export async function POST(req: NextRequest) {
         try {
           const audio = await generateSpeechMp3(narration, locale);
           const path = `${job.id}/${locale}/${stopKey}.mp3`;
+          // Storage path, minted into a signed URL at read time.
           const audioUrl = await uploadAudio(supabase, bucket!, path, audio);
+
           const { data: asset, error: assetError } = await supabase
             .from('tour_audio_assets')
             .insert({

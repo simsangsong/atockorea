@@ -54,7 +54,7 @@ function fakeDb(state: FakeState): DispatchDbClient & FakeState {
       createBucket: async () => ({ error: null }),
       from: () => ({
         upload: async () => ({ error: null }),
-        getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test/${path}` } }),
+        createSignedUrl: async (path: string) => ({ data: { signedUrl: `https://cdn.test/${path}?token=sig` }, error: null }),
       }),
     },
     from(table: string) {

@@ -87,7 +87,7 @@ function fakeDb(config: DbConfig = {}) {
             uploads.push({ bucket, path });
             return { error: null };
           }),
-          getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test/${bucket}/${path}` } }),
+          createSignedUrl: async (path: string) => ({ data: { signedUrl: `https://cdn.test/${bucket}/${path}?token=sig` }, error: null }),
         };
       },
     },

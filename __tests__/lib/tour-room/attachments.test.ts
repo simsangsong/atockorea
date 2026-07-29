@@ -57,25 +57,33 @@ describe('classifyAttachment', () => {
 });
 
 describe('uploadAttachment', () => {
-  function fakeStorage(): { client: StorageClientLike; uploads: Array<{ path: string; mime: string }> } {
+  function fakeStorage(existingBuckets: string[] = ['tour-room-photos']): {
+    client: StorageClientLike;
+    uploads: Array<{ path: string; mime: string }>;
+    created: Array<{ name: string; options: Record<string, unknown> }>;
+  } {
     const uploads: Array<{ path: string; mime: string }> = [];
+    const created: Array<{ name: string; options: Record<string, unknown> }> = [];
     const client: StorageClientLike = {
       storage: {
-        listBuckets: async () => ({ data: [{ name: 'tour-room-photos' }] }),
-        createBucket: async () => ({ error: null }),
+        listBuckets: async () => ({ data: existingBuckets.map((name) => ({ name })) }),
+        createBucket: async (name: string, options: Record<string, unknown>) => {
+          created.push({ name, options });
+          return { error: null };
+        },
         from: () => ({
           upload: async (path: string, _body: Buffer, options: Record<string, unknown>) => {
             uploads.push({ path, mime: String(options.contentType) });
             return { error: null };
           },
-          getPublicUrl: (path: string) => ({ data: { publicUrl: `https://cdn.test/${path}` } }),
+          createSignedUrl: async () => ({ data: { signedUrl: 'unused' }, error: null }),
         }),
       },
     };
-    return { client, uploads };
+    return { client, uploads, created };
   }
 
-  it('uploads under an att/{room}/uuid path and returns public metadata', async () => {
+  it('uploads under an att/{room}/uuid path and returns a PATH, never a URL', async () => {
     const { client, uploads } = fakeStorage();
     const meta = await uploadAttachment(
       client,
@@ -86,7 +94,33 @@ describe('uploadAttachment', () => {
     expect(uploads).toHaveLength(1);
     expect(uploads[0].path).toMatch(/^att\/room-1\/[0-9a-f-]+\.png$/);
     expect(uploads[0].mime).toBe('image/png');
-    expect(meta).toMatchObject({ url: expect.stringContaining('https://cdn.test/att/room-1/'), mime: 'image/png', name: 'photo.png', size: 2 });
+    expect(meta).toMatchObject({
+      path: expect.stringMatching(/^att\/room-1\/[0-9a-f-]+\.png$/),
+      mime: 'image/png',
+      name: 'photo.png',
+      size: 2,
+    });
+    // 🔴 The whole point: an attachment never leaves this function as a URL.
+    // A URL here would be a public one, and a public URL to a guest photo
+    // outlives the room, the invite, and the message.
+    expect(meta).not.toHaveProperty('url');
+  });
+
+  it('creates the bucket PRIVATE when it is missing', async () => {
+    // Two routes used to hard-code `public: true` here. If the bucket is ever
+    // dropped, whichever route runs first decides the privacy setting — so
+    // "private" has to be the value in the creation path, not just in the
+    // migration that flipped the existing bucket.
+    const { client, created } = fakeStorage([]);
+    await uploadAttachment(
+      client,
+      'room-1',
+      { bytes: Buffer.from('hi'), type: 'image/png', name: 'photo.png', size: 2 },
+      'png',
+    );
+    expect(created).toHaveLength(1);
+    expect(created[0].name).toBe('tour-room-photos');
+    expect(created[0].options.public).toBe(false);
   });
 
   it('throws when the storage upload errors', async () => {
@@ -96,7 +130,7 @@ describe('uploadAttachment', () => {
         createBucket: async () => ({ error: null }),
         from: () => ({
           upload: async () => ({ error: { message: 'boom' } }),
-          getPublicUrl: () => ({ data: { publicUrl: '' } }),
+          createSignedUrl: async () => ({ data: null, error: null }),
         }),
       },
     };
