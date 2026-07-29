@@ -35,6 +35,13 @@ const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
 const SIM_ADMIN_EMAIL = 'sim-tour-ops-admin@atockorea.test';
 const SIM_TAG = 'sim';
 const OUT = path.join(__dirname, '.sim-fixtures.json');
+/**
+ * K4v2 seeds its 20 rooms through `scripts/k4-seed.ts` with the SAME sim_tag,
+ * so this cleanup already removes its rows. Its fixture file holds signed
+ * tokens too, so it is removed here rather than in a second cleanup path —
+ * one drain, or orphans survive a "cleanup done" message.
+ */
+const K4_OUT = path.join(__dirname, '.k4-fixtures.json');
 
 /**
  * Children of `bookings` whose FK is ON DELETE SET NULL — deleting the booking
@@ -176,6 +183,14 @@ async function main() {
     if ((leftover ?? 0) > 0 || (orphanRooms ?? 0) > 0 || orphanMedia > 0) {
       console.error('🔴 drain gate FAILED — the simulation did not fully drain.');
       process.exitCode = 1;
+    }
+    if (existsSync(K4_OUT)) {
+      try {
+        unlinkSync(K4_OUT);
+        console.log('k4 fixtures file removed (it holds signed tokens)');
+      } catch {
+        /* best effort */
+      }
     }
     if (existsSync(OUT)) {
       try {

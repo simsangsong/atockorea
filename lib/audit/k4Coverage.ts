@@ -162,19 +162,33 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   // ── voice / audio ──────────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/tts': { actor: 'guest', tier: 'llm' },
   'POST /api/tour-rooms/[bookingId]/stt': { actor: 'guest', tier: 'llm' },
-  'POST /api/tour-rooms/[bookingId]/captions': { actor: 'guest', tier: 'llm' },
+  /**
+   * 🔴 Fourth actor correction, and the one that was HIDDEN: with an empty body
+   * this route answered 400 (input validation) long before it checked who was
+   * asking. Supplying real input moved the answer to 403 "Only the guide can
+   * broadcast captions". A validation error can mask an authorization contract.
+   */
+  'POST /api/tour-rooms/[bookingId]/captions': { actor: 'guide', tier: 'llm' },
 
   // ── the day ────────────────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/tour-itinerary': { actor: 'guest', tier: 'free' },
-  'GET /api/tour-rooms/[bookingId]/day-summary': { actor: 'guest', tier: 'free' },
-  'POST /api/tour-rooms/[bookingId]/morning-briefing': { actor: 'guest', tier: 'llm' },
+  /**
+   * 🔴 Corrected by the Phase 3 run, not by reading: declared `guest`, answered
+   * 403 "Guide, driver, or admin only". The ledger's hand-written half says an
+   * actor "cannot be inferred from a route file without guessing" — this is what
+   * a wrong guess looks like, and driving the route is what found it.
+   */
+  'GET /api/tour-rooms/[bookingId]/day-summary': { actor: 'guide', tier: 'free' },
+  /** Staff-only — third actor correction the Phase 3 run forced (see day-summary). */
+  'POST /api/tour-rooms/[bookingId]/morning-briefing': { actor: 'guide', tier: 'llm' },
   'GET /api/tour-rooms/[bookingId]/vehicle-eta': { actor: 'guest', tier: 'free' },
   'POST /api/tour-rooms/[bookingId]/approach': { actor: 'guest', tier: 'free' },
   'GET /api/tour-rooms/[bookingId]/events': { actor: 'guest', tier: 'free' },
   'GET /api/tour-rooms/[bookingId]/my-seat': { actor: 'guest', tier: 'free' },
 
   // ── arrival + content ──────────────────────────────────────────────────────
-  'GET /api/tour-rooms/[bookingId]/arrival-bundle': { actor: 'guest', tier: 'free' },
+  /** Staff-only too — same correction, same cause (see day-summary above). */
+  'GET /api/tour-rooms/[bookingId]/arrival-bundle': { actor: 'guide', tier: 'free' },
   'POST /api/tour-rooms/[bookingId]/arrival-bundle': { actor: 'guide', tier: 'llm' },
   'POST /api/tour-rooms/[bookingId]/manual-arrival': { actor: 'guide', tier: 'llm' },
   'POST /api/tour-rooms/[bookingId]/spot-events': { actor: 'guest', tier: 'free' },
