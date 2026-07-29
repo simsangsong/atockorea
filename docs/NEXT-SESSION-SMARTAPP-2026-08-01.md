@@ -71,7 +71,7 @@ npm run build > /tmp/b.log 2>&1; echo "BUILD_EXIT=$?"
 | # | 티켓 | 한 줄 | 착수 전 확인 |
 |---|---|---|---|
 | ~~**6**~~ ✅ | ~~**X1 잔여**~~ | **완료(2026-07-30)** — 처방이 바뀌었다. 요소별 클래스가 아니라 **전역 기본값**. 렌더 실측 불법 줄바꿈 **17 → 0**. 상세는 마스터 플랜 §G-3b | — |
-| 7 | **X7** | 무테스트 라우트 59개 중 **쓰기 동사 + 손님/기사 노출**부터 | G-p 로 하니스가 싸졌다(Response.json / TextEncoder 폴리필) |
+| ~~**7**~~ ◐ | **X7** | **1차 완료(2026-07-30)** — 숫자를 재현 가능하게 만들고(`scripts/qa-route-coverage.ts`) 위험 순 3라우트 32건. 🔴 **티켓이 지목한 머리는 비어 있었다**(손님/기사 API 는 이미 전부 커버). 잔여 = 스크립트 `--all`. 상세 §G-3c | 실제 머리는 **쓰기 · public 16쌍** |
 | 8 | **X12** | 무테스트 컴포넌트 13개 중 **정산·일정확정부터**(돈과 확정 경로) | |
 | 9 | **X10** | 전역 44px 규칙이 짧은 라벨 앵커를 덩어리로 만드는 지점 스윕 | 패턴은 `NavBrandButton`(시각/히트 분리) |
 | 10 | **X9** | 재감사 walk — 손님 홈/채팅/설정 + 관제 홈/예약 전후 컷 | |
@@ -151,6 +151,7 @@ UI 를 건드렸으면 **Playwright 전후 컷**. 코드 읽고 "고쳤다"고 �
 | `scripts/qa-poi-image-coverage.ts` | POI 사진 커버리지(대소문자 엄격) |
 | `scripts/k4-seed.ts` + `k4-run.ts` | 20방 전 기능 커버리지(`--free` = 모델 비용 0) |
 | `qa-smartapp-walk.mjs` · `qa-cockpit-walk.mjs` · `qa-ops-walk.mjs` | 손님·콕핏·관제 |
+| `qa-route-coverage.ts` | 🔴 **X7 정본** — 아무 테스트·하니스도 안 부르는 라우트. `--all` 로 전량 |
 | `qa-cjk-scan.ts` | X1 소스 스캔. 이제 버킷이 셋(certain / suspect / **native**) |
 | `qa-cjk-render.mjs` | 🔴 **X1 정본** — 실렌더에서 "CJK 두 글자 사이 줄바꿈"을 직접 센다. dev 서버 필요 |
 | `qa-cjk-mechanism.mjs` | `keep-all`/`overflow-wrap` 이 실제로 뭘 하는지. **dev 서버 불필요** — 이 두 속성에 대한 주장을 믿기 전에 먼저 돌려라 |
