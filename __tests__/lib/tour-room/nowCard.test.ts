@@ -13,7 +13,17 @@
  * that would hurt most if they were wrong: the fallback must never be blank,
  * and a missing phone number must never render a dead button.
  */
-import { nowCard, type NowCardContext } from '@/lib/tour-room/nowCard';
+import {
+  ARRIVED_NUMERAL_MAX_MS,
+  MOVING_NUMERAL_MAX_MS,
+  PICKUP_NUMERAL_MAX_MS,
+  latestArrival,
+  nowCard,
+  roomNowCardContext,
+  scheduleTargetMs,
+  type NowCardContext,
+} from '@/lib/tour-room/nowCard';
+import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 const NOW = Date.UTC(2026, 6, 28, 3, 0, 0); // 2026-07-28 12:00 KST
 
@@ -201,5 +211,171 @@ describe('nowCard — the last stop of the day', () => {
 
   it('still needs SOMETHING — a live tour with no schedule at all is lobby', () => {
     expect(nowCard(base({ lifecycle: 'live', nextStop: null, currentStop: null })).state).toBe('lobby');
+  });
+});
+
+/**
+ * SG-1a — numeral targets. SG-D2's rule under test: a target outside its
+ * band is OMITTED, never clamped or faked — the row disappears and the
+ * title keeps today's format. Bands are exported constants so these edges
+ * cannot drift from the resolver.
+ */
+describe('nowCard — numeral targets (SG-1a)', () => {
+  const MIN = 60_000;
+
+  it('moving carries the next stop target inside 90min, and drops it outside', () => {
+    const inBand = nowCard(
+      base({ nextStop: { name: 'Art Valley', time: '12:30', targetMs: NOW + 89 * MIN } }),
+    );
+    expect(inBand.data.nextStopTargetMs).toBe(NOW + 89 * MIN);
+
+    const outBand = nowCard(
+      base({ nextStop: { name: 'Art Valley', time: '18:00', targetMs: NOW + MOVING_NUMERAL_MAX_MS + MIN } }),
+    );
+    expect(outBand.state).toBe('moving');
+    expect(outBand.data.nextStopTargetMs).toBeUndefined();
+    // The title inputs are untouched — the row is what vanishes, not the card.
+    expect(outBand.data.nextStopName).toBe('Art Valley');
+    expect(outBand.data.nextStopTime).toBe('18:00');
+  });
+
+  it('a next stop already behind the clock never gets a numeral', () => {
+    const result = nowCard(base({ nextStop: { name: 'Art Valley', targetMs: NOW - MIN } }));
+    expect(result.data.nextStopTargetMs).toBeUndefined();
+  });
+
+  it('arrived counts down to the notice target inside 180min only', () => {
+    const inBand = nowCard(
+      base({ arrived: { spotName: '성산일출봉' }, meetingTargetMs: NOW + 40 * MIN }),
+    );
+    expect(inBand.state).toBe('arrived');
+    expect(inBand.data.meetingTargetMs).toBe(NOW + 40 * MIN);
+
+    const outBand = nowCard(
+      base({ arrived: { spotName: '성산일출봉' }, meetingTargetMs: NOW + ARRIVED_NUMERAL_MAX_MS + MIN }),
+    );
+    expect(outBand.data.meetingTargetMs).toBeUndefined();
+  });
+
+  it('pickup uses the tighter 120min band — dawn opens the board, not a 445분 numeral', () => {
+    const inBand = nowCard(
+      base({ pickup: { visible: true }, meetingTargetMs: NOW + 30 * MIN }),
+    );
+    expect(inBand.state).toBe('pickup_window');
+    expect(inBand.data.meetingTargetMs).toBe(NOW + 30 * MIN);
+
+    const outBand = nowCard(
+      base({ pickup: { visible: true }, meetingTargetMs: NOW + PICKUP_NUMERAL_MAX_MS + MIN }),
+    );
+    expect(outBand.data.meetingTargetMs).toBeUndefined();
+  });
+
+  it('rally overage counts UP from its target; an untimed rally has no numeral', () => {
+    const timed = nowCard(base({ rally: 'overdue', meetingTargetMs: NOW - 4 * MIN }));
+    expect(timed.data.rallyTargetMs).toBe(NOW - 4 * MIN);
+
+    const untimed = nowCard(base({ rally: 'overdue', meetingTargetMs: null }));
+    expect(untimed.state).toBe('rally_overdue');
+    expect(untimed.data.rallyTargetMs).toBeUndefined();
+  });
+
+  it('free time carries its end instant for the ticking clock', () => {
+    const result = nowCard(base({ freeTimeEndsAtMs: NOW + 18 * MIN }));
+    expect(result.data.freeTimeEndsAtMs).toBe(NOW + 18 * MIN);
+  });
+});
+
+describe('scheduleTargetMs — hand-typed schedule times (SG-1a)', () => {
+  const TOUR_DATE = '2026-07-28';
+  // 12:30 KST on the tour date, expressed the way the resolver's NOW is.
+  const HALF_PAST_NOON = Date.UTC(2026, 6, 28, 3, 30, 0);
+
+  it('parses HH:MM and one-digit H:MM through the same wall clock', () => {
+    expect(scheduleTargetMs(TOUR_DATE, '12:30')).toBe(HALF_PAST_NOON);
+    expect(scheduleTargetMs(TOUR_DATE, '9:00')).toBe(Date.UTC(2026, 6, 28, 0, 0, 0));
+  });
+
+  it('refuses free text and impossible clocks instead of guessing', () => {
+    expect(scheduleTargetMs(TOUR_DATE, '≈ 08:30')).toBeNull();
+    expect(scheduleTargetMs(TOUR_DATE, '25:00')).toBeNull();
+    expect(scheduleTargetMs(TOUR_DATE, '12:75')).toBeNull();
+    expect(scheduleTargetMs(TOUR_DATE, null)).toBeNull();
+    expect(scheduleTargetMs(null, '12:30')).toBeNull();
+  });
+});
+
+/**
+ * Gate ⑦ — the adapter actually THREADS the targets. The 2차 감사's finding
+ * class was "resolver ready, caller passes null, tests green on fixtures":
+ * this block feeds the adapter what HomeTab feeds it and asserts the data
+ * comes out the other end, so a silent un-threading fails in CI.
+ */
+describe('roomNowCardContext — adapter threading (gate ⑦)', () => {
+  const TOUR_DATE = '2026-07-28';
+
+  const systemMessage = (metadata: Record<string, unknown>, createdAtMs: number): RoomMessage =>
+    ({
+      id: `m-${createdAtMs}`,
+      sender_role: 'system',
+      created_at: new Date(createdAtMs).toISOString(),
+      source_text: '',
+      metadata,
+    }) as unknown as RoomMessage;
+
+  it('threads a schedule time into nextStop.targetMs', () => {
+    const ctx = roomNowCardContext({
+      messages: [],
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      nextStop: { name: 'Art Valley', time: '12:30' },
+      nowMs: NOW,
+    });
+    expect(ctx.nextStop?.targetMs).toBe(Date.UTC(2026, 6, 28, 3, 30, 0));
+    const result = nowCard(ctx);
+    expect(result.state).toBe('moving');
+    expect(result.data.nextStopTargetMs).toBe(Date.UTC(2026, 6, 28, 3, 30, 0));
+  });
+
+  it('threads the active free-time notice into meetingTargetMs and the countdown', () => {
+    const messages = [
+      systemMessage(
+        { kind: 'free_time_timer', until_time: '12:45', meeting_point: 'Blue gate' },
+        NOW - 5 * 60_000,
+      ),
+    ];
+    const ctx = roomNowCardContext({
+      messages,
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      nowMs: NOW,
+    });
+    expect(ctx.freeTimeEndsAtMs).toBe(Date.UTC(2026, 6, 28, 3, 45, 0));
+    expect(ctx.meetingTargetMs).toBe(Date.UTC(2026, 6, 28, 3, 45, 0));
+  });
+
+  it('a cancelled timer feeds NO numeral target', () => {
+    const messages = [
+      systemMessage({ kind: 'free_time_timer', until_time: '12:45' }, NOW - 10 * 60_000),
+      systemMessage({ kind: 'free_time_timer', cancelled: true }, NOW - 60_000),
+    ];
+    const ctx = roomNowCardContext({
+      messages,
+      lifecycle: 'live',
+      tourDate: TOUR_DATE,
+      locale: 'en',
+      nowMs: NOW,
+    });
+    expect(ctx.meetingTargetMs).toBeNull();
+  });
+
+  it('latestArrival stamps when the guest got here (the durable arrived source)', () => {
+    const at = NOW - 20 * 60_000;
+    const arrival = latestArrival(
+      [systemMessage({ kind: 'spot_arrival', spot_title: '성산일출봉' }, at)],
+      NOW,
+    );
+    expect(arrival).toEqual({ spotName: '성산일출봉', stayMinutes: null, arrivedAtMs: at });
   });
 });

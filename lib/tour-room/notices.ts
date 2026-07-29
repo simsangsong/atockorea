@@ -27,7 +27,14 @@ export interface NoticeState {
   warn5: boolean;
 }
 
-function wallClockToMs(tourDate: string, hhmm: string): number | null {
+/**
+ * KST wall clock → epoch ms for a tour date. Exported since SG-1a so the
+ * now-card adapter parses schedule times through the SAME implementation the
+ * notice ladder uses — a second copy of this arithmetic is how clocks drift.
+ * Strict `HH:MM` only; callers with looser input (schedules hand-typed as
+ * `9:00`) normalize before calling.
+ */
+export function wallClockToMs(tourDate: string, hhmm: string): number | null {
   const match = /^(\d{2}):(\d{2})$/.exec(hhmm);
   if (!match) return null;
   return kstStartOfDayMs(tourDate) + (Number(match[1]) * 60 + Number(match[2])) * 60 * 1000;

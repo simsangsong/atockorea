@@ -25,7 +25,7 @@
  * renders them (I2); a resolver that also owned the wording would be the one
  * place a locale could go missing without tsc noticing (U-D10).
  */
-import { activeNotice, rallyStage, type RallyStage } from '@/lib/tour-room/notices';
+import { activeNotice, rallyStage, wallClockToMs, type RallyStage } from '@/lib/tour-room/notices';
 import type { RoomLifecycle } from '@/lib/tour-room/time';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
@@ -60,6 +60,32 @@ export type NowCardAction =
  */
 export type NowCardChip = 'toilet' | 'photo_spot' | 'meeting_point' | 'next_stop';
 
+/**
+ * SG-D2 — a numeral outside its band is noise, so the resolver simply omits
+ * the target and the row never renders. Bands are policy, and policy lives
+ * here where a test can reach it, not in the component.
+ *
+ * moving: a schedule ETA further out than 90min is a plan, not a countdown.
+ * pickup: the board is visible from KST midnight; without a ceiling a guest
+ * checking at dawn would meet a "445분" numeral.
+ * arrived: past three hours the ARRIVAL_TTL below has almost certainly
+ * rotated the state anyway; the ceiling makes it a contract.
+ */
+export const MOVING_NUMERAL_MAX_MS = 90 * 60 * 1000;
+export const PICKUP_NUMERAL_MAX_MS = 120 * 60 * 1000;
+export const ARRIVED_NUMERAL_MAX_MS = 180 * 60 * 1000;
+
+/** In-band future target or undefined — the "no number beats a wrong row" rule. */
+function bandedTarget(
+  targetMs: number | null | undefined,
+  nowMs: number,
+  maxMs: number,
+): number | undefined {
+  if (typeof targetMs !== 'number') return undefined;
+  const distance = targetMs - nowMs;
+  return distance > 0 && distance <= maxMs ? targetMs : undefined;
+}
+
 export interface NowCardResult {
   state: NowCardState;
   tone: NowCardTone;
@@ -79,6 +105,16 @@ export interface NowCardResult {
     plateTail?: string;
     daysUntil?: number;
     meetingTime?: string;
+    /**
+     * SG-1a — numeral targets for NumeralClock, present ONLY when a real,
+     * in-band target exists (SG-D2: a missing number removes the row, it is
+     * never faked). Which field a state carries is part of the state's
+     * meaning: rally counts UP from its target, the others count DOWN.
+     */
+    rallyTargetMs?: number;
+    freeTimeEndsAtMs?: number;
+    meetingTargetMs?: number;
+    nextStopTargetMs?: number;
   };
 }
 
@@ -88,6 +124,12 @@ export interface NowCardContext {
   rally: RallyStage | null;
   meetingPoint?: string | null;
   meetingTime?: string | null;
+  /**
+   * SG-1a — the active notice's target instant (meeting or free-time end),
+   * null when untimed or cancelled. Feeds the arrived/pickup countdowns and
+   * the rally overage; the adapter is the only writer.
+   */
+  meetingTargetMs?: number | null;
   /** Ops line for the rally escalation; null hides the call action. */
   contactPhone?: string | null;
 
@@ -95,13 +137,13 @@ export interface NowCardContext {
   freeTimeEndsAtMs?: number | null;
 
   /** Latest arrival that is still the guest's current place. */
-  arrived?: { spotName: string; stayMinutes?: number | null } | null;
+  arrived?: { spotName: string; stayMinutes?: number | null; arrivedAtMs?: number | null } | null;
 
   /** Pickup board, already resolved by `pickupBoardState()`. */
   pickup?: { visible: boolean; vehicleLabel?: string | null; driverName?: string | null; plateTail?: string | null } | null;
 
   /** Next scheduled stop, if the day has one left. */
-  nextStop?: { name: string; time?: string | null } | null;
+  nextStop?: { name: string; time?: string | null; targetMs?: number | null } | null;
 
   /**
    * The stop the SCHEDULE says the guest is at, which is not the same claim as
@@ -140,7 +182,12 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
       // location is the next most useful thing a late guest can do.
       action: ctx.contactPhone ? { kind: 'call', phone: ctx.contactPhone } : { kind: 'share_location' },
       chips: ['meeting_point'],
-      data: { meetingPoint, meetingTime: ctx.meetingTime ?? undefined },
+      data: {
+        meetingPoint,
+        meetingTime: ctx.meetingTime ?? undefined,
+        // Overage counts UP from the target; an untimed rally has no numeral.
+        ...(typeof ctx.meetingTargetMs === 'number' ? { rallyTargetMs: ctx.meetingTargetMs } : {}),
+      },
     };
   }
 
@@ -154,6 +201,7 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
       data: {
         minutesLeft: Math.max(0, Math.ceil((ctx.freeTimeEndsAtMs - nowMs) / 60_000)),
         meetingPoint,
+        freeTimeEndsAtMs: ctx.freeTimeEndsAtMs,
       },
     };
   }
@@ -168,6 +216,11 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
       data: {
         spotName: ctx.arrived.spotName,
         stayMinutes: ctx.arrived.stayMinutes ?? undefined,
+        // "10:40까지" — the notice's own commitment, never a nominal duration
+        // (stay_minutes has readers but no writer anywhere in this repo).
+        ...(bandedTarget(ctx.meetingTargetMs, nowMs, ARRIVED_NUMERAL_MAX_MS) !== undefined
+          ? { meetingTargetMs: ctx.meetingTargetMs as number }
+          : {}),
       },
     };
   }
@@ -184,6 +237,9 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         driverName: ctx.pickup.driverName ?? undefined,
         plateTail: ctx.pickup.plateTail ?? undefined,
         meetingPoint,
+        ...(bandedTarget(ctx.meetingTargetMs, nowMs, PICKUP_NUMERAL_MAX_MS) !== undefined
+          ? { meetingTargetMs: ctx.meetingTargetMs as number }
+          : {}),
       },
     };
   }
@@ -208,6 +264,9 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         nextStopName: ctx.nextStop?.name,
         nextStopTime: ctx.nextStop?.time ?? undefined,
         currentStopName: ctx.currentStop?.name,
+        ...(bandedTarget(ctx.nextStop?.targetMs, nowMs, MOVING_NUMERAL_MAX_MS) !== undefined
+          ? { nextStopTargetMs: ctx.nextStop?.targetMs as number }
+          : {}),
       },
     };
   }
@@ -270,7 +329,7 @@ const ARRIVAL_KINDS = new Set(['spot_arrival', 'arrival_bundle']);
 export function latestArrival(
   messages: readonly RoomMessage[],
   nowMs = Date.now(),
-): { spotName: string; stayMinutes?: number | null } | null {
+): { spotName: string; stayMinutes?: number | null; arrivedAtMs: number } | null {
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const message = messages[i];
     const meta = message.metadata as { kind?: string; spot_title?: string; stay_minutes?: number } | null | undefined;
@@ -282,9 +341,31 @@ export function latestArrival(
     return {
       spotName,
       stayMinutes: typeof meta.stay_minutes === 'number' ? meta.stay_minutes : null,
+      // SG-1a — when the guest got here; the say queue's durable arrived
+      // source (SG-D11) reads this instead of volatile geofence state.
+      arrivedAtMs: at,
     };
   }
   return null;
+}
+
+/**
+ * SG-1a — schedule wall clock → epoch ms. Schedules are hand-typed, so a
+ * one-digit hour ("9:00") is normalized before the strict parser; anything
+ * looser ("≈ 08:30", "afternoon") returns null and the numeral row simply
+ * does not exist for that leg — the title keeps today's format instead.
+ */
+export function scheduleTargetMs(
+  tourDate: string | null | undefined,
+  time: string | null | undefined,
+): number | null {
+  if (!tourDate || !time) return null;
+  const match = /^(\d{1,2}):(\d{2})$/.exec(time.trim());
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (hours > 23 || minutes > 59) return null;
+  return wallClockToMs(tourDate, `${match[1].padStart(2, '0')}:${match[2]}`);
 }
 
 /** Whole days from today (KST) to the tour date; null when undated. */
@@ -330,11 +411,16 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
     // A free-time timer is not a rally; only a meeting notice escalates.
     rally: notice && notice.kind === 'meeting_notice' ? rallyStage(notice, nowMs) : null,
     meetingPoint: notice?.pointI18n?.[input.locale] ?? notice?.point ?? null,
+    // SG-1a — the notice's target feeds every countdown; a cancelled notice
+    // must never feed a numeral, whatever its target says.
+    meetingTargetMs: notice && !notice.cancelled ? notice.targetMs : null,
     contactPhone: input.contactPhone ?? null,
     freeTimeEndsAtMs: isFreeTime ? notice?.targetMs ?? null : null,
     arrived: latestArrival(input.messages, nowMs),
     pickup: input.pickup ?? null,
-    nextStop: input.nextStop ?? null,
+    nextStop: input.nextStop
+      ? { ...input.nextStop, targetMs: scheduleTargetMs(input.tourDate, input.nextStop.time) }
+      : null,
     currentStop: input.currentStop ?? null,
     daysUntil: daysUntilTour(input.tourDate, nowMs),
     nowMs,
