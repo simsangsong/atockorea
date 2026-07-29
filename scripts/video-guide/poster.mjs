@@ -24,7 +24,7 @@ import { spawnSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { buildScene, CANVAS, BAND } from './scene.mjs';
 import { promiseLineOf } from './lib/timeline.mjs';
-import { gradeChain } from './lib/grade.mjs';
+import { gradeChain, BLUR_FILL } from './lib/grade.mjs';
 
 const specPath = process.argv[2];
 if (!specPath) { console.error('usage: poster.mjs <spec.json>'); process.exit(1); }
@@ -41,7 +41,7 @@ fs.mkdirSync(WORK, { recursive: true });
 
 const run = (args, label) => {
   const r = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', ...args],
-    { stdio: ['ignore', 'inherit', 'inherit'] });
+    { stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 1 << 24, encoding: 'utf8' });
   if (r.status !== 0) { console.error(`FAILED: ${label}`); process.exit(1); }
 };
 const fileUri = (p) => 'file:///' + p.replace(/\\/g, '/');
@@ -56,8 +56,7 @@ const browser = await chromium.launch();
 // ---- 9:16 — the vertical shell, settled, over the same bg/band composition --
 const bg = path.join(WORK, 'bg.png');
 run(['-i', frame, '-filter_complex',
-  `[0:v]scale=-2:${CANVAS.h},crop=${CANVAS.w}:${CANVAS.h},gblur=sigma=44,`
-  + `eq=brightness=-0.22:saturation=0.6[bg];`
+  `[0:v]${BLUR_FILL(CANVAS.w, CANVAS.h)}[bg];`
   + `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}`, bg], 'bg 9:16');
 
 const page = await browser.newPage({ viewport: { width: CANVAS.w, height: CANVAS.h } });

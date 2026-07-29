@@ -30,6 +30,8 @@ import { spawnSync } from 'node:child_process';
 import { chromium } from 'playwright';
 import { buildScene, CANVAS, BAND, TYPE } from './scene.mjs';
 import { measuredTimeline, stopsOf, promiseLineOf, transitLabel, roleOf } from './lib/timeline.mjs';
+import { BLUR_FILL } from './lib/grade.mjs';
+import { sharp } from './lib/overlay.mjs';
 
 const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
@@ -49,10 +51,23 @@ const FPS = 30;
 const ENTRANCE = 2.0;            // entrance anims settle by ~1.8s (220+5·150+820ms)
 const ANIMATED = new Set(['stop', 'title', 'promise', 'recap']);
 
+/**
+ * 🔴 ffmpeg gets its own pipes, never the parent's.
+ *
+ * With `stdio: 'inherit'` the child writes into whatever this process's stdout
+ * is. Run under a harness that captures stdout to a pipe and drains it lazily,
+ * that pipe fills, and the next write blocks — forever. It looks exactly like a
+ * hung encode: the process is alive, memory climbs, CPU sits near zero, and a
+ * two-second clip never finishes. Capturing the output here (and only printing
+ * it on failure) means a full buffer can never stall the encode.
+ */
 const run = (args, label) => {
   const r = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', ...args],
-    { stdio: ['ignore', 'inherit', 'inherit'] });
-  if (r.status !== 0) { console.error(`FAILED: ${label}`); process.exit(1); }
+    { stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 1 << 24, encoding: 'utf8' });
+  if (r.status !== 0) {
+    console.error(`FAILED: ${label}\n${r.stderr ?? ''}`);
+    process.exit(1);
+  }
 };
 const probeDur = (f) => {
   const r = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
@@ -112,7 +127,9 @@ for (const row of tl.rows) {
   const beat = row.beat;
   const props = shellOf(beat);
   const seg = path.join(WORK, `v_${beat.id}.mp4`);
-  const h = hashOf({ props, start: row.start, dur: row.dur, TYPE, v: 3 });
+  // `v` covers everything the cache key cannot see — bump it whenever the
+  // composition filter changes, or half the guide keeps the old look.
+  const h = hashOf({ props, start: row.start, dur: row.dur, TYPE, v: 6 });
   segs.push(seg);
   if (!FORCE && manifest[beat.id] === h && fs.existsSync(seg)) { console.log(`  ${beat.id}  cached`); continue; }
 
@@ -133,35 +150,39 @@ for (const row of tl.rows) {
   if (m.captionLines > TYPE.captionMaxLines) bust.push(`캡션 ${m.captionLines}줄`);
   if (bust.length) { console.error(`FAIL ${beat.id} (${props.role}): ${bust.join(' · ')}`); process.exit(1); }
 
+  // The shell is ONE image sequence: the entrance frames where a role has an
+  // entrance, then a few copies of the settled frame. `tpad` clones the last
+  // one for the rest of the beat, so the sequence never has to be as long as
+  // the beat — a seventeen-second stop would otherwise cost 525 PNGs.
+  //
+  // 🔴 It must be a sequence of SEVERAL frames. A single frame — whether fed
+  // as `-i shell.png` or as a one-file `%04d` pattern — composites nothing at
+  // all, silently, with no error and no dropped frames. Four is enough.
   const animated = ANIMATED.has(props.role) && row.dur > 0.8;
-  const animSec = animated ? Math.min(ENTRANCE, row.dur) : 0;
-  const nAnim = Math.round(animSec * FPS);
+  const nAnim = animated ? Math.round(Math.min(ENTRANCE, row.dur) * FPS) : 0;
   const framesDir = path.join(WORK, `f_${beat.id}`);
   fs.rmSync(framesDir, { recursive: true, force: true });
   fs.mkdirSync(framesDir, { recursive: true });
+  const framePath = (i) => path.join(framesDir, `f_${String(i).padStart(4, '0')}.png`);
   for (let i = 0; i < nAnim; i++) {
     await page.evaluate((ms) => window.__seek(ms), Math.round((i / FPS) * 1000));
-    await page.screenshot({ path: path.join(framesDir, `f_${String(i).padStart(4, '0')}.png`), omitBackground: true });
+    await page.screenshot({ path: framePath(i), omitBackground: true });
   }
   await page.evaluate(() => window.__seek(5000));
   const settled = path.join(WORK, `settled_${beat.id}.png`);
   await page.screenshot({ path: settled, omitBackground: true });
+  for (let i = nAnim; i < nAnim + 4; i++) fs.copyFileSync(settled, framePath(i));
 
-  const inputs = ['-ss', String(row.start), '-t', String(row.dur), '-i', MASTER];
-  let filter =
-    `[0:v]scale=-2:${CANVAS.h},crop=${CANVAS.w}:${CANVAS.h},gblur=sigma=44,` +
-    `eq=brightness=-0.22:saturation=0.6[bg];` +
-    `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}[base];`;
-  let next = 1;
-  if (nAnim > 0) {
-    inputs.push('-framerate', String(FPS), '-i', path.join(framesDir, 'f_%04d.png'));
-    filter += `[base][${next}:v]overlay=0:0:eof_action=pass[wa];`;
-    next++;
-  } else {
-    filter += `[base]null[wa];`;
-  }
-  inputs.push('-loop', '1', '-framerate', String(FPS), '-t', String(row.dur), '-i', settled);
-  filter += `[wa][${next}:v]overlay=0:0:enable='gte(t,${animSec.toFixed(2)})',fps=${FPS},format=yuv420p[v]`;
+  // One overlay, one shell input. `tpad` holds the sequence's last frame for
+  // the whole beat — `eof_action=repeat` does NOT (measured: the text vanishes
+  // the instant the sequence runs out), and `-loop 1` on the input deadlocks.
+  const inputs = ['-ss', String(row.start), '-t', String(row.dur), '-i', MASTER,
+    '-framerate', String(FPS), '-i', path.join(framesDir, 'f_%04d.png')];
+  const filter =
+    `[0:v]${BLUR_FILL(CANVAS.w, CANVAS.h)}[bg];`
+    + `[0:v]scale=${BAND.w}:${BAND.h}[band];[bg][band]overlay=0:${BAND.y}[base];`
+    + `[1:v]tpad=stop_mode=clone:stop_duration=${row.dur}[shell];`
+    + `[base][shell]overlay=0:0:format=auto,fps=${FPS},format=yuv420p[v]`;
 
   run([...inputs, '-filter_complex', filter, '-map', '[v]', '-map', '0:a?',
     '-t', String(row.dur), '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
@@ -181,5 +202,41 @@ const outDur = probeDur(OUT);
 if (Math.abs(outDur - masterDur) > 1.2) {
   console.error(`길이 불일치: 세로 ${outDur.toFixed(2)}s vs 마스터 ${masterDur.toFixed(2)}s`);
   process.exit(1);
+}
+
+/**
+ * Did the shell actually composite?
+ *
+ * One overlay form encoded cleanly — right duration, right beat count, exit 0 —
+ * and produced a guide with no text on it at all. Nothing downstream noticed.
+ * So the render is not finished until a pixel says the shell is there: the
+ * watermark line sits at a fixed y in every shell over the darkest, smoothest
+ * part of the frame, so its row band has high luma spread when text is present
+ * and almost none when the overlay silently did nothing.
+ */
+// 🔴 Probe LATE in the beat, not early. The first version of this gate sampled
+// one second in — inside the entrance animation — and passed a guide whose text
+// disappeared the moment the entrance ended. The failure lives in the tail.
+{
+  const probeAt = tl.rows
+    .filter((r) => roleOf(r.beat) === 'stop' && r.dur > 2)
+    .map((r) => r.start + r.dur * 0.85);
+  const bad = [];
+  for (const at of [probeAt[0], probeAt[Math.floor(probeAt.length / 2)], probeAt[probeAt.length - 1]]) {
+    if (at === undefined || at > outDur - 0.3) continue;
+    const probe = path.join(WORK, 'shellcheck.png');
+    run(['-ss', String(at), '-i', OUT, '-frames:v', '1', '-vf', 'crop=1080:44:0:1846', probe], 'shell probe');
+    const { data } = await sharp(probe).greyscale().raw().toBuffer({ resolveWithObject: true });
+    let sum = 0, sum2 = 0;
+    for (const v of data) { sum += v; sum2 += v * v; }
+    const mean = sum / data.length;
+    const sd = Math.sqrt(sum2 / data.length - mean * mean);
+    console.log(`  셸 합성 σ=${sd.toFixed(1)} @${at.toFixed(1)}s`);
+    if (sd < 6) bad.push(at.toFixed(1));
+  }
+  if (bad.length) {
+    console.error(`셸이 합성되지 않았다 — 워터마크 줄 대비 부족 @${bad.join(', ')}s. 오버레이 필터를 확인하라`);
+    process.exit(1);
+  }
 }
 console.log(`\n=> ${OUT}  (${outDur.toFixed(1)}s, 마스터 ${masterDur.toFixed(1)}s, 비트 ${tl.rows.length})`);

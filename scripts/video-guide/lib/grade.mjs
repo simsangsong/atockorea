@@ -5,6 +5,20 @@
  * its re-extracted frame or the poster ships with a different look than the
  * video it advertises. One definition, or they drift.
  */
+/**
+ * The blurred margin fill behind the 16:9 band.
+ *
+ * 🔴 Blur at a quarter resolution and scale the result up — a heavy gaussian
+ * has no detail left to lose, so the two are visually identical, but the full-
+ * resolution version costs sixteen times the pixels. `gblur=sigma=44` on
+ * 1080×1920 for every frame did not merely run slow: a 17-second beat sat for
+ * 45 minutes at 2.5% CPU with 1.4 GB resident, starved rather than working.
+ * Sigma scales with the resolution, hence 44 → 11.
+ */
+export const BLUR_FILL = (w, h) =>
+  `scale=-2:${Math.round(h / 4)},crop=${Math.round(w / 4)}:${Math.round(h / 4)},`
+  + `gblur=sigma=11,eq=brightness=-0.22:saturation=0.6,scale=${w}:${h}:flags=bicubic`;
+
 export function gradeChain(spec) {
   return (Array.isArray(spec.grade) ? spec.grade.join(',') : spec.grade) ?? [
     // The phone's wide lens bows every railing and the horizon; straighten it

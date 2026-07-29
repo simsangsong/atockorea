@@ -40,12 +40,15 @@ if (!fs.existsSync(seg(spec.beats[0].id))) {
 
 const run = (args, label) => {
   const r = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', ...args],
-    { stdio: ['ignore', 'inherit', 'inherit'] });
+    { stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 1 << 24, encoding: 'utf8' });
   if (r.status !== 0) { console.error(`FAILED: ${label}`); process.exit(1); }
 };
 
 const BUDGET = spec.verticalSeconds ?? 90;
-const CLIP_CAP = 6;
+// Held beats (a polaroid, a close-up) play whole — they are the thing being
+// shown. Moving footage gets capped: the first cut let the bamboo path eat
+// eighteen seconds, a fifth of the teaser, for one continuous walk.
+const CLIP_CAP = 6, STOP_CLIP_CAP = 8;
 const tl = measuredTimeline(spec, path.join(ROOT, 'out', 'video-guide')) ?? timelineOf(spec);
 const durOf = Object.fromEntries(tl.rows.map((r) => [r.id, r.dur]));
 
@@ -68,7 +71,8 @@ for (const id of order) {
   if (used >= BUDGET - 0.5) break;
   const beat = spec.beats.find((b) => b.id === id);
   const full = durOf[id];
-  const cap = beat.kind === 'clip' && roleOf(beat) === 'clean' ? CLIP_CAP : full;
+  const cap = beat.kind !== 'clip' ? full
+    : roleOf(beat) === 'clean' ? CLIP_CAP : STOP_CLIP_CAP;
   const take = +Math.min(full, cap, BUDGET - used).toFixed(2);
   if (take < 1.2) continue;
 

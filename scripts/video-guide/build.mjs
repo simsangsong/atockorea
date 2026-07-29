@@ -57,8 +57,7 @@ const AENC = ['-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '192k'];
 
 function run(args, label) {
   const r = spawnSync('ffmpeg', ['-y', '-hide_banner', '-loglevel', 'error', ...args], {
-    stdio: ['ignore', 'inherit', 'inherit'],
-  });
+    stdio: ['ignore', 'pipe', 'pipe'], maxBuffer: 1 << 24, encoding: 'utf8' });
   if (r.status !== 0) { console.error(`\nFAILED: ${label}\n  ffmpeg ${args.join(' ')}`); process.exit(1); }
 }
 
