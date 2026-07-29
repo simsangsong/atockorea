@@ -162,7 +162,12 @@
 
   --tr-ink: #e8eaed;
   --tr-ink-2: #a6adb6;
-  --tr-ink-3: #7d858f;
+  /* 🔴 #7d858f measured 4.39 on this skin's card surface (#1d2020) — under
+   * WCAG 1.4.3's 4.5, and eyebrows are 11px so the large-text exemption does
+   * not apply. #848c96 is 4.82: the smallest nudge that clears the bar, and it
+   * keeps the ladder ordered (ink 14.4 > ink-2 8.9 > ink-3 4.8). Guarded by the
+   * ink-3/surface pair the gate was missing. */
+  --tr-ink-3: #848c96;
 
   --tr-accent: #8fbfa9;
   --tr-accent-deep: #ffffff;

@@ -156,6 +156,20 @@ const PAIRS: Array<[string, string, number]> = [
   ['ink', 'surface', 4.5],
   ['ink-2', 'surface', 4.5],
   ['ink-3', 'canvas', 4.5],
+  /**
+   * 🔴 The pair every card eyebrow in the app actually uses, and the one the
+   * list did not have.
+   *
+   * `ink-2` on surface was checked, and `ink-3` on CANVAS was checked, so the
+   * table read as complete. But an eyebrow — "YOU'RE HERE", "PICKUP" — is
+   * `--tr-ink-3` at 11px sitting on a CARD, which is `--tr-surface`. Measured
+   * on a seeded room in dark: 4.39. Eleven pixels is nowhere near WCAG's large
+   * text threshold (18.66px bold / 24px), so 4.5 is the bar and 4.39 misses it.
+   *
+   * It went unseen because the two neighbouring pairs were both present — the
+   * shape of a gap that looks like coverage.
+   */
+  ['ink-3', 'surface', 4.5],
   ['bubble-me-ink', 'bubble-me', 4.5],
   ['bubble-in-ink', 'bubble-in', 4.5],
   ['bubble-me-ink', 'accent', 4.5],
