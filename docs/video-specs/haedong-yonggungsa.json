@@ -18,8 +18,9 @@
     "C": "KakaoTalk_20260729_193237707.mp4"
   },
   "audio": {
-    "bed": null,
-    "bedGain": 0.5
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29)"
   },
   "_notes": [
     "타임코드 정본은 docs/onetake-tour-video-edit-master-plan-2026-07-29.md §B",
@@ -70,22 +71,26 @@
         }
       ],
       "title": "Market Street",
-      "sub": "Head straight through the food stalls"
+      "sub": "Head straight through the food stalls",
+      "caption": "Fishcake, hotteok, grilled mackerel. Keep going — the gate is at the end."
     },
     {
       "id": "03",
       "kind": "clip",
       "src": "A",
-      "in": 10,
+      "in": 6,
       "out": 93,
       "speed": 6,
-      "note": "상가거리 통과 (6x)"
+      "note": "상가거리 통과 (6x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "04",
       "kind": "clip",
       "src": "A",
-      "in": 96,
+      "in": 93,
       "out": 100,
       "speed": 1,
       "note": "12지신상 좌회전 팬"
@@ -116,7 +121,8 @@
         }
       ],
       "title": "Twelve Zodiac Guardians",
-      "sub": "Stone guardians line the wall on your left"
+      "sub": "Stone guardians line the wall on your left",
+      "caption": "One stone guardian per zodiac animal. Find the one for your birth year."
     },
     {
       "id": "06",
@@ -134,7 +140,10 @@
       "in": 110,
       "out": 135,
       "speed": 3,
-      "note": "석탑·일주문 접근 (3x)"
+      "note": "석탑·일주문 접근 (3x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "08",
@@ -156,7 +165,8 @@
       "cy": 0.3,
       "note": "海東龍宮寺 현판 클로즈업",
       "title": "The Main Gate",
-      "sub": "Haedong Yonggungsa — read the name plaque above you"
+      "sub": "Haedong Yonggungsa — read the name plaque above you",
+      "caption": "The plaque reads Haedong Yonggungsa — Dragon Palace Temple of the East Sea."
     },
     {
       "id": "10",
@@ -165,7 +175,10 @@
       "in": 139,
       "out": 158,
       "speed": 2,
-      "note": "석비 → 돌담 내리막 (2x)"
+      "note": "석비 → 돌담 내리막 (2x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "11",
@@ -180,7 +193,7 @@
       "id": "12",
       "kind": "clip",
       "src": "A",
-      "in": 172,
+      "in": 170,
       "out": 178,
       "speed": 1,
       "note": "석등길 진입"
@@ -218,7 +231,8 @@
         }
       ],
       "title": "The 108 Steps",
-      "sub": "Stone lanterns line the whole descent"
+      "sub": "Stone lanterns line the whole descent",
+      "caption": "108 steps for the 108 earthly desires. Stone lanterns the whole way down."
     },
     {
       "id": "14",
@@ -234,7 +248,7 @@
       "kind": "clip",
       "src": "A",
       "in": 196,
-      "out": 210,
+      "out": 218,
       "speed": 1.4,
       "note": "전망대 진입 — 좌회전 화살표 TODO"
     },
@@ -250,16 +264,24 @@
         "tilt": -2.4
       },
       "title": "Ocean Viewpoint",
-      "sub": "The deck out over the rocks"
+      "sub": "The deck out over the rocks",
+      "caption": "The deck hangs out over the surf. This temple faces east — come at sunrise."
     },
     {
       "id": "17",
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 14,
-      "speed": 1.4,
-      "note": "암반 하강"
+      "out": 39,
+      "speed": 1.8,
+      "note": "암반 하강",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "18",
@@ -273,13 +295,14 @@
         "tilt": 1.8
       },
       "title": "Temple Panorama",
-      "sub": "The whole temple, seen from the rocks"
+      "sub": "The whole temple, seen from the rocks",
+      "caption": "The one spot where the whole temple fits in a single frame."
     },
     {
       "id": "19",
       "kind": "arrow",
       "src": "B",
-      "at": 40,
+      "at": 39,
       "hold": 4.5,
       "note": "복귀 → 계단 위로",
       "arrows": [
@@ -308,7 +331,8 @@
         }
       ],
       "title": "Head Back Up",
-      "sub": "Return the way you came, then keep descending"
+      "sub": "Return the way you came, then keep descending",
+      "caption": "Dead end. Climb back up and rejoin the steps going down."
     },
     {
       "id": "20",
@@ -317,7 +341,11 @@
       "in": 0,
       "out": 26,
       "speed": 1.5,
-      "note": "108계단 재하강 → 다리 진입"
+      "note": "108계단 재하강 → 다리 진입",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "21",
@@ -356,7 +384,8 @@
         }
       ],
       "title": "Yongmun Bridge",
-      "sub": "Cross it, then turn right at the far end"
+      "sub": "Cross it, then turn right at the far end",
+      "caption": "The bridge crosses open water. The main hall is up to the right."
     },
     {
       "id": "22",
@@ -374,14 +403,17 @@
       "in": 45,
       "out": 78,
       "speed": 2,
-      "note": "담장길 → 굴 → 대웅보전 계단 (2x)"
+      "note": "담장길 → 굴 → 대웅보전 계단 (2x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "24",
       "kind": "clip",
       "src": "C",
       "in": 78,
-      "out": 85,
+      "out": 86,
       "speed": 1.5,
       "note": "용 조각 계단"
     },
@@ -396,7 +428,8 @@
       "cy": 0,
       "note": "大雄寶殿 현판 클로즈업 (86s에 현판이 온전히 들어온다)",
       "title": "Daeungbojeon Hall",
-      "sub": "The main worship hall, under the lanterns"
+      "sub": "The main worship hall, under the lanterns",
+      "caption": "The main hall, under the lanterns. Shoes off if you step inside."
     },
     {
       "id": "26",
@@ -412,9 +445,12 @@
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 160,
+      "out": 163,
       "speed": 3,
-      "note": "대웅전 에돌기 (3x)"
+      "note": "대웅전 에돌기 (3x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "28",
@@ -449,7 +485,8 @@
         }
       ],
       "title": "Steps to the Goddess",
-      "sub": "A short climb — take it slowly"
+      "sub": "A short climb — take it slowly",
+      "caption": "Uneven stone — use the rail. Under a minute to the top."
     },
     {
       "id": "29",
@@ -458,14 +495,17 @@
       "in": 163,
       "out": 193,
       "speed": 6,
-      "note": "🔴 흔들리는 돌계단 28초 → 5초 (6x)"
+      "note": "🔴 흔들리는 돌계단 28초 → 5초 (6x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "30",
       "kind": "clip",
       "src": "C",
-      "in": 194,
-      "out": 212,
+      "in": 193,
+      "out": 209,
       "speed": 1.5,
       "note": "해수관음대불"
     },
@@ -481,16 +521,20 @@
         "tilt": -1.6
       },
       "title": "Haesu Gwaneum",
-      "sub": "Goddess of Mercy, facing the open sea"
+      "sub": "Goddess of Mercy, facing the open sea",
+      "caption": "The sea-facing Goddess of Mercy. Visitors come to ask for one wish."
     },
     {
       "id": "32",
       "kind": "clip",
       "src": "C",
-      "in": 212,
+      "in": 209,
       "out": 268,
       "speed": 4,
-      "note": "🔴 하산 + 공사구간 (4x)"
+      "note": "🔴 하산 + 공사구간 (4x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "33",
@@ -499,14 +543,17 @@
       "in": 268,
       "out": 306,
       "speed": 2,
-      "note": "담장길 → 대나무길 (2x)"
+      "note": "담장길 → 대나무길 (2x)",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "34",
       "kind": "clip",
       "src": "C",
       "in": 306,
-      "out": 316,
+      "out": 314,
       "speed": 1,
       "note": "석탑"
     },
@@ -522,7 +569,8 @@
         "tilt": 2.2
       },
       "title": "Stone Pagoda",
-      "sub": "You are back at the entrance gate"
+      "sub": "You are back at the entrance gate",
+      "caption": "You are back at the gate. The pagoda marks the way out."
     },
     {
       "id": "36",
@@ -531,7 +579,11 @@
       "in": 139,
       "out": 147,
       "speed": 1,
-      "note": "엔딩 — 현판 재사용 (플랜 §C-3)"
+      "note": "엔딩 — 현판 재사용 (플랜 §C-3)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     }
   ]
 }

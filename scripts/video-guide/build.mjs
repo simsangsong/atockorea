@@ -70,17 +70,46 @@ const hashOf = (o) => crypto.createHash('sha1').update(JSON.stringify(o) + GRADE
 const manifestPath = path.join(CACHE, 'manifest.json');
 const manifest = fs.existsSync(manifestPath) ? JSON.parse(fs.readFileSync(manifestPath, 'utf8')) : {};
 
+/**
+ * Speed as a ramp, not a step.
+ *
+ * A constant 6x that snaps on and off reads as a glitch; the eye wants to be
+ * accelerated into it. Speed rises 1→N over `r` seconds, holds, then falls back.
+ * Output time is the integral of 1/s(t), which for a linear ramp is a log — so
+ * the setpts expression is piecewise and the resulting duration is analytic
+ * (checked against the encode below).
+ */
+function speedFilter(beat) {
+  const D = +(beat.out - beat.in).toFixed(3);
+  const N = beat.speed ?? 1;
+  const r = beat.ramp?.seconds ?? 0;
+  if (N <= 1.001 || !r || D <= 2 * r + 0.4) {
+    return { vf: `setpts=PTS/${N}`, outDur: +(D / N).toFixed(3) };
+  }
+  const k = r / (N - 1);
+  const A = k * Math.log(N);                      // time consumed by the ramp-in
+  const mid = (D - 2 * r) / N;
+  const outDur = +(2 * A + mid).toFixed(3);
+  const f = (v) => v.toFixed(6);
+  const expr =
+    `if(lt(T,${r}), ${f(k)}*log(1+${f(N - 1)}*T/${r}),` +
+    ` if(lt(T,${f(D - r)}), ${f(A)}+(T-${r})/${N},` +
+    ` ${f(A + mid)}+${f(k)}*(${f(Math.log(N))}-log(1+${f(N - 1)}*(${D}-T)/${r}))))`;
+  return { vf: `setpts='(${expr})/TB'`, outDur };
+}
+
 /** A moving segment, optionally time-compressed. */
 function renderClip(beat, out) {
   const dur = +(beat.out - beat.in).toFixed(3);
-  const speed = beat.speed ?? 1;
-  const outDur = +(dur / speed).toFixed(3);
-  const vf = `${GRADE},setpts=PTS/${speed},fps=${FPS},${VSCALE}`;
+  const { vf: speedVf, outDur } = speedFilter(beat);
+  const vf = `${GRADE},${speedVf},fps=${FPS},${VSCALE}`;
   const args = ['-ss', String(beat.in), '-t', String(dur), '-i', srcFile(beat.src)];
   const maps = [];
-  if (speed <= 2.0 && !beat.mute) {
+  // atempo cannot follow a ramp, and pitched-up crowd noise is unusable anyway —
+  // anything faster than 1.5x rides on the music bed alone.
+  if ((beat.speed ?? 1) <= 1.5 && !beat.ramp && !beat.mute) {
     maps.push('-map', '0:v', '-map', '0:a',
-      '-af', `atempo=${speed},highpass=f=110,volume=${beat.gain ?? 0.8}`);
+      '-af', `atempo=${beat.speed ?? 1},highpass=f=110,volume=${beat.gain ?? 0.8}`);
   } else {
     args.push('-f', 'lavfi', '-t', String(outDur), '-i', 'anullsrc=r=48000:cl=stereo');
     maps.push('-map', '0:v', '-map', '1:a');
@@ -113,10 +142,17 @@ async function renderHold(beat, out) {
     const card = path.join(CACHE, `polaroid_${beat.id}.png`);
     await renderPolaroid({ framePath: still, outFile: card, opts: beat.polaroid ?? {} });
     inputs.push('-loop', '1', '-framerate', String(FPS), '-t', String(dur), '-i', card);
-    // shutter: a fast white bloom, then the scene settles back a touch so the print pops
+    // Four beats, the way a real print behaves: shutter bloom, the print settles
+    // in, it is held long enough to actually read, then it is pulled away to the
+    // side. v1 stopped after the hold and the card just vanished on the cut.
+    const exit = +(dur - 0.78).toFixed(2);
+    const slide = Math.round(OUT_W * 1.25);
     filter += `eq=brightness='if(lt(t,0.14),(0.14-t)*5.5,-0.055)':saturation=0.92:eval=frame[bg];`
-      + `[${next}:v]scale=${OUT_W}:${OUT_H},fade=t=in:st=0.14:d=0.40:alpha=1[card];`
-      + `[bg][card]overlay=0:0:format=auto,${VSCALE}[v];`;
+      + `[${next}:v]scale=${OUT_W}:${OUT_H},`
+      + `fade=t=in:st=0.14:d=0.40:alpha=1,fade=t=out:st=${(exit + 0.24).toFixed(2)}:d=0.42:alpha=1[card];`
+      + `[bg][card]overlay=format=auto:`
+      + `x='if(lt(t,${exit}),0,pow((t-${exit})/0.62,1.55)*${slide})':`
+      + `y='if(lt(t,${exit}),0,pow((t-${exit})/0.62,2)*74)',${VSCALE}[v];`;
     next++;
   } else {
     const seqDir = path.join(CACHE, `ovl_${beat.id}`);
@@ -161,8 +197,56 @@ for (const beat of spec.beats) {
 }
 fs.writeFileSync(manifestPath, JSON.stringify(manifest, null, 2));
 
+/**
+ * Dissolve across the three clip joins.
+ *
+ * Everything inside one source clip is cut on the frame it left, so it needs no
+ * help. Jumping between the three recordings does — v1 cut them together raw and
+ * the seam was the first thing anyone noticed. The tail of one beat and the head
+ * of the next are pulled out, crossfaded into their own short clip, and spliced
+ * back between the trimmed originals, which keeps the rest of the concat a
+ * stream copy.
+ */
+function probeDur(f) {
+  const r = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
+    '-of', 'default=noprint_wrappers=1:nokey=1', f]);
+  return Number(String(r.stdout).trim()) || 0;
+}
+
+function applyTransitions(files) {
+  const out = [];
+  for (let i = 0; i < files.length; i++) {
+    const beat = spec.beats[i];
+    const d = beat.transition?.seconds;
+    if (!d || i === 0) { out.push(files[i]); continue; }
+
+    const prev = out.pop();
+    const prevDur = probeDur(prev);
+    const curDur = probeDur(files[i]);
+    if (prevDur <= d + 0.2 || curDur <= d + 0.2) { out.push(prev, files[i]); continue; }
+
+    const base = path.join(CACHE, `xf_${beat.id}`);
+    const pTrim = `${base}_a.mp4`, cTrim = `${base}_b.mp4`, fade = `${base}_x.mp4`;
+
+    run(['-i', prev, '-t', String(+(prevDur - d).toFixed(3)), ...VENC, ...AENC, pTrim], `trim ${beat.id}a`);
+    run(['-ss', String(d), '-i', files[i], ...VENC, ...AENC, cTrim], `trim ${beat.id}b`);
+    run(['-ss', String(+(prevDur - d).toFixed(3)), '-t', String(d), '-i', prev,
+      '-t', String(d), '-i', files[i],
+      '-filter_complex',
+      `[0:v][1:v]xfade=transition=fade:duration=${d}:offset=0,fps=${FPS},${VSCALE}[v];`
+      + `[0:a][1:a]acrossfade=d=${d}[a]`,
+      '-map', '[v]', '-map', '[a]', ...VENC, ...AENC, fade], `xfade ${beat.id}`);
+
+    out.push(pTrim, fade, cTrim);
+    console.log(`  ~~  ${beat.id}  ${d}s dissolve across the ${spec.beats[i - 1].src}→${beat.src} join`);
+  }
+  return out;
+}
+
+const joined = applyTransitions(parts);
+
 const listFile = path.join(CACHE, 'concat.txt');
-fs.writeFileSync(listFile, parts.map((p) => `file '${p.replace(/\\/g, '/')}'`).join('\n'));
+fs.writeFileSync(listFile, joined.map((p) => `file '${p.replace(/\\/g, '/')}'`).join('\n'));
 
 const silent = path.join(CACHE, 'joined.mp4');
 run(['-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silent], 'concat');

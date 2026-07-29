@@ -31,7 +31,7 @@ for (let i = 1; i < spec.beats.length; i++) {
     if (!cur.transition) {
       problems.push(`${where}  클립 전환 ${prev.src}→${cur.src} 인데 transition 이 없다`);
     } else {
-      notes.push(`${where}  클립 전환 ${prev.src}→${cur.src}  (${cur.transition})`);
+      notes.push(`${where}  클립 전환 ${prev.src}→${cur.src}  (${cur.transition.kind} ${cur.transition.seconds}s)`);
     }
     continue;
   }
@@ -40,7 +40,7 @@ for (let i = 1; i < spec.beats.length; i++) {
   if (Math.abs(gap) <= TOLERANCE) continue;
 
   if (cur.transition) {
-    notes.push(`${where}  ${gap > 0 ? '건너뜀' : '되감김'} ${Math.abs(gap)}s  (${cur.transition} 로 덮음)`);
+    notes.push(`${where}  ${gap > 0 ? '건너뜀' : '되감김'} ${Math.abs(gap)}s  (${cur.transition.kind} ${cur.transition.seconds}s 로 덮음)`);
   } else {
     problems.push(
       `${where}  ${prev.src}  ${gap > 0 ? '건너뜀' : '되감김'} ${Math.abs(gap)}s ` +
