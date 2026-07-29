@@ -43,7 +43,7 @@ import { koreanAllergyCardLines } from '@/lib/tour-room/allergyCard';
 import { formatMinutes, haversineKm, totalDriveMinutes, type LatLng } from '@/lib/itinerary-builder/distance';
 import { ROOM_LOCALES, normalizeRoomLocale, type RoomLocale } from '@/lib/tour-room/snapshot';
 import { useTourRoomSession } from '@/hooks/useTourRoomSession';
-import { useResolvedTheme } from '@/hooks/useTourRoomSettings';
+import { useResolvedTheme, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useBackTrap } from '@/hooks/useBackTrap';
 import Sheet from '@/components/tour-mode/Sheet';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
@@ -1752,6 +1752,35 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    */
   const { theme } = useResolvedTheme();
   const themeClass = theme === 'dark' ? 'dark' : '';
+
+  /**
+   * 🔴 P7.1b — the shell surface contract (C1), which this screen never signed.
+   *
+   * Measured 2026-07-30, same localStorage, two screens side by side:
+   *
+   *     room     textScale:5  →  --tr-font-scale 1.35    OK
+   *     planner  textScale:5  →  --tr-font-scale 1       X
+   *
+   * The planner opens with no shell above it, so there was nothing to plant the
+   * variable — and every `tr-*` size is `calc(… * var(--tr-font-scale, 1))`, so
+   * the fallback is 1 and the failure is silent. A guest who enlarged their text
+   * lost the setting on the screen with the MOST small type in the app, and the
+   * settings screen went on promising a change that never arrived.
+   *
+   * This is the same defect as the cockpit's (사용자 리포트 2026-07-28), one
+   * shell later, exactly as `useShellSurface`'s own comment predicted: a
+   * hand-copied contract drifts on the NEXT shell. So it is consumed here
+   * rather than re-typed, and the C1 guard now renders this screen too.
+   *
+   * ⚠ Only the STYLE half is spread. `data-tr-skin` stays off until P7.8, where
+   * §N-9 option B decides which token families a skin may touch here — stamping
+   * it now would ship precisely the split-family gradient the comment above
+   * warns about, and would sit on main until that ticket lands. The
+   * accessibility half has no such dependency and is the reason this ticket is
+   * ordered before P7.3 (typography), which is measured in these units.
+   */
+  const { surfaceProps } = useShellSurface({ theme });
+  const surfaceStyle = surfaceProps.style;
   const attempted = useRef(false);
   const [locale, setLocale] = useState<RoomLocale>(() => detectLocale());
   const copy = COPY[locale];
@@ -2413,7 +2442,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   // ── render ────────────────────────────────────────────────────────────────
   if (state.status === 'idle' || state.status === 'joining' || (state.status === 'joined' && !plan && !loadError)) {
     return (
-      <div className={`tr-root mx-auto flex min-h-dvh w-full flex-col bg-[var(--tr-canvas)] ${themeClass}`} aria-busy="true">
+      <div
+        className={`tr-root mx-auto flex min-h-dvh w-full flex-col bg-[var(--tr-canvas)] ${themeClass}`}
+        style={surfaceStyle}
+        aria-busy="true"
+      >
         <div className="mx-auto flex w-full max-w-2xl flex-1 flex-col gap-3 px-4 pt-8">
           <div className="tr-skeleton h-6 w-48 rounded-full" />
           <div className="tr-skeleton h-10 w-full rounded-xl" />
@@ -2430,7 +2463,10 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
 
   if (state.status === 'error' || loadError || !plan) {
     return (
-      <div className={`tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 ${themeClass}`}>
+      <div
+        className={`tr-root flex min-h-dvh items-center justify-center bg-[var(--tr-canvas)] px-6 ${themeClass}`}
+        style={surfaceStyle}
+      >
         <div className="tr-card max-w-md px-5 py-6 text-center">
           <p className="tr-body text-[var(--tr-ink)]">{copy.joinError}</p>
         </div>
@@ -2452,7 +2488,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   if (!plan.tour.is_private) {
     const fx = FIXED_ITIN_COPY[locale] ?? FIXED_ITIN_COPY.en;
     return (
-      <div className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16 ${themeClass}`} data-locale={locale}>
+      <div
+        className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] pb-16 ${themeClass}`}
+        data-locale={locale}
+        style={surfaceStyle}
+      >
         <div className="tr-safe-bottom mx-auto w-full max-w-xl px-4 pt-4">
           <header className="tr-plan-hero">
             <div className="flex items-start justify-between gap-4">
@@ -2515,7 +2555,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     <div
       className={`tr-safe-top tr-root tr-plan-root mx-auto min-h-dvh w-full bg-[var(--tr-canvas)] ${themeClass}`}
       data-locale={locale}
-      style={{ paddingBottom: 'calc(8rem + env(safe-area-inset-bottom, 0px))' }}
+      style={{ ...surfaceStyle, paddingBottom: 'calc(8rem + env(safe-area-inset-bottom, 0px))' }}
     >
       <div className="mx-auto w-full max-w-xl px-4 pt-4">
         {/* header */}
@@ -2614,7 +2654,13 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   onClick={() => setTab(key)}
                   className="tr-plan-seg-item tr-label text-cjk-safe flex min-h-[42px] items-center justify-center gap-1.5 px-2 text-center font-bold"
                 >
-                  <Icon size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
+                  {/* 🔴 `shrink-0`: the SVG is a flex child, so once P7.1b let
+                      --tr-font-scale reach this screen the labels grew and flex
+                      squeezed the icons to slivers at steps 4-5 — visibly
+                      narrower than tall, and only on the two unselected tabs
+                      (the selected one has room). Nobody had seen it because
+                      the setting had never worked here. */}
+                  <Icon size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden className="shrink-0" />
                   {label}
                 </button>
               ))}

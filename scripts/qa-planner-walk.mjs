@@ -33,6 +33,9 @@ const TAG = args.tag ?? 'shot';
 const LOCALE = args.locale ?? 'en';
 const THEME = args.theme ?? 'light';
 const BASE = args.base ?? process.env.WALK_BASE ?? 'http://localhost:3181';
+/** Text-scale step 1..5 (3 = default, 5 = 1.35x). Proves --tr-font-scale lands. */
+const TEXT_SCALE = Number(args.textScale ?? 3);
+const SKIN = args.skin ?? 'classic';
 const OUT = path.join(process.cwd(), 'docs', 'audit', 'shots');
 
 const fixtures = JSON.parse(readFileSync(path.join(process.cwd(), 'scripts', '.sim-fixtures.json'), 'utf8'));
@@ -79,17 +82,26 @@ async function main() {
     else document.addEventListener('DOMContentLoaded', inject, { once: true });
   });
 
-  // Theme + locale live in the same device-scoped store the room settings use.
+  /**
+   * 🔴 The settings live in ONE device-scoped JSON blob under
+   * `tour_mode_settings` (hooks/useTourRoomSettings.ts), not in per-key
+   * entries. An earlier version of this harness wrote `tr-theme` / `tr-locale`,
+   * which nothing reads — so `--theme dark` silently did nothing and every
+   * "dark" capture was actually light. Writing the real shape is the difference
+   * between testing the setting and testing nothing.
+   */
   await ctx.addInitScript(
-    ([locale, theme]) => {
+    ([theme, textScale, skin]) => {
       try {
-        localStorage.setItem('tr-theme', theme);
-        localStorage.setItem('tr-locale', locale);
+        localStorage.setItem(
+          'tour_mode_settings',
+          JSON.stringify({ theme, textScale, skin }),
+        );
       } catch {
         /* first-run private mode — defaults are fine */
       }
     },
-    [LOCALE, THEME],
+    [THEME, TEXT_SCALE, SKIN],
   );
 
   const page = await ctx.newPage();
@@ -158,6 +170,17 @@ async function main() {
         getComputedStyle(document.querySelector('.tr-plan-root') ?? document.documentElement)
           .getPropertyValue('--tr-font-scale')
           .trim() || null,
+      /**
+       * 🔴 The variable being present does not prove the text got bigger.
+       * Measure PIXELS on the classes that actually carry this screen's copy,
+       * or the report is about a custom property rather than about reading.
+       */
+      typePx: Object.fromEntries(
+        ['tr-display', 'tr-body-lg', 'tr-title', 'tr-card-text', 'tr-label', 'tr-meta'].map((cls) => {
+          const el = document.querySelector(`.tr-plan-root .${cls}`);
+          return [cls, el ? Math.round(parseFloat(getComputedStyle(el).fontSize) * 100) / 100 : null];
+        }),
+      ),
     };
   });
 
@@ -242,7 +265,7 @@ async function main() {
 
   console.log(
     JSON.stringify(
-      { tag: TAG, locale: LOCALE, theme: THEME, editorPresent, ...metrics, picker: pickerMetrics, swatch: swatchMetrics, coursePreview: coursePreviewMetrics, errors: errors.slice(0, 6) },
+      { tag: TAG, locale: LOCALE, theme: THEME, textScale: TEXT_SCALE, skinSetting: SKIN, editorPresent, ...metrics, picker: pickerMetrics, swatch: swatchMetrics, coursePreview: coursePreviewMetrics, errors: errors.slice(0, 6) },
       null,
       2,
     ),
