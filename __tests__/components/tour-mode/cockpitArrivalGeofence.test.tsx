@@ -14,7 +14,7 @@
  *   - it OFFERS the arrival sheet, it never sends on the driver's behalf.
  */
 import type { ComponentProps } from 'react';
-import { render, screen, waitFor, fireEvent } from '@testing-library/react';
+import { render, screen, waitFor, fireEvent, within } from '@testing-library/react';
 import Cockpit from '@/components/tour-mode/cockpit/Cockpit';
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import { vehicleShareKey } from '@/components/tour-mode/cockpit/Cockpit';
@@ -165,24 +165,29 @@ describe('cockpit arrival geofence (X15 Phase 1)', () => {
     const before = (global.fetch as jest.Mock).mock.calls.length;
     fireArrival!({ spotId: 'spot-1', distanceM: 40 });
 
-    const prompt = await screen.findByTestId('cockpit-arrival-prompt');
-    expect(prompt).toHaveTextContent('Seongsan Ilchulbong');
+    // SG-6 — X15's prompt now surfaces as the say queue's top REQUIRED item.
+    const pill = await screen.findByTestId('say-queue-pill');
+    expect(pill).toHaveTextContent('Seongsan Ilchulbong');
 
     /**
      * The arrival bundle carries a meeting time and §A0 forbids a default one,
      * so firing it automatically would invent the single field a guest acts on.
-     * Showing the prompt must therefore cost zero requests.
+     * Showing the offer must therefore cost zero requests.
      */
     expect((global.fetch as jest.Mock).mock.calls.length).toBe(before);
   });
 
-  it('the prompt can be dismissed without opening anything', async () => {
+  it('the offer can be dismissed without opening anything', async () => {
     enableSharing();
     mount();
     await waitFor(() => expect(typeof fireArrival).toBe('function'));
     fireArrival!({ spotId: 'spot-1', distanceM: 40 });
 
-    fireEvent.click(await screen.findByTestId('cockpit-arrival-dismiss'));
-    await waitFor(() => expect(screen.queryByTestId('cockpit-arrival-prompt')).toBeNull());
+    fireEvent.click(within(await screen.findByTestId('say-queue-pill')).getByRole('button'));
+    const panel = await screen.findByTestId('say-queue-panel');
+    fireEvent.click(within(panel).getAllByLabelText('치우기')[0]);
+    await waitFor(() =>
+      expect(screen.queryByTestId('say-fire-arrival_bundle')).toBeNull(),
+    );
   });
 });

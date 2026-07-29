@@ -35,7 +35,7 @@ export const dynamic = 'force-dynamic';
  * cancel:true to clear it.
  */
 
-const SIGNAL_TYPES: Array<DriverSignalType | 'return_time'> = [
+const SIGNAL_TYPES: Array<DriverSignalType | 'return_time' | 'say_dismissed' | 'say_expired'> = [
   'delay',
   'parking_pin',
   'vehicle_arrived',
@@ -43,6 +43,10 @@ const SIGNAL_TYPES: Array<DriverSignalType | 'return_time'> = [
   'return_time',
   'eta_reply',
   'departing',
+  // SG-6 — say-queue bookkeeping: no message, no fan-out, just the event
+  // ledger (dismissals dedupe the queue; expiries are N-5's decision data).
+  'say_dismissed',
+  'say_expired',
 ];
 
 function numberOrNull(value: unknown): number | null {
@@ -67,8 +71,8 @@ export async function POST(
       cancel?: unknown;
     };
 
-    const type = SIGNAL_TYPES.includes(body.type as DriverSignalType | 'return_time')
-      ? (body.type as DriverSignalType | 'return_time')
+    const type = SIGNAL_TYPES.includes(body.type as (typeof SIGNAL_TYPES)[number])
+      ? (body.type as (typeof SIGNAL_TYPES)[number])
       : null;
     if (!type) {
       return NextResponse.json({ error: `type must be one of: ${SIGNAL_TYPES.join(', ')}` }, { status: 400 });
@@ -93,6 +97,31 @@ export async function POST(
       return NextResponse.json(
         { error: 'rate_limited' },
         { status: 429, headers: { 'Retry-After': String(Math.ceil((gate.retryAfterMs ?? 0) / 1000)) } },
+      );
+    }
+
+    // SG-6 -- say-queue bookkeeping: ledger row only, then done. Before the
+    // heavy per-type flows because it needs none of them.
+    if (type === 'say_dismissed' || type === 'say_expired') {
+      const subjectRaw = typeof (body as { subject?: unknown }).subject === 'string'
+        ? ((body as { subject: string }).subject).trim().slice(0, 120)
+        : '';
+      if (!subjectRaw) {
+        return NextResponse.json({ error: 'subject is required' }, { status: 400 });
+      }
+      const room = await ensureRoom(supabase, booking);
+      const recorded = await recordRoomEvent(supabase, {
+        roomId: room.id,
+        bookingId: booking.id,
+        type,
+        actorRole: actor.role,
+        actorParticipantId: actor.kind === 'session' ? actor.sessionPayload.participantId : null,
+        subjectKey: `${type}:${subjectRaw}`,
+        payload: { subject: subjectRaw },
+      });
+      return NextResponse.json(
+        { ok: true, deduped: !recorded.inserted },
+        { status: recorded.inserted ? 201 : 200 },
       );
     }
 

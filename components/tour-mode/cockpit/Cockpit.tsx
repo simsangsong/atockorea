@@ -51,6 +51,10 @@ import {
 } from '@/lib/tour-room/notices';
 import NumeralClock from '@/components/tour-mode/NumeralClock';
 import { useRallyLadder } from '@/hooks/useRallyLadder';
+import SayQueueCard from '@/components/tour-mode/cockpit/SayQueueCard';
+import { firedSubjectsFromMessages, sayQueue } from '@/lib/tour-room/sayQueue';
+import { latestArrival } from '@/lib/tour-room/nowCard';
+import { quickRepliesForRole } from '@/lib/tour-room/quickReplies';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import {
@@ -1542,6 +1546,79 @@ export default function Cockpit({
    * assigned by meaning — movement blue, time amber, alerts rose, money green —
    * so the grid is scannable without reading.
    */
+  // ── SG-6 — the say queue: pure ranking, zero new send paths ────────────
+  const [sayDismissed, setSayDismissed] = useState<ReadonlySet<string>>(new Set());
+  const [sayOptimistic, setSayOptimistic] = useState<ReadonlySet<string>>(new Set());
+  const sayItems = useMemo(() => {
+    const dayStartMs = rallyNowMs - ((rallyNowMs + 9 * 3600_000) % 86_400_000);
+    const derived = firedSubjectsFromMessages(messages, dayStartMs);
+    const fired = new Set<string>([...derived.fired, ...sayOptimistic, ...sayDismissed]);
+    const arrival = latestArrival([...messages], rallyNowMs);
+    return sayQueue({
+      nowMs: rallyNowMs,
+      tourDate: rallyTourDate,
+      schedule: room.schedule,
+      notice: rallyNotice,
+      geofenceArrival: arrivalPrompt
+        ? {
+            spotId: arrivalPrompt.spotId,
+            title: arrivalPrompt.title,
+            poiKey: spotTitlesRef.current.get(arrivalPrompt.spotId)?.poiKey ?? null,
+          }
+        : null,
+      lastArrivalAtMs: arrival?.arrivedAtMs ?? null,
+      lastArrivalPoiKey: arrival?.poiKey ?? null,
+      lastTimerAtMs: derived.lastTimerAtMs,
+      firedSubjects: fired,
+    });
+  }, [messages, rallyNowMs, rallyTourDate, room.schedule, rallyNotice, arrivalPrompt, sayOptimistic, sayDismissed]);
+  const sayBookkeep = useCallback(
+    (type: 'say_dismissed' | 'say_expired', subject: string) => {
+      void fetch(`/api/tour-rooms/${bookingId}/driver-signal`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+        body: JSON.stringify({ type, subject }),
+      }).catch(() => undefined);
+    },
+    [bookingId, session],
+  );
+  const fireSayItem = useCallback(
+    (item: import('@/lib/tour-room/sayQueue').SayItem) => {
+      setSayOptimistic((prev) => new Set([...prev, item.subject]));
+      if (item.kind === 'arrival_bundle') {
+        const scheduleItem =
+          (item.poiKey ? room.schedule.find((it) => it.poi_key === item.poiKey) : undefined) ??
+          room.schedule.find((it) => itemTitle(it) === item.spotTitle) ?? {
+            title: item.spotTitle ?? '이 스팟',
+            poi_key: item.poiKey ?? undefined,
+          };
+        setArrivalPrompt(null);
+        openArrivalSheet(scheduleItem);
+      } else if (item.kind === 'return_time') {
+        setRetTime('');
+        setRetRest(roundUpTo5(kstPlusMinutes(30)));
+        setSheet('return');
+      } else if (item.kind === 'briefing') {
+        void sendMorningBriefing();
+      } else if (item.kind === 'preset' && item.presetKey) {
+        const preset = quickRepliesForRole('driver').find((p) => p.key === item.presetKey);
+        if (preset) void sendChannelPreset(preset, 'ko');
+      }
+    },
+    [room.schedule, openArrivalSheet, sendMorningBriefing, sendChannelPreset],
+  );
+  const dismissSayItem = useCallback(
+    (item: import('@/lib/tour-room/sayQueue').SayItem) => {
+      setSayDismissed((prev) => new Set([...prev, item.subject]));
+      if (item.subject === (arrivalPrompt ? `arrival:${spotTitlesRef.current.get(arrivalPrompt.spotId)?.poiKey ?? arrivalPrompt.spotId}` : '')) {
+        setArrivalPrompt(null);
+      }
+      sayBookkeep(item.urgency === 'required' && item.deadlineMs != null && rallyNowMs > item.deadlineMs ? 'say_expired' : 'say_dismissed', item.subject);
+    },
+    [arrivalPrompt, rallyNowMs, sayBookkeep],
+  );
+
+
   const driverActions = useMemo<ActionGridItem[]>(() => {
     const base: ActionGridItem[] = [
       // C3 — attachment moved here from its own permanent composer column.
@@ -1943,50 +2020,9 @@ export default function Cockpit({
           prefilled sheet the driver would have opened by hand, and dismissing
           it costs nothing. The geofence's own 120s cooldown stops this
           reappearing while parked at the same stop. */}
-      {arrivalPrompt ? (
-        <div className="absolute inset-x-0 top-16 z-30 flex justify-center px-4">
-          <div
-            className="tr-anim-panel-in tr-card tr-card-hero flex w-full max-w-md items-center gap-3 px-4 py-3"
-            role="status"
-            data-testid="cockpit-arrival-prompt"
-          >
-            <div className="min-w-0 flex-1">
-              <p className="tr-meta font-bold uppercase text-[var(--tr-ink-3)]">도착 감지</p>
-              <p className="tr-title truncate font-bold text-[var(--tr-ink)]">{arrivalPrompt.title}</p>
-            </div>
-            <button
-              type="button"
-              className="tr-btn-physical tr-press tr-label shrink-0 px-4 py-2 font-bold"
-              data-testid="cockpit-arrival-open"
-              onClick={() => {
-                const meta = spotTitlesRef.current.get(arrivalPrompt.spotId);
-                // Match the schedule row by poi_key first (stable), then by
-                // title. A spot with no matching row still opens the sheet with
-                // the spot's own name rather than doing nothing.
-                const item =
-                  (meta?.poiKey ? room.schedule.find((it) => it.poi_key === meta.poiKey) : undefined) ??
-                  room.schedule.find((it) => itemTitle(it) === arrivalPrompt.title) ?? {
-                    title: arrivalPrompt.title,
-                    poi_key: meta?.poiKey ?? undefined,
-                  };
-                setArrivalPrompt(null);
-                openArrivalSheet(item);
-              }}
-            >
-              도착 안내
-            </button>
-            <button
-              type="button"
-              aria-label="닫기"
-              className="tr-press tr-label shrink-0 rounded-full px-3 py-2 text-[var(--tr-ink-3)]"
-              data-testid="cockpit-arrival-dismiss"
-              onClick={() => setArrivalPrompt(null)}
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      ) : null}
+      {/* SG-6 — X15's prompt, generalized: the queue card owns this slot.
+          The geofence hit rides in as the queue's top required item. */}
+      <SayQueueCard items={sayItems} onFire={fireSayItem} onDismiss={dismissSayItem} />
 
       {toast ? (
         <div className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center">
