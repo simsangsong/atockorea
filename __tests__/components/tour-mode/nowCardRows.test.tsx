@@ -123,6 +123,34 @@ describe('NowCard four-row grammar (SG-1b)', () => {
     expect(getByText(/Yours until about/)).toBeInTheDocument();
   });
 
+  it('E3 — arrived credits the driver by name (text attribution, the final form)', () => {
+    const { getByTestId } = renderCard({
+      state: 'arrived',
+      tone: 'accent',
+      action: { kind: 'listen' },
+      chips: [],
+      data: { spotName: 'Seongsan Ilchulbong', attributionName: '김민수' },
+    });
+    expect(getByTestId('arrival-attribution').textContent).toBe('Narrated by 김민수');
+  });
+
+  it('E1 — free time with a meeting pin offers the on-device walk-back chip', () => {
+    const { getByTestId } = renderCard({
+      state: 'free_time',
+      tone: 'warn',
+      action: { kind: 'route_back' },
+      chips: [],
+      data: {
+        minutesLeft: 18,
+        meetingPoint: 'Blue gate',
+        freeTimeEndsAtMs: BASE + 18 * MIN,
+        meetingLat: 33.45,
+        meetingLng: 126.57,
+      },
+    });
+    expect(getByTestId('walkback-optin')).toBeInTheDocument();
+  });
+
   it('the announcer is a SIBLING of the card, not inside its atomic region', () => {
     const { container, getByTestId } = renderCard({
       state: 'free_time',

@@ -25,7 +25,7 @@ import { nowCard, roomNowCardContext } from '@/lib/tour-room/nowCard';
 import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { orderHomeTiles, PEEK_COUNT, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
-import { firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
+import { driverNameFromPayload, firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
@@ -560,11 +560,13 @@ export default function HomeTab({
         // surface already, so the pickup state stays off until X15 threads it.
         pickup: null,
         contactPhone: OPS_PHONE,
+        // E3 — the narration credit; the vehicle payload already knows who.
+        driverName: driverNameFromPayload(busPayload),
         nowMs,
       }),
     );
     return result.state === 'lobby' ? null : result;
-  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nowStop, nowMs]);
+  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nowStop, busPayload, nowMs]);
 
   const nowCardHandlers: NowCardHandlers = useMemo(
     () => ({

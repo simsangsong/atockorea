@@ -59,6 +59,8 @@ export interface NowCardCopy {
   walkOptIn: string;
   /** NumeralClock minutes suffix — the label carries its own spacing. */
   minuteUnitLabel: string;
+  /** E3 — narration credit; trust moves from the app to a person. */
+  attribution: (name: string) => string;
 }
 
 export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
@@ -92,6 +94,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `${m} min walk from you — leave by ${t}`,
     walkOptIn: 'Walk time from my location',
     minuteUnitLabel: ' min',
+    attribution: (name) => `Narrated by ${name}`,
   },
   ko: {
     rallyTitle: '일행이 기다리고 있어요',
@@ -123,6 +126,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `내 위치에서 도보 ${m}분 · ${t}에는 출발하세요`,
     walkOptIn: '내 위치 기준 도보 시간',
     minuteUnitLabel: '분',
+    attribution: (name) => `${name} 기사님의 안내`,
   },
   ja: {
     rallyTitle: 'みなさんお待ちです',
@@ -154,6 +158,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `現在地から徒歩${m}分 · ${t}に出発を`,
     walkOptIn: '現在地からの徒歩時間',
     minuteUnitLabel: '分',
+    attribution: (name) => `${name}さんによるご案内`,
   },
   zh: {
     rallyTitle: '大家在等您',
@@ -185,6 +190,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `距您步行 ${m} 分钟 · 请在 ${t} 出发`,
     walkOptIn: '按我的位置计算步行时间',
     minuteUnitLabel: ' 分钟',
+    attribution: (name) => `由${name}为您讲解`,
   },
   'zh-TW': {
     rallyTitle: '大家在等您',
@@ -216,6 +222,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `距您步行 ${m} 分鐘 · 請在 ${t} 出發`,
     walkOptIn: '按我的位置計算步行時間',
     minuteUnitLabel: ' 分鐘',
+    attribution: (name) => `由${name}為您講解`,
   },
   es: {
     rallyTitle: 'Tu grupo te espera',
@@ -247,6 +254,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `A ${m} min a pie — salga a las ${t}`,
     walkOptIn: 'Tiempo a pie desde mi ubicación',
     minuteUnitLabel: ' min',
+    attribution: (name) => `Narrado por ${name}`,
   },
   fr: {
     rallyTitle: 'Votre groupe vous attend',
@@ -278,6 +286,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `À ${m} min à pied — partez à ${t}`,
     walkOptIn: 'Temps de marche depuis ma position',
     minuteUnitLabel: ' min',
+    attribution: (name) => `Raconté par ${name}`,
   },
   de: {
     rallyTitle: 'Ihre Gruppe wartet',
@@ -309,6 +318,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `${m} Min. zu Fuß — um ${t} losgehen`,
     walkOptIn: 'Gehzeit von meinem Standort',
     minuteUnitLabel: ' Min.',
+    attribution: (name) => `Erzählt von ${name}`,
   },
   ru: {
     rallyTitle: 'Ваша группа ждёт',
@@ -340,6 +350,7 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `${m} мин пешком — выходите в ${t}`,
     walkOptIn: 'Время пешком от моего местоположения',
     minuteUnitLabel: ' мин',
+    attribution: (name) => `Рассказывает ${name}`,
   },
   it: {
     rallyTitle: 'Il gruppo la sta aspettando',
@@ -371,5 +382,6 @@ export const NOW_CARD_COPY: Record<RoomLocale, NowCardCopy> = {
     leaveBy: (m, t) => `${m} min a piedi — parta alle ${t}`,
     walkOptIn: 'Tempo a piedi dalla mia posizione',
     minuteUnitLabel: ' min',
+    attribution: (name) => `Racconta ${name}`,
   },
 };
