@@ -38,6 +38,7 @@ import NumeralClock, {
   type NumeralClockMode,
 } from '@/components/tour-mode/NumeralClock';
 import WalkBackLine from '@/components/tour-mode/WalkBackLine';
+import HeroMediaBand from '@/components/tour-mode/HeroMediaBand';
 import { useRoomClock } from '@/components/tour-mode/roomClock';
 import { dayPhase } from '@/lib/tour-room/dayPhase';
 import { NOW_CARD_COPY } from '@/lib/tour-room/nowCardCopy';
@@ -359,6 +360,9 @@ export default function NowCard({
       aria-live={result.tone === 'danger' ? 'assertive' : 'polite'}
       aria-atomic="true"
     >
+      {NUMERAL_V1_ON && (
+        <HeroMediaBand photoUrl={result.data.photoUrl} seed={result.data.photoSeed} />
+      )}
       {eyebrow && (
         <p className="tr-meta text-cjk-safe font-semibold uppercase tracking-[0.08em] text-[var(--tr-ink-3)]">
           {eyebrow}

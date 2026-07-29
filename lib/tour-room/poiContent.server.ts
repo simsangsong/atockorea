@@ -20,6 +20,7 @@
  * written for exactly this card.
  */
 
+import { poiImageCandidates } from '@/lib/tour-room/poiImage';
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 import type {
   SpotArrivalContent,
@@ -67,19 +68,11 @@ function stringList(value: unknown, limit: number): string[] {
   return value.filter((item): item is string => typeof item === 'string' && item.trim().length > 0).slice(0, limit);
 }
 
+// SG-4c -- the candidate chain lives in poiImage.ts (single owner); this
+// file used to carry a private copy of the same walk, which is exactly the
+// second-copy failure this repo keeps re-learning.
 function firstImage(row: MatchPoiRow): string | undefined {
-  if (typeof row.default_image_url === 'string' && row.default_image_url) return row.default_image_url;
-  const images = row.images;
-  if (Array.isArray(images)) {
-    for (const image of images) {
-      if (typeof image === 'string' && image) return image;
-      if (image && typeof image === 'object') {
-        const url = (image as { url?: unknown; src?: unknown }).url ?? (image as { src?: unknown }).src;
-        if (typeof url === 'string' && url) return url;
-      }
-    }
-  }
-  return undefined;
+  return poiImageCandidates(row as Parameters<typeof poiImageCandidates>[0])[0];
 }
 
 /** Build one locale's briefing out of a POI row, or null when it has no prose. */

@@ -32,8 +32,13 @@
 
 export interface PoiImageSource {
   default_image_url?: string | null;
-  /** jsonb array in Postgres; the pois API already selects it. */
-  images?: string[] | null;
+  /**
+   * jsonb array in Postgres; the pois API already selects it. Entries are
+   * strings in most rows, but the arrival path has rows shaped `{url}` /
+   * `{src}` — SG-4c folded that reader's private copy into this chain, so
+   * the union is the honest type.
+   */
+  images?: Array<string | { url?: unknown; src?: unknown } | null> | null;
 }
 
 /**
@@ -47,8 +52,16 @@ export function poiImageCandidates(poi: PoiImageSource | null | undefined): stri
   if (!poi) return [];
   const out: string[] = [];
   const push = (value: unknown) => {
-    if (typeof value !== 'string') return;
-    const url = value.trim();
+    // SG-4c — accept the arrival rows' `{url}`/`{src}` object entries too;
+    // this used to live as a second copy in poiContent.server.ts.
+    const raw =
+      typeof value === 'string'
+        ? value
+        : value && typeof value === 'object'
+          ? ((value as { url?: unknown }).url ?? (value as { src?: unknown }).src)
+          : null;
+    if (typeof raw !== 'string') return;
+    const url = raw.trim();
     if (!url || out.includes(url)) return;
     out.push(url);
   };

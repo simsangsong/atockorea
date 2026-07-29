@@ -796,6 +796,13 @@
   font-weight: 700;
 }
 
+/* SG-D9 — the hero photo band yields entirely in the contrast skin: that
+ * skin already strips every shadow (decoration is what it removes), and a
+ * photo is the loudest decoration a card can carry. */
+.tr-root[data-tr-skin='contrast'] .tr-hero-media {
+  display: none;
+}
+
 /* CJK needs a touch more leading to breathe (§J). RoomShell stamps the
  * active room locale on the root as data-locale. */
 .tr-root[data-locale='ja'] .tr-body,

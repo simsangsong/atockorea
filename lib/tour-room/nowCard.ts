@@ -120,6 +120,9 @@ export interface NowCardResult {
     meetingLng?: number;
     /** E3 — the narration is a PERSON's act; the name makes it so. */
     attributionName?: string;
+    /** SG-4 — hero photo band source + swatch seed (SG-D9). */
+    photoUrl?: string;
+    photoSeed?: string;
   };
 }
 
@@ -138,6 +141,9 @@ export interface NowCardContext {
   /** E1 — the notice's pin, for the ON-DEVICE walk-back (never sent anywhere). */
   meetingLat?: number | null;
   meetingLng?: number | null;
+  /** SG-4d — verified meeting-point photo for the free/rally band. */
+  meetingPhotoUrl?: string | null;
+  meetingPhotoSeed?: string | null;
   /** Ops line for the rally escalation; null hides the call action. */
   contactPhone?: string | null;
 
@@ -145,13 +151,26 @@ export interface NowCardContext {
   freeTimeEndsAtMs?: number | null;
 
   /** Latest arrival that is still the guest's current place. */
-  arrived?: { spotName: string; stayMinutes?: number | null; arrivedAtMs?: number | null } | null;
+  arrived?: {
+    spotName: string;
+    stayMinutes?: number | null;
+    arrivedAtMs?: number | null;
+    photoUrl?: string | null;
+    poiKey?: string | null;
+  } | null;
 
   /** Pickup board, already resolved by `pickupBoardState()`. */
   pickup?: { visible: boolean; vehicleLabel?: string | null; driverName?: string | null; plateTail?: string | null } | null;
 
   /** Next scheduled stop, if the day has one left. */
-  nextStop?: { name: string; time?: string | null; targetMs?: number | null } | null;
+  nextStop?: {
+    name: string;
+    time?: string | null;
+    targetMs?: number | null;
+    /** SG-4b — photo for the moving band, picked by poi_key client-side. */
+    photoUrl?: string | null;
+    poiKey?: string | null;
+  } | null;
 
   /**
    * The stop the SCHEDULE says the guest is at, which is not the same claim as
@@ -198,6 +217,8 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         meetingTime: ctx.meetingTime ?? undefined,
         // Overage counts UP from the target; an untimed rally has no numeral.
         ...(typeof ctx.meetingTargetMs === 'number' ? { rallyTargetMs: ctx.meetingTargetMs } : {}),
+        ...(ctx.meetingPhotoUrl ? { photoUrl: ctx.meetingPhotoUrl } : {}),
+        ...(ctx.meetingPhotoSeed ? { photoSeed: ctx.meetingPhotoSeed } : {}),
       },
     };
   }
@@ -216,6 +237,8 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         ...(typeof ctx.meetingLat === 'number' && typeof ctx.meetingLng === 'number'
           ? { meetingLat: ctx.meetingLat, meetingLng: ctx.meetingLng }
           : {}),
+        ...(ctx.meetingPhotoUrl ? { photoUrl: ctx.meetingPhotoUrl } : {}),
+        ...(ctx.meetingPhotoSeed ? { photoSeed: ctx.meetingPhotoSeed } : {}),
       },
     };
   }
@@ -238,6 +261,9 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         // E3 — attribution: the narration the [해설 듣기] action opens is the
         // DRIVER's act (제로베이스 명제 — N-3 확정으로 텍스트 귀속이 최종형).
         ...(ctx.driverName ? { attributionName: ctx.driverName } : {}),
+        // SG-4a — the band's photo, zero-network (from the arrival message).
+        ...(ctx.arrived.photoUrl ? { photoUrl: ctx.arrived.photoUrl } : {}),
+        ...(ctx.arrived.poiKey ? { photoSeed: ctx.arrived.poiKey } : {}),
       },
     };
   }
@@ -284,6 +310,8 @@ export function nowCard(ctx: NowCardContext): NowCardResult {
         ...(bandedTarget(ctx.nextStop?.targetMs, nowMs, MOVING_NUMERAL_MAX_MS) !== undefined
           ? { nextStopTargetMs: ctx.nextStop?.targetMs as number }
           : {}),
+        ...(ctx.nextStop?.photoUrl ? { photoUrl: ctx.nextStop.photoUrl } : {}),
+        ...(ctx.nextStop?.poiKey ? { photoSeed: ctx.nextStop.poiKey } : {}),
       },
     };
   }
@@ -346,21 +374,42 @@ const ARRIVAL_KINDS = new Set(['spot_arrival', 'arrival_bundle']);
 export function latestArrival(
   messages: readonly RoomMessage[],
   nowMs = Date.now(),
-): { spotName: string; stayMinutes?: number | null; arrivedAtMs: number } | null {
+): {
+  spotName: string;
+  stayMinutes?: number | null;
+  arrivedAtMs: number;
+  photoUrl?: string | null;
+  poiKey?: string | null;
+} | null {
   for (let i = messages.length - 1; i >= 0; i -= 1) {
     const message = messages[i];
-    const meta = message.metadata as { kind?: string; spot_title?: string; stay_minutes?: number } | null | undefined;
+    const meta = message.metadata as
+      | {
+          kind?: string;
+          spot_title?: string;
+          stay_minutes?: number;
+          poi_key?: string;
+          content?: { image?: unknown } | null;
+        }
+      | null
+      | undefined;
     if (!meta?.kind || !ARRIVAL_KINDS.has(meta.kind)) continue;
     const at = new Date(message.created_at).getTime();
     if (!Number.isFinite(at) || nowMs - at > ARRIVAL_TTL_MS) return null;
     const spotName = typeof meta.spot_title === 'string' ? meta.spot_title.trim() : '';
     if (!spotName) return null;
+    // SG-4a — the arrival message ALREADY carries the resolved POI image
+    // (the same SpotArrivalContent the chat card renders); reading it here
+    // costs zero network and can never disagree with the chat.
+    const photoUrl = typeof meta.content?.image === 'string' ? meta.content.image : null;
     return {
       spotName,
       stayMinutes: typeof meta.stay_minutes === 'number' ? meta.stay_minutes : null,
       // SG-1a — when the guest got here; the say queue's durable arrived
       // source (SG-D11) reads this instead of volatile geofence state.
       arrivedAtMs: at,
+      photoUrl,
+      poiKey: typeof meta.poi_key === 'string' ? meta.poi_key : null,
     };
   }
   return null;
@@ -403,12 +452,14 @@ export interface RoomNowCardInput {
   lifecycle: RoomLifecycle;
   tourDate: string | null | undefined;
   locale: RoomLocale;
-  nextStop?: { name: string; time?: string | null } | null;
+  nextStop?: { name: string; time?: string | null; photoUrl?: string | null; poiKey?: string | null } | null;
   currentStop?: { name: string } | null;
   pickup?: NowCardContext['pickup'];
   contactPhone?: string | null;
   /** E3 — driver display name for the arrived-state attribution. */
   driverName?: string | null;
+  /** SG-4d — poi_key → VERIFIED meeting photo; free/rally band source. */
+  meetingPhotos?: Record<string, string> | null;
   nowMs?: number;
 }
 
@@ -431,6 +482,11 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
   // sentence takes over). Real operator-typed points ride verbatim.
   const rawPoint = notice?.pointI18n?.[input.locale] ?? notice?.point ?? null;
   const meetingPoint = rawPoint === 'the vehicle' ? null : rawPoint;
+  const arrived = latestArrival(input.messages, nowMs);
+  // SG-4d -- the meeting photo belongs to the CURRENT stop (where the guest
+  // must return); verified-only by construction of the snapshot map.
+  const meetingPhotoUrl =
+    arrived?.poiKey && input.meetingPhotos ? (input.meetingPhotos[arrived.poiKey] ?? null) : null;
 
   return {
     lifecycle: input.lifecycle,
@@ -449,11 +505,14 @@ export function roomNowCardContext(input: RoomNowCardInput): NowCardContext {
     driverName: input.driverName ?? null,
     contactPhone: input.contactPhone ?? null,
     freeTimeEndsAtMs: isFreeTime ? notice?.targetMs ?? null : null,
-    arrived: latestArrival(input.messages, nowMs),
+    arrived,
+    meetingPhotoUrl,
+    meetingPhotoSeed: arrived?.poiKey ?? null,
     pickup: input.pickup ?? null,
     nextStop: input.nextStop
       ? { ...input.nextStop, targetMs: scheduleTargetMs(input.tourDate, input.nextStop.time) }
       : null,
+    // (photoUrl/poiKey ride the spread above — SG-4b)
     currentStop: input.currentStop ?? null,
     daysUntil: daysUntilTour(input.tourDate, nowMs),
     nowMs,

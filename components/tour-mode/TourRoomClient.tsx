@@ -460,9 +460,11 @@ function TourRoomLive({
   const theme = settings.theme === 'system' ? (systemDark ? 'dark' : 'light') : settings.theme;
   const snapshot = data.snapshot as {
     server_now_ms?: number;
+    stop_images?: Record<string, string>;
+    meeting_photos?: Record<string, string>;
     bus_detail?: { payload?: unknown } | null;
     booking?: {
-      tours?: { title?: string; city?: string } | null;
+      tours?: { title?: string; city?: string; image_url?: string | null } | null;
       tour_date?: string | null;
       tour_time?: string | null;
       booking_reference?: string | null;
@@ -1087,6 +1089,9 @@ function TourRoomLive({
                 tourTime={snapshot.booking?.tour_time ?? null}
                 pickupPoints={snapshot.booking?.pickup_points}
                 busPayload={(snapshot.bus_detail as { payload?: unknown } | null | undefined)?.payload}
+                stopImages={snapshot.stop_images ?? null}
+                meetingPhotos={snapshot.meeting_photos ?? null}
+                heroPhotoUrl={snapshot.booking?.tours?.image_url ?? null}
                 reviewPolicy={reviewPolicy}
                 canSignal={!readOnly && data.lifecycle === 'live'}
                 showConcierge={!readOnly}

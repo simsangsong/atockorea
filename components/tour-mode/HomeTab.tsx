@@ -447,6 +447,9 @@ export default function HomeTab({
   tourTime,
   pickupPoints,
   busPayload,
+  stopImages,
+  heroPhotoUrl,
+  meetingPhotos,
   reviewPolicy,
   canSignal,
   showConcierge,
@@ -467,6 +470,12 @@ export default function HomeTab({
   tourTime?: string | null;
   pickupPoints?: unknown;
   busPayload?: unknown;
+  /** SG-4b — poi_key → photo URL from the snapshot; the client picks by key. */
+  stopImages?: Record<string, string> | null;
+  /** SG-4b — the tour's own hero image for the lobby band (tours.image_url). */
+  heroPhotoUrl?: string | null;
+  /** SG-4d — poi_key → VERIFIED meeting photo for the free/rally band. */
+  meetingPhotos?: Record<string, string> | null;
   /**
    * OTA 심사 대비 — 리뷰 CTA가 어디로 갈지(또는 아예 안 뜰지)와 자사 쿠폰
    * 허용 여부. 서버가 예약 채널로 정해 스냅샷에 실어 보낸다.
@@ -532,6 +541,17 @@ export default function HomeTab({
   // glued label for every input the label accepted.
   const nextTitle = nextItem ? String(nextItem.title ?? nextItem.name ?? '').trim() || null : null;
   const nextTime = stopTime(nextItem);
+  // SG-4b — the band photo for the NEXT stop, picked by key from the
+  // snapshot's stop_images map (stale-single-field trap: v1.2 2차 #19).
+  const nextPoiKey = typeof nextItem?.poi_key === 'string' ? nextItem.poi_key : null;
+  const nextPhotoUrl = nextPoiKey ? (stopImages?.[nextPoiKey] ?? null) : null;
+  // SG-4e — prefetch exactly ONE photo (the next stop's) so a tunnel does
+  // not blank the band; the request rides the SW's image lane and lands in
+  // its 12-slot cache. Same-origin /images/** only — signed URLs churn.
+  useEffect(() => {
+    if (!nextPhotoUrl || !nextPhotoUrl.startsWith('/images/')) return;
+    void fetch(nextPhotoUrl).catch(() => undefined);
+  }, [nextPhotoUrl]);
 
   const latest = messages.length > 0 ? messages[messages.length - 1] : null;
   const latestText = latest ? latest.translations?.[locale] || latest.source_text || '' : '';
@@ -553,7 +573,9 @@ export default function HomeTab({
         lifecycle,
         tourDate,
         locale,
-        nextStop: nextTitle ? { name: nextTitle, time: nextTime } : null,
+        nextStop: nextTitle
+          ? { name: nextTitle, time: nextTime, photoUrl: nextPhotoUrl, poiKey: nextPoiKey }
+          : null,
         currentStop: nowStop ? { name: nowStop } : null,
         // pickupBoardState needs the guide's live position and the full pickup
         // sequence, which this tab does not hold; VehicleLocationCard owns that
@@ -562,11 +584,12 @@ export default function HomeTab({
         contactPhone: OPS_PHONE,
         // E3 — the narration credit; the vehicle payload already knows who.
         driverName: driverNameFromPayload(busPayload),
+        meetingPhotos: meetingPhotos ?? null,
         nowMs,
       }),
     );
     return result.state === 'lobby' ? null : result;
-  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nowStop, busPayload, nowMs]);
+  }, [messages, lifecycle, tourDate, locale, nextTitle, nextTime, nextPhotoUrl, nextPoiKey, nowStop, busPayload, meetingPhotos, nowMs]);
 
   const nowCardHandlers: NowCardHandlers = useMemo(
     () => ({
@@ -712,6 +735,7 @@ export default function HomeTab({
           // SG-1d — home mount only; the pickup-sheet and chat-tab mounts
           // stay numeral-free (SG-D1: one big number per screen).
           showHeroNumeral={process.env.NEXT_PUBLIC_TR_NUMERAL_V1 !== '0'}
+          heroPhotoUrl={heroPhotoUrl}
         />
       )}
       {/* I2 — the now card takes the hero slot whenever the resolver has an

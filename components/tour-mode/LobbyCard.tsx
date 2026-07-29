@@ -11,6 +11,7 @@
  */
 
 import { kstDaysUntil } from '@/lib/tour-room/time';
+import HeroMediaBand from '@/components/tour-mode/HeroMediaBand';
 import { IconDate, IconPickup, TR_ICON } from '@/components/tour-mode/icons';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -177,6 +178,7 @@ export default function LobbyCard({
   busPayload,
   viewerRole,
   showHeroNumeral = false,
+  heroPhotoUrl = null,
 }: {
   locale: RoomLocale;
   tourDate: string | null;
@@ -195,6 +197,8 @@ export default function LobbyCard({
    * at 45.9px on a 320px viewport (measured, v1.2 2차 감사 #13).
    */
   showHeroNumeral?: boolean;
+  /** SG-4b — the tour's own hero (tours.image_url); home mount only. */
+  heroPhotoUrl?: string | null;
 }) {
   const copy = COPY[locale];
   const pickup = firstPickup(pickupPoints);
@@ -206,6 +210,7 @@ export default function LobbyCard({
 
   return (
     <div data-testid="lobby-card" className="tr-card mb-2 px-4 py-4">
+      {showHeroNumeral && <HeroMediaBand photoUrl={heroPhotoUrl} seed="tour-hero" />}
       {heroNumeral && (
         <p
           data-testid="lobby-dday-numeral"

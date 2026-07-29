@@ -12,6 +12,8 @@ import type { RoomBooking, RoomDbClient, TourRoom } from '@/lib/tour-room/access
 import { pickupDetailAsJoin, resolvePickupDetail } from '@/lib/bookings/pickupDetail';
 import { mergeTranslationTargets } from '@/lib/tour-room/chatLocale';
 import { resolveDaySchedule, type DayPlanRow, type ScheduleSource } from '@/lib/tour-room/dayPlan';
+import { poiImageCandidates, type PoiImageSource } from '@/lib/tour-room/poiImage';
+import { meetingPhotoPublicUrl } from '@/lib/tour-room/meetingPhoto';
 import {
   DEFAULT_REVIEW_POLICY,
   externalReviewPlatformFor,
@@ -137,6 +139,10 @@ export interface RoomSnapshot {
   schedule: unknown;
   /** W0.2 — which stage of the day-schedule resolver produced `schedule`. */
   schedule_source: ScheduleSource;
+  /** SG-4b — poi_key → photo URL for the hero band; client picks by key. */
+  stop_images: Record<string, string>;
+  /** SG-4d — poi_key → VERIFIED meeting-point photo (public URL). */
+  meeting_photos: Record<string, string>;
   /** W0.2 — the active private-mode day plan, when one owns the schedule. */
   day_plan: DayPlanRow | null;
   /**
@@ -339,6 +345,61 @@ export async function buildRoomSnapshot(
       )
     : DEFAULT_REVIEW_POLICY;
 
+  // SG-4b — one photo URL per scheduled stop, keyed by poi_key so the CLIENT
+  // picks as its "next" advances (a single snapshot-time field would show a
+  // stale stop's photo — v1.2 2차 감사 #19). ONE `.in()` query for the whole
+  // schedule; the snapshot is the room's hottest read path and gets no N+1.
+  // Best-effort: a failed lookup means no bands, never a failed snapshot.
+  let stopImages: Record<string, string> = {};
+  try {
+    const poiKeys = [
+      ...new Set(
+        (Array.isArray(resolvedSchedule.schedule) ? resolvedSchedule.schedule : [])
+          .map((item) => (item as { poi_key?: unknown }).poi_key)
+          .filter((key): key is string => typeof key === 'string' && key.length > 0),
+      ),
+    ];
+    if (poiKeys.length > 0) {
+      const { data: poiRows } = await supabase
+        .from('match_pois')
+        .select('poi_key, default_image_url, images')
+        .in('poi_key', poiKeys);
+      for (const row of (poiRows as Array<{ poi_key: string } & PoiImageSource> | null) ?? []) {
+        const [candidate] = poiImageCandidates(row);
+        if (candidate) stopImages[row.poi_key] = candidate;
+      }
+    }
+  } catch {
+    stopImages = {};
+  }
+
+  // SG-4d -- VERIFIED meeting-point photos only, keyed by poi_key (public
+  // bucket URLs, so the SW image lane can cache them). Pending/rejected rows
+  // never leave the review queue.
+  let meetingPhotos: Record<string, string> = {};
+  try {
+    const poiKeys = Object.keys(stopImages).length
+      ? [...new Set(
+          (Array.isArray(resolvedSchedule.schedule) ? resolvedSchedule.schedule : [])
+            .map((item) => (item as { poi_key?: unknown }).poi_key)
+            .filter((key): key is string => typeof key === 'string' && key.length > 0),
+        )]
+      : [];
+    if (poiKeys.length > 0) {
+      const { data: photoRows } = await supabase
+        .from('tour_poi_arrival_profiles')
+        .select('poi_key, meeting_photo_path')
+        .in('poi_key', poiKeys)
+        .eq('meeting_photo_status', 'verified')
+        .not('meeting_photo_path', 'is', null);
+      for (const row of (photoRows as Array<{ poi_key: string; meeting_photo_path: string }> | null) ?? []) {
+        meetingPhotos[row.poi_key] = meetingPhotoPublicUrl(row.meeting_photo_path);
+      }
+    }
+  } catch {
+    meetingPhotos = {};
+  }
+
   return {
     room,
     lifecycle: roomLifecycle(booking.tour_date),
@@ -374,6 +435,8 @@ export async function buildRoomSnapshot(
         ? ((tour as { schedule?: unknown } | null)?.schedule ?? [])
         : resolvedSchedule.schedule,
     schedule_source: resolvedSchedule.source,
+    stop_images: stopImages,
+    meeting_photos: meetingPhotos,
     day_plan: resolvedSchedule.dayPlan,
     review_policy: reviewPolicy,
   };

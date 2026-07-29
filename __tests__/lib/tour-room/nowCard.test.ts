@@ -412,6 +412,6 @@ describe('roomNowCardContext — adapter threading (gate ⑦)', () => {
       [systemMessage({ kind: 'spot_arrival', spot_title: '성산일출봉' }, at)],
       NOW,
     );
-    expect(arrival).toEqual({ spotName: '성산일출봉', stayMinutes: null, arrivedAtMs: at });
+    expect(arrival).toMatchObject({ spotName: '성산일출봉', stayMinutes: null, arrivedAtMs: at });
   });
 });

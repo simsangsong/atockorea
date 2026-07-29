@@ -87,6 +87,10 @@ export default function SpotArrivalCard({
   autoPlay?: boolean;
 }) {
   const [expanded, setExpanded] = useState(false);
+  // SG-4a bugfix -- a dead image URL used to render a broken-image box with
+  // no fallback at all; failure now falls to the text header branch below.
+  const [imageFailed, setImageFailed] = useState(false);
+  const showImage = Boolean(content.image) && !imageFailed;
   const [playing, setPlaying] = useState(false);
   const [voiceFailed, setVoiceFailed] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -158,12 +162,12 @@ export default function SpotArrivalCard({
 
   return (
     <div className="tr-card mx-auto w-full max-w-[95%] overflow-hidden" data-testid="spot-arrival-card">
-      {content.image ? (
+      {showImage ? (
         // W2.2 — hero cover: a bottom scrim carries the arrived badge + title on
         // the photo so it reads as a premium card the guest wants to screenshot.
         <div className="relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={content.image} alt={content.name ?? ''} className="h-36 w-full object-cover" loading="lazy" />
+          <img src={content.image} alt={content.name ?? ''} className="h-36 w-full object-cover" loading="lazy" onError={() => setImageFailed(true)} />
           <div
             className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent"
             aria-hidden
@@ -178,7 +182,7 @@ export default function SpotArrivalCard({
         </div>
       ) : null}
       <div className="px-4 py-3">
-        {!content.image && (
+        {!showImage && (
           <>
             <p className="tr-meta flex items-center gap-1 font-semibold uppercase tracking-wide text-[var(--tr-accent-deep)]">
               <IconArrived size={TR_ICON.meta} strokeWidth={TR_STROKE.small} aria-hidden />
@@ -187,7 +191,7 @@ export default function SpotArrivalCard({
             <p className="tr-title mt-0.5 text-[var(--tr-ink)]">{content.name}</p>
           </>
         )}
-        <p className={`tr-label leading-relaxed text-[var(--tr-ink-2)] ${content.image ? '' : 'mt-1'}`}>{messageText}</p>
+        <p className={`tr-label leading-relaxed text-[var(--tr-ink-2)] ${showImage ? '' : 'mt-1'}`}>{messageText}</p>
         {contentTier === 'generated' && (
           <p className="tr-meta mt-1 text-[var(--tr-ink-3)]" data-testid="spot-ai-badge">
             ✨ {copy.aiBadge}
