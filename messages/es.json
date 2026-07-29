@@ -2044,6 +2044,16 @@
         "li4": "Eliminación iniciada por el usuario. Puede eliminar su cuenta y los datos de usuario de Google asociados en cualquier momento desde Mi Página → Configuración → Eliminar cuenta, o enviando un correo a:",
         "li5": "Revocar el acceso de Google. También puede revocar el acceso de nuestra aplicación a su cuenta de Google en cualquier momento en:"
       }
+    },
+    "s16": {
+      "title": "16. Datos de conversación utilizados para mejorar nuestras visitas guiadas",
+      "p1": "Durante una visita, los viajeros hacen preguntas en la aplicación y los guías las responden. Conservamos esas preguntas y respuestas para mejorar nuestra labor de guía: así aprendemos por qué lugares se pregunta más, qué necesitan saber los viajeros y qué respuestas resultaron realmente útiles. Lo hacemos de una forma que no permite remontarse hasta usted.",
+      "li1": "Se elimina antes de guardar nada: su nombre, su reserva, su sala de tour y su registro de participante. Lo que se conserva no queda vinculado a ninguno de ellos.",
+      "li2": "Se enmascara en ambos lados de la conversación: direcciones de correo electrónico, números de teléfono, códigos de reserva y cualquier token incluido en un enlace que le hayamos enviado. Se sustituyen por marcadores como [email] y [phone] antes de guardarse.",
+      "li3": "Lo que queda: el texto de la pregunta y de la respuesta, el idioma en que se escribió cada una, el lugar al que había llegado y la hora del día.",
+      "li4": "No conservamos la fecha. Una fecha junto con una visita concreta señalaría a un grupo de personas muy reducido, que es precisamente lo que queremos evitar.",
+      "li5": "Nada de lo recogido así se utiliza hasta que una persona lo aprueba. Se guarda como borrador inactivo y nuestro personal lo revisa primero.",
+      "p2": "No usamos esto para reconocerle. Nunca se vincula a su cuenta ni a sus reservas y, si vuelve a viajar con nosotros, le atenderemos igual que la primera vez."
     }
   },
   "cookiePolicy": {

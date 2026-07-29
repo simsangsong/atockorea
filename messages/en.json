@@ -2193,6 +2193,16 @@
         "li4": "User-initiated deletion. You may delete your account and the associated Google user data at any time from My Page → Settings → Delete Account, or by emailing",
         "li5": "Revoking Google access. You may also revoke our application's access to your Google account at any time at"
       }
+    },
+    "s16": {
+      "title": "16. Conversation Data Used to Improve Our Guiding",
+      "p1": "During a tour, travellers ask questions in the app and guides answer them. We keep those questions and answers so that our guiding gets better — so we learn which places people ask about, what they need to know, and which answers actually helped. We do this in a way that cannot be traced back to you.",
+      "li1": "Removed before anything is stored: your name, your booking, your tour room, and your participant record. What is kept is not attached to any of them.",
+      "li2": "Masked on both sides of the conversation: email addresses, phone numbers, reference codes, and any token in a link we sent you. These are replaced with placeholders such as [email] and [phone] before storage.",
+      "li3": "What remains: the text of the question and the answer, the language each was written in, the place you had reached, and the hour of the day.",
+      "li4": "We do not keep the date. A date together with a particular tour would point at a very small group of people, which is exactly what we are avoiding.",
+      "li5": "Nothing collected this way is used until a person approves it. It is stored as an inactive draft and reviewed by our staff first.",
+      "p2": "We do not use this to recognise you. It is never linked to your account or your bookings, and if you travel with us again you are treated the same as the first time."
     }
   },
   "cookiePolicy": {
