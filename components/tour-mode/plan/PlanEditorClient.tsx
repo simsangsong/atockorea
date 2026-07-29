@@ -54,6 +54,7 @@ import {
   type CourseOption,
 } from '@/lib/tour-room/courseOptions';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
+import { PoiThumb } from '@/components/tour-mode/plan/PoiThumb';
 import type { ItineraryStop } from '@/components/product-tour-static/_shared/tourProductDetailSectionTypes';
 import { MAX_PLAN_STOPS, tourStopToEditorStop } from '@/lib/tour-room/planTourStops';
 
@@ -136,6 +137,15 @@ interface PickerPoi {
   names_other_locales: Record<string, string> | null;
   category: string | null;
   default_image_url: string | null;
+  /**
+   * 🔴 P7.1 — the field this screen was throwing away.
+   *
+   * `/api/itinerary-builder/pois` has always selected `images`; the planner
+   * simply never declared it, so 63 POIs with a photo rendered as blank
+   * squares. Read through `poiImageCandidates`, never directly — see
+   * `lib/tour-room/poiImage.ts` for why the first entry is not enough.
+   */
+  images: string[] | null;
   default_stay_minutes: number | null;
   lat: number | null;
   lng: number | null;
@@ -2812,21 +2822,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 <div className="mt-2 flex max-h-72 flex-col gap-1.5 overflow-y-auto pr-1">
                   {filteredPois.map(({ poi, name, added }) => (
                     <div key={poi.poi_key} className="tr-card flex items-center gap-3 px-3 py-3">
-                      <div className="h-12 w-12 shrink-0 overflow-hidden rounded-2xl bg-[var(--tr-surface-2)]">
-                        {poi.default_image_url && (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={poi.default_image_url}
-                            alt=""
-                            loading="lazy"
-                            className="h-full w-full object-cover"
-                            // Dead asset URLs degrade to the plain swatch, not a broken-image glyph.
-                            onError={(e) => {
-                              e.currentTarget.style.display = 'none';
-                            }}
-                          />
-                        )}
-                      </div>
+                      <PoiThumb poi={poi} seed={poi.poi_key} name={name} className="h-12 w-12" />
                       <div className="min-w-0 flex-1">
                         <p className="tr-card-text truncate font-medium text-[var(--tr-ink)]">{name}</p>
                         <p className="tr-meta text-[var(--tr-ink-3)]">
@@ -3470,27 +3466,16 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               ) : (
                 <ol className="mt-4 flex flex-col gap-2">
                   {previewStops.map((stop, index) => {
-                    const imageUrl = stop.poi_key ? poiByKey.get(stop.poi_key)?.default_image_url : null;
+                    const stopPoi = stop.poi_key ? poiByKey.get(stop.poi_key) : undefined;
                     return (
                       <li key={stop.id} className="flex gap-3 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3">
-                        <div className="h-16 w-16 shrink-0 overflow-hidden rounded-xl bg-[var(--tr-surface-2)]">
-                          {imageUrl ? (
-                            // eslint-disable-next-line @next/next/no-img-element
-                            <img
-                              src={imageUrl}
-                              alt=""
-                              loading="lazy"
-                              className="h-full w-full object-cover"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                              }}
-                            />
-                          ) : (
-                            <span className="flex h-full w-full items-center justify-center text-[var(--tr-ink-3)]">
-                              <IconArrived size={TR_ICON.action} aria-hidden />
-                            </span>
-                          )}
-                        </div>
+                        <PoiThumb
+                          poi={stopPoi}
+                          seed={stop.poi_key ?? stop.id}
+                          name={stop.title}
+                          className="h-16 w-16"
+                          rounded="rounded-xl"
+                        />
                         <div className="min-w-0 flex-1">
                           <div className="flex items-center gap-2">
                             <span className="tr-meta flex h-6 w-6 shrink-0 items-center justify-center rounded-full tr-plan-tile font-bold">
