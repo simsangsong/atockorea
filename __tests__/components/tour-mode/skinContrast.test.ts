@@ -44,6 +44,54 @@ function parseBlocks(source: string): Block[] {
 
 const BLOCKS = parseBlocks(css);
 
+/**
+ * CSS specificity for the selector shapes this stylesheet uses (classes and
+ * attribute selectors; no ids, no elements), collapsed to a sortable number.
+ *
+ * 🔴 Needed because file order alone stopped being sufficient once the PLANNER
+ * scope joined this gate. `.tr-root[data-tr-skin='sky']` is (0,2,0) and
+ * `.tr-plan-root` is (0,1,0), so the skin wins for every token it sets even
+ * though the planner block sits ~640 lines LATER in the file. A file-order
+ * merge would report the planner's colours for a skinned planner and gate a
+ * palette that no browser ever paints.
+ *
+ * For the base (non-planner) scope this is a no-op today — verified: the three
+ * `.tr-root` blocks that sit after the skins declare only `--tr-font-scale`,
+ * the duration/easing quartet and `--tr-chip-quiet-fill`, none of which any
+ * skin sets. It is here so that stops being load-bearing luck.
+ */
+function specificity(part: string): number {
+  const ids = (part.match(/#[\w-]+/g) ?? []).length;
+  const classes = (part.match(/\.[\w-]+/g) ?? []).length;
+  const attrs = (part.match(/\[[^\]]+\]/g) ?? []).length;
+  return ids * 10_000 + (classes + attrs) * 100;
+}
+
+/**
+ * Merge every block whose selector list contains one of `wanted`, ordered by
+ * (specificity, file position) — which is exactly what the cascade does.
+ *
+ * The tie-break on file position is load-bearing and models a real shipped bug:
+ * a skin's LIGHT block (0,2,0) ties `.dark .tr-root` (0,2,0) and sits later, so
+ * in dark mode a token the skin-light block sets but the skin-dark block does
+ * not KEEPS THE LIGHT VALUE. That is the dark-sky `safe` failure this gate
+ * caught on introduction; it must stay catchable.
+ */
+function mergeMatching(wanted: string[]): Tokens {
+  const matched: Array<{ spec: number; order: number; tokens: Tokens }> = [];
+  BLOCKS.forEach((block, order) => {
+    let spec = -1;
+    for (const part of block.parts) {
+      if (wanted.includes(part)) spec = Math.max(spec, specificity(part));
+    }
+    if (spec >= 0) matched.push({ spec, order, tokens: block.tokens });
+  });
+  matched.sort((a, b) => a.spec - b.spec || a.order - b.order);
+  const out: Tokens = {};
+  for (const m of matched) Object.assign(out, m.tokens);
+  return out;
+}
+
 function skinSelectors(skin: TourSkin, theme: 'light' | 'dark'): string[] {
   const wanted = ['.tr-root']; // base light — always the floor
   if (skin !== 'classic') wanted.push(`.tr-root[data-tr-skin='${skin}']`);
@@ -54,38 +102,54 @@ function skinSelectors(skin: TourSkin, theme: 'light' | 'dark'): string[] {
   return wanted;
 }
 
-/** Resolve the token set for skin × theme by merging matching blocks in file order. */
+/** Resolve the token set for skin × theme. */
 function resolve(skin: TourSkin, theme: 'light' | 'dark'): Tokens {
-  const wanted = skinSelectors(skin, theme);
-  const out: Tokens = {};
-  for (const block of BLOCKS) {
-    if (block.parts.some((part) => wanted.includes(part))) Object.assign(out, block.tokens);
-  }
-  return out;
+  return mergeMatching(skinSelectors(skin, theme));
 }
 
 /**
- * The /tour-mode/plan editor (.tr-plan-root) re-declares most of the palette on
- * top of .tr-root. It was OUTSIDE this gate, which is how it shipped an ink-3
- * that missed 4.5:1 on its own canvas — and how `--tr-on-accent` could be read
- * by three components while being declared by none.
+ * The /tour-mode/plan editor (`.tr-root.tr-plan-root` — BOTH classes on one
+ * element) re-declares most of the palette on top of `.tr-root`. It was outside
+ * this gate once, which is how it shipped an `ink-3` that missed 4.5:1 on its
+ * own canvas, and how `--tr-on-accent` could be read by three components while
+ * being declared by none.
  *
- * Cascade note: .tr-plan-root is (0,1,0), so a skin block (0,2,0) outranks it
- * for tokens the skin sets. The planner element carries BOTH classes, so the
- * honest resolution is skin-first, then the planner block for what it declares
- * at equal-or-later weight — which for the tokens below is everything it sets,
- * since .tr-plan-root sits after every skin block in the file and skins do not
- * set the planner-only tokens. Worst case for a skinned planner is the skin's
- * accent family, already gated above.
+ * 🔴 P7.0 — this now takes a SKIN, because P7.1b stamps `data-tr-skin` onto the
+ * planner root and P7.8 puts a skin layer on it. The previous signature could
+ * only ever answer for `classic`, so the moment the planner became skinnable
+ * the gate would have gone quietly out of date on 9 of 10 skins — the exact
+ * shape of "a gap that looks like coverage" this file already warns about.
+ *
+ * The cascade this models is genuinely mixed, which is why `mergeMatching` is
+ * specificity-ordered rather than file-ordered:
+ *
+ *   .tr-root                          (0,1,0)  base floor
+ *   .tr-plan-root                     (0,1,0)  planner palette — later, so it wins ties
+ *   .tr-root[data-tr-skin='X']        (0,2,0)  🔴 OUTRANKS the planner block
+ *   .dark .tr-root                    (0,2,0)
+ *   .dark .tr-plan-root / .dark-self  (0,2,0)  later than the skin-light block
+ *   .dark .tr-root[data-tr-skin='X']  (0,3,0)  top
+ *
+ * So a skinned planner in LIGHT wears the SKIN's canvas/surface/ink with the
+ * planner's accent family layered under it — a combination that has never been
+ * painted and never been measured. That is precisely what this gate is for.
+ *
+ * Dark note: the planner opens standalone from the invite email with no
+ * RoomShell above it, so it carries `.dark` on ITSELF (`.tr-plan-root.dark`).
+ * Both forms live in one comma-separated block, so matching either is enough.
  */
-function resolvePlan(theme: 'light' | 'dark'): Tokens {
-  const wanted = ['.tr-plan-root'];
-  if (theme === 'dark') wanted.push('.dark .tr-plan-root');
-  const out: Tokens = resolve('classic', theme);
-  for (const block of BLOCKS) {
-    if (block.parts.some((part) => wanted.includes(part))) Object.assign(out, block.tokens);
+function planSelectors(skin: TourSkin, theme: 'light' | 'dark'): string[] {
+  const wanted = ['.tr-root', '.tr-plan-root'];
+  if (skin !== 'classic') wanted.push(`.tr-root[data-tr-skin='${skin}']`);
+  if (theme === 'dark') {
+    wanted.push('.dark .tr-root', '.dark .tr-plan-root', '.tr-plan-root.dark');
+    if (skin !== 'classic') wanted.push(`.dark .tr-root[data-tr-skin='${skin}']`);
   }
-  return out;
+  return wanted;
+}
+
+function resolvePlan(skin: TourSkin, theme: 'light' | 'dark'): Tokens {
+  return mergeMatching(planSelectors(skin, theme));
 }
 
 // ---- WCAG math --------------------------------------------------------------
@@ -282,30 +346,99 @@ describe('skin contrast gate (T-D7)', () => {
     expect(failures).toEqual([]);
   });
 
-  it('the planner scope (.tr-plan-root) clears the same floors', () => {
+  /**
+   * accent-soft is an opaque wash in the planner's own light palette, so the
+   * chip ink is gated too. Under a skin it may become rgba(), in which case the
+   * composite is taken against that skin's canvas like everywhere else.
+   */
+  const PLAN_PAIRS: Array<[string, string, number]> = [
+    ...PAIRS,
+    ['accent-deep', 'accent-soft', 4.5],
+    ['ink-2', 'surface-2', 4.5],
+  ];
+
+  it('the planner scope (.tr-plan-root) clears the same floors in classic', () => {
     const failures: string[] = [];
-    // accent-soft is an opaque wash in this scope, so the chip ink is gated too.
-    const planPairs: Array<[string, string, number]> = [
-      ...PAIRS,
-      ['accent-deep', 'accent-soft', 4.5],
-      ['ink-2', 'surface-2', 4.5],
-    ];
     for (const theme of THEMES) {
-      const tokens = resolvePlan(theme);
-      for (const [fg, bg, min] of planPairs) {
+      const tokens = resolvePlan('classic', theme);
+      for (const [fg, bg, min] of PLAN_PAIRS) {
         const fgv = tokens[fg];
         const bgv = tokens[bg];
         if (!fgv || !bgv) {
           failures.push(`plan/${theme}: missing token ${!fgv ? fg : bg}`);
           continue;
         }
-        const r = ratio(fgv, bgv);
+        const r = ratio(fgv, bgv, tokens.canvas);
         // Dark mode washes are rgba() by design — skip what WCAG math can't see.
         if (Number.isNaN(r)) continue;
         if (r < min) failures.push(`plan/${theme}: ${fg} on ${bg} = ${r.toFixed(2)} < ${min}`);
       }
     }
     expect(failures).toEqual([]);
+  });
+
+  /**
+   * 🔴 P7.0 — the same floors for the planner under EVERY skin.
+   *
+   * The planner is about to become skinnable (P7.1b stamps `data-tr-skin`;
+   * P7.8 puts a background skin layer on it). Without this, nine of ten skins
+   * would reach the one screen in the app with the most small type on it while
+   * being measured by nobody — and this scope has already shipped a sub-4.5
+   * `ink-3` once for exactly that reason.
+   *
+   * This is a MIXED palette by construction: the skin outranks the planner
+   * block on canvas/surface/ink (0,2,0 vs 0,1,0) while the planner keeps its
+   * accent family and its plan-only tokens. Neither half was designed against
+   * the other, so this test is the thing that decides whether the planner can
+   * wear a full skin or only a background (§N-9 option B).
+   */
+  it('the planner scope clears the same floors under every skin × theme', () => {
+    const failures: string[] = [];
+    for (const skin of TOUR_SKINS) {
+      for (const theme of THEMES) {
+        const tokens = resolvePlan(skin, theme);
+        for (const [fg, bg, min] of PLAN_PAIRS) {
+          const fgv = tokens[fg];
+          const bgv = tokens[bg];
+          if (!fgv || !bgv) {
+            failures.push(`plan/${skin}/${theme}: missing token ${!fgv ? fg : bg}`);
+            continue;
+          }
+          const r = ratio(fgv, bgv, tokens.canvas);
+          if (Number.isNaN(r)) continue; // rgba over an undecidable backdrop
+          if (r < min) {
+            failures.push(`plan/${skin}/${theme}: ${fg} on ${bg} = ${r.toFixed(2)} < ${min}`);
+          }
+        }
+      }
+    }
+    expect(failures).toEqual([]);
+  });
+
+  /**
+   * 🔴 Proof that the test above is measuring what it claims to measure.
+   *
+   * A resolver that quietly failed to match the skin selectors would return the
+   * classic planner palette for all ten skins and report ten passes — the same
+   * false green this file was built to stop. So pin the two halves of the mix:
+   * the skin must win where it outranks the planner block, and the planner must
+   * keep what the skin never sets.
+   */
+  it('the planner resolver actually mixes skin over planner (not a classic fallback)', () => {
+    const skyCanvas = resolve('sky', 'light').canvas;
+    const planCanvas = resolvePlan('classic', 'light').canvas;
+    const mixed = resolvePlan('sky', 'light');
+
+    // The skin's attribute selector (0,2,0) beats .tr-plan-root (0,1,0).
+    expect(skyCanvas).not.toBe(planCanvas);
+    expect(mixed.canvas).toBe(skyCanvas);
+
+    // ...and the planner keeps the tokens no skin declares.
+    expect(mixed['accent-deep']).toBe(resolvePlan('classic', 'light')['accent-deep']);
+    expect(mixed['plan-hero-ink']).toBeDefined();
+
+    // Dark: the skin's dark block (0,3,0) is the top of this cascade.
+    expect(resolvePlan('sky', 'dark').canvas).toBe(resolve('sky', 'dark').canvas);
   });
 
   it('scenery BAND fills keep timestamps readable (ink-3 ≥ 3.5) in both themes', () => {
