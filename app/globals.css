@@ -1339,27 +1339,29 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-feature-settings: "tnum" 1, "kern" 1;
   }
   /*
-   * 🔴 CJK safety net (P1-5). Korean/Chinese have no spaces, so the CSS default
-   * (word-break: normal) is free to break between ANY two characters — in a
-   * squeezed table header, a flex-1 tab or a badge that renders one glyph per
-   * line (빈민 / 유형 / 준비전 stacked vertically).
+   * 🔴 CJK safety net (P1-5), admin surface. An audit counted 288 at-risk
+   * elements across 69 admin files with per-file classes on 7 of them, and this
+   * rule was the answer: labels are a closed set of element types, so the honest
+   * fix is here, once.
    *
-   * An audit counted 288 at-risk elements across 69 admin files; per-file
-   * classes had reached 7 of them. Labels are a closed set of element types, so
-   * the honest fix is here, once.
+   * ⚠ Its original reasoning has since been generalised. The root default up at
+   * `html` now gives `keep-all` + `break-word` to EVERY element on every
+   * surface, so the `word-break` half of this rule is no longer what protects
+   * admin — it is inherited. What is left that this rule still decides is `th`:
+   * table cells otherwise pick up `overflow-wrap: anywhere` from the companion
+   * rule, and the selector here is more specific, so admin headers keep
+   * `break-word` and hold their 어절 together while body cells stay free to
+   * shrink. That is the combination we want; it is now written down rather than
+   * inherited by accident.
    *
-   * `keep-all` suppresses soft-wrap opportunities only INSIDE CJK runs — ASCII
-   * is unaffected, so URLs and IDs behave exactly as before. `overflow-wrap:
-   * break-word` is the companion escape hatch: a single unbreakable run still
-   * wraps rather than overflowing its column.
+   * The old note said `td`/`p`/`div` were excluded because they "get
+   * `.text-cjk-body` per element instead". That is no longer true and had been
+   * true only in principle: the per-element sweep never reached them, which is
+   * what moved the rule to the root.
    *
-   * Deliberately NOT included:
-   *   - `white-space: nowrap` — full-row buttons ("승인 (기존 기기 폐기)",
-   *     "🆘 활성 SOS N건 — 지금 확인") legitimately wrap onto two lines.
-   *   - `td`, `p`, `div` — long unspaced Korean prose in a narrow cell needs to
-   *     keep breaking; those get `.text-cjk-body` per element instead.
-   * This lives in @layer base, so any explicit break-all/break-words utility on
-   * an individual element still wins.
+   * Still deliberately absent: `white-space: nowrap`. Full-row buttons
+   * ("승인 (기존 기기 폐기)", "🆘 활성 SOS N건 — 지금 확인") legitimately wrap onto
+   * two lines. @layer base, so any explicit utility on an element still wins.
    */
   .admin-root :is(button, th, label, dt, summary, [role='tab']) {
     word-break: keep-all;
@@ -1419,6 +1421,66 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   }
   html.dark {
     background-color: var(--background);
+  }
+  /*
+   * 🔴 P1-5 CJK line-break invariant — `.text-cjk-body` promoted to the DEFAULT.
+   *
+   * Korean/Chinese/Japanese have no word spaces, so CSS's initial
+   * `word-break: normal` is free to break between ANY two characters. The cause
+   * is having specified nothing, which is why grepping for `break-all` finds
+   * almost none of it.
+   *
+   * 🔴 Why this moved from per-element classes to here.
+   *
+   * `.text-cjk-body` had been applied element by element for four passes. The
+   * scanner still reported 583 unprotected elements, and the number had grown
+   * from 576 since the previous session — silently, because `qa-cjk-scan` lived
+   * in no gate at all. An invariant every new element must opt into is not an
+   * invariant; it is a backlog that refills itself. The `.admin-root` comment
+   * below reached this conclusion first ("labels are a closed set of element
+   * types, so the honest fix is here, once") — right about the mechanism, scoped
+   * to one surface out of four.
+   *
+   * Both properties INHERIT, so the root covers everything, including
+   * `createPortal` subtrees on document.body that an app-shell rule would miss.
+   *
+   * 🔴 What this does NOT do — measured, not assumed. Every number below comes
+   * out of `scripts/qa-cjk-mechanism.mjs`, which needs no dev server; re-run it
+   * before believing any argument about these two properties, including this one.
+   *
+   * It does not fix a SQUEEZED label. In a box narrower than the run itself,
+   * `overflow-wrap: break-word` still breaks mid-syllable, so a 36px tab reading
+   * 준비전 stays two lines with this rule and goes to one only under
+   * `.text-cjk-safe` (nowrap + ellipsis). That remains a per-element decision,
+   * because choosing truncation over wrapping is a design judgement a default
+   * cannot make. This rule's win is running text: prose now wraps at 어절
+   * boundaries instead of between syllables whenever there is room.
+   *
+   * The cost, also measured: `keep-all` raises a CJK run's min-content width
+   * from one glyph to the longest 어절 — "가이드에게 가기" 14px → 70px,
+   * "濟州島東部海岸公路" 14px → 126px. Anything sized by its content gets wider.
+   * For table cells that is a visible regression (a 150px table rendered 176px),
+   * which is why `td`/`th` get the companion rule below.
+   *
+   * This is @layer base, so any explicit utility still wins — `break-all` on a
+   * URL or hash (CLAUDE.md rule 2) and `.text-cjk-safe`'s `overflow-wrap: normal`
+   * both override it from @layer utilities.
+   */
+  html {
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+  /*
+   * The companion. `break-word` deliberately does not affect intrinsic sizing,
+   * so under `keep-all` a cell's min-content becomes its longest 어절 and the
+   * column cannot shrink — the 150px → 176px above. `anywhere` is the same
+   * breaking behaviour EXCEPT that it does count for min-content, which lets the
+   * column shrink again: measured 150px → 150px with every column width
+   * unchanged. Cells still keep 어절 together whenever the column has room.
+   */
+  td,
+  th {
+    overflow-wrap: anywhere;
   }
   /*
    * Light page mesh: do NOT use z-index: -1 with an opaque body bg — iOS Safari paints the pseudo below

@@ -35,10 +35,19 @@ for (const file of files) {
 
 const certain = hits.filter((h) => h.confidence === 'certain');
 const suspect = hits.filter((h) => h.confidence === 'suspect');
+const native = hits.filter((h) => h.confidence === 'native');
 
 console.log(`scanned ${files.length} .tsx files under ${roots.join(', ')}\n`);
 console.log(`CERTAIN — CJK text in an unprotected control/constrained box: ${certain.length}`);
-console.log(`SUSPECT — unprotected control whose label is an expression:  ${suspect.length}\n`);
+console.log(`SUSPECT — unprotected control whose label is an expression:  ${suspect.length}`);
+console.log(`NATIVE  — <option>/<select>: drawn by the OS widget, CSS ignored: ${native.length}\n`);
+// 🔴 What `certain` means changed when the root default landed (globals.css,
+// `html { word-break: keep-all }`). Running text is now safe everywhere by
+// inheritance, so a hit here is no longer "this will collapse" — it is "this
+// element carries no `.text-cjk-safe`, so it will still collapse IF its box is
+// squeezed narrower than the run". Source cannot tell squeezed from roomy.
+// `scripts/qa-cjk-render.mjs` measures the invariant on real screens and is the
+// one that answers which of these actually break.
 
 function report(list: CjkBreakHit[], limitPerFile = 4) {
   const byFile = new Map<string, CjkBreakHit[]>();
