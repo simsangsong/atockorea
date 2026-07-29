@@ -53,7 +53,19 @@ const CHIP_SHAPED = /\brounded-(full|xl|2xl|lg)\b/;
 
 const CONTROL_TAGS = new Set(['button', 'a', 'th', 'summary', 'option', 'label']);
 
-export type Confidence = 'certain' | 'suspect';
+/**
+ * `native` is the third bucket, and it exists so the other two can reach zero.
+ *
+ * `<option>` and `<select>` render their text through the platform's own widget
+ * — the dropdown popup is drawn by the OS — and it ignores `word-break` and
+ * `overflow-wrap` entirely. 82 of them sat in `certain`, where they could never
+ * be fixed and never be dismissed, so the count had a floor nobody could reach.
+ * A backlog with an unreachable floor stops being read.
+ */
+export type Confidence = 'certain' | 'suspect' | 'native';
+
+/** Text drawn by the platform widget, where these CSS properties do nothing. */
+const NATIVE_WIDGET_TAGS = new Set(['option', 'select']);
 
 export interface CjkBreakHit {
   file: string;
@@ -179,6 +191,29 @@ function innerOf(source: string, tag: string, openEnd: number): string {
  * scanner uses, because a naive `/<[^>]*>/` stops at the `>` of an `=>` inside
  * an `onClick`, and then everything after it reads as content.
  */
+/**
+ * 🔴 JSX comments are prose, and prose is not a label.
+ *
+ * `{/* … *​/}` survives `stripMarkup` — it is not a tag — and then `directText`
+ * reads it twice over: once as literal children, and once as "string literals
+ * inside an expression", because an apostrophe in ordinary English (`C3's`,
+ * `don't`) opens what the literal scanner takes for a quoted string.
+ *
+ * Measured on this repo: 12 `certain` and 2 `suspect` hits came entirely from
+ * comment text. Two of them were the same Cockpit `<div>` reported as holding
+ * `대화 전체` — a chip that a comment three lines below records as REMOVED.
+ * The element has no Korean in it at all.
+ *
+ * That is the same failure as the descendant-attribute bug fixed before it, and
+ * it matters for the same reason: a codemod fixes what the scanner points at, so
+ * a wrong pointer is an instruction to edit the wrong element. It is also the
+ * house lesson from §6 in the other direction — prose next to the code is what
+ * breaks the tooling, whether by silencing it or by inflating it.
+ */
+export function stripJsxComments(inner: string): string {
+  return inner.replace(/\{\s*\/\*[\s\S]*?\*\/\s*\}/g, ' ');
+}
+
 function stripMarkup(inner: string): string {
   let out = '';
   let i = 0;
@@ -224,6 +259,44 @@ function directText(inner: string): string {
   return [literalChildren, ...literalsInExpressions].join(' ').replace(/\s+/g, ' ').trim();
 }
 
+/**
+ * CLAUDE.md rule 2, which the main scan cannot express: `break-all` is allowed
+ * on runs of ASCII (URLs, hashes, ids) and never on CJK.
+ *
+ * This is a separate walk because it is the one violation the root default in
+ * `globals.css` cannot save you from. `word-break: keep-all` is inherited, so
+ * every element is protected until someone writes `break-all` on it — an
+ * explicit opt-out, from @layer utilities, which beats the base layer. It is
+ * also the only case where the damage is certain rather than conditional: the
+ * other hits collapse only when their box is squeezed, this one always does.
+ */
+export function scanBreakAllOnCjk(file: string, source: string): CjkBreakHit[] {
+  const hits: CjkBreakHit[] = [];
+  const tagRe = /<([a-zA-Z][a-zA-Z0-9]*)(?=[\s/>])/g;
+  let m: RegExpExecArray | null;
+  while ((m = tagRe.exec(source))) {
+    const tag = m[1];
+    if (/^[A-Z]/.test(tag)) continue;
+    const openEnd = endOfOpeningTag(source, m.index);
+    const classes = classNamesIn(source.slice(m.index, openEnd));
+    if (!/\bbreak-all\b/.test(classes)) continue;
+    const text = directText(stripJsxComments(innerOf(source, tag, openEnd)));
+    if (!CJK_PATTERN.test(text)) continue;
+    hits.push({
+      file,
+      line: source.slice(0, m.index).split('\n').length,
+      start: m.index,
+      openEnd,
+      tag,
+      reason: 'control',
+      confidence: 'certain',
+      text: text.slice(0, 60),
+      classes: classes.slice(0, 80),
+    });
+  }
+  return hits;
+}
+
 export function scanSource(file: string, source: string): CjkBreakHit[] {
   const hits: CjkBreakHit[] = [];
   const tagRe = /<([a-zA-Z][a-zA-Z0-9]*)(?=[\s/>])/g;
@@ -247,13 +320,23 @@ export function scanSource(file: string, source: string): CjkBreakHit[] {
     const isWidth = WIDTH_CONSTRAINED.test(classes);
     if (!isControl && !isChip && !isWidth) continue;
 
-    const inner = innerOf(source, tag, openEnd);
+    const inner = stripJsxComments(innerOf(source, tag, openEnd));
     const text = directText(inner);
     const line = source.slice(0, m.index).split('\n').length;
     const reason: CjkBreakHit['reason'] = isControl ? 'control' : isChip ? 'chip' : 'width';
 
     if (CJK_PATTERN.test(text)) {
-      hits.push({ file, line, start: m.index, openEnd, tag, reason, confidence: 'certain', text: text.slice(0, 60), classes: classes.slice(0, 80) });
+      hits.push({
+        file,
+        line,
+        start: m.index,
+        openEnd,
+        tag,
+        reason,
+        confidence: NATIVE_WIDGET_TAGS.has(tag) ? 'native' : 'certain',
+        text: text.slice(0, 60),
+        classes: classes.slice(0, 80),
+      });
       continue;
     }
     // No literal text — but a control whose label is an expression is exactly

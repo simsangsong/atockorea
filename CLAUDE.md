@@ -87,15 +87,27 @@ X11 → X19 → T0 → T1v2 → T3 → T5 → O6 → R6.
 
 한국어·중국어·일본어는 띄어쓰기가 없어 **CSS 기본값(`word-break: normal`)만으로도 글자 단위로 쪼개진다.** 그래서 표 헤더/버튼/뱃지가 `빈민` `유형` `준비전`처럼 세로로 무너진다. **원인은 `break-all`이 아니라 "아무 것도 지정하지 않은 것"** — `break-all`을 grep해서는 대부분의 사고 지점을 찾지 못한다.
 
-전역 유틸 (`app/globals.css` `@layer utilities`):
-- **`.text-cjk-safe`** — 절대 안 쪼개져야 하는 라벨: **표 헤더 / 버튼 / 뱃지 / 칩 / 탭**. `nowrap + keep-all + min-width:0 + ellipsis`.
-- **`.text-cjk-body`** — 줄바꿈은 되되 어절 단위로만: 본문·설명. `keep-all + overflow-wrap:break-word`.
+🔴 **2026-07-30 변경 — 이제 옵트인이 아니라 기본값이다.** `app/globals.css` `@layer base` 의
+`html { word-break: keep-all; overflow-wrap: break-word }` 가 **모든 요소에 상속**된다(포털 포함).
+네 번의 요소별 스윕이 583건을 못 닫고 오히려 576→583으로 늘던 것을 여기서 끊었다.
+실측: 한국어 홈의 불법 줄바꿈 **11 → 0**, 컴포넌트는 한 줄도 안 고치고.
+동반 규칙 `td, th { overflow-wrap: anywhere }` 가 없으면 표가 벌어진다(실측 150px→176px).
+
+- **`.text-cjk-body`** — **이제 전역 기본값이다.** 새로 붙일 일은 거의 없다.
+- **`.text-cjk-safe`** — `nowrap + ellipsis + min-width:0`. **기본값이 못 하는 일만** 한다:
+  박스가 어절보다 좁으면 기본값으로도 결국 쪼개진다(실측 — 36px 탭의 `준비전`은 기본값에서 2줄,
+  `.text-cjk-safe` 에서 1줄). **잘림이 줄바꿈보다 낫다는 판단**이 설 때만 붙인다.
 
 지켜야 할 것:
-1. 폭이 제한된 컨테이너(`flex-1`, 표 셀, 칩)에 들어가는 CJK 라벨에는 **반드시 둘 중 하나를 적용**한다.
+1. 라벨이 **자기 어절보다 좁은 상자**에 들어가면 `.text-cjk-safe` 를 붙인다. 그 외 CJK 본문은
+   기본값이 이미 지킨다. **소스로는 좁은지 알 수 없다** — 판정은 `scripts/qa-cjk-render.mjs`
+   (실렌더에서 "CJK 두 글자 사이에서 줄이 바뀌었는가"를 직접 센다)가 한다.
 2. `break-all`은 **URL·해시·ID 등 ASCII 연속문자에만** 허용. CJK 텍스트에 붙이면 안 된다.
 3. 가로 스크롤 표는 `overflow-x-auto` + **`min-w-[Npx]`를 같이** 준다. `w-full`만 있으면 스크롤이 발동하지 않고 컬럼이 짜부라져 같은 사고가 난다. (참고 구현: `app/admin/guide-settlements/page.tsx`)
 4. 공용 프리미티브(`components/admin/DataTable.tsx`)에 이미 적용돼 있으니 **새 관리자 표는 이걸 쓰는 것이 기본**이다.
+5. **게이트는 `__tests__/audit/cjkInvariant.test.ts`.** 전역 기본값의 존재 · 규칙 2 위반 0 ·
+   스캐너 상한(certain 492 / suspect 428)을 강제하고, **기본값을 지우면 실패하는 뮤테이션 테스트**를
+   들고 있다. 전에는 게이트가 아예 없어서 숫자가 조용히 늘었다.
 
 
 ## 완료: 투어룸 UI/UX 글로벌 리디자인 v1 (프레젠테이션 전용, U0~U8)

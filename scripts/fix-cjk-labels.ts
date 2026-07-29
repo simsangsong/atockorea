@@ -19,8 +19,16 @@
  * Scope is deliberately narrow. Only `control` and `chip` shapes with a SHORT
  * label are touched, because `.text-cjk-safe` is `nowrap + ellipsis`: correct
  * for a button label, wrong for a sentence, where it would truncate real
- * content. Longer text and width-constrained prose want `.text-cjk-body`, which
- * is a separate pass with a different class.
+ * content.
+ *
+ * ⚠ 2026-07-30 — the companion pass this file used to point at is gone, and so
+ * is most of the reason to run this one. `.text-cjk-body` was promoted to a root
+ * default in `globals.css`, so width-constrained prose is already safe and no
+ * longer needs a class. What is left for `.text-cjk-safe` is the case the
+ * default provably cannot fix: a label in a box narrower than its own 어절,
+ * where the choice is between wrapping and truncating. That is a judgement per
+ * element, not a sweep — `scripts/qa-cjk-render.mjs` says which elements are
+ * actually squeezed, and source cannot.
  *
  * Usage:  npx tsx scripts/fix-cjk-labels.ts [--apply] [roots…]
  *         (dry run by default — prints what it would do)

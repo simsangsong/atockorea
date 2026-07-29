@@ -7,7 +7,7 @@
  * toolbar that collapsed to `투어일 / 기준` and `엑 / 셀` on a real screen while
  * the guard reported 22 clean-looking hits elsewhere.
  */
-import { classNamesIn, scanSource } from '@/lib/audit/cjkBreak';
+import { classNamesIn, scanSource, scanBreakAllOnCjk } from '@/lib/audit/cjkBreak';
 
 const certain = (src: string) => scanSource('f.tsx', src).filter((h) => h.confidence === 'certain');
 const suspect = (src: string) => scanSource('f.tsx', src).filter((h) => h.confidence === 'suspect');
@@ -208,5 +208,77 @@ describe('the scanner reads text positions, not descendant markup', () => {
     // Narrowing must not go so far that a real label in a <span> is lost.
     const src = '<button className="flex-1 px-2"><span>투어일</span> <span>기준</span></button>';
     expect(certain(src)).not.toHaveLength(0);
+  });
+});
+
+describe('scanSource — prose is not a label', () => {
+  /**
+   * The third phantom class, after width-only matching and descendant
+   * attributes. A JSX comment is not a tag, so it survived `stripMarkup`, and
+   * `directText` then read it twice: as literal children, and as "string
+   * literals inside an expression" — because an apostrophe in ordinary English
+   * opens what the literal scanner takes for a quoted string.
+   *
+   * Measured before the fix: 12 certain + 2 suspect hits came entirely from
+   * comment text, including a Cockpit <div> reported as holding `대화 전체` — a
+   * chip the comment beneath it records as having been REMOVED.
+   */
+  it('🔴 does not read a JSX comment as the element’s label', () => {
+    const src = `<div className="flex-1">
+      {/* C3 added a "대화 전체" chip here and C5 removed it again — recorded
+          rather than quietly reverted, because it's the reasoning that matters. */}
+      <Feed />
+    </div>`;
+    expect(certain(src)).toHaveLength(0);
+  });
+
+  it('still sees real CJK sitting next to a comment', () => {
+    const src = `<button className="flex-1 px-2">{/* label below */}저장하기</button>`;
+    expect(certain(src)).toHaveLength(1);
+  });
+});
+
+describe('scanSource — the native bucket', () => {
+  /**
+   * `<option>`/`<select>` text is drawn by the platform's own widget, which
+   * ignores `word-break` and `overflow-wrap`. 82 of them sat in `certain`, where
+   * they could neither be fixed nor dismissed — a floor under a number people
+   * were asked to drive to zero.
+   */
+  it('🔴 an <option> is reported, but not as certain', () => {
+    const hits = scanSource('f.tsx', '<option className="w-24">확정</option>');
+    expect(hits).toHaveLength(1);
+    expect(hits[0].confidence).toBe('native');
+  });
+
+  it('a <select> holding CJK options is native too', () => {
+    const hits = scanSource('f.tsx', '<select className="w-24"><option>대기</option></select>');
+    expect(hits.every((h) => h.confidence === 'native')).toBe(true);
+  });
+
+  it('does not swallow a real control that merely sits near a select', () => {
+    const hits = scanSource('f.tsx', '<div><select className="w-24"><option>대기</option></select><button className="flex-1 px-2">저장</button></div>');
+    expect(hits.filter((h) => h.confidence === 'certain').map((h) => h.tag)).toEqual(['button']);
+  });
+});
+
+describe('scanBreakAllOnCjk — CLAUDE.md rule 2', () => {
+  it('catches break-all on CJK', () => {
+    expect(scanBreakAllOnCjk('f.tsx', '<span className="break-all">성산일출봉</span>')).toHaveLength(1);
+  });
+
+  it('allows break-all on ASCII, which is what it is for', () => {
+    expect(scanBreakAllOnCjk('f.tsx', '<span className="break-all">a1b2c3d4e5f6</span>')).toEqual([]);
+  });
+
+  it('reads break-all out of a cn() call, not just a plain string', () => {
+    expect(
+      scanBreakAllOnCjk('f.tsx', "<span className={cn('text-xs', wrap && 'break-all')}>성산일출봉</span>"),
+    ).toHaveLength(1);
+  });
+
+  it('🔴 does not fire on a comment that merely mentions break-all', () => {
+    const src = '<div className="w-24">{/* break-all here would violate 성산일출봉 */}<Icon /></div>';
+    expect(scanBreakAllOnCjk('f.tsx', src)).toEqual([]);
   });
 });
