@@ -904,7 +904,14 @@
   --tr-danger-soft: rgba(176, 74, 74, 0.14);
   --tr-bubble-me-ink: #f7fdfa;
   --tr-on-accent: #f7fdfa;
-  --tr-radius-card: 16px;
+  /* P7.2 (H-2) — 20px, the same card radius as the room. The planner was
+   * running 20/16/14/13/11 simultaneously while the room finishes in four
+   * values; radius is the strongest "same family" signal in a UI and this
+   * screen was signalling a different family. Four values now: 20 card /
+   * 14 button-tile-thumbnail / 10 compact / 9999 pill, with one nesting rule
+   * (child radius = parent radius − parent padding), which is where 14 and 10
+   * come from rather than from taste. */
+  --tr-radius-card: 20px;
   --tr-radius-input: 14px;
   /* Hero: a pale sage wash, not a black slab. Chips ride it in white. */
   --tr-plan-hero: linear-gradient(150deg, #eaf3ed 0%, #dcebe2 55%, #d3e5da 100%);
@@ -913,9 +920,17 @@
   --tr-plan-hero-chip: rgba(255, 255, 255, 0.72);
   --tr-plan-hero-line: rgba(38, 82, 66, 0.12);
   --tr-plan-secondary: #667e74;
-  --tr-plan-shadow-soft: 0 1px 2px rgba(31, 58, 48, 0.04), 0 6px 16px rgba(31, 58, 48, 0.05);
-  --tr-plan-shadow-card: 0 1px 2px rgba(31, 58, 48, 0.04), 0 10px 24px rgba(31, 58, 48, 0.06);
-  --tr-plan-shadow-button: 0 4px 12px rgba(48, 106, 85, 0.24);
+  /* P7.2 (H-1) — `--tr-plan-shadow-{soft,card,button}` are GONE. They were a
+   * second elevation system living beside `--tr-elev-1/2/3`, and the planner's
+   * copy had no rim, so `.tr-plan-root .tr-card` overrode the room card and
+   * stripped the lit top edge off it. The comment on that rim says it is "why
+   * the home tiles looked like objects and everything else looked like coloured
+   * paper" — the planner was on the paper side of that sentence. One scale now.
+   *
+   * The accent lift under a primary button survives as its own token because it
+   * is COLOURED (it belongs to the accent, not to the neutral elevation scale)
+   * and because dark needs a different answer, not `none`. */
+  --tr-plan-btn-lift: 0 4px 12px rgba(48, 106, 85, 0.24);
   --tr-plan-btn-inset: rgba(255, 255, 255, 0.24);
 }
 
@@ -948,22 +963,36 @@
   --tr-plan-hero-chip: rgba(255, 255, 255, 0.08);
   --tr-plan-hero-line: rgba(226, 240, 234, 0.09);
   --tr-plan-secondary: #b2bdb8;
-  --tr-plan-shadow-soft: none;
-  --tr-plan-shadow-card: none;
-  --tr-plan-shadow-button: none;
+  /* 🔴 P7.2 (H-1) — these were `none`. Measured in dark: card NONE, hero NONE,
+   * primary button NONE. The whole screen was a flat plane, and a button that
+   * casts nothing does not read as a thing you can press.
+   *
+   * `none` was not unreasonable on its own terms — a light-tuned drop shadow is
+   * invisible on a near-black canvas, so switching it off loses nothing. But
+   * the room had already solved that: in dark the separation comes from the RIM
+   * (a lit top edge at .07 alpha), with shadows kept only to hold the contact
+   * edge. Deleting instead of substituting is what left this screen flat, and
+   * the planner now inherits the room's dark elevation like everything else.
+   *
+   * The button lift stays coloured but goes deeper and darker, because on a
+   * near-black canvas a pale-green halo reads as fog rather than as lift. */
+  --tr-plan-btn-lift: 0 6px 18px rgba(0, 0, 0, 0.45);
   --tr-plan-btn-inset: rgba(255, 255, 255, 0.1);
 }
 
-.tr-plan-root .tr-card {
-  border: 1px solid var(--tr-hairline);
-  box-shadow: var(--tr-plan-shadow-card);
-}
+/* P7.2 (H-1) — the `.tr-plan-root .tr-card` override is DELETED, not rewritten.
+ * Its whole effect was to swap the room's `var(--tr-rim), var(--tr-elev-1)` for
+ * a rimless drop shadow, i.e. to opt this screen out of the app's material.
+ * With it gone the planner's cards ARE the room's cards, which is the point:
+ * the fix for two material systems is one material system, not a third. */
 
 .tr-plan-hero {
   background: var(--tr-plan-hero);
   border: 1px solid var(--tr-plan-hero-line);
-  border-radius: 20px;
-  box-shadow: var(--tr-plan-shadow-card);
+  border-radius: var(--tr-radius-card);
+  /* elev-2, one step above the ordinary cards below it — it is the screen's
+   * masthead, so it should sit above them rather than beside them. */
+  box-shadow: var(--tr-rim), var(--tr-elev-2);
   padding: 15px 16px;
 }
 
@@ -978,29 +1007,45 @@
   transform: scale(0.995);
 }
 
-/* ---- Planner buttons: small, physical, and only ONE loud one --------------
+/* ---- Planner buttons: four tiers, and the commit is the biggest -----------
  *
  * Every action in this screen used to be the same full-bleed saturated slab,
- * so nothing was primary and the page read as a wall of green. The hierarchy
- * is now three tiers, and the loud tier is rationed to the real commit
- * (submit / adopt a course):
+ * so nothing was primary and the page read as a wall of green. The tiers ration
+ * loudness to the real commit (adopt a course / send to the guide):
  *
- *   --primary  gradient + inset top highlight + colored lift  → commits
- *   --soft     accent wash + deep-accent ink                  → adds, toggles
- *   --quiet    surface + hairline                             → cancel, clear
+ *   --hero     accent wash + 1.5px accent ring   → the day-defining commit
+ *   --primary  gradient + inset highlight + lift → inline commits
+ *   --soft     accent wash                       → adds, toggles
+ *   --quiet    surface + hairline                → cancel, clear
  *
- * The press physics are the point of "physical": a 1px downward translate with
- * the lift shadow collapsing under it reads as a key bottoming out. Sizes are
- * one step smaller than before (42px default, 36px compact) — thumb-legal at
- * 44px on the tap targets that need it, tighter everywhere else. */
+ * 🔴 P7.2 (H-3) — the hierarchy was INVERTED, measured:
+ *
+ *     「Use this route」  fills the whole day   36px / 12px
+ *     「Add」             adds one place        44px / 12px
+ *     room's ORDINARY button                    48px / 16px
+ *
+ * The biggest-consequence action on the screen was its smallest control, and
+ * the planner's largest button was still smaller than a plain room button. The
+ * cause was not the scale — the CSS comment already said "ration the loud tier
+ * to real commits" — it was the CALL SITE, which put `--sm` on the commit. The
+ * intent was right and the wiring disagreed with it, so the invariant is now a
+ * test (`plannerButtonHierarchy`) rather than a paragraph.
+ *
+ * INVARIANT: a commit button is never smaller than any secondary button on the
+ * same screen. Sizes are thumb-legal by default now (44px), not one step under.
+ *
+ * Press physics follow the room's M-D4: translateY(1px) + scale(0.98) + the
+ * lift collapsing + brightness(.96). The old scale(0.995) moved a 358px card by
+ * 0.9px per side, which is to say it did not move. */
 .tr-plan-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  min-height: 42px;
+  min-height: 44px;
   padding-inline: 15px;
-  border-radius: 13px;
+  border-radius: 14px;
+  font-size: calc(13px * var(--tr-font-scale, 1));
   font-weight: 700;
   letter-spacing: -0.01em;
   white-space: nowrap;
@@ -1011,13 +1056,17 @@
     filter var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease);
 }
 
+/* Compact — for genuinely minor controls only. 🔴 Never on a commit: this class
+ * on 「Use this route」 is precisely what inverted the hierarchy. Gated. */
 .tr-plan-btn--sm {
   min-height: 36px;
   padding-inline: 12px;
-  border-radius: 11px;
+  border-radius: 10px;
+  font-size: calc(12px * var(--tr-font-scale, 1));
 }
 
-/* 44px stays reachable where the control is the row's only tap target. */
+/* Kept for call sites that state "this row's only tap target"; now equal to the
+ * default rather than a promotion above it. */
 .tr-plan-btn--tap {
   min-height: 44px;
 }
@@ -1027,23 +1076,51 @@
   width: 100%;
 }
 
+/* The day-defining commit. Same grammar as the room's `.tr-cta-hero` (the guide
+ * console's 운행 시작) — an accent WASH inside a 1.5px accent ring reads as
+ * "this is the button" without adding a second saturated slab to a screen that
+ * already had too many. It is the tallest control on the screen by design. */
+.tr-plan-btn--hero {
+  min-height: 56px;
+  padding-inline: 18px;
+  border-radius: var(--tr-radius-card);
+  font-size: calc(15px * var(--tr-font-scale, 1));
+  color: var(--tr-accent-deep);
+  background-color: var(--tr-accent-soft);
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    var(--tr-rim),
+    var(--tr-elev-1);
+}
+
+.tr-plan-btn--hero:active:not(:disabled) {
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    inset 0 0 0 1.5px var(--tr-accent),
+    inset 0 2px 5px rgba(24, 40, 34, 0.14);
+  filter: brightness(0.96);
+}
+
 .tr-plan-btn--primary {
+  min-height: 48px;
+  font-size: calc(14px * var(--tr-font-scale, 1));
   color: var(--tr-on-accent);
   background-image: linear-gradient(180deg, var(--tr-accent-hi), var(--tr-accent));
   box-shadow:
     inset 0 1px 0 var(--tr-plan-btn-inset),
     inset 0 -1px 0 rgba(0, 0, 0, 0.08),
     0 1px 1px rgba(31, 58, 48, 0.1),
-    var(--tr-plan-shadow-button);
+    var(--tr-plan-btn-lift);
 }
 
 .tr-plan-btn--primary:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.08),
     inset 0 1px 3px rgba(0, 0, 0, 0.16),
     0 1px 2px rgba(31, 58, 48, 0.1);
-  filter: brightness(0.97);
+  filter: brightness(0.96);
 }
 
 .tr-plan-btn--soft {
@@ -1055,8 +1132,9 @@
 }
 
 .tr-plan-btn--soft:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98);
   box-shadow: inset 0 1px 3px rgba(31, 58, 48, 0.12);
+  filter: brightness(0.96);
 }
 
 .tr-plan-btn--quiet {
@@ -1068,8 +1146,9 @@
 }
 
 .tr-plan-btn--quiet:active:not(:disabled) {
-  transform: translateY(1px);
+  transform: translateY(1px) scale(0.98);
   box-shadow: inset 0 0 0 1px var(--tr-hairline);
+  filter: brightness(0.96);
 }
 
 /* Settled/complete: no lift, no invitation to press again. */
@@ -1129,8 +1208,11 @@
   padding: 3px;
 }
 
+/* 14px track − 3px padding = 11 → 10, the compact step. (H-2 nesting rule:
+ * child radius = parent radius − parent padding. 11 was close enough to look
+ * arbitrary; 10 is a value the scale actually contains.) */
 .tr-plan-seg-item {
-  border-radius: 11px;
+  border-radius: 10px;
   color: var(--tr-ink-2);
   transition:
     background-color var(--tr-dur-fast, 120ms) var(--tr-ease-out, ease),

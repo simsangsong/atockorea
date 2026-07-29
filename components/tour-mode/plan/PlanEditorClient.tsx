@@ -2731,7 +2731,15 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                                 /* 장소 목록이 아직이면 누를 수 없게 한다. 예전에는
                                    눌려도 poiByKey가 비어 조용히 아무 일도 안 일어났다. */
                                 disabled={!canEdit || (!course.isCustom && poisState !== 'ready')}
-                                className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--sm tr-label ml-auto"
+                                /* 🔴 P7.2 (H-3) — this button fills the guest's
+                                   entire day, and it was `--sm` (36px/12px)
+                                   while 「Add」, which adds one place, was 44px.
+                                   The CSS had rationed a loud tier to real
+                                   commits and the call site put the compact
+                                   modifier on the biggest commit there is.
+                                   Hero tier now; `plannerButtonHierarchy` keeps
+                                   it that way. */
+                                className="tr-plan-btn tr-plan-btn--hero tr-plan-btn--block ml-auto"
                                 data-testid={`plan-course-apply-${course.index}`}
                               >
                                 {course.isCustom ? ui.courseOptionCustom : ui.courseOptionApply}
@@ -2847,7 +2855,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                     value={poiQuery}
                     onChange={(e) => setPoiQuery(e.target.value)}
                     placeholder={copy.searchPlaceholder}
-                    className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-10 py-3 text-[var(--tr-ink)] shadow-[var(--tr-plan-shadow-soft)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                    className="tr-card-text w-full rounded-[var(--tr-radius-input)] border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-10 py-3 text-[var(--tr-ink)] shadow-[var(--tr-rim),var(--tr-elev-1)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
                   />
                 </div>
                 {poisState === 'loading' && (
@@ -2946,7 +2954,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 {copy.yourDay}
               </h2>
               {stops.length > 0 && (
-                <span className="tr-meta rounded-full bg-[var(--tr-surface)] px-3 py-1.5 font-semibold text-[var(--tr-ink-3)] shadow-[var(--tr-plan-shadow-soft)]">
+                <span className="tr-meta rounded-full bg-[var(--tr-surface)] px-3 py-1.5 font-semibold text-[var(--tr-ink-3)] shadow-[var(--tr-rim),var(--tr-elev-1)]">
                   {copy.estimated(formatMinutes(totalEstimateMin))}
                 </span>
               )}
@@ -3608,8 +3616,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               type="button"
               onClick={() => void submitPlan()}
               disabled={stops.length === 0 || saveState === 'saving' || submitBusy}
-              /* The one loud button on the screen — this is the commit. */
-              className="tr-plan-btn tr-plan-btn--primary tr-plan-btn--tap tr-body shrink-0 px-5"
+              /* The one loud button on the screen — this is the commit, so it
+                 takes the hero tier (P7.2 H-3). It shares the bar with a status
+                 line rather than owning a whole row, so it stays inline-sized;
+                 the tier gives it the height and ring, not the width. */
+              className="tr-plan-btn tr-plan-btn--hero shrink-0 px-5"
+              data-testid="plan-submit"
             >
               <IconSubmit size={TR_ICON.chip} aria-hidden />
               {saveState === 'saving' || submitBusy ? copy.submitting : copy.submit}
