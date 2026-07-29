@@ -497,4 +497,50 @@ SSR hydration(첫 렌더 server_now_ms 결정론) · 헤드리스 `useRallyLadde
 
 ---
 
+## P. 구현 원장 (2026-07-31 완주 — 플랜 대비 대조 리뷰)
+
+**SG-0~7 전 웨이브 main 머지 완료.** 이 섹션이 인수인계 정본이다. 아래 표의 "검증"은 전부
+실행된 것만 적었다(추측 없음).
+
+### P-1. 웨이브 → PR → 검증
+
+| 웨이브 | PR | 티켓 | 실검증 |
+|---|---|---|---|
+| SG-0 | #640 | 0a·0b·0c | 게이트 ①(numeralScale) CI 편입 · NumeralClock 적응 틱/aria/SSR 결정론 유닛 · `server_now_ms` 스냅샷 주입 + RoomClockProvider ref 1회 앵커 유닛 |
+| SG-1 | #641 | 1a~1e | 어댑터 관통 게이트 ⑦ 유닛 · 4행 매트릭스 유닛(밴드·2d·센티널 포함) · **실렌더**: free hero 24:16@34px, `--tr-font-scale:1.35`→45.9px@320px, 배너 카운트다운 억제, overflow-x 0 · 킬스위치 `NEXT_PUBLIC_TR_NUMERAL_V1='0'` 경로 유닛 |
+| SG-2 | #644 | 2a·2b-α/β/γ·2c·2d | 서버 사다리 5단 게이트 ④ 유닛 · **실 API**: remind 201/200(멱등), 백데이트·조기 크로싱 409, manual departed 201 · **실렌더**: WaitEndedCard 캡슐(목적지 있음/없음 열화) · rallyResolution 유닛(cancelled·승격·created<target) |
+| SG-3 | #645 | 3a·3b | WalkBackLine 유닛(하버사인·옵트인 키·one-shot) · E3 귀속 라인 유닛 · 실렌더에서 arrived 귀속 확인 |
+| SG-4 | #646 | 4c·4a·4b·4d·4e | **실렌더**: moving 밴드 실사진(산정호수)·144px 고정(CLS 0)·contrast 스킨 은닉 · poiImage 오브젝트 소스 유닛 · SW 이미지 레인 유닛 · **라이브 DB**: `arrival_profiles` 3컬럼 + `tour-meeting-points` 버킷 적용 · 어드민 검수 큐 reachability 게이트 통과 |
+| SG-5 | #647 | 5a·5b·5c | pickup 4행 + `scheduleTargetMs` 폴백 유닛 · 이름 사인 시트(text-5xl 허용 목록 게이트) · vehicle-photo 서명 URL K4 원장 등재 |
+| SG-6 | #648 | 6a·6b | sayQueue 리졸버 유닛(4개 상한·TYPE 파생 fired·타이머-도착 순서·briefing 오전) · say_dismissed/expired 북키핑 라우트 유닛 · 콕핏 필/패널 상호작용 유닛(X15 지오펜스 스위트 재작성 포함) |
+| SG-7 | #649 | 7a·7b | day-summary 4지표 유닛(정시 체인 = superseded 접기, 응답 중앙값 ≤600s 갭) · 온보딩 유닛 2건(1회성·로컬 에코 네트워크 0) |
+| 게이트 최종 | — | — | tsc 0 · jest 179 스위트/1815 tests green · `npm run build` exit 0 · CJK 래칫 ≤492 · A1 원장 87/87 · K4 원장 재생성 정합 |
+
+### P-2. 의도적 편차 3건 (버그 아님 — 판단 기록)
+
+1. **2b-β 스태프 T+12 프롬프트는 콕핏 전용.** GuideConsole에는 기존 rally 사다리
+   (NoticeBanner overdue + 연락 칩)가 이미 있고, 낙오 처리는 운행 화면(콕핏)에서 일어나는
+   행위라 이원화하지 않았다. 가이드가 낙오 처리하려면 운행 모드 진입.
+2. **2c [+15분 연장]은 독립 API가 아니라 기존 return_time 시트 프리필 경로.** 전송 시
+   `rally_extended{next_notice_id}` resolution이 체인된다 — "연장"이 새 공지 발행과 분리될
+   수 없다는 §E-4 계약을 그대로 실행한 형태.
+3. **3a E1 도보 역산은 온디맨드 전용(자동 새로고침 없음).** one-shot geolocation 계약의
+   자연 귀결 — 탭할 때만 재계산, 백그라운드 위치 소비 0.
+
+### P-3. 남은 사람 게이트 (코드 잔여 0)
+
+| # | 게이트 | 비고 |
+|---|---|---|
+| 1 | **실기기 리허설** (§L 8a) | 폰트 스케일 1.35 실기기 · 콕핏 마이크/TTS · ≤10분 1초 틱 배터리 · 스크린리더(sr 낭독 T-10/5/1) · 온보딩 카드 실화면(시뮬은 live 룸이라 로비 D≤1 조건 미충족 — 유닛으로만 검증됨) |
+| 2 | **집합 사진 검수 운영** | `/admin/meeting-photos` 큐 주 1회 배치 — verified만 손님 노출 |
+| 3 | **낙오 택시비 문구** (N-2) | WaitEndedCard에 슬롯 있음, 문구는 사장님 확정 대기 |
+| 4 | **킬스위치 제거 시점** | `NEXT_PUBLIC_TR_NUMERAL_V1` — 실기기 통과 후 v0 경로 삭제 결정 |
+| 5 | **rally 크로싱 서버 크론 폴백 v2** | 현재 크로싱 발화는 클라이언트(콕핏 primary/손님 backup) — 둘 다 백그라운드면 이메일 레일만 남는다. 주간 크론에 편승할지 결정 |
+| 6 | **번들 예산 전/후 실측** | build exit 0으로 간접 확인만 됨 — first-load JS 델타 미계측 |
+
+⚠ 기존 기록 엣지 승계: 자정 넘는 집합 시각은 당일 00:00 해석(야간 투어 도입 시 재검토).
+
+---
+
 *다음 세션 첫 명령: §L SG-0a. 환경 `NEXT-SESSION-SMARTAPP-2026-07-28.md` §2, 게이트 §K.*
+*(2026-07-31 갱신: SG-0~7 완주 — 위 §P가 현재 상태의 정본. 다음 세션은 §P-3 사람 게이트부터.)*
