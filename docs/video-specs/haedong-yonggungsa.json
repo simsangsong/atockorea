@@ -23,11 +23,7 @@
     "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29)"
   },
   "_notes": [
-    "영상 내 텍스트는 전부 영어 — 손님 100% 외국인.",
-    "🔴 정지+경로화살표 비트 폐지 (사용자 확정). 교차로는 배속을 1.2x로 늦춰서 알린다.",
-    "옵젝트 지시 화살표는 대상보다 작아야 한다 — stem 9 / head 30.",
-    "강조 옵젝트는 closeup: focus 사각형을 좌상→우하로 훑는다 (달마대사 방식).",
-    "폴라로이드는 1.2초만 머문다."
+    "정본 = docs/onetake-tour-video-v5-rebuild-2026-07-30.md"
   ],
   "beats": [
     {
@@ -36,7 +32,7 @@
       "src": "A",
       "in": 0,
       "out": 6,
-      "speed": 1,
+      "speed": 1.5,
       "title": "Leaving the car park"
     },
     {
@@ -45,7 +41,7 @@
       "src": "A",
       "in": 6,
       "out": 93,
-      "speed": 6,
+      "speed": 8,
       "title": "Through the food stalls",
       "ramp": {
         "seconds": 0.6
@@ -57,7 +53,7 @@
       "src": "A",
       "in": 93,
       "out": 100,
-      "speed": 2,
+      "speed": 4,
       "title": "Approaching the guardians",
       "ramp": {
         "seconds": 0.6
@@ -76,34 +72,34 @@
         {
           "mode": "pointer",
           "from": {
-            "x": 392,
-            "y": 452
+            "x": 470,
+            "y": 500
           },
           "target": {
             "x": 596,
-            "y": 664
+            "y": 646
           },
-          "gap": 44,
-          "stem": 9,
-          "headLen": 30,
-          "headWidth": 26
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
         }
       ],
       "arrows": [
         {
           "mode": "pointer",
           "from": {
-            "x": 392,
-            "y": 452
+            "x": 470,
+            "y": 500
           },
           "target": {
             "x": 596,
-            "y": 664
+            "y": 646
           },
-          "gap": 44,
-          "stem": 9,
-          "headLen": 30,
-          "headWidth": 26
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
         }
       ]
     },
@@ -112,8 +108,8 @@
       "kind": "clip",
       "src": "A",
       "in": 100,
-      "out": 105,
-      "speed": 1.2,
+      "out": 106,
+      "speed": 1.5,
       "title": "Along the wall"
     },
     {
@@ -142,7 +138,7 @@
       "src": "A",
       "in": 106,
       "out": 117,
-      "speed": 2,
+      "speed": 4,
       "title": "Onward to the stele",
       "ramp": {
         "seconds": 0.6
@@ -174,7 +170,7 @@
       "src": "A",
       "in": 117,
       "out": 137,
-      "speed": 2.5,
+      "speed": 6,
       "title": "To the main gate",
       "ramp": {
         "seconds": 0.6
@@ -182,15 +178,6 @@
     },
     {
       "id": "10",
-      "kind": "clip",
-      "src": "A",
-      "in": 137,
-      "out": 139,
-      "speed": 1,
-      "title": "The gate"
-    },
-    {
-      "id": "11",
       "kind": "closeup",
       "src": "A",
       "at": 139,
@@ -207,56 +194,43 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.5
-      },
-      "maxZoom": 1.7
+      }
     },
     {
-      "id": "12",
+      "id": "11",
       "kind": "clip",
       "src": "A",
       "in": 139,
-      "out": 172,
-      "speed": 3,
+      "out": 176,
+      "speed": 8,
       "title": "Down through the cave passage",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
+      "id": "12",
+      "kind": "clip",
+      "src": "A",
+      "in": 176,
+      "out": 180,
+      "speed": 1.5,
+      "title": "Top of the 108 steps"
+    },
+    {
       "id": "13",
       "kind": "clip",
       "src": "A",
-      "in": 172,
-      "out": 176,
-      "speed": 1.6,
-      "title": "The lantern path",
+      "in": 180,
+      "out": 218,
+      "speed": 8,
+      "title": "Down the 108 steps",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
       "id": "14",
-      "kind": "clip",
-      "src": "A",
-      "in": 176,
-      "out": 182,
-      "speed": 1.2,
-      "title": "Top of the 108 steps"
-    },
-    {
-      "id": "15",
-      "kind": "clip",
-      "src": "A",
-      "in": 182,
-      "out": 218,
-      "speed": 2.4,
-      "title": "Down to the viewpoint",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "16",
       "kind": "polaroid",
       "src": "A",
       "at": 218,
@@ -271,12 +245,12 @@
       }
     },
     {
-      "id": "17",
+      "id": "15",
       "kind": "clip",
       "src": "B",
       "in": 0,
       "out": 39,
-      "speed": 2.2,
+      "speed": 6,
       "title": "Out onto the rocks",
       "ramp": {
         "seconds": 0.6
@@ -287,7 +261,7 @@
       }
     },
     {
-      "id": "18",
+      "id": "16",
       "kind": "polaroid",
       "src": "B",
       "at": 39,
@@ -302,12 +276,12 @@
       }
     },
     {
-      "id": "19",
+      "id": "17",
       "kind": "clip",
       "src": "C",
       "in": 0,
       "out": 20,
-      "speed": 2.4,
+      "speed": 8,
       "title": "Back down the steps",
       "ramp": {
         "seconds": 0.6
@@ -318,22 +292,43 @@
       }
     },
     {
-      "id": "20",
+      "id": "18",
       "kind": "clip",
       "src": "C",
       "in": 20,
-      "out": 30,
-      "speed": 1.2,
+      "out": 26,
+      "speed": 1.5,
       "title": "Onto Yongmun Bridge"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "C",
+      "in": 26,
+      "out": 45,
+      "speed": 1,
+      "title": "Crossing Yongmun Bridge"
+    },
+    {
+      "id": "20",
+      "kind": "clip",
+      "src": "C",
+      "in": 45,
+      "out": 86,
+      "speed": 6,
+      "title": "Up to the main hall",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
       "id": "21",
       "kind": "clip",
       "src": "C",
-      "in": 30,
-      "out": 45,
-      "speed": 1.6,
-      "title": "Across the water",
+      "in": 86,
+      "out": 100,
+      "speed": 4,
+      "title": "Daeungbojeon Hall",
       "ramp": {
         "seconds": 0.6
       }
@@ -342,10 +337,10 @@
       "id": "22",
       "kind": "clip",
       "src": "C",
-      "in": 45,
-      "out": 86,
-      "speed": 3,
-      "title": "Up to the main hall",
+      "in": 100,
+      "out": 160,
+      "speed": 8,
+      "title": "Around the hall",
       "ramp": {
         "seconds": 0.6
       }
@@ -354,19 +349,19 @@
       "id": "23",
       "kind": "clip",
       "src": "C",
-      "in": 86,
-      "out": 100,
-      "speed": 1,
-      "title": "Daeungbojeon Hall"
+      "in": 160,
+      "out": 166,
+      "speed": 1.5,
+      "title": "Foot of the stone steps"
     },
     {
       "id": "24",
       "kind": "clip",
       "src": "C",
-      "in": 100,
-      "out": 160,
-      "speed": 4,
-      "title": "Around the hall",
+      "in": 166,
+      "out": 193,
+      "speed": 8,
+      "title": "The climb",
       "ramp": {
         "seconds": 0.6
       }
@@ -375,37 +370,16 @@
       "id": "25",
       "kind": "clip",
       "src": "C",
-      "in": 160,
-      "out": 166,
-      "speed": 1.2,
-      "title": "Foot of the stone steps"
-    },
-    {
-      "id": "26",
-      "kind": "clip",
-      "src": "C",
-      "in": 166,
-      "out": 193,
-      "speed": 6,
-      "title": "The climb",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "27",
-      "kind": "clip",
-      "src": "C",
       "in": 193,
       "out": 209,
-      "speed": 1.6,
+      "speed": 4,
       "title": "Reaching the statue",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
-      "id": "28",
+      "id": "26",
       "kind": "polaroid",
       "src": "C",
       "at": 209,
@@ -420,7 +394,7 @@
       }
     },
     {
-      "id": "29",
+      "id": "27",
       "kind": "clip",
       "src": "C",
       "in": 209,
@@ -429,28 +403,37 @@
       "title": "The view from the top"
     },
     {
-      "id": "30",
+      "id": "28",
       "kind": "clip",
       "src": "C",
       "in": 226,
       "out": 290,
-      "speed": 4.5,
+      "speed": 8,
       "title": "Back down",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
-      "id": "31",
+      "id": "29",
       "kind": "clip",
       "src": "C",
       "in": 290,
-      "out": 312,
+      "out": 308,
       "speed": 1,
       "title": "The bamboo path"
     },
     {
-      "id": "32",
+      "id": "29b",
+      "kind": "clip",
+      "src": "C",
+      "in": 308,
+      "out": 312,
+      "speed": 1.5,
+      "title": "Toward the pagoda"
+    },
+    {
+      "id": "30",
       "kind": "closeup",
       "src": "C",
       "at": 312,
@@ -470,16 +453,19 @@
       }
     },
     {
-      "id": "33",
+      "id": "31",
       "kind": "clip",
       "src": "C",
       "in": 312,
       "out": 320,
-      "speed": 1,
-      "title": "Toward the exit"
+      "speed": 4,
+      "title": "Toward the exit",
+      "ramp": {
+        "seconds": 0.6
+      }
     },
     {
-      "id": "34",
+      "id": "32",
       "kind": "clip",
       "src": "A",
       "in": 139,

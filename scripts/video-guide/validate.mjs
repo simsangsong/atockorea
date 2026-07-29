@@ -10,6 +10,7 @@
  *   node scripts/video-guide/validate.mjs docs/video-specs/<slug>.json
  */
 import fs from 'node:fs';
+import { framing, contains } from './framing.mjs';
 
 const TOLERANCE = 0.6;   // seconds of drift the eye forgives on a straight cut
 
@@ -58,6 +59,34 @@ for (let i = 0; i < spec.beats.length - 1; i++) {
     problems.push(`${b.id}→${next.id}  화살표 정지(${b.at}s) 다음 클립이 ${next.in}s 에서 시작 — 화살표가 가리킨 방향으로 이어지지 않는다`);
   }
 }
+
+// Gate 2 — a close-up must never crop its own subject. v4 shipped four of them
+// framed tighter than the thing they were framing, and start/end stills looked
+// fine because each showed a different third of the statue.
+for (const b of spec.beats) {
+  if (b.kind !== 'closeup') continue;
+  if (!b.focus) { problems.push(`${b.id}  closeup 인데 focus 사각형이 없다`); continue; }
+  const f = framing(b.focus, { maxZoom: b.maxZoom });
+  for (const [where, pt] of [['시작', f.start], ['끝', f.end]]) {
+    if (!contains(b.focus, f, pt.x, pt.y)) {
+      problems.push(`${b.id}  ${where} 프레임이 대상을 잘라먹는다 — 창 ${f.cw}x${f.ch}, 대상 ${b.focus[2]}x${b.focus[3]}`);
+    }
+  }
+}
+
+// Gate 3 — pacing. Real-speed stretches are for the two or three views worth
+// standing still for; past 40% the whole thing drags, which is what "왜 이렇게
+// 느려" meant.
+let slow = 0, total = 0;
+for (const b of spec.beats) {
+  const d = b.kind === 'clip' ? (b.out - b.in) / (b.speed ?? 1) : b.hold;
+  total += d;
+  if (b.kind === 'clip' && (b.speed ?? 1) <= 1.05) slow += d;
+  if (d > 20) problems.push(`${b.id}  한 비트가 ${d.toFixed(1)}초 — 20초를 넘는다`);
+}
+const slowPct = (slow / total) * 100;
+if (slowPct > 40) problems.push(`1배속 구간이 ${slowPct.toFixed(0)}% — 40% 상한 초과 (${slow.toFixed(0)}s/${total.toFixed(0)}s)`);
+else notes.push(`페이싱  1배속 ${slowPct.toFixed(0)}% · 전체 ${Math.round(total)}s`);
 
 for (const n of notes) console.log(`  ok   ${n}`);
 if (problems.length) {

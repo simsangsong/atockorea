@@ -17,6 +17,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { renderArrowFrames, renderPolaroid, pathLuma, sharp } from './lib/overlay.mjs';
+import { framing } from './framing.mjs';
 
 const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
@@ -143,20 +144,11 @@ async function renderHold(beat, out) {
     // down to bottom-right — rather than punching straight in. Zoom is held
     // constant and the window slides, so the subject is discovered rather than
     // arrived at. `focus` is the subject's rectangle in source pixels.
-    const [fx, fy, fw, fh] = beat.focus ?? [0, 0, 1920, 1080];
-    const zoom = Math.min(beat.maxZoom ?? 2.2, Math.max(1.12, Math.min(1920 / (fw * 1.25), 1080 / (fh * 0.62))));
-    const cw = 1920 / zoom, ch = 1080 / zoom;
-    const clampX = (v) => Math.max(0, Math.min(1920 - cw, v));
-    const clampY = (v) => Math.max(0, Math.min(1080 - ch, v));
-    const midX = fx + fw / 2;
-    const sx = clampX(midX - cw / 2 - fw * 0.18);
-    const ex = clampX(midX - cw / 2 + fw * 0.18);
-    const sy = clampY(fy - ch * 0.06);            // start high on the subject
-    const ey = clampY(fy + fh - ch * 0.94);       // finish low on it
+    const f = framing(beat.focus ?? [0, 0, 1920, 1080], { maxZoom: beat.maxZoom });
     const p = `(3*pow(min(t/${dur},1),2)-2*pow(min(t/${dur},1),3))`;
-    filter += `crop=w=${Math.round(cw / 2) * 2}:h=${Math.round(ch / 2) * 2}:`
-      + `x='${sx.toFixed(1)}+${(ex - sx).toFixed(1)}*${p}':`
-      + `y='${sy.toFixed(1)}+${(ey - sy).toFixed(1)}*${p}',${VSCALE}[v];`;
+    filter += `crop=w=${f.cw}:h=${f.ch}:`
+      + `x='${f.start.x.toFixed(1)}+${(f.end.x - f.start.x).toFixed(1)}*${p}':`
+      + `y='${f.start.y.toFixed(1)}+${(f.end.y - f.start.y).toFixed(1)}*${p}',${VSCALE}[v];`;
   } else if (beat.kind === 'polaroid') {
     const card = path.join(CACHE, `polaroid_${beat.id}.png`);
     await renderPolaroid({ framePath: still, outFile: card, opts: beat.polaroid ?? {} });
