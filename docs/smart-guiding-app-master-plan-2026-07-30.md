@@ -123,17 +123,27 @@ T-10 푸시 · wait_ended(+ **발사 파생 자체가 불가능한 현 구조** 
 **중복 카운트다운 억제(신규 1e):** free_time T-3~T0에 NoticeBanner 캡슐(`formatRemaining`)과 hero numeral이 같은 값을 두 시계로 표시하게 된다 —
 시계는 0c가 단일화하고, 홈 탭에서 hero numeral 활성 시 배너의 **카운트다운 행만** 억제(포인트·CTA는 유지).
 
-### D-3. 카피 신규 키 (en/ko 기준문 — v1.0과 동일 + 정정 1)
+### D-3. 카피 신규 키 12개 (en/ko 기준문 — `NowCardCopy` 인터페이스 추가분)
 
 `rallyEyebrow` 집합 · `freeEyebrow` 자유시간 · `pickupEyebrow` 픽업 · `freeMeetAt(p)` "${p}에서 만나요" · `freeTitleNoPoint` "집합 안내를 기다려 주세요" ·
 `waitUntil(t)` "${t}까지 대기 후 출발" · `pickupWaitUntil(t)` "${t}까지는 나와 주세요"(**요청문 — 집행 캡슐 없음과 정합**) · `arrivedUntil(t)` "약 ${t}까지 여유 있어요" ·
 `movingReassurance` "지금은 편히 계시면 됩니다" · `leaveBy(m,t)` "당신 위치에서 도보 ${m}분 · ${t}에는 출발하세요" · `walkOptIn` "내 위치 기준 도보 시간" · `minutesUnit(n)` "${n}분".
 전부 10로케일 사전 번역. **키셋 고정 테스트 없음 확인** — 추가 안전.
 
-### D-4. NumeralClock (신규)
+### D-4. NumeralClock (신규, `components/tour-mode/NumeralClock.tsx`)
 
-v1.0 스펙 유지 + 개정 2: ① **적응 틱 내장**(SG-D3 — `tickMs` prop 제거, 모드·타깃 거리에서 자동 결정) ② sr-only 분기점 안내는
-**NowCard가 `<section>` 밖 sibling으로 소유**(SG-D18). 성능·모션 규칙 동일(전이 애니메이션 금지, visible 한정 틱, 서브트리 격리).
+```
+props: { mode: 'down' | 'up'; targetMs: number;
+         format: 'clock' | 'minutes'; unitLabel?: string;   // minutes형의 "분"
+         nowMs?: () => number;                               // §E-1 서버 시계 주입
+         testId?: string }
+```
+
+- 렌더: `<span className="tr-numeral tr-num block text-[var(--tr-ink)]" aria-hidden="true">` — 항상 잉크색(B8 규율). clock형: `MM:SS` / `H:MM:SS` / up이면 `+MM:SS`.
+- **적응 틱 내장**(SG-D3): 타깃까지 >10분 = 30초, ≤10분 = 1초, up 모드 = 1초 — 전부 `document.visibilityState==='visible'` 한정 + visibility 재계산(레포의 배너/카운트다운 규율과 동일 문법, 복사본 아닌 단일 소유).
+- 성능: 틱 리렌더는 이 서브트리에 격리 — HomeTab·NowCard 본체는 상태 전이 때만(기존 `key={result.state}` 재마운트 유지).
+- 접근성(SG-D18): 본체 aria-hidden. 분기점(T-10/T-5/T-1) 안내용 sr-only status는 **NowCard가 `<section>` 밖 sibling으로 소유**(루트 aria-atomic과의 이중 낭독 회피).
+- 모션: 숫자 전이 애니메이션 금지.
 
 ---
 
@@ -192,21 +202,84 @@ overdue 캡슐·배너 정합까지 테스트 확장 필수.
 
 ## F. 사진 체계
 
-v1.0 유지 + 개정 4:
+### F-1. 밴드 스펙 (SG-D9)
 
-1. **폴백은 스와치 필수**(SG-D9) — onError 밴드 제거는 실패 케이스 CLS≠0. 게이트 ③에 죽은 URL 케이스 포함.
-2. **`next_stop_image` 단일 필드 → `stop_images: Record<poiKey, url>` 맵** — 스냅샷 시점 고정 단일 필드는 클라이언트 nextStop 전진 시 **다른 스톱 사진**을 띄운다(P2 #19). 클라이언트가 키로 고른다.
-3. **4c(firstImage→`poiImageCandidates` 통일)를 4b보다 먼저** — 4b가 그 코드(`poiContent.server.ts:70-83`) 위에 얹힌다(P2 #29).
-4. **SW 캐시 위치·모드:** 신규 규칙은 현행 cross-origin 조기 반환(`sw-tour-mode.js:50`) **앞**에 서야 하고, `<img>` no-cors의 opaque 응답은
-   항목당 ~7MB 쿼터 패딩이라 **SW에서 cors 모드로 재요청 후 캐시**(P2 #24). 공개 버킷 호스트 화이트리스트 + 12항목 LRU 유지.
+NowCard 최상단(모든 행 위), 사진 있을 때만:
 
-집합 사진 파이프라인(F-3)·차량 사진 출구(F-4)는 v1.0 그대로.
+```tsx
+{photoUrl && (
+  <div className="tr-hero-media -mx-4 -mt-4 mb-3 h-36 overflow-hidden rounded-t-[inherit]">
+    {imageFailed
+      ? <div className="h-full w-full" style={{ background: avatarColorFor(poiKey) }} />   /* 스와치 필수 — PoiThumb 문법 */
+      : <img src={photoUrl} alt="" className="h-full w-full object-cover"
+             fetchPriority="high" onError={() => setImageFailed(true)} />}
+  </div>
+)}
+```
+
+- **글자를 사진에 얹지 않는다** — 스크림 금지, 텍스트는 카드 표면(검증된 대비 쌍 무손상).
+- 높이 144px 고정 + **onError는 밴드 제거가 아니라 스와치** — 제거는 정확히 실패 케이스에서 CLS≠0(P2 #18). 게이트 ③에 죽은 URL 케이스 포함.
+- 홈 최상단 1장만 `fetchPriority="high"`. `contrast` 스킨: `.tr-root[data-tr-skin='contrast'] .tr-hero-media { display:none; }`.
+- 채팅 SpotArrivalCard는 무변경(렌더 재설계 금지) — 같은 `SpotArrivalContent` 계약을 읽되 렌더만 다르다. onError 결함 수정 1건만 버그픽스 예외(§J).
+
+### F-2. 상태별 소스와 단계
+
+| 상태 | 소스 | 단계 |
+|---|---|---|
+| `arrived` | `latestArrival`이 읽는 메시지 meta의 `content.image` — **네트워크 0** | 4a |
+| `moving` / `lobby` | snapshot **`stop_images: Record<poiKey, url>` 맵** — 단일 필드는 클라이언트 nextStop 전진 시 **다른 스톱 사진**을 띄운다(P2 #19). 클라이언트가 키로 고른다 | 4b |
+| `free_time` / `rally` | 집합 장소 사진(§F-3) — verified만 | 4d |
+| `pickup_window` | 차량 사진(§F-4) | 5c |
+| `ended` | 무변경 (X17 recap 소유) | — |
+
+하이진: `poiContent.server.ts:70-83`의 `firstImage`는 `poiImage.ts` 체인의 사본 → `poiImageCandidates`로 통일하되 **4b보다 먼저**(4c — 같은 코드를 두 번 만지지 않게, P2 #29).
+
+**SW 캐시(4e):** 신규 규칙은 현행 cross-origin 조기 반환(`sw-tour-mode.js:50`) **앞**에 서야 하고, `<img>` no-cors의 opaque 응답은
+항목당 ~7MB 쿼터 패딩이라 **SW에서 cors 모드로 재요청 후 캐시**(P2 #24). 공개 버킷 호스트 화이트리스트 + 12항목 LRU. HTML/API network-only 원칙 무변경.
+
+### F-3. 집합 장소 사진 파이프라인 (SG-D10)
+
+- **마이그레이션(additive):** `tour_poi_arrival_profiles`에 `meeting_photo_path text` · `meeting_photo_status text check ('pending','verified','rejected') default 'pending'` · `meeting_photo_meta jsonb`(촬영자 role·시각·좌표). 공개 버킷 `tour-meeting-points`(공개 read — 집합 장소 사진은 PII 아님; 서명 URL은 SW 캐시와 상성 불량이라 배제. **N-6 승인됨**).
+- **수집:** 콕핏 지오펜스 도착(onArrival `Cockpit.tsx:529-539`) + 해당 poi_key 프로필에 verified 사진 없음 → 도착 프롬프트/시트에 보조 버튼 **[집합장소 사진]** — `sendVehiclePhoto`(`:908-925`)와 동일 카메라 입력 재사용, 전송처만 신규 `POST /api/tour-rooms/[bookingId]/meeting-photo`(guide|driver|admin, multipart → 버킷 + 프로필 pending upsert). **기사가 첫 방문에 한 번 찍으면 그 POI는 영구 해결.**
+- **검수:** facility_pins의 is_verified 큐 문법 복제 — `/admin/meeting-photos`(pending → 승인/반려). 서빙은 verified만.
+- **서빙:** free/rally hero 밴드 + arrival bundle 집합 섹션. 없으면 오늘 화면 그대로.
+
+### F-4. 차량 사진 손님 출구 (SG-5c)
+
+`GET /api/tour-rooms/[bookingId]/vehicle-photo` — 룸 세션 검증 → `ops_room_vehicles.photo_path` → 60분 서명 URL(프라이빗 버킷 유지 — 마이그레이션 `20260731090000` 주석의 "조회는 단기 서명 URL로만" 준수). `pickup_window` hero + T-10 카드 소비. SW 캐시 제외.
 
 ---
 
 ## G. 발화 대기열 v1
 
-v1.0 유지 + 개정 3:
+**핵심: 신규 전송 경로 0. 리졸버 + 카드 하나.** X15 도착 프롬프트를 흡수·일반화한다.
+
+### G-1. 리졸버 `lib/tour-room/sayQueue.ts` (순수 함수)
+
+```ts
+interface SayInput {
+  nowMs: number; lifecycle: RoomLifecycle;
+  schedule: { title: string; poiKey?: string|null; time?: string|null }[];
+  notice: NoticeState | null;
+  geofenceArrival: { spotId: string; title: string } | null;
+  firedSubjects: ReadonlySet<string>;            // 정본 = 이벤트 subject (snapshot 동봉, §G 개정 2)
+}
+type SayItem = {
+  subject: string;                               // say:{kstDay}:{key}
+  kind: 'arrival_bundle' | 'preset' | 'return_time' | 'briefing';
+  presetKey?: string;                            // 기존 DRIVER_QUICK_REPLIES 키만
+  urgency: 'required' | 'suggested';
+  deadlineMs?: number;                           // 표시용 — 자동발사 아님
+  spotTitle?: string;
+};
+sayQueue(input): SayItem[]                        // 최대 4 — 넘으면 실패
+```
+
+랭킹: ① required — 지오펜스 도착 & 미발사 → `arrival_bundle` · 도착 & 타이머 없음 → `return_time` · 하루 첫 운행 → `briefing`
+② suggested — 스케줄 레그 파생: 출발 5분 전 `departing_soon` · 출발 직후 `seatbelt_check` · 마지막 스톱 접근 `check_belongings` · 90분 무정차 `rest_stop`.
+발사 = 기존 경로 그대로(`openArrivalSheet` · 콕핏 독 프리셋 전송 · `setSheet('return')` · `sendMorningBriefing`). dismiss → `say_dismissed` 이벤트. required 마감 경과 → `say_expired` 이벤트만(자동발사 없음 — N-5).
+
+### G-2. v1.1 개정 3:
 
 1. **기본 접힘 1줄 필** — required 발생 시에만 X15처럼 일시 확장(SG-D11). arrivalPrompt 슬롯은 원래 일시적 오버레이고 toast(`z-20`)가 같은 자리를 쓴다 — 상시 스택은 주행 표면 다운그레이드다.
 2. **이벤트 읽기/쓰기 경로 명세**(v1.0 부재 — P1 #11): 읽기 = snapshot이 오늘의 say 관련 `subject_key` 목록을 동봉(서버가 `listRoomEvents` 조회).
@@ -220,19 +293,44 @@ v1.0 유지 + 개정 3:
 
 ## H. 신뢰 회계
 
-v1.0 유지 + 개정 2 (P1 #16):
+### H-1. 오늘의 나 (SG-D12)
 
-1. **오늘의 나 집계는 rally 체인 단위** — resolution `extended`로 대체된 notice는 체인 1건으로 접는다(연장이 분모를 부풀리지 않게).
-   정시 = 체인 중 `departed` 없이 닫힌 비율. **7a는 2b·2c 이후**(departed·extended 이벤트가 생긴 뒤에야 의미).
-2. 발사 신뢰도(콕핏+손님 2중화로도 둘 다 잠든 극단은 미발사)는 지표 각주로 정직 기록.
+`day-summary/route.ts` 확장 — 기존 visited/span/money에 4행 추가(전부 기존 데이터 파생, LLM 0):
 
-온보딩(H-2)·E3/E4(H-3)는 v1.0 그대로 — 단 N-3 제외 확정으로 **E3 v2(사진·연차)와 온보딩 연차 표기는 트랙에서 삭제**, 텍스트 귀속이 최종형.
+| 지표 | 파생 |
+|---|---|
+| 정시 | **rally 체인 단위** — resolution `extended`로 대체된 notice는 체인 1건으로 접고(연장이 분모를 부풀리지 않게), 체인 중 `departed` 없이 닫힌 비율 |
+| 응답 | `guest_*` 신호 이벤트 → 이후 10분 내 스태프 발신 메시지까지 중앙값 초 |
+| 해설 | `spot_arrival`/`arrival_bundle` 메시지 수 |
+| 사진 | 스태프 발신 이미지 메시지 수 |
+
+콕핏 `오늘 요약` 시트(`:2159-2219`)에 4스탯 그리드 추가. **순위 없음, 비교 없음, 개별 손님 연결 없음.** **7a는 2b·2c 이후**(departed·extended 이벤트가 생긴 뒤에야 의미).
+각주로 정직 기록: 콕핏+손님 2중화로도 둘 다 잠든 극단은 미발사 → 정시 지표는 상한 추정치다.
+
+### H-2. D-1 온보딩 3장 (SG-D13·14)
+
+`components/tour-mode/OnboardingCards.tsx` — 조건: `customer && lifecycle==='lobby' && daysUntil<=1 && !localStorage[onboard:{bookingId}]`.
+①"기사님은 영어를 하지 않습니다 — 의도된 것입니다" + 기사 이름(차량 라인 데이터, **연차 표기 없음 — N-3 제외**) ② 신호 버튼 실습(**로컬 에코, 전송 0**)
+③ 코디 소개(**운영시간 미표기 — N-4**) + 확인 체크. 기본 카피로 진행, 문구는 교체 가능 슬롯.
+
+### H-3. E3 기사 귀속 · E4 포함된 것
+
+- **E3 최종형(텍스트)**: 도착 카드·해설 재생 버튼 옆 "{driver_name} 기사님의 안내" — `vehicleLineFromPayload`(`LobbyCard.tsx:122-139`)가 이름 보유. 사진·연차는 **N-3 제외로 트랙에서 삭제.**
+- **E4**: LobbyCard + 픽업 T-30 카드에 "충전기 · 와이파이 · 생수 · 우산이 준비되어 있습니다" 사전 번역 한 줄(D4 — 안 보이면 그냥 손실). 고정 문구 v1.
 
 ---
 
-## I. 데이터·스키마 변경
+## I. 데이터·스키마 변경 (전부 additive)
 
-v1.0 그대로 (마이그레이션 1 + 버킷 1 + 코드만 3). N-6 승인됨(§N).
+| # | 변경 | 형태 |
+|---|---|---|
+| 1 | `tour_poi_arrival_profiles` + `meeting_photo_path/status/meta` | 마이그레이션 1건 |
+| 2 | 공개 버킷 `tour-meeting-points` | storage (**N-6 승인됨**) |
+| 3 | `tour_room_events` 신규 type/subject (`rally:{id}:resolution`·`rally:{id}:remind`·`say_*`) | **불필요** — type은 자유 문자열(`events.ts:19`), UNIQUE 인덱스 기존재 |
+| 4 | snapshot 응답 `server_now_ms` · `stop_images` · say subjects | 코드만 |
+| 5 | 차량 사진 손님 출구 | 코드만 (서명 URL) |
+
+DDL 후 `get_advisors` 재실행. 투어룸은 서비스롤 경유라 RLS 어드바이저 무관(기존 확인).
 
 ---
 
@@ -303,8 +401,14 @@ snapshot 라우트(`server_now_ms`·`stop_images`·say subjects) · sw-tour-mode
 
 ## M. 하지 말 것 / 보류
 
-v1.0 전체 유지 + 추가 2: **E3 v2(기사 사진·연차)와 온보딩 연차 표기 — N-3 제외 확정으로 트랙에서 삭제** ·
-**rally 발사의 서버 크론 폴백**(콕핏+손님 모두 잠든 극단 — per-minute 크론은 새 인프라, v2에서 재평가; §H-1 각주로 정직 기록).
+**금지(원칙):** 실시간 자유 번역 주경로 · 앱 설치 강제 · 순위표 · 게이미피케이션/체류 최적화 · 기사에게 판단을 요구하는 UI ·
+지킬 수 없는 숫자(고정 응답 시간, 24/7) · 모르는 값 채우기 · 채팅/재질/스킨 변경(§J 버그픽스 예외 1건만) · `.tr-numeral` 크기 변형.
+
+**보류(사유):** 버스 좌석 보드·3상태 인원(도어 비콘/QR 하드웨어 — v2) · SMS/WhatsApp 알림 폴백(발송 인프라 계약) ·
+T+7 자동 음성 콜(텔레포니 부재 — T-10/T+5 푸시가 v1 대체) · **rally 발사 서버 크론 폴백**(콕핏+손님 모두 잠든 극단 — per-minute 크론은 새 인프라, v2 재평가) ·
+자동 발사(N-5 — `say_expired` 수집 후 재결정) · 개인별 알림 오프셋(서버 스케줄링 필요) · 자동 앨범(서명 URL 스토리지 정책) ·
+**E3 v2 기사 사진·연차 + 온보딩 연차 표기(N-3 제외 확정 — 트랙에서 삭제)** · 코디 상태 3단 연동(관제 트랙 O2) ·
+TTS 슬롯 문장·발음 사전(콘텐츠 제작 트랙) · 스태프 `text-4xl` 2건의 tr-numeral 이관(U-D2 관제 타이포 트랙).
 
 ---
 
