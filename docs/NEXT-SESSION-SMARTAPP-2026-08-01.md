@@ -1,0 +1,224 @@
+# 다음 세션 부트스트랩 — 스마트앱 / 관제 통합 트랙 (2026-08-01)
+
+> **이 트랙을 이어받으면 이 문서를 먼저 읽는다. 그 다음 §3 의 첫 명령을 친다.**
+> 직전 세션 기록: `docs/SESSION-STATE-2026-07-31.md`
+> 플래너 정본: `docs/planner-overhaul-p7-master-plan-2026-07-30.md` (§F 실행 로그가 결과)
+> 트랙 SoT(왜): `docs/ops-staff-design-unification-master-plan-2026-07-27.md` (Part A~O)
+> 사장님 결정: `docs/OWNER-DECISIONS-2026-07-29.md`
+
+---
+
+## §1 지금 상태 한 문단
+
+직전 세션(2026-07-30 야간)에 **PR 21건 머지(#615~#635)**. **P7 플래너 전면 재편 10단계 전부**와
+잔여 목록의 **[1]~[5]**(K4v2 Phase 2~4 · X15 · X18 · X20 · N3잔여+N8)를 끝냈다.
+게이트: `tsc` **0** · `jest __tests__` **5,472 pass / 실패 0** · `npm run build` **exit 0** ·
+시뮬레이션 **완전 드레인**.
+
+**다음 착수는 §4 의 [6] X1 잔여부터.** 순서대로 간다.
+
+---
+
+## §2 작업 환경 (여기서 시간을 제일 많이 잃는다)
+
+| 항목 | 값 |
+|---|---|
+| 워크트리 | **전용 워크트리에서 작업.** 메인 디렉터리는 타 세션과 경합하고 그 `node_modules` 는 손상 상태 |
+| 직전 세션이 쓴 워크트리 | `C:/Users/sangsong/atockorea/.claude/worktrees/smartapp-control-integration-628681` (node_modules·`.env.local` 정상) |
+| `.env.local` | 워크트리에 없으면 `cp C:/Users/sangsong/atockorea/.env.local .env.local`, `NEXT_PUBLIC_TOUR_MODE_V1=1` 확인 |
+| dev 실행 | `npx next dev --webpack -p 3181` — **Turbopack 은 이 레포에서 즉사** |
+| 빌드 | `npm run build` 만. bare `next build` 는 Turbopack 과 충돌 |
+| 포트 | 재시작 전 **반드시 포트가 비었는지 확인**(안 죽은 서버가 옛 HTML 을 서빙한다) |
+
+### 🔴 직전 세션에서 실제로 시간을 태운 함정
+
+1. **워크트리 dev 는 HMR 이 안 먹는다.** 컴포넌트/CSS 고치면 **서버 재시작**.
+2. **`git add -A` 금지, 경로 명시.** 워크트리를 공유한다.
+3. **heredoc 으로 정규식·한글·백틱 든 파일 고치지 말 것.** 백슬래시가 먹힌다 → `Edit` 도구를 쓴다.
+4. **`jest.fn()` 은 `toBeInstanceOf(Function)` 을 만족하지 않는다**(mock 팩토리 realm). `typeof === 'function'` 으로.
+5. **생성되는 문서에 손으로 쓰지 말 것.** `docs/audit/K4-coverage.md` 는 `gen-k4-coverage.ts` 소유 + `--check` 게이트.
+   **문서만 고쳤어도 게이트를 다시 돈다** — 이걸 어겨서 회귀를 한 번 머지했다.
+
+---
+
+## §3 첫 명령
+
+```bash
+git fetch origin main && git checkout -B <새-브랜치> origin/main
+npx tsc --noEmit
+npx jest __tests__
+npm run build > /tmp/b.log 2>&1; echo "BUILD_EXIT=$?"
+```
+
+기대값: **tsc 0 · 5,472 pass · BUILD_EXIT=0.** 안 맞으면 그것부터.
+
+---
+
+## §4 남은 것 — 이 순서대로
+
+> 앞 세션이 [1]~[5] 를 처리했다. 아래가 **진짜 잔여 전량**이다.
+
+| # | 티켓 | 한 줄 | 착수 전 확인 |
+|---|---|---|---|
+| **6** | **X1 잔여** | CJK 줄바꿈 — certain **576** + suspect **428**. 이번엔 `.text-cjk-body` 패스(nowrap 아님) | 스캐너 정확도는 이미 고쳤다. 가리키는 곳이 진짜다 |
+| 7 | **X7** | 무테스트 라우트 59개 중 **쓰기 동사 + 손님/기사 노출**부터 | G-p 로 하니스가 싸졌다(Response.json / TextEncoder 폴리필) |
+| 8 | **X12** | 무테스트 컴포넌트 13개 중 **정산·일정확정부터**(돈과 확정 경로) | |
+| 9 | **X10** | 전역 44px 규칙이 짧은 라벨 앵커를 덩어리로 만드는 지점 스윕 | 패턴은 `NavBrandButton`(시각/히트 분리) |
+| 10 | **X9** | 재감사 walk — 손님 홈/채팅/설정 + 관제 홈/예약 전후 컷 | |
+| 11 | **X8** | dead export 정리 + `lib/ops/tax/withholding.ts` 세율 상수 **중복 정의 여부 확인** | ⚠ **세무는 자율 수정 금지 — 보고만** |
+| 12 | **X11** | UCP 매니페스트 · agents.md | |
+| 13 | **X19** | 실행 로그를 티켓 표에서 **생성** | ⚠ 선행: 표 형식 정규화(취소선·✅·서술이 섞여 파싱 불가) |
+| 14 | **T0** | 기사·가이드·콕핏 전 표면 재감사 → 3키워드 채점표 | |
+| 15 | **T1v2** | 기사 모드 통합·제거(U-D6v2) — `/tour-mode/driver` 를 PIN 게이트 후 `GuideConsole`(role='driver' PII 마스킹)로. `DriverConsole` 화면 삭제 | 사장님 확정 결정 |
+| 16 | **T3** | 서랍 미디어 페이지네이션 + Lightbox Esc 중첩 닫힘 | |
+| 17 | **T5** | T0 발견분 | |
+| 18 | **O6** | 관제 최종 게이트 — 스킨×다크 매트릭스 + 적대적 시각 리뷰 | |
+| 19 | **R6** | 사용설명서·애니메이션 파이프라인(Playwright recordVideo + ffmpeg) | |
+
+**P7 잔여(작음, 명시적으로 안 한 것):**
+- **타임라인 리본**(스톱 사이 세로 실선) — 리스트 **재정렬 애니메이션**(P7.5 의 남은 ④)과 같이 설계할 것
+- **히어로 96px + 스크롤 시 크롬 융합**(§H-6) — 여백만 조였고 **스크롤 연동 축소는 미구현**
+- 코스 탭 스크롤 4,496 → **5,019px**(사진값). 줄이려면 스트립 높이(92px)가 한 줄
+
+**사장님 게이트(코드 아님):**
+1. **K2** — Supabase·Vercel 콘솔에서 실시간 동시연결 · 함수 동시실행 상한
+2. **커밋 버튼 색** — P7.2 가 accent 워시+링으로 갔다(이전엔 작고 진한 초록). 되돌리려면 한 줄
+3. **사진 없는 POI 49곳**(실제 47, `_metadata` 2개 제외) — `npx tsx scripts/qa-poi-image-coverage.ts` 가 목록 출력
+
+---
+
+## §5 🔴 이 트랙의 **지배적 결함 유형** — 착수 전에 이걸 먼저 의심하라
+
+직전 세션에서 **같은 모양이 다섯 번** 나왔다. 전부 "만드는 문제"가 아니라 **"연결하는 문제"** 였고,
+**전부 테스트가 초록이었다.**
+
+| 겉보기 | 실제 |
+|---|---|
+| 플래너에 "사진이 없다" | 두 컬럼 중 **하나만 읽음** (8.9% vs 60.5%) |
+| 글자 크기 설정이 "안 먹는다" | 셸 계약을 **소비 안 함** |
+| 스태프 지오펜스가 "없다" | 엔진 있음(테스트까지), **소비처가 손님뿐** |
+| 매트릭스가 "빈 테이블" | 도착 테이블 **둘 중 하나만 읽음** |
+| 대화 코퍼스 "미착수" | 모듈 413줄 + 테스트 400줄 있음, **아무도 안 부름** |
+
+**단위 테스트로는 못 잡는다** — 결함이 *호출자의 부재*라서 모듈 안에서는 보이지 않는다.
+→ **소스 게이트**로 막고 **뮤테이션 테스트**로 무는지 확인할 것.
+
+그리고 **"미착수"라고 적힌 것을 믿지 말 것.** 이 트랙은 그걸 **일곱 번** 틀리게 적었다
+(P0·P1·P2·P3·P4 · X15 지오펜스 · N-f 레이어 분리). **착수 전 5분 grep 이 라운드를 아낀다.**
+
+---
+
+## §6 게이트가 조용해지는 두 가지 (직전 세션이 둘 다 저지를 뻔했다)
+
+**① 주석 안의 중괄호.** `--tr-plan-shadow-{soft,card,button}` 이라고 **주석에** 썼더니
+`skinContrast` 의 브레이스 파서가 어긋나 플래너 토큰이 통째로 사라졌다 →
+**"아무것도 안 재면서 초록".** 이제 스캔 전 주석을 제거한다.
+
+**② `var()` 별칭.** 값 중복을 없애려 별칭을 걸자 게이트가 읽는 값이 문자열 `var(...)` 가 되고
+WCAG 계산이 **NaN**, 그리고 **NaN 은 건너뛴다.** 이제 리졸버가 역참조하고 미해결 var 는 실패한다.
+
+> **게이트를 죽이는 건 보통 코드가 아니라 그 옆의 것이다 — 산문·별칭·리팩터.**
+
+---
+
+## §7 머지 전 게이트 (전부 통과해야)
+
+```bash
+npx tsc --noEmit
+npx jest __tests__
+npx jest skinContrast typeDiscipline shellStackingContext chipBoundary bottomEdgeOwnership \
+         plannerMaterial plannerLocales atmosphereScope ragHarvestWiring
+npm run build > /tmp/build.log 2>&1; echo "BUILD_EXIT=$?"   # 🔴 종료 코드로 확인, grep 아님
+```
+
+UI 를 건드렸으면 **Playwright 전후 컷**. 코드 읽고 "고쳤다"고 하지 않는다.
+
+### 하니스
+
+| 스크립트 | 무엇 |
+|---|---|
+| `scripts/qa-planner-walk.mjs` | 🔴 플래너 편집기. **게이트 셋을 전부 처리한다** |
+| `scripts/qa-poi-image-coverage.ts` | POI 사진 커버리지(대소문자 엄격) |
+| `scripts/k4-seed.ts` + `k4-run.ts` | 20방 전 기능 커버리지(`--free` = 모델 비용 0) |
+| `qa-smartapp-walk.mjs` · `qa-cockpit-walk.mjs` · `qa-ops-walk.mjs` | 손님·콕핏·관제 |
+| `qa-cjk-scan.ts` | X1 용 |
+
+### 🔴 플래너를 볼 때 게이트는 **셋**이다 (플랜은 둘이라 적었다)
+
+1. **전세(vehicle) 상품**이어야 편집기가 뜬다 — 기본 시뮬은 고정 일정 → 읽기전용 뷰
+2. **룸 토큰 `?rt=`** 없으면 "링크를 열 수 없어요"(플랜에 없던 것)
+3. **lead** 여야 편집된다 — 새 브라우저 프로필은 비-lead
+
+전부 `qa-planner-walk.mjs` 에 박혀 있고, **편집기가 아니면 exit 2** 로 죽는다.
+⚠ `--apply` 는 **시드를 변형**한다. 적용한 다음 실행 전에 **재시드**할 것.
+
+### 시뮬레이션
+
+```bash
+ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts     # 2방
+ALLOW_SIM_SEED=1 npx tsx scripts/k4-seed.ts          # 20방
+npx tsx scripts/sim-tour-day.ts --cleanup            # 🔴 둘 다 이걸로 드레인
+```
+
+**드레인 경로는 하나다.** k4 시더도 같은 `sim_tag` 를 쓰므로 위 명령이 다 지운다.
+
+---
+
+## §8 커밋 규칙
+
+- 푸터는 `Co-Authored-By: Claude <noreply@anthropic.com>` **만** — 모델 식별자 금지
+- 진행 보고는 **한국어**, 코드·커밋은 영어
+- `git add -A` 금지, **경로 명시**
+- `gh` 없음 → GitHub REST API(`git credential fill` 로 토큰)
+
+---
+
+## §9 다음 세션 실행 프롬프트 (그대로 복사)
+
+```text
+스마트앱/관제 통합 트랙을 이어서 진행해줘.
+
+■ 먼저 이 넷을 본문 전체로 읽어 (요약본 말고)
+  1. docs/NEXT-SESSION-SMARTAPP-2026-08-01.md   ← 🔴 이번 세션의 부트스트랩. 무엇부터·함정·게이트
+  2. docs/SESSION-STATE-2026-07-31.md           직전 세션이 뭘 했고 뭘 배웠나 (교훈 20~26)
+  3. docs/OWNER-DECISIONS-2026-07-29.md         사장님 결정 8건
+  4. docs/ops-staff-design-unification-master-plan-2026-07-27.md   왜 (Part A~O, 배경)
+  어긋나면 ①의 §4 순서가 정본이야.
+
+■ 셋업
+  1) 🔴 pwd 확인. 전용 워크트리에서 작업해라 (메인 저장소 node_modules 는 손상 상태)
+  2) .env.local 복사 · NEXT_PUBLIC_TOUR_MODE_V1=1 확인
+  3) git fetch origin main && git checkout -B <새브랜치> origin/main
+  4) 기준선: npx tsc --noEmit → 0 / npx jest __tests__ → 5,472 pass
+     안 맞으면 그것부터.
+
+■ 🔴 착수 전에 이걸 먼저 의심해라 (지난 세션 다섯 번 다 이거였다)
+  "없다 / 안 된다 / 미착수" 라고 적힌 것의 절반은 **이미 있고 연결만 안 돼 있다.**
+  플래너 사진(두 컬럼 중 하나만 읽음) · 글자크기(셸 계약 미소비) ·
+  지오펜스(엔진 있는데 소비처가 손님뿐) · 매트릭스(테이블 둘 중 하나) ·
+  코퍼스(413줄 모듈을 아무도 안 부름).
+  전부 테스트는 초록이었다 — 결함이 "호출자의 부재"라 단위 테스트로 안 잡힌다.
+  → 착수 전 5분 grep. 그리고 소스 게이트 + 뮤테이션 테스트로 막아라.
+
+■ 순서 — §4 표 그대로. 한 티켓씩 PR 내고 머지해라
+  [6] X1 잔여(certain 576 + suspect 428, .text-cjk-body 패스)
+  [7] X7 → [8] X12 → [9] X10 → [10] X9 → [11] X8(⚠세무는 보고만) →
+  [12] X11 → [13] X19(표 정규화 선행) → [14] T0 → [15] T1v2 →
+  [16] T3 → [17] T5 → [18] O6 → [19] R6
+
+■ 매 티켓마다
+  - 게이트: tsc · jest __tests__ · 디자인 게이트 9종 · npm run build(**종료 코드**로 확인)
+  - UI 건드렸으면 Playwright 전후 컷. 컷도 거짓말할 수 있으니 §2 함정을 먼저 읽어라
+  - 숫자는 잰 건지 계산한 건지 문장에 표시
+  - 🔴 생성되는 문서(K4-coverage.md 등)에 손으로 쓰지 마라. 문서만 고쳐도 게이트를 다시 돌려라
+  - 티켓 끝나면 PR·머지 + 해당 플랜 §F 실행 로그 갱신
+  - 커밋 푸터는 Co-Authored-By: Claude <noreply@anthropic.com> 만. git add -A 금지, 경로 명시
+
+■ 막히면
+  블로킹이면 그 단계만 사유 적고 건너뛰고 다음으로. 전체를 멈추지 마.
+  건너뛴 건 전부 마지막 보고에 모아서.
+
+■ 보고
+  끝낸 것 · 건너뛴 것과 사유 · 사장님이 결정할 것 · UI 변경은 전후 컷 ·
+  측정치는 조건과 함께. 🔴 사장님이 읽을 문장으로. 티켓 코드를 표 첫 칸에 놓지 마.
+```
