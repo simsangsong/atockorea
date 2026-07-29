@@ -360,3 +360,39 @@ describe('plannerMotionVocabulary (P7.5 H-5)', () => {
     }
   });
 });
+
+/**
+ * P7.6 — the course cards are how a guest picks their day, and they were three
+ * identical cards with no photograph of anywhere.
+ */
+describe('plannerCourseCards (P7.6)', () => {
+  it('a course card shows photos of its own stops', () => {
+    expect(PLANNER).toContain('courseHeroPois');
+    const idx = PLANNER.indexOf('data-testid={`plan-course-option-${course.index}`}');
+    expect(idx).toBeGreaterThan(-1);
+    expect(PLANNER.slice(idx, idx + 1800)).toContain('<PoiThumb');
+  });
+
+  /**
+   * 🔴 The strip must be built from POIs that RESOLVE, like the preview line.
+   * `constituent_pois` can name POIs outside the loaded region, and keeping
+   * them rendered a tinted initial taken from a database key ("U", "M") beside
+   * a preview naming three different places.
+   */
+  it('the strip resolves POIs before taking three, not after', () => {
+    const memo = PLANNER.slice(PLANNER.indexOf('const courseHeroPois'), PLANNER.indexOf('const courseHeroPois') + 1600);
+    const filterAt = memo.indexOf('.filter(');
+    const sliceAt = memo.indexOf('.slice(0, 3)');
+    expect(filterAt).toBeGreaterThan(-1);
+    expect(sliceAt).toBeGreaterThan(-1);
+    expect(filterAt).toBeLessThan(sliceAt);
+  });
+
+  /** A place name that stops mid-word cannot be chosen between. */
+  it('picker place names wrap instead of truncating, and break on CJK word boundaries', () => {
+    const idx = PLANNER.indexOf('tr-plan-line-clamp-2 text-cjk-body');
+    expect(idx).toBeGreaterThan(-1);
+    // The old single-line truncate must be gone from that row.
+    expect(PLANNER).not.toContain('tr-card-text truncate font-medium');
+  });
+});
