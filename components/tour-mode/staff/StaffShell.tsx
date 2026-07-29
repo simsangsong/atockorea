@@ -173,7 +173,11 @@ export default function StaffShell({
         </header>
 
         {/* ---- Tab panels -------------------------------------------- */}
-        <div className="relative flex min-h-0 flex-1 flex-col">
+        {/* N8 — the same one light source the guest room has (N-j). Bounded
+            pane, so the sky sits where a phone's own reflection would.
+            ⚠ Cockpit is deliberately excluded: it is dark-fixed BECAUSE of
+            night-driving glare (A5), and laying a glow over it undoes that. */}
+        <div className="tr-atmos relative flex min-h-0 flex-1 flex-col">
           {/* T-D5 — skin scenery behind the staff panels too (same wallpaper
               grammar as the guest room; contrast skin renders nothing). */}
           <SkinScenery skin={deviceSettings.skin} dark={theme === 'dark'} />
