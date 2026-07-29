@@ -1288,7 +1288,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         data-tr-skin={surfaceSkin}
       >
         <div className="tr-safe-bottom mx-auto w-full max-w-xl px-4 pt-4">
-          <header className="tr-plan-hero">
+          <header className="tr-atmos tr-plan-hero">
             <div className="flex items-start justify-between gap-4">
               <div className="min-w-0">
                 <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">{fx.eyebrow}</p>
@@ -1354,7 +1354,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     >
       <div className="mx-auto w-full max-w-xl px-4 pt-4">
         {/* header */}
-        <header className="tr-plan-hero">
+        <header className="tr-atmos tr-plan-hero">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="tr-meta font-bold uppercase text-[var(--tr-plan-hero-muted)]">Smart guide planner</p>

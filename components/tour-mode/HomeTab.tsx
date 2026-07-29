@@ -638,7 +638,7 @@ export default function HomeTab({
       tone === 'danger' ? 'tr-chip--danger' : tone === 'accent' ? 'tr-chip--accent' : 'tr-chip--base'
     }`;
 
-  const renderTile = (tile: Tile) =>
+  const renderTile = (tile: Tile, fullWidth = false) =>
     tile.href && tile.external ? (
       <a
         key={tile.key}
@@ -646,12 +646,12 @@ export default function HomeTab({
         target="_blank"
         rel="noopener noreferrer"
         data-testid={`home-tile-${tile.key}`}
-        className={tileClass}
+        className={fullWidth ? `${tileClass} col-span-3` : tileClass}
       >
         {tileInner(tile)}
       </a>
     ) : tile.href ? (
-      <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={tileClass}>
+      <Link key={tile.key} href={tile.href} data-testid={`home-tile-${tile.key}`} className={fullWidth ? `${tileClass} col-span-3` : tileClass}>
         {tileInner(tile)}
       </Link>
     ) : (
@@ -660,7 +660,7 @@ export default function HomeTab({
         type="button"
         onClick={tile.onPress}
         data-testid={`home-tile-${tile.key}`}
-        className={tileClass}
+        className={fullWidth ? `${tileClass} col-span-3` : tileClass}
       >
         {tileInner(tile)}
       </button>
@@ -853,14 +853,26 @@ export default function HomeTab({
         onFocusCapture={() => setMoreOpen(true)}
       >
         <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5">
-          {tiles.slice(0, PEEK_COUNT).map(renderTile)}
+          {tiles.slice(0, PEEK_COUNT).map((tile) => renderTile(tile))}
         </div>
         {tiles.length > PEEK_COUNT && (
           <div
             className={`mt-1.5 grid grid-cols-3 gap-1.5 ${moreOpen ? '' : 'tr-home-grid-peek'}`}
             data-testid="home-grid-rest"
           >
-            {tiles.slice(PEEK_COUNT).map(renderTile)}
+            {/* 🔴 N-b — the orphan row.
+                The tile count is conditional (5 to 10 depending on lifecycle,
+                privacy, concierge and whether a review link exists), so at 7 or
+                10 tiles the last row holds exactly ONE and the grid reads as
+                unfinished. I7's peek moved where the break falls; it did not
+                remove the possibility.
+                The stranded tile is always SOS — it is pushed last — so rather
+                than leaving it hanging in a third of a row, it takes the whole
+                row. An emergency action owning its own line reads as deliberate
+                where a single orphaned square reads as a bug. */}
+            {tiles.slice(PEEK_COUNT).map((tile, index, rest) =>
+              renderTile(tile, index === rest.length - 1 && rest.length % 3 === 1),
+            )}
           </div>
         )}
       </div>

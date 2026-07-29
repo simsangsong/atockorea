@@ -1818,6 +1818,23 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
+  /**
+   * 🔴 N8 — `z-index: -1` is what makes this class safe to put on a fourth,
+   * fifth and sixth surface.
+   *
+   * A positioned pseudo-element paints ABOVE non-positioned in-flow content,
+   * so without this the light washes over the text it is meant to sit behind.
+   * The room got away with it only because its panel wrapper happens to carry
+   * `z-[1]` — an unwritten contract that the next consumer cannot know about,
+   * and exactly the shape of the X13 bug where `body::before` painted over the
+   * entry screen and `getComputedStyle` still reported the heading visible.
+   *
+   * Negative z-index paints above the parent's own background and below its
+   * content, which is where a light source belongs. `.tr-atmos` keeps
+   * `position: relative` with `z-index: auto`, so no stacking context is
+   * created and the R8 overlay trap stays fixed.
+   */
+  z-index: -1;
   background:
     radial-gradient(120% 62% at 50% -12%, var(--tr-accent-soft) 0%, transparent 68%),
     radial-gradient(90% 40% at 50% 108%, rgba(0, 0, 0, 0.05) 0%, transparent 72%);
