@@ -22,7 +22,10 @@ import {
   SSE_POLL_MAX_MS,
   SSE_POLL_MIN_MS,
   SSE_RECONNECT_HINT_MS,
+  SSE_STARTS_PER_HOUR,
+  SSE_STARTS_PER_MINUTE,
   SSE_STREAM_BUDGET_MS,
+  SSE_THROTTLED_RETRY_MS,
 } from '@/lib/tour-room/sseFallback';
 import {
   cachedBookingForRoom,
@@ -209,5 +212,101 @@ describe('K1a — the declared duration is a literal in the route', () => {
       .filter((l) => !/^\s*(\*|\/\/|\/\*)/.test(l))
       .join('\n');
     expect(codeLines).not.toMatch(/export const maxDuration = [A-Za-z_]/);
+  });
+});
+
+/**
+ * K1b — the ceiling on stream starts.
+ *
+ * K1a taught OUR client to reconnect politely. It could do nothing about a
+ * client we do not control, and the server had no ceiling at all: the PA-4 gate
+ * fires only on the guest email/name path, so every token-bearing guest — which
+ * is every invite link — reached the stream with nothing counting.
+ *
+ * 🔴 The design constraint that shaped this, and the one worth remembering:
+ * `EventSource` cannot see a 429. A non-200 response fails the connection
+ * PERMANENTLY per spec — readyState goes to CLOSED and the browser never
+ * retries. `useTourRoomChannel` has exactly two transports, Realtime and SSE,
+ * with no polling client behind them, so rejecting the request does not degrade
+ * the room. It silences it, with no way back short of a reload the guest has no
+ * reason to perform.
+ */
+describe('K1b — the stream-start ceiling throttles rather than blocks', () => {
+  const routeSrc = readFileSync(
+    path.join(process.cwd(), 'app/api/tour-rooms/[bookingId]/events/route.ts'),
+    'utf8',
+  );
+
+  it('🔴 the ceiling itself never answers a non-200', () => {
+    // The whole point. A status here is a dead room, not a slower one.
+    const block = routeSrc.slice(
+      routeSrc.indexOf("namespace: 'tour_room_sse_start'"),
+      routeSrc.indexOf('cachedEnsureRoom('),
+    );
+    expect(block).not.toMatch(/status:\s*\d/);
+    // It is a normal event-stream, so the browser keeps its reconnect behaviour
+    // instead of giving up.
+    expect(block).toContain("'Content-Type': 'text/event-stream; charset=utf-8'");
+  });
+
+  it('leaves exactly one 429 behind, on the path that is not a stream yet', () => {
+    // PA-4's 429 predates this and stays: it fires before any stream exists,
+    // on an unauthenticated email/name guess. Killing EventSource there is the
+    // correct outcome — that request should not become a stream at all.
+    //
+    // Asserted as a count so a future 429 added INSIDE the streaming path shows
+    // up here rather than as a room that quietly stops updating.
+    expect(routeSrc.match(/status:\s*429/g) ?? []).toHaveLength(1);
+    const at = routeSrc.indexOf('status: 429');
+    expect(at).toBeLessThan(routeSrc.indexOf("namespace: 'tour_room_sse_start'"));
+  });
+
+  it('sends the long retry hint before anything else', () => {
+    // A hint that arrives after the close is a hint nobody read.
+    expect(routeSrc).toContain('retry: ${SSE_THROTTLED_RETRY_MS}');
+    const hintAt = routeSrc.indexOf('retry: ${SSE_THROTTLED_RETRY_MS}');
+    expect(routeSrc.slice(hintAt, hintAt + 60)).toContain(': throttled');
+  });
+
+  it('collapses a two-second loop to one connection a minute', () => {
+    // The failure this exists for, in numbers rather than adjectives.
+    const loopStartsPerMinute = 60 / 2;
+    expect(loopStartsPerMinute).toBeGreaterThan(SSE_STARTS_PER_MINUTE);
+    const throttledStartsPerMinute = 60_000 / SSE_THROTTLED_RETRY_MS;
+    expect(throttledStartsPerMinute).toBe(1);
+  });
+
+  it('leaves a healthy client, and a household of them, well clear', () => {
+    // One start per stream budget per device. Four devices on one booking is a
+    // family sharing a link, not an attack.
+    const startsPerMinutePerDevice = 60_000 / SSE_STREAM_BUDGET_MS;
+    expect(startsPerMinutePerDevice * 4).toBeLessThan(SSE_STARTS_PER_MINUTE);
+  });
+
+  it('gives an hour of healthy use room too', () => {
+    const startsPerHourPerDevice = 3_600_000 / SSE_STREAM_BUDGET_MS;
+    expect(startsPerHourPerDevice).toBeLessThan(SSE_STARTS_PER_HOUR);
+  });
+
+  it('counts per booking AND per client, not per client alone', () => {
+    // A coach with twelve guests behind one hotel NAT is not a loop.
+    expect(routeSrc).toMatch(/key: `\$\{bookingId\}:\$\{clientIpKey\(req\.headers\)\}`/);
+  });
+
+  it('applies to every actor, unlike the PA-4 gate it sits beside', () => {
+    // PA-4 is passed as a callback into resolveRoomActor and only fires on the
+    // guest email path. This one is called directly, after resolution, so no
+    // credential can skip it.
+    const gateAt = routeSrc.indexOf("namespace: 'tour_room_sse_start'");
+    const resolveAt = routeSrc.indexOf('resolveRoomActor(');
+    expect(gateAt).toBeGreaterThan(resolveAt);
+  });
+
+  it('throttles before doing the expensive work', () => {
+    // Ahead of ensureRoom, which is a write path. A throttled request must not
+    // pay for what it is being throttled out of.
+    const gateAt = routeSrc.indexOf("namespace: 'tour_room_sse_start'");
+    const ensureAt = routeSrc.indexOf('cachedEnsureRoom(');
+    expect(gateAt).toBeLessThan(ensureAt);
   });
 });
