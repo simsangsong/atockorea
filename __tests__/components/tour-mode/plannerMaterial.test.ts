@@ -266,3 +266,41 @@ describe('plannerTypeHierarchy (P7.3 H-4)', () => {
     for (let i = 1; i < sizes.length; i++) expect(sizes[i]).toBeGreaterThan(sizes[i - 1]);
   });
 });
+
+/**
+ * P7.4 (H-6) — what the guest is making comes before the tools for making it.
+ */
+describe('plannerLayoutOrder (P7.4 H-6)', () => {
+  it('「내 하루」 is rendered before the tab strip, not after it', () => {
+    const day = PLANNER.indexOf('the day (shared stop editor');
+    const tabs = PLANNER.indexOf('{/* tabs */}');
+    expect(day).toBeGreaterThan(-1);
+    expect(tabs).toBeGreaterThan(-1);
+    expect(day).toBeLessThan(tabs);
+  });
+
+  it('it is the screen’s only hero card', () => {
+    const heroes = PLANNER.split('\n').filter((l) => /className="[^"]*\btr-card-hero\b/.test(l));
+    expect(heroes.length).toBe(1);
+  });
+
+  it('it keeps its place when empty', () => {
+    // Rendered on `stops.length > 0 || canEdit` — an editor with no stops still
+    // shows the section and says so, rather than hiding it (N4).
+    expect(PLANNER).toContain('{(stops.length > 0 || canEdit) && tab !== \'delegate\' && (');
+    expect(PLANNER).toContain('copy.emptyStops');
+  });
+
+  /**
+   * 🔴 Copy that points at a direction rots when a section moves, and this
+   * ticket moved one. All ten locales of the empty state said "pick places
+   * ABOVE" while the picker had just been placed below.
+   */
+  it('the empty state does not point upward at a section that is now below', () => {
+    const UPWARD = ['above', 'ci-dessus', 'oben', 'qui sopra', 'arriba', '위에서', '上方', '上で', 'выше'];
+    const lines = PLANNER.split('\n').filter((l) => l.trim().startsWith('emptyStops:'));
+    expect(lines.length).toBeGreaterThanOrEqual(10);
+    const offenders = lines.filter((l) => UPWARD.some((w) => l.includes(w)));
+    expect(offenders).toEqual([]);
+  });
+});
