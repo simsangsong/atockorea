@@ -200,7 +200,7 @@ export default function LobbyCard({
           </span>
         )}
         {heroNumeral && (
-          <span className="sr-only" role="status">
+          <span className="sr-only text-cjk-body" role="status">
             {copy.dday(days as number)}
           </span>
         )}

@@ -18,6 +18,16 @@ import { sendEmail } from '@/lib/email';
 import { sendOpsPush } from '@/lib/tour-ops/push';
 import { inPostTourWindow, roomLifecycle } from '@/lib/tour-room/time';
 import { isPrivateTour } from '@/lib/tour-room/tourKind';
+import {
+  departedPhaseAllowed,
+  isRallyCrossingType,
+  loadRallyNotice,
+  rallyNoticeSuperseded,
+  resolveRejoinStop,
+  type RallyCrossingType,
+} from '@/lib/tour-room/rallyCrossing';
+import { rallyRemindPush, waitEndedBundle, waitEndedPush } from '@/lib/tour-room/waitEnded';
+import { RALLY_GRACE_MS } from '@/lib/tour-room/notices';
 
 export const dynamic = 'force-dynamic';
 
@@ -55,6 +65,14 @@ export async function POST(
       time?: unknown;
       point?: unknown;
     };
+
+    // SG-2 — rally crossings ride their OWN branch, BEFORE the guest
+    // whitelist: they are not guest signals (the wake-locked cockpit is the
+    // FIRST firer, so the driver 403 below must not apply), and joining
+    // GUEST_SIGNAL_TYPES would force dummy TEMPLATES entries (2차 감사 #21).
+    if (isRallyCrossingType(body.type)) {
+      return handleRallyCrossing(req, bookingId, body.type, body);
+    }
 
     const type = (GUEST_SIGNAL_TYPES as readonly string[]).includes(body.type as string)
       ? (body.type as GuestSignalType)
@@ -344,4 +362,212 @@ export async function POST(
     console.error('POST /api/tour-rooms/[bookingId]/signals error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });
   }
+}
+
+/**
+ * SG-2 — the rally crossing handler (remind / departed / all_aboard /
+ * extended). Own actor resolution (drivers ALLOWED — the cockpit is the
+ * wake-locked first firer), own rate namespace (a 6-guest simultaneous
+ * crossing must not starve the guest-signal bucket), and the server-side
+ * validation ladder of SG-D6: the client's noticeId is a CLAIM, everything
+ * else is re-derived here.
+ */
+async function handleRallyCrossing(
+  req: NextRequest,
+  bookingId: string,
+  type: RallyCrossingType,
+  body: { noticeId?: unknown; manual?: unknown; next_notice_id?: unknown },
+) {
+  const supabase = createServerClient();
+  const noticeId =
+    typeof body.noticeId === 'string' && body.noticeId.trim() ? body.noticeId.trim().slice(0, 64) : null;
+  if (!noticeId) {
+    return NextResponse.json({ error: 'noticeId is required' }, { status: 400 });
+  }
+
+  const resolved = await resolveRoomActor(req, bookingId, { supabase });
+  if (!resolved.ok) {
+    return NextResponse.json({ error: resolved.error }, { status: resolved.status });
+  }
+  const { booking, actor } = resolved;
+  const staff = actor.role === 'guide' || actor.role === 'driver' || actor.role === 'admin';
+
+  const gate = await requestGate({
+    namespace: 'tour_room_rally_crossing',
+    key: `booking:${booking.id}`,
+    perMinute: 10,
+    perHour: 60,
+  });
+  if (!gate.allowed) {
+    return NextResponse.json(
+      { error: 'rate_limited' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((gate.retryAfterMs ?? 0) / 1000)) } },
+    );
+  }
+
+  const room = await ensureRoom(supabase, booking);
+  const loaded = await loadRallyNotice(supabase, room.id, booking.tour_date, noticeId);
+  if (!loaded.ok) {
+    return NextResponse.json({ error: loaded.error }, { status: loaded.status });
+  }
+  const actorParticipantId = actor.kind === 'session' ? actor.sessionPayload.participantId : null;
+
+  // ── T-10 reminder — push only, once per notice ─────────────────────────
+  if (type === 'rally_remind') {
+    if (Date.now() >= loaded.targetMs) {
+      return NextResponse.json({ error: 'reminder_window_passed' }, { status: 409 });
+    }
+    const recorded = await recordRoomEvent(supabase, {
+      roomId: room.id,
+      bookingId: booking.id,
+      type: 'rally_stage',
+      actorRole: actor.role,
+      actorParticipantId,
+      subjectKey: `rally:${noticeId}:remind`,
+      payload: { stage: 'remind', notice_id: noticeId },
+    });
+    if (!recorded.inserted) return NextResponse.json({ deduped: true }, { status: 200 });
+    void sendGuestRoomPush(supabase, booking, {
+      translations: rallyRemindPush(loaded.targetMs, loaded.meetingPoint),
+      tag: `remind-${noticeId}`,
+    }).catch(() => undefined);
+    return NextResponse.json({ ok: true }, { status: 201 });
+  }
+
+  // ── staff resolutions: all aboard / extended ───────────────────────────
+  if (type === 'rally_all_aboard' || type === 'rally_extended') {
+    if (!staff) {
+      return NextResponse.json({ error: 'staff_only' }, { status: 403 });
+    }
+    const nextNoticeId =
+      type === 'rally_extended' && typeof body.next_notice_id === 'string'
+        ? body.next_notice_id.slice(0, 64)
+        : null;
+    if (type === 'rally_extended' && !nextNoticeId) {
+      return NextResponse.json({ error: 'next_notice_id is required' }, { status: 400 });
+    }
+    const recorded = await recordRoomEvent(supabase, {
+      roomId: room.id,
+      bookingId: booking.id,
+      // 🔴 One subject AND one type for every outcome — the UNIQUE index is
+      // (room, subject, type); different types would resurrect the TOCTOU.
+      type: 'rally_resolution',
+      actorRole: actor.role,
+      actorParticipantId,
+      subjectKey: `rally:${noticeId}:resolution`,
+      payload:
+        type === 'rally_all_aboard'
+          ? { outcome: 'all_aboard', notice_id: noticeId }
+          : { outcome: 'extended', notice_id: noticeId, next_notice_id: nextNoticeId },
+    });
+    return NextResponse.json(
+      { ok: true, deduped: !recorded.inserted },
+      { status: recorded.inserted ? 201 : 200 },
+    );
+  }
+
+  // ── departed — the full ladder ─────────────────────────────────────────
+  const manual = body.manual === true;
+  if (manual && !staff) {
+    return NextResponse.json({ error: 'staff_only' }, { status: 403 });
+  }
+  if (!departedPhaseAllowed(Date.now(), loaded.targetMs, manual)) {
+    return NextResponse.json({ error: 'outside_departed_window' }, { status: 409 });
+  }
+  if (await rallyNoticeSuperseded(supabase, room.id, loaded.createdAtIso, noticeId)) {
+    // An extension / cancel / next stop's bundle replaced this notice — the
+    // stale crossing dissolves silently (the new notice runs its own ladder).
+    return new NextResponse(null, { status: 204 });
+  }
+  if (!manual) {
+    const resolution = await recordRoomEvent(supabase, {
+      roomId: room.id,
+      bookingId: booking.id,
+      type: 'rally_resolution',
+      actorRole: actor.role,
+      actorParticipantId,
+      subjectKey: `rally:${noticeId}:resolution`,
+      payload: { outcome: 'departed', notice_id: noticeId },
+    });
+    if (!resolution.inserted) {
+      // all_aboard or extended won the resolution — no capsule, by design.
+      return NextResponse.json({ deduped: true }, { status: 200 });
+    }
+  } else {
+    await recordRoomEvent(supabase, {
+      roomId: room.id,
+      bookingId: booking.id,
+      type: 'rally_stage',
+      actorRole: actor.role,
+      actorParticipantId,
+      subjectKey: `rally:${noticeId}:manual_departed`,
+      payload: { stage: 'manual_departed', notice_id: noticeId },
+    });
+  }
+
+  // Capsule idempotency is its OWN subject: a manual declaration after a
+  // mistaken [전원 탑승] must still be able to fire exactly one capsule.
+  const capsule = await recordRoomEvent(supabase, {
+    roomId: room.id,
+    bookingId: booking.id,
+    type: 'wait_ended',
+    actorRole: actor.role,
+    actorParticipantId,
+    subjectKey: `rally:${noticeId}:capsule`,
+    payload: { notice_id: noticeId, manual },
+  });
+  if (!capsule.inserted) {
+    return NextResponse.json({ deduped: true }, { status: 200 });
+  }
+
+  const departedAtMs = loaded.targetMs + RALLY_GRACE_MS;
+  const rejoin = await resolveRejoinStop(supabase, booking.id, booking.tour_date, loaded.targetMs);
+  const bundle = waitEndedBundle({
+    departedAtMs,
+    meetingPoint: loaded.meetingPoint,
+    nextStopName: rejoin?.name ?? null,
+  });
+  const { data: message } = await supabase
+    .from('tour_room_messages')
+    .insert({
+      room_id: room.id,
+      booking_id: booking.id,
+      sender_role: 'system',
+      input_kind: 'text',
+      source_text: bundle.source_text,
+      source_locale: bundle.source_locale,
+      translations: bundle.translations,
+      target_locales: Object.keys(bundle.translations),
+      metadata: {
+        kind: 'wait_ended',
+        notice_id: noticeId,
+        departed_at_ms: departedAtMs,
+        meeting_point: loaded.meetingPoint,
+        next_stop_name: rejoin?.name ?? null,
+        next_stop_time: rejoin?.time ?? null,
+        next_poi_key: rejoin?.poiKey ?? null,
+        manual,
+      },
+    })
+    .select()
+    .single();
+  if (message) await broadcastToRoom(room, 'message', { message });
+
+  // The MORE critical capsule gets the SAME fallback rails overdue has —
+  // v1.1 shipped them inverted (2차 감사 #7).
+  void sendGuestRoomPush(supabase, booking, {
+    translations: waitEndedPush({ departedAtMs }),
+    tag: `departed-${noticeId}`,
+  }).catch(() => undefined);
+  if (booking.contact_email) {
+    const locale = normalizeRoomLocale(booking.preferred_language);
+    const line = bundle.translations[locale] ?? bundle.translations.en;
+    void sendEmail({
+      to: booking.contact_email,
+      subject: line.slice(0, 120),
+      html: `<p style="font-family:sans-serif;font-size:15px;line-height:1.6;">${line}</p>
+<p style="font-family:sans-serif;font-size:13px;color:#6b7280;">AtoC Korea · <a href="${(process.env.NEXT_PUBLIC_SITE_URL || 'https://atockorea.com').replace(/\/$/, '')}/tour-mode/room/${booking.id}">Tour room</a></p>`,
+    }).catch(() => undefined);
+  }
+  return NextResponse.json({ message: message ?? null }, { status: 201 });
 }

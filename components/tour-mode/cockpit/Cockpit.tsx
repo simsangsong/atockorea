@@ -41,7 +41,16 @@ import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGr
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
-import { scheduleClock } from '@/lib/tour-room/time';
+import { kstToday, scheduleClock } from '@/lib/tour-room/time';
+import {
+  RALLY_GRACE_MS,
+  activeNotice,
+  formatTargetTime,
+  rallyResolution,
+  rallyStage,
+} from '@/lib/tour-room/notices';
+import NumeralClock from '@/components/tour-mode/NumeralClock';
+import { useRallyLadder } from '@/hooks/useRallyLadder';
 import OperatorAssist from '@/components/tour-mode/guide/OperatorAssist';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import {
@@ -841,12 +850,83 @@ export default function Cockpit({
           body: JSON.stringify(payload),
         });
         say(res.ok ? doneText : '실패 — 다시 시도해 주세요');
+        // SG-2c — callers that chain on the created message (the extension's
+        // next_notice_id) read the body; everyone else keeps ignoring it.
+        return res.ok ? await res.json().catch(() => null) : null;
       } catch {
         say('네트워크 오류');
+        return null;
       }
     },
     [bookingId, session, say],
   );
+
+  // ── SG-2b-β — the rally ladder on the STAFF device ─────────────────────
+  // The cockpit is the one screen guaranteed awake during a tour (wake
+  // lock), so it is the PRIMARY firer; guests are the backup. Rooms are
+  // per-tour-date surfaces, so the live day IS the tour date here.
+  const rallyTourDate = kstToday();
+  useRallyLadder({
+    bookingId,
+    roomSession: session,
+    messages,
+    tourDate: rallyTourDate,
+    enabled: true,
+  });
+  const [rallyNowMs, setRallyNowMs] = useState(() => Date.now());
+  useEffect(() => {
+    const tick = () => setRallyNowMs(Date.now());
+    const timer = setInterval(tick, 30_000);
+    const onVisible = () => {
+      if (document.visibilityState === 'visible') tick();
+    };
+    document.addEventListener('visibilitychange', onVisible);
+    return () => {
+      clearInterval(timer);
+      document.removeEventListener('visibilitychange', onVisible);
+    };
+  }, []);
+  const rallyNotice = activeNotice([...messages], rallyTourDate, rallyNowMs);
+  const rallyRes = rallyResolution(messages, rallyTourDate, rallyNowMs);
+  const rallyPastMs =
+    rallyNotice && !rallyNotice.cancelled && rallyNotice.targetMs !== null
+      ? rallyNowMs - rallyNotice.targetMs
+      : null;
+  // Local memory of a taken resolution so the prompt collapses immediately;
+  // the server's UNIQUE resolution subject is the real arbiter.
+  const [rallyPromptDone, setRallyPromptDone] = useState<string | null>(null);
+  const pendingExtendNoticeIdRef = useRef<string | null>(null);
+  const postRallyCrossing = useCallback(
+    async (
+      type: 'rally_all_aboard' | 'rally_departed' | 'rally_extended',
+      noticeId: string,
+      extra: Record<string, unknown> = {},
+    ) => {
+      try {
+        const res = await fetch(`/api/tour-rooms/${bookingId}/signals`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
+          body: JSON.stringify({ type, noticeId, ...extra }),
+        });
+        return res.ok;
+      } catch {
+        return false;
+      }
+    },
+    [bookingId, session],
+  );
+  // T+12 — "전원 탑승했나요?" Appears in the contact stage, two minutes
+  // before the default T+15 firing, and only while the window is still open.
+  const rallyPromptVisible =
+    rallyNotice !== null &&
+    !rallyNotice.cancelled &&
+    rallyNotice.targetMs !== null &&
+    rallyPastMs !== null &&
+    rallyPastMs >= 12 * 60 * 1000 &&
+    rallyRes !== null &&
+    rallyRes.noticeId === rallyNotice.messageId &&
+    rallyRes.phase !== 'closed' &&
+    rallyPromptDone !== rallyNotice.messageId;
 
   /**
    * 주차핀 — the one-shot fix used to be `{enableHighAccuracy: true,
@@ -1576,7 +1656,7 @@ export default function Cockpit({
             <ChevronLeft size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
           </button>
         ) : null}
-        <div className="flex min-w-0 flex-1 items-center gap-1.5 px-1">
+        <div className="text-cjk-safe flex min-w-0 flex-1 items-center gap-1.5 px-1">
           <span
             className={`h-2 w-2 shrink-0 rounded-full ${
               connected ? 'bg-[var(--tr-safe)]' : 'animate-pulse bg-[var(--tr-ink-3)]'
@@ -1639,6 +1719,98 @@ export default function Cockpit({
         <p className="tr-body-lg mt-0.5 truncate font-bold text-[var(--tr-ink)]">{destTitle}</p>
         {navDest ? <NavRow dest={navDest} /> : null}
       </div>
+
+      {/* SG-2b-β — the rally overage strip. Mockup ②'s +MM:SS lives HERE,
+          from T+0: staff have no crying-wolf problem (the guest hero waits
+          for T+5 — the tested 'due stays quiet' decision stands). */}
+      {rallyNotice !== null &&
+        !rallyNotice.cancelled &&
+        rallyNotice.targetMs !== null &&
+        rallyPastMs !== null &&
+        rallyPastMs >= 0 && (
+          <div
+            data-testid="cockpit-rally-strip"
+            className="tr-chrome-line-b flex items-center justify-between gap-3 bg-[var(--tr-danger-soft)] px-4 py-2"
+          >
+            <div className="text-cjk-safe min-w-0">
+              <p className="tr-label text-cjk-safe font-bold text-[var(--tr-ink-2)]">
+                {`집합 ${formatTargetTime(rallyNotice.targetMs, 'ko')}`}
+                {rallyNotice.point ? ` · ${rallyNotice.point}` : ''}
+              </p>
+              <p className="tr-meta text-cjk-safe text-[var(--tr-ink-3)]">
+                {`${formatTargetTime(rallyNotice.targetMs + RALLY_GRACE_MS, 'ko')} 대기 종료`}
+              </p>
+            </div>
+            <NumeralClock
+              mode="up"
+              format="clock"
+              targetMs={rallyNotice.targetMs}
+              initialNowMs={rallyNowMs}
+              testId="cockpit-rally-overage"
+            />
+          </div>
+        )}
+
+      {/* T+12 — "전원 탑승했나요?" Three answers, all one tap; no answer means
+          the T+15 default fires (N-1, 사장님 승인). */}
+      {rallyPromptVisible && rallyNotice && (
+        <div
+          data-testid="cockpit-rally-prompt"
+          className="tr-chrome-line-b bg-[var(--tr-warn-soft)] px-4 py-3"
+        >
+          <p className="tr-card-text text-cjk-body font-bold text-[var(--tr-ink)]">
+            {`${formatTargetTime(rallyNotice.targetMs! + RALLY_GRACE_MS, 'ko')} 대기 종료가 다가옵니다 — 전원 탑승했나요?`}
+          </p>
+          <div className="text-cjk-safe mt-2 flex gap-2">
+            <button
+              type="button"
+              data-testid="rally-all-aboard"
+              onClick={() => {
+                setRallyPromptDone(rallyNotice.messageId);
+                void postRallyCrossing('rally_all_aboard', rallyNotice.messageId).then((ok) =>
+                  say(ok ? '전원 탑승 확인 ✓ — 낙오 안내 없이 진행합니다' : '실패 — 다시 시도해 주세요'),
+                );
+              }}
+              className="tr-btn-physical text-cjk-safe flex-1 rounded-full bg-[var(--tr-safe-soft)] px-3 py-2.5 tr-label font-bold text-[var(--tr-ink)]"
+            >
+              전원 탑승
+            </button>
+            <button
+              type="button"
+              data-testid="rally-extend"
+              onClick={() => {
+                pendingExtendNoticeIdRef.current = rallyNotice.messageId;
+                setRetTime(roundUpTo5(kstPlusMinutes(15)));
+                setSheet('return');
+              }}
+              className="tr-btn-physical text-cjk-safe flex-1 rounded-full bg-[var(--tr-surface)] px-3 py-2.5 tr-label font-bold text-[var(--tr-ink)]"
+            >
+              +15분 연장
+            </button>
+            <button
+              type="button"
+              data-testid="rally-manual-departed"
+              onClick={() => {
+                void confirmSheet({
+                  title: '낙오 처리',
+                  message: '미탑승 일행에게 재합류 안내(낙오 캡슐)가 즉시 발송됩니다.',
+                  confirmLabel: '지금 발송',
+                  danger: true,
+                }).then((ok) => {
+                  if (!ok) return;
+                  setRallyPromptDone(rallyNotice.messageId);
+                  void postRallyCrossing('rally_departed', rallyNotice.messageId, { manual: true }).then(
+                    (sent) => say(sent ? '재합류 안내 발송 ✓' : '실패 — 다시 시도해 주세요'),
+                  );
+                });
+              }}
+              className="tr-btn-physical text-cjk-safe rounded-full bg-[var(--tr-danger-soft)] px-3 py-2.5 tr-label font-bold text-[var(--tr-ink)]"
+            >
+              낙오 처리
+            </button>
+          </div>
+        </div>
+      )}
 
       {/* bubbles — tap anywhere to enter chat focus mode; pinch = font zoom */}
       <div className="relative flex min-h-0 flex-1 flex-col">
@@ -2086,7 +2258,21 @@ export default function Cockpit({
             disabled={!/^\d{2}:\d{2}$/.test(retTime)}
             onClick={() => {
               setSheet('none');
-              void signal({ type: 'return_time', time: retTime }, `${retTime} 복귀 안내 완료 ✓`);
+              void signal({ type: 'return_time', time: retTime }, `${retTime} 복귀 안내 완료 ✓`).then(
+                (created) => {
+                  // SG-2c — an extension links the chain: the old notice's
+                  // resolution records WHICH notice replaced it, so the
+                  // on-time metric can fold extensions instead of double
+                  // counting (§H-1) and the stale T+15 crossing dissolves.
+                  const pendingId = pendingExtendNoticeIdRef.current;
+                  const nextId = (created as { message?: { id?: string } } | null)?.message?.id;
+                  pendingExtendNoticeIdRef.current = null;
+                  if (pendingId && nextId) {
+                    setRallyPromptDone(pendingId);
+                    void postRallyCrossing('rally_extended', pendingId, { next_notice_id: nextId });
+                  }
+                },
+              );
             }}
             className="tr-btn-raised tr-body-lg mt-3 w-full rounded-2xl bg-[var(--tr-bubble-me)] py-4 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
             data-testid="return-time-send"

@@ -415,7 +415,7 @@ export default function NowCard({
   return (
     <>
       <span
-        className="sr-only"
+        className="sr-only text-cjk-body"
         role="status"
         aria-live={result.tone === 'danger' ? 'assertive' : 'polite'}
         aria-atomic="true"
