@@ -16,9 +16,12 @@
  * 부르고 결과를 안 쓰는 셸을 통과시킨다.
  */
 import { render } from '@testing-library/react';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
 import RoomShell from '@/components/tour-mode/RoomShell';
 import StaffShell from '@/components/tour-mode/staff/StaffShell';
 import { Screen } from '@/components/tour-mode/cockpit/Cockpit';
+import PlanEditorClient from '@/components/tour-mode/plan/PlanEditorClient';
 import { __resetTourRoomSettingsForTests, writeTourRoomSettings } from '@/hooks/useTourRoomSettings';
 
 jest.mock('next/navigation', () => ({ useRouter: () => ({ push: jest.fn(), back: jest.fn() }) }));
@@ -70,6 +73,23 @@ const SHELLS: Array<{ name: string; render: () => HTMLElement }> = [
   },
 ];
 
+/**
+ * 🔴 P7.1b — the FOURTH shell, and the one this file predicted.
+ *
+ * The comment above says a hand-copied contract drifts on the NEXT shell, not
+ * the current one. The planner was that next shell: it carries `.tr-root`, it
+ * opens standalone from the invite email with nothing above it, and it planted
+ * neither half of the contract. Measured with the same localStorage in both:
+ * room `--tr-font-scale` 1.35, planner 1.
+ *
+ * It is listed separately from SHELLS because it is a PARTIAL signatory by
+ * design — text scale yes, skin not until P7.8 (§N-9 option B). Folding it into
+ * the array above would make the skin case fail and invite someone to "fix" it
+ * by stamping an attribute whose palette consequences have not been designed.
+ */
+const PLANNER = () =>
+  trRoot(render(<PlanEditorClient bookingId="00000000-0000-4000-8000-000000000000" />).container);
+
 describe('shell surface contract (C1)', () => {
   beforeEach(() => {
     __resetTourRoomSettingsForTests();
@@ -92,6 +112,60 @@ describe('shell surface contract (C1)', () => {
   it.each(SHELLS)('$name tracks a text-scale CHANGE, not just a default', ({ render: mount }) => {
     writeTourRoomSettings({ textScale: 5 });
     expect(mount().style.getPropertyValue('--tr-font-scale')).toBe('1.35');
+  });
+
+  describe('the planner (P7.1b — partial signatory by design)', () => {
+    it('plants --tr-font-scale on its .tr-root', () => {
+      writeTourRoomSettings({ textScale: 1 });
+      expect(PLANNER().style.getPropertyValue('--tr-font-scale')).toBe('0.85');
+    });
+
+    it('tracks a text-scale CHANGE, not just a default', () => {
+      writeTourRoomSettings({ textScale: 5 });
+      expect(PLANNER().style.getPropertyValue('--tr-font-scale')).toBe('1.35');
+    });
+
+    /**
+     * 🔴 The planner has FOUR `.tr-root` return paths, not one: loading, dead
+     * link, the read-only fixed-itinerary view, and the editor. Wiring the two
+     * obvious ones is the same bug at half the size — a guest who enlarged
+     * their text still meets the loading and dead-link screens, and the
+     * dead-link screen is exactly what an expired invite renders.
+     *
+     * This asserts on the SOURCE rather than by rendering each branch, because
+     * three of the four need a live session to reach and a test that can only
+     * reach one branch would go green while the other three drifted.
+     */
+    it('plants it on ALL four root return paths, not just the editor', () => {
+      const source = readFileSync(
+        path.join(process.cwd(), 'components', 'tour-mode', 'plan', 'PlanEditorClient.tsx'),
+        'utf8',
+      );
+      const rootLines = source
+        .split('\n')
+        .map((line, i) => ({ line, no: i + 1 }))
+        .filter(({ line }) => /className=\{`[^`]*\btr-root\b/.test(line));
+
+      expect(rootLines.length).toBe(4);
+
+      // Each root's element must carry the surface style within its own JSX tag.
+      const unwired = rootLines.filter(({ no }) => {
+        const tag = source.split('\n').slice(no - 1, no + 6).join('\n');
+        return !tag.includes('surfaceStyle');
+      });
+      expect(unwired.map((r) => `${r.no}: ${r.line.trim().slice(0, 70)}`)).toEqual([]);
+    });
+
+    /**
+     * Deliberate, not forgotten. P7.8 flips this when §N-9 option B has decided
+     * which token families a skin may touch in this scope; until then stamping
+     * the attribute ships a gradient whose two stops come from different
+     * families (see PlanEditorClient's own note).
+     */
+    it('does NOT carry data-tr-skin yet — P7.8 owns that decision', () => {
+      writeTourRoomSettings({ skin: 'jeju' });
+      expect(PLANNER().getAttribute('data-tr-skin')).toBeNull();
+    });
   });
 
   /**
