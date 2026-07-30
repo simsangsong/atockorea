@@ -99,3 +99,8 @@ scripts/.k4-fixtures.json
 # QA 하니스가 남기는 로컬 산출물 (서명 토큰·응답 본문 포함 — 커밋 금지)
 scripts/.sim-fixtures.json
 scripts/.qa-prod-*.json
+
+# video-guide build artefacts
+out/
+.cache/
+assets/audio/video-guide/
