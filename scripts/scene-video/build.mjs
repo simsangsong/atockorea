@@ -26,7 +26,10 @@ import { spawnSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 import { chromium } from '../video-guide/lib/deps.mjs';
 import { renderSceneHtml } from './scene.mjs';
-import { CANVAS, WIDE, FPS, TYPE, readingMs, palette } from './design.mjs';
+import {
+  CANVAS, WIDE, FPS, TYPE, THEMES, DEFAULT_THEME, CJK_LOCALES,
+  MOTION, motionFloorMs, readingMs, palette,
+} from './design.mjs';
 
 const ROOT = process.cwd();
 const args = process.argv.slice(2);
@@ -69,13 +72,43 @@ function fail(msg) {
   process.exit(1);
 }
 
+/**
+ * 🔴 A guard for a trap this pipeline fell into THREE times.
+ *
+ * `scene.mjs` returns one enormous template literal, so a backtick written
+ * casually inside a CSS or JS comment nested in it terminates the string. The
+ * failure surfaces as a module-load SyntaxError pointing at an innocent line,
+ * which costs several minutes of hunting every time. Checking it here means the
+ * build says what actually happened.
+ */
+function assertSceneModuleLoadable() {
+  const scenePath = path.resolve(ROOT, 'scripts/scene-video/scene.mjs');
+  const src = fs.readFileSync(scenePath, 'utf8');
+  const inner = src.slice(src.indexOf('<!doctype html>'));
+  const stray = inner
+    .split('\n')
+    .filter((line) => /^\s*(\/\/|\/\*|\*)/.test(line) && line.includes('`'));
+  if (stray.length) {
+    const lines = stray.map((l) => `   ${l.trim()}`).join('\n');
+    fail(`scene.mjs: 템플릿 리터럴 안의 주석에 백틱이 있다 — 문자열이 거기서 끊긴다\n${lines}`);
+  }
+}
+assertSceneModuleLoadable();
+
 const spec = (await import(pathToFileURL(path.resolve(SPEC_PATH)).href)).default;
 const scenes = spec.scenes ?? [];
 if (scenes.length === 0) fail('spec has no scenes');
 
+// v3 — the film is built PER LOCALE: English headline, that locale's gloss
+// beneath it (owner brief §V3-A). English renders with no gloss line at all.
+const LOCALE = argOf('locale', spec.defaultLocale ?? 'en');
+const THEME = argOf('theme', spec.theme ?? DEFAULT_THEME);
+if (!THEMES[THEME]) fail(`unknown theme "${THEME}" — ${Object.keys(THEMES).join(' | ')}`);
+
 const size = WIDE_MODE ? WIDE : CANVAS;
-const OUT = path.resolve(ROOT, argOf('out', `scripts/scene-video/.out/${spec.id}${WIDE_MODE ? '-wide' : ''}.mp4`));
-const WORK = path.join(path.dirname(OUT), `.work-${spec.id}${WIDE_MODE ? '-wide' : ''}`);
+const suffix = `${LOCALE === 'en' ? '' : `.${LOCALE}`}${WIDE_MODE ? '-wide' : ''}`;
+const OUT = path.resolve(ROOT, argOf('out', `scripts/scene-video/.out/${spec.id}${suffix}.mp4`));
+const WORK = path.join(path.dirname(OUT), `.work-${spec.id}${suffix}`);
 fs.mkdirSync(path.dirname(OUT), { recursive: true });
 fs.rmSync(WORK, { recursive: true, force: true });
 fs.mkdirSync(WORK, { recursive: true });
@@ -99,15 +132,52 @@ const shotFile = (key) => {
   return { file: abs, ratio: entry.ratio ?? null };
 };
 
-/** Resolve `shot: 'home'` keys to absolute paths the scene renderer can inline. */
-function resolveShots(scene) {
+// ── G-9: recorded clips referenced by `screen-demo` scenes ────────────────────
+const clipsManifestPath = path.resolve(ROOT, spec.clips ?? 'scripts/scene-video/.clips/clips.json');
+const clipsManifest = fs.existsSync(clipsManifestPath)
+  ? JSON.parse(fs.readFileSync(clipsManifestPath, 'utf8'))
+  : { clips: {} };
+const clipFile = (key) => {
+  const entry = clipsManifest.clips?.[key];
+  if (!entry) {
+    fail(`G-9: 스펙이 참조한 클립 "${key}" 가 없다 — 먼저 node scripts/scene-video/recordings.mjs`);
+  }
+  const abs = path.resolve(ROOT, entry.file);
+  if (!fs.existsSync(abs)) fail(`G-9: 클립 "${key}" 파일이 없다: ${entry.file}`);
+  return { file: abs, seconds: entry.seconds ?? 0, what: entry.what };
+};
+
+/**
+ * Resolve asset keys and pick this locale's gloss.
+ *
+ * A spec writes `gloss: { ko: '…', ja: '…' }` and the builder takes the one for
+ * the render locale. English gets none — the headline already IS English, and a
+ * gloss repeating it would be the v2 mistake (the same sentence twice, so
+ * neither gets read).
+ */
+function resolveScene(scene) {
   const out = { ...scene };
   if (out.shot) out.shot = shotFile(out.shot);
-  if (Array.isArray(out.cards)) out.cards = out.cards.map((c) => ({ ...c, shot: c.shot ? shotFile(c.shot) : null }));
+  if (out.clip) out.clipInfo = clipFile(out.clip);
+  if (Array.isArray(out.cards)) {
+    out.cards = out.cards.map((c) => ({
+      ...c,
+      shot: c.shot ? shotFile(c.shot) : null,
+      gloss: LOCALE === 'en' ? null : c.gloss?.[LOCALE] ?? null,
+    }));
+  }
+  if (Array.isArray(out.steps)) {
+    out.steps = out.steps.map((st) => {
+      if (!Array.isArray(st)) return st;
+      const [en, glossMap] = st;
+      return LOCALE === 'en' ? [en, null] : [en, glossMap?.[LOCALE] ?? null];
+    });
+  }
+  out.gloss = LOCALE === 'en' ? null : scene.gloss?.[LOCALE] ?? null;
   return out;
 }
 
-const accentHexes = new Set([palette('light').accent.toLowerCase(), palette('dark').accent.toLowerCase()]);
+const accentHexes = new Set(Object.values(THEMES).map((t) => t.accent.toLowerCase()));
 
 console.log(`\n  ${spec.id}${WIDE_MODE ? ' (16:9)' : ' (9:16)'} · ${scenes.length} scenes\n`);
 
@@ -121,8 +191,8 @@ const cues = [];
 let clock = 0;
 
 for (const raw of scenes) {
-  const scene = resolveShots(raw);
-  const html = renderSceneHtml(scene, { wide: WIDE_MODE, theme: spec.theme });
+  const scene = resolveScene(raw);
+  const html = renderSceneHtml(scene, { wide: WIDE_MODE, theme: THEME, locale: LOCALE });
 
   // ── G-1: one accent. Checked on the source, where a second brand colour
   // would be introduced — not on pixels, where a screenshot's own colours
@@ -139,8 +209,16 @@ for (const raw of scenes) {
   await page.evaluate(() => window.__seek(5000));
   const m = await page.evaluate(() => window.__measure());
 
-  if (m.fontFamilies.length > 2) fail(`G-2 (${scene.id}): 서체 ${m.fontFamilies.length}종 — ${m.fontFamilies.join(', ')}`);
-  if (m.subtitleZoneIntruder) fail(`G-3 (${scene.id}): 하단 로케일 존 침범 — "${m.subtitleZoneIntruder}"`);
+  // ── G-2 v3: two ROLES, not two raw families. The CJK gloss is the display
+  // role in a script the Latin face cannot draw, so it is excluded by the
+  // measure; a decorative third face still lands here.
+  if (m.displayFamilies.length > 1) {
+    fail(`G-2 (${scene.id}): 디스플레이 서체 ${m.displayFamilies.length}종 — ${m.displayFamilies.join(', ')}`);
+  }
+  if (m.roles.length > 2) fail(`G-2 (${scene.id}): 타입 역할 ${m.roles.length} — ${m.roles.join(', ')}`);
+  // ── G-3 v3: nothing is burnt at the bottom any more, so the band must be
+  // empty rather than merely uncrowded.
+  if (m.subtitleZoneIntruder) fail(`G-3 (${scene.id}): 하단 자막 존 침범 — "${m.subtitleZoneIntruder}"`);
   if (m.cjkBroken.length) fail(`G-5 (${scene.id}): CJK 글자단위 줄바꿈 ${m.cjkBroken.length}건 — ${m.cjkBroken.join(' · ')}`);
   if (m.stageOverflow > 0) fail(`G-2 (${scene.id}): 스테이지 ${m.stageOverflow}px 넘침`);
   // 🔴 These budgets existed in design.mjs from the first commit and NOTHING
@@ -149,16 +227,31 @@ for (const raw of scenes) {
   if (m.headlineLines > TYPE.headlineMaxLines) {
     fail(`G-2 (${scene.id}): 헤드라인 ${m.headlineLines}줄 > ${TYPE.headlineMaxLines}`);
   }
-  if (m.captionLines > TYPE.captionMaxLines) {
-    fail(`G-3 (${scene.id}): 자막 ${m.captionLines}줄 > ${TYPE.captionMaxLines} — 문장을 줄여라`);
+  if (m.glossLines > TYPE.glossMaxLines) {
+    fail(`G-3 (${scene.id}): 해석 줄 ${m.glossLines}줄 > ${TYPE.glossMaxLines} — 문장을 줄여라`);
+  }
+  // ── G-8 v3: no italic (owner brief).
+  if (m.italics.length) fail(`G-8 (${scene.id}): italic ${m.italics.length}건 — ${m.italics.join(' · ')}`);
+  // ── G-9: a demo scene must have a clip, and the clip must cover the beat.
+  if (scene.scene === 'screen-demo') {
+    if (!scene.clipInfo) fail(`G-9 (${scene.id}): screen-demo 인데 clip 이 없다`);
+    if (!m.clipBox) fail(`G-9 (${scene.id}): 클립이 들어갈 구멍을 못 찾았다`);
   }
 
   // ── G-4: a beat must outlast its own text.
-  const longest = [scene.headline, scene.sub, scene.caption, scene.note,
-    ...(scene.cards ?? []).map((c) => `${c.title ?? ''} ${c.sub ?? ''}`),
-    ...(scene.steps ?? [])].filter(Boolean).sort((a, b) => b.length - a.length)[0] ?? '';
+  const longest = [scene.headline, scene.gloss, scene.sub,
+    ...(scene.cards ?? []).map((c) => `${c.title ?? ''} ${c.gloss ?? ''}`),
+    ...(scene.steps ?? []).map((st) => (Array.isArray(st) ? st.filter(Boolean).join(' ') : st)),
+  ].filter(Boolean).sort((a, b) => b.length - a.length)[0] ?? '';
   const need = readingMs(longest) / 1000;
-  const dur = Math.max(scene.dur ?? 0, need);
+  // A demo beat must also outlast its own recording, or the clip is cut off
+  // mid-gesture and the transition it exists to show never completes.
+  const clipNeed = scene.clipInfo ? scene.clipInfo.seconds : 0;
+  // …and it must outlast its own MOTION. A beat shorter than arrive+hold+leave
+  // gets one of those truncated, which is exactly the abruptness the grammar
+  // exists to remove.
+  const motionNeed = motionFloorMs() / 1000;
+  const dur = Math.max(scene.dur ?? 0, need, clipNeed, motionNeed);
   if ((scene.dur ?? 0) > 0 && scene.dur + 0.05 < need) {
     console.log(`  · ${scene.id}: ${scene.dur}s → ${dur.toFixed(1)}s (G-4 가독 시간)`);
   }
@@ -166,19 +259,42 @@ for (const raw of scenes) {
   // ── frames: the entrance, then a few settled copies for tpad to clone.
   // 🔴 It must be SEVERAL frames. A single-frame %04d pattern composites
   // nothing at all — silently, no error, no dropped frames.
-  const framesDir = path.join(WORK, `f_${scene.id}`);
-  fs.mkdirSync(framesDir, { recursive: true });
-  const nAnim = Math.round(Math.min(1.2, dur) * FPS);
-  for (let i = 0; i < nAnim; i += 1) {
+  const inDir = path.join(WORK, `in_${scene.id}`);
+  const outDir = path.join(WORK, `out_${scene.id}`);
+  fs.mkdirSync(inDir, { recursive: true });
+  fs.mkdirSync(outDir, { recursive: true });
+
+  // A demo scene's shell is an OVERLAY with a hole in it, so it is captured
+  // with a transparent background; a still scene paints its own ground.
+  const isDemo = scene.scene === 'screen-demo';
+  const shot = (file) => page.screenshot({ path: file, omitBackground: isDemo });
+  if (isDemo) await page.evaluate(() => { document.body.style.background = 'transparent'; });
+
+  const frameName = (i) => `f_${String(i).padStart(4, '0')}.png`;
+
+  // Arrive.
+  const inMs = MOTION.entrance + MOTION.entranceTail;
+  const nIn = Math.round((inMs / 1000) * FPS);
+  for (let i = 0; i < nIn; i += 1) {
     await page.evaluate((ms) => window.__seek(ms), Math.round((i / FPS) * 1000));
-    await page.screenshot({ path: path.join(framesDir, `f_${String(i).padStart(4, '0')}.png`) });
+    await shot(path.join(inDir, frameName(i)));
   }
-  await page.evaluate(() => window.__seek(5000));
+  // Settle — one frame, held by tpad for the middle of the beat.
+  await page.evaluate(() => window.__seek(60_000));
   const settled = path.join(WORK, `settled_${scene.id}.png`);
-  await page.screenshot({ path: settled });
-  for (let i = nAnim; i < nAnim + 4; i += 1) {
-    fs.copyFileSync(settled, path.join(framesDir, `f_${String(i).padStart(4, '0')}.png`));
+  await shot(settled);
+  // 🔴 tpad needs SEVERAL frames to clone from. A one-file %04d pattern
+  // composites nothing at all — silently, no error, no dropped frames.
+  for (let i = nIn; i < nIn + 4; i += 1) fs.copyFileSync(settled, path.join(inDir, frameName(i)));
+
+  // Leave. Without this the beat ended at full opacity and butt-joined the
+  // next one, which is the tick at every boundary the owner called out.
+  const nOut = Math.round((MOTION.exit / 1000) * FPS) + Math.ceil((MOTION.exitStagger * 6) / 1000 * FPS);
+  for (let i = 0; i < nOut; i += 1) {
+    await page.evaluate((ms) => window.__seekOut(ms), Math.round((i / FPS) * 1000));
+    await shot(path.join(outDir, frameName(i)));
   }
+  const outSeconds = nOut / FPS;
 
   // ── G-7: the settled frame must not be blank. A composite that silently
   // produces an empty shell is this pipeline's classic failure (T-35).
@@ -186,16 +302,53 @@ for (const raw of scenes) {
   if (stat.size < 8000) fail(`G-7 (${scene.id}): 렌더된 셸이 사실상 비어 있다 (${stat.size}B)`);
 
   const seg = path.join(WORK, `seg_${scene.id}.mp4`);
-  ff(['-framerate', String(FPS), '-i', path.join(framesDir, 'f_%04d.png'),
-    '-filter_complex',
-    `[0:v]tpad=stop_mode=clone:stop_duration=${dur.toFixed(3)},fps=${FPS},format=yuv420p[v]`,
-    '-map', '[v]', '-t', dur.toFixed(3),
-    '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', seg], `seg ${scene.id}`);
+  const holdSeconds = Math.max(0.1, dur - inMs / 1000 - outSeconds);
+  /**
+   * The shell for the WHOLE beat: arrive → hold → leave.
+   *
+   * `tpad` clones the settled frame across the hold (`eof_action=repeat` does
+   * NOT — measured on the tour pipeline, the overlay vanishes the instant the
+   * sequence runs out), then the exit sequence is concatenated on the end.
+   * Same graph for both scene kinds, so the motion cannot drift apart.
+   */
+  const shellChain = `[0:v]tpad=stop_mode=clone:stop_duration=${holdSeconds.toFixed(3)},fps=${FPS}[a];`
+    + `[1:v]fps=${FPS}[b];[a][b]concat=n=2:v=1:a=0[shell];`;
+
+  if (isDemo) {
+    const box = m.clipBox;
+    const clip = scene.clipInfo;
+    // The clip fades with the frame at both ends, so the recording never snaps
+    // on or cuts off — it arrives and leaves with everything else.
+    const clipFadeOut = Math.max(0.2, dur - outSeconds).toFixed(3);
+    const filter = `color=c=${palette(THEME).canvas}:s=${size.w}x${size.h}:d=${dur.toFixed(3)}:r=${FPS}[bg];`
+      + `[0:v]scale=${box.w}:${box.h}:force_original_aspect_ratio=increase,`
+      + `crop=${box.w}:${box.h},fps=${FPS},`
+      + `fade=t=in:st=0:d=${(MOTION.entrance / 1000).toFixed(2)},`
+      + `fade=t=out:st=${clipFadeOut}:d=${outSeconds.toFixed(3)}[clip];`
+      + `[bg][clip]overlay=${box.x}:${box.y}:shortest=0[base];`
+      + shellChain.replace('[0:v]', '[1:v]').replace('[1:v]fps', '[2:v]fps')
+      + `[base][shell]overlay=0:0:format=auto,fps=${FPS},format=yuv420p[v]`;
+    ff(['-i', clip.file,
+      '-framerate', String(FPS), '-i', path.join(inDir, 'f_%04d.png'),
+      '-framerate', String(FPS), '-i', path.join(outDir, 'f_%04d.png'),
+      '-filter_complex', filter, '-map', '[v]', '-t', dur.toFixed(3),
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', seg], `demo ${scene.id}`);
+  } else {
+    ff(['-framerate', String(FPS), '-i', path.join(inDir, 'f_%04d.png'),
+      '-framerate', String(FPS), '-i', path.join(outDir, 'f_%04d.png'),
+      '-filter_complex', `${shellChain}[shell]fps=${FPS},format=yuv420p[v]`,
+      '-map', '[v]', '-t', dur.toFixed(3),
+      '-c:v', 'libx264', '-preset', 'medium', '-crf', '19', seg], `seg ${scene.id}`);
+  }
   segments.push(seg);
 
-  if (scene.caption) cues.push({ start: clock, end: clock + dur, text: scene.caption });
+  // The VTT carries the English line — the same sentence the frame shows, so a
+  // player with subtitles on never contradicts the picture.
+  if (scene.headline) {
+    cues.push({ start: clock, end: clock + dur, text: String(scene.headline).split('\n').join(' ') });
+  }
   clock += dur;
-  console.log(`  ${String(scene.id).padEnd(18)} ${scene.scene.padEnd(13)} ${dur.toFixed(1)}s`);
+  console.log(`  ${String(scene.id).padEnd(18)} ${scene.scene.padEnd(13)} ${dur.toFixed(1)}s${scene.clipInfo ? `  🎬 ${scene.clip}` : ''}`);
 }
 await browser.close();
 
@@ -203,7 +356,7 @@ const listFile = path.join(WORK, 'segments.txt');
 fs.writeFileSync(listFile, segments.map((s) => `file '${s.replace(/\\/g, '/')}'`).join('\n'));
 ff(['-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', OUT], 'concat');
 
-// ── F5: burnt-in English is already in the frame; the locale tracks are files.
+// ── F5: English is in the frame as the headline; the track mirrors it.
 const vttPath = OUT.replace(/\.mp4$/, '.en.vtt');
 const ts = (s) => {
   const h = String(Math.floor(s / 3600)).padStart(2, '0');
