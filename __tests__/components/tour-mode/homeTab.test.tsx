@@ -16,6 +16,20 @@ import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
 
 const DIRECT_POLICY = resolveReviewPolicy({ source: 'tour_product', tourSlug: 'busan-signature' });
 
+/**
+ * The home tab asks the server about this booking's seat on mount (the seat
+ * door), and jsdom has no fetch. Answering "no seating on this tour" keeps
+ * these cases about what they were always about — the launcher grid and the
+ * lifecycle cards — while the seat card has its own suite.
+ */
+beforeEach(() => {
+  global.fetch = jest.fn(async () => ({
+    ok: true,
+    status: 200,
+    json: async () => ({ state: 'none', seat_number: null, can_pick: false, room_id: null, party_size: 1 }),
+  })) as unknown as typeof fetch;
+});
+
 const messages: RoomMessage[] = [
   {
     id: 'm1',

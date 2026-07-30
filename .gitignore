@@ -104,3 +104,6 @@ scripts/.qa-prod-*.json
 out/
 .cache/
 assets/audio/video-guide/
+
+# QA walk artifacts (screenshots, regenerated on demand)
+scripts/.walk-*/

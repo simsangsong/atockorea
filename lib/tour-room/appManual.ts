@@ -132,17 +132,25 @@ export const MANUAL_SECTIONS: ManualSection[] = [
       ru: 'Каждая остановка расскажет о себе',
       it: 'Ogni tappa si racconta da sola',
     },
+    /**
+     * 🔴 The one instruction this manual was missing.
+     *
+     * Everything below was true EXCEPT that it needs location sharing, which
+     * defaults off. So the manual promised automatic arrival cards to guests
+     * who would never receive one, and gave them nothing to act on. The last
+     * sentence is the fix; the home tab now carries the same one-tap door.
+     */
     body: {
-      en: 'When you arrive somewhere, a card appears in the chat: what makes it worth seeing, how long you have, and where the restrooms, cafés and best photo spots are. It arrives in your language — nothing to ask for.',
-      ko: '관광지에 도착하면 채팅에 카드가 떠요 — 볼거리, 머무는 시간, 화장실·카페·포토스팟 위치까지. 손님 언어로 자동 도착하니 따로 물어볼 필요가 없어요.',
-      ja: '到着すると、見どころ・滞在時間・トイレやカフェ・写真スポットの場所をまとめたカードがチャットに届きます。あなたの言語で自動的に届くので、質問は不要です。',
-      es: 'Al llegar aparece una tarjeta en el chat: qué merece la pena ver, cuánto tiempo tienes y dónde están baños, cafeterías y los mejores puntos de foto. En tu idioma y sin pedir nada.',
-      zh: '抵达景点时，聊天里会自动出现卡片：看点、停留时间，以及洗手间、咖啡店和最佳拍照点的位置。以您的语言呈现，无需询问。',
-      'zh-TW': '抵達景點時，聊天室會自動出現卡片：看點、停留時間，以及洗手間、咖啡廳和最佳拍照點的位置。以您的語言呈現，不必開口問。',
-      fr: 'À chaque arrivée, une fiche apparaît dans le chat : ce qu’il faut voir, le temps dont vous disposez, et où sont toilettes, cafés et meilleurs spots photo. Dans votre langue, sans rien demander.',
-      de: 'Bei jeder Ankunft erscheint eine Karte im Chat: was sich lohnt, wie viel Zeit Sie haben und wo Toiletten, Cafés und die besten Fotopunkte sind — in Ihrer Sprache, ganz von selbst.',
-      ru: 'При прибытии в чате появляется карточка: что стоит увидеть, сколько у вас времени, где туалеты, кафе и лучшие точки для фото. На вашем языке и без запроса.',
-      it: 'All’arrivo compare una scheda in chat: cosa vale la pena vedere, quanto tempo hai e dove sono bagni, caffè e i punti foto migliori. Nella tua lingua, senza chiedere nulla.',
+      en: 'When you arrive somewhere, a card appears in the chat: what makes it worth seeing, how long you have, and where the restrooms, cafés and best photo spots are. It arrives in your language — nothing to ask for. One thing to switch on: tap "Turn on" on the home screen (or Share my location on the Map tab) so the app knows you have arrived.',
+      ko: '관광지에 도착하면 채팅에 카드가 떠요 — 볼거리, 머무는 시간, 화장실·카페·포토스팟 위치까지. 손님 언어로 자동 도착하니 따로 물어볼 필요가 없어요. 한 가지만 켜주세요: 홈 화면의 [켜기] (또는 지도 탭의 「내 위치 공유」)를 눌러야 도착한 걸 앱이 알 수 있어요.',
+      ja: '到着すると、見どころ・滞在時間・トイレやカフェ・写真スポットの場所をまとめたカードがチャットに届きます。あなたの言語で自動的に届くので、質問は不要です。ひとつだけオンにしてください：ホーム画面の［オンにする］（または地図タブの「位置情報を共有」）。これで到着をアプリが検知できます。',
+      es: 'Al llegar aparece una tarjeta en el chat: qué merece la pena ver, cuánto tiempo tienes y dónde están baños, cafeterías y los mejores puntos de foto. En tu idioma y sin pedir nada. Solo hay que activar una cosa: pulsa «Activar» en la pantalla de inicio (o «Compartir mi ubicación» en la pestaña Mapa) para que la app sepa que has llegado.',
+      zh: '抵达景点时，聊天里会自动出现卡片：看点、停留时间，以及洗手间、咖啡店和最佳拍照点的位置。以您的语言呈现，无需询问。只需开启一项：在首页点击「开启」（或在地图标签开启「共享我的位置」），应用才能知道您已抵达。',
+      'zh-TW': '抵達景點時，聊天室會自動出現卡片：看點、停留時間，以及洗手間、咖啡廳和最佳拍照點的位置。以您的語言呈現，不必開口問。只需開啟一項：在首頁點擊「開啟」（或在地圖分頁開啟「分享我的位置」），App 才能知道您已抵達。',
+      fr: 'À chaque arrivée, une fiche apparaît dans le chat : ce qu’il faut voir, le temps dont vous disposez, et où sont toilettes, cafés et meilleurs spots photo. Dans votre langue, sans rien demander. Une seule chose à activer : appuyez sur « Activer » sur l’écran d’accueil (ou « Partager ma position » dans l’onglet Carte) pour que l’app sache que vous êtes arrivé.',
+      de: 'Bei jeder Ankunft erscheint eine Karte im Chat: was sich lohnt, wie viel Zeit Sie haben und wo Toiletten, Cafés und die besten Fotopunkte sind — in Ihrer Sprache, ganz von selbst. Eines müssen Sie einschalten: Tippen Sie auf dem Startbildschirm auf „Einschalten“ (oder im Tab Karte auf „Meinen Standort teilen“), damit die App Ihre Ankunft erkennt.',
+      ru: 'При прибытии в чате появляется карточка: что стоит увидеть, сколько у вас времени, где туалеты, кафе и лучшие точки для фото. На вашем языке и без запроса. Включить нужно одно: нажмите «Включить» на главном экране (или «Делиться геопозицией» во вкладке «Карта»), чтобы приложение узнало о вашем прибытии.',
+      it: 'All’arrivo compare una scheda in chat: cosa vale la pena vedere, quanto tempo hai e dove sono bagni, caffè e i punti foto migliori. Nella tua lingua, senza chiedere nulla. Una sola cosa da attivare: tocca «Attiva» nella schermata iniziale (o «Condividi la mia posizione» nella scheda Mappa) perché l’app sappia che sei arrivato.',
     },
   },
   {

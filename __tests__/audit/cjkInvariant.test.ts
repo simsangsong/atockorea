@@ -151,7 +151,19 @@ describe('rule 2 — break-all on CJK is the one opt-out the default cannot save
  * left above the real figure is a gate that has stopped measuring.
  */
 const CERTAIN_CEILING = 492;
-const SUSPECT_CEILING = 428;
+/**
+ * 428 → 429 on 2026-07-30: the in-room seat card (`seat/RoomSeatCard.tsx`) is
+ * one new element carrying CJK.
+ *
+ * A ratchet may only move up on evidence, never on faith — the whole point is
+ * that the population once grew 576 → 583 with nobody looking. The evidence
+ * here is a real render, not a reading of the source: `scripts/qa-seat-door-walk.mjs`
+ * and `scripts/qa-door-fixes-walk.mjs` drive the card in Korean at 390px and
+ * count line breaks landing between two CJK characters. Both report 0, and the
+ * action label carries `.text-cjk-safe` so a squeezed box truncates instead of
+ * collapsing. `suspect` means "source cannot tell"; the render can, and did.
+ */
+const SUSPECT_CEILING = 429;
 
 describe('ratchet — the count that grew unwatched now has a ceiling', () => {
   const hits: CjkBreakHit[] = [];
