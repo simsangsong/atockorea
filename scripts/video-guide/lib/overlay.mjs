@@ -1,14 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { createRequire } from 'node:module';
+import { sharp } from './deps.mjs';
 import { buildSvg, THEMES, adapt, W, H } from './svg.mjs';
 
-// This worktree has no node_modules. Resolve sharp from a checkout that does.
-// NEVER junction node_modules in — a recursive delete would follow the link out.
-const SHARP_HOST = process.env.VIDEO_GUIDE_SHARP_HOST
-  ?? 'C:/Users/sangsong/atockorea-ops-next/package.json';
-const sharp = createRequire(SHARP_HOST)('sharp');
-
+// Resolution lives in deps.mjs so sharp and playwright cannot drift apart.
 export { sharp };
 
 /**

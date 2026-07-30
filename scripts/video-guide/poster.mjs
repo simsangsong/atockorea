@@ -21,7 +21,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { spawnSync } from 'node:child_process';
-import { chromium } from 'playwright';
+import { chromium } from './lib/deps.mjs';
 import { buildScene, CANVAS, BAND } from './scene.mjs';
 import { promiseLineOf } from './lib/timeline.mjs';
 import { gradeChain, BLUR_FILL } from './lib/grade.mjs';

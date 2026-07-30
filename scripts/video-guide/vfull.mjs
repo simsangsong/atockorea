@@ -27,11 +27,11 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { chromium } from 'playwright';
+import { chromium } from './lib/deps.mjs';
 import { buildScene, buildWideScene, CANVAS, BAND, TYPE, WIDE, TYPE_WIDE } from './scene.mjs';
 import { measuredTimeline, stopsOf, promiseLineOf, transitLabel, roleOf } from './lib/timeline.mjs';
 import { BLUR_FILL } from './lib/grade.mjs';
-import { sharp } from './lib/overlay.mjs';
+import { sharp } from './lib/deps.mjs';
 
 const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
