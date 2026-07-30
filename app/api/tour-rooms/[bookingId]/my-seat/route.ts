@@ -30,7 +30,11 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ bookingId: 
   try {
     const supabase = createServerClient();
     const resolved = await resolveRoomActor(req, bookingId, { supabase });
-    if ('error' in resolved) {
+    // FA-022 — the other 48 callers test `!resolved.ok`, which is the union's
+    // actual discriminant. `'error' in resolved` happens to agree today only
+    // because the success shape carries no `error` key; add an optional one and
+    // this single caller silently inverts. Same check as everywhere else.
+    if (!resolved.ok) {
       return NextResponse.json({ error: resolved.error }, { status: resolved.status });
     }
     const { booking, actor } = resolved;

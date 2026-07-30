@@ -864,22 +864,35 @@ function TourRoomLive({
 
   // T2.9 — report the device's TTS capability once per entry (background,
   // via the join upsert; no UI state churn).
+  //
+  // FA-025 — `locale` used to be a dependency, so every language switch sent a
+  // SECOND join on top of the one `changeLocale` already sends. The capability
+  // being reported is the device's, not the language's: a phone that can speak
+  // does not stop when the guest switches to German. `detectTtsTier` still takes
+  // the locale for voice selection, so it reads the current value through a ref
+  // rather than re-running the effect.
+  const localeForTtsProbe = useRef(locale);
+  localeForTtsProbe.current = locale;
   useEffect(() => {
     let cancelled = false;
-    void detectTtsTier(locale).then((tier) => {
+    void detectTtsTier(localeForTtsProbe.current).then((tier) => {
       if (cancelled) return;
       const deviceKey = getOrCreateDeviceKey();
       if (!deviceKey) return;
       void fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/join`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': data.session },
-        body: JSON.stringify({ deviceKey, locale, ttsCapable: tier === 'device' }),
+        body: JSON.stringify({
+          deviceKey,
+          locale: localeForTtsProbe.current,
+          ttsCapable: tier === 'device',
+        }),
       }).catch(() => undefined);
     });
     return () => {
       cancelled = true;
     };
-  }, [bookingId, data.session, locale]);
+  }, [bookingId, data.session]);
 
   // T2.5 — optional auto-read of incoming guide notices (device TTS only,
   // never the paid path; silent when the tab is hidden).

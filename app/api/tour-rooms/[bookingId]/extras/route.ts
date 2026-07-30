@@ -288,11 +288,19 @@ export async function PATCH(
       return NextResponse.json({ error: 'post_tour_window_closed' }, { status: 403 });
     }
 
+    /**
+     * 🔴 FA-021 (full-app audit 2026-07-30) — this used to share
+     * `tour_room_extras` with POST, same key and same 6/min. Writing six line
+     * items in a minute therefore blocked the SETTLEMENT transitions in that
+     * same minute: 수취완료 and 취소 are what a guide taps with a guest standing
+     * in front of them, and they were competing for budget with bookkeeping.
+     * Same resource, different urgency, so not the same bucket.
+     */
     const gate = await requestGate({
-      namespace: 'tour_room_extras',
+      namespace: 'tour_room_extras_transition',
       key: `booking:${booking.id}`,
-      perMinute: 6,
-      perHour: 60,
+      perMinute: 12,
+      perHour: 90,
     });
     if (!gate.allowed) {
       return NextResponse.json({ error: 'rate_limited' }, { status: 429 });

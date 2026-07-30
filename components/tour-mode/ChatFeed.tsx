@@ -1017,10 +1017,17 @@ export default function ChatFeed({
 
             if (mine) {
               return (
-                <div className={`flex justify-end pl-12 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
+                <div className={`flex min-w-0 justify-end pl-12 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
                   {/* U4-D10 — 76% cap: long paragraphs keep a breathing gutter
-                      like Kakao/WhatsApp instead of wall-to-wall text. */}
-                  <div className="flex max-w-[76%] items-end gap-1.5">
+                      like Kakao/WhatsApp instead of wall-to-wall text.
+                      🔴 FA-015 — the cap is a percentage of the row, but the row
+                      also carries `pl-12`, and the timestamp column is intrinsic.
+                      At 320px with the largest text step that added up past the
+                      viewport: measured 324px of content in a 304px row, so the
+                      outgoing bubble bled off the right edge on every skin and
+                      both themes. `min-w-0` lets the pair shrink, and capping the
+                      inner row too keeps the gutter honest at the small end. */}
+                  <div className="flex min-w-0 max-w-full items-end gap-1.5 sm:max-w-[76%]">
                     {metaColumn}
                     <div className="min-w-0">{bubbleEl}</div>
                   </div>

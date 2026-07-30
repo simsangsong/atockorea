@@ -208,6 +208,11 @@ const dismissManual = async (page) => {
   }
 };
 
+/** GRID_ONLY=cockpit re-verifies one surface without paying for all 216. */
+const ONLY = process.env.GRID_ONLY ?? '';
+const wanted = (name) => !ONLY || ONLY.split(',').includes(name);
+
+if (wanted('home'))
 await runSurface({
   name: 'home',
   url: fx.room1Url,
@@ -219,6 +224,7 @@ await runSurface({
   },
 });
 
+if (wanted('lobby'))
 await runSurface({
   name: 'lobby',
   url: lobbyFx.roomUrl,
@@ -230,6 +236,7 @@ await runSurface({
   },
 });
 
+if (wanted('cockpit'))
 await runSurface({
   name: 'cockpit',
   url: fx.guideUrl,
@@ -241,8 +248,13 @@ await runSurface({
     const hero = page.locator('[data-testid="drive-hero"]').first();
     if (await hero.isVisible().catch(() => false)) await hero.click();
     const drive = page.locator('[data-testid="ops-drive"]').first();
-    await drive.waitFor({ timeout: 30000 });
-    await drive.click();
+    // ⚠ At 320px the drive button sits below the fold, and `waitFor` wants
+    // VISIBLE — so the first version of this walk timed out on exactly the six
+    // combos it was written to judge, and reported them as "unreachable" rather
+    // than as a pass or a failure. Attach first, then bring it into view.
+    await drive.waitFor({ state: 'attached', timeout: 45000 });
+    await drive.scrollIntoViewIfNeeded({ timeout: 15000 });
+    await drive.click({ timeout: 15000 });
     await page.waitForSelector('[data-testid="driver-feed"]', { timeout: 60000 });
   },
 });
