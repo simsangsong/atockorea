@@ -160,6 +160,11 @@ import { deriveChatLocale } from '@/lib/tour-room/chatLocale';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import { buildReplySnapshot } from '@/lib/tour-room/reply';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
+import { useLocationSharing } from '@/hooks/useLocationSharing';
+import { useGeoWatcher } from '@/hooks/useGeoWatcher';
+import { useSpotGeofence } from '@/hooks/useSpotGeofence';
+import { useApproachWatch } from '@/hooks/useApproachWatch';
+import type { GeoSample } from '@/lib/tour-room/geo';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { extensionForMime } from '@/lib/tour-room/recorder';
 import { detectTtsTier, primeAudio, speakWithDevice } from '@/lib/tour-room/tts';
@@ -655,6 +660,93 @@ function TourRoomLive({
   // banner knows when the guest is actually LOOKING at the home hero.
   const [activeTab, setActiveTab] = useState<RoomTab>(
     deepLink.focusMessageId ? 'chat' : viewerRole === 'customer' ? 'home' : 'chat',
+  );
+
+  /**
+   * 🔴 Location sharing lives HERE, not in the map tab.
+   *
+   * RoomShell renders panels with `{tab === 'map' && …}`, so the map tab
+   * unmounts on every tab change. The sharing switch was `useState(false)`
+   * inside it, which meant the guest's opt-in — and with it the arrival
+   * geofence and the 1 km approach preview, which ride the same sample stream
+   * — was thrown away the instant they opened Chat. The manual promises
+   * "each stop explains itself"; that only held while they stared at the map.
+   */
+  const geofenceSpots = useMemo(
+    () =>
+      (snapshot.tour_guide_spots ?? [])
+        .filter(
+          (spot) =>
+            typeof spot.latitude === 'number' &&
+            typeof spot.longitude === 'number' &&
+            typeof spot.trigger_radius_m === 'number',
+        )
+        .map((spot) => ({
+          id: spot.id,
+          latitude: spot.latitude!,
+          longitude: spot.longitude!,
+          trigger_radius_m: spot.trigger_radius_m!,
+          exit_radius_m: spot.exit_radius_m ?? null,
+        })),
+    [snapshot.tour_guide_spots],
+  );
+  // §11.C C2 — 1 km approach previews use poi_key (the content key), so a spot
+  // without one simply never previews.
+  const approachTargets = useMemo(
+    () =>
+      (snapshot.tour_guide_spots ?? [])
+        .filter(
+          (spot) =>
+            typeof spot.poi_key === 'string' &&
+            spot.poi_key.length > 0 &&
+            typeof spot.latitude === 'number' &&
+            typeof spot.longitude === 'number',
+        )
+        .map((spot) => ({
+          poi_key: spot.poi_key!,
+          latitude: spot.latitude!,
+          longitude: spot.longitude!,
+        })),
+    [snapshot.tour_guide_spots],
+  );
+  const { sharing, setSharing } = useLocationSharing({
+    bookingId,
+    tourDate: snapshot.booking?.tour_date ?? null,
+    live: data.lifecycle === 'live',
+  });
+  const { onSample: onGeofenceSample } = useSpotGeofence({
+    bookingId,
+    roomSession: data.session,
+    spots: geofenceSpots,
+    locale,
+    enabled: sharing && geofenceSpots.length > 0,
+  });
+  const { onSample: onApproachSample } = useApproachWatch({
+    bookingId,
+    roomSession: data.session,
+    targets: approachTargets,
+    locale,
+    enabled: sharing && approachTargets.length > 0,
+  });
+  const onGeoSample = useCallback(
+    (sample: GeoSample) => {
+      onGeofenceSample(sample);
+      onApproachSample(sample);
+    },
+    [onGeofenceSample, onApproachSample],
+  );
+  const { status: geoStatus, lastPosition, stopSharing } = useGeoWatcher({
+    bookingId,
+    roomSession: data.session,
+    enabled: sharing,
+    onSample: onGeoSample,
+  });
+  const onSharingChange = useCallback(
+    (next: boolean) => {
+      setSharing(next);
+      if (!next) void stopSharing();
+    },
+    [setSharing, stopSharing],
   );
   const replyPrefilledRef = useRef(false);
   useEffect(() => {
@@ -1176,15 +1268,22 @@ function TourRoomLive({
                 tourTitle={snapshot.booking?.tours?.title ?? undefined}
                 theme={theme}
                 locations={locations}
+                arrivalUnlock={{
+                  sharing,
+                  status: geoStatus,
+                  hasGeofencedStops: geofenceSpots.length > 0,
+                  onEnable: () => onSharingChange(true),
+                }}
+                guestName={data.participant.display_name}
+                authToken={authToken}
               />
             )
           : undefined
       }
       map={
         <RoomMapTab
-          bookingId={bookingId}
-          roomSession={data.session}
           locale={locale}
+          viewerRole={viewerRole}
           myParticipantId={data.participant.id}
           locations={locations}
           presence={presence}
@@ -1196,35 +1295,10 @@ function TourRoomLive({
           }))}
           facilities={snapshot.tour_facilities ?? []}
           pickup={myPickup}
-          geofenceSpots={(snapshot.tour_guide_spots ?? [])
-            .filter(
-              (spot) =>
-                typeof spot.latitude === 'number' &&
-                typeof spot.longitude === 'number' &&
-                typeof spot.trigger_radius_m === 'number',
-            )
-            .map((spot) => ({
-              id: spot.id,
-              latitude: spot.latitude!,
-              longitude: spot.longitude!,
-              trigger_radius_m: spot.trigger_radius_m!,
-              exit_radius_m: spot.exit_radius_m ?? null,
-            }))}
-          // §11.C C2 — 1 km approach previews use poi_key (the content key),
-          // so a spot without one simply never previews.
-          approachTargets={(snapshot.tour_guide_spots ?? [])
-            .filter(
-              (spot) =>
-                typeof spot.poi_key === 'string' &&
-                spot.poi_key.length > 0 &&
-                typeof spot.latitude === 'number' &&
-                typeof spot.longitude === 'number',
-            )
-            .map((spot) => ({
-              poi_key: spot.poi_key!,
-              latitude: spot.latitude!,
-              longitude: spot.longitude!,
-            }))}
+          sharing={sharing}
+          onSharingChange={onSharingChange}
+          geoStatus={geoStatus}
+          lastPosition={lastPosition}
         />
       }
       settings={

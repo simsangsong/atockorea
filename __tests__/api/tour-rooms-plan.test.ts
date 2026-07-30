@@ -44,7 +44,16 @@ const BOOKING = {
   contact_phone: null,
   preferred_language: 'ja',
   itinerary: null as unknown,
-  tours: { schedule: [{ time: '09:00', title: 'Legacy stop' }], city: 'Jeju', duration: '9 hours' },
+  // 'vehicle' = a PRIVATE charter tour: the only shape whose route a guest may
+  // edit. The fixture omitted price_type entirely, which is why the missing
+  // join-tour gate went unnoticed — every guest-write test looked like a
+  // private tour to the editor and like nothing at all to the route.
+  tours: {
+    schedule: [{ time: '09:00', title: 'Legacy stop' }],
+    city: 'Jeju',
+    duration: '9 hours',
+    price_type: 'vehicle',
+  },
 };
 
 interface DbConfig {
@@ -52,6 +61,8 @@ interface DbConfig {
   isLead?: boolean;
   itinerary?: unknown;
   pois?: Array<{ poi_key: string; lat: number | null; lng: number | null; name_en: string | null }>;
+  /** tours.price_type — 'vehicle' ⇒ private; anything else ⇒ join (fixed route). */
+  priceType?: string | null;
 }
 
 function fakeDb(config: DbConfig = {}) {
@@ -66,10 +77,20 @@ function fakeDb(config: DbConfig = {}) {
     from(table: string) {
       let sawStatusFilter = false;
       const resolveSelect = async () => {
+        const priceType = config.priceType === undefined ? BOOKING.tours.price_type : config.priceType;
         if (table === 'bookings') {
-          return { data: { ...BOOKING, itinerary: config.itinerary ?? BOOKING.itinerary }, error: null };
+          return {
+            data: {
+              ...BOOKING,
+              tours: { ...BOOKING.tours, price_type: priceType },
+              itinerary: config.itinerary ?? BOOKING.itinerary,
+            },
+            error: null,
+          };
         }
-        if (table === 'tours') return { data: { city: 'Jeju', duration: '9 hours' }, error: null };
+        if (table === 'tours') {
+          return { data: { city: 'Jeju', duration: '9 hours', price_type: priceType }, error: null };
+        }
         if (table === 'tour_room_participants') {
           return { data: { is_lead: config.isLead ?? false }, error: null };
         }
@@ -519,6 +540,65 @@ describe('GET /api/tour-rooms/[bookingId]/plan — viewer meta', () => {
     );
     const body = await res.json();
     expect(body.viewer).toMatchObject({ is_lead: false, can_edit: false });
+  });
+});
+
+/**
+ * 🔴 A join tour's route is fixed, and only the EDITOR knew it: PlanEditorClient
+ * swaps to a read-only view when `tour.is_private` is false, but PUT never read
+ * `tours.price_type` at all. A lead guest on a per-person bus booking could
+ * therefore rewrite, submit, or delegate the day plan through the API — and
+ * `can_edit` told them they were allowed to.
+ *
+ * Both halves are gated here. The GET assertion is the mutation guard: revert
+ * either one and a test fails.
+ */
+describe('PUT /plan — a JOIN tour is fixed on the server, not just in the UI', () => {
+  const JOIN = { isLead: true, priceType: 'person' as const };
+
+  it.each([
+    ['a stops rewrite', { stops: STOPS }],
+    ['submit', { stops: STOPS, submit: true }],
+    ['delegate', { delegate: true }],
+    ['a departure time', { departure_time: '09:30' }],
+  ])('refuses %s from the lead guest with 403 private_tour_only', async (_label, json) => {
+    const db = fakeDb(JOIN);
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': customerSession() }, json }),
+      routeParams(),
+    );
+    expect(res.status).toBe(403);
+    expect(await res.json()).toMatchObject({ error: 'private_tour_only' });
+    expect(db.upserts.tour_day_plans).toBeUndefined();
+  });
+
+  it('still lets the guide write the join tour’s plan', async () => {
+    const db = fakeDb(JOIN);
+    createServerClientMock.mockReturnValue(db);
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': guideSession() }, json: { stops: STOPS } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    expect(db.upserts.tour_day_plans).toHaveLength(1);
+  });
+
+  it('GET reports can_edit:false for the join lead guest, matching PUT', async () => {
+    createServerClientMock.mockReturnValue(fakeDb(JOIN));
+    const res = await planGET(fakeReq({ headers: { 'x-tour-room-auth': customerSession() } }), routeParams());
+    const body = await res.json();
+    expect(body.tour.is_private).toBe(false);
+    expect(body.viewer).toMatchObject({ is_lead: true, can_edit: false });
+  });
+
+  it('treats an unknown price_type as a join tour (safe direction)', async () => {
+    createServerClientMock.mockReturnValue(fakeDb({ isLead: true, priceType: null }));
+    const res = await planPUT(
+      fakeReq({ headers: { 'x-tour-room-auth': customerSession() }, json: { stops: STOPS } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(403);
   });
 });
 

@@ -3,25 +3,26 @@
 /**
  * T3.2–T3.6 — the map tab: everyone on one map.
  *
- * Owns the sharing toggle (opt-in, K-4 default OFF), the foreground geo
- * watcher, the screen wake lock while sharing (T3.6), follow-the-guide mode,
+ * Renders the sharing toggle (opt-in, K-4 default OFF), follow-the-guide mode,
  * and the find-the-guide card. The Maps SDK loads only when this tab mounts
  * (§O-1 ② — dynamic ssr:false canvas).
+ *
+ * 🔴 It no longer OWNS the sharing state or the watcher. This panel unmounts on
+ * every tab change (RoomShell renders `{tab === 'map' && …}`), which silently
+ * threw away the guest's opt-in and stopped the arrival geofence the moment
+ * they opened Chat. Both now live in TourRoomLive via `useLocationSharing`;
+ * this component is the screen for them, not the home.
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import dynamicImport from 'next/dynamic';
 import FindGuideCard from '@/components/tour-mode/map/FindGuideCard';
 import { IconFollow, TR_ICON } from '@/components/tour-mode/icons';
 import LocationShareCard from '@/components/tour-mode/map/LocationShareCard';
 import PresenceBar from '@/components/tour-mode/PresenceBar';
-import { useApproachWatch } from '@/hooks/useApproachWatch';
-import { useGeoWatcher } from '@/hooks/useGeoWatcher';
-import { useSpotGeofence } from '@/hooks/useSpotGeofence';
+import type { GeoWatcherStatus } from '@/hooks/useGeoWatcher';
 import { acquireWakeLock, type WakeLockHandle } from '@/lib/tour-room/wakeLock';
-import type { ApproachTarget } from '@/lib/tour-room/approach';
-import type { GeoSample } from '@/lib/tour-room/geo';
-import type { WatchableSpot } from '@/lib/tour-room/spotWatcher';
+import type { LatLng } from '@/lib/tour-room/geo';
 import type { RoomLocation, RoomPresence } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { MapSpot, MapPoint } from '@/components/tour-mode/map/RoomMapCanvas';
@@ -80,8 +81,6 @@ export function isOperatorRole(role?: string | null): boolean {
 }
 
 export default function RoomMapTab({
-  bookingId,
-  roomSession,
   locale,
   viewerRole,
   myParticipantId,
@@ -90,11 +89,11 @@ export default function RoomMapTab({
   spots,
   facilities,
   pickup,
-  geofenceSpots,
-  approachTargets,
+  sharing,
+  onSharingChange,
+  geoStatus,
+  lastPosition,
 }: {
-  bookingId: string;
-  roomSession: string;
   locale: RoomLocale;
   /** P1-1 — which action set this viewer gets. Guest affordances are gated on it. */
   viewerRole?: string | null;
@@ -104,42 +103,13 @@ export default function RoomMapTab({
   spots: MapSpot[];
   facilities: MapPoint[];
   pickup: MapPoint | null;
-  /** T4.4 — spots with radii; arrivals auto-post while sharing is on. */
-  geofenceSpots?: WatchableSpot[];
-  /** §11.C C2 — scheduled POIs whose 1 km preview may fire while sharing. */
-  approachTargets?: ApproachTarget[];
+  /** Owned by TourRoomLive so it survives a tab change. */
+  sharing: boolean;
+  onSharingChange: (next: boolean) => void;
+  geoStatus: GeoWatcherStatus;
+  lastPosition: LatLng | null;
 }) {
-  const [sharing, setSharing] = useState(false);
   const [followGuide, setFollowGuide] = useState(false);
-  const { onSample: onGeofenceSample } = useSpotGeofence({
-    bookingId,
-    roomSession,
-    spots: geofenceSpots ?? [],
-    locale,
-    enabled: sharing && (geofenceSpots?.length ?? 0) > 0,
-  });
-  // §11.C C2 — the approach stepper rides the same opt-in sample stream as the
-  // arrival geofence; nothing extra is switched on behind the guest's back.
-  const { onSample: onApproachSample } = useApproachWatch({
-    bookingId,
-    roomSession,
-    targets: approachTargets ?? [],
-    locale,
-    enabled: sharing && (approachTargets?.length ?? 0) > 0,
-  });
-  const onSample = useCallback(
-    (sample: GeoSample) => {
-      onGeofenceSample(sample);
-      onApproachSample(sample);
-    },
-    [onGeofenceSample, onApproachSample],
-  );
-  const { status, lastPosition, stopSharing } = useGeoWatcher({
-    bookingId,
-    roomSession,
-    enabled: sharing,
-    onSample,
-  });
 
   // T3.6 — hold a screen wake lock while actively sharing.
   const wakeLockRef = useRef<WakeLockHandle | null>(null);
@@ -170,15 +140,15 @@ export default function RoomMapTab({
   const followTarget = isOperator ? guestLocation : guideLocation;
   const followLabel = MAP_FOLLOW_LABEL[isOperator ? 'operator' : 'customer'][locale];
 
-  const onToggle = (next: boolean) => {
-    setSharing(next);
-    if (!next) void stopSharing();
-  };
-
   return (
     <div className="flex min-h-0 flex-1 flex-col gap-2">
       <PresenceBar presence={presence} locale={locale} myParticipantId={myParticipantId} />
-      <LocationShareCard locale={locale} enabled={sharing} status={status} onToggle={onToggle} />
+      <LocationShareCard
+        locale={locale}
+        enabled={sharing}
+        status={geoStatus}
+        onToggle={onSharingChange}
+      />
 
       {/* Framed map card — a hairline + soft shadow so the map reads as a
           contained surface, not a raw full-bleed embed. */}

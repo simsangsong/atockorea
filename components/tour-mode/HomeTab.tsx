@@ -28,6 +28,9 @@ import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { driverNameFromPayload, firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
+import ArrivalUnlockCard from '@/components/tour-mode/ArrivalUnlockCard';
+import RoomSeatCard from '@/components/tour-mode/seat/RoomSeatCard';
+import type { GeoWatcherStatus } from '@/hooks/useGeoWatcher';
 import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
 import Sheet from '@/components/tour-mode/Sheet';
 import AppManual from '@/components/tour-mode/AppManual';
@@ -459,6 +462,9 @@ export default function HomeTab({
   manualKind,
   theme,
   tourTitle,
+  arrivalUnlock,
+  guestName,
+  authToken,
 }: {
   api: RoomShellHomeApi;
   locale: RoomLocale;
@@ -502,6 +508,21 @@ export default function HomeTab({
   manualKind?: ManualKind;
   /** The sheet mounts outside .tr-root, so it re-scopes the token layer. */
   theme?: 'light' | 'dark';
+  /**
+   * The door to arrival commentary. TourRoomLive owns the sharing state (it has
+   * to — the map tab unmounts), so the card's inputs arrive as one bundle.
+   * Absent → no card, which is what non-guest viewers get.
+   */
+  arrivalUnlock?: {
+    sharing: boolean;
+    status: GeoWatcherStatus;
+    hasGeofencedStops: boolean;
+    onEnable: () => void;
+  };
+  /** Written onto chosen seats so the guide's board shows a name. */
+  guestName?: string | null;
+  /** Booking-scope personal token (?rt=). The seats API will not take the session. */
+  authToken?: string | null;
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
@@ -855,6 +876,38 @@ export default function HomeTab({
           tourDate={tourDate}
           pickupTime={pickupPoint?.pickup_time ?? null}
           onOpenMap={() => api.selectTab('map')}
+        />
+      )}
+
+      {/* ---- Seat door ------------------------------------------------
+          The picker existed and worked; nothing in the room linked to it, and
+          the only entrance (an ops claim link) has never been sent — live DB:
+          zero `room_claim` invites, zero seat assignments. The card decides
+          for itself whether to appear: no vehicle assigned, no seating, no
+          card. Not lifecycle-gated here — the server's `can_pick` already
+          closes it at 00:00 KST on the tour day (C-11), and an ASSIGNED seat
+          is exactly what a guest wants to see on the morning itself. */}
+      {lifecycle !== 'ended' && (
+        <RoomSeatCard
+          bookingId={bookingId}
+          roomSession={roomSession}
+          locale={locale}
+          guestName={guestName ?? ''}
+          authToken={authToken}
+        />
+      )}
+
+      {/* ---- Arrival commentary door (tour day only) ------------------
+          The geofence that fires arrival cards needs location sharing, which
+          defaults off and lived behind a toggle on the map tab that nothing
+          pointed at. Self-hides once it is on. */}
+      {lifecycle === 'live' && arrivalUnlock && (
+        <ArrivalUnlockCard
+          locale={locale}
+          sharing={arrivalUnlock.sharing}
+          status={arrivalUnlock.status}
+          hasGeofencedStops={arrivalUnlock.hasGeofencedStops}
+          onEnable={arrivalUnlock.onEnable}
         />
       )}
 

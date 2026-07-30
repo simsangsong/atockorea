@@ -223,18 +223,27 @@ function regionForCity(city: unknown): string | null {
 interface TourMeta {
   region: string | null;
   totalHours: number | null;
+  /** D1 — 'vehicle' ⇒ private (customizable route). Anything else ⇒ join. */
+  isPrivate: boolean;
 }
 
 async function fetchTourMeta(supabase: RoomDbClient, tourId: string | null): Promise<TourMeta> {
-  if (!tourId) return { region: null, totalHours: null };
+  if (!tourId) return { region: null, totalHours: null, isPrivate: false };
   try {
-    const { data } = await supabase.from('tours').select('city, duration').eq('id', tourId).maybeSingle();
+    const { data } = await supabase
+      .from('tours')
+      .select('city, duration, price_type')
+      .eq('id', tourId)
+      .maybeSingle();
     return {
       region: regionForCity((data as { city?: unknown } | null)?.city),
       totalHours: parseTourHours((data as { duration?: unknown } | null)?.duration),
+      isPrivate: isPrivateTour((data as { price_type?: string | null } | null)?.price_type ?? null),
     };
   } catch {
-    return { region: null, totalHours: null };
+    // A read failure must not silently unlock a fixed itinerary: fall back to
+    // the safe (join) shape, which is also what tourKind.ts does for unknowns.
+    return { region: null, totalHours: null, isPrivate: false };
   }
 }
 
@@ -368,6 +377,7 @@ export async function GET(
     const lead = isStaff ? false : await isLeadGuest(supabase, actor);
     const planStatus = (plan as { status?: string } | null)?.status ?? null;
     const draftEditable = planStatus === null || planStatus === 'guest_draft';
+    const isPrivate = isPrivateTour(tourJoin?.price_type as string | null | undefined);
 
     return NextResponse.json({
       source: result.source,
@@ -376,7 +386,9 @@ export async function GET(
       viewer: {
         role: actor.role,
         is_lead: lead,
-        can_edit: isStaff || (lead && draftEditable),
+        // Mirrors the PUT gate exactly: a lead guest on a JOIN tour cannot
+        // write, so can_edit must not claim otherwise.
+        can_edit: isStaff || (lead && draftEditable && isPrivate),
       },
       tour: {
         date: booking.tour_date,
@@ -388,7 +400,7 @@ export async function GET(
         // 2026-07-20). Discriminator: tours.price_type ('vehicle' = private).
         // D1: routed through the canonical helper — behaviour-identical to the
         // prior inline `price_type === 'vehicle'` test.
-        is_private: isPrivateTour(tourJoin?.price_type as string | null | undefined),
+        is_private: isPrivate,
         guide_curated: Boolean(
           ((bookingRow as { itinerary?: Record<string, unknown> } | null)?.itinerary as
             | Record<string, unknown>
@@ -430,7 +442,19 @@ export async function PUT(
     const submit = body.submit === true;
     const delegate = body.delegate === true;
 
+    // D1 — the tour kind decides whether a guest may write AT ALL. It is read
+    // from the DB, never from the request.
+    const tourMeta = await fetchTourMeta(supabase, booking.tour_id);
+
     if (!isStaff) {
+      // 🔴 A join (per-person bus / small-group / coach) tour runs a FIXED
+      // itinerary. That was enforced in the editor only — PlanEditorClient
+      // returns the read-only view when `tour.is_private` is false — so the
+      // route itself accepted stops/submit/delegate from any lead guest on a
+      // join booking. A UI-only gate is not a gate; this is the server half.
+      if (!tourMeta.isPrivate) {
+        return NextResponse.json({ error: 'private_tour_only' }, { status: 403 });
+      }
       // P-D13 — the lead guest edits the draft; everyone else reads.
       if (actor.role !== 'customer' || !(await isLeadGuest(supabase, actor))) {
         return NextResponse.json({ error: 'lead_guest_only' }, { status: 403 });
@@ -524,7 +548,6 @@ export async function PUT(
     }
 
     // W1.3 — enrich coords + recompute feasibility on every stops write.
-    const tourMeta = await fetchTourMeta(supabase, booking.tour_id);
     let feasibility: FeasibilityResult | undefined;
     if (stops !== undefined || confirm || submit) {
       nextStops = await enrichStopCoords(supabase, nextStops);
