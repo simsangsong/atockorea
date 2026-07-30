@@ -11,11 +11,11 @@
     "height": 1080,
     "fps": 30
   },
-  "sourceDir": "C:/Users/sangsong/Documents/카카오톡 받은 파일",
+  "sourceDir": "D:/VIDEO2/태종대,용궁구름다리, 국제시장/해동용궁사",
   "sources": {
-    "A": "KakaoTalk_20260729_193115455.mp4",
-    "B": "KakaoTalk_20260729_193134852.mp4",
-    "C": "KakaoTalk_20260729_193237707.mp4"
+    "A": "01_20260729_103613.mp4",
+    "B": "KakaoTalk_20260729_193134852_B_rockshelf.mp4",
+    "C": "02_20260729_104022.mp4"
   },
   "audio": {
     "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
@@ -23,7 +23,9 @@
     "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29)"
   },
   "_notes": [
-    "정본 = docs/onetake-tour-video-v5-rebuild-2026-07-30.md"
+    "정본 = docs/onetake-tour-video-v5-rebuild-2026-07-30.md",
+    "2026-07-31: A/C를 D:/VIDEO2 원본(3.5x 비트레이트)으로 교체. duration 오차 ±0.002s로 컷 무변경.",
+    "B(록쉘프)는 원본 미보유 — 카카오톡 수신본만 존재(재인코딩, 촬영기기 상이 추정). 폴더에 복사해 둠."
   ],
   "beats": [
     {
