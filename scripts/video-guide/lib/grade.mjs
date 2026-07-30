@@ -33,6 +33,11 @@ export function gradeChain(spec) {
     + ":b='0/0.030 0.25/0.252 0.5/0.492 0.75/0.735 1/0.972'",
     'unsharp=5:5:0.48:5:5:0.0',
     'noise=alls=5:allf=t+u',          // fine grain, kills the digital flatness
-    'vignette=a=PI/6.5',              // lighter than v1 — the corners were heavy
+    // Vignette measured, not guessed. Corner-to-centre luma on a bright sky
+    // frame: 0.676 ungraded (the lens's own falloff), 0.462 at PI/6.5, 0.606
+    // at PI/12. PI/6.5 dimmed the whole upper third of a seascape, which read
+    // as a filter rather than as a lens. PI/12 tucks the corners and leaves
+    // the sky alone.
+    'vignette=a=PI/12',
   ].join(',');
 }

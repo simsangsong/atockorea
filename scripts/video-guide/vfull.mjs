@@ -92,6 +92,8 @@ if (!tl) {
   process.exit(1);
 }
 const masterDur = probeDur(MASTER);
+const masterStat = fs.statSync(MASTER);
+const masterStamp = `${masterStat.size}:${Math.round(masterStat.mtimeMs)}`;
 if (Math.abs(masterDur - tl.total) > 0.8) {
   console.error(`타임라인 불일치: 마스터 ${masterDur.toFixed(2)}s vs 실측 기록 ${tl.total.toFixed(2)}s — ` +
     `마스터가 이 timeline.json 과 같은 빌드인지부터 확인하라`);
@@ -140,8 +142,10 @@ for (const row of tl.rows) {
   // `v` covers everything the cache key cannot see — bump it whenever the
   // composition filter changes, or half the guide keeps the old look.
   // `scene` is bumped per orientation so a CSS change re-renders only that cut.
+  // `master` is the file this segment is lifted FROM: without it, regrading the
+  // wide master leaves every vertical segment "cached" and the two cuts drift.
   const h = hashOf({ props, start: row.start, dur: row.dur, TYPESET,
-    scene: WIDE_MODE ? 'w2' : 'v1', v: 6 });
+    scene: WIDE_MODE ? 'w2' : 'v1', master: masterStamp, v: 6 });
   segs.push(seg);
   if (!FORCE && manifest[beat.id] === h && fs.existsSync(seg)) { console.log(`  ${beat.id}  cached`); continue; }
 
