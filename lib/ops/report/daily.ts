@@ -140,6 +140,11 @@ export interface AttentionSummary {
    */
   autopilotOpen: number
   /**
+   * 지난 투어일의 제안 — 조치할 수 없으므로 요주의로 세지 않지만, 숨기지도
+   * 않는다. 쌓여 있다는 사실 자체가 큐를 아무도 안 연다는 신호다.
+   */
+  autopilotStale: number
+  /**
    * 🔴 FA-014 (풀 오디트 2026-07-30) — 도착 해설이 **전 기간 한 번도 발동한 적이
    * 없다.** `tour_room_events` type='manual_arrival' 0행 · `tour_room_spot_events`
    * event_type='arrived' 0행 · `poi_travel_matrix` 0행. 코드는 정상이다(감사가
@@ -778,14 +783,29 @@ async function buildAttention(
     ),
     // 관제 W5 — 아직 아무도 손대지 않은 제안. 테이블 미적용이면 빈 배열.
     safeSelect<{ id: string }>(
-      supabase.from('ops_autopilot_suggestions').select('id').eq('status', 'suggested'),
+      /**
+       * 🔴 사장님 캡처(2026-07-30 18:00) — 이 줄이 **23건**이었고, 23건 전부
+       * 이미 지나간 투어일(7/26~7/30)이었다. 제안은 날짜가 지나도 스스로 닫히지
+       * 않으므로 이 숫자는 매일 자라기만 하고, 자라기만 하는 숫자는 며칠 만에
+       * 읽히지 않는다.
+       *
+       * 이 큐의 값은 설계 주석이 직접 적어놨다 — "내일·모레 투어인데 안내가 안
+       * 나갔다". 지난 날짜 제안은 정의상 **사후 보고**이고, 그건 이 크론이 피하려던
+       * 바로 그것이다. 그래서 `tour_date` 를 함께 읽어 **오늘 이후만 요주의로**
+       * 세고, 지난 것은 아래에서 따로 조용히 보고한다(지우지 않는다 — 그 룸이
+       * 가이드 없이 돌았다는 기록 자체가 데이터다).
+       */
+      supabase.from('ops_autopilot_suggestions').select('id, tour_date').eq('status', 'suggested'),
     ),
   ])
 
   const uncontacted = contact?.missingCount ?? 0
   const reviewQueued = reviewLogs.length
   const parseFailures = failures.length
-  const autopilotOpen = autopilotRows.length
+  const autopilotAll = autopilotRows as unknown as Array<{ id: string; tour_date: string | null }>
+  // 날짜가 없는 제안은 만료 개념이 없으므로 계속 요주의로 센다.
+  const autopilotOpen = autopilotAll.filter((r) => !r.tour_date || r.tour_date >= today).length
+  const autopilotStale = autopilotAll.length - autopilotOpen
 
   // §L L6 — 오늘 LLM 사용량. 테이블 미적용이면 safeSelect가 빈 배열을 주고
   // 이 섹션은 조용히 빠진다(계측 하나 때문에 보고서가 죽으면 안 된다).
@@ -883,6 +903,7 @@ async function buildAttention(
     overCapacity,
     llm,
     autopilotOpen,
+    autopilotStale,
     arrivals,
     clean:
       unassignedRooms === 0 &&
@@ -960,6 +981,7 @@ export async function buildDailyReport(
         overCapacity: [],
         llm: null,
         autopilotOpen: 0,
+        autopilotStale: 0,
         // The section failed, so we know nothing about arrivals — say nothing.
         arrivals: null,
         clean: true,
