@@ -686,7 +686,7 @@ export default function RoomShell({
                 booking (photo + Details drawer with description, highlights,
                 facilities), instead of a bare time/title list. */}
             {tab === 'schedule' && richStops && richStops.length > 0 && (
-              <div className="tr-anim-panel-in overflow-y-auto px-4 py-4">
+              <div className="tr-anim-panel-in overflow-y-auto px-4 py-4" data-tr-panel="schedule">
                 <PlanStopCards
                   stops={richStops as Parameters<typeof PlanStopCards>[0]['stops']}
                   locale={locale}
@@ -700,7 +700,7 @@ export default function RoomShell({
               </div>
             )}
             {tab === 'schedule' && !(richStops && richStops.length > 0) && (
-              <ol className="tr-anim-panel-in overflow-y-auto px-4 py-4">
+              <ol className="tr-anim-panel-in overflow-y-auto px-4 py-4" data-tr-panel="schedule">
                 {schedule.length === 0 && (
                   <p className="tr-card-text pt-10 text-center text-[var(--tr-ink-3)]">—</p>
                 )}
@@ -761,7 +761,9 @@ export default function RoomShell({
               </ol>
             )}
             {tab === 'settings' && (
-              <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3">{settings}</div>
+              <div className="tr-anim-panel-in min-h-0 flex-1 overflow-y-auto px-3 py-3" data-tr-panel="settings">
+                {settings}
+              </div>
             )}
           </div>
         </div>

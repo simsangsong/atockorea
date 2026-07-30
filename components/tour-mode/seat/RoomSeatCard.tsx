@@ -25,6 +25,7 @@ import { useCallback, useEffect, useState } from 'react';
 import dynamicImport from 'next/dynamic';
 import { IconTicket, IconChevronRight, TR_ICON } from '@/components/tour-mode/icons';
 import { joinCopy } from '@/lib/ops/seating/joinCopy';
+import { COPY as PLAN_COPY } from '@/components/tour-mode/plan/planCopy';
 import { readStoredPersonalTokens, findRecognizedToken } from '@/lib/ops/seating/personalTokens';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { MySeatState } from '@/app/api/tour-rooms/[bookingId]/my-seat/route';
@@ -112,11 +113,16 @@ export default function RoomSeatCard({
   const assigned = seat.state === 'assigned' && seat.seat_number != null;
   const pickable = seat.can_pick && Boolean(personalToken) && Boolean(seat.room_id);
 
+  // 🔴 Only three lines are reachable, because `none` already returned null.
+  // The middle one used to be "seats open once your vehicle is assigned" —
+  // which is the one thing that is NOT true here: reaching `pending` means a
+  // vehicle exists. The honest line is that the guide seats people on the day,
+  // the same wording the plan editor's read-only seat row already uses.
   const body = assigned
     ? SEAT_LABEL[locale](seat.seat_number as number)
     : pickable
       ? t('seatHint', { n: seat.party_size })
-      : t('seatSoon');
+      : PLAN_COPY[locale].seatPending;
 
   const card = (
     <>

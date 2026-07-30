@@ -97,13 +97,15 @@ describe('RoomSeatCard', () => {
   });
 
   it('waits, rather than offering a button the server would refuse', async () => {
-    // can_pick:false is the tour-day lock (C-11) and the not-yet-assigned
-    // vehicle. Either way the card informs; it does not invite a 400.
+    // can_pick:false on the tour day is the C-11 lock. The card informs; it
+    // does not invite a 400. And it must not say "seats open once your vehicle
+    // is assigned" — reaching `pending` means one already is.
     mockMySeat({ state: 'pending', can_pick: false });
     renderCard({ authToken: personalToken(BOOKING) });
     const card = await screen.findByTestId('room-seat-card');
     expect(card.tagName).not.toBe('BUTTON');
-    expect(card).toHaveTextContent(/vehicle is assigned/i);
+    expect(card).toHaveTextContent(/guide assigns seats on the day/i);
+    expect(card).not.toHaveTextContent(/vehicle is assigned/i);
   });
 
   it('recovers the personal token from the cache when ?rt= is long gone', async () => {
