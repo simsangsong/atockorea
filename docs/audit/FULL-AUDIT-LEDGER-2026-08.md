@@ -106,6 +106,50 @@
 - **재현:** `WALK_BASE=<dev> SHOT_DIR=<out> node scripts/qa-hero-grid.mjs` → cockpit-*-w320-s5 6건
 - **수리:** S~M (칩 스트립 overflow-x-auto + 카드 z-겹침 여백 + 버블 min-width) · **페이즈:** A2
 
+### FA-016 · **P0** · 예약 콘텐츠 API가 무인증 이메일 대입을 무제한 허용 (레이트리밋 0)
+
+- **표면:** `app/api/tour-mode/booking/[id]/content/route.ts` — 로그인 없이 `?contactEmail=` 쿼리만으로 자격 판정(L42-50 손수 구현). 파일 110줄 전체에 `requestGate`/레이트리밋 **0회** [실측 grep]. `resolveRoomActor`를 쓰는 다른 게스트 경로는 전부 `tour_room_guest` 게이트(15/min·60/hr)를 지난다 — **이 라우트만 통합에서 빠졌다.**
+- **실증 [실측 라이브 dev]:** 예약 ID만 알면 → 오답 403 · 정답 200 · **오답 25연속에 429 없음**. 성공 시 본문에 `contact_name`·예약번호·투어일·인원·픽업지점 반환(전화·이메일은 미포함). 즉 **예약 ID + 이메일 추측으로 손님 실명과 픽업 위치를 얻는 열거 공격**이 가능하고, 시도 횟수 제한이 없다.
+- **재현:**
+  ```
+  for i in 1..25: GET /api/tour-mode/booking/<bookingId>/content?contactEmail=guess$i@x.com
+  → 전부 403, 429 0회 · 정답 이메일 → 200 + contact_name
+  ```
+- **소비처:** 웹 앱에 **호출자 없음** — 유일한 소비처는 `mobile/app/(tabs)/audio.tsx:168`(2026-04-27 이후 미변경 RN 앱). 웹만 운영 중이면 이 라우트는 **표면적만 남은 무게이트 입구**다.
+- **수리 크기:** S (게이트 추가 + 가능하면 룸토큰/세션으로 전환) — 단 mobile 소비처 존재 확인 필요 · **잡은 페이즈:** A6
+
+### FA-017 · P1 · 초대 토큰 폐기 확인이 조회 오류를 삼켜 fail-open
+
+- **표면:** `lib/tour-room/access.ts:244-253` `isTokenRevoked()` — `const { data } = await supabase...` 로 **`error`를 안 본다.** 쿼리 실패 시 `data=null` → `false` 반환 → L288에서 **폐기된 초대 토큰이 통과.** 배차가 죽인 링크가 DB 장애 한 번에 되살아난다.
+- **재현:** 소스 판정(`grep -n "isTokenRevoked" -A9 lib/tour-room/access.ts` — error 미소비 확인) [실측]
+- **수리:** S (error 시 폐기로 간주 = fail-closed) · **페이즈:** A6
+
+### FA-018 · P1 · 기사 PIN — 의도된 fail-open과 오류 fail-open이 같은 분기를 공유
+
+- **표면:** `lib/tour-room/driver.ts:98-101` (`catch { return pins }` 빈 집합) + L114-127(레거시 시트 try/catch) → L129 `expected.size === 0` → `{required:false, ok:true}`. "운영이 번호판 미입력"(#460 렌터카 모델, 의도)과 "`ops_room_vehicles` 조회 실패"(사고)가 **구분 없이 게이트 해제**로 귀결. 압력테스트에서 실제로 열려 있던 그 게이트와 같은 모양.
+- **재현:** 소스 판정 [실측 · A1 에이전트 결과와 독립 재확인]
+- **수리:** S (조회 오류는 `required:true, ok:false`로 분기) · **페이즈:** A6
+
+### FA-019 · P2 · K4 원장의 행위자(actor) 열에 게이트가 없다 — 라벨 3건 틀림
+
+- **표면:** `__tests__/audit/k4Coverage.test.ts`는 쌍 완전성·삭제 감지·skip 사유·방 배정·문서 동기만 강제하고 **`actor`를 검증하는 단정 0개.** `scripts/k4-run.ts`는 `declaration.actor`를 읽지 않고 쌍별 헤더를 하드코딩 → 라벨 오류가 영구히 초록.
+- **틀린 라벨 3건 [실측]:** ① `GET /api/tour-mode/bookings` = 원장 `admin`, 실제는 **로그인한 본인**(`user_id = user.id` 필터, L25) → 원장 "admin 2"는 실제 **1** ② `POST .../extend` = 원장 `guide`, 실제 허용은 **customer/guide/admin**(driver 제외, L61-64 주석 명시) → **손님이 자기 시간을 연장하는 유료 경로가 K4에서 한 번도 안 돌았다** ③ `POST /api/tour-mode/driver/link` = 원장 `admin`, 실제는 **guide 토큰도 통과**(L38-43) — 하니스 자신이 guideToken으로 구동(k4-run:620).
+- **수리:** M (원장 actor↔하니스 헤더 결선 + 게이트 단정) · **페이즈:** A6
+
+### FA-020 · P2(프라이버시) · 손님 이메일·룸 토큰이 쿼리스트링으로 흐른다
+
+- **표면:** `events` GET(L104)·`snapshot` GET(L25)이 `contactEmail`/`contactName`을 **쿼리 파라미터**로 수용 → 리퍼러·액세스 로그·프록시 로그에 손님 이메일 잔존. 같은 이유로 `rs`(룸세션)·`rt`(토큰)가 **모든** 룸 라우트에서 쿼리로 수용(access.ts:255-260, 308). EventSource가 헤더를 못 붙이는 제약에서 시작됐으나 적용 범위가 전역.
+- **수리:** M (SSE만 예외로 좁히기) · **페이즈:** A6
+
+### FA-021 · P3 · 레이트리밋 공용 버킷 2건 (충돌 0, 그러나 예산 상호 소모)
+
+- 우발적 네임스페이스 충돌은 **0건**(키 접두 관계 전수 검사) [실측]. 단 ① `tour_room_guest`(ip, 15/min)를 join·events GET·spot-events·snapshot 4곳이 공유 → **호텔 NAT 뒤 손님들의 SSE 폴백이 '문'(join) 예산을 소진** ② `tour_room_extras`를 POST(항목 기록)와 PATCH(정산 전이)가 같은 키·같은 6/min 공유 → 항목 6건 입력이 **같은 분의 수취완료/취소를 차단**. ③ `GET arrival-bundle`은 게이트 없음(POST만 있음).
+- **수리:** S · **페이즈:** A6
+
+### FA-022 · P3 · `my-seat`만 판별 필드를 다르게 읽는다
+
+- `my-seat/route.ts:33`이 `if ('error' in resolved)` — 나머지 48개 호출자는 전부 `!resolved.ok`. 오늘은 동작 동일하나 성공 shape에 `error?`가 붙으면 방향이 뒤집힌다. **페이즈:** A6
+
 ## A2 히어로 풀 그리드 — 최종 판정 [실측 2026-07-30]
 
 `scripts/qa-hero-grid.mjs`(신설, qa-cjk-render 판정기 이식): 히어로 3표면 — 손님 홈·로비·콕핏.
