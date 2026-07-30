@@ -2029,41 +2029,36 @@
 .dark .tr-tone-orange { --tone-bg: #bd5c2e; --tone-lift: #db7c4c; --tone-shadow: rgba(0, 0, 0, 0.5); }
 
 /**
- * I7 — the peek strip under the home action grid.
+ * I7v2 — the home grid door's arrow.
  *
- * 사장님 결정(2026-07-29): 완전히 접으면 손님이 "없다"고 읽고, 완전히 펼치면
- * I2가 한 웨이브 들여 되돌린 자리로 돌아간다. **잘린 아이콘 머리**가 글자 없이
- * "더 있다"를 말하는 유일한 방법이다 — 그리고 글자가 없으므로 10개 로케일에서
- * 같은 말을 한다.
+ * 사장님 결정(2026-07-31), superseding the 07-29 peek strip: the fold under
+ * the home action grid is now completely flat, and the "there is more below"
+ * hint moved into the door row itself — a down-arrow that bobs while the fold
+ * is shut. The peek existed to rescue a quiet text-pill door; a card-weight
+ * door with a moving arrow does not need rescuing, and sliced icon heads no
+ * longer risk reading as a rendering fault.
  *
- * 실측: 타일 높이 88px, 아이콘 칩은 위에서 11.5px 지점에서 시작해 44px 높이다.
- * 그래서 36px를 남기면 **아이콘 머리 24px**가 걸린다. 라벨(아래쪽)은 절대 안 걸리고,
- * 그래서 이 높이는 라벨이 두 줄이 되는 독일어·러시아어에서도 그대로 맞는다.
- *
- * 마스크는 **잡았다가 페이드**한다. 처음부터 페이드하면 아이콘이 시작하는 11.5px에서
- * 이미 알파가 0.3 아래로 떨어져서 카드 윤곽만 보이고 아이콘은 안 보인다 — 실제로
- * 한 번 그렇게 만들어 보고 스크린샷으로 확인했다. 22px까지 0.55로 잡으면 아이콘
- * 머리가 읽히고, 그 뒤로 사라지므로 "잘렸다"가 아니라 "이어진다"로 읽힌다.
- *
- * The tiles inside stay interactive on purpose. A guest can see which icon
- * they are touching, and taking the tap away would mean a control that looks
- * present and does nothing — worse than either state this replaces.
+ * Three pixels of travel on a slow cycle: enough to catch the eye on a still
+ * screen, quiet enough not to outshout the status card — emphasis is a
+ * budget, and the bob stops the moment the fold opens. Guests who asked
+ * their device for reduced motion get a still arrow.
  */
-.tr-home-grid-peek {
-  max-height: 36px;
-  overflow: hidden;
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.55) 0,
-    rgba(0, 0, 0, 0.55) 22px,
-    rgba(0, 0, 0, 0) 100%
-  );
-  mask-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.55) 0,
-    rgba(0, 0, 0, 0.55) 22px,
-    rgba(0, 0, 0, 0) 100%
-  );
+@keyframes tr-more-bob {
+  0%,
+  100% {
+    transform: translateY(-1px);
+  }
+  50% {
+    transform: translateY(2px);
+  }
+}
+.tr-more-bob {
+  animation: tr-more-bob 1.8s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .tr-more-bob {
+    animation: none;
+  }
 }
 
 /**

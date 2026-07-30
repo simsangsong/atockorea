@@ -899,50 +899,72 @@ export default function HomeTab({
         </div>
       )}
 
-      {/* ---- Action grid, as a peek (I7) -----------------------------
-          Three tiles open, the next row showing its icon heads, and a button
-          for the rest. Fully collapsed read as "there is nothing here"; fully
-          open is what I2 spent a wave undoing. A cropped icon says "more"
-          without spending a word on it — and without a word, it says the same
-          thing in all ten locales.
+      {/* ---- Action grid + the fold (I7v2, 2026-07-31) ----------------
+          Three tiles open; everything else folds flat behind a card-row door.
+
+          This retires I7's peek strip (the cropped icon heads). The peek
+          existed because the old door was a quiet text pill — folded fully,
+          the screen read as "there is nothing here". 사장님 결정(2026-07-31):
+          the door itself is now a card-weight row in the same family as the
+          chat preview and the manual above, with a down-arrow that bobs while
+          the fold is shut. The "there is more" hint the sliced icons used to
+          carry lives in the door now, so the grid can fold completely.
 
           U-D24: which three is derived (`orderHomeTiles`), and a tile that
           duplicates a bottom tab is never promoted into them.
-          U-D25: nothing is filtered. The grid holds every tile in both states;
-          shut, it is clipped. So expanding reveals rather than rebuilds, and
-          no tile a guest learned has moved.
-
-          The peeked tiles are real DOM, not a picture of tiles: focusable, in
-          the reading order, and not `aria-hidden`. `onFocusCapture` opens the
-          grid the moment focus reaches one, so a keyboard or switch user is
-          never left operating something they can only half see.
-
-          Two grids rather than one clipped grid, because the clip height has to
-          be exact and a single grid's first row is not a number we know. Tile
-          labels wrap to two lines in German and Russian, and a max-height
-          guessed from the English layout would slice row one in those locales.
-          Splitting means only the PEEK height is fixed — and 26px of a tile is
-          the icon's head by construction, whatever the label below it does.
-          Both grids are `grid-cols-3 gap-1.5` at the same width, so the columns
-          line up as if they were one. */}
-      <div
-        data-testid="home-grid"
-        data-peek={moreOpen ? 'open' : 'peek'}
-        onFocusCapture={() => setMoreOpen(true)}
-      >
+          U-D25 still holds: nothing is filtered. Folded content is `hidden`,
+          not unmounted — expanding reveals rather than rebuilds, and no tile
+          a guest learned has moved. `hidden` also means nothing half-visible
+          is focusable, which retires the focus-capture escape hatch the
+          clipped strip needed: a keyboard user meets the door, not the fold. */}
+      <div data-testid="home-grid">
         <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5">
           {tiles.slice(0, PEEK_COUNT).map((tile) => renderTile(tile))}
         </div>
+
+        {/* The door — same long row as its two siblings above; only the arrow
+            differs. It sits inline after the label (사장님: 글씨 옆에), points
+            into the fold, and stops bobbing the moment there is nothing left
+            to hint at. Rotation lives on the icon and the bob on a wrapper
+            span, because both are transforms and one element can't do both. */}
+        <button
+          type="button"
+          onClick={() => setMoreOpen((v) => !v)}
+          data-testid="home-more"
+          aria-expanded={moreOpen}
+          aria-controls="home-grid-rest home-more-panel"
+          className="tr-home-card tr-press text-cjk-safe mt-1.5 flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+        >
+          <span className="tr-chip tr-chip--base flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden>
+            <IconMore size={TR_ICON.chip} />
+          </span>
+          <span className="tr-card-text text-cjk-safe min-w-0 font-bold text-[var(--tr-ink)]">{copy.more}</span>
+          <span className={`flex shrink-0 ${moreOpen ? '' : 'tr-more-bob'}`} aria-hidden>
+            <IconChevronRight
+              size={TR_ICON.chip}
+              className={`text-[var(--tr-ink-3)] transition-transform ${moreOpen ? '-rotate-90' : 'rotate-90'}`}
+            />
+          </span>
+        </button>
+
         {tiles.length > PEEK_COUNT && (
           <div
-            className={`mt-1.5 grid grid-cols-3 gap-1.5 ${moreOpen ? '' : 'tr-home-grid-peek'}`}
+            id="home-grid-rest"
+            hidden={!moreOpen}
+            /* 🔴 The `hidden` ATTRIBUTE alone cannot fold this: it is UA-level
+               display none, and any author display declaration — like the
+               `grid` utility — overrides it. Caught by a Playwright shot
+               after jsdom and DOM-property checks all passed green. So the
+               display driver is the class swap; the attribute stays for
+               semantics, and the two must never disagree. */
+            className={`${moreOpen ? 'grid' : 'hidden'} mt-1.5 grid-cols-3 gap-1.5`}
             data-testid="home-grid-rest"
           >
             {/* 🔴 N-b — the orphan row.
                 The tile count is conditional (5 to 10 depending on lifecycle,
                 privacy, concierge and whether a review link exists), so at 7 or
                 10 tiles the last row holds exactly ONE and the grid reads as
-                unfinished. I7's peek moved where the break falls; it did not
+                unfinished. The fold moved where the break falls; it did not
                 remove the possibility.
                 The stranded tile is always SOS — it is pushed last — so rather
                 than leaving it hanging in a third of a row, it takes the whole
@@ -954,26 +976,6 @@ export default function HomeTab({
           </div>
         )}
       </div>
-
-      {/* The door. It sits under the grid because that is what it opens — put
-          above, it reads as a heading for the three tiles rather than as the
-          way to the rest. */}
-      <button
-        type="button"
-        onClick={() => setMoreOpen((v) => !v)}
-        data-testid="home-more"
-        aria-expanded={moreOpen}
-        aria-controls="home-more-panel"
-        className="tr-label text-cjk-safe mt-1.5 flex min-h-[44px] w-full items-center justify-center gap-1.5 rounded-full font-medium text-[var(--tr-ink-3)] active:bg-[var(--tr-surface)]"
-      >
-        <IconMore size={TR_ICON.chip} aria-hidden />
-        {copy.more}
-        <IconChevronRight
-          size={TR_ICON.chip}
-          className={`transition-transform ${moreOpen ? '-rotate-90' : 'rotate-90'}`}
-          aria-hidden
-        />
-      </button>
 
       <div id="home-more-panel" hidden={!moreOpen} data-testid="home-more-sheet">
       {/* ---- Install entry (T-D2) — self-hides when no install path. -- */}

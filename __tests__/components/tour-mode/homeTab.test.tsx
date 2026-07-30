@@ -224,29 +224,26 @@ describe('HomeTab lifecycle variants (H2)', () => {
 });
 
 /**
- * I7 / U-D25 — the promise that makes the restructure safe.
+ * I7v2 / U-D25 — the promise that makes the restructure safe.
  *
- * The shape changed on 2026-07-29. I6 collapsed the grid entirely; the owner's
- * answer was that a guest reads "collapsed" as "there is nothing here", so the
- * grid now shows three tiles with the next row peeking its icon heads. What
- * did NOT change is the promise underneath: a guest who learned a tile has not
- * lost it. Everything is still there, one tap away, complete — including the
- * three the tab bar duplicates.
+ * The shape changed twice. I6 collapsed the grid entirely behind a quiet text
+ * pill; the owner's 07-29 answer was the peek strip (icon heads showing),
+ * because a guest read that pill's "collapsed" as "there is nothing here".
+ * On 2026-07-31 the owner retired the peek: the door itself became a
+ * card-weight long row — same family as the chat preview and the manual —
+ * with a bobbing down-arrow, and the fold went completely flat. What has NOT
+ * changed across any of it is the promise underneath: a guest who learned a
+ * tile has not lost it. Everything is still there, one tap away, complete —
+ * including the three the tab bar duplicates.
  *
- * 🔴 What these assertions can and cannot see. jsdom has no layout, so the peek
- * clip — a max-height and a mask — is invisible to it, and `toBeVisible()` on a
- * clipped tile would pass no matter what. So the contract is checked where it
- * is actually expressible:
- *
- *   the extras panel   `hidden` attribute      → toBeVisible() means something
- *   the peek strip     the class that clips it → asserted by name
- *   which three        the pure resolver       → homeTileOrder.test.ts
- *
- * The rendered result of the clip is proven by a Playwright walk, not here.
- * Asserting toBeVisible() on a peeked tile would be the shape of green this
- * codebase has been bitten by before: true, and about nothing.
+ * A side effect worth naming: the fold now uses the `hidden` attribute, which
+ * jsdom CAN see — so `toBeVisible()` on a folded tile is a real question
+ * again, where the old clip (a max-height and a mask, invisible to jsdom)
+ * forced the contract onto class names. The bob is still class-asserted: an
+ * animation's rendered motion is a Playwright/eyes matter, its presence and
+ * its stopping condition are expressible here.
  */
-describe('I7 — the grid peeks, and 더 보기 holds all of it (U-D25)', () => {
+describe('I7v2 — the grid folds flat, and the door holds all of it (U-D25)', () => {
   const ALWAYS_PRESENT = ['home-tile-chat', 'home-tile-schedule', 'home-tile-map', 'home-tile-pickup', 'home-tile-sos'];
 
   it('shows three tiles without being asked, and none of them is a tab twin (U-D24)', () => {
@@ -261,13 +258,42 @@ describe('I7 — the grid peeks, and 더 보기 holds all of it (U-D25)', () => 
     expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
   });
 
-  it('clips the next row while shut, and stops clipping it when open', () => {
+  it('keeps the rest truly hidden — SOS included — until asked', () => {
     renderRoom({ lifecycle: 'live' });
-    const rest = screen.getByTestId('home-grid-rest');
-    expect(rest.className).toContain('tr-home-grid-peek');
+    expect(screen.getByTestId('home-grid-rest')).not.toBeVisible();
+    expect(screen.getByTestId('home-tile-sos')).not.toBeVisible();
 
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(rest.className).not.toContain('tr-home-grid-peek');
+    expect(screen.getByTestId('home-grid-rest')).toBeVisible();
+  });
+
+  it('🔴 the fold is driven by the display class, not the hidden attribute alone', () => {
+    // jsdom honors [hidden] semantically, so toBeVisible() above stayed green
+    // while the real browser rendered every folded tile: the `grid` utility is
+    // an author display declaration and overrides the attribute's UA-level
+    // display none. A Playwright shot caught it. The class swap is the part
+    // that actually folds, so it is asserted by name.
+    renderRoom({ lifecycle: 'live' });
+    const rest = screen.getByTestId('home-grid-rest');
+    // Token-wise: `grid-cols-3` contains the substring "grid", so substring
+    // checks would pass in both states and prove nothing.
+    const tokens = () => rest.className.split(/\s+/);
+    expect(tokens()).toContain('hidden');
+    expect(tokens()).not.toContain('grid');
+
+    fireEvent.click(screen.getByTestId('home-more'));
+    expect(tokens()).toContain('grid');
+    expect(tokens()).not.toContain('hidden');
+  });
+
+  it('the door is a card row in the chat/manual family, and its arrow bobs only while shut', () => {
+    renderRoom({ lifecycle: 'live' });
+    const door = screen.getByTestId('home-more');
+    expect(door.className).toContain('tr-home-card');
+    expect(door.querySelector('.tr-more-bob')).not.toBeNull();
+
+    fireEvent.click(door);
+    expect(door.querySelector('.tr-more-bob')).toBeNull();
   });
 
   it('keeps the extras behind the disclosure', () => {
@@ -299,21 +325,14 @@ describe('I7 — the grid peeks, and 더 보기 holds all of it (U-D25)', () => 
   });
 
   it('collapses again, so the choice is reversible', () => {
+    // No focus-capture escape hatch anymore, and none needed: `hidden` content
+    // is unfocusable by construction, so a keyboard user meets the door rather
+    // than a half-visible tile. The old hatch existed for the clipped strip.
     renderRoom({ lifecycle: 'live' });
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-rest').className).not.toContain('tr-home-grid-peek');
+    expect(screen.getByTestId('home-grid-rest')).toBeVisible();
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-rest').className).toContain('tr-home-grid-peek');
-  });
-
-  it('opens itself if focus reaches a clipped tile', () => {
-    // A keyboard or switch user must never be left operating a control they can
-    // only half see. This is why the peek strip is not aria-hidden and not
-    // inert: it stays reachable, and reaching it reveals it.
-    renderRoom({ lifecycle: 'live' });
-    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
-    fireEvent.focus(screen.getByTestId('home-tile-map'), { bubbles: true });
-    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByTestId('home-grid-rest')).not.toBeVisible();
   });
 
   it('the app manual is out of the overflow, on the first screen', () => {
