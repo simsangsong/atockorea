@@ -21,8 +21,8 @@
 |---|---|---|---|---|---|---|---|
 | S1 | 엔트리 | `app/(app)/tour-mode/page.tsx` | anon | 단일 | ✓(overlap 워크·플래그 ON 확인) | - | - |
 | S2 | join+PIN | `app/(app)/tour-mode/join/[roomToken]/page.tsx` | customer·driver·guide | 단일 | ~(워크 경유) → A3에서 판정 | - | - |
-| S3 | 손님 룸(홈·채팅·지도·오늘+시트 전부) | `app/(app)/tour-mode/room/[bookingId]/page.tsx` | customer(lead/member) | **전 상태** ← 최대 조합 | ✓ 풀 그리드 192콤보(홈+로비) 통과 | - | - |
-| S4 | 기사 콘솔(콕핏) | `app/(app)/tour-mode/driver/page.tsx` | driver | 투어일 전 상태 + T+12 | ✗ **FA-015**(w320+s5) · 재질 15케이스 통과 | - | - |
+| S3 | 손님 룸(홈·채팅·지도·오늘+시트 전부) | `app/(app)/tour-mode/room/[bookingId]/page.tsx` | customer(lead/member) | **전 상태** ← 최대 조합 | ✓ 풀 그리드 192콤보 + 채팅 4콤보 통과 | - | - |
+| S4 | 기사 콘솔(콕핏) | `app/(app)/tour-mode/driver/page.tsx` | driver | 투어일 전 상태 + T+12 | ✓ **24콤보 판정·화면밖이탈 0**(A8에서 헤드리스 진입 복구) | - | - |
 | S5 | 가이드 콘솔 | `app/(app)/tour-mode/guide/page.tsx` | guide | 투어일 전 상태 + 플랜패널·정산 | ~(cjk 0·walk 통과, 그리드 미포함) | - | - |
 | S6 | 플랜 인덱스 | `app/(app)/tour-mode/plan/page.tsx` | customer | D-N | - → A3 | - | - |
 | S7 | D-1 플랜 에디터 | `app/(app)/tour-mode/plan/[bookingId]/page.tsx` | customer(lead) | D-N·D-1(draft/confirmed) | ~(overlap 워크 경유) → A3 | - | - |
@@ -80,11 +80,12 @@ travel-matrix · vehicle-layouts · guides · guide-settlements · facility-pins
 | A5 성능 | ✓ 번들·API · ✗ 3G LCP | `BUNDLE-BASELINE.md` 신설 · `qa-tick-discipline.mjs` 신설 |
 | A6 데이터·보안 | ✓ | 토큰 스코프 56쌍 대조 · advisors · **FA-016 P0** |
 | A7 원장 | ✓ | `FULL-AUDIT-LEDGER-2026-08.md` 26건 + 게이트 뮤테이션 3/3 |
-| A8 수정 | 대기 | 사장님 승인 |
+| A8 수정 | ✓ **완주** | 26건 중 23 수정 · 2 관찰 · 1 사람 게이트. 신설 게이트 6종 · `npm run gate` |
 
 **다음 세션이 이어받을 잔여 감사:** ① A2 축소 그리드(가이드 콘솔·플랜 에디터·시트류·체크인·동반자 —
-현재 `~`) ② 나머지 15개 게이트 뮤테이션 ③ 3G 스로틀 LCP ④ 링(플래너·관제·마케팅 접점) 표본
-⑤ 실기기 사람 게이트(FA-014의 현장 원인 확증).
+현재 `~`. 콕핏 진입이 복구됐으니 같은 패턴으로 이식 가능) ② 나머지 15개 게이트 뮤테이션
+③ 3G 스로틀 LCP ④ 링(플래너·관제·마케팅 접점) 표본 ⑤ **실기기 리허설 — 남은 유일한 사람 게이트**
+(이제 결과가 당일 저녁 보고서의 「도착 기록」 줄로 확인된다).
 
 ## 6. 이 워크트리 환경 (다음 세션 부트스트랩용)
 
@@ -92,5 +93,8 @@ travel-matrix · vehicle-layouts · guides · guide-settlements · facility-pins
   정션 필요: `New-Item -ItemType Junction -Path <wt>\node_modules -Target C:\Users\sangsong\atockorea-inbox-gate\node_modules`
   (package.json md5 일치 확인함. 삭제 시 링크 먼저 끊기 — `[System.IO.Directory]::Delete($p,$false)`)
 - `.env.local`은 메인 레포에서 복사(gitignored 확인).
-- ⚠ `.claude` 경로 밑에서는 jest testPathIgnorePatterns가 무력(FA-002) — e2e·픽스처 실패 4건은 무시하고
-  카운트로만 대조할 것.
+- ~~⚠ `.claude` 경로 밑에서는 jest testPathIgnorePatterns가 무력(FA-002)~~ → **A8에서 고쳤다.**
+  패턴이 구분자-중립이 됐고 `npm run gate` 하나가 tsc + jest 전체를 돈다. 이제 전체 jest는 **실패 0**이다.
+- ⚠ **콕핏을 헤드리스로 열려면 탭을 키로 선택해야 한다** — `staff-tab-btn-ops` → `staff-tab-ops` →
+  `ops-drive`(320px에서 접힘 아래라 `state:'attached'` + `scrollIntoViewIfNeeded` 필수). `drive-hero`는
+  상태에 따라 렌더되지 않아서 그걸 누르는 방식은 조용히 "unreachable"이 된다.
