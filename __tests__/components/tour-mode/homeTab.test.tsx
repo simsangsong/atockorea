@@ -224,17 +224,19 @@ describe('HomeTab lifecycle variants (H2)', () => {
 });
 
 /**
- * I7v2 / U-D25 — the promise that makes the restructure safe.
+ * I7v3 / U-D25 — the promise that makes the restructure safe.
  *
- * The shape changed twice. I6 collapsed the grid entirely behind a quiet text
- * pill; the owner's 07-29 answer was the peek strip (icon heads showing),
- * because a guest read that pill's "collapsed" as "there is nothing here".
- * On 2026-07-31 the owner retired the peek: the door itself became a
+ * The shape changed three times. I6 collapsed the grid entirely behind a
+ * quiet text pill; the owner's 07-29 answer was the peek strip (icon heads
+ * showing), because a guest read that pill's "collapsed" as "there is
+ * nothing here". On 2026-07-31 the owner retired the peek: the door became a
  * card-weight long row — same family as the chat preview and the manual —
- * with a bobbing down-arrow, and the fold went completely flat. What has NOT
- * changed across any of it is the promise underneath: a guest who learned a
- * tile has not lost it. Everything is still there, one tap away, complete —
- * including the three the tab bar duplicates.
+ * with a bobbing down-arrow. Round 2, same day, on seeing it live: the three
+ * still-open tiles read as clutter, so now EVERY tile folds and at rest the
+ * grid is just the door. What has NOT changed across any of it is the
+ * promise underneath: a guest who learned a tile has not lost it. Everything
+ * is still there, one tap away, complete — including the three the tab bar
+ * duplicates.
  *
  * A side effect worth naming: the fold now uses the `hidden` attribute, which
  * jsdom CAN see — so `toBeVisible()` on a folded tile is a real question
@@ -243,28 +245,28 @@ describe('HomeTab lifecycle variants (H2)', () => {
  * animation's rendered motion is a Playwright/eyes matter, its presence and
  * its stopping condition are expressible here.
  */
-describe('I7v2 — the grid folds flat, and the door holds all of it (U-D25)', () => {
+describe('I7v3 — every tile folds, and the door holds all of it (U-D25)', () => {
   const ALWAYS_PRESENT = ['home-tile-chat', 'home-tile-schedule', 'home-tile-map', 'home-tile-pickup', 'home-tile-sos'];
 
-  it('shows three tiles without being asked, and none of them is a tab twin (U-D24)', () => {
+  it('at rest, the door is the only thing the grid shows — no tile at all', () => {
+    // 사장님, v2 live: the three always-open tiles read as clutter above the
+    // door. U-D24's "which three get promoted" retires with them; the order
+    // inside the fold is still `orderHomeTiles`, so nothing moves between
+    // visits.
     renderRoom({ lifecycle: 'live' });
-    const open = screen.getByTestId('home-grid').firstElementChild!;
-    const peeked = [...open.children].map((el) => el.getAttribute('data-testid'));
-
-    expect(peeked).toHaveLength(3);
-    for (const twin of ['home-tile-chat', 'home-tile-schedule', 'home-tile-map']) {
-      expect(peeked).not.toContain(twin);
-    }
     expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
+    for (const id of [...ALWAYS_PRESENT, 'home-tile-smart-guide', 'home-tile-signal']) {
+      expect(screen.getByTestId(id)).not.toBeVisible();
+    }
   });
 
-  it('keeps the rest truly hidden — SOS included — until asked', () => {
+  it('keeps the whole grid truly hidden — SOS included — until asked', () => {
     renderRoom({ lifecycle: 'live' });
-    expect(screen.getByTestId('home-grid-rest')).not.toBeVisible();
+    expect(screen.getByTestId('home-grid-tiles')).not.toBeVisible();
     expect(screen.getByTestId('home-tile-sos')).not.toBeVisible();
 
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-rest')).toBeVisible();
+    expect(screen.getByTestId('home-grid-tiles')).toBeVisible();
   });
 
   it('🔴 the fold is driven by the display class, not the hidden attribute alone', () => {
@@ -274,7 +276,7 @@ describe('I7v2 — the grid folds flat, and the door holds all of it (U-D25)', (
     // display none. A Playwright shot caught it. The class swap is the part
     // that actually folds, so it is asserted by name.
     renderRoom({ lifecycle: 'live' });
-    const rest = screen.getByTestId('home-grid-rest');
+    const rest = screen.getByTestId('home-grid-tiles');
     // Token-wise: `grid-cols-3` contains the substring "grid", so substring
     // checks would pass in both states and prove nothing.
     const tokens = () => rest.className.split(/\s+/);
@@ -330,9 +332,9 @@ describe('I7v2 — the grid folds flat, and the door holds all of it (U-D25)', (
     // than a half-visible tile. The old hatch existed for the clipped strip.
     renderRoom({ lifecycle: 'live' });
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-rest')).toBeVisible();
+    expect(screen.getByTestId('home-grid-tiles')).toBeVisible();
     fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-rest')).not.toBeVisible();
+    expect(screen.getByTestId('home-grid-tiles')).not.toBeVisible();
   });
 
   it('the app manual is out of the overflow, on the first screen', () => {
