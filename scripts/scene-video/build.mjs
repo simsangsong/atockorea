@@ -177,6 +177,49 @@ function resolveScene(scene) {
   return out;
 }
 
+
+/**
+ * G-10 (§V4-C) — the English is read by people whose first language is not
+ * English, so it is held to plain-language rules rather than to whether it
+ * sounds good to a native ear.
+ *
+ * v3 shipped "a nudge before time", "emergency lives in one place" and "every
+ * stop introduces itself". Each is fine English and each is an idiom or a
+ * personification — the two things a non-native reader stumbles on hardest.
+ * The list below is the ones already caught; add to it rather than trusting
+ * anyone (including a later model) to remember the rule.
+ */
+const IDIOMS = [
+  'nudge', 'lives in', 'introduces itself', 'explains itself', 'at a glance',
+  'on the go', 'hand it to', 'a breeze', 'sorted', 'good to go', 'heads up',
+  'reach out', 'drop us a line', 'in no time', 'hassle', 'kick off', 'wrap up',
+];
+const MAX_WORDS_PER_SENTENCE = 8;
+
+function checkPlainEnglish(scene) {
+  const strings = [
+    ['headline', scene.headline],
+    ...(scene.cards ?? []).map((c, i) => [`card ${i + 1}`, c.title]),
+    ...(scene.steps ?? []).map((st, i) => [`step ${i + 1}`, Array.isArray(st) ? st[0] : st]),
+  ].filter(([, v]) => typeof v === 'string' && v.trim());
+
+  for (const [where, text] of strings) {
+    const flat = text.split('\n').join(' ');
+    const low = flat.toLowerCase();
+    for (const idiom of IDIOMS) {
+      if (low.includes(idiom)) {
+        fail(`G-10 (${scene.id}/${where}): 관용구 "${idiom}" — 비원어민이 읽는 영어다\n   "${flat}"`);
+      }
+    }
+    for (const sentence of flat.split(/[.?!]/).map((x) => x.trim()).filter(Boolean)) {
+      const words = sentence.split(/\s+/).length;
+      if (words > MAX_WORDS_PER_SENTENCE) {
+        fail(`G-10 (${scene.id}/${where}): 한 문장 ${words}단어 > ${MAX_WORDS_PER_SENTENCE}\n   "${sentence}"`);
+      }
+    }
+  }
+}
+
 const accentHexes = new Set(Object.values(THEMES).map((t) => t.accent.toLowerCase()));
 
 console.log(`\n  ${spec.id}${WIDE_MODE ? ' (16:9)' : ' (9:16)'} · ${scenes.length} scenes\n`);
@@ -192,6 +235,7 @@ let clock = 0;
 
 for (const raw of scenes) {
   const scene = resolveScene(raw);
+  checkPlainEnglish(scene);
   const html = renderSceneHtml(scene, { wide: WIDE_MODE, theme: THEME, locale: LOCALE });
 
   // ── G-1: one accent. Checked on the source, where a second brand colour

@@ -21,17 +21,15 @@ export const FPS = 30;
 /**
  * The four grounds the owner named. Each carries exactly ONE accent.
  *
- * 🔴 `ink` is the default and the reason is structural, not taste: what goes on
- * these frames is LIGHT app screenshots. On a dark ground a light card becomes
- * a self-luminous object; on white it dissolves into the page and survives only
- * as a border. The bright themes are here for print-adjacent and guest-facing
- * uses, where the surrounding context is already white.
+ * 🔴 `ink` is the default, and v4 made the reason literal: the app is now
+ * captured in ITS OWN dark theme, whose canvas is #151818 against this ground's
+ * #0d0e11 — one step lighter. A screen a step brighter than the ground reads as
+ * a lit object; a light screen on black reads as pasted paper, and a screen the
+ * same value as the ground disappears. The relationship was already sitting in
+ * two files, so no new colour had to be invented for it.
  */
 export const THEMES = {
   ink: {
-    /** `screen` is the plate a LIGHT app screenshot sits on — the app has no
-     *  dark skin in these captures, so letterboxing it into the dark card would
-     *  read as a rendering fault rather than a device. */
     canvas: '#0d0e11',
     card: '#171a20',
     ink: '#f3f5f8',
@@ -42,7 +40,9 @@ export const THEMES = {
     chrome: '#69717e',
     ghost: '#15181e',
     shadow: '0 30px 70px rgba(0, 0, 0, 0.55)',
-    screen: '#ffffff',
+    /** The app's own dark canvas (`.dark .tr-root`, #151818) — see SCREEN. */
+    screen: '#151818',
+    rim: 'rgba(243, 245, 248, 0.14)',
   },
   navy: {
     canvas: '#0b1b33',
@@ -55,7 +55,8 @@ export const THEMES = {
     chrome: '#5f7a9c',
     ghost: '#102541',
     shadow: '0 30px 70px rgba(2, 10, 22, 0.6)',
-    screen: '#ffffff',
+    screen: '#151818',
+    rim: 'rgba(234, 241, 251, 0.14)',
   },
   paper: {
     canvas: '#ffffff',
@@ -68,7 +69,8 @@ export const THEMES = {
     chrome: '#9aa1ab',
     ghost: '#f2f4f7',
     shadow: '0 26px 60px rgba(15, 18, 22, 0.10)',
-    screen: '#ffffff',
+    screen: '#151818',
+    rim: 'rgba(255, 255, 255, 0.18)',
   },
   mist: {
     canvas: '#e9eff6',
@@ -81,7 +83,8 @@ export const THEMES = {
     chrome: '#8b96a5',
     ghost: '#dfe8f2',
     shadow: '0 26px 60px rgba(19, 24, 32, 0.12)',
-    screen: '#ffffff',
+    screen: '#151818',
+    rim: 'rgba(255, 255, 255, 0.18)',
   },
 };
 
@@ -157,6 +160,32 @@ export const TYPE_WIDE = {
   stepGloss: 25,
   chrome: 19,
   ghost: 380,
+};
+
+/**
+ * §V4-B — how an app screenshot is presented. ONE place, applied to every
+ * screen by construction.
+ *
+ * "It looks cheap" was never about resolution. It was that each shot arrived
+ * raw and differently: one tab a shade brighter than the next, cropped cards
+ * with no edge, some with a shadow and some without. Treating shots one at a
+ * time only holds until the next capture.
+ *
+ * 🔴 The normalisation is deliberately TINY. This pipeline's whole premise is
+ * that the cards hold the real screen (§H). There is a line between making a
+ * screenshot look considered and making it look like something the app does
+ * not do, and a 3% brightness lift is the far side of nowhere near it.
+ */
+export const SCREEN = {
+  /** Glass around the picture, so even a cropped card reads as a device. */
+  bezel: 10,
+  radius: 22,
+  /** The single hairline that separates a dark screen from a dark ground. */
+  rimWidth: 1,
+  /** Drops downward and adds NO colour — the accent stays the only hue. */
+  glow: '0 26px 64px rgba(0, 0, 0, 0.5)',
+  /** Pulls per-tab exposure differences together. Keep these near 1. */
+  filter: 'contrast(1.02) saturate(0.98) brightness(1.03)',
 };
 
 export const GRID = {

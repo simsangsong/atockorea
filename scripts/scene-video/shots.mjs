@@ -149,6 +149,7 @@ export async function captureShots({ base = BASE, locale = LOCALE, out = OUT } =
     viewport: { width: 390, height: 844 },
     deviceScaleFactor: 3,          // retina source; the video downsamples it
     locale: `${locale}-KR`,
+    colorScheme: 'dark',
     permissions: ['geolocation'],
     geolocation: { latitude: 33.4586, longitude: 126.9425 },
   });
@@ -159,6 +160,15 @@ export async function captureShots({ base = BASE, locale = LOCALE, out = OUT } =
     if (!res || res.status() >= 400) throw new Error(`room unreachable: ${res?.status()}`);
     await page.waitForSelector('[data-testid="home-tab"]', { timeout: 60_000 });
     await page.evaluate(([id, l]) => window.localStorage.setItem(`tour_mode_locale:${id}`, l), [fx.booking1, locale]);
+      // §V4-A — the app is captured in its DARK theme so the screens belong to
+      // the deck instead of sitting on it as pasted paper. `classic` dark has a
+      // canvas of #151818 against the film's #0d0e11 ground: one step lighter,
+      // which is what makes a screen read as a lit object rather than a hole.
+      await page.evaluate(() => {
+        window.localStorage.setItem('tour_mode_settings', JSON.stringify({
+          theme: 'dark', skin: 'classic', voiceConfirm: true, autoRead: false, textScale: 3,
+        }));
+      });
     await page.reload({ waitUntil: 'domcontentloaded' });
     await page.waitForSelector('[data-testid="home-tab"]', { timeout: 60_000 });
     await page.addStyleTag({ content: MASK_CSS });

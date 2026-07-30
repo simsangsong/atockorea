@@ -22,7 +22,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  CANVAS, WIDE, GRID, MOTION, SUBTITLE, TYPE, TYPE_WIDE,
+  CANVAS, WIDE, GRID, MOTION, SCREEN, SUBTITLE, TYPE, TYPE_WIDE,
   FONT, glossFont, CJK_LOCALES, palette,
 } from './design.mjs';
 
@@ -251,11 +251,18 @@ export function renderSceneHtml(scene, opts = {}) {
   .progress{height:6px;background:${p.hairline};border-radius:3px;overflow:hidden}
   .progress span{display:block;height:100%;background:${p.accent}}
 
-  .shot,.card-shot{overflow:hidden;border-radius:${GRID.cardRadius}px;background:${p.screen};
-        border:1px solid ${p.hairline};box-shadow:${p.shadow}}
+  /* §V4-B — the screen treatment, in ONE place so every shot gets it. The bezel
+     turns even a cropped card into a device; the rim is the only line that can
+     separate a dark screen from a dark ground; the glow lifts without adding
+     colour. See design.mjs SCREEN for why the filter values are tiny. */
+  .shot,.card-shot{overflow:hidden;border-radius:${SCREEN.radius + SCREEN.bezel}px;
+        background:${p.screen};padding:${SCREEN.bezel}px;
+        border:${SCREEN.rimWidth}px solid ${p.hairline};
+        box-shadow:${SCREEN.glow},inset 0 ${SCREEN.rimWidth}px 0 ${p.rim}}
   /* object-fit contain on a box that already carries the shot's own ratio: the
      picture is never cropped nor stretched, so a crop stays legible at any size. */
-  .shot img,.card-shot img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+  .shot img,.card-shot img{display:block;width:100%;height:100%;object-fit:contain;
+        object-position:center;border-radius:${SCREEN.radius}px;filter:${SCREEN.filter}}
 
   .focus{position:relative;min-height:0;display:flex;align-items:center;justify-content:center}
   .focus.tall{flex:1}
@@ -267,8 +274,10 @@ export function renderSceneHtml(scene, opts = {}) {
 
   /* v3 clip slot — a transparent hole the recording plays through. */
   .clip-slot{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center}
-  .clip-frame{height:100%;aspect-ratio:390/844;max-width:100%;border-radius:${GRID.cardRadius + 6}px;
-              border:1px solid ${p.hairline};box-shadow:${p.shadow}}
+  .clip-frame{height:100%;aspect-ratio:390/844;max-width:100%;
+              border-radius:${SCREEN.radius + SCREEN.bezel}px;
+              border:${SCREEN.rimWidth}px solid ${p.hairline};
+              box-shadow:${SCREEN.glow},inset 0 ${SCREEN.rimWidth}px 0 ${p.rim}}
 
   .cards{display:grid;gap:${GRID.gutter}px;flex:1;min-height:0}
   .cards.cols-1{grid-template-columns:1fr}
@@ -280,8 +289,8 @@ export function renderSceneHtml(scene, opts = {}) {
      own words is worse than one that letterboxes, so the plate holds the whole
      picture. (No backticks in this file's CSS — it is a template literal.) */
   .card .card-shot{flex:1;min-height:0;border:0;border-radius:0;box-shadow:none;
-        aspect-ratio:auto!important;background:${p.screen};padding:10px}
-  .card .card-shot img{object-fit:contain;object-position:center}
+        aspect-ratio:auto!important;background:${p.screen};padding:${SCREEN.bezel}px}
+  .card .card-shot img{object-fit:contain;object-position:center;border-radius:12px}
   .card figcaption{padding:${wide ? 18 : 24}px ${wide ? 20 : 28}px;display:flex;flex-direction:column;gap:4px}
   .card-title{font-size:${t.cardTitle}px;font-weight:650;line-height:1.2}
   .card-sub{font-size:${t.cardSub}px;color:${p.inkSoft};line-height:1.35;font-weight:400;
