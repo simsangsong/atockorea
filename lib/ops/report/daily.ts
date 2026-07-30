@@ -139,6 +139,20 @@ export interface AttentionSummary {
    * 매일 읽히는 자리가 이 보고서 하나뿐이라, 여기 한 줄로 싣는다.
    */
   autopilotOpen: number
+  /**
+   * 🔴 FA-014 (풀 오디트 2026-07-30) — 도착 해설이 **전 기간 한 번도 발동한 적이
+   * 없다.** `tour_room_events` type='manual_arrival' 0행 · `tour_room_spot_events`
+   * event_type='arrived' 0행 · `poi_travel_matrix` 0행. 코드는 정상이다(감사가
+   * K4로 라우트를 주행하니 이벤트가 남았다) — 아무도 [도착]을 누르지 않거나
+   * 실기기에서 지오펜스가 뜨지 않는 것이다.
+   *
+   * 이 결함이 그토록 오래 보이지 않은 이유는 단순하다: **아무도 매일 세지
+   * 않았다.** 커버리지 122/124는 "말할 수 있다"이고, 이 숫자는 "말했다"다.
+   * 오늘 투어가 있었는데 도착이 0이면 그건 그날 저녁에 알아야 하는 사실이다.
+   *
+   * `null` = 투어가 없던 날(0건이 정상) → 요주의 아님.
+   */
+  arrivals: { toursToday: number; recorded: number; sources: { manual: number; geofence: number } } | null
   /** 위 항목이 전부 0이면 true → "이상 없음" 배너. */
   clean: boolean
 }
@@ -818,6 +832,48 @@ async function buildAttention(
     )
     .filter((line): line is string => Boolean(line))
 
+  /**
+   * 🔴 FA-014 — did today's tours produce any arrivals at all?
+   *
+   * BOTH sources, because they land in different tables and reading one of two
+   * is the defect shape this repo keeps repeating (the travel matrix did exactly
+   * this and sat empty for months):
+   *
+   *   guide/driver taps 도착 → tour_room_events      type='manual_arrival'
+   *   geofence trips        → tour_room_spot_events  event_type='arrived'
+   *
+   * `null` when no tour ran today — zero is correct then, and a "요주의" that
+   * fires on a quiet Tuesday teaches ops to ignore the report.
+   */
+  const [manualRows, geofenceRows, roomsToday] = await Promise.all([
+    safeSelect<{ id: string }>(
+      supabase
+        .from('tour_room_events')
+        .select('id')
+        .eq('type', 'manual_arrival')
+        .gte('created_at', startIso)
+        .lte('created_at', endIso),
+    ),
+    safeSelect<{ id: string }>(
+      supabase
+        .from('tour_room_spot_events')
+        .select('id')
+        .eq('event_type', 'arrived')
+        .gte('created_at', startIso)
+        .lte('created_at', endIso),
+    ),
+    safeSelect<{ id: string }>(supabase.from('tour_rooms').select('id').eq('tour_date', today)),
+  ])
+  const toursToday = roomsToday.length
+  const arrivals: AttentionSummary['arrivals'] =
+    toursToday === 0
+      ? null
+      : {
+          toursToday,
+          recorded: manualRows.length + geofenceRows.length,
+          sources: { manual: manualRows.length, geofence: geofenceRows.length },
+        }
+
   return {
     unassignedRooms,
     uncontacted,
@@ -827,6 +883,7 @@ async function buildAttention(
     overCapacity,
     llm,
     autopilotOpen,
+    arrivals,
     clean:
       unassignedRooms === 0 &&
       uncontacted === 0 &&
@@ -835,7 +892,9 @@ async function buildAttention(
       unseated === 0 &&
       overCapacity.length === 0 &&
       autopilotOpen === 0 &&
-      (llm?.overBudgetTours.length ?? 0) === 0,
+      (llm?.overBudgetTours.length ?? 0) === 0 &&
+      // Tours ran and not one arrival was recorded — the signature of FA-014.
+      !(arrivals !== null && arrivals.recorded === 0),
   }
 }
 
@@ -901,6 +960,8 @@ export async function buildDailyReport(
         overCapacity: [],
         llm: null,
         autopilotOpen: 0,
+        // The section failed, so we know nothing about arrivals — say nothing.
+        arrivals: null,
         clean: true,
       },
     ),

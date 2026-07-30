@@ -8,10 +8,15 @@
  *
  * Judges per combo — all machine, eyes only see failures:
  *   - CJK mid-glyph line break count (qa-cjk-render.mjs's measure, verbatim)
- *   - horizontal overflow (document + per-element, scroll-on-purpose exempt)
+ *   - anything reaching PAST the viewport edge (horizontal scrollers exempt)
+ *   - document-level horizontal overflow
  *   - visible .tr-numeral count ≤ 1 per screen
  *   - touch targets: visible button/tab/link controls with min(w,h) < 40px
  *   - console errors / pageerrors
+ *
+ * REPORTED but not judged: `overflowing` (an element wider than its own box).
+ * At 320px with the largest text step that is the measured cost of
+ * `word-break: keep-all`, not a defect — see the note in `measure`.
  *
  * Output: one JSON line per combo to stdout; failure screenshots only
  * (SHOT_DIR), per the plan's "결함 컷만" archive rule. Exits 2 if any surface
@@ -91,6 +96,59 @@ const measure = () => {
     }
   }
 
+  /**
+   * 🔴 The judgement that matters: does anything reach PAST THE SCREEN EDGE?
+   *
+   * `overflowing` above counts an element wider than its own box, and at 320px
+   * with the largest text step that number is not zero and should not be — it is
+   * the measured COST of `word-break: keep-all`. The default raises a CJK run's
+   * min-content width from one glyph to its longest 어절 (§G-3b measured 14px →
+   * 70px), so a bubble body can exceed its box by a few px while every pixel of
+   * it is still on screen and readable. Clipping it would hide a guest's message;
+   * letting it break mid-syllable would violate P1-5. Neither is an improvement.
+   *
+   * What a guest actually loses is text they cannot see, so that is the failure:
+   * an element whose right edge is beyond the viewport. Measured separately, and
+   * `overflowing` stays in the output as the cost figure it is.
+   */
+  let pastEdge = 0;
+  const pastEdgeSamples = [];
+  for (const el of document.querySelectorAll('body *')) {
+    const r = el.getBoundingClientRect();
+    if (r.width === 0 || r.height === 0) continue;
+    if (r.right <= window.innerWidth + 1) continue;
+    /**
+     * ⚠ Two exemptions, both learned by measuring: the first version of this
+     * judge flagged 128 of 216 combos and every one was a false positive.
+     *
+     * 1. SVG INTERIOR. The skin scenery is one full-bleed artwork; its `<path>`,
+     *    `<g>` and `<ellipse>` boxes reach past the viewport by design because
+     *    the `<svg>` element is the layout box and its geometry is not layout.
+     *    Judge the root, never the drawing.
+     * 2. A CLIPPING OR SCROLLING ANCESTOR. If something above it hides or
+     *    scrolls the overflow, the guest never loses the pixels — that is the
+     *    difference between a bug and a design.
+     */
+    if (el.closest('svg')) continue;
+    let anc = el.parentElement;
+    let contained = false;
+    while (anc) {
+      const ox = getComputedStyle(anc).overflowX;
+      if (ox === 'auto' || ox === 'scroll' || ox === 'hidden' || ox === 'clip') {
+        contained = true;
+        break;
+      }
+      anc = anc.parentElement;
+    }
+    if (contained) continue;
+    pastEdge += 1;
+    if (pastEdgeSamples.length < 4) {
+      pastEdgeSamples.push(
+        `${el.tagName.toLowerCase()}.${String(el.className).slice(0, 34)} right=${Math.round(r.right)}>vw=${window.innerWidth}`,
+      );
+    }
+  }
+
   // visible numerals (plan: ≤1 per screen)
   let numerals = 0;
   for (const el of document.querySelectorAll('.tr-numeral')) {
@@ -122,6 +180,8 @@ const measure = () => {
     docOverflow: de.scrollWidth > de.clientWidth + 1,
     overflowing,
     overflowSamples,
+    pastEdge,
+    pastEdgeSamples,
     numerals,
     smallTargets,
     smallSamples,
@@ -179,8 +239,9 @@ async function runSurface({ name, url, bookingId, locales, prepare }) {
               await page.waitForTimeout(600);
               const m = await page.evaluate(measure);
               combos += 1;
+              // `overflowing` is reported, not judged — see the note in `measure`.
               const bad =
-                m.broken > 0 || m.docOverflow || m.overflowing > 0 || m.numerals > 1 || errors.length > 0;
+                m.broken > 0 || m.docOverflow || m.pastEdge > 0 || m.numerals > 1 || m.smallTargets > 0 || errors.length > 0;
               const row = { combo, ...m, consoleErrors: errors.slice(0, 3) };
               console.log(JSON.stringify(row));
               if (bad) {
@@ -243,15 +304,28 @@ await runSurface({
   bookingId: null,
   locales: ['ko'],
   prepare: async (page) => {
-    // qa-cockpit-walk.mjs's route: staff shell → 운행 탭 → per-room 운전 모드
+    /**
+     * staff shell → 운행 탭 → per-room 운전 모드.
+     *
+     * 🔴 Two things made this the least reliable step in the grid, and both were
+     * measurement failures reported as "unreachable" — which is worse than a red,
+     * because it looks like the surface, not the harness:
+     *
+     *   1. It clicked `drive-hero` and hoped that switched tabs. The hero is only
+     *      rendered in some states, so on a run where it was absent the walk
+     *      stayed on 대화 and then waited 30s for a button that lives in 운행.
+     *      The tab bar is always there, so select the tab BY KEY instead.
+     *   2. `waitFor` defaults to VISIBLE, and at 320px the per-room button sits
+     *      below the fold — so the six combos this grid exists to judge were the
+     *      exact six it could not reach. Attach first, then scroll it into view.
+     */
     await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 60000 });
-    const hero = page.locator('[data-testid="drive-hero"]').first();
-    if (await hero.isVisible().catch(() => false)) await hero.click();
+    const opsTab = page.locator('[data-testid="staff-tab-btn-ops"]');
+    await opsTab.waitFor({ state: 'attached', timeout: 45000 });
+    await opsTab.scrollIntoViewIfNeeded().catch(() => undefined);
+    await opsTab.click({ timeout: 15000 });
+    await page.waitForSelector('[data-testid="staff-tab-ops"]', { timeout: 30000 });
     const drive = page.locator('[data-testid="ops-drive"]').first();
-    // ⚠ At 320px the drive button sits below the fold, and `waitFor` wants
-    // VISIBLE — so the first version of this walk timed out on exactly the six
-    // combos it was written to judge, and reported them as "unreachable" rather
-    // than as a pass or a failure. Attach first, then bring it into view.
     await drive.waitFor({ state: 'attached', timeout: 45000 });
     await drive.scrollIntoViewIfNeeded({ timeout: 15000 });
     await drive.click({ timeout: 15000 });

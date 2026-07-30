@@ -1036,11 +1036,18 @@ export default function ChatFeed({
             }
 
             return (
-              <div className={`flex justify-start pr-10 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
+              <div className={`flex min-w-0 justify-start pr-10 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
                 <div className="w-9 shrink-0 self-start pt-0.5">
                   {groupStart && <Avatar role={message.sender_role} size={34} />}
                 </div>
-                <div className="ml-2 min-w-0 max-w-[76%]">
+                {/* 🔴 FA-015, the incoming half. Same arithmetic as the outgoing
+                    row above: a 76% cap plus `pr-10` plus a 36px avatar column is
+                    more than the row at 320px with the largest text step. Measured
+                    in the cockpit feed — the bubble body overflowed its box by 5px
+                    on all six {skin × theme} combos at w320/s5. Capping at 100%
+                    below the `sm` breakpoint keeps the gutter where there is room
+                    for one and drops it where there is not. */}
+                <div className="ml-2 min-w-0 max-w-full sm:max-w-[76%]">
                   {groupStart && (
                     <div
                       className={`tr-name mb-1 flex items-center gap-1 ${

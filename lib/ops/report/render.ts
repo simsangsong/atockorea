@@ -199,10 +199,32 @@ function renderContact(res: SectionResult<ContactStatus>): string {
 }
 
 // ── ⑤ 요주의 종합 ──────────────────────────────────────────────────────────
+/**
+ * FA-014 — 오늘 도착이 몇 건 기록됐나, 두 소스를 나눠서.
+ *
+ * 커버리지 122/124는 "말할 수 있다"이고 이 숫자는 "말했다"다. 두 소스를 갈라
+ * 적는 이유: 수동 [도착]과 지오펜스는 다른 테이블에 떨어지고, 어느 쪽이 안 되는지
+ * 모르면 고칠 수가 없다(매트릭스가 한 쪽만 읽어 몇 달을 비어 있었다).
+ *
+ * 투어가 없던 날은 `null` — 0이 정상인 날에 뜨는 경고는 다음 날부터 안 읽힌다.
+ */
+function arrivalsLine(a: AttentionSummary): string {
+  if (!a.arrivals) return ''
+  const { recorded, toursToday, sources } = a.arrivals
+  return `<div style="margin-top:6px;font-size:11px;color:${recorded === 0 ? C.red : C.sub};">도착 기록 ${recorded}건 (수동 ${sources.manual} · 지오펜스 ${sources.geofence}) · 오늘 투어 ${toursToday}건</div>`
+}
+
 function renderAttention(res: SectionResult<AttentionSummary>): string {
   const a = res.data
   if (res.ok && a.clean) {
-    return `<div style="padding:16px;background:${C.greenBg};border:1px solid #bbf7d0;border-radius:12px;text-align:center;color:${C.green};font-size:15px;font-weight:800;">✓ 이상 없음 — 오늘 처리할 요주의 항목이 없습니다</div>`
+    /**
+     * FA-014 — 조용한 계측은 좋은 날에도 보인다.
+     *
+     * 처음엔 이 줄을 요주의 목록 옆에만 뒀는데, 그러면 "이상 없음"인 날에는
+     * 숫자가 통째로 사라진다. 매일 보이지 않는 계측은 0으로 떨어진 날에도
+     * 눈에 걸리지 않는다 — FA-014가 전 기간 보이지 않은 이유가 정확히 그것이다.
+     */
+    return `<div style="padding:16px;background:${C.greenBg};border:1px solid #bbf7d0;border-radius:12px;text-align:center;color:${C.green};font-size:15px;font-weight:800;">✓ 이상 없음 — 오늘 처리할 요주의 항목이 없습니다</div>${arrivalsLine(a)}`
   }
   const items: Array<{ label: string; n: number }> = [
     { label: '가이드/기사 미배정 투어 (내일)', n: a.unassignedRooms },
@@ -215,6 +237,15 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     { label: '오토파일럿 미처리 제안', n: a.autopilotOpen ?? 0 },
     { label: 'LLM 예산 초과 투어', n: (a.llm?.overBudgetTours ?? []).length },
   ]
+  /**
+   * 🔴 FA-014 — 투어가 돌았는데 도착 기록이 0이면 그것만 요주의다.
+   *
+   * 도착이 1건이라도 있으면 이 줄은 위 목록에 끼지 않는다(아래 llmLine 옆에
+   * 조용한 계측 한 줄로만 남는다). 매일 뜨는 항목은 곧 안 보이는 항목이 된다.
+   */
+  if (a.arrivals && a.arrivals.recorded === 0) {
+    items.push({ label: `도착 기록 0건 (오늘 투어 ${a.arrivals.toursToday}건)`, n: a.arrivals.toursToday })
+  }
   const rows = items
     .map((it) => {
       const flagged = it.n > 0
@@ -233,15 +264,17 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     ? `<div style="margin-top:8px;font-size:11px;color:${C.sub};">AI 호출 ${a.llm.calls}회 · 캐시로 아낀 것 ${a.llm.cacheHits}회</div>`
     : ''
 
+  const arrivalLine = arrivalsLine(a)
+
   const overLines = [...(a.overCapacity ?? []), ...(a.llm?.overBudgetTours ?? [])]
-  if (overLines.length === 0) return `${rows}${llmLine}`
+  if (overLines.length === 0) return `${rows}${llmLine}${arrivalLine}`
   const detail = overLines
     .map(
       (line) =>
         `<div style="font-size:12px;color:${C.amber};padding:4px 0;">· ${esc(line)}</div>`,
     )
     .join('')
-  return `${rows}${llmLine}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
+  return `${rows}${llmLine}${arrivalLine}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
 }
 
 function fmtKstDate(ymd: string): string {
