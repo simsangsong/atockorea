@@ -1,8 +1,37 @@
+/**
+ * Tour-day content for one booking.
+ *
+ * 🔴 FA-016 (full-app audit 2026-07-30). This route let an unauthenticated
+ * caller who knew a booking id try `?contactEmail=` without limit: measured
+ * 25 consecutive wrong guesses, zero 429s, and a correct guess returned the
+ * guest's real name, booking reference and pickup point. Every other
+ * guest-credential path in the app goes through `resolveRoomActor`, whose §6
+ * gates the email match on `tour_room_guest` (PA-4) before it compares
+ * anything; this route hand-rolled the comparison and inherited no gate.
+ *
+ * Two things changed, and both matter:
+ *
+ *   1. The guess is bounded on TWO keys — the caller's IP and the booking id.
+ *      IP alone is not enough here: the target is a single booking, so an
+ *      attacker with a pool of addresses would still walk an email list. The
+ *      booking key makes the budget a property of the thing being attacked.
+ *   2. A wrong guess and a nonexistent booking now answer identically (404).
+ *      The old pair — 404 for unknown, 403 for "exists but not yours" — was a
+ *      booking-id oracle on its own, independent of the email guessing.
+ *
+ * Authenticated owners skip the gate: they are identified before any guess is
+ * possible, and the mobile app's own polling should not spend a guest budget.
+ */
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getAuthUser } from '@/lib/auth';
+import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 
 export const dynamic = 'force-dynamic';
+
+/** Deliberately tighter than join's 15/min: this is a lookup, not a door. */
+const GUEST_PER_MINUTE = 6;
+const GUEST_PER_HOUR = 30;
 
 function normalized(value: string | null | undefined): string {
   return (value ?? '').trim().toLowerCase();
@@ -20,6 +49,31 @@ export async function GET(
     const contactName = normalized(searchParams.get('contactName'));
     const contactEmail = normalized(searchParams.get('contactEmail'));
     const contactPhone = normalized(searchParams.get('contactPhone'));
+
+    // Unauthenticated callers are the guessing vector, so they pay the gate
+    // BEFORE the database is touched — an enumeration run should not also be
+    // free reads.
+    if (!user) {
+      for (const key of [`ip:${clientIpKey(req.headers)}`, `booking:${bookingId}`]) {
+        const gate = await requestGate({
+          namespace: 'tour_mode_booking_content',
+          key,
+          perMinute: GUEST_PER_MINUTE,
+          perHour: GUEST_PER_HOUR,
+        });
+        if (!gate.allowed) {
+          return NextResponse.json(
+            { error: 'rate_limited' },
+            {
+              status: 429,
+              headers: gate.retryAfterMs
+                ? { 'Retry-After': String(Math.ceil(gate.retryAfterMs / 1000)) }
+                : undefined,
+            },
+          );
+        }
+      }
+    }
 
     const { data: booking, error: bookingError } = await supabase
       .from('bookings')
@@ -45,8 +99,9 @@ export async function GET(
       (!contactName || normalized(booking.contact_name) === contactName) &&
       (!contactPhone || normalized(booking.contact_phone) === contactPhone);
 
+    // Same answer as "no such booking" — see the header note on the oracle.
     if (!isOwner && !guestMatches) {
-      return NextResponse.json({ error: 'Access denied for this booking' }, { status: 403 });
+      return NextResponse.json({ error: 'Booking not found' }, { status: 404 });
     }
 
     const tourId = booking.tour_id as string | null;

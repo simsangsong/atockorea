@@ -521,7 +521,13 @@ async function handleRallyCrossing(
   }
 
   const departedAtMs = loaded.targetMs + RALLY_GRACE_MS;
-  const rejoin = await resolveRejoinStop(supabase, booking.id, booking.tour_date, loaded.targetMs);
+  const rejoin = await resolveRejoinStop(
+    supabase,
+    booking.id,
+    booking.tour_date,
+    loaded.targetMs,
+    booking.tour_id ?? null,
+  );
   const bundle = waitEndedBundle({
     departedAtMs,
     meetingPoint: loaded.meetingPoint,

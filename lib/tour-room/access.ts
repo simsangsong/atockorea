@@ -241,15 +241,35 @@ export function tokenMatchesBooking(payload: RoomTokenPayload, booking: RoomBook
   );
 }
 
+/**
+ * Has dispatch killed this link? (§O-1 ⑧)
+ *
+ * 🔴 FA-018's sibling, FA-017 (full-app audit 2026-07-30). This used to read
+ * only `data` and ignore `error`, so a failed query looked exactly like "no
+ * ledger row" — and "no ledger row" means not revoked. One database hiccup and
+ * every link dispatch had explicitly killed came back to life.
+ *
+ * Unknown tokens are still fine: only we can sign them, so a token with no
+ * ledger row is a legitimately issued one. But a lookup that FAILED tells us
+ * nothing about revocation, and the safe reading of "nothing" for a kill switch
+ * is "assume it was pulled".
+ */
 async function isTokenRevoked(supabase: RoomDbClient, token: string): Promise<boolean> {
-  const { data } = await supabase
-    .from('tour_room_invites')
-    .select('id, revoked_at')
-    .eq('token_hash', hashToken(token))
-    .maybeSingle();
-  // Unknown tokens are fine (only we can sign them); a ledger row with
-  // revoked_at set means dispatch explicitly killed this link (§O-1 ⑧).
-  return Boolean((data as { revoked_at?: string | null } | null)?.revoked_at);
+  try {
+    const { data, error } = await supabase
+      .from('tour_room_invites')
+      .select('id, revoked_at')
+      .eq('token_hash', hashToken(token))
+      .maybeSingle();
+    if (error) {
+      console.warn('[tour-room] revocation lookup failed; treating the link as revoked:', error);
+      return true;
+    }
+    return Boolean((data as { revoked_at?: string | null } | null)?.revoked_at);
+  } catch (err) {
+    console.warn('[tour-room] revocation lookup threw; treating the link as revoked:', err);
+    return true;
+  }
 }
 
 function extractToken(req: NextRequest, explicit?: string | null): string | null {

@@ -40,6 +40,8 @@ function fakeDb(options?: {
   booking?: RoomBooking | null;
   revokedHashes?: Set<string>;
   knownHashes?: Set<string>;
+  /** FA-017 — the revocation lookup fails (error field, or throws). */
+  inviteLookup?: 'error' | 'throw';
 }): RoomDbClient {
   const booking = options?.booking === undefined ? BOOKING : options.booking;
   return {
@@ -59,6 +61,10 @@ function fakeDb(options?: {
                 },
                 async maybeSingle() {
                   if (table === 'tour_room_invites') {
+                    if (options?.inviteLookup === 'throw') throw new Error('connection reset');
+                    if (options?.inviteLookup === 'error') {
+                      return { data: null, error: { message: 'connection reset' } };
+                    }
                     const hash = String(value);
                     if (options?.revokedHashes?.has(hash)) {
                       return { data: { id: 'inv-1', revoked_at: '2026-07-14T00:00:00Z' }, error: null };
@@ -195,6 +201,27 @@ describe('lib/tour-room/access', () => {
       });
       expect(result).toMatchObject({ ok: false, status: 403 });
     });
+
+    /**
+     * 🔴 FA-017 — the lookup used to read only `data`, so a failed query was
+     * indistinguishable from "no ledger row", and no ledger row means allowed.
+     * A kill switch that a database hiccup can undo is not a kill switch.
+     */
+    it.each(['error', 'throw'] as const)(
+      '🔴 treats a failed revocation lookup (%s) as revoked, not as allowed',
+      async (mode) => {
+        const { token } = signCustomerRoomToken({
+          bookingId: BOOKING.id,
+          displayName: 'Alex',
+          tourDate: BOOKING.tour_date!,
+        });
+        const result = await resolveRoomActor(fakeReq(), BOOKING.id, {
+          supabase: fakeDb({ inviteLookup: mode }),
+          token,
+        });
+        expect(result).toMatchObject({ ok: false, status: 403 });
+      },
+    );
 
     it('still allows a known, un-revoked ledger token', async () => {
       const { token } = signCustomerRoomToken({
