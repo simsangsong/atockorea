@@ -65,6 +65,74 @@
 - `__tests__/audit/cjkInvariant.test.ts` 상한 certain 492/suspect 428 vs 실측 **491/428** — suspect는 히트 1건만 늘어도 레드. 래칫이 실측에 밀착(의도된 설계일 수 있으나 다음 작업자가 알아야 함). [실측]
 - **페이즈:** A1
 
+### FA-011 · P2 · /admin/orders `미선택` CJK 글자단위 줄바꿈 18건 실렌더 발현
+
+- **표면:** `app/(marketing)/admin/orders/page.tsx:517` — `미선택` 스팬이 64px 셀에 갇혀 `미선⏎택` 2줄. 실렌더 실측 **before 17 / after(전역 기본값) 18** [실측 qa-cjk-render]. §G-3b가 **이미 "기본값이 못 하는 케이스"로 문서화**해 둔 그 지점 — 규정 위반 아니라 판단 대기였으나, 오늘 데이터 상태에선 대량(18) 발현.
+- **참고:** X1 종결 주장("합계 17→0")과 모순 아님 — 당시 admin orders 행은 0→0으로 측정됐다(그날 데이터엔 2줄 `미선택` 셀이 없었음). **CJK 렌더 실측은 데이터 상태 의존** — 측정마다 이 점을 명기해야 함.
+- **재현:** `WALK_BASE=<dev> node scripts/qa-cjk-render.mjs` → admin orders 행 🔴
+- **수리:** S — 문서의 기존 처방(`.text-cjk-safe`, 잘림>줄바꿈 판단) 적용 · **페이즈:** A2
+
+### FA-012 · P2 · `__tpp_payload_backup_20260729` 테이블이 RLS 없이 public 노출
+
+- **표면:** 라이브 DB — advisors **ERROR**: "Table `public.__tpp_payload_backup_20260729` is public, but RLS has not been enabled" [실측]. 7-29 번역 잔해 수정(PR #628 계열) 때 만든 백업 테이블이 PostgREST로 anon 노출. 내용은 투어 상품 payload(공개 마케팅 카피)라 PII는 아니나, 기본 grant 하에서 anon 쓰기 가능성 있음.
+- **재현:** `mcp get_advisors security` → ERROR 1건
+- **수리:** S (RLS enable 또는 백업 테이블 drop — 백업 용도 종료 확인 후, D10 자동삭제 금지 원칙에 따라 사장님 확인) · **페이즈:** A6(선행 실행)
+
+### FA-013 · P3 · 죽은 export 20건 (탐지기 실측)
+
+- `node scripts/audit-dead-exports.mjs` [실측]: TRULY DEAD 20 — tour-room 코어 4건(`generatedContent.GENERATED_CONTENT_KEYS`·`getGeneratedSpotContent`(복수형으로 대체된 레거시)·`notices.policyWaitUntilMs`·`overtime.roundHalfHour`) + ops 16건(`guestMessageLoad.issueRoomLinks`·세무 상수 2 등). over-exported(자기 파일만 사용) 115.
+- **주의:** `generatedContent` 모듈 자체는 `getGeneratedSpotContentForLocales`로 approach·arrival-bundle에서 실소비 중 — 모듈 단절 아님. `overtime.roundHalfHour`는 오버타임 반올림 계약과 관련 가능 — A8 때 삭제 전 의미 확인.
+- **수리:** P3 일괄, 자동 삭제 금지(사장님 결정) · **페이즈:** A4(선행 실행)
+
+### FA-014 · P1(운영/제품) · 도착 캡슐 체인 — 실운영 발동 0회 (14일)
+
+- **표면:** 라이브 DB [실측 2026-07-30]: 최근 14일 실룸(비-sim) 7개에서 가이드 8·손님 7·기사 1 참가, 메시지 30+ (캡션·퀵리플라이·아침브리핑·rally_overdue·주차핀·차량이슈) — **그러나 `tour_room_spot_events` 0행, spot_arrival류 메시지 0건.** 지오펜스든 수동 [도착]이든 실투어에서 한 번도 발동 안 됨. 간판 기능(도착 해설 122/124 커버리지)이 커버리지만 있고 **실전달 0**.
+- **파급:** `poi_travel_matrix` 학습도 0행(재료 부재) → 주간 플라이휠 ①이 영구 공회전.
+- **판별 대기:** dev 체인은 A3에서 검증. dev에서 정상이면 결함은 현장측(실기기 GPS/권한/화면꺼짐/기사 콘솔 채택) — **미통과 사람 게이트(실기기 리허설)와 정확히 겹침.**
+- **재현:** `select count(*) from tour_room_spot_events where created_at > now() - interval '14 days'` → 0
+- **수리:** 판별 후 결정 (텔레메트리 1줄 추가가 선행 후보) · **페이즈:** A6(선행 실행)
+
+### 관찰(비결함) · 퍼지 크론 증거 중립
+
+- needs 35일+ 0행·핀 30일+ 0행 [실측] — 퍼지 대상이 아직 없어(데이터 전체가 30일 미만) 크론 실동작은 판정 불가. 다음 판정 가능 시점: 8월 말.
+
+### FA-015 · P2 · 콕핏 320px+글자크기 5단 — 칩 클리핑·카드 겹침·버블 붕괴
+
+- **표면:** 콕핏(운전 모드) {w320 × textScale 5} — 스킨·라이트/다크 무관 **6콤보 전부 동일** [실측 qa-hero-grid]:
+  ① 원탭 칩 스트립이 우측 화면 밖으로 비침(`약 5분 후…` 칩 절단, overflow-x 스크롤 아님 — visible bleed 324>304)
+  ② 발화 대기열(say-queue) 카드가 목적지 라인("TO GO …")을 가림
+  ③ 손님 버블(`max-w-[76%]`)이 1단어 1줄로 붕괴.
+- **증거 컷:** scratchpad a2/hero-grid/cockpit-ko-dark-classic-w320-s5.png (원장 첨부용 보존)
+- **재현:** `WALK_BASE=<dev> SHOT_DIR=<out> node scripts/qa-hero-grid.mjs` → cockpit-*-w320-s5 6건
+- **수리:** S~M (칩 스트립 overflow-x-auto + 카드 z-겹침 여백 + 버블 min-width) · **페이즈:** A2
+
+## A2 히어로 풀 그리드 — 최종 판정 [실측 2026-07-30]
+
+`scripts/qa-hero-grid.mjs`(신설, qa-cjk-render 판정기 이식): 히어로 3표면 — 손님 홈·로비·콕핏.
+그리드 = {ko,en,de,ru} × {라이트,다크} × {classic,contrast,jeju} × {390,320} × {글자 3단,5단} (콕핏은 ko만).
+
+| 판정 | 결과 (216콤보) |
+|---|---|
+| CJK 글자단위 줄바꿈 | **0** |
+| 문서 가로 오버플로 | **0** |
+| `.tr-numeral` 화면당 >1 | **0** (로비 D-N 숫자 1개 정상) |
+| 44px 미달 터치 타깃 | **0** |
+| 콘솔 에러/페이지 에러 | **0** |
+| 도달 불가 | **0** |
+| 요소 비침(visible bleed) | 디자인 오버행 1쌍(브랜드 버튼·아바타 겹침 — 컷 판정 통과) 외 **FA-015 1건** |
+
+로비 표면은 미래 날짜 시드(`scripts/sim-lobby-booking.ts`, 신설)로 이번에 처음 실렌더 판정 —
+D-2 카운트다운·미팅 날짜·사진 밴드 정상 [컷 확인]. 직전 세션의 "로비는 live 시드로 못 본다" 공백 해소.
+
+## A2 선행 실행 관찰 (기존 스위트 5종 — 전부 exit 0)
+
+- **smartapp-walk**: 19컷(손님 홈 5로케일·스킨·다크·스태프 셸 전 탭·콕핏 타임휠) **콘솔 에러 0** [실측]
+- **cjk-render**: 손님 룸·가이드 콘솔·관제·공개 홈·투어 목록 **불법 줄바꿈 0** (단 손님 룸은 "멀티라인 CJK 노드 0"이라 증명력 약함 — 히어로 그리드가 보강) · admin orders만 🔴 18(FA-011)
+- **chrome-overlap**: 고정 크롬 있는 전 표면(관제 5·사이트 4) **가림 0** [실측]
+- **cockpit-walk**: 15케이스(스킨 10종×다크·스케일 1/3/5) **잉크 대비 <4.5 = 0 · 다크 고정 유지 · 콘솔 클린** [실측] ⚠단 시드 메시지 0으로 카드 0 — 수직 예산 측정은 무의미, A3에서 sim-populate 후 재측정
+- **home-walk**: 첫 페인트 선택지 5(I7v3 의도대로)·확장 시 testid 29종 전부 도달·콘솔 클린 [실측]
+- **콕핏 재질 회귀(N5) 간접 종결**: 콕핏 다크 고정 + 스킨 캐스케이드가 15케이스 전부 유지 — 2026-07-28 기록의 "PIN 게이트로 판정 못 했다"가 오늘 판정됨
+
 ## A1 회고 대조 — 참으로 확인된 주장 (불일치 아님, 기록용)
 
 - **누적 수치 주장 7건 중 거짓 0건**: K4 53/53(당시)→현 55/56 · A1 87→98/98 · CJK 상한 일치 · 도착해설 **122/124 라이브 실측 일치**(전 로케일 98%) · 기사 PIN fail-closed(번호판 등록 시)+회귀 2겹 · STT groq→openai 폴백 배선+호출자 3곳(verbose_json 400 사인 수정됨) · jest 수치 단조 증가.

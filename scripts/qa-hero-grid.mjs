@@ -78,8 +78,11 @@ const measure = () => {
   const overflowSamples = [];
   for (const el of document.querySelectorAll('*')) {
     if (el.scrollWidth <= el.clientWidth + 2) continue;
-    const ox = getComputedStyle(el).overflowX;
-    if (ox === 'auto' || ox === 'scroll') continue;
+    const cs = getComputedStyle(el);
+    // Only VISIBLE bleed is a violation. auto/scroll scroll on purpose;
+    // hidden/clip is designed truncation (`truncate`, ellipsis) — the
+    // first grid run flagged h1.tr-title ellipsis on all 65 combos.
+    if (cs.overflowX !== 'visible') continue;
     overflowing += 1;
     if (overflowSamples.length < 4) {
       overflowSamples.push(
@@ -165,7 +168,9 @@ async function runSurface({ name, url, bookingId, locales, prepare }) {
                     'tour_mode_settings',
                     JSON.stringify({ skin: sk, textScale: sc }),
                   );
-                  window.localStorage.setItem('tour_mode_manual_seen', '1');
+                  // lib/tour-room/appManual.ts MANUAL_SEEN_KEY — keeps the
+                  // first-visit sheet out of every combo's frame.
+                  window.localStorage.setItem('tr_manual_seen_v2', String(Date.now()));
                 },
                 { bid: bookingId, loc: locale, sk: skin, sc: scale },
               );

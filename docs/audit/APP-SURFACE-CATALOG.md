@@ -19,16 +19,16 @@
 
 | # | 표면 | 경로 | 역할 | 상태 축 | A2 | A3 | A4 |
 |---|---|---|---|---|---|---|---|
-| S1 | 엔트리 | `app/(app)/tour-mode/page.tsx` | anon | 단일 | - | - | - |
-| S2 | join+PIN | `app/(app)/tour-mode/join/[roomToken]/page.tsx` | customer·driver·guide | 단일 | - | - | - |
-| S3 | 손님 룸(홈·채팅·지도·오늘+시트 전부) | `app/(app)/tour-mode/room/[bookingId]/page.tsx` | customer(lead/member) | **전 상태** ← 최대 조합 | - | - | - |
-| S4 | 기사 콘솔(콕핏) | `app/(app)/tour-mode/driver/page.tsx` | driver | 투어일 전 상태 + T+12 | - | - | - |
-| S5 | 가이드 콘솔 | `app/(app)/tour-mode/guide/page.tsx` | guide | 투어일 전 상태 + 플랜패널·정산 | - | - | - |
-| S6 | 플랜 인덱스 | `app/(app)/tour-mode/plan/page.tsx` | customer | D-N | - | - | - |
-| S7 | D-1 플랜 에디터 | `app/(app)/tour-mode/plan/[bookingId]/page.tsx` | customer(lead) | D-N·D-1(draft/confirmed) | - | - | - |
-| S8 | 체크인 | `app/(app)/tour-mode/checkin/[token]/page.tsx` | customer | 단일 | - | - | - |
-| S9 | 동반자 뷰 | `app/(app)/tour-mode/companion/[token]/page.tsx` | companion | 투어일 | - | - | - |
-| S10 | 공용 레이아웃 | `app/(app)/tour-mode/layout.tsx` | 전 역할 | — | - | - | - |
+| S1 | 엔트리 | `app/(app)/tour-mode/page.tsx` | anon | 단일 | ✓(overlap 워크·플래그 ON 확인) | - | - |
+| S2 | join+PIN | `app/(app)/tour-mode/join/[roomToken]/page.tsx` | customer·driver·guide | 단일 | ~(워크 경유) → A3에서 판정 | - | - |
+| S3 | 손님 룸(홈·채팅·지도·오늘+시트 전부) | `app/(app)/tour-mode/room/[bookingId]/page.tsx` | customer(lead/member) | **전 상태** ← 최대 조합 | ✓ 풀 그리드 192콤보(홈+로비) 통과 | - | - |
+| S4 | 기사 콘솔(콕핏) | `app/(app)/tour-mode/driver/page.tsx` | driver | 투어일 전 상태 + T+12 | ✗ **FA-015**(w320+s5) · 재질 15케이스 통과 | - | - |
+| S5 | 가이드 콘솔 | `app/(app)/tour-mode/guide/page.tsx` | guide | 투어일 전 상태 + 플랜패널·정산 | ~(cjk 0·walk 통과, 그리드 미포함) | - | - |
+| S6 | 플랜 인덱스 | `app/(app)/tour-mode/plan/page.tsx` | customer | D-N | - → A3 | - | - |
+| S7 | D-1 플랜 에디터 | `app/(app)/tour-mode/plan/[bookingId]/page.tsx` | customer(lead) | D-N·D-1(draft/confirmed) | ~(overlap 워크 경유) → A3 | - | - |
+| S8 | 체크인 | `app/(app)/tour-mode/checkin/[token]/page.tsx` | customer | 단일 | ~(overlap 워크 경유) → A3 | - | - |
+| S9 | 동반자 뷰 | `app/(app)/tour-mode/companion/[token]/page.tsx` | companion | 투어일 | - → A3(초대 발급 필요) | - | - |
+| S10 | 공용 레이아웃 | `app/(app)/tour-mode/layout.tsx` | 전 역할 | — | ✓(전 콤보에 포함) | - | - |
 
 **히어로 3표면(A2 풀 그리드 대상):** S3 투어일 홈 · S4 콕핏 · S3 로비 상태.
 
