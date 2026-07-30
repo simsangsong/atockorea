@@ -186,12 +186,145 @@ function outro(s) {
   </section>`;
 }
 
+/* ── v5 primitives — drawn information, not photographed screens ──────────── */
+
+/**
+ * The inline icon set. Line icons drawn here so the film has zero external
+ * assets and one stroke weight everywhere; currentColor lets the accent state
+ * recolour them without a second SVG.
+ */
+const ICONS = {
+  chat: '<path d="M6 10h20a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3H14l-6 5v-5H6a3 3 0 0 1-3-3v-9a3 3 0 0 1 3-3z"/>',
+  guide: '<path d="M16 4l2.8 7.2L26 14l-7.2 2.8L16 24l-2.8-7.2L6 14l7.2-2.8z"/><path d="M25 22l1.2 3 3 1.2-3 1.2-1.2 3-1.2-3-3-1.2 3-1.2z"/>',
+  pin: '<path d="M16 28s-9-8.1-9-14a9 9 0 0 1 18 0c0 5.9-9 14-9 14z"/><circle cx="16" cy="13.5" r="3.4"/>',
+  bell: '<path d="M16 5a7 7 0 0 1 7 7v5l2.4 4H6.6L9 17v-5a7 7 0 0 1 7-7z"/><path d="M13 24a3 3 0 0 0 6 0"/>',
+  hand: '<path d="M11 15V7.5a2 2 0 0 1 4 0V14m0-4.5a2 2 0 0 1 4 0V14m0-2.5a2 2 0 0 1 4 0V17c0 6-3 10-8.5 10S9 22.5 9 18.5V12a2 2 0 0 1 2 3z"/>',
+  sos: '<path d="M16 4l12 6v7c0 7-5.4 10.6-12 13C9.4 27.6 4 24 4 17v-7z"/><path d="M16 11v7"/><circle cx="16" cy="22" r="0.6"/>',
+  route: '<circle cx="7" cy="25" r="3"/><circle cx="25" cy="7" r="3"/><path d="M10 25h8a6 6 0 0 0 6-6v-6"/>',
+  clock: '<circle cx="16" cy="16" r="11"/><path d="M16 10v6l4.5 3"/>',
+  toggle: '<rect x="4" y="10" width="24" height="12" rx="6"/><circle cx="22" cy="16" r="4"/>',
+  card: '<rect x="5" y="7" width="22" height="18" rx="3"/><path d="M9 13h9M9 17h14M9 21h11"/>',
+};
+
+function icon(name, cls = '') {
+  const body = ICONS[name] ?? ICONS.card;
+  return `<svg class="ic ${cls}" viewBox="0 0 32 32" fill="none" stroke="currentColor"
+    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${body}</svg>`;
+}
+
+/**
+ * `map-of-app` — the whole app on one card: a phone silhouette and its
+ * features, each label CONNECTED to the phone and arriving one at a time.
+ *
+ * This is the film's skeleton (§V5): it opens the film half-lit, closes it
+ * fully lit, and the closing frame is the summary of everything taught. The
+ * arrival order is the teaching order — the motion carries the information.
+ */
+function mapOfApp(s) {
+  const items = (s.items ?? []).slice(0, 6);
+  const side = (i) => (i % 2 === 0 ? 'l' : 'r');
+  return `
+  <section class="stage map-of-app">
+    ${headBlock(s, { tight: true })}
+    <div class="atlas" data-anim="shot">
+      <div class="atlas-phone">
+        <span class="atlas-notch"></span>
+        ${icon(s.phoneIcon ?? 'chat', 'atlas-core')}
+      </div>
+      ${items.map((it, i) => `
+      <div class="atlas-item ${side(i)} ${it.active ? 'active' : ''}" data-anim="node" data-i="${i}"
+           style="top:${(s.slots ?? [16, 30, 44, 58, 72, 86])[i]}%">
+        <span class="atlas-line"></span>
+        <span class="atlas-chip">${icon(it.icon)}</span>
+        <span class="atlas-text">
+          <span class="atlas-title">${esc(it.title)}</span>
+          ${it.gloss ? `<span class="atlas-gloss" data-script="cjk">${esc(it.gloss)}</span>` : ''}
+        </span>
+      </div>`).join('')}
+    </div>
+  </section>`;
+}
+
+/**
+ * `device-note` — a phone silhouette holding exactly ONE drawn element.
+ *
+ * The answer to "the screenshot has thirty things on it": a screen we draw has
+ * one. The real app remains the proof elsewhere; this is the explanation.
+ */
+function deviceNote(s) {
+  const n = s.note ?? {};
+  return `
+  <section class="stage device-note">
+    ${headBlock(s, { tight: true })}
+    <div class="device" data-anim="shot">
+      <span class="atlas-notch"></span>
+      <div class="device-note-card${n.accent ? ' accent' : ''}" data-anim="node" data-i="0">
+        ${n.icon ? icon(n.icon) : ''}
+        <span class="device-note-text">
+          <span class="device-note-title">${esc(n.title ?? '')}</span>
+          ${n.gloss ? `<span class="device-note-gloss" data-script="cjk">${esc(n.gloss)}</span>` : ''}
+        </span>
+      </div>
+      ${n.under ? `<p class="device-under" data-anim="node" data-i="1">${esc(n.under)}</p>` : ''}
+    </div>
+  </section>`;
+}
+
+/**
+ * `bubble-pair` — two chat bubbles arriving in order: the guest's language,
+ * then Korean (or the reverse). Translation's point IS the round trip, so the
+ * SEQUENCE is the information and a still could not carry it.
+ */
+function bubblePair(s) {
+  const bubbles = (s.bubbles ?? []).slice(0, 3);
+  return `
+  <section class="stage bubble-pair">
+    ${headBlock(s, { tight: true })}
+    <div class="bubbles" data-anim="shot">
+      ${bubbles.map((b, i) => `
+      <div class="bub ${b.who === 'me' ? 'me' : 'them'}" data-anim="node" data-i="${i}">
+        ${b.tag ? `<span class="bub-tag">${esc(b.tag)}</span>` : ''}
+        <span class="bub-text" ${b.cjk ? 'data-script="cjk"' : ''}>${esc(b.text)}</span>
+      </div>`).join('')}
+    </div>
+  </section>`;
+}
+
+/**
+ * `flow-3` — up to three icon nodes joined by arrows, arriving left to right.
+ * A procedure reads faster as a flow than as prose; the arrows and the arrival
+ * order both say "then".
+ */
+function flow3(s) {
+  const nodes = (s.nodes ?? []).slice(0, 3);
+  return `
+  <section class="stage flow-3">
+    ${headBlock(s, { tight: true })}
+    <div class="flow" data-anim="shot">
+      ${nodes.map((n, i) => `
+      ${i > 0 ? `<span class="flow-arrow" data-anim="node" data-i="${i * 2 - 1}">
+        <svg viewBox="0 0 44 16" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M2 8h36m-6-5 6 5-6 5"/></svg></span>` : ''}
+      <div class="flow-node${n.active ? ' active' : ''}" data-anim="node" data-i="${i * 2}">
+        <span class="flow-chip">${icon(n.icon)}</span>
+        <span class="flow-title">${esc(n.title)}</span>
+        ${n.gloss ? `<span class="flow-gloss" data-script="cjk">${esc(n.gloss)}</span>` : ''}
+      </div>`).join('')}
+    </div>
+  </section>`;
+}
+
 const SCENES = {
   'title-card': titleCard,
   'screen-focus': screenFocus,
   'screen-demo': screenDemo,
   'card-grid': cardGrid,
   'step-list': stepList,
+  'map-of-app': mapOfApp,
+  'device-note': deviceNote,
+  'bubble-pair': bubblePair,
+  'flow-3': flow3,
   outro,
 };
 
@@ -311,6 +444,86 @@ export function renderSceneHtml(scene, opts = {}) {
   .side{position:relative;width:${wide ? 340 : 470}px;flex:none;display:flex;align-items:center}
   .side .shot{width:100%;max-height:100%}
 
+  /* ── v5 drawn-information primitives ─────────────────────────────────── */
+  .ic{width:32px;height:32px;display:block}
+
+  /* map-of-app: one phone, its features connected and lighting up in order. */
+  .atlas{position:relative;flex:1;min-height:0}
+  .atlas-phone{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+    width:180px;height:380px;border-radius:30px;background:${p.screen};
+    border:${SCREEN.rimWidth}px solid ${p.hairline};
+    box-shadow:${SCREEN.glow},inset 0 ${SCREEN.rimWidth}px 0 ${p.rim};
+    display:flex;align-items:center;justify-content:center}
+  .atlas-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);
+    width:64px;height:8px;border-radius:4px;background:${p.hairline}}
+  .atlas-core{width:52px;height:52px;color:${p.inkSoft};opacity:.5}
+  .atlas-item{position:absolute;display:flex;align-items:center;gap:12px;max-width:330px}
+  .atlas-item.l{right:calc(50% + 104px);flex-direction:row-reverse;text-align:right}
+  .atlas-item.r{left:calc(50% + 104px)}
+  .atlas-line{width:28px;height:2px;background:${p.hairline};flex:none}
+  .atlas-item.active .atlas-line{background:${p.accent}}
+  .atlas-chip{width:58px;height:58px;border-radius:16px;background:${p.card};
+    border:1.5px solid ${p.hairline};display:flex;align-items:center;justify-content:center;
+    color:${p.ink};flex:none}
+  .atlas-chip .ic{width:28px;height:28px}
+  .atlas-item.active .atlas-chip{border-color:${p.accent};color:${p.accent};
+    background:${p.accentSoft}}
+  .atlas-text{display:flex;flex-direction:column;gap:2px;min-width:0}
+  /* overflow-wrap:normal — the frame shipped "Emergenc/y" once; a mid-word
+     break in a five-word map is worse than a slightly wider column. */
+  .atlas-title{font-size:32px;font-weight:650;line-height:1.18;
+    overflow-wrap:normal;text-wrap:balance}
+  .atlas-item.active .atlas-title{color:${p.accent}}
+  .atlas-gloss{font-size:25px;color:${p.inkSoft};line-height:1.3;overflow-wrap:normal}
+
+  /* device-note: a phone holding exactly one drawn element. */
+  .device{position:relative;flex:1;min-height:0;max-height:660px;margin:0 auto;
+    aspect-ratio:390/640;border-radius:44px;background:${p.screen};
+    border:${SCREEN.rimWidth}px solid ${p.hairline};
+    box-shadow:${SCREEN.glow},inset 0 ${SCREEN.rimWidth}px 0 ${p.rim};
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    gap:34px;padding:44px}
+  .device .atlas-notch{top:20px}
+  .device-note-card{display:flex;align-items:center;gap:20px;width:100%;
+    background:${p.card};border:1.5px solid ${p.hairline};border-radius:22px;
+    padding:26px 28px;color:${p.ink}}
+  .device-note-card .ic{width:44px;height:44px;flex:none}
+  .device-note-card.accent{border-color:${p.accent}}
+  .device-note-card.accent .ic{color:${p.accent}}
+  .device-note-text{display:flex;flex-direction:column;gap:4px;min-width:0}
+  .device-note-title{font-size:38px;font-weight:650;line-height:1.2}
+  .device-note-gloss{font-size:28px;color:${p.inkSoft};line-height:1.3}
+  .device-under{font-size:28px;color:${p.inkSoft};text-align:center;line-height:1.4}
+
+  /* bubble-pair: the round trip, in order. */
+  .bubbles{display:flex;flex-direction:column;gap:26px;flex:0 1 auto;
+    width:100%;max-width:760px;margin:0 auto}
+  .bub{position:relative;max-width:82%;border-radius:24px;padding:24px 30px;
+    font-size:40px;line-height:1.35;font-weight:500}
+  .bub.me{align-self:flex-end;background:${p.accentSoft};color:${p.ink};
+    border:1.5px solid ${p.accent};border-bottom-right-radius:8px}
+  .bub.them{align-self:flex-start;background:${p.card};color:${p.ink};
+    border:1.5px solid ${p.hairline};border-bottom-left-radius:8px}
+  .bub-tag{display:block;font-family:${FONT.chrome};font-size:20px;
+    letter-spacing:.14em;text-transform:uppercase;color:${p.inkSoft};margin-bottom:8px}
+
+  /* flow-3: nodes joined by arrows, arriving in reading order. */
+  .flow{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;
+    flex:0 1 auto;width:100%}
+  .flow-node{display:flex;flex-direction:column;align-items:center;gap:14px;
+    text-align:center;flex:1;min-width:0}
+  .flow-chip{width:150px;height:150px;border-radius:34px;background:${p.card};
+    border:1.5px solid ${p.hairline};display:flex;align-items:center;
+    justify-content:center;color:${p.ink}}
+  .flow-chip .ic{width:68px;height:68px}
+  .flow-node.active .flow-chip{border-color:${p.accent};color:${p.accent};
+    background:${p.accentSoft}}
+  .flow-title{font-size:34px;font-weight:650;line-height:1.2;overflow-wrap:normal;text-wrap:balance}
+  .flow-node.active .flow-title{color:${p.accent}}
+  .flow-gloss{font-size:26px;color:${p.inkSoft};line-height:1.3;overflow-wrap:normal}
+  .flow-arrow{color:${p.inkSoft};flex:none;display:flex;margin-top:63px}
+  .flow-arrow svg{width:56px;height:24px}
+
   [data-anim]{opacity:0}
   </style></head><body data-locale="${esc(locale)}" data-theme="${esc(theme)}">
   ${corners(scene.chrome, wide)}
@@ -324,7 +537,12 @@ export function renderSceneHtml(scene, opts = {}) {
     // the point of the animation is that the explanation grows by one item.
     const delayOf=function(el,i){
       const idx=el.dataset.i!==undefined?Number(el.dataset.i):null;
-      return idx===null?i*90:400+idx*S;
+      if(idx===null) return i*90;
+      // Diagram nodes (map labels, flow steps, bubbles) are the information
+      // itself, so they arrive on a slower clock than decorative card stagger:
+      // one thought at a time, after the frame has settled.
+      if(el.dataset.anim==='node') return 650+idx*430;
+      return 400+idx*S;
     };
     // Cubic ease-out arriving, ease-in leaving: the frame accelerates away
     // rather than stopping dead, which is what makes the join disappear.
@@ -388,9 +606,14 @@ export function renderSceneHtml(scene, opts = {}) {
       });
       r.subtitleZoneIntruder=intruder;
 
-      // G-2 v3: count ROLES, not raw families. An extra family is legal only on
-      // an element marked data-script="cjk", where the Latin face cannot draw
-      // the script. A decorative third face still fails.
+      // G-2 v3: count ROLES, not raw families — and classify by the FAMILY the
+      // element actually computed, not by a class list that has to be kept in
+      // sync with every new scene (it fell out of sync the first time a new
+      // primitive used a mono label). The failure this gate exists for is a
+      // THIRD typeface, so: the chrome family is chrome wherever it appears,
+      // the CJK companion is exempt where marked, everything else must be one
+      // single display family.
+      const chromeFirst=${JSON.stringify(FONT.chrome.split(',')[0].replace(/["']/g,'').trim())};
       const roles=new Set(); const displayFams=new Set();
       document.querySelectorAll('body *').forEach(function(el){
         const own=[...el.childNodes].some(function(n){
@@ -399,9 +622,7 @@ export function renderSceneHtml(scene, opts = {}) {
         if(!own) return;
         if(el.closest('[data-script="cjk"]')) return;   // the script companion
         const fam=(getComputedStyle(el).fontFamily||'').split(',')[0].replace(/["']/g,'').trim();
-        if(el.closest('.corner')||el.classList.contains('eyebrow')||el.classList.contains('n')){
-          roles.add('chrome:'+fam); return;
-        }
+        if(fam===chromeFirst){ roles.add('chrome:'+fam); return; }
         roles.add('display:'+fam);
         displayFams.add(fam);
       });

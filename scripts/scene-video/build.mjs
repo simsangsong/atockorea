@@ -173,6 +173,18 @@ function resolveScene(scene) {
       return LOCALE === 'en' ? [en, null] : [en, glossMap?.[LOCALE] ?? null];
     });
   }
+  // v5 primitives — every drawn element resolves its gloss the same way, so a
+  // new scene type cannot quietly ship a Korean line into the German film.
+  const glossOf = (map) => (LOCALE === 'en' ? null : map?.[LOCALE] ?? null);
+  if (Array.isArray(out.items)) {
+    out.items = out.items.map((it) => ({ ...it, gloss: glossOf(it.glossMap ?? it.gloss) }));
+  }
+  if (Array.isArray(out.nodes)) {
+    out.nodes = out.nodes.map((n) => ({ ...n, gloss: glossOf(n.gloss) }));
+  }
+  if (out.note) {
+    out.note = { ...out.note, gloss: glossOf(out.note.gloss) };
+  }
   out.gloss = LOCALE === 'en' ? null : scene.gloss?.[LOCALE] ?? null;
   return out;
 }
@@ -201,6 +213,11 @@ function checkPlainEnglish(scene) {
     ['headline', scene.headline],
     ...(scene.cards ?? []).map((c, i) => [`card ${i + 1}`, c.title]),
     ...(scene.steps ?? []).map((st, i) => [`step ${i + 1}`, Array.isArray(st) ? st[0] : st]),
+    ...(scene.items ?? []).map((it, i) => [`item ${i + 1}`, it.title]),
+    ...(scene.nodes ?? []).map((n, i) => [`node ${i + 1}`, n.title]),
+    ...(scene.note ? [['note', scene.note.title], ['note-under', scene.note.under]] : []),
+    // Bubbles: only the English ones — a Korean bubble IS the point of the scene.
+    ...(scene.bubbles ?? []).filter((b) => !b.cjk).map((b, i) => [`bubble ${i + 1}`, b.text]),
   ].filter(([, v]) => typeof v === 'string' && v.trim());
 
   for (const [where, text] of strings) {
