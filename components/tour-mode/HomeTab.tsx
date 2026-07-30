@@ -23,7 +23,7 @@ import LobbyCard from '@/components/tour-mode/LobbyCard';
 import NowCard, { type NowCardHandlers } from '@/components/tour-mode/NowCard';
 import { nowCard, roomNowCardContext, scheduleTargetMs } from '@/lib/tour-room/nowCard';
 import { useRoomClock } from '@/components/tour-mode/roomClock';
-import { orderHomeTiles, PEEK_COUNT, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
+import { orderHomeTiles, type HomeTileKey } from '@/lib/tour-room/homeTileOrder';
 import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { driverNameFromPayload, firstPickup, vehicleLineFromPayload } from '@/components/tour-mode/LobbyCard';
 import MeetSetCard from '@/components/tour-mode/MeetSetCard';
@@ -899,29 +899,22 @@ export default function HomeTab({
         </div>
       )}
 
-      {/* ---- Action grid + the fold (I7v2, 2026-07-31) ----------------
-          Three tiles open; everything else folds flat behind a card-row door.
+      {/* ---- Action grid + the fold (I7v3, 2026-07-31 round 2) --------
+          EVERY tile folds behind the card-row door. 사장님, on seeing v2
+          live: the three always-open tiles read as clutter above the door —
+          "평소에는 접혀서 more features 버튼만 보이도록". So at rest the home
+          is the hero plus three long rows (chat · manual · this door), and
+          the whole grid unfolds BELOW the door on demand. The tab bar and the
+          header's SOS shield keep every critical destination one tap away
+          while the grid sleeps.
 
-          This retires I7's peek strip (the cropped icon heads). The peek
-          existed because the old door was a quiet text pill — folded fully,
-          the screen read as "there is nothing here". 사장님 결정(2026-07-31):
-          the door itself is now a card-weight row in the same family as the
-          chat preview and the manual above, with a down-arrow that bobs while
-          the fold is shut. The "there is more" hint the sliced icons used to
-          carry lives in the door now, so the grid can fold completely.
-
-          U-D24: which three is derived (`orderHomeTiles`), and a tile that
-          duplicates a bottom tab is never promoted into them.
+          U-D24's promotion rule retires with the open trio; `orderHomeTiles`
+          still fixes the order, so nothing moves between visits.
           U-D25 still holds: nothing is filtered. Folded content is `hidden`,
           not unmounted — expanding reveals rather than rebuilds, and no tile
           a guest learned has moved. `hidden` also means nothing half-visible
-          is focusable, which retires the focus-capture escape hatch the
-          clipped strip needed: a keyboard user meets the door, not the fold. */}
+          is focusable: a keyboard user meets the door, not the fold. */}
       <div data-testid="home-grid">
-        <div className="tr-stagger mt-2 grid grid-cols-3 gap-1.5">
-          {tiles.slice(0, PEEK_COUNT).map((tile) => renderTile(tile))}
-        </div>
-
         {/* The door — same long row as its two siblings above; only the arrow
             differs. It sits inline after the label (사장님: 글씨 옆에), points
             into the fold, and stops bobbing the moment there is nothing left
@@ -932,8 +925,8 @@ export default function HomeTab({
           onClick={() => setMoreOpen((v) => !v)}
           data-testid="home-more"
           aria-expanded={moreOpen}
-          aria-controls="home-grid-rest home-more-panel"
-          className="tr-home-card tr-press text-cjk-safe mt-1.5 flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+          aria-controls="home-grid-tiles home-more-panel"
+          className="tr-home-card tr-press text-cjk-safe mt-2 flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
         >
           <span className="tr-chip tr-chip--base flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden>
             <IconMore size={TR_ICON.chip} />
@@ -947,34 +940,32 @@ export default function HomeTab({
           </span>
         </button>
 
-        {tiles.length > PEEK_COUNT && (
-          <div
-            id="home-grid-rest"
-            hidden={!moreOpen}
-            /* 🔴 The `hidden` ATTRIBUTE alone cannot fold this: it is UA-level
-               display none, and any author display declaration — like the
-               `grid` utility — overrides it. Caught by a Playwright shot
-               after jsdom and DOM-property checks all passed green. So the
-               display driver is the class swap; the attribute stays for
-               semantics, and the two must never disagree. */
-            className={`${moreOpen ? 'grid' : 'hidden'} mt-1.5 grid-cols-3 gap-1.5`}
-            data-testid="home-grid-rest"
-          >
-            {/* 🔴 N-b — the orphan row.
-                The tile count is conditional (5 to 10 depending on lifecycle,
-                privacy, concierge and whether a review link exists), so at 7 or
-                10 tiles the last row holds exactly ONE and the grid reads as
-                unfinished. The fold moved where the break falls; it did not
-                remove the possibility.
-                The stranded tile is always SOS — it is pushed last — so rather
-                than leaving it hanging in a third of a row, it takes the whole
-                row. An emergency action owning its own line reads as deliberate
-                where a single orphaned square reads as a bug. */}
-            {tiles.slice(PEEK_COUNT).map((tile, index, rest) =>
-              renderTile(tile, index === rest.length - 1 && rest.length % 3 === 1),
-            )}
-          </div>
-        )}
+        <div
+          id="home-grid-tiles"
+          hidden={!moreOpen}
+          /* 🔴 The `hidden` ATTRIBUTE alone cannot fold this: it is UA-level
+             display none, and any author display declaration — like the
+             `grid` utility — overrides it. Caught by a Playwright shot
+             after jsdom and DOM-property checks all passed green. So the
+             display driver is the class swap; the attribute stays for
+             semantics, and the two must never disagree. */
+          className={`${moreOpen ? 'grid' : 'hidden'} tr-stagger mt-1.5 grid-cols-3 gap-1.5`}
+          data-testid="home-grid-tiles"
+        >
+          {/* 🔴 N-b — the orphan row.
+              The tile count is conditional (5 to 10 depending on lifecycle,
+              privacy, concierge and whether a review link exists), so at 7 or
+              10 tiles the last row holds exactly ONE and the grid reads as
+              unfinished. The fold moved where the break falls; it did not
+              remove the possibility.
+              The stranded tile is always SOS — it is pushed last — so rather
+              than leaving it hanging in a third of a row, it takes the whole
+              row. An emergency action owning its own line reads as deliberate
+              where a single orphaned square reads as a bug. */}
+          {tiles.map((tile, index) =>
+            renderTile(tile, index === tiles.length - 1 && tiles.length % 3 === 1),
+          )}
+        </div>
       </div>
 
       <div id="home-more-panel" hidden={!moreOpen} data-testid="home-more-sheet">
