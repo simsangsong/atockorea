@@ -128,11 +128,11 @@ const html = `<title>ATOC Korea — app guide films</title>
 </style>
 
 <div class="wrap">
-  <div class="rail"><span>ATOC Korea · app guide</span><span>2026-07-30 · v3</span></div>
+  <div class="rail"><span>ATOC Korea · app guide</span><span>2026-07-30 · v5</span></div>
 
   <header style="display:flex;flex-direction:column;gap:10px">
     <h1>Two guide films, ten languages</h1>
-    <p class="lede">English is the copy; each market's reading sits beneath it. App screens are captured in English, and three scenes are real screen recordings rather than stills.</p>
+    <p class="lede">Information first: drawn scenes teach each feature one point at a time, and the film opens and closes on a single map of the whole app. Real screens appear twice, as proof.</p>
   </header>
 
   <div class="stage">
@@ -158,12 +158,12 @@ const html = `<title>ATOC Korea — app guide films</title>
   </div>
 
   <div class="notes">
-    <h2>What changed in this cut</h2>
+    <h2>What changed in this cut (v5)</h2>
     <ul>
-      <li><b>English leads.</b> The headline is English and the locale line is its reading — previously the same sentence appeared twice, once as a Korean headline and once burnt along the bottom.</li>
-      <li><b>Screen recordings.</b> Tabs moving, the Smart Guide opening, and arrival commentary being switched on — the card does its job and leaves. A still cannot teach a state change.</li>
-      <li><b>Elements arrive and leave.</b> Every beat empties itself before the next begins, so the two meet on identical bare frames and there is no cut to see.</li>
-      <li><b>The map tab is missing from the walk on purpose.</b> The Maps key does not allow this build machine, so the canvas reads “Map unavailable” — true here, false of the product. It goes back in once the key allows the dev origin.</li>
+      <li><b>Drawn scenes carry the teaching.</b> A phone silhouette holding one element, a three-step flow, a chat round-trip — each scene is shaped like the information it carries. No more full app screens flying past.</li>
+      <li><b>The map is the skeleton.</b> The film opens with the app's five features connecting to one phone, and closes with the same map fully lit — the last frame is the whole app on one card.</li>
+      <li><b>Real screens appear twice, as proof.</b> The arrival card you will actually receive, and the SOS screen — both as element crops, nothing else.</li>
+      <li><b>One point per scene, at most three new pieces of information.</b> Diagram pieces arrive one at a time because their order is the explanation.</li>
     </ul>
 
     <h2>Waiting on you</h2>

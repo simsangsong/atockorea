@@ -646,8 +646,14 @@ export function renderSceneHtml(scene, opts = {}) {
         r.clipBox={x:Math.round(b.x),y:Math.round(b.y),w:Math.round(b.width),h:Math.round(b.height)};
       }
 
-      // CJK must never break between two characters (CLAUDE.md P1-5).
-      const CJK=/[\\u3040-\\u30ff\\u3400-\\u4dbf\\u4e00-\\u9fff\\uac00-\\ud7af]/;
+      // G-5, scoped to HANGUL (CLAUDE.md P1-5's actual failure mode).
+      //
+      // Korean has spaces, so a break inside an 어절 is a typesetting fault —
+      // that is the collapse P1-5 was written against. Japanese and Chinese
+      // have no spaces and legitimately wrap BETWEEN characters; flagging that
+      // forbade every multi-line ja/zh sentence, which is how this gate failed
+      // six locale builds at once while the frames were typographically fine.
+      const CJK=/[\\uac00-\\ud7af]/;
       const w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
       const broken=[];var n;
       while((n=w.nextNode())){
