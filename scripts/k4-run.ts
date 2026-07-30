@@ -500,7 +500,10 @@ const SPECS: Record<string, Spec> = {
   },
   'POST /api/tour-rooms/[bookingId]/extend': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/extend`,
-    headers: guideH,
+    // FA-019 — the guest is the actor the route is FOR: a guest adds their own
+    // time, guide/admin may on their behalf, the driver may not. Driven with a
+    // guide session, the paid path an actual guest walks was never exercised.
+    headers: guestH,
     body: () => ({ hours: 1 }),
     needsPrivate: true,
     ok: [200, 201, 400],
@@ -539,6 +542,33 @@ const SPECS: Record<string, Spec> = {
     // 201 is the Tier-0 answer path (no model call) — a legitimate success the
     // first expected set was too narrow to admit.
     ok: [200, 201, 429],
+  },
+  // FA-023 — both of these were DECLARED in the ledger and had no request, so
+  // the run printed `UNWRITTEN 2` while the coverage gate stayed green. They are
+  // the newest pairs in the app (SG-4 meeting photo, SG-5 pickup vehicle photo),
+  // which is exactly when a harness gap is most likely and least noticed.
+  'POST /api/tour-rooms/[bookingId]/meeting-photo': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/meeting-photo`,
+    // The ledger names the DRIVER, and on a solo-driver tour they are the one
+    // holding the phone at the meeting point — so drive it as the declared actor
+    // rather than as the most convenient staff session (the route accepts
+    // guide/driver/admin, so either would have passed and hidden the drift).
+    headers: driverH,
+    form: () => {
+      const fd = new FormData();
+      fd.append('photo', new Blob([tinyPng()], { type: 'image/png' }), 'meeting.png');
+      return fd;
+    },
+    // 415/413 are honest outcomes for a 1-pixel PNG against a real validator;
+    // 409 when today's photo already exists from an earlier room in the run.
+    ok: [200, 201, 400, 409, 413, 415, 429],
+  },
+  'GET /api/tour-rooms/[bookingId]/vehicle-photo': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/vehicle-photo`,
+    headers: guestH,
+    // 200 with `url: null` is the normal answer when ops has attached no photo —
+    // the pair still has to be DRIVEN to know the signed-URL path does not throw.
+    ok: [200, 404],
   },
   'POST /api/tour-rooms/[bookingId]/vision-ask': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/vision-ask`,

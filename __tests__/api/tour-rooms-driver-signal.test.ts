@@ -174,3 +174,79 @@ describe('driver-signal fan-out (T2 slice 3)', () => {
     expect((db.inserts.tour_room_messages[0].translations as Record<string, string>).en).toContain('maps.google.com');
   });
 });
+
+/**
+ * 🔴 FA-004 (full-app audit 2026-07-30) — the say-queue ledger nothing measured.
+ *
+ * SG-6's completion ledger claims a unit for the `say_dismissed` / `say_expired`
+ * bookkeeping route. The implementation is real (driver-signal route, the branch
+ * before the per-type flows), but neither string appeared anywhere under
+ * `__tests__/`. It matters more than "just bookkeeping": N-5's decision about
+ * whether the queue fires automatically is meant to be made from exactly this
+ * data, and a silent write path produces a silent wrong decision.
+ *
+ * The contract these pin: ledger row only — no message, no pin, no fan-out —
+ * one subject per (type, subject) so a re-dismissal dedupes, and a subject is
+ * mandatory because an unkeyed row teaches nothing.
+ */
+describe('FA-004 — say-queue bookkeeping writes a ledger row and nothing else', () => {
+  const recordRoomEventMock = jest.requireMock('@/lib/tour-room/events').recordRoomEvent as jest.Mock;
+
+  it.each(['say_dismissed', 'say_expired'] as const)('%s records one event, no message, no broadcast', async (type) => {
+    const db = fakeDb('person');
+    createServerClientMock.mockReturnValue(db);
+    const res = await signalPOST(fakeReq(driverSession(), { type, subject: 'arrival:seongsan' }), params());
+
+    expect(res.status).toBe(201);
+    expect(await res.json()).toMatchObject({ ok: true, deduped: false });
+    expect(recordRoomEventMock).toHaveBeenCalledWith(
+      expect.anything(),
+      expect.objectContaining({ type, subjectKey: `${type}:arrival:seongsan`, payload: { subject: 'arrival:seongsan' } }),
+    );
+    // The whole point of the branch: it must not reach any fan-out.
+    expect(db.inserts.tour_room_messages).toBeUndefined();
+    expect(db.inserts.tour_room_pins).toBeUndefined();
+    expect(broadcastMock).not.toHaveBeenCalled();
+  });
+
+  it.each(['say_dismissed', 'say_expired'] as const)('%s requires a subject', async (type) => {
+    createServerClientMock.mockReturnValue(fakeDb('person'));
+    const res = await signalPOST(fakeReq(driverSession(), { type }), params());
+    expect(res.status).toBe(400);
+    expect(await res.json()).toMatchObject({ error: 'subject is required' });
+    expect(recordRoomEventMock).not.toHaveBeenCalled();
+  });
+
+  it('a repeat dismissal dedupes to 200 instead of writing twice', async () => {
+    createServerClientMock.mockReturnValue(fakeDb('person'));
+    recordRoomEventMock.mockResolvedValueOnce({ inserted: false, event: null });
+    const res = await signalPOST(
+      fakeReq(driverSession(), { type: 'say_dismissed', subject: 'arrival:seongsan' }),
+      params(),
+    );
+    expect(res.status).toBe(200);
+    expect(await res.json()).toMatchObject({ deduped: true });
+  });
+
+  it('the subject is truncated rather than trusted at any length', async () => {
+    createServerClientMock.mockReturnValue(fakeDb('person'));
+    const long = 'x'.repeat(400);
+    await signalPOST(fakeReq(driverSession(), { type: 'say_expired', subject: long }), params());
+    const arg = recordRoomEventMock.mock.calls.at(-1)![1] as { subjectKey: string };
+    expect(arg.subjectKey.length).toBeLessThanOrEqual('say_expired:'.length + 120);
+  });
+
+  it('a guest cannot write the driver ledger', async () => {
+    createServerClientMock.mockReturnValue(fakeDb('person'));
+    const guest = signRoomSession({
+      roomId: 'room-b1',
+      bookingId: 'b1',
+      participantId: 'p-guest',
+      role: 'customer',
+      displayName: 'G',
+    }).session;
+    const res = await signalPOST(fakeReq(guest, { type: 'say_dismissed', subject: 'arrival:x' }), params());
+    expect(res.status).toBe(403);
+    expect(recordRoomEventMock).not.toHaveBeenCalled();
+  });
+});

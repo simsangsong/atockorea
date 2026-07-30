@@ -149,3 +149,149 @@ describe('GET /day-summary', () => {
     expect(res.status).toBe(403);
   });
 });
+
+/**
+ * 🔴 FA-005 (full-app audit 2026-07-30) — the four「오늘의 나」metrics nothing
+ * measured.
+ *
+ * SG-7's completion ledger claims a unit for the day-summary metrics, naming the
+ * two subtle ones itself: "정시 체인 = superseded 접기, 응답 중앙값 ≤600s 갭".
+ * The commit that shipped them touched four files and none was a test, and the
+ * existing suite above never mentions `ontime`, `median_seconds`, `response` or
+ * `superseded`. These are the numbers a driver is shown about their own day, so
+ * being quietly wrong is worse than being absent.
+ *
+ * Each case is one of the four, with the arithmetic chosen so a plausible wrong
+ * implementation gives a different answer:
+ *   ontime      — an extended chain must count ONCE, not twice
+ *   response    — the median of the gaps, and only gaps ≤600s
+ *   narration   — arrival capsules, not every system message
+ *   photos      — staff attachments, not guest ones
+ */
+describe('FA-005 — the four metrics behind 「오늘의 나」', () => {
+  const T = (min: number) => new Date(Date.UTC(2099, 6, 21, 0, min, 0)).toISOString();
+
+  /** A db whose rally events and messages are the fixture for one case. */
+  function metricsDb(opts: {
+    rally?: Array<Record<string, unknown>>;
+    messages?: Array<Record<string, unknown>>;
+  }) {
+    return {
+      from(table: string) {
+        const chain: Record<string, unknown> = {};
+        for (const m of ['select', 'eq', 'neq', 'in', 'order', 'limit']) chain[m] = jest.fn(() => chain);
+        const single = async () =>
+          table === 'bookings' ? { data: { ...BOOKING }, error: null } : { data: null, error: null };
+        chain.single = jest.fn(single);
+        chain.maybeSingle = jest.fn(single);
+        chain.then = (res: (v: unknown) => unknown, rej?: (e: unknown) => unknown) => {
+          const value =
+            table === 'tour_room_events'
+              ? { data: opts.rally ?? [], error: null }
+              : table === 'tour_room_messages'
+                ? { data: opts.messages ?? [], error: null }
+                : table === 'tour_room_extras'
+                  ? { data: [], error: null }
+                  : { data: null, error: null };
+          return Promise.resolve(value).then(res, rej);
+        };
+        chain.upsert = jest.fn(() => ({
+          select: () => ({
+            single: async () => ({ data: { id: 'room-b1', booking_id: 'b1', status: 'active' }, error: null }),
+          }),
+        }));
+        chain.insert = jest.fn(() => ({ select: () => ({ single: async () => ({ data: {}, error: null }) }) }));
+        return chain;
+      },
+    };
+  }
+
+  const me = async (opts: Parameters<typeof metricsDb>[0]) => {
+    createServerClientMock.mockReturnValue(metricsDb(opts));
+    const res = await summaryGET(fakeReq(driverSession()), params());
+    expect(res.status).toBe(200);
+    return (await res.json()).me as {
+      ontime: { chains: number; departed: number };
+      response: { signals: number; median_seconds: number | null };
+      narration: number;
+      photos: number;
+    };
+  };
+
+  it('🔴 ontime: an extension is the SAME chain — the replaced notice folds away', async () => {
+    // n-1 was extended into n-2, which then ended all-aboard. One chain, not two.
+    const metrics = await me({
+      rally: [
+        { type: 'rally_resolution', payload: { outcome: 'extended', notice_id: 'n-1', next_notice_id: 'n-2' } },
+        { type: 'rally_resolution', payload: { outcome: 'all_aboard', notice_id: 'n-2' } },
+      ],
+    });
+    expect(metrics.ontime.chains).toBe(1);
+    expect(metrics.ontime.departed).toBe(0);
+  });
+
+  it('🔴 ontime: only a departed chain counts as late', async () => {
+    const metrics = await me({
+      rally: [
+        { type: 'rally_resolution', payload: { outcome: 'all_aboard', notice_id: 'a' } },
+        { type: 'rally_resolution', payload: { outcome: 'departed', notice_id: 'b' } },
+        { type: 'rally_resolution', payload: { outcome: 'departed', notice_id: 'c' } },
+      ],
+    });
+    expect(metrics.ontime).toEqual({ chains: 3, departed: 2 });
+  });
+
+  it('🔴 response: the MEDIAN gap, and gaps over 600s are not gaps', async () => {
+    const metrics = await me({
+      messages: [
+        // 30s, 120s, and one 20-minute "reply" that must be discarded.
+        { sender_role: 'system', created_at: T(0), metadata: { kind: 'guest_running_late' } },
+        { sender_role: 'driver', created_at: new Date(Date.UTC(2099, 6, 21, 0, 0, 30)).toISOString(), metadata: null },
+        { sender_role: 'system', created_at: T(10), metadata: { kind: 'guest_rest_stop' } },
+        { sender_role: 'guide', created_at: T(12), metadata: null },
+        { sender_role: 'system', created_at: T(20), metadata: { kind: 'guest_lost' } },
+        { sender_role: 'driver', created_at: T(45), metadata: null },
+      ],
+    });
+    expect(metrics.response.signals).toBe(3);
+    // gaps kept: 30s and 120s → median of two takes the upper middle.
+    expect(metrics.response.median_seconds).toBe(120);
+  });
+
+  it('🔴 response: no staff reply at all leaves the median null, not zero', async () => {
+    const metrics = await me({
+      messages: [{ sender_role: 'system', created_at: T(0), metadata: { kind: 'guest_lost' } }],
+    });
+    expect(metrics.response.signals).toBe(1);
+    expect(metrics.response.median_seconds).toBeNull();
+  });
+
+  it('🔴 narration counts arrival capsules only', async () => {
+    const metrics = await me({
+      messages: [
+        { sender_role: 'system', created_at: T(0), metadata: { kind: 'arrival_bundle' } },
+        { sender_role: 'system', created_at: T(1), metadata: { kind: 'spot_arrival' } },
+        { sender_role: 'system', created_at: T(2), metadata: { kind: 'meeting_notice' } },
+        { sender_role: 'guide', created_at: T(3), metadata: null },
+      ],
+    });
+    expect(metrics.narration).toBe(2);
+  });
+
+  it('🔴 photos counts STAFF attachments — a guest photo is not the operator work', async () => {
+    const metrics = await me({
+      messages: [
+        { sender_role: 'driver', created_at: T(0), input_kind: 'image', metadata: null },
+        { sender_role: 'guide', created_at: T(1), attachment_url: 'https://x/p.jpg', metadata: null },
+        { sender_role: 'customer', created_at: T(2), input_kind: 'image', metadata: null },
+      ],
+    });
+    expect(metrics.photos).toBe(2);
+  });
+
+  it('a guest may not read the operator metrics', async () => {
+    createServerClientMock.mockReturnValue(metricsDb({}));
+    const res = await summaryGET(fakeReq(customerSession()), params());
+    expect(res.status).toBe(403);
+  });
+});

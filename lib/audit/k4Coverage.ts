@@ -209,7 +209,11 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   'GET /api/tour-rooms/[bookingId]/extras': { actor: 'guest', tier: 'free' },
   'POST /api/tour-rooms/[bookingId]/extras': { actor: 'guide', tier: 'free' },
   'PATCH /api/tour-rooms/[bookingId]/extras': { actor: 'guide', tier: 'free' },
-  'POST /api/tour-rooms/[bookingId]/extend': { actor: 'guide', tier: 'free' },
+  // FA-019: the guest is the主 actor here — `extend/route.ts` allows
+  // customer/guide/admin and refuses the driver. Labelled 'guide', the run only
+  // ever drove it with a guide session, so the paid path a GUEST walks (adding
+  // their own time) had never been exercised.
+  'POST /api/tour-rooms/[bookingId]/extend': { actor: 'guest', tier: 'free' },
 
   // ── signals + location ─────────────────────────────────────────────────────
   'POST /api/tour-rooms/[bookingId]/signals': { actor: 'guest', tier: 'free' },
@@ -240,8 +244,14 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   'POST /api/tour-rooms/broadcast': { actor: 'guide', tier: 'llm' },
   'GET /api/tour-mode/guide/overview': { actor: 'guide', tier: 'free' },
   'GET /api/tour-mode/driver/overview': { actor: 'driver', tier: 'free' },
-  'POST /api/tour-mode/driver/link': { actor: 'admin', tier: 'free' },
-  'GET /api/tour-mode/bookings': { actor: 'admin', tier: 'free' },
+  // FA-019: `driver/link` accepts an admin login OR a guide tour-date token,
+  // and the harness has always driven it with the guide token — the label and
+  // the run disagreed inside the same repo.
+  'POST /api/tour-mode/driver/link': { actor: 'guide', tier: 'free' },
+  // FA-019: not admin at all — the route filters `user_id = user.id`, so it is
+  // "my bookings" for any logged-in customer. 'public' is the honest label for
+  // the harness's viewpoint: it holds no login, so it measures the 401.
+  'GET /api/tour-mode/bookings': { actor: 'public', tier: 'free' },
   'GET /api/tour-mode/booking/[id]/content': { actor: 'guest', tier: 'free' },
   'GET /api/tour-mode/room/[bookingId]/snapshot': { actor: 'guest', tier: 'free' },
 
