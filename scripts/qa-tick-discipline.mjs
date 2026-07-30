@@ -32,12 +32,26 @@ const INSTRUMENT = () => {
   const realSI = window.setInterval.bind(window);
   const realST = window.setTimeout.bind(window);
   const realRAF = window.requestAnimationFrame.bind(window);
+  stats.byOwner = {};
   window.setInterval = (fn, ms, ...rest) => {
     const key = String(ms);
     stats.intervals.push(ms);
     stats.calls[key] = stats.calls[key] ?? 0;
+    // Cadence alone cannot be fixed — the ledger needs the registrant. The
+    // stack's first app frame names the chunk that opened the timer.
+    const owner =
+      (new Error().stack || '')
+        .split('\n')
+        .slice(2)
+        .map((l) => (l.match(/\/([^/)]+\.js)/) || [])[1])
+        .find(Boolean) || 'unknown';
+    const ownerKey = `${ms}ms ${owner}`;
+    stats.byOwner[ownerKey] = stats.byOwner[ownerKey] ?? { fg: 0, bg: 0, total: 0 };
     const wrapped = (...a) => {
       stats.calls[key] += 1;
+      stats.byOwner[ownerKey].total += 1;
+      if (document.visibilityState === 'hidden') stats.byOwner[ownerKey].bg += 1;
+      else stats.byOwner[ownerKey].fg += 1;
       return typeof fn === 'function' ? fn(...a) : undefined;
     };
     return realSI(wrapped, ms, ...rest);
@@ -70,6 +84,39 @@ await page.waitForSelector('[data-testid="room-tabbar"]', { timeout: 45000 });
 await page.waitForTimeout(3000);
 
 const snapshot = () => page.evaluate(() => JSON.parse(JSON.stringify(window.__tickStats)));
+
+// REVERSE=1 runs the hidden window FIRST. The two orders must agree; if the
+// second window always shows more firings regardless of visibility, the signal
+// is warm-up/ordering, not timer discipline — worth knowing before calling a
+// defect (this is what the first run of this script could not tell apart).
+if (process.env.REVERSE === '1') {
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { value: 'hidden', configurable: true });
+    Object.defineProperty(document, 'hidden', { value: true, configurable: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const h0 = await snapshot();
+  await page.waitForTimeout(WINDOW_S * 1000);
+  const h1 = await snapshot();
+  await page.evaluate(() => {
+    Object.defineProperty(document, 'visibilityState', { value: 'visible', configurable: true });
+    Object.defineProperty(document, 'hidden', { value: false, configurable: true });
+    document.dispatchEvent(new Event('visibilitychange'));
+  });
+  const f0 = await snapshot();
+  await page.waitForTimeout(WINDOW_S * 1000);
+  const f1 = await snapshot();
+  const d = (a, b) => {
+    const o = {};
+    for (const k of new Set([...Object.keys(a.calls), ...Object.keys(b.calls)])) o[k] = (b.calls[k] ?? 0) - (a.calls[k] ?? 0);
+    return o;
+  };
+  console.log('REVERSE order (hidden window first)');
+  console.log('  hidden-first :', JSON.stringify(d(h0, h1)));
+  console.log('  then visible :', JSON.stringify(d(f0, f1)));
+  await browser.close();
+  process.exit(0);
+}
 
 const before = await snapshot();
 await page.waitForTimeout(WINDOW_S * 1000);
@@ -119,19 +166,27 @@ console.log(
     '  not app code — measure against `next start` for a verdict on app timers.',
 );
 console.log('');
-console.log('cadence(ms)   foreground   hidden   expected-fg   verdict');
-let bad = 0;
+// 🔴 A single fg→hidden comparison CANNOT decide this. Measured 2026-07-30: the
+// SECOND window of a run shows ~2× the firings of the first no matter which
+// visibility state it is in (REVERSE=1 reproduces it: hidden-first 5 then
+// visible 10; fg-first 5 then hidden 10). The first version of this script
+// called that a defect. So the verdict now needs BOTH orders to agree, which
+// means the honest single-run output is a measurement, not a judgement.
+console.log('cadence(ms)   window-1(visible)   window-2(hidden)   expected-per-window');
 for (const k of Object.keys({ ...fg, ...bg }).sort((a, b) => Number(a) - Number(b))) {
   const expected = Math.floor((WINDOW_S * 1000) / Number(k));
-  const h = bg[k] ?? 0;
-  // Chromium's background floor is ~1/min; anything beyond 2× that in a hidden
-  // window means the timer is not being suspended.
-  const floor = Math.max(2, Math.ceil(WINDOW_S / 60) * 2);
-  const verdict = h > floor ? `🔴 hidden ${h} > floor ${floor}` : 'ok';
-  if (h > floor) bad += 1;
   console.log(
-    `${String(k).padStart(11)}   ${String(fg[k] ?? 0).padStart(10)}   ${String(h).padStart(6)}   ${String(expected).padStart(11)}   ${verdict}`,
+    `${String(k).padStart(11)}   ${String(fg[k] ?? 0).padStart(17)}   ${String(bg[k] ?? 0).padStart(16)}   ${String(expected).padStart(19)}`,
   );
+}
+const bad = 0;
+console.log(
+  '\n⚠ 판정 아님 — 창 순서 편향이 시각 상태보다 크다. 결론을 내려면 `REVERSE=1` 로 한 번 더 돌려\n' +
+    '  두 순서가 같은 방향을 가리키는지 확인하라. 백그라운드 스로틀 자체는 실탭이어야 한다(시뮬 불가).',
+);
+console.log('\nper registrant (fg / hidden firings):');
+for (const [k, v] of Object.entries(hiddenEnd.byOwner ?? {}).sort((a, b) => b[1].bg - a[1].bg)) {
+  console.log(`   ${v.bg > 0 ? '🔴' : '✅'} ${k.padEnd(34)} fg ${String(v.fg).padStart(3)}   hidden ${String(v.bg).padStart(3)}`);
 }
 console.log('');
 console.log(`rAF registered: ${afterForeground.rafs} → ${hiddenEnd.rafs} (hidden growth ${hiddenEnd.rafs - hiddenStart.rafs})`);
