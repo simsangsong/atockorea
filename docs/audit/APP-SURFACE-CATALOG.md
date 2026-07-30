@@ -68,6 +68,24 @@ travel-matrix · vehicle-layouts · guides · guide-settlements · facility-pins
 - 환경 아티팩트 4: e2e 2(`tour-room-chat`·`tour-ops-sos`) + 픽스처 2(`cruise-smallgroup-corpus`·`active-rules`) —
   jest ignore 패턴이 이 워크트리 경로에서 죽음 — **원장 FA-002** (게이트 취약성)
 
+## 5b. A0~A7 1차 완주 후 상태 (2026-07-30, 세션 1)
+
+| 페이즈 | 상태 | 산출 |
+|---|---|---|
+| A0 카탈로그·베이스라인 | ✓ | 이 문서 · 게이트 기준선 · 시드 2벌(live + **미래 날짜 로비**, `sim-lobby-booking.ts` 신설) |
+| A1 회고 대조 | ✓ | 원장 FA-003~010 · 누적 수치 7건 재현(거짓 0) |
+| A2 UI 실렌더 | ✓ 히어로 3표면 · ~ 나머지 | `qa-hero-grid.mjs` 신설 216콤보 · 기존 워크 5종 |
+| A3 기능 E2E | ✓ 라우트 축 | K4 56쌍 → PASS 53 · FAIL 0 · UNWRITTEN 2 |
+| A4 연결·도달성 | ✓ | `qa-caller-absence.mjs` 신설 · dead-exports 20 |
+| A5 성능 | ✓ 번들·API · ✗ 3G LCP | `BUNDLE-BASELINE.md` 신설 · `qa-tick-discipline.mjs` 신설 |
+| A6 데이터·보안 | ✓ | 토큰 스코프 56쌍 대조 · advisors · **FA-016 P0** |
+| A7 원장 | ✓ | `FULL-AUDIT-LEDGER-2026-08.md` 26건 + 게이트 뮤테이션 3/3 |
+| A8 수정 | 대기 | 사장님 승인 |
+
+**다음 세션이 이어받을 잔여 감사:** ① A2 축소 그리드(가이드 콘솔·플랜 에디터·시트류·체크인·동반자 —
+현재 `~`) ② 나머지 15개 게이트 뮤테이션 ③ 3G 스로틀 LCP ④ 링(플래너·관제·마케팅 접점) 표본
+⑤ 실기기 사람 게이트(FA-014의 현장 원인 확증).
+
 ## 6. 이 워크트리 환경 (다음 세션 부트스트랩용)
 
 - `.claude/worktrees/*`엔 node_modules 없음 + **메인 레포 node_modules는 비어 있음(손상 전례)** →
