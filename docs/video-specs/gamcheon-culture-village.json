@@ -12,9 +12,7 @@
     "fps": 30
   },
   "encode": {
-    "crf": 17,
-    "maxrate": "20M",
-    "bufsize": "40M"
+    "crf": 17
   },
   "sourceDir": "D:/VIDEO2/태종대,용궁구름다리, 국제시장/감천문화마을",
   "sources": {
@@ -201,7 +199,12 @@
         "kind": "dissolve",
         "seconds": 0.8
       },
-      "chapter": "The main street"
+      "chapter": "The main street",
+      "stopLabel": {
+        "title": "The Main Street",
+        "sub": "Gamcheon's spine — shops the whole way up"
+      },
+      "caption": "Follow it uphill; everything branches off here."
     },
     {
       "id": "09",
