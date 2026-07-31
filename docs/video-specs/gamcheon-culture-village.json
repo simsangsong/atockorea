@@ -191,7 +191,7 @@
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 7.5,
+      "out": 7.4,
       "speed": 1.2,
       "stab": true,
       "title": "Into the main street",
@@ -210,10 +210,37 @@
       "id": "09",
       "kind": "clip",
       "src": "B",
-      "in": 7.5,
-      "out": 57.7,
+      "in": 7.4,
+      "out": 34.5,
       "speed": 6,
       "title": "Shops and stalls uphill",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 7.5,
+        "pan": 0.565
+      }
+    },
+    {
+      "id": "09b",
+      "kind": "clip",
+      "src": "B",
+      "in": 34.5,
+      "out": 37,
+      "speed": 1,
+      "stab": true,
+      "title": "The photo benches",
+      "nosnap": "no pan within ±1.5s (max 0.40)"
+    },
+    {
+      "id": "09c",
+      "kind": "clip",
+      "src": "B",
+      "in": 37,
+      "out": 57.7,
+      "speed": 6,
+      "title": "Shops and stalls uphill (cont.)",
       "ramp": {
         "seconds": 0.6
       },
@@ -322,9 +349,33 @@
       "kind": "clip",
       "src": "B",
       "in": 132.5,
-      "out": 172,
+      "out": 153.5,
       "speed": 6,
       "title": "Snack stalls in full swing",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.54)"
+    },
+    {
+      "id": "17b",
+      "kind": "clip",
+      "src": "B",
+      "in": 153.5,
+      "out": 156,
+      "speed": 1,
+      "stab": true,
+      "title": "The shopping stretch",
+      "nosnap": "no pan within ±1.5s (max 0.51)"
+    },
+    {
+      "id": "17c",
+      "kind": "clip",
+      "src": "B",
+      "in": 156,
+      "out": 172,
+      "speed": 6,
+      "title": "Snack stalls in full swing (cont.)",
       "ramp": {
         "seconds": 0.6
       },
@@ -390,12 +441,36 @@
       "kind": "clip",
       "src": "B",
       "in": 178,
-      "out": 230,
+      "out": 192.2,
       "speed": 8,
       "title": "Along the ridge",
       "ramp": {
         "seconds": 0.6
       }
+    },
+    {
+      "id": "20b",
+      "kind": "clip",
+      "src": "B",
+      "in": 192.2,
+      "out": 194.7,
+      "speed": 1,
+      "stab": true,
+      "title": "The sea opens up",
+      "nosnap": "no pan within ±1.5s (max 0.50)"
+    },
+    {
+      "id": "20c",
+      "kind": "clip",
+      "src": "B",
+      "in": 194.7,
+      "out": 230,
+      "speed": 8,
+      "title": "Along the ridge (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.38)"
     },
     {
       "id": "21",
@@ -413,9 +488,33 @@
       "kind": "clip",
       "src": "B",
       "in": 233.5,
-      "out": 274,
+      "out": 251.5,
       "speed": 6,
       "title": "Cafes on the sea side",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.52)"
+    },
+    {
+      "id": "22b",
+      "kind": "clip",
+      "src": "B",
+      "in": 251.5,
+      "out": 254,
+      "speed": 1,
+      "stab": true,
+      "title": "The green cafe corner",
+      "nosnap": "no pan within ±1.5s (max 0.46)"
+    },
+    {
+      "id": "22c",
+      "kind": "clip",
+      "src": "B",
+      "in": 254,
+      "out": 274,
+      "speed": 6,
+      "title": "Cafes on the sea side (cont.)",
       "ramp": {
         "seconds": 0.6
       },
