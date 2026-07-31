@@ -48,14 +48,23 @@ fs.mkdirSync(OUTDIR, { recursive: true });
 const GRADE = gradeChain(spec);
 
 const VSCALE = `scale=${OUT_W}:${OUT_H}:flags=lanczos,setsar=1,format=yuv420p`;
+// 🔴 CRF governs; there is NO rate cap by default. A cap looks harmless and is
+// not: sped-up walking has no temporal redundancy left (consecutive output
+// frames are 6-8 source frames apart), so crf 17 asks for 46-50 Mbps on this
+// footage. Capping at 20M handed those beats HALF the bits they needed and they
+// came back smeared and speckled while the 1x beats beside them stayed sharp —
+// which reads exactly like "fast-forward destroys the quality". Measured, four
+// ways: capped-with-grain and capped-without-grain were both 22 Mbps and both
+// mush; uncapped was 46-50 Mbps and clean. Grain costs only 8% — it was never
+// the culprit. Masters are CDN sources (Cloudinary re-encodes), so let them be
+// big; the review copy beside them is what gets shown. Set `encode.maxrate`
+// only for a delivery target that genuinely requires one.
 const VENC = DRAFT
   ? ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26']
-  // crf 18 on this footage lands around 21 Mbps (dense foliage eats bitrate) — 800 MB for
-  // five minutes, which is unusable for hand delivery. crf 20 + a cap is visually the same
-  // on a phone; a CDN-bound master (Cloudinary re-encodes) wants the ceiling raised, so
-  // the spec may override: `encode: { crf, maxrate, bufsize }`.
-  : ['-c:v', 'libx264', '-preset', 'slow', '-crf', String(spec.encode?.crf ?? 20),
-     '-maxrate', spec.encode?.maxrate ?? '9M', '-bufsize', spec.encode?.bufsize ?? '18M'];
+  : ['-c:v', 'libx264', '-preset', 'slow', '-crf', String(spec.encode?.crf ?? 18),
+     ...(spec.encode?.maxrate
+       ? ['-maxrate', spec.encode.maxrate, '-bufsize', spec.encode.bufsize ?? spec.encode.maxrate]
+       : [])];
 const AENC = ['-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '192k'];
 
 function run(args, label) {
