@@ -1,0 +1,582 @@
+{
+  "slug": "gamcheon-culture-village",
+  "poiKey": "gamcheon_culture_village",
+  "title": {
+    "ko": "감천문화마을",
+    "en": "Gamcheon Culture Village"
+  },
+  "theme": "pearl",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "sourceDir": "D:/VIDEO2/태종대,용궁구름다리, 국제시장/감천문화마을",
+  "sources": {
+    "A": "01_20260729_152614.mp4",
+    "B": "02_20260729_152749.mp4",
+    "C": "03_20260729_153602.mp4",
+    "D": "04_20260729_153819.mp4"
+  },
+  "audio": {
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29). 감천 전용 베드 수급 전까지 공유."
+  },
+  "grade": [
+    "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
+    "crop=iw*0.93:ih*0.93",
+    "vibrance=intensity=0.37",
+    "eq=saturation=1.08",
+    "curves=r='0/0 0.055/0.029 0.3/0.29 0.55/0.584 0.8/0.844 1/1':g='0/0 0.055/0.027 0.3/0.286 0.55/0.574 0.8/0.834 1/1':b='0/0.011 0.055/0.046 0.3/0.291 0.55/0.55 0.8/0.799 1/0.979'",
+    "unsharp=13:13:0.42:5:5:0.0",
+    "unsharp=5:5:0.52:5:5:0.0",
+    "noise=alls=5:allf=t+u",
+    "vignette=a=PI/12"
+  ],
+  "_notes": [
+    "2026-07-31 신규 — 감천문화마을, 파이프라인 2호.",
+    "그레이드는 스펙 오버라이드: 역광 헤이즈 대응(측정 YLOW 32-60) — vibrance+블랙당김+클래리티. 국소대비/채도 강화가 목적, 전역 리프트 아님.",
+    "C 87.5 이후·D 5.8 이전 = 엘리베이터 내부(거울·경고스티커에 촬영자 반사) — 의도적으로 잘랐다. C(문 앞)→D(문 열림) 0.8s 디졸브가 그 연결.",
+    "B 원본 = 342s 메인도로 원테이크. BTS 벽화 정면 178s, 어린왕자 조형물 278.6s(프레임 좌측 볼라드 위)."
+  ],
+  "beats": [
+    {
+      "id": "c1",
+      "kind": "clip",
+      "src": "D",
+      "in": 26,
+      "out": 29.2,
+      "speed": 1,
+      "role": "title",
+      "title": "Busan's painted hillside village",
+      "sub": "One walk, one village in colour",
+      "chapter": "The painted village",
+      "mute": true
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "A",
+      "in": 51,
+      "out": 53.8,
+      "speed": 1,
+      "mute": true,
+      "title": "Cold open — the overlook",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "B",
+      "in": 277.6,
+      "out": 280.4,
+      "speed": 1,
+      "mute": true,
+      "title": "Cold open — the Little Prince",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "01",
+      "kind": "clip",
+      "src": "A",
+      "in": 0,
+      "out": 31,
+      "speed": 6,
+      "role": "promise",
+      "title": "Up from the entrance",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "02",
+      "kind": "clip",
+      "src": "A",
+      "in": 31,
+      "out": 34.5,
+      "speed": 1.5,
+      "title": "Left at the entrance sign",
+      "snapped": {
+        "from": 30.5,
+        "pan": 0.703
+      }
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "A",
+      "in": 34.5,
+      "out": 45.1,
+      "speed": 4,
+      "title": "Onto the overlook deck",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "chapter": "The first overlook",
+      "nosnap": "no pan within ±1.5s (max 0.51)"
+    },
+    {
+      "id": "04",
+      "kind": "clip",
+      "src": "A",
+      "in": 45.1,
+      "out": 52.2,
+      "speed": 1.2,
+      "title": "The village, all at once",
+      "snapped": {
+        "from": 46,
+        "pan": 0.716
+      }
+    },
+    {
+      "id": "05",
+      "kind": "polaroid",
+      "src": "A",
+      "at": 52.2,
+      "hold": 3.6,
+      "photoHold": 1.2,
+      "title": "The whole village in one frame",
+      "sub": "The overlook behind the taxi stand",
+      "caption": "The classic Gamcheon panorama.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2
+      }
+    },
+    {
+      "id": "06",
+      "kind": "clip",
+      "src": "A",
+      "in": 52.2,
+      "out": 57.5,
+      "speed": 4,
+      "title": "Off the deck",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "07",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 31.1,
+      "speed": 4,
+      "title": "Into the main street",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "ramp": {
+        "seconds": 0.6
+      },
+      "chapter": "The main street"
+    },
+    {
+      "id": "08",
+      "kind": "clip",
+      "src": "B",
+      "in": 31.1,
+      "out": 83,
+      "speed": 6,
+      "title": "Shops and stalls uphill",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 30,
+        "pan": 0.633
+      }
+    },
+    {
+      "id": "09",
+      "kind": "clip",
+      "src": "B",
+      "in": 83,
+      "out": 118.9,
+      "speed": 8,
+      "title": "The ridge road",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.51)"
+    },
+    {
+      "id": "10",
+      "kind": "clip",
+      "src": "B",
+      "in": 118.9,
+      "out": 172,
+      "speed": 6,
+      "title": "Snack stalls in full swing",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 120,
+        "pan": 0.737
+      }
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "B",
+      "in": 172,
+      "out": 178,
+      "speed": 1.5,
+      "title": "The crowd at the mural",
+      "nosnap": "no pan within ±1.5s (max 0.53)"
+    },
+    {
+      "id": "12",
+      "kind": "closeup",
+      "src": "B",
+      "at": 178,
+      "hold": 4.5,
+      "title": "BTS Mural",
+      "sub": "Jungkook & Jimin — Busan's own",
+      "caption": "Jungkook and Jimin, painted for the fans.",
+      "focus": [
+        300,
+        180,
+        1050,
+        760
+      ],
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      },
+      "chapter": "The BTS mural"
+    },
+    {
+      "id": "13",
+      "kind": "clip",
+      "src": "B",
+      "in": 178,
+      "out": 230,
+      "speed": 8,
+      "title": "Along the ridge",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "B",
+      "in": 230,
+      "out": 274,
+      "speed": 6,
+      "title": "Cafes on the sea side",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.52)"
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "B",
+      "in": 274,
+      "out": 278.6,
+      "speed": 1.5,
+      "title": "The Little Prince queue",
+      "nosnap": "no pan within ±1.5s (max 0.53)"
+    },
+    {
+      "id": "16",
+      "kind": "arrow",
+      "src": "B",
+      "at": 278.6,
+      "hold": 4,
+      "title": "The Little Prince",
+      "sub": "He faces the sea with his fox",
+      "caption": "Gamcheon's most famous seat — join the queue.",
+      "arrowOverride": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 480,
+            "y": 185
+          },
+          "target": {
+            "x": 480,
+            "y": 370
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ],
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 480,
+            "y": 185
+          },
+          "target": {
+            "x": 480,
+            "y": 370
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ],
+      "chapter": "The Little Prince"
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "B",
+      "in": 278.6,
+      "out": 288,
+      "speed": 1.2,
+      "title": "Past the railing"
+    },
+    {
+      "id": "18",
+      "kind": "clip",
+      "src": "B",
+      "in": 288,
+      "out": 335,
+      "speed": 8,
+      "title": "To the end of the road",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.26)"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "B",
+      "in": 335,
+      "out": 339.5,
+      "speed": 1.5,
+      "title": "The last overlook",
+      "nosnap": "no pan within ±1.5s (max 0.31)"
+    },
+    {
+      "id": "20",
+      "kind": "polaroid",
+      "src": "B",
+      "at": 339.5,
+      "hold": 3.8,
+      "photoHold": 1.2,
+      "title": "End of the main street",
+      "sub": "The rooftops stack to the sea",
+      "caption": "One more panorama before the alleys.",
+      "polaroid": {
+        "width": 860,
+        "tilt": 2
+      }
+    },
+    {
+      "id": "21",
+      "kind": "clip",
+      "src": "C",
+      "in": 0,
+      "out": 4,
+      "speed": 1.5,
+      "title": "Back at the mural, downhill",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "chapter": "Into the alleys"
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "C",
+      "in": 4,
+      "out": 25,
+      "speed": 4,
+      "title": "Murals line the lane",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.42)"
+    },
+    {
+      "id": "23",
+      "kind": "clip",
+      "src": "C",
+      "in": 25,
+      "out": 42,
+      "speed": 6,
+      "title": "Deeper into the maze",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.42)"
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "C",
+      "in": 42,
+      "out": 48,
+      "speed": 1.2,
+      "title": "Pastel walls close in",
+      "stopLabel": {
+        "title": "The Alley Maze",
+        "sub": "Pastel lanes between the houses"
+      },
+      "caption": "Every turn is another postcard.",
+      "nosnap": "no pan within ±1.5s (max 0.46)"
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "C",
+      "in": 48,
+      "out": 81.5,
+      "speed": 8,
+      "title": "Down through the car park",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.46)"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "C",
+      "in": 81.5,
+      "out": 87.5,
+      "speed": 1.5,
+      "title": "The elevator doors",
+      "stopLabel": {
+        "title": "The Rooftop Elevator",
+        "sub": "Hidden behind the car park"
+      },
+      "caption": "Take the elevator up — top floor.",
+      "chapter": "Up to the rooftop",
+      "nosnap": "no pan within ±1.5s (max 0.35)"
+    },
+    {
+      "id": "27",
+      "kind": "clip",
+      "src": "D",
+      "in": 5.8,
+      "out": 8.5,
+      "speed": 1,
+      "title": "Doors open on the sky",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "D",
+      "in": 8.5,
+      "out": 18.5,
+      "speed": 4,
+      "title": "Out onto the turf",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.38)"
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "D",
+      "in": 18.5,
+      "out": 26,
+      "speed": 1.5,
+      "title": "To the glass rail",
+      "snapped": {
+        "from": 20,
+        "pan": 0.803
+      }
+    },
+    {
+      "id": "30",
+      "kind": "clip",
+      "src": "D",
+      "in": 26,
+      "out": 30,
+      "speed": 1,
+      "title": "The village from above",
+      "nosnap": "no pan within ±1.5s (max 0.26)"
+    },
+    {
+      "id": "31",
+      "kind": "clip",
+      "src": "D",
+      "in": 30,
+      "out": 38.5,
+      "speed": 4,
+      "title": "Across the rooftop",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.16)"
+    },
+    {
+      "id": "32",
+      "kind": "polaroid",
+      "src": "D",
+      "at": 38.5,
+      "hold": 4,
+      "photoHold": 1.2,
+      "title": "The moon perch",
+      "sub": "Sit in the crescent",
+      "caption": "The rooftop photo spot — village at your back.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2.2
+      }
+    },
+    {
+      "id": "33",
+      "kind": "clip",
+      "src": "D",
+      "in": 38.5,
+      "out": 43,
+      "speed": 1.2,
+      "title": "One last look"
+    },
+    {
+      "id": "34",
+      "kind": "clip",
+      "src": "A",
+      "in": 48,
+      "out": 56,
+      "speed": 1,
+      "title": "Gamcheon Culture Village",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "role": "recap",
+      "sub": "Busan's painted hillside village",
+      "chapter": "Full circle"
+    }
+  ],
+  "poster": {
+    "src": "A",
+    "at": 52
+  },
+  "city": "Busan",
+  "teaserLead": "05"
+}
