@@ -89,6 +89,31 @@ const slowPct = (slow / total) * 100;
 if (slowPct > 40) problems.push(`1배속 구간이 ${slowPct.toFixed(0)}% — 40% 상한 초과 (${slow.toFixed(0)}s/${total.toFixed(0)}s)`);
 else notes.push(`페이싱  1배속 ${slowPct.toFixed(0)}% · 전체 ${Math.round(total)}s`);
 
+// Gate 3b — no unbroken fast run past 5s on screen (V6-D17/D18). The drag is
+// never the speed, it is the LENGTH of one continuous sped-up run: on Gamcheon
+// thirteen runs near 3s read fine and four at 6.7-8.6s were the whole complaint.
+// Break the long one on a turn (turns.mjs); do not just raise the speed, past 8x
+// the picture strobes.
+const FAST_MAX = 5.2;
+for (const b of spec.beats) {
+  if (b.kind !== 'clip' || (b.speed ?? 1) < 2) continue;
+  const out = (b.out - b.in) / b.speed;
+  if (out > FAST_MAX) {
+    problems.push(`${b.id}  고속 구간이 끊기지 않고 ${out.toFixed(1)}s — ${FAST_MAX}s 상한 초과`
+      + ` (turns.mjs 로 회전에서 쪼개라)`);
+  }
+}
+
+// Gate 3c — turns must play at real speed (V6-D18). A swing is the moment the
+// shooter decided to look at something; sped up it is a whip-pan, which is what
+// "휙휙 고개꺾인다" meant. Any beat marked `turn` is 1x with its approach and
+// settle intact — a turn cut tight to the swing reads as a glitch.
+for (const b of spec.beats) {
+  if (!b.turn) continue;
+  if ((b.speed ?? 1) > 1.05) problems.push(`${b.id}  회전 비트인데 ${b.speed}배속 — 회전은 1배속이다`);
+  if ((b.out - b.in) < 2.0) problems.push(`${b.id}  회전 비트가 ${(b.out - b.in).toFixed(1)}s — 전후 여유가 없다(최소 2.0s)`);
+}
+
 // Gate E-4 — cut on motion. Every boundary between two moving beats of the same
 // recording must have been through motioncut.mjs: either snapped to a measured
 // pan, or explicitly marked steady with the measured ceiling. An unmarked
