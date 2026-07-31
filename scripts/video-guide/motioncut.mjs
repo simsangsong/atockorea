@@ -44,6 +44,18 @@ for (let i = 1; i < spec.beats.length; i++) {
   const prev = spec.beats[i - 1], cur = spec.beats[i];
   if (prev.kind !== 'clip' || cur.kind !== 'clip') continue;
   if (prev.src !== cur.src || cur.transition) continue;
+  // 🔴 A turn beat's edges are its content, not a seam. Its `in` is the approach
+  // the eye needs before the swing and its `out` is the settle after — snapping
+  // either to a pan maximum walks the boundary INTO the swing and eats exactly
+  // the part that made the turn worth playing at 1x (measured: one boundary
+  // moved 1.1s and took the settle with it). Turns are placed by turns.mjs from
+  // the same panScore this file reads; they are already on motion by construction.
+  // Recorded, not merely skipped: the gate has to be able to tell "looked at and
+  // deliberately left" from "nobody looked".
+  if (prev.turn || cur.turn) {
+    cur.nosnap = 'turn beat — edge is content, not a seam';
+    held++; continue;
+  }
   if ((cur.snapped || cur.nosnap) && !FORCE) { skipped++; continue; }
 
   const t = cur.in;
