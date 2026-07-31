@@ -19,6 +19,7 @@ import { spawnSync } from 'node:child_process';
 import { renderArrowFrames, renderPolaroid, pathLuma, sharp } from './lib/overlay.mjs';
 import { framing } from './framing.mjs';
 import { gradeChain } from './lib/grade.mjs';
+import { writePatternLoop, keyFor, fingerprint, AMPLITUDE, HALF_PERIOD } from './lib/forensic.mjs';
 
 const argv = process.argv.slice(2);
 const specPath = argv.find((a) => !a.startsWith('--'));
@@ -307,8 +308,33 @@ const joined = applyTransitions(parts);
 const listFile = path.join(CACHE, 'concat.txt');
 fs.writeFileSync(listFile, joined.map((p) => `file '${p.file.replace(/\\/g, '/')}'`).join('\n'));
 
-const silent = path.join(CACHE, 'joined.mp4');
-run(['-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silent], 'concat');
+const silentRaw = path.join(CACHE, 'joined.mp4');
+run(['-f', 'concat', '-safe', '0', '-i', listFile, '-c', 'copy', silentRaw], 'concat');
+
+/**
+ * The invisible ownership mark, applied ONCE to the joined master so every
+ * derived cut (vertical, dressed wide, teaser, poster) inherits it without
+ * being marked twice. See lib/forensic.mjs for why the pattern is coarse.
+ * `--nomark` exists for A/B checking that it really is invisible.
+ */
+let silent = silentRaw;
+if (!DRAFT && !has('nomark')) {
+  const key = keyFor(spec);
+  const loop = await writePatternLoop(key, CACHE, OUT_W, OUT_H, FPS);
+  const marked = path.join(CACHE, 'joined_marked.mp4');
+  // ⚠ `shortest=1:repeatlast=0` on the blend is what stops the looped pattern —
+  // `-shortest` alone does NOT bound a `-stream_loop -1` input and the encode
+  // runs until it is killed (measured: 1.3 GB of garbage from a 20s clip).
+  // 🔴 Carry the audio through. Mapping only [v] here drops the concatenated
+  // diegetic track, and the failure surfaces two stages later as "mix bed" —
+  // the bed mix asks for [0:a] on a file that no longer has one.
+  run(['-i', silentRaw, '-stream_loop', '-1', '-i', loop,
+    '-filter_complex', `[1:v]format=gray,scale=${OUT_W}:${OUT_H}[m];`
+      + '[0:v][m]blend=all_mode=grainmerge:all_opacity=1:shortest=1:repeatlast=0,format=yuv420p[v]',
+    '-map', '[v]', '-map', '0:a?', '-c:a', 'copy', ...VENC, marked], 'ownership mark');
+  silent = marked;
+  console.log(`  mark  ${fingerprint(key)}  (invisible ±${AMPLITUDE}/255, ${HALF_PERIOD}-frame phase)`);
+}
 
 /**
  * Emit the timeline as MEASURED, not as planned.
@@ -352,6 +378,44 @@ if (bed) {
 } else {
   run(['-i', silent, '-af', 'highpass=f=110,loudnorm=I=-16:TP=-1.5:LRA=11',
     '-c:v', 'copy', ...AENC, '-movflags', '+faststart', finalOut], 'master audio');
+}
+
+/**
+ * Post-render probe — vignette strength, measured on the encode (V6-D16).
+ *
+ * 🔴 The RULE is the corner/centre luma ratio ≈ 0.60. The CONSTANT that produces
+ * it is a property of the footage, not of the method: `PI/12` measured 0.606 on
+ * Yonggungsa and 0.568 on Gamcheon, and the owner called the darker one out
+ * ("귀퉁이에 시커먼 오버레이... 넘 심하게 하지 말고"). So the number cannot be
+ * inherited between attractions — it has to be re-measured, and that is exactly
+ * what a probe is for. Below 0.52 the corners read as a filter rather than a lens.
+ */
+function cornerRatio(file, at) {
+  const stat = (crop) => {
+    const r = spawnSync('ffmpeg', ['-v', 'info', '-ss', String(at), '-i', file, '-frames:v', '1',
+      '-vf', `${crop},signalstats,metadata=print:key=lavfi.signalstats.YAVG`, '-f', 'null', '-'],
+      { encoding: 'utf8', maxBuffer: 1 << 24 });
+    const m = /YAVG=([0-9.]+)/.exec(`${r.stdout}${r.stderr}`);
+    return m ? Number(m[1]) : null;
+  };
+  const w = OUT_W, h = OUT_H, s = Math.round(Math.min(w, h) * 0.28);
+  const corners = [[0, 0], [w - s, 0], [0, h - s], [w - s, h - s]]
+    .map(([x, y]) => stat(`crop=${s}:${s}:${x}:${y}`)).filter((v) => v != null);
+  const centre = stat(`crop=${s}:${s}:${Math.round((w - s) / 2)}:${Math.round((h - s) / 2)}`);
+  if (!corners.length || !centre) return null;
+  return (corners.reduce((a, b) => a + b, 0) / corners.length) / centre;
+}
+
+if (!DRAFT && !ONLY) {
+  const ratios = [total * 0.25, total * 0.55, total * 0.8]
+    .map((t) => cornerRatio(finalOut, t)).filter((v) => v != null);
+  if (ratios.length) {
+    const r = ratios.reduce((a, b) => a + b, 0) / ratios.length;
+    const line = `   비네트 corner/centre ${r.toFixed(3)} (목표 ≈0.60)`;
+    if (r < 0.52) {
+      console.error(`${line}  ← 너무 어둡다. spec.grade 의 vignette 각을 키워라 (PI/12 → PI/16 …)`);
+    } else console.log(line);
+  }
 }
 
 console.log(`\n=> ${finalOut}`);
