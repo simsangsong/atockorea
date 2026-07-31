@@ -51,8 +51,11 @@ const VSCALE = `scale=${OUT_W}:${OUT_H}:flags=lanczos,setsar=1,format=yuv420p`;
 const VENC = DRAFT
   ? ['-c:v', 'libx264', '-preset', 'veryfast', '-crf', '26']
   // crf 18 on this footage lands around 21 Mbps (dense foliage eats bitrate) — 800 MB for
-  // five minutes, which is unusable for delivery. crf 20 + a cap is visually the same.
-  : ['-c:v', 'libx264', '-preset', 'slow', '-crf', '20', '-maxrate', '9M', '-bufsize', '18M'];
+  // five minutes, which is unusable for hand delivery. crf 20 + a cap is visually the same
+  // on a phone; a CDN-bound master (Cloudinary re-encodes) wants the ceiling raised, so
+  // the spec may override: `encode: { crf, maxrate, bufsize }`.
+  : ['-c:v', 'libx264', '-preset', 'slow', '-crf', String(spec.encode?.crf ?? 20),
+     '-maxrate', spec.encode?.maxrate ?? '9M', '-bufsize', spec.encode?.bufsize ?? '18M'];
 const AENC = ['-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '192k'];
 
 function run(args, label) {
@@ -99,8 +102,31 @@ function speedFilter(beat) {
 function renderClip(beat, out) {
   const dur = +(beat.out - beat.in).toFixed(3);
   const { vf: speedVf, outDur } = speedFilter(beat);
-  const vf = `${GRADE},${speedVf},fps=${FPS},${VSCALE}`;
-  const args = ['-ss', String(beat.in), '-t', String(dur), '-i', srcFile(beat.src)];
+  // Hand-held shake only reads at walking speed — `stab: true` on 1x/1.2x beats
+  // runs vidstab's two-pass ahead of the grade. The transforms file is referenced
+  // RELATIVE to cwd because a drive-letter colon splits the filter parser (§10).
+  // 🔴 `-ss 0` is not a no-op on these Samsung originals: their edit list makes
+  // the seek path miss the leading keyframe and the first GOP decodes as smear.
+  // Reading from byte 0 (no -ss) is clean — so a beat that starts at 0 must not seek.
+  const seek = beat.in > 0 ? ['-ss', String(beat.in)] : [];
+  let stab = '';
+  if (beat.stab) {
+    const trfRel = path.relative(ROOT, path.join(CACHE, `stab_${beat.id}.trf`)).split(path.sep).join('/');
+    run([...seek, '-t', String(dur), '-i', srcFile(beat.src),
+      '-vf', `vidstabdetect=shakiness=6:accuracy=15:result=${trfRel}`, '-f', 'null', '-'],
+      `stabdetect ${beat.id}`);
+    // Walking footage, so the corrections must stay SMALL: low smoothing + a
+    // hard shift/angle cap + black borders (hidden by zoom=2 plus the grade's
+    // own 7% crop). 🔴 The leading `copy` is load-bearing: vidstabtransform
+    // writes IN PLACE, and when the decoder's reference frames arrive without a
+    // private buffer it scribbles on them — every later frame then decodes off
+    // corrupted refs and the picture turns to macroblock soup. Isolating the
+    // buffer with `copy` fixes it deterministically (measured, 2 runs each way).
+    stab = `copy,vidstabtransform=input=${trfRel}:smoothing=10:zoom=2:optzoom=1`
+      + `:crop=black:maxshift=48:maxangle=0.06:interpol=bicubic,`;
+  }
+  const vf = `${stab}${GRADE},${speedVf},fps=${FPS},${VSCALE}`;
+  const args = [...seek, '-t', String(dur), '-i', srcFile(beat.src)];
   const maps = [];
   // atempo cannot follow a ramp, and pitched-up crowd noise is unusable anyway —
   // anything faster than 1.5x rides on the music bed alone.
