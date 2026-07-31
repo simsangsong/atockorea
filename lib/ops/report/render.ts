@@ -199,11 +199,41 @@ function renderContact(res: SectionResult<ContactStatus>): string {
 }
 
 // ── ⑤ 요주의 종합 ──────────────────────────────────────────────────────────
-function renderAttention(res: SectionResult<AttentionSummary>): string {
-  const a = res.data
-  if (res.ok && a.clean) {
-    return `<div style="padding:16px;background:${C.greenBg};border:1px solid #bbf7d0;border-radius:12px;text-align:center;color:${C.green};font-size:15px;font-weight:800;">✓ 이상 없음 — 오늘 처리할 요주의 항목이 없습니다</div>`
-  }
+/**
+ * FA-014 — 오늘 도착이 몇 건 기록됐나, 두 소스를 나눠서.
+ *
+ * 커버리지 122/124는 "말할 수 있다"이고 이 숫자는 "말했다"다. 두 소스를 갈라
+ * 적는 이유: 수동 [도착]과 지오펜스는 다른 테이블에 떨어지고, 어느 쪽이 안 되는지
+ * 모르면 고칠 수가 없다(매트릭스가 한 쪽만 읽어 몇 달을 비어 있었다).
+ *
+ * 투어가 없던 날은 `null` — 0이 정상인 날에 뜨는 경고는 다음 날부터 안 읽힌다.
+ */
+function arrivalsLine(a: AttentionSummary): string {
+  if (!a.arrivals) return ''
+  const { recorded, toursToday, sources } = a.arrivals
+  return `<div style="margin-top:6px;font-size:11px;color:${recorded === 0 ? C.red : C.sub};">도착 기록 ${recorded}건 (수동 ${sources.manual} · 지오펜스 ${sources.geofence}) · 오늘 투어 ${toursToday}건</div>`
+}
+
+/**
+ * 🔴 요주의 항목 — **한 곳에서만 센다.**
+ *
+ * 사장님이 2026-07-30 18:00 보고서를 캡처해 보내주셨다. 상단 배지와 제목은
+ * "이상 없음"인데, 같은 메일 ⑤번 목록에는 **오토파일럿 미처리 제안 23건이
+ * 빨갛게, 체크 안 된 채로** 들어 있었다. 헤드라인이 거짓말을 하고 있었던 것이다.
+ *
+ * 원인은 두 곳에서 센 것이다: `attentionTotal`(배지·제목)은 7개 필드를 손으로
+ * 더하면서 `autopilotOpen` 을 빠뜨렸고, ⑤번의 "이상 없음" 판단(`clean`)은 그걸
+ * 포함했다. 이 파일의 다른 주석이 이미 경고하고 있던 바로 그 형태다 —
+ * **"같은 숫자를 두 곳에서 계산하면 반드시 어긋난다"(§H-4).**
+ *
+ * (같은 함정에 하나 더 빠져 있었다: FA-014 로 넣은 `arrivals` 도 `clean` 에만
+ * 있고 `attentionTotal` 에는 없었다. 투어가 돌고 도착이 0인 날, 목록은 그걸
+ * 띄우는데 배지는 "이상 없음"이라 말했을 것이다.)
+ *
+ * 그래서 목록·합계·배지·제목·"이상 없음" 배너가 **전부 이 함수 하나**를 읽는다.
+ * 새 항목을 여기 추가하면 다섯 곳이 동시에 안다.
+ */
+export function attentionItems(a: AttentionSummary): Array<{ label: string; n: number }> {
   const items: Array<{ label: string; n: number }> = [
     { label: '가이드/기사 미배정 투어 (내일)', n: a.unassignedRooms },
     { label: '손님 연락 누락', n: a.uncontacted },
@@ -215,6 +245,42 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     { label: '오토파일럿 미처리 제안', n: a.autopilotOpen ?? 0 },
     { label: 'LLM 예산 초과 투어', n: (a.llm?.overBudgetTours ?? []).length },
   ]
+  /**
+   * 🔴 FA-014 — 투어가 돌았는데 도착 기록이 0이면 그것만 요주의다.
+   *
+   * 도착이 1건이라도 있으면 이 줄은 목록에 끼지 않는다(조용한 계측 한 줄로만
+   * 남는다). 매일 뜨는 항목은 곧 안 보이는 항목이 된다.
+   */
+  if (a.arrivals && a.arrivals.recorded === 0) {
+    items.push({ label: `도착 기록 0건 (오늘 투어 ${a.arrivals.toursToday}건)`, n: a.arrivals.toursToday })
+  }
+  return items
+}
+
+/** 합계 = 목록의 합. 배지·제목·배너가 같은 값을 본다. */
+export function attentionCount(a: AttentionSummary): number {
+  return attentionItems(a).reduce((sum, it) => sum + it.n, 0)
+}
+
+/** 깨끗한 날에도 큐가 쌓여 있으면 그 사실은 보인다(arrivalsLine 과 같은 이유). */
+function staleNote(a: AttentionSummary): string {
+  if (!a.autopilotStale) return ''
+  return `<div style="margin-top:4px;font-size:11px;color:${C.sub};">지난 날짜 오토파일럿 제안 ${a.autopilotStale}건 — 조치 불가, /admin/tour-ops 큐 정리 대상</div>`
+}
+
+function renderAttention(res: SectionResult<AttentionSummary>): string {
+  const a = res.data
+  if (res.ok && attentionCount(a) === 0) {
+    /**
+     * FA-014 — 조용한 계측은 좋은 날에도 보인다.
+     *
+     * 처음엔 이 줄을 요주의 목록 옆에만 뒀는데, 그러면 "이상 없음"인 날에는
+     * 숫자가 통째로 사라진다. 매일 보이지 않는 계측은 0으로 떨어진 날에도
+     * 눈에 걸리지 않는다 — FA-014가 전 기간 보이지 않은 이유가 정확히 그것이다.
+     */
+    return `<div style="padding:16px;background:${C.greenBg};border:1px solid #bbf7d0;border-radius:12px;text-align:center;color:${C.green};font-size:15px;font-weight:800;">✓ 이상 없음 — 오늘 처리할 요주의 항목이 없습니다</div>${arrivalsLine(a)}${staleNote(a)}`
+  }
+  const items = attentionItems(a)
   const rows = items
     .map((it) => {
       const flagged = it.n > 0
@@ -233,15 +299,23 @@ function renderAttention(res: SectionResult<AttentionSummary>): string {
     ? `<div style="margin-top:8px;font-size:11px;color:${C.sub};">AI 호출 ${a.llm.calls}회 · 캐시로 아낀 것 ${a.llm.cacheHits}회</div>`
     : ''
 
+  const arrivalLine = arrivalsLine(a)
+
+  /**
+   * 지난 날짜 제안은 요주의 숫자에서 빠지지만 사라지지는 않는다. 조치할 수는
+   * 없어도 "큐를 아무도 안 열고 있다"는 사실은 매일 한 줄로 보일 값이 있다.
+   */
+  const staleLine = staleNote(a)
+
   const overLines = [...(a.overCapacity ?? []), ...(a.llm?.overBudgetTours ?? [])]
-  if (overLines.length === 0) return `${rows}${llmLine}`
+  if (overLines.length === 0) return `${rows}${llmLine}${arrivalLine}${staleLine}`
   const detail = overLines
     .map(
       (line) =>
         `<div style="font-size:12px;color:${C.amber};padding:4px 0;">· ${esc(line)}</div>`,
     )
     .join('')
-  return `${rows}${llmLine}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
+  return `${rows}${llmLine}${arrivalLine}${staleLine}<div style="margin-top:10px;padding:10px 12px;background:${C.amberBg};border-radius:10px;">${detail}</div>`
 }
 
 function fmtKstDate(ymd: string): string {
@@ -255,9 +329,9 @@ function fmtKstDate(ymd: string): string {
 export function renderDailyReport(report: DailyReport): { subject: string; html: string } {
   const a = report.attention.data
   const missing = report.contactStatus.data.missingCount
-  const attentionTotal = report.attention.ok
-    ? a.unassignedRooms + a.uncontacted + a.reviewQueued + a.parseFailures + a.unseated + (a.overCapacity ?? []).length + (a.llm?.overBudgetTours ?? []).length
-    : null
+  // 배지·제목·⑤번 배너가 같은 함수를 읽는다 — 손으로 더하던 합계가
+  // `autopilotOpen` 을 빠뜨려 헤드라인이 거짓말을 했다(위 attentionItems 주석).
+  const attentionTotal = report.attention.ok ? attentionCount(a) : null
 
   const summaryBadge =
     attentionTotal === 0

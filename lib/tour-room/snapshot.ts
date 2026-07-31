@@ -241,6 +241,40 @@ export async function buildRoomSnapshot(
 ): Promise<RoomSnapshot> {
   const tourId = booking.tour_id;
 
+  /**
+   * 🔴 FA-027 (full-app audit 2026-07-30). A join tour is one room PER BOOKING,
+   * and ops attaches the vehicle to whichever room they happened to open — so
+   * reading `ops_room_vehicles` by this room alone told every guest but the
+   * anchor's that the tour has no vehicle. Live proof: tour f08b1603 on
+   * 2026-07-27 ran 2 rooms and 1 of them carried the dispatch, so the other
+   * room's guests had a blank vehicle line on the home tab.
+   *
+   * `lib/ops/seating/service.ts` already solved this (`groupRoomIds` +
+   * `loadRoomVehicles`) and the seat board, manifest, check-in and gate all
+   * share it. This file cannot import it: client components import types from
+   * here, and pulling a server module in would break the client boundary the
+   * `clientBoundary` gate protects. So the sibling lookup is inlined — the same
+   * key (tour_id + tour_date), deliberately not a second definition of the
+   * layout/override logic, which stays in the shared loader.
+   */
+  const vehicleRoomIds = await (async (): Promise<string[]> => {
+    if (!tourId || !booking.tour_date) return [room.id];
+    try {
+      const { data, error } = await supabase
+        .from('tour_rooms')
+        .select('id')
+        .eq('tour_id', tourId)
+        .eq('tour_date', booking.tour_date);
+      if (error || !Array.isArray(data)) return [room.id];
+      const ids = (data as Array<{ id?: unknown }>)
+        .map((row) => row.id)
+        .filter((id): id is string => typeof id === 'string');
+      return ids.length > 0 ? [...new Set([room.id, ...ids])] : [room.id];
+    } catch {
+      return [room.id];
+    }
+  })();
+
   const [
     bookingRes,
     messagesRes,
@@ -296,11 +330,12 @@ export async function buildRoomSnapshot(
             .eq('tour_id', tourId)
             .eq('tour_date', booking.tour_date)
         : Promise.resolve({ data: [], error: null }),
-      // DE3 — 살아 있는 배차. 2호차가 붙어도 손님이 탈 차는 이 룸에 붙은 첫 차다.
+      // DE3 — 살아 있는 배차. 2호차가 붙어도 손님이 탈 차는 이 투어일에 붙은 첫 차다.
+      // 룸 하나가 아니라 형제 룸 전부를 본다(FA-027, 위 주석).
       supabase
         .from('ops_room_vehicles')
         .select('plate_number, driver_name, vehicle_layouts ( model, display_name )')
-        .eq('room_id', room.id)
+        .in('room_id', vehicleRoomIds)
         .order('created_at', { ascending: true })
         .limit(1)
         .maybeSingle(),

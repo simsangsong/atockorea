@@ -23,7 +23,7 @@
 | 설계상 건너뜀 | 1 |
 | 방 개수 | 20 |
 | 비용 등급 | free 43 · llm 12 · people 1 |
-| 행위자 | guest 40 · guide 11 · driver 3 · admin 2 |
+| 행위자 | guest 41 · guide 11 · driver 3 · admin 0 |
 
 `room 0` = **모든 방**이 지난다(문이므로). `room —` = 건너뜀.
 
@@ -33,7 +33,7 @@
 |---|---|---|---|---|---|
 | `DELETE` | `/api/tour-rooms/[bookingId]/location` | guest | free | 1 |  |
 | `GET` | `/api/tour-mode/booking/[id]/content` | guest | free | 2 |  |
-| `GET` | `/api/tour-mode/bookings` | admin | free | 3 |  |
+| `GET` | `/api/tour-mode/bookings` | public | free | 3 |  |
 | `GET` | `/api/tour-mode/driver/overview` | driver | free | 4 |  |
 | `GET` | `/api/tour-mode/guide/overview` | guide | free | 5 |  |
 | `GET` | `/api/tour-mode/room/[bookingId]/snapshot` | guest | free | 6 |  |
@@ -54,7 +54,7 @@
 | `GET` | `/api/tour-rooms/[bookingId]/vehicle-eta` | guest | free | 1 |  |
 | `GET` | `/api/tour-rooms/[bookingId]/vehicle-photo` | guest | free | 2 |  |
 | `PATCH` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 3 |  |
-| `POST` | `/api/tour-mode/driver/link` | admin | free | 4 |  |
+| `POST` | `/api/tour-mode/driver/link` | guide | free | 4 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/approach` | guest | free | 5 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/arrival-bundle` | guide | llm | 6 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/captions` | guide | llm | 7 |  |
@@ -64,7 +64,7 @@
 | `POST` | `/api/tour-rooms/[bookingId]/dining` | guest | llm | 11 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/dining/feedback` | guest | free | 12 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/driver-signal` | driver | free | 13 |  |
-| `POST` | `/api/tour-rooms/[bookingId]/extend` | guide | free | 14 |  |
+| `POST` | `/api/tour-rooms/[bookingId]/extend` | guest | free | 14 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/extras` | guide | free | 15 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/join` | guest | free | 전부 |  |
 | `POST` | `/api/tour-rooms/[bookingId]/location` | guest | free | 16 |  |

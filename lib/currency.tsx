@@ -103,7 +103,21 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   // rate update.
   const lastFetchRef = useRef(0);
 
+  /**
+   * 🔴 FA-026 (full-app audit 2026-07-30) — the ops console fetched
+   * `/api/currency/rate` TWICE on first paint. `lastFetchRef` starts at 0, so the
+   * focus/visibilitychange listener below computed `Date.now() - 0 > 10min` and
+   * called the rate "stale" on the very first focus event — which a fresh page
+   * load delivers while the mount fetch is still in flight. Stamping the clock
+   * when the request STARTS (not only when it settles) and refusing overlapping
+   * calls makes one page load cost one request.
+   */
+  const inFlightRef = useRef(false);
+
   const fetchRate = useCallback(async () => {
+    if (inFlightRef.current) return;
+    inFlightRef.current = true;
+    lastFetchRef.current = Date.now();
     setIsLoading(true);
     setError(null);
     try {
@@ -120,6 +134,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       setRateUpdatedAt(new Date().toISOString());
     } finally {
       lastFetchRef.current = Date.now();
+      inFlightRef.current = false;
       setIsLoading(false);
     }
   }, []);

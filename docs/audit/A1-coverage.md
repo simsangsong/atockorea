@@ -60,7 +60,6 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 
 | 파일 | 티켓 | 판정 |
 |---|---|---|
-| `ConciergeEntryRow.tsx` | A1.3 | ✅ |
 | `ConciergeInlineAnswer.tsx` | A1.3 | ✅ |
 | `ConciergePanel.tsx` | A1.3 | P2 → `A1-3-concierge.md` |
 | `Sheet.tsx` | A1.3 | ✅ 🔴모범 (Lightbox 대조군) |

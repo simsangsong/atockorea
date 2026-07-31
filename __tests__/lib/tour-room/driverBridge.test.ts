@@ -139,6 +139,75 @@ describe('vehicle PIN gate (P-D3)', () => {
     const typeOnly = dbWithDispatch([{ plate_number: null, vehicle: null }], {});
     await expect(checkDriverPin(typeOnly, 'tour-1', FUTURE_DATE, '')).resolves.toEqual({ required: false, ok: true });
   });
+
+  /**
+   * 🔴 FA-018 — "no plate on file" and "the lookup broke" used to be the same
+   * empty set, and the empty set opened the gate. A dispatch table hiccup
+   * therefore deleted the PIN check instead of enforcing it. These three pin
+   * the distinction at each of the three places a lookup can fail.
+   */
+  function dbFailingAt(failing: 'rooms' | 'dispatch' | 'legacy'): RoomDbClient {
+    const err = { message: 'connection reset' };
+    return {
+      from: (table: string) => {
+        if (table === 'tour_rooms') {
+          const chain: Record<string, unknown> = {};
+          chain.select = () => chain;
+          chain.eq = () => chain;
+          chain.then = (res: (v: unknown) => unknown) =>
+            Promise.resolve(
+              failing === 'rooms' ? { data: null, error: err } : { data: [{ id: 'room-1' }], error: null },
+            ).then(res);
+          return chain;
+        }
+        if (table === 'ops_room_vehicles') {
+          const chain: Record<string, unknown> = {};
+          chain.select = () => chain;
+          chain.in = () => chain;
+          chain.then = (res: (v: unknown) => unknown) =>
+            Promise.resolve(failing === 'dispatch' ? { data: null, error: err } : { data: [], error: null }).then(res);
+          return chain;
+        }
+        return {
+          select: () => ({
+            eq: () => ({
+              eq: () => ({
+                maybeSingle: async () =>
+                  failing === 'legacy' ? { data: null, error: err } : { data: { payload: {} }, error: null },
+              }),
+            }),
+          }),
+        };
+      },
+    } as unknown as RoomDbClient;
+  }
+
+  it.each(['rooms', 'dispatch', 'legacy'] as const)(
+    '🔴 a failed plate lookup (%s) closes the gate instead of removing it',
+    async (where) => {
+      const db = dbFailingAt(where);
+      await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '1234')).resolves.toEqual({
+        required: true,
+        ok: false,
+        lookupFailed: true,
+      });
+      // Not even an empty PIN gets through — the point is that we could not check.
+      await expect(checkDriverPin(db, 'tour-1', FUTURE_DATE, '')).resolves.toMatchObject({ ok: false });
+    },
+  );
+
+  it('a thrown query (not just an error field) also closes the gate', async () => {
+    const throwing = {
+      from: () => {
+        throw new Error('client exploded');
+      },
+    } as unknown as RoomDbClient;
+    await expect(checkDriverPin(throwing, 'tour-1', FUTURE_DATE, '1234')).resolves.toEqual({
+      required: true,
+      ok: false,
+      lookupFailed: true,
+    });
+  });
 });
 
 describe('driver signal bundles (5-locale, zero LLM)', () => {

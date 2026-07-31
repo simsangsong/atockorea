@@ -514,7 +514,15 @@ export default function OrdersPage() {
                                   <div className="mt-0.5 text-slate-500">{booking.pickup_points.address}</div>
                                 </div>
                               ) : (
-                                <span className="text-xs text-slate-400">미선택</span>
+                                // FA-011 — this cell is ~64px wide, narrower than
+                                // the word itself, so the global `word-break:
+                                // keep-all` default cannot save it: 미선택 rendered
+                                // as 미선/택 on 18 rows at audit time. §G-3b names
+                                // exactly this case as the one the default cannot
+                                // do, and `.text-cjk-safe` as the answer when
+                                // clipping beats collapsing. Nothing is clipped
+                                // here — the word simply fits on one line.
+                                <span className="text-cjk-safe text-xs text-slate-400">미선택</span>
                               )}
                             </td>
                             <td className="whitespace-nowrap px-5 py-4">

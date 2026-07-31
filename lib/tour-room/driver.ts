@@ -56,6 +56,18 @@ export interface DriverPinCheck {
   required: boolean;
   /** true when no PIN is required, or the supplied PIN matches. */
   ok: boolean;
+  /**
+   * Set when the plate lookup itself failed (FA-018). The caller answers the
+   * same 403 either way; this only exists so logs can tell "wrong PIN" from
+   * "we could not check", which are very different pages to be on at 7am.
+   */
+  lookupFailed?: boolean;
+}
+
+/** Plates found, and whether the looking succeeded — the two are not the same. */
+interface PinLookup {
+  pins: Set<string>;
+  failed: boolean;
 }
 
 /**
@@ -69,23 +81,25 @@ async function dispatchedPins(
   supabase: RoomDbClient,
   tourId: string,
   tourDate: string,
-): Promise<Set<string>> {
+): Promise<PinLookup> {
   const pins = new Set<string>();
   try {
-    const { data: rooms } = await supabase
+    const { data: rooms, error: roomsError } = await supabase
       .from('tour_rooms')
       .select('id')
       .eq('tour_id', tourId)
       .eq('tour_date', tourDate);
+    if (roomsError) return { pins, failed: true };
     const roomIds = (Array.isArray(rooms) ? rooms : [])
       .map((row) => (row as { id?: unknown }).id)
       .filter((id): id is string => typeof id === 'string');
-    if (roomIds.length === 0) return pins;
+    if (roomIds.length === 0) return { pins, failed: false };
 
-    const { data: dispatches } = await supabase
+    const { data: dispatches, error: dispatchError } = await supabase
       .from('ops_room_vehicles')
       .select('plate_number, vehicle:ops_vehicles(plate_number)')
       .in('room_id', roomIds);
+    if (dispatchError) return { pins, failed: true };
     for (const row of Array.isArray(dispatches) ? dispatches : []) {
       const dispatch = row as { plate_number?: unknown; vehicle?: { plate_number?: unknown } | null };
       // The dispatch's own plate wins: picking a registered vehicle prefills
@@ -96,9 +110,9 @@ async function dispatchedPins(
       }
     }
   } catch {
-    return pins;
+    return { pins, failed: true };
   }
-  return pins;
+  return { pins, failed: false };
 }
 
 export async function checkDriverPin(
@@ -109,24 +123,42 @@ export async function checkDriverPin(
 ): Promise<DriverPinCheck> {
   if (!tourId || !tourDate) return { required: false, ok: true };
 
-  const expected = await dispatchedPins(supabase, tourId, tourDate);
+  const dispatched = await dispatchedPins(supabase, tourId, tourDate);
+  const expected = dispatched.pins;
+  let lookupFailed = dispatched.failed;
 
   if (expected.size === 0) {
     try {
-      const { data } = await supabase
+      const { data, error } = await supabase
         .from('tour_bus_details')
         .select('payload')
         .eq('tour_id', tourId)
         .eq('tour_date', tourDate)
         .maybeSingle();
+      if (error) lookupFailed = true;
       const legacy = pinFromBusPayload((data as { payload?: unknown } | null)?.payload);
       if (legacy) expected.add(legacy);
     } catch {
-      /* the sheet is optional; absence means no PIN, not a failure */
+      lookupFailed = true;
     }
   }
 
-  if (expected.size === 0) return { required: false, ok: true };
+  if (expected.size === 0) {
+    /**
+     * 🔴 FA-018 (full-app audit 2026-07-30). "No plate on file" and "the query
+     * that would have found the plate failed" used to arrive here as the same
+     * empty set, and the same empty set opened the gate. So a transient
+     * `ops_room_vehicles` failure removed the PIN check entirely — the exact
+     * shape of the gate that was found open in production once already.
+     *
+     * An empty set is only permission to enter when we actually looked. Ops
+     * genuinely may not know the plate until the morning (#460, rental fleet),
+     * so absence still means "no PIN" — but a failed look means "ask for one
+     * we cannot verify", which closes the door instead of removing it.
+     */
+    if (lookupFailed) return { required: true, ok: false, lookupFailed: true };
+    return { required: false, ok: true };
+  }
   const supplied = typeof suppliedPin === 'string' ? suppliedPin.replace(/\D+/g, '') : '';
   return { required: true, ok: expected.has(supplied) };
 }

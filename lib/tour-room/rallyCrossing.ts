@@ -129,9 +129,18 @@ export async function resolveRejoinStop(
   bookingId: string,
   tourDate: string | null,
   afterMs: number,
+  /**
+   * 🔴 Without it `resolveDaySchedule` skips stage ②.5 (the product page's
+   * translated itinerary) and falls back to `tours.schedule`, whose stops carry
+   * NO `poi_key`. This function returns `poiKey` and the rejoin capsule uses it
+   * for the navigation deep link — so the one card a guest opens when they have
+   * been left behind was the card most likely to have no coordinates. Measured
+   * live on 2026-07-29 across the same resolver: 0 → 124 stops with a poi_key.
+   */
+  tourId: string | null,
 ): Promise<RejoinStop | null> {
   try {
-    const resolved = await resolveDaySchedule(supabase, { bookingId, tourDate });
+    const resolved = await resolveDaySchedule(supabase, { bookingId, tourDate, tourId });
     for (const item of resolved.schedule) {
       const title = typeof item.title === 'string' ? item.title.trim() : '';
       if (!title) continue;

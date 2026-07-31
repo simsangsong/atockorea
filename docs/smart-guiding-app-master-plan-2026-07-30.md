@@ -514,7 +514,16 @@ SSR hydration(첫 렌더 server_now_ms 결정론) · 헤드리스 `useRallyLadde
 | SG-5 | #647 | 5a·5b·5c | pickup 4행 + `scheduleTargetMs` 폴백 유닛 · 이름 사인 시트(text-5xl 허용 목록 게이트) · vehicle-photo 서명 URL K4 원장 등재 |
 | SG-6 | #648 | 6a·6b | sayQueue 리졸버 유닛(4개 상한·TYPE 파생 fired·타이머-도착 순서·briefing 오전) · say_dismissed/expired 북키핑 라우트 유닛 · 콕핏 필/패널 상호작용 유닛(X15 지오펜스 스위트 재작성 포함) |
 | SG-7 | #649 | 7a·7b | day-summary 4지표 유닛(정시 체인 = superseded 접기, 응답 중앙값 ≤600s 갭) · 온보딩 유닛 2건(1회성·로컬 에코 네트워크 0) |
-| 게이트 최종 | — | — | tsc 0 · jest 179 스위트/1815 tests green · `npm run build` exit 0 · CJK 래칫 ≤492 · A1 원장 87/87 · K4 원장 재생성 정합 |
+| 게이트 최종 | — | — | tsc 0 · **`npm run gate`**(tsc + jest 전체) green · `npm run build` exit 0 · CJK 래칫 ≤492 · A1 원장 전수 · K4 원장 재생성 정합 |
+
+> 🔴 **FA-009 (풀 오디트 2026-07-30) — 이 칸의 숫자 셋이 재현 불가였다.**
+> "jest 179 스위트/1815"는 여기 문서화된 4개 디렉토리 명령으로 재현되지 않았다(실측 176/1794).
+> "A1 원장 87/87"은 작성 시점에도 이미 98/98이었다. 그리고 그 4개 명령은
+> `__tests__/hooks`·`__tests__/api` 를 돌지 않아서 **이미 빨간불이던 상설 게이트
+> (`driverOverviewTourId`)가 8웨이브를 통과했다(FA-008).**
+> 그래서 게이트를 **숫자와 디렉토리 목록이 아니라 명령 하나**로 바꿨다 — `npm run gate`.
+> 스위트 수를 적지 않는 것이 의도다: 늘어나는 수를 손으로 적으면 반드시 낡고,
+> 낡은 수는 "덜 재고 있다"는 신호를 지운다.
 
 ### P-2. 의도적 편차 3건 (버그 아님 — 판단 기록)
 
@@ -524,8 +533,14 @@ SSR hydration(첫 렌더 server_now_ms 결정론) · 헤드리스 `useRallyLadde
 2. **2c [+15분 연장]은 독립 API가 아니라 기존 return_time 시트 프리필 경로.** 전송 시
    `rally_extended{next_notice_id}` resolution이 체인된다 — "연장"이 새 공지 발행과 분리될
    수 없다는 §E-4 계약을 그대로 실행한 형태.
-3. **3a E1 도보 역산은 온디맨드 전용(자동 새로고침 없음).** one-shot geolocation 계약의
-   자연 귀결 — 탭할 때만 재계산, 백그라운드 위치 소비 0.
+3. **3a E1 도보 역산 — 기록을 코드에 맞춰 고침(FA-007, 풀 오디트 2026-07-30).**
+   원래 이 칸에는 "온디맨드 전용(자동 새로고침 없음) · 탭할 때만 재계산"이라 적혀 있었다.
+   **코드는 그보다 낫다:** `components/tour-mode/WalkBackLine.tsx:94-108` 은 사전 동의가 있으면
+   **마운트마다, 그리고 탭 복귀(visibilitychange)마다 자동으로 재계산**한다
+   (자체 테스트 `walkBackLine.test.tsx:63` "computes on mount" 이 이를 명문화).
+   지켜진 것은 **백그라운드 위치 소비 0** 이다 — `watchPosition` 없음, visibilitychange는
+   포그라운드 전이뿐. SG-D8이 금지한 것(인터벌·룸 발행)은 실제로 없다.
+   교훈: **편차 기록이 코드보다 보수적이면, 다음 사람이 있는 기능을 없다고 읽는다.**
 
 ### P-3. 남은 사람 게이트 (코드 잔여 0)
 

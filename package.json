@@ -13,6 +13,7 @@
     "lint:full": "next lint --max-warnings 200",
     "icons:sync": "node scripts/sync-app-icons-from-svg.js",
     "test": "jest",
+    "gate": "npx tsc --noEmit && jest",
     "e2e": "playwright test",
     "e2e:headed": "playwright test --headed",
     "test:watch": "jest --watch",
