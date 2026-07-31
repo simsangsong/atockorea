@@ -92,7 +92,7 @@
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 6.5,
+      "out": 6.6,
       "speed": 1,
       "stab": true,
       "role": "promise",
@@ -106,17 +106,42 @@
       "id": "02",
       "kind": "clip",
       "src": "A",
-      "in": 6.5,
-      "out": 31,
-      "speed": 6,
+      "in": 6.6,
+      "out": 19.4,
+      "speed": 4,
       "title": "Up the entrance road",
       "ramp": {
         "seconds": 0.6
       },
       "snapped": {
-        "from": 6,
-        "pan": 0.573
+        "from": 6.5,
+        "pan": 0.704
       }
+    },
+    {
+      "id": "02t1",
+      "kind": "clip",
+      "src": "A",
+      "in": 19.4,
+      "out": 26.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "02s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 26.8,
+      "out": 31,
+      "speed": 4,
+      "title": "Up the entrance road (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "03",
@@ -191,7 +216,7 @@
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 7.4,
+      "out": 7.5,
       "speed": 1.2,
       "stab": true,
       "title": "Into the main street",
@@ -210,44 +235,42 @@
       "id": "09",
       "kind": "clip",
       "src": "B",
-      "in": 7.4,
-      "out": 34.5,
-      "speed": 6,
+      "in": 7.5,
+      "out": 41.9,
+      "speed": 8,
       "title": "Shops and stalls uphill",
       "ramp": {
         "seconds": 0.6
       },
       "snapped": {
-        "from": 7.5,
-        "pan": 0.565
+        "from": 7.4,
+        "pan": 0.571
       }
     },
     {
-      "id": "09b",
+      "id": "09t1",
       "kind": "clip",
       "src": "B",
-      "in": 34.5,
-      "out": 37,
+      "in": 41.9,
+      "out": 44.3,
       "speed": 1,
       "stab": true,
-      "title": "The photo benches",
-      "nosnap": "no pan within ±1.5s (max 0.40)"
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
-      "id": "09c",
+      "id": "09s1",
       "kind": "clip",
       "src": "B",
-      "in": 37,
+      "in": 44.3,
       "out": 57.7,
-      "speed": 6,
+      "speed": 4,
       "title": "Shops and stalls uphill (cont.)",
       "ramp": {
         "seconds": 0.6
       },
-      "snapped": {
-        "from": 8,
-        "pan": 0.571
-      }
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "10",
@@ -284,7 +307,7 @@
       "kind": "clip",
       "src": "B",
       "in": 80,
-      "out": 85,
+      "out": 85.5,
       "speed": 1,
       "stab": true,
       "title": "The sticker wall",
@@ -294,17 +317,42 @@
       "id": "13",
       "kind": "clip",
       "src": "B",
-      "in": 85,
-      "out": 106,
-      "speed": 8,
+      "in": 85.5,
+      "out": 97.4,
+      "speed": 4,
       "title": "Past the guesthouses",
       "ramp": {
         "seconds": 0.6
       },
       "snapped": {
-        "from": 83.5,
-        "pan": 0.563
+        "from": 85,
+        "pan": 0.696
       }
+    },
+    {
+      "id": "13t1",
+      "kind": "clip",
+      "src": "B",
+      "in": 97.4,
+      "out": 102.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "13s1",
+      "kind": "clip",
+      "src": "B",
+      "in": 102.3,
+      "out": 106,
+      "speed": 4,
+      "title": "Past the guesthouses (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "14",
@@ -322,13 +370,38 @@
       "kind": "clip",
       "src": "B",
       "in": 109,
-      "out": 130.5,
-      "speed": 6,
+      "out": 119.9,
+      "speed": 4,
       "title": "More of the street",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.48)"
+    },
+    {
+      "id": "15t1",
+      "kind": "clip",
+      "src": "B",
+      "in": 119.9,
+      "out": 123.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "15s1",
+      "kind": "clip",
+      "src": "B",
+      "in": 123.8,
+      "out": 130.5,
+      "speed": 4,
+      "title": "More of the street (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "16",
@@ -349,8 +422,8 @@
       "kind": "clip",
       "src": "B",
       "in": 132.5,
-      "out": 153.5,
-      "speed": 6,
+      "out": 140.4,
+      "speed": 4,
       "title": "Snack stalls in full swing",
       "ramp": {
         "seconds": 0.6
@@ -358,28 +431,54 @@
       "nosnap": "no pan within ±1.5s (max 0.54)"
     },
     {
-      "id": "17b",
+      "id": "17t1",
       "kind": "clip",
       "src": "B",
-      "in": 153.5,
-      "out": 156,
+      "in": 140.4,
+      "out": 142.8,
       "speed": 1,
       "stab": true,
-      "title": "The shopping stretch",
-      "nosnap": "no pan within ±1.5s (max 0.51)"
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
-      "id": "17c",
+      "id": "17s1",
       "kind": "clip",
       "src": "B",
-      "in": 156,
-      "out": 172,
+      "in": 142.8,
+      "out": 162.4,
       "speed": 6,
       "title": "Snack stalls in full swing (cont.)",
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "no pan within ±1.5s (max 0.54)"
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "17t2",
+      "kind": "clip",
+      "src": "B",
+      "in": 162.4,
+      "out": 168.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "17s2",
+      "kind": "clip",
+      "src": "B",
+      "in": 168.8,
+      "out": 172,
+      "speed": 4,
+      "title": "Snack stalls in full swing (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "18",
@@ -441,36 +540,87 @@
       "kind": "clip",
       "src": "B",
       "in": 178,
-      "out": 192.2,
-      "speed": 8,
+      "out": 187.9,
+      "speed": 4,
       "title": "Along the ridge",
       "ramp": {
         "seconds": 0.6
       }
     },
     {
-      "id": "20b",
+      "id": "20t1",
       "kind": "clip",
       "src": "B",
-      "in": 192.2,
-      "out": 194.7,
+      "in": 187.9,
+      "out": 190.3,
       "speed": 1,
       "stab": true,
-      "title": "The sea opens up",
-      "nosnap": "no pan within ±1.5s (max 0.50)"
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
-      "id": "20c",
+      "id": "20s1",
       "kind": "clip",
       "src": "B",
-      "in": 194.7,
-      "out": 230,
-      "speed": 8,
+      "in": 190.3,
+      "out": 203.4,
+      "speed": 4,
       "title": "Along the ridge (cont.)",
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "no pan within ±1.5s (max 0.38)"
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20t2",
+      "kind": "clip",
+      "src": "B",
+      "in": 203.4,
+      "out": 205.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20s2",
+      "kind": "clip",
+      "src": "B",
+      "in": 205.8,
+      "out": 212.4,
+      "speed": 4,
+      "title": "Along the ridge (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20t3",
+      "kind": "clip",
+      "src": "B",
+      "in": 212.4,
+      "out": 214.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20s3",
+      "kind": "clip",
+      "src": "B",
+      "in": 214.8,
+      "out": 230,
+      "speed": 5,
+      "title": "Along the ridge (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "21",
@@ -488,8 +638,8 @@
       "kind": "clip",
       "src": "B",
       "in": 233.5,
-      "out": 251.5,
-      "speed": 6,
+      "out": 259.9,
+      "speed": 8,
       "title": "Cafes on the sea side",
       "ramp": {
         "seconds": 0.6
@@ -497,28 +647,29 @@
       "nosnap": "no pan within ±1.5s (max 0.52)"
     },
     {
-      "id": "22b",
+      "id": "22t1",
       "kind": "clip",
       "src": "B",
-      "in": 251.5,
-      "out": 254,
+      "in": 259.9,
+      "out": 262.3,
       "speed": 1,
       "stab": true,
-      "title": "The green cafe corner",
-      "nosnap": "no pan within ±1.5s (max 0.46)"
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
-      "id": "22c",
+      "id": "22s1",
       "kind": "clip",
       "src": "B",
-      "in": 254,
+      "in": 262.3,
       "out": 274,
-      "speed": 6,
+      "speed": 4,
       "title": "Cafes on the sea side (cont.)",
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "no pan within ±1.5s (max 0.52)"
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "23",
@@ -757,13 +908,38 @@
       "kind": "clip",
       "src": "D",
       "in": 8.5,
-      "out": 18.5,
+      "out": 13.4,
       "speed": 4,
       "title": "Out onto the turf",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.38)"
+    },
+    {
+      "id": "38t1",
+      "kind": "clip",
+      "src": "D",
+      "in": 13.4,
+      "out": 15.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking around",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "38s1",
+      "kind": "clip",
+      "src": "D",
+      "in": 15.8,
+      "out": 18.5,
+      "speed": 4,
+      "title": "Out onto the turf (cont.)",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "39",
