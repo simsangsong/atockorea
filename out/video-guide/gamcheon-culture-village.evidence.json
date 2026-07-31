@@ -1,0 +1,84 @@
+{
+  "work": "Gamcheon Culture Village",
+  "slug": "gamcheon-culture-village",
+  "owner": "AtoC Korea",
+  "notice": {
+    "en": "Property of AtoC Korea. Unauthorised use will be pursued to the full extent of the law.",
+    "ko": "본 영상은 AtoC Korea 의 자산입니다. 무단 도용·복제·재배포 시 법적 책임을 반드시 추궁합니다."
+  },
+  "issuedAt": "2026-07-31T15:19:03.535Z",
+  "invisibleMark": {
+    "algorithm": "low-frequency key-derived luma grid",
+    "grid": "24x14",
+    "amplitude": "2/255",
+    "phaseFrames": 15,
+    "measured": {
+      "unmarked": "-2.4σ (오탐 없음)",
+      "marked": "11.0σ",
+      "reencoded720pCrf30": "6.3σ",
+      "cropped12pct": "-0.8σ — 크롭에는 약하다. 해시·매니페스트로 보완할 것"
+    },
+    "keyFingerprint": "ec1566ebd13cab81",
+    "verify": "node scripts/video-guide/stamp.mjs docs/video-specs/gamcheon-culture-village.json --verify <suspect.mp4>",
+    "note": "The key itself is derived from slug+poiKey and is not stored here; regenerate it from the spec."
+  },
+  "artifacts": [
+    {
+      "name": "gamcheon-culture-village-poster-wide.jpg",
+      "bytes": 241298,
+      "sha256": "4445345eab73392182d8632b33315ca7cd14523b0a7173d6d1199cd8de7d7184"
+    },
+    {
+      "name": "gamcheon-culture-village-poster.jpg",
+      "bytes": 318232,
+      "sha256": "424aa23aa2be2eee1f712a7a45d1ad7bc7ae506f93aa393e0b8b6d6983fb9dcf"
+    },
+    {
+      "name": "gamcheon-culture-village-teaser.mp4",
+      "bytes": 124486685,
+      "sha256": "2e5ce681d10b1dd389a7b54ed90dd83792f5c6bac2e763aa4e2043ba0ed826ae"
+    },
+    {
+      "name": "gamcheon-culture-village-vertical.mp4",
+      "bytes": 459708125,
+      "sha256": "42fbedfe1598bde59210d1fb3b35a878135e55e3f9ec6cd7fc4e9788d31cd1f3"
+    },
+    {
+      "name": "gamcheon-culture-village-wide.mp4",
+      "bytes": 921246613,
+      "sha256": "e657068a78b714fa8580132fca64608798edf93b89e89c18549514aa47af213b"
+    },
+    {
+      "name": "gamcheon-culture-village.mp4",
+      "bytes": 1020962940,
+      "sha256": "c02728ea92c1bff64b7c15d3638ce5cf4d12f41b4d98eb79cff1e28eca90ab62"
+    }
+  ],
+  "frameHashes": [
+    {
+      "at": 28.76,
+      "hash": "bffcbff0bfe0bfe59f3f9eff3efb7c7f0036005f005f001d0019080e008f01f7"
+    },
+    {
+      "at": 71.9,
+      "hash": "fff0fff6fffcffff7f3f7f3f373f6016601d401fc01f001f041f01ff00ff00fe"
+    },
+    {
+      "at": 119.83,
+      "hash": "04007fc0ffc03fe003d017e077f07ff0bff0bff03e6c3fe87fe86f486e506ff0"
+    },
+    {
+      "at": 167.77,
+      "hash": "0fff8fffe7fff3fc39c00f6003e001d00180018002e001e003e003f007f80ffc"
+    },
+    {
+      "at": 210.91,
+      "hash": "000000000030fff8ffe0ff801e80fc003eb87e089fe01fc00fe00ff007fc07fc"
+    }
+  ],
+  "howToUseThis": [
+    "1. 이 파일을 git 에 커밋한다 — 커밋 시각이 제3자 증인이 되는 선행성 증거다.",
+    "2. 도용 의심 파일이 나오면 --verify 로 불가시 마크 상관도와 프레임 해시 거리를 측정한다.",
+    "3. sha256 은 무손실 복제 판정용, 프레임 해시와 마크는 재인코딩된 사본 판정용이다."
+  ]
+}

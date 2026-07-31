@@ -102,6 +102,12 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
 .prints img:nth-child(2) { transform:rotate(2deg) translateY(10px); }
 .prints img:nth-child(3) { transform:rotate(-1.5deg); }
 .prints img:nth-child(4) { transform:rotate(2.6deg) translateY(8px); }
+.deter { position:absolute; left:0; right:0; top:52%; transform:translateY(-50%) rotate(-19deg);
+  text-align:center; pointer-events:none;
+  font-size:30px; font-weight:700; letter-spacing:.06em; line-height:1.5;
+  color:rgba(255,255,255,.17);
+  text-shadow:0 1px 3px rgba(0,0,0,.42), 0 0 1px rgba(0,0,0,.5); }
+.deter b { display:block; font-weight:800; letter-spacing:.12em; font-size:34px; }
 .watermark { position:absolute; top:1856px; width:100%; text-align:center;
   font-size:${TYPE.watermark}px; font-weight:500; color:rgba(255,255,255,.72);
   text-shadow:0 1px 8px rgba(0,0,0,.6); }
@@ -117,6 +123,7 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
   ${o.prints?.length ? `<div class="prints">${o.prints.map((p) => `<img src="${p}"/>`).join('')}</div>` : ''}
   ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
 </div>
+<div class="deter"><b>AtoC KOREA</b>Property of AtoC Korea. Unauthorised use will be pursued to the full extent of the law.<br/>© AtoC Korea — 본 영상은 AtoC Korea 의 자산입니다. 무단 도용·복제·재배포 시 법적 책임을 반드시 추궁합니다.</div>
 <div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
 <script>
 const anims = [];
@@ -162,15 +169,31 @@ export function buildWideScene(o) {
   const hero = o.role === 'title' || o.role === 'promise' || o.role === 'recap';
   const titlePx = o.role === 'title' ? T.titleHero : T.title;
 
+  // 🔴 A scrim exists to make ITS OWN text readable, so it has to scale with the
+  // text that is actually there. Fixed scrims put a 520px band at 86% across the
+  // bottom of a beat carrying nothing but the watermark, and the owner read the
+  // result as a filter: "귀퉁이에 시커먼 오버레이". Measured on one such frame,
+  // the dressing cost the bottom-right corner 53% of its luma (127 → 59).
+  // Lower third present → full scrim. Watermark only → a slim, weak one.
+  const hasLower = Boolean(o.title || o.sub || o.caption);
+  const bottom = hasLower
+    ? { h: 470, a0: 0.78, a1: 0.36, stop: 46 }
+    : { h: 168, a0: 0.50, a1: 0.16, stop: 52 };
+  // Same for the corner block: a lone kicker needs far less cover than a kicker
+  // plus two chips.
+  const corner = (o.point || o.chip)
+    ? { w: 1020, h: 440, a: 0.50 }
+    : { w: 760, h: 300, a: 0.36 };
+
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"/><style>
 * { margin:0; padding:0; box-sizing:border-box; }
 html,body { width:${WIDE.w}px; height:${WIDE.h}px; overflow:hidden; background:transparent; }
 body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#fff; }
-.scrim-b { position:absolute; left:0; right:0; bottom:0; height:520px;
-  background:linear-gradient(to top, rgba(6,14,26,.86) 0%, rgba(6,14,26,.42) 44%, transparent 100%); }
+.scrim-b { position:absolute; left:0; right:0; bottom:0; height:${bottom.h}px;
+  background:linear-gradient(to top, rgba(6,14,26,${bottom.a0}) 0%, rgba(6,14,26,${bottom.a1}) ${bottom.stop}%, transparent 100%); }
 .scrim-t { position:absolute; inset:0;
-  background:radial-gradient(ellipse 1180px 520px at 0% 0%, rgba(6,14,26,.66), transparent 68%); }
+  background:radial-gradient(ellipse ${corner.w}px ${corner.h}px at 0% 0%, rgba(6,14,26,${corner.a}), transparent 66%); }
 .scrim-hero { position:absolute; inset:0; background:rgba(6,14,26,.46); }
 .corner { position:absolute; left:72px; top:56px; height:132px;
   display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
@@ -192,6 +215,12 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
 .prints img { width:186px; box-shadow:0 10px 26px rgba(0,0,0,.5); border-radius:3px; }
 .prints img:nth-child(odd) { transform:rotate(-2.6deg); }
 .prints img:nth-child(even) { transform:rotate(2.2deg) translateY(9px); }
+.deter { position:absolute; left:0; right:0; top:52%; transform:translateY(-50%) rotate(-19deg);
+  text-align:center; pointer-events:none;
+  font-size:26px; font-weight:700; letter-spacing:.06em; line-height:1.5;
+  color:rgba(255,255,255,.17);
+  text-shadow:0 1px 3px rgba(0,0,0,.42), 0 0 1px rgba(0,0,0,.5); }
+.deter b { display:block; font-weight:800; letter-spacing:.12em; font-size:30px; }
 .watermark { position:absolute; top:1026px; width:100%; text-align:center;
   font-size:${T.watermark}px; font-weight:500; color:rgba(255,255,255,.74);
   text-shadow:0 1px 8px rgba(0,0,0,.7); }
@@ -216,6 +245,7 @@ ${hero ? `
   ${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}
   ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
 </div>`}
+<div class="deter"><b>AtoC KOREA</b>Property of AtoC Korea. Unauthorised use will be pursued to the full extent of the law.<br/>© AtoC Korea — 본 영상은 AtoC Korea 의 자산입니다. 무단 도용·복제·재배포 시 법적 책임을 반드시 추궁합니다.</div>
 <div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
 <script>
 const anims = [];
