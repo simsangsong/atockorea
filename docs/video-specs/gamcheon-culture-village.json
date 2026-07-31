@@ -11,6 +11,11 @@
     "height": 1080,
     "fps": 30
   },
+  "encode": {
+    "crf": 17,
+    "maxrate": "20M",
+    "bufsize": "40M"
+  },
   "sourceDir": "D:/VIDEO2/태종대,용궁구름다리, 국제시장/감천문화마을",
   "sources": {
     "A": "01_20260729_152614.mp4",
@@ -26,19 +31,18 @@
   "grade": [
     "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
     "crop=iw*0.93:ih*0.93",
-    "vibrance=intensity=0.37",
-    "eq=saturation=1.08",
-    "curves=r='0/0 0.055/0.029 0.3/0.29 0.55/0.584 0.8/0.844 1/1':g='0/0 0.055/0.027 0.3/0.286 0.55/0.574 0.8/0.834 1/1':b='0/0.011 0.055/0.046 0.3/0.291 0.55/0.55 0.8/0.799 1/0.979'",
-    "unsharp=13:13:0.42:5:5:0.0",
-    "unsharp=5:5:0.52:5:5:0.0",
+    "vibrance=intensity=0.5",
+    "eq=saturation=1.12",
+    "curves=r='0/0 0.05/0.02 0.3/0.283 0.55/0.59 0.8/0.856 1/1':g='0/0 0.05/0.025 0.3/0.283 0.55/0.578 0.8/0.84 1/1':b='0/0.02 0.05/0.058 0.3/0.296 0.55/0.548 0.8/0.788 1/0.962'",
+    "unsharp=13:13:0.5:5:5:0.0",
+    "unsharp=5:5:0.6:5:5:0.0",
     "noise=alls=5:allf=t+u",
-    "vignette=a=PI/12"
+    "vignette=a=PI/10"
   ],
   "_notes": [
-    "2026-07-31 신규 — 감천문화마을, 파이프라인 2호.",
-    "그레이드는 스펙 오버라이드: 역광 헤이즈 대응(측정 YLOW 32-60) — vibrance+블랙당김+클래리티. 국소대비/채도 강화가 목적, 전역 리프트 아님.",
+    "2026-07-31 v2 — 사장님 노트 반영: ①encode crf17/20M(Cloudinary 배포 마스터 — 리뷰본으로 화질 판단 금지) ②클로즈업 폐지→풀프레임 정지+화살표(용궁사 방식) ③그레이드 강화(틸-오렌지 스플릿톤, vibrance 0.5, 비네트 PI/10) ④오프닝 = 입구 정류장 1배속 6초 후 가속 ⑤가게 포켓 6곳 — 빨리감기 사이 1배속 글림스(정보전달 목적) ⑥stab:true 저속 비트 vidstab 2패스.",
     "C 87.5 이후·D 5.8 이전 = 엘리베이터 내부(거울·경고스티커에 촬영자 반사) — 의도적으로 잘랐다. C(문 앞)→D(문 열림) 0.8s 디졸브가 그 연결.",
-    "B 원본 = 342s 메인도로 원테이크. BTS 벽화 정면 178s, 어린왕자 조형물 278.6s(프레임 좌측 볼라드 위)."
+    "B 원본 = 342s 메인도로 원테이크. BTS 벽화 정면 178s, 어린왕자 조형물 278.6s. 포켓 위치 = 촬영자가 실제로 멈춘 지점(scene score 플랫런): 58-63 쿨링미스트 골목 · 80-83.5 스티커월 · 106-109 상점 · 129-132.5 노점 인파 · 230-233.5 노점 · 310-313 상점."
   ],
   "beats": [
     {
@@ -48,6 +52,7 @@
       "in": 26,
       "out": 29.2,
       "speed": 1,
+      "stab": true,
       "role": "title",
       "title": "Busan's painted hillside village",
       "sub": "One walk, one village in colour",
@@ -61,6 +66,7 @@
       "in": 51,
       "out": 53.8,
       "speed": 1,
+      "stab": true,
       "mute": true,
       "title": "Cold open — the overlook",
       "transition": {
@@ -75,6 +81,7 @@
       "in": 277.6,
       "out": 280.4,
       "speed": 1,
+      "stab": true,
       "mute": true,
       "title": "Cold open — the Little Prince",
       "transition": {
@@ -87,33 +94,47 @@
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 31,
-      "speed": 6,
+      "out": 6.5,
+      "speed": 1,
+      "stab": true,
       "role": "promise",
-      "title": "Up from the entrance",
+      "title": "Start at the entrance bus stop",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
-      },
-      "ramp": {
-        "seconds": 0.6
       }
     },
     {
       "id": "02",
       "kind": "clip",
       "src": "A",
+      "in": 6.5,
+      "out": 31,
+      "speed": 6,
+      "title": "Up the entrance road",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 6,
+        "pan": 0.573
+      }
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "A",
       "in": 31,
       "out": 34.5,
       "speed": 1.5,
-      "title": "Left at the entrance sign",
+      "title": "Left at the village sign",
       "snapped": {
         "from": 30.5,
         "pan": 0.703
       }
     },
     {
-      "id": "03",
+      "id": "04",
       "kind": "clip",
       "src": "A",
       "in": 34.5,
@@ -127,12 +148,13 @@
       "nosnap": "no pan within ±1.5s (max 0.51)"
     },
     {
-      "id": "04",
+      "id": "05",
       "kind": "clip",
       "src": "A",
       "in": 45.1,
       "out": 52.2,
       "speed": 1.2,
+      "stab": true,
       "title": "The village, all at once",
       "snapped": {
         "from": 46,
@@ -140,7 +162,7 @@
       }
     },
     {
-      "id": "05",
+      "id": "06",
       "kind": "polaroid",
       "src": "A",
       "at": 52.2,
@@ -155,7 +177,7 @@
       }
     },
     {
-      "id": "06",
+      "id": "07",
       "kind": "clip",
       "src": "A",
       "in": 52.2,
@@ -167,69 +189,146 @@
       }
     },
     {
-      "id": "07",
+      "id": "08",
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 31.1,
-      "speed": 4,
+      "out": 7.5,
+      "speed": 1.2,
+      "stab": true,
       "title": "Into the main street",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
       },
-      "ramp": {
-        "seconds": 0.6
-      },
       "chapter": "The main street"
     },
     {
-      "id": "08",
+      "id": "09",
       "kind": "clip",
       "src": "B",
-      "in": 31.1,
-      "out": 83,
+      "in": 7.5,
+      "out": 57.7,
       "speed": 6,
       "title": "Shops and stalls uphill",
       "ramp": {
         "seconds": 0.6
       },
       "snapped": {
-        "from": 30,
-        "pan": 0.633
+        "from": 8,
+        "pan": 0.571
       }
-    },
-    {
-      "id": "09",
-      "kind": "clip",
-      "src": "B",
-      "in": 83,
-      "out": 118.9,
-      "speed": 8,
-      "title": "The ridge road",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "nosnap": "no pan within ±1.5s (max 0.51)"
     },
     {
       "id": "10",
       "kind": "clip",
       "src": "B",
-      "in": 118.9,
+      "in": 57.7,
+      "out": 63.3,
+      "speed": 1,
+      "stab": true,
+      "title": "The cooling-mist lane",
+      "snapped": {
+        "from": 58,
+        "pan": 0.628
+      }
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "B",
+      "in": 63.3,
+      "out": 80,
+      "speed": 6,
+      "title": "On up the ridge road",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 63,
+        "pan": 0.641
+      }
+    },
+    {
+      "id": "12",
+      "kind": "clip",
+      "src": "B",
+      "in": 80,
+      "out": 85,
+      "speed": 1,
+      "stab": true,
+      "title": "The sticker wall",
+      "nosnap": "no pan within ±1.5s (max 0.39)"
+    },
+    {
+      "id": "13",
+      "kind": "clip",
+      "src": "B",
+      "in": 85,
+      "out": 106,
+      "speed": 8,
+      "title": "Past the guesthouses",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 83.5,
+        "pan": 0.563
+      }
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "B",
+      "in": 106,
+      "out": 109,
+      "speed": 1,
+      "stab": true,
+      "title": "A shopfront pause",
+      "nosnap": "no pan within ±1.5s (max 0.48)"
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "B",
+      "in": 109,
+      "out": 130.5,
+      "speed": 6,
+      "title": "More of the street",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.48)"
+    },
+    {
+      "id": "16",
+      "kind": "clip",
+      "src": "B",
+      "in": 130.5,
+      "out": 132.5,
+      "speed": 1,
+      "stab": true,
+      "title": "The snack-stall crowd",
+      "snapped": {
+        "from": 129,
+        "pan": 0.665
+      }
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "B",
+      "in": 132.5,
       "out": 172,
       "speed": 6,
       "title": "Snack stalls in full swing",
       "ramp": {
         "seconds": 0.6
       },
-      "snapped": {
-        "from": 120,
-        "pan": 0.737
-      }
+      "nosnap": "no pan within ±1.5s (max 0.54)"
     },
     {
-      "id": "11",
+      "id": "18",
       "kind": "clip",
       "src": "B",
       "in": 172,
@@ -239,28 +338,52 @@
       "nosnap": "no pan within ±1.5s (max 0.53)"
     },
     {
-      "id": "12",
-      "kind": "closeup",
+      "id": "19",
+      "kind": "arrow",
       "src": "B",
       "at": 178,
       "hold": 4.5,
       "title": "BTS Mural",
       "sub": "Jungkook & Jimin — Busan's own",
       "caption": "Jungkook and Jimin, painted for the fans.",
-      "focus": [
-        300,
-        180,
-        1050,
-        760
+      "arrowOverride": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 720,
+            "y": 140
+          },
+          "target": {
+            "x": 560,
+            "y": 350
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
       ],
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.5
-      },
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 720,
+            "y": 140
+          },
+          "target": {
+            "x": 560,
+            "y": 350
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ],
       "chapter": "The BTS mural"
     },
     {
-      "id": "13",
+      "id": "20",
       "kind": "clip",
       "src": "B",
       "in": 178,
@@ -272,10 +395,21 @@
       }
     },
     {
-      "id": "14",
+      "id": "21",
       "kind": "clip",
       "src": "B",
       "in": 230,
+      "out": 233.5,
+      "speed": 1,
+      "stab": true,
+      "title": "A stall pause",
+      "nosnap": "no pan within ±1.5s (max 0.52)"
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "B",
+      "in": 233.5,
       "out": 274,
       "speed": 6,
       "title": "Cafes on the sea side",
@@ -285,7 +419,7 @@
       "nosnap": "no pan within ±1.5s (max 0.52)"
     },
     {
-      "id": "15",
+      "id": "23",
       "kind": "clip",
       "src": "B",
       "in": 274,
@@ -295,7 +429,7 @@
       "nosnap": "no pan within ±1.5s (max 0.53)"
     },
     {
-      "id": "16",
+      "id": "24",
       "kind": "arrow",
       "src": "B",
       "at": 278.6,
@@ -340,20 +474,21 @@
       "chapter": "The Little Prince"
     },
     {
-      "id": "17",
+      "id": "25",
       "kind": "clip",
       "src": "B",
       "in": 278.6,
       "out": 288,
       "speed": 1.2,
+      "stab": true,
       "title": "Past the railing"
     },
     {
-      "id": "18",
+      "id": "26",
       "kind": "clip",
       "src": "B",
       "in": 288,
-      "out": 335,
+      "out": 309.1,
       "speed": 8,
       "title": "To the end of the road",
       "ramp": {
@@ -362,7 +497,37 @@
       "nosnap": "no pan within ±1.5s (max 0.26)"
     },
     {
-      "id": "19",
+      "id": "27",
+      "kind": "clip",
+      "src": "B",
+      "in": 309.1,
+      "out": 314.5,
+      "speed": 1,
+      "stab": true,
+      "title": "A last shopfront",
+      "snapped": {
+        "from": 310,
+        "pan": 0.717
+      }
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "B",
+      "in": 314.5,
+      "out": 335,
+      "speed": 8,
+      "title": "The road runs out",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 313,
+        "pan": 0.556
+      }
+    },
+    {
+      "id": "29",
       "kind": "clip",
       "src": "B",
       "in": 335,
@@ -372,7 +537,7 @@
       "nosnap": "no pan within ±1.5s (max 0.31)"
     },
     {
-      "id": "20",
+      "id": "30",
       "kind": "polaroid",
       "src": "B",
       "at": 339.5,
@@ -387,7 +552,7 @@
       }
     },
     {
-      "id": "21",
+      "id": "31",
       "kind": "clip",
       "src": "C",
       "in": 0,
@@ -401,7 +566,7 @@
       "chapter": "Into the alleys"
     },
     {
-      "id": "22",
+      "id": "32",
       "kind": "clip",
       "src": "C",
       "in": 4,
@@ -414,7 +579,7 @@
       "nosnap": "no pan within ±1.5s (max 0.42)"
     },
     {
-      "id": "23",
+      "id": "33",
       "kind": "clip",
       "src": "C",
       "in": 25,
@@ -427,12 +592,13 @@
       "nosnap": "no pan within ±1.5s (max 0.42)"
     },
     {
-      "id": "24",
+      "id": "34",
       "kind": "clip",
       "src": "C",
       "in": 42,
       "out": 48,
       "speed": 1.2,
+      "stab": true,
       "title": "Pastel walls close in",
       "stopLabel": {
         "title": "The Alley Maze",
@@ -442,7 +608,7 @@
       "nosnap": "no pan within ±1.5s (max 0.46)"
     },
     {
-      "id": "25",
+      "id": "35",
       "kind": "clip",
       "src": "C",
       "in": 48,
@@ -455,7 +621,7 @@
       "nosnap": "no pan within ±1.5s (max 0.46)"
     },
     {
-      "id": "26",
+      "id": "36",
       "kind": "clip",
       "src": "C",
       "in": 81.5,
@@ -468,15 +634,16 @@
       },
       "caption": "Take the elevator up — top floor.",
       "chapter": "Up to the rooftop",
-      "nosnap": "no pan within ±1.5s (max 0.35)"
+      "nosnap": "no pan within ±1.5s (max 0.48)"
     },
     {
-      "id": "27",
+      "id": "37",
       "kind": "clip",
       "src": "D",
       "in": 5.8,
       "out": 8.5,
       "speed": 1,
+      "stab": true,
       "title": "Doors open on the sky",
       "transition": {
         "kind": "dissolve",
@@ -484,7 +651,7 @@
       }
     },
     {
-      "id": "28",
+      "id": "38",
       "kind": "clip",
       "src": "D",
       "in": 8.5,
@@ -497,7 +664,7 @@
       "nosnap": "no pan within ±1.5s (max 0.38)"
     },
     {
-      "id": "29",
+      "id": "39",
       "kind": "clip",
       "src": "D",
       "in": 18.5,
@@ -510,17 +677,18 @@
       }
     },
     {
-      "id": "30",
+      "id": "40",
       "kind": "clip",
       "src": "D",
       "in": 26,
       "out": 30,
       "speed": 1,
+      "stab": true,
       "title": "The village from above",
       "nosnap": "no pan within ±1.5s (max 0.26)"
     },
     {
-      "id": "31",
+      "id": "41",
       "kind": "clip",
       "src": "D",
       "in": 30,
@@ -533,7 +701,7 @@
       "nosnap": "no pan within ±1.5s (max 0.16)"
     },
     {
-      "id": "32",
+      "id": "42",
       "kind": "polaroid",
       "src": "D",
       "at": 38.5,
@@ -548,21 +716,23 @@
       }
     },
     {
-      "id": "33",
+      "id": "43",
       "kind": "clip",
       "src": "D",
       "in": 38.5,
       "out": 43,
       "speed": 1.2,
+      "stab": true,
       "title": "One last look"
     },
     {
-      "id": "34",
+      "id": "44",
       "kind": "clip",
       "src": "A",
       "in": 48,
       "out": 56,
       "speed": 1,
+      "stab": true,
       "title": "Gamcheon Culture Village",
       "transition": {
         "kind": "dissolve",
@@ -578,6 +748,5 @@
     "at": 52
   },
   "city": "Busan",
-  "teaserLead": "05",
-  "verticalSeconds": 65
+  "teaserLead": "06"
 }

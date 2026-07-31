@@ -204,7 +204,9 @@ for (const row of tl.rows) {
     + `[base][shell]overlay=0:0:format=auto,fps=${FPS},format=yuv420p[v]`;
 
   run([...inputs, '-filter_complex', filter, '-map', '[v]', '-map', '0:a?',
-    '-t', String(row.dur), '-c:v', 'libx264', '-preset', 'medium', '-crf', '20',
+    // second-generation encode off the master — honour the spec's quality ceiling
+    '-t', String(row.dur), '-c:v', 'libx264', '-preset', 'medium',
+    '-crf', String(spec.encode?.crf ?? 20),
     '-c:a', 'aac', '-ar', '48000', '-ac', '2', '-b:a', '160k', seg], `vfull ${beat.id}`);
 
   manifest[beat.id] = h;
