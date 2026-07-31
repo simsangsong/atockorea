@@ -10,6 +10,7 @@
  *   node scripts/video-guide/validate.mjs docs/video-specs/<slug>.json
  */
 import fs from 'node:fs';
+import path from 'node:path';
 import { framing, contains } from './framing.mjs';
 import { timelineOf, stopsOf, roleOf, outDurOf } from './lib/timeline.mjs';
 
@@ -24,6 +25,18 @@ const startOf = (b) => (b.kind === 'clip' ? b.in : b.at);
 
 const problems = [];
 const notes = [];
+
+// Gate 0 — every source file must exist on disk. Reorganising the footage
+// drive (2026-08-01) silently orphaned two shipped specs; nothing would have
+// failed until deep inside a render.
+if (spec.sourceDir && spec.sources) {
+  for (const [key, file] of Object.entries(spec.sources)) {
+    const p = path.join(spec.sourceDir, file);
+    if (!fs.existsSync(p)) {
+      problems.push(`source ${key}  ${p} 가 없다 — sourceDir 이동·재순번 여부부터 확인하라`);
+    }
+  }
+}
 
 for (let i = 1; i < spec.beats.length; i++) {
   const prev = spec.beats[i - 1], cur = spec.beats[i];
