@@ -165,6 +165,7 @@ import { extensionForMime } from '@/lib/tour-room/recorder';
 import { detectTtsTier, primeAudio, speakWithDevice } from '@/lib/tour-room/tts';
 import { pickupBoardState } from '@/lib/tour-room/pickup';
 import type { RoomLocale, PickupSequenceStop } from '@/lib/tour-room/snapshot';
+import type { RegionScriptCard, StopPoint } from '@/lib/tour-room/regionScripts';
 import { DEFAULT_REVIEW_POLICY, type RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { RoomLocation } from '@/hooks/useTourRoomChannel';
 import type { VoiceTranscribeResult } from '@/components/tour-mode/Composer';
@@ -694,6 +695,8 @@ function TourRoomLive({
   // the /plan editor already uses; [] when the tour has no product page, and
   // the shell then keeps its plain timeline.
   const [richStops, setRichStops] = useState<unknown[]>([]);
+  const [regionScripts, setRegionScripts] = useState<RegionScriptCard[]>([]);
+  const [regionStops, setRegionStops] = useState<StopPoint[]>([]);
   useEffect(() => {
     const restore = () => {
       try {
@@ -833,6 +836,32 @@ function TourRoomLive({
         if (!cancelled && Array.isArray(json.stops)) setRichStops(json.stops);
       } catch {
         // Offline / route unavailable — the plain timeline still renders.
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [bookingId, data.session, locale]);
+
+  // 지역 공통 해설("제주 알아보기") — Today 탭 맨 위의 가로 띠. 도착 해설이
+  // 장소 단위인 것과 달리 이건 섬 전체 이야기라, 스팟에 도착하지 않은 이동
+  // 시간에도 읽을 것이 생긴다. 실패하면 그냥 섹션이 없는 화면이다.
+  useEffect(() => {
+    if (!data.session) return;
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await fetch(
+          `/api/tour-rooms/${encodeURIComponent(bookingId)}/region-scripts?locale=${encodeURIComponent(locale)}`,
+          { headers: { 'x-tour-room-auth': data.session } },
+        );
+        if (!res.ok) return;
+        const json = (await res.json()) as { cards?: RegionScriptCard[]; stops?: StopPoint[] };
+        if (cancelled) return;
+        if (Array.isArray(json.cards)) setRegionScripts(json.cards);
+        if (Array.isArray(json.stops)) setRegionStops(json.stops);
+      } catch {
+        // Offline — the schedule tab just renders without the band.
       }
     })();
     return () => {
@@ -999,6 +1028,8 @@ function TourRoomLive({
       onTabChange={setActiveTab}
       homeHref={viewerRole === 'guide' ? '/tour-mode/guide' : viewerRole === 'driver' ? '/tour-mode/driver' : undefined}
       richStops={richStops}
+      regionScripts={regionScripts}
+      regionScriptStops={regionStops}
       backHref={
         viewerRole === 'guide'
           ? '/tour-mode/guide'
