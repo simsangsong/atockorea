@@ -1,0 +1,894 @@
+{
+  "slug": "manjanggul-lava-tube",
+  "poiKey": "manjanggul_lava_tube",
+  "title": {
+    "ko": "만장굴",
+    "en": "Manjanggul Lava Tube"
+  },
+  "theme": "pearl",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "encode": {
+    "crf": 17
+  },
+  "sourceDir": "D:/VIDEO2/제주/만장굴",
+  "sources": {
+    "A": "01_20260731_120739.mp4",
+    "B": "02_20260731_120850.mp4",
+    "C": "03_20260731_120924.mp4",
+    "D": "04_20260731_121200.mp4",
+    "E": "05_20260731_121455.mp4",
+    "F": "06_20260731_121629.mp4",
+    "G": "07_20260731_121722.mp4",
+    "H": "08_20260731_121843.mp4",
+    "I": "09_20260731_121956.mp4",
+    "J": "10_20260731_122115.mp4",
+    "K": "11_20260731_122203.mp4",
+    "L": "12_20260731_122425.mp4",
+    "M": "13_20260731_122902.mp4",
+    "N": "14_20260731_123040.mp4",
+    "O": "15_20260731_124458.mp4"
+  },
+  "audio": {
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29). 만장굴 전용 베드 수급 전까지 공유 (Suno 프롬프트 A15 대기)."
+  },
+  "grade": [
+    "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
+    "crop=iw*0.93:ih*0.93",
+    "vibrance=intensity=0.35",
+    "eq=saturation=1.08",
+    "curves=r='0/0 0.05/0.045 0.3/0.315 0.55/0.585 0.8/0.845 1/1':g='0/0 0.05/0.05 0.3/0.31 0.55/0.575 0.8/0.83 1/1':b='0/0.02 0.05/0.065 0.3/0.31 0.55/0.555 0.8/0.795 1/0.965'",
+    "unsharp=13:13:0.45:5:5:0.0",
+    "unsharp=5:5:0.5:5:5:0.0",
+    "noise=alls=3:allf=t+u",
+    "vignette=a=PI/8"
+  ],
+  "_notes": [
+    "감천 스타일 3호기(2026-08-01) — crf17 CDN 마스터 · 풀프레임 정지+화살표 · turns.mjs 완급 · 스펙 grade 오버라이드.",
+    "그레이드는 동굴 실측(YLOW 17-23, YAVG 36-59)에 맞춤: 감천의 블랙 당김 대신 미드톤 리프트, vibrance 0.5→0.35(주광색 나트륨 조명이 이미 웜), 그레인 5→3(고ISO 자체 노이즈), 비네트 PI/8(코너/센터 0.620 실측 — 상수가 아니라 비율 0.60이 규칙).",
+    "클립 F~M은 29.67fps, N은 23.75fps(저조도 가변 프레임레이트) — 동굴 내부 고속은 4~5x 상한(스트로빙), 야외만 5.5~6.5x.",
+    "turns.mjs 실측 반영: C 48.9-55.3(0.801)=기념조형물 · E 8.4-14.3(0.858)=동굴 입구 · F 11.9-16.3(0.809)=용암선반 · G 0.9-12.3+15.9-18.8(0.86-0.907)=용암유선 벽 · H 0.4-12.8(0.91)=광폭 갤러리 · L 7.4-29.8(0.986)=거북바위 · N 17.9-27.8(0.998)=용암석주 도착.",
+    "의도적 1.2x 강등(1x 40% 예산): C 64.9-70.8(0.86 센터건물 접근) · I 21.4-26.3(0.942 통로 응시) · J 4.4-7.7 · K 4.4-7.3 — 시그니처 5경관(입구·튜브 개활·유선·거북·석주)에 1x를 몰아줬다.",
+    "클레임 원천 = match_pois.content_locales(manjanggul_lava_tube): UNESCO 2007 · 7.4km/공개 1km · 폭 23m 높이 18m · 용암석주 7.6m · 연중 11–18°C · 첫째 수요일 휴관 · ₩4,000. 단위는 스펠아웃(gate E-3).",
+    "구조: 콜드오픈(석주→거북→하강) → 주차장 promise → 광장·조형물 → 매표소 → 입장권·나선하강 → 폴라로이드(동굴 입구) → 튜브 진입 → 유선 벽 화살표 → 갤러리 → 거북바위 폴라로이드 → 용암석주 스톱+폴라로이드 → 형성 다이어그램 → 출구 recap. 복귀 구간은 미촬영(동일 경로 왕복) — O 디졸브가 '자리 이동' 의미를 그대로 전달.",
+    "화살표(23)는 첫 렌더 프리즈에서 재조준 예정(T-09/V6-D19) — 현재 좌표는 자리표시자.",
+    "2026-08-01 v2: beat29 4.5x→2x — 화면 0.64s는 0.8s 디졸브보다 짧아 빌드가 J→K 디졸브를 조용히 스킵했다(로그 디졸브 목록 대조로 발견). 화살표 프리즈 17.4→18.4(유선 선반 최선명 프레임)."
+  ],
+  "beats": [
+    {
+      "id": "c1",
+      "kind": "clip",
+      "src": "N",
+      "in": 24.6,
+      "out": 27.5,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "role": "title",
+      "title": "Walk a kilometre inside the earth",
+      "sub": "Manjanggul — Jeju's UNESCO lava tube",
+      "chapter": "The lava tube"
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "L",
+      "in": 29.2,
+      "out": 31.8,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the turtle rock",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "E",
+      "in": 10.6,
+      "out": 13.4,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the way down",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "01",
+      "kind": "clip",
+      "src": "A",
+      "in": 0,
+      "out": 6.6,
+      "speed": 1,
+      "stab": true,
+      "role": "promise",
+      "title": "Start at the car park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "02",
+      "kind": "clip",
+      "src": "A",
+      "in": 6.6,
+      "out": 20.69,
+      "speed": 5.5,
+      "title": "Up the promenade",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.34)"
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 11.73,
+      "speed": 4.5,
+      "title": "The tree-lined approach",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "04",
+      "kind": "clip",
+      "src": "C",
+      "in": 0,
+      "out": 16.4,
+      "speed": 5.5,
+      "title": "Across the plaza",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "04t",
+      "kind": "clip",
+      "src": "C",
+      "in": 16.4,
+      "out": 20.9,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The grounds open up",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "05",
+      "kind": "clip",
+      "src": "C",
+      "in": 20.9,
+      "out": 48.9,
+      "speed": 6.5,
+      "title": "Toward the visitor centre",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "05t",
+      "kind": "clip",
+      "src": "C",
+      "in": 48.9,
+      "out": 54.4,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The lava-tube monument",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "05s",
+      "kind": "clip",
+      "src": "C",
+      "in": 54.4,
+      "out": 66.4,
+      "speed": 6,
+      "title": "On past the lawn",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "05g",
+      "kind": "clip",
+      "src": "C",
+      "in": 66.4,
+      "out": 72,
+      "speed": 1.2,
+      "stab": true,
+      "title": "The centre comes into view",
+      "snapped": {
+        "from": 64.9,
+        "pan": 0.837
+      }
+    },
+    {
+      "id": "06",
+      "kind": "clip",
+      "src": "D",
+      "in": 0,
+      "out": 4.9,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "The Ticket Office",
+        "sub": "₩4,000 a person"
+      },
+      "caption": "Closed the first Wednesday of every month.",
+      "chapter": "Tickets",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "07",
+      "kind": "clip",
+      "src": "D",
+      "in": 4.9,
+      "out": 31.9,
+      "speed": 6,
+      "title": "The queue under the trees",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 6,
+        "pan": 0.571
+      }
+    },
+    {
+      "id": "07t",
+      "kind": "clip",
+      "src": "D",
+      "in": 31.9,
+      "out": 34.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "At the booths",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "08",
+      "kind": "clip",
+      "src": "D",
+      "in": 34.8,
+      "out": 50.6,
+      "speed": 6.5,
+      "title": "To the cave gate",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "09",
+      "kind": "clip",
+      "src": "E",
+      "in": 0,
+      "out": 2.6,
+      "speed": 1,
+      "stab": true,
+      "title": "Ticket in hand",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "10",
+      "kind": "clip",
+      "src": "E",
+      "in": 2.6,
+      "out": 9.9,
+      "speed": 3.5,
+      "title": "Down the switchback",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.23)"
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "E",
+      "in": 9.9,
+      "out": 13.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "Down Into the Cave",
+        "sub": "Mind the wet steps"
+      },
+      "caption": "A steady 11–18°C inside — bring a layer.",
+      "chapter": "Down into the cave",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "12",
+      "kind": "polaroid",
+      "src": "E",
+      "at": 13.5,
+      "hold": 3.8,
+      "photoHold": 1.2,
+      "title": "The cave mouth",
+      "sub": "Everyone's first photo",
+      "caption": "Shoot from the stairs.",
+      "polaroid": {
+        "width": 860,
+        "tilt": 2
+      }
+    },
+    {
+      "id": "13",
+      "kind": "clip",
+      "src": "E",
+      "in": 13.5,
+      "out": 38,
+      "speed": 5,
+      "title": "Into the dark",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "E",
+      "in": 38,
+      "out": 54.2,
+      "speed": 4.5,
+      "title": "The last stairs down",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.26)"
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "E",
+      "in": 54.2,
+      "out": 56.8,
+      "speed": 1.2,
+      "stab": true,
+      "title": "First look down the tube",
+      "snapped": {
+        "from": 52.9,
+        "pan": 0.797
+      }
+    },
+    {
+      "id": "16",
+      "kind": "clip",
+      "src": "E",
+      "in": 56.8,
+      "out": 68.39,
+      "speed": 4.5,
+      "title": "Onto the walkway",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 58.3,
+        "pan": 0.758
+      }
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "F",
+      "in": 0,
+      "out": 8,
+      "speed": 3.5,
+      "title": "Deeper in",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "18",
+      "kind": "clip",
+      "src": "F",
+      "in": 8,
+      "out": 11.9,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Approaching the shelf",
+      "nosnap": "no pan within ±1.5s (max 0.46)"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "F",
+      "in": 11.9,
+      "out": 16.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "Into the Lava Tube",
+        "sub": "A cathedral in basalt"
+      },
+      "caption": "The main tube runs 23 metres wide, 18 high.",
+      "chapter": "Into the tube",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20",
+      "kind": "clip",
+      "src": "F",
+      "in": 16.3,
+      "out": 18.92,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Under the shelf",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "21",
+      "kind": "clip",
+      "src": "G",
+      "in": 0,
+      "out": 5.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The walls stream past",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "G",
+      "in": 5.5,
+      "out": 15,
+      "speed": 4.5,
+      "title": "Along the flowline walls",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "23",
+      "kind": "arrow",
+      "src": "G",
+      "at": 15,
+      "hold": 5,
+      "title": "The Flow Lines",
+      "sub": "Rope marks of old lava",
+      "caption": "Each ledge is a level the lava once ran at.",
+      "chapter": "The flow lines",
+      "arrowOverride": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 1160,
+            "y": 320
+          },
+          "target": {
+            "x": 1560,
+            "y": 540
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ],
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 1160,
+            "y": 320
+          },
+          "target": {
+            "x": 1560,
+            "y": 540
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ]
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "H",
+      "in": 0,
+      "out": 5.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The tube opens wide",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "H",
+      "in": 5.5,
+      "out": 13.44,
+      "speed": 4.5,
+      "title": "Through the gallery",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "I",
+      "in": 0,
+      "out": 22.9,
+      "speed": 4.5,
+      "title": "The high dark passage",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "26t",
+      "kind": "clip",
+      "src": "I",
+      "in": 22.9,
+      "out": 26.66,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Shapes in the ceiling",
+      "snapped": {
+        "from": 21.4,
+        "pan": 0.919
+      }
+    },
+    {
+      "id": "27",
+      "kind": "clip",
+      "src": "J",
+      "in": 0,
+      "out": 4.4,
+      "speed": 4.5,
+      "title": "The path winds on",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "27t",
+      "kind": "clip",
+      "src": "J",
+      "in": 4.4,
+      "out": 7.2,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Between the boulders",
+      "nosnap": "no pan within ±1.5s (max 0.47)"
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "J",
+      "in": 7.2,
+      "out": 19.23,
+      "speed": 5,
+      "title": "On through the tube",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 7.7,
+        "pan": 0.707
+      }
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "K",
+      "in": 0,
+      "out": 2.9,
+      "speed": 2,
+      "title": "The rockfall field",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "29t",
+      "kind": "clip",
+      "src": "K",
+      "in": 2.9,
+      "out": 6.2,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Fallen slabs beside the path",
+      "snapped": {
+        "from": 4.4,
+        "pan": 0.85
+      }
+    },
+    {
+      "id": "30",
+      "kind": "clip",
+      "src": "K",
+      "in": 6.2,
+      "out": 20.03,
+      "speed": 5,
+      "title": "Past the rockfall",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 7.3,
+        "pan": 0.716
+      }
+    },
+    {
+      "id": "31",
+      "kind": "clip",
+      "src": "L",
+      "in": 0,
+      "out": 4.4,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "The Turtle Rock",
+        "sub": "A lava raft left mid-stream"
+      },
+      "caption": "Shaped like Jeju Island — see it side-on.",
+      "chapter": "The turtle rock",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "32",
+      "kind": "clip",
+      "src": "L",
+      "in": 4.4,
+      "out": 27.5,
+      "speed": 5,
+      "title": "Up to the rock",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 5.5,
+        "pan": 0.552
+      }
+    },
+    {
+      "id": "33",
+      "kind": "clip",
+      "src": "L",
+      "in": 27.5,
+      "out": 31.2,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Jeju in miniature",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "34",
+      "kind": "polaroid",
+      "src": "L",
+      "at": 31.2,
+      "hold": 4,
+      "photoHold": 1.2,
+      "title": "The Turtle Rock",
+      "sub": "Jeju Island in stone",
+      "caption": "Jeju in miniature.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2
+      }
+    },
+    {
+      "id": "35",
+      "kind": "clip",
+      "src": "L",
+      "in": 31.2,
+      "out": 43.93,
+      "speed": 5,
+      "title": "Leaving the rock behind",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "36",
+      "kind": "clip",
+      "src": "M",
+      "in": 0,
+      "out": 25.49,
+      "speed": 5,
+      "title": "The last stretch",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "37",
+      "kind": "clip",
+      "src": "N",
+      "in": 0,
+      "out": 3.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Under the hanging rock",
+      "chapter": "The lava column",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "38",
+      "kind": "clip",
+      "src": "N",
+      "in": 3.8,
+      "out": 19.3,
+      "speed": 4,
+      "title": "The corridor narrows",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "39",
+      "kind": "clip",
+      "src": "N",
+      "in": 19.3,
+      "out": 20.9,
+      "speed": 1.2,
+      "stab": true,
+      "title": "There it is",
+      "snapped": {
+        "from": 18,
+        "pan": 0.741
+      }
+    },
+    {
+      "id": "40",
+      "kind": "clip",
+      "src": "N",
+      "in": 20.9,
+      "out": 25.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "The Lava Column",
+        "sub": "Where the open section ends"
+      },
+      "caption": "Lava froze mid-pour — 7.6 metres top to floor.",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "41",
+      "kind": "polaroid",
+      "src": "N",
+      "at": 25.5,
+      "hold": 5,
+      "photoHold": 1.2,
+      "title": "The tallest lava column",
+      "sub": "The end-of-the-line trophy shot",
+      "caption": "The end of the line.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2.2
+      }
+    },
+    {
+      "id": "42",
+      "kind": "clip",
+      "src": "N",
+      "in": 25.5,
+      "out": 32.7,
+      "speed": 3,
+      "title": "Past the crowd",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "43",
+      "kind": "clip",
+      "src": "N",
+      "in": 32.7,
+      "out": 35,
+      "speed": 1.2,
+      "stab": true,
+      "title": "How the column formed",
+      "snapped": {
+        "from": 31.4,
+        "pan": 0.802
+      }
+    },
+    {
+      "id": "44",
+      "kind": "clip",
+      "src": "O",
+      "in": 0,
+      "out": 6.73,
+      "speed": 1,
+      "stab": true,
+      "role": "recap",
+      "title": "Manjanggul Lava Tube",
+      "sub": "Back to daylight — Jeju underground wonder",
+      "chapter": "Full circle",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    }
+  ],
+  "poster": {
+    "src": "N",
+    "at": 25.5
+  },
+  "city": "Jeju",
+  "teaserLead": "41"
+}
