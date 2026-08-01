@@ -36,6 +36,29 @@ if (spec.sourceDir && spec.sources) {
       problems.push(`source ${key}  ${p} 가 없다 — sourceDir 이동·재순번 여부부터 확인하라`);
     }
   }
+  // `beat.photo` prints a real photograph instead of a video freeze; a typo
+  // would otherwise surface as sharp's "input file is missing" mid-render.
+  for (const b of spec.beats) {
+    if (!b.photo) continue;
+    const p = path.join(spec.sourceDir, b.photo);
+    if (!fs.existsSync(p)) problems.push(`${b.id}  photo ${p} 가 없다`);
+  }
+}
+
+// Gate 0b — ids referenced from outside the beat list must resolve. The teaser
+// builder failed on a stale `teaserLead` after a spec rewrite renumbered the
+// polaroids; it is a one-line check here and a wasted render there.
+if (spec.teaserLead && !spec.beats.some((b) => b.id === spec.teaserLead)) {
+  problems.push(`teaserLead "${spec.teaserLead}" 에 해당하는 비트가 없다`);
+}
+
+// Gate 0c — points of interest are a stop and a label, not a pointer (V6-D21,
+// owner 2026-08-01). The arrow machinery stays in the codebase for a future
+// ask; a spec that carries pointers has to say so out loud.
+for (const b of spec.beats) {
+  if (b.arrows?.length && !b.allowArrows) {
+    problems.push(`${b.id}  화살표가 남아 있다 — 중요 포인트는 정지+라벨 (V6-D21). 정말 필요하면 allowArrows: true`);
+  }
 }
 
 for (let i = 1; i < spec.beats.length; i++) {
@@ -156,6 +179,13 @@ for (let i = 1; i < spec.beats.length; i++) {
 
 // Gate E-1 (spec side) — the presbyopia floor is a reading-time budget, not
 // just a font size. A line nobody can finish is the same as no line.
+// 🔴 There is deliberately no tighter character cap for the 88px hero claim.
+// Tried one and it was a fake gate: the approved Yonggungsa title is 36 chars
+// and fits two lines, while Seongsan's rejected 35-char claim wrapped to three
+// — because it carried "5,000-year", a ten-character unbreakable token. What
+// decides the wrap is token length, not string length, so the authority stays
+// vfull's measured fit gate. Check a hero line by rendering the title beat
+// (`--only c1`) before committing to a long build.
 const CHARS_PER_SEC = 12, MIN_HOLD = 2.8, TITLE_MAX = 44, CAPTION_MAX = 58;
 for (let bi = 0; bi < spec.beats.length; bi++) {
   const b = spec.beats[bi];
