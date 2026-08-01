@@ -23,9 +23,20 @@ export async function pathLuma(framePath, arrows) {
   const width = Math.min(meta.width - left, Math.ceil(Math.max(...xs) - Math.min(...xs) + pad * 2));
   const height = Math.min(meta.height - top, Math.ceil(Math.max(...ys) - Math.min(...ys) + pad * 2));
   if (width < 4 || height < 4) return null;
-  const { channels } = await sharp(framePath).extract({ left, top, width, height }).stats();
-  const [r, g, b] = channels;
-  return 0.2126 * r.mean + 0.7152 * g.mean + 0.0722 * b.mean;
+  // 🔴 `sharp(f).extract(box).stats()` ignores the extract and reports the WHOLE
+  // frame — measured 2026-08-01: a 200x200 corner and the full 1920x1080 both
+  // returned 108.1. So this read the global average for its entire life, and
+  // `adapt()` never once compensated for a bright background. Average the
+  // cropped pixels directly instead.
+  const { data, info } = await sharp(framePath)
+    .extract({ left, top, width, height })
+    .removeAlpha().raw().toBuffer({ resolveWithObject: true });
+  let r = 0, g = 0, b = 0;
+  const px = info.width * info.height;
+  for (let i = 0; i < data.length; i += info.channels) {
+    r += data[i]; g += data[i + 1]; b += data[i + 2];
+  }
+  return (0.2126 * r + 0.7152 * g + 0.0722 * b) / px;
 }
 
 /**

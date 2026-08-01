@@ -20,30 +20,22 @@
     "B": "04_20260731_134455.mp4",
     "C": "05_20260731_134517.mp4",
     "D": "07_20260731_134946.mp4",
-    "E": "09_20260731_140012.mp4",
-    "F": "10_20260731_140110.mp4",
-    "G": "11_20260731_140142.mp4",
-    "H": "12_20260731_140212.mp4",
-    "I": "13_20260731_140249.mp4",
-    "J": "14_20260731_140341.mp4",
-    "K": "22_20260731_140630.mp4",
-    "L": "23_20260731_140739.mp4",
-    "M": "24_20260731_140851.mp4",
     "N": "25_20260731_142004.mp4",
     "O": "26_20260731_142131.mp4",
-    "P": "27_20260731_142233.mp4",
-    "Q": "28_20260731_142426.mp4",
     "R": "29_20260731_142738.mp4",
-    "S": "31_20260731_142844.mp4",
     "T": "32_20260731_143049.mp4",
     "U": "34_20260731_143523.mp4",
     "V": "39_20260731_143657.mp4",
-    "W": "40_20260731_143925.mp4",
     "X": "41_20260731_144054.mp4",
     "Y": "42_20260731_144949.mp4",
     "Z": "43_20260731_145152.mp4",
     "ZA": "44_20260731_145308.mp4",
-    "ZB": "extra_20260801_135822.mp4"
+    "ZB": "45_20260801_135822.mp4",
+    "ZC": "46_20260801_140029.mp4",
+    "ZD": "47_20260801_140227.mp4",
+    "ZE": "48_20260801_140547.mp4",
+    "ZF": "49_20260801_140607.mp4",
+    "ZG": "54_20260801_140723.mp4"
   },
   "audio": {
     "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
@@ -56,7 +48,8 @@
     "1x 예산 재배분: 몽타주가 예산의 주인 — 돌하르방(06t)·동벽(18)·우도 접근(57)은 1.2x 강등. 해무 그레이드·비네트 PI/12 근거는 v1 노트 유지.",
     "프리즈 4곳(02r·05f·07f·09f) 좌표는 렌더 스틸에서 재조준 예정(자리표시자). 05f는 팬 피크(2.9) 회피해 5.3(직원 손 흔드는 프레임).",
     "클레임 원천 = match_pois(seongsan_ilchulbong) + 사장님 그라운드트루스(해녀쇼 14:00 1회·화장실 위치).",
-    "2026-08-01 사장님: 화살표 폐지 — 중요 포인트는 용궁사 12지신상·달라이라마상처럼 \"정지 + 타이포 라벨\"로만. arrow 비트는 화살표 없이 프리즈+셸 타이포로 남는다."
+    "2026-08-01 사장님: 화살표 폐지 — 중요 포인트는 용궁사 12지신상·달라이라마상처럼 \"정지 + 타이포 라벨\"로만. arrow 비트는 화살표 없이 프리즈+셸 타이포로 남는다.",
+    "2026-08-01 저녁 사장님 노트 6건: ①주차장 화장실은 오른쪽이 아니라 왼쪽 — A@8.0 은 성산 봉우리+녹색 펜스뿐이었고 실제 화장실(화장실 표지판 + 차량 뒤 브라운 기와지붕)은 A@15.0 에 있다 ②매표소 전 두 번째 화장실은 미촬영 → 굵은 흰 포인터(stem 18)로 왼쪽 지시, allowArrows ③우도에 포인터 1개(그레이드 통과 프레임에서 실측한 출력 좌표) ④하산 구간 단축 — 계단/보드워크 러닝 8x, 60번(마지막 북쪽 조망) 삭제, 51·55·62 트림 ⑤정상 하산 중 한라산 뷰(V@86–89.5)를 7x 러닝에서 꺼내 1x 스톱으로 ⑥해녀공연·콜드오픈 전경은 오늘 촬영분(ZC~ZG)으로 교체, 폴라로이드는 실사진 55_20260801_140806.jpg."
   ],
   "beats": [
     {
@@ -76,13 +69,13 @@
     {
       "id": "c2",
       "kind": "clip",
-      "src": "F",
-      "in": 0.5,
-      "out": 3.1,
+      "src": "ZD",
+      "in": 1.5,
+      "out": 4.1,
       "speed": 1,
       "stab": true,
       "mute": true,
-      "title": "Cold open — the show under the wall",
+      "title": "Cold open — the divers under the wall",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.5
@@ -123,7 +116,7 @@
       "kind": "clip",
       "src": "A",
       "in": 0,
-      "out": 6.5,
+      "out": 4,
       "speed": 1,
       "stab": true,
       "role": "promise",
@@ -137,62 +130,87 @@
       "id": "02",
       "kind": "clip",
       "src": "A",
-      "in": 6.5,
-      "out": 8,
-      "speed": 1.2,
+      "in": 4,
+      "out": 9,
+      "speed": 1,
       "stab": true,
-      "title": "Turning left",
-      "snapped": {
-        "from": 6.6,
-        "pan": 0.559
-      }
-    },
-    {
-      "id": "02r",
-      "kind": "arrow",
-      "src": "A",
-      "at": 8,
-      "hold": 4.4,
-      "title": "Restrooms First",
-      "sub": "Behind the parked cars",
-      "caption": "The low brown roof, left of the steps — go now."
+      "title": "The peak, over the fence",
+      "turn": true,
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "03",
       "kind": "clip",
       "src": "A",
-      "in": 8,
-      "out": 12.9,
-      "speed": 4,
-      "title": "Across the car park",
-      "ramp": {
-        "seconds": 0.6
-      }
+      "in": 9,
+      "out": 15,
+      "speed": 1.5,
+      "title": "Back across the car park",
+      "nosnap": "pan settles into the walk"
     },
     {
-      "id": "02t",
-      "kind": "clip",
+      "id": "02r",
+      "kind": "arrow",
       "src": "A",
-      "in": 12.9,
-      "out": 15.3,
-      "speed": 1,
-      "stab": true,
-      "turn": true,
-      "title": "The peak appears",
-      "nosnap": "turn beat — edge is content, not a seam"
+      "at": 15,
+      "hold": 4.6,
+      "title": "Restrooms First",
+      "sub": "The brown roof behind the cars",
+      "caption": "Left of the gift shop — go before you climb."
     },
     {
       "id": "04",
       "kind": "clip",
       "src": "A",
-      "in": 15.3,
+      "in": 15,
+      "out": 30,
+      "speed": 7,
+      "title": "Past the souvenir stalls",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "04r",
+      "kind": "arrow",
+      "src": "A",
+      "at": 30,
+      "hold": 4.6,
+      "allowArrows": true,
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 820,
+            "y": 750
+          },
+          "target": {
+            "x": 340,
+            "y": 730
+          },
+          "gap": 40,
+          "stem": 26,
+          "headLen": 66,
+          "headWidth": 58
+        }
+      ],
+      "title": "A Second Restroom",
+      "sub": "Left, past the gift shops",
+      "caption": "The last one before the ticket gate."
+    },
+    {
+      "id": "04b",
+      "kind": "clip",
+      "src": "A",
+      "in": 30,
       "out": 44.22,
       "speed": 7,
       "title": "Up the promenade",
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "turn beat — edge is content, not a seam"
+      "nosnap": "resumes the walk the freeze paused"
     },
     {
       "id": "05",
@@ -321,14 +339,18 @@
     {
       "id": "11",
       "kind": "clip",
-      "src": "C",
-      "in": 103.4,
-      "out": 107.8,
+      "src": "ZC",
+      "in": 1,
+      "out": 5.4,
       "speed": 1,
       "stab": true,
       "turn": true,
-      "title": "The cove comes into view",
-      "nosnap": "turn beat — edge is content, not a seam"
+      "title": "The cove opens up below",
+      "nosnap": "turn beat — edge is content, not a seam",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "12",
@@ -341,7 +363,11 @@
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "turn beat — edge is content, not a seam"
+      "nosnap": "turn beat — edge is content, not a seam",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "13",
@@ -477,9 +503,9 @@
     {
       "id": "21",
       "kind": "clip",
-      "src": "F",
-      "in": 0.5,
-      "out": 5.3,
+      "src": "ZD",
+      "in": 1,
+      "out": 5.6,
       "speed": 1,
       "stab": true,
       "stopLabel": {
@@ -496,12 +522,12 @@
     {
       "id": "22",
       "kind": "clip",
-      "src": "E",
-      "in": 33,
-      "out": 37.5,
+      "src": "ZD",
+      "in": 9,
+      "out": 13.4,
       "speed": 1,
       "stab": true,
-      "title": "The welcome song",
+      "title": "The line under the east wall",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.4
@@ -510,12 +536,12 @@
     {
       "id": "23",
       "kind": "clip",
-      "src": "H",
-      "in": 2,
-      "out": 7,
+      "src": "ZE",
+      "in": 0.8,
+      "out": 5.2,
       "speed": 1,
       "stab": true,
-      "title": "Tewak up close",
+      "title": "Wading in",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.4
@@ -524,12 +550,12 @@
     {
       "id": "24",
       "kind": "clip",
-      "src": "I",
-      "in": 26,
-      "out": 30.5,
+      "src": "ZF",
+      "in": 3,
+      "out": 7.6,
       "speed": 1,
       "stab": true,
-      "title": "A catch held high",
+      "title": "Tewak floats and the catch",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.4
@@ -538,12 +564,12 @@
     {
       "id": "25",
       "kind": "clip",
-      "src": "J",
-      "in": 85.9,
-      "out": 90.4,
+      "src": "ZG",
+      "in": 4,
+      "out": 8.6,
       "speed": 1,
       "stab": true,
-      "title": "A diver passes close",
+      "title": "A diver swims past",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.4
@@ -552,10 +578,11 @@
     {
       "id": "26",
       "kind": "polaroid",
-      "src": "J",
-      "at": 90.4,
+      "src": "ZG",
+      "at": 8.6,
       "hold": 4.5,
       "photoHold": 1.2,
+      "photo": "50_20260801_140633.jpg",
       "title": "The haenyeo",
       "sub": "Jeju's sea women",
       "caption": "Once a day only.",
@@ -567,23 +594,9 @@
     {
       "id": "27",
       "kind": "clip",
-      "src": "J",
-      "in": 109,
-      "out": 113.5,
-      "speed": 1,
-      "stab": true,
-      "title": "Wading out",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.4
-      }
-    },
-    {
-      "id": "28",
-      "kind": "clip",
-      "src": "J",
-      "in": 118.4,
-      "out": 123,
+      "src": "ZG",
+      "in": 9.5,
+      "out": 13.9,
       "speed": 1,
       "stab": true,
       "title": "Four abreast, out to sea",
@@ -593,33 +606,33 @@
       }
     },
     {
-      "id": "29",
+      "id": "28",
       "kind": "clip",
-      "src": "K",
-      "in": 31.5,
-      "out": 36.6,
+      "src": "ZC",
+      "in": 12,
+      "out": 16.4,
       "speed": 1,
       "stab": true,
-      "title": "Working the cove",
+      "title": "The crowd on the rocks",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.4
       }
     },
     {
-      "id": "30",
+      "id": "29",
       "kind": "clip",
-      "src": "K",
-      "in": 36.6,
-      "out": 53.21,
-      "speed": 7,
+      "src": "ZC",
+      "in": 30,
+      "out": 42,
+      "speed": 6,
       "title": "The show winds down",
       "ramp": {
         "seconds": 0.6
       },
-      "snapped": {
-        "from": 35.5,
-        "pan": 0.954
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.4
       }
     },
     {
@@ -839,7 +852,8 @@
       "polaroid": {
         "width": 880,
         "tilt": -2.2
-      }
+      },
+      "photo": "37_20260731_143602.jpg"
     },
     {
       "id": "45",
@@ -917,7 +931,7 @@
       "src": "V",
       "in": 27.3,
       "out": 51.2,
-      "speed": 7,
+      "speed": 8,
       "title": "Turning for home",
       "ramp": {
         "seconds": 0.6
@@ -929,7 +943,7 @@
       "kind": "clip",
       "src": "V",
       "in": 51.2,
-      "out": 55.1,
+      "out": 54,
       "speed": 1.2,
       "stab": true,
       "title": "Down the long boards",
@@ -942,30 +956,43 @@
       "id": "52",
       "kind": "clip",
       "src": "V",
-      "in": 55.1,
-      "out": 79,
-      "speed": 7,
-      "title": "Switchbacks seaward",
+      "in": 54,
+      "out": 86,
+      "speed": 8,
+      "title": "Down the long boards",
       "ramp": {
         "seconds": 0.6
       },
-      "snapped": {
-        "from": 56,
-        "pan": 0.587
-      }
+      "nosnap": "ramped run — no seam to snap to"
     },
     {
       "id": "53",
       "kind": "clip",
       "src": "V",
-      "in": 79,
+      "in": 86,
+      "out": 90,
+      "speed": 1,
+      "nosnap": "turn beat — edge is content, not a seam",
+      "turn": true,
+      "stab": true,
+      "stopLabel": {
+        "title": "Hallasan on the Horizon",
+        "sub": "The whole isthmus at once"
+      },
+      "caption": "Hallasan on the skyline, left of the town."
+    },
+    {
+      "id": "53b",
+      "kind": "clip",
+      "src": "V",
+      "in": 90,
       "out": 101.12,
-      "speed": 7,
+      "speed": 8,
       "title": "The town rises to meet you",
       "ramp": {
         "seconds": 0.6
       },
-      "nosnap": "no pan within ±1.5s (max 0.46)"
+      "nosnap": "resumes the descent the stop paused"
     },
     {
       "id": "54",
@@ -973,7 +1000,7 @@
       "src": "X",
       "in": 0,
       "out": 18,
-      "speed": 7,
+      "speed": 8,
       "title": "The boardwalk rolls on",
       "ramp": {
         "seconds": 0.6
@@ -988,7 +1015,7 @@
       "kind": "clip",
       "src": "Y",
       "in": 0,
-      "out": 6.3,
+      "out": 4.2,
       "speed": 1.2,
       "stab": true,
       "title": "Two grandfathers see you off",
@@ -1001,9 +1028,9 @@
       "id": "56",
       "kind": "clip",
       "src": "Y",
-      "in": 6.3,
+      "in": 4.2,
       "out": 29.5,
-      "speed": 7,
+      "speed": 8,
       "title": "Down the east stairs",
       "ramp": {
         "seconds": 0.6
@@ -1036,7 +1063,25 @@
       "title": "Udo Island",
       "sub": "Across the channel",
       "caption": "Ferries run from Seongsan port — save it for later.",
-      "chapter": "Udo in view"
+      "chapter": "Udo in view",
+      "allowArrows": true,
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 1360,
+            "y": 380
+          },
+          "target": {
+            "x": 1100,
+            "y": 210
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ]
     },
     {
       "id": "59",
@@ -1044,24 +1089,10 @@
       "src": "Y",
       "in": 34.5,
       "out": 55.9,
-      "speed": 6.5,
+      "speed": 8,
       "title": "The last flights down",
       "ramp": {
         "seconds": 0.6
-      }
-    },
-    {
-      "id": "60",
-      "kind": "clip",
-      "src": "Y",
-      "in": 55.9,
-      "out": 58,
-      "speed": 1.2,
-      "stab": true,
-      "title": "One last look north",
-      "snapped": {
-        "from": 55.4,
-        "pan": 0.986
       }
     },
     {
@@ -1070,7 +1101,7 @@
       "src": "Z",
       "in": 3.4,
       "out": 20,
-      "speed": 6.5,
+      "speed": 8,
       "title": "Down the home stretch",
       "ramp": {
         "seconds": 0.6
@@ -1085,7 +1116,7 @@
       "kind": "clip",
       "src": "Z",
       "in": 20,
-      "out": 23.8,
+      "out": 22.5,
       "speed": 1,
       "stab": true,
       "turn": true,
@@ -1096,9 +1127,9 @@
       "id": "63",
       "kind": "clip",
       "src": "Z",
-      "in": 23.8,
+      "in": 22.5,
       "out": 39.51,
-      "speed": 7,
+      "speed": 8,
       "title": "Back to gate level",
       "ramp": {
         "seconds": 0.6

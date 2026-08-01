@@ -45,6 +45,15 @@ if (spec.sourceDir && spec.sources) {
   }
 }
 
+// Gate 0d — a declared music bed must exist. build.mjs resolves it fail-open
+// (`fs.existsSync(...) ? bed : null`), so a missing file ships a SILENT master
+// and says so in one grey log line among hundreds. `assets/audio/video-guide/`
+// is gitignored, so a fresh worktree has no bed at all — which is exactly how
+// this was found, four attractions in.
+if (spec.audio?.bed && !fs.existsSync(spec.audio.bed)) {
+  problems.push(`audio.bed ${spec.audio.bed} 가 없다 — 음악 없는 마스터가 조용히 나간다. D:/VIDEO2/_음악베드/ 에서 복사하라`);
+}
+
 // Gate 0b — ids referenced from outside the beat list must resolve. The teaser
 // builder failed on a stale `teaserLead` after a spec rewrite renumbered the
 // polaroids; it is a one-line check here and a wasted render there.
