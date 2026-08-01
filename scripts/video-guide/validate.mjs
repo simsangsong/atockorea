@@ -74,6 +74,20 @@ for (let i = 0; i < spec.beats.length - 1; i++) {
   }
 }
 
+// Gate 1b — a dissolve needs room on BOTH sides. build.mjs silently skips the
+// join when either neighbour's on-screen duration is shorter than the dissolve
+// (Manjanggul beat 29: 0.64s beat vs 0.8s dissolve — the J→K join shipped as a
+// hard cut and only a log-list diff caught it).
+for (let i = 0; i < spec.beats.length; i++) {
+  const b = spec.beats[i];
+  const s = b.transition?.seconds;
+  if (!s) continue;
+  const durOf = (x) => (x.kind === 'clip' ? (x.out - x.in) / (x.speed ?? 1) : x.hold);
+  if (durOf(b) < s) problems.push(`${b.id}  화면 ${durOf(b).toFixed(2)}s < 디졸브 ${s}s — 빌드가 조용히 스킵한다`);
+  const prev = spec.beats[i - 1];
+  if (prev && durOf(prev) < s) problems.push(`${prev.id}→${b.id}  앞 비트 ${durOf(prev).toFixed(2)}s < 디졸브 ${s}s — 이음새가 앞 비트를 다 먹는다`);
+}
+
 // Gate 2 — a close-up must never crop its own subject. v4 shipped four of them
 // framed tighter than the thing they were framing, and start/end stills looked
 // fine because each showed a different third of the statue.
