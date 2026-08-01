@@ -57,7 +57,8 @@
     "클레임 원천 = match_pois.content_locales(manjanggul_lava_tube): UNESCO 2007 · 7.4km/공개 1km · 폭 23m 높이 18m · 용암석주 7.6m · 연중 11–18°C · 첫째 수요일 휴관 · ₩4,000. 단위는 스펠아웃(gate E-3).",
     "구조: 콜드오픈(석주→거북→하강) → 주차장 promise → 광장·조형물 → 매표소 → 입장권·나선하강 → 폴라로이드(동굴 입구) → 튜브 진입 → 유선 벽 화살표 → 갤러리 → 거북바위 폴라로이드 → 용암석주 스톱+폴라로이드 → 형성 다이어그램 → 출구 recap. 복귀 구간은 미촬영(동일 경로 왕복) — O 디졸브가 '자리 이동' 의미를 그대로 전달.",
     "화살표(23)는 첫 렌더 프리즈에서 재조준 예정(T-09/V6-D19) — 현재 좌표는 자리표시자.",
-    "2026-08-01 v2: beat29 4.5x→2x — 화면 0.64s는 0.8s 디졸브보다 짧아 빌드가 J→K 디졸브를 조용히 스킵했다(로그 디졸브 목록 대조로 발견). 화살표 프리즈 17.4→18.4(유선 선반 최선명 프레임)."
+    "2026-08-01 v2: beat29 4.5x→2x — 화면 0.64s는 0.8s 디졸브보다 짧아 빌드가 J→K 디졸브를 조용히 스킵했다(로그 디졸브 목록 대조로 발견). 화살표 프리즈 17.4→18.4(유선 선반 최선명 프레임).",
+    "2026-08-01 사장님: 화살표 폐지 — 중요 포인트는 용궁사 12지신상·달라이라마상처럼 \"정지 + 타이포 라벨\"로만. arrow 비트는 화살표 없이 프리즈+셸 타이포로 남는다."
   ],
   "beats": [
     {
@@ -337,7 +338,7 @@
       "kind": "polaroid",
       "src": "E",
       "at": 13.5,
-      "hold": 3.8,
+      "hold": 4.5,
       "photoHold": 1.2,
       "title": "The cave mouth",
       "sub": "Everyone's first photo",
@@ -494,41 +495,7 @@
       "title": "The Flow Lines",
       "sub": "Rope marks of old lava",
       "caption": "Each ledge is a level the lava once ran at.",
-      "chapter": "The flow lines",
-      "arrowOverride": [
-        {
-          "mode": "pointer",
-          "from": {
-            "x": 1160,
-            "y": 320
-          },
-          "target": {
-            "x": 1560,
-            "y": 540
-          },
-          "gap": 40,
-          "stem": 8,
-          "headLen": 26,
-          "headWidth": 23
-        }
-      ],
-      "arrows": [
-        {
-          "mode": "pointer",
-          "from": {
-            "x": 1160,
-            "y": 320
-          },
-          "target": {
-            "x": 1560,
-            "y": 540
-          },
-          "gap": 40,
-          "stem": 8,
-          "headLen": 26,
-          "headWidth": 23
-        }
-      ]
+      "chapter": "The flow lines"
     },
     {
       "id": "24",
@@ -729,7 +696,7 @@
       "kind": "polaroid",
       "src": "L",
       "at": 31.2,
-      "hold": 4,
+      "hold": 4.7,
       "photoHold": 1.2,
       "title": "The Turtle Rock",
       "sub": "Jeju Island in stone",
@@ -831,7 +798,7 @@
       "kind": "polaroid",
       "src": "N",
       "at": 25.5,
-      "hold": 5,
+      "hold": 5.7,
       "photoHold": 1.2,
       "title": "The tallest lava column",
       "sub": "The end-of-the-line trophy shot",

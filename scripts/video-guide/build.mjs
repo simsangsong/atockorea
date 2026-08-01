@@ -183,22 +183,30 @@ async function renderHold(beat, out) {
       + `y='${f.start.y.toFixed(1)}+${(f.end.y - f.start.y).toFixed(1)}*${p}',${VSCALE}[v];`;
   } else if (beat.kind === 'polaroid') {
     const card = path.join(CACHE, `polaroid_${beat.id}.png`);
-    await renderPolaroid({ framePath: still, outFile: card, opts: beat.polaroid ?? {} });
+    // beat.photo: a real photograph (filename in sourceDir) becomes the print
+    // instead of a video freeze — the shooter's own stills beat any frame grab.
+    // The backdrop stays the video freeze so the cut still lands on its frame.
+    const printSrc = beat.photo ? path.join(spec.sourceDir, beat.photo) : still;
+    await renderPolaroid({ framePath: printSrc, outFile: card, opts: beat.polaroid ?? {} });
     inputs.push('-loop', '1', '-framerate', String(FPS), '-t', String(dur), '-i', card);
-    // Four beats, the way a real print behaves: shutter bloom, the print settles
-    // in, it is held long enough to actually read, then it is pulled away to the
-    // side. v1 stopped after the hold and the card just vanished on the cut.
-    // The print used to sit there for four seconds and the cut stalled. It now
-    // holds just long enough to register — the beat is the snapshot, not a pause.
+    // Five beats, the way a real photo is taken (owner note 2026-08-01): the
+    // walker STOPS for a breath, THEN the shutter blooms, the print settles in,
+    // it is held long enough to read, and it flies away like paper — a diagonal
+    // up-and-away drift with a slight rotation, not a straight slide.
+    const pause = beat.polaroid?.pause ?? 0.7;      // the "stop to shoot" breath
     const photoHold = beat.photoHold ?? 1.2;
-    const exit = +Math.min(dur - 0.7, 0.54 + photoHold).toFixed(2);
-    const slide = Math.round(OUT_W * 1.25);
-    filter += `eq=brightness='if(lt(t,0.14),(0.14-t)*5.5,-0.055)':saturation=0.92:eval=frame[bg];`
+    const bloomEnd = +(pause + 0.14).toFixed(2);
+    const exit = +Math.min(dur - 0.8, pause + 0.54 + photoHold).toFixed(2);
+    const slideX = Math.round(OUT_W * 1.2);
+    const slideY = Math.round(OUT_H * 0.6);
+    const spin = (beat.polaroid?.tilt ?? -2) >= 0 ? 0.34 : -0.34;   // fly with the tilt
+    filter += `eq=brightness='if(lt(t,${pause}),0,if(lt(t,${bloomEnd}),(${bloomEnd}-t)*5.5,-0.055))':saturation='if(lt(t,${pause}),1,0.92)':eval=frame[bg];`
       + `[${next}:v]scale=${OUT_W}:${OUT_H},`
-      + `fade=t=in:st=0.14:d=0.40:alpha=1,fade=t=out:st=${(exit + 0.24).toFixed(2)}:d=0.42:alpha=1[card];`
+      + `fade=t=in:st=${bloomEnd}:d=0.40:alpha=1,fade=t=out:st=${(exit + 0.22).toFixed(2)}:d=0.44:alpha=1,`
+      + `rotate=a='if(lt(t,${exit}),0,min((t-${exit})/0.66,1)*${spin})':c=none[card];`
       + `[bg][card]overlay=format=auto:`
-      + `x='if(lt(t,${exit}),0,pow((t-${exit})/0.62,1.55)*${slide})':`
-      + `y='if(lt(t,${exit}),0,pow((t-${exit})/0.62,2)*74)',${VSCALE}[v];`;
+      + `x='if(lt(t,${exit}),0,pow((t-${exit})/0.66,1.3)*${slideX})':`
+      + `y='if(lt(t,${exit}),0,-pow((t-${exit})/0.66,1.7)*${slideY})',${VSCALE}[v];`;
     next++;
   } else {
     const seqDir = path.join(CACHE, `ovl_${beat.id}`);
