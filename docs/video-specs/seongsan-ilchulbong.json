@@ -1,0 +1,1239 @@
+{
+  "slug": "seongsan-ilchulbong",
+  "poiKey": "seongsan_ilchulbong",
+  "title": {
+    "ko": "성산일출봉",
+    "en": "Seongsan Ilchulbong"
+  },
+  "theme": "pearl",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "encode": {
+    "crf": 17
+  },
+  "sourceDir": "D:/VIDEO2/제주/성산일출봉",
+  "sources": {
+    "A": "03_20260731_133516.mp4",
+    "B": "04_20260731_134455.mp4",
+    "C": "05_20260731_134517.mp4",
+    "D": "07_20260731_134946.mp4",
+    "E": "09_20260731_140012.mp4",
+    "F": "10_20260731_140110.mp4",
+    "G": "11_20260731_140142.mp4",
+    "H": "12_20260731_140212.mp4",
+    "I": "13_20260731_140249.mp4",
+    "J": "14_20260731_140341.mp4",
+    "K": "22_20260731_140630.mp4",
+    "L": "23_20260731_140739.mp4",
+    "M": "24_20260731_140851.mp4",
+    "N": "25_20260731_142004.mp4",
+    "O": "26_20260731_142131.mp4",
+    "P": "27_20260731_142233.mp4",
+    "Q": "28_20260731_142426.mp4",
+    "R": "29_20260731_142738.mp4",
+    "S": "31_20260731_142844.mp4",
+    "T": "32_20260731_143049.mp4",
+    "U": "34_20260731_143523.mp4",
+    "V": "39_20260731_143657.mp4",
+    "W": "40_20260731_143925.mp4",
+    "X": "41_20260731_144054.mp4",
+    "Y": "42_20260731_144949.mp4",
+    "Z": "43_20260731_145152.mp4",
+    "ZA": "44_20260731_145308.mp4"
+  },
+  "audio": {
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29). 성산 전용 베드 수급 전까지 공유 (Suno 프롬프트 A16/A17 대기)."
+  },
+  "_notes": [
+    "감천 스타일 4호기(2026-08-01) — 사장님 루트 하이라이트 반영: 주차장→매표소→검표소→갈래길 왼쪽→우뭇개→해녀쇼(14:00)→검표소 복귀→등산→분화구→하산(우도 화살표)→출구.",
+    "해무 그레이드: YLOW 45~89(뜬 블랙) → 블랙 당김+클래리티+vibrance 0.45. 6프레임 비포/애프터 검증.",
+    "🔴비네트 0.60비 규칙이 이 푸티지에선 성립 불가 — 코너가 하늘이라 무보정 코너/센터가 이미 >1.2(콘텐츠 의존). 감쇠량 기준 PI/12 채택. 규칙은 코너가 어두운 콘텐츠에서만 비율로 판정할 것.",
+    "세로 클립 01·02·06(rot -90) 제외 — 쇼츠용 보존. 42클립 60초 이후 = 망원경 렌즈 클로즈업(사용 불가) 컷.",
+    "쇼 클립(E·J·K)은 관람 클립이라 pan 신호 포화 — 쇼 핵심(입장·테왁·근접 통과·입수)만 1x, 나머지 압축. 의도적 1.2x/고속 강등 다수(1x 40% 예산).",
+    "클레임 원천 = match_pois(seongsan_ilchulbong): 트리플 UNESCO(2007+2002+2010)·5,000년 응회구·182m·분화구 600×90m·해녀공연 매일 14:00 1회(사장님 그라운드트루스 일치)·₩5,000/7세 미만·65세 이상 무료.",
+    "우도 화살표(65)는 렌더 프리즈에서 재조준 예정 — at=34.5는 팬 피크(35.4) 회피(T-48). 좌표는 자리표시자."
+  ],
+  "beats": [
+    {
+      "id": "c1",
+      "kind": "clip",
+      "src": "U",
+      "in": 10.5,
+      "out": 13.5,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "role": "title",
+      "title": "Jeju's 5,000-year sunrise crown",
+      "sub": "Seongsan Ilchulbong — triple UNESCO",
+      "chapter": "The sunrise peak"
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "J",
+      "in": 86,
+      "out": 88.6,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the haenyeo",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "Z",
+      "in": 19.5,
+      "out": 22.3,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the coast below",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "01",
+      "kind": "clip",
+      "src": "A",
+      "in": 0,
+      "out": 7.1,
+      "speed": 1,
+      "stab": true,
+      "role": "promise",
+      "title": "Start at the car park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "02",
+      "kind": "clip",
+      "src": "A",
+      "in": 7.1,
+      "out": 12.9,
+      "speed": 5,
+      "title": "Past the gift shops",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 6.6,
+        "pan": 0.775
+      }
+    },
+    {
+      "id": "02t",
+      "kind": "clip",
+      "src": "A",
+      "in": 12.9,
+      "out": 15.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The peak appears",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "A",
+      "in": 15.3,
+      "out": 44.22,
+      "speed": 7,
+      "title": "Up the promenade",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "04",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 3.6,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "The Ticket Office",
+        "sub": "₩5,000 — kids under 7 free"
+      },
+      "caption": "Machines take cards.",
+      "chapter": "Tickets",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "04s",
+      "kind": "clip",
+      "src": "B",
+      "in": 3.6,
+      "out": 8.3,
+      "speed": 2.5,
+      "title": "Through to the path",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 4.9,
+        "pan": 0.717
+      }
+    },
+    {
+      "id": "05",
+      "kind": "clip",
+      "src": "C",
+      "in": 0,
+      "out": 18.4,
+      "speed": 6,
+      "title": "Onto the approach walk",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "05t",
+      "kind": "clip",
+      "src": "C",
+      "in": 18.4,
+      "out": 23.4,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The stone grandfathers",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "06",
+      "kind": "clip",
+      "src": "C",
+      "in": 23.4,
+      "out": 45.3,
+      "speed": 6.5,
+      "title": "Along the fence line",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "07",
+      "kind": "clip",
+      "src": "C",
+      "in": 45.3,
+      "out": 50.2,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "The Check Gate",
+        "sub": "Tickets checked here"
+      },
+      "caption": "Remember this booth — you pass it again to climb.",
+      "snapped": {
+        "from": 45,
+        "pan": 0.82
+      }
+    },
+    {
+      "id": "08",
+      "kind": "clip",
+      "src": "C",
+      "in": 50.2,
+      "out": 63.5,
+      "speed": 5.5,
+      "title": "Onto the grass",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 51.3,
+        "pan": 0.669
+      }
+    },
+    {
+      "id": "09",
+      "kind": "clip",
+      "src": "C",
+      "in": 63.5,
+      "out": 70.3,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "Go LEFT at the Fork",
+        "sub": "Haenyeo cove first — the peak can wait"
+      },
+      "caption": "The show runs once a day at 14:00 — time it right.",
+      "chapter": "Left at the fork",
+      "snapped": {
+        "from": 62.4,
+        "pan": 0.571
+      }
+    },
+    {
+      "id": "10",
+      "kind": "clip",
+      "src": "C",
+      "in": 70.3,
+      "out": 103.4,
+      "speed": 7.5,
+      "title": "Down toward the sea",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.43)"
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "C",
+      "in": 103.4,
+      "out": 107.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The cove comes into view",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "12",
+      "kind": "clip",
+      "src": "C",
+      "in": 107.8,
+      "out": 124.9,
+      "speed": 6,
+      "title": "The long stair down",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "13",
+      "kind": "clip",
+      "src": "C",
+      "in": 124.9,
+      "out": 129.2,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Nearly at the water",
+      "snapped": {
+        "from": 123.9,
+        "pan": 0.846
+      }
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "C",
+      "in": 129.2,
+      "out": 157.5,
+      "speed": 7.5,
+      "title": "The last flights",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 129.3,
+        "pan": 0.742
+      }
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "D",
+      "in": 0,
+      "out": 6.7,
+      "speed": 4,
+      "title": "Onto the cove rocks",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      },
+      "chapter": "Umutgae cove"
+    },
+    {
+      "id": "16",
+      "kind": "clip",
+      "src": "D",
+      "in": 6.7,
+      "out": 9.8,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Past the haenyeo house",
+      "snapped": {
+        "from": 5.4,
+        "pan": 0.728
+      }
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "D",
+      "in": 9.8,
+      "out": 21.4,
+      "speed": 5.5,
+      "title": "Across the black sand",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.45)"
+    },
+    {
+      "id": "18",
+      "kind": "clip",
+      "src": "D",
+      "in": 21.4,
+      "out": 25.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The east wall towers",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "19a",
+      "kind": "clip",
+      "src": "D",
+      "in": 25.8,
+      "out": 41,
+      "speed": 6,
+      "title": "Around the point",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "D",
+      "in": 41,
+      "out": 46,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "Umutgae Cove",
+        "sub": "Under the east wall"
+      },
+      "caption": "The whole tuff cone rears straight out of the sea.",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "20",
+      "kind": "polaroid",
+      "src": "D",
+      "at": 46,
+      "hold": 3.8,
+      "photoHold": 1.2,
+      "title": "The peak from the cove",
+      "sub": "The classic low angle",
+      "caption": "Wide shot — get the wall in.",
+      "polaroid": {
+        "width": 880,
+        "tilt": 2
+      }
+    },
+    {
+      "id": "21",
+      "kind": "clip",
+      "src": "D",
+      "in": 46,
+      "out": 52.68,
+      "speed": 4,
+      "title": "To the show rocks",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "E",
+      "in": 0,
+      "out": 4.5,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "The Haenyeo Show",
+        "sub": "Once a day, 14:00 — weather permitting"
+      },
+      "caption": "Real divers — grab a rock seat early.",
+      "chapter": "The haenyeo show",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "23",
+      "kind": "clip",
+      "src": "E",
+      "in": 4.5,
+      "out": 19.5,
+      "speed": 5,
+      "title": "The crowd settles",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 5,
+        "pan": 0.987
+      }
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "E",
+      "in": 19.5,
+      "out": 24,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The divers step out",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "E",
+      "in": 24,
+      "out": 45.7,
+      "speed": 6.5,
+      "title": "Songs and introductions",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "J",
+      "in": 0,
+      "out": 5,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Under the crater wall",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "27",
+      "kind": "clip",
+      "src": "J",
+      "in": 5,
+      "out": 38.7,
+      "speed": 7,
+      "title": "Waiting for the dive",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 6.3,
+        "pan": 0.698
+      }
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "J",
+      "in": 38.7,
+      "out": 53,
+      "speed": 5.5,
+      "title": "The first dives",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 38,
+        "pan": 0.998
+      }
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "J",
+      "in": 53,
+      "out": 58,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Tewak and net",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "30",
+      "kind": "clip",
+      "src": "J",
+      "in": 58,
+      "out": 85.4,
+      "speed": 6.5,
+      "title": "Working the shallows",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "31",
+      "kind": "clip",
+      "src": "J",
+      "in": 85.4,
+      "out": 90.4,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "A diver passes close",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "32",
+      "kind": "polaroid",
+      "src": "J",
+      "at": 90.4,
+      "hold": 3.8,
+      "photoHold": 1.2,
+      "title": "The haenyeo",
+      "sub": "Jeju's sea women",
+      "caption": "Once a day only.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2
+      }
+    },
+    {
+      "id": "33",
+      "kind": "clip",
+      "src": "J",
+      "in": 90.4,
+      "out": 109,
+      "speed": 6.5,
+      "title": "Back to the water",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "34",
+      "kind": "clip",
+      "src": "J",
+      "in": 109,
+      "out": 113.5,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Wading out",
+      "nosnap": "no pan within ±1.5s (max 0.52)"
+    },
+    {
+      "id": "35",
+      "kind": "clip",
+      "src": "K",
+      "in": 0,
+      "out": 4.5,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Out into the cove",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "36",
+      "kind": "clip",
+      "src": "K",
+      "in": 4.5,
+      "out": 33.9,
+      "speed": 7,
+      "title": "Swimming the line",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 5,
+        "pan": 0.984
+      }
+    },
+    {
+      "id": "37",
+      "kind": "clip",
+      "src": "K",
+      "in": 33.9,
+      "out": 37.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Heads bob between dives",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "38",
+      "kind": "clip",
+      "src": "N",
+      "in": 0,
+      "out": 5.5,
+      "speed": 1.2,
+      "stab": true,
+      "stopLabel": {
+        "title": "Back Past the Gate",
+        "sub": "Now for the climb"
+      },
+      "caption": "Same booth, other fork — arrow points up.",
+      "chapter": "Now the climb",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "39",
+      "kind": "clip",
+      "src": "N",
+      "in": 5.5,
+      "out": 24,
+      "speed": 6,
+      "title": "Up the grass avenue",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 5,
+        "pan": 0.623
+      }
+    },
+    {
+      "id": "40",
+      "kind": "clip",
+      "src": "N",
+      "in": 24,
+      "out": 28.4,
+      "speed": 1.2,
+      "stab": true,
+      "title": "The wall gets closer",
+      "snapped": {
+        "from": 23,
+        "pan": 0.852
+      }
+    },
+    {
+      "id": "41",
+      "kind": "clip",
+      "src": "O",
+      "in": 0,
+      "out": 9.2,
+      "speed": 5,
+      "title": "The stone path starts",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "42",
+      "kind": "clip",
+      "src": "O",
+      "in": 9.2,
+      "out": 19.9,
+      "speed": 5.5,
+      "title": "Climbing the flank",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 7.9,
+        "pan": 0.709
+      }
+    },
+    {
+      "id": "43",
+      "kind": "clip",
+      "src": "O",
+      "in": 19.9,
+      "out": 24,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Look left — the whole coast",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "44",
+      "kind": "clip",
+      "src": "O",
+      "in": 24,
+      "out": 35.66,
+      "speed": 5.5,
+      "title": "Into the pines",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "45",
+      "kind": "clip",
+      "src": "R",
+      "in": 0,
+      "out": 4.5,
+      "speed": 1.2,
+      "stab": true,
+      "title": "The steps begin",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "46",
+      "kind": "clip",
+      "src": "R",
+      "in": 4.5,
+      "out": 20,
+      "speed": 6.5,
+      "title": "Stone stairs, no hurry",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 5,
+        "pan": 0.831
+      }
+    },
+    {
+      "id": "47",
+      "kind": "clip",
+      "src": "T",
+      "in": 3.9,
+      "out": 8.3,
+      "speed": 1.2,
+      "stab": true,
+      "title": "The pinnacles crowd in",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "48",
+      "kind": "clip",
+      "src": "T",
+      "in": 8.3,
+      "out": 32.92,
+      "speed": 7,
+      "title": "Higher and higher",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 9.8,
+        "pan": 0.707
+      }
+    },
+    {
+      "id": "49",
+      "kind": "clip",
+      "src": "U",
+      "in": 0,
+      "out": 8,
+      "speed": 4,
+      "title": "Keep right at the rail",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "50",
+      "kind": "clip",
+      "src": "U",
+      "in": 8,
+      "out": 13.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "Look Back Halfway Up",
+        "sub": "Town, lagoon — and Hallasan"
+      },
+      "caption": "On a clear day Hallasan floats over the island.",
+      "chapter": "The lookback",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "51",
+      "kind": "polaroid",
+      "src": "U",
+      "at": 13.5,
+      "hold": 3.8,
+      "photoHold": 1.2,
+      "title": "The isthmus",
+      "sub": "Half sea, half land",
+      "caption": "Look back, not just up.",
+      "polaroid": {
+        "width": 880,
+        "tilt": -2.2
+      }
+    },
+    {
+      "id": "52",
+      "kind": "clip",
+      "src": "U",
+      "in": 13.5,
+      "out": 23.27,
+      "speed": 5,
+      "title": "On up",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "53",
+      "kind": "clip",
+      "src": "V",
+      "in": 0,
+      "out": 6.4,
+      "speed": 4,
+      "title": "The summit boards",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "54",
+      "kind": "clip",
+      "src": "V",
+      "in": 6.4,
+      "out": 10.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "stopLabel": {
+        "title": "The Crater Rim",
+        "sub": "The sunrise bowl itself"
+      },
+      "caption": "A bowl 600 metres wide, grown out of the sea.",
+      "chapter": "The crater",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "55",
+      "kind": "clip",
+      "src": "V",
+      "in": 10.8,
+      "out": 23.4,
+      "speed": 6,
+      "title": "Along the rim boards",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "56",
+      "kind": "clip",
+      "src": "V",
+      "in": 23.4,
+      "out": 27.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The bowl, full width",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "57",
+      "kind": "clip",
+      "src": "V",
+      "in": 27.8,
+      "out": 51.1,
+      "speed": 7,
+      "title": "Turning for home",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "58",
+      "kind": "clip",
+      "src": "V",
+      "in": 51.1,
+      "out": 55.1,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Down the long boards",
+      "snapped": {
+        "from": 50,
+        "pan": 0.73
+      }
+    },
+    {
+      "id": "59",
+      "kind": "clip",
+      "src": "V",
+      "in": 55.1,
+      "out": 79,
+      "speed": 7,
+      "title": "Switchbacks seaward",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 56,
+        "pan": 0.587
+      }
+    },
+    {
+      "id": "60",
+      "kind": "clip",
+      "src": "V",
+      "in": 79,
+      "out": 95,
+      "speed": 7,
+      "title": "The town rises to meet you",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.46)"
+    },
+    {
+      "id": "61",
+      "kind": "clip",
+      "src": "X",
+      "in": 0,
+      "out": 18,
+      "speed": 7,
+      "title": "The boardwalk rolls on",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "62",
+      "kind": "clip",
+      "src": "Y",
+      "in": 0,
+      "out": 5,
+      "speed": 1.2,
+      "stab": true,
+      "title": "Two grandfathers see you off",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "63",
+      "kind": "clip",
+      "src": "Y",
+      "in": 5,
+      "out": 31,
+      "speed": 7,
+      "title": "Down the east stairs",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "snapped": {
+        "from": 4.5,
+        "pan": 0.557
+      }
+    },
+    {
+      "id": "64",
+      "kind": "clip",
+      "src": "Y",
+      "in": 31,
+      "out": 34.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Udo, dead ahead",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "65",
+      "kind": "arrow",
+      "src": "Y",
+      "at": 34.5,
+      "hold": 5,
+      "title": "Udo Island",
+      "sub": "Across the channel",
+      "caption": "Ferries run from Seongsan port — save it for later.",
+      "chapter": "Udo in view",
+      "arrowOverride": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 750,
+            "y": 95
+          },
+          "target": {
+            "x": 1000,
+            "y": 190
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ],
+      "arrows": [
+        {
+          "mode": "pointer",
+          "from": {
+            "x": 750,
+            "y": 95
+          },
+          "target": {
+            "x": 1000,
+            "y": 190
+          },
+          "gap": 40,
+          "stem": 8,
+          "headLen": 26,
+          "headWidth": 23
+        }
+      ]
+    },
+    {
+      "id": "66",
+      "kind": "clip",
+      "src": "Y",
+      "in": 34.5,
+      "out": 55.4,
+      "speed": 6.5,
+      "title": "The last flights down",
+      "ramp": {
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "67",
+      "kind": "clip",
+      "src": "Y",
+      "in": 55.4,
+      "out": 58,
+      "speed": 1.2,
+      "stab": true,
+      "title": "One last look north",
+      "snapped": {
+        "from": 53.9,
+        "pan": 0.917
+      }
+    },
+    {
+      "id": "68",
+      "kind": "clip",
+      "src": "Z",
+      "in": 3.4,
+      "out": 20,
+      "speed": 6.5,
+      "title": "Down the home stretch",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "69",
+      "kind": "clip",
+      "src": "Z",
+      "in": 20,
+      "out": 24.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The cove from above",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "70",
+      "kind": "clip",
+      "src": "Z",
+      "in": 24.8,
+      "out": 39.51,
+      "speed": 7,
+      "title": "Back to gate level",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "71",
+      "kind": "clip",
+      "src": "ZA",
+      "in": 0,
+      "out": 6.6,
+      "speed": 1,
+      "stab": true,
+      "role": "recap",
+      "title": "Seongsan Ilchulbong",
+      "sub": "Sunrise crown of Jeju — climb it at dawn",
+      "chapter": "Full circle",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    }
+  ],
+  "grade": [
+    "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
+    "crop=iw*0.93:ih*0.93",
+    "vibrance=intensity=0.45",
+    "eq=saturation=1.1",
+    "curves=r='0/0 0.08/0.06 0.3/0.29 0.55/0.575 0.8/0.845 1/1':g='0/0 0.08/0.058 0.3/0.292 0.55/0.57 0.8/0.835 1/1':b='0/0.01 0.08/0.07 0.3/0.3 0.55/0.55 0.8/0.79 1/0.97'",
+    "unsharp=13:13:0.5:5:5:0.0",
+    "unsharp=5:5:0.6:5:5:0.0",
+    "noise=alls=4:allf=t+u",
+    "vignette=a=PI/12"
+  ],
+  "poster": {
+    "src": "U",
+    "at": 12
+  },
+  "teaserLead": "32",
+  "city": "Jeju"
+}
