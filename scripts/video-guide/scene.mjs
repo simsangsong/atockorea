@@ -102,12 +102,6 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
 .prints img:nth-child(2) { transform:rotate(2deg) translateY(10px); }
 .prints img:nth-child(3) { transform:rotate(-1.5deg); }
 .prints img:nth-child(4) { transform:rotate(2.6deg) translateY(8px); }
-.deter { position:absolute; left:0; right:0; top:52%; transform:translateY(-50%) rotate(-19deg);
-  text-align:center; pointer-events:none;
-  font-size:30px; font-weight:700; letter-spacing:.06em; line-height:1.5;
-  color:rgba(255,255,255,.17);
-  text-shadow:0 1px 3px rgba(0,0,0,.42), 0 0 1px rgba(0,0,0,.5); }
-.deter b { display:block; font-weight:800; letter-spacing:.12em; font-size:34px; }
 .watermark { position:absolute; top:1856px; width:100%; text-align:center;
   font-size:${TYPE.watermark}px; font-weight:500; color:rgba(255,255,255,.72);
   text-shadow:0 1px 8px rgba(0,0,0,.6); }
@@ -123,7 +117,6 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
   ${o.prints?.length ? `<div class="prints">${o.prints.map((p) => `<img src="${p}"/>`).join('')}</div>` : ''}
   ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
 </div>
-<div class="deter"><b>AtoC KOREA</b>Property of AtoC Korea. Unauthorised use will be pursued to the full extent of the law.<br/>© AtoC Korea — 본 영상은 AtoC Korea 의 자산입니다. 무단 도용·복제·재배포 시 법적 책임을 반드시 추궁합니다.</div>
 <div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
 <script>
 const anims = [];
@@ -215,12 +208,6 @@ body { font-family:'Segoe UI','Malgun Gothic',-apple-system,sans-serif; color:#f
 .prints img { width:186px; box-shadow:0 10px 26px rgba(0,0,0,.5); border-radius:3px; }
 .prints img:nth-child(odd) { transform:rotate(-2.6deg); }
 .prints img:nth-child(even) { transform:rotate(2.2deg) translateY(9px); }
-.deter { position:absolute; left:0; right:0; top:52%; transform:translateY(-50%) rotate(-19deg);
-  text-align:center; pointer-events:none;
-  font-size:26px; font-weight:700; letter-spacing:.06em; line-height:1.5;
-  color:rgba(255,255,255,.17);
-  text-shadow:0 1px 3px rgba(0,0,0,.42), 0 0 1px rgba(0,0,0,.5); }
-.deter b { display:block; font-weight:800; letter-spacing:.12em; font-size:30px; }
 .watermark { position:absolute; top:1026px; width:100%; text-align:center;
   font-size:${T.watermark}px; font-weight:500; color:rgba(255,255,255,.74);
   text-shadow:0 1px 8px rgba(0,0,0,.7); }
@@ -245,7 +232,6 @@ ${hero ? `
   ${o.sub ? `<div class="sub">${esc(o.sub)}</div>` : ''}
   ${o.caption ? `<div class="caption">${esc(o.caption)}</div>` : ''}
 </div>`}
-<div class="deter"><b>AtoC KOREA</b>Property of AtoC Korea. Unauthorised use will be pursued to the full extent of the law.<br/>© AtoC Korea — 본 영상은 AtoC Korea 의 자산입니다. 무단 도용·복제·재배포 시 법적 책임을 반드시 추궁합니다.</div>
 <div class="watermark">© AtoC Korea · Unauthorized copying or redistribution prohibited</div>
 <script>
 const anims = [];

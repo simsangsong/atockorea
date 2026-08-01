@@ -145,7 +145,7 @@ for (const row of tl.rows) {
   // `master` is the file this segment is lifted FROM: without it, regrading the
   // wide master leaves every vertical segment "cached" and the two cuts drift.
   const h = hashOf({ props, start: row.start, dur: row.dur, TYPESET,
-    scene: WIDE_MODE ? 'w2' : 'v1', master: masterStamp, v: 6 });
+    scene: WIDE_MODE ? 'w2' : 'v1', master: masterStamp, v: 7 });
   segs.push(seg);
   if (!FORCE && manifest[beat.id] === h && fs.existsSync(seg)) { console.log(`  ${beat.id}  cached`); continue; }
 
