@@ -52,8 +52,12 @@ export default function RegionScriptBand({
       <ul className="mt-2 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-4 pb-3 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
         {cards.map((card) => (
           <li key={card.topicKey} className="snap-start">
+            {/* data-topic: 하니스가 카드를 **순서나 번역된 제목이 아니라 키로**
+                집게 한다. 번호로 집으면 주제 하나가 끼어드는 순간 다른 카드를
+                찍고도 초록이고, 제목으로 집으면 로케일이 바뀌는 순간 깨진다. */}
             <button
               type="button"
+              data-topic={card.topicKey}
               onClick={() => setOpen(card)}
               className="tr-card flex h-full w-[72vw] max-w-[280px] flex-col gap-1.5 p-3 text-left active:scale-[0.985]"
             >
