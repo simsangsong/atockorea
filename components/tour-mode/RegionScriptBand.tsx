@@ -110,6 +110,26 @@ function ScriptBody({
 
   return (
     <div className="flex flex-col gap-4 pb-2">
+      {/* 사진은 **시트에만** 둔다. 16주제 중 실사진을 붙일 수 있는 건 지금 다섯
+          안팎이라, 띠에 넣으면 사진 있는 카드와 없는 카드가 섞여 줄이 어긋난다.
+          전 주제가 채워지면 이 블록을 카드로 올리면 된다(한 곳만 옮기면 된다).
+          alt는 비운다 — 시트 헤더가 이미 같은 제목을 읽는다. */}
+      {card.imageUrl && (
+        <figure className="-mt-1 flex flex-col gap-1">
+          <img
+            src={card.imageUrl}
+            alt=""
+            loading="lazy"
+            className="h-44 w-full rounded-[var(--tr-radius-card)] object-cover"
+          />
+          {card.imageCredit && (
+            <figcaption className="tr-meta text-cjk-body text-[var(--tr-ink-3)]">
+              {card.imageCredit}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
       {paragraphs.map((p, i) => (
         <p key={i} className="tr-card-text text-cjk-body leading-relaxed text-[var(--tr-ink)]">
           {p}
@@ -174,12 +194,18 @@ function ScriptBody({
                         )}
                       </div>
                     </div>
+                    {/* 🔴 `.tr-chip`을 쓰면 안 된다. 그건 홈 타일 **아이콘**용
+                        재질이라 배경을 `--base/--accent/--danger`가 주고, 클래스
+                        하나만 붙이면 배경 없이 `color: var(--tr-chip-ink)`(#fcfcfb)만
+                        남는다 — 흰 카드 위의 흰 글씨다. 탭 가능한 알약은
+                        `.tr-chip-tap` 계열이고, 조용한 쪽 채움은 스킨에서 파생된
+                        `--tr-chip-quiet-fill`이다(Composer·NowCard와 같은 문법). */}
                     {map && (
                       <a
                         href={map}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="tr-chip text-cjk-safe shrink-0"
+                        className="tr-label tr-chip-tap tr-chip-tap--quiet text-cjk-safe shrink-0 self-center rounded-full bg-[var(--tr-chip-quiet-fill)] px-3 py-1.5 font-semibold text-[var(--tr-ink-2)]"
                       >
                         {t.openMap}
                       </a>
