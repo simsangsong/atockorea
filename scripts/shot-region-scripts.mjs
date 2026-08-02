@@ -50,20 +50,38 @@ page.on('console', (m) => m.type() === 'error' && errors.push(m.text().slice(0, 
 page.on('pageerror', (e) => errors.push('PAGEERROR ' + String(e).slice(0, 240)));
 
 let api = null;
-page.on('response', async (res) => {
-  if (!res.url().includes('/region-scripts')) return;
-  try {
-    const j = await res.json();
-    api = {
-      status: res.status(),
+/**
+ * 🔴 `response` 핸들러 안에서 바디를 읽으면 안 된다.
+ *
+ * Playwright는 `page.on('response')` 콜백을 **await 하지 않는다.** 다음 내비게이션이
+ * 시작되면 아직 안 읽은 바디는 버려지고 `res.json()` 이 던진다 — 그러면 여기서
+ * `parse:'failed'` 가 되고 `cards`·`teasers` 가 통째로 비는데, 검사들이
+ * `withPhoto === 0 ||` 같은 형태라 **조용히 초록**이 된다(실제로 그랬다).
+ *
+ * 그래서 응답이 오는 즉시 프라미스만 붙잡아 두고, 실제 대조는 방을 고른 뒤
+ * `await` 로 한다. 실패하면 `cards: null` 로 남겨 아래 검사가 시끄럽게 죽는다.
+ */
+let apiBody = null;
+page.on('response', (res) => {
+  // 🔴 `/region-scripts` 만으로 거르면 **사진 파일도 걸린다** —
+  // `tour-images/region-scripts/jeju/haenyeo.webp`. 표지에 사진이 붙은 순간
+  // 마지막 응답이 WebP가 되어 `RIFF…WEBP` 를 JSON 으로 파싱하려 든다.
+  // 라우트만 집는다.
+  if (!/\/api\/tour-rooms\/[^/]+\/region-scripts/.test(res.url())) return;
+  const status = res.status();
+  apiBody = res
+    .json()
+    .then((j) => ({
+      status,
       regionKey: j.regionKey ?? null,
       locale: j.locale ?? null,
       cards: j.cards?.length ?? 0,
       stops: j.stops?.length ?? 0,
-    };
-  } catch {
-    api = { status: res.status(), parse: 'failed' };
-  }
+      // 표지 검사용 — 문에 올라온 문장이 **정말 라우트가 준 티저인지** 대조한다.
+      teasers: (j.cards ?? []).map((c) => c.teaser ?? ''),
+      withPhoto: (j.cards ?? []).filter((c) => c.imageUrl).length,
+    }))
+    .catch((e) => ({ status, cards: null, parse: String(e).slice(0, 120) }));
 });
 
 const shot = async (name) => {
@@ -98,7 +116,7 @@ async function openScheduleTab() {
 // ── 문이 있는 방 찾기 ────────────────────────────────────────────────────────
 let found = null;
 for (const url of ROOMS) {
-  api = null;
+  apiBody = null;
   await page.goto(BASE + url, { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(4000);
 
@@ -126,11 +144,21 @@ for (const url of ROOMS) {
 
   const door = page.locator('[data-testid="region-scripts-door"]');
   const hasDoor = (await door.count()) > 0;
+  // 바디는 여기서 처음 읽는다 — 핸들러 안이 아니라(위 주석).
+  api = apiBody ? await apiBody : null;
   console.log(`  ${url.slice(0, 44)}…  api=${JSON.stringify(api)} door=${hasDoor}`);
   if (hasDoor) {
-    found = { url, cards: api?.cards ?? 0 };
+    found = { url, cards: api?.cards, teasers: api?.teasers, withPhoto: api?.withPhoto };
     break;
   }
+}
+
+// 라우트 응답을 못 읽었으면 아래 대조가 전부 공허해진다 — 0 vs 0 은 초록이다.
+if (found && (typeof found.cards !== 'number' || !Array.isArray(found.teasers))) {
+  await die(
+    '라우트 응답을 파싱하지 못했습니다 — 이 상태로는 어떤 대조도 의미가 없습니다.\n' +
+      `   ${JSON.stringify(api)}`,
+  );
 }
 
 // 지역이 안 잡히는 방(서울·포천)에 문이 없는 건 정상이다. 하지만 **모든** 방에
@@ -146,9 +174,29 @@ if (!found) {
 // ── 문 → 리스트 ──────────────────────────────────────────────────────────────
 const door = page.locator('[data-testid="region-scripts-door"]');
 
-// U1 — 문이 한 줄에 들어가는가. 독일어가 가장 길다.
+// U1 — 문은 이제 표지 카드다. 예전 상한(84px, "한 줄에 들어가는가")은 설정
+// 메뉴 행을 지키던 자다. 지금 지켜야 할 것은 두 가지고 방향이 반대다:
+// ① 표지가 성립할 만큼 크다 ② 일정 탭을 잡아먹지 않는다(옛 가로 띠 330px).
 const doorBox = await door.boundingBox();
-check(doorBox !== null && doorBox.height <= 84, `문 높이 ${doorBox?.height?.toFixed(0)}px ≤ 84 (2줄 이내)`);
+check(
+  doorBox !== null && doorBox.height >= 132 && doorBox.height <= 200,
+  `문 높이 ${doorBox?.height?.toFixed(0)}px ∈ [132, 200] (표지로 성립 · 일정 안 잡아먹음)`,
+);
+
+// U1b — 표지에 **안의 문장 하나**가 실제로 올라와 있는가. 이게 없으면 그냥
+// 큰 설정 행이다. 라우트가 준 티저 중 하나와 글자 그대로 일치해야 한다.
+const doorText = (await door.innerText()).replace(/\s+/g, '');
+const teaserOnDoor = found.teasers.some(
+  (te) => te && doorText.includes(te.replace(/\s+/g, '').slice(0, 12)),
+);
+check(teaserOnDoor, `표지에 티저 한 줄이 실려 있다`);
+
+// U1c — 사진이 붙은 편이 있으면 표지는 그중에서 골라야 한다(사진 표지 우선).
+const doorImg = await door.locator('img').count();
+check(
+  found.withPhoto === 0 || doorImg === 1,
+  `표지 사진 ${doorImg}장 (사진 있는 편 ${found.withPhoto}개)`,
+);
 
 await door.click({ timeout: 10000 });
 await page.waitForTimeout(900);
