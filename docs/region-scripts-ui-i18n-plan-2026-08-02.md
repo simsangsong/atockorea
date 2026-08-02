@@ -21,7 +21,7 @@
 | 사진 | **3/16** (haenyeo · hallasan-unesco · overview) |
 | 장소 | 21곳(감귤 6 · 식당 15), 카카오 실좌표 |
 | 출처 | 12/16. **0건인 4편**: samda-sammu · seolmundae · ponies · weather-wind |
-| 배선 | `TourRoomClient` → `RoomShell` → `RegionScriptBand`, 실렌더 확인 |
+| 배선 | `TourRoomClient` → `RoomShell` → `RegionScriptDoor`, 실렌더 확인 |
 | 브랜치 | **main과 동일선상**(U0 완료), 순수 추가 1,263줄 |
 
 ---

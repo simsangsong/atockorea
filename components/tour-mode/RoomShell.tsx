@@ -43,7 +43,7 @@ import { scheduleClock } from '@/lib/tour-room/time';
 import { CONCIERGE_COPY } from '@/lib/tour-room/concierge';
 import type { RoomConnection } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
-import RegionScriptBand from '@/components/tour-mode/RegionScriptBand';
+import RegionScriptDoor from '@/components/tour-mode/RegionScriptDoor';
 import type { RegionScriptCard, StopPoint } from '@/lib/tour-room/regionScripts';
 
 const TAB_LABEL: Record<
@@ -314,7 +314,7 @@ export default function RoomShell({
    * 지역 공통 해설 카드(제주 알아보기). Today 탭 맨 위에 가로 띠로 깔린다.
    * 비어 있으면 섹션 자체가 렌더되지 않으므로 기존 화면과 완전히 동일하다.
    */
-  regionScripts?: RegionScriptCard[];
+  regionScripts?: RegionScriptCard[] | null;
   /**
    * 오늘 일정 스톱 좌표 — 추천 장소까지의 거리를 **참고로만** 보여주는 데 쓴다.
    * 없으면 거리 줄이 빠질 뿐 카드는 그대로다(좌표 없음을 0으로 접지 않는다).
@@ -695,11 +695,14 @@ export default function RoomShell({
                 )}
               </div>
             )}
-            {/* 지역 공통 해설 — 일정 위에 얹는 띠. 아래 두 분기(리치 카드 /
+            {/* 지역 공통 해설 — 일정 위에 얹는 문 하나. 아래 두 분기(리치 카드 /
                 평문 타임라인)는 각자 스크롤 컨테이너를 갖고 있어 건드리지 않고,
-                shrink-0 형제로 위에 붙인다. 카드가 없으면 통째로 사라진다. */}
-            {tab === 'schedule' && regionScripts && regionScripts.length > 0 && (
-              <RegionScriptBand
+                shrink-0 형제로 위에 붙인다.
+                🔴 `undefined`(이 화면은 해설을 안 쓴다)와 `null`(아직 안 불러왔다)을
+                구분한다. 안 불러온 동안 자리를 비워 두면 카드가 도착하는 순간
+                일정 첫 장이 56px 아래로 튄다 — 그 판단은 컴포넌트가 한다. */}
+            {tab === 'schedule' && regionScripts !== undefined && (
+              <RegionScriptDoor
                 cards={regionScripts}
                 locale={locale}
                 stops={regionScriptStops ?? []}

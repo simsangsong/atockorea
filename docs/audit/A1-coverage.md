@@ -117,7 +117,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `HeroMediaBand.tsx` | SG-4 | ✅ (SG-4에서 신설 — 공용 히어로 사진 밴드. 144px 고정 CLS 0·onError 스와치·contrast 스킨 숨김·글자 미탑재) |
 | `cockpit/SayQueueCard.tsx` | SG-6 | ✅ (SG-6에서 신설 — 발화 대기열 얼굴. 접힘 필 기본·제안만·발사 경로 신규 0, `sayQueue.test.ts`) |
 | `OnboardingCards.tsx` | SG-7b | ✅ (SG-7b에서 신설 — D-1 온보딩 3장. 약점 선언·로컬 에코 데모(전송 0)·운영시간/연차 미표기 N-3·N-4) |
-| `RegionScriptBand.tsx` | RS-1 | P1 · P2 **수정완료** → `docs/region-scripts-ui-i18n-plan-2026-08-02.md` (지역 공통 해설. **P1** 지도 칩이 맨 `.tr-chip`이라 흰 카드 위 흰 글씨로 21곳 전부 안 보였음 · **P2** `image_url`을 서빙만 하고 `<img>`가 0개 · **P2** `text-[17px]`로 글자크기 승강 무시. 순수 함수는 `regionScripts.test.ts`. ⚠ UI는 U1~U4에서 문+리스트로 재편 예정) |
+| `RegionScriptDoor.tsx` | RS-1 | P1 · P2 **수정완료** → `docs/region-scripts-ui-i18n-plan-2026-08-02.md` (지역 공통 해설. 일정 탭 상단 문 하나 → 시트 안 세로 카드 리스트 → 전문(같은 시트 push/pop). **P1** 지도 칩이 맨 `.tr-chip`이라 흰 카드 위 흰 글씨로 21곳 전부 안 보였음 · **P2** `image_url`을 서빙만 하고 `<img>`가 0개 · **P2** 임의 픽셀 글자크기가 승강 무시. 순수 함수·강조 파서는 `regionScripts.test.ts`) |
 | `TourModeEntry.tsx` | A1.6 | P2 → `A1-6-entry-shell-misc.md` (수정 완료) |
 | `TourRoomClient.tsx` | A1.6 | ✅ (lint은 A4.5) → `A1-6-entry-shell-misc.md` |
 | `TravelTimeline.tsx` | A1.6 | ✅ |

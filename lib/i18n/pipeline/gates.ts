@@ -10,6 +10,8 @@
  *   'flag' → 발행 가능하나 사람 감수 큐에 올린다
  */
 
+import { countEmphasis } from '@/lib/text/emphasis';
+
 export type Severity = 'fail' | 'flag';
 export type GateId = 'G1' | 'G2' | 'G3' | 'G4' | 'G5' | 'G6' | 'G7' | 'G8' | 'G9' | 'G10' | 'G11';
 
@@ -321,14 +323,19 @@ export function checkMarkup(source: string, target: string, pointer: string): Fi
     });
   }
 
-  const aBold = countMatches(source, /\*\*/g);
-  const bBold = countMatches(target, /\*\*/g);
+  // 🔴 별표 **문자**가 아니라 **짝이 맞는 강조**를 센다. `/\*\*/g` 로 세면
+  // 빈 강조 `****` 가 2로, 짝 없는 `**` 하나가 1로 잡히는데 렌더러는 둘 다
+  // 강조로 치지 않는다 — 세는 쪽과 그리는 쪽이 다른 규칙을 쓰면, 번역이 멀쩡한데
+  // 경고가 뜨거나 강조가 통째로 사라졌는데 조용하다. 판정은 렌더러와 같은
+  // 파일(`lib/text/emphasis.ts`)에서 온다.
+  const aBold = countEmphasis(source);
+  const bBold = countEmphasis(target);
   if (aBold !== bBold) {
     findings.push({
       gate: 'G6',
       severity: 'flag',
       pointer,
-      message: `강조 마크업 개수 불일치 — 원문 ${aBold} vs 번역 ${bBold}`,
+      message: `강조 개수 불일치 — 원문 ${aBold} vs 번역 ${bBold}`,
     });
   }
 

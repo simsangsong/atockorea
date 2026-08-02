@@ -120,6 +120,10 @@ export const REGION_SCRIPT_UI: Record<
   {
     sectionTitle: string;
     sectionHint: string;
+    /** 문 버튼 부제 — {n}이 편수로 치환된다. 숫자가 문을 여는 동기다. */
+    doorSubtitle: string;
+    /** 리스트 → 전문에서 되돌아가는 버튼의 접근성 이름. */
+    back: string;
     readMore: string;
     close: string;
     sensitive: string;
@@ -134,6 +138,8 @@ export const REGION_SCRIPT_UI: Record<
   en: {
     sectionTitle: 'About Jeju',
     sectionHint: 'Short reads for the drive',
+    doorSubtitle: '{n} short reads for the drive',
+    back: 'Back',
     readMore: 'Read',
     close: 'Close',
     sensitive: 'Difficult history',
@@ -146,6 +152,8 @@ export const REGION_SCRIPT_UI: Record<
   ko: {
     sectionTitle: '제주 알아보기',
     sectionHint: '이동 중에 읽는 짧은 이야기',
+    doorSubtitle: '{n}편 · 이동 중에 읽는 짧은 이야기',
+    back: '뒤로',
     readMore: '읽기',
     close: '닫기',
     sensitive: '아픈 역사',
@@ -158,6 +166,8 @@ export const REGION_SCRIPT_UI: Record<
   ja: {
     sectionTitle: '済州を知る',
     sectionHint: '移動中に読む短い話',
+    doorSubtitle: '{n}話 · 移動中に読む短い話',
+    back: '戻る',
     readMore: '読む',
     close: '閉じる',
     sensitive: '重い歴史',
@@ -170,6 +180,8 @@ export const REGION_SCRIPT_UI: Record<
   es: {
     sectionTitle: 'Sobre Jeju',
     sectionHint: 'Lecturas breves para el trayecto',
+    doorSubtitle: '{n} lecturas breves para el trayecto',
+    back: 'Atrás',
     readMore: 'Leer',
     close: 'Cerrar',
     sensitive: 'Historia difícil',
@@ -182,6 +194,8 @@ export const REGION_SCRIPT_UI: Record<
   zh: {
     sectionTitle: '了解济州',
     sectionHint: '路上读的小故事',
+    doorSubtitle: '{n} 篇 · 路上读的小故事',
+    back: '返回',
     readMore: '阅读',
     close: '关闭',
     sensitive: '沉重的历史',
@@ -194,6 +208,8 @@ export const REGION_SCRIPT_UI: Record<
   'zh-TW': {
     sectionTitle: '認識濟州',
     sectionHint: '路上讀的小故事',
+    doorSubtitle: '{n} 篇 · 路上讀的小故事',
+    back: '返回',
     readMore: '閱讀',
     close: '關閉',
     sensitive: '沉重的歷史',
@@ -206,6 +222,8 @@ export const REGION_SCRIPT_UI: Record<
   fr: {
     sectionTitle: 'À propos de Jeju',
     sectionHint: 'De courtes lectures pour la route',
+    doorSubtitle: '{n} courtes lectures pour la route',
+    back: 'Retour',
     readMore: 'Lire',
     close: 'Fermer',
     sensitive: 'Histoire douloureuse',
@@ -218,6 +236,8 @@ export const REGION_SCRIPT_UI: Record<
   de: {
     sectionTitle: 'Über Jeju',
     sectionHint: 'Kurze Lektüre für unterwegs',
+    doorSubtitle: '{n} kurze Texte für unterwegs',
+    back: 'Zurück',
     readMore: 'Lesen',
     close: 'Schließen',
     sensitive: 'Schwierige Geschichte',
@@ -230,6 +250,8 @@ export const REGION_SCRIPT_UI: Record<
   ru: {
     sectionTitle: 'О Чеджу',
     sectionHint: 'Короткие тексты в дорогу',
+    doorSubtitle: '{n} коротких текстов в дорогу',
+    back: 'Назад',
     readMore: 'Читать',
     close: 'Закрыть',
     sensitive: 'Трудная история',
@@ -242,6 +264,8 @@ export const REGION_SCRIPT_UI: Record<
   it: {
     sectionTitle: 'Conoscere Jeju',
     sectionHint: 'Brevi letture per il viaggio',
+    doorSubtitle: '{n} brevi letture per il viaggio',
+    back: 'Indietro',
     readMore: 'Leggi',
     close: 'Chiudi',
     sensitive: 'Storia difficile',
@@ -310,3 +334,23 @@ export const PLACE_TAG_LABEL: Record<string, Record<RoomLocale, string>> = {
 export function placeTagLabel(tag: string, locale: RoomLocale): string {
   return PLACE_TAG_LABEL[tag]?.[locale] ?? tag;
 }
+
+// ---------------------------------------------------------------------------
+// 본문 강조 — `**…**`
+// ---------------------------------------------------------------------------
+
+/**
+ * 🔴 구현은 `lib/text/emphasis.ts` 하나뿐이다. 렌더러와 번역 게이트가 같은 파일을
+ * 써야 "게이트는 초록인데 화면에는 별표가 남는" 상태가 안 생긴다. 여기서는
+ * 이 도메인의 소비처가 한 곳에서 가져다 쓰도록 다시 내보내기만 한다.
+ *
+ * 🔴 `body`의 **유일한** 렌더 경로다. 다른 곳에서 body를 그대로 그리면 손님
+ * 화면에 별표가 보인다. `title`·`teaser`·`fun_fact`에는 강조를 넣지 않는다
+ * (리스트 카드가 teaser를 평문으로 쓴다).
+ */
+export {
+  parseEmphasis,
+  stripEmphasis,
+  countEmphasis,
+  type RichSpan,
+} from '@/lib/text/emphasis';

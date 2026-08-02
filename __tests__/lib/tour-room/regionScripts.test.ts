@@ -11,12 +11,15 @@
  * 계약을 주석에만 두면 다음 사람이 지운다. 여기서 잡는다.
  */
 import {
+  countEmphasis,
   formatKm,
   googleMapsUrl,
   haversineKm,
   nearestStopKm,
+  parseEmphasis,
   placeTagLabel,
   regionKeyForTour,
+  stripEmphasis,
   type RegionScriptPlace,
 } from '@/lib/tour-room/regionScripts';
 
@@ -145,7 +148,7 @@ describe('placeTagLabel', () => {
     expect(placeTagLabel('nonexistent_tag', 'ko')).toBe('nonexistent_tag');
   });
 
-  it('모든 태그가 10로케일을 다 갖는다', () => {
+  it('모든 태그가 10로케일을 다 갖는다 — 목록형', () => {
     // Record<string, Record<RoomLocale, string>>는 tsc가 못 잡는 사각지대다
     // (2026-07 로케일 확장에서 기록됨). 런타임에서 센다.
     const locales = ['en', 'ko', 'ja', 'es', 'zh', 'zh-TW', 'fr', 'de', 'ru', 'it'] as const;
@@ -159,5 +162,83 @@ describe('placeTagLabel', () => {
       }
     }
     expect(missing).toEqual([]);
+  });
+});
+
+describe('parseEmphasis', () => {
+  it('강조가 없으면 스팬 하나', () => {
+    expect(parseEmphasis('제주는 화산섬입니다.')).toEqual([
+      { text: '제주는 화산섬입니다.', strong: false },
+    ]);
+  });
+
+  it('가운데 강조를 셋으로 쪼갠다', () => {
+    expect(parseEmphasis('해녀는 **2,371명** 남았습니다.')).toEqual([
+      { text: '해녀는 ', strong: false },
+      { text: '2,371명', strong: true },
+      { text: ' 남았습니다.', strong: false },
+    ]);
+  });
+
+  it('문장 맨 앞·맨 뒤 강조도 잡는다', () => {
+    expect(parseEmphasis('**바람**과 돌과 여자')).toEqual([
+      { text: '바람', strong: true },
+      { text: '과 돌과 여자', strong: false },
+    ]);
+    expect(parseEmphasis('그래서 남은 것은 **물질**')).toEqual([
+      { text: '그래서 남은 것은 ', strong: false },
+      { text: '물질', strong: true },
+    ]);
+  });
+
+  it('한 문단에 여러 개', () => {
+    const spans = parseEmphasis('**A** 사이 **B** 끝');
+    expect(spans.filter((s) => s.strong).map((s) => s.text)).toEqual(['A', 'B']);
+  });
+
+  it('🔴 짝이 안 맞는 별표는 글자 그대로 남긴다', () => {
+    // 삼키면 원고 오타가 화면에서는 멀쩡해 보이고 아무도 모른다.
+    // 별표가 보이면 누군가 고친다.
+    expect(parseEmphasis('열었는데 **안 닫음')).toEqual([
+      { text: '열었는데 **안 닫음', strong: false },
+    ]);
+    expect(stripEmphasis('열었는데 **안 닫음')).toBe('열었는데 **안 닫음');
+  });
+
+  it('🔴 빈 강조는 강조가 아니다', () => {
+    // 굵은 빈칸은 렌더링 사고로만 생긴다.
+    expect(parseEmphasis('앞****뒤')).toEqual([{ text: '앞****뒤', strong: false }]);
+    expect(countEmphasis('앞****뒤')).toBe(0);
+  });
+
+  it('영어 본문에서도 같게 동작한다', () => {
+    const spans = parseEmphasis('By the end of 2025 there were **2,371**.');
+    expect(spans.filter((s) => s.strong).map((s) => s.text)).toEqual(['2,371']);
+  });
+
+  it('빈 문자열', () => {
+    expect(parseEmphasis('')).toEqual([]);
+    expect(countEmphasis('')).toBe(0);
+    expect(stripEmphasis('')).toBe('');
+  });
+});
+
+describe('stripEmphasis / countEmphasis', () => {
+  it('strip은 마크업만 걷고 글자는 그대로 둔다', () => {
+    expect(stripEmphasis('해녀는 **2,371명** 남았습니다.')).toBe('해녀는 2,371명 남았습니다.');
+  });
+
+  it('🔴 세는 쪽과 그리는 쪽이 같은 규칙을 쓴다', () => {
+    // 다른 규칙을 쓰면 게이트는 초록인데 화면에는 별표가 남는다.
+    const samples = [
+      '**A** 와 **B**',
+      '짝 없는 ** 하나',
+      '앞****뒤',
+      '평범한 문장',
+      '**끝에서 열림',
+    ];
+    for (const s of samples) {
+      expect(countEmphasis(s)).toBe(parseEmphasis(s).filter((x) => x.strong).length);
+    }
   });
 });

@@ -695,7 +695,10 @@ function TourRoomLive({
   // the /plan editor already uses; [] when the tour has no product page, and
   // the shell then keeps its plain timeline.
   const [richStops, setRichStops] = useState<unknown[]>([]);
-  const [regionScripts, setRegionScripts] = useState<RegionScriptCard[]>([]);
+  // 🔴 `null`로 시작한다. `[]`는 "이 상품엔 해설이 없다"라는 **결론**이고 `null`은
+  // "아직 모른다"이다. 둘을 같은 값으로 두면 셸이 자리를 안 잡아, 카드가 도착하는
+  // 순간 오늘 일정 첫 장이 56px 아래로 튄다.
+  const [regionScripts, setRegionScripts] = useState<RegionScriptCard[] | null>(null);
   const [regionStops, setRegionStops] = useState<StopPoint[]>([]);
   useEffect(() => {
     const restore = () => {
@@ -843,25 +846,35 @@ function TourRoomLive({
     };
   }, [bookingId, data.session, locale]);
 
-  // 지역 공통 해설("제주 알아보기") — Today 탭 맨 위의 가로 띠. 도착 해설이
+  // 지역 공통 해설("제주 알아보기") — Today 탭 맨 위의 문 하나. 도착 해설이
   // 장소 단위인 것과 달리 이건 섬 전체 이야기라, 스팟에 도착하지 않은 이동
-  // 시간에도 읽을 것이 생긴다. 실패하면 그냥 섹션이 없는 화면이다.
+  // 시간에도 읽을 것이 생긴다. 실패하면 그냥 문이 없는 화면이다.
   useEffect(() => {
     if (!data.session) return;
     let cancelled = false;
     (async () => {
+      // 🔴 어떤 경로로 끝나든 `null`(=아직 모른다)에서 벗어나야 한다. 실패했는데
+      // null로 두면 자리표시자가 영원히 뛴다 — 오프라인 손님에게 끝나지 않는
+      // 스켈레톤을 보여주는 것은 아무것도 안 보여주는 것보다 나쁘다.
+      const settle = (cards: RegionScriptCard[]) => {
+        if (!cancelled) setRegionScripts(cards);
+      };
       try {
         const res = await fetch(
           `/api/tour-rooms/${encodeURIComponent(bookingId)}/region-scripts?locale=${encodeURIComponent(locale)}`,
           { headers: { 'x-tour-room-auth': data.session } },
         );
-        if (!res.ok) return;
+        if (!res.ok) {
+          settle([]);
+          return;
+        }
         const json = (await res.json()) as { cards?: RegionScriptCard[]; stops?: StopPoint[] };
         if (cancelled) return;
-        if (Array.isArray(json.cards)) setRegionScripts(json.cards);
+        settle(Array.isArray(json.cards) ? json.cards : []);
         if (Array.isArray(json.stops)) setRegionStops(json.stops);
       } catch {
-        // Offline — the schedule tab just renders without the band.
+        // Offline — 문 없이 일정만 뜬다.
+        settle([]);
       }
     })();
     return () => {
