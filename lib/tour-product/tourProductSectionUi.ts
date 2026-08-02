@@ -23,6 +23,10 @@ export type TourProductSectionUiV1 = {
   stopSmartNotesTipPrefix: string;
   /** Detail-drawer collapsible: full description card title + sub-meta. EN defaults used when omitted. */
   stopFullDescriptionTitle?: string;
+  /** 하이라이트 더보기/접기. 없으면 영어가 그대로 나간다 — 실제로 중국어 화면에
+   *  `Show all 9` 가 찍혀 있었다(2026-08-02 사장님 스크린샷). {n}이 개수로 치환된다. */
+  stopShowAll?: string;
+  stopShowFewer?: string;
   stopFullDescriptionMeta?: string;
   fitTitle: string;
   fitSubtitle: string;
@@ -154,6 +158,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "Stops",
   stopHighlightsHeading: "Highlights",
   stopFullDescriptionTitle: "Full description",
+  stopShowAll: "Show all {n}",
+  stopShowFewer: "Show fewer",
   stopTimeUsedHeading: "How the time is used",
   stopVisitBasicsHeading: "Visit basics",
   stopVisitHoursLabel: "Hours",
@@ -253,6 +259,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "정차",
   stopHighlightsHeading: "하이라이트",
   stopFullDescriptionTitle: "자세한 설명",
+  stopShowAll: "{n}개 모두 보기",
+  stopShowFewer: "접기",
   stopTimeUsedHeading: "시간 활용",
   stopVisitBasicsHeading: "방문 정보",
   stopVisitHoursLabel: "운영 시간",
@@ -359,6 +367,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "停留所",
   stopHighlightsHeading: "見どころ",
   stopFullDescriptionTitle: "詳しい説明",
+  stopShowAll: "すべて表示（{n}件）",
+  stopShowFewer: "閉じる",
   stopTimeUsedHeading: "時間の使い方",
   stopVisitBasicsHeading: "訪問の基本情報",
   stopVisitHoursLabel: "時間",
@@ -465,6 +475,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "站点",
   stopHighlightsHeading: "亮点",
   stopFullDescriptionTitle: "详细介绍",
+  stopShowAll: "显示全部 {n} 条",
+  stopShowFewer: "收起",
   stopTimeUsedHeading: "时间怎么安排",
   stopVisitBasicsHeading: "参观要点",
   stopVisitHoursLabel: "开放时间",
@@ -569,6 +581,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "站點",
   stopHighlightsHeading: "亮點",
   stopFullDescriptionTitle: "詳細介紹",
+  stopShowAll: "顯示全部 {n} 條",
+  stopShowFewer: "收合",
   stopTimeUsedHeading: "時間怎麼安排",
   stopVisitBasicsHeading: "參觀要點",
   stopVisitHoursLabel: "開放時間",
@@ -673,6 +687,8 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   dayFlowStopsPrefix: "Paradas",
   stopHighlightsHeading: "Destacados",
   stopFullDescriptionTitle: "Descripción completa",
+  stopShowAll: "Ver los {n}",
+  stopShowFewer: "Ver menos",
   stopTimeUsedHeading: "Uso del tiempo",
   stopVisitBasicsHeading: "Datos básicos",
   stopVisitHoursLabel: "Horario",

@@ -833,13 +833,18 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         <h3 className="text-[10.5px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
                           {sectionUi.stopHighlightsHeading}
                         </h3>
+                        {/* 🔴 이 버튼은 스톱 상세에서 **유일하게 더 읽을 것이 있다는 신호**인데,
+                            primary 8% 배경에 10.5px 이라 하이라이트 제목과 구분이 안 됐다 —
+                            사장님이 화면을 보고 "눈에 안 띈다"고 하신 자리다(2026-08-02).
+                            파란색은 이 페이지 팔레트(앰버·중성)에 없는 색이라 유일하게
+                            "누르는 것"으로 읽힌다. 채도를 빌려오는 게 아니라 대비를 만든다. */}
                         {stop.description && (
                           <button
                             type="button"
                             onClick={() => setDescModalOpen(true)}
-                            className="inline-flex items-center gap-1 rounded-full bg-primary/[0.08] px-2.5 py-1 text-[10.5px] font-semibold text-primary transition-colors hover:bg-primary/[0.14]"
+                            className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-blue-600 px-3 py-1.5 text-[12px] font-semibold text-white shadow-sm shadow-blue-600/25 transition-colors hover:bg-blue-700 active:bg-blue-800"
                           >
-                            <BookOpen className="h-3 w-3" strokeWidth={2.25} />
+                            <BookOpen className="h-3.5 w-3.5" strokeWidth={2.5} />
                             {sectionUi.stopFullDescriptionTitle ?? "Full description"}
                           </button>
                         )}
@@ -865,7 +870,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           aria-expanded={highlightsExpanded}
                           className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-primary transition-colors hover:text-primary/80"
                         >
-                          {highlightsExpanded ? "Show fewer" : `Show all ${all.length}`}
+                          {/* 🔴 여기가 영어로 하드코딩돼 있어서 중국어 화면에 `Show all 9`
+                              가 그대로 찍혔다. 문자열은 로케일 표에서 온다. */}
+                          {highlightsExpanded
+                            ? (sectionUi.stopShowFewer ?? "Show fewer")
+                            : (sectionUi.stopShowAll ?? "Show all {n}").replace(
+                                "{n}",
+                                String(all.length),
+                              )}
                           <ChevronDown
                             className={cn(
                               "h-3.5 w-3.5 transition-transform duration-200",
