@@ -61,6 +61,24 @@ export default function RegionScriptDoor({
   const t = REGION_SCRIPT_UI[locale];
 
   /**
+   * 표지로 세울 한 편. `null` = 아직 안 골랐다.
+   *
+   * 🔴 하이드레이션 때문에 **효과 안에서** 고른다. `useState(() => random())`
+   * 로 첫 렌더에 뽑으면 서버·클라이언트가 다른 편을 그려 트리가 통째로 재생성된다
+   * (2026-07-17에 로케일 감지로 같은 사고를 한 번 냈다). 고르기 전에는 아래
+   * 스켈레톤을 그대로 두므로 **깜빡임도 없다** — 사진이 바뀌는 프레임이 없다.
+   */
+  const [featured, setFeatured] = useState<RegionScriptCard | null>(null);
+  useEffect(() => {
+    if (!cards || cards.length === 0) return;
+    // 사진이 붙은 편을 우선한다. 표지의 8할은 사진이고, 16편 중 셋뿐이라
+    // 무작위로 뽑으면 열에 여덟은 이모지 표지가 된다.
+    const pool = cards.filter((c) => c.imageUrl);
+    const from = pool.length > 0 ? pool : cards;
+    setFeatured(from[Math.floor(Math.random() * from.length)] ?? from[0]);
+  }, [cards]);
+
+  /**
    * 🔴 시트 하나를 두 화면이 나눠 쓰므로 스크롤과 포커스가 저절로 따라오지 않는다.
    * `Sheet`는 열릴 때 한 번만 패널에 포커스를 준다. 전환 때 아무것도 안 하면
    * 리스트를 반쯤 내려서 고른 손님은 **전문의 중간부터** 보게 되고, 리더는 화면이
@@ -78,20 +96,43 @@ export default function RegionScriptDoor({
     setDetail(null);
   };
 
-  // 아직 안 불러왔다 — 자리만 잡아둔다. 도착하면 그 자리에 문이 들어선다.
-  if (cards === null) {
+  // 아직 안 불러왔거나(=null) 표지를 아직 안 골랐다 — 자리만 잡아둔다.
+  // 도착하면 그 자리에 문이 들어선다.
+  if (cards === null || (cards.length > 0 && featured === null)) {
     return (
       <section className="shrink-0 px-3 pt-3" aria-hidden>
-        <div className="tr-card min-h-[56px] w-full animate-pulse opacity-40" />
+        <div className="tr-card min-h-[148px] w-full animate-pulse opacity-40" />
       </section>
     );
   }
 
   // 지역이 안 잡히는 상품(서울·포천)은 문 자체가 없다. 오류가 아니다.
-  if (cards.length === 0) return null;
+  if (cards.length === 0 || !featured) return null;
 
   return (
     <section className="shrink-0 px-3 pt-3">
+      {/*
+       * 🔴 표지 카드다 — 설정 메뉴 행이 아니다.
+       *
+       * 이 자리엔 56px 짜리 행이 있었다: 초록 동그라미 + 「제주 알아보기」 +
+       * 「16편 · 길에서 읽는 짧은 글」 + 회색 꺾쇠. 사장님 판정(2026-08-02):
+       * *"지금은 설명서 느낌이라 클릭 안하고 싶어."* 맞다. 그 행이 보여준 건
+       * **메타데이터**였다 — 분류가 있고 개수가 있다는 사실. 정작 열어보게
+       * 만드는 문장은 전부 안에 갇혀 있었다.
+       *
+       * 그래서 문이 안의 것을 하나 꺼내 든다. 「2,371명이 남았고 그중 63%가
+       * 일흔을 넘겼습니다」는 「제주 알아보기」가 절대 못 하는 일을 한다.
+       * 아이콘·행 문법을 버리고 사진 표지로 바꾼 것도 같은 이유다 — 좌측
+       * 아이콘 + 우측 텍스트는 세상 모든 설정 화면의 문법이라, 크기만 키우면
+       * 큰 설정 행이 될 뿐이다.
+       *
+       * 잉크는 전부 아래 3분의 1, 스크림이 가장 짙은 곳에만 둔다. 그래야
+       * ① 사진 윗부분이 안 가려지고 ② 사진이든 액센트 워시든 10스킨 × 명암
+       * 어디서도 흰 글씨가 읽힌다. 스크림이 있으니 뒤가 무엇이든 상관없다.
+       *
+       * 높이 56 → 148px. 예전 가로 띠(330px 상주)의 절반 미만이고, 일정 탭의
+       * 주인공은 여전히 오늘 일정이다.
+       */}
       <button
         type="button"
         onClick={() => setOpen(true)}
@@ -99,30 +140,68 @@ export default function RegionScriptDoor({
         // 스캐너는 **컨트롤 자신의 className**만 보고 보호 여부를 판정한다
         // (`lib/audit/cjkBreak.ts` PROTECTED). 자식이 안전해도 버튼이 표시가
         // 없으면 suspect로 세어 ratchet 한도를 밀어 올린다.
-        className="tr-home-card tr-press text-cjk-body flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+        className="tr-press text-cjk-body relative block w-full overflow-hidden rounded-[var(--tr-radius-card)] text-left shadow-[var(--tr-rim),var(--tr-tile-shadow)]"
         data-testid="region-scripts-door"
       >
+        {featured.imageUrl ? (
+          <img
+            src={featured.imageUrl}
+            alt=""
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        ) : (
+          // 사진이 아직 없는 편이 표지가 되면 스킨 액센트 워시 + 큰 이모지.
+          // 빈 회색 상자가 되지 않게 하는 것이 유일한 목적이다.
+          <span
+            aria-hidden
+            className="tr-topic-tile absolute inset-0 flex items-start justify-center pt-5"
+          >
+            {/* 크기는 `.tr-emoji-tile`(40px × font-scale)로 — 임의 px 은 타입
+                사다리를 우회한다(`typeDiscipline` 게이트가 잡는다). */}
+            <span className="tr-emoji-tile leading-none">{featured.icon ?? '📖'}</span>
+          </span>
+        )}
+        {/* 스크림 — 흰 잉크의 가독성이 사진 밝기에 좌우되지 않게 하는 장치다. */}
         <span
-          className="tr-chip tr-chip--accent flex h-9 w-9 shrink-0 items-center justify-center"
           aria-hidden
-        >
-          <IconExplore size={TR_ICON.action} strokeWidth={TR_STROKE.default} />
-        </span>
-        <span className="min-w-0 flex-1">
-          <span className="tr-card-text text-cjk-safe block font-bold text-[var(--tr-ink)]">
-            {t.sectionTitle}
-          </span>
-          {/* 편수가 문을 여는 동기다 — "읽을 게 있다"가 아니라 "16편 있다". */}
-          <span className="tr-meta text-cjk-safe mt-0.5 block text-[var(--tr-ink-3)]">
-            {t.doorSubtitle.replace('{n}', String(cards.length))}
-          </span>
-        </span>
-        <IconChevronRight
-          size={TR_ICON.action}
-          strokeWidth={TR_STROKE.default}
-          aria-hidden
-          className="shrink-0 text-[var(--tr-ink-3)]"
+          className="absolute inset-0 bg-gradient-to-t from-[rgba(8,12,16,0.88)] via-[rgba(8,12,16,0.42)] to-[rgba(8,12,16,0.06)]"
         />
+        <span className="relative flex min-h-[148px] flex-col justify-end gap-2 p-4">
+          {/* 🔴 알약은 **아이브로 줄에** 있어야 한다. 티저와 같은 줄에 뒀더니
+              후크가 알약 너비만큼 잘렸다(일본어 실측: 「ひとつの火山がつくった島
+              —— ここのほとんどは、…」에서 끊김). 문을 열게 만드는 건 그 문장이고,
+              알약은 이미 카드 전체가 버튼이라 위치는 자유롭다. */}
+          <span className="flex items-center gap-1.5">
+            <IconExplore
+              size={TR_ICON.meta}
+              strokeWidth={TR_STROKE.small}
+              aria-hidden
+              className="shrink-0 text-white/75"
+            />
+            {/* 편수가 문을 여는 동기다 — "읽을 게 있다"가 아니라 "16편 있다". */}
+            <span className="tr-meta text-cjk-safe min-w-0 flex-1 font-semibold text-white/75">
+              {t.doorSubtitle.replace('{n}', String(cards.length))}
+            </span>
+            {/* 회색 꺾쇠는 "더 있음"이라고만 했다. 흰 알약은 눌린다고 말한다.
+                스크림 위이므로 색은 스킨을 따르지 않는다 — 이 카드는 밝기가
+                스스로 정해진 독립 표면(사진)이고, 그 위에서 가장 확실히
+                읽히는 조합은 흰 바탕 + 검은 잉크다. */}
+            <span className="tr-meta text-cjk-safe inline-flex shrink-0 items-center gap-0.5 rounded-full bg-white py-1.5 pl-3 pr-2 font-bold text-[#12161a]">
+              {t.readMore}
+              <IconChevronRight
+                size={TR_ICON.meta}
+                strokeWidth={TR_STROKE.small}
+                aria-hidden
+              />
+            </span>
+          </span>
+          {/* 표제는 제목이 아니라 **티저**다. 「제주 알아보기」는 분류고,
+              이 문장은 읽고 싶게 만드는 한 줄이다. 안에 있는 16편 중
+              한 편의 맛보기이므로 위 아이브로가 "16편 중 하나"라고 말해 준다. */}
+          <span className="tr-title text-cjk-body line-clamp-2 font-bold leading-snug text-white [text-shadow:0_1px_3px_rgba(0,0,0,0.5)]">
+            {featured.teaser}
+          </span>
+        </span>
       </button>
 
       <Sheet
