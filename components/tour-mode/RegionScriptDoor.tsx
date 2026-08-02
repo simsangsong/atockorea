@@ -196,7 +196,7 @@ function ScriptList({
                   className="h-full w-full object-cover"
                 />
               ) : (
-                <span aria-hidden className="tr-display leading-none">
+                <span aria-hidden className="tr-emoji-tile">
                   {card.icon ?? '📖'}
                 </span>
               )}
@@ -342,7 +342,16 @@ function ScriptBody({
                       {p.phone && (
                         <a
                           href={`tel:${p.phone.replace(/[^0-9+]/g, '')}`}
-                          className="tr-meta text-cjk-safe relative mt-0.5 inline-flex min-h-[24px] items-center tabular-nums text-[var(--tr-accent-deep)] after:absolute after:-inset-y-[10px] after:-inset-x-2 after:content-['']"
+                          // 🔴 인라인 style 이어야 한다. `app/globals.css` 의
+                          // `button, a { min-height: 44px }` 는 레이어 밖 규칙이라
+                          // Tailwind 유틸리티(@layer utilities)를 이긴다 — 클래스로
+                          // 주면 조용히 무시된다(실측 44px). 아래 §지도 칩 주석 참고.
+                          style={{ minHeight: 0 }}
+                          // 11px 한 줄이라 상자가 14.3px 다 — 44px 을 채우려면
+                          // 위아래로 각각 15px 이 필요하다(14.3 + 30 = 44.3).
+                          // 알약(24.3px)과 값이 다른 이유는 상자 높이가 달라서지
+                          // 규칙이 달라서가 아니다.
+                          className="tr-meta text-cjk-safe relative mt-0.5 inline-flex items-center tabular-nums text-[var(--tr-accent-deep)] after:absolute after:-inset-y-[15px] after:-inset-x-2 after:content-['']"
                         >
                           {p.phone}
                         </a>
@@ -357,14 +366,24 @@ function ScriptBody({
                         재질이라 배경을 `--base/--accent/--danger`가 주고, 클래스
                         하나만 붙이면 배경 없이 흰 잉크만 남는다 — 흰 카드 위의
                         흰 글씨다. 탭 가능한 알약은 `.tr-chip-tap` 계열이다.
-                        알약은 작게(11px·px-2.5·py-1 ≈ 22px), 손가락이 닿는
-                        영역은 `after`로 정확히 44px까지 넓힌다 — 보이는 크기와
-                        만지는 크기는 같을 필요가 없다. */}
+
+                        🔴 그리고 `min-height: 0` 을 **인라인으로** 줘야 한다.
+                        `app/globals.css` 에 앱 전역 `button, a { min-height: 44px }`
+                        가 있고, 그건 레이어 밖 규칙이라 Tailwind 유틸리티를 이긴다.
+                        그래서 11px 라벨이 44px 상자에 앉아 있었다 — 사장님이
+                        "글씨에 비해 버튼이 너무 크다"고 하신 것의 진짜 원인이다
+                        (실측 44.0px, 2026-08-02).
+
+                        전역 규칙 자체는 손대지 않는다. 그건 앱 전체의 접근성
+                        바닥이다. 대신 **보이는 크기와 만지는 크기를 분리**한다:
+                        알약은 24px, `after` 가 46px 히트 영역을 만든다. 그게
+                        전역 규칙이 지키려던 것을 그대로 지키는 방법이다. */}
                     {map && (
                       <a
                         href={map}
                         target="_blank"
                         rel="noopener noreferrer"
+                        style={{ minHeight: 0 }}
                         className="tr-meta tr-chip-tap tr-chip-tap--quiet text-cjk-safe relative shrink-0 rounded-full bg-[var(--tr-chip-quiet-fill)] px-2.5 py-1 font-semibold text-[var(--tr-ink-2)] after:absolute after:-inset-[11px] after:content-['']"
                       >
                         {t.openMap}
