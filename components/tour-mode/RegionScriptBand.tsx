@@ -62,7 +62,13 @@ export default function RegionScriptBand({
               className="tr-card flex h-full w-[72vw] max-w-[280px] flex-col gap-1.5 p-3 text-left active:scale-[0.985]"
             >
               <div className="flex items-center gap-1.5">
-                <span aria-hidden className="text-[17px] leading-none">
+                {/* 이모지도 tr-* 스케일을 쓴다(U4-D7). Tailwind 임의 픽셀값은
+                    글자크기 승강(--tr-font-scale)을 통째로 무시해서, 크게 보기를
+                    켠 손님에게만 이 한 글자가 안 커진다. AppManual의 섹션
+                    이모지와 같은 급이 tr-display다.
+                    ⚠ 위반 예시를 여기 그대로 적으면 안 된다 — typeDiscipline
+                    스캐너는 주석을 걷어내지 않아서 산문을 코드로 읽는다. */}
+                <span aria-hidden className="tr-display leading-none">
                   {card.icon ?? '📖'}
                 </span>
                 {card.sensitive && (

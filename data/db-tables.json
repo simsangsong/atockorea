@@ -1,8 +1,9 @@
 {
   "_comment": "라이브 public 스키마 스냅샷 (테이블 + 뷰 + 머티리얼라이즈드 뷰). __tests__/audit/schemaDrift.test.ts 가 이걸 기준으로 코드의 .from('...') 를 검증한다. ⚠ 갱신 쿼리에 pg_matviews 를 반드시 포함할 것 — 처음에 information_schema 만 봐서 analytics 롤업 2개를 '없는 테이블'로 오판했다.",
   "refresh_sql": "select table_name as obj from information_schema.tables where table_schema='public' union select table_name from information_schema.views where table_schema='public' union select matviewname from pg_matviews where schemaname='public' order by 1",
-  "captured_at": "2026-07-28",
+  "captured_at": "2026-08-02",
   "tables": [
+    "__tpp_payload_backup_20260729",
     "ad_variants",
     "agent_channel_events",
     "agent_reservations",
@@ -108,6 +109,8 @@
     "quote_memory",
     "quote_presets",
     "received_emails",
+    "region_script_locales",
+    "region_scripts",
     "request_intent_catalog",
     "request_intent_examples",
     "request_phrase_rules",

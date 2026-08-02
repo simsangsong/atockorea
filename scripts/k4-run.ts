@@ -364,6 +364,15 @@ const SPECS: Record<string, Spec> = {
     headers: guestH,
     ok: [200],
   },
+  // 지역 해설. 200 하나만 기대한다 — 지역이 안 잡히는 상품(서울·포천)도
+  // `{regionKey: null, cards: []}` 로 200을 준다. 빈 배열은 오류가 아니라
+  // "이 상품에는 해설이 없다"이고, 그 둘을 상태코드로 뭉개면 20방 중 몇 방이
+  // 조용히 안 실린 것을 못 잡는다.
+  'GET /api/tour-rooms/[bookingId]/region-scripts': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/region-scripts`,
+    headers: guestH,
+    ok: [200],
+  },
   'GET /api/tour-rooms/[bookingId]/day-summary': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/day-summary`,
     headers: guideH, // staff-only — the run proved it; the ledger said guest
