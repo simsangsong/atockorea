@@ -173,6 +173,12 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   // ── the day ────────────────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/tour-itinerary': { actor: 'guest', tier: 'free' },
   /**
+   * 지역 공통 해설(제주 알아보기). 일정 탭에 함께 얹히지만 스톱이 아니라
+   * **지역**에 매인다. 상품 슬러그가 지역으로 안 접히면 `{cards: []}`를 주는데
+   * 그건 오류가 아니라 "이 상품에는 해설이 없다"이다 — 서울·포천 상품이 그렇다.
+   */
+  'GET /api/tour-rooms/[bookingId]/region-scripts': { actor: 'guest', tier: 'free' },
+  /**
    * 🔴 Corrected by the Phase 3 run, not by reading: declared `guest`, answered
    * 403 "Guide, driver, or admin only". The ledger's hand-written half says an
    * actor "cannot be inferred from a route file without guessing" — this is what
