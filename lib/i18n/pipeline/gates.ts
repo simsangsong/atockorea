@@ -22,7 +22,14 @@ export interface Finding {
   message: string;
 }
 
-export type TargetLocale = 'de' | 'fr' | 'it' | 'ru';
+/**
+ * 🔴 2026-08-02 확장. 원래 넷은 i18n 확장 트랙(de·fr·it·ru)의 대상이었고,
+ * 룸 로케일 10종 중 나머지 넷(ja·es·zh·zh-TW)은 이 파이프라인보다 먼저 있던
+ * 언어라 여기 없었다. 지역 해설 번역이 그 넷을 쓰면서 `LENGTH_RATIO_BOUNDS`
+ * 조회가 `undefined` 가 되어 G8 이 예외로 죽었다 — 게이트가 침묵한 게 아니라
+ * 터졌으니 그나마 낫지만, 타입 유니온과 표가 어긋나 있었다는 뜻이다.
+ */
+export type TargetLocale = 'de' | 'fr' | 'it' | 'ru' | 'ja' | 'es' | 'zh' | 'zh-TW';
 
 export interface VerifyOptions {
   locale: TargetLocale;
@@ -40,9 +47,20 @@ export const LENGTH_RATIO_BOUNDS: Record<TargetLocale, [number, number]> = {
   fr: [1.0, 1.4],
   it: [0.95, 1.35],
   ru: [0.85, 1.3],
+  // 아래 넷의 기준 원문은 영어가 아니다. CJK 대상은 **한국어**를 원문으로 재는데
+  // (만 단위 체계가 같아야 G3 가 성립한다 — apply-region-script-locale.ts 참고),
+  // 한자는 같은 뜻을 한국어보다 짧게 담고 일본어는 가나 때문에 비슷하거나 조금
+  // 길어진다. 스페인어만 영어 기준이고 로망스어 특유의 팽창이 있다.
+  ja: [0.85, 1.35],
+  es: [1.0, 1.4],
+  zh: [0.45, 1.0],
+  'zh-TW': [0.45, 1.0],
 };
 
 // ── 토큰 추출기 ───────────────────────────────────────────────────────────────
+
+/** 대상 언어 자체가 CJK 인 것들 — G10 의 전제가 성립하지 않는다. */
+const CJK_LOCALES = new Set<TargetLocale>(['ja', 'zh', 'zh-TW']);
 
 const GLOSSARY_TOKEN_RE = /⟦G\d+⟧/g;
 const PLACEHOLDER_RE = /\{\{[^{}]*\}\}|\{[^{}]*\}|%\d+\$[sd]|%[sd]/g;
@@ -426,9 +444,19 @@ export function checkCharset(
 ): Finding[] {
   const findings: Finding[] = [];
 
+  // 🔴 대상 언어 자체가 CJK 면 이 검사는 물음이 성립하지 않는다.
+  //
+  // G10 이 잡으려는 것은 "원문 언어의 글자가 번역에 새어 들어왔다"이다 —
+  // 독일어 번역에 한국어가 남아 있으면 미번역이니까. 그런데 중국어·일본어
+  // 번역은 **CJK 문자가 늘어나는 것이 정상**이고, 한국어를 원문으로 재면
+  // 늘어나지 않는 편이 오히려 이상하다(2026-08-02 실측: 올바른 중국어 번역
+  // 8건이 전부 여기서 탈락했다).
+  //
+  // 이 게이트는 넷(de·fr·it·ru)만 있던 시절에 쓰였고 그때는 전제가 참이었다.
+  // 대상 언어가 늘면 전제도 같이 확인해야 한다.
   const cjkTarget = countMatches(target, CJK_RE);
   const cjkSource = countMatches(source, CJK_RE);
-  if (cjkTarget > cjkSource) {
+  if (!CJK_LOCALES.has(locale) && cjkTarget > cjkSource) {
     findings.push({
       gate: 'G10',
       severity: 'fail',
