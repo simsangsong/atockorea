@@ -759,8 +759,29 @@
  * 🔴 임의 픽셀이 아니라 **스케일을 곱한다.** 크게 보기를 켠 손님에게 이 한
  * 글자만 안 커지는 것이 typeDiscipline 게이트가 막으려는 바로 그 일이다. */
 .tr-emoji-tile {
-  font-size: calc(28px * var(--tr-font-scale, 1));
+  font-size: calc(40px * var(--tr-font-scale, 1));
   line-height: 1;
+}
+
+/* 주제 타일 배경.
+ *
+ * 🔴 사진이 붙은 편이 3/16 뿐이라, 나머지 13줄은 **회색 정사각형 + 회색 글씨**로
+ * 줄줄이 선다. 그 상태의 리스트는 읽을 것이 아니라 설정 화면처럼 읽힌다
+ * (사장님 판정, 2026-08-02: "설명서 느낌이라 클릭 안 하고 싶다").
+ *
+ * 색을 새로 들이지 않는다 — 스킨의 `--tr-accent-soft` 에서 파생시켜 온도만
+ * 올린다. `--tr-chip-quiet-fill` 과 같은 원리라 10개 스킨 × 라이트/다크가
+ * 자동으로 따라오고, 액센트가 rgba 인 스킨에서도 깨지지 않는다. */
+.tr-topic-tile {
+  /* accent-soft 는 스킨에 따라 거의 흰색이라(실측: 기본 스킨에서 육안 구분 불가)
+   * 액센트 본색을 낮은 비율로 섞는다. 값은 스킨에서 오므로 제주 스킨은 감귤빛,
+   * 기본은 초록빛이 된다 — 색을 새로 정하지 않고 스킨이 정한다. */
+  background-image: linear-gradient(
+    155deg,
+    color-mix(in srgb, var(--tr-accent) 42%, var(--tr-surface)),
+    color-mix(in srgb, var(--tr-accent) 14%, var(--tr-surface))
+  );
+  box-shadow: var(--tr-rim);
 }
 
 /* 🔴 O2 — each step's canonical weight, at ZERO specificity.

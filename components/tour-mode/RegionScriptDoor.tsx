@@ -185,9 +185,9 @@ function ScriptList({
             type="button"
             data-topic={card.topicKey}
             onClick={() => onPick(card)}
-            className="tr-card tr-press flex w-full items-center gap-3 p-2.5 text-left"
+            className="tr-card tr-press text-cjk-body flex w-full items-center gap-3.5 p-3 text-left"
           >
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-[calc(var(--tr-radius-card)-4px)] bg-[var(--tr-bubble-system)]">
+            <span className="tr-topic-tile flex h-[72px] w-[72px] shrink-0 items-center justify-center overflow-hidden rounded-[calc(var(--tr-radius-card)-2px)]">
               {card.imageUrl ? (
                 <img
                   src={card.imageUrl}
@@ -203,15 +203,21 @@ function ScriptList({
             </span>
             <span className="min-w-0 flex-1">
               {card.sensitive && (
-                <span className="tr-meta text-cjk-safe mb-0.5 inline-block rounded-full bg-[var(--tr-bubble-system)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
+                <span className="tr-meta text-cjk-safe mb-1 inline-block rounded-full bg-[var(--tr-bubble-system)] px-1.5 py-0.5 text-[var(--tr-ink-3)]">
                   {t.sensitive}
                 </span>
               )}
-              <span className="tr-card-text text-cjk-body line-clamp-1 block font-semibold text-[var(--tr-ink)]">
+              {/* 🔴 `block` 을 같이 주면 안 된다. `line-clamp-*` 는 `display:-webkit-box`
+                  로 동작하는데 `block` 이 그걸 덮어써서 **클램프가 조용히 무효가 된다**
+                  — 실렌더에서 2줄로 자를 티저가 3줄로 흘렀다(2026-08-02). */}
+              <span className="tr-card-text text-cjk-body line-clamp-1 font-semibold text-[var(--tr-ink)]">
                 {card.title}
               </span>
-              {/* teaser는 평문이다 — 강조 마크업은 body에만 넣는다. */}
-              <span className="tr-meta text-cjk-body mt-0.5 line-clamp-2 block text-[var(--tr-ink-2)]">
+              {/* 🔴 티저는 `tr-meta`(11px) 였다 — 줄에서 **가장 작은 글씨**가 하필
+                  가장 공들여 쓴 한 줄이었다는 뜻이다. 카드를 열게 만드는 건 제목이
+                  아니라 이 문장이다("2,371명이 남았고 그중 63%가 일흔을 넘겼습니다").
+                  본문과 같은 13px 로 올린다. 평문이다 — 강조 마크업은 body 에만 넣는다. */}
+              <span className="tr-card-text text-cjk-body mt-1 line-clamp-2 leading-snug text-[var(--tr-ink-2)]">
                 {card.teaser}
               </span>
             </span>
