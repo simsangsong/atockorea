@@ -28,6 +28,7 @@ import path from 'node:path';
 import { createClient } from '@supabase/supabase-js';
 import { verifyUnit, LENGTH_RATIO_BOUNDS, type TargetLocale, type UnitPayload } from '../lib/i18n/pipeline/gates';
 import { countEmphasis } from '../lib/text/emphasis';
+import { findScriptMix } from '../lib/i18n/scriptMix';
 
 const ROOT = process.cwd();
 const arg = (k: string) => process.argv.find((a) => a.startsWith(`--${k}=`))?.split('=')[1];
@@ -126,6 +127,16 @@ async function main() {
     for (const f of result.findings) {
       const line = `${row.topic_key}${f.pointer} [${f.gate}] ${f.message}`;
       (f.severity === 'fail' ? fails : flags).push(line);
+    }
+
+    // 🔴 로케일에 속하지 않는 문자 체계. G1~G11 어느 것도 묻지 않는 질문이라
+    // 중국어 본문의 한글 32곳이 열 로케일 전부 초록인 채로 통과했다(2026-08-02).
+    for (const f of findScriptMix(locale, row.topic_key, {
+      title: tgt.title, teaser: tgt.teaser, body: tgt.body, fun_fact: tgt.fun_fact ?? null,
+    })) {
+      fails.push(
+        `${row.topic_key}/${f.field}: ${locale} 에 ${f.script} 문자가 섞였다 — ${f.samples.join(' ')}`,
+      );
     }
 
     // 🔴 강조는 게이트에서 flag 다. 승인 큐가 없는 이 트랙에서 flag 는 침묵과
