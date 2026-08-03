@@ -77,6 +77,7 @@ import {
   Map as MapIcon,
   Camera,
   Sparkles,
+  Luggage,
   SquareParking,
   Sunrise,
   Timer,
@@ -1714,6 +1715,27 @@ export default function Cockpit({
             confirmLabel: '출발 안내 보내기',
           }).then((ok) => {
             if (ok) void signal({ type: 'departing' }, '인원 확인·출발 안내 완료 ✓');
+          });
+        },
+      },
+      {
+        /**
+         * Feature audit F4. The guest could report a LOST item; the driver —
+         * the one holding it — could not report a FOUND one. Sits here rather
+         * than on a screen of its own because the moment it is needed is the
+         * driver walking the empty van with one hand full.
+         */
+        key: 'found_item',
+        label: '분실물 발견',
+        Icon: Luggage,
+        tone: 'amber',
+        onClick: () => {
+          void confirmSheet({
+            title: '분실물 발견',
+            message: '차에 두고 내린 물건이 있다고 손님과 운영팀에 알릴까요? 물건이 무엇인지는 적지 않아요 — 주인을 운영팀이 확인합니다.',
+            confirmLabel: '알리기',
+          }).then((ok) => {
+            if (ok) void signal({ type: 'found_item' }, '분실물 안내 완료 ✓');
           });
         },
       },

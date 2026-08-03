@@ -209,6 +209,26 @@ async function main(): Promise<number> {
   await driver.waitForTimeout(3_500);
   await shot(driver, '05-driver-signal-sent');
 
+  /**
+   * The found-item report, added by this audit. Walked here rather than left to
+   * a unit test because its whole defect was that the driver could not REACH
+   * it: the guest signals route answers a driver 403, and driver-signal had no
+   * such type. A green render test would not have noticed either.
+   */
+  await actions.first().click();
+  await driver.waitForTimeout(1_000);
+  const foundAction = driver.getByRole('button', { name: '분실물 발견', exact: true }).first();
+  if (check('「분실물 발견」에 손이 닿는다', (await foundAction.count()) > 0)) {
+    await foundAction.click();
+    await driver.waitForTimeout(800);
+    const confirmBtn = driver.getByRole('button', { name: '알리기', exact: true }).first();
+    if (check('확인 시트가 뜬다', (await confirmBtn.count()) > 0)) {
+      await confirmBtn.click();
+      await driver.waitForTimeout(3_500);
+    }
+    await shot(driver, '05b-driver-found-item');
+  }
+
   // ── the guest — the only assertion that matters ───────────────────────────
   const guestCtx = await browser.newContext({
     viewport: { width: 390, height: 844 },
@@ -231,6 +251,13 @@ async function main(): Promise<number> {
     '🔴 손님 화면에 지연 안내가 도착했다',
     sawDelay,
     sawDelay ? `"${DELAY_MINUTES}분/minutes" + late/늦` : '기사는 보냈는데 손님에게 없다',
+  );
+
+  const sawFound = /left in the vehicle|두고 내리신/i.test(body);
+  check(
+    '🔴 손님 화면에 분실물 안내가 도착했다',
+    sawFound,
+    sawFound ? '차에 두고 내린 물건 안내' : '기사는 보냈는데 손님에게 없다',
   );
 
   await browser.close();
