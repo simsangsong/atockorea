@@ -176,6 +176,37 @@ describe('POST /api/tour-rooms/[bookingId]/join', () => {
     expect(json.snapshot.schedule).toEqual([{ time: '09:00' }]);
   });
 
+  /**
+   * 🔴 원장 P-14. 기기 TTS 능력을 보고하는 T2.9 효과가 이 엔드포인트를 재사용하는데,
+   * 기본 응답은 콜드 스타트 스냅샷 전체(**실측 215.2 KB**)다. 첫 페인트 중 join 이 2회 =
+   * 430 KB, 룸 전송의 24%. 그런데 그 호출자는 응답을 `.catch(() => undefined)` 로 버린다.
+   *
+   * 이 테스트가 지키는 것은 두 가지다 — **참가자 갱신은 여전히 일어나고**(그게 호출의 목적),
+   * **스냅샷은 안 실린다**(그게 절약분). 둘 중 하나만 보면 회귀를 놓친다:
+   * upsert 만 보면 스냅샷이 다시 붙어도 초록이고, 응답만 보면 upsert 가 사라져도 초록이다.
+   */
+  it('capabilityOnly 는 참가자만 갱신하고 스냅샷을 되돌려주지 않는다', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'user-owner', role: 'customer' });
+    const db = fakeDb({ messages: [{ id: 'm1', created_at: '2026-07-14T00:00:00Z' }] });
+    createServerClientMock.mockReturnValue(db);
+
+    const res = await joinPOST(
+      fakeReq({ json: { deviceKey: DEVICE_KEY, locale: 'ko', ttsCapable: true, capabilityOnly: true } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(200);
+    const json = await res.json();
+
+    // 목적은 그대로 이뤄진다.
+    expect(db.upserts.tour_room_participants[0].values).toMatchObject({
+      device_key: DEVICE_KEY,
+      tts_capable: true,
+    });
+    // 그리고 비싼 것은 안 실린다.
+    expect(json.snapshot).toBeUndefined();
+    expect(json.ok).toBe(true);
+  });
+
   it('joins via customer invite token with the token displayName and guide via tour-date token', async () => {
     const { token } = signCustomerRoomToken({ bookingId: 'booking-1', displayName: 'Alex', tourDate: '2026-07-14' });
     const db = fakeDb();

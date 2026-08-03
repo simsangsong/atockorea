@@ -1020,6 +1020,10 @@ function TourRoomLive({
           deviceKey,
           locale: localeForTtsProbe.current,
           ttsCapable: tier === 'device',
+          // 🔴 스냅샷을 되받지 않는다 (원장 P-14). 이 호출은 능력 한 줄을 upsert 할 뿐인데
+          // join 의 기본 응답은 콜드 스타트 스냅샷 전체라 **215 KB** 다 [실측] — 첫 페인트
+          // 중에 그걸 두 번째로 받고 있었고, 아래 catch 가 그걸 그대로 버리고 있었다.
+          capabilityOnly: true,
         }),
       }).catch(() => undefined);
     });

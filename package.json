@@ -18,7 +18,7 @@
     "e2e:headed": "playwright test --headed",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
-    "analyze": "ANALYZE=true next build",
+    "analyze": "node scripts/analyze.mjs",
     "create-merchant": "node scripts/create-merchant.js",
     "seed:places": "echo Run: curl -X POST http://localhost:3000/api/admin/seed-places-overviews -H \"x-seed-secret: $SEED_PLACES_SECRET\"",
     "poi:locales:enrich": "node --env-file=.env.local scripts/enrich-match-pois-locales-from-tour-jsons.mjs",
