@@ -67,6 +67,52 @@ export const SSE_STARTS_PER_HOUR = 120;
 export const SSE_THROTTLED_RETRY_MS = 60_000;
 
 /**
+ * 🔴 K1a, the client half — who reopens the stream when the browser will not.
+ *
+ * The server was shaped so that IT never answers a non-200: that is the whole
+ * reason the K1b ceiling throttles with a 200 instead of a 429. What it cannot
+ * promise is that nothing else does. A cold instance can 500, an edge can 502,
+ * a captive portal can hand back a login page, and the PA-4 429 deliberately
+ * stays. Per spec every one of those closes `EventSource` PERMANENTLY —
+ * readyState CLOSED, no further attempts, ever.
+ *
+ * `useTourRoomChannel` has exactly two transports and no polling client behind
+ * them, so with realtime already down (which is why SSE is running at all) that
+ * is the end of the room. Measured in a real browser, blocking the realtime
+ * socket and answering /events with one 500: **1 connection attempt, 0 retries
+ * in 26 seconds**, with the header still reading "Reconnecting…". The same run
+ * with a transport-level abort instead of a 500 retried 9 times — the browser
+ * recovers from the failure it owns and cannot see the other one.
+ *
+ * So the client owns it, on a curve that stays inside the budgets K1a/K1b
+ * already argued for:
+ *   · floor  = SSE_RECONNECT_HINT_MS  — coming back sooner than the hint the
+ *     server hands out would be arguing with our own advice;
+ *   · ceiling = SSE_THROTTLED_RETRY_MS — one connection a minute is the steady
+ *     state K1b already declares acceptable;
+ *   · jitter adds only, so the floor stays a floor while a fleet of guests
+ *     coming back from one outage does not come back in lockstep.
+ */
+export const SSE_CLIENT_RETRY_MIN_MS = SSE_RECONNECT_HINT_MS;
+export const SSE_CLIENT_RETRY_MAX_MS = SSE_THROTTLED_RETRY_MS;
+const SSE_CLIENT_RETRY_GROWTH = 2;
+/** Up to +25%, never negative — see above. */
+export const SSE_CLIENT_RETRY_JITTER = 0.25;
+
+/**
+ * Next client-owned reconnect delay. `previous` is null for the first attempt
+ * after a good connection, so a room that recovers and fails again starts over
+ * at the floor rather than inheriting an hour-old backoff.
+ */
+export function nextReconnectDelay(previous: number | null, random: number = Math.random()): number {
+  const base =
+    previous === null
+      ? SSE_CLIENT_RETRY_MIN_MS
+      : Math.min(SSE_CLIENT_RETRY_MAX_MS, previous * SSE_CLIENT_RETRY_GROWTH);
+  return Math.round(base * (1 + random * SSE_CLIENT_RETRY_JITTER));
+}
+
+/**
  * Fast while the conversation is live, patient when it is not.
  *
  * Activity resets straight to the floor rather than easing down, because

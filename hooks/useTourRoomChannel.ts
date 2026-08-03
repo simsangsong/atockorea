@@ -27,6 +27,13 @@ import { supabase } from '@/lib/supabase';
 import type { QuickReplyPreset } from '@/lib/tour-room/quickReplies';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
+import { nextReconnectDelay } from '@/lib/tour-room/sseFallback';
+
+/**
+ * `EventSource.CLOSED`, written as a literal so this module does not depend on
+ * the global existing — it is imported by jsdom tests and by a server render.
+ */
+const EVENT_SOURCE_CLOSED = 2;
 
 export interface RoomMessage {
   id: string;
@@ -327,6 +334,22 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
   }, []);
 
   // --- transport 2: SSE fallback -------------------------------------------
+  /**
+   * K1a (client half) — a pending client-owned reopen, and how long the last
+   * one waited. Held in refs so the retry curve survives re-renders and so the
+   * effect cleanup below can cancel a timer that would otherwise open a stream
+   * for an unmounted room.
+   */
+  const sseRetryTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const sseRetryDelayRef = useRef<number | null>(null);
+  const startSseRef = useRef<() => void>(() => {});
+  const cancelSseRetry = useCallback(() => {
+    if (sseRetryTimerRef.current !== null) {
+      clearTimeout(sseRetryTimerRef.current);
+      sseRetryTimerRef.current = null;
+    }
+  }, []);
+
   const startSse = useCallback(() => {
     if (!roomSession || sseRef.current) return;
     const params = new URLSearchParams();
@@ -341,18 +364,61 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
         /* skip malformed frame */
       }
     });
-    source.addEventListener('open', () => setConnection('sse'));
+    source.addEventListener('open', () => {
+      // A good connection retires the backoff: a room that recovers and fails
+      // again an hour later should start over at the floor, not at the ceiling.
+      sseRetryDelayRef.current = null;
+      setConnection('sse');
+    });
     source.addEventListener('error', () => {
-      // EventSource reconnects natively; flag the gap for the user meanwhile.
-      setConnection((prev) => (prev === 'sse' ? 'offline' : prev));
+      /**
+       * 🔴 Two different failures arrive on this one event and only readyState
+       * separates them.
+       *
+       * CONNECTING — a transport-level drop. The browser owns this and retries
+       * on its own (measured: 9 attempts in 26s), so all we do is flag the gap.
+       *
+       * CLOSED — the response was not a 200. Per spec the browser will never
+       * try again. Realtime is already down (that is why this transport is
+       * running), the hook has no third transport, and so this is where the
+       * room goes silent while the header still says "Reconnecting…". Measured
+       * before this branch existed: 1 attempt, 0 retries in 26 seconds.
+       */
+      if (source.readyState !== EVENT_SOURCE_CLOSED) {
+        setConnection('offline');
+        return;
+      }
+      source.close();
+      if (sseRef.current === source) sseRef.current = null;
+      setConnection('offline');
+      if (sseRetryTimerRef.current !== null) return; // one reopen in flight is enough
+      const delay = nextReconnectDelay(sseRetryDelayRef.current);
+      sseRetryDelayRef.current = delay;
+      sseRetryTimerRef.current = setTimeout(() => {
+        sseRetryTimerRef.current = null;
+        startSseRef.current();
+      }, delay);
     });
   }, [addMessages, bookingId, roomSession]);
+
+  // Lets the error handler above reopen without depending on its own identity.
+  useEffect(() => {
+    startSseRef.current = startSse;
+  }, [startSse]);
 
   // --- transport 1: Realtime Broadcast --------------------------------------
   useEffect(() => {
     if (!channelTopic || !supabase) {
-      if (channelTopic) startSse(); // no realtime client at all → straight to SSE
-      return;
+      if (!channelTopic) return;
+      startSse(); // no realtime client at all → straight to SSE
+      // This branch used to return nothing, which was survivable while the
+      // stream was the only thing to clean up. It no longer is: a pending
+      // reopen would fire into an unmounted room.
+      return () => {
+        cancelSseRetry();
+        sseRef.current?.close();
+        sseRef.current = null;
+      };
     }
     const client = supabase;
     const channel = client.channel(channelTopic, {
@@ -442,6 +508,10 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
           sseRef.current.close(); // realtime recovered — drop the fallback
           sseRef.current = null;
         }
+        // And drop a pending client-owned reopen with it: a fallback that lands
+        // after realtime has recovered is a second stream nobody needs.
+        cancelSseRetry();
+        sseRetryDelayRef.current = null;
         retryRef.current(); // flush any messages that failed while offline
       } else if (status === 'CHANNEL_ERROR' || status === 'TIMED_OUT' || status === 'CLOSED') {
         startSse(); // R-3: degrade rather than go silent
@@ -450,10 +520,11 @@ export function useTourRoomChannel(options: UseTourRoomChannelOptions): UseTourR
 
     return () => {
       client.removeChannel(channel);
+      cancelSseRetry();
       sseRef.current?.close();
       sseRef.current = null;
     };
-  }, [addMessages, channelTopic, startSse, myParticipantId]);
+  }, [addMessages, cancelSseRetry, channelTopic, startSse, myParticipantId]);
 
   // --- translation repair (R-6 completion) ----------------------------------
   // A message published during a translation-provider outage carries

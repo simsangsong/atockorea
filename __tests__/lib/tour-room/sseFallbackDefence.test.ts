@@ -18,6 +18,9 @@ import { readFileSync } from 'fs';
 import path from 'path';
 import {
   nextPollInterval,
+  nextReconnectDelay,
+  SSE_CLIENT_RETRY_MAX_MS,
+  SSE_CLIENT_RETRY_MIN_MS,
   SSE_MAX_DURATION_S,
   SSE_POLL_MAX_MS,
   SSE_POLL_MIN_MS,
@@ -70,6 +73,59 @@ describe('K1a — poll backoff', () => {
       elapsed += interval;
     }
     expect(polls).toBeLessThan(before / 2);
+  });
+});
+
+/**
+ * K1a, the client half. The server was shaped so it never answers a non-200 —
+ * that is why the K1b ceiling throttles with a 200 — but it cannot promise the
+ * same for a cold-start 500, an edge 502, a captive portal, or the PA-4 429
+ * that deliberately stays. Any of those closes `EventSource` permanently, and
+ * with realtime already down there is no third transport behind it.
+ *
+ * Measured in a real browser (`scripts/qa-sse-reconnect.ts`), realtime blocked:
+ * a transport abort retried 9 times in 26s; one 500 produced 1 attempt and
+ * 0 retries in the same window, with the header still reading "Reconnecting…".
+ */
+describe('K1a — the client-owned reopen', () => {
+  it('🔴 first retry waits at least as long as the hint the server hands out', () => {
+    // Coming back sooner than our own advice would be arguing with it.
+    expect(nextReconnectDelay(null, 0)).toBe(SSE_RECONNECT_HINT_MS);
+    expect(SSE_CLIENT_RETRY_MIN_MS).toBe(SSE_RECONNECT_HINT_MS);
+  });
+
+  it('backs off and stops at the steady state K1b already calls acceptable', () => {
+    let delay: number | null = null;
+    const seen: number[] = [];
+    for (let i = 0; i < 10; i += 1) {
+      delay = nextReconnectDelay(delay, 0);
+      seen.push(delay);
+    }
+    for (let i = 1; i < seen.length; i += 1) expect(seen[i]).toBeGreaterThanOrEqual(seen[i - 1]);
+    expect(Math.max(...seen)).toBe(SSE_CLIENT_RETRY_MAX_MS);
+    expect(SSE_CLIENT_RETRY_MAX_MS).toBe(SSE_THROTTLED_RETRY_MS);
+  });
+
+  it('jitter only ever adds, so the floor stays a floor', () => {
+    // A fleet of guests comes off one outage together; spreading them matters.
+    // Spreading them EARLIER would undo the floor, so the jitter is one-sided.
+    for (const r of [0, 0.5, 1]) {
+      expect(nextReconnectDelay(null, r)).toBeGreaterThanOrEqual(SSE_CLIENT_RETRY_MIN_MS);
+    }
+    expect(nextReconnectDelay(null, 1)).toBeGreaterThan(nextReconnectDelay(null, 0));
+  });
+
+  it('a good connection retires the curve rather than inheriting it', () => {
+    // `previous === null` is what the open handler restores. Without it a room
+    // that recovered at noon and failed again at five would start at the ceiling.
+    expect(nextReconnectDelay(SSE_CLIENT_RETRY_MAX_MS, 0)).toBe(SSE_CLIENT_RETRY_MAX_MS);
+    expect(nextReconnectDelay(null, 0)).toBe(SSE_CLIENT_RETRY_MIN_MS);
+  });
+
+  it('recovers slower than a browser would, so recovery is not the new load', () => {
+    // Chromium retries a transport failure about every 3s. Ours is deliberately
+    // the slower of the two: this path exists for a server that is already hurt.
+    expect(SSE_CLIENT_RETRY_MIN_MS).toBeGreaterThan(3_000);
   });
 });
 
