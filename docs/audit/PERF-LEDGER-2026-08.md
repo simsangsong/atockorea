@@ -137,10 +137,30 @@ tour_rooms_booking_id_fkey         FOREIGN KEY (booking_id) → bookings(id)    
 **우회(오늘 쓴 것):** 해당 `ops_room_vehicles` 행을 먼저 지우고 드레인 재실행 → 성공
 (15건 제거 · 잔여 0 · 고아 0). ⚠ 사장님의 `manual-test-2026-07` 11건은 건드리지 않았다(확인함).
 
-**후보 수정:** `room_id` FK 를 `ON DELETE CASCADE` 로(차량 배정은 룸 없이는 의미가 없고,
-`group_id` 는 이미 CASCADE 다). **DDL 이므로 사장님 확인 후.**
+### ✅ 수정 완료 (2026-08-03, 사장님 승인 후 라이브 DDL)
 
-**게이트 가능:** ✅ 삭제 왕복 테스트(예약 생성 → 차량 배정 → 삭제)가 이걸 영구히 막는다.
+🔴 **처음 제안한 "`room_id` 를 ON DELETE CASCADE 로" 는 틀렸다.**
+라이브에 **`group_id` 와 `room_id` 를 둘 다 가진 행이 실재한다** [실측]. 그 행은 룸이 사라져도
+그룹 앵커로 유효하고 지금은 정상 생존한다(room_id 만 NULL). 통짜 CASCADE 는 **그것까지 지워
+현재 동작을 퇴행**시킨다. FK 액션으로는 "앵커가 이것 하나뿐일 때만"을 표현할 수 없다.
+
+**적용한 것** (`supabase/migrations/20260803120000_room_vehicles_deletable.sql`):
+`tour_rooms` 에 **BEFORE DELETE 트리거** — 그 룸에만 매인(`group_id IS NULL`) 배정만 함께 지운다.
+이중 앵커 행은 기존 FK `SET NULL` 경로로 그대로 생존한다. CHECK 는 손대지 않고 위반 상황만 없앤다.
+
+**검증** [실측]:
+| 확인 | 결과 |
+|---|---|
+| 실패했던 경로 재실행(`sim-tour-day` 시드 → `--cleanup`) | **exit 0** (이전 exit 1) |
+| 이중 앵커 행 생존 | ✅ 사장님 `manual-test-2026-07` 행 무사(room·group 둘 다 유지) |
+| 어드바이저 재실행 | 🔴 **내 변경이 새 지적을 만들었다** — `anon_security_definer_function_executable`. 트리거 함수가 PostgREST 로 노출됨 → `revoke execute` from public·anon·authenticated 적용 → **재실행 시 0건** |
+| 회수 후에도 트리거 동작 | ✅ 시드→드레인 다시 exit 0 |
+
+**게이트:** ⚠ **구조 검사는 못 붙였다.** `qa-ops-center-queries.ts` 에서 `pg_trigger` 를 읽으려면
+raw SQL 이 필요한데 이 레포엔 범용 SQL RPC 가 없다(DDL 은 전부 MCP 수동 경로).
+**행동 게이트는 시드→드레인 사이클**이다 — 회귀하면 `sim-tour-day.ts --cleanup` 이 **exit 1** 로 죽는다.
+시뮬을 쓰는 세션마다 밟는 경로라 실효는 있으나 **CI 자동 게이트는 아니다.**
+🔴 마이그레이션 파일 존재로 검증하지 말 것 — **레포에 있다 ≠ 적용됐다.**
 
 ---
 
