@@ -4,6 +4,7 @@ import { requestGate } from '@/lib/durable-rate-limit';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import {
   DRIVER_DELAY_MINUTES,
+  DRIVER_SIGNAL_TYPES,
   ETA_REPLY_MINUTES,
   googleMapsPinUrl,
   renderDriverSignal,
@@ -35,14 +36,18 @@ export const dynamic = 'force-dynamic';
  * cancel:true to clear it.
  */
 
+/**
+ * Every signal that renders a guest capsule, plus this route's own extras.
+ *
+ * 🔴 Spelled out by hand until the feature audit: adding a type to
+ * `driverSignals.ts` and forgetting it here meant a 400 from a button the
+ * cockpit was already showing. Derived now, so the list cannot fall behind.
+ * `return_time` and the say-queue entries stay literal — they are this route's
+ * bookkeeping and render no capsule, so they are deliberately not in the bundle.
+ */
 const SIGNAL_TYPES: Array<DriverSignalType | 'return_time' | 'say_dismissed' | 'say_expired'> = [
-  'delay',
-  'parking_pin',
-  'vehicle_arrived',
-  'vehicle_issue',
+  ...DRIVER_SIGNAL_TYPES,
   'return_time',
-  'eta_reply',
-  'departing',
   // SG-6 — say-queue bookkeeping: no message, no fan-out, just the event
   // ledger (dismissals dedupe the queue; expiries are N-5's decision data).
   'say_dismissed',
@@ -295,6 +300,23 @@ export async function POST(
         title: '🚐 차량 문제 신고 (기사)',
         body: `booking ${booking.id.slice(0, 8)} — 기사님이 차량 문제를 보고했습니다.`,
         tag: `vehicle-issue-${booking.id}`,
+      }).catch(() => undefined);
+    }
+
+    /**
+     * A found item has to reach ops as well as the guests.
+     *
+     * The room capsule covers the likely owner, but by the time the van is
+     * cleaned the guests may have closed the app for good — and ops is who
+     * physically stores the item and answers the claim. The guest's own
+     * `lost_item` already pushes here; this is the same desk hearing about the
+     * same object from the other end.
+     */
+    if (type === 'found_item') {
+      void sendOpsPush({
+        title: '🧳 분실물 발견 (기사)',
+        body: `booking ${booking.id.slice(0, 8)} — 기사님이 차량에서 물건을 발견했습니다 (보관·연락 필요).`,
+        tag: `found-item-${booking.id}`,
       }).catch(() => undefined);
     }
 

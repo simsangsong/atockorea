@@ -4,7 +4,12 @@
  */
 import { signDriverRoomToken, signGuideRoomToken, verifyRoomToken } from '@/lib/tour-room/token';
 import { checkDriverPin, pinFromBusPayload, pinFromVehicleValue } from '@/lib/tour-room/driver';
-import { DRIVER_DELAY_MINUTES, googleMapsPinUrl, renderDriverSignal } from '@/lib/tour-room/driverSignals';
+import {
+  DRIVER_DELAY_MINUTES,
+  DRIVER_SIGNAL_TYPES,
+  googleMapsPinUrl,
+  renderDriverSignal,
+} from '@/lib/tour-room/driverSignals';
 import {
   googleDirectionsUrl,
   kakaoNaviUrl,
@@ -212,13 +217,30 @@ describe('vehicle PIN gate (P-D3)', () => {
 
 describe('driver signal bundles (5-locale, zero LLM)', () => {
   it('covers every room locale for every signal type', () => {
-    for (const type of ['delay', 'parking_pin', 'vehicle_arrived', 'vehicle_issue'] as const) {
+    // 🔴 This iterated a hard-coded four of the six types that existed, so a
+    // new signal could ship with locales missing and stay green. Driven by the
+    // exported list now, which is also what the route validates against.
+    expect(DRIVER_SIGNAL_TYPES.length).toBeGreaterThan(4);
+    for (const type of DRIVER_SIGNAL_TYPES) {
       const bundle = renderDriverSignal(type, { minutes: 10 });
       for (const locale of ROOM_LOCALES) {
         expect(bundle.translations[locale]).toBeTruthy();
         expect(bundle.translations[locale]).not.toContain('{');
       }
     }
+  });
+
+  it('lets the driver report an item found in the vehicle', () => {
+    // The guest's lost_item has always existed. Its counterpart did not, so the
+    // person holding the bag could not say so — the signals route answers a
+    // driver 403 "Drivers use driver-signal" and this type was absent there.
+    expect(DRIVER_SIGNAL_TYPES).toContain('found_item');
+    const bundle = renderDriverSignal('found_item');
+    expect(bundle.translations.ko).toContain('두고 내리신');
+    expect(bundle.translations.en).toMatch(/left in the vehicle/i);
+    // Deliberately never names the object: ops does the matching, and a guess
+    // printed in ten languages tells nine people it is not theirs.
+    expect(bundle.translations.en).not.toMatch(/\b(phone|wallet|bag|passport)\b/i);
   });
 
   it('interpolates minutes and appends the shared maps link', () => {

@@ -164,16 +164,29 @@ export const DECLARED_EMPTY: Record<string, string> = {
   'driver/booked':
     'Same as the guide, and more so: the driver is picked last and holds no ' +
     'link until the guide mints one.',
+  /**
+   * 🔴 The first version of this reason was wrong, and F4 caught it by reading
+   * the route instead of the ticket: it claimed the driver "has nothing to open
+   * until the morning". Not so — /driver/overview scopes to the TOKEN's
+   * tourDate, not to today, so a driver opening the link the day before gets
+   * that date with `lifecycle: 'lobby'`. They can look ahead already.
+   */
   'driver/dayBefore':
-    '🔴 FINDING, not a settled answer. The guide mints the driver link the day ' +
-    'before (POST /driver/link), but the driver has nothing to open with it ' +
-    'until the morning — no way to see tomorrow, confirm they got it, or flag ' +
-    'a conflict. Every other role can look ahead. Carried to F4.',
+    'Covered by GET /api/tour-mode/driver/overview, which the grid files under ' +
+    'morning because that is when it is mostly read. It scopes to the token\'s ' +
+    'tourDate rather than today, so the same link answers the day before. What ' +
+    'is genuinely missing is an ACKNOWLEDGEMENT: joining writes a driver row in ' +
+    'tour_room_participants and nothing surfaces it, so nobody knows whether ' +
+    'the link landed until the morning it matters. Engine present, consumer ' +
+    'absent — this track\'s usual shape. Open.',
   'driver/after':
-    '🔴 FINDING, not a settled answer. The driver leaves the trip with no ' +
-    'endpoint at all. The obvious candidate is an item left in the vehicle: ' +
-    'lost_item exists but is a GUEST signal, so the person who actually finds ' +
-    'the bag cannot report it. Carried to F4.',
+    'Closed by found_item (feature audit F4), which rides driver-signal and so ' +
+    'is filed under during. The driver taps it while cleaning the van; the ' +
+    'route has no lifecycle gate, so it works after the tour, and it reaches ' +
+    'both the guests and the ops desk that actually stores the item. Before ' +
+    'that the guest could report a LOST item and the person holding it could ' +
+    'not report a FOUND one — the signals route answers a driver 403 "Drivers ' +
+    'use driver-signal", and driver-signal had no such type.',
 };
 
 export function cellKey(role: K4Actor, stage: JourneyStage): string {

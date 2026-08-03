@@ -9,13 +9,33 @@
 
 import { ROOM_LOCALES, type RoomLocale } from '@/lib/tour-room/snapshot';
 
-export type DriverSignalType =
-  | 'delay'
-  | 'parking_pin'
-  | 'vehicle_arrived'
-  | 'vehicle_issue'
-  | 'eta_reply'
-  | 'departing';
+/**
+ * The signal set, as a runtime list so nothing has to repeat it.
+ *
+ * 🔴 It used to be a bare type union, and three separate places kept their own
+ * copy: the route's SIGNAL_TYPES, the cockpit tray, and the locale test — which
+ * iterated a hard-coded four of the six that existed. A seventh type could be
+ * added, wired, and shipped with two of its ten locales missing and every test
+ * still green. Same shape as EXTRA_KINDS, which carries the same warning.
+ *
+ * `found_item` (feature audit F4/F1) is why this mattered. The guest already
+ * had `lost_item` — "I lost something". The driver, the person actually holding
+ * the bag while cleaning the van, had nothing: the guest signals route answers a
+ * driver 403 "Drivers use driver-signal", and driver-signal had no such type.
+ * The only person who KNEW an item existed could not say so, and the only people
+ * who could say so did not know.
+ */
+export const DRIVER_SIGNAL_TYPES = [
+  'delay',
+  'parking_pin',
+  'vehicle_arrived',
+  'vehicle_issue',
+  'eta_reply',
+  'departing',
+  'found_item',
+] as const;
+
+export type DriverSignalType = (typeof DRIVER_SIGNAL_TYPES)[number];
 
 export const DRIVER_DELAY_MINUTES = [5, 10, 15, 20, 30] as const;
 /** A3 — one-tap numeric reply to a guest pickup/drop-off request. */
@@ -81,6 +101,24 @@ const TEMPLATES: Record<DriverSignalType, Record<RoomLocale, string>> = {
     de: '✅ Alle an Bord — wir fahren jetzt los. Bitte nehmen Sie Platz.',
     ru: '✅ Все на месте — отправляемся. Пожалуйста, займите свои места.',
     it: '✅ Conteggio fatto — si parte. Prendete posto, per favore.',
+  },
+  /**
+   * Deliberately does not name the item. The driver taps this the moment they
+   * see something on a seat, before knowing whose it is, and a guess printed in
+   * ten languages ("a phone") is worse than none — it tells nine people it is
+   * not theirs. Ops gets the push and does the matching.
+   */
+  found_item: {
+    en: '🧳 Something was left in the vehicle. If you are missing anything, tell us here — our team is holding it.',
+    ko: '🧳 차량에 두고 내리신 물건이 있어요. 잃어버린 게 있으면 여기로 알려 주세요 — 저희가 보관 중입니다.',
+    ja: '🧳 車内にお忘れ物がありました。心当たりがあればこちらにお知らせください — こちらで保管しています。',
+    es: '🧳 Se quedó algo en el vehículo. Si te falta algo, dínoslo por aquí: lo tenemos guardado.',
+    zh: '🧳 车内有遗留物品。如果您丢了东西，请在这里告诉我们——我们已代为保管。',
+    'zh-TW': '🧳 車內有遺留物品。如果您掉了東西，請在這裡告訴我們——我們已代為保管。',
+    fr: '🧳 Un objet a été oublié dans le véhicule. S’il vous manque quelque chose, dites-le ici : nous le gardons.',
+    de: '🧳 Im Fahrzeug wurde etwas vergessen. Falls Ihnen etwas fehlt, schreiben Sie uns hier — wir bewahren es auf.',
+    ru: '🧳 В машине осталась забытая вещь. Если вы что-то потеряли, напишите сюда — мы её сохранили.',
+    it: '🧳 Qualcosa è rimasto nel veicolo. Se ti manca qualcosa, scrivici qui: lo stiamo conservando.',
   },
   vehicle_issue: {
     en: 'We are having a vehicle issue. The team is on it — updates will follow here shortly.',
