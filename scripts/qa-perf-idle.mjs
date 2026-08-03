@@ -1,0 +1,119 @@
+/**
+ * qa-perf-idle — 가만히 있는 사용자 1명이 만드는 **상시 비용**.
+ *
+ * 룸을 열어 두고 아무것도 하지 않은 채 N초를 보낸 뒤, 그동안 나간 요청을
+ * 종류별로 센다. 폴링 간격은 소스에 상수로 적혀 있지만(GuideConsole 15초 ·
+ * VehicleLocationCard 60초), **적혀 있는 것과 실제로 나가는 것은 다른 문제다** —
+ * 이 트랙의 지배 결함이 "선언은 있는데 소비처가 없다/다르다" 였다.
+ *
+ * WebSocket(Supabase realtime)과 SSE 폴백도 구분해서 센다. 어느 쪽으로 붙었는지에
+ * 따라 손님 1명당 서버 비용이 완전히 달라진다.
+ *
+ * 🔴 이 스크립트는 **아무것도 클릭하지 않는다.** 유휴 비용을 재는 것이라
+ *    상호작용이 섞이면 측정이 아니라 시나리오가 된다.
+ *
+ * 사용:
+ *   WALK_BASE=http://localhost:<port> node scripts/qa-perf-idle.mjs [--seconds 90] [--surface guest|guide]
+ */
+import { chromium } from 'playwright';
+import { readFileSync } from 'fs';
+
+const argv = process.argv.slice(2);
+const flag = (n, d) => {
+  const i = argv.indexOf(`--${n}`);
+  return i >= 0 && argv[i + 1] && !argv[i + 1].startsWith('--') ? argv[i + 1] : d;
+};
+const BASE = process.env.WALK_BASE ?? 'http://localhost:3175';
+const SECONDS = Math.max(30, Number(flag('seconds', '90')));
+const SURFACE = flag('surface', 'guest');
+
+let fx;
+try {
+  fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
+} catch {
+  console.error('scripts/.sim-fixtures.json 이 없다. ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts');
+  process.exit(1);
+}
+const target =
+  SURFACE === 'guide'
+    ? { url: fx.guideUrl, wait: '[data-testid="staff-shell"]', label: '가이드 콘솔' }
+    : { url: fx.room1Url, wait: '[data-testid="room-tabbar"]', label: '손님 룸' };
+
+const browser = await chromium.launch();
+const ctx = await browser.newContext({
+  viewport: { width: 390, height: 844 },
+  isMobile: true,
+  hasTouch: true,
+  geolocation: { latitude: 33.4996, longitude: 126.5312 },
+  permissions: ['geolocation'],
+});
+const page = await ctx.newPage();
+await page.addInitScript(() => window.localStorage.setItem('tr_manual_seen_v2', String(Date.now())));
+
+const sockets = [];
+page.on('websocket', (ws) => sockets.push({ url: ws.url(), openedAt: Date.now() }));
+
+await page.goto(BASE + target.url, { waitUntil: 'domcontentloaded', timeout: 120000 });
+await page.waitForSelector(target.wait, { timeout: 120000 });
+// 진입 폭풍이 가라앉을 시간. 이걸 안 주면 초기 로드를 유휴 비용으로 오해한다.
+await page.waitForTimeout(8000);
+
+// ── 여기부터가 측정 구간 ────────────────────────────────────────────────────
+const reqs = [];
+const onResponse = async (res) => {
+  const url = res.url();
+  if (!url.startsWith(BASE)) return;
+  let bytes = 0;
+  try {
+    const s = await res.request().sizes();
+    bytes = (s.responseBodySize ?? 0) + (s.responseHeadersSize ?? 0);
+  } catch {
+    /* 사라진 응답은 측정치가 아니다 */
+  }
+  reqs.push({ path: new URL(url).pathname, status: res.status(), bytes, at: Date.now() });
+};
+page.on('response', onResponse);
+
+const startedAt = Date.now();
+await page.waitForTimeout(SECONDS * 1000);
+page.off('response', onResponse);
+const elapsedSec = (Date.now() - startedAt) / 1000;
+await browser.close();
+
+// ── 집계 ────────────────────────────────────────────────────────────────────
+const byPath = new Map();
+for (const r of reqs) {
+  // bookingId 같은 가변 세그먼트를 접어 같은 엔드포인트끼리 묶는다.
+  const key = r.path.replace(/\/[0-9a-f]{8}-[0-9a-f-]{27,}/gi, '/{id}');
+  const cur = byPath.get(key) ?? { n: 0, bytes: 0, statuses: new Set() };
+  cur.n += 1;
+  cur.bytes += r.bytes;
+  cur.statuses.add(r.status);
+  byPath.set(key, cur);
+}
+const rows = [...byPath.entries()]
+  .map(([path, v]) => ({
+    엔드포인트: path,
+    횟수: v.n,
+    '초당': +(v.n / elapsedSec).toFixed(3),
+    '추정 간격(초)': v.n > 1 ? +(elapsedSec / v.n).toFixed(1) : '—',
+    KB: +(v.bytes / 1024).toFixed(1),
+    status: [...v.statuses].join(','),
+  }))
+  .sort((a, b) => b.횟수 - a.횟수);
+
+console.log(`\n[${target.label}] 유휴 ${elapsedSec.toFixed(0)}초 · 클릭 0회 · 진입 후 8초는 제외`);
+if (!rows.length) {
+  console.log('  요청 0건 — 유휴 상태에서 HTTP 폴링이 없다(WebSocket 만 쓰거나, 아무것도 안 한다).');
+} else {
+  console.table(rows);
+}
+const totalKB = +(reqs.reduce((a, r) => a + r.bytes, 0) / 1024).toFixed(1);
+console.log(
+  `  합계: ${reqs.length}건 · ${totalKB} KB · 분당 ${(reqs.length / (elapsedSec / 60)).toFixed(1)}건 / ${(totalKB / (elapsedSec / 60)).toFixed(1)} KB`,
+);
+console.log(`\n  WebSocket: ${sockets.length}개`);
+for (const s of sockets) console.log(`    ${s.url.slice(0, 120)}`);
+if (!sockets.length) {
+  console.log('    🔴 없음 — realtime 이 안 붙었다는 뜻이고, 그러면 SSE/폴링이 그 일을 대신한다.');
+}
