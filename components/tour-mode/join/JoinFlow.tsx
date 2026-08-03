@@ -12,12 +12,10 @@
  * 구독(useSeatChannel)으로 타인 선택 즉시 반영 + 서버 UNIQUE 409 재선택.
  */
 
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
+import { useCallback, useEffect, useRef, useState, type ReactNode } from 'react';
 import { IconTicket, TR_ICON } from '@/components/tour-mode/icons';
 import SeatMap from '@/components/ops/SeatMap';
-import type { SeatState } from '@/lib/ops/seating/logic';
-import type { VehicleLayoutJson } from '@/lib/ops/seating/layouts';
-import { useSeatChannel } from '@/hooks/useSeatChannel';
+import { useSeatPicker } from '@/hooks/useSeatPicker';
 import { joinCopy, detectJoinLocale, type JoinCopyKey } from '@/lib/ops/seating/joinCopy';
 import {
   getOrCreateDeviceKey,
@@ -33,23 +31,6 @@ interface RosterEntry {
   name: string;
   partySize: number;
   claimed: boolean;
-}
-
-interface VehicleView {
-  roomVehicleId: string;
-  model: string | null;
-  plateNumber: string | null;
-  totalSeats: number | null;
-  layout: VehicleLayoutJson | null;
-  seatStates: Record<number, SeatState>;
-  seats: Array<{
-    seatNumber: number;
-    bookingId: string;
-    guestLabel: string | null;
-    checkedInAt: string | null;
-    absentAt: string | null;
-    locked: boolean;
-  }>;
 }
 
 type Phase =
@@ -98,10 +79,7 @@ export default function JoinFlow({
   const [myBookingId, setMyBookingId] = useState<string | null>(null);
   const [partySize, setPartySize] = useState(1);
   const [displayName, setDisplayName] = useState('');
-  const [vehicles, setVehicles] = useState<VehicleView[]>([]);
   const [channelTopic, setChannelTopic] = useState<string | null>(null);
-  const [activeVehicleId, setActiveVehicleId] = useState<string | null>(null);
-  const [selected, setSelected] = useState<Set<number>>(new Set());
   const [answerEmail, setAnswerEmail] = useState('');
   const [answerParty, setAnswerParty] = useState('');
   const [note, setNote] = useState<string | null>(null);
@@ -115,27 +93,19 @@ export default function JoinFlow({
     setLocale(detectJoinLocale());
   }, []);
 
-  // ── seats loader (shared by initial load + realtime + 409 refresh) ────────
-  const loadSeats = useCallback(
-    async (personalToken: string): Promise<VehicleView[]> => {
-      const res = await fetch(`/api/ops/rooms/${roomId}/seats`, {
-        headers: { 'x-tour-room-token': personalToken },
-        cache: 'no-store',
-      });
-      if (!res.ok) return [];
-      const data = await res.json().catch(() => ({ vehicles: [] }));
-      const vs = (data.vehicles ?? []) as VehicleView[];
-      setVehicles(vs);
-      return vs;
-    },
-    [roomId],
-  );
-
-  const refetchSeats = useCallback(() => {
-    if (token) void loadSeats(token);
-  }, [token, loadSeats]);
-
-  useSeatChannel(channelTopic, refetchSeats);
+  // ── the picker itself is shared with the in-room seat sheet ──────────────
+  // Board loading, the selection rules, the 409 re-pick and the start-gate
+  // lock all live in useSeatPicker so both entry points behave identically.
+  const picker = useSeatPicker({
+    roomId,
+    token,
+    bookingId: myBookingId,
+    partySize,
+    guestLabel: displayName,
+    channelTopic,
+    enabled: Boolean(token),
+  });
+  const { vehicles, activeVehicle, anyLocked, selected, renderedStates, onSeatTap } = picker;
 
   // ── enter the seat step for a recognized/claimed booking ─────────────────
   const enterSeats = useCallback(
@@ -144,13 +114,6 @@ export default function JoinFlow({
       setMyBookingId(bookingId);
       setPartySize(Math.max(1, party));
       setDisplayName(name);
-      const vs = await loadSeats(personalToken);
-      // pre-seed selection from my already-assigned seats; pick their vehicle.
-      const mineVehicle = vs.find((v) => v.seats.some((s) => s.bookingId === bookingId));
-      const active = mineVehicle?.roomVehicleId ?? vs[0]?.roomVehicleId ?? null;
-      setActiveVehicleId(active);
-      const mineSeats = (mineVehicle?.seats ?? []).filter((s) => s.bookingId === bookingId).map((s) => s.seatNumber);
-      setSelected(new Set(mineSeats));
       setPhase({ k: 'seats' });
 
       // Realtime topic via a best-effort room join (also refreshes last_seen).
@@ -163,10 +126,10 @@ export default function JoinFlow({
         const joinData = await joinRes.json().catch(() => null);
         if (joinRes.ok && joinData?.channel?.topic) setChannelTopic(joinData.channel.topic as string);
       } catch {
-        /* realtime is best-effort; the slow poll below is the safety net */
+        /* realtime is best-effort; the picker's slow poll is the safety net */
       }
     },
-    [loadSeats, locale],
+    [locale],
   );
 
   // ── initial roster load + C-4 device recognition ─────────────────────────
@@ -203,15 +166,6 @@ export default function JoinFlow({
       }
     })();
   }, [roomId, claimToken, enterSeats]);
-
-  // ── slow poll fallback while selecting (realtime may be unavailable) ──────
-  useEffect(() => {
-    if (phase.k !== 'seats' || !token) return;
-    const id = window.setInterval(() => {
-      if (document.visibilityState === 'visible') void loadSeats(token);
-    }, 8000);
-    return () => window.clearInterval(id);
-  }, [phase.k, token, loadSeats]);
 
   // ── claim ────────────────────────────────────────────────────────────────
   const submitClaim = useCallback(
@@ -256,82 +210,18 @@ export default function JoinFlow({
     [answerEmail, answerParty, claimToken, roomId, locale, enterSeats, t],
   );
 
-  // ── seat selection helpers ────────────────────────────────────────────────
-  const activeVehicle = useMemo(
-    () => vehicles.find((v) => v.roomVehicleId === activeVehicleId) ?? vehicles[0] ?? null,
-    [vehicles, activeVehicleId],
-  );
-  const anyLocked = useMemo(
-    () => vehicles.some((v) => v.seats.some((s) => s.locked)),
-    [vehicles],
-  );
-
-  /** server 상태 + 내 로컬 선택 병합 (내 옛 좌석 미선택은 available로 되돌림). */
-  const renderedStates = useMemo(() => {
-    if (!activeVehicle) return {} as Record<number, SeatState>;
-    const map: Record<number, SeatState> = {};
-    for (const [n, st] of Object.entries(activeVehicle.seatStates)) {
-      map[Number(n)] = st === 'mine' ? 'available' : st;
-    }
-    for (const n of selected) map[n] = 'mine';
-    return map;
-  }, [activeVehicle, selected]);
-
-  const onSeatTap = useCallback(
-    (n: number) => {
-      if (!activeVehicle || anyLocked) return;
-      const serverState = activeVehicle.seatStates[n];
-      const mineSeat = activeVehicle.seats.find((s) => s.seatNumber === n && s.bookingId === myBookingId);
-      const selectable = !serverState || serverState === 'available' || serverState === 'mine' || Boolean(mineSeat);
-      if (!selectable) return;
-      setSelected((prev) => {
-        const next = new Set(prev);
-        if (next.has(n)) next.delete(n);
-        else if (next.size < partySize) next.add(n);
-        return next;
-      });
-    },
-    [activeVehicle, anyLocked, myBookingId, partySize],
-  );
-
   const confirmSeats = useCallback(async () => {
-    if (!token || !activeVehicle || selected.size === 0) return;
     setNote(null);
     setPhase({ k: 'submitting' });
-    try {
-      const res = await fetch(`/api/ops/rooms/${roomId}/seats`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'x-tour-room-token': token },
-        body: JSON.stringify({
-          roomVehicleId: activeVehicle.roomVehicleId,
-          seats: [...selected].map((seatNumber) => ({ seatNumber, guestLabel: displayName })),
-        }),
-      });
-      const data = await res.json().catch(() => ({}));
-      if (res.status === 201) {
-        setVehicles((data.vehicles ?? []) as VehicleView[]);
-        setPhase({ k: 'done', seatNumbers: [...selected].sort((a, b) => a - b) });
-        return;
-      }
-      if (res.status === 409) {
-        // C-10 — 후착: 최신 상태로 갱신 + 재선택 유도.
-        setVehicles((data.vehicles ?? vehicles) as VehicleView[]);
-        setNote(t('seatTaken'));
-        setPhase({ k: 'seats' });
-        return;
-      }
-      if (res.status === 400 && data.error === 'seat_change_locked') {
-        setNote(t('seatLocked'));
-        setPhase({ k: 'seats' });
-        return;
-      }
-      setNote(t('error'));
-      setPhase({ k: 'seats' });
-    } catch {
-      setNote(t('error'));
-      setPhase({ k: 'seats' });
+    const result = await picker.confirm();
+    if (result.ok) {
+      setPhase({ k: 'done', seatNumbers: result.seatNumbers });
+      return;
     }
-  }, [token, activeVehicle, selected, roomId, displayName, vehicles, t]);
+    // C-10 후착 / C-11 잠금 / 그 외 — 셋 다 좌석 화면으로 되돌아가 다시 고른다.
+    setNote(t(result.reason === 'taken' ? 'seatTaken' : result.reason === 'locked' ? 'seatLocked' : 'error'));
+    setPhase({ k: 'seats' });
+  }, [picker, t]);
 
   // ── styling (tour-room tokens; dark via prefers-color-scheme) ─────────────
   const card =
@@ -504,7 +394,11 @@ export default function JoinFlow({
     <JoinShell dark={dark} locale={locale}>
       <div className={card} data-testid="join-seats">
         <p className={title}>{t('seatTitle')}</p>
-        {!activeVehicle ? (
+        {/* "차량 배정 대기"는 물어본 뒤에만 할 수 있는 말이다 — 첫 조회 전에
+            띄우면 좌석이 있는 투어에서도 한 프레임 스친다. */}
+        {!picker.loaded ? (
+          <p className={sub}>{t('loading')}</p>
+        ) : !activeVehicle ? (
           <p className={sub} data-testid="seat-soon">
             {t('seatSoon')}
           </p>
@@ -517,10 +411,7 @@ export default function JoinFlow({
                   <button
                     key={v.roomVehicleId}
                     type="button"
-                    onClick={() => {
-                      setActiveVehicleId(v.roomVehicleId);
-                      setSelected(new Set());
-                    }}
+                    onClick={() => picker.setActiveVehicleId(v.roomVehicleId)}
                     className={`tr-label text-cjk-safe rounded-full px-3 py-1 font-semibold ${
                       v.roomVehicleId === activeVehicle.roomVehicleId
                         ? 'bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]'

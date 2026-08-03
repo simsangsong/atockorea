@@ -809,6 +809,9 @@ export default function RoomShell({
                     type="button"
                     role="tab"
                     aria-selected={active}
+                    /* 워크 하니스가 위치나 라벨로 탭을 찾지 않게 한다 — 홈의
+                       접힌 타일에도 "지도"가 있어 텍스트 매칭이 그걸 집었다. */
+                    data-testid={`room-tab-${key}`}
                     onClick={() => selectTab(key)}
                     className={`tr-press relative flex min-h-[44px] flex-1 flex-col items-center justify-center gap-0.5 pb-1 pt-1.5 ${
                       active ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink-3)]'
