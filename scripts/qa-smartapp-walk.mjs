@@ -42,8 +42,33 @@ const ctx = await browser.newContext({
 });
 const page = await ctx.newPage();
 const errors = [];
-page.on('console', (m) => m.type() === 'error' && errors.push(m.text().slice(0, 300)));
+/**
+ * Google Maps refuses localhost with RefererNotAllowedMapError because the API
+ * key's referrer allowlist does not cover dev origins. That is a fact about
+ * this machine, not about the product (same carve-out as qa-door-fixes-walk).
+ * Letting it into `errors` would make this gate fail for a reason no code
+ * change can fix, and a gate that cries wolf gets switched off.
+ */
+const ENV_NOISE = /Google Maps/;
+page.on(
+  'console',
+  (m) => m.type() === 'error' && !ENV_NOISE.test(m.text()) && errors.push(m.text().slice(0, 300)),
+);
 page.on('pageerror', (e) => errors.push('PAGEERROR ' + String(e).slice(0, 300)));
+
+let crashed = null;
+let checksRun = 0;
+/**
+ * Records that a check actually happened, which `errors.push` alone could not:
+ * an empty error list means "nothing was wrong" and "nothing was looked at"
+ * equally well, and the exit code at the bottom needs to tell those apart.
+ * Returns `ok` so it can stand in for the `if` it replaces.
+ */
+const check = (ok, message) => {
+  checksRun += 1;
+  if (!ok) errors.push(message);
+  return ok;
+};
 
 const shot = async (name) => {
   await page.screenshot({ path: path.join(OUT, name + '.png') });
@@ -83,9 +108,10 @@ try {
   await dismissManual();
   await armInstallPrompt();
   await shot('01-guest-home-light');
-  if (!(await page.locator('[data-testid="install-card"]').count())) {
-    errors.push('WALK: install card missing on home after synthetic beforeinstallprompt');
-  }
+  check(
+    (await page.locator('[data-testid="install-card"]').count()) > 0,
+    'WALK: install card missing on home after synthetic beforeinstallprompt',
+  );
 
   await page.locator('[data-testid="room-tabbar"] [role="tab"]').nth(1).click({ timeout: 10000 });
   await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
@@ -93,9 +119,10 @@ try {
   await shot('02-guest-chat-classic');
 
   // header diet: theme toggle must be GONE from the header
-  if (await page.locator('[data-testid="theme-toggle"]').count()) {
-    errors.push('HEADER-DIET VIOLATION: theme-toggle still in header');
-  }
+  check(
+    (await page.locator('[data-testid="theme-toggle"]').count()) === 0,
+    'HEADER-DIET VIOLATION: theme-toggle still in header',
+  );
 
   // ── M-D4 meet-exactly: [Meet me here] → confirm → pin + one photo ──
   await page.click('[data-testid="signal-share_location"]', { timeout: 10000 });
@@ -118,7 +145,7 @@ try {
   await page.waitForTimeout(2500);
   await shot('02b-guest-meet-here-pin-photo');
   const guestChips = await page.locator('[data-testid="nav-chip-google"]').count();
-  if (!guestChips) errors.push('MEET-EXACTLY: guest nav chips missing on location preview');
+  check(guestChips > 0, 'MEET-EXACTLY: guest nav chips missing on location preview');
 
   await page.click('[data-testid="room-drawer-open"]', { timeout: 10000 });
   await page.waitForSelector('[data-testid="room-drawer"]', { timeout: 8000 });
@@ -141,8 +168,11 @@ try {
     await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
     await page.waitForTimeout(600);
     await shot(`05-guest-chat-skin-${skin}`);
-    if (skin === 'contrast' && (await page.locator('[data-testid="skin-scenery"]').count())) {
-      errors.push('WALK: contrast skin must not render scenery');
+    if (skin === 'contrast') {
+      check(
+        (await page.locator('[data-testid="skin-scenery"]').count()) === 0,
+        'WALK: contrast skin must not render scenery',
+      );
     }
   }
   // scenery on the home canvas (launcher grammar) for two landmark skins.
@@ -244,15 +274,13 @@ try {
 
   // per-guest ⋮ action sheet
   const more = page.locator('[data-testid="room-more"]').first();
-  if (await more.count()) {
+  if (check((await more.count()) > 0, 'WALK: no room-more button (no rooms seeded?)')) {
     await more.click();
     await page.waitForSelector('[data-testid="guest-action-sheet"]', { timeout: 8000 });
     await page.waitForTimeout(700);
     await shot('12-staff-guest-action-sheet');
     await page.keyboard.press('Escape');
     await page.waitForTimeout(500);
-  } else {
-    errors.push('WALK: no room-more button (no rooms seeded?)');
   }
 
   // announce (wa.me / mailto) sheet still reachable from its pinned row
@@ -273,7 +301,7 @@ try {
 
   // ── M-D2: the SAME pin, seen by staff — Kakao chips, not Google ──
   const roomHref = await page.locator('[data-testid="room-chat"]').first().getAttribute('href');
-  if (roomHref) {
+  if (check(Boolean(roomHref), 'MEET-EXACTLY: no room-chat link to open as staff')) {
     await page.goto(BASE + roomHref, { waitUntil: 'domcontentloaded', timeout: 60000 });
     await page.waitForSelector('[data-testid="room-tabbar"]', { timeout: 30000 });
     // operator rooms have no Home tab — they LAND on chat (no click needed;
@@ -281,15 +309,13 @@ try {
     await page.waitForSelector('[data-testid="chat-feed"]', { timeout: 15000 });
     await page.waitForTimeout(1200);
     const kakao = await page.locator('[data-testid="nav-chip-kakao-navi"]').count();
-    if (!kakao) errors.push('MEET-EXACTLY: staff kakao chips missing in guide room view');
+    check(kakao > 0, 'MEET-EXACTLY: staff kakao chips missing in guide room view');
     await page.locator('[data-testid="location-preview"]').last().scrollIntoViewIfNeeded().catch(() => {});
     await page.waitForTimeout(400);
     await shot('13b-staff-room-kakao-chips');
     await page.goBack({ waitUntil: 'domcontentloaded' });
     await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 30000 });
     await page.waitForTimeout(800);
-  } else {
-    errors.push('MEET-EXACTLY: no room-chat link to open as staff');
   }
 
   await page.click('[data-testid="staff-tab-btn-seats"]');
@@ -342,7 +368,7 @@ try {
       const opened = await page
         .waitForSelector('[data-testid="cockpit-actions-toggle"]', { timeout: 20000 })
         .catch(() => null);
-      if (opened) {
+      if (check(Boolean(opened), 'WALK: cockpit did not open from 운전 모드')) {
         await page.waitForTimeout(1200);
         await page.click('[data-testid="cockpit-actions-toggle"]');
         await page.waitForTimeout(500);
@@ -350,19 +376,15 @@ try {
         if (await scheduleAction.count()) {
           await scheduleAction.click();
           const arrival = page.locator('[data-testid="cockpit-open-arrival"]').first();
-          if (await arrival.count()) {
+          if (check((await arrival.count()) > 0, 'WALK: no arrival button (schedule empty?)')) {
             await arrival.click();
             await page.waitForSelector('[data-testid="arrival-time-input"]', { timeout: 10000 });
             await page.waitForTimeout(700);
             await shot('19-cockpit-arrival-timewheel');
             await page.keyboard.press('Escape');
-          } else {
-            errors.push('WALK: no arrival button (schedule empty?)');
           }
         }
         await page.click('[data-testid="cockpit-exit"]').catch(() => {});
-      } else {
-        errors.push('WALK: cockpit did not open from 운전 모드');
       }
     }
   }
@@ -370,9 +392,39 @@ try {
   console.log('WALK OK');
 } catch (e) {
   console.log('FAILED AT:', String(e).split('\n')[0]);
+  crashed = String(e).split('\n')[0];
   try {
     await shot('99-failure-state');
   } catch {}
 }
 console.log('console errors:', errors.length ? errors : 'none');
 await browser.close();
+
+/**
+ * 🔴 This script used to end here, so it exited 0 no matter what it saw.
+ *
+ * It was never a screenshot tool: it makes nine real checks — install card,
+ * header diet, guest nav chips, skin/scenery, room-more button, staff kakao
+ * chips, room-chat link, arrival button, cockpit entry — and pushes a message
+ * onto `errors` when one fails. It just printed them and left. The catch above
+ * swallowed exceptions the same way: "FAILED AT: …" and then a clean exit.
+ *
+ * Anything checking this by exit code — a gate, CI, a future `npm run gate`
+ * entry — read green every single time. Same shape as FA-008: the gate was
+ * alive, nobody was reading what it said.
+ */
+if (crashed) {
+  console.error(`\n🔴 WALK FAILED — ${crashed}`);
+  process.exit(1);
+}
+if (errors.length > 0) {
+  console.error(`\n🔴 ${errors.length} problem(s) — see the list above.`);
+  process.exit(1);
+}
+if (checksRun === 0) {
+  // A run that asserted nothing is not a pass. If the seed is missing or the
+  // shell changed, this reports the silence instead of dressing it as success.
+  console.error('\n🔴 walk asserted nothing — seed missing or selectors moved.');
+  process.exit(2);
+}
+console.log(`\n✅ ${checksRun} checks, 0 problems.`);

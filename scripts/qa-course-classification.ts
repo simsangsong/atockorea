@@ -18,6 +18,7 @@
  * Usage:  npx tsx scripts/qa-course-classification.ts
  * Exit:   0 = the set matches · 1 = drift · 2 = could not ask (never a silent 0)
  */
+import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 import {
   classificationDrift,
@@ -29,6 +30,12 @@ import {
 import type { ItineraryStop } from '../components/product-tour-static/_shared/tourProductDetailSectionTypes';
 
 async function main(): Promise<number> {
+  // 🔴 Without this the script read a bare `process.env` and exited 2 on every
+  // standard checkout — `.env.local` is where this repo's keys live, and `tsx`
+  // does not load it. Honest about failing, but it meant the live half of this
+  // gate had never actually asked the question. Every sibling harness that
+  // touches Supabase already loads env this way.
+  loadEnvConfig(process.cwd());
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!url || !key) {

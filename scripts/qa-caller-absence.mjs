@@ -48,14 +48,25 @@ for (const f of files) {
   }
 }
 
+/**
+ * Ledgers DECLARE routes; they do not call them. Counting one as an app caller
+ * is how a route with only a harness reference reads as wired — the first run
+ * of this scan made exactly that mistake on the /content route.
+ *
+ * 🔴 This was written as `p === 'lib/audit/k4Coverage.ts'`, one filename. Then
+ * the feature audit added a SECOND ledger next to it (featureJourney.ts, every
+ * route path as a string key) and the harness-only count silently fell 1 → 0.
+ * The scan went blind and reported an improvement. Everything under lib/audit/
+ * describes the app rather than calling it, so the rule is the directory —
+ * and LEDGER_SHAPED below catches the next one written somewhere else.
+ */
+const isLedger = (p) => /^lib\/audit\//.test(p);
+
 const isTestish = (p) =>
   /^(__tests__|e2e|scripts|mobile)\//.test(p) ||
   /\.(test|spec)\.[jt]sx?$/.test(p) ||
   /__tests__\//.test(p) ||
-  // The K4 ledger DECLARES routes; it does not call them. Counting it as an app
-  // caller is how a route with only a harness reference reads as wired — the
-  // first run of this scan made exactly that mistake on the /content route.
-  p === 'lib/audit/k4Coverage.ts';
+  isLedger(p);
 
 // ── 1. modules with no external importer ────────────────────────────────────
 const MODULE_ROOTS = [/^lib\/tour-room\//, /^lib\/ops\//, /^hooks\//, /^components\/tour-mode\//, /^components\/tour-ops\//];
@@ -145,3 +156,32 @@ harnessOnlyRoutes.forEach(({ ap, testOnly }) => console.log(`   ${ap}  ←  ${te
 
 const failures = orphanModules.length + orphanRoutes.length + harnessOnlyRoutes.length;
 console.log(`\n${failures ? '🔴' : '✅'} caller-absence candidates: ${failures}`);
+
+/**
+ * Self-check: is this scan still able to see?
+ *
+ * A file that spells out many `'METHOD /api/…'` literals is a ledger, and every
+ * literal in it looks exactly like a call site to a text-level scan. One such
+ * file counted as app code makes EVERY route it lists read as wired, and the
+ * scan reports zero problems — an improvement, in the only direction that
+ * matters, produced by going blind.
+ *
+ * That is not hypothetical; it happened twice. So rather than trusting the
+ * directory rule to be remembered, look for the shape.
+ */
+const LEDGER_LITERAL = /['"`](GET|POST|PUT|PATCH|DELETE) \/api\//g;
+const blinding = [];
+for (const [p, src] of source) {
+  if (isTestish(p)) continue;
+  const count = (src.match(LEDGER_LITERAL) ?? []).length;
+  if (count >= 5) blinding.push({ p, count });
+}
+if (blinding.length > 0) {
+  console.error('\n🔴 SCAN MAY BE BLIND — these count as app callers but look like ledgers:');
+  for (const { p, count } of blinding) console.error(`   ${p}  (${count} route literals)`);
+  console.error(
+    '   A ledger declares routes; it does not call them. Move it under lib/audit/,\n' +
+      '   or add it to isTestish — otherwise every route it names reads as wired.',
+  );
+  process.exit(2);
+}

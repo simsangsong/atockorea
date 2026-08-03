@@ -686,6 +686,20 @@ export default function GuideConsole() {
             {rooms.map((room) => {
               const badge = planBadge(room.day_plan?.status);
               const awaitingReply = room.last_message?.sender_role === 'customer';
+              /**
+               * Did the driver ever open the link the guide minted?
+               *
+               * Feature audit F7. Joining already writes a driver row here and
+               * /guide/overview already sends it — this component declared
+               * `participants` in its props type and then never read it, so the
+               * answer arrived on every poll and was dropped. Ops learned the
+               * link had not landed on the morning it mattered.
+               *
+               * Shown only while it is still actionable. Once the driver is in,
+               * the absence of a warning is the signal; a permanent tick on
+               * every row is noise the eye stops seeing.
+               */
+              const driverJoined = room.participants.some((p) => p.role === 'driver');
               return (
                 <ChatListRow
                   key={room.booking_id}
@@ -698,6 +712,15 @@ export default function GuideConsole() {
                   meta={`${room.number_of_guests ?? 1}명`}
                   badges={
                     <>
+                      {!driverJoined && (
+                        <span
+                          data-testid="driver-not-joined"
+                          className="tr-meta text-cjk-safe shrink-0 rounded-full bg-[var(--tr-accent-soft)] px-1.5 py-0.5 font-bold text-[var(--tr-ink-2)]"
+                          title="기사가 아직 링크를 열지 않았어요"
+                        >
+                          기사 미확인
+                        </span>
+                      )}
                       {room.onboard_ack && (
                         <span className="inline-flex shrink-0 items-center text-[var(--tr-safe)]" title="탑승 확인">
                           <IconDone size={TR_ICON.meta} aria-hidden />

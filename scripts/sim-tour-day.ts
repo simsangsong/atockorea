@@ -214,7 +214,26 @@ async function main() {
     );
   }
 
-  const { data: tours } = await service.from('tours').select('id, title').limit(2);
+  /**
+   * 🔴 Prefer tours that actually have geofenced stops.
+   *
+   * This used to be `select('id, title').limit(2)` — whichever two rows came
+   * back first. Only two tours in the whole catalogue carry `tour_guide_spots`
+   * with coordinates and a radius, so the sim room almost always had NONE, and
+   * every walk of the guest room quietly skipped the arrival-commentary path:
+   * no geofence, no arrival card, no 1 km preview, nothing to see. That is how
+   * the location-sharing door stayed missing long enough to be found by reading
+   * the source instead of by running the app.
+   *
+   * Falls back to the old behaviour so a catalogue with no spots still seeds.
+   */
+  const { data: spotRows } = await service.from('tour_guide_spots').select('tour_id');
+  const geofencedTourIds = [...new Set((spotRows ?? []).map((r) => r.tour_id as string))];
+  const { data: preferred } = geofencedTourIds.length
+    ? await service.from('tours').select('id, title').in('id', geofencedTourIds).limit(2)
+    : { data: null };
+  const { data: fallback } = await service.from('tours').select('id, title').limit(2);
+  const tours = preferred && preferred.length > 0 ? preferred : fallback;
   if (!tours || tours.length === 0) throw new Error('no tours');
   const tourDate = kstToday();
 

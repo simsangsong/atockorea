@@ -68,6 +68,11 @@ describe('JoinFlow — claim → seat → confirm (§5.2/§5.3)', () => {
 
     // seat selection
     await screen.findByTestId('join-seats');
+    // The board arrives from its own fetch, so the step renders before it. It
+    // must NOT claim "seats open once your vehicle is assigned" in that gap —
+    // that message is only true after the server has actually been asked.
+    expect(screen.queryByTestId('seat-soon')).not.toBeInTheDocument();
+    await waitFor(() => expect(container.querySelector('[data-seat="1"]')).toBeInTheDocument());
     const seat = (n: number) => container.querySelector(`[data-seat="${n}"]`)!;
 
     // §5.3 C-10 — the taken seat renders taken and is not selectable
