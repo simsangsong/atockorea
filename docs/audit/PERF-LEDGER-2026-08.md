@@ -632,6 +632,41 @@ TTFB 는 **7 ms** 다 [실측]. 서버는 즉답하는데 손님은 그 뒤로 *
 
 ---
 
+## P-18 ✅ 관제 54페이지 — 문제는 **한 페이지**다 (P5 완료)
+
+[실측] 번들 분석 · `qa-bundle-inspect.mjs --filter 'admin/'`
+
+| 관제 페이지 | parsed | gzip |
+|---|---|---|
+| **`/admin/tour-ops`** | **199.0 KB** | **52.2 KB** |
+| `/admin/products` | 62.4 | 15.7 |
+| `/admin/vehicle-layouts` | 47.0 | 14.1 |
+| `/admin/guides` | 46.9 | 12.6 |
+| `/admin/match-pois` | 30.9 | 9.9 |
+| 나머지 | 대부분 < 28 KB | |
+
+**`tour-ops` 가 2위의 3.2배**다. 관제 전체 177 청크 합계가 1,225 KB 인데 그 중 하나가 199 KB.
+그리고 **같은 페이지가 이 감사의 다른 최악치들과 겹친다** — TBT≈ **848~1,214 ms**(앱 최악),
+요청 **101~107건**, 그리고 UI/UX 트랙의 «가시 컨트롤 18개 중 accent 0개».
+
+**⇒ 54페이지를 개별로 잴 필요가 없다.** 나머지는 개별 번들이 작고, 관제는 손님이 아니라
+사무실 데스크톱이라 우선순위도 낮다. **관제 성능 = `tour-ops` 하나의 문제**로 좁혀 둔다.
+
+**구성 (모듈 36개):** 전부 `OpsApp.tsx + 34 modules (concatenated)` — `OpsRoomVehicle` 19.8 ·
+`OpsRoomManifest` 18.3 · `OpsManifest` 15.3 · `OpsGuestMessage` 14.3 · `OpsReview` · `OpsSchedule` ·
+`OpsBooking` · `OpsRoomDrawer` · `OpsAutopilot` · `OpsRoomHistory` · `OpsDashboard` …
+**패널 전부가 정적 import 다** — 관제자가 열지 않은 패널까지 항상 내려간다.
+
+🔴 **이건 룸이 X13 이전에 갖고 있던 바로 그 모양이다.** 그런데 **같은 처방을 자신 있게 쓰면 안 된다** —
+룸에서 그 분리를 실제로 해 본 기록이 남아 있고, 결과는 *"Real, and small"* 이었다
+(782 → 746 KB · FCP 5892 → 5808 ms). **동적 import 는 룸에서 레버가 아니었다.**
+tour-ops 는 조건이 다르지만(TBT 가 앱 최악) **먼저 재고 나서 하는 순서**를 지켜야 한다.
+
+**수정 후보(미착수):** 패널 동적 import + **그 전에 TBT 프로파일** — 848ms 를 만드는 것이
+파싱인지 실행인지 렌더인지부터. 번들만 보고 원인을 정하면 이 감사에서 이미 한 번 틀린 길이다(P-14).
+
+---
+
 ## P-13 ✅ 상설 회귀 게이트 신설 (§F 목표와 분리)
 
 `docs/audit/PERF-BUDGET.json` + `qa-perf-throttled.mjs --check`.

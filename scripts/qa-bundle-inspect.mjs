@@ -68,12 +68,26 @@ const chunks = data.map((c) => ({
 }));
 
 if (!CHUNK) {
-  console.log(`\n청크 ${chunks.length}개 · parsed 합계 ${kb(chunks.reduce((a, c) => a + c.parsed, 0))} KB\n`);
+  // `--filter` 는 요약을 좁힌다(예: 라우트 그룹별 비교). `--chunk` 와 달리 모듈은 안 편다.
+  const FILTER = flag('filter', null);
+  const shown = FILTER ? chunks.filter((c) => c.label.includes(FILTER)) : chunks;
+  if (FILTER && !shown.length) {
+    console.error(`FAIL: '${FILTER}' 를 포함하는 청크가 없다.`);
+    process.exit(1);
+  }
+  console.log(
+    `\n청크 ${shown.length}개${FILTER ? ` (필터 '${FILTER}')` : ''} · parsed 합계 ${kb(shown.reduce((a, c) => a + c.parsed, 0))} KB\n`,
+  );
   console.table(
-    chunks
+    shown
       .sort((a, b) => b.parsed - a.parsed)
       .slice(0, TOP)
-      .map((c) => ({ 청크: c.label.slice(0, 70), 'parsed KB': kb(c.parsed), 'gzip KB': kb(c.gzip) })),
+      .map((c) => ({
+        // 청크 파일명의 해시 꼬리는 비교에 방해만 된다.
+        청크: c.label.replace(/^static\/chunks\//, '').replace(/-[0-9a-f]{16}\.js$/, '').slice(0, 66),
+        'parsed KB': kb(c.parsed),
+        'gzip KB': kb(c.gzip),
+      })),
   );
   console.log('\n특정 청크의 내용: --chunk <이름 일부>');
   process.exit(0);
