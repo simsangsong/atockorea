@@ -24,7 +24,6 @@ import { useInstallPrompt } from '@/hooks/useInstallPrompt';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
   IconClose,
-  IconConcierge,
   IconEmergency,
   IconFile,
   IconInstall,
@@ -54,7 +53,6 @@ const COPY: Record<
     schedule: string;
     map: string;
     settings: string;
-    concierge: string;
     emergency: string;
     close: string;
     /** C-D1 — the theme control moved out of the header into this tile. */
@@ -75,7 +73,6 @@ const COPY: Record<
     schedule: 'Today',
     map: 'Map',
     settings: 'Settings',
-    concierge: 'Smart Guide',
     emergency: 'Emergency',
     close: 'Close',
     display: { light: 'Light', dark: 'Dark', system: 'Auto' },
@@ -93,7 +90,6 @@ const COPY: Record<
     schedule: '오늘 일정',
     map: '지도',
     settings: '설정',
-    concierge: '스마트 가이드',
     emergency: '긴급',
     close: '닫기',
     display: { light: '라이트', dark: '다크', system: '자동' },
@@ -111,7 +107,6 @@ const COPY: Record<
     schedule: '本日',
     map: '地図',
     settings: '設定',
-    concierge: 'スマートガイド',
     emergency: '緊急',
     close: '閉じる',
     display: { light: 'ライト', dark: 'ダーク', system: '自動' },
@@ -129,7 +124,6 @@ const COPY: Record<
     schedule: 'Hoy',
     map: 'Mapa',
     settings: 'Ajustes',
-    concierge: 'Guía inteligente',
     emergency: 'Emergencia',
     close: 'Cerrar',
     display: { light: 'Claro', dark: 'Oscuro', system: 'Auto' },
@@ -147,7 +141,6 @@ const COPY: Record<
     schedule: '今日',
     map: '地图',
     settings: '设置',
-    concierge: '智能向导',
     emergency: '紧急',
     close: '关闭',
     display: { light: '浅色', dark: '深色', system: '自动' },
@@ -165,7 +158,6 @@ const COPY: Record<
     schedule: '今日',
     map: '地圖',
     settings: '設定',
-    concierge: '智慧導覽',
     emergency: '緊急',
     close: '關閉',
     display: { light: '淺色', dark: '深色', system: '自動' },
@@ -183,7 +175,6 @@ const COPY: Record<
     schedule: 'Aujourd’hui',
     map: 'Carte',
     settings: 'Réglages',
-    concierge: 'Guide intelligent',
     emergency: 'Urgence',
     close: 'Fermer',
     display: { light: 'Clair', dark: 'Sombre', system: 'Auto' },
@@ -201,7 +192,6 @@ const COPY: Record<
     schedule: 'Heute',
     map: 'Karte',
     settings: 'Einstellungen',
-    concierge: 'Smart Guide',
     emergency: 'Notfall',
     close: 'Schließen',
     display: { light: 'Hell', dark: 'Dunkel', system: 'Auto' },
@@ -219,7 +209,6 @@ const COPY: Record<
     schedule: 'Сегодня',
     map: 'Карта',
     settings: 'Настройки',
-    concierge: 'Умный гид',
     emergency: 'SOS',
     close: 'Закрыть',
     display: { light: 'Светлая', dark: 'Темная', system: 'Авто' },
@@ -237,7 +226,6 @@ const COPY: Record<
     schedule: 'Oggi',
     map: 'Mappa',
     settings: 'Impostazioni',
-    concierge: 'Guida smart',
     emergency: 'Emergenza',
     close: 'Chiudi',
     display: { light: 'Chiaro', dark: 'Scuro', system: 'Auto' },
@@ -269,7 +257,6 @@ export default function RoomDrawer({
   myParticipantId,
   onClose,
   onSelectTab,
-  onOpenConcierge,
   onOpenEmergency,
 }: {
   title: string;
@@ -285,7 +272,6 @@ export default function RoomDrawer({
   myParticipantId?: string | null;
   onClose: () => void;
   onSelectTab: (tab: 'schedule' | 'map' | 'settings') => void;
-  onOpenConcierge?: () => void;
   onOpenEmergency: () => void;
 }) {
   const copy = COPY[locale] ?? COPY.en;

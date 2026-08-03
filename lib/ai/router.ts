@@ -210,18 +210,42 @@ export class AiRouterError extends Error {
  * to — while deepseek and the gemini compatibility endpoint keep `max_tokens`,
  * which is what they understand.
  */
+/**
+ * 🔴 gpt-5 계열에서 `max_completion_tokens` 는 **추론 토큰까지 포함**한다.
+ *
+ * `DEFAULT_MAX_OUTPUT_TOKENS` 는 §L-D5 에 따라 "보이는 답의 길이"로 정해져 있다
+ * (concierge 400 = "길면 손님이 안 읽는다"). 그 값을 그대로 상한으로 주면 추론이
+ * 예산을 전부 먹고 **본문이 0자로 돌아온다** — `finish_reason:'length'` 에
+ * `reasoning_tokens == cap`. 라우터는 그걸 `empty_completion` 으로 보고 공급자를
+ * 강등시키므로, 겉보기 증상은 "모델이 응답을 거부함"이 된다.
+ *
+ * 실측(2026-08-03, gpt-5-mini, 같은 질문 3개):
+ *   cap 400          → 3/3 빈 응답 (reasoning 400/400), 4.4~6.2초 걸려서 실패
+ *   cap 400 + low    → 1/3 만 성공 (나머지 둘도 reasoning 400)
+ *   cap 400 + minimal→ 2/3 성공
+ *   cap 1200 + low   → **3/3 성공** (reasoning 0·192·128), 1.9~7.3초
+ *
+ * 그래서 목적별 상한의 의미(= 보이는 답의 길이)는 건드리지 않고, **openai 에만**
+ * 추론 여유분을 더한다. 다른 공급자는 `max_tokens` 를 출력에만 쓰므로 영향 없다.
+ * `reasoning_effort` 는 여유분을 실제로 작게 유지해 준다. 지원하지 않는 모델이면
+ * 400 + `unsupported_parameter` 로 돌아오고, 아래 재시도가 그 필드를 떨궈 준다.
+ */
+const OPENAI_REASONING_HEADROOM = 800;
+
 function buildCompletionBody(
   resolved: { provider: AiProvider; model: string },
   messages: ChatMessage[],
   maxOutputTokens: number,
   options?: ChatCompletionOptions,
 ): Record<string, unknown> {
-  const tokenField = resolved.provider === 'openai' ? 'max_completion_tokens' : 'max_tokens';
+  const isOpenAi = resolved.provider === 'openai';
+  const tokenField = isOpenAi ? 'max_completion_tokens' : 'max_tokens';
   return {
     model: resolved.model,
     messages,
     ...(options?.jsonResponse ? { response_format: { type: 'json_object' } } : {}),
-    [tokenField]: maxOutputTokens,
+    [tokenField]: isOpenAi ? maxOutputTokens + OPENAI_REASONING_HEADROOM : maxOutputTokens,
+    ...(isOpenAi ? { reasoning_effort: 'low' } : {}),
     ...(options?.temperature !== undefined ? { temperature: options.temperature } : {}),
   };
 }

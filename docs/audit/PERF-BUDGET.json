@@ -1,0 +1,46 @@
+{
+  "_readme": [
+    "성능 회귀 상한. `node scripts/qa-perf-throttled.mjs --check` 가 이 파일을 읽고 넘으면 exit 1.",
+    "",
+    "🔴 이것은 §F 성능 예산이 아니다. §F 는 '도달하고 싶은 목표'이고 지금 일부는 미달이다",
+    "(룸 진입 4G 2,909ms vs 목표 2,500ms — 원장 P-01). 목표를 게이트로 걸면 첫날부터 빨간불이라",
+    "아무도 안 보게 된다. 그래서 이 파일은 **오늘 실측한 값에 여유를 얹은 천장**이다 —",
+    "역할은 '좋아지게 만드는 것'이 아니라 '더 나빠지는 걸 조용히 넘어가지 않게 하는 것'이다.",
+    "",
+    "고칠 때는 값을 **내린다**. 올려야 한다면 그건 회귀이므로, 올리는 커밋이 이유를 적어야 한다.",
+    "",
+    "측정 조건(이걸 안 맞추면 비교가 성립하지 않는다):",
+    "  production build + `next start` · 390x844 모바일 · 콜드 캐시 · 4G(4Mbps↓/RTT 70ms/CPU 4x) · 3회 중앙값",
+    "  jsKB 는 스로틀 없는 완주 측정(`qa-bundle-baseline.mjs`)이 정본 — 스로틀 하에선 관측창에서 잘린다."
+  ],
+  "_timingCaveat": [
+    "🔴 시간 상한은 넉넉하다. 이유를 적어 둔다 — 좁게 잡았다가 한 번 헛불을 냈다.",
+    "",
+    "첫 천장을 리베이스 **이전** 측정(룸 live 첫유의미 2,909ms)에서 뽑아 리베이스 **이후** 코드에",
+    "걸었더니 즉시 초과였다. 재측정하니 4048 / 4168 / 4176 으로 **촘촘했다** — 잡음이 아니라",
+    "베이스가 달라진 것이다. 같은 룸의 전송량도 1,336 → 1,784 KB 로 함께 올랐다.",
+    "원인은 분리하지 못했다(원장 P-12). 로비 라우트는 오히려 내려갔으므로 균일한 기계 부하는 아니다.",
+    "",
+    "교훈: **천장은 그것이 지킬 코드에서 재야 한다.** 다른 베이스의 숫자로 만든 게이트는",
+    "회귀가 아니라 자기 자신을 잡는다.",
+    "",
+    "시간은 데이터 양에 따라 움직이므로(시드마다 다름) 총 러닝타임의 대략 +20% 를 얹었다.",
+    "**jsKB 는 반복측정에서 0.1KB 단위로 재현되므로 좁게 잡는다** — 회귀 감시의 주력은 이쪽이다."
+  ],
+  "measuredOn": "2026-08-03",
+  "measuredAt": "origin/main 8ec0e4c3 + claude/smartapp-perf-audit-2026-08-03",
+  "profile": "4g",
+  "routes": {
+    "/tour-mode (entry)": { "meaningfulMs": null, "lcpMs": 1000, "jsKB": 155 },
+    "/tour-mode/room/[id] (guest, live)": { "meaningfulMs": 5000, "lcpMs": 5000, "jsKB": 650 },
+    "/tour-mode/room/[id] (guest, lobby)": { "meaningfulMs": 4000, "lcpMs": 4000, "jsKB": 650 },
+    "/tour-mode/guide (staff shell)": { "meaningfulMs": 3100, "lcpMs": 3000, "jsKB": 540 },
+    "/tour-mode/plan/[id] (D-1 editor)": { "meaningfulMs": null, "lcpMs": 2700, "jsKB": 275 },
+    "/tour-ops (ops console)": { "meaningfulMs": null, "lcpMs": 2500, "jsKB": 580 }
+  },
+  "idleRequestsPerMinute": {
+    "_note": "유휴 상시 비용. `qa-perf-idle.mjs` 실측 — 손님 룸 0건(realtime), 가이드 콘솔 10건.",
+    "guest": 2,
+    "guide": 13
+  }
+}

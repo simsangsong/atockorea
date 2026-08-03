@@ -330,6 +330,23 @@ export async function PATCH(
       );
     }
 
+    /**
+     * 🔴 A2 (feature audit F5) — apply the transition to the row that was
+     * actually read, not to whatever the row has become.
+     *
+     * `settle` starts from `logged` OR `confirmed` and `confirm` starts from
+     * `logged`, so a guide tapping 수취완료 and a guest tapping 확인 both begin at
+     * the same status and both pass `allowedExtraTransition`. Unguarded, the
+     * later write wins: a `confirmed` can land on top of a `settled` and erase
+     * a cash receipt, or a `void` can bury one — while the feed still carries
+     * the settlement capsule, because that is emitted after the write.
+     *
+     * The extra `.eq('status', …)` makes the write conditional on the state the
+     * decision was made from. Nothing about the amounts or the transition rules
+     * changes here; this only refuses to apply a decision to a row that has
+     * moved underneath it.
+     */
+    const priorStatus = (existing as ExtraRow).status;
     const { data: updated, error: updateError } = await supabase
       .from('tour_room_extras')
       .update({
@@ -338,9 +355,24 @@ export async function PATCH(
         updated_at: new Date().toISOString(),
       })
       .eq('id', extraId)
+      .eq('status', priorStatus)
       .select()
-      .single();
+      .maybeSingle();
     if (updateError) throw updateError;
+    if (!updated) {
+      // Somebody else moved it between the read and the write. Hand back what
+      // it is now rather than a bare failure — both consoles render the row.
+      const { data: current } = await supabase
+        .from('tour_room_extras')
+        .select('*')
+        .eq('id', extraId)
+        .eq('room_id', room.id)
+        .maybeSingle();
+      return NextResponse.json(
+        { error: 'extra_stale', extra: current ?? null, from: priorStatus },
+        { status: 409 },
+      );
+    }
 
     const message = await insertExtraCapsule(supabase, room, booking.id, updated as ExtraRow, nextStatus);
     await recordRoomEvent(supabase, {

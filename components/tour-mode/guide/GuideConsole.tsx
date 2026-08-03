@@ -1200,7 +1200,6 @@ export default function GuideConsole() {
       <GuideSeatDashboard
         token={tokenRef.current}
         bookingId={overview.rooms[0].booking_id}
-        tourTitle={overview.tour.title}
         onOpenChat={(bid) => {
           window.location.assign(roomHref(bid));
         }}

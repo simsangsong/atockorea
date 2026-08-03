@@ -75,9 +75,11 @@ export async function loadRallyNotice(
     (row.metadata?.until_time as string | undefined) ??
     (row.metadata?.meeting_time as string | undefined) ??
     null;
-  const targetMs = hhmm ? wallClockToMs(tourDate, hhmm) : null;
-  if (targetMs === null) return { ok: false, status: 422, error: 'notice_untimed' };
   const createdMs = new Date(row.created_at).getTime();
+  // Same reference the client uses (notices.ts): a past-midnight meeting time
+  // resolves to the night of the tour, not to the morning it started.
+  const targetMs = hhmm ? wallClockToMs(tourDate, hhmm, createdMs) : null;
+  if (targetMs === null) return { ok: false, status: 422, error: 'notice_untimed' };
   if (!Number.isFinite(createdMs) || createdMs >= targetMs) {
     // Backdated: the notice was created AFTER its own target. Firing off a
     // typo is exactly the P0 this guard exists for.
