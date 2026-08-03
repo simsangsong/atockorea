@@ -194,7 +194,21 @@ function attentionScore(room: OverviewRoom): number {
 }
 
 export default function GuideConsole() {
-  const [token, setToken] = useState<string | null>(null);
+  /**
+   * 🔴 `undefined` means "not read yet", `null` means "read, and absent".
+   *
+   * This used to start at `null`, which collapsed those two into one. The token
+   * is read in an effect, so it is still null on first paint — and the render
+   * below turned that into 「가이드 링크(이메일의 버튼)로 접속해 주세요」. Every
+   * single load of this console opened by telling the guide their link was
+   * wrong, for as long as it took the effect to run (~400ms measured on dev,
+   * longer on a slow phone), before quietly correcting itself.
+   *
+   * Accusing someone of a mistake they did not make is worse than showing them
+   * nothing, and it is the same fail-open shape the full audit catalogued:
+   * treating "absent" and "not determined yet" as the same answer.
+   */
+  const [token, setToken] = useState<string | null | undefined>(undefined);
   const [overview, setOverview] = useState<Overview | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [draft, setDraft] = useState('');
@@ -255,7 +269,10 @@ export default function GuideConsole() {
   // code while this payload carried names only). Party bookings may hold
   // several seats; the lowest number is the label.
   const manifestAnchor = overview?.rooms[0]?.booking_id ?? null;
-  const { data: manifest } = useTourManifest(manifestAnchor, token);
+  // `undefined` (not read yet) and `null` (absent) are the same answer to this
+  // hook — both mean "no token to fetch with". The distinction only matters for
+  // what the guide is shown while we find out.
+  const { data: manifest } = useTourManifest(manifestAnchor, token ?? null);
   const seatByBooking = useMemo(() => {
     const map = new Map<string, number>();
     for (const a of manifest?.assignments ?? []) {
@@ -486,8 +503,52 @@ export default function GuideConsole() {
       </div>
     </div>
   );
+  /**
+   * UX-001 — loading gets a shape; the two dead ends keep their sentence.
+   *
+   * `preShell` used to draw all three states the same way: one centred line of
+   * text. For "no token" and "access denied" that is right — nothing is coming,
+   * so a skeleton would be a lie that never resolves. But the guide console
+   * paints in well under a second and only becomes usable near 2.5s, and for
+   * that whole window the screen was a sentence in the middle of nothing. The
+   * guide is standing in front of the customer while it happens.
+   *
+   * So the wait now shows the shell it is about to become — header, a few room
+   * cards, tab bar — at the same measurements the real chrome uses, and the
+   * message rides along instead of standing alone.
+   */
+  const preShellSkeleton = (message: string) => (
+    <div className={preShellDark ? 'dark' : ''}>
+      <div className="tr-root tr-plan-root flex min-h-dvh flex-col bg-[var(--tr-canvas)]" data-testid="guide-console-skeleton">
+        <div
+          className="tr-safe-top tr-chrome-line-b z-30 flex shrink-0 items-center gap-2 bg-[var(--tr-chrome)] px-3"
+          style={{ minHeight: 'var(--tr-header-h)' }}
+        >
+          <div className="h-4 w-40 animate-pulse rounded bg-[var(--tr-surface-2)]" />
+        </div>
+        <div className="min-h-0 flex-1 space-y-2.5 overflow-hidden px-4 py-4" aria-hidden>
+          {[0, 1, 2].map((i) => (
+            <div key={i} className="tr-card space-y-2 p-3.5">
+              <div className="h-3.5 w-1/2 animate-pulse rounded bg-[var(--tr-surface-2)]" />
+              <div className="h-3 w-3/4 animate-pulse rounded bg-[var(--tr-surface-2)]" />
+            </div>
+          ))}
+        </div>
+        <p className="tr-meta px-4 pb-3 text-center text-[var(--tr-ink-3)]" role="status">
+          {message}
+        </p>
+        <div className="tr-safe-bottom tr-chrome-line-t z-30 h-[57px] shrink-0 bg-[var(--tr-chrome)]" />
+      </div>
+    </div>
+  );
+
+  if (token === undefined) return preShellSkeleton('불러오는 중…'); // still reading it
   if (!token) return preShell('가이드 링크(이메일의 버튼)로 접속해 주세요.');
-  if (!overview) return preShell(error ? '접근할 수 없어요 — 링크를 다시 확인해 주세요.' : '불러오는 중…');
+  if (!overview) {
+    return error
+      ? preShell('접근할 수 없어요 — 링크를 다시 확인해 주세요.')
+      : preShellSkeleton('불러오는 중…');
+  }
 
   // Drive mode: a full-screen dark cockpit for one room; ◀ returns to dispatch.
   if (drive) {

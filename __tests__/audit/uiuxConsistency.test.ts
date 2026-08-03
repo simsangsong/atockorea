@@ -21,10 +21,14 @@ import path from 'node:path';
 const ROOT = process.cwd();
 const SCRIPT = path.join(ROOT, 'scripts/qa-uiux-consistency.mjs');
 
-/** Measured 2026-08-03 on a8dc24a8. Ratchet down; never up. */
+/**
+ * Ratchet down; never up. Lower the ceiling in the SAME commit that lowers the
+ * count, or the slack silently becomes room for the next regression.
+ *   20 → 19  (U9, UX-001: the guide console loading branch got a skeleton)
+ */
 const CEILING = {
   tokenBypass: 104,
-  bareLoadingFiles: 20,
+  bareLoadingFiles: 19,
   scannedAtLeast: 100,
 };
 
@@ -57,16 +61,24 @@ describe('UI/UX consistency ceilings (C axis)', () => {
   });
 
   /**
-   * Locks the detector itself, not the app. The first cut asked whether a file
-   * contained a skeleton anywhere and so reported GuideConsole — the worst known
-   * case, UX-001 — as clean, because an unrelated live-dot pulse 350 lines away
-   * satisfied it. If this stops being found, the detector has regressed to
-   * file-level presence again.
+   * 🔴 This assertion was inverted, not deleted.
+   *
+   * It used to demand that GuideConsole BE flagged, because the detector's first
+   * cut reported it clean — an unrelated live-dot pulse 350 lines from the
+   * loading branch satisfied a file-level check, and the worst case we knew
+   * about looked fine. U9 then fixed the defect, so the old assertion started
+   * failing for the right reason.
+   *
+   * Deleting it would have thrown away a regression guard. Inverting it keeps
+   * one: the console's loading branch now has a skeleton beside its message, and
+   * if it ever loses that again this goes red. What the old version protected —
+   * that the detector still judges by proximity rather than file-level presence
+   * — is now carried by the positive control below, which cannot be satisfied by
+   * an accident of distance.
    */
-  it('still catches UX-001: the guide console loading branch', () => {
+  it('UX-001 stays fixed: the guide console loading branch has a shape', () => {
     const hit = result.bareLoading.list.find((b) => b.file.endsWith('guide/GuideConsole.tsx'));
-    expect(hit).toBeDefined();
-    expect(hit!.lines.length).toBeGreaterThan(0);
+    expect(hit).toBeUndefined();
   });
 });
 
