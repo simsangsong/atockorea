@@ -174,11 +174,12 @@ export const DECLARED_EMPTY: Record<string, string> = {
   'driver/dayBefore':
     'Covered by GET /api/tour-mode/driver/overview, which the grid files under ' +
     'morning because that is when it is mostly read. It scopes to the token\'s ' +
-    'tourDate rather than today, so the same link answers the day before. What ' +
-    'is genuinely missing is an ACKNOWLEDGEMENT: joining writes a driver row in ' +
-    'tour_room_participants and nothing surfaces it, so nobody knows whether ' +
-    'the link landed until the morning it matters. Engine present, consumer ' +
-    'absent — this track\'s usual shape. Open.',
+    'tourDate rather than today, so the same link answers the day before. The ' +
+    'acknowledgement gap is closed too (F7): joining already wrote a driver row ' +
+    'in tour_room_participants and /guide/overview already sent it — the guide ' +
+    'console declared the field and never read it, so the answer arrived on ' +
+    'every poll and was dropped. It now shows 기사 미확인 until the driver opens ' +
+    'the link. Engine present, consumer absent; the consumer is here now.',
   'driver/after':
     'Closed by found_item (feature audit F4), which rides driver-signal and so ' +
     'is filed under during. The driver taps it while cleaning the van; the ' +
