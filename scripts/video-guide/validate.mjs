@@ -183,8 +183,21 @@ for (const b of spec.beats) {
 // so rather than passing silently (an unmeasured spec is not a clean spec).
 {
   const cachePath = specPath.replace(/\.json$/, '.turns.json');
-  const FAST = 1.3;        // anything past this is visibly a speed-up
+  // 1.5x is an ENDORSED speed in the grammar (§4, "approaching a named stop"),
+  // and a swing at 1.5x is not the whip-pan anyone complained about — the beats
+  // that read as dizzy are the 4-8x ones. Setting the bar at 1.3 flagged legal
+  // approach beats; 2.0 is where a look starts to snap.
+  const FAST = 2.0;
   const REAL_LOOK = 0.60;  // below this the detector is catching walking sway
+  // 🔴 Gate 3d is dated: it encodes V6-D25 (2026-08-03) and the four cuts shipped
+  // before it were authored under the old "straights get 4-8x" grammar, which did
+  // not consult a turn map. Measured after the fact they violate it heavily
+  // (gamcheon/manjanggul/seongsan/yonggungsa: 40-70 overlaps each, up to 7x over a
+  // 0.7-peak look). That is a REAL defect and the re-cut is owner-scheduled work,
+  // not something to discover silently — so a legacy spec must say so in
+  // `pacing.turnAudit` and still gets a loud, counted report every run. What it
+  // does not do is block an unrelated build on debt it already declared.
+  const LEGACY = spec.pacing?.turnAudit === 'legacy-pending';
   const sped = spec.beats.filter((b) => b.kind === 'clip' && (b.speed ?? 1) >= FAST);
   if (!fs.existsSync(cachePath)) {
     if (sped.length) problems.push(`빨리감기 비트 ${sped.length}개인데 ${path.basename(cachePath)} 가 없다 — turns.mjs 를 먼저 돌려라 (게이트 3d)`);
@@ -194,6 +207,7 @@ for (const b of spec.beats) {
       problems.push(`turns 캐시가 pan>=${cache.min} 로 떠졌다 — 게이트 3d 는 ${REAL_LOOK} 이하가 필요하다 (--min ${REAL_LOOK} 로 다시)`);
     }
     let checked = 0;
+    const hits = [];
     for (const b of sped) {
       const windows = cache.turns?.[b.src];
       if (!windows) { problems.push(`${b.id}  소스 ${b.src} 의 회전 측정이 캐시에 없다 (게이트 3d)`); continue; }
@@ -201,14 +215,21 @@ for (const b of spec.beats) {
         if (w.peak < REAL_LOOK) continue;
         const lo = Math.max(b.in, w.in), hi = Math.min(b.out, w.out);
         if (hi - lo > 0.25) {
-          problems.push(`${b.id}  ${b.speed}배속 구간(${b.in}–${b.out}s)이 회전 ${w.in}–${w.out}s(peak ${w.peak})와 ${(hi - lo).toFixed(1)}s 겹친다`
+          hits.push(`${b.id}  ${b.speed}배속 구간(${b.in}–${b.out}s)이 회전 ${w.in}–${w.out}s(peak ${w.peak})와 ${(hi - lo).toFixed(1)}s 겹친다`
             + ` — 회전은 절대 빨리감지 않는다. 회전 앞뒤로 쪼개라`);
         }
       }
       checked++;
     }
+    if (LEGACY) {
+      const worst = Math.max(0, ...sped.map((b) => b.speed ?? 1));
+      notes.push(`⚠ 회전×속도  V6-D25 이전 스펙(turnAudit: legacy-pending) — 위반 ${hits.length}건`
+        + `, 최고 ${worst}배속. 재컷 전까지 이 숫자는 줄지 않는다`);
+    } else {
+      problems.push(...hits);
+    }
     // Non-vacuous: a gate that measured nothing must not report green (FULL-AUDIT lesson).
-    notes.push(`회전×속도  빨리감기 ${checked}비트 검사 · 캐시 pan>=${cache.min}`);
+    notes.push(`회전×속도  빨리감기 ${checked}비트 검사 · 캐시 pan>=${cache.min} · ${FAST}배속 이상만`);
   }
 }
 
