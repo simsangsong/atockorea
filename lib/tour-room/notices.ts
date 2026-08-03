@@ -27,17 +27,50 @@ export interface NoticeState {
   warn5: boolean;
 }
 
+const DAY_MS = 24 * 60 * 60 * 1000;
+/** The midpoint between two occurrences of the same wall clock. */
+const HALF_DAY_MS = DAY_MS / 2;
+
 /**
  * KST wall clock → epoch ms for a tour date. Exported since SG-1a so the
  * now-card adapter parses schedule times through the SAME implementation the
  * notice ladder uses — a second copy of this arithmetic is how clocks drift.
  * Strict `HH:MM` only; callers with looser input (schedules hand-typed as
  * `9:00`) normalize before calling.
+ *
+ * ## `referenceMs` — the tour day does not end at midnight
+ *
+ * Without it, `00:30` on a tour dated the 3rd means 00:30 on the 3rd: the very
+ * beginning of the day. A guide who announces a 00:30 meeting at 23:00 that
+ * night therefore produces a target 22½ hours in the PAST, `activeNotice`
+ * expires it on arrival, and the guests' countdown never appears. Nothing
+ * errors — the guide sees a sent notice, the guests see nothing, and neither is
+ * told. Reproduced on a guest's screen by `scripts/qa-midnight-meeting.ts`.
+ *
+ * Given a reference instant this resolves to the NEAREST occurrence of the
+ * clock instead: the same day, or the next one when the reference is more than
+ * twelve hours past it.
+ *
+ * 🔴 Nearest, deliberately, rather than a "before 04:00 means tomorrow" cutoff.
+ * A sunrise tour that meets at 03:30 ON the tour date is a real thing here, and
+ * a fixed cutoff would move it a day. Nearest-occurrence cannot: it only moves
+ * a clock that no reading could place near the reference.
+ *
+ * 🔴 And the reference must be the notice's CREATION, never `now`. Resolving
+ * against `now` would make one notice mean different instants as the evening
+ * passes; creation is fixed, so the answer is fixed.
+ *
+ * The backdate guard survives untouched. Rolling forward requires the naive
+ * target to be >12h before creation, which no plausible near-future meeting
+ * ever is; a typo announcing this morning's 09:00 at 14:00 is 5h back, stays
+ * on the tour date, and is still refused as backdated.
  */
-export function wallClockToMs(tourDate: string, hhmm: string): number | null {
+export function wallClockToMs(tourDate: string, hhmm: string, referenceMs?: number): number | null {
   const match = /^(\d{2}):(\d{2})$/.exec(hhmm);
   if (!match) return null;
-  return kstStartOfDayMs(tourDate) + (Number(match[1]) * 60 + Number(match[2])) * 60 * 1000;
+  const onTourDate = kstStartOfDayMs(tourDate) + (Number(match[1]) * 60 + Number(match[2])) * 60 * 1000;
+  if (referenceMs === undefined || !Number.isFinite(referenceMs)) return onTourDate;
+  return referenceMs - onTourDate > HALF_DAY_MS ? onTourDate + DAY_MS : onTourDate;
 }
 
 /**
@@ -94,7 +127,9 @@ function noticeTargetMs(message: RoomMessage, tourDate: string): number | null {
     (message.metadata?.until_time as string | undefined) ??
     (message.metadata?.meeting_time as string | undefined) ??
     null;
-  return hhmm ? wallClockToMs(tourDate, hhmm) : null;
+  // The notice's own creation is the reference, so a meeting announced late at
+  // night for 00:30 lands after midnight instead of at the start of the day.
+  return hhmm ? wallClockToMs(tourDate, hhmm, Date.parse(message.created_at)) : null;
 }
 
 export interface RallyResolutionState {
