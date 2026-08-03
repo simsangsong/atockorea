@@ -28,7 +28,7 @@ import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 
 /** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
-export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide'];
+export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide', '/tour-mode/plan/[bookingId]'];
 
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3181';
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
@@ -182,9 +182,45 @@ const ctx = await browser.newContext({
   isMobile: true,
   hasTouch: true,
 });
-const page = await ctx.newPage();
+/**
+ * The ops console authenticates by cookie, not localStorage, and the SSR helper
+ * chunks the value at 3180 bytes. Copied from qa-ops-walk rather than
+ * reinvented — a session that half-adopts looks like an empty console, which
+ * this harness would happily measure as "clean".
+ */
+try {
+  const raw = `base64-${Buffer.from(JSON.stringify(fx.adminSession)).toString('base64')}`;
+  const CHUNK = 3180;
+  const cookies =
+    raw.length <= CHUNK
+      ? [{ name: fx.supabaseStorageKey, value: raw }]
+      : Array.from({ length: Math.ceil(raw.length / CHUNK) }, (_, i) => ({
+          name: `${fx.supabaseStorageKey}.${i}`,
+          value: raw.slice(i * CHUNK, (i + 1) * CHUNK),
+        }));
+  await ctx.addCookies(
+    cookies.map((c) => ({ ...c, domain: 'localhost', path: '/', httpOnly: false, secure: false, sameSite: 'Lax' })),
+  );
+} catch (error) {
+  console.error('🔴 admin session not adopted —', String(error).slice(0, 140));
+  process.exit(2);
+}
+
 const errors = [];
-page.on('pageerror', (e) => errors.push(String(e).slice(0, 160)));
+
+/**
+ * 🔴 A fresh page per surface. Sharing one page let a pending navigation from
+ * the previous surface abort the next goto (ERR_ABORTED) and destroy the
+ * execution context mid-evaluate — three of six surfaces failed that way, and
+ * the failures looked like app defects rather than harness state.
+ */
+let page;
+const newPage = async () => {
+  if (page) await page.close().catch(() => {});
+  page = await ctx.newPage();
+  page.on('pageerror', (e) => errors.push(String(e).slice(0, 160)));
+};
+await newPage();
 
 const dismissManual = async () => {
   const d = page.locator('[data-testid="app-manual-dismiss"]');
@@ -208,17 +244,27 @@ const results = [];
  */
 async function visit(name, url, ready, after) {
   try {
+    await newPage();
     await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 120000 });
     if (ready) await page.waitForSelector(ready, { timeout: 90000, state: 'attached' });
+    // Surfaces that fetch after mount (planner, guide console) keep swapping the
+    // tree well after the anchor exists; settle before measuring geometry.
+    await page.waitForLoadState('networkidle', { timeout: 45000 }).catch(() => {});
     await dismissManual();
     if (after) await after();
-    await page.waitForTimeout(800);
+    await page.waitForTimeout(1200);
     const m = await page.evaluate(measure);
-    // A surface with almost no controls did not finish rendering, whatever the
-    // anchor said. Treat it as unreachable rather than as a quiet zero.
-    if (m.controls < 5) {
-      const text = (await page.evaluate(() => document.body.innerText)).slice(0, 120).replace(/\s+/g, ' ');
-      results.push({ surface: name, unreachable: `only ${m.controls} controls — "${text}"` });
+    /**
+     * Unreachable means "nothing rendered", not "few controls". The first cut
+     * used a bare control count and called the plan editor dead at 4 controls —
+     * but its body read "SET ITINERARY … this tour runs a set route planned by
+     * our team", which is the fixed-route variant rendering correctly with
+     * almost nothing to press. A judge that cannot tell a sparse screen from an
+     * empty one manufactures failures, and manufactured failures get ignored.
+     */
+    const text = (await page.evaluate(() => document.body.innerText ?? '')).replace(/\s+/g, ' ').trim();
+    if (m.controls < 5 && text.length < 80) {
+      results.push({ surface: name, unreachable: `${m.controls} controls, ${text.length} chars — "${text.slice(0, 100)}"` });
       return;
     }
     results.push({ surface: name, ...m });
@@ -231,7 +277,12 @@ await visit('guest-room-home', fx.room1Url, '[data-testid="room-tabbar"]');
 
 /** The chat tab is where the docked stack actually grows (G-g: chips + composer). */
 await visit('guest-room-chat', fx.room1Url, '[data-testid="room-tabbar"]', async () => {
-  await page.locator('[data-testid="room-tab-chat"]').click({ timeout: 15000 }).catch(() => {});
+  // 🔴 Do not swallow this. A click that silently misses leaves the harness on
+  // the home tab reporting home's numbers under the chat tab's name — which it
+  // did, twice, and the two runs disagreed by 115px with no sign anything went
+  // wrong.
+  await page.locator('[data-testid="room-tab-chat"]').click({ timeout: 20000 });
+  await page.waitForSelector('[data-testid="quick-replies"], [data-testid="chat-feed"]', { timeout: 30000 });
   await page.waitForTimeout(1200);
 });
 await visit('guide-console', fx.guideUrl, '[data-testid="staff-tab-btn-ops"], [data-testid="drive-hero"]');
@@ -241,6 +292,16 @@ await visit('guide-console', fx.guideUrl, '[data-testid="staff-tab-btn-ops"], [d
  * Never wait for `ops-drive` unconditionally: with a single room it does not
  * exist, and the wait looks exactly like a broken app.
  */
+/** Plan editor — same room token as the room URL carries. */
+const rt = (fx.room1Url.split('?')[1] ?? '');
+await visit('plan-editor', `/tour-mode/plan/${fx.booking1}?${rt}`, 'main, [data-testid="plan-root"], h1');
+
+/**
+ * 관제 — UX-D3 scopes this to the C and H axes only (Korean-only, staff-only,
+ * indoor), so D/L/P numbers are collected but not judged for this surface.
+ */
+await visit('ops-console', '/admin/tour-ops', 'main, [data-testid="ops-shell"], h1');
+
 await visit('cockpit', fx.guideUrl, '[data-testid="drive-hero"], [data-testid="staff-tab-btn-ops"]', async () => {
   const hero = page.locator('[data-testid="drive-hero"]');
   if (await hero.isVisible().catch(() => false)) {
