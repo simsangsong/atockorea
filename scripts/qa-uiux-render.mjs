@@ -275,6 +275,13 @@ async function visit(name, url, ready, after) {
 
 await visit('guest-room-home', fx.room1Url, '[data-testid="room-tabbar"]');
 
+/** UX-005 — the drawer is the one surface that must show the title in full. */
+await visit('guest-room-drawer', fx.room1Url, '[data-testid="room-tabbar"]', async () => {
+  await page.locator('[data-testid="room-drawer-open"]').click({ timeout: 20000 });
+  await page.waitForSelector('[data-testid="room-drawer"]', { timeout: 20000 });
+  await page.waitForTimeout(800);
+});
+
 /** The chat tab is where the docked stack actually grows (G-g: chips + composer). */
 await visit('guest-room-chat', fx.room1Url, '[data-testid="room-tabbar"]', async () => {
   // 🔴 Do not swallow this. A click that silently misses leaves the harness on
