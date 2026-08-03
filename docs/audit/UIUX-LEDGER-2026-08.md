@@ -79,6 +79,7 @@ UX-000 을 모르는 채로 쓰인 문장이다. **세 트랙이 각자 같은 �
 | UX-005 | L | **전 표면 4/4** | 투어 제목이 어디서나 잘린다 — G-i 는 손님만의 문제가 아니었다 | 열림 |
 | UX-006 | H | 손님 홈·채팅 · **관제** | **primary 가 하나도 없다.** 이길 것이 없는 화면 | 열림 |
 | UX-007 | D | 콕핏 | 하단 가구가 **31%** (합격선 25%) | 열림 |
+| UX-008 | R · H | 손님 · 다이닝 추천 | 3회째부터 막히는데 **"다시 시도하세요"** 라고 말한다. 서버가 보낸 해제 시각을 앱이 버린다 | 열림 |
 
 ---
 
@@ -361,9 +362,80 @@ D축 하나가 다섯 판을 갔고, **매번 다른 방향으로 틀렸다.** �
 
 ---
 
+## UX-008 — 식당을 세 번 고르면 벽이다. 그런데 앱은 "다시 시도하세요"라고 말한다
+
+**축:** R(응답성) · H(위계) · **판정: 서버가 보낸 답을 앱이 버린다**
+
+### 발단 — 성능 트랙이 사고로 발견했다
+
+하니스가 3초 간격 5회를 눌렀더니 **5/5 가 429**. 원인은 의도된 설계다(MISS 가 유료 외부 API):
+
+```ts
+// app/api/tour-rooms/[bookingId]/dining/route.ts:95-103  [코드 실측]
+requestGate({ namespace: 'tour_room_dining',      key: gateKey,               perMinute: 3, perHour: 20 })
+requestGate({ namespace: 'tour_room_dining_room', key: `booking:${id}`,       perMinute: 6, perHour: 40 })
+…
+return NextResponse.json({ error: 'rate_limited' },
+  { status: 429, headers: { 'Retry-After': String(Math.ceil(retryAfterMs / 1000)) } });
+```
+
+**참가자 3회/분.** 그런데 **손님이 식당을 고르는 행동은 원래 여러 번 눌러보는 것**이다 —
+「점심 추천」 → 별로네 → 다시 → 또 별로 → 다시. **세 번이면 벽이다.**
+
+### 🔴 결함은 리밋이 아니라 리밋을 말하지 않는 것이다
+
+**서버는 언제 다시 되는지 계산해서 `Retry-After` 로 보낸다. 손님 앱은 그걸 읽지 않는다.**
+
+| 파일 | `429` | `rate_limited` | `Retry-After` |
+|---|---|---|---|
+| `BriefingLunchCard.tsx` | 0 | 0 | 0 |
+| `ConciergePanel.tsx` | 0 | 0 | 0 |
+| `DiningCard.tsx` | 0 | 0 | 0 |
+| `ChatFeed.tsx` | 0 | 0 | 0 |
+
+앱 전체에서 `Retry-After` 를 읽는 곳은 **마케팅 사이트의 AI 위젯 하나뿐**이다(`TourProductAiAssistantWidget.tsx`).
+**스마트앱에는 없다.**
+
+그래서 429 는 일반 실패 경로로 떨어지고, 손님이 보는 것은 `ConciergePanel.tsx:135` 의 그 문구다:
+
+> **「문제가 발생했어요 — 다시 시도하거나 가이드에게 물어보세요.」**
+
+**다시 시도가 정확히 차단된 상태에서 다시 시도하라고 말한다.** 그리고 언제 풀리는지는
+**서버가 알고 보냈는데 앱이 버렸다.**
+
+### 이 트랙의 지배 결함 유형 그대로다
+
+**엔진은 있고 소비처가 없다.** `Retry-After` 는 계산되고 전송된다 — 아무도 안 읽을 뿐이다.
+단위 테스트로는 안 잡힌다: 라우트 테스트는 헤더가 나가는 걸 확인하고, 컴포넌트 테스트는
+그 헤더를 모른다. **결함은 둘 사이에 있다.**
+
+### UX-002 와 겹쳐서 더 나빠진다
+
+UX-002 는 «13초 뒤 실패인데 재시도 버튼이 없다» 였다. UX-008 은 그 실패가 **rate limit 일 때**
+같은 문구가 **거짓말이 된다**는 것이다. 그리고 U5 가 잰 대로 **컨시어지는 홈에서 1탭**이다.
+
+### 재현
+
+```
+node scripts/qa-perf-dining.mjs --hit 5 --gap 3000     # 5/5 가 429 (성능 트랙 하니스)
+sed -n '92,104p' "app/api/tour-rooms/[bookingId]/dining/route.ts"
+grep -ci 'retry-after' components/tour-mode/*.tsx      # 전부 0
+grep -rli 'retry-after' components/                     # 마케팅 위젯 하나뿐
+```
+
+### 수정 아님 — U9 방향
+
+문구를 고치는 게 아니라 **정보를 흘려보내지 않는 것**이 요점이다.
+429 를 일반 실패와 구분하고, `Retry-After` 를 읽어 «N초 뒤 다시 해보세요» 로 바꾼다.
+⚠ UX-002 가 적어 둔 선행 조건과 같다 — `ThreadEntry` 에 **에러 종류를 담을 자리가 먼저 필요**하다.
+
+---
+
 ## 흐름 감사 결과 (U5, `scripts/qa-uiux-flow.mjs`)
 
-**먼저 원칙 2를 따랐다** — 착수 전 grep 에서 `docs/audit/feature-journey.md` 가 나왔다(타 세션 산출).
+**먼저 원칙 2를 따랐다** — 착수 전 grep 에서 `docs/audit/feature-journey.md` 가 나왔다
+(**기능 전면 감사 트랙 F1/F7 산출**, PR #683~#688 로 main 진입. 성능 트랙도 이 트랙도 아니다 —
+처음에 성능 트랙 것으로 오인했고 그쪽이 정정해 줬다).
 그래서 U5 는 그 위에 얹는다. 역할이 다르다:
 
 | | 묻는 것 | 단위 |
