@@ -205,13 +205,36 @@ export default function GuidePlanPanel({
         }));
         const res = await api('/plan', {
           method: 'PUT',
-          body: JSON.stringify({ stops: payload, ...extra }),
+          /**
+           * A2 — the version this panel composed the edit from. Every save here
+           * posts the FULL stops array from a snapshot that was loaded when the
+           * panel expanded, so without this a 확정 tapped after the guest added
+           * a stop erases it — and confirming then locks the guest out of
+           * putting it back.
+           */
+          body: JSON.stringify({
+            stops: payload,
+            ...(typeof data?.day_plan?.version === 'number' ? { version: data.day_plan.version } : {}),
+            ...extra,
+          }),
         });
         const body = (await res.json().catch(() => ({}))) as {
           day_plan?: PlanGetResponse['day_plan'];
           feasibility?: { warnings?: FeasibilityWarning[] };
           error?: string;
         };
+        if (res.status === 409 && body.error === 'plan_stale') {
+          // Take the server's plan and stop. NOT a retry: a 확정 is consent to
+          // specific content, and re-sending would confirm something the guide
+          // has not seen.
+          if (body.day_plan) {
+            setData((prev) => (prev ? { ...prev, day_plan: body.day_plan ?? prev.day_plan } : prev));
+            if (body.day_plan.stops) setStops(body.day_plan.stops as DayPlanStop[]);
+          }
+          setDirty(false);
+          setError('손님이 방금 일정을 바꿨어요. 최신 내용을 불러왔으니 다시 확인해 주세요.');
+          return false;
+        }
         if (!res.ok) throw new Error(body.error || 'save_failed');
         setData((prev) => (prev ? { ...prev, day_plan: body.day_plan ?? prev.day_plan } : prev));
         if (body.day_plan?.stops) setStops(body.day_plan.stops as DayPlanStop[]);
@@ -226,7 +249,7 @@ export default function GuidePlanPanel({
         setBusy(null);
       }
     },
-    [api, stops, onChanged],
+    [api, stops, onChanged, data?.day_plan?.version],
   );
 
   const announceArrival = async (stop: DayPlanStop) => {

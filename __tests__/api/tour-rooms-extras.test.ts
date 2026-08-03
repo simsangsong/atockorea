@@ -52,7 +52,13 @@ const BOOKING = {
   preferred_language: 'ja',
 };
 
-function fakeDb(config: { extra?: Record<string, unknown> | null } = {}) {
+/**
+ * `movedTo` — A2 (feature audit F5). The PATCH now filters its update by the
+ * status it read, so the row it writes to may no longer be the row it decided
+ * on. This models exactly that: the read still returns `extra`, but the update
+ * matches only against `movedTo`, i.e. somebody transitioned it in between.
+ */
+function fakeDb(config: { extra?: Record<string, unknown> | null; movedTo?: string } = {}) {
   const inserts: Record<string, Array<Record<string, unknown>>> = {};
   const updates: Record<string, Array<Record<string, unknown>>> = {};
   const client = {
@@ -84,11 +90,29 @@ function fakeDb(config: { extra?: Record<string, unknown> | null } = {}) {
       });
       chain.update = jest.fn((values: Record<string, unknown>) => {
         (updates[table] ??= []).push(values);
-        return {
-          eq: jest.fn(() => ({
-            select: () => ({ single: async () => ({ data: { ...(config.extra ?? {}), ...values }, error: null }) }),
-          })),
+        // Chainable, because the route now narrows by id AND by the status it
+        // read. A mock that accepted only one eq() would make the guard
+        // untestable and, worse, look like a route bug when it threw.
+        const filters: Array<[string, unknown]> = [];
+        const row = () => {
+          const stored = config.extra as Record<string, unknown> | undefined | null;
+          if (!stored) return null;
+          const effective = config.movedTo ? { ...stored, status: config.movedTo } : stored;
+          for (const [column, want] of filters) {
+            if (effective[column] !== want) return null;
+          }
+          return { ...effective, ...values };
         };
+        const result: Record<string, unknown> = {};
+        result.eq = jest.fn((column: string, want: unknown) => {
+          filters.push([column, want]);
+          return result;
+        });
+        result.select = jest.fn(() => ({
+          single: async () => ({ data: row(), error: null }),
+          maybeSingle: async () => ({ data: row(), error: null }),
+        }));
+        return result;
       });
       return chain;
     },
@@ -245,6 +269,27 @@ describe('extras API', () => {
     );
     expect(settleRes.status).toBe(200);
     expect(db.updates.tour_room_extras[0]).toMatchObject({ status: 'settled', settled_via: 'cash' });
+  });
+
+  it('🔴 A2 — a transition decided on a row that has since moved is refused', async () => {
+    // `settle` starts from logged OR confirmed and `confirm` starts from
+    // logged, so a guide's 수취완료 and a guest's 확인 begin at the same status
+    // and both pass allowedExtraTransition. Before the guard, the later write
+    // won: a `confirmed` could land on a `settled` and erase a cash receipt
+    // while the settlement capsule stayed in the feed, because the capsule is
+    // written after the update.
+    const logged = { id: 'e-1', room_id: 'room-1', item: '입장권', amount_krw: 30000, payer: 'guide', status: 'logged' };
+    const db = fakeDb({ extra: logged, movedTo: 'settled' });
+    createServerClientMock.mockReturnValue(db);
+    const res = await extrasPATCH(
+      fakeReq({ headers: { 'x-tour-room-auth': session('customer') }, json: { extraId: 'e-1', action: 'confirm' } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(409);
+    expect((await res.json()).error).toBe('extra_stale');
+    // And no capsule — an audit trail that records a transition which did not
+    // happen is worse than no audit trail.
+    expect(db.inserts.tour_room_messages ?? []).toHaveLength(0);
   });
 
   it('T1-2 — a driver settles their own advance; a guide-paid row is 403', async () => {

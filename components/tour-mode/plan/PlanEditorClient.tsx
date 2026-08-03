@@ -586,6 +586,14 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     latestDraft.current = { stops, needs, stopsChanged: latestDraft.current.stopsChanged };
   }, [stops, needs]);
 
+  // Every path that learns a new server truth — first load, a save response, a
+  // conflict resync — goes through setPlan, so one effect keeps A2's token
+  // current without three places remembering to.
+  useEffect(() => {
+    const version = plan?.day_plan?.version;
+    if (typeof version === 'number') latestVersion.current = version;
+  }, [plan]);
+
   // ── boot: join with ?rt=, scrub, adopt booking locale ─────────────────────
   useEffect(() => {
     if (attempted.current) return;
@@ -697,6 +705,17 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   const isConfirmed = planStatus !== null && planStatus !== 'guest_draft' && planStatus !== 'guest_submitted';
 
   // ── save (A2 auto-save, debounced) ────────────────────────────────────────
+  /**
+   * A2 — the plan version this editor is composed from, sent with every write
+   * so a save built on a stale snapshot is refused instead of clobbering.
+   *
+   * A ref rather than reading `plan` inside `save`: that callback deliberately
+   * depends on `plan?.viewer.can_edit` and not on `plan`, so the object in its
+   * closure can be several saves old. Sending a stale version from there would
+   * manufacture conflicts against ourselves.
+   */
+  const latestVersion = useRef<number | null>(null);
+
   const applySaveResponse = useCallback((data: PlanSaveResponse) => {
     if (data.day_plan) {
       setPlan((prev) => (prev ? { ...prev, day_plan: data.day_plan ?? prev.day_plan } : prev));
@@ -752,6 +771,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           stops: stopsPayload(draft.stops),
           ...(draft.stopsChanged ? { stops_changed: true } : {}),
           ...(draft.departureTime !== undefined ? { departure_time: draft.departureTime } : {}),
+          ...(latestVersion.current !== null ? { version: latestVersion.current } : {}),
           ...extra,
         };
         const res = await authedFetch('/plan', { method: 'PUT', body: JSON.stringify(body) });
@@ -763,6 +783,12 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
            * 시도해요"를 보여줬는데, 아무리 고쳐도 저장되지 않으므로 그건 거짓말이다
            * (사용자 리포트 2026-07-27의 `Couldn't save`). 서버 진실을 다시 읽어
            * 화면을 읽기전용으로 바꾼다.
+           *
+           * A2 — 409 는 이제 두 가지다. `plan_locked` 는 영구고 `plan_stale` 은
+           * "누가 먼저 저장했다"이다. **둘 다 같은 응답이 맞다**: 서버 진실을 다시
+           * 읽으면 잠긴 경우엔 `can_edit`가 false 로 내려와 읽기전용이 되고,
+           * 낡았을 뿐이면 초안 그대로라 최신 내용으로 계속 편집한다. 되맞추지 않고
+           * 재시도하면 방금 남의 편집을 지운 그 저장을 한 번 더 하는 것이다.
            */
           if (res.status === 409 || res.status === 403) {
             setSaveState('idle');
@@ -822,6 +848,9 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
           stops: stopsPayload(draft.stops),
           ...(draft.stopsChanged ? { stops_changed: true } : {}),
           ...(draft.departureTime !== undefined ? { departure_time: draft.departureTime } : {}),
+          // The beacon is the one write nobody can see the result of, so it is
+          // the one that most needs refusing when it is stale.
+          ...(latestVersion.current !== null ? { version: latestVersion.current } : {}),
         }),
         keepalive: true,
       });
@@ -1128,7 +1157,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
     try {
       const res = await authedFetch('/plan', {
         method: 'PUT',
-        body: JSON.stringify({ delegate: true, needs: needsPayload(latestDraft.current.needs) }),
+        body: JSON.stringify({
+          delegate: true,
+          needs: needsPayload(latestDraft.current.needs),
+          ...(latestVersion.current !== null ? { version: latestVersion.current } : {}),
+        }),
       });
       const data = (await res.json().catch(() => ({}))) as PlanSaveResponse;
       if (res.ok) {

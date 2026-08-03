@@ -430,6 +430,8 @@ export async function PUT(
       delegate?: unknown;
       stops_changed?: unknown;
       departure_time?: unknown;
+      /** A2 — the version this edit was composed from. See the check below. */
+      version?: unknown;
     };
 
     const resolved = await resolveRoomActor(req, bookingId, { supabase });
@@ -539,6 +541,52 @@ export async function PUT(
       return NextResponse.json({ error: 'plan_locked' }, { status: 409 });
     }
 
+    /**
+     * 🔴 A2 (feature audit F5) — `version` is a guard, not a label.
+     *
+     * The column has always been here. This route increments it on every write
+     * and the guide console prints it ("손님 희망 일정 v3"). Nothing ever read it
+     * to DECIDE anything: the row was read, the next one built from what was
+     * just read, and upserted blind. Two writers who both held v5 both wrote
+     * v6 and the later one won by arriving last. Both were told 200.
+     *
+     * The pairing the product invites: at D-1 the lead guest is still editing
+     * (status guest_draft, so the lock above does not apply), the guide opens
+     * the plan panel, the guest adds a stop, the guide taps 확정 — which posts
+     * the FULL stops array from the snapshot loaded before that edit. The stop
+     * vanishes and the plan is now confirmed, so the guest cannot put it back.
+     * Measured with `scripts/qa-plan-concurrency.ts`: two writes from one
+     * snapshot, both 200, first edit gone.
+     *
+     * This repo has lost data to this exact shape before — parallel
+     * read-modify-write dropped 70 paid translations — and the answer there was
+     * a merge function. Stops cannot be merged (order is meaning), so the
+     * second writer is refused instead, and handed the current plan so it can
+     * resync without a second round trip.
+     *
+     * Optional on purpose. Making it mandatory would turn a mid-deploy stale
+     * bundle into "nothing saves at all", which is worse than the unguarded
+     * behaviour it replaces. Both clients send it, and
+     * `__tests__/audit/planConcurrency.test.ts` is what keeps them sending it.
+     */
+    const claimedVersion =
+      typeof body.version === 'number' && Number.isFinite(body.version) ? body.version : null;
+    const currentVersion = (existing as { version?: number } | null)?.version ?? 0;
+    if (claimedVersion !== null && claimedVersion !== currentVersion) {
+      const currentStops = ((existing as { stops?: DayPlanStop[] } | null)?.stops ?? []) as DayPlanStop[];
+      return NextResponse.json(
+        {
+          error: 'plan_stale',
+          day_plan: existing,
+          schedule: dayPlanStopsToSchedule(currentStops),
+          ...((existing as { feasibility?: FeasibilityResult } | null)?.feasibility
+            ? { feasibility: (existing as { feasibility: FeasibilityResult }).feasibility }
+            : {}),
+        },
+        { status: 409 },
+      );
+    }
+
     let nextStops = stops ?? ((existing as { stops?: DayPlanStop[] } | null)?.stops ?? []);
     if (confirm && nextStops.length === 0) {
       return NextResponse.json({ error: 'Cannot confirm an empty plan' }, { status: 400 });
@@ -582,7 +630,7 @@ export async function PUT(
       ...(needs !== undefined ? { needs } : {}),
       ...(feasibility !== undefined ? { feasibility } : {}),
       ...(setDeparture ? { departure_time: departure.value } : {}),
-      version: ((existing as { version?: number } | null)?.version ?? 0) + 1,
+      version: currentVersion + 1,
       updated_by: actor.role,
       updated_at: new Date().toISOString(),
     };
