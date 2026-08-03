@@ -57,7 +57,7 @@
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
 | `/tour-mode/companion/[token]` | 🔴 **없음** |
 | `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] |
-| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/join/[roomToken]` | 🔴 **없음** |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/plan/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-uiux-render.mjs`[선언] |

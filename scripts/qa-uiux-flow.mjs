@@ -28,7 +28,7 @@ import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 
 /** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
-export const COVERS = ['/tour-mode/room/[bookingId]'];
+export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide'];
 
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3181';
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
@@ -98,6 +98,97 @@ const TASKS = [
   },
 ];
 
+/**
+ * Staff tasks. Same rule as the guest list: the marker proves the tap did
+ * something, and it is read off the component rather than guessed — the guest
+ * meeting-point task cost two false failures for guessing.
+ */
+const STAFF_TASKS = [
+  {
+    key: '[가이드] 오늘 도구 열기',
+    why: '가이드가 투어 중 가장 자주 여는 서랍',
+    url: () => fx.guideUrl,
+    ready: '[data-testid="guide-console"], [data-testid="drive-hero"]',
+    steps: ['[data-testid="daytools-open"]'],
+    done: '[data-testid="daytools-sheet"]',
+  },
+  {
+    key: '[가이드] 손님에게 방송하기',
+    why: '일행 전체에 한 번에 알리는 유일한 길',
+    url: () => fx.guideUrl,
+    ready: '[data-testid="guide-console"], [data-testid="drive-hero"]',
+    steps: ['[data-testid="guide-broadcast-mic"]'],
+    done: '[data-testid="guide-recording-bar"], [data-testid="guide-target-picker"], [data-testid="guide-mic-note"]',
+    /**
+     * 🔴 Not a defect when this is missing. The button renders behind
+     * `voiceSupported && sttBookingId`, and voiceSupported comes from
+     * `isVoiceRecordingSupported()` — false in headless Chromium without a fake
+     * media device. Reporting it as unreachable would file the harness's own
+     * limitation as an app failure, which is the third time today a judge
+     * nearly manufactured a defect. Measuring it for real needs
+     * --use-fake-device-for-media-stream.
+     */
+    envRequires: { selector: '[data-testid="guide-broadcast-mic"]', note: '마이크 지원 (headless 미지원)' },
+  },
+  {
+    key: '[기사] 운전 모드 진입',
+    why: 'UX-D10 — 방 개수에 따라 경로가 갈린다',
+    url: () => fx.guideUrl,
+    ready: '[data-testid="drive-hero"], [data-testid="staff-tab-btn-ops"]',
+    steps: ['[data-testid="drive-hero"]'],
+    done: '[data-testid="driver-feed"], [data-testid="ops-drive"]',
+  },
+];
+
+/**
+ * 헛탭 — how many presses land on nothing while a surface is painted but not
+ * yet listening.
+ *
+ * The performance track measured the window: the guide console paints at 676ms
+ * and becomes usable at 2,454ms. That says how long. This says what it costs
+ * the person standing there, who does not know the app is not ready and presses
+ * again. A control that is rendered but inert is worse than one that is absent,
+ * because the guide believes the tap landed and moves on.
+ *
+ * ⚠ Measured against a DEV server, not the production build the performance
+ * track throttled. The count is not comparable to theirs and is used only as a
+ * qualitative answer: does the window swallow taps at all.
+ */
+async function wastedTaps(ctx2, url, selector, proof, budgetMs = 15000) {
+  const page = await ctx2.newPage();
+  const t0 = Date.now();
+  let taps = 0;
+  let firstSeenAt = null;
+  let landedAt = null;
+  try {
+    await page.goto(BASE + url, { waitUntil: 'commit', timeout: 120000 });
+    while (Date.now() - t0 < budgetMs) {
+      const el = page.locator(selector).first();
+      const visible = await el.isVisible().catch(() => false);
+      if (visible) {
+        if (firstSeenAt === null) firstSeenAt = Date.now() - t0;
+        await el.click({ timeout: 2000, noWaitAfter: true }).catch(() => {});
+        taps += 1;
+        const ok = await page
+          .locator(proof)
+          .first()
+          .waitFor({ state: 'visible', timeout: 250 })
+          .then(() => true)
+          .catch(() => false);
+        if (ok) {
+          landedAt = Date.now() - t0;
+          break;
+        }
+      }
+      await page.waitForTimeout(200);
+    }
+  } catch {
+    /* recorded below as landedAt === null */
+  }
+  await page.close();
+  return { taps, wasted: landedAt === null ? taps : taps - 1, firstSeenAt, landedAt };
+}
+
 const browser = await chromium.launch();
 const ctx = await browser.newContext({
   viewport: { width: 390, height: 844 },
@@ -145,21 +236,65 @@ for (const task of TASKS) {
   await page.close();
 }
 
+// ── staff tasks ────────────────────────────────────────────────────────────
+for (const task of STAFF_TASKS) {
+  const page = await ctx.newPage();
+  let taps = 0;
+  try {
+    await page.goto(BASE + task.url(), { waitUntil: 'domcontentloaded', timeout: 120000 });
+    await page.waitForSelector(task.ready, { timeout: 90000 });
+    await page.waitForLoadState('networkidle', { timeout: 30000 }).catch(() => {});
+    if (task.envRequires) {
+      const present = await page.locator(task.envRequires.selector).first().count();
+      if (!present) {
+        results.push({ ...task, taps: 0, crossings: 0, envSkipped: task.envRequires.note });
+        await page.close();
+        continue;
+      }
+    }
+    for (const sel of task.steps) {
+      const el = page.locator(sel).first();
+      await el.waitFor({ state: 'visible', timeout: 20000 });
+      await el.click({ timeout: 20000 });
+      taps += 1;
+      await page.waitForTimeout(900);
+    }
+    await page.waitForSelector(task.done, { timeout: 25000 });
+    results.push({ ...task, taps, crossings: 1, reachable: true });
+  } catch (e) {
+    results.push({ ...task, taps, crossings: 0, reachable: false, failure: String(e).split('\n')[0].slice(0, 110) });
+  }
+  await page.close();
+}
+
+// ── dead window (성능 트랙 ① 후속) ─────────────────────────────────────────
+const dead = {
+  guide: await wastedTaps(ctx, fx.guideUrl, '[data-testid="daytools-open"]', '[data-testid="daytools-sheet"]'),
+  guest: await wastedTaps(ctx, fx.room1Url, '[data-testid="room-tab-chat"]', '[data-testid="chat-feed"]'),
+};
+
 await browser.close();
 
-const out = { base: BASE, results };
+const out = { base: BASE, results, dead };
 if (process.argv.includes('--json')) {
   console.log(JSON.stringify(out, null, 2));
 } else {
   console.log('손님 투어 중 과업 — 홈 탭에서 시작해 몇 번 눌러야 끝나는가\n');
   for (const r of results) {
-    const mark = !r.reachable ? '🔴 도달 실패' : r.taps <= 2 ? '✅' : r.taps === 3 ? '⚠' : '🔴 깊다';
+    const mark = r.envSkipped ? '⏭ 환경제약' : !r.reachable ? '🔴 도달 실패' : r.taps <= 2 ? '✅' : r.taps === 3 ? '⚠' : '🔴 깊다';
     console.log(`${mark}  ${String(r.taps).padStart(2)}탭  ${r.key}`);
     console.log(`        ${r.why}`);
-    if (!r.reachable) console.log(`        실패: ${r.failure}`);
+    if (r.envSkipped) console.log(`        건너뜀: ${r.envSkipped} — 결함 아님`);
+    else if (!r.reachable) console.log(`        실패: ${r.failure}`);
   }
   const ok = results.filter((r) => r.reachable);
   console.log(`\n도달 ${ok.length}/${results.length} · 평균 ${ok.length ? (ok.reduce((n, r) => n + r.taps, 0) / ok.length).toFixed(1) : '—'}탭`);
+
+  console.log('\n헛탭 — 화면은 떴는데 아직 안 듣는 창 (⚠ dev 서버, 프로덕션 수치 아님)');
+  for (const [who, d] of Object.entries(dead)) {
+    const verdict = d.landedAt === null ? '🔴 예산 내 미반응' : d.wasted > 0 ? `🔴 ${d.wasted}번 삼켜짐` : '✅ 첫 탭에 반응';
+    console.log(`  ${who.padEnd(6)} 버튼 등장 ${d.firstSeenAt ?? '—'}ms · 반응 ${d.landedAt ?? '—'}ms · 총 ${d.taps}탭 → ${verdict}`);
+  }
 }
 
 /** A run where nothing was reachable measured the harness, not the app. */
