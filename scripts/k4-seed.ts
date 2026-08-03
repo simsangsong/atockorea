@@ -38,11 +38,17 @@ import {
 } from '../lib/tour-room/token';
 import { kstToday } from '../lib/tour-room/time';
 import { K4_ROOMS } from '../lib/audit/k4Coverage';
+import { SESSION_SIM_TAG } from './simSessionTag';
 
 loadEnvConfig(process.cwd());
 
 /** Same tag + address as sim-tour-day.ts, so its --cleanup owns these rows. */
-const SIM_TAG = 'sim';
+/**
+ * 🔴 `sim-tour-day.ts` 와 **같은 태그**여야 한 드레인이 둘 다 지운다(위 §의 전제).
+ * 이제 그 값이 세션(=워크트리)별로 갈린다 — 이유는 `simSessionTag.ts`.
+ * 두 시더가 같은 워크트리에서 도는 한 값은 동일하다.
+ */
+const SIM_TAG = SESSION_SIM_TAG;
 const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
 const OUT = path.join('scripts', '.k4-fixtures.json');
 

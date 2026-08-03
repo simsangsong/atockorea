@@ -30,10 +30,15 @@ import { createClient } from '@supabase/supabase-js';
 import { signCustomerRoomToken, signGuideRoomToken } from '../lib/tour-room/token';
 import { kstToday } from '../lib/tour-room/time';
 import { purgeRoomMedia, type PurgeStorageClient } from '../lib/tour-room/mediaPurge';
+import { SESSION_SIM_TAG, LEGACY_SIM_TAG } from './simSessionTag';
 
 const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
 const SIM_ADMIN_EMAIL = 'sim-tour-ops-admin@atockorea.test';
-const SIM_TAG = 'sim';
+/**
+ * 🔴 이제 세션(=워크트리)마다 다른 태그를 쓴다. 이유와 사고 경위는 `simSessionTag.ts`.
+ * 요약: 전역 `'sim'` 하나였을 때 한쪽의 `--cleanup` 이 다른 세션 예약을 같이 지웠다.
+ */
+const SIM_TAG = SESSION_SIM_TAG;
 const OUT = path.join(__dirname, '.sim-fixtures.json');
 /**
  * K4v2 seeds its 20 rooms through `scripts/k4-seed.ts` with the SAME sim_tag,
@@ -75,14 +80,58 @@ async function main() {
 
   if (process.argv.includes('--cleanup')) {
     const fixtures = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : null;
-    // Tag first, legacy address second: rows seeded before sim_tag existed are
-    // still identifiable by the address the seeder has always used.
-    const { data: tagged } = await service.from('bookings').select('id').eq('sim_tag', SIM_TAG);
-    const { data: byEmail } = await service
-      .from('bookings')
-      .select('id')
-      .in('contact_email', [SIM_EMAIL, SIM_ADMIN_EMAIL]);
-    const ids = [...new Set([...(tagged ?? []), ...(byEmail ?? [])].map((b) => b.id as string))];
+
+    /**
+     * 🔴 기본값은 **내 세션이 시드한 것만** 지운다. 전체 드레인은 `--all` 로 명시해야 한다.
+     *
+     * 예전 기본값은 `sim_tag='sim'` **또는** 시더 이메일이었고, 두 조건 다 세션을 구분하지
+     * 않는다. 그래서 2026-08-03 에 한쪽의 드레인이 **다른 세션 예약 5건을 같이 지웠다**
+     * (상대는 렌더 계측 중이었고, 예약이 사라진 뒤에도 하니스가 "위반 0"을 보고했다).
+     *
+     * ⚠ **이메일 폴백이 태그보다 더 위험하다** — 두 세션의 시더가 같은 주소를 쓰므로,
+     * 태그만 갈라도 이메일 조건이 남의 행을 그대로 집는다. 그래서 폴백은 `--all` 전용이다.
+     * 그 폴백의 원래 목적(컬럼 도입 이전 행 회수)은 일회성이라 명시 플래그가 맞는 자리다.
+     *
+     * 내 것 판정 = 내 세션 태그 + **로컬 픽스처에 적힌 id**. 후자가 있어야 태그 규약이
+     * 바뀌기 전에 시드한 내 행도 회수된다.
+     */
+    const drainAll = process.argv.includes('--all');
+    const idSet = new Set<string>();
+
+    const { data: mine } = await service.from('bookings').select('id').eq('sim_tag', SIM_TAG);
+    for (const b of mine ?? []) idSet.add(b.id as string);
+    for (const key of ['booking1', 'booking2', 'bookingId']) {
+      const v = fixtures?.[key];
+      if (typeof v === 'string' && v) idSet.add(v);
+    }
+
+    if (drainAll) {
+      const { data: legacy } = await service.from('bookings').select('id').eq('sim_tag', LEGACY_SIM_TAG);
+      const { data: prefixed } = await service.from('bookings').select('id').like('sim_tag', `${LEGACY_SIM_TAG}:%`);
+      const { data: byEmail } = await service
+        .from('bookings')
+        .select('id')
+        .in('contact_email', [SIM_EMAIL, SIM_ADMIN_EMAIL]);
+      for (const b of [...(legacy ?? []), ...(prefixed ?? []), ...(byEmail ?? [])]) idSet.add(b.id as string);
+    } else {
+      // 남의 것이 남아 있으면 조용히 두지 말고 **보이게** 한다 — 안 그러면 "정리 완료"가
+      // 실제 상태와 어긋난 채로 다음 세션에 넘어간다.
+      const { data: others } = await service
+        .from('bookings')
+        .select('id, sim_tag')
+        .like('sim_tag', `${LEGACY_SIM_TAG}%`)
+        .neq('sim_tag', SIM_TAG);
+      if ((others ?? []).length > 0) {
+        const tags = [...new Set((others ?? []).map((b) => String(b.sim_tag)))];
+        console.log(
+          `sim cleanup: 다른 세션/레거시 시뮬 예약 ${others!.length}건은 남겨 둔다 (태그 ${tags.join(', ')}). ` +
+            `전부 지우려면 --all.`,
+        );
+      }
+    }
+
+    const ids = [...idSet];
+    console.log(`sim cleanup: 내 태그 ${SIM_TAG} · 대상 ${ids.length}건${drainAll ? ' (--all)' : ''}`);
 
     // 1. SET NULL / NO ACTION children, while booking_id still identifies them.
     if (ids.length > 0) {
