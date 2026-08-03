@@ -1157,10 +1157,10 @@ function TourRoomLive({
           myParticipantId={data.participant.id}
           onClose={api.close}
           onSelectTab={api.selectTab}
-          /* readOnly 게이트 필수 — 컨시어지 시트 자체가 종료룸에선 null이라
-             (아래 concierge prop) 게이트 없이 넘기면 서랍의 이 타일만 눌러도
-             아무 일도 안 일어나는 데드 버튼이 된다 (교차표면 감사 #1). */
-          onOpenConcierge={viewerRole === 'customer' && !readOnly ? api.openConcierge : undefined}
+          /* 🔴 `onOpenConcierge` 는 여기 있었고 서랍이 한 번도 부르지 않았다.
+             배선이 아니라 제거가 답이다 — FA-024 가 컨시어지 문을 **둘**(셸 헤더 ·
+             홈 타일)로 못 박았고 `conciergeDoorCount` 게이트가 그걸 지킨다.
+             세 번째 문은 측정된 이유로 지워진 것이지 잊힌 게 아니다. */
           onOpenEmergency={api.openEmergency}
         />
       )}
@@ -1506,7 +1506,6 @@ function TourRoomLive({
             <GuideSeatDashboard
               token={authToken}
               bookingId={bookingId}
-              tourTitle={snapshot.booking?.tours?.title ?? undefined}
             />
           </Sheet>
         </div>

@@ -37,5 +37,5 @@ export default async function TourModeJoinPage({
       </main>
     );
   }
-  return <JoinFlow claimToken={token} roomId={payload.roomId} tourDate={payload.tourDate} />;
+  return <JoinFlow claimToken={token} roomId={payload.roomId} />;
 }

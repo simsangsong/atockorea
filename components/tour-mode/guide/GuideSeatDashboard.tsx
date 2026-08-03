@@ -61,13 +61,11 @@ interface SeatTarget {
 export default function GuideSeatDashboard({
   token,
   bookingId,
-  tourTitle,
   onOpenChat,
   onTargetNotice,
 }: {
   token: string;
   bookingId: string;
-  tourTitle?: string;
   /** U4-D3 — seat tap → that party's room chat (room-per-booking = the DM). */
   onOpenChat?: (bookingId: string) => void;
   /** U4-D3 — seat tap → targeted broadcast compose (bookingIds:[…]). */

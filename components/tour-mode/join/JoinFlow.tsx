@@ -65,11 +65,9 @@ function JoinShell({ dark, locale, children }: { dark: boolean; locale: RoomLoca
 export default function JoinFlow({
   claimToken,
   roomId,
-  tourDate,
 }: {
   claimToken: string;
   roomId: string;
-  tourDate: string;
 }) {
   const [locale, setLocale] = useState<RoomLocale>('en');
   const dark = useResolvedTourTheme() === 'dark';

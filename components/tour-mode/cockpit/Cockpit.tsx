@@ -2450,7 +2450,7 @@ export default function Cockpit({
               manifest endpoint already authorises driver | guide | admin, so
               this needs no server change. */}
           <div className="max-h-[68vh] overflow-y-auto">
-            <GuideSeatDashboard token={roomToken} bookingId={bookingId} tourTitle={tourTitle} />
+            <GuideSeatDashboard token={roomToken} bookingId={bookingId} />
           </div>
         </Sheet>
       ) : null}
