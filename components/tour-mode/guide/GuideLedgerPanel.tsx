@@ -103,8 +103,26 @@ export default function GuideLedgerPanel({
     setBusy(`${action}:${extraId}`);
     try {
       const res = await api({ method: 'PATCH' }, { extraId, action });
-      if (!res.ok) throw new Error('transition_failed');
+      if (res.ok) {
+        await load();
+        return;
+      }
+      /**
+       * 🔴 A2 — 실패해도 다시 읽는다. 이 화면은 **돈**이고, 실패의 대표 사례가
+       * `extra_stale`(누가 먼저 이 줄을 옮겼다)이다. 오류만 띄우고 목록을 그대로
+       * 두면 가이드는 **이미 틀린 금액을 계속 보면서** 현금 대화를 한다.
+       * 서버가 거절한 이유가 "상태가 바뀌었다"라면 바뀐 상태를 보여 주는 것이
+       * 그 거절의 나머지 절반이다.
+       */
+      const body = (await res.json().catch(() => ({}))) as { error?: string };
+      // 🔴 다시 읽는 게 **먼저**다 — `load()` 는 성공하면 `setError(null)` 을 하므로
+      // 순서를 뒤집으면 방금 세운 안내가 그대로 지워진다.
       await load();
+      setError(
+        body.error === 'extra_stale'
+          ? '방금 다른 사람이 이 항목을 처리했어요. 최신 내역을 불러왔어요.'
+          : '처리에 실패했어요.',
+      );
     } catch {
       setError('처리에 실패했어요.');
     } finally {
