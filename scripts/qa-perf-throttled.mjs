@@ -151,6 +151,25 @@ async function measureOnce(browser, route) {
   }
   await page.waitForTimeout(3000); // LCP·CLS 가 안정될 시간
 
+  /**
+   * 🔴 대기 셀렉터가 없는 라우트(entry · plan · ops)는 **오류 화면도 그대로 잰다.**
+   * 시뮬 예약이 사라지면 "예약을 찾을 수 없습니다" 한 장이 뜨는데, 그건 아주 빠르게 뜨므로
+   * 숫자는 오히려 좋아 보인다 — 회귀를 개선으로 읽게 된다.
+   * 그래서 렌더된 내용이 실제로 있는지 최소한으로 단언한다.
+   * (타 세션이 같은 함정을 밟았다: 예약이 지워진 뒤에도 "위반 0" 을 초록으로 보고했다. 2026-08-03)
+   */
+  const reached = await page.evaluate(() => {
+    const text = document.body?.innerText ?? '';
+    const dead = /예약을 찾을 수 없|찾을 수 없습니다|not found|링크를 열 수 없/i.test(text);
+    return { chars: text.trim().length, nodes: document.querySelectorAll('*').length, dead };
+  });
+  if (reached.dead || reached.chars < 80 || reached.nodes < 60) {
+    throw new Error(
+      `도달 실패: ${route.name} — 화면에 내용이 없다(chars ${reached.chars} · nodes ${reached.nodes}` +
+        `${reached.dead ? ' · "찾을 수 없음" 문구' : ''}). 시드 상태를 확인할 것.`,
+    );
+  }
+
   const m = await page.evaluate(
     () =>
       new Promise((resolve) => {
