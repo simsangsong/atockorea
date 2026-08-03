@@ -128,6 +128,17 @@ for (const b of spec.beats) {
 // Gate 3 — pacing. Real-speed stretches are for the two or three views worth
 // standing still for; past 40% the whole thing drags, which is what "왜 이렇게
 // 느려" meant.
+//
+// 🔴 The ceiling is a PARAMETER, not a rule (SKILL §11). 40% is right for a
+// walking route whose job is to compress transit. It is wrong for a site the
+// owner has asked to be shown at real speed: 오설록 2026-08-03 — "빨리감기 넣지
+// 말고 … 직진 구간이 긴 곳만 빨리감기 하고, 앵글이 돌아가는 구간은 절대 빨리감기
+// 넣지 말고." A spec that departs from 40% has to say so out loud in
+// `pacing.maxSlowPct` and carry the owner's reason in `pacing.why`.
+const MAX_SLOW_PCT = spec.pacing?.maxSlowPct ?? 40;
+if (spec.pacing?.maxSlowPct != null && !spec.pacing?.why) {
+  problems.push('pacing.maxSlowPct 를 올렸으면 pacing.why 에 근거(사장님 지시)를 적어라');
+}
 let slow = 0, total = 0;
 for (const b of spec.beats) {
   const d = b.kind === 'clip' ? (b.out - b.in) / (b.speed ?? 1) : b.hold;
@@ -136,8 +147,8 @@ for (const b of spec.beats) {
   if (d > 20) problems.push(`${b.id}  한 비트가 ${d.toFixed(1)}초 — 20초를 넘는다`);
 }
 const slowPct = (slow / total) * 100;
-if (slowPct > 40) problems.push(`1배속 구간이 ${slowPct.toFixed(0)}% — 40% 상한 초과 (${slow.toFixed(0)}s/${total.toFixed(0)}s)`);
-else notes.push(`페이싱  1배속 ${slowPct.toFixed(0)}% · 전체 ${Math.round(total)}s`);
+if (slowPct > MAX_SLOW_PCT) problems.push(`1배속 구간이 ${slowPct.toFixed(0)}% — ${MAX_SLOW_PCT}% 상한 초과 (${slow.toFixed(0)}s/${total.toFixed(0)}s)`);
+else notes.push(`페이싱  1배속 ${slowPct.toFixed(0)}% / 상한 ${MAX_SLOW_PCT}% · 전체 ${Math.round(total)}s`);
 
 // Gate 3b — no unbroken fast run past 5s on screen (V6-D17/D18). The drag is
 // never the speed, it is the LENGTH of one continuous sped-up run: on Gamcheon
@@ -162,6 +173,43 @@ for (const b of spec.beats) {
   if (!b.turn) continue;
   if ((b.speed ?? 1) > 1.05) problems.push(`${b.id}  회전 비트인데 ${b.speed}배속 — 회전은 1배속이다`);
   if ((b.out - b.in) < 2.0) problems.push(`${b.id}  회전 비트가 ${(b.out - b.in).toFixed(1)}s — 전후 여유가 없다(최소 2.0s)`);
+}
+
+// Gate 3d — a TURN is never sped up (owner, 2026-08-03: "앵글이 돌아가는 구간은
+// 절대 빨리감기 넣지 말고"). Gate 3c only protects beats the author already
+// labelled `turn`; this one catches the beat nobody labelled — a sped-up run
+// that happens to contain a swing, which on screen is the whip-pan that makes
+// the viewer dizzy. Reads the cache turns.mjs writes; without it the gate says
+// so rather than passing silently (an unmeasured spec is not a clean spec).
+{
+  const cachePath = specPath.replace(/\.json$/, '.turns.json');
+  const FAST = 1.3;        // anything past this is visibly a speed-up
+  const REAL_LOOK = 0.60;  // below this the detector is catching walking sway
+  const sped = spec.beats.filter((b) => b.kind === 'clip' && (b.speed ?? 1) >= FAST);
+  if (!fs.existsSync(cachePath)) {
+    if (sped.length) problems.push(`빨리감기 비트 ${sped.length}개인데 ${path.basename(cachePath)} 가 없다 — turns.mjs 를 먼저 돌려라 (게이트 3d)`);
+  } else {
+    const cache = JSON.parse(fs.readFileSync(cachePath, 'utf8'));
+    if (cache.min > REAL_LOOK + 1e-9) {
+      problems.push(`turns 캐시가 pan>=${cache.min} 로 떠졌다 — 게이트 3d 는 ${REAL_LOOK} 이하가 필요하다 (--min ${REAL_LOOK} 로 다시)`);
+    }
+    let checked = 0;
+    for (const b of sped) {
+      const windows = cache.turns?.[b.src];
+      if (!windows) { problems.push(`${b.id}  소스 ${b.src} 의 회전 측정이 캐시에 없다 (게이트 3d)`); continue; }
+      for (const w of windows) {
+        if (w.peak < REAL_LOOK) continue;
+        const lo = Math.max(b.in, w.in), hi = Math.min(b.out, w.out);
+        if (hi - lo > 0.25) {
+          problems.push(`${b.id}  ${b.speed}배속 구간(${b.in}–${b.out}s)이 회전 ${w.in}–${w.out}s(peak ${w.peak})와 ${(hi - lo).toFixed(1)}s 겹친다`
+            + ` — 회전은 절대 빨리감지 않는다. 회전 앞뒤로 쪼개라`);
+        }
+      }
+      checked++;
+    }
+    // Non-vacuous: a gate that measured nothing must not report green (FULL-AUDIT lesson).
+    notes.push(`회전×속도  빨리감기 ${checked}비트 검사 · 캐시 pan>=${cache.min}`);
+  }
 }
 
 // Gate E-4 — cut on motion. Every boundary between two moving beats of the same
