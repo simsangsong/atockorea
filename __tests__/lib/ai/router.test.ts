@@ -170,8 +170,38 @@ describe('lib/ai/router', () => {
 
       expect(bodyOf(0)).toMatchObject({ max_tokens: 400 });
       expect(bodyOf(0).max_completion_tokens).toBeUndefined();
-      expect(bodyOf(1)).toMatchObject({ max_completion_tokens: 400 });
       expect(bodyOf(1).max_tokens).toBeUndefined();
+      // openai 는 추론 여유분이 더해진다 — 아래 테스트가 그 이유를 지킨다.
+      expect(bodyOf(1).max_completion_tokens).toBeGreaterThan(400);
+    });
+
+    /**
+     * 🔴 gpt-5 계열에서 `max_completion_tokens` 는 추론 토큰까지 포함한다.
+     * 목적별 상한은 §L-D5 에서 **보이는 답의 길이**로 정해져 있으므로, 그 값을
+     * 그대로 상한으로 주면 추론이 예산을 다 먹고 본문이 0자로 돌아온다
+     * (`finish_reason:'length'`, `reasoning_tokens == cap`). 라우터는 그것을
+     * `empty_completion` 으로 읽고 공급자를 강등시키므로 겉보기 증상은
+     * "모델이 응답을 거부함"이 되고, **폴백 레그라 아무도 안 본다.**
+     *
+     * 실측(2026-08-03, gpt-5-mini, 질문 3개):
+     *   cap 400 → 3/3 빈 응답 · cap 400+low → 1/3 · cap 1200+low → 3/3.
+     *
+     * 이 테스트가 지키는 것은 숫자가 아니라 **관계**다 — openai 로 나가는 상한은
+     * 언제나 보이는 답의 상한보다 커야 하고, 다른 공급자는 그대로여야 한다.
+     */
+    it('gives openai reasoning headroom above the visible-answer cap, and leaves other providers alone', async () => {
+      process.env.GEMINI_API_KEY = 'g-key';
+      process.env.OPENAI_API_KEY = 'o-key';
+      fetchMock
+        .mockResolvedValueOnce({ ok: false, status: 429, json: async () => ({}) })
+        .mockResolvedValueOnce(okCompletion('hello'));
+
+      await chatCompletion('concierge', [{ role: 'user', content: 'hi' }], { maxOutputTokens: 400 });
+
+      expect(bodyOf(0).max_tokens).toBe(400); // gemini — 출력에만 쓰이므로 그대로
+      expect(bodyOf(1).max_completion_tokens).toBeGreaterThanOrEqual(1200); // 실측상 3/3 통과 지점
+      expect(bodyOf(1).reasoning_effort).toBe('low'); // 여유분을 실제로 작게 유지한다
+      expect(bodyOf(0).reasoning_effort).toBeUndefined(); // openai 방언을 남에게 보내지 않는다
     });
 
     it('drops the parameter a 400 names, and retries the same provider once', async () => {
