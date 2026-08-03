@@ -107,6 +107,43 @@ JS 페이로드가 지배적일 때 나타나는 모양이다(대역폭이 절�
 
 ---
 
+## P-06 🔴 성능 아님 — 차량이 배정된 예약은 **삭제가 구조적으로 불가능하다**
+
+성능 감사 중 시뮬 드레인이 실패하면서 드러났다. 성능 문제가 아니라 **데이터 무결성 결함**이라
+여기 적어 두고, 수정은 이 트랙 밖이다.
+
+**스키마 (라이브 실측, `pg_constraint`):**
+```
+ops_room_vehicles_anchor_present   CHECK (group_id IS NOT NULL OR room_id IS NOT NULL)
+ops_room_vehicles_room_id_fkey     FOREIGN KEY (room_id)  → tour_rooms(id)      ON DELETE SET NULL
+ops_room_vehicles_group_id_fkey    FOREIGN KEY (group_id) → ops_tour_groups(id) ON DELETE CASCADE
+tour_rooms_booking_id_fkey         FOREIGN KEY (booking_id) → bookings(id)      ON DELETE CASCADE
+```
+
+**체인:** `bookings` 삭제 → CASCADE → `tour_rooms` 삭제 → `ops_room_vehicles.room_id` **SET NULL** →
+그 행은 `group_id` 도 NULL 이라 **CHECK 위반** → 트랜잭션 롤백 → **예약 삭제 전체가 실패한다.**
+
+**즉 룸에 차량이 배정된 예약은 지울 수 없다.** 방-앵커 차량(`group_id` NULL, `room_id` 있음)은
+전세/프라이빗 투어의 정상 형태다.
+
+**실제 발생:** 오늘 `sim-tour-day.ts --cleanup` 이 이 제약으로 **exit 1** 로 죽었다 [실측].
+에러 원문: `new row for relation "ops_room_vehicles" violates check constraint
+"ops_room_vehicles_anchor_present"`. 문서화된 드레인 경로가 막힌 것이므로
+**이 함정은 시뮬을 쓰는 다음 세션마다 재발한다.**
+
+**영향:** 예약 취소·삭제 경로 · 개인정보 삭제 요청(GDPR 식) · 시뮬 드레인.
+현재 `ops_room_vehicles` 총 2행뿐이라 운영 폭발이 안 났을 뿐이다 [실측].
+
+**우회(오늘 쓴 것):** 해당 `ops_room_vehicles` 행을 먼저 지우고 드레인 재실행 → 성공
+(15건 제거 · 잔여 0 · 고아 0). ⚠ 사장님의 `manual-test-2026-07` 11건은 건드리지 않았다(확인함).
+
+**후보 수정:** `room_id` FK 를 `ON DELETE CASCADE` 로(차량 배정은 룸 없이는 의미가 없고,
+`group_id` 는 이미 CASCADE 다). **DDL 이므로 사장님 확인 후.**
+
+**게이트 가능:** ✅ 삭제 왕복 테스트(예약 생성 → 차량 배정 → 삭제)가 이걸 영구히 막는다.
+
+---
+
 ## 재현 방법
 
 ```bash
