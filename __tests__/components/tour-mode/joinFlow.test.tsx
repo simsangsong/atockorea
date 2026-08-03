@@ -52,7 +52,7 @@ beforeEach(() => {
 
 describe('JoinFlow — claim → seat → confirm (§5.2/§5.3)', () => {
   it('walks the roster, verify, seat selection and confirmation', async () => {
-    const { container } = render(<JoinFlow claimToken="CT" roomId="room1" tourDate="2026-08-17" />);
+    const { container } = render(<JoinFlow claimToken="CT" roomId="room1" />);
 
     // roster (masked names, claimed disabled)
     await screen.findByTestId('join-roster');
@@ -108,7 +108,7 @@ describe('JoinFlow — claim → seat → confirm (§5.2/§5.3)', () => {
       return reply({}, 404);
     }) as unknown as typeof fetch;
 
-    render(<JoinFlow claimToken="CT" roomId="room1" tourDate="2026-08-17" />);
+    render(<JoinFlow claimToken="CT" roomId="room1" />);
     fireEvent.click(await screen.findByTestId('roster-entry'));
     await screen.findByTestId('join-verify');
     fireEvent.change(screen.getByTestId('verify-party'), { target: { value: '2' } });
