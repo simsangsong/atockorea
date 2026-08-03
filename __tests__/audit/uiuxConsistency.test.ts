@@ -69,3 +69,36 @@ describe('UI/UX consistency ceilings (C axis)', () => {
     expect(hit!.lines.length).toBeGreaterThan(0);
   });
 });
+
+/**
+ * 🔴 U8 — both directions, every run.
+ *
+ * The mutations this track ran until now only proved a gate goes red when it is
+ * broken. That leaves the other half untested: whether the detector stays quiet
+ * on code that is correct. Without it, "strict enough to block everything" and
+ * "catching the right things" look identical from the outside, and the first
+ * time someone writes a correct component that trips the gate, the gate gets
+ * deleted rather than fixed.
+ *
+ * A human has to remember to run a mutation. These controls run every time.
+ */
+const scan = (root: string) =>
+  JSON.parse(
+    execFileSync(process.execPath, [SCRIPT, `--roots=${root}`, '--json'], { cwd: ROOT, encoding: 'utf8' }),
+  ) as typeof result;
+
+describe('detector controls (both directions)', () => {
+  it('positive — flags a file that breaks both rules', () => {
+    const r = scan('scripts/fixtures/uiux/dirty');
+    expect(r.scanned).toBe(1);
+    expect(r.tokenBypass.total).toBeGreaterThan(0);
+    expect(r.bareLoading.files).toBe(1);
+  });
+
+  it('negative — stays silent on a file that follows both rules', () => {
+    const r = scan('scripts/fixtures/uiux/clean');
+    expect(r.scanned).toBe(1); // the walker reached it at all
+    expect(r.tokenBypass.total).toBe(0);
+    expect(r.bareLoading.files).toBe(0);
+  });
+});

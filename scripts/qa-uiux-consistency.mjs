@@ -29,7 +29,16 @@ import { readdirSync, readFileSync, statSync, existsSync } from 'node:fs';
 import path from 'node:path';
 
 const ROOT = process.cwd();
-const ROOTS = ['components/tour-mode', 'components/tour-ops'];
+/**
+ * `--roots a,b` points the scan somewhere else. This exists so the gate can run
+ * the detector over fixtures with a KNOWN answer — a positive control (a file
+ * that must be flagged) and a negative control (one that must not). Mutation
+ * testing only proves a gate goes red when broken; it never proves the detector
+ * stays quiet on healthy input, and without that "strict enough to block
+ * everything" is indistinguishable from "correctly catching".
+ */
+const rootsArg = process.argv.find((a) => a.startsWith('--roots='));
+const ROOTS = rootsArg ? rootsArg.slice('--roots='.length).split(',') : ['components/tour-mode', 'components/tour-ops'];
 
 /**
  * Art and map layers legitimately hold raw colour. Excluded by path, so the
