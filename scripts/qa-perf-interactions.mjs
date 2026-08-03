@@ -189,6 +189,56 @@ try {
   failures.push('#5 send: ' + String(e).split('\n')[0].slice(0, 120));
 }
 
+// ── 서랍 첫 열기 비용은 되돌아오는가 (탭 왕복 후) ────────────────────────────
+// 🔴 "첫 탭이 340ms" 의 실제 무게는 **하루에 몇 번 일어나느냐**로 정해진다.
+//    세션당 1회면 감내할 만하고, 탭을 옮길 때마다 되살아나면 스톱마다 겪는 비용이다.
+//    같은 컨텍스트에서 [콜드 → warm → 탭 왕복 → 재열기] 를 재서 그 답을 낸다.
+try {
+  const { ctx, page } = await openRoom();
+  const open = () =>
+    page.evaluate(IN_PAGE_MEASURE, {
+      triggerSel: '[data-testid="room-drawer-open"]',
+      expectSel: '[data-testid="room-drawer"]',
+    });
+  const close = async () => {
+    await page.keyboard.press('Escape').catch(() => {});
+    await page
+      .waitForFunction(() => document.querySelectorAll('[data-testid="room-drawer"]').length === 0, { timeout: 3000 })
+      .catch(() => {});
+    await page.waitForTimeout(400);
+  };
+  const cold = await open();
+  await close();
+  const warm = await open();
+  await close();
+  // 탭 왕복: 채팅 탭으로 갔다가 홈으로 돌아온다(서랍을 띄우는 화면이 언마운트되는 경로).
+  const tabs = page.locator('[data-testid="room-tabbar"] [role="tab"]');
+  await tabs.nth(1).click({ timeout: 20000 });
+  await page.waitForTimeout(1200);
+  await tabs.nth(0).click({ timeout: 20000 });
+  await page.waitForTimeout(1200);
+  const again = await open();
+  if (cold.error || warm.error || again.error) {
+    failures.push('서랍 재발생: ' + (cold.error ?? warm.error ?? again.error));
+  } else {
+    const recurs = again.ms > cold.ms * 0.5;
+    results.push({
+      metric: '서랍 첫열기 비용의 재발생 (탭 왕복 후)',
+      budget: null,
+      first: +cold.ms.toFixed(1),
+      warm: +warm.ms.toFixed(1),
+      n: 3,
+      p50: +again.ms.toFixed(1),
+      p95: +again.ms.toFixed(1),
+      max: +again.ms.toFixed(1),
+      note: `콜드 ${cold.ms.toFixed(1)}ms → warm ${warm.ms.toFixed(1)}ms → 탭 왕복 후 ${again.ms.toFixed(1)}ms ⇒ ${recurs ? '🔴 비용이 되돌아온다 (탭 이동마다 재발생)' : '✅ 세션당 1회 (탭 이동해도 warm 유지)'}`,
+    });
+  }
+  await ctx.close();
+} catch (e) {
+  failures.push('서랍 재발생: ' + String(e).split('\n')[0].slice(0, 140));
+}
+
 // ── 콕핏 진입 전환 (운전 모드 탭 → driver-feed) ──────────────────────────────
 // 🔴 콕핏은 **라우트가 아니다.** staff-shell 안에서의 화면 전환이라 문서 로드가 없고,
 //    따라서 **LCP·TTFB 가 존재하지 않는다.** "콕핏 LCP" 는 지어낸 숫자가 된다.
