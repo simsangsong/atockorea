@@ -157,3 +157,22 @@ writeFileSync(
   JSON.stringify({ results, testids: [...allIds].sort(), errors }, null, 2),
 );
 console.log(`\nshots + home-measurements.json → ${OUT}`);
+
+/**
+ * 🔴 The counts above are an instrument — a number to move, not a pass/fail —
+ * so this script is right to have no verdict about them.
+ *
+ * A page error is different. It is not a measurement awaiting judgement; it is
+ * a broken render, and printing it next to "console clean" and then exiting 0
+ * means a caller reading the exit code cannot tell those two apart. Feature
+ * audit F0: this is the same shape that let qa-smartapp-walk report nine real
+ * check failures and still exit green.
+ */
+if (allIds.size === 0) {
+  console.error('\n🔴 no testids reachable — the walk measured nothing.');
+  process.exit(2);
+}
+if (errors.length > 0) {
+  console.error(`\n🔴 ${errors.length} console/page error(s) during the walk.`);
+  process.exit(1);
+}

@@ -255,8 +255,8 @@ UI를 건드렸으면 Playwright 전후 컷. **코드 읽고 "고쳤다"고 하�
 
 | 페이즈 | 상태 | 결과 |
 |---|---|---|
-| F-1 | 미착수 | 🔴 선행 — 미머지 5건 PR·머지 |
-| F0 | 미착수 | |
+| F-1 | ✅ **완료** | PR #683 머지(`a58db07d`). 아래 §F-1 |
+| F0 | ✅ **완료** | 하니스 3종 수리 + 상설 게이트 1종. 아래 §F-0 |
 | F1 | 미착수 | |
 | F2 | 미착수 | |
 | F3 | 미착수 | |
@@ -264,4 +264,56 @@ UI를 건드렸으면 Playwright 전후 컷. **코드 읽고 "고쳤다"고 하�
 | F5 | 미착수 | |
 | F6 | 미착수 | |
 | F7 | 미착수 | |
-| F8 | 미착수 | |
+| F8 | 진행 중 | 게이트 1종 착지(F0에서) |
+
+---
+
+### §F-1 결과 — 문 없는 기능 5건 (PR #683, `a58db07d`)
+
+`cb6b87f1` 을 main 위로 체리픽. **결함 4건이 들어왔고 1건은 이미 고쳐져 있었다** —
+체리픽이 `rallyCrossing.ts`·`signals/route.ts` 를 스스로 떨어뜨렸고, 확인해 보니 풀 오디트
+**FA-001 이 같은 결함을 이미 수리**한 뒤였다(`git diff` 빈 출력으로 확인). 원장의 "5건"을
+그대로 믿었으면 없는 결함을 하나 더 적을 뻔했다 — 원칙 **B-6** 이 실제로 값을 한 첫 사례.
+
+**실주행 검증** — 소스가 아니라 브라우저로 판정했다:
+
+| 하니스 | 결과 |
+|---|---|
+| `qa-door-fixes-walk` | **8/8** — 핵심은 *탭을 떠났다 돌아와도 공유 유지*(`aria-checked=true`), 새로고침 후에도 |
+| `qa-seat-door-walk` | **7/7** — 좌석판 45석 · 서버가 `can_pick` 판정 · 일행수 상한 · 저장 · 재진입 시 배정 확인 |
+
+🔴 **두 번째 하니스는 한 번도 돈 적이 없었다.** 전제 설정이 주석에 산문으로만 적혀 있었고
+(`push the sim booking to tomorrow and insert one ops_room_vehicles row`),
+전제 미충족 시 **exit 2** 로 죽는데 **그 exit 2 를 아무도 안 읽었다**.
+라이브가 이를 뒷받침한다 — `ops_seat_assignments` **0행**, `ops_vehicles` 활성 **0대** [실측].
+→ `scripts/sim-seat-door.ts` 로 전제를 **실행 가능하게** 만들었다.
+**주석에 적힌 전제는 전제가 아니다.**
+
+게이트: tsc **0** · jest **5,759 pass / 0 fail** · build **exit 0**.
+
+---
+
+### §F-0 결과 — 자를 먼저 검사했다
+
+하니스 34종을 전제별로 분류(순수 9 · dev+시드 21 · 기타 4)하고 **순수 9종을 전부 주행**했다.
+
+**결함 3건 — 전부 "살아 있는데 아무도 안 듣는" 유형:**
+
+| # | 하니스 | 무엇이 | 수리 후 |
+|---|---|---|---|
+| ① | `qa-course-classification.ts` | `loadEnvConfig` 부재 → `tsx` 가 `.env.local` 을 안 읽어 **모든 표준 체크아웃에서 exit 2**. 자기 헤더가 "the live half of the gate" 라고 적은 그 절반이 **한 번도 질문한 적 없었다** | `checked 34 live products`, drift 0 |
+| ② | `qa-smartapp-walk.mjs` | **실제 검사 9종**(설치카드·헤더다이어트·정확히만나기·스킨·룸버튼·콕핏 진입…)을 하고 결과를 출력만 하고 **항상 exit 0**. `catch` 도 예외를 삼키고 0. 게이트에 물리면 영원히 초록 | `✅ 9 checks, 0 problems` · 뮤테이션 시 **exit 1** |
+| ③ | `qa-home-walk.mjs` | 콘솔·페이지 에러를 모아 "console clean" 옆에 출력만 하고 exit 0 | 37 testid 도달 · 에러 시 exit 1 |
+
+**상설 게이트 신설** `__tests__/audit/harnessEnvLoading.test.ts` — Supabase 자격증명을 읽는
+스크립트는 반드시 그것을 넣기도 해야 한다. 하니스 11종 커버, **비-공허 단정 포함**(대상이 3개
+이하로 줄면 실패 — 스윕이 공허해지면 파일 전체가 장식이 된다). **뮤테이션 확인: 임포트를
+지우면 정확히 1건 빨개진다.**
+
+**결함이 아니라고 판정한 것 4종** — `qa-bundle-baseline`(순수 계측) ·
+`qa-cjk-mechanism`(설명 도구) · `qa-caller-absence`·`qa-route-coverage`·`qa-unfilled-props`
+·`qa-coverage-audit`(인벤토리). 종료 코드가 없는 게 맞다. 다만 **숫자가 조용히 늘 수 있으므로
+F8 에서 기준선 래칫(늘면 실패)을 검토**한다. 현재 실측: caller-absence 후보 **2** ·
+unfilled-props **49** · route-coverage 미커버 **113+**.
+
+기준선: tsc **0** · jest **5,771 pass / 0 fail**(537 스위트) · `qa-smartapp-walk` **9/9**.
