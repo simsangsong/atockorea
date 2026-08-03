@@ -192,6 +192,24 @@ export async function POST(
       displayName,
     });
 
+    /**
+     * 🔴 능력 보고는 스냅샷을 되받을 이유가 없다 (원장 P-14).
+     *
+     * 이 라우트가 콜드 스타트 스냅샷을 통째로 주는 것은 의도된 설계다 — 위 주석의
+     * *"the full cold-start snapshot (1 round-trip)"*. 문제는 **그 계약을 재사용하는 쪽**이다:
+     * `TourRoomClient` 의 T2.9 효과가 기기 TTS 능력 한 줄을 upsert 하려고 같은 엔드포인트를
+     * 부르고, 그 대가로 **215.2 KB 를 다시 받는다** [실측, 프로덕션 빌드].
+     * 첫 페인트 중 join 이 2회 = **430 KB**, 룸 전체 전송의 24% 이고 P-01(4G 예산 초과)의
+     * 최대 단일 기여자다.
+     *
+     * 참가자 upsert·리드 판정·브로드캐스트는 위에서 그대로 끝났다. 여기서 줄이는 것은
+     * **스냅샷 빌드(8쿼리 + POI + 사진)와 그 전송**뿐이라, 호출자가 안 쓰는 일만 안 한다
+     * (그 효과는 응답을 `.catch(() => undefined)` 로 버린다).
+     */
+    if (body.capabilityOnly === true) {
+      return NextResponse.json({ ok: true, participant, session }, { status: 200 });
+    }
+
     // P0-5 — resolve the schedule in this guest's language. chatLocale wins when
     // present because it keeps the regional variant (zh-TW) that the folded room
     // locale would lose, and match_pois stores zh-TW names separately.

@@ -134,3 +134,38 @@ if (!reqs.length && !sockets.length) {
   );
   process.exit(1);
 }
+
+/**
+ * `--check` — 유휴 상시 비용의 회귀 게이트.
+ *
+ * 이 지표가 게이트로 쓸 만한 이유는 **데이터 양에 안 흔들리기 때문**이다. 룸 진입 시간은
+ * 시드된 방의 내용물에 비례해서(원장 P-12) 고정 상한을 걸기 어려운데, 유휴 폴링은
+ * *"가만히 있을 때 몇 번 나가는가"* 라 코드가 정한다. 폴링이 하나 늘면 바로 보인다.
+ *
+ * 손님 룸의 현재 값은 **0건**이고 상한은 2다 — 0을 상한으로 걸면 나중에 정당한 폴링 하나가
+ * 들어올 때 게이트가 이유 없이 막는다. 2를 넘으면 그건 realtime 이 빠졌다는 뜻이다.
+ */
+if (argv.includes('--check')) {
+  let budget;
+  try {
+    budget = JSON.parse(readFileSync('docs/audit/PERF-BUDGET.json', 'utf8'));
+  } catch (e) {
+    console.error('FAIL: docs/audit/PERF-BUDGET.json 을 읽을 수 없다 — ' + String(e).slice(0, 120));
+    process.exit(1);
+  }
+  const cap = budget.idleRequestsPerMinute?.[SURFACE];
+  if (typeof cap !== 'number') {
+    // 예산에 없는 표면을 조용히 통과시키지 않는다.
+    console.error(`FAIL: 예산에 '${SURFACE}' 표면의 유휴 상한이 없다 (PERF-BUDGET.json 에 추가할 것).`);
+    process.exit(1);
+  }
+  const perMin = reqs.length / (elapsedSec / 60);
+  console.log(`\n예산 대조 — ${SURFACE} 유휴 ${perMin.toFixed(1)}건/분 · 상한 ${cap}`);
+  if (perMin > cap) {
+    console.error(
+      `FAIL: 유휴 요청이 상한을 넘었다 (${perMin.toFixed(1)} > ${cap}).\n` +
+        '      폴링이 늘었거나 realtime 이 안 붙는다. 고쳤다면 PERF-BUDGET.json 값을 내려라.',
+    );
+    process.exit(1);
+  }
+}
