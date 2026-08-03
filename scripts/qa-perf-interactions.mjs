@@ -123,12 +123,23 @@ try {
       expectSel: '[data-testid="room-drawer"]',
     });
     if (r.error) {
-      failures.push(`#6 drawer run${i}: ${r.error}`);
+      // 이미 표본이 있으면 닫기 실패는 측정 실패가 아니다 — 있는 표본으로 판정한다.
+      if (!samples.length) failures.push(`#6 drawer run${i}: ${r.error}`);
       break;
     }
     samples.push(r.ms);
+    // 🔴 Escape 가 항상 먹지는 않는다(초판이 run1 에서 n=1 로 떨어졌다). 닫힘을 **확인**하고 넘어간다.
     await page.keyboard.press('Escape').catch(() => {});
-    await page.waitForTimeout(600);
+    await page
+      .waitForFunction(() => document.querySelectorAll('[data-testid="room-drawer"]').length === 0, { timeout: 3000 })
+      .catch(async () => {
+        // 두 번째 시도: 바깥을 눌러 닫는다.
+        await page.mouse.click(195, 60).catch(() => {});
+        await page
+          .waitForFunction(() => document.querySelectorAll('[data-testid="room-drawer"]').length === 0, { timeout: 3000 })
+          .catch(() => {});
+      });
+    await page.waitForTimeout(400);
   }
   if (samples.length) results.push({ metric: '#6 카드 탭 → 시트 열림 (서랍)', budget: 150, ...stats(samples) });
   await ctx.close();
@@ -178,6 +189,94 @@ try {
   failures.push('#5 send: ' + String(e).split('\n')[0].slice(0, 120));
 }
 
+// ── 콕핏 진입 전환 (운전 모드 탭 → driver-feed) ──────────────────────────────
+// 🔴 콕핏은 **라우트가 아니다.** staff-shell 안에서의 화면 전환이라 문서 로드가 없고,
+//    따라서 **LCP·TTFB 가 존재하지 않는다.** "콕핏 LCP" 는 지어낸 숫자가 된다.
+//    여기서 재는 것은 탭에서 `driver-feed` 가 렌더될 때까지의 전환 시간이다.
+// ⚠ 진입 경로 함정: `drive-hero` 는 콕핏을 열지 않고 **운행 탭으로 바꾸기만** 한다.
+//    실제 진입은 각 방의 `ops-drive` 버튼이다(qa-cockpit-walk.mjs 가 이걸로 한 번 죽었다).
+try {
+  const ctx = await browser.newContext({
+    viewport: { width: 390, height: 844 },
+    isMobile: true,
+    hasTouch: true,
+    locale: 'ko-KR',
+  });
+  const page = await ctx.newPage();
+  await page.addInitScript(() => {
+    window.localStorage.setItem('tr_manual_seen_v2', String(Date.now()));
+    window.__perf = { longTasks: [], cls: 0 };
+    try {
+      new PerformanceObserver((l) => {
+        for (const e of l.getEntries()) window.__perf.longTasks.push(e.duration);
+      }).observe({ type: 'longtask', buffered: true });
+    } catch {}
+    try {
+      new PerformanceObserver((l) => {
+        for (const e of l.getEntries()) if (!e.hadRecentInput) window.__perf.cls += e.value;
+      }).observe({ type: 'layout-shift', buffered: true });
+    } catch {}
+  });
+  const cdp = await ctx.newCDPSession(page);
+  if (CPU > 1) await cdp.send('Emulation.setCPUThrottlingRate', { rate: CPU });
+
+  await page.goto(BASE + fx.guideUrl, { waitUntil: 'domcontentloaded', timeout: 120000 });
+  await page.waitForSelector('[data-testid="staff-shell"]', { timeout: 120000 });
+  await page.waitForTimeout(1500);
+
+  // CLS·longtask 를 전환 구간만 보도록 기준점을 잡는다.
+  const base = await page.evaluate(() => ({ cls: window.__perf.cls, lt: window.__perf.longTasks.length }));
+
+  /**
+   * 🔴 진입 경로는 **방 개수에 따라 갈린다** (`GuideConsole.tsx:588`):
+   *     rooms.length === 1 → `drive-hero` 가 콕핏을 **바로 연다**
+   *     rooms.length > 1   → `drive-hero` 는 운행 탭으로 **바꾸기만** 하고,
+   *                          실제 진입은 방마다 붙은 `ops-drive` 다
+   * `qa-cockpit-walk.mjs` 의 주석은 후자만 적어 두었는데 그건 보편 규칙이 아니다.
+   * 시뮬(가이드 1방)에서는 `ops-drive` 가 **존재하지 않아** 그걸 기다리면 그냥 타임아웃이다
+   * — 하니스 실패가 앱 실패처럼 보이는 그 사고 유형(초판에서 실제로 60초 타임아웃).
+   * 그래서 hero 를 먼저 재고, 그게 탭 전환이었으면 ops-drive 로 이어서 잰다.
+   */
+  let r = await page.evaluate(IN_PAGE_MEASURE, {
+    triggerSel: '[data-testid="drive-hero"]',
+    expectSel: '[data-testid="driver-feed"]',
+  });
+  let path = 'drive-hero 직행 (방 1개)';
+  if (r.error) {
+    const drive = page.locator('[data-testid="ops-drive"]').first();
+    await drive.waitFor({ state: 'visible', timeout: 30000 });
+    r = await page.evaluate(IN_PAGE_MEASURE, {
+      triggerSel: '[data-testid="ops-drive"]',
+      expectSel: '[data-testid="driver-feed"]',
+    });
+    path = 'drive-hero → 운행 탭 → ops-drive (방 여러 개)';
+  }
+  if (r.error) {
+    failures.push('콕핏 전환: ' + r.error);
+  } else {
+    await page.waitForTimeout(1500);
+    const after = await page.evaluate(() => ({
+      cls: window.__perf.cls,
+      lt: window.__perf.longTasks.length,
+      tbt: window.__perf.longTasks.reduce((a, d) => a + Math.max(0, d - 50), 0),
+    }));
+    results.push({
+      metric: '콕핏 진입 전환 (운전 모드 → driver-feed)',
+      budget: null, // §F 에 콕핏 전환 예산은 없다 — 베이스라인부터 만든다
+      first: +r.ms.toFixed(1),
+      warm: null,
+      n: 1,
+      p50: +r.ms.toFixed(1),
+      p95: +r.ms.toFixed(1),
+      max: +r.ms.toFixed(1),
+      note: `${path} · 전환구간 CLS +${(after.cls - base.cls).toFixed(3)} · longTask +${after.lt - base.lt} · TBT≈${Math.round(after.tbt)}ms · LCP/TTFB 없음(문서 로드 아님)`,
+    });
+  }
+  await ctx.close();
+} catch (e) {
+  failures.push('콕핏 전환: ' + String(e).split('\n')[0].slice(0, 140));
+}
+
 await browser.close();
 
 // 🔴 비-공허 단정 — 0개를 재고 초록으로 끝내지 않는다.
@@ -191,19 +290,18 @@ console.log(`\nCPU ${CPU}x · 네트워크 ${NET ? '4G 스로틀' : '무스로�
 console.table(
   results.map((r) => ({
     지표: r.metric,
-    예산: r.budget + 'ms',
+    예산: r.budget === null ? '—(베이스라인)' : r.budget + 'ms',
     첫회: r.first,
-    'warm p50': r.warm,
-    p50: r.p50,
+    'warm p50': r.warm ?? '—',
     p95: r.p95,
-    max: r.max,
     n: r.n,
-    판정: r.p95 <= r.budget ? 'PASS' : 'FAIL',
+    판정: r.budget === null ? '—' : r.p95 <= r.budget ? 'PASS' : 'FAIL',
   })),
 );
+for (const r of results) if (r.note) console.log(`  · ${r.metric} — ${r.note}`);
 for (const f of failures) console.log('  ⚠ ' + f);
 
-const over = results.filter((r) => r.p95 > r.budget);
+const over = results.filter((r) => r.budget !== null && r.p95 > r.budget);
 if (over.length) console.log('\n예산 초과: ' + over.map((r) => `${r.metric} p95=${r.p95}ms > ${r.budget}ms`).join(' · '));
 else console.log('\n측정한 상호작용 지표는 전부 예산 안.');
 
