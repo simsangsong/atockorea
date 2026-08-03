@@ -16,6 +16,13 @@ import { chromium } from 'playwright';
 import { readFileSync, mkdirSync } from 'fs';
 import path from 'path';
 
+/** U1 coverage contract — read by `scripts/gen-uiux-coverage.mjs`.
+ *  Navigation is by runtime fixture URL, invisible to a source reader. */
+export const COVERS = [
+  '/tour-mode/room/[bookingId]', // guest room: home / drawer / dark / skins
+  '/tour-mode/guide', // staff shell 4 tabs, chat list, daytools, roster, skin picker
+];
+
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'shots');
 mkdirSync(OUT, { recursive: true });
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
