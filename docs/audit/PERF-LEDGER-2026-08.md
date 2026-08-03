@@ -520,8 +520,12 @@ API 응답이고, 그 정체는 아래 P-14 다. ⇒ **오전 2,909ms 와 오후
 몰랐다. 값이 붙으면 판단이 달라질 수 있는 종류의 사실이다 —
 TTS 능력 한 줄을 보고하려고 방 스냅샷 전체를 다시 받는다.
 
-⚠ 앞 감사가 남긴 후속도 여기 걸린다: 그 effect 의 deps 가 `[bookingId, session, locale]` 이라
-**로케일을 바꿀 때마다 join 이 또 간다** — 즉 215 KB 를 또 받는다.
+🔴 **정정(2026-08-03).** 이 항목의 초판에 *"deps 에 `locale` 이 있어 로케일을 바꿀 때마다 215KB 를
+또 받는다"* 라고 적었는데 **틀렸다. FA-025 가 이미 고쳤다.** 현재 deps 는 `[bookingId, data.session]`
+이고, 바로 그 자리 주석이 경위를 적어 두었다(*"`locale` used to be a dependency … reads the current
+value through a ref rather than re-running the effect"*).
+나는 **앞 감사의 기록을 인용하면서 그 사이에 고쳐졌는지를 확인하지 않았다** —
+이 레포가 이미 원장에 적어 둔 실패다: **"티켓·원장보다 그 자리의 주석을 먼저 읽어라."**
 
 **이것이 P-01(룸 진입 4G 예산 초과)의 가장 큰 단일 기여자다** — TTFB 7ms 뒤의 시간이
 JS 622 KB + 이 430 KB 를 받는 시간이다.
