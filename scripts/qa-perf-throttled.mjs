@@ -314,4 +314,68 @@ if (failures.length) {
   console.error('\nFAILED ROUTES:\n  ' + failures.join('\n  '));
   process.exit(1);
 }
+
+/**
+ * `--check` — 회귀 게이트. `docs/audit/PERF-BUDGET.json` 의 천장을 넘으면 exit 1.
+ *
+ * 🔴 그 파일은 **§F 성능 예산이 아니다.** §F 는 목표이고 지금 일부는 미달이다(원장 P-01:
+ * 룸 진입 4G 2,909ms vs 목표 2,500ms). 목표를 게이트로 걸면 첫날부터 빨간불이고,
+ * 늘 빨간 게이트는 아무도 안 본다. 천장은 **오늘 실측에 여유를 얹은 값**이고,
+ * 역할은 좋아지게 만드는 게 아니라 **더 나빠지는 걸 조용히 넘기지 않는 것**이다.
+ *
+ * ⚠ jsKB 는 스로틀 하에서 관측창에 잘리므로(`/tour-ops` 무스로틀 768 → 4G 창내 537),
+ * 여기서는 **초과만** 본다 — 낮게 나오는 건 측정 아티팩트지 개선이 아니다.
+ */
+if (argv.includes('--check')) {
+  let budget;
+  try {
+    budget = JSON.parse(readFileSync('docs/audit/PERF-BUDGET.json', 'utf8'));
+  } catch (e) {
+    console.error('FAIL: docs/audit/PERF-BUDGET.json 을 읽을 수 없다 — ' + String(e).slice(0, 120));
+    process.exit(1);
+  }
+  if (budget.profile && budget.profile !== PROFILE) {
+    console.error(
+      `FAIL: 예산은 프로파일 '${budget.profile}' 기준인데 '${PROFILE}' 로 쟀다. 조건이 다르면 비교가 성립하지 않는다.`,
+    );
+    process.exit(1);
+  }
+  const breaches = [];
+  let checked = 0;
+  for (const row of measured) {
+    const limits = budget.routes?.[row.route];
+    if (!limits) {
+      // 🔴 예산에 없는 라우트를 조용히 통과시키지 않는다 — 라우트가 늘면 게이트가 비게 된다.
+      breaches.push(`${row.route}: 예산 항목이 없다 (PERF-BUDGET.json 에 추가할 것)`);
+      continue;
+    }
+    for (const [key, label] of [
+      ['meaningfulMs', '첫 유의미'],
+      ['lcpMs', 'LCP'],
+      ['jsKB', 'JS KB'],
+    ]) {
+      const cap = limits[key];
+      const got = key === 'jsKB' ? row.jsKB : key === 'lcpMs' ? row.lcp : row.meaningful;
+      if (cap === null || cap === undefined) continue;
+      checked += 1;
+      if (typeof got === 'number' && got > cap) {
+        breaches.push(`${row.route} — ${label} ${got} > 상한 ${cap}`);
+      }
+    }
+  }
+  // 비-공허 단정: 0개를 재고 초록으로 끝내지 않는다.
+  if (!checked) {
+    console.error('FAIL: 예산과 대조한 항목이 0개다.');
+    process.exit(1);
+  }
+  if (breaches.length) {
+    console.error(`\n예산 초과 (대조 ${checked}항목):\n  ` + breaches.join('\n  '));
+    console.error(
+      '\n고쳤다면 PERF-BUDGET.json 의 값을 **내려라**. 올려야 한다면 그건 회귀이니 이유를 커밋에 적을 것.',
+    );
+    process.exit(1);
+  }
+  console.log(`\n예산 대조 ${checked}항목 — 전부 상한 이내.`);
+}
+
 console.log('\nPERF WALK OK');
