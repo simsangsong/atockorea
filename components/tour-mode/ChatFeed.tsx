@@ -719,7 +719,19 @@ export default function ChatFeed({
           // are gone in every language at once.
           if ((message.metadata as { deleted?: unknown } | null)?.deleted === true) {
             return (
-              <div className={`flex min-w-0 ${mine ? 'justify-end pl-12' : 'justify-start pr-10'} ${groupStart ? 'mt-2' : 'mt-0.5'}`}>
+              /* 🔴 `key` and `data-msg-id` — both, like the other two branches of
+                 this map. Without the key React reconciles this row by position
+                 instead of identity, and a chat feed reorders constantly: a
+                 message arriving above a tombstone can hand its DOM to the wrong
+                 row. It logged "Each child in a list should have a unique key"
+                 on every visit to a room containing a tombstone, and the missing
+                 `data-msg-id` is why a duplicate-id sweep of the DOM could not
+                 see the row at all. */
+              <div
+                key={item.key}
+                data-msg-id={message.id}
+                className={`flex min-w-0 ${mine ? 'justify-end pl-12' : 'justify-start pr-10'} ${groupStart ? 'mt-2' : 'mt-0.5'}`}
+              >
                 <span className="tr-meta italic text-[var(--tr-ink-3)]" data-testid="deleted-tombstone">
                   {action.deleted}
                 </span>

@@ -9,14 +9,14 @@
 
 | 동사 | 판정 | 근거 (소스 probe) |
 |---|---|---|
-| 답장 (인용 + 원본 점프) | ✅ | `components/tour-mode/ChatFeed.tsx:1093` |
+| 답장 (인용 + 원본 점프) | ✅ | `components/tour-mode/ChatFeed.tsx:1105` |
 | 반응 이모지 (고정 세트) | ◐ | `components/tour-mode/ChatFeed.tsx:78 — 30종 고정 · 피커 없음` |
-| 복사 | ✅ | `components/tour-mode/ChatFeed.tsx:1318` |
+| 복사 | ✅ | `components/tour-mode/ChatFeed.tsx:1330` |
 | 원문 ↔ 번역 토글 | ✅ | `components/tour-mode/ChatFeed.tsx:650` |
-| 삭제 (unsend, 15분 툼스톤) | ✅ | `components/tour-mode/ChatFeed.tsx:1354` |
-| 읽음 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:976` |
+| 삭제 (unsend, 15분 툼스톤) | ✅ | `components/tour-mode/ChatFeed.tsx:1366` |
+| 읽음 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:988` |
 | 타이핑 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:399` |
-| 안읽음 구분선 | ✅ | `components/tour-mode/ChatFeed.tsx:731` |
+| 안읽음 구분선 | ✅ | `components/tour-mode/ChatFeed.tsx:743` |
 | 아래로 점프 + 새 메시지 배지 | ✅ | `components/tour-mode/ChatFeed.tsx:461` |
 | 음성 메시지 왕복 (STT→번역 / 한국어 TTS) | ✅ | `app/api/tour-rooms/[bookingId]/messages/route.ts:3` |
 | 사진·파일·링크 모아보기 + 더 보기 | ✅ | `components/tour-mode/RoomDrawer.tsx:576` |
