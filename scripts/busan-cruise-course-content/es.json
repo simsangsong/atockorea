@@ -197,5 +197,30 @@
   "tierComparisonFaq": {
     "question": "¿En qué se diferencia la excursión en autocar de la de grupo reducido?",
     "answer": "Las mismas nueve paradas, el mismo día de ocho horas, otro vehículo. Esta excursión va en autocar grande compartido con pasajeros de varios cruceros, a 58,79 US$ por persona. La de grupo reducido hace exactamente la misma ruta en una furgoneta limitada a 12 pasajeros, a 68,95 US$ por persona. Elige el autocar por precio; elige la furgoneta por un grupo más tranquilo y algo más de margen en cuánto dura realmente cada parada."
+  },
+  "smallGroup": {
+    "seoMetaDescription": "Excursión de crucero en grupo reducido de 8 horas desde tu terminal de Busan: Haedong Yonggungsa, Cementerio Conmemorativo de la ONU, mercado de Jagalchi, plaza BIFF, mercado Gukje, Aldea Cultural de Gamcheon, pasarela Songdo Cloud Trails y parque Yongdusan. Furgoneta limitada a 12.",
+    "seoKeyword": "teleférico de Songdo excursión de crucero",
+    "cardShortDescription": "Excursión de crucero en Busan en grupo reducido, en furgoneta limitada a 12 pasajeros. Nueve paradas en una jornada de ocho horas: Haedong Yonggungsa, el Cementerio Conmemorativo de la ONU, almuerzo por tu cuenta y después Jagalchi, la plaza BIFF y el mercado Gukje a pie, la Aldea Cultural de Gamcheon, la pasarela Songdo Cloud Trails —con el teleférico hasta el Sky Park como elección in situ— y el parque Yongdusan. La recogida es en la terminal de cruceros en la que atraque tu barco y la vuelta se ajusta a tu all-aboard.",
+    "routeLogicLabel": "Las nueve paradas, con margen para la vuelta",
+    "routeLogicDetail": "Muchas excursiones de crucero se saltan el Cementerio de la ONU (demasiado sobrio para un día de playa) o Gamcheon (demasiado lejos del puerto). Esta ruta incluye los dos, más todo el bloque de mercados de Nampo-dong recorrido a pie, Songdo y Yongdusan, y aun así vuelve a la terminal hacia las 17:00, por delante de los all-aboard habituales de las escalas en Busan. La jornada de ocho horas está calculada sobre el tráfico real de Busan, no sobre un horario de folleto.",
+    "bookingTrustGroupSize": "Furgoneta compartida limitada a 12 pasajeros: los callejones estrechos de Gamcheon y las calles de los mercados de Nampo-dong son mucho más manejables con este tamaño de grupo que en un autocar de 40 plazas.",
+    "accessibilityPreview": "Edad mínima 4 años. La ruta funciona bien con niños en edad escolar; el carrito no sirve en Gamcheon.",
+    "accessibilityContent": [
+      "La edad mínima es 4 años. Los tramos a pie los llevan mejor los niños en edad escolar; el pescado vivo de Jagalchi y la pasarela de Songdo son los aciertos seguros.",
+      "El carrito no es viable en Gamcheon (escaleras); en el resto de paradas sí.",
+      "Quien use silla de ruedas debería plantearse el chárter privado de crucero, que sí se puede replantear: en este itinerario la ladera de Gamcheon es el cuello de botella."
+    ]
+  },
+  "privateCharter": {
+    "seoMetaDescription": "Chárter privado de 8 horas en Busan para pasajeros de crucero, totalmente personalizable. Guía en inglés y chino, vehículo y conductor solo para tu grupo, recogida y entrega en tu terminal de cruceros y vuelta ajustada al all-aboard de tu barco.",
+    "includedDetail": "Vehículo y conductor privados solo para tu grupo, guía en inglés y chino, y todos los peajes y aparcamientos. La recogida y la entrega son en la terminal de cruceros en la que atraque tu barco: es un chárter de excursión en escala, así que no se ofrece recogida en hotel ni en KTX.",
+    "returnStepDetail": "Entrega en la misma terminal de cruceros al menos 60 minutos antes de tu all-aboard.",
+    "pickupLine": "La recogida es en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco. Es un chárter de excursión en escala, así que no se ofrece recogida en hotel ni en KTX.",
+    "dropoffLine": "La entrega es en la misma terminal de cruceros, al menos 60 minutos antes de tu all-aboard.",
+    "pickupStopName": "Recogida en tu terminal de cruceros de Busan",
+    "terminalYeongdo": "Terminal Internacional de Cruceros de Busan (Yeongdo, Dongsam)",
+    "terminalChoryang": "Terminal Internacional de Pasajeros del Puerto de Busan (Choryang)",
+    "dropoffName": "Vuelta a la terminal de cruceros en la que te recogimos (Yeongdo o Choryang)"
   }
 }

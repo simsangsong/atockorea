@@ -195,5 +195,30 @@
   "tierComparisonFaq": {
     "question": "How is the bus tour different from the small-group cruise tour?",
     "answer": "Same nine stops, same 8-hour day, different vehicle. This tour runs on a large coach shared with cruise passengers from several ships, at US$58.79 per person. The small-group tour runs the identical route in a van capped at 12 guests, at US$68.95 per person. Choose the coach on price; choose the van for a quieter group and a little more flexibility in how long each stop actually runs."
+  },
+  "smallGroup": {
+    "seoMetaDescription": "8-hour small-group shore excursion from your Busan cruise terminal: Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Cloud Trails and Yongdusan Park. Van capped at 12.",
+    "seoKeyword": "Songdo cable car cruise tour",
+    "cardShortDescription": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: Haedong Yonggungsa, the UN Memorial Cemetery, lunch at your own expense, then Jagalchi Market, BIFF Square and Gukje Market on foot, Gamcheon Culture Village, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and Yongdusan Park. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard.",
+    "routeLogicLabel": "All nine stops, with a return buffer",
+    "routeLogicDetail": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus the whole Nampo-dong market cluster walked end to end, Songdo, and Yongdusan — and still lands back at the terminal by about 17:00, ahead of the all-aboard times most Busan port calls use. The eight-hour day is built around real Busan traffic, not a brochure-ideal schedule.",
+    "bookingTrustGroupSize": "A shared van capped at 12 passengers: Gamcheon's narrow alleys and the Nampo-dong market lanes are far easier to keep a group together in than they are on a 40-seat coach.",
+    "accessibilityPreview": "Minimum age 4. The route suits school-age children well; strollers do not work at Gamcheon.",
+    "accessibilityContent": [
+      "The minimum age is 4. School-age children do best with the walking sections — Jagalchi's live fish and the Songdo skywalk are the reliable hits.",
+      "Strollers are not viable at Gamcheon (stairs); the other stops accept them.",
+      "Wheelchair users should consider the private cruise charter, which can be re-routed — Gamcheon's hillside is the bottleneck on this itinerary."
+    ]
+  },
+  "privateCharter": {
+    "seoMetaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English- and Chinese-speaking guide, private vehicle and driver, pickup and drop-off at your cruise terminal, and a return timed to your ship's all-aboard.",
+    "includedDetail": "Private vehicle and driver for your group only, English- and Chinese-speaking guide, all tolls and parking. Pickup and drop-off are at the cruise terminal your ship berths at — this is a shore-excursion charter, so hotel and KTX pickup are not offered on it.",
+    "returnStepDetail": "Drop-off at the same cruise terminal at least 60 minutes before your all-aboard call.",
+    "pickupLine": "Pickup is in the arrival hall of whichever Busan cruise terminal your ship berths at. This is a shore-excursion charter, so hotel and KTX pickup are not offered on it.",
+    "dropoffLine": "Drop-off is at the same cruise terminal, at least 60 minutes before your all-aboard call.",
+    "pickupStopName": "Pickup at your Busan cruise terminal",
+    "terminalYeongdo": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+    "terminalChoryang": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+    "dropoffName": "Back to your originating cruise terminal (Yeongdo or Choryang)"
   }
 }
