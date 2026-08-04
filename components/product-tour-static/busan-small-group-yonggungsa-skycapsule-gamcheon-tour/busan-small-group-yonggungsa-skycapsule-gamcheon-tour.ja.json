@@ -1,0 +1,2474 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "ja",
+  "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "seo": {
+    "pageTitle": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・甘川 | AtoC Korea",
+    "metaDescription": "10時間の釜山少人数日帰りツアー：海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーライン・スカイカプセル（チケット選択制）、甘川文化村、タクバッコル壁画村＆願いの階段モノレール。",
+    "title": "釜山 海辺の寺・スカイカプセル・文化村 少人数ツアー | AtoC",
+    "description": "釜山少人数日帰りツアー：海東龍宮寺 → 青沙浦タリットル展望台 → ブルーラインパーク・スカイカプセル（チケット込み／別を選択）→ 昼食 → 甘川文化村 → タクバッコル壁画村＆願いの階段モノレール。",
+    "primaryKeywords": [
+      "釜山 少人数 ツアー",
+      "海東龍宮寺 ツアー",
+      "ブルーラインパーク スカイカプセル",
+      "甘川文化村 ツアー",
+      "青沙浦タリットル展望台"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+  },
+  "catalog_card": {
+    "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "title": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・文化村",
+    "subtitle": "釜山の海岸名所と丘の村を一日でつなぐ少人数ツアー — 海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーラインパークのスカイカプセル（チケット込み／別を予約時に選択）、甘川文化村、そして「願いの階段」モノレールのある静かなタクバッコル壁画村。",
+    "region": "釜山",
+    "duration": "≈ 10時間",
+    "stopsCount": 8,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "少人数",
+      "釜山",
+      "スカイカプセル",
+      "海岸",
+      "文化村"
+    ],
+    "tags": [
+      "少人数",
+      "釜山",
+      "スカイカプセル",
+      "海岸",
+      "文化村",
+      "初訪問向き"
+    ],
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "priceLabel": "",
+    "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
+  },
+  "headlineLine1": "海東龍宮寺・スカイカプセル",
+  "headlineLine2": "＆文化村",
+  "price": {
+    "amountLabel": "49",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 49
+  },
+  "hero": {
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "imagePosition": "center 40%",
+    "images": [
+      "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+    ],
+    "tagline": "静かな時間帯の海辺の寺、海の上のガラスのスカイウォーク、パステルカラーのカプセルで下る海岸線、そして性格の異なる二つの丘の村 — 一つは世界的に有名、もう一つはまだ地元のまま",
+    "pills": [
+      "small_group",
+      "釜山",
+      "first_time"
+    ],
+    "meta": {
+      "duration": "≈ 10時間（08:30最初のお迎え、≈ 18:30最終市内降車）",
+      "region": "釜山",
+      "stops": "8か所",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概要"
+    },
+    {
+      "id": "itinerary",
+      "label": "旅程"
+    },
+    {
+      "id": "practical",
+      "label": "実用情報"
+    },
+    {
+      "id": "reviews",
+      "label": "口コミ"
+    },
+    {
+      "id": "booking",
+      "label": "予約"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "写真映え",
+      "value": "高い",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景観",
+      "value": "良い",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "徒歩",
+      "value": "高い",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天時の安全性",
+      "value": "普通",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー向き",
+      "value": "良い",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "バランス",
+      "value": "バランス良い",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 1",
+      "alt": "海東龍宮寺 — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 2",
+      "alt": "海東龍宮寺 — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 3",
+      "alt": "海東龍宮寺 — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 4",
+      "alt": "海東龍宮寺 — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 5",
+      "alt": "海東龍宮寺 — gallery image 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "海東龍宮寺",
+      "caption": "海東龍宮寺 — photo 6",
+      "alt": "海東龍宮寺 — gallery image 6"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 1",
+      "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+      "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 2",
+      "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 3",
+      "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 4",
+      "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 4"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 08:30–09:30",
+      "duration": "30分",
+      "name": "乗車（釜山中心部3駅）",
+      "category": "移動／乗車",
+      "description": "市内を行き来することなく一日をスムーズに進めるため、乗車場所は釜山中心部の3つの主要交通拠点に集約されています。**釜山駅（1号線）**はKTX乗り場近くや草梁（チョリャン）・南浦洞（ナンポドン）エリアにご滞在のお客様向け。**西面駅（1・2号線）**は釜山で最も利用者の多い地下鉄乗換駅で、ロッテホテル釜山や西面医療ストリート周辺の市街中心部のホテルにご滞在のお客様に便利です。\n\n**海雲台駅（2号線）**はウェスティン朝鮮、パーク・ハイアット、シグニエル釜山などビーチフロントのリゾートエリアにご滞在のお客様向けです。コーチは3か所を順番に（通常、釜山駅が最初~09:00、西面~09:15、海雲台~09:30）乗車し、その後、沿岸の広安大橋ルートを北東方向に進み、機張郡（キジャングン）へ向かいます。最終乗車地点から海東龍宮寺までの所要時間：交通状況によって~30〜40分。\n\nドライバーが乗車時に時刻入りの韓国語・英語対照スケジュールカードをお渡しします。甘川（カムチョン）やタクバッコルへの訪問時間を確保するため、予定時刻の5分前には乗車場所でお待ちください。",
+      "highlights": [
+        "釜山中心部3か所の乗車オプション（釜山駅・西面・海雲台）",
+        "コーチは少人数制（最大~14名）",
+        "最初の目的地までの合計移動時間：~30〜40分",
+        "乗車時に韓国語・英語対照スケジュールカードを配布"
+      ],
+      "timeUsed": [
+        "釜山駅乗車（~09:00、~5分）",
+        "西面駅へ移動（~10分）",
+        "西面乗車（~09:15、~5分）",
+        "海雲台駅へ移動（~15分）",
+        "海雲台乗車（~09:30、~5分）"
+      ],
+      "whyOnRoute": "3か所の乗車ポイントは釜山の3つの主要ホテルゾーン（KTX・南浦、西面市街中心部、海雲台ビーチフロント）をカバーしており、朝に市内を横断する必要がありません。北西から東へのルート順によりコーチの走行距離を最小化し、グループは海東龍宮寺に10:00頃到着できます——最も混雑する観光バスの時間帯より早めに到着できるよう設定しています。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_pickup_central",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metro"
+        ]
+      },
+      "_role": "pickup"
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:00",
+      "duration": "75分",
+      "name": "海東龍宮寺",
+      "category": "仏教寺院／海岸",
+      "description": "**海東龍宮寺（해동 용궁사）— 韓国で最も有名な海辺の仏教寺院**は、釜山北東部・機張郡の岩礁の断崖に位置し、山中に設けられていない数少ない主要韓国寺院のひとつです。もともとは**高麗時代の1376年に、偉大な仏教師・懶翁慧勤（나옹 혜근、1320〜1376年）**によって創建されました。彼は王室の顧問も務めた高僧であり、朝鮮初期にかけての韓国仏教の形成に大きく貢献しました。\n\n伝説によれば、懶翁は全国的な干ばつの最中、慶州の芬皇寺で修行していたところ、夢に東海の神が現れ、この海辺の断崖（当時は蓬萊山と呼ばれていた）に寺を建てれば国に繁栄がもたらされると告げられました。懶翁はこの寺を建立し、観世音菩薩（관세음보살、慈悲の菩薩）に捧げて**補門寺（ポムンサ）**と命名しました。寺は**1592年の文禄の役（壬辰倭乱）**で焼失し、300年以上廃墟のまま放置されましたが、**通度寺の雲崗（ウンガン）僧侶が1930年代初頭に再建を始めました**。\n\n現在の名称**「海東龍宮寺（龍の宮殿の寺）」**は**1974年**にのみ付けられたものです——住職の定庵（ジョンアム）が100日間の祈禱（精勤祈禱）を行っていた際、観音菩薩が龍の背に乗り七色の光を放ちながら降臨する幻視を見たことにちなみ、寺はこの幻視を称えて改名されました。参拝は寺の名物である参道を辿ります——入口広場に並ぶ**12体の十二支神（十二干支の守護将）**の像の列を抜け、**7層の「無事故の塔」**（ドライバーたちが石の輪廟の下にコイン供物を置く場所）を過ぎ、小さな竹林の中を通る有名な**108段の石段**（仏教の心の108の煩悩を表す）を下り、海辺のテラスと大雄殿（本堂）へと続きます。\n\n断崖上部の**海水観音大仏**（海の観音像）は最も多く撮影されるスポットで、寺院の屋根と東海の両方を背景に収めることができます。営業時間：**毎日04:30〜19:20、最終入場18:50、入場無料**。**釈迦誕生日（5月）**には燃燈会（ヨンドゥンフェ）の提灯祭りの飾り付けが行われます。",
+      "highlights": [
+        "**1376年創建**、仏教師・懶翁慧勤によって（当初は「補門寺」）",
+        "山中ではなく海辺に設けられた数少ない主要韓国寺院のひとつ",
+        "**1974年、定庵僧侶の龍と観音菩薩の幻視**にちなみ**「海東龍宮寺」に改名**",
+        "**108段の石段** ＝ 仏教における心の108の煩悩",
+        "入口に**十二支神（12体の干支の守護将）**の像；**「無事故の塔」**コイン供物の祠",
+        "**海水観音大仏**（海の観音像）— 断崖からの最も撮影される絶景",
+        "大雄殿は1970年に元の色彩に忠実に修復されました。",
+        "営業時間：毎日04:30〜19:20、入場無料；仏陀の誕生日（5月）にはランタン祭りが開催されます。",
+        "**石柱に刻まれた十二支神（十二支将）が山門に整列** — 韓国の海辺の寺院の中で唯一の光景です。"
+      ],
+      "timeUsed": [
+        "コーチ降車後、露店街を通り入口広場まで徒歩（約10分）。",
+        "十二支将＋無事故塔の見学（約10分）。",
+        "108段の階段を下り、大雄殿と海辺のテラスを見学（約30分）。",
+        "海水観音像の展望スポット＋写真撮影タイム（約15分）。",
+        "上まで歩いて戻り、コーチに集合（約10分）。"
+      ],
+      "whyOnRoute": "**このコースを象徴するオープナー — 釜山で最も撮影される寺を、静かな時間帯に。** 10:00の到着は団体バスの波（通常11:00から）より先に着くため、108段の石段と海水観音大仏の展望ポイントを並ばずに歩けます。機張の断崖という立地がコースの北東端から一日を開くので、その後は青沙浦、カプセル、都心方向へと海岸沿いを一方向に流れ、引き返す区間がありません。",
+      "visitBasics": {
+        "hours": "毎日04:30〜19:20（最終入場18:50）。",
+        "closed": "年中無休。",
+        "admission": "入場無料；自家用車の駐車場は有料。",
+        "walking": "中程度 — 松林を抜ける108段の階段、複数の海辺のテラスと階段あり。"
+      },
+      "convenience": {
+        "restroom": "メインエントランス付近および境内に利用可能。",
+        "parking": "海東龍宮寺駐車場（有料、ビジット釜山公式情報より）。"
+      },
+      "smartNotes": {
+        "photo": "海側端の日の出岩；大雄殿脇の階段から海と寺院の定番フレームが撮影可能；上部の崖から海水観音像越しに寺院と東海の広角ビューが楽しめます。",
+        "facilities": "上部広場にはみやげ物・軽食の屋台と小さなカフェがあります；岩場沿いに続く海岸遊歩道もあります。",
+        "tip": "お堂への入場は側扉から（正面扉は僧侶専用）；仏陀の誕生日（4〜5月）にはランタン展示が行われます；観光バスの混雑を避けるため10:30前に到着することをお勧めします。"
+      },
+      "_poi_meta": {
+        "poi_key": "haedong_yonggungsa",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ]
+      },
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 1",
+          "alt": "海東龍宮寺 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 2",
+          "alt": "海東龍宮寺 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 3",
+          "alt": "海東龍宮寺 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 4",
+          "alt": "海東龍宮寺 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 5",
+          "alt": "海東龍宮寺 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "location": "海東龍宮寺",
+          "caption": "海東龍宮寺 — photo 6",
+          "alt": "海東龍宮寺 — gallery image 6"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "40分",
+      "name": "青沙浦タリットル展望台（ガラスのスカイウォーク）",
+      "category": "海岸展望台／無料",
+      "description": "**青沙浦タリットル展望台（청사포 다릿돌전망대）**は、青沙浦と松亭の間の海岸断崖から**海面上約20mの高さで72.5m、海へ弧を描いて張り出すスカイウォーク**で、2017年8月に開業しました。名前はデッキ下の海に飛び石のように並ぶ**5つの岩礁「タリットル（橋の石）」**に由来します — 水平線へ架かる石橋という意味合いです。デッキ先端部の床は**ガラス**で、足元にうねりが流れるのをそのまま見下ろします（ガラス保護の靴カバー提供）。**入場は無料**。村へ戻れば、**青沙浦の双子の灯台**（紅・白）と、スラムダンク風のアニメ的フレームで有名になった小さな踏切のフォトスポットが徒歩圏です。",
+      "image": null,
+      "highlights": [
+        "**海面上約20m・全長72.5mのスカイウォーク** — 2017年8月開業、無料",
+        "デッキ下に見える5つの岩礁**「タリットル」**が名前の由来",
+        "**先端部のガラス床**（靴カバー提供）",
+        "徒歩圏の**青沙浦双子の灯台**（紅・白）",
+        "青沙浦は**釜山八景**の一つ — 今も生きる漁村",
+        "アニメで有名になった踏切のフォトスポット"
+      ],
+      "timeUsed": [
+        "車両降車＋展望台入口まで徒歩（約5分）",
+        "スカイウォークのウォークアウト＋ガラス床区間（約20分）",
+        "双子の灯台／踏切のフォト散策（約10分）",
+        "カプセル駅へ再集合（約5分）"
+      ],
+      "whyOnRoute": "**寺とカプセルの間の、無料のスリル。** タリットルは足元をうねりが流れるガラス床で、この一日の「海の上」の瞬間をチケットなしで与えてくれます。青沙浦の断崖の真上にあるため、数分先のスカイカプセル乗車へそのままつながります。固定されたスカイウォークから先に海岸を見ておくと、10分後に動くカプセルから見る同じ海岸が違って見えます。",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "cheongsapo_daritdol_observatory",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan City Tourism",
+          "Blue Line Park official"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "風の強い日はデッキが一時閉鎖されることがあります — ガイドが当日の状況を確認し、青沙浦クラスターの順序を調整します",
+        "photo": "ガラス越しに真下のタリットル岩礁を撮る；海岸の小道からデッキの曲線を収めるワイドショット",
+        "facilities": "下の青沙浦の村にカフェ・海鮮の屋台"
+      },
+      "convenience": {
+        "parking": "青沙浦の村に車両停車、デッキまで徒歩",
+        "restroom": "青沙浦駅近くに公衆トイレ"
+      },
+      "visitBasics": {
+        "hours": "開放型；展望台の運営はおよそ09:00〜18:00（季節・天候により変動）",
+        "closed": "強風・荒天時は一時閉鎖の場合あり",
+        "walking": "デッキは平坦なウォークアウト；村から短い上り坂",
+        "admission": "無料（ガラス区間は靴カバー提供）"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:35",
+      "duration": "40分",
+      "name": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "category": "海岸ライド／チケット選択制",
+      "description": "**スカイカプセル**は、廃線となった東海南部線の海岸線路を2020年にエコ再開発した**海雲台ブルーラインパーク**のシグネチャーライドです：**パステルカラーの4人乗りキャビンが、海岸7〜10mの高さの高架レール上を青沙浦〜尾浦の2.3km滑っていきます**（約30分）— 進む間ずっと片側は海です。私たちは**青沙浦から乗って尾浦方向へ**下り、尾浦には車両が先回りして待っています — 乗車そのものがこの一日の海岸移動になる構成です。**カプセルのチケットは選択制で、予約時に決めます**：チケット込みオプションならグループ分のカプセルを事前予約し（料金はカプセル単位：2名約₩30,000／3名₩39,000／4名₩44,000 片道）、基本オプションなら同じレールの下の受賞歴ある2.3kmの木製海岸遊歩道**グリーンレイルウェイ（無料）**を歩くか、車両で尾浦へ移動できます。",
+      "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "highlights": [
+        "**高架の海岸レールを走るパステルの4人乗りカプセル** — ブルーラインパークのシグネチャー（2020年開業）",
+        "**青沙浦→尾浦 2.3km／約30分**、ずっと海の眺め",
+        "**チケット込み／別 — 予約時に選択**（カプセル単位で約2名₩30,000／3名₩39,000／4名₩44,000 片道）",
+        "乗らない方：同じ海岸の**無料グリーンレイルウェイ遊歩道**、または車両で尾浦へ",
+        "ライドの終点がそのまま昼食の始まり — 尾浦は海雲台の食の路地まで徒歩圏",
+        "通常の雨なら運行；強風時のみ一時停止"
+      ],
+      "timeUsed": [
+        "青沙浦駅で乗車手続き（約10分）",
+        "スカイカプセル 青沙浦→尾浦 乗車（約30分）"
+      ],
+      "whyOnRoute": "**移動を兼ねるライド。** スカイウォークの直後に青沙浦から乗れば、いま見下ろしたその海岸線をカプセルがなぞって下り — 車両と昼食の路地が待つ尾浦に降ろしてくれます。このライドのために回り道する区間は一切ありません：チケットをスキップしても、車両や無料の遊歩道が同じ区間をカバーします。",
+      "_poi_meta": {
+        "match": "partial",
+        "poi_key": "cheongsapo_blue_line_park",
+        "sources": [
+          "Blue Line Park official",
+          "Visit Busan",
+          "Busan Metropolitan City Tourism"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "夕暮れ・週末の枠は1〜2週間前に売り切れ — 予約時にチケット込みオプションを選べば当方が代わりに予約します",
+        "photo": "尾浦方向に向かって海側（右側）の席を；タルマジトンネルを過ぎるカーブ区間がシグネチャーフレーム",
+        "facilities": "尾浦の広場にカフェ・コンビニ；両駅に発券キオスク"
+      },
+      "convenience": {
+        "parking": "尾浦駅前広場で車両がグループと合流",
+        "restroom": "青沙浦・尾浦の両駅にあり"
+      },
+      "visitBasics": {
+        "hours": "約09:30〜18:30（ピークシーズンは夜間延長）",
+        "closed": "天候依存の運行；強風時は一時停止",
+        "walking": "駅のホームは平坦；遊歩道の代替は木製デッキ2.3km（約30分）",
+        "admission": "カプセル単位・片道：約₩30,000（2名）／₩39,000（3名）／₩44,000（4名）— 予約時にチケット込みオプション選択可"
+      },
+      "images": [
+        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+        "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+          "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 1",
+          "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+          "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 2",
+          "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+          "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 3",
+          "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+          "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 4",
+          "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:25",
+      "duration": "60分",
+      "name": "昼食（海雲台／尾浦近くの地元レストラン）",
+      "category": "地元の食事",
+      "description": "スカイカプセル到着直後、尾浦／海雲台近くで約60分の昼食休憩です。ガイドおすすめの定番：**デジクッパ（돼지국밥）** — 朝鮮戦争の避難民の時代に生まれた釜山名物の豚骨スープごはん（約₩10,000）、**ミルミョン**（冷たい小麦麺）、または港沿いの海鮮の食卓。昼食は含まれません（約₩10,000〜15,000）ので、好みと予算に合わせて選べます。",
+      "highlights": [],
+      "timeUsed": [
+        "尾浦駅からレストランまで徒歩（約5分）",
+        "昼食（約50分）",
+        "車両に再集合（約5分）"
+      ],
+      "whyOnRoute": "**海岸と村の間の自然な句読点。** カプセルが昼どきに尾浦に着き、海雲台の食の路地は駅から徒歩圏 — おいしい食事のために余計に走る必要がありません。ここでしっかり補給して、徒歩が最も垂直になる午後の二つの丘の村へ向かいます。",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:00",
+      "duration": "90 min",
+      "name": "甘川文化村",
+      "category": "文化村／壁画アート",
+      "description": "**甘川文化村（감천문화마을）** — **「韓国のマチュピチュ」**および**「韓国のサントリーニ島」**とも称される — は、釜山西部の沙下区（サハグ）に位置する丘の中腹の住宅街で、パステルカラーに彩られた家々が斜面に沿って段状に連なっています。この集落は、釜山市が港湾部から労働者階級の住民を移転させた**1920〜30年代**に始まりました。\n\n村の特色は**1955年**に形成され、日本の植民地時代に**趙哲済（チョ・チョルジェ）**によって創設された、仏教・儒教・陰陽説を融合した独自の韓国的宗教である**太極道**の**約800世帯（約4,000人）**が、朝鮮戦争の難民として北から逃れてここに定住しました。「**他者の繁栄を許す**」という太極道の哲学は、この村の最も際立った特徴に直接影響を与えています：家々は意図的に段状に配置され、**どの屋根も後ろの家の眺めを遮らない**よう工夫されており、集落全体が空と海に向かって開かれています。\n\n甘川は**2009年**まで釜山で最も貧しい地区の一つでしたが、韓国文化体育観光部が**「釜山でマチュピチュを夢見る」**公共アート再生プロジェクトを開始し、続いて**2010年の「ミロミロ（迷路）プロジェクト」**が実施されました。これにより22点以上の壁画・彫刻・アートインスタレーションが加わり、スカイガーデン展望台の名物である**「星の王子さまとキツネ」のベンチ**もその一つです。\n\n甘川は**2012年のUN-HABITAT アジア都市景観賞**を受賞し、現在は**年間約140万人**の来場者を迎えています。見学は村のトレードマークであるスタンプマップの散策コースに沿って進みます：**観光案内所**入口から、パノラマのカラフルな屋根の絶景が楽しめる**スカイガーデン展望台**へと上り、その後迷路のような路地を通って壁画・韓服レンタルショップ・工芸ワークショップ・小さなカフェを巡りながら下ります。\n\n**この村は現役の住宅地です** — 静かに話すことが求められ、ドローン禁止、民家へのフラッシュ撮影禁止、ゴミは必ず持ち帰ってください。開園時間**09:00〜18:00（3〜10月）／09:00〜17:00（11〜2月、案内所）**；**村自体は24時間開放、入場無料**。",
+      "highlights": [
+        "**「韓国のマチュピチュ」/「韓国のサントリーニ」** — UN-HABITAT アジア都市景観賞 2012",
+        "起源：**1920〜1930年代**の釜山行政機関移転 + **1955年の太極道（テグクト）難民**（約800世帯）",
+        "**「他者を豊かにする」という太極道の哲学** = 後ろの家の眺めを遮らない造り",
+        "**2009年「マチュピチュの夢」+ 2010年「ミロミロ」** 文化体育観光部のパブリックアートプロジェクト",
+        "スカイガーデンの**「星の王子さまとキツネ」のベンチ** — 村で最も写真に撮られるスポット",
+        "パブリックアート再生以降、**年間約140万人**が来訪",
+        "**生活住宅地** — 声を抑え、ドローン禁止、民家へのフラッシュ撮影禁止",
+        "村の入場無料；スタンプマップ（任意）約₩2,000",
+        "**UN-HABITAT アジア都市景観賞 2012** — 1955年の太極道難民居住地を釜山を代表する壁画村へと変えた、2009年の「マチュピチュの夢」アートプロジェクトへの評価"
+      ],
+      "timeUsed": [
+        "公共駐車場2番でコーチ降車 + 入口まで徒歩（約5分）",
+        "観光案内センター + スタンプマップ購入（約10分）",
+        "スカイガーデン展望台 + 星の王子さまのベンチ（約25分）",
+        "壁画を眺めながら路地散策 + 小さなカフェで一休み（約25分）",
+        "コーチへ集合（約10分）"
+      ],
+      "whyOnRoute": "**午後の主役の村 — 釜山のパステルの円形劇場。** 海岸の午前を終えて西の丘へ渡ると、朝鮮戦争期の避難民の段々の住まいが2009年にアート村として生まれ変わった甘川が、海の上にキャンディ色の家々を積み上げています。90分のループで展望ポイント、星の王子さまのフォトスポット、路地歩きまで回り — 直後の静かなタクバッコルと意図的に対をなして、有名な村とバスが素通りする地元の村の両方を見ることになります。",
+      "visitBasics": {
+        "hours": "毎日 09:00〜18:00（3〜10月）/ 09:00〜17:00（11〜2月）；一部の店舗・カフェは独自の営業時間あり",
+        "closed": "年中無休（生活住宅地のため）",
+        "admission": "村の入場無料；スタンプマップ（任意）約 2,000ウォン",
+        "walking": "体力を要する — 非常に急な路地と階段；多くの区間でベビーカーや車椅子での移動は困難"
+      },
+      "convenience": {
+        "restroom": "観光案内センターおよび主要展望地点周辺に公共トイレあり",
+        "parking": "カムチョン公共駐車場2番（有料）"
+      },
+      "smartNotes": {
+        "photo": "星の王子さまとキツネのベンチ（長い待ち行列あり）と、虹色の屋根と湾を一望するハヌルマル／スカイガーデン展望台",
+        "facilities": "ハンボクレンタル、クラフトワークショップ、韓国伝統菓子の露店、カフェ；入口付近に小さな村の博物館；スタンプマップが最も分かりやすい案内手段",
+        "tip": "ここは実際の居住区です — 声を抑え、ドローン禁止、ゴミは持ち帰りを；急な坂道では滑り止めのある靴を；午後のゴールデンアワー（約16:00〜17:00）が村で最も光の美しい時間帯"
+      },
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ]
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp"
+      ]
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:50",
+      "duration": "50分",
+      "name": "タクバッコル壁画村＆願いの階段モノレール",
+      "category": "壁画村／無料モノレール",
+      "description": "**タクバッコル（닥밭골）**は釜山・西区の丘の村で、名前には韓国の伝統紙・韓紙の原料である**楮（タク）の畑**があった時代の記憶が刻まれています。甘川と同じく狭い路地が急な斜面を這い上がりますが、団体観光バスのコースになったことがないため、**壁画の路地や韓紙モチーフの作品、見晴らしポイントが、洗濯物の風景ごと静かに、地元のまま**残っています。村のランドマークは、壁画の描かれた長く急な階段道**「願いの階段（소망계단）」**と、その脇を登る**無料の斜面モノレール**です — 村のお年寄りの帰り道のために設置され、訪問者も乗ることができ、午後で最も急な登りがスローモーションの展望台に変わります。甘川の名声に対する意図された等身大の対句であり、降車エリアまで10分の最後の立ち寄り先です。",
+      "image": null,
+      "highlights": [
+        "**静かな壁画村** — 人波のほとんどない甘川の地元版",
+        "韓紙の紙文化を支えた**楮（タク）の畑**に由来する名前",
+        "壁画の描かれた急な階段道**「願いの階段」**",
+        "階段脇の**無料斜面モノレール** — 村のお年寄りのために設置、訪問者も乗車可",
+        "旧港の街並みを見下ろす丘の展望",
+        "入場無料；実際に人が暮らす村です — 路地では声を落として"
+      ],
+      "timeUsed": [
+        "車両降車＋壁画路地の散策（約20分）",
+        "願いの階段モノレール乗車＋展望（約15分）",
+        "下り＋フォトタイム（約10分）",
+        "車両に再集合（約5分）"
+      ],
+      "whyOnRoute": "**バスが素通りする、静かな締めくくり。** 甘川の人波のあとで、タクバッコルは同じ丘の釜山を生活の音量で見せてくれます — 壁画、願いの階段、そして登りを代行するモノレール。南浦の降車ゾーンまで10分の場所で村の章を閉じるので、一日は渋滞の中ではなく、町の手ざわりの中で終わります。",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "dakbatgol_mural_village",
+        "sources": [
+          "Visit Busan",
+          "Busan Seo-gu Office"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "テーマパークではなく実際に人が暮らす村です — 路地では声を落とし、開いた戸口の中は撮影しないでください",
+        "photo": "モノレールの軌道を脇に置いて願いの階段を下から見上げる構図；頂上の展望から旧港の街並みフレーム",
+        "facilities": "入口近くに小さなカフェ；降車後の南浦洞に選択肢が豊富"
+      },
+      "convenience": {
+        "parking": "村の入口に車両停車",
+        "restroom": "村の入口近くに公衆トイレ"
+      },
+      "visitBasics": {
+        "hours": "開放型の村；モノレールは日中運行（約09:00〜18:00、天候により変動）",
+        "closed": "モノレールは整備・荒天時に一時停止の場合あり — 階段は常に開放",
+        "walking": "急な路地と階段；最も急な区間はモノレールがカバー",
+        "admission": "無料（村・モノレールとも）"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:50",
+      "duration": "合計 ≈ 70分",
+      "name": "降車（釜山市内4か所）",
+      "category": "降車 — 市内順次降車",
+      "description": "**降車は西側から東へ順次進みます**：**南浦洞／チャガルチ一帯（約17:50）** — 釜山随一の夜の食の路地とBIFF広場の雰囲気を楽しむならここで下車を；**釜山駅（約18:10）** KTX乗り継ぎ；**西面（約18:30）** 中心部のホテル密集地；最後に**海雲台（約19:00）**。午後のうちにガイドと降車地点を決めればOKです — 海雲台までが最も長い乗車ですが、夜のビーチの前で降ろしてくれます。",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "南浦洞／チャガルチ一帯（約17:50）",
+        "釜山駅（約18:10）",
+        "西面（約18:30）",
+        "海雲台（約19:00）"
+      ],
+      "whyOnRoute": "タクバッコルが南浦洞から10分の距離にあるため、最後の立ち寄りの直後にそのまま降車シーケンスが始まります — 無駄な移動時間がありません。西→東の順序は朝のお迎えの鏡像で、KTX利用者（釜山駅）、中心部ホテル（西面）、ビーチホテル（海雲台）を引き返しなしでカバーします。",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "乗車（釜山中心部 3駅）",
+      "type": "origin",
+      "theme": "出発"
+    },
+    {
+      "name": "海東龍宮寺",
+      "type": "primary",
+      "theme": "海辺の寺院"
+    },
+    {
+      "name": "青沙浦タリットル展望台（ガラスのスカイウォーク）",
+      "type": "secondary",
+      "theme": "Glass Skywalk"
+    },
+    {
+      "name": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+      "type": "primary",
+      "theme": "Sky Capsule"
+    },
+    {
+      "name": "昼食（釜山の地元レストラン）",
+      "type": "meal",
+      "theme": "食事"
+    },
+    {
+      "name": "甘川文化村",
+      "type": "primary",
+      "theme": "アート村"
+    },
+    {
+      "name": "タクバッコル壁画村＆願いの階段モノレール",
+      "type": "secondary",
+      "theme": "Mural Village"
+    },
+    {
+      "name": "降車（釜山市内4か所）",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "海岸の午前",
+      "duration": "≈ 3時間",
+      "description": "市内3駅でのお迎え（08:30〜09:30）後、団体バスの波が来る前の海東龍宮寺へ、続いて青沙浦タリットル展望台（ガラスのスカイウォーク）。"
+    },
+    {
+      "phase": "スカイカプセル＋昼食",
+      "duration": "≈ 2時間",
+      "description": "青沙浦→尾浦のパステルカラーのスカイカプセル（チケット選択制 — 乗らない方は車両移動またはグリーンレイルウェイ遊歩道を散策）、海雲台近くで昼食。"
+    },
+    {
+      "phase": "二つの丘の村",
+      "duration": "≈ 3時間",
+      "description": "甘川文化村のフォトループ（90分）、続いて静かなタクバッコル壁画村と無料の願いの階段モノレール（50分）。"
+    },
+    {
+      "phase": "市内で締めくくり",
+      "duration": "≈ 1時間",
+      "description": "順次降車：南浦洞 → 釜山駅 → 西面 → 海雲台。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "この釜山の一日の流れ",
+    "subtitle": "まず東海岸から：静かな午前の時間帯の海辺の寺、続いて青沙浦クラスター — ガラスのスカイウォークと双子の灯台 — では、スカイカプセルの乗車そのものが尾浦までの海岸移動になります。昼食後は釜山西側の丘へ渡り、趣の異なる二つの村へ：世界的に有名な甘川の色彩、そして無料モノレールが「願いの階段」を登る静かなタクバッコル。市内降車で一日を締めくくります。08:30〜約18:30。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "釜山初訪問の方",
+      "カップル・写真中心の旅行者",
+      "大人の家族・友人グループ",
+      "海岸と村を一日で両方見たい方"
+    ],
+    "lessIdealFor": [
+      "徒歩や坂を最小限にしたい方",
+      "ベビーカー中心のグループ（村の路地と階段）",
+      "夜景重視の方 — 昼間のコースです"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "ペース配分と地理的動線",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "寺は静かな時間帯に",
+            "detail": "海東龍宮寺は釜山で最も撮影される寺で、団体バスの波はおおむね11:00から。約10:00の到着なら、108段の石段と海水観音大仏の展望ポイントを並ばずに歩けます。"
+          },
+          {
+            "label": "カプセル乗車がそのまま移動",
+            "detail": "青沙浦からパステルカラーのスカイカプセルが海岸沿いに2.3kmを尾浦まで滑っていきます — 回り道ではなく、車両移動の一区間を置き換える形です。チケットを選ばない方は車両で尾浦へ移動するか、同じ海岸の無料グリーンレイルウェイ遊歩道を歩きます。"
+          },
+          {
+            "label": "二つの丘の村、二つの表情",
+            "detail": "甘川は釜山が世界に誇るパステルの円形劇場。10分先のタクバッコルはその静かな地元版です — 人波のほとんどない壁画路地、そして村のお年寄りのために設けられた無料の斜面モノレールが「願いの階段」を代わりに登ってくれます。"
+          },
+          {
+            "label": "主要スポットは全部無料、有料は一つだけ — しかも選択制",
+            "detail": "龍宮寺・タリットル展望台・甘川・タクバッコル（モノレール込み）はすべて無料。この一日で唯一の有料アトラクションがスカイカプセルで、それも予約時の選択です：チケット込みにするか、遊歩道を歩きたければチケット別に。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "乗車・下車について",
+      "preview": "釜山地下鉄沿いの3か所の乗車地：西面駅4番出口（08:30）、釜山駅…",
+      "content": [
+        "釜山地下鉄沿いの3か所の乗車地：西面駅4番出口（08:30）、釜山駅4番出口——KTX改札ではありません（08:50）、海雲台駅5番出口（09:30）。",
+        "下車の順番：南浦洞／チャガルチ 約17:50、釜山駅 約18:10、西面 約18:30、海雲台 約19:00。",
+        "ツアーの実質所要時間は乗車地によって異なります：西面 約10時間、海雲台 約9.5時間。"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "服装・持ち物について",
+      "preview": "グリップの利く歩きやすい靴——甘川洞の丘の路地と龍宮寺の108段の…",
+      "content": [
+        "グリップの利く歩きやすい靴——甘川洞の丘の路地と龍宮寺の108段の階段は、どちらも滑り止めが必要です。",
+        "車内のエアコンと龍宮寺の潮風対策に薄手の上着を一枚。",
+        "カメラまたはスマートフォン（甘川洞とチョンサポが撮影のハイライトです）。",
+        "昼食用の現金またはカード（₩10,000〜₩20,000）、チョンサポでのスカイカプセル／ビーチトレインのオプションチケット代、および釜山タワー展望台のオプション入場料。"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天候ポリシー",
+      "preview": "通年営業。",
+      "content": [
+        "通年営業。",
+        "小雨：ツアーは予定通り催行 — 雨の龍宮寺（ヨングンサ）は独特の雰囲気があり、甘川（カムチョン）の路地も通行可能です。",
+        "大雨または嵐：運営者はルートを変更する場合があります（龍宮寺の下部境内は滑りやすく、甘川の階段は危険になります）。事前通知のうえ、再予約が可能です。",
+        "台風レベルの天候：運営者側の判断により、全額返金または再予約が可能です。"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "含まれるもの",
+      "preview": "少人数ミニコーチ（最大約12名）、認定英語ガイド、燃料・通行料・駐車料。",
+      "content": [
+        "少人数ミニコーチ（最大約12名）、認定英語ガイド、燃料・通行料・駐車料。",
+        "主要な立ち寄り先はすべて入場無料：海東龍宮寺、青沙浦タリットル展望台、甘川文化村、タクバッコル壁画村（願いの階段モノレール無料）。",
+        "スカイカプセルのチケット：予約時に選択 — 込み（グループ分のカプセルを事前予約、カプセル2名基準）または別（無料のグリーンレイルウェイ遊歩道を散策、もしくは車両で尾浦へ移動）。",
+        "含まれないもの：昼食（約₩10,000〜15,000）、飲み物、個人的な支出、チップ。"
+      ]
+    },
+    {
+      "id": "language",
+      "title": "言語",
+      "preview": "ツアーの主要言語：英語。",
+      "content": [
+        "ツアーの主要言語：英語。",
+        "中国語対応ガイドはリクエストにより手配可能 — 3日以上前にご予約ください。",
+        "メニュー、標識、屋台でのやり取りなど、終日韓国語が使用されますが、ガイドが通訳いたします。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "徒歩と地形",
+      "preview": "短く大変な区間のある中程度の難易度。",
+      "content": [
+        "短く大変な区間のある中程度の難易度。",
+        "龍宮寺は108段の石段を下りて登り返します。",
+        "タリットル展望台は平坦なガラスデッキ（靴カバー提供）。",
+        "スカイカプセルの駅は平坦で、ホームに数段の階段。",
+        "甘川は丘の路地と階段 — 歩きやすい靴を。",
+        "タクバッコルの願いの階段は急ですが、無料モノレールが登りを代行。",
+        "総歩行距離は約4〜5km。"
+      ]
+    },
+    {
+      "id": "capsule",
+      "title": "スカイカプセル（チケット選択制）",
+      "preview": "込み／別 — 予約時に選択します。",
+      "content": [
+        "スカイカプセルは青沙浦〜尾浦の2.3kmの高架レールを、パステルカラーの4人乗りキャビンで走ります（約30分）。海岸線をずっと横に見ながら。",
+        "チケット込みオプション：グループ分のカプセルを事前予約します（カプセル単位で約2名₩30,000／3名₩39,000／4名₩44,000 片道、込みオプションはカプセル2名基準）。",
+        "チケット別オプション：同じ海岸の無料グリーンレイルウェイ遊歩道（2.3km、約30分）を歩くか、車両で尾浦へ移動します。",
+        "運行は天候に左右されます（強風時は一時停止）。カプセルが止まっても、遊歩道の散策と車両移動で行程はそのまま維持されます。"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "キャンセルポリシー",
+      "preview": "ピックアップの24時間前まで無料キャンセル可能。",
+      "content": [
+        "ピックアップの24時間前まで無料キャンセル可能。",
+        "当日のキャンセルおよびノーショーは返金不可です。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "季節のご案内をご覧ください"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "季節のご案内をご覧ください"
+    },
+    "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+  },
+  "seasonalVariations": [
+    {
+      "season": "春（3〜5月）",
+      "description": "3月下旬〜4月上旬、ブルーラインの海岸沿いに桜が並びます — 桜の時期のカプセル乗車は一年で最高です。寺の朝の空気も澄んでいます。"
+    },
+    {
+      "season": "夏（6〜8月）",
+      "description": "日が長く、海岸は都心より涼しく過ごせます。7月の梅雨はスカイウォークの滞在を短くすることがあり、カプセルは夜まで延長運行します。"
+    },
+    {
+      "season": "秋（9〜11月）",
+      "description": "一年で最も澄んだ空 — タリットルのガラス床からの視界が最も良く、甘川の展望ポイントの色彩も最も鮮やかです。"
+    },
+    {
+      "season": "冬（12〜2月）",
+      "description": "どのスポットも一年で最も静かで、写真には澄んだ光。カプセルは暖房付き。寺のテラスと村の路地は暖かい服装で。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "公認地元ガイド",
+      "description": "釜山公認ガイドによる案内",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "users",
+      "title": "少人数グループ",
+      "description": "最大約12名",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600"
+    },
+    {
+      "icon": "shield",
+      "title": "入場料込み",
+      "description": "主要施設の入場料を含む",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "即時",
+      "title": "即時確認",
+      "detail": "旅程概要付きの予約確認書をお送りします"
+    },
+    {
+      "timing": "前日",
+      "title": "ピックアップ詳細",
+      "detail": "正確なピックアップ場所と車両情報をWhatsAppにてお知らせ"
+    },
+    {
+      "timing": "当日の朝",
+      "title": "ピックアップ確認",
+      "detail": "ドライバーが到着10分前に確認の連絡を入れます"
+    },
+    {
+      "timing": "ツアー中",
+      "title": "ツアー中サポート",
+      "detail": "運営担当への直通連絡"
+    },
+    {
+      "timing": "終日（ツアー終了時）",
+      "title": "柔軟な降車場所",
+      "detail": "南浦洞・釜山駅・西面・海雲台の中からご希望の降車場所をお選びいただけます"
+    },
+    {
+      "timing": "ツアー後",
+      "title": "レビュー＆フォローアップ",
+      "detail": "任意のレビューとフォローアップ"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "スカイカプセルのチケットは含まれますか？",
+      "answer": "予約時に選択できます。チケット込みオプションならグループ分のカプセルを事前予約します（料金はカプセル単位：2名約₩30,000／3名₩39,000／4名₩44,000 片道 — 込みオプションはカプセル2名基準）。基本オプションなら、他の方がカプセルに乗る間、無料のグリーンレイルウェイ遊歩道を歩くか車両で尾浦へ移動できます。"
+    },
+    {
+      "question": "スカイカプセルは事前予約が必要ですか？",
+      "answer": "夕暮れ・週末の枠は1〜2週間前に売り切れます。チケット込みオプションを選べば、予約確定時に当方がグループ予約を行います。空いている平日は現地キオスク発券も可能ですが、保証はできません。"
+    },
+    {
+      "question": "昼食は含まれますか？",
+      "answer": "いいえ — 昼食は別料金です（約₩10,000〜15,000）。ガイドが海雲台／尾浦近くのデジクッパ（釜山名物の豚骨スープごはん）、ミルミョン、海鮮食堂などをおすすめします。"
+    },
+    {
+      "question": "歩く量と坂はどの程度ですか？",
+      "answer": "短く大変な区間のある中程度の難易度です：龍宮寺の108段の往復、タリットル展望台は平坦なガラスデッキ、カプセル駅はほぼ平坦、甘川は丘の路地、タクバッコルは階段ですが無料モノレールが登りを代行します。総歩行距離は約4〜5km。"
+    },
+    {
+      "question": "子どもやシニアでも大丈夫ですか？",
+      "answer": "アクティブな旅行者ならほとんど問題ありません。子どもはガラス床とカプセルが大好きで、タクバッコルのモノレールが最も急な登りを代行します。龍宮寺の石段と甘川の坂がこの日の二つの山場 — ゆっくり歩き、必要なら脇道はスキップを。"
+    },
+    {
+      "question": "釜山トップアトラクション・デイツアーとの違いは？",
+      "answer": "同じ運営会社の別フォーカスです。トップアトラクションは都市のクラシックな周遊（UN記念公園、チャガルチ市場）を回り、この少人数コースは海岸と村に集中します：タリットル展望台の単独ストップ、チケット込みオプションのあるスカイカプセル乗車、そして大型バスが素通りする静かなタクバッコル壁画村。"
+    },
+    {
+      "question": "お迎え・降車はどこですか？",
+      "answer": "市内3駅でお迎えします — 西面（08:30）、釜山駅（08:50）、海雲台（09:30）。降車は南浦洞 → 釜山駅 → 西面 → 海雲台の順で、およそ17:50〜19:00です。"
+    },
+    {
+      "question": "雨の場合はどうなりますか？",
+      "answer": "雨天でも催行します。カプセルとモノレールは通常の雨なら運行し（強風時のみ一時停止）、スカイウォークでは靴カバーが提供され、村の路地は傘で十分歩けます。荒天時は寺の海辺テラスの滞在が短くなることがあります。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "checkout_tour_id は実行時に Supabase / 環境変数から解決されます。静的 JSONB の一部ではありません。",
+    "price": {
+      "amountLabel": "49",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 49
+    }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:30",
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 2,
+        "time": "08:50",
+        "name": "Busan Station Exit 4 (not the KTX gate)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "time": "09:30",
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Nampo-dong / Jagalchi area",
+        "type": "station",
+        "lat": 35.09663,
+        "lng": 129.0308
+      },
+      {
+        "order": 2,
+        "name": "Busan Station (Exit 4)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 4,
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "notes": [
+      "予約時にホテルから最も近いお迎え駅をお選びください。降車は南浦洞 → 釜山駅 → 西面 → 海雲台の順次進行（約17:50〜19:00）。西面乗車の方の一日が最も長く、海雲台が最も短くなります。"
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "busan_city",
+    "region_type": "busan_city",
+    "vehicle_type": "coach",
+    "duration_hours": 9,
+    "region_tags": [
+      "busan_haeundae",
+      "busan_gijang",
+      "busan_namgu",
+      "busan_saha",
+      "busan_jung"
+    ],
+    "theme_tags": [
+      "temple",
+      "coastal",
+      "war_memorial",
+      "mural_village",
+      "fish_market",
+      "korean_war_history"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.85,
+    "scenic_level": 0.9,
+    "photo_level": 1,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.7,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.7,
+    "food_fit": 0.8,
+    "nature_fit": 0.8,
+    "beach_fit": 0.6,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 0.85,
+    "premium_fit": 0.3,
+    "small_group_fit": 1,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with several flights of stairs (Yonggungsa 108 steps, Gamcheon hillside).",
+      "Average fitness expected.",
+      "Sturdy closed-toe shoes recommended (Jagalchi 1F floor is wet)."
+    ],
+    "keywords": [
+      "busan top attractions day tour",
+      "busan small group tour",
+      "haedong yonggungsa",
+      "gamcheon culture village",
+      "jagalchi market",
+      "un memorial cemetery busan"
+    ],
+    "synonym_hints": [
+      "busan one day classic tour",
+      "busan must-see day trip",
+      "busan top 5 highlights"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "coastal_temple_fit": 1,
+    "seaside_temple_fit": 1,
+    "war_memorial_fit": 1,
+    "korean_war_history_fit": 1,
+    "mural_village_fit": 1,
+    "fish_market_fit": 1,
+    "market_fit": 1,
+    "street_food_fit": 0.9,
+    "skywalk_fit": 1,
+    "sky_capsule_fit": 0.7,
+    "coastal_railway_fit": 1,
+    "history_culture_fit": 1,
+    "k_drama_filming_fit": 0.5,
+    "religious_history_fit": 0.85,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "busan_signature_route_fit": 1,
+    "skywalk_coastal_railway_fit": 1,
+    "first_time_busan_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "busan",
+      "coastal",
+      "seaside_temple",
+      "sky_capsule",
+      "culture_village",
+      "mural_village",
+      "small_group"
+    ],
+    "secondary_themes": [
+      "glass_skywalk",
+      "blueline_park",
+      "gamcheon",
+      "dakbatgol_monorail",
+      "photo_spots",
+      "free_admission_anchors",
+      "first_time_busan"
+    ],
+    "best_for": [
+      "first_time_busan",
+      "couples",
+      "photo_lovers",
+      "adult_families",
+      "small_group_seekers"
+    ],
+    "not_recommended_for": [
+      "minimal_walking_seekers",
+      "stroller_heavy_groups",
+      "nightlife_focused_travelers"
+    ],
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Cheongsapo Daritdol Observatory",
+      "Haeundae Blueline Park Sky Capsule",
+      "Gamcheon Culture Village",
+      "Dakbatgol Mural Village"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "competing_products": [
+      "busan-top-attractions-day-tour",
+      "busan-small-group-sightseeing-tour-cruise-passengers",
+      "busan-private-car-charter-cruise-shore"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on this route. Cultural weight comes from the seaside temple (1376 founding), Korean-War refugee village heritage at Gamcheon, and hanji paper-mulberry heritage at Dakbatgol."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price seeded at USD 49 (Sky Capsule ticket excluded; ticket-included offer USD 64) — owner review pending. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "海東龍宮寺・スカイカプセル",
+        "headlineLine2": "＆文化村",
+        "hero": {
+          "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "imagePosition": "center 40%",
+          "images": [
+            "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+          ],
+          "tagline": "静かな時間帯の海辺の寺、海の上のガラスのスカイウォーク、パステルカラーのカプセルで下る海岸線、そして性格の異なる二つの丘の村 — 一つは世界的に有名、もう一つはまだ地元のまま",
+          "pills": [
+            "small_group",
+            "釜山",
+            "first_time"
+          ],
+          "meta": {
+            "duration": "≈ 10時間（08:30最初のお迎え、≈ 18:30最終市内降車）",
+            "region": "釜山",
+            "stops": "8か所",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "概要"
+          },
+          {
+            "id": "itinerary",
+            "label": "旅程"
+          },
+          {
+            "id": "practical",
+            "label": "実用情報"
+          },
+          {
+            "id": "reviews",
+            "label": "口コミ"
+          },
+          {
+            "id": "booking",
+            "label": "予約"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "写真映え",
+            "value": "高い",
+            "level": 5
+          },
+          {
+            "icon": "mountain",
+            "label": "景観",
+            "value": "良い",
+            "level": 4
+          },
+          {
+            "icon": "footprints",
+            "label": "徒歩",
+            "value": "高い",
+            "level": 4
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "雨天時の安全性",
+            "value": "普通",
+            "level": 3
+          },
+          {
+            "icon": "users",
+            "label": "ファミリー向き",
+            "value": "良い",
+            "level": 4
+          },
+          {
+            "icon": "gauge",
+            "label": "バランス",
+            "value": "バランス良い",
+            "level": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 1",
+            "alt": "海東龍宮寺 — gallery image 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 2",
+            "alt": "海東龍宮寺 — gallery image 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 3",
+            "alt": "海東龍宮寺 — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 4",
+            "alt": "海東龍宮寺 — gallery image 4"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 5",
+            "alt": "海東龍宮寺 — gallery image 5"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+            "location": "海東龍宮寺",
+            "caption": "海東龍宮寺 — photo 6",
+            "alt": "海東龍宮寺 — gallery image 6"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 1",
+            "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 1"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+            "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 2",
+            "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 2"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+            "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 3",
+            "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 3"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+            "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 4",
+            "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 4"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:30–09:30",
+            "duration": "30分",
+            "name": "乗車（釜山中心部3駅）",
+            "category": "移動／乗車",
+            "description": "市内を行き来することなく一日をスムーズに進めるため、乗車場所は釜山中心部の3つの主要交通拠点に集約されています。**釜山駅（1号線）**はKTX乗り場近くや草梁（チョリャン）・南浦洞（ナンポドン）エリアにご滞在のお客様向け。**西面駅（1・2号線）**は釜山で最も利用者の多い地下鉄乗換駅で、ロッテホテル釜山や西面医療ストリート周辺の市街中心部のホテルにご滞在のお客様に便利です。\n\n**海雲台駅（2号線）**はウェスティン朝鮮、パーク・ハイアット、シグニエル釜山などビーチフロントのリゾートエリアにご滞在のお客様向けです。コーチは3か所を順番に（通常、釜山駅が最初~09:00、西面~09:15、海雲台~09:30）乗車し、その後、沿岸の広安大橋ルートを北東方向に進み、機張郡（キジャングン）へ向かいます。最終乗車地点から海東龍宮寺までの所要時間：交通状況によって~30〜40分。\n\nドライバーが乗車時に時刻入りの韓国語・英語対照スケジュールカードをお渡しします。甘川（カムチョン）やタクバッコルへの訪問時間を確保するため、予定時刻の5分前には乗車場所でお待ちください。",
+            "highlights": [
+              "釜山中心部3か所の乗車オプション（釜山駅・西面・海雲台）",
+              "コーチは少人数制（最大~14名）",
+              "最初の目的地までの合計移動時間：~30〜40分",
+              "乗車時に韓国語・英語対照スケジュールカードを配布"
+            ],
+            "timeUsed": [
+              "釜山駅乗車（~09:00、~5分）",
+              "西面駅へ移動（~10分）",
+              "西面乗車（~09:15、~5分）",
+              "海雲台駅へ移動（~15分）",
+              "海雲台乗車（~09:30、~5分）"
+            ],
+            "whyOnRoute": "3か所の乗車ポイントは釜山の3つの主要ホテルゾーン（KTX・南浦、西面市街中心部、海雲台ビーチフロント）をカバーしており、朝に市内を横断する必要がありません。北西から東へのルート順によりコーチの走行距離を最小化し、グループは海東龍宮寺に10:00頃到着できます——最も混雑する観光バスの時間帯より早めに到着できるよう設定しています。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_pickup_central",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ]
+            },
+            "_role": "pickup"
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:00",
+            "duration": "75分",
+            "name": "海東龍宮寺",
+            "category": "仏教寺院／海岸",
+            "description": "**海東龍宮寺（해동 용궁사）— 韓国で最も有名な海辺の仏教寺院**は、釜山北東部・機張郡の岩礁の断崖に位置し、山中に設けられていない数少ない主要韓国寺院のひとつです。もともとは**高麗時代の1376年に、偉大な仏教師・懶翁慧勤（나옹 혜근、1320〜1376年）**によって創建されました。彼は王室の顧問も務めた高僧であり、朝鮮初期にかけての韓国仏教の形成に大きく貢献しました。\n\n伝説によれば、懶翁は全国的な干ばつの最中、慶州の芬皇寺で修行していたところ、夢に東海の神が現れ、この海辺の断崖（当時は蓬萊山と呼ばれていた）に寺を建てれば国に繁栄がもたらされると告げられました。懶翁はこの寺を建立し、観世音菩薩（관세음보살、慈悲の菩薩）に捧げて**補門寺（ポムンサ）**と命名しました。寺は**1592年の文禄の役（壬辰倭乱）**で焼失し、300年以上廃墟のまま放置されましたが、**通度寺の雲崗（ウンガン）僧侶が1930年代初頭に再建を始めました**。\n\n現在の名称**「海東龍宮寺（龍の宮殿の寺）」**は**1974年**にのみ付けられたものです——住職の定庵（ジョンアム）が100日間の祈禱（精勤祈禱）を行っていた際、観音菩薩が龍の背に乗り七色の光を放ちながら降臨する幻視を見たことにちなみ、寺はこの幻視を称えて改名されました。参拝は寺の名物である参道を辿ります——入口広場に並ぶ**12体の十二支神（十二干支の守護将）**の像の列を抜け、**7層の「無事故の塔」**（ドライバーたちが石の輪廟の下にコイン供物を置く場所）を過ぎ、小さな竹林の中を通る有名な**108段の石段**（仏教の心の108の煩悩を表す）を下り、海辺のテラスと大雄殿（本堂）へと続きます。\n\n断崖上部の**海水観音大仏**（海の観音像）は最も多く撮影されるスポットで、寺院の屋根と東海の両方を背景に収めることができます。営業時間：**毎日04:30〜19:20、最終入場18:50、入場無料**。**釈迦誕生日（5月）**には燃燈会（ヨンドゥンフェ）の提灯祭りの飾り付けが行われます。",
+            "highlights": [
+              "**1376年創建**、仏教師・懶翁慧勤によって（当初は「補門寺」）",
+              "山中ではなく海辺に設けられた数少ない主要韓国寺院のひとつ",
+              "**1974年、定庵僧侶の龍と観音菩薩の幻視**にちなみ**「海東龍宮寺」に改名**",
+              "**108段の石段** ＝ 仏教における心の108の煩悩",
+              "入口に**十二支神（12体の干支の守護将）**の像；**「無事故の塔」**コイン供物の祠",
+              "**海水観音大仏**（海の観音像）— 断崖からの最も撮影される絶景",
+              "大雄殿は1970年に元の色彩に忠実に修復されました。",
+              "営業時間：毎日04:30〜19:20、入場無料；仏陀の誕生日（5月）にはランタン祭りが開催されます。",
+              "**石柱に刻まれた十二支神（十二支将）が山門に整列** — 韓国の海辺の寺院の中で唯一の光景です。"
+            ],
+            "timeUsed": [
+              "コーチ降車後、露店街を通り入口広場まで徒歩（約10分）。",
+              "十二支将＋無事故塔の見学（約10分）。",
+              "108段の階段を下り、大雄殿と海辺のテラスを見学（約30分）。",
+              "海水観音像の展望スポット＋写真撮影タイム（約15分）。",
+              "上まで歩いて戻り、コーチに集合（約10分）。"
+            ],
+            "whyOnRoute": "**このコースを象徴するオープナー — 釜山で最も撮影される寺を、静かな時間帯に。** 10:00の到着は団体バスの波（通常11:00から）より先に着くため、108段の石段と海水観音大仏の展望ポイントを並ばずに歩けます。機張の断崖という立地がコースの北東端から一日を開くので、その後は青沙浦、カプセル、都心方向へと海岸沿いを一方向に流れ、引き返す区間がありません。",
+            "visitBasics": {
+              "hours": "毎日04:30〜19:20（最終入場18:50）。",
+              "closed": "年中無休。",
+              "admission": "入場無料；自家用車の駐車場は有料。",
+              "walking": "中程度 — 松林を抜ける108段の階段、複数の海辺のテラスと階段あり。"
+            },
+            "convenience": {
+              "restroom": "メインエントランス付近および境内に利用可能。",
+              "parking": "海東龍宮寺駐車場（有料、ビジット釜山公式情報より）。"
+            },
+            "smartNotes": {
+              "photo": "海側端の日の出岩；大雄殿脇の階段から海と寺院の定番フレームが撮影可能；上部の崖から海水観音像越しに寺院と東海の広角ビューが楽しめます。",
+              "facilities": "上部広場にはみやげ物・軽食の屋台と小さなカフェがあります；岩場沿いに続く海岸遊歩道もあります。",
+              "tip": "お堂への入場は側扉から（正面扉は僧侶専用）；仏陀の誕生日（4〜5月）にはランタン展示が行われます；観光バスの混雑を避けるため10:30前に到着することをお勧めします。"
+            },
+            "_poi_meta": {
+              "poi_key": "haedong_yonggungsa",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ]
+            },
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "images": [
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 1",
+                "alt": "海東龍宮寺 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 2",
+                "alt": "海東龍宮寺 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 3",
+                "alt": "海東龍宮寺 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 4",
+                "alt": "海東龍宮寺 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 5",
+                "alt": "海東龍宮寺 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "location": "海東龍宮寺",
+                "caption": "海東龍宮寺 — photo 6",
+                "alt": "海東龍宮寺 — gallery image 6"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:45",
+            "duration": "40分",
+            "name": "青沙浦タリットル展望台（ガラスのスカイウォーク）",
+            "category": "海岸展望台／無料",
+            "description": "**青沙浦タリットル展望台（청사포 다릿돌전망대）**は、青沙浦と松亭の間の海岸断崖から**海面上約20mの高さで72.5m、海へ弧を描いて張り出すスカイウォーク**で、2017年8月に開業しました。名前はデッキ下の海に飛び石のように並ぶ**5つの岩礁「タリットル（橋の石）」**に由来します — 水平線へ架かる石橋という意味合いです。デッキ先端部の床は**ガラス**で、足元にうねりが流れるのをそのまま見下ろします（ガラス保護の靴カバー提供）。**入場は無料**。村へ戻れば、**青沙浦の双子の灯台**（紅・白）と、スラムダンク風のアニメ的フレームで有名になった小さな踏切のフォトスポットが徒歩圏です。",
+            "image": null,
+            "highlights": [
+              "**海面上約20m・全長72.5mのスカイウォーク** — 2017年8月開業、無料",
+              "デッキ下に見える5つの岩礁**「タリットル」**が名前の由来",
+              "**先端部のガラス床**（靴カバー提供）",
+              "徒歩圏の**青沙浦双子の灯台**（紅・白）",
+              "青沙浦は**釜山八景**の一つ — 今も生きる漁村",
+              "アニメで有名になった踏切のフォトスポット"
+            ],
+            "timeUsed": [
+              "車両降車＋展望台入口まで徒歩（約5分）",
+              "スカイウォークのウォークアウト＋ガラス床区間（約20分）",
+              "双子の灯台／踏切のフォト散策（約10分）",
+              "カプセル駅へ再集合（約5分）"
+            ],
+            "whyOnRoute": "**寺とカプセルの間の、無料のスリル。** タリットルは足元をうねりが流れるガラス床で、この一日の「海の上」の瞬間をチケットなしで与えてくれます。青沙浦の断崖の真上にあるため、数分先のスカイカプセル乗車へそのままつながります。固定されたスカイウォークから先に海岸を見ておくと、10分後に動くカプセルから見る同じ海岸が違って見えます。",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "cheongsapo_daritdol_observatory",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan City Tourism",
+                "Blue Line Park official"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "風の強い日はデッキが一時閉鎖されることがあります — ガイドが当日の状況を確認し、青沙浦クラスターの順序を調整します",
+              "photo": "ガラス越しに真下のタリットル岩礁を撮る；海岸の小道からデッキの曲線を収めるワイドショット",
+              "facilities": "下の青沙浦の村にカフェ・海鮮の屋台"
+            },
+            "convenience": {
+              "parking": "青沙浦の村に車両停車、デッキまで徒歩",
+              "restroom": "青沙浦駅近くに公衆トイレ"
+            },
+            "visitBasics": {
+              "hours": "開放型；展望台の運営はおよそ09:00〜18:00（季節・天候により変動）",
+              "closed": "強風・荒天時は一時閉鎖の場合あり",
+              "walking": "デッキは平坦なウォークアウト；村から短い上り坂",
+              "admission": "無料（ガラス区間は靴カバー提供）"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:35",
+            "duration": "40分",
+            "name": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "category": "海岸ライド／チケット選択制",
+            "description": "**スカイカプセル**は、廃線となった東海南部線の海岸線路を2020年にエコ再開発した**海雲台ブルーラインパーク**のシグネチャーライドです：**パステルカラーの4人乗りキャビンが、海岸7〜10mの高さの高架レール上を青沙浦〜尾浦の2.3km滑っていきます**（約30分）— 進む間ずっと片側は海です。私たちは**青沙浦から乗って尾浦方向へ**下り、尾浦には車両が先回りして待っています — 乗車そのものがこの一日の海岸移動になる構成です。**カプセルのチケットは選択制で、予約時に決めます**：チケット込みオプションならグループ分のカプセルを事前予約し（料金はカプセル単位：2名約₩30,000／3名₩39,000／4名₩44,000 片道）、基本オプションなら同じレールの下の受賞歴ある2.3kmの木製海岸遊歩道**グリーンレイルウェイ（無料）**を歩くか、車両で尾浦へ移動できます。",
+            "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "highlights": [
+              "**高架の海岸レールを走るパステルの4人乗りカプセル** — ブルーラインパークのシグネチャー（2020年開業）",
+              "**青沙浦→尾浦 2.3km／約30分**、ずっと海の眺め",
+              "**チケット込み／別 — 予約時に選択**（カプセル単位で約2名₩30,000／3名₩39,000／4名₩44,000 片道）",
+              "乗らない方：同じ海岸の**無料グリーンレイルウェイ遊歩道**、または車両で尾浦へ",
+              "ライドの終点がそのまま昼食の始まり — 尾浦は海雲台の食の路地まで徒歩圏",
+              "通常の雨なら運行；強風時のみ一時停止"
+            ],
+            "timeUsed": [
+              "青沙浦駅で乗車手続き（約10分）",
+              "スカイカプセル 青沙浦→尾浦 乗車（約30分）"
+            ],
+            "whyOnRoute": "**移動を兼ねるライド。** スカイウォークの直後に青沙浦から乗れば、いま見下ろしたその海岸線をカプセルがなぞって下り — 車両と昼食の路地が待つ尾浦に降ろしてくれます。このライドのために回り道する区間は一切ありません：チケットをスキップしても、車両や無料の遊歩道が同じ区間をカバーします。",
+            "_poi_meta": {
+              "match": "partial",
+              "poi_key": "cheongsapo_blue_line_park",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Busan Metropolitan City Tourism"
+              ],
+              "verified": true,
+              "kb_version": "1.24",
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "夕暮れ・週末の枠は1〜2週間前に売り切れ — 予約時にチケット込みオプションを選べば当方が代わりに予約します",
+              "photo": "尾浦方向に向かって海側（右側）の席を；タルマジトンネルを過ぎるカーブ区間がシグネチャーフレーム",
+              "facilities": "尾浦の広場にカフェ・コンビニ；両駅に発券キオスク"
+            },
+            "convenience": {
+              "parking": "尾浦駅前広場で車両がグループと合流",
+              "restroom": "青沙浦・尾浦の両駅にあり"
+            },
+            "visitBasics": {
+              "hours": "約09:30〜18:30（ピークシーズンは夜間延長）",
+              "closed": "天候依存の運行；強風時は一時停止",
+              "walking": "駅のホームは平坦；遊歩道の代替は木製デッキ2.3km（約30分）",
+              "admission": "カプセル単位・片道：約₩30,000（2名）／₩39,000（3名）／₩44,000（4名）— 予約時にチケット込みオプション選択可"
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+              "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+                "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 1",
+                "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+                "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 2",
+                "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+                "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 3",
+                "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+                "caption": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — photo 4",
+                "alt": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦） — gallery image 4"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:25",
+            "duration": "60分",
+            "name": "昼食（海雲台／尾浦近くの地元レストラン）",
+            "category": "地元の食事",
+            "description": "スカイカプセル到着直後、尾浦／海雲台近くで約60分の昼食休憩です。ガイドおすすめの定番：**デジクッパ（돼지국밥）** — 朝鮮戦争の避難民の時代に生まれた釜山名物の豚骨スープごはん（約₩10,000）、**ミルミョン**（冷たい小麦麺）、または港沿いの海鮮の食卓。昼食は含まれません（約₩10,000〜15,000）ので、好みと予算に合わせて選べます。",
+            "highlights": [],
+            "timeUsed": [
+              "尾浦駅からレストランまで徒歩（約5分）",
+              "昼食（約50分）",
+              "車両に再集合（約5分）"
+            ],
+            "whyOnRoute": "**海岸と村の間の自然な句読点。** カプセルが昼どきに尾浦に着き、海雲台の食の路地は駅から徒歩圏 — おいしい食事のために余計に走る必要がありません。ここでしっかり補給して、徒歩が最も垂直になる午後の二つの丘の村へ向かいます。",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:00",
+            "duration": "90 min",
+            "name": "甘川文化村",
+            "category": "文化村／壁画アート",
+            "description": "**甘川文化村（감천문화마을）** — **「韓国のマチュピチュ」**および**「韓国のサントリーニ島」**とも称される — は、釜山西部の沙下区（サハグ）に位置する丘の中腹の住宅街で、パステルカラーに彩られた家々が斜面に沿って段状に連なっています。この集落は、釜山市が港湾部から労働者階級の住民を移転させた**1920〜30年代**に始まりました。\n\n村の特色は**1955年**に形成され、日本の植民地時代に**趙哲済（チョ・チョルジェ）**によって創設された、仏教・儒教・陰陽説を融合した独自の韓国的宗教である**太極道**の**約800世帯（約4,000人）**が、朝鮮戦争の難民として北から逃れてここに定住しました。「**他者の繁栄を許す**」という太極道の哲学は、この村の最も際立った特徴に直接影響を与えています：家々は意図的に段状に配置され、**どの屋根も後ろの家の眺めを遮らない**よう工夫されており、集落全体が空と海に向かって開かれています。\n\n甘川は**2009年**まで釜山で最も貧しい地区の一つでしたが、韓国文化体育観光部が**「釜山でマチュピチュを夢見る」**公共アート再生プロジェクトを開始し、続いて**2010年の「ミロミロ（迷路）プロジェクト」**が実施されました。これにより22点以上の壁画・彫刻・アートインスタレーションが加わり、スカイガーデン展望台の名物である**「星の王子さまとキツネ」のベンチ**もその一つです。\n\n甘川は**2012年のUN-HABITAT アジア都市景観賞**を受賞し、現在は**年間約140万人**の来場者を迎えています。見学は村のトレードマークであるスタンプマップの散策コースに沿って進みます：**観光案内所**入口から、パノラマのカラフルな屋根の絶景が楽しめる**スカイガーデン展望台**へと上り、その後迷路のような路地を通って壁画・韓服レンタルショップ・工芸ワークショップ・小さなカフェを巡りながら下ります。\n\n**この村は現役の住宅地です** — 静かに話すことが求められ、ドローン禁止、民家へのフラッシュ撮影禁止、ゴミは必ず持ち帰ってください。開園時間**09:00〜18:00（3〜10月）／09:00〜17:00（11〜2月、案内所）**；**村自体は24時間開放、入場無料**。",
+            "highlights": [
+              "**「韓国のマチュピチュ」/「韓国のサントリーニ」** — UN-HABITAT アジア都市景観賞 2012",
+              "起源：**1920〜1930年代**の釜山行政機関移転 + **1955年の太極道（テグクト）難民**（約800世帯）",
+              "**「他者を豊かにする」という太極道の哲学** = 後ろの家の眺めを遮らない造り",
+              "**2009年「マチュピチュの夢」+ 2010年「ミロミロ」** 文化体育観光部のパブリックアートプロジェクト",
+              "スカイガーデンの**「星の王子さまとキツネ」のベンチ** — 村で最も写真に撮られるスポット",
+              "パブリックアート再生以降、**年間約140万人**が来訪",
+              "**生活住宅地** — 声を抑え、ドローン禁止、民家へのフラッシュ撮影禁止",
+              "村の入場無料；スタンプマップ（任意）約₩2,000",
+              "**UN-HABITAT アジア都市景観賞 2012** — 1955年の太極道難民居住地を釜山を代表する壁画村へと変えた、2009年の「マチュピチュの夢」アートプロジェクトへの評価"
+            ],
+            "timeUsed": [
+              "公共駐車場2番でコーチ降車 + 入口まで徒歩（約5分）",
+              "観光案内センター + スタンプマップ購入（約10分）",
+              "スカイガーデン展望台 + 星の王子さまのベンチ（約25分）",
+              "壁画を眺めながら路地散策 + 小さなカフェで一休み（約25分）",
+              "コーチへ集合（約10分）"
+            ],
+            "whyOnRoute": "**午後の主役の村 — 釜山のパステルの円形劇場。** 海岸の午前を終えて西の丘へ渡ると、朝鮮戦争期の避難民の段々の住まいが2009年にアート村として生まれ変わった甘川が、海の上にキャンディ色の家々を積み上げています。90分のループで展望ポイント、星の王子さまのフォトスポット、路地歩きまで回り — 直後の静かなタクバッコルと意図的に対をなして、有名な村とバスが素通りする地元の村の両方を見ることになります。",
+            "visitBasics": {
+              "hours": "毎日 09:00〜18:00（3〜10月）/ 09:00〜17:00（11〜2月）；一部の店舗・カフェは独自の営業時間あり",
+              "closed": "年中無休（生活住宅地のため）",
+              "admission": "村の入場無料；スタンプマップ（任意）約 2,000ウォン",
+              "walking": "体力を要する — 非常に急な路地と階段；多くの区間でベビーカーや車椅子での移動は困難"
+            },
+            "convenience": {
+              "restroom": "観光案内センターおよび主要展望地点周辺に公共トイレあり",
+              "parking": "カムチョン公共駐車場2番（有料）"
+            },
+            "smartNotes": {
+              "photo": "星の王子さまとキツネのベンチ（長い待ち行列あり）と、虹色の屋根と湾を一望するハヌルマル／スカイガーデン展望台",
+              "facilities": "ハンボクレンタル、クラフトワークショップ、韓国伝統菓子の露店、カフェ；入口付近に小さな村の博物館；スタンプマップが最も分かりやすい案内手段",
+              "tip": "ここは実際の居住区です — 声を抑え、ドローン禁止、ゴミは持ち帰りを；急な坂道では滑り止めのある靴を；午後のゴールデンアワー（約16:00〜17:00）が村で最も光の美しい時間帯"
+            },
+            "_poi_meta": {
+              "poi_key": "gamcheon_culture_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ]
+            },
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+              "/images/itinerary/jagalchi-harbor-sign.webp",
+              "/images/itinerary/jagalchi-market-interior.webp",
+              "/images/itinerary/jagalchi-night-building.webp"
+            ]
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:50",
+            "duration": "50分",
+            "name": "タクバッコル壁画村＆願いの階段モノレール",
+            "category": "壁画村／無料モノレール",
+            "description": "**タクバッコル（닥밭골）**は釜山・西区の丘の村で、名前には韓国の伝統紙・韓紙の原料である**楮（タク）の畑**があった時代の記憶が刻まれています。甘川と同じく狭い路地が急な斜面を這い上がりますが、団体観光バスのコースになったことがないため、**壁画の路地や韓紙モチーフの作品、見晴らしポイントが、洗濯物の風景ごと静かに、地元のまま**残っています。村のランドマークは、壁画の描かれた長く急な階段道**「願いの階段（소망계단）」**と、その脇を登る**無料の斜面モノレール**です — 村のお年寄りの帰り道のために設置され、訪問者も乗ることができ、午後で最も急な登りがスローモーションの展望台に変わります。甘川の名声に対する意図された等身大の対句であり、降車エリアまで10分の最後の立ち寄り先です。",
+            "image": null,
+            "highlights": [
+              "**静かな壁画村** — 人波のほとんどない甘川の地元版",
+              "韓紙の紙文化を支えた**楮（タク）の畑**に由来する名前",
+              "壁画の描かれた急な階段道**「願いの階段」**",
+              "階段脇の**無料斜面モノレール** — 村のお年寄りのために設置、訪問者も乗車可",
+              "旧港の街並みを見下ろす丘の展望",
+              "入場無料；実際に人が暮らす村です — 路地では声を落として"
+            ],
+            "timeUsed": [
+              "車両降車＋壁画路地の散策（約20分）",
+              "願いの階段モノレール乗車＋展望（約15分）",
+              "下り＋フォトタイム（約10分）",
+              "車両に再集合（約5分）"
+            ],
+            "whyOnRoute": "**バスが素通りする、静かな締めくくり。** 甘川の人波のあとで、タクバッコルは同じ丘の釜山を生活の音量で見せてくれます — 壁画、願いの階段、そして登りを代行するモノレール。南浦の降車ゾーンまで10分の場所で村の章を閉じるので、一日は渋滞の中ではなく、町の手ざわりの中で終わります。",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "dakbatgol_mural_village",
+              "sources": [
+                "Visit Busan",
+                "Busan Seo-gu Office"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "テーマパークではなく実際に人が暮らす村です — 路地では声を落とし、開いた戸口の中は撮影しないでください",
+              "photo": "モノレールの軌道を脇に置いて願いの階段を下から見上げる構図；頂上の展望から旧港の街並みフレーム",
+              "facilities": "入口近くに小さなカフェ；降車後の南浦洞に選択肢が豊富"
+            },
+            "convenience": {
+              "parking": "村の入口に車両停車",
+              "restroom": "村の入口近くに公衆トイレ"
+            },
+            "visitBasics": {
+              "hours": "開放型の村；モノレールは日中運行（約09:00〜18:00、天候により変動）",
+              "closed": "モノレールは整備・荒天時に一時停止の場合あり — 階段は常に開放",
+              "walking": "急な路地と階段；最も急な区間はモノレールがカバー",
+              "admission": "無料（村・モノレールとも）"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:50",
+            "duration": "合計 ≈ 70分",
+            "name": "降車（釜山市内4か所）",
+            "category": "降車 — 市内順次降車",
+            "description": "**降車は西側から東へ順次進みます**：**南浦洞／チャガルチ一帯（約17:50）** — 釜山随一の夜の食の路地とBIFF広場の雰囲気を楽しむならここで下車を；**釜山駅（約18:10）** KTX乗り継ぎ；**西面（約18:30）** 中心部のホテル密集地；最後に**海雲台（約19:00）**。午後のうちにガイドと降車地点を決めればOKです — 海雲台までが最も長い乗車ですが、夜のビーチの前で降ろしてくれます。",
+            "image": null,
+            "highlights": [],
+            "timeUsed": [
+              "南浦洞／チャガルチ一帯（約17:50）",
+              "釜山駅（約18:10）",
+              "西面（約18:30）",
+              "海雲台（約19:00）"
+            ],
+            "whyOnRoute": "タクバッコルが南浦洞から10分の距離にあるため、最後の立ち寄りの直後にそのまま降車シーケンスが始まります — 無駄な移動時間がありません。西→東の順序は朝のお迎えの鏡像で、KTX利用者（釜山駅）、中心部ホテル（西面）、ビーチホテル（海雲台）を引き返しなしでカバーします。",
+            "_poi_meta": null,
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "乗車（釜山中心部 3駅）",
+            "type": "origin",
+            "theme": "出発"
+          },
+          {
+            "name": "海東龍宮寺",
+            "type": "primary",
+            "theme": "海辺の寺院"
+          },
+          {
+            "name": "青沙浦タリットル展望台（ガラスのスカイウォーク）",
+            "type": "secondary",
+            "theme": "Glass Skywalk"
+          },
+          {
+            "name": "海雲台ブルーラインパーク スカイカプセル（青沙浦→尾浦）",
+            "type": "primary",
+            "theme": "Sky Capsule"
+          },
+          {
+            "name": "昼食（釜山の地元レストラン）",
+            "type": "meal",
+            "theme": "食事"
+          },
+          {
+            "name": "甘川文化村",
+            "type": "primary",
+            "theme": "アート村"
+          },
+          {
+            "name": "タクバッコル壁画村＆願いの階段モノレール",
+            "type": "secondary",
+            "theme": "Mural Village"
+          },
+          {
+            "name": "降車（釜山市内4か所）",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "海岸の午前",
+            "duration": "≈ 3時間",
+            "description": "市内3駅でのお迎え（08:30〜09:30）後、団体バスの波が来る前の海東龍宮寺へ、続いて青沙浦タリットル展望台（ガラスのスカイウォーク）。"
+          },
+          {
+            "phase": "スカイカプセル＋昼食",
+            "duration": "≈ 2時間",
+            "description": "青沙浦→尾浦のパステルカラーのスカイカプセル（チケット選択制 — 乗らない方は車両移動またはグリーンレイルウェイ遊歩道を散策）、海雲台近くで昼食。"
+          },
+          {
+            "phase": "二つの丘の村",
+            "duration": "≈ 3時間",
+            "description": "甘川文化村のフォトループ（90分）、続いて静かなタクバッコル壁画村と無料の願いの階段モノレール（50分）。"
+          },
+          {
+            "phase": "市内で締めくくり",
+            "duration": "≈ 1時間",
+            "description": "順次降車：南浦洞 → 釜山駅 → 西面 → 海雲台。"
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "この釜山の一日の流れ",
+          "subtitle": "まず東海岸から：静かな午前の時間帯の海辺の寺、続いて青沙浦クラスター — ガラスのスカイウォークと双子の灯台 — では、スカイカプセルの乗車そのものが尾浦までの海岸移動になります。昼食後は釜山西側の丘へ渡り、趣の異なる二つの村へ：世界的に有名な甘川の色彩、そして無料モノレールが「願いの階段」を登る静かなタクバッコル。市内降車で一日を締めくくります。08:30〜約18:30。"
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "釜山初訪問の方",
+            "カップル・写真中心の旅行者",
+            "大人の家族・友人グループ",
+            "海岸と村を一日で両方見たい方"
+          ],
+          "lessIdealFor": [
+            "徒歩や坂を最小限にしたい方",
+            "ベビーカー中心のグループ（村の路地と階段）",
+            "夜景重視の方 — 昼間のコースです"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "ペース配分と地理的動線",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "寺は静かな時間帯に",
+                  "detail": "海東龍宮寺は釜山で最も撮影される寺で、団体バスの波はおおむね11:00から。約10:00の到着なら、108段の石段と海水観音大仏の展望ポイントを並ばずに歩けます。"
+                },
+                {
+                  "label": "カプセル乗車がそのまま移動",
+                  "detail": "青沙浦からパステルカラーのスカイカプセルが海岸沿いに2.3kmを尾浦まで滑っていきます — 回り道ではなく、車両移動の一区間を置き換える形です。チケットを選ばない方は車両で尾浦へ移動するか、同じ海岸の無料グリーンレイルウェイ遊歩道を歩きます。"
+                },
+                {
+                  "label": "二つの丘の村、二つの表情",
+                  "detail": "甘川は釜山が世界に誇るパステルの円形劇場。10分先のタクバッコルはその静かな地元版です — 人波のほとんどない壁画路地、そして村のお年寄りのために設けられた無料の斜面モノレールが「願いの階段」を代わりに登ってくれます。"
+                },
+                {
+                  "label": "主要スポットは全部無料、有料は一つだけ — しかも選択制",
+                  "detail": "龍宮寺・タリットル展望台・甘川・タクバッコル（モノレール込み）はすべて無料。この一日で唯一の有料アトラクションがスカイカプセルで、それも予約時の選択です：チケット込みにするか、遊歩道を歩きたければチケット別に。"
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "乗車・下車について",
+            "preview": "釜山地下鉄沿いの3か所の乗車地：西面駅4番出口（08:30）、釜山駅…",
+            "content": [
+              "釜山地下鉄沿いの3か所の乗車地：西面駅4番出口（08:30）、釜山駅4番出口——KTX改札ではありません（08:50）、海雲台駅5番出口（09:30）。",
+              "下車の順番：南浦洞／チャガルチ 約17:50、釜山駅 約18:10、西面 約18:30、海雲台 約19:00。",
+              "ツアーの実質所要時間は乗車地によって異なります：西面 約10時間、海雲台 約9.5時間。"
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "服装・持ち物について",
+            "preview": "グリップの利く歩きやすい靴——甘川洞の丘の路地と龍宮寺の108段の…",
+            "content": [
+              "グリップの利く歩きやすい靴——甘川洞の丘の路地と龍宮寺の108段の階段は、どちらも滑り止めが必要です。",
+              "車内のエアコンと龍宮寺の潮風対策に薄手の上着を一枚。",
+              "カメラまたはスマートフォン（甘川洞とチョンサポが撮影のハイライトです）。",
+              "昼食用の現金またはカード（₩10,000〜₩20,000）、チョンサポでのスカイカプセル／ビーチトレインのオプションチケット代、および釜山タワー展望台のオプション入場料。"
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "天候ポリシー",
+            "preview": "通年営業。",
+            "content": [
+              "通年営業。",
+              "小雨：ツアーは予定通り催行 — 雨の龍宮寺（ヨングンサ）は独特の雰囲気があり、甘川（カムチョン）の路地も通行可能です。",
+              "大雨または嵐：運営者はルートを変更する場合があります（龍宮寺の下部境内は滑りやすく、甘川の階段は危険になります）。事前通知のうえ、再予約が可能です。",
+              "台風レベルの天候：運営者側の判断により、全額返金または再予約が可能です。"
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "含まれるもの",
+            "preview": "少人数ミニコーチ（最大約12名）、認定英語ガイド、燃料・通行料・駐車料。",
+            "content": [
+              "少人数ミニコーチ（最大約12名）、認定英語ガイド、燃料・通行料・駐車料。",
+              "主要な立ち寄り先はすべて入場無料：海東龍宮寺、青沙浦タリットル展望台、甘川文化村、タクバッコル壁画村（願いの階段モノレール無料）。",
+              "スカイカプセルのチケット：予約時に選択 — 込み（グループ分のカプセルを事前予約、カプセル2名基準）または別（無料のグリーンレイルウェイ遊歩道を散策、もしくは車両で尾浦へ移動）。",
+              "含まれないもの：昼食（約₩10,000〜15,000）、飲み物、個人的な支出、チップ。"
+            ]
+          },
+          {
+            "id": "language",
+            "title": "言語",
+            "preview": "ツアーの主要言語：英語。",
+            "content": [
+              "ツアーの主要言語：英語。",
+              "中国語対応ガイドはリクエストにより手配可能 — 3日以上前にご予約ください。",
+              "メニュー、標識、屋台でのやり取りなど、終日韓国語が使用されますが、ガイドが通訳いたします。"
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "徒歩と地形",
+            "preview": "短く大変な区間のある中程度の難易度。",
+            "content": [
+              "短く大変な区間のある中程度の難易度。",
+              "龍宮寺は108段の石段を下りて登り返します。",
+              "タリットル展望台は平坦なガラスデッキ（靴カバー提供）。",
+              "スカイカプセルの駅は平坦で、ホームに数段の階段。",
+              "甘川は丘の路地と階段 — 歩きやすい靴を。",
+              "タクバッコルの願いの階段は急ですが、無料モノレールが登りを代行。",
+              "総歩行距離は約4〜5km。"
+            ]
+          },
+          {
+            "id": "capsule",
+            "title": "スカイカプセル（チケット選択制）",
+            "preview": "込み／別 — 予約時に選択します。",
+            "content": [
+              "スカイカプセルは青沙浦〜尾浦の2.3kmの高架レールを、パステルカラーの4人乗りキャビンで走ります（約30分）。海岸線をずっと横に見ながら。",
+              "チケット込みオプション：グループ分のカプセルを事前予約します（カプセル単位で約2名₩30,000／3名₩39,000／4名₩44,000 片道、込みオプションはカプセル2名基準）。",
+              "チケット別オプション：同じ海岸の無料グリーンレイルウェイ遊歩道（2.3km、約30分）を歩くか、車両で尾浦へ移動します。",
+              "運行は天候に左右されます（強風時は一時停止）。カプセルが止まっても、遊歩道の散策と車両移動で行程はそのまま維持されます。"
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "キャンセルポリシー",
+            "preview": "ピックアップの24時間前まで無料キャンセル可能。",
+            "content": [
+              "ピックアップの24時間前まで無料キャンセル可能。",
+              "当日のキャンセルおよびノーショーは返金不可です。"
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "季節のご案内をご覧ください"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "季節のご案内をご覧ください"
+          },
+          "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+        },
+        "seasonalVariations": [
+          {
+            "season": "春（3〜5月）",
+            "description": "3月下旬〜4月上旬、ブルーラインの海岸沿いに桜が並びます — 桜の時期のカプセル乗車は一年で最高です。寺の朝の空気も澄んでいます。"
+          },
+          {
+            "season": "夏（6〜8月）",
+            "description": "日が長く、海岸は都心より涼しく過ごせます。7月の梅雨はスカイウォークの滞在を短くすることがあり、カプセルは夜まで延長運行します。"
+          },
+          {
+            "season": "秋（9〜11月）",
+            "description": "一年で最も澄んだ空 — タリットルのガラス床からの視界が最も良く、甘川の展望ポイントの色彩も最も鮮やかです。"
+          },
+          {
+            "season": "冬（12〜2月）",
+            "description": "どのスポットも一年で最も静かで、写真には澄んだ光。カプセルは暖房付き。寺のテラスと村の路地は暖かい服装で。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "公認地元ガイド",
+            "description": "釜山公認ガイドによる案内",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "users",
+            "title": "少人数グループ",
+            "description": "最大約12名",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600"
+          },
+          {
+            "icon": "shield",
+            "title": "入場料込み",
+            "description": "主要施設の入場料を含む",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "即時",
+            "title": "即時確認",
+            "detail": "旅程概要付きの予約確認書をお送りします"
+          },
+          {
+            "timing": "前日",
+            "title": "ピックアップ詳細",
+            "detail": "正確なピックアップ場所と車両情報をWhatsAppにてお知らせ"
+          },
+          {
+            "timing": "当日の朝",
+            "title": "ピックアップ確認",
+            "detail": "ドライバーが到着10分前に確認の連絡を入れます"
+          },
+          {
+            "timing": "ツアー中",
+            "title": "ツアー中サポート",
+            "detail": "運営担当への直通連絡"
+          },
+          {
+            "timing": "終日（ツアー終了時）",
+            "title": "柔軟な降車場所",
+            "detail": "南浦洞・釜山駅・西面・海雲台の中からご希望の降車場所をお選びいただけます"
+          },
+          {
+            "timing": "ツアー後",
+            "title": "レビュー＆フォローアップ",
+            "detail": "任意のレビューとフォローアップ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "ツアーFAQセクション",
+      "props": {
+        "staticQuestions": [
+          {
+            "question": "スカイカプセルのチケットは含まれますか？",
+            "answer": "予約時に選択できます。チケット込みオプションならグループ分のカプセルを事前予約します（料金はカプセル単位：2名約₩30,000／3名₩39,000／4名₩44,000 片道 — 込みオプションはカプセル2名基準）。基本オプションなら、他の方がカプセルに乗る間、無料のグリーンレイルウェイ遊歩道を歩くか車両で尾浦へ移動できます。"
+          },
+          {
+            "question": "スカイカプセルは事前予約が必要ですか？",
+            "answer": "夕暮れ・週末の枠は1〜2週間前に売り切れます。チケット込みオプションを選べば、予約確定時に当方がグループ予約を行います。空いている平日は現地キオスク発券も可能ですが、保証はできません。"
+          },
+          {
+            "question": "昼食は含まれますか？",
+            "answer": "いいえ — 昼食は別料金です（約₩10,000〜15,000）。ガイドが海雲台／尾浦近くのデジクッパ（釜山名物の豚骨スープごはん）、ミルミョン、海鮮食堂などをおすすめします。"
+          },
+          {
+            "question": "歩く量と坂はどの程度ですか？",
+            "answer": "短く大変な区間のある中程度の難易度です：龍宮寺の108段の往復、タリットル展望台は平坦なガラスデッキ、カプセル駅はほぼ平坦、甘川は丘の路地、タクバッコルは階段ですが無料モノレールが登りを代行します。総歩行距離は約4〜5km。"
+          },
+          {
+            "question": "子どもやシニアでも大丈夫ですか？",
+            "answer": "アクティブな旅行者ならほとんど問題ありません。子どもはガラス床とカプセルが大好きで、タクバッコルのモノレールが最も急な登りを代行します。龍宮寺の石段と甘川の坂がこの日の二つの山場 — ゆっくり歩き、必要なら脇道はスキップを。"
+          },
+          {
+            "question": "釜山トップアトラクション・デイツアーとの違いは？",
+            "answer": "同じ運営会社の別フォーカスです。トップアトラクションは都市のクラシックな周遊（UN記念公園、チャガルチ市場）を回り、この少人数コースは海岸と村に集中します：タリットル展望台の単独ストップ、チケット込みオプションのあるスカイカプセル乗車、そして大型バスが素通りする静かなタクバッコル壁画村。"
+          },
+          {
+            "question": "お迎え・降車はどこですか？",
+            "answer": "市内3駅でお迎えします — 西面（08:30）、釜山駅（08:50）、海雲台（09:30）。降車は南浦洞 → 釜山駅 → 西面 → 海雲台の順で、およそ17:50〜19:00です。"
+          },
+          {
+            "question": "雨の場合はどうなりますか？",
+            "answer": "雨天でも催行します。カプセルとモノレールは通常の雨なら運行し（強風時のみ一時停止）、スカイウォークでは靴カバーが提供され、村の路地は傘で十分歩けます。荒天時は寺の海辺テラスの滞在が短くなることがあります。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "ツアーレビューセクション",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "ツアー固定予約バー",
+      "props": {
+        "note": "checkout_tour_id はSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。",
+        "price": {
+          "amountLabel": "49",
+          "currency": "USD",
+          "per": "person",
+          "salePriceUsd": 49
+        }
+      }
+    }
+  ]
+}

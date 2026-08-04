@@ -154,6 +154,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "84"
     }
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "釜山小团：海东龙宫寺·天空胶囊·文化村",
+      "subtitle": "一天串联釜山海岸名所与山坡村落的小团之旅 — 海东龙宫寺、青沙浦踏石展望台（玻璃天空步道）、蓝线公园天空胶囊（预订时可选含票/不含票）、甘川文化村，以及拥有“希望阶梯”单轨的宁静닥밭골（Dakbatgol）壁画村。",
+      "region": "釜山",
+      "duration": "≈ 10小时",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "小团",
+        "釜山",
+        "天空胶囊",
+        "海岸",
+        "文化村"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "以海岸与山坡村落为轴心的釜山小团一日游。清静上午时段的海东龙宫寺、免费玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的蓝线公园天空胶囊（预订时选择含票或不含票）、午餐、甘川文化村，以及免费单轨沿“希望阶梯”上行的小众Dakbatgol壁画村。除可选的胶囊外，所有核心停留点均免费入场。"
+    },
+    "price": {
+      "amountLabel": "49"
+    }
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     "catalog_card": {
       "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

@@ -154,6 +154,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "84"
     }
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・文化村",
+      "subtitle": "釜山の海岸名所と丘の村を一日でつなぐ少人数ツアー — 海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーラインパークのスカイカプセル（チケット込み／別を予約時に選択）、甘川文化村、そして「願いの階段」モノレールのある静かなタクバッコル壁画村。",
+      "region": "釜山",
+      "duration": "≈ 10時間",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "少人数",
+        "釜山",
+        "スカイカプセル",
+        "海岸",
+        "文化村"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
+    },
+    "price": {
+      "amountLabel": "49"
+    }
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     "catalog_card": {
       "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

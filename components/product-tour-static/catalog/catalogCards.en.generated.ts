@@ -154,6 +154,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "84"
     }
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan Small-Group: Sea Temple, Sky Capsule & Culture Villages",
+      "subtitle": "Small-group day tour of Busan's coastal icons and hillside villages — Haedong Yonggungsa seaside temple, the Cheongsapo Daritdol glass skywalk, the Blueline Park Sky Capsule ride (ticket optional at booking), Gamcheon Culture Village, and the quiet Dakbatgol mural village with its wish-stairs monorail.",
+      "region": "Busan",
+      "duration": "≈ 10 hours",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Small group",
+        "Busan",
+        "Sky Capsule",
+        "Coastal",
+        "Culture villages"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "A small-group Busan day built around the coast and the hillside villages: Haedong Yonggungsa seaside temple in its quiet morning window, the free glass-floor Daritdol Observatory at Cheongsapo, the Blueline Park Sky Capsule ride from Cheongsapo to Mipo (ticket included or excluded — choose at booking), lunch, Gamcheon Culture Village, and the little-known Dakbatgol mural village where a free monorail glides up the 'wish stairs'. Every anchor except the optional capsule is free admission."
+    },
+    "price": {
+      "amountLabel": "49"
+    }
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     "catalog_card": {
       "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

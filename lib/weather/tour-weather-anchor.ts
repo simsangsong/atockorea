@@ -49,6 +49,7 @@ export const TOUR_WEATHER_ANCHORS: Record<string, TourWeatherAnchor> = {
   "from-busan-gyeongju-ancient-capital-day-tour": { latitude: 35.7899, longitude: 129.3319, areaLabel: "Gyeongju", areaLabelKo: "경주" },
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju": { latitude: 35.488, longitude: 129.0643, areaLabel: "Yangsan · Tongdosa", areaLabelKo: "양산·통도사" },
   "busan-top-attractions-day-tour": { latitude: 35.1885, longitude: 129.2231, areaLabel: "Busan", areaLabelKo: "부산" },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { latitude: 35.1885, longitude: 129.2231, areaLabel: "Busan", areaLabelKo: "부산" },
   "busan-cruise-shore-excursion-bus-tour": { latitude: 35.1885, longitude: 129.2231, areaLabel: "Busan", areaLabelKo: "부산" },
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": { latitude: 35.488, longitude: 129.0643, areaLabel: "Yangsan · Yeongnam", areaLabelKo: "양산·영남" },
   "busan-private-car-charter-cruise-shore": { latitude: 35.0975, longitude: 129.0388, areaLabel: "Busan", areaLabelKo: "부산" },

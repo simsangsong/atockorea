@@ -113,6 +113,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     es: () => loadJson(import("@/components/product-tour-static/busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.es.json")),
     ja: () => loadJson(import("@/components/product-tour-static/busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.ja.json")),
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    en: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.en.json")),
+    ko: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ko.json")),
+    zh: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh.json")),
+    "zh-TW": () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh-TW.json")),
+    es: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.es.json")),
+    ja: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ja.json")),
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     en: () => loadJson(import("@/components/product-tour-static/busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json")),
     ko: () => loadJson(import("@/components/product-tour-static/busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.ko.json")),

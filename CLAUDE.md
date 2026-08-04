@@ -55,6 +55,13 @@ P-01 은 ⏸ 데이터 대기(PR #702 판정 — 픽업 장소 0건·시각 상�
 남부·서남부는 v18(2026-06-24)에 이미 요청 코스와 일치했다 — **콘텐츠 재작성 금지, 플래그만**.
 de/fr/it/ru 상품 페이지는 설계상 EN 폴백(i18n 확장 트랙 사람 게이트) — 콘텐츠 로케일 실체는 6개.
 
+**+부산 신규 상품(같은 날, 사장님 지시):** `busan-small-group-yonggungsa-skycapsule-gamcheon-tour` —
+해동용궁사→청사포 다릿돌전망대→스카이캡슐(⚠티켓 포함/불포함 = 예약 시 선택, offers 2행)→점심→감천→
+닥밭골&소망계단 모노레일. 도너 `busan-top-attractions-day-tour`(픽업 3역·용궁사·감천 스톱 재사용) +
+빌더 `scripts/build-busan-smallgroup-2026-08.mjs` / 콘텐츠 `scripts/busan-smallgroup-content/`(6로케일).
+⚠ **가격 $49(캡슐 제외)/$64(포함)는 내 시딩 — 사장님 검토 게이트.** 다릿돌·닥밭골은 보유 사진 0(이미지 없는 스톱).
+DB는 `2026-08-04-03-*.sql`(⚠ 미적용) + `import-match-v18 --single`.
+
 ## ✅ 완료: 스마트앱 **기능** 감사 — **F-1 · F0~F8 전 페이즈 종결**
 
 **요약·다음:** **`docs/NEXT-SESSION-SMARTAPP-FEATURE-AUDIT-2026-08-04.md`**

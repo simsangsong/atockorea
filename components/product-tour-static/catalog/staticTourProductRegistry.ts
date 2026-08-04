@@ -49,6 +49,12 @@ import busanSmallGroupSightseeingCruiseZh from "../busan-small-group-sightseeing
 import busanSmallGroupSightseeingCruiseZhTw from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.zh-TW.json";
 import busanSmallGroupSightseeingCruiseEs from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.es.json";
 import busanSmallGroupSightseeingCruiseJa from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.ja.json";
+import busanSmallGroupYonggungsaSkycapsuleEn from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.en.json";
+import busanSmallGroupYonggungsaSkycapsuleKo from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ko.json";
+import busanSmallGroupYonggungsaSkycapsuleZh from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh.json";
+import busanSmallGroupYonggungsaSkycapsuleZhTw from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh-TW.json";
+import busanSmallGroupYonggungsaSkycapsuleEs from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.es.json";
+import busanSmallGroupYonggungsaSkycapsuleJa from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ja.json";
 import busanSpringCherryBlossomGyeongjuEn from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json";
 import busanSpringCherryBlossomGyeongjuKo from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.ko.json";
 import busanSpringCherryBlossomGyeongjuZh from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.zh.json";
@@ -275,6 +281,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaEn as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreEn as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseEn as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleEn as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuEn as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayEn as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageEn as PageJsonShape,
@@ -311,6 +318,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaKo as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreKo as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseKo as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleKo as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuKo as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayKo as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageKo as PageJsonShape,
@@ -347,6 +355,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaZh as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreZh as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseZh as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleZh as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuZh as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayZh as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageZh as PageJsonShape,
@@ -383,6 +392,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaZhTw as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreZhTw as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseZhTw as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleZhTw as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuZhTw as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayZhTw as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageZhTw as PageJsonShape,
@@ -419,6 +429,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaEs as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreEs as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseEs as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleEs as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuEs as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayEs as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageEs as PageJsonShape,
@@ -455,6 +466,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaJa as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreJa as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseJa as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleJa as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuJa as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayJa as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageJa as PageJsonShape,
@@ -493,6 +505,7 @@ const SLUG_ORDER: readonly string[] = [
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
   "busan-top-attractions-day-tour",
   "east-signature-nature-core",
@@ -538,6 +551,8 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
+  // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED (included option +$15, see offers SQL). Owner price review pending.
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 49, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
