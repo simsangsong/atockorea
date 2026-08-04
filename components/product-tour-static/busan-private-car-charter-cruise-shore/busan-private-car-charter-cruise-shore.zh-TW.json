@@ -45,10 +45,10 @@
   "headlineLine1": "釜山郵輪岸上私人包車",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "364",
+    "amountLabel": "456.99",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 364
+    "salePriceUsd": 456.99
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1013,10 +1013,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析，不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "364",
+      "amountLabel": "456.99",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 364
+      "salePriceUsd": 456.99
     }
   },
   "pickup_dropoff": {
@@ -1025,29 +1025,29 @@
       {
         "name": "釜山郵輪碼頭（國際郵輪港）",
         "time": "Within 30 min of cruise disembarkation",
-        "note": "司機將在入境大廳持 AtoC Korea 接機牌等候；請提供您的郵輪名稱及靠泊碼頭，以便我們確認時間。"
+        "note": "停靠釜山的郵輪兩個碼頭都有可能使用，實際以您船隻的靠泊位置為準，預訂後確認。請在抵達大廳與導遊會合。"
       },
       {
         "name": "釜山站（KTX）正門出口",
         "time": "Flexible — confirm at booking",
-        "note": "若您搭乘 KTX 抵達釜山後再參加郵輪行程，我們可改為在車站接送。"
+        "note": "停靠釜山的郵輪兩個碼頭都有可能使用，實際以您船隻的靠泊位置為準，預訂後確認。請在抵達大廳與導遊會合。"
       },
       {
         "name": "釜山市中心任意酒店",
         "time": "Flexible — confirm at booking",
-        "note": "提供釜山市中心任意酒店的門到門接送服務（海雲台、西面、南浦洞、Centum City）。"
+        "note": "停靠釜山的郵輪兩個碼頭都有可能使用，實際以您船隻的靠泊位置為準，預訂後確認。請在抵達大廳與導遊會合。"
       }
     ],
     "dropoff_points": [
       {
         "name": "釜山郵輪碼頭（返回郵輪）",
         "approx_time": "約於郵輪全員登船廣播前 90 分鐘",
-        "note": "保證準時返回——我們全天監控您郵輪的出發時間窗口。"
+        "note": "停靠釜山的郵輪兩個碼頭都有可能使用，實際以您船隻的靠泊位置為準，預訂後確認。請在抵達大廳與導遊會合。"
       },
       {
         "name": "釜山市中心任意酒店",
         "approx_time": "約於服務時段結束時",
-        "note": "可送達釜山市中心任意地址。"
+        "note": "停靠釜山的郵輪兩個碼頭都有可能使用，實際以您船隻的靠泊位置為準，預訂後確認。請在抵達大廳與導遊會合。"
       }
     ],
     "hotel_pickup_available": true,

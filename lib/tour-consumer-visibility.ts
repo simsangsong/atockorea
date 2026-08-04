@@ -121,7 +121,12 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // DB half staged in supabase/pending-db-apply/2026-08-04-*.sql.
   "jeju-hydrangea-festival-tour-east-route",
   "jeju-hydrangea-festival-tour-southwest-route",
-  "busan-cruise-shore-excursion-bus-tour",
+  // ── Busan cruise shore-excursion trio re-opened 2026-08-04 (owner instruction) ──
+  // busan-cruise-shore-excursion-bus-tour was hidden by the 2026-06-29 Klook
+  // 12-SKU narrowing. All three Busan cruise SKUs are now priced to match their
+  // channel listings exactly, so the join-in tier has to be sellable again.
+  // DB half staged in supabase/pending-db-apply/ — is_active/is_published must be
+  // flipped back for this slug or the row stays dark on /api/tours.
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

@@ -72,7 +72,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "Busan Cruise Shore: Coastal Bus Tour",
         "subtitle": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away.",
         "region": "Busan",
-        "duration": "9 hours",
+        "duration": "8 hours",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -84,11 +84,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "From US$49 per person (was $55, 11% off)",
+        "priceLabel": "",
         "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
       },
       "price": {
-        "amountLabel": "49"
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -187,7 +187,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -196,7 +196,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "Busan Cruise Shore: Small-Group Tour",
         "subtitle": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
         "region": "Busan",
-        "duration": "9 hours",
+        "duration": "8 hours",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -212,7 +212,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
@@ -962,7 +962,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "부산 크루즈 기항지: 해안 버스 투어",
         "subtitle": "대형 버스로 떠나는 부산 해안 8개 코스 순환 투어, 크루즈 터미널 픽업과 선박 출항 시간에 맞춘 귀환 일정 포함.",
         "region": "부산",
-        "duration": "9시간",
+        "duration": "8시간",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -974,11 +974,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "1인 US$49부터 (정가 $55, 11% 할인)",
+        "priceLabel": "",
         "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -1077,7 +1077,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -1086,7 +1086,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "부산 크루즈 기항지 소그룹 투어",
         "subtitle": "크루즈 터미널에서 출발해 하루 9시간, 공유 밴으로 부산의 대표 명소 다섯 곳을 한 번에.",
         "region": "부산",
-        "duration": "9시간",
+        "duration": "8시간",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -1102,7 +1102,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "부산 크루즈 터미널에서 출발해 9시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행."
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
@@ -1852,7 +1852,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山邮轮靠岸：沿海巴士观光",
         "subtitle": "乘坐大型巴士游览釜山沿海8个景点，提供邮轮码头接送，并根据您所乘邮轮的启航时间合理安排返回行程。",
         "region": "釜山",
-        "duration": "9小时",
+        "duration": "8小时",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -1864,11 +1864,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "每人起价49美元（原价55美元，优惠11%）",
+        "priceLabel": "",
         "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -1967,7 +1967,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。"
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -1976,7 +1976,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山邮轮岸上小团游",
         "subtitle": "从邮轮码头出发，9小时共乘面包车游览釜山五大标志性景点。",
         "region": "釜山",
-        "duration": "9小时",
+        "duration": "8小时",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -1992,7 +1992,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，9小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
@@ -2742,7 +2742,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山郵輪岸上：海岸巴士遊覽",
         "subtitle": "乘坐大型巴士暢遊釜山海岸8站行程，提供郵輪碼頭接送，並依郵輪啟航時間安排返程。",
         "region": "釜山",
-        "duration": "9小時",
+        "duration": "8小時",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2754,11 +2754,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "每人起價 US$49（原價 $55，優惠 11%）",
+        "priceLabel": "",
         "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -2857,7 +2857,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -2866,7 +2866,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山郵輪岸上小團遊",
         "subtitle": "從郵輪碼頭出發，一趟9小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
         "region": "釜山",
-        "duration": "9小時",
+        "duration": "8小時",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2882,7 +2882,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在9小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
@@ -3632,7 +3632,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "Excursión en tierra desde Busan en crucero: Tour en autobús por la costa",
         "subtitle": "Circuito costero por Busan de 8 paradas en autocar grande, con recogida en la terminal de cruceros y regreso planificado en función de la hora de salida de su barco.",
         "region": "Busan",
-        "duration": "9 horas",
+        "duration": "8 horas",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -3644,11 +3644,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "Desde US$49 por persona (antes $55, 11% de descuento)",
+        "priceLabel": "",
         "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 8 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -3747,7 +3747,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -3756,7 +3756,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "Busan Crucero: Grupo Pequeño",
         "subtitle": "Cinco lugares emblemáticos de Busan desde su terminal de cruceros en un día de 9 horas en furgoneta compartida.",
         "region": "Busan",
-        "duration": "9 horas",
+        "duration": "8 horas",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -3772,7 +3772,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 9 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china."
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
@@ -4519,7 +4519,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山クルーズ寄港地：沿岸バスツアー",
         "subtitle": "大型バスで巡る釜山沿岸8スポット周遊、クルーズターミナル送迎付き、船の出港時刻に合わせた帰港スケジュール。",
         "region": "釜山",
-        "duration": "9時間",
+        "duration": "8時間",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -4531,11 +4531,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-        "priceLabel": "お一人様49米ドルから（通常55ドル、11%オフ）",
+        "priceLabel": "",
         "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選8スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
       },
       "price": {
-        "amountLabel": ""
+        "amountLabel": "58.79"
       }
     },
     "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -4634,7 +4634,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
       },
       "price": {
-        "amountLabel": "364"
+        "amountLabel": "456.99"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -4643,7 +4643,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "title": "釜山クルーズ寄港地・少人数ツアー",
         "subtitle": "クルーズターミナルから出発、乗合バンで9時間、釜山を代表する5つのスポットを巡る。",
         "region": "釜山",
-        "duration": "9時間",
+        "duration": "8時間",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -4659,7 +4659,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを9時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
       },
       "price": {
-        "amountLabel": "84"
+        "amountLabel": "68.95"
       }
     },
     "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {

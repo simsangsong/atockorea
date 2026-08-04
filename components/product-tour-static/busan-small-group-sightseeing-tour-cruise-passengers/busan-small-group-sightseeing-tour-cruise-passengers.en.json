@@ -35,7 +35,7 @@
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
     "region": "Busan",
-    "duration": "9 hours",
+    "duration": "8 hours",
     "stopsCount": 8,
     "badges": [
       "Cruise excursion",
@@ -48,10 +48,10 @@
   "headlineLine1": "Busan Cruise Shore",
   "headlineLine2": "Small-Group Tour",
   "price": {
-    "amountLabel": "84",
+    "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 84
+    "salePriceUsd": 68.95
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -63,7 +63,7 @@
       "Busan"
     ],
     "meta": {
-      "duration": "≈ 9 hours, planned to your cruise's port-call period",
+      "duration": "≈ 8 hours, planned to your cruise's port-call period",
       "region": "Busan",
       "stops": "8 stops",
       "rating": 0,
@@ -1189,7 +1189,7 @@
           },
           {
             "label": "Shared-van price between coach and private tour",
-            "detail": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to ≈10 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
+            "detail": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to 12 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
           }
         ]
       }
@@ -1210,9 +1210,9 @@
     {
       "id": "pickup",
       "title": "Pickup & drop-off",
-      "preview": "Group meets at the Busan Port International Passenger Terminal arrival hall.",
+      "preview": "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
       "content": [
-        "Group meets at the Busan Port International Passenger Terminal arrival hall.",
+        "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
         "Pickup time is adjusted to your ship's actual disembarkation, not a fixed start.",
         "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking.",
         "Early pickup (before 08:00) adds ₩10,000 per person."
@@ -1337,7 +1337,7 @@
       "description": "Right-sized for the route",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
-      "body": "Small shared van capped at ~10 passengers: Gamcheon's narrow alleys and Taejongdae's cliff path are far more manageable than the 40-person bus tours."
+      "body": "Small shared van capped at 12 passengers: Gamcheon's narrow alleys and Taejongdae's cliff path are far more manageable than the 40-person bus tours."
     }
   ],
   "bookingSupportSteps": [
@@ -1382,7 +1382,7 @@
     {
       "id": "q-cruise-busy-day",
       "question": "Will the tour be full on busy cruise days?",
-      "answer": "The shared van seats up to about 10 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
+      "answer": "The shared van seats up to 12 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
     },
     {
       "id": "q-early-arrival",
@@ -1491,10 +1491,10 @@
   "sticky_booking_bar": {
     "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
-      "amountLabel": "84",
+      "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 84
+      "salePriceUsd": 68.95
     }
   },
   "pickup_dropoff": {
@@ -1504,7 +1504,7 @@
         "time": "Confirmed at booking (≈30 min after ship docking)",
         "name": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
         "type": "cruise_terminal",
-        "note": "Primary terminal for large cruise ships. Meet your guide at the arrival hall — guide holds an AtoC Korea sign with your name.",
+        "note": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
         "lat": 35.0747,
         "lng": 129.0884
       },
@@ -1513,7 +1513,7 @@
         "time": "Confirmed at booking (≈30 min after ship docking)",
         "name": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
         "type": "cruise_terminal",
-        "note": "For smaller cruise ships and ferries that dock at the Choryang passenger terminal. Meet your guide at the arrival hall.",
+        "note": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
         "lat": 35.1149,
         "lng": 129.0455
       }
@@ -1547,7 +1547,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -1613,7 +1613,7 @@
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1762,7 +1762,8 @@
     "signature_window_label": "Year-round (cruise port operating window)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "max_group_size": 12
   },
   "matching_metadata": {
     "primary_themes": [
@@ -2484,7 +2485,7 @@
                 },
                 {
                   "label": "Shared-van price between coach and private tour",
-                  "detail": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to ≈10 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
+                  "detail": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to 12 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
                 }
               ]
             }
@@ -2653,7 +2654,7 @@
           {
             "id": "q-cruise-busy-day",
             "question": "Will the tour be full on busy cruise days?",
-            "answer": "The shared van seats up to about 10 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
+            "answer": "The shared van seats up to 12 passengers. On peak cruise days, multiple vans may operate rather than overcrowding a single vehicle, so you may join cruise guests from different ships."
           },
           {
             "id": "q-early-arrival",

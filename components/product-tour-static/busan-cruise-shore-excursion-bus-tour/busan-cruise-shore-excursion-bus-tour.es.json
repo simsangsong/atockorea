@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Excursión en tierra desde Busan en crucero: Tour en autobús por la costa",
-    "priceLabel": "Desde US$49 por persona (antes $55, 11% de descuento)",
+    "priceLabel": "",
     "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 8 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande.",
     "tags": [
       "Excursión en crucero",
@@ -35,7 +35,7 @@
     "slug": "busan-cruise-shore-excursion-bus-tour",
     "subtitle": "Circuito costero por Busan de 8 paradas en autocar grande, con recogida en la terminal de cruceros y regreso planificado en función de la hora de salida de su barco.",
     "region": "Busan",
-    "duration": "9 horas",
+    "duration": "8 horas",
     "stopsCount": 8,
     "badges": [
       "Excursión en crucero",
@@ -49,12 +49,10 @@
   "headlineLine1": "Excursión en tierra desde Busan en crucero",
   "headlineLine2": "Tour en autobús por la costa",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "58.79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 58.79
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -66,7 +64,7 @@
       "Tour en autobús"
     ],
     "meta": {
-      "duration": "≈ 9 horas, adaptado a la escala de tu crucero en puerto",
+      "duration": "≈ 8 horas, adaptado a la escala de tu crucero en puerto",
       "region": "Busan",
       "stops": "8 paradas",
       "rating": 0,
@@ -99,7 +97,7 @@
     {
       "icon": "clock",
       "label": "Duración",
-      "value": "9 horas"
+      "value": "8 horas"
     },
     {
       "icon": "camera",
@@ -1648,9 +1646,9 @@
     {
       "id": "pickup",
       "title": "Recogida y regreso",
-      "preview": "Recogida directa en la terminal de cruceros en el vestíbulo de llegadas de la Terminal Internacional de Cruceros del Puerto de Busan…",
+      "preview": "El grupo se reúne en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco: la Terminal Internacional de Cruceros de Busan (Yeongdo) o la Terminal Internacional de Pasajeros del Puerto de Busan (Choryang). La terminal se confirma al reservar.",
       "content": [
-        "Recogida directa en la terminal de cruceros en el vestíbulo de llegadas de la Terminal Internacional de Cruceros del Puerto de Busan — busque el cartel de AtoC Korea en el punto de encuentro.",
+        "El grupo se reúne en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco: la Terminal Internacional de Cruceros de Busan (Yeongdo) o la Terminal Internacional de Pasajeros del Puerto de Busan (Choryang). La terminal se confirma al reservar.",
         "Embarque en el autocar a las 08:25 para una salida a las 08:30; por favor, calcule tiempo suficiente para las colas de desembarque del crucero.",
         "Regreso a la misma zona de autocares de la terminal de cruceros aproximadamente entre las 19:15 y las 19:30.",
         "El guía confirmará la hora exacta de salida de su barco en el recogido matutino y ajustará el orden del día si fuera necesario."
@@ -1950,14 +1948,14 @@
       "name": "Terminal Internacional de Cruceros del Puerto de Busan",
       "address": "Choryangdae-ro 24, Dong-gu, Busan",
       "time": "08:30 pickup / 19:15–19:30 drop-off",
-      "instructions": "Encuentre al guía en la sala de llegadas de la terminal — busque el cartel de 'AtoC Korea / Busan Coastal Tour'. Embarque en el autocar a las 08:25 en el aparcamiento de autocares de la terminal, a 2 minutos a pie por la galería cubierta."
+      "instructions": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
     },
     "alternates": [
       {
         "name": "Terminal Internacional de Pasajeros Coral del Puerto de Busan",
         "address": "Chungjang-daero 206, Jung-gu, Busan",
         "time": "08:30 pickup (alternate)",
-        "instructions": "Si su línea de cruceros atraca en la terminal Coral en lugar de la terminal de Cruceros, notifíquelo al momento de la reserva — el autobús lo recogerá en la sala de llegadas de la terminal Coral."
+        "instructions": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       }
     ]
   },
@@ -1970,7 +1968,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_gijang",
       "busan_namgu",
@@ -2045,7 +2043,7 @@
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "19:00-19:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [

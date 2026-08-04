@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山クルーズ寄港地：沿岸バスツアー",
-    "priceLabel": "お一人様49米ドルから（通常55ドル、11%オフ）",
+    "priceLabel": "",
     "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選8スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。",
     "tags": [
       "クルーズ観光",
@@ -35,7 +35,7 @@
     "slug": "busan-cruise-shore-excursion-bus-tour",
     "subtitle": "大型バスで巡る釜山沿岸8スポット周遊、クルーズターミナル送迎付き、船の出港時刻に合わせた帰港スケジュール。",
     "region": "釜山",
-    "duration": "9時間",
+    "duration": "8時間",
     "stopsCount": 8,
     "badges": [
       "クルーズ観光",
@@ -49,12 +49,10 @@
   "headlineLine1": "釜山クルーズ寄港地",
   "headlineLine2": "沿岸バスツアー",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "58.79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 58.79
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -66,7 +64,7 @@
       "バスツアー"
     ],
     "meta": {
-      "duration": "約9時間、クルーズの寄港時間に合わせたスケジュール",
+      "duration": "約8時間、クルーズの寄港時間に合わせたスケジュール",
       "region": "釜山",
       "stops": "8か所",
       "rating": 0,
@@ -99,7 +97,7 @@
     {
       "icon": "clock",
       "label": "所要時間",
-      "value": "9時間"
+      "value": "8時間"
     },
     {
       "icon": "camera",
@@ -1248,9 +1246,9 @@
     {
       "id": "pickup",
       "title": "乗車・降車場所",
-      "preview": "釜山港国際クルーズターミナル到着ホールにて直接お迎え…",
+      "preview": "集合場所は、お客様の船が着岸する釜山のクルーズターミナル到着ホールです — 影島クルーズターミナルまたは釜山港国際旅客ターミナル（草梁）のいずれかで、ご予約後に確定します。",
       "content": [
-        "釜山港国際クルーズターミナル到着ホールにて直接お迎え — 集合場所にてAtoC Koreaのサインをお探しください。",
+        "集合場所は、お客様の船が着岸する釜山のクルーズターミナル到着ホールです — 影島クルーズターミナルまたは釜山港国際旅客ターミナル（草梁）のいずれかで、ご予約後に確定します。",
         "08:30出発のため、08:25にコーチへご乗車ください。クルーズ船の下船待ち列に余裕を持ってお越しください。",
         "同じクルーズターミナルのコーチ駐車場に、19:15〜19:30頃帰着予定です。",
         "ガイドが朝のお迎え時にご乗船のクルーズ船の出港時間を確認し、必要に応じてその日の行程順を調整いたします。"
@@ -1550,14 +1548,14 @@
       "name": "釜山港国際クルーズターミナル",
       "address": "釜山広域市東区草梁台路24",
       "time": "08:30 pickup / 19:15–19:30 drop-off",
-      "instructions": "ターミナルの到着ホールでガイドとお待ち合わせください——「AtoC Korea / Busan Coastal Tour」の看板を目印にしてください。コーチへの乗車は08:25、ターミナルのコーチ乗り場にて（屋根付き通路を徒歩約2分）。"
+      "instructions": "釜山に寄港するクルーズ船は、どちらのターミナルにも着岸します。どちらになるかは船の着岸場所によって決まり、ご予約後に確定します。到着ホールでガイドがお待ちしています。"
     },
     "alternates": [
       {
         "name": "釜山港コーラル国際旅客ターミナル",
         "address": "釜山広域市中区忠壮大路206",
         "time": "08:30 pickup (alternate)",
-        "instructions": "クルーズ船がクルーズターミナルではなくコーラルターミナルに停泊する場合は、予約時にお知らせください。コーチはコーラルターミナルの到着ホールにてお迎えいたします。"
+        "instructions": "釜山に寄港するクルーズ船は、どちらのターミナルにも着岸します。どちらになるかは船の着岸場所によって決まり、ご予約後に確定します。到着ホールでガイドがお待ちしています。"
       }
     ]
   },
@@ -1570,7 +1568,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_gijang",
       "busan_namgu",
@@ -1645,7 +1643,7 @@
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "19:00-19:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
