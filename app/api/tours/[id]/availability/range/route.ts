@@ -59,7 +59,13 @@ export async function GET(
       .eq('tour_id', tourId)
       .gte('tour_date', start.toISOString().split('T')[0])
       .lte('tour_date', end.toISOString().split('T')[0])
-      .eq('is_available', true)
+      // 🔴 Do NOT filter on is_available. Closed days are exactly the rows we
+      // need: a date with no entry in `availabilityMap` falls through to the
+      // "no inventory record" branch below and is published as OPEN with the
+      // default capacity. Filtering them out therefore turned every day an
+      // operator had explicitly closed back into a bookable one. The map
+      // construction already reads `inv.is_available`, so keeping the rows is
+      // enough to honour the closure.
       .order('tour_date', { ascending: true });
 
     // Get all bookings for the date range
