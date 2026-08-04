@@ -19,11 +19,11 @@
 | 안읽음 구분선 | ✅ | `components/tour-mode/ChatFeed.tsx:731` |
 | 아래로 점프 + 새 메시지 배지 | ✅ | `components/tour-mode/ChatFeed.tsx:461` |
 | 음성 메시지 왕복 (STT→번역 / 한국어 TTS) | ✅ | `app/api/tour-rooms/[bookingId]/messages/route.ts:3` |
-| 사진·파일·링크 모아보기 + 더 보기 | ✅ | `components/tour-mode/RoomDrawer.tsx:569` |
+| 사진·파일·링크 모아보기 + 더 보기 | ✅ | `components/tour-mode/RoomDrawer.tsx:576` |
 | 사진 단건 저장 | ✅ | `components/tour-mode/Lightbox.tsx:106` |
 | 전달 (forward) | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx · components/tour-mode/Composer.tsx)` |
 | 메시지 단위 공유 (텍스트만, §5-2) | ✅ | `components/tour-mode/ChatFeed.tsx:23` |
-| 채팅 내 검색 (§5-3) | ✅ | `components/tour-mode/RoomDrawer.tsx:514` |
+| 채팅 내 검색 (§5-3) | ✅ | `components/tour-mode/RoomDrawer.tsx:515` |
 | 컴포저 이모지 피커 | ✗ | `0 hits (components/tour-mode/Composer.tsx)` |
 | 이미지 붙여넣기 (클립보드, §5-6) | ✅ | `components/tour-mode/Composer.tsx:484` |
 | 링크 프리뷰 (텍스트만, §5-4) | ✅ | `components/tour-mode/ChatFeed.tsx:24` |

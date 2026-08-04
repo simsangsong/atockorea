@@ -20,6 +20,7 @@ import Avatar from '@/components/tour-mode/Avatar';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import type { DrawerAttachmentItem, DrawerLinkItem } from '@/lib/tour-room/drawer';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { formatBubbleTime } from '@/lib/tour-room/timeFormat';
 import { useInstallPrompt } from '@/hooks/useInstallPrompt';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
@@ -530,7 +531,13 @@ export default function RoomDrawer({
                           {(m.source_text || Object.values(m.translations ?? {})[0] || '').slice(0, 60)}
                         </span>
                         <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">
-                          {new Date(m.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                          {/* 🔴 Use the room's formatter, not the device's. `toLocaleTimeString([])`
+                              follows the DEVICE locale and timezone: an English room on a Korean
+                              phone printed "오후 08:00" next to English labels, and a guest whose
+                              phone is still on their home timezone would read a different time here
+                              than on the very bubble this hit scrolls to. `formatBubbleTime` is what
+                              ChatFeed uses for exactly this. */}
+                          {formatBubbleTime(m.created_at, locale)}
                         </span>
                       </button>
                     ))}
