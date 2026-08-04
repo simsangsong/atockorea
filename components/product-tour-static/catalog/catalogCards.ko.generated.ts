@@ -383,7 +383,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "제주 동부 유네스코 일일 투어",
-      "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·성산일출봉(유네스코)·해녀 물질공연·만장굴(유네스코)을 9시간 동부 루프로 일주합니다.",
+      "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 개장 직후의 한적한 만장굴(유네스코), 성읍민속마을, 성산일출봉(유네스코), 해녀 물질공연, 함덕해변 피날레를 9시간 동부 루프로 일주합니다.",
       "region": "동제주",
       "duration": "9시간",
       "stopsCount": 8,
@@ -400,7 +400,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드."
+      "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다 — 이제 동굴을 먼저 갑니다: 개장 직후 가장 한적한 만장굴, 성읍민속마을, 성산일출봉과 해녀 물질공연(취소 시 해녀박물관), 그리고 늦은 오후의 함덕 서우봉해변 피날레. 2007년 함께 등재된 두 유네스코 세계자연유산, 전 입장료 포함, 공인 영어·중국어 가이드."
     },
     "price": {
       "amountLabel": "49"

@@ -383,7 +383,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "済州東部ユネスコ日帰りツアー",
-      "subtitle": "少人数ミニバス、英語・中国語ガイド — 咸徳ビーチ・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・万丈窟（ユネスコ）を9時間の東部ループで一周します。",
+      "subtitle": "少人数ミニバス、英語・中国語ガイド — 開場直後の静かな万丈窟（ユネスコ）・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・咸徳ビーチのフィナーレを9時間の東部ループで巡ります。",
       "region": "東済州",
       "duration": "9時間",
       "stopsCount": 8,
@@ -400,7 +400,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。"
+      "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します — 洞窟を最初に巡る新ルート：開場直後の最も静かな万丈窟、城邑民俗村、城山日出峰と海女の素潜り実演（中止時は海女博物館）、そして夕方前の咸徳ソウボン海水浴場のフィナーレ。2007年にともに登録された2つのユネスコ世界自然遺産、全入場料込み、英語・中国語対応の認定ガイド付き。"
     },
     "price": {
       "amountLabel": "49"

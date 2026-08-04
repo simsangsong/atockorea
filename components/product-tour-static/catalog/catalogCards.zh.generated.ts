@@ -383,7 +383,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "济州东部UNESCO一日游",
-      "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览咸德海水浴场·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·万丈窟（联合国教科文组织）。",
+      "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览开放后最清静的万丈窟（联合国教科文组织）·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·咸德海滩终章。",
       "region": "济州东部",
       "duration": "9小时",
       "stopsCount": 8,
@@ -400,7 +400,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点。涵盖咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰与万丈窟 — 2007年共同登录的两处联合国教科文组织世界自然遗产，以及海女潜水表演（取消时改为海女博物馆）。含全部门票，持证英语·中文导游。"
+      "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点 — 现在洞窟先行：开放后最清静时段的万丈窟、城邑民俗村、城山日出峰与海女潜水表演（取消时改为海女博物馆），再以傍晚前的咸德犀牛峰海滩收尾。2007年共同登录的两处联合国教科文组织世界自然遗产，含全部门票，持证英语·中文导游。"
     },
     "price": {
       "amountLabel": "49"

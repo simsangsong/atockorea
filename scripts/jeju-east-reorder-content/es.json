@@ -1,0 +1,73 @@
+{
+  "pickup": {
+    "whyOnRoute": "Cuatro puntos de recogida cubren la mayoría de zonas hoteleras de Ciudad de Jeju. El recorrido en dirección este es lineal, sin desvíos, hacia Manjanggul — el autobús llega poco después de la apertura (09:00), antes de la oleada de autobuses turísticos del mediodía.",
+    "descReplace": [
+      [
+        "Ruta 1132 en dirección este hacia Hamdeok",
+        "Ruta 1132 en dirección este hacia Gimnyeong y el tubo de lava de Manjanggul"
+      ]
+    ]
+  },
+  "manjang": {
+    "whyOnRoute": "**El acto inaugural de la jornada — y su primer sitio del Patrimonio Natural Mundial de la UNESCO.** Saliendo de Ciudad de Jeju justo después de la recogida, el autobús llega a Manjanggul poco después de la apertura de las 09:00, cuando el tubo de lava está en su momento más tranquilo: se recorre el tramo de 1 km antes de las aglomeraciones de autobuses turísticos del mediodía, con el frescor constante de 11–13 °C de la cueva y las piernas aún descansadas. Además, abre la narrativa UNESCO del día: el bien 'Isla volcánica y tubos de lava de Jeju' en el que se entra aquí se completa por la tarde en Seongsan Ilchulbong, parte del mismo bien único inscrito en 2007. Si Manjanggul cerrara por mantenimiento o meteorología, se sustituye por la **cueva Micheon de Ilchul Land**, del mismo sistema de tubos de lava, para mantener la experiencia de la cueva."
+  },
+  "seongeup": {
+    "whyOnRoute": "**El único patrimonio interior de la época Joseon de la jornada y su punto de inflexión geográfico.** Situada entre el país de lava de Gimnyeong y la costa de Seongsan (interior de Pyoseon), convierte un simple tiempo de conducción en una parada con significado. Tras la geología subterránea de Manjanggul por la mañana, los muros de piedra y las casas con tejado de paja de esta aldea de patrimonio folclórico nacional, junto a los árboles centenarios de 600 años, añaden un 'paseo cultural pausado' antes del patrimonio volcánico y de las haenyeo de la tarde, y equilibran el día para que no transcurra solo como una peregrinación a lugares fotogénicos.",
+    "descReplace": []
+  },
+  "lunch": {
+    "whyOnRoute": "**Una recarga justo antes del clímax UNESCO.** En un restaurante local del camino de Seongeup a Seongsan se almuerza con platos típicos del este de Jeju como cerdo negro, jeonbok ttukbaegi y marisco de temporada (coste del almuerzo aparte). Es el momento de reponer fuerzas antes del tramo más activo de la tarde — el ascenso de Seongsan y el espectáculo de buceo de las haenyeo —, dejando para el final el tranquilo paseo por la playa de Hamdeok."
+  },
+  "seongsan": {
+    "whyOnRoute": "**El segundo de los dos sitios del Patrimonio Natural Mundial de la jornada — el que completa la inscripción.** Tras el almuerzo se sube a Seongsan Ilchulbong (ascenso opcional de unos 30 min ida y vuelta) para contemplar el cono de toba que emergió de una erupción submarina hace unos 5.000 años. Junto con el tubo de lava de Manjanggul recorrido por la mañana — parte del mismo bien único inscrito en 2007 — cierra la narrativa de la 'isla volcánica y los tubos de lava', y el ascenso enlaza directamente con el espectáculo de buceo de las haenyeo que se celebra en el mar de la misma zona."
+  },
+  "hamdeok": {
+    "whyOnRoute": "**El final junto al mar — y la parada más cercana a Ciudad de Jeju.** Tras la tarde UNESCO en Seongsan, la jornada se relaja en la playa Hamdeok Seoubong: agua esmeralda, arena blanca y un tramo de la Ruta Olle 19 bajo la luz suave del final de la tarde, cuando las multitudes de las excursiones de un día ya se han retirado. Como Hamdeok está en la carretera costera de regreso a Ciudad de Jeju, terminar aquí hace además que el trayecto de vuelta sea el más corto del día.",
+    "descReplace": []
+  },
+  "dropoff": {
+    "whyOnRoute": "El Mercado Dongmun es la parada de cierre perfecta: prueba de productos locales de Jeju antes del vuelo o la cena. Ayuntamiento + aeropuerto cubren la zona hotelera y los vuelos de la noche. Desde Hamdeok, el tránsito total de ~55 min cubre los 3 puntos sin retrocesos.",
+    "description": "**El regreso sigue el orden de las recogidas de la mañana**, con parada opcional en el Mercado Dongmun al final del día: el **Mercado Tradicional Dongmun** está a ~25 min en autobús desde la playa Hamdeok y ofrece el mercado nocturno más popular de Jeju, con puestos de comida hasta las 23:00 h aproximadamente. \n\nEspecialidades del mercado: hallabong (mandarinas de Jeju), galletas de gambas (saeu-ppang), tteok (pasteles de arroz) y zumos de cítricos. Los huéspedes que prefieran volver directamente al hotel o al aeropuerto son dejados en sus puntos habituales. Llegada estimada: **Mercado Dongmun ~18:00, Ayuntamiento ~18:15, aeropuerto ~18:30** — los vuelos de la misma noche (último despegue ~21:30) siguen siendo viables."
+  },
+  "routePhases": [
+    {
+      "phase": "Recogida y salida hacia el este",
+      "duration": "aprox. 1 hora",
+      "description": "Recogida en 4 puntos de Ciudad de Jeju (08:30–09:05) y traslado directo al tubo de lava de Manjanggul, en Gimnyeong."
+    },
+    {
+      "phase": "El tubo de lava UNESCO antes de las multitudes",
+      "duration": "aprox. 1,5 horas",
+      "description": "Tubo de lava de Manjanggul (Patrimonio Natural Mundial de la UNESCO, 55 min) justo tras la apertura — la hora más tranquila dentro de la cueva — y después hacia el interior, a Seongeup."
+    },
+    {
+      "phase": "Aldea patrimonial Joseon + almuerzo",
+      "duration": "aprox. 2 horas",
+      "description": "Aldea Folclórica de Seongeup (patrimonio folclórico nacional de la época Joseon, 60 min) → restaurante local cerca de Seongsan — cerdo negro, jeonbok ttukbaegi, marisco de temporada. Coste del almuerzo aparte."
+    },
+    {
+      "phase": "Núcleo UNESCO de Seongsan + haenyeo",
+      "duration": "aprox. 2,5 horas",
+      "description": "Seongsan Ilchulbong (ascenso opcional) → espectáculo de buceo de las haenyeo en el mar bajo el pico (Museo de las Haenyeo si se cancela)."
+    },
+    {
+      "phase": "Final en la playa y regreso",
+      "duration": "aprox. 2 horas",
+      "description": "Playa Hamdeok Seoubong con la luz del final de la tarde (60 min) → breve traslado costero de regreso a Ciudad de Jeju + bajada en 2 puntos y en el mercado Dongmun."
+    }
+  ],
+  "routeShapeSubtitle": "Un bucle por el este de Jeju que recorre en un solo día los dos sitios del Patrimonio Natural Mundial de la UNESCO de la isla — entrando en el tubo de lava de Manjanggul justo tras la apertura, antes de las multitudes, y completando la misma inscripción de 2007 por la tarde en Seongsan Ilchulbong. Entre ambos, la Aldea Folclórica de Seongeup de la época Joseon; después, el espectáculo de buceo de las haenyeo (patrimonio inmaterial de la UNESCO) y un cierre al atardecer en la playa Hamdeok, la parada más cercana a Ciudad de Jeju.",
+  "seo": {
+    "metaDescription": "Bucle por el este de Jeju en grupo pequeño de 9 horas: Manjanggul (UNESCO) a la hora de apertura, Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), espectáculo de buceo de las haenyeo y final en la playa Hamdeok. Todas las entradas incluidas.",
+    "description": "Tour de un día en grupo pequeño de 9 horas por el este de Jeju: Manjanggul (UNESCO) → Aldea Folclórica de Seongeup → almuerzo → Seongsan Ilchulbong (UNESCO) → espectáculo de buceo de las haenyeo → playa Hamdeok. Todas las entradas incluidas, guía certificado."
+  },
+  "catalog": {
+    "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — Manjanggul (UNESCO) en su hora más tranquila tras la apertura, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y un final en la playa Hamdeok, en un bucle por el este de 9 horas.",
+    "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas — ahora con la cueva primero: Manjanggul justo tras la apertura (la hora más tranquila del tubo de lava), la Aldea Folclórica de Seongeup, Seongsan Ilchulbong y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela), y un final a última hora de la tarde en la playa Hamdeok Seoubong. Dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007, todas las entradas incluidas, guía certificado en inglés y chino."
+  },
+  "whyNewItem": {
+    "label": "La cueva primero, la playa al final — el orden es la clave",
+    "detail": "Manjanggul abre a las 09:00 y su primera hora es la más tranquila, así que la ruta va directamente allí desde la recogida: se recorre el tubo de lava antes de la oleada de autobuses del mediodía, cuando el frescor de 11–13 °C es un alivio y no un frío. La jornada crece después por Seongeup y Seongsan hasta el espectáculo de las haenyeo, y se cierra en la playa Hamdeok con la luz suave de la tarde — la parada más cercana a Ciudad de Jeju, lo que hace que el último traslado sea el más corto del día."
+  },
+  "pdNotes": ["El regreso suele ser alrededor de las 18:00–18:30."]
+}
