@@ -1338,21 +1338,21 @@
       "icon": "check-circle",
       "title": "Operador local autorizado",
       "description": "Operador turístico coreano oficial con seguro completo",
-      "iconBg": "`bg-emerald-50/80` *(clase CSS — se mantiene igual)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
       "icon": "route",
       "title": "Especialistas en rutas",
       "description": "Itinerario personalizado, no un circuito genérico",
-      "iconBg": "`bg-sky-50/80` *(clase CSS — se mantiene igual)*",
+      "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
     },
     {
       "icon": "users",
       "title": "Tamaño de grupo seleccionado",
       "description": "Dimensionado adecuadamente para la ruta",
-      "iconBg": "`bg-amber-50/80` *(clase CSS — se mantiene igual)*",
+      "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
   ],

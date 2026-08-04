@@ -907,7 +907,7 @@
       {
         "title": "**Ritmo y estructura**",
         "icon": "sun",
-        "iconBg": "**bg-amber-50/80**",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -927,7 +927,7 @@
       {
         "title": "**Por qué este itinerario es exclusivo de primavera**",
         "icon": "flower",
-        "iconBg": "**bg-pink-50/80**",
+        "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
           {
@@ -1080,21 +1080,21 @@
       "icon": "check-circle",
       "title": "**Guía local con licencia**",
       "description": "**Guía con licencia de Jeju**",
-      "iconBg": "**bg-emerald-50/80** *(clase CSS — sin cambios)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
       "icon": "calendar",
       "title": "**Flexibilidad en la ventana de temporada**",
       "description": "**Reprogramación gratuita dentro de la ventana de floración**",
-      "iconBg": "**bg-pink-50/80** *(clase CSS — sin cambios)*",
+      "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600"
     },
     {
       "icon": "shield",
       "title": "**Garantía climática**",
       "description": "**Reprogramación gratuita en caso de lluvia intensa**",
-      "iconBg": "**bg-sky-50/80** *(clase CSS — sin cambios)*",
+      "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
     }
   ],

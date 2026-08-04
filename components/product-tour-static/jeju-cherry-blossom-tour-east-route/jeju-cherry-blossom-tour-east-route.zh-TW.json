@@ -907,7 +907,7 @@
       {
         "title": "行程節奏與結構",
         "icon": "sun",
-        "iconBg": "bg-amber-50/80 > **注意 (Note 25):** `bg-amber-50/80` is a Tailwind CSS utility class — left untranslated as it is a code token, not display text.",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -1080,7 +1080,7 @@
       "icon": "check-circle",
       "title": "在地持牌",
       "description": "濟州持牌導覽服務",
-      "iconBg": "bg-emerald-50/80 *(保留原文——Tailwind CSS 樣式類別，無需翻譯)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {

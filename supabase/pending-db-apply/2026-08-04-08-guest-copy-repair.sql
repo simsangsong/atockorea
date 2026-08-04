@@ -10,7 +10,10 @@
 -- TWO DEFECTS, both pre-existing:
 --   1) sticky_booking_bar.note shipped a developer comment
 --      ("checkout_tour_id resolves at runtime…") as guest-facing booking copy.
---   2) Translator working-notes ("**Notes:** Lines 3 & 4 are CSS class names…")
+--   2) Translator working-notes were appended to live fields — itinerary
+--      highlights, route phases, booking steps, pricing labels, and 40 CSS
+--      class fields (iconBg), where the class string itself was corrupted so
+--      the icon rendered with no background. See PASS 2 below.
 --      were appended to live fields — itinerary highlights, route phases,
 --      booking steps, pricing labels. Two were iconBg values, i.e. the CSS
 --      class string itself was corrupted.
@@ -24,7 +27,9 @@
 -- page_sections.* mirrors are deliberately NOT repaired: segments.ts marks that
 -- block DEAD and a test asserts the render path never reads it. (129 paths skipped.)
 --
--- Statements: 176 across 28 products.
+-- Statements: 220 (28 products by slug + 4 locale-wide staged-row repairs).
+-- Run order: this file is 08 and must stay LAST — 02/03/05/07 rewrite whole
+-- detail_payloads and Gyeongju (07) still writes five of the polluted strings.
 -- =============================================================================
 
 BEGIN;
@@ -1116,8 +1121,328 @@ UPDATE public.tour_product_pages SET
 WHERE slug = 'southwest-hallasan-osulloc-aewol' AND locale = 'zh-TW'
   AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id 於執行時從 Supabase／環境變數解析；非靜態 JSONB 的一部分。';
 
+
+-- =============================================================================
+-- PASS 2 — variants the first sweep missed (found 2026-08-04, same session)
+-- =============================================================================
+-- The first sweep grepped one Spanish phrasing ("no se traduce") and missed the
+-- others ("sin traducción", "clase CSS", "código técnico", the zh/ja/zh-TW
+-- equivalents, and values wrapped in ** or backticks). A stricter detector —
+-- "does this CSS-class field still look like a class list?" — found 38 more
+-- corrupted iconBg values plus 2 more translator notes.
+--
+-- Every replacement class name is taken from the product's OWN en.json at the
+-- same path (class names are locale-invariant), not guessed. One had the colour
+-- word itself translated: bg-ámbar-50/80 -> bg-amber-50/80.
+-- =============================================================================
+
+-- ---- jeju-cherry-blossom-tour-east-route -------------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","0","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","0","iconBg"}' = '**bg-amber-50/80**';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-pink-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = '**bg-pink-50/80**';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = '**bg-emerald-50/80** *(clase CSS — sin cambios)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-pink-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = '**bg-pink-50/80** *(clase CSS — sin cambios)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = '**bg-sky-50/80** *(clase CSS — sin cambios)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'ja'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 *(UIクラス名・翻訳対象外)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-pink-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'ja'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = 'bg-pink-50/80 *(UIクラス名・翻訳対象外)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'ja'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-sky-50/80 *(UIクラス名・翻訳対象外)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","0","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'zh'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","0","iconBg"}' = 'bg-amber-50/80 > **注：** 第25项（`bg-amber-50/80`）为 Tailwind CSS 样式类名，属技术代码，保持原文不译。第3项"迷川窟"（미천굴）为济州岛熔岩洞窟专有名称，按音译处理。';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","0","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'zh-TW'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","0","iconBg"}' = 'bg-amber-50/80 > **注意 (Note 25):** `bg-amber-50/80` is a Tailwind CSS utility class — left untranslated as it is a code token, not display text.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cherry-blossom-tour-east-route' AND locale = 'zh-TW'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 *(保留原文——Tailwind CSS 樣式類別，無需翻譯)*';
+
+-- ---- jeju-cruise-shore-excursion-bus-tour ------------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cruise-shore-excursion-bus-tour' AND locale = 'zh'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 *(CSS 类名，保留原文)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cruise-shore-excursion-bus-tour' AND locale = 'zh'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = 'bg-sky-50/80 *(CSS 类名，保留原文)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-cruise-shore-excursion-bus-tour' AND locale = 'zh'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-amber-50/80 *(CSS 类名，保留原文)*';
+
+-- ---- jeju-grand-highlights-loop ----------------------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","0","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-grand-highlights-loop' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","0","iconBg"}' = '**bg-amber-50/80** → bg-amber-50/80';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-grand-highlights-loop' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = '**bg-sky-50/80** → bg-sky-50/80';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","2","iconBg"}', '"bg-slate-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-grand-highlights-loop' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","2","iconBg"}' = '**bg-slate-50/80** → bg-slate-50/80';
+
+-- ---- jeju-hydrangea-festival-tour-southwest-route ----------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-hydrangea-festival-tour-southwest-route' AND locale = 'ja'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 > **注：** 30行目はCSSクラス名のため、翻訳せずそのまま記載しています。';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"practicalAccordionItems","3","title"}', '"天氣政策"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-hydrangea-festival-tour-southwest-route' AND locale = 'zh-TW'
+  AND detail_payload #>> '{"practicalAccordionItems","3","title"}' = '天氣政策 > **Note on line 3:** `bg-sky-50/80` is a Tailwind CSS utility class name — left untranslated as it is a code token, not readable content.';
+
+-- ---- jeju-island-private-car-charter-tour ------------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-island-private-car-charter-tour' AND locale = 'zh'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = 'bg-amber-50/80 > **注：** 第 22 项（`bg-sky-50/80`）和第 30 项（`bg-amber-50/80`）为 CSS 样式类名，属于技术标识符，保留原文不作翻译。';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-island-private-car-charter-tour' AND locale = 'zh-TW'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = 'bg-amber-50/80 > **注意**：第 22 行（`bg-sky-50/80`）及第 30 行（`bg-amber-50/80`）為 Tailwind CSS 樣式類別名稱，屬於技術代碼，保持原文不譯。';
+
+-- ---- jeju-west-south-full-day-authentic-tour ---------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-west-south-full-day-authentic-tour' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = '`bg-emerald-50/80` *(clase CSS — se mantiene igual)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-west-south-full-day-authentic-tour' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = '`bg-sky-50/80` *(clase CSS — se mantiene igual)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'jeju-west-south-full-day-authentic-tour' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = '`bg-amber-50/80` *(clase CSS — se mantiene igual)*';
+
+-- ---- seoul-dmz-private-3rd-tunnel-suspension-bridge --------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","2","iconBg"}', '"bg-rose-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-dmz-private-3rd-tunnel-suspension-bridge' AND locale = 'zh'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","2","iconBg"}' = 'bg-rose-50/80 *(CSS类名，无需翻译)*';
+
+-- ---- seoul-seoraksan-national-park-sokcho-beach-day-trip ---------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-seoraksan-national-park-sokcho-beach-day-trip' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = 'bg-emerald-50/80 *(clase CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-seoraksan-national-park-sokcho-beach-day-trip' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","2","iconBg"}' = 'bg-amber-50/80 *(clase CSS — sin traducción)*';
+
+-- ---- seoul-suburbs-private-chartered-car-10hr --------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","0","items","2","label"}', '"El conocimiento de tu conductor-guía"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","0","items","2","label"}' = 'El conocimiento de tu conductor-guía > **Note on line 20:** `bg-sky-50/80` is a Tailwind CSS utility class — it has been left untranslated as it is a code token, not display text.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","1","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","1","iconBg"}' = 'bg-amber-50/80 *(clase CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","2","iconBg"}', '"bg-slate-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","2","iconBg"}' = 'bg-slate-50/80 *(clase CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 *(código técnico — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = 'bg-sky-50/80 *(código técnico — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suburbs-private-chartered-car-10hr' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-amber-50/80 *(código técnico — sin traducción)*';
+
+-- ---- seoul-suwon-hwaseong-folk-village-starfield-library ---------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"whyTourWorks","routeLogicSections","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suwon-hwaseong-folk-village-starfield-library' AND locale = 'es'
+  AND detail_payload #>> '{"whyTourWorks","routeLogicSections","2","iconBg"}' = 'bg-ámbar-50/80';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suwon-hwaseong-folk-village-starfield-library' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-amber-50/80 *(clase CSS — sin traducción)*';
+
+-- ---- seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library -----------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = 'bg-sky-50/80 *(código CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-amber-50/80 *(código CSS — sin traducción)*';
+
+-- ---- southwest-hallasan-osulloc-aewol ----------------------------------
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","0","iconBg"}', '"bg-emerald-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'southwest-hallasan-osulloc-aewol' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","0","iconBg"}' = 'bg-emerald-50/80 *(código CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","1","iconBg"}', '"bg-sky-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'southwest-hallasan-osulloc-aewol' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","1","iconBg"}' = 'bg-sky-50/80 *(código CSS — sin traducción)*';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"bookingTrustItems","2","iconBg"}', '"bg-amber-50/80"'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'southwest-hallasan-osulloc-aewol' AND locale = 'es'
+  AND detail_payload #>> '{"bookingTrustItems","2","iconBg"}' = 'bg-amber-50/80 *(código CSS — sin traducción)*';
+
+-- ---- staged locales (de/fr/it/ru) — DB-only rows, no repo bundle ------
+-- These four rows per product were seeded by the i18n expansion track and have
+-- no bundle file, so the bundle-diff generator above could not see them. Guests
+-- do not read them yet (TOUR_PRODUCT_FALLBACK_URL_LOCALES narrows these locales
+-- to EN) but the dev comment would ship the day that gate opens.
+-- Guarded on LIKE rather than an exact string: the same dev comment exists in
+-- several phrasings here, and no legitimate booking-bar copy mentions
+-- checkout_tour_id, so this stays unable to clobber an admin edit.
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen."'::jsonb, false),
+  updated_at = NOW()
+WHERE locale = 'de'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en direct et finaliser votre réservation."'::jsonb, false),
+  updated_at = NOW()
+WHERE locale = 'fr'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Selezioni la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."'::jsonb, false),
+  updated_at = NOW()
+WHERE locale = 'it'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Выберите дату и размер группы, чтобы проверить актуальные места и завершить бронирование."'::jsonb, false),
+  updated_at = NOW()
+WHERE locale = 'ru'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+
 COMMIT;
 
--- Verify (expect 0 rows):
--- SELECT slug, locale FROM public.tour_product_pages
---  WHERE detail_payload::text LIKE '%checkout_tour_id resolves at runtime%';
+-- =============================================================================
+-- Verify — expect 0 for all three (run after this file)
+-- =============================================================================
+-- The previous version of this check matched only the ENGLISH dev comment, so
+-- it read 0 while 145 localised rows were still polluted. Match the field, not
+-- one phrasing.
+--
+-- WITH bar AS (
+--   SELECT slug, locale FROM public.tour_product_pages
+--    WHERE detail_payload #>> '{sticky_booking_bar,note}' LIKE '%checkout_tour_id%'),
+-- trust AS (
+--   SELECT p.slug, p.locale FROM public.tour_product_pages p
+--   CROSS JOIN LATERAL jsonb_array_elements(COALESCE(p.detail_payload->'bookingTrustItems','[]'::jsonb)) e(v)
+--    WHERE e.v->>'iconBg' IS NOT NULL AND e.v->>'iconBg' !~ '^[-a-z0-9/:.\[\]% ]+$'),
+-- route AS (
+--   SELECT p.slug, p.locale FROM public.tour_product_pages p
+--   CROSS JOIN LATERAL jsonb_array_elements(COALESCE(p.detail_payload#>'{whyTourWorks,routeLogicSections}','[]'::jsonb)) e(v)
+--    WHERE e.v->>'iconBg' IS NOT NULL AND e.v->>'iconBg' !~ '^[-a-z0-9/:.\[\]% ]+$')
+-- SELECT 'booking-bar dev comment' AS defect, count(*) FROM bar
+-- UNION ALL SELECT 'bookingTrustItems iconBg', count(*) FROM trust
+-- UNION ALL SELECT 'routeLogicSections iconBg', count(*) FROM route;
+--
+-- Baseline before this file: 145 / 24 / 14.
