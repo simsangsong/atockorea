@@ -177,7 +177,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
     },
     "price": {
-      "amountLabel": "49"
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {

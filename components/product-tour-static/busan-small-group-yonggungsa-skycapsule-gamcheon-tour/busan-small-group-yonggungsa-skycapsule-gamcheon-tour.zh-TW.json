@@ -50,10 +50,10 @@
   "headlineLine1": "海東龍宮寺·天空膠囊",
   "headlineLine2": "與文化村",
   "price": {
-    "amountLabel": "49",
+    "amountLabel": "59",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 49
+    "salePriceUsd": 59
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
@@ -1071,10 +1071,10 @@
   "sticky_booking_bar": {
     "note": "checkout_tour_id 於執行時從 Supabase／env 動態解析；不屬於靜態 JSONB 的一部分。",
     "price": {
-      "amountLabel": "49",
+      "amountLabel": "59",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 49
+      "salePriceUsd": 59
     }
   },
   "pickup_dropoff": {
@@ -1360,7 +1360,7 @@
       "v1_authored_2026_08_04"
     ],
     "fix_passes": {
-      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price seeded at USD 49 (Sky Capsule ticket excluded; ticket-included offer USD 64) — owner review pending. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
     }
   },
   "page_sections": [
@@ -2463,10 +2463,10 @@
       "props": {
         "note": "checkout_tour_id 於執行期間從 Supabase／環境變數解析，不屬於靜態 JSONB 的一部分。",
         "price": {
-          "amountLabel": "49",
+          "amountLabel": "59",
           "currency": "USD",
           "per": "person",
-          "salePriceUsd": 49
+          "salePriceUsd": 59
         }
       }
     }

@@ -551,8 +551,8 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
-  // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED (included option +$15, see offers SQL). Owner price review pending.
-  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 49, maxGroupSize: 12 },
+  // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },

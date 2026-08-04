@@ -7,10 +7,10 @@
  *   1) public.tours              ON CONFLICT (slug)
  *   2) public.tour_product_pages ON CONFLICT (slug, locale) — 6 locales
  *   3) public.tour_product_offers — TWO offers: default = Sky Capsule ticket
- *      EXCLUDED (USD 49), plus ticket INCLUDED (USD 64, 2-per-capsule basis).
+ *      EXCLUDED (USD 59), plus ticket INCLUDED (USD 79, 2-per-capsule basis).
  *      Insert-if-absent by (page, label-role) so re-runs don't duplicate.
  *
- * Price seeded pending owner review. After applying, sync the recommender:
+ * Prices confirmed by owner 2026-08-04. After applying, sync the recommender:
  *   node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour
  *
  * Output: supabase/pending-db-apply/2026-08-04-03-busan-smallgroup-new-product.sql
@@ -32,8 +32,8 @@ const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const jsonb = (v) => `${q(JSON.stringify(v))}::jsonb`;
 const num = (v) => (v === null || v === undefined ? "NULL" : Number(v));
 
-const PRICE_USD = Number(en.price.salePriceUsd); // 49 — Sky Capsule ticket excluded
-const PRICE_TICKET_USD = 64; // Sky Capsule ticket included (2-per-capsule basis)
+const PRICE_USD = Number(en.price.salePriceUsd); // 59 — Sky Capsule ticket excluded
+const PRICE_TICKET_USD = 79; // Sky Capsule ticket included (2-per-capsule basis)
 
 const schedule = en.itineraryStops.map((s) => ({
   time: s.time,
@@ -59,7 +59,7 @@ out += `-- Course: Haedong Yonggungsa → Cheongsapo Daritdol Observatory → Bl
 out += `--         Capsule (ticket optional at booking) → lunch → Gamcheon Culture\n`;
 out += `--         Village → Dakbatgol Mural Village & wish-stairs monorail.\n`;
 out += `-- Price: USD ${PRICE_USD} base (Sky Capsule ticket EXCLUDED) + USD ${PRICE_TICKET_USD} ticket-included\n`;
-out += `--        offer (2-per-capsule basis). ⚠ Seeded pending owner review.\n`;
+out += `--        offer (2-per-capsule basis). Prices confirmed by owner 2026-08-04.\n`;
 out += `-- Script: scripts/gen-busan-smallgroup-sql-2026-08.mjs\n`;
 out += `-- Idempotent: tours ON CONFLICT (slug); tour_product_pages ON CONFLICT (slug, locale);\n`;
 out += `--             offers insert-if-absent per label role.\n`;

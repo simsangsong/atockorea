@@ -177,7 +177,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "A small-group Busan day built around the coast and the hillside villages: Haedong Yonggungsa seaside temple in its quiet morning window, the free glass-floor Daritdol Observatory at Cheongsapo, the Blueline Park Sky Capsule ride from Cheongsapo to Mipo (ticket included or excluded — choose at booking), lunch, Gamcheon Culture Village, and the little-known Dakbatgol mural village where a free monorail glides up the 'wish stairs'. Every anchor except the optional capsule is free admission."
     },
     "price": {
-      "amountLabel": "49"
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {

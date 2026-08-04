@@ -177,7 +177,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Una jornada de Busán en grupo pequeño construida sobre la costa y las aldeas de ladera: el templo marino Haedong Yonggungsa en su tranquila ventana matinal, el mirador Daritdol de suelo de cristal (gratuito) en Cheongsapo, el trayecto en Sky Capsule del Blueline Park de Cheongsapo a Mipo (billete incluido o excluido — se elige al reservar), almuerzo, la Aldea Cultural de Gamcheon y la poco conocida aldea de murales Dakbatgol, donde un monorraíl gratuito sube por la 'escalera de los deseos'. Todos los anclajes salvo la cápsula opcional son de entrada gratuita."
     },
     "price": {
-      "amountLabel": "49"
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {

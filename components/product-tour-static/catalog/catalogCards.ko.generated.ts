@@ -177,7 +177,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
     },
     "price": {
-      "amountLabel": "49"
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {

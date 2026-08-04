@@ -270,7 +270,7 @@ function build(loc) {
   ];
 
   // ---- price / cards -------------------------------------------------------
-  const price = { amountLabel: "49", currency: "USD", per: "person", salePriceUsd: 49 };
+  const price = { amountLabel: "59", currency: "USD", per: "person", salePriceUsd: 59 };
   const heroStops = String(donor.hero?.meta?.stops ?? "8 stops").replace(/\d+/, "8");
 
   const catalog_card = {
@@ -421,7 +421,7 @@ function build(loc) {
       version_history: ["v1_authored_2026_08_04"],
       fix_passes: {
         v1_authored_2026_08_04:
-          "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price seeded at USD 49 (Sky Capsule ticket excluded; ticket-included offer USD 64) — owner review pending. Daritdol and Dakbatgol ship without photos (no owned imagery yet).",
+          "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet).",
       },
     },
   };
