@@ -45,10 +45,10 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "364",
+    "amountLabel": "456.99",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 364
+    "salePriceUsd": 456.99
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1184,7 +1184,12 @@
         "Incluido: vehículo privado, conductor-guía de habla inglesa, todos los peajes y cargos de estacionamiento, combustible.",
         "Pago directo: almuerzo (10.000–20.000 KRW por persona), Tren Danubi opcional en Taejongdae (₩4.000 ida y vuelta), mirador opcional de la Torre de Busan (₩12.000 adulto), Sky Capsule opcional en Haeundae si se sustituye (40.000–50.000 KRW por cápsula).",
         "Todas las entradas a los sitios en este itinerario predeterminado son gratuitas, excepto las opcionales mencionadas anteriormente."
-      ]
+      ],
+      "content": [
+        "Incluye: Vehículo y conductor privados solo para tu grupo · Guía en inglés y chino · Traslado de ida y vuelta desde tu terminal de cruceros · Peajes, aparcamiento y combustible · Gastos de gestión de la reserva",
+        "No incluye: Entradas de todas las paradas · Comidas y bebidas · Gastos personales · Propinas · Seguro de viaje"
+      ],
+      "preview": "Incluye: Vehículo y conductor privados solo para tu grupo · Guía en inglés y chino · Traslado de ida y vuelta desde tu terminal de cruceros · Peajes, aparcamiento y combustible · Gastos de gestión de la reserva"
     },
     {
       "title": "Personalización e intercambio de paradas.",
@@ -1220,6 +1225,19 @@
         "El conductor-guía oficial de habla inglesa es el estándar. Guías en mandarín o japonés disponibles bajo solicitud.",
         "El vehículo es adecuado para viajeros con movilidad reducida — el servicio de recogida a domicilio evita la mayor parte del camino a pie durante los traslados.",
         "Algunas paradas implican caminar cuesta arriba o subir escaleras (Gamcheon, escaleras del faro de Taejongdae). Infórmenos sobre sus necesidades de movilidad al reservar y ajustaremos el itinerario."
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "Suplementos, cancelación y a quién se vende este chárter",
+      "preview": "Inicio antes de las 07:00 o final después de las 20:00: 50.000 KRW por hora; destinos fuera de Busan, 130.000 KRW. Cancelación gratuita hasta 24 horas antes. A partir de 4 años. Solo pasajeros de crucero.",
+      "content": [
+        "Suplemento fuera de horario: si el chárter empieza antes de las 07:00, o termina después de las 20:00, se aplica un suplemento de 50.000 KRW por hora que se paga el mismo día.",
+        "Fuera de Busan: los destinos más allá del límite municipal de Busan añaden 130.000 KRW al chárter.",
+        "Cancelación: gratuita hasta 24 horas antes del inicio. Dentro de esas 24 horas la reserva no es reembolsable.",
+        "Edad mínima: los pasajeros deben tener 4 años o más.",
+        "Solo pasajeros de crucero: este chárter se vende a quienes llegan en un crucero que hace escala en Busan. Las reservas de viajeros sin escala en Busan se rechazan y se reembolsan.",
+        "Hora de vuelta: el día se organiza en torno al all-aboard de tu barco y la vuelta se programa por delante de esa hora."
       ]
     }
   ],
@@ -1352,10 +1370,10 @@
   "sticky_booking_bar": {
     "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
-      "amountLabel": "364",
+      "amountLabel": "456.99",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 364
+      "salePriceUsd": 456.99
     }
   },
   "pickup_dropoff": {
@@ -1364,29 +1382,29 @@
       {
         "name": "Terminal de Cruceros de Busan (puerto internacional de cruceros)",
         "time": "Within 30 min of cruise disembarkation",
-        "note": "El conductor espera en la sala de llegadas con un letrero de AtoC Korea; comparta el nombre de su crucero y el muelle para que podamos confirmar el horario."
+        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       },
       {
         "name": "Estación de Busan (KTX) — salida principal",
         "time": "Flexible — confirm at booking",
-        "note": "Si llega a Busan en KTX antes de unirse al tour de crucero, podemos recogerle en la estación."
+        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       },
       {
         "name": "Cualquier hotel del centro de Busan",
         "time": "Flexible — confirm at booking",
-        "note": "Recogida puerta a puerta en cualquier hotel del centro de Busan (Haeundae, Seomyeon, Nampo-dong, Centum City)."
+        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       }
     ],
     "dropoff_points": [
       {
         "name": "Terminal de Cruceros de Busan (regreso al barco)",
         "approx_time": "≈ 90 min antes del llamado de embarque de su barco",
-        "note": "Regreso puntual garantizado — monitoreamos la ventana de salida de su barco durante todo el día."
+        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       },
       {
         "name": "Cualquier hotel del centro de Busan",
         "approx_time": "≈ al final de la ventana de servicio",
-        "note": "Traslado a cualquier dirección dentro del centro de Busan."
+        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       }
     ],
     "hotel_pickup_available": true,

@@ -43,7 +43,11 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 49, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   // Klook prep 2026-06-29: +$5 sale price, discount REMOVE (compareAtPriceUsd dropped).
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 84, maxGroupSize: 8 },
+  // Busan cruise shore-excursion trio, 2026-08-04: priced to match the channel
+  // listings exactly, to the cent. Keep in lockstep with `staticTourProductRegistry.ts`.
+  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
+  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 456.99 },
   "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
@@ -69,18 +73,19 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
 };
 
+/** Cents-precise — mirrors `parseListPriceUsd` in `staticTourProductRegistry.ts`. */
 function parseListPriceUsd(page: SlimCatalogPage | undefined): number {
   if (!page) return 0;
   const amountLabel = page.price?.amountLabel ?? "";
   if (amountLabel) {
     const n = Number(amountLabel.replace(/[^0-9.]/g, ""));
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   const priceLabel = page.catalog_card.priceLabel ?? "";
   const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
   if (m) {
     const n = Number(m[1]);
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   return 0;
 }

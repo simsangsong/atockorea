@@ -6,7 +6,7 @@
   "product_id": "busan-cruise-shore-excursion-bus-tour",
   "seo": {
     "pageTitle": "釜山邮轮靠岸游：沿海巴士观光 | AtoC Korea",
-    "metaDescription": "釜山港邮轮码头出发的9小时釜山沿海巴士游，专为邮轮旅客设计：龙宫寺、联合国纪念公墓、札嘎其/BIFF广场/国际市场、甘川、松岛、龙头山——保证在邮轮启航前返回。",
+    "metaDescription": "釜山港邮轮码头出发的8小时釜山沿海巴士游，专为邮轮旅客设计：龙宫寺、联合国纪念公墓、札嘎其/BIFF广场/国际市场、甘川、松岛、龙头山——保证在邮轮启航前返回。",
     "primaryKeywords": [
       "釜山邮轮靠岸游",
       "釜山巴士游邮轮",
@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "釜山邮轮靠岸：沿海巴士观光",
-    "priceLabel": "每人起价49美元（原价55美元，优惠11%）",
+    "priceLabel": "",
     "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。",
     "tags": [
       "邮轮岸上游",
@@ -33,10 +33,10 @@
     "rating": 0,
     "reviewCount": 0,
     "slug": "busan-cruise-shore-excursion-bus-tour",
-    "subtitle": "乘坐大型巴士游览釜山沿海8个景点，提供邮轮码头接送，并根据您所乘邮轮的启航时间合理安排返回行程。",
+    "subtitle": "乘坐大型巴士游览釜山沿海9个景点，提供邮轮码头接送，并根据您所乘邮轮的启航时间合理安排返回行程。",
     "region": "釜山",
-    "duration": "9小时",
-    "stopsCount": 8,
+    "duration": "8小时",
+    "stopsCount": 9,
     "badges": [
       "邮轮岸上游",
       "大型巴士",
@@ -49,12 +49,10 @@
   "headlineLine1": "釜山邮轮靠岸游",
   "headlineLine2": "海岸巴士游览",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "58.79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 58.79
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -66,9 +64,9 @@
       "巴士游览"
     ],
     "meta": {
-      "duration": "约9小时，行程与邮轮靠港时间完美配合",
+      "duration": "约8小时，行程与邮轮靠港时间完美配合",
       "region": "釜山",
-      "stops": "8个景点",
+      "stops": "9个景点",
       "rating": 0,
       "ratingStars": 0
     }
@@ -99,7 +97,7 @@
     {
       "icon": "clock",
       "label": "时长",
-      "value": "9小时"
+      "value": "8小时"
     },
     {
       "icon": "camera",
@@ -375,25 +373,25 @@
   "itineraryStops": [
     {
       "name": "釜山港接送（国际邮轮码头）",
-      "time": "≈ 08:30",
+      "time": "≈ 09:00",
       "number": 1,
       "category": "邮轮码头接送",
-      "duration": "30 分钟窗口期",
+      "duration": "15 分钟窗口期",
       "timeUsed": [
         "下船并完成邮轮码头出境手续（约 10 分钟）",
         "在码头到达大厅与举着\"AtoC Korea\"牌子的导游会合（约 5 分钟）",
         "在码头大巴停车场乘坐大型旅游巴士（约 10 分钟）",
         "上车时发放韩英双语印刷行程卡"
       ],
-      "whyOnRoute": "在釜山港国际邮轮码头大巴停车场直接接送，免去邮轮乘客自行寻找当地交通工具的麻烦。08:30 的集合时间在船只晨间离港后留有充裕余量，同时确保行程按计划推进，在釜山典型靠港日内为 18:00 返航留足缓冲时间。大型旅游巴士使线路保持经济实惠——与我们的小团产品涵盖相同的八大标志性景点，价格约为其三分之二。",
-      "description": "Pickup is at the **Busan Port International Cruise Terminal (부산항국제여객터미널)**, Korea's largest dedicated cruise terminal, located on the Yeongdo-side waterfront in Jung-gu. After disembarking, follow signs to the terminal **arrival hall** — the AtoC Korea guide waits there with an 'AtoC Korea / Busan Coastal Tour' sign and a printed Korean-English itinerary card for each guest. \n\nThe large coach (typical 28–45 seats depending on group size) waits in the terminal coach lot, a 2-minute walk through the covered concourse. Please be at the meeting point **by 08:25** for an 08:30 departure. From the terminal the coach drives ~30 minutes northeast along the **Gwangan Bridge** scenic route toward Gijang-gun for the day's first stop at **Haedong Yonggungsa Temple**. \n\nThe guide will brief on the day's running order, restroom stops, and the cruise-return buffer (typically returning to terminal by 17:30 for a 19:00+ sail-away)."
+      "whyOnRoute": "在码头到达大厅接您，能消除靠港日最常出问题的一环 — 时间紧迫时还要自己找当地交通。09:00 集合既在上午下船后留出余裕，也把九个停靠点装进八小时的一天，17:00 回到码头。",
+      "description": "集合地点为**您船只靠泊的釜山邮轮码头到达大厅** — 影岛邮轮码头，或釜山港国际旅客码头（草梁）。两者没有默认之分，取决于您的船停在哪一侧，预订后我们会确认并告知。\n\n下船后请循指示牌前往到达大厅。导游会举着 AtoC Korea 的接站牌、带着打印好的行程卡等候。**09:00 出发，请于 08:50 前**抵达集合点。\n\n全天行程约**8小时**，17:00 前后回到同一码头。导游会在接站时再次确认您船只的登船截止时间，若出航时间格外早，会调整当天的行程顺序。"
     },
     {
       "name": "海东龙宫寺",
-      "time": "≈ 09:30",
+      "time": "≈ 09:45",
       "number": 2,
       "category": "佛教寺庙 / 海岸",
-      "duration": "75 分钟",
+      "duration": "50 分钟",
       "timeUsed": [
         "大巴下车 + 穿过摊贩通道步行至入口广场（约 10 分钟）",
         "十二生肖将军像 + 无事故宝塔（约 10 分钟）",
@@ -532,14 +530,14 @@
     },
     {
       "name": "驻韩联合国纪念公墓",
-      "time": "≈ 11:15",
+      "time": "≈ 11:05",
       "number": 3,
       "category": "纪念地 / 战争历史",
-      "duration": "60 分钟",
+      "duration": "30 分钟",
       "timeUsed": [
         "大巴下车 + 步行至纪念馆（约 5 分钟）",
         "12 分钟朝鲜战争纪录片 + 简介讲解（约 15 分钟）",
-        "象征区（22 面旗帜）+ 纪念墙（约 20 分钟） > **注：** 第 18–21 行为图片文件路径，保留原文不作翻译。",
+        "象征区（22 面旗帜）+ 纪念墙（约 20 分钟） > 注： 第 18–21 行为图片文件路径，保留原文不作翻译。",
         "游览园区 + 返回大巴（约20分钟）"
       ],
       "_poi_meta": {
@@ -634,32 +632,32 @@
       ]
     },
     {
-      "name": "在釜山当地餐厅用午餐（可选）",
-      "time": "≈ 12:30",
+      "name": "在釜山当地餐厅用午餐（自费）",
+      "time": "≈ 11:50",
       "number": 4,
       "category": "午餐 / 当地美食 — 可选",
-      "duration": "60分钟",
+      "duration": "40 分钟",
       "timeUsed": [
         "大巴下车 + 步行至餐厅（约5分钟）",
         "点餐 + 用餐（约40分钟）",
         "如厕 + 返回大巴集合（约15分钟）"
       ],
       "highlights": [
-        "**可选附加项目** — 宾客可选择跳过并提前登上大巴",
-        "**猪骨饭汤**（釜山猪骨汤）或**密面**（釜山冷小麦面条）— 均为当地特色美食",
-        "两道菜均源于朝鲜战争难民时期，是釜山独有的饮食文化",
-        "每道菜参考价格约₩8,000–12,000（自费）",
-        "预订时可申请素食 / 清真友好替代方案"
+        "午餐费用自理 — 不含在行程费用内",
+        "**猪肉汤饭**或**小麦冷面** — 都是釜山的地方风味",
+        "这两道菜都带着釜山特有的朝鲜战争难民渊源",
+        "每份约8,000–12,000韩元；若点饮料另需3,000–6,000韩元",
+        "素食、清真餐厅可于预订时告知，我们会安排"
       ],
-      "whyOnRoute": "午餐安排在12:30，作为上午海岸/纪念地群（龙宫寺 + 联合国纪念公墓）与下午南浦洞市场群（札嘎其 + BIFF广场 + 国际市场）之间的过渡衔接。在**本行程中明确标注为可选项目**：时间紧张的邮轮宾客可选择跳过午餐，提前登上大巴前往市中心各站点。餐厅选择侧重釜山特有的朝鲜战争遗产美食——猪骨饭汤或密面——而非普通韩式烤肉，因为邮轮旅客在首尔一日游中几乎不会接触到这两道菜。",
+      "whyOnRoute": "午餐安排在11:50，作为上午海岸/纪念地群（龙宫寺 + 联合国纪念公墓）与下午南浦洞市场群（札嘎其 + BIFF广场 + 国际市场）之间的过渡衔接。在**本行程中明确标注为可选项目**：时间紧张的邮轮宾客可选择跳过午餐，提前登上大巴前往市中心各站点。餐厅选择侧重釜山特有的朝鲜战争遗产美食——猪骨饭汤或密面——而非普通韩式烤肉，因为邮轮旅客在首尔一日游中几乎不会接触到这两道菜。",
       "description": "午餐地点位于南区（联合国纪念公墓）与中区（札嘎其市场）之间途经的一家大巴便利型当地餐厅。根据大巴路线及团体喜好，通常提供以下两种选择：(1) **猪骨饭汤（돼지국밥）** — 釜山招牌猪骨肉汤饭，自朝鲜战争难民时代起便是这座城市平民阶层的家常美食，配萝卜泡菜（깍두기）、虾酱（새우젓）、韭菜（부추）和米饭（每碗约9,000–12,000韩元），或 (2) **密面（밀면）** — 釜山小麦粉冷面，由战时逃难至釜山、无法寻得荞麦的朝鲜难民改良自平壤冷面而成，有冰镇牛骨汤底版和辣拌版（约8,000–11,000韩元）。\n\n两道菜均为**釜山独有的地方特色美食，在首尔或济州岛并不常见**。**午餐费用由宾客自理；午餐站点本身为可选项目** — 时间紧张、需赶船的邮轮旅客可在上车时通知导游，午餐环节将予以跳过，为下午各站点释放约45分钟。\n\n大多数猪骨饭汤餐厅的素食及清真友好选项有限 — 如有特殊饮食需求，请在预订时通知导游，届时将更换至另一家餐厅（通常为拌饭或韩食自助餐厅）作为替代。"
     },
     {
       "name": "札嘎其鱼市场",
-      "time": "≈ 14:00",
+      "time": "≈ 12:45",
       "number": 5,
       "category": "鱼市场／本地文化",
-      "duration": "40分钟",
+      "duration": "30 分钟",
       "timeUsed": [
         "大巴下车 + 步行至主馆（约5分钟）",
         "一楼活海鲜区参观，附导游讲解（约20分钟）",
@@ -698,7 +696,7 @@
         "facilities": "1楼活海鲜区、2楼生鱼片及餐厅、干鱼区、屋顶天空公园（开放时）、5楼生鱼片中心自助餐",
         "tip": "在1楼购买海鲜后带到2楼餐厅，支付少量加工费——这是当地人的吃法；地址：中区扎嘎其海岸路52号；地面潮湿，建议穿包头鞋；小摊位用现金比刷卡更方便"
       },
-      "whyOnRoute": "本线路的**美食收官之景**——釜山的城市特色以海鲜为根基，正如首尔以朝鲜王朝宫廷料理为标志，扎嘎其市场正是这一特色最不可或缺的体现。17:15的参观时间经过精心安排，恰好介于午餐人流散去与18:30起涌入2楼生鱼片餐厅的晚餐高峰之间，使各条通道易于行走且适合拍照。将扎嘎其作为全天最后一站，也便于大巴高效地在扎嘎其/南浦（1号线）送客——希望继续自由活动的游客可前往南浦洞的BIFF广场或国际市场，返回酒店的游客则可乘车回釜山站、西面或海云台。",
+      "whyOnRoute": "首尔的底色是朝鲜王朝宫廷菜，釜山的底色则是海产，而札嘎其是这一点最凝练的表达。它同时是南浦洞街区的入口，所以一天的中段在这里转向 — 札嘎其、BIFF广场、国际市场是半径600米内的三个独立停靠点，靠走而不是靠开。",
       "convenience": {
         "restroom": "主楼各层均有卫生间",
         "parking": "主楼地下停车场，₩700 / 10分钟"
@@ -723,10 +721,10 @@
     },
     {
       "name": "BIFF广场",
-      "time": "≈ 14:45",
+      "time": "≈ 13:15",
       "number": 6,
       "category": "电影街区 / 街边小吃",
-      "duration": "25分钟",
+      "duration": "20 分钟",
       "timeUsed": [
         "从札嘎其步行至BIFF广场（约5分钟）",
         "沿星光街参观导演手印（约10分钟）",
@@ -764,7 +762,7 @@
         "parking": "BIFF广场内（步行街）禁止旅游大巴停靠；大巴重新驶向国际市场，游客步行穿越广场",
         "restroom": "乐天百货光复路分店（免费公共卫生间）及CGV BIFF广场影院大厅"
       },
-      "description": "**BIFF Square (비프광장, formerly PIFF Square)** is a 428-meter pedestrian corridor in Nampo-dong, Jung-gu, dedicated in **August 1996** to commemorate the launch of the **Busan International Film Festival (BIFF)** — Asia's largest film festival, first held that September. The square sits on what was historically **Korea's oldest cinema street**: the original **Bumin Theater opened here in 1924** and **Joongan Theater in 1927** during the Japanese colonial period, and the area has been the country's film exhibition heart ever since. \n\nThe square's signature feature is **'Star Street'** — bronze-and-marble pavement plaques embedded with handprints, autographs, and birth years of internationally celebrated Korean directors and actors (Park Chan-wook, Bong Joon-ho, Kim Ki-duk, Im Kwon-taek, Choi Min-sik, and international guests including foreign film-festival jury members). \n\nAt the Nampo-dong entrance stands the **PIFF Square ceremonial arch** that frames the square's most photographed angle. BIFF Square is also the birthplace of **'Ssiat Hotteok' (씨앗호떡)** — a Busan-specific variant of the Korean sweet pancake **'hotteok'** in which the doughy disc is split open after frying and stuffed with mixed seeds (sunflower, sesame, pumpkin, peanut) and brown sugar — a beloved Busan winter street food that has spread nationwide since the 2000s. \n\nToday the corridor is anchored by **CGV BIFF Square**, **Daeyoung Cinema**, and **Megabox** screens, with adjacent **Lotte Department Store Gwangbok-ro** branch a one-minute walk away. **Free, open-air, 24-hour pedestrian street**; the busiest period is the **BIFF festival itself (10 days each October)** when temporary screens, red-carpet events, and director Q&As fill the corridor. \n\nOn this bus-tour the visit is a short walk-through (~25 min) connecting Jagalchi to Gukje Market — sufficient for the ssiat-hotteok stop and a few handprint photos.",
+      "description": "**BIFF广场（비프광장，原PIFF广场）**是中区南浦洞一条长**428米的步行街**，**1996年8月**为纪念同年9月首次举办的**釜山国际电影节（BIFF）**创立而命名。BIFF是亚洲规模最大的电影节。\n\n这里历史上是**韩国最古老的影院街**。日据时期的**1924年富民馆**、**1927年中央剧场**先后在此开业，此后一直是韩国电影放映的中心。\n\n广场的标志是**明星大道**。青铜与大理石地砖上嵌着国际知名韩国导演、演员的手印、签名与出生年份 — 包括朴赞郁、奉俊昊、金基德、林权泽、崔岷植，以及外国电影节评委等国际嘉宾。南浦洞入口处矗立着**PIFF广场纪念拱门**，那是这里被拍得最多的角度。\n\nBIFF广场也是**籽糖饼（씨앗호떡）**的发源地。这是釜山特有的做法：把韩式糖饼炸好后剖开，填入葵花籽、芝麻、南瓜籽、花生等坚果与红糖，自2000年代起风行全国。\n\n如今这条街以**CGV BIFF广场**、**大映影院**、**Megabox**几家影院为核心，步行一分钟即达**乐天百货光复店**。这里是**免费、露天、24小时开放的步行街**，最热闹的时候是**每年10月为期十天的电影节**，临时银幕、红毯活动与导演见面会挤满整条街。",
       "visitBasics": {
         "hours": "步行街全天24小时开放；씨앗호떡摊车通常营业时间为10:00–22:00",
         "closed": "全年开放；BIFF电影节期间（十月）最为热闹",
@@ -833,10 +831,10 @@
     },
     {
       "name": "国际市场",
-      "time": "≈ 15:10",
+      "time": "≈ 13:35",
       "number": 7,
       "category": "传统市场 / 韩国战争历史遗址",
-      "duration": "30分钟",
+      "duration": "25 分钟",
       "timeUsed": [
         "从BIFF广场步行至国际市场入口（约2分钟）",
         "阿里郎街 + 化妆品巷（约10分钟）",
@@ -876,7 +874,7 @@
         "parking": "市场内禁止大巴停车（步行区）；大巴在市场北出口大清路路边接客",
         "restroom": "富平罐头市场大楼内设有公共卫生间；附近有乐天百货光复路店"
       },
-      "description": "**Gukje Market (국제시장, 'International Market')** is a sprawling traditional market in Jung-gu, Busan — one of Korea's largest and oldest post-war markets, occupying a **~600 m × 100 m grid of more than 1,500 stalls**. The market's origins trace to the post-Japanese-liberation period of **1945**, when displaced Korean traders began selling goods on the empty lot left by departing Japanese, and to the **Korean War (1950–1953)**, when massive waves of refugees fleeing south from North Korea expanded the market into the **'Gukje (International) Market'** name we know today — reflecting the **post-war black-market era** when goods flowed in from US troop PX exchanges, UN aid shipments, and worldwide imports unavailable through normal channels. \n\nAfter the great **Busan Station fire of 1953** destroyed the nearby downtown commercial district, displaced merchants permanently resettled at Gukje, cementing its dominance. The market is organized into **six themed alleys**: **Arirang Street** (clothing, accessories), **Gongguk Street** (kitchenware, household goods), **Wood Street** (lumber and furniture, the original 1950s specialty), **Cosmetics Street**, **Hardware Street**, and the **Food Alley** (street snacks and Busan local foods). \n\nAdjacent to Gukje is **Bupyeong Kkangtong Market (부평깡통시장, 'Tin Can Market')** — named for the canned-goods bartering culture of the 1950s and recognized as **Korea's first official night market**, lit and active until ~22:00. The market was the setting of the **2014 Korean film 'Ode to My Father' (국제시장)** — a Korean War family-memory blockbuster that drew **14 million ticket sales** and anchored a national reckoning with the refugee generation's sacrifices. \n\nToday Gukje and Bupyeong together form Busan's most lived-in shopping district — used daily by locals, not just tourists. **Hours: most shops 09:30–19:30 daily; many close on 1st & 3rd Sundays** (varies by section). On this bus-tour the visit is a brisk 30-min corridor walk-through, ideal for a quick taste of Busan's working-class commercial heritage before the coach continues to Gamcheon Culture Village.",
+      "description": "**国际市场**是釜山中区一座规模庞大的传统市场，也是韩国最大、最古老的战后市场之一，在约**600米×100米**的棋盘格局内容纳**1,500多个摊位**。\n\n它的起源可追溯到光复之初的**1945年**，失去生计的韩国商人在日本人撤离后留下的空地上开始摆摊；**朝鲜战争（1950–1953）**期间，自北方南下的大批难民涌入，市场因此大幅扩张，并定下了今天**「国际市场」**这个名字。这个名字承载着**战后黑市年代**的记忆 — 美军PX物资、联合国援助物资，以及正规渠道买不到的进口货都从这里流通。\n\n**1953年釜山站大火**烧毁了附近的市中心商圈后，商人们永久迁入国际市场，奠定了它的地位。\n\n市场分为**六条主题街**：**阿里郎街**（服装、饰品）、**共国街**（厨具、家居用品）、**木材街**（木材与家具，1950年代的原始主业）、**化妆品街**、**五金街**，以及汇集釜山小吃与街头美食的**美食巷**。\n\n毗邻的**富平罐头市场（부평깡통시장）**得名于1950年代以罐头交换物资的风气，是**韩国第一个正式夜市**，营业至晚上22时前后。\n\n国际市场还是**2014年电影《国际市场》**的舞台。这部正面书写难民一代牺牲的家庭史诗吸引了**1,400万观影人次**。今天的国际市场与富平市场共同构成釜山最具生活气息的商圈 — 不只是游客，本地人每天都在这里采买。**营业时间大多为每日09:30–19:30，不少店铺按区域在每月第一、第三个周日休息。**",
       "visitBasics": {
         "hours": "通常每日09:30至19:30营业（因店铺而异）",
         "closed": "许多商铺每月第1、3个周日休息（因区域而定）",
@@ -891,10 +889,10 @@
     },
     {
       "name": "甘川文化村",
-      "time": "≈ 16:00",
+      "time": "≈ 14:20",
       "number": 8,
       "category": "文化村 / 壁画艺术",
-      "duration": "90分钟",
+      "duration": "45 分钟",
       "timeUsed": [
         "大巴在公共停车场2号停车场落客 + 步行至入口（约5分钟）",
         "游客信息中心 + 购买盖章地图（约10分钟）",
@@ -932,9 +930,9 @@
       "smartNotes": {
         "photo": "《小王子与狐狸》长椅（排队较长）及天空广场（하늘마루）／天空花园瞭望台，可俯瞰彩虹屋顶与海湾全景",
         "facilities": "韩服租赁、手工艺工坊、韩国传统糖果摊、咖啡馆；入口处设有小型村庄博物馆；盖章地图是最便捷的导览方式",
-        "tip": "此处为居民生活区——请保持低声交谈，禁止无人机飞行，请自行带走垃圾；穿防滑鞋以应对陡峭小巷；下午黄金时段约16:00–17:00是村庄光线最佳时刻"
+        "tip": "这里有居民生活 — 请放低音量、禁飞无人机、垃圾带走；巷弄陡峭，建议穿防滑鞋。上午的团体离开后的午后时段最为清静。"
       },
-      "whyOnRoute": "路线中**最色彩缤纷、最独具特色**的一站——在韩国，没有任何其他社区与此相似。朝鲜战争难民的叙事脉络贯穿始终：联合国纪念公墓（道义纪念地）→ 甘川（现实写照：难民聚居地演变为社区）→ 札嘎其（经济写照：阿珠妈鱼贩养家糊口）。下午15:30抵达，不仅赶在游客信息中心18:00关闭之前，还能让游客享受约1小时的黄金时段光线，将彩虹屋顶尽收眼底，此时正是村庄最上镜的时刻。",
+      "whyOnRoute": "这是全程色彩最浓的一站。韩国再没有第二个这样的社区。朝鲜战争的线索一路贯穿 — 联合国纪念公园是追悼，甘川则是被活出来的结果，一个由难民聚落长成的社区。45分钟足够走完从观景台沿彩色巷弄下行的主要拍摄路线。",
       "convenience": {
         "restroom": "游客信息中心及主要观景点附近设有公共卫生间",
         "parking": "甘川公共停车场2号（收费）"
@@ -957,15 +955,44 @@
       ]
     },
     {
-      "name": "松岛海滩",
-      "time": "≈ 17:45",
       "number": 9,
-      "category": "海岸海滩 / 缆车",
-      "duration": "30 分钟",
+      "time": "≈ 15:25",
+      "duration": "20 分钟",
+      "name": "松岛云端散步路",
+      "category": "海上天空步道",
+      "description": "**松岛云端散步路**是从松岛海水浴场东端向海面延伸的**365米弧形海上步道**。**2016年**开通，取代了原来的松岛天空步道，栈道舒缓蜿蜒，尽头是一座小岛观景台，**免费开放，24小时通行**。\n\n步道起点的松岛海水浴场是**韩国第一座近代公共海滩，1913年开放**，位于西区海岸，是一片宽50米、长800米的细沙月牙湾。栈道部分路段为玻璃地板，脚下的海浪一览无余。",
+      "highlights": [
+        "**海上365米弧形天空步道** — 2016年开通，取代原松岛天空步道",
+        "部分路段玻璃地板，尽头设小岛观景台",
+        "**免费、24小时开放** — 无需购票，无需排队",
+        "起点为**韩国第一座近代公共海滩**（**1913年**开放），800米 x 50米细沙滩",
+        "西端连接松岛龙宫吊桥与岩南公园海岸步道"
+      ],
       "timeUsed": [
-        "大巴在松岛海洋公园下客（约5分钟）",
-        "松岛云端步道空中栈道（约15分钟）",
-        "海滩漫步 + 松岛海上缆车观赏（不含乘坐）（约10分钟）"
+        "在松岛海洋公园下车，步行至步道入口（约4分钟）",
+        "沿365米栈道往返小岛观景台（约12分钟）",
+        "海滨长廊拍照（约4分钟）"
+      ],
+      "whyOnRoute": "走过南浦洞密集的市场区和甘川的山坡台阶之后，松岛是这一天的海边喘息。云端散步路**免费、平坦，往返约二十分钟**，因此无论接下来是否搭乘缆车，它都是所有客人都能在停留时间内走完的松岛项目。",
+      "smartNotes": {
+        "tip": "栈道完全暴露在海上，风可能较大，恶劣天气会封闭，届时导游会改为海滨长廊。",
+        "photo": "栈道弧线掠过碎浪的画面、垂直俯视的玻璃地板、海滩后方高耸的缆车支柱。",
+        "facilities": "松岛海洋公园游客中心设有公共卫生间，松岛海边路沿线有便利店。"
+      },
+      "convenience": {
+        "parking": "松岛海洋公园公共停车场",
+        "restroom": "松岛海洋公园游客中心及松岛海边路便利店"
+      },
+      "visitBasics": {
+        "hours": "24小时开放",
+        "closed": "大风及恶劣天气时封闭",
+        "walking": "轻松 — 平坦栈道，无台阶",
+        "admission": "免费"
+      },
+      "image": "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+      "images": [
+        "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+        "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
       ],
       "_poi_meta": {
         "match": "exact",
@@ -979,44 +1006,56 @@
         "verified": true,
         "kb_version": "1.24",
         "verified_date": "2026-04-29"
-      },
+      }
+    },
+    {
+      "number": 10,
+      "time": "≈ 15:45",
+      "duration": "25 分钟",
+      "name": "松岛天空公园（岩南公园）",
+      "category": "海岬公园／缆车自选",
+      "description": "**松岛天空公园**位于**松岛海上缆车（釜山空中巡航）**对岸终点的岩南公园海岬。缆车横跨海湾，**往返1.62公里**，最高离水面**86米**。该线1964年首次运营，1988年停运，**2017年6月重新开通**。\n\n山顶公园设有隔湾眺望松岛海水浴场的观景平台、景观步道，以及孩子们会直奔而去的恐龙主题区。从观景平台可沿海岸步道继续走入岩南公园。\n\n**缆车不含在本行程内。**须在现场选择并在车站付费：**成人往返17,000韩元**，玻璃地板的**水晶车厢为25,000韩元**。愿意留在海平面的客人可以在海滨长廊度过这段时间，无论如何车辆都会等候。",
       "highlights": [
-        "**韩国第一座现代公共海滩** — **1913年** 日本殖民时期正式开放",
-        "位于釜山西南海岸（西区）的月牙形细沙海滩，**长800米 × 宽50米**",
-        "**松岛海上缆车（송도해상케이블카）** — 横跨海湾全程1.62公里；1988年停运后于 **2017年6月重新开放**；**最高海拔86米**；设有玻璃地板 **\"水晶舱\"** 选项",
-        "**松岛云端步道（송도구름산책로）** — 全长365米的弧形海上空中栈道，2016年开放，取代原松岛空中步道",
-        "**松岛龙宫悬索桥** — 连接海滩公园与附近岩南公园",
-        "每年举办 **松岛海滩节**（6月至8月），设有沙雕比赛和夜市活动",
-        "**海滩24小时免费开放**；缆车成人来回票价₩17,000（自费，不含在行程内）"
+        "**松岛海上缆车（釜山空中巡航）** — 往返1.62公里，最高离水面**86米**",
+        "1964年开通，1988年停运，**2017年6月重新开通**",
+        "可选玻璃地板的**水晶车厢**",
+        "岩南公园海岬观景平台，隔湾远眺松岛海水浴场",
+        "恐龙主题区，海岸步道连通岩南公园",
+        "**缆车为现场自选、另行付费 — 成人往返17,000韩元，水晶车厢25,000韩元**"
       ],
+      "timeUsed": [
+        "松岛基站排队购票（约5分钟）",
+        "缆车前往岩南公园站（单程约7分钟）",
+        "天空公园观景平台（约10分钟）"
+      ],
+      "whyOnRoute": "这是全天唯一由客人自己决定内容的停靠。天空公园在海湾对岸，缆车是上去的方式，因此停留时间是按往返来安排的。不搭缆车的客人也不会无处可去 — 基站就在刚刚走过的那片海滩上。",
       "smartNotes": {
-        "tip": "本巴士游览行程**不含**松岛海上缆车，且30分钟停留时间不足以乘坐（含排队全程约需45至60分钟）；有意乘坐缆车的旅客可选择我们的私人邮轮岸上包车行程；云端步道空中栈道免费开放，可在30分钟内游览完毕",
-        "photo": "耸立于海滩上方的缆车塔柱构成标志性的松岛天际线；弧形松岛云端步道凌驾于拍岸浪涛之上；从海滩一端眺望龙宫悬索桥",
-        "facilities": "松岛海洋公园游客中心设有公共洗手间；松岛海边路沿线有便利店；缆车下站设有咖啡厅及韩国战争纪念展览"
+        "tip": "请在基站购票，水晶车厢的队伍通常比普通车厢长。若您船只的登船截止时间较早，建议先乘缆车、在山顶拍照，而不是在山下逗留。",
+        "photo": "横渡途中俯瞰的海湾、隔湾望向松岛海水浴场的天空公园平台、水晶车厢掠过外海时的玻璃地板。",
+        "facilities": "下站设有咖啡厅和朝鲜战争纪念展，两站均有卫生间。"
       },
-      "whyOnRoute": "松岛海滩是本行程**傍晚的海岸休憩站** — 在南浦洞密集的城市片区（扎嘎其市场 + BIFF广场 + 国际市场 + 甘川文化村山坡）之后，在韩国最古老的公共海滩短暂停留，让邮轮旅客在龙头山公园/邮轮码头收尾前最后一次呼吸海风。17:45的时间节点恰逢**傍晚黄金时段**，是拍摄缆车凌空水面的最佳光线条件。30分钟停留时间有意设置较短 — 足以游览云端步道并拍摄几张海岸照片，但不足以乘坐缆车（缆车被视为较长釜山行程旅客的独立付费体验）。",
       "convenience": {
-        "parking": "松岛海洋公园公共停车场，可供大巴进入",
-        "restroom": "松岛海洋公园游客中心及松岛海边路沿线便利店"
+        "parking": "松岛海洋公园公共停车场（下站）",
+        "restroom": "缆车两侧车站"
       },
-      "description": "**Songdo Beach (송도해수욕장)** is **Korea's first modern public beach** — opened **in 1913** during the Japanese colonial era, predating both Haeundae (1965) and Gwangalli as a designated bathing beach. The 800-meter crescent of fine sand sits on Busan's southwest coast in **Seo-gu**, sheltered from the open sea by a small headland and the offshore **Songdo-do (송도, 'Pine Island')** for which the beach is named. \n\nThe beach was Busan's premier seaside resort through the colonial period and post-war decades, hosting Korea's first beach festival in the 1920s. Modern Songdo's signature attractions are: (1) the **Songdo Marine Cable Car (송도해상케이블카)**, a 1.62-km roundtrip cable car over the bay that **reopened June 2017** after a 1988 closure — operating from **East Station (East Tower) to West Station (Songdo Sky Park)** at a maximum altitude of 86 meters, with both standard and **'Crystal cabin' (glass-floor) options**; (2) the **Songdo Cloud Trails (송도구름산책로)** — a curved 365-meter skywalk that extends from the eastern beach out over the open sea, opened **2016**, replacing the older Songdo Skywalk; and (3) the **Songdo Yonggungungu Suspension Bridge** (송도용궁구름다리), a 127-meter coastal suspension bridge that connects the western end of Songdo Marine Park to Amnam Park and the bordering Seonggol Pavilion viewpoint — opened **2020**. \n\nThe beach's **Songdo Beach Festival** runs **June through August** with sand sculpture competitions, night markets, and music performances. On this bus-tour the 30-min stop is intentionally a quick coastal-air reset — guests visit the **free Cloud Trails skywalk** and the cable-car station viewpoint but do not ride the cable car (which requires a separate ticket and longer time block).",
       "visitBasics": {
-        "hours": "海滩24小时免费开放；缆车运营时间09:00–21:00；云端步道24小时开放",
-        "closed": "海滩全年开放；缆车在极端天气下关闭",
-        "walking": "简单 — 平坦的海滩长廊与云端栈道天空步道；西端桥梯可选",
-        "admission": "海滩 + 云端栈道免费；**松岛海上缆车 ₩17,000 成人往返 / ₩25,000 水晶舱升级（不含）**"
+        "hours": "缆车 09:00–21:00（随季节调整），岩南公园海岬全年开放",
+        "closed": "大风及恶劣天气时缆车停运",
+        "walking": "轻松 — 车站电梯与平坦平台",
+        "admission": "缆车不含 — 成人往返17,000韩元，水晶车厢25,000韩元，现场支付。岩南公园本身免费。"
       },
       "image": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
       "images": [
-        "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp"
+        "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
       ]
     },
     {
       "name": "龙头山公园与釜山塔",
-      "time": "≈ 18:30",
-      "number": 10,
+      "time": "≈ 16:25",
+      "number": 11,
       "category": "城市观景点",
-      "duration": "30 分钟",
+      "duration": "20 分钟",
       "timeUsed": [
         "大巴在光复路时装街附近下客（约5分钟）",
         "乘自动扶梯上行至公园广场（约5分钟）",
@@ -1047,20 +1086,20 @@
         "**市民之钟33响仪式**——每逢**除夕夜及三一节（独立运动纪念日）敲响33次**——**33响是为纪念1919年在首尔塔洞公园宣读《独立宣言》的33位韩国签署人**；将釜山的市民认同与民族独立叙事紧密相连"
       ],
       "smartNotes": {
-        "photo": "从**釜山钻石塔120米高观景台**（山顶总海拔189米）俯瞰——晴天可一览**360°全景**：釜山港、影岛大桥及对马岛尽收眼底。塔顶造型**仿照庆州佛国寺多宝塔华盖（国宝第20号）**设计。最佳观赏时间为**日落时分及入夜之后**。",
+        "photo": "从釜山钻石塔120米高观景台（山顶总海拔189米）俯瞰——晴天可一览360°全景：釜山港、影岛大桥及对马岛尽收眼底。塔顶造型仿照庆州佛国寺多宝塔华盖（国宝第20号）设计。最佳观赏时间为日落时分及入夜之后。",
         "tip": "参观塔楼时，可同步游览**李舜臣将军铜像**（壬辰倭乱中驾驭龟船迎战、从未失去一艘战船的民族英雄）以及**市民之钟**（每逢**除夕夜及三一节敲响33次**，以纪念1919年《独立宣言》的33位签署人）。"
       },
-      "whyOnRoute": "龙头山在日落黄金时段呈现**釜山最具代表性的360°全景**——塔顶对庆州佛国寺多宝塔的造型引用，将此站点与您在多日邮轮停靠行程中可搭配的庆州文化遗产线路在概念上融为一体。45分钟的游览时间经过精心设计，足以完成观景台登顶而无需走遍整个公园；从光复路乘自动扶梯可省去徒步上山之苦。对于邮轮游客而言，龙头山是当天的首选备用天气方案——若因雨天或大雾取消太宗台的户外海崖游览，钻石塔观景台+公园可在相同停留时长内提供约75分钟的室内替代体验。",
+      "whyOnRoute": "龙头山给你釜山最广为人知的360度全景，并用步行收束这一天。公园就在此前走过的南浦洞街道正上方，最后一站从高处把走过的路重新看一遍，再短程返回船上。",
       "convenience": {
         "restroom": "公园广场及釜山钻石塔内均设有",
         "parking": "无现场停车位——请使用南浦洞公共停车场，步行至扶梯乘梯上山"
       },
       "description": "**龙头山公园（용두산공원，\"龙头山公园\"）** — 位于南浦洞核心地带，占地**69,000平方米**，拥有**70种树木**，是一处层次丰富的历史遗址：这里曾是**朝鲜时代的倭馆**（草梁倭馆，**1678年至1878年间的日本贸易与外交飞地**），后成为日本**龙头山神社（17世纪至20世纪初）**，再后来是**朝鲜战争难民棚户区**（大部分在1950年代火灾中被毁），最终被改建为现代公园。\n\n**120米高的釜山塔**（最初于**1973年建成开放**，**2021年改造后更名为\"釜山钻石塔\"**）是公园的核心标志——其**观景台顶部以庆州佛国寺多宝塔（国宝第20号）的华盖（宝盖）为设计原型**，是将釜山现代地标与新罗文化遗产相连接的显性建筑引用。该塔**海拔69米加塔高120米，总高度为189米**，可欣赏釜山港、影岛大桥、对马岛（晴天可见）及下方扎嘎其市场的**360°全景**。\n\n公园内其他纪念物包括：**李舜臣将军（1545–1598年）铜像**（釜山本地海军英雄，在1592–1598年壬辰倭乱中击败日本军队，以**从未丢失一艘战船**著称），由**10万名釜山市民**捐赠的**市民之钟**（**除夕及3月1日三一独立运动纪念日各敲响33次**），入口处的**花钟**，以及象征山名的**铜龙雕塑**。入园通道为**从光复路时装街乘坐有顶盖自动扶梯**（无回程扶梯——需步行下楼梯）。\n\n**公园全天免费开放**；**釜山钻石塔观景台成人₩12,000 ／65岁以上老人或3–12岁儿童₩9,000，开放时间10:00–22:00（最后入场21:30）**。",
       "visitBasics": {
-        "hours": "公园全天24小时开放；**釜山钻石塔观景台10:00–22:00开放（最晚入场21:30）**",
+        "hours": "公园全天24小时开放；釜山钻石塔观景台10:00–22:00开放（最晚入场21:30）",
         "closed": "塔楼全年开放（极端大风天气下偶有安全关闭）",
-        "admission": "公园**免费**；**釜山钻石塔成人₩12,000 / 65岁以上老年人或3–12岁儿童₩9,000**",
-        "walking": "上山乘**光复路时装街有盖自动扶梯**（无下行扶梯——请步行下山）"
+        "admission": "公园免费；釜山钻石塔成人₩12,000 / 65岁以上老年人或3–12岁儿童₩9,000",
+        "walking": "上山乘光复路时装街有盖自动扶梯（无下行扶梯——请步行下山）"
       },
       "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "images": [
@@ -1071,24 +1110,24 @@
     },
     {
       "name": "返回釜山港（国际邮轮码头）",
-      "time": "≈ 19:15",
-      "number": 11,
+      "time": "≈ 17:00",
+      "number": 12,
       "category": "邮轮码头返回",
-      "duration": "车程20分钟",
+      "duration": "车程15分钟",
       "timeUsed": [
         "大巴从龙头山/南浦洞出发（约5分钟）",
         "经忠武大路驾车前往釜山港国际邮轮码头（约15分钟）",
         "在码头大巴停车场下车；预留约30分钟缓冲时间重新登船"
       ],
-      "whyOnRoute": "返回邮轮码头是当天行程的硬性约束：釜山大多数邮轮靠港的出发时间在 **19:30 至 21:00** 之间，我们的**19:15前返回保证**旨在确保宾客在最常见的船班时刻表下，拥有至少60分钟的重新登船缓冲时间。从龙头山到码头车程较短（约6公里），全程行驶于釜山市中心，无需经过可能受交通事故影响的高速路段。导游将在早上接客时再次确认每艘船的启航时间，并据此调整当天行程顺序——对于出发时间较早（18:00–19:00）的船只，松岛和龙头山的游览时间将相应缩短。",
-      "description": "The coach departs the **Yongdusan / Gwangbok-ro pickup point** at approximately **19:15** and drives ~6 km east through central Busan via **Chungmu-daero and the Yeongdo Bridge corridor** to the **Busan Port International Cruise Terminal**, arriving at the terminal coach lot at approximately **19:30**. \n\nGuests disembark at the terminal, with at least a **30-minute reboarding buffer** for the most common Busan cruise sail-away times (typically 19:30–21:00). The guide reconfirms each ship's specific departure time at morning pickup and will adjust the day's running order if a ship has an unusually early sail-away — typically by shortening the Songdo and Yongdusan stops to ~20 minutes each. \n\nFor cruise lines with departures from the **Busan Port (Coral) International Passenger Terminal** rather than the Cruise Terminal, the coach will drop at the correct terminal as confirmed at booking."
+      "whyOnRoute": "返回邮轮码头是这一天最硬的约束。在接站后八小时、约17:00 送回，比釜山靠港常用的登船截止时间留有实实在在的余量；若船只出航格外早，导游会当天调整顺序。",
+      "description": "车辆约**16:45**从龙头山·光复路上车点出发，穿过釜山市中心返回**早上接您的那个码头**，约**17:00**抵达 — 距接站约**8小时**。\n\n这比停靠釜山的邮轮通常采用的登船截止时间留有充裕余地。若您的船出航特别早，请在早上接站时告知导游，我们会调整当天顺序，通常是缩短松岛与龙头山的停留。"
     }
   ],
   "routeFlowStops": [
     {
-      "name": "釜山港接客（邮轮码头）",
+      "name": "釜山港接送（国际邮轮码头）",
       "type": "origin",
-      "theme": "邮轮接客"
+      "theme": "邮轮码头接送"
     },
     {
       "name": "海东龙宫寺",
@@ -1096,24 +1135,24 @@
       "theme": "海边寺庙"
     },
     {
-      "name": "联合国军纪念公墓",
+      "name": "驻韩联合国纪念公墓",
       "type": "primary",
-      "theme": "纪念馆"
+      "theme": "纪念地 / 战争历史"
     },
     {
-      "name": "午餐（可选）",
+      "name": "在釜山当地餐厅用午餐（自费）",
       "type": "meal",
-      "theme": "餐食"
+      "theme": "午餐 / 当地美食 — 可选"
     },
     {
-      "name": "札嘎其市场",
+      "name": "札嘎其鱼市场",
       "type": "primary",
-      "theme": "海鲜市场"
+      "theme": "鱼市场／本地文化"
     },
     {
-      "name": "BIFF 广场",
+      "name": "BIFF广场",
       "type": "primary",
-      "theme": "电影与街头小吃"
+      "theme": "电影街区 / 街边小吃"
     },
     {
       "name": "国际市场",
@@ -1126,63 +1165,68 @@
       "theme": "艺术村"
     },
     {
-      "name": "松岛海滩",
+      "name": "松岛云端散步路",
       "type": "primary",
-      "theme": "海滨公园"
+      "theme": "海上天空步道"
     },
     {
-      "name": "龙头山公园",
+      "name": "松岛天空公园（岩南公园）",
+      "type": "primary",
+      "theme": "海岬公园／缆车自选"
+    },
+    {
+      "name": "龙头山公园与釜山塔",
       "type": "primary",
       "theme": "城市观景点"
     },
     {
-      "name": "返回釜山港",
+      "name": "返回釜山港（国际邮轮码头）",
       "type": "return",
-      "theme": "邮轮返程"
+      "theme": "邮轮码头返回"
     }
   ],
   "routePhases": [
     {
-      "phase": "海滨清晨",
-      "duration": "≈ 2.5 小时",
-      "description": "08:30 于邮轮码头接客，向东北方向驾车前往海东龙宫寺，09:30 抵达，抢在旅游大巴人潮涌入之前游览。"
+      "phase": "从码头到海岸",
+      "duration": "约1小时35分钟",
+      "description": "09:00 在邮轮码头接您，留出下船缓冲时间后沿海岸向东北行驶，09:45 抵达海东龙宫寺 — 赶在上午中段开始涌入的旅游大巴之前。"
     },
     {
-      "phase": "纪念馆与午餐",
-      "duration": "≈ 2 小时",
-      "description": "参观联合国纪念公墓（60 分钟），了解朝鲜战争历史背景，随后可选择 60 分钟的釜山特色午餐（猪肉汤饭或密面）。"
+      "phase": "纪念公园与午餐",
+      "duration": "约1小时40分钟",
+      "description": "在联合国纪念公园（30分钟）了解朝鲜战争的背景，随后享用猪肉汤饭或小麦冷面等釜山特色午餐。餐费自理。"
     },
     {
-      "phase": "南浦洞片区",
-      "duration": "≈ 1.5 小时",
-      "description": "札嘎其市场 → BIFF广场 → 国际市场 — 三处相邻短途景点，在600米步行范围内涵盖釜山的美食、电影及难民市集历史文化遗产。"
+      "phase": "步行南浦洞",
+      "duration": "约1小时25分钟",
+      "description": "札嘎其市场、BIFF广场与国际市场是彼此相距约600米的三个独立停靠点，因此一天的中段是走过去的，而不是开过去的。"
     },
     {
-      "phase": "村庄与海岸",
-      "duration": "约2小时",
-      "description": "黄金时段游览甘川文化村（90分钟），欣赏彩色屋顶全景，随后前往松岛海滩（30分钟），拍摄缆车海岸线美景。"
+      "phase": "甘川山坡",
+      "duration": "约1小时5分钟",
+      "description": "从南浦洞短途转场至甘川文化村（45分钟），欣赏层层叠叠的彩色屋顶全景。"
     },
     {
-      "phase": "黄昏观景点与返程",
-      "duration": "约1小时",
-      "description": "黄昏时分游览龙头山公园及釜山钻石塔（30分钟），随后驱车约15分钟返回邮轮码头，赶上19:30重新登船。"
+      "phase": "松岛与返程",
+      "duration": "约1小时35分钟",
+      "description": "先走松岛云端散步路，选择缆车的客人可跨湾前往天空公园，最后到龙头山公园，再驱车返回码头 — 以17:00抵达为准，并始终对齐您船只的登船截止时间。"
     }
   ],
   "routeShapeIntro": {
     "title": "邮轮日行程全览",
-    "subtitle": "08:30从邮轮码头出发；首先向东北方前往海东龙宫寺，趁悬崖尚未人潮涌动；返回市区游览联合国纪念公园，可选午餐，以及南浦洞景点群（札嘎其→BIFF→国际市场）；黄金时段游览甘川；松岛海岸小憩后前往龙头山黄昏观景点；19:15前返回码头。"
+    "subtitle": "09:00 邮轮码头接站，趁崖边还清静先往东北的海东龙宫寺。再横穿市区前往联合国纪念公园与自费午餐，接着把南浦洞作为三个独立停靠点步行走完（札嘎其市场、BIFF广场、国际市场）。之后是甘川的彩色山坡；松岛先走云端散步路，若选择缆车则跨湾前往天空公园；最后是龙头山公园，17:00 回到码头。"
   },
   "whyTourWorks": {
     "bestFor": [
       "只有一天釜山停靠日的邮轮旅客",
       "初次游览釜山的经济型旅行者",
-      "能适应9小时全天行程的成人家庭及情侣",
+      "能适应8小时全天行程的成人家庭及情侣",
       "偏好导游带领节奏、不愿独立出行的旅行者"
     ],
     "lessIdealFor": [
       "希望减少步行或避免爬楼梯的旅行者",
       "携带婴儿车的团体（甘川山坡地形、龙头山楼梯）",
-      "确认出港时间早于19:30的邮轮旅客 — 请改选我们的小团游产品",
+      "确认出港时间早于17:00的邮轮旅客 — 请改选我们的小团游产品",
       "希望在某一景点长时间自由活动的旅客（甘川游览上限为90分钟）"
     ],
     "routeLogicSections": [
@@ -1194,16 +1238,16 @@
         "items": [
           {
             "label": "保证在出港前返回",
-            "detail": "本路线以19:15返回釜山港国际邮轮码头为核心，为标准19:30–21:00出港窗口预留约30–60分钟的重新登船缓冲时间。若您的船只在19:30前出发，请在预订时告知，届时松岛及龙头山的行程将相应缩短以适配时间。"
+            "detail": "整条线路以 17:00 返回早上接您的那个码头为轴心 — 距 09:00 接站八小时，比釜山靠港常用的登船截止时间留有从容余量。若船只出航格外早，导游会当天调整顺序。"
           },
           {
             "label": "直达邮轮码头接送",
-            "detail": "无需换乘地铁，无需绕行市区酒店——大巴于08:30直接在邮轮码头到达大厅接客，并于19:30在同一地点送回。这是本巴士游产品与私人邮轮岸上游产品（提供舷梯口接送，价格更高）的核心区别。"
+            "detail": "无需地铁换乘，也不绕行市区酒店。09:00 在邮轮码头到达大厅接您，约 17:00 送回同一地点。釜山两个邮轮码头具体用哪一个，取决于您的船靠泊在哪一侧，预订后确认。"
           }
         ]
       },
       {
-        "title": "一天游览八处景点",
+        "title": "一天九个停靠点",
         "icon": "map",
         "iconBg": "bg-emerald-50/80",
         "iconColor": "text-emerald-600",
@@ -1214,11 +1258,11 @@
           },
           {
             "label": "甘川文化村：专为黄金时段而设计",
-            "detail": "当天16:00抵达甘川文化村，恰好赶上最佳拍摄的黄金时段光线（16:00–17:00）——刻意将甘川安排在倒数第二站而非午前，尽管大多数常规釜山团都把它排在午餐前游览。"
+            "detail": "甘川安排在午后，用时45分钟，正好在上午团体撤离观景台之后。把它放在南浦洞市场之后，意味着彩色巷弄是一路往下走，而不是往上爬。"
           },
           {
             "label": "龙头山公园：在暮色中收官",
-            "detail": "龙头山公园的全景在暮色时分最为壮观（夏季约18:30，冬季更早）。将其安排为全天最后一站，无需单独安排夜间行程，便可欣赏到全天最美的城市天际线。"
+            "detail": "把龙头山放在最后，是因为它就在此前走过的南浦洞街道正上方。最后二十分钟从高处把整个下午重新看一遍，而码头距离同一上车点只有很短的车程。"
           }
         ]
       },
@@ -1234,11 +1278,11 @@
           },
           {
             "label": "停留时间固定，不可灵活调整",
-            "detail": "每站30–90分钟的停留窗口对全体团员统一执行——如果您希望在札嘎其多待一会儿享用生鱼片，或跳过龙头山改乘松岛缆车，则需预订我们的私人包车服务。正是这种固定时间安排，才使巴士团得以保持49美元的低价。"
+            "detail": "20–50分钟的停留时长对全团一致。在每一站里做什么由您决定 — 搭松岛缆车上天空公园，或改走免费的天空步道；登釜山塔观景台，或留在公园层。但停留时间无法延长，也不能删掉某一站。想把一天完全按自己的节奏重排，请选择私人包车。"
           },
           {
             "label": "缆车及塔楼观景台不含在内",
-            "detail": "松岛海上缆车（₩17,000起）和釜山钻石塔观景台（₩12,000）不含在团费内。大多数乘坐巴士团的邮轮游客对免费的云端栈道天空步道及广场全景已十分满意；可选的付费体验项目均已明确单独列出。"
+            "detail": "松岛海上缆车（成人往返17,000韩元）与釜山塔观景台（12,000韩元）不含在行程费用内。缆车是松岛停靠时的现场选择 — 可以搭乘上行前往天空公园，也可以留在海平面走一段免费的云端散步路。"
           }
         ]
       }
@@ -1248,11 +1292,11 @@
     {
       "id": "pickup",
       "title": "上下车地点",
-      "preview": "在釜山港国际邮轮码头到达大厅直接接送……",
+      "preview": "集合地点为您的船只靠泊的釜山邮轮码头到达大厅 — 影岛邮轮码头或釜山港国际旅客码头（草梁），具体码头预订后确认。",
       "content": [
-        "在釜山港国际邮轮码头到达大厅直接接送——请在集合地点寻找AtoC Korea指示牌。",
-        "大巴于08:25开始登车，08:30准时出发；请预留足够时间排队下船。",
-        "约19:15–19:30返回同一邮轮码头大巴停车场。",
+        "集合地点为您的船只靠泊的釜山邮轮码头到达大厅 — 影岛邮轮码头或釜山港国际旅客码头（草梁），具体码头预订后确认。",
+        "大巴于08:50开始登车，09:00准时出发；请预留足够时间排队下船。",
+        "约16:45–17:00返回同一邮轮码头大巴停车场。",
         "导游将在早上接团时确认您所在邮轮的具体离港时间，并根据需要调整当天的行程顺序。"
       ]
     },
@@ -1282,12 +1326,10 @@
     {
       "id": "inclusions",
       "title": "费用包含",
-      "preview": "邮轮码头接送、配备空调的大型旅游大巴、持牌英语导游……",
+      "preview": "费用包含: 行程内景点门票 · 英语·中文导游 · 邮轮码头往返接送 · 过路费·停车费·燃油费 · 订票手续费",
       "content": [
-        "邮轮码头接送及返送、配备空调的大型旅游大巴（28至45座）、持牌英语导游。",
-        "主线路所有景点门票均免费：龙宫寺、联合国纪念公园、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛天空步道、龙头山公园。",
-        "不含项目：午餐（自费约8,000至12,000韩元，且午餐环节为自选）、松岛海上缆车（如需乘坐另付17,000韩元以上；30分钟停留时间内不易安排）、釜山钻石塔观景台（如需登顶参观平台另付12,000韩元）。",
-        "小费、个人购物及零食费用均不含在内。"
+        "费用包含: 行程内景点门票 · 英语·中文导游 · 邮轮码头往返接送 · 过路费·停车费·燃油费 · 订票手续费",
+        "费用不含: 餐食与饮料 · 个人消费 · 导游及司机小费 · 旅行保险 · 釜山塔观景台（现场自选） · 天空胶囊列车·海云台海滨列车（现场自选） · 松岛海上缆车（现场自选）"
       ]
     },
     {
@@ -1317,9 +1359,9 @@
     {
       "id": "sail-away",
       "title": "邮轮离港时间",
-      "preview": "对于19:30以后离港的邮轮，保证于19:30前返回……",
+      "preview": "对于17:00以后离港的邮轮，保证于17:00前返回……",
       "content": [
-        "对于19:30以后离港的邮轮，保证于19:30前返回——通常预留30至60分钟供乘客重新登船。",
+        "对于17:00以后离港的邮轮，保证于17:00前返回——通常预留30至60分钟供乘客重新登船。",
         "若邮轮在18:00至19:00之间较早离港，请在预订时告知——行程将相应缩短，省略松岛和龙头山部分。",
         "导游随身携带各邮轮公司的联系方式，如遇突发交通延误，将提前无线电通报。",
         "AtoC Korea在本线路运营的4个季度中，从未错过任何一次邮轮离港。"
@@ -1334,6 +1376,18 @@
         "24小时以内取消：退还50%费用（大巴及导游已为您当天预留）。",
         "未出现或错过接送：不予退款——但如遇邮轮延迟靠港，请立即联系AtoC Korea运营团队，我们将为您保留大巴最多30分钟。",
         "邮轮行程变更（跳过港口）：无论时间，全额退款。"
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "附加费、取消规定与参加条件",
+      "preview": "08:00前接送或20:00后结束，每人加收10,000韩元。24小时前免费取消。4岁以上。仅限邮轮旅客。",
+      "content": [
+        "超时附加费：若您的船期需要在08:00之前接送，或行程在20:00之后结束，每人加收10,000韩元，当天现场支付。",
+        "取消规定：行程开始前24小时可免费取消，24小时以内不予退款。",
+        "最低年龄：4岁及以上方可参加。",
+        "仅限邮轮旅客：本行程仅面向搭乘邮轮停靠釜山的旅客销售。无釜山停靠行程的预订将被拒绝并退款。",
+        "返回时间：全天行程以您船只的登船截止时间为基准安排，送回时间会安排在此之前。"
       ]
     }
   ],
@@ -1373,7 +1427,7 @@
       "description": "准时返回保障",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "行程完全围绕釜山邮轮靠港时刻表设计——08:30在邮轮码头接客，19:15返回，为标准19:30以后出港预留30–60分钟重新登船缓冲时间。运营4个赛季，从未错过任何一次出港。"
+      "body": "行程完全围绕釜山邮轮靠港时刻表设计——09:00在邮轮码头接客，16:45返回，为标准17:00以后出港预留30–60分钟重新登船缓冲时间。运营4个赛季，从未错过任何一次出港。"
     },
     {
       "icon": "check-circle",
@@ -1421,7 +1475,7 @@
       "timing": "行程结束",
       "title": "返回邮轮码头",
       "detail": "直接返回邮轮码头停车场",
-      "description": "大巴将于约19:15–19:30将宾客送回邮轮码头停车场，预留30至60分钟的登船缓冲时间。"
+      "description": "大巴将于约16:45–17:00将宾客送回邮轮码头停车场，预留30至60分钟的登船缓冲时间。"
     },
     {
       "timing": "行程结束后",
@@ -1434,17 +1488,17 @@
     {
       "id": "cruise-pickup",
       "question": "邮轮码头接送地点具体在哪里？",
-      "answer": "在釜山港国际邮轮客运站（부산항국제여객터미널）的到达大厅，AtoC Korea导游将举牌等候。大巴停在客运站停车场，穿过有顶通道步行约2分钟即可到达。接送时间为08:30，请于08:25前抵达集合地点。若您的邮轮停靠其他码头（如釜山港珊瑚客运站），请在预订时告知，集合地点将相应调整。"
+      "answer": "在釜山港国际邮轮客运站（부산항국제여객터미널）的到达大厅，AtoC Korea导游将举牌等候。大巴停在客运站停车场，穿过有顶通道步行约2分钟即可到达。接送时间为09:00，请于08:50前抵达集合地点。若您的邮轮停靠其他码头（如釜山港珊瑚客运站），请在预订时告知，集合地点将相应调整。"
     },
     {
       "id": "sail-away",
       "question": "我能赶上回船的时间吗？",
-      "answer": "可以——行程路线设计以19:15–19:30返回邮轮码头为目标，为典型的19:30–21:00釜山出港时间窗口预留30至60分钟的登船缓冲时间。AtoC Korea在此路线运营的4个季度中从未发生过误船情况。若您的邮轮出发时间早于19:30，请在预订时告知，届时将通过缩短松岛和龙头山的游览时间来调整行程。"
+      "answer": "可以——行程路线设计以16:45–17:00返回邮轮码头为目标，为典型的17:00–21:00釜山出港时间窗口预留30至60分钟的登船缓冲时间。AtoC Korea在此路线运营的4个季度中从未发生过误船情况。若您的邮轮出发时间早于17:00，请在预订时告知，届时将通过缩短松岛和龙头山的游览时间来调整行程。"
     },
     {
       "id": "bus-vs-small-group",
-      "question": "大巴团与小型邮轮团有何区别？",
-      "answer": "游览景点相同，形式不同。本大巴团使用大型旅游巴士（28至45座），与来自多艘邮轮的游客共乘，价格实惠，每人49美元，每站停留时间固定为30至90分钟。小型邮轮团则使用约12人座的共乘面包车，价格约79美元，每处景点停留时间更长，路线亦有一定灵活性。如需经济实惠、方便快捷，请选择大巴团；如需舒适的节奏和在札嘎其市场享用生鱼片餐的选项，请选择小型团。"
+      "question": "巴士行程与小团邮轮行程有什么区别？",
+      "answer": "停靠点同为九个，同样是八小时，区别只在车辆。本行程使用与多艘邮轮旅客共乘的大型巴士，每人 US$58.79。小团行程走完全相同的路线，使用限乘12人的面包车，每人 US$68.95。看重价格就选巴士；想要更安静的同行人数、以及每站停留时间上多一点弹性，就选面包车。"
     },
     {
       "id": "private-vs-bus",
@@ -1468,8 +1522,8 @@
     },
     {
       "id": "cable-car",
-      "question": "我可以乘坐松岛海上缆车吗？",
-      "answer": "在本行程30分钟的松岛停留时间内无法体验。缆车往返加上通常的排队时间需45–60分钟，将导致当天返回时间超过19:30的缓冲时限。如果缆车对您至关重要，请选择我们的私人专属游览服务（可灵活调配额外时间），或在釜山多日游中单独前往松岛。30分钟内将参观松岛云步道天空步道及缆车站观景台。"
+      "question": "可以搭乘松岛海上缆车吗？",
+      "answer": "可以 — 松岛天空公园这一站就是它，是否搭乘由您当天决定。缆车不含在行程费用内：在基站购票，成人往返17,000韩元，玻璃地板的水晶车厢25,000韩元。若不想搭乘，可以把这段时间用在免费的云端散步路和海滨长廊上；无论如何车辆都会等候。"
     },
     {
       "id": "tower",
@@ -1549,15 +1603,15 @@
     "primary": {
       "name": "釜山港国际邮轮码头",
       "address": "釜山市东区草梁大路24号",
-      "time": "08:30 pickup / 19:15–19:30 drop-off",
-      "instructions": "请在码头到达大厅与导游会合——请寻找\"AtoC Korea / Busan Coastal Tour\"指示牌。大巴于08:25在码头大巴停车场发车，经有顶通廊步行约2分钟可达。"
+      "time": "09:00 pickup / 16:45–17:00 drop-off",
+      "instructions": "停靠釜山的邮轮两个码头都有可能使用，具体以您船只的靠泊位置为准，预订后确认。请在到达大厅与导游会合。"
     },
     "alternates": [
       {
         "name": "釜山港珊瑚国际旅客码头",
         "address": "釜山市中区忠壮大路206号",
-        "time": "08:30 pickup (alternate)",
-        "instructions": "如果您的邮轮停靠珊瑚码头而非邮轮码头，请在预订时告知——大巴将改为在珊瑚码头到达大厅接客。"
+        "time": "09:00 pickup (alternate)",
+        "instructions": "停靠釜山的邮轮两个码头都有可能使用，具体以您船只的靠泊位置为准，预订后确认。请在到达大厅与导游会合。"
       }
     ]
   },
@@ -1570,7 +1624,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_gijang",
       "busan_namgu",
@@ -1644,8 +1698,8 @@
     "cruise_shore_excursion_fit": 1,
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
-    "return_time_band": "19:00-19:30",
-    "duration_band": "9h",
+    "return_time_band": "16:30-17:00",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1751,7 +1805,7 @@
       "private_tour_seekers",
       "premium_seekers"
     ],
-    "source_of_truth_note": "Bus-tour variant of busan-small-group-sightseeing-tour-cruise-passengers. Same 8 stops, larger coach (28-45 seats), lower price ($49 vs $79), shorter stop times. Sources: Visit Busan official, VisitKorea, Wikipedia, UNMCK official, Busan Diamond Tower official, Songdo Marine Cable Car official, Busan International Film Festival official.",
-    "audit_summary": "Cruise-shore excursion bus tour from Busan Port International Cruise Terminal, 9-hour day, 8 signature stops with optional lunch. Return-by-19:15 guarantee sized for 19:30+ sail-away. Direct equivalent on GetYourGuide market is the $55 'Busan for Cruise Passengers Sightseeing Tour' (t864813)."
+    "source_of_truth_note": "Bus-tour variant of busan-small-group-sightseeing-tour-cruise-passengers. Same 9 stops, larger coach (28-45 seats), lower price ($58.79 vs $68.95), shorter stop times. Sources: Visit Busan official, VisitKorea, Wikipedia, UNMCK official, Busan Diamond Tower official, Songdo Marine Cable Car official, Busan International Film Festival official.",
+    "audit_summary": "Cruise-shore excursion bus tour from Busan Port International Cruise Terminal, 8-hour day, 9 signature stops with optional lunch. Return-by-16:45 guarantee sized for 17:00+ sail-away. Direct equivalent on GetYourGuide market is the $55 'Busan for Cruise Passengers Sightseeing Tour' (t864813)."
   }
 }
