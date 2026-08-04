@@ -3,10 +3,13 @@
  * translation, an SOS, a boarding ack, and a live location) so the ops console
  * screens have something to show. Service-role writes; sim-labelled only.
  */
-import { readFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
+
+import { signRoomClaimToken } from '@/lib/ops/seating/claimToken';
+import { signCompanionInviteToken } from '@/lib/tour-room/companionToken';
 
 async function main() {
   loadEnvConfig(process.cwd());
@@ -64,7 +67,50 @@ async function main() {
     { onConflict: 'room_id,display_name' },
   ).select();
 
-  console.log(JSON.stringify({ room1, room2, populated: true }));
+  /**
+   * 🔴 The two invite landings — `/tour-mode/join/[roomToken]` and
+   * `/tour-mode/companion/[token]` — were the ONLY tour-mode surfaces no
+   * real-render harness had ever visited (`docs/audit/UIUX-COVERAGE.md` §2).
+   * Not because they were hard to render, but because reaching them needs a
+   * signed token and no fixture carried one, so every harness quietly skipped
+   * them. Mint both here so the coverage hole closes for everybody at once.
+   *
+   * These are read-only landings by design (§O-1 ⑦: a mail scanner must not be
+   * able to create a participant), so visiting them seeds nothing.
+   */
+  const { data: b1 } = await service
+    .from('bookings')
+    .select('tour_id, tour_date')
+    .eq('id', fx.booking1)
+    .single();
+  const { token: claimToken } = signRoomClaimToken({
+    roomId: room1,
+    tourId: b1!.tour_id as string,
+    tourDate: b1!.tour_date as string,
+  });
+  const { token: companionToken } = signCompanionInviteToken({
+    bookingId: fx.booking1,
+    tourDate: b1!.tour_date as string,
+  });
+
+  writeFileSync(
+    path.join(__dirname, '.sim-fixtures.json'),
+    `${JSON.stringify(
+      {
+        ...fx,
+        room1,
+        room2,
+        tourId: b1!.tour_id,
+        joinUrl: `/tour-mode/join/${encodeURIComponent(claimToken)}`,
+        companionUrl: `/tour-mode/companion/${encodeURIComponent(companionToken)}`,
+      },
+      null,
+      2,
+    )}\n`,
+    'utf8',
+  );
+
+  console.log(JSON.stringify({ room1, room2, populated: true, joinUrl: true, companionUrl: true }));
 }
 
 main().catch((e) => {
