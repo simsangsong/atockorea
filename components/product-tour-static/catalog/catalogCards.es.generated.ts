@@ -154,6 +154,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "84"
     }
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busán en grupo pequeño: templo junto al mar, Sky Capsule y aldeas culturales",
+      "subtitle": "Tour de un día en grupo pequeño por los iconos costeros y las aldeas de ladera de Busán — el templo marino Haedong Yonggungsa, la pasarela de cristal Daritdol de Cheongsapo, el Sky Capsule del Blueline Park (billete incluido o no, a elegir al reservar), la Aldea Cultural de Gamcheon y la tranquila aldea de murales Dakbatgol con su monorraíl de la 'escalera de los deseos'.",
+      "region": "Busán",
+      "duration": "≈ 10 horas",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Grupo pequeño",
+        "Busán",
+        "Sky Capsule",
+        "Costa",
+        "Aldeas culturales"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Una jornada de Busán en grupo pequeño construida sobre la costa y las aldeas de ladera: el templo marino Haedong Yonggungsa en su tranquila ventana matinal, el mirador Daritdol de suelo de cristal (gratuito) en Cheongsapo, el trayecto en Sky Capsule del Blueline Park de Cheongsapo a Mipo (billete incluido o excluido — se elige al reservar), almuerzo, la Aldea Cultural de Gamcheon y la poco conocida aldea de murales Dakbatgol, donde un monorraíl gratuito sube por la 'escalera de los deseos'. Todos los anclajes salvo la cápsula opcional son de entrada gratuita."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     "catalog_card": {
       "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

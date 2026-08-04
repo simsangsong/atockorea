@@ -154,6 +154,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "84"
     }
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "부산 스몰그룹: 해동용궁사·스카이캡슐·문화마을",
+      "subtitle": "부산의 해안 명소와 산비탈 마을을 하루에 잇는 스몰그룹 투어 — 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인파크 스카이캡슐(티켓 포함/불포함 선택), 감천문화마을, 그리고 소망계단 모노레일이 있는 조용한 닥밭골 벽화마을.",
+      "region": "부산",
+      "duration": "≈ 10시간",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "스몰그룹",
+        "부산",
+        "스카이캡슐",
+        "해안",
+        "문화마을"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     "catalog_card": {
       "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",

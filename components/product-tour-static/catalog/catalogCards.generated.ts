@@ -32,6 +32,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
   "busan-top-attractions-day-tour",
   "east-signature-nature-core",
@@ -212,6 +213,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       },
       "price": {
         "amountLabel": "84"
+      }
+    },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan Small-Group: Sea Temple, Sky Capsule & Culture Villages",
+        "subtitle": "Small-group day tour of Busan's coastal icons and hillside villages — Haedong Yonggungsa seaside temple, the Cheongsapo Daritdol glass skywalk, the Blueline Park Sky Capsule ride (ticket optional at booking), Gamcheon Culture Village, and the quiet Dakbatgol mural village with its wish-stairs monorail.",
+        "region": "Busan",
+        "duration": "≈ 10 hours",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Small group",
+          "Busan",
+          "Sky Capsule",
+          "Coastal",
+          "Culture villages"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "A small-group Busan day built around the coast and the hillside villages: Haedong Yonggungsa seaside temple in its quiet morning window, the free glass-floor Daritdol Observatory at Cheongsapo, the Blueline Park Sky Capsule ride from Cheongsapo to Mipo (ticket included or excluded — choose at booking), lunch, Gamcheon Culture Village, and the little-known Dakbatgol mural village where a free monorail glides up the 'wish stairs'. Every anchor except the optional capsule is free admission."
+      },
+      "price": {
+        "amountLabel": "59"
       }
     },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -1076,6 +1103,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "84"
       }
     },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "부산 스몰그룹: 해동용궁사·스카이캡슐·문화마을",
+        "subtitle": "부산의 해안 명소와 산비탈 마을을 하루에 잇는 스몰그룹 투어 — 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인파크 스카이캡슐(티켓 포함/불포함 선택), 감천문화마을, 그리고 소망계단 모노레일이 있는 조용한 닥밭골 벽화마을.",
+        "region": "부산",
+        "duration": "≈ 10시간",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "스몰그룹",
+          "부산",
+          "스카이캡슐",
+          "해안",
+          "문화마을"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
       "catalog_card": {
         "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
@@ -1936,6 +1989,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       },
       "price": {
         "amountLabel": "84"
+      }
+    },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "釜山小团：海东龙宫寺·天空胶囊·文化村",
+        "subtitle": "一天串联釜山海岸名所与山坡村落的小团之旅 — 海东龙宫寺、青沙浦踏石展望台（玻璃天空步道）、蓝线公园天空胶囊（预订时可选含票/不含票）、甘川文化村，以及拥有“希望阶梯”单轨的宁静닥밭골（Dakbatgol）壁画村。",
+        "region": "釜山",
+        "duration": "≈ 10小时",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "小团",
+          "釜山",
+          "天空胶囊",
+          "海岸",
+          "文化村"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "以海岸与山坡村落为轴心的釜山小团一日游。清静上午时段的海东龙宫寺、免费玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的蓝线公园天空胶囊（预订时选择含票或不含票）、午餐、甘川文化村，以及免费单轨沿“希望阶梯”上行的小众Dakbatgol壁画村。除可选的胶囊外，所有核心停留点均免费入场。"
+      },
+      "price": {
+        "amountLabel": "59"
       }
     },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -2800,6 +2879,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "84"
       }
     },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "釜山小團體：海東龍宮寺·天空膠囊·文化村",
+        "subtitle": "一天串聯釜山海岸名勝與山坡村落的小團體之旅 — 海東龍宮寺、青沙浦踏石展望台（玻璃天空步道）、藍線公園天空膠囊（預訂時可選含票／不含票）、甘川文化村，以及擁有「希望階梯」單軌的寧靜닥밭골（Dakbatgol）壁畫村。",
+        "region": "釜山",
+        "duration": "≈ 10小時",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "小團體",
+          "釜山",
+          "天空膠囊",
+          "海岸",
+          "文化村"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "以海岸與山坡村落為軸心的釜山小團體一日遊。清幽上午時段的海東龍宮寺、免費玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的藍線公園天空膠囊（預訂時選擇含票或不含票）、午餐、甘川文化村，以及免費單軌沿「希望階梯」上行的私房景點Dakbatgol壁畫村。除可選的膠囊外，所有核心停留點皆免費入場。"
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
       "catalog_card": {
         "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
@@ -3662,6 +3767,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "84"
       }
     },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busán en grupo pequeño: templo junto al mar, Sky Capsule y aldeas culturales",
+        "subtitle": "Tour de un día en grupo pequeño por los iconos costeros y las aldeas de ladera de Busán — el templo marino Haedong Yonggungsa, la pasarela de cristal Daritdol de Cheongsapo, el Sky Capsule del Blueline Park (billete incluido o no, a elegir al reservar), la Aldea Cultural de Gamcheon y la tranquila aldea de murales Dakbatgol con su monorraíl de la 'escalera de los deseos'.",
+        "region": "Busán",
+        "duration": "≈ 10 horas",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Grupo pequeño",
+          "Busán",
+          "Sky Capsule",
+          "Costa",
+          "Aldeas culturales"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Una jornada de Busán en grupo pequeño construida sobre la costa y las aldeas de ladera: el templo marino Haedong Yonggungsa en su tranquila ventana matinal, el mirador Daritdol de suelo de cristal (gratuito) en Cheongsapo, el trayecto en Sky Capsule del Blueline Park de Cheongsapo a Mipo (billete incluido o excluido — se elige al reservar), almuerzo, la Aldea Cultural de Gamcheon y la poco conocida aldea de murales Dakbatgol, donde un monorraíl gratuito sube por la 'escalera de los deseos'. Todos los anclajes salvo la cápsula opcional son de entrada gratuita."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
       "catalog_card": {
         "slug": "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
@@ -4519,6 +4650,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       },
       "price": {
         "amountLabel": "84"
+      }
+    },
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・文化村",
+        "subtitle": "釜山の海岸名所と丘の村を一日でつなぐ少人数ツアー — 海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーラインパークのスカイカプセル（チケット込み／別を予約時に選択）、甘川文化村、そして「願いの階段」モノレールのある静かなタクバッコル壁画村。",
+        "region": "釜山",
+        "duration": "≈ 10時間",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "少人数",
+          "釜山",
+          "スカイカプセル",
+          "海岸",
+          "文化村"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
+      },
+      "price": {
+        "amountLabel": "59"
       }
     },
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {

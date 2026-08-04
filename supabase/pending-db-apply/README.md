@@ -25,6 +25,13 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > Manjanggul→Seongeup→lunch→Seongsan→haenyeo→Hamdeok, 6-locale detail_payload
 > refresh). After both, run `node scripts/import-match-v18.mjs --single <slug>`
 > for the three re-opened slugs to restore/refresh their `match_tours` rows.
+>
+> **⏳ 2026-08-04 (later) — new Busan product:**
+> `2026-08-04-03-busan-smallgroup-new-product.sql` seeds
+> `busan-small-group-yonggungsa-skycapsule-gamcheon-tour` (tours + 6 locale
+> pages + TWO offers: default USD 49 Sky-Capsule-ticket-excluded, USD 64
+> ticket-included — ⚠ prices seeded pending owner review). Then
+> `node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour`.
 
 ## Why this folder exists
 
