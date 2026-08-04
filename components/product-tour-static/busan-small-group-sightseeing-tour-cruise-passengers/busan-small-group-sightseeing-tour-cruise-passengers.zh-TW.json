@@ -33,7 +33,7 @@
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "從郵輪碼頭出發，一趟9小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
     "region": "釜山",
-    "duration": "9小時",
+    "duration": "8小時",
     "stopsCount": 8,
     "badges": [
       "郵輪靠港觀光",
@@ -46,10 +46,10 @@
   "headlineLine1": "釜山郵輪岸上小團遊",
   "headlineLine2": "一日遊",
   "price": {
-    "amountLabel": "84",
+    "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 84
+    "salePriceUsd": 68.95
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -61,7 +61,7 @@
       "釜山"
     ],
     "meta": {
-      "duration": "約9小時，依您的郵輪靠港時間彈性調整",
+      "duration": "約8小時，依您的郵輪靠港時間彈性調整",
       "region": "釜山",
       "stops": "8個景點",
       "rating": 0,
@@ -920,7 +920,7 @@
           },
           {
             "label": "共乘廂型車價格，介於遊覽車團與私人包車之間",
-            "detail": "釜山私人郵輪岸上遊每組費用為300至500美元以上；遊覽車團通常搭載40人以上，每人費用較低。本共乘廂型車方案介於兩者之間，每班最多約10名乘客——適合單獨出遊、情侶及無需包車的小型團體。需注意的是：行程採固定路線，無法依需求客製化調整。"
+            "detail": "釜山私人郵輪岸上遊每組費用為300至500美元以上；遊覽車團通常搭載40人以上，每人費用較低。本共乘廂型車方案介於兩者之間，每班最多 12 名乘客——適合單獨出遊、情侶及無需包車的小型團體。需注意的是：行程採固定路線，無法依需求客製化調整。"
           }
         ]
       }
@@ -941,9 +941,9 @@
     {
       "id": "pickup",
       "title": "接送地點說明",
-      "preview": "集合地點：釜山港國際旅客碼頭入境大廳。",
+      "preview": "集合地點為您的船隻靠泊的釜山郵輪碼頭抵達大廳 — 影島郵輪碼頭或釜山港國際旅客碼頭（草梁），實際碼頭預訂後確認。",
       "content": [
-        "集合地點：釜山港國際旅客碼頭入境大廳。",
+        "集合地點為您的船隻靠泊的釜山郵輪碼頭抵達大廳 — 影島郵輪碼頭或釜山港國際旅客碼頭（草梁），實際碼頭預訂後確認。",
         "接送時間依您所乘船隻的實際下船時間調整，並非固定出發時間。",
         "預訂時請提供船名、靠港日期、預計下船時間及全員返船時間。",
         "08:00前早接服務每人加收₩10,000。"
@@ -1213,10 +1213,10 @@
   "sticky_booking_bar": {
     "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
-      "amountLabel": "84",
+      "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 84
+      "salePriceUsd": 68.95
     }
   },
   "matching_profile": {
@@ -1228,7 +1228,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -1294,7 +1294,7 @@
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1443,7 +1443,8 @@
     "signature_window_label": "Year-round (cruise port operating window)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "max_group_size": 12
   },
   "matching_metadata": {
     "primary_themes": [
@@ -1580,7 +1581,7 @@
           {
             "icon": "users",
             "label": "團型",
-            "value": "小型團體，與其他郵輪旅客共乘廂型車（通常最多約 10 人）"
+            "value": "小型團體，與其他郵輪旅客共乘廂型車（通常最多12 人）"
           },
           {
             "icon": "ship",
@@ -2111,7 +2112,7 @@
                 },
                 {
                   "label": "介於遊覽車與私人包車之間的共乘廂型車價格",
-                  "detail": "釜山私人郵輪岸上遊每組費用為300至500美元以上。遊覽車行程可搭載40名以上旅客，人均費用較低。本共乘廂型車方案介於兩者之間，每班最多約10名旅客——適合不需要包車的單人郵輪旅客、情侶及小型團體。缺點：路線固定，無法自訂行程。"
+                  "detail": "釜山私人郵輪岸上遊每組費用為300至500美元以上。遊覽車行程可搭載40名以上旅客，人均費用較低。本共乘廂型車方案介於兩者之間，每班最多 12 名旅客——適合不需要包車的單人郵輪旅客、情侶及小型團體。缺點：路線固定，無法自訂行程。"
                 }
               ]
             }

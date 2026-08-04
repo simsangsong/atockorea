@@ -550,7 +550,12 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-grand-highlights-loop": { listPriceUsd: 79, compareAtPriceUsd: 89, maxGroupSize: 8 },
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
+  // Busan cruise shore-excursion trio, 2026-08-04: priced to match the channel
+  // listings exactly, to the cent. Keep these three in lockstep with the same
+  // three entries in `catalogRegistrationBuilder.ts` — they had drifted apart.
+  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
+  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 456.99 },
   // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
@@ -582,18 +587,24 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
  * Parse `listPriceUsd` from authoring JSON. Prefer `price.amountLabel`
  * ("78"), fall back to digits in `catalog_card.priceLabel`. Always read
  * from the EN page so localized priceLabel formatting can't break parsing.
+ *
+ * Rounded to cents, not to whole dollars: the Busan cruise SKUs are priced
+ * to match their channel listings exactly ($58.79 / $68.95 / $456.99), and
+ * whole-dollar rounding made that impossible. Integer-priced products are
+ * unaffected (49 -> 49). `formatPrice` already renders cents only when the
+ * amount actually has a fractional part.
  */
 function parseListPriceUsd(page: PageJsonShape): number {
   const amountLabel = page.price && typeof page.price.amountLabel === "string" ? page.price.amountLabel : "";
   if (amountLabel) {
     const n = Number(amountLabel.replace(/[^0-9.]/g, ""));
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   const priceLabel = page.catalog_card?.priceLabel ?? "";
   const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
   if (m) {
     const n = Number(m[1]);
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   return 0;
 }

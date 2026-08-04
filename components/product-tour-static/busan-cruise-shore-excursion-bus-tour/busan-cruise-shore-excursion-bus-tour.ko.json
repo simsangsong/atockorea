@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "부산 크루즈 기항지: 해안 버스 투어",
-    "priceLabel": "1인 US$49부터 (정가 $55, 11% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용.",
     "tags": [
       "크루즈 기항지 투어",
@@ -35,7 +35,7 @@
     "slug": "busan-cruise-shore-excursion-bus-tour",
     "subtitle": "대형 버스로 떠나는 부산 해안 8개 코스 순환 투어, 크루즈 터미널 픽업과 선박 출항 시간에 맞춘 귀환 일정 포함.",
     "region": "부산",
-    "duration": "9시간",
+    "duration": "8시간",
     "stopsCount": 8,
     "badges": [
       "크루즈 기항지 투어",
@@ -49,12 +49,10 @@
   "headlineLine1": "부산 크루즈 기항지",
   "headlineLine2": "해안 버스 투어",
   "price": {
-    "amountLabel": "",
+    "amountLabel": "58.79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": null,
-    "originalPriceUsd": null,
-    "discountPercent": null
+    "salePriceUsd": 58.79
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -66,7 +64,7 @@
       "버스 투어"
     ],
     "meta": {
-      "duration": "약 9시간, 크루즈 기항 일정에 맞춰 진행",
+      "duration": "약 8시간, 크루즈 기항 일정에 맞춰 진행",
       "region": "부산",
       "stops": "8개 정류장",
       "rating": 0,
@@ -99,7 +97,7 @@
     {
       "icon": "clock",
       "label": "소요 시간",
-      "value": "9시간"
+      "value": "8시간"
     },
     {
       "icon": "camera",
@@ -1648,9 +1646,9 @@
     {
       "id": "pickup",
       "title": "픽업 및 하차",
-      "preview": "부산항 국제크루즈터미널 도착 홀에서 직접 크루즈 터미널 픽업…",
+      "preview": "집합은 배가 접안하는 부산 크루즈 터미널의 도착 홀입니다 — 영도 크루즈터미널 또는 부산항국제여객터미널(초량) 중 한 곳이며, 터미널은 예약 후 확정됩니다.",
       "content": [
-        "부산항 국제크루즈터미널 도착 홀에서 직접 픽업 — 미팅 포인트에서 AtoC Korea 안내판을 찾아주세요.",
+        "집합은 배가 접안하는 부산 크루즈 터미널의 도착 홀입니다 — 영도 크루즈터미널 또는 부산항국제여객터미널(초량) 중 한 곳이며, 터미널은 예약 후 확정됩니다.",
         "08:30 출발을 위해 08:25에 코치 탑승 예정이며, 크루즈 하선 대기 시간을 여유 있게 고려해 주세요.",
         "약 19:15~19:30에 동일한 크루즈 터미널 코치 주차장으로 귀환합니다.",
         "가이드가 오전 픽업 시 각 크루즈 선박의 출항 시간을 확인하고, 필요 시 당일 일정 순서를 조정합니다."
@@ -1950,14 +1948,14 @@
       "name": "부산항 국제크루즈터미널",
       "address": "부산 동구 초량대로 24",
       "time": "08:30 pickup / 19:15–19:30 drop-off",
-      "instructions": "터미널 도착 홀에서 가이드와 만나세요 — 'AtoC Korea / 부산 해안 투어' 표지판을 찾아주세요. 코치 탑승은 08:25에 터미널 코치 주차장에서 진행되며, 지붕 있는 통로를 통해 도보 약 2분 거리입니다."
+      "instructions": "부산 기항 크루즈는 두 터미널 중 어느 쪽에도 접안합니다. 어느 터미널을 이용할지는 배가 접안하는 곳에 따라 정해지며 예약 후 확정됩니다. 도착 홀에서 가이드를 만나시면 됩니다."
     },
     "alternates": [
       {
         "name": "부산항 코랄 국제여객터미널",
         "address": "부산 중구 충장대로 206",
         "time": "08:30 pickup (alternate)",
-        "instructions": "크루즈 선사가 크루즈 터미널이 아닌 코랄 터미널에 정박하는 경우, 예약 시 알려주시기 바랍니다 — 코치가 코랄 터미널 도착 홀에서 픽업할 예정입니다."
+        "instructions": "부산 기항 크루즈는 두 터미널 중 어느 쪽에도 접안합니다. 어느 터미널을 이용할지는 배가 접안하는 곳에 따라 정해지며 예약 후 확정됩니다. 도착 홀에서 가이드를 만나시면 됩니다."
       }
     ]
   },
@@ -1970,7 +1968,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_gijang",
       "busan_namgu",
@@ -2045,7 +2043,7 @@
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "19:00-19:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [

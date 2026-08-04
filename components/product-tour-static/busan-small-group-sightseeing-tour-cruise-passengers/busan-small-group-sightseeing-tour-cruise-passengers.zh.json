@@ -33,7 +33,7 @@
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "从邮轮码头出发，9小时共乘面包车游览釜山五大标志性景点。",
     "region": "釜山",
-    "duration": "9小时",
+    "duration": "8小时",
     "stopsCount": 8,
     "badges": [
       "邮轮岸上游",
@@ -46,10 +46,10 @@
   "headlineLine1": "釜山邮轮岸上小团游",
   "headlineLine2": "一日游",
   "price": {
-    "amountLabel": "84",
+    "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 84
+    "salePriceUsd": 68.95
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -61,7 +61,7 @@
       "釜山"
     ],
     "meta": {
-      "duration": "约9小时，根据邮轮靠港时间灵活安排",
+      "duration": "约8小时，根据邮轮靠港时间灵活安排",
       "region": "釜山",
       "stops": "8个景点",
       "rating": 0,
@@ -920,7 +920,7 @@
           },
           {
             "label": "共乘厢式车价格介于大巴团与私人包车之间",
-            "detail": "釜山私人邮轮游览每组费用为300至500美元以上。大巴团通常搭载40人以上，人均价格较低。本共乘厢式车方案介于两者之间，每次出发最多约10名乘客——适合不需要私人车辆的独行旅客、情侣及小型团体。权衡之处：行程固定，无法自定义。"
+            "detail": "釜山私人邮轮游览每组费用为300至500美元以上。大巴团通常搭载40人以上，人均价格较低。本共乘厢式车方案介于两者之间，每次出发最多 12 名乘客——适合不需要私人车辆的独行旅客、情侣及小型团体。权衡之处：行程固定，无法自定义。"
           }
         ]
       }
@@ -941,9 +941,9 @@
     {
       "id": "pickup",
       "title": "接送安排",
-      "preview": "集合地点为釜山港国际客运站到达大厅。",
+      "preview": "集合地点为您的船只靠泊的釜山邮轮码头到达大厅 — 影岛邮轮码头或釜山港国际旅客码头（草梁），具体码头预订后确认。",
       "content": [
-        "集合地点为釜山港国际客运站到达大厅。",
+        "集合地点为您的船只靠泊的釜山邮轮码头到达大厅 — 影岛邮轮码头或釜山港国际旅客码头（草梁），具体码头预订后确认。",
         "接送时间根据您船只的实际下船时间调整，而非固定出发时间。",
         "预订时请提供船名、停靠日期、预计下船时间及登船截止时间。",
         "早班接送（08:00前）每人额外收取₩10,000。"
@@ -1104,7 +1104,7 @@
     {
       "id": "q-cruise-busy-day",
       "question": "在繁忙的邮轮靠港日，旅游团会满员吗？",
-      "answer": "共乘面包车最多可容纳约10名乘客。在邮轮旺季，运营商会同时运行多辆面包车，而不是让单辆超载——团体互动是本产品的一部分，您通常会与来自几艘不同邮轮的游客同乘。"
+      "answer": "共乘面包车最多可容纳12 名乘客。在邮轮旺季，运营商会同时运行多辆面包车，而不是让单辆超载——团体互动是本产品的一部分，您通常会与来自几艘不同邮轮的游客同乘。"
     },
     {
       "id": "q-early-arrival",
@@ -1213,10 +1213,10 @@
   "sticky_booking_bar": {
     "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
-      "amountLabel": "84",
+      "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 84
+      "salePriceUsd": 68.95
     }
   },
   "matching_profile": {
@@ -1228,7 +1228,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -1294,7 +1294,7 @@
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1443,7 +1443,8 @@
     "signature_window_label": "Year-round (cruise port operating window)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "max_group_size": 12
   },
   "matching_metadata": {
     "primary_themes": [
@@ -2111,7 +2112,7 @@
                 },
                 {
                   "label": "共乘面包车价格，介于大巴团与私人游之间",
-                  "detail": "釜山私人邮轮观光通常每组收费300至500美元以上。大巴团通常容纳40人以上，人均价格低廉。本共乘面包车版本价格居中，每次出发最多约10名乘客——适合无需包车的独行游客、情侣及小型团体。权衡之处在于：路线固定，不可自定义。"
+                  "detail": "釜山私人邮轮观光通常每组收费300至500美元以上。大巴团通常容纳40人以上，人均价格低廉。本共乘面包车版本价格居中，每次出发最多 12 名乘客——适合无需包车的独行游客、情侣及小型团体。权衡之处在于：路线固定，不可自定义。"
                 }
               ]
             }
@@ -2280,7 +2281,7 @@
           {
             "id": "q-cruise-busy-day",
             "question": "邮轮繁忙日当天，行程是否会客满？",
-            "answer": "共乘面包车最多可容纳约10名乘客。在邮轮高峰日，运营商会同时调派多辆面包车，而非将单辆车挤满——小组互动是本产品形式的一部分，您通常会与来自多艘不同邮轮的旅客同行。"
+            "answer": "共乘面包车最多可容纳12 名乘客。在邮轮高峰日，运营商会同时调派多辆面包车，而非将单辆车挤满——小组互动是本产品形式的一部分，您通常会与来自多艘不同邮轮的旅客同行。"
           },
           {
             "id": "q-early-arrival",

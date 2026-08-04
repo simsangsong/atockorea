@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Busan Cruise Shore: Coastal Bus Tour",
-    "priceLabel": "From US$49 per person (was $55, 11% off)",
+    "priceLabel": "",
     "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
     "tags": [
       "Cruise excursion",
@@ -35,7 +35,7 @@
     "slug": "busan-cruise-shore-excursion-bus-tour",
     "subtitle": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away.",
     "region": "Busan",
-    "duration": "9 hours",
+    "duration": "8 hours",
     "stopsCount": 8,
     "badges": [
       "Cruise excursion",
@@ -49,12 +49,10 @@
   "headlineLine1": "Busan Cruise Shore",
   "headlineLine2": "Coastal Bus Tour",
   "price": {
-    "amountLabel": "49",
+    "amountLabel": "58.79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 49,
-    "originalPriceUsd": 55,
-    "discountPercent": 11
+    "salePriceUsd": 58.79
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -66,7 +64,7 @@
       "Bus tour"
     ],
     "meta": {
-      "duration": "≈ 9 hours, timed to your cruise's port-call window",
+      "duration": "≈ 8 hours, timed to your cruise's port-call window",
       "region": "Busan",
       "stops": "8 stops",
       "rating": 0,
@@ -99,7 +97,7 @@
     {
       "icon": "clock",
       "label": "Duration",
-      "value": "9 hours"
+      "value": "8 hours"
     },
     {
       "icon": "camera",
@@ -1602,9 +1600,9 @@
     {
       "id": "pickup",
       "title": "Pickup & drop-off",
-      "preview": "Direct cruise terminal pickup at Busan Port International Cruise Terminal arrival hall…",
+      "preview": "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
       "content": [
-        "Direct cruise terminal pickup at Busan Port International Cruise Terminal arrival hall — look for the AtoC Korea sign at the meeting point.",
+        "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
         "Coach boarding at 08:25 for an 08:30 departure; please allow time for cruise disembarkation queues.",
         "Return to the same cruise terminal coach lot at approximately 19:15–19:30.",
         "The guide will confirm your specific cruise ship sail-away time at morning pickup and adjust the day's running order if needed."
@@ -1904,14 +1902,14 @@
       "name": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
       "address": "Dongsam-dong, Yeongdo-gu, Busan",
       "time": "Confirmed at booking (≈30 min after ship docking) / Return ≈90 min before sail-away",
-      "instructions": "For large cruise ships. Meet the guide at the terminal arrival hall — look for the 'AtoC Korea' sign. Coach parked in the terminal coach lot."
+      "instructions": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
     },
     "alternates": [
       {
         "name": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
         "address": "Chungjang-daero 206, Jung-gu, Busan",
         "time": "Alternate pickup for ships docking at Choryang",
-        "instructions": "If your cruise line docks at the Choryang International Passenger Terminal rather than the Yeongdo Cruise Terminal, notify at booking — the coach will pick up at the Choryang terminal arrival hall instead."
+        "instructions": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
       }
     ]
   },
@@ -1924,7 +1922,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "large_coach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_gijang",
       "busan_namgu",
@@ -1999,7 +1997,7 @@
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "19:00-19:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [

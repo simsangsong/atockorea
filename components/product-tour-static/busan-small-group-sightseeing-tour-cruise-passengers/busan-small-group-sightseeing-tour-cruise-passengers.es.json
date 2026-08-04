@@ -33,7 +33,7 @@
     "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
     "subtitle": "Cinco lugares emblemáticos de Busan desde su terminal de cruceros en un día de 9 horas en furgoneta compartida.",
     "region": "Busan",
-    "duration": "9 horas",
+    "duration": "8 horas",
     "stopsCount": 8,
     "badges": [
       "Excursión en crucero",
@@ -46,10 +46,10 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Grupo Pequeño",
   "price": {
-    "amountLabel": "84",
+    "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 84
+    "salePriceUsd": 68.95
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -61,7 +61,7 @@
       "busan"
     ],
     "meta": {
-      "duration": "≈ 9 horas, coordinadas con la escala en puerto de su crucero",
+      "duration": "≈ 8 horas, coordinadas con la escala en puerto de su crucero",
       "region": "Busan",
       "stops": "8 paradas",
       "rating": 0,
@@ -968,7 +968,7 @@
           },
           {
             "label": "Precio de furgoneta compartida, entre el autocar y el tour privado",
-            "detail": "Las excursiones privadas de crucero en Busan cuestan entre $300 y $500+ por grupo. Los tours en autocar llevan más de 40 pasajeros a un precio bajo por persona. Esta versión en furgoneta compartida se sitúa en el término medio, con hasta ≈10 pasajeros por salida — accesible para cruceristas en solitario, parejas y grupos pequeños que no necesitan un vehículo privado. Desventaja: circuito fijo, no personalizable."
+            "detail": "Las excursiones privadas de crucero en Busan cuestan entre $300 y $500+ por grupo. Los tours en autocar llevan más de 40 pasajeros a un precio bajo por persona. Esta versión en furgoneta compartida se sitúa en el término medio, con hasta 12 pasajeros por salida — accesible para cruceristas en solitario, parejas y grupos pequeños que no necesitan un vehículo privado. Desventaja: circuito fijo, no personalizable."
           }
         ]
       }
@@ -989,9 +989,9 @@
     {
       "id": "pickup",
       "title": "Recogida y regreso",
-      "preview": "El grupo se reúne en la sala de llegadas de la Terminal Internacional de Pasajeros del Puerto de Busan.",
+      "preview": "El grupo se reúne en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco: la Terminal Internacional de Cruceros de Busan (Yeongdo) o la Terminal Internacional de Pasajeros del Puerto de Busan (Choryang). La terminal se confirma al reservar.",
       "content": [
-        "El grupo se reúne en la sala de llegadas de la Terminal Internacional de Pasajeros del Puerto de Busan.",
+        "El grupo se reúne en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco: la Terminal Internacional de Cruceros de Busan (Yeongdo) o la Terminal Internacional de Pasajeros del Puerto de Busan (Choryang). La terminal se confirma al reservar.",
         "La hora de recogida está calibrada según el desembarco real de su barco, no con un horario fijo.",
         "Proporcione el nombre del barco, la fecha de escala, la hora prevista de desembarco y la hora límite de embarque al momento de reservar.",
         "La recogida temprana (antes de las 08:00) añade ₩10,000 por persona."
@@ -1152,7 +1152,7 @@
     {
       "id": "q-cruise-busy-day",
       "question": "¿Se llenará el tour en los días de mayor afluencia de cruceros?",
-      "answer": "La furgoneta compartida tiene capacidad para aproximadamente 10 pasajeros. En los días pico de cruceros, el operador pone en marcha varias furgonetas de forma simultánea en lugar de sobrecargar una sola — la dinámica de grupo es parte del formato y, por lo general, compartirás el viaje con cruceristas de varios barcos diferentes."
+      "answer": "La furgoneta compartida tiene capacidad para aproximadamentehasta 12 pasajeros. En los días pico de cruceros, el operador pone en marcha varias furgonetas de forma simultánea en lugar de sobrecargar una sola — la dinámica de grupo es parte del formato y, por lo general, compartirás el viaje con cruceristas de varios barcos diferentes."
     },
     {
       "id": "q-early-arrival",
@@ -1261,10 +1261,10 @@
   "sticky_booking_bar": {
     "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
-      "amountLabel": "84",
+      "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 84
+      "salePriceUsd": 68.95
     }
   },
   "matching_profile": {
@@ -1276,7 +1276,7 @@
     "destination_region": "busan_city",
     "region_type": "busan_city",
     "vehicle_type": "minicoach",
-    "duration_hours": 9,
+    "duration_hours": 8,
     "region_tags": [
       "busan_haeundae",
       "busan_jung_gu",
@@ -1342,7 +1342,7 @@
     "price_band": "mid",
     "pickup_base": "busan_cruise_terminal",
     "return_time_band": "17:00-18:30",
-    "duration_band": "9h",
+    "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1491,7 +1491,8 @@
     "signature_window_label": "Year-round (cruise port operating window)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "max_group_size": 12
   },
   "matching_metadata": {
     "primary_themes": [
@@ -1628,7 +1629,7 @@
           {
             "icon": "users",
             "label": "Grupo",
-            "value": "Grupo reducido, furgoneta compartida con otros pasajeros de crucero (habitualmente hasta ≈10 personas)"
+            "value": "Grupo reducido, furgoneta compartida con otros pasajeros de crucero (habitualmente hasta 12 personas)"
           },
           {
             "icon": "ship",
@@ -2471,7 +2472,7 @@
                 },
                 {
                   "label": "Precio de furgoneta compartida entre autocar y tour privado",
-                  "detail": "Las excursiones privadas en crucero por Busan cuestan entre 300 y más de 500 dólares por grupo. Los tours en autocar llevan más de 40 pasajeros a un precio bajo por persona. Esta versión en furgoneta compartida se sitúa entre ambas, con hasta ≈10 pasajeros por salida — accesible para cruceristas en solitario, parejas y grupos pequeños que no necesitan vehículo privado. Contrapartida: circuito fijo, no personalizable."
+                  "detail": "Las excursiones privadas en crucero por Busan cuestan entre 300 y más de 500 dólares por grupo. Los tours en autocar llevan más de 40 pasajeros a un precio bajo por persona. Esta versión en furgoneta compartida se sitúa entre ambas, con hasta 12 pasajeros por salida — accesible para cruceristas en solitario, parejas y grupos pequeños que no necesitan vehículo privado. Contrapartida: circuito fijo, no personalizable."
                 }
               ]
             }
@@ -2640,7 +2641,7 @@
           {
             "id": "q-cruise-busy-day",
             "question": "¿Estará completo el tour en los días de mayor afluencia de cruceros?",
-            "answer": "La furgoneta compartida tiene capacidad para aproximadamente 10 pasajeros. En los días pico de cruceros, el operador utiliza múltiples furgonetas simultáneamente en lugar de sobrecargar una sola — la dinámica grupal es parte del formato y generalmente estará acompañado de pasajeros de varios barcos diferentes."
+            "answer": "La furgoneta compartida tiene capacidad para aproximadamentehasta 12 pasajeros. En los días pico de cruceros, el operador utiliza múltiples furgonetas simultáneamente en lugar de sobrecargar una sola — la dinámica grupal es parte del formato y generalmente estará acompañado de pasajeros de varios barcos diferentes."
           },
           {
             "id": "q-early-arrival",

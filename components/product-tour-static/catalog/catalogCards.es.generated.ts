@@ -11,7 +11,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Excursión en tierra desde Busan en crucero: Tour en autobús por la costa",
       "subtitle": "Circuito costero por Busan de 8 paradas en autocar grande, con recogida en la terminal de cruceros y regreso planificado en función de la hora de salida de su barco.",
       "region": "Busan",
-      "duration": "9 horas",
+      "duration": "8 horas",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -23,11 +23,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "priceLabel": "Desde US$49 por persona (antes $55, 11% de descuento)",
+      "priceLabel": "",
       "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 8 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
     },
     "price": {
-      "amountLabel": ""
+      "amountLabel": "58.79"
     }
   },
   "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
     },
     "price": {
-      "amountLabel": "364"
+      "amountLabel": "456.99"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -135,7 +135,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan Crucero: Grupo Pequeño",
       "subtitle": "Cinco lugares emblemáticos de Busan desde su terminal de cruceros en un día de 9 horas en furgoneta compartida.",
       "region": "Busan",
-      "duration": "9 horas",
+      "duration": "8 horas",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -151,7 +151,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 9 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china."
     },
     "price": {
-      "amountLabel": "84"
+      "amountLabel": "68.95"
     }
   },
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
