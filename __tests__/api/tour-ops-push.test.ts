@@ -96,6 +96,30 @@ describe('push-subscriptions API (W6.1)', () => {
     }
   });
 
+  /**
+   * 🔴 Samsung Internet is the browser Korean Android users actually hold, and
+   * its push service (`*.push.samsungosp.com`) was missing from the allow-list
+   * — every subscribe from it died 400, which surfaced as the owner's
+   * "알림 켜기가 계속 실패" (2026-08-04). This pins the host so a future
+   * allow-list edit cannot quietly re-break the domestic default browser.
+   */
+  it('201s a Samsung Internet endpoint (push.samsungosp.com)', async () => {
+    requireAdminMock.mockResolvedValue({ id: 'admin-1' });
+    const { client } = fakeDb();
+    createServerClientMock.mockReturnValue(client);
+    const res = await subscribePOST(
+      fakeReq({
+        json: {
+          subscription: {
+            endpoint: 'https://useast.push.samsungosp.com/spp/pns/abc',
+            keys: { p256dh: 'k1', auth: 'a1' },
+          },
+        },
+      }),
+    );
+    expect(res.status).toBe(201);
+  });
+
   it('upserts by endpoint with the admin identity', async () => {
     requireAdminMock.mockResolvedValue({ id: 'admin-1' });
     const { client, calls } = fakeDb();
