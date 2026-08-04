@@ -19,6 +19,7 @@ import { toast } from 'sonner';
 import { AlertTriangle, Bus, Check, Loader2, Receipt, RefreshCw, Send, UserX, Wallet, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import { ACTION_LABEL, KIND_LABEL, actionHref, type SuggestionKind } from '@/lib/ops/autopilot/detectors';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 interface SuggestionRow {
   id: string;
@@ -194,7 +195,7 @@ export default function OpsAutopilotView({ onClose }: { onClose: () => void }) {
 
       <div className="min-h-0 flex-1 overflow-y-auto px-3 py-3">
         {loading && rows.length === 0 ? (
-          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <SkeletonRows rows={3} className="py-4" />
         ) : rows.length === 0 ? (
           <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             처리할 항목이 없습니다. [지금 점검]으로 향후 2주를 확인해 보세요.

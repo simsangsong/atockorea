@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 88개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **88/88 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 7 + RS 신규 1). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 90개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **90/90 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 7 + RS 신규 1 + U9 신규 2). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -212,3 +212,10 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
   B5(자동 체크인)가 바로 이 표면을 바꿨으므로 감사 대상에서 빠지면 안 된다.
 - **가이드 7 + 기사 3은 A2로 넘긴다.** `components/tour-mode/` 아래 살지만 손님 앱이 아니다.
   원장에는 남겨 둔다 — 빠뜨린 것과 다른 웨이브 소관인 것은 구분되어야 한다.
+
+## U9 신규 (UI/UX 감사 트랙, 2026-08-04) — 2개
+
+| 파일 | 티켓 | 판정 |
+|---|---|---|
+| `LoadingHint.tsx` | UX-003 | ✅ 신규 — UX-D6의 공용 어휘(스피너+캡션 `LoadingHint` · 리스트 스켈레톤 `SkeletonRows`). 기존 관용구(GuideConsole 링·UX-001 펄스바)를 그대로 옮겨 시각 언어 무변경. C축 탐지기 `HAS_SHAPE` 가 이 이름을 인정한다 |
+| `skinSwatch.gen.ts` | UX-004 | ✅ 신규 — **생성물**(`gen-skin-swatch.mjs` 소유, 손편집 금지). 스킨 포스터 색을 `tour-room-theme.css` 라이트 블록에서 파생. 게이트 `skinSwatchSync.test.ts`(staleness + 변조 양성 대조 매 실행 + SkinPicker 배선 단언) |

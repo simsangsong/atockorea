@@ -17,6 +17,7 @@
 import { useTourRoomSettings, TOUR_SKINS, type TourSkin } from '@/hooks/useTourRoomSettings';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import { IconDone, TR_ICON } from '@/components/tour-mode/icons';
+import { SKIN_SWATCH } from './skinSwatch.gen';
 
 const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
   en: {
@@ -141,21 +142,8 @@ const SKIN_NAME: Record<RoomLocale, Record<TourSkin, string>> = {
   },
 };
 
-/** Light-variant poster colors — keep in sync with app/tour-room-theme.css.
- *  `hill` is the T-D5 scenery hint: a soft horizon arc in the swatch for
- *  skins that carry a SkinScenery scene (contrast deliberately has none). */
-const SWATCH: Record<TourSkin, { canvas: string; bubbleIn: string; bubbleMe: string; hill?: string }> = {
-  classic: { canvas: '#eef1ee', bubbleIn: '#fcfcfb', bubbleMe: '#2e5e4e', hill: '#dbe4d8' },
-  sky: { canvas: '#b9cddd', bubbleIn: '#fdfefe', bubbleMe: '#2e5e4e', hill: '#dbe7ef' },
-  winter: { canvas: '#dde8f2', bubbleIn: '#ffffff', bubbleMe: '#46708f', hill: '#c9d9e9' },
-  forest: { canvas: '#e4e8cd', bubbleIn: '#fbfaf2', bubbleMe: '#52702c', hill: '#cfd8ab' },
-  meadow: { canvas: '#d6e6e2', bubbleIn: '#fdfefd', bubbleMe: '#37705f', hill: '#c0d9cc' },
-  jeju: { canvas: '#e9f5ea', bubbleIn: '#fbfdf9', bubbleMe: '#a34d14', hill: '#d3e5d0' },
-  seoul: { canvas: '#e7e5f0', bubbleIn: '#fdfdfe', bubbleMe: '#55519b', hill: '#d3d0e6' },
-  busan: { canvas: '#cfe7f0', bubbleIn: '#fdfeff', bubbleMe: '#20596f', hill: '#b7d7e6' },
-  blossom: { canvas: '#f8e6ec', bubbleIn: '#fefcfd', bubbleMe: '#99465f', hill: '#f0cedb' },
-  contrast: { canvas: '#ffffff', bubbleIn: '#efefef', bubbleMe: '#111111' },
-};
+/* Poster colours live in skinSwatch.gen.ts, derived from app/tour-room-theme.css
+ * by scripts/gen-skin-swatch.mjs — this file holds no colour of its own (UX-004). */
 
 export default function SkinPicker({ locale }: { locale: RoomLocale }) {
   const { settings, update } = useTourRoomSettings();
@@ -165,7 +153,7 @@ export default function SkinPicker({ locale }: { locale: RoomLocale }) {
     <div className="grid grid-cols-3 gap-2" data-testid="skin-picker" role="radiogroup">
       {TOUR_SKINS.map((skin) => {
         const active = settings.skin === skin;
-        const sw = SWATCH[skin];
+        const sw = SKIN_SWATCH[skin];
         return (
           <button
             key={skin}

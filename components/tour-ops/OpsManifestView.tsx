@@ -35,6 +35,7 @@ import {
 import { weatherVars } from '@/lib/ops/messaging/guestMessage';
 import { stripEmptyTokenLines } from '@/lib/ops/messaging/template';
 import type { DailyForecast } from '@/lib/ops/weather/forecast';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 const HIGHLIGHT_LABELS: Record<string, string> = {
   allergy: '알레르기',
@@ -524,7 +525,7 @@ export default function OpsManifestView({
       )}
 
       <div className="min-h-0 flex-1 space-y-2 overflow-y-auto px-3 py-2 pb-6">
-        {loading && <p className="mt-8 text-center tr-label text-[var(--tr-ink-3)]">명단을 불러오는 중…</p>}
+        {loading && <SkeletonRows rows={3} className="mt-4" />}
         {!loading && loadError && (
           <p className="mt-8 text-center tr-label text-[var(--tr-danger)] ">{loadError}</p>
         )}

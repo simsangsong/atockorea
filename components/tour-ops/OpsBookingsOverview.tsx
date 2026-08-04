@@ -25,6 +25,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { AlertTriangle, CalendarDays, ChevronLeft, ChevronRight, Download, LayoutGrid, PlugZap } from 'lucide-react';
 import { datesIn, leadingBlanks, monthRangeOf } from '@/lib/ops/bookings/ranges';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 import {
   groupByDate,
   tierEmptyLabel,
@@ -190,7 +191,7 @@ export default function OpsBookingsOverview({
         </a>
       </div>
 
-      {loading && <p className="py-8 text-center tr-label text-[var(--tr-ink-3)]">불러오는 중…</p>}
+      {loading && <SkeletonRows rows={3} className="py-4" />}
       {error && <p className="rounded-xl bg-[var(--tr-danger-soft)] px-3 py-2 tr-label text-[var(--tr-danger)]">{error}</p>}
 
       {data && !loading && (

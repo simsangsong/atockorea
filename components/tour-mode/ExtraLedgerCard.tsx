@@ -195,7 +195,17 @@ export default function ExtraLedgerCard({
           className="tr-card-text mt-2.5 w-full rounded-xl bg-[var(--tr-accent)] py-2 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-50"
           data-testid="extra-confirm"
         >
-          {state === 'busy' ? copy.confirming : copy.confirm}
+          {state === 'busy' ? (
+            <span className="inline-flex items-center justify-center gap-2">
+              <span
+                className="h-3.5 w-3.5 animate-spin rounded-full border-2 border-[var(--tr-bubble-me-ink)] border-t-transparent"
+                aria-hidden
+              />
+              {copy.confirming}
+            </span>
+          ) : (
+            copy.confirm
+          )}
         </button>
       )}
     </div>

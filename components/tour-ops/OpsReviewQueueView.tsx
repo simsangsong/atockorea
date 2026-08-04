@@ -16,6 +16,7 @@ import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { RefreshCw, X } from 'lucide-react';
 import { getOpsToken, kstTimeLabel } from '@/components/tour-ops/opsShared';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 interface ReviewSummaryItem {
   lead_name?: string | null;
@@ -203,7 +204,7 @@ export default function OpsReviewQueueView({ onClose }: { onClose: () => void })
       </header>
 
       <div className="flex-1 overflow-y-auto px-3 py-2 pb-8">
-        {loading && <p className="mt-16 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>}
+        {loading && <SkeletonRows rows={3} className="mt-8" />}
         {!loading && logs.length === 0 && (
           <p className="mt-16 text-center tr-card-text text-[var(--tr-ink-3)]">
             {filter === 'review' ? '리뷰 대기 항목이 없습니다. ✅' : '인박스 로그가 없습니다.'}

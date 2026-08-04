@@ -23,6 +23,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { toast } from 'sonner';
 import { AlertTriangle, Bus, Camera, Link as LinkIcon, Loader2, Plus, RotateCcw, Trash2, X } from 'lucide-react';
 import { getOpsToken } from '@/components/tour-ops/opsShared';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 /** §K B2.4 — 그룹 정원 판정(운영자 전용). */
 interface GroupCapacity {
@@ -439,7 +440,7 @@ export default function OpsRoomVehiclePanel({ roomId }: { roomId: string }) {
   return (
     <div className="min-h-[200px] flex-1 space-y-3 overflow-y-auto px-4 py-3">
       {loading ? (
-        <p className="text-center tr-label text-[var(--tr-ink-3)]">차량 정보를 불러오는 중…</p>
+        <SkeletonRows rows={2} />
       ) : (
         <>
           {vehicles.length === 0 && !adding && (

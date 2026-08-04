@@ -17,6 +17,7 @@
 import { useCallback, useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { IconCheers, IconDone, IconDriver, IconPhone, TR_ICON } from '../icons';
+import { LoadingHint } from '../LoadingHint';
 import { type RoomMessage } from '@/hooks/useTourRoomChannel';
 import Cockpit, {
   Screen,
@@ -165,7 +166,7 @@ export default function DriverConsole() {
   }, [overview, room?.booking_id]);
 
   if (error && !overview) return <Screen><Note>{error}</Note></Screen>;
-  if (!overview || !room) return <Screen><Note>불러오는 중…</Note></Screen>;
+  if (!overview || !room) return <Screen><LoadingHint label="불러오는 중…" /></Screen>;
 
   // 완료(ended): a calm wrap-up — no join / audio needed.
   if (overview.lifecycle === 'ended') {

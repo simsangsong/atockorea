@@ -22,6 +22,7 @@ import CardSetEditor, {
 } from '@/components/tour-ops/CardSetEditor';
 import { BRIEFING_CARD_DESCRIPTORS, type BriefingCardSetPreview } from '@/lib/ops/seating/cards/cardSet';
 import { ROOM_LOCALES } from '@/lib/tour-room/snapshot';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 // §D A4.1 — 룸 카드를 미리 보는 화면이므로 이건 **룸 로케일 집합**이다.
 // 사본을 두면 로케일이 늘어난 날 미리보기만 5개로 남는다.
@@ -114,7 +115,7 @@ export default function OpsRoomCardSetPanel({ roomId, tourId }: { roomId: string
   if (loading) {
     return (
       <div className="min-h-[200px] flex-1 px-4 py-3">
-        <p className="text-center tr-label text-[var(--tr-ink-3)]">카드 세트를 불러오는 중…</p>
+        <SkeletonRows rows={2} />
       </div>
     );
   }

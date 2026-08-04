@@ -13,6 +13,7 @@ import type { OpsRoomStream } from '@/hooks/useOpsChannels';
 import { roomHue } from '@/components/tour-mode/guide/GuideConsole';
 import ChatListRow from '@/components/tour-mode/chatlist/ChatListRow';
 import type { AttentionItem, AttentionReason } from '@/lib/tour-ops/attention';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 import {
   isRecent,
   kstTimeLabel,
@@ -103,7 +104,7 @@ export default function OpsDashboardTab({
   }, [rooms, sosRooms, streams]);
 
   if (loading && rooms.length === 0) {
-    return <p className="mt-12 text-center tr-body text-[var(--tr-ink-3)]">불러오는 중…</p>;
+    return <SkeletonRows rows={3} className="mt-6 px-3" />;
   }
   // Distinguish a genuine "no rooms today" from a fetch failure — the latter
   // must never read as "no tours" on the SOS-monitoring surface.

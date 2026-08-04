@@ -126,6 +126,10 @@ export default function OperatorAssist({
           )}
           {busy && (
             <div className="flex items-center gap-2 pl-8" data-testid="operator-assist-thinking">
+              <span
+                className="h-3.5 w-3.5 shrink-0 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent"
+                aria-hidden
+              />
               <span className="tr-meta text-[var(--tr-ink-3)]">확인 중…</span>
             </div>
           )}
