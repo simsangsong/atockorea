@@ -6,6 +6,7 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { useForecast } from "@/components/product-tour-static/_shared/useForecast";
+import { renderEmphasis } from "@/components/product-tour-static/_shared/inlineEmphasis";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -80,51 +81,9 @@ function splitTimeSequences(line: string): string[] {
 const INLINE_HIGHLIGHT_RE =
   /(₩[\d,]+(?:\s*[-–~]\s*₩?[\d,]+)?|\b\d{1,2}:\d{2}\b|\b\d+(?:\.\d+)?\s*h\b|\d+(?:\.\d+)?\s*(?:시간|분|hours?|min(?:utes?)?)\b|≈|~)/g;
 
-/**
- * `**bold**` spans, stripped of their markers.
- *
- * 🔴 The copy is authored with markdown emphasis but nothing here parsed it, so
- * guests read the asterisks: "This tour departs **on Mondays, Thursdays and
- * Saturdays only**". 181 strings across 9 accordion types and the whole
- * catalogue were affected — pickup, inclusions, weather policy, departure days.
- *
- * Deliberately bold-only. `parseChatInline` in _shared/chatMarkdown.tsx also
- * turns bare URLs and [text](url) into links, which is right for chat and would
- * be a surprise here; this stays the narrow fix for the marker that leaked.
- * Unbalanced markers are left exactly as typed — see the tests.
- */
-const MD_BOLD_RE = /\*\*(?=\S)([\s\S]*?\S)\*\*/g;
-
-/** Split a line into plain text and bold runs before any other inline pass. */
-export function splitBoldRuns(text: string): Array<{ bold: boolean; text: string }> {
-  const parts: Array<{ bold: boolean; text: string }> = [];
-  let last = 0;
-  MD_BOLD_RE.lastIndex = 0;
-  for (let m = MD_BOLD_RE.exec(text); m; m = MD_BOLD_RE.exec(text)) {
-    if (m.index > last) parts.push({ bold: false, text: text.slice(last, m.index) });
-    parts.push({ bold: true, text: m[1] });
-    last = m.index + m[0].length;
-  }
-  if (last < text.length) parts.push({ bold: false, text: text.slice(last) });
-  return parts.length ? parts : [{ bold: false, text }];
-}
-
+/** Bold runs from markdown, with the time/price highlighting applied inside each. */
 export function renderInline(text: string): React.ReactNode[] {
-  // Bold runs first, then the existing time/price highlighting inside each run,
-  // so "**Mon · Thu · Sat**" is bold AND its times still get tabular-nums.
-  const runs = splitBoldRuns(text);
-  if (runs.some((r) => r.bold)) {
-    return runs.map((r, i) =>
-      r.bold ? (
-        <strong key={`b${i}`} className="font-semibold text-slate-900">
-          {renderHighlights(r.text)}
-        </strong>
-      ) : (
-        <Fragment key={`t${i}`}>{renderHighlights(r.text)}</Fragment>
-      ),
-    );
-  }
-  return renderHighlights(text);
+  return renderEmphasis(text, (run) => renderHighlights(run));
 }
 
 function renderHighlights(text: string): React.ReactNode[] {

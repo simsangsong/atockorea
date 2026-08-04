@@ -13,17 +13,20 @@
  * pickup, inclusions, weather policy, seasonal, departure days. It is not a
  * Pocheon problem; the new departure-days copy just followed the house style.
  *
- * These mount the real `renderInline` output (the production code path for every
- * accordion line) and assert on rendered text, not on source.
+ * These mount the real `renderEmphasis` output — the production code path for
+ * every accordion line AND every FAQ answer — and assert on rendered text, not
+ * on source. `stripEmphasisMarkers` covers the JSON-LD copy of the same strings.
  */
 import React from 'react';
 import { render } from '@testing-library/react';
 import {
-  renderInline,
+  renderEmphasis,
   splitBoldRuns,
-} from '@/components/product-tour-static/east-signature-nature-core/tour-detail-sections/TourPracticalDetails';
+  stripEmphasisMarkers,
+} from '@/components/product-tour-static/_shared/inlineEmphasis';
+import { renderInline } from '@/components/product-tour-static/east-signature-nature-core/tour-detail-sections/TourPracticalDetails';
 
-const show = (text: string) => render(<div data-testid="out">{renderInline(text)}</div>);
+const show = (text: string) => render(<div data-testid="out">{renderEmphasis(text)}</div>);
 
 const DEPARTURE =
   'This tour departs **on Mondays, Thursdays and Saturdays only** — please book one of those dates.';
@@ -44,7 +47,13 @@ describe('accordion copy rendering', () => {
   it('keeps the existing time highlighting inside a bold run', () => {
     // "**08:00**" must be bold from markdown AND still get the tabular-nums time
     // treatment that predates this change — bold must not swallow it.
-    const { container } = show('Pickup is **08:00** at Hongdae.');
+    //
+    // Asserts on the ACCORDION's composition (renderInline = emphasis wrapped
+    // around the time/price highlighter), not on the shared helper, because
+    // that pairing is the thing that could regress.
+    const { container } = render(
+      <div>{renderInline('Pickup is **08:00** at Hongdae.')}</div>,
+    );
     expect(container.textContent).toBe('Pickup is 08:00 at Hongdae.');
     expect(container.querySelector('strong')).not.toBeNull();
     expect(container.querySelector('.tabular-nums')?.textContent).toBe('08:00');
@@ -85,5 +94,22 @@ describe('splitBoldRuns (the tokenizer)', () => {
     for (const s of [DEPARTURE, 'no markers', '**all bold**', 'a ** b', '**x** y **z**']) {
       expect(splitBoldRuns(s).map((r) => r.text).join('')).toBe(s.replace(/\*\*(?=\S)([\s\S]*?\S)\*\*/g, '$1'));
     }
+  });
+});
+
+describe('stripEmphasisMarkers (JSON-LD / machine-read copy)', () => {
+  it('removes markers without altering anything else', () => {
+    expect(stripEmphasisMarkers(DEPARTURE)).toBe(
+      'This tour departs on Mondays, Thursdays and Saturdays only — please book one of those dates.',
+    );
+  });
+
+  it('leaves unbalanced markers alone, like the renderer does', () => {
+    expect(stripEmphasisMarkers('a ** b')).toBe('a ** b');
+  });
+
+  it('is what the FAQ rich result actually receives', () => {
+    // Google ingests this verbatim; an asterisk there is noise in the SERP.
+    expect(stripEmphasisMarkers('It runs **on Mondays only**.')).not.toContain('*');
   });
 });
