@@ -6,7 +6,7 @@
   "product_id": "busan-private-car-charter-cruise-shore",
   "seo": {
     "pageTitle": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
-    "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return planned, hotel/KTX/cruise port pickup.",
+    "metaDescription": "8-hour fully customizable Busan private car charter for cruise passengers. English- and Chinese-speaking guide, private vehicle and driver, pickup and drop-off at your cruise terminal, and a return timed to your ship's all-aboard.",
     "ogImage": "https://www.atockorea.com/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "primaryKeywords": [
       "Busan private car charter",
@@ -1093,7 +1093,7 @@
         "items": [
           {
             "label": "Included",
-            "detail": "Private vehicle, English-speaking driver-guide, all toll fees and parking charges. Pickup at cruise terminal / KTX / central Busan hotel."
+            "detail": "Private vehicle and driver for your group only, English- and Chinese-speaking guide, all tolls and parking. Pickup and drop-off are at the cruise terminal your ship berths at — this is a shore-excursion charter, so hotel and KTX pickup are not offered on it."
           },
           {
             "label": "Pay direct",
@@ -1280,7 +1280,7 @@
     {
       "step": 6,
       "title": "On-time return to your ship",
-      "detail": "Drop-off ≈ 90 min before all-aboard call. Hotel or KTX drop-off available instead.",
+      "detail": "Drop-off at the same cruise terminal at least 60 minutes before your all-aboard call.",
       "description": "Drop-off at the same terminal at least 60 minutes before all-aboard; brief feedback form sent afterward."
     }
   ],
@@ -1446,7 +1446,7 @@
     "private_fit": 0.95,
     "bus_fit": 0.1,
     "price_band": "mid_to_premium",
-    "pickup_base": "cruise_terminal_or_hotel_or_ktx",
+    "pickup_base": "cruise_terminal",
     "return_time_band": "late_afternoon",
     "duration_band": "8h",
     "min_recommended_age": 0,

@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを8時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
+      "shortCardDescription": "クルーズ乗客のための釜山少人数寄港地ツアー、定員12名のバンで運行します。8時間で9か所 — 海東龍宮寺、在韓国連記念公園、自己負担の昼食、続いてチャガルチ市場・BIFFスクエア・国際市場を徒歩で、甘川文化村、松島雲の散歩道（ケーブルカーでスカイパークへ上がるかは現地で選択）、最後に龍頭山公園です。お迎えは船が着岸するクルーズターミナルで、帰着は乗船締切時刻に合わせます。"
     },
     "price": {
       "amountLabel": "68.95"

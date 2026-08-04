@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，8小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
+      "shortCardDescription": "为邮轮旅客设计的釜山小团岸上行程，使用限乘12人的面包车。八小时走九个点 — 海东龙宫寺、联合国纪念公园、自费午餐，接着步行走完札嘎其市场、BIFF广场与国际市场，然后是甘川文化村、松岛云端散步路（是否搭缆车上天空公园由您现场决定），最后是龙头山公园。接站在您船只靠泊的邮轮码头，返程对齐您的登船截止时间。"
     },
     "price": {
       "amountLabel": "68.95"
