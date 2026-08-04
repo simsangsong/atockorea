@@ -57,15 +57,15 @@
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
 | `/tour-mode/companion/[token]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] |
-| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cjk-render.mjs`[선언] · `qa-cockpit-tray.ts`[선언] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/join/[roomToken]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/plan/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chat-bubble-fit.mjs`[선언] · `qa-cjk-render.mjs`[선언] · `qa-door-fixes-walk.mjs`[선언] · `qa-guest-tray.ts`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-overlay-photo-probe.mjs`[선언] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-seat-door-walk.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 
 **실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
-**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 22개** — `qa-admin-cjk.ts` · `qa-chat-bubble-fit.mjs` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-render.mjs` · `qa-cockpit-tray.ts` · `qa-door-fixes-walk.mjs` · `qa-guest-tray.ts` · `qa-home-walk.mjs` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-overlay-photo-probe.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-seat-door-walk.mjs` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs` · `qa-touch-target.mjs`
+**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 14개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-home-walk.mjs` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs`
 
 > 판정 불가는 "커버 안 됨"이 **아니다.** 런타임 URL·환경변수로 이동해서 소스가 볼 수 없다는 뜻이고,
 > 어느 쪽으로든 추측하면 게이트가 거짓말을 한다. 해소하려면 그 하니스에 `COVERS` 를 선언한다.

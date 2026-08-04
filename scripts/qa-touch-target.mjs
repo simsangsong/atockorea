@@ -37,6 +37,9 @@
 import { existsSync, readFileSync } from 'node:fs';
 import { chromium } from 'playwright';
 
+/** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
+export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide'];
+
 const BASE = process.env.BASE ?? 'http://localhost:3185';
 const FIXTURES = 'scripts/.sim-fixtures.json';
 
