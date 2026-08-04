@@ -1452,7 +1452,7 @@
       "icon": "users",
       "title": "Tamaño de grupo seleccionado",
       "description": "Dimensionado adecuadamente para la ruta",
-      "iconBg": "bg-amber-50/80 *(código CSS — no se traduce)*",
+      "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
   ],
@@ -1604,7 +1604,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "39",
       "currency": "USD",
@@ -3624,7 +3624,7 @@
       "section_html_id": null,
       "component": "BarraReservaTour (fija)",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "39",
           "currency": "USD",

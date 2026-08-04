@@ -152,10 +152,20 @@ function build(loc) {
   doc.staticQuestions = clone(spec.staticQuestions);
   doc.glanceItems = clone(spec.glanceItems);
 
+  /**
+   * Owner-supplied 2026-08-04 (Klook availability calendar): this is a
+   * fixed-schedule departure running Monday / Thursday / Saturday only. The
+   * bundle previously made no departure-day claim at all, so a guest could
+   * pick any date and only discover the constraint at checkout.
+   */
+  const dd = spec.departureDays;
+  if (!dd) throw new Error(`[${loc}] spec is missing departureDays`);
+  doc.staticQuestions.splice(1, 0, { question: dd.faqQ, answer: dd.faqA });
+
   doc.whyTourWorks = {
     ...doc.whyTourWorks,
     bestFor: clone(spec.whyTourWorks.bestFor),
-    lessIdealFor: clone(spec.whyTourWorks.lessIdealFor),
+    lessIdealFor: [...clone(spec.whyTourWorks.lessIdealFor), dd.lessIdeal],
     routeLogicSections: [
       {
         ...(doc.whyTourWorks.routeLogicSections?.[0] ?? {
@@ -191,7 +201,11 @@ function build(loc) {
     region: spec.region,
     duration: spec.duration,
     stopsCount: spec.stopsCount,
-    badges: clone(spec.badges),
+    badges: (() => {
+      const b = clone(spec.badges).filter((x) => x !== dd.badge);
+      b.splice(1, 0, dd.badge);
+      return b;
+    })(),
     tags: clone(spec.tags),
     heroImage: HERO_IMG,
     thumbnail: HERO_IMG,
@@ -238,6 +252,12 @@ function build(loc) {
     };
   };
   doc.practicalAccordionItems = [
+    {
+      id: "departure-days",
+      title: dd.accordionTitle,
+      preview: dd.accordionContent[0],
+      content: clone(dd.accordionContent),
+    },
     rewrite("pickup", carry("pickup").title, spec.pickupDropoff.accordionContent),
     rewrite("walking", spec.practical.walkingTitle, spec.practical.walkingContent),
     weatherItem(),
@@ -326,7 +346,26 @@ function build(loc) {
     "yeoncheon geopark day tour",
   ];
   mp.signature_window_label =
-    "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)";
+    "Year-round on Monday / Thursday / Saturday departures (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)";
+  // Fixed departure days (owner-supplied Klook calendar, 2026-08-04).
+  mp.available_days_signature = ["monday", "thursday", "saturday"];
+  mp.fixed_departure_monday_thursday_saturday = true;
+  /**
+   * Herb Island is no longer on the route, but these bespoke signals survived
+   * the re-course and were still scored 1 — which would keep the recommender
+   * surfacing this tour for herb-garden, lighting-festival and drama-filming
+   * intents it can no longer serve. No code reads them by name.
+   */
+  for (const stale of [
+    "mediterranean_herb_garden_fit",
+    "year_round_lighting_festival_fit",
+    "korea_largest_herb_museum_fit",
+    "korea_drama_filming_density_high_fit",
+    "legend_of_the_blue_sea_filming_fit",
+    "moon_lovers_scarlet_heart_ryeo_filming_fit",
+  ]) {
+    delete mp[stale];
+  }
   // Owner-supplied 2026-08-04 window: 08:00 Hongik / 08:30 Myeongdong out,
   // Myeongdong ≈18:00 / Hongik ≈18:30 back. Was 18:30-19:30 on three points.
   if ("return_time_band" in mp) mp.return_time_band = "18:00-18:30";
@@ -337,6 +376,15 @@ function build(loc) {
   if ("garden_fit" in mp) mp.garden_fit = 0.2;
   if ("flower_fit" in mp) mp.flower_fit = 0.3;
   mp.profile_version = (Number(mp.profile_version) || 0) + 1;
+
+  const NRF = "travelers_needing_non_monday_thursday_saturday_dates";
+  if (Array.isArray(doc.matching_metadata.not_recommended_for)) {
+    if (!doc.matching_metadata.not_recommended_for.includes(NRF)) {
+      doc.matching_metadata.not_recommended_for.push(NRF);
+    }
+  } else {
+    doc.matching_metadata.not_recommended_for = [NRF];
+  }
 
   // ---- publication log -----------------------------------------------------
   doc._publication = {
@@ -355,7 +403,12 @@ function build(loc) {
         "('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. " +
         "SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, " +
         "so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). " +
-        "Jaein Falls and the lunch stop ship without photos — no owned imagery yet.",
+        "Jaein Falls and the lunch stop ship without photos — no owned imagery yet. " +
+        "Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. " +
+        "The bundle previously made no departure-day claim at all, so guests could pick any date " +
+        "and hit the constraint only at checkout. Six Herb-Island-era matching signals " +
+        "(herb garden, lighting festival, herb museum, drama-filming density, and two K-drama " +
+        "title fits) were still scored 1 and are now dropped.",
     },
   };
 

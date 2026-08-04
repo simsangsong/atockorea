@@ -1711,7 +1711,7 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "立即 > **Note:** Items 23, 26, and 29 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS class names and have been left untranslated as they are technical identifiers, not display text.",
+      "timing": "立即",
       "title": "即时确认",
       "detail": "含行程摘要的预订确认"
     },
@@ -1775,7 +1775,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。user_port 在预订时从邮轮行程中解析。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "77",
       "currency": "USD",
@@ -2928,7 +2928,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。user_port 在预订时从邮轮行程中解析。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

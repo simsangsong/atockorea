@@ -626,6 +626,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "Seoul day trip",
+        "Mon · Thu · Sat",
         "UNESCO Geopark",
         "Waterfall",
         "Lake walk",
@@ -634,7 +635,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves."
+      "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves. Departs Mondays, Thursdays and Saturdays."
     },
     "price": {
       "amountLabel": "54"

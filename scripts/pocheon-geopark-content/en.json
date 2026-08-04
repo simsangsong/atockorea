@@ -2,7 +2,7 @@
   "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
   "title": "Pocheon & Yeoncheon: Lake, Waterfall & Quarry Art Valley",
   "subtitle": "A mountain-ringed lake walk, an 18 m waterfall over basalt columns, and an emerald quarry lake — two UNESCO Global Geopark geosites in one unhurried day from Seoul.",
-  "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves.",
+  "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves. Departs Mondays, Thursdays and Saturdays.",
   "badges": [
     "Seoul day trip",
     "UNESCO Geopark",
@@ -483,5 +483,18 @@
       "Return times are approximate and depend on traffic.",
       "This is a fixed-route group format; travellers reach the meeting point themselves."
     ]
+  },
+  "departureDays": {
+    "badge": "Mon · Thu · Sat",
+    "accordionTitle": "Departure days",
+    "accordionContent": [
+      "This tour departs **on Mondays, Thursdays and Saturdays only** — please book one of those dates.",
+      "The route, the timings and both pickup points are identical on all three departure days.",
+      "If your dates don't include a Monday, Thursday or Saturday, the tour can't be moved to another day — it is a fixed-schedule small-group departure, not a private charter."
+    ],
+    "faqQ": "Which days of the week does this tour run?",
+    "faqA": "It runs **on Mondays, Thursdays and Saturdays only**. The itinerary is the same on all three days, so book whichever one fits your trip. Other weekdays are not available on this product.",
+    "lessIdeal": "Travellers who can't travel on a Monday, Thursday or Saturday (the only departure days)",
+    "cardSuffix": " Departs Mondays, Thursdays and Saturdays."
   }
 }

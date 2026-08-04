@@ -1336,19 +1336,19 @@
       "icon": "check-circle",
       "title": "Operación local con licencia",
       "description": "Guía operada legalmente en Jeju",
-      "iconBg": "bg-emerald-50/80 *(código CSS — sin traducción)*"
+      "iconBg": "bg-emerald-50/80"
     },
     {
       "icon": "route",
       "title": "Diseñada en torno al suroeste de Jeju",
       "description": "Diseñada específicamente para la ruta del suroeste",
-      "iconBg": "bg-sky-50/80 *(código CSS — sin traducción)*"
+      "iconBg": "bg-sky-50/80"
     },
     {
       "icon": "users",
       "title": "Opera en grupos pequeños",
       "description": "Hasta 8 huéspedes",
-      "iconBg": "bg-amber-50/80 *(código CSS — sin traducción)*"
+      "iconBg": "bg-amber-50/80"
     }
   ],
   "bookingSupportSteps": [
@@ -1474,7 +1474,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "49",
       "originalPriceUsd": null,
@@ -3370,7 +3370,7 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "52",
           "originalPriceUsd": null,

@@ -1550,7 +1550,7 @@
           },
           {
             "label": "江汀港 = 南部（西归浦）码头",
-            "detail": "汉拿山1100高山区+柱状节理带+天帝渊瀑布+偶来市场。 > **Note:** Item 21 (`bg-sky-50/80`) is a Tailwind CSS class name and has been left untranslated as it is a technical code value."
+            "detail": "汉拿山1100高山区+柱状节理带+天帝渊瀑布+偶来市场。"
           },
           {
             "label": "两个港口均采用相同的8小时行程结构",
@@ -1683,7 +1683,7 @@
       "icon": "check-circle",
       "title": "持牌本地运营商",
       "description": "持有完整保险的韩国授权旅游运营商",
-      "iconBg": "bg-emerald-50/80 *(CSS 类名，保留原文)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600",
       "body": "专注于济州邮轮物流的持牌本地运营商——以港口为基础的路线规划意味着济州港游客可前往城山日出峰，江汀港游客则走南线路线，无需重新预订。"
     },
@@ -1691,7 +1691,7 @@
       "icon": "route",
       "title": "路线专家",
       "description": "精心定制的行程，而非千篇一律的循环路线",
-      "iconBg": "bg-sky-50/80 *(CSS 类名，保留原文)*",
+      "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
       "body": "拥有大型豪华巴士车队，每个小组配备独立导游——多船靠港日在到达大厅凭\"AtoC Korea\"接机牌协调接送。"
     },
@@ -1699,7 +1699,7 @@
       "icon": "users",
       "title": "精心管理的团队规模",
       "description": "根据路线合理配置规模",
-      "iconBg": "bg-amber-50/80 *(CSS 类名，保留原文)*",
+      "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600",
       "body": "所有指定景点的门票均已包含在旅游价格中——无任何隐藏现场费用。"
     }

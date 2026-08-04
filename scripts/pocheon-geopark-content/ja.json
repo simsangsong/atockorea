@@ -1,22 +1,37 @@
 {
   "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
-
   "title": "抱川＆漣川：湖と滝、そして採石場のアートバレー",
   "subtitle": "山に囲まれた湖畔の散歩道、柱状節理を18 m落ちる滝、そしてエメラルド色の採石場湖 — ソウルから日帰りで、ユネスコ世界ジオパークのジオサイト2か所をゆったりと巡る一日です。",
-  "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。",
-  "badges": ["ソウル発日帰り", "ユネスコ世界ジオパーク", "滝", "湖畔散策", "少人数"],
-  "tags": ["ソウル発日帰り", "抱川", "漣川", "ユネスコ世界ジオパーク", "滝", "自然", "写真映え"],
-
+  "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。",
+  "badges": [
+    "ソウル発日帰り",
+    "ユネスコ世界ジオパーク",
+    "滝",
+    "湖畔散策",
+    "少人数"
+  ],
+  "tags": [
+    "ソウル発日帰り",
+    "抱川",
+    "漣川",
+    "ユネスコ世界ジオパーク",
+    "滝",
+    "自然",
+    "写真映え"
+  ],
   "headlineLine1": "湖と滝",
   "headlineLine2": "＆採石場のアートバレー",
   "heroTagline": "築100年の山あいの湖、柱状節理を落ちる滝、エメラルド色の水をたたえた花崗岩の採石場跡 — 抱川と漣川の地質を、一日かけて歩いてたどります",
   "heroDuration": "10時間（08:00 最初のピックアップ、18:30 最後の解散）",
-  "heroPills": ["自然日帰りツアー", "ユネスコ世界ジオパーク", "四季の変化"],
+  "heroPills": [
+    "自然日帰りツアー",
+    "ユネスコ世界ジオパーク",
+    "四季の変化"
+  ],
   "region": "抱川＆漣川（ソウル発日帰り）",
   "duration": "10時間",
   "stopsCount": 4,
   "heroStopsLabel": "4か所",
-
   "seo": {
     "pageTitle": "抱川日帰りツアー：サンジョン湖・チェイン滝・アートバレー | AtoC Korea",
     "metaDescription": "漢灘江ユネスコ世界ジオパークを巡る10時間のソウル発日帰りツアー。サンジョン湖の平坦な3.2 km周回路、チェイン滝の18 mの柱状節理と80 mの吊り橋、抱川アートバレーのエメラルド色の採石場湖へ。",
@@ -29,12 +44,10 @@
       "漢灘江ユネスコ世界ジオパーク ツアー"
     ]
   },
-
   "routeShapeIntro": {
     "title": "一日の流れ",
     "subtitle": "ソウル市内の集合場所は2か所 — 弘大入口駅8番出口 08:00、明洞駅2番出口 08:30 — そこから北東へおよそ90分走って抱川に入ります。まずは湖から — 脚が元気なうちに、そして朝もやがまだ水面に残っているうちに歩きます。昼食は抱川ならではの料理を、その本場でいただきます。午後は漣川へ入り、明るい日差しの下でチェイン滝へ。渓谷には照明がないため、この時間帯が欠かせません。締めくくりは3か所のなかで最も遅くまで開いていて、ソウルにいちばん近い抱川アートバレー。おかげで帰路はその日いちばん短いドライブになります。明洞へは18:00頃、弘大入口駅へは18:30頃に戻ります。"
   },
-
   "routePhases": [
     {
       "phase": "午前は湖",
@@ -57,14 +70,28 @@
       "description": "抱川アートバレーへ戻り、モノレールで尾根の上へ。花崗岩の壁の下にはエメラルド色の天柱湖、下りは森の小道を歩いて — そしてその日いちばん短いドライブでソウルへ帰ります。"
     }
   ],
-
   "routeFlowStops": [
-    { "name": "サンジョン湖", "type": "origin", "theme": "山あいの湖" },
-    { "name": "イドンカルビの昼食", "type": "meal", "theme": "抱川の味" },
-    { "name": "チェイン滝", "type": "primary", "theme": "ユネスコ・ジオサイト" },
-    { "name": "アートバレー", "type": "return", "theme": "採石場のフィナーレ" }
+    {
+      "name": "サンジョン湖",
+      "type": "origin",
+      "theme": "山あいの湖"
+    },
+    {
+      "name": "イドンカルビの昼食",
+      "type": "meal",
+      "theme": "抱川の味"
+    },
+    {
+      "name": "チェイン滝",
+      "type": "primary",
+      "theme": "ユネスコ・ジオサイト"
+    },
+    {
+      "name": "アートバレー",
+      "type": "return",
+      "theme": "採石場のフィナーレ"
+    }
   ],
-
   "whyTourWorks": {
     "bestFor": [
       "南怡島よりも落ち着いた一日を過ごしたい方",
@@ -98,7 +125,6 @@
       }
     ]
   },
-
   "stops": {
     "sanjeong": {
       "name": "サンジョン湖",
@@ -139,7 +165,6 @@
         "facilities": "湖の入口にカフェとレストラン、ボート乗り場、彫刻公園、ピクニック広場があります。"
       }
     },
-
     "lunch": {
       "name": "昼食 — イドンカルビ（抱川の郷土の食卓）",
       "time": "11:40",
@@ -161,7 +186,6 @@
       ],
       "whyOnRoute": "**この地域の郷土料理を、その本場で。** イドンはサンジョン湖から10分、しかも西へ向かう道筋にほぼ乗っているため、食事のために一日の移動が増えることはありません。時間帯もちょうどよく、午前の3.2 kmの散策を終え、午後にはジオパークの2か所が控えています。どちらも階段や橋があり、しっかりした脚とすこしの余裕が必要な場所です。"
     },
-
     "jaein": {
       "name": "チェイン滝（漢灘江ユネスコ世界ジオパーク）",
       "time": "13:30",
@@ -201,7 +225,6 @@
         "facilities": "入口に駐車場、トイレ、ジオパークの解説パネルがあります。渓谷そのものには売店がないので、飲み物はご持参ください。"
       }
     },
-
     "artvalley": {
       "name": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
       "time": "15:20",
@@ -243,7 +266,6 @@
       }
     }
   },
-
   "staticQuestions": [
     {
       "question": "このツアーは何が変わったのですか？ ハーブアイランドが含まれていませんでしたか？",
@@ -294,7 +316,6 @@
       "answer": "難しいでしょう。サンジョン湖、チェイン滝、抱川アートバレーは2つの郡にまたがる3つの異なる地区にあり、抱川アートバレー行きのバスは数時間に1本しかありません。車なしで3か所を一日で回るのは現実的ではなく、このルートがツアーとして存在する理由の大半もそこにあります。"
     }
   ],
-
   "seasonalVariations": [
     {
       "season": "春（3–5月）",
@@ -313,16 +334,44 @@
       "description": "一年でいちばん人が少ない季節です。天柱湖が凍りつくことがあり、湖ではそり祭りが開かれ、滝も部分的に氷結することがあります。日照時間が短いため午後はやや詰まり、チェインの木道は滑りやすくなることがあります。"
     }
   ],
-
   "glanceItems": [
-    { "icon": "camera", "label": "写真映え", "value": "非常に良い", "level": 5 },
-    { "icon": "mountain", "label": "景観", "value": "非常に良い", "level": 5 },
-    { "icon": "footprints", "label": "徒歩量", "value": "ふつう", "level": 3 },
-    { "icon": "cloud-rain", "label": "雨天対応", "value": "ふつう", "level": 3 },
-    { "icon": "users", "label": "ファミリー向き", "value": "良い", "level": 4 },
-    { "icon": "gauge", "label": "ゆとり", "value": "ゆったり", "level": 5 }
+    {
+      "icon": "camera",
+      "label": "写真映え",
+      "value": "非常に良い",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景観",
+      "value": "非常に良い",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "徒歩量",
+      "value": "ふつう",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天対応",
+      "value": "ふつう",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "ファミリー向き",
+      "value": "良い",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "ゆとり",
+      "value": "ゆったり",
+      "level": 5
+    }
   ],
-
   "practical": {
     "walkingTitle": "歩行と地形",
     "walkingContent": [
@@ -349,22 +398,58 @@
       "ユネスコ世界ジオパークは地質学的な認定であり、ユネスコ世界遺産の登録とは異なるものです。"
     ]
   },
-
   "pdNotes": "集合場所は2か所です。弘大入口駅8番出口 08:00、明洞駅2番出口 08:30 — 出発時刻の10分前までにお越しください。復路は明洞18:00頃、続いて弘大入口駅18:30頃となり、正確な時刻は交通状況によって変わります。",
   "stickyNote": "ご希望の日付と人数を選択すると、空き状況をリアルタイムでご確認いただき、ご予約を完了できます。",
-
   "matchingMetadata": {
-    "anchor_pois": ["Sanjeong Lake", "Jaein Falls", "Pocheon Art Valley"],
-    "anchor_poi_keys": ["sanjeong_lake", "jaein_falls", "pocheon_art_valley"],
-    "primary_themes": ["seoul_day_trip", "unesco_global_geopark", "waterfall", "lake_walk", "quarry_art_park", "gyeonggi_nature"],
-    "secondary_themes": ["suspension_bridge", "skywalk", "columnar_jointing", "monorail", "silver_grass", "k_drama_filming", "local_food"],
-    "best_for": ["nature_lovers", "couples", "photographers", "adult_families", "geology_curious", "nami_island_alternative_seekers"],
-    "not_recommended_for": ["shopping_focused_travelers", "indoor_only_rainy_day_seekers", "step_free_access_required", "nightlife_focused_travelers"],
-    "competing_products": ["seoul-private-nami-morning-calm-petite-france", "seoul-suburbs-private-chartered-car-10hr", "seoul-seoraksan-nami-island-morning-calm-day-tour"],
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Jaein Falls",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "jaein_falls",
+      "pocheon_art_valley"
+    ],
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
+    ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
   },
-
   "pickupDropoff": {
     "meetingPoints": [
       {
@@ -398,5 +483,18 @@
       "帰着時刻は目安であり、交通状況によって変わります。",
       "ルートの決まったグループ形式のため、集合場所まではお客様ご自身でお越しいただきます。"
     ]
+  },
+  "departureDays": {
+    "badge": "月・木・土出発",
+    "accordionTitle": "出発曜日",
+    "accordionContent": [
+      "このツアーは**月曜・木曜・土曜のみ出発します**。いずれかの曜日でご予約ください。",
+      "3つの出発日はいずれもコース、時間、2か所の集合場所がすべて同じです。",
+      "ご旅行日程に月・木・土が含まれない場合、他の曜日への変更はできません。専用チャーターではなく、決まった日程で運行する少人数グループツアーのためです。"
+    ],
+    "faqQ": "このツアーは何曜日に催行されますか？",
+    "faqA": "**月曜・木曜・土曜のみ**の催行です。3日とも行程は同じですので、ご旅行に合う曜日をお選びください。それ以外の曜日にこの商品はご利用いただけません。",
+    "lessIdeal": "月・木・土に旅行できない方（出発はこの3曜日のみです）",
+    "cardSuffix": " 月・木・土出発。"
   }
 }

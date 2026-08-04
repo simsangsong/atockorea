@@ -1083,7 +1083,7 @@
     },
     {
       "id": "weather-policy",
-      "title": "天氣政策 > **Note on line 3:** `bg-sky-50/80` is a Tailwind CSS utility class name — left untranslated as it is a code token, not readable content.",
+      "title": "天氣政策",
       "preview": "小雨照常出發；大雨改期",
       "content": [
         "小雨：行程照常（繡球花在細雨中拍攝效果出色）",
@@ -1297,7 +1297,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
+    "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
       "amountLabel": "64",
       "salePriceUsd": 64,
@@ -2913,7 +2913,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；非靜態 JSONB 的一部分。",
+        "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

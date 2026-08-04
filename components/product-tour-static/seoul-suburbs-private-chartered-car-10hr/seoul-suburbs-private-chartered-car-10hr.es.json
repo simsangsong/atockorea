@@ -434,7 +434,7 @@
             "detail": "La recogida y la dejada gratuitas en tu hotel en el centro de Seúl significan que no hay trasbordos de metro a primera hora de la mañana ni estrés por el autobús lanzadera al final del día."
           },
           {
-            "label": "El conocimiento de tu conductor-guía > **Note on line 20:** `bg-sky-50/80` is a Tailwind CSS utility class — it has been left untranslated as it is a code token, not display text.",
+            "label": "El conocimiento de tu conductor-guía",
             "detail": "Un guía-conductor coreano con licencia añade contexto local, recomienda paradas para comer y adapta la ruta según el clima o el tráfico en tiempo real."
           }
         ]
@@ -442,7 +442,7 @@
       {
         "title": "Cómo elegir entre las rutas",
         "icon": "map",
-        "iconBg": "bg-amber-50/80 *(clase CSS — sin traducción)*",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -462,7 +462,7 @@
       {
         "title": "Qué puede cambiar el día del tour",
         "icon": "clock-3",
-        "iconBg": "bg-slate-50/80 *(clase CSS — sin traducción)*",
+        "iconBg": "bg-slate-50/80",
         "iconColor": "text-slate-600",
         "items": [
           {
@@ -494,7 +494,7 @@
       "preview": "Recogida gratuita en hotel en el centro de Seúl; reunirse en el vestíbulo 10 minutos antes",
       "content": [
         "La recogida gratuita en hotel está incluida para las zonas céntricas de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.)",
-        "Los alojamientos fuera del centro de Seúl pueden incurrir en una tarifa adicional de recogida > **Note:** Lines 3 and 11 (`bg-amber-50/80` and `bg-slate-50/80`) are Tailwind CSS utility classes — they are code values, not natural language, so they are left unchanged.",
+        "Los alojamientos fuera del centro de Seúl pueden incurrir en una tarifa adicional de recogida",
         "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora de salida acordada",
         "El regreso es a su hotel en Seúl o a cualquier lugar del centro de Seúl que prefiera",
         "El recogido o la entrega en el Aeropuerto de Incheon está disponible con un cargo adicional de 100.000 KRW por traslado de ida",
@@ -612,21 +612,21 @@
       "icon": "check-circle",
       "title": "Operador local con licencia",
       "description": "Operador turístico coreano autorizado con seguro completo",
-      "iconBg": "bg-emerald-50/80 *(código técnico — sin traducción)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
       "icon": "route",
       "title": "Especialistas en rutas",
       "description": "Itinerario personalizado, no un recorrido genérico",
-      "iconBg": "bg-sky-50/80 *(código técnico — sin traducción)*",
+      "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
     },
     {
       "icon": "users",
       "title": "Tamaño de grupo seleccionado",
       "description": "Dimensionado adecuadamente para la ruta",
-      "iconBg": "bg-amber-50/80 *(código técnico — sin traducción)*",
+      "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
   ],
@@ -753,7 +753,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "184",
       "currency": "USD",
@@ -1771,7 +1771,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

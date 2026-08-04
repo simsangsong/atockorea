@@ -1264,7 +1264,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析，不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "424",
       "currency": "USD",
@@ -2205,13 +2205,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "`checkout_tour_id` 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
           "per": "group",
           "priceSource": "getyourguide_t1249797",
-          "priceNote": "价格尚未设定。私人包团价格因车型而异（轿车1–3人、面包车4–6人、大型面包车7–9人）。价格确认后，AtoC Korea 销售价格统一享受九折优惠。 > **说明：** 第3、4项为 UI 组件名称（代码标识符），按惯例保留英文原名不作翻译；第5项中的变量名 `checkout_tour_id` 同理保留原样。第6项\"flat 10% discount\"依中文习惯译为\"九折优惠\"（即原价的90%）。",
+          "priceNote": "价格尚未设定。私人包团价格因车型而异（轿车 1–3 人、面包车 4–6 人、大型面包车 7–9 人）。价格确认后，AtoC Korea 直订价统一享受九折优惠。",
           "discountPercent": 10
         }
       }

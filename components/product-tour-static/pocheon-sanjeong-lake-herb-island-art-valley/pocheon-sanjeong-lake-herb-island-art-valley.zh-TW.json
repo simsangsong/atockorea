@@ -28,6 +28,7 @@
     "reviewCount": 0,
     "badges": [
       "首爾一日遊",
+      "週一·週四·週六出發",
       "世界地質公園",
       "瀑布",
       "環湖漫步",
@@ -36,7 +37,7 @@
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
-    "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。",
+    "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。 週一、週四、週六出發。",
     "tags": [
       "首爾一日遊",
       "抱川",
@@ -494,10 +495,21 @@
       "想要以購物為主或高強度活動的旅客",
       "需要一份完全室內的雨天備案的人",
       "非看知名單一地標不可的旅客（建議改選水原華城）",
-      "每一站都需要無台階通行的團體"
+      "每一站都需要無台階通行的團體",
+      "無法在週一、週四或週六出遊的旅客（僅這三天發團）"
     ]
   },
   "practicalAccordionItems": [
+    {
+      "id": "departure-days",
+      "title": "出發日",
+      "preview": "本行程**僅於週一、週四、週六出發**，請選擇其中一天預訂。",
+      "content": [
+        "本行程**僅於週一、週四、週六出發**，請選擇其中一天預訂。",
+        "三個出發日的路線、時間與兩個上車地點完全相同。",
+        "若您的行程中沒有週一、週四或週六，本產品無法改至其他日期——這是固定發團的小團行程，並非私人包車。"
+      ]
+    },
     {
       "id": "pickup",
       "title": "接送服務",
@@ -670,6 +682,10 @@
       "answer": "原本確實有。自 2026 年 8 月起，路線把香草島樂園換成漣川的載仁瀑布，並加入一站道地的在地午餐。原因是載仁瀑布與抱川藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，因此這一天現在說的是一個彼此相連的地質故事，而不是三個互不相干的景點。如果你特別想去香草島樂園，請在預訂前與我們聯繫——我們可以另行安排。"
     },
     {
+      "question": "本行程每週哪幾天出發？",
+      "answer": "**僅於週一、週四與週六出發**。三天的行程內容完全相同，請選擇方便的一天預訂。其他日期不提供本產品。"
+    },
+    {
       "question": "載仁瀑布與藝術谷的「聯合國教科文組織」身分是什麼？",
       "answer": "兩者都是漢灘江聯合國教科文組織世界地質公園的指定地質景點，該地質公園於 2020 年 7 月 7 日獲得認證，並於 2024 年再認證。這是世界地質公園的認證，而不是世界遺產登錄——它表彰的是橫跨抱川、漣川與鐵原的漢灘江流域地質。載仁瀑布展現的是玄武岩熔岩與它的柱狀節理；藝術谷展現的則是熔岩當年流過的古老花崗岩基盤。"
     },
@@ -788,7 +804,7 @@
     "notes": "兩個集合點：08:00 弘大入口站8號出口、08:30 明洞站2號出口——請於各自出發時間前 10 分鐘抵達。回程約 18:00 先到明洞，約 18:30 再到弘大入口站；實際時間視交通狀況而定。"
   },
   "matching_profile": {
-    "profile_version": 7,
+    "profile_version": 8,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -949,12 +965,6 @@
     "national_tourist_site_1977_designation_fit": 1,
     "myeongseongsan_silver_grass_autumn_fit": 1,
     "sanjeong_lake_sledding_festival_winter_fit": 1,
-    "mediterranean_herb_garden_fit": 1,
-    "year_round_lighting_festival_fit": 1,
-    "korea_largest_herb_museum_fit": 1,
-    "korea_drama_filming_density_high_fit": 1,
-    "legend_of_the_blue_sea_filming_fit": 1,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -972,10 +982,16 @@
       11,
       12
     ],
-    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
+    "signature_window_label": "Year-round on Monday / Thursday / Saturday departures (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "available_days_signature": [
+      "monday",
+      "thursday",
+      "saturday"
+    ],
+    "fixed_departure_monday_thursday_saturday": true
   },
   "matching_metadata": {
     "matching_schema": "match_tours_embedded_v2",
@@ -1050,7 +1066,8 @@
       "shopping_focused_travelers",
       "indoor_only_rainy_day_seekers",
       "step_free_access_required",
-      "nightlife_focused_travelers"
+      "nightlife_focused_travelers",
+      "travelers_needing_non_monday_thursday_saturday_dates"
     ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
@@ -1542,7 +1559,8 @@
             "想要以購物為主或高強度活動的旅客",
             "需要一份完全室內的雨天備案的人",
             "非看知名單一地標不可的旅客（建議改選水原華城）",
-            "每一站都需要無台階通行的團體"
+            "每一站都需要無台階通行的團體",
+            "無法在週一、週四或週六出遊的旅客（僅這三天發團）"
           ]
         }
       }
@@ -1553,6 +1571,16 @@
       "component": "TourPracticalDetails",
       "props": {
         "practicalAccordionItems": [
+          {
+            "id": "departure-days",
+            "title": "出發日",
+            "preview": "本行程**僅於週一、週四、週六出發**，請選擇其中一天預訂。",
+            "content": [
+              "本行程**僅於週一、週四、週六出發**，請選擇其中一天預訂。",
+              "三個出發日的路線、時間與兩個上車地點完全相同。",
+              "若您的行程中沒有週一、週四或週六，本產品無法改至其他日期——這是固定發團的小團行程，並非私人包車。"
+            ]
+          },
           {
             "id": "pickup",
             "title": "接送服務",
@@ -1737,6 +1765,10 @@
           {
             "question": "這個行程改了什麼——原本不是有香草島樂園嗎？",
             "answer": "原本確實有。自 2026 年 8 月起，路線把香草島樂園換成漣川的載仁瀑布，並加入一站道地的在地午餐。原因是載仁瀑布與抱川藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，因此這一天現在說的是一個彼此相連的地質故事，而不是三個互不相干的景點。如果你特別想去香草島樂園，請在預訂前與我們聯繫——我們可以另行安排。"
+          },
+          {
+            "question": "本行程每週哪幾天出發？",
+            "answer": "**僅於週一、週四與週六出發**。三天的行程內容完全相同，請選擇方便的一天預訂。其他日期不提供本產品。"
           },
           {
             "question": "載仁瀑布與藝術谷的「聯合國教科文組織」身分是什麼？",
@@ -1990,7 +2022,7 @@
           }
         }
       },
-      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet."
+      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet. Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. The bundle previously made no departure-day claim at all, so guests could pick any date and hit the constraint only at checkout. Six Herb-Island-era matching signals (herb garden, lighting festival, herb museum, drama-filming density, and two K-drama title fits) were still scored 1 and are now dropped."
     }
   }
 }

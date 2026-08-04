@@ -43,6 +43,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "Tagesausflug ab Seoul",
+        "Mo · Do · Sa",
         "UNESCO-Geopark",
         "Wasserfall",
         "Seerundweg",
@@ -51,7 +52,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften."
+      "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften. Abfahrt montags, donnerstags und samstags."
     },
     "price": {
       "amountLabel": "54"

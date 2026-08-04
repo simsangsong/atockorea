@@ -626,6 +626,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "首爾一日遊",
+        "週一·週四·週六出發",
         "世界地質公園",
         "瀑布",
         "環湖漫步",
@@ -634,7 +635,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。"
+      "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。 週一、週四、週六出發。"
     },
     "price": {
       "amountLabel": "54"

@@ -1013,7 +1013,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -2445,7 +2445,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "El valor de checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / variables de entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

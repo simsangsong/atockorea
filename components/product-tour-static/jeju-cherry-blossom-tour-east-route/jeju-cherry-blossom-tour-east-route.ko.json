@@ -1221,7 +1221,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id는 런타임 시 Supabase / 환경 변수에서 확인됩니다. 정적 JSONB에는 포함되지 않습니다.",
+    "note": "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
     "price": {
       "amountLabel": "",
       "originalPriceUsd": null,
@@ -2402,7 +2402,7 @@
       "section_html_id": null,
       "component": "투어 예약 고정 바",
       "props": {
-        "note": "checkout_tour_id는 런타임에 Supabase / 환경 변수에서 결정되며, 정적 JSONB에 포함되지 않습니다.",
+        "note": "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

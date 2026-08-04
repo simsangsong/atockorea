@@ -1353,7 +1353,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "424",
       "currency": "USD",
@@ -2294,13 +2294,13 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar *(nombre de componente — se mantiene sin traducir)*",
       "props": {
-        "note": "`checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / variables de entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
           "per": "group",
           "priceSource": "getyourguide_t1249797",
-          "priceNote": "Precio aún no establecido. El precio del tour privado varía según el tamaño del vehículo (sedán: 1–3 pax, van: 4–6 pax, van grande: 7–9 pax). Una vez confirmado, el precio de venta de AtoC Korea aplica un descuento fijo del 10 %. --- **Notas de traducción:** - **Líneas 3 y 4** son nombres de componentes de código React; se conservan en su forma original ya que traducirlos podría romper referencias técnicas. - **Línea 5** conserva los términos técnicos (`checkout_tour_id`, `Supabase`, `JSONB`) sin traducir, ya que son identificadores de sistema. - **\"pax\"** se mantiene como en el original, pues es un término estándar en el sector turístico (pasajeros/personas).",
+          "priceNote": "Precio aún no establecido. El precio del tour privado varía según el tamaño del vehículo (sedán: 1–3 pax, van: 4–6 pax, van grande: 7–9 pax). Una vez fijado, la tarifa de reserva directa de AtoC Korea aplica un 10 % de descuento.",
           "discountPercent": 10
         }
       }
