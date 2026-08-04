@@ -188,19 +188,35 @@ for (const { slug } of PRODUCTS) {
     }
   }
 
-  const sql = path.join(ROOT, "supabase/pending-db-apply");
-  const sqlFile = readdirSync(sql).find(
-    (f) => f.endsWith(".sql") && readFileSync(path.join(sql, f), "utf8").includes(`'${slug}'`),
-  );
-  if (!sqlFile) {
-    console.log(`  ${slug}: no pending SQL (already applied?) — offers price unchecked`);
-  } else {
-    const body = readFileSync(path.join(sql, sqlFile), "utf8");
-    if (!body.includes(`${bundlePrice * 100}, 'USD'`)) {
-      fail(`${sqlFile}: offers row does not carry the bundle price (${bundlePrice * 100} minor)`);
+  // Look in applied/ as well as pending/ — the file moves once it lands on the
+  // DB, and a check that silently stops checking is worse than no check.
+  let sqlPath = null;
+  for (const dir of ["supabase/pending-db-apply", "supabase/pending-db-apply/applied"]) {
+    const abs = path.join(ROOT, dir);
+    if (!existsSync(abs)) continue;
+    const hit = readdirSync(abs).find(
+      (f) =>
+        f.endsWith(".sql") &&
+        f.includes("seoul") &&
+        readFileSync(path.join(abs, f), "utf8").includes(`'${slug}'`),
+    );
+    if (hit) {
+      sqlPath = path.join(abs, hit);
+      break;
     }
   }
-  console.log(`  ${slug}: USD ${bundlePrice}`);
+  if (!sqlPath) {
+    fail(`${slug}: no offers SQL found in pending/ or applied/ — regenerate it`);
+  } else {
+    const body = readFileSync(sqlPath, "utf8");
+    if (!body.includes(`${bundlePrice * 100}, 'USD'`)) {
+      fail(
+        `${path.basename(sqlPath)}: offers row does not carry the bundle price ` +
+          `(${bundlePrice * 100} minor)`,
+      );
+    }
+  }
+  console.log(`  ${slug}: USD ${bundlePrice} ${sqlPath ? `(${path.basename(sqlPath)})` : ""}`);
 }
 
 if (failures) {

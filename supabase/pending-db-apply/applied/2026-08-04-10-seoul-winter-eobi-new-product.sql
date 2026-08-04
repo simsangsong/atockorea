@@ -1,17 +1,17 @@
 -- =============================================================================
 -- seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour — NEW product (tour_product v2)
 -- =============================================================================
--- Generated: 2026-08-04 (pending DB apply — this session has no DB access)
+-- Generated: 2026-08-04. Regenerate with:
+--   node scripts/gen-seoul-new-products-sql-2026-08.mjs
 -- Course: Seoul pickup 06:00/06:30 → Seoraksan National Park (self-guided) →
 --         lunch (own expense) → Nami Island → Eobi Valley ice wall → Seoul.
 -- SEASONAL: winter only. The ice wall is an ARTIFICIAL structure built each
 -- winter by Garil 2-ri villagers — it exists only while the cold holds.
--- Price: USD 69 per person. 🔴 PRICE IS A PLACEHOLDER PENDING OWNER
---        CONFIRMATION — set from the sibling Seoul products' Klook-relative
---        pricing, not from an owner decision. Confirm before selling.
+-- Price: USD 69 per person (owner decision 2026-08-04).
 -- Script: scripts/gen-seoul-new-products-sql-2026-08.mjs
 -- Idempotent: tours ON CONFLICT (slug); tour_product_pages ON CONFLICT (slug, locale);
 --             offer insert-if-absent.
+-- No psql? node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs
 -- AFTER APPLYING: node scripts/import-match-v18.mjs --single seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour
 -- Web: /tour-product/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour
 -- =============================================================================
