@@ -1,0 +1,1161 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "es",
+  "product_id": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "seo": {
+    "pageTitle": "Excursión de invierno desde Seúl — Seoraksan, Isla Nami y el muro de hielo del valle de Eobi | AtoC Korea",
+    "metaDescription": "Tour de un día en autocar de temporada invernal desde Seúl: el Parque Nacional Seoraksan cubierto de nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo del valle de Eobi, en Gapyeong. Recogida en la estación de Hongik University o en la estación de Myeongdong; entrada al parque y ferry a Nami incluidos.",
+    "title": "Excursión de invierno desde Seúl — Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+    "description": "Una excursión de un día solo en invierno desde Seúl que combina el Parque Nacional Seoraksan bajo la nieve, la Isla Nami y el muro de hielo del valle de Eobi, construido por los vecinos del pueblo, en Gapyeong.",
+    "primaryKeywords": [
+      "excursión de invierno desde Seúl",
+      "muro de hielo valle de Eobi",
+      "tour Seoraksan invierno desde Seúl",
+      "isla Nami en invierno",
+      "excursión de un día a Gapyeong en invierno"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
+  },
+  "catalog_card": {
+    "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+    "title": "Especial de invierno desde Seúl: Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+    "subtitle": "Un día en autocar solo en invierno: nieve en la montaña más famosa de Corea, Nami bajo la escarcha y un muro de hielo construido por un pueblo",
+    "region": "Seúl → Gangwon-do → Gyeonggi-do (Gapyeong)",
+    "duration": "13.5 horas",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Solo en invierno",
+      "De temporada",
+      "Excursión de un día desde Seúl",
+      "Seoraksan",
+      "Muro de hielo"
+    ],
+    "tags": [
+      "Solo en invierno",
+      "De temporada",
+      "Excursión de un día desde Seúl",
+      "Seoraksan",
+      "Isla Nami",
+      "Muro de hielo"
+    ],
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "priceLabel": "",
+    "shortCardDescription": "Funciona solo en pleno invierno: el Seoraksan bajo la nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo de 25 metros que los vecinos de un pueblo de Gapyeong hacen crecer cada enero sobre una pared de roca del valle."
+  },
+  "headlineLine1": "Excursión de invierno desde Seúl",
+  "headlineLine2": "Seoraksan, Nami y el muro de hielo de Eobi",
+  "price": {
+    "amountLabel": "69",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 69
+  },
+  "hero": {
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "imagePosition": "center 40%",
+    "images": [
+      "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
+    ],
+    "tagline": "Un día en autocar de temporada invernal desde Seúl: el parque nacional más conocido de Corea bajo la nieve, las avenidas escarchadas de la Isla Nami y un muro de hielo de 25 metros que un pueblo de Gapyeong construye a mano cada enero",
+    "pills": [
+      "Solo temporada de invierno",
+      "Nieve + muro de hielo",
+      "Excursión en autocar"
+    ],
+    "meta": {
+      "duration": "13.5 horas",
+      "region": "Seúl → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "stops": "3 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción general"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Detalles"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reseñas"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "13.5 horas"
+    },
+    {
+      "icon": "camera",
+      "label": "Potencial fotográfico",
+      "value": "Muy alto",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Muy alto",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Sensibilidad meteorológica",
+      "value": "Alta",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud para familias",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Intenso",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "Parque Nacional Seoraksan",
+      "caption": "Parque Nacional Seoraksan — photo 1",
+      "alt": "Parque Nacional Seoraksan — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "Parque Nacional Seoraksan",
+      "caption": "Parque Nacional Seoraksan — photo 2",
+      "alt": "Parque Nacional Seoraksan — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+      "location": "Parque Nacional Seoraksan",
+      "caption": "Parque Nacional Seoraksan — photo 3",
+      "alt": "Parque Nacional Seoraksan — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+      "location": "Parque Nacional Seoraksan",
+      "caption": "Parque Nacional Seoraksan — photo 4",
+      "alt": "Parque Nacional Seoraksan — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 1",
+      "alt": "Isla Nami (Namiseom) — gallery image 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 2",
+      "alt": "Isla Nami (Namiseom) — gallery image 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 3",
+      "alt": "Isla Nami (Namiseom) — gallery image 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 4",
+      "alt": "Isla Nami (Namiseom) — gallery image 4"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "06:00 / 06:30",
+      "duration": "Ventana de 30 min",
+      "name": "Recogida (estación de Hongik University o estación de Myeongdong)",
+      "category": "Recogida en autocar",
+      "description": "La recogida se realiza en uno de los dos puntos de encuentro de Seúl: **(1) el Starbucks de la salida 8 de la estación de Hongik University (Mapo-gu)** a las 06:00 — el local de Starbucks está justo al salir por la salida 8; O BIEN **(2) la salida 2 de la estación de Myeongdong (Jung-gu)** a las 06:30 — la tienda insignia de NorthFace es la referencia visible junto a la salida.\n\nAmbos puntos de recogida comparten el mismo autocar con calefacción y los pasajeros de Hongik suben primero. Le rogamos estar en el punto elegido **5 minutos antes de la hora prevista**: es una salida temprana en una mañana fría y el día solo funciona si el autocar llega al Seoraksan a las 09:30.\n\nVístase al subir para todo el día, no para el paseo hasta el metro: estará al aire libre a −5 °C o menos en dos de las tres paradas, y la última es sobre hielo. El guía reparte una tarjeta impresa con el itinerario en coreano e inglés y confirma el plan del día, incluido si el teleférico del Seoraksan está funcionando y qué está cobrando el pueblo en Eobi.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "Llegar al punto de recogida elegido 5 minutos antes de la hora prevista (~5 min)",
+        "Identificar el autocar de AtoC Korea frente al Starbucks / NorthFace señalado (~5 min)",
+        "Subir a bordo en la fila de embarque (~10 min)",
+        "Al subir se reparte una tarjeta impresa con el itinerario en coreano e inglés"
+      ],
+      "whyOnRoute": "Los dos puntos de recogida cubren los dos principales núcleos de visitantes de Seúl —la zona de Hongik University, en Mapo-gu, y Myeongdong, en Jung-gu— y Hongik primero es el orden natural para una salida hacia el noreste. Las 06:00 no son un relleno: el Seoraksan está a unas tres horas y el valor de ir allí en invierno está en pisar el fondo del valle mientras la luz sigue sobre la nieve. Salir más tarde metería la visita al parque en la planitud de la tarde y empujaría la última parada más allá del anochecer.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "Parque Nacional Seoraksan",
+      "time": "≈ 09:30",
+      "number": 2,
+      "category": "Reserva de la Biosfera UNESCO (1982) — Las montañas de granito más espectaculares de Corea",
+      "duration": "120 min (2 horas)",
+      "timeUsed": [
+        "Llegada a la Entrada de Seorakdong + orientación del conductor-guía (~10 min)",
+        "Caminata al Tongildaebul + Templo Sinheungsa (~15-20 min desde el aparcamiento principal)",
+        "Teleférico opcional a Gwongeumseong (~30-45 min incluida la fila) O caminata a Biseondae (~90 min)",
+        "Tiempo para fotos + reagrupación en el vehículo (~15 min)",
+        "Parada opcional para fotografiar el Pino de 800 años cerca de Sinheungsa (~5 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "seoraksan_national_park",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+          "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+          "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+          "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+          "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+        ]
+      },
+      "highlights": [
+        "Quinto parque nacional de Corea (1970) y única Reserva de la Biosfera UNESCO (ago 1982)",
+        "Tongildaebul: 14,6 m / 108 t de bronce — mayor Buda sentado de bronce del mundo (1997)",
+        "Templo Sinheungsa (652 EC, Silla) — templo principal de la Orden Jogye; templo Seon (Zen) más antiguo del mundo",
+        "Teleférico Seorak opcional 1.132 m hasta plataforma de la Fortaleza Gwongeumseong (700 m, leyenda de 1253)",
+        "30 cumbres, más de 2.000 especies animales, 1.400–1.562 especies vegetales; fauna rara (ciervo almizclero, goral, oso negro asiático)",
+        "Entrada al parque GRATUITA desde su reciente abolición (era 3.500 KRW); el teleférico sigue siendo de pago",
+        "**Categoría II de la IUCN (Parque Nacional) desde 2005 + Lista Verde de Áreas Protegidas IUCN desde 2014** — primer parque nacional de Corea en entrar en la Lista Verde durante la Fase Piloto, junto con Odaesan y Jirisan",
+        "**Única Reserva de la Biosfera UNESCO de Corea desde agosto de 1982** + **incluido en la lista tentativa de Patrimonio Mundial UNESCO** — reconocimiento combinado igualado por ningún otro parque nacional coreano",
+        "**Conservación insignia del goral de cola larga**: población estable de ~260 ejemplares (vulnerable según la Lista Roja de la IUCN) — el parque gestiona 10 Zonas de Especial Protección que cubren 39 km² (10 % del área total) para especies en peligro"
+      ],
+      "smartNotes": {
+        "photo": "El gran Buda de bronce Tongildaebul contra el granito espolvoreado de nieve es la foto. En invierno, la línea de la cresta de Ulsanbawi suele verse desde la explanada de la entrada en las mañanas despejadas.",
+        "facilities": "Centro de visitantes, cafeterías, restaurantes y tiendas de recuerdos en la entrada de Sogongwon. El espacio cubierto para entrar en calor es limitado en los días de invierno con mucha gente.",
+        "tip": "No planifique el día en torno al teleférico. En invierno su horario cambia a diario y cierra por viento y hielo con más frecuencia que en otras estaciones; además, las colas pueden ser largas en los días despejados. Tómelo como un extra, no como algo fijo. Vaya preparado para entre −5 °C y +5 °C en la base, con una fuerte sensación térmica por el viento."
+      },
+      "whyOnRoute": "El Seoraksan abre el día porque es a la vez la parada más lejana y la que más depende de la luz. A las 09:30 la nieve sobre las crestas de granito sigue limpia y el valle aún no se ha nublado, que es toda la razón para conducir tres horas hasta allí. Dos horas en la entrada de Sogongwon bastan para el gran Buda de bronce Tongildaebul, el templo Sinheungsa y los senderos del valle bajo a ritmo invernal; no bastan para intentar una cima, y eso es deliberado. Ir primero también deja hecho el trayecto más largo del día antes de que nadie esté cansado o helado.",
+      "convenience": {
+        "restroom": "En la zona de la entrada principal, la estación del teleférico, el recinto del Templo Sinheungsa y a lo largo de los principales senderos",
+        "parking": "Disponible en la entrada principal de Sogongwon (de pago)"
+      },
+      "description": "**Seoraksan** fue **el quinto parque nacional de Corea** —designado en marzo de 1970— y sigue siendo **la única Reserva de la Biosfera UNESCO del país**, reconocida en agosto de 1982 por su excepcional biodiversidad de montaña. \n\nEl parque abarca aproximadamente 398 km² entre cuatro ciudades y condados, con 30 cumbres nominadas ancladas por **Daecheongbong (1.708 m, tercer pico más alto de Corea)** y la famosa formación granítica de seis pilares de **Ulsanbawi**. \n\nLa entrada es GRATUITA desde la reciente abolición de la tarifa de 3.500 KRW que históricamente se cobraba en nombre del **Templo Sinheungsa** — ahora son los fondos públicos los que mantienen el templo. \n\nDesde la entrada principal de Sogongwon (Seorak Exterior / Oeseorak), la visita típica de 3 horas cubre tres puntos clave: el **Tongildaebul (Gran Buda de la Reunificación)**, de 14,6 m y 108 toneladas de bronce, el mayor Buda sentado de bronce del mundo, erigido en 1997 en plegaria por la reunificación coreana, con un pequeño santuario a Bodhisattva Guan Yin en su base; el propio Templo Sinheungsa, fundado en 652 por Jajangyulsa durante el Reino Silla y considerado el templo Seon (Zen) más antiguo del mundo y templo principal de la Orden Jogye; y el opcional **Teleférico de Seorak** (1.132 m de recorrido, ~10 min solo ida hasta la plataforma de la Fortaleza Gwongeumseong a 700 m — **Adulto ida y vuelta 16.000 KRW / Niño 12.000 KRW**, taquilla solo en sitio, sin reserva previa, colas de horas durante el pico de follaje otoñal en octubre). \n\nLa Fortaleza Gwongeumseong en lo alto carga una leyenda viva: erigida en un solo día durante la invasión mongola de 1253 sobre la dinastía Goryeo por dos generales llamados Kwon y Kim — de ahí Gwon-geum-seong. \n\nLos excursionistas activos que prescindan del teleférico pueden optar por el sencillo paseo junto al arroyo de Biseondae de 1,5 km (pavimentado en su mayor parte), el bucle de la 'Roca Mecedora' Heundeulbawi (1,5 h cada tramo con escalones de piedra) o la subida de 600 m a la Cueva Geumganggul (~1 h 40 min ida y vuelta).",
+      "visitBasics": {
+        "hours": "El parque abre todo el año; el templo Sinheungsa desde las 06:00. El teleférico de Gwongeumseong funciona en invierno, pero su horario cambia a diario según el tiempo y se suspende con viento fuerte o hielo — el operador publica cada mañana el horario del día, así que nunca está garantizado",
+        "closed": "Abierto todo el año, aunque los senderos de altura cierran por temporadas por prevención de incendios y seguridad, normalmente desde mediados de noviembre hasta mediados de diciembre y de nuevo a partir de mediados de febrero aproximadamente. Este itinerario utiliza únicamente los senderos del valle bajo, cerca de la entrada, que no se ven afectados",
+        "admission": "Entrada al parque GRATUITA (la tasa de ₩3,500 se suprimió en mayo de 2023). Teleférico ida y vuelta ₩16,000 adulto, venta solo en taquilla, NO incluido en este tour y sin garantía de que funcione",
+        "walking": "Fácil a moderada en el fondo del valle: senderos pavimentados y con escalones hasta Sinheungsa y el Tongildaebul, nevados y resbaladizos en algunos tramos. No hay senderismo programado; el calzado antideslizante y resistente es imprescindible"
+      },
+      "image": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "images": [
+        "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 1",
+          "alt": "Parque Nacional Seoraksan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 2",
+          "alt": "Parque Nacional Seoraksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 3",
+          "alt": "Parque Nacional Seoraksan — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "location": "Parque Nacional Seoraksan",
+          "caption": "Parque Nacional Seoraksan — photo 4",
+          "alt": "Parque Nacional Seoraksan — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "50 min",
+      "name": "Almuerzo cerca de Sokcho (por cuenta propia)",
+      "category": "Parada para almorzar",
+      "description": "El autocar para unos cincuenta minutos en un restaurante local cerca del Seoraksan o del lado de Sokcho, después del parque. El almuerzo **no está incluido**: usted pide y paga lo que quiera, normalmente ₩10,000-15,000 por persona.\n\nEsta es la franja marisquera de la costa este, así que las opciones locales son cosas como el **hoedeopbap** (pescado crudo sobre arroz), pescado a la parrilla o el **sundubu jjigae**, el guiso de tofu blando por el que es conocido el barrio de Cheoksan, en Sokcho, y que es exactamente lo que apetece después de dos horas en la nieve. Las opciones vegetarianas son limitadas; dígaselo al guía por la mañana y llamará con antelación.\n\nLleve efectivo o tarjeta. Los cincuenta minutos son deliberadamente ajustados: el trayecto de vuelta hacia el oeste hasta Nami es de dos horas y las dos últimas paradas necesitan luz diurna.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "El autocar aparca y el guía acompaña al grupo hasta el restaurante (~5 min)",
+        "Pedir y comer (~35 min)",
+        "Pagar individualmente y volver a reunirse en el autocar (~10 min)"
+      ],
+      "whyOnRoute": "El almuerzo va justo después del Seoraksan porque es el único momento del día en que una parada sentada como es debido no cuesta luz diurna. Todo lo que viene después depende del tiempo: Nami necesita luz para las avenidas arboladas y a Eobi hay que llegar antes de que cierre la zona de observación del pueblo. Comer aquí significa además entrar en calor justo después de la caminata más fría del día.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "Isla Nami (Namiseom)",
+      "time": "≈ 14:35",
+      "number": 4,
+      "category": "Isla fluvial del río Bukhan — escenario de 'Winter Sonata' (2002)",
+      "duration": "120 min (2 horas)",
+      "timeUsed": [
+        "Cruce en ferry desde el Muelle de Gapyeong (5-10 minutos incluida la fila)",
+        "Tiempo libre para pasear por las avenidas de Metasecuoya / Ginkgo / Pino Coreano — circuito de media isla ~3 km",
+        "Alquiler opcional de bicicleta (individual 7.000 / tándem 14.000 KRW por hora) o tren eléctrico azul (3.000 KRW ida al Salón UNICEF)",
+        "Breve pausa de aperitivos en la isla (Sonata Cafe, hotteok, latte de batata)",
+        "Ferry de regreso al continente"
+      ],
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      },
+      "highlights": [
+        "Isla fluvial con forma de media luna, ~460.000 m² / 5 km de circunferencia; nombrada en honor al General Nami (1441-1468)",
+        "Avenida icónica de metasecuoyas — localización emblemática del rodaje de 'Sonata de Invierno' (2002)",
+        "Autoproclamada 'República de Naminara' desde 2006 — bandera, moneda, pasaporte propios (concepto turístico)",
+        "Ferry de 5 min desde el embarcadero de Gapyeong (08:00-21:00, cada 10-20 min en hora punta)",
+        "Fauna en la isla: pavos reales (incluido el raro albino), avestruces, conejos silvestres, ardillas",
+        "**La tierra se formó en 1944** cuando la Presa de Cheongpyeong, construida por los japoneses, elevó el nivel del río Bukhan — Min Byung-do compró la isla en 1965 y fundó Gyeongchun Tourism Development Co. en 1966",
+        "**República de Naminara declarada el 1 de marzo de 2006** bajo la presidencia de Kang Woo Hyon como marca turística de 'independencia cultural' — el primer concepto turístico de micronación de Corea, con bandera, moneda, pasaporte y sellos propios",
+        "**Designación de Parque Amigo de la Infancia de UNICEF en 2010** + Nami Island Arts & Education organiza **más de 600 actuaciones, exposiciones y festivales al año** — algo excepcional para un único destino turístico coreano",
+        "**Tarifa de VISA** (KTO oficial 2026): Regular ₩19.000 ferry de ida y vuelta (₩29.000 con lancha motora solo ida); bebés de hasta 36 meses gratis; 10 % de descuento para grupos de más de 20 personas"
+      ],
+      "smartNotes": {
+        "photo": "La avenida de metasecuoyas es la imagen mundialmente famosa de 'Sonata de Invierno' — mejor en otoño (dorada, finales de octubre – principios de noviembre) o en invierno (nieve). El Paseo del Ginkgo de los Enamorados a orillas del río en la cara sur es más tranquilo e igualmente fotogénico. En ocasiones aparece un pavo real albino cerca del Paseo de los Enamorados.",
+        "facilities": "Los restaurantes de la isla sirven comida reconfortante coreana (hotteok, latte de boniato, tteok-galbi). El Sonata Cafe, en un hanok tradicional, es la parada emblemática. Mostrador de venta de billetes que admite tarjetas extranjeras en el embarcadero de Gapyeong — las máquinas expendedoras no aceptan tarjetas extranjeras, pregunte en el mostrador.",
+        "tip": "Mejores temporadas: primavera (cerezos en flor de abril a mayo), otoño (ginkgo dorado y arces rojos en octubre), invierno (caminos silenciosos y nevados de diciembre a febrero, evocadores de 'Sonata de Invierno'). Evite la cola del ferry del domingo al final de la tarde — abandone la isla antes de las 16:00. La tirolina (940 m, ~80 km/h, 55.000-58.000 KRW incluida la entrada) ahorra de 15 a 20 min frente a la cola del ferry en hora punta."
+      },
+      "whyOnRoute": "Nami queda en mitad del día porque es la única parada que necesita a la vez luz diurna y un barco. Las avenidas de metasecuoyas y ginkgos bajo la escarcha son lo que hace que merezca la pena cruzar a la isla en invierno, y necesitan luz; la cubierta del ferry está además expuesta, así que una travesía a media tarde resulta más cómoda que una tardía. Situarla después del Seoraksan divide además el largo trayecto hacia el oeste en dos tramos manejables en lugar de uno.",
+      "convenience": {
+        "restroom": "Múltiples en la isla y en el embarcadero de Gapyeong",
+        "parking": "Embarcadero de Gapyeong 6.000 KRW coche pequeño / 10.000 KRW vehículo grande (1.000 KRW adicional por hora a partir de las 12 horas)"
+      },
+      "description": "La Isla Nami abre la jornada con un trayecto en ferry de 5 minutos desde el embarcadero de Gapyeong hasta una isla con forma de media luna en el río Bukhan. Aproximadamente 460.000 m² (140.000 pyeong) y ~5 km de circunferencia, Namiseom debe su nombre al General Nami (Nam Yi, 1441-1468), comandante militar de la era Joseon ejecutado a los 28 años tras ser falsamente acusado de traición durante el reinado del Rey Yejong. \n\nLa isla originalmente solo se convertía en tierra durante las inundaciones; en 1944 el gobierno colonial japonés construyó la Presa de Cheongpyeong, elevando el nivel del río y convirtiendo a Nami en una isla permanente. Adquirió fama mundial en 2002 como localización del K-drama de KBS 'Sonata de Invierno', protagonizado por Bae Yong-joon y Choi Ji-woo — el catalizador de la ola Hallyu de principios de la década de 2000 — y sigue atrayendo a unos 3,3 millones de visitantes al año (1,3 millones extranjeros), lo que la convierte en el destino turístico individual más visitado de Corea después de Seúl, Busan y Jeju. \n\nDesde el 1 de marzo de 2006 la isla se ha rebautizado como la autoproclamada 'República de Naminara', con bandera, moneda (monedas Nami Tongbo), pasaporte y servicio postal propios — un concepto de marketing turístico más que una entidad política real. \n\nLa emblemática avenida bordeada de metasecuoyas (la nevada calle icónica de 'Sonata de Invierno'), el Paseo del Ginkgo de los Enamorados a orillas del río en la cara sur, el Camino del Pino Coreano y el Puente de Sequoyas hecho con vidrio reciclado de botellas de soju son recorribles a pie en una media jornada relajada. \n\nEn 2016, la isla registró **3,3 millones de visitantes anuales, incluidos 1,3 millones de visitantes extranjeros procedentes de 122 países** — la mayor proporción de visitantes extranjeros de cualquier destino turístico individual coreano después de Seúl, Busan y Jeju. Nami se dirige específicamente a los segmentos de la diáspora china y del sudeste asiático de atockorea con señalización dedicada en mandarín/cantonés/tagalo/vietnamita.",
+      "visitBasics": {
+        "hours": "Ferry desde las 08:00, último barco de entrada a las 21:00, aproximadamente cada 10-20 minutos a lo largo del día; la mayoría de las tiendas de la isla cierran hacia las 18:00. Los horarios de invierno pueden cambiar según el tiempo",
+        "closed": "Abierto todo el año",
+        "admission": "Tasa de visado de la República de Naminara, ferry de ida y vuelta incluido: adulto ₩19,000 — INCLUIDA en este tour",
+        "walking": "Fácil: senderos llanos bordeados de árboles, aunque el suelo puede estar helado en pleno invierno. El recorrido por medio perímetro es de ~3 km. En la isla se alquilan bicicletas y buguis eléctricos por cuenta propia"
+      },
+      "image": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "images": [
+        "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+        "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 1",
+          "alt": "Isla Nami (Namiseom) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 2",
+          "alt": "Isla Nami (Namiseom) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 3",
+          "alt": "Isla Nami (Namiseom) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 4",
+          "alt": "Isla Nami (Namiseom) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 16:45",
+      "duration": "45 min",
+      "name": "Muro de hielo del valle de Eobi",
+      "category": "Festival invernal de pueblo (de temporada)",
+      "description": "El valle de Eobi —어비계곡, de los caracteres que significan 'pez volador', por unas aguas que en su día corrían lo bastante rápido como para que los peces parecieran volar— es un valle de tres kilómetros en Seorak-myeon, en el sur de Gapyeong. En verano es un arroyo de baño y truchas. En invierno se convierte en algo que el resto del año no deja intuir.\n\n**El muro de hielo de aquí está hecho, no encontrado.** Desde el invierno de 2023, los vecinos de Garil 2-ri rocían agua sobre la pared de roca del valle durante las semanas más frías y dejan que el frío haga el resto, formando una lámina de la que se informa una altura de unos **25 metros**. Lo gestiona la propia asociación de vecinos del pueblo —unas treinta personas— como proyecto de ingresos fuera de temporada para un valle que antes apenas recibía visitantes en invierno. Verá que en otros sitios, incluidas algunas páginas oficiales de turismo, se describe como una cascada helada natural. No lo es, y por eso resulta más impresionante.\n\nSe contempla desde una **pasarela de madera** que recorre el valle, parte de un proyecto de recuperación de la provincia de Gyeonggi que añadió también la iluminación nocturna. **El suelo justo debajo del muro está cerrado al público** después de que varios visitantes se lesionaran al resbalar allí, de modo que las fotos se hacen desde la zona de observación señalada y no desde debajo. Junto al muro, el pueblo gestiona una pista de trineos de hielo, un trineo giratorio de nieve, un iglú para fotos y un pequeño invernadero-jardín climatizado.\n\nLlegamos a última hora de la tarde, cerca del final del horario que el pueblo publica para el recinto del festival. En pleno invierno eso significa la última luz del día sobre el hielo: bueno para fotografiar, y frío. En plena temporada el pueblo sí enciende la iluminación de la pasarela, pero se enciende hacia la hora de cierre, así que este itinerario no la promete. El pueblo cobra pequeñas tasas en el propio recinto por la zona de observación y por las actividades de trineo; se fijan localmente y cambian de un año a otro.",
+      "image": null,
+      "highlights": [
+        "Un muro de hielo del que se informa una altura de unos 25 m, formado sobre la pared de roca del valle por los vecinos de Garil 2-ri desde el invierno de 2023: construido, no natural",
+        "Gestionado por la asociación de vecinos del pueblo (unas 30 personas) como proyecto fuera de temporada, con la marca 어비계곡 겨울나라, 'País Invernal del Valle de Eobi'",
+        "Pasarela de madera para la observación con iluminación nocturna, añadida dentro del programa de recuperación de valles limpios de la provincia de Gyeonggi",
+        "Trineos de hielo, un trineo giratorio de nieve, un iglú para fotos y un invernadero-jardín climatizado junto al muro",
+        "El nombre del valle, 어비 (魚飛), significa 'pez volador', por unas aguas que en su día corrían lo bastante rápido como para que los peces parecieran volar",
+        "El número de visitantes se duplicó aproximadamente hasta unos 60,000 en una temporada a medida que corrió la voz, sobre todo entre viajeros del Sudeste Asiático"
+      ],
+      "timeUsed": [
+        "El autocar aparca y el guía acompaña al grupo hasta la entrada del valle (~10 min)",
+        "Pasarela hasta la zona de observación del muro de hielo y fotografías (~25 min)",
+        "Trineo opcional o invernadero-jardín, o vuelta anticipada al autocar para entrar en calor (~10 min)"
+      ],
+      "whyOnRoute": "Eobi cierra el día por dos razones. Geográficamente, es la única parada del lado de Seúl de la ruta —Seorak-myeon está en el sur de Gapyeong, ya orientada hacia casa—, así que una hora aquí no añade kilómetros al final de una jornada larga. Editorialmente, es la razón de que este itinerario sea un producto de invierno y no de todo el año: el Seoraksan y Nami pueden visitarse en cualquier estación, pero el muro de hielo existe quizá ocho semanas, y solo si aguanta el frío. Es además la parada de la que la mayoría de los viajeros nunca ha oído hablar, que es una buena nota para terminar.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "eobi_ice_valley",
+        "sources": [
+          "Kyeongin Ilbo (경인일보) — informaciones sobre el 인공빙벽 (muro de hielo artificial) del valle de Eobi, en Gapyeong, y sobre la asociación de vecinos de Garil 2-ri que lo gestiona",
+          "Oficina de turismo del condado de Gapyeong (gptour.go.kr) — ficha del valle de Eobi, Garil-ri, Seorak-myeon",
+          "Organización de Turismo de Corea (VisitKorea — ficha de Eobigyegok Valley; nótese que el texto en inglés de la KTO describe el muro como natural, lo que contradice la documentación en coreano)",
+          "Información oficial del festival 어비계곡 겨울나라 — fechas de temporada, tasas en el recinto y actividades",
+          "Programa de recuperación de valles limpios de la provincia de Gyeonggi (청정계곡 정비사업) — pasarela e iluminación nocturna"
+        ],
+        "verified": true,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "photo": "Fotografíe desde la zona de observación señalada en la pasarela: debajo del muro está vallado. El final de la tarde le da la luz que se apaga sobre el hielo y después la iluminación de la pasarela; ambas funcionan, y la transición entre las dos es la mejor ventana.",
+        "facilities": "Gestionado por el pueblo y básico: un invernadero-jardín climatizado, una pista de trineos y pequeños puestos. No cuente con comida sustanciosa ni con mucho espacio cubierto para entrar en calor.",
+        "tip": "Lleve calzado de invierno antideslizante y considere el muro de hielo como algo que depende del tiempo y no como algo garantizado: una racha de calor lo encoge y es el pueblo quien decide cuándo abre. Lleve algo de efectivo para las tasas del recinto."
+      },
+      "visitBasics": {
+        "hours": "Gestionado por el pueblo y de temporada. El pueblo publica un horario de 10:00 a 17:00 para el recinto del festival (Eobi Valley Village, 031-585-3551). Este itinerario llega cerca del final de esa franja, por lo que las actividades de pago pueden estar ya cerrando; el valle y su pasarela no son un recinto con control de acceso. El horario lo fija el pueblo cada año",
+        "closed": "Solo en invierno: provisionalmente de mediados de diciembre a mediados de febrero. El pueblo fija las fechas cada año, así que esto es una orientación y no un calendario publicado: la temporada 2025-26 fue del 20 de diciembre al 19 de febrero, y las fechas de 2026-27 aún no se han anunciado. El muro solo aparece cuando aguanta el frío; enero y principios de febrero son las semanas más fiables",
+        "admission": "No incluidas. El pueblo cobra unos ₩1,000 por persona por la zona de observación del muro de hielo; los pases de trineo y de actividades van aproximadamente de ₩5,000 a ₩30,000 aparte. El aparcamiento a la entrada del pueblo es gratuito, y desde allí hay unos 500 m a pie por la pasarela del valle hasta el recinto. Las tarifas se fijan localmente y cambian de un año a otro; el guía confirma las del día en el autocar",
+        "walking": "Corta, pero realmente helada. Una pasarela de madera casi llana lleva hasta la zona de observación; el acceso y el entorno son resbaladizos y el calzado antideslizante es imprescindible. El suelo justo debajo del muro de hielo está cerrado al público. No apto para sillas de ruedas ni carritos de bebé"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 6,
+      "time": "≈ 19:00",
+      "duration": "≈ 1.5 horas de trayecto",
+      "name": "Regreso a Seúl (estación de Myeongdong o de Hongik University)",
+      "category": "Bajada de regreso",
+      "description": "La salida del valle de Eobi es hacia las 17:30 para el trayecto de ~1.5 horas hasta Seúl. Las bajadas se hacen en el orden inverso al de la recogida: **estación de Myeongdong sobre las 19:00** y después **estación de Hongik University sobre las 19:30**.\n\nAmbas son estaciones de transbordo de metro. Las condiciones invernales son la principal variable en este tramo: la nieve en las carreteras de Gapyeong o el tráfico de los viernes y domingos por la tarde pueden añadir entre 30 y 60 minutos, y el guía dará la estimación en tiempo real del autocar durante el trayecto. Es un día largo; la mayoría de los pasajeros duerme en este tramo.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "Salida del valle de Eobi (~17:30)",
+        "Trayecto por autopista hasta Seúl (~1.5 horas, más con nieve o tráfico de fin de semana)",
+        "Bajada en la estación de Myeongdong (~19:00)",
+        "Bajada en la estación de Hongik University (~19:30)"
+      ],
+      "whyOnRoute": "Terminar en Eobi es lo que mantiene corto el regreso: el valle es ya la parada más cercana a Seúl de esta ruta, así que el autocar apunta hacia casa desde el momento en que sale. Invertir el orden de las bajadas hace que los pasajeros de Myeongdong, que subieron los últimos, bajen los primeros.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Recogida (Hongik / Myeongdong)",
+      "type": "origin",
+      "theme": "Seoul pickup"
+    },
+    {
+      "name": "Parque Nacional Seoraksan",
+      "type": "primary",
+      "theme": "Winter mountain"
+    },
+    {
+      "name": "Almuerzo cerca de Sokcho",
+      "type": "secondary",
+      "theme": "Lunch break"
+    },
+    {
+      "name": "Isla Nami",
+      "type": "primary",
+      "theme": "K-drama island"
+    },
+    {
+      "name": "Muro de hielo del valle de Eobi",
+      "type": "primary",
+      "theme": "Ice wall"
+    },
+    {
+      "name": "Regreso a Seúl",
+      "type": "return",
+      "theme": "Drop-off"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Seúl → Seoraksan",
+      "duration": "≈ 3.5 horas",
+      "description": "Recogida a las 06:00 en Hongik / 06:30 en Myeongdong y, a continuación, un trayecto de ~3 horas hacia el noreste por la autopista Seúl-Yangyang con una parada de descanso, llegando a la entrada de Sogongwon sobre las 09:30."
+    },
+    {
+      "phase": "Seoraksan",
+      "duration": "≈ 2 horas",
+      "description": "Tiempo libre en la entrada de Sogongwon: el gran Buda de bronce Tongildaebul, el templo Sinheungsa y los senderos del valle bajo, bajo la nieve. El teleférico no está incluido y solo funciona cuando el viento y el hielo lo permiten."
+    },
+    {
+      "phase": "Almuerzo → Isla Nami",
+      "duration": "≈ 3 horas",
+      "description": "Almuerzo cerca de Sokcho (por cuenta propia) y, después, el trayecto de ~2 horas de vuelta hacia el oeste hasta el muelle de Gapyeong y el ferry de cinco minutos a la Isla Nami, con dos horas entre las avenidas de metasecuoyas escarchadas."
+    },
+    {
+      "phase": "Valle de Eobi → Seúl",
+      "duration": "≈ 2.5 horas",
+      "description": "Cuarenta minutos hacia el sur hasta el valle de Eobi para ver el muro de hielo con la luz del final de la tarde y, después, el trayecto de ~1.5 horas hasta Seúl: Myeongdong sobre las 19:00, Hongik sobre las 19:30."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo se desarrolla este día de invierno",
+    "subtitle": "Una salida a las 06:00 desde Hongik / 06:30 desde Myeongdong y un trayecto de ~3 horas hacia el noreste le sitúan en el Seoraksan a media mañana, cuando la nieve sigue limpia y la luz da sobre el granito. Almuerzo cerca de Sokcho y, después, el largo regreso hacia el oeste por el corredor de Chuncheon hasta la Isla Nami para ver las avenidas arboladas escarchadas. La última parada, el valle de Eobi, queda en el sur de Gapyeong, ya orientada hacia Seúl: se llega a última hora de la tarde, cerca del final del horario del pueblo. De vuelta en Seúl sobre las 19:00-19:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Viajeros que visitan Corea en enero o febrero y quieren el paisaje invernal, no un día de ciudad",
+      "Fotógrafos que buscan nieve sobre granito, avenidas arboladas escarchadas y un muro de hielo a la hora azul",
+      "Parejas y grupos pequeños que llevan bien un día largo, frío y completo",
+      "Cualquiera que quiera ver algo que la mayoría de las excursiones desde Seúl no incluye"
+    ],
+    "lessIdealFor": [
+      "Quien viaje fuera de la temporada invernal: el muro de hielo sencillamente no existe en los meses cálidos",
+      "Viajeros sensibles al frío, o que necesiten visitas garantizadas al margen del tiempo que haga",
+      "Quienes quieran caminar lo mínimo: hay suelo helado y una pasarela de madera en la última parada",
+      "Niños pequeños y cualquier persona con poca estabilidad al caminar en condiciones invernales"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Ritmo y geografía",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "El Seoraksan primero, mientras la nieve sigue limpia",
+            "detail": "El parque es el punto más lejano del día y el más afectado por el deshielo y las nubes de la tarde. Ir allí primero aprovecha la luz más clara y la nieve más fresca, y hace que el trayecto largo ocurra antes de que nadie esté cansado."
+          },
+          {
+            "label": "Nami en el medio, porque el ferry necesita luz",
+            "detail": "El atractivo de Nami en invierno son sus avenidas arboladas bajo la escarcha, que necesitan luz para que la travesía merezca la pena. Una franja de media tarde permite cruzar mientras la isla sigue luminosa y antes de que arrecie el viento en la cubierta expuesta del ferry."
+          },
+          {
+            "label": "Eobi al final, porque ya queda de camino a casa",
+            "detail": "El valle de Eobi está en Seorak-myeon, en el sur de Gapyeong, del lado de Seúl respecto a todo lo demás de esta ruta. Terminar allí no obliga a desandar el camino y, en pleno invierno, la llegada tardía coincide con el encendido de la iluminación nocturna del valle a lo largo de la pasarela."
+          },
+          {
+            "label": "Una ruta construida en torno a una única temporada corta",
+            "detail": "El muro de hielo solo existe mientras aguanta el frío: el pueblo empieza a construirlo a mediados de diciembre y se deshace en febrero. Esa sola condición es la razón de que este itinerario exista y de que no se ofrezca el resto del año."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Dos puntos de recogida en Seúl: **el Starbucks de la salida 8 de la estación de Hongik University a las 06:00** (Mapo-gu) y **la salida 2 de la estación de Myeongdong, junto a la tienda insignia de NorthFace, a las 06:30** (Jung-gu).",
+      "content": [
+        "Dos puntos de recogida en Seúl: **el Starbucks de la salida 8 de la estación de Hongik University a las 06:00** (Mapo-gu) y **la salida 2 de la estación de Myeongdong, junto a la tienda insignia de NorthFace, a las 06:30** (Jung-gu).",
+        "Ambas recogidas comparten el mismo autocar; le rogamos estar en el punto elegido 5 minutos antes.",
+        "Bajadas de regreso en orden inverso: **Myeongdong ≈19:00**, **Hongik University ≈19:30**.",
+        "La duración efectiva de su tour depende del punto de recogida: ≈13.5 horas desde Hongik, ≈12.5 horas desde Myeongdong."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "Qué llevar y cómo vestir",
+      "preview": "**Calzado de invierno antideslizante**: el artículo más importante. En las tres paradas hay hielo bajo los pies.",
+      "content": [
+        "**Calzado de invierno antideslizante**: el artículo más importante. En las tres paradas hay hielo bajo los pies.",
+        "Capas de abrigo adecuadas: espere −5 °C o menos en el Seoraksan con una sensación térmica notable por el viento, y temperaturas de anochecer en Eobi.",
+        "Guantes, gorro y algo que le cubra las orejas. La cubierta del ferry de Nami está completamente expuesta.",
+        "Algo de efectivo para las tasas gestionadas por el pueblo en Eobi y para el almuerzo (₩10,000-15,000).",
+        "Cámara o teléfono, más una batería de repuesto: el frío agota las baterías deprisa y esta es una ruta que la gente fotografía mucho."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Política meteorológica",
+      "preview": "Este es un tour de temporada invernal y el tiempo forma parte del producto, no es una excepción a él.",
+      "content": [
+        "Este es un tour de temporada invernal y el tiempo forma parte del producto, no es una excepción a él.",
+        "**El muro de hielo de Eobi no está garantizado.** Lo construyen los vecinos del pueblo a lo largo de las semanas más frías y una racha de calor lo encoge o lo hace desaparecer. Es el pueblo quien decide cuándo abre. Si el muro no se puede ver en su fecha, se lo diremos antes de la salida y le ofreceremos cambiar la reserva o el reembolso de esa parte.",
+        "**El teleférico del Seoraksan tampoco está garantizado.** Su horario cambia a diario y se suspende con viento fuerte o hielo. No está incluido en el precio, así que no se pierde nada si no funciona.",
+        "Nieve intensa: el autocar lleva neumáticos de invierno y el tour normalmente se realiza igualmente, pero el regreso puede tardar una hora más. Una nevada severa o el cierre de carreteras pueden cancelar la salida por completo, con reembolso íntegro.",
+        "El ferry de Nami puede suspenderse con mal tiempo severo; si ocurre, el guía amplía las otras paradas y se reembolsa la entrada de Nami."
+      ]
+    },
+    {
+      "id": "season-window",
+      "title": "Cuándo funciona este tour",
+      "preview": "Este es un itinerario **solo de invierno**. Existe porque existe el muro de hielo del valle de Eobi, y este es una estructura de temporada construida por el pueblo, no una atracción permanente.",
+      "content": [
+        "Este es un itinerario **solo de invierno**. Existe porque existe el muro de hielo del valle de Eobi, y este es una estructura de temporada construida por el pueblo, no una atracción permanente.",
+        "El muro suele empezar a formarse desde **mediados de diciembre**, una vez que se hiela el agua del valle, y es más fiable durante **enero y principios de febrero**.",
+        "El final de la temporada varía de un año a otro: la **temporada 2025-26 cerró el 19 de febrero**. Las fechas del próximo invierno las fija el pueblo y se confirman en el momento de la reserva.",
+        "Fuera de temporada, la misma combinación de Seoraksan e Isla Nami está disponible todo el año en nuestra excursión de un día Seoraksan + Isla Nami + Jardín de la Calma Matutina."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido",
+      "preview": "Dos puntos de recogida en Seúl y los mismos dos puntos de bajada, autocar con calefacción y guía titulado de habla inglesa.",
+      "content": [
+        "Dos puntos de recogida en Seúl y los mismos dos puntos de bajada, autocar con calefacción y guía titulado de habla inglesa.",
+        "**Entrada al Parque Nacional Seoraksan — GRATUITA desde mayo de 2023, no hace falta ticket.**",
+        "**Ferry de ida y vuelta a la Isla Nami + tasa de visado de la República de Naminara (₩19,000) — INCLUIDOS.**",
+        "Peajes y aparcamiento — INCLUIDOS.",
+        "**NO incluye:** almuerzo y bebidas (₩10,000-15,000, por cuenta propia), el **teleférico del Seoraksan** (₩16,000 adulto ida y vuelta, venta solo en taquilla y sujeto al tiempo), las **tasas del pueblo en el valle de Eobi** (por la zona de observación del muro de hielo se ha cobrado alrededor de ₩1,000 por persona, actividades de trineo aparte), el alquiler de bicicleta o bugui eléctrico en Nami ni los gastos personales.",
+        "Guía de habla china disponible bajo petición; reserve con al menos 3 días de antelación."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Idioma",
+      "preview": "Idioma principal del tour: inglés.",
+      "content": [
+        "Idioma principal del tour: inglés.",
+        "Guía en chino disponible bajo petición — reserve con 3 o más días de antelación.",
+        "Se habla coreano durante todo el día para menús, señalización e interacciones en puestos; el guía se encarga de la traducción."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Moderada, y aquí la dificultad es el hielo más que la distancia o el desnivel.",
+      "content": [
+        "Moderada, y aquí la dificultad es el hielo más que la distancia o el desnivel.",
+        "Seoraksan: senderos de valle pavimentados y con escalones hasta Sinheungsa y el Tongildaebul, nevados y resbaladizos en algunos tramos. No hay senderismo programado ni intento de cima.",
+        "Isla Nami: avenidas llanas, pavimentadas y bordeadas de árboles, ~3 km en dos horas, con el suelo helado en pleno invierno.",
+        "Valle de Eobi: una pasarela de madera corta y casi llana hasta la zona de observación, pero el acceso y el entorno son realmente resbaladizos. El suelo bajo el muro de hielo está cerrado al público.",
+        "**El calzado de invierno antideslizante es imprescindible en las tres paradas.** Unas zapatillas normales no bastan en este itinerario. Los carritos de bebé y las sillas de ruedas no son adecuados en Eobi."
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Almuerzo (por cuenta propia)",
+      "preview": "El almuerzo se toma hacia las 11:45 cerca del Seoraksan o del lado de Sokcho, justo después del parque.",
+      "content": [
+        "El almuerzo se toma hacia las 11:45 cerca del Seoraksan o del lado de Sokcho, justo después del parque.",
+        "Opciones de la costa este: hoedeopbap (pescado crudo sobre arroz), pescado a la parrilla o el conocido sundubu jjigae de Sokcho, el guiso de tofu blando.",
+        "Calcule aproximadamente ₩10,000-15,000 por persona; normalmente se acepta tanto efectivo como tarjeta.",
+        "La parada son 50 minutos ajustados: las dos paradas restantes dependen del tiempo. Las opciones vegetarianas son limitadas, así que dígaselo al guía por la mañana."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+      "content": [
+        "Cancelación gratuita hasta 24 horas antes de la recogida.",
+        "Dentro de las 24 horas: reembolso del 50%.",
+        "No presentarse o no acudir al punto de recogida: sin reembolso — pero contacte con las operaciones de AtoC Korea dentro de los 10 minutos del horario de recogida y el autobús podría esperar brevemente si va adelantado."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "_seasonalSummary": "Seoul + Gangwon: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April cherry blossoms) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Mediados de diciembre",
+      "description": "El muro de hielo empieza a formarse una vez que el agua del valle se hiela con fuerza. Al principio de la temporada es más pequeño y puede que el pueblo aún lo esté levantando. El Seoraksan suele tener ya su primera nieve asentada."
+    },
+    {
+      "season": "Enero",
+      "description": "El mejor mes con diferencia. El muro de hielo está a su altura máxima, la capa de nieve del Seoraksan es más fiable y las avenidas arboladas de Nami están bien escarchadas. Las temperaturas más frías del año: vístase en consecuencia."
+    },
+    {
+      "season": "Principios de febrero",
+      "description": "Sigue siendo fiable en la mayoría de los años, y con algo más de luz diurna en la parada de Eobi. Atención a las rachas de calor, que encogen el muro rápidamente."
+    },
+    {
+      "season": "Fuera de la temporada invernal",
+      "description": "El tour no se realiza. El muro de hielo desaparece a finales de febrero y Eobi vuelve a ser un valle de baño estival. Para el Seoraksan y Nami fuera del invierno, consulte nuestra excursión de un día Seoraksan + Isla Nami + Jardín de la Calma Matutina."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Todas las entradas incluidas",
+      "description": "Ferry de Nami + Morning Calm incluidos",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "La entrada al ferry de la Isla Nami (₩19,000) y al Jardín de Morning Calm (₩11,000) están prepagadas en el precio del tour — sin colas de taquilla en cada parada. La entrada a Seoraksan es GRATUITA (eliminada en mayo de 2023). Ahorro total en entradas: ~₩30,000."
+    },
+    {
+      "icon": "users",
+      "title": "Guía con licencia en inglés",
+      "description": "Guía turístico con licencia coreana",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "Guía con licencia de la Organización de Turismo de Corea con fluidez en inglés; guía de habla china disponible con reserva anticipada. La narración del guía abarca la historia del templo de la era Silla de Seoraksan, el legado de Winter Sonata de Nami y la historia del fundador de Morning Calm."
+    },
+    {
+      "icon": "shield",
+      "title": "Precios transparentes",
+      "description": "Sin paradas de compras ocultas",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Sin tiendas de ginseng, sin tiendas libres de impuestos, sin desvíos a tiendas de souvenirs por comisión. Cada minuto del día de 13 horas se dedica a una atracción o al trayecto: lo que reservas es lo que experimentas."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de reserva con selección del punto de recogida",
+      "description": "Confirmación de reserva instantánea con selección del punto de recogida en Hongik/Myeongdong."
+    },
+    {
+      "timing": "El día anterior",
+      "title": "Detalles de la recogida",
+      "detail": "Ubicación exacta de recogida e información del vehículo vía WhatsApp/SMS",
+      "description": "Verificación meteorológica, número de matrícula del autocar y notas sobre rutas de temporada (horario del Festival de Iluminación Morning Calm, época pico del follaje de Seoraksan, etc.) enviadas el día anterior."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Confirmación de recogida",
+      "detail": "Identificación del guía en el punto de recogida 10 minutos antes de la salida",
+      "description": "El guía espera en Starbucks Hongik Salida 8 desde las 05:50; en Myeongdong Salida 2 (NorthFace) desde las 06:20. La foto del guía y del autocar se envía a tu WhatsApp la noche anterior."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Asistencia durante el recorrido",
+      "detail": "Narración del guía en cada parada + soporte operativo 24/7",
+      "description": "El guía ofrece narración in situ sobre la fundación de Seoraksan en el año 652 d. C. durante la era Silla, el origen de Nami en la Presa de Cheongpyeong en 1944 + el legado de Winter Sonata en 2002, y la concepción de Morning Calm en 1992 + su inauguración en 1996."
+    },
+    {
+      "timing": "Al final del día",
+      "title": "Dos puntos de bajada",
+      "detail": "Myeongdong ~19:00 / Hongik ~19:30",
+      "description": "El autocar realiza las paradas en ambos puntos de recogida en orden inverso en el regreso."
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Valoración y seguimiento",
+      "detail": "Reseña opcional posterior al tour",
+      "description": "Se envía una solicitud de opinión post-tour; las recomendaciones de restaurantes o atracciones para el resto de tu estancia en Seúl se responden el mismo día."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "¿Es natural el muro de hielo de Eobi?",
+      "answer": "No, y preferimos decírselo antes que dejar que lo descubra ese día. Desde el invierno de 2023, los vecinos del pueblo de Garil 2-ri rocían agua sobre la pared de roca del valle durante las semanas más frías y la dejan congelarse hasta formar una lámina de la que se informa una altura de unos 25 metros. Verá que en algunas webs de turismo, incluidas oficiales en inglés, se describe como una cascada helada natural. Eso es incorrecto. Es un espectáculo construido por el pueblo, gestionado por una treintena de vecinos como proyecto de ingresos fuera de temporada, y nos parece una historia mejor que la de los folletos."
+    },
+    {
+      "question": "¿Está garantizado el muro de hielo?",
+      "answer": "No, y cualquier tour que lo garantice está prometiendo de más. El muro depende de que el frío se mantenga y de la propia decisión del pueblo de abrir; una racha de calor lo encoge. Si no se puede ver en su fecha de salida, se lo diremos antes de viajar y le ofreceremos cambiar la reserva o el reembolso de esa parte. Es más fiable en enero y principios de febrero."
+    },
+    {
+      "question": "¿Cuándo funciona exactamente este tour?",
+      "answer": "Solo en invierno. El muro de hielo suele empezar a formarse a partir de mediados de diciembre y la temporada 2025-26 cerró el 19 de febrero. Las fechas exactas las fija cada año el pueblo que construye el muro, así que confirmamos la ventana de funcionamiento en el momento de la reserva en lugar de publicar un calendario fijo que no podríamos cumplir."
+    },
+    {
+      "question": "¿Está incluido el teleférico del Seoraksan?",
+      "answer": "No. El teleférico de Gwongeumseong cuesta ₩16,000 por adulto ida y vuelta, se vende solo en taquilla y no puede reservarse por adelantado. En invierno importa más de lo habitual que esté excluido: su horario cambia a diario y se suspende con viento fuerte o hielo, así que realmente no es algo que podamos prometer. La entrada al parque en sí es gratuita, y lo es desde mayo de 2023."
+    },
+    {
+      "question": "¿Qué frío hace en realidad?",
+      "answer": "El suficiente como para que el calzado y las capas decidan si disfruta del día. Espere aproximadamente entre −5 °C y +5 °C en el fondo del valle del Seoraksan, con una fuerte sensación térmica por el viento, y más frío a la sombra. La cubierta del ferry de Nami está completamente expuesta. En Eobi estará parado, al anochecer, junto a un muro de hielo. Lleve guantes, gorro y algo sobre las orejas."
+    },
+    {
+      "question": "¿Qué calzado necesito?",
+      "answer": "Zapatos o botas de invierno antideslizantes. Es la única pieza de equipo en la que insistiríamos. En las tres paradas hay hielo bajo los pies: los senderos escalonados del valle del Seoraksan, las avenidas llanas de Nami y la pasarela y el acceso de Eobi. Unas zapatillas normales no son suficientes. No exigimos ni proporcionamos crampones; la caminata es corta, el problema es la superficie."
+    },
+    {
+      "question": "¿Se camina mucho?",
+      "answer": "No mucha distancia: la dificultad es la superficie, no la longitud. En el Seoraksan solo se usan los senderos del valle bajo cerca de la entrada, sin senderismo ni intento de cima. Nami es llana, aproximadamente 3 km en dos horas si se recorre el medio perímetro. Eobi es una pasarela corta. Pero todo ello está helado, así que conviene contar con más tiempo y más cuidado de lo que sugieren las distancias."
+    },
+    {
+      "question": "¿Es adecuado para niños o viajeros mayores?",
+      "answer": "Menos que nuestras otras excursiones de un día, y le orientaríamos hacia otra opción si alguno de los dos casos pesa mucho. Es un día de 13 horas que empieza a las 06:00, con frío de pleno invierno y suelo helado en todas las paradas. La pasarela de Eobi no es adecuada para carritos de bebé ni sillas de ruedas, y el suelo bajo el muro de hielo está vallado. Los niños a los que les gusta la nieve y van bien abrigados se desenvuelven sin problema; quienes caminan con poca estabilidad, no."
+    },
+    {
+      "question": "¿Hay que pagar algo el mismo día?",
+      "answer": "Sí, de dos tipos. El almuerzo corre por su cuenta, aproximadamente ₩10,000-15,000. En Eobi el pueblo cobra pequeñas tasas en el recinto: la zona de observación del muro de hielo ha estado en torno a ₩1,000 por persona, y los trineos aparte. Se fijan localmente y cambian de un año a otro, así que lleve algo de efectivo y el guía confirmará los importes del día en el autocar. La entrada al parque del Seoraksan es gratuita, y el ferry y la entrada de Nami ya están incluidos."
+    },
+    {
+      "question": "¿Por qué llegamos a Eobi tan tarde?",
+      "answer": "Por dónde está. El valle de Eobi se encuentra en el sur de Gapyeong, más cerca de Seúl que el Seoraksan o Nami, así que visitarlo el último significa que el autocar ya apunta hacia casa y el regreso se mantiene corto. En pleno invierno, llegar a las 16:45 significa ver la última luz del día sobre el hielo y después el encendido de la iluminación de la pasarela, que es una buena ventana para fotografiar; pero es también la parte más fría de la visita, así que vístase para estar parado al aire libre."
+    },
+    {
+      "question": "¿En qué se diferencia de sus otros tours al Seoraksan?",
+      "answer": "En la tercera parada y en la temporada. Nuestra excursión de un día al Seoraksan disponible todo el año combina el parque con la Isla Nami y el Jardín de la Calma Matutina: un día más suave, centrado en jardines, que funciona con cualquier tiempo. Este cambia el jardín por el muro de hielo de Eobi y solo existe mientras existe el muro. Si viaja fuera de enero y febrero, la ruta de todo el año es la que le conviene."
+    },
+    {
+      "question": "¿Qué pasa si nieva mucho?",
+      "answer": "Normalmente el tour se realiza igualmente: el autocar lleva neumáticos de invierno en temporada y la nieve es más bien el objetivo. Cuente con que el trayecto de vuelta tarde hasta una hora más. Si la nevada es lo bastante severa como para cerrar carreteras, cancelamos la salida y reembolsamos el importe íntegro. Preferimos cancelar antes que realizar un día de montaña de 13 horas en condiciones inseguras."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "Solo temporada de invierno: seleccione su fecha para consultar si el muro de hielo está funcionando y completar su reserva.",
+    "price": {
+      "amountLabel": "69",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 69
+    }
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "Starbucks Salida 8 de la Estación Hongik University",
+      "address": "Yanghwa-ro, Mapo-gu, Seúl (frente al Starbucks en la Salida 8 de la Estación Hongik University)",
+      "time": "Recogida 06:00 / bajada 19:30",
+      "instructions": "Encuéntrese con el guía frente al local de Starbucks situado justo encima de la salida 8 de la estación de Hongik University. Busque el cartel de AtoC Korea y el autocar en la fila de embarque."
+    },
+    "alternates": [
+      {
+        "name": "Salida 2 de la Estación Myeongdong (tienda insignia NorthFace)",
+        "address": "Toegye-ro, Jung-gu, Seúl (tienda insignia NorthFace en la Salida 2 de la Estación Myeongdong)",
+        "time": "Recogida 06:30 / bajada 19:00",
+        "instructions": "Encuéntrese con el guía delante de la tienda insignia de NorthFace, en lo alto de la salida 2 de la estación de Myeongdong."
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "destination_region": "seoul_gangwon",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "large_coach",
+    "duration_hours": 13.5,
+    "region_tags": [
+      "seoul_mapo",
+      "seoul_jung",
+      "gangwon_sokcho",
+      "gyeonggi_gapyeong"
+    ],
+    "theme_tags": [
+      "national_park",
+      "mountain",
+      "buddhist_temple",
+      "k_drama_filming",
+      "themed_garden",
+      "hallyu_landmark"
+    ],
+    "poi_tags": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.6,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.85,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.7,
+    "senior_fit": 0.5,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.85,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.5,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.2,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.3,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.5,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.1,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.25,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0.55,
+    "intangible_heritage_fit": 0.5,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": "high",
+    "comfort_level": 0.55,
+    "budget_fit": 1,
+    "premium_fit": 0.2,
+    "small_group_fit": 0.15,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "seoul_central",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "13h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited",
+        "wheelchair_required"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
+    "walking_notes": [
+      "13-hour day with ~4-5 km total walking.",
+      "Seoraksan paths rocky in places; Nami and Morning Calm flat.",
+      "Closed-toe shoes recommended.",
+      "Cable car at Seoraksan optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "nami island day trip",
+      "garden of morning calm tour",
+      "seoul winter wonder tour",
+      "seoraksan nami one day"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan day tour",
+      "korea three signature stops day trip",
+      "seoul winter sonata tour"
+    ],
+    "seasonality": "winter_only",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.2,
+    "fixed_itinerary_fit": 1,
+    "national_park_fit": 1,
+    "buddhist_temple_fit": 0.6,
+    "k_drama_filming_fit": 1,
+    "winter_sonata_fit": 1,
+    "themed_garden_fit": 0,
+    "history_culture_fit": 0.65,
+    "religious_history_fit": 0.45,
+    "premium_dining_fit": 0.15,
+    "seasonal_fit": 1,
+    "winter_lighting_festival_fit": 0,
+    "autumn_foliage_fit": 0,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 1,
+    "us_market_fit": 0.95,
+    "europe_market_fit": 0.95,
+    "australia_market_fit": 0.95,
+    "japan_market_fit": 1,
+    "first_time_korea_fit": 1,
+    "seoul_day_trip_fit": 1,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "winter",
+      "seasonal",
+      "seoul_day_trip",
+      "national_park",
+      "ice_wall",
+      "k_drama_filming"
+    ],
+    "secondary_themes": [
+      "frozen_waterfall",
+      "snow_scenery",
+      "winter_sonata",
+      "metasequoia_lane",
+      "photo_spots",
+      "first_time_korea"
+    ],
+    "best_for": [
+      "winter_travelers",
+      "photo_lovers",
+      "couples",
+      "first_time_korea",
+      "snow_seekers"
+    ],
+    "not_recommended_for": [
+      "travelers_sensitive_to_cold",
+      "minimal_walking_seekers",
+      "visitors_outside_dec_to_feb"
+    ],
+    "anchor_pois": [
+      "Seoraksan National Park",
+      "Nami Island",
+      "Eobi Ice Valley"
+    ],
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+      "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "Seoraksan is Korea's first UNESCO Biosphere Reserve (1982) and a UNESCO World Heritage tentative site, but no stop on this route is an inscribed World Heritage property."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New seasonal product (owner instruction 2026-08-04). Winter-only Seoraksan + Nami Island + Eobi Ice Valley coach day tour, running roughly 20 Dec – 28 Feb. Donor seoul-seoraksan-nami-island-morning-calm-day-tour supplied the KB-verified Seoraksan and Nami Island stop bodies plus the two-point Seoul pickup and Seoul-region UI blocks. Eobi Ice Valley, pickup, lunch, return and all product-level copy authored fresh in 6 locales (scripts/seoul-winter-eobi-content/) with de/fr/it/ru staged. Eobi Ice Valley ships without photos — no owned imagery yet. matching_profile derived from the donor with seasonality forced to winter_only and the garden/foliage axes zeroed."
+    }
+  },
+  "page_sections": []
+}

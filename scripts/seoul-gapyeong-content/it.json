@@ -1,0 +1,322 @@
+{
+  "_note": "EN master for seoul-gapyeong-nami-morning-calm-petite-france-day-tour. Authored 2026-08-04. Stop bodies for Nami / Morning Calm / Petite France come from the two donors (KB-verified 2026-04-29); everything in this file is product-level copy plus the pickup, lunch and return stops. Admission figures re-checked 2026-08-04: Nami ₩19,000 incl. round-trip ferry, Morning Calm ₩11,000, Petite France ₩12,000 (combo with the adjacent Italian Village ₩19,500).",
+
+  "title": "Gita di un giorno a Gapyeong da Seul: isola di Nami, Garden of Morning Calm e Petite France",
+  "subtitle": "Il trio di Gapyeong in un'unica giornata in pullman — nessuna escursione in montagna, tre ingressi inclusi",
+  "shortCardDescription": "La giornata in campagna più semplice da Seul: il viale di metasequoie dell'isola di Nami, un arboreto tematico di 330,000 m² e un villaggio del Piccolo Principe — tutti e tre gli ingressi inclusi, di ritorno a Seul entro le 19:00.",
+  "badges": ["Gita da Seul", "Gapyeong", "Gruppo condiviso", "K-drama", "Giardini"],
+  "tags": ["Gita da Seul", "Gapyeong", "Gruppo condiviso", "K-drama", "Giardini", "Adatto alle famiglie"],
+
+  "headlineLine1": "Gita di un giorno da Seul",
+  "headlineLine2": "Nami, Morning Calm e Petite France",
+  "heroTagline": "Le tre tappe simbolo di Gapyeong in una tranquilla giornata in pullman da Seul — un'isola fluviale alberata, il giardino privato più noto della Corea e un villaggio dedicato a Le Petit Prince su licenza",
+  "heroPills": ["Gita da Seul", "Giardini + Hallyu", "Tutti gli ingressi inclusi"],
+  "heroDuration": "11.5 ore",
+  "heroStopsLabel": "3 tappe",
+  "region": "Seul → Gyeonggi-do (Gapyeong)",
+  "duration": "11.5 ore",
+  "stopsCount": 3,
+
+  "seo": {
+    "pageTitle": "Gita di un giorno a Gapyeong da Seul — isola di Nami, Garden of Morning Calm e Petite France | AtoC Korea",
+    "metaDescription": "Gita di un giorno in pullman con gruppo condiviso da Seul a Gapyeong: il viale di metasequoie dell'isola di Nami, il Garden of Morning Calm e Petite France. Tutti e tre gli ingressi inclusi. Ritrovo a Hongik University o Myeongdong, rientro a Seul entro le 19:00.",
+    "title": "Gita di un giorno a Gapyeong da Seul — isola di Nami, Morning Calm e Petite France",
+    "description": "Tre luoghi simbolo di Gapyeong in una giornata in pullman di 11.5 ore da Seul, con traghetto per l'isola di Nami e ingressi al Garden of Morning Calm e a Petite France tutti inclusi.",
+    "primaryKeywords": [
+      "gita di un giorno a Gapyeong da Seul",
+      "tour isola di Nami",
+      "giardino Morning Calm Corea del Sud",
+      "Petite France Gapyeong",
+      "escursione da Seul isola di Nami e Morning Calm"
+    ]
+  },
+
+  "glanceItems": [
+    { "icon": "clock", "label": "Durata", "value": "11.5 ore" },
+    { "icon": "camera", "label": "Potenziale fotografico", "value": "Molto alto", "level": 5 },
+    { "icon": "mountain", "label": "Paesaggio", "value": "Alto", "level": 4 },
+    { "icon": "footprints", "label": "Camminata", "value": "Da facile a moderata", "level": 2 },
+    { "icon": "cloud-rain", "label": "Adatto con la pioggia", "value": "Moderato", "level": 3 },
+    { "icon": "users", "label": "Adatto alle famiglie", "value": "Molto buono", "level": 5 },
+    { "icon": "gauge", "label": "Ritmo", "value": "Rilassato", "level": 3 }
+  ],
+
+  "flow": {
+    "pickup": "Ritrovo (Hongik / Myeongdong)",
+    "nami": "Isola di Nami",
+    "lunch": "Pranzo a Gapyeong",
+    "gmc": "Garden of Morning Calm",
+    "petite": "Petite France",
+    "dropoff": "Rientro a Seul"
+  },
+
+  "routeShapeIntro": {
+    "title": "Come si sviluppa questa giornata da Seul",
+    "subtitle": "Un ritrovo alle 07:30 a Hongik / 08:00 a Myeongdong e circa 1.5 ore di viaggio verso nord-est vi mettono sul traghetto per l'isola di Nami prima che la folla delle gite giornaliere si infittisca. Pranzo nel centro di Gapyeong, poi l'anello piega verso l'interno e sale al Garden of Morning Calm, per ridiscendere infine a Petite France sulle rive del lago Cheongpyeong — che si trova sulla via del ritorno, così l'ultima tappa non vi costa alcun percorso a ritroso. Rientro a Seul intorno alle 18:30-19:00."
+  },
+
+  "routePhases": [
+    {
+      "phase": "Seul → Gapyeong",
+      "duration": "≈ 1.5 ore",
+      "description": "Ritrovo alle 07:30 a Hongik / 08:00 a Myeongdong, poi circa 1.5 ore di viaggio verso nord-est fino al molo di Gapyeong e i cinque minuti di traghetto per l'isola di Nami."
+    },
+    {
+      "phase": "Isola di Nami",
+      "duration": "≈ 2 ore",
+      "description": "Viali alberati pianeggianti, la strada delle metasequoie di Winter Sonata, panchine lungo il fiume e struzzi e pavoni in libertà. Il traghetto di andata e ritorno e la tassa per il visto della Naminara Republic sono inclusi."
+    },
+    {
+      "phase": "Pranzo → Garden of Morning Calm",
+      "duration": "≈ 2.5 ore",
+      "description": "Pranzo in un ristorante locale a Gapyeong (a proprie spese — è la terra del dakgalbi), poi circa 35 minuti verso l'interno e in salita fino al Garden of Morning Calm, per 90 minuti tra i suoi giardini tematici."
+    },
+    {
+      "phase": "Petite France → Seul",
+      "duration": "≈ 2.5 ore",
+      "description": "Circa 45 minuti per ridiscendere sulle rive del lago Cheongpyeong e un'ora a Petite France, poi circa 1.5 ore di strada verso Seul — Myeongdong verso le 18:30, Hongik verso le 19:00."
+    }
+  ],
+
+  "whyTourWorks": {
+    "routeLogicTitle": "Ritmo e geografia",
+    "bestFor": [
+      "Chi visita la Corea per la prima volta e vuole la campagna coreana senza un'escursione in montagna",
+      "Coppie e appassionati di Hallyu venuti per il viale di metasequoie di Winter Sonata",
+      "Famiglie e viaggiatori meno giovani — ogni tappa è pianeggiante o con pendenze leggere",
+      "Chi vuole un'intera giornata fuori Seul che finisca comunque prima di cena"
+    ],
+    "lessIdealFor": [
+      "Escursionisti — su questo itinerario non c'è alcuna montagna né alcuna vetta",
+      "Chi preferisce un'unica tappa lenta invece di tre",
+      "Chi spera nella vita notturna o in tempo in città la sera prima delle 19:00"
+    ],
+    "items": [
+      {
+        "label": "Nami per prima, prima della folla",
+        "detail": "Gapyeong dista da Seul solo circa 75 km, quindi partendo alle 07:30 si arriva al molo verso le 10:00 — prima dei viaggiatori indipendenti che arrivano con i treni ITX di tarda mattinata, e con la luce bassa del mattino ancora sul viale di metasequoie."
+      },
+      {
+        "label": "I giardini sono nell'entroterra, il villaggio è sulla via del ritorno",
+        "detail": "Il Garden of Morning Calm si trova in alto a Sang-myeon, a circa 35 minuti verso l'interno dal fiume; Petite France è più in basso, sulle rive del lago Cheongpyeong, già rivolta verso Seul. Visitarli in quest'ordine significa che l'ultima tappa non comporta alcun ritorno sui propri passi."
+      },
+      {
+        "label": "Tre ingressi, un solo prezzo",
+        "detail": "La tassa per il visto di Nami da ₩19,000 (traghetto andata e ritorno incluso), gli ₩11,000 del Garden of Morning Calm e i ₩12,000 di Petite France sono tutti coperti — circa ₩42,000 di biglietti d'ingresso per cui non fate la fila e che non pagate di nuovo."
+      },
+      {
+        "label": "Una giornata più breve rispetto agli itinerari del Seoraksan",
+        "detail": "Poiché qui nulla si trova nel Gangwon, il pullman passa circa tre ore su strada invece di cinque. È esattamente questa la ragione per cui questa giornata risulta rilassata mentre gli itinerari del Seoraksan risultano lunghi."
+      }
+    ]
+  },
+
+  "namiDuration": "120 min (2 ore)",
+  "namiWhy": "Nami apre la giornata perché è l'unica tappa che premia la luce del primo mattino e punisce la folla. I viali di metasequoie e ginkgo dell'isola a mezzaluna sono il suo tratto distintivo e si fotografano meglio prima di mezzogiorno, quando i viaggiatori indipendenti in arrivo con il treno ITX e il bus turistico della città di Gapyeong riempiono i viali centrali. Metterla per prima significa anche che la traversata in traghetto avviene nella calma del mattino invece che nel vento del pomeriggio, e imposta il resto della giornata perché prosegua verso l'interno e poi verso casa senza tornare sui propri passi.",
+  "namiVisitBasics": {
+    "hours": "Il traghetto opera dalle 08:00, ultima corsa di andata alle 21:00 e di ritorno alle 21:05. Ogni 10-20 min fra le 09:00 e le 18:00 e ogni 30 min al di fuori di quella fascia; la traversata dura circa 5 minuti. La maggior parte dei negozi sull'isola chiude entro le 18:00",
+    "closed": "Aperta tutto l'anno",
+    "admission": "Tassa per il visto della Naminara Republic, traghetto andata e ritorno incluso: adulti ₩19,000 — INCLUSA in questo tour",
+    "walking": "Facile — sentieri pianeggianti alberati; il giro di metà perimetro è di circa 3 km, l'anello completo circa 5 km. Sull'isola sono disponibili il noleggio di biciclette e di e-buggy per chi preferisce non percorrerla a piedi."
+  },
+
+  "gmcDuration": "90 min",
+  "gmcWhy": "Il Garden of Morning Calm («Giardino della Calma Mattutina») è il capitolo centrale della giornata e il più tranquillo — 90 minuti bastano per percorrere l'anello principale oltre le aiuole a forma di penisola coreana del Sunken Garden e avere ancora il tempo di sedersi da qualche parte. Si trova nell'entroterra e più in alto rispetto al fiume, quindi deve venire dopo Nami e prima del rientro; visitarlo nel primo pomeriggio coglie anche il giardino nel suo momento più mite, il che conta da novembre a marzo, quando la valle trattiene il freddo.",
+  "gmcVisitBasics": {
+    "hours": "Indicativamente dalle 08:30 al tramonto (di norma 08:30-19:00), ultimo ingresso alle 18:00. Durante il festival delle luci invernale il giardino resta aperto fino a sera — gli orari cambiano a ogni stagione e la guida conferma sul pullman l'orario di chiusura del giorno",
+    "closed": "Aperto tutto l'anno",
+    "admission": "Adulti ₩11,000 — INCLUSO in questo tour",
+    "walking": "Moderata — percorsi estesi su terreno ondulato attraverso i giardini tematici; l'anello principale è in gran parte accessibile ai passeggini"
+  },
+
+  "petiteDuration": "60 min",
+  "petiteWhy": "Petite France chiude la giornata per dove si trova, non solo per ciò che è: il villaggio sorge sulle rive del lago Cheongpyeong già rivolto verso Seul, quindi un'ora qui non costa strada in più. È anche la tappa più piccola della giornata, e con un certo margine — sedici edifici su un pendio, percorribili a piedi in meno di un'ora — il che ne fa la nota giusta su cui chiudere dopo due ore su un'isola e novanta minuti in un giardino. Gli appassionati di My Love from the Star, Secret Garden e Beethoven Virus la riconosceranno subito.",
+  "petiteVisitBasics": {
+    "hours": "09:00-18:00, ultimo ingresso alle 17:00; l'orario di chiusura varia con la stagione e in alcune serate per eventi notturni in programma",
+    "closed": "Aperta tutto l'anno",
+    "admission": "Adulti ₩12,000 — INCLUSO in questo tour. Il biglietto combinato con l'adiacente Pinocchio & Da Vinci Italian Village (₩19,500 adulti) NON è incluso; l'ora prevista da questo itinerario riguarda solo Petite France",
+    "walking": "Facile — un piccolo villaggio su un pendio dolce, percorribile comodamente a piedi in meno di un'ora"
+  },
+
+  "_petiteHighlightDropMarkerNote": "Substring identifying the donor highlight that repeats a stale ₩10,000 gate price, contradicting the ₩12,000 in visitBasics. The builder drops that one highlight and throws if the marker is not found — so each locale must carry the marker exactly as it appears in that locale's donor bundle.",
+  "petiteHighlightDropMarker": "**Ingresso giornaliero 2026**",
+
+  "pickup": {
+    "name": "Ritrovo (stazione di Hongik University o stazione di Myeongdong)",
+    "category": "Ritrovo pullman",
+    "duration": "Finestra di 30 min",
+    "description": "Il ritrovo è in uno dei due punti d'incontro a Seul: **(1) Starbucks all'uscita 8 della stazione di Hongik University (Mapo-gu)** alle 07:30 — la vetrina dello Starbucks si trova subito in cima all'uscita 8; OPPURE **(2) uscita 2 della stazione di Myeongdong (Jung-gu)** alle 08:00 — il negozio principale NorthFace è il punto di riferimento visibile accanto all'uscita.\n\nEntrambi i punti di ritrovo condividono lo stesso pullman con aria condizionata e i passeggeri di Hongik salgono per primi. Vi preghiamo di trovarvi al punto scelto **5 minuti prima dell'orario previsto**. È un inizio decisamente più tranquillo rispetto alle gite al Seoraksan, che partono alle 06:00 — Gapyeong è abbastanza vicina a Seul perché il pullman possa partire quando le prime metropolitane circolano già da due ore.\n\nAl momento della salita la guida distribuisce una scheda dell'itinerario stampata in coreano e inglese e conferma l'ordine della giornata, la sosta per i servizi e gli orari di rientro previsti. Da Myeongdong il pullman prosegue verso nord-est sulla Seoul-Chuncheon Expressway per il viaggio di circa 1.5 ore fino al molo di Gapyeong.",
+    "timeUsed": [
+      "Arrivate al punto di ritrovo scelto 5 minuti prima dell'orario previsto (~5 min)",
+      "Individuate il pullman AtoC Korea davanti allo Starbucks / NorthFace indicati (~5 min)",
+      "Salita a bordo nella fila di imbarco (~10 min)",
+      "Scheda dell'itinerario stampata in coreano e inglese distribuita alla salita"
+    ],
+    "whyOnRoute": "Due punti di ritrovo coprono i due principali poli turistici di Seul: la zona della Hongik University a Mapo-gu, adatta ai viaggiatori più giovani e a chi si ferma poco, e Myeongdong a Jung-gu, il quartiere turistico storico attorno agli hotel Lotte, Shilla e Westin. Prima Hongik e poi Myeongdong è l'ordine naturale per un percorso diretto a nord-est sulla Seoul-Chuncheon Expressway. La partenza alle 07:30 è abbastanza tardi da risultare comoda e abbastanza presto da mettere il pullman sul traghetto per Nami verso le 10:00, prima dei viaggiatori giornalieri indipendenti in arrivo con il treno ITX."
+  },
+
+  "lunch": {
+    "name": "Pranzo a Gapyeong (a proprie spese)",
+    "category": "Pausa pranzo",
+    "duration": "60 min",
+    "description": "Dopo l'isola di Nami il pullman si ferma per un'ora in un ristorante locale nella zona del molo di Gapyeong. Il pranzo **non è incluso** — ordinate e pagate quello che volete, in genere tra ₩10,000-15,000 a persona.\n\nQuesta è la terra del dakgalbi: il corridoio Chuncheon-Gapyeong è la patria del **dakgalbi**, pollo dolce-piccante saltato al tavolo con cavolo, patata dolce e tteok, di solito completato friggendo del riso nella salsa rimasta. Il **makguksu** (noodle freddi di grano saraceno) è il piatto di accompagnamento tradizionale. Le opzioni vegetariane sono limitate, ma il bibimbap è normalmente disponibile; ditelo alla guida sul pullman la mattina e telefonerà in anticipo.\n\nPortate contanti o carta — la maggior parte dei ristoranti della zona accetta entrambi, ma le piccole bancarelle vicino al molo spesso accettano solo contanti.",
+    "timeUsed": [
+      "Il pullman parcheggia e la guida accompagna il gruppo al ristorante (~5 min)",
+      "Ordinazione e pranzo (~45 min)",
+      "Pagamento individuale e ritrovo al pullman (~10 min)"
+    ],
+    "whyOnRoute": "Il pranzo viene dopo Nami e non prima per due ragioni. Primo, protegge la mattinata: mangiare prima spingerebbe la traversata in traghetto oltre mezzogiorno e dentro la folla. Secondo, la zona del molo di Gapyeong è dove i ristoranti effettivamente sono — il Garden of Morning Calm si trova lungo una strada di valle con pochissimo intorno, e a Petite France ci sono solo chioschi di snack. Un'ora qui è l'ultimo pasto seduti affidabile della giornata."
+  },
+
+  "dropoff": {
+    "name": "Rientro a Seul (Myeongdong o stazione di Hongik University)",
+    "category": "Rientro e discesa",
+    "duration": "≈ 1.5 ore di viaggio",
+    "description": "La partenza da Petite France è intorno alle 16:45 per il viaggio di circa 1.5 ore verso Seul sulla Seoul-Chuncheon Expressway. Le discese avvengono in ordine inverso rispetto al ritrovo: **stazione di Myeongdong verso le 18:30**, poi **stazione di Hongik University verso le 19:00**.\n\nEntrambe sono nodi di interscambio della metropolitana, quindi le coincidenze sono semplici, e gli orari lasciano libera la serata — sarete di ritorno ben prima che i ristoranti di Seul si riempiano. I venerdì sera e i rientri della domenica possono aggiungere 20-40 minuti di traffico in avvicinamento alla città; la guida darà la stima aggiornata del pullman durante il rientro.",
+    "timeUsed": [
+      "Partenza da Petite France (~16:45)",
+      "Viaggio in autostrada con una breve sosta se necessario (~1.5 ore)",
+      "Discesa alla stazione di Myeongdong (~18:30)",
+      "Discesa alla stazione di Hongik University (~19:00)"
+    ],
+    "whyOnRoute": "Concludere a Petite France invece che al Garden of Morning Calm è ciò che rende breve il rientro: il villaggio si trova già sul lato di Gapyeong rivolto a Seul, quindi il pullman punta verso casa dal momento in cui riparte. Invertire l'ordine delle discese significa che gli ospiti di Myeongdong, saliti per ultimi, scendono per primi."
+  },
+
+  "practical": {
+    "pickup": {
+      "content": [
+        "Due punti di ritrovo a Seul: **Starbucks all'uscita 8 della stazione di Hongik University alle 07:30** (Mapo-gu) e **uscita 2 della stazione di Myeongdong, accanto al negozio principale NorthFace, alle 08:00** (Jung-gu).",
+        "Entrambi i ritrovi condividono lo stesso pullman; vi preghiamo di trovarvi al punto scelto 5 minuti prima.",
+        "Discese al rientro in ordine inverso: **Myeongdong ≈18:30**, **Hongik University ≈19:00**.",
+        "La durata effettiva del tour dipende dal punto di ritrovo: ≈11.5 ore da Hongik, ≈10.5 ore da Myeongdong."
+      ]
+    },
+    "inclusions": {
+      "content": [
+        "Due punti di ritrovo a Seul e gli stessi due punti di discesa, pullman con aria condizionata, guida abilitata di lingua inglese.",
+        "**Traghetto andata e ritorno per l'isola di Nami + tassa per il visto della Naminara Republic (₩19,000) — INCLUSI.**",
+        "**Ingresso al Garden of Morning Calm (₩11,000) — INCLUSO.**",
+        "**Ingresso a Petite France (₩12,000) — INCLUSO.**",
+        "Pedaggi e parcheggi — INCLUSI.",
+        "**Non inclusi:** pranzo e bevande (₩10,000-15,000, a proprie spese), il biglietto combinato Petite France + Italian Village (₩19,500), il noleggio di biciclette o e-buggy sull'isola di Nami, la Skyline Zipwire per Nami e le spese personali.",
+        "Guida di lingua cinese disponibile su richiesta — vi preghiamo di prenotare con almeno 3 giorni di anticipo."
+      ]
+    },
+    "walking": {
+      "content": [
+        "Da facile a moderata — questo itinerario non prevede escursioni né tratti con molte scale.",
+        "Isola di Nami: viali alberati pianeggianti e asfaltati; circa 3 km in 2 ore è il ritmo tipico. Sull'isola si possono noleggiare biciclette ed e-buggy a proprie spese.",
+        "Garden of Morning Calm: terreno ondulato su percorsi da giardino in gran parte pavimentati; l'anello principale è nel complesso accessibile ai passeggini, anche se alcuni giardini tematici si trovano in cima a brevi pendii.",
+        "Petite France: un piccolo villaggio in collina, pendenze dolci, meno di un'ora a passo tranquillo.",
+        "Il totale della camminata nella giornata è di circa 5-6 km, distribuiti su tre tappe con il pullman tra l'una e l'altra. Bastano scarpe comode — non servono calzature da trekking."
+      ]
+    },
+    "lunch": {
+      "title": "Pranzo (a proprie spese)",
+      "content": [
+        "Il pranzo si fa verso le 12:15 in un ristorante locale nella zona del molo di Gapyeong, dopo l'isola di Nami.",
+        "Questa è la terra del dakgalbi — pollo dolce-piccante saltato al tavolo, di solito completato friggendo del riso nella salsa. Il makguksu (noodle freddi di grano saraceno) è il classico piatto di accompagnamento.",
+        "Mettete in conto circa ₩10,000-15,000 a persona. Di norma si accettano sia contanti sia carta; le bancarelle vicino al molo spesso accettano solo contanti.",
+        "Le opzioni vegetariane sono limitate in questa zona — ditelo alla guida la mattina e telefonerà in anticipo."
+      ]
+    },
+    "weather-policy": {
+      "content": [
+        "Operativo tutto l'anno.",
+        "Pioggia leggera: il tour si svolge come previsto. Tutte e tre le tappe reggono la pioggia — i viali alberati di Nami e il Garden of Morning Calm danno il meglio anche con il bagnato, e Petite France ha sale espositive al chiuso.",
+        "Pioggia forte o temporale: il traghetto per Nami può essere sospeso in caso di maltempo grave. Se accade, la guida prolunga le soste al giardino e a Petite France e l'ingresso a Nami viene rimborsato.",
+        "Neve: a Gapyeong nevica più che nel centro di Seul. In stagione il pullman monta pneumatici invernali; nevicate abbondanti possono aggiungere un'ora al rientro.",
+        "L'ordine dell'itinerario o gli orari possono cambiare in giornata per traffico, meteo od orari di apertura dei siti — la guida conferma il programma del giorno sul pullman."
+      ]
+    },
+    "what-to-bring": {
+      "title": "Cosa indossare e portare",
+      "content": [
+        "Scarpe comode da camminata — non servono calzature da trekking, ma starete in piedi per 5-6 km nell'arco della giornata.",
+        "Strati caldi da novembre a marzo; le valli di Gapyeong sono di diversi gradi più fredde del centro di Seul e il ponte del traghetto per Nami è esposto.",
+        "Macchina fotografica o smartphone — il viale di metasequoie a Nami e il punto panoramico sul Sunken Garden al Morning Calm sono i due scatti per cui si viene.",
+        "Contanti e carta per il pranzo (₩10,000-15,000) e per eventuali extra facoltativi.",
+        "Protezione solare in estate; l'anello del giardino ha lunghi tratti con poca ombra."
+      ]
+    }
+  },
+
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar-mag)",
+      "description": "Fiori di ciliegio lungo il fiume Bukhan all'inizio di aprile, poi il festival di primavera del Garden of Morning Calm con decine di migliaia di tulipani. Gli edifici pastello di Petite France danno il meglio sul verde nuovo."
+    },
+    {
+      "season": "Estate (giu-ago)",
+      "description": "I viali alberati di Nami offrono ombra vera e l'isola è nettamente più fresca di Seul. Il giardino è rigoglioso ma caldo e in gran parte senza ombra — portate acqua e una protezione dal sole. Aspettatevi acquazzoni pomeridiani durante il monsone di luglio."
+    },
+    {
+      "season": "Autunno (set-nov)",
+      "description": "La stagione più forte su questo itinerario. I viali di metasequoie e ginkgo di Nami cambiano colore da fine ottobre a metà novembre e il Garden of Morning Calm propone la sua esposizione autunnale di crisantemi. Prenotate per tempo — è il periodo di massima richiesta."
+    },
+    {
+      "season": "Inverno (dic-feb)",
+      "description": "Il festival delle luci del Garden of Morning Calm illumina il parco da inizio dicembre fino a metà marzo circa, e durante il festival il giardino resta aperto fino a sera. Nami sotto la neve è l'immagine stessa di Winter Sonata. Vestitevi bene — le valli sono fredde e il ponte del traghetto è esposto."
+    }
+  ],
+
+  "staticQuestions": [
+    {
+      "question": "Gli ingressi sono davvero tutti inclusi?",
+      "answer": "Sì — le tre tariffe d'ingresso di questo itinerario sono tutte coperte: la tassa da ₩19,000 per il visto della Naminara Republic all'isola di Nami (che comprende il traghetto andata e ritorno), gli ₩11,000 del Garden of Morning Calm e i ₩12,000 di Petite France. Sono circa ₩42,000 a persona adulta per cui non fate la fila e che non pagate di nuovo. Il pranzo è la cosa principale che pagate voi."
+    },
+    {
+      "question": "È lo stesso tour del Seoraksan che visita anche Nami e il Morning Calm?",
+      "answer": "No, e la differenza è di circa tre ore di viaggio. La gita al Seoraksan aggiunge un parco nazionale nel Gangwon-do, il che comporta una partenza alle 06:00, cinque ore su strada e una giornata di 13 ore. Questo tour resta a Gapyeong: partenza alle 07:30, circa tre ore di viaggio e Petite France al posto della montagna. Scegliete questo se volete i giardini e l'isola senza il tempo in pullman."
+    },
+    {
+      "question": "Quanto si cammina?",
+      "answer": "Circa 5-6 km nell'arco dell'intera giornata, suddivisi in tre tappe distinte con il pullman tra l'una e l'altra. Non ci sono escursioni, vette né lunghe salite di scale. Nami è completamente pianeggiante, il Garden of Morning Calm è dolcemente ondulato e Petite France è un piccolo villaggio in collina. Bastano normali scarpe comode."
+    },
+    {
+      "question": "È adatto ai bambini piccoli o ai viaggiatori meno giovani?",
+      "answer": "Sì, più della maggior parte delle gite da Seul. Ogni tappa è pianeggiante o in leggera pendenza, il tratto in pullman più lungo è di circa 1.5 ore e la giornata finisce entro le 19:00. A Nami si noleggiano biciclette ed e-buggy se camminare per l'isola è troppo, e l'anello principale del Garden of Morning Calm è nel complesso accessibile ai passeggini. L'unica avvertenza è la durata complessiva — restano comunque 11 ore da porta a porta."
+    },
+    {
+      "question": "Che cos'è la tassa per il visto della Naminara Republic?",
+      "answer": "È il biglietto d'ingresso dell'isola di Nami, presentato come un visto perché nel 2006 l'isola si è dichiarata 'Naminara Republic' come concetto di turismo culturale, completa di bandiera, francobolli e banco immigrazione propri. In pratica è un biglietto per adulti da ₩19,000 che comprende la traversata in traghetto di cinque minuti in entrambe le direzioni, ed è incluso in questo tour."
+    },
+    {
+      "question": "Possiamo visitare l'Italian Village accanto a Petite France?",
+      "answer": "Non all'interno di questo itinerario. Il Pinocchio & Da Vinci Italian Village si trova sulla collina proprio dietro Petite France e richiede un biglietto combinato (₩19,500 adulti) più almeno un'altra ora. Questo tour comprende solo Petite France e vi dedica un'ora. Se l'Italian Village è importante per voi, il nostro tour privato di Gapyeong può inserirlo."
+    },
+    {
+      "question": "Cosa succede se piove?",
+      "answer": "Il tour si svolge. Tutte e tre le tappe funzionano con la pioggia leggera — i viali alberati di Nami e il giardino sono entrambi davvero suggestivi bagnati, e Petite France ha sale espositive al chiuso, tra cui la sala Saint-Exupéry e l'Orgel House. L'unico vero rischio meteo è un temporale che sospenda il traghetto per Nami, nel qual caso la guida prolunga le altre due tappe e l'ingresso a Nami viene rimborsato."
+    },
+    {
+      "question": "Il festival delle luci del Garden of Morning Calm è incluso?",
+      "answer": "Il festival non è un biglietto separato — si svolge all'interno del giardino e l'ingresso incluso lo copre. Ma questo è un itinerario diurno: siamo al giardino nel primo pomeriggio, quindi nella stagione del festival, da dicembre a marzo, vedrete le installazioni spente anziché illuminate. Se il giardino illuminato è la vostra priorità, ditecelo e vi indirizzeremo invece a un'opzione serale."
+    },
+    {
+      "question": "Quali K-drama sono stati girati in queste tappe?",
+      "answer": "L'isola di Nami è la location di Winter Sonata (2002) — il viale di metasequoie è la scena in cui la gente viene a mettersi. Tra i titoli di Petite France ci sono Beethoven Virus (2008), Personal Taste (2010), Secret Garden (2010) e My Love from the Star (2013-14). Anche il Garden of Morning Calm è stato usato come location, tra l'altro per Moonlight Drawn by Clouds."
+    },
+    {
+      "question": "A che ora si torna a Seul?",
+      "answer": "Alla stazione di Myeongdong verso le 18:30 e alla stazione di Hongik University verso le 19:00. Entrambe sono nodi di interscambio della metropolitana. I venerdì sera e i rientri della domenica possono aggiungere 20-40 minuti in avvicinamento alla città — la guida dà una stima aggiornata durante il rientro. Gli orari sono volutamente abbastanza presto da lasciarvi libera la serata."
+    },
+    {
+      "question": "Il pranzo è incluso?",
+      "answer": "No. Il pullman si ferma per un'ora in un ristorante nella zona del molo di Gapyeong e ordinate e pagate quello che volete, in genere ₩10,000-15,000. Questa è la regione d'origine del dakgalbi — pollo dolce-piccante saltato al tavolo — che di solito si mangia con i noodle makguksu. Le scelte vegetariane sono limitate, quindi ditelo alla guida la mattina e telefonerà in anticipo."
+    },
+    {
+      "question": "C'è una guida, e in che lingua?",
+      "answer": "Sì — una guida abilitata di lingua inglese accompagna il pullman per l'intera giornata. Una guida di lingua cinese è disponibile su richiesta se prenotate con almeno tre giorni di anticipo. Le tappe in sé sono in gran parte a ritmo libero: la guida si occupa di ingressi, tempi, orientamento e traduzione anziché fornire un commento continuo."
+    }
+  ],
+
+  "pd": {
+    "primaryTime": "Ritrovo 07:30 / discesa 19:00",
+    "primaryInstructions": "Incontrate la guida davanti alla vetrina dello Starbucks subito sopra l'uscita 8 della stazione di Hongik University. Cercate il cartello AtoC Korea e il pullman nella fila di imbarco.",
+    "alternateTime": "Ritrovo 08:00 / discesa 18:30",
+    "alternateInstructions": "Incontrate la guida davanti al negozio principale NorthFace in cima all'uscita 2 della stazione di Myeongdong."
+  },
+
+  "stickyNote": "Selezionate la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."
+}

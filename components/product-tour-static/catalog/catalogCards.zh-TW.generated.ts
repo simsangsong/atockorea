@@ -664,6 +664,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "首爾出發加平一日遊：南怡島、晨靜樹木園與小法國村",
+      "subtitle": "一天遊覽車走完加平三處招牌 — 不必登山，三處門票全含",
+      "region": "首爾 → 京畿道（加平）",
+      "duration": "11.5 小時",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "首爾出發一日遊",
+        "加平",
+        "併團",
+        "韓劇",
+        "花園"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "首爾近郊最輕鬆的一天鄉野行程：南怡島的水杉大道、330,000 m² 的主題樹木園，以及小王子主題村落 — 三處門票全數包含，19:00 前回到首爾。"
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -868,6 +894,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "首爾冬季特別行程：雪嶽山、南怡島與魚飛溪谷冰壁",
+      "subtitle": "只在冬季運行的遊覽車一日遊 — 韓國最著名山峰的積雪、覆霜的南怡島，以及一面由村民造出的冰壁",
+      "region": "首爾 → 江原道 → 京畿道（加平）",
+      "duration": "13.5 小時",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "僅限冬季",
+        "季節限定",
+        "首爾出發一日遊",
+        "雪嶽山",
+        "冰壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "只在深冬運行：雪中的雪嶽山、南怡島覆霜的林蔭大道，以及加平村民每年一月在溪谷岩壁上養出的 25 公尺冰壁。"
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {
