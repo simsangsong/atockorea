@@ -40,6 +40,7 @@ import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
+import OnsiteJoinQr from '@/components/tour-mode/OnsiteJoinQr';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { kstToday, scheduleClock } from '@/lib/tour-room/time';
@@ -374,6 +375,8 @@ export default function Cockpit({
   // 2026-07-21). No default meeting time — a deliberate 1-tap choice every
   // stop, so yesterday's time can never fan out by accident.
   const [arrItem, setArrItem] = useState<CockpitScheduleItem | null>(null);
+  // 즉흥 정차 (2026-08-04 #4) — the ad-hoc stop's name, typed at the curb.
+  const [adhocTitle, setAdhocTitle] = useState('');
   const [arrTime, setArrTime] = useState('');
   const [arrNoMeeting, setArrNoMeeting] = useState(false);
   const [arrFollow, setArrFollow] = useState<'follow' | 'free'>('free');
@@ -711,6 +714,12 @@ export default function Cockpit({
     for (const message of messages) {
       if (playedRef.current.has(message.id)) continue;
       if ((message.sender_role !== 'customer' && !isSpokenSignal(message)) || message._local) continue;
+      // An unsent message has nothing to say — and its rebroadcast must not
+      // burn a TTS call on empty text.
+      if ((message.metadata as { deleted?: unknown } | null)?.deleted === true) {
+        playedRef.current.add(message.id);
+        continue;
+      }
       // Wait for translation repair (R-6) before speaking — a pending message
       // would otherwise be read aloud in the guest's language with a Korean
       // voice. Leave it unmarked so the repaired rebroadcast (same id) plays.
@@ -2444,6 +2453,34 @@ export default function Cockpit({
         <Sheet onClose={() => setSheet('none')} title="오늘 일정 · 도착 안내">
           <div className="flex max-h-[55vh] flex-col gap-2 overflow-y-auto">
             {room.schedule.length === 0 ? <p className="tr-body-lg text-[var(--tr-ink-2)]">등록된 일정이 없어요.</p> : null}
+            {/* 즉흥 정차 — a tour driver's edge is the unplanned spot. The
+                arrival pipeline has always accepted a bare title (the server
+                renders the 10-locale arrived line and walks the content
+                ladder by name); only this door was missing. */}
+            <div className="text-cjk-body rounded-2xl border border-dashed border-[var(--tr-hairline)] px-4 py-3">
+              <p className="tr-label font-bold text-[var(--tr-ink-3)]">즉흥 정차 — 계획에 없는 곳</p>
+              <div className="mt-2 flex gap-2">
+                <input
+                  value={adhocTitle}
+                  onChange={(event) => setAdhocTitle(event.target.value)}
+                  placeholder="장소 이름 (예: 사려니숲 입구)"
+                  className="tr-body min-w-0 flex-1 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-3 text-[var(--tr-ink)]"
+                  data-testid="cockpit-adhoc-title"
+                />
+                <button
+                  type="button"
+                  disabled={!adhocTitle.trim()}
+                  onClick={() => {
+                    openArrivalSheet({ title: adhocTitle.trim() });
+                    setAdhocTitle('');
+                  }}
+                  className="text-cjk-safe tr-body shrink-0 rounded-xl bg-[var(--tr-bubble-me)] px-4 py-3 font-bold text-[var(--tr-bubble-me-ink)] disabled:opacity-40"
+                  data-testid="cockpit-adhoc-arrival"
+                >
+                  도착 안내
+                </button>
+              </div>
+            </div>
             {room.schedule.map((item, index) => {
               const dest = destFrom(item);
               return (
@@ -2481,6 +2518,11 @@ export default function Cockpit({
 
       {sheet === 'manifest' && roomToken ? (
         <Sheet onClose={() => setSheet('none')} title="명단·좌석">
+          {/* 현장 재합류 — the guest who lost their link is standing next to
+              the driver, not next to the ops desk. */}
+          <div className="mb-2">
+            <OnsiteJoinQr bookingId={bookingId} roomSession={session} />
+          </div>
           {/* GuideSeatDashboard is self-contained (token + bookingId) and the
               manifest endpoint already authorises driver | guide | admin, so
               this needs no server change. */}

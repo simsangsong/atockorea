@@ -330,6 +330,14 @@ export async function POST(
       }
     }
 
+    // Unsend ownership (2026-08-04): messages carried role + auth user only,
+    // and token guests have no auth user — so nothing could prove WHICH guest
+    // sent a message. The participant id makes deletion provable; absent on
+    // legacy rows, where guests simply cannot unsend.
+    if (actor.kind === 'session') {
+      messageMetadata = { ...messageMetadata, sender_participant_id: actor.sessionPayload.participantId };
+    }
+
     const { data: message, error } = await supabase
       .from('tour_room_messages')
       .insert({

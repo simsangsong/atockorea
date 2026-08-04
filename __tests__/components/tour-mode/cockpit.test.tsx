@@ -61,6 +61,8 @@ beforeAll(() => {
   // priming (T0-5) exercises its promise path without console noise.
   window.HTMLMediaElement.prototype.play = jest.fn().mockResolvedValue(undefined);
   window.HTMLMediaElement.prototype.pause = jest.fn();
+  // jsdom has no element scrolling; the arrival sheet's TimeWheel calls it.
+  Element.prototype.scrollTo = jest.fn();
 });
 
 beforeEach(() => {
@@ -239,6 +241,38 @@ describe('shared Cockpit', () => {
       expect(fetchMock).not.toHaveBeenCalledWith(
         expect.stringContaining('messageId=sys-1'),
         expect.anything(),
+      );
+    } finally {
+      global.fetch = origFetch;
+    }
+  });
+
+  /**
+   * 즉흥 정차 (2026-08-04 #4) — the server always accepted a bare title for
+   * manual-arrival; the cockpit only offered [도착 안내] on PLANNED stops, so
+   * the tour driver's edge — the unplanned spot — had no door.
+   */
+  it('fires an arrival for an unplanned stop typed at the curb', async () => {
+    const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
+    const origFetch = global.fetch;
+    global.fetch = fetchMock as unknown as typeof fetch;
+    try {
+      render(<Cockpit {...base} />);
+      openActionTray();
+      fireEvent.click(screen.getByText('일정·도착'));
+      const input = await screen.findByTestId('cockpit-adhoc-title');
+      const go = screen.getByTestId('cockpit-adhoc-arrival');
+      expect(go).toBeDisabled(); // no name, no door
+      fireEvent.change(input, { target: { value: '사려니숲 입구' } });
+      fireEvent.click(go);
+      // The arrival sheet opens for the typed place; 집합 없음 → send.
+      fireEvent.click(await screen.findByText('집합 없이'));
+      fireEvent.click(screen.getByTestId('arrival-send'));
+      await waitFor(() =>
+        expect(fetchMock).toHaveBeenCalledWith(
+          expect.stringContaining('/arrival-bundle'),
+          expect.objectContaining({ body: expect.stringContaining('사려니숲 입구') }),
+        ),
       );
     } finally {
       global.fetch = origFetch;
