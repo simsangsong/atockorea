@@ -4,4 +4,57 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan Kleingruppe: Meerestempel, Sky Capsule & Kulturdörfer",
+      "subtitle": "Kleingruppen-Tagestour zu Busans Küstenikonen und Hangdörfern — der Haedong-Yonggungsa-Tempel am Meer, der Glas-Skywalk des Cheongsapo-Daritdol-Observatoriums, die Fahrt mit der Sky Capsule im Blueline Park (Ticket bei der Buchung wählbar), das Kulturdorf Gamcheon und das stille Dakbatgol-Wandmalereidorf mit seiner Monorail an der „Wunschtreppe“ (소망계단).",
+      "region": "Busan",
+      "duration": "≈ 10 Stunden",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Kleingruppe",
+        "Busan",
+        "Sky Capsule",
+        "Küste",
+        "Kulturdörfer"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Ein Busan-Tag in der Kleingruppe, aufgebaut um die Küste und die Hangdörfer: der Haedong-Yonggungsa-Tempel am Meer in seinem ruhigen Morgenfenster, das kostenlose Daritdol-Observatorium mit Glasboden in Cheongsapo, die Fahrt mit der Sky Capsule im Blueline Park von Cheongsapo nach Mipo (Ticket inbegriffen oder nicht — Sie wählen bei der Buchung), Mittagessen, das Kulturdorf Gamcheon und das kaum bekannte Dakbatgol-Wandmalereidorf, wo eine kostenlose Monorail die „Wunschtreppe“ hinaufgleitet. Jeder Ankerpunkt außer der optionalen Kapsel ist eintrittsfrei."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "pocheon-sanjeong-lake-herb-island-art-valley": {
+    "catalog_card": {
+      "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+      "title": "Pocheon & Yeoncheon: See, Wasserfall & Kunsttal im Steinbruch",
+      "subtitle": "Ein Rundweg um einen von Bergen umringten See, ein 18 m hoher Wasserfall über Säulenbasalt und ein smaragdgrüner Steinbruchsee — zwei Geostätten des UNESCO Global Geopark Hantangang an einem unaufgeregten Tag ab Seoul.",
+      "region": "Pocheon & Yeoncheon (Tagesausflug ab Seoul)",
+      "duration": "10 Stunden",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Tagesausflug ab Seoul",
+        "UNESCO-Geopark",
+        "Wasserfall",
+        "Seerundweg",
+        "Kleine Gruppe"
+      ],
+      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften."
+    },
+    "price": {
+      "amountLabel": "54"
+    }
+  }
+};

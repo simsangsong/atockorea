@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山発・慶州古都ツアー",
-      "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+      "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
       "region": "慶州（釜山発）",
-      "duration": "10.5時間",
+      "duration": "11.5時間",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "少人数グループ",
         "ゆったりとしたペース",
         "釜山発",
-        "早めの帰着"
+        "冬は夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-      "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
+      "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
     "price": {
       "amountLabel": ""
@@ -615,22 +615,24 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "抱川：山正湖・ハーブ・アートバレー",
-      "subtitle": "山の湖、地中海式ハーブガーデン、採石場を転用したアートパーク——ソウルから行く、最もゆったりとした季節の日帰り旅行。",
-      "region": "ポチョン（ソウル日帰り旅行）",
+      "title": "抱川＆漣川：湖と滝、そして採石場のアートバレー",
+      "subtitle": "山に囲まれた湖畔の散歩道、柱状節理を18 m落ちる滝、そしてエメラルド色の採石場湖 — ソウルから日帰りで、ユネスコ世界ジオパークのジオサイト2か所をゆったりと巡る一日です。",
+      "region": "抱川＆漣川（ソウル発日帰り）",
       "duration": "10時間",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "自然＆フォトトリップ",
-        "季節のハイライト",
-        "ロマンティックなイルミネーション"
+        "ソウル発日帰り",
+        "ユネスコ世界ジオパーク",
+        "滝",
+        "湖畔散策",
+        "少人数"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "ソウルから京畿道の田舎・ポチョンへのゆったりとした季節の日帰り旅行。湖、ハーブガーデン、そしてドラマチックなアートパークの風景で知られるこの地を巡るルートは、山に囲まれた山井湖、地中海スタイルのガーデンと夜のイルミネーションが魅力のハーブアイランド、モノレールでアクセスするポチョン・アートバレーの採石場展望台を組み合わせています。南怡島より混雑が少なく、名所を駆け足で回るのではなく、写真撮影を中心とした落ち着いた旅を楽しめます。"
+      "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。"
     },
     "price": {
       "amountLabel": "54"

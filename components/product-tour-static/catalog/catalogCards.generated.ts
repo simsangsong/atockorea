@@ -319,9 +319,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "Busan to Gyeongju: Ancient Capital",
-        "subtitle": "Gyeongju's six classic stops at a calmer pace and an earlier return.",
+        "subtitle": "Small-group mini-van · English-speaking guide — Ahopsan Bamboo Forest, Bulguksa (UNESCO), Gyochon Hanok Village + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and Gyeongju National Museum (Donggung & Wolji night view in winter), all in one day.",
         "region": "Gyeongju (from Busan)",
-        "duration": "10.5 hours",
+        "duration": "11.5 hours",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -329,12 +329,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Small group",
           "Calmer pace",
           "From Busan",
-          "Earlier return"
+          "Winter night view"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "From US$39 per person (was $50, 22% off)",
-        "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
+        "shortCardDescription": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at Gyeongju National Museum, or at the Donggung & Wolji night view in winter."
       },
       "price": {
         "amountLabel": "39"
@@ -678,22 +678,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "Pocheon: Lake, Herb Island & Art Valley",
-        "subtitle": "Mountain lake, Mediterranean herb gardens, and a quarry-turned-art-park—the calmest seasonal day-trip from Seoul.",
-        "region": "Pocheon (Seoul Day Trip)",
+        "title": "Pocheon & Yeoncheon: Lake, Waterfall & Quarry Art Valley",
+        "subtitle": "A mountain-ringed lake walk, an 18 m waterfall over basalt columns, and an emerald quarry lake — two UNESCO Global Geopark geosites in one unhurried day from Seoul.",
+        "region": "Pocheon & Yeoncheon (Seoul Day Trip)",
         "duration": "10 hours",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "Nature & Photo Trip",
-          "Seasonal Highlights",
-          "Romantic Evening Lights"
+          "Seoul day trip",
+          "UNESCO Geopark",
+          "Waterfall",
+          "Lake walk",
+          "Small group"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint."
+        "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves."
       },
       "price": {
         "amountLabel": "54"
@@ -1207,9 +1209,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "부산 → 경주 고도 일일 투어",
-        "subtitle": "여유로운 페이스로 즐기는 경주의 클래식 6개 명소와 이른 귀환.",
+        "subtitle": "소그룹 미니밴 · 영어 가이드 — 아홉산숲, 불국사(유네스코), 교촌한옥마을+최부자댁+월정교, 대릉원+황리단길, 그리고 국립경주박물관(겨울엔 동궁과 월지 야경)까지 하루에.",
         "region": "경주 (부산 출발)",
-        "duration": "10.5시간",
+        "duration": "11.5시간",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -1217,12 +1219,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "소규모 그룹",
           "여유로운 페이스",
           "부산 출발",
-          "이른 귀환"
+          "겨울엔 야경"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
-        "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
+        "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
       },
       "price": {
         "amountLabel": ""
@@ -1566,22 +1568,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "포천: 산정호수·허브아일랜드·아트밸리",
-        "subtitle": "산속 호수, 지중해풍 허브 정원, 채석장이 변신한 아트파크—서울에서 떠나는 가장 여유로운 계절 당일 여행.",
-        "region": "포천 (서울 당일 여행)",
+        "title": "포천·연천: 호수, 폭포, 그리고 채석장 아트밸리",
+        "subtitle": "산이 둘러싼 호수를 걷고, 주상절리 위로 18 m를 떨어지는 폭포를 마주하고, 에메랄드빛 채석장 호수에서 마무리합니다 — 유네스코 세계지질공원 지질명소 두 곳을 서울 근교 하루에 여유롭게.",
+        "region": "포천·연천 (서울 근교 당일치기)",
         "duration": "10시간",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "자연 & 사진 여행",
-          "계절별 볼거리",
-          "낭만적인 야간 조명"
+          "서울 근교 당일치기",
+          "유네스코 세계지질공원",
+          "폭포",
+          "호수 산책",
+          "소규모 그룹"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "호수, 허브 정원, 그리고 인상적인 아트파크 풍경으로 유명한 경기도 포천으로 떠나는 여유로운 계절 당일 여행. 산으로 둘러싸인 산정호수, 지중해풍 정원과 야간 조명이 매력적인 허브아일랜드, 모노레일로 오르는 포천 아트밸리 채석장 전망대를 차례로 둘러봅니다. 남이섬보다 한적하며, 명소를 빠르게 도는 것이 아닌 사진 중심의 여유로운 일정으로 구성되어 있습니다."
+        "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다."
       },
       "price": {
         "amountLabel": "54"
@@ -2095,9 +2099,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山出发庆州千年古都一日游",
-        "subtitle": "以更悠闲的节奏游览庆州六大经典景点，更早返回。",
+        "subtitle": "小团迷你巴士 · 英文导游 —— 阿弘山竹林、佛国寺（UNESCO）、校村韩屋村+崔富豪宅邸+月精桥、大陵苑+皇理团街，以及国立庆州博物馆（冬季为东宫与月池夜景），一日走完。",
         "region": "庆州（从釜山出发）",
-        "duration": "10.5小时",
+        "duration": "11.5小时",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2105,12 +2109,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小团体",
           "节奏悠闲",
           "从釜山出发",
-          "提前返回"
+          "冬季夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原价$50，22% 优惠）",
-        "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
+        "shortCardDescription": "从釜山3处地铁站出发的庆州一日小团游。下午把车停下来用脚走——从崔富豪宅邸到月精桥，从大陵苑到皇理团街。最后一站是国立庆州博物馆，冬季则为东宫与月池夜景。"
       },
       "price": {
         "amountLabel": ""
@@ -2454,22 +2458,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "抱川：山亭湖·香草岛·艺术谷",
-        "subtitle": "山间湖泊、地中海香草花园，以及由采石场变身的艺术公园——首尔周边最宁静的季节性一日游。",
-        "region": "抱川（首尔一日游）",
-        "duration": "10小时",
-        "stopsCount": 3,
+        "title": "抱川 & 涟川：山井湖、载仁瀑布与采石场艺术谷",
+        "subtitle": "环抱于群山之间的湖畔漫步、坠落在玄武岩石柱之上的 18 米瀑布，以及一泓翡翠色的采石场湖水 — 一天之内，从首尔出发走访联合国教科文组织世界地质公园的两处地质遗产点，不慌不忙。",
+        "region": "抱川 & 涟川（首尔一日游）",
+        "duration": "10 小时",
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "自然摄影之旅",
-          "四季特色",
-          "浪漫夜灯"
+          "首尔一日游",
+          "联合国教科文组织世界地质公园",
+          "瀑布",
+          "环湖漫步",
+          "小团"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "从首尔出发前往抱川的悠闲季节性一日游，京畿道乡村以湖泊、香草花园和壮观的艺术公园景观而闻名。行程涵盖群山环抱的山井湖、香草岛地中海风格的花园与夜间灯光，以及乘坐单轨列车可达的抱川艺术谷采石场观景台。比南怡岛人少，以摄影为主线，追求宁静而非打卡冲刺。"
+        "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。"
       },
       "price": {
         "amountLabel": "54"
@@ -2983,9 +2989,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山出發慶州千年古都一日遊",
-        "subtitle": "以更從容的節奏遊覽慶州六大經典景點，並提早返回。",
+        "subtitle": "小團體廂型車·英語導遊——阿弘山竹林、佛國寺（UNESCO）、校村韓屋村＋崔富豪宅邸＋月精橋、大陵苑＋皇理團街，再加上國立慶州博物館（冬季為東宮與月池夜景），一天走完。",
         "region": "慶州（從釜山出發）",
-        "duration": "10.5小時",
+        "duration": "11.5小時",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2993,12 +2999,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小團體",
           "從容慢遊",
           "從釜山出發",
-          "提早返回"
+          "冬季看夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原價$50，22% 優惠）",
-        "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
+        "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
       },
       "price": {
         "amountLabel": ""
@@ -3342,22 +3348,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "抱川：山亭湖·香草島·藝術谷",
-        "subtitle": "山中湖泊、地中海香草花園，以及採石場改建的藝術公園——從首爾出發最寧靜的季節性一日遊。",
-        "region": "抱川（首爾一日遊）",
-        "duration": "10小時",
-        "stopsCount": 3,
+        "title": "抱川與漣川：山中湖、瀑布與採石場藝術谷",
+        "subtitle": "群山環抱的環湖漫步、自柱狀玄武岩上傾瀉 18 公尺的瀑布，以及一座翡翠色的採石場湖——一天之內，不趕行程地走訪兩處聯合國教科文組織世界地質公園的地質景點。",
+        "region": "抱川與漣川（首爾一日遊）",
+        "duration": "10 小時",
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "自然與攝影之旅",
-          "季節性亮點",
-          "浪漫夜燈"
+          "首爾一日遊",
+          "世界地質公園",
+          "瀑布",
+          "環湖漫步",
+          "小團"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "從首爾出發前往抱川的輕鬆季節性一日遊，抱川是京畿道鄉村地區，以湖泊、香草花園和壯觀的藝術公園景觀聞名。行程結合山井湖的群山環抱水景、香草島的地中海風格花園與夜間燈光，以及搭乘單軌列車前往的抱川藝術谷採石場觀景台。比南怡島人潮稀少，以攝影主導的寧靜體驗取代名勝景點的快速打卡。"
+        "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。"
       },
       "price": {
         "amountLabel": "54"
@@ -3871,22 +3879,22 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "Busan→Gyeongju: Capital Antigua",
-        "subtitle": "Las seis paradas clásicas de Gyeongju a un ritmo más tranquilo y con regreso más temprano.",
+        "subtitle": "Minivan de grupo pequeño con guía de habla inglesa — Ahopsan, Bulguksa (UNESCO), Gyochon + Casa del Clan Choi + Woljeonggyo, Daereungwon + Hwangnidan-gil y el Museo Nacional de Gyeongju (en invierno, Donggung y Wolji de noche) en un solo día.",
         "region": "Gyeongju (desde Busán)",
-        "duration": "10,5 horas",
+        "duration": "11,5 horas",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Grupo pequeño",
-          "Ritmo más tranquilo",
-          "Desde Busán",
-          "Regreso más temprano"
+          "Ritmo tranquilo",
+          "Desde Busan",
+          "Paisaje nocturno en invierno"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
-        "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
+        "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
       },
       "price": {
         "amountLabel": ""
@@ -4227,22 +4235,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "Pocheon: Lago, Hierbas y Cantera",
-        "subtitle": "Lago de montaña, jardines de hierbas mediterráneos y una cantera convertida en parque de arte: la excursión de día más tranquila y estacional desde Seúl.",
-        "region": "Pocheon (Excursión de un día desde Seúl)",
+        "title": "Pocheon y Yeoncheon: lago, cascada y la cantera Art Valley",
+        "subtitle": "Un paseo alrededor de un lago rodeado de montañas, una cascada de 18 m sobre columnas basálticas y un lago esmeralda en una cantera: dos geositios de un Geoparque Mundial de la UNESCO en un solo día sin prisas desde Seúl.",
+        "region": "Pocheon y Yeoncheon (excursión de un día desde Seúl)",
         "duration": "10 horas",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "Naturaleza y Fotografía",
-          "Destacados de Temporada",
-          "Luces Románticas Nocturnas"
+          "Excursión de un día desde Seúl",
+          "Geoparque UNESCO",
+          "Cascada",
+          "Paseo junto al lago",
+          "Grupo reducido"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una relajada excursión estacional de un día desde Seúl a Pocheon, el campo de Gyeonggi conocido por sus lagos, jardines de hierbas y dramáticos paisajes de parque artístico. El recorrido combina las aguas rodeadas de montañas del Lago Sanjeong, los jardines de estilo mediterráneo y las luces nocturnas de Herb Island, y el observatorio de la cantera de Pocheon Art Valley accesible en monorraíl. Menos concurrido que la Isla Nami y pensado para disfrutar de la calma fotográfica en lugar de ir de atracción en atracción."
+        "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas."
       },
       "price": {
         "amountLabel": "54"
@@ -4756,9 +4766,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山発・慶州古都ツアー",
-        "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+        "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
         "region": "慶州（釜山発）",
-        "duration": "10.5時間",
+        "duration": "11.5時間",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -4766,12 +4776,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "少人数グループ",
           "ゆったりとしたペース",
           "釜山発",
-          "早めの帰着"
+          "冬は夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-        "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
+        "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
       },
       "price": {
         "amountLabel": ""
@@ -5113,22 +5123,24 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
     "pocheon-sanjeong-lake-herb-island-art-valley": {
       "catalog_card": {
         "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-        "title": "抱川：山正湖・ハーブ・アートバレー",
-        "subtitle": "山の湖、地中海式ハーブガーデン、採石場を転用したアートパーク——ソウルから行く、最もゆったりとした季節の日帰り旅行。",
-        "region": "ポチョン（ソウル日帰り旅行）",
+        "title": "抱川＆漣川：湖と滝、そして採石場のアートバレー",
+        "subtitle": "山に囲まれた湖畔の散歩道、柱状節理を18 m落ちる滝、そしてエメラルド色の採石場湖 — ソウルから日帰りで、ユネスコ世界ジオパークのジオサイト2か所をゆったりと巡る一日です。",
+        "region": "抱川＆漣川（ソウル発日帰り）",
         "duration": "10時間",
-        "stopsCount": 3,
+        "stopsCount": 4,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
-          "自然＆フォトトリップ",
-          "季節のハイライト",
-          "ロマンティックなイルミネーション"
+          "ソウル発日帰り",
+          "ユネスコ世界ジオパーク",
+          "滝",
+          "湖畔散策",
+          "少人数"
         ],
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "ソウルから京畿道の田舎・ポチョンへのゆったりとした季節の日帰り旅行。湖、ハーブガーデン、そしてドラマチックなアートパークの風景で知られるこの地を巡るルートは、山に囲まれた山井湖、地中海スタイルのガーデンと夜のイルミネーションが魅力のハーブアイランド、モノレールでアクセスするポチョン・アートバレーの採石場展望台を組み合わせています。南怡島より混雑が少なく、名所を駆け足で回るのではなく、写真撮影を中心とした落ち着いた旅を楽しめます。"
+        "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。"
       },
       "price": {
         "amountLabel": "54"
@@ -5388,8 +5400,220 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       }
     }
   },
-  "fr": {},
-  "de": {},
-  "it": {},
-  "ru": {}
+  "fr": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan en petit groupe : temple marin, Sky Capsule & villages culturels",
+        "subtitle": "Excursion d'une journée en petit groupe entre les icônes côtières de Busan et ses villages à flanc de colline — le temple marin Haedong Yonggungsa, la passerelle de verre Daritdol de Cheongsapo, le trajet en Sky Capsule du Blueline Park (billet en option à la réservation), le village culturel de Gamcheon et le paisible village de fresques Dakbatgol avec son monorail de l'escalier des vœux.",
+        "region": "Busan",
+        "duration": "≈ 10 heures",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Petit groupe",
+          "Busan",
+          "Sky Capsule",
+          "Côtier",
+          "Villages culturels"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Une journée à Busan en petit groupe, construite autour de la côte et des villages perchés : le temple marin Haedong Yonggungsa dans son créneau matinal tranquille, l'observatoire Daritdol de Cheongsapo et son plancher de verre gratuit, le trajet en Sky Capsule du Blueline Park de Cheongsapo à Mipo (billet inclus ou non inclus — à choisir lors de la réservation), le déjeuner, le village culturel de Gamcheon, et le méconnu village de fresques Dakbatgol où un monorail gratuit gravit l'« escalier des vœux ». Tous les sites majeurs sont en entrée libre, à l'exception de la capsule optionnelle."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "pocheon-sanjeong-lake-herb-island-art-valley": {
+      "catalog_card": {
+        "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+        "title": "Pocheon et Yeoncheon : lac, cascade et Art Valley en carrière",
+        "subtitle": "Une boucle à pied autour d'un lac cerné de montagnes, une cascade de 18 m sur des orgues basaltiques et un lac de carrière émeraude — deux géosites du Géoparc mondial UNESCO en une seule journée sans hâte au départ de Séoul.",
+        "region": "Pocheon et Yeoncheon (excursion depuis Séoul)",
+        "duration": "10 heures",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Excursion depuis Séoul",
+          "Géoparc UNESCO",
+          "Cascade",
+          "Balade au bord du lac",
+          "Petit groupe"
+        ],
+        "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées."
+      },
+      "price": {
+        "amountLabel": "54"
+      }
+    }
+  },
+  "de": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan Kleingruppe: Meerestempel, Sky Capsule & Kulturdörfer",
+        "subtitle": "Kleingruppen-Tagestour zu Busans Küstenikonen und Hangdörfern — der Haedong-Yonggungsa-Tempel am Meer, der Glas-Skywalk des Cheongsapo-Daritdol-Observatoriums, die Fahrt mit der Sky Capsule im Blueline Park (Ticket bei der Buchung wählbar), das Kulturdorf Gamcheon und das stille Dakbatgol-Wandmalereidorf mit seiner Monorail an der „Wunschtreppe“ (소망계단).",
+        "region": "Busan",
+        "duration": "≈ 10 Stunden",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Kleingruppe",
+          "Busan",
+          "Sky Capsule",
+          "Küste",
+          "Kulturdörfer"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Ein Busan-Tag in der Kleingruppe, aufgebaut um die Küste und die Hangdörfer: der Haedong-Yonggungsa-Tempel am Meer in seinem ruhigen Morgenfenster, das kostenlose Daritdol-Observatorium mit Glasboden in Cheongsapo, die Fahrt mit der Sky Capsule im Blueline Park von Cheongsapo nach Mipo (Ticket inbegriffen oder nicht — Sie wählen bei der Buchung), Mittagessen, das Kulturdorf Gamcheon und das kaum bekannte Dakbatgol-Wandmalereidorf, wo eine kostenlose Monorail die „Wunschtreppe“ hinaufgleitet. Jeder Ankerpunkt außer der optionalen Kapsel ist eintrittsfrei."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "pocheon-sanjeong-lake-herb-island-art-valley": {
+      "catalog_card": {
+        "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+        "title": "Pocheon & Yeoncheon: See, Wasserfall & Kunsttal im Steinbruch",
+        "subtitle": "Ein Rundweg um einen von Bergen umringten See, ein 18 m hoher Wasserfall über Säulenbasalt und ein smaragdgrüner Steinbruchsee — zwei Geostätten des UNESCO Global Geopark Hantangang an einem unaufgeregten Tag ab Seoul.",
+        "region": "Pocheon & Yeoncheon (Tagesausflug ab Seoul)",
+        "duration": "10 Stunden",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Tagesausflug ab Seoul",
+          "UNESCO-Geopark",
+          "Wasserfall",
+          "Seerundweg",
+          "Kleine Gruppe"
+        ],
+        "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften."
+      },
+      "price": {
+        "amountLabel": "54"
+      }
+    }
+  },
+  "it": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
+        "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
+        "region": "Busan",
+        "duration": "≈ 10 ore",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Piccolo gruppo",
+          "Busan",
+          "Sky Capsule",
+          "Costa",
+          "Villaggi culturali"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Una giornata a Busan in piccolo gruppo costruita intorno alla costa e ai villaggi collinari: il tempio sul mare Haedong Yonggungsa nella sua quieta finestra mattutina, l'osservatorio Daritdol di Cheongsapo con pavimento di vetro e ingresso gratuito, la corsa in Sky Capsule del Blueline Park da Cheongsapo a Mipo (biglietto incluso o escluso — a vostra scelta alla prenotazione), il pranzo, il villaggio culturale di Gamcheon e il poco conosciuto villaggio dei murales Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. Ogni tappa principale, tranne la capsula opzionale, è a ingresso gratuito."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "pocheon-sanjeong-lake-herb-island-art-valley": {
+      "catalog_card": {
+        "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+        "title": "Pocheon e Yeoncheon: lago, cascata e valle dell'arte in cava",
+        "subtitle": "Una passeggiata attorno a un lago cinto dai monti, una cascata di 18 m su colonne basaltiche e un lago di cava color smeraldo: due geositi del Geoparco mondiale UNESCO in un'unica giornata senza fretta da Seoul.",
+        "region": "Pocheon e Yeoncheon (gita di un giorno da Seoul)",
+        "duration": "10 ore",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Gita di un giorno da Seoul",
+          "Geoparco UNESCO",
+          "Cascata",
+          "Passeggiata sul lago",
+          "Piccolo gruppo"
+        ],
+        "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Una gita di un giorno da Seoul più tranquilla, costruita sulla geologia vera. Percorra l'anello pianeggiante di 3,2 km attorno al lago Sanjeong ai piedi del monte Myeongseongsan, assaggi l'Idong galbi, il piatto di Pocheon, poi attraversi un ponte sospeso di 80 m per trovarsi di fronte alla cascata di Jaein mentre precipita per 18 m su colonne basaltiche, e concluda dentro la cava di granito del Pocheon Art Valley, dove l'acqua sorgiva ha riempito lo scavo formando il lago Cheonjuho color smeraldo. La cascata di Jaein e Art Valley sono entrambe geositi del Geoparco mondiale UNESCO dell'Hantangang: lo stesso paesaggio visto dalle sue due metà opposte."
+      },
+      "price": {
+        "amountLabel": "54"
+      }
+    }
+  },
+  "ru": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Пусан в мини-группе: морской храм, Sky Capsule и культурные деревни",
+        "subtitle": "Однодневный тур по прибрежным символам и холмистым деревням Пусана в мини-группе — приморский храм Хэдон Ёнгунса, стеклянный скайвок на смотровой площадке Таритдоль в Чхонсапхо, поездка на Sky Capsule в парке «Блюлайн» в Хэундэ (билет — по выбору при бронировании), культурная деревня Камчхон и тихая деревня фресок Такпатколь с монорельсом вдоль «лестницы желаний».",
+        "region": "Пусан",
+        "duration": "≈ 10 часов",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Мини-группа",
+          "Пусан",
+          "Sky Capsule",
+          "Побережье",
+          "Культурные деревни"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "День в Пусане в мини-группе, построенный вокруг побережья и деревень на холмах: приморский храм Хэдон Ёнгунса в его тихое утреннее окно, бесплатная смотровая площадка Таритдоль со стеклянным полом в Чхонсапхо, поездка на Sky Capsule по парку «Блюлайн» от Чхонсапхо до Мипхо (билет включён или не включён — выбираете при бронировании), обед, культурная деревня Камчхон и малоизвестная деревня фресок Такпатколь, где бесплатный монорельс скользит вверх вдоль «лестницы желаний». Все ключевые точки, кроме опциональной капсулы, — с бесплатным входом."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "pocheon-sanjeong-lake-herb-island-art-valley": {
+      "catalog_card": {
+        "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+        "title": "Пхочхон и Ёнчхон: озеро, водопад и Художественная долина в карьере",
+        "subtitle": "Прогулка вокруг озера в кольце гор, водопад высотой 18 м над базальтовыми колоннами и изумрудное озеро в карьере — два геосайта Всемирного геопарка ЮНЕСКО за один неспешный день из Сеула.",
+        "region": "Пхочхон и Ёнчхон (поездка из Сеула на день)",
+        "duration": "10 часов",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Поездка из Сеула на день",
+          "Геопарк ЮНЕСКО",
+          "Водопад",
+          "Прогулка у озера",
+          "Малая группа"
+        ],
+        "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Спокойная однодневная поездка из Сеула, построенная на настоящей геологии. Пройдите ровный круг в 3,2 км вокруг озера Санджонхо под горой Мёнсонсан, попробуйте фирменные пхочхонские идон-кальби, затем перейдите 80-метровый подвесной мост и окажитесь лицом к лицу с водопадом Чэин, падающим с 18 м по базальтовым колоннам, а завершите день в гранитном карьере Pocheon Art Valley, где родниковая вода заполнила выработку и превратила её в изумрудное озеро Чхонджухо. Водопад Чэин и Art Valley — оба геосайты Всемирного геопарка ЮНЕСКО Хантанган: один и тот же ландшафт, увиденный с двух противоположных сторон."
+      },
+      "price": {
+        "amountLabel": "54"
+      }
+    }
+  }
 };

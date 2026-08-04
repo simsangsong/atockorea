@@ -21,7 +21,7 @@
  *   node scripts/import-match-v18.mjs --single from-busan-gyeongju-ancient-capital-day-tour
  * (needs service-role env), which rebuilds full_document from these bundles.
  *
- * Output: supabase/pending-db-apply/2026-08-04-04-gyeongju-recourse.sql
+ * Output: supabase/pending-db-apply/2026-08-04-07-gyeongju-recourse.sql
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
@@ -167,6 +167,6 @@ out += `--   WHERE slug = ${q(SLUG)};\n`;
 out += `-- COMMIT;\n`;
 out += `-- Then: node scripts/import-match-v18.mjs --single ${SLUG}\n`;
 
-const target = path.join(ROOT, "supabase/pending-db-apply/2026-08-04-04-gyeongju-recourse.sql");
+const target = path.join(ROOT, "supabase/pending-db-apply/2026-08-04-07-gyeongju-recourse.sql");
 writeFileSync(target, out, "utf8");
 console.log("wrote", target);

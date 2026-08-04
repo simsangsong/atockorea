@@ -211,3 +211,75 @@ out += `--   JOIN public.tour_product_pages p ON p.id = o.tour_product_page_id W
 const target = path.join(ROOT, "supabase/pending-db-apply/2026-08-04-03-busan-smallgroup-new-product.sql");
 writeFileSync(target, out, "utf8");
 console.log("wrote", target);
+
+// ---------------------------------------------------------------------------
+// File 04 — staged de/fr/it/ru pages (owner instruction: 10-locale translation).
+// INSERT-only (ON CONFLICT DO NOTHING) per the i18n expansion track's staging
+// rule: rows are invisible to guests until the app-side fallback gate
+// (TOUR_PRODUCT_FALLBACK_URL_LOCALES) is opened by a human decision.
+// ---------------------------------------------------------------------------
+import { existsSync } from "node:fs";
+const EXT_LOCALES = ["de", "fr", "it", "ru"];
+const present = EXT_LOCALES.filter((loc) =>
+  existsSync(path.join(BUNDLE_DIR, `${SLUG}.${loc}.json`)),
+);
+if (present.length) {
+  let out4 = "";
+  out4 += `-- =============================================================================\n`;
+  out4 += `-- ${SLUG} — staged de/fr/it/ru pages (10-locale translation)\n`;
+  out4 += `-- =============================================================================\n`;
+  out4 += `-- Generated: 2026-08-04. INSERT-only staging per the i18n expansion track:\n`;
+  out4 += `-- guests on de/fr/it/ru keep seeing EN until the app-side fallback gate\n`;
+  out4 += `-- (TOUR_PRODUCT_FALLBACK_URL_LOCALES in tourProductPageBody.tsx) is opened —\n`;
+  out4 += `-- a separate human decision. Apply AFTER 2026-08-04-03.\n`;
+  out4 += `-- Script: scripts/gen-busan-smallgroup-sql-2026-08.mjs\n`;
+  out4 += `-- =============================================================================\n\n`;
+  out4 += `BEGIN;\n\n`;
+  for (const loc of present) {
+    const b = bundle(loc);
+    const lcc = b.catalog_card || {};
+    const lseo = b.seo || {};
+    out4 += `INSERT INTO public.tour_product_pages (\n`;
+    out4 += `  slug, locale, product_id, is_published, sort_order, tour_id,\n`;
+    out4 += `  title, subtitle, region_label, duration_label, stops_count,\n`;
+    out4 += `  rating_avg, review_count, badges, hero_image_url, thumbnail_url,\n`;
+    out4 += `  card_short_description, seo_title, meta_description,\n`;
+    out4 += `  headline_line_1, headline_line_2,\n`;
+    out4 += `  price_amount_label, price_currency, price_per, detail_payload\n`;
+    out4 += `) VALUES (\n`;
+    out4 += `  ${q(SLUG)},\n`;
+    out4 += `  ${q(loc)},\n`;
+    out4 += `  ${q(SLUG)},\n`;
+    out4 += `  TRUE,\n`;
+    out4 += `  1,\n`;
+    out4 += `  (SELECT id FROM public.tours WHERE slug = ${q(SLUG)} LIMIT 1),\n`;
+    out4 += `  ${q(lcc.title || cc.title)},\n`;
+    out4 += `  ${q(lcc.subtitle || "")},\n`;
+    out4 += `  ${q(lcc.region || "Busan")},\n`;
+    out4 += `  ${q(lcc.duration || "≈ 10 hours")},\n`;
+    out4 += `  ${num(lcc.stopsCount || 8)},\n`;
+    out4 += `  0,\n`;
+    out4 += `  0,\n`;
+    out4 += `  ${jsonb(lcc.badges || cc.badges || [])},\n`;
+    out4 += `  ${q(b.hero?.imageUrl || lcc.heroImage || "")},\n`;
+    out4 += `  ${q(lcc.thumbnail || lcc.heroImage || "")},\n`;
+    out4 += `  ${q(lcc.shortCardDescription || "")},\n`;
+    out4 += `  ${q(lseo.pageTitle || "")},\n`;
+    out4 += `  ${q(lseo.metaDescription || "")},\n`;
+    out4 += `  ${q(b.headlineLine1 || "")},\n`;
+    out4 += `  ${q(b.headlineLine2 || "")},\n`;
+    out4 += `  ${q(String(PRICE_USD))},\n`;
+    out4 += `  'USD',\n`;
+    out4 += `  'person',\n`;
+    out4 += `  ${jsonb(b)}\n`;
+    out4 += `)\n`;
+    out4 += `ON CONFLICT (slug, locale) DO NOTHING;\n\n`;
+  }
+  out4 += `COMMIT;\n\n`;
+  out4 += `-- Verify: SELECT locale, is_published, title FROM public.tour_product_pages WHERE slug = ${q(SLUG)} ORDER BY locale;\n`;
+  const target4 = path.join(ROOT, "supabase/pending-db-apply/2026-08-04-04-busan-smallgroup-staged-locales.sql");
+  writeFileSync(target4, out4, "utf8");
+  console.log("wrote", target4, `(${present.join(", ")})`);
+} else {
+  console.log("no staged-locale bundles present — file 04 not written");
+}

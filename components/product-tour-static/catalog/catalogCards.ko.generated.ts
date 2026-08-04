@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "부산 → 경주 고도 일일 투어",
-      "subtitle": "여유로운 페이스로 즐기는 경주의 클래식 6개 명소와 이른 귀환.",
+      "subtitle": "소그룹 미니밴 · 영어 가이드 — 아홉산숲, 불국사(유네스코), 교촌한옥마을+최부자댁+월정교, 대릉원+황리단길, 그리고 국립경주박물관(겨울엔 동궁과 월지 야경)까지 하루에.",
       "region": "경주 (부산 출발)",
-      "duration": "10.5시간",
+      "duration": "11.5시간",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "소규모 그룹",
         "여유로운 페이스",
         "부산 출발",
-        "이른 귀환"
+        "겨울엔 야경"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
-      "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
+      "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
     },
     "price": {
       "amountLabel": ""
@@ -617,22 +617,24 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "포천: 산정호수·허브아일랜드·아트밸리",
-      "subtitle": "산속 호수, 지중해풍 허브 정원, 채석장이 변신한 아트파크—서울에서 떠나는 가장 여유로운 계절 당일 여행.",
-      "region": "포천 (서울 당일 여행)",
+      "title": "포천·연천: 호수, 폭포, 그리고 채석장 아트밸리",
+      "subtitle": "산이 둘러싼 호수를 걷고, 주상절리 위로 18 m를 떨어지는 폭포를 마주하고, 에메랄드빛 채석장 호수에서 마무리합니다 — 유네스코 세계지질공원 지질명소 두 곳을 서울 근교 하루에 여유롭게.",
+      "region": "포천·연천 (서울 근교 당일치기)",
       "duration": "10시간",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "자연 & 사진 여행",
-        "계절별 볼거리",
-        "낭만적인 야간 조명"
+        "서울 근교 당일치기",
+        "유네스코 세계지질공원",
+        "폭포",
+        "호수 산책",
+        "소규모 그룹"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "호수, 허브 정원, 그리고 인상적인 아트파크 풍경으로 유명한 경기도 포천으로 떠나는 여유로운 계절 당일 여행. 산으로 둘러싸인 산정호수, 지중해풍 정원과 야간 조명이 매력적인 허브아일랜드, 모노레일로 오르는 포천 아트밸리 채석장 전망대를 차례로 둘러봅니다. 남이섬보다 한적하며, 명소를 빠르게 도는 것이 아닌 사진 중심의 여유로운 일정으로 구성되어 있습니다."
+      "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다."
     },
     "price": {
       "amountLabel": "54"

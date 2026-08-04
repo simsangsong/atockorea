@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山出发庆州千年古都一日游",
-      "subtitle": "以更悠闲的节奏游览庆州六大经典景点，更早返回。",
+      "subtitle": "小团迷你巴士 · 英文导游 —— 阿弘山竹林、佛国寺（UNESCO）、校村韩屋村+崔富豪宅邸+月精桥、大陵苑+皇理团街，以及国立庆州博物馆（冬季为东宫与月池夜景），一日走完。",
       "region": "庆州（从釜山出发）",
-      "duration": "10.5小时",
+      "duration": "11.5小时",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "小团体",
         "节奏悠闲",
         "从釜山出发",
-        "提前返回"
+        "冬季夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "每人 US$39（原价$50，22% 优惠）",
-      "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
+      "shortCardDescription": "从釜山3处地铁站出发的庆州一日小团游。下午把车停下来用脚走——从崔富豪宅邸到月精桥，从大陵苑到皇理团街。最后一站是国立庆州博物馆，冬季则为东宫与月池夜景。"
     },
     "price": {
       "amountLabel": ""
@@ -617,22 +617,24 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "抱川：山亭湖·香草岛·艺术谷",
-      "subtitle": "山间湖泊、地中海香草花园，以及由采石场变身的艺术公园——首尔周边最宁静的季节性一日游。",
-      "region": "抱川（首尔一日游）",
-      "duration": "10小时",
-      "stopsCount": 3,
+      "title": "抱川 & 涟川：山井湖、载仁瀑布与采石场艺术谷",
+      "subtitle": "环抱于群山之间的湖畔漫步、坠落在玄武岩石柱之上的 18 米瀑布，以及一泓翡翠色的采石场湖水 — 一天之内，从首尔出发走访联合国教科文组织世界地质公园的两处地质遗产点，不慌不忙。",
+      "region": "抱川 & 涟川（首尔一日游）",
+      "duration": "10 小时",
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "自然摄影之旅",
-        "四季特色",
-        "浪漫夜灯"
+        "首尔一日游",
+        "联合国教科文组织世界地质公园",
+        "瀑布",
+        "环湖漫步",
+        "小团"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "从首尔出发前往抱川的悠闲季节性一日游，京畿道乡村以湖泊、香草花园和壮观的艺术公园景观而闻名。行程涵盖群山环抱的山井湖、香草岛地中海风格的花园与夜间灯光，以及乘坐单轨列车可达的抱川艺术谷采石场观景台。比南怡岛人少，以摄影为主线，追求宁静而非打卡冲刺。"
+      "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。"
     },
     "price": {
       "amountLabel": "54"

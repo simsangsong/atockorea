@@ -1,0 +1,167 @@
+{
+  "_note": "EN carryover UI blocks for the de/fr/it/ru staged locales of the revised Pocheon tour. The four itinerary stops and all product narrative live in ../<loc>.json — this file only holds the shell strings the builder reuses. Translate every human-readable value; keep keys, ids, icon names and CSS class values.",
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Aperçu"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinéraire"
+    },
+    {
+      "id": "details",
+      "label": "Détails"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Avis"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Opérateur local agréé",
+      "description": "Voyagiste coréen agréé, entièrement assuré",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Spécialistes de l'itinéraire",
+      "description": "Un programme réglé à la main, pas une boucle générique",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Taille de groupe maîtrisée",
+      "description": "Calibrée pour cet itinéraire",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immédiatement",
+      "title": "Confirmation instantanée",
+      "detail": "Confirmation de réservation avec le résumé de l'itinéraire"
+    },
+    {
+      "timing": "12 heures avant",
+      "title": "Rappel à 12 heures",
+      "detail": "Point météo et éventuels ajustements d'itinéraire"
+    },
+    {
+      "timing": "La veille au soir",
+      "title": "Informations finales de prise en charge",
+      "detail": "Heure exacte de rendez-vous et contact du chauffeur"
+    },
+    {
+      "timing": "Le matin du circuit",
+      "title": "Notes d'itinéraire du jour",
+      "detail": "Briefing matinal établi selon les conditions du moment"
+    },
+    {
+      "timing": "Pendant le circuit",
+      "title": "Conseils étape par étape",
+      "detail": "Accompagnement en temps réel à chaque site"
+    },
+    {
+      "timing": "Après le circuit",
+      "title": "Assistance après le circuit",
+      "detail": "Suivi et recommandations"
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Météo en direct intégrée"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Mise à jour quotidienne"
+    }
+  },
+  "practicalCarryover": {
+    "pickup": {
+      "title": "Prise en charge et retour",
+      "preview": "Points de rendez-vous à Séoul ; départ entre 08:00 et 09:00",
+      "content": [
+        "Prise en charge généralement à la station Hongik University (sortie 4), au Myeongdong Shinsegae Duty Free et à la station Dongdaemun History & Culture Park (sortie 10)",
+        "Départ généralement entre 07:50 et 09:00 depuis le premier point de rendez-vous",
+        "Merci d'arriver au moins 10 minutes en avance au point de rendez-vous que vous avez choisi",
+        "Retour aux mêmes points de rendez-vous à Séoul",
+        "Retour prévu entre 18:30 et 19:30 selon la circulation",
+        "Il s'agit d'une formule en groupe à itinéraire fixe ; les voyageurs doivent se rendre par eux-mêmes au point de rendez-vous"
+      ]
+    },
+    "weather": {
+      "title": "Politique météo",
+      "preview": "Fortes variations saisonnières ; les substitutions sont fréquentes",
+      "content": [
+        "Printemps (mars à juin) : cerisiers en fleur, lavande approchant son pic, ferme de fraises en option",
+        "Été (juin à août) : pic de lavande à Herb Island de la mi-juin à juillet ; attendez-vous à de l'humidité et à d'éventuelles pluies",
+        "Automne (septembre à novembre) : pink muhly, herbe argentée à Sanjeong, feuillages à Art Valley",
+        "Hiver (décembre à février) : activités sur glace possibles à Sanjeong (selon la météo), les illuminations de Herb Island fonctionnent toujours, café mur de glace en option",
+        "Pluie légère : le circuit est généralement maintenu ; une forte pluie peut écourter les étapes en extérieur"
+      ]
+    },
+    "wear": {
+      "title": "Quoi porter et emporter",
+      "preview": "Chaussures de marche, plusieurs couches et accessoires de saison",
+      "content": [
+        "Chaussures de marche confortables et antidérapantes",
+        "Vêtements en plusieurs couches pour les écarts de température en montagne",
+        "Veste légère ou coupe-vent (il fait plus frais qu'au centre de Séoul, en particulier au lac Sanjeong)",
+        "Protection solaire en été ; veste chaude et gants en hiver",
+        "Appareil photo ou téléphone pour les belles occasions de photo aux trois étapes"
+      ]
+    },
+    "cancellation": {
+      "title": "Annulation",
+      "preview": "Annulation gratuite jusqu'à 24 heures avant le début du circuit.",
+      "content": [
+        "Annulation gratuite jusqu'à 24 heures avant le début du circuit.",
+        "Les annulations le jour même et les absences ne sont pas remboursables."
+      ]
+    }
+  },
+  "pickupDropoff": {
+    "meeting_points": [
+      {
+        "name": "Station Hongik University, sortie 4",
+        "time": "07:50",
+        "note": "Premier point de rendez-vous à Séoul ; merci d'arriver 10 minutes en avance."
+      },
+      {
+        "name": "Myeongdong Shinsegae Duty Free",
+        "time": "08:30",
+        "note": "Deuxième point de rendez-vous à Séoul."
+      },
+      {
+        "name": "Station Dongdaemun History & Culture Park, sortie 10",
+        "time": "08:40",
+        "note": "Troisième point de rendez-vous à Séoul."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Station Dongdaemun History & Culture Park",
+        "note": "Point de dépose habituel à Séoul."
+      },
+      {
+        "name": "Station Myeongdong",
+        "note": "Point de dépose habituel à Séoul."
+      },
+      {
+        "name": "Station Hongik University",
+        "note": "Point de dépose habituel à Séoul."
+      }
+    ]
+  }
+}

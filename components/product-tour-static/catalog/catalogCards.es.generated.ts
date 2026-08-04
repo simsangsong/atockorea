@@ -258,22 +258,22 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "Busan→Gyeongju: Capital Antigua",
-      "subtitle": "Las seis paradas clásicas de Gyeongju a un ritmo más tranquilo y con regreso más temprano.",
+      "subtitle": "Minivan de grupo pequeño con guía de habla inglesa — Ahopsan, Bulguksa (UNESCO), Gyochon + Casa del Clan Choi + Woljeonggyo, Daereungwon + Hwangnidan-gil y el Museo Nacional de Gyeongju (en invierno, Donggung y Wolji de noche) en un solo día.",
       "region": "Gyeongju (desde Busán)",
-      "duration": "10,5 horas",
+      "duration": "11,5 horas",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "Grupo pequeño",
-        "Ritmo más tranquilo",
-        "Desde Busán",
-        "Regreso más temprano"
+        "Ritmo tranquilo",
+        "Desde Busan",
+        "Paisaje nocturno en invierno"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
-      "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
+      "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
     },
     "price": {
       "amountLabel": ""
@@ -614,22 +614,24 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "Pocheon: Lago, Hierbas y Cantera",
-      "subtitle": "Lago de montaña, jardines de hierbas mediterráneos y una cantera convertida en parque de arte: la excursión de día más tranquila y estacional desde Seúl.",
-      "region": "Pocheon (Excursión de un día desde Seúl)",
+      "title": "Pocheon y Yeoncheon: lago, cascada y la cantera Art Valley",
+      "subtitle": "Un paseo alrededor de un lago rodeado de montañas, una cascada de 18 m sobre columnas basálticas y un lago esmeralda en una cantera: dos geositios de un Geoparque Mundial de la UNESCO en un solo día sin prisas desde Seúl.",
+      "region": "Pocheon y Yeoncheon (excursión de un día desde Seúl)",
       "duration": "10 horas",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "Naturaleza y Fotografía",
-        "Destacados de Temporada",
-        "Luces Románticas Nocturnas"
+        "Excursión de un día desde Seúl",
+        "Geoparque UNESCO",
+        "Cascada",
+        "Paseo junto al lago",
+        "Grupo reducido"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "Una relajada excursión estacional de un día desde Seúl a Pocheon, el campo de Gyeonggi conocido por sus lagos, jardines de hierbas y dramáticos paisajes de parque artístico. El recorrido combina las aguas rodeadas de montañas del Lago Sanjeong, los jardines de estilo mediterráneo y las luces nocturnas de Herb Island, y el observatorio de la cantera de Pocheon Art Valley accesible en monorraíl. Menos concurrido que la Isla Nami y pensado para disfrutar de la calma fotográfica en lugar de ir de atracción en atracción."
+      "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas."
     },
     "price": {
       "amountLabel": "54"

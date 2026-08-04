@@ -33,8 +33,16 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > ticket-included — ⚠ prices seeded pending owner review). Then
 > `node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour`.
 >
-> **⏳ 2026-08-04 (later still) — Gyeongju course revision:**
-> `2026-08-04-04-gyeongju-recourse.sql` refreshes copy / schedule / 6-locale
+> **⏳ 2026-08-04 (later still) — Pocheon course revision:**
+> `2026-08-04-05-pocheon-geopark-recourse.sql` (Herb Island dropped; Jaein Falls +
+> Idong-galbi lunch added; new 2-point pickup/drop-off; tours copy/schedule +
+> 6-locale detail_payload refresh) then
+> `2026-08-04-06-pocheon-geopark-staged-locales.sql` (de/fr/it/ru, INSERT-only).
+> After both: `node scripts/import-match-v18.mjs --single pocheon-sanjeong-lake-herb-island-art-valley`
+> — this also imports the NEW `jaein_falls` POI (KB v1.30) into `match_pois`.
+>
+> **⏳ 2026-08-04 (last) — Gyeongju course revision:**
+> `2026-08-04-07-gyeongju-recourse.sql` refreshes copy / schedule / 6-locale
 > `detail_payload` for `from-busan-gyeongju-ancient-capital-day-tour`
 > (Gyochon+Choi House+Woljeonggyo and Daereungwon+Hwangnidan-gil as walked
 > blocks; museum moved last with a Nov–Feb Donggung & Wolji night alternate).

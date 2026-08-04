@@ -1,0 +1,167 @@
+{
+  "_note": "EN carryover UI blocks for the de/fr/it/ru staged locales of the revised Pocheon tour. The four itinerary stops and all product narrative live in ../<loc>.json — this file only holds the shell strings the builder reuses. Translate every human-readable value; keep keys, ids, icon names and CSS class values.",
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Überblick"
+    },
+    {
+      "id": "itinerary",
+      "label": "Reiseverlauf"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Bewertungen"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Lizenzierter lokaler Veranstalter",
+      "description": "Zugelassener koreanischer Reiseveranstalter mit vollem Versicherungsschutz",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Routenspezialisten",
+      "description": "Handverlesener Reiseverlauf, keine Standardrunde",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Durchdachte Gruppengröße",
+      "description": "Passend zur Route dimensioniert",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Sofort",
+      "title": "Sofortige Bestätigung",
+      "detail": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
+    },
+    {
+      "timing": "12 Stunden vorher",
+      "title": "Erinnerung 12 Stunden vorher",
+      "detail": "Wetterupdate und etwaige Routenanpassungen"
+    },
+    {
+      "timing": "Am Vorabend",
+      "title": "Finale Abholinformationen",
+      "detail": "Genaue Abholzeit und Kontakt zum Fahrer"
+    },
+    {
+      "timing": "Am Morgen der Tour",
+      "title": "Routenhinweise am Tourtag",
+      "detail": "Morgendliches Briefing auf Basis der aktuellen Bedingungen"
+    },
+    {
+      "timing": "Während der Tour",
+      "title": "Tipps an jeder Station",
+      "detail": "Begleitung in Echtzeit an jedem Ort"
+    },
+    {
+      "timing": "Nach der Tour",
+      "title": "Betreuung nach der Tour",
+      "detail": "Nachfassen und Empfehlungen"
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Live-Wetteranbindung"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Täglich aktualisiert"
+    }
+  },
+  "practicalCarryover": {
+    "pickup": {
+      "title": "Abholung & Rückgabe",
+      "preview": "Treffpunkte in Seoul; Abfahrt zwischen 08:00 und 09:00",
+      "content": [
+        "Abholung in der Regel an der Station Hongik University (Ausgang 4), bei Myeongdong Shinsegae Duty Free und an der Station Dongdaemun History & Culture Park (Ausgang 10)",
+        "Abfahrt in der Regel zwischen 07:50 und 09:00 ab dem ersten Treffpunkt",
+        "Bitte seien Sie mindestens 10 Minuten früher an Ihrem gewählten Treffpunkt",
+        "Rückgabe an denselben Treffpunkten in Seoul",
+        "Voraussichtliche Rückkehr je nach Verkehr zwischen 18:30 und 19:30",
+        "Dies ist ein Gruppenformat mit fester Route; die Reisenden erreichen den Treffpunkt selbstständig"
+      ]
+    },
+    "weather": {
+      "title": "Wetterregelung",
+      "preview": "Ausgeprägte jahreszeitliche Vielfalt; Ersatzprogramme sind üblich",
+      "content": [
+        "Frühling (März bis Juni): Kirschblüte, Lavendel kurz vor dem Höhepunkt, optional Erdbeerfarm",
+        "Sommer (Juni bis August): Lavendelhöhepunkt auf Herb Island von Mitte Juni bis Juli; mit Schwüle und möglichem Regen rechnen",
+        "Herbst (September bis November): Pink-Muhly-Gras, Silbergras am Sanjeong, Herbstlaub im Art Valley",
+        "Winter (Dezember bis Februar): mögliche Eisaktivitäten am Sanjeong (wetterabhängig), die Lichter auf Herb Island leuchten weiterhin, optional Eiswand-Café",
+        "Leichter Regen: Die Tour findet in der Regel statt; starker Regen kann Aufenthalte im Freien verkürzen"
+      ]
+    },
+    "wear": {
+      "title": "Kleidung & Ausrüstung",
+      "preview": "Wanderschuhe, Zwiebellook und Extras je nach Jahreszeit",
+      "content": [
+        "Bequeme Wanderschuhe mit gutem Grip",
+        "Kleidung im Zwiebellook für die Temperaturwechsel in den Bergen",
+        "Leichte Jacke oder Windbreaker (kühler als das Zentrum von Seoul, besonders am Sanjeong-See)",
+        "Sonnenschutz im Sommer; warme Jacke und Handschuhe im Winter",
+        "Kamera oder Smartphone für die starken Fotomotive an allen drei Stationen"
+      ]
+    },
+    "cancellation": {
+      "title": "Stornierung",
+      "preview": "Kostenlose Stornierung bis 24 Stunden vor Tourbeginn.",
+      "content": [
+        "Kostenlose Stornierung bis 24 Stunden vor Tourbeginn.",
+        "Stornierungen am selben Tag und Nichterscheinen werden nicht erstattet."
+      ]
+    }
+  },
+  "pickupDropoff": {
+    "meeting_points": [
+      {
+        "name": "Station Hongik University Ausgang 4",
+        "time": "07:50",
+        "note": "Erster Treffpunkt in Seoul; bitte 10 Minuten früher da sein."
+      },
+      {
+        "name": "Myeongdong Shinsegae Duty Free",
+        "time": "08:30",
+        "note": "Zweiter Treffpunkt in Seoul."
+      },
+      {
+        "name": "Station Dongdaemun History & Culture Park Ausgang 10",
+        "time": "08:40",
+        "note": "Dritter Treffpunkt in Seoul."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Station Dongdaemun History & Culture Park",
+        "note": "Standard-Rückgabepunkt in Seoul."
+      },
+      {
+        "name": "Station Myeongdong",
+        "note": "Standard-Rückgabepunkt in Seoul."
+      },
+      {
+        "name": "Station Hongik University",
+        "note": "Standard-Rückgabepunkt in Seoul."
+      }
+    ]
+  }
+}
