@@ -204,6 +204,47 @@ describe('shared Cockpit', () => {
 
   // TIER 0 P0 — a guest photo/file must be visible to the Korean-only driver,
   // not collapsed into an empty grey bubble.
+  /**
+   * 2026-08-04 scenario audit — the speak filter only passed 'customer', so a
+   * guest signal capsule (sender_role 'system': 늦어요·길잃음) rendered
+   * silently while the driver watched the road. Signals speak now; other
+   * system chatter (ledger capsules, confirmations) stays text-only.
+   */
+  it('speaks a guest signal capsule in Korean, and keeps other system chatter silent', async () => {
+    const fetchMock = jest.fn().mockResolvedValue({ ok: true, json: async () => ({}) });
+    const origFetch = global.fetch;
+    global.fetch = fetchMock as unknown as typeof fetch;
+    try {
+      mockChannelState.messages = [
+        guestMsg({
+          id: 'sig-1',
+          sender_role: 'system',
+          source_text: '길을 잃었어요',
+          metadata: { kind: 'guest_lost', signal_type: 'lost_me' },
+        }),
+        guestMsg({
+          id: 'sys-1',
+          sender_role: 'system',
+          source_text: '지출이 기록됐어요',
+          metadata: { kind: 'extra_logged' },
+        }),
+      ];
+      render(<Cockpit {...base} />);
+      await waitFor(() =>
+        expect(fetchMock).toHaveBeenCalledWith(
+          expect.stringContaining('tts?messageId=sig-1'),
+          expect.anything(),
+        ),
+      );
+      expect(fetchMock).not.toHaveBeenCalledWith(
+        expect.stringContaining('messageId=sys-1'),
+        expect.anything(),
+      );
+    } finally {
+      global.fetch = origFetch;
+    }
+  });
+
   it('renders a caption-less guest photo (not an empty bubble)', () => {
     mockChannelState.messages = [
       guestMsg({

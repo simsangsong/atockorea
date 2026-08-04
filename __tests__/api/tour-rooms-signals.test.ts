@@ -125,6 +125,10 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
       expect.anything(),
       expect.objectContaining({ type: 'signal', payload: expect.objectContaining({ signal: 'rest_stop' }) }),
     );
+    // 2026-08-04 — the quiet ones were the urgent ones: EVERY guest signal
+    // rings the staff device now, not just the four location-bearing types.
+    const driverPushMock = jest.requireMock('@/lib/tour-room/guestPush').sendDriverRoomPush as jest.Mock;
+    expect(driverPushMock).toHaveBeenCalledTimes(1);
   });
 
   it('lost with coords writes a lost_me pin with a 30min TTL + maps link', async () => {
@@ -144,6 +148,9 @@ describe('POST /api/tour-rooms/[bookingId]/signals', () => {
     const msg = db.inserts.tour_room_messages[0];
     expect((msg.translations as Record<string, string>).en).toContain('maps.google.com');
     expect((await res.json()).pin_id).toBe('tour_room_pins-1');
+    // A lost guest must ring the operator in the nav app (2026-08-04).
+    const driverPushMock = jest.requireMock('@/lib/tour-room/guestPush').sendDriverRoomPush as jest.Mock;
+    expect(driverPushMock).toHaveBeenCalledTimes(1);
   });
 
   it('rally_overdue inserts once and dedupes after (P-D6)', async () => {

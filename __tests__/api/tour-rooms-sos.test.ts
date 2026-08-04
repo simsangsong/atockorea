@@ -28,6 +28,9 @@ jest.mock('@/lib/tour-room/realtime', () => ({
 jest.mock('@/lib/tour-ops/push', () => ({
   sendOpsPush: jest.fn(async () => ({ sent: 0, pruned: 0 })),
 }));
+jest.mock('@/lib/tour-room/guestPush', () => ({
+  sendDriverRoomPush: jest.fn(async () => ({ sent: 0, pruned: 0 })),
+}));
 
 const getAuthUserMock = getAuthUser as jest.Mock;
 const requireAdminMock = requireAdmin as jest.Mock;
@@ -147,6 +150,12 @@ describe('POST /api/tour-rooms/[bookingId]/sos (T7.3)', () => {
     const push = (sendOpsPush as jest.Mock).mock.calls[0][0];
     expect(push.title).toContain('SOS');
     expect(push.body).toContain('lost near the temple');
+    // 2026-08-04 — the staff device ON SITE rings too, with a generic body:
+    // the note stays off the lock screen, and the remote desk is no longer
+    // the only one paged.
+    const driverPushMock = jest.requireMock('@/lib/tour-room/guestPush').sendDriverRoomPush as jest.Mock;
+    expect(driverPushMock).toHaveBeenCalledTimes(1);
+    expect(driverPushMock.mock.calls[0][2].body).not.toContain('lost near the temple');
   });
 
   it('a location-less SOS still goes out (denied permission path)', async () => {
