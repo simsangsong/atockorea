@@ -119,6 +119,64 @@ describe('RoomDrawer (U4-D5)', () => {
     expect(onClose).toHaveBeenCalled();
   });
 
+  /**
+   * T3 (§O ⑥) — one Esc used to close BOTH layers: the lightbox listens on
+   * document, the drawer on window, and the key reached them in that order.
+   * The topmost layer must consume the key; the layer beneath waits its turn.
+   * (Dispatched on body so the event actually travels document → window, the
+   * same path a real keypress takes from a focused element.)
+   */
+  it('Escape peels layers one at a time: lightbox first, drawer second', async () => {
+    mockMedia();
+    const onClose = jest.fn();
+    mount({ onClose });
+    await waitFor(() => expect(screen.getByTestId('drawer-images')).toBeInTheDocument());
+    fireEvent.click(screen.getByAltText('lunch.webp'));
+    expect(screen.getByTestId('lightbox')).toBeInTheDocument();
+
+    fireEvent.keyDown(document.body, { key: 'Escape' });
+    expect(screen.queryByTestId('lightbox')).not.toBeInTheDocument();
+    expect(onClose).not.toHaveBeenCalled(); // the drawer stayed
+
+    fireEvent.keyDown(document.body, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalled();
+  });
+
+  /**
+   * T3 — the media route has been keyset-paginated since U4-D5 and the drawer
+   * never sent the cursor: the 31st photo was unreachable. The engine existed
+   * with no caller — this pins the caller.
+   */
+  it('pages a media kind through nextCursor and stops when the server says done', async () => {
+    const calls: string[] = [];
+    const IMG2 = { ...IMG, id: 'm9', url: 'https://cdn/y.webp', name: 'sunset.webp' };
+    global.fetch = jest.fn((input: RequestInfo | URL) => {
+      const url = typeof input === 'string' ? input : String(input);
+      calls.push(url);
+      const paged = url.includes('cursor=');
+      const items = url.includes('kind=image') ? (paged ? [IMG2] : [IMG]) : [];
+      const nextCursor = url.includes('kind=image') && !paged ? '2026-07-27T00:00:00Z' : null;
+      return Promise.resolve({
+        ok: true,
+        status: 200,
+        json: () => Promise.resolve({ items, nextCursor }),
+      } as Response);
+    }) as unknown as typeof fetch;
+
+    mount();
+    await waitFor(() => expect(screen.getByTestId('drawer-images-more')).toBeInTheDocument());
+    fireEvent.click(screen.getByTestId('drawer-images-more'));
+
+    await waitFor(() => expect(screen.getByAltText('sunset.webp')).toBeInTheDocument());
+    expect(screen.getByAltText('lunch.webp')).toBeInTheDocument(); // appended, not replaced
+    expect(calls.some((u) => u.includes('kind=image') && u.includes('cursor=2026-07-27T00%3A00%3A00Z'))).toBe(true);
+    // The server said done (nextCursor null) — the affordance withdraws.
+    expect(screen.queryByTestId('drawer-images-more')).not.toBeInTheDocument();
+    // Kinds whose first page had no cursor never grew a button.
+    expect(screen.queryByTestId('drawer-files-more')).not.toBeInTheDocument();
+    expect(screen.queryByTestId('drawer-links-more')).not.toBeInTheDocument();
+  });
+
   describe('install tile (T-D2)', () => {
     afterEach(() => __setInstallPromptStateForTests({ deferred: null, installed: false }));
 
