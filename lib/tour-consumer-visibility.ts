@@ -107,11 +107,20 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // was enforced by this blocklist + the landing-planner Seoul gate only).
   //
   // ── Klook onboarding prep 2026-06-29 ──────────────────────────────────────
-  // Catalog narrowed to exactly 12 active SKUs for the Klook listing. The 19
+  // Catalog narrowed to exactly 12 active SKUs for the Klook listing. The
   // slugs below are hidden from every consumer surface (chatbot catalog, home,
   // sitemap, agent channel, matcher) AND set is_active=false / is_published=false
   // in the AtoC DB (migration 20260629000000_klook_prep_activate_12_tours.sql).
   // Reversible: remove a slug here + flip its DB flags back to re-list it.
+  //
+  // ── Jeju course revision 2026-08-04 (owner instruction) ───────────────────
+  // Hydrangea season SKUs retired (added below); the three regional Jeju day
+  // tours re-opened (removed from this list): jeju-eastern-unesco-spots-day-tour
+  // (re-coursed Manjanggul→Seongeup→lunch→Seongsan→haenyeo→Hamdeok),
+  // jeju-southern-top-unesco-spots-tour, southwest-hallasan-osulloc-aewol.
+  // DB half staged in supabase/pending-db-apply/2026-08-04-*.sql.
+  "jeju-hydrangea-festival-tour-east-route",
+  "jeju-hydrangea-festival-tour-southwest-route",
   "busan-cruise-shore-excursion-bus-tour",
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
@@ -119,10 +128,7 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "from-busan-gyeongju-ancient-capital-day-tour",
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
-  "jeju-eastern-unesco-spots-day-tour",
-  "jeju-southern-top-unesco-spots-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
-  "southwest-hallasan-osulloc-aewol",
   "from-incheon-seoul-day-tour-cruise-guests",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",

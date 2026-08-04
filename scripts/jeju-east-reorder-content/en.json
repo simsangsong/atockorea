@@ -1,0 +1,87 @@
+{
+  "pickup": {
+    "whyOnRoute": "Four pickup points cover Jeju City's main hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Manjanggul right after its 09:00 opening — inside the lava tube ahead of the midday tour-bus wave.",
+    "descReplace": [
+      [
+        "eastward Route 1132 toward Hamdeok",
+        "eastward toward Gimnyeong and the Manjanggul Lava Tube"
+      ]
+    ]
+  },
+  "manjang": {
+    "whyOnRoute": "**The day's opening act — and its first UNESCO World Natural Heritage site.** Leaving Jeju City right after pickup puts the coach at Manjanggul close to its 09:00 opening, when the lava tube is at its quietest: you walk the 1 km passage ahead of the midday tour-bus crowds, in the cave's constant 11–13°C coolness while legs are freshest. It also opens the day's UNESCO storyline — the 'Jeju Volcanic Island and Lava Tubes' property you enter here is completed in the afternoon at Seongsan Ilchulbong, part of the same single 2007 inscription. Should Manjanggul be closed for maintenance or weather, we substitute **Micheon Cave at Ilchul Land**, part of the same lava-tube system, to preserve the cave experience."
+  },
+  "seongeup": {
+    "whyOnRoute": "**The day's only inland Joseon-era heritage site and its geographic pivot point.** Sitting between Gimnyeong's lava country and the Seongsan coast (inland Pyoseon), it turns plain driving time into a meaningful stop. After the morning's underground geology at Manjanggul, the stone walls and thatched roofs of this National Folklore Cultural Heritage village and its 600-year-old old trees add a 'leisurely cultural walk' before the afternoon's volcanic and haenyeo heritage, balancing the day so it is not just a pilgrimage of photo spots.",
+    "descReplace": [
+      [
+        "this stop gives a grounded cultural contrast after Hamdeok's coast",
+        "this stop gives a grounded cultural contrast after the morning inside Manjanggul's lava tube"
+      ]
+    ]
+  },
+  "lunch": {
+    "whyOnRoute": "**A recharge right before the UNESCO climax.** At a local restaurant on the road from Seongeup to Seongsan, you have lunch of eastern Jeju local fare such as black pig, abalone hot pot, and seasonal seafood (meal not included). It is the spot to fill up before the most active stretch of the afternoon — climbing Seongsan and the haenyeo diving performance — with the easy beach finale at Hamdeok still to come."
+  },
+  "seongsan": {
+    "whyOnRoute": "**The second of the day's two World Natural Heritage sites — the one that completes the inscription.** After lunch you climb Seongsan Ilchulbong (optional climb, about 30 min round trip) to see the tuff cone that rose from an underwater eruption about 5,000 years ago. Together with the Manjanggul lava tube you walked in the morning — part of the same single 2007 property — it closes the 'Volcanic Island and Lava Tubes' narrative, and the climb leads straight into the haenyeo diving performance held in the sea of the same area."
+  },
+  "hamdeok": {
+    "whyOnRoute": "**The seaside finale — and the closest stop to Jeju City.** After the UNESCO afternoon at Seongsan, the day winds down at Hamdeok Seoubong Beach: emerald water, white sand, and a stretch of Olle Trail Course 19 in the softer late-afternoon light, when the day-trip crowds have thinned. Because Hamdeok sits on the coastal road back to Jeju City, ending here also makes the ride home the shortest of the day — an easy landing before drop-off.",
+    "descReplace": [
+      [
+        "give guests an easy first look at Jeju's coastal scenery",
+        "give guests an easy, unhurried look at Jeju's coastal scenery"
+      ],
+      [
+        "works well as a relaxed photo and orientation point at the beginning of the eastern route",
+        "works well as a relaxed photo and wind-down point at the end of the eastern route"
+      ]
+    ]
+  },
+  "dropoff": {
+    "whyOnRoute": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Hamdeok transit ~55 min covers all 3 points without backtracking.",
+    "description": "**Drop-off mirrors the morning pickup** with an optional Dongmun Market end-of-day stop: **Dongmun Traditional Market (동문시장)** is a ~25-min coach ride from Hamdeok Beach and offers Jeju's most popular evening market for **fresh seafood, Jeju tangerine products, and street-food dinner options** — guests can choose to drop here for independent dining + market shopping or continue to **Jeju City Hall** and **Jeju International Airport** drop-off points. \n\nEstimated arrival: **Dongmun Market ~18:00, City Hall ~18:15, Airport ~18:30**. Same-day evening flights from JIA (last departure ~21:30) are typically viable from this drop-off timing."
+  },
+  "routePhases": [
+    {
+      "phase": "Pickup and eastbound departure",
+      "duration": "about 1 hour",
+      "description": "Pickup at four points across Jeju City (08:30–09:05), then a direct transfer east to the Manjanggul Lava Tube in Gimnyeong."
+    },
+    {
+      "phase": "UNESCO lava tube before the crowds",
+      "duration": "about 1.5 hours",
+      "description": "Manjanggul Lava Tube (UNESCO World Natural Heritage, 55 min) right after opening — the quietest hour inside the cave — then inland to Seongeup."
+    },
+    {
+      "phase": "Joseon heritage village + lunch",
+      "duration": "about 2 hours",
+      "description": "Seongeup Folk Village (Joseon-era National Folklore Cultural Heritage, 60 min) → local restaurant near Seongsan — black pig, abalone hot pot, seasonal seafood. Lunch not included."
+    },
+    {
+      "phase": "Seongsan UNESCO core + haenyeo",
+      "duration": "about 2.5 hours",
+      "description": "Seongsan Ilchulbong (optional climb) → haenyeo diving performance in the sea below the peak (Haenyeo Museum if canceled)."
+    },
+    {
+      "phase": "Beach finale and return",
+      "duration": "about 2 hours",
+      "description": "Hamdeok Seoubong Beach in the late-afternoon light (60 min) → short coastal transfer back to Jeju City + drop-off at two points and Dongmun Market."
+    }
+  ],
+  "routeShapeSubtitle": "An East Jeju loop that runs the island's two UNESCO World Natural Heritage sites in a single day — entering the Manjanggul lava tube right after opening, ahead of the crowds, and completing the same 2007 inscription at Seongsan Ilchulbong in the afternoon. Between them sits the Joseon-era Seongeup Folk Village; after them, the haenyeo diving performance (a UNESCO intangible heritage) and a golden-hour finish at Hamdeok Beach, the closest stop to Jeju City.",
+  "seo": {
+    "metaDescription": "9-hour East Jeju small-group loop: Manjanggul (UNESCO) at opening time, Seongeup Folk Village (Joseon folk heritage), Seongsan Ilchulbong (UNESCO), a haenyeo diving performance, and a Hamdeok Beach finale. All admissions included.",
+    "description": "9-hour East Jeju small-group day tour: Manjanggul (UNESCO) → Seongeup Folk Village → lunch → Seongsan Ilchulbong (UNESCO) → haenyeo diving performance → Hamdeok Beach. All admissions included, certified guide."
+  },
+  "catalog": {
+    "subtitle": "Small-group minibus with English/Chinese guide — Manjanggul (UNESCO) in its quiet opening hour, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and a Hamdeok Beach finale in a 9-hour eastern route.",
+    "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group — now routed cave-first: Manjanggul right after opening (the quietest hour in the lava tube), Seongeup Folk Village, Seongsan Ilchulbong and the haenyeo diving performance (Haenyeo Museum if canceled), then a late-afternoon finale at Hamdeok Seoubong Beach. Two UNESCO World Natural Heritage sites inscribed together in 2007, all admissions included, certified English/Chinese-speaking guide."
+  },
+  "whyNewItem": {
+    "label": "Cave first, beach last — the order is the point",
+    "detail": "Manjanggul opens at 09:00 and is emptiest in its first hour, so the route goes there directly from pickup — you walk the lava tube before the midday tour-bus wave, while the 11–13°C cool is a refreshment rather than a chill. The day then builds through Seongeup and Seongsan to the haenyeo performance, and closes at Hamdeok Beach in the soft late-afternoon light — the closest stop to Jeju City, which keeps the final transfer the shortest of the day."
+  },
+  "pdNotes": ["Return usually runs around 18:00–18:30."]
+}

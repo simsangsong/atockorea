@@ -28,6 +28,16 @@ P-01 은 ⏸ 데이터 대기(PR #702 판정 — 픽업 장소 0건·시각 상�
 🔴 **X1 · X7 · X10 · UX-005 — 티켓의 처방이 반복해서 틀렸다.**
 **티켓은 *무엇이 문제인지*로만 읽고, 숫자는 직접 다시 재라.** 그리고 **0 을 초록으로 읽지 마라**(UX-000).
 
+## ✅ 완료: 제주 투어 코스 개편 (2026-08-04, 사장님 지시)
+
+수국(hydrangea) 상품 2종 내림 + 동/남/서남 제주 투어 3종 오픈. 가시성은 두 쪽이 한 세트다:
+`lib/tour-consumer-visibility.ts` 블록리스트(레포) + **`supabase/pending-db-apply/2026-08-04-*.sql`
+(⚠ DB 미적용 — DB 접근 세션에서 순서대로 적용 후 `import-match-v18.mjs --single` 3슬러그 재동기화)**.
+동부(`jeju-eastern-unesco-spots-day-tour`)는 **만장굴→성읍→점심→성산→해녀쇼→함덕**으로 재편
+(6로케일 전부, 변환기 `scripts/jeju-east-reorder-2026-08.mjs` + 콘텐츠 `scripts/jeju-east-reorder-content/`).
+남부·서남부는 v18(2026-06-24)에 이미 요청 코스와 일치했다 — **콘텐츠 재작성 금지, 플래그만**.
+de/fr/it/ru 상품 페이지는 설계상 EN 폴백(i18n 확장 트랙 사람 게이트) — 콘텐츠 로케일 실체는 6개.
+
 ## ✅ 완료: 스마트앱 **기능** 감사 — **F-1 · F0~F8 전 페이즈 종결**
 
 **요약·다음:** **`docs/NEXT-SESSION-SMARTAPP-FEATURE-AUDIT-2026-08-04.md`**

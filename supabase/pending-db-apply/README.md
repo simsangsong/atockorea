@@ -16,6 +16,15 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > **⏳ 2026-06-24 (later) — two new files pending:**
 > `2026-06-24-13-tour-cancellation-policy-backfill.sql` and
 > `2026-06-24-14-tour-lessidealfor-backfill-3-tours.sql` (both append-only, idempotent).
+>
+> **⏳ 2026-08-04 — Jeju course revision (owner instruction), two files pending:**
+> `2026-08-04-01-jeju-course-revision-activation.sql` (hydrangea SKUs
+> is_active/is_published → false; East/South/Southwest Jeju tours → true — pairs
+> with the `lib/tour-consumer-visibility.ts` blocklist change in the same commit)
+> then `2026-08-04-02-jeju-eastern-unesco-reorder.sql` (East tour re-coursed
+> Manjanggul→Seongeup→lunch→Seongsan→haenyeo→Hamdeok, 6-locale detail_payload
+> refresh). After both, run `node scripts/import-match-v18.mjs --single <slug>`
+> for the three re-opened slugs to restore/refresh their `match_tours` rows.
 
 ## Why this folder exists
 

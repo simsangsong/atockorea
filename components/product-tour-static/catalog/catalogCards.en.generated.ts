@@ -383,7 +383,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "Jeju East UNESCO Day Tour",
-      "subtitle": "Small-group minibus with English/Chinese guide — loop Hamdeok Beach, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and Manjanggul (UNESCO) in a 9-hour eastern route.",
+      "subtitle": "Small-group minibus with English/Chinese guide — Manjanggul (UNESCO) in its quiet opening hour, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and a Hamdeok Beach finale in a 9-hour eastern route.",
       "region": "Eastern Jeju",
       "duration": "9 hours",
       "stopsCount": 8,
@@ -400,7 +400,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide."
+      "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group — now routed cave-first: Manjanggul right after opening (the quietest hour in the lava tube), Seongeup Folk Village, Seongsan Ilchulbong and the haenyeo diving performance (Haenyeo Museum if canceled), then a late-afternoon finale at Hamdeok Seoubong Beach. Two UNESCO World Natural Heritage sites inscribed together in 2007, all admissions included, certified English/Chinese-speaking guide."
     },
     "price": {
       "amountLabel": "49"

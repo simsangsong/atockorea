@@ -6,7 +6,7 @@
   "product_id": "jeju-eastern-unesco-spots-day-tour",
   "seo": {
     "pageTitle": "동제주 유네스코 명소 소그룹 투어 | AtoC Korea",
-    "metaDescription": "9시간 동제주 소그룹 루프: 함덕해변, 성읍민속마을(유네스코 민속), 성산일출봉(유네스코)과 만장굴(유네스코) 두 세계자연유산, 해녀 물질공연. 전 입장료 포함.",
+    "metaDescription": "9시간 동제주 소그룹 루프: 개장 직후의 만장굴(유네스코), 성읍민속마을, 성산일출봉(유네스코), 해녀 물질공연, 함덕해변 피날레. 전 입장료 포함.",
     "primaryKeywords": [
       "제주 동부 유네스코 투어",
       "성산일출봉 투어",
@@ -16,13 +16,13 @@
     ],
     "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "제주 동부 유네스코 명소 소그룹 투어 | AtoC Korea",
-    "description": "제주 동부 9시간 소그룹 일일 투어: 함덕해변 → 성읍민속마을 → 점심 → 성산일출봉(유네스코) → 해녀 물질공연 → 만장굴(유네스코). 전 입장료 포함, 공인 가이드."
+    "description": "제주 동부 9시간 소그룹 일일 투어: 만장굴(유네스코) → 성읍민속마을 → 점심 → 성산일출봉(유네스코) → 해녀 물질공연 → 함덕해변. 전 입장료 포함, 공인 가이드."
   },
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "제주 동부 유네스코 일일 투어",
     "priceLabel": "",
-    "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드.",
+    "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다 — 이제 동굴을 먼저 갑니다: 개장 직후 가장 한적한 만장굴, 성읍민속마을, 성산일출봉과 해녀 물질공연(취소 시 해녀박물관), 그리고 늦은 오후의 함덕 서우봉해변 피날레. 2007년 함께 등재된 두 유네스코 세계자연유산, 전 입장료 포함, 공인 영어·중국어 가이드.",
     "tags": [
       "소그룹",
       "jeju",
@@ -34,7 +34,7 @@
     "rating": 0,
     "reviewCount": 0,
     "slug": "jeju-eastern-unesco-spots-day-tour",
-    "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·성산일출봉(유네스코)·해녀 물질공연·만장굴(유네스코)을 9시간 동부 루프로 일주합니다.",
+    "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 개장 직후의 한적한 만장굴(유네스코), 성읍민속마을, 성산일출봉(유네스코), 해녀 물질공연, 함덕해변 피날레를 9시간 동부 루프로 일주합니다.",
     "region": "동제주",
     "duration": "9시간",
     "stopsCount": 8,
@@ -138,181 +138,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-      "location": "함덕 서우봉해변",
-      "caption": "함덕 서우봉해변 — photo 1",
-      "alt": "함덕 서우봉해변 — gallery image 1"
-    },
-    {
-      "id": 2,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-      "location": "함덕 서우봉해변",
-      "caption": "함덕 서우봉해변 — photo 2",
-      "alt": "함덕 서우봉해변 — gallery image 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-      "location": "함덕 서우봉해변",
-      "caption": "함덕 서우봉해변 — photo 3",
-      "alt": "함덕 서우봉해변 — gallery image 3"
-    },
-    {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-      "location": "함덕 서우봉해변",
-      "caption": "함덕 서우봉해변 — photo 4",
-      "alt": "함덕 서우봉해변 — gallery image 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-      "location": "성읍민속마을 (유네스코 문화유산)",
-      "caption": "성읍민속마을 (유네스코 문화유산) — photo 1",
-      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 1"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-      "location": "성읍민속마을 (유네스코 문화유산)",
-      "caption": "성읍민속마을 (유네스코 문화유산) — photo 2",
-      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 2"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-      "location": "성읍민속마을 (유네스코 문화유산)",
-      "caption": "성읍민속마을 (유네스코 문화유산) — photo 3",
-      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 3"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-      "location": "성읍민속마을 (유네스코 문화유산)",
-      "caption": "성읍민속마을 (유네스코 문화유산) — photo 4",
-      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 4"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-      "location": "성읍민속마을 (유네스코 문화유산)",
-      "caption": "성읍민속마을 (유네스코 문화유산) — photo 6",
-      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 6"
-    },
-    {
-      "id": 10,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 1",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 1"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 2",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 2"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 3",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 3"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 4",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 4"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 5",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 5"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 6",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 6"
-    },
-    {
-      "id": 16,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-      "location": "성산일출봉 (유네스코 세계자연유산)",
-      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 12",
-      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 12"
-    },
-    {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 1",
-      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 1"
-    },
-    {
-      "id": 18,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 2",
-      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 2"
-    },
-    {
-      "id": 19,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 3",
-      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 3"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 4",
-      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 4"
-    },
-    {
-      "id": 21,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 5",
-      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 5"
-    },
-    {
-      "id": 22,
-      "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
       "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
       "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
     },
     {
-      "id": 23,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
@@ -320,12 +152,180 @@
       "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
     },
     {
-      "id": 24,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
       "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
       "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "성읍민속마을 (유네스코 문화유산)",
+      "caption": "성읍민속마을 (유네스코 문화유산) — photo 1",
+      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "성읍민속마을 (유네스코 문화유산)",
+      "caption": "성읍민속마을 (유네스코 문화유산) — photo 2",
+      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "성읍민속마을 (유네스코 문화유산)",
+      "caption": "성읍민속마을 (유네스코 문화유산) — photo 3",
+      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "성읍민속마을 (유네스코 문화유산)",
+      "caption": "성읍민속마을 (유네스코 문화유산) — photo 4",
+      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "성읍민속마을 (유네스코 문화유산)",
+      "caption": "성읍민속마을 (유네스코 문화유산) — photo 6",
+      "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 1",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 2",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 3",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 4",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 5",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 6",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+      "location": "성산일출봉 (유네스코 세계자연유산)",
+      "caption": "성산일출봉 (유네스코 세계자연유산) — photo 12",
+      "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 12"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 1",
+      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 1"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 2",
+      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 3",
+      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 4",
+      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+      "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+      "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 5",
+      "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "location": "함덕 서우봉해변",
+      "caption": "함덕 서우봉해변 — photo 1",
+      "alt": "함덕 서우봉해변 — gallery image 1"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "함덕 서우봉해변",
+      "caption": "함덕 서우봉해변 — photo 2",
+      "alt": "함덕 서우봉해변 — gallery image 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "함덕 서우봉해변",
+      "caption": "함덕 서우봉해변 — photo 3",
+      "alt": "함덕 서우봉해변 — gallery image 3"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "함덕 서우봉해변",
+      "caption": "함덕 서우봉해변 — photo 4",
+      "alt": "함덕 서우봉해변 — gallery image 4"
     }
   ],
   "itineraryStops": [
@@ -335,7 +335,7 @@
       "duration": "30분",
       "name": "픽업 (제주시 4개 지점)",
       "category": "픽업 — 제주 시내 호텔/허브 순서",
-      "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 함덕해변 도착(성수기 인파보다 이른 도착, 최적 조명 확보).",
+      "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 만장굴 도착(개장 직후의 가장 한적한 시간대에 입장).",
       "image": null,
       "highlights": [
         "**제주 시내 4개 픽업 포인트** — 공항, 시청, 하귀, 동문",
@@ -352,7 +352,7 @@
         "동문 픽업 ~09:30 — 5분",
         "1132번 도로 동쪽으로 함덕까지 — 약 30분"
       ],
-      "whyOnRoute": "4개 픽업 포인트가 제주 시내 주요 호텔+교통 구역 커버.",
+      "whyOnRoute": "4개 픽업 포인트가 제주 시내 주요 호텔+교통 구역을 커버합니다. 서→동 순서 탑승으로 만장굴 개장(09:00) 직후 도착 — 한낮 단체 관광버스 인파보다 먼저 용암동굴을 걷습니다.",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {},
@@ -361,78 +361,72 @@
     {
       "number": 2,
       "time": "≈ 09:50",
-      "duration": "60분",
-      "name": "함덕 서우봉해변",
-      "category": "해안",
-      "description": "**함덕 서우봉 해변(함덕 서우봉 해변)** 은 **제주 3대 해변**으로 꾸준히 꼽히는 명소로, **약 500 m 길이의 메인 백사장(연결된 3개 만을 합치면 약 900 m)** 의 흰 모래와, 그 동쪽 끝에서 곧장 솟아오른 **기생화산 서우봉(서우봉, '소가 머리를 돌린 모양' 측화산)** 의 대비가 시그너처입니다. 바다 색의 시그너처인 **에메랄드빛 청록**은 얕은 산호 모래 해저가 맑은 물을 통해 반사되어 만들어내며, 한국에서는 보기 힘든 지중해풍 색감 대비가 함덕을 국내 최고의 사진 명소 가운데 하나로 만들었습니다. \n\n이 해변은 여름 성수기에는 **하루 최대 5만 명의 방문객**을 수용하지만, 봄·가을은 일반적으로 한적합니다. **서우봉**(정상까지 약 1시간)에는 **3~4월에 노란 유채꽃 비탈**이 펼쳐지며, **만장굴 방향 동쪽으로 펼쳐지는 파노라마 전망**을 제공합니다. **역사적 층위**: 서우봉 서쪽 해안 절벽에는 **일제강점기 일본군이 굴착한 진지동굴**이 남아 있습니다 — 가미카제 자살 보트 기지와 탄약고로 사용되던 시설로, 성산일출봉의 18개 동굴과 유사합니다. \n\n이 동굴은 일반에 개방되어 있으며 역사적 맥락을 설명하는 안내판이 설치되어 있습니다. 이 해변은 **제주 올레 19코스(조천 → 김녕)** 의 핵심 구간으로, 시그너처 청·주황 리본 표시가 따라 이어집니다. **카페 델문도(델문도 카페)** 가 해변을 대표하는 거점으로, 넓은 테라스와 바다 전망 덕분에 인스타그래머와 가벼운 휴식 손님 모두에게 인기입니다. \n\n**무료 입장**이며, 1132번 도로를 따라 **제주국제공항에서 20 km / 차량 약 40분** 거리입니다.",
-      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "duration": "55분",
+      "name": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+      "category": "유네스코 세계자연유산 — 거문오름 용암동굴계 (2007년 등재)",
+      "description": "**만장굴(Manjanggul Lava Tube)**은 약 **8,000년 전 한라산 측화산인 거문오름에서 분출한 용암**이 만든 용암동굴로, **2007년 성산일출봉·한라산과 함께 '제주 화산섬과 용암동굴'이라는 이름으로 유네스코 세계자연유산에 등재**되었습니다. 성산일출봉과 **동일한 단일 등재 자산**에 속해, 이 투어는 하루에 **두 곳의 세계자연유산**을 함께 담습니다. \n\n전체 길이는 약 **7.4km**(연결 구간 포함 시 13~15km)로 세계 최대급 용암동굴이며, 주 통로는 **폭 18m·높이 23~25m**에 이릅니다. 천장 붕괴로 생긴 세 개의 입구 중 **제2입구 약 1km 구간만 일반에 개방**되어, 들어갔다 같은 길로 되돌아오는 **왕복 약 30~45분** 코스입니다. 개방 구간 끝에는 **높이 7.6m로 세계에서 가장 큰 용암석주**가 있어 만장굴의 상징적 포토 스폿입니다. \n\n동굴 내부는 **연중 11~13℃**로 유지되어 여름엔 시원하고 겨울엔 포근하지만, 바닥이 어둡고 다소 축축하므로 **겉옷과 미끄럼 방지 신발**을 권합니다. **국가 천연기념물**로도 지정되어 있습니다. 입장료는 **성인 ₩4,000(단체 ₩3,000) / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**, 매월 첫째 수요일 휴무입니다.",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "highlights": [
-        "**제주 3대 해변** — 에메랄드 청록 바다 + 흰 산호 모래",
-        "**메인 500 m 백사장** + 연결 3개 만(총 약 900 m)",
-        "**서우봉 기생화산** 정상까지 약 1시간 / 3~4월 노란 유채꽃 비탈",
-        "**일제강점기 일본군 진지동굴** — 가미카제 자살 보트 기지",
-        "**올레 19코스(조천 → 김녕)** — 청·주황 리본 표시",
-        "**카페 델문도** — 넓은 테라스, 해변, 시그너처 거점",
-        "여름 성수기 **하루 5만 명** 수용 / 봄·가을은 한적",
-        "**무료 입장** / 제주국제공항에서 20 km, 약 40분",
-        "한반도에서는 보기 드문 지중해풍 색감 대비"
+        "**2007년 유네스코 세계자연유산** — 성산일출봉과 같은 '제주 화산섬과 용암동굴' 등재",
+        "**하루에 세계자연유산 2곳** — 성산일출봉 + 만장굴",
+        "전체 길이 약 **7.4km**, 개방 구간 약 **1km**(왕복 약 30~45분)",
+        "개방 구간 끝 **높이 7.6m 세계 최대 용암석주**",
+        "주 통로 **폭 18m · 높이 23~25m** — 세계 최대급 용암동굴",
+        "**거문오름 용암동굴계** — 약 8,000년 전 형성, 국가 천연기념물",
+        "내부 **연중 11~13℃** — 여름 피서지, 겉옷 권장",
+        "입장료 **성인 ₩4,000 / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**"
       ],
       "timeUsed": [
-        "코치 도착 + 주차 — 약 5분",
-        "메인 해변 + 2번째 해변 산책 — 약 25분",
-        "WWII 동굴 외관 관람 — 약 10분",
-        "카페 델몬도 또는 해변 사진 — 약 15분",
-        "이동 완충 — 약 5분"
+        "주차 + 매표 + 입장 — 약 5분",
+        "제2입구 하강 + 동굴 진입 — 약 5분",
+        "개방 구간 1km 왕복(용암석주까지) — 약 30분",
+        "안내센터 용암동굴 형성 해설 — 약 10분",
+        "집결 + 이동 완충 — 약 5분"
       ],
-      "whyOnRoute": "**바다로 여는 오전 첫 정차.** 제주시 4개 지점 픽업 직후, 차량 약 40분 거리의 함덕 서우봉해변에서 하루를 엽니다. 에메랄드빛 바다와 흰 모래, 올레 19코스 도보 유산을 가볍게 즐긴 뒤, 동선은 내륙 성읍과 동부 끝 성산·만장굴로 이어집니다. 오전 이른 시간이라 여름 성수기에도 비교적 한적합니다.",
+      "whyOnRoute": "**하루를 여는 첫 정차이자 첫 번째 유네스코 세계자연유산.** 픽업 직후 곧장 동쪽으로 달려 만장굴 개장(09:00) 직후에 도착합니다 — 한낮 단체 관광버스 인파가 몰리기 전, 가장 한적한 시간대에 연중 11~13℃의 시원한 동굴 약 1km 구간을 다리가 가장 가벼운 오전에 걷습니다. 여기서 입장하는 '제주 화산섬과 용암동굴'(2007년 단일 등재 자산)의 서사는 오후 성산일출봉에서 완성됩니다. 만장굴이 정비·기상으로 폐쇄될 경우, 같은 용암동굴계의 **일출랜드 미천굴**로 대체해 동굴 체험을 유지합니다.",
       "_poi_meta": {
-        "poi_key": "hamdeok_seoubong_beach",
-        "kb_version": "1.19",
+        "poi_key": "manjanggul_lava_tube",
+        "kb_version": "1.29",
         "verified_date": "2026-04-29",
         "sources": [
-          "Jeju Olle Foundation — Trail Course 19 official map",
-          "VisitJeju — Hamdeok Seoubong Beach",
-          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
-          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
-          "Jocheon-eup local cultural office — Seoubong oreum trail records"
+          "visitjeju.net (Visit Jeju official)",
+          "english.visitkorea.or.kr",
+          "jeju.go.kr/geopark",
+          "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+          "Wikipedia Manjanggul (Dec 2025)"
         ]
       },
       "convenience": {
-        "restroom": "해변에 공중 화장실 및 샤워 시설 마련",
-        "parking": "공영 주차장(여름 유료)"
+        "restroom": "입구 안내센터에 화장실",
+        "parking": "입구 무료 주차장"
       },
       "smartNotes": {
-        "photo": "서우봉 실루엣을 곁들인 일몰이 클래식 컷이며, 서우봉 정상에서 내려다보는 항공 뷰는 백사장 곡선을 멋지게 담을 수 있습니다",
-        "facilities": "해안가에 카페 다수, 인근 편의점",
-        "tip": "협재나 김녕 해수욕장보다 한적한 편 / 동쪽의 델문도 카페 권역이 일몰 시간에 인기"
+        "photo": "개방 구간 끝의 **높이 7.6m 세계 최대 용암석주**가 상징 컷이며, 폭 18m·높이 23m의 긴 통로를 향한 원근 사진도 스케일이 압권입니다.",
+        "facilities": "입구 주차장 옆 안내센터에서 용암동굴 형성 과정을 설명합니다 — 입장 전 10분 관람을 권합니다. 동굴 내부에는 매점이 없습니다.",
+        "tip": "여름에도 겉옷을 챙기세요(내부 11~13℃). 바닥이 축축하고 어두우니 미끄럼 방지 신발이 좋습니다. 정비로 폐쇄될 수 있어 방문일 운영 여부를 미리 확인하세요."
       },
       "visitBasics": {
-        "hours": "해변 24시간 개방 / 7~8월 안전관리 수영 시즌(인명 구조원 배치)",
-        "closed": "연중무휴",
-        "admission": "무료",
-        "walking": "쉬움 — 평탄한 모래사장 / 서우봉 트레일은 보통(계단 포함)"
+        "hours": "09:00~18:00 (마지막 입장 17:10)",
+        "closed": "매월 첫째 수요일 / 폭우 시 임시 휴장",
+        "admission": "성인 4,000원(단체 3,000원) / 청소년·어린이 2,000원(단체 1,500원)",
+        "walking": "보통 — 평탄한 1km 왕복, 동굴 입구 계단 하강, 바닥이 다소 울퉁불퉁하고 축축"
       },
       "images": [
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
           "source": "atoc-korea"
         }
       ],
@@ -440,40 +434,32 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-          "location": "함덕 서우봉해변",
-          "caption": "함덕 서우봉해변 — photo 1",
-          "alt": "함덕 서우봉해변 — gallery image 1"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
+          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-          "location": "함덕 서우봉해변",
-          "caption": "함덕 서우봉해변 — photo 2",
-          "alt": "함덕 서우봉해변 — gallery image 2"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 2",
+          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-          "location": "함덕 서우봉해변",
-          "caption": "함덕 서우봉해변 — photo 3",
-          "alt": "함덕 서우봉해변 — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-          "location": "함덕 서우봉해변",
-          "caption": "함덕 서우봉해변 — photo 4",
-          "alt": "함덕 서우봉해변 — gallery image 4"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
+          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
         }
       ]
     },
     {
       "number": 3,
-      "time": "≈ 11:00",
+      "time": "≈ 11:15",
       "duration": "60분",
       "name": "성읍민속마을 (유네스코 문화유산)",
       "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
@@ -498,7 +484,7 @@
         "올레 골목 산책 + 사진 — 약 10분",
         "이동 완충 — 약 5분"
       ],
-      "whyOnRoute": "**오늘 코스 유일의 내륙 조선 시대 유산이자 지리적 전환점.** 함덕 해안에서 성산으로 향하는 길목(표선 내륙)에 위치해, 단순 주행 시간을 의미 있는 정차로 바꿉니다. 국가민속문화재 마을의 돌담·초가와 600년 노거수는 오후의 화산·해녀 유산과 대비되는 '여유로운 문화 도보'를 더해, 하루가 사진 명소 순례로만 흐르지 않도록 균형을 잡아 줍니다.",
+      "whyOnRoute": "**오늘 코스 유일의 내륙 조선 시대 유산이자 지리적 전환점.** 김녕의 용암 지대에서 성산 해안으로 향하는 길목(표선 내륙)에 위치해, 단순 주행 시간을 의미 있는 정차로 바꿉니다. 오전 만장굴의 지하 지질 탐방 뒤, 국가민속문화재 마을의 돌담·초가와 600년 노거수가 오후의 화산·해녀 유산에 앞서 '여유로운 문화 도보'를 더해, 하루가 사진 명소 순례로만 흐르지 않도록 균형을 잡아 줍니다.",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.19",
@@ -608,7 +594,7 @@
     },
     {
       "number": 4,
-      "time": "≈ 12:20",
+      "time": "≈ 12:40",
       "duration": "60분",
       "name": "점심 (제주 현지 식당)",
       "category": "점심 휴식 — 동제주 현지 음식",
@@ -627,7 +613,7 @@
         "주문 + 식사 — 약 45분",
         "코치로 성산일출봉 입구 이동 — 약 10분"
       ],
-      "whyOnRoute": "**유네스코 핵심 일정 직전의 재충전.** 성읍에서 성산으로 가는 길의 현지 식당에서 흑돼지·전복뚝배기·제철 해산물 등 동제주 향토 음식으로 점심을 듭니다(식사비 별도). 가장 활동적인 오후 — 성산 등반, 해녀 물질공연, 만장굴 — 에 들어가기 전 체력을 채우는 자리입니다.",
+      "whyOnRoute": "**유네스코 클라이맥스 직전의 재충전.** 성읍에서 성산으로 가는 길의 현지 식당에서 흑돼지·전복뚝배기·제철 해산물 등 동제주 향토 음식으로 점심을 듭니다(식사비 별도). 가장 활동적인 오후 구간 — 성산 등반과 해녀 물질공연 — 에 들어가기 전 체력을 채우는 자리이며, 마지막의 함덕 해변 산책은 한결 느긋하게 남겨 둡니다.",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {}
@@ -658,7 +644,7 @@
         "하산 — 약 20분",
         "선택: 해녀 공연 관람 (1일 1회 오후 2시, 악천후 시 취소 가능) — 약 10분"
       ],
-      "whyOnRoute": "**하루 두 세계자연유산의 첫 번째.** 점심 후 성산일출봉에 올라(선택 등반 왕복 약 30분) 약 5,000년 전 수중 분화로 솟은 응회구를 봅니다. 등반 직후 같은 권역 바다에서 열리는 해녀 물질공연으로 이어지고, 이어서 같은 2007년 등재 자산인 만장굴 용암동굴로 마무리해 '화산섬과 용암동굴' 서사를 하루에 완성합니다.",
+      "whyOnRoute": "**하루 두 세계자연유산의 두 번째 — 등재 서사를 완성하는 곳.** 점심 후 성산일출봉에 올라(선택 등반 왕복 약 30분) 약 5,000년 전 수중 분화로 솟은 응회구를 봅니다. 오전에 걸었던 만장굴과 **같은 2007년 단일 등재 자산**이므로 여기서 '화산섬과 용암동굴' 서사가 완성되고, 등반 직후 같은 권역 바다에서 열리는 해녀 물질공연으로 자연스럽게 이어집니다.",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.19",
@@ -915,73 +901,79 @@
     },
     {
       "number": 7,
-      "time": "≈ 16:30",
-      "duration": "55분",
-      "name": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-      "category": "유네스코 세계자연유산 — 거문오름 용암동굴계 (2007년 등재)",
-      "description": "**만장굴(Manjanggul Lava Tube)**은 약 **8,000년 전 한라산 측화산인 거문오름에서 분출한 용암**이 만든 용암동굴로, **2007년 성산일출봉·한라산과 함께 '제주 화산섬과 용암동굴'이라는 이름으로 유네스코 세계자연유산에 등재**되었습니다. 성산일출봉과 **동일한 단일 등재 자산**에 속해, 이 투어는 하루에 **두 곳의 세계자연유산**을 함께 담습니다. \n\n전체 길이는 약 **7.4km**(연결 구간 포함 시 13~15km)로 세계 최대급 용암동굴이며, 주 통로는 **폭 18m·높이 23~25m**에 이릅니다. 천장 붕괴로 생긴 세 개의 입구 중 **제2입구 약 1km 구간만 일반에 개방**되어, 들어갔다 같은 길로 되돌아오는 **왕복 약 30~45분** 코스입니다. 개방 구간 끝에는 **높이 7.6m로 세계에서 가장 큰 용암석주**가 있어 만장굴의 상징적 포토 스폿입니다. \n\n동굴 내부는 **연중 11~13℃**로 유지되어 여름엔 시원하고 겨울엔 포근하지만, 바닥이 어둡고 다소 축축하므로 **겉옷과 미끄럼 방지 신발**을 권합니다. **국가 천연기념물**로도 지정되어 있습니다. 입장료는 **성인 ₩4,000(단체 ₩3,000) / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**, 매월 첫째 수요일 휴무입니다.",
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "time": "≈ 16:35",
+      "duration": "60분",
+      "name": "함덕 서우봉해변",
+      "category": "해안",
+      "description": "**함덕 서우봉 해변(함덕 서우봉 해변)** 은 **제주 3대 해변**으로 꾸준히 꼽히는 명소로, **약 500 m 길이의 메인 백사장(연결된 3개 만을 합치면 약 900 m)** 의 흰 모래와, 그 동쪽 끝에서 곧장 솟아오른 **기생화산 서우봉(서우봉, '소가 머리를 돌린 모양' 측화산)** 의 대비가 시그너처입니다. 바다 색의 시그너처인 **에메랄드빛 청록**은 얕은 산호 모래 해저가 맑은 물을 통해 반사되어 만들어내며, 한국에서는 보기 힘든 지중해풍 색감 대비가 함덕을 국내 최고의 사진 명소 가운데 하나로 만들었습니다. \n\n이 해변은 여름 성수기에는 **하루 최대 5만 명의 방문객**을 수용하지만, 봄·가을은 일반적으로 한적합니다. **서우봉**(정상까지 약 1시간)에는 **3~4월에 노란 유채꽃 비탈**이 펼쳐지며, **만장굴 방향 동쪽으로 펼쳐지는 파노라마 전망**을 제공합니다. **역사적 층위**: 서우봉 서쪽 해안 절벽에는 **일제강점기 일본군이 굴착한 진지동굴**이 남아 있습니다 — 가미카제 자살 보트 기지와 탄약고로 사용되던 시설로, 성산일출봉의 18개 동굴과 유사합니다. \n\n이 동굴은 일반에 개방되어 있으며 역사적 맥락을 설명하는 안내판이 설치되어 있습니다. 이 해변은 **제주 올레 19코스(조천 → 김녕)** 의 핵심 구간으로, 시그너처 청·주황 리본 표시가 따라 이어집니다. **카페 델문도(델문도 카페)** 가 해변을 대표하는 거점으로, 넓은 테라스와 바다 전망 덕분에 인스타그래머와 가벼운 휴식 손님 모두에게 인기입니다. \n\n**무료 입장**이며, 1132번 도로를 따라 **제주국제공항에서 20 km / 차량 약 40분** 거리입니다.",
+      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "highlights": [
-        "**2007년 유네스코 세계자연유산** — 성산일출봉과 같은 '제주 화산섬과 용암동굴' 등재",
-        "**하루에 세계자연유산 2곳** — 성산일출봉 + 만장굴",
-        "전체 길이 약 **7.4km**, 개방 구간 약 **1km**(왕복 약 30~45분)",
-        "개방 구간 끝 **높이 7.6m 세계 최대 용암석주**",
-        "주 통로 **폭 18m · 높이 23~25m** — 세계 최대급 용암동굴",
-        "**거문오름 용암동굴계** — 약 8,000년 전 형성, 국가 천연기념물",
-        "내부 **연중 11~13℃** — 여름 피서지, 겉옷 권장",
-        "입장료 **성인 ₩4,000 / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**"
+        "**제주 3대 해변** — 에메랄드 청록 바다 + 흰 산호 모래",
+        "**메인 500 m 백사장** + 연결 3개 만(총 약 900 m)",
+        "**서우봉 기생화산** 정상까지 약 1시간 / 3~4월 노란 유채꽃 비탈",
+        "**일제강점기 일본군 진지동굴** — 가미카제 자살 보트 기지",
+        "**올레 19코스(조천 → 김녕)** — 청·주황 리본 표시",
+        "**카페 델문도** — 넓은 테라스, 해변, 시그너처 거점",
+        "여름 성수기 **하루 5만 명** 수용 / 봄·가을은 한적",
+        "**무료 입장** / 제주국제공항에서 20 km, 약 40분",
+        "한반도에서는 보기 드문 지중해풍 색감 대비"
       ],
       "timeUsed": [
-        "주차 + 매표 + 입장 — 약 5분",
-        "제2입구 하강 + 동굴 진입 — 약 5분",
-        "개방 구간 1km 왕복(용암석주까지) — 약 30분",
-        "안내센터 용암동굴 형성 해설 — 약 10분",
-        "집결 + 이동 완충 — 약 5분"
+        "코치 도착 + 주차 — 약 5분",
+        "메인 해변 + 2번째 해변 산책 — 약 25분",
+        "WWII 동굴 외관 관람 — 약 10분",
+        "카페 델몬도 또는 해변 사진 — 약 15분",
+        "이동 완충 — 약 5분"
       ],
-      "whyOnRoute": "**오늘 코스의 두 번째 유네스코 세계자연유산이자 자연 피날레.** 성산일출봉(트리플 유네스코 응회구)과 해녀 물질공연(무형문화유산)을 거친 뒤, 김녕에 위치한 만장굴은 성산에서 제주시로 돌아오는 동선 위에 자연스럽게 놓입니다. 성산일출봉과 **같은 2007년 단일 등재 자산**이므로, 두 곳을 하루에 묶으면 '화산섬과 용암동굴'이라는 유네스코 내러티브가 완성됩니다. 오후 늦은 시간대 배치는 **한낮 더위와 단체 혼잡을 피하고**, 야외 일정 뒤 **연중 11~13℃의 시원한 동굴**에서 하루를 마무리하는 쾌적한 흐름을 만듭니다. 만장굴이 정비·기상으로 폐쇄될 경우, 같은 용암동굴계의 **일출랜드 미천굴**로 대체해 동굴 체험을 유지합니다.",
+      "whyOnRoute": "**바다로 닫는 피날레 — 제주시에서 가장 가까운 정차지.** 성산의 유네스코 오후 일정을 마친 뒤, 함덕 서우봉해변에서 하루의 속도를 늦춥니다. 늦은 오후의 부드러운 빛 아래 에메랄드빛 바다와 흰 모래, 올레 19코스 한 구간을 걷습니다 — 당일 관광 인파가 빠져나간 시간대라 한결 한적합니다. 함덕은 제주시로 돌아가는 해안 도로 위에 있어, 여기서 마치면 귀환 이동이 하루 중 가장 짧습니다.",
       "_poi_meta": {
-        "poi_key": "manjanggul_lava_tube",
-        "kb_version": "1.29",
+        "poi_key": "hamdeok_seoubong_beach",
+        "kb_version": "1.19",
         "verified_date": "2026-04-29",
         "sources": [
-          "visitjeju.net (Visit Jeju official)",
-          "english.visitkorea.or.kr",
-          "jeju.go.kr/geopark",
-          "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
-          "Wikipedia Manjanggul (Dec 2025)"
+          "Jeju Olle Foundation — Trail Course 19 official map",
+          "VisitJeju — Hamdeok Seoubong Beach",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+          "Jocheon-eup local cultural office — Seoubong oreum trail records"
         ]
       },
       "convenience": {
-        "restroom": "입구 안내센터에 화장실",
-        "parking": "입구 무료 주차장"
+        "restroom": "해변에 공중 화장실 및 샤워 시설 마련",
+        "parking": "공영 주차장(여름 유료)"
       },
       "smartNotes": {
-        "photo": "개방 구간 끝의 **높이 7.6m 세계 최대 용암석주**가 상징 컷이며, 폭 18m·높이 23m의 긴 통로를 향한 원근 사진도 스케일이 압권입니다.",
-        "facilities": "입구 주차장 옆 안내센터에서 용암동굴 형성 과정을 설명합니다 — 입장 전 10분 관람을 권합니다. 동굴 내부에는 매점이 없습니다.",
-        "tip": "여름에도 겉옷을 챙기세요(내부 11~13℃). 바닥이 축축하고 어두우니 미끄럼 방지 신발이 좋습니다. 정비로 폐쇄될 수 있어 방문일 운영 여부를 미리 확인하세요."
+        "photo": "서우봉 실루엣을 곁들인 일몰이 클래식 컷이며, 서우봉 정상에서 내려다보는 항공 뷰는 백사장 곡선을 멋지게 담을 수 있습니다",
+        "facilities": "해안가에 카페 다수, 인근 편의점",
+        "tip": "협재나 김녕 해수욕장보다 한적한 편 / 동쪽의 델문도 카페 권역이 일몰 시간에 인기"
       },
       "visitBasics": {
-        "hours": "09:00~18:00 (마지막 입장 17:10)",
-        "closed": "매월 첫째 수요일 / 폭우 시 임시 휴장",
-        "admission": "성인 4,000원(단체 3,000원) / 청소년·어린이 2,000원(단체 1,500원)",
-        "walking": "보통 — 평탄한 1km 왕복, 동굴 입구 계단 하강, 바닥이 다소 울퉁불퉁하고 축축"
+        "hours": "해변 24시간 개방 / 7~8월 안전관리 수영 시즌(인명 구조원 배치)",
+        "closed": "연중무휴",
+        "admission": "무료",
+        "walking": "쉬움 — 평탄한 모래사장 / 서우봉 트레일은 보통(계단 포함)"
       },
       "images": [
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -989,41 +981,49 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
-          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 1",
+          "alt": "함덕 서우봉해변 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 2",
-          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 2",
+          "alt": "함덕 서우봉해변 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-          "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
-          "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 3",
+          "alt": "함덕 서우봉해변 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "location": "함덕 서우봉해변",
+          "caption": "함덕 서우봉해변 — photo 4",
+          "alt": "함덕 서우봉해변 — gallery image 4"
         }
       ]
     },
     {
       "number": 8,
-      "time": "≈ 17:45",
+      "time": "≈ 18:00",
       "duration": "30분",
       "name": "하차 (2개 지점 + 동문시장)",
       "category": "하차 — 제주 시내 허브 순서",
-      "description": "귀환 시 아침 픽업 경로와 동일하게 2개 지점에서 하차하며, 동문재래시장 앞에서도 하차 가능합니다. 동문시장에서는 제주 특산물과 간식을 둘러볼 수 있습니다.",
+      "description": "**하차는 아침 픽업 경로를 따라** 진행되며, 동문재래시장 하차 옵션이 있습니다. **동문재래시장**은 함덕해변에서 차량 약 25분 거리로, 신선한 해산물·감귤 특산품·길거리 음식이 모인 제주 대표 저녁 시장입니다 — 여기서 내려 자유 저녁 식사와 시장 구경을 하거나, **제주시청**·**제주국제공항** 하차 지점으로 이어갈 수 있습니다. \n\n예상 도착: **동문시장 약 18:00, 시청 약 18:15, 공항 약 18:30**. 제주공항 당일 저녁 항공편(막편 약 21:30)은 통상 무리 없이 이용 가능합니다.",
       "image": null,
       "highlights": [
         "**3개 하차 포인트** — 동문 시장, 시청, 공항",
         "**동문전통시장** — 제주의 대표 야시장 분위기, 해산물·감귤·길거리 음식",
-        "예상 도착: 동문 ~17:55, 시청 ~18:10, 공항 ~18:25",
+        "예상 도착: 동문 ~18:00, 시청 ~18:15, 공항 ~18:30",
         "**제주 국제공항 당일 저녁 항공편** 일반적으로 가능 (마지막 출발 ~21:30)",
         "하차 순서는 오전 픽업 역순과 일치"
       ],
@@ -1035,7 +1035,7 @@
         "코치로 공항 이동 — 약 15분",
         "공항 하차 — 5분"
       ],
-      "whyOnRoute": "동문 시장 하차 = 저녁으로 마무리하고 싶은 게스트를 위한 선택적 저녁 식사 장소.",
+      "whyOnRoute": "동문시장 하차 = 저녁 식사와 시장 구경으로 하루를 마치고 싶은 게스트를 위한 선택지. 시청·공항 하차가 호텔 구역과 당일 출발 항공편을 커버합니다. 함덕 이후 총 이동 약 55분으로 세 지점을 되돌아가기 없이 순회합니다.",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {},
@@ -1049,9 +1049,9 @@
       "theme": "출발"
     },
     {
-      "name": "함덕 서우봉 해변",
-      "type": "secondary",
-      "theme": "해변"
+      "name": "만장굴 (유네스코)",
+      "type": "primary",
+      "theme": "유네스코 용암동굴"
     },
     {
       "name": "성읍 민속마을",
@@ -1074,9 +1074,9 @@
       "theme": "해녀 무형유산"
     },
     {
-      "name": "만장굴 (유네스코)",
-      "type": "primary",
-      "theme": "유네스코 용암동굴"
+      "name": "함덕 서우봉 해변",
+      "type": "secondary",
+      "theme": "해변"
     },
     {
       "name": "제주 시내 하차",
@@ -1086,34 +1086,34 @@
   ],
   "routePhases": [
     {
-      "phase": "픽업 및 해안 출발",
+      "phase": "픽업 및 동쪽으로 출발",
       "duration": "약 1시간",
-      "description": "제주시 4개 지점 픽업(08:30~09:05) 후 함덕 서우봉해변으로 이동."
+      "description": "제주시 4개 지점 픽업(08:30~09:05) 후 김녕 만장굴로 곧장 이동."
     },
     {
-      "phase": "해안에서 내륙 문화유산으로",
+      "phase": "인파 전의 유네스코 용암동굴",
+      "duration": "약 1.5시간",
+      "description": "만장굴(유네스코 세계자연유산, 55분) — 개장 직후 가장 한적한 시간대에 관람 후 내륙 성읍으로 이동."
+    },
+    {
+      "phase": "조선 민속마을 + 점심",
       "duration": "약 2시간",
-      "description": "함덕 서우봉해변(60분) → 성읍민속마을(조선시대 국가민속문화재, 60분)."
+      "description": "성읍민속마을(조선시대 국가민속문화재, 60분) → 성산 인근 현지 식당 — 흑돼지, 전복뚝배기, 제철 해산물. 점심 식사비 별도."
     },
     {
-      "phase": "점심",
-      "duration": "약 1시간",
-      "description": "성산 인근 현지 식당 — 흑돼지, 전복뚝배기, 제철 해산물. 점심 식사비 별도."
+      "phase": "성산 유네스코 핵심 + 해녀",
+      "duration": "약 2.5시간",
+      "description": "성산일출봉(선택 등반) → 봉우리 아래 바다에서 해녀 물질공연(취소 시 해녀박물관)."
     },
     {
-      "phase": "유네스코 핵심",
-      "duration": "약 3시간",
-      "description": "성산일출봉(선택 등반) → 해녀 물질공연(취소 시 해녀박물관) → 만장굴 용암동굴(유네스코 세계자연유산)."
-    },
-    {
-      "phase": "귀환",
-      "duration": "약 1시간",
-      "description": "김녕 → 제주시 이동 + 2개 지점 및 동문시장 하차."
+      "phase": "해변 피날레와 귀환",
+      "duration": "약 2시간",
+      "description": "늦은 오후 빛의 함덕 서우봉해변(60분) → 짧은 해안 이동으로 제주시 복귀 + 2개 지점 및 동문시장 하차."
     }
   ],
   "routeShapeIntro": {
     "title": "하루 일정",
-    "subtitle": "동쪽 끝에서 섬의 두 유네스코 세계자연유산을 하루에 잇는 동제주 루프입니다 — 성산일출봉(응회구)과 만장굴(용암동굴), 둘 다 2007년 같은 자산으로 등재. 여기에 유네스코 무형유산인 해녀 물질공연까지 더합니다. 효율적인 코스로 주요 명소의 혼잡을 피합니다."
+    "subtitle": "섬의 두 유네스코 세계자연유산을 하루에 잇는 동제주 루프입니다 — 개장 직후 인파 전의 만장굴로 들어가, 같은 2007년 등재 자산인 성산일출봉에서 오후에 서사를 완성합니다. 그 사이에 조선 시대 성읍민속마을, 그 뒤에 유네스코 무형유산인 해녀 물질공연, 그리고 제주시에서 가장 가까운 함덕해변의 골든아워 마무리가 이어집니다."
   },
   "whyTourWorks": {
     "bestFor": [
@@ -1138,6 +1138,10 @@
           {
             "label": "하루에 유네스코 세계자연유산 2곳 + 무형유산",
             "detail": "성산일출봉과 만장굴은 2007년 '제주 화산섬과 용암동굴'로 함께 등재된 세계자연유산입니다. 여기에 2016년 인류무형문화유산인 해녀 물질공연까지 더해, 하루에 세 겹의 유네스코 유산을 봅니다."
+          },
+          {
+            "label": "동굴을 먼저, 해변을 마지막에 — 순서가 곧 설계",
+            "detail": "만장굴은 09:00 개장 직후가 가장 한적해, 픽업 후 곧장 이곳으로 향합니다 — 한낮 단체 버스 인파 전에 용암동굴을 걷고, 연중 11~13℃의 서늘함도 아침에는 상쾌함이 됩니다. 이후 성읍과 성산, 해녀 공연으로 하루를 쌓아 올린 뒤, 제주시에서 가장 가까운 함덕해변의 부드러운 늦은 오후 빛으로 마무리해 마지막 이동을 하루 중 가장 짧게 만듭니다."
           },
           {
             "label": "진짜 만장굴 — 더 이상 대체가 아닌 원조 유네스코 용암동굴",
@@ -1181,11 +1185,11 @@
       "preview": "중간 난이도.",
       "content": [
         "중간 난이도.",
-        "함덕 해변은 평탄한 모래.",
+        "만장굴은 약 1km 평탄한 왕복, 동굴 입구 계단과 내부 다소 울퉁불퉁·축축한 바닥(연중 11~13℃, 겉옷 권장).",
         "성읍 민속마을은 흙길과 돌담.",
         "성산일출봉 분화구 테두리 등반은 약 30분 가파른 석계(건너뛸 수 있음).",
         "해녀 물질공연은 평탄한 해안에서 관람.",
-        "만장굴은 약 1km 평탄한 왕복, 동굴 입구 계단과 내부 다소 울퉁불퉁·축축한 바닥(연중 11~13℃, 겉옷 권장).",
+        "함덕 해변은 평탄한 모래.",
         "발가락 보호형 신발 필수.",
         "총 도보 약 4~5km."
       ]
@@ -1485,7 +1489,7 @@
       }
     ],
     "notes": [
-      "귀환은 보통 17:30–18:00 사이에 진행됩니다."
+      "귀환은 보통 18:00–18:30 사이에 진행됩니다."
     ]
   },
   "matching_profile": {
@@ -1952,181 +1956,13 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-            "location": "함덕 서우봉해변",
-            "caption": "함덕 서우봉해변 — photo 1",
-            "alt": "함덕 서우봉해변 — gallery image 1"
-          },
-          {
-            "id": 2,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-            "location": "함덕 서우봉해변",
-            "caption": "함덕 서우봉해변 — photo 2",
-            "alt": "함덕 서우봉해변 — gallery image 2"
-          },
-          {
-            "id": 3,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-            "location": "함덕 서우봉해변",
-            "caption": "함덕 서우봉해변 — photo 3",
-            "alt": "함덕 서우봉해변 — gallery image 3"
-          },
-          {
-            "id": 4,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-            "location": "함덕 서우봉해변",
-            "caption": "함덕 서우봉해변 — photo 4",
-            "alt": "함덕 서우봉해변 — gallery image 4"
-          },
-          {
-            "id": 5,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-            "location": "성읍민속마을 (유네스코 문화유산)",
-            "caption": "성읍민속마을 (유네스코 문화유산) — photo 1",
-            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 1"
-          },
-          {
-            "id": 6,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-            "location": "성읍민속마을 (유네스코 문화유산)",
-            "caption": "성읍민속마을 (유네스코 문화유산) — photo 2",
-            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 2"
-          },
-          {
-            "id": 7,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-            "location": "성읍민속마을 (유네스코 문화유산)",
-            "caption": "성읍민속마을 (유네스코 문화유산) — photo 3",
-            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 3"
-          },
-          {
-            "id": 8,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-            "location": "성읍민속마을 (유네스코 문화유산)",
-            "caption": "성읍민속마을 (유네스코 문화유산) — photo 4",
-            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 4"
-          },
-          {
-            "id": 9,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-            "location": "성읍민속마을 (유네스코 문화유산)",
-            "caption": "성읍민속마을 (유네스코 문화유산) — photo 6",
-            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 6"
-          },
-          {
-            "id": 10,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 1",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 1"
-          },
-          {
-            "id": 11,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 2",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 2"
-          },
-          {
-            "id": 12,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 3",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 3"
-          },
-          {
-            "id": 13,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 4",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 4"
-          },
-          {
-            "id": 14,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 5",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 5"
-          },
-          {
-            "id": 15,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 6",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 6"
-          },
-          {
-            "id": 16,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-            "location": "성산일출봉 (유네스코 세계자연유산)",
-            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 12",
-            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 12"
-          },
-          {
-            "id": 17,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 1",
-            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 1"
-          },
-          {
-            "id": 18,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 2",
-            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 2"
-          },
-          {
-            "id": 19,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 3",
-            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 3"
-          },
-          {
-            "id": 20,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 4",
-            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 4"
-          },
-          {
-            "id": 21,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
-            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 5",
-            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 5"
-          },
-          {
-            "id": 22,
-            "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
             "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
             "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
             "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
           },
           {
-            "id": 23,
+            "id": 2,
             "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
             "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
@@ -2134,12 +1970,180 @@
             "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
           },
           {
-            "id": 24,
+            "id": 3,
             "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
             "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
             "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
             "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+            "location": "성읍민속마을 (유네스코 문화유산)",
+            "caption": "성읍민속마을 (유네스코 문화유산) — photo 1",
+            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 1"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+            "location": "성읍민속마을 (유네스코 문화유산)",
+            "caption": "성읍민속마을 (유네스코 문화유산) — photo 2",
+            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 2"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+            "location": "성읍민속마을 (유네스코 문화유산)",
+            "caption": "성읍민속마을 (유네스코 문화유산) — photo 3",
+            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 3"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+            "location": "성읍민속마을 (유네스코 문화유산)",
+            "caption": "성읍민속마을 (유네스코 문화유산) — photo 4",
+            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 4"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+            "location": "성읍민속마을 (유네스코 문화유산)",
+            "caption": "성읍민속마을 (유네스코 문화유산) — photo 6",
+            "alt": "성읍민속마을 (유네스코 문화유산) — gallery image 6"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 1",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 1"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 2",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 2"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 3",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 3"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 4",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 4"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 5",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 5"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 6",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 6"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+            "location": "성산일출봉 (유네스코 세계자연유산)",
+            "caption": "성산일출봉 (유네스코 세계자연유산) — photo 12",
+            "alt": "성산일출봉 (유네스코 세계자연유산) — gallery image 12"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 1",
+            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 1"
+          },
+          {
+            "id": 17,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 2",
+            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 2"
+          },
+          {
+            "id": 18,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 3",
+            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 3"
+          },
+          {
+            "id": 19,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 4",
+            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 4"
+          },
+          {
+            "id": 20,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+            "location": "해녀 물질공연 (공연 취소 시 해녀박물관)",
+            "caption": "해녀 물질공연 (공연 취소 시 해녀박물관) — photo 5",
+            "alt": "해녀 물질공연 (공연 취소 시 해녀박물관) — gallery image 5"
+          },
+          {
+            "id": 21,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+            "location": "함덕 서우봉해변",
+            "caption": "함덕 서우봉해변 — photo 1",
+            "alt": "함덕 서우봉해변 — gallery image 1"
+          },
+          {
+            "id": 22,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+            "location": "함덕 서우봉해변",
+            "caption": "함덕 서우봉해변 — photo 2",
+            "alt": "함덕 서우봉해변 — gallery image 2"
+          },
+          {
+            "id": 23,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+            "location": "함덕 서우봉해변",
+            "caption": "함덕 서우봉해변 — photo 3",
+            "alt": "함덕 서우봉해변 — gallery image 3"
+          },
+          {
+            "id": 24,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+            "location": "함덕 서우봉해변",
+            "caption": "함덕 서우봉해변 — photo 4",
+            "alt": "함덕 서우봉해변 — gallery image 4"
           }
         ]
       }
@@ -2156,7 +2160,7 @@
             "duration": "30분",
             "name": "픽업 (제주시 4개 지점)",
             "category": "픽업 — 제주 시내 호텔/허브 순서",
-            "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 함덕해변 도착(성수기 인파보다 이른 도착, 최적 조명 확보).",
+            "description": "아침 이동 최소화를 위해 제주시 4개 주요 지점에서 픽업이 이루어집니다: 제주공항 1번 게이트(국내선 1층), 노형오거리 인근, 제주시청 인근, 중앙로터리 인근. 서쪽에서 동쪽 순으로 탑승하여 약 09:50 만장굴 도착(개장 직후의 가장 한적한 시간대에 입장).",
             "image": null,
             "highlights": [
               "**제주 시내 4개 픽업 포인트** — 공항, 시청, 하귀, 동문",
@@ -2173,7 +2177,7 @@
               "동문 픽업 ~09:30 — 5분",
               "1132번 도로 동쪽으로 함덕까지 — 약 30분"
             ],
-            "whyOnRoute": "4개 픽업 포인트가 제주 시내 주요 호텔+교통 구역 커버.",
+            "whyOnRoute": "4개 픽업 포인트가 제주 시내 주요 호텔+교통 구역을 커버합니다. 서→동 순서 탑승으로 만장굴 개장(09:00) 직후 도착 — 한낮 단체 관광버스 인파보다 먼저 용암동굴을 걷습니다.",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {},
@@ -2182,78 +2186,72 @@
           {
             "number": 2,
             "time": "≈ 09:50",
-            "duration": "60분",
-            "name": "함덕 서우봉해변",
-            "category": "해안",
-            "description": "**함덕 서우봉 해변(함덕 서우봉 해변)** 은 **제주 3대 해변**으로 꾸준히 꼽히는 명소로, **약 500 m 길이의 메인 백사장(연결된 3개 만을 합치면 약 900 m)** 의 흰 모래와, 그 동쪽 끝에서 곧장 솟아오른 **기생화산 서우봉(서우봉, '소가 머리를 돌린 모양' 측화산)** 의 대비가 시그너처입니다. 바다 색의 시그너처인 **에메랄드빛 청록**은 얕은 산호 모래 해저가 맑은 물을 통해 반사되어 만들어내며, 한국에서는 보기 힘든 지중해풍 색감 대비가 함덕을 국내 최고의 사진 명소 가운데 하나로 만들었습니다. \n\n이 해변은 여름 성수기에는 **하루 최대 5만 명의 방문객**을 수용하지만, 봄·가을은 일반적으로 한적합니다. **서우봉**(정상까지 약 1시간)에는 **3~4월에 노란 유채꽃 비탈**이 펼쳐지며, **만장굴 방향 동쪽으로 펼쳐지는 파노라마 전망**을 제공합니다. **역사적 층위**: 서우봉 서쪽 해안 절벽에는 **일제강점기 일본군이 굴착한 진지동굴**이 남아 있습니다 — 가미카제 자살 보트 기지와 탄약고로 사용되던 시설로, 성산일출봉의 18개 동굴과 유사합니다. \n\n이 동굴은 일반에 개방되어 있으며 역사적 맥락을 설명하는 안내판이 설치되어 있습니다. 이 해변은 **제주 올레 19코스(조천 → 김녕)** 의 핵심 구간으로, 시그너처 청·주황 리본 표시가 따라 이어집니다. **카페 델문도(델문도 카페)** 가 해변을 대표하는 거점으로, 넓은 테라스와 바다 전망 덕분에 인스타그래머와 가벼운 휴식 손님 모두에게 인기입니다. \n\n**무료 입장**이며, 1132번 도로를 따라 **제주국제공항에서 20 km / 차량 약 40분** 거리입니다.",
-            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+            "duration": "55분",
+            "name": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+            "category": "유네스코 세계자연유산 — 거문오름 용암동굴계 (2007년 등재)",
+            "description": "**만장굴(Manjanggul Lava Tube)**은 약 **8,000년 전 한라산 측화산인 거문오름에서 분출한 용암**이 만든 용암동굴로, **2007년 성산일출봉·한라산과 함께 '제주 화산섬과 용암동굴'이라는 이름으로 유네스코 세계자연유산에 등재**되었습니다. 성산일출봉과 **동일한 단일 등재 자산**에 속해, 이 투어는 하루에 **두 곳의 세계자연유산**을 함께 담습니다. \n\n전체 길이는 약 **7.4km**(연결 구간 포함 시 13~15km)로 세계 최대급 용암동굴이며, 주 통로는 **폭 18m·높이 23~25m**에 이릅니다. 천장 붕괴로 생긴 세 개의 입구 중 **제2입구 약 1km 구간만 일반에 개방**되어, 들어갔다 같은 길로 되돌아오는 **왕복 약 30~45분** 코스입니다. 개방 구간 끝에는 **높이 7.6m로 세계에서 가장 큰 용암석주**가 있어 만장굴의 상징적 포토 스폿입니다. \n\n동굴 내부는 **연중 11~13℃**로 유지되어 여름엔 시원하고 겨울엔 포근하지만, 바닥이 어둡고 다소 축축하므로 **겉옷과 미끄럼 방지 신발**을 권합니다. **국가 천연기념물**로도 지정되어 있습니다. 입장료는 **성인 ₩4,000(단체 ₩3,000) / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**, 매월 첫째 수요일 휴무입니다.",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
             "highlights": [
-              "**제주 3대 해변** — 에메랄드 청록 바다 + 흰 산호 모래",
-              "**메인 500 m 백사장** + 연결 3개 만(총 약 900 m)",
-              "**서우봉 기생화산** 정상까지 약 1시간 / 3~4월 노란 유채꽃 비탈",
-              "**일제강점기 일본군 진지동굴** — 가미카제 자살 보트 기지",
-              "**올레 19코스(조천 → 김녕)** — 청·주황 리본 표시",
-              "**카페 델문도** — 넓은 테라스, 해변, 시그너처 거점",
-              "여름 성수기 **하루 5만 명** 수용 / 봄·가을은 한적",
-              "**무료 입장** / 제주국제공항에서 20 km, 약 40분",
-              "한반도에서는 보기 드문 지중해풍 색감 대비"
+              "**2007년 유네스코 세계자연유산** — 성산일출봉과 같은 '제주 화산섬과 용암동굴' 등재",
+              "**하루에 세계자연유산 2곳** — 성산일출봉 + 만장굴",
+              "전체 길이 약 **7.4km**, 개방 구간 약 **1km**(왕복 약 30~45분)",
+              "개방 구간 끝 **높이 7.6m 세계 최대 용암석주**",
+              "주 통로 **폭 18m · 높이 23~25m** — 세계 최대급 용암동굴",
+              "**거문오름 용암동굴계** — 약 8,000년 전 형성, 국가 천연기념물",
+              "내부 **연중 11~13℃** — 여름 피서지, 겉옷 권장",
+              "입장료 **성인 ₩4,000 / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**"
             ],
             "timeUsed": [
-              "코치 도착 + 주차 — 약 5분",
-              "메인 해변 + 2번째 해변 산책 — 약 25분",
-              "WWII 동굴 외관 관람 — 약 10분",
-              "카페 델몬도 또는 해변 사진 — 약 15분",
-              "이동 완충 — 약 5분"
+              "주차 + 매표 + 입장 — 약 5분",
+              "제2입구 하강 + 동굴 진입 — 약 5분",
+              "개방 구간 1km 왕복(용암석주까지) — 약 30분",
+              "안내센터 용암동굴 형성 해설 — 약 10분",
+              "집결 + 이동 완충 — 약 5분"
             ],
-            "whyOnRoute": "**바다로 여는 오전 첫 정차.** 제주시 4개 지점 픽업 직후, 차량 약 40분 거리의 함덕 서우봉해변에서 하루를 엽니다. 에메랄드빛 바다와 흰 모래, 올레 19코스 도보 유산을 가볍게 즐긴 뒤, 동선은 내륙 성읍과 동부 끝 성산·만장굴로 이어집니다. 오전 이른 시간이라 여름 성수기에도 비교적 한적합니다.",
+            "whyOnRoute": "**하루를 여는 첫 정차이자 첫 번째 유네스코 세계자연유산.** 픽업 직후 곧장 동쪽으로 달려 만장굴 개장(09:00) 직후에 도착합니다 — 한낮 단체 관광버스 인파가 몰리기 전, 가장 한적한 시간대에 연중 11~13℃의 시원한 동굴 약 1km 구간을 다리가 가장 가벼운 오전에 걷습니다. 여기서 입장하는 '제주 화산섬과 용암동굴'(2007년 단일 등재 자산)의 서사는 오후 성산일출봉에서 완성됩니다. 만장굴이 정비·기상으로 폐쇄될 경우, 같은 용암동굴계의 **일출랜드 미천굴**로 대체해 동굴 체험을 유지합니다.",
             "_poi_meta": {
-              "poi_key": "hamdeok_seoubong_beach",
-              "kb_version": "1.19",
+              "poi_key": "manjanggul_lava_tube",
+              "kb_version": "1.29",
               "verified_date": "2026-04-29",
               "sources": [
-                "Jeju Olle Foundation — Trail Course 19 official map",
-                "VisitJeju — Hamdeok Seoubong Beach",
-                "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
-                "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
-                "Jocheon-eup local cultural office — Seoubong oreum trail records"
+                "visitjeju.net (Visit Jeju official)",
+                "english.visitkorea.or.kr",
+                "jeju.go.kr/geopark",
+                "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+                "Wikipedia Manjanggul (Dec 2025)"
               ]
             },
             "convenience": {
-              "restroom": "해변에 공중 화장실 및 샤워 시설 마련",
-              "parking": "공영 주차장(여름 유료)"
+              "restroom": "입구 안내센터에 화장실",
+              "parking": "입구 무료 주차장"
             },
             "smartNotes": {
-              "photo": "서우봉 실루엣을 곁들인 일몰이 클래식 컷이며, 서우봉 정상에서 내려다보는 항공 뷰는 백사장 곡선을 멋지게 담을 수 있습니다",
-              "facilities": "해안가에 카페 다수, 인근 편의점",
-              "tip": "협재나 김녕 해수욕장보다 한적한 편 / 동쪽의 델문도 카페 권역이 일몰 시간에 인기"
+              "photo": "개방 구간 끝의 **높이 7.6m 세계 최대 용암석주**가 상징 컷이며, 폭 18m·높이 23m의 긴 통로를 향한 원근 사진도 스케일이 압권입니다.",
+              "facilities": "입구 주차장 옆 안내센터에서 용암동굴 형성 과정을 설명합니다 — 입장 전 10분 관람을 권합니다. 동굴 내부에는 매점이 없습니다.",
+              "tip": "여름에도 겉옷을 챙기세요(내부 11~13℃). 바닥이 축축하고 어두우니 미끄럼 방지 신발이 좋습니다. 정비로 폐쇄될 수 있어 방문일 운영 여부를 미리 확인하세요."
             },
             "visitBasics": {
-              "hours": "해변 24시간 개방 / 7~8월 안전관리 수영 시즌(인명 구조원 배치)",
-              "closed": "연중무휴",
-              "admission": "무료",
-              "walking": "쉬움 — 평탄한 모래사장 / 서우봉 트레일은 보통(계단 포함)"
+              "hours": "09:00~18:00 (마지막 입장 17:10)",
+              "closed": "매월 첫째 수요일 / 폭우 시 임시 휴장",
+              "admission": "성인 4,000원(단체 3,000원) / 청소년·어린이 2,000원(단체 1,500원)",
+              "walking": "보통 — 평탄한 1km 왕복, 동굴 입구 계단 하강, 바닥이 다소 울퉁불퉁하고 축축"
             },
             "images": [
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2261,40 +2259,32 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-                "location": "함덕 서우봉해변",
-                "caption": "함덕 서우봉해변 — photo 1",
-                "alt": "함덕 서우봉해변 — gallery image 1"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
+                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-                "location": "함덕 서우봉해변",
-                "caption": "함덕 서우봉해변 — photo 2",
-                "alt": "함덕 서우봉해변 — gallery image 2"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 2",
+                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "location": "함덕 서우봉해변",
-                "caption": "함덕 서우봉해변 — photo 3",
-                "alt": "함덕 서우봉해변 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-                "location": "함덕 서우봉해변",
-                "caption": "함덕 서우봉해변 — photo 4",
-                "alt": "함덕 서우봉해변 — gallery image 4"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
+                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
+                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
               }
             ]
           },
           {
             "number": 3,
-            "time": "≈ 11:00",
+            "time": "≈ 11:15",
             "duration": "60분",
             "name": "성읍민속마을 (유네스코 문화유산)",
             "category": "조선 시대 읍성 — 중요 민속 문화재 (1423년 창건)",
@@ -2319,7 +2309,7 @@
               "올레 골목 산책 + 사진 — 약 10분",
               "이동 완충 — 약 5분"
             ],
-            "whyOnRoute": "**오늘 코스 유일의 내륙 조선 시대 유산이자 지리적 전환점.** 함덕 해안에서 성산으로 향하는 길목(표선 내륙)에 위치해, 단순 주행 시간을 의미 있는 정차로 바꿉니다. 국가민속문화재 마을의 돌담·초가와 600년 노거수는 오후의 화산·해녀 유산과 대비되는 '여유로운 문화 도보'를 더해, 하루가 사진 명소 순례로만 흐르지 않도록 균형을 잡아 줍니다.",
+            "whyOnRoute": "**오늘 코스 유일의 내륙 조선 시대 유산이자 지리적 전환점.** 김녕의 용암 지대에서 성산 해안으로 향하는 길목(표선 내륙)에 위치해, 단순 주행 시간을 의미 있는 정차로 바꿉니다. 오전 만장굴의 지하 지질 탐방 뒤, 국가민속문화재 마을의 돌담·초가와 600년 노거수가 오후의 화산·해녀 유산에 앞서 '여유로운 문화 도보'를 더해, 하루가 사진 명소 순례로만 흐르지 않도록 균형을 잡아 줍니다.",
             "_poi_meta": {
               "poi_key": "seongeup_folk_village",
               "kb_version": "1.19",
@@ -2429,7 +2419,7 @@
           },
           {
             "number": 4,
-            "time": "≈ 12:20",
+            "time": "≈ 12:40",
             "duration": "60분",
             "name": "점심 (제주 현지 식당)",
             "category": "점심 휴식 — 동제주 현지 음식",
@@ -2448,7 +2438,7 @@
               "주문 + 식사 — 약 45분",
               "코치로 성산일출봉 입구 이동 — 약 10분"
             ],
-            "whyOnRoute": "**유네스코 핵심 일정 직전의 재충전.** 성읍에서 성산으로 가는 길의 현지 식당에서 흑돼지·전복뚝배기·제철 해산물 등 동제주 향토 음식으로 점심을 듭니다(식사비 별도). 가장 활동적인 오후 — 성산 등반, 해녀 물질공연, 만장굴 — 에 들어가기 전 체력을 채우는 자리입니다.",
+            "whyOnRoute": "**유네스코 클라이맥스 직전의 재충전.** 성읍에서 성산으로 가는 길의 현지 식당에서 흑돼지·전복뚝배기·제철 해산물 등 동제주 향토 음식으로 점심을 듭니다(식사비 별도). 가장 활동적인 오후 구간 — 성산 등반과 해녀 물질공연 — 에 들어가기 전 체력을 채우는 자리이며, 마지막의 함덕 해변 산책은 한결 느긋하게 남겨 둡니다.",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {}
@@ -2479,7 +2469,7 @@
               "하산 — 약 20분",
               "선택: 해녀 공연 관람 (1일 1회 오후 2시, 악천후 시 취소 가능) — 약 10분"
             ],
-            "whyOnRoute": "**하루 두 세계자연유산의 첫 번째.** 점심 후 성산일출봉에 올라(선택 등반 왕복 약 30분) 약 5,000년 전 수중 분화로 솟은 응회구를 봅니다. 등반 직후 같은 권역 바다에서 열리는 해녀 물질공연으로 이어지고, 이어서 같은 2007년 등재 자산인 만장굴 용암동굴로 마무리해 '화산섬과 용암동굴' 서사를 하루에 완성합니다.",
+            "whyOnRoute": "**하루 두 세계자연유산의 두 번째 — 등재 서사를 완성하는 곳.** 점심 후 성산일출봉에 올라(선택 등반 왕복 약 30분) 약 5,000년 전 수중 분화로 솟은 응회구를 봅니다. 오전에 걸었던 만장굴과 **같은 2007년 단일 등재 자산**이므로 여기서 '화산섬과 용암동굴' 서사가 완성되고, 등반 직후 같은 권역 바다에서 열리는 해녀 물질공연으로 자연스럽게 이어집니다.",
             "_poi_meta": {
               "poi_key": "seongsan_ilchulbong",
               "kb_version": "1.19",
@@ -2736,73 +2726,79 @@
           },
           {
             "number": 7,
-            "time": "≈ 16:30",
-            "duration": "55분",
-            "name": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-            "category": "유네스코 세계자연유산 — 거문오름 용암동굴계 (2007년 등재)",
-            "description": "**만장굴(Manjanggul Lava Tube)**은 약 **8,000년 전 한라산 측화산인 거문오름에서 분출한 용암**이 만든 용암동굴로, **2007년 성산일출봉·한라산과 함께 '제주 화산섬과 용암동굴'이라는 이름으로 유네스코 세계자연유산에 등재**되었습니다. 성산일출봉과 **동일한 단일 등재 자산**에 속해, 이 투어는 하루에 **두 곳의 세계자연유산**을 함께 담습니다. \n\n전체 길이는 약 **7.4km**(연결 구간 포함 시 13~15km)로 세계 최대급 용암동굴이며, 주 통로는 **폭 18m·높이 23~25m**에 이릅니다. 천장 붕괴로 생긴 세 개의 입구 중 **제2입구 약 1km 구간만 일반에 개방**되어, 들어갔다 같은 길로 되돌아오는 **왕복 약 30~45분** 코스입니다. 개방 구간 끝에는 **높이 7.6m로 세계에서 가장 큰 용암석주**가 있어 만장굴의 상징적 포토 스폿입니다. \n\n동굴 내부는 **연중 11~13℃**로 유지되어 여름엔 시원하고 겨울엔 포근하지만, 바닥이 어둡고 다소 축축하므로 **겉옷과 미끄럼 방지 신발**을 권합니다. **국가 천연기념물**로도 지정되어 있습니다. 입장료는 **성인 ₩4,000(단체 ₩3,000) / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**, 매월 첫째 수요일 휴무입니다.",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+            "time": "≈ 16:35",
+            "duration": "60분",
+            "name": "함덕 서우봉해변",
+            "category": "해안",
+            "description": "**함덕 서우봉 해변(함덕 서우봉 해변)** 은 **제주 3대 해변**으로 꾸준히 꼽히는 명소로, **약 500 m 길이의 메인 백사장(연결된 3개 만을 합치면 약 900 m)** 의 흰 모래와, 그 동쪽 끝에서 곧장 솟아오른 **기생화산 서우봉(서우봉, '소가 머리를 돌린 모양' 측화산)** 의 대비가 시그너처입니다. 바다 색의 시그너처인 **에메랄드빛 청록**은 얕은 산호 모래 해저가 맑은 물을 통해 반사되어 만들어내며, 한국에서는 보기 힘든 지중해풍 색감 대비가 함덕을 국내 최고의 사진 명소 가운데 하나로 만들었습니다. \n\n이 해변은 여름 성수기에는 **하루 최대 5만 명의 방문객**을 수용하지만, 봄·가을은 일반적으로 한적합니다. **서우봉**(정상까지 약 1시간)에는 **3~4월에 노란 유채꽃 비탈**이 펼쳐지며, **만장굴 방향 동쪽으로 펼쳐지는 파노라마 전망**을 제공합니다. **역사적 층위**: 서우봉 서쪽 해안 절벽에는 **일제강점기 일본군이 굴착한 진지동굴**이 남아 있습니다 — 가미카제 자살 보트 기지와 탄약고로 사용되던 시설로, 성산일출봉의 18개 동굴과 유사합니다. \n\n이 동굴은 일반에 개방되어 있으며 역사적 맥락을 설명하는 안내판이 설치되어 있습니다. 이 해변은 **제주 올레 19코스(조천 → 김녕)** 의 핵심 구간으로, 시그너처 청·주황 리본 표시가 따라 이어집니다. **카페 델문도(델문도 카페)** 가 해변을 대표하는 거점으로, 넓은 테라스와 바다 전망 덕분에 인스타그래머와 가벼운 휴식 손님 모두에게 인기입니다. \n\n**무료 입장**이며, 1132번 도로를 따라 **제주국제공항에서 20 km / 차량 약 40분** 거리입니다.",
+            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "highlights": [
-              "**2007년 유네스코 세계자연유산** — 성산일출봉과 같은 '제주 화산섬과 용암동굴' 등재",
-              "**하루에 세계자연유산 2곳** — 성산일출봉 + 만장굴",
-              "전체 길이 약 **7.4km**, 개방 구간 약 **1km**(왕복 약 30~45분)",
-              "개방 구간 끝 **높이 7.6m 세계 최대 용암석주**",
-              "주 통로 **폭 18m · 높이 23~25m** — 세계 최대급 용암동굴",
-              "**거문오름 용암동굴계** — 약 8,000년 전 형성, 국가 천연기념물",
-              "내부 **연중 11~13℃** — 여름 피서지, 겉옷 권장",
-              "입장료 **성인 ₩4,000 / 청소년·어린이 ₩2,000**, 운영 **09:00~18:00(마지막 입장 17:10)**"
+              "**제주 3대 해변** — 에메랄드 청록 바다 + 흰 산호 모래",
+              "**메인 500 m 백사장** + 연결 3개 만(총 약 900 m)",
+              "**서우봉 기생화산** 정상까지 약 1시간 / 3~4월 노란 유채꽃 비탈",
+              "**일제강점기 일본군 진지동굴** — 가미카제 자살 보트 기지",
+              "**올레 19코스(조천 → 김녕)** — 청·주황 리본 표시",
+              "**카페 델문도** — 넓은 테라스, 해변, 시그너처 거점",
+              "여름 성수기 **하루 5만 명** 수용 / 봄·가을은 한적",
+              "**무료 입장** / 제주국제공항에서 20 km, 약 40분",
+              "한반도에서는 보기 드문 지중해풍 색감 대비"
             ],
             "timeUsed": [
-              "주차 + 매표 + 입장 — 약 5분",
-              "제2입구 하강 + 동굴 진입 — 약 5분",
-              "개방 구간 1km 왕복(용암석주까지) — 약 30분",
-              "안내센터 용암동굴 형성 해설 — 약 10분",
-              "집결 + 이동 완충 — 약 5분"
+              "코치 도착 + 주차 — 약 5분",
+              "메인 해변 + 2번째 해변 산책 — 약 25분",
+              "WWII 동굴 외관 관람 — 약 10분",
+              "카페 델몬도 또는 해변 사진 — 약 15분",
+              "이동 완충 — 약 5분"
             ],
-            "whyOnRoute": "**오늘 코스의 두 번째 유네스코 세계자연유산이자 자연 피날레.** 성산일출봉(트리플 유네스코 응회구)과 해녀 물질공연(무형문화유산)을 거친 뒤, 김녕에 위치한 만장굴은 성산에서 제주시로 돌아오는 동선 위에 자연스럽게 놓입니다. 성산일출봉과 **같은 2007년 단일 등재 자산**이므로, 두 곳을 하루에 묶으면 '화산섬과 용암동굴'이라는 유네스코 내러티브가 완성됩니다. 오후 늦은 시간대 배치는 **한낮 더위와 단체 혼잡을 피하고**, 야외 일정 뒤 **연중 11~13℃의 시원한 동굴**에서 하루를 마무리하는 쾌적한 흐름을 만듭니다. 만장굴이 정비·기상으로 폐쇄될 경우, 같은 용암동굴계의 **일출랜드 미천굴**로 대체해 동굴 체험을 유지합니다.",
+            "whyOnRoute": "**바다로 닫는 피날레 — 제주시에서 가장 가까운 정차지.** 성산의 유네스코 오후 일정을 마친 뒤, 함덕 서우봉해변에서 하루의 속도를 늦춥니다. 늦은 오후의 부드러운 빛 아래 에메랄드빛 바다와 흰 모래, 올레 19코스 한 구간을 걷습니다 — 당일 관광 인파가 빠져나간 시간대라 한결 한적합니다. 함덕은 제주시로 돌아가는 해안 도로 위에 있어, 여기서 마치면 귀환 이동이 하루 중 가장 짧습니다.",
             "_poi_meta": {
-              "poi_key": "manjanggul_lava_tube",
-              "kb_version": "1.29",
+              "poi_key": "hamdeok_seoubong_beach",
+              "kb_version": "1.19",
               "verified_date": "2026-04-29",
               "sources": [
-                "visitjeju.net (Visit Jeju official)",
-                "english.visitkorea.or.kr",
-                "jeju.go.kr/geopark",
-                "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
-                "Wikipedia Manjanggul (Dec 2025)"
+                "Jeju Olle Foundation — Trail Course 19 official map",
+                "VisitJeju — Hamdeok Seoubong Beach",
+                "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+                "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+                "Jocheon-eup local cultural office — Seoubong oreum trail records"
               ]
             },
             "convenience": {
-              "restroom": "입구 안내센터에 화장실",
-              "parking": "입구 무료 주차장"
+              "restroom": "해변에 공중 화장실 및 샤워 시설 마련",
+              "parking": "공영 주차장(여름 유료)"
             },
             "smartNotes": {
-              "photo": "개방 구간 끝의 **높이 7.6m 세계 최대 용암석주**가 상징 컷이며, 폭 18m·높이 23m의 긴 통로를 향한 원근 사진도 스케일이 압권입니다.",
-              "facilities": "입구 주차장 옆 안내센터에서 용암동굴 형성 과정을 설명합니다 — 입장 전 10분 관람을 권합니다. 동굴 내부에는 매점이 없습니다.",
-              "tip": "여름에도 겉옷을 챙기세요(내부 11~13℃). 바닥이 축축하고 어두우니 미끄럼 방지 신발이 좋습니다. 정비로 폐쇄될 수 있어 방문일 운영 여부를 미리 확인하세요."
+              "photo": "서우봉 실루엣을 곁들인 일몰이 클래식 컷이며, 서우봉 정상에서 내려다보는 항공 뷰는 백사장 곡선을 멋지게 담을 수 있습니다",
+              "facilities": "해안가에 카페 다수, 인근 편의점",
+              "tip": "협재나 김녕 해수욕장보다 한적한 편 / 동쪽의 델문도 카페 권역이 일몰 시간에 인기"
             },
             "visitBasics": {
-              "hours": "09:00~18:00 (마지막 입장 17:10)",
-              "closed": "매월 첫째 수요일 / 폭우 시 임시 휴장",
-              "admission": "성인 4,000원(단체 3,000원) / 청소년·어린이 2,000원(단체 1,500원)",
-              "walking": "보통 — 평탄한 1km 왕복, 동굴 입구 계단 하강, 바닥이 다소 울퉁불퉁하고 축축"
+              "hours": "해변 24시간 개방 / 7~8월 안전관리 수영 시즌(인명 구조원 배치)",
+              "closed": "연중무휴",
+              "admission": "무료",
+              "walking": "쉬움 — 평탄한 모래사장 / 서우봉 트레일은 보통(계단 포함)"
             },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2810,41 +2806,49 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 1",
-                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 1"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 1",
+                "alt": "함덕 서우봉해변 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 2",
-                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 2"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 2",
+                "alt": "함덕 서우봉해변 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "location": "만장굴 (유네스코 세계자연유산 · 용암동굴)",
-                "caption": "만장굴 (유네스코 세계자연유산 · 용암동굴) — photo 3",
-                "alt": "만장굴 (유네스코 세계자연유산 · 용암동굴) — gallery image 3"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 3",
+                "alt": "함덕 서우봉해변 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "location": "함덕 서우봉해변",
+                "caption": "함덕 서우봉해변 — photo 4",
+                "alt": "함덕 서우봉해변 — gallery image 4"
               }
             ]
           },
           {
             "number": 8,
-            "time": "≈ 17:45",
+            "time": "≈ 18:00",
             "duration": "30분",
             "name": "하차 (2개 지점 + 동문시장)",
             "category": "하차 — 제주 시내 허브 순서",
-            "description": "귀환 시 아침 픽업 경로와 동일하게 2개 지점에서 하차하며, 동문재래시장 앞에서도 하차 가능합니다. 동문시장에서는 제주 특산물과 간식을 둘러볼 수 있습니다.",
+            "description": "**하차는 아침 픽업 경로를 따라** 진행되며, 동문재래시장 하차 옵션이 있습니다. **동문재래시장**은 함덕해변에서 차량 약 25분 거리로, 신선한 해산물·감귤 특산품·길거리 음식이 모인 제주 대표 저녁 시장입니다 — 여기서 내려 자유 저녁 식사와 시장 구경을 하거나, **제주시청**·**제주국제공항** 하차 지점으로 이어갈 수 있습니다. \n\n예상 도착: **동문시장 약 18:00, 시청 약 18:15, 공항 약 18:30**. 제주공항 당일 저녁 항공편(막편 약 21:30)은 통상 무리 없이 이용 가능합니다.",
             "image": null,
             "highlights": [
               "**3개 하차 포인트** — 동문 시장, 시청, 공항",
               "**동문전통시장** — 제주의 대표 야시장 분위기, 해산물·감귤·길거리 음식",
-              "예상 도착: 동문 ~17:55, 시청 ~18:10, 공항 ~18:25",
+              "예상 도착: 동문 ~18:00, 시청 ~18:15, 공항 ~18:30",
               "**제주 국제공항 당일 저녁 항공편** 일반적으로 가능 (마지막 출발 ~21:30)",
               "하차 순서는 오전 픽업 역순과 일치"
             ],
@@ -2856,7 +2860,7 @@
               "코치로 공항 이동 — 약 15분",
               "공항 하차 — 5분"
             ],
-            "whyOnRoute": "동문 시장 하차 = 저녁으로 마무리하고 싶은 게스트를 위한 선택적 저녁 식사 장소.",
+            "whyOnRoute": "동문시장 하차 = 저녁 식사와 시장 구경으로 하루를 마치고 싶은 게스트를 위한 선택지. 시청·공항 하차가 호텔 구역과 당일 출발 항공편을 커버합니다. 함덕 이후 총 이동 약 55분으로 세 지점을 되돌아가기 없이 순회합니다.",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {},
@@ -2877,9 +2881,9 @@
             "theme": "출발"
           },
           {
-            "name": "함덕 서우봉 해변",
-            "type": "secondary",
-            "theme": "해변"
+            "name": "만장굴 (유네스코)",
+            "type": "primary",
+            "theme": "유네스코 용암동굴"
           },
           {
             "name": "성읍 민속마을",
@@ -2902,9 +2906,9 @@
             "theme": "해녀 무형유산"
           },
           {
-            "name": "만장굴 (유네스코)",
-            "type": "primary",
-            "theme": "유네스코 용암동굴"
+            "name": "함덕 서우봉 해변",
+            "type": "secondary",
+            "theme": "해변"
           },
           {
             "name": "제주 시내 하차",
@@ -2914,34 +2918,34 @@
         ],
         "routePhases": [
           {
-            "phase": "픽업 및 해안 출발",
+            "phase": "픽업 및 동쪽으로 출발",
             "duration": "약 1시간",
-            "description": "제주시 4개 지점 픽업(08:30~09:05) 후 함덕 서우봉해변으로 이동."
+            "description": "제주시 4개 지점 픽업(08:30~09:05) 후 김녕 만장굴로 곧장 이동."
           },
           {
-            "phase": "해안에서 내륙 문화유산으로",
+            "phase": "인파 전의 유네스코 용암동굴",
+            "duration": "약 1.5시간",
+            "description": "만장굴(유네스코 세계자연유산, 55분) — 개장 직후 가장 한적한 시간대에 관람 후 내륙 성읍으로 이동."
+          },
+          {
+            "phase": "조선 민속마을 + 점심",
             "duration": "약 2시간",
-            "description": "함덕 서우봉해변(60분) → 성읍민속마을(조선시대 국가민속문화재, 60분)."
+            "description": "성읍민속마을(조선시대 국가민속문화재, 60분) → 성산 인근 현지 식당 — 흑돼지, 전복뚝배기, 제철 해산물. 점심 식사비 별도."
           },
           {
-            "phase": "점심",
-            "duration": "약 1시간",
-            "description": "성산 인근 현지 식당 — 흑돼지, 전복뚝배기, 제철 해산물. 점심 식사비 별도."
+            "phase": "성산 유네스코 핵심 + 해녀",
+            "duration": "약 2.5시간",
+            "description": "성산일출봉(선택 등반) → 봉우리 아래 바다에서 해녀 물질공연(취소 시 해녀박물관)."
           },
           {
-            "phase": "유네스코 핵심",
-            "duration": "약 3시간",
-            "description": "성산일출봉(선택 등반) → 해녀 물질공연(취소 시 해녀박물관) → 만장굴 용암동굴(유네스코 세계자연유산)."
-          },
-          {
-            "phase": "귀환",
-            "duration": "약 1시간",
-            "description": "김녕 → 제주시 이동 + 2개 지점 및 동문시장 하차."
+            "phase": "해변 피날레와 귀환",
+            "duration": "약 2시간",
+            "description": "늦은 오후 빛의 함덕 서우봉해변(60분) → 짧은 해안 이동으로 제주시 복귀 + 2개 지점 및 동문시장 하차."
           }
         ],
         "routeShapeIntro": {
           "title": "하루 일정",
-          "subtitle": "동쪽 끝에서 섬의 두 유네스코 세계자연유산을 하루에 잇는 동제주 루프입니다 — 성산일출봉(응회구)과 만장굴(용암동굴), 둘 다 2007년 같은 자산으로 등재. 여기에 유네스코 무형유산인 해녀 물질공연까지 더합니다. 효율적인 코스로 주요 명소의 혼잡을 피합니다."
+          "subtitle": "섬의 두 유네스코 세계자연유산을 하루에 잇는 동제주 루프입니다 — 개장 직후 인파 전의 만장굴로 들어가, 같은 2007년 등재 자산인 성산일출봉에서 오후에 서사를 완성합니다. 그 사이에 조선 시대 성읍민속마을, 그 뒤에 유네스코 무형유산인 해녀 물질공연, 그리고 제주시에서 가장 가까운 함덕해변의 골든아워 마무리가 이어집니다."
         }
       }
     },
@@ -2973,6 +2977,10 @@
                 {
                   "label": "하루에 유네스코 세계자연유산 2곳 + 무형유산",
                   "detail": "성산일출봉과 만장굴은 2007년 '제주 화산섬과 용암동굴'로 함께 등재된 세계자연유산입니다. 여기에 2016년 인류무형문화유산인 해녀 물질공연까지 더해, 하루에 세 겹의 유네스코 유산을 봅니다."
+                },
+                {
+                  "label": "동굴을 먼저, 해변을 마지막에 — 순서가 곧 설계",
+                  "detail": "만장굴은 09:00 개장 직후가 가장 한적해, 픽업 후 곧장 이곳으로 향합니다 — 한낮 단체 버스 인파 전에 용암동굴을 걷고, 연중 11~13℃의 서늘함도 아침에는 상쾌함이 됩니다. 이후 성읍과 성산, 해녀 공연으로 하루를 쌓아 올린 뒤, 제주시에서 가장 가까운 함덕해변의 부드러운 늦은 오후 빛으로 마무리해 마지막 이동을 하루 중 가장 짧게 만듭니다."
                 },
                 {
                   "label": "진짜 만장굴 — 더 이상 대체가 아닌 원조 유네스코 용암동굴",
@@ -3023,11 +3031,11 @@
             "preview": "중간 난이도.",
             "content": [
               "중간 난이도.",
-              "함덕 해변은 평탄한 모래.",
+              "만장굴은 약 1km 평탄한 왕복, 동굴 입구 계단과 내부 다소 울퉁불퉁·축축한 바닥(연중 11~13℃, 겉옷 권장).",
               "성읍 민속마을은 흙길과 돌담.",
               "성산일출봉 분화구 테두리 등반은 약 30분 가파른 석계(건너뛸 수 있음).",
               "해녀 물질공연은 평탄한 해안에서 관람.",
-              "만장굴은 약 1km 평탄한 왕복, 동굴 입구 계단과 내부 다소 울퉁불퉁·축축한 바닥(연중 11~13℃, 겉옷 권장).",
+              "함덕 해변은 평탄한 모래.",
               "발가락 보호형 신발 필수.",
               "총 도보 약 4~5km."
             ]
@@ -3270,10 +3278,10 @@
       "props": {
         "note": "결제 가능 여부는 예약 단계에서 확인됩니다.",
         "price": {
-          "amountLabel": "47",
+          "amountLabel": "49",
           "originalPriceUsd": 59,
-          "salePriceUsd": 47,
-          "discountPercent": 20,
+          "salePriceUsd": 49,
+          "discountPercent": 17,
           "currency": "USD",
           "per": "person"
         }
@@ -3283,7 +3291,7 @@
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
-    "last_modified": "2026-04-28",
+    "last_modified": "2026-08-04",
     "version_history": [
       "v11",
       "v12",
@@ -3436,7 +3444,8 @@
             "reason": "Still has Haenyeo Museum as anchor refuge but 70% of stop time is weather-exposed"
           }
         }
-      }
+      },
+      "v19_reorder_2026_08_04": "Course reorder (owner instruction): Manjanggul → Seongeup → Lunch → Seongsan → Haenyeo performance → Hamdeok. Same stop set — cave-first at 09:00 opening (before tour-bus crowds), Hamdeok Beach becomes the golden-hour finale closest to Jeju City. Times shifted (Manjanggul ≈09:50, Seongeup ≈11:15, lunch ≈12:40, Seongsan/haenyeo unchanged, Hamdeok ≈16:35, drop-off ≈18:00–18:30). routePhases/routeShapeIntro/whyTourWorks/SEO/catalog updated across 6 locales. matching_profile/metadata unchanged (identical POI set)."
     }
   },
   "liveStatusSection": "haenyeo"

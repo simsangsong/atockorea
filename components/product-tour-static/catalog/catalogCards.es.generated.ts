@@ -383,7 +383,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-lugares-day-tour",
       "title": "Jeju Este: UNESCO Día",
-      "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — recorre en un bucle por el este de 9 horas la playa Hamdeok, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y Manjanggul (UNESCO).",
+      "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — Manjanggul (UNESCO) en su hora más tranquila tras la apertura, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y un final en la playa Hamdeok, en un bucle por el este de 9 horas.",
       "region": "Jeju Este",
       "duration": "9 horas",
       "stopsCount": 8,
@@ -399,7 +399,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas. Incluye la playa Hamdeok Seoubong, la Aldea Folclórica de Seongeup (patrimonio folclórico UNESCO), Seongsan Ilchulbong y Manjanggul — los dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007 — y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela). Todas las entradas incluidas, guía certificado en inglés y chino."
+      "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas — ahora con la cueva primero: Manjanggul justo tras la apertura (la hora más tranquila del tubo de lava), la Aldea Folclórica de Seongeup, Seongsan Ilchulbong y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela), y un final a última hora de la tarde en la playa Hamdeok Seoubong. Dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007, todas las entradas incluidas, guía certificado en inglés y chino."
     },
     "price": {
       "amountLabel": "49"
