@@ -32,6 +32,14 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > pages + TWO offers: default USD 49 Sky-Capsule-ticket-excluded, USD 64
 > ticket-included — ⚠ prices seeded pending owner review). Then
 > `node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour`.
+>
+> **⏳ 2026-08-04 (later still) — Pocheon course revision:**
+> `2026-08-04-05-pocheon-geopark-recourse.sql` (Herb Island dropped; Jaein Falls +
+> Idong-galbi lunch added; new 2-point pickup/drop-off; tours copy/schedule +
+> 6-locale detail_payload refresh) then
+> `2026-08-04-06-pocheon-geopark-staged-locales.sql` (de/fr/it/ru, INSERT-only).
+> After both: `node scripts/import-match-v18.mjs --single pocheon-sanjeong-lake-herb-island-art-valley`
+> — this also imports the NEW `jaein_falls` POI (KB v1.30) into `match_pois`.
 
 ## Why this folder exists
 

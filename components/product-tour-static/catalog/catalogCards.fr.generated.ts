@@ -30,5 +30,31 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "price": {
       "amountLabel": "59"
     }
+  },
+  "pocheon-sanjeong-lake-herb-island-art-valley": {
+    "catalog_card": {
+      "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+      "title": "Pocheon et Yeoncheon : lac, cascade et Art Valley en carrière",
+      "subtitle": "Une boucle à pied autour d'un lac cerné de montagnes, une cascade de 18 m sur des orgues basaltiques et un lac de carrière émeraude — deux géosites du Géoparc mondial UNESCO en une seule journée sans hâte au départ de Séoul.",
+      "region": "Pocheon et Yeoncheon (excursion depuis Séoul)",
+      "duration": "10 heures",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Excursion depuis Séoul",
+        "Géoparc UNESCO",
+        "Cascade",
+        "Balade au bord du lac",
+        "Petit groupe"
+      ],
+      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées."
+    },
+    "price": {
+      "amountLabel": "54"
+    }
   }
 };
