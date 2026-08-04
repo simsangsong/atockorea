@@ -902,14 +902,16 @@
         "time": "07:00",
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "07:30",
-        "name": "Myeongdong Station (Exit 4)",
+        "name": "Myeongdong Station (Exit 2)",
         "type": "station",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -917,21 +919,21 @@
     "return": [
       {
         "order": 1,
+        "name": "Myeongdong Station (Exit 2)",
+        "type": "station",
+        "lat": 37.56099,
+        "lng": 126.98619
+      },
+      {
+        "order": 2,
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
         "lat": 37.55753,
         "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "Myeongdong Station (Exit 4)",
-        "type": "station",
-        "lat": 37.56099,
-        "lng": 126.98619
       }
     ],
     "notes": [
-      "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable."
+      "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
     ]
   },
   "sql_overrides": {

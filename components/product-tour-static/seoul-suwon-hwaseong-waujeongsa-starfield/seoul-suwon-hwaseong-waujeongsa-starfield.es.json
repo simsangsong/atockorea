@@ -1189,19 +1189,19 @@
     "departure": [
       {
         "order": 1,
-        "time": "08:30",
-        "name": "Estación Hongik Univ. (Salida 4)",
+        "time": "08:00",
+        "name": "Estación Hongik Univ. (Salida 8)",
         "type": "station",
-        "note": "Primer punto de encuentro en Seúl; por favor llegue con 10 minutos de antelación.",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
-        "time": "09:00",
-        "name": "Estación Myeongdong",
+        "time": "08:30",
+        "name": "Estación Myeongdong (Salida 2)",
         "type": "station",
-        "note": "Segundo punto de encuentro en Seúl.",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1209,23 +1209,23 @@
     "return": [
       {
         "order": 1,
-        "name": "Estación Myeongdong",
+        "time": "18:00",
+        "name": "Estación Myeongdong (Salida 2)",
         "type": "station",
-        "note": "Punto estándar de llegada en Seúl.",
         "lat": 37.56099,
         "lng": 126.98619
       },
       {
         "order": 2,
-        "name": "Estación Hongik Univ.",
+        "time": "18:30",
+        "name": "Estación Hongik Univ. (Salida 8)",
         "type": "station",
-        "note": "Punto estándar de llegada en Seúl.",
         "lat": 37.55753,
         "lng": 126.92447
       }
     ],
     "notes": [
-      "La hora de regreso depende del tráfico y suele estar entre las 18:00 y las 19:00. El orden de llegada puede ajustarse ligeramente por eficiencia operativa. Por favor llegue al menos 10 minutos antes a su punto de encuentro seleccionado. Este tour tiene puntos de encuentro fijos, no incluye recogida en hotel."
+      "Puntos de encuentro fijos; no se ofrece recogida en el hotel. No se podrá atender a quienes lleguen tarde y no habrá reembolso."
     ]
   },
   "matching_profile": {

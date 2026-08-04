@@ -900,16 +900,18 @@
       {
         "order": 1,
         "time": "07:00",
-        "name": "Estación de Hongik Univ. (Salida 8)",
+        "name": "Estación Hongik Univ. (Salida 8)",
         "type": "station",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "07:30",
-        "name": "Estación de Myeongdong (Salida 4)",
+        "name": "Estación Myeongdong (Salida 2)",
         "type": "station",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -917,21 +919,21 @@
     "return": [
       {
         "order": 1,
-        "name": "Estación de Hongik Univ. (Salida 8)",
-        "type": "station",
-        "lat": 37.55753,
-        "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "Estación de Myeongdong (Salida 4)",
+        "name": "Estación Myeongdong (Salida 2)",
         "type": "station",
         "lat": 37.56099,
         "lng": 126.98619
+      },
+      {
+        "order": 2,
+        "name": "Estación Hongik Univ. (Salida 8)",
+        "type": "station",
+        "lat": 37.55753,
+        "lng": 126.92447
       }
     ],
     "notes": [
-      "Llegue con 10 minutos de antelación. No se puede acomodar a quienes lleguen tarde y no se realizarán reembolsos por este motivo."
+      "Puntos de encuentro fijos; no se ofrece recogida en el hotel. No se podrá atender a quienes lleguen tarde y no habrá reembolso."
     ]
   },
   "sql_overrides": {

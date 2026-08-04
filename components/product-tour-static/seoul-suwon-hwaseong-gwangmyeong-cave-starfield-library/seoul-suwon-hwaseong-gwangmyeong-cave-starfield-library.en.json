@@ -1271,14 +1271,16 @@
         "time": "08:00",
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
-        "name": "Myeongdong Station (Exit 2 or 4)",
+        "name": "Myeongdong Station (Exit 2)",
         "type": "station",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1286,21 +1288,23 @@
     "return": [
       {
         "order": 1,
+        "time": "18:00",
+        "name": "Myeongdong Station (Exit 2)",
+        "type": "station",
+        "lat": 37.56099,
+        "lng": 126.98619
+      },
+      {
+        "order": 2,
+        "time": "18:30",
         "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
         "lat": 37.55753,
         "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "Myeongdong Station (Exit 4)",
-        "type": "station",
-        "lat": 37.56099,
-        "lng": 126.98619
       }
     ],
     "notes": [
-      "Arrive 10 minutes early. Latecomers cannot be accommodated and are non-refundable. Tour does not operate on Mondays (Gwangmyeong Cave closed)."
+      "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
     ]
   },
   "matching_profile": {
