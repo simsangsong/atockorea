@@ -2,6 +2,10 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { resolveRoomActor } from '@/lib/tour-room/access';
 import { isRegionSlug } from '@/lib/itinerary-builder/regions';
+import {
+  buildImportedCourseTemplates,
+  type ServedCourseTemplate,
+} from '@/lib/tour-room/importedCourseTemplates';
 
 export const dynamic = 'force-dynamic';
 
@@ -27,14 +31,17 @@ export async function GET(
     const { booking } = resolved;
 
     let region: string | null = null;
+    let bookedTourSlug: string | null = null;
     if (booking.tour_id) {
       const { data } = await supabase
         .from('tours')
-        .select('city')
+        .select('city, slug')
         .eq('id', booking.tour_id)
         .maybeSingle();
-      const slug = String((data as { city?: unknown } | null)?.city ?? '').trim().toLowerCase();
-      region = isRegionSlug(slug) ? slug : null;
+      const row = data as { city?: unknown; slug?: unknown } | null;
+      const citySlug = String(row?.city ?? '').trim().toLowerCase();
+      region = isRegionSlug(citySlug) ? citySlug : null;
+      bookedTourSlug = typeof row?.slug === 'string' ? row.slug : null;
     }
     if (!region) {
       return NextResponse.json({ region: null, templates: [] });
@@ -48,7 +55,24 @@ export async function GET(
       .order('total_hours', { ascending: true });
     if (error) throw error;
 
-    return NextResponse.json({ region, templates: templates ?? [] });
+    // Private-charter bookings are guaranteed their imported signature courses
+    // (South/Southwest/East — same config as the product page's course switch),
+    // each with origin_tour_slug so the preview renders the rich drawer cards.
+    // DB rows win; synthesis only fills the ones course_templates lacks.
+    const dbTemplates = (templates ?? []) as ServedCourseTemplate[];
+    const existing = new Set(
+      dbTemplates
+        .map((t) => t.origin_tour_slug)
+        .filter((s): s is string => typeof s === 'string' && s.length > 0),
+    );
+    const imported = await buildImportedCourseTemplates(
+      supabase,
+      bookedTourSlug,
+      region,
+      existing,
+    ).catch(() => []);
+
+    return NextResponse.json({ region, templates: [...imported, ...dbTemplates] });
   } catch (error) {
     console.error('GET /api/tour-rooms/[bookingId]/plan/templates error:', error);
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 });

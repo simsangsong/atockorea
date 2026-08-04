@@ -77,6 +77,8 @@ export type TourProductSectionUiV1 = {
   pickupLocationsTemplate?: string;
   /** `{count}` placeholder — pickup-point count shown on the pickup card (replaces the old "Hotel pickup" badge). */
   pickupPointsTemplate?: string;
+  /** Private charters: pickup rows are CHOICES, not a shuttle sequence. */
+  pickupChoiceTemplate?: string;
   pickupCategoryLabel?: string;
   dropoffCardTitle?: string;
   dropoffApproxLabel?: string;
@@ -214,6 +216,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_EN: TourProductSectionUiV1 = {
   pickupCardTitle: "Pickup",
   pickupLocationsTemplate: "{count} locations",
   pickupPointsTemplate: "{count} pickup points",
+  pickupChoiceTemplate: "{count} pickup options \u2014 choose one",
   pickupApproximateLabel: "Approximate",
   includedLabel: "Included",
   notIncludedLabel: "Not included",
@@ -316,6 +319,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_KO: TourProductSectionUiV1 = {
   pickupDropoffSubtitle: "픽업 포함. 위치를 탭하면 상세 안내가 열립니다.",
   pickupCardTitle: "픽업",
   pickupPointsTemplate: "픽업 {count}곳",
+  pickupChoiceTemplate: "픽업 장소 {count}곳 중 선택",
   dropoffCardTitle: "드롭오프",
   dropoffApproxLabel: "대략",
   dropoffLocationsTemplate: "드롭오프 {count}곳",
@@ -424,6 +428,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_JA: TourProductSectionUiV1 = {
   pickupDropoffSubtitle: "送迎込み。各地点をタップで詳細を表示。",
   pickupCardTitle: "送迎",
   pickupPointsTemplate: "送迎 {count}地点",
+  pickupChoiceTemplate: "送迎場所 {count}カ所から選択",
   dropoffCardTitle: "解散",
   dropoffApproxLabel: "目安",
   dropoffLocationsTemplate: "解散 {count}地点",
@@ -530,6 +535,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH: TourProductSectionUiV1 = {
   pickupDropoffSubtitle: "包含接送。点击任一地点查看详情。",
   pickupCardTitle: "上车点",
   pickupPointsTemplate: "{count} 个上车点",
+  pickupChoiceTemplate: "{count} 个上车地点，任选其一",
   dropoffCardTitle: "下车点",
   dropoffApproxLabel: "大约",
   dropoffLocationsTemplate: "{count} 个下车点",
@@ -636,6 +642,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ZH_TW: TourProductSectionUiV1 = {
   pickupDropoffSubtitle: "包含接送。點擊任一地點查看詳情。",
   pickupCardTitle: "上車點",
   pickupPointsTemplate: "{count} 個上車點",
+  pickupChoiceTemplate: "{count} 個上車地點，任選其一",
   dropoffCardTitle: "下車點",
   dropoffApproxLabel: "約略",
   dropoffLocationsTemplate: "{count} 個下車點",
@@ -744,6 +751,7 @@ export const DEFAULT_TOUR_PRODUCT_SECTION_UI_ES: TourProductSectionUiV1 = {
   pickupDropoffSubtitle: "Recogida incluida. Toca cualquier punto para ver detalles.",
   pickupCardTitle: "Recogida",
   pickupPointsTemplate: "{count} puntos de recogida",
+  pickupChoiceTemplate: "{count} puntos de recogida \u2014 elige uno",
   dropoffCardTitle: "Regreso",
   dropoffApproxLabel: "aprox.",
   dropoffLocationsTemplate: "{count} puntos de regreso",
