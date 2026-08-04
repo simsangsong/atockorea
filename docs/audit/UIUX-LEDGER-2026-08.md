@@ -823,3 +823,55 @@ UX-001 이 밝힌 대로 `preShell` 이 콘솔 전체를 가운데 문자열 한
    그래서 하니스는 +12분(창 한가운데)에 심는다.
 3. 그리고 **`created_at` 은 목표시각보다 앞서야 한다** — 자기 목표보다 늦게 만들어진 공지는
    「과거 시각을 공지한 스태프 오타」로 간주돼 발화하지 않는다(backdate 가드).
+
+## G2 — 히어로 그리드 위험단 확대 (2026-08-04)
+
+**216 → 440 조합 · 실패 0 · unreachable 0.**
+
+전수 확대가 아니다. 커버리지 문서 §0 이 못 박은 대로 5,000칸 조합공간은 아무도 감당 못 하므로,
+**늘리는 기준은 「각 축의 최악이 그물 안에 있는가」**다. 그물 밖에 있던 최악만 넣었다:
+
+| 축 | 넣은 값 | 근거 |
+|---|---|---|
+| locale | **`fr`** | `npm run locale:fit` 실측 좁은 컨테이너 위험: **fr 63** · it 29 · ru 24 · de 22 · es 6. `de`·`ru` 는 이미 그물 안이었는데 **1위가 밖에 있었다** — 2위의 2배가 넘는다 |
+| skin | **`forest` · `busan`** | 커버리지 문서가 손으로 지목한 다크 계열 — 다크 테마와 캐스케이드가 겹치는 지점. 반대 극단 `contrast` 는 이미 있었다 |
+
+**locale 4→5 · skin 3→5.** 판정 5종 전부 0: CJK 글자중간 줄바꿈 · 화면 밖 이탈 · 문서 가로 오버플로 ·
+`.tr-numeral` 2개 이상 · 44px 미만 터치 타깃 · 콘솔 에러.
+
+🔴 **0 을 초록으로 읽지 않기 위해 비-공허를 따로 쟀다**(이 레포가 여섯 번 당한 실패 유형):
+- 새 값이 실제로 돌았는가 — `fr` **80** · `forest` **88** · `busan` **88** 조합.
+- 판정기가 실제로 뭔가 쟀는가 — `overflowing` 이 202행에서 0 초과, `numerals` 는 **허용 상한 1까지
+  200행에서 측정**(2가 되는 순간 터진다). 즉 「아무것도 안 재서 0」이 아니다.
+
+⚠ `overflowing` 202행은 결함이 아니다 — 320px × 최대 글자단계에서 `word-break: keep-all` 의
+**측정된 비용**이고, 하니스가 처음부터 「보고하되 판정하지 않음」으로 분리해 둔 항목이다.
+
+### ⚠ 같은 그리드가 141 실패 → 0 실패 (미해명, 재현 절차 기록)
+
+확대판 그리드를 두 번 돌렸다. **첫 실행(10분 타임아웃으로 중도 종료)은 실패 컷 141장을 남겼고,
+완주한 두 번째 실행은 `failures: 0`** 이었다. 앱도 시드도 그 사이에 바뀌지 않았다.
+
+실패 컷 하나를 열어 봤다(`home-ko-light-classic-w320-s3`) — **페이지가 완전히 정상 렌더**다.
+반쪽 렌더도, 깨진 레이아웃도, 넘친 요소도 없다. 그래서 「콜드 컴파일로 화면이 안 그려졌다」는
+설명은 **틀렸다.** 레이아웃이 멀쩡한데 실패했다면 남는 판정 사유는 `consoleErrors` 쪽이지만
+(dev 서버가 청크를 컴파일하며 뱉는 에러가 조합마다 실패로 잡히는 그림), **첫 실행의 JSONL 을
+남기지 않아 단정할 수 없다.** 추론을 측정처럼 쓰지 않는다 — 미해명으로 남긴다.
+
+**재현 절차(다음 세션이 5분에 판정할 수 있다):**
+```bash
+# 서버 재시작 직후(콜드) 한 번, 그대로 한 번 더 — 두 JSONL 을 비교한다
+node scripts/qa-hero-grid.mjs > cold.jsonl ; node scripts/qa-hero-grid.mjs > warm.jsonl
+node -e 'const f=p=>require("fs").readFileSync(p,"utf8").trim().split("\n").map(JSON.parse).filter(r=>!r.summary);
+const bad=r=>r.broken>0||r.docOverflow||r.pastEdge>0||r.numerals>1||r.smallTargets>0||(r.consoleErrors||[]).length>0;
+for(const p of ["cold.jsonl","warm.jsonl"]){const rs=f(p);console.log(p,rs.filter(bad).length,"failures");
+console.log("  사유별:",JSON.stringify(rs.filter(bad).reduce((a,r)=>{for(const k of ["broken","docOverflow","pastEdge","numerals","smallTargets"])if(r[k])a[k]=(a[k]||0)+1;if((r.consoleErrors||[]).length)a.consoleErrors=(a.consoleErrors||0)+1;return a},{})))}'
+```
+🔴 **그때까지 「440/0」은 웜 상태의 결과로만 읽어라.** 콜드에서도 0인지는 아직 모른다.
+
+### 하니스 수정 1건 — 낡은 실패 컷이 현재 판정처럼 보인다
+
+`qa-hero-grid` 는 `SHOT_DIR ?? '.'` 라 **레포 루트의 `hero-grid/`** 에 컷을 쓰고 **한 번도 비우지 않았다.**
+그래서 위 상황에서 「실패 0」이라는 출력과 **실패 컷 141장이 든 디렉터리**가 동시에 존재했고,
+디스크만 봐서는 어느 실행 것인지 알 방법이 없었다. → 실행 시작 시 `rmSync` 로 비운다.
+컷은 **방금 끝난 실행만** 설명해야 한다. `.gitignore` 에도 추가(생성물이 커밋되고 있었다).
