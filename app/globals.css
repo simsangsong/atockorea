@@ -1676,7 +1676,8 @@ body[data-welcome-popup] [data-tour-assistant-root] {
   visibility: hidden;
 }
 
-/* Welcome-coupon success step: the vermilion stamp "lands" on the ticket. */
+/* Welcome-coupon success step: the 낙관 seal "lands" on the card (v6: a
+ * hairline brass ring — the filled vermilion disc was retired 2026-08-04). */
 @keyframes wc-stamp-land {
   0% { transform: scale(1.7) rotate(18deg); opacity: 0; }
   60% { transform: scale(0.94) rotate(7deg); opacity: 1; }
@@ -1712,9 +1713,9 @@ body[data-welcome-popup] [data-tour-assistant-root] {
 /* Deeper, softly blurred veil while the invitation is up (body attribute is
  * kept through the exit animation by the popup's delayed-removal effect). */
 body[data-welcome-popup] [data-slot='dialog-overlay'] {
-  background: rgba(26, 21, 12, 0.34);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(28, 25, 23, 0.26);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   animation-duration: 0.6s;
 }
 @media (prefers-reduced-motion: reduce) {
