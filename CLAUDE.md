@@ -3,7 +3,8 @@
 ## 🔴 진행 중 (최신): 스마트앱 **UI/UX 감사 트랙** — U9 수정 중 (통합 트랙 UI 티켓을 흡수)
 
 **이어받으면 이것부터:** **`docs/smartapp-uiux-audit-master-plan-2026-08-03.md`** (§4 루브릭 6축 · §5 WBS)
-**문법 스윕 트랙(2026-08-04): G0·G1·G4 완료, G2·G3 만 남음(로컬 키 세션 몫).**
+**문법 스윕 트랙(2026-08-04): G0·G1·G4 완료, G2·G3 만 남음(로컬 키 세션 몫 —
+부트스트랩 `docs/NEXT-SESSION-LOCAL-G2G3-2026-08-04.md`, §0 원커맨드 + §1 시각 확인 6건 먼저).**
 플랜 `docs/smartapp-grammar-uiux-sweep-plan-2026-08-04.md`(§8 실행 로그) · 원장
 `docs/audit/GRAMMAR-LEDGER-2026-08.md`(G4 마감 표) · 격자 `docs/audit/GRAMMAR-GRID.md`(**생성물**).
 **PR #715 머지** = 사장님 결정 5건 전부 구현: 반응 이모지 **30종**(기존 5종 선두=집계 연속성) ·
