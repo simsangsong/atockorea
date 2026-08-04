@@ -29,7 +29,7 @@
  *   3) SHOT_DIR=<out> node scripts/qa-hero-grid.mjs
  */
 import { chromium } from 'playwright';
-import { readFileSync, mkdirSync } from 'fs';
+import { readFileSync, mkdirSync, rmSync } from 'fs';
 import path from 'path';
 
 /**
@@ -48,14 +48,38 @@ export const COVERS = [
 
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3161';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'hero-grid');
+/**
+ * 🔴 Clear the shot directory first. This bit on 2026-08-04: a run that was
+ * killed part-way left 141 failure screenshots behind, the next run finished
+ * clean with `failures: 0`, and the stale shots sat there looking like the
+ * current verdict — "0 failures" and a directory full of failure cuts, with
+ * nothing on disk saying which run each belonged to. Shots must only ever
+ * describe the run that just finished.
+ */
+rmSync(OUT, { recursive: true, force: true });
 mkdirSync(OUT, { recursive: true });
 
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
 const lobbyFx = JSON.parse(readFileSync('scripts/.sim-lobby-fixtures.json', 'utf8'));
 
-const LOCALES = ['ko', 'en', 'de', 'ru'];
+/**
+ * G2 axis expansion (2026-08-04). The net grows by RISK EDGE, never by census —
+ * `docs/audit/UIUX-COVERAGE.md` §0 is explicit that the 5,000-cell space is not
+ * something to enumerate, so the question is "is each axis's worst case inside
+ * the net", not "what fraction is covered".
+ *
+ * `fr` — `npm run locale:fit` counts narrow-container risks per locale:
+ *   fr 63 · it 29 · ru 24 · de 22 · es 6.
+ * `de` and `ru` were already here; the worst one was not. fr carries nearly
+ * three times the second-place count.
+ *
+ * `forest` · `busan` — the coverage doc names these two by hand: the dark-family
+ * skins, whose risk is the cascade colliding with dark theme. `contrast` covers
+ * the opposite extreme and was already in.
+ */
+const LOCALES = ['ko', 'en', 'de', 'ru', 'fr'];
 const SCHEMES = ['light', 'dark'];
-const SKINS = ['classic', 'contrast', 'jeju'];
+const SKINS = ['classic', 'contrast', 'jeju', 'forest', 'busan'];
 const WIDTHS = [390, 320];
 const SCALES = [3, 5];
 

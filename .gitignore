@@ -108,3 +108,7 @@ assets/audio/video-guide/
 
 # QA walk artifacts (screenshots, regenerated on demand)
 scripts/.walk-*/
+
+# QA harness output — failure screenshots from scripts/qa-hero-grid.mjs
+# (SHOT_DIR defaults to the repo root, so a bare run drops them here)
+hero-grid/

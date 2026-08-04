@@ -11,18 +11,18 @@
 
 ## 1. 축별 커버리지
 
-### locale — 그물 안 4 / 전체 10
+### locale — 그물 안 5 / 전체 10
 
 - **정본:** `lib/tour-room/snapshot.ts ROOM_LOCALES`
-- **그물 안:** `en` · `ko` · `de` · `ru`
-- **그물 밖:** `zh` · `zh-TW` · `ja` · `es` · `fr` · `it`
+- **그물 안:** `en` · `ko` · `fr` · `de` · `ru`
+- **그물 밖:** `zh` · `zh-TW` · `ja` · `es` · `it`
 - **위험단:** 가장 긴 불가분 토큰을 가진 로케일이 위험단. `npm run locale:fit` 이 판정한다.
 
-### skin — 그물 안 3 / 전체 10
+### skin — 그물 안 5 / 전체 10
 
 - **정본:** `hooks/useTourRoomSettings.ts TOUR_SKINS`
-- **그물 안:** `classic` · `jeju` · `contrast`
-- **그물 밖:** `sky` · `winter` · `forest` · `meadow` · `seoul` · `busan` · `blossom`
+- **그물 안:** `classic` · `forest` · `jeju` · `busan` · `contrast`
+- **그물 밖:** `sky` · `winter` · `meadow` · `seoul` · `blossom`
 - **위험단:** `contrast` 가 대비 극단, 어두운 계열(`forest`·`busan`)이 다크와 겹칠 때 위험단.
 
 ### textScale — 그물 안 2 / 전체 5
@@ -74,9 +74,9 @@
 
 ### `scripts/qa-hero-grid.mjs`
 
-- `LOCALES` (locale): `ko` · `en` · `de` · `ru`
+- `LOCALES` (locale): `ko` · `en` · `de` · `ru` · `fr`
 - `SCHEMES` (theme): `light` · `dark`
-- `SKINS` (skin): `classic` · `contrast` · `jeju`
+- `SKINS` (skin): `classic` · `contrast` · `jeju` · `forest` · `busan`
 - `SCALES` (textScale): `3` · `5`
 
 ### `scripts/qa-rally-stages.mjs`
