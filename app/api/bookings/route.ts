@@ -10,6 +10,7 @@ import {
   validateBookingDate,
 } from '@/lib/validation';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
+import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import {
   tourListPricesToUsdSync,
@@ -170,7 +171,7 @@ export async function POST(req: NextRequest) {
     const [tourResult, authResult, krwPerUsd] = await Promise.all([
       supabase
         .from('tours')
-        .select('id, merchant_id, price, original_price, price_currency, price_type, title')
+        .select('id, merchant_id, slug, price, original_price, price_currency, price_type, title')
         .eq('id', tourId)
         .single(),
       bearerToken ? supabase.auth.getUser(bearerToken) : Promise.resolve(null),
@@ -225,7 +226,20 @@ export async function POST(req: NextRequest) {
 
     // Check availability before creating booking
     const dateStr = bookingDate.split('T')[0]; // Extract date part if ISO string
-    
+
+    // Business rule: fixed-schedule products do not run off their departure
+    // weekdays. Enforced here and not only in the calendar — a greyed date that
+    // the create route still accepts is a booking for a tour that never leaves.
+    if (isDateOffDepartureDay((tour as { slug?: string | null }).slug, dateStr)) {
+      return NextResponse.json(
+        {
+          error: departureDayReason((tour as { slug?: string | null }).slug),
+          code: 'OFF_DEPARTURE_DAY',
+        },
+        { status: 400 }
+      );
+    }
+
     // Inventory + existing-bookings are independent reads → fetch in parallel.
     const [inventoryRes, existingRes] = await Promise.all([
       supabase
@@ -233,7 +247,9 @@ export async function POST(req: NextRequest) {
         .select('*')
         .eq('tour_id', tourId)
         .eq('tour_date', dateStr)
-        .eq('is_available', true)
+        // 🔴 Do NOT filter on is_available — a closed row filtered out here
+        // reads below as PGRST116 "no inventory", which falls through to the
+        // default capacity and books the date the operator had closed.
         .single(),
       supabase
         .from('bookings')
@@ -268,6 +284,14 @@ export async function POST(req: NextRequest) {
     let availableSpots = 0;
 
     if (inventory) {
+      // The row is now fetched regardless of `is_available`, so this branch has
+      // to honour the flag itself. A closed date has no spots at any capacity.
+      if (inventory.is_available === false) {
+        return NextResponse.json(
+          { error: 'This date is not available for booking', code: 'DATE_CLOSED' },
+          { status: 400 }
+        );
+      }
       const maxCapacity = inventory.max_capacity;
       if (maxCapacity !== null) {
         availableSpots = Math.max(0, maxCapacity - bookedGuests);

@@ -14,6 +14,7 @@
 
 import { createServerClient } from "@/lib/supabase";
 import { ACTIVE_BOOKING_STATUSES } from "@/lib/constants/booking-status";
+import { isDateOffDepartureDay } from "@/lib/tour-departure-days";
 
 const DEFAULT_CAPACITY = 50;
 
@@ -40,6 +41,13 @@ export async function checkAvailability(
     authoritative: false,
   };
 
+  // Fixed-schedule products do not run off their departure weekdays. This is a
+  // property of the slug, so it answers without a DB round-trip — and unlike
+  // the capacity read below, "sold_out" here is a certainty, not best-effort.
+  if (isDateOffDepartureDay(slug, date)) {
+    return { slug, date, status: "sold_out", available_spots: 0, max_capacity: null, authoritative: false };
+  }
+
   try {
     const supabase = createServerClient();
 
@@ -55,10 +63,12 @@ export async function checkAvailability(
     const [{ data: inventory }, { data: existing }] = await Promise.all([
       supabase
         .from("product_inventory")
-        .select("max_capacity, available_spots")
+        .select("max_capacity, available_spots, is_available")
         .eq("tour_id", tourId)
         .eq("tour_date", date)
-        .eq("is_available", true)
+        // 🔴 Do NOT filter on is_available — a closed row filtered out here
+        // reads below as "no inventory row" and reopens the date at the
+        // default capacity. The branch reads the flag instead.
         .maybeSingle(),
       supabase
         .from("bookings")
@@ -76,7 +86,10 @@ export async function checkAvailability(
 
     let availableSpots: number;
     let maxCapacity: number | null;
-    if (inventory) {
+    if (inventory && (inventory as { is_available?: boolean | null }).is_available === false) {
+      // Explicitly closed by an operator — no capacity makes it bookable.
+      return { slug, date, status: "sold_out", available_spots: 0, max_capacity: null, authoritative: false };
+    } else if (inventory) {
       const max = (inventory as { max_capacity?: number | null }).max_capacity ?? null;
       if (max != null) {
         maxCapacity = max;

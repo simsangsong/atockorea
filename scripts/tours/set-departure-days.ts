@@ -16,10 +16,21 @@
  * per-date capacity or price override survives a weekday change. Rows whose
  * date already carries bookings are never closed — the script reports them and
  * leaves them alone rather than stranding a booked guest.
+ *
+ * 🔴 A new row must carry a capacity. The same route publishes a date as
+ * `available: availableSpots > 0 && is_available`, and `available_spots`
+ * defaults to 0 while `max_capacity` has no default — so seeding open days
+ * without a capacity closes them just as thoroughly as `is_available: false`
+ * would, only it renders as "sold out" instead of "not running". The default
+ * below is the route's own no-row fallback, which is what these dates showed
+ * before the script touched them.
  */
 import { createClient } from '@supabase/supabase-js';
 
 const WEEKDAYS = ['sun', 'mon', 'tue', 'wed', 'thu', 'fri', 'sat'] as const;
+
+/** `app/api/tours/[id]/availability/range` publishes a date with no row at this capacity. */
+const DEFAULT_CAPACITY = 50;
 
 const argv = process.argv.slice(2);
 const flag = (n: string): string | undefined => {
@@ -54,58 +65,75 @@ if (!url || !key) {
 }
 const sb = createClient(url, key, { auth: { persistSession: false } });
 
-const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourRef);
-const { data: tour, error: tourErr } = await sb
-  .from('tours').select('id, slug, title').eq(isUuid ? 'id' : 'slug', tourRef).maybeSingle();
-if (tourErr) { console.error(`tours 조회 실패: ${tourErr.message}`); process.exit(1); }
-if (!tour) { console.error(`투어를 못 찾았다: ${tourRef}`); process.exit(1); }
-
 const ymd = (d: Date) => d.toISOString().slice(0, 10);
-const today = new Date();
-const start = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
-const end = new Date(start); end.setUTCMonth(end.getUTCMonth() + months);
 
-const dates: { date: string; open: boolean }[] = [];
-for (const d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
-  dates.push({ date: ymd(d), open: openDays.has(d.getUTCDay()) });
+async function main(): Promise<number> {
+  const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(tourRef!);
+  const { data: tour, error: tourErr } = await sb
+    .from('tours').select('id, slug, title, merchant_id').eq(isUuid ? 'id' : 'slug', tourRef!).maybeSingle();
+  if (tourErr) { console.error(`tours 조회 실패: ${tourErr.message}`); return 1; }
+  if (!tour) { console.error(`투어를 못 찾았다: ${tourRef}`); return 1; }
+  // NOT NULL with no default — an insert that omits it fails every row.
+  if (!tour.merchant_id) { console.error(`${tour.slug} 에 merchant_id 가 없다 — product_inventory 는 NOT NULL 이다.`); return 1; }
+
+  const today = new Date();
+  const start = new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate()));
+  const end = new Date(start); end.setUTCMonth(end.getUTCMonth() + months);
+
+  const dates: { date: string; open: boolean }[] = [];
+  for (const d = new Date(start); d <= end; d.setUTCDate(d.getUTCDate() + 1)) {
+    dates.push({ date: ymd(d), open: openDays.has(d.getUTCDay()) });
+  }
+
+  const [{ data: existing }, { data: booked }] = await Promise.all([
+    sb.from('product_inventory').select('id, tour_date, is_available, max_capacity, available_spots')
+      .eq('tour_id', tour.id).gte('tour_date', ymd(start)).lte('tour_date', ymd(end)),
+    sb.from('bookings').select('booking_date')
+      .eq('tour_id', tour.id).gte('booking_date', ymd(start)).lte('booking_date', ymd(end))
+      .in('status', ['pending', 'confirmed', 'paid']),
+  ]);
+
+  const byDate = new Map((existing ?? []).map((r) => [r.tour_date as string, r]));
+  const bookedDates = new Set((booked ?? []).map((b) => b.booking_date as string));
+
+  const toOpen: typeof dates = [], toClose: typeof dates = [], skipped: string[] = [];
+  // An existing open row with no spots renders as sold out, not as open. We do
+  // not rewrite an operator's capacity, so report it instead of hiding it.
+  const zeroCapacity: string[] = [];
+  for (const d of dates) {
+    const cur = byDate.get(d.date);
+    if (!d.open && bookedDates.has(d.date)) { skipped.push(d.date); continue; }
+    if (d.open && cur && (cur.max_capacity ?? cur.available_spots ?? 0) <= 0) zeroCapacity.push(d.date);
+    if (cur && cur.is_available === d.open) continue;
+    (d.open ? toOpen : toClose).push(d);
+  }
+
+  console.log(`${tour.title} (${tour.slug})`);
+  console.log(`  운행 요일: ${[...openDays].sort().map((i) => WEEKDAYS[i]).join(', ')} · 기간 ${ymd(start)} ~ ${ymd(end)}`);
+  console.log(`  열 날짜 ${toOpen.length} · 닫을 날짜 ${toClose.length} · 이미 맞음 ${dates.length - toOpen.length - toClose.length - skipped.length}`);
+  console.log(`  신규 행 정원: ${capacity ?? DEFAULT_CAPACITY}${capacity == null ? ' (라우트 기본값)' : ' (--capacity)'}`);
+  if (skipped.length) console.log(`  ⚠ 예약이 있어 닫지 않은 날 ${skipped.length}: ${skipped.slice(0, 8).join(', ')}${skipped.length > 8 ? ' …' : ''}`);
+  if (zeroCapacity.length) console.log(`  ⚠ 정원 0 이라 열어도 매진으로 보이는 기존 행 ${zeroCapacity.length}: ${zeroCapacity.slice(0, 8).join(', ')}${zeroCapacity.length > 8 ? ' …' : ''}`);
+
+  if (!APPLY) { console.log('\n드라이런이다. 실제로 쓰려면 --apply 를 붙여라.'); return 0; }
+
+  const cap = capacity ?? DEFAULT_CAPACITY;
+  let wrote = 0, failed = 0;
+  for (const d of [...toOpen, ...toClose]) {
+    const cur = byDate.get(d.date);
+    const { error } = cur
+      ? await sb.from('product_inventory').update({ is_available: d.open }).eq('id', cur.id)
+      : await sb.from('product_inventory').insert({
+          tour_id: tour.id, merchant_id: tour.merchant_id, tour_date: d.date, is_available: d.open,
+          max_capacity: cap, available_spots: cap, total_spots: cap,
+        });
+    if (error) { console.error(`  ✗ ${d.date}: ${error.message}`); failed += 1; continue; }
+    wrote += 1;
+  }
+  console.log(`\n${wrote}/${toOpen.length + toClose.length} 행 반영 완료.`);
+  return failed ? 1 : 0;
 }
 
-const [{ data: existing }, { data: booked }] = await Promise.all([
-  sb.from('product_inventory').select('id, tour_date, is_available, max_capacity')
-    .eq('tour_id', tour.id).gte('tour_date', ymd(start)).lte('tour_date', ymd(end)),
-  sb.from('bookings').select('booking_date')
-    .eq('tour_id', tour.id).gte('booking_date', ymd(start)).lte('booking_date', ymd(end))
-    .in('status', ['pending', 'confirmed', 'paid']),
-]);
-
-const byDate = new Map((existing ?? []).map((r) => [r.tour_date as string, r]));
-const bookedDates = new Set((booked ?? []).map((b) => b.booking_date as string));
-
-const toOpen: typeof dates = [], toClose: typeof dates = [], skipped: string[] = [];
-for (const d of dates) {
-  const cur = byDate.get(d.date);
-  if (!d.open && bookedDates.has(d.date)) { skipped.push(d.date); continue; }
-  if (cur && cur.is_available === d.open) continue;
-  (d.open ? toOpen : toClose).push(d);
-}
-
-console.log(`${tour.title} (${tour.slug})`);
-console.log(`  운행 요일: ${[...openDays].sort().map((i) => WEEKDAYS[i]).join(', ')} · 기간 ${ymd(start)} ~ ${ymd(end)}`);
-console.log(`  열 날짜 ${toOpen.length} · 닫을 날짜 ${toClose.length} · 이미 맞음 ${dates.length - toOpen.length - toClose.length - skipped.length}`);
-if (skipped.length) console.log(`  ⚠ 예약이 있어 닫지 않은 날 ${skipped.length}: ${skipped.slice(0, 8).join(', ')}${skipped.length > 8 ? ' …' : ''}`);
-
-if (!APPLY) { console.log('\n드라이런이다. 실제로 쓰려면 --apply 를 붙여라.'); process.exit(0); }
-
-let wrote = 0;
-for (const d of [...toOpen, ...toClose]) {
-  const cur = byDate.get(d.date);
-  const { error } = cur
-    ? await sb.from('product_inventory').update({ is_available: d.open }).eq('id', cur.id)
-    : await sb.from('product_inventory').insert({
-        tour_id: tour.id, tour_date: d.date, is_available: d.open,
-        ...(capacity != null ? { max_capacity: capacity, available_spots: capacity } : {}),
-      });
-  if (error) { console.error(`  ✗ ${d.date}: ${error.message}`); continue; }
-  wrote += 1;
-}
-console.log(`\n${wrote}/${toOpen.length + toClose.length} 행 반영 완료.`);
+main()
+  .then((code) => { process.exit(code); })
+  .catch((err) => { console.error(err); process.exit(1); });

@@ -167,7 +167,47 @@ region 토큰 교집합이 0 이었다(region 은 가중치 ×4 로 가장 무�
 서울 통일 규칙 §8 적용) ⓑ 아니면 이미 다른 데(어드민/DB)에 있는 상품의 날짜만 바꾸는 건가.
 ⓐ면 상품 신규 생성 + 요일 규칙 추가, ⓑ면 슬러그를 알려주셔야 한다.
 
+### §11-b 정정(2026-08-04, 실행 세션): **§11-a 의 처방은 안 통했다. 요일 규칙으로 갔다.**
+
+아래 §11-a 는 "인벤토리 행을 채워서 닫는다"고 처방했다. **실행해 보니 막혀 있다.**
+
+* `product_inventory.merchant_id` 는 **NOT NULL + FK → `merchants(id)`** 인데
+  **`merchants` 테이블이 0행**이고 **`tours.merchant_id` 는 37개 상품 전부 NULL** 이다.
+  → 오늘 이 DB 에는 **인벤토리 행을 하나도 못 넣는다.** 실제로 `--apply` 가 185행 전부
+  `null value in column "merchant_id"` 로 실패했다(**0/185**, DB 는 그대로다).
+* `product_inventory` 는 지금 **전 테이블 0행**이다. 그리고 "가용성 무한 = 인벤토리를 비워 둔다"는
+  기존 결정과도 어긋난다. **운행 요일은 정원 문제가 아니라 일정 문제다.**
+
+**그래서 §11 의 원래 결론("요일 규칙을 추가하는 편이 맞다")으로 되돌아갔다.**
+신규 `lib/tour-departure-days.ts` — 슬러그 → 운행 요일, `lib/tour-seasonal-windows.ts` 와 같은 모양.
+**판정 표면 넷 전부**가 읽는다(캘린더 range · 단일 날짜 · 예약 생성 · 에이전트/MCP).
+캘린더만 회색이고 예약 API 가 받아주면 아무 의미가 없어서다.
+
+🔴 **같은 결함이 세 파일에 더 있었다.** 커밋 `3dd7b642` 는 range 라우트에서만
+`.eq('is_available', true)` 를 지웠는데, `availability/route.ts`·`bookings/route.ts`·
+`lib/agent/availability.ts` 가 **같은 필터를 그대로 들고 있었다**(닫은 행이 조회에서 빠지고
+"행 없음" 분기가 기본 정원으로 되살림). 넷 다 제거하고, 필터를 지운 자리마다 `is_available`
+소비를 넣었다 — 안 그러면 닫힌 행이 **정원 그대로 열린 날**이 된다.
+
+🔴 **스크립트는 그때까지 한 번도 실행된 적이 없었다.** top-level `await` + tsx 의 CJS 변환이
+충돌해 4개 에러로 즉사한다. `main()` 래핑으로 고쳤다(레포 관례). **"도구를 만들어 뒀다"와
+"도구가 돈다"는 다르다.** 스크립트는 `merchants` 가 생기는 날을 위해 남겨 뒀고, 이제
+신규 행에 `merchant_id`·정원을 채운다 — 정원을 안 채우면 **여는 날이 매진으로 렌더된다**
+(`available: availableSpots > 0 && is_available`, `available_spots` 기본값 0).
+
+**게이트:** `__tests__/lib/tour-departure-days.test.ts`(단위) + `__tests__/audit/departureDayWiring.test.ts`
+(**배선** — 네 표면이 실제로 부르는지 소스로 검사. 결함이 *호출자의 부재*라 단위 테스트로는 안 잡힌다).
+배선을 끊는 뮤테이션으로 빨간불 확인함.
+
+**실렌더 검증:** `node --import tsx scripts/qa-departure-days.ts --base=<dev>` — 실제 달력의
+`react-datepicker__day--disabled` 를 센다. 포천 2026년 8월: **미래 28일 중 선택 가능 12 · 회색 16,
+어긋난 날 0**. 열린 12일 = 6·8·10·13·15·17·20·22·24·27·29·31 로 **§11 스크린샷과 정확히 일치**.
+규칙 없는 상품(`jeju-grand-highlights-loop`)은 전부 열림 — 하니스가 항상 "맞다"고 하는 게 아님을 확인.
+수원 3종은 API 로 검증(§12 날짜와 일치) — 상세페이지가 소비자 블록이라 달력이 아예 없다.
+
 ### §11-a 후속(2026-08-04): DB 상품이라 하셔서 — 도구를 만들고 버그를 하나 고쳤다
+
+⚠ **아래 처방은 §11-b 로 대체됐다.** 무엇이 문제인지만 읽고, 처방은 §11-b 를 따르라.
 
 사장님 확인: **"db상품 날짜만"**. 이 세션의 Supabase MCP 는 다른 프로젝트(Kursoflow)에 물려 있어
 AtoC DB 에 닿지 않는다(`list_projects` 로 확인). 그래서 **PC 에서 한 커맨드로 끝나게** 만들어 뒀다:
@@ -189,6 +229,13 @@ npm run tour:days -- --tour=<uuid 또는 slug> --days=mon,thu,sat --months=6 --a
 
 재인폭포 슬러그/UUID 는 사장님이 아시는 값을 넣으면 된다. 스크린샷 기준 요일은 **mon,thu,sat**.
 
+**✅ 슬러그 확정(2026-08-04): `pocheon-sanjeong-lake-herb-island-art-valley`** (`943c79aa-…`).
+`tours` 전수 검색(slug·title·description + `itinerary`/`translations` jsonb 까지
+`jaein|yeoncheon|hantan|재인|연천|Falls`) 결과 후보가 이것 하나다. 2026-08-04 포천 코스 개편이
+허브아일랜드를 빼고 **재인폭포(연천)를 넣은 바로 그 상품**이고, 슬러그를 그대로 둔 건 라이브
+Klook SKU 라서다. DB 가격 $54.00 ≈ 스크린샷 US$54.55. **상품 본문 자체가 이미
+"departs on Mondays, Thursdays and Saturdays only" 라고 말한다** — 스크린샷과 독립된 교차 확인.
+
 ## §12 수원 3형제 운행 요일 (사장님 스크린샷 2026-08-04, 2026년 8월 캘린더)
 
 세 상품이 **요일을 나눠 돌린다** — 같은 차량·가이드를 요일별로 다른 패키지에 붙이는 편성으로 보인다.
@@ -203,7 +250,18 @@ npm run tour:days -- --tour=<uuid 또는 slug> --days=mon,thu,sat --months=6 --a
 광명동굴: 5·7·9·12·14·16·19·21·23·26·28·30. (8/1~8/4 회색은 리드타임 컷오프 — 스크린샷이 8/4 촬영이다.
 민속촌만 8/6 목요일이 닫혀 있는데 이건 요일 규칙이 아니라 그 날짜 개별 사정으로 보인다 — 8/13 이후 목요일은 다 열려 있다.)
 
-**PC 에서 이대로 돌리면 된다**(슬러그를 그대로 받는다. 드라이런 먼저):
+**✅ 반영 완료(2026-08-04) — 단 DB 가 아니라 코드로.** 아래 커맨드는 `merchants` 0행 때문에
+쓰지 못한다(§11-b). 세 상품의 요일은 `lib/tour-departure-days.ts` 에 있고 네 판정 표면이 읽는다.
+API 실측(2026-08-04~31): 와우정사 4·6·8·11·13·15·18·20·22·25·27·29 / 민속촌
+6·8·10·13·15·17·20·22·24·27·29·31 / 광명동굴 5·7·9·12·14·16·19·21·23·26·28·30 —
+**세 상품 전부 위 표의 스크린샷 날짜와 일치**(민속촌 8/6 은 §12 가 적어 둔 그 날짜 개별 사정).
+
+⚠ **세 상품은 지금 손님에게 안 보인다** — `CONSUMER_BLOCKED_TOUR_SLUGS`(Klook 12 SKU 축소,
+2026-06-29) + DB `is_active=false`. 상세페이지가 HTTP 200 을 주지만 내용은 홈 셸 + not-found 라
+**예약 달력 자체가 없다.** 재오픈은 블록리스트 제거 + `is_active` 두 쪽이 한 세트이고 사장님 결정이다.
+요일 규칙은 그날을 위해 이미 깔려 있다.
+
+**(참고 — 아래는 `merchants` 가 생긴 뒤에나 쓸 수 있다):**
 
 ```bash
 npm run tour:days -- --tour=seoul-suwon-hwaseong-waujeongsa-starfield           --days=tue,thu,sat --months=6

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
+import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -121,6 +122,22 @@ export async function GET(
     while (currentDate <= end) {
       const dateStr = currentDate.toISOString().split('T')[0];
       dates.push(dateStr);
+
+      // Business rule: fixed-schedule products do not run off their departure
+      // weekdays. Checked before the inventory map is consulted, and it wins:
+      // a date the tour does not depart on is closed no matter what capacity
+      // an inventory row claims.
+      if (isDateOffDepartureDay(tour?.slug, dateStr)) {
+        availabilityMap[dateStr] = {
+          available: false,
+          availableSpots: 0,
+          maxCapacity: availabilityMap[dateStr]?.maxCapacity ?? null,
+          priceOverride: availabilityMap[dateStr]?.priceOverride ?? null,
+          reason: departureDayReason(tour?.slug),
+        };
+        currentDate.setDate(currentDate.getDate() + 1);
+        continue;
+      }
 
       // Business rule: Jeju East tours are not bookable on Mondays
       const weekday = currentDate.getUTCDay(); // 0=Sun, 1=Mon, ...
