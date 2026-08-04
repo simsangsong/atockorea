@@ -119,7 +119,11 @@ describe('🔴 손님 문구에 렌더되지 않는 표기가 없어야 한다',
    *   ② 전체는 **상한 래칫** — 늘어나면 실패한다. 숫자는 줄어드는 방향으로만.
    * 🔴 이 숫자를 올리지 말 것. 올려야 한다면 그건 새 누수를 넣었다는 뜻이다.
    */
-  const BOLD_CEILING = 1533;
+  // 2026-08-04 부산 기항 3종 코스 정합에서 1533 → 1474.
+  // 소그룹에 도너한 스톱(자갈치·BIFF·국제시장·용두산)이 `visitBasics`·`smartNotes.photo`
+  // 에 별표를 달고 있었다. 그대로 복사했으면 1544 가 됐을 것이고, 게이트가 그걸 잡았다.
+  // 옮기는 대신 떼어냈고, 조인 버스 상품 쪽 원본도 같이 정리돼 순감했다.
+  const BOLD_CEILING = 1474;
   const CLEANED_SLUG_PREFIX = 'from-busan-gyeongju-ancient-capital-day-tour/';
 
   it('정리한 상품(경주)은 raw 필드 bold 가 0 이다', () => {

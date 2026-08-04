@@ -6,7 +6,7 @@
   "product_id": "busan-cruise-shore-excursion-bus-tour",
   "seo": {
     "pageTitle": "Busan Cruise Shore Excursion: Coastal Bus Tour | AtoC Korea",
-    "metaDescription": "9-hour Busan coastal bus tour for cruise passengers from Busan Port Cruise Terminal: Yonggungsa, UN Memorial, Jagalchi/BIFF/Gukje, Gamcheon, Songdo, Yongdusan — return guaranteed before sail-away.",
+    "metaDescription": "8-hour Busan coastal bus tour for cruise passengers from Busan Port Cruise Terminal: Yonggungsa, UN Memorial, Jagalchi/BIFF/Gukje, Gamcheon, Songdo, Yongdusan — return guaranteed before sail-away.",
     "primaryKeywords": [
       "Busan cruise shore excursion",
       "Busan bus tour cruise",
@@ -16,13 +16,13 @@
     ],
     "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Busan Cruise Shore Excursion · Coastal Bus Tour | AtoC Korea",
-    "description": "Large-coach Busan coastal day tour for cruise passengers: 8 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
+    "description": "Large-coach Busan coastal day tour for cruise passengers: 9 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
   },
   "catalog_card": {
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "Busan Cruise Shore: Coastal Bus Tour",
     "priceLabel": "",
-    "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
+    "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
     "tags": [
       "Cruise excursion",
       "Bus tour",
@@ -36,7 +36,7 @@
     "subtitle": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away.",
     "region": "Busan",
     "duration": "8 hours",
-    "stopsCount": 8,
+    "stopsCount": 9,
     "badges": [
       "Cruise excursion",
       "Large coach",
@@ -66,7 +66,7 @@
     "meta": {
       "duration": "≈ 8 hours, timed to your cruise's port-call window",
       "region": "Busan",
-      "stops": "8 stops",
+      "stops": "9 stops",
       "rating": 0,
       "ratingStars": 0
     }
@@ -437,25 +437,25 @@
   "itineraryStops": [
     {
       "name": "Busan Port pickup (International Cruise Terminal)",
-      "time": "≈ 08:30",
+      "time": "≈ 09:00",
       "number": 1,
       "category": "Cruise terminal pickup",
-      "duration": "30 min window",
+      "duration": "15 min window",
       "timeUsed": [
         "Disembark and clear cruise terminal (~10 min)",
         "Meet guide at terminal arrival hall holding 'AtoC Korea' sign (~5 min)",
         "Board large coach in terminal coach lot (~10 min)",
         "Printed Korean-English itinerary card distributed at boarding"
       ],
-      "whyOnRoute": "Direct pickup at the Busan Port International Cruise Terminal coach lot removes the need for cruise passengers to find local transport. The 08:30 meet allows clear time after the ship's morning disembarkation while keeping the day on schedule for the 18:00 sail-away buffer at the typical Busan cruise port call. The large coach lets the route stay budget-tier — same eight signature stops as our small-group product at roughly two-thirds the price.",
-      "description": "Pickup is at the **Busan Port International Cruise Terminal (부산항국제여객터미널)**, Korea's largest dedicated cruise terminal, located on the Yeongdo-side waterfront in Jung-gu. \n\nAfter disembarking, follow signs to the terminal **arrival hall** — the AtoC Korea guide waits there with an 'AtoC Korea / Busan Coastal Tour' sign and a printed Korean-English itinerary card for each guest. \n\nThe large coach (typical 28–45 seats depending on group size) waits in the terminal coach lot, a 2-minute walk through the covered concourse. Please be at the meeting point **by 08:25** for an 08:30 departure. \n\nFrom the terminal the coach drives ~30 minutes northeast along the **Gwangan Bridge** scenic route toward Gijang-gun for the day's first stop at **Haedong Yonggungsa Temple**. \n\nThe guide will brief on the day's running order, restroom stops, and the cruise-return buffer (typically returning to terminal by 17:30 for a 19:00+ sail-away)."
+      "whyOnRoute": "Picking you up in the terminal arrival hall removes the one thing that goes wrong on a port day: finding local transport with a clock running. The 09:00 meet leaves clear time after the ship's morning disembarkation and still fits the full nine-stop route into an eight-hour day, back at the terminal by 17:00.",
+      "description": "Pickup is in the **arrival hall of whichever Busan cruise terminal your ship berths at** — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). Neither is a default: it depends on where your ship docks, and it is confirmed at booking.\n\nAfter disembarking, follow the signs to the arrival hall. Your guide is waiting there with an AtoC Korea sign and a printed itinerary card. Please be at the meeting point **by 08:50 for a 09:00 departure**.\n\nThe day runs about **8 hours**, ending back at your terminal around 17:00. The guide reconfirms your ship's all-aboard time at pickup and adjusts the running order if your sail-away is unusually early."
     },
     {
       "name": "Haedong Yonggungsa Temple",
-      "time": "≈ 09:30",
+      "time": "≈ 09:45",
       "number": 2,
       "category": "Buddhist Temple / Coastal",
-      "duration": "75 min",
+      "duration": "50 min",
       "timeUsed": [
         "Coach drop-off + walk through vendor lane to entry plaza (~10 min)",
         "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
@@ -591,10 +591,10 @@
     },
     {
       "name": "UN Memorial Cemetery in Korea",
-      "time": "≈ 11:15",
+      "time": "≈ 11:05",
       "number": 3,
       "category": "Memorial / War History",
-      "duration": "60 min",
+      "duration": "30 min",
       "timeUsed": [
         "Coach drop-off + walk to Memorial Hall (~5 min)",
         "12-minute Korean War documentary + introduction (~15 min)",
@@ -630,7 +630,7 @@
         "photo": "Wall of Remembrance (40,896 names on 140 marble panels) and the Symbolic Area where the 22 sending-state flags fly",
         "facilities": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall"
       },
-      "whyOnRoute": "The route's **moral counterweight** — Busan's identity is inseparable from its role as the only Korean city the North Korean Army never captured during the war (population spiked from 880,000 to 1.4 million as refugees flooded south). Gamcheon's hillside refugee settlement and Jagalchi's 'ajumma' fish-vendor culture both trace directly to this same Korean War narrative. Visiting UNMCK before Gamcheon and Jagalchi gives cruise guests the historical context that makes the rest of the day's stops more than just photo opportunities. The 11:15 arrival also lands well inside the May–Sep evening 18:00 close (or Oct–Apr 17:00 close).",
+      "whyOnRoute": "The route's **moral counterweight** — Busan's identity is inseparable from its role as the only Korean city the North Korean Army never captured during the war (population spiked from 880,000 to 1.4 million as refugees flooded south). Gamcheon's hillside refugee settlement and Jagalchi's 'ajumma' fish-vendor culture both trace directly to this same Korean War narrative. Visiting UNMCK before Gamcheon and Jagalchi gives cruise guests the historical context that makes the rest of the day's stops more than just photo opportunities. The 11:05 arrival also lands well inside the May–Sep evening 18:00 close (or Oct–Apr 17:00 close).",
       "convenience": {
         "parking": "On-site coach lot — free for first 90 min, then ₩1,200/hr",
         "restroom": "Available at Memorial Service Hall and visitor center"
@@ -690,32 +690,32 @@
       ]
     },
     {
-      "name": "Lunch at local Busan restaurant (optional)",
-      "time": "≈ 12:30",
+      "name": "Lunch at a local Busan restaurant (own expense)",
+      "time": "≈ 11:50",
       "number": 4,
       "category": "Lunch / Local Cuisine — optional",
-      "duration": "60 min",
+      "duration": "40 min",
       "timeUsed": [
         "Coach drop-off + walk to restaurant (~5 min)",
         "Order + meal (~40 min)",
         "Restroom + reassemble at coach (~15 min)"
       ],
       "highlights": [
-        "**Optional add-on** — guests may skip and reboard the coach early",
-        "**Dwaeji-gukbap** (Busan pork-bone soup) or **milmyeon** (Busan cold wheat noodles) — both regional specialties",
+        "Lunch is at your own expense — it is not included in the tour price",
+        "**Dwaeji-gukbap** (Busan pork-bone soup) or **milmyeon** (Busan cold wheat noodles) — both regional specialities",
         "Both dishes have Korean War refugee origins unique to Busan",
-        "Typical price ~₩8,000–12,000 per dish (own expense)",
+        "Typical price ₩8,000–12,000 per dish; drinks ₩3,000–6,000 if ordered",
         "Vegetarian / halal-friendly substitution available on request at booking"
       ],
-      "whyOnRoute": "Lunch is timed at 12:30 to bridge the morning's coastal/memorial cluster (Yonggungsa + UN Cemetery) and the afternoon's Nampo-dong market cluster (Jagalchi + BIFF Square + Gukje Market). It is **clearly marked optional in this itinerary**: cruise guests on a tight schedule may choose to skip lunch and board the coach early for the downtown stops. Restaurant choice favors Busan-specific Korean War heritage cuisine — dwaeji-gukbap or milmyeon — over generic Korean BBQ, since cruise passengers are unlikely to encounter either dish on a Seoul day trip.",
+      "whyOnRoute": "Lunch is timed at 11:50 to bridge the morning's coastal/memorial cluster (Yonggungsa + UN Cemetery) and the afternoon's Nampo-dong market cluster (Jagalchi + BIFF Square + Gukje Market). It is **clearly marked optional in this itinerary**: cruise guests on a tight schedule may choose to skip lunch and board the coach early for the downtown stops. Restaurant choice favors Busan-specific Korean War heritage cuisine — dwaeji-gukbap or milmyeon — over generic Korean BBQ, since cruise passengers are unlikely to encounter either dish on a Seoul day trip.",
       "description": "Lunch is at a coach-friendly local restaurant en route between Nam-gu (UN Memorial) and Jung-gu (Jagalchi Market). Two typical options depending on coach routing and group preference: (1) **Dwaeji Gukbap (돼지국밥)** — Busan's signature pork-bone broth rice soup, the city's working-class comfort food since the Korean War refugee era, served with kkakdugi radish kimchi, saeujeot shrimp paste, buchu chives, and rice (~9,000–12,000 KRW per bowl), or (2) **Milmyeon (밀면)** — Busan's wheat-flour cold noodles, an adaptation of North Korean Pyongyang naengmyeon by refugees who couldn't find buckwheat in wartime Busan, served in chilled beef-broth or in spicy bibim style (~8,000–11,000 KRW). \n\nBoth are **regional specialties unique to Busan and not commonly found in Seoul or Jeju**. **Lunch is at the guest's own expense; the stop itself is optional** — cruise passengers on a tight sail-away schedule may notify the guide at pickup and the lunch slot will be skipped, releasing ~45 minutes back to the afternoon stops. \n\nVegetarian and halal-friendly options are limited at most dwaeji-gukbap restaurants — please notify the guide at booking if dietary accommodations are needed and a separate restaurant (typically a bibimbap or hansik buffet) will be substituted."
     },
     {
       "name": "Jagalchi Market",
-      "time": "≈ 14:00",
+      "time": "≈ 12:45",
       "number": 5,
       "category": "Fish Market / Local Culture",
-      "duration": "40 min",
+      "duration": "30 min",
       "timeUsed": [
         "Coach drop-off + walk to main building (~5 min)",
         "1F live-seafood walk-through with guide commentary (~20 min)",
@@ -750,7 +750,7 @@
         "photo": "Outdoor pier behind the building for the harbor-and-fishing-boat shot; Jagalchi ajummas at the live-fish stalls (always ask permission first)",
         "facilities": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open)"
       },
-      "whyOnRoute": "Busan's identity is built on seafood the way Seoul's is built on royal Joseon palace cuisine, and Jagalchi is the single-most-essential expression of that. Jagalchi sits at the entry of the Nampo-dong downtown cluster — natural pivot point for the afternoon's three short adjacent stops (Jagalchi → BIFF Square → Gukje Market), all within a 600-m walking radius. The 14:00 visit lands between the lunch crowd and the dinner-drinking surge that fills 2F sashimi restaurants from 18:30, keeping the lanes walkable and photogenic.",
+      "whyOnRoute": "Busan's identity is built on seafood the way Seoul's is built on royal Joseon palace cuisine, and Jagalchi is the single most essential expression of it. It also sits at the entrance to the Nampo-dong cluster, which is why the middle of the day pivots here: Jagalchi, BIFF Square and Gukje Market are three separate stops inside a 600 m walking radius, done on foot rather than by road.",
       "convenience": {
         "parking": "Basement lot at the main building (₩700 / 10 min); coach drops off and waits in Jagalchi public lot",
         "restroom": "Available inside the main building on each floor"
@@ -948,10 +948,10 @@
     },
     {
       "name": "BIFF Square",
-      "time": "≈ 14:45",
+      "time": "≈ 13:15",
       "number": 6,
       "category": "Film District / Street Food",
-      "duration": "25 min",
+      "duration": "20 min",
       "timeUsed": [
         "Walk from Jagalchi to BIFF Square (~5 min)",
         "Director handprints along Star Street (~10 min)",
@@ -1058,10 +1058,10 @@
     },
     {
       "name": "Gukje Market",
-      "time": "≈ 15:10",
+      "time": "≈ 13:35",
       "number": 7,
       "category": "Traditional Market / Korean War Heritage",
-      "duration": "30 min",
+      "duration": "25 min",
       "timeUsed": [
         "Walk from BIFF Square to Gukje Market entrance (~2 min)",
         "Arirang Street + Cosmetics lane (~10 min)",
@@ -1116,10 +1116,10 @@
     },
     {
       "name": "Gamcheon Culture Village",
-      "time": "≈ 16:00",
+      "time": "≈ 14:20",
       "number": 8,
       "category": "Cultural Village / Mural Art",
-      "duration": "90 min",
+      "duration": "45 min",
       "timeUsed": [
         "Coach drop-off at Public Parking Lot 2 + walk to entrance (~5 min)",
         "Tourist Information Center + Stamp Map purchase (~10 min)",
@@ -1151,11 +1151,11 @@
         "Free village entry; optional Stamp Map ~₩2,000"
       ],
       "smartNotes": {
-        "tip": "Residents live here — keep voices down, no drones, take rubbish with you; wear grippy shoes for the steep lanes; afternoon golden hour ~16:00–17:00 is the village's best light (which is exactly when this tour arrives)",
+        "tip": "Residents live here — keep voices down, no drones, take your rubbish with you; wear grippy shoes for the steep lanes. The village is at its quietest in the early afternoon, after the morning tour groups have moved on.",
         "photo": "Little Prince and Fox bench (long queue) and Haneul Maru / Sky Garden Observatory for the sweeping rainbow-roof and bay view",
         "facilities": "Hanbok rental, craft workshops, Korean candy stalls, cafes; small village museum at the entrance; the stamp map is the easiest way to navigate"
       },
-      "whyOnRoute": "The route's **most colorful and unique** stop — there is no other neighborhood like this anywhere in Korea, and Gamcheon is this itinerary's longest single stop (1.5 hours) for good reason: the photo-walk depth justifies it. The Korean War refugee narrative directly threads from UN Memorial Cemetery (the moral memorial) → Gamcheon (the lived consequence: refugee settlement that became a community). The 16:00 arrival lands ahead of the 18:00 info-center close while still giving guests ~1 hour of golden-hour light over the rainbow rooftops — the village's most photogenic time. Scheduling Gamcheon as the second-to-last stop also avoids the midday tour-bus crowd peak (typically 11:00–14:00).",
+      "whyOnRoute": "The route's most colourful stop — there is no other neighbourhood like it in Korea. The Korean War thread runs straight through it: the UN Memorial Cemetery is the memorial, Gamcheon is the lived consequence, a refugee settlement that became a community. Forty-five minutes is enough for the main photo loop from the observation deck down through the painted lanes.",
       "convenience": {
         "parking": "Gamcheon Public Parking Lot 2 (paid, coach-accessible)",
         "restroom": "Public restrooms at the Tourist Information Center and around the main viewpoints"
@@ -1232,15 +1232,44 @@
       ]
     },
     {
-      "name": "Songdo Beach",
-      "time": "≈ 17:45",
       "number": 9,
-      "category": "Coastal Beach / Cable Car",
-      "duration": "30 min",
+      "time": "≈ 15:25",
+      "duration": "20 min",
+      "name": "Songdo Cloud Trails Skywalk",
+      "category": "Coastal skywalk",
+      "description": "**Songdo Cloud Trails (송도구름산책로)** is a 365-metre curved skywalk that runs out over the sea from the eastern end of Songdo Beach. Opened in **2016**, it replaced the older Songdo Skywalk with a longer, gently serpentine deck ending in a small island viewing platform, and it is **free and open around the clock**.\n\nThe beach it starts from is **Korea's first modern public beach**, opened in **1913** — an 800 m by 50 m crescent of fine sand on Busan's southwest coast in Seo-gu. Sections of the walkway have glass floor panels, so you can watch the water move directly beneath you.",
+      "highlights": [
+        "**365 m curved skywalk over the sea**, opened 2016 — replaced the older Songdo Skywalk",
+        "Glass floor panels along part of the deck; ends at a small island viewing platform",
+        "**Free, open 24 hours** — no ticket, no queue",
+        "Starts from **Korea's first modern public beach** (opened **1913**), 800 m x 50 m of fine sand",
+        "The Songdo Yonggung Suspension Bridge and the Amnam Park coastal trail continue from the western end"
+      ],
       "timeUsed": [
-        "Coach drop-off at Songdo Marine Park (~5 min)",
-        "Songdo Cloud Trails skywalk (~15 min)",
-        "Beach promenade + Songdo Marine Cable Car viewing (no ride included) (~10 min)"
+        "Drop-off at Songdo Marine Park and walk to the skywalk entrance (~4 min)",
+        "Out along the 365 m deck to the island platform and back (~12 min)",
+        "Beach promenade photos (~4 min)"
+      ],
+      "whyOnRoute": "After the dense Nampo-dong cluster and Gamcheon's hillside stairs, Songdo is the day's coastal reset. The Cloud Trails deck is **free, flat and about twenty minutes end to end**, which makes it the one Songdo experience every guest can do inside the stop window — whether or not they go on to take the cable car.",
+      "smartNotes": {
+        "tip": "The deck is exposed, so it can be windy and closes in severe weather — the guide swaps in the beach promenade when that happens.",
+        "photo": "The curved deck sweeping over breaking waves; the glass floor panels looking straight down; the cable-car pylons rising behind the beach.",
+        "facilities": "Public restrooms at Songdo Marine Park visitor centre; convenience stores along Songdohaebyeon-ro."
+      },
+      "convenience": {
+        "parking": "Songdo Marine Park public lot",
+        "restroom": "Songdo Marine Park visitor centre and convenience stores along Songdohaebyeon-ro"
+      },
+      "visitBasics": {
+        "hours": "Open 24 hours",
+        "closed": "Closed in high wind or severe weather",
+        "walking": "Easy — flat deck, no stairs",
+        "admission": "Free"
+      },
+      "image": "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+      "images": [
+        "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+        "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
       ],
       "_poi_meta": {
         "match": "exact",
@@ -1254,44 +1283,56 @@
         "verified": true,
         "kb_version": "1.24",
         "verified_date": "2026-04-29"
-      },
+      }
+    },
+    {
+      "number": 10,
+      "time": "≈ 15:45",
+      "duration": "25 min",
+      "name": "Songdo Sky Park (Amnam Park)",
+      "category": "Headland park / optional cable car",
+      "description": "**Songdo Sky Park** sits on the Amnam Park headland at the far end of the **Songdo Marine Cable Car (Busan Air Cruise)** — a **1.62 km** round-trip line that crosses the bay at up to **86 m** above the water. The line first ran in 1964, closed in 1988, and **reopened in June 2017**.\n\nThe park at the top has sea-view decks looking back across the bay to Songdo Beach, landscaped walks, and a dinosaur-themed section that children tend to make straight for. From the decks the coastal trail continues down into Amnam Park proper.\n\n**The cable car is not included in this tour.** It is an on-site choice paid at the station: **₩17,000 adult round-trip**, or **₩25,000** for the glass-floored Crystal cabin. Guests who would rather stay at sea level spend the stop on the beach promenade instead — the vehicle waits either way.",
       "highlights": [
-        "**Korea's FIRST modern public beach** — opened **1913** during the Japanese colonial era",
-        "**800 m long × 50 m wide** crescent of fine sand on Busan's southwest coast (Seo-gu)",
-        "**Songdo Marine Cable Car (송도해상케이블카)** — 1.62 km roundtrip over the bay; **reopened June 2017** after a 1988 closure; **86 m max altitude**; **'Crystal cabin' option** with glass floor",
-        "**Songdo Cloud Trails (송도구름산책로)** — 365 m curved skywalk over the sea, opened 2016, replaces the older Songdo Skywalk",
-        "**Songdo Yonggungungu Suspension Bridge** — connecting the beach park to nearby Amnam Park",
-        "Annual **Songdo Beach Festival** (June–August) with sand sculpture contest and night markets",
-        "**Free beach access 24h**; cable car ₩17,000 round-trip adult (own expense, not included)"
+        "**Songdo Marine Cable Car (Busan Air Cruise)** — 1.62 km round trip, up to **86 m** above the bay",
+        "Line originally opened 1964, closed 1988, **reopened June 2017**",
+        "**Crystal cabin** option has a glass floor",
+        "Sea-view decks on the Amnam Park headland looking back across the bay",
+        "Dinosaur-themed park section; coastal trail continues into Amnam Park",
+        "**Cable car is an on-site paid choice — ₩17,000 adult round-trip, ₩25,000 Crystal cabin**"
       ],
+      "timeUsed": [
+        "Ticket queue at the Songdo base station (~5 min)",
+        "Cable car crossing to the Amnam Park station (~7 min each way)",
+        "Sky Park viewing decks (~10 min)"
+      ],
+      "whyOnRoute": "This is the one stop on the day where the experience is the guest's to choose. Sky Park sits across the bay and the cable car is the way up to it, so the stop window is sized for the round trip. Guests who skip the ride are not left waiting anywhere awkward — the base station is on the beach the group has just walked.",
       "smartNotes": {
-        "tip": "The Songdo Marine Cable Car is **NOT included** in this bus tour and the 30-minute stop is too short to ride it (a full round-trip with queue is ~45–60 min); guests who want to ride should choose our private cruise-shore charter instead; the Cloud Trails skywalk is free and reachable within the 30-min window",
-        "photo": "The cable-car pylon rising above the beach for the iconic Songdo skyline shot; the curved Songdo Cloud Trails skywalk over breaking waves; the Yonggung-ggu Suspension Bridge from the beach end",
-        "facilities": "Public restrooms at Songdo Marine Park visitor center; convenience stores along Songdohaebyeon-ro; the cable-car lower station has a cafe and Korean War Memorial exhibit"
+        "tip": "Buy at the base station; the Crystal cabin queue is usually longer than the standard one. If your ship's all-aboard is early, ride first and photograph from the top rather than lingering at the base.",
+        "photo": "The bay from mid-crossing; the Sky Park decks looking back at Songdo Beach; the Crystal cabin's glass floor over open water.",
+        "facilities": "Cafe and Korean War memorial exhibit at the lower station; restrooms at both stations."
       },
-      "whyOnRoute": "Songdo Beach is the route's **late-afternoon coastal reset** — after the dense Nampo-dong urban cluster (Jagalchi + BIFF + Gukje + Gamcheon's hillside), a short stop at Korea's oldest public beach gives cruise guests a final breath of sea air before the day's Yongdusan Park / cruise-terminal close. The 17:45 timing lands at **late golden hour**, the most photogenic light for the cable-car-over-water shot. The 30-min stop is intentionally short — enough for the Cloud Trails skywalk and a few coastline photos, but not enough for a cable-car ride (which is treated as a separate paid experience for guests on longer Busan trips).",
       "convenience": {
-        "parking": "Songdo Marine Park public lot, coach-accessible",
-        "restroom": "Songdo Marine Park visitor center and convenience stores along Songdohaebyeon-ro"
+        "parking": "Songdo Marine Park public lot (base station)",
+        "restroom": "Both cable-car stations"
       },
-      "description": "**Songdo Beach (송도해수욕장)** is **Korea's first modern public beach** — opened **in 1913** during the Japanese colonial era, predating both Haeundae (1965) and Gwangalli as a designated bathing beach. \n\nThe 800-meter crescent of fine sand sits on Busan's southwest coast in **Seo-gu**, sheltered from the open sea by a small headland and the offshore **Songdo-do (송도, 'Pine Island')** for which the beach is named. \n\nThe beach was Busan's premier seaside resort through the colonial period and post-war decades, hosting Korea's first beach festival in the 1920s. Modern Songdo's signature attractions are: (1) the **Songdo Marine Cable Car (송도해상케이블카)**, a 1.62-km roundtrip cable car over the bay that **reopened June 2017** after a 1988 closure — operating from **East Station (East Tower) to West Station (Songdo Sky Park)** at a maximum altitude of 86 meters, with both standard and **'Crystal cabin' (glass-floor) options**; (2) the **Songdo Cloud Trails (송도구름산책로)** — a curved 365-meter skywalk that extends from the eastern beach out over the open sea, opened **2016**, replacing the older Songdo Skywalk; and (3) the **Songdo Yonggungungu Suspension Bridge** (송도용궁구름다리), a 127-meter coastal suspension bridge that connects the western end of Songdo Marine Park to Amnam Park and the bordering Seonggol Pavilion viewpoint — opened **2020**. \n\nThe beach's **Songdo Beach Festival** runs **June through August** with sand sculpture competitions, night markets, and music performances. On this bus-tour the 30-min stop is intentionally a quick coastal-air reset — guests visit the **free Cloud Trails skywalk** and the cable-car station viewpoint but do not ride the cable car (which requires a separate ticket and longer time block).",
       "visitBasics": {
-        "hours": "Beach open 24h FREE; cable-car operating hours 09:00–21:00; Cloud Trails 24h",
-        "closed": "Beach year-round; cable car closed in extreme weather",
-        "walking": "Easy — flat beach promenade and Cloud Trails skywalk; bridge stairs at the western end optional",
-        "admission": "Beach + Cloud Trails free; **Songdo Marine Cable Car ₩17,000 adult round-trip / ₩25,000 Crystal cabin upgrade (NOT included)**"
+        "hours": "Cable car 09:00-21:00 (seasonal); Amnam Park headland open daily",
+        "closed": "Cable car suspended in high wind or severe weather",
+        "walking": "Easy — station lifts and level decks",
+        "admission": "Cable car not included — ₩17,000 adult round-trip, ₩25,000 Crystal cabin, paid on site. Amnam Park itself is free."
       },
       "image": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
       "images": [
-        "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp"
+        "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
       ]
     },
     {
       "name": "Yongdusan Park & Busan Diamond Tower",
-      "time": "≈ 18:30",
-      "number": 10,
+      "time": "≈ 16:25",
+      "number": 11,
       "category": "City Viewpoint / Civic Park",
-      "duration": "30 min",
+      "duration": "20 min",
       "timeUsed": [
         "Coach drop-off near Gwangbok-ro Fashion Street (~5 min)",
         "Escalator ascent to park plaza (~5 min)",
@@ -1326,17 +1367,17 @@
         "photo": "Citizens' Bell pavilion with the Diamond Tower behind; the flower clock at the Gwangbok-ro escalator entrance; the bronze Yi Sun-sin statue at golden hour",
         "facilities": "Public restrooms at the park plaza and inside Busan Diamond Tower lobby; small souvenir shop and cafe at park-level"
       },
-      "whyOnRoute": "Yongdusan delivers **Busan's most-recognized 360° panorama** — and the tower's architectural quotation of **Bulguksa's Dabotap pagoda** (NT 20, Gyeongju) connects this final stop conceptually to the broader Silla-and-modern-Korea narrative the day has built across UN Memorial, Gamcheon, and Songdo. The 18:30 arrival lands at twilight — the day's most photogenic Busan skyline view from the park plaza. As the day's last stop before the cruise-terminal return, Yongdusan is also the route's **weather alternative anchor**: if rain or fog cancels Songdo Beach earlier, the Diamond Tower observatory can absorb the displaced time. The covered escalator from Gwangbok-ro removes the climb that would otherwise make a 30-min stop infeasible.",
+      "whyOnRoute": "Yongdusan gives you Busan's most recognised 360-degree panorama and closes the loop on foot: the park sits directly above the Nampo-dong streets the group walked earlier, so the last stop reframes the day from above before the short drive back to the ship.",
       "convenience": {
         "restroom": "At the park plaza and inside Busan Diamond Tower",
         "parking": "No on-site coach parking — coach drops off at Gwangbok-ro Fashion Street and waits at the Daecheong-ro pickup point"
       },
       "description": "**Yongdusan Park (용두산공원, 'Dragon Head Mountain Park')** — a **69,000 m²** civic park at the heart of Nampo-dong with **70 tree species** — is a layered historical site: it was once a **Joseon-era waegwan** (Choryang Wakan, the **Japanese trade-and-diplomacy enclave from 1678 to 1878**), then a Japanese **Ryūtōsan Shrine (17th–early 20th century)**, then a **Korean War refugee shantytown** (most destroyed by 1950s fires), and finally redeveloped as the modern park. \n\nThe **120-meter-tall Busan Tower** (originally **opened 1973**, **rebranded 'Busan Diamond Tower' after a 2021 redevelopment**) is the park's centerpiece — its **observation deck top is modeled after the baldaquin (canopy) of Dabotap Pagoda (NT 20) at Bulguksa Temple in Gyeongju**, an explicit architectural quotation linking Busan's modern landmark to Silla heritage. \n\nThe tower stands at **69m above sea level + 120m height = 189m total summit elevation**, offering **360° panoramas** to Busan Port, Yeongdo Bridge, Tsushima Island (clear days), and Jagalchi Market below. Other park monuments: the **bronze statue of Admiral Yi Sun-sin (1545–1598)** (Busan's hometown naval hero who defeated Japanese forces in the 1592–1598 Imjin War, famously **never lost a single ship**), the **Citizens' Bell** donated by **100,000 Busan citizens** (struck **33 times on New Year's Eve and March 1 Independence Movement Day** — the 33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative), the **flower clock** at the entrance, and a **bronze dragon sculpture** symbolic of the mountain's name. \n\nAccess is via a **covered escalator from Gwangbok-ro Fashion Street** (no return escalator — descend by stairs). **Park free 24h**; **Busan Diamond Tower observatory ₩12,000 adult / ₩9,000 senior 65+ or child 3–12, hours 10:00–22:00 (last admission 21:30) — observatory ticket NOT included in this tour**.",
       "visitBasics": {
-        "hours": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**",
+        "hours": "Park open 24h; Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)",
         "closed": "Tower open year-round (occasional safety closures in extreme wind)",
-        "admission": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12 (NOT included in this tour)**",
-        "walking": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
+        "admission": "Park FREE; Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12 (NOT included in this tour)",
+        "walking": "Covered escalator from Gwangbok-ro Fashion Street for ascent (no return escalator — descend by stairs)"
       },
       "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
       "images": [
@@ -1417,24 +1458,24 @@
     },
     {
       "name": "Return to Busan Port (International Cruise Terminal)",
-      "time": "≈ 19:15",
-      "number": 11,
+      "time": "≈ 17:00",
+      "number": 12,
       "category": "Cruise terminal return",
-      "duration": "20 min drive",
+      "duration": "15 min drive",
       "timeUsed": [
         "Coach departs Yongdusan / Nampo-dong (~5 min)",
         "Drive to Busan Port International Cruise Terminal via Chungmu-daero (~15 min)",
         "Disembark at terminal coach lot; allow ~30 min buffer to reboard cruise"
       ],
-      "whyOnRoute": "The cruise-terminal return is the day's hard constraint: most Busan cruise port calls depart between **19:30 and 21:00**, and our **return-by-19:15 guarantee** is sized to deliver guests with at least a 60-minute reboarding buffer for the most common ship schedules. The Yongdusan-to-terminal drive is short (~6 km) and stays in central Busan, with no highway segments that could be affected by traffic incidents. The guide will reconfirm each ship's sail-away time at morning pickup and adjust the day's running order accordingly — for ships with earlier 18:00–19:00 departures, the Songdo and Yongdusan stops are abbreviated.",
-      "description": "The coach departs the **Yongdusan / Gwangbok-ro pickup point** at approximately **19:15** and drives ~6 km east through central Busan via **Chungmu-daero and the Yeongdo Bridge corridor** to the **Busan Port International Cruise Terminal**, arriving at the terminal coach lot at approximately **19:30**. \n\nGuests disembark at the terminal, with at least a **30-minute reboarding buffer** for the most common Busan cruise sail-away times (typically 19:30–21:00). \n\nThe guide reconfirms each ship's specific departure time at morning pickup and will adjust the day's running order if a ship has an unusually early sail-away — typically by shortening the Songdo and Yongdusan stops to ~20 minutes each. \n\nFor cruise lines with departures from the **Busan Port (Coral) International Passenger Terminal** rather than the Cruise Terminal, the coach will drop at the correct terminal as confirmed at booking."
+      "whyOnRoute": "The cruise-terminal return is the day's hard constraint. Dropping off at about 17:00 — eight hours after pickup — leaves a real buffer before the all-aboard times most Busan port calls use, and the guide adjusts the running order on the day if your ship sails unusually early.",
+      "description": "The vehicle leaves the Yongdusan / Gwangbok-ro pickup point at about **16:45** and drives back through central Busan to **the same terminal you were collected from**, arriving at roughly **17:00** — about **8 hours** after pickup.\n\nThat leaves a comfortable buffer before the all-aboard times most Busan cruise calls use. If your ship sails unusually early, tell the guide at morning pickup: the running order is adjusted on the day, usually by trimming the Songdo and Yongdusan stops."
     }
   ],
   "routeFlowStops": [
     {
-      "name": "Busan Port pickup (cruise terminal)",
+      "name": "Busan Port pickup (International Cruise Terminal)",
       "type": "origin",
-      "theme": "Cruise pickup"
+      "theme": "Cruise terminal pickup"
     },
     {
       "name": "Haedong Yonggungsa Temple",
@@ -1442,14 +1483,14 @@
       "theme": "Seaside temple"
     },
     {
-      "name": "UN Memorial Cemetery",
+      "name": "UN Memorial Cemetery in Korea",
       "type": "primary",
-      "theme": "Memorial"
+      "theme": "Memorial / War History"
     },
     {
-      "name": "Lunch (optional)",
+      "name": "Lunch at a local Busan restaurant (own expense)",
       "type": "meal",
-      "theme": "Meal"
+      "theme": "Lunch / Local Cuisine — optional"
     },
     {
       "name": "Jagalchi Market",
@@ -1478,63 +1519,68 @@
       "theme": "Art village"
     },
     {
-      "name": "Songdo Beach",
+      "name": "Songdo Cloud Trails Skywalk",
       "type": "primary",
-      "theme": "Coastal park"
+      "theme": "Coastal skywalk"
     },
     {
-      "name": "Yongdusan Park",
+      "name": "Songdo Sky Park (Amnam Park)",
       "type": "primary",
-      "theme": "City viewpoint"
+      "theme": "Headland park / optional cable car"
     },
     {
-      "name": "Return to Busan Port",
+      "name": "Yongdusan Park & Busan Diamond Tower",
+      "type": "primary",
+      "theme": "City Viewpoint / Civic Park"
+    },
+    {
+      "name": "Return to Busan Port (International Cruise Terminal)",
       "type": "return",
-      "theme": "Cruise return"
+      "theme": "Cruise terminal return"
     }
   ],
   "routePhases": [
     {
-      "phase": "Coastal morning",
-      "duration": "≈ 2.5 hours",
-      "description": "Cruise terminal pickup at 08:30, drive northeast to Haedong Yonggungsa Temple for the 09:30 arrival before the worst tour-bus crowds."
+      "phase": "Terminal to the coast",
+      "duration": "≈ 1 hr 35 min",
+      "description": "Cruise terminal pickup at 09:00 with a disembarkation buffer, then northeast along the coast to Haedong Yonggungsa for a 09:45 arrival — ahead of the tour-bus surge that builds from mid-morning."
     },
     {
-      "phase": "Memorial & lunch",
-      "duration": "≈ 2 hours",
-      "description": "UN Memorial Cemetery (60 min) for Korean War context, then an optional 60-min Busan-specific lunch (dwaeji-gukbap or milmyeon)."
+      "phase": "Memorial and lunch",
+      "duration": "≈ 1 hr 40 min",
+      "description": "UN Memorial Cemetery (30 min) for Korean War context, then a Busan-specific lunch — dwaeji-gukbap or milmyeon — at your own expense."
     },
     {
-      "phase": "Nampo-dong cluster",
-      "duration": "≈ 1.5 hours",
-      "description": "Jagalchi Market → BIFF Square → Gukje Market — three short adjacent stops covering Busan's food, film, and refugee-market heritage within 600 m walking radius."
+      "phase": "Nampo-dong on foot",
+      "duration": "≈ 1 hr 25 min",
+      "description": "Jagalchi Market, BIFF Square and Gukje Market are three separate stops within about 600 m of each other, so the middle of the day is walked rather than driven."
     },
     {
-      "phase": "Village & coast",
-      "duration": "≈ 2 hours",
-      "description": "Gamcheon Culture Village (90 min at golden hour) for the rainbow-roof panorama, then Songdo Beach (30 min) for the cable-car coastline shot."
+      "phase": "Gamcheon hillside",
+      "duration": "≈ 1 hr 5 min",
+      "description": "Gamcheon Culture Village (45 min) for the painted-house panorama, reached by a short transfer from Nampo-dong."
     },
     {
-      "phase": "Twilight viewpoint & return",
-      "duration": "≈ 1 hour",
-      "description": "Yongdusan Park & Busan Diamond Tower at twilight (30 min), then the ~15-min drive back to the cruise terminal for 19:30 reboarding."
+      "phase": "Songdo and the return",
+      "duration": "≈ 1 hr 35 min",
+      "description": "Songdo Cloud Trails skywalk, then Sky Park across the bay if you choose the cable car, and Yongdusan Park before the drive back — at the terminal by 17:00, and always timed to your ship's all-aboard."
     }
   ],
   "routeShapeIntro": {
     "title": "How this cruise day moves",
-    "subtitle": "Cruise terminal pickup at 08:30; northeast to Haedong Yonggungsa first while the cliff is quiet; back across the city for UN Memorial, optional lunch, and the Nampo-dong cluster (Jagalchi → BIFF → Gukje); Gamcheon at golden hour; Songdo coastal reset and Yongdusan twilight viewpoint; return to terminal by 19:15."
+    "subtitle": "Cruise terminal pickup at 09:00; northeast to Haedong Yonggungsa first, while the cliff is still quiet; back across the city for the UN Memorial Cemetery and lunch at your own expense; then Nampo-dong walked end to end as three separate stops (Jagalchi, BIFF Square, Gukje Market); Gamcheon's painted hillside; Songdo for the Cloud Trails skywalk and, if you take the cable car, Sky Park across the bay; Yongdusan Park last, and back at your terminal by 17:00."
   },
   "whyTourWorks": {
     "bestFor": [
       "Cruise passengers with a single Busan port-call day",
       "First-time Busan visitors on a budget",
-      "Adult families and couples comfortable on a 9-hour day",
+      "Adult families and couples comfortable on a 8-hour day",
       "Travelers who prefer guided pacing over independent transit"
     ],
     "lessIdealFor": [
       "Travelers who want minimal walking or no stairs",
       "Stroller-heavy groups (Gamcheon hillside, Yongdusan stairs)",
-      "Cruise passengers with confirmed sail-away earlier than 19:30 — see our small-group product instead",
+      "Cruise passengers with confirmed sail-away earlier than 17:00 — see our small-group product instead",
       "Guests who want long unscheduled time at any one stop (Gamcheon caps at 90 min)"
     ],
     "routeLogicSections": [
@@ -1546,16 +1592,16 @@
         "items": [
           {
             "label": "Return guaranteed before sail-away",
-            "detail": "The route is built around a 19:15 return to the Busan Port International Cruise Terminal, giving a typical 30–60 min reboarding buffer for the standard 19:30–21:00 sail-away window. If your ship departs earlier than 19:30, notify at booking and the Songdo + Yongdusan stops will be abbreviated to fit."
+            "detail": "The route is built around a 17:00 return to the terminal you were collected from — eight hours after a 09:00 pickup, which leaves a comfortable buffer before the all-aboard times most Busan port calls use. If your ship sails unusually early, the guide adjusts the running order on the day."
           },
           {
             "label": "Direct cruise-terminal pickup",
-            "detail": "No subway transfers, no city-hotel transfers — the coach picks up directly at the cruise terminal arrival hall at 08:30 and drops back at the same point at 19:30. This is the key bus-tour difference vs. our private cruise-shore product (which delivers door-of-ship pickup at a higher price point)."
+            "detail": "No subway transfers, no city-hotel transfers — you are collected at the cruise terminal arrival hall at 09:00 and dropped back at the same point at about 17:00. Which of the two Busan cruise terminals applies to you depends on where your ship berths, and is confirmed at booking."
           }
         ]
       },
       {
-        "title": "Eight stops in one day",
+        "title": "Nine stops in one day",
         "icon": "map",
         "iconBg": "bg-emerald-50/80",
         "iconColor": "text-emerald-600",
@@ -1566,11 +1612,11 @@
           },
           {
             "label": "Gamcheon at golden hour by design",
-            "detail": "The day's 16:00 Gamcheon arrival lands at the village's most photogenic golden-hour light (16:00–17:00) — placing Gamcheon second-to-last rather than mid-day deliberately, even though most generic Busan tours schedule it before lunch."
+            "detail": "Gamcheon gets 45 minutes in the early afternoon, once the morning tour groups have cleared the observation deck. Placing it after the Nampo-dong markets means the walk runs downhill through the painted lanes rather than up them."
           },
           {
             "label": "Yongdusan as twilight close",
-            "detail": "Yongdusan Park's panorama is most striking at twilight (18:30 in summer; earlier in winter). Scheduling it as the day's final stop gives the day's strongest skyline view without forcing a separate evening trip."
+            "detail": "Yongdusan is the day's closing stop because it sits directly above the Nampo-dong streets you walked earlier — the last twenty minutes reframe the whole afternoon from above, and the terminal is a short drive from the same pickup point."
           }
         ]
       },
@@ -1586,11 +1632,11 @@
           },
           {
             "label": "Stops are timed, not flexible",
-            "detail": "The 30–90 min stop windows are fixed across the group — guests who want to linger longer at Jagalchi for a sashimi meal, or skip Yongdusan to ride the Songdo cable car, will need our private charter. The fixed timing is what keeps the bus tour at $49."
+            "detail": "The 20–50 minute stop windows are fixed across the group. You can choose what to do inside a stop — ride the Songdo cable car up to Sky Park or walk the free skywalk instead, go up the Busan Diamond Tower or stay at park level — but you cannot lengthen a stop or drop one. Guests who want the day reshaped around them should take the private charter."
           },
           {
             "label": "Cable car and tower observatory not included",
-            "detail": "Songdo Marine Cable Car (₩17,000+) and Busan Diamond Tower observatory (₩12,000) are NOT in the tour price. Most cruise guests on the bus tour are happy with the free Cloud Trails skywalk + park-plaza panorama; the optional paid experiences are clearly separated."
+            "detail": "Songdo Marine Cable Car (₩17,000 adult round-trip) and the Busan Diamond Tower observatory (₩12,000) are not in the tour price. The cable car is an on-site choice at the Songdo stop: ride it up to Sky Park, or stay at sea level and walk the free Cloud Trails skywalk instead."
           }
         ]
       }
@@ -1603,8 +1649,8 @@
       "preview": "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
       "content": [
         "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
-        "Coach boarding at 08:25 for an 08:30 departure; please allow time for cruise disembarkation queues.",
-        "Return to the same cruise terminal coach lot at approximately 19:15–19:30.",
+        "Coach boarding at 08:50 for an 09:00 departure; please allow time for cruise disembarkation queues.",
+        "Return to the same cruise terminal coach lot at approximately 16:45–17:00.",
         "The guide will confirm your specific cruise ship sail-away time at morning pickup and adjust the day's running order if needed."
       ]
     },
@@ -1634,12 +1680,10 @@
     {
       "id": "inclusions",
       "title": "What's included",
-      "preview": "Cruise terminal pickup, air-conditioned large coach, licensed English-speaking guide…",
+      "preview": "Included: Entrance fees for the tour's stops · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee",
       "content": [
-        "Cruise terminal pickup and drop-off, air-conditioned large coach (28–45 seats), licensed English-speaking guide.",
-        "All site admissions on the main route are free: Yonggungsa, UN Cemetery, Jagalchi, BIFF Square, Gukje, Gamcheon village, Songdo Cloud Trails, Yongdusan Park.",
-        "NOT included: lunch (₩8,000–₩12,000 own expense — and the lunch stop is itself optional), Songdo Marine Cable Car (₩17,000+ if you want to ride; not feasible in the 30-min stop), Busan Diamond Tower observatory (₩12,000 if you want the ticketed deck).",
-        "Tips, personal shopping, and snacks not included."
+        "Included: Entrance fees for the tour's stops · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee",
+        "Not included: Meals and drinks · Personal expenses · Gratuities · Travel insurance · Busan Diamond Tower observation deck (on-site choice) · Sky Capsule and Haeundae Beach Train (on-site choice) · Songdo Marine Cable Car (on-site choice)"
       ]
     },
     {
@@ -1669,9 +1713,9 @@
     {
       "id": "sail-away",
       "title": "Cruise sail-away timing",
-      "preview": "Return is guaranteed by 19:30 for ships with a 19:30+ sail-away…",
+      "preview": "Return is guaranteed by 17:00 for ships with a 17:00+ sail-away…",
       "content": [
-        "Return is guaranteed by 19:30 for ships with a 19:30+ sail-away — typical buffer 30–60 minutes for reboarding.",
+        "Return is guaranteed by 17:00 for ships with a 17:00+ sail-away — typical buffer 30–60 minutes for reboarding.",
         "For ships with an earlier 18:00–19:00 sail-away, notify at booking — the route will be shortened by abbreviating Songdo and Yongdusan to fit.",
         "The guide carries the cruise-line contact for each ship and will radio ahead in case of unexpected traffic delays.",
         "AtoC Korea has not missed a sail-away on this route in 4 seasons of operation."
@@ -1686,6 +1730,18 @@
         "Inside 24 hours: 50% refund (the coach and guide have been allocated for your day).",
         "No-show or missed pickup: no refund — but contact AtoC Korea operations immediately if cruise disembarkation is delayed and we will hold the coach for up to 30 min.",
         "Cruise itinerary change (port skipped): full refund regardless of timing."
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "Surcharges, cancellation and who this tour is for",
+      "preview": "Pickup before 08:00 or finish after 20:00 adds ₩10,000 per person. Free cancellation up to 24 hours ahead. Age 4 and up. Cruise passengers only.",
+      "content": [
+        "Out-of-hours surcharge: if your ship requires a pickup before 08:00, or the tour finishes after 20:00, a surcharge of ₩10,000 per person applies and is paid on the day.",
+        "Cancellation: free up to 24 hours before the tour starts. Inside 24 hours the booking is non-refundable.",
+        "Minimum age: guests must be 4 years or older.",
+        "Cruise passengers only: this tour is sold to guests arriving on a cruise ship calling at Busan. Bookings from travellers without a Busan port call are declined and refunded.",
+        "Return timing: the day is built around your ship's all-aboard time, and the drop-off is scheduled ahead of it."
       ]
     }
   ],
@@ -1725,7 +1781,7 @@
       "description": "Return-by guarantee",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600",
-      "body": "Built around the Busan cruise port-call clock — 08:30 pickup at the cruise terminal, 19:15 return with a 30–60 min reboarding buffer for the standard 19:30+ sail-away. Not missed a sail-away in 4 seasons of operation."
+      "body": "Built around the Busan cruise port-call clock — 09:00 pickup at the cruise terminal, 16:45 return with a 30–60 min reboarding buffer for the standard 17:00+ sail-away. Not missed a sail-away in 4 seasons of operation."
     },
     {
       "icon": "check-circle",
@@ -1761,7 +1817,7 @@
       "timing": "Morning of",
       "title": "Pickup Confirmation",
       "detail": "Guide at terminal arrival hall 15 min before pickup",
-      "description": "Coach plate, guide name, and meeting-point photo sent 30 min before the 08:30 pickup so you know exactly who to find when you disembark."
+      "description": "Coach plate, guide name, and meeting-point photo sent 30 min before the 09:00 pickup so you know exactly who to find when you disembark."
     },
     {
       "timing": "During tour",
@@ -1773,7 +1829,7 @@
       "timing": "End of day",
       "title": "Cruise-side drop-off",
       "detail": "Direct return to cruise terminal coach lot",
-      "description": "Coach returns guests to the cruise terminal coach lot by approximately 19:15–19:30 with a 30–60 min reboarding buffer."
+      "description": "Coach returns guests to the cruise terminal coach lot by approximately 16:45–17:00 with a 30–60 min reboarding buffer."
     },
     {
       "timing": "After tour",
@@ -1791,17 +1847,17 @@
     {
       "id": "sail-away",
       "question": "Will I make it back in time for my ship?",
-      "answer": "Yes — the route is built around a 19:15–19:30 return to the cruise terminal, giving a 30–60 minute reboarding buffer for the typical 19:30–21:00 Busan sail-away window. AtoC Korea has not missed a sail-away on this route in 4 seasons of operation. If your ship departs earlier than 19:30, notify at booking and the route will be shortened by abbreviating Songdo and Yongdusan."
+      "answer": "Yes — the route is built around a 16:45–17:00 return to the cruise terminal, giving a 30–60 minute reboarding buffer for the typical 17:00–21:00 Busan sail-away window. AtoC Korea has not missed a sail-away on this route in 4 seasons of operation. If your ship departs earlier than 17:00, notify at booking and the route will be shortened by abbreviating Songdo and Yongdusan."
     },
     {
       "id": "bus-vs-small-group",
       "question": "How is the bus tour different from the small-group cruise tour?",
-      "answer": "Same eight stops, different format. This bus tour uses a large coach (28–45 seats) shared with cruise passengers from multiple ships at a budget-tier $49 price point with fixed 30–90 min stop times. The small-group cruise tour uses a ~12-pax shared van at ~$79, with longer stops at each attraction and slight route flexibility. Choose the bus tour for budget and convenience; choose the small-group for comfort, pacing, and the option to linger at Jagalchi for a sashimi meal."
+      "answer": "Same nine stops, same 8-hour day, different vehicle. This tour runs on a large coach shared with cruise passengers from several ships, at US$58.79 per person. The small-group tour runs the identical route in a van capped at 12 guests, at US$68.95 per person. Choose the coach on price; choose the van for a quieter group and a little more flexibility in how long each stop actually runs."
     },
     {
       "id": "private-vs-bus",
       "question": "How does this compare to the private cruise charter?",
-      "answer": "Private cruise tours run only for your group with door-of-ship pickup, custom itinerary, and unlimited stop time — typically $300–$500+ per group. This bus tour runs at $49 per person on a fixed circuit. Choose this for budget and standardized timing; choose private if you want flexibility, accessibility, or to skip the standard stops in favor of (e.g.) Taejongdae or Cheongsapo Blue Line Park."
+      "answer": "Private cruise tours run only for your group with door-of-ship pickup, custom itinerary, and unlimited stop time — typically $300–$500+ per group. This bus tour runs at $58.79 per person on a fixed circuit. Choose this for budget and standardized timing; choose private if you want flexibility, accessibility, or to skip the standard stops in favor of (e.g.) Taejongdae or Cheongsapo Blue Line Park."
     },
     {
       "id": "stairs",
@@ -1821,7 +1877,7 @@
     {
       "id": "cable-car",
       "question": "Can I ride the Songdo Marine Cable Car?",
-      "answer": "Not within this tour's 30-min Songdo stop. The cable car round-trip plus typical queue is 45–60 min and would push the day's return past the 19:30 buffer. If the cable car is essential to you, choose our private cruise charter (which can absorb the extra time) or visit Songdo independently on a multi-day Busan trip. The Songdo Cloud Trails skywalk and the cable-car station viewpoint are visited within the 30-min slot."
+      "answer": "Yes — it is the Songdo Sky Park stop, and it is your choice on the day. The cable car is not included in the tour price: you buy at the base station, ₩17,000 adult round-trip or ₩25,000 for the glass-floored Crystal cabin. If you would rather not ride, spend the stop on the free Cloud Trails skywalk and the beach promenade instead; the vehicle waits either way."
     },
     {
       "id": "tower",
@@ -1996,7 +2052,7 @@
     "cruise_shore_excursion_fit": 1,
     "price_band": "budget",
     "pickup_base": "busan_cruise_terminal",
-    "return_time_band": "19:00-19:30",
+    "return_time_band": "16:30-17:00",
     "duration_band": "8h",
     "min_recommended_age": 8,
     "hard_constraints": {
@@ -2103,7 +2159,7 @@
       "private_tour_seekers",
       "premium_seekers"
     ],
-    "source_of_truth_note": "Bus-tour variant of busan-small-group-sightseeing-tour-cruise-passengers. Same 8 stops, larger coach (28-45 seats), lower price ($49 vs $79), shorter stop times. Sources: Visit Busan official, VisitKorea, Wikipedia, UNMCK official, Busan Diamond Tower official, Songdo Marine Cable Car official, Busan International Film Festival official.",
-    "audit_summary": "Cruise-shore excursion bus tour from Busan Port International Cruise Terminal, 9-hour day, 8 signature stops with optional lunch. Return-by-19:15 guarantee sized for 19:30+ sail-away. Direct equivalent on GetYourGuide market is the $55 'Busan for Cruise Passengers Sightseeing Tour' (t864813)."
+    "source_of_truth_note": "Bus-tour variant of busan-small-group-sightseeing-tour-cruise-passengers. Same 9 stops, larger coach (28-45 seats), lower price ($58.79 vs $68.95), shorter stop times. Sources: Visit Busan official, VisitKorea, Wikipedia, UNMCK official, Busan Diamond Tower official, Songdo Marine Cable Car official, Busan International Film Festival official.",
+    "audit_summary": "Cruise-shore excursion bus tour from Busan Port International Cruise Terminal, 8-hour day, 9 signature stops with optional lunch. Return-by-16:45 guarantee sized for 17:00+ sail-away. Direct equivalent on GetYourGuide market is the $55 'Busan for Cruise Passengers Sightseeing Tour' (t864813)."
   }
 }

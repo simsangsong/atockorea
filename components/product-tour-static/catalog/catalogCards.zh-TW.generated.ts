@@ -12,7 +12,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "subtitle": "乘坐大型巴士暢遊釜山海岸8站行程，提供郵輪碼頭接送，並依郵輪啟航時間安排返程。",
       "region": "釜山",
       "duration": "8小時",
-      "stopsCount": 8,
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -133,22 +133,22 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
       "title": "釜山郵輪岸上小團遊",
-      "subtitle": "從郵輪碼頭出發，一趟9小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
+      "subtitle": "從郵輪碼頭出發，一趟8小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
       "region": "釜山",
       "duration": "8小時",
-      "stopsCount": 8,
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "郵輪靠港觀光",
         "小型共乘廂型車",
         "港口接送",
-        "9小時行程"
+        "8小時行程"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在9小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
+      "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在8小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
     },
     "price": {
       "amountLabel": "68.95"

@@ -9,10 +9,10 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "busan-cruise-shore-excursion-bus-tour",
       "title": "釜山邮轮靠岸：沿海巴士观光",
-      "subtitle": "乘坐大型巴士游览釜山沿海8个景点，提供邮轮码头接送，并根据您所乘邮轮的启航时间合理安排返回行程。",
+      "subtitle": "乘坐大型巴士游览釜山沿海9个景点，提供邮轮码头接送，并根据您所乘邮轮的启航时间合理安排返回行程。",
       "region": "釜山",
       "duration": "8小时",
-      "stopsCount": 8,
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -133,22 +133,22 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
       "title": "釜山邮轮岸上小团游",
-      "subtitle": "从邮轮码头出发，9小时共乘面包车游览釜山五大标志性景点。",
+      "subtitle": "从邮轮码头出发，8小时共乘面包车游览釜山五大标志性景点。",
       "region": "釜山",
       "duration": "8小时",
-      "stopsCount": 8,
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "邮轮岸上游",
         "小型共乘面包车",
         "码头接送",
-        "9小时行程"
+        "8小时行程"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，9小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
+      "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，8小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
     },
     "price": {
       "amountLabel": "68.95"
