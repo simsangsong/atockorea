@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "Busan to Gyeongju: Ancient Capital",
-      "subtitle": "Gyeongju's six classic stops at a calmer pace and an earlier return.",
+      "subtitle": "Small-group mini-van · English-speaking guide — Ahopsan Bamboo Forest, Bulguksa (UNESCO), Gyochon Hanok Village + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and Gyeongju National Museum (Donggung & Wolji night view in winter), all in one day.",
       "region": "Gyeongju (from Busan)",
-      "duration": "10.5 hours",
+      "duration": "11.5 hours",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Small group",
         "Calmer pace",
         "From Busan",
-        "Earlier return"
+        "Winter night view"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "From US$39 per person (was $50, 22% off)",
-      "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
+      "shortCardDescription": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at Gyeongju National Museum, or at the Donggung & Wolji night view in winter."
     },
     "price": {
       "amountLabel": "39"

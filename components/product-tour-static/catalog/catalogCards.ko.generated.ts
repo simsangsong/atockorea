@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "부산 → 경주 고도 일일 투어",
-      "subtitle": "여유로운 페이스로 즐기는 경주의 클래식 6개 명소와 이른 귀환.",
+      "subtitle": "소그룹 미니밴 · 영어 가이드 — 아홉산숲, 불국사(유네스코), 교촌한옥마을+최부자댁+월정교, 대릉원+황리단길, 그리고 국립경주박물관(겨울엔 동궁과 월지 야경)까지 하루에.",
       "region": "경주 (부산 출발)",
-      "duration": "10.5시간",
+      "duration": "11.5시간",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "소규모 그룹",
         "여유로운 페이스",
         "부산 출발",
-        "이른 귀환"
+        "겨울엔 야경"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
-      "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
+      "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
     },
     "price": {
       "amountLabel": ""

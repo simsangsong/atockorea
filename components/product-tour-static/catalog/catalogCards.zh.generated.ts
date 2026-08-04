@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山出发庆州千年古都一日游",
-      "subtitle": "以更悠闲的节奏游览庆州六大经典景点，更早返回。",
+      "subtitle": "小团迷你巴士 · 英文导游 —— 阿弘山竹林、佛国寺（UNESCO）、校村韩屋村+崔富豪宅邸+月精桥、大陵苑+皇理团街，以及国立庆州博物馆（冬季为东宫与月池夜景），一日走完。",
       "region": "庆州（从釜山出发）",
-      "duration": "10.5小时",
+      "duration": "11.5小时",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "小团体",
         "节奏悠闲",
         "从釜山出发",
-        "提前返回"
+        "冬季夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "每人 US$39（原价$50，22% 优惠）",
-      "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
+      "shortCardDescription": "从釜山3处地铁站出发的庆州一日小团游。下午把车停下来用脚走——从崔富豪宅邸到月精桥，从大陵苑到皇理团街。最后一站是国立庆州博物馆，冬季则为东宫与月池夜景。"
     },
     "price": {
       "amountLabel": ""

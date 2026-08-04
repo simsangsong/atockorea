@@ -319,9 +319,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "Busan to Gyeongju: Ancient Capital",
-        "subtitle": "Gyeongju's six classic stops at a calmer pace and an earlier return.",
+        "subtitle": "Small-group mini-van · English-speaking guide — Ahopsan Bamboo Forest, Bulguksa (UNESCO), Gyochon Hanok Village + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and Gyeongju National Museum (Donggung & Wolji night view in winter), all in one day.",
         "region": "Gyeongju (from Busan)",
-        "duration": "10.5 hours",
+        "duration": "11.5 hours",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -329,12 +329,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Small group",
           "Calmer pace",
           "From Busan",
-          "Earlier return"
+          "Winter night view"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "From US$39 per person (was $50, 22% off)",
-        "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
+        "shortCardDescription": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at Gyeongju National Museum, or at the Donggung & Wolji night view in winter."
       },
       "price": {
         "amountLabel": "39"
@@ -1209,9 +1209,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "부산 → 경주 고도 일일 투어",
-        "subtitle": "여유로운 페이스로 즐기는 경주의 클래식 6개 명소와 이른 귀환.",
+        "subtitle": "소그룹 미니밴 · 영어 가이드 — 아홉산숲, 불국사(유네스코), 교촌한옥마을+최부자댁+월정교, 대릉원+황리단길, 그리고 국립경주박물관(겨울엔 동궁과 월지 야경)까지 하루에.",
         "region": "경주 (부산 출발)",
-        "duration": "10.5시간",
+        "duration": "11.5시간",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -1219,12 +1219,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "소규모 그룹",
           "여유로운 페이스",
           "부산 출발",
-          "이른 귀환"
+          "겨울엔 야경"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
-        "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
+        "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
       },
       "price": {
         "amountLabel": ""
@@ -2099,9 +2099,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山出发庆州千年古都一日游",
-        "subtitle": "以更悠闲的节奏游览庆州六大经典景点，更早返回。",
+        "subtitle": "小团迷你巴士 · 英文导游 —— 阿弘山竹林、佛国寺（UNESCO）、校村韩屋村+崔富豪宅邸+月精桥、大陵苑+皇理团街，以及国立庆州博物馆（冬季为东宫与月池夜景），一日走完。",
         "region": "庆州（从釜山出发）",
-        "duration": "10.5小时",
+        "duration": "11.5小时",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2109,12 +2109,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小团体",
           "节奏悠闲",
           "从釜山出发",
-          "提前返回"
+          "冬季夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原价$50，22% 优惠）",
-        "shortCardDescription": "从釜山出发前往庆州的小团体一日游，庆州是新罗王国的古都（公元前57年—公元935年）。与UNESCO遗产版本相同的经典六景路线（阿虎山竹林 → 佛国寺UNESCO → 庆州拌饭午餐 → 国立博物馆 → 校村韩屋村 → 月精桥），但节奏更为悠闲，返回时间更早（约18:50）。配备英语/中文双语认证导游；小型厢式车；全程免费入场（仅阿虎山₩5,000及午餐费用需当天自付）。"
+        "shortCardDescription": "从釜山3处地铁站出发的庆州一日小团游。下午把车停下来用脚走——从崔富豪宅邸到月精桥，从大陵苑到皇理团街。最后一站是国立庆州博物馆，冬季则为东宫与月池夜景。"
       },
       "price": {
         "amountLabel": ""
@@ -2989,9 +2989,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山出發慶州千年古都一日遊",
-        "subtitle": "以更從容的節奏遊覽慶州六大經典景點，並提早返回。",
+        "subtitle": "小團體廂型車·英語導遊——阿弘山竹林、佛國寺（UNESCO）、校村韓屋村＋崔富豪宅邸＋月精橋、大陵苑＋皇理團街，再加上國立慶州博物館（冬季為東宮與月池夜景），一天走完。",
         "region": "慶州（從釜山出發）",
-        "duration": "10.5小時",
+        "duration": "11.5小時",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -2999,12 +2999,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "小團體",
           "從容慢遊",
           "從釜山出發",
-          "提早返回"
+          "冬季看夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "每人 US$39（原價$50，22% 優惠）",
-        "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
+        "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
       },
       "price": {
         "amountLabel": ""
@@ -3879,22 +3879,22 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "Busan→Gyeongju: Capital Antigua",
-        "subtitle": "Las seis paradas clásicas de Gyeongju a un ritmo más tranquilo y con regreso más temprano.",
+        "subtitle": "Minivan de grupo pequeño con guía de habla inglesa — Ahopsan, Bulguksa (UNESCO), Gyochon + Casa del Clan Choi + Woljeonggyo, Daereungwon + Hwangnidan-gil y el Museo Nacional de Gyeongju (en invierno, Donggung y Wolji de noche) en un solo día.",
         "region": "Gyeongju (desde Busán)",
-        "duration": "10,5 horas",
+        "duration": "11,5 horas",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
         "badges": [
           "Grupo pequeño",
-          "Ritmo más tranquilo",
-          "Desde Busán",
-          "Regreso más temprano"
+          "Ritmo tranquilo",
+          "Desde Busan",
+          "Paisaje nocturno en invierno"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
-        "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
+        "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
       },
       "price": {
         "amountLabel": ""
@@ -4766,9 +4766,9 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "catalog_card": {
         "slug": "from-busan-gyeongju-ancient-capital-day-tour",
         "title": "釜山発・慶州古都ツアー",
-        "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+        "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
         "region": "慶州（釜山発）",
-        "duration": "10.5時間",
+        "duration": "11.5時間",
         "stopsCount": 8,
         "rating": 0,
         "reviewCount": 0,
@@ -4776,12 +4776,12 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "少人数グループ",
           "ゆったりとしたペース",
           "釜山発",
-          "早めの帰着"
+          "冬は夜景"
         ],
         "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
         "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-        "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
+        "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
       },
       "price": {
         "amountLabel": ""
