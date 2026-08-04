@@ -94,7 +94,8 @@
     "i18n:verify": "npx tsx scripts/i18n/verify.ts",
     "i18n:glossary": "npx tsx scripts/i18n/build-glossary.ts",
     "i18n:apply": "node --env-file=.env.local --import tsx scripts/i18n/apply.ts",
-    "i18n:status": "npx tsx scripts/i18n/status.ts"
+    "i18n:status": "npx tsx scripts/i18n/status.ts",
+    "video:guide": "node scripts/video-guide/run.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

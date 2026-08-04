@@ -43,7 +43,20 @@
 - 화살표 금지(2026-08-01) — 정지 + 셸 타이포만. 챕터 간격 ≥10s.
 - 걷는 컷은 상단 웨이파인딩(kicker)만 — 하우스 스타일.
 
-## §5 워크플로 체크리스트 (순서 고정)
+## §5 워크플로 — 원커맨드
+
+```bash
+npm run video:guide                      # 전 스펙: turns → motioncut → validate → 드래프트 렌더
+npm run video:guide -- <slug>            # 한 편만
+npm run video:guide -- <slug> --check    # 실측·게이트만 (렌더 없음)
+npm run video:guide -- <slug> --full     # 마스터(crf17) + 타이포 셸(vfull --wide)
+```
+
+`scripts/video-guide/run.mjs` 가 아래 순서를 그대로 실행하고, **선행 조건이 없으면 렌더 대신 멈춘다**
+(소스 폴더/파일 부재 · 음악 베드 부재 · ffmpeg 부재 — 각각 고치는 법을 같이 찍는다).
+게이트가 빨간 스펙은 렌더로 넘어가지 않는다.
+
+### 단계 (수동으로 돌릴 때의 순서 — 위 커맨드가 이걸 감싼다)
 
 1. 클립 전수 컨택트시트(6프레임/클립) — **파일명 말고 화면으로 식별**
 2. 스펙 v1 (이 문서 §1~§4 준수)
