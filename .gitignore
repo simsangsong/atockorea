@@ -112,3 +112,7 @@ scripts/.walk-*/
 # QA harness output — failure screenshots from scripts/qa-hero-grid.mjs
 # (SHOT_DIR defaults to the repo root, so a bare run drops them here)
 hero-grid/
+
+# QA walk output — screenshots + measurements, regenerated on demand
+cockpit/
+shots/
