@@ -6,6 +6,7 @@
  *   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs
  *   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs --only <slug>
  *   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs --inactive
+ *   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs --update-staged
  *
  * Why this exists: the equivalent SQL in supabase/pending-db-apply needs `psql`
  * plus a Postgres connection string, and this repo's machines do not reliably
@@ -27,6 +28,7 @@ import { PRODUCTS, buildRows } from "./seoul-new-products-rows-2026-08.mjs";
 const args = process.argv.slice(2);
 const DRY = args.includes("--dry-run");
 const INACTIVE = args.includes("--inactive");
+const UPDATE_STAGED = args.includes("--update-staged");
 const ONLY = args.includes("--only") ? args[args.indexOf("--only") + 1] : null;
 
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL || process.env.SUPABASE_URL;
@@ -121,7 +123,11 @@ for (const cfg of PRODUCTS) {
   if (e2) bad(`pages upsert: ${e2.message}`);
   else ok(`${served.length} served locale pages upserted`);
 
-  // 3) staged locales — INSERT-only, never clobber an existing translation
+  // 3) staged locales — INSERT-only by default. The i18n expansion track's rule
+  //    is that de/fr/it/ru rows are never overwritten, because a human or paid
+  //    translation may be sitting in them. --update-staged overrides that, and
+  //    is for the case where this script itself wrote the row minutes ago and
+  //    the source has since been corrected.
   if (rows.stagedPages.length) {
     const { data: have } = await sb
       .from("tour_product_pages")
@@ -129,14 +135,23 @@ for (const cfg of PRODUCTS) {
       .eq("slug", cfg.slug)
       .in("locale", rows.stagedPages.map((r) => r.locale));
     const already = new Set((have ?? []).map((r) => r.locale));
-    const fresh = rows.stagedPages
-      .filter((r) => !already.has(r.locale))
-      .map((r) => ({ ...r, tour_id: tour.id }));
-    if (!fresh.length) ok(`staged locales already present — nothing inserted`);
-    else {
-      const { error: e3 } = await sb.from("tour_product_pages").insert(fresh);
-      if (e3) bad(`staged insert: ${e3.message}`);
-      else ok(`${fresh.length} staged locale pages inserted (${fresh.map((r) => r.locale).join(", ")})`);
+    const withTour = rows.stagedPages.map((r) => ({ ...r, tour_id: tour.id }));
+
+    if (UPDATE_STAGED) {
+      const { error: e3 } = await sb
+        .from("tour_product_pages")
+        .upsert(withTour, { onConflict: "slug,locale" });
+      if (e3) bad(`staged upsert: ${e3.message}`);
+      else ok(`${withTour.length} staged locale pages upserted (--update-staged)`);
+    } else {
+      const fresh = withTour.filter((r) => !already.has(r.locale));
+      if (!fresh.length) {
+        ok(`staged locales already present — left untouched (--update-staged to refresh)`);
+      } else {
+        const { error: e3 } = await sb.from("tour_product_pages").insert(fresh);
+        if (e3) bad(`staged insert: ${e3.message}`);
+        else ok(`${fresh.length} staged locale pages inserted (${fresh.map((r) => r.locale).join(", ")})`);
+      }
     }
   }
 

@@ -728,11 +728,11 @@
     {
       "id": "pickup",
       "title": "픽업 & 드롭오프",
-      "preview": "서울 픽업 지점 두 곳: **홍대입구역 8번 출구 스타벅스 07:30**(마포구), **명동역 2번 출구 노스페이스 플래그십 앞 08:00**(중구).",
+      "preview": "서울 픽업 지점 두 곳: 홍대입구역 8번 출구 스타벅스 07:30(마포구), 명동역 2번 출구 노스페이스 플래그십 앞 08:00(중구)…",
       "content": [
-        "서울 픽업 지점 두 곳: **홍대입구역 8번 출구 스타벅스 07:30**(마포구), **명동역 2번 출구 노스페이스 플래그십 앞 08:00**(중구).",
+        "서울 픽업 지점 두 곳: 홍대입구역 8번 출구 스타벅스 07:30(마포구), 명동역 2번 출구 노스페이스 플래그십 앞 08:00(중구).",
         "두 픽업 모두 같은 버스를 이용합니다. 선택하신 지점에 5분 일찍 도착해 주세요.",
-        "복귀 하차는 역순입니다: **명동 ≈18:30**, **홍대입구 ≈19:00**.",
+        "복귀 하차는 역순입니다: 명동 ≈18:30, 홍대입구 ≈19:00.",
         "실제 투어 소요 시간은 픽업 지점에 따라 달라집니다: 홍대 출발 ≈11.5시간, 명동 출발 ≈10.5시간."
       ]
     },
@@ -766,11 +766,11 @@
       "preview": "서울 픽업 지점 두 곳과 동일한 하차 지점 두 곳, 냉방 버스, 자격을 갖춘 영어 가이드.",
       "content": [
         "서울 픽업 지점 두 곳과 동일한 하차 지점 두 곳, 냉방 버스, 자격을 갖춘 영어 가이드.",
-        "**남이섬 왕복 배편 + 나미나라공화국 비자 요금(₩19,000) — 포함.**",
-        "**아침고요수목원 입장료(₩11,000) — 포함.**",
-        "**쁘띠프랑스 입장료(₩12,000) — 포함.**",
+        "남이섬 왕복 배편 + 나미나라공화국 비자 요금(₩19,000) — 포함.",
+        "아침고요수목원 입장료(₩11,000) — 포함.",
+        "쁘띠프랑스 입장료(₩12,000) — 포함.",
         "통행료와 주차료 — 포함.",
-        "**불포함:** 점심과 음료(₩10,000-15,000, 개인 비용), 쁘띠프랑스 + 이탈리아마을 통합권(₩19,500), 남이섬 자전거·전동 버기 대여, 남이섬행 스카이라인 짚와이어, 개인 지출.",
+        "불포함: 점심과 음료(₩10,000-15,000, 개인 비용), 쁘띠프랑스 + 이탈리아마을 통합권(₩19,500), 남이섬 자전거·전동 버기 대여, 남이섬행 스카이라인 짚와이어, 개인 지출.",
         "중국어 가이드는 요청 시 배정 가능합니다 — 최소 3일 전 예약해 주세요."
       ]
     },
@@ -1028,7 +1028,7 @@
     "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "large_coach",
-    "duration_hours": 11,
+    "duration_hours": 11.5,
     "region_tags": [
       "seoul_mapo",
       "seoul_jung",
@@ -1107,10 +1107,10 @@
       ]
     },
     "walking_notes": [
-      "13-hour day with ~4-5 km total walking.",
-      "Seoraksan paths rocky in places; Nami and Morning Calm flat.",
+      "11.5-hour day with ~4-5 km total walking.",
+      "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
       "Closed-toe shoes recommended.",
-      "Cable car at Seoraksan optional and not included."
+      "Nami bicycle and e-buggy rental optional and not included."
     ],
     "keywords": [
       "seoul seoraksan day tour",

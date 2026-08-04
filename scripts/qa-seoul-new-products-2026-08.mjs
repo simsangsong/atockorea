@@ -128,10 +128,20 @@ for (const { slug, winter } of PRODUCTS) {
 
     const blob = JSON.stringify(b);
 
-    // 4. EN leak
+    // 4. EN leak — over DISPLAY copy only.
+    //
+    // matching_profile / matching_metadata are deliberately locale-invariant
+    // English (the recommender reads them; no guest ever sees them), so their
+    // English is not a leak. They used to slip past this probe by luck rather
+    // than by rule — the donor's wording simply never collided with a probe
+    // string. Excluding them explicitly is what makes the scan mean something.
+    const { matching_profile, matching_metadata, ...displayOnly } = b;
+    const displayBlob = JSON.stringify(displayOnly);
     if (loc !== "en") {
       for (const probe of LEAK_PROBES) {
-        if (blob.includes(probe)) fail(`${loc}: untranslated EN string survived — "${probe}"`);
+        if (displayBlob.includes(probe)) {
+          fail(`${loc}: untranslated EN string survived — "${probe}"`);
+        }
       }
     }
 

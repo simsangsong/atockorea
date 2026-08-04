@@ -724,18 +724,18 @@
     {
       "id": "pickup",
       "title": "Abholung & Ausstieg",
-      "preview": "Zwei Abholpunkte in Seoul: **Starbucks am Bahnhof Hongik University, Ausgang 8, um 07:30** (Mapo-gu) und **Station Myeongdong, Ausgang 2, beim NorthFace-Flagshipstore, um 08:00** (Jung-gu).",
+      "preview": "Zwei Abholpunkte in Seoul: Starbucks am Bahnhof Hongik University, Ausgang…",
       "content": [
-        "Zwei Abholpunkte in Seoul: **Starbucks am Bahnhof Hongik University, Ausgang 8, um 07:30** (Mapo-gu) und **Station Myeongdong, Ausgang 2, beim NorthFace-Flagshipstore, um 08:00** (Jung-gu).",
+        "Zwei Abholpunkte in Seoul: Starbucks am Bahnhof Hongik University, Ausgang 8, um 07:30 (Mapo-gu) und Station Myeongdong, Ausgang 2, beim NorthFace-Flagshipstore, um 08:00 (Jung-gu).",
         "Beide Abholungen teilen sich denselben Bus; bitte seien Sie 5 Minuten früher an Ihrem gewählten Punkt.",
-        "Ausstiege in umgekehrter Reihenfolge: **Myeongdong ≈18:30**, **Hongik University ≈19:00**.",
+        "Ausstiege in umgekehrter Reihenfolge: Myeongdong ≈18:30, Hongik University ≈19:00.",
         "Ihre tatsächliche Tourdauer hängt vom Abholpunkt ab: ≈11,5 Stunden ab Hongik, ≈10,5 Stunden ab Myeongdong."
       ]
     },
     {
       "id": "what-to-bring",
       "title": "Kleidung & Ausrüstung",
-      "preview": "Bequeme Schuhe zum Gehen — Wanderschuhe sind nicht nötig, aber Sie sind über den Tag 5-6 km auf den Beinen.",
+      "preview": "Bequeme Schuhe zum Gehen — Wanderschuhe sind nicht nötig, aber Sie sind übe…",
       "content": [
         "Bequeme Schuhe zum Gehen — Wanderschuhe sind nicht nötig, aber Sie sind über den Tag 5-6 km auf den Beinen.",
         "Warme Kleidung im Zwiebelprinzip von November bis März; die Täler um Gapyeong sind mehrere Grad kälter als das Zentrum Seouls, und das Deck der Nami-Fähre ist ungeschützt.",
@@ -759,14 +759,14 @@
     {
       "id": "inclusions",
       "title": "Was inklusive ist",
-      "preview": "Zwei Abholpunkte in Seoul und dieselben zwei Ausstiegspunkte, klimatisierter Bus, lizenzierter englischsprachiger Guide.",
+      "preview": "Zwei Abholpunkte in Seoul und dieselben zwei Ausstiegspunkte, klimatisierte…",
       "content": [
         "Zwei Abholpunkte in Seoul und dieselben zwei Ausstiegspunkte, klimatisierter Bus, lizenzierter englischsprachiger Guide.",
-        "**Fähre hin und zurück zur Insel Nami + Visa-Gebühr der Naminara Republic (₩19,000) — INKLUSIVE.**",
-        "**Eintritt in den Garden of Morning Calm (₩11,000) — INKLUSIVE.**",
-        "**Eintritt Petite France (₩12,000) — INKLUSIVE.**",
+        "Fähre hin und zurück zur Insel Nami + Visa-Gebühr der Naminara Republic (₩19,000) — INKLUSIVE.",
+        "Eintritt in den Garden of Morning Calm (₩11,000) — INKLUSIVE.",
+        "Eintritt Petite France (₩12,000) — INKLUSIVE.",
         "Maut- und Parkgebühren — INKLUSIVE.",
-        "**NICHT inklusive:** Mittagessen und Getränke (₩10,000-15,000, auf eigene Kosten), das Kombiticket Petite France + Italian Village (₩19,500), Fahrrad- oder E-Buggy-Miete auf der Insel Nami, die Skyline-Zipwire nach Nami sowie persönliche Ausgaben.",
+        "NICHT inklusive: Mittagessen und Getränke (₩10,000-15,000, auf eigene Kosten), das Kombiticket Petite France + Italian Village (₩19,500), Fahrrad- oder E-Buggy-Miete auf der Insel Nami, die Skyline-Zipwire nach Nami sowie persönliche Ausgaben.",
         "Chinesischsprachiger Guide auf Anfrage verfügbar — bitte mindestens 3 Tage im Voraus buchen."
       ]
     },
@@ -783,7 +783,7 @@
     {
       "id": "walking",
       "title": "Gehen & Gelände",
-      "preview": "Leicht bis mittel — diese Route enthält keine Wanderung und keine treppenlastigen Abschnitte.",
+      "preview": "Leicht bis mittel — diese Route enthält keine Wanderung und keine treppenla…",
       "content": [
         "Leicht bis mittel — diese Route enthält keine Wanderung und keine treppenlastigen Abschnitte.",
         "Insel Nami: flache, gepflasterte, baumbestandene Alleen; ~3 km in 2 Stunden ist das übliche Tempo. Fahrräder und E-Buggys können auf der Insel auf eigene Kosten gemietet werden.",
@@ -795,7 +795,7 @@
     {
       "id": "lunch",
       "title": "Mittagessen (auf eigene Kosten)",
-      "preview": "Das Mittagessen findet gegen 12:15 in einem lokalen Restaurant im Bereich des Fähranlegers Gapyeong statt, nach der Insel Nami.",
+      "preview": "Das Mittagessen findet gegen 12:15 in einem lokalen Restaurant im Bereich d…",
       "content": [
         "Das Mittagessen findet gegen 12:15 in einem lokalen Restaurant im Bereich des Fähranlegers Gapyeong statt, nach der Insel Nami.",
         "Dies ist Dakgalbi-Land — süßscharfes Hähnchen, am Tisch gebraten und meist damit beendet, dass Reis in der Sauce angebraten wird. Makguksu (kalte Buchweizennudeln) ist das klassische Begleitgericht.",
@@ -1024,7 +1024,7 @@
     "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "large_coach",
-    "duration_hours": 11,
+    "duration_hours": 11.5,
     "region_tags": [
       "seoul_mapo",
       "seoul_jung",
@@ -1103,10 +1103,10 @@
       ]
     },
     "walking_notes": [
-      "13-hour day with ~4-5 km total walking.",
-      "Seoraksan paths rocky in places; Nami and Morning Calm flat.",
+      "11.5-hour day with ~4-5 km total walking.",
+      "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
       "Closed-toe shoes recommended.",
-      "Cable car at Seoraksan optional and not included."
+      "Nami bicycle and e-buggy rental optional and not included."
     ],
     "keywords": [
       "seoul seoraksan day tour",

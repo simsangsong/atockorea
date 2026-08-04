@@ -79,6 +79,89 @@ function clone(v) {
   return JSON.parse(JSON.stringify(v));
 }
 
+/**
+ * Per-locale terminology normalisation, applied last so it catches donor text
+ * as well as authored text.
+ *
+ * The two donors disagree with each other in Japanese: donor A
+ * (seoul-seoraksan-nami-island-morning-calm-day-tour) writes the Garden of
+ * Morning Calm as 晨靜苑 with the traditional 靜, donor B
+ * (seoul-private-nami-morning-calm-petite-france) writes 晨静苑 with the
+ * standard shinjitai 静. Reusing stops from both put 29 of one and 25 of the
+ * other on the same Japanese page. Japanese takes 静; zh-TW legitimately keeps
+ * 靜, so this is deliberately locale-scoped rather than a global replace.
+ */
+const TERMINOLOGY = {
+  ja: [["晨靜苑", "晨静苑"]],
+};
+
+/**
+ * The practical accordion renders as PLAIN TEXT — both its `preview` teaser and
+ * its `content` body. Donor bodies and authored copy both use ** for emphasis,
+ * and copying them verbatim put literal asterisks on the customer's page: 24 on
+ * the Gapyeong page against 0 on the Busan small-group product, whose accordion
+ * content carries no markdown at all. Strip here, once, rather than in ten
+ * content files per product.
+ *
+ * Stop descriptions are a different matter — those ARE markdown-rendered, so
+ * their ** is left alone.
+ */
+function toPlain(markdown) {
+  return String(markdown)
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/(^|\s)\*(\S(?:.*?\S)?)\*(?=\s|$)/g, "$1$2")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/[ \t]+/g, " ")
+    .trim();
+}
+
+function toPreview(markdown) {
+  const plain = toPlain(markdown).replace(/\s+/g, " ");
+  if (plain.length <= 75) return plain;
+  return plain.slice(0, 75).replace(/[\s.,;:—-]+$/, "") + "…";
+}
+
+/**
+ * Rewrite every string in the document. Arrays need the index-assigning branch:
+ * `node.forEach(walk)` visits a string element as a value and can never write
+ * it back, which silently skips things like matching_profile.walking_notes.
+ */
+function mapStrings(doc, fn) {
+  const visit = (node) => {
+    if (Array.isArray(node)) {
+      node.forEach((v, i) => {
+        if (typeof v === "string") {
+          const next = fn(v);
+          if (next !== v) node[i] = next;
+        } else visit(v);
+      });
+      return;
+    }
+    if (!node || typeof node !== "object") return;
+    for (const [k, v] of Object.entries(node)) {
+      if (typeof v === "string") {
+        const next = fn(v);
+        if (next !== v) node[k] = next;
+      } else visit(v);
+    }
+  };
+  visit(doc);
+}
+
+function applyTerminology(doc, loc) {
+  const rules = TERMINOLOGY[loc];
+  if (!rules) return;
+  mapStrings(doc, (s) => {
+    let next = s;
+    for (const [from, to] of rules) next = next.split(from).join(to);
+    return next;
+  });
+  const blob = JSON.stringify(doc);
+  for (const [from] of rules) {
+    if (blob.includes(from)) throw new Error(`[${loc}] terminology rule left "${from}" in the bundle`);
+  }
+}
+
 function buildGalleryFor(name, srcs, startId) {
   return srcs.map((src, i) => ({
     id: startId + i,
@@ -301,12 +384,20 @@ function build(loc) {
   // rest keeps the donor's (already translated) operator boilerplate.
   const practicalSource = isExt ? overlay.practicalItems : donorA.practicalAccordionItems;
   const practicalAccordionItems = practicalSource.map((item) => {
-    const authored = c.practical[item.id];
-    if (!authored) return clone(item);
     const it = clone(item);
-    if (authored.title) it.title = authored.title;
-    it.content = authored.content;
-    it.preview = authored.content[0];
+    const authored = c.practical[item.id];
+    if (authored) {
+      if (authored.title) it.title = authored.title;
+      it.content = authored.content;
+      it.preview = toPreview(authored.content[0]);
+    }
+    // The accordion body renders as plain text, not markdown — verified
+    // 2026-08-04 against the Busan small-group product, whose accordion content
+    // carries no ** and whose page shows none, while this one showed 24 literal
+    // asterisks. Both the donor bodies and the authored copy use ** for
+    // emphasis, so strip it here rather than in ten content files.
+    if (Array.isArray(it.content)) it.content = it.content.map(toPlain);
+    if (typeof it.preview === "string") it.preview = toPlain(it.preview);
     return it;
   });
 
@@ -319,7 +410,16 @@ function build(loc) {
   matching_profile.anchor_poi_keys = MATCHING_METADATA.anchor_poi_keys.slice();
   // This route drops the mountain and keeps the gardens: recalibrate the axes
   // that the Seoraksan donor scored for a national-park day.
-  if ("duration_hours" in matching_profile) matching_profile.duration_hours = 11;
+  if ("duration_hours" in matching_profile) matching_profile.duration_hours = 11.5;
+  // The donor's notes describe the donor's day — 13 hours, Seoraksan paths, a
+  // Seoraksan cable car. This tour is 11.5 hours and never goes near Seoraksan;
+  // cloning the profile carried all three across. State this tour's own stops.
+  matching_profile.walking_notes = [
+    "11.5-hour day with ~4-5 km total walking.",
+    "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
+    "Closed-toe shoes recommended.",
+    "Nami bicycle and e-buggy rental optional and not included.",
+  ];
   if ("national_park_fit" in matching_profile) matching_profile.national_park_fit = 0;
   if ("unesco_fit" in matching_profile) matching_profile.unesco_fit = 0;
   if ("buddhist_temple_fit" in matching_profile) matching_profile.buddhist_temple_fit = 0;
@@ -429,6 +529,8 @@ function build(loc) {
     }
   }
   doc.page_sections = page_sections;
+
+  applyTerminology(doc, loc);
 
   mkdirSync(OUT_DIR, { recursive: true });
   const file = path.join(OUT_DIR, `${SLUG}.${loc}.json`);

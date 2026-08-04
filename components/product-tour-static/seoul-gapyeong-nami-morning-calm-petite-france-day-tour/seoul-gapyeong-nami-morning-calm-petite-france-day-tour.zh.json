@@ -728,11 +728,11 @@
     {
       "id": "pickup",
       "title": "上下车地点",
-      "preview": "首尔两处接客点：**弘大入口站 8 号出口星巴克 07:30**（麻浦区），以及 **明洞站 2 号出口 North Face 旗舰店旁 08:00**（中区）。",
+      "preview": "首尔两处接客点：弘大入口站 8 号出口星巴克 07:30（麻浦区），以及 明洞站 2 号出口 North Face 旗舰店旁 08:00（中区）。",
       "content": [
-        "首尔两处接客点：**弘大入口站 8 号出口星巴克 07:30**（麻浦区），以及 **明洞站 2 号出口 North Face 旗舰店旁 08:00**（中区）。",
+        "首尔两处接客点：弘大入口站 8 号出口星巴克 07:30（麻浦区），以及 明洞站 2 号出口 North Face 旗舰店旁 08:00（中区）。",
         "两处接客共用同一辆大巴；请在所选地点提前 5 分钟到达。",
-        "返程下车顺序相反：**明洞约 18:30**，**弘大入口约 19:00**。",
+        "返程下车顺序相反：明洞约 18:30，弘大入口约 19:00。",
         "你的实际行程长度取决于接客点：从弘大出发 ≈11.5 小时，从明洞出发 ≈10.5 小时。"
       ]
     },
@@ -766,11 +766,11 @@
       "preview": "首尔两处接客点与相同的两处下车点、空调大巴、持证英语导游。",
       "content": [
         "首尔两处接客点与相同的两处下车点、空调大巴、持证英语导游。",
-        "**南怡岛往返渡轮 + 南怡共和国签证费（₩19,000）— 已包含。**",
-        "**晨静树木园门票（₩11,000）— 已包含。**",
-        "**小法国村门票（₩12,000）— 已包含。**",
+        "南怡岛往返渡轮 + 南怡共和国签证费（₩19,000）— 已包含。",
+        "晨静树木园门票（₩11,000）— 已包含。",
+        "小法国村门票（₩12,000）— 已包含。",
         "过路费与停车费 — 已包含。",
-        "**不包含：** 午餐与饮料（₩10,000-15,000，费用自理）、小法国村 + 意大利村联票（₩19,500）、南怡岛自行车或电动代步车租借、通往南怡岛的天空线滑索，以及个人消费。",
+        "不包含： 午餐与饮料（₩10,000-15,000，费用自理）、小法国村 + 意大利村联票（₩19,500）、南怡岛自行车或电动代步车租借、通往南怡岛的天空线滑索，以及个人消费。",
         "可应要求安排中文导游 — 请至少提前 3 天预订。"
       ]
     },
@@ -1028,7 +1028,7 @@
     "destination_region": "seoul_gangwon",
     "region_type": "gangwon_seoraksan",
     "vehicle_type": "large_coach",
-    "duration_hours": 11,
+    "duration_hours": 11.5,
     "region_tags": [
       "seoul_mapo",
       "seoul_jung",
@@ -1107,10 +1107,10 @@
       ]
     },
     "walking_notes": [
-      "13-hour day with ~4-5 km total walking.",
-      "Seoraksan paths rocky in places; Nami and Morning Calm flat.",
+      "11.5-hour day with ~4-5 km total walking.",
+      "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
       "Closed-toe shoes recommended.",
-      "Cable car at Seoraksan optional and not included."
+      "Nami bicycle and e-buggy rental optional and not included."
     ],
     "keywords": [
       "seoul seoraksan day tour",

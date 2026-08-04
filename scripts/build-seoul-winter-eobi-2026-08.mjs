@@ -5,7 +5,9 @@
  *   seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour
  *   Seoul pickup 06:00/06:30 → Seoraksan (self-guided) → lunch → Nami Island
  *   → Eobi Ice Valley → return Myeongdong ≈19:30 / Hongdae ≈20:00.
- *   Winter-only: runs roughly 20 Dec – 28 Feb, when the ice wall exists at all.
+ *   Winter-only: sold provisionally as mid-Dec – mid-Feb (owner, 2026-08-04).
+ *   The village sets the dates; 2025-26 ran 20 Dec – 19 Feb. The 28 Feb figure
+ *   the OTAs carry is wrong.
  *
  * Donor: seoul-seoraksan-nami-island-morning-calm-day-tour — same operator, same
  * two-point Seoul pickup, same coach, and it already carries the KB-verified
@@ -35,6 +37,125 @@ const EXT_LOCALES = ["de", "fr", "it", "ru"];
 // in BOTH catalog modules, and the offers SQL.
 const PRICE_USD = 69;
 
+/**
+ * The day is 06:00 pickup to ~19:30 Hongik drop-off — 13.5 hours, which is what
+ * matching_profile.duration_hours has always said. The label used to read "13
+ * hours" and the prose still says "a 13-hour day" in two FAQ answers, while
+ * bookingTrustItems comes from a donor whose own day is shorter. Left alone the
+ * At-a-glance card says 13.5 and the FAQ says 13 on the same page.
+ *
+ * Rewriting here rather than in the content files catches donor-sourced text
+ * too, and the guard below fails the build if any "13 <unit>" claim survives —
+ * the same shape as the Gyeongju re-course's stale-claim safety net.
+ *
+ * The `(?![.,\d])` is what stops a second pass turning 13.5 into 13.5.5.
+ */
+const DURATION_CLAIM = {
+  en: [[/\b13(?![.,\d])(\s*-\s*|\s+)hour/gi, "13.5$1hour"]],
+  ko: [[/13(?![.,\d])\s*시간/g, "13.5시간"]],
+  ja: [[/13(?![.,\d])\s*時間/g, "13.5時間"]],
+  zh: [[/13(?![.,\d])\s*小时/g, "13.5 小时"]],
+  "zh-TW": [[/13(?![.,\d])\s*小時/g, "13.5 小時"]],
+  es: [[/\b13(?![.,\d])\s+horas/g, "13.5 horas"]],
+  de: [[/\b13(?![.,\d])(\s*-\s*|\s+)Stunden/g, "13,5$1Stunden"]],
+  fr: [[/\b13(?![.,\d])\s+heures/g, "13.5 heures"]],
+  it: [[/\b13(?![.,\d])\s+ore/g, "13.5 ore"]],
+  ru: [[/\b13(?![.,\d])(\s*-\s*|\s+)час/g, "13.5$1час"]],
+};
+
+const DURATION_GUARD = {
+  en: /\b13(?![.,\d])\s*-?\s*hour/i,
+  ko: /13(?![.,\d])\s*시간/,
+  ja: /13(?![.,\d])\s*時間/,
+  zh: /13(?![.,\d])\s*小时/,
+  "zh-TW": /13(?![.,\d])\s*小時/,
+  es: /\b13(?![.,\d])\s+horas/,
+  de: /\b13(?![.,\d])\s*-?\s*Stunden/,
+  fr: /\b13(?![.,\d])\s+heures/,
+  it: /\b13(?![.,\d])\s+ore/,
+  ru: /\b13(?![.,\d])\s*-?\s*час/,
+};
+
+/**
+ * The practical accordion renders as PLAIN TEXT — both its `preview` teaser and
+ * its `content` body. Donor bodies and authored copy both use ** for emphasis,
+ * and copying them verbatim put literal asterisks on the customer's page: 24 on
+ * the Gapyeong page against 0 on the Busan small-group product, whose accordion
+ * content carries no markdown at all. Strip here, once, rather than in ten
+ * content files per product.
+ *
+ * Stop descriptions are a different matter — those ARE markdown-rendered, so
+ * their ** is left alone.
+ */
+function toPlain(markdown) {
+  return String(markdown)
+    .replace(/\*\*(.+?)\*\*/g, "$1")
+    .replace(/(^|\s)\*(\S(?:.*?\S)?)\*(?=\s|$)/g, "$1$2")
+    .replace(/`([^`]+)`/g, "$1")
+    .replace(/[ 	]+/g, " ")
+    .trim();
+}
+
+function toPreview(markdown) {
+  const plain = toPlain(markdown).replace(/\s+/g, " ");
+  if (plain.length <= 75) return plain;
+  return plain.slice(0, 75).replace(/[\s.,;:—-]+$/, "") + "…";
+}
+
+/**
+ * Rewrite every string in the document. Arrays need the index-assigning branch:
+ * `node.forEach(walk)` visits a string element as a value and can never write
+ * it back, which is exactly how matching_profile.walking_notes kept its stale
+ * "13-hour day" through a pass that reported success.
+ */
+function mapStrings(doc, fn) {
+  const visit = (node) => {
+    if (Array.isArray(node)) {
+      node.forEach((v, i) => {
+        if (typeof v === "string") {
+          const next = fn(v);
+          if (next !== v) node[i] = next;
+        } else visit(v);
+      });
+      return;
+    }
+    if (!node || typeof node !== "object") return;
+    for (const [k, v] of Object.entries(node)) {
+      if (typeof v === "string") {
+        const next = fn(v);
+        if (next !== v) node[k] = next;
+      } else visit(v);
+    }
+  };
+  visit(doc);
+}
+
+function normalizeDurationClaim(doc, loc) {
+  const rules = DURATION_CLAIM[loc] || [];
+  mapStrings(doc, (s) => {
+    let next = s;
+    for (const [re, to] of rules) next = next.replace(re, to);
+    return next;
+  });
+
+  const guard = DURATION_GUARD[loc];
+  if (!guard) return;
+  const stale = [];
+  (function find(node, path) {
+    if (Array.isArray(node)) return node.forEach((v, i) => find(v, `${path}[${i}]`));
+    if (node && typeof node === "object") {
+      return Object.entries(node).forEach(([k, v]) => find(v, `${path}.${k}`));
+    }
+    if (typeof node === "string" && guard.test(node)) stale.push(path);
+  })(doc, "");
+  if (stale.length) {
+    throw new Error(
+      `[${loc}] a "13 hour" duration claim survived — the day is 13.5 hours.\n` +
+        `  at: ${stale.slice(0, 6).join(", ")}`,
+    );
+  }
+}
+
 const HERO_IMG = "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp";
 
 const SEORAK_IMAGES = [
@@ -53,10 +174,13 @@ const NAMI_IMAGES = [
 // Daritdol/Dakbatgol on the Busan small-group product).
 const EOBI_IMAGES = [];
 
-// Eobi's viewing area is village-run and its published festival hours have been
-// reported as roughly 10:00-17:00, so the day is paced to reach the valley by
-// ~16:45 rather than after 17:00. In deep winter that lands at dusk, which is
-// when the deck path's night lighting comes on — stated plainly in the copy.
+// Eobi's viewing area is village-run and the village publishes 10:00-17:00
+// (어비계곡마을, 031-585-3551, confirmed 2026-08-04), so the day is paced to
+// reach the valley by ~16:45 — near closing, which the owner chose to keep
+// (2026-08-04) on condition the copy says so plainly.
+// 🔴 Do not reinstate a night-lighting or blue-hour promise here: January
+// sunset in Gapyeong is ~17:20, after the published close, so the lighting is
+// not something this itinerary can promise.
 const TIMES = {
   pickup: "06:00 / 06:30",
   seoraksan: "≈ 09:30",
@@ -301,12 +425,19 @@ function build(loc) {
 
   const practicalSource = isExt ? overlay.practicalItems : donor.practicalAccordionItems;
   const practicalAccordionItems = practicalSource.map((item) => {
-    const authored = c.practical[item.id];
-    if (!authored) return clone(item);
     const it = clone(item);
-    if (authored.title) it.title = authored.title;
-    it.content = authored.content;
-    it.preview = authored.content[0];
+    const authored = c.practical[item.id];
+    if (authored) {
+      if (authored.title) it.title = authored.title;
+      it.content = authored.content;
+      it.preview = toPreview(authored.content[0]);
+    }
+    // The accordion body renders as plain text, not markdown — verified
+    // 2026-08-04 against the Busan small-group product, whose accordion content
+    // carries no ** and whose page shows none. Donor bodies and authored copy
+    // both use ** for emphasis, so strip it here rather than in ten files.
+    if (Array.isArray(it.content)) it.content = it.content.map(toPlain);
+    if (typeof it.preview === "string") it.preview = toPlain(it.preview);
     return it;
   });
   // Winter-only product: an explicit season accordion sits after weather-policy.
@@ -314,8 +445,8 @@ function build(loc) {
   const seasonItem = {
     id: "season-window",
     title: c.practicalSeasonWindow.title,
-    preview: c.practicalSeasonWindow.content[0],
-    content: c.practicalSeasonWindow.content,
+    preview: toPreview(c.practicalSeasonWindow.content[0]),
+    content: c.practicalSeasonWindow.content.map(toPlain),
   };
   practicalAccordionItems.splice(seasonIdx >= 0 ? seasonIdx + 1 : 0, 0, seasonItem);
 
@@ -326,6 +457,15 @@ function build(loc) {
   matching_profile.poi_tags = MATCHING_METADATA.anchor_poi_keys.slice();
   matching_profile.anchor_poi_keys = MATCHING_METADATA.anchor_poi_keys.slice();
   matching_profile.seasonality = "winter_only";
+  // The donor's notes describe the donor's day: 13 hours, and "Nami and Morning
+  // Calm flat" on a tour that never visits Morning Calm. Cloning the profile
+  // brought both across. State this tour's own stops.
+  matching_profile.walking_notes = [
+    "13.5-hour day with ~4-5 km total walking.",
+    "Seoraksan paths rocky in places; Nami Island flat; the Eobi Valley deck path is short but icy.",
+    "Non-slip winter footwear essential; the ground under the ice wall is closed off.",
+    "Cable car at Seoraksan optional, weather-dependent and not included.",
+  ];
   if ("duration_hours" in matching_profile) matching_profile.duration_hours = 13.5;
   if ("themed_garden_fit" in matching_profile) matching_profile.themed_garden_fit = 0;
   if ("winter_lighting_festival_fit" in matching_profile) matching_profile.winter_lighting_festival_fit = 0;
@@ -433,6 +573,8 @@ function build(loc) {
     }
   }
   doc.page_sections = page_sections;
+
+  normalizeDurationClaim(doc, loc);
 
   mkdirSync(OUT_DIR, { recursive: true });
   const file = path.join(OUT_DIR, `${SLUG}.${loc}.json`);
