@@ -63,12 +63,12 @@ export default function OnsiteJoinQr({ bookingId, roomSession }: { bookingId: st
         >
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={qr.dataUrl} alt="입장 QR" width={300} height={300} />
-          <p className="text-xl font-bold text-neutral-900">손님에게만 보여주세요</p>
-          <p className="tr-body text-neutral-500">스캔하면 이 팀의 투어룸으로 들어옵니다 · 오늘까지 유효</p>
+          <p className="tr-body-lg font-bold text-black">손님에게만 보여주세요</p>
+          <p className="tr-body text-black/60">스캔하면 이 팀의 투어룸으로 들어옵니다 · 오늘까지 유효</p>
           <button
             type="button"
             onClick={() => setQr(null)}
-            className="text-cjk-safe mt-2 w-full max-w-xs rounded-2xl bg-neutral-900 py-4 text-xl font-bold text-white"
+            className="text-cjk-safe mt-2 w-full max-w-xs rounded-2xl bg-black py-4 tr-body-lg font-bold text-white"
             data-testid="onsite-join-qr-close"
           >
             닫기

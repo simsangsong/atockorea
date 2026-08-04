@@ -89,6 +89,10 @@ export interface BulkInviteResult {
   failed: number;
   /** 폐기-후-재발급으로 무효화된 이전 링크 수(B0-D1c). */
   revokedPrevious: number;
+  /** 시나리오 감사 #6 (2026-08-04) — 일정이 confirm 안 된 팀 수. AI 도착 해설의
+   *  생성 트리거가 plan confirm 이라, 발송 시점의 이 숫자가 "confirm 후 출발"
+   *  절차를 화면에서 상기시킨다. */
+  unconfirmedPlans: number;
 }
 
 export type BulkInviteOutcome =
@@ -195,6 +199,22 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
   let failed = 0;
   let revokedPrevious = 0;
 
+  // #6 — count parties whose day plan is not yet confirmed. Best-effort: a
+  // lookup failure must never block the invite send itself.
+  let unconfirmedPlans = 0;
+  try {
+    const bookingIds = roster.map((b) => b.id);
+    const plans = await toList<{ booking_id: string; status: string }>(
+      supabase.from('tour_day_plans').select('booking_id, status').in('booking_id', bookingIds),
+    );
+    const confirmed = new Set(
+      plans.filter((p) => ['guide_confirmed', 'live', 'done'].includes(p.status)).map((p) => p.booking_id),
+    );
+    unconfirmedPlans = bookingIds.filter((id) => !confirmed.has(id)).length;
+  } catch {
+    unconfirmedPlans = 0;
+  }
+
   for (const booking of roster) {
     const email = (booking.contact_email ?? '').trim();
     if (!email) {
@@ -272,6 +292,7 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
       skippedNoEmail,
       failed,
       revokedPrevious,
+      unconfirmedPlans,
     },
   };
 }

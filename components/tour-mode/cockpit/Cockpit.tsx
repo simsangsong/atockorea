@@ -2457,7 +2457,7 @@ export default function Cockpit({
                 arrival pipeline has always accepted a bare title (the server
                 renders the 10-locale arrived line and walks the content
                 ladder by name); only this door was missing. */}
-            <div className="rounded-2xl border border-dashed border-[var(--tr-hairline)] px-4 py-3">
+            <div className="text-cjk-body rounded-2xl border border-dashed border-[var(--tr-hairline)] px-4 py-3">
               <p className="tr-label font-bold text-[var(--tr-ink-3)]">즉흥 정차 — 계획에 없는 곳</p>
               <div className="mt-2 flex gap-2">
                 <input

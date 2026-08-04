@@ -1270,7 +1270,7 @@ export default function ChatFeed({
               <button
                 type="button"
                 onClick={() => void unsend(actionMsg)}
-                className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-danger)] active:bg-[var(--tr-surface-2)]"
+                className="tr-card-text text-cjk-safe flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-danger)] active:bg-[var(--tr-surface-2)]"
                 data-testid="action-unsend"
               >
                 <IconTrash size={TR_ICON.action} aria-hidden />

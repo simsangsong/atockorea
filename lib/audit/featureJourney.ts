@@ -91,6 +91,10 @@ export const FEATURE_STAGES: Record<string, JourneyStage> = {
   // ── during: the tour ───────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/messages': 'during',
   'POST /api/tour-rooms/[bookingId]/messages': 'during',
+  // Unsend (2026-08-04) — a mid-tour regret is a during-tour act.
+  'DELETE /api/tour-rooms/[bookingId]/messages/[messageId]': 'during',
+  // 현장 재합류 (2026-08-04) — the staff QR for a link-lost guest at the van.
+  'POST /api/tour-rooms/[bookingId]/reinvite': 'during',
   'POST /api/tour-rooms/[bookingId]/messages/[messageId]/retranslate': 'during',
   'GET /api/tour-rooms/[bookingId]/reactions': 'during',
   'POST /api/tour-rooms/[bookingId]/reactions': 'during',

@@ -19,6 +19,28 @@ describe('ExtraLedgerCard (LEDGER, P-D2)', () => {
     expect(screen.getByTestId('extra-ledger-card')).toHaveTextContent('확인됨');
   });
 
+  /**
+   * ≈ 환산 병기 (2026-08-04 #5) — the guest thinks in their own money. One
+   * module-cached public rate fetch; ko sees nothing; rate failure = honest
+   * nothing (the KRW figure is the contract either way).
+   */
+  it('shows an approximate home-currency line for foreign locales, none for ko', async () => {
+    const origFetch = global.fetch;
+    global.fetch = jest.fn().mockResolvedValue({
+      ok: true,
+      json: async () => ({ base: 'USD', rates: { KRW: 1400, JPY: 150 } }),
+    }) as unknown as typeof fetch;
+    try {
+      render(<ExtraLedgerCard meta={meta} locale="en" canConfirm={false} />);
+      await waitFor(() => expect(screen.getByTestId('extra-approx')).toBeInTheDocument());
+      // 48,000 / 1400 ≈ $34.29
+      expect(screen.getByTestId('extra-approx')).toHaveTextContent('≈');
+      expect(screen.getByTestId('extra-approx')).toHaveTextContent('34.29');
+    } finally {
+      global.fetch = origFetch;
+    }
+  });
+
   it('hides the button off the newest capsule / for settled extras', () => {
     render(<ExtraLedgerCard meta={{ ...meta, status: 'settled' }} locale="en" canConfirm={false} />);
     expect(screen.queryByTestId('extra-confirm')).not.toBeInTheDocument();

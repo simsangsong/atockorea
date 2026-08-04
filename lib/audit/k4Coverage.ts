@@ -245,10 +245,16 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
 
   // ── device plumbing ────────────────────────────────────────────────────────
   'POST /api/tour-rooms/[bookingId]/push-subscribe': { actor: 'guest', tier: 'free' },
+  // Unsend (2026-08-04) — tombstone one's own recent message; free, no fan-out
+  // beyond the room broadcast.
+  'DELETE /api/tour-rooms/[bookingId]/messages/[messageId]': { actor: 'guest', tier: 'free' },
 
   // ── operator ───────────────────────────────────────────────────────────────
   'POST /api/tour-rooms/broadcast': { actor: 'guide', tier: 'llm' },
   'GET /api/tour-mode/guide/overview': { actor: 'guide', tier: 'free' },
+  // 현장 재합류 (2026-08-04) — staff mints a customer join QR; free, audited
+  // in tour_room_invites.
+  'POST /api/tour-rooms/[bookingId]/reinvite': { actor: 'guide', tier: 'free' },
   'GET /api/tour-mode/driver/overview': { actor: 'driver', tier: 'free' },
   // FA-019: `driver/link` accepts an admin login OR a guide tour-date token,
   // and the harness has always driven it with the guide token — the label and

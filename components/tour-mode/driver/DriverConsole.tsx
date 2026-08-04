@@ -198,7 +198,7 @@ export default function DriverConsole() {
   if (rooms.length > 1 && !activeBookingId) {
     return (
       <Screen>
-        <div className="flex flex-1 flex-col gap-3 overflow-y-auto px-5 py-8">
+        <div className="text-cjk-body flex flex-1 flex-col gap-3 overflow-y-auto px-5 py-8">
           <div className="text-center">
             <p className="text-2xl font-bold text-[var(--tr-ink)]">{overview.tour.title}</p>
             <p className="tr-body-lg mt-1 text-[var(--tr-ink-3)]">
@@ -213,14 +213,14 @@ export default function DriverConsole() {
                   key={r.booking_id}
                   type="button"
                   onClick={() => setActiveBookingId(r.booking_id)}
-                  className="flex w-full items-center gap-3 rounded-2xl bg-[var(--tr-surface)] px-4 py-4 text-left"
+                  className="text-cjk-body flex w-full items-center gap-3 rounded-2xl bg-[var(--tr-surface)] px-4 py-4 text-left"
                   data-testid={`driver-room-row-${index}`}
                 >
-                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] text-lg font-bold text-[var(--tr-accent-deep)]">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] tr-body-lg font-bold text-[var(--tr-accent-deep)]">
                     {index + 1}
                   </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="text-cjk-safe block text-lg font-bold text-[var(--tr-ink)]">
+                  <span className="text-cjk-body min-w-0 flex-1">
+                    <span className="text-cjk-safe tr-body-lg block font-bold text-[var(--tr-ink)]">
                       {r.pickup?.pickup_time ? `${r.pickup.pickup_time} · ` : ''}손님 {r.number_of_guests ?? '-'}명
                     </span>
                     {r.pickup?.name ? (

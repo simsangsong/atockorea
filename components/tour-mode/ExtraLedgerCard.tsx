@@ -8,7 +8,7 @@
  * the shared record, not a payment surface.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { formatKrw } from '@/lib/tour-room/ledger';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
@@ -116,6 +116,70 @@ const COPY: Record<
   },
 };
 
+/**
+ * ≈ 환산 병기 (2026-08-04 #5) — the ledger spoke KRW only, to guests who pay
+ * in it but think in their own money. One public rate fetch (module-cached),
+ * a locale-default currency, and an honest nothing when rates are unknown.
+ * The ≈ is the point: this is orientation, the KRW figure stays the contract.
+ */
+// ko 는 명시된 no-op 이다(원화 화면엔 환산이 없다) — G1 로케일 완결성 게이트가
+// 전 키를 요구하고, 그 파서는 같은 줄 주석에 약하다(§6 교훈: 산문이 게이트를 죽인다).
+const LOCALE_CURRENCY: Record<string, string> = {
+  ko: 'KRW',
+  en: 'USD',
+  ja: 'JPY',
+  zh: 'CNY',
+  'zh-TW': 'TWD',
+  es: 'EUR',
+  fr: 'EUR',
+  de: 'EUR',
+  it: 'EUR',
+  ru: 'USD',
+};
+
+let ratesPromise: Promise<Record<string, number> | null> | null = null;
+function usdRates(): Promise<Record<string, number> | null> {
+  if (typeof fetch !== 'function') return Promise.resolve(null);
+  if (!ratesPromise) {
+    ratesPromise = fetch('/api/currency/rate')
+      .then(async (res) => {
+        const data = await res.json();
+        return res.ok && data?.rates ? (data.rates as Record<string, number>) : null;
+      })
+      .catch(() => null);
+  }
+  return ratesPromise;
+}
+
+function ApproxAmount({ amountKrw, locale }: { amountKrw: number; locale: string }) {
+  const currency = LOCALE_CURRENCY[locale];
+  const [label, setLabel] = useState<string | null>(null);
+  useEffect(() => {
+    if (!currency || currency === 'KRW' || !amountKrw) return;
+    let alive = true;
+    void usdRates().then((rates) => {
+      if (!alive || !rates?.KRW) return;
+      const usd = amountKrw / rates.KRW;
+      const value = currency === 'USD' ? usd : rates[currency] ? usd * rates[currency] : null;
+      if (value === null) return;
+      try {
+        setLabel(`≈ ${new Intl.NumberFormat(locale, { style: 'currency', currency, maximumFractionDigits: currency === 'JPY' ? 0 : 2 }).format(value)}`);
+      } catch {
+        /* unknown locale/currency pair — the KRW figure stands alone */
+      }
+    });
+    return () => {
+      alive = false;
+    };
+  }, [amountKrw, currency, locale]);
+  if (!label) return null;
+  return (
+    <span className="tr-meta ml-1.5 text-[var(--tr-ink-3)]" data-testid="extra-approx">
+      {label}
+    </span>
+  );
+}
+
 export interface ExtraLedgerMeta {
   extra_id?: string;
   item?: string;
@@ -171,6 +235,7 @@ export default function ExtraLedgerCard({
       <p className={`tr-body mt-1.5 font-semibold text-[var(--tr-ink)] ${voided ? 'line-through' : ''}`}>
         {meta.item_i18n?.[locale] ?? meta.item ?? ''}
         <span className="tr-num ml-2 font-bold text-[var(--tr-accent-deep)]">{formatKrw(meta.amount_krw ?? 0)}</span>
+        <ApproxAmount amountKrw={meta.amount_krw ?? 0} locale={locale} />
       </p>
       {!voided && <p className="tr-meta mt-0.5 text-[var(--tr-ink-3)]">{copy.cashNote}</p>}
       {meta.receipt_photo_url && (
