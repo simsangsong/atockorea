@@ -15,9 +15,16 @@
 이유: 상품 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
 읽는 코드가 앱에 없다**(전형적인 "선언만 되고 안 읽힘"). 시즌을 보는 건 추천 엔진의
 `match_tours.available_months=[12,1,2]` 뿐이다.
-🔴 **그리고 `is_active=false` 만으로는 카탈로그에서 안 사라진다** — 프로덕션 실측(2026-08-04):
-`/api/tours` 17건에서는 빠졌지만 **`/tours/list` 에 카드 링크가 그대로 있었다.**
-같은 방식으로 재본 블록리스트 상품은 `href=false` — **카드를 떼는 건 블록리스트다.**
+🔴 **두 플래그의 역할이 다르다 — 대조군 두고 실측한 표:**
+
+| 표면 | `is_active=false` 만 | + 블록리스트 |
+|---|---|---|
+| `/api/tours` | 없음(17건) | 없음 |
+| `/tours/list` 카드 | **있음** | 없음 |
+| `/tour-product` 페이지 | 렌더됨(349KB) | **404** |
+
+즉 **DB 플래그는 판매만 막고, 블록리스트가 상품을 시야에서 지운다**
+(`assertRegisteredConsumerSlug` → `isTourSlugBlockedFromConsumerSurfaces` → `notFound()`).
 오픈 = 마을 확인(031-585-3551) 후 **블록리스트 한 줄 제거 + `--inactive` 없이 재적용**, 두 쪽이 한 세트.
 
 🔴 **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돈다**(`psql`·`SUPABASE_DB_URL` 둘 다 없음).

@@ -152,17 +152,23 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // matching_profile.seasonality — the field has no consumer, so being a
   // winter_only product stops nothing by itself.
   //
-  // 🔴 is_active=false was NOT enough, which is why this line exists. Measured on
-  //    prod 2026-08-04, comparing three slugs on /tours/list the same way:
-  //      winter, is_active=false, not yet listed here → card href PRESENT
-  //      gapyeong, fully active                       → card href PRESENT
-  //      seoul-seoraksan-nami-island-…, on this list  → card href ABSENT
-  //    So the DB flag keeps a product out of /api/tours (17 entries, winter not
-  //    among them) but leaves its card on the catalogue page. This list is what
-  //    removes the card. The product page itself still renders either way —
-  //    hiding that too would mean unregistering the bundle, which 404s the page
-  //    via assertRegisteredConsumerSlug, and that is the owner's call, not a
-  //    side effect of holding sales.
+  // 🔴 is_active=false was NOT enough, which is why this line exists, and this
+  //    line does MORE than close the checkout — measured, with controls, rather
+  //    than reasoned from the imports:
+  //
+  //      surface              is_active=false alone   + this list
+  //      /api/tours           absent (17 entries)     absent
+  //      /tours/list card     PRESENT                 absent
+  //      /tour-product page   renders (349 KB)        404
+  //
+  //    Controls in the same run: the fully-open Gapyeong sibling keeps its card
+  //    and renders 20,204 chars; the already-blocked Seoraksan donor loses both,
+  //    exactly like this one. So the DB flag only stops the sale, while this
+  //    list retires the product from view altogether — `assertRegisteredConsumerSlug`
+  //    in tourProductPageBody.tsx calls isTourSlugBlockedFromConsumerSurfaces and
+  //    notFound()s. That is the right state for something that is not for sale,
+  //    and it is what Gyeongju sat in until it was re-opened above, but it does
+  //    mean the page disappears rather than staying readable.
   //
   // Re-open = remove this line AND re-run
   //   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs \
