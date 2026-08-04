@@ -40,6 +40,7 @@ import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
+import OnsiteJoinQr from '@/components/tour-mode/OnsiteJoinQr';
 import TimeWheel from '@/components/tour-mode/cockpit/TimeWheel';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
 import { kstToday, scheduleClock } from '@/lib/tour-room/time';
@@ -2481,6 +2482,11 @@ export default function Cockpit({
 
       {sheet === 'manifest' && roomToken ? (
         <Sheet onClose={() => setSheet('none')} title="명단·좌석">
+          {/* 현장 재합류 — the guest who lost their link is standing next to
+              the driver, not next to the ops desk. */}
+          <div className="mb-2">
+            <OnsiteJoinQr bookingId={bookingId} roomSession={session} />
+          </div>
           {/* GuideSeatDashboard is self-contained (token + bookingId) and the
               manifest endpoint already authorises driver | guide | admin, so
               this needs no server change. */}
