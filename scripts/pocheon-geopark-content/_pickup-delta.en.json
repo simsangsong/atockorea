@@ -1,0 +1,75 @@
+{
+  "_instructions": "These fields CHANGED in en.json after your first pass (owner supplied new pickup/drop-off points, which narrowed the day window and re-timed every stop). Update ONLY these fields in your existing <loc>.json — leave everything else exactly as you already translated it.",
+  "heroDuration": "≈ 10 hours (08:00 first pickup, 18:30 last drop-off)",
+  "routeShapeIntro.subtitle": "Two Seoul meeting points — Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30 — then about 90 minutes northeast into Pocheon. The lake comes first, while legs are fresh and the morning mist is still on the water. Lunch is Pocheon's own dish, eaten where it comes from. The afternoon crosses into Yeoncheon for Jaein Falls in full daylight — the gorge has no lighting — and closes at Pocheon Art Valley, the last of the three to shut for the day and the closest to Seoul, so the ride home is the shortest of the day. Back at Myeongdong around 18:00 and Hongik University Station around 18:30.",
+  "routePhases[0].description": "Seoul pickups at Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30), the drive to Pocheon, then the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan.",
+  "pdNotes": "Two meeting points: Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30 — please arrive 10 minutes before your departure time. The return runs Myeongdong around 18:00, then Hongik University Station around 18:30; exact times depend on traffic.",
+  "staticQuestions[9].answer  (the \"Where do you pick up and drop off?\" question)": "Two Seoul meeting points: Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30. Please arrive 10 minutes before your departure time — the guide waits at the exit with the bus. The return reverses the order: Myeongdong around 18:00 and Hongik University Station around 18:30, depending on traffic.",
+  "stops.sanjeong": {
+    "time": "10:00",
+    "duration": "90 min",
+    "timeUsed": [
+      "Arrive, orientation and lakeside viewpoint (~10 min)",
+      "The 3.2 km loop at an unhurried pace (~60 min)",
+      "Sculpture park and floating bridge photo time (~15 min)",
+      "Back to the coach (~5 min)"
+    ]
+  },
+  "stops.lunch": {
+    "time": "11:40"
+  },
+  "stops.jaein": {
+    "time": "13:30",
+    "duration": "65 min",
+    "timeUsed": [
+      "Coach drop-off and walk to the gorge rim (~10 min)",
+      "Suspension bridge crossing and skywalk (~20 min)",
+      "Boardwalk down toward the pool and the columns (~25 min)",
+      "Climb back and reassemble (~10 min)"
+    ]
+  },
+  "stops.artvalley": {
+    "time": "15:20",
+    "duration": "70 min",
+    "timeUsed": [
+      "Ticketing at the base and monorail up (~15 min)",
+      "Cheonjuho lakeside and the observation decks (~25 min)",
+      "Sculpture park and concert hall (~15 min)",
+      "Healing Forest walk down and reassemble (~15 min)"
+    ]
+  },
+  "pickupDropoff": {
+    "meetingPoints": [
+      {
+        "name": "Hongik University Station Exit 8",
+        "time": "08:00",
+        "note": "First Seoul meeting point. Meet your guide at Exit 8 — staff wait there with the bus."
+      },
+      {
+        "name": "Myeongdong Station Exit 2",
+        "time": "08:30",
+        "note": "Second Seoul meeting point. Meet your guide at Exit 2 — staff wait there with the bus."
+      }
+    ],
+    "dropoffPoints": [
+      {
+        "name": "Myeongdong Station",
+        "time": "18:00",
+        "note": "First Seoul drop-off, approximate."
+      },
+      {
+        "name": "Hongik University Station",
+        "time": "18:30",
+        "note": "Final Seoul drop-off, approximate."
+      }
+    ],
+    "accordionContent": [
+      "Two pickup points: Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30).",
+      "Please arrive at your meeting point 10 minutes before the departure time.",
+      "Your guide waits at the station exit with the bus.",
+      "Drop-off reverses the order: Myeongdong around 18:00, Hongik University Station around 18:30.",
+      "Return times are approximate and depend on traffic.",
+      "This is a fixed-route group format; travellers reach the meeting point themselves."
+    ]
+  }
+}

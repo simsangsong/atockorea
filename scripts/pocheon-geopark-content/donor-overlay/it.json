@@ -1,0 +1,167 @@
+{
+  "_note": "EN carryover UI blocks for the de/fr/it/ru staged locales of the revised Pocheon tour. The four itinerary stops and all product narrative live in ../<loc>.json — this file only holds the shell strings the builder reuses. Translate every human-readable value; keep keys, ids, icon names and CSS class values.",
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Panoramica"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Dettagli"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Recensioni"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Operatore locale autorizzato",
+      "description": "Tour operator coreano autorizzato con copertura assicurativa completa",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "route",
+      "title": "Specialisti dell'itinerario",
+      "description": "Itinerario calibrato a mano, non un giro generico",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    },
+    {
+      "icon": "users",
+      "title": "Gruppo di dimensioni curate",
+      "description": "Dimensionato su misura per l'itinerario",
+      "iconBg": "bg-amber-50/80",
+      "iconColor": "text-amber-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediatamente",
+      "title": "Conferma immediata",
+      "detail": "Conferma di prenotazione con riepilogo dell'itinerario"
+    },
+    {
+      "timing": "12 ore prima",
+      "title": "Promemoria a 12 ore",
+      "detail": "Aggiornamento meteo ed eventuali modifiche all'itinerario"
+    },
+    {
+      "timing": "La sera prima",
+      "title": "Informazioni finali sul ritrovo",
+      "detail": "Orario esatto del ritrovo e contatto dell'autista"
+    },
+    {
+      "timing": "La mattina del tour",
+      "title": "Note sull'itinerario del giorno",
+      "detail": "Briefing mattutino in base alle condizioni reali"
+    },
+    {
+      "timing": "Durante il tour",
+      "title": "Consigli tappa per tappa",
+      "detail": "Assistenza in tempo reale in ogni località"
+    },
+    {
+      "timing": "Dopo il tour",
+      "title": "Assistenza post-tour",
+      "detail": "Follow-up e consigli"
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Integrazione meteo in tempo reale"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Aggiornato ogni giorno"
+    }
+  },
+  "practicalCarryover": {
+    "pickup": {
+      "title": "Ritrovo e rientro",
+      "preview": "Punti di ritrovo a Seoul; partenza fra le 08:00 e le 09:00",
+      "content": [
+        "Il ritrovo avviene di norma alla stazione Hongik University (uscita 4), al Myeongdong Shinsegae Duty Free e alla stazione Dongdaemun History & Culture Park (uscita 10)",
+        "Partenza di norma fra le 07:50 e le 09:00 dal primo punto di ritrovo",
+        "La preghiamo di arrivare con almeno 10 minuti di anticipo al punto di ritrovo scelto",
+        "Rientro negli stessi punti di ritrovo a Seoul",
+        "Ritorno previsto fra le 18:30 e le 19:30 a seconda del traffico",
+        "Si tratta di un formato di gruppo a itinerario fisso; i viaggiatori devono raggiungere autonomamente il punto di ritrovo"
+      ]
+    },
+    "weather": {
+      "title": "Politica in caso di maltempo",
+      "preview": "Forte varietà stagionale; le sostituzioni sono frequenti",
+      "content": [
+        "Primavera (da marzo a giugno): fioritura dei ciliegi, lavanda prossima al picco, fattoria delle fragole facoltativa",
+        "Estate (da giugno ad agosto): picco della lavanda a Herb Island fra metà giugno e luglio; da mettere in conto umidità e possibile pioggia",
+        "Autunno (da settembre a novembre): pink muhly grass, erba argentata a Sanjeong, foliage ad Art Valley",
+        "Inverno (da dicembre a febbraio): possibili attività sul ghiaccio a Sanjeong (in base al meteo), le luminarie di Herb Island restano attive, caffè con parete di ghiaccio facoltativo",
+        "Pioggia leggera: il tour di norma si svolge; la pioggia intensa può accorciare le soste all'aperto"
+      ]
+    },
+    "wear": {
+      "title": "Che cosa indossare e portare",
+      "preview": "Scarpe da camminata, abbigliamento a strati ed extra stagionali",
+      "content": [
+        "Scarpe da camminata comode e con buona aderenza",
+        "Abbigliamento a strati per gli sbalzi di temperatura in montagna",
+        "Giacca leggera o giacca a vento (fa più fresco che nel centro di Seoul, soprattutto al lago Sanjeong)",
+        "Protezione solare in estate; giacca calda e guanti in inverno",
+        "Macchina fotografica o telefono per le ottime occasioni fotografiche in tutte e tre le tappe"
+      ]
+    },
+    "cancellation": {
+      "title": "Cancellazione",
+      "preview": "Cancellazione gratuita fino a 24 ore prima dell'inizio del tour.",
+      "content": [
+        "Cancellazione gratuita fino a 24 ore prima dell'inizio del tour.",
+        "Le cancellazioni in giornata e le mancate presentazioni non sono rimborsabili."
+      ]
+    }
+  },
+  "pickupDropoff": {
+    "meeting_points": [
+      {
+        "name": "Stazione Hongik University (uscita 4)",
+        "time": "07:50",
+        "note": "Primo punto di ritrovo a Seoul; la preghiamo di arrivare con 10 minuti di anticipo."
+      },
+      {
+        "name": "Myeongdong Shinsegae Duty Free",
+        "time": "08:30",
+        "note": "Secondo punto di ritrovo a Seoul."
+      },
+      {
+        "name": "Stazione Dongdaemun History & Culture Park (uscita 10)",
+        "time": "08:40",
+        "note": "Terzo punto di ritrovo a Seoul."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Stazione Dongdaemun History & Culture Park",
+        "note": "Punto di rientro standard a Seoul."
+      },
+      {
+        "name": "Stazione Myeongdong",
+        "note": "Punto di rientro standard a Seoul."
+      },
+      {
+        "name": "Stazione Hongik University",
+        "note": "Punto di rientro standard a Seoul."
+      }
+    ]
+  }
+}

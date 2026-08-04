@@ -5,44 +5,50 @@
   "locale": "en",
   "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
   "seo": {
-    "pageTitle": "Pocheon Day Trip: Lake, Herb Island & Art Valley | AtoC Korea",
-    "metaDescription": "Relaxed 10-hour Pocheon day trip from Seoul: Sanjeong Lake trails, Mediterranean-style Herb Island, and the Art Valley monorail above emerald Cheonjuho Lake.",
+    "pageTitle": "Pocheon Day Trip: Sanjeong Lake, Jaein Falls & Art Valley | AtoC Korea",
+    "metaDescription": "10-hour Seoul day trip to the Hantangang UNESCO Global Geopark: Sanjeong Lake's flat 3.2 km loop, Jaein Falls' 18 m basalt drop and 80 m suspension bridge, and Pocheon Art Valley's emerald quarry lake.",
     "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "Pocheon day tour from Seoul",
-      "Sanjeong Lake tour",
-      "Herb Island Pocheon",
+      "Jaein Falls tour",
       "Pocheon Art Valley tour",
-      "Seoul Pocheon day trip"
+      "Sanjeong Lake tour",
+      "Hantangang UNESCO Global Geopark tour"
     ],
-    "title": "Pocheon Day Trip from Seoul: Sanjeong Lake, Herb Island & Art Valley | AtoC Korea"
+    "title": "Pocheon & Yeoncheon Day Trip from Seoul: Lake, Jaein Falls & Art Valley | AtoC Korea"
   },
   "catalog_card": {
     "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-    "title": "Pocheon: Lake, Herb Island & Art Valley",
-    "subtitle": "Mountain lake, Mediterranean herb gardens, and a quarry-turned-art-park—the calmest seasonal day-trip from Seoul.",
-    "region": "Pocheon (Seoul Day Trip)",
+    "title": "Pocheon & Yeoncheon: Lake, Waterfall & Quarry Art Valley",
+    "subtitle": "A mountain-ringed lake walk, an 18 m waterfall over basalt columns, and an emerald quarry lake — two UNESCO Global Geopark geosites in one unhurried day from Seoul.",
+    "region": "Pocheon & Yeoncheon (Seoul Day Trip)",
     "duration": "10 hours",
-    "stopsCount": 3,
+    "stopsCount": 4,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
-      "Nature & Photo Trip",
-      "Seasonal Highlights",
-      "Romantic Evening Lights"
+      "Seoul day trip",
+      "UNESCO Geopark",
+      "Waterfall",
+      "Lake walk",
+      "Small group"
     ],
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
-    "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint.",
+    "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves.",
     "tags": [
-      "nature__photo_trip",
-      "seasonal_highlights",
-      "romantic_evening_lights"
+      "Seoul day trip",
+      "Pocheon",
+      "Yeoncheon",
+      "UNESCO Global Geopark",
+      "Waterfall",
+      "Nature",
+      "Photogenic"
     ]
   },
-  "headlineLine1": "Pocheon",
-  "headlineLine2": "Lake, Herb Island & Art Valley",
+  "headlineLine1": "Lake, Waterfall",
+  "headlineLine2": "& Quarry Art Valley",
   "price": {
     "amountLabel": "54",
     "salePriceUsd": 54,
@@ -54,16 +60,16 @@
   "hero": {
     "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
-    "tagline": "Mountain lake, Mediterranean-style herb village, and a former granite quarry transformed into an art park—Pocheon's three softest-and-most-photogenic stops in one Seoul day-trip.",
+    "tagline": "A century-old mountain lake, a waterfall that falls through basalt columns, and a granite pit filled with emerald water — Pocheon and Yeoncheon's geology, walked in a single day",
     "pills": [
       "Nature Day Trip",
-      "Photogenic Route",
+      "UNESCO Global Geopark",
       "Seasonal Variety"
     ],
     "meta": {
-      "duration": "10 hours",
-      "region": "Pocheon",
-      "stops": "3 stops",
+      "duration": "≈ 10 hours (08:00 first pickup, 18:30 last drop-off)",
+      "region": "Pocheon & Yeoncheon (Seoul Day Trip)",
+      "stops": "4 stops",
       "rating": 0,
       "ratingStars": 0
     }
@@ -94,14 +100,14 @@
     {
       "icon": "camera",
       "label": "Photo Value",
-      "value": "Good",
-      "level": 4
+      "value": "Excellent",
+      "level": 5
     },
     {
       "icon": "mountain",
       "label": "Scenic",
-      "value": "Good",
-      "level": 4
+      "value": "Excellent",
+      "level": 5
     },
     {
       "icon": "footprints",
@@ -112,14 +118,14 @@
     {
       "icon": "cloud-rain",
       "label": "Rain Safety",
-      "value": "Good",
-      "level": 4
+      "value": "Moderate",
+      "level": 3
     },
     {
       "icon": "users",
       "label": "Family Fit",
-      "value": "Excellent",
-      "level": 5
+      "value": "Good",
+      "level": 4
     },
     {
       "icon": "gauge",
@@ -140,108 +146,53 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-      "location": "Pocheon Herb Island",
-      "alt": "Pocheon Herb Island — gallery image 1",
-      "caption": "Pocheon Herb Island — photo 1"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-      "location": "Pocheon Art Valley",
-      "alt": "Pocheon Art Valley — gallery image 1",
-      "caption": "Pocheon Art Valley — photo 1"
-    },
-    {
-      "id": 4,
-      "type": "photo",
       "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
       "location": "Sanjeong Lake",
       "alt": "Sanjeong Lake — gallery image 2",
       "caption": "Sanjeong Lake — photo 2"
     },
     {
-      "id": 5,
+      "id": 3,
       "type": "photo",
-      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-      "location": "Pocheon Herb Island",
-      "alt": "Pocheon Herb Island — gallery image 2",
-      "caption": "Pocheon Herb Island — photo 2"
+      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+      "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 1",
+      "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 1"
     },
     {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-      "location": "Pocheon Herb Island",
-      "alt": "Pocheon Herb Island — gallery image 3",
-      "caption": "Pocheon Herb Island — photo 3"
-    },
-    {
-      "id": 7,
+      "id": 4,
       "type": "photo",
       "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-      "location": "Pocheon Art Valley",
-      "alt": "Pocheon Art Valley — gallery image 2",
-      "caption": "Pocheon Art Valley — photo 2"
+      "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+      "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 2",
+      "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 2"
     }
   ],
   "itineraryStops": [
     {
       "number": 1,
-      "time": "10:30",
+      "time": "10:00",
       "duration": "90 min",
       "name": "Sanjeong Lake",
-      "category": "Mountain-Circled Walking Lake",
-      "description": "About 75 minutes northeast of central Seoul through the rolling Pocheon countryside, **Sanjeong Lake (산정호수)** sits cradled between three mountains — **Myeongseongsan (922 m)**, Mangbongsan, and Mangmubong Peak. **Built in 1925** as an agricultural reservoir, the lake's name translates literally as 'a lake clear as a mountain well' (산 san = mountain + 정 jeong = well + 호 ho = lake) — and the morning fog that often rises off the water in spring and autumn lives up to that description, transforming the lake into a soft-focus mirror of the surrounding peaks. \n\nA well-maintained **4 km loop walking trail** circles the water (~75 min easy walk per AllTrails 2.3 mi loop) with floating bridges and observation decks at the most photogenic points; for serious hikers, the Myeongseongsan + Sanjeong Lake hard loop is **12.5 km with 770 m elevation gain** (~5-5.5 hours), passing midway through the famous silver grass (eulalia) habitat that hosts the autumn **Silvergrass Festival**. \n\nThe lake's surrounding facilities make it a year-round family destination: paddle and motor swan/duck boats and rowboats year-round, an annual sledding festival on the frozen winter lake, ice skating, swimming pools and an amusement park in summer, plus nearby hot springs. Korean musk deer and Korean goral are occasionally sighted in the surrounding mountains. \n\nLocal restaurants are renowned for freshwater snail (uleong) dishes and mushroom dishes — both regional Pocheon specialties — and the area is just a short drive from the famous **Idong Galbi (Pocheon-style ribs)** restaurant cluster. \n\nNote: **lake admission is free and open 24 hours**, but **ENTRY IS STRICTLY PROHIBITED from sunset until 2 hours before sunrise** for visitor safety and natural environment protection.",
+      "category": "Mountain-Ringed Reservoir & Lakeside Loop",
+      "description": "**Sanjeong Lake (산정호수)** sits at about 300 m in a bowl of three mountains — **Myeongseongsan (명성산, 923 m)**, Mangbongsan and Mangmubong — and its name reads literally as *a lake as clear as a mountain well*. It is not a natural lake: it was built in **1925 as an agricultural reservoir** for the farmland below, which makes the water you are walking beside a century old.\n\nThe walk is a **3.2 km loop** of lakeside boardwalk and packed earth with **no uphill anywhere on it** — an hour to an hour and a half at an unhurried pace, and the single longest stretch of walking on this tour. Floating bridge sections carry the path out over the water, and the **sculpture park** on the northern shore came out of the **2005 Pocheon International Sculpture Symposium**, where 17 Korean and international artists carved their pieces on site across a 13,383 m² field rather than shipping finished work in.\n\nThe mountain above the lake carries the day's first story. **Myeongseongsan means 'mountain of crying sounds'** — named, the telling goes, for the birds said to have wept over the last years of **Gungye**, the fallen founder of the Taebong kingdom, who is remembered as having fled through these hills. Its upper slopes hold a **198,347 m² silver-grass field**, counted among Korea's five great eulalia colonies, which turns the whole ridge silver-white each October and gives the lake its autumn festival.\n\n**Admission to the lake and its trail is free.** In spring and autumn, mist commonly lifts off the surface in the first hours of the day — the reason this stop opens the itinerary rather than closing it.",
       "highlights": [
-        "Built 1925 as agricultural reservoir; 'lake clear as a mountain well' (산정호수) — surrounded by Myeongseongsan, Mangbongsan, Mangmubong",
-        "4 km loop walking trail (~75 min easy) with floating bridges and observation decks",
-        "Myeongseongsan silver grass habitat — autumn Silvergrass Festival season",
-        "Year-round family activities: swan/duck boats, sledding festival on frozen winter lake, ice skating",
-        "Free admission to lake walk; activities cost separately",
-        "Korean musk deer / Korean goral occasionally sighted in surrounding mountains",
-        "**Built precisely March 20, 1925** as agricultural irrigation reservoir (NamuWiki Korean records); now owned and managed by **Korea Rural Community Corporation**",
-        "**Designated National Tourist Site in 1977** — early-managed status predating most Pocheon attractions; lake area 0.246 km² (73,800 pyeong) with maximum depth 23.5 m",
-        "**Sanjeong Lake Sledding Festival since 2010**: every winter the frozen lake becomes Korea's signature traditional-sledding venue with vintage Korean-style sleds and rubber-duck sleds"
+        "**Built in 1925** as an agricultural reservoir — the lake passed its centenary in 2025",
+        "**3.2 km loop, entirely flat** — boardwalk and earth path, 60–90 min at a slow pace",
+        "Ringed by **Myeongseongsan (923 m)**, Mangbongsan and Mangmubong",
+        "**Sculpture park** from the 2005 Pocheon International Sculpture Symposium — 17 artists, carved on site",
+        "**Myeongseongsan = 'mountain of crying sounds'**, for the birds said to have mourned King Gungye",
+        "**198,347 m² silver-grass field** on the slopes above — one of Korea's five great eulalia colonies",
+        "Spring and autumn mornings often lift **mist off the water**",
+        "**Free admission**; floating bridge sections and lakeside decks along the loop"
       ],
       "timeUsed": [
-        "Arrival and brief orientation by driver-guide (~5 min)",
-        "Free walking time on the 4 km loop trail (~75 min)",
-        "Optional swan/duck boat ride or amusement park visit (~20 min, extra cost)",
-        "Reassembly at vehicle",
-        "Optional Sanjeong Lake Sledding Festival winter activity (mid-Dec to mid-Feb; vintage Korean sled or rubber-duck sled, ₩5,000 rental) (~30 min)"
+        "Arrive, orientation and lakeside viewpoint (~10 min)",
+        "The 3.2 km loop at an unhurried pace (~60 min)",
+        "Sculpture park and floating bridge photo time (~15 min)",
+        "Back to the coach (~5 min)"
       ],
-      "whyOnRoute": "Sanjeong Lake opens the Pocheon day with the gentlest walking experience — a 50-60 min easy loop that warms up the legs and sets the day's relaxed pace before Herb Island's larger-scale theme-park layout and Pocheon Art Valley's quarry-cliff-and-monorail topography. Picked over Hantangang River alternatives because the 4 km circular trail packs the maximum mountain-mirror photography density into a 90-minute time budget without committing to the 5-hour Myeongseongsan summit climb. For atockorea's family-with-young-children and senior-mobility segments, the **4 km gentle loop with 23.5 m maximum depth lake depth + Sanjeong Hot Spring complex 5 minutes away + Hanwha Resort Sanjeong Lake Annecy branch nearby** form Korea's most-complete senior- and stroller-friendly mountain-lake destination — the only comparable nearby alternative (Hantangang River suspension bridge) is too physically demanding for the senior segment.",
-      "visitBasics": {
-        "hours": "Open 24 hours but no admission from sunset to 2 hr before sunrise",
-        "closed": "Open year-round",
-        "admission": "Free entry to lake/trail; activities (boating, sledding, amusement park) cost separately",
-        "walking": "Easy — flat 4 km loop in ~75 min"
-      },
-      "convenience": {
-        "restroom": "At parking area and amusement-park section",
-        "parking": "Available, paid"
-      },
-      "smartNotes": {
-        "photo": "Lake-with-mountain reflection — best with morning fog (spring/autumn). Silver grass on Myeongseongsan slopes mid-October to early November. Floating bridge mid-loop. Frozen-lake winter sledding view. Autumn foliage circles the lake.",
-        "facilities": "Sanjeong Lake Amusement Park, sledding hill, ice skating rink, hot springs, picnic grounds, sculpture park, swimming pools, boating dock. Local restaurants serving freshwater snail and mushroom dishes.",
-        "tip": "Best season: October (silver grass + autumn foliage + Silvergrass Festival) or December-February (frozen lake sledding). Early morning fog days in spring and autumn are magical for photography. The 4 km easy loop is the family default; only experienced hikers should attempt the Myeongseongsan summit (5+ hours)."
-      },
-      "_poi_meta": {
-        "poi_key": "sanjeong_lake",
-        "verified": true,
-        "match": "single_poi",
-        "kb_version": "1.27",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Korea Tourism Organization (VisitKorea — Pocheon Sanjeonghosu Lake official listing + 4 km loop trail + Myeongseongsan silver-grass habitat)",
-          "Korea Rural Community Corporation / Ministry of Agriculture (1925 reservoir construction + ownership/management designation)",
-          "Pocheon City Tourism Office (pocheon.go.kr — National Tourist Site designation + Sledding Festival official organization)",
-          "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Sanjeong Lake winter activities)",
-          "NamuWiki (en.namu.wiki/w/산정호수 — Korean-language verified facts on construction date + depth + 1945-armistice administrative history)"
-        ]
-      },
+      "whyOnRoute": "**The day's longest walk, taken first.** The 3.2 km loop is flat but it is still the biggest stretch of walking on this tour, and it belongs at the start while legs are fresh. Morning is also when the lake is at its best: in spring and autumn mist commonly lifts off the surface, and the mountains read clearly before the afternoon haze. Sanjeong Lake is the farthest of the four stops from Seoul, so opening here also means the rest of the day runs steadily back toward the city rather than away from it.",
       "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "images": [
         "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
@@ -263,179 +214,143 @@
           "type": "photo",
           "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "location": "Sanjeong Lake",
-          "caption": "Sanjeong Lake — photo 1",
-          "alt": "Sanjeong Lake — gallery image 1"
+          "alt": "Sanjeong Lake — gallery image 1",
+          "caption": "Sanjeong Lake — photo 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
           "location": "Sanjeong Lake",
-          "caption": "Sanjeong Lake — photo 2",
-          "alt": "Sanjeong Lake — gallery image 2"
+          "alt": "Sanjeong Lake — gallery image 2",
+          "caption": "Sanjeong Lake — photo 2"
         }
-      ]
+      ],
+      "visitBasics": {
+        "hours": "Open 24 hours, but no admission from sunset until 2 hours before sunrise",
+        "closed": "Open year-round",
+        "admission": "Free for the lake and loop trail; boating, sledding and the amusement park are charged separately",
+        "walking": "Easy — flat 3.2 km loop, 60–90 min. The Myeongseongsan summit hike is a separate, hard 5-hour route and is not part of this tour."
+      },
+      "convenience": {
+        "restroom": "At the parking area and along the lakeside promenade",
+        "parking": "Paid parking at the main lot"
+      },
+      "smartNotes": {
+        "tip": "The loop is flat the whole way — if you would rather sit, the lakeside decks and the sculpture park are both a few minutes from the coach. October brings the silver-grass festival and the year's biggest crowds.",
+        "photo": "Lake-and-mountain reflections, strongest with spring or autumn morning mist. The floating bridge mid-loop is the signature frame; the sculpture park gives foreground.",
+        "facilities": "Cafés and restaurants at the lake entrance, boating dock, sculpture park, picnic grounds."
+      },
+      "_poi_meta": {
+        "poi_key": "sanjeong_lake",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.30",
+        "verified_date": "2026-08-04"
+      }
     },
     {
       "number": 2,
-      "time": "13:30",
-      "duration": "150 min",
-      "name": "Pocheon Herb Island",
-      "category": "Mediterranean-Style Herb Botanical Park",
-      "description": "About 30 minutes east of Sanjeong Lake, **Pocheon Herb Island (포천 허브아일랜드)** is a hybrid Mediterranean-themed botanical garden and theme park covering **~82 acres (~330,000 m²)** of Pocheon countryside — **first opened in 1998**. \n\nThe grounds feature **250+ varieties of herbs** from around the world, plus **Korea's largest herb museum**, multiple themed villages, and year-round craft and culinary programs. Themed villages include: Santa Village (300+ Santa statues, year-round but most magical in winter), Venice Village (a mini Venice replica with gondola rides and Disney-princess dress-up), the Healing Center (selected as one of Korea's 25 must-visit wellness destinations), Street To The Past (retro Korean photo zones, candy store), the spring-only lavender field, and a Healing Forest area. \n\nThe park's signature event is its year-round **Lighting & Illumination Festival** — most spectacular November through February when the Christmas / winter season transforms the park into a luminous wonderland: a pink wish tunnel, sparkling buildings, Santa Village light show, manger scene, light-up snowmen, giant hanging Christmas ornaments, and a net of Christmas lights covering the ground that accentuates the natural land contours. \n\nLighting illuminations operate from **16:00 onward daily**; the visit is engineered around the daylight-to-evening transition. Year-round programs include apple jam-making, pie-making, traditional tea therapy, herb candle / bath salt / balm crafting, aromatherapy at the Healing Center; winter-specific add-ons include Christmas soap making, candle making, vin chaud (mulled wine) making, Santa Claus costume rental, and a Christmas Cookie Shop. \n\nDon't miss the famous **Herb Bakery** — renowned across Pocheon for its fragrant garlic bread.",
+      "time": "11:40",
+      "duration": "60 min",
+      "name": "Lunch — Idong Galbi (Pocheon local table)",
+      "category": "Local Meal (not included)",
+      "description": "Lunch is a ten-minute drive from the lake in **Idong (이동)**, the Pocheon district that gave its name to **Idong galbi (이동갈비)** — beef short ribs that this valley has been grilling for generations and that Koreans drive out from Seoul specifically to eat. The other local tables are **mushroom dishes** and **uleong (freshwater snail)**, both Pocheon specialties, and **Idong makgeolli** is brewed in the same valley if you want the pairing.\n\nLunch is **not included** (about ₩15,000–20,000 depending on what you order), so you choose your own table and budget. Your guide will point out which places suit vegetarians, since a galbi house is not the answer for everyone.",
       "highlights": [
-        "Opened 1998; ~82 acres / 330,000 m² of Mediterranean herb gardens (250+ varieties)",
-        "Themed villages: Santa Village (300+ statues), Venice Village, Healing Center (Korea's top-25 wellness)",
-        "Year-round Lighting Festival — most spectacular Nov-Feb with pink wish tunnel + Santa light show",
-        "Daily lighting illumination starts 16:00 onward",
-        "Herb Bakery (famous garlic bread); herb-infused Mediterranean cuisine restaurants",
-        "Korea's largest herb museum on-site",
-        "**Officially opened October 3, 1998** (KTO confirmed precise date) — predating most of Pocheon's other large-scale tourism developments by 5-10 years",
-        "**Light Fairy Tale Festival uses 3 million LED lights** (Gyeonggi Province official blog) — annually November-March 17:00-22:00, with Angel's Path light tunnel as the signature photo zone",
-        "**Largest herb museum in Korea**: 340+ herb-plant varieties on display (vs typical Indoor Botanical Garden 180+ varieties) — uniquely permits visitor purchase of museum specimens",
-        "**Closed Wednesdays** (KTO operating-day note); otherwise Sun-Fri 10:00-21:00, Sat 10:00-22:00; ₩10,000 weekday / ₩12,000 weekend adult; phone +82-31-535-6494"
+        "**Idong galbi (이동갈비)** — the beef short ribs named for this very district",
+        "**Mushroom** and **uleong (freshwater snail)** tables are the other Pocheon specialities",
+        "**Idong makgeolli** is brewed in the same valley",
+        "About ten minutes from Sanjeong Lake — the meal adds no extra driving",
+        "**Not included** (≈ ₩15,000–20,000) — choose your own table",
+        "Vegetarian-friendly options pointed out by the guide"
       ],
       "timeUsed": [
-        "Entry + brief orientation by driver-guide (~10 min)",
-        "Daytime herb gardens + themed villages walk (~60-75 min)",
-        "Optional craft program OR Herb Bakery / herb cafe stop (~30 min)",
-        "Lighting Festival illumination (16:00 onward — Nov-Feb most magical, ~30-45 min)",
-        "Reassembly at vehicle"
+        "Short drive from the lake and seating (~10 min)",
+        "Lunch (~45 min)",
+        "Back to the coach (~5 min)"
       ],
-      "whyOnRoute": "Placing Herb Island at 13:30 captures the daytime herb gardens AND the 16:00 illumination start within a single 2.5-hour visit — extracting maximum value from the day's most photogenic destination. Picked over Edelweiss Swiss Theme Park alternatives because Herb Island's December-March winter Lighting Festival is among Korea's signature Christmas-season experiences and the romantic / family appeal is strongest among small-group tour demographics. The **3-million-LED Light Fairy Tale Festival** (Nov-Mar) plus year-round Santa Village statues + pink wish tunnel make Herb Island the **catalog's strongest winter-evening illumination anchor** — a genuine alternative to Garden of Morning Calm's lighting festival for guests already familiar with the Gapyeong route.",
-      "visitBasics": {
-        "hours": "Sun-Fri 09:00/10:00-21:00/22:00; Sat & holidays until 23:00 (varies seasonally; lighting from 16:00)",
-        "closed": "Open year-round",
-        "admission": "Weekday Adult 10,000 / Senior+Child 8,000 KRW; Weekend Adult 12,000 / Senior+Child 10,000 KRW",
-        "walking": "Moderate — extensive themed gardens and villages over rolling terrain; allow 2-3 hours"
-      },
-      "convenience": {
-        "restroom": "Multiple, signposted",
-        "parking": "Free parking near the festival grounds"
-      },
-      "smartNotes": {
-        "photo": "Pink wish tunnel (signature year-round). Santa Village 300+ statues at golden hour. Venice Village gondolas. Christmas-themed light displays Nov-Feb (best after 17:00). Lavender field April-June. Pink muhly grass autumn.",
-        "facilities": "Herb Bakery (garlic bread), herb-cuisine restaurants, herb cafe, souvenir/skincare shops, Healing Center spa, craft workshop rooms, Herb Museum.",
-        "tip": "Best visit time: arrive by 14:00-15:00 to see daylight herb gardens, then stay through 16:00 illumination start to peak winter wonderland atmosphere. December-February is most spectacular. The outdoor Santa statues feel slightly faded — focus on indoor facilities (Healing Center, Herb Bakery, Herb Museum) which are well-maintained. Public transport from Seoul is impractical (~2 hr 20 min) — tour or self-drive recommended."
-      },
-      "_poi_meta": {
-        "poi_key": "herb_island",
-        "verified": true,
-        "match": "single_poi",
-        "kb_version": "1.27",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Korea Tourism Organization (VisitKorea — Herb Island official listing + Wednesday closure note + admission schedule)",
-          "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions cluster including Herb Island + Hot Springs + Art Valley)",
-          "Gyeonggi Province Official Blog (gyeonggido-korea.com — Light Fairy Tale Festival 3M LED + 17:00-22:00 schedule)",
-          "Herb Island Operator Official Site (herbisland.co.kr — own corpus on 1998 opening + 340-herb museum)",
-          "Visit Gyeonggi (ggtour.or.kr — provincial tourism portal on Pocheon herb-themed attraction cluster)"
-        ]
-      },
-      "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-      "images": [
-        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-        "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-          "source": "atoc-korea"
-        }
-      ],
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-          "location": "Pocheon Herb Island",
-          "caption": "Pocheon Herb Island — photo 1",
-          "alt": "Pocheon Herb Island — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-          "location": "Pocheon Herb Island",
-          "caption": "Pocheon Herb Island — photo 2",
-          "alt": "Pocheon Herb Island — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-          "location": "Pocheon Herb Island",
-          "caption": "Pocheon Herb Island — photo 3",
-          "alt": "Pocheon Herb Island — gallery image 3"
-        }
-      ]
+      "whyOnRoute": "**The region's own dish, eaten where it comes from.** Idong is ten minutes from Sanjeong Lake and roughly on the way west, so the meal costs the day nothing in driving. It also lands at the right hour: the morning's 3.2 km walk is behind you and the afternoon's two geopark stops are ahead, both of which want steady legs and a bit of patience on stairs and bridges.",
+      "image": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
     },
     {
       "number": 3,
-      "time": "16:30",
-      "duration": "75 min",
-      "name": "Pocheon Art Valley",
-      "category": "Quarry-Turned-Art-Park with Monorail",
-      "description": "The day's dramatic visual closer, **Pocheon Art Valley (포천 아트밸리)** sits on the site of an active 1970s granite quarry where **Pocheonseok (Pocheon stone)** was mined to build major South Korean landmarks — including the **Blue House (Cheong Wa Dae presidential residence)**, the National Assembly, and Incheon International Airport. \n\nAfter granite reserves depleted and environmental damage mounted, the quarry was **abandoned in 2003**, leaving a regional eyesore of vertical scarred cliffs. \n\nIn 2005, Pocheon City began Korea's first ecological restoration project of an abandoned quarry — building a **420 m monorail**, a cafe, an open-air concert stage, and seating area between 2005-2011 — and reopened the site in 2009 as the eco-friendly culture and art park visitors see today, hitting **1,000,000+ cumulative visitors by 2014**. \n\nThe visual centerpiece is **Cheonjuho Lake (Cheonju Lake)** — an emerald / turquoise spring-fed lake that formed naturally in the former quarry pit at **~340 m altitude**, ringed by **50 m vertical granite cliffs** whose quarry-pattern textures and round shot-holes (where dynamite was placed) remain as the only physical traces of the mining era. \n\nThe 420 m monorail (~5 min ride; Adult RT 4,500 / OW 3,500 KRW) climbs to the top garden; visitors can ride up and walk down via the 10-15 min Healing Forest Promenade for the best blend of efficiency and scenery. Other key features include the Astronomical Science Museum (opened August 2014 — space exhibit, 4D video, observation room), the Sky Garden of Hope observation deck, Doleum Stairway (steep spiral preservation of quarry-era infrastructure), Hosur Concert Hall (a 300-person open-air stage built between the 50 m cliff and Cheonjuho Lake), Wishing Sky Park (visitors write wishes on paper), and a Sculpture Park scattered with stone artworks along the trails. \n\nK-drama fans recognize the lake from **Legend of the Blue Sea (2016, Lee Min-ho)**, Moon Lovers: Scarlet Heart Ryeo (2016), and Hwayugi (Korean Odyssey, 2017-2018).",
+      "time": "13:30",
+      "duration": "65 min",
+      "name": "Jaein Falls (Hantangang UNESCO Global Geopark)",
+      "category": "Basalt Waterfall & Suspension Bridge — UNESCO Geosite",
+      "description": "**Jaein Falls (재인폭포)** is in **Yeoncheon**, not Pocheon, and crossing that county line is the point of the afternoon. A small stream running down from **Jijangbong** to the north reaches the edge of a **basalt cliff and drops roughly 18 m** into a green plunge pool. The cliff is not ordinary rock: it is **columnar jointing** — the hexagonal columns that form when a thick lava flow cools and contracts — and it is the signature landform of the **Hantangang UNESCO Global Geopark**, certified by UNESCO on **7 July 2020** and re-designated in 2024.\n\nEverything at this stop is a reading of that lava. Beside the falls you can pick out a **hasik-donggul (하식동굴)**, a cave hollowed by the river at the base of the columns; **potholes** ground into the rock by pebbles spinning in the current; and **gas tubes**, the frozen bubbles left where gas escaped the cooling lava. The falls are still slowly working their way upstream, cutting backwards into the flow.\n\nThe approach is built for looking at it. An **80 m long, 2 m wide suspension bridge** spans the gorge cliff to cliff and faces the waterfall head-on; beyond it a **skywalk with a transparent glass floor** puts the gorge directly under your feet. A boardwalk descends toward the pool itself.\n\nThe name carries the day's second story. *Jaein* (재인, 才人) meant a **tightrope performer**. In the telling, a local magistrate coveted the performer's wife, had a rope strung across this gorge and ordered him out onto it — then had the rope cut. His widow feigned submission, bit off the magistrate's nose, and took her own life. The village below was known afterwards as **Komun-ri, 'the village where the nose was bitten'**, which softened over time into today's **Gomun-ri (고문리)**.\n\n**Admission is free.** Deck sections can close during heavy summer rain, and the gorge has no lighting — which is why this stop sits in the full afternoon rather than at the end of the day.",
       "highlights": [
-        "Korea's first ecological-restoration project of an abandoned 1970s granite quarry — Pocheonseok used for Blue House, National Assembly, Incheon Airport",
-        "Quarry abandoned 2003; restoration 2005-2011; opened as Art Valley 2009 (1M+ visitors by 2014)",
-        "Cheonjuho Lake — emerald spring-fed lake at 340 m altitude, ringed by 50 m vertical granite cliffs",
-        "420 m monorail to top garden (Adult RT 4,500 / OW 3,500 KRW)",
-        "K-drama filming: Legend of the Blue Sea, Moon Lovers Scarlet Heart Ryeo, Hwayugi",
-        "Astronomical Science Museum (Aug 2014), Hosur Concert Hall (300-person stage between cliff and lake)",
-        "**Korea's first ecological-restoration project of an abandoned granite quarry** (2005-2011 restoration; opened 2009) — restoration model now studied by other Korean municipalities",
-        "**Pocheonseok granite source for Korea's signature buildings**: Cheong Wa Dae presidential residence, National Assembly Building, Incheon International Airport (1980s peak production confirmed by Hantan Geopark official archive)",
-        "**Hosur Concert Hall**: 220 m² stage + ~300-pax audience capacity, set between 50 m vertical granite cliff and Cheonjuho Lake — Korea's only quarry-cliff concert venue",
-        "**Admission**: Adult ₩5,000 + Monorail RT ₩4,500 / OW ₩3,500 (Korea Tour Co. verified 2025); Art Valley banknote system (received with admission) gives discounts at on-site Jeonmang Cafe"
+        "**≈ 18 m waterfall over a basalt columnar-joint cliff** — the geopark's signature landform",
+        "**Hantangang UNESCO Global Geopark**, certified 7 July 2020, re-designated 2024",
+        "**80 m × 2 m suspension bridge** spanning the gorge, facing the falls head-on",
+        "**Glass-floored skywalk** beyond the bridge, over the gorge",
+        "Read the lava up close: **hasik-donggul river cave**, **potholes**, **gas tubes**",
+        "Named for a **tightrope performer (재인)** — and the village below is still called Gomun-ri for it",
+        "**Free admission**; boardwalk descends toward the emerald plunge pool",
+        "Deck sections may close in heavy summer rain"
       ],
       "timeUsed": [
-        "Ticketing + monorail boarding (~10 min)",
-        "Monorail ride up (~5 min) → Sky Garden of Hope + Astronomical Science Museum (~15 min)",
-        "Lake Observatory + lakeside patio for the iconic Cheonjuho photo (~15-20 min)",
-        "Healing Forest Promenade walk down (~10-15 min)",
-        "Optional cafe stop (Jeonmang Cafe — Art Valley banknotes from admission give discounts)",
-        "Reassembly at vehicle"
+        "Coach drop-off and walk to the gorge rim (~10 min)",
+        "Suspension bridge crossing and skywalk (~20 min)",
+        "Boardwalk down toward the pool and the columns (~25 min)",
+        "Climb back and reassemble (~10 min)"
       ],
-      "whyOnRoute": "Pocheon Art Valley closes the day with the catalog's most dramatic single landscape — emerald lake + vertical granite cliffs in a former quarry, equally photogenic in autumn (foliage) and winter (frozen lake). Picked over Bidulginang Falls alternatives because the monorail format eliminates the steep-hike barrier (the path up is steep) and the K-drama filming legacy adds storytelling layers that the falls lack. For atockorea's K-drama-fan segment, **Pocheon Art Valley's filming credit stack** is among Korea's deepest: Legend of the Blue Sea (2016-17), Moon Lovers Scarlet Heart Ryeo (2016), Hwayugi (2017-18), Melting Me Softly (2019), My First First Love (2019), Can You Hear My Heart (2011) — six dramas making the iconic Cheonjuho Lake one of Korea's top-3 most-photographed K-drama backdrops.",
+      "whyOnRoute": "**The half of the geopark you cannot see at Art Valley.** At the quarry you stand inside the old granite basement rock; here you stand in front of the young basalt lava that flowed over it and cooled into columns — the same ground, its other layer, forty minutes apart. It also needs the light: the gorge is unlit and the bridge, skywalk and pool all want full afternoon sun, so it goes before the finale rather than after it.",
+      "image": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": [],
       "visitBasics": {
-        "hours": "09:00-19:00 (last admission ~17:30); seasonal variation",
-        "closed": "Open year-round",
-        "admission": "Adult 5,000 / Child (7-12) 1,500 KRW. Monorail extra: Adult RT 4,500 / OW 3,500 KRW",
-        "walking": "Moderate — steep hill from base to top (recommend monorail up); flat at top garden; Doleum Stairway is steep spiral; Healing Forest down-walk 10-15 min"
+        "hours": "Open access; daylight hours strongly recommended — the gorge is unlit",
+        "closed": "Deck and boardwalk sections may close during heavy summer rain or storms",
+        "admission": "Free",
+        "walking": "Moderate — the suspension bridge is flat but sways; the boardwalk down toward the pool and back is the effort, with stairs"
       },
       "convenience": {
-        "restroom": "At base ticket office and top garden area",
-        "parking": "Free parking; direct buses run every ~2 hours from Pocheon"
+        "restroom": "At the visitor parking area above the gorge",
+        "parking": "Free visitor parking at the falls entrance"
       },
       "smartNotes": {
-        "photo": "Cheonjuho Lake from the main lakeside patio is the iconic shot — emerald water against vertical granite cliffs. Lake Observatory gazebo gives the elevated angle. Frozen lake in winter is exceptional. K-drama scene-spotting (Legend of the Blue Sea, Moon Lovers, Hwayugi). Quarry shot-holes near the concert hall are the only physical trace of the mining era.",
-        "facilities": "Observatory cafe (Jeonmang Cafe — Art Valley banknotes from admission give discounts), small Korean restaurant (Manbeokal), snack bar, Sky Garden, planetarium.",
-        "tip": "Take monorail UP (5 min) and walk DOWN via Healing Forest Promenade (~15 min) for the best blend of efficiency + scenery. Visit on weekdays (Tue-Fri) — far less crowded than Nami / Morning Calm. Best in autumn (October foliage) or winter (frozen turquoise lake). 'Entering the lake water is prohibited for safety and environmental protection' — admire from the patio only."
+        "tip": "The bridge moves underfoot by design — hold the rail and keep to one direction of travel when it is busy. If you would rather not cross, the rim viewpoint sees the falls without the bridge.",
+        "photo": "Head-on from the middle of the suspension bridge is the shot. Straight down through the skywalk glass for the columns; from the boardwalk below for the pool and the full 18 m drop.",
+        "facilities": "Parking, restrooms and interpretive geopark panels at the entrance; no shops at the gorge itself — bring water."
       },
       "_poi_meta": {
-        "poi_key": "pocheon_art_valley",
+        "poi_key": "jaein_falls",
         "verified": true,
         "match": "single_poi",
-        "kb_version": "1.27",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Pocheon Art Valley Official Site (artvalley.pcfac.or.kr — own corpus on Hosur Concert Hall specs + monorail logistics + drama-filming history)",
-          "Korea Tourism Organization (VisitKorea — Pocheon Art Valley listing + ecological-restoration history)",
-          "Pocheon City Tourism Office (pocheon.go.kr — Sinbuk-myeon attractions + Pocheonseok granite history)",
-          "Hantan Geopark Official (hantangeopark.kr — UNESCO Global Geopark archive on 1980s Pocheon quarry photos)",
-          "Inquirer Lifestyle / Korea Times (Cheong Wa Dae + National Assembly + Incheon Airport granite-source historical reporting)"
-        ]
-      },
+        "kb_version": "1.30",
+        "verified_date": "2026-08-04"
+      }
+    },
+    {
+      "number": 4,
+      "time": "15:20",
+      "duration": "70 min",
+      "name": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+      "category": "Quarry-Turned-Art-Park with Monorail — UNESCO Geosite",
+      "description": "**Pocheon Art Valley (포천 아트밸리)** is a hole that people made. The granite here — **Pocheonseok (포천석)**, the stone quarried out of this hillside — went into the **Blue House, the National Assembly and Incheon International Airport**, and when the workable rock ran out the quarry was **abandoned in 2003**, leaving a scarred pit above the town. In 2005 Pocheon began **Korea's first ecological restoration of an abandoned quarry**, and the site reopened in **2009** as an art park. It now draws about **400,000 visitors a year**.\n\nThe pit filled itself. Spring water and rainwater collected in the excavation to form **Cheonjuho (천주호)**, up to **20 m deep**, its startling emerald colour coming from granite sediment suspended in the water and reflecting light back up. **Vertical granite walls rise around 50 m** above it, still carrying the tool marks of the cutting — and near the concert hall you can still find the **perfectly round shot-holes** drilled for dynamite, the quarry's clearest surviving signature. This granite is the *basement* rock of the region, the ancient floor that the Hantangang lava later flowed across, and it is why the site is a geosite of the same geopark as Jaein Falls, listed there as **'Art Valley and Pocheon Stone'**.\n\nA **420 m monorail** climbs the slope from the ticket office to the rim in about five minutes. The usual way to do it is **up by monorail, down on foot** through the Healing Forest promenade — ten to fifteen minutes of shaded trail. At the top are the sculpture park, the **Hosu Concert Hall** — a 300-seat open-air stage set between the 50 m cliff and the lake — the Sky Garden viewpoints and an astronomy museum opened in 2014. Fans of **Legend of the Blue Sea**, **Moon Lovers: Scarlet Heart Ryeo** and **Hwayugi** will recognise the water.\n\n**Admission and the monorail are ticketed separately** and are not included in the tour price — roughly **₩6,000** admission and **₩5,300** for a monorail round trip for an adult in 2026, with youth, military and child rates below that. Your guide handles the ticket queue.",
+      "highlights": [
+        "**Pocheonseok granite** from this quarry built the Blue House, the National Assembly and Incheon Airport",
+        "Quarry **abandoned in 2003**; Korea's **first ecological restoration** of one, reopened **2009**",
+        "**Cheonjuho** — spring-fed quarry lake up to **20 m deep**, emerald from suspended granite sediment",
+        "**≈ 50 m vertical granite walls** still carrying cutting marks and round **dynamite shot-holes**",
+        "A geosite of the **Hantangang UNESCO Global Geopark** as *'Art Valley and Pocheon Stone'*",
+        "**420 m monorail**, ~5 min to the rim — ride up, walk down the Healing Forest promenade",
+        "**Hosu Concert Hall**, a 300-seat open-air stage between the cliff and the lake",
+        "Filming location for **Legend of the Blue Sea**, **Moon Lovers** and **Hwayugi**",
+        "≈ **400,000 visitors a year**; admission and monorail ticketed separately (not included)"
+      ],
+      "timeUsed": [
+        "Ticketing at the base and monorail up (~15 min)",
+        "Cheonjuho lakeside and the observation decks (~25 min)",
+        "Sculpture park and concert hall (~15 min)",
+        "Healing Forest walk down and reassemble (~15 min)"
+      ],
+      "whyOnRoute": "**The safest last stop, and the shortest way home.** Art Valley stays open later than the lake or the gorge, so a slow afternoon costs nothing here, and of the four stops it is the closest to Seoul — ending here makes the final drive the shortest of the day. It also closes the geology: after standing in front of the lava at Jaein Falls, you finish standing inside the ancient granite the lava ran over, in a pit that people cut out and the ground quietly filled back in.",
       "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
       "images": [
         "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
@@ -456,19 +371,41 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-          "location": "Pocheon Art Valley",
-          "caption": "Pocheon Art Valley — photo 1",
-          "alt": "Pocheon Art Valley — gallery image 1"
+          "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+          "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 1",
+          "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-          "location": "Pocheon Art Valley",
-          "caption": "Pocheon Art Valley — photo 2",
-          "alt": "Pocheon Art Valley — gallery image 2"
+          "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+          "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 2",
+          "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 2"
         }
-      ]
+      ],
+      "visitBasics": {
+        "hours": "09:00–19:00 (last admission ≈ 17:30); monorail Mon–Fri and Sun/holidays 09:00–17:50, Sat to 21:50 — seasonal variation",
+        "closed": "Open year-round",
+        "admission": "Not included. ≈ ₩6,000 adult / ₩4,000 youth and military / ₩2,000 child. Monorail extra: ≈ ₩5,300 adult round trip. Confirm on site — 2026 rates.",
+        "walking": "Moderate — steep from base to rim (monorail recommended); flat around the lake and top garden; the Healing Forest walk down is 10–15 min"
+      },
+      "convenience": {
+        "restroom": "At the base ticket office and the top garden area",
+        "parking": "Free parking at the base"
+      },
+      "smartNotes": {
+        "tip": "Take the monorail **up** and walk **down** — five minutes saved on the climb, and the forest promenade is the nicer direction on foot. Entering the water is prohibited, for safety and to protect the lake.",
+        "photo": "Cheonjuho from the lakeside patio is the iconic frame — emerald water against vertical granite. The Lake Observatory gazebo gives the elevated angle; the shot-holes near the concert hall are the quarry's fingerprint.",
+        "facilities": "Observatory café, small restaurant and snack bar, sculpture park, Stone Culture Exhibition Center, astronomy museum, Sky Garden."
+      },
+      "_poi_meta": {
+        "poi_key": "pocheon_art_valley",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.30",
+        "verified_date": "2026-08-04"
+      }
     }
   ],
   "routeFlowStops": [
@@ -478,9 +415,14 @@
       "theme": "Mountain Lake"
     },
     {
-      "name": "Herb Island",
+      "name": "Idong Galbi Lunch",
       "type": "meal",
-      "theme": "Garden & Lunch"
+      "theme": "Pocheon's Dish"
+    },
+    {
+      "name": "Jaein Falls",
+      "type": "primary",
+      "theme": "UNESCO Geosite"
     },
     {
       "name": "Art Valley",
@@ -490,32 +432,37 @@
   ],
   "routePhases": [
     {
-      "phase": "Lakeside Opener",
-      "duration": "Stops 1",
-      "description": "Morning: Lakeside Opener"
+      "phase": "Lake in the morning",
+      "duration": "≈ 2 hours",
+      "description": "Seoul pickups at Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30), the drive to Pocheon, then the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan."
     },
     {
-      "phase": "Herb Garden & Lunch",
-      "duration": "Stops 2",
-      "description": "Midday: Herb Garden & Lunch"
+      "phase": "Pocheon's own lunch",
+      "duration": "≈ 1 hour",
+      "description": "Idong galbi — the beef short ribs this district is named for — or a mushroom or freshwater-snail table. Lunch is not included."
     },
     {
-      "phase": "Art Valley Finale",
-      "duration": "Stops 3",
-      "description": "Afternoon: Art Valley Finale"
+      "phase": "Into the geopark",
+      "duration": "≈ 2 hours",
+      "description": "West into Yeoncheon for Jaein Falls: an 80 m suspension bridge, a glass-floored skywalk, and 18 m of water over basalt columns."
+    },
+    {
+      "phase": "Quarry finale",
+      "duration": "≈ 2.5 hours",
+      "description": "Back to Pocheon Art Valley — monorail up to the rim, emerald Cheonjuho below the granite walls, forest path down — then the shortest drive of the day back to Seoul."
     }
   ],
   "routeShapeIntro": {
     "title": "How this day moves",
-    "subtitle": "Pickup at Seoul meeting points around 08:00 to 09:00, then a 1.5-hour drive northeast to Pocheon. Lake first for calm morning light, Herb Island for lunch and the longest stop, Art Valley to close the day. Return to Seoul typically 18:30 to 19:30."
+    "subtitle": "Two Seoul meeting points — Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30 — then about 90 minutes northeast into Pocheon. The lake comes first, while legs are fresh and the morning mist is still on the water. Lunch is Pocheon's own dish, eaten where it comes from. The afternoon crosses into Yeoncheon for Jaein Falls in full daylight — the gorge has no lighting — and closes at Pocheon Art Valley, the last of the three to shut for the day and the closest to Seoul, so the ride home is the shortest of the day. Back at Myeongdong around 18:00 and Hongik University Station around 18:30."
   },
   "whyTourWorks": {
     "bestFor": [
-      "Couples and honeymooners wanting a calmer alternative to Nami Island",
-      "Photographers chasing seasonal flower scenes (lavender, pink muhly)",
+      "Travelers who want a calmer alternative to Nami Island",
+      "Couples and photographers chasing water, cliffs and reflections",
       "Adult families and multi-generational groups",
-      "Travelers who want a less crowded Gyeonggi day-trip",
-      "Visitors who enjoy slow walks and garden atmosphere"
+      "Anyone curious about how a landscape was actually made",
+      "Visitors who enjoy slow walks over packed schedules"
     ],
     "routeLogicSections": [
       {
@@ -525,91 +472,56 @@
         "iconColor": "text-emerald-600",
         "items": [
           {
-            "label": "Less crowded than Nami Island",
-            "detail": "Gapyeong's Nami-Morning Calm-Petite France loop is increasingly busy. Pocheon's lakes and gardens carry similar nature appeal with significantly lighter crowds."
+            "label": "Two UNESCO geosites, opposite halves of one story",
+            "detail": "Jaein Falls and Art Valley both belong to the Hantangang UNESCO Global Geopark, certified in July 2020 — and they show you the two halves of the same ground. At Art Valley you stand inside the ancient granite basement that people cut away by hand; at Jaein Falls you stand in front of the young basalt lava that once flowed over that same basement and cooled into columns. One pit dug by quarrymen, one gorge cut by a river through lava."
           },
           {
-            "label": "Stronger seasonal variety",
-            "detail": "Spring strawberry farms, summer lavender, autumn pink muhly, and winter ice cliffs each give the route a clearly different identity by month."
+            "label": "The longest walk comes first",
+            "detail": "Sanjeong Lake's loop is 3.2 km and completely flat — the day's biggest stretch of walking, taken while legs are fresh. Spring and autumn mornings often lift mist off the water, which is the reason this stop is not saved for later."
           },
           {
-            "label": "Art Valley adds a unique geological angle",
-            "detail": "The quarry-and-lake setting at Pocheon Art Valley does not exist anywhere else within day-trip distance of Seoul."
-          }
-        ]
-      },
-      {
-        "title": "How the walking load actually feels",
-        "icon": "footprints",
-        "iconBg": "bg-amber-50/80",
-        "iconColor": "text-amber-600",
-        "items": [
-          {
-            "label": "All three stops are mostly easy",
-            "detail": "This is one of the most senior-friendly day-trips from Seoul, with paved paths, optional shorter routes, and the monorail option at Art Valley."
+            "label": "Lunch is the region's own dish, eaten where it's from",
+            "detail": "Idong galbi — the beef short ribs named for Pocheon's Idong district — is a ten-minute drive from the lake, so the meal costs no extra driving. Mushrooms and freshwater snail are the other local tables, and Idong makgeolli is brewed in the same valley."
           },
           {
-            "label": "Sanjeong Lake offers a half-loop option",
-            "detail": "The full 4 km perimeter is moderate, but the most photogenic boardwalk section can be done as a 25-minute walk."
-          },
-          {
-            "label": "Art Valley walking is optional",
-            "detail": "The monorail handles the elevation gain; walking the trail is for travelers who want extra time among the sculptures."
-          }
-        ]
-      },
-      {
-        "title": "When weather and seasons shift",
-        "icon": "cloud-rain",
-        "iconBg": "bg-slate-50/80",
-        "iconColor": "text-slate-600",
-        "items": [
-          {
-            "label": "Seasonal substitutions are common",
-            "detail": "Some operator versions add Bidulginang Cascade in spring/autumn, an apple farm in October, a strawberry farm in winter, or an ice-wall cafe in deep winter."
-          },
-          {
-            "label": "Wednesday Herb Island closure",
-            "detail": "Herb Island is closed on some Wednesdays. Operators typically substitute Sanjeong Lake extension or Pocheon Art Valley with extra time."
-          },
-          {
-            "label": "Winter visit logistics",
-            "detail": "Duck-sled activities at Sanjeong Lake depend on safe ice conditions, which have become less reliable in recent winters due to warming trends."
+            "label": "Daylight where it matters, and the shortest ride home",
+            "detail": "Jaein Falls is an unlit gorge: the suspension bridge, the skywalk and the plunge pool all need afternoon light, so it goes before the finale. Art Valley stays open the latest of the three and sits closest to Seoul, which makes it both a safe last stop and the shortest drive back."
           }
         ]
       }
     ],
     "lessIdealFor": [
-      "Travelers wanting iconic UNESCO landmarks (try Suwon Hwaseong instead)",
-      "Visitors wanting a high-energy or shopping-heavy day",
+      "Travelers wanting a shopping-heavy or high-energy day",
       "Anyone needing a fully indoor rainy-day plan",
-      "Families with very young children needing playground-style entertainment"
+      "Visitors set on famous single landmarks (try Suwon Hwaseong instead)",
+      "Groups needing step-free access at every stop"
     ]
   },
   "practicalAccordionItems": [
     {
       "id": "pickup",
       "title": "Pickup & drop-off",
-      "preview": "Seoul meeting points; 08:00 to 09:00 departure",
+      "preview": "Two pickup points: Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30).",
       "content": [
-        "Pickup typically from Hongik University Station (Exit 4), Myeongdong Shinsegae Duty Free, and Dongdaemun History & Culture Park Station (Exit 10)",
-        "Departure typically 07:50 to 09:00 from the first meeting point",
-        "Please arrive at least 10 minutes early at your selected meeting point",
-        "Drop-off at the same Seoul meeting points",
-        "Expected return between 18:30 and 19:30 depending on traffic",
-        "This is a fixed-route group format; travelers must reach the meeting point themselves"
+        "Two pickup points: Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30).",
+        "Please arrive at your meeting point 10 minutes before the departure time.",
+        "Your guide waits at the station exit with the bus.",
+        "Drop-off reverses the order: Myeongdong around 18:00, Hongik University Station around 18:30.",
+        "Return times are approximate and depend on traffic.",
+        "This is a fixed-route group format; travellers reach the meeting point themselves."
       ]
     },
     {
       "id": "walking",
       "title": "Walking & terrain",
-      "preview": "Easy to moderate; one of the gentler day-trips from Seoul",
+      "preview": "Moderate overall — about 5–6 km across the day, with short demanding sections.",
       "content": [
-        "Sanjeong Lake: easy paved trail with optional half-loop for shorter walking",
-        "Herb Island: easy garden paths with light slopes",
-        "Pocheon Art Valley: moderate uphill walking, but a monorail handles the elevation gain",
-        "Comfortable walking shoes are recommended; the route is partially stroller-friendly",
-        "Restrooms available at all three stops"
+        "Moderate overall — about 5–6 km across the day, with short demanding sections.",
+        "Sanjeong Lake: flat 3.2 km loop, no uphill, 60–90 min.",
+        "Jaein Falls: the 80 m suspension bridge is flat but sways; the boardwalk down toward the pool has stairs both ways.",
+        "Pocheon Art Valley: steep from base to rim — the monorail covers it; the Healing Forest walk down is 10–15 min.",
+        "No hiking and no summit climb is included at any stop.",
+        "Comfortable closed shoes recommended; the gorge boardwalk can be wet."
       ]
     },
     {
@@ -617,10 +529,10 @@
       "title": "Weather policy",
       "preview": "Strong seasonal variety; substitutions are common",
       "content": [
-        "Spring (March to June): cherry blossoms, lavender approaching peak, optional strawberry farm",
-        "Summer (June to August): peak lavender at Herb Island in mid-June to July; expect humidity and possible rain",
-        "Autumn (September to November): pink muhly grass, silver grass at Sanjeong, foliage at Art Valley",
-        "Winter (December to February): potential ice activities at Sanjeong (weather-dependent), Herb Island lights still operate, optional ice-wall cafe",
+        "Spring (Mar–May): Mist lifts off Sanjeong Lake on cool mornings, and snowmelt keeps Jaein Falls running strongly. Cheonjuho reads its clearest emerald as the light lengthens.",
+        "Summer (Jun–Aug): The falls are at their most powerful, and the gorge stays several degrees cooler than the city. Heavy monsoon rain can close the Jaein Falls deck sections — the one weather risk on this route.",
+        "Autumn (Sep–Nov): The strongest season here. Silver grass turns the Myeongseongsan slopes silver-white through October, the lake carries the year's best reflections, and Art Valley's granite walls sit inside full foliage.",
+        "Winter (Dec–Feb): Quietest crowds of the year. Cheonjuho can freeze over, the lake hosts its sledding festival, and the falls may partly ice. Daylight is short, so the afternoon runs tighter and the Jaein boardwalk can be slippery.",
         "Light rain: tour usually proceeds; heavy rain may shorten outdoor stops"
       ]
     },
@@ -639,19 +551,24 @@
     {
       "id": "included",
       "title": "What's included",
-      "preview": "Guide, transport, and admissions included; lunch pay direct",
+      "preview": "Round-trip transport from central Seoul, licensed English-speaking guide, fuel, tolls and parking.",
       "variant": "included",
       "content": [
-        "Professional English-speaking guide",
-        "Round-trip transport from Seoul (small-group vehicle)",
-        "Sanjeong Lake entry (free)",
-        "Herb Island admission",
-        "Pocheon Art Valley admission and monorail",
-        "Lunch is not included; pay directly at Herb Island restaurants",
-        "Optional workshops at Herb Island (perfume, candle, bread) are not included",
-        "Optional duck boat or duck sled at Sanjeong Lake is not included",
-        "Personal shopping is not included",
-        "Guide gratuities are optional"
+        "Round-trip transport from central Seoul, licensed English-speaking guide, fuel, tolls and parking.",
+        "Free-admission stops: Sanjeong Lake and its loop trail, Jaein Falls, the suspension bridge and skywalk.",
+        "Not included — Pocheon Art Valley admission (≈ ₩6,000 adult) and monorail (≈ ₩5,300 adult round trip), 2026 rates.",
+        "Not included — lunch (≈ ₩15,000–20,000), drinks, personal spending and tips."
+      ]
+    },
+    {
+      "id": "geopark",
+      "title": "About the UNESCO Global Geopark",
+      "preview": "Two of today's stops are designated geosites.",
+      "content": [
+        "The Hantangang UNESCO Global Geopark was certified on 7 July 2020 by UNESCO's 209th Executive Board in Paris, and re-designated in 2024. It covers the Hantangang river basin across Pocheon and Yeoncheon in Gyeonggi-do and Cheorwon in Gangwon-do.",
+        "Jaein Falls is a geosite: an ≈18 m waterfall over basalt columnar joints, with a river-cut cave, potholes and gas tubes readable at its base.",
+        "Pocheon Art Valley is a geosite listed as 'Art Valley and Pocheon Stone': the ancient granite basement rock that the Hantangang lava later flowed across.",
+        "A UNESCO Global Geopark is a geological designation — it is not the same as a UNESCO World Heritage listing."
       ]
     },
     {
@@ -676,28 +593,20 @@
   },
   "seasonalVariations": [
     {
-      "season": "Spring",
-      "title": "Strawberry season",
-      "description": "Cherry blossoms ring Sanjeong Lake in early April; spring greenery returns to Art Valley. Strawberry farms are still in season through June on some operator variants.",
-      "icon": "flower"
+      "season": "Spring (Mar–May)",
+      "description": "Mist lifts off Sanjeong Lake on cool mornings, and snowmelt keeps Jaein Falls running strongly. Cheonjuho reads its clearest emerald as the light lengthens."
     },
     {
-      "season": "Summer",
-      "title": "Lavender peak",
-      "description": "Peak lavender at Herb Island from mid-June to late July is the strongest single photo window of the year for this route. Expect humidity and possible monsoon rain.",
-      "icon": "sun"
+      "season": "Summer (Jun–Aug)",
+      "description": "The falls are at their most powerful, and the gorge stays several degrees cooler than the city. Heavy monsoon rain can close the Jaein Falls deck sections — the one weather risk on this route."
     },
     {
-      "season": "Autumn",
-      "title": "Pink muhly season",
-      "description": "Pink muhly grass at Herb Island and silver grass at Sanjeong Lake make autumn the most photogenic all-round season. Apple-picking variants run mid-October to November.",
-      "icon": "leaf"
+      "season": "Autumn (Sep–Nov)",
+      "description": "The strongest season here. Silver grass turns the Myeongseongsan slopes silver-white through October, the lake carries the year's best reflections, and Art Valley's granite walls sit inside full foliage."
     },
     {
-      "season": "Winter",
-      "title": "Lights & ice season",
-      "description": "Herb Island's evening lights and Santa Village shine; Sanjeong Lake's duck-sled and ice activities depend on safe ice conditions. Ice-wall cafe variants run in deep winter.",
-      "icon": "snowflake"
+      "season": "Winter (Dec–Feb)",
+      "description": "Quietest crowds of the year. Cheonjuho can freeze over, the lake hosts its sledding festival, and the falls may partly ice. Daylight is short, so the afternoon runs tighter and the Jaein boardwalk can be slippery."
     }
   ],
   "bookingTrustItems": [
@@ -757,59 +666,52 @@
   ],
   "staticQuestions": [
     {
-      "id": "q1",
+      "question": "What changed on this tour — didn't it include Herb Island?",
+      "answer": "It did. From August 2026 the route swaps Herb Island for Jaein Falls in Yeoncheon and adds a proper local lunch stop. The reason is that Jaein Falls and Pocheon Art Valley are both geosites of the Hantangang UNESCO Global Geopark, so the day now tells one connected geological story instead of three unrelated stops. If you specifically want Herb Island, contact us before booking — we run it as a separate arrangement."
+    },
+    {
+      "question": "What makes Jaein Falls and Art Valley 'UNESCO'?",
+      "answer": "Both are designated geosites of the Hantangang UNESCO Global Geopark, certified on 7 July 2020 and re-designated in 2024. It is a geopark designation, not a World Heritage listing — it recognises the geology of the Hantangang river basin across Pocheon, Yeoncheon and Cheorwon. Jaein Falls shows the basalt lava and its columnar joints; Art Valley shows the ancient granite basement the lava flowed over."
+    },
+    {
+      "question": "Is the suspension bridge at Jaein Falls scary? Can I skip it?",
+      "answer": "It is 80 m long and 2 m wide and it does sway underfoot by design — that is the appeal for most guests. You can skip it entirely: the rim viewpoint sees the waterfall without crossing, and the boardwalk toward the pool is a separate path. Nobody is left behind if you'd rather stay on solid ground."
+    },
+    {
+      "question": "Is admission included?",
+      "answer": "Sanjeong Lake and Jaein Falls are both free. Pocheon Art Valley is not included — roughly ₩6,000 admission plus about ₩5,300 for an adult monorail round trip in 2026, with lower youth, military and child rates. Lunch is also not included (≈ ₩15,000–20,000). Everything else — transport, guide, tolls and parking — is covered."
+    },
+    {
+      "question": "How much walking is there, and how hard is it?",
+      "answer": "About 5–6 km across the day, most of it the flat 3.2 km lake loop in the morning. Jaein Falls has stairs on the boardwalk down toward the pool. Art Valley is steep from the base to the rim, which the monorail solves — you ride up and walk down through the forest. There is no hiking and no summit climb on this tour."
+    },
+    {
+      "question": "Is lunch included, and what are the options?",
+      "answer": "Not included, about ₩15,000–20,000. Lunch is in Idong, the Pocheon district that gives Idong galbi (beef short ribs) its name. Mushroom dishes and uleong — freshwater snail — are the other local specialities, and Idong makgeolli is brewed in the same valley. Tell your guide if you need vegetarian options and they'll point you to the right table."
+    },
+    {
       "question": "How is this different from a Nami Island day-trip?",
-      "answer": "Both are Gyeonggi day-trips from Seoul, but Pocheon trades Nami's K-drama crowds for gardens and a quarry park. You get more space, less queueing for ferries, and a quieter walking pace. Photographers and travelers wanting calmer scenery prefer Pocheon. First-time Korea visitors hunting Nami's metasequoia path or Winter Sonata filming locations should still pick the Nami tour."
+      "answer": "Nami Island is a single, very popular destination reached by ferry. This route is three genuinely different landscapes — a century-old reservoir, a basalt waterfall gorge and a flooded granite quarry — in a part of Gyeonggi that sees a fraction of Nami's crowds, with a UNESCO Global Geopark thread running through the afternoon."
     },
     {
-      "id": "q2",
-      "question": "When does the lavender bloom at Herb Island?",
-      "answer": "Mid-June to late July is the peak window — roughly four to six weeks of full bloom. Pink muhly grass replaces lavender from late September through October. Outside these windows the herb gardens still display 140+ herb varieties year-round and the Mediterranean architecture is photogenic in any season."
+      "question": "Is this worthwhile in winter?",
+      "answer": "Yes, with trade-offs. Cheonjuho freezing over at Art Valley is one of the site's best sights, the lake hosts a sledding festival, and every stop is at its quietest. Against that: daylight is short, so the afternoon runs tighter, and the Jaein Falls boardwalk can be icy. Dress properly and it's a strong winter day."
     },
     {
-      "id": "q3",
-      "question": "What if Herb Island is closed on a Wednesday?",
-      "answer": "Herb Island closes for maintenance on some Wednesdays — not all. When this happens the operator typically extends time at Sanjeong Lake, adds Pocheon Art Valley extra time, or substitutes Bidulginang Cascade. If your travel date is a Wednesday, confirm operating status at booking; the operator will notify if a substitution is required."
+      "question": "What happens if it rains?",
+      "answer": "The tour runs. The lake loop and Art Valley are fine with an umbrella, and rain actually strengthens Jaein Falls. The one real exception is heavy summer rain, when the deck sections at the gorge can be closed for safety — in that case we extend the other stops rather than cancel the day."
     },
     {
-      "id": "q4",
-      "question": "How does the monorail at Pocheon Art Valley work?",
-      "answer": "The monorail is optional and runs from the entrance up to the quarry observatory. One-way fare is 3,500 KRW paid on-site (not included in the tour price); round-trip is 4,500 KRW. The walking alternative is a 10-15 minute paved climb. Most travelers ride up and walk down to save time and money."
+      "question": "Where do you pick up and drop off?",
+      "answer": "Two Seoul meeting points: Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30. Please arrive 10 minutes before your departure time — the guide waits at the exit with the bus. The return reverses the order: Myeongdong around 18:00 and Hongik University Station around 18:30, depending on traffic."
     },
     {
-      "id": "q5",
-      "question": "Is this tour worthwhile in winter?",
-      "answer": "Yes — winter is one of the strongest seasons here. Sanjeong Lake offers duck-sleds and ice-fishing when the lake freezes (typically late December through February). Herb Island runs an evening light festival and the year-round Santa Village. Pocheon Art Valley's Cheonjuho Lake often partially freezes for striking emerald-and-ice photos. Layered winter clothing is essential."
+      "question": "Is this suitable for children or older adults?",
+      "answer": "For most, yes. The lake loop is flat and the monorail removes Art Valley's climb. The two things to weigh are the Jaein Falls boardwalk stairs and the swaying suspension bridge — both are optional, and the rim viewpoint gives the waterfall to anyone who'd rather not. It is a 10-hour day, so it suits active older travellers better than anyone needing frequent rest."
     },
     {
-      "id": "q6",
-      "question": "How long is the Sanjeong Lake walk?",
-      "answer": "The full 4 km perimeter trail is mostly flat and takes about 75 minutes at a relaxed pace. There is also a half-loop option of about 2 km (25-30 minutes) that hits the most photogenic boardwalk section if you'd rather save energy for Herb Island and Pocheon Art Valley later in the day."
-    },
-    {
-      "id": "first-time",
-      "question": "Is this a good choice for first-time visitors to Pocheon (Seoul Day Trip)?",
-      "answer": "It works for first-timers, though it's more of a curated route than a greatest-hits loop."
-    },
-    {
-      "id": "walking",
-      "question": "Is the walking difficult?",
-      "answer": "Mostly easy walking throughout. Sanjeong Lake is a flat lakeside path (full loop 4 km, half-loop 2 km option). Herb Island is flat garden paths with light slopes. Pocheon Art Valley is the most active section: 10-15 minutes uphill walk to the quarry observatory (or take the monorail), plus optional spiral stairs at the Sky Park (not stroller-friendly). The lake area itself is flat."
-    },
-    {
-      "id": "family",
-      "question": "Is this tour suitable for families?",
-      "answer": "Yes — comfortable for most families. Sanjeong Lake's pedal boats and amusement zone are kid favorites. Herb Island has perfume-making and herb-bread workshops. Pocheon Art Valley's monorail is a hit with children. The Sky Park spiral stairs are not stroller-friendly; otherwise the route is one of the easier Seoul day-trips for families."
-    },
-    {
-      "id": "seniors",
-      "question": "Can older adults join comfortably?",
-      "answer": "Yes — pacing and walking are comfortable for active seniors. Sanjeong Lake offers a flat lakeside path with a half-loop option. Herb Island is paved garden paths with seating throughout. Pocheon Art Valley's monorail (4,500 KRW one-way) skips the uphill walk. Less ideal if wheelchair access is required at every stop — Sky Park spiral stairs and some quarry paths are not accessible."
-    },
-    {
-      "id": "children",
-      "question": "What's the recommended minimum age?",
-      "answer": "Around age 6 — the day involves a long drive each way, the Pocheon Art Valley monorail or 10-15 minute walk-up, and the Sky Park spiral stairs (not stroller-friendly). Younger children can join with carriers; bring snacks and dress for cooler mountain temperatures. Sanjeong Lake's seasonal duck-pedal boats and Herb Island's Santa Village are the strongest kid moments."
+      "question": "Can I do this by public transport instead?",
+      "answer": "It would be difficult. Sanjeong Lake, Jaein Falls and Art Valley sit in three different districts across two counties, and buses to Art Valley run only every couple of hours. Doing all three in a day without a vehicle is not realistic — which is most of the reason this route exists as a tour."
     }
   ],
   "guestReviews": [],
@@ -846,7 +748,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+    "note": "Select your date and group size to check live availability and complete your booking.",
     "price": {
       "amountLabel": "54",
       "salePriceUsd": 54,
@@ -860,40 +762,33 @@
     "type": "meeting_point",
     "meeting_points": [
       {
-        "name": "Hongik University Station Exit 4",
-        "time": "07:50",
-        "note": "First Seoul meeting point; please arrive 10 minutes early."
+        "name": "Hongik University Station Exit 8",
+        "time": "08:00",
+        "note": "First Seoul meeting point. Meet your guide at Exit 8 — staff wait there with the bus."
       },
       {
-        "name": "Myeongdong Shinsegae Duty Free",
+        "name": "Myeongdong Station Exit 2",
         "time": "08:30",
-        "note": "Second Seoul meeting point."
-      },
-      {
-        "name": "Dongdaemun History & Culture Park Station Exit 10",
-        "time": "08:40",
-        "note": "Third Seoul meeting point."
+        "note": "Second Seoul meeting point. Meet your guide at Exit 2 — staff wait there with the bus."
       }
     ],
     "dropoff_points": [
       {
-        "name": "Dongdaemun History & Culture Park Station",
-        "note": "Standard Seoul drop-off point."
-      },
-      {
         "name": "Myeongdong Station",
-        "note": "Standard Seoul drop-off point."
+        "time": "18:00",
+        "note": "First Seoul drop-off, approximate."
       },
       {
         "name": "Hongik University Station",
-        "note": "Standard Seoul drop-off point."
+        "time": "18:30",
+        "note": "Final Seoul drop-off, approximate."
       }
     ],
     "hotel_pickup_available": false,
-    "notes": "Return time depends on traffic and is typically between 18:30 and 19:30. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup. Seasonal stop substitutions are possible (Bidulginang Cascade, strawberry farm, apple farm, or ice-wall cafe). Confirm with the operator for your travel date."
+    "notes": "Two meeting points: Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30 — please arrive 10 minutes before your departure time. The return runs Myeongdong around 18:00, then Hongik University Station around 18:30; exact times depend on traffic."
   },
   "matching_profile": {
-    "profile_version": 6,
+    "profile_version": 7,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -921,9 +816,8 @@
     ],
     "poi_tags": [
       "sanjeong_lake",
-      "pocheon_art_valley",
-      "herb_island_santa_village",
-      "herb_island_pocheon"
+      "jaein_falls",
+      "pocheon_art_valley"
     ],
     "pace_level": 0.4,
     "walking_level": 0.45,
@@ -951,14 +845,14 @@
     "iconic_landmark_fit": 0.65,
     "cafe_fit": 0.8,
     "food_fit": 0.55,
-    "nature_fit": 0.9,
+    "nature_fit": 1,
     "beach_fit": 0.1,
     "nightlife_fit": 0.2,
     "shopping_fit": 0.4,
     "no_shopping_fit": 0.8,
     "local_culture_fit": 0.4,
     "storytelling_fit": 0.7,
-    "unesco_fit": 0.15,
+    "unesco_fit": 0.7,
     "intangible_heritage_fit": 0.2,
     "indoor_ratio": 0.2,
     "weather_sensitivity": 0.55,
@@ -970,7 +864,7 @@
     "bus_fit": 0.4,
     "price_band": "mid",
     "pickup_base": "seoul_meeting_point",
-    "return_time_band": "18:30-19:30",
+    "return_time_band": "18:00-18:30",
     "duration_band": "10h",
     "min_recommended_age": 6,
     "hard_constraints": {
@@ -985,22 +879,22 @@
     },
     "walking_notes": [
       "This is one of the gentler day-trips from Seoul, with mostly easy walking and optional shorter routes.",
-      "Sanjeong Lake offers a short half-loop along the boardwalk for travelers who do not want the full 4 km.",
-      "Herb Island has paved garden paths with light slopes.",
+      "Sanjeong Lake offers a short half-loop along the boardwalk for travelers who do not want the full 3.2 km.",
+      "Jaein Falls has a swaying 80 m suspension bridge and a stepped boardwalk down toward the plunge pool; both are optional and the rim viewpoint sees the falls without either.",
       "Pocheon Art Valley has a monorail option that handles the uphill section to the quarry observatory.",
-      "Comfortable walking shoes with grip are recommended."
+      "Comfortable walking shoes with grip are recommended; the Jaein Falls boardwalk can be wet."
     ],
     "keywords": [
       "pocheon day trip from seoul",
-      "sanjeong lake herb island art valley tour",
+      "sanjeong lake jaein falls art valley tour",
+      "jaein falls suspension bridge tour",
+      "hantangang unesco global geopark tour",
       "pocheon art valley monorail tour",
-      "herb island lavender tour",
       "pocheon nature day trip",
       "seoul to pocheon small group",
       "less crowded gyeonggi day trip",
-      "pocheon photo day tour",
-      "herb island evening lights tour",
-      "pocheon seasonal day tour"
+      "korea waterfall day tour from seoul",
+      "yeoncheon geopark day tour"
     ],
     "synonym_hints": [
       "pocheon nature loop from seoul",
@@ -1015,7 +909,7 @@
     "vehicle_type_legacy": "mini_coach",
     "anchor_poi_keys": [
       "sanjeong_lake",
-      "herb_island_pocheon",
+      "jaein_falls",
       "pocheon_art_valley"
     ],
     "private_tour_fit": 0.05,
@@ -1078,7 +972,7 @@
       11,
       12
     ],
-    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; November-March Herb Island Light Festival; mid-Dec to mid-Feb Sanjeong Sledding Festival)",
+    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
     "japanese_speaking_guide_available_on_advance_notice": true
@@ -1092,41 +986,74 @@
     ],
     "note": "Scores were tuned for a calm, photogenic Pocheon nature day-trip. Scenic, photo, and relax fit are maxed because the route is built for slow walks and seasonal flower photography. Senior fit and mobility-friendly fit score above-average for a Seoul day-trip because of paved paths, half-loop options, and the Art Valley monorail. Iconic landmark fit is intentionally moderate (3) because Pocheon's stops are well-loved but not at the UNESCO or Nami-Island brand level. First-time fit is also moderate because most first-time visitors prefer Suwon Hwaseong or the Gapyeong loop instead.",
     "duration_hours": 10,
-    "stop_count": 3,
+    "stop_count": 4,
     "score_rationale": {
       "scenic_level": "Maxed because all three stops are visually distinct and well-curated.",
-      "photo_level": "Maxed because lavender, pink muhly, evening lights, and the quarry lake all photograph extremely well.",
+      "photo_level": "Maxed — the emerald quarry lake under 50 m granite walls, an 18 m waterfall framed head-on from a suspension bridge, and mist-and-mountain reflections on the lake are three distinct hero frames.",
       "relax_level": "Maxed because pacing is slow and walking is light to moderate at every stop.",
       "iconic_landmark_fit": "3 because Pocheon's stops have strong domestic recognition but lower international name recognition than UNESCO or Gapyeong sites.",
       "first_time_fit": "3 because first-time visitors typically prioritize UNESCO or Nami-Island branded routes; Pocheon shines for repeat visitors or photo-focused travelers.",
       "active_traveler_fit": "2 because the route is intentionally calm; active travelers will find more reward in DMZ + Suspension Bridge or the Hwaseong route.",
       "small_group_fit": "Direct match: this is the route's intended format.",
-      "rain_fit": "3 because Herb Island has indoor museum and bakery sections and Art Valley has a small indoor cafe, but the route is mostly outdoor."
+      "rain_fit": "3 — mostly outdoor. Art Valley has a small indoor cafe and exhibition space, but Sanjeong Lake and the Jaein Falls gorge are fully exposed, and heavy summer rain can close the Jaein deck sections."
     },
     "anchor_pois": [
       "Sanjeong Lake",
-      "Herb Island",
+      "Jaein Falls",
       "Pocheon Art Valley"
     ],
     "anchor_poi_keys": [
       "sanjeong_lake",
-      "herb_island_pocheon",
+      "jaein_falls",
       "pocheon_art_valley"
     ],
     "competing_products": [
-      "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+      "seoul-private-nami-morning-calm-petite-france",
       "seoul-suburbs-private-chartered-car-10hr",
-      "seoul-suwon-hwaseong-folk-village-starfield-library"
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
     ],
     "enrichment_batch": "17d",
-    "enrichment_date": "2026-04-29",
-    "enrichment_kb_version": "1.26",
+    "enrichment_date": "2026-08-04",
+    "enrichment_kb_version": "1.30",
     "enrichment_target_kb_version": "1.27",
     "profile_version_pre": 6,
     "profile_version_post": 6,
     "schema_version": 7,
     "patch_type": "polish_existing_pv6_to_a_grade",
-    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)"
+    "patch_target": "13 substantive stops across 4 tours; Batches 8/9 era authoring → A-grade pv=6 PASS (universal source-attribution gap closed; Seoul-day-trip-quartet pattern introduced)",
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
+    "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
   },
   "page_sections": [
     {
@@ -1134,21 +1061,21 @@
       "section_html_id": null,
       "component": "TourHeroSection",
       "props": {
-        "headlineLine1": "Pocheon",
-        "headlineLine2": "Lake, Herb Island & Art Valley",
+        "headlineLine1": "Lake, Waterfall",
+        "headlineLine2": "& Quarry Art Valley",
         "hero": {
           "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
-          "tagline": "Mountain lake, Mediterranean-style herb village, and a former granite quarry transformed into an art park—Pocheon's three softest-and-most-photogenic stops in one Seoul day-trip.",
+          "tagline": "A century-old mountain lake, a waterfall that falls through basalt columns, and a granite pit filled with emerald water — Pocheon and Yeoncheon's geology, walked in a single day",
           "pills": [
             "Nature Day Trip",
-            "Photogenic Route",
+            "UNESCO Global Geopark",
             "Seasonal Variety"
           ],
           "meta": {
-            "duration": "10 hours",
-            "region": "Pocheon",
-            "stops": "3 stops",
+            "duration": "≈ 10 hours (08:00 first pickup, 18:30 last drop-off)",
+            "region": "Pocheon & Yeoncheon (Seoul Day Trip)",
+            "stops": "4 stops",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1191,39 +1118,40 @@
       "props": {
         "glanceItems": [
           {
-            "icon": "clock",
-            "label": "Duration",
-            "value": "10 hours"
-          },
-          {
-            "icon": "tree-pine",
-            "label": "Scenery",
-            "value": "Lake & Garden"
-          },
-          {
             "icon": "camera",
-            "label": "Photo Potential",
-            "value": "Very High"
+            "label": "Photo Value",
+            "value": "Excellent",
+            "level": 5
+          },
+          {
+            "icon": "mountain",
+            "label": "Scenic",
+            "value": "Excellent",
+            "level": 5
           },
           {
             "icon": "footprints",
             "label": "Walking",
-            "value": "Easy to Moderate"
+            "value": "Moderate",
+            "level": 3
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Rain Safety",
+            "value": "Moderate",
+            "level": 3
           },
           {
             "icon": "users",
-            "label": "Group Style",
-            "value": "Small Group"
-          },
-          {
-            "icon": "ticket",
-            "label": "Admission Fees",
-            "value": "Included"
+            "label": "Family Fit",
+            "value": "Good",
+            "level": 4
           },
           {
             "icon": "gauge",
-            "label": "Pace",
-            "value": "Relaxed"
+            "label": "Balance",
+            "value": "Flexible",
+            "level": 5
           }
         ]
       }
@@ -1238,10 +1166,33 @@
             "id": 1,
             "type": "photo",
             "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-            "alt": "Sanjeong Lake — gallery image",
-            "caption": "Sanjeong Lake",
             "location": "Sanjeong Lake",
-            "atmosphere": "Mediterranean-style herb gardens with seasonal lavender, daisies, and pink muhly"
+            "alt": "Sanjeong Lake — gallery image 1",
+            "caption": "Sanjeong Lake — photo 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+            "location": "Sanjeong Lake",
+            "alt": "Sanjeong Lake — gallery image 2",
+            "caption": "Sanjeong Lake — photo 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+            "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 1",
+            "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 1"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+            "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+            "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 2",
+            "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 2"
           }
         ]
       }
@@ -1254,68 +1205,34 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "10:30",
+            "time": "10:00",
             "duration": "90 min",
             "name": "Sanjeong Lake",
-            "category": "Mountain-Circled Walking Lake",
-            "description": "Sanjeong Lake (Sanjeong-ho) is an artificial lake at the base of Mount Myeongseongsan, surrounded by towering cliffs and lush forest. The 4-kilometer perimeter trail is one of Gyeonggi's most-loved gentle walks, with lakeside cafes, duck-shaped pedal boats, and a small amusement zone. In autumn the surrounding silver grass turns gold; in winter the frozen lake hosts duck-sled and ice activities.",
-            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "category": "Mountain-Ringed Reservoir & Lakeside Loop",
+            "description": "**Sanjeong Lake (산정호수)** sits at about 300 m in a bowl of three mountains — **Myeongseongsan (명성산, 923 m)**, Mangbongsan and Mangmubong — and its name reads literally as *a lake as clear as a mountain well*. It is not a natural lake: it was built in **1925 as an agricultural reservoir** for the farmland below, which makes the water you are walking beside a century old.\n\nThe walk is a **3.2 km loop** of lakeside boardwalk and packed earth with **no uphill anywhere on it** — an hour to an hour and a half at an unhurried pace, and the single longest stretch of walking on this tour. Floating bridge sections carry the path out over the water, and the **sculpture park** on the northern shore came out of the **2005 Pocheon International Sculpture Symposium**, where 17 Korean and international artists carved their pieces on site across a 13,383 m² field rather than shipping finished work in.\n\nThe mountain above the lake carries the day's first story. **Myeongseongsan means 'mountain of crying sounds'** — named, the telling goes, for the birds said to have wept over the last years of **Gungye**, the fallen founder of the Taebong kingdom, who is remembered as having fled through these hills. Its upper slopes hold a **198,347 m² silver-grass field**, counted among Korea's five great eulalia colonies, which turns the whole ridge silver-white each October and gives the lake its autumn festival.\n\n**Admission to the lake and its trail is free.** In spring and autumn, mist commonly lifts off the surface in the first hours of the day — the reason this stop opens the itinerary rather than closing it.",
             "highlights": [
-              "4 km lakeside walking trail with low elevation change",
-              "Mountain-circled scenery and on-site cafes",
-              "Seasonal duck-pedal boats (warm months) and duck sleds (winter, ice-conditions permitting)",
-              "Far less crowded than Nami Island"
+              "**Built in 1925** as an agricultural reservoir — the lake passed its centenary in 2025",
+              "**3.2 km loop, entirely flat** — boardwalk and earth path, 60–90 min at a slow pace",
+              "Ringed by **Myeongseongsan (923 m)**, Mangbongsan and Mangmubong",
+              "**Sculpture park** from the 2005 Pocheon International Sculpture Symposium — 17 artists, carved on site",
+              "**Myeongseongsan = 'mountain of crying sounds'**, for the birds said to have mourned King Gungye",
+              "**198,347 m² silver-grass field** on the slopes above — one of Korea's five great eulalia colonies",
+              "Spring and autumn mornings often lift **mist off the water**",
+              "**Free admission**; floating bridge sections and lakeside decks along the loop"
             ],
             "timeUsed": [
-              "Drive from Seoul (about 1.5 hours)",
-              "Lakeside walk (full or partial loop)",
-              "Optional duck boat or duck sled (extra cost, seasonal)",
-              "Photo time and short cafe break"
+              "Arrive, orientation and lakeside viewpoint (~10 min)",
+              "The 3.2 km loop at an unhurried pace (~60 min)",
+              "Sculpture park and floating bridge photo time (~15 min)",
+              "Back to the coach (~5 min)"
             ],
-            "whyOnRoute": "Starting at Sanjeong Lake gives the day a calm opening with strong nature scenery before the more curated stops at Herb Island and Art Valley.",
-            "visitBasics": {
-              "hours": "Open 24 hours (lake area); botanical garden ≈09:00–18:00",
-              "closed": "Open year-round",
-              "admission": "Free for lake area; botanical garden has separate fee (≈5,000 KRW)",
-              "walking": "Easy — flat lakeside path"
-            },
-            "convenience": {
-              "restroom": "Available at parking and around the lake",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Lake reflecting the surrounding mountains; pink muhly in autumn at the botanical garden; Dambo wood giants in the forest",
-              "facilities": "Lakeside cafés and restaurants; Hanwha Resort Annecy nearby",
-              "tip": "Easy to combine with Pocheon Art Valley and Herb Island for a Pocheon day-trip from Seoul"
-            },
-            "_poi_meta": {
-              "poi_key": "sanjeong_lake",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated visitor info"
-            },
+            "whyOnRoute": "**The day's longest walk, taken first.** The 3.2 km loop is flat but it is still the biggest stretch of walking on this tour, and it belongs at the start while legs are fresh. Morning is also when the lake is at its best: in spring and autumn mist commonly lifts off the surface, and the mountains read clearly before the afternoon haze. Sanjeong Lake is the farthest of the four stops from Seoul, so opening here also means the rest of the day runs steadily back toward the city rather than away from it.",
+            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
             "images": [
               "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
               "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
@@ -1331,200 +1248,149 @@
                 "type": "photo",
                 "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
                 "location": "Sanjeong Lake",
-                "caption": "Sanjeong Lake — photo 1",
-                "alt": "Sanjeong Lake — gallery image 1"
+                "alt": "Sanjeong Lake — gallery image 1",
+                "caption": "Sanjeong Lake — photo 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
                 "location": "Sanjeong Lake",
-                "caption": "Sanjeong Lake — photo 2",
-                "alt": "Sanjeong Lake — gallery image 2"
+                "alt": "Sanjeong Lake — gallery image 2",
+                "caption": "Sanjeong Lake — photo 2"
               }
-            ]
+            ],
+            "visitBasics": {
+              "hours": "Open 24 hours, but no admission from sunset until 2 hours before sunrise",
+              "closed": "Open year-round",
+              "admission": "Free for the lake and loop trail; boating, sledding and the amusement park are charged separately",
+              "walking": "Easy — flat 3.2 km loop, 60–90 min. The Myeongseongsan summit hike is a separate, hard 5-hour route and is not part of this tour."
+            },
+            "convenience": {
+              "restroom": "At the parking area and along the lakeside promenade",
+              "parking": "Paid parking at the main lot"
+            },
+            "smartNotes": {
+              "tip": "The loop is flat the whole way — if you would rather sit, the lakeside decks and the sculpture park are both a few minutes from the coach. October brings the silver-grass festival and the year's biggest crowds.",
+              "photo": "Lake-and-mountain reflections, strongest with spring or autumn morning mist. The floating bridge mid-loop is the signature frame; the sculpture park gives foreground.",
+              "facilities": "Cafés and restaurants at the lake entrance, boating dock, sculpture park, picnic grounds."
+            },
+            "_poi_meta": {
+              "poi_key": "sanjeong_lake",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.30",
+              "verified_date": "2026-08-04"
+            }
           },
           {
             "number": 2,
-            "time": "13:30",
-            "duration": "150 min",
-            "name": "Herb Island",
-            "category": "Mediterranean-Style Herb Botanical Park",
-            "description": "Korea's largest herb-themed botanical park, designed to evoke a Mediterranean village with whitewashed walls, olive groves, and themed garden zones. More than 140 herb varieties grow across the gardens; on-site experiences include perfume making, candle making, and a herb-bread bakery. After sunset, Herb Island transforms into a romantic light-display zone with the famous 'Santa Village' open year-round.",
-            "image": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
+            "time": "11:40",
+            "duration": "60 min",
+            "name": "Lunch — Idong Galbi (Pocheon local table)",
+            "category": "Local Meal (not included)",
+            "description": "Lunch is a ten-minute drive from the lake in **Idong (이동)**, the Pocheon district that gave its name to **Idong galbi (이동갈비)** — beef short ribs that this valley has been grilling for generations and that Koreans drive out from Seoul specifically to eat. The other local tables are **mushroom dishes** and **uleong (freshwater snail)**, both Pocheon specialties, and **Idong makgeolli** is brewed in the same valley if you want the pairing.\n\nLunch is **not included** (about ₩15,000–20,000 depending on what you order), so you choose your own table and budget. Your guide will point out which places suit vegetarians, since a galbi house is not the answer for everyone.",
             "highlights": [
-              "Mediterranean-style village atmosphere with herb gardens",
-              "Seasonal flower displays: lavender, daisies, pink muhly grass",
-              "Year-round Santa Village and evening light displays",
-              "Optional perfume, candle, or herb-bread workshops (extra cost)"
+              "**Idong galbi (이동갈비)** — the beef short ribs named for this very district",
+              "**Mushroom** and **uleong (freshwater snail)** tables are the other Pocheon specialities",
+              "**Idong makgeolli** is brewed in the same valley",
+              "About ten minutes from Sanjeong Lake — the meal adds no extra driving",
+              "**Not included** (≈ ₩15,000–20,000) — choose your own table",
+              "Vegetarian-friendly options pointed out by the guide"
             ],
             "timeUsed": [
-              "Garden walk through the themed sections",
-              "Lunch break at one of the on-site cafes (free choice; pay direct)",
-              "Optional workshop or museum visit",
-              "Evening light displays if the route timing allows"
+              "Short drive from the lake and seating (~10 min)",
+              "Lunch (~45 min)",
+              "Back to the coach (~5 min)"
             ],
-            "whyOnRoute": "Herb Island is the route's strongest single photo stop and works as a long midday anchor that balances the more compact lake and quarry stops.",
-            "visitBasics": {
-              "hours": "10:00–22:00 (extended weekends/holidays)",
-              "closed": "Open year-round",
-              "admission": "Adult 9,000 KRW / Teen 8,000 KRW / Child 6,000 KRW (varies seasonally)",
-              "walking": "Easy — flat indoor and outdoor garden paths"
-            },
-            "convenience": {
-              "restroom": "Multiple restrooms throughout the park",
-              "parking": "Free parking available"
-            },
-            "smartNotes": {
-              "photo": "Santa Village interior; Venice boat with European-style buildings; LED flower field at night",
-              "facilities": "Multiple cafés, restaurants, herbal-product shops, perfume/candle DIY workshops",
-              "tip": "Visit late afternoon to catch both daytime gardens and evening illumination; combine with Pocheon Art Valley and Sanjeong Lake"
-            },
-            "_poi_meta": {
-              "poi_key": "herb_island",
-              "verified": false,
-              "sources": [],
-              "verified_date": "2026-04-27",
-              "note": "Operational details based on aggregated tour info"
-            },
-            "images": [
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-              "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-37.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 1",
-                "alt": "Herb Island — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-34-42.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 2",
-                "alt": "Herb Island — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/herb-island/chatgpt-image-2026-5-10-10-36-30.webp",
-                "location": "Herb Island",
-                "caption": "Herb Island — photo 3",
-                "alt": "Herb Island — gallery image 3"
-              }
-            ]
+            "whyOnRoute": "**The region's own dish, eaten where it comes from.** Idong is ten minutes from Sanjeong Lake and roughly on the way west, so the meal costs the day nothing in driving. It also lands at the right hour: the morning's 3.2 km walk is behind you and the afternoon's two geopark stops are ahead, both of which want steady legs and a bit of patience on stairs and bridges.",
+            "image": null,
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
           },
           {
             "number": 3,
-            "time": "16:30",
-            "duration": "75 min",
-            "name": "Pocheon Art Valley",
-            "category": "Quarry-Turned-Art-Park with Monorail",
-            "description": "A former granite quarry transformed into an art-and-nature park. A monorail carries visitors up the hillside to the dramatic Cheonjuho Lake, an emerald-green lake nestled inside the old quarry walls, surrounded by sculpture installations and an observatory. The site has appeared in many K-dramas and music videos thanks to its cinematic cliff-and-lake setting.",
-            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "time": "13:30",
+            "duration": "65 min",
+            "name": "Jaein Falls (Hantangang UNESCO Global Geopark)",
+            "category": "Basalt Waterfall & Suspension Bridge — UNESCO Geosite",
+            "description": "**Jaein Falls (재인폭포)** is in **Yeoncheon**, not Pocheon, and crossing that county line is the point of the afternoon. A small stream running down from **Jijangbong** to the north reaches the edge of a **basalt cliff and drops roughly 18 m** into a green plunge pool. The cliff is not ordinary rock: it is **columnar jointing** — the hexagonal columns that form when a thick lava flow cools and contracts — and it is the signature landform of the **Hantangang UNESCO Global Geopark**, certified by UNESCO on **7 July 2020** and re-designated in 2024.\n\nEverything at this stop is a reading of that lava. Beside the falls you can pick out a **hasik-donggul (하식동굴)**, a cave hollowed by the river at the base of the columns; **potholes** ground into the rock by pebbles spinning in the current; and **gas tubes**, the frozen bubbles left where gas escaped the cooling lava. The falls are still slowly working their way upstream, cutting backwards into the flow.\n\nThe approach is built for looking at it. An **80 m long, 2 m wide suspension bridge** spans the gorge cliff to cliff and faces the waterfall head-on; beyond it a **skywalk with a transparent glass floor** puts the gorge directly under your feet. A boardwalk descends toward the pool itself.\n\nThe name carries the day's second story. *Jaein* (재인, 才人) meant a **tightrope performer**. In the telling, a local magistrate coveted the performer's wife, had a rope strung across this gorge and ordered him out onto it — then had the rope cut. His widow feigned submission, bit off the magistrate's nose, and took her own life. The village below was known afterwards as **Komun-ri, 'the village where the nose was bitten'**, which softened over time into today's **Gomun-ri (고문리)**.\n\n**Admission is free.** Deck sections can close during heavy summer rain, and the gorge has no lighting — which is why this stop sits in the full afternoon rather than at the end of the day.",
             "highlights": [
-              "Monorail ride up to the quarry observatory",
-              "Cheonjuho Lake: emerald water inside dramatic cliff walls",
-              "Outdoor sculpture installations along the trail",
-              "K-drama and music-video filming location"
+              "**≈ 18 m waterfall over a basalt columnar-joint cliff** — the geopark's signature landform",
+              "**Hantangang UNESCO Global Geopark**, certified 7 July 2020, re-designated 2024",
+              "**80 m × 2 m suspension bridge** spanning the gorge, facing the falls head-on",
+              "**Glass-floored skywalk** beyond the bridge, over the gorge",
+              "Read the lava up close: **hasik-donggul river cave**, **potholes**, **gas tubes**",
+              "Named for a **tightrope performer (재인)** — and the village below is still called Gomun-ri for it",
+              "**Free admission**; boardwalk descends toward the emerald plunge pool",
+              "Deck sections may close in heavy summer rain"
             ],
             "timeUsed": [
-              "Monorail ride to the quarry top",
-              "Walk around Cheonjuho Lake and observatory",
-              "Sculpture trail and photo points",
-              "Return by monorail or walking trail"
+              "Coach drop-off and walk to the gorge rim (~10 min)",
+              "Suspension bridge crossing and skywalk (~20 min)",
+              "Boardwalk down toward the pool and the columns (~25 min)",
+              "Climb back and reassemble (~10 min)"
             ],
-            "whyOnRoute": "Closing at Pocheon Art Valley gives the day a strong dramatic finish—the quarry-and-lake setting is unlike anything else on the route and adds a true 'photo wow' moment before the return drive.",
+            "whyOnRoute": "**The half of the geopark you cannot see at Art Valley.** At the quarry you stand inside the old granite basement rock; here you stand in front of the young basalt lava that flowed over it and cooled into columns — the same ground, its other layer, forty minutes apart. It also needs the light: the gorge is unlit and the bridge, skywalk and pool all want full afternoon sun, so it goes before the finale rather than after it.",
+            "image": null,
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": [],
             "visitBasics": {
-              "hours": "Mar–Oct: Mon–Thu 09:00–19:00 (last entry 18:00); Fri/Sat/holidays 09:00–22:00 (last entry 20:00); Sun 09:00–20:00 (last entry 19:00). Nov–Feb: 09:00–18:00 (last entry 17:00)",
-              "closed": "Open year-round",
-              "admission": "Adult 5,000 KRW / Teen 3,000 KRW / Child 1,500 KRW (free for seniors 65+, preschoolers); monorail one-way 3,500 KRW (round-trip 4,500 KRW) additional",
-              "walking": "Moderate — walking up takes 10–15 min; spiral stairs at Sky Park (NOT stroller-friendly); lake area is flat"
+              "hours": "Open access; daylight hours strongly recommended — the gorge is unlit",
+              "closed": "Deck and boardwalk sections may close during heavy summer rain or storms",
+              "admission": "Free",
+              "walking": "Moderate — the suspension bridge is flat but sways; the boardwalk down toward the pool and back is the effort, with stairs"
             },
             "convenience": {
-              "restroom": "Available at entrance, monorail station, and main park",
-              "parking": "Free parking available"
+              "restroom": "At the visitor parking area above the gorge",
+              "parking": "Free visitor parking at the falls entrance"
             },
             "smartNotes": {
-              "photo": "Lake from main viewing platform with cliff backdrop; Sky Park panorama; K-drama scene recreations",
-              "facilities": "Café in middle of park; ticket booth gives 2,000 KRW Pocheon Art Valley currency for food/drink discounts",
-              "tip": "Sky Park spiral stairs NOT wheelchair/stroller accessible; monorail recommended for mobility-challenged visitors; swimming in lake prohibited"
+              "tip": "The bridge moves underfoot by design — hold the rail and keep to one direction of travel when it is busy. If you would rather not cross, the rim viewpoint sees the falls without the bridge.",
+              "photo": "Head-on from the middle of the suspension bridge is the shot. Straight down through the skywalk glass for the columns; from the boardwalk below for the pool and the full 18 m drop.",
+              "facilities": "Parking, restrooms and interpretive geopark panels at the entrance; no shops at the gorge itself — bring water."
             },
             "_poi_meta": {
-              "poi_key": "pocheon_art_valley",
+              "poi_key": "jaein_falls",
               "verified": true,
-              "sources": [
-                "VisitKorea",
-                "PolyglotPetra",
-                "Creatrip",
-                "Soul of Seoul"
-              ],
-              "verified_date": "2026-04-27"
-            },
+              "match": "single_poi",
+              "kb_version": "1.30",
+              "verified_date": "2026-08-04"
+            }
+          },
+          {
+            "number": 4,
+            "time": "15:20",
+            "duration": "70 min",
+            "name": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+            "category": "Quarry-Turned-Art-Park with Monorail — UNESCO Geosite",
+            "description": "**Pocheon Art Valley (포천 아트밸리)** is a hole that people made. The granite here — **Pocheonseok (포천석)**, the stone quarried out of this hillside — went into the **Blue House, the National Assembly and Incheon International Airport**, and when the workable rock ran out the quarry was **abandoned in 2003**, leaving a scarred pit above the town. In 2005 Pocheon began **Korea's first ecological restoration of an abandoned quarry**, and the site reopened in **2009** as an art park. It now draws about **400,000 visitors a year**.\n\nThe pit filled itself. Spring water and rainwater collected in the excavation to form **Cheonjuho (천주호)**, up to **20 m deep**, its startling emerald colour coming from granite sediment suspended in the water and reflecting light back up. **Vertical granite walls rise around 50 m** above it, still carrying the tool marks of the cutting — and near the concert hall you can still find the **perfectly round shot-holes** drilled for dynamite, the quarry's clearest surviving signature. This granite is the *basement* rock of the region, the ancient floor that the Hantangang lava later flowed across, and it is why the site is a geosite of the same geopark as Jaein Falls, listed there as **'Art Valley and Pocheon Stone'**.\n\nA **420 m monorail** climbs the slope from the ticket office to the rim in about five minutes. The usual way to do it is **up by monorail, down on foot** through the Healing Forest promenade — ten to fifteen minutes of shaded trail. At the top are the sculpture park, the **Hosu Concert Hall** — a 300-seat open-air stage set between the 50 m cliff and the lake — the Sky Garden viewpoints and an astronomy museum opened in 2014. Fans of **Legend of the Blue Sea**, **Moon Lovers: Scarlet Heart Ryeo** and **Hwayugi** will recognise the water.\n\n**Admission and the monorail are ticketed separately** and are not included in the tour price — roughly **₩6,000** admission and **₩5,300** for a monorail round trip for an adult in 2026, with youth, military and child rates below that. Your guide handles the ticket queue.",
+            "highlights": [
+              "**Pocheonseok granite** from this quarry built the Blue House, the National Assembly and Incheon Airport",
+              "Quarry **abandoned in 2003**; Korea's **first ecological restoration** of one, reopened **2009**",
+              "**Cheonjuho** — spring-fed quarry lake up to **20 m deep**, emerald from suspended granite sediment",
+              "**≈ 50 m vertical granite walls** still carrying cutting marks and round **dynamite shot-holes**",
+              "A geosite of the **Hantangang UNESCO Global Geopark** as *'Art Valley and Pocheon Stone'*",
+              "**420 m monorail**, ~5 min to the rim — ride up, walk down the Healing Forest promenade",
+              "**Hosu Concert Hall**, a 300-seat open-air stage between the cliff and the lake",
+              "Filming location for **Legend of the Blue Sea**, **Moon Lovers** and **Hwayugi**",
+              "≈ **400,000 visitors a year**; admission and monorail ticketed separately (not included)"
+            ],
+            "timeUsed": [
+              "Ticketing at the base and monorail up (~15 min)",
+              "Cheonjuho lakeside and the observation decks (~25 min)",
+              "Sculpture park and concert hall (~15 min)",
+              "Healing Forest walk down and reassemble (~15 min)"
+            ],
+            "whyOnRoute": "**The safest last stop, and the shortest way home.** Art Valley stays open later than the lake or the gorge, so a slow afternoon costs nothing here, and of the four stops it is the closest to Seoul — ending here makes the final drive the shortest of the day. It also closes the geology: after standing in front of the lava at Jaein Falls, you finish standing inside the ancient granite the lava ran over, in a pit that people cut out and the ground quietly filled back in.",
+            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
             "images": [
               "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
               "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
                 "source": "atoc-korea"
@@ -1539,19 +1405,41 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 1",
-                "alt": "Pocheon Art Valley — gallery image 1"
+                "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+                "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 1",
+                "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
-                "location": "Pocheon Art Valley",
-                "caption": "Pocheon Art Valley — photo 2",
-                "alt": "Pocheon Art Valley — gallery image 2"
+                "location": "Pocheon Art Valley (Hantangang UNESCO Global Geopark)",
+                "alt": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — gallery image 2",
+                "caption": "Pocheon Art Valley (Hantangang UNESCO Global Geopark) — photo 2"
               }
-            ]
+            ],
+            "visitBasics": {
+              "hours": "09:00–19:00 (last admission ≈ 17:30); monorail Mon–Fri and Sun/holidays 09:00–17:50, Sat to 21:50 — seasonal variation",
+              "closed": "Open year-round",
+              "admission": "Not included. ≈ ₩6,000 adult / ₩4,000 youth and military / ₩2,000 child. Monorail extra: ≈ ₩5,300 adult round trip. Confirm on site — 2026 rates.",
+              "walking": "Moderate — steep from base to rim (monorail recommended); flat around the lake and top garden; the Healing Forest walk down is 10–15 min"
+            },
+            "convenience": {
+              "restroom": "At the base ticket office and the top garden area",
+              "parking": "Free parking at the base"
+            },
+            "smartNotes": {
+              "tip": "Take the monorail **up** and walk **down** — five minutes saved on the climb, and the forest promenade is the nicer direction on foot. Entering the water is prohibited, for safety and to protect the lake.",
+              "photo": "Cheonjuho from the lakeside patio is the iconic frame — emerald water against vertical granite. The Lake Observatory gazebo gives the elevated angle; the shot-holes near the concert hall are the quarry's fingerprint.",
+              "facilities": "Observatory café, small restaurant and snack bar, sculpture park, Stone Culture Exhibition Center, astronomy museum, Sky Garden."
+            },
+            "_poi_meta": {
+              "poi_key": "pocheon_art_valley",
+              "verified": true,
+              "match": "single_poi",
+              "kb_version": "1.30",
+              "verified_date": "2026-08-04"
+            }
           }
         ]
       }
@@ -1563,50 +1451,51 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "01",
             "name": "Sanjeong Lake",
+            "type": "origin",
             "theme": "Mountain Lake"
           },
           {
-            "id": "02",
-            "name": "Herb Island",
-            "theme": "Garden & Lunch"
+            "name": "Idong Galbi Lunch",
+            "type": "meal",
+            "theme": "Pocheon's Dish"
           },
           {
-            "id": "03",
+            "name": "Jaein Falls",
+            "type": "primary",
+            "theme": "UNESCO Geosite"
+          },
+          {
             "name": "Art Valley",
+            "type": "return",
             "theme": "Quarry Finale"
           }
         ],
         "routePhases": [
           {
-            "label": "Morning",
-            "range": "1",
-            "theme": "Lakeside Opener",
-            "bgClass": "bg-sky-50/70",
-            "textClass": "text-sky-700",
-            "dotClass": "bg-sky-500"
+            "phase": "Lake in the morning",
+            "duration": "≈ 2 hours",
+            "description": "Seoul pickups at Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30), the drive to Pocheon, then the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan."
           },
           {
-            "label": "Midday",
-            "range": "2",
-            "theme": "Herb Garden & Lunch",
-            "bgClass": "bg-emerald-50/70",
-            "textClass": "text-emerald-700",
-            "dotClass": "bg-emerald-500"
+            "phase": "Pocheon's own lunch",
+            "duration": "≈ 1 hour",
+            "description": "Idong galbi — the beef short ribs this district is named for — or a mushroom or freshwater-snail table. Lunch is not included."
           },
           {
-            "label": "Afternoon",
-            "range": "3",
-            "theme": "Art Valley Finale",
-            "bgClass": "bg-amber-50/70",
-            "textClass": "text-amber-700",
-            "dotClass": "bg-amber-500"
+            "phase": "Into the geopark",
+            "duration": "≈ 2 hours",
+            "description": "West into Yeoncheon for Jaein Falls: an 80 m suspension bridge, a glass-floored skywalk, and 18 m of water over basalt columns."
+          },
+          {
+            "phase": "Quarry finale",
+            "duration": "≈ 2.5 hours",
+            "description": "Back to Pocheon Art Valley — monorail up to the rim, emerald Cheonjuho below the granite walls, forest path down — then the shortest drive of the day back to Seoul."
           }
         ],
         "routeShapeIntro": {
           "title": "How this day moves",
-          "subtitle": "Pickup at Seoul meeting points around 08:00 to 09:00, then a 1.5-hour drive northeast to Pocheon. Lake first for calm morning light, Herb Island for lunch and the longest stop, Art Valley to close the day. Return to Seoul typically 18:30 to 19:30."
+          "subtitle": "Two Seoul meeting points — Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30 — then about 90 minutes northeast into Pocheon. The lake comes first, while legs are fresh and the morning mist is still on the water. Lunch is Pocheon's own dish, eaten where it comes from. The afternoon crosses into Yeoncheon for Jaein Falls in full daylight — the gorge has no lighting — and closes at Pocheon Art Valley, the last of the three to shut for the day and the closest to Seoul, so the ride home is the shortest of the day. Back at Myeongdong around 18:00 and Hongik University Station around 18:30."
         }
       }
     },
@@ -1617,11 +1506,11 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "Couples and honeymooners wanting a calmer alternative to Nami Island",
-            "Photographers chasing seasonal flower scenes (lavender, pink muhly)",
+            "Travelers who want a calmer alternative to Nami Island",
+            "Couples and photographers chasing water, cliffs and reflections",
             "Adult families and multi-generational groups",
-            "Travelers who want a less crowded Gyeonggi day-trip",
-            "Visitors who enjoy slow walks and garden atmosphere"
+            "Anyone curious about how a landscape was actually made",
+            "Visitors who enjoy slow walks over packed schedules"
           ],
           "routeLogicSections": [
             {
@@ -1631,65 +1520,29 @@
               "iconColor": "text-emerald-600",
               "items": [
                 {
-                  "label": "Less crowded than Nami Island",
-                  "detail": "Gapyeong's Nami-Morning Calm-Petite France loop is increasingly busy. Pocheon's lakes and gardens carry similar nature appeal with significantly lighter crowds."
+                  "label": "Two UNESCO geosites, opposite halves of one story",
+                  "detail": "Jaein Falls and Art Valley both belong to the Hantangang UNESCO Global Geopark, certified in July 2020 — and they show you the two halves of the same ground. At Art Valley you stand inside the ancient granite basement that people cut away by hand; at Jaein Falls you stand in front of the young basalt lava that once flowed over that same basement and cooled into columns. One pit dug by quarrymen, one gorge cut by a river through lava."
                 },
                 {
-                  "label": "Stronger seasonal variety",
-                  "detail": "Spring strawberry farms, summer lavender, autumn pink muhly, and winter ice cliffs each give the route a clearly different identity by month."
+                  "label": "The longest walk comes first",
+                  "detail": "Sanjeong Lake's loop is 3.2 km and completely flat — the day's biggest stretch of walking, taken while legs are fresh. Spring and autumn mornings often lift mist off the water, which is the reason this stop is not saved for later."
                 },
                 {
-                  "label": "Art Valley adds a unique geological angle",
-                  "detail": "The quarry-and-lake setting at Pocheon Art Valley does not exist anywhere else within day-trip distance of Seoul."
-                }
-              ]
-            },
-            {
-              "title": "How the walking load actually feels",
-              "icon": "footprints",
-              "iconBg": "bg-amber-50/80",
-              "iconColor": "text-amber-600",
-              "items": [
-                {
-                  "label": "All three stops are mostly easy",
-                  "detail": "This is one of the most senior-friendly day-trips from Seoul, with paved paths, optional shorter routes, and the monorail option at Art Valley."
+                  "label": "Lunch is the region's own dish, eaten where it's from",
+                  "detail": "Idong galbi — the beef short ribs named for Pocheon's Idong district — is a ten-minute drive from the lake, so the meal costs no extra driving. Mushrooms and freshwater snail are the other local tables, and Idong makgeolli is brewed in the same valley."
                 },
                 {
-                  "label": "Sanjeong Lake offers a half-loop option",
-                  "detail": "The full 4 km perimeter is moderate, but the most photogenic boardwalk section can be done as a 25-minute walk."
-                },
-                {
-                  "label": "Art Valley walking is optional",
-                  "detail": "The monorail handles the elevation gain; walking the trail is for travelers who want extra time among the sculptures."
-                }
-              ]
-            },
-            {
-              "title": "When weather and seasons shift",
-              "icon": "cloud-rain",
-              "iconBg": "bg-slate-50/80",
-              "iconColor": "text-slate-600",
-              "items": [
-                {
-                  "label": "Seasonal substitutions are common",
-                  "detail": "Some operator versions add Bidulginang Cascade in spring/autumn, an apple farm in October, a strawberry farm in winter, or an ice-wall cafe in deep winter."
-                },
-                {
-                  "label": "Wednesday Herb Island closure",
-                  "detail": "Herb Island is closed on some Wednesdays. Operators typically substitute Sanjeong Lake extension or Pocheon Art Valley with extra time."
-                },
-                {
-                  "label": "Winter visit logistics",
-                  "detail": "Duck-sled activities at Sanjeong Lake depend on safe ice conditions, which have become less reliable in recent winters due to warming trends."
+                  "label": "Daylight where it matters, and the shortest ride home",
+                  "detail": "Jaein Falls is an unlit gorge: the suspension bridge, the skywalk and the plunge pool all need afternoon light, so it goes before the finale. Art Valley stays open the latest of the three and sits closest to Seoul, which makes it both a safe last stop and the shortest drive back."
                 }
               ]
             }
           ],
           "lessIdealFor": [
-            "Travelers wanting iconic UNESCO landmarks (try Suwon Hwaseong instead)",
-            "Visitors wanting a high-energy or shopping-heavy day",
+            "Travelers wanting a shopping-heavy or high-energy day",
             "Anyone needing a fully indoor rainy-day plan",
-            "Families with very young children needing playground-style entertainment"
+            "Visitors set on famous single landmarks (try Suwon Hwaseong instead)",
+            "Groups needing step-free access at every stop"
           ]
         }
       }
@@ -1703,26 +1556,27 @@
           {
             "id": "pickup",
             "title": "Pickup & drop-off",
-            "preview": "Seoul meeting points; 08:00 to 09:00 departure",
+            "preview": "Two pickup points: Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30).",
             "content": [
-              "Pickup typically from Hongik University Station (Exit 4), Myeongdong Shinsegae Duty Free, and Dongdaemun History & Culture Park Station (Exit 10)",
-              "Departure typically 07:50 to 09:00 from the first meeting point",
-              "Please arrive at least 10 minutes early at your selected meeting point",
-              "Drop-off at the same Seoul meeting points",
-              "Expected return between 18:30 and 19:30 depending on traffic",
-              "This is a fixed-route group format; travelers must reach the meeting point themselves"
+              "Two pickup points: Hongik University Station Exit 8 (08:00) and Myeongdong Station Exit 2 (08:30).",
+              "Please arrive at your meeting point 10 minutes before the departure time.",
+              "Your guide waits at the station exit with the bus.",
+              "Drop-off reverses the order: Myeongdong around 18:00, Hongik University Station around 18:30.",
+              "Return times are approximate and depend on traffic.",
+              "This is a fixed-route group format; travellers reach the meeting point themselves."
             ]
           },
           {
             "id": "walking",
             "title": "Walking & terrain",
-            "preview": "Easy to moderate; one of the gentler day-trips from Seoul",
+            "preview": "Moderate overall — about 5–6 km across the day, with short demanding sections.",
             "content": [
-              "Sanjeong Lake: easy paved trail with optional half-loop for shorter walking",
-              "Herb Island: easy garden paths with light slopes",
-              "Pocheon Art Valley: moderate uphill walking, but a monorail handles the elevation gain",
-              "Comfortable walking shoes are recommended; the route is partially stroller-friendly",
-              "Restrooms available at all three stops"
+              "Moderate overall — about 5–6 km across the day, with short demanding sections.",
+              "Sanjeong Lake: flat 3.2 km loop, no uphill, 60–90 min.",
+              "Jaein Falls: the 80 m suspension bridge is flat but sways; the boardwalk down toward the pool has stairs both ways.",
+              "Pocheon Art Valley: steep from base to rim — the monorail covers it; the Healing Forest walk down is 10–15 min.",
+              "No hiking and no summit climb is included at any stop.",
+              "Comfortable closed shoes recommended; the gorge boardwalk can be wet."
             ]
           },
           {
@@ -1730,10 +1584,10 @@
             "title": "Weather policy",
             "preview": "Strong seasonal variety; substitutions are common",
             "content": [
-              "Spring (March to June): cherry blossoms, lavender approaching peak, optional strawberry farm",
-              "Summer (June to August): peak lavender at Herb Island in mid-June to July; expect humidity and possible rain",
-              "Autumn (September to November): pink muhly grass, silver grass at Sanjeong, foliage at Art Valley",
-              "Winter (December to February): potential ice activities at Sanjeong (weather-dependent), Herb Island lights still operate, optional ice-wall cafe",
+              "Spring (Mar–May): Mist lifts off Sanjeong Lake on cool mornings, and snowmelt keeps Jaein Falls running strongly. Cheonjuho reads its clearest emerald as the light lengthens.",
+              "Summer (Jun–Aug): The falls are at their most powerful, and the gorge stays several degrees cooler than the city. Heavy monsoon rain can close the Jaein Falls deck sections — the one weather risk on this route.",
+              "Autumn (Sep–Nov): The strongest season here. Silver grass turns the Myeongseongsan slopes silver-white through October, the lake carries the year's best reflections, and Art Valley's granite walls sit inside full foliage.",
+              "Winter (Dec–Feb): Quietest crowds of the year. Cheonjuho can freeze over, the lake hosts its sledding festival, and the falls may partly ice. Daylight is short, so the afternoon runs tighter and the Jaein boardwalk can be slippery.",
               "Light rain: tour usually proceeds; heavy rain may shorten outdoor stops"
             ]
           },
@@ -1752,19 +1606,33 @@
           {
             "id": "included",
             "title": "What's included",
-            "preview": "Guide, transport, and admissions included; lunch pay direct",
+            "preview": "Round-trip transport from central Seoul, licensed English-speaking guide, fuel, tolls and parking.",
             "variant": "included",
             "content": [
-              "Professional English-speaking guide",
-              "Round-trip transport from Seoul (small-group vehicle)",
-              "Sanjeong Lake entry (free)",
-              "Herb Island admission",
-              "Pocheon Art Valley admission and monorail",
-              "Lunch is not included; pay directly at Herb Island restaurants",
-              "Optional workshops at Herb Island (perfume, candle, bread) are not included",
-              "Optional duck boat or duck sled at Sanjeong Lake is not included",
-              "Personal shopping is not included",
-              "Guide gratuities are optional"
+              "Round-trip transport from central Seoul, licensed English-speaking guide, fuel, tolls and parking.",
+              "Free-admission stops: Sanjeong Lake and its loop trail, Jaein Falls, the suspension bridge and skywalk.",
+              "Not included — Pocheon Art Valley admission (≈ ₩6,000 adult) and monorail (≈ ₩5,300 adult round trip), 2026 rates.",
+              "Not included — lunch (≈ ₩15,000–20,000), drinks, personal spending and tips."
+            ]
+          },
+          {
+            "id": "geopark",
+            "title": "About the UNESCO Global Geopark",
+            "preview": "Two of today's stops are designated geosites.",
+            "content": [
+              "The Hantangang UNESCO Global Geopark was certified on 7 July 2020 by UNESCO's 209th Executive Board in Paris, and re-designated in 2024. It covers the Hantangang river basin across Pocheon and Yeoncheon in Gyeonggi-do and Cheorwon in Gangwon-do.",
+              "Jaein Falls is a geosite: an ≈18 m waterfall over basalt columnar joints, with a river-cut cave, potholes and gas tubes readable at its base.",
+              "Pocheon Art Valley is a geosite listed as 'Art Valley and Pocheon Stone': the ancient granite basement rock that the Hantangang lava later flowed across.",
+              "A UNESCO Global Geopark is a geological designation — it is not the same as a UNESCO World Heritage listing."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "Cancellation",
+            "preview": "Free cancellation up to 24 hours before the tour starts.",
+            "content": [
+              "Free cancellation up to 24 hours before the tour starts.",
+              "Same-day cancellations and no-shows are non-refundable."
             ]
           }
         ],
@@ -1780,36 +1648,20 @@
         },
         "seasonalVariations": [
           {
-            "name": "Spring",
-            "icon": "flower",
-            "description": "Cherry blossoms ring Sanjeong Lake in early April; spring greenery returns to Art Valley. Strawberry farms are still in season through June on some operator variants.",
-            "tag": "Strawberry season",
-            "bgClass": "bg-spring",
-            "iconColor": "text-pink-500"
+            "season": "Spring (Mar–May)",
+            "description": "Mist lifts off Sanjeong Lake on cool mornings, and snowmelt keeps Jaein Falls running strongly. Cheonjuho reads its clearest emerald as the light lengthens."
           },
           {
-            "name": "Summer",
-            "icon": "sun",
-            "description": "Peak lavender at Herb Island from mid-June to late July is the strongest single photo window of the year for this route. Expect humidity and possible monsoon rain.",
-            "tag": "Lavender peak",
-            "bgClass": "bg-summer",
-            "iconColor": "text-yellow-500"
+            "season": "Summer (Jun–Aug)",
+            "description": "The falls are at their most powerful, and the gorge stays several degrees cooler than the city. Heavy monsoon rain can close the Jaein Falls deck sections — the one weather risk on this route."
           },
           {
-            "name": "Autumn",
-            "icon": "leaf",
-            "description": "Pink muhly grass at Herb Island and silver grass at Sanjeong Lake make autumn the most photogenic all-round season. Apple-picking variants run mid-October to November.",
-            "tag": "Pink muhly season",
-            "bgClass": "bg-autumn",
-            "iconColor": "text-orange-500"
+            "season": "Autumn (Sep–Nov)",
+            "description": "The strongest season here. Silver grass turns the Myeongseongsan slopes silver-white through October, the lake carries the year's best reflections, and Art Valley's granite walls sit inside full foliage."
           },
           {
-            "name": "Winter",
-            "icon": "snowflake",
-            "description": "Herb Island's evening lights and Santa Village shine; Sanjeong Lake's duck-sled and ice activities depend on safe ice conditions. Ice-wall cafe variants run in deep winter.",
-            "tag": "Lights & ice season",
-            "bgClass": "bg-winter",
-            "iconColor": "text-sky-500"
+            "season": "Winter (Dec–Feb)",
+            "description": "Quietest crowds of the year. Cheonjuho can freeze over, the lake hosts its sledding festival, and the falls may partly ice. Daylight is short, so the afternoon runs tighter and the Jaein boardwalk can be slippery."
           }
         ]
       }
@@ -1883,59 +1735,52 @@
       "props": {
         "staticQuestions": [
           {
-            "id": "q1",
+            "question": "What changed on this tour — didn't it include Herb Island?",
+            "answer": "It did. From August 2026 the route swaps Herb Island for Jaein Falls in Yeoncheon and adds a proper local lunch stop. The reason is that Jaein Falls and Pocheon Art Valley are both geosites of the Hantangang UNESCO Global Geopark, so the day now tells one connected geological story instead of three unrelated stops. If you specifically want Herb Island, contact us before booking — we run it as a separate arrangement."
+          },
+          {
+            "question": "What makes Jaein Falls and Art Valley 'UNESCO'?",
+            "answer": "Both are designated geosites of the Hantangang UNESCO Global Geopark, certified on 7 July 2020 and re-designated in 2024. It is a geopark designation, not a World Heritage listing — it recognises the geology of the Hantangang river basin across Pocheon, Yeoncheon and Cheorwon. Jaein Falls shows the basalt lava and its columnar joints; Art Valley shows the ancient granite basement the lava flowed over."
+          },
+          {
+            "question": "Is the suspension bridge at Jaein Falls scary? Can I skip it?",
+            "answer": "It is 80 m long and 2 m wide and it does sway underfoot by design — that is the appeal for most guests. You can skip it entirely: the rim viewpoint sees the waterfall without crossing, and the boardwalk toward the pool is a separate path. Nobody is left behind if you'd rather stay on solid ground."
+          },
+          {
+            "question": "Is admission included?",
+            "answer": "Sanjeong Lake and Jaein Falls are both free. Pocheon Art Valley is not included — roughly ₩6,000 admission plus about ₩5,300 for an adult monorail round trip in 2026, with lower youth, military and child rates. Lunch is also not included (≈ ₩15,000–20,000). Everything else — transport, guide, tolls and parking — is covered."
+          },
+          {
+            "question": "How much walking is there, and how hard is it?",
+            "answer": "About 5–6 km across the day, most of it the flat 3.2 km lake loop in the morning. Jaein Falls has stairs on the boardwalk down toward the pool. Art Valley is steep from the base to the rim, which the monorail solves — you ride up and walk down through the forest. There is no hiking and no summit climb on this tour."
+          },
+          {
+            "question": "Is lunch included, and what are the options?",
+            "answer": "Not included, about ₩15,000–20,000. Lunch is in Idong, the Pocheon district that gives Idong galbi (beef short ribs) its name. Mushroom dishes and uleong — freshwater snail — are the other local specialities, and Idong makgeolli is brewed in the same valley. Tell your guide if you need vegetarian options and they'll point you to the right table."
+          },
+          {
             "question": "How is this different from a Nami Island day-trip?",
-            "answer": "Both are Gyeonggi day-trips from Seoul, but Pocheon trades Nami's K-drama crowds for gardens and a quarry park. You get more space, less queueing for ferries, and a quieter walking pace. Photographers and travelers wanting calmer scenery prefer Pocheon. First-time Korea visitors hunting Nami's metasequoia path or Winter Sonata filming locations should still pick the Nami tour."
+            "answer": "Nami Island is a single, very popular destination reached by ferry. This route is three genuinely different landscapes — a century-old reservoir, a basalt waterfall gorge and a flooded granite quarry — in a part of Gyeonggi that sees a fraction of Nami's crowds, with a UNESCO Global Geopark thread running through the afternoon."
           },
           {
-            "id": "q2",
-            "question": "When does the lavender bloom at Herb Island?",
-            "answer": "Mid-June to late July is the peak window — roughly four to six weeks of full bloom. Pink muhly grass replaces lavender from late September through October. Outside these windows the herb gardens still display 140+ herb varieties year-round and the Mediterranean architecture is photogenic in any season."
+            "question": "Is this worthwhile in winter?",
+            "answer": "Yes, with trade-offs. Cheonjuho freezing over at Art Valley is one of the site's best sights, the lake hosts a sledding festival, and every stop is at its quietest. Against that: daylight is short, so the afternoon runs tighter, and the Jaein Falls boardwalk can be icy. Dress properly and it's a strong winter day."
           },
           {
-            "id": "q3",
-            "question": "What if Herb Island is closed on a Wednesday?",
-            "answer": "Herb Island closes for maintenance on some Wednesdays — not all. When this happens the operator typically extends time at Sanjeong Lake, adds Pocheon Art Valley extra time, or substitutes Bidulginang Cascade. If your travel date is a Wednesday, confirm operating status at booking; the operator will notify if a substitution is required."
+            "question": "What happens if it rains?",
+            "answer": "The tour runs. The lake loop and Art Valley are fine with an umbrella, and rain actually strengthens Jaein Falls. The one real exception is heavy summer rain, when the deck sections at the gorge can be closed for safety — in that case we extend the other stops rather than cancel the day."
           },
           {
-            "id": "q4",
-            "question": "How does the monorail at Pocheon Art Valley work?",
-            "answer": "The monorail is optional and runs from the entrance up to the quarry observatory. One-way fare is 3,500 KRW paid on-site (not included in the tour price); round-trip is 4,500 KRW. The walking alternative is a 10-15 minute paved climb. Most travelers ride up and walk down to save time and money."
+            "question": "Where do you pick up and drop off?",
+            "answer": "Two Seoul meeting points: Hongik University Station Exit 8 at 08:00 and Myeongdong Station Exit 2 at 08:30. Please arrive 10 minutes before your departure time — the guide waits at the exit with the bus. The return reverses the order: Myeongdong around 18:00 and Hongik University Station around 18:30, depending on traffic."
           },
           {
-            "id": "q5",
-            "question": "Is this tour worthwhile in winter?",
-            "answer": "Yes — winter is one of the strongest seasons here. Sanjeong Lake offers duck-sleds and ice-fishing when the lake freezes (typically late December through February). Herb Island runs an evening light festival and the year-round Santa Village. Pocheon Art Valley's Cheonjuho Lake often partially freezes for striking emerald-and-ice photos. Layered winter clothing is essential."
+            "question": "Is this suitable for children or older adults?",
+            "answer": "For most, yes. The lake loop is flat and the monorail removes Art Valley's climb. The two things to weigh are the Jaein Falls boardwalk stairs and the swaying suspension bridge — both are optional, and the rim viewpoint gives the waterfall to anyone who'd rather not. It is a 10-hour day, so it suits active older travellers better than anyone needing frequent rest."
           },
           {
-            "id": "q6",
-            "question": "How long is the Sanjeong Lake walk?",
-            "answer": "The full 4 km perimeter trail is mostly flat and takes about 75 minutes at a relaxed pace. There is also a half-loop option of about 2 km (25-30 minutes) that hits the most photogenic boardwalk section if you'd rather save energy for Herb Island and Pocheon Art Valley later in the day."
-          },
-          {
-            "id": "first-time",
-            "question": "Is this a good choice for first-time visitors to Pocheon (Seoul Day Trip)?",
-            "answer": "It works for first-timers, though it's more of a curated route than a greatest-hits loop."
-          },
-          {
-            "id": "walking",
-            "question": "Is the walking difficult?",
-            "answer": "Mostly easy walking throughout. Sanjeong Lake is a flat lakeside path (full loop 4 km, half-loop 2 km option). Herb Island is flat garden paths with light slopes. Pocheon Art Valley is the most active section: 10-15 minutes uphill walk to the quarry observatory (or take the monorail), plus optional spiral stairs at the Sky Park (not stroller-friendly). The lake area itself is flat."
-          },
-          {
-            "id": "family",
-            "question": "Is this tour suitable for families?",
-            "answer": "Yes — comfortable for most families. Sanjeong Lake's pedal boats and amusement zone are kid favorites. Herb Island has perfume-making and herb-bread workshops. Pocheon Art Valley's monorail is a hit with children. The Sky Park spiral stairs are not stroller-friendly; otherwise the route is one of the easier Seoul day-trips for families."
-          },
-          {
-            "id": "seniors",
-            "question": "Can older adults join comfortably?",
-            "answer": "Yes — pacing and walking are comfortable for active seniors. Sanjeong Lake offers a flat lakeside path with a half-loop option. Herb Island is paved garden paths with seating throughout. Pocheon Art Valley's monorail (4,500 KRW one-way) skips the uphill walk. Less ideal if wheelchair access is required at every stop — Sky Park spiral stairs and some quarry paths are not accessible."
-          },
-          {
-            "id": "children",
-            "question": "What's the recommended minimum age?",
-            "answer": "Around age 6 — the day involves a long drive each way, the Pocheon Art Valley monorail or 10-15 minute walk-up, and the Sky Park spiral stairs (not stroller-friendly). Younger children can join with carriers; bring snacks and dress for cooler mountain temperatures. Sanjeong Lake's seasonal duck-pedal boats and Herb Island's Santa Village are the strongest kid moments."
+            "question": "Can I do this by public transport instead?",
+            "answer": "It would be difficult. Sanjeong Lake, Jaein Falls and Art Valley sit in three different districts across two counties, and buses to Art Valley run only every couple of hours. Doing all three in a day without a vehicle is not realistic — which is most of the reason this route exists as a tour."
           }
         ]
       }
@@ -1985,16 +1830,14 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.",
+        "note": "Select your date and group size to check live availability and complete your booking.",
         "price": {
-          "amountLabel": "55.80",
-          "originalPriceUsd": 62,
-          "salePriceUsd": 55.8,
-          "discountPercent": 10,
+          "amountLabel": "54",
+          "salePriceUsd": 54,
           "currency": "USD",
           "per": "person",
           "priceSource": "getyourguide_t1168134",
-          "priceNote": "Original price 62 USD ; AtoC Korea sale price is a flat 10% discount."
+          "priceNote": "AtoC Korea sale price ~21% lower than standard listings."
         }
       }
     }
@@ -2002,7 +1845,7 @@
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
-    "last_modified": "2026-04-29",
+    "last_modified": "2026-08-04",
     "version_history": [
       "v11",
       "v12",
@@ -2146,7 +1989,8 @@
             }
           }
         }
-      }
+      },
+      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet."
     }
   }
 }
