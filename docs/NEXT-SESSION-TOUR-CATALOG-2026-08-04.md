@@ -1,9 +1,49 @@
-# 다음 세션 부트스트랩 — 투어 카탈로그 개편 (2026-08-04)
+# 투어 카탈로그 개편 (2026-08-04) — **종결**
 
-> **이 문서 한 줄 요약:** 레포 쪽은 전부 끝나 main 에 머지됐다(PR #711 · #714 · #717).
-> **남은 건 DB 반쪽 하나뿐** — `supabase/pending-db-apply/2026-08-04-0{1,2,3,4}.sql` 을
-> 순서대로 적용하고 `import-match-v18.mjs --single` 을 4슬러그에 돌리는 것.
-> 이 세션(클라우드)은 소비자 Supabase 프로젝트에 MCP 권한이 없어 SQL 을 스테이징만 했다.
+> ## ✅ DB 반쪽 적용 완료 (2026-08-04)
+>
+> `2026-08-04-0{1..7}.sql` 7개 전부 라이브 적용 + `import-match-v18 --single` 6슬러그.
+> 검증 21항목 전부 통과(아래 §2′). 파일은 `pending-db-apply/applied/` 로 이동했고
+> **pending 루트에는 2026-06-24 잔여 2건만 남았다**(이 트랙과 무관).
+> 이 문서의 나머지는 그 작업의 기록이다 — 지시대로 다시 실행할 것은 없다.
+
+---
+
+## 0′. 적용하며 드러난 것 (🔴 다음 배치가 이걸 먼저 읽어라)
+
+**적용은 첫 시도에 깨졌다.** 두 번째 파일에서:
+
+```
+column "badges" is of type text[] but expression is of type jsonb
+```
+
+`tour_product_pages.badges` 는 `text[]` 인데 `tours.badges` 는 **같은 이름의 jsonb** 다.
+생성기 4개가 두 곳에 같은 `jsonb()` 헬퍼를 썼고, 페이지 쪽만 틀렸다.
+
+🔴 **이건 새 버그가 아니다 — 2026-06-24 배치에서 똑같이 터졌던 것이다.**
+그때는 **적용 스크립트가 메모리에서 SQL 을 고쳐서** 넘어갔고 **생성기는 안 고쳤다.**
+그래서 두 달 뒤 같은 생성기가 같은 SQL 을 또 뱉었다.
+
+**이번엔 생성기를 고쳤다** — `textArray()` 헬퍼 추가 + 페이지 컨텍스트 5곳 교체
+(`gen-jeju-east-reorder` · `gen-busan-smallgroup` ×2 · `gen-pocheon-geopark` ·
+`gen-gyeongju-recourse`) → 재생성 → diff 는 정확히 badges 32줄(파일×로케일)만 바뀌었다.
+
+**그리고 게이트를 붙였다** — `__tests__/audit/pendingSqlColumnTypes.test.ts` +
+스냅샷 `data/db-column-types.json`. 컬럼↔값을 위치로 짝지어 jsonb↔text[] 뒤집힘을 잡는다.
+게이트를 처음 돌리자마자 레거시 1건(`applied/2026-06-24-07-jeju-eastern-...sql`)을
+찾아냈다 — 위 기록이 정확했다는 증거다(그 파일은 `KNOWN_LEGACY` 에 이유와 함께 등록).
+
+> **교훈:** 기존 `schemaDrift` 게이트는 **테이블 이름만** 본다. 컬럼 타입은 아무도
+> 안 봤고, 그래서 같은 실패가 두 번 통과했다. **적용 시점의 우회는 수정이 아니다 —
+> 생성기를 고치지 않으면 반드시 돌아온다.**
+
+### 적용 경로 (psql 없는 워크트리에서)
+
+이 워크트리엔 `psql` 도 DB 연결 문자열도 없었다. 스크립트가 안내하는 **B 경로**를 썼다:
+임시 `public._atoc_pending_exec(text[])`(SECURITY INVOKER, `service_role` 전용 ACL)를
+만들고, 인용부호를 아는 로컬 스플리터로 파일을 문장 배열로 보내 **파일당 한 트랜잭션**으로
+실행한 뒤 헬퍼를 즉시 DROP. 그다음 `npm run tours:apply-2026-08-04 -- --skip-sql` 로
+match 동기화 + 검증만 마저 돌렸다. (SQL 본문이 컨텍스트를 통과하지 않아 MCP 인라인 한계도 피한다.)
 
 ---
 
@@ -64,11 +104,30 @@ npm run tours:apply-2026-08-04                # 실제 적용
 - 수국 2종은 **모든 소비자 표면에서 이미 사라짐** — 블록리스트가 앱 레이어에서 거르므로 DB 무관.
 - 제주 3종 + 부산 신규는 **정적 카탈로그**(`/tours/list`)와 **상세 페이지**(`/tour-product/...`)에 노출.
 
-**DB 미적용이라 아직 안 되는 것:**
-- `/api/tours` 기반 목록·홈 피드(`tours.is_active` 를 읽음)
-- 챗봇/매처 추천(`match_tours` 행 부재 또는 구 코스)
-- `/tour/[id]/checkout` 결제 진입(신규 부산 상품은 `tours` 행 자체가 없음)
-- → **위 원커맨드가 이 넷을 한 번에 닫는다.**
+**~~DB 미적용이라 아직 안 되는 것~~ → ✅ 전부 닫혔다 (2026-08-04):**
+- ~~`/api/tours` 기반 목록·홈 피드~~ · ~~챗봇/매처 추천~~ · ~~`/tour/[id]/checkout` 결제 진입~~
+
+### §2′ 적용 후 검증 결과 (21/21 통과)
+
+| 항목 | 결과 |
+|---|---|
+| 수국 2종 `is_active=false` | ✓ ✓ |
+| 제주 동/남/서남 `is_active=true` | ✓ ✓ ✓ |
+| 부산 신규 `is_active=true` · `tours.price=59` | ✓ ✓ |
+| 부산 offers 2행 | ✓ 기본 $59 / 캡슐 포함 $79 |
+| 페이지 발행 로케일 | 남·서남 6 · 부산 콘텐츠 6 + 스테이징 4 |
+| `match_tours` 6슬러그 | ✓ ×6 (경주·포천 포함 — 구 코스 잔존 해소) |
+
+**두 가지 관찰(결함 아님, 기록용):**
+1. **제주 동부는 9로케일이 발행됐다**(de/fr/it 포함). 파일 01 의 무조건
+   `UPDATE tour_product_pages SET is_published=true WHERE slug IN (…)` 가 i18n 트랙이
+   스테이징해 둔 행까지 켠 것이다. **누수는 아니다** — 확인함:
+   `TOUR_PRODUCT_FALLBACK_URL_LOCALES = ["fr","de","it","ru"]`
+   (`app/(marketing)/tour-product/[slug]/tourProductPageBody.tsx:53`) 가 그대로라
+   손님은 여전히 EN 을 본다. 오픈은 여전히 사장님 결정이다.
+2. **경주는 가시성 무변경**을 적용 전후 대조로 확인했다 — `is_active=false` ·
+   `is_featured=false` · `price=39.00` · 6로케일 전부 `is_published=false`.
+   07 은 상품이 **무엇을 말하는지만** 고쳤다.
 
 역방향 노출 위험은 없다: 수국은 앱에서 이미 숨겨져 있고, 신규/재오픈 상품은 DB 가 붙기 전까지
 정적 표면에만 보인다.

@@ -30,6 +30,13 @@ const en = bundle("en");
 
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const jsonb = (v) => `${q(JSON.stringify(v))}::jsonb`;
+// tour_product_pages.badges is text[] — only tours.badges is jsonb. Feeding a
+// JSON array into it fails the whole transaction with "column badges is of type
+// text[] but expression is of type jsonb". This bit the 2026-06-24 batch and then
+// bit the 2026-08-04 batch again because only the applied SQL was patched, never
+// the generator. Gate: __tests__/audit/pendingSqlColumnTypes.test.ts.
+const textArray = (v) =>
+  Array.isArray(v) && v.length ? `ARRAY[${v.map(q).join(", ")}]::text[]` : `${q("{}")}::text[]`;
 const num = (v) => (v === null || v === undefined ? "NULL" : Number(v));
 
 const PRICE_USD = Number(en.price.salePriceUsd); // 59 — Sky Capsule ticket excluded
@@ -156,7 +163,7 @@ for (const loc of LOCALES) {
   out += `  ${num(lcc.stopsCount || 8)},\n`;
   out += `  0,\n`;
   out += `  0,\n`;
-  out += `  ${jsonb(lcc.badges || cc.badges || [])},\n`;
+  out += `  ${textArray(lcc.badges || cc.badges || [])},\n`;
   out += `  ${q(b.hero?.imageUrl || lcc.heroImage || "")},\n`;
   out += `  ${q(lcc.thumbnail || lcc.heroImage || "")},\n`;
   out += `  ${q(lcc.shortCardDescription || "")},\n`;
@@ -260,7 +267,7 @@ if (present.length) {
     out4 += `  ${num(lcc.stopsCount || 8)},\n`;
     out4 += `  0,\n`;
     out4 += `  0,\n`;
-    out4 += `  ${jsonb(lcc.badges || cc.badges || [])},\n`;
+    out4 += `  ${textArray(lcc.badges || cc.badges || [])},\n`;
     out4 += `  ${q(b.hero?.imageUrl || lcc.heroImage || "")},\n`;
     out4 += `  ${q(lcc.thumbnail || lcc.heroImage || "")},\n`;
     out4 += `  ${q(lcc.shortCardDescription || "")},\n`;
