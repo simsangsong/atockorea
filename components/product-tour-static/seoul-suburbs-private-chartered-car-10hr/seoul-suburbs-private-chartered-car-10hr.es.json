@@ -494,7 +494,7 @@
       "preview": "Recogida gratuita en hotel en el centro de Seúl; reunirse en el vestíbulo 10 minutos antes",
       "content": [
         "La recogida gratuita en hotel está incluida para las zonas céntricas de Seúl (Myeongdong, Hongdae, Dongdaemun, Insadong, Itaewon, etc.)",
-        "Los alojamientos fuera del centro de Seúl pueden incurrir en una tarifa adicional de recogida > **Note:** Lines 3 and 11 (`bg-amber-50/80` and `bg-slate-50/80`) are Tailwind CSS utility classes — they are code values, not natural language, so they are left unchanged.",
+        "Los alojamientos fuera del centro de Seúl pueden incurrir en una tarifa adicional de recogida",
         "Por favor, espere en el vestíbulo del hotel 10 minutos antes de la hora de salida acordada",
         "El regreso es a su hotel en Seúl o a cualquier lugar del centro de Seúl que prefiera",
         "El recogido o la entrega en el Aeropuerto de Incheon está disponible con un cargo adicional de 100.000 KRW por traslado de ida",
@@ -753,7 +753,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "184",
       "currency": "USD",
@@ -1771,7 +1771,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

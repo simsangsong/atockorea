@@ -592,7 +592,7 @@
   ],
   "routePhases": [
     {
-      "phase": "南怡岛开篇 > **Notes:** File paths (8–10) are left unchanged as they are technical strings. \"Reset\" (20) is rendered as **休整** (rest/recharge) to fit travel-itinerary context. \"Morning Calm\" (21) is rendered as **晨静**, aligning with the established Korean attraction name 晨静树木园 (Garden of Morning Calm).",
+      "phase": "南怡岛开篇",
       "duration": "第1站",
       "description": "上午：南怡岛开篇"
     },
@@ -852,7 +852,7 @@
     {
       "timing": "游览当天早晨",
       "title": "当日路线说明",
-      "detail": "根据实时路况的晨间行程简报 > **Notes:** Items 7, 10, and 13 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are Tailwind CSS utility class names — technical strings that are kept as-is since they are not natural-language content."
+      "detail": "根据实时路况的晨间行程简报"
     },
     {
       "timing": "游览中",
@@ -956,7 +956,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时通过 Supabase / 环境变量解析，不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "194",
       "currency": "USD",
@@ -2156,7 +2156,7 @@
       "section_html_id": null,
       "component": "行程置顶预订栏（TourStickyBookingBar）",
       "props": {
-        "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中动态解析，不属于静态 JSONB 的一部分。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

@@ -43,6 +43,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "Gita di un giorno da Seoul",
+        "Lun · gio · sab",
         "Geoparco UNESCO",
         "Cascata",
         "Passeggiata sul lago",
@@ -51,7 +52,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "Una gita di un giorno da Seoul più tranquilla, costruita sulla geologia vera. Percorra l'anello pianeggiante di 3,2 km attorno al lago Sanjeong ai piedi del monte Myeongseongsan, assaggi l'Idong galbi, il piatto di Pocheon, poi attraversi un ponte sospeso di 80 m per trovarsi di fronte alla cascata di Jaein mentre precipita per 18 m su colonne basaltiche, e concluda dentro la cava di granito del Pocheon Art Valley, dove l'acqua sorgiva ha riempito lo scavo formando il lago Cheonjuho color smeraldo. La cascata di Jaein e Art Valley sono entrambe geositi del Geoparco mondiale UNESCO dell'Hantangang: lo stesso paesaggio visto dalle sue due metà opposte."
+      "shortCardDescription": "Una gita di un giorno da Seoul più tranquilla, costruita sulla geologia vera. Percorra l'anello pianeggiante di 3,2 km attorno al lago Sanjeong ai piedi del monte Myeongseongsan, assaggi l'Idong galbi, il piatto di Pocheon, poi attraversi un ponte sospeso di 80 m per trovarsi di fronte alla cascata di Jaein mentre precipita per 18 m su colonne basaltiche, e concluda dentro la cava di granito del Pocheon Art Valley, dove l'acqua sorgiva ha riempito lo scavo formando il lago Cheonjuho color smeraldo. La cascata di Jaein e Art Valley sono entrambe geositi del Geoparco mondiale UNESCO dell'Hantangang: lo stesso paesaggio visto dalle sue due metà opposte. Partenze il lunedì, il giovedì e il sabato."
     },
     "price": {
       "amountLabel": "54"

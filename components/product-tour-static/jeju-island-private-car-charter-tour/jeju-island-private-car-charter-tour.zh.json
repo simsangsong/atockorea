@@ -747,7 +747,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "254",
       "currency": "USD",
@@ -1675,7 +1675,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar（旅游固定预订栏）",
       "props": {
-        "note": "`checkout_tour_id` 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。 --- **翻译说明：** - **第2、3条**：组件名称（`TourReviewsSection`、`TourStickyBookingBar`）作为代码标识符保留原文，括号内附中文释义。 - **第4条**：技术术语（`checkout_tour_id`、`Supabase`、`JSONB`）保留原文，其余内容自然译出。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

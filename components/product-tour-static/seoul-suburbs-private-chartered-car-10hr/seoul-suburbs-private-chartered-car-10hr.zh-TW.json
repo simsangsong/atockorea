@@ -753,7 +753,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 於執行階段從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
+    "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
       "amountLabel": "184",
       "currency": "USD",
@@ -1771,7 +1771,7 @@
       "section_html_id": null,
       "component": "旅遊行程固定預訂欄",
       "props": {
-        "note": "checkout_tour_id 於執行時從 Supabase / env 解析；不屬於靜態 JSONB 的一部分。",
+        "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

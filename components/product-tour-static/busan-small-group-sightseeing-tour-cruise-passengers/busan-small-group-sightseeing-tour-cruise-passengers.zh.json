@@ -1097,7 +1097,7 @@
     {
       "timing": "游览结束后",
       "title": "游后支持服务",
-      "detail": "后续跟进及个性化推荐建议 > **说明：** 第6、9、12行为CSS样式类名（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`），属于技术代码字符串，保持原文不作翻译。"
+      "detail": "后续跟进及个性化推荐建议"
     }
   ],
   "staticQuestions": [
@@ -1211,7 +1211,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "`checkout_tour_id` 在运行时从 Supabase / 环境变量解析；不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "84",
       "currency": "USD",
@@ -2400,7 +2400,7 @@
       "section_html_id": null,
       "component": "游览页面悬浮预订栏",
       "props": {
-        "note": "checkout_tour_id 在运行时从 Supabase / 环境变量解析，不属于静态 JSONB 的内容。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "58.50",
           "originalPriceUsd": 65,

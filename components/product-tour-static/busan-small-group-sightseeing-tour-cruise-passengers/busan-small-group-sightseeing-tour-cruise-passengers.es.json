@@ -449,7 +449,7 @@
       "timeUsed": [
         "Bajada del autocar + caminata hasta el Pabellón Memorial (~5 min)",
         "Documental de 12 minutos sobre la Guerra de Corea + introducción (~15 min)",
-        "Área Simbólica (22 banderas) + Muro del Recuerdo (~20 min) > **Notes:** Lines 18–21 are file paths and have been left unchanged. Numeric durations (lines 12, 22) and proper nouns/place names (Daeungjeon, Haesu Gwaneum, Daeungjeon, AtoC Korea) are preserved as-is per travel content convention.",
+        "Área Simbólica (22 banderas) + Muro del Recuerdo (~20 min)",
         "Recorrido a pie por el recinto + regreso al autocar (~20 min)"
       ],
       "whyOnRoute": "El **contrapeso moral** de la ruta — la identidad de Busán es inseparable de su papel como la única ciudad coreana que el Ejército de Corea del Norte nunca capturó durante la guerra (la población aumentó de 880.000 a 1,4 millones a medida que los refugiados huían hacia el sur), y tanto las chabolas de refugiados en las laderas de Gamcheon como la cultura de las 'ajumma' vendedoras de pescado de Jagalchi se relacionan directamente con esta misma narrativa de la Guerra de Corea. Visitar el UNMCK antes de Gamcheon y Jagalchi proporciona a los visitantes el contexto histórico que convierte el resto de las paradas del día en algo más que simples oportunidades para fotografías. La llegada a las 14:15 también queda holgadamente dentro del cierre vespertino de las 18:00 en may-sep (o las 17:00 en oct-abr).",
@@ -1145,7 +1145,7 @@
     {
       "timing": "Tras el tour",
       "title": "Asistencia posvuelta",
-      "detail": "Seguimiento y recomendaciones > **Notas:** Las líneas **6**, **9** y **12** (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) son clases CSS de Tailwind y se han mantenido sin cambios, ya que son código técnico y no texto traducible."
+      "detail": "Seguimiento y recomendaciones"
     }
   ],
   "staticQuestions": [
@@ -1259,7 +1259,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "84",
       "currency": "USD",
@@ -2760,7 +2760,7 @@
       "section_html_id": null,
       "component": "Barra de Reserva Fija del Tour",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "58.50",
           "originalPriceUsd": 65,

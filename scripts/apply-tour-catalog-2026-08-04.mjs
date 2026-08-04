@@ -9,7 +9,7 @@
  *
  * Steps
  *   0) Preflight — env, SQL files, 10 static bundles parse & agree on price
- *   1) Apply supabase/pending-db-apply/2026-08-04-0{1..6}.sql IN FILENAME ORDER
+ *   1) Apply supabase/pending-db-apply/2026-08-04-0{1..7}.sql IN FILENAME ORDER
  *      (needs `psql` + a Postgres connection string; see --skip-sql otherwise)
  *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 5
  *      (the Pocheon pass also imports the new jaein_falls POI into match_pois)
@@ -47,6 +47,7 @@ const SQL_FILES = [
   "2026-08-04-04-busan-smallgroup-staged-locales.sql",
   "2026-08-04-05-pocheon-geopark-recourse.sql",
   "2026-08-04-06-pocheon-geopark-staged-locales.sql",
+  "2026-08-04-07-guest-copy-repair.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";

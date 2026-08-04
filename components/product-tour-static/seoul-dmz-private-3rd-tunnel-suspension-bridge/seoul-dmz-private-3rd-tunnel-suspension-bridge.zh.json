@@ -869,7 +869,7 @@
     {
       "icon": "users",
       "title": "精选团队规模",
-      "description": "专为该路线量身定制的规模 > **Notes:** Lines 20 and 23 are CSS utility class strings — left untranslated as-is. \"Dora Observatory\" rendered as **都拉展望台** (standard transliteration); \"Gamaksan\" rendered as **甘岳山** (phonetic Hanja approximation); \"DMZ\" rendered as **非军事区** (standard Chinese term).",
+      "description": "专为该路线量身定制的规模",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -997,7 +997,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时从 Supabase / env 解析，不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -2276,7 +2276,7 @@
       "section_html_id": null,
       "component": "行程固定预订栏（TourStickyBookingBar）",
       "props": {
-        "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析，不属于静态 JSONB 的组成部分。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
@@ -2501,7 +2501,7 @@
         }
       },
       {
-        "paxLabel": "14–15人 **Notes:** - **flat** → 统一价 (flat/fixed rate, common in travel pricing contexts) - **pax** → 人 (standard travel industry term for passengers/persons, rendered as 人 in Chinese)",
+        "paxLabel": "14–15人",
         "paxMin": 14,
         "paxMax": 15,
         "prices": {

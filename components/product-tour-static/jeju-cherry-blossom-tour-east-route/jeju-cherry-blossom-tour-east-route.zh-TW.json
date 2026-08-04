@@ -852,7 +852,7 @@
     {
       "name": "鹿山路",
       "type": "primary",
-      "theme": "田園花海 --- **Notes:** - **1–5**: File paths are left unchanged (technical strings, not translated). - **城山日出峰**: Standard Traditional Chinese rendering of Seongsan Ilchulbong. - **海女** (haenyeo): The classic Chinese term for Jeju's traditional female divers. - **田農路 / 鹿山路**: Hanja-based renderings of the Korean road names. - **都市花海 / 田園花海**: Natural travel-copy phrasing for \"Urban/Country Bloom.\""
+      "theme": "田園花海"
     },
     {
       "name": "午餐",
@@ -1221,7 +1221,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 於執行階段從 Supabase／環境變數中解析，不屬於靜態 JSONB 的一部分。",
+    "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
       "amountLabel": "",
       "originalPriceUsd": null,
@@ -2402,7 +2402,7 @@
       "section_html_id": null,
       "component": "行程預訂固定欄",
       "props": {
-        "note": "checkout_tour_id 於執行時從 Supabase／環境變數動態解析，不屬於靜態 JSONB 的一部分。",
+        "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

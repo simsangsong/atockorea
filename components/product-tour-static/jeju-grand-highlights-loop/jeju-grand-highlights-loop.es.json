@@ -1220,7 +1220,7 @@
     },
     {
       "timing": "Después del recorrido",
-      "title": "Asistencia posterior al recorrido > **Note:** Items **7**, **10**, and **13** (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are CSS utility class names and have been left untranslated as they are technical identifiers, not natural language.",
+      "title": "Asistencia posterior al recorrido",
       "detail": "El soporte de seguimiento y las recomendaciones adicionales están disponibles si es necesario."
     }
   ],
@@ -1295,7 +1295,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "80",
       "salePriceUsd": 80,
@@ -2973,7 +2973,7 @@
       "id": "sticky_booking",
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "100",
           "originalPriceUsd": 112,

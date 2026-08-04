@@ -666,7 +666,7 @@
       "detail": "附行程摘要的預訂確認"
     },
     {
-      "timing": "出發前12小時 > **Notes:** Items 20, 23, and 26 (`bg-emerald-50/80`, `bg-sky-50/80`, `bg-amber-50/80`) are CSS class names and have been left untranslated. Jeju place names follow standard Traditional Chinese travel conventions: 狹才 (Hyeopjae), 咸德 (Hamdeok), 漢拏山 (Hallasan), 城山 (Seongsan).",
+      "timing": "出發前12小時",
       "title": "12小時提醒",
       "detail": "天氣更新及路線調整"
     },
@@ -747,7 +747,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 於執行時從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
+    "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
       "amountLabel": "254",
       "currency": "USD",
@@ -1675,7 +1675,7 @@
       "section_html_id": null,
       "component": "**行程固定預訂列**（TourStickyBookingBar）",
       "props": {
-        "note": "**`checkout_tour_id` 於執行期間從 Supabase／環境變數動態解析；不屬於靜態 JSONB 的一部分。** --- **翻譯說明：** - 第 1 條：「active seniors」譯為「活力充沛的銀髮族」，符合旅遊內容語境。 - 第 2、3 條：為 UI 元件名稱，保留原始識別碼並附上中文語意譯名。 - 第 4 條：技術術語（`checkout_tour_id`、Supabase、JSONB）維持原文不譯；「resolves at runtime」譯為「於執行期間動態解析」。",
+        "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

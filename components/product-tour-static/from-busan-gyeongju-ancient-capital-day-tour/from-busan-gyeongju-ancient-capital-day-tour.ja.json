@@ -1538,7 +1538,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。",
+    "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
     "price": {
       "amountLabel": "39",
       "currency": "USD",
@@ -3022,7 +3022,7 @@
       "section_html_id": null,
       "component": "ツアー固定予約バー",
       "props": {
-        "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されるため、静的JSONBには含まれません。",
+        "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

@@ -28,6 +28,7 @@
     "reviewCount": 0,
     "badges": [
       "서울 근교 당일치기",
+      "월·목·토 출발",
       "유네스코 세계지질공원",
       "폭포",
       "호수 산책",
@@ -36,7 +37,7 @@
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
-    "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다.",
+    "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발.",
     "tags": [
       "서울 근교 당일치기",
       "포천",
@@ -494,10 +495,21 @@
       "쇼핑 위주이거나 활동량 높은 하루를 원하는 분",
       "비 오는 날 완전 실내 일정이 필요한 분",
       "유명 단일 랜드마크가 목적인 분 (수원 화성을 권해 드립니다)",
-      "모든 스팟에서 계단 없는 접근이 필요한 일행"
+      "모든 스팟에서 계단 없는 접근이 필요한 일행",
+      "월·목·토에 여행할 수 없는 분 (출발 요일이 이 세 날뿐입니다)"
     ]
   },
   "practicalAccordionItems": [
+    {
+      "id": "departure-days",
+      "title": "출발 요일",
+      "preview": "이 투어는 **월요일·목요일·토요일에만 출발합니다** — 세 요일 중 하루로 예약해 주세요.",
+      "content": [
+        "이 투어는 **월요일·목요일·토요일에만 출발합니다** — 세 요일 중 하루로 예약해 주세요.",
+        "세 출발일 모두 코스와 시간, 두 곳의 픽업 장소가 동일합니다.",
+        "여행 일정에 월·목·토가 없다면 다른 요일로 옮길 수 없습니다. 개인 전세 차량이 아니라 정해진 일정으로 운행하는 소규모 그룹 투어이기 때문입니다."
+      ]
+    },
     {
       "id": "pickup",
       "title": "픽업 및 드롭오프",
@@ -670,6 +682,10 @@
       "answer": "맞습니다. 2026년 8월부터 허브아일랜드 대신 연천의 재인폭포가 들어가고, 제대로 된 현지 점심 스팟이 추가됐습니다. 이유는 재인폭포와 포천 아트밸리가 모두 한탄강 유네스코 세계지질공원의 지질명소이기 때문입니다. 서로 무관한 세 곳을 도는 대신, 하루가 하나로 이어지는 지질 이야기를 들려주게 됐습니다. 허브아일랜드를 꼭 원하신다면 예약 전에 문의해 주세요. 별도 일정으로 진행해 드립니다."
     },
     {
+      "question": "이 투어는 무슨 요일에 운행하나요?",
+      "answer": "**월요일, 목요일, 토요일에만** 운행합니다. 세 요일 모두 일정이 같으니 여행 계획에 맞는 날로 예약하시면 됩니다. 그 외 요일에는 이 상품을 이용하실 수 없습니다."
+    },
+    {
       "question": "재인폭포와 아트밸리가 '유네스코'인 이유는 무엇인가요?",
       "answer": "두 곳 모두 한탄강 유네스코 세계지질공원의 지질명소로 지정돼 있으며, 2020년 7월 7일 인증되고 2024년 재인증됐습니다. 이는 세계지질공원 지정이지 세계유산 등재가 아닙니다. 포천·연천·철원에 걸친 한탄강 유역의 지질학적 가치를 인정한 것입니다. 재인폭포는 현무암 용암과 그 주상절리를, 아트밸리는 그 용암이 흘러간 오래된 화강암 기반암을 보여 줍니다."
     },
@@ -788,7 +804,7 @@
     "notes": "미팅 포인트는 두 곳입니다. 08:00 홍대입구역 8번 출구, 08:30 명동역 2번 출구이며, 출발 시각 10분 전까지 도착해 주시기 바랍니다. 귀경은 명동 18:00쯤, 이어서 홍대입구역 18:30쯤이며 정확한 시각은 교통 상황에 따라 달라집니다."
   },
   "matching_profile": {
-    "profile_version": 7,
+    "profile_version": 8,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -949,12 +965,6 @@
     "national_tourist_site_1977_designation_fit": 1,
     "myeongseongsan_silver_grass_autumn_fit": 1,
     "sanjeong_lake_sledding_festival_winter_fit": 1,
-    "mediterranean_herb_garden_fit": 1,
-    "year_round_lighting_festival_fit": 1,
-    "korea_largest_herb_museum_fit": 1,
-    "korea_drama_filming_density_high_fit": 1,
-    "legend_of_the_blue_sea_filming_fit": 1,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -972,10 +982,16 @@
       11,
       12
     ],
-    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
+    "signature_window_label": "Year-round on Monday / Thursday / Saturday departures (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "available_days_signature": [
+      "monday",
+      "thursday",
+      "saturday"
+    ],
+    "fixed_departure_monday_thursday_saturday": true
   },
   "matching_metadata": {
     "matching_schema": "match_tours_embedded_v2",
@@ -1050,7 +1066,8 @@
       "shopping_focused_travelers",
       "indoor_only_rainy_day_seekers",
       "step_free_access_required",
-      "nightlife_focused_travelers"
+      "nightlife_focused_travelers",
+      "travelers_needing_non_monday_thursday_saturday_dates"
     ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
@@ -1542,7 +1559,8 @@
             "쇼핑 위주이거나 활동량 높은 하루를 원하는 분",
             "비 오는 날 완전 실내 일정이 필요한 분",
             "유명 단일 랜드마크가 목적인 분 (수원 화성을 권해 드립니다)",
-            "모든 스팟에서 계단 없는 접근이 필요한 일행"
+            "모든 스팟에서 계단 없는 접근이 필요한 일행",
+            "월·목·토에 여행할 수 없는 분 (출발 요일이 이 세 날뿐입니다)"
           ]
         }
       }
@@ -1553,6 +1571,16 @@
       "component": "투어 실용 정보",
       "props": {
         "practicalAccordionItems": [
+          {
+            "id": "departure-days",
+            "title": "출발 요일",
+            "preview": "이 투어는 **월요일·목요일·토요일에만 출발합니다** — 세 요일 중 하루로 예약해 주세요.",
+            "content": [
+              "이 투어는 **월요일·목요일·토요일에만 출발합니다** — 세 요일 중 하루로 예약해 주세요.",
+              "세 출발일 모두 코스와 시간, 두 곳의 픽업 장소가 동일합니다.",
+              "여행 일정에 월·목·토가 없다면 다른 요일로 옮길 수 없습니다. 개인 전세 차량이 아니라 정해진 일정으로 운행하는 소규모 그룹 투어이기 때문입니다."
+            ]
+          },
           {
             "id": "pickup",
             "title": "픽업 및 드롭오프",
@@ -1737,6 +1765,10 @@
           {
             "question": "이 투어가 바뀌었나요? 허브아일랜드가 포함이지 않았나요?",
             "answer": "맞습니다. 2026년 8월부터 허브아일랜드 대신 연천의 재인폭포가 들어가고, 제대로 된 현지 점심 스팟이 추가됐습니다. 이유는 재인폭포와 포천 아트밸리가 모두 한탄강 유네스코 세계지질공원의 지질명소이기 때문입니다. 서로 무관한 세 곳을 도는 대신, 하루가 하나로 이어지는 지질 이야기를 들려주게 됐습니다. 허브아일랜드를 꼭 원하신다면 예약 전에 문의해 주세요. 별도 일정으로 진행해 드립니다."
+          },
+          {
+            "question": "이 투어는 무슨 요일에 운행하나요?",
+            "answer": "**월요일, 목요일, 토요일에만** 운행합니다. 세 요일 모두 일정이 같으니 여행 계획에 맞는 날로 예약하시면 됩니다. 그 외 요일에는 이 상품을 이용하실 수 없습니다."
           },
           {
             "question": "재인폭포와 아트밸리가 '유네스코'인 이유는 무엇인가요?",
@@ -1990,7 +2022,7 @@
           }
         }
       },
-      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet."
+      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet. Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. The bundle previously made no departure-day claim at all, so guests could pick any date and hit the constraint only at checkout. Six Herb-Island-era matching signals (herb garden, lighting festival, herb museum, drama-filming density, and two K-drama title fits) were still scored 1 and are now dropped."
     }
   }
 }

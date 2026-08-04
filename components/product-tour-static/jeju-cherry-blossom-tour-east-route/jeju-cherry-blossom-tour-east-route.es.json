@@ -877,7 +877,7 @@
   ],
   "routePhases": [
     {
-      "phase": "Picos de floración de los cerezos --- **Notes:** - **haenyeo** (12) — retained as a proper Korean cultural term (female sea divers of Jeju). - **Jeonnong-ro / Noksan-ro** (13, 15) — retained as proper Korean street names (*로* = road/avenue). - **Micheongul** (19) — retained as the proper cave name. - **Ilchul Land** (21) / **Seongsan** (23) — retained as proper place names.",
+      "phase": "Picos de floración de los cerezos",
       "duration": "**Paradas 1–2**",
       "description": "**Mañana: Pico de floración de los cerezos**"
     },
@@ -931,7 +931,7 @@
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "**La ventana de los cerezos dura de 7 a 10 días** > **Note:** Lines 16 and 24 (`bg-amber-50/80`, `bg-pink-50/80`) are CSS utility class names and have been kept as-is, since they are technical code values, not translatable text.",
+            "label": "**La ventana de los cerezos dura de 7 a 10 días**",
             "detail": "Los cerezos en flor alcanzan su punto máximo brevemente entre finales de marzo y principios de abril — reserva el día 1 de tu viaje a Jeju si puedes."
           },
           {
@@ -1105,7 +1105,7 @@
       "detail": "**Confirmación de reserva con resumen del itinerario**"
     },
     {
-      "timing": "**2 días antes** > **Note:** Lines 15, 18, and 21 are Tailwind CSS utility class names — they are technical strings and should remain unchanged in code.",
+      "timing": "**2 días antes**",
       "title": "Verificación del clima",
       "detail": "Monitoreamos el pronóstico y nos ponemos en contacto si se recomienda reprogramar"
     },
@@ -1221,7 +1221,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "",
       "originalPriceUsd": null,
@@ -2402,7 +2402,7 @@
       "section_html_id": null,
       "component": "BarraDeReservaFijaDeTour",
       "props": {
-        "note": "El `checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

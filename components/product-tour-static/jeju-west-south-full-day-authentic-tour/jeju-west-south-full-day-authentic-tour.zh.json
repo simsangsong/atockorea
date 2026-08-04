@@ -1252,7 +1252,7 @@
       "title": "步行与地形",
       "preview": "轻度至中度。",
       "content": [
-        "轻度至中度。 > **说明：** 第2项（`bg-amber-50/80`）和第10项（`bg-sky-50/80`）为Tailwind CSS样式类名，属于代码标识符，保持原文不译。",
+        "轻度至中度。",
         "汉拿山1100湿地是一条平坦的木栈道环线。",
         "柱状节理带设有带扶手的木栈道。",
         "松岳山沿边步道全长2.6公里，但地势平坦。",
@@ -1479,7 +1479,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id在运行时从Supabase/环境变量中解析，不属于静态JSONB的组成部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "59",
       "originalPriceUsd": 69,
@@ -3199,7 +3199,7 @@
       "section_html_id": null,
       "component": "行程固定预订栏",
       "props": {
-        "note": "checkout_tour_id 在运行时从 Supabase / 环境变量动态解析；不属于静态 JSONB 的一部分。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
