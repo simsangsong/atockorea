@@ -1574,7 +1574,7 @@
         "items": [
           {
             "label": "Grupo pequeño en miniautobús",
-            "detail": "Grupo más pequeño, mayor atención del guía, ritmo más rápido en las paradas. > **Note:** Lines **20** and **28** (`bg-sky-50/80`, `bg-amber-50/80`) are CSS utility classes and have been left untranslated as they are technical code values, not natural language content."
+            "detail": "Grupo más pequeño, mayor atención del guía, ritmo más rápido en las paradas."
           }
         ]
       }
@@ -1711,7 +1711,7 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "Inmediatamente > **Notes:** Lines 23, 26, and 29 are CSS utility class names (Tailwind) and have been kept as-is, since they are technical/code values and should not be translated.",
+      "timing": "Inmediatamente",
       "title": "Confirmación inmediata",
       "detail": "Confirmación de reserva con resumen del itinerario"
     },
@@ -1775,7 +1775,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático. user_port se resuelve en el momento de la reserva a partir del itinerario del crucero.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "77",
       "currency": "USD",
@@ -2928,7 +2928,7 @@
       "section_html_id": null,
       "component": "**TourStickyBookingBar** *(nombre de componente técnico — se mantiene sin traducir)*",
       "props": {
-        "note": "**`checkout_tour_id` se resuelve en tiempo de ejecución desde Supabase / entorno; no forma parte del JSONB estático. `user_port` se resuelve en el momento de la reserva a partir del itinerario del crucero.**",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
@@ -2939,7 +2939,7 @@
   ],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "**10 % de descuento sobre el precio base del marketplace** --- > **Notas:** > - **Líneas 3 y 4:** Son nombres de componentes de interfaz de usuario (UI). Se conservan en su forma original, ya que traducirlos podría romper referencias en el código. > - **Línea 5:** El contenido técnico (nombres de variables, términos de sistema) se mantiene en inglés; solo se traduce el texto descriptivo en prosa.",
+    "discountNote": "10 % de descuento sobre el precio base del marketplace",
     "amount": null,
     "currency": "USD"
   },

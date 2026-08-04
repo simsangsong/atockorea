@@ -626,6 +626,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "首尔一日游",
+        "周一·周四·周六出发",
         "联合国教科文组织世界地质公园",
         "瀑布",
         "环湖漫步",
@@ -634,7 +635,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。"
+      "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。 周一、周四、周六出发。"
     },
     "price": {
       "amountLabel": "54"

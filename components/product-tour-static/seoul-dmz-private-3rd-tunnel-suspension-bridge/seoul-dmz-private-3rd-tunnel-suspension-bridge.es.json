@@ -675,7 +675,7 @@
   ],
   "routePhases": [
     {
-      "phase": "Memorial y Túnel > **Note:** Lines 4–7 are file paths and have been left unchanged, as they are not translatable text. Lines 17 (*Imjingak*) and 18 (*Memorial*) are retained as-is — *Imjingak* is a proper noun, and *Memorial* is identical in Spanish.",
+      "phase": "Memorial y Túnel",
       "duration": "Paradas 1–2",
       "description": "Mañana: Memorial y Túnel"
     },
@@ -1057,7 +1057,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "El checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -2393,7 +2393,7 @@
       "section_html_id": null,
       "component": "BarraDeReservaPegajosaDelTour",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",
@@ -2618,7 +2618,7 @@
         }
       },
       {
-        "paxLabel": "14–15 pax > **Note:** The abbreviation **pax** (from Latin *pax*, widely used in the travel industry to mean *pasajeros/personas*) is kept as-is in lines 2–13, as it is standard and universally understood in Spanish-language travel and tourism contexts. Line 1 **\"flat\"** is rendered as **\"tarifa fija\"** (fixed/flat rate), the standard Spanish travel industry term for a set price regardless of minor variable factors.",
+        "paxLabel": "14–15 pax",
         "paxMin": 14,
         "paxMax": 15,
         "prices": {

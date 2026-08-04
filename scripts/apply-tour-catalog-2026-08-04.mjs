@@ -10,9 +10,10 @@
  * Steps
  *   0) Preflight — env, SQL files, 10 static bundles parse & agree on price
  *      (Busan + both Seoul products), and each SQL carries its bundle's price
- *   1) Apply supabase/pending-db-apply/2026-08-04-{01..11}.sql IN FILENAME ORDER
+ *   1) Apply supabase/pending-db-apply/2026-08-04-{01..13}.sql IN FILENAME ORDER
  *      (needs `psql` + a Postgres connection string; see --skip-sql otherwise)
  *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 8
+ *      (the Pocheon pass also imports the new jaein_falls POI into match_pois)
  *   3) Verify over supabase-js: tours.is_active + price, page publish flags per
  *      locale, the two Busan offers, match_tours presence
  *   4) Move applied SQL into supabase/pending-db-apply/applied/
@@ -48,10 +49,24 @@ const SQL_FILES = [
   "2026-08-04-05-pocheon-geopark-recourse.sql",
   "2026-08-04-06-pocheon-geopark-staged-locales.sql",
   "2026-08-04-07-gyeongju-recourse.sql",
-  "2026-08-04-08-seoul-gapyeong-new-product.sql",
-  "2026-08-04-09-seoul-gapyeong-staged-locales.sql",
-  "2026-08-04-10-seoul-winter-eobi-new-product.sql",
-  "2026-08-04-11-seoul-winter-eobi-staged-locales.sql",
+  // 08 must stay after 02/03/05/07. It is a surgical repair guarded on the
+  // exact current value of each path, and those files rewrite whole
+  // detail_payloads that still carry the polluted strings — Gyeongju writes
+  // five of them. Repairing before they run would simply be overwritten again.
+  "2026-08-04-08-guest-copy-repair.sql",
+  // 09 exists because 05/06 were applied from the version of those files that
+  // was on main at the time, which predates the Pocheon departure-day work —
+  // so the live rows had no Mon/Thu/Sat claim at all. It is the delta between
+  // the bundles and the rows, not a re-run of 05/06.
+  "2026-08-04-09-pocheon-departure-days.sql",
+  // 10-13 are the two Seoul-departure products. They took 10 rather than 08
+  // because a parallel session claimed 08/09 while that branch was in flight.
+  // 08's ordering note does not reach them: it guards rewrites of the OLD
+  // slugs' payloads, and these four touch only the two new slugs.
+  "2026-08-04-10-seoul-gapyeong-new-product.sql",
+  "2026-08-04-11-seoul-gapyeong-staged-locales.sql",
+  "2026-08-04-12-seoul-winter-eobi-new-product.sql",
+  "2026-08-04-13-seoul-winter-eobi-staged-locales.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";
@@ -109,7 +124,7 @@ step(0, "Preflight");
 const pendingFiles = SQL_FILES.filter((f) => existsSync(path.join(PENDING, f)));
 const alreadyApplied = SQL_FILES.filter((f) => existsSync(path.join(APPLIED, f)));
 if (!pendingFiles.length && alreadyApplied.length === SQL_FILES.length) {
-  ok("all four SQL files are already in applied/ — nothing to apply");
+  ok(`all ${SQL_FILES.length} SQL files are already in applied/ — nothing to apply`);
 } else if (!pendingFiles.length) {
   die(
     `no 2026-08-04 SQL found in ${path.relative(ROOT, PENDING)}`,
@@ -307,12 +322,12 @@ if (DRY) {
   const { data: pages, error: e2 } = await sb
     .from("tour_product_pages")
     .select("slug,locale,is_published")
-    .in("slug", [...MATCH_SLUGS]);
+    .in("slug", MATCH_SLUGS);
   if (e2) die(`tour_product_pages query failed: ${e2.message}`);
   const localesOf = (slug) =>
     (pages ?? []).filter((p) => p.slug === slug && p.is_published).map((p) => p.locale).sort();
 
-  for (const s of [EAST, SOUTH, SOUTHWEST]) {
+  for (const s of [EAST, SOUTH, SOUTHWEST, POCHEON]) {
     const got = localesOf(s);
     check(
       CONTENT_LOCALES.every((l) => got.includes(l)),
@@ -379,6 +394,25 @@ if (DRY) {
       `${label}: staged locales ${staged.join(",") || "(none)"} ` +
         `${C.dim("(rows exist; guests still see EN until the fallback gate opens)")}`,
     );
+  }
+
+  const { data: pocheon } = await sb
+    .from("tours")
+    .select("pickup_points_count,dropoff_points_count,schedule")
+    .eq("slug", POCHEON)
+    .maybeSingle();
+  if (pocheon) {
+    const firstStop = Array.isArray(pocheon.schedule) ? pocheon.schedule[0]?.title : null;
+    check(
+      Array.isArray(pocheon.schedule) && pocheon.schedule.length === 4,
+      `Pocheon re-course: ${Array.isArray(pocheon.schedule) ? pocheon.schedule.length : "?"} stops, first = ${firstStop ?? "—"}`,
+    );
+    check(
+      Number(pocheon.pickup_points_count) === 2 && Number(pocheon.dropoff_points_count) === 2,
+      `Pocheon pickup/drop-off points: ${pocheon.pickup_points_count}/${pocheon.dropoff_points_count} (expected 2/2)`,
+    );
+  } else {
+    check(false, "Pocheon tours row not found");
   }
 
   const { data: mt, error: e3 } = await sb.from("match_tours").select("slug").in("slug", MATCH_SLUGS);

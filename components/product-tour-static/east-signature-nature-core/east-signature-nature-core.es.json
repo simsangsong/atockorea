@@ -1204,7 +1204,7 @@
   "routeFlowStops": [
     {
       "name": "Parque de Piedra",
-      "theme": "Geología > **Note:** *Seongeup Folk Village* is retained as a proper place name (standard practice for named landmarks in travel content). All descriptive terms have been fully translated.",
+      "theme": "Geología",
       "type": "01"
     },
     {
@@ -1268,7 +1268,7 @@
         "iconBg": "bg-amber-50/80",
         "items": [
           {
-            "label": "Comienza con la cultura de la piedra, luego se abre hacia el mar **Notes:** - Items **1, 5, 7, 9** are proper Korean place names — kept as-is per travel content convention. - Item **24** is a CSS utility class — kept unchanged as it is code, not translatable text. - Item **4** (\"Reset\") is rendered as **Pausa** (pause/break) to fit the travel itinerary context naturally.",
+            "label": "Comienza con la cultura de la piedra, luego se abre hacia el mar",
             "detail": "Comenzar en el Parque de Piedra crea un marco de referencia para el resto del día, de modo que las paradas costeras y volcánicas posteriores se sienten más enriquecidas en lugar de aleatorias."
           },
           {

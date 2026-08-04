@@ -1775,7 +1775,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。user_portは予約時にクルーズ旅程から解決されます。",
+    "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
     "price": {
       "amountLabel": "77",
       "currency": "USD",
@@ -2928,7 +2928,7 @@
       "section_html_id": null,
       "component": "**TourStickyBookingBar**（ツアー固定予約バー） *(UI コンポーネント名のため原文を維持)*",
       "props": {
-        "note": "**`checkout_tour_id` は Supabase / 環境変数から実行時に解決されます。静的 JSONB には含まれません。`user_port` は予約時にクルーズの旅程から解決されます。** *(技術仕様メモ：コード識別子は原文を維持)*",
+        "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
@@ -2939,7 +2939,7 @@
   ],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "**マーケットプレイス基準価格より10%割引**",
+    "discountNote": "マーケットプレイス基準価格より10%割引",
     "amount": null,
     "currency": "USD"
   },

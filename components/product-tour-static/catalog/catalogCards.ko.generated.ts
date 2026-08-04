@@ -626,6 +626,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "reviewCount": 0,
       "badges": [
         "서울 근교 당일치기",
+        "월·목·토 출발",
         "유네스코 세계지질공원",
         "폭포",
         "호수 산책",
@@ -634,7 +635,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다."
+      "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발."
     },
     "price": {
       "amountLabel": "54"

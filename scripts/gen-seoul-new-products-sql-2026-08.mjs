@@ -3,13 +3,16 @@
  * Generate the pending DB SQL for the two Seoul-departure day tours added
  * (owner instruction 2026-08-04), from the built static bundles:
  *
- *   supabase/pending-db-apply/2026-08-04-08-seoul-gapyeong-new-product.sql
- *   supabase/pending-db-apply/2026-08-04-09-seoul-gapyeong-staged-locales.sql
- *   supabase/pending-db-apply/2026-08-04-10-seoul-winter-eobi-new-product.sql
- *   supabase/pending-db-apply/2026-08-04-11-seoul-winter-eobi-staged-locales.sql
+ *   supabase/pending-db-apply/2026-08-04-10-seoul-gapyeong-new-product.sql
+ *   supabase/pending-db-apply/2026-08-04-11-seoul-gapyeong-staged-locales.sql
+ *   supabase/pending-db-apply/2026-08-04-12-seoul-winter-eobi-new-product.sql
+ *   supabase/pending-db-apply/2026-08-04-13-seoul-winter-eobi-staged-locales.sql
  *
- * The numbering starts at 08 because 05/06 belong to the Pocheon re-course and
- * 07 to Gyeongju; filename order is the apply order.
+ * The numbering starts at 10: 05/06 are the Pocheon re-course, 07 Gyeongju, and
+ * 08/09 were taken by a parallel session (guest-copy-repair, pocheon-departure-
+ * days) while this branch was in flight. Filename order is the apply order.
+ * 08's "must stay last" note does not bind these two — it guards whole-payload
+ * rewrites of the OLD slugs, and these files only touch the two new ones.
  *
  * Rows come from seoul-new-products-rows-2026-08.mjs, which
  * apply-seoul-new-products-2026-08.mjs also reads — the field mapping lives in
@@ -29,6 +32,16 @@ import {
 
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const jsonb = (v) => `${q(JSON.stringify(v))}::jsonb`;
+// tour_product_pages.badges is text[] — only tours.badges is jsonb. Feeding a
+// JSON array in fails the whole transaction with "column badges is of type
+// text[] but expression is of type jsonb". It bit the 2026-06-24 batch, bit the
+// 2026-08-04 batch again because only the applied SQL was patched and never the
+// generator, and this generator — written after both — repeated it a third time.
+// Caught here by __tests__/audit/pendingSqlColumnTypes.test.ts, which a parallel
+// session added for exactly this. The supabase-js applier never saw it, because
+// PostgREST takes the array natively; only the psql path breaks.
+const textArray = (v) =>
+  Array.isArray(v) && v.length ? `ARRAY[${v.map(q).join(", ")}]::text[]` : `${q("{}")}::text[]`;
 const num = (v) => (v === null || v === undefined ? "NULL" : Number(v));
 const bool = (v) => (v ? "TRUE" : "FALSE");
 
@@ -114,7 +127,7 @@ function pageInsert(cfg, row, conflict) {
   o += `  ${num(row.stops_count)},\n`;
   o += `  ${num(row.rating_avg)},\n`;
   o += `  ${num(row.review_count)},\n`;
-  o += `  ${jsonb(row.badges)},\n`;
+  o += `  ${textArray(row.badges)},\n`;
   o += `  ${q(row.hero_image_url)},\n`;
   o += `  ${q(row.thumbnail_url)},\n`;
   o += `  ${q(row.card_short_description)},\n`;

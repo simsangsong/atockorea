@@ -689,6 +689,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Seoul day trip",
+          "Mon · Thu · Sat",
           "UNESCO Geopark",
           "Waterfall",
           "Lake walk",
@@ -697,7 +698,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves."
+        "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves. Departs Mondays, Thursdays and Saturdays."
       },
       "price": {
         "amountLabel": "54"
@@ -1631,6 +1632,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "서울 근교 당일치기",
+          "월·목·토 출발",
           "유네스코 세계지질공원",
           "폭포",
           "호수 산책",
@@ -1639,7 +1641,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다."
+        "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발."
       },
       "price": {
         "amountLabel": "54"
@@ -2573,6 +2575,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "首尔一日游",
+          "周一·周四·周六出发",
           "联合国教科文组织世界地质公园",
           "瀑布",
           "环湖漫步",
@@ -2581,7 +2584,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。"
+        "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。 周一、周四、周六出发。"
       },
       "price": {
         "amountLabel": "54"
@@ -3515,6 +3518,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "首爾一日遊",
+          "週一·週四·週六出發",
           "世界地質公園",
           "瀑布",
           "環湖漫步",
@@ -3523,7 +3527,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。"
+        "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。 週一、週四、週六出發。"
       },
       "price": {
         "amountLabel": "54"
@@ -4454,6 +4458,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Excursión de un día desde Seúl",
+          "Lun · jue · sáb",
           "Geoparque UNESCO",
           "Cascada",
           "Paseo junto al lago",
@@ -4462,7 +4467,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas."
+        "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas. Sale lunes, jueves y sábados."
       },
       "price": {
         "amountLabel": "54"
@@ -5394,6 +5399,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "ソウル発日帰り",
+          "月・木・土出発",
           "ユネスコ世界ジオパーク",
           "滝",
           "湖畔散策",
@@ -5402,7 +5408,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。"
+        "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。"
       },
       "price": {
         "amountLabel": "54"
@@ -5753,6 +5759,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Excursion depuis Séoul",
+          "Lun · jeu · sam",
           "Géoparc UNESCO",
           "Cascade",
           "Balade au bord du lac",
@@ -5761,7 +5768,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées."
+        "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées. Départs les lundis, jeudis et samedis."
       },
       "price": {
         "amountLabel": "54"
@@ -5859,6 +5866,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Tagesausflug ab Seoul",
+          "Mo · Do · Sa",
           "UNESCO-Geopark",
           "Wasserfall",
           "Seerundweg",
@@ -5867,7 +5875,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften."
+        "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften. Abfahrt montags, donnerstags und samstags."
       },
       "price": {
         "amountLabel": "54"
@@ -5965,6 +5973,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Gita di un giorno da Seoul",
+          "Lun · gio · sab",
           "Geoparco UNESCO",
           "Cascata",
           "Passeggiata sul lago",
@@ -5973,7 +5982,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Una gita di un giorno da Seoul più tranquilla, costruita sulla geologia vera. Percorra l'anello pianeggiante di 3,2 km attorno al lago Sanjeong ai piedi del monte Myeongseongsan, assaggi l'Idong galbi, il piatto di Pocheon, poi attraversi un ponte sospeso di 80 m per trovarsi di fronte alla cascata di Jaein mentre precipita per 18 m su colonne basaltiche, e concluda dentro la cava di granito del Pocheon Art Valley, dove l'acqua sorgiva ha riempito lo scavo formando il lago Cheonjuho color smeraldo. La cascata di Jaein e Art Valley sono entrambe geositi del Geoparco mondiale UNESCO dell'Hantangang: lo stesso paesaggio visto dalle sue due metà opposte."
+        "shortCardDescription": "Una gita di un giorno da Seoul più tranquilla, costruita sulla geologia vera. Percorra l'anello pianeggiante di 3,2 km attorno al lago Sanjeong ai piedi del monte Myeongseongsan, assaggi l'Idong galbi, il piatto di Pocheon, poi attraversi un ponte sospeso di 80 m per trovarsi di fronte alla cascata di Jaein mentre precipita per 18 m su colonne basaltiche, e concluda dentro la cava di granito del Pocheon Art Valley, dove l'acqua sorgiva ha riempito lo scavo formando il lago Cheonjuho color smeraldo. La cascata di Jaein e Art Valley sono entrambe geositi del Geoparco mondiale UNESCO dell'Hantangang: lo stesso paesaggio visto dalle sue due metà opposte. Partenze il lunedì, il giovedì e il sabato."
       },
       "price": {
         "amountLabel": "54"
@@ -6071,6 +6080,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "reviewCount": 0,
         "badges": [
           "Поездка из Сеула на день",
+          "Пн · чт · сб",
           "Геопарк ЮНЕСКО",
           "Водопад",
           "Прогулка у озера",
@@ -6079,7 +6089,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
         "priceLabel": "",
-        "shortCardDescription": "Спокойная однодневная поездка из Сеула, построенная на настоящей геологии. Пройдите ровный круг в 3,2 км вокруг озера Санджонхо под горой Мёнсонсан, попробуйте фирменные пхочхонские идон-кальби, затем перейдите 80-метровый подвесной мост и окажитесь лицом к лицу с водопадом Чэин, падающим с 18 м по базальтовым колоннам, а завершите день в гранитном карьере Pocheon Art Valley, где родниковая вода заполнила выработку и превратила её в изумрудное озеро Чхонджухо. Водопад Чэин и Art Valley — оба геосайты Всемирного геопарка ЮНЕСКО Хантанган: один и тот же ландшафт, увиденный с двух противоположных сторон."
+        "shortCardDescription": "Спокойная однодневная поездка из Сеула, построенная на настоящей геологии. Пройдите ровный круг в 3,2 км вокруг озера Санджонхо под горой Мёнсонсан, попробуйте фирменные пхочхонские идон-кальби, затем перейдите 80-метровый подвесной мост и окажитесь лицом к лицу с водопадом Чэин, падающим с 18 м по базальтовым колоннам, а завершите день в гранитном карьере Pocheon Art Valley, где родниковая вода заполнила выработку и превратила её в изумрудное озеро Чхонджухо. Водопад Чэин и Art Valley — оба геосайты Всемирного геопарка ЮНЕСКО Хантанган: один и тот же ландшафт, увиденный с двух противоположных сторон. Отправление по понедельникам, четвергам и субботам."
       },
       "price": {
         "amountLabel": "54"

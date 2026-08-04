@@ -4,6 +4,27 @@ SQL changes staged here for a later session with DB access to batch-apply to the
 live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 `tour_product_offers`).
 
+> **✅ 2026-08-04 — the whole 2026-08-04 batch (01–09) is applied to prod.**
+> Files 01–07 were applied by one session; 08 and 09 by another later the same
+> day. All nine are in `applied/`. Verified against the live DB, not assumed:
+> booking-bar dev comment **145 → 0** rows, corrupted `iconBg` **24 + 13 → 0**,
+> Pocheon Mon/Thu/Sat departure days present in **10/10** locales.
+>
+> 🔴 **Two things worth knowing before touching this batch again.**
+>
+> 1. The archived copies of **05/06 are the versions that actually ran**, which
+>    predate the Pocheon departure-day work — so they carry no Mon/Thu/Sat
+>    claim. That is deliberate: `applied/` is a record of what was executed, not
+>    of what the bundles say now. `09` is the delta that closed the gap.
+> 2. **08 must run after 07.** Gyeongju's re-course rewrites whole
+>    `detail_payload`s and still writes five of the polluted strings, so a
+>    repair applied earlier is simply overwritten.
+>
+> On this machine there was no `psql` and no Postgres connection string, so
+> 08/09 were applied with **`scripts/apply-jsonb-repair-sql.mjs`**, which
+> executes a guarded-`jsonb_set` file over supabase-js. `psql` remains the
+> intended route when a connection string is available.
+
 > **✅ 2026-06-24 — all staged SQL applied to prod and moved to `applied/`.**
 > Batch-applied via the Supabase MCP. Because the legacy `tour_matching_profiles`
 > table was dropped (migration `drop_legacy_tour_matching_profiles`), every

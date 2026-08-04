@@ -1,22 +1,37 @@
 {
   "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
-
   "title": "抱川 & 涟川：山井湖、载仁瀑布与采石场艺术谷",
   "subtitle": "环抱于群山之间的湖畔漫步、坠落在玄武岩石柱之上的 18 米瀑布，以及一泓翡翠色的采石场湖水 — 一天之内，从首尔出发走访联合国教科文组织世界地质公园的两处地质遗产点，不慌不忙。",
-  "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。",
-  "badges": ["首尔一日游", "联合国教科文组织世界地质公园", "瀑布", "环湖漫步", "小团"],
-  "tags": ["首尔一日游", "抱川", "涟川", "联合国教科文组织世界地质公园", "瀑布", "自然", "出片"],
-
+  "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。 周一、周四、周六出发。",
+  "badges": [
+    "首尔一日游",
+    "联合国教科文组织世界地质公园",
+    "瀑布",
+    "环湖漫步",
+    "小团"
+  ],
+  "tags": [
+    "首尔一日游",
+    "抱川",
+    "涟川",
+    "联合国教科文组织世界地质公园",
+    "瀑布",
+    "自然",
+    "出片"
+  ],
   "headlineLine1": "湖泊、瀑布",
   "headlineLine2": "与采石场艺术谷",
   "heroTagline": "一座百年山中湖、一道穿过玄武岩石柱坠落的瀑布，以及一个被翡翠色湖水填满的花岗岩深坑 — 抱川与涟川的地质，用一天走完",
   "heroDuration": "10 小时（08:00 首个接客点，18:30 最后一个送返点）",
-  "heroPills": ["自然一日游", "联合国教科文组织世界地质公园", "四季各异"],
+  "heroPills": [
+    "自然一日游",
+    "联合国教科文组织世界地质公园",
+    "四季各异"
+  ],
   "region": "抱川 & 涟川（首尔一日游）",
   "duration": "10 小时",
   "stopsCount": 4,
   "heroStopsLabel": "4 站",
-
   "seo": {
     "pageTitle": "抱川一日游：山井湖、载仁瀑布与艺术谷 | AtoC Korea",
     "metaDescription": "10 小时首尔一日游，走进汉滩江联合国教科文组织世界地质公园：山井湖平坦的 3.2 公里环湖步道、载仁瀑布 18 米玄武岩水幕与 80 米吊桥，以及抱川艺术谷的翡翠色采石场湖。",
@@ -29,12 +44,10 @@
       "汉滩江联合国教科文组织世界地质公园旅行团"
     ]
   },
-
   "routeShapeIntro": {
     "title": "这一天怎么走",
     "subtitle": "首尔有两个集合点 — 弘大入口站 8 号出口 08:00、明洞站 2 号出口 08:30 — 随后向东北行驶约 90 分钟进入抱川。湖泊安排在最前面 — 那时腿脚最轻快，晨雾也还留在水面上。午餐吃的是抱川自己的招牌菜，就在它的出处吃。下午越过郡界进入涟川，在光线最充足的时段抵达载仁瀑布 — 峡谷里没有照明 — 最后收在抱川艺术谷：三处景点中它关门最晚，离首尔也最近，因此回程是这一天最短的一段车程。约 18:00 回到明洞，约 18:30 回到弘大入口站。"
   },
-
   "routePhases": [
     {
       "phase": "清晨的湖",
@@ -57,14 +70,28 @@
       "description": "回到抱川艺术谷 — 搭单轨列车上到坑缘，俯瞰花岗岩绝壁下翡翠色的天柱湖，再沿林间小径步行下山 — 然后是这一天最短的一段回程车路。"
     }
   ],
-
   "routeFlowStops": [
-    { "name": "山井湖", "type": "origin", "theme": "山中湖" },
-    { "name": "梨洞排骨午餐", "type": "meal", "theme": "抱川的招牌菜" },
-    { "name": "载仁瀑布", "type": "primary", "theme": "教科文组织地质遗产点" },
-    { "name": "艺术谷", "type": "return", "theme": "采石场终章" }
+    {
+      "name": "山井湖",
+      "type": "origin",
+      "theme": "山中湖"
+    },
+    {
+      "name": "梨洞排骨午餐",
+      "type": "meal",
+      "theme": "抱川的招牌菜"
+    },
+    {
+      "name": "载仁瀑布",
+      "type": "primary",
+      "theme": "教科文组织地质遗产点"
+    },
+    {
+      "name": "艺术谷",
+      "type": "return",
+      "theme": "采石场终章"
+    }
   ],
-
   "whyTourWorks": {
     "bestFor": [
       "想要一个比南怡岛更从容的替代选择的旅客",
@@ -98,7 +125,6 @@
       }
     ]
   },
-
   "stops": {
     "sanjeong": {
       "name": "山井湖",
@@ -139,7 +165,6 @@
         "facilities": "湖畔入口一带有咖啡馆与餐厅，另有游船码头、雕塑公园与野餐区。"
       }
     },
-
     "lunch": {
       "name": "午餐 — 梨洞排骨（抱川本地餐桌）",
       "time": "11:40",
@@ -161,7 +186,6 @@
       ],
       "whyOnRoute": "**这一带自己的菜，就在它的出处吃。** 梨洞距山井湖十分钟，且大致顺着向西的路线，因此这顿饭没有让这一天多花任何车程。时间点也刚好：上午的 3.2 公里步行已经结束，下午两处地质公园景点还在前面，而它们都需要稳当的腿脚，以及在台阶与桥上多一点耐心。"
     },
-
     "jaein": {
       "name": "载仁瀑布（汉滩江联合国教科文组织世界地质公园）",
       "time": "13:30",
@@ -201,7 +225,6 @@
         "facilities": "入口处有停车场、洗手间与地质公园解说牌；峡谷内没有商店 — 请自备饮用水。"
       }
     },
-
     "artvalley": {
       "name": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
       "time": "15:20",
@@ -243,7 +266,6 @@
       }
     }
   },
-
   "staticQuestions": [
     {
       "question": "这条线路改了什么 — 原本不是包含香草岛乐园吗？",
@@ -294,7 +316,6 @@
       "answer": "会相当困难。山井湖、载仁瀑布与艺术谷分处两个郡、三个不同的地区，而开往艺术谷的巴士每隔几小时才有一班。没有车而想在一天之内走完这三处并不现实 — 这也正是这条线路之所以以旅行团形式存在的主要原因。"
     }
   ],
-
   "seasonalVariations": [
     {
       "season": "春季（3–5 月）",
@@ -313,16 +334,44 @@
       "description": "一年中人最少的时候。天柱湖可能整片结冰，湖畔举办雪橇庆典，瀑布也可能部分结冰。白昼短，因此下午节奏更紧，载仁瀑布的木栈道也可能湿滑。"
     }
   ],
-
   "glanceItems": [
-    { "icon": "camera", "label": "拍照价值", "value": "极佳", "level": 5 },
-    { "icon": "mountain", "label": "风景", "value": "极佳", "level": 5 },
-    { "icon": "footprints", "label": "步行量", "value": "中等", "level": 3 },
-    { "icon": "cloud-rain", "label": "雨天适应", "value": "中等", "level": 3 },
-    { "icon": "users", "label": "家庭适合度", "value": "良好", "level": 4 },
-    { "icon": "gauge", "label": "节奏平衡", "value": "宽松", "level": 5 }
+    {
+      "icon": "camera",
+      "label": "拍照价值",
+      "value": "极佳",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "风景",
+      "value": "极佳",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "步行量",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天适应",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "家庭适合度",
+      "value": "良好",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "节奏平衡",
+      "value": "宽松",
+      "level": 5
+    }
   ],
-
   "practical": {
     "walkingTitle": "步行与路况",
     "walkingContent": [
@@ -349,22 +398,58 @@
       "联合国教科文组织世界地质公园是一项地质学上的认定 — 它与联合国教科文组织世界遗产的登录并不是一回事。"
     ]
   },
-
   "pdNotes": "集合点共两处：弘大入口站 8 号出口 08:00、明洞站 2 号出口 08:30 — 请在出发时间前 10 分钟抵达。返程先到明洞，约 18:00，再到弘大入口站，约 18:30；确切时间视路况而定。",
   "stickyNote": "请选择日期与人数，查看实时空位并完成预订。",
-
   "matchingMetadata": {
-    "anchor_pois": ["Sanjeong Lake", "Jaein Falls", "Pocheon Art Valley"],
-    "anchor_poi_keys": ["sanjeong_lake", "jaein_falls", "pocheon_art_valley"],
-    "primary_themes": ["seoul_day_trip", "unesco_global_geopark", "waterfall", "lake_walk", "quarry_art_park", "gyeonggi_nature"],
-    "secondary_themes": ["suspension_bridge", "skywalk", "columnar_jointing", "monorail", "silver_grass", "k_drama_filming", "local_food"],
-    "best_for": ["nature_lovers", "couples", "photographers", "adult_families", "geology_curious", "nami_island_alternative_seekers"],
-    "not_recommended_for": ["shopping_focused_travelers", "indoor_only_rainy_day_seekers", "step_free_access_required", "nightlife_focused_travelers"],
-    "competing_products": ["seoul-private-nami-morning-calm-petite-france", "seoul-suburbs-private-chartered-car-10hr", "seoul-seoraksan-nami-island-morning-calm-day-tour"],
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Jaein Falls",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "jaein_falls",
+      "pocheon_art_valley"
+    ],
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
+    ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
   },
-
   "pickupDropoff": {
     "meetingPoints": [
       {
@@ -398,5 +483,18 @@
       "返回时间为大致时间，视路况而定。",
       "本行程为固定路线的团体形式，旅客需自行前往集合点。"
     ]
+  },
+  "departureDays": {
+    "badge": "周一·周四·周六出发",
+    "accordionTitle": "出发日",
+    "accordionContent": [
+      "本行程**仅在周一、周四、周六出发**，请选择其中一天预订。",
+      "三个出发日的路线、时间与两个上车点完全相同。",
+      "如果您的行程中没有周一、周四或周六，本产品无法改到其他日期——这是固定发团的小团行程，并非私人包车。"
+    ],
+    "faqQ": "本行程每周哪几天出发？",
+    "faqA": "**仅在周一、周四和周六出发**。三天的行程内容完全一致，请选择方便的一天预订。其他日期不提供本产品。",
+    "lessIdeal": "无法在周一、周四或周六出行的旅客（仅这三天发团）",
+    "cardSuffix": " 周一、周四、周六出发。"
   }
 }

@@ -4,7 +4,7 @@
 -- Generated: 2026-08-04. INSERT-only staging per the i18n expansion track:
 -- guests on de/fr/it/ru keep seeing EN until the app-side fallback gate
 -- (TOUR_PRODUCT_FALLBACK_URL_LOCALES in tourProductPageBody.tsx) is opened —
--- a separate human decision. Apply AFTER 2026-08-04-10-seoul-winter-eobi-new-product.sql.
+-- a separate human decision. Apply AFTER 2026-08-04-12-seoul-winter-eobi-new-product.sql.
 -- Script: scripts/gen-seoul-new-products-sql-2026-08.mjs
 -- =============================================================================
 
@@ -31,7 +31,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Nur im Winter","Saisonal","Tagesausflug ab Seoul","Seoraksan","Eiswand"]'::jsonb,
+  ARRAY['Nur im Winter', 'Saisonal', 'Tagesausflug ab Seoul', 'Seoraksan', 'Eiswand']::text[],
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   'Läuft nur im tiefen Winter: Seoraksan unter Schnee, die bereiften Baumalleen der Insel Nami und die 25 Meter hohe Eiswand, die Dorfbewohner in Gapyeong jeden Januar an einer Felswand im Tal wachsen lassen.',
@@ -67,7 +67,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Hiver uniquement","Saisonnier","Excursion depuis Séoul","Seoraksan","Mur de glace"]'::jsonb,
+  ARRAY['Hiver uniquement', 'Saisonnier', 'Excursion depuis Séoul', 'Seoraksan', 'Mur de glace']::text[],
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   'Ne fonctionne qu''au cœur de l''hiver : le Seoraksan sous la neige, les allées d''arbres givrées de l''île de Nami, et le mur de glace de 25 mètres que les villageois de Gapyeong font grandir chaque janvier sur une paroi rocheuse de la vallée.',
@@ -103,7 +103,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Solo in inverno","Stagionale","Gita da Seul","Seoraksan","Parete di ghiaccio"]'::jsonb,
+  ARRAY['Solo in inverno', 'Stagionale', 'Gita da Seul', 'Seoraksan', 'Parete di ghiaccio']::text[],
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   'Si svolge solo in pieno inverno: il Seoraksan sotto la neve, i viali alberati brinati dell''isola di Nami e la parete di ghiaccio di 25 metri che gli abitanti di un villaggio di Gapyeong fanno crescere ogni gennaio su una parete rocciosa della valle.',
@@ -139,7 +139,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Только зимой","Сезонный","Однодневная поездка из Сеула","Сораксан","Ледяная стена"]'::jsonb,
+  ARRAY['Только зимой', 'Сезонный', 'Однодневная поездка из Сеула', 'Сораксан', 'Ледяная стена']::text[],
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   '/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp',
   'Идёт только в разгар зимы: Сораксан под снегом, заиндевевшие аллеи острова Нами и 25-метровая ледяная стена, которую жители деревни в Капхёне наращивают на скале в долине каждый январь.',

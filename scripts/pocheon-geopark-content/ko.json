@@ -1,22 +1,37 @@
 {
   "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
-
   "title": "포천·연천: 호수, 폭포, 그리고 채석장 아트밸리",
   "subtitle": "산이 둘러싼 호수를 걷고, 주상절리 위로 18 m를 떨어지는 폭포를 마주하고, 에메랄드빛 채석장 호수에서 마무리합니다 — 유네스코 세계지질공원 지질명소 두 곳을 서울 근교 하루에 여유롭게.",
-  "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다.",
-  "badges": ["서울 근교 당일치기", "유네스코 세계지질공원", "폭포", "호수 산책", "소규모 그룹"],
-  "tags": ["서울 근교 당일치기", "포천", "연천", "유네스코 세계지질공원", "폭포", "자연", "사진 명소"],
-
+  "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발.",
+  "badges": [
+    "서울 근교 당일치기",
+    "유네스코 세계지질공원",
+    "폭포",
+    "호수 산책",
+    "소규모 그룹"
+  ],
+  "tags": [
+    "서울 근교 당일치기",
+    "포천",
+    "연천",
+    "유네스코 세계지질공원",
+    "폭포",
+    "자연",
+    "사진 명소"
+  ],
   "headlineLine1": "호수와 폭포,",
   "headlineLine2": "그리고 채석장 아트밸리",
   "heroTagline": "100년 된 산속 호수, 주상절리 사이로 떨어지는 폭포, 에메랄드빛 물이 고인 화강암 구덩이 — 포천과 연천의 지질을 하루에 걸어서 만납니다",
   "heroDuration": "10시간 (08:00 첫 픽업, 18:30 마지막 드롭오프)",
-  "heroPills": ["자연 당일치기", "유네스코 세계지질공원", "계절마다 다른 얼굴"],
+  "heroPills": [
+    "자연 당일치기",
+    "유네스코 세계지질공원",
+    "계절마다 다른 얼굴"
+  ],
   "region": "포천·연천 (서울 근교 당일치기)",
   "duration": "10시간",
   "stopsCount": 4,
   "heroStopsLabel": "4개 스팟",
-
   "seo": {
     "pageTitle": "포천 당일치기: 산정호수·재인폭포·아트밸리 | AtoC Korea",
     "metaDescription": "한탄강 유네스코 세계지질공원을 걷는 10시간 서울 근교 당일 투어. 산정호수의 평탄한 3.2 km 둘레길, 재인폭포의 18 m 주상절리 낙차와 80 m 출렁다리, 포천 아트밸리의 에메랄드빛 채석장 호수까지.",
@@ -29,12 +44,10 @@
       "한탄강 유네스코 세계지질공원 투어"
     ]
   },
-
   "routeShapeIntro": {
     "title": "하루가 흘러가는 방식",
     "subtitle": "서울 미팅 포인트는 두 곳입니다 — 08:00 홍대입구역 8번 출구, 08:30 명동역 2번 출구 — 그다음 북동쪽 포천까지 약 90분을 달립니다. 다리가 가장 가볍고 수면에 아침 물안개가 남아 있는 시간에 호수를 먼저 걷습니다. 점심은 포천의 음식을, 그 음식이 나고 자란 자리에서 듭니다. 오후에는 연천으로 넘어가 해가 충분할 때 재인폭포를 만나고 — 협곡에는 조명이 없습니다 — 세 곳 중 가장 늦게까지 열려 있고 서울에서 가장 가까운 포천 아트밸리에서 하루를 닫습니다. 그래서 돌아오는 길이 하루 중 가장 짧습니다. 명동에는 18:00쯤, 홍대입구역에는 18:30쯤 도착합니다."
   },
-
   "routePhases": [
     {
       "phase": "아침의 호수",
@@ -57,14 +70,28 @@
       "description": "다시 포천 아트밸리로. 모노레일로 능선까지 올라 화강암 절벽 아래 에메랄드빛 천주호를 내려다보고 숲길로 걸어 내려온 뒤, 하루 중 가장 짧은 귀경길에 오릅니다."
     }
   ],
-
   "routeFlowStops": [
-    { "name": "산정호수", "type": "origin", "theme": "산속 호수" },
-    { "name": "이동갈비 점심", "type": "meal", "theme": "포천의 음식" },
-    { "name": "재인폭포", "type": "primary", "theme": "유네스코 지질명소" },
-    { "name": "아트밸리", "type": "return", "theme": "채석장 피날레" }
+    {
+      "name": "산정호수",
+      "type": "origin",
+      "theme": "산속 호수"
+    },
+    {
+      "name": "이동갈비 점심",
+      "type": "meal",
+      "theme": "포천의 음식"
+    },
+    {
+      "name": "재인폭포",
+      "type": "primary",
+      "theme": "유네스코 지질명소"
+    },
+    {
+      "name": "아트밸리",
+      "type": "return",
+      "theme": "채석장 피날레"
+    }
   ],
-
   "whyTourWorks": {
     "bestFor": [
       "남이섬보다 조금 더 조용한 하루를 찾는 분",
@@ -98,7 +125,6 @@
       }
     ]
   },
-
   "stops": {
     "sanjeong": {
       "name": "산정호수",
@@ -139,7 +165,6 @@
         "facilities": "호수 입구의 카페와 식당, 보트 선착장, 조각공원, 피크닉장."
       }
     },
-
     "lunch": {
       "name": "점심 — 이동갈비 (포천 로컬 한 상)",
       "time": "11:40",
@@ -161,7 +186,6 @@
       ],
       "whyOnRoute": "**이 지역의 음식을, 그 음식이 난 자리에서.** 이동은 산정호수에서 10분 거리이고 서쪽으로 가는 길목에 있어, 식사가 하루의 이동 시간을 전혀 늘리지 않습니다. 시간대도 알맞습니다. 아침의 3.2 km 걷기를 끝낸 뒤이고, 계단과 다리에서 다리 힘과 약간의 인내가 필요한 오후의 지질공원 두 곳이 앞에 남아 있습니다."
     },
-
     "jaein": {
       "name": "재인폭포 (한탄강 유네스코 세계지질공원)",
       "time": "13:30",
@@ -201,7 +225,6 @@
         "facilities": "입구에 주차장, 화장실, 지질공원 해설 안내판. 협곡 안에는 상점이 없으니 물을 챙기세요."
       }
     },
-
     "artvalley": {
       "name": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
       "time": "15:20",
@@ -243,7 +266,6 @@
       }
     }
   },
-
   "staticQuestions": [
     {
       "question": "이 투어가 바뀌었나요? 허브아일랜드가 포함이지 않았나요?",
@@ -294,7 +316,6 @@
       "answer": "쉽지 않습니다. 산정호수, 재인폭포, 아트밸리는 두 개 시군에 걸친 서로 다른 세 지역에 있고, 아트밸리로 가는 버스는 두어 시간에 한 대뿐입니다. 차량 없이 하루에 세 곳을 모두 도는 것은 현실적이지 않습니다. 이 코스가 투어로 존재하는 이유의 대부분이 여기에 있습니다."
     }
   ],
-
   "seasonalVariations": [
     {
       "season": "봄 (3–5월)",
@@ -313,16 +334,44 @@
       "description": "한 해 중 가장 한적합니다. 천주호가 얼어붙기도 하고, 호수에서는 눈썰매 축제가 열리며, 폭포도 일부 얼 수 있습니다. 해가 짧아 오후 일정이 조금 빠듯해지고 재인폭포 데크길이 미끄러울 수 있습니다."
     }
   ],
-
   "glanceItems": [
-    { "icon": "camera", "label": "사진", "value": "매우 좋음", "level": 5 },
-    { "icon": "mountain", "label": "경관", "value": "매우 좋음", "level": 5 },
-    { "icon": "footprints", "label": "도보량", "value": "보통", "level": 3 },
-    { "icon": "cloud-rain", "label": "우천 대응", "value": "보통", "level": 3 },
-    { "icon": "users", "label": "가족 적합도", "value": "좋음", "level": 4 },
-    { "icon": "gauge", "label": "일정 여유", "value": "여유로움", "level": 5 }
+    {
+      "icon": "camera",
+      "label": "사진",
+      "value": "매우 좋음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경관",
+      "value": "매우 좋음",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "도보량",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 대응",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "좋음",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "일정 여유",
+      "value": "여유로움",
+      "level": 5
+    }
   ],
-
   "practical": {
     "walkingTitle": "도보와 지형",
     "walkingContent": [
@@ -349,22 +398,58 @@
       "유네스코 세계지질공원은 지질학적 가치에 대한 지정이며, 유네스코 세계유산 등재와는 다릅니다."
     ]
   },
-
   "pdNotes": "미팅 포인트는 두 곳입니다. 08:00 홍대입구역 8번 출구, 08:30 명동역 2번 출구이며, 출발 시각 10분 전까지 도착해 주시기 바랍니다. 귀경은 명동 18:00쯤, 이어서 홍대입구역 18:30쯤이며 정확한 시각은 교통 상황에 따라 달라집니다.",
   "stickyNote": "날짜와 인원을 선택하시면 실시간 예약 가능 여부를 확인하고 예약을 완료하실 수 있습니다.",
-
   "matchingMetadata": {
-    "anchor_pois": ["Sanjeong Lake", "Jaein Falls", "Pocheon Art Valley"],
-    "anchor_poi_keys": ["sanjeong_lake", "jaein_falls", "pocheon_art_valley"],
-    "primary_themes": ["seoul_day_trip", "unesco_global_geopark", "waterfall", "lake_walk", "quarry_art_park", "gyeonggi_nature"],
-    "secondary_themes": ["suspension_bridge", "skywalk", "columnar_jointing", "monorail", "silver_grass", "k_drama_filming", "local_food"],
-    "best_for": ["nature_lovers", "couples", "photographers", "adult_families", "geology_curious", "nami_island_alternative_seekers"],
-    "not_recommended_for": ["shopping_focused_travelers", "indoor_only_rainy_day_seekers", "step_free_access_required", "nightlife_focused_travelers"],
-    "competing_products": ["seoul-private-nami-morning-calm-petite-france", "seoul-suburbs-private-chartered-car-10hr", "seoul-seoraksan-nami-island-morning-calm-day-tour"],
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Jaein Falls",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "jaein_falls",
+      "pocheon_art_valley"
+    ],
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
+    ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
   },
-
   "pickupDropoff": {
     "meetingPoints": [
       {
@@ -398,5 +483,18 @@
       "귀경 시각은 대략이며 교통 상황에 따라 달라집니다.",
       "고정 노선 그룹 투어이며, 미팅 포인트까지는 여행자가 직접 오셔야 합니다."
     ]
+  },
+  "departureDays": {
+    "badge": "월·목·토 출발",
+    "accordionTitle": "출발 요일",
+    "accordionContent": [
+      "이 투어는 **월요일·목요일·토요일에만 출발합니다** — 세 요일 중 하루로 예약해 주세요.",
+      "세 출발일 모두 코스와 시간, 두 곳의 픽업 장소가 동일합니다.",
+      "여행 일정에 월·목·토가 없다면 다른 요일로 옮길 수 없습니다. 개인 전세 차량이 아니라 정해진 일정으로 운행하는 소규모 그룹 투어이기 때문입니다."
+    ],
+    "faqQ": "이 투어는 무슨 요일에 운행하나요?",
+    "faqA": "**월요일, 목요일, 토요일에만** 운행합니다. 세 요일 모두 일정이 같으니 여행 계획에 맞는 날로 예약하시면 됩니다. 그 외 요일에는 이 상품을 이용하실 수 없습니다.",
+    "lessIdeal": "월·목·토에 여행할 수 없는 분 (출발 요일이 이 세 날뿐입니다)",
+    "cardSuffix": " 월·목·토 출발."
   }
 }

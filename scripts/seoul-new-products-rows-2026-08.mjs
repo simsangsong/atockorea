@@ -23,8 +23,8 @@ export const EXT_LOCALES = ["de", "fr", "it", "ru"];
 export const PRODUCTS = [
   {
     slug: "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
-    mainFile: "2026-08-04-08-seoul-gapyeong-new-product.sql",
-    stagedFile: "2026-08-04-09-seoul-gapyeong-staged-locales.sql",
+    mainFile: "2026-08-04-10-seoul-gapyeong-new-product.sql",
+    stagedFile: "2026-08-04-11-seoul-gapyeong-staged-locales.sql",
     city: "Seoul",
     tag: "Day trip from Seoul · Gapyeong",
     duration: "11.5 hours",
@@ -44,8 +44,8 @@ export const PRODUCTS = [
   },
   {
     slug: "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
-    mainFile: "2026-08-04-10-seoul-winter-eobi-new-product.sql",
-    stagedFile: "2026-08-04-11-seoul-winter-eobi-staged-locales.sql",
+    mainFile: "2026-08-04-12-seoul-winter-eobi-new-product.sql",
+    stagedFile: "2026-08-04-13-seoul-winter-eobi-staged-locales.sql",
     city: "Seoul",
     tag: "Winter only · Seoraksan & Gapyeong",
     duration: "13.5 hours",

@@ -852,7 +852,7 @@
     {
       "name": "绿山路",
       "type": "primary",
-      "theme": "田园花开 --- **Notes:** - **Lines 1–5**: File paths kept as-is (technical strings, not translatable). - **Line 21** *haenyeo* → **海女** — standard Chinese rendering of the Jeju female diver cultural term. - **Line 22** *Jeonnong-ro* → **典农路** — Hanja-based rendering (典農 + 路). - **Line 23** *Urban Bloom* → **都市花开** — natural Chinese equivalent for an urban floral scene. - **Line 24** *Noksan-ro* → **绿山路** — Hanja-based rendering (綠山 + 路). - **Line 25** *Country Bloom* → **田园花开** — standard Chinese phrasing for a rural blossom scene."
+      "theme": "田园花开"
     },
     {
       "name": "午餐",
@@ -907,7 +907,7 @@
       {
         "title": "行程节奏与结构",
         "icon": "sun",
-        "iconBg": "bg-amber-50/80 > **注：** 第25项（`bg-amber-50/80`）为 Tailwind CSS 样式类名，属技术代码，保持原文不译。第3项\"迷川窟\"（미천굴）为济州岛熔岩洞窟专有名称，按音译处理。",
+        "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
@@ -968,7 +968,7 @@
     "lessIdealFor": [
       "淡季游客（4月15日后）",
       "不想进洞窟的团体",
-      "携带婴儿车较多的团体（乡村路边景点） > **说明：** 第8条（`bg-pink-50/80`）和第16条（`bg-sky-50/80`）为CSS样式类名，属于技术代码，保留原文不作翻译。"
+      "携带婴儿车较多的团体（乡村路边景点）"
     ]
   },
   "practicalAccordionItems": [
@@ -1221,7 +1221,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 在运行时从 Supabase / 环境变量中解析；不属于静态 JSONB 的一部分。",
+    "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
     "price": {
       "amountLabel": "",
       "originalPriceUsd": null,
@@ -2402,7 +2402,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id 在运行时由 Supabase／环境变量解析，不属于静态 JSONB 的一部分。",
+        "note": "选择日期与人数，即可查看实时可订状态并完成预订。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

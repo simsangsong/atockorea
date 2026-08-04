@@ -4,7 +4,7 @@
 -- Generated: 2026-08-04. INSERT-only staging per the i18n expansion track:
 -- guests on de/fr/it/ru keep seeing EN until the app-side fallback gate
 -- (TOUR_PRODUCT_FALLBACK_URL_LOCALES in tourProductPageBody.tsx) is opened —
--- a separate human decision. Apply AFTER 2026-08-04-08-seoul-gapyeong-new-product.sql.
+-- a separate human decision. Apply AFTER 2026-08-04-10-seoul-gapyeong-new-product.sql.
 -- Script: scripts/gen-seoul-new-products-sql-2026-08.mjs
 -- =============================================================================
 
@@ -31,7 +31,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Tagesausflug ab Seoul","Gapyeong","Gruppentour zum Zusteigen","K-Drama","Gärten"]'::jsonb,
+  ARRAY['Tagesausflug ab Seoul', 'Gapyeong', 'Gruppentour zum Zusteigen', 'K-Drama', 'Gärten']::text[],
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   'Seouls unkompliziertester Landtag: die Metasequoien-Allee der Insel Nami, ein 330,000 m² großes Themen-Arboretum und ein Dorf zum Kleinen Prinzen — alle drei Eintritte inklusive, zurück in Seoul bis 19:00.',
@@ -67,7 +67,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Excursion depuis Séoul","Gapyeong","Groupe partagé","K-drama","Jardins"]'::jsonb,
+  ARRAY['Excursion depuis Séoul', 'Gapyeong', 'Groupe partagé', 'K-drama', 'Jardins']::text[],
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   'La journée à la campagne la plus facile au départ de Séoul : l''allée de métaséquoias de l''île de Nami, un arboretum thématique de 330,000 m² et un village du Petit Prince — les trois entrées incluses, retour à Séoul avant 19:00.',
@@ -103,7 +103,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Gita da Seul","Gapyeong","Gruppo condiviso","K-drama","Giardini"]'::jsonb,
+  ARRAY['Gita da Seul', 'Gapyeong', 'Gruppo condiviso', 'K-drama', 'Giardini']::text[],
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   'La giornata in campagna più semplice da Seul: il viale di metasequoie dell''isola di Nami, un arboreto tematico di 330,000 m² e un villaggio del Piccolo Principe — tutti e tre gli ingressi inclusi, di ritorno a Seul entro le 19:00.',
@@ -139,7 +139,7 @@ INSERT INTO public.tour_product_pages (
   3,
   0,
   0,
-  '["Однодневная поездка из Сеула","Капхён","Сборная группа","K-drama","Сады"]'::jsonb,
+  ARRAY['Однодневная поездка из Сеула', 'Капхён', 'Сборная группа', 'K-drama', 'Сады']::text[],
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   '/images/tours/nami-island/nami-metasequoia-sunset-lake.webp',
   'Самый простой выезд за город из Сеула: аллея метасеквой на острове Нами, тематический дендрарий площадью 330,000 m² и деревня Маленького принца — все три входных билета включены, возвращение в Сеул к 19:00.',

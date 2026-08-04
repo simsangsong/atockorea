@@ -28,6 +28,7 @@
     "reviewCount": 0,
     "badges": [
       "Excursion depuis Séoul",
+      "Lun · jeu · sam",
       "Géoparc UNESCO",
       "Cascade",
       "Balade au bord du lac",
@@ -36,7 +37,7 @@
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
-    "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées.",
+    "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées. Départs les lundis, jeudis et samedis.",
     "tags": [
       "Excursion depuis Séoul",
       "Pocheon",
@@ -494,10 +495,21 @@
       "Les voyageurs qui veulent une journée très active ou axée sur le shopping",
       "Ceux qui ont besoin d'un programme entièrement en intérieur en cas de pluie",
       "Les visiteurs qui tiennent à un grand monument unique (préférez alors la forteresse de Hwaseong à Suwon)",
-      "Les groupes ayant besoin d'un accès sans marches à chaque étape"
+      "Les groupes ayant besoin d'un accès sans marches à chaque étape",
+      "Voyageurs ne pouvant pas partir un lundi, un jeudi ou un samedi (les seuls jours de départ)"
     ]
   },
   "practicalAccordionItems": [
+    {
+      "id": "departure-days",
+      "title": "Jours de départ",
+      "preview": "Ce circuit part **uniquement les lundis, jeudis et samedis** — merci de réserver l'une de ces dates.",
+      "content": [
+        "Ce circuit part **uniquement les lundis, jeudis et samedis** — merci de réserver l'une de ces dates.",
+        "L'itinéraire, les horaires et les deux points de prise en charge sont identiques les trois jours de départ.",
+        "Si vos dates ne comportent ni lundi, ni jeudi, ni samedi, le circuit ne peut pas être déplacé à un autre jour : il s'agit d'un départ en petit groupe à horaires fixes, et non d'un véhicule privé."
+      ]
+    },
     {
       "id": "pickup",
       "title": "Prise en charge et retour",
@@ -670,6 +682,10 @@
       "answer": "Si. À partir d'août 2026, l'itinéraire remplace Herb Island par la cascade de Jaein, à Yeoncheon, et ajoute une véritable étape déjeuner locale. La raison : la cascade de Jaein et Pocheon Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang, de sorte que la journée raconte désormais une seule histoire géologique cohérente au lieu de trois étapes sans lien. Si vous tenez particulièrement à Herb Island, contactez-nous avant de réserver — nous le proposons comme prestation distincte."
     },
     {
+      "question": "Quels jours de la semaine ce circuit est-il proposé ?",
+      "answer": "Il est proposé **uniquement les lundis, jeudis et samedis**. Le programme est identique les trois jours : réservez celui qui convient le mieux à votre voyage. Les autres jours ne sont pas disponibles pour ce produit."
+    },
+    {
       "question": "Qu'est-ce qui rend la cascade de Jaein et Art Valley « UNESCO » ?",
       "answer": "Les deux sont des géosites désignés du Géoparc mondial UNESCO du Hantangang, certifié le 7 juillet 2020 et reconduit en 2024. Il s'agit d'un label de géoparc, et non d'une inscription au patrimoine mondial : il reconnaît la géologie du bassin de la rivière Hantangang, à cheval sur Pocheon, Yeoncheon et Cheorwon. La cascade de Jaein montre la lave basaltique et ses orgues basaltiques ; Art Valley montre l'ancien socle de granit sur lequel la lave s'est écoulée."
     },
@@ -788,7 +804,7 @@
     "notes": "Deux points de rendez-vous : la station Hongik University (sortie 8) à 08:00 et la station Myeongdong (sortie 2) à 08:30 — merci d'arriver 10 minutes avant votre heure de départ. Le retour dessert Myeongdong vers 18:00, puis la station Hongik University vers 18:30 ; les horaires exacts dépendent de la circulation."
   },
   "matching_profile": {
-    "profile_version": 8,
+    "profile_version": 9,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -949,12 +965,6 @@
     "national_tourist_site_1977_designation_fit": 1,
     "myeongseongsan_silver_grass_autumn_fit": 1,
     "sanjeong_lake_sledding_festival_winter_fit": 1,
-    "mediterranean_herb_garden_fit": 1,
-    "year_round_lighting_festival_fit": 1,
-    "korea_largest_herb_museum_fit": 1,
-    "korea_drama_filming_density_high_fit": 1,
-    "legend_of_the_blue_sea_filming_fit": 1,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -972,10 +982,16 @@
       11,
       12
     ],
-    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
+    "signature_window_label": "Year-round on Monday / Thursday / Saturday departures (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "available_days_signature": [
+      "monday",
+      "thursday",
+      "saturday"
+    ],
+    "fixed_departure_monday_thursday_saturday": true
   },
   "matching_metadata": {
     "matching_schema": "match_tours_embedded_v2",
@@ -1050,7 +1066,8 @@
       "shopping_focused_travelers",
       "indoor_only_rainy_day_seekers",
       "step_free_access_required",
-      "nightlife_focused_travelers"
+      "nightlife_focused_travelers",
+      "travelers_needing_non_monday_thursday_saturday_dates"
     ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
@@ -1542,7 +1559,8 @@
             "Les voyageurs qui veulent une journée très active ou axée sur le shopping",
             "Ceux qui ont besoin d'un programme entièrement en intérieur en cas de pluie",
             "Les visiteurs qui tiennent à un grand monument unique (préférez alors la forteresse de Hwaseong à Suwon)",
-            "Les groupes ayant besoin d'un accès sans marches à chaque étape"
+            "Les groupes ayant besoin d'un accès sans marches à chaque étape",
+            "Voyageurs ne pouvant pas partir un lundi, un jeudi ou un samedi (les seuls jours de départ)"
           ]
         }
       }
@@ -1553,6 +1571,16 @@
       "component": "TourPracticalDetails",
       "props": {
         "practicalAccordionItems": [
+          {
+            "id": "departure-days",
+            "title": "Jours de départ",
+            "preview": "Ce circuit part **uniquement les lundis, jeudis et samedis** — merci de réserver l'une de ces dates.",
+            "content": [
+              "Ce circuit part **uniquement les lundis, jeudis et samedis** — merci de réserver l'une de ces dates.",
+              "L'itinéraire, les horaires et les deux points de prise en charge sont identiques les trois jours de départ.",
+              "Si vos dates ne comportent ni lundi, ni jeudi, ni samedi, le circuit ne peut pas être déplacé à un autre jour : il s'agit d'un départ en petit groupe à horaires fixes, et non d'un véhicule privé."
+            ]
+          },
           {
             "id": "pickup",
             "title": "Prise en charge et retour",
@@ -1737,6 +1765,10 @@
           {
             "question": "Qu'est-ce qui a changé sur ce circuit — ne comprenait-il pas Herb Island ?",
             "answer": "Si. À partir d'août 2026, l'itinéraire remplace Herb Island par la cascade de Jaein, à Yeoncheon, et ajoute une véritable étape déjeuner locale. La raison : la cascade de Jaein et Pocheon Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang, de sorte que la journée raconte désormais une seule histoire géologique cohérente au lieu de trois étapes sans lien. Si vous tenez particulièrement à Herb Island, contactez-nous avant de réserver — nous le proposons comme prestation distincte."
+          },
+          {
+            "question": "Quels jours de la semaine ce circuit est-il proposé ?",
+            "answer": "Il est proposé **uniquement les lundis, jeudis et samedis**. Le programme est identique les trois jours : réservez celui qui convient le mieux à votre voyage. Les autres jours ne sont pas disponibles pour ce produit."
           },
           {
             "question": "Qu'est-ce qui rend la cascade de Jaein et Art Valley « UNESCO » ?",
@@ -1990,7 +2022,7 @@
           }
         }
       },
-      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet."
+      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet. Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. The bundle previously made no departure-day claim at all, so guests could pick any date and hit the constraint only at checkout. Six Herb-Island-era matching signals (herb garden, lighting festival, herb museum, drama-filming density, and two K-drama title fits) were still scored 1 and are now dropped."
     }
   }
 }

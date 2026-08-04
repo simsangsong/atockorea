@@ -28,6 +28,7 @@
     "reviewCount": 0,
     "badges": [
       "ソウル発日帰り",
+      "月・木・土出発",
       "ユネスコ世界ジオパーク",
       "滝",
       "湖畔散策",
@@ -36,7 +37,7 @@
     "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
-    "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。",
+    "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。",
     "tags": [
       "ソウル発日帰り",
       "抱川",
@@ -494,10 +495,21 @@
       "ショッピング中心、あるいは終始アクティブな一日をお求めの方",
       "雨天時に完全な屋内プランが必要な方",
       "有名な単一の名所にこだわりのある方（その場合は水原華城をおすすめします）",
-      "すべての立ち寄り先で段差のないアクセスが必要なグループ"
+      "すべての立ち寄り先で段差のないアクセスが必要なグループ",
+      "月・木・土に旅行できない方（出発はこの3曜日のみです）"
     ]
   },
   "practicalAccordionItems": [
+    {
+      "id": "departure-days",
+      "title": "出発曜日",
+      "preview": "このツアーは**月曜・木曜・土曜のみ出発します**。いずれかの曜日でご予約ください。",
+      "content": [
+        "このツアーは**月曜・木曜・土曜のみ出発します**。いずれかの曜日でご予約ください。",
+        "3つの出発日はいずれもコース、時間、2か所の集合場所がすべて同じです。",
+        "ご旅行日程に月・木・土が含まれない場合、他の曜日への変更はできません。専用チャーターではなく、決まった日程で運行する少人数グループツアーのためです。"
+      ]
+    },
     {
       "id": "pickup",
       "title": "乗降場所",
@@ -670,6 +682,10 @@
       "answer": "含まれていました。2026年8月から、ハーブアイランドに代えて漣川のチェイン滝を訪れ、地元の昼食スポットを新たに加えています。理由は、チェイン滝と抱川アートバレーがどちらも漢灘江ユネスコ世界ジオパークのジオサイトだからです。これにより一日は、無関係な3か所を回るのではなく、ひとつながりの地質の物語を語るようになりました。どうしてもハーブアイランドをご希望の場合は、ご予約前にご連絡ください。別手配として承ります。"
     },
     {
+      "question": "このツアーは何曜日に催行されますか？",
+      "answer": "**月曜・木曜・土曜のみ**の催行です。3日とも行程は同じですので、ご旅行に合う曜日をお選びください。それ以外の曜日にこの商品はご利用いただけません。"
+    },
+    {
       "question": "チェイン滝と抱川アートバレーが「ユネスコ」なのはなぜですか？",
       "answer": "どちらも漢灘江ユネスコ世界ジオパークの指定ジオサイトで、2020年7月7日に認定され、2024年に再認定されました。これはジオパークの認定であって、世界遺産の登録ではありません。抱川・漣川・鉄原にまたがる漢灘江流域の地質を評価したものです。チェイン滝では玄武岩質の溶岩とその柱状節理を、抱川アートバレーではその溶岩が流れ渡った古い花崗岩の基盤岩を見ることができます。"
     },
@@ -788,7 +804,7 @@
     "notes": "集合場所は2か所です。弘大入口駅8番出口 08:00、明洞駅2番出口 08:30 — 出発時刻の10分前までにお越しください。復路は明洞18:00頃、続いて弘大入口駅18:30頃となり、正確な時刻は交通状況によって変わります。"
   },
   "matching_profile": {
-    "profile_version": 7,
+    "profile_version": 8,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -949,12 +965,6 @@
     "national_tourist_site_1977_designation_fit": 1,
     "myeongseongsan_silver_grass_autumn_fit": 1,
     "sanjeong_lake_sledding_festival_winter_fit": 1,
-    "mediterranean_herb_garden_fit": 1,
-    "year_round_lighting_festival_fit": 1,
-    "korea_largest_herb_museum_fit": 1,
-    "korea_drama_filming_density_high_fit": 1,
-    "legend_of_the_blue_sea_filming_fit": 1,
-    "moon_lovers_scarlet_heart_ryeo_filming_fit": 1,
     "differentiates_from_dmz_day_trip": true,
     "differentiates_from_nami_morning_calm_petite_france": true,
     "differentiates_from_seoraksan_sokcho_day_trip": true,
@@ -972,10 +982,16 @@
       11,
       12
     ],
-    "signature_window_label": "Year-round (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
+    "signature_window_label": "Year-round on Monday / Thursday / Saturday departures (peak: October-November silver-grass + autumn foliage; summer for peak waterfall flow; mid-Dec to mid-Feb Sanjeong Sledding Festival + frozen Cheonjuho)",
     "english_speaking_guide_provided": true,
     "chinese_speaking_guide_available_on_advance_notice": true,
-    "japanese_speaking_guide_available_on_advance_notice": true
+    "japanese_speaking_guide_available_on_advance_notice": true,
+    "available_days_signature": [
+      "monday",
+      "thursday",
+      "saturday"
+    ],
+    "fixed_departure_monday_thursday_saturday": true
   },
   "matching_metadata": {
     "matching_schema": "match_tours_embedded_v2",
@@ -1050,7 +1066,8 @@
       "shopping_focused_travelers",
       "indoor_only_rainy_day_seekers",
       "step_free_access_required",
-      "nightlife_focused_travelers"
+      "nightlife_focused_travelers",
+      "travelers_needing_non_monday_thursday_saturday_dates"
     ],
     "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
     "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
@@ -1542,7 +1559,8 @@
             "ショッピング中心、あるいは終始アクティブな一日をお求めの方",
             "雨天時に完全な屋内プランが必要な方",
             "有名な単一の名所にこだわりのある方（その場合は水原華城をおすすめします）",
-            "すべての立ち寄り先で段差のないアクセスが必要なグループ"
+            "すべての立ち寄り先で段差のないアクセスが必要なグループ",
+            "月・木・土に旅行できない方（出発はこの3曜日のみです）"
           ]
         }
       }
@@ -1553,6 +1571,16 @@
       "component": "TourPracticalDetails（ツアー実用情報）",
       "props": {
         "practicalAccordionItems": [
+          {
+            "id": "departure-days",
+            "title": "出発曜日",
+            "preview": "このツアーは**月曜・木曜・土曜のみ出発します**。いずれかの曜日でご予約ください。",
+            "content": [
+              "このツアーは**月曜・木曜・土曜のみ出発します**。いずれかの曜日でご予約ください。",
+              "3つの出発日はいずれもコース、時間、2か所の集合場所がすべて同じです。",
+              "ご旅行日程に月・木・土が含まれない場合、他の曜日への変更はできません。専用チャーターではなく、決まった日程で運行する少人数グループツアーのためです。"
+            ]
+          },
           {
             "id": "pickup",
             "title": "乗降場所",
@@ -1737,6 +1765,10 @@
           {
             "question": "このツアーは何が変わったのですか？ ハーブアイランドが含まれていませんでしたか？",
             "answer": "含まれていました。2026年8月から、ハーブアイランドに代えて漣川のチェイン滝を訪れ、地元の昼食スポットを新たに加えています。理由は、チェイン滝と抱川アートバレーがどちらも漢灘江ユネスコ世界ジオパークのジオサイトだからです。これにより一日は、無関係な3か所を回るのではなく、ひとつながりの地質の物語を語るようになりました。どうしてもハーブアイランドをご希望の場合は、ご予約前にご連絡ください。別手配として承ります。"
+          },
+          {
+            "question": "このツアーは何曜日に催行されますか？",
+            "answer": "**月曜・木曜・土曜のみ**の催行です。3日とも行程は同じですので、ご旅行に合う曜日をお選びください。それ以外の曜日にこの商品はご利用いただけません。"
           },
           {
             "question": "チェイン滝と抱川アートバレーが「ユネスコ」なのはなぜですか？",
@@ -1990,7 +2022,7 @@
           }
         }
       },
-      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet."
+      "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet. Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. The bundle previously made no departure-day claim at all, so guests could pick any date and hit the constraint only at checkout. Six Herb-Island-era matching signals (herb garden, lighting festival, herb museum, drama-filming density, and two K-drama title fits) were still scored 1 and are now dropped."
     }
   }
 }
