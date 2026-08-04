@@ -27,7 +27,7 @@
 -- page_sections.* mirrors are deliberately NOT repaired: segments.ts marks that
 -- block DEAD and a test asserts the render path never reads it. (129 paths skipped.)
 --
--- Statements: 220 (28 products by slug + 4 locale-wide staged-row repairs).
+-- Statements: 228 across 31 products.
 -- Run order: this file is 08 and must stay LAST — 02/03/05/07 rewrite whole
 -- detail_payloads and Gyeongju (07) still writes five of the polluted strings.
 -- =============================================================================
@@ -1393,33 +1393,84 @@ WHERE slug = 'southwest-hallasan-osulloc-aewol' AND locale = 'es'
 -- no bundle file, so the bundle-diff generator above could not see them. Guests
 -- do not read them yet (TOUR_PRODUCT_FALLBACK_URL_LOCALES narrows these locales
 -- to EN) but the dev comment would ship the day that gate opens.
--- Guarded on LIKE rather than an exact string: the same dev comment exists in
--- several phrasings here, and no legitimate booking-bar copy mentions
--- checkout_tour_id, so this stays unable to clobber an admin edit.
+-- Written per row with an exact guard, like every other statement in this file:
+-- the dev comment exists in four different phrasings across these three
+-- products (two of them ship the ENGLISH sentence under a de/fr/it heading),
+-- so the guards are the values read back from the live rows, not a pattern.
+-- Replacement copy is the wording already authored for these locales in the
+-- Pocheon and Busan bundles — the sentence is product-independent.
 
 UPDATE public.tour_product_pages SET
   detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen."'::jsonb, false),
   updated_at = NOW()
-WHERE locale = 'de'
-  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+WHERE slug = 'from-incheon-seoul-day-tour-cruise-guests' AND locale = 'de'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.';
 
 UPDATE public.tour_product_pages SET
   detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en direct et finaliser votre réservation."'::jsonb, false),
   updated_at = NOW()
-WHERE locale = 'fr'
-  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+WHERE slug = 'from-incheon-seoul-day-tour-cruise-guests' AND locale = 'fr'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id est résolu à l''exécution depuis Supabase / env ; ne fait pas partie du JSONB statique.';
 
 UPDATE public.tour_product_pages SET
   detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Selezioni la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."'::jsonb, false),
   updated_at = NOW()
-WHERE locale = 'it'
-  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+WHERE slug = 'from-incheon-seoul-day-tour-cruise-guests' AND locale = 'it'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id viene risolto a runtime da Supabase / env; non fa parte del JSONB statico.';
 
 UPDATE public.tour_product_pages SET
   detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Выберите дату и размер группы, чтобы проверить актуальные места и завершить бронирование."'::jsonb, false),
   updated_at = NOW()
-WHERE locale = 'ru'
-  AND detail_payload #>> '{"sticky_booking_bar","note"}' LIKE '%checkout_tour_id%';
+WHERE slug = 'from-incheon-seoul-day-tour-cruise-guests' AND locale = 'ru'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id определяется во время выполнения из Supabase / env; не является частью статического JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'incheon-seoul-private-car-shore-excursion-cruise' AND locale = 'de'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id wird zur Laufzeit aus Supabase / env aufgelöst; nicht Teil des statischen JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en direct et finaliser votre réservation."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'incheon-seoul-private-car-shore-excursion-cruise' AND locale = 'fr'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id est résolu à l''exécution depuis Supabase / env ; ne fait pas partie du JSONB statique.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Selezioni la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'incheon-seoul-private-car-shore-excursion-cruise' AND locale = 'it'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id viene risolto a runtime da Supabase / env; non fa parte del JSONB statico.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Выберите дату и размер группы, чтобы проверить актуальные места и завершить бронирование."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'incheon-seoul-private-car-shore-excursion-cruise' AND locale = 'ru'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id определяется во время выполнения из Supabase / env; не является частью статического JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-dmz-private-3rd-tunnel-suspension-bridge' AND locale = 'de'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en direct et finaliser votre réservation."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-dmz-private-3rd-tunnel-suspension-bridge' AND locale = 'fr'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Selezioni la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-dmz-private-3rd-tunnel-suspension-bridge' AND locale = 'it'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id resolves at runtime from Supabase / env; not part of static JSONB.';
+
+UPDATE public.tour_product_pages SET
+  detail_payload = jsonb_set(detail_payload, '{"sticky_booking_bar","note"}', '"Выберите дату и размер группы, чтобы проверить актуальные места и завершить бронирование."'::jsonb, false),
+  updated_at = NOW()
+WHERE slug = 'seoul-dmz-private-3rd-tunnel-suspension-bridge' AND locale = 'ru'
+  AND detail_payload #>> '{"sticky_booking_bar","note"}' = 'checkout_tour_id определяется во время выполнения из Supabase / env; не является частью статического JSONB.';
 
 COMMIT;
 

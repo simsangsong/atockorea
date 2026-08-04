@@ -53,6 +53,11 @@ const SQL_FILES = [
   // still carry the polluted strings — Gyeongju writes five of them. Repairing
   // before those files run would simply be overwritten again.
   "2026-08-04-08-guest-copy-repair.sql",
+  // 09 exists because 05/06 were applied from the version of those files that
+  // was on main at the time, which predates the Pocheon departure-day work —
+  // so the live rows had no Mon/Thu/Sat claim at all. It is the delta between
+  // the bundles and the rows, not a re-run of 05/06.
+  "2026-08-04-09-pocheon-departure-days.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";
