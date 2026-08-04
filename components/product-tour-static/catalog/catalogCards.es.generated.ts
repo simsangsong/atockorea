@@ -258,22 +258,22 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "Busan→Gyeongju: Capital Antigua",
-      "subtitle": "Las seis paradas clásicas de Gyeongju a un ritmo más tranquilo y con regreso más temprano.",
+      "subtitle": "Minivan de grupo pequeño con guía de habla inglesa — Ahopsan, Bulguksa (UNESCO), Gyochon + Casa del Clan Choi + Woljeonggyo, Daereungwon + Hwangnidan-gil y el Museo Nacional de Gyeongju (en invierno, Donggung y Wolji de noche) en un solo día.",
       "region": "Gyeongju (desde Busán)",
-      "duration": "10,5 horas",
+      "duration": "11,5 horas",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "Grupo pequeño",
-        "Ritmo más tranquilo",
-        "Desde Busán",
-        "Regreso más temprano"
+        "Ritmo tranquilo",
+        "Desde Busan",
+        "Paisaje nocturno en invierno"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
-      "shortCardDescription": "Tour en grupo pequeño de un día desde Busán a Gyeongju, la antigua capital del reino Silla (57 a. C.–935 d. C.). El mismo recorrido clásico de seis atracciones que la versión UNESCO Legacy (Bosque de Bambú de Ahopsan → Templo Bulguksa UNESCO → Almuerzo ssambap en Gyeongju → Museo Nacional → Aldea Hanok de Gyochon → Puente Woljeonggyo), pero a un ritmo más tranquilo y con regreso más temprano (≈18:50). Guía certificado de habla inglesa/china; minivan; entradas gratuitas en todo el recorrido (solo Ahopsan ₩5.000 y el almuerzo se pagan en el día)."
+      "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
     },
     "price": {
       "amountLabel": ""

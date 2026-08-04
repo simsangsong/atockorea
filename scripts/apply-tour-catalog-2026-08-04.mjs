@@ -47,7 +47,12 @@ const SQL_FILES = [
   "2026-08-04-04-busan-smallgroup-staged-locales.sql",
   "2026-08-04-05-pocheon-geopark-recourse.sql",
   "2026-08-04-06-pocheon-geopark-staged-locales.sql",
-  "2026-08-04-07-guest-copy-repair.sql",
+  "2026-08-04-07-gyeongju-recourse.sql",
+  // 08 must stay LAST. It is a surgical repair guarded on the exact current
+  // value of each path, and 02/03/05/07 rewrite whole detail_payloads that
+  // still carry the polluted strings — Gyeongju writes five of them. Repairing
+  // before those files run would simply be overwritten again.
+  "2026-08-04-08-guest-copy-repair.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";
@@ -55,7 +60,12 @@ const EAST = "jeju-eastern-unesco-spots-day-tour";
 const SOUTH = "jeju-southern-top-unesco-spots-tour";
 const SOUTHWEST = "southwest-hallasan-osulloc-aewol";
 const POCHEON = "pocheon-sanjeong-lake-herb-island-art-valley";
-const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN, POCHEON];
+const GYEONGJU = "from-busan-gyeongju-ancient-capital-day-tour";
+// Pocheon and Gyeongju were re-coursed the same day (SQL 05/06 and 07). Their
+// match_tours rows still hold the OLD itineraries until this import runs —
+// Gyeongju included, even though it stays hidden from consumer surfaces: a
+// blocked SKU with a stale course is still wrong data for the recommender.
+const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN, POCHEON, GYEONGJU];
 const HYDRANGEA = [
   "jeju-hydrangea-festival-tour-east-route",
   "jeju-hydrangea-festival-tour-southwest-route",

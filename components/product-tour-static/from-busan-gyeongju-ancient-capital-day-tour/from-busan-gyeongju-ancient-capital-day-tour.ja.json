@@ -6,20 +6,21 @@
   "product_id": "from-busan-gyeongju-ancient-capital-day-tour",
   "seo": {
     "pageTitle": "釜山発：慶州古都日帰りツアー | AtoC Korea",
-    "metaDescription": "釜山〜慶州10.5時間少人数ツアー：仏国寺（ユネスコ）、アホプサン竹林、慶州国立博物館、校村韓屋、月精橋。",
+    "metaDescription": "釜山発の慶州日帰り少人数ツアー：アホプサン竹林 · 仏国寺（ユネスコ）· 昼食 · 校村韓屋村＋崔富豪邸＋月精橋 · 大陵苑＋ファンリダンギル · 国立慶州博物館（冬は東宮と月池の夜景）。釜山駅・西面駅・海雲台駅の地下鉄出口でピックアップ。",
     "primaryKeywords": [
       "慶州古都ツアー",
       "釜山発慶州日帰り旅行",
       "釜山から仏国寺へ",
       "新羅王国遺跡ツアー"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
+    "ogImage": "https://www.atockorea.com/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+    "description": "釜山から慶州へ向かう少人数ミニバンの日帰りツアーです。アホプサン竹林の竹の道で一日を開き、ユネスコ世界遺産の仏国寺をゆったり拝観したあと、午後は歩いてまわる2つのブロック — 校村韓屋村・崔富豪邸から月精橋まで、大陵苑の王陵からファンリダンギルのカフェ通りまで — を巡ります。最後は国立慶州博物館（天馬塚金冠・エミレの鐘）で、冬（11〜2月）は同じ時刻に東宮と月池の夜景へ変更されます。ピックアップと降車は釜山駅4番出口、西面駅4番出口、海雲台駅5番出口 — すべて地下鉄駅です。"
   },
   "catalog_card": {
     "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "title": "釜山発・慶州古都ツアー",
     "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-    "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。",
+    "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。",
     "tags": [
       "small_group",
       "慶州",
@@ -30,15 +31,15 @@
     "rating": 0,
     "reviewCount": 0,
     "slug": "from-busan-gyeongju-ancient-capital-day-tour",
-    "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+    "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
     "region": "慶州（釜山発）",
-    "duration": "10.5時間",
+    "duration": "11.5時間",
     "stopsCount": 8,
     "badges": [
       "少人数グループ",
       "ゆったりとしたペース",
       "釜山発",
-      "早めの帰着"
+      "冬は夜景"
     ],
     "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp"
   },
@@ -55,14 +56,14 @@
   "hero": {
     "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
     "imagePosition": "center 35%",
-    "tagline": "仏国寺、博物館、校村、橋 — ゆったりとしたペース、早めの帰着",
+    "tagline": "崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ — 午後は車を停めて歩きます",
     "pills": [
       "small_group",
       "慶州",
       "ancient_capital"
     ],
     "meta": {
-      "duration": "約10.5時間（最初のお迎え08:10、最終送迎約18:50）",
+      "duration": "約11.5時間（最初のお迎え08:10、最終送迎約19:50）",
       "region": "慶州（釜山発）",
       "stops": "8スポット",
       "rating": 0,
@@ -107,8 +108,8 @@
     {
       "icon": "footprints",
       "label": "徒歩",
-      "value": "普通",
-      "level": 3
+      "value": "やや多め",
+      "level": 4
     },
     {
       "icon": "cloud-rain",
@@ -135,240 +136,280 @@
       "type": "photo",
       "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "location": "アホプサン竹林（아홉산숲）",
-      "alt": "アホプサン竹林（아홉산숲） — gallery image 1",
-      "caption": "アホプサン竹林（아홉산숲） — photo 1"
+      "caption": "アホプサン竹林（아홉산숲） — photo 1",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 1"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "caption": "アホプサン竹林（아홉산숲） — photo 2",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 2"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-      "location": "国立慶州博物館",
-      "alt": "国立慶州博物館 — ギャラリー画像 1",
-      "caption": "国立慶州博物館 — 写真 1"
+      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "caption": "アホプサン竹林（아홉산숲） — photo 3",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 3"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 1",
-      "caption": "校村ハノク村（교촌마을） — photo 1"
+      "src": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
+      "location": "アホプサン竹林（아홉산숲）",
+      "caption": "アホプサン竹林（아홉산숲） — photo 7",
+      "alt": "アホプサン竹林（아홉산숲） — gallery image 7"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/itinerary/woljeonggyo-front-day.webp",
-      "location": "月精橋",
-      "alt": "月精橋 — gallery image 1",
-      "caption": "月精橋 — photo 1"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-      "location": "アホプサン竹林（아홉산숲）",
-      "alt": "アホプサン竹林（아홉산숲） — gallery image 2",
-      "caption": "アホプサン竹林（아홉산숲） — photo 2"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
-      "location": "アホプサン竹林（아홉산숲）",
-      "alt": "アホプサン竹林（아홉산숲） — gallery image 3",
-      "caption": "アホプサン竹林（아홉산숲） — photo 3"
+      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
-      "location": "アホプサン竹林（아홉산숲）",
-      "alt": "アホプサン竹林（아홉산숲） — gallery image 7",
-      "caption": "アホプサン竹林（아홉산숲） — photo 7"
+      "src": "/images/tours/bulguksa-temple/photo-001.webp",
+      "location": "仏国寺（ユネスコ世界遺産）",
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 4",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+      "src": "/images/tours/bulguksa-temple/photo-002.webp",
       "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 2"
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 5",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+      "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
       "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 3"
+      "caption": "仏国寺（ユネスコ世界遺産） — photo 7",
+      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 7"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/photo-001.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 4"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 1",
+      "alt": "校村韓屋村（교촌마을） — gallery image 1"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/photo-002.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 5"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 2",
+      "alt": "校村韓屋村（교촌마을） — gallery image 2"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
-      "location": "仏国寺（ユネスコ世界遺産）",
-      "alt": "仏国寺（ユネスコ世界遺産） — gallery image 7",
-      "caption": "仏国寺（ユネスコ世界遺産） — photo 7"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 3",
+      "alt": "校村韓屋村（교촌마을） — gallery image 3"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-      "location": "国立慶州博物館",
-      "alt": "国立慶州博物館 — ギャラリー画像 2",
-      "caption": "国立慶州博物館 — 写真 2"
+      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 4",
+      "alt": "校村韓屋村（교촌마을） — gallery image 4"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
-      "location": "国立慶州博物館",
-      "alt": "国立慶州博物館 — ギャラリー画像 3",
-      "caption": "国立慶州博物館 — 写真 3"
+      "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 5",
+      "alt": "校村韓屋村（교촌마을） — gallery image 5"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 2",
-      "caption": "校村ハノク村（교촌마을） — photo 2"
+      "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 6",
+      "alt": "校村韓屋村（교촌마을） — gallery image 6"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 3",
-      "caption": "校村ハノク村（교촌마을） — photo 3"
+      "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 7",
+      "alt": "校村韓屋村（교촌마을） — gallery image 7"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 4",
-      "caption": "校村ハノク村（교촌마을） — photo 4"
+      "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 8",
+      "alt": "校村韓屋村（교촌마을） — gallery image 8"
     },
     {
       "id": 19,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 5",
-      "caption": "校村ハノク村（교촌마을） — photo 5"
+      "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 9",
+      "alt": "校村韓屋村（교촌마을） — gallery image 9"
     },
     {
       "id": 20,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 6",
-      "caption": "校村ハノク村（교촌마을） — photo 6"
+      "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 10",
+      "alt": "校村韓屋村（교촌마을） — gallery image 10"
     },
     {
       "id": 21,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 7",
-      "caption": "校村ハノク村（교촌마을） — photo 7"
+      "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 11",
+      "alt": "校村韓屋村（교촌마을） — gallery image 11"
     },
     {
       "id": 22,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 8",
-      "caption": "校村ハノク村（교촌마을） — photo 8"
+      "src": "/images/itinerary/woljeonggyo-front-day.webp",
+      "location": "月精橋",
+      "caption": "月精橋 — photo 1",
+      "alt": "月精橋 — gallery image 1"
     },
     {
       "id": 23,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 9",
-      "caption": "校村ハノク村（교촌마을） — photo 9"
+      "src": "/images/itinerary/woljeonggyo-reflection.webp",
+      "location": "月精橋",
+      "caption": "月精橋 — photo 2",
+      "alt": "月精橋 — gallery image 2"
     },
     {
       "id": 24,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 10",
-      "caption": "校村ハノク村（교촌마을） — photo 10"
+      "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+      "location": "月精橋",
+      "caption": "月精橋 — photo 3",
+      "alt": "月精橋 — gallery image 3"
     },
     {
       "id": 25,
       "type": "photo",
-      "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
-      "location": "校村ハノク村（교촌마을）",
-      "alt": "校村ハノク村（교촌마을） — gallery image 11",
-      "caption": "校村ハノク村（교촌마을） — photo 11"
+      "src": "/images/tours/woljeonggyo/photo-001.webp",
+      "location": "月精橋",
+      "caption": "月精橋 — photo 4",
+      "alt": "月精橋 — gallery image 4"
     },
     {
       "id": 26,
       "type": "photo",
-      "src": "/images/itinerary/woljeonggyo-reflection.webp",
+      "src": "/images/tours/woljeonggyo/photo-002.webp",
       "location": "月精橋",
-      "alt": "月精橋 — gallery image 2",
-      "caption": "月精橋 — photo 2"
+      "caption": "月精橋 — photo 5",
+      "alt": "月精橋 — gallery image 5"
     },
     {
       "id": 27,
       "type": "photo",
-      "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+      "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
       "location": "月精橋",
-      "alt": "月精橋 — gallery image 3",
-      "caption": "月精橋 — photo 3"
+      "caption": "月精橋 — photo 6",
+      "alt": "月精橋 — gallery image 6"
     },
     {
       "id": 28,
       "type": "photo",
-      "src": "/images/tours/woljeonggyo/photo-001.webp",
-      "location": "月精橋",
-      "alt": "月精橋 — gallery image 4",
-      "caption": "月精橋 — photo 4"
+      "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+      "location": "大陵苑 & ファンリダンギル",
+      "alt": "大陵苑 & ファンリダンギル — 1",
+      "caption": "大陵苑 & ファンリダンギル — 1"
     },
     {
       "id": 29,
       "type": "photo",
-      "src": "/images/tours/woljeonggyo/photo-002.webp",
-      "location": "月精橋",
-      "alt": "月精橋 — gallery image 5",
-      "caption": "月精橋 — photo 5"
+      "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+      "location": "大陵苑 & ファンリダンギル",
+      "alt": "大陵苑 & ファンリダンギル — 2",
+      "caption": "大陵苑 & ファンリダンギル — 2"
     },
     {
       "id": 30,
       "type": "photo",
-      "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
-      "location": "月精橋",
-      "alt": "月精橋 — gallery image 6",
-      "caption": "月精橋 — photo 6"
+      "src": "/images/tours/daereungwon/daereungwon-cheonmachong-interior.webp",
+      "location": "大陵苑 & ファンリダンギル",
+      "alt": "大陵苑 & ファンリダンギル — 3",
+      "caption": "大陵苑 & ファンリダンギル — 3"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-1.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 12",
+      "alt": "校村韓屋村（교촌마을） — gallery image 12"
+    },
+    {
+      "id": 32,
+      "type": "photo",
+      "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-2.webp",
+      "location": "校村韓屋村（교촌마을）",
+      "caption": "校村韓屋村（교촌마을） — photo 13",
+      "alt": "校村韓屋村（교촌마을） — gallery image 13"
+    },
+    {
+      "id": 33,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+      "location": "国立慶州博物館",
+      "caption": "国立慶州博物館 — 写真 1",
+      "alt": "国立慶州博物館 — ギャラリー画像 1"
+    },
+    {
+      "id": 34,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+      "location": "国立慶州博物館",
+      "caption": "国立慶州博物館 — 写真 2",
+      "alt": "国立慶州博物館 — ギャラリー画像 2"
+    },
+    {
+      "id": 35,
+      "type": "photo",
+      "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+      "location": "国立慶州博物館",
+      "caption": "国立慶州博物館 — 写真 3",
+      "alt": "国立慶州博物館 — ギャラリー画像 3"
     }
   ],
   "itineraryStops": [
@@ -376,23 +417,24 @@
       "number": 1,
       "time": "08:10",
       "duration": "30分",
-      "name": "釜山ピックアップ（地下鉄3駅）",
-      "category": "ピックアップ — 釜山中心部の主要交通ハブ",
-      "description": "午前中の移動を最小限に抑えるため、釜山中心部の地下鉄3駅でピックアップをまとめています。**釜山駅（1号線）**はKTX乗降口やチョリャン・ナンポドン周辺のお客様向け、**西面駅（1・2号線）**は釜山最大の乗換駅でロッテホテル釜山＋西面メディカルストリート周辺の市内中心部ホテルに便利、**海雲台駅（2号線）**はウェスティン朝鮮、パーク ハイアット、シグニエル釜山周辺のビーチリゾートエリア向けです。\n\nミニコーチは順番にピックアップします（通常：釜山駅 約08:10、西面 約08:25、海雲台 約08:40）。その後、**京釜高速道路（1号線）**を北上し、朝鮮半島の歴史上最長の王朝として知られる**新羅王国（紀元前57年〜935年）**の古都・慶州を目指します。最初の目的地（機장郡のアホプサン竹林）までの所要時間は約40分です。この日のペースは**ユネスコ世界遺産コースより意図的にゆったり**設定されており、慌ただしい移動を減らし、各スポットの雰囲気をじっくり楽しめる時間を確保しています。",
+      "name": "釜山の地下鉄駅ピックアップ（3か所）",
+      "category": "ピックアップ — 釜山中心部の地下鉄駅3か所（鉄道駅ではありません）",
+      "description": "ピックアップは釜山中心部の**地下鉄駅3か所**で順番に行います：**釜山駅4番出口（地下鉄1号線）— 08:10**、**西面駅4番出口（地下鉄1・2号線）— 08:30**、**海雲台駅5番出口（地下鉄2号線）— 09:10**。\n\n🔴 **3か所ともすべて地下鉄駅の出口です。** とくに釜山駅は、**KTXの鉄道駅舎ではなく、その前にある地下鉄1号線・釜山駅の4番出口**でお待ち合わせします — 鉄道駅の待合室やコンコースでお待ちになると、車両は見つかりません。地下鉄の出口番号（釜山駅4番・西面駅4番・海雲台駅5番）をそのまま覚えておいてください。\n\nピックアップは西→東の順で、最後の海雲台を出たあと**京釜高速道路**に乗り、**新羅（紀元前57年〜935年）** — 韓国史上もっとも長く続いた王朝の古都・慶州へ向かいます。最初の目的地である機張郡のアホプサン竹林までは、海雲台から約30分です。",
       "highlights": [
-        "釜山中心部の3か所でピックアップ（釜山駅・西面・海雲台）",
-        "ミニコーチは少人数制（最大約14名）",
-        "アホプサン竹林までの所要時間：約40分",
-        "**のんびりペースの1日** — 主要スポットの平均滞在時間は固定コースより約15分長め",
-        "ピックアップ時に二か国語対応の印刷版旅程カードを配布"
+        "**3か所ともすべて地下鉄駅の出口** — 釜山駅4番・西面駅4番・海雲台駅5番",
+        "🔴 **釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅の4番出口**です",
+        "釜山駅 08:10 → 西面駅 08:30 → 海雲台駅 09:10（西→東の順）",
+        "ミニバンによる少人数運行（最大約14名）",
+        "海雲台でのピックアップからアホプサン竹林まで約30分",
+        "乗車時に韓国語・英語の二か国語旅程カードを配布"
       ],
       "timeUsed": [
-        "釜山駅ピックアップ（約08:10）— 5分",
-        "西面駅ピックアップ（約08:25）— 5分",
-        "海雲台駅ピックアップ（約08:40）— 5分",
-        "北行き高速道路走行 — 約40分"
+        "釜山駅4番出口（08:10）— 5分",
+        "西面駅4番出口（08:30）— 5分",
+        "海雲台駅5番出口（09:10）— 5分",
+        "高速道路を北上 — 約30分"
       ],
-      "whyOnRoute": "3か所のピックアップポイントは釜山の主要ホテルゾーン（KTX・ナンポエリア、西面市街地エリア、海雲台ビーチエリア）をカバーしており、お客様が朝から市内を横断する必要がありません。西→東の順に移動することでコーチの走行距離を最小化し、午前9時50分頃にアホプサンに到着します。この時間帯は竹林が最も静かで、写真映えする環境が整っています。",
+      "whyOnRoute": "3か所のピックアップポイントは、釜山の主要ホテル密集エリア（釜山駅・草梁、西面の市街地、海雲台のビーチ）を地下鉄1・2号線でまんべんなくカバーしており、朝早くから市内を横断していただく必要がありません。3地点をすべて**地下鉄駅の出口**に統一した理由は単純です — 釜山駅前の広場は鉄道・バス・タクシーが入り混じって車両の判別が難しいのに対し、地下鉄の出口番号は誰でも一度で見つけられるからです。西→東の順に走ることで走行距離を最小化でき、およそ09:40頃にアホプサン竹林へ到着します — 竹林がもっとも静かで、写真に最適な早い時間帯です。",
       "_poi_meta": {
         "poi_key": "OPS_busan_subway_pickup",
         "kb_version": "1.16",
@@ -402,11 +444,11 @@
     },
     {
       "number": 2,
-      "time": "≈ 09:50",
-      "duration": "75分",
+      "time": "≈ 09:40",
+      "duration": "60分",
       "name": "アホプサン竹林（아홉산숲）",
       "category": "プライベート竹林 — 韓国ドラマ撮影地",
-      "description": "**アホプサン竹林**（「九山の森」、아홉산숲）は、機장郡にある**52万㎡のプライベートフォレスト**です。**壬辰倭乱（1592〜1598年）**後にこの地に定住した**南平文氏一族が約400年・9代にわたって管理**し続けてきた歴史ある土地です。**2016年に初めて一般公開**され、韓国で最も多くの撮影が行われる自然スポットのひとつとして急速に人気を集めました。\n\n目玉は**スポット9の孟宗竹の回廊** — 高さ15〜20mの竹が連なり、その密やかなざわめきは京都・嵐山と比較されるほどです。**撮影実績：**『**ザ・キング：永遠の君主（2020年、SBS）**』『**麗<レイ>〜花萌ゆる8人の皇子たち〜（2016年、SBS）**』『**100日の郎君様（2018年、tvN）**』『**剣客武士（2015年）**』『**群盗：民乱の時代（2014年）**』。\n\nまた、樹齢400年を超える**指定保護木の朝鮮赤松116本**も保護されており、いずれも朝鮮時代に植えられ、戦乱やその後の工業化を生き延びた木々です。入場料：**大人₩8,000 / 子供₩5,000**。営業時間：**09:00〜18:00、月曜定休**。75分の滞在で、写真映えする竹の回廊を含む番号付きスポットの全ループ（1→9）をゆっくり歩けます。\n\n南平文氏は純粋な観光地ではなく**持続可能な現役の森**として管理を続けており、竹は**伽耶琴（カヤグム）の胴体・かご・釣り竿**などの伝統工芸品向けに今も収穫されています。商業撮影には事前書面による許可が必要です。スポット9を過ぎると、あまり撮影されていないものの同じく静寂に包まれた**グッテオの林と第二の松林**へと道が続きます。",
+      "description": "**アホプサン竹林**（「九山の森」、아홉산숲）は、機張郡にある**52万㎡のプライベートフォレスト**です。**壬辰倭乱（1592〜1598年）**後にこの地に定住した**南平文氏一族が約400年・9代にわたって管理**し続けてきた歴史ある土地です。**2016年に初めて一般公開**され、韓国で最も多くの撮影が行われる自然スポットのひとつとして急速に人気を集めました。\n\n目玉は**スポット9の孟宗竹の回廊** — 高さ15〜20mの竹が連なり、その密やかなざわめきは京都・嵐山と比較されるほどです。**撮影実績：**『**ザ・キング：永遠の君主（2020年、SBS）**』『**麗<レイ>〜花萌ゆる8人の皇子たち〜（2016年、SBS）**』『**100日の郎君様（2018年、tvN）**』『**剣客武士（2015年）**』『**群盗：民乱の時代（2014年）**』。\n\nまた、樹齢400年を超える**指定保護木の朝鮮赤松116本**も保護されており、いずれも朝鮮時代に植えられ、戦乱やその後の工業化を生き延びた木々です。入場料：**大人₩8,000 / 子供₩5,000**。営業時間：**09:00〜18:00、月曜定休**。75分の滞在で、写真映えする竹の回廊を含む番号付きスポットの全ループ（1→9）をゆっくり歩けます。\n\n南平文氏は純粋な観光地ではなく**持続可能な現役の森**として管理を続けており、竹は**伽耶琴（カヤグム）の胴体・かご・釣り竿**などの伝統工芸品向けに今も収穫されています。商業撮影には事前書面による許可が必要です。スポット9を過ぎると、あまり撮影されていないものの同じく静寂に包まれた**グッテオの林と第二の松林**へと道が続きます。",
       "highlights": [
         "**プライベートフォレスト52万㎡**、南平文氏一族が**400年・9代にわたって管理**",
         "**2016年に一般公開開始** — 済州・釜山ツアーコースの中では比較的新しいスポット",
@@ -538,7 +580,7 @@
         "毘盧殿（毘盧遮那仏殿）＋ 極楽殿（浄土殿）（約15分）",
         "自由時間 ＋ コーチへの集合（約10分）"
       ],
-      "whyOnRoute": "仏国寺は**慶州日帰りツアーに欠かすことのできないユネスコの要**であり、韓国で最も知名度の高い仏教遺産スポットです。11:30着は、**ユネスコ遺産姉妹ツアーより15分遅い**設定で、仏国寺の前にアホプサンでよりゆったりと滞在できるよう配慮したものであり、このツアーのゆったりペースのコンセプトと一致しています。75分の滞在時間は、歴史好きのゲストが多宝塔・釈迦塔の撮影スポットを急かされることなく、巡礼軸を全て回れるよう設計されています。また、午後の到着は、境内を埋め尽くす午前中の韓国の修学旅行団（約09:30〜11:00）の混雑を避けることにも繋がります。",
+      "whyOnRoute": "仏国寺は**慶州日帰りツアーに欠かせないユネスコの中核スポット**であり、韓国でもっとも広く知られた仏教遺産です。11:30の到着は、午前の韓国の学校団体（おおむね09:30〜11:00）がはけたあとで、境内が一段と静かになる時間帯にあたります。75分を確保しているので、**多宝塔・釈迦塔**の対を急がずに鑑賞しながら、巡礼路をひととおり歩き切れます。そしてこの立ち寄りは、**車で向かう午前の最後の地点**でもあります — 昼食のあと、車が停まるのは2回だけで、午後は歩いて過ごします。仏国寺の石段と不整地な地面はその日でもっともアクティブな区間なので、次をすぐ昼食にして、きちんと腰を下ろして休めるように配置しました。",
       "_poi_meta": {
         "poi_key": "bulguksa_temple",
         "kb_version": "1.25",
@@ -666,24 +708,24 @@
     },
     {
       "number": 4,
-      "time": "≈ 12:45",
+      "time": "≈ 13:00",
       "duration": "60分",
       "name": "昼食（慶州地元レストラン）",
       "category": "食事 — 慶州郷土料理",
-      "description": "昼食は、仏国寺出口エリア近くのガイド厳選・慶州地元レストランにて。定番メニューは**慶州式サムバプ**（ご飯に旬のおかずとサンチュ包み — 慶州サムバプの伝統は、地域の農業の豊かさを反映して1970年代に広まった）、または**ファンナムパン**（1939年に慶州で考案された小豆入りパンケーキ、今や地域の名物）。リクエストに応じてベジタリアン対応可。\n\n食事代はツアー料金に含まれません（目安：₩12,000〜₩18,000／1名）。60分の食事時間は**ユネスコ・レガシー姉妹ツアーより15分長く**、時間を気にせずゆっくりお食事いただけます。",
+      "description": "昼食は仏国寺から慶州の市内に入り、ガイドが厳選した地元のレストランでとります。定番は**慶州式サムバプ**（季節の惣菜とサンチュ包みを添えたご飯 — 慶州のサムバプは、この地域の農産物の豊かさを映して1970年代に広く知られるようになりました）です。\n\n**菜食（ベジタリアン）やアレルギーのご要望は、前日までにお知らせいただければ調整**します。食事代はツアー料金に含まれず、**お一人様あたり約₩15,000〜₩25,000**です。60分を確保しているので、時計を気にせず食事とお手洗いを済ませられます — **午後は2つのブロックを歩いて回る**ため、ここできちんと休んでおくことが1日全体のペースをつくります。",
       "highlights": [
-        "仏国寺近くのガイド厳選・慶州地元レストラン",
-        "**慶州式サムバプ** または **ファンナムパン**（1939年考案の郷土パンケーキ）",
-        "リクエストに応じてベジタリアン対応可",
-        "**60分の昼食** — ゆったりペースの設定（固定行程ツアーより15分長め）",
-        "費用 ₩12,000〜₩18,000（1名あたり）、ツアー料金には含まれません"
+        "慶州市内の、ガイドが厳選した地元レストラン",
+        "**慶州式サムバプ** — 季節の惣菜とサンチュ包みを添えた郷土の食卓",
+        "**菜食・アレルギーのご要望**は前日までにお知らせいただければ調整します",
+        "**60分の確保** — 午後の徒歩ブロック2つを前に、きちんと休んでいく場所",
+        "費用はお一人様あたり約**₩15,000〜₩25,000**、ツアー料金には含まれません"
       ],
       "timeUsed": [
         "仏国寺出口からレストランまで徒歩（約5分）",
         "注文＋食事（約50分）",
         "バスへ集合（約5分）"
       ],
-      "whyOnRoute": "昼食は仏国寺の直後に設定されており、午後のゆったりとした博物館・ハノク村セクションへの切り替えに最適です。固定行程ツアーより長い滞在時間がゆとりあるペース感を高め、歴史愛好家のゲストにも特に好評です。",
+      "whyOnRoute": "仏国寺の石段と不整地な石畳を歩いたあと、慶州の市内に入って腰を下ろす場所です。午後は**2つのブロックを歩いて**回るため（校村韓屋村・崔富豪邸 → 月精橋、大陵苑 → ファンリダンギル）、ここでしっかり休んでおくことが1日全体のペースをつくります。お店は慶州の郷土料理である**サムバプ**が中心で、菜食（ベジタリアン）やアレルギーのご要望は前日までにお知らせいただければ調整します。55〜60分を確保しているので、急がずに食事とお手洗いを済ませられます。",
       "_poi_meta": {
         "poi_key": "OPS_gyeongju_lunch",
         "kb_version": "1.16",
@@ -692,157 +734,62 @@
     },
     {
       "number": 5,
-      "time": "≈ 14:00",
+      "time": "≈ 14:10",
       "duration": "75分",
-      "name": "慶州国立博物館",
-      "category": "国立博物館 — 新羅の遺物（金冠＋聖徳大王神鐘）",
-      "description": "**慶州国立博物館**は**韓国随一の新羅王国遺物博物館**です。**1945年**に分館として創設、本館は**1968年**に開館、**1975年**に**国立博物館へ昇格**しました。所蔵品は**10万点以上**に及び、**3万点以上の指定文化財**を含みます。主要展示は**(1) 天馬塚金冠（国宝188号）** — 新羅の6つの金冠の中で最も華麗な冠で、1973年4月16日に大陵苑155号墳から出土；**(2) 聖徳大王神鐘（エミレの鐘）（国宝29号）** — 771年に鋳造された世界最大級の現存する青銅の鐘の一つ（約19トン）で、その幽玄な音色と、鋳造時に子供が生贄にされたという伝説で知られる（1998年の法医学的分析では合金中に人骨は発見されず — 伝説は民間伝承）。\n\n**2025年特別展「新羅金冠：権力と威信」（2025年10月28日〜12月14日）**は、**慶州開催の2025年APECサミット**を記念して開催され、**1921年の最初の発掘以来104年ぶりに新羅の金冠6点すべてが一堂に**会しました。博物館は**5つのメインホール**で構成：新羅歴史館・新羅美術館・月池（雁鴨池）館（人工池の宮殿からの宝物）・子ども博物館、そして**聖徳大王神鐘が保護された鐘楼に展示された**屋外彫刻庭園。\n\n**開館時間：火〜日 10:00〜18:00（毎月最終水曜日は21:00まで延長・文化の日・無料）。入館料：無料。** 2024年の改修により、主要展示品すべてに日英バイリンガルのデジタル解説ラベルが追加されました。",
+      "name": "校村韓屋村 & 崔富豪邸 & 月精橋",
+      "category": "朝鮮時代の宗家韓屋村＋復元された新羅の木造橋（1回の降車、徒歩でつなぎます）",
+      "description": "**校村韓屋村**と**月精橋**は南川（ナムチョン）を挟んで**徒歩10〜15分の川沿いの道でつながって**いるため、このツアーでは**1回だけ降車して2か所を続けて**歩きます。\n\n**校村**の中心は**崔富豪邸（최부자댁・慶州崔氏の宗家）** — 朝鮮時代後期に**12代300年にわたって富を守り続けた**商人貴族の家系の本邸で、**重要民俗資料第27号**に指定されています。この一族の六箇条の家訓（**万石を超える財産は蓄えない**、**凶作の年に他人の田畑を買わない**、**四方百里に飢え死にする者を出さない**など）は、韓国におけるノブレス・オブリージュの代表例として語り継がれています。宗家の銘酒**校洞法酒（교동법주）は国家無形遺産第86-3号**で、**350年続く伝統の製法**を今も邸内で醸し、その場で販売しています（2026年時点で750ml 1本 約₩30,000）。村のすぐ隣には**慶州郷校**（朝鮮時代の地方教育機関）と**瑤石宮跡** — 7世紀新羅の瑤石公主（武烈王の娘で、吏読（イドゥ）表記体系を整えた学僧**薛聡の母**）の住まい — があります。\n\n川を渡った先の**月精橋**は、**韓国最大の純木造橋**です。『**三国史記**』に**760年（新羅第35代・景徳王）**建設の記録があり、朝鮮時代に失われたのち、**1984〜1986年の発掘調査 → 2008〜2013年の本体復元 → 2016〜2018年の楼門2基の追加**を経て、**2018年4月に再開通**しました — 最初の建設から**1,258年ぶり**です。規模は**全長60.57m、幅13m**。復元には**現代の金物を一切使わない伝統的な韓屋の木組み技法**が用いられました。**2004年に史跡指定**、**文化体育観光部「韓国観光100選 2025〜2026」**選定。\n\n**2か所とも入場無料**です（村内の一部の家屋は個別に₩2,000〜3,000）。村には**4月初旬の桜**、**10月下旬の黄金色のイチョウ**が訪れます。",
       "highlights": [
-        "韓国随一の新羅遺物博物館 — **1945年**創設、本館**1968年**開館、**1975年**国立博物館昇格",
-        "**10万点以上の所蔵品**（うち**3万点以上が指定文化財**）",
-        "**天馬塚金冠（国宝188号）** — 新羅の6金冠の中で最も華麗、1973年4月16日出土",
-        "**聖徳大王神鐘（エミレの鐘）（国宝29号）** — 771年鋳造、約19トン、世界最大級の現存する青銅の鐘",
-        "**2025年特別展示**では、APEC記念として104年ぶりに新羅の金冠6点すべてが一堂に集結",
-        "5つのメインホール＋エミレの鐘の鐘楼を有する屋外彫刻庭園",
-        "**入場無料**、開館時間：火〜日 10:00〜18:00",
-        "月曜休館 — ルートは月曜日を避けて設定",
-        "**月池（雁鴨池）展示館** — 1975〜1976年に新羅の王室庭園池が修復のため排水された際に発掘された33,000点以上の遺物を展示。嫌気性の泥によって保存された希少な木製品（瓦・漆塗り家具の断片・王室の宴会で使われたサイコロなど）が含まれる"
+        "**1回の降車で2か所** — 校村 ↔ 月精橋は南川の川沿いの道を徒歩10〜15分",
+        "**崔富豪邸 ＝ 慶州崔氏の宗家、重要民俗資料第27号** — 12代300年の富と六箇条の家訓",
+        "**校洞法酒 ＝ 国家無形遺産第86-3号** — 350年続く伝統製法、宗家で醸造しその場で販売",
+        "**瑤石宮跡** — 瑤石公主（薛聡の母、吏読表記体系）の7世紀の住まい",
+        "**月精橋 ＝ 韓国最大の木造橋**（全長60.57m × 幅13m）、『三国史記』記録の**760年**建設",
+        "**2018年4月に再開通 — 最初の建設から1,258年ぶり**、2004年に史跡指定",
+        "復元に**現代の金物ゼロ** — 伝統的な韓屋の木組み技法",
+        "**「韓国観光100選 2025〜2026」**（文化体育観光部）",
+        "**2か所とも入場無料** · 村は平坦、橋はゆるやかな傾斜のみ"
       ],
       "timeUsed": [
-        "バス降車＋入場（約5分）",
-        "新羅歴史館＋新羅美術館（約30分）",
-        "月池（雁鴨池）館＋屋外エミレの鐘（約25分）",
-        "自由時間＋お手洗い＋集合（約15分）",
-        "天馬塚金冠展示室の見学＋撮影（約10分）"
+        "崔富豪邸の中庭＋メインの路地を散策（約20分）",
+        "校洞法酒の試飲＋お土産の購入（約10分）",
+        "南川の川沿いの道を徒歩移動（約10分）",
+        "月精橋の横断＋楼門の解説展示＋撮影（約25分）",
+        "川辺からの全景鑑賞＋集合（約10分）"
       ],
-      "whyOnRoute": "この博物館は仏国寺の自然な続きとして位置づけられます。ゲストはすでに寺の国宝を現地で鑑賞しており、今度は同じ新羅の中心地から発掘された関連遺物（金冠・鐘・月池宮殿の宝物）を目にします。ゆったりとしたペースで設定されているため、見学時間は75分（固定行程の姉妹ツアーの60分に対して）となり、歴史愛好家が日韓バイリンガルの解説パネルをじっくり読む余裕があります。入場無料のため、滞在時間を延ばしても予算面での負担はゼロです。天馬塚金冠展示室は最も写真撮影が多いギャラリーであり、75分の見学時間のうち約10分をここだけに充てることをお勧めします。",
-      "_poi_meta": {
-        "poi_key": "gyeongju_national_museum",
-        "kb_version": "1.25",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Gyeongju National Museum official",
-          "Wikipedia",
-          "Cultural Heritage Administration of Korea",
-          "Yonhap News (2025 APEC special exhibition)",
-          "National Museum of Korea (Gyeongju Branch official)"
-        ]
-      },
-      "image": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-      "visitBasics": {
-        "hours": "火〜日 10:00〜18:00（最終入場17:30）；毎月最終水曜日・土曜日は21:00まで延長開館",
-        "closed": "月曜日＋1月1日＋旧正月（ソルラル）＋秋夕（チュソク）",
-        "admission": "無料（特別展示は別途少額の料金がかかる場合あり）",
-        "walking": "主に屋内＋舗装された屋外エリア；完全バリアフリー対応"
-      },
-      "convenience": {
-        "restroom": "本館内と屋外パビリオンエリアに複数のトイレあり",
-        "parking": "敷地内の観光バス・乗用車駐車場は無料"
-      },
-      "smartNotes": {
-        "photo": "屋外パビリオンの聖徳大王神鐘（午後の斜光が映える）；新羅館の天馬塚金冠展示（薄暗い照明、フラッシュ禁止）；石塔の断片が点在する博物館庭園",
-        "facilities": "金冠レプリカアクセサリーを販売するミュージアムショップ；本館内のカフェ；クロークあり",
-        "tip": "フラッシュ撮影禁止；一部の特別展示では撮影全面禁止の場合あり（館内の案内表示を確認）；鐘のパビリオンだけで約10分の余裕を — 新羅最重要の遺物です"
-      },
-      "images": [
-        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
-          "source": "atoc-korea"
-        }
-      ],
-      "galleryItems": [
-        {
-          "id": 1,
-          "type": "photo",
-          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-          "location": "国立慶州博物館",
-          "caption": "国立慶州博物館 — 写真 1",
-          "alt": "国立慶州博物館 — ギャラリー画像 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-          "location": "国立慶州博物館",
-          "caption": "国立慶州博物館 — 写真 2",
-          "alt": "国立慶州博物館 — ギャラリー画像 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
-          "location": "国立慶州博物館",
-          "caption": "国立慶州博物館 — 写真 3",
-          "alt": "国立慶州博物館 — ギャラリー画像 3"
-        }
-      ]
-    },
-    {
-      "number": 6,
-      "time": "≈ 15:30",
-      "duration": "60分",
-      "name": "校村ハノク村（교촌마을）",
-      "category": "ハノク伝統村 — 慶州崔（チェ）氏",
-      "description": "**校村ハノク村（교촌마을）**は**慶州崔氏**の**歴史的な邸宅群**です。慶州崔氏は朝鮮時代後期にわたり**12代にわたって富を維持し続けた**商人貴族の家系です。「収穫の100石を超えて取らない」「飢饉の年には農地を取得しない」などの六箇条のノブレス・オブリージュの家訓を持ち、民衆の英雄として知られています。これは儒教的倫理商人の理想の朝鮮版とも言えます。\n\n**慶州崔氏邸宅は重要民俗資料第27号**に指定されており、一族の銘酒である**校洞法酒（교동법주、伝統的な米酒）は重要無形文化財第86-3号**に認定された**350年の伝統を持つ製法**で、現在も邸宅内で醸造・販売されています（2026年時点で750ml瓶₩30,000）。この村は新羅の歴史的な中心地に位置し、**徒歩15分圏内に鶏林**（慶州金氏の建国神話の地）、**奈勿王陵**（新羅第17代王）、**慶州郷校**（朝鮮時代の儒学機関）があります。\n\n隣接地には**瑤石宮（요석궁）跡地**があります。これは**7世紀新羅の武烈王の娘・瑤石公主の住まい**であり、漢字から吏読（イドゥ）表記体系を体系化した僧侶学者・薛聡（ソル・チョン）の母です。1779年に建てられた現存の建物は現在、高級ハノクレストランとして営業しています。**入場無料、年中無休；一部の家屋は内部見学に₩2,000〜3,000の入場料が必要な場合があります。**村周辺のハノク街では**4月初旬に小規模な桜まつり**が開催され、**10月下旬には黄金色のイチョウが大通りを照らします**。",
-      "highlights": [
-        "**慶州崔氏：12代にわたる富の継承＋倫理的商人の家訓**",
-        "**崔氏邸宅 ＝ 重要民俗資料第27号**",
-        "**校洞法酒（교동법주）＝ 重要無形文化財第86-3号** — 350年の伝統製法",
-        "**瑤石宮跡地** — 7世紀新羅の瑤石公主の住まい（吏読文字体系を確立した学者・薛聡の母）",
-        "徒歩15分圏内：鶏林＋奈勿王陵＋慶州郷校",
-        "村への入場は**無料**；家屋内部見学は₩2,000〜3,000",
-        "年中オープン；4月初旬の桜の花 + 10月下旬の黄金色のイチョウ",
-        "**60分の滞在**で、ゆっくりとした村歩き + 法酒の試飲が楽しめます",
-        "**瑤石公主は薛聡の母**（約660年）——**吏読（이두）表記法**の創始者であり、漢字を韓国語の文法に応用した体系を生み出しました。これは韓国語史上最初の重大な言語的発明であり、ハングルより800年先行するものです"
-      ],
-      "timeUsed": [
-        "メインの路地 + 崔氏家屋の中庭を歩く（約20分）",
-        "法酒の試飲 + お土産の購入（約10分）",
-        "瑤石宮跡 + 隣接するイチョウ・桜の木々（約15分）",
-        "自由時間 + バスへの帰還（約15分）",
-        "鶏林 + 奈勿王陵への徒歩散策（15分圏内・約10分）"
-      ],
-      "whyOnRoute": "校村は、その日の旅程を壮大な宮廷スケール（仏国寺、博物館）から、親密な生活史的スケールへと転換させます——王族・仏教側ではなく、商人階級の視点から見た同じ新羅文明です。60分の滞在はユネスコ遺産の姉妹ツアーより**15分長く**、ゆったりとしたペースのゲストが時間を気にせず法酒のショップを巡り、周辺の古跡を散策できるよう設計されています。この60分の滞在はその日の中で最もリラックスしたペースでもあり——ゲストは試飲を急ぐことなく、法酒をお土産（家族宅のショップで箱入りボトルを購入可能）として持ち帰ることができます",
+      "whyOnRoute": "昼食のあと、その日の流れを**壮大な王室・仏教のスケール（仏国寺）から、人が暮らしていた生活史のスケールへ**転換させる場所です — 王ではなく商人の家系の目線から見た慶州。2か所を1回の降車にまとめた理由は地理そのものです。校村の南端がそのまま月精橋の北岸にあたるため、**車を二度停める理由がなく**、その分だけ歩く時間が観光の時間になります。75分を確保しているので、法酒の試飲も橋の上での撮影も急がずに楽しめます。午後のこの時間帯の月精橋は、**昼光のもとで木組みの細部と川面の反射**がもっとも鮮明で、日没前後に集まる人混みも避けられます。",
       "_poi_meta": {
         "poi_key": "gyochon_hanok_village",
         "kb_version": "1.25",
-        "verified_date": "2026-04-29",
+        "verified_date": "2026-08-04",
         "sources": [
           "Visit Gyeongju official",
           "Cultural Heritage Administration",
           "Wikipedia (Choi Clan, Yoseokgung)",
           "Korea Tourism Organization (Gyeongju Choi Clan + Gyochon Hanok Village)",
           "Cultural Heritage Administration (Important Folklore Material No. 27 designation)"
-        ]
+        ],
+        "is_compound_stop": true,
+        "secondary_poi_keys": [
+          "woljeonggyo_bridge"
+        ],
+        "compound_stop_note": "Gyochon Hanok Village (incl. the Choi Family House, Important Folklore Material No. 27) and Woljeonggyo Bridge sit on opposite banks of the Namcheon, 10–15 min apart on foot, and are visited as ONE 75-min drop-off. Both remain separate POIs in the KB."
       },
       "image": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
       "visitBasics": {
-        "hours": "日中は毎日開放；ほとんどの歴史的家屋は09:00〜18:00",
-        "closed": "月曜日に閉まる家屋もあり——メインの路地は常時開放",
-        "admission": "ほとんどの家屋は無料；崔氏の主屋には小さな募金箱あり",
-        "walking": "平易——砂利道と石畳の路地；メインの通りは部分的に車椅子対応"
+        "hours": "校村は常時開放（ほとんどの古民家は09:00〜18:00）· 月精橋は24時間開放",
+        "closed": "一部の古民家は月曜休み — メインの路地と月精橋は常時開放",
+        "admission": "2か所とも無料（村内の一部の古民家は個別に₩2,000〜3,000）",
+        "walking": "平易 — 村は砂利と石畳の路地、月精橋までは南川沿いの平坦な道を徒歩10〜15分"
       },
       "convenience": {
         "restroom": "村の入口と慶州郷校近くに公衆トイレあり",
         "parking": "西側入口にバスの降車場あり（無料）"
       },
       "smartNotes": {
-        "photo": "ゴールデンアワーの光に映える韓屋の瓦屋根；校洞法酒醸造所の門；村の南西の角から遠望できる月精橋（第7ストップのプレビュー）；鶏林の古い柳の木々",
+        "photo": "崔富豪邸の内庭と塀のライン；南川の川辺から見た月精橋の全景と水面の反射；4月初旬の桜 · 10月下旬のイチョウ",
         "facilities": "校洞法酒ショップ（お土産用ボトル）；メイン路地沿いの小さな工芸品店（伝統的な餅、ファンナムパン）；瑤石宮1779（高級レストラン、要予約）",
-        "tip": "お酒の免税枠がある場合は校洞法酒をお土産にお買い求めください（各国の輸入制限をご確認ください）；村は平日の午後が静かなことが多く——ゆっくり写真撮影を楽しむのに最適です"
+        "tip": "校洞法酒は宗家の中で直接販売しています（750ml 約₩30,000、箱入り可）。月精橋の楼門には復元考古学の解説展示があり、5分あれば見て回れます。"
       },
       "images": [
         "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
@@ -918,201 +865,90 @@
           "id": 1,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 1",
-          "alt": "校村ハノク村（교촌마을） — gallery image 1"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 1",
+          "alt": "校村韓屋村（교촌마을） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 2",
-          "alt": "校村ハノク村（교촌마을） — gallery image 2"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 2",
+          "alt": "校村韓屋村（교촌마을） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 3",
-          "alt": "校村ハノク村（교촌마을） — gallery image 3"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 3",
+          "alt": "校村韓屋村（교촌마을） — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 4",
-          "alt": "校村ハノク村（교촌마을） — gallery image 4"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 4",
+          "alt": "校村韓屋村（교촌마을） — gallery image 4"
         },
         {
           "id": 5,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 5",
-          "alt": "校村ハノク村（교촌마을） — gallery image 5"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 5",
+          "alt": "校村韓屋村（교촌마을） — gallery image 5"
         },
         {
           "id": 6,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 6",
-          "alt": "校村ハノク村（교촌마을） — gallery image 6"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 6",
+          "alt": "校村韓屋村（교촌마을） — gallery image 6"
         },
         {
           "id": 7,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 7",
-          "alt": "校村ハノク村（교촌마을） — gallery image 7"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 7",
+          "alt": "校村韓屋村（교촌마을） — gallery image 7"
         },
         {
           "id": 8,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 8",
-          "alt": "校村ハノク村（교촌마을） — gallery image 8"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 8",
+          "alt": "校村韓屋村（교촌마을） — gallery image 8"
         },
         {
           "id": 9,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 9",
-          "alt": "校村ハノク村（교촌마을） — gallery image 9"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 9",
+          "alt": "校村韓屋村（교촌마을） — gallery image 9"
         },
         {
           "id": 10,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 10",
-          "alt": "校村ハノク村（교촌마을） — gallery image 10"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 10",
+          "alt": "校村韓屋村（교촌마을） — gallery image 10"
         },
         {
           "id": 11,
           "type": "photo",
           "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 11",
-          "alt": "校村ハノク村（교촌마을） — gallery image 11"
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 11",
+          "alt": "校村韓屋村（교촌마을） — gallery image 11"
         },
-        {
-          "id": 12,
-          "type": "photo",
-          "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-1.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 12",
-          "alt": "校村ハノク村（교촌마을） — gallery image 12"
-        },
-        {
-          "id": 13,
-          "type": "photo",
-          "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-2.webp",
-          "location": "校村ハノク村（교촌마을）",
-          "caption": "校村ハノク村（교촌마을） — photo 13",
-          "alt": "校村ハノク村（교촌마을） — gallery image 13"
-        }
-      ]
-    },
-    {
-      "number": 7,
-      "time": "≈ 16:45",
-      "duration": "30分",
-      "name": "月精橋",
-      "category": "復元された新羅の木造橋——韓国最大",
-      "description": "**月精橋（월정교）**は**韓国最大の純木造橋**——『三国史記』の記録によれば、**景徳王（新羅第35代王）治世の760年**に建設された統一新羅時代の屋根付き橋を復元したものです。橋は朝鮮王朝時代に失われました（洪水または火災による破壊と推定）。**1984〜1986年に発掘調査が開始**され、**2008〜2013年にメインスパンが復元**、**2016〜2018年に二つの装飾的な楼門が追加**——橋は**2018年4月に一般公開が再開**されました。\n\n復元されたスパンは**全長60.57m、幅13m**で、4基の石造橋脚（元の石造基礎）に支えられ、後期新羅の建築的証拠に基づいた屋根付き木造構造 + 瓦 + 彩色が施されています。橋は**慶州中心部の南を流れる南川**に架かり、復元完成前の**2004年11月27日に史跡（史蹟）に指定**されました。最近では、**文化体育観光部が月精橋を「2025〜2026年 韓国観光100選」に選定**しています。\n\n定番の訪問は**日没後**、橋が**川面に黄金色に輝く**時間帯ですが、このツアーの午後の到着では**昼の明るい光の中で木造の細部 + 穏やかな川面の反射**をお楽しみいただけます。**入場無料、24時間開放。** 復元工法では、現代の金物を使わず**伝統的な韓国木造継手（韓屋の工法）**が採用され、1984〜1986年の発掘調査で回収された**南川の川床の堆積物に保存されていた8世紀の元の木材断片**という考古学的証拠に基づいています。\n\n橋は**毎晩日没から約23:00までライトアップ**されます；昼間の訪問では木造の細部と職人技をより鮮明にご覧いただけます",
-      "highlights": [
-        "**韓国最大の木造橋**——全長60.57m × 幅13m、4基の石造橋脚に支えられた屋根付きスパン",
-        "『三国史記』によれば、**景徳王（新羅第35代王）治世の760年**に建設",
-        "朝鮮王朝時代に消失 → **1984〜1986年**に発掘 → **2008〜2013年**に復元 + 楼門 **2016〜2018年**",
-        "**2018年4月に再開通**——建設から1,258年後",
-        "**2004年11月27日に史跡（史蹟）指定**",
-        "**「2025〜2026年 韓国観光100選」**——文化体育観光部選定",
-        "南川に架かり、校村から車で約10分",
-        "**入場無料、24時間開放**——このツアーでは昼間に木造の細部をご鑑賞いただけます",
-        "**復元工法は現代的な締め具を一切使わず、伝統的な韓国木造継手技術（韓屋工芸技法）**を採用 — 南川の川底の泥土に保存されていた**8世紀オリジナルの木材断片**が1984〜1986年の発掘調査で発見された考古学的証拠に基づく"
-      ],
-      "timeUsed": [
-        "コーチ降車＋橋まで徒歩（約5分）",
-        "橋を渡る＋写真撮影（約15分）",
-        "川辺から橋の全景を眺める（約7分）",
-        "コーチに集合（約3分）",
-        "門楼での復元考古学・韓屋木組み技術に関する解説展示（約5分）"
-      ],
-      "whyOnRoute": "月精橋はその日の静かな締めくくり — 穏やかな川に架かる新羅建築の美しい一品で、仏国寺・博物館・韓屋村を巡った後の視覚的な密度をやわらげるのにぴったりです。ゆったりとしたペースを好むゲストは、この最後の立ち寄りスポットが**登山や長距離歩行を一切必要とせず**、手軽に広角撮影を楽しめる点を高く評価します。午後の光の時間帯に訪れることで、インスタグラムで話題の日没時の混雑も避けられます。また、橋の門楼には小さな**解説展示**があり、2008〜2018年の再建に用いられた復元考古学と伝統的な韓国木組み技術について説明しています。",
-      "_poi_meta": {
-        "poi_key": "woljeonggyo_bridge",
-        "kb_version": "1.25",
-        "verified_date": "2026-04-29",
-        "sources": [
-          "Cultural Heritage Administration of Korea",
-          "Wikipedia",
-          "Visit Gyeongju official",
-          "Korea Times (2025 100-Best announcement)",
-          "Korea Heritage Service (Woljeonggyo Reconstruction Project archive)"
-        ]
-      },
-      "image": "/images/itinerary/woljeonggyo-front-day.webp",
-      "visitBasics": {
-        "hours": "24時間開放（ライトアップは日没〜23:00頃）",
-        "closed": "年中無休",
-        "admission": "無料",
-        "walking": "容易 — 平坦な橋面；北岸から車椅子でのアクセス可能"
-      },
-      "convenience": {
-        "restroom": "北岸駐車場に公共トイレあり",
-        "parking": "北岸にコーチ用駐車場あり；南岸は駐車不可"
-      },
-      "smartNotes": {
-        "photo": "南岸の門楼から月城宮殿跡へ向かって伸びる橋（定番の構図）；ライトアップ開始後の川面への長時間露光による反射；紅葉に縁取られた橋の姿は文化体育観光部の多くの観光パンフレット表紙を飾る",
-        "facilities": "橋の上には売店なし；北岸駐車場付近に小さなカフェが集まっている",
-        "tip": "ライトアップ撮影には三脚または夜景モード付きスマートフォンを持参のこと；冬は川霧で遠景が霞むことがあるため門楼を前景として活用のこと；木製欄干には登らないこと"
-      },
-      "images": [
-        "/images/itinerary/woljeonggyo-front-day.webp",
-        "/images/itinerary/woljeonggyo-reflection.webp",
-        "/images/itinerary/woljeonggyo-pavilion-night.webp",
-        "/images/tours/woljeonggyo/photo-001.webp",
-        "/images/tours/woljeonggyo/photo-002.webp",
-        "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp"
-      ],
-      "imageCredits": [
-        {
-          "url": "/images/itinerary/woljeonggyo-front-day.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/itinerary/woljeonggyo-reflection.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/itinerary/woljeonggyo-pavilion-night.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/woljeonggyo/photo-001.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/woljeonggyo/photo-002.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/woljeonggyo/photo-002.webp",
-          "source": "atoc-korea"
-        }
-      ],
-      "galleryItems": [
         {
           "id": 1,
           "type": "photo",
@@ -1164,22 +1000,225 @@
       ]
     },
     {
+      "number": 6,
+      "time": "≈ 15:35",
+      "duration": "75分",
+      "name": "大陵苑 & ファンリダンギル",
+      "category": "新羅の王陵古墳群＋韓屋カフェ通り（徒歩でつなぎます）",
+      "description": "**大陵苑（대릉원）**は、**126,500m²**のなだらかな芝生の丘に**新羅の王・王妃・貴族の墓23基**が集まる古墳公園で、大半が**4〜6世紀**に築かれました。もっとも有名なのが**天馬塚（155号墳）** — **1973年4月16日に発掘**され、高さ12.7m・直径約47m、**大陵苑で唯一内部が公開されている墓**です。発掘では**遺物11,526点**が出土し、その中に**天馬塚金冠（国宝第188号）**と、白樺の泥除けに描かれた**天馬図 — 現存する唯一の新羅時代の絵画**が含まれます（金冠の実物は、このあとの行程の国立慶州博物館にあります）。隣接する**皇南大塚**は大陵苑最大の規模で、南北2つの墳丘に**名前の伝わらない新羅の王と王妃を合葬**しており、王妃の棺から出た金冠の垂飾は**3対**、王のものは通常1対のみであることから、新羅初期の女性王族の地位の高さを物語ります。**公園への入場は無料**（天馬塚の内部は大人₩3,000／青少年₩2,000／子ども₩1,000）。墳丘に登ることは禁止されています。\n\n大陵苑の**西側の塀のすぐ向かい**が**ファンリダンギル（황리단길）**です。名前は**皇南洞（ファンナムドン）＋（ソウル梨泰院の）キョンリダンギル**を合わせた造語で、文字どおり**「皇南洞のキョンリダンギル」**という意味です。**内南交差点から皇南小学校の交差点まで**続く通りの両側に、**韓屋を改装したカフェ・食堂・工房・雑貨店**が並び、**2017年頃から**慶州でいちばん若い通りになりました。この界隈こそが**皇南パン**のふるさとです — **1939年に皇南洞で崔永化（チェ・ヨンファ）がはじめて作った**、薄い皮に小豆餡を詰めた慶州を代表する菓子で、旅のお土産としてもっとも多く買われている品です。\n\n古墳とカフェ通りが**塀ひとつを挟んで**隣り合っているため、このツアーでは**1回の降車で1,500年前と2020年代を並べて**歩きます。",
+      "highlights": [
+        "**大陵苑 ＝ 126,500m²に新羅王室の墓23基**（4〜6世紀）",
+        "**天馬塚（155号墳）** — 1973年4月16日発掘、**唯一内部が公開**、遺物**11,526点**",
+        "**天馬図 ＝ 現存する唯一の新羅時代の絵画** · 天馬塚金冠 ＝ **国宝第188号**",
+        "**皇南大塚** — 大陵苑最大、王と王妃の合葬。王妃の金冠の垂飾は**3対** > 王の1対",
+        "**公園は入場無料**（天馬塚の内部は大人₩3,000）· 平坦な芝生の道でベビーカーやご年配の方も快適",
+        "**ファンリダンギル ＝「皇南洞のキョンリダンギル」** — 皇南洞＋キョンリダンギルの造語",
+        "大陵苑の**西側の塀のすぐ向かい** — 内南交差点〜皇南小学校の交差点",
+        "**韓屋を改装したカフェ・工房・雑貨店**の通り、2017年頃から慶州でいちばん若い道",
+        "**皇南パン ＝ 1939年に皇南洞で崔永化がはじめて作った**慶州を代表する菓子 — この界隈が発祥"
+      ],
+      "timeUsed": [
+        "大陵苑の正門から入場＋墳丘のあいだを散策（約25分）",
+        "天馬塚の内部見学（任意、約15分）",
+        "西門を抜けてファンリダンギルへ（約5分）",
+        "ファンリダンギルのカフェ・雑貨店で自由時間（約20分）",
+        "皇南パンなどお土産の購入＋集合（約10分）"
+      ],
+      "whyOnRoute": "校村・月精橋という朝鮮・新羅の遺産ブロックのあとに来る、**その日で唯一の「現在形」の立ち寄り**です。大陵苑は階段も登り坂もない平坦な芝生の道で、一日のなかでもっとも楽な歩きになります。そしてその塀を越えれば、すぐにコーヒーと小豆パンのあるファンリダンギルです — **古墳とカフェが徒歩1分**という事実そのものが、慶州という街の性格を表しています。午後遅めのこの時間帯はファンリダンギルがもっとも活気づく時間で、**お手洗い・カフェ・お土産**を一か所で済ませてから最後の立ち寄り（博物館または東宮と月池）へ移動できます。金冠の**実物**は次の立ち寄り先である国立慶州博物館にあるため、天馬塚で発掘現場を見て博物館で遺物を見るという**順番がそのまま物語**になります。",
+      "galleryItems": [
+        {
+          "id": 0,
+          "type": "photo",
+          "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+          "location": "大陵苑 & ファンリダンギル",
+          "alt": "大陵苑 & ファンリダンギル — 1",
+          "caption": "大陵苑 & ファンリダンギル — 1"
+        },
+        {
+          "id": 0,
+          "type": "photo",
+          "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+          "location": "大陵苑 & ファンリダンギル",
+          "alt": "大陵苑 & ファンリダンギル — 2",
+          "caption": "大陵苑 & ファンリダンギル — 2"
+        },
+        {
+          "id": 0,
+          "type": "photo",
+          "src": "/images/tours/daereungwon/daereungwon-cheonmachong-interior.webp",
+          "location": "大陵苑 & ファンリダンギル",
+          "alt": "大陵苑 & ファンリダンギル — 3",
+          "caption": "大陵苑 & ファンリダンギル — 3"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-1.webp",
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 12",
+          "alt": "校村韓屋村（교촌마을） — gallery image 12"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-2.webp",
+          "location": "校村韓屋村（교촌마을）",
+          "caption": "校村韓屋村（교촌마을） — photo 13",
+          "alt": "校村韓屋村（교촌마을） — gallery image 13"
+        }
+      ],
+      "visitBasics": {
+        "hours": "大陵苑 09:00〜22:00（冬季は21:00まで）· ファンリダンギルの店舗はおおむね10:00〜21:00（店舗により異なります）",
+        "closed": "年中無休",
+        "admission": "大陵苑の公園は無料 · 天馬塚の内部は大人₩3,000／青少年₩2,000／子ども₩1,000 · ファンリダンギルの通り自体は無料",
+        "walking": "平易 — 墳丘のあいだの平坦な芝生の道（126,500m²）、ベビーカーやご年配の方も快適。ファンリダンギルは平坦な歩道です"
+      },
+      "convenience": {
+        "restroom": "大陵苑の正門および天馬塚付近に公衆トイレ · ファンリダンギルはカフェ利用時に店内のお手洗い",
+        "parking": "大陵苑の正門駐車場（有料）"
+      },
+      "smartNotes": {
+        "photo": "大陵苑の石垣道（桜のトンネル、4月初旬）· 皇南大塚の裏のモクレン · 墳丘のあいだに沈む午後の陽射し · ファンリダンギルの韓屋カフェの路地",
+        "facilities": "天馬塚の内部に小規模な展示（天馬図の複製・副葬品）· 大陵苑＋東宮と月池のデイパス（₩4,000〜8,000）を販売 · ファンリダンギルにカフェ・お土産店が多数",
+        "tip": "墳丘に登ることは禁止されています（過料の対象）。大陵苑の散策は30〜60分、西門から出るとすぐファンリダンギルです。皇南パンの本店はこの界隈にあり、週末の午後は行列ができます。"
+      },
+      "_poi_meta": {
+        "poi_key": "daereungwon_tomb_complex",
+        "kb_version": "1.29",
+        "verified_date": "2026-08-04",
+        "is_compound_stop": true,
+        "secondary_poi_keys": [
+          "hwangnidan_gil"
+        ],
+        "compound_stop_note": "Daereungwon (23 Silla royal tombs incl. Cheonmachong, 11,526 artifacts) and Hwangnidan-gil (the hanok cafe street literally named 'Hwangnam-dong's Gyeongnidan-gil') are separated only by Daereungwon's west wall and are visited as ONE 75-min drop-off. hwangnidan_gil is not yet a POI KB entry — facts here verified 2026-08-04 (namu.wiki, VisitKorea, Gyeongju city map).",
+        "sources": [
+          "POI KB v1.29 (daereungwon_tomb_complex)",
+          "VisitKorea (Hwangnidan-gil)",
+          "Gyeongju city tourism map",
+          "Wikipedia (Cheonmachong / Hwangnamdaechong)"
+        ]
+      }
+    },
+    {
+      "number": 7,
+      "time": "≈ 17:00",
+      "duration": "60分",
+      "name": "国立慶州博物館（冬は東宮と月池の夜景）",
+      "category": "新羅遺物の国立博物館 — 11〜2月は東宮と月池の夜景に変更",
+      "description": "その日の最後の立ち寄りは、季節によって次の2つのどちらかになります。\n\n**① 3〜10月 — 国立慶州博物館（基本）。** **韓国随一の新羅遺物博物館**で、**1945年**に分館として創設、本館は**1968年**開館、**1975年に国立博物館へ昇格**しました。所蔵品は**指定文化財30,000点以上を含む総計100,000点以上**です。中心となる展示は**（1）天馬塚金冠（国宝第188号）** — 先ほど大陵苑で見たあの墓から1973年に出土した実物であり、**（2）聖徳大王神鐘（エミレの鐘、国宝第29号）** — **771年**鋳造、約19トンの現存最大級の梵鐘です（鋳造の際に子どもを入れたという伝説は、**1998年の成分分析で人体の残存物が検出されず**、民間説話として整理されました）。**月池館**には、**1975〜1976年の月池（雁鴨池）の浚渫で出土した遺物33,000点余り** — 酸素が遮断された泥に守られた木製品、瓦、酒令具（サイコロ）など — が展示されており、すぐ隣の東宮と月池と一対をなします。**観覧は10:00〜18:00（最終入場17:30）、定休は1月1日・旧正月（ソルラル）・秋夕（チュソク）のみで、月曜日は通常どおり開館します。常設展示は入場無料。** 3〜10月の土曜日は20:00まで夜間延長開館します。\n\n**② 11〜2月 — 東宮と月池（冬の夜景）。** 冬は17時ごろにはすでに陽が傾くため、同じ時間に**慶州随一の夜景**を見に行きます。**東宮と月池（旧・雁鴨池、史跡第18号）**は、**674年に文武王**が造営した**新羅王宮の別宮と池**で、水面に映る楼閣の反射で知られます — 上で触れた月池館の遺物33,000点余りは、まさにこの池の底から出土したものです。**09:00〜22:00（発券は21:30まで）、年中無休。入場料は大人₩3,000／青少年・軍人₩2,000／子ども₩1,000。** 冬の日没は**17:15〜17:30**ごろなので、このツアーの到着時刻（約17:00）は、**夕暮れから照明が点く瞬間まで**をそのまま見届けられる時間帯です。\n\n2か所は互いに**車で5分の距離**にあり、当日の季節・日没時刻・現地状況に応じてガイドがご案内します。",
+      "highlights": [
+        "**3〜10月 ＝ 国立慶州博物館** / **11〜2月 ＝ 東宮と月池の夜景** — 季節で分かれる最後の立ち寄り",
+        "**天馬塚金冠（国宝第188号）** — 前の立ち寄り（大陵苑）で見たあの墓の実物がここにあります",
+        "**エミレの鐘／聖徳大王神鐘（国宝第29号）** — 771年鋳造、約19トン、現存最大級の梵鐘",
+        "**月池館 ＝ 1975〜1976年の月池浚渫で出土した33,000点余り** — 東宮と月池と一対",
+        "博物館は**10:00〜18:00（最終入場17:30）· 常設展示は無料**",
+        "🔴 **月曜日は通常どおり開館** — 定休は1月1日・旧正月・秋夕のみです",
+        "**東宮と月池 ＝ 史跡第18号**、674年に文武王が造営した新羅の別宮と池（旧・雁鴨池）",
+        "東宮と月池は**09:00〜22:00（発券21:30まで）· 年中無休 · 大人₩3,000**",
+        "冬の日没は**17:15〜17:30** — 約17:00の到着は、夕暮れから照明までを見届けられる時間帯"
+      ],
+      "timeUsed": [
+        "降車＋入場（約5分）",
+        "新羅歴史館＋新羅美術館（約20分）／冬：池を一周する散策（約25分）",
+        "月池館＋屋外のエミレの鐘（約20分）／冬：夜景の撮影（約20分）",
+        "天馬塚金冠の展示室（約10分）／冬：照明の点灯待ち（約10分）",
+        "自由時間＋お手洗い＋集合（約5分）"
+      ],
+      "whyOnRoute": "大陵苑で発掘現場を見た直後に、その墓から出た**金冠の実物**を見る順番なので、その日が**「墓 → 遺物」**というひとつの文章で締まります。最後に配置した理由は時間の計算から出ています — 約17:00の到着は博物館の**最終入場17:30より30分早く**、18:00の閉館までハイライトをゆとりを持って見られます（全館を通しで回るコースではなく、金冠・エミレの鐘・月池館を中心にご案内します）。そして**冬は同じ時刻がむしろ夜景の時間**になるため、11〜2月は博物館ではなく車で5分の東宮と月池へ向かいます — 夏の時間割では作れない絵です。どちらの選択肢も平坦な歩行なので、一日の最後の立ち寄りとして負担がありません。",
+      "_poi_meta": {
+        "poi_key": "gyeongju_national_museum",
+        "kb_version": "1.25",
+        "verified_date": "2026-08-04",
+        "sources": [
+          "Gyeongju National Museum official",
+          "Wikipedia",
+          "Cultural Heritage Administration of Korea",
+          "Yonhap News (2025 APEC special exhibition)",
+          "National Museum of Korea (Gyeongju Branch official)"
+        ],
+        "seasonal_alternate_poi_key": "donggung_wolji_pond",
+        "seasonal_alternate_months": "11,12,1,2",
+        "seasonal_alternate_note": "Nov–Feb the last stop becomes Donggung & Wolji (Historic Site No. 18, 09:00–22:00, adult ₩3,000) because sunset falls at 17:15–17:30. Museum hours corrected 2026-08-04: 10:00–18:00, last admission 17:30, closed only Jan 1 / Seollal / Chuseok — NOT Mondays."
+      },
+      "image": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+      "visitBasics": {
+        "hours": "10:00〜18:00（最終入場17:30）· 3〜10月の土曜日は20:00まで夜間延長開館",
+        "closed": "1月1日 · 旧正月（ソルラル）· 秋夕（チュソク）（🔴 月曜日は通常どおり開館します）",
+        "admission": "常設展示は無料（有料の特別展は別途）· 冬の代替地である東宮と月池は大人₩3,000",
+        "walking": "主に屋内＋舗装された屋外エリア；完全バリアフリー対応"
+      },
+      "convenience": {
+        "restroom": "本館内と屋外パビリオンエリアに複数のトイレあり",
+        "parking": "敷地内の観光バス・乗用車駐車場は無料"
+      },
+      "smartNotes": {
+        "photo": "屋外パビリオンの聖徳大王神鐘（午後の斜光が映える）；新羅館の天馬塚金冠展示（薄暗い照明、フラッシュ禁止）；石塔の断片が点在する博物館庭園",
+        "facilities": "金冠レプリカアクセサリーを販売するミュージアムショップ；本館内のカフェ；クロークあり",
+        "tip": "フラッシュ撮影禁止；一部の特別展示では撮影全面禁止の場合あり（館内の案内表示を確認）；鐘のパビリオンだけで約10分の余裕を — 新羅最重要の遺物です"
+      },
+      "images": [
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+        "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — 写真 1",
+          "alt": "国立慶州博物館 — ギャラリー画像 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — 写真 2",
+          "alt": "国立慶州博物館 — ギャラリー画像 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+          "location": "国立慶州博物館",
+          "caption": "国立慶州博物館 — 写真 3",
+          "alt": "国立慶州博物館 — ギャラリー画像 3"
+        }
+      ]
+    },
+    {
       "number": 8,
-      "time": "≈ 17:15",
+      "time": "≈ 18:05",
       "duration": "75分",
       "name": "釜山への帰路ドライブ",
       "category": "帰路 — 京釜高速道路",
-      "description": "**京釜高速道路**経由で慶州から釜山へ帰路ドライブ、**海雲台→西面→釜山駅**の逆順で降車。所要時間は交通状況により約75分。降車完了は**18:30頃**の予定 — **釜山での夕食予約やクルーズへの再乗船**をお考えのゲストにも余裕のある時間設定です。",
+      "description": "**京釜高速道路**を利用した慶州→釜山の帰路ドライブで、**海雲台駅 → 西面駅 → 釜山駅**の逆順で降車します。交通状況により約70〜80分。降車の目安時刻は**海雲台駅 約19:15 · 西面駅 約19:35 · 釜山駅 約19:50**です。\n\n降車地点は**朝に乗車した地下鉄駅の出口と同じ**です — 釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅4番出口の前です。",
       "highlights": [
-        "逆順降車：海雲台→西面→釜山駅",
-        "降車完了は18:30頃",
-        "釜山の夜の予定に余裕をもって対応できる到着時刻"
+        "逆順で降車：海雲台駅 → 西面駅 → 釜山駅",
+        "降車の目安：海雲台 約19:15 · 西面 約19:35 · 釜山駅 約19:50",
+        "**降車地点 ＝ 朝に乗車したその地下鉄駅の出口**"
       ],
       "timeUsed": [
-        "慶州→釜山ドライブ（約70分）",
+        "慶州 → 釜山のドライブ（約70〜80分）",
         "3か所での降車（合計約5分）"
       ],
-      "whyOnRoute": "逆順のピックアップシーケンスが最も時間効率の良い降車パターンです。",
+      "whyOnRoute": "逆順での降車がもっとも時間効率がよく、朝に乗った場所でそのまま降りられるため、帰りの動線を改めて考え直す必要がありません。",
       "_poi_meta": {
         "poi_key": "OPS_busan_return",
         "kb_version": "1.16",
@@ -1190,12 +1229,12 @@
   ],
   "routeFlowStops": [
     {
-      "name": "釜山地下鉄でのピックアップ",
+      "name": "釜山の地下鉄駅ピックアップ（3か所）",
       "type": "origin",
       "theme": "出発"
     },
     {
-      "name": "アホプサン竹林（または桜の季節は海雲台タルマジの丘）",
+      "name": "アホプサン竹林（桜の季節は海雲台タルマジの丘）",
       "type": "primary",
       "theme": "森林／海岸道路（季節限定）"
     },
@@ -1210,69 +1249,75 @@
       "theme": "食事"
     },
     {
-      "name": "慶州国立博物館",
+      "name": "校村韓屋村 & 崔富豪邸 & 月精橋",
       "type": "primary",
-      "theme": "新羅の文化財"
+      "theme": "宗家の韓屋＋新羅の橋"
     },
     {
-      "name": "校村韓屋村",
+      "name": "大陵苑 & ファンリダンギル",
       "type": "primary",
-      "theme": "歴史遺産の村"
+      "theme": "王陵＋カフェ通り"
     },
     {
-      "name": "月精橋",
+      "name": "国立慶州博物館（冬：東宮と月池の夜景）",
       "type": "primary",
-      "theme": "復元された新羅の橋"
+      "theme": "新羅の遺物／冬の夜景"
     },
     {
-      "name": "釜山地下鉄での降車",
+      "name": "釜山の地下鉄駅で降車",
       "type": "return",
       "theme": "帰路"
     }
   ],
   "routePhases": [
     {
-      "phase": "往路＋アホプサン",
+      "phase": "出発＋アホプサン",
       "duration": "約2時間30分",
-      "description": "釜山地下鉄の3か所の出口（08:10・08:30・09:10）で順次ピックアップ後、機張のアホプサン竹林まで車で約30分。"
+      "description": "釜山の地下鉄駅3か所でピックアップ（釜山駅4番出口 08:10、西面駅4番出口 08:30、海雲台駅5番出口 09:10）後、機張のアホプサン竹林まで車で約30分、60分の竹林散策。"
     },
     {
-      "phase": "ユネスコの中核スポット",
+      "phase": "ユネスコの中核",
       "duration": "約2時間",
-      "description": "アホプサンから仏国寺まで車で約70分、その後ゆったりとしたペースでお寺を60分散策。"
+      "description": "アホプサン竹林から仏国寺まで車で約50分、その後ゆったりとしたペースで75分の寺院拝観。"
     },
     {
-      "phase": "昼食＋博物館",
-      "duration": "約2時間",
-      "description": "慶州の郷土料理で昼食（60分）、その後国立博物館のハイライトギャラリーを60分見学。"
+      "phase": "昼食",
+      "duration": "約1時間",
+      "description": "慶州市内の地元レストランでサムバプなどの郷土料理（約55分、個人負担）。"
     },
     {
-      "phase": "韓屋村＋橋",
+      "phase": "慶州の徒歩ブロック1 — 宗家と橋",
       "duration": "約1時間30分",
-      "description": "校村韓屋村を散策（60分）、月精橋で30分。"
+      "description": "校村韓屋村・崔富豪邸から南川の川沿いの道を歩いて月精橋まで、1回の降車で75分。"
     },
     {
-      "phase": "帰りのドライブ",
-      "duration": "約1時間15分〜1時間30分",
-      "description": "京釜高速道路経由で慶州から釜山へ。海雲台・西面・釜山駅での降車。"
+      "phase": "慶州の徒歩ブロック2 — 王陵とカフェ通り",
+      "duration": "約1時間30分",
+      "description": "大陵苑の古墳を散策したあと西側の塀を越えてファンリダンギルへ、1回の降車で75分。"
+    },
+    {
+      "phase": "最後の立ち寄り＋帰路",
+      "duration": "約2時間30分",
+      "description": "国立慶州博物館60分（11〜2月は東宮と月池の夜景）のあと京釜高速道路で釜山へ、海雲台 約19:15 · 西面 約19:35 · 釜山駅 約19:50 に降車。"
     }
   ],
   "routeShapeIntro": {
     "title": "この日のスケジュールの流れ",
-    "subtitle": "立ち寄りスポット数よりも建築的な深みを重視した、一年中楽しめる落ち着いた慶州遺産めぐりコースです。多くの慶州日帰りツアーが7〜8か所を詰め込んで慌ただしくなりがちなのに対し、このルートは厳選した5か所を訪れ、各スポットで十分な滞在時間を確保しています——特に仏国寺、国立博物館、校村韓屋村ではゆっくりとお楽しみいただけます。最後の月精橋はライトアップの時間帯ではなく日中に訪れるため、この日の「落ち着いたペース」というコンセプトとも合致しています。チェックリストをこなす観光よりも、各スポットでじっくり時間をかけたい旅行者のために設計されたコースです。"
+    "subtitle": "釜山を出発し、慶州を一日かけて歩く通年催行のコースです。午前は車で移動する2か所（アホプサン竹林・仏国寺）、午後は**車を停めて歩く2つのブロック** — 校村韓屋村・崔富豪邸から南川を渡って月精橋まで、そして大陵苑の古墳から塀ひとつ越えてファンリダンギルまで — で構成しました。最後の一枠は季節が決めます：**3〜10月は国立慶州博物館**で大陵苑で見たあの金冠の実物を見て、**11〜2月は同じ時刻が夜景の時間になるため東宮と月池**へ向かいます。いくつの名所を回ったかよりも、ひとつの場所にどれだけ長くいられたかを大切にする旅行者のための行程です。"
   },
   "whyTourWorks": {
     "bestFor": [
-      "慶州の定番スポットをゆっくり巡りたい旅行者",
-      "韓国初訪問の方",
+      "急がずに慶州の代表スポットを楽しみたい旅行者",
+      "韓国が初めての方",
       "大人のご家族やカップル",
-      "夕方早めの帰着をご希望の旅行者"
+      "**歩いて回る午後**がお好きな旅行者 — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ",
+      "冬の出発なら、慶州最高の夜景（東宮と月池）を行程のなかでご覧になりたい旅行者"
     ],
     "lessIdealFor": [
-      "博物館をじっくり堪能したい旅行者（UNESCOレガシー版はより長い時間を要します）",
-      "歩行を最小限に抑えたい旅行者",
-      "ベビーカーをお使いのグループ（仏国寺に石段あり）",
-      "当日フライトまでの余裕が少ない旅行者"
+      "**夕方早めの帰着が必要な旅行者** — 釜山での降車は約19:15〜19:50です",
+      "歩行を最小限に抑えたい旅行者（1日 約5〜5.5km）",
+      "ベビーカーをお使いのグループ（仏国寺に石段あり — ただし大陵苑は平坦です）",
+      "当日のフライト接続に余裕が少ない旅行者"
     ],
     "routeLogicSections": [
       {
@@ -1282,20 +1327,24 @@
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "11.5時間ではなく10.5時間でめぐるクラシック慶州",
-            "detail": "UNESCOレガシー版と同じ6つの観光スポット（アホプサン、仏国寺、昼食、博物館、校村、橋）を巡りますが、各ブロックが15〜30分短縮されています。その結果、各スポット内での滞在がやや余裕のあるペースになり、帰着時間も早まります（約18:50 vs 約19:45）。トレードオフとして、博物館の奥にある月池展示室での時間が短くなり、ハイライトのみのルートとなります。"
+            "label": "午後は車を停めて歩く2つのブロックにまとめました",
+            "detail": "校村韓屋村・崔富豪邸と月精橋は南川の川沿いの道を徒歩10〜15分、大陵苑とファンリダンギルは塀ひとつの距離です。だから4か所で4回停まる代わりに、**降車は2回だけ**にしました — 乗り降りに使っていた時間がそのまま歩く時間になり、各ブロックに75分ずつを充てています。"
           },
           {
-            "label": "復元された新羅の橋で静かに締めくくる",
-            "detail": "月精橋は短く、平坦で、フォトジェニックな橋です。博物館と校村の後の最終立ち寄り地として30分を設けています。日没から約22:00まで毎夜ライトアップされますが、このルートでは16:30頃に到着します。春〜秋は日中の明るい時間帯、11月〜2月は日没直前〜日没時刻に当たります。夏はこの到着時間帯に夜景の観賞ができないため、夜景はお約束しておりません。"
+            "label": "最後の一枠は季節が決めます — 博物館、それとも夜景",
+            "detail": "3〜10月は約17:00に国立慶州博物館へ到着します（最終入場17:30より30分早い時刻です）。11〜2月は同じ時刻にすでに陽が傾いているため、車で5分の**東宮と月池**へ向かい、夕暮れから照明が点く瞬間までを見ます。夏の行程では作れない絵です。"
           },
           {
-            "label": "季節に応じたスマートな入れ替えで通年催行",
-            "detail": "桜の季節（3月中旬〜4月中旬）は、アホプサン竹林が海雲台達摩地山に変更になります。それ以外の行程は同一です。"
+            "label": "墓で見て、博物館でもう一度見ます",
+            "detail": "大陵苑の天馬塚で1973年の発掘現場を見て、その墓から出た**天馬塚金冠（国宝第188号）の実物**を、次の立ち寄り先である国立慶州博物館で見ます。月池館の遺物33,000点余りも同じく、冬の代替地である東宮と月池の池の底から出たものです — 順番そのものがひとつの解説になります。"
           },
           {
-            "label": "大型観光バスとプライベートツアーの中間、ミニバンサイズ",
-            "detail": "釜山発の大型観光バスツアーは35〜45名乗車で一人あたりの料金は低めですが、プライベートツアーは1〜4名でグループあたりの料金がかなり高くなります。この少人数ミニバン形式はその中間に位置し、通常1便あたり10名未満での催行です。"
+            "label": "ピックアップはすべて地下鉄駅の出口です",
+            "detail": "釜山駅4番出口（1号線）、西面駅4番出口（1・2号線）、海雲台駅5番出口（2号線）。とくに**釜山駅はKTXの鉄道駅舎ではなく、その前にある地下鉄駅の4番出口**です — 鉄道駅前の広場はバスやタクシーが入り混じって車両を見つけにくいのに対し、地下鉄の出口番号は誰でも一度で見つけられます。降車も同じ3か所です。"
+          },
+          {
+            "label": "大型観光バスとプライベート車両の中間、少人数ミニバン",
+            "detail": "釜山発の大型バスツアーは35〜45名が安く乗り合わせ、プライベートツアーは1〜4名がはるかに高い料金で利用します。この少人数ミニバンはその中間 — 人数が少ないぶん各立ち寄り先での集合が早く、その分だけ滞在時間が長くなります。"
           }
         ]
       }
@@ -1305,21 +1354,22 @@
     {
       "id": "inclusions",
       "title": "含まれるもの",
-      "preview": "釜山からの往復ミニバン送迎、認定英語・中国語ガイド、…",
+      "preview": "釜山発着のミニバン往復送迎、認定英語・中国語ガイド、…",
       "content": [
-        "釜山からの往復ミニバン送迎、認定英語・中国語ガイド、燃料費・高速料金・駐車料金。",
-        "含まれないもの：昼食（約₩15,000〜₩25,000）、アホプサン竹林入場料（₩5,000、現地払い）、チップ。",
-        "その他の観光地の入場料はすべて無料：仏国寺（2023年5月より無料）、慶州国立博物館（2008年より無料）、校村ハノク村、月精橋。"
+        "釜山発着のミニバン往復送迎、認定英語・中国語ガイド、燃料費・高速料金・駐車料金。",
+        "含まれないもの：昼食（約₩15,000〜₩25,000）、アホプサン竹林の入場料（₩5,000、現地払い）、天馬塚の内部見学（大人₩3,000、任意）、冬の代替時の東宮と月池の入場料（大人₩3,000）、チップ。",
+        "そのほかの入場料はすべて無料です：仏国寺（2023年5月より無料）、国立慶州博物館の常設展示（2008年より無料）、校村韓屋村・崔富豪邸、月精橋、大陵苑の公園エリア、ファンリダンギル。"
       ]
     },
     {
       "id": "pickup",
       "title": "乗車・降車場所",
-      "preview": "釜山地下鉄1号線沿いの3か所の順次乗車地点：釜山駅4番出口（08:10）、…",
+      "preview": "釜山中心部の**地下鉄駅3か所**で順番にピックアップします：釜山駅4番出…",
       "content": [
-        "釜山地下鉄1号線沿いの3か所の順次乗車地点：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）。",
-        "降車は逆順：海雲台 約18:15、西面 約18:35、釜山駅 約18:50。",
-        "ご予約時にWhatsApp／カカオトークの番号をご提供ください。ガイドが前日に車両の詳細をメッセージにてご連絡いたします。"
+        "釜山中心部の**地下鉄駅3か所**で順番にピックアップします：釜山駅4番出口（1号線）08:10、西面駅4番出口（1・2号線）08:30、海雲台駅5番出口（2号線）09:10。",
+        "🔴 **釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅の4番出口**です。鉄道駅の待合室や駅前広場でお待ちになると、車両は見つかりません。",
+        "降車は逆順で、朝に乗車したその出口です：海雲台駅 約19:15、西面駅 約19:35、釜山駅 約19:50。",
+        "ご予約時にWhatsAppまたはカカオトークの番号をご提供ください。ガイドが前日に車両の詳細をメッセージでご案内します。"
       ]
     },
     {
@@ -1328,9 +1378,9 @@
       "preview": "普通。",
       "content": [
         "普通。",
-        "1日の総歩行距離は約3.5〜4km — 博物館エリアが短いため、UNESCOレガシー版よりやや少なめです。",
-        "仏国寺はテラス間に石段があります。博物館は平坦な屋内歩行、教村と橋は平坦です。",
-        "つま先が閉じた履きやすい靴が必須 — 仏国寺の石畳は不均一です。"
+        "1日の総歩行距離は約5〜5.5km — 午後の2ブロック（校村↔月精橋、大陵苑↔ファンリダンギル）を歩いてつなぐため、以前のコースより増えています。",
+        "仏国寺はテラス間に石段があります。校村・月精橋・大陵苑・ファンリダンギルはすべて平坦で、大陵苑の芝生の道はベビーカーやご年配の方にも快適です。",
+        "墳丘に登ることは禁止されています（過料の対象）。つま先の閉じた履きやすい靴が必須です — 仏国寺の石畳は不均一です。"
       ]
     },
     {
@@ -1346,10 +1396,11 @@
     {
       "id": "seasonal",
       "title": "季節別ルートについて",
-      "preview": "桜の季節（3月中旬〜4月中旬、毎年日程は異なります）：アホプサン…",
+      "preview": "桜の季節（3月中旬〜4月中旬、正確な日程は毎年異なります）：アホ…",
       "content": [
-        "桜の季節（3月中旬〜4月中旬、毎年日程は異なります）：アホプサン竹林は、釜山の海沿いの桜のトンネル道、海雲台達磨峠に変更されます。",
-        "冬季（11月〜2月）：月精橋には16:30頃到着 — ちょうど日没前後で、日没後の水面反射の撮影が確実に楽しめる唯一の時間帯です。"
+        "桜の季節（3月中旬〜4月中旬、正確な日程は毎年異なります）：アホプサン竹林の代わりに、釜山の海沿いの桜道である海雲台タルマジの丘へ変更されます。大陵苑の石垣道の桜は4月初旬が見頃です。",
+        "冬（11月〜2月）：日没が17:15〜17:30と早いため、最後の立ち寄りが国立慶州博物館から**東宮と月池の夜景**に変更されます（入場料は大人₩3,000、現地払い）。夕暮れから照明の点灯までを見る時間帯です。",
+        "夏（6〜8月）は日没が19:30ごろのため夜景の行程が成立せず、最後の立ち寄りは国立慶州博物館で固定です。"
       ]
     }
   ],
@@ -1367,19 +1418,19 @@
   "seasonalVariations": [
     {
       "season": "春（3月中旬〜4月中旬、桜の季節）",
-      "description": "最初のアホプサンは海雲台達磨峠の桜道に変更。仏国寺境内は4月中旬が見頃です。"
+      "description": "アホプサン竹林のオープニングが海雲台タルマジの丘の桜道に変更されます。大陵苑の石垣道は慶州でも指折りの桜のトンネルで（毎年4月初旬に祭りが開かれます）、校村にも4月初旬に桜が訪れます。最後の立ち寄りは国立慶州博物館です。"
     },
     {
       "season": "夏（6月〜8月）",
-      "description": "竹林は涼しく、博物館は冷房完備。仏国寺の山間の立地は沿岸の釜山より涼しめ。橋には16:30に完全な昼光の中で到着します。"
+      "description": "竹林は涼しく、博物館は冷房完備です。午後の徒歩ブロックは2か所とも日陰とカフェがあり、休みながら歩けます。日没が19:30ごろのため夜景は行程に入らず、最後の立ち寄りは国立慶州博物館です。"
     },
     {
       "season": "秋（9月下旬〜10月下旬）",
-      "description": "仏国寺の10月下旬の紅葉は、韓国を代表する絶好の撮影スポットのひとつ。16:30の橋はまだほぼ昼間の明るさ。"
+      "description": "校村の10月下旬のイチョウが見頃で、大陵苑の芝生の丘はその日でもっとも快適な散策になります。最後の立ち寄りは国立慶州博物館で、3〜10月の土曜日は博物館が20:00まで夜間延長開館します。"
     },
     {
       "season": "冬（11月〜2月）",
-      "description": "人出が最も少ない季節。博物館が最も重宝される屋内スポットに。日没は17:15〜17:30 — 訪問終盤に橋がライトアップされ始めます。"
+      "description": "もっとも人出の少ない季節です。日没が17:15〜17:30と早いため、最後の立ち寄りが**国立慶州博物館から東宮と月池の夜景に変更**されます — 夕暮れから照明の点灯までをそのまま見る時間帯で、一年のうちこの季節にしかできない行程です。月精橋も冬の午後は日没の光を受けます。"
     }
   ],
   "bookingTrustItems": [
@@ -1440,13 +1491,13 @@
   "staticQuestions": [
     {
       "id": "q-vs-unesco-legacy",
-      "question": "釜山発「ユネスコ遺産」日帰りツアーとの違いは何ですか？",
-      "answer": "両ツアーは基本的に同じルート（アホプサン→仏国寺→博物館→校村→橋）を巡ります。このツアーの「古都」設定では各ブロックが15〜30分短くなっており、帰着が約1時間早く（約18:50対約19:45）、博物館での滞在時間が短い分、各スポットでのペースがやや余裕があります。「ユネスコ遺産」バージョンは博物館の滞在時間と遺産解説を重視しています。早めの帰着とゆったりした1日をご希望の方はこちら、博物館内でより長い時間を過ごしたい方はユネスコ遺産ツアーをお選びください。"
+      "question": "1日の流れはどのようになりますか？",
+      "answer": "**午前は車で移動する2か所、午後は歩いて回る2つのブロック**です。釜山の地下鉄駅3か所を08:10〜09:10に出発し、アホプサン竹林（60分）→ 仏国寺（75分）→ 慶州市内で昼食（60分）までが午前です。午後は車を2回しか停めません — **校村韓屋村・崔富豪邸から南川を渡って月精橋まで**（75分）、そして**大陵苑の古墳から塀ひとつ越えてファンリダンギルまで**（75分）。最後の一枠は季節が決めます：3〜10月は**国立慶州博物館**（約17:00到着、最終入場17:30より前）、11〜2月は同じ時刻が夜景の時間になるため**東宮と月池**です。釜山での降車は海雲台駅 約19:15、西面駅 約19:35、釜山駅 約19:50で、**合計 約11.5時間**の行程です。"
     },
     {
       "id": "q-bridge-night-view",
-      "question": "橋のライトアップは見られますか？",
-      "answer": "基本的にこのツアーでは見られません。橋は年間を通じて日没から約22:00まで毎晩ライトアップされますが、このルートでは16:30に到着するため、春〜秋は日中となります。訪問時間帯にライトアップが確実に見られる唯一の時期は11〜2月で、日没が17:15〜17:30の間にあり、滞在の終盤にかけてライトが点灯し始めます。日没後の水面反射ショットを優先されるなら、ユネスコ遺産ツアー（橋に17:00到着）がより適しています。または日没後に個別でご訪問されることをお勧めします。"
+      "question": "月精橋のライトアップは見られますか？",
+      "answer": "このツアーでご覧いただくのは**昼光のなかの月精橋**です。校村韓屋村・崔富豪邸とあわせて午後2時ごろに到着するためです — 木組みの細部と川面の反射はむしろ日中のほうが鮮明で、日没前後の人混みも避けられます。**夜景をご希望でしたら冬（11〜2月）の出発をおすすめします**：この時期は最後の立ち寄りが東宮と月池の夜景に変わり、慶州でもっとも有名な夜景を照明の点灯時刻に合わせてご覧いただけます。"
     },
     {
       "id": "q-bulguksa-only",
@@ -1456,12 +1507,12 @@
     {
       "id": "q-admissions",
       "question": "入場料は含まれていますか？",
-      "answer": "ほとんどは無料です。唯一の実費入場料はアホプサン竹林（₩5,000、現地払い・現金）のみです。仏国寺は2023年5月から無料、慶州国立博物館は2008年11月から無料、校村韓屋村と月精橋は無料です。昼食に₩15,000〜₩25,000＋アホプサンの₩5,000を見込んでおくと、一般的な実費合計はお一人様あたり約₩20,000〜₩30,000です。"
+      "answer": "ほとんどは無料です。**無料**：仏国寺（2023年5月から）、国立慶州博物館の常設展示（2008年から）、校村韓屋村・崔富豪邸、月精橋、大陵苑の公園エリア、ファンリダンギル。\n\n**現地で直接お支払いいただくもの**：アホプサン竹林の入場料 **₩5,000**（必須）· 大陵苑内の**天馬塚の内部見学 ₩3,000**（任意 — 中に入らず古墳のあいだを歩くだけでもかまいません）· 冬（11〜2月）の出発は最後の立ち寄りが変わるため **東宮と月池 ₩3,000** · 昼食 **₩15,000〜₩25,000**。\n\nしたがって、お一人様あたりの実費合計は**夏はおよそ₩20,000〜₩33,000**、**冬はおよそ₩23,000〜₩36,000**が目安です。"
     },
     {
       "id": "q-museum-language",
-      "question": "博物館に英語表記はありますか？",
-      "answer": "はい。慶州国立博物館では、3つの常設展示室すべてに英語・中国語の展示パネルが設置されています。入口にある聖徳大王神鐘には多言語パネルがあります。英語の音声ガイドは無料で、インフォメーションデスクにて身分証明書を預けることでご利用いただけます。"
+      "question": "国立慶州博物館に英語の案内表示はありますか？",
+      "answer": "はい。主要な展示品には韓国語・英語の二か国語解説パネルがあり、近年の改修でデジタル解説も追加されました。常設展示は**無料**、観覧時間は**10:00〜18:00（最終入場17:30）**で、定休は1月1日・旧正月・秋夕のみのため**月曜日も通常どおり開館**しています。このツアーは約17:00に到着し、金冠・エミレの鐘・月池館を中心に60分間見学します。冬（11〜2月）の出発は、博物館ではなく東宮と月池の夜景に変更されます。"
     },
     {
       "id": "q-bulguksa-photography",
@@ -1476,32 +1527,47 @@
     {
       "id": "q-rain",
       "question": "雨の場合はどうなりますか？",
-      "answer": "小雨の場合：ツアーは予定通り実施されます。大雨の場合：仏国寺の石段が滑りやすくなり、阿含山（アホプサン）の小道がぬかるむことがあるため、ガイドが屋外時間を短縮し、屋内・空調完備の博物館での時間を延長する場合があります。台風級の荒天の場合：日程変更または全額返金対応となります。"
+      "answer": "小雨の場合：予定どおり実施します。\n\n**強い雨の場合**：仏国寺の石段が滑りやすくなり、アホプサン竹林の土の道がぬかるむことがあるため、ガイドが屋外での滞在を短くして屋内の比重を増やします — 3〜10月は**最後の立ち寄りである国立慶州博物館**（屋内・空調完備）で時間を多めに取り、大陵苑では古墳のあいだの散策を短くする代わりに**ファンリダンギルの屋内カフェ・店舗**で過ごす時間を増やします。冬（11〜2月）は最後の立ち寄りが屋外の東宮と月池なので、雨天時は**博物館に振り替える**ことができます（最終入場17:30より前に到着できる場合）。\n\n台風級の荒天の場合：日程変更または全額返金に対応します。"
     },
     {
       "id": "first-time",
       "question": "慶州初訪問者にも良いツアーですか？",
-      "answer": "はい。長時間のツアーよりも落ち着いたペースで慶州の定番スポットを巡れます。韓国旅行の一環としてユネスコ世界遺産の見どころを押さえたい初訪問者で、早めの夕方帰着を希望する方に最適です。"
+      "answer": "はい。慶州の代表スポットを急がずに巡る構成なので、初めての慶州によく合います。とくに**午後の2つのブロックが歩いてつながっている**ため — 崔富豪邸から月精橋へ、大陵苑の古墳から塀ひとつ越えてファンリダンギルへ — 遺跡を順に見て回るだけでなく、街そのものの手ざわりまで一緒に見ることになります。\n\nただし、**夕方早めに戻りたい方にこのツアーは向きません** — 1日が約11.5時間で、釜山での降車は19:15〜19:50になります。その場合は、より短い釜山近郊のツアーをお選びになることをお勧めします。"
     },
     {
       "id": "walking",
       "question": "歩く距離はどのくらいですか？",
-      "answer": "約3.5〜4kmです。仏国寺が最もアクティブな区間で（石畳の凹凸あり、緩やかな上り坂）、博物館は平坦な屋内歩行、校村（キョチョン）と橋も平坦です。つま先が閉じた歩きやすい靴が必須です。"
+      "answer": "約5〜5.5kmです。午後の2ブロック（校村韓屋村・崔富豪邸↔月精橋、大陵苑↔ファンリダンギル）を歩いてつなぐため、以前のコースより増えています。もっともアクティブな区間は仏国寺（石畳の凹凸あり、緩やかな上り坂）で、校村・月精橋・大陵苑・ファンリダンギルはすべて平坦、博物館は平坦な屋内歩行です。つま先の閉じた歩きやすい靴が必須です。"
     },
     {
       "id": "family",
       "question": "ファミリーでの参加に適していますか？",
-      "answer": "1日のリズムをこなせる学齢期のお子様（概ね8歳以上）であれば適しています。博物館の金冠と巨大な鐘が子どもたちに特に人気で、竹林は感覚的にも心地よい空間です。未就学のお子様は博物館の静かな展示室や10.5時間の行程で疲れてしまう場合があります。"
+      "answer": "1日のリズムをこなせる学齢期のお子様（概ね8歳以上）であれば適しています。午後の2ブロックはお子様にとっていちばん過ごしやすい区間です — 大陵苑は階段のない平坦な芝生の道で、ファンリダンギルにはカフェとおやつ（皇南パン）があります。博物館の金冠と巨大な鐘も子どもたちに人気で、竹林は感覚的にも心地よい空間です。未就学のお子様には、博物館の静かな展示室と**約11.5時間**（08:10〜約19:50）の行程は負担が大きい場合があります。"
     },
     {
       "id": "seniors",
       "question": "高齢の方も快適に参加できますか？",
-      "answer": "3.5〜4kmの歩行と仏国寺の不整地な石畳を歩ける元気なシニアの方にお勧めです。ペースは中程度で、博物館では座って鑑賞できる時間も組み込まれています。帰着時刻が早め（約18:50）なため、慶州の長時間ツアーより負担が少なくなっています。"
+      "answer": "約5〜5.5kmの歩行と仏国寺の不整地な石畳を歩ける元気なシニアの方にお勧めです。午後の2ブロックはいずれも平坦で、とくに大陵苑は階段のない芝生の道です。博物館では座って鑑賞できる時間も組み込まれています。ただしコース改編により1日は**約11.5時間**（最初のお迎え08:10、最終降車 約19:50）と長くなっているため、長時間の外出がご負担にならないかをご確認のうえお申し込みください。"
     },
     {
       "id": "children",
       "question": "参加推奨年齢は何歳からですか？",
-      "answer": "概ね8歳以上が最適です。上記の歩行距離をこなせ、1日通したペースに慣れているお子様であれば問題ありません。小さなお子様には、博物館の静かな展示室や10.5時間のスケジュールは負担が大きい場合があります。"
+      "answer": "概ね8歳以上が最適です。1日の総歩行距離 約5〜5.5kmと、**約11.5時間**（最初のお迎え08:10、最終降車 約19:50）の行程をこなせるお子様であればご参加いただけます。むしろ午後の2ブロックはお子様にとっていちばん過ごしやすい区間です — 大陵苑は階段のない平坦な芝生の道で、ファンリダンギルにはカフェとおやつ（皇南パン）があります。負担になりやすいのは、博物館の静かな展示室と朝早い出発のほうです。"
+    },
+    {
+      "id": "q-recourse-1",
+      "question": "ファンリダンギルでは何をしますか？",
+      "answer": "大陵苑の西側の塀のすぐ向かいにある、**韓屋を改装したカフェ・工房・雑貨店の通り**です。名前は「皇南洞のキョンリダンギル」という意味で、2017年頃から慶州でいちばん若い通りになりました。自由時間は約20〜30分で、コーヒー1杯や**皇南パン**（1939年にこの界隈で生まれた慶州を代表する小豆菓子）の購入、お手洗いの利用には十分です。店舗でのお買い物は個人負担です。"
+    },
+    {
+      "id": "q-recourse-2",
+      "question": "冬に参加すると国立慶州博物館は見られないのですか？",
+      "answer": "はい、11〜2月の出発は最後の立ち寄りが**東宮と月池の夜景**に変更されます。冬は17時ごろにはすでに陽が傾いて博物館の見学時間が短くなる一方、同じ時刻が慶州随一の夜景の始まる時間だからです。2か所は車で5分の距離で、博物館の月池館にある遺物33,000点余りはまさにその池の底から出土したものなので、話としてはつながっています。博物館がどうしても必要な場合は3〜10月の出発をお選びください。"
+    },
+    {
+      "id": "q-recourse-3",
+      "question": "ピックアップ場所は鉄道駅ですか、地下鉄駅ですか？",
+      "answer": "**3か所ともすべて地下鉄駅の出口**です — 釜山駅4番出口（地下鉄1号線）、西面駅4番出口（1・2号線）、海雲台駅5番出口（2号線）。とくに釜山駅は、**KTXの鉄道駅舎ではなく、その前にある地下鉄駅の4番出口**でお待ち合わせします。鉄道駅の待合室や駅前広場でお待ちになると車両が見つかりませんので、地下鉄の出口番号を目印に移動してください。降車も同じ3か所です。"
     }
   ],
   "guestReviews": [],
@@ -1553,7 +1619,7 @@
       {
         "lat": 35.11449,
         "lng": 129.03933,
-        "name": "釜山駅（4番出口）",
+        "name": "釜山駅4番出口（地下鉄1号線 — KTXの鉄道駅ではありません）",
         "type": "station",
         "order": 1,
         "time": "08:10"
@@ -1561,7 +1627,7 @@
       {
         "lat": 35.15782,
         "lng": 129.06003,
-        "name": "西面駅（4番出口）",
+        "name": "西面駅4番出口（地下鉄1・2号線）",
         "type": "station",
         "order": 2,
         "time": "08:30"
@@ -1569,7 +1635,7 @@
       {
         "lat": 35.16396,
         "lng": 129.15853,
-        "name": "海雲台駅（5番出口）",
+        "name": "海雲台駅5番出口（地下鉄2号線）",
         "type": "station",
         "order": 3,
         "time": "09:10"
@@ -1577,36 +1643,29 @@
     ],
     "return": [
       {
-        "lat": 35.09663,
-        "lng": 129.0308,
-        "name": "南浦洞・ジャガルチ周辺",
+        "lat": 35.16396,
+        "lng": 129.15853,
+        "name": "海雲台駅5番出口（地下鉄2号線）",
         "type": "station",
         "order": 1
       },
       {
-        "lat": 35.11449,
-        "lng": 129.03933,
-        "name": "釜山駅（4番出口）",
+        "lat": 35.15782,
+        "lng": 129.06003,
+        "name": "西面駅4番出口（地下鉄1・2号線）",
         "type": "station",
         "order": 2
       },
       {
-        "lat": 35.15782,
-        "lng": 129.06003,
-        "name": "西面駅（4番出口）",
+        "lat": 35.11449,
+        "lng": 129.03933,
+        "name": "釜山駅4番出口（地下鉄1号線 — KTXの鉄道駅ではありません）",
         "type": "station",
         "order": 3
-      },
-      {
-        "lat": 35.16396,
-        "lng": 129.15853,
-        "name": "海雲台駅（5番出口）",
-        "type": "station",
-        "order": 4
       }
     ],
     "notes": [
-      "Same six-attraction route year-round (Bulguksa, museum, Gyochon, bridge, plus Ahopsan Bamboo Forest as morning opener). Cherry blossom season (mid-March to mid-April) swaps Ahopsan for Haeundae Dalmaji Hill. Choose the pickup exit closest to your hotel."
+      "ピックアップ・降車の3か所はすべて**地下鉄駅の出口**です — 釜山駅4番出口（1号線）、西面駅4番出口（1・2号線）、海雲台駅5番出口（2号線）。🔴 釜山駅はKTXの鉄道駅舎ではなく、その前にある地下鉄駅の出口でお待ち合わせします。ご予約時にホテルからいちばん近い出口をお選びください。通年催行で、桜の季節（3月中旬〜4月中旬）はアホプサン竹林が海雲台タルマジの丘に変更され、冬（11〜2月）は最後の立ち寄りが国立慶州博物館から東宮と月池の夜景に変わります。"
     ]
   },
   "matching_profile": {
@@ -1618,7 +1677,7 @@
     "destination_region": "busan_gyeongju",
     "region_type": "gyeongju_from_busan",
     "vehicle_type": "minicoach",
-    "duration_hours": 10.5,
+    "duration_hours": 11.5,
     "region_tags": [
       "busan_central",
       "gyeongju_central"
@@ -1634,12 +1693,15 @@
     "poi_tags": [
       "ahopsan_bamboo_forest",
       "bulguksa_temple",
-      "gyeongju_national_museum",
       "gyochon_hanok_village",
-      "woljeonggyo_bridge"
+      "woljeonggyo_bridge",
+      "daereungwon_tomb_complex",
+      "hwangnidan_gil",
+      "gyeongju_national_museum",
+      "donggung_wolji_pond"
     ],
     "pace_level": 0.4,
-    "walking_level": 0.6,
+    "walking_level": 0.7,
     "scenic_level": 0.8,
     "photo_level": 0.8,
     "culture_level": 1,
@@ -1662,12 +1724,12 @@
     "rain_fit": 0.65,
     "value_for_money_fit": 1,
     "iconic_landmark_fit": 1,
-    "cafe_fit": 0.4,
+    "cafe_fit": 0.75,
     "food_fit": 0.6,
     "nature_fit": 0.6,
     "beach_fit": 0.2,
-    "nightlife_fit": 0.2,
-    "shopping_fit": 0.2,
+    "nightlife_fit": 0.3,
+    "shopping_fit": 0.45,
     "no_shopping_fit": 1,
     "local_culture_fit": 1,
     "storytelling_fit": 1,
@@ -1683,8 +1745,8 @@
     "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "busan_central",
-    "return_time_band": "18:00-19:00",
-    "duration_band": "10h",
+    "return_time_band": "19:15-19:50",
+    "duration_band": "11h",
     "min_recommended_age": 8,
     "hard_constraints": {
       "avoidIf": [
@@ -1713,10 +1775,11 @@
     "vehicle_type_legacy": "van_or_minicoach",
     "anchor_poi_keys": [
       "bulguksa_temple",
-      "gyeongju_national_museum",
+      "daereungwon_tomb_complex",
       "gyochon_hanok_village",
-      "ahopsan_bamboo_forest",
-      "woljeonggyo_bridge"
+      "gyeongju_national_museum",
+      "woljeonggyo_bridge",
+      "ahopsan_bamboo_forest"
     ],
     "profile_format": "small_group_fixed_itinerary",
     "tour_type_fit": 1,
@@ -1799,14 +1862,14 @@
     "ginkgo_autumn_fit": 0.95,
     "indoor_anchor_fit": 0.55,
     "early_start_fit": 0.85,
-    "late_finish_fit": 0.5,
+    "late_finish_fit": 0.75,
     "full_day_fit": 1,
     "half_day_fit": 0.05,
     "value_priced_fit": 0.85,
     "budget_traveler_fit": 0.85,
     "off_beaten_path_fit": 0.55,
     "crowd_avoidance_fit": 0.55,
-    "instagrammable_fit": 0.85,
+    "instagrammable_fit": 0.9,
     "minicoach_fit": 1,
     "max_pax_per_vehicle": 14,
     "kpop_fan_fit": 0.5,
@@ -1916,7 +1979,6 @@
       "ahopsan_bamboo_forest",
       "woljeonggyo_bridge"
     ],
-    "differentiation_vs_unesco_legacy_sister": "Same 5 substantive POIs but **15-min longer dwell at each substantive stop** + **lunch is 60 min vs. 45 min** + framing emphasizes 'calm pace' and 'history lover' vs. sister tour's 'UNESCO Legacy + national museum' positioning. Both routes appropriate for different guest temperaments.",
     "enrichment_batch": "17b",
     "enrichment_date": "2026-04-29",
     "enrichment_kb_version": "1.24",
@@ -1938,16 +2000,16 @@
         "hero": {
           "imageUrl": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
           "imagePosition": "center 35%",
-          "tagline": "仏国寺、博物館、校村（キョチョン）、橋 — ゆったりペースで早めの帰着",
+          "tagline": "崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ — 午後は車を停めて歩きます",
           "pills": [
             "small_group",
             "慶州",
             "ancient_capital"
           ],
           "meta": {
-            "duration": "約10.5時間（08:10 最初のお迎え、約18:50 最後のお届け）",
+            "duration": "約11.5時間（最初のお迎え08:10、最終送迎約19:50）",
             "region": "慶州（釜山発）",
-            "stops": "8か所",
+            "stops": "8スポット",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1978,7 +2040,7 @@
           },
           {
             "id": "reviews",
-            "label": "レビュー"
+            "label": "クチコミ"
           }
         ]
       }
@@ -1990,34 +2052,40 @@
       "props": {
         "glanceItems": [
           {
-            "icon": "clock",
-            "label": "所要時間",
-            "value": "約10.5時間（08:10 最初のお迎え、約18:50 最後のお届け）"
+            "icon": "camera",
+            "label": "写真映え",
+            "value": "優秀",
+            "level": 5
           },
           {
-            "icon": "users",
-            "label": "グループ",
-            "value": "少人数グループ、ミニバン（通常最大約10名）"
-          },
-          {
-            "icon": "subway",
-            "label": "ピックアップ",
-            "value": "釜山駅4番出口（08:10）、西面4番出口（08:30）、海雲台5番出口（09:10）"
-          },
-          {
-            "icon": "calendar",
-            "label": "おすすめの季節",
-            "value": "通年；3月中旬〜4月中旬は桜の別ルートあり"
+            "icon": "mountain",
+            "label": "絶景",
+            "value": "良好",
+            "level": 4
           },
           {
             "icon": "footprints",
             "label": "徒歩",
-            "value": "普通 — 約3.5〜4km。ユネスコ遺産版よりゆったりとしたペース。"
+            "value": "やや多め",
+            "level": 4
           },
           {
-            "icon": "ticket",
-            "label": "含まれるもの",
-            "value": "往復送迎・公認ガイド。仏国寺、博物館、校村、橋は無料。アホプサン（₩5,000）と昼食のみ当日払い。"
+            "icon": "cloud-rain",
+            "label": "雨天安全",
+            "value": "普通",
+            "level": 3
+          },
+          {
+            "icon": "users",
+            "label": "家族向き",
+            "value": "良好",
+            "level": 4
+          },
+          {
+            "icon": "gauge",
+            "label": "バランス",
+            "value": "バランスの取れた",
+            "level": 4
           }
         ]
       }
@@ -2032,10 +2100,281 @@
             "id": 1,
             "type": "photo",
             "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "alt": "午後の光に照らされた仏国寺の石橋と多宝塔",
-            "caption": "仏国寺 — ユネスコ世界遺産。二つの塔（多宝塔・釈迦塔）は国宝第20号・第21号。",
-            "location": "仏国寺、慶州",
-            "atmosphere": "石・木材・8世紀の塔のシルエット"
+            "location": "アホプサン竹林（아홉산숲）",
+            "caption": "アホプサン竹林（아홉산숲） — photo 1",
+            "alt": "アホプサン竹林（아홉산숲） — gallery image 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
+            "location": "アホプサン竹林（아홉산숲）",
+            "caption": "アホプサン竹林（아홉산숲） — photo 2",
+            "alt": "アホプサン竹林（아홉산숲） — gallery image 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
+            "location": "アホプサン竹林（아홉산숲）",
+            "caption": "アホプサン竹林（아홉산숲） — photo 3",
+            "alt": "アホプサン竹林（아홉산숲） — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
+            "location": "アホプサン竹林（아홉산숲）",
+            "caption": "アホプサン竹林（아홉산숲） — photo 7",
+            "alt": "アホプサン竹林（아홉산숲） — gallery image 7"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 1",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 1"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-17.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 2",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 2"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-30.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 3",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 3"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/photo-001.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 4",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 4"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/photo-002.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 5",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 5"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/bulguksa-temple/bulguksa-dabotap-courtyard.webp",
+            "location": "仏国寺（ユネスコ世界遺産）",
+            "caption": "仏国寺（ユネスコ世界遺産） — photo 7",
+            "alt": "仏国寺（ユネスコ世界遺産） — gallery image 7"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 1",
+            "alt": "校村韓屋村（교촌마을） — gallery image 1"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 2",
+            "alt": "校村韓屋村（교촌마을） — gallery image 2"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 3",
+            "alt": "校村韓屋村（교촌마을） — gallery image 3"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 4",
+            "alt": "校村韓屋村（교촌마을） — gallery image 4"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 5",
+            "alt": "校村韓屋村（교촌마을） — gallery image 5"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 6",
+            "alt": "校村韓屋村（교촌마을） — gallery image 6"
+          },
+          {
+            "id": 17,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 7",
+            "alt": "校村韓屋村（교촌마을） — gallery image 7"
+          },
+          {
+            "id": 18,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 8",
+            "alt": "校村韓屋村（교촌마을） — gallery image 8"
+          },
+          {
+            "id": 19,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 9",
+            "alt": "校村韓屋村（교촌마을） — gallery image 9"
+          },
+          {
+            "id": 20,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 10",
+            "alt": "校村韓屋村（교촌마을） — gallery image 10"
+          },
+          {
+            "id": 21,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 11",
+            "alt": "校村韓屋村（교촌마을） — gallery image 11"
+          },
+          {
+            "id": 22,
+            "type": "photo",
+            "src": "/images/itinerary/woljeonggyo-front-day.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 1",
+            "alt": "月精橋 — gallery image 1"
+          },
+          {
+            "id": 23,
+            "type": "photo",
+            "src": "/images/itinerary/woljeonggyo-reflection.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 2",
+            "alt": "月精橋 — gallery image 2"
+          },
+          {
+            "id": 24,
+            "type": "photo",
+            "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 3",
+            "alt": "月精橋 — gallery image 3"
+          },
+          {
+            "id": 25,
+            "type": "photo",
+            "src": "/images/tours/woljeonggyo/photo-001.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 4",
+            "alt": "月精橋 — gallery image 4"
+          },
+          {
+            "id": 26,
+            "type": "photo",
+            "src": "/images/tours/woljeonggyo/photo-002.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 5",
+            "alt": "月精橋 — gallery image 5"
+          },
+          {
+            "id": 27,
+            "type": "photo",
+            "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
+            "location": "月精橋",
+            "caption": "月精橋 — photo 6",
+            "alt": "月精橋 — gallery image 6"
+          },
+          {
+            "id": 28,
+            "type": "photo",
+            "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+            "location": "大陵苑 & ファンリダンギル",
+            "alt": "大陵苑 & ファンリダンギル — 1",
+            "caption": "大陵苑 & ファンリダンギル — 1"
+          },
+          {
+            "id": 29,
+            "type": "photo",
+            "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+            "location": "大陵苑 & ファンリダンギル",
+            "alt": "大陵苑 & ファンリダンギル — 2",
+            "caption": "大陵苑 & ファンリダンギル — 2"
+          },
+          {
+            "id": 30,
+            "type": "photo",
+            "src": "/images/tours/daereungwon/daereungwon-cheonmachong-interior.webp",
+            "location": "大陵苑 & ファンリダンギル",
+            "alt": "大陵苑 & ファンリダンギル — 3",
+            "caption": "大陵苑 & ファンリダンギル — 3"
+          },
+          {
+            "id": 31,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-1.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 12",
+            "alt": "校村韓屋村（교촌마을） — gallery image 12"
+          },
+          {
+            "id": 32,
+            "type": "photo",
+            "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-2.webp",
+            "location": "校村韓屋村（교촌마을）",
+            "caption": "校村韓屋村（교촌마을） — photo 13",
+            "alt": "校村韓屋村（교촌마을） — gallery image 13"
+          },
+          {
+            "id": 33,
+            "type": "photo",
+            "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+            "location": "国立慶州博物館",
+            "caption": "国立慶州博物館 — 写真 1",
+            "alt": "国立慶州博物館 — ギャラリー画像 1"
+          },
+          {
+            "id": 34,
+            "type": "photo",
+            "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+            "location": "国立慶州博物館",
+            "caption": "国立慶州博物館 — 写真 2",
+            "alt": "国立慶州博物館 — ギャラリー画像 2"
+          },
+          {
+            "id": 35,
+            "type": "photo",
+            "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+            "location": "国立慶州博物館",
+            "caption": "国立慶州博物館 — 写真 3",
+            "alt": "国立慶州博物館 — ギャラリー画像 3"
           }
         ]
       }
@@ -2049,38 +2388,85 @@
           {
             "number": 1,
             "time": "08:10",
-            "duration": "60分",
-            "name": "釜山送迎（地下鉄3駅）",
-            "category": "出発",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "釜山地下鉄1号線沿いの順次送迎：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）。ホテルに最も近い出口をお選びください。",
-            "timeUsed": [
-              "運営上の手配（送迎・移動）"
+            "duration": "30分",
+            "name": "釜山の地下鉄駅ピックアップ（3か所）",
+            "category": "ピックアップ — 釜山中心部の地下鉄駅3か所（鉄道駅ではありません）",
+            "description": "ピックアップは釜山中心部の**地下鉄駅3か所**で順番に行います：**釜山駅4番出口（地下鉄1号線）— 08:10**、**西面駅4番出口（地下鉄1・2号線）— 08:30**、**海雲台駅5番出口（地下鉄2号線）— 09:10**。\n\n🔴 **3か所ともすべて地下鉄駅の出口です。** とくに釜山駅は、**KTXの鉄道駅舎ではなく、その前にある地下鉄1号線・釜山駅の4番出口**でお待ち合わせします — 鉄道駅の待合室やコンコースでお待ちになると、車両は見つかりません。地下鉄の出口番号（釜山駅4番・西面駅4番・海雲台駅5番）をそのまま覚えておいてください。\n\nピックアップは西→東の順で、最後の海雲台を出たあと**京釜高速道路**に乗り、**新羅（紀元前57年〜935年）** — 韓国史上もっとも長く続いた王朝の古都・慶州へ向かいます。最初の目的地である機張郡のアホプサン竹林までは、海雲台から約30分です。",
+            "highlights": [
+              "**3か所ともすべて地下鉄駅の出口** — 釜山駅4番・西面駅4番・海雲台駅5番",
+              "🔴 **釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅の4番出口**です",
+              "釜山駅 08:10 → 西面駅 08:30 → 海雲台駅 09:10（西→東の順）",
+              "ミニバンによる少人数運行（最大約14名）",
+              "海雲台でのピックアップからアホプサン竹林まで約30分",
+              "乗車時に韓国語・英語の二か国語旅程カードを配布"
             ],
-            "whyOnRoute": "釜山中心部の3か所の送迎地点により、タクシー代を節約できます。",
+            "timeUsed": [
+              "釜山駅4番出口（08:10）— 5分",
+              "西面駅4番出口（08:30）— 5分",
+              "海雲台駅5番出口（09:10）— 5分",
+              "高速道路を北上 — 約30分"
+            ],
+            "whyOnRoute": "3か所のピックアップポイントは、釜山の主要ホテル密集エリア（釜山駅・草梁、西面の市街地、海雲台のビーチ）を地下鉄1・2号線でまんべんなくカバーしており、朝早くから市内を横断していただく必要がありません。3地点をすべて**地下鉄駅の出口**に統一した理由は単純です — 釜山駅前の広場は鉄道・バス・タクシーが入り混じって車両の判別が難しいのに対し、地下鉄の出口番号は誰でも一度で見つけられるからです。西→東の順に走ることで走行距離を最小化でき、およそ09:40頃にアホプサン竹林へ到着します — 竹林がもっとも静かで、写真に最適な早い時間帯です。",
             "_poi_meta": {
-              "poi_key": "busan_subway_pickup",
-              "is_attraction": false
-            }
+              "poi_key": "OPS_busan_subway_pickup",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
+            },
+            "_role": "pickup"
           },
           {
             "number": 2,
-            "time": "≈ 09:50",
+            "time": "≈ 09:40",
             "duration": "60分",
-            "name": "アホプサン竹林",
-            "category": "竹林",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "釜山市機張郡にある南平文氏の先祖代々の屋敷内に位置する、個人保全の竹林 — 文氏一族は1638年からこの森を所有・管理してきました。「ミスター・サンシャイン」（2018年）の竹の回廊シーンをはじめ、複数の韓国ドラマのロケ地となっています。ウォーキングループは平坦な固められた土道が約1kmで、ゆっくりとしたペースで45〜60分かかります。樹冠がほとんどの直射日光を遮るため、夏でも涼しく過ごせます。大人入場料₩5,000（現金払い・ツアー料金に含まれません）。春（桜の季節）のみ例外で、このスポットは海雲台ダルマジヒルに変更されます。",
-            "timeUsed": [
-              "到着とオリエンテーション",
-              "フォトウォーク",
-              "まとめ"
+            "name": "アホプサン竹林（아홉산숲）",
+            "category": "プライベート竹林 — 韓国ドラマ撮影地",
+            "description": "**アホプサン竹林**（「九山の森」、아홉산숲）は、機張郡にある**52万㎡のプライベートフォレスト**です。**壬辰倭乱（1592〜1598年）**後にこの地に定住した**南平文氏一族が約400年・9代にわたって管理**し続けてきた歴史ある土地です。**2016年に初めて一般公開**され、韓国で最も多くの撮影が行われる自然スポットのひとつとして急速に人気を集めました。\n\n目玉は**スポット9の孟宗竹の回廊** — 高さ15〜20mの竹が連なり、その密やかなざわめきは京都・嵐山と比較されるほどです。**撮影実績：**『**ザ・キング：永遠の君主（2020年、SBS）**』『**麗<レイ>〜花萌ゆる8人の皇子たち〜（2016年、SBS）**』『**100日の郎君様（2018年、tvN）**』『**剣客武士（2015年）**』『**群盗：民乱の時代（2014年）**』。\n\nまた、樹齢400年を超える**指定保護木の朝鮮赤松116本**も保護されており、いずれも朝鮮時代に植えられ、戦乱やその後の工業化を生き延びた木々です。入場料：**大人₩8,000 / 子供₩5,000**。営業時間：**09:00〜18:00、月曜定休**。75分の滞在で、写真映えする竹の回廊を含む番号付きスポットの全ループ（1→9）をゆっくり歩けます。\n\n南平文氏は純粋な観光地ではなく**持続可能な現役の森**として管理を続けており、竹は**伽耶琴（カヤグム）の胴体・かご・釣り竿**などの伝統工芸品向けに今も収穫されています。商業撮影には事前書面による許可が必要です。スポット9を過ぎると、あまり撮影されていないものの同じく静寂に包まれた**グッテオの林と第二の松林**へと道が続きます。",
+            "highlights": [
+              "**プライベートフォレスト52万㎡**、南平文氏一族が**400年・9代にわたって管理**",
+              "**2016年に一般公開開始** — 済州・釜山ツアーコースの中では比較的新しいスポット",
+              "**スポット9の孟宗竹回廊** — 高さ15〜20mの竹が連なる壮観な景観",
+              "『**ザ・キング：永遠の君主（2020年）**』『**麗<レイ>（2016年）**』『**100日の郎君様（2018年）**』のロケ地",
+              "**樹齢400年超の指定保護木・朝鮮赤松116本**（朝鮮時代に植樹）",
+              "入場料：大人₩8,000 / 子供₩5,000",
+              "営業時間 09:00〜18:00、**月曜定休**（本コースは月曜を避けて設定）",
+              "ゆったり75分の滞在で、番号付きスポットのループを急がず歩けます",
+              "**持続可能な現役竹林** — 南平文氏一族が今も伝統工芸品（伽耶琴・かご・釣り竿）向けに竹を収穫。商業撮影は事前書面による許可が必要。**スポット9 ＋ グッテオの林 ＋ 第二の松林**が番号付きループの全行程"
             ],
-            "whyOnRoute": "釜山と慶州の間の、穏やかで涼しい感覚的な序章。",
+            "timeUsed": [
+              "コーチ駐車＋入場チケット購入（約10分）",
+              "スポット9・孟宗竹回廊までウォーキング（約15分）",
+              "撮影タイム＋竹林のゆっくり散策（約25分）",
+              "樹齢400年の朝鮮赤松を眺めながら帰路ループ（約15分）",
+              "コーチ（バス）に集合（約10分）"
+            ],
+            "whyOnRoute": "アホプサンは、この日の最も静かで思索的なスポットとして一日の幕を開けます——正午の建築的な仏国寺セグメントの前に、瞑想的な竹林の散策をお楽しみいただけます。全羅道にある有名な潭陽竹緑苑（釜山から4時間以上）よりアホプサンを選んだ理由は、**釜山からわずか35分**という距離でありながら、同等の竹林体験に加え、韓国ドラマのロケ地としての歴史も備えているからです。**9か所を巡るループコースは、このツアーのゆったりとしたペースのコンセプトと自然に調和しており**、ゲストは急かされることなく各スポットで写真を撮ることができます。",
             "_poi_meta": {
               "poi_key": "ahopsan_bamboo_forest",
-              "is_attraction": true,
-              "fee_krw": 5000
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Korea",
+                "Wikipedia",
+                "Visit Busan official",
+                "Korea Tourism Organization (Ahopsan filming-location designation)",
+                "Cultural Heritage Administration of Korea (Nampyeong Moon clan working forest)"
+              ]
+            },
+            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+            "visitBasics": {
+              "hours": "毎日 09:00〜18:00（最終入場 約17:00）",
+              "closed": "月曜日",
+              "admission": "大人 ₩8,000 ／ 子ども ₩5,000",
+              "walking": "中程度——砂利道と緩やかな斜面；一部に木製遊歩道あり；歩きやすい靴を推奨"
+            },
+            "convenience": {
+              "restroom": "入口ゲートおよび先祖堂付近の中間地点にトイレあり",
+              "parking": "敷地内にコーチ・乗用車用駐車場あり（無料）"
+            },
+            "smartNotes": {
+              "photo": "スポット9（孟宗竹の竹林）——木漏れ日が差し込む10:00〜11:30が撮影に最適；先祖堂近くの茅葺きの門；下部ループの樹齢400年の松並木",
+              "facilities": "入口に小さな農産物直売所あり（旬の地元産品、軽飲料）；竹林内にカフェはなし",
+              "tip": "明るい竹に対して写真のコントラストを高めるため、暗めのトップスを着用；整備された道から外れないこと（森林再生保護区域）；ドローンの使用禁止"
             },
             "images": [
               "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
@@ -2089,30 +2475,6 @@
               "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp"
             ],
             "imageCredits": [
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
-                "source": "atoc-korea"
-              },
               {
                 "url": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
                 "source": "atoc-korea"
@@ -2135,55 +2497,89 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-                "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — photo 1",
-                "alt": "アホプサン竹林 — gallery image 1"
+                "location": "アホプサン竹林（아홉산숲）",
+                "caption": "アホプサン竹林（아홉산숲） — photo 1",
+                "alt": "アホプサン竹林（아홉산숲） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-03.webp",
-                "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — photo 2",
-                "alt": "アホプサン竹林 — gallery image 2"
+                "location": "アホプサン竹林（아홉산숲）",
+                "caption": "アホプサン竹林（아홉산숲） — photo 2",
+                "alt": "アホプサン竹林（아홉산숲） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-23-07.webp",
-                "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — photo 3",
-                "alt": "アホプサン竹林 — gallery image 3"
+                "location": "アホプサン竹林（아홉산숲）",
+                "caption": "アホプサン竹林（아홉산숲） — photo 3",
+                "alt": "アホプサン竹林（아홉산숲） — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/ahopsan-bamboo/ahopsan-entrance-marker.webp",
-                "location": "アホプサン竹林",
-                "caption": "アホプサン竹林 — photo 10",
-                "alt": "アホプサン竹林 — gallery image 10"
+                "location": "アホプサン竹林（아홉산숲）",
+                "caption": "アホプサン竹林（아홉산숲） — photo 7",
+                "alt": "アホプサン竹林（아홉산숲） — gallery image 7"
               }
             ]
           },
           {
             "number": 3,
             "time": "≈ 11:30",
-            "duration": "60分",
+            "duration": "75分",
             "name": "仏国寺（ユネスコ世界遺産）",
-            "category": "ユネスコ登録仏教寺院",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "1995年12月に石窟庵とともにユネスコに登録。寺院は528年に新羅の法興王によって創建され、751年に宰相・金大城によって拡張、1592〜98年の壬辰倭乱で焼失、1920年代以降に段階的に復元された。現在の木造建築は主に1973年に元の石造基礎を基に再建されたもの。境内にある2つの塔——装飾豊かな多宝塔と簡素な釈迦塔（ともに8世紀）——は国宝第20号・第21号に指定されている。下段テラスの2つの石造橋、青雲橋と白雲橋はそれぞれ33段あり、仏教宇宙論における33天を象徴している。2023年5月より入場無料（駐車場：₩1,000〜₩2,000）。60分あれば、ゆったりとしたペースで境内と塔を見て回ることができる。",
-            "timeUsed": [
-              "到着とオリエンテーション",
-              "塔の中庭と本殿",
-              "まとめ"
+            "category": "ユネスコ登録の仏教寺院——新羅芸術の傑作",
+            "description": "**仏国寺（불국사）——1995年ユネスコ世界遺産登録**（石窟庵との共同登録）——は**統一新羅仏教芸術の傑作**であり、**韓国の史跡名勝第1号**です。もともと**528年に法興王の治世下に創建**され、現在の壮大な伽藍は**751年に宰相・金大城**（現世の両親を弔うため）によって造営が命じられ、彼の死後の**774年に完成**しました。寺名は**「仏陀の国の寺」**を意味し、その石造基壇の配置は三つのゾーンで仏教の宇宙論を表しています：**大雄殿（大いなる悟りの殿）**は歴史的な仏陀、**極楽殿（浄土の殿）**は阿弥陀仏、**毘盧殿（毘盧遮那仏の殿）**は宇宙仏を祀っています。\n\n木造建築は**1592〜1598年の文禄・慶長の役（壬辰倭乱）**で焼失し、1604〜1805年にかけて再建が進み、**1969〜1973年に朴正熙大統領のもとで大規模な近代的修復**が実施されました。仏国寺には**6点の韓国国宝**が収蔵されています：**多宝塔（国宝第20号、高さ10.4m、韓国の10ウォン硬貨に描かれた図像）**、**釈迦塔（国宝第21号、高さ8.2m、1966年に内部から世界最古の現存木版印刷物——704〜751年の無垢浄光大陀羅尼経——が発見）**、**青雲橋・白雲橋（国宝第23号、紫霞門へと続く象徴的な34段の参道）**、**蓮花橋・七宝橋（国宝第22号、極楽殿へと続く）**、そして**金銅毘盧遮那仏坐像（国宝第26号）**と**金銅弥勒菩薩坐像（国宝第27号）**。\n\n**入場料は2023年より無料**（文化財保護法改正による）。開館時間は毎日09:00〜18:00（最終入場17:00）、拝堂に入る際は控えめな服装・靴を脱ぐこと、ドローン撮影禁止。参拝は寺の巡礼軸に沿って進みます：**一柱門 → 青雲橋・白雲橋（下から鑑賞；通行禁止）→ 紫霞門 → 大雄殿境内（多宝塔・釈迦塔）→ 毘盧殿 → 極楽殿**。",
+            "highlights": [
+              "**ユネスコ世界遺産1995年登録** ＋ **韓国史跡名勝第1号**",
+              "**528年創建 → 751年に宰相・金大城により拡張 → 774年完成**",
+              "一つの寺院に**6点の韓国国宝**",
+              "**多宝塔（国宝第20号）** ＝ 韓国の10ウォン硬貨に描かれた図像",
+              "**釈迦塔（国宝第21号）＋ 無垢浄光大陀羅尼経** ＝ 世界最古の現存木版印刷物（704〜751年）",
+              "青雲橋・白雲橋（国宝第23号）：34段 ＝ 仏教的悟りへの34の階梯",
+              "**2023年より入場無料**（文化財保護法改正）",
+              "毎日09:00〜18:00、最終入場17:00",
+              "**1593年 文禄・慶長の役による破壊 → 1604年 部分的な再建 → 1969〜1973年 朴正熙大統領のもとで総合的な修復** ——戦乱・荒廃・近代的保存にわたる四世紀をまたぐ文化遺産継承の物語"
             ],
-            "whyOnRoute": "慶州観光の建築的シンボル；ユネスコ登録遺産。",
+            "timeUsed": [
+              "コーチ降車 ＋ 松並木の参道を徒歩（約10分）",
+              "一柱門 ＋ 青雲橋・白雲橋での写真撮影（約15分）",
+              "大雄殿境内 ＋ 多宝塔 ＋ 釈迦塔（約25分）",
+              "毘盧殿（毘盧遮那仏殿）＋ 極楽殿（浄土殿）（約15分）",
+              "自由時間 ＋ コーチへの集合（約10分）"
+            ],
+            "whyOnRoute": "仏国寺は**慶州日帰りツアーに欠かせないユネスコの中核スポット**であり、韓国でもっとも広く知られた仏教遺産です。11:30の到着は、午前の韓国の学校団体（おおむね09:30〜11:00）がはけたあとで、境内が一段と静かになる時間帯にあたります。75分を確保しているので、**多宝塔・釈迦塔**の対を急がずに鑑賞しながら、巡礼路をひととおり歩き切れます。そしてこの立ち寄りは、**車で向かう午前の最後の地点**でもあります — 昼食のあと、車が停まるのは2回だけで、午後は歩いて過ごします。仏国寺の石段と不整地な地面はその日でもっともアクティブな区間なので、次をすぐ昼食にして、きちんと腰を下ろして休めるように配置しました。",
             "_poi_meta": {
               "poi_key": "bulguksa_temple",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "unesco": "world_heritage"
+              "kb_version": "1.25",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "UNESCO World Heritage Centre",
+                "Wikipedia",
+                "World History Encyclopedia",
+                "VisitKorea",
+                "Visit Gyeongju official"
+              ]
+            },
+            "image": "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+            "visitBasics": {
+              "hours": "毎日 09:00〜18:00（最終入場 17:00）",
+              "closed": "年中無休",
+              "admission": "無料（2023年より、改正文化財保護法に基づく）",
+              "walking": "普通程度 — 石段・坂道・砂利道あり；歩きやすい靴を推奨"
+            },
+            "convenience": {
+              "restroom": "境内に無料公衆トイレあり（小型寺院風の建築様式）",
+              "parking": "敷地内駐車場あり（有料）"
+            },
+            "smartNotes": {
+              "photo": "紫霞門下の青雲橋・白雲橋（国宝23号）；中庭の多宝塔（国宝20号）と釈迦塔（国宝21号）；参道沿いの春の桜",
+              "facilities": "入口に観光案内センターあり；仏国寺博物館（別途入場料 2,000／1,000ウォン、月曜休館）",
+              "tip": "露出の少ない服装；堂内では靴を脱ぐこと；ドローン禁止；僧侶や参拝者の撮影禁止（案内表示あり）；当寺は現在も曹渓宗の本山（第11教区）として活動中"
             },
             "images": [
               "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
@@ -2284,105 +2680,88 @@
           },
           {
             "number": 4,
-            "time": "≈ 12:45",
+            "time": "≈ 13:00",
             "duration": "60分",
             "name": "昼食（慶州地元レストラン）",
-            "category": "食事",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "仏国寺近くの英語・中国語メニュー対応レストラン。定番メニューは慶州サムバプ（おかず豊富なご飯と葉野菜の巻き料理、地域の名物、約₩15,000〜₩20,000）、プルコギセット、またはリクエストによるベジタリアンおかずプレート。昼食代は当日現地払い；一人当たり₩15,000〜₩25,000を目安に。",
-            "timeUsed": [
-              "運営ロジスティクス（昼食休憩）"
+            "category": "食事 — 慶州郷土料理",
+            "description": "昼食は仏国寺から慶州の市内に入り、ガイドが厳選した地元のレストランでとります。定番は**慶州式サムバプ**（季節の惣菜とサンチュ包みを添えたご飯 — 慶州のサムバプは、この地域の農産物の豊かさを映して1970年代に広く知られるようになりました）です。\n\n**菜食（ベジタリアン）やアレルギーのご要望は、前日までにお知らせいただければ調整**します。食事代はツアー料金に含まれず、**お一人様あたり約₩15,000〜₩25,000**です。60分を確保しているので、時計を気にせず食事とお手洗いを済ませられます — **午後は2つのブロックを歩いて回る**ため、ここできちんと休んでおくことが1日全体のペースをつくります。",
+            "highlights": [
+              "慶州市内の、ガイドが厳選した地元レストラン",
+              "**慶州式サムバプ** — 季節の惣菜とサンチュ包みを添えた郷土の食卓",
+              "**菜食・アレルギーのご要望**は前日までにお知らせいただければ調整します",
+              "**60分の確保** — 午後の徒歩ブロック2つを前に、きちんと休んでいく場所",
+              "費用はお一人様あたり約**₩15,000〜₩25,000**、ツアー料金には含まれません"
             ],
-            "whyOnRoute": "慶州サムバプは地域を代表する名物料理です。",
+            "timeUsed": [
+              "仏国寺出口からレストランまで徒歩（約5分）",
+              "注文＋食事（約50分）",
+              "バスへ集合（約5分）"
+            ],
+            "whyOnRoute": "仏国寺の石段と不整地な石畳を歩いたあと、慶州の市内に入って腰を下ろす場所です。午後は**2つのブロックを歩いて**回るため（校村韓屋村・崔富豪邸 → 月精橋、大陵苑 → ファンリダンギル）、ここでしっかり休んでおくことが1日全体のペースをつくります。お店は慶州の郷土料理である**サムバプ**が中心で、菜食（ベジタリアン）やアレルギーのご要望は前日までにお知らせいただければ調整します。55〜60分を確保しているので、急がずに食事とお手洗いを済ませられます。",
             "_poi_meta": {
-              "poi_key": "gyeongju_lunch",
-              "is_attraction": false
+              "poi_key": "OPS_gyeongju_lunch",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
             }
           },
           {
             "number": 5,
-            "time": "≈ 14:00",
-            "duration": "60分",
-            "name": "慶州国立博物館",
-            "category": "国立博物館（新羅）",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "新羅時代の遺物を収蔵する韓国最大の博物館で、2008年11月より入場無料。常設展示室は3つ：新羅歴史館、新羅美術館、雁鴨池館（雁鴨池の宮殿池から出土した遺物を展示）。多くの来館者が目当てにする2大展示品：天馬塚の金冠（国宝第188号）と聖徳大王神鐘（国宝第29号、771年鋳造、18.9トン——現存する韓国最大の鐘で、入口付近の屋外に展示）。展示パネルは英語・中国語対応。月曜休館。60分あればハイライトを一周するのに十分；さらに時間をかけたい方はユネスコ遺産コースのご予約を。",
+            "time": "≈ 14:10",
+            "duration": "75分",
+            "name": "校村韓屋村 & 崔富豪邸 & 月精橋",
+            "category": "朝鮮時代の宗家韓屋村＋復元された新羅の木造橋（1回の降車、徒歩でつなぎます）",
+            "description": "**校村韓屋村**と**月精橋**は南川（ナムチョン）を挟んで**徒歩10〜15分の川沿いの道でつながって**いるため、このツアーでは**1回だけ降車して2か所を続けて**歩きます。\n\n**校村**の中心は**崔富豪邸（최부자댁・慶州崔氏の宗家）** — 朝鮮時代後期に**12代300年にわたって富を守り続けた**商人貴族の家系の本邸で、**重要民俗資料第27号**に指定されています。この一族の六箇条の家訓（**万石を超える財産は蓄えない**、**凶作の年に他人の田畑を買わない**、**四方百里に飢え死にする者を出さない**など）は、韓国におけるノブレス・オブリージュの代表例として語り継がれています。宗家の銘酒**校洞法酒（교동법주）は国家無形遺産第86-3号**で、**350年続く伝統の製法**を今も邸内で醸し、その場で販売しています（2026年時点で750ml 1本 約₩30,000）。村のすぐ隣には**慶州郷校**（朝鮮時代の地方教育機関）と**瑤石宮跡** — 7世紀新羅の瑤石公主（武烈王の娘で、吏読（イドゥ）表記体系を整えた学僧**薛聡の母**）の住まい — があります。\n\n川を渡った先の**月精橋**は、**韓国最大の純木造橋**です。『**三国史記**』に**760年（新羅第35代・景徳王）**建設の記録があり、朝鮮時代に失われたのち、**1984〜1986年の発掘調査 → 2008〜2013年の本体復元 → 2016〜2018年の楼門2基の追加**を経て、**2018年4月に再開通**しました — 最初の建設から**1,258年ぶり**です。規模は**全長60.57m、幅13m**。復元には**現代の金物を一切使わない伝統的な韓屋の木組み技法**が用いられました。**2004年に史跡指定**、**文化体育観光部「韓国観光100選 2025〜2026」**選定。\n\n**2か所とも入場無料**です（村内の一部の家屋は個別に₩2,000〜3,000）。村には**4月初旬の桜**、**10月下旬の黄金色のイチョウ**が訪れます。",
+            "highlights": [
+              "**1回の降車で2か所** — 校村 ↔ 月精橋は南川の川沿いの道を徒歩10〜15分",
+              "**崔富豪邸 ＝ 慶州崔氏の宗家、重要民俗資料第27号** — 12代300年の富と六箇条の家訓",
+              "**校洞法酒 ＝ 国家無形遺産第86-3号** — 350年続く伝統製法、宗家で醸造しその場で販売",
+              "**瑤石宮跡** — 瑤石公主（薛聡の母、吏読表記体系）の7世紀の住まい",
+              "**月精橋 ＝ 韓国最大の木造橋**（全長60.57m × 幅13m）、『三国史記』記録の**760年**建設",
+              "**2018年4月に再開通 — 最初の建設から1,258年ぶり**、2004年に史跡指定",
+              "復元に**現代の金物ゼロ** — 伝統的な韓屋の木組み技法",
+              "**「韓国観光100選 2025〜2026」**（文化体育観光部）",
+              "**2か所とも入場無料** · 村は平坦、橋はゆるやかな傾斜のみ"
+            ],
             "timeUsed": [
-              "到着とオリエンテーション",
-              "ハイライトギャラリー巡り",
-              "まとめ"
+              "崔富豪邸の中庭＋メインの路地を散策（約20分）",
+              "校洞法酒の試飲＋お土産の購入（約10分）",
+              "南川の川沿いの道を徒歩移動（約10分）",
+              "月精橋の横断＋楼門の解説展示＋撮影（約25分）",
+              "川辺からの全景鑑賞＋集合（約10分）"
             ],
-            "whyOnRoute": "建築的な遺跡と考古学的な出土品をセットで楽しめます。",
-            "_poi_meta": {
-              "poi_key": "gyeongju_national_museum",
-              "is_attraction": true,
-              "fee_krw": 0,
-              "closed": "Monday"
-            },
-            "images": [
-              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
-            ],
-            "imageCredits": [
-              {
-                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
-                "source": "atoc-korea"
-              }
-            ],
-            "galleryItems": [
-              {
-                "id": 1,
-                "type": "photo",
-                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
-                "location": "国立慶州博物館",
-                "caption": "国立慶州博物館 — 写真 1",
-                "alt": "国立慶州博物館 — ギャラリー画像 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
-                "location": "国立慶州博物館",
-                "caption": "国立慶州博物館 — 写真 2",
-                "alt": "国立慶州博物館 — ギャラリー画像 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
-                "location": "国立慶州博物館",
-                "caption": "国立慶州博物館 — 写真 3",
-                "alt": "国立慶州博物館 — ギャラリー画像 3"
-              }
-            ]
-          },
-          {
-            "number": 6,
-            "time": "≈ 15:15",
-            "duration": "60分",
-            "name": "校村韓屋村",
-            "category": "韓屋文化遺産村",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "慶州崔氏の先祖代々の邸宅を中心に整備された朝鮮時代の韓屋地区。「慶州の富豪」として知られる崔家は、十二代にわたる家訓（近隣を飢えさせるな・半径100里を超える土地を持つな・小作人が払えない小作料を受け取るな）で韓国の人々の記憶に刻まれている。崔家の邸宅は小さな博物館として保存されており（入場無料）、周辺の路地には茶屋や慶州郷校（儒教の学校、現在の建物は1492年建造）がある。平坦な韓屋の小道が続き、ベビーカーでも安心。",
-            "timeUsed": [
-              "韓屋の路地散策",
-              "崔家邸宅見学",
-              "茶屋オプション"
-            ],
-            "whyOnRoute": "博物館と橋の観光の合間に立ち寄れる、平坦で気軽なスポット。",
+            "whyOnRoute": "昼食のあと、その日の流れを**壮大な王室・仏教のスケール（仏国寺）から、人が暮らしていた生活史のスケールへ**転換させる場所です — 王ではなく商人の家系の目線から見た慶州。2か所を1回の降車にまとめた理由は地理そのものです。校村の南端がそのまま月精橋の北岸にあたるため、**車を二度停める理由がなく**、その分だけ歩く時間が観光の時間になります。75分を確保しているので、法酒の試飲も橋の上での撮影も急がずに楽しめます。午後のこの時間帯の月精橋は、**昼光のもとで木組みの細部と川面の反射**がもっとも鮮明で、日没前後に集まる人混みも避けられます。",
             "_poi_meta": {
               "poi_key": "gyochon_hanok_village",
-              "is_attraction": true,
-              "fee_krw": 0
+              "kb_version": "1.25",
+              "verified_date": "2026-08-04",
+              "sources": [
+                "Visit Gyeongju official",
+                "Cultural Heritage Administration",
+                "Wikipedia (Choi Clan, Yoseokgung)",
+                "Korea Tourism Organization (Gyeongju Choi Clan + Gyochon Hanok Village)",
+                "Cultural Heritage Administration (Important Folklore Material No. 27 designation)"
+              ],
+              "is_compound_stop": true,
+              "secondary_poi_keys": [
+                "woljeonggyo_bridge"
+              ],
+              "compound_stop_note": "Gyochon Hanok Village (incl. the Choi Family House, Important Folklore Material No. 27) and Woljeonggyo Bridge sit on opposite banks of the Namcheon, 10–15 min apart on foot, and are visited as ONE 75-min drop-off. Both remain separate POIs in the KB."
+            },
+            "image": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+            "visitBasics": {
+              "hours": "校村は常時開放（ほとんどの古民家は09:00〜18:00）· 月精橋は24時間開放",
+              "closed": "一部の古民家は月曜休み — メインの路地と月精橋は常時開放",
+              "admission": "2か所とも無料（村内の一部の古民家は個別に₩2,000〜3,000）",
+              "walking": "平易 — 村は砂利と石畳の路地、月精橋までは南川沿いの平坦な道を徒歩10〜15分"
+            },
+            "convenience": {
+              "restroom": "村の入口と慶州郷校近くに公衆トイレあり",
+              "parking": "西側入口にバスの降車場あり（無料）"
+            },
+            "smartNotes": {
+              "photo": "崔富豪邸の内庭と塀のライン；南川の川辺から見た月精橋の全景と水面の反射；4月初旬の桜 · 10月下旬のイチョウ",
+              "facilities": "校洞法酒ショップ（お土産用ボトル）；メイン路地沿いの小さな工芸品店（伝統的な餅、ファンナムパン）；瑤石宮1779（高級レストラン、要予約）",
+              "tip": "校洞法酒は宗家の中で直接販売しています（750ml 約₩30,000、箱入り可）。月精橋の楼門には復元考古学の解説展示があり、5分あれば見て回れます。"
             },
             "images": [
               "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
@@ -2458,149 +2837,313 @@
                 "id": 1,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 1",
-                "alt": "校村韓屋村 — gallery image 1"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 1",
+                "alt": "校村韓屋村（교촌마을） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-53.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 2",
-                "alt": "校村韓屋村 — gallery image 2"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 2",
+                "alt": "校村韓屋村（교촌마을） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-57.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 3",
-                "alt": "校村韓屋村 — gallery image 3"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 3",
+                "alt": "校村韓屋村（교촌마을） — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-34-35.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 4",
-                "alt": "校村韓屋村 — gallery image 4"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 4",
+                "alt": "校村韓屋村（교촌마을） — gallery image 4"
               },
               {
                 "id": 5,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-001.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 5",
-                "alt": "校村韓屋村 — gallery image 5"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 5",
+                "alt": "校村韓屋村（교촌마을） — gallery image 5"
               },
               {
                 "id": 6,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-002.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 6",
-                "alt": "校村韓屋村 — gallery image 6"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 6",
+                "alt": "校村韓屋村（교촌마을） — gallery image 6"
               },
               {
                 "id": 7,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-003.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 7",
-                "alt": "校村韓屋村 — gallery image 7"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 7",
+                "alt": "校村韓屋村（교촌마을） — gallery image 7"
               },
               {
                 "id": 8,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-004.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 8",
-                "alt": "校村韓屋村 — gallery image 8"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 8",
+                "alt": "校村韓屋村（교촌마을） — gallery image 8"
               },
               {
                 "id": 9,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-005.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 9",
-                "alt": "校村韓屋村 — gallery image 9"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 9",
+                "alt": "校村韓屋村（교촌마을） — gallery image 9"
               },
               {
                 "id": 10,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/photo-006.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 10",
-                "alt": "校村韓屋村 — gallery image 10"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 10",
+                "alt": "校村韓屋村（교촌마을） — gallery image 10"
               },
               {
                 "id": 11,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/gyochon-hanok-village-marker.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 11",
-                "alt": "校村韓屋村 — gallery image 11"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 11",
+                "alt": "校村韓屋村（교촌마을） — gallery image 11"
+              },
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/itinerary/woljeonggyo-front-day.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 1",
+                "alt": "月精橋 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/itinerary/woljeonggyo-reflection.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 2",
+                "alt": "月精橋 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/itinerary/woljeonggyo-pavilion-night.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 3",
+                "alt": "月精橋 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-001.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 4",
+                "alt": "月精橋 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/photo-002.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 5",
+                "alt": "月精橋 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
+                "location": "月精橋",
+                "caption": "月精橋 — photo 6",
+                "alt": "月精橋 — gallery image 6"
+              }
+            ]
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:35",
+            "duration": "75分",
+            "name": "大陵苑 & ファンリダンギル",
+            "category": "新羅の王陵古墳群＋韓屋カフェ通り（徒歩でつなぎます）",
+            "description": "**大陵苑（대릉원）**は、**126,500m²**のなだらかな芝生の丘に**新羅の王・王妃・貴族の墓23基**が集まる古墳公園で、大半が**4〜6世紀**に築かれました。もっとも有名なのが**天馬塚（155号墳）** — **1973年4月16日に発掘**され、高さ12.7m・直径約47m、**大陵苑で唯一内部が公開されている墓**です。発掘では**遺物11,526点**が出土し、その中に**天馬塚金冠（国宝第188号）**と、白樺の泥除けに描かれた**天馬図 — 現存する唯一の新羅時代の絵画**が含まれます（金冠の実物は、このあとの行程の国立慶州博物館にあります）。隣接する**皇南大塚**は大陵苑最大の規模で、南北2つの墳丘に**名前の伝わらない新羅の王と王妃を合葬**しており、王妃の棺から出た金冠の垂飾は**3対**、王のものは通常1対のみであることから、新羅初期の女性王族の地位の高さを物語ります。**公園への入場は無料**（天馬塚の内部は大人₩3,000／青少年₩2,000／子ども₩1,000）。墳丘に登ることは禁止されています。\n\n大陵苑の**西側の塀のすぐ向かい**が**ファンリダンギル（황리단길）**です。名前は**皇南洞（ファンナムドン）＋（ソウル梨泰院の）キョンリダンギル**を合わせた造語で、文字どおり**「皇南洞のキョンリダンギル」**という意味です。**内南交差点から皇南小学校の交差点まで**続く通りの両側に、**韓屋を改装したカフェ・食堂・工房・雑貨店**が並び、**2017年頃から**慶州でいちばん若い通りになりました。この界隈こそが**皇南パン**のふるさとです — **1939年に皇南洞で崔永化（チェ・ヨンファ）がはじめて作った**、薄い皮に小豆餡を詰めた慶州を代表する菓子で、旅のお土産としてもっとも多く買われている品です。\n\n古墳とカフェ通りが**塀ひとつを挟んで**隣り合っているため、このツアーでは**1回の降車で1,500年前と2020年代を並べて**歩きます。",
+            "highlights": [
+              "**大陵苑 ＝ 126,500m²に新羅王室の墓23基**（4〜6世紀）",
+              "**天馬塚（155号墳）** — 1973年4月16日発掘、**唯一内部が公開**、遺物**11,526点**",
+              "**天馬図 ＝ 現存する唯一の新羅時代の絵画** · 天馬塚金冠 ＝ **国宝第188号**",
+              "**皇南大塚** — 大陵苑最大、王と王妃の合葬。王妃の金冠の垂飾は**3対** > 王の1対",
+              "**公園は入場無料**（天馬塚の内部は大人₩3,000）· 平坦な芝生の道でベビーカーやご年配の方も快適",
+              "**ファンリダンギル ＝「皇南洞のキョンリダンギル」** — 皇南洞＋キョンリダンギルの造語",
+              "大陵苑の**西側の塀のすぐ向かい** — 内南交差点〜皇南小学校の交差点",
+              "**韓屋を改装したカフェ・工房・雑貨店**の通り、2017年頃から慶州でいちばん若い道",
+              "**皇南パン ＝ 1939年に皇南洞で崔永化がはじめて作った**慶州を代表する菓子 — この界隈が発祥"
+            ],
+            "timeUsed": [
+              "大陵苑の正門から入場＋墳丘のあいだを散策（約25分）",
+              "天馬塚の内部見学（任意、約15分）",
+              "西門を抜けてファンリダンギルへ（約5分）",
+              "ファンリダンギルのカフェ・雑貨店で自由時間（約20分）",
+              "皇南パンなどお土産の購入＋集合（約10分）"
+            ],
+            "whyOnRoute": "校村・月精橋という朝鮮・新羅の遺産ブロックのあとに来る、**その日で唯一の「現在形」の立ち寄り**です。大陵苑は階段も登り坂もない平坦な芝生の道で、一日のなかでもっとも楽な歩きになります。そしてその塀を越えれば、すぐにコーヒーと小豆パンのあるファンリダンギルです — **古墳とカフェが徒歩1分**という事実そのものが、慶州という街の性格を表しています。午後遅めのこの時間帯はファンリダンギルがもっとも活気づく時間で、**お手洗い・カフェ・お土産**を一か所で済ませてから最後の立ち寄り（博物館または東宮と月池）へ移動できます。金冠の**実物**は次の立ち寄り先である国立慶州博物館にあるため、天馬塚で発掘現場を見て博物館で遺物を見るという**順番がそのまま物語**になります。",
+            "galleryItems": [
+              {
+                "id": 0,
+                "type": "photo",
+                "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+                "location": "大陵苑 & ファンリダンギル",
+                "alt": "大陵苑 & ファンリダンギル — 1",
+                "caption": "大陵苑 & ファンリダンギル — 1"
+              },
+              {
+                "id": 0,
+                "type": "photo",
+                "src": "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+                "location": "大陵苑 & ファンリダンギル",
+                "alt": "大陵苑 & ファンリダンギル — 2",
+                "caption": "大陵苑 & ファンリダンギル — 2"
+              },
+              {
+                "id": 0,
+                "type": "photo",
+                "src": "/images/tours/daereungwon/daereungwon-cheonmachong-interior.webp",
+                "location": "大陵苑 & ファンリダンギル",
+                "alt": "大陵苑 & ファンリダンギル — 3",
+                "caption": "大陵苑 & ファンリダンギル — 3"
               },
               {
                 "id": 12,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-1.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 12",
-                "alt": "校村韓屋村 — gallery image 12"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 12",
+                "alt": "校村韓屋村（교촌마을） — gallery image 12"
               },
               {
                 "id": 13,
                 "type": "photo",
                 "src": "/images/tours/gyochon-hanok-village/hwangnam-bread-flagship-2.webp",
-                "location": "校村韓屋村",
-                "caption": "校村韓屋村 — photo 13",
-                "alt": "校村韓屋村 — gallery image 13"
+                "location": "校村韓屋村（교촌마을）",
+                "caption": "校村韓屋村（교촌마을） — photo 13",
+                "alt": "校村韓屋村（교촌마을） — gallery image 13"
               }
-            ]
+            ],
+            "visitBasics": {
+              "hours": "大陵苑 09:00〜22:00（冬季は21:00まで）· ファンリダンギルの店舗はおおむね10:00〜21:00（店舗により異なります）",
+              "closed": "年中無休",
+              "admission": "大陵苑の公園は無料 · 天馬塚の内部は大人₩3,000／青少年₩2,000／子ども₩1,000 · ファンリダンギルの通り自体は無料",
+              "walking": "平易 — 墳丘のあいだの平坦な芝生の道（126,500m²）、ベビーカーやご年配の方も快適。ファンリダンギルは平坦な歩道です"
+            },
+            "convenience": {
+              "restroom": "大陵苑の正門および天馬塚付近に公衆トイレ · ファンリダンギルはカフェ利用時に店内のお手洗い",
+              "parking": "大陵苑の正門駐車場（有料）"
+            },
+            "smartNotes": {
+              "photo": "大陵苑の石垣道（桜のトンネル、4月初旬）· 皇南大塚の裏のモクレン · 墳丘のあいだに沈む午後の陽射し · ファンリダンギルの韓屋カフェの路地",
+              "facilities": "天馬塚の内部に小規模な展示（天馬図の複製・副葬品）· 大陵苑＋東宮と月池のデイパス（₩4,000〜8,000）を販売 · ファンリダンギルにカフェ・お土産店が多数",
+              "tip": "墳丘に登ることは禁止されています（過料の対象）。大陵苑の散策は30〜60分、西門から出るとすぐファンリダンギルです。皇南パンの本店はこの界隈にあり、週末の午後は行列ができます。"
+            },
+            "_poi_meta": {
+              "poi_key": "daereungwon_tomb_complex",
+              "kb_version": "1.29",
+              "verified_date": "2026-08-04",
+              "is_compound_stop": true,
+              "secondary_poi_keys": [
+                "hwangnidan_gil"
+              ],
+              "compound_stop_note": "Daereungwon (23 Silla royal tombs incl. Cheonmachong, 11,526 artifacts) and Hwangnidan-gil (the hanok cafe street literally named 'Hwangnam-dong's Gyeongnidan-gil') are separated only by Daereungwon's west wall and are visited as ONE 75-min drop-off. hwangnidan_gil is not yet a POI KB entry — facts here verified 2026-08-04 (namu.wiki, VisitKorea, Gyeongju city map).",
+              "sources": [
+                "POI KB v1.29 (daereungwon_tomb_complex)",
+                "VisitKorea (Hwangnidan-gil)",
+                "Gyeongju city tourism map",
+                "Wikipedia (Cheonmachong / Hwangnamdaechong)"
+              ]
+            }
           },
           {
             "number": 7,
-            "time": "≈ 16:30",
-            "duration": "30分",
-            "name": "月精橋（ウォルジョンギョ）",
-            "category": "新羅時代復元橋",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "校村（キョチョン）そばを流れる南川（ナムチョン）に架かる木造橋。もとの新羅の橋は紀元760年からこの地に存在していたが、13世紀のモンゴル侵攻で破壊された。現在の全長66メートルの復元橋は、1986年に始まった考古学的発掘調査を経て2018年に完成し、両端には二層建ての門楼が設けられ、毎晩日没から22時頃までライトアップされる。**16時30分の訪問時、春〜秋の橋は昼光の中にある。** 多くの写真で紹介されている日没後の水面反射撮影は、日没時刻が17時15分〜17時30分となる11月〜2月にのみ確実に楽しめる。入場無料。30分あれば橋の渡り歩きと川岸からの両方の反射スポットを巡ることができる。",
-            "timeUsed": [
-              "橋の渡り歩きと水面反射の撮影スポット"
+            "time": "≈ 17:00",
+            "duration": "60分",
+            "name": "国立慶州博物館（冬は東宮と月池の夜景）",
+            "category": "新羅遺物の国立博物館 — 11〜2月は東宮と月池の夜景に変更",
+            "description": "その日の最後の立ち寄りは、季節によって次の2つのどちらかになります。\n\n**① 3〜10月 — 国立慶州博物館（基本）。** **韓国随一の新羅遺物博物館**で、**1945年**に分館として創設、本館は**1968年**開館、**1975年に国立博物館へ昇格**しました。所蔵品は**指定文化財30,000点以上を含む総計100,000点以上**です。中心となる展示は**（1）天馬塚金冠（国宝第188号）** — 先ほど大陵苑で見たあの墓から1973年に出土した実物であり、**（2）聖徳大王神鐘（エミレの鐘、国宝第29号）** — **771年**鋳造、約19トンの現存最大級の梵鐘です（鋳造の際に子どもを入れたという伝説は、**1998年の成分分析で人体の残存物が検出されず**、民間説話として整理されました）。**月池館**には、**1975〜1976年の月池（雁鴨池）の浚渫で出土した遺物33,000点余り** — 酸素が遮断された泥に守られた木製品、瓦、酒令具（サイコロ）など — が展示されており、すぐ隣の東宮と月池と一対をなします。**観覧は10:00〜18:00（最終入場17:30）、定休は1月1日・旧正月（ソルラル）・秋夕（チュソク）のみで、月曜日は通常どおり開館します。常設展示は入場無料。** 3〜10月の土曜日は20:00まで夜間延長開館します。\n\n**② 11〜2月 — 東宮と月池（冬の夜景）。** 冬は17時ごろにはすでに陽が傾くため、同じ時間に**慶州随一の夜景**を見に行きます。**東宮と月池（旧・雁鴨池、史跡第18号）**は、**674年に文武王**が造営した**新羅王宮の別宮と池**で、水面に映る楼閣の反射で知られます — 上で触れた月池館の遺物33,000点余りは、まさにこの池の底から出土したものです。**09:00〜22:00（発券は21:30まで）、年中無休。入場料は大人₩3,000／青少年・軍人₩2,000／子ども₩1,000。** 冬の日没は**17:15〜17:30**ごろなので、このツアーの到着時刻（約17:00）は、**夕暮れから照明が点く瞬間まで**をそのまま見届けられる時間帯です。\n\n2か所は互いに**車で5分の距離**にあり、当日の季節・日没時刻・現地状況に応じてガイドがご案内します。",
+            "highlights": [
+              "**3〜10月 ＝ 国立慶州博物館** / **11〜2月 ＝ 東宮と月池の夜景** — 季節で分かれる最後の立ち寄り",
+              "**天馬塚金冠（国宝第188号）** — 前の立ち寄り（大陵苑）で見たあの墓の実物がここにあります",
+              "**エミレの鐘／聖徳大王神鐘（国宝第29号）** — 771年鋳造、約19トン、現存最大級の梵鐘",
+              "**月池館 ＝ 1975〜1976年の月池浚渫で出土した33,000点余り** — 東宮と月池と一対",
+              "博物館は**10:00〜18:00（最終入場17:30）· 常設展示は無料**",
+              "🔴 **月曜日は通常どおり開館** — 定休は1月1日・旧正月・秋夕のみです",
+              "**東宮と月池 ＝ 史跡第18号**、674年に文武王が造営した新羅の別宮と池（旧・雁鴨池）",
+              "東宮と月池は**09:00〜22:00（発券21:30まで）· 年中無休 · 大人₩3,000**",
+              "冬の日没は**17:15〜17:30** — 約17:00の到着は、夕暮れから照明までを見届けられる時間帯"
             ],
-            "whyOnRoute": "一日の締めくくりにふさわしい静かなゆったり散策；校村から徒歩5分。",
+            "timeUsed": [
+              "降車＋入場（約5分）",
+              "新羅歴史館＋新羅美術館（約20分）／冬：池を一周する散策（約25分）",
+              "月池館＋屋外のエミレの鐘（約20分）／冬：夜景の撮影（約20分）",
+              "天馬塚金冠の展示室（約10分）／冬：照明の点灯待ち（約10分）",
+              "自由時間＋お手洗い＋集合（約5分）"
+            ],
+            "whyOnRoute": "大陵苑で発掘現場を見た直後に、その墓から出た**金冠の実物**を見る順番なので、その日が**「墓 → 遺物」**というひとつの文章で締まります。最後に配置した理由は時間の計算から出ています — 約17:00の到着は博物館の**最終入場17:30より30分早く**、18:00の閉館までハイライトをゆとりを持って見られます（全館を通しで回るコースではなく、金冠・エミレの鐘・月池館を中心にご案内します）。そして**冬は同じ時刻がむしろ夜景の時間**になるため、11〜2月は博物館ではなく車で5分の東宮と月池へ向かいます — 夏の時間割では作れない絵です。どちらの選択肢も平坦な歩行なので、一日の最後の立ち寄りとして負担がありません。",
             "_poi_meta": {
-              "poi_key": "woljeonggyo_bridge",
-              "is_attraction": true,
-              "fee_krw": 0
+              "poi_key": "gyeongju_national_museum",
+              "kb_version": "1.25",
+              "verified_date": "2026-08-04",
+              "sources": [
+                "Gyeongju National Museum official",
+                "Wikipedia",
+                "Cultural Heritage Administration of Korea",
+                "Yonhap News (2025 APEC special exhibition)",
+                "National Museum of Korea (Gyeongju Branch official)"
+              ],
+              "seasonal_alternate_poi_key": "donggung_wolji_pond",
+              "seasonal_alternate_months": "11,12,1,2",
+              "seasonal_alternate_note": "Nov–Feb the last stop becomes Donggung & Wolji (Historic Site No. 18, 09:00–22:00, adult ₩3,000) because sunset falls at 17:15–17:30. Museum hours corrected 2026-08-04: 10:00–18:00, last admission 17:30, closed only Jan 1 / Seollal / Chuseok — NOT Mondays."
+            },
+            "image": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+            "visitBasics": {
+              "hours": "10:00〜18:00（最終入場17:30）· 3〜10月の土曜日は20:00まで夜間延長開館",
+              "closed": "1月1日 · 旧正月（ソルラル）· 秋夕（チュソク）（🔴 月曜日は通常どおり開館します）",
+              "admission": "常設展示は無料（有料の特別展は別途）· 冬の代替地である東宮と月池は大人₩3,000",
+              "walking": "主に屋内＋舗装された屋外エリア；完全バリアフリー対応"
+            },
+            "convenience": {
+              "restroom": "本館内と屋外パビリオンエリアに複数のトイレあり",
+              "parking": "敷地内の観光バス・乗用車駐車場は無料"
+            },
+            "smartNotes": {
+              "photo": "屋外パビリオンの聖徳大王神鐘（午後の斜光が映える）；新羅館の天馬塚金冠展示（薄暗い照明、フラッシュ禁止）；石塔の断片が点在する博物館庭園",
+              "facilities": "金冠レプリカアクセサリーを販売するミュージアムショップ；本館内のカフェ；クロークあり",
+              "tip": "フラッシュ撮影禁止；一部の特別展示では撮影全面禁止の場合あり（館内の案内表示を確認）；鐘のパビリオンだけで約10分の余裕を — 新羅最重要の遺物です"
             },
             "images": [
-              "/images/tours/woljeonggyo/photo-001.webp",
-              "/images/tours/woljeonggyo/photo-002.webp",
-              "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp"
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+              "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/woljeonggyo/photo-001.webp",
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/woljeonggyo/photo-002.webp",
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/woljeonggyo/photo-001.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/woljeonggyo/photo-002.webp",
+                "url": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2608,45 +3151,52 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/woljeonggyo/photo-001.webp",
-                "location": "月精橋（ウォルジョンギョ）",
-                "caption": "月精橋（ウォルジョンギョ） — photo 1",
-                "alt": "月精橋（ウォルジョンギョ） — gallery image 1"
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+                "location": "国立慶州博物館",
+                "caption": "国立慶州博物館 — 写真 1",
+                "alt": "国立慶州博物館 — ギャラリー画像 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/woljeonggyo/photo-002.webp",
-                "location": "月精橋（ウォルジョンギョ）",
-                "caption": "月精橋（ウォルジョンギョ） — photo 2",
-                "alt": "月精橋（ウォルジョンギョ） — gallery image 2"
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-56.webp",
+                "location": "国立慶州博物館",
+                "caption": "国立慶州博物館 — 写真 2",
+                "alt": "国立慶州博物館 — ギャラリー画像 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/woljeonggyo/woljeonggyo-cherry-reflection.webp",
-                "location": "月精橋（ウォルジョンギョ）",
-                "caption": "月精橋（ウォルジョンギョ） — photo 3",
-                "alt": "月精橋（ウォルジョンギョ） — gallery image 3"
+                "src": "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-31-57.webp",
+                "location": "国立慶州博物館",
+                "caption": "国立慶州博物館 — 写真 3",
+                "alt": "国立慶州博物館 — ギャラリー画像 3"
               }
             ]
           },
           {
             "number": 8,
-            "time": "≈ 17:00",
+            "time": "≈ 18:05",
             "duration": "75分",
             "name": "釜山への帰路ドライブ",
-            "category": "帰路",
-            "image": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-            "description": "通常の交通状況では京釜高速道路を約80km／75分；金曜夕方や日曜の帰宅ラッシュ時は最大90分。降車はピックアップの逆順：海雲台駅5番出口 約18時15分、西面駅4番出口 約18時35分、釜山駅4番出口 約18時50分。",
-            "timeUsed": [
-              "運営ロジスティクス（帰路）"
+            "category": "帰路 — 京釜高速道路",
+            "description": "**京釜高速道路**を利用した慶州→釜山の帰路ドライブで、**海雲台駅 → 西面駅 → 釜山駅**の逆順で降車します。交通状況により約70〜80分。降車の目安時刻は**海雲台駅 約19:15 · 西面駅 約19:35 · 釜山駅 約19:50**です。\n\n降車地点は**朝に乗車した地下鉄駅の出口と同じ**です — 釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅4番出口の前です。",
+            "highlights": [
+              "逆順で降車：海雲台駅 → 西面駅 → 釜山駅",
+              "降車の目安：海雲台 約19:15 · 西面 約19:35 · 釜山駅 約19:50",
+              "**降車地点 ＝ 朝に乗車したその地下鉄駅の出口**"
             ],
-            "whyOnRoute": "必須の移動手配。",
+            "timeUsed": [
+              "慶州 → 釜山のドライブ（約70〜80分）",
+              "3か所での降車（合計約5分）"
+            ],
+            "whyOnRoute": "逆順での降車がもっとも時間効率がよく、朝に乗った場所でそのまま降りられるため、帰りの動線を改めて考え直す必要がありません。",
             "_poi_meta": {
-              "poi_key": "busan_return",
-              "is_attraction": false
-            }
+              "poi_key": "OPS_busan_return",
+              "kb_version": "1.16",
+              "verified_date": "2026-04-29"
+            },
+            "_role": "dropoff"
           }
         ]
       }
@@ -2658,76 +3208,81 @@
       "props": {
         "routeFlowStops": [
           {
-            "id": "rf_pickup",
-            "name": "釜山地下鉄ピックアップ",
+            "name": "釜山の地下鉄駅ピックアップ（3か所）",
+            "type": "origin",
             "theme": "出発"
           },
           {
-            "id": "rf_ahopsan",
-            "name": "アホプサン竹林（桜の季節はヘウンデ・ダルマジの丘）",
+            "name": "アホプサン竹林（桜の季節は海雲台タルマジの丘）",
+            "type": "primary",
             "theme": "森林／海岸道路（季節限定）"
           },
           {
-            "id": "rf_bulguksa",
             "name": "仏国寺（ユネスコ）",
-            "theme": "ユネスコ世界遺産"
+            "type": "primary",
+            "theme": "ユネスコ遺産"
           },
           {
-            "id": "rf_lunch",
             "name": "昼食（慶州サムバプ）",
+            "type": "meal",
             "theme": "食事"
           },
           {
-            "id": "rf_museum",
-            "name": "国立慶州博物館",
-            "theme": "新羅時代の遺物"
+            "name": "校村韓屋村 & 崔富豪邸 & 月精橋",
+            "type": "primary",
+            "theme": "宗家の韓屋＋新羅の橋"
           },
           {
-            "id": "rf_gyochon",
-            "name": "校村韓屋村（キョチョン・ハノクマウル）",
-            "theme": "歴史的集落"
+            "name": "大陵苑 & ファンリダンギル",
+            "type": "primary",
+            "theme": "王陵＋カフェ通り"
           },
           {
-            "id": "rf_bridge",
-            "name": "月精橋（ウォルジョンギョ）",
-            "theme": "新羅時代復元橋"
+            "name": "国立慶州博物館（冬：東宮と月池の夜景）",
+            "type": "primary",
+            "theme": "新羅の遺物／冬の夜景"
           },
           {
-            "id": "rf_return",
-            "name": "釜山地下鉄降車",
+            "name": "釜山の地下鉄駅で降車",
+            "type": "return",
             "theme": "帰路"
           }
         ],
         "routePhases": [
           {
-            "phase": "往路＋アホプサン",
+            "phase": "出発＋アホプサン",
             "duration": "約2時間30分",
-            "description": "釜山の地下鉄3か所の出口でピックアップ（08:10・08:30・09:10）後、機張のアホプサン竹林まで約30分ドライブ。"
+            "description": "釜山の地下鉄駅3か所でピックアップ（釜山駅4番出口 08:10、西面駅4番出口 08:30、海雲台駅5番出口 09:10）後、機張のアホプサン竹林まで車で約30分、60分の竹林散策。"
           },
           {
             "phase": "ユネスコの中核",
             "duration": "約2時間",
-            "description": "アホプサンから仏国寺まで約70分ドライブ後、ゆったりとしたペースで寺院を60分散策。"
+            "description": "アホプサン竹林から仏国寺まで車で約50分、その後ゆったりとしたペースで75分の寺院拝観。"
           },
           {
-            "phase": "ランチ＋博物館",
-            "duration": "約2時間",
-            "description": "慶州の郷土料理でランチ（60分）、その後国立博物館のハイライトギャラリーを60分見学。"
+            "phase": "昼食",
+            "duration": "約1時間",
+            "description": "慶州市内の地元レストランでサムバプなどの郷土料理（約55分、個人負担）。"
           },
           {
-            "phase": "韓屋村＋橋",
+            "phase": "慶州の徒歩ブロック1 — 宗家と橋",
             "duration": "約1時間30分",
-            "description": "校村韓屋村を60分散策後、月精橋で30分。"
+            "description": "校村韓屋村・崔富豪邸から南川の川沿いの道を歩いて月精橋まで、1回の降車で75分。"
           },
           {
-            "phase": "帰路のドライブ",
-            "duration": "約1時間15分〜1時間30分",
-            "description": "京釜高速道路経由で慶州から釜山へ。海雲台・西面・釜山駅でのドロップオフ。"
+            "phase": "慶州の徒歩ブロック2 — 王陵とカフェ通り",
+            "duration": "約1時間30分",
+            "description": "大陵苑の古墳を散策したあと西側の塀を越えてファンリダンギルへ、1回の降車で75分。"
+          },
+          {
+            "phase": "最後の立ち寄り＋帰路",
+            "duration": "約2時間30分",
+            "description": "国立慶州博物館60分（11〜2月は東宮と月池の夜景）のあと京釜高速道路で釜山へ、海雲台 約19:15 · 西面 約19:35 · 釜山駅 約19:50 に降車。"
           }
         ],
         "routeShapeIntro": {
-          "title": "この日の流れ",
-          "subtitle": "立ち寄りスポット数よりも建築的な深みを優先した、年間を通じて楽しめる落ち着きある慶州世界遺産めぐりのコース。多くの慶州日帰りツアーが7〜8か所を詰め込んで慌ただしくなりがちなのに対し、このルートは厳選した5つのスポットを巡り、各所で十分な滞在時間を確保しています——特に仏国寺、国立博物館、校村村で。最後の月精橋はライトアップ時間帯ではなく昼間の訪問となり、この日のゆったりペースのコンセプトに沿っています。チェックリスト式観光より各スポットでの時間を重視する旅行者のために設計されています。"
+          "title": "この日のスケジュールの流れ",
+          "subtitle": "釜山を出発し、慶州を一日かけて歩く通年催行のコースです。午前は車で移動する2か所（アホプサン竹林・仏国寺）、午後は**車を停めて歩く2つのブロック** — 校村韓屋村・崔富豪邸から南川を渡って月精橋まで、そして大陵苑の古墳から塀ひとつ越えてファンリダンギルまで — で構成しました。最後の一枠は季節が決めます：**3〜10月は国立慶州博物館**で大陵苑で見たあの金冠の実物を見て、**11〜2月は同じ時刻が夜景の時間になるため東宮と月池**へ向かいます。いくつの名所を回ったかよりも、ひとつの場所にどれだけ長くいられたかを大切にする旅行者のための行程です。"
         }
       }
     },
@@ -2738,16 +3293,17 @@
       "props": {
         "whyTourWorks": {
           "bestFor": [
-            "急がずに慶州の定番スポットを巡りたい旅行者",
-            "韓国への初めての訪問者",
-            "大人のファミリーやカップル",
-            "夕方早めに帰着したい旅行者"
+            "急がずに慶州の代表スポットを楽しみたい旅行者",
+            "韓国が初めての方",
+            "大人のご家族やカップル",
+            "**歩いて回る午後**がお好きな旅行者 — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ",
+            "冬の出発なら、慶州最高の夜景（東宮と月池）を行程のなかでご覧になりたい旅行者"
           ],
           "lessIdealFor": [
-            "博物館でじっくり時間を過ごしたい旅行者（ユネスコ・レガシー版はより長め）",
-            "歩行量を最小限にしたい旅行者",
-            "ベビーカー利用グループ（仏国寺の石段あり）",
-            "当日フライトまでの時間が限られている旅行者"
+            "**夕方早めの帰着が必要な旅行者** — 釜山での降車は約19:15〜19:50です",
+            "歩行を最小限に抑えたい旅行者（1日 約5〜5.5km）",
+            "ベビーカーをお使いのグループ（仏国寺に石段あり — ただし大陵苑は平坦です）",
+            "当日のフライト接続に余裕が少ない旅行者"
           ],
           "routeLogicSections": [
             {
@@ -2757,20 +3313,24 @@
               "iconColor": "text-sky-600",
               "items": [
                 {
-                  "label": "11.5時間ではなく10.5時間でめぐるクラシック慶州",
-                  "detail": "ユネスコ・レガシー版と同じ6つの観光スポット（アホプサン、仏国寺、ランチ、博物館、校村、橋）を含みますが、各ブロックが15〜30分短縮されています。その結果、各スポット内でのペースが若干余裕を持ち、帰着も早くなります（約18:50 対 約19:45）。トレードオフとして、博物館の奥深い雁鴨池ギャラリーの時間は短縮され、ハイライトループのみとなります。"
+                  "label": "午後は車を停めて歩く2つのブロックにまとめました",
+                  "detail": "校村韓屋村・崔富豪邸と月精橋は南川の川沿いの道を徒歩10〜15分、大陵苑とファンリダンギルは塀ひとつの距離です。だから4か所で4回停まる代わりに、**降車は2回だけ**にしました — 乗り降りに使っていた時間がそのまま歩く時間になり、各ブロックに75分ずつを充てています。"
                 },
                 {
-                  "label": "静かな締めくくりとしての復元された新羅の橋",
-                  "detail": "月精橋は短くて平坦で、フォトジェニックなスポットです。博物館と校村の後に立ち寄る最終スポットとして30分ほどご利用いただけます。日没から約22:00まで毎晩ライトアップされます。このルートでは16:30頃に橋に到着しますが、春〜秋は日中の明るい時間帯、11月〜2月は日没前後となります。夏は到着時間帯に夜景観賞ができないため、夜景はお約束しておりません。"
+                  "label": "最後の一枠は季節が決めます — 博物館、それとも夜景",
+                  "detail": "3〜10月は約17:00に国立慶州博物館へ到着します（最終入場17:30より30分早い時刻です）。11〜2月は同じ時刻にすでに陽が傾いているため、車で5分の**東宮と月池**へ向かい、夕暮れから照明が点く瞬間までを見ます。夏の行程では作れない絵です。"
                 },
                 {
-                  "label": "季節を問わず楽しめます（賢い季節の入れ替えあり）",
-                  "detail": "桜の季節（3月中旬〜4月中旬）は、阿甲山竹林の代わりに海雲台達摩峰ヒルをご案内します。それ以外の行程は同じです。"
+                  "label": "墓で見て、博物館でもう一度見ます",
+                  "detail": "大陵苑の天馬塚で1973年の発掘現場を見て、その墓から出た**天馬塚金冠（国宝第188号）の実物**を、次の立ち寄り先である国立慶州博物館で見ます。月池館の遺物33,000点余りも同じく、冬の代替地である東宮と月池の池の底から出たものです — 順番そのものがひとつの解説になります。"
                 },
                 {
-                  "label": "コーチと専用車の中間のミニバン",
-                  "detail": "釜山発のコーチツアーは35〜45名乗りで一人あたりの料金が低く、プライベートツアーは1〜4名でグループあたりの料金がかなり高めです。このスモールグループミニバン形式はその中間に位置し、通常1出発あたり10名未満です。"
+                  "label": "ピックアップはすべて地下鉄駅の出口です",
+                  "detail": "釜山駅4番出口（1号線）、西面駅4番出口（1・2号線）、海雲台駅5番出口（2号線）。とくに**釜山駅はKTXの鉄道駅舎ではなく、その前にある地下鉄駅の4番出口**です — 鉄道駅前の広場はバスやタクシーが入り混じって車両を見つけにくいのに対し、地下鉄の出口番号は誰でも一度で見つけられます。降車も同じ3か所です。"
+                },
+                {
+                  "label": "大型観光バスとプライベート車両の中間、少人数ミニバン",
+                  "detail": "釜山発の大型バスツアーは35〜45名が安く乗り合わせ、プライベートツアーは1〜4名がはるかに高い料金で利用します。この少人数ミニバンはその中間 — 人数が少ないぶん各立ち寄り先での集合が早く、その分だけ滞在時間が長くなります。"
                 }
               ]
             }
@@ -2785,29 +3345,56 @@
       "props": {
         "practicalAccordionItems": [
           {
-            "title": "含まれるもの",
             "id": "inclusions",
-            "content": "釜山からの往復ミニバン送迎、英語・中国語認定ガイド、燃料費・高速料金・駐車料金。含まれないもの：昼食（約₩15,000〜₩25,000）、阿甲山竹林入場料（₩5,000、現地払い）、チップ。その他の観光地入場料はすべて無料：仏国寺（2023年5月より無料）、慶州国立博物館（2008年より無料）、校村韓屋村、月精橋。"
+            "title": "含まれるもの",
+            "preview": "釜山発着のミニバン往復送迎、認定英語・中国語ガイド、…",
+            "content": [
+              "釜山発着のミニバン往復送迎、認定英語・中国語ガイド、燃料費・高速料金・駐車料金。",
+              "含まれないもの：昼食（約₩15,000〜₩25,000）、アホプサン竹林の入場料（₩5,000、現地払い）、天馬塚の内部見学（大人₩3,000、任意）、冬の代替時の東宮と月池の入場料（大人₩3,000）、チップ。",
+              "そのほかの入場料はすべて無料です：仏国寺（2023年5月より無料）、国立慶州博物館の常設展示（2008年より無料）、校村韓屋村・崔富豪邸、月精橋、大陵苑の公園エリア、ファンリダンギル。"
+            ]
           },
           {
-            "title": "乗降場所",
             "id": "pickup",
-            "content": "釜山地下鉄1号線沿いの3か所で順番にピックアップ：釜山駅4番出口（08:10）、西面駅4番出口（08:30）、海雲台駅5番出口（09:10）。降車は逆順：海雲台 約18:15、西面 約18:35、釜山駅 約18:50。予約時にWhatsApp／KakaoTalkの番号をご提供ください。ガイドより前日に車両情報をご連絡します。"
+            "title": "乗車・降車場所",
+            "preview": "釜山中心部の**地下鉄駅3か所**で順番にピックアップします：釜山駅4番出…",
+            "content": [
+              "釜山中心部の**地下鉄駅3か所**で順番にピックアップします：釜山駅4番出口（1号線）08:10、西面駅4番出口（1・2号線）08:30、海雲台駅5番出口（2号線）09:10。",
+              "🔴 **釜山駅はKTXの鉄道駅ではなく、地下鉄1号線・釜山駅の4番出口**です。鉄道駅の待合室や駅前広場でお待ちになると、車両は見つかりません。",
+              "降車は逆順で、朝に乗車したその出口です：海雲台駅 約19:15、西面駅 約19:35、釜山駅 約19:50。",
+              "ご予約時にWhatsAppまたはカカオトークの番号をご提供ください。ガイドが前日に車両の詳細をメッセージでご案内します。"
+            ]
           },
           {
-            "title": "歩行・地形について",
             "id": "walking",
-            "content": "中程度。1日の合計歩行距離は約3.5〜4kmで、ユネスコ遺産コースよりやや短め（博物館エリアの時間が短いため）です。仏国寺はテラス間に石段があります。博物館は平坦な屋内歩行、校村と橋は平坦です。仏国寺の石畳は凹凸があるため、つま先が覆われた歩きやすい靴が必須です。"
+            "title": "徒歩・地形",
+            "preview": "普通。",
+            "content": [
+              "普通。",
+              "1日の総歩行距離は約5〜5.5km — 午後の2ブロック（校村↔月精橋、大陵苑↔ファンリダンギル）を歩いてつなぐため、以前のコースより増えています。",
+              "仏国寺はテラス間に石段があります。校村・月精橋・大陵苑・ファンリダンギルはすべて平坦で、大陵苑の芝生の道はベビーカーやご年配の方にも快適です。",
+              "墳丘に登ることは禁止されています（過料の対象）。つま先の閉じた履きやすい靴が必須です — 仏国寺の石畳は不均一です。"
+            ]
           },
           {
-            "title": "キャンセルについて",
             "id": "cancellation",
-            "content": "ピックアップの24時間前までは無料キャンセル可能です。当日キャンセルおよびノーショー（無断不参加）は返金不可です。運営者都合によるキャンセル（不可抗力・悪天候・通行止め）の場合は全額返金いたします。"
+            "title": "キャンセルについて",
+            "preview": "ピックアップの24時間前まで無料キャンセル可能。",
+            "content": [
+              "ピックアップの24時間前まで無料キャンセル可能。",
+              "当日キャンセルおよび無断キャンセルは返金不可。",
+              "運営者都合によるキャンセル（不可抗力・悪天候・道路閉鎖）：全額返金。"
+            ]
           },
           {
-            "title": "季節別ルートのご案内",
             "id": "seasonal",
-            "content": "桜の季節（3月中旬〜4月中旬、年によって異なります）：阿甲山竹林の代わりに、釜山の海沿いを彩る桜のトンネル道・海雲台達摩峰ヒルをご案内します。冬季（11月〜2月）：月精橋には16:30頃到着し、日没前後の時間帯となります。日没後の橋の水面への反射が撮影できる唯一の時間帯です。"
+            "title": "季節別ルートについて",
+            "preview": "桜の季節（3月中旬〜4月中旬、正確な日程は毎年異なります）：アホ…",
+            "content": [
+              "桜の季節（3月中旬〜4月中旬、正確な日程は毎年異なります）：アホプサン竹林の代わりに、釜山の海沿いの桜道である海雲台タルマジの丘へ変更されます。大陵苑の石垣道の桜は4月初旬が見頃です。",
+              "冬（11月〜2月）：日没が17:15〜17:30と早いため、最後の立ち寄りが国立慶州博物館から**東宮と月池の夜景**に変更されます（入場料は大人₩3,000、現地払い）。夕暮れから照明の点灯までを見る時間帯です。",
+              "夏（6〜8月）は日没が19:30ごろのため夜景の行程が成立せず、最後の立ち寄りは国立慶州博物館で固定です。"
+            ]
           }
         ],
         "practicalWeatherStatic": {
@@ -2823,20 +3410,20 @@
         },
         "seasonalVariations": [
           {
-            "season": "春（3月中旬〜4月中旬、桜の見頃）",
-            "highlight": "最初の訪問先が阿甲山竹林から海雲台達摩峰ヒルの桜並木道に変わります。仏国寺の境内は4月中旬に見頃を迎えます。"
+            "season": "春（3月中旬〜4月中旬、桜の季節）",
+            "description": "アホプサン竹林のオープニングが海雲台タルマジの丘の桜道に変更されます。大陵苑の石垣道は慶州でも指折りの桜のトンネルで（毎年4月初旬に祭りが開かれます）、校村にも4月初旬に桜が訪れます。最後の立ち寄りは国立慶州博物館です。"
           },
           {
             "season": "夏（6月〜8月）",
-            "highlight": "竹林は涼しく、博物館は冷房完備。仏国寺は山間にあるため、沿岸部の釜山より気温が穏やかです。橋には16:30に到着し、明るい日中となります。"
+            "description": "竹林は涼しく、博物館は冷房完備です。午後の徒歩ブロックは2か所とも日陰とカフェがあり、休みながら歩けます。日没が19:30ごろのため夜景は行程に入らず、最後の立ち寄りは国立慶州博物館です。"
           },
           {
             "season": "秋（9月下旬〜10月下旬）",
-            "highlight": "仏国寺の10月下旬の紅葉は、韓国を代表する絶景写真スポットのひとつです。16:30の橋はまだほぼ日中の明るさです。"
+            "description": "校村の10月下旬のイチョウが見頃で、大陵苑の芝生の丘はその日でもっとも快適な散策になります。最後の立ち寄りは国立慶州博物館で、3〜10月の土曜日は博物館が20:00まで夜間延長開館します。"
           },
           {
             "season": "冬（11月〜2月）",
-            "highlight": "最も混雑が少ない時期で、博物館が最も価値ある屋内スポットとなります。日没時刻は17:15〜17:30で、訪問の終わり頃に橋のライトアップが始まります。"
+            "description": "もっとも人出の少ない季節です。日没が17:15〜17:30と早いため、最後の立ち寄りが**国立慶州博物館から東宮と月池の夜景に変更**されます — 夕暮れから照明の点灯までをそのまま見る時間帯で、一年のうちこの季節にしかできない行程です。月精橋も冬の午後は日没の光を受けます。"
           }
         ]
       }
@@ -2849,55 +3436,55 @@
         "bookingTrustItems": [
           {
             "icon": "check-circle",
-            "title": "認定地元オペレーター",
-            "description": "完全保険付き・公認韓国ツアーオペレーター",
+            "title": "地元の公認オペレーター",
+            "description": "完全な保険付きの公認韓国ツアーオペレーター",
             "iconBg": "bg-emerald-50/80",
             "iconColor": "text-emerald-600"
           },
           {
             "icon": "route",
-            "title": "ルートスペシャリスト",
-            "description": "画一的なコースではなく、丁寧に調整されたルートプラン",
+            "title": "ルートのスペシャリスト",
+            "description": "汎用ループではなく、丁寧に調整されたルート",
             "iconBg": "bg-sky-50/80",
             "iconColor": "text-sky-600"
           },
           {
             "icon": "users",
-            "title": "厳選されたグループサイズ",
-            "description": "ルートに最適な人数規模",
+            "title": "厳選されたグループ人数",
+            "description": "ルートに最適な規模",
             "iconBg": "bg-amber-50/80",
             "iconColor": "text-amber-600"
           }
         ],
         "bookingSupportSteps": [
           {
-            "timing": "即時",
+            "timing": "即座に",
             "title": "即時確認",
-            "detail": "旅程サマリー付き予約確認"
+            "detail": "旅程概要付き予約確認書"
           },
           {
             "timing": "12時間前",
             "title": "12時間前リマインダー",
-            "detail": "天候アップデートとルートの変更案内"
+            "detail": "天気情報とルート変更のお知らせ"
           },
           {
-            "timing": "前日の夜",
-            "title": "最終送迎情報",
-            "detail": "正確なお迎え時間とドライバーの連絡先"
+            "timing": "前夜",
+            "title": "最終お迎え情報",
+            "detail": "正確なお迎え時刻とドライバーの連絡先"
           },
           {
             "timing": "ツアー当日の朝",
-            "title": "当日ルートノート",
-            "detail": "リアルタイムの状況に基づく朝のブリーフィング"
+            "title": "当日のルート案内",
+            "detail": "現地状況に基づく朝のブリーフィング"
           },
           {
             "timing": "ツアー中",
-            "title": "スポットごとのヒント",
+            "title": "各スポットでのヒント",
             "detail": "各スポットでのリアルタイムガイダンス"
           },
           {
             "timing": "ツアー後",
-            "title": "ツアー後サポート",
+            "title": "ツアー後のサポート",
             "detail": "フォローアップとおすすめ情報"
           }
         ]
@@ -2911,68 +3498,83 @@
         "staticQuestions": [
           {
             "id": "q-vs-unesco-legacy",
-            "question": "釜山発「ユネスコの遺産」日帰りツアーとはどう違いますか？",
-            "answer": "両ツアーは基本的に同じルート（アホプサン → 仏国寺 → 博物館 → 教村 → 橋）を通ります。このプランの「古都」というコンセプトでは、各ブロックを15〜30分短縮し、帰着が約1時間早く（約18:50 vs 約19:45）なっており、博物館での深掘りが少ない代わりに各スポットでのペースが少し緩やかです。「ユネスコ遺産」バージョンは博物館での滞在時間と遺産解説を重視しています。早めの帰着とゆったりした一日をご希望の方はこちらを、博物館でより長く過ごしたい方はユネスコ遺産をお選びください。"
+            "question": "1日の流れはどのようになりますか？",
+            "answer": "**午前は車で移動する2か所、午後は歩いて回る2つのブロック**です。釜山の地下鉄駅3か所を08:10〜09:10に出発し、アホプサン竹林（60分）→ 仏国寺（75分）→ 慶州市内で昼食（60分）までが午前です。午後は車を2回しか停めません — **校村韓屋村・崔富豪邸から南川を渡って月精橋まで**（75分）、そして**大陵苑の古墳から塀ひとつ越えてファンリダンギルまで**（75分）。最後の一枠は季節が決めます：3〜10月は**国立慶州博物館**（約17:00到着、最終入場17:30より前）、11〜2月は同じ時刻が夜景の時間になるため**東宮と月池**です。釜山での降車は海雲台駅 約19:15、西面駅 約19:35、釜山駅 約19:50で、**合計 約11.5時間**の行程です。"
           },
           {
             "id": "q-bridge-night-view",
-            "question": "橋のライトアップは見られますか？",
-            "answer": "基本的に、このツアーではお勧めできません。橋は年間を通じて日没から約22:00まで毎晩ライトアップされますが、このルートでは16:30頃に到着するため、春〜秋は日中の明るい時間帯となります。訪問時間帯にライトアップが確実に見られる唯一の時期は11月〜2月で、日没が17:15〜17:30の間となり、滞在終盤に向けてライトが点灯し始めます。日没後の橋の反射を撮影することが最優先であれば、橋に17:00頃到着する「UNESCOレガシーツアー」の方が適しています。あるいは、日没後に個人でご訪問ください。"
+            "question": "月精橋のライトアップは見られますか？",
+            "answer": "このツアーでご覧いただくのは**昼光のなかの月精橋**です。校村韓屋村・崔富豪邸とあわせて午後2時ごろに到着するためです — 木組みの細部と川面の反射はむしろ日中のほうが鮮明で、日没前後の人混みも避けられます。**夜景をご希望でしたら冬（11〜2月）の出発をおすすめします**：この時期は最後の立ち寄りが東宮と月池の夜景に変わり、慶州でもっとも有名な夜景を照明の点灯時刻に合わせてご覧いただけます。"
           },
           {
             "id": "q-bulguksa-only",
-            "question": "石窟庵はなぜ含まれないのですか？",
-            "answer": "石窟庵は仏国寺と同じUNESCO登録遺産ですが、急勾配の狭い道を山上へ8km進んだ場所にあり、駐車場の制約に加え、駐車場から徒歩10分かかります。博物館・校村・橋も含む1日の行程に追加するのは現実的ではありません。慶州の1日観光ツアーのほとんどは、仏国寺か石窟庵のどちらか一方のみを含んでいます。"
+            "question": "なぜ石窟庵は含まれないのですか？",
+            "answer": "石窟庵は仏国寺と同じユネスコ登録遺産ですが、急勾配の細い道を8km登った山の上に位置し、駐車場の制約もあり、駐車場から徒歩10分かかります。これらの条件が重なり、博物館・校村・橋も含めた1日のスケジュールへの追加は現実的ではありません。慶州の日帰りツアーのほとんどは、仏国寺か石窟庵のいずれか一方を含みますが、両方を含むことはありません。"
           },
           {
             "id": "q-admissions",
             "question": "入場料は含まれていますか？",
-            "answer": "ほとんどの施設は無料です。現地で現金払いが必要なのは阿虎山竹林（₩5,000）のみです。仏国寺は2023年5月より無料、慶州国立博物館は2008年11月より無料、校村韓屋村と月精橋も無料です。昼食代₩15,000〜₩25,000と阿虎山の₩5,000を合わせると、1人あたりの実費合計は₩20,000〜₩30,000程度となります。"
+            "answer": "ほとんどは無料です。**無料**：仏国寺（2023年5月から）、国立慶州博物館の常設展示（2008年から）、校村韓屋村・崔富豪邸、月精橋、大陵苑の公園エリア、ファンリダンギル。\n\n**現地で直接お支払いいただくもの**：アホプサン竹林の入場料 **₩5,000**（必須）· 大陵苑内の**天馬塚の内部見学 ₩3,000**（任意 — 中に入らず古墳のあいだを歩くだけでもかまいません）· 冬（11〜2月）の出発は最後の立ち寄りが変わるため **東宮と月池 ₩3,000** · 昼食 **₩15,000〜₩25,000**。\n\nしたがって、お一人様あたりの実費合計は**夏はおよそ₩20,000〜₩33,000**、**冬はおよそ₩23,000〜₩36,000**が目安です。"
           },
           {
             "id": "q-museum-language",
-            "question": "博物館に英語の案内表示はありますか？",
-            "answer": "はい。慶州国立博物館の3つの常設展示室すべてに、英語と中国語の展示パネルが設置されています。入口にある聖徳大王神鐘にも多言語パネルがあります。身分証明書の預け入れで、無料の英語オーディオガイドがインフォメーションデスクにてご利用いただけます。"
+            "question": "国立慶州博物館に英語の案内表示はありますか？",
+            "answer": "はい。主要な展示品には韓国語・英語の二か国語解説パネルがあり、近年の改修でデジタル解説も追加されました。常設展示は**無料**、観覧時間は**10:00〜18:00（最終入場17:30）**で、定休は1月1日・旧正月・秋夕のみのため**月曜日も通常どおり開館**しています。このツアーは約17:00に到着し、金冠・エミレの鐘・月池館を中心に60分間見学します。冬（11〜2月）の出発は、博物館ではなく東宮と月池の夜景に変更されます。"
           },
           {
             "id": "q-bulguksa-photography",
-            "question": "仏国寺での写真撮影は可能ですか？",
-            "answer": "はい、二つの石塔や下段テラスの石橋を含む境内全域で撮影可能です。礼拝が行われている可能性がある礼拝堂の内部では、フラッシュと三脚の使用はご遠慮ください。桜の見頃は4月中旬、紅葉の見頃は10月下旬で、最も撮影に人気の時期です。"
+            "question": "仏国寺での写真撮影はできますか？",
+            "answer": "境内全域で撮影可能です。二基の石塔や下段の石橋も含まれます。礼拝が行われている場合がある礼拝堂の内部では、フラッシュと三脚のご使用はお控えください。桜は4月中旬、紅葉は10月下旬が見頃で、最も写真映えする時期です。"
           },
           {
             "id": "q-vegetarian",
-            "question": "昼食にベジタリアン向けのメニューはありますか？",
-            "answer": "はい。慶州のサムパプは元々野菜が豊富な料理で、肉のバンチャン（おかず）を外してオーダーすることも簡単にできます。ご希望の場合は、完全菜食の食事が楽しめる精進料理（사찰음식）レストランへご案内することも可能です。ご予約時にお申し付けください。"
+            "question": "昼食に菜食（ベジタリアン）メニューはありますか？",
+            "answer": "はい。慶州のサムバプは元来野菜が豊富な料理で、肉のおかず（バンチャン）なしで注文するのは難しくありません。ご希望があれば、ガイドが完全菜食の寺院料理（사찰음식）レストランへご案内することも可能です。ご予約時にお申し付けください。"
           },
           {
             "id": "q-rain",
             "question": "雨の場合はどうなりますか？",
-            "answer": "小雨の場合：ツアーは予定通り実施されます。大雨の場合：仏国寺の石段が滑りやすくなり、阿虎山の道が泥濘む恐れがあるため、ガイドが屋外滞在時間を短縮し、屋内で空調完備の博物館での時間を延長することがあります。台風レベルの悪天候の場合：日程変更または全額返金対応となります。"
+            "answer": "小雨の場合：予定どおり実施します。\n\n**強い雨の場合**：仏国寺の石段が滑りやすくなり、アホプサン竹林の土の道がぬかるむことがあるため、ガイドが屋外での滞在を短くして屋内の比重を増やします — 3〜10月は**最後の立ち寄りである国立慶州博物館**（屋内・空調完備）で時間を多めに取り、大陵苑では古墳のあいだの散策を短くする代わりに**ファンリダンギルの屋内カフェ・店舗**で過ごす時間を増やします。冬（11〜2月）は最後の立ち寄りが屋外の東宮と月池なので、雨天時は**博物館に振り替える**ことができます（最終入場17:30より前に到着できる場合）。\n\n台風級の荒天の場合：日程変更または全額返金に対応します。"
           },
           {
             "id": "first-time",
-            "question": "慶州初訪問者にもお勧めですか？",
-            "answer": "はい。長時間のツアーよりもゆったりしたペースで慶州の代表的なスポットを巡ります。韓国旅行でUNESCO世界遺産を体験したい初訪問者や、夕方早めに宿に戻ることを希望される方に特にお勧めです。"
+            "question": "慶州初訪問者にも良いツアーですか？",
+            "answer": "はい。慶州の代表スポットを急がずに巡る構成なので、初めての慶州によく合います。とくに**午後の2つのブロックが歩いてつながっている**ため — 崔富豪邸から月精橋へ、大陵苑の古墳から塀ひとつ越えてファンリダンギルへ — 遺跡を順に見て回るだけでなく、街そのものの手ざわりまで一緒に見ることになります。\n\nただし、**夕方早めに戻りたい方にこのツアーは向きません** — 1日が約11.5時間で、釜山での降車は19:15〜19:50になります。その場合は、より短い釜山近郊のツアーをお選びになることをお勧めします。"
           },
           {
             "id": "walking",
-            "question": "どれくらい歩きますか？",
-            "answer": "約3.5〜4kmです。仏国寺が最も歩きごたえがあり（不均等な石畳と緩やかな上り坂）、博物館は屋内のフラットな歩行、校村と橋は平坦です。つま先が閉じた歩きやすい靴が必須です。"
+            "question": "歩く距離はどのくらいですか？",
+            "answer": "約5〜5.5kmです。午後の2ブロック（校村韓屋村・崔富豪邸↔月精橋、大陵苑↔ファンリダンギル）を歩いてつなぐため、以前のコースより増えています。もっともアクティブな区間は仏国寺（石畳の凹凸あり、緩やかな上り坂）で、校村・月精橋・大陵苑・ファンリダンギルはすべて平坦、博物館は平坦な屋内歩行です。つま先の閉じた歩きやすい靴が必須です。"
           },
           {
             "id": "family",
-            "question": "ファミリーでの参加は可能ですか？",
-            "answer": "1日の行程リズムに対応できる学齢期のお子様（概ね8歳以上）には適しています。博物館の金冠や大型の鐘は子どもたちに特に人気のスポットで、竹林は感覚的にも楽しめます。幼いお子様は、博物館見学中に飽きてしまうことがあるかもしれません。"
+            "question": "ファミリーでの参加に適していますか？",
+            "answer": "1日のリズムをこなせる学齢期のお子様（概ね8歳以上）であれば適しています。午後の2ブロックはお子様にとっていちばん過ごしやすい区間です — 大陵苑は階段のない平坦な芝生の道で、ファンリダンギルにはカフェとおやつ（皇南パン）があります。博物館の金冠と巨大な鐘も子どもたちに人気で、竹林は感覚的にも心地よい空間です。未就学のお子様には、博物館の静かな展示室と**約11.5時間**（08:10〜約19:50）の行程は負担が大きい場合があります。"
           },
           {
             "id": "seniors",
-            "question": "高齢の方でも快適に参加できますか？",
-            "answer": "3.5〜4kmの歩行と仏国寺の不均等な石畳に対応できる、活動的なシニアの方にお勧めです。ペースは程よく、博物館での着席時間も設けられています。帰着が早め（約18:50）なため、長時間の慶州ツアーよりも負担が少なくなっています。"
+            "question": "高齢の方も快適に参加できますか？",
+            "answer": "約5〜5.5kmの歩行と仏国寺の不整地な石畳を歩ける元気なシニアの方にお勧めです。午後の2ブロックはいずれも平坦で、とくに大陵苑は階段のない芝生の道です。博物館では座って鑑賞できる時間も組み込まれています。ただしコース改編により1日は**約11.5時間**（最初のお迎え08:10、最終降車 約19:50）と長くなっているため、長時間の外出がご負担にならないかをご確認のうえお申し込みください。"
           },
           {
             "id": "children",
-            "question": "推奨最低年齢はいくつですか？",
-            "answer": "概ね8歳以上が最適です。上記の歩行距離と10.5時間の1日スケジュールのペースに対応できるお子様が目安で、それより幼いお子様は博物館の静かな展示室や長時間のペース配分に苦労する場合があります。"
+            "question": "参加推奨年齢は何歳からですか？",
+            "answer": "概ね8歳以上が最適です。1日の総歩行距離 約5〜5.5kmと、**約11.5時間**（最初のお迎え08:10、最終降車 約19:50）の行程をこなせるお子様であればご参加いただけます。むしろ午後の2ブロックはお子様にとっていちばん過ごしやすい区間です — 大陵苑は階段のない平坦な芝生の道で、ファンリダンギルにはカフェとおやつ（皇南パン）があります。負担になりやすいのは、博物館の静かな展示室と朝早い出発のほうです。"
+          },
+          {
+            "id": "q-recourse-1",
+            "question": "ファンリダンギルでは何をしますか？",
+            "answer": "大陵苑の西側の塀のすぐ向かいにある、**韓屋を改装したカフェ・工房・雑貨店の通り**です。名前は「皇南洞のキョンリダンギル」という意味で、2017年頃から慶州でいちばん若い通りになりました。自由時間は約20〜30分で、コーヒー1杯や**皇南パン**（1939年にこの界隈で生まれた慶州を代表する小豆菓子）の購入、お手洗いの利用には十分です。店舗でのお買い物は個人負担です。"
+          },
+          {
+            "id": "q-recourse-2",
+            "question": "冬に参加すると国立慶州博物館は見られないのですか？",
+            "answer": "はい、11〜2月の出発は最後の立ち寄りが**東宮と月池の夜景**に変更されます。冬は17時ごろにはすでに陽が傾いて博物館の見学時間が短くなる一方、同じ時刻が慶州随一の夜景の始まる時間だからです。2か所は車で5分の距離で、博物館の月池館にある遺物33,000点余りはまさにその池の底から出土したものなので、話としてはつながっています。博物館がどうしても必要な場合は3〜10月の出発をお選びください。"
+          },
+          {
+            "id": "q-recourse-3",
+            "question": "ピックアップ場所は鉄道駅ですか、地下鉄駅ですか？",
+            "answer": "**3か所ともすべて地下鉄駅の出口**です — 釜山駅4番出口（地下鉄1号線）、西面駅4番出口（1・2号線）、海雲台駅5番出口（2号線）。とくに釜山駅は、**KTXの鉄道駅舎ではなく、その前にある地下鉄駅の4番出口**でお待ち合わせします。鉄道駅の待合室や駅前広場でお待ちになると車両が見つかりませんので、地下鉄の出口番号を目印に移動してください。降車も同じ3か所です。"
           }
         ]
       }
@@ -3024,12 +3626,12 @@
       "props": {
         "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
         "price": {
-          "amountLabel": "",
+          "amountLabel": "39",
           "currency": "USD",
           "per": "person",
-          "priceSource": "getyourguide_t1202791",
-          "priceNote": "少人数グループの料金はオペレーターの一覧からまだ確定していません。釜山発の慶州日帰りツアーの相場はパッケージやオペレーターによって$54〜$90程度です。確定後、AtoC Koreaの販売価格では一律10%割引が適用されます。",
-          "discountPercent": 10
+          "salePriceUsd": 39,
+          "originalPriceUsd": 50,
+          "discountPercent": 22
         }
       }
     }
@@ -3037,7 +3639,7 @@
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
-    "last_modified": "2026-04-28",
+    "last_modified": "2026-08-04",
     "version_history": [
       "v11",
       "v12",
@@ -3058,7 +3660,8 @@
         "fields_converted": 43,
         "fields_skipped": 0,
         "fields_already_float": 0
-      }
+      },
+      "v20_recourse_2026_08_04": "Course revision (owner instruction): Ahopsan → Bulguksa → lunch → [Gyochon + Choi Family House + Woljeonggyo] → [Daereungwon + Hwangnidan-gil] → [Gyeongju National Museum, or Donggung & Wolji in Nov–Feb]. Two new compound stops replace four separate ones (both walkable blocks); the museum moves from 4th to last (arrives ≈17:00, clearing its 17:30 last admission) and gains a winter night-view alternate. Pickup/drop-off restated as three SUBWAY exits (Busan Stn Exit 4 = subway, NOT the KTX rail terminal; Seomyeon Exit 4; Haeundae Exit 5) and the unlisted Nampo-dong drop-off removed. Fixed three shipped factual errors: museum 'closed Mondays' (it is not — Jan 1 / Seollal / Chuseok only), pickup prose times 08:25/08:40 vs authoritative 08:30/09:10, and 'Line 1 serves all three' (Haeundae is Line 2). Day now ends ≈19:50 in Busan (was ≈18:50). 6 locales; photos for Hwangnidan-gil and Donggung & Wolji still pending (owner: to be supplied locally)."
     }
   }
 }

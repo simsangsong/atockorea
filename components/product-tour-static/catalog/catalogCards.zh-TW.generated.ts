@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山出發慶州千年古都一日遊",
-      "subtitle": "以更從容的節奏遊覽慶州六大經典景點，並提早返回。",
+      "subtitle": "小團體廂型車·英語導遊——阿弘山竹林、佛國寺（UNESCO）、校村韓屋村＋崔富豪宅邸＋月精橋、大陵苑＋皇理團街，再加上國立慶州博物館（冬季為東宮與月池夜景），一天走完。",
       "region": "慶州（從釜山出發）",
-      "duration": "10.5小時",
+      "duration": "11.5小時",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "小團體",
         "從容慢遊",
         "從釜山出發",
-        "提早返回"
+        "冬季看夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "每人 US$39（原價$50，22% 優惠）",
-      "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
+      "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
     },
     "price": {
       "amountLabel": ""

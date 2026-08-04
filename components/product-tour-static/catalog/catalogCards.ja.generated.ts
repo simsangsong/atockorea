@@ -258,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山発・慶州古都ツアー",
-      "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+      "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
       "region": "慶州（釜山発）",
-      "duration": "10.5時間",
+      "duration": "11.5時間",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -268,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "少人数グループ",
         "ゆったりとしたペース",
         "釜山発",
-        "早めの帰着"
+        "冬は夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-      "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
+      "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
     "price": {
       "amountLabel": ""
