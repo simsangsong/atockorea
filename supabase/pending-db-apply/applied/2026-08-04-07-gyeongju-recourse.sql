@@ -1,4 +1,26 @@
 -- =============================================================================
+-- 🔴 DO NOT RE-RUN THIS FILE ON ITS OWN. It re-introduces a guest-facing defect.
+-- =============================================================================
+-- This file rewrites whole detail_payloads, and the payloads it carries still
+-- contain the developer comment that used to ship as booking-bar copy:
+--   sticky_booking_bar.note = "checkout_tour_id ... not part of static JSONB."
+-- in ko / ja / zh / zh-TW / es, plus one corrupted es iconBg
+-- (bookingTrustItems[2] = "bg-amber-50/80 *(código CSS — no se traduce)*").
+--
+-- That is why 08-guest-copy-repair.sql is numbered AFTER this one. It has
+-- already happened once for real: this file was re-run at 10:25 on 2026-08-04,
+-- some twenty minutes after the repair, and put all five notes straight back on
+-- the live product. Re-running 08 fixed it again (6 statements).
+--
+-- If you need to re-run this file, run 08 immediately after:
+--   node --env-file=.env.local scripts/apply-jsonb-repair-sql.mjs \
+--     supabase/pending-db-apply/applied/2026-08-04-08-guest-copy-repair.sql
+-- Both are idempotent, so that pair is always safe.
+--
+-- The file is deliberately NOT patched clean: applied/ records what executed.
+-- =============================================================================
+
+-- =============================================================================
 -- from-busan-gyeongju-ancient-capital-day-tour — COURSE REVISION (owner instruction 2026-08-04)
 -- =============================================================================
 -- Generated: 2026-08-04 (pending DB apply — this session has no DB access)
