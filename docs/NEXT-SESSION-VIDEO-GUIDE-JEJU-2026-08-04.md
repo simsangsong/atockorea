@@ -105,3 +105,42 @@ Schema A 서울 당일투어 4개 × 6로케일 = 24파일 수정. 설악산은 
 세 상품 모두 `itinerary_variants: []` 라 **서로를 모른다** — Klook 은 한 페이지에서 패키지를 갈아끼운다.
 세 형제를 상호 링크(변형 선택 UI)하는 것이 실질 개편 포인트. 가격도 비어 있다(Klook 와우정사 ₩71,300 ·
 민속촌 ₩93,300 — 우리 `price.amountLabel` 은 공백).
+
+## §9 수원 3형제 — 10로케일 DB 스테이징 (사장님 결정 2026-08-04: "DB 스테이징으로")
+
+**결정 근거는 코드로 확인했다.** `tourProductPageBody.tsx` 의 해결 순서는
+`Supabase(locale) → 정적 JSON(locale) → Supabase(en)` 이고, URL 로케일은 `toTourProductPageLocale()`
+가 6로케일로 좁힌다 — **de/fr/it/ru URL 은 locale='en' 으로 해석**되므로 `tour_product_pages` 에
+de 행을 넣어도 배열을 열기 전까지 고객 화면은 안 바뀐다. 무인 실행이 안전한 이유가 이것이다.
+
+**🔴 원격 세션에서는 실행 불가** — extract/apply 가 `SUPABASE_SERVICE_ROLE_KEY` 를 요구하는데
+클라우드 컨테이너에 `.env.local` 이 없고, Supabase MCP 는 이 테이블에 권한이 없다(실제로 시도해
+`permission denied` 받음). **PC 세션에서 아래를 그대로 돌려라.**
+
+```bash
+SLUGS=seoul-suwon-hwaseong-waujeongsa-starfield,seoul-suwon-hwaseong-folk-village-starfield-library,seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library
+
+npm run i18n:status                                     # 현재 큐 확인
+npm run i18n:extract -- --locale=de --slugs=$SLUGS       # 1) 유닛 추출 → i18n-work/in/
+#   2) 번역: i18n-work/RULES.md 전문을 주입한 서브에이전트로 in/ → out/   (요약 주입 금지)
+npm run i18n:verify                                     # 3) 게이트
+npm run i18n:apply -- --locale=de                       # 4) 드라이런
+npm run i18n:apply -- --locale=de --apply               #    실제 INSERT (기존 행은 절대 안 건드림)
+# fr / it / ru 반복
+```
+
+**선행 확인 하나:** 이 3슬러그가 `tour_product_pages` 에 `locale='en'` 행으로 있어야 extract 가 집는다.
+지금 매니페스트에 잡힌 10개(Tier1)에는 **없다**. 없으면 정적 JSON 의 en 문서를 먼저 DB 에 올려야 한다 —
+이건 스테이징이 아니라 **소스 등록**이므로 사장님 확인 후에.
+
+**🔴 정적 JSON 으로 fr/de/it/ru 파일을 만들지 마라.** `TourProductPageLocale` 이 6로케일로 타입에
+박혀 있어 레지스트리가 읽지 않는다 — 만들면 선언-미사용이 된다(이 리포의 지배적 결함 유형).
+
+## §10 추천 코스 연결 완료 (사장님 결정: 추천 레일에서만, 클룩 모방 X)
+
+법적·파트너십 리스크를 피해 **패키지 스와핑 UI 를 만들지 않았다.** 기존 추천 레일
+(`TourRecommendationsSection` ← `pickTourRecommendations`)이 형제를 못 집던 원인만 고쳤다:
+와우정사는 region 이 "Suwon & Yongin" 인데 나머지 둘은 "Gyeonggi-do (south of Seoul)" 이라
+region 토큰 교집합이 0 이었다(region 은 가중치 ×4 로 가장 무겁다). 실제 지리대로 고쳤다 —
+한국민속촌은 **용인**, 광명동굴은 **광명**(각 상품 자기 스톱 목록이 근거). 측정: 세 페이지 모두
+형제 2/2 가 상위 6 안에 노출(고치기 전엔 민속촌·광명 페이지가 각각 1/2, 와우정사를 못 집었다).
