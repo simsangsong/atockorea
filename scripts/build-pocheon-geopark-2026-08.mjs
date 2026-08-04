@@ -30,6 +30,13 @@ import path from "node:path";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
 const SLUG = "pocheon-sanjeong-lake-herb-island-art-valley";
+/**
+ * Owner-supplied Klook availability calendar (2026-08-04): a fixed-schedule
+ * departure, Monday / Thursday / Saturday only. Lower-case English keys, the
+ * same vocabulary `matching_profile.available_days_signature` uses, so the two
+ * can be diffed — but this one is what the guest-facing date picker reads.
+ */
+const DEPARTURE_WEEKDAYS = ["monday", "thursday", "saturday"];
 const DIR = path.join(ROOT, "components/product-tour-static", SLUG);
 const CONTENT_DIR = path.join(__dirname, "pocheon-geopark-content");
 const OVERLAY_DIR = path.join(CONTENT_DIR, "donor-overlay");
@@ -161,6 +168,19 @@ function build(loc) {
   const dd = spec.departureDays;
   if (!dd) throw new Error(`[${loc}] spec is missing departureDays`);
   doc.staticQuestions.splice(1, 0, { question: dd.faqQ, answer: dd.faqA });
+
+  /**
+   * 🔴 The machine-readable half. Everything above is prose — a badge, an
+   * accordion, an FAQ, a lessIdealFor line — and prose does not stop anyone
+   * booking a Tuesday. `matching_profile.available_days_signature` carries the
+   * same three days but that block is FORBIDDEN in segments.ts (recommender
+   * input, never translated, not in the view model), so the booking UI must not
+   * read it. This field is the presentational one the date picker filters on.
+   *
+   * Locale-invariant on purpose: weekday KEYS are not translated. The visible
+   * wording lives in the spec per locale; this is the contract.
+   */
+  doc.departureWeekdays = [...DEPARTURE_WEEKDAYS];
 
   doc.whyTourWorks = {
     ...doc.whyTourWorks,

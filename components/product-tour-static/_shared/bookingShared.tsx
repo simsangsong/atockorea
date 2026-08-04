@@ -182,6 +182,42 @@ export function useAvailabilityRange(tourId: string | undefined, enabled: boolea
   return { isYmdUnavailable, loadMonth };
 }
 
+/**
+ * Weekday keys as they appear in a bundle's `departureWeekdays`.
+ * `Date.getDay()` order, so the index IS the lookup.
+ */
+const WEEKDAY_KEYS = [
+  "sunday",
+  "monday",
+  "tuesday",
+  "wednesday",
+  "thursday",
+  "friday",
+  "saturday",
+] as const;
+
+/**
+ * Is this date one the tour actually departs on?
+ *
+ * 🔴 Why this exists. Pocheon is a fixed-schedule Mon/Thu/Sat departure — the
+ * owner's Klook calendar, and our own copy says in ten locales that the tour
+ * "can't be moved to another day". All of that was PROSE: a badge, an accordion,
+ * an FAQ, a lessIdealFor line. Nothing read it, so the picker happily accepted a
+ * Tuesday and the guest met the constraint at checkout, or not at all.
+ *
+ * Absent or empty `departureWeekdays` means "runs any day" — every other product
+ * is on-demand daily, so the permissive default is the correct one and this stays
+ * a no-op for them.
+ */
+export function isDepartureWeekday(
+  date: Date,
+  departureWeekdays: readonly string[] | null | undefined,
+): boolean {
+  if (!departureWeekdays || departureWeekdays.length === 0) return true;
+  const allowed = new Set(departureWeekdays.map((d) => String(d).trim().toLowerCase()));
+  return allowed.has(WEEKDAY_KEYS[date.getDay()]);
+}
+
 /** Static VM price → USD (DB/checkout contract). */
 export function parseListUnitUsd(price: { amountLabel: string; currency: string }): number | null {
   if (String(price.currency).toUpperCase() === "USD") {

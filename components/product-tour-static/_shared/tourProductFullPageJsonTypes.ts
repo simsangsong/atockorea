@@ -45,6 +45,12 @@ export const TOUR_PRODUCT_VIEW_MODEL_KEYS = [
    *  live external status feed (currently only `"haenyeo"` for Jeju east tours
    *  that include the haenyeo-show stop). */
   "liveStatusSection",
+  /** Optional — fixed-schedule departures (e.g. Pocheon runs Mon/Thu/Sat only).
+   *  Lower-case weekday keys; absent means the tour runs any day, which is the
+   *  on-demand default for every other product. The booking date pickers filter
+   *  on this — before it existed the constraint was prose only and nothing
+   *  stopped a guest picking a Tuesday. */
+  "departureWeekdays",
 ] as const;
 
 export type TourProductViewModelKey = (typeof TOUR_PRODUCT_VIEW_MODEL_KEYS)[number];
