@@ -566,7 +566,10 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 49, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "jeju-west-south-full-day-authentic-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-winter-southwest-tangerine-snow-camellia-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 49, compareAtPriceUsd: 62, maxGroupSize: 8 },
+  // 54, not 49 — owner confirmed 2026-08-04. The bundle, tours.price, the offer
+  // and every locale's detail_payload all already said 54; this override was the
+  // lone outlier, and the owner's Klook availability calendar reads 54.55 USD.
+  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, compareAtPriceUsd: 62, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },

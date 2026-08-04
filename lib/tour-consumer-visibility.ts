@@ -125,7 +125,22 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
-  "from-busan-gyeongju-ancient-capital-day-tour",
+  // ── Gyeongju re-opened 2026-08-04 (owner decision) ────────────────────────
+  // The from-busan-gyeongju-ancient-capital-day-tour slug was removed from this
+  // list. (Deliberately written without quotes: a naive scraper that greps this
+  // file for quoted slugs would otherwise read the slug back OUT of this comment
+  // and believe it is still blocked — that happened once while writing this.)
+  // It was narrowed out for the Klook 12-SKU listing on 2026-06-29, then re-coursed
+  // on 2026-08-04 (Ahopsan → Bulguksa → lunch → Gyochon+Choi+Woljeonggyo →
+  // Daereungwon+Hwangnidan-gil → National Museum, or Donggung & Wolji by night
+  // in Nov–Feb). This is the repo half; the DB half is
+  // supabase/pending-db-apply/applied/2026-08-04-10-gyeongju-reopen.sql, which
+  // flips tours.is_active and the six tour_product_pages.is_published flags that
+  // file 07 deliberately left alone. Both halves are needed to put it on sale.
+  //
+  // 🔴 Re-opened at the UNCHANGED price: USD 39 (compare-at 50) for what is now
+  // an 11.5-hour day ending ≈19:50 — it was 10.5 hours when that price was set.
+  // Repricing was not part of the re-open instruction; flagged, not assumed.
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
