@@ -248,6 +248,9 @@ export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   // Unsend (2026-08-04) — tombstone one's own recent message; free, no fan-out
   // beyond the room broadcast.
   'DELETE /api/tour-rooms/[bookingId]/messages/[messageId]': { actor: 'guest', tier: 'free' },
+  // §5-4 (2026-08-04) — text-only link preview; the fetch is SSRF-guarded and
+  // the harness uses an unfetchable-but-valid https URL, so tier stays free.
+  'GET /api/tour-rooms/[bookingId]/link-preview': { actor: 'guest', tier: 'free' },
 
   // ── operator ───────────────────────────────────────────────────────────────
   'POST /api/tour-rooms/broadcast': { actor: 'guide', tier: 'llm' },

@@ -9,25 +9,25 @@
 
 | 동사 | 판정 | 근거 (소스 probe) |
 |---|---|---|
-| 답장 (인용 + 원본 점프) | ✅ | `components/tour-mode/ChatFeed.tsx:1055` |
-| 반응 이모지 (고정 세트) | ◐ | `components/tour-mode/ChatFeed.tsx:68 — 5종 고정 · 피커 없음` |
-| 복사 | ✅ | `components/tour-mode/ChatFeed.tsx:1264` |
-| 원문 ↔ 번역 토글 | ✅ | `components/tour-mode/ChatFeed.tsx:612` |
-| 삭제 (unsend, 15분 툼스톤) | ✅ | `components/tour-mode/ChatFeed.tsx:1274` |
-| 읽음 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:938` |
-| 타이핑 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:381` |
-| 안읽음 구분선 | ✅ | `components/tour-mode/ChatFeed.tsx:693` |
-| 아래로 점프 + 새 메시지 배지 | ✅ | `components/tour-mode/ChatFeed.tsx:440` |
+| 답장 (인용 + 원본 점프) | ✅ | `components/tour-mode/ChatFeed.tsx:1093` |
+| 반응 이모지 (고정 세트) | ◐ | `components/tour-mode/ChatFeed.tsx:78 — 30종 고정 · 피커 없음` |
+| 복사 | ✅ | `components/tour-mode/ChatFeed.tsx:1318` |
+| 원문 ↔ 번역 토글 | ✅ | `components/tour-mode/ChatFeed.tsx:650` |
+| 삭제 (unsend, 15분 툼스톤) | ✅ | `components/tour-mode/ChatFeed.tsx:1354` |
+| 읽음 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:976` |
+| 타이핑 표시 | ✅ | `components/tour-mode/ChatFeed.tsx:399` |
+| 안읽음 구분선 | ✅ | `components/tour-mode/ChatFeed.tsx:731` |
+| 아래로 점프 + 새 메시지 배지 | ✅ | `components/tour-mode/ChatFeed.tsx:461` |
 | 음성 메시지 왕복 (STT→번역 / 한국어 TTS) | ✅ | `app/api/tour-rooms/[bookingId]/messages/route.ts:3` |
-| 사진·파일·링크 모아보기 + 더 보기 | ✅ | `components/tour-mode/RoomDrawer.tsx:499` |
+| 사진·파일·링크 모아보기 + 더 보기 | ✅ | `components/tour-mode/RoomDrawer.tsx:569` |
 | 사진 단건 저장 | ✅ | `components/tour-mode/Lightbox.tsx:106` |
 | 전달 (forward) | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx · components/tour-mode/Composer.tsx)` |
-| 메시지 단위 공유 (방 밖으로) | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx · components/tour-mode/Lightbox.tsx)` |
-| 채팅 내 검색 | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx · components/tour-mode/RoomDrawer.tsx)` |
+| 메시지 단위 공유 (텍스트만, §5-2) | ✅ | `components/tour-mode/ChatFeed.tsx:23` |
+| 채팅 내 검색 (§5-3) | ✅ | `components/tour-mode/RoomDrawer.tsx:514` |
 | 컴포저 이모지 피커 | ✗ | `0 hits (components/tour-mode/Composer.tsx)` |
-| 이미지 붙여넣기 (클립보드) | ✗ | `0 hits (components/tour-mode/Composer.tsx)` |
-| 링크 프리뷰 (OG 카드) | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx)` |
+| 이미지 붙여넣기 (클립보드, §5-6) | ✅ | `components/tour-mode/Composer.tsx:484` |
+| 링크 프리뷰 (텍스트만, §5-4) | ✅ | `components/tour-mode/ChatFeed.tsx:24` |
 | 사진 일괄 저장 | ✗ | `0 hits (components/tour-mode/RoomDrawer.tsx)` |
-| 메시지 → 공지 승격 | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx)` |
+| 메시지 → 공지 승격 (가이드, §5-6) | ✅ | `components/tour-mode/ChatFeed.tsx:395` |
 
-집계: 존재 12 / 20
+집계: 존재 17 / 20

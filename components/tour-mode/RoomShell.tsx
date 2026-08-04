@@ -333,7 +333,8 @@ export default function RoomShell({
    */
   renderDrawer?: (api: {
     close: () => void;
-    selectTab: (tab: 'schedule' | 'map' | 'settings') => void;
+    /** §5-3 widened to every tab — drawer search jumps back into 'chat'. */
+    selectTab: (tab: RoomTab) => void;
     openConcierge: () => void;
     openEmergency: () => void;
   }) => ReactNode;

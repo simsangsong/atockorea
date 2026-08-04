@@ -20,6 +20,9 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import AudioButton from '@/components/tour-mode/AudioButton';
+import { shareTimelineText } from '@/lib/tour-room/timelineShare';
+import LinkPreviewCard from '@/components/tour-mode/LinkPreviewCard';
+import { firstUrlIn } from '@/lib/tour-room/linkPreview';
 import Avatar from '@/components/tour-mode/Avatar';
 import ExtraLedgerCard, { type ExtraLedgerMeta } from '@/components/tour-mode/ExtraLedgerCard';
 import SpotArrivalCard from '@/components/tour-mode/SpotArrivalCard';
@@ -47,6 +50,7 @@ import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   IconCopy,
+  IconOpenExternal,
   IconTrash,
   IconFile,
   IconInstall,
@@ -65,7 +69,20 @@ import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
 
 /** Quick emoji set for the reaction row (Phase 2c). */
-const REACTION_EMOJI = ['👍', '❤️', '😂', '😮', '🙏'];
+/**
+ * 사장님 결정 2026-08-04 §5-1: 5종 → 30종. 앞의 다섯은 기존 집계 데이터와의
+ * 연속성 때문에 자리를 지킨다. 서버(reactions route)는 짧은 이모지면 무엇이든
+ * 받으므로(≤8 유닛) 정본은 이 리터럴 하나다. ZWJ 합성 이모지는 서버 길이 캡에
+ * 걸릴 수 있어 제외.
+ */
+const REACTION_EMOJI = [
+  '👍', '❤️', '😂', '😮', '🙏',
+  '😢', '🎉', '👏', '🔥', '💯',
+  '😍', '🤩', '😊', '😅', '😭',
+  '🥰', '🙌', '👌', '✨', '🤔',
+  '😴', '🫶', '💪', '☕', '🍜',
+  '🍺', '📸', '🌊', '🚌', '⏰',
+];
 
 const READ_LABEL: Record<RoomLocale, string> = { en: 'Read', ko: '읽음', ja: '既読', es: 'Leído', zh: '已读', 'zh-TW': '已讀', fr: 'Lu', de: 'Gelesen', ru: 'Прочитано', it: 'Letto' };
 const TYPING_LABEL: Record<RoomLocale, string> = {
@@ -305,17 +322,17 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
 };
 
 /** Long-press action-sheet labels (Phase 2b). */
-const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: string; original: string; translated: string; close: string; copied: string; unsend: string; deleted: string }> = {
-  en: { title: 'Message', reply: 'Reply', copy: 'Copy', original: 'Show original', translated: 'Show translation', close: 'Close', copied: 'Copied', unsend: 'Delete for everyone', deleted: 'Message deleted' },
-  ko: { title: '메시지', reply: '답장', copy: '복사', original: '원문 보기', translated: '번역 보기', close: '닫기', copied: '복사됨', unsend: '모두에게서 삭제', deleted: '삭제된 메시지' },
-  ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました', unsend: '全員から削除', deleted: '削除されたメッセージ' },
-  es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado', unsend: 'Eliminar para todos', deleted: 'Mensaje eliminado' },
-  zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制', unsend: '对所有人删除', deleted: '消息已删除' },
-  'zh-TW': { title: '訊息', reply: '回覆', copy: '複製', original: '查看原文', translated: '查看翻譯', close: '關閉', copied: '已複製', unsend: '對所有人刪除', deleted: '訊息已刪除' },
-  fr: { title: 'Message', reply: 'Répondre', copy: 'Copier', original: 'Voir l’original', translated: 'Voir la traduction', close: 'Fermer', copied: 'Copié', unsend: 'Supprimer pour tous', deleted: 'Message supprimé' },
-  de: { title: 'Nachricht', reply: 'Antworten', copy: 'Kopieren', original: 'Original anzeigen', translated: 'Übersetzung anzeigen', close: 'Schließen', copied: 'Kopiert', unsend: 'Für alle löschen', deleted: 'Nachricht gelöscht' },
-  ru: { title: 'Сообщение', reply: 'Ответить', copy: 'Копировать', original: 'Показать оригинал', translated: 'Показать перевод', close: 'Закрыть', copied: 'Скопировано', unsend: 'Удалить у всех', deleted: 'Сообщение удалено' },
-  it: { title: 'Messaggio', reply: 'Rispondi', copy: 'Copia', original: 'Mostra originale', translated: 'Mostra traduzione', close: 'Chiudi', copied: 'Copiato', unsend: 'Elimina per tutti', deleted: 'Messaggio eliminato' },
+const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: string; original: string; translated: string; close: string; copied: string; unsend: string; deleted: string; share: string; promote: string }> = {
+  en: { title: 'Message', reply: 'Reply', copy: 'Copy', original: 'Show original', translated: 'Show translation', close: 'Close', copied: 'Copied', unsend: 'Delete for everyone', deleted: 'Message deleted', share: 'Share (text only)', promote: 'Announce to everyone' },
+  ko: { title: '메시지', reply: '답장', copy: '복사', original: '원문 보기', translated: '번역 보기', close: '닫기', copied: '복사됨', unsend: '모두에게서 삭제', deleted: '삭제된 메시지', share: '공유 (텍스트만)', promote: '전체 공지로 재전송' },
+  ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました', unsend: '全員から削除', deleted: '削除されたメッセージ', share: '共有（テキストのみ）', promote: '全体のお知らせとして再送' },
+  es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado', unsend: 'Eliminar para todos', deleted: 'Mensaje eliminado', share: 'Compartir (solo texto)', promote: 'Anunciar a todos' },
+  zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制', unsend: '对所有人删除', deleted: '消息已删除', share: '分享（仅文本）', promote: '作为公告转发给全员' },
+  'zh-TW': { title: '訊息', reply: '回覆', copy: '複製', original: '查看原文', translated: '查看翻譯', close: '關閉', copied: '已複製', unsend: '對所有人刪除', deleted: '訊息已刪除', share: '分享（僅文字）', promote: '作為公告轉發給全員' },
+  fr: { title: 'Message', reply: 'Répondre', copy: 'Copier', original: 'Voir l’original', translated: 'Voir la traduction', close: 'Fermer', copied: 'Copié', unsend: 'Supprimer pour tous', deleted: 'Message supprimé', share: 'Partager (texte seul)', promote: 'Annoncer à tous' },
+  de: { title: 'Nachricht', reply: 'Antworten', copy: 'Kopieren', original: 'Original anzeigen', translated: 'Übersetzung anzeigen', close: 'Schließen', copied: 'Kopiert', unsend: 'Für alle löschen', deleted: 'Nachricht gelöscht', share: 'Teilen (nur Text)', promote: 'An alle ankündigen' },
+  ru: { title: 'Сообщение', reply: 'Ответить', copy: 'Копировать', original: 'Показать оригинал', translated: 'Показать перевод', close: 'Закрыть', copied: 'Скопировано', unsend: 'Удалить у всех', deleted: 'Сообщение удалено', share: 'Поделиться (только текст)', promote: 'Объявить всем' },
+  it: { title: 'Messaggio', reply: 'Rispondi', copy: 'Copia', original: 'Mostra originale', translated: 'Mostra traduzione', close: 'Chiudi', copied: 'Copiato', unsend: 'Elimina per tutti', deleted: 'Messaggio eliminato', share: 'Condividi (solo testo)', promote: 'Annuncia a tutti' },
 };
 
 /** Attachment metadata carried on image/file messages (Phase 1 route). */
@@ -375,6 +392,7 @@ export default function ChatFeed({
   onExtraConfirm,
   preferredLocale = null,
   onReply,
+  onPromoteToNotice,
   reactions,
   onReact,
   lastReadByOthersAt = null,
@@ -400,6 +418,9 @@ export default function ChatFeed({
   /** Language-agnostic bridge: the viewer's detected chat language ('fr' …) —
    *  preferred over the folded room locale when a translation exists. */
   preferredLocale?: string | null;
+  /** §5-6 — staff only: re-send this message's text as an all-rooms announce
+   *  (GR-002; the notice ENGINE existed, promotion was the missing door). */
+  onPromoteToNotice?: (text: string) => void;
   /** Unsend ownership (2026-08-04): a guest may only delete a message stamped
    *  with THEIR participant id — role alone cannot tell two guests apart. */
   myParticipantId?: string | null;
@@ -461,6 +482,23 @@ export default function ChatFeed({
     const pid = (m.metadata as { sender_participant_id?: unknown } | null)?.sender_participant_id;
     return Boolean(myParticipantId) && pid === myParticipantId;
   };
+  /**
+   * 사장님 결정 §5-2 (2026-08-04): 방 밖 공유는 **텍스트만**. 뷰어가 읽고 있는
+   * 그 문장(자기 언어)만 나간다 — 발신자명·사진 서명 URL·링크 프리뷰는 싣지
+   * 않는다(능력 URL 유출·PII, X17 이 사진을 뺀 이유와 동일). 그릇은 검증된
+   * shareTimelineText(카톡/WhatsApp 도달, 데스크톱은 클립보드 폴백).
+   */
+  const shareMessage = async (m: RoomMessage) => {
+    const text = displayText(m, viewerLocale, originals.has(m.id), preferredLocale).trim();
+    if (!text) return;
+    const outcome = await shareTimelineText(typeof navigator === 'undefined' ? undefined : navigator, {
+      title: '',
+      text,
+    });
+    if (outcome === 'copied') setCopiedNote(true);
+    setActionMsg(null);
+  };
+
   const unsend = async (m: RoomMessage) => {
     if (!tts) return;
     try {
@@ -1061,6 +1099,22 @@ export default function ChatFeed({
               bubble
             );
 
+            /* §5-4 — a text bubble carrying a URL grows a text-only preview
+               card beneath it (server-fetched OG title/description, no image).
+               Local echoes wait for the server copy; tombstones carry nothing. */
+            const previewUrl =
+              tts && !message._local && !message.id.startsWith('local-')
+                ? firstUrlIn(displayText(message, viewerLocale, showingOriginal, preferredLocale))
+                : null;
+            const bubbleWithPreview = previewUrl ? (
+              <div className={`flex min-w-0 flex-col ${mine ? 'items-end' : 'items-start'}`}>
+                {bubbleEl}
+                <LinkPreviewCard url={previewUrl} bookingId={tts!.bookingId} roomSession={tts!.roomSession} />
+              </div>
+            ) : (
+              bubbleEl
+            );
+
             if (mine) {
               return (
                 <div className={`flex min-w-0 justify-end pl-12 ${groupStart ? 'mt-2' : 'mt-0.5'} ${animClass}`}>
@@ -1075,7 +1129,7 @@ export default function ChatFeed({
                       inner row too keeps the gutter honest at the small end. */}
                   <div className="flex min-w-0 max-w-full items-end gap-1.5 sm:max-w-[76%]">
                     {metaColumn}
-                    <div className="min-w-0">{bubbleEl}</div>
+                    <div className="min-w-0">{bubbleWithPreview}</div>
                   </div>
                 </div>
               );
@@ -1109,7 +1163,7 @@ export default function ChatFeed({
                     </div>
                   )}
                   <div className="flex items-end gap-1.5">
-                    <div className="min-w-0">{bubbleEl}</div>
+                    <div className="min-w-0">{bubbleWithPreview}</div>
                     {metaColumn}
                   </div>
                   {listenable && tts && (
@@ -1226,7 +1280,7 @@ export default function ChatFeed({
         <Sheet open onClose={() => setActionMsg(null)} closeLabel={action.close} title={action.title}>
           <div className="flex flex-col">
             {onReact && (
-              <div className="mb-1 flex items-center justify-around gap-1 border-b border-[var(--tr-hairline)] px-1 pb-3">
+              <div className="mb-1 grid grid-cols-6 justify-items-center gap-0.5 border-b border-[var(--tr-hairline)] px-1 pb-3">
                 {REACTION_EMOJI.map((emoji) => (
                   <button
                     key={emoji}
@@ -1266,6 +1320,32 @@ export default function ChatFeed({
               <IconCopy size={TR_ICON.action} aria-hidden />
               {copiedNote ? action.copied : action.copy}
             </button>
+            {Boolean(displayText(actionMsg, viewerLocale, originals.has(actionMsg.id), preferredLocale).trim()) && (
+              <button
+                type="button"
+                onClick={() => void shareMessage(actionMsg)}
+                className="tr-card-text text-cjk-safe flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+                data-testid="action-share"
+              >
+                <IconOpenExternal size={TR_ICON.action} aria-hidden />
+                {action.share}
+              </button>
+            )}
+            {onPromoteToNotice &&
+              Boolean(displayText(actionMsg, viewerLocale, originals.has(actionMsg.id), preferredLocale).trim()) && (
+                <button
+                  type="button"
+                  onClick={() => {
+                    onPromoteToNotice(displayText(actionMsg, viewerLocale, originals.has(actionMsg.id), preferredLocale).trim());
+                    setActionMsg(null);
+                  }}
+                  className="tr-card-text text-cjk-safe flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-ink)] active:bg-[var(--tr-surface-2)]"
+                  data-testid="action-promote"
+                >
+                  <IconReply size={TR_ICON.action} aria-hidden />
+                  {action.promote}
+                </button>
+              )}
             {canUnsend(actionMsg) && (
               <button
                 type="button"
