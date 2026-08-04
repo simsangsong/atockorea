@@ -28,6 +28,7 @@ import OpsManifestView from '@/components/tour-ops/OpsManifestView';
 import OpsRoomVehiclePanel from '@/components/tour-ops/OpsRoomVehiclePanel';
 import OpsRoomCardSetPanel from '@/components/tour-ops/OpsRoomCardSetPanel';
 import OpsRoomNotesPanel from '@/components/tour-ops/OpsRoomNotesPanel';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 const FEED_LIMIT = 80;
 
@@ -291,7 +292,7 @@ export default function OpsRoomDrawer({
 
         {view === 'chat' && (
         <div ref={feedRef} className="min-h-[200px] flex-1 space-y-2 overflow-y-auto px-4 py-3">
-          {backlogLoading && feed.length === 0 && <p className="text-center tr-label text-[var(--tr-ink-3)]">피드를 불러오는 중…</p>}
+          {backlogLoading && feed.length === 0 && <SkeletonRows rows={3} />}
           {!backlogLoading && feed.length === 0 && <p className="text-center tr-label text-[var(--tr-ink-3)]">아직 메시지가 없습니다.</p>}
           {feed.map((message) => {
             const mine = message.sender_role === 'admin';

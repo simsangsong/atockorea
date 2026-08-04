@@ -13,6 +13,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { IconReceipt, TR_ICON } from '../icons';
+import { SkeletonRows } from '../LoadingHint';
 import { formatKrw, EXTRA_KIND_LABELS, type ExtraKind } from '@/lib/tour-room/ledger';
 
 interface ExtraRow {
@@ -145,7 +146,7 @@ export default function GuideLedgerPanel({
       </div>
 
       {extras === null ? (
-        <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">불러오는 중…</p>
+        <SkeletonRows rows={2} className="mt-2" />
       ) : extras.length === 0 ? (
         <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">기록된 지출이 없어요.</p>
       ) : (

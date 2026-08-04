@@ -855,7 +855,7 @@ function NoShowEvidenceSheet({
         <div className="mt-2 flex items-start gap-2 rounded-xl bg-[var(--tr-surface-2)] px-3 py-2.5" data-testid="evidence-gps">
           <IconArrived size={TR_ICON.chip} className="mt-0.5 shrink-0 text-[var(--tr-ink-2)]" aria-hidden />
           <p className="tr-label text-[var(--tr-ink-2)] tabular-nums">
-            {gps.kind === 'pending' && '위치 확인 중…'}
+            {gps.kind === 'pending' && <span className="animate-pulse">위치 확인 중…</span>}
             {gps.kind === 'ok' &&
               `${gps.latitude.toFixed(5)}, ${gps.longitude.toFixed(5)}${gps.accuracyM !== null ? ` (±${gps.accuracyM}m)` : ''}`}
             {gps.kind === 'failed' && `${gps.reason} — 사유를 적어주세요`}
@@ -963,7 +963,8 @@ function CheckinQrOverlay({
           // eslint-disable-next-line @next/next/no-img-element
           <img src={dataUrl} alt="check-in QR" width={320} height={320} data-testid="qr-image" />
         ) : (
-          <p className="tr-card-text text-neutral-400">불러오는 중…</p>
+          // The QR is a known 320px square — the wait shows that exact shape.
+          <div className="h-[320px] w-[320px] animate-pulse rounded bg-[var(--tr-surface-2)]" aria-hidden data-testid="qr-skeleton" />
         )}
       </div>
       <div className="mt-6 flex gap-2">

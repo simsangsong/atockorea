@@ -27,6 +27,7 @@ import { OPS_PHONE } from '@/lib/tour-room/emergency';
 import { motion } from 'framer-motion';
 import { useTourRoomChannel, type RoomMessage } from '@/hooks/useTourRoomChannel';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 import NavBrandButton from '@/components/tour-mode/NavBrandButton';
 import { useTourRoomSettings, useShellSurface } from '@/hooks/useTourRoomSettings';
 import { useGeoWatcher } from '@/hooks/useGeoWatcher';
@@ -965,6 +966,8 @@ export default function Cockpit({
       else if (error.code === error.TIMEOUT) say('위치를 못 잡았어요 — 실외로 나가서 다시 눌러주세요');
       else say('지금 위치를 확인할 수 없어요 — 잠시 후 다시 시도해 주세요');
     };
+    // C-2 survivor (UX-003): this rides a 2.5s self-dismissing toast — transient
+    // feedback, not a standing wait, so it carries no skeleton on purpose.
     say('주차 위치 확인 중…');
     navigator.geolocation.getCurrentPosition(send, () => {
       // Second attempt: coarse network fix, longer window, cached fix allowed.
@@ -2458,7 +2461,7 @@ export default function Cockpit({
       {sheet === 'summary' ? (
         <Sheet onClose={() => setSheet('none')} title="오늘 요약">
           {!daySummary ? (
-            <p className="tr-body-lg py-4 text-center text-[var(--tr-ink-2)]">불러오는 중…</p>
+            <SkeletonRows rows={4} className="py-2" />
           ) : (
             <div className="flex max-h-[60vh] flex-col gap-3 overflow-y-auto" data-testid="day-summary">
               {/* SG-7a — 오늘의 나: four honest numbers. No ranking, ever

@@ -21,6 +21,7 @@ import { ChevronLeft, ChevronRight, Download, RefreshCw, X } from 'lucide-react'
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import { shiftMonth, WEEKDAY_LABELS, type DayCell } from '@/lib/ops/guides/availability';
 import { ISSUE_LABEL, type CellIssue, type ScheduleAxis } from '@/lib/ops/schedule/matrix';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 interface WireCell {
   date: string;
@@ -211,7 +212,7 @@ export default function OpsScheduleCalendar({
         )}
 
         {loading && !data ? (
-          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <SkeletonRows rows={3} className="py-4" />
         ) : !data || data.rows.length === 0 ? (
           <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             {axis === 'guide'

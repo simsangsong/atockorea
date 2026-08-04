@@ -71,7 +71,16 @@ const PALETTE =
   /\b(?:text|bg|border|ring|from|to|via)-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-\d{2,3}\b/g;
 /** A loading string rendered as content, in any of the room locales. */
 const LOADING_STRING = /(불러오는\s*중|확인\s*중|로딩\s*중|Loading[.…]|読み込み中|加载中|Cargando|Chargement|Caricamento|Загрузка)/;
-const HAS_SHAPE = /animate-pulse|animate-spin|Skeleton/;
+/** LoadingHint IS the shared shape idiom (UX-003) — a file that renders it has
+ *  a spinner, even though the ring's classes live in the imported component. */
+const HAS_SHAPE = /animate-pulse|animate-spin|Skeleton|LoadingHint/;
+/**
+ * A locale/string TABLE entry (`confirming: '확인 중…',`) is data, not a wait
+ * the guest is looking at — the render site is judged on its own line. Without
+ * this, every localized copy table re-flags a file whose actual wait already
+ * has a shape (ExtraLedgerCard after UX-003). Pinned by the negative fixture.
+ */
+const PROPERTY_LINE = /^\s*[\w$]+:\s*['"]/;
 /** How far from the loading string a shape still counts as belonging to it. */
 const PROXIMITY = 10;
 
@@ -98,6 +107,7 @@ for (const f of files) {
   const hits = [];
   for (let i = 0; i < lines.length; i += 1) {
     if (!LOADING_STRING.test(lines[i])) continue;
+    if (PROPERTY_LINE.test(lines[i])) continue;
     const from = Math.max(0, i - PROXIMITY);
     const to = Math.min(lines.length, i + PROXIMITY + 1);
     if (!HAS_SHAPE.test(lines.slice(from, to).join('\n'))) hits.push(i + 1);

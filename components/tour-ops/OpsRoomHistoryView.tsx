@@ -20,6 +20,7 @@ import { ChevronLeft, ChevronRight, Download, RefreshCw, X } from 'lucide-react'
 import { getOpsToken } from '@/components/tour-ops/opsShared';
 import { ROOM_HEALTH_LABEL, type RoomHealth, type RoomMonthResult, type RoomMonthRow } from '@/lib/ops/rooms/monthly';
 import { shiftMonth } from '@/lib/ops/guides/availability';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 type Filter = 'dead' | 'all' | 'active' | 'quiet' | 'closed';
 
@@ -199,7 +200,7 @@ export default function OpsRoomHistoryView({
         )}
 
         {loading && !data ? (
-          <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
+          <SkeletonRows rows={3} className="py-4" />
         ) : rows.length === 0 ? (
           <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
             {filter === 'dead'

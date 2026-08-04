@@ -24,6 +24,7 @@
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { IconClose, IconWarn, TR_ICON } from '../icons';
+import { SkeletonRows } from '../LoadingHint';
 import type { DayPlanStop } from '@/lib/tour-room/dayPlan';
 import {
   markNewStops,
@@ -280,7 +281,7 @@ export default function GuidePlanPanel({
     );
   }
   if (!data) {
-    return <p className="tr-label mt-2 px-1 text-[var(--tr-ink-3)]">일정 불러오는 중…</p>;
+    return <SkeletonRows rows={2} className="mt-2 px-1" />;
   }
 
   const needs = needsSummary(data.day_plan?.needs);

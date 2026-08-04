@@ -39,6 +39,7 @@ import { WA_PRESETS, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import { SKIP_REASON_LABEL } from '@/lib/ops/messaging/guestMessage';
 import { unknownTokens } from '@/lib/ops/messaging/template';
 import type { DailyForecast } from '@/lib/ops/weather/forecast';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 interface TourGroup {
   tourId: string;
@@ -346,7 +347,7 @@ export default function OpsGuestMessagingView({
         {/* ── 1단계: 그날의 투어 고르기 ─────────────────────────────── */}
         {!openTour ? (
           loading ? (
-            <p className="py-12 text-center tr-card-text text-[var(--tr-ink-3)]">불러오는 중…</p>
+            <SkeletonRows rows={3} className="py-4" />
           ) : groups.length === 0 ? (
             <p className="text-cjk-body py-12 text-center tr-card-text text-[var(--tr-ink-3)]">
               이 날짜에 투어룸이 없습니다.
@@ -444,7 +445,7 @@ export default function OpsGuestMessagingView({
                   <CloudSun className="mt-0.5 size-4 shrink-0 text-[var(--tr-ink-3)]" />
                   <p className="text-cjk-body tr-label leading-relaxed text-[var(--tr-ink-2)]">
                     {previewLoading || !preview
-                      ? '예보 확인 중…'
+                      ? <span className="animate-pulse">예보 확인 중…</span>
                       : preview.forecast
                         ? `${preview.city ?? ''} ${date} 예보 — 최저 ${Math.round(preview.forecast.tempMinC)}° / 최고 ${Math.round(preview.forecast.tempMaxC)}°, 강수확률 ${Math.round(preview.forecast.precipProbability)}%. 아래 문구에 날씨·착장 안내가 자동으로 들어갑니다.`
                         : '예보를 가져오지 못했습니다 — 날씨·착장 문장은 빼고 발송됩니다.'}

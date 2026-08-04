@@ -24,6 +24,7 @@ import { getOpsToken } from '@/components/tour-ops/opsShared';
 import GuideRestNotice from '@/components/tour-ops/GuideRestNotice';
 import { useResolvedTheme, useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import { useConfirmSheet } from '@/components/tour-mode/ConfirmSheet';
+import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
 
 interface ManagedBooking {
   id: string;
@@ -356,7 +357,7 @@ export default function OpsRoomManager({
       <GuideRestNotice date={viewDate} />
       <div className="mx-auto w-full max-w-3xl">
         {loading && bookings.length === 0 ? (
-          <p className={`mt-16 text-center tr-card-text ${T.sub}`}>불러오는 중…</p>
+          <SkeletonRows rows={3} className="mt-8" />
         ) : bookings.length === 0 ? (
           <div className="mt-16 text-center">
             <p className={`tr-card-text ${T.sub}`}>{viewDate}에 예약이 없습니다.</p>
@@ -740,6 +741,7 @@ function ManualBookingSheet({
           <div>
             <label className={`mb-1 block tr-label font-semibold ${T.label}`}>투어 *</label>
             <select value={tourId} onChange={(e) => setTourId(e.target.value)} className={field} data-testid="mb-tour">
+              {/* C-2 survivor (UX-003): a native <option> cannot hold a shape. */}
               {tours.length === 0 && <option value="">불러오는 중…</option>}
               {tours.map((tour) => (
                 <option key={tour.id} value={tour.id}>

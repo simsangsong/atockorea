@@ -25,10 +25,15 @@ const SCRIPT = path.join(ROOT, 'scripts/qa-uiux-consistency.mjs');
  * Ratchet down; never up. Lower the ceiling in the SAME commit that lowers the
  * count, or the slack silently becomes room for the next regression.
  *   20 → 19  (U9, UX-001: the guide console loading branch got a skeleton)
+ *   bypass 104 → 65  (U9, UX-004: the skin swatch table became generated)
+ *   loading 19 → 2   (U9, UX-003: shared LoadingHint/SkeletonRows sweep)
  */
 const CEILING = {
   tokenBypass: 65,
-  bareLoadingFiles: 19,
+  // The two survivors are structural, not neglect: Cockpit's parking string is
+  // a 2.5s self-dismissing toast (feedback, not a standing wait), and
+  // OpsRoomManager's is a native <option> that cannot hold a shape.
+  bareLoadingFiles: 2,
   scannedAtLeast: 100,
 };
 
