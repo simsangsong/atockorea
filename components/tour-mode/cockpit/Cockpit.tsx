@@ -712,6 +712,12 @@ export default function Cockpit({
     for (const message of messages) {
       if (playedRef.current.has(message.id)) continue;
       if ((message.sender_role !== 'customer' && !isSpokenSignal(message)) || message._local) continue;
+      // An unsent message has nothing to say — and its rebroadcast must not
+      // burn a TTS call on empty text.
+      if ((message.metadata as { deleted?: unknown } | null)?.deleted === true) {
+        playedRef.current.add(message.id);
+        continue;
+      }
       // Wait for translation repair (R-6) before speaking — a pending message
       // would otherwise be read aloud in the guest's language with a Korean
       // voice. Leave it unmarked so the repaired rebroadcast (same id) plays.

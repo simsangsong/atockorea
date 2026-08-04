@@ -1370,6 +1370,7 @@ function TourRoomLive({
             viewerRole={viewerRole}
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
+            myParticipantId={data.participant.id}
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
             preferredLocale={viewerRole === 'customer' ? chatLocale : null}
             onReply={!readOnly ? (m) => setReplyTo(m) : undefined}

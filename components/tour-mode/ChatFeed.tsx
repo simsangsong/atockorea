@@ -47,6 +47,7 @@ import { parseLocationMessage } from '@/lib/tour-room/locationMessage';
 import Sheet from '@/components/tour-mode/Sheet';
 import {
   IconCopy,
+  IconTrash,
   IconFile,
   IconInstall,
   IconMore,
@@ -304,17 +305,17 @@ const ROLE_LABEL: Record<RoomLocale, Record<string, string>> = {
 };
 
 /** Long-press action-sheet labels (Phase 2b). */
-const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: string; original: string; translated: string; close: string; copied: string }> = {
-  en: { title: 'Message', reply: 'Reply', copy: 'Copy', original: 'Show original', translated: 'Show translation', close: 'Close', copied: 'Copied' },
-  ko: { title: '메시지', reply: '답장', copy: '복사', original: '원문 보기', translated: '번역 보기', close: '닫기', copied: '복사됨' },
-  ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました' },
-  es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado' },
-  zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制' },
-  'zh-TW': { title: '訊息', reply: '回覆', copy: '複製', original: '查看原文', translated: '查看翻譯', close: '關閉', copied: '已複製' },
-  fr: { title: 'Message', reply: 'Répondre', copy: 'Copier', original: 'Voir l’original', translated: 'Voir la traduction', close: 'Fermer', copied: 'Copié' },
-  de: { title: 'Nachricht', reply: 'Antworten', copy: 'Kopieren', original: 'Original anzeigen', translated: 'Übersetzung anzeigen', close: 'Schließen', copied: 'Kopiert' },
-  ru: { title: 'Сообщение', reply: 'Ответить', copy: 'Копировать', original: 'Показать оригинал', translated: 'Показать перевод', close: 'Закрыть', copied: 'Скопировано' },
-  it: { title: 'Messaggio', reply: 'Rispondi', copy: 'Copia', original: 'Mostra originale', translated: 'Mostra traduzione', close: 'Chiudi', copied: 'Copiato' },
+const ACTION_COPY: Record<RoomLocale, { title: string; reply: string; copy: string; original: string; translated: string; close: string; copied: string; unsend: string; deleted: string }> = {
+  en: { title: 'Message', reply: 'Reply', copy: 'Copy', original: 'Show original', translated: 'Show translation', close: 'Close', copied: 'Copied', unsend: 'Delete for everyone', deleted: 'Message deleted' },
+  ko: { title: '메시지', reply: '답장', copy: '복사', original: '원문 보기', translated: '번역 보기', close: '닫기', copied: '복사됨', unsend: '모두에게서 삭제', deleted: '삭제된 메시지' },
+  ja: { title: 'メッセージ', reply: '返信', copy: 'コピー', original: '原文を表示', translated: '翻訳を表示', close: '閉じる', copied: 'コピーしました', unsend: '全員から削除', deleted: '削除されたメッセージ' },
+  es: { title: 'Mensaje', reply: 'Responder', copy: 'Copiar', original: 'Ver original', translated: 'Ver traducción', close: 'Cerrar', copied: 'Copiado', unsend: 'Eliminar para todos', deleted: 'Mensaje eliminado' },
+  zh: { title: '消息', reply: '回复', copy: '复制', original: '查看原文', translated: '查看翻译', close: '关闭', copied: '已复制', unsend: '对所有人删除', deleted: '消息已删除' },
+  'zh-TW': { title: '訊息', reply: '回覆', copy: '複製', original: '查看原文', translated: '查看翻譯', close: '關閉', copied: '已複製', unsend: '對所有人刪除', deleted: '訊息已刪除' },
+  fr: { title: 'Message', reply: 'Répondre', copy: 'Copier', original: 'Voir l’original', translated: 'Voir la traduction', close: 'Fermer', copied: 'Copié', unsend: 'Supprimer pour tous', deleted: 'Message supprimé' },
+  de: { title: 'Nachricht', reply: 'Antworten', copy: 'Kopieren', original: 'Original anzeigen', translated: 'Übersetzung anzeigen', close: 'Schließen', copied: 'Kopiert', unsend: 'Für alle löschen', deleted: 'Nachricht gelöscht' },
+  ru: { title: 'Сообщение', reply: 'Ответить', copy: 'Копировать', original: 'Показать оригинал', translated: 'Показать перевод', close: 'Закрыть', copied: 'Скопировано', unsend: 'Удалить у всех', deleted: 'Сообщение удалено' },
+  it: { title: 'Messaggio', reply: 'Rispondi', copy: 'Copia', original: 'Mostra originale', translated: 'Mostra traduzione', close: 'Chiudi', copied: 'Copiato', unsend: 'Elimina per tutti', deleted: 'Messaggio eliminato' },
 };
 
 /** Attachment metadata carried on image/file messages (Phase 1 route). */
@@ -381,6 +382,7 @@ export default function ChatFeed({
   focusMessageId = null,
   variant = 'room',
   renderMessageExtra,
+  myParticipantId = null,
 }: {
   messages: RoomMessage[];
   viewerLocale: RoomLocale;
@@ -398,6 +400,9 @@ export default function ChatFeed({
   /** Language-agnostic bridge: the viewer's detected chat language ('fr' …) —
    *  preferred over the folded room locale when a translation exists. */
   preferredLocale?: string | null;
+  /** Unsend ownership (2026-08-04): a guest may only delete a message stamped
+   *  with THEIR participant id — role alone cannot tell two guests apart. */
+  myParticipantId?: string | null;
   /** Kakao-grade reply (Phase 2b): long-press a bubble → this sets the reply
    *  context in the composer. Absent = no reply affordance. */
   onReply?: (message: RoomMessage) => void;
@@ -438,6 +443,36 @@ export default function ChatFeed({
   const [actionMsg, setActionMsg] = useState<RoomMessage | null>(null);
   const [copiedNote, setCopiedNote] = useState(false);
   const action = ACTION_COPY[viewerLocale] ?? ACTION_COPY.en;
+
+  /**
+   * Unsend (2026-08-04) — 15-minute window, tombstone on the server, replace
+   * by id over the wire. Staff own their role's messages (one driver, one
+   * guide per van); a guest owns only messages stamped with their participant
+   * id, because "mine" here is a ROLE alignment and cannot tell guests apart.
+   */
+  const staffViewer = viewerRole === 'guide' || viewerRole === 'driver' || viewerRole === 'admin';
+  const canUnsend = (m: RoomMessage): boolean => {
+    if (!tts || m._local || m.id.startsWith('local-')) return false;
+    if ((m.metadata as { deleted?: unknown } | null)?.deleted === true) return false;
+    if (m.sender_role !== viewerRole) return false;
+    const age = Date.now() - new Date(m.created_at).getTime();
+    if (!Number.isFinite(age) || age > 15 * 60 * 1000) return false;
+    if (staffViewer) return true;
+    const pid = (m.metadata as { sender_participant_id?: unknown } | null)?.sender_participant_id;
+    return Boolean(myParticipantId) && pid === myParticipantId;
+  };
+  const unsend = async (m: RoomMessage) => {
+    if (!tts) return;
+    try {
+      await fetch(`/api/tour-rooms/${encodeURIComponent(tts.bookingId)}/messages/${encodeURIComponent(m.id)}`, {
+        method: 'DELETE',
+        headers: { 'x-tour-room-auth': tts.roomSession },
+      });
+    } catch {
+      /* the bubble stays — the guest can try again from the same sheet */
+    }
+    setActionMsg(null);
+  };
 
   const jumpToMessage = useCallback((id: string) => {
     const el = feedRef.current?.querySelector(`[data-msg-id="${id}"]`);
@@ -642,6 +677,17 @@ export default function ChatFeed({
           }
 
           const { message, mine, system, groupStart, groupEnd } = item;
+          // Unsend tombstone — the row keeps its place in the day, the words
+          // are gone in every language at once.
+          if ((message.metadata as { deleted?: unknown } | null)?.deleted === true) {
+            return (
+              <div className={`flex min-w-0 ${mine ? 'justify-end pl-12' : 'justify-start pr-10'} ${groupStart ? 'mt-2' : 'mt-0.5'}`}>
+                <span className="tr-meta italic text-[var(--tr-ink-3)]" data-testid="deleted-tombstone">
+                  {action.deleted}
+                </span>
+              </div>
+            );
+          }
           const isNew = !mountedIdsRef.current!.has(message.id);
           const animClass = isNew ? 'tr-anim-bubble-in' : '';
           const unreadDividerHere =
@@ -1220,6 +1266,17 @@ export default function ChatFeed({
               <IconCopy size={TR_ICON.action} aria-hidden />
               {copiedNote ? action.copied : action.copy}
             </button>
+            {canUnsend(actionMsg) && (
+              <button
+                type="button"
+                onClick={() => void unsend(actionMsg)}
+                className="tr-card-text flex items-center gap-3 rounded-xl px-2 py-3 text-left font-medium text-[var(--tr-danger)] active:bg-[var(--tr-surface-2)]"
+                data-testid="action-unsend"
+              >
+                <IconTrash size={TR_ICON.action} aria-hidden />
+                {action.unsend}
+              </button>
+            )}
             <button
               type="button"
               onClick={() => {
