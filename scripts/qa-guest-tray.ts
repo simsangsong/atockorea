@@ -8,6 +8,9 @@ import path from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { webkit, devices, type Page } from '@playwright/test';
 
+/** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
+export const COVERS = ['/tour-mode/room/[bookingId]'];
+
 loadEnvConfig(process.cwd());
 
 const BASE = 'http://localhost:3160';

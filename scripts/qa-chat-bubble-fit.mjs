@@ -22,6 +22,9 @@ import { chromium } from 'playwright';
 import { readFileSync, mkdirSync } from 'fs';
 import path from 'path';
 
+/** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
+export const COVERS = ['/tour-mode/room/[bookingId]'];
+
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3161';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'chat-fit');
 mkdirSync(OUT, { recursive: true });

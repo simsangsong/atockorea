@@ -21,6 +21,9 @@
 import { chromium } from 'playwright';
 import { readFileSync, mkdirSync } from 'fs';
 
+/** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
+export const COVERS = ['/tour-mode/room/[bookingId]'];
+
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3181';
 const OUT = process.env.WALK_OUT ?? 'scripts/.walk-door-fixes';
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));

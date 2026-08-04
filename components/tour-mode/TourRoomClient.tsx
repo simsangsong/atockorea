@@ -1401,11 +1401,34 @@ function TourRoomLive({
               }
               if (!meta.tourId || !meta.tourDate) return undefined;
               return (text: string) => {
-                void fetch('/api/tour-rooms/broadcast', {
-                  method: 'POST',
-                  headers: { 'Content-Type': 'application/json' },
-                  body: JSON.stringify({ tourId: meta.tourId, tourDate: meta.tourDate, token: authToken, text }),
-                }).catch(() => undefined);
+                /**
+                 * 🔴 A success announces itself — the broadcast comes back over
+                 * realtime and lands in this very feed about five seconds later
+                 * (measured). A failure announced nothing at all: the old
+                 * `.catch(() => undefined)` swallowed both network errors and
+                 * non-2xx responses, so a fan-out that never happened looked
+                 * exactly like one still in flight. On a send to every guest on
+                 * the tour, that is the wrong thing to be quiet about.
+                 *
+                 * Visible failure UI is still owed (there is no toaster in this
+                 * surface, and this repo retired native dialogs on purpose) —
+                 * tracked as UX-012. Until then the failure is at least
+                 * diagnosable instead of erased.
+                 */
+                void (async () => {
+                  try {
+                    const res = await fetch('/api/tour-rooms/broadcast', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ tourId: meta.tourId, tourDate: meta.tourDate, token: authToken, text }),
+                    });
+                    if (!res.ok) {
+                      console.error('[promote-to-notice] broadcast rejected', res.status, await res.text().catch(() => ''));
+                    }
+                  } catch (error) {
+                    console.error('[promote-to-notice] broadcast failed', error);
+                  }
+                })();
               };
             })()}
             reactions={reactions}
