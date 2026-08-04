@@ -1007,3 +1007,21 @@ console.log("  사유별:",JSON.stringify(rs.filter(bad).reduce((a,r)=>{for(cons
 | U-11 | **드로어 MEMBERS 에 동일 인물이 여러 줄**(시드 기준 22명 중 6줄이 같은 이름) — 사람 단위 묶기 | 낮음 | 일행 수를 실제로 읽을 수 있음 | 드로어 1컷 |
 
 ⚠ **U-6·U-9 는 오늘 고친 UX-014 와 같은 자리**다 — 함께 손대면 컷 한 번으로 끝난다.
+
+### ✅ G2 흐름 워크 — `qa-cockpit-walk` 이 **단일 룸에서 못 돌고 있었다** (수정 완료)
+
+`openCockpit()` 이 `[data-testid="ops-drive"]` 를 **무조건** 기다렸다. 그런데 콕핏 진입은
+룸 개수로 갈린다(UX-D10): 여러 룸이면 「운행 시작」이 운행 탭으로 바꾸고 룸마다 「운전 모드」가 있지만,
+**단일 룸이면 `drive-hero` 가 곧바로 진입하고 `ops-drive` 는 아예 없다.**
+→ 하니스가 60초를 기다리다 죽고, **멀쩡한 앱이 고장으로 보고됐다.**
+
+🔴 **이건 이미 알려진 함정이었다.** `qa-uiux-render.mjs` 헤더에 그대로 적혀 있다 —
+"A harness that knows only one branch waits 60s and reports a healthy app as broken."
+그쪽은 두 분기를 다 배웠고 **이 파일만 안 배웠다.** 같은 교훈이 한 파일에만 적용된 것이다.
+
+**수정 후 완주.** 14케이스(로케일·글자단계·**스킨 10종 전부**):
+`material: no ink below 4.5 and dark-fixed held in every case` · `console clean`.
+→ CLAUDE.md 가 **「N5 콕핏 재질 회귀 — PIN 게이트로 판정 못 했다」**고 적어 둔 항목이 이제 실제로 판정됐다.
+
+⚠ 워크 산출물(`cockpit/`, `shots/`)은 레포 루트에 쓰인다 — `.gitignore` 에 추가했다
+(히어로 그리드 `hero-grid/` 와 같은 사고를 한 번 더 낼 뻔했다).
