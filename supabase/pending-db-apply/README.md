@@ -32,6 +32,18 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > pages + TWO offers: default USD 49 Sky-Capsule-ticket-excluded, USD 64
 > ticket-included — ⚠ prices seeded pending owner review). Then
 > `node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour`.
+>
+> **⏳ 2026-08-04 (later still) — Gyeongju course revision:**
+> `2026-08-04-04-gyeongju-recourse.sql` refreshes copy / schedule / 6-locale
+> `detail_payload` for `from-busan-gyeongju-ancient-capital-day-tour`
+> (Gyochon+Choi House+Woljeonggyo and Daereungwon+Hwangnidan-gil as walked
+> blocks; museum moved last with a Nov–Feb Donggung & Wolji night alternate).
+> Then `node scripts/import-match-v18.mjs --single from-busan-gyeongju-ancient-capital-day-tour`.
+> 🔴 **This file is UPDATE-only and deliberately does NOT touch `is_active` /
+> `is_published`** — the slug is still on the consumer blocklist, so applying it
+> changes what the product says without putting it on sale. Re-opening is an
+> owner decision; the commented block at the end of the file is that half, and
+> it pairs with removing the slug from `lib/tour-consumer-visibility.ts`.
 
 ## Why this folder exists
 
