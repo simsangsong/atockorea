@@ -9,9 +9,10 @@
  *
  * Steps
  *   0) Preflight — env, SQL files, 10 static bundles parse & agree on price
- *   1) Apply supabase/pending-db-apply/2026-08-04-0{1..4}.sql IN FILENAME ORDER
+ *   1) Apply supabase/pending-db-apply/2026-08-04-0{1..6}.sql IN FILENAME ORDER
  *      (needs `psql` + a Postgres connection string; see --skip-sql otherwise)
- *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 4
+ *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 5
+ *      (the Pocheon pass also imports the new jaein_falls POI into match_pois)
  *   3) Verify over supabase-js: tours.is_active, page publish flags per locale,
  *      the two Busan offers, match_tours presence
  *   4) Move applied SQL into supabase/pending-db-apply/applied/
@@ -44,13 +45,16 @@ const SQL_FILES = [
   "2026-08-04-02-jeju-eastern-unesco-reorder.sql",
   "2026-08-04-03-busan-smallgroup-new-product.sql",
   "2026-08-04-04-busan-smallgroup-staged-locales.sql",
+  "2026-08-04-05-pocheon-geopark-recourse.sql",
+  "2026-08-04-06-pocheon-geopark-staged-locales.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";
 const EAST = "jeju-eastern-unesco-spots-day-tour";
 const SOUTH = "jeju-southern-top-unesco-spots-tour";
 const SOUTHWEST = "southwest-hallasan-osulloc-aewol";
-const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN];
+const POCHEON = "pocheon-sanjeong-lake-herb-island-art-valley";
+const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN, POCHEON];
 const HYDRANGEA = [
   "jeju-hydrangea-festival-tour-east-route",
   "jeju-hydrangea-festival-tour-southwest-route",
@@ -91,7 +95,7 @@ step(0, "Preflight");
 const pendingFiles = SQL_FILES.filter((f) => existsSync(path.join(PENDING, f)));
 const alreadyApplied = SQL_FILES.filter((f) => existsSync(path.join(APPLIED, f)));
 if (!pendingFiles.length && alreadyApplied.length === SQL_FILES.length) {
-  ok("all four SQL files are already in applied/ — nothing to apply");
+  ok(`all ${SQL_FILES.length} SQL files are already in applied/ — nothing to apply`);
 } else if (!pendingFiles.length) {
   die(
     `no 2026-08-04 SQL found in ${path.relative(ROOT, PENDING)}`,
@@ -264,12 +268,12 @@ if (DRY) {
   const { data: pages, error: e2 } = await sb
     .from("tour_product_pages")
     .select("slug,locale,is_published")
-    .in("slug", [...MATCH_SLUGS]);
+    .in("slug", MATCH_SLUGS);
   if (e2) die(`tour_product_pages query failed: ${e2.message}`);
   const localesOf = (slug) =>
     (pages ?? []).filter((p) => p.slug === slug && p.is_published).map((p) => p.locale).sort();
 
-  for (const s of [EAST, SOUTH, SOUTHWEST]) {
+  for (const s of [EAST, SOUTH, SOUTHWEST, POCHEON]) {
     const got = localesOf(s);
     check(
       CONTENT_LOCALES.every((l) => got.includes(l)),
@@ -310,6 +314,25 @@ if (DRY) {
     check(Number(inc?.amount_minor) === 7900, `  ticket included: ${inc ? inc.amount_minor / 100 : "—"} USD`);
   } else {
     check(false, "Busan EN page row not found — offers unverified");
+  }
+
+  const { data: pocheon } = await sb
+    .from("tours")
+    .select("pickup_points_count,dropoff_points_count,schedule")
+    .eq("slug", POCHEON)
+    .maybeSingle();
+  if (pocheon) {
+    const firstStop = Array.isArray(pocheon.schedule) ? pocheon.schedule[0]?.title : null;
+    check(
+      Array.isArray(pocheon.schedule) && pocheon.schedule.length === 4,
+      `Pocheon re-course: ${Array.isArray(pocheon.schedule) ? pocheon.schedule.length : "?"} stops, first = ${firstStop ?? "—"}`,
+    );
+    check(
+      Number(pocheon.pickup_points_count) === 2 && Number(pocheon.dropoff_points_count) === 2,
+      `Pocheon pickup/drop-off points: ${pocheon.pickup_points_count}/${pocheon.dropoff_points_count} (expected 2/2)`,
+    );
+  } else {
+    check(false, "Pocheon tours row not found");
   }
 
   const { data: mt, error: e3 } = await sb.from("match_tours").select("slug").in("slug", MATCH_SLUGS);

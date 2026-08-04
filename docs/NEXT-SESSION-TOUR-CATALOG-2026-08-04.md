@@ -18,12 +18,13 @@ npm run tours:apply-2026-08-04                # 실제 적용
 
 0. **사전 점검** — env, 4개 SQL 존재, 부산 번들 10로케일 파스 + 가격 일치,
    SQL 03 의 offers 금액이 번들 가격과 같은지(어긋나면 생성기 재실행하라고 알려주고 중단)
-1. `-01` → `-02` → `-03` → `-04` **파일명 순서대로** `psql` 로 적용
+1. `-01` → `-02` → `-03` → `-04` → `-05` → `-06` **파일명 순서대로** `psql` 로 적용
    (각 파일이 단일 트랜잭션 — 실패하면 그 파일은 통째로 롤백되고 뒤 파일은 실행되지 않는다)
-2. `import-match-v18.mjs --single` 4슬러그 실행 → 추천엔진 `match_tours` 동기화
+2. `import-match-v18.mjs --single` **5슬러그** 실행 → 추천엔진 `match_tours` 동기화
+   (포천 패스가 신규 `jaein_falls` POI 를 `match_pois` 에 함께 임포트한다)
 3. **검증** — 수국 2종 `is_active=false` · 제주 3종 + 부산 `is_active=true` ·
    `tours.price` 가 번들과 일치 · 페이지 로케일별 `is_published`(콘텐츠 6 + 스테이징 4) ·
-   부산 offers 2행($59 기본 / $79 캡슐 포함) · `match_tours` 4행
+   부산 offers 2행($59 기본 / $79 캡슐 포함) · 포천 스톱 4개 + 픽업/하차 2/2 · `match_tours` 5행
 4. 적용 성공 + 검증 통과한 SQL 만 `pending-db-apply/applied/` 로 이동
    (검증 실패 시 파일을 그대로 두어 재시도 가능하게 남긴다)
 
@@ -50,8 +51,10 @@ npm run tours:apply-2026-08-04                # 실제 적용
 | 부산 스몰그룹 신규 | 용궁사→다릿돌→스카이캡슐(티켓 선택)→점심→감천→닥밭골 | #714 |
 | 부산 가격 | **$59 캡슐 제외 / $79 캡슐 포함** (사장님 확정) | #714 |
 | 신규 투어 10로케일 번역 | de/fr/it/ru 풀 번들 추가 → 10로케일 완비 | #717 |
+| 포천 투어 개편(경쟁사 스크린샷) | 허브아일랜드 → 재인폭포 + 이동갈비 점심, 한탄강 지질공원 서사, 10로케일 | #720 |
+| 포천 픽업/드롭오프(사장님 이미지) | 3지점 → **2지점**(홍대 8번 08:00 / 명동 2번 08:30 → 명동 18:00 / 홍대 18:30), 전 스톱 재산정 | #720 |
 
-기준선: tsc **0** · jest **559 스위트 / 5,926 pass / 0 fail**.
+기준선: tsc **0** · jest **559 스위트 / 5,926 pass / 0 fail**. POI KB **v1.30**(`jaein_falls` 신규).
 
 ---
 
@@ -90,6 +93,15 @@ npm run tours:apply-2026-08-04                # 실제 적용
 - 등록 3곳: `_shared/tourProductBundleSlugs.ts` · `_shared/tourProductBundleRegistry.ts` ·
   `catalog/staticTourProductRegistry.ts`(SLUG_OVERRIDES `listPriceUsd: 59, maxGroupSize: 12`)
   + 날씨 앵커 `lib/weather/tour-weather-anchor.ts`
+
+### 포천 (`pocheon-sanjeong-lake-herb-island-art-valley`)
+- 빌더: `scripts/build-pocheon-geopark-2026-08.mjs` — 번들 직접 편집 금지
+- 콘텐츠: `scripts/pocheon-geopark-content/<loc>.json` (10로케일) + `donor-overlay/`(de/fr/it/ru)
+- SQL 생성기: `scripts/gen-pocheon-geopark-sql-2026-08.mjs` (05 + 06 동시 출력)
+- 🔴 **슬러그에 `herb-island` 가 남아 있는 건 의도**다 — 라이브 Klook SKU 의 URL·OTA 링크.
+  가지 않는 곳 이름이 주소에 있는 건 알고 남긴 비용이다. 바꾸려면 리다이렉트 + OTA 재연결이 세트.
+- ⚠ **가격 불일치는 이 트랙이 만든 게 아니다**: 번들 $54 vs `SLUG_OVERRIDES.listPriceUsd` 49.
+  개편 전부터 어긋나 있었고 일부러 손대지 않았다(사장님 결정).
 
 ### 카탈로그 카드(생성물 — 손으로 고치지 말 것)
 `node scripts/build-catalog-cards.mjs` → `components/product-tour-static/catalog/catalogCards.*.generated.ts`
@@ -132,7 +144,8 @@ npm run tours:apply-2026-08-04                # 실제 적용
    4로케일 실렌더 QA. 지금은 DB 행(`-04`)과 번들이 **대기 상태로 준비**되어 있다.
 2. **다릿돌전망대·닥밭골 사진 0장** — 두 스톱은 이미지 없이 나간다. 촬영분이 생기면
    `public/images/tours/` 에 넣고 빌더의 이미지 상수에 연결.
-3. **부산 신규 상품 운영 검수** — 스카이캡슐 티켓 포함 옵션의 실제 예약 절차(캡슐 사전 예약 담당·
+3. **포천 재인폭포·점심 사진 0장** — 두 스톱은 이미지 없이 나간다. 촬영분 생기면 빌더의 `IMG` 상수에 연결.
+4. **부산 신규 상품 운영 검수** — 스카이캡슐 티켓 포함 옵션의 실제 예약 절차(캡슐 사전 예약 담당·
    2인 1캡슐 정산)를 운영팀과 확정.
 
 ---
