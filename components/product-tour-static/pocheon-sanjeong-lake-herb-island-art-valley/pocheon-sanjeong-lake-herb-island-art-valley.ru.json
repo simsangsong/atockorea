@@ -804,7 +804,7 @@
     "notes": "Две точки сбора: станция Хондэ-ипку (выход 8) в 08:00 и станция Мёндон (выход 2) в 08:30 — пожалуйста, приходите за 10 минут до своего времени отправления. Обратная дорога: Мёндон около 18:00, затем станция Хондэ-ипку около 18:30; точное время зависит от трафика."
   },
   "matching_profile": {
-    "profile_version": 9,
+    "profile_version": 10,
     "is_active": true,
     "product_id": "pocheon-sanjeong-lake-herb-island-art-valley",
     "product_type": "small_group",
@@ -2024,5 +2024,10 @@
       },
       "v19_geopark_recourse_2026_08_04": "Course revision (owner instruction, referencing a competitor listing): Herb Island dropped; Jaein Falls (Yeoncheon) added as the day's second Hantangang UNESCO Global Geopark geosite alongside Art Valley, plus an Idong-galbi lunch stop. New order: Sanjeong Lake → lunch → Jaein Falls → Art Valley. All four stop bodies rewritten from scripts/pocheon-geopark-content/, so no Herb-Island-era text survives. POI KB bumped to v1.30 (jaein_falls added; art valley 2026 fares + geosite status; sanjeong lake 3.2 km loop + sculpture symposium + Gungye legend). Sticky-bar note replaced — the bundle previously shipped a dev comment ('checkout_tour_id resolves at runtime…') as guest-facing copy in every locale. SLUG UNCHANGED on purpose: it is an active Klook SKU and the slug is the live URL/OTA link, so it still carries the legacy 'herb-island' token. Price untouched (owner decision pending). Jaein Falls and the lunch stop ship without photos — no owned imagery yet. Departure days added (owner-supplied Klook calendar): Monday / Thursday / Saturday only. The bundle previously made no departure-day claim at all, so guests could pick any date and hit the constraint only at checkout. Six Herb-Island-era matching signals (herb garden, lighting festival, herb museum, drama-filming density, and two K-drama title fits) were still scored 1 and are now dropped."
     }
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "thursday",
+    "saturday"
+  ]
 }

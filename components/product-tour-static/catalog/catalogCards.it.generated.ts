@@ -57,5 +57,57 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "price": {
       "amountLabel": "54"
     }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Gita di un giorno a Gapyeong da Seul: isola di Nami, Garden of Morning Calm e Petite France",
+      "subtitle": "Il trio di Gapyeong in un'unica giornata in pullman — nessuna escursione in montagna, tre ingressi inclusi",
+      "region": "Seul → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 ore",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Gita da Seul",
+        "Gapyeong",
+        "Gruppo condiviso",
+        "K-drama",
+        "Giardini"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "La giornata in campagna più semplice da Seul: il viale di metasequoie dell'isola di Nami, un arboreto tematico di 330,000 m² e un villaggio del Piccolo Principe — tutti e tre gli ingressi inclusi, di ritorno a Seul entro le 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Speciale inverno da Seul: Seoraksan, isola di Nami e la parete di ghiaccio della valle di Eobi",
+      "subtitle": "Una giornata in pullman solo invernale — neve sulla montagna più famosa della Corea, Nami sotto la brina e una parete di ghiaccio costruita da un villaggio",
+      "region": "Seul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13.5 ore",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Solo in inverno",
+        "Stagionale",
+        "Gita da Seul",
+        "Seoraksan",
+        "Parete di ghiaccio"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Si svolge solo in pieno inverno: il Seoraksan sotto la neve, i viali alberati brinati dell'isola di Nami e la parete di ghiaccio di 25 metri che gli abitanti di un villaggio di Gapyeong fanno crescere ogni gennaio su una parete rocciosa della valle."
+    },
+    "price": {
+      "amountLabel": "69"
+    }
   }
 };

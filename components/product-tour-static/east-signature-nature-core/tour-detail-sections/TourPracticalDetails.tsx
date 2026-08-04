@@ -6,6 +6,7 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { useForecast } from "@/components/product-tour-static/_shared/useForecast";
+import { renderEmphasis } from "@/components/product-tour-static/_shared/inlineEmphasis";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -80,7 +81,12 @@ function splitTimeSequences(line: string): string[] {
 const INLINE_HIGHLIGHT_RE =
   /(₩[\d,]+(?:\s*[-–~]\s*₩?[\d,]+)?|\b\d{1,2}:\d{2}\b|\b\d+(?:\.\d+)?\s*h\b|\d+(?:\.\d+)?\s*(?:시간|분|hours?|min(?:utes?)?)\b|≈|~)/g;
 
-function renderInline(text: string): React.ReactNode[] {
+/** Bold runs from markdown, with the time/price highlighting applied inside each. */
+export function renderInline(text: string): React.ReactNode[] {
+  return renderEmphasis(text, (run) => renderHighlights(run));
+}
+
+function renderHighlights(text: string): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let lastIdx = 0;
   let key = 0;
@@ -428,7 +434,7 @@ export function TourPracticalDetails({
                     {item.title}
                   </h3>
                   <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
-                    {item.preview}
+                    {renderInline(item.preview ?? "")}
                   </p>
                 </div>
                 <div

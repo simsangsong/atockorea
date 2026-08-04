@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，8小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
+      "shortCardDescription": "为邮轮旅客设计的釜山小团岸上行程，使用限乘12人的面包车。八小时走九个点 — 海东龙宫寺、联合国纪念公园、自费午餐，接着步行走完札嘎其市场、BIFF广场与国际市场，然后是甘川文化村、松岛云端散步路（是否搭缆车上天空公园由您现场决定），最后是龙头山公园。接站在您船只靠泊的邮轮码头，返程对齐您的登船截止时间。"
     },
     "price": {
       "amountLabel": "68.95"
@@ -665,6 +665,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "首尔出发加平一日游：南怡岛、晨静树木园与小法国村",
+      "subtitle": "一天大巴走完加平三处招牌 — 不用登山，三处门票全含",
+      "region": "首尔 → 京畿道（加平）",
+      "duration": "11.5 小时",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "首尔出发一日游",
+        "加平",
+        "拼团",
+        "韩剧",
+        "花园"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "首尔近郊最轻松的一天乡野行程：南怡岛的水杉大道、330,000 m² 的主题树木园，以及小王子主题村落 — 三处门票全部包含，19:00 前回到首尔。"
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -869,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "首尔冬季特别行程：雪岳山、南怡岛与鱼飞溪谷冰壁",
+      "subtitle": "只在冬季运行的大巴一日游 — 韩国最著名山峰的积雪、霜白的南怡岛，以及一面由村民造出的冰壁",
+      "region": "首尔 → 江原道 → 京畿道（加平）",
+      "duration": "13.5 小时",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "仅限冬季",
+        "季节限定",
+        "首尔出发一日游",
+        "雪岳山",
+        "冰壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "只在深冬运行：雪中的雪岳山、南怡岛霜白的林荫大道，以及加平村民每年一月在溪谷岩壁上养出的 25 米冰壁。"
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

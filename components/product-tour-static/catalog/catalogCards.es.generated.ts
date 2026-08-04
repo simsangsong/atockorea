@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 8 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china."
+      "shortCardDescription": "Excursión de crucero en Busan en grupo reducido, en furgoneta limitada a 12 pasajeros. Nueve paradas en una jornada de ocho horas: Haedong Yonggungsa, el Cementerio Conmemorativo de la ONU, almuerzo por tu cuenta y después Jagalchi, la plaza BIFF y el mercado Gukje a pie, la Aldea Cultural de Gamcheon, la pasarela Songdo Cloud Trails —con el teleférico hasta el Sky Park como elección in situ— y el parque Yongdusan. La recogida es en la terminal de cruceros en la que atraque tu barco y la vuelta se ajusta a tu all-aboard."
     },
     "price": {
       "amountLabel": "68.95"
@@ -662,6 +662,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Excursión de un día a Gapyeong desde Seúl: Isla Nami, Jardín de la Calma Matutina y Petite France",
+      "subtitle": "El trío de Gapyeong en un solo día en autocar: sin subida a la montaña y con tres entradas incluidas",
+      "region": "Seúl → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 horas",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Excursión de un día desde Seúl",
+        "Gapyeong",
+        "Grupo compartido",
+        "K-drama",
+        "Jardines"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "El día de campo más fácil desde Seúl: la avenida de metasecuoyas de la Isla Nami, un arboreto temático de 330,000 m² y un pueblo del Principito, con las tres entradas incluidas y de vuelta en Seúl antes de las 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -866,6 +892,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Especial de invierno desde Seúl: Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+      "subtitle": "Un día en autocar solo en invierno: nieve en la montaña más famosa de Corea, Nami bajo la escarcha y un muro de hielo construido por un pueblo",
+      "region": "Seúl → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13.5 horas",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Solo en invierno",
+        "De temporada",
+        "Excursión de un día desde Seúl",
+        "Seoraksan",
+        "Muro de hielo"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Funciona solo en pleno invierno: el Seoraksan bajo la nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo de 25 metros que los vecinos de un pueblo de Gapyeong hacen crecer cada enero sobre una pared de roca del valle."
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

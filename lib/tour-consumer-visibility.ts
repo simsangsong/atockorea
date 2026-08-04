@@ -146,6 +146,37 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // 🔴 Re-opened at the UNCHANGED price: USD 39 (compare-at 50) for what is now
   // an 11.5-hour day ending ≈19:50 — it was 10.5 hours when that price was set.
   // Repricing was not part of the re-open instruction; flagged, not assumed.
+  // ── Winter/Eobi booking closed 2026-08-04 until the village confirms its season
+  // seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Its own ops note says
+  // "do not open year-round sales", and nothing in the app reads
+  // matching_profile.seasonality — the field has no consumer, so being a
+  // winter_only product stops nothing by itself.
+  //
+  // 🔴 is_active=false was NOT enough, which is why this line exists, and this
+  //    line does MORE than close the checkout — measured, with controls, rather
+  //    than reasoned from the imports:
+  //
+  //      surface              is_active=false alone   + this list
+  //      /api/tours           absent (17 entries)     absent
+  //      /tours/list card     PRESENT                 absent
+  //      /tour-product page   renders (349 KB)        404
+  //
+  //    Controls in the same run: the fully-open Gapyeong sibling keeps its card
+  //    and renders 20,204 chars; the already-blocked Seoraksan donor loses both,
+  //    exactly like this one. So the DB flag only stops the sale, while this
+  //    list retires the product from view altogether — `assertRegisteredConsumerSlug`
+  //    in tourProductPageBody.tsx calls isTourSlugBlockedFromConsumerSurfaces and
+  //    notFound()s. That is the right state for something that is not for sale,
+  //    and it is what Gyeongju sat in until it was re-opened above, but it does
+  //    mean the page disappears rather than staying readable.
+  //
+  // Re-open = remove this line AND re-run
+  //   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs \
+  //     --only seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour --update-staged
+  // without --inactive. Both halves are needed, same as Gyeongju above. The
+  // trigger is the village (가일2리 자치회, 031-585-3551) confirming the 2026-27
+  // dates; the 2025-26 season ran 20 Dec – 19 Feb.
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",

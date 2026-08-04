@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { renderEmphasis } from "@/components/product-tour-static/_shared/inlineEmphasis";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
@@ -43,7 +44,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
             <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
-                  <p className="text-sm text-muted-foreground leading-[1.7]">{q.answer}</p>
+                  <p className="text-sm text-muted-foreground leading-[1.7]">{renderEmphasis(q.answer)}</p>
                 </div>
               </div>
             </div>
@@ -85,7 +86,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                 <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                   <div className="overflow-hidden">
                     <div className="px-4 pb-4">
-                      <p className="text-sm text-muted-foreground leading-relaxed">{q.answer}</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed">{renderEmphasis(q.answer)}</p>
                     </div>
                   </div>
                 </div>

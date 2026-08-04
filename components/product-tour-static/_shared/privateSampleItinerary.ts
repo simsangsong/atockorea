@@ -83,6 +83,38 @@ const HOTEL_DROPOFF: SampleSlot = {
   },
 };
 
+/**
+ * Cruise shore-excursion charters do NOT collect from hotels. The Busan cruise
+ * charter's own `pickup_dropoff.notes` says so in as many words ("Hotel pickup
+ * is not offered on this SKU"), and the channel listing sells it as cruise
+ * passengers only — yet this section rendered "호텔 픽업 (기본)" right under it.
+ * A real render is what showed the two sitting on the same page.
+ */
+const CRUISE_PICKUP: SampleSlot = {
+  time: "09:00",
+  kind: "pickup",
+  title: { ko: "크루즈 터미널 픽업", en: "Cruise terminal pickup" },
+  note: {
+    ko: "배가 접안하는 터미널의 도착 홀에서 출발 — 영도 또는 초량, 예약 후 확정",
+    en: "From the arrival hall of whichever terminal your ship berths at — Yeongdo or Choryang, confirmed at booking",
+  },
+};
+
+const CRUISE_DROPOFF: SampleSlot = {
+  time: "17:00",
+  kind: "dropoff",
+  title: { ko: "크루즈 터미널 하차", en: "Cruise terminal drop-off" },
+  note: {
+    ko: "아침에 모셨던 터미널로 복귀 — 승선 마감 시각 최소 60분 전",
+    en: "Back to the terminal you were collected from — at least 60 minutes before all-aboard",
+  },
+};
+
+/** A slot that names a real stop, instead of promising one later. */
+function namedStop(title: LocalizedText): SampleSlot {
+  return { kind: "stop", title };
+}
+
 /** Placeholder itinerary slot — real stops are imported later. */
 function emptyStop(n: number): SampleSlot {
   return {
@@ -154,6 +186,14 @@ const COMMON_PRIVATE_RULES: PrivateTourRule[] = [
 
 // ── Per-product config ──────────────────────────────────────────────────────
 
+/**
+ * The Busan charter is a CRUISE shore excursion, so its samples start and end at
+ * the ship, and its slots name real stops. The stop names are lifted from
+ * documented courses in this repo — the charter's own bundle for the Busan day,
+ * and `from-busan-gyeongju-ancient-capital-day-tour` for the Gyeongju day — not
+ * invented here. Shipping "일정 슬롯 1 / 방문지 추후 추가 예정" to a paying guest
+ * was the placeholder leaking, not a design.
+ */
 const BUSAN_CONFIG: PrivateSampleItineraryConfig = {
   title: { ko: "샘플 일정", en: "Sample Itineraries" },
   subtitle: {
@@ -161,27 +201,59 @@ const BUSAN_CONFIG: PrivateSampleItineraryConfig = {
     en: "Example day plans for the private charter. Use them as a starting point — we tailor the day to you.",
   },
   samples: [
-    sampleDay(
-      "busan-city",
-      { ko: "부산 시내", en: "Busan City" },
-      { ko: "해운대·광안리·남포동 등 부산 시내 핵심 코스", en: "Core Busan-city highlights — Haeundae, Gwangalli, Nampo-dong" },
-      5,
-    ),
-    sampleDay(
-      "gyeongju",
-      { ko: "경주", en: "Gyeongju" },
-      { ko: "신라 천년 고도 경주 당일 코스 (별도 추가 요금)", en: "Day trip to the ancient Silla capital of Gyeongju (surcharge applies)" },
-      5,
-    ),
+    {
+      id: "busan-city",
+      label: { ko: "부산 시내", en: "Busan City" },
+      blurb: {
+        ko: "유엔기념공원·태종대·감천문화마을·용두산·자갈치를 잇는 부산 시내 핵심 코스",
+        en: "The core Busan day — UN Memorial Cemetery, Taejongdae, Gamcheon, Yongdusan and Jagalchi",
+      },
+      slots: [
+        CRUISE_PICKUP,
+        namedStop({ ko: "유엔기념공원 (한국전쟁)", en: "UN Memorial Cemetery (Korean War)" }),
+        namedStop({ ko: "태종대 해안 절벽", en: "Taejongdae coastal cliffs" }),
+        namedStop({ ko: "점심식사 (부산 현지 식당)", en: "Lunch (local Busan restaurant)" }),
+        namedStop({ ko: "감천문화마을", en: "Gamcheon Culture Village" }),
+        namedStop({ ko: "용두산공원 & 부산타워", en: "Yongdusan Park & Busan Tower" }),
+        namedStop({ ko: "남포동 & 자갈치 수산시장", en: "Nampo-dong & Jagalchi Fish Market" }),
+        CRUISE_DROPOFF,
+      ],
+    },
+    {
+      id: "gyeongju",
+      label: { ko: "경주", en: "Gyeongju" },
+      blurb: {
+        ko: "신라 천년 고도 경주 당일 코스 (부산 외 목적지 추가 요금)",
+        en: "Day trip to the ancient Silla capital of Gyeongju (outside-Busan surcharge applies)",
+      },
+      slots: [
+        CRUISE_PICKUP,
+        namedStop({ ko: "불국사 (유네스코 세계문화유산)", en: "Bulguksa Temple (UNESCO World Heritage)" }),
+        namedStop({ ko: "점심식사 (경주 현지 식당)", en: "Lunch (local Gyeongju restaurant)" }),
+        namedStop({ ko: "교촌한옥마을 & 월정교", en: "Gyochon Hanok Village & Woljeonggyo Bridge" }),
+        namedStop({ ko: "대릉원 & 황리단길", en: "Daereungwon Tomb Complex & Hwangnidan-gil" }),
+        namedStop({ ko: "국립경주박물관", en: "Gyeongju National Museum" }),
+        CRUISE_DROPOFF,
+      ],
+    },
   ],
   rulesTitle: { ko: "프라이빗 투어 안내", en: "Private Tour Guidelines" },
   rules: [
-    ...COMMON_PRIVATE_RULES,
+    ...COMMON_PRIVATE_RULES.filter((r) => !r.text.ko.includes("투숙 호텔이 기본")),
+    {
+      text: {
+        ko: "픽업·하차는 배가 접안하는 크루즈 터미널입니다. 기항지 전세 상품이라 호텔·KTX 픽업은 제공하지 않습니다.",
+        en: "Pickup and drop-off are at the cruise terminal your ship berths at. This is a shore-excursion charter, so hotel and KTX pickup are not offered.",
+      },
+    },
     {
       emphasis: true,
+      // Listing figure. The module previously said ₩70,000 for Gyeongju, which
+      // contradicted the ₩130,000 out-of-Busan surcharge stated in the policy
+      // accordion on the same page.
       text: {
-        ko: "경주 일정을 포함하는 경우 70,000원이 추가됩니다.",
-        en: "Including Gyeongju in the plan adds ₩70,000.",
+        ko: "부산 외 목적지(경주 등)를 포함하는 경우 130,000원이 추가됩니다.",
+        en: "Destinations outside Busan (Gyeongju, for example) add ₩130,000.",
       },
     },
   ],

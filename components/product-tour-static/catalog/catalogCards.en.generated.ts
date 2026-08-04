@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
+      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: Haedong Yonggungsa, the UN Memorial Cemetery, lunch at your own expense, then Jagalchi Market, BIFF Square and Gukje Market on foot, Gamcheon Culture Village, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and Yongdusan Park. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard."
     },
     "price": {
       "amountLabel": "68.95"
@@ -665,6 +665,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "419"
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Gapyeong Day Tour from Seoul: Nami Island, Garden of Morning Calm & Petite France",
+      "subtitle": "The Gapyeong trio in one coach day — no mountain hike, three admissions included",
+      "region": "Seoul → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 hours",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Day trip from Seoul",
+        "Gapyeong",
+        "Join-in group",
+        "K-drama",
+        "Gardens"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Seoul's easiest countryside day: Nami Island's metasequoia avenue, a 330,000 m² themed arboretum, and a Little Prince village — all three admissions included, back in Seoul by 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -869,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": "51"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Winter Special from Seoul: Seoraksan, Nami Island & Eobi Valley Ice Wall",
+      "subtitle": "A winter-only coach day — snow on Korea's most famous peak, Nami under frost, and a village-built ice wall",
+      "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13.5 hours",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Winter only",
+        "Seasonal",
+        "Day trip from Seoul",
+        "Seoraksan",
+        "Ice wall"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Runs in deep winter only: Seoraksan under snow, Nami Island's frosted tree avenues, and the 25-metre ice wall that Gapyeong villagers grow on a valley rock face each January."
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

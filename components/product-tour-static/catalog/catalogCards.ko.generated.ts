@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "부산 크루즈 터미널에서 출발해 8시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행."
+      "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다."
     },
     "price": {
       "amountLabel": "68.95"
@@ -665,6 +665,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "서울 출발 가평 일일 투어: 남이섬, 아침고요수목원 & 쁘띠프랑스",
+      "subtitle": "가평의 세 명소를 버스 하루 코스로 — 등산 없이, 입장료 세 곳 포함",
+      "region": "서울 → 경기도(가평)",
+      "duration": "11.5시간",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "서울 근교 당일치기",
+        "가평",
+        "조인 그룹",
+        "K-드라마",
+        "정원"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "서울에서 가장 부담 없는 근교 하루입니다. 남이섬 메타세쿼이아 길, 330,000 m² 규모의 테마 수목원, 그리고 어린 왕자 마을까지 — 입장료 세 곳이 모두 포함되고 19:00 전에 서울로 돌아옵니다."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -869,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "서울 출발 겨울 특별 코스: 설악산, 남이섬 & 어비계곡 얼음벽",
+      "subtitle": "겨울에만 운행하는 버스 하루 — 눈 덮인 한국 대표 산, 서리 내린 남이섬, 그리고 마을이 만든 얼음벽",
+      "region": "서울 → 강원도 → 경기도(가평)",
+      "duration": "13.5시간",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "겨울 한정",
+        "계절 상품",
+        "서울 근교 당일치기",
+        "설악산",
+        "얼음벽"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "한겨울에만 운행합니다. 눈 덮인 설악산, 서리 앉은 남이섬의 나무 길, 그리고 가평 주민들이 매년 1월 계곡 암벽에 키워 올리는 25미터 얼음벽을 함께 봅니다."
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

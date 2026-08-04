@@ -53,6 +53,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
   "seoul-private-nami-morning-calm-petite-france",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
@@ -61,6 +62,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
   "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "southwest-hallasan-osulloc-aewol"
 ] as const;
 
@@ -209,7 +211,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
+        "shortCardDescription": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: Haedong Yonggungsa, the UN Memorial Cemetery, lunch at your own expense, then Jagalchi Market, BIFF Square and Gukje Market on foot, Gamcheon Culture Village, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and Yongdusan Park. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard."
       },
       "price": {
         "amountLabel": "68.95"
@@ -726,6 +728,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "419"
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Gapyeong Day Tour from Seoul: Nami Island, Garden of Morning Calm & Petite France",
+        "subtitle": "The Gapyeong trio in one coach day — no mountain hike, three admissions included",
+        "region": "Seoul → Gyeonggi-do (Gapyeong)",
+        "duration": "11.5 hours",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Day trip from Seoul",
+          "Gapyeong",
+          "Join-in group",
+          "K-drama",
+          "Gardens"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Seoul's easiest countryside day: Nami Island's metasequoia avenue, a 330,000 m² themed arboretum, and a Little Prince village — all three admissions included, back in Seoul by 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -932,6 +960,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": "51"
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Winter Special from Seoul: Seoraksan, Nami Island & Eobi Valley Ice Wall",
+        "subtitle": "A winter-only coach day — snow on Korea's most famous peak, Nami under frost, and a village-built ice wall",
+        "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+        "duration": "13.5 hours",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Winter only",
+          "Seasonal",
+          "Day trip from Seoul",
+          "Seoraksan",
+          "Ice wall"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Runs in deep winter only: Seoraksan under snow, Nami Island's frosted tree avenues, and the 25-metre ice wall that Gapyeong villagers grow on a valley rock face each January."
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -1100,7 +1154,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "부산 크루즈 터미널에서 출발해 8시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행."
+        "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다."
       },
       "price": {
         "amountLabel": "68.95"
@@ -1617,6 +1671,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "서울 출발 가평 일일 투어: 남이섬, 아침고요수목원 & 쁘띠프랑스",
+        "subtitle": "가평의 세 명소를 버스 하루 코스로 — 등산 없이, 입장료 세 곳 포함",
+        "region": "서울 → 경기도(가평)",
+        "duration": "11.5시간",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "서울 근교 당일치기",
+          "가평",
+          "조인 그룹",
+          "K-드라마",
+          "정원"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "서울에서 가장 부담 없는 근교 하루입니다. 남이섬 메타세쿼이아 길, 330,000 m² 규모의 테마 수목원, 그리고 어린 왕자 마을까지 — 입장료 세 곳이 모두 포함되고 19:00 전에 서울로 돌아옵니다."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -1823,6 +1903,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "서울 출발 겨울 특별 코스: 설악산, 남이섬 & 어비계곡 얼음벽",
+        "subtitle": "겨울에만 운행하는 버스 하루 — 눈 덮인 한국 대표 산, 서리 내린 남이섬, 그리고 마을이 만든 얼음벽",
+        "region": "서울 → 강원도 → 경기도(가평)",
+        "duration": "13.5시간",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "겨울 한정",
+          "계절 상품",
+          "서울 근교 당일치기",
+          "설악산",
+          "얼음벽"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "한겨울에만 운행합니다. 눈 덮인 설악산, 서리 앉은 남이섬의 나무 길, 그리고 가평 주민들이 매년 1월 계곡 암벽에 키워 올리는 25미터 얼음벽을 함께 봅니다."
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -1991,7 +2097,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "从釜山邮轮码头出发的共乘面包车一日游，8小时内涵盖城市最受欢迎的五大景点：联合国纪念公墓（朝鲜战争背景）、太宗台海岸悬崖、在釜山当地餐厅用午餐、甘川文化村（彩绘山城）、龙头山公园（可选釜山塔瞭望台）以及札嘎其市场。接送时间根据您所乘船只的下船时间灵活调配。持证英语／中文导游随行。"
+        "shortCardDescription": "为邮轮旅客设计的釜山小团岸上行程，使用限乘12人的面包车。八小时走九个点 — 海东龙宫寺、联合国纪念公园、自费午餐，接着步行走完札嘎其市场、BIFF广场与国际市场，然后是甘川文化村、松岛云端散步路（是否搭缆车上天空公园由您现场决定），最后是龙头山公园。接站在您船只靠泊的邮轮码头，返程对齐您的登船截止时间。"
       },
       "price": {
         "amountLabel": "68.95"
@@ -2508,6 +2614,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "首尔出发加平一日游：南怡岛、晨静树木园与小法国村",
+        "subtitle": "一天大巴走完加平三处招牌 — 不用登山，三处门票全含",
+        "region": "首尔 → 京畿道（加平）",
+        "duration": "11.5 小时",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "首尔出发一日游",
+          "加平",
+          "拼团",
+          "韩剧",
+          "花园"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "首尔近郊最轻松的一天乡野行程：南怡岛的水杉大道、330,000 m² 的主题树木园，以及小王子主题村落 — 三处门票全部包含，19:00 前回到首尔。"
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -2714,6 +2846,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "首尔冬季特别行程：雪岳山、南怡岛与鱼飞溪谷冰壁",
+        "subtitle": "只在冬季运行的大巴一日游 — 韩国最著名山峰的积雪、霜白的南怡岛，以及一面由村民造出的冰壁",
+        "region": "首尔 → 江原道 → 京畿道（加平）",
+        "duration": "13.5 小时",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "仅限冬季",
+          "季节限定",
+          "首尔出发一日游",
+          "雪岳山",
+          "冰壁"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "只在深冬运行：雪中的雪岳山、南怡岛霜白的林荫大道，以及加平村民每年一月在溪谷岩壁上养出的 25 米冰壁。"
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -2882,7 +3040,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在8小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
+        "shortCardDescription": "為郵輪旅客設計的釜山小團岸上行程，使用限乘12人的廂型車。八小時走九個點 — 海東龍宮寺、聯合國紀念公園、自費午餐，接著步行走完札嘎其市場、BIFF廣場與國際市場，然後是甘川文化村、松島雲端散步路（是否搭纜車上天空公園由您現場決定），最後是龍頭山公園。接送在您船隻靠泊的郵輪碼頭，返程對齊您的登船截止時間。"
       },
       "price": {
         "amountLabel": "68.95"
@@ -3399,6 +3557,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "首爾出發加平一日遊：南怡島、晨靜樹木園與小法國村",
+        "subtitle": "一天遊覽車走完加平三處招牌 — 不必登山，三處門票全含",
+        "region": "首爾 → 京畿道（加平）",
+        "duration": "11.5 小時",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "首爾出發一日遊",
+          "加平",
+          "併團",
+          "韓劇",
+          "花園"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "首爾近郊最輕鬆的一天鄉野行程：南怡島的水杉大道、330,000 m² 的主題樹木園，以及小王子主題村落 — 三處門票全數包含，19:00 前回到首爾。"
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -3605,6 +3789,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "首爾冬季特別行程：雪嶽山、南怡島與魚飛溪谷冰壁",
+        "subtitle": "只在冬季運行的遊覽車一日遊 — 韓國最著名山峰的積雪、覆霜的南怡島，以及一面由村民造出的冰壁",
+        "region": "首爾 → 江原道 → 京畿道（加平）",
+        "duration": "13.5 小時",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "僅限冬季",
+          "季節限定",
+          "首爾出發一日遊",
+          "雪嶽山",
+          "冰壁"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "只在深冬運行：雪中的雪嶽山、南怡島覆霜的林蔭大道，以及加平村民每年一月在溪谷岩壁上養出的 25 公尺冰壁。"
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -3773,7 +3983,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "Tour de día en furgoneta compartida desde la terminal de cruceros de Busan que incluye las cinco paradas más solicitadas de la ciudad en una ventana de 8 horas: Cementerio Memorial de la ONU (contexto de la Guerra de Corea), acantilados costeros de Taejongdae, almuerzo en un restaurante local de Busan, Pueblo Cultural de Gamcheon (la ladera pintada), Parque Yongdusan con observatorio opcional en la Torre de Busan, y Mercado de Jagalchi. Recogida coordinada con el desembarco específico de su barco. Guía certificado con habla inglesa y china."
+        "shortCardDescription": "Excursión de crucero en Busan en grupo reducido, en furgoneta limitada a 12 pasajeros. Nueve paradas en una jornada de ocho horas: Haedong Yonggungsa, el Cementerio Conmemorativo de la ONU, almuerzo por tu cuenta y después Jagalchi, la plaza BIFF y el mercado Gukje a pie, la Aldea Cultural de Gamcheon, la pasarela Songdo Cloud Trails —con el teleférico hasta el Sky Park como elección in situ— y el parque Yongdusan. La recogida es en la terminal de cruceros en la que atraque tu barco y la vuelta se ajusta a tu all-aboard."
       },
       "price": {
         "amountLabel": "68.95"
@@ -4287,6 +4497,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Excursión de un día a Gapyeong desde Seúl: Isla Nami, Jardín de la Calma Matutina y Petite France",
+        "subtitle": "El trío de Gapyeong en un solo día en autocar: sin subida a la montaña y con tres entradas incluidas",
+        "region": "Seúl → Gyeonggi-do (Gapyeong)",
+        "duration": "11.5 horas",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Excursión de un día desde Seúl",
+          "Gapyeong",
+          "Grupo compartido",
+          "K-drama",
+          "Jardines"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "El día de campo más fácil desde Seúl: la avenida de metasecuoyas de la Isla Nami, un arboreto temático de 330,000 m² y un pueblo del Principito, con las tres entradas incluidas y de vuelta en Seúl antes de las 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -4493,6 +4729,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Especial de invierno desde Seúl: Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+        "subtitle": "Un día en autocar solo en invierno: nieve en la montaña más famosa de Corea, Nami bajo la escarcha y un muro de hielo construido por un pueblo",
+        "region": "Seúl → Gangwon-do → Gyeonggi-do (Gapyeong)",
+        "duration": "13.5 horas",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Solo en invierno",
+          "De temporada",
+          "Excursión de un día desde Seúl",
+          "Seoraksan",
+          "Muro de hielo"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Funciona solo en pleno invierno: el Seoraksan bajo la nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo de 25 metros que los vecinos de un pueblo de Gapyeong hacen crecer cada enero sobre una pared de roca del valle."
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -4661,7 +4923,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
         "priceLabel": "",
-        "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを8時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
+        "shortCardDescription": "クルーズ乗客のための釜山少人数寄港地ツアー、定員12名のバンで運行します。8時間で9か所 — 海東龍宮寺、在韓国連記念公園、自己負担の昼食、続いてチャガルチ市場・BIFFスクエア・国際市場を徒歩で、甘川文化村、松島雲の散歩道（ケーブルカーでスカイパークへ上がるかは現地で選択）、最後に龍頭山公園です。お迎えは船が着岸するクルーズターミナルで、帰着は乗船締切時刻に合わせます。"
       },
       "price": {
         "amountLabel": "68.95"
@@ -5176,6 +5438,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "ソウル発 加平（カピョン）日帰りツアー：南怡島（ナミソム）・晨静苑・プチフランス",
+        "subtitle": "加平の三大スポットをバス1日で — 山登りなし、入場料3か所込み",
+        "region": "ソウル → 京畿道（加平）",
+        "duration": "11.5時間",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "ソウル発日帰り",
+          "加平（カピョン）",
+          "混載グループ",
+          "韓国ドラマ",
+          "庭園"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "ソウルから最も気軽に行ける田園の一日。南怡島のメタセコイア並木、330,000 m²のテーマ樹木園、そして星の王子さまの村 — 3か所の入場料すべて込みで、19:00までにソウルへ戻ります。"
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
     "seoul-private-nami-morning-calm-petite-france": {
       "catalog_card": {
         "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -5382,6 +5670,32 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "ソウル発 冬季限定：雪岳山（ソラクサン）・南怡島（ナミソム）・オビ渓谷の氷壁",
+        "subtitle": "冬季限定のバス1日 — 韓国で最も名高い峰の雪、霜をまとった南怡島、そして村がつくる氷壁",
+        "region": "ソウル → 江原道 → 京畿道（加平）",
+        "duration": "13.5時間",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "冬季限定",
+          "季節限定",
+          "ソウル発日帰り",
+          "雪岳山（ソラクサン）",
+          "氷壁"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "厳冬期のみの運行です。雪に覆われた雪岳山、霜をまとった南怡島の並木道、そして加平の村人が毎年1月に渓谷の岩肌へ育てる高さ25メートルの氷壁を訪ねます。"
+      },
+      "price": {
+        "amountLabel": "69"
+      }
+    },
     "southwest-hallasan-osulloc-aewol": {
       "catalog_card": {
         "slug": "southwest-hallasan-osulloc-aewol",
@@ -5459,6 +5773,58 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "price": {
         "amountLabel": "54"
       }
+    },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Excursion d'une journée à Gapyeong depuis Séoul : île de Nami, Garden of Morning Calm et Petite France",
+        "subtitle": "Le trio de Gapyeong en une seule journée en autocar — aucune randonnée en montagne, trois entrées incluses",
+        "region": "Séoul → Gyeonggi-do (Gapyeong)",
+        "duration": "11.5 heures",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Excursion depuis Séoul",
+          "Gapyeong",
+          "Groupe partagé",
+          "K-drama",
+          "Jardins"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "La journée à la campagne la plus facile au départ de Séoul : l'allée de métaséquoias de l'île de Nami, un arboretum thématique de 330,000 m² et un village du Petit Prince — les trois entrées incluses, retour à Séoul avant 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Spécial hiver depuis Séoul : Seoraksan, île de Nami et le mur de glace de la vallée d'Eobi",
+        "subtitle": "Une journée en autocar réservée à l'hiver — la neige sur le sommet le plus célèbre de Corée, Nami sous le givre, et un mur de glace bâti par un village",
+        "region": "Séoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+        "duration": "13.5 heures",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Hiver uniquement",
+          "Saisonnier",
+          "Excursion depuis Séoul",
+          "Seoraksan",
+          "Mur de glace"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Ne fonctionne qu'au cœur de l'hiver : le Seoraksan sous la neige, les allées d'arbres givrées de l'île de Nami, et le mur de glace de 25 mètres que les villageois de Gapyeong font grandir chaque janvier sur une paroi rocheuse de la vallée."
+      },
+      "price": {
+        "amountLabel": "69"
+      }
     }
   },
   "de": {
@@ -5513,6 +5879,58 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       },
       "price": {
         "amountLabel": "54"
+      }
+    },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Gapyeong-Tagestour ab Seoul: Insel Nami, Garden of Morning Calm & Petite France",
+        "subtitle": "Das Gapyeong-Trio an einem Bustag — keine Bergwanderung, drei Eintritte inklusive",
+        "region": "Seoul → Gyeonggi-do (Gapyeong)",
+        "duration": "11,5 Stunden",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Tagesausflug ab Seoul",
+          "Gapyeong",
+          "Gruppentour zum Zusteigen",
+          "K-Drama",
+          "Gärten"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Seouls unkompliziertester Landtag: die Metasequoien-Allee der Insel Nami, ein 330,000 m² großes Themen-Arboretum und ein Dorf zum Kleinen Prinzen — alle drei Eintritte inklusive, zurück in Seoul bis 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Winter-Special ab Seoul: Seoraksan, Insel Nami & die Eiswand im Eobi-Tal",
+        "subtitle": "Ein Bustag nur im Winter — Schnee auf Koreas berühmtestem Gipfel, Nami unter Raureif und eine vom Dorf gebaute Eiswand",
+        "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+        "duration": "13,5 Stunden",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Nur im Winter",
+          "Saisonal",
+          "Tagesausflug ab Seoul",
+          "Seoraksan",
+          "Eiswand"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Läuft nur im tiefen Winter: Seoraksan unter Schnee, die bereiften Baumalleen der Insel Nami und die 25 Meter hohe Eiswand, die Dorfbewohner in Gapyeong jeden Januar an einer Felswand im Tal wachsen lassen."
+      },
+      "price": {
+        "amountLabel": "69"
       }
     }
   },
@@ -5569,6 +5987,58 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       "price": {
         "amountLabel": "54"
       }
+    },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Gita di un giorno a Gapyeong da Seul: isola di Nami, Garden of Morning Calm e Petite France",
+        "subtitle": "Il trio di Gapyeong in un'unica giornata in pullman — nessuna escursione in montagna, tre ingressi inclusi",
+        "region": "Seul → Gyeonggi-do (Gapyeong)",
+        "duration": "11.5 ore",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Gita da Seul",
+          "Gapyeong",
+          "Gruppo condiviso",
+          "K-drama",
+          "Giardini"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "La giornata in campagna più semplice da Seul: il viale di metasequoie dell'isola di Nami, un arboreto tematico di 330,000 m² e un villaggio del Piccolo Principe — tutti e tre gli ingressi inclusi, di ritorno a Seul entro le 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Speciale inverno da Seul: Seoraksan, isola di Nami e la parete di ghiaccio della valle di Eobi",
+        "subtitle": "Una giornata in pullman solo invernale — neve sulla montagna più famosa della Corea, Nami sotto la brina e una parete di ghiaccio costruita da un villaggio",
+        "region": "Seul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+        "duration": "13.5 ore",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Solo in inverno",
+          "Stagionale",
+          "Gita da Seul",
+          "Seoraksan",
+          "Parete di ghiaccio"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Si svolge solo in pieno inverno: il Seoraksan sotto la neve, i viali alberati brinati dell'isola di Nami e la parete di ghiaccio di 25 metri che gli abitanti di un villaggio di Gapyeong fanno crescere ogni gennaio su una parete rocciosa della valle."
+      },
+      "price": {
+        "amountLabel": "69"
+      }
     }
   },
   "ru": {
@@ -5623,6 +6093,58 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       },
       "price": {
         "amountLabel": "54"
+      }
+    },
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+        "title": "Однодневный тур в Капхён из Сеула: остров Нами, Garden of Morning Calm и Petite France",
+        "subtitle": "Три главные точки Капхёна за один автобусный день — без горных походов, три входных билета включены",
+        "region": "Сеул → провинция Кёнгидо (Капхён)",
+        "duration": "11.5 часа",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Однодневная поездка из Сеула",
+          "Капхён",
+          "Сборная группа",
+          "K-drama",
+          "Сады"
+        ],
+        "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Самый простой выезд за город из Сеула: аллея метасеквой на острове Нами, тематический дендрарий площадью 330,000 m² и деревня Маленького принца — все три входных билета включены, возвращение в Сеул к 19:00."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    },
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+      "catalog_card": {
+        "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+        "title": "Зимний спецтур из Сеула: Сораксан, остров Нами и ледяная стена в долине Оби",
+        "subtitle": "Автобусный день только для зимы — снег на самой известной вершине Кореи, Нами в инее и ледяная стена, построенная деревней",
+        "region": "Сеул → провинция Канвондо → провинция Кёнгидо (Капхён)",
+        "duration": "13.5 часа",
+        "stopsCount": 3,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Только зимой",
+          "Сезонный",
+          "Однодневная поездка из Сеула",
+          "Сораксан",
+          "Ледяная стена"
+        ],
+        "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Идёт только в разгар зимы: Сораксан под снегом, заиндевевшие аллеи острова Нами и 25-метровая ледяная стена, которую жители деревни в Капхёне наращивают на скале в долине каждый январь."
+      },
+      "price": {
+        "amountLabel": "69"
       }
     }
   }

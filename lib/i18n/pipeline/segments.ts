@@ -67,6 +67,7 @@ export const TOP_LEVEL_TIERS: Record<string, Tier> = {
   price: 'FORBIDDEN',
   priceSource: 'FORBIDDEN', // 가격 출처 기록(내부)
   liveStatusSection: 'FORBIDDEN', // 섹션 식별자 enum ("haenyeo")
+  departureWeekdays: 'FORBIDDEN', // 요일 키 배열 ("monday"…) — 번역하면 날짜 필터가 죽는다
   ogImage: 'FORBIDDEN',
   imageUrl: 'FORBIDDEN',
   heroImage: 'FORBIDDEN',

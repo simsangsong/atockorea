@@ -9,12 +9,13 @@
  *
  * Steps
  *   0) Preflight — env, SQL files, 10 static bundles parse & agree on price
- *   1) Apply supabase/pending-db-apply/2026-08-04-0{1..7}.sql IN FILENAME ORDER
+ *      (Busan + both Seoul products), and each SQL carries its bundle's price
+ *   1) Apply supabase/pending-db-apply/2026-08-04-{01..13}.sql IN FILENAME ORDER
  *      (needs `psql` + a Postgres connection string; see --skip-sql otherwise)
- *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 5
+ *   2) Sync the recommender: import-match-v18.mjs --single <slug> × 8
  *      (the Pocheon pass also imports the new jaein_falls POI into match_pois)
- *   3) Verify over supabase-js: tours.is_active, page publish flags per locale,
- *      the two Busan offers, match_tours presence
+ *   3) Verify over supabase-js: tours.is_active + price, page publish flags per
+ *      locale, the two Busan offers, match_tours presence
  *   4) Move applied SQL into supabase/pending-db-apply/applied/
  *
  * Env (from .env.local via `node --env-file=.env.local`, or the shell):
@@ -48,19 +49,29 @@ const SQL_FILES = [
   "2026-08-04-05-pocheon-geopark-recourse.sql",
   "2026-08-04-06-pocheon-geopark-staged-locales.sql",
   "2026-08-04-07-gyeongju-recourse.sql",
-  // 08 must stay LAST. It is a surgical repair guarded on the exact current
-  // value of each path, and 02/03/05/07 rewrite whole detail_payloads that
-  // still carry the polluted strings — Gyeongju writes five of them. Repairing
-  // before those files run would simply be overwritten again.
+  // 08 must stay after 02/03/05/07. It is a surgical repair guarded on the
+  // exact current value of each path, and those files rewrite whole
+  // detail_payloads that still carry the polluted strings — Gyeongju writes
+  // five of them. Repairing before they run would simply be overwritten again.
   "2026-08-04-08-guest-copy-repair.sql",
   // 09 exists because 05/06 were applied from the version of those files that
   // was on main at the time, which predates the Pocheon departure-day work —
   // so the live rows had no Mon/Thu/Sat claim at all. It is the delta between
   // the bundles and the rows, not a re-run of 05/06.
   "2026-08-04-09-pocheon-departure-days.sql",
+  // 10-13 are the two Seoul-departure products. They took 10 rather than 08
+  // because a parallel session claimed 08/09 while that branch was in flight.
+  // 08's ordering note does not reach them: it guards rewrites of the OLD
+  // slugs' payloads, and these four touch only the two new slugs.
+  "2026-08-04-10-seoul-gapyeong-new-product.sql",
+  "2026-08-04-11-seoul-gapyeong-staged-locales.sql",
+  "2026-08-04-12-seoul-winter-eobi-new-product.sql",
+  "2026-08-04-13-seoul-winter-eobi-staged-locales.sql",
 ];
 
 const BUSAN = "busan-small-group-yonggungsa-skycapsule-gamcheon-tour";
+const GAPYEONG = "seoul-gapyeong-nami-morning-calm-petite-france-day-tour";
+const WINTER = "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour";
 const EAST = "jeju-eastern-unesco-spots-day-tour";
 const SOUTH = "jeju-southern-top-unesco-spots-tour";
 const SOUTHWEST = "southwest-hallasan-osulloc-aewol";
@@ -70,7 +81,9 @@ const GYEONGJU = "from-busan-gyeongju-ancient-capital-day-tour";
 // match_tours rows still hold the OLD itineraries until this import runs —
 // Gyeongju included, even though it stays hidden from consumer surfaces: a
 // blocked SKU with a stale course is still wrong data for the recommender.
-const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN, POCHEON, GYEONGJU];
+// The two Seoul-departure products (SQL 08-11) are new INSERTs, so they need a
+// match_tours row built from scratch — same as Busan did.
+const MATCH_SLUGS = [EAST, SOUTH, SOUTHWEST, BUSAN, POCHEON, GYEONGJU, GAPYEONG, WINTER];
 const HYDRANGEA = [
   "jeju-hydrangea-festival-tour-east-route",
   "jeju-hydrangea-festival-tour-southwest-route",
@@ -124,20 +137,27 @@ if (!pendingFiles.length && alreadyApplied.length === SQL_FILES.length) {
 }
 
 // Static bundles must parse and agree with the price the SQL carries.
-const bundleDir = path.join(ROOT, "components/product-tour-static", BUSAN);
 const allLocales = [...CONTENT_LOCALES, ...STAGED_LOCALES];
-const missingBundles = allLocales.filter(
-  (l) => !existsSync(path.join(bundleDir, `${BUSAN}.${l}.json`)),
-);
-if (missingBundles.length) die(`Busan bundles missing for: ${missingBundles.join(", ")}`);
-const prices = new Set(
-  allLocales.map((l) => {
-    const j = JSON.parse(readFileSync(path.join(bundleDir, `${BUSAN}.${l}.json`), "utf8"));
-    return String(j.price?.salePriceUsd);
-  }),
-);
-if (prices.size !== 1) die(`Busan bundles disagree on price: ${[...prices].join(" / ")}`);
-ok(`Busan bundles: 10 locales parse, price USD ${[...prices][0]} everywhere`);
+
+/** Parse all 10 locale bundles for a slug and return the single price they agree on. */
+function bundlePrice(slug, label) {
+  const dir = path.join(ROOT, "components/product-tour-static", slug);
+  const missing = allLocales.filter((l) => !existsSync(path.join(dir, `${slug}.${l}.json`)));
+  if (missing.length) die(`${label} bundles missing for: ${missing.join(", ")}`);
+  const found = new Set(
+    allLocales.map((l) => {
+      const j = JSON.parse(readFileSync(path.join(dir, `${slug}.${l}.json`), "utf8"));
+      return String(j.price?.salePriceUsd);
+    }),
+  );
+  if (found.size !== 1) die(`${label} bundles disagree on price: ${[...found].join(" / ")}`);
+  ok(`${label} bundles: 10 locales parse, price USD ${[...found][0]} everywhere`);
+  return [...found][0];
+}
+
+const prices = new Set([bundlePrice(BUSAN, "Busan")]);
+const gapyeongPrice = bundlePrice(GAPYEONG, "Seoul→Gapyeong");
+const winterPrice = bundlePrice(WINTER, "Seoul winter/Eobi");
 
 const sql03 = pendingFiles.includes(SQL_FILES[2])
   ? readFileSync(path.join(PENDING, SQL_FILES[2]), "utf8")
@@ -151,6 +171,24 @@ if (sql03) {
     );
   }
   ok(`SQL 03 offers match the bundle price (${base} + ticket-included row)`);
+}
+
+// Same guard for the two Seoul products: the offers row in each SQL must carry
+// the price its bundles carry, or the page and the checkout disagree.
+for (const [file, price, label, regen] of [
+  [SQL_FILES[7], gapyeongPrice, "SQL 08 (Seoul→Gapyeong)", "build-seoul-gapyeong-2026-08.mjs"],
+  [SQL_FILES[9], winterPrice, "SQL 10 (Seoul winter/Eobi)", "build-seoul-winter-eobi-2026-08.mjs"],
+]) {
+  if (!pendingFiles.includes(file)) continue;
+  const body = readFileSync(path.join(PENDING, file), "utf8");
+  const minor = Number(price) * 100;
+  if (!body.includes(`${minor}, 'USD'`)) {
+    die(
+      `${label} does not carry the bundle price (${minor} minor units)`,
+      `Regenerate it:  node scripts/${regen} && node scripts/gen-seoul-new-products-sql-2026-08.mjs`,
+    );
+  }
+  ok(`${label} offers match the bundle price (${minor})`);
 }
 
 if (!SUPABASE_URL || !SERVICE_KEY) {
@@ -330,6 +368,32 @@ if (DRY) {
     check(Number(inc?.amount_minor) === 7900, `  ticket included: ${inc ? inc.amount_minor / 100 : "—"} USD`);
   } else {
     check(false, "Busan EN page row not found — offers unverified");
+  }
+
+  // Seoul-departure products: same shape as Busan — 6 content locales live,
+  // 4 staged locales present as rows only (guests still get EN until the
+  // TOUR_PRODUCT_FALLBACK_URL_LOCALES gate opens, which is an owner decision).
+  for (const [slug, price, label] of [
+    [GAPYEONG, gapyeongPrice, "Seoul→Gapyeong"],
+    [WINTER, winterPrice, "Seoul winter/Eobi"],
+  ]) {
+    check(bySlug[slug]?.is_active === true, `active: ${slug}`);
+    check(
+      Number(bySlug[slug]?.price) === Number(price),
+      `${label} tours.price = USD ${bySlug[slug]?.price ?? "—"} (bundle says ${price})`,
+    );
+    const got = localesOf(slug);
+    const contentGot = CONTENT_LOCALES.filter((l) => got.includes(l));
+    check(
+      contentGot.length === CONTENT_LOCALES.length,
+      `${label}: content locales ${contentGot.join(",") || "(none)"}`,
+    );
+    const staged = STAGED_LOCALES.filter((l) => got.includes(l));
+    check(
+      staged.length === STAGED_LOCALES.length,
+      `${label}: staged locales ${staged.join(",") || "(none)"} ` +
+        `${C.dim("(rows exist; guests still see EN until the fallback gate opens)")}`,
+    );
   }
 
   const { data: pocheon } = await sb

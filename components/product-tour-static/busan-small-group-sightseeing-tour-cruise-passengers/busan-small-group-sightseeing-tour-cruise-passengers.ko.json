@@ -6,12 +6,12 @@
   "product_id": "busan-small-group-sightseeing-tour-cruise-passengers",
   "seo": {
     "pageTitle": "부산 크루즈 기항지 투어: 소그룹 당일 여행 | AtoC Korea",
-    "metaDescription": "부산 크루즈 터미널에서 출발하는 8시간 공유 밴 기항지 투어: 유엔기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장.",
+    "metaDescription": "부산 크루즈 터미널에서 출발하는 8시간 소그룹 기항지 투어: 해동용궁사, 재한유엔기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도 구름산책로, 용두산공원. 정원 12명 밴.",
     "primaryKeywords": [
       "부산 크루즈 당일 투어",
       "부산 소그룹 관광",
       "감천문화마을 투어",
-      "태종대 크루즈 투어",
+      "송도 케이블카 크루즈 투어",
       "자갈치시장 투어"
     ],
     "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp"
@@ -20,7 +20,7 @@
     "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "title": "부산 크루즈 기항지 소그룹 투어",
     "priceLabel": "",
-    "shortCardDescription": "부산 크루즈 터미널에서 출발해 8시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행.",
+    "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다.",
     "tags": [
       "small_group",
       "부산",
@@ -133,17 +133,17 @@
       "id": 1,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 1",
-      "caption": "유엔기념공원 (한국전쟁) — photo 1"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 1",
+      "caption": "해동 용궁사 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 1",
-      "caption": "태종대 해안 절벽 — photo 1"
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 1",
+      "caption": "재한유엔기념공원 — photo 1"
     },
     {
       "id": 3,
@@ -157,73 +157,73 @@
       "id": 4,
       "type": "photo",
       "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-      "location": "부산타워 (용두산공원)",
-      "alt": "부산타워 (용두산공원) — 갤러리 이미지 1",
-      "caption": "부산타워 (용두산공원) — 사진 1"
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 1",
+      "caption": "용두산공원 & 부산타워 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
       "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
-      "location": "남포동 & 자갈치 수산시장",
-      "alt": "남포동 & 자갈치 수산시장 — on-route photo",
-      "caption": "남포동 & 자갈치 수산시장"
+      "location": "송도 구름산책로",
+      "alt": "송도 구름산책로 — gallery image 1",
+      "caption": "송도 구름산책로 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 2",
-      "caption": "유엔기념공원 (한국전쟁) — photo 2"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 2",
+      "caption": "해동 용궁사 — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 3",
-      "caption": "유엔기념공원 (한국전쟁) — photo 3"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 3",
+      "caption": "해동 용궁사 — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 4",
-      "caption": "유엔기념공원 (한국전쟁) — photo 4"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 4",
+      "caption": "해동 용궁사 — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 5",
-      "caption": "유엔기념공원 (한국전쟁) — photo 5"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 5",
+      "caption": "해동 용궁사 — photo 5"
     },
     {
       "id": 10,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-      "location": "유엔기념공원 (한국전쟁)",
-      "alt": "유엔기념공원 (한국전쟁) — gallery image 6",
-      "caption": "유엔기념공원 (한국전쟁) — photo 6"
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 6",
+      "caption": "해동 용궁사 — photo 6"
     },
     {
       "id": 11,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 2",
-      "caption": "태종대 해안 절벽 — photo 2"
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 2",
+      "caption": "재한유엔기념공원 — photo 2"
     },
     {
       "id": 12,
       "type": "photo",
       "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
-      "location": "태종대 해안 절벽",
-      "alt": "태종대 해안 절벽 — gallery image 3",
-      "caption": "태종대 해안 절벽 — photo 3"
+      "location": "재한유엔기념공원",
+      "alt": "재한유엔기념공원 — gallery image 3",
+      "caption": "재한유엔기념공원 — photo 3"
     },
     {
       "id": 13,
@@ -245,17 +245,17 @@
       "id": 15,
       "type": "photo",
       "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-      "location": "부산타워 (용두산공원)",
-      "alt": "부산타워 (용두산공원) — 갤러리 이미지 2",
-      "caption": "부산타워 (용두산공원) — 사진 2"
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 2",
+      "caption": "용두산공원 & 부산타워 — photo 2"
     },
     {
       "id": 16,
       "type": "photo",
       "src": "/images/tours/busan-tower/busan-tower-yongdusan-pavilion-night.webp",
-      "location": "부산타워 (용두산공원)",
-      "alt": "부산타워 (용두산공원) — 갤러리 이미지 3",
-      "caption": "부산타워 (용두산공원) — 사진 3"
+      "location": "용두산공원 & 부산타워",
+      "alt": "용두산공원 & 부산타워 — gallery image 3",
+      "caption": "용두산공원 & 부산타워 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -1494,8 +1494,8 @@
         "iconColor": "text-sky-600",
         "items": [
           {
-            "label": "귀항 여유 시간을 포함한 부산의 5대 명소 완전 정복",
-            "detail": "많은 크루즈 당일 투어는 유엔기념공원(해변 나들이 분위기와 맞지 않는다는 이유로)이나 감천(항구에서 너무 멀다는 이유로) 중 하나를 빠뜨립니다. 이 루트는 두 곳 모두를 포함하고, 태종대·용두산/부산타워·자갈치/남포동까지 아우르면서도 귀항 드라이브를 위한 60분의 안전 여유 시간을 확보합니다. 8시간이라는 시간표는 홍보용 이상적 일정이 아닌, 부산의 실제 교통 상황을 반영해 설계되었습니다."
+            "label": "아홉 곳 전부, 귀항 여유까지",
+            "detail": "크루즈 당일 투어는 유엔기념공원(바닷가 나들이에 너무 무겁다는 이유로)이나 감천(항구에서 멀다는 이유로) 중 하나를 빼는 경우가 많습니다. 이 코스는 둘 다 넣고, 남포동 시장 구역을 끝에서 끝까지 걸어서 지나며, 송도와 용두산까지 담고도 17:00 무렵 터미널로 돌아옵니다. 부산 기항이 주로 쓰는 승선 마감 시각보다 앞섭니다. 여덟 시간이라는 시간표는 홍보용 이상적 일정이 아니라 부산의 실제 교통을 기준으로 짰습니다."
           },
           {
             "label": "운항사의 시계가 아닌, 크루즈 일정에 맞춰 설계된 투어",
@@ -1548,14 +1548,14 @@
     {
       "id": "walking",
       "title": "도보 및 지형",
-      "preview": "보통 수준.",
+      "preview": "난이도 높음.",
       "content": [
-        "보통 수준.",
-        "감천문화마을은 산비탈에 조성되어 가파른 골목길과 계단이 많아 휠체어 이용이 불가하며, 유모차 이용도 어렵습니다.",
-        "태종대 절벽 순환 코스는 4.3km이지만, 선택 사항인 다누비 열차(₩4,000)를 이용하면 오르막길을 피할 수 있습니다.",
-        "UN기념공원과 용두산은 평탄한 지형입니다.",
-        "총 도보 거리: 태종대·감천 코스 선택에 따라 약 3~5km.",
-        "편안한 앞코 막힌 신발은 필수입니다."
+        "난이도 높음.",
+        "용궁사는 사원까지 108개의 돌계단이 있습니다 (생략 가능 — 상단 전망 플랫폼이 마련되어 있습니다).",
+        "감천은 경사진 언덕 마을로, 포토 코스 전반에 걸쳐 가파른 골목과 계단이 이어집니다 — 미끄럼 방지 신발은 필수입니다.",
+        "용두산 오르막은 광복로에서 에스컬레이터로 이동하며, 내려올 때는 계단을 이용합니다.",
+        "자갈치, BIFF 광장, 국제시장, 송도해수욕장은 평탄하여 도보 이동이 가능합니다.",
+        "하루 전체 일정 기준 총 도보 거리는 약 5~6km이며, 일부 계단 구간이 포함됩니다."
       ]
     },
     {
@@ -1571,11 +1571,11 @@
     {
       "id": "accessibility",
       "title": "어린이 및 접근성",
-      "preview": "만 8세 이상 어린이를 환영하며, 코스는 어린이와 함께하기에 적합합니다 — 태종대의 다누비…",
+      "preview": "만 4세 이상. 학령기 아이들에게 잘 맞는 코스이며, 유모차는 감천에서 어렵습니다.",
       "content": [
-        "만 8세 이상 어린이를 환영하며, 코스는 어린이와 함께하기에 적합합니다 — 태종대 다누비 열차는 어린이들에게 특히 인기 있으며, 자갈치의 살아있는 생선도 어김없이 흥미를 끕니다.",
-        "유모차는 감천(계단)에서 이용이 불가하며, 그 외 방문지에서는 이용 가능합니다.",
-        "휠체어 이용 고객께서는 노선 조정이 가능한 크루즈 전용 프라이빗 투어를 권장합니다 — 감천문화마을과 태종대 절벽 탐방로가 주요 제약 구간입니다."
+        "최소 연령은 만 4세입니다. 걷는 구간은 학령기 아이들이 가장 잘 소화하며, 자갈치의 활어와 송도 스카이워크가 반응이 확실합니다.",
+        "감천은 계단이 많아 유모차가 어렵습니다. 나머지 정차는 가능합니다.",
+        "휠체어를 이용하시는 분은 경로 조정이 가능한 프라이빗 크루즈 전세를 권해 드립니다. 이 일정에서는 감천의 언덕이 가장 큰 제약입니다."
       ]
     },
     {
@@ -1600,46 +1600,24 @@
       "temp": "—",
       "label": "계절별 안내 참조"
     },
-    "_seasonalSummary": "Busan is South Korea's southernmost major city — milder and wetter than Seoul, with mild winters (5–10 °C lows). Summer is humid, with peak rainfall in July monsoon.",
-    "_seasonalTemperatures": [
-      {
-        "season": "Spring (Mar–May)",
-        "range": "8–22 °C",
-        "notes": "Cherry blossoms in late March / early April."
-      },
-      {
-        "season": "Summer (Jun–Aug)",
-        "range": "22–30 °C",
-        "notes": "Hot and humid; July monsoon possible. Sea breeze keeps Taejongdae mild."
-      },
-      {
-        "season": "Autumn (Sep–Nov)",
-        "range": "10–24 °C",
-        "notes": "Best season — clearest air, warmest sea. Foliage in late October."
-      },
-      {
-        "season": "Winter (Dec–Feb)",
-        "range": "0–10 °C",
-        "notes": "Mild for Korea but can be windy at coastal stops."
-      }
-    ]
+    "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
   },
   "seasonalVariations": [
     {
       "season": "봄 (3월~5월)",
-      "description": "3월 말~4월 초 용두산공원과 태종대 해안도로를 따라 벚꽃이 만개합니다. 크루즈 기항 최적 시즌입니다."
+      "description": "3월 말~4월 초에는 송도 해안과 감천문화마을 진입로를 따라 벚꽃이 만발합니다. 부산의 개화 시기는 서울보다 7~10일 빠릅니다. 부처님 오신 날(5월)에는 용궁사에서 연등회 행사가 열립니다."
     },
     {
       "season": "여름 (6월~8월)",
-      "description": "낮이 길고, 부산 해안 지역은 해풍 덕분에 내륙보다 시원합니다. 7월에는 장마 강수 가능성이 있으니 날씨 예보를 확인하세요."
+      "description": "일조 시간이 길며, 해안 명소(용궁사·송도·감천)는 내륙보다 시원합니다. 7월 장마철에는 야외 일정이 단축될 수 있습니다. 용궁사는 오전에 방문하면 더위를 피할 수 있습니다. 송도 해수욕장 축제는 6월~8월에 모래 조각 전시와 함께 진행됩니다."
     },
     {
       "season": "가을 (9월~11월)",
-      "description": "태종대에서 쓰시마가 가장 선명하게 보이는 시기; 10월 말 단풍. 전반적으로 최고의 계절."
+      "description": "시야가 가장 맑고 바다 수온도 가장 따뜻한 최적의 계절입니다. 10월 하순에는 단풍이 절정을 이룹니다. 청사포·감천의 골든아워가 가장 쾌적하게 즐겨집니다. 11월 11일 UN기념공원에서 열리는 '턴 투워드 부산(Turn Toward Busan)' 추모식은 주목할 만한 문화 행사입니다."
     },
     {
       "season": "겨울 (12월–2월)",
-      "description": "한산한 분위기; 맑은 바다 전망; 서울보다 온화한 날씨 (부산 겨울 최저기온 5–10°C)."
+      "description": "인파가 적고, 맑은 바다 전망을 즐길 수 있으며, 한국 기준으로 온화한 날씨(부산 겨울 최저기온 5~10°C). 용궁사 새해 첫날 일출은 대표적인 행사입니다. 용두산 시민의 종은 제야에 33번 타종됩니다."
     }
   ],
   "bookingTrustItems": [
@@ -1734,9 +1712,9 @@
       "answer": "아니요. 전망대는 선택 사항입니다(성인 ₩12,000, 청소년 ₩9,000). 용두산공원 자체는 무료이며, 지상에서도 도심의 전경을 충분히 감상할 수 있습니다. 대부분의 그룹은 주어진 시간 대비 비용 효율을 고려해 전망대를 생략합니다. 전망대에 올라가고 싶으시다면 도착 시 가이드에게 미리 알려주셔야 방문 시간을 조정할 수 있습니다."
     },
     {
-      "id": "q-taejongdae-train",
-      "question": "태종대에서 다누비 열차를 타야 할까요?",
-      "answer": "4.3km의 절벽 산책로가 부담스러우시다면 탑승을 권장합니다. 다누비 열차(성인 ₩4,000)는 등대와 절벽 전망대에 정차하며 약 30분 만에 코스를 완주합니다. 초반의 오르막길 문제도 해결해 줍니다. 활동적인 여행객이라면 도보로 60~75분 정도 소요됩니다. 75분의 정차 시간은 두 가지 선택 모두를 충분히 수용합니다."
+      "id": "q-cable-car",
+      "question": "송도해상케이블카를 탈 수 있나요?",
+      "answer": "네 — 송도 스카이파크 정차가 바로 그것이고, 탑승 여부는 당일 손님이 정하십니다. 케이블카는 투어 요금에 포함되지 않습니다. 베이스 스테이션에서 직접 구매하시며 성인 왕복 17,000원, 바닥이 유리인 크리스탈 캐빈은 25,000원입니다. 타지 않으시겠다면 그 시간에 무료인 구름산책로와 해변 산책로를 걸으시면 됩니다. 차량은 어느 쪽이든 기다립니다."
     },
     {
       "id": "q-jagalchi-eat",
@@ -1750,18 +1728,18 @@
     },
     {
       "id": "walking",
-      "question": "도보 이동 거리가 어느 정도 되나요?",
-      "answer": "선택에 따라 약 3~5km입니다. 감천의 언덕길 골목과 태종대의 절벽 산책로가 활동적인 구간이며, UN기념공원과 용두산은 평탄합니다. 태종대의 다누비 열차를 이용하면 오르막길을 피할 수 있습니다. 편안한 앞코가 막힌 신발은 필수입니다."
+      "question": "걷는 거리가 얼마나 되나요?",
+      "answer": "총 약 5~6km이며, 용궁사 108계단(선택 가능), 감천 마을 언덕길, 용두산 계단 하강이 포함됩니다. 유엔기념공원, 자갈치, BIFF 광장, 국제시장, 송도 해수욕장은 평지입니다. 미끄럼 방지 기능이 있는 편안한 운동화 착용이 필수입니다."
     },
     {
       "id": "family",
-      "question": "아이를 동반한 가족에게도 적합한가요?",
-      "answer": "감천의 계단을 오를 수 있는 초등학생(약 8세 이상)의 경우 적합합니다. 아이들은 보통 태종대 다누비 열차와 자갈치의 활어 수족관에 가장 큰 흥미를 보입니다. UN기념공원은 짧고 조용하게 둘러볼 수 있습니다."
+      "question": "어린이도 참여 가능한가요?",
+      "answer": "네, 만 6세 이상 참여 가능합니다. 용궁사 계단, 감천 마을 언덕길, 용두산 계단 하강이 주요 체력 고려 사항입니다. 아이들은 자갈치의 활어 전시장, BIFF 광장의 씨앗호떡, 송도의 구름산책로 스카이워크를 특히 좋아하는 경향이 있습니다. 유모차는 감천이나 용두산에서 이용이 불가합니다."
     },
     {
       "id": "seniors",
-      "question": "어르신들도 편하게 참가할 수 있나요?",
-      "answer": "활동적인 어르신이라면 충분히 가능합니다. 태종대는 다누비 열차로, 감천 윗 구역은 대부분 평탄하게 이동할 수 있습니다. 이동에 상당한 제한이 있는 여행객께는 프라이빗 크루즈 투어를 권장합니다. 감천의 언덕길이 가장 큰 부담 구간입니다."
+      "question": "노인도 참여 가능한가요?",
+      "answer": "용궁사 계단과 감천 마을 언덕길로 인해 다소 체력이 요구됩니다. 활동적인 노인 여행객은 문제없이 참여 가능하나, 거동이 불편한 분들은 가장 가파른 정차지를 건너뛸 수 있도록 경로를 조정할 수 있는 당사의 크루즈 전용 프라이빗 차터를 고려하시기 바랍니다."
     },
     {
       "id": "children",
@@ -1770,8 +1748,8 @@
     },
     {
       "id": "weather",
-      "question": "폭우나 태풍이 올 경우 어떻게 되나요?",
-      "answer": "가벼운 비: 투어는 예정대로 진행됩니다. 폭우: 태종대 절벽 산책로가 폐쇄되지만, 다누비 열차는 정상 운행됩니다. 감천은 개방되지만 사진 촬영에 제약이 있을 수 있습니다. 태풍 경보가 발령된 경우, 운영사는 일정 변경 또는 전액 환불을 제공합니다. 크루즈 선사의 기항지 취소 시에는 증빙 서류 제출 후 전액 환불됩니다."
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "가벼운 비: 일정대로 진행됩니다. 폭우: 용궁사 하단 사찰 구역이 미끄러워지고, 감천 계단이 위험해지며, 폭풍 시 송도 구름산책로가 폐쇄됩니다 — 가이드가 야외 시간을 단축하고 실내 정차지(자갈치, BIFF 광장, 국제시장)를 연장합니다. 태풍급 기상 악화 또는 항구 폐쇄 시: 전액 환불 또는 크루즈 라인 재예약을 도와드립니다."
     }
   ],
   "guestReviews": [],
@@ -1839,10 +1817,13 @@
       "market"
     ],
     "poi_tags": [
-      "gamcheon_culture_village",
-      "jagalchi_market",
-      "taejongdae",
+      "haedong_yonggungsa",
       "un_memorial_cemetery",
+      "jagalchi_market",
+      "biff_square",
+      "gukje_market",
+      "gamcheon_culture_village",
+      "songdo_beach",
       "yongdusan_park"
     ],
     "pace_level": 0.8,
@@ -1920,11 +1901,11 @@
     "pickup_base_normalized": "busan_cruise",
     "vehicle_type_legacy": "van_or_minicoach",
     "anchor_poi_keys": [
+      "haedong_yonggungsa",
       "un_memorial_cemetery",
-      "taejongdae",
-      "gamcheon_culture_village",
-      "yongdusan_park",
-      "jagalchi_market"
+      "jagalchi_market",
+      "biff_square",
+      "gukje_market"
     ],
     "private_tour_fit": 0.05,
     "shared_tour_fit": 1,

@@ -17,6 +17,7 @@
 
 import type { TourProductDetailViewModel } from "@/components/product-tour-static/_shared/tourProductFullPageJsonTypes";
 import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { stripEmphasisMarkers } from "@/components/product-tour-static/_shared/inlineEmphasis";
 
 /**
  * Every tour's booking flow offers a guide in English, Chinese, or Korean
@@ -253,10 +254,14 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
     blocks.push({
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      // Markers stripped, not rendered: the copy is authored with `**bold**`
+      // and Google ingests this text verbatim into the rich result, where an
+      // asterisk is just noise. The visible FAQ renders the same string as
+      // real emphasis — see _shared/inlineEmphasis.tsx.
       mainEntity: faqs.map((q) => ({
         "@type": "Question",
-        name: q.question,
-        acceptedAnswer: { "@type": "Answer", text: q.answer },
+        name: stripEmphasisMarkers(q.question),
+        acceptedAnswer: { "@type": "Answer", text: stripEmphasisMarkers(q.answer) },
       })),
     });
   }

@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを8時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
+      "shortCardDescription": "クルーズ乗客のための釜山少人数寄港地ツアー、定員12名のバンで運行します。8時間で9か所 — 海東龍宮寺、在韓国連記念公園、自己負担の昼食、続いてチャガルチ市場・BIFFスクエア・国際市場を徒歩で、甘川文化村、松島雲の散歩道（ケーブルカーでスカイパークへ上がるかは現地で選択）、最後に龍頭山公園です。お迎えは船が着岸するクルーズターミナルで、帰着は乗船締切時刻に合わせます。"
     },
     "price": {
       "amountLabel": "68.95"
@@ -663,6 +663,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "ソウル発 加平（カピョン）日帰りツアー：南怡島（ナミソム）・晨静苑・プチフランス",
+      "subtitle": "加平の三大スポットをバス1日で — 山登りなし、入場料3か所込み",
+      "region": "ソウル → 京畿道（加平）",
+      "duration": "11.5時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "ソウル発日帰り",
+        "加平（カピョン）",
+        "混載グループ",
+        "韓国ドラマ",
+        "庭園"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "ソウルから最も気軽に行ける田園の一日。南怡島のメタセコイア並木、330,000 m²のテーマ樹木園、そして星の王子さまの村 — 3か所の入場料すべて込みで、19:00までにソウルへ戻ります。"
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -867,6 +893,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "ソウル発 冬季限定：雪岳山（ソラクサン）・南怡島（ナミソム）・オビ渓谷の氷壁",
+      "subtitle": "冬季限定のバス1日 — 韓国で最も名高い峰の雪、霜をまとった南怡島、そして村がつくる氷壁",
+      "region": "ソウル → 江原道 → 京畿道（加平）",
+      "duration": "13.5時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "冬季限定",
+        "季節限定",
+        "ソウル発日帰り",
+        "雪岳山（ソラクサン）",
+        "氷壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "厳冬期のみの運行です。雪に覆われた雪岳山、霜をまとった南怡島の並木道、そして加平の村人が毎年1月に渓谷の岩肌へ育てる高さ25メートルの氷壁を訪ねます。"
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {
