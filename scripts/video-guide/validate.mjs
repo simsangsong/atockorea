@@ -11,6 +11,7 @@
  */
 import fs from 'node:fs';
 import path from 'node:path';
+import { spawnSync } from 'node:child_process';
 import { framing, contains } from './framing.mjs';
 import { timelineOf, stopsOf, roleOf, outDurOf } from './lib/timeline.mjs';
 
@@ -50,6 +51,27 @@ if (spec.sourceDir && spec.sources) {
 // polaroids; it is a one-line check here and a wasted render there.
 if (spec.teaserLead && !spec.beats.some((b) => b.id === spec.teaserLead)) {
   problems.push(`teaserLead "${spec.teaserLead}" 에 해당하는 비트가 없다`);
+}
+
+// Gate 0e — the poster frame has to exist inside its source. 주상절리 (2026-08-04)
+// re-lettered its sources mid-draft and left `poster.src` pointing at what had
+// become a 9.5s clip with `at: 36`; poster.mjs then died on "bg 9:16" at the very
+// end of a six-step render chain. Same failure shape as 0b — a reference outside
+// the beat list going stale — and just as cheap to catch here.
+if (spec.poster && spec.sourceDir && spec.sources) {
+  const file = spec.sources[spec.poster.src];
+  if (!file) {
+    problems.push(`poster.src "${spec.poster.src}" 가 sources 에 없다`);
+  } else {
+    const p = path.join(spec.sourceDir, file);
+    const probe = spawnSync('ffprobe', ['-v', 'error', '-show_entries', 'format=duration',
+      '-of', 'default=nw=1:nk=1', p], { encoding: 'utf8' });
+    const dur = Number(probe.stdout?.trim());
+    if (Number.isFinite(dur) && spec.poster.at >= dur) {
+      problems.push(`poster ${spec.poster.src}@${spec.poster.at}s 가 소스 길이 ${dur.toFixed(1)}s 를 넘는다`
+        + ` — 소스 글자를 다시 매기고 poster 를 안 고친 것부터 의심하라`);
+    }
+  }
 }
 
 // Gate 0c — points of interest are a stop and a label, not a pointer (V6-D21,
