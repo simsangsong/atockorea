@@ -32,11 +32,11 @@
 - **그물 밖:** `1` · `2` · `4`
 - **위험단:** 5 가 노안 최대. 레이아웃 붕괴는 여기서만 보인다.
 
-### rallyStage — 그물 안 0 / 전체 5
+### rallyStage — 그물 안 5 / 전체 5
 
 - **정본:** `lib/tour-room/notices.ts RallyStage`
-- **그물 안:** **없음**
-- **그물 밖:** `set` · `remind` · `due` · `overdue` · `contact`
+- **그물 안:** `set` · `remind` · `due` · `overdue` · `contact`
+- **그물 밖:** 없음 ✅
 - **위험단:** `overdue`·`contact` 가 공지 배너를 전면 점유한다 — 다른 카드를 덮는 유일한 상태.
 
 ### theme — 그물 안 2 / 전체 2
@@ -61,7 +61,7 @@
 | `/tour-mode/join/[roomToken]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/plan/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 
 **실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
@@ -78,4 +78,8 @@
 - `SCHEMES` (theme): `light` · `dark`
 - `SKINS` (skin): `classic` · `contrast` · `jeju`
 - `SCALES` (textScale): `3` · `5`
+
+### `scripts/qa-rally-stages.mjs`
+
+- `RALLY_STAGES` (rallyStage): `set` · `remind` · `due` · `overdue` · `contact`
 
