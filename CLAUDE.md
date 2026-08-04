@@ -3,7 +3,8 @@
 ## ✅ 완료(레포): 서울발 신규 상품 2종 — 가평 조인 투어 + 겨울 어비계곡 (2026-08-04, 사장님 지시)
 
 **부트스트랩:** `docs/NEXT-SESSION-SEOUL-GAPYEONG-WINTER-2026-08-04.md`
-(§1 사람 게이트 · §2 검증 제약 · §3 인공 빙벽 · §6 함정)
+(§1 사람 게이트 · §2 검증 제약 · §3 인공 빙벽 · §6 함정 · **§8 에 실행 프롬프트 통째로**)
+**PR #722** — 브랜치 `claude/seoul-gapyeong-tour-poi-mrjhkf` (머지 대기)
 
 `seoul-gapyeong-nami-morning-calm-petite-france-day-tour`(남이섬→점심→아침고요→쁘띠프랑스, **$59**) +
 `seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour`(설악산→점심→남이섬→어비계곡, **$64, 겨울 한정**).
