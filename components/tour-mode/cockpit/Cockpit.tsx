@@ -687,10 +687,30 @@ export default function Cockpit({
     return () => document.removeEventListener('pointerdown', onGesture);
   }, [primeMedia]);
 
+  /**
+   * Which system capsules deserve the driver's ear. Guest signals arrive as
+   * sender_role 'system', and until 2026-08-04 the speak filter below only
+   * passed 'customer' — so 늦어요·길잃음 rendered silently while the driver
+   * watched the road (scenario audit: the quiet ones were the urgent ones).
+   * Scoped by signal_type so ledger capsules, plan confirmations and other
+   * system chatter stay text-only; rally_overdue carries kind, not signal_type.
+   */
+  const isSpokenSignal = (message: RoomMessage): boolean => {
+    if (message.sender_role !== 'system') return false;
+    const meta = message.metadata as { signal_type?: unknown; kind?: unknown } | null;
+    if (meta?.kind === 'rally_overdue') return true;
+    return (
+      typeof meta?.signal_type === 'string' &&
+      ['running_late', 'rest_stop', 'lost_me', 'pickup_request', 'dropoff_change', 'share_location', 'meeting_propose'].includes(
+        meta.signal_type,
+      )
+    );
+  };
+
   useEffect(() => {
     for (const message of messages) {
       if (playedRef.current.has(message.id)) continue;
-      if (message.sender_role !== 'customer' || message._local) continue;
+      if ((message.sender_role !== 'customer' && !isSpokenSignal(message)) || message._local) continue;
       // Wait for translation repair (R-6) before speaking — a pending message
       // would otherwise be read aloud in the guest's language with a Korean
       // voice. Leave it unmarked so the repaired rebroadcast (same id) plays.
