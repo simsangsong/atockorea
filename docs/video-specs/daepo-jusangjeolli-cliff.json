@@ -1,0 +1,688 @@
+{
+  "slug": "daepo-jusangjeolli-cliff",
+  "poiKey": "daepo_jusangjeolli_cliff",
+  "title": {
+    "ko": "중문대포주상절리대",
+    "en": "Daepo Jusangjeolli Cliff"
+  },
+  "theme": "pearl",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "encode": {
+    "crf": 18
+  },
+  "sourceDir": "D:/VIDEO2/제주/중문대포주상절리대",
+  "sources": {
+    "A": "04_20260801_103837.mp4",
+    "B": "01_20260801_102807.mp4",
+    "C": "03_20260801_103246.mp4",
+    "D": "19_20260629_103828.mp4",
+    "E": "20_20260629_103840.mp4"
+  },
+  "pacing": {
+    "maxSlowPct": 72,
+    "why": "40% 상한은 전송 구간을 압축하는 걷기 코스용 파라미터인데, 이 촬영은 측정이 다르게 나왔다. turns.mjs(pan>=0.60) 기준 공원 안 테이크 B 는 126s 중 68s, 절벽 테이크 C 는 158s 중 약 50s 가 회전이다 — 카메라가 해안 데크를 따라 계속 훑기 때문이고, 그 훑는 동작이 곧 이 관광지의 내용이다(V6-D18: 회전이 곧 관람, 그리고 사장님이 두 번 지적한 '휙휙 돌아서 어지럽다'가 정확히 그걸 빨리감았을 때 나온다). 그래서 빨리감기는 측정된 직진 9곳에만 넣었고 최고 5.0x, 늘어지는 곳은 속도가 아니라 가위(디졸브 0.6)로 줄였다. 이 숫자는 취향이 아니라 회전 지도의 결과다."
+  },
+  "audio": {
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29). 주상절리 전용 베드 수급 전까지 공유."
+  },
+  "grade": [
+    "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
+    "crop=iw*0.93:ih*0.93",
+    "vibrance=intensity=0.40",
+    "eq=saturation=1.08",
+    "curves=r='0/0 0.08/0.055 0.3/0.29 0.55/0.575 0.8/0.845 1/1':g='0/0 0.08/0.055 0.3/0.295 0.55/0.575 0.8/0.84 1/1':b='0/0.01 0.08/0.07 0.3/0.3 0.55/0.55 0.8/0.79 1/0.97'",
+    "unsharp=11:11:0.45:5:5:0.0",
+    "unsharp=5:5:0.55:5:5:0.0",
+    "noise=alls=4:allf=t+u",
+    "vignette=a=PI/12"
+  ],
+  "poster": {
+    "src": "C",
+    "at": 34.9
+  },
+  "teaserLead": "31",
+  "city": "Jeju",
+  "beats": [
+    {
+      "id": "c1",
+      "kind": "clip",
+      "src": "C",
+      "in": 34.9,
+      "out": 38,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "role": "title",
+      "title": "Lava that cooled into pillars",
+      "sub": "Daepo Jusangjeolli — Jungmun, Jeju",
+      "chapter": "Daepo Jusangjeolli Cliff"
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "E",
+      "in": 3.8,
+      "out": 6.3,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the whole cliff",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "B",
+      "in": 89,
+      "out": 91.4,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the cove below",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "01",
+      "kind": "clip",
+      "src": "A",
+      "in": 0,
+      "out": 6,
+      "speed": 1,
+      "stab": true,
+      "role": "promise",
+      "title": "Start at the car park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "02",
+      "kind": "clip",
+      "src": "A",
+      "in": 6,
+      "out": 8.9,
+      "speed": 1,
+      "stab": true,
+      "title": "Walk toward the booth",
+      "nosnap": "no pan within ±1.5s (max 0.44)"
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "A",
+      "in": 8.9,
+      "out": 11.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The ticket office ahead",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "04",
+      "kind": "arrow",
+      "src": "A",
+      "at": 11.5,
+      "hold": 5.8,
+      "title": "Buy Your Ticket Here",
+      "sub": "Adults ₩2,000 · under 7 free",
+      "caption": "Card and mobile pay only — the booth takes no cash.",
+      "chapter": "Tickets"
+    },
+    {
+      "id": "05",
+      "kind": "clip",
+      "src": "A",
+      "in": 11.5,
+      "out": 15.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Past the booth"
+    },
+    {
+      "id": "06",
+      "kind": "clip",
+      "src": "A",
+      "in": 20.8,
+      "out": 31.4,
+      "speed": 3,
+      "title": "Along the souvenir stalls",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "07",
+      "kind": "clip",
+      "src": "A",
+      "in": 31.4,
+      "out": 33.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Through the crowd",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "08",
+      "kind": "clip",
+      "src": "A",
+      "in": 43.4,
+      "out": 49,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Up to the entrance gate",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "09",
+      "kind": "arrow",
+      "src": "A",
+      "at": 49,
+      "hold": 5.8,
+      "title": "The Entrance Gate",
+      "sub": "Open year-round, 09:00–18:00",
+      "caption": "Last entry is 17:40. The deck loop starts inside."
+    },
+    {
+      "id": "10",
+      "kind": "clip",
+      "src": "A",
+      "in": 49,
+      "out": 51,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Tap in at the turnstile"
+    },
+    {
+      "id": "10b",
+      "kind": "clip",
+      "src": "A",
+      "in": 51,
+      "out": 59.6,
+      "speed": 2.4,
+      "title": "Out the far side",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 3.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Inside the park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "12",
+      "kind": "clip",
+      "src": "B",
+      "in": 3.3,
+      "out": 8.9,
+      "speed": 1,
+      "stab": true,
+      "title": "The lava rock garden",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "13",
+      "kind": "clip",
+      "src": "B",
+      "in": 8.9,
+      "out": 16.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Down the paved path",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "14",
+      "kind": "arrow",
+      "src": "B",
+      "at": 16.5,
+      "hold": 5.6,
+      "title": "Follow The Blue Line",
+      "sub": "Painted down the middle",
+      "caption": "It runs from the gate all the way to the cliff decks.",
+      "chapter": "The blue line"
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "B",
+      "in": 16.5,
+      "out": 21.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Under the pines"
+    },
+    {
+      "id": "16",
+      "kind": "clip",
+      "src": "B",
+      "in": 21.3,
+      "out": 26,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The path bends to the sea",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "B",
+      "in": 35.3,
+      "out": 39.9,
+      "speed": 2,
+      "title": "Along the coastal pines",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "18",
+      "kind": "clip",
+      "src": "B",
+      "in": 39.9,
+      "out": 46,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The sea opens up",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "B",
+      "in": 55.9,
+      "out": 63.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Down to the first deck",
+      "chapter": "Down to the sea",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "20",
+      "kind": "clip",
+      "src": "B",
+      "in": 63.8,
+      "out": 71,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The cliff edge",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "21",
+      "kind": "clip",
+      "src": "B",
+      "in": 80.3,
+      "out": 87.4,
+      "speed": 2.2,
+      "title": "Along the boardwalk",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "B",
+      "in": 87.4,
+      "out": 91,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Above the cove",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "23",
+      "kind": "arrow",
+      "src": "B",
+      "at": 91,
+      "hold": 5.6,
+      "title": "The Cove Below",
+      "sub": "Boulders, not sand",
+      "caption": "Clear shallow water where the lava ran into the sea."
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "B",
+      "in": 91,
+      "out": 95.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Past the cove"
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "B",
+      "in": 95.3,
+      "out": 113.9,
+      "speed": 5,
+      "title": "On around the loop",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "26",
+      "kind": "clip",
+      "src": "B",
+      "in": 113.9,
+      "out": 116.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The deck turns inland",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "27",
+      "kind": "clip",
+      "src": "C",
+      "in": 0,
+      "out": 3.4,
+      "speed": 1,
+      "stab": true,
+      "title": "Back out on the cliff",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "C",
+      "in": 3.4,
+      "out": 10.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The deck follows the rock",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "C",
+      "in": 10.3,
+      "out": 29.4,
+      "speed": 5,
+      "title": "Out to the far deck",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "30",
+      "kind": "clip",
+      "src": "C",
+      "in": 29.4,
+      "out": 34.9,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "And there they are",
+      "chapter": "The columns",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "31",
+      "kind": "arrow",
+      "src": "C",
+      "at": 34.9,
+      "hold": 6.4,
+      "title": "Jusangjeolli — The Columns",
+      "sub": "Natural Monument No. 443",
+      "caption": "Cooling lava contracted into five- and six-sided pillars."
+    },
+    {
+      "id": "32",
+      "kind": "clip",
+      "src": "C",
+      "in": 34.9,
+      "out": 41,
+      "speed": 1,
+      "stab": true,
+      "title": "Stand and look"
+    },
+    {
+      "id": "33",
+      "kind": "clip",
+      "src": "C",
+      "in": 43.4,
+      "out": 48.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The cliff runs on",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "34",
+      "kind": "clip",
+      "src": "C",
+      "in": 48.3,
+      "out": 70,
+      "speed": 5,
+      "title": "Back the way you came",
+      "chapter": "The way back",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "35",
+      "kind": "clip",
+      "src": "C",
+      "in": 78,
+      "out": 92.4,
+      "speed": 4,
+      "title": "Up through the pines",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "36",
+      "kind": "clip",
+      "src": "C",
+      "in": 92.4,
+      "out": 96.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The path climbs",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "37",
+      "kind": "clip",
+      "src": "C",
+      "in": 101.8,
+      "out": 113.4,
+      "speed": 3.4,
+      "title": "Past the rock garden",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "38",
+      "kind": "clip",
+      "src": "C",
+      "in": 113.4,
+      "out": 115.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The last bend",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "39",
+      "kind": "clip",
+      "src": "C",
+      "in": 115.8,
+      "out": 123.9,
+      "speed": 2.6,
+      "title": "Toward the exit",
+      "chapter": "The way out",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "40",
+      "kind": "clip",
+      "src": "C",
+      "in": 128,
+      "out": 133,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The exit gate ahead",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "41",
+      "kind": "arrow",
+      "src": "C",
+      "at": 133,
+      "hold": 5.6,
+      "title": "The Way Out",
+      "sub": "Turnstiles on the way out too",
+      "caption": "Out through the gate, then back past the shops."
+    },
+    {
+      "id": "42",
+      "kind": "clip",
+      "src": "C",
+      "in": 133,
+      "out": 140.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Out through the turnstile"
+    },
+    {
+      "id": "43",
+      "kind": "clip",
+      "src": "C",
+      "in": 143.8,
+      "out": 151.9,
+      "speed": 2.6,
+      "title": "Back to the plaza",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "44",
+      "kind": "clip",
+      "src": "C",
+      "in": 151.9,
+      "out": 157.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Where you came in",
+      "chapter": "Where you came in",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "45",
+      "kind": "clip",
+      "src": "D",
+      "in": 5,
+      "out": 8,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "role": "recap",
+      "title": "The cliff you just walked",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    }
+  ]
+}
