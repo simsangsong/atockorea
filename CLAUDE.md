@@ -11,11 +11,21 @@
 10로케일 번들 20개 · 등록 5곳 · **DB 적용 완료**(SQL 은 10~13 으로 재번호 후 `applied/` 이동).
 빌더 `scripts/build-seoul-{gapyeong,winter-eobi}-2026-08.mjs` · 검증 `scripts/qa-seoul-new-products-2026-08.mjs`.
 
-🔴 **겨울 상품은 `is_active=false` 로 들어가 있다 — 아직 안 팔린다.** 데이터·페이지·offer 는 전부 라이브다.
-이유: 상품 자신의 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
-읽는 코드가 앱에 없다**(2026-08-04 확인 — 전형적인 "선언만 되고 안 읽힘"). 시즌을 막는 건 추천 엔진의
-`match_tours.available_months=[12,1,2]` 뿐이고 상품 페이지·결제는 안 막는다. 오픈 = 마을 확인(031-585-3551) 후
-`apply-seoul-new-products-2026-08.mjs` 를 `--inactive` 없이 재실행.
+🔴 **겨울 상품은 판매 중지 상태다** — `is_active=false` **+ `CONSUMER_BLOCKED_TOUR_SLUGS`**, 두 쪽 다.
+이유: 상품 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
+읽는 코드가 앱에 없다**(전형적인 "선언만 되고 안 읽힘"). 시즌을 보는 건 추천 엔진의
+`match_tours.available_months=[12,1,2]` 뿐이다.
+🔴 **두 플래그의 역할이 다르다 — 대조군 두고 실측한 표:**
+
+| 표면 | `is_active=false` 만 | + 블록리스트 |
+|---|---|---|
+| `/api/tours` | 없음(17건) | 없음 |
+| `/tours/list` 카드 | **있음** | 없음 |
+| `/tour-product` 페이지 | 렌더됨(349KB) | **404** |
+
+즉 **DB 플래그는 판매만 막고, 블록리스트가 상품을 시야에서 지운다**
+(`assertRegisteredConsumerSlug` → `isTourSlugBlockedFromConsumerSurfaces` → `notFound()`).
+오픈 = 마을 확인(031-585-3551) 후 **블록리스트 한 줄 제거 + `--inactive` 없이 재적용**, 두 쪽이 한 세트.
 
 🔴 **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돈다**(`psql`·`SUPABASE_DB_URL` 둘 다 없음).
 대체 경로 = **`scripts/apply-seoul-new-products-2026-08.mjs`**(supabase-js). 행 매핑은
@@ -118,8 +128,12 @@ P-01 은 ⏸ 데이터 대기(PR #702 판정 — 픽업 장소 0건·시각 상�
 병행 세션이 적용하고 파일만 안 옳긴 구간이 있었고, 다른 세션이 DB 를 직접 조회해서야
 이미 적용된 걸 확인했다. → **「pending 에 파일이 있다」는 미적용의 증거가 아니다. 판정은 객체 존재로.**
 
-🔴 **서울 2종 SQL 은 10~13 이다** — 08/09 를 병행 세션이 먼저 가져가서 두 번 재번호했다
-(05→08→10). 적용기에 13개 전부 등록돼 있다.
+🔴 **서울 2종 SQL 은 10~13 이고, 날짜+숫자 번호 체계는 2026-08-04 에 무너졌다.**
+네 세션이 동시에 같은 날짜로 쓰면서 각자 다음 빈 번호를 집었다 — 결과 **10번이 3개**(seoul-gapyeong · busan-cruise-listing · gyeongju-reopen), **11번이 2개**.
+서울은 05→08→10 으로 **두 번 재번호하고도 또 곹쳤다.** 전부 `applied/` 라 순서는 이제 무의미하다 —
+🔴 **아카이브된 파일을 다시 번호 매기지 말 것**(실행 기록이 깨진다). 순서가 중요하면 번호가 아니라
+파일 안 주석에 적고(08 이 07 에 대해 그러듯), 번호는 **착수 때가 아니라 커밋 직전에** 다시 확인하라.
+적용기에 13개 전부 등록돼 있다.
 ⚠ **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돌다** — `psql` 도 `SUPABASE_DB_URL` 도 없어
 SQL 단계에서 죽는다. 서울 2종은 `scripts/apply-seoul-new-products-2026-08.mjs`(supabase-js)로 적용했다.
 같은 문제를 다시 만나면 그 스크립트를 본으로 삼아라.
