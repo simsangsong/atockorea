@@ -5388,8 +5388,116 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
       }
     }
   },
-  "fr": {},
-  "de": {},
-  "it": {},
-  "ru": {}
+  "fr": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan en petit groupe : temple marin, Sky Capsule & villages culturels",
+        "subtitle": "Excursion d'une journée en petit groupe entre les icônes côtières de Busan et ses villages à flanc de colline — le temple marin Haedong Yonggungsa, la passerelle de verre Daritdol de Cheongsapo, le trajet en Sky Capsule du Blueline Park (billet en option à la réservation), le village culturel de Gamcheon et le paisible village de fresques Dakbatgol avec son monorail de l'escalier des vœux.",
+        "region": "Busan",
+        "duration": "≈ 10 heures",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Petit groupe",
+          "Busan",
+          "Sky Capsule",
+          "Côtier",
+          "Villages culturels"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Une journée à Busan en petit groupe, construite autour de la côte et des villages perchés : le temple marin Haedong Yonggungsa dans son créneau matinal tranquille, l'observatoire Daritdol de Cheongsapo et son plancher de verre gratuit, le trajet en Sky Capsule du Blueline Park de Cheongsapo à Mipo (billet inclus ou non inclus — à choisir lors de la réservation), le déjeuner, le village culturel de Gamcheon, et le méconnu village de fresques Dakbatgol où un monorail gratuit gravit l'« escalier des vœux ». Tous les sites majeurs sont en entrée libre, à l'exception de la capsule optionnelle."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    }
+  },
+  "de": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan Kleingruppe: Meerestempel, Sky Capsule & Kulturdörfer",
+        "subtitle": "Kleingruppen-Tagestour zu Busans Küstenikonen und Hangdörfern — der Haedong-Yonggungsa-Tempel am Meer, der Glas-Skywalk des Cheongsapo-Daritdol-Observatoriums, die Fahrt mit der Sky Capsule im Blueline Park (Ticket bei der Buchung wählbar), das Kulturdorf Gamcheon und das stille Dakbatgol-Wandmalereidorf mit seiner Monorail an der „Wunschtreppe“ (소망계단).",
+        "region": "Busan",
+        "duration": "≈ 10 Stunden",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Kleingruppe",
+          "Busan",
+          "Sky Capsule",
+          "Küste",
+          "Kulturdörfer"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Ein Busan-Tag in der Kleingruppe, aufgebaut um die Küste und die Hangdörfer: der Haedong-Yonggungsa-Tempel am Meer in seinem ruhigen Morgenfenster, das kostenlose Daritdol-Observatorium mit Glasboden in Cheongsapo, die Fahrt mit der Sky Capsule im Blueline Park von Cheongsapo nach Mipo (Ticket inbegriffen oder nicht — Sie wählen bei der Buchung), Mittagessen, das Kulturdorf Gamcheon und das kaum bekannte Dakbatgol-Wandmalereidorf, wo eine kostenlose Monorail die „Wunschtreppe“ hinaufgleitet. Jeder Ankerpunkt außer der optionalen Kapsel ist eintrittsfrei."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    }
+  },
+  "it": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
+        "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
+        "region": "Busan",
+        "duration": "≈ 10 ore",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Piccolo gruppo",
+          "Busan",
+          "Sky Capsule",
+          "Costa",
+          "Villaggi culturali"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Una giornata a Busan in piccolo gruppo costruita intorno alla costa e ai villaggi collinari: il tempio sul mare Haedong Yonggungsa nella sua quieta finestra mattutina, l'osservatorio Daritdol di Cheongsapo con pavimento di vetro e ingresso gratuito, la corsa in Sky Capsule del Blueline Park da Cheongsapo a Mipo (biglietto incluso o escluso — a vostra scelta alla prenotazione), il pranzo, il villaggio culturale di Gamcheon e il poco conosciuto villaggio dei murales Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. Ogni tappa principale, tranne la capsula opzionale, è a ingresso gratuito."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    }
+  },
+  "ru": {
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+      "catalog_card": {
+        "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "title": "Пусан в мини-группе: морской храм, Sky Capsule и культурные деревни",
+        "subtitle": "Однодневный тур по прибрежным символам и холмистым деревням Пусана в мини-группе — приморский храм Хэдон Ёнгунса, стеклянный скайвок на смотровой площадке Таритдоль в Чхонсапхо, поездка на Sky Capsule в парке «Блюлайн» в Хэундэ (билет — по выбору при бронировании), культурная деревня Камчхон и тихая деревня фресок Такпатколь с монорельсом вдоль «лестницы желаний».",
+        "region": "Пусан",
+        "duration": "≈ 10 часов",
+        "stopsCount": 8,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Мини-группа",
+          "Пусан",
+          "Sky Capsule",
+          "Побережье",
+          "Культурные деревни"
+        ],
+        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+        "priceLabel": "",
+        "shortCardDescription": "День в Пусане в мини-группе, построенный вокруг побережья и деревень на холмах: приморский храм Хэдон Ёнгунса в его тихое утреннее окно, бесплатная смотровая площадка Таритдоль со стеклянным полом в Чхонсапхо, поездка на Sky Capsule по парку «Блюлайн» от Чхонсапхо до Мипхо (билет включён или не включён — выбираете при бронировании), обед, культурная деревня Камчхон и малоизвестная деревня фресок Такпатколь, где бесплатный монорельс скользит вверх вдоль «лестницы желаний». Все ключевые точки, кроме опциональной капсулы, — с бесплатным входом."
+      },
+      "price": {
+        "amountLabel": "59"
+      }
+    }
+  }
 };

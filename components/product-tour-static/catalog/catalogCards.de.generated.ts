@@ -4,4 +4,31 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan Kleingruppe: Meerestempel, Sky Capsule & Kulturdörfer",
+      "subtitle": "Kleingruppen-Tagestour zu Busans Küstenikonen und Hangdörfern — der Haedong-Yonggungsa-Tempel am Meer, der Glas-Skywalk des Cheongsapo-Daritdol-Observatoriums, die Fahrt mit der Sky Capsule im Blueline Park (Ticket bei der Buchung wählbar), das Kulturdorf Gamcheon und das stille Dakbatgol-Wandmalereidorf mit seiner Monorail an der „Wunschtreppe“ (소망계단).",
+      "region": "Busan",
+      "duration": "≈ 10 Stunden",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Kleingruppe",
+        "Busan",
+        "Sky Capsule",
+        "Küste",
+        "Kulturdörfer"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Ein Busan-Tag in der Kleingruppe, aufgebaut um die Küste und die Hangdörfer: der Haedong-Yonggungsa-Tempel am Meer in seinem ruhigen Morgenfenster, das kostenlose Daritdol-Observatorium mit Glasboden in Cheongsapo, die Fahrt mit der Sky Capsule im Blueline Park von Cheongsapo nach Mipo (Ticket inbegriffen oder nicht — Sie wählen bei der Buchung), Mittagessen, das Kulturdorf Gamcheon und das kaum bekannte Dakbatgol-Wandmalereidorf, wo eine kostenlose Monorail die „Wunschtreppe“ hinaufgleitet. Jeder Ankerpunkt außer der optionalen Kapsel ist eintrittsfrei."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  }
+};

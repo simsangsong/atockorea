@@ -34,6 +34,18 @@ const LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"];
 const EXT_LOCALES = ["de", "fr", "it", "ru"];
 const OVERLAY_DIR = path.join(CONTENT_DIR, "donor-overlay");
 
+// Sticky-bar note per base locale. The donor's non-EN sticky notes carry a
+// mistranslated dev comment ("checkout_tour_id …" — pre-existing donor bug),
+// so this product authors its own.
+const STICKY_NOTES = {
+  en: "Select your date and group size to check live availability and complete your booking.",
+  ko: "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
+  ja: "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
+  zh: "选择日期与人数，即可查看实时可订状态并完成预订。",
+  "zh-TW": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
+  es: "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
+};
+
 // Pickup & drop-off accordion for staged locales (donor's three factual lines).
 const EXT_PICKUP_ACCORDION = {
   de: {
@@ -494,7 +506,7 @@ function build(loc) {
     guestReviews: [],
     reviewsSummary: clone(isExt ? overlay.reviewsSummary : donor.reviewsSummary),
     sticky_booking_bar: {
-      note: isExt ? overlay.stickyNote : donor.sticky_booking_bar?.note || "",
+      note: isExt ? overlay.stickyNote : STICKY_NOTES[loc],
       price: clone(price),
     },
     pickup_dropoff,
@@ -521,6 +533,10 @@ function build(loc) {
     for (const key of Object.keys(p)) {
       if (key === "price") {
         p.price = clone(price);
+        continue;
+      }
+      if (key === "note") {
+        p.note = doc.sticky_booking_bar.note;
         continue;
       }
       if (key in doc) p[key] = clone(doc[key]);
