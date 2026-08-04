@@ -27,7 +27,7 @@ const SCRIPT = path.join(ROOT, 'scripts/qa-uiux-consistency.mjs');
  *   20 → 19  (U9, UX-001: the guide console loading branch got a skeleton)
  */
 const CEILING = {
-  tokenBypass: 104,
+  tokenBypass: 65,
   bareLoadingFiles: 19,
   scannedAtLeast: 100,
 };
