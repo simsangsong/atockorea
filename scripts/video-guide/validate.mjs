@@ -49,8 +49,23 @@ if (spec.sourceDir && spec.sources) {
 // Gate 0b — ids referenced from outside the beat list must resolve. The teaser
 // builder failed on a stale `teaserLead` after a spec rewrite renumbered the
 // polaroids; it is a one-line check here and a wasted render there.
-if (spec.teaserLead && !spec.beats.some((b) => b.id === spec.teaserLead)) {
-  problems.push(`teaserLead "${spec.teaserLead}" 에 해당하는 비트가 없다`);
+//
+// 🔴 Resolving is NOT enough, and 주상절리 v2 (2026-08-05) proved it: a re-cut
+// inserted beats, every id shifted, and `teaserLead: "31"` still resolved — to a
+// 5x transit beat. vertical.mjs's E-5 caught it, but only after the master, both
+// dressed cuts and 4 minutes of render had already been produced, and it left a
+// STALE v1 teaser sitting on disk looking current. A renumber is exactly when
+// this breaks, so the money-beat rule (same predicate as E-5) belongs up here.
+if (spec.teaserLead) {
+  const lead = spec.beats.find((b) => b.id === spec.teaserLead);
+  if (!lead) {
+    problems.push(`teaserLead "${spec.teaserLead}" 에 해당하는 비트가 없다`);
+  } else if (!(lead.kind === 'polaroid' || lead.kind === 'arrow'
+      || (lead.kind === 'clip' && (lead.speed ?? 1) <= 1.05))) {
+    problems.push(`teaserLead "${spec.teaserLead}" 가 머니 비트가 아니다`
+      + ` (${lead.kind}${lead.speed > 1 ? ` ${lead.speed}배속` : ''} "${lead.title ?? ''}")`
+      + ` — 재컷으로 id 가 밀렸는지부터 확인하라`);
+  }
 }
 
 // Gate 0e — the poster frame has to exist inside its source. 주상절리 (2026-08-04)
