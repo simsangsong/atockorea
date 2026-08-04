@@ -29,6 +29,10 @@ const OUT = process.env.SHOT_DIR ?? '.';
 const SHOTS = path.join(OUT, 'cockpit');
 mkdirSync(SHOTS, { recursive: true });
 
+/** U1 coverage contract — read by `scripts/gen-uiux-coverage.mjs`.
+ *  The target is an env var, so static analysis can see nothing at all here. */
+export const COVERS = ['/tour-mode/guide'];
+
 const URL = process.env.COCKPIT_URL;
 if (!URL) throw new Error('COCKPIT_URL is required (guide console url incl. ?rt=)');
 

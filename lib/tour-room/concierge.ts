@@ -160,6 +160,32 @@ export const CONCIERGE_CHIPS: ReadonlyArray<{ intent: ConciergeIntent; label: Re
   },
 ];
 
+/**
+ * UX-002 / UX-008 — what to say after a failure, and what to offer.
+ *
+ * `CONCIERGE_COPY.error` already told the guest to "try again", and there was
+ * nothing to press: trying again meant retyping the question after paying nine
+ * to thirteen seconds, on a tour, one-handed. And when the failure is the
+ * dining rate limit the sentence is worse than useless — trying again is
+ * exactly what is blocked, and the server had already said for how long in a
+ * Retry-After header that no guest-facing component read.
+ *
+ * Kept separate from CONCIERGE_COPY so this lands as one block rather than ten
+ * edits scattered through the locale table.
+ */
+export const CONCIERGE_RETRY_COPY: Record<RoomLocale, { retry: string; wait: (sec: number) => string }> = {
+  en: { retry: 'Try again', wait: (s) => `Too many requests — try again in ${s}s.` },
+  ko: { retry: '다시 시도', wait: (s) => `요청이 많아요 — ${s}초 뒤에 다시 해보세요.` },
+  ja: { retry: 'もう一度', wait: (s) => `リクエストが多すぎます — ${s}秒後にお試しください。` },
+  es: { retry: 'Reintentar', wait: (s) => `Demasiadas consultas: inténtalo en ${s} s.` },
+  zh: { retry: '重试', wait: (s) => `请求过多 — 请在 ${s} 秒后再试。` },
+  'zh-TW': { retry: '重試', wait: (s) => `請求過多 — 請在 ${s} 秒後再試。` },
+  fr: { retry: 'Réessayer', wait: (s) => `Trop de demandes — réessayez dans ${s} s.` },
+  de: { retry: 'Erneut versuchen', wait: (s) => `Zu viele Anfragen — in ${s} s erneut versuchen.` },
+  ru: { retry: 'Повторить', wait: (s) => `Слишком много запросов — повторите через ${s} с.` },
+  it: { retry: 'Riprova', wait: (s) => `Troppe richieste — riprova tra ${s} s.` },
+};
+
 export const CONCIERGE_COPY: Record<
   RoomLocale,
   {

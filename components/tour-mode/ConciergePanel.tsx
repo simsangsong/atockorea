@@ -24,12 +24,13 @@ import {
   renderConciergeAnswer,
   CONCIERGE_CHIPS,
   CONCIERGE_COPY,
+  CONCIERGE_RETRY_COPY,
   type ScheduleItemLike,
   type Tier0Context,
 } from '@/lib/tour-room/concierge';
 import { activeNotice } from '@/lib/tour-room/notices';
 import { roomLifecycle } from '@/lib/tour-room/time';
-import { IconCamera, IconConcierge, IconConciergeSend, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
+import { IconCamera, IconConcierge, IconConciergeSend, IconRetry, TR_ICON, TR_STROKE } from '@/components/tour-mode/icons';
 import FacilityMapCard from '@/components/tour-mode/FacilityMapCard';
 import DiningCard from '@/components/tour-mode/DiningCard';
 import type { DiningCardMeta } from '@/lib/ops/dining/card';
@@ -44,6 +45,22 @@ interface ThreadEntry {
   mapCard?: ConciergeMapCard;
   /** §5.7 R-5 — the dining RAG's answer (list + Kakao deep links, no tile). */
   diningCard?: DiningCardMeta;
+  /**
+   * UX-002 / UX-008 — a failure needs to be more than a sentence in an
+   * assistant bubble. Without somewhere to record WHY it failed and WHAT was
+   * asked, the panel could not offer to retry, and it could not tell a rate
+   * limit apart from anything else — so it told the guest to try again while
+   * trying again was the one thing blocked.
+   */
+  failure?: {
+    kind: 'error' | 'rate_limited';
+    /** From the route's Retry-After. The server always knew; nobody read it. */
+    retryAfterSec?: number;
+    /** Wall-clock moment the retry becomes possible; drives the countdown. */
+    retryAtMs?: number;
+    /** Kept so retry means one tap, not retyping. */
+    question: string;
+  };
 }
 
 export default function ConciergePanel({
@@ -73,6 +90,7 @@ export default function ConciergePanel({
   ) => Promise<{ answer: string } | { reason: string } | null>;
 }) {
   const copy = CONCIERGE_COPY[locale];
+  const retryCopy = CONCIERGE_RETRY_COPY[locale];
   const [thread, setThread] = useState<ThreadEntry[]>([]);
   const [input, setInput] = useState('');
   const [busy, setBusy] = useState(false);
@@ -117,6 +135,33 @@ export default function ConciergePanel({
     setThread((prev) => [...prev, { id, role, text, mapCard, diningCard }]);
   };
 
+  /** A failure that remembers what was asked, so retrying costs one tap. */
+  const pushFailure = (question: string, kind: 'error' | 'rate_limited', retryAfterSec?: number) => {
+    idRef.current += 1;
+    const id = idRef.current;
+    const text = kind === 'rate_limited' && retryAfterSec ? retryCopy.wait(retryAfterSec) : copy.error;
+    const retryAtMs = kind === 'rate_limited' && retryAfterSec ? Date.now() + retryAfterSec * 1000 : undefined;
+    setThread((prev) => [
+      ...prev,
+      { id, role: 'assistant', text, failure: { kind, retryAfterSec, retryAtMs, question } },
+    ]);
+  };
+
+  /**
+   * 🔴 A retry button that is guaranteed to fail is the defect UX-008 named,
+   * wearing a button instead of a sentence: it invites the tap at the one
+   * moment the tap cannot work. While a rate limit is still counting down the
+   * button stays disabled and shows what is left, and the tick only runs while
+   * such a failure is actually pending.
+   */
+  const [nowMs, setNowMs] = useState(() => Date.now());
+  const waiting = thread.some((e) => e.failure?.retryAtMs && e.failure.retryAtMs > nowMs);
+  useEffect(() => {
+    if (!waiting) return;
+    const t = setInterval(() => setNowMs(Date.now()), 1000);
+    return () => clearInterval(t);
+  }, [waiting]);
+
   const askServer = async (question: string) => {
     setBusy(true);
     try {
@@ -125,19 +170,35 @@ export default function ConciergePanel({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': roomSession },
         body: JSON.stringify({ question, locale }),
       });
+      /**
+       * UX-008 — the dining route answers 429 with a Retry-After, computed from
+       * a three-per-minute participant gate. Choosing a restaurant is a
+       * browsing action, so a guest hits that wall on their third look, and
+       * until now the header was dropped and the generic "please try again"
+       * shown at the exact moment trying again was blocked.
+       */
+      if (res.status === 429) {
+        const header = Number(res.headers.get('Retry-After'));
+        pushFailure(question, 'rate_limited', Number.isFinite(header) && header > 0 ? Math.ceil(header) : undefined);
+        return;
+      }
       const json = (await res.json().catch(() => ({}))) as {
         text?: string;
         mapCard?: ConciergeMapCard;
         card?: DiningCardMeta;
       };
+      if (!res.ok || !json.text) {
+        pushFailure(question, 'error');
+        return;
+      }
       push(
         'assistant',
-        res.ok && json.text ? json.text : copy.error,
-        res.ok ? json.mapCard : undefined,
-        res.ok && json.card?.kind === 'dining_card' ? json.card : undefined,
+        json.text,
+        json.mapCard,
+        json.card?.kind === 'dining_card' ? json.card : undefined,
       );
     } catch {
-      push('assistant', copy.error);
+      pushFailure(question, 'error');
     } finally {
       setBusy(false);
     }
@@ -277,6 +338,28 @@ export default function ConciergePanel({
                       />
                     </div>
                   )}
+                  {/* UX-002 — the copy has always said "try again". This is the
+                      first time there is something to press. One tap resends
+                      the question the guest already typed. */}
+                  {entry.failure &&
+                    (() => {
+                      const leftSec = entry.failure.retryAtMs
+                        ? Math.ceil((entry.failure.retryAtMs - nowMs) / 1000)
+                        : 0;
+                      const blocked = leftSec > 0;
+                      return (
+                        <button
+                          type="button"
+                          onClick={() => void askServer(entry.failure!.question)}
+                          disabled={busy || blocked}
+                          className="tr-label tr-chip-tap mt-1.5 inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-[var(--tr-accent-soft)] px-3.5 font-semibold text-[var(--tr-accent-deep)] disabled:opacity-50"
+                          data-testid="concierge-retry"
+                        >
+                          <IconRetry size={TR_ICON.meta} aria-hidden />
+                          {blocked ? `${retryCopy.retry} · ${leftSec}s` : retryCopy.retry}
+                        </button>
+                      );
+                    })()}
                 </div>
               </div>
             ),

@@ -32,6 +32,20 @@ import { chromium } from 'playwright';
 import { readFileSync, mkdirSync } from 'fs';
 import path from 'path';
 
+/**
+ * U1 coverage contract — read by `scripts/gen-uiux-coverage.mjs`.
+ *
+ * Every surface here is reached through a runtime fixture URL (`fx.room1Url`,
+ * `fx.guideUrl`), so no reader of this source can tell which pages the walk
+ * actually opens. This declaration is the only machine-readable record, and it
+ * cannot quietly outlive the walk: `runSurface` exits 2 when a declared surface
+ * never becomes reachable.
+ */
+export const COVERS = [
+  '/tour-mode/room/[bookingId]', // surfaces `home` and `lobby` — same route, two states
+  '/tour-mode/guide', // surface `cockpit` lives INSIDE the staff shell (운행 탭 → 운전 모드), not at /tour-mode/driver
+];
+
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3161';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'hero-grid');
 mkdirSync(OUT, { recursive: true });

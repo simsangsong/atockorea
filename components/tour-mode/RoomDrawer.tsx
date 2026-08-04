@@ -379,7 +379,17 @@ export default function RoomDrawer({
         `}</style>
 
         <div className="tr-safe-top tr-chrome-line-b flex shrink-0 items-center gap-2 bg-[var(--tr-chrome)] px-4" style={{ minHeight: 'var(--tr-header-h)' }}>
-          <p className="tr-title min-w-0 flex-1 truncate text-[var(--tr-ink)]">{title}</p>
+          {/* UX-005 — the one place a guest can read the whole tour name.
+              Every other surface truncates it (room header, staff shell,
+              cockpit, chat list), and truncating is right for those: they are
+              chrome competing with icon rows. But that left the full title
+              readable nowhere, and the guest is the one person who does not
+              already know which tour they are on.
+              The drawer is the detail surface and its header is min-height,
+              not fixed, so dropping `truncate` lets it grow instead of
+              clipping. Capped at three lines, which holds every title in the
+              catalogue at this width. */}
+          <p className="tr-title line-clamp-3 min-w-0 flex-1 text-[var(--tr-ink)]">{title}</p>
           <button
             type="button"
             onClick={onClose}
