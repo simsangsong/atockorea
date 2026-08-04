@@ -4,4 +4,31 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Пусан в мини-группе: морской храм, Sky Capsule и культурные деревни",
+      "subtitle": "Однодневный тур по прибрежным символам и холмистым деревням Пусана в мини-группе — приморский храм Хэдон Ёнгунса, стеклянный скайвок на смотровой площадке Таритдоль в Чхонсапхо, поездка на Sky Capsule в парке «Блюлайн» в Хэундэ (билет — по выбору при бронировании), культурная деревня Камчхон и тихая деревня фресок Такпатколь с монорельсом вдоль «лестницы желаний».",
+      "region": "Пусан",
+      "duration": "≈ 10 часов",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Мини-группа",
+        "Пусан",
+        "Sky Capsule",
+        "Побережье",
+        "Культурные деревни"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "День в Пусане в мини-группе, построенный вокруг побережья и деревень на холмах: приморский храм Хэдон Ёнгунса в его тихое утреннее окно, бесплатная смотровая площадка Таритдоль со стеклянным полом в Чхонсапхо, поездка на Sky Capsule по парку «Блюлайн» от Чхонсапхо до Мипхо (билет включён или не включён — выбираете при бронировании), обед, культурная деревня Камчхон и малоизвестная деревня фресок Такпатколь, где бесплатный монорельс скользит вверх вдоль «лестницы желаний». Все ключевые точки, кроме опциональной капсулы, — с бесплатным входом."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  }
+};

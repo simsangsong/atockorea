@@ -4,4 +4,31 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
+      "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
+      "region": "Busan",
+      "duration": "≈ 10 ore",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Piccolo gruppo",
+        "Busan",
+        "Sky Capsule",
+        "Costa",
+        "Villaggi culturali"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Una giornata a Busan in piccolo gruppo costruita intorno alla costa e ai villaggi collinari: il tempio sul mare Haedong Yonggungsa nella sua quieta finestra mattutina, l'osservatorio Daritdol di Cheongsapo con pavimento di vetro e ingresso gratuito, la corsa in Sky Capsule del Blueline Park da Cheongsapo a Mipo (biglietto incluso o escluso — a vostra scelta alla prenotazione), il pranzo, il villaggio culturale di Gamcheon e il poco conosciuto villaggio dei murales Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. Ogni tappa principale, tranne la capsula opzionale, è a ingresso gratuito."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  }
+};

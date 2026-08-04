@@ -66,6 +66,12 @@ de/fr/it/ru 상품 페이지는 설계상 EN 폴백(i18n 확장 트랙 사람 �
 빌더 `scripts/build-busan-smallgroup-2026-08.mjs` / 콘텐츠 `scripts/busan-smallgroup-content/`(6로케일).
 **가격 사장님 확정(2026-08-04): $59(캡슐 제외) / $79(포함).** 다릿돌·닥밭골은 보유 사진 0(이미지 없는 스톱).
 DB는 `2026-08-04-03-*.sql`(⚠ 미적용) + `import-match-v18 --single`.
+**10로케일 번역 완료(같은 날, 사장님 지시):** de/fr/it/ru 풀 번들 — 스펙+도너 오버레이
+(`scripts/busan-smallgroup-content/{de,fr,it,ru}.json` + `donor-overlay/`) → 빌더가 EN 도너 위에 조립.
+🔴 **스테이징이다**: 6로케일 레지스트리에 등록하지 않았고(타입이 6로케일 고정) de/fr/it/ru 는
+게이트(`TOUR_PRODUCT_FALLBACK_URL_LOCALES`)가 열릴 때까지 EN 서빙. DB 행은 `2026-08-04-04-*.sql`
+(INSERT-only). ⚠ 도너 부산 대표명소 투어의 비EN sticky note 는 개발 주석 오번역(`checkout_tour_id…`)
+— 신규 상품은 STICKY_NOTES 로 우회했지만 **도너 자체는 미수정**(별도 티켓감).
 
 ## ✅ 완료: 스마트앱 **기능** 감사 — **F-1 · F0~F8 전 페이즈 종결**
 
