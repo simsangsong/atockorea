@@ -100,6 +100,10 @@ const AXES = {
 // ── What the harnesses actually test ─────────────────────────────────────
 const HARNESS = [
   { file: 'scripts/qa-hero-grid.mjs', axes: { locale: 'LOCALES', theme: 'SCHEMES', skin: 'SKINS', textScale: 'SCALES' } },
+  // rallyStage was the only axis with nothing in the net (0/5) — and the one
+  // that decides whether other cards render at all (P-D8). qa-rally-stages
+  // seeds one meeting notice per band and renders each.
+  { file: 'scripts/qa-rally-stages.mjs', axes: { rallyStage: 'RALLY_STAGES' } },
 ];
 for (const h of HARNESS) {
   h.tested = {};
