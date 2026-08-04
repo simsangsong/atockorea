@@ -631,6 +631,13 @@ const SPECS: Record<string, Spec> = {
       c.room.messageId = null;
     },
   },
+  // §5-4 — the preview endpoint answers honest nulls for an unreachable page,
+  // which is exactly what a sim run should exercise (no external fetch lands).
+  'GET /api/tour-rooms/[bookingId]/link-preview': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/link-preview?url=${encodeURIComponent('https://example.com/k4')}`,
+    headers: guestH,
+    ok: [200, 429],
+  },
   'POST /api/tour-rooms/[bookingId]/push-subscribe': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/push-subscribe`,
     headers: guestH,

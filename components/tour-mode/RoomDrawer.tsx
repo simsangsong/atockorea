@@ -52,6 +52,8 @@ const COPY: Record<
     empty: string;
     /** T3 — keyset pagination: fetch the next page of a media kind. */
     more: string;
+    /** §5-3 (2026-08-04) — in-room chat search. */
+    search: string;
     schedule: string;
     map: string;
     settings: string;
@@ -73,6 +75,7 @@ const COPY: Record<
     me: '(you)',
     empty: 'Nothing here yet',
     more: 'More',
+    search: 'Search chat',
     schedule: 'Today',
     map: 'Map',
     settings: 'Settings',
@@ -91,6 +94,7 @@ const COPY: Record<
     me: '(나)',
     empty: '아직 없어요',
     more: '더 보기',
+    search: '대화 검색',
     schedule: '오늘 일정',
     map: '지도',
     settings: '설정',
@@ -109,6 +113,7 @@ const COPY: Record<
     me: '(自分)',
     empty: 'まだありません',
     more: 'もっと見る',
+    search: 'チャット検索',
     schedule: '本日',
     map: '地図',
     settings: '設定',
@@ -127,6 +132,7 @@ const COPY: Record<
     me: '(tú)',
     empty: 'Aún no hay nada',
     more: 'Ver más',
+    search: 'Buscar en el chat',
     schedule: 'Hoy',
     map: 'Mapa',
     settings: 'Ajustes',
@@ -145,6 +151,7 @@ const COPY: Record<
     me: '(我)',
     empty: '暂时没有内容',
     more: '查看更多',
+    search: '搜索聊天',
     schedule: '今日',
     map: '地图',
     settings: '设置',
@@ -163,6 +170,7 @@ const COPY: Record<
     me: '(我)',
     empty: '目前還沒有內容',
     more: '查看更多',
+    search: '搜尋聊天',
     schedule: '今日',
     map: '地圖',
     settings: '設定',
@@ -181,6 +189,7 @@ const COPY: Record<
     me: '(vous)',
     empty: 'Rien pour l’instant',
     more: 'Voir plus',
+    search: 'Rechercher dans le chat',
     schedule: 'Aujourd’hui',
     map: 'Carte',
     settings: 'Réglages',
@@ -199,6 +208,7 @@ const COPY: Record<
     me: '(Sie)',
     empty: 'Noch nichts da',
     more: 'Mehr anzeigen',
+    search: 'Chat durchsuchen',
     schedule: 'Heute',
     map: 'Karte',
     settings: 'Einstellungen',
@@ -217,6 +227,7 @@ const COPY: Record<
     me: '(вы)',
     empty: 'Пока пусто',
     more: 'Ещё',
+    search: 'Поиск в чате',
     schedule: 'Сегодня',
     map: 'Карта',
     settings: 'Настройки',
@@ -235,6 +246,7 @@ const COPY: Record<
     me: '(tu)',
     empty: 'Ancora niente qui',
     more: 'Mostra altro',
+    search: 'Cerca nella chat',
     schedule: 'Oggi',
     map: 'Mappa',
     settings: 'Impostazioni',
@@ -267,6 +279,8 @@ export default function RoomDrawer({
   roomSession,
   participants,
   myParticipantId,
+  messages,
+  onJumpToMessage,
   onClose,
   onSelectTab,
   onOpenEmergency,
@@ -282,6 +296,10 @@ export default function RoomDrawer({
    * not find themselves in the list of who is here.
    */
   myParticipantId?: string | null;
+  /** §5-3 — the loaded feed, searched in place; absent = no search section. */
+  messages?: Array<{ id: string; created_at: string; source_text: string; translations?: Record<string, string> | null; metadata?: Record<string, unknown> | null }>;
+  /** §5-3 — jump the chat to a message (reuses the focusMessageId engine). */
+  onJumpToMessage?: (id: string) => void;
   onClose: () => void;
   onSelectTab: (tab: 'schedule' | 'map' | 'settings') => void;
   onOpenEmergency: () => void;
@@ -320,6 +338,20 @@ export default function RoomDrawer({
     link: null,
   });
   const [busyKind, setBusyKind] = useState<'image' | 'file' | 'link' | null>(null);
+  /** §5-3 — in-memory search over the loaded feed (tombstones excluded). */
+  const [query, setQuery] = useState('');
+  const queryTrim = query.trim().toLowerCase();
+  const searchHits =
+    messages && queryTrim.length >= 2
+      ? messages
+          .filter((m) => (m.metadata as { deleted?: unknown } | null)?.deleted !== true)
+          .filter((m) => {
+            const hay = [m.source_text ?? '', ...Object.values(m.translations ?? {})].join('\n').toLowerCase();
+            return hay.includes(queryTrim);
+          })
+          .slice(-20)
+          .reverse()
+      : [];
 
   const fetchKind = useCallback(
     async (kind: 'image' | 'file' | 'link', cursor?: string) => {
@@ -470,6 +502,44 @@ export default function RoomDrawer({
                               : 'Session expired — reopen the room from your invite link.'}
             </p>
           )}
+          {/* §5-3 — 대화 검색 (불러온 대화 안에서, 탭하면 그 메시지로 점프) */}
+          {messages && onJumpToMessage ? (
+            <section>
+              <h3 className={sectionLabel}>{copy.search}</h3>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={copy.search}
+                className="tr-body mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)]"
+                data-testid="drawer-search-input"
+              />
+              {queryTrim.length >= 2 ? (
+                searchHits.length === 0 ? (
+                  <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">{copy.empty}</p>
+                ) : (
+                  <div className="mt-2 space-y-1" data-testid="drawer-search-results">
+                    {searchHits.map((m) => (
+                      <button
+                        key={m.id}
+                        type="button"
+                        onClick={() => onJumpToMessage(m.id)}
+                        className="text-cjk-body flex w-full items-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-left"
+                        data-testid="drawer-search-hit"
+                      >
+                        <span className="tr-card-text text-cjk-safe min-w-0 flex-1 text-[var(--tr-ink)]">
+                          {(m.source_text || Object.values(m.translations ?? {})[0] || '').slice(0, 60)}
+                        </span>
+                        <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">
+                          {new Date(m.created_at).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )
+              ) : null}
+            </section>
+          ) : null}
+
           {/* ① 모아보기 — 사진/동영상 */}
           <section className={images !== null && images.length === 0 ? 'hidden' : undefined}>
             <h3 className={sectionLabel}>{copy.media}</h3>

@@ -111,6 +111,33 @@ describe('RoomDrawer (U4-D5)', () => {
     expect(members).toHaveTextContent('여행자');
   });
 
+  /**
+   * §5-3 (2026-08-04) — in-room chat search: filters the loaded feed,
+   * excludes tombstones, and a tapped hit jumps the chat (focusMessageId
+   * engine) — the drawer only reports the id.
+   */
+  it('searches the loaded feed and jumps to the tapped hit', async () => {
+    mockMedia();
+    const onJump = jest.fn();
+    mount({
+      messages: [
+        { id: 'k1', created_at: '2026-07-27T01:00:00Z', source_text: '성산일출봉 도착', translations: { en: 'Arrived at Seongsan' } },
+        { id: 'k2', created_at: '2026-07-27T01:05:00Z', source_text: '점심은 해녀의집', translations: {} },
+        { id: 'k3', created_at: '2026-07-27T01:06:00Z', source_text: '성산 사진', translations: {}, metadata: { deleted: true } },
+      ],
+      onJumpToMessage: onJump,
+    } as never);
+    fireEvent.change(screen.getByTestId('drawer-search-input'), { target: { value: '성산' } });
+    const hits = screen.getAllByTestId('drawer-search-hit');
+    expect(hits).toHaveLength(1); // the tombstone stays out
+    expect(hits[0]).toHaveTextContent('성산일출봉');
+    fireEvent.click(hits[0]);
+    expect(onJump).toHaveBeenCalledWith('k1');
+    // Translations are searched too — the guest types in THEIR language.
+    fireEvent.change(screen.getByTestId('drawer-search-input'), { target: { value: 'seongsan' } });
+    expect(screen.getAllByTestId('drawer-search-hit')).toHaveLength(1);
+  });
+
   it('Escape closes the drawer', async () => {
     mockMedia();
     const onClose = jest.fn();

@@ -54,13 +54,13 @@ const VERBS = [
   { name: '사진 단건 저장', files: [LIGHTBOX], pattern: /lightbox-download/, must: true },
   // ── the absences the grid must keep watching (a hit here flips the row) ──
   { name: '전달 (forward)', files: [CHAT, COMPOSER], pattern: /forward|전달하기/i },
-  { name: '메시지 단위 공유 (방 밖으로)', files: [CHAT, LIGHTBOX], pattern: /navigator\.share/ },
-  { name: '채팅 내 검색', files: [CHAT, DRAWER], pattern: /searchQuery|채팅 검색/ },
+  { name: '메시지 단위 공유 (텍스트만, §5-2)', files: [CHAT], pattern: /shareTimelineText|action-share/ },
+  { name: '채팅 내 검색 (§5-3)', files: [DRAWER], pattern: /drawer-search-input/ },
   { name: '컴포저 이모지 피커', files: [COMPOSER], pattern: /EmojiPicker|emoji-picker/i },
-  { name: '이미지 붙여넣기 (클립보드)', files: [COMPOSER], pattern: /onPaste|clipboardData/ },
-  { name: '링크 프리뷰 (OG 카드)', files: [CHAT], pattern: /LinkPreview|og:image/ },
+  { name: '이미지 붙여넣기 (클립보드, §5-6)', files: [COMPOSER], pattern: /onPaste|clipboardData/ },
+  { name: '링크 프리뷰 (텍스트만, §5-4)', files: [CHAT], pattern: /LinkPreviewCard/ },
   { name: '사진 일괄 저장', files: [DRAWER], pattern: /downloadAll|일괄 저장/ },
-  { name: '메시지 → 공지 승격', files: [CHAT], pattern: /promoteToNotice|공지로 등록/ },
+  { name: '메시지 → 공지 승격 (가이드, §5-6)', files: [CHAT], pattern: /onPromoteToNotice/ },
 ];
 
 const rows = [];

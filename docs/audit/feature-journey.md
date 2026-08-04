@@ -12,7 +12,7 @@
 
 | 역할 | 예약 직후 | D-1 전날 | 당일 아침 | 투어 중 | 종료 후 |
 |---|---|---|---|---|---|
-| **guest** | 5 | 10 | 2 | 25 | 1 |
+| **guest** | 5 | 10 | 2 | 26 | 1 |
 | **guide** | **— 없음** | 1 | 2 | 8 | 1 |
 | **driver** | **— 없음** | **— 없음** | 2 | 1 | **— 없음** |
 
@@ -62,11 +62,12 @@ Closed by found_item (feature audit F4), which rides driver-signal and so is fil
 - `GET /api/tour-rooms/[bookingId]/vehicle-eta`
 - `GET /api/tour-rooms/[bookingId]/vehicle-photo`
 
-**guest · 투어 중** (25)
+**guest · 투어 중** (26)
 
 - `GET /api/tour-rooms/[bookingId]/messages`
 - `POST /api/tour-rooms/[bookingId]/messages`
 - `DELETE /api/tour-rooms/[bookingId]/messages/[messageId]`
+- `GET /api/tour-rooms/[bookingId]/link-preview`
 - `POST /api/tour-rooms/[bookingId]/messages/[messageId]/retranslate`
 - `GET /api/tour-rooms/[bookingId]/reactions`
 - `POST /api/tour-rooms/[bookingId]/reactions`

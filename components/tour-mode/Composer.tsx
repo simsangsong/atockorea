@@ -476,6 +476,19 @@ export default function Composer({
 
   // Desktop convention: Enter sends, Shift+Enter breaks the line. Mobile
   // keyboards emit newline through onChange and never hit this branch.
+  /**
+   * §5-6 (GR-006, 2026-08-04) — a screenshot pasted into the box rides the
+   * SAME attachment path as the picker (preview tray, size guard, caption).
+   * Non-image clipboard content falls through to normal text paste.
+   */
+  const onPaste = (event: React.ClipboardEvent<HTMLTextAreaElement>) => {
+    const item = Array.from(event.clipboardData?.items ?? []).find((entry) => entry.type.startsWith('image/'));
+    const file = item?.getAsFile();
+    if (!file) return;
+    event.preventDefault();
+    onPickAttachment(file);
+  };
+
   const onKeyDown = (event: KeyboardEvent<HTMLTextAreaElement>) => {
     if (event.key === 'Enter' && !event.shiftKey) {
       event.preventDefault();
@@ -885,6 +898,7 @@ export default function Composer({
                 autosize();
               }}
               onKeyDown={onKeyDown}
+              onPaste={onPaste}
               maxLength={2000}
               placeholder={PLACEHOLDER[locale]}
               enterKeyHint="send"

@@ -1,8 +1,8 @@
 # A1-coverage — 손님 앱 커버리지 원장 (A1.0)
 
 **생성일:** 2026-07-25 · **대상:** `components/tour-mode/**/*.{ts,tsx}` (테스트 제외)
-**총 91개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
-**진행:** ✅ **91/91 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 7 + RS 신규 1 + U9 신규 2 + 시나리오 신규 1). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
+**총 92개** · 회귀: `__tests__/audit/a1Coverage.test.ts`
+**진행:** ✅ **91/91 전량 감사 완료** (A1 소관 65 + A2 운영자면 10 + P7 신규 2 + SG 신규 7 + RS 신규 1 + U9 신규 2 + 시나리오 신규 1 + G4 신규 1). 산출물 `A1-1`~`A1-8` · `A2-1-2-operator-faces.md` · `A2-4-permission-matrix.md`
 
 > 🔴 **이 표가 A1의 완료 판정이다.** `판정` 칸이 비어 있는 행이 하나라도 있으면 A1은 미완이다.
 > 파일이 새로 생겼는데 행이 없으면 **테스트가 실패한다** — 원장이 낡는 것을 문서 규율이 아니라
@@ -220,3 +220,4 @@ A1 소관 **65개** · A2 소관 10개(가이드·기사 면) · W-트랙 신규
 | `LoadingHint.tsx` | UX-003 | ✅ 신규 — UX-D6의 공용 어휘(스피너+캡션 `LoadingHint` · 리스트 스켈레톤 `SkeletonRows`). 기존 관용구(GuideConsole 링·UX-001 펄스바)를 그대로 옮겨 시각 언어 무변경. C축 탐지기 `HAS_SHAPE` 가 이 이름을 인정한다 |
 | `skinSwatch.gen.ts` | UX-004 | ✅ 신규 — **생성물**(`gen-skin-swatch.mjs` 소유, 손편집 금지). 스킨 포스터 색을 `tour-room-theme.css` 라이트 블록에서 파생. 게이트 `skinSwatchSync.test.ts`(staleness + 변조 양성 대조 매 실행 + SkinPicker 배선 단언) |
 | `OnsiteJoinQr.tsx` | 시나리오 #2 | ✅ 신규 — 현장 재합류 QR(스태프 전용 발급, `reinvite` 라우트·rate gate·invite 원장 감사). `tour-rooms-reinvite.test.ts` 3케이스. QR 오버레이는 스캐너 대비를 위해 의도적 화이트 고정(팔레트 클래스 아님 — black/white 유틸리티) |
+| `LinkPreviewCard.tsx` | §5-4 | ✅ 신규 — 텍스트만 링크 프리뷰(제목·설명·호스트, **이미지 없음** — 추적 비콘 차단). 서버는 SSRF 가드(`lib/tour-room/linkPreview.ts` 단위 테스트 11케이스) + 룸 세션 게이트 + 정직한 null. `chatGrammar.test.tsx` |
