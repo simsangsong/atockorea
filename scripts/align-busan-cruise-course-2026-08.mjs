@@ -399,6 +399,293 @@ function applyStaleFigures(doc, slug, locale) {
   if (hits) note(slug, locale, `${hits} stale figure(s) fixed (old stop count / this product's old price)`);
 }
 
+/**
+ * R1 — the small-group bundle still talked about Taejongdae everywhere except its
+ * stop list: SEO, keywords, card blurb, route logic, the walking and accessibility
+ * accordions, five FAQs (one of them titled "Should we take the Danubi Train at
+ * Taejongdae?"), the weather note, seasonal notes, and every gallery caption in
+ * the five non-English locales. The tour has not gone there since the course was
+ * revised, and now that the stops are right the leftovers read as a second,
+ * contradictory itinerary.
+ *
+ * Course-dependent prose is DONATED from the coach bundle — the two join tiers
+ * run the identical course, and the coach copy is already clean in all six
+ * locales. Only genuinely small-group-specific fields are hand-written.
+ *
+ * ⚠ The private charter's ~52 Taejongdae mentions are NOT a defect: it really
+ * does stop there. Nothing here touches that bundle.
+ */
+const DONATE_ACCORDION = { walking: "walking" }; // donor id -> small-group id
+const DONATE_FAQ = {
+  walking: "walking",
+  kids: "family",
+  seniors: "seniors",
+  rain: "weather",
+  "cable-car": "q-taejongdae-train", // renamed below — it named a place we skip
+};
+
+/** Which POI a gallery image is actually of, from its path. */
+function placeKeyForImage(src) {
+  const s = String(src || "");
+  if (/haedong-yonggungsa/.test(s)) return "haedong_yonggungsa";
+  if (/un-memorial-cemetery/.test(s)) return "un_memorial_cemetery";
+  if (/jagalchi/.test(s)) return "jagalchi_market";
+  if (/gukje/.test(s)) return "gukje_market";
+  if (/biff/.test(s)) return "biff_square";
+  if (/gamcheon/.test(s)) return "gamcheon_culture_village";
+  if (/songdo/.test(s)) return "songdo_beach";
+  if (/busan-tower|yongdusan/.test(s)) return "yongdusan_park";
+  if (/taejongdae/.test(s)) return "taejongdae";
+  return null;
+}
+
+/**
+ * Captions are DERIVED from the photo, never carried over. The non-English
+ * bundles had the UN Memorial photos captioned "Taejongdae coastal cliffs" and
+ * the temple photos captioned "UN Memorial Cemetery" — the same one-place shift
+ * that hit the stop names, and equally invisible in source.
+ */
+function rebuildGalleryCaptions(doc, slug, locale) {
+  const items = doc.galleryItems;
+  if (!Array.isArray(items)) return;
+  const nameFor = new Map();
+  for (const stop of doc.itineraryStops ?? []) {
+    const k = stop._poi_meta?.poi_key;
+    if (k && !nameFor.has(k)) nameFor.set(k, stop.name);
+  }
+  const seen = new Map();
+  const kept = [];
+  let fixed = 0;
+  let dropped = 0;
+  for (const item of items) {
+    const key = placeKeyForImage(item.src);
+    const name = key && nameFor.get(key);
+    if (!name) {
+      // A photo of somewhere this tour no longer goes has no caption that could
+      // be true. Drop it rather than relabel it as a place it does not show.
+      dropped += 1;
+      continue;
+    }
+    const n = (seen.get(key) ?? 0) + 1;
+    seen.set(key, n);
+    const next = { ...item, location: name, caption: `${name} — photo ${n}`, alt: `${name} — gallery image ${n}` };
+    if (JSON.stringify(next) !== JSON.stringify(item)) fixed += 1;
+    kept.push(next);
+  }
+  if (fixed || dropped) {
+    doc.galleryItems = kept;
+    note(slug, locale, `gallery: ${fixed} caption(s) re-derived from the photo, ${dropped} off-route photo(s) dropped`);
+  }
+}
+
+/** Anchors feed the recommender; derive them from the course, not from memory. */
+function rebuildMatchingAnchors(doc, slug, locale) {
+  const mp = doc.matching_profile;
+  if (!mp) return;
+  const keys = (doc.itineraryStops ?? [])
+    .map((s) => s._poi_meta?.poi_key)
+    .filter((k) => k && !String(k).startsWith("OPS_"));
+  const unique = [...new Set(keys)];
+  let touched = false;
+  if (Array.isArray(mp.poi_tags) && JSON.stringify(mp.poi_tags) !== JSON.stringify(unique)) {
+    mp.poi_tags = unique;
+    touched = true;
+  }
+  if (Array.isArray(mp.anchor_poi_keys)) {
+    const anchors = unique.slice(0, Math.max(mp.anchor_poi_keys.length, 5));
+    if (JSON.stringify(mp.anchor_poi_keys) !== JSON.stringify(anchors)) {
+      mp.anchor_poi_keys = anchors;
+      touched = true;
+    }
+  }
+  if (touched) note(slug, locale, "matching anchors re-derived from the course (they still listed taejongdae)");
+}
+
+function alignSmallGroupToCourse(doc, donorDoc, locale) {
+  const c = content[locale].smallGroup;
+  if (!c) return;
+  let donated = 0;
+
+  const byId = (arr, id) => (arr ?? []).find((x) => String(x.id ?? "") === id);
+  for (const [donorId, smallId] of Object.entries(DONATE_ACCORDION)) {
+    const from = byId(donorDoc.practicalAccordionItems, donorId);
+    const to = byId(doc.practicalAccordionItems, smallId);
+    if (!from || !to) continue;
+    const next = vanify({ ...clone(from), id: to.id, title: to.title }, locale);
+    if (JSON.stringify(to) !== JSON.stringify(next)) {
+      Object.assign(to, next);
+      donated += 1;
+    }
+  }
+  for (const [donorId, smallId] of Object.entries(DONATE_FAQ)) {
+    const from = byId(donorDoc.staticQuestions, donorId);
+    const to = byId(doc.staticQuestions, smallId);
+    if (!from || !to) continue;
+    // `q-taejongdae-train` named a stop this tour skips; the cable car replaces it.
+    const id = smallId === "q-taejongdae-train" ? "q-cable-car" : to.id;
+    const next = vanify({ ...clone(from), id }, locale);
+    if (JSON.stringify(to) !== JSON.stringify(next)) {
+      Object.assign(to, next);
+      if (to.id !== id) to.id = id;
+      donated += 1;
+    }
+  }
+  for (const field of ["seasonalVariations", "practicalWeatherStatic"]) {
+    if (donorDoc[field] === undefined) continue;
+    const next = vanify(clone(donorDoc[field]), locale);
+    if (JSON.stringify(doc[field]) !== JSON.stringify(next)) {
+      doc[field] = next;
+      donated += 1;
+    }
+  }
+  if (donated) note(SMALL, locale, `${donated} course-dependent field(s) donated from the coach bundle`);
+
+  // Small-group-specific copy — hand-written, not donated.
+  if (doc.seo) {
+    if (doc.seo.metaDescription !== c.seoMetaDescription) {
+      doc.seo.metaDescription = c.seoMetaDescription;
+      note(SMALL, locale, "seo.metaDescription rewritten (it still led with Taejongdae)");
+    }
+    if (Array.isArray(doc.seo.primaryKeywords)) {
+      const i = doc.seo.primaryKeywords.findIndex((k) => TAEJONGDAE.test(String(k)));
+      if (i >= 0) {
+        doc.seo.primaryKeywords[i] = c.seoKeyword;
+        note(SMALL, locale, "seo keyword targeted a stop we do not visit");
+      }
+    }
+  }
+  if (doc.catalog_card && doc.catalog_card.shortCardDescription !== c.cardShortDescription) {
+    doc.catalog_card.shortCardDescription = c.cardShortDescription;
+    note(SMALL, locale, "card blurb rewritten (Taejongdae, and 'Yongdusan when time allows')");
+  }
+  const rl = doc.whyTourWorks?.routeLogicSections?.[0]?.items?.[0];
+  if (rl && (rl.label !== c.routeLogicLabel || rl.detail !== c.routeLogicDetail)) {
+    rl.label = c.routeLogicLabel;
+    rl.detail = c.routeLogicDetail;
+    note(SMALL, locale, "route-logic claim rewritten ('all five signatures, plus Taejongdae')");
+  }
+  const trust = (doc.bookingTrustItems ?? []).find((t) => TAEJONGDAE.test(String(t.body ?? "")));
+  if (trust) {
+    trust.body = c.bookingTrustGroupSize;
+    note(SMALL, locale, "group-size trust item rewritten");
+  }
+  const acc = byId(doc.practicalAccordionItems, "accessibility");
+  if (acc) {
+    const next = { ...acc, preview: c.accessibilityPreview, content: clone(c.accessibilityContent) };
+    if (JSON.stringify(acc) !== JSON.stringify(next)) {
+      Object.assign(acc, next);
+      note(SMALL, locale, "accessibility accordion rewritten (it said age 8+, the policy says 4+)");
+    }
+  }
+}
+
+/**
+ * R2 — the private charter contradicted itself about pickup. Its own
+ * `pickup_dropoff.notes` says plainly "pickup is at the cruise terminal, not a
+ * hotel. Hotel pickup is not offered on this SKU" — while the SEO description,
+ * the Included bullet and the return step all offered hotel/KTX pickup, and the
+ * matching profile advertised `cruise_terminal_or_hotel_or_ktx`. The listing is
+ * cruise-passengers-only with terminal pickup, so the note is the one that is
+ * right. Also: the return step said 90 minutes in `detail` and 60 in
+ * `description`, in the same object; and the guide was "English-speaking" where
+ * the listing sells English AND Chinese.
+ *
+ * ⚠ NOT touched — vehicle capacity. The FAQ caps at 7 passengers and tells
+ * larger groups to ask for a quote, while `pricingTiers` sells 1–6 / 7–9 / 10–13.
+ * Which is true is an operational fact, and it is tangled with the open owner
+ * decision about whether those tiers survive at all. Left for the owner.
+ */
+function alignPrivateCharter(doc, locale) {
+  const c = content[locale].privateCharter;
+  if (!c) return;
+
+  if (doc.seo && doc.seo.metaDescription !== c.seoMetaDescription) {
+    doc.seo.metaDescription = c.seoMetaDescription;
+    note(PRIVATE, locale, "seo.metaDescription offered hotel/KTX pickup this SKU does not do");
+  }
+  for (const section of doc.whyTourWorks?.routeLogicSections ?? []) {
+    for (const item of section.items ?? []) {
+      if (!/hotel|호텔|ホテル|酒店|飯店|KTX/i.test(String(item.detail ?? ""))) continue;
+      if (item.detail !== c.includedDetail) {
+        item.detail = c.includedDetail;
+        note(PRIVATE, locale, "Included bullet offered hotel/KTX pickup, and named only an English guide");
+      }
+    }
+  }
+  for (const step of doc.bookingSupportSteps ?? []) {
+    if (!/hotel|호텔|ホテル|酒店|飯店|KTX/i.test(String(step.detail ?? ""))) continue;
+    if (step.detail !== c.returnStepDetail) {
+      step.detail = c.returnStepDetail;
+      note(PRIVATE, locale, "return step said 90 min in detail and 60 in description, plus hotel/KTX drop-off");
+    }
+  }
+  if (doc.matching_profile?.pickup_base && doc.matching_profile.pickup_base !== "cruise_terminal") {
+    doc.matching_profile.pickup_base = "cruise_terminal";
+    note(PRIVATE, locale, "matching pickup_base was cruise_terminal_or_hotel_or_ktx");
+  }
+
+  // 🔴 The five non-English bundles are an older generation of this product: they
+  // carry THREE meeting points (cruise terminal / KTX station / any downtown
+  // hotel) and two drop-off points, where English carries only the terminals.
+  // A cruise-only SKU was structurally selling hotel pickup — not just claiming
+  // it in prose. Drop the points the product does not serve.
+  const HOTEL_OR_KTX = /hotel|호텔|ホテル|酒店|飯店|KTX|釜山駅|부산역|釜山站|Estación/i;
+  for (const field of ["meeting_points", "dropoff_points"]) {
+    const list = doc.pickup_dropoff?.[field];
+    if (!Array.isArray(list)) continue;
+    const kept = list.filter((p) => !HOTEL_OR_KTX.test(String(p.name ?? "")));
+    if (kept.length && kept.length !== list.length) {
+      doc.pickup_dropoff[field] = kept;
+      note(PRIVATE, locale, `${field}: dropped ${list.length - kept.length} hotel/KTX point(s) this SKU does not serve`);
+    }
+  }
+
+  // Owner instruction: "픽업은 북항 혹은 영도항 대중이 없어 둘 다 적어야 돼" — both
+  // terminals, neither the default. English lists both; the other five listed one
+  // cruise terminal plus the KTX/hotel points just removed, which would have left
+  // them naming a single terminal. Restore the pair.
+  const mps = doc.pickup_dropoff?.meeting_points;
+  if (Array.isArray(mps) && mps.length === 1 && c.terminalYeongdo && c.terminalChoryang) {
+    const base = mps[0];
+    doc.pickup_dropoff.meeting_points = [
+      { ...clone(base), name: c.terminalYeongdo },
+      { ...clone(base), name: c.terminalChoryang },
+    ];
+    note(PRIVATE, locale, "meeting points named one terminal only — both are now stated, neither as default");
+  }
+  for (const dp of doc.pickup_dropoff?.dropoff_points ?? []) {
+    if (c.dropoffName && dp.name !== c.dropoffName) {
+      dp.name = c.dropoffName;
+      note(PRIVATE, locale, "drop-off point now names the terminal you were collected from");
+    }
+  }
+
+  // Same offer, restated in whichever accordion schema this locale uses: English
+  // has {preview, content[]}, the others {icon, details[]}.
+  const items = doc.practicalAccordionItems ?? [];
+  for (const item of items) {
+    for (const key of ["details", "content"]) {
+      const arr = item[key];
+      if (!Array.isArray(arr)) continue;
+      arr.forEach((line, i) => {
+        if (typeof line !== "string" || !HOTEL_OR_KTX.test(line)) return;
+        const next = /drop|하차|드롭|降車|送回|entrega/i.test(line) ? c.dropoffLine : c.pickupLine;
+        if (arr[i] !== next) {
+          arr[i] = next;
+          note(PRIVATE, locale, `${key} line offered hotel/KTX pickup on a cruise-only charter`);
+        }
+      });
+    }
+  }
+
+  // The pickup stop was literally named "…(or hotel/KTX)" outside English.
+  const first = doc.itineraryStops?.[0];
+  if (first && HOTEL_OR_KTX.test(String(first.name ?? "")) && first.name !== c.pickupStopName) {
+    first.name = c.pickupStopName;
+    note(PRIVATE, locale, "pickup stop was named after pickup points this SKU does not serve");
+  }
+}
+
 /** S2 + S3 — inclusions and the policy accordion. */
 function applyInclusionsAndPolicy(doc, slug, locale) {
   const c = content[locale];
@@ -678,7 +965,13 @@ for (const locale of LOCALES) {
 
   rebuildSmall(smallDoc, locale, joinDoc);
   applySharedCopy(smallDoc, SMALL, locale);
+  alignSmallGroupToCourse(smallDoc, joinDoc, locale);
   applyInclusionsAndPolicy(smallDoc, SMALL, locale);
+
+  for (const [doc, slug] of [[joinDoc, JOIN_BUS], [smallDoc, SMALL]]) {
+    rebuildGalleryCaptions(doc, slug, locale);
+    rebuildMatchingAnchors(doc, slug, locale);
+  }
 
   const writes = [[joinPath, joinRaw, joinDoc], [smallPath, smallRaw, smallDoc]];
 
@@ -686,6 +979,7 @@ for (const locale of LOCALES) {
     const privRaw = readFileSync(privPath, "utf8");
     const privDoc = JSON.parse(privRaw);
     applyInclusionsAndPolicy(privDoc, PRIVATE, locale); // S2 + S3 only — the charter's course is its own
+    alignPrivateCharter(privDoc, locale);
     writes.push([privPath, privRaw, privDoc]);
   }
 

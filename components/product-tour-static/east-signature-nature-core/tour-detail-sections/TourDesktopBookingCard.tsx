@@ -57,6 +57,7 @@ import {
   useAvailabilityRange,
   ymdFromLocalDate,
   ymdToLocalDate,
+  isDepartureWeekday,
 } from "@/components/product-tour-static/_shared/bookingShared";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -66,6 +67,8 @@ export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailView
   selectedPortLabel?: string;
   sectionUi?: TourProductSectionUiV1;
   pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
+  /** Fixed-schedule departures (Pocheon = Mon/Thu/Sat). Absent = runs any day. */
+  departureWeekdays?: readonly string[];
   /**
    * U9 carry-through — initial guest count seeded from the upstream `?party=`
    * query param (home stepper → /tours/list → detail) so the booking card opens
@@ -91,6 +94,7 @@ export function TourDesktopBookingCard({
   selectedPortLabel,
   sectionUi,
   pricingTiers,
+  departureWeekdays,
   initialGuests,
   seedDateYmd,
   seedLanguage,
@@ -476,7 +480,10 @@ export function TourDesktopBookingCard({
           monthsShown={1}
           calendarClassName="premium-booking-datepicker"
           locale={datePickerLocale}
-          filterDate={(date) => !isYmdUnavailable(ymdFromLocalDate(date))}
+          filterDate={(date) =>
+            !isYmdUnavailable(ymdFromLocalDate(date)) &&
+            isDepartureWeekday(date, departureWeekdays)
+          }
           onMonthChange={loadMonth}
           dayClassName={(date) => (isSameDay(date, selectedDate) ? "premium-cal-day-selected-exact" : "")}
         />

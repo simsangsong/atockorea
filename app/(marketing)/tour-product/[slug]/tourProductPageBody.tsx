@@ -160,7 +160,16 @@ export async function TourProductPageBody({
   try {
     const staticDoc = await getStaticTourProductFullPageJson(slug, locale);
     if (staticDoc) {
-      const extensions: Array<keyof typeof staticDoc> = ["liveStatusSection", "pricingTiers", "price"];
+      const extensions: Array<keyof typeof staticDoc> = [
+        "liveStatusSection",
+        "pricingTiers",
+        "price",
+        // Fixed-schedule departure days (Pocheon = Mon/Thu/Sat). Overlaid from
+        // the bundle rather than written to detail_payload: the bundle is the
+        // authoring source for it, and this keeps the date-picker constraint
+        // working on rows seeded before the field existed.
+        "departureWeekdays",
+      ];
       for (const k of extensions) {
         const v = (staticDoc as Record<string, unknown>)[k as string];
         if (v !== undefined && (viewModel as Record<string, unknown>)[k as string] === undefined) {

@@ -466,6 +466,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               selectedPortLabel={selectedPortLabel}
               sectionUi={vm.sectionUi}
               pricingTiers={vm.pricingTiers}
+              departureWeekdays={(vm as { departureWeekdays?: readonly string[] }).departureWeekdays}
               initialGuests={effectiveGuests}
               seedDateYmd={effectiveSeedDateYmd}
               seedLanguage={effectiveSeedLanguage}
@@ -491,6 +492,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           selectedPortLabel={selectedPortLabel}
           sectionUi={vm.sectionUi}
           pricingTiers={vm.pricingTiers}
+          departureWeekdays={(vm as { departureWeekdays?: readonly string[] }).departureWeekdays}
           initialGuests={effectiveGuests}
           seedDateYmd={effectiveSeedDateYmd}
           seedLanguage={effectiveSeedLanguage}

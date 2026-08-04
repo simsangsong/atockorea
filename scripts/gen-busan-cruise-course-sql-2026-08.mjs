@@ -22,7 +22,7 @@
  * deliberately NOT updated: they are invisible, and rewriting them is that
  * track's call, not this one's.
  *
- * Output: supabase/pending-db-apply/2026-08-04-11-busan-cruise-course.sql
+ * Output: supabase/pending-db-apply/2026-08-05-12-busan-cruise-course-followups.sql
  * After applying: node scripts/import-match-v18.mjs --single <each slug>
  */
 import { readFileSync, writeFileSync } from "node:fs";
@@ -220,6 +220,6 @@ out += `--    WHERE slug IN (${q(JOIN_BUS)}, ${q(SMALL)})\n`;
 out += `--      AND locale IN ('en','ko','ja','zh','zh-TW','es')\n`;
 out += `--      AND detail_payload::text ~ '(08:30|19:15|9-hour)';   -- expect 0 rows\n`;
 
-const target = path.join(ROOT, "supabase/pending-db-apply/2026-08-04-11-busan-cruise-course.sql");
+const target = path.join(ROOT, "supabase/pending-db-apply/2026-08-05-12-busan-cruise-course-followups.sql");
 writeFileSync(target, out, "utf8");
 console.log("wrote", target);

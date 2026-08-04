@@ -148,7 +148,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
+      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: Haedong Yonggungsa, the UN Memorial Cemetery, lunch at your own expense, then Jagalchi Market, BIFF Square and Gukje Market on foot, Gamcheon Culture Village, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and Yongdusan Park. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard."
     },
     "price": {
       "amountLabel": "68.95"

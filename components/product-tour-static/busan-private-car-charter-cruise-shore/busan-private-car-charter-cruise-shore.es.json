@@ -6,7 +6,7 @@
   "product_id": "busan-private-car-charter-cruise-shore",
   "seo": {
     "pageTitle": "Alquiler Privado de Auto en Busan para Escala de Crucero (8 h) | AtoC Korea",
-    "metaDescription": "Alquiler privado de auto de 8 horas totalmente personalizable en Busan para pasajeros de crucero. Conductor de habla inglesa, regreso puntual garantizado, recogida en hotel/KTX/puerto de crucero.",
+    "metaDescription": "Chárter privado de 8 horas en Busan para pasajeros de crucero, totalmente personalizable. Guía en inglés y chino, vehículo y conductor solo para tu grupo, recogida y entrega en tu terminal de cruceros y vuelta ajustada al all-aboard de tu barco.",
     "ogImage": "https://www.atockorea.com/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
     "primaryKeywords": [
       "Alquiler privado de auto en Busan",
@@ -318,7 +318,7 @@
       "number": 1,
       "time": "Cruise arrival + 30 min",
       "duration": "30 min",
-      "name": "Recogida en la Terminal de Cruceros de Busan (o hotel/KTX)",
+      "name": "Recogida en tu terminal de cruceros de Busan",
       "category": "Salida",
       "description": "Un chófer privado lo recibe en uno de tres puntos de recogida: la **Terminal Internacional de Cruceros del Puerto de Busan** en Dongsam-dong, Yeongdo-gu (el muelle exclusivo para cruceros — utilizado por grandes embarcaciones como los barcos de clase Quantum de Royal Caribbean y Princess Cruises que superan el límite de altura de 64 m del Puente del Puerto de Busan), la **Terminal Internacional de Pasajeros del Puerto de Busan** en Chungjang-daero 206, Choryang-dong (inaugurada el **31 de agosto de 2015** — la segunda terminal de pasajeros más grande de Asia después de Shanghái, con una capacidad anual de **2,78 millones de pasajeros** en 5 edificios con un total de 92.945 m²), o su hotel en el centro de la ciudad / Estación KTX Busan. \n\nLa recogida se programa para **30 minutos después del tiempo oficial de despacho de su barco** para absorber las variaciones en inmigración. \n\nEl conductor lleva un cartel con el nombre en inglés/coreano y una **tarjeta de itinerario impresa** con todos los horarios de paradas, direcciones en escritura coreana (para uso en taxis de emergencia) y el número de contacto 24/7 del operador. \n\nEl vehículo es un **sedán o furgoneta privada exclusivamente para su grupo** (sin otros pasajeros) — el equipaje permanece en el maletero durante el recorrido.",
       "highlights": [
@@ -1126,7 +1126,7 @@
         "items": [
           {
             "label": "Incluido",
-            "detail": "Vehículo privado, guía-conductor de habla inglesa, todos los peajes y cargos de estacionamiento. Recogida en el terminal de cruceros / KTX / hotel céntrico de Busan."
+            "detail": "Vehículo y conductor privados solo para tu grupo, guía en inglés y chino, y todos los peajes y aparcamientos. La recogida y la entrega son en la terminal de cruceros en la que atraque tu barco: es un chárter de excursión en escala, así que no se ofrece recogida en hotel ni en KTX."
           },
           {
             "label": "Pago directo",
@@ -1170,9 +1170,9 @@
       "title": "Recogida, entrega y la ventana de 8 horas.",
       "icon": "map-pin",
       "details": [
-        "La recogida está incluida desde la sala de llegadas de la Terminal de Cruceros de Busan, la salida principal de la Estación de Busan (KTX) o cualquier hotel céntrico de Busan (Haeundae, Seomyeon, Nampo-dong, Centum City).",
+        "La recogida es en la sala de llegadas de la terminal de cruceros de Busan en la que atraque tu barco. Es un chárter de excursión en escala, así que no se ofrece recogida en hotel ni en KTX.",
         "El conductor espera con un letrero de AtoC Korea y el número de matrícula del vehículo se comparte con anticipación.",
-        "La entrega es en la terminal de cruceros por defecto (≈ 90 min antes del llamado de embarque) o en cualquier hotel céntrico de Busan.",
+        "La entrega es en la misma terminal de cruceros, al menos 60 minutos antes de tu all-aboard.",
         "La ventana de servicio de 8 horas comienza desde el momento de su recogida. El tiempo extra se cobra a 30.000 KRW por hora, en efectivo al conductor, sujeto a disponibilidad.",
         "La recogida o entrega en el Aeropuerto Internacional de Gimhae está disponible como complemento adicional de pago (no incluido en la ventana estándar de excursión en tierra)."
       ]
@@ -1313,7 +1313,7 @@
     {
       "step": 6,
       "title": "Regreso puntual a su barco",
-      "detail": "Traslado de regreso ≈ 90 min antes del llamado de embarque. También disponible traslado a hotel o estación KTX."
+      "detail": "Entrega en la misma terminal de cruceros al menos 60 minutos antes de tu all-aboard."
     }
   ],
   "staticQuestions": [
@@ -1380,30 +1380,20 @@
     "type": "multi_point_pickup",
     "meeting_points": [
       {
-        "name": "Terminal de Cruceros de Busan (puerto internacional de cruceros)",
+        "name": "Terminal Internacional de Cruceros de Busan (Yeongdo, Dongsam)",
         "time": "Within 30 min of cruise disembarkation",
         "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       },
       {
-        "name": "Estación de Busan (KTX) — salida principal",
-        "time": "Flexible — confirm at booking",
-        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
-      },
-      {
-        "name": "Cualquier hotel del centro de Busan",
-        "time": "Flexible — confirm at booking",
+        "name": "Terminal Internacional de Pasajeros del Puerto de Busan (Choryang)",
+        "time": "Within 30 min of cruise disembarkation",
         "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       }
     ],
     "dropoff_points": [
       {
-        "name": "Terminal de Cruceros de Busan (regreso al barco)",
+        "name": "Vuelta a la terminal de cruceros en la que te recogimos (Yeongdo o Choryang)",
         "approx_time": "≈ 90 min antes del llamado de embarque de su barco",
-        "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
-      },
-      {
-        "name": "Cualquier hotel del centro de Busan",
-        "approx_time": "≈ al final de la ventana de servicio",
         "note": "Los cruceros que hacen escala en Busan atracan en cualquiera de las dos terminales; cuál te corresponde depende de dónde atraque tu barco y se confirma al reservar. Reúnete con tu guía en la sala de llegadas."
       }
     ],
@@ -1486,7 +1476,7 @@
     "private_fit": 0.95,
     "bus_fit": 0.1,
     "price_band": "mid_to_premium",
-    "pickup_base": "cruise_terminal_or_hotel_or_ktx",
+    "pickup_base": "cruise_terminal",
     "return_time_band": "late_afternoon",
     "duration_band": "8h",
     "min_recommended_age": 0,
