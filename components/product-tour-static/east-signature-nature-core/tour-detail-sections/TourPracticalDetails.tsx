@@ -80,7 +80,54 @@ function splitTimeSequences(line: string): string[] {
 const INLINE_HIGHLIGHT_RE =
   /(₩[\d,]+(?:\s*[-–~]\s*₩?[\d,]+)?|\b\d{1,2}:\d{2}\b|\b\d+(?:\.\d+)?\s*h\b|\d+(?:\.\d+)?\s*(?:시간|분|hours?|min(?:utes?)?)\b|≈|~)/g;
 
-function renderInline(text: string): React.ReactNode[] {
+/**
+ * `**bold**` spans, stripped of their markers.
+ *
+ * 🔴 The copy is authored with markdown emphasis but nothing here parsed it, so
+ * guests read the asterisks: "This tour departs **on Mondays, Thursdays and
+ * Saturdays only**". 181 strings across 9 accordion types and the whole
+ * catalogue were affected — pickup, inclusions, weather policy, departure days.
+ *
+ * Deliberately bold-only. `parseChatInline` in _shared/chatMarkdown.tsx also
+ * turns bare URLs and [text](url) into links, which is right for chat and would
+ * be a surprise here; this stays the narrow fix for the marker that leaked.
+ * Unbalanced markers are left exactly as typed — see the tests.
+ */
+const MD_BOLD_RE = /\*\*(?=\S)([\s\S]*?\S)\*\*/g;
+
+/** Split a line into plain text and bold runs before any other inline pass. */
+export function splitBoldRuns(text: string): Array<{ bold: boolean; text: string }> {
+  const parts: Array<{ bold: boolean; text: string }> = [];
+  let last = 0;
+  MD_BOLD_RE.lastIndex = 0;
+  for (let m = MD_BOLD_RE.exec(text); m; m = MD_BOLD_RE.exec(text)) {
+    if (m.index > last) parts.push({ bold: false, text: text.slice(last, m.index) });
+    parts.push({ bold: true, text: m[1] });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push({ bold: false, text: text.slice(last) });
+  return parts.length ? parts : [{ bold: false, text }];
+}
+
+export function renderInline(text: string): React.ReactNode[] {
+  // Bold runs first, then the existing time/price highlighting inside each run,
+  // so "**Mon · Thu · Sat**" is bold AND its times still get tabular-nums.
+  const runs = splitBoldRuns(text);
+  if (runs.some((r) => r.bold)) {
+    return runs.map((r, i) =>
+      r.bold ? (
+        <strong key={`b${i}`} className="font-semibold text-slate-900">
+          {renderHighlights(r.text)}
+        </strong>
+      ) : (
+        <Fragment key={`t${i}`}>{renderHighlights(r.text)}</Fragment>
+      ),
+    );
+  }
+  return renderHighlights(text);
+}
+
+function renderHighlights(text: string): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let lastIdx = 0;
   let key = 0;
@@ -428,7 +475,7 @@ export function TourPracticalDetails({
                     {item.title}
                   </h3>
                   <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
-                    {item.preview}
+                    {renderInline(item.preview ?? "")}
                   </p>
                 </div>
                 <div
