@@ -152,7 +152,11 @@ function transform(loc) {
     ...DAEREUNGWON_PHOTOS.map((src) =>
       galleryItem(src, c.daereungwon.name, `${c.daereungwon.name} — ${gid}`, `${c.daereungwon.name} — ${gid++}`, 0),
     ),
-    ...breadPhotos,
+    // The Hwangnam-bread photos come from the Gyochon stop and still carry its
+    // label. The page-level atmosphere gallery prints `location`, so leaving it
+    // would caption Hwangnam-bread as Gyochon — and the bread is eaten at
+    // Hwangnidan-gil now, which is the whole reason the photos moved.
+    ...breadPhotos.map((g) => ({ ...g, location: c.daereungwon.name })),
   ];
   const daereungwonStop = {
     number: 0,
@@ -164,6 +168,14 @@ function transform(loc) {
     highlights: c.daereungwon.highlights,
     timeUsed: c.daereungwon.timeUsed,
     whyOnRoute: c.daereungwon.whyOnRoute,
+    // This stop is built from scratch rather than spread from an existing one,
+    // so nothing seeds the card imagery the way `...sGyochon` does for its
+    // neighbours. Without these three fields the stop card renders with no
+    // thumbnail while stops 5 and 7 have one — visible on the real page even
+    // though the stop already owns five gallery photos.
+    image: DAEREUNGWON_PHOTOS[0],
+    images: [...DAEREUNGWON_PHOTOS],
+    imageCredits: DAEREUNGWON_PHOTOS.map((url) => ({ url, source: "atoc-korea" })),
     galleryItems: daereungwonGallery,
     visitBasics: c.daereungwonBasics.visitBasics,
     convenience: c.daereungwonBasics.convenience,
@@ -518,8 +530,64 @@ function transform(loc) {
     }
   }
 
+  // ── 18. safety net: presentation markup that the renderer does not read.
+  //     Found by eyeballing the real page — tsc and every test were green.
+  //     `**bold**` is turned into emphasis by exactly one component,
+  //     `_shared/TourStopDetailDrawer.tsx`, and it only ever sees itineraryStops
+  //     fields. Anywhere else the guest reads the asterisks. Control: the other
+  //     product bundles use `**` too, but only in those fields, so they render
+  //     zero literal asterisks; this one had put it in nine more fields.
+  //     🔴 is this repo's internal "important" marker — no other bundle carries
+  //     one, and it has no business on a guest's screen.
+  assertNoUnrenderedMarkup(guestFacing, loc);
+
   writeFileSync(file, JSON.stringify(doc, null, 2) + "\n", "utf8");
   console.log(`✓ ${loc} — 8 stops, ${doc.galleryItems.length} gallery items`);
+}
+
+/**
+ * Fields whose strings reach `TourStopDetailDrawer`, the only renderer in the
+ * product page that converts `**x**` into emphasis. `**` is safe here and
+ * printed literally everywhere else.
+ */
+const MARKDOWN_RENDERED_FIELDS = new Set([
+  "highlights",
+  "description",
+  "whyOnRoute",
+  "tip", // itineraryStops[].smartNotes.tip — same drawer
+]);
+
+function assertNoUnrenderedMarkup(node, loc) {
+  const bad = [];
+  const walk = (value, keyPath, lastKey) => {
+    if (typeof value === "string") {
+      if (/[🔴🟠🟡🟢⚠✅❌]/u.test(value)) {
+        bad.push(`${keyPath}: internal status emoji in guest copy — ${value.slice(0, 60)}`);
+      }
+      if (/\*\*[^*]+\*\*/.test(value) && !MARKDOWN_RENDERED_FIELDS.has(lastKey)) {
+        bad.push(`${keyPath}: **bold** in a field that renders raw — ${value.slice(0, 60)}`);
+      }
+      return;
+    }
+    if (Array.isArray(value)) {
+      // An array inherits its parent key: `highlights[]` is still `highlights`.
+      value.forEach((v, i) => walk(v, `${keyPath}[${i}]`, lastKey));
+      return;
+    }
+    if (value && typeof value === "object") {
+      for (const k of Object.keys(value)) {
+        walk(value[k], keyPath ? `${keyPath}.${k}` : k, k);
+      }
+    }
+  };
+  walk(node, "", "");
+  if (bad.length) {
+    throw new Error(
+      `[${loc}] ${bad.length} unrendered-markup leak(s) — the guest would see these characters:\n` +
+        bad.slice(0, 8).map((b) => `    ${b}`).join("\n") +
+        (bad.length > 8 ? `\n    … and ${bad.length - 8} more` : ""),
+    );
+  }
 }
 
 const only = process.argv[2];
