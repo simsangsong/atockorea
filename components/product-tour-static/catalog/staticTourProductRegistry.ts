@@ -175,6 +175,18 @@ import seoulPrivateNamiMorningCalmZh from "../seoul-private-nami-morning-calm-pe
 import seoulPrivateNamiMorningCalmZhTw from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.zh-TW.json";
 import seoulPrivateNamiMorningCalmEs from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.es.json";
 import seoulPrivateNamiMorningCalmJa from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ja.json";
+import seoulGapyeongNamiMorningCalmPetiteEn from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.en.json";
+import seoulGapyeongNamiMorningCalmPetiteKo from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ko.json";
+import seoulGapyeongNamiMorningCalmPetiteZh from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh.json";
+import seoulGapyeongNamiMorningCalmPetiteZhTw from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh-TW.json";
+import seoulGapyeongNamiMorningCalmPetiteEs from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.es.json";
+import seoulGapyeongNamiMorningCalmPetiteJa from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ja.json";
+import seoulWinterSeoraksanNamiEobiEn from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.en.json";
+import seoulWinterSeoraksanNamiEobiKo from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ko.json";
+import seoulWinterSeoraksanNamiEobiZh from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh.json";
+import seoulWinterSeoraksanNamiEobiZhTw from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh-TW.json";
+import seoulWinterSeoraksanNamiEobiEs from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.es.json";
+import seoulWinterSeoraksanNamiEobiJa from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ja.json";
 import seoulSeoraksanNaksansaBeachEn from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.en.json";
 import seoulSeoraksanNaksansaBeachKo from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ko.json";
 import seoulSeoraksanNaksansaBeachZh from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh.json";
@@ -302,6 +314,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEn as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEn as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEn as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteEn as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiEn as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEn as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEn as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEn as PageJsonShape,
@@ -339,6 +353,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandKo as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelKo as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmKo as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteKo as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiKo as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachKo as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmKo as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachKo as PageJsonShape,
@@ -376,6 +392,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZh as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZh as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZh as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteZh as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiZh as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZh as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZh as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZh as PageJsonShape,
@@ -413,6 +431,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZhTw as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZhTw as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZhTw as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteZhTw as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiZhTw as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZhTw as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZhTw as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZhTw as PageJsonShape,
@@ -450,6 +470,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEs as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEs as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEs as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteEs as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiEs as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEs as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEs as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEs as PageJsonShape,
@@ -487,6 +509,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandJa as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelJa as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmJa as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteJa as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiJa as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachJa as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmJa as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachJa as PageJsonShape,
@@ -525,6 +549,7 @@ const SLUG_ORDER: readonly string[] = [
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
   "seoul-private-nami-morning-calm-petite-france",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
@@ -533,6 +558,7 @@ const SLUG_ORDER: readonly string[] = [
   "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
   "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "southwest-hallasan-osulloc-aewol",];
 
 /**
@@ -576,6 +602,11 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
+  // New products 2026-08-04. maxGroupSize deliberately omitted: both run as
+  // join-in coach tours, so the small-group cap used by the private/small-group
+  // products would be a false claim on the card. Set it once ops confirms a cap.
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": { listPriceUsd: 59 },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": { listPriceUsd: 64 },
 };
 
 /**

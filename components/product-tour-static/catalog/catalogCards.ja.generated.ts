@@ -660,6 +660,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "ソウル発 加平（カピョン）日帰りツアー：南怡島（ナミソム）・晨静苑・プチフランス",
+      "subtitle": "加平の三大スポットをバス1日で — 山登りなし、入場料3か所込み",
+      "region": "ソウル → 京畿道（加平）",
+      "duration": "11.5時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "ソウル発日帰り",
+        "加平（カピョン）",
+        "混載グループ",
+        "韓国ドラマ",
+        "庭園"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "ソウルから最も気軽に行ける田園の一日。南怡島のメタセコイア並木、330,000 m²のテーマ樹木園、そして星の王子さまの村 — 3か所の入場料すべて込みで、19:00までにソウルへ戻ります。"
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -864,6 +890,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "ソウル発 冬季限定：雪岳山（ソラクサン）・南怡島（ナミソム）・オビ渓谷の氷壁",
+      "subtitle": "冬季限定のバス1日 — 韓国で最も名高い峰の雪、霜をまとった南怡島、そして村がつくる氷壁",
+      "region": "ソウル → 江原道 → 京畿道（加平）",
+      "duration": "13時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "冬季限定",
+        "季節限定",
+        "ソウル発日帰り",
+        "雪岳山（ソラクサン）",
+        "氷壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "厳冬期のみの運行です。雪に覆われた雪岳山、霜をまとった南怡島の並木道、そして加平の村人が毎年1月に渓谷の岩肌へ育てる高さ25メートルの氷壁を訪ねます。"
+    },
+    "price": {
+      "amountLabel": "64"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

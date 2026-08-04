@@ -30,5 +30,57 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "price": {
       "amountLabel": "59"
     }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Gapyeong-Tagestour ab Seoul: Insel Nami, Garden of Morning Calm & Petite France",
+      "subtitle": "Das Gapyeong-Trio an einem Bustag — keine Bergwanderung, drei Eintritte inklusive",
+      "region": "Seoul → Gyeonggi-do (Gapyeong)",
+      "duration": "11,5 Stunden",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Tagesausflug ab Seoul",
+        "Gapyeong",
+        "Gruppentour zum Zusteigen",
+        "K-Drama",
+        "Gärten"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Seouls unkompliziertester Landtag: die Metasequoien-Allee der Insel Nami, ein 330,000 m² großes Themen-Arboretum und ein Dorf zum Kleinen Prinzen — alle drei Eintritte inklusive, zurück in Seoul bis 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Winter-Special ab Seoul: Seoraksan, Insel Nami & die Eiswand im Eobi-Tal",
+      "subtitle": "Ein Bustag nur im Winter — Schnee auf Koreas berühmtestem Gipfel, Nami unter Raureif und eine vom Dorf gebaute Eiswand",
+      "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13 Stunden",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Nur im Winter",
+        "Saisonal",
+        "Tagesausflug ab Seoul",
+        "Seoraksan",
+        "Eiswand"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Läuft nur im tiefen Winter: Seoraksan unter Schnee, die bereiften Baumalleen der Insel Nami und die 25 Meter hohe Eiswand, die Dorfbewohner in Gapyeong jeden Januar an einer Felswand im Tal wachsen lassen."
+    },
+    "price": {
+      "amountLabel": "64"
+    }
   }
 };

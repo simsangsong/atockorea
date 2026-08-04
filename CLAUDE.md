@@ -1,5 +1,38 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## ✅ 완료(레포): 서울발 신규 상품 2종 — 가평 조인 투어 + 겨울 어비계곡 (2026-08-04, 사장님 지시)
+
+**부트스트랩:** `docs/NEXT-SESSION-SEOUL-GAPYEONG-WINTER-2026-08-04.md`
+(§1 사람 게이트 · §2 검증 제약 · §3 인공 빙벽 · §6 함정)
+
+`seoul-gapyeong-nami-morning-calm-petite-france-day-tour`(남이섬→점심→아침고요→쁘띠프랑스, **$59**) +
+`seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour`(설악산→점심→남이섬→어비계곡, **$64, 겨울 한정**).
+10로케일 번들 20개 · 등록 5곳 완료 · SQL `2026-08-04-0{5,6,7,8}.sql` **⚠ 미적용**.
+빌더 `scripts/build-seoul-{gapyeong,winter-eobi}-2026-08.mjs` · 검증 `scripts/qa-seoul-new-products-2026-08.mjs`.
+
+**둘 다 진짜 공백이었다**(가평 3종은 전세만 존재 · 어비계곡 0건). 사장님이 보여준 스크린샷 중
+「설악+남이+아침고요」·「설악+낙산사」는 **이미 레포에 있어서** 만들지 않았다.
+
+🔴 **어비계곡 얼음벽은 인공이다 — 되돌리지 말 것.** 2023년 겨울부터 **가일2리 주민 30명**이
+물을 뿌려 만든다(경인일보 헤드라인 「인공빙벽」). **KTO 영문 페이지·경기관광공사 영문 블로그·
+Klook 이 전부 "natural" 이라고 잘못 적고 있다.** 다음 세션이 "공식 페이지에 자연이라 돼 있다"며
+카피를 되돌리지 말 것. 높이 **25m**(62m 는 거짓). 2025-26 시즌은 **2/19 종료**(Klook 표기 2/28 과 불일치).
+
+🔴 **가격 $59/$64 는 사장님 확정이 아니다** — 형제 상품의 Klook 대비 비율에서 역산했다. **가격은 4곳**
+(빌더 상수 · `SLUG_OVERRIDES` **2파일** · offers SQL). `maxGroupSize` 는 **일부러 비웠다**(조인 버스에
+소그룹 8명은 거짓).
+
+⚠ **이 세션은 외부 egress 가 막혀 있었다**(`WebFetch` 전 호스트 403). 공식 페이지를 한 장도 못 열어서
+POI 는 **레포 도너의 KB 검증 본문을 재사용**하고 어비계곡만 새로 썼다. 재검증 목록은 부트스트랩 §2.
+**도너 모순 1건 수정:** 쁘띠프랑스 입장료 `visitBasics` ₩12,000 vs `highlights` ₩10,000 → 12,000 이 맞다
+(도너 `seoul-private-nami-morning-calm-petite-france` 는 **아직 라이브로 모순을 내보낸다** — 별도 티켓).
+
+🔴 **`catalog_card.slug` 을 번역하면 404 유령 카드가 생긴다**(생성기가 파일명보다 JSON 값을 믿는다).
+`jeju-eastern-unesco-spots-day-tour` 의 `.es` 가 실제 사고를 냈고 **지금도 라이브다.**
+🔴 **`SLUG_OVERRIDES` 는 두 파일에 중복 존재하고 값이 서로 다르다.** 헤더 주석의 "여기에만 있다"는 거짓.
+실제 카드·홈·사이트맵이 쓰는 건 `catalogRegistrationBuilder.ts` 쪽이다(부산 신상품은 여기 등록이 빠져
+`maxGroupSize` 가 조용히 사라져 있다).
+
 ## 🔴 진행 중 (최신): 스마트앱 **UI/UX 감사 트랙** — U9 수정 중 (통합 트랙 UI 티켓을 흡수)
 
 **이어받으면 이것부터:** **`docs/smartapp-uiux-audit-master-plan-2026-08-03.md`** (§4 루브릭 6축 · §5 WBS)

@@ -1,0 +1,364 @@
+{
+  "_note": "EN master for seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Authored 2026-08-04. Seoraksan and Nami stop bodies come from the donor (KB-verified 2026-04-29); Eobi Valley is authored fresh. 🔴 The Eobi ice wall is ARTIFICIAL — villagers of Garil 2-ri spray water down the rock face each winter (first built winter 2023; Kyeongin Ilbo headlines it 인공빙벽). KTO's English page and the OTAs call it natural; they are wrong and this copy must not repeat them. The 2025-26 season closed 19 Feb, not 28 Feb, so no fixed end date is published here.",
+
+  "title": "Winter-Special ab Seoul: Seoraksan, Insel Nami & die Eiswand im Eobi-Tal",
+  "subtitle": "Ein Bustag nur im Winter — Schnee auf Koreas berühmtestem Gipfel, Nami unter Raureif und eine vom Dorf gebaute Eiswand",
+  "shortCardDescription": "Läuft nur im tiefen Winter: Seoraksan unter Schnee, die bereiften Baumalleen der Insel Nami und die 25 Meter hohe Eiswand, die Dorfbewohner in Gapyeong jeden Januar an einer Felswand im Tal wachsen lassen.",
+  "badges": ["Nur im Winter", "Saisonal", "Tagesausflug ab Seoul", "Seoraksan", "Eiswand"],
+  "tags": ["Nur im Winter", "Saisonal", "Tagesausflug ab Seoul", "Seoraksan", "Insel Nami", "Eiswand"],
+
+  "headlineLine1": "Winter-Tagestour ab Seoul",
+  "headlineLine2": "Seoraksan, Nami & die Eobi-Eiswand",
+  "heroTagline": "Ein Bustag in der Wintersaison ab Seoul: Koreas bekanntester Nationalpark unter Schnee, die bereiften Alleen der Insel Nami und eine 25 Meter hohe Eiswand, die ein Dorf in Gapyeong jeden Januar von Hand aufbaut",
+  "heroPills": ["Nur in der Wintersaison", "Schnee + Eiswand", "Bus-Tagesausflug"],
+  "heroDuration": "13 Stunden",
+  "heroStopsLabel": "3 Stopps",
+  "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+  "duration": "13 Stunden",
+  "stopsCount": 3,
+
+  "seo": {
+    "pageTitle": "Winter-Tagestour ab Seoul — Seoraksan, Insel Nami & die Eiswand im Eobi-Tal | AtoC Korea",
+    "metaDescription": "Bus-Tagestour in der Wintersaison ab Seoul: der verschneite Seoraksan-Nationalpark, die bereiften Baumalleen der Insel Nami und die Eiswand im Eobi-Tal in Gapyeong. Abholung am Bahnhof Hongik University oder an der Station Myeongdong, Parkeintritt und Nami-Fähre inklusive.",
+    "title": "Winter-Tagestour ab Seoul — Seoraksan, Insel Nami & die Eiswand im Eobi-Tal",
+    "description": "Ein Tagesausflug ab Seoul nur im Winter, der den verschneiten Seoraksan-Nationalpark, die Insel Nami und die von Dorfbewohnern gebaute Eiswand im Eobi-Tal in Gapyeong verbindet.",
+    "primaryKeywords": [
+      "Winter Tagestour ab Seoul",
+      "Eobi Tal Eiswand Tour",
+      "Seoraksan Wintertour ab Seoul",
+      "Nami Island Winter Tour",
+      "Gapyeong Eiswand Tagesausflug"
+    ]
+  },
+
+  "glanceItems": [
+    { "icon": "clock", "label": "Dauer", "value": "13 Stunden" },
+    { "icon": "camera", "label": "Fotopotenzial", "value": "Sehr hoch", "level": 5 },
+    { "icon": "mountain", "label": "Landschaft", "value": "Sehr hoch", "level": 5 },
+    { "icon": "footprints", "label": "Gehanteil", "value": "Mittel", "level": 3 },
+    { "icon": "cloud-rain", "label": "Wetterempfindlichkeit", "value": "Hoch", "level": 2 },
+    { "icon": "users", "label": "Familientauglichkeit", "value": "Mittel", "level": 3 },
+    { "icon": "gauge", "label": "Tempo", "value": "Voll", "level": 4 }
+  ],
+
+  "flow": {
+    "pickup": "Abholung (Hongik / Myeongdong)",
+    "seoraksan": "Seoraksan-Nationalpark",
+    "lunch": "Mittagessen bei Sokcho",
+    "nami": "Insel Nami",
+    "eobi": "Eiswand im Eobi-Tal",
+    "dropoff": "Rückfahrt nach Seoul"
+  },
+
+  "routeShapeIntro": {
+    "title": "So verläuft dieser Wintertag",
+    "subtitle": "Ein Start um 06:00 an der Hongik University bzw. um 06:30 in Myeongdong und eine rund 3-stündige Fahrt nach Nordosten bringen Sie am späten Vormittag zum Seoraksan, wenn der Schnee noch sauber ist und das Licht auf dem Granit liegt. Mittagessen bei Sokcho, dann die lange Fahrt wieder westwärts durch den Chuncheon-Korridor zur Insel Nami mit ihren bereiften Baumalleen. Der letzte Stopp, das Eobi-Tal, liegt im Süden von Gapyeong und damit schon in Richtung Seoul — Sie erreichen es am späten Nachmittag, wenn die Beleuchtung im Tal angeht. Zurück in Seoul gegen 19:00-19:30."
+  },
+
+  "routePhases": [
+    {
+      "phase": "Seoul → Seoraksan",
+      "duration": "≈ 3,5 Stunden",
+      "description": "Abholung um 06:00 an der Hongik University bzw. um 06:30 in Myeongdong, dann eine rund 3-stündige Fahrt nach Nordosten auf der Schnellstraße Seoul-Yangyang mit einem Zwischenstopp, Ankunft am Eingang Sogongwon gegen 09:30."
+    },
+    {
+      "phase": "Seoraksan",
+      "duration": "≈ 2 Stunden",
+      "description": "Zeit zur freien Verfügung am Eingang Sogongwon: der bronzene Tongildaebul-Buddha, der Sinheungsa-Tempel und die verschneiten Wege im unteren Tal. Die Seilbahn ist nicht inklusive und fährt nur, wenn Wind und Eis es zulassen."
+    },
+    {
+      "phase": "Mittagessen → Insel Nami",
+      "duration": "≈ 3 Stunden",
+      "description": "Mittagessen bei Sokcho (auf eigene Kosten), dann die rund 2-stündige Rückfahrt westwärts zum Fähranleger Gapyeong und die fünfminütige Überfahrt zur Insel Nami für zwei Stunden zwischen den bereiften Metasequoien-Alleen."
+    },
+    {
+      "phase": "Eobi-Tal → Seoul",
+      "duration": "≈ 2,5 Stunden",
+      "description": "Vierzig Minuten nach Süden ins Eobi-Tal zur Eiswand im Licht des späten Nachmittags, dann die rund 1,5-stündige Fahrt nach Seoul — Myeongdong gegen 19:00, Hongik gegen 19:30."
+    }
+  ],
+
+  "whyTourWorks": {
+    "routeLogicTitle": "Tempo & Geografie",
+    "bestFor": [
+      "Reisende, die im Januar oder Februar in Korea sind und die Winterlandschaft wollen, keinen Stadttag",
+      "Fotografinnen und Fotografen, die Schnee auf Granit, bereifte Baumalleen und eine Eiswand zur blauen Stunde suchen",
+      "Paare und kleine Gruppen, die mit einem langen, kalten, vollen Tag zurechtkommen",
+      "Alle, die etwas sehen möchten, das die meisten Tagesausflüge ab Seoul nicht enthalten"
+    ],
+    "lessIdealFor": [
+      "Alle, die außerhalb der Wintersaison reisen — in den warmen Monaten existiert die Eiswand schlicht nicht",
+      "Kälteempfindliche Reisende oder solche, die unabhängig vom Wetter garantierte Sehenswürdigkeiten brauchen",
+      "Gäste, die möglichst wenig laufen möchten — am letzten Stopp gibt es vereisten Boden und einen Holzsteg",
+      "Kleine Kinder und alle, die im Winter unsicher auf den Beinen sind"
+    ],
+    "items": [
+      {
+        "label": "Seoraksan zuerst, solange der Schnee noch sauber ist",
+        "detail": "Der Park ist der entfernteste Punkt des Tages und der, den nachmittägliches Tauwetter und Bewölkung am stärksten treffen. Ihn zuerst anzufahren nutzt das klarste Licht und den frischesten Schnee, und die lange Fahrt liegt hinter Ihnen, bevor jemand müde ist."
+      },
+      {
+        "label": "Nami in der Mitte, weil die Fähre Tageslicht braucht",
+        "detail": "Namis Reiz im Winter sind die Baumalleen unter Raureif, und die brauchen Licht, damit sich die Überfahrt lohnt. Ein Zeitfenster am mittleren Nachmittag bringt Sie hinüber, solange die Insel noch hell ist und bevor der Wind auf dem ungeschützten Fährdeck auffrischt."
+      },
+      {
+        "label": "Eobi zuletzt, weil es ohnehin auf dem Heimweg liegt",
+        "detail": "Das Eobi-Tal liegt in Seorak-myeon im Süden von Gapyeong, auf der Seouler Seite von allem anderen auf dieser Route. Dort zu enden kostet keinen Umweg, und im tiefen Winter fällt die späte Ankunft mit dem Moment zusammen, in dem die Abendbeleuchtung entlang des Holzstegs angeht."
+      },
+      {
+        "label": "Eine Route, gebaut um eine kurze Saison",
+        "detail": "Die Eiswand existiert nur, solange die Kälte hält — das Dorf beginnt Mitte Dezember mit dem Aufbau, und im Februar verschwindet sie wieder. Genau diese eine Einschränkung ist der Grund, warum es dieses Programm überhaupt gibt und warum es den Rest des Jahres nicht läuft."
+      }
+    ]
+  },
+
+  "seoraksanDuration": "120 Min. (2 Stunden)",
+  "seoraksanWhy": "Seoraksan eröffnet den Tag, weil es zugleich der entfernteste und der am stärksten lichtabhängige Stopp ist. Um 09:30 ist der Schnee auf den Granitgraten noch sauber, und das Tal hat sich noch nicht zugezogen — genau dafür fährt man drei Stunden. Zwei Stunden am Eingang Sogongwon reichen im Wintertempo für den bronzenen Tongildaebul-Buddha, den Sinheungsa-Tempel und die Wege im unteren Tal — nicht für einen Gipfelversuch, und das ist Absicht. Zuerst hierherzufahren erledigt außerdem die längste Fahrt des Tages, bevor jemand müde oder durchgefroren ist.",
+  "seoraksanVisitBasics": {
+    "hours": "Park ganzjährig geöffnet; Sinheungsa-Tempel ab 06:00. Die Gwongeumseong-Seilbahn fährt im Winter, ihre Zeiten ändern sich jedoch täglich mit dem Wetter, und sie stellt bei starkem Wind oder Eis den Betrieb ein — der Betreiber veröffentlicht den Fahrplan jeden Morgen, garantiert ist sie also nie",
+    "closed": "Ganzjährig geöffnet, aber die hoch gelegenen Wege sind saisonal aus Brandschutz- und Sicherheitsgründen gesperrt — üblicherweise von Mitte November bis Mitte Dezember und erneut ab etwa Mitte Februar. Dieses Programm nutzt nur die tief gelegenen Talwege nahe dem Eingang, die davon nicht betroffen sind",
+    "admission": "Parkeintritt KOSTENLOS (die Gebühr von ₩3,500 wurde im Mai 2023 abgeschafft). Seilbahn hin und zurück ₩16,000 für Erwachsene, Ticketverkauf nur vor Ort, in dieser Tour NICHT enthalten und ohne Fahrtgarantie",
+    "walking": "Leicht bis mittel auf dem Talboden — gepflasterte Wege und Stufen zum Sinheungsa und zum Tongildaebul, stellenweise verschneit und rutschig. Es ist keine Wanderung vorgesehen; festes, rutschfestes Schuhwerk ist unerlässlich"
+  },
+  "seoraksanSmartNotes": {
+    "photo": "Der bronzene Tongildaebul-Buddha vor schneebestäubtem Granit ist die Aufnahme. Im Winter ist der Grat des Ulsanbawi an klaren Morgen meist vom Eingangsplatz aus zu sehen.",
+    "facilities": "Besucherzentrum, Cafés, Restaurants und Souvenirläden am Eingang Sogongwon. An vollen Wintertagen ist beheizter Innenraum knapp.",
+    "tip": "Planen Sie nicht um die Seilbahn herum. Ihre Winterzeiten wechseln täglich, und sie schließt bei Wind und Eis häufiger als in anderen Jahreszeiten; an klaren Tagen können die Schlangen zudem lang werden. Behandeln Sie sie als Zugabe, nicht als festen Bestandteil. Kleiden Sie sich für −5 °C bis +5 °C an der Talstation, mit kräftigem Windchill."
+  },
+
+  "namiDuration": "120 Min. (2 Stunden)",
+  "namiWhy": "Nami liegt in der Mitte des Tages, weil es der eine Stopp ist, der zugleich Tageslicht und ein Boot braucht. Die Metasequoien- und Ginkgo-Alleen unter Raureif sind das, wofür sich die Überfahrt im Winter lohnt, und sie brauchen Licht; das Fährdeck ist zudem ungeschützt, sodass eine Überfahrt am mittleren Nachmittag angenehmer ist als eine späte. Nami nach Seoraksan zu setzen teilt außerdem die lange Fahrt nach Westen in zwei überschaubare Etappen statt in eine.",
+  "namiVisitBasics": {
+    "hours": "Fähre ab 08:00, letzte Einfahrt um 21:00, tagsüber etwa alle 10-20 Minuten; die meisten Läden auf der Insel schließen gegen 18:00. Winterfahrpläne können sich mit dem Wetter ändern",
+    "closed": "Ganzjährig geöffnet",
+    "admission": "Visa-Gebühr der Naminara Republic, Fähre hin und zurück inklusive: Erwachsene ₩19,000 — in dieser Tour INKLUSIVE",
+    "walking": "Leicht — flache, baumbestandene Wege, die im Hochwinter allerdings vereist sein können. Die Runde über die halbe Insel misst ~3 km. Fahrrad- und E-Buggy-Miete ist auf der Insel auf eigene Kosten möglich"
+  },
+
+  "eobi": {
+    "name": "Eiswand im Eobi-Tal",
+    "category": "Winterliches Dorffest (saisonal)",
+    "duration": "45 Min.",
+    "description": "Das Eobi-Tal — 어비계곡, von den Schriftzeichen für „fliegender Fisch“, nach Wasser, das einst so schnell floss, dass Fische zu fliegen schienen — ist ein drei Kilometer langes Tal in Seorak-myeon im Süden von Gapyeong. Im Sommer ist es ein Bade- und Forellenbach. Im Winter wird es zu etwas, worauf der Rest des Jahres keinen Hinweis gibt.\n\n**Die Eiswand hier ist gemacht, nicht gefunden.** Seit dem Winter 2023 sprühen die Bewohnerinnen und Bewohner von Garil 2-ri in den kältesten Wochen Wasser über die Felswand des Tals und lassen die Kälte den Rest erledigen, bis daraus eine Fläche von berichteten rund **25 Metern** Höhe wird. Betrieben wird sie von der Einwohnervereinigung des Dorfes — etwa dreißig Personen — als Einkommensprojekt außerhalb der Saison, für ein Tal, das zuvor kaum Winterbesuch hatte. Sie werden das anderswo, auch auf manchen offiziellen Tourismusseiten, als natürlichen gefrorenen Wasserfall beschrieben finden. Das ist es nicht, und gerade deshalb ist es beeindruckender.\n\nDie Wand wird von einem **hölzernen Stegweg** am Tal entlang betrachtet, Teil eines Sanierungsprojekts der Provinz Gyeonggi, das auch die Abendbeleuchtung gebracht hat. **Der Boden unmittelbar unter der Wand ist gesperrt**, nachdem sich dort Besucher beim Ausrutschen verletzt hatten; fotografiert wird also vom ausgewiesenen Aussichtsbereich statt von unten. Neben der Wand betreibt das Dorf eine Eisrutschbahn, einen sich drehenden Schneeschlitten, eine Iglu-Fotozone und ein kleines beheiztes Gewächshaus mit Pflanzen.\n\nWir kommen am späten Nachmittag an. Im tiefen Winter heißt das: das letzte Tageslicht auf dem Eis und dann die Stegbeleuchtung, die angeht — gut für Fotos, und kalt. Das Dorf erhebt vor Ort kleine Gebühren für den Aussichtsbereich und die Schlittenangebote; sie werden lokal festgelegt und ändern sich von Jahr zu Jahr.",
+    "highlights": [
+      "Eine Eiswand von berichteten rund 25 m, die Dorfbewohner aus Garil 2-ri seit dem Winter 2023 an der Felswand des Tals wachsen lassen — gebaut, nicht natürlich",
+      "Betrieben von der Einwohnervereinigung des Dorfes (etwa 30 Personen) als Projekt außerhalb der Saison, unter dem Namen 어비계곡 겨울나라, „Eobi-Tal Winterwunderland“",
+      "Hölzerner Stegweg als Aussichtsweg mit Abendbeleuchtung, angelegt im Rahmen des Sanierungsprogramms für saubere Täler der Provinz Gyeonggi",
+      "Eisrutschen, ein sich drehender Schneeschlitten, eine Iglu-Fotozone und ein beheiztes Gewächshaus neben der Wand",
+      "Der Talname 어비 (魚飛) bedeutet „fliegender Fisch“ — nach Wasser, das einst schnell genug war, um Fische fliegen zu lassen",
+      "Die Besucherzahl hat sich im Lauf einer Saison etwa verdoppelt, auf rund 60,000, überwiegend Reisende aus Südostasien"
+    ],
+    "timeUsed": [
+      "Bus parkt, und der Guide führt die Gruppe zum Taleingang (~10 Min.)",
+      "Stegweg zum Aussichtsbereich an der Eiswand und Fotos (~25 Min.)",
+      "Optional Schlittenfahren oder Gewächshaus, oder früher zurück zum Bus zum Aufwärmen (~10 Min.)"
+    ],
+    "whyOnRoute": "Eobi beschließt den Tag aus zwei Gründen. Geografisch ist es der einzige Stopp auf der Seouler Seite der Route — Seorak-myeon liegt im Süden von Gapyeong, schon Richtung Heimweg —, sodass eine Stunde hier am Ende eines langen Tages keine zusätzliche Fahrzeit kostet. Redaktionell ist es der Grund, warum dieses Programm ein Winterprodukt ist und kein ganzjähriges: Seoraksan und Nami lassen sich in jeder Jahreszeit besuchen, die Eiswand aber existiert vielleicht acht Wochen lang, und nur wenn die Kälte hält. Es ist außerdem der Stopp, von dem die meisten Reisenden noch nie gehört haben — ein guter Schlusston.",
+      "visitBasics": {
+      "hours": "Vom Dorf betrieben und saisonal. Berichtet wird ein Winterfestbetrieb von etwa 10:00-17:00, in der Hochsaison mit Beleuchtung am Stegweg. Die Zeiten werden jedes Jahr lokal festgelegt und sind kein veröffentlichter fester Fahrplan",
+      "closed": "Nur im Winter. Die Saison 2025-26 lief bis zum 19. Februar; als Starttermine wurden sowohl der 20. als auch der 30. Dezember berichtet. Die Termine für 2026-27 sind noch nicht bekannt gegeben, und die Wand entsteht erst, wenn die Kälte hält — meist ab Mitte Dezember, am verlässlichsten im Januar und Anfang Februar",
+      "admission": "Kleine Gebühren vor Ort, vom Dorf festgelegt — für den Aussichtsbereich an der Eiswand wurden bisher etwa ₩1,000 pro Person verlangt, Schlittenangebote kosten extra. Diese sind NICHT enthalten und ändern sich von Jahr zu Jahr; der Guide bestätigt die Beträge des Tages im Bus",
+      "walking": "Kurz, aber wirklich vereist. Ein überwiegend flacher hölzerner Stegweg führt zum Aussichtsbereich; Zuweg und Umgebung sind rutschig, rutschfestes Schuhwerk ist unerlässlich. Der Boden unmittelbar unter der Eiswand ist für Besucher gesperrt. Nicht geeignet für Rollstühle oder Kinderwagen"
+    },
+    "smartNotes": {
+      "photo": "Fotografieren Sie vom ausgewiesenen Aussichtsbereich auf dem Steg — unter der Wand ist abgesperrt. Der späte Nachmittag bringt schwindendes Tageslicht auf dem Eis und dann die Stegbeleuchtung; beides funktioniert, und der Übergang dazwischen ist das beste Fenster.",
+      "facilities": "Vom Dorf betrieben und einfach: ein beheiztes Gewächshaus, eine Rutschbahn und kleine Stände. Rechnen Sie nicht mit nennenswertem Essen oder viel beheiztem Innenraum.",
+      "tip": "Tragen Sie rutschfestes Winterschuhwerk und betrachten Sie die Eiswand als wetterabhängig, nicht als garantiert — eine Warmphase lässt sie schrumpfen, und das Dorf entscheidet selbst über die Öffnung. Bringen Sie etwas Bargeld für die Gebühren vor Ort mit."
+    }
+  },
+  "eobiSources": [
+    "Kyeongin Ilbo (경인일보) — Berichterstattung über die 인공빙벽 (künstliche Eiswand) im Eobi-Tal in Gapyeong und die Einwohnervereinigung von Garil 2-ri, die sie betreibt",
+    "Tourismusamt des Landkreises Gapyeong (gptour.go.kr) — Eintrag zum Eobi-Tal, Garil-ri, Seorak-myeon",
+    "Korea Tourism Organization (VisitKorea — Eintrag Eobigyegok Valley; Hinweis: Der englische Text der KTO beschreibt die Wand als natürlich, was den koreanischsprachigen Quellen widerspricht)",
+    "Offizielle Festivalinformationen 어비계곡 겨울나라 — Saisontermine, Gebühren vor Ort und Angebote",
+    "Sanierungsprogramm für saubere Täler der Provinz Gyeonggi (청정계곡 정비사업) — Stegweg und Abendbeleuchtung"
+  ],
+
+  "pickup": {
+    "name": "Abholung (Bahnhof Hongik University oder Station Myeongdong)",
+    "category": "Bus-Abholung",
+    "duration": "30-Minuten-Fenster",
+    "description": "Die Abholung erfolgt an einem von zwei Treffpunkten in Seoul: **(1) Starbucks am Bahnhof Hongik University, Ausgang 8 (Mapo-gu)** um 06:00 — die Starbucks-Filiale liegt unmittelbar oben an Ausgang 8; ODER **(2) Station Myeongdong, Ausgang 2 (Jung-gu)** um 06:30 — der NorthFace-Flagshipstore ist das sichtbare Wahrzeichen neben dem Ausgang.\n\nBeide Abholpunkte teilen sich denselben beheizten Bus, und die Gäste von Hongik steigen zuerst ein. Bitte seien Sie **5 Minuten vor der angegebenen Zeit** an Ihrem gewählten Punkt — das ist ein früher Start an einem kalten Morgen, und der Tag geht nur auf, wenn der Bus den Seoraksan bis 09:30 erreicht.\n\nZiehen Sie sich beim Einsteigen für den ganzen Tag an, nicht für den Weg zur U-Bahn: An zwei der drei Stopps sind Sie bei −5 °C oder kälter draußen, und der letzte steht auf Eis. Der Guide verteilt eine gedruckte koreanisch-englische Programmkarte und bestätigt den Tagesplan, einschließlich der Frage, ob die Seoraksan-Seilbahn fährt und was das Dorf in Eobi verlangt.",
+    "timeUsed": [
+      "Treffen Sie 5 Minuten vor der angegebenen Zeit an Ihrem gewählten Abholpunkt ein (~5 Min.)",
+      "Bus von AtoC Korea am gekennzeichneten Starbucks / NorthFace erkennen (~5 Min.)",
+      "Einsteigen in der Abholschlange (~10 Min.)",
+      "Gedruckte koreanisch-englische Programmkarte wird beim Einsteigen verteilt"
+    ],
+    "whyOnRoute": "Zwei Abholpunkte decken Seouls beide großen Besucherzentren ab — das Viertel um die Hongik University in Mapo-gu und Myeongdong in Jung-gu — und Hongik zuerst ist die natürliche Reihenfolge für eine Fahrt nach Nordosten. Der Start um 06:00 ist kein Puffer: Seoraksan ist rund drei Stunden entfernt, und der Wert eines Winterbesuchs liegt darin, auf dem Talboden zu stehen, solange das Licht noch auf dem Schnee liegt. Eine spätere Abfahrt würde den Parkbesuch in die flache Nachmittagsstimmung schieben und den letzten Stopp in die Dunkelheit."
+  },
+
+  "lunch": {
+    "name": "Mittagessen bei Sokcho (auf eigene Kosten)",
+    "category": "Mittagspause",
+    "duration": "50 Min.",
+    "description": "Nach dem Park hält der Bus etwa fünfzig Minuten an einem lokalen Restaurant nahe dem Seoraksan oder auf der Seite von Sokcho. Das Mittagessen ist **nicht inklusive** — Sie bestellen und bezahlen selbst, üblicherweise ₩10,000-15,000 pro Person.\n\nDies ist der Meeresfrüchtegürtel der Ostküste, die lokale Auswahl umfasst also Dinge wie **Hoedeopbap** (roher Fisch auf Reis), gegrillten Fisch oder **Sundubu Jjigae** — den Eintopf mit weichem Tofu, für den Sokchos Stadtteil Cheoksan bekannt ist und der genau das Richtige nach zwei Stunden im Schnee ist. Vegetarische Optionen sind begrenzt; sagen Sie es dem Guide morgens, dann ruft er vorab an.\n\nBringen Sie Bargeld oder Karte mit. Fünfzig Minuten sind bewusst knapp — die Fahrt zurück nach Westen zur Insel Nami dauert zwei Stunden, und die letzten beiden Stopps brauchen beide Tageslicht.",
+    "timeUsed": [
+      "Bus parkt, und der Guide führt die Gruppe zum Restaurant (~5 Min.)",
+      "Bestellen und essen (~35 Min.)",
+      "Einzeln bezahlen und sich am Bus wieder einfinden (~10 Min.)"
+    ],
+    "whyOnRoute": "Das Mittagessen liegt direkt nach dem Seoraksan, weil das der einzige Punkt des Tages ist, an dem eine richtige Pause im Sitzen kein Tageslicht kostet. Alles danach ist zeitkritisch: Nami braucht Licht für die Baumalleen, und Eobi muss erreicht werden, bevor der Aussichtsbereich des Dorfes schließt. Hier zu essen bedeutet außerdem, sich direkt nach dem kältesten Fußweg des Tages aufzuwärmen."
+  },
+
+  "dropoff": {
+    "name": "Rückfahrt nach Seoul (Station Myeongdong oder Bahnhof Hongik University)",
+    "category": "Rückfahrt und Ausstieg",
+    "duration": "≈ 1,5 Stunden Fahrt",
+    "description": "Die Abfahrt im Eobi-Tal ist gegen 17:30 für die rund 1,5-stündige Fahrt nach Seoul. Die Ausstiege erfolgen in umgekehrter Reihenfolge der Abholung: **Station Myeongdong gegen 19:00**, dann **Bahnhof Hongik University gegen 19:30**.\n\nBeide sind U-Bahn-Umsteigepunkte. Die Winterverhältnisse sind auf dieser Etappe die wesentliche Unbekannte — Schnee auf den Straßen um Gapyeong oder der Verkehr am Freitag- und Sonntagabend können 30-60 Minuten hinzufügen, und der Guide gibt unterwegs die aktuelle Schätzung des Busses durch. Es ist ein langer Tag; die meisten Gäste verschlafen diese Strecke.",
+    "timeUsed": [
+      "Abfahrt im Eobi-Tal (~17:30)",
+      "Fahrt über die Schnellstraße nach Seoul (~1,5 Stunden, länger bei Schnee oder Wochenendverkehr)",
+      "Ausstieg Station Myeongdong (~19:00)",
+      "Ausstieg Bahnhof Hongik University (~19:30)"
+    ],
+    "whyOnRoute": "Dass der Tag in Eobi endet, hält die Rückfahrt kurz: Das Tal ist auf dieser Route ohnehin der Seoul nächstgelegene Stopp, der Bus ist also vom Moment der Abfahrt an heimwärts gerichtet. Die umgekehrte Ausstiegsreihenfolge bedeutet, dass die Gäste aus Myeongdong, die zuletzt eingestiegen sind, zuerst aussteigen."
+  },
+
+  "practical": {
+    "pickup": {
+      "content": [
+        "Zwei Abholpunkte in Seoul: **Starbucks am Bahnhof Hongik University, Ausgang 8, um 06:00** (Mapo-gu) und **Station Myeongdong, Ausgang 2, beim NorthFace-Flagshipstore, um 06:30** (Jung-gu).",
+        "Beide Abholungen teilen sich denselben Bus; bitte seien Sie 5 Minuten früher an Ihrem gewählten Punkt.",
+        "Ausstiege in umgekehrter Reihenfolge: **Myeongdong ≈19:00**, **Hongik University ≈19:30**.",
+        "Ihre tatsächliche Tourdauer hängt vom Abholpunkt ab: ≈13,5 Stunden ab Hongik, ≈12,5 Stunden ab Myeongdong."
+      ]
+    },
+    "inclusions": {
+      "content": [
+        "Zwei Abholpunkte in Seoul und dieselben zwei Ausstiegspunkte, beheizter Bus, lizenzierter englischsprachiger Guide.",
+        "**Eintritt Seoraksan-Nationalpark — seit Mai 2023 KOSTENLOS, kein Ticket nötig.**",
+        "**Fähre hin und zurück zur Insel Nami + Visa-Gebühr der Naminara Republic (₩19,000) — INKLUSIVE.**",
+        "Maut- und Parkgebühren — INKLUSIVE.",
+        "**NICHT inklusive:** Mittagessen und Getränke (₩10,000-15,000, auf eigene Kosten), die **Seoraksan-Seilbahn** (₩16,000 für Erwachsene hin und zurück, Tickets nur vor Ort und wetterabhängig), die **Gebühren des Dorfes vor Ort im Eobi-Tal** (für den Aussichtsbereich an der Eiswand wurden bisher etwa ₩1,000 pro Person verlangt, Schlittenangebote extra), Fahrrad- oder E-Buggy-Miete auf Nami sowie persönliche Ausgaben.",
+        "Chinesischsprachiger Guide auf Anfrage verfügbar — bitte mindestens 3 Tage im Voraus buchen."
+      ]
+    },
+    "walking": {
+      "content": [
+        "Mittel, und die Schwierigkeit liegt hier beim Eis, nicht bei Strecke oder Steigung.",
+        "Seoraksan: gepflasterte Talwege und Stufen zum Sinheungsa und zum Tongildaebul, stellenweise verschneit und rutschig. Es ist keine Wanderung vorgesehen und kein Gipfel geplant.",
+        "Insel Nami: flache, gepflasterte, baumbestandene Alleen, ~3 km in zwei Stunden, im Hochwinter vereist.",
+        "Eobi-Tal: ein kurzer, überwiegend flacher hölzerner Stegweg zum Aussichtsbereich — Zuweg und Umgebung sind allerdings wirklich rutschig. Der Boden unter der Eiswand ist für Besucher gesperrt.",
+        "**Rutschfestes Winterschuhwerk ist an allen drei Stopps unerlässlich.** Normale Sneaker reichen für dieses Programm nicht. Kinderwagen und Rollstühle sind in Eobi nicht geeignet."
+      ]
+    },
+    "lunch": {
+      "title": "Mittagessen (auf eigene Kosten)",
+      "content": [
+        "Das Mittagessen findet gegen 11:45 nahe dem Seoraksan oder auf der Seite von Sokcho statt, direkt nach dem Park.",
+        "Auswahl von der Ostküste: Hoedeopbap (roher Fisch auf Reis), gegrillter Fisch oder Sokchos bekannter Sundubu-Jjigae-Eintopf mit weichem Tofu.",
+        "Rechnen Sie mit etwa ₩10,000-15,000 pro Person; Bargeld und Karte werden normalerweise beide akzeptiert.",
+        "Der Stopp ist knapp bemessene 50 Minuten — die beiden verbleibenden Stopps sind zeitkritisch. Vegetarische Optionen sind begrenzt, sagen Sie es also dem Guide morgens."
+      ]
+    },
+    "weather-policy": {
+      "content": [
+        "Dies ist eine Tour der Wintersaison, und das Wetter gehört zum Produkt, es ist keine Ausnahme davon.",
+        "**Die Eiswand in Eobi ist nicht garantiert.** Sie wird von Dorfbewohnern über die kältesten Wochen aufgebaut, und eine Warmphase lässt sie schrumpfen oder verschwinden. Das Dorf entscheidet selbst über die Öffnung. Ist die Wand an Ihrem Termin nicht zu sehen, sagen wir Ihnen das vor der Abfahrt und bieten eine Umbuchung oder die Erstattung dieses Anteils an.",
+        "**Auch die Seoraksan-Seilbahn ist nicht garantiert.** Ihre Zeiten ändern sich täglich, und sie stellt bei starkem Wind oder Eis den Betrieb ein. Sie ist nicht im Preis enthalten, es geht also nichts verloren, wenn sie nicht fährt.",
+        "Starker Schneefall: Der Bus fährt mit Winterreifen, und die Tour läuft in der Regel trotzdem, die Rückfahrt kann aber eine Stunde länger dauern. Schwerer Schneefall oder Straßensperrungen können die Abfahrt ganz ausfallen lassen — dann gilt volle Erstattung.",
+        "Die Nami-Fähre kann bei schwerem Wetter ausgesetzt werden; passiert das, verlängert der Guide die anderen Stopps, und der Nami-Eintritt wird erstattet."
+      ]
+    },
+    "what-to-bring": {
+      "title": "Kleidung & Ausrüstung",
+      "content": [
+        "**Rutschfestes Winterschuhwerk** — der mit Abstand wichtigste Gegenstand. An allen drei Stopps liegt Eis.",
+        "Richtige Kaltwetterkleidung im Zwiebelprinzip: Rechnen Sie am Seoraksan mit −5 °C oder kälter bei deutlichem Windchill und mit Dämmerungstemperaturen in Eobi.",
+        "Handschuhe, Mütze und etwas, das die Ohren bedeckt. Das Fährdeck auf Nami ist völlig ungeschützt.",
+        "Etwas Bargeld für die vom Dorf erhobenen Gebühren in Eobi und für das Mittagessen (₩10,000-15,000).",
+        "Kamera oder Smartphone und ein Ersatzakku — Kälte entleert Akkus schnell, und auf dieser Route wird viel fotografiert."
+      ]
+    }
+  },
+
+  "practicalSeasonWindow": {
+    "title": "Wann diese Tour läuft",
+    "content": [
+      "Dies ist ein Programm **nur für den Winter**. Es existiert, weil die Eiswand im Eobi-Tal existiert, und die ist ein saisonales, vom Dorf gebautes Bauwerk und keine dauerhafte Sehenswürdigkeit.",
+      "Die Wand beginnt sich üblicherweise ab **Mitte Dezember** zu bilden, sobald das Wasser im Tal gefriert, und ist im **Januar und Anfang Februar** am verlässlichsten.",
+      "Das Saisonende schwankt von Jahr zu Jahr — die **Saison 2025-26 endete am 19. Februar**. Die Termine für den kommenden Winter legt das Dorf fest und werden bei der Buchung bestätigt.",
+      "Außerhalb der Saison ist dieselbe Kombination aus Seoraksan und Insel Nami ganzjährig auf unserer Tagestour Seoraksan + Insel Nami + Garden of Morning Calm buchbar."
+    ]
+  },
+
+  "seasonalVariations": [
+    {
+      "season": "Mitte Dezember",
+      "description": "Die Eiswand beginnt sich zu bilden, sobald das Wasser im Tal richtig gefriert. Früh in der Saison ist sie kleiner, und das Dorf baut sie unter Umständen noch auf. Am Seoraksan liegt meist der erste beständige Schnee."
+    },
+    {
+      "season": "Januar",
+      "description": "Der mit Abstand stärkste Monat. Die Eiswand hat ihre volle Höhe, die Schneedecke am Seoraksan ist am verlässlichsten, und Namis Baumalleen sind richtig bereift. Die kältesten Temperaturen des Jahres — kleiden Sie sich entsprechend."
+    },
+    {
+      "season": "Anfang Februar",
+      "description": "In den meisten Jahren noch verlässlich, und am Stopp in Eobi ist es etwas länger hell. Achten Sie auf Warmphasen, die die Wand schnell schrumpfen lassen."
+    },
+    {
+      "season": "Außerhalb der Wintersaison",
+      "description": "Die Tour läuft nicht. Die Eiswand ist Ende Februar verschwunden, und Eobi wird wieder zum sommerlichen Badetal. Für Seoraksan und Nami außerhalb des Winters sehen Sie sich unsere Tagestour Seoraksan + Insel Nami + Garden of Morning Calm an."
+    }
+  ],
+
+  "staticQuestions": [
+    {
+      "question": "Ist die Eiswand in Eobi natürlich?",
+      "answer": "Nein — und wir sagen es Ihnen lieber, als dass Sie es vor Ort herausfinden. Seit dem Winter 2023 sprühen die Bewohnerinnen und Bewohner des Dorfes Garil 2-ri in den kältesten Wochen Wasser über die Felswand des Tals und lassen es zu einer Fläche von berichteten rund 25 Metern Höhe gefrieren. Auf einigen Tourismusseiten, auch offiziellen englischsprachigen, wird sie als natürlicher gefrorener Wasserfall beschrieben. Das ist falsch. Es ist ein vom Dorf gebautes Schauspiel, betrieben von etwa dreißig Menschen vor Ort als Einkommensprojekt außerhalb der Saison — und wir finden, das ist die bessere Geschichte als die in den Prospekten."
+    },
+    {
+      "question": "Ist die Eiswand garantiert?",
+      "answer": "Nein, und jede Tour, die sie garantiert, verspricht zu viel. Die Wand hängt von anhaltender Kälte und von der Entscheidung des Dorfes ab zu öffnen — eine Warmphase lässt sie schrumpfen. Ist sie an Ihrem Abfahrtstermin nicht zu sehen, sagen wir Ihnen das vor der Reise und bieten eine Umbuchung oder die Erstattung dieses Anteils an. Am verlässlichsten ist sie im Januar und Anfang Februar."
+    },
+    {
+      "question": "Wann genau läuft diese Tour?",
+      "answer": "Nur im Winter. Die Eiswand beginnt sich üblicherweise ab Mitte Dezember zu bilden, und die Saison 2025-26 endete am 19. Februar. Die genauen Termine legt jedes Jahr das Dorf fest, das die Wand baut; deshalb bestätigen wir das Zeitfenster bei der Buchung, statt einen festen Kalender zu veröffentlichen, den wir nicht einhalten können."
+    },
+    {
+      "question": "Ist die Seoraksan-Seilbahn inklusive?",
+      "answer": "Nein. Die Gwongeumseong-Seilbahn kostet ₩16,000 für Erwachsene hin und zurück, wird nur vor Ort verkauft und lässt sich nicht im Voraus reservieren. Im Winter fällt der Ausschluss stärker ins Gewicht als sonst: Ihre Betriebszeiten ändern sich täglich, und sie stellt bei starkem Wind oder Eis den Betrieb ein, wir können sie also wirklich nicht zusagen. Der Parkeintritt selbst ist kostenlos, und das seit Mai 2023."
+    },
+    {
+      "question": "Wie kalt wird es tatsächlich?",
+      "answer": "Kalt genug, dass Schuhwerk und Kleidung darüber entscheiden, ob Ihnen der Tag gefällt. Rechnen Sie auf dem Talboden am Seoraksan mit etwa −5 °C bis +5 °C bei kräftigem Windchill, im Schatten kälter. Das Fährdeck auf Nami ist völlig ungeschützt. In Eobi stehen Sie in der Dämmerung still neben einer Wand aus Eis. Nehmen Sie Handschuhe, eine Mütze und etwas für die Ohren mit."
+    },
+    {
+      "question": "Welches Schuhwerk brauche ich?",
+      "answer": "Rutschfeste Winterschuhe oder -stiefel. Das ist das eine Ausrüstungsstück, auf dem wir bestehen würden. An allen drei Stopps liegt Eis — die Stufenwege im Tal am Seoraksan, Namis flache Alleen sowie Stegweg und Zuweg in Eobi. Normale Sneaker reichen nicht. Steigeisen verlangen wir nicht und stellen wir nicht; die Gehstrecken sind kurz, das Problem ist der Untergrund."
+    },
+    {
+      "question": "Wird viel gelaufen?",
+      "answer": "Nicht viel Strecke — die Schwierigkeit ist der Untergrund, nicht die Länge. Am Seoraksan werden nur die tief gelegenen Talwege nahe dem Eingang genutzt, ohne Wanderung und ohne Gipfelversuch. Nami ist flach, etwa 3 km in zwei Stunden, wenn Sie die halbe Insel umrunden. Eobi ist ein kurzer Stegweg. Aber alles davon ist vereist, planen Sie also mehr Zeit und Vorsicht ein, als die Entfernungen vermuten lassen."
+    },
+    {
+      "question": "Ist das für Kinder oder ältere Reisende geeignet?",
+      "answer": "Weniger als unsere anderen Tagesausflüge, und wir würden Ihnen etwas anderes empfehlen, wenn eines davon stark zutrifft. Es ist ein 13-Stunden-Tag mit Start um 06:00, in tiefer Winterkälte, mit vereistem Untergrund an jedem Stopp. Der Stegweg in Eobi ist für Kinderwagen und Rollstühle nicht geeignet, und der Boden unter der Eiswand ist abgesperrt. Kinder, die Schnee mögen und richtig angezogen sind, kommen gut zurecht; unsichere Geherinnen und Geher nicht."
+    },
+    {
+      "question": "Gibt es vor Ort Gebühren zu zahlen?",
+      "answer": "Ja, zweierlei. Das Mittagessen geht auf eigene Kosten, etwa ₩10,000-15,000. In Eobi erhebt das Dorf kleine Gebühren vor Ort — für den Aussichtsbereich an der Eiswand waren es bisher rund ₩1,000 pro Person, Schlittenfahren kostet extra. Diese werden lokal festgelegt und ändern sich von Jahr zu Jahr; bringen Sie also etwas Bargeld mit, der Guide bestätigt die Beträge des Tages im Bus. Der Parkeintritt am Seoraksan ist kostenlos, und Fähre und Eintritt für Nami sind bereits enthalten."
+    },
+    {
+      "question": "Warum kommen wir so spät am Tag in Eobi an?",
+      "answer": "Wegen der Lage. Das Eobi-Tal liegt im Süden von Gapyeong, näher an Seoul als Seoraksan oder Nami; es zuletzt zu besuchen heißt also, dass der Bus bereits heimwärts gerichtet ist und die Rückfahrt kurz bleibt. Im Hochwinter bedeutet eine Ankunft um 16:45, dass Sie das letzte Tageslicht auf dem Eis sehen und dann die Stegbeleuchtung angeht — ein gutes Fenster für Fotos, aber auch der kälteste Teil des Besuchs; kleiden Sie sich also fürs Stillstehen im Freien."
+    },
+    {
+      "question": "Worin unterscheidet sich das von Ihren anderen Seoraksan-Touren?",
+      "answer": "Im dritten Stopp und in der Saison. Unsere ganzjährige Seoraksan-Tagestour kombiniert den Park mit der Insel Nami und dem Garden of Morning Calm — ein sanfterer, gartenbetonter Tag, der bei jedem Wetter läuft. Diese hier tauscht den Garten gegen die Eobi-Eiswand und existiert nur, solange die Wand existiert. Wenn Sie außerhalb von Januar und Februar reisen, ist die ganzjährige Route die richtige für Sie."
+    },
+    {
+      "question": "Was passiert bei starkem Schneefall?",
+      "answer": "Meist läuft die Tour trotzdem — der Bus fährt in der Saison mit Winterreifen, und Schnee ist ja gerade der Punkt. Rechnen Sie damit, dass die Rückfahrt bis zu eine Stunde länger dauert. Ist der Schneefall so stark, dass Straßen gesperrt werden, sagen wir die Abfahrt ab und erstatten den vollen Betrag. Wir sagen lieber ab, als einen 13-stündigen Bergtag unter unsicheren Bedingungen durchzuführen."
+    }
+  ],
+
+  "pd": {
+    "primaryTime": "Abholung 06:00 / Ausstieg 19:30",
+    "primaryInstructions": "Treffen Sie den Guide an der Starbucks-Filiale unmittelbar oberhalb von Ausgang 8 des Bahnhofs Hongik University. Achten Sie auf das Schild von AtoC Korea und den Bus in der Abholschlange.",
+    "alternateTime": "Abholung 06:30 / Ausstieg 19:00",
+    "alternateInstructions": "Treffen Sie den Guide vor dem NorthFace-Flagshipstore oben an Ausgang 2 der Station Myeongdong."
+  },
+
+  "stickyNote": "Nur in der Wintersaison — wählen Sie Ihr Datum, um zu prüfen, ob die Eiswand geöffnet ist, und Ihre Buchung abzuschließen."
+}

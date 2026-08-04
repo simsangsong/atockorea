@@ -1,0 +1,364 @@
+{
+  "_note": "EN master for seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Authored 2026-08-04. Seoraksan and Nami stop bodies come from the donor (KB-verified 2026-04-29); Eobi Valley is authored fresh. 🔴 The Eobi ice wall is ARTIFICIAL — villagers of Garil 2-ri spray water down the rock face each winter (first built winter 2023; Kyeongin Ilbo headlines it 인공빙벽). KTO's English page and the OTAs call it natural; they are wrong and this copy must not repeat them. The 2025-26 season closed 19 Feb, not 28 Feb, so no fixed end date is published here.",
+
+  "title": "Especial de invierno desde Seúl: Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+  "subtitle": "Un día en autocar solo en invierno: nieve en la montaña más famosa de Corea, Nami bajo la escarcha y un muro de hielo construido por un pueblo",
+  "shortCardDescription": "Funciona solo en pleno invierno: el Seoraksan bajo la nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo de 25 metros que los vecinos de un pueblo de Gapyeong hacen crecer cada enero sobre una pared de roca del valle.",
+  "badges": ["Solo en invierno", "De temporada", "Excursión de un día desde Seúl", "Seoraksan", "Muro de hielo"],
+  "tags": ["Solo en invierno", "De temporada", "Excursión de un día desde Seúl", "Seoraksan", "Isla Nami", "Muro de hielo"],
+
+  "headlineLine1": "Excursión de invierno desde Seúl",
+  "headlineLine2": "Seoraksan, Nami y el muro de hielo de Eobi",
+  "heroTagline": "Un día en autocar de temporada invernal desde Seúl: el parque nacional más conocido de Corea bajo la nieve, las avenidas escarchadas de la Isla Nami y un muro de hielo de 25 metros que un pueblo de Gapyeong construye a mano cada enero",
+  "heroPills": ["Solo temporada de invierno", "Nieve + muro de hielo", "Excursión en autocar"],
+  "heroDuration": "13 horas",
+  "heroStopsLabel": "3 paradas",
+  "region": "Seúl → Gangwon-do → Gyeonggi-do (Gapyeong)",
+  "duration": "13 horas",
+  "stopsCount": 3,
+
+  "seo": {
+    "pageTitle": "Excursión de invierno desde Seúl — Seoraksan, Isla Nami y el muro de hielo del valle de Eobi | AtoC Korea",
+    "metaDescription": "Tour de un día en autocar de temporada invernal desde Seúl: el Parque Nacional Seoraksan cubierto de nieve, las avenidas arboladas escarchadas de la Isla Nami y el muro de hielo del valle de Eobi, en Gapyeong. Recogida en la estación de Hongik University o en la estación de Myeongdong; entrada al parque y ferry a Nami incluidos.",
+    "title": "Excursión de invierno desde Seúl — Seoraksan, Isla Nami y el muro de hielo del valle de Eobi",
+    "description": "Una excursión de un día solo en invierno desde Seúl que combina el Parque Nacional Seoraksan bajo la nieve, la Isla Nami y el muro de hielo del valle de Eobi, construido por los vecinos del pueblo, en Gapyeong.",
+    "primaryKeywords": [
+      "excursión de invierno desde Seúl",
+      "muro de hielo valle de Eobi",
+      "tour Seoraksan invierno desde Seúl",
+      "isla Nami en invierno",
+      "excursión de un día a Gapyeong en invierno"
+    ]
+  },
+
+  "glanceItems": [
+    { "icon": "clock", "label": "Duración", "value": "13 horas" },
+    { "icon": "camera", "label": "Potencial fotográfico", "value": "Muy alto", "level": 5 },
+    { "icon": "mountain", "label": "Paisaje", "value": "Muy alto", "level": 5 },
+    { "icon": "footprints", "label": "Caminata", "value": "Moderada", "level": 3 },
+    { "icon": "cloud-rain", "label": "Sensibilidad meteorológica", "value": "Alta", "level": 2 },
+    { "icon": "users", "label": "Aptitud para familias", "value": "Moderada", "level": 3 },
+    { "icon": "gauge", "label": "Ritmo", "value": "Intenso", "level": 4 }
+  ],
+
+  "flow": {
+    "pickup": "Recogida (Hongik / Myeongdong)",
+    "seoraksan": "Parque Nacional Seoraksan",
+    "lunch": "Almuerzo cerca de Sokcho",
+    "nami": "Isla Nami",
+    "eobi": "Muro de hielo del valle de Eobi",
+    "dropoff": "Regreso a Seúl"
+  },
+
+  "routeShapeIntro": {
+    "title": "Cómo se desarrolla este día de invierno",
+    "subtitle": "Una salida a las 06:00 desde Hongik / 06:30 desde Myeongdong y un trayecto de ~3 horas hacia el noreste le sitúan en el Seoraksan a media mañana, cuando la nieve sigue limpia y la luz da sobre el granito. Almuerzo cerca de Sokcho y, después, el largo regreso hacia el oeste por el corredor de Chuncheon hasta la Isla Nami para ver las avenidas arboladas escarchadas. La última parada, el valle de Eobi, queda en el sur de Gapyeong, ya orientada hacia Seúl: se llega a última hora de la tarde, cuando se enciende la iluminación del valle. De vuelta en Seúl sobre las 19:00-19:30."
+  },
+
+  "routePhases": [
+    {
+      "phase": "Seúl → Seoraksan",
+      "duration": "≈ 3.5 horas",
+      "description": "Recogida a las 06:00 en Hongik / 06:30 en Myeongdong y, a continuación, un trayecto de ~3 horas hacia el noreste por la autopista Seúl-Yangyang con una parada de descanso, llegando a la entrada de Sogongwon sobre las 09:30."
+    },
+    {
+      "phase": "Seoraksan",
+      "duration": "≈ 2 horas",
+      "description": "Tiempo libre en la entrada de Sogongwon: el gran Buda de bronce Tongildaebul, el templo Sinheungsa y los senderos del valle bajo, bajo la nieve. El teleférico no está incluido y solo funciona cuando el viento y el hielo lo permiten."
+    },
+    {
+      "phase": "Almuerzo → Isla Nami",
+      "duration": "≈ 3 horas",
+      "description": "Almuerzo cerca de Sokcho (por cuenta propia) y, después, el trayecto de ~2 horas de vuelta hacia el oeste hasta el muelle de Gapyeong y el ferry de cinco minutos a la Isla Nami, con dos horas entre las avenidas de metasecuoyas escarchadas."
+    },
+    {
+      "phase": "Valle de Eobi → Seúl",
+      "duration": "≈ 2.5 horas",
+      "description": "Cuarenta minutos hacia el sur hasta el valle de Eobi para ver el muro de hielo con la luz del final de la tarde y, después, el trayecto de ~1.5 horas hasta Seúl: Myeongdong sobre las 19:00, Hongik sobre las 19:30."
+    }
+  ],
+
+  "whyTourWorks": {
+    "routeLogicTitle": "Ritmo y geografía",
+    "bestFor": [
+      "Viajeros que visitan Corea en enero o febrero y quieren el paisaje invernal, no un día de ciudad",
+      "Fotógrafos que buscan nieve sobre granito, avenidas arboladas escarchadas y un muro de hielo a la hora azul",
+      "Parejas y grupos pequeños que llevan bien un día largo, frío y completo",
+      "Cualquiera que quiera ver algo que la mayoría de las excursiones desde Seúl no incluye"
+    ],
+    "lessIdealFor": [
+      "Quien viaje fuera de la temporada invernal: el muro de hielo sencillamente no existe en los meses cálidos",
+      "Viajeros sensibles al frío, o que necesiten visitas garantizadas al margen del tiempo que haga",
+      "Quienes quieran caminar lo mínimo: hay suelo helado y una pasarela de madera en la última parada",
+      "Niños pequeños y cualquier persona con poca estabilidad al caminar en condiciones invernales"
+    ],
+    "items": [
+      {
+        "label": "El Seoraksan primero, mientras la nieve sigue limpia",
+        "detail": "El parque es el punto más lejano del día y el más afectado por el deshielo y las nubes de la tarde. Ir allí primero aprovecha la luz más clara y la nieve más fresca, y hace que el trayecto largo ocurra antes de que nadie esté cansado."
+      },
+      {
+        "label": "Nami en el medio, porque el ferry necesita luz",
+        "detail": "El atractivo de Nami en invierno son sus avenidas arboladas bajo la escarcha, que necesitan luz para que la travesía merezca la pena. Una franja de media tarde permite cruzar mientras la isla sigue luminosa y antes de que arrecie el viento en la cubierta expuesta del ferry."
+      },
+      {
+        "label": "Eobi al final, porque ya queda de camino a casa",
+        "detail": "El valle de Eobi está en Seorak-myeon, en el sur de Gapyeong, del lado de Seúl respecto a todo lo demás de esta ruta. Terminar allí no obliga a desandar el camino y, en pleno invierno, la llegada tardía coincide con el encendido de la iluminación nocturna del valle a lo largo de la pasarela."
+      },
+      {
+        "label": "Una ruta construida en torno a una única temporada corta",
+        "detail": "El muro de hielo solo existe mientras aguanta el frío: el pueblo empieza a construirlo a mediados de diciembre y se deshace en febrero. Esa sola condición es la razón de que este itinerario exista y de que no se ofrezca el resto del año."
+      }
+    ]
+  },
+
+  "seoraksanDuration": "120 min (2 horas)",
+  "seoraksanWhy": "El Seoraksan abre el día porque es a la vez la parada más lejana y la que más depende de la luz. A las 09:30 la nieve sobre las crestas de granito sigue limpia y el valle aún no se ha nublado, que es toda la razón para conducir tres horas hasta allí. Dos horas en la entrada de Sogongwon bastan para el gran Buda de bronce Tongildaebul, el templo Sinheungsa y los senderos del valle bajo a ritmo invernal; no bastan para intentar una cima, y eso es deliberado. Ir primero también deja hecho el trayecto más largo del día antes de que nadie esté cansado o helado.",
+  "seoraksanVisitBasics": {
+    "hours": "El parque abre todo el año; el templo Sinheungsa desde las 06:00. El teleférico de Gwongeumseong funciona en invierno, pero su horario cambia a diario según el tiempo y se suspende con viento fuerte o hielo — el operador publica cada mañana el horario del día, así que nunca está garantizado",
+    "closed": "Abierto todo el año, aunque los senderos de altura cierran por temporadas por prevención de incendios y seguridad, normalmente desde mediados de noviembre hasta mediados de diciembre y de nuevo a partir de mediados de febrero aproximadamente. Este itinerario utiliza únicamente los senderos del valle bajo, cerca de la entrada, que no se ven afectados",
+    "admission": "Entrada al parque GRATUITA (la tasa de ₩3,500 se suprimió en mayo de 2023). Teleférico ida y vuelta ₩16,000 adulto, venta solo en taquilla, NO incluido en este tour y sin garantía de que funcione",
+    "walking": "Fácil a moderada en el fondo del valle: senderos pavimentados y con escalones hasta Sinheungsa y el Tongildaebul, nevados y resbaladizos en algunos tramos. No hay senderismo programado; el calzado antideslizante y resistente es imprescindible"
+  },
+  "seoraksanSmartNotes": {
+    "photo": "El gran Buda de bronce Tongildaebul contra el granito espolvoreado de nieve es la foto. En invierno, la línea de la cresta de Ulsanbawi suele verse desde la explanada de la entrada en las mañanas despejadas.",
+    "facilities": "Centro de visitantes, cafeterías, restaurantes y tiendas de recuerdos en la entrada de Sogongwon. El espacio cubierto para entrar en calor es limitado en los días de invierno con mucha gente.",
+    "tip": "No planifique el día en torno al teleférico. En invierno su horario cambia a diario y cierra por viento y hielo con más frecuencia que en otras estaciones; además, las colas pueden ser largas en los días despejados. Tómelo como un extra, no como algo fijo. Vaya preparado para entre −5 °C y +5 °C en la base, con una fuerte sensación térmica por el viento."
+  },
+
+  "namiDuration": "120 min (2 horas)",
+  "namiWhy": "Nami queda en mitad del día porque es la única parada que necesita a la vez luz diurna y un barco. Las avenidas de metasecuoyas y ginkgos bajo la escarcha son lo que hace que merezca la pena cruzar a la isla en invierno, y necesitan luz; la cubierta del ferry está además expuesta, así que una travesía a media tarde resulta más cómoda que una tardía. Situarla después del Seoraksan divide además el largo trayecto hacia el oeste en dos tramos manejables en lugar de uno.",
+  "namiVisitBasics": {
+    "hours": "Ferry desde las 08:00, último barco de entrada a las 21:00, aproximadamente cada 10-20 minutos a lo largo del día; la mayoría de las tiendas de la isla cierran hacia las 18:00. Los horarios de invierno pueden cambiar según el tiempo",
+    "closed": "Abierto todo el año",
+    "admission": "Tasa de visado de la República de Naminara, ferry de ida y vuelta incluido: adulto ₩19,000 — INCLUIDA en este tour",
+    "walking": "Fácil: senderos llanos bordeados de árboles, aunque el suelo puede estar helado en pleno invierno. El recorrido por medio perímetro es de ~3 km. En la isla se alquilan bicicletas y buguis eléctricos por cuenta propia"
+  },
+
+  "eobi": {
+    "name": "Muro de hielo del valle de Eobi",
+    "category": "Festival invernal de pueblo (de temporada)",
+    "duration": "45 min",
+    "description": "El valle de Eobi —어비계곡, de los caracteres que significan 'pez volador', por unas aguas que en su día corrían lo bastante rápido como para que los peces parecieran volar— es un valle de tres kilómetros en Seorak-myeon, en el sur de Gapyeong. En verano es un arroyo de baño y truchas. En invierno se convierte en algo que el resto del año no deja intuir.\n\n**El muro de hielo de aquí está hecho, no encontrado.** Desde el invierno de 2023, los vecinos de Garil 2-ri rocían agua sobre la pared de roca del valle durante las semanas más frías y dejan que el frío haga el resto, formando una lámina de la que se informa una altura de unos **25 metros**. Lo gestiona la propia asociación de vecinos del pueblo —unas treinta personas— como proyecto de ingresos fuera de temporada para un valle que antes apenas recibía visitantes en invierno. Verá que en otros sitios, incluidas algunas páginas oficiales de turismo, se describe como una cascada helada natural. No lo es, y por eso resulta más impresionante.\n\nSe contempla desde una **pasarela de madera** que recorre el valle, parte de un proyecto de recuperación de la provincia de Gyeonggi que añadió también la iluminación nocturna. **El suelo justo debajo del muro está cerrado al público** después de que varios visitantes se lesionaran al resbalar allí, de modo que las fotos se hacen desde la zona de observación señalada y no desde debajo. Junto al muro, el pueblo gestiona una pista de trineos de hielo, un trineo giratorio de nieve, un iglú para fotos y un pequeño invernadero-jardín climatizado.\n\nLlegamos a última hora de la tarde. En pleno invierno eso significa la última luz del día sobre el hielo y después el encendido de la iluminación de la pasarela: bueno para fotografiar, y frío. El pueblo cobra pequeñas tasas en el propio recinto por la zona de observación y por las actividades de trineo; se fijan localmente y cambian de un año a otro.",
+    "highlights": [
+      "Un muro de hielo del que se informa una altura de unos 25 m, formado sobre la pared de roca del valle por los vecinos de Garil 2-ri desde el invierno de 2023: construido, no natural",
+      "Gestionado por la asociación de vecinos del pueblo (unas 30 personas) como proyecto fuera de temporada, con la marca 어비계곡 겨울나라, 'País Invernal del Valle de Eobi'",
+      "Pasarela de madera para la observación con iluminación nocturna, añadida dentro del programa de recuperación de valles limpios de la provincia de Gyeonggi",
+      "Trineos de hielo, un trineo giratorio de nieve, un iglú para fotos y un invernadero-jardín climatizado junto al muro",
+      "El nombre del valle, 어비 (魚飛), significa 'pez volador', por unas aguas que en su día corrían lo bastante rápido como para que los peces parecieran volar",
+      "El número de visitantes se duplicó aproximadamente hasta unos 60,000 en una temporada a medida que corrió la voz, sobre todo entre viajeros del Sudeste Asiático"
+    ],
+    "timeUsed": [
+      "El autocar aparca y el guía acompaña al grupo hasta la entrada del valle (~10 min)",
+      "Pasarela hasta la zona de observación del muro de hielo y fotografías (~25 min)",
+      "Trineo opcional o invernadero-jardín, o vuelta anticipada al autocar para entrar en calor (~10 min)"
+    ],
+    "whyOnRoute": "Eobi cierra el día por dos razones. Geográficamente, es la única parada del lado de Seúl de la ruta —Seorak-myeon está en el sur de Gapyeong, ya orientada hacia casa—, así que una hora aquí no añade kilómetros al final de una jornada larga. Editorialmente, es la razón de que este itinerario sea un producto de invierno y no de todo el año: el Seoraksan y Nami pueden visitarse en cualquier estación, pero el muro de hielo existe quizá ocho semanas, y solo si aguanta el frío. Es además la parada de la que la mayoría de los viajeros nunca ha oído hablar, que es una buena nota para terminar.",
+      "visitBasics": {
+      "hours": "Gestionado por el pueblo y de temporada. Se ha informado de que el festival de invierno funciona aproximadamente de 10:00 a 17:00, con iluminación en la pasarela en plena temporada. El horario lo fija el pueblo cada año y no es un calendario fijo publicado",
+      "closed": "Solo en invierno. La temporada 2025-26 se prolongó hasta el 19 de febrero; como fechas de inicio se han comunicado tanto el 20 como el 30 de diciembre. Las fechas de 2026-27 aún no se han anunciado, y el muro solo aparece cuando aguanta el frío, normalmente desde mediados de diciembre, con mayor fiabilidad durante enero y principios de febrero",
+      "admission": "Pequeñas tasas en el recinto fijadas por el pueblo: por la zona de observación del muro de hielo se ha cobrado alrededor de ₩1,000 por persona, y las actividades de trineo aparte. NO están incluidas y cambian de un año a otro; el guía confirma las tarifas del día en el autocar",
+      "walking": "Corta, pero realmente helada. Una pasarela de madera casi llana lleva hasta la zona de observación; el acceso y el entorno son resbaladizos y el calzado antideslizante es imprescindible. El suelo justo debajo del muro de hielo está cerrado al público. No apto para sillas de ruedas ni carritos de bebé"
+    },
+    "smartNotes": {
+      "photo": "Fotografíe desde la zona de observación señalada en la pasarela: debajo del muro está vallado. El final de la tarde le da la luz que se apaga sobre el hielo y después la iluminación de la pasarela; ambas funcionan, y la transición entre las dos es la mejor ventana.",
+      "facilities": "Gestionado por el pueblo y básico: un invernadero-jardín climatizado, una pista de trineos y pequeños puestos. No cuente con comida sustanciosa ni con mucho espacio cubierto para entrar en calor.",
+      "tip": "Lleve calzado de invierno antideslizante y considere el muro de hielo como algo que depende del tiempo y no como algo garantizado: una racha de calor lo encoge y es el pueblo quien decide cuándo abre. Lleve algo de efectivo para las tasas del recinto."
+    }
+  },
+  "eobiSources": [
+    "Kyeongin Ilbo (경인일보) — informaciones sobre el 인공빙벽 (muro de hielo artificial) del valle de Eobi, en Gapyeong, y sobre la asociación de vecinos de Garil 2-ri que lo gestiona",
+    "Oficina de turismo del condado de Gapyeong (gptour.go.kr) — ficha del valle de Eobi, Garil-ri, Seorak-myeon",
+    "Organización de Turismo de Corea (VisitKorea — ficha de Eobigyegok Valley; nótese que el texto en inglés de la KTO describe el muro como natural, lo que contradice la documentación en coreano)",
+    "Información oficial del festival 어비계곡 겨울나라 — fechas de temporada, tasas en el recinto y actividades",
+    "Programa de recuperación de valles limpios de la provincia de Gyeonggi (청정계곡 정비사업) — pasarela e iluminación nocturna"
+  ],
+
+  "pickup": {
+    "name": "Recogida (estación de Hongik University o estación de Myeongdong)",
+    "category": "Recogida en autocar",
+    "duration": "Ventana de 30 min",
+    "description": "La recogida se realiza en uno de los dos puntos de encuentro de Seúl: **(1) el Starbucks de la salida 8 de la estación de Hongik University (Mapo-gu)** a las 06:00 — el local de Starbucks está justo al salir por la salida 8; O BIEN **(2) la salida 2 de la estación de Myeongdong (Jung-gu)** a las 06:30 — la tienda insignia de NorthFace es la referencia visible junto a la salida.\n\nAmbos puntos de recogida comparten el mismo autocar con calefacción y los pasajeros de Hongik suben primero. Le rogamos estar en el punto elegido **5 minutos antes de la hora prevista**: es una salida temprana en una mañana fría y el día solo funciona si el autocar llega al Seoraksan a las 09:30.\n\nVístase al subir para todo el día, no para el paseo hasta el metro: estará al aire libre a −5 °C o menos en dos de las tres paradas, y la última es sobre hielo. El guía reparte una tarjeta impresa con el itinerario en coreano e inglés y confirma el plan del día, incluido si el teleférico del Seoraksan está funcionando y qué está cobrando el pueblo en Eobi.",
+    "timeUsed": [
+      "Llegar al punto de recogida elegido 5 minutos antes de la hora prevista (~5 min)",
+      "Identificar el autocar de AtoC Korea frente al Starbucks / NorthFace señalado (~5 min)",
+      "Subir a bordo en la fila de embarque (~10 min)",
+      "Al subir se reparte una tarjeta impresa con el itinerario en coreano e inglés"
+    ],
+    "whyOnRoute": "Los dos puntos de recogida cubren los dos principales núcleos de visitantes de Seúl —la zona de Hongik University, en Mapo-gu, y Myeongdong, en Jung-gu— y Hongik primero es el orden natural para una salida hacia el noreste. Las 06:00 no son un relleno: el Seoraksan está a unas tres horas y el valor de ir allí en invierno está en pisar el fondo del valle mientras la luz sigue sobre la nieve. Salir más tarde metería la visita al parque en la planitud de la tarde y empujaría la última parada más allá del anochecer."
+  },
+
+  "lunch": {
+    "name": "Almuerzo cerca de Sokcho (por cuenta propia)",
+    "category": "Parada para almorzar",
+    "duration": "50 min",
+    "description": "El autocar para unos cincuenta minutos en un restaurante local cerca del Seoraksan o del lado de Sokcho, después del parque. El almuerzo **no está incluido**: usted pide y paga lo que quiera, normalmente ₩10,000-15,000 por persona.\n\nEsta es la franja marisquera de la costa este, así que las opciones locales son cosas como el **hoedeopbap** (pescado crudo sobre arroz), pescado a la parrilla o el **sundubu jjigae**, el guiso de tofu blando por el que es conocido el barrio de Cheoksan, en Sokcho, y que es exactamente lo que apetece después de dos horas en la nieve. Las opciones vegetarianas son limitadas; dígaselo al guía por la mañana y llamará con antelación.\n\nLleve efectivo o tarjeta. Los cincuenta minutos son deliberadamente ajustados: el trayecto de vuelta hacia el oeste hasta Nami es de dos horas y las dos últimas paradas necesitan luz diurna.",
+    "timeUsed": [
+      "El autocar aparca y el guía acompaña al grupo hasta el restaurante (~5 min)",
+      "Pedir y comer (~35 min)",
+      "Pagar individualmente y volver a reunirse en el autocar (~10 min)"
+    ],
+    "whyOnRoute": "El almuerzo va justo después del Seoraksan porque es el único momento del día en que una parada sentada como es debido no cuesta luz diurna. Todo lo que viene después depende del tiempo: Nami necesita luz para las avenidas arboladas y a Eobi hay que llegar antes de que cierre la zona de observación del pueblo. Comer aquí significa además entrar en calor justo después de la caminata más fría del día."
+  },
+
+  "dropoff": {
+    "name": "Regreso a Seúl (estación de Myeongdong o de Hongik University)",
+    "category": "Bajada de regreso",
+    "duration": "≈ 1.5 horas de trayecto",
+    "description": "La salida del valle de Eobi es hacia las 17:30 para el trayecto de ~1.5 horas hasta Seúl. Las bajadas se hacen en el orden inverso al de la recogida: **estación de Myeongdong sobre las 19:00** y después **estación de Hongik University sobre las 19:30**.\n\nAmbas son estaciones de transbordo de metro. Las condiciones invernales son la principal variable en este tramo: la nieve en las carreteras de Gapyeong o el tráfico de los viernes y domingos por la tarde pueden añadir entre 30 y 60 minutos, y el guía dará la estimación en tiempo real del autocar durante el trayecto. Es un día largo; la mayoría de los pasajeros duerme en este tramo.",
+    "timeUsed": [
+      "Salida del valle de Eobi (~17:30)",
+      "Trayecto por autopista hasta Seúl (~1.5 horas, más con nieve o tráfico de fin de semana)",
+      "Bajada en la estación de Myeongdong (~19:00)",
+      "Bajada en la estación de Hongik University (~19:30)"
+    ],
+    "whyOnRoute": "Terminar en Eobi es lo que mantiene corto el regreso: el valle es ya la parada más cercana a Seúl de esta ruta, así que el autocar apunta hacia casa desde el momento en que sale. Invertir el orden de las bajadas hace que los pasajeros de Myeongdong, que subieron los últimos, bajen los primeros."
+  },
+
+  "practical": {
+    "pickup": {
+      "content": [
+        "Dos puntos de recogida en Seúl: **el Starbucks de la salida 8 de la estación de Hongik University a las 06:00** (Mapo-gu) y **la salida 2 de la estación de Myeongdong, junto a la tienda insignia de NorthFace, a las 06:30** (Jung-gu).",
+        "Ambas recogidas comparten el mismo autocar; le rogamos estar en el punto elegido 5 minutos antes.",
+        "Bajadas de regreso en orden inverso: **Myeongdong ≈19:00**, **Hongik University ≈19:30**.",
+        "La duración efectiva de su tour depende del punto de recogida: ≈13.5 horas desde Hongik, ≈12.5 horas desde Myeongdong."
+      ]
+    },
+    "inclusions": {
+      "content": [
+        "Dos puntos de recogida en Seúl y los mismos dos puntos de bajada, autocar con calefacción y guía titulado de habla inglesa.",
+        "**Entrada al Parque Nacional Seoraksan — GRATUITA desde mayo de 2023, no hace falta ticket.**",
+        "**Ferry de ida y vuelta a la Isla Nami + tasa de visado de la República de Naminara (₩19,000) — INCLUIDOS.**",
+        "Peajes y aparcamiento — INCLUIDOS.",
+        "**NO incluye:** almuerzo y bebidas (₩10,000-15,000, por cuenta propia), el **teleférico del Seoraksan** (₩16,000 adulto ida y vuelta, venta solo en taquilla y sujeto al tiempo), las **tasas del pueblo en el valle de Eobi** (por la zona de observación del muro de hielo se ha cobrado alrededor de ₩1,000 por persona, actividades de trineo aparte), el alquiler de bicicleta o bugui eléctrico en Nami ni los gastos personales.",
+        "Guía de habla china disponible bajo petición; reserve con al menos 3 días de antelación."
+      ]
+    },
+    "walking": {
+      "content": [
+        "Moderada, y aquí la dificultad es el hielo más que la distancia o el desnivel.",
+        "Seoraksan: senderos de valle pavimentados y con escalones hasta Sinheungsa y el Tongildaebul, nevados y resbaladizos en algunos tramos. No hay senderismo programado ni intento de cima.",
+        "Isla Nami: avenidas llanas, pavimentadas y bordeadas de árboles, ~3 km en dos horas, con el suelo helado en pleno invierno.",
+        "Valle de Eobi: una pasarela de madera corta y casi llana hasta la zona de observación, pero el acceso y el entorno son realmente resbaladizos. El suelo bajo el muro de hielo está cerrado al público.",
+        "**El calzado de invierno antideslizante es imprescindible en las tres paradas.** Unas zapatillas normales no bastan en este itinerario. Los carritos de bebé y las sillas de ruedas no son adecuados en Eobi."
+      ]
+    },
+    "lunch": {
+      "title": "Almuerzo (por cuenta propia)",
+      "content": [
+        "El almuerzo se toma hacia las 11:45 cerca del Seoraksan o del lado de Sokcho, justo después del parque.",
+        "Opciones de la costa este: hoedeopbap (pescado crudo sobre arroz), pescado a la parrilla o el conocido sundubu jjigae de Sokcho, el guiso de tofu blando.",
+        "Calcule aproximadamente ₩10,000-15,000 por persona; normalmente se acepta tanto efectivo como tarjeta.",
+        "La parada son 50 minutos ajustados: las dos paradas restantes dependen del tiempo. Las opciones vegetarianas son limitadas, así que dígaselo al guía por la mañana."
+      ]
+    },
+    "weather-policy": {
+      "content": [
+        "Este es un tour de temporada invernal y el tiempo forma parte del producto, no es una excepción a él.",
+        "**El muro de hielo de Eobi no está garantizado.** Lo construyen los vecinos del pueblo a lo largo de las semanas más frías y una racha de calor lo encoge o lo hace desaparecer. Es el pueblo quien decide cuándo abre. Si el muro no se puede ver en su fecha, se lo diremos antes de la salida y le ofreceremos cambiar la reserva o el reembolso de esa parte.",
+        "**El teleférico del Seoraksan tampoco está garantizado.** Su horario cambia a diario y se suspende con viento fuerte o hielo. No está incluido en el precio, así que no se pierde nada si no funciona.",
+        "Nieve intensa: el autocar lleva neumáticos de invierno y el tour normalmente se realiza igualmente, pero el regreso puede tardar una hora más. Una nevada severa o el cierre de carreteras pueden cancelar la salida por completo, con reembolso íntegro.",
+        "El ferry de Nami puede suspenderse con mal tiempo severo; si ocurre, el guía amplía las otras paradas y se reembolsa la entrada de Nami."
+      ]
+    },
+    "what-to-bring": {
+      "title": "Qué llevar y cómo vestir",
+      "content": [
+        "**Calzado de invierno antideslizante**: el artículo más importante. En las tres paradas hay hielo bajo los pies.",
+        "Capas de abrigo adecuadas: espere −5 °C o menos en el Seoraksan con una sensación térmica notable por el viento, y temperaturas de anochecer en Eobi.",
+        "Guantes, gorro y algo que le cubra las orejas. La cubierta del ferry de Nami está completamente expuesta.",
+        "Algo de efectivo para las tasas gestionadas por el pueblo en Eobi y para el almuerzo (₩10,000-15,000).",
+        "Cámara o teléfono, más una batería de repuesto: el frío agota las baterías deprisa y esta es una ruta que la gente fotografía mucho."
+      ]
+    }
+  },
+
+  "practicalSeasonWindow": {
+    "title": "Cuándo funciona este tour",
+    "content": [
+      "Este es un itinerario **solo de invierno**. Existe porque existe el muro de hielo del valle de Eobi, y este es una estructura de temporada construida por el pueblo, no una atracción permanente.",
+      "El muro suele empezar a formarse desde **mediados de diciembre**, una vez que se hiela el agua del valle, y es más fiable durante **enero y principios de febrero**.",
+      "El final de la temporada varía de un año a otro: la **temporada 2025-26 cerró el 19 de febrero**. Las fechas del próximo invierno las fija el pueblo y se confirman en el momento de la reserva.",
+      "Fuera de temporada, la misma combinación de Seoraksan e Isla Nami está disponible todo el año en nuestra excursión de un día Seoraksan + Isla Nami + Jardín de la Calma Matutina."
+    ]
+  },
+
+  "seasonalVariations": [
+    {
+      "season": "Mediados de diciembre",
+      "description": "El muro de hielo empieza a formarse una vez que el agua del valle se hiela con fuerza. Al principio de la temporada es más pequeño y puede que el pueblo aún lo esté levantando. El Seoraksan suele tener ya su primera nieve asentada."
+    },
+    {
+      "season": "Enero",
+      "description": "El mejor mes con diferencia. El muro de hielo está a su altura máxima, la capa de nieve del Seoraksan es más fiable y las avenidas arboladas de Nami están bien escarchadas. Las temperaturas más frías del año: vístase en consecuencia."
+    },
+    {
+      "season": "Principios de febrero",
+      "description": "Sigue siendo fiable en la mayoría de los años, y con algo más de luz diurna en la parada de Eobi. Atención a las rachas de calor, que encogen el muro rápidamente."
+    },
+    {
+      "season": "Fuera de la temporada invernal",
+      "description": "El tour no se realiza. El muro de hielo desaparece a finales de febrero y Eobi vuelve a ser un valle de baño estival. Para el Seoraksan y Nami fuera del invierno, consulte nuestra excursión de un día Seoraksan + Isla Nami + Jardín de la Calma Matutina."
+    }
+  ],
+
+  "staticQuestions": [
+    {
+      "question": "¿Es natural el muro de hielo de Eobi?",
+      "answer": "No, y preferimos decírselo antes que dejar que lo descubra ese día. Desde el invierno de 2023, los vecinos del pueblo de Garil 2-ri rocían agua sobre la pared de roca del valle durante las semanas más frías y la dejan congelarse hasta formar una lámina de la que se informa una altura de unos 25 metros. Verá que en algunas webs de turismo, incluidas oficiales en inglés, se describe como una cascada helada natural. Eso es incorrecto. Es un espectáculo construido por el pueblo, gestionado por una treintena de vecinos como proyecto de ingresos fuera de temporada, y nos parece una historia mejor que la de los folletos."
+    },
+    {
+      "question": "¿Está garantizado el muro de hielo?",
+      "answer": "No, y cualquier tour que lo garantice está prometiendo de más. El muro depende de que el frío se mantenga y de la propia decisión del pueblo de abrir; una racha de calor lo encoge. Si no se puede ver en su fecha de salida, se lo diremos antes de viajar y le ofreceremos cambiar la reserva o el reembolso de esa parte. Es más fiable en enero y principios de febrero."
+    },
+    {
+      "question": "¿Cuándo funciona exactamente este tour?",
+      "answer": "Solo en invierno. El muro de hielo suele empezar a formarse a partir de mediados de diciembre y la temporada 2025-26 cerró el 19 de febrero. Las fechas exactas las fija cada año el pueblo que construye el muro, así que confirmamos la ventana de funcionamiento en el momento de la reserva en lugar de publicar un calendario fijo que no podríamos cumplir."
+    },
+    {
+      "question": "¿Está incluido el teleférico del Seoraksan?",
+      "answer": "No. El teleférico de Gwongeumseong cuesta ₩16,000 por adulto ida y vuelta, se vende solo en taquilla y no puede reservarse por adelantado. En invierno importa más de lo habitual que esté excluido: su horario cambia a diario y se suspende con viento fuerte o hielo, así que realmente no es algo que podamos prometer. La entrada al parque en sí es gratuita, y lo es desde mayo de 2023."
+    },
+    {
+      "question": "¿Qué frío hace en realidad?",
+      "answer": "El suficiente como para que el calzado y las capas decidan si disfruta del día. Espere aproximadamente entre −5 °C y +5 °C en el fondo del valle del Seoraksan, con una fuerte sensación térmica por el viento, y más frío a la sombra. La cubierta del ferry de Nami está completamente expuesta. En Eobi estará parado, al anochecer, junto a un muro de hielo. Lleve guantes, gorro y algo sobre las orejas."
+    },
+    {
+      "question": "¿Qué calzado necesito?",
+      "answer": "Zapatos o botas de invierno antideslizantes. Es la única pieza de equipo en la que insistiríamos. En las tres paradas hay hielo bajo los pies: los senderos escalonados del valle del Seoraksan, las avenidas llanas de Nami y la pasarela y el acceso de Eobi. Unas zapatillas normales no son suficientes. No exigimos ni proporcionamos crampones; la caminata es corta, el problema es la superficie."
+    },
+    {
+      "question": "¿Se camina mucho?",
+      "answer": "No mucha distancia: la dificultad es la superficie, no la longitud. En el Seoraksan solo se usan los senderos del valle bajo cerca de la entrada, sin senderismo ni intento de cima. Nami es llana, aproximadamente 3 km en dos horas si se recorre el medio perímetro. Eobi es una pasarela corta. Pero todo ello está helado, así que conviene contar con más tiempo y más cuidado de lo que sugieren las distancias."
+    },
+    {
+      "question": "¿Es adecuado para niños o viajeros mayores?",
+      "answer": "Menos que nuestras otras excursiones de un día, y le orientaríamos hacia otra opción si alguno de los dos casos pesa mucho. Es un día de 13 horas que empieza a las 06:00, con frío de pleno invierno y suelo helado en todas las paradas. La pasarela de Eobi no es adecuada para carritos de bebé ni sillas de ruedas, y el suelo bajo el muro de hielo está vallado. Los niños a los que les gusta la nieve y van bien abrigados se desenvuelven sin problema; quienes caminan con poca estabilidad, no."
+    },
+    {
+      "question": "¿Hay que pagar algo el mismo día?",
+      "answer": "Sí, de dos tipos. El almuerzo corre por su cuenta, aproximadamente ₩10,000-15,000. En Eobi el pueblo cobra pequeñas tasas en el recinto: la zona de observación del muro de hielo ha estado en torno a ₩1,000 por persona, y los trineos aparte. Se fijan localmente y cambian de un año a otro, así que lleve algo de efectivo y el guía confirmará los importes del día en el autocar. La entrada al parque del Seoraksan es gratuita, y el ferry y la entrada de Nami ya están incluidos."
+    },
+    {
+      "question": "¿Por qué llegamos a Eobi tan tarde?",
+      "answer": "Por dónde está. El valle de Eobi se encuentra en el sur de Gapyeong, más cerca de Seúl que el Seoraksan o Nami, así que visitarlo el último significa que el autocar ya apunta hacia casa y el regreso se mantiene corto. En pleno invierno, llegar a las 16:45 significa ver la última luz del día sobre el hielo y después el encendido de la iluminación de la pasarela, que es una buena ventana para fotografiar; pero es también la parte más fría de la visita, así que vístase para estar parado al aire libre."
+    },
+    {
+      "question": "¿En qué se diferencia de sus otros tours al Seoraksan?",
+      "answer": "En la tercera parada y en la temporada. Nuestra excursión de un día al Seoraksan disponible todo el año combina el parque con la Isla Nami y el Jardín de la Calma Matutina: un día más suave, centrado en jardines, que funciona con cualquier tiempo. Este cambia el jardín por el muro de hielo de Eobi y solo existe mientras existe el muro. Si viaja fuera de enero y febrero, la ruta de todo el año es la que le conviene."
+    },
+    {
+      "question": "¿Qué pasa si nieva mucho?",
+      "answer": "Normalmente el tour se realiza igualmente: el autocar lleva neumáticos de invierno en temporada y la nieve es más bien el objetivo. Cuente con que el trayecto de vuelta tarde hasta una hora más. Si la nevada es lo bastante severa como para cerrar carreteras, cancelamos la salida y reembolsamos el importe íntegro. Preferimos cancelar antes que realizar un día de montaña de 13 horas en condiciones inseguras."
+    }
+  ],
+
+  "pd": {
+    "primaryTime": "Recogida 06:00 / bajada 19:30",
+    "primaryInstructions": "Encuéntrese con el guía frente al local de Starbucks situado justo encima de la salida 8 de la estación de Hongik University. Busque el cartel de AtoC Korea y el autocar en la fila de embarque.",
+    "alternateTime": "Recogida 06:30 / bajada 19:00",
+    "alternateInstructions": "Encuéntrese con el guía delante de la tienda insignia de NorthFace, en lo alto de la salida 2 de la estación de Myeongdong."
+  },
+
+  "stickyNote": "Solo temporada de invierno: seleccione su fecha para consultar si el muro de hielo está funcionando y completar su reserva."
+}

@@ -662,6 +662,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "首尔出发加平一日游：南怡岛、晨静树木园与小法国村",
+      "subtitle": "一天大巴走完加平三处招牌 — 不用登山，三处门票全含",
+      "region": "首尔 → 京畿道（加平）",
+      "duration": "11.5 小时",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "首尔出发一日游",
+        "加平",
+        "拼团",
+        "韩剧",
+        "花园"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "首尔近郊最轻松的一天乡野行程：南怡岛的水杉大道、330,000 m² 的主题树木园，以及小王子主题村落 — 三处门票全部包含，19:00 前回到首尔。"
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     "catalog_card": {
       "slug": "seoul-private-nami-morning-calm-petite-france",
@@ -866,6 +892,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "首尔冬季特别行程：雪岳山、南怡岛与鱼飞溪谷冰壁",
+      "subtitle": "只在冬季运行的大巴一日游 — 韩国最著名山峰的积雪、霜白的南怡岛，以及一面由村民造出的冰壁",
+      "region": "首尔 → 江原道 → 京畿道（加平）",
+      "duration": "13 小时",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "仅限冬季",
+        "季节限定",
+        "首尔出发一日游",
+        "雪岳山",
+        "冰壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "只在深冬运行：雪中的雪岳山、南怡岛霜白的林荫大道，以及加平村民每年一月在溪谷岩壁上养出的 25 米冰壁。"
+    },
+    "price": {
+      "amountLabel": "64"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

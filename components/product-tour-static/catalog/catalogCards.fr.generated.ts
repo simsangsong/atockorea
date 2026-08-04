@@ -30,5 +30,57 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "price": {
       "amountLabel": "59"
     }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Excursion d'une journée à Gapyeong depuis Séoul : île de Nami, Garden of Morning Calm et Petite France",
+      "subtitle": "Le trio de Gapyeong en une seule journée en autocar — aucune randonnée en montagne, trois entrées incluses",
+      "region": "Séoul → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 heures",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Excursion depuis Séoul",
+        "Gapyeong",
+        "Groupe partagé",
+        "K-drama",
+        "Jardins"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "La journée à la campagne la plus facile au départ de Séoul : l'allée de métaséquoias de l'île de Nami, un arboretum thématique de 330,000 m² et un village du Petit Prince — les trois entrées incluses, retour à Séoul avant 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Spécial hiver depuis Séoul : Seoraksan, île de Nami et le mur de glace de la vallée d'Eobi",
+      "subtitle": "Une journée en autocar réservée à l'hiver — la neige sur le sommet le plus célèbre de Corée, Nami sous le givre, et un mur de glace bâti par un village",
+      "region": "Séoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13 heures",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Hiver uniquement",
+        "Saisonnier",
+        "Excursion depuis Séoul",
+        "Seoraksan",
+        "Mur de glace"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Ne fonctionne qu'au cœur de l'hiver : le Seoraksan sous la neige, les allées d'arbres givrées de l'île de Nami, et le mur de glace de 25 mètres que les villageois de Gapyeong font grandir chaque janvier sur une paroi rocheuse de la vallée."
+    },
+    "price": {
+      "amountLabel": "64"
+    }
   }
 };

@@ -1,0 +1,1161 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "zh-TW",
+  "product_id": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "seo": {
+    "pageTitle": "首爾出發冬季一日遊 — 雪嶽山、南怡島與魚飛溪谷冰壁 | AtoC Korea",
+    "metaDescription": "冬季限定的首爾出發遊覽車一日遊：積雪的雪嶽山國立公園、南怡島覆霜的林蔭大道，以及加平的魚飛溪谷冰壁。弘大入口站或明洞站接送，含公園入園與南怡島渡輪。",
+    "title": "首爾出發冬季一日遊 — 雪嶽山、南怡島與魚飛溪谷冰壁",
+    "description": "冬季限定的首爾一日遊，串聯雪中的雪嶽山國立公園、南怡島，以及加平由村民築成的魚飛溪谷冰壁。",
+    "primaryKeywords": [
+      "首爾冬季一日遊",
+      "魚飛溪谷 冰壁",
+      "雪嶽山 一日遊 首爾出發",
+      "南怡島 冬季",
+      "加平 冰壁 一日遊"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
+  },
+  "catalog_card": {
+    "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+    "title": "首爾冬季特別行程：雪嶽山、南怡島與魚飛溪谷冰壁",
+    "subtitle": "只在冬季運行的遊覽車一日遊 — 韓國最著名山峰的積雪、覆霜的南怡島，以及一面由村民造出的冰壁",
+    "region": "首爾 → 江原道 → 京畿道（加平）",
+    "duration": "13 小時",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "僅限冬季",
+      "季節限定",
+      "首爾出發一日遊",
+      "雪嶽山",
+      "冰壁"
+    ],
+    "tags": [
+      "僅限冬季",
+      "季節限定",
+      "首爾出發一日遊",
+      "雪嶽山",
+      "南怡島",
+      "冰壁"
+    ],
+    "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "priceLabel": "",
+    "shortCardDescription": "只在深冬運行：雪中的雪嶽山、南怡島覆霜的林蔭大道，以及加平村民每年一月在溪谷岩壁上養出的 25 公尺冰壁。"
+  },
+  "headlineLine1": "首爾冬季一日遊",
+  "headlineLine2": "雪嶽山、南怡島與魚飛冰壁",
+  "price": {
+    "amountLabel": "64",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 64
+  },
+  "hero": {
+    "imageUrl": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+    "imagePosition": "center 40%",
+    "images": [
+      "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp"
+    ],
+    "tagline": "冬季限定的首爾出發遊覽車一日遊：雪中的韓國最知名國立公園、南怡島覆霜的林蔭大道，以及加平一個村子每年一月親手築起的 25 公尺冰壁",
+    "pills": [
+      "僅限冬季",
+      "積雪 + 冰壁",
+      "遊覽車一日遊"
+    ],
+    "meta": {
+      "duration": "13 小時",
+      "region": "首爾 → 江原道 → 京畿道（加平）",
+      "stops": "3 處停留",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "行程概覽"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程安排"
+    },
+    {
+      "id": "details",
+      "label": "詳細資訊"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "旅客評價"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "行程時長",
+      "value": "13 小時"
+    },
+    {
+      "icon": "camera",
+      "label": "拍照指數",
+      "value": "極高",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "景觀",
+      "value": "極高",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "步行強度",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "天氣敏感度",
+      "value": "高",
+      "level": 2
+    },
+    {
+      "icon": "users",
+      "label": "親子適合度",
+      "value": "中等",
+      "level": 3
+    },
+    {
+      "icon": "gauge",
+      "label": "節奏",
+      "value": "緊湊",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "location": "雪嶽山國立公園",
+      "caption": "雪嶽山國立公園 — photo 1",
+      "alt": "雪嶽山國立公園 — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "location": "雪嶽山國立公園",
+      "caption": "雪嶽山國立公園 — photo 2",
+      "alt": "雪嶽山國立公園 — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+      "location": "雪嶽山國立公園",
+      "caption": "雪嶽山國立公園 — photo 3",
+      "alt": "雪嶽山國立公園 — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+      "location": "雪嶽山國立公園",
+      "caption": "雪嶽山國立公園 — photo 4",
+      "alt": "雪嶽山國立公園 — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "location": "南怡島（南怡洲）",
+      "caption": "南怡島（南怡洲） — photo 1",
+      "alt": "南怡島（南怡洲） — gallery image 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "location": "南怡島（南怡洲）",
+      "caption": "南怡島（南怡洲） — photo 2",
+      "alt": "南怡島（南怡洲） — gallery image 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "南怡島（南怡洲）",
+      "caption": "南怡島（南怡洲） — photo 3",
+      "alt": "南怡島（南怡洲） — gallery image 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "南怡島（南怡洲）",
+      "caption": "南怡島（南怡洲） — photo 4",
+      "alt": "南怡島（南怡洲） — gallery image 4"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "06:00 / 06:30",
+      "duration": "30 分鐘接送時段",
+      "name": "接送（弘大入口站或明洞站）",
+      "category": "遊覽車接送",
+      "description": "接送地點為首爾兩處集合點之一：**(1) 弘大入口站 8 號出口星巴克（麻浦區）** 06:00 — 星巴克店面就在 8 號出口上來的位置；或 **(2) 明洞站 2 號出口（中區）** 06:30 — 出口旁的 North Face 旗艦店是顯眼地標。\n\n兩處接送點共用同一輛暖氣遊覽車，弘大的旅客先上車。請在所選集合點 **提前 5 分鐘** 抵達 — 這是寒冷清晨的早出發，而這一天只有在遊覽車 09:30 前抵達雪嶽山時才成立。\n\n上車時就請按整天的戶外條件穿好，而不是按走去地鐵站的標準：三站裡有兩站你會待在 −5 °C 甚至更冷的戶外，最後一站還是在冰上。導遊會發放韓英對照的行程卡，並確認當天的安排，包括雪嶽山纜車是否運行、魚飛的村莊當天收多少錢。",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "在所選接送點提前 5 分鐘抵達（約 5 分鐘）",
+        "在標示的星巴克 / North Face 店前找到 AtoC Korea 遊覽車（約 5 分鐘）",
+        "依接送順序上車（約 10 分鐘）",
+        "上車時發放韓英對照行程卡"
+      ],
+      "whyOnRoute": "兩處接送點涵蓋首爾兩大旅客聚集區 — 麻浦區的弘大一帶與中區的明洞 — 而先弘大後明洞是往東北行駛的自然順序。06:00 出發不是湊數：雪嶽山在約三小時車程之外，而冬天去那裡的價值，就在於趁光線還落在雪上時站在溪谷底部。更晚出發會把公園行程推進午後的平光裡，並把最後一站推到天黑之後。",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "雪嶽山國立公園",
+      "time": "≈ 09:30",
+      "number": 2,
+      "category": "國立公園（山嶽）",
+      "duration": "120 分鐘（2 小時）",
+      "timeUsed": [
+        "抵達雪嶽洞入口 + 司機兼導遊行前說明（約10分鐘）",
+        "步行前往統一大佛 + 神興寺（從主停車場步行約15–20分鐘）",
+        "可選纜車前往權金城（含排隊約30–45分鐘）或飛仙臺健行（約90分鐘）",
+        "拍照時間 + 於車旁集合（約15分鐘）",
+        "可選在神興寺附近的800年古松前拍照留念（約5分鐘）"
+      ],
+      "_poi_meta": {
+        "poi_key": "seoraksan_national_park",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Seoraksan National Park (Outer Seorak) listing + IUCN Green List confirmation)",
+          "IUCN Green List of Protected and Conserved Areas (iucngreenlist.org — Seoraksan official entry + 2014 designation + 398.24 km² area)",
+          "Korea National Park Service (KNPS — Seoraksan National Park Office official site + endangered species management plan)",
+          "UNESCO World Heritage Centre (Mt. Sorak Biosphere Reserve 1982 designation + tentative World Heritage listing)",
+          "Wikipedia (Seoraksan National Park — corpus on 30 peaks, 2,000+ animal species, 1,400+ plant species)"
+        ]
+      },
+      "highlights": [
+        "韓國第 5 座國家公園（1970 年）暨國內唯一聯合國教科文組織生物圈保護區（1982 年 8 月）",
+        "統一大佛：14.6 公尺／108 公噸青銅——世界最大青銅坐佛（1997 年）",
+        "神興寺（西元 652 年新羅時代）——曹溪宗本山；世界最古老的禪宗寺院",
+        "選用雪嶽纜車 1,132 公尺至權金城堡平台（700 公尺，1253 年傳說）",
+        "30 座峰巒，2,000＋ 動物物種，1,400–1,562 植物物種；珍稀野生動物（麝香鹿、長尾斑羚、亞洲黑熊）",
+        "公園入場目前免費（過去 3,500 韓元已廢除）；纜車仍需付費",
+        "**自 2005 年起列為 IUCN 第二類（國家公園）＋自 2014 年起列為 IUCN 保護區綠色名錄**——韓國第一座於試行階段加入綠色名錄的國家公園，與五臺山、智異山並列",
+        "**韓國唯一自 1982 年 8 月起獲列聯合國教科文組織生物圈保護區**＋**列入聯合國教科文組織世界遺產預備名單**——綜合認可度為韓國其他國家公園所不及",
+        "**長尾斑羚保育核心地**：穩定族群約 260 隻（IUCN 紅色名錄易危物種）——公園劃設 10 處特別保護區，總面積 39 平方公里（佔全園 10%）保育瀕危物種"
+      ],
+      "smartNotes": {
+        "photo": "統一大佛銅像襯著覆雪的花崗岩，就是那張照片。冬季晴朗的早晨，通常從入口廣場就能看到蔚山岩的稜線。",
+        "facilities": "小公園入口有遊客中心、咖啡館、餐廳與紀念品店。冬季人多的日子，室內取暖空間有限。",
+        "tip": "不要把行程押在纜車上。冬季營運時間每天變動，遇風與結冰停駛的次數比其他季節更多；晴天時排隊也可能很長。把它當作意外收穫，而不是固定項目。請按山腳 −5 °C 至 +5 °C 加上強烈風寒來穿衣。"
+      },
+      "whyOnRoute": "雪嶽山排在一天之首，因為它既是最遠的一站，也是最仰賴光線的一站。09:30 時花崗岩稜線上的積雪還乾淨，溪谷也還沒被雲遮住，這正是值得開三小時車過來的全部理由。在小公園入口停留兩小時，足夠以冬季的步調走完統一大佛、新興寺與低處的溪谷步道 — 但不夠攻頂，這是刻意的安排。先來這裡，也讓全天最長的一段車程在大家還不累、還不冷的時候完成。",
+      "convenience": {
+        "restroom": "主入口區、纜車站、神興寺寺院區、主要步道沿線",
+        "parking": "小公園正門設有付費停車場"
+      },
+      "description": "雪嶽山國家公園是韓國第 5 座國家公園——1970 年 3 月指定——也是國內唯一的聯合國教科文組織生物圈保護區，於 1982 年 8 月因卓越的山地生物多樣性獲得認證。公園面積約 398 平方公里，橫跨 4 個市郡，30 座有名峰巒以大青峰（1,708 公尺，韓國第 3 高峰）與標誌性六柱花崗岩構造蔚山岩為核心。公園入場目前 **免費**——歷來代神興寺收取的 3,500 韓元門票已於2023年5月廢除，現由公費維護寺院。\n\n從小公園（外雪嶽）正門出發，3 小時的標準行程涵蓋三大重點：統一大佛——14.6 公尺高、108 公噸重的青銅佛像，是世界最大的青銅坐佛，1997 年為祈願朝鮮半島統一而立，佛像基座內有小型觀世音菩薩龕；神興寺本寺——西元 652 年新羅時代由慈藏律師創建，被視為世界最古老的禪宗寺院，並為曹溪宗的本山；以及選用的雪嶽纜車（行進距離 1,132 公尺，單程約 10 分鐘前往海拔 700 公尺的權金城堡平台——來回成人 16,000／兒童 12,000 韓元，僅現場售票，不接受預約，10 月秋葉旺季排隊常達數小時）。\n\n山頂的權金城堡有一段傳說：1253 年高麗朝代蒙古入侵期間，由「權」與「金」兩位將軍一日內築成——「權－金－城」之名因此而來。喜歡健行、不搭纜車的旅客可改走 1.5 公里的飛仙台溪畔步道（多為舖面，難度輕鬆）、晃動岩（흔들바위）環線（單程 1.5 小時含石階）或 600 公尺的金剛窟洞窟攀登（往返約 1 小時 40 分鐘）。",
+      "visitBasics": {
+        "hours": "公園全年開放；新興寺 06:00 起開放。權金城纜車冬季運行，但營運時間每天隨天氣變動，遇強風或結冰即停駛 — 營運方每天上午公布當日班次，因此永遠無法保證",
+        "closed": "全年開放，但高海拔步道會季節性封閉以防火並維護安全 — 通常從 11 月中旬到 12 月中旬，以及 2 月中旬前後再次封閉。本行程只使用入口附近的低處溪谷步道，不受影響",
+        "admission": "公園入園免費（₩3,500 的門票已於 2023 年 5 月取消）。纜車往返成人 ₩16,000，只能現場購票，本行程不含，且不保證運行",
+        "walking": "溪谷底部為輕鬆至中等 — 通往新興寺與統一大佛的鋪面與階梯步道，部分路段積雪濕滑。行程不安排登山；堅固的防滑鞋是必備品"
+      },
+      "image": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "images": [
+        "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+        "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+          "location": "雪嶽山國立公園",
+          "caption": "雪嶽山國立公園 — photo 1",
+          "alt": "雪嶽山國立公園 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+          "location": "雪嶽山國立公園",
+          "caption": "雪嶽山國立公園 — photo 2",
+          "alt": "雪嶽山國立公園 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-gwongumseong-cable-car.webp",
+          "location": "雪嶽山國立公園",
+          "caption": "雪嶽山國立公園 — photo 3",
+          "alt": "雪嶽山國立公園 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsan-rock.webp",
+          "location": "雪嶽山國立公園",
+          "caption": "雪嶽山國立公園 — photo 4",
+          "alt": "雪嶽山國立公園 — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "50 分鐘",
+      "name": "束草附近午餐（費用自理）",
+      "category": "午餐時間",
+      "description": "出公園後，遊覽車在雪嶽山附近或束草一側的當地餐廳停約五十分鐘。午餐 **不包含** — 你自行點餐付費，通常每人 ₩10,000-15,000。\n\n這裡是東海岸的海鮮地帶，所以當地選擇包括 **회덮밥（生魚片拌飯）**、烤魚，或 **순두부찌개** — 束草尺山洞出名的嫩豆腐鍋，也正是在雪地裡待了兩小時之後最該吃的東西。素食選擇有限；早上告訴導遊，他們會事先打電話預約。\n\n請帶現金或信用卡。五十分鐘是刻意壓縮的 — 西返南怡島還有兩小時車程，而最後兩站都需要日照。",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "遊覽車停車，導遊帶隊步行至餐廳（約 5 分鐘）",
+        "點餐與用餐（約 35 分鐘）",
+        "各自付款並回到車上集合（約 10 分鐘）"
+      ],
+      "whyOnRoute": "午餐緊接在雪嶽山之後，因為這是全天唯一一個坐下來好好用餐又不會佔用日照的時點。之後的一切都受時間限制：南怡島需要光線才看得到林蔭大道，魚飛則必須在村莊的觀賞區關閉前抵達。在這裡用餐，也意味著剛走完全天最冷的一段路就能暖身。",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "南怡島（南怡洲）",
+      "time": "≈ 14:35",
+      "number": 4,
+      "category": "渡輪小島&韓劇地標",
+      "duration": "120 分鐘（2 小時）",
+      "timeUsed": [
+        "從加平碼頭乘渡船（含排隊5–10分鐘）",
+        "沿水杉／銀杏／紅松林蔭大道自由漫步——半島環形路線約3公里",
+        "可選租借腳踏車（單人7,000韓元／雙人14,000韓元，每小時）或搭乘電動藍色小火車（單程3,000韓元至聯合國兒童基金會館）",
+        "島上小點心短暫休息（Sonata咖啡廳、糖餅、紫薯拿鐵）",
+        "乘渡船返回陸地"
+      ],
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      },
+      "highlights": [
+        "半月形河中島,約 460,000 平方公尺/周長 5 公里;以南怡將軍(1441–1468)命名",
+        "經典水杉大道——《冬季戀歌》(2002)代表性取景地",
+        "2006 年自封「南怡共和國」——擁有自己的國旗、貨幣、護照(觀光行銷概念)",
+        "從加平碼頭 5 分鐘渡輪可達(08:00–21:00,尖峰時段每 10–20 分鐘一班)",
+        "島上野生動物:孔雀(含罕見白孔雀)、鴕鳥、野兔、松鼠",
+        "**1944 年成島**——日本興建清平水庫提高北漢江水位形成;1965 年閔丙燾購入此島,1966 年成立京春觀光開發株式會社",
+        "**南怡共和國於 2006 年 3 月 1 日宣布成立**——以姜禹鉉社長為首的「文化獨立」觀光品牌——韓國首個微型國家觀光概念,擁有自家國旗、貨幣、護照、郵票",
+        "**2010 年獲聯合國兒童基金會友善兒童公園認證**+南怡島藝術教育每年舉辦**600 場以上的演出/展覽/節慶**——在韓國單一景點中極為罕見",
+        "**入境費**(韓國觀光公社官方 2026 年版):一般票 ₩19,000 含來回渡輪(₩29,000 含單程汽艇);36 個月以下幼兒免費;20 人以上團體 9 折"
+      ],
+      "smartNotes": {
+        "photo": "水杉大道為世界知名的《冬季戀歌》取景畫面——秋季(10 月底至 11 月初金黃)或冬季(雪景)最佳。南側的銀杏戀人巷較少人潮,同樣上鏡。罕見的白孔雀偶爾出現在戀人巷附近。",
+        "facilities": "島上餐廳供應韓式輕食(糖餅、地瓜拿鐵、烤年糕)。位於傳統韓屋內的 Sonata Cafe 是招牌停留點。加平碼頭的售票櫃台支援外國信用卡——售票機不接受外卡,請至櫃台辦理。",
+        "tip": "最佳季節:春季(4–5 月櫻花)、秋季(10 月金黃銀杏+紅楓)、冬季(12–2 月安靜雪景,重現《冬季戀歌》氛圍)。請避開週日下午的渡輪排隊潮——務必在 16:00 前離島。高空滑索(940 公尺,時速約 80 公里,55,000–58,000 韓元含門票)在尖峰時段可省下 15–20 分鐘的渡輪排隊時間。"
+      },
+      "whyOnRoute": "南怡島排在一天的中間，因為它是唯一同時需要日照和渡輪的一站。覆霜的水杉與銀杏大道，正是這座島在冬天值得渡江的理由，而那需要光線；渡輪甲板毫無遮蔽，下午中段渡江也比更晚時舒服。把它排在雪嶽山之後，還能把漫長的西返車程拆成兩段可以承受的路，而不是一整段。",
+      "convenience": {
+        "restroom": "島上與加平碼頭多處設有",
+        "parking": "加平碼頭小型車 6,000 韓元/大型車 10,000 韓元(超過 12 小時每小時加收 1,000 韓元)"
+      },
+      "description": "南怡島以從加平碼頭出發的 5 分鐘渡輪揭開當日序幕,前往北漢江上一座半月形的河中島。島嶼面積約 460,000 平方公尺(14 萬坪),周長約 5 公里,以朝鮮時代名將南怡(南怡將軍,1441–1468 年)命名;這位 28 歲時遭誣陷謀反、於睿宗朝被處決的軍事統帥。早期此地僅在洪水期才浮出水面;1944 年日本殖民政府興建清平水庫,提高水位,讓南怡成為永久的島嶼。\n\n2002 年因 KBS 電視劇《冬季戀歌》(裴勇俊、崔智友主演)在此取景而聲名大噪——此劇是 2000 年代初韓流的引爆點,至今每年仍吸引約 330 萬名遊客造訪(其中 130 萬為外國旅客),使其成為僅次於首爾、釜山與濟州的韓國最熱門單一景點。自 2006 年 3 月 1 日起,該島自封為**「南怡共和國」**,擁有自己的國旗、貨幣(南怡通寶錢幣)、護照與郵政服務——這是觀光行銷概念,並非實際政治實體。\n\n招牌的水杉大道(《冬季戀歌》經典雪景巷)、南側的銀杏戀人巷、韓松路,以及由燒酒瓶回收玻璃打造的水杉橋,皆可在悠閒的半天內走完。截至 2016 年,該島記錄到**每年 330 萬名訪客,其中 130 萬名來自 122 個國家的外國旅客**——是繼首爾、釜山與濟州之後外國訪客比例最高的單一韓國景點。南怡專為 atockorea 的海外華人群體與東南亞客群提供普通話/粵語/他加祿語/越南語的專屬指標。",
+      "visitBasics": {
+        "hours": "渡輪 08:00 起航，末班進島 21:00，全天大約每 10-20 分鐘一班；島上多數店家 18:00 前打烊。冬季班次可能隨天氣調整",
+        "closed": "全年開放",
+        "admission": "南怡共和國簽證費，含往返渡輪：成人 ₩19,000 — 本行程已包含",
+        "walking": "輕鬆 — 平坦的林蔭步道，但隆冬時腳下可能結冰。半環島路線約 3 公里。島上可自費租借腳踏車與電動接駁車"
+      },
+      "image": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "images": [
+        "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+        "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "location": "南怡島（南怡洲）",
+          "caption": "南怡島（南怡洲） — photo 1",
+          "alt": "南怡島（南怡洲） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "南怡島（南怡洲）",
+          "caption": "南怡島（南怡洲） — photo 2",
+          "alt": "南怡島（南怡洲） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "南怡島（南怡洲）",
+          "caption": "南怡島（南怡洲） — photo 3",
+          "alt": "南怡島（南怡洲） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "南怡島（南怡洲）",
+          "caption": "南怡島（南怡洲） — photo 4",
+          "alt": "南怡島（南怡洲） — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 16:45",
+      "duration": "45 分鐘",
+      "name": "魚飛溪谷冰壁",
+      "category": "冬季村莊慶典（季節限定）",
+      "description": "魚飛溪谷（어비계곡）— 名字取自「魚飛」二字，因為這裡的水流曾經快到讓魚看起來像在飛 — 是加平南部雪嶽面一條長三公里的溪谷。夏天它是戲水與虹鱒的溪流。到了冬天，它會變成一年裡其餘時間完全看不出端倪的模樣。\n\n**這裡的冰壁是造出來的，不是天然形成的。** 自 2023 年冬天起，佳日 2 里的居民在最冷的幾週裡把水噴灑在溪谷的岩壁上，其餘交給寒冷 — 一層層堆成一面據報導約 **25 公尺** 高的冰面。它由村裡自己的居民自治會營運 — 大約三十人 — 作為一個淡季創收專案，服務這條此前幾乎沒有冬季訪客的溪谷。你會在別處看到它被描述成天然冰瀑，包括某些官方旅遊頁面。它不是，而正因如此它更了不起。\n\n觀賞位置是溪谷沿線的 **木棧道**，屬於京畿道一項整治工程的一部分，夜間照明也是同時加上的。**冰壁正下方的地面已經封閉** — 此前曾有訪客在那裡滑倒受傷 — 所以照片是在指定觀賞區拍的，而不是從底下拍。冰壁旁邊，村子還經營冰上雪橇滑道、旋轉雪盤、冰屋拍照區與一座小型溫室花園。\n\n我們在傍晚抵達。在深冬，這意味著先看到最後一點日光落在冰上，然後木棧道的照明亮起 — 適合拍照，也很冷。村子會在現場就觀賞區與雪橇設施收取少量費用；這些由當地自行制定，每年都會變動。",
+      "image": null,
+      "highlights": [
+        "據報導約 25 公尺高的冰壁，自 2023 年冬天起由佳日 2 里的村民在溪谷岩壁上養成 — 是造出來的，不是天然的",
+        "由村裡的居民自治會（約 30 人）作為淡季專案營運，打的名號是 어비계곡 겨울나라（「魚飛溪谷冬之國」）",
+        "附夜間照明的木棧道觀賞路徑，是京畿道清淨溪谷整治工程加建的",
+        "冰壁旁還有冰上雪橇、旋轉雪盤、冰屋拍照區與溫室花園",
+        "溪谷名字 어비（魚飛）意為「魚飛」— 來自曾經快到讓魚看起來像在飛的水流",
+        "隨著口碑傳開，訪客人數一季約翻倍至 60,000 人左右，其中多數是東南亞旅客"
+      ],
+      "timeUsed": [
+        "遊覽車停車，導遊帶隊步行至溪谷入口（約 10 分鐘）",
+        "沿木棧道走到冰壁觀賞區並拍照（約 25 分鐘）",
+        "自選雪橇或溫室花園，或提前回車上取暖（約 10 分鐘）"
+      ],
+      "whyOnRoute": "魚飛收尾有兩個理由。地理上，它是這條路線裡唯一位於首爾側的停留點 — 雪嶽面在加平南部，方向已經朝著返家 — 所以在漫長一天的尾聲，在這裡待一小時不會多開一段路。編輯上，它正是這條行程之所以是冬季產品而非全年產品的原因：雪嶽山與南怡島任何季節都能去，但這面冰壁大概只存在八週，而且要寒冷持續才行。它也是多數旅客從未聽過的一站，用來收尾正好。",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "eobi_ice_valley",
+        "sources": [
+          "경인일보（京仁日報）— 關於加平魚飛溪谷 인공빙벽（人工冰壁）與營運它的佳日 2 里居民自治會的報導",
+          "加平郡觀光課（gptour.go.kr）— 魚飛溪谷條目，雪嶽面佳日里",
+          "韓國觀光公社（VisitKorea — 어비계곡 條目；請注意韓國觀光公社的英文說明把這面牆描述為天然形成，與韓文紀錄相互矛盾）",
+          "어비계곡 겨울나라 官方慶典資訊 — 季節日期、現場費用與活動項目",
+          "京畿道清淨溪谷整治工程（청정계곡 정비사업）— 木棧道與夜間照明"
+        ],
+        "verified": true,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "photo": "請在木棧道上的指定觀賞區拍攝 — 冰壁底下已經圍起。傍晚會先有漸暗的日光落在冰上，然後木棧道亮燈；兩種都好看，而兩者之間的過渡是最好的時間窗。",
+        "facilities": "由村莊經營，設施簡單：一座溫室花園、雪橇滑道與幾個小攤。不要指望這裡有像樣的餐食或寬敞的室內取暖空間。",
+        "tip": "請穿防滑冬鞋，並把冰壁當作視天氣而定、而不是有保證的項目 — 一段暖天就會讓它縮小，村子也自行決定何時開放。請帶少量現金支付現場費用。"
+      },
+      "visitBasics": {
+        "hours": "由村莊經營，季節限定。冬季慶典據報導大致在 10:00-17:00 營運，旺季時木棧道會亮燈。營運時間每年由當地自行決定，並沒有公布固定時刻表",
+        "closed": "僅限冬季。2025-26 季運行至 2 月 19 日；開始日期有 12 月 20 日與 30 日兩種說法。2026-27 的日期尚未公布，而且冰壁只有在寒冷持續時才會出現 — 通常從 12 月中旬開始，1 月到 2 月上旬最可靠",
+        "admission": "由村莊設定的少量現場費用 — 冰壁觀賞區此前約為每人 ₩1,000，雪橇設施另計。這些不含在內，且每年都會變動；導遊會在車上確認當天的收費",
+        "walking": "路程短，但確實很滑。一條大致平坦的木棧道通往觀賞區；進出通道與周邊地面濕滑，防滑鞋是必備品。冰壁正下方的地面對訪客封閉。不適合輪椅或嬰兒推車"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 6,
+      "time": "≈ 19:00",
+      "duration": "≈ 1.5 小時車程",
+      "name": "返回首爾（明洞或弘大入口站）",
+      "category": "返程下車",
+      "description": "約 17:30 從魚飛溪谷出發，約 1.5 小時車程回到首爾。下車順序與接送順序相反：**明洞站約 19:00**，接著 **弘大入口站約 19:30**。\n\n兩處都是地鐵轉乘站。這一段最大的變數是冬季路況 — 加平路面的積雪，或週五與週日傍晚的車流，可能多花 30-60 分鐘，導遊會在路上給出遊覽車的即時預估。這是漫長的一天；多數旅客會在這一段睡過去。",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "從魚飛溪谷出發（約 17:30）",
+        "高速公路駛入首爾（約 1.5 小時，遇雪或週末車流會更久）",
+        "明洞站下車（約 19:00）",
+        "弘大入口站下車（約 19:30）"
+      ],
+      "whyOnRoute": "以魚飛收尾正是返程之所以短的原因：這條溪谷已經是路線上離首爾最近的一站，遊覽車一離開就朝著返家的方向。把下車順序反過來，意味著最後上車的明洞旅客最先下車。",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "接送（弘大 / 明洞）",
+      "type": "origin",
+      "theme": "Seoul pickup"
+    },
+    {
+      "name": "雪嶽山國立公園",
+      "type": "primary",
+      "theme": "Winter mountain"
+    },
+    {
+      "name": "束草附近午餐",
+      "type": "secondary",
+      "theme": "Lunch break"
+    },
+    {
+      "name": "南怡島",
+      "type": "primary",
+      "theme": "K-drama island"
+    },
+    {
+      "name": "魚飛溪谷冰壁",
+      "type": "primary",
+      "theme": "Ice wall"
+    },
+    {
+      "name": "返回首爾",
+      "type": "return",
+      "theme": "Drop-off"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "首爾 → 雪嶽山",
+      "duration": "≈ 3.5 小時",
+      "description": "06:00 弘大 / 06:30 明洞接送，接著沿首爾—襄陽高速公路往東北行駛約 3 小時，中途一次休息，約 09:30 抵達小公園（Sogongwon）入口。"
+    },
+    {
+      "phase": "雪嶽山",
+      "duration": "≈ 2 小時",
+      "description": "在小公園入口的自由活動時間：統一大佛銅像、新興寺，以及雪下的低處溪谷步道。纜車不含在內，且只在風力與結冰條件允許時運行。"
+    },
+    {
+      "phase": "午餐 → 南怡島",
+      "duration": "≈ 3 小時",
+      "description": "在束草附近用午餐（費用自理），接著往西行駛約 2 小時回到加平碼頭，搭五分鐘渡輪前往南怡島，用兩小時走在覆霜的水杉大道之間。"
+    },
+    {
+      "phase": "魚飛溪谷 → 首爾",
+      "duration": "≈ 2.5 小時",
+      "description": "往南四十分鐘前往魚飛溪谷，在傍晚的光線中看冰壁，接著約 1.5 小時車程回到首爾 — 明洞約 19:00，弘大約 19:30。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "這個冬日怎麼走",
+    "subtitle": "06:00 弘大 / 06:30 明洞出發，往東北行駛約 3 小時，上午稍晚抵達雪嶽山 — 此時積雪還乾淨，光線正打在花崗岩上。在束草附近用過午餐後，沿春川一線長途西返，抵達南怡島看覆霜的林蔭大道。最後一站魚飛溪谷位於加平南部，方向已經朝著首爾 — 你會在傍晚抵達，正好趕上溪谷照明亮起。約 19:00-19:30 回到首爾。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "1 月或 2 月來韓國、想看冬季景觀而不是市區一日的旅客",
+      "想拍花崗岩上的積雪、覆霜林蔭大道與藍調時刻冰壁的攝影愛好者",
+      "能接受漫長、寒冷、緊湊一天的情侶與小團體",
+      "想看看大多數首爾一日遊都不包含的東西的人"
+    ],
+    "lessIdealFor": [
+      "冬季以外時間出遊的人 — 溫暖月份根本不存在這面冰壁",
+      "怕冷的旅客，或需要不受天氣影響、保證能看到景點的人",
+      "希望盡量少走路的旅客 — 最後一站地面結冰，還有一段木棧道",
+      "幼童，以及在冬季路面上站不穩的人"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "節奏與地理",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "先去雪嶽山，趁積雪還乾淨",
+            "detail": "公園是全天最遠的一點，也是最受午後融雪與雲層影響的一點。先去那裡能用上最清澈的光線與最新鮮的積雪，而且長途車程發生在大家還不累的時候。"
+          },
+          {
+            "label": "南怡島排在中間，因為渡輪需要日照",
+            "detail": "南怡島在冬天的看點是覆霜的林蔭大道，那需要光線才值得渡江一趟。下午中段的時段能讓你在島上仍然明亮時過去，也趕在毫無遮蔽的渡輪甲板起風之前。"
+          },
+          {
+            "label": "魚飛排在最後，因為它已經在回程路上",
+            "detail": "魚飛溪谷位於加平南部的雪嶽面（Seorak-myeon），在這條路線上所有地點的首爾側。以它收尾不必繞回頭路，而深冬時抵達得晚，正好趕上木棧道沿線的夜間照明亮起。"
+          },
+          {
+            "label": "為一個短暫季節而生的路線",
+            "detail": "冰壁只在寒冷持續時存在 — 村子從 12 月中旬開始築，到 2 月就融掉。正是這一個限制，讓這條行程得以存在，也讓它一年裡其餘時間不運行。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送地點",
+      "preview": "首爾兩處接送點：**弘大入口站 8 號出口星巴克 06:00**（麻浦區），以及 **明洞站 2 號出口 North Face 旗艦店旁 06:30**（中區）。",
+      "content": [
+        "首爾兩處接送點：**弘大入口站 8 號出口星巴克 06:00**（麻浦區），以及 **明洞站 2 號出口 North Face 旗艦店旁 06:30**（中區）。",
+        "兩處接送共用同一輛遊覽車；請在所選地點提前 5 分鐘抵達。",
+        "返程下車順序相反：**明洞約 19:00**，**弘大入口約 19:30**。",
+        "你的實際行程長度取決於接送點：從弘大出發 ≈13.5 小時，從明洞出發 ≈12.5 小時。"
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "穿著與隨身物品",
+      "preview": "**防滑冬鞋** — 最重要的一件裝備。三站腳下都有冰。",
+      "content": [
+        "**防滑冬鞋** — 最重要的一件裝備。三站腳下都有冰。",
+        "真正保暖的多層衣物：雪嶽山預計 −5 °C 或更低，風寒明顯，魚飛則是黃昏時的低溫。",
+        "手套、帽子，以及能護住耳朵的東西。南怡島渡輪甲板毫無遮蔽。",
+        "支付魚飛村莊現場費用與午餐（₩10,000-15,000）的少量現金。",
+        "相機或智慧型手機，外加一顆備用電池 — 低溫耗電很快，而這是一條大家會拚命拍照的路線。"
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "天氣政策",
+      "preview": "這是冬季行程，天氣是產品的一部分，而不是它的例外。",
+      "content": [
+        "這是冬季行程，天氣是產品的一部分，而不是它的例外。",
+        "**魚飛冰壁不保證一定看得到。** 它由村民在最冷的幾週裡築起，一段暖天就會讓它縮小甚至消失。開放與否由村子自行決定。如果你出發那天冰壁無法觀賞，我們會在出發前告知，並提供改期或退還該部分費用。",
+        "**雪嶽山纜車同樣不保證運行。** 它的營運時間每天變動，遇強風或結冰即停駛。它不含在價格內，所以即使不運行也不會有損失。",
+        "大雪：遊覽車配備雪胎，行程通常照常進行，但返程可能多花一小時。極端降雪或道路封閉可能導致整趟取消 — 屆時全額退費。",
+        "惡劣天氣下南怡島渡輪可能停航；若發生，導遊會延長其他停留點的時間，並退還南怡島門票費用。"
+      ]
+    },
+    {
+      "id": "season-window",
+      "title": "本行程的運行期",
+      "preview": "這是 **僅限冬季** 的行程。它之所以存在，是因為魚飛溪谷的冰壁存在，而那是一處季節性的、由村莊築起的構造，不是常設景點。",
+      "content": [
+        "這是 **僅限冬季** 的行程。它之所以存在，是因為魚飛溪谷的冰壁存在，而那是一處季節性的、由村莊築起的構造，不是常設景點。",
+        "冰壁通常從 **12 月中旬** 溪谷的水凍實之後開始成形，在 **1 月與 2 月上旬** 最可靠。",
+        "季末時間逐年不同 — **2025-26 季於 2 月 19 日結束**。今冬的日期由村莊決定，並在預訂時確認。",
+        "在季節之外，同樣的雪嶽山與南怡島組合可全年參加我們的雪嶽山 + 南怡島 + 晨靜樹木園一日遊。"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "費用包含",
+      "preview": "首爾兩處接送點與相同的兩處下車點、暖氣遊覽車、持證英語導遊。",
+      "content": [
+        "首爾兩處接送點與相同的兩處下車點、暖氣遊覽車、持證英語導遊。",
+        "**雪嶽山國立公園入園 — 自 2023 年 5 月起免費，無須門票。**",
+        "**南怡島往返渡輪 + 南怡共和國簽證費（₩19,000）— 已包含。**",
+        "過路費與停車費 — 已包含。",
+        "**不包含：** 午餐與飲料（₩10,000-15,000，費用自理）、**雪嶽山纜車**（成人往返 ₩16,000，只能現場購票且視天氣而定）、**魚飛溪谷的村莊現場費用**（冰壁觀賞區此前約為每人 ₩1,000，雪橇設施另計）、南怡島腳踏車或電動接駁車租借，以及個人消費。",
+        "可應要求安排中文導遊 — 請至少提前 3 天預訂。"
+      ]
+    },
+    {
+      "id": "language",
+      "title": "語言",
+      "preview": "主要導覽語言：英語。",
+      "content": [
+        "主要導覽語言：英語。",
+        "提供中文導遊服務，需提前3天以上預約。",
+        "全日行程中菜單、指示牌及攤位互動均以韓語進行，由導遊負責翻譯。"
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "步行與地形",
+      "preview": "中等，而這裡的難度來自冰，而不是距離或坡度。",
+      "content": [
+        "中等，而這裡的難度來自冰，而不是距離或坡度。",
+        "雪嶽山：通往新興寺與統一大佛的鋪面與階梯溪谷步道，部分路段積雪濕滑。行程不安排登山，也不嘗試攻頂。",
+        "南怡島：平坦的鋪面林蔭大道，兩小時約 3 公里，隆冬時腳下結冰。",
+        "魚飛溪谷：一段短而大致平坦的木棧道通往觀賞區 — 但進出通道與周邊確實很滑。冰壁下方的地面對訪客封閉。",
+        "**三站都必須穿防滑冬鞋。** 一般球鞋在這條行程上不夠用。嬰兒推車與輪椅不適合魚飛。"
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "午餐（費用自理）",
+      "preview": "午餐約在 11:45，出公園後立刻在雪嶽山附近或束草一側用餐。",
+      "content": [
+        "午餐約在 11:45，出公園後立刻在雪嶽山附近或束草一側用餐。",
+        "東海岸的選擇：회덮밥（生魚片拌飯）、烤魚，或束草有名的 순두부찌개 嫩豆腐鍋。",
+        "預算約每人 ₩10,000-15,000；現金與信用卡通常都收。",
+        "這一站是緊湊的 50 分鐘 — 之後兩站都受時間限制。素食選擇有限，請在早上告訴導遊。"
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "取消政策",
+      "preview": "接送前24小時內可免費取消。",
+      "content": [
+        "接送前24小時內可免費取消。",
+        "出發前24小時內取消：退還50%費用。",
+        "未到場或錯過接送：不予退款——但請於接送時間10分鐘內聯繫AtoC Korea營運團隊，若巴士尚提前於排定時間，車輛或可短暫等候。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "請參閱季節備註"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "請參閱季節備註"
+    },
+    "_seasonalSummary": "Seoul + Gangwon: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April cherry blossoms) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "12 月中旬",
+      "description": "溪谷的水凍實之後，冰壁開始成形。季初它比較小，村子可能還在往上加。雪嶽山通常已經迎來第一場穩定的積雪。"
+    },
+    {
+      "season": "1 月",
+      "description": "明顯是最強的一個月。冰壁達到滿高，雪嶽山的積雪最可靠，南怡島的林蔭大道也結滿了霜。全年最冷的時候 — 請照此穿衣。"
+    },
+    {
+      "season": "2 月上旬",
+      "description": "多數年份仍然可靠，魚飛一站的日照也略長一些。要留意暖天，它會讓冰壁很快縮小。"
+    },
+    {
+      "season": "冬季之外",
+      "description": "本行程不運行。2 月下旬冰壁就沒了，魚飛回到夏季戲水溪谷的身分。冬季以外想去雪嶽山與南怡島，請看我們的雪嶽山 + 南怡島 + 晨靜樹木園一日遊。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "所有景點門票全數包含",
+      "description": "南怡島渡輪及晨靜樹木園門票已套票包含",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "南怡島渡輪（₩19,000）及晨靜樹木園（₩11,000）門票已預先納入行程費用——無需於各景點排隊購票。雪嶽山入場費現已全面免收（2023年5月廢除）。門票總節省金額：約₩30,000。"
+    },
+    {
+      "icon": "users",
+      "title": "持牌英語導遊",
+      "description": "韓國持牌導遊",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "導遊持韓國觀光公社認證執照，英語流利；中文導遊可提前預約安排。導遊講解內容涵蓋雪嶽山新羅時代的寺廟歷史、南怡島的《冬季戀歌》傳奇，以及晨靜樹木園創辦人的故事。"
+    },
+    {
+      "icon": "shield",
+      "title": "費用透明",
+      "description": "不含任何隱藏購物行程",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "沒有人蔘店、免稅店，也不繞路前往抽佣的紀念品店。13小時行程的每一分鐘都在景點參觀或途中移動——您預訂的，就是您實際體驗的。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "立即",
+      "title": "即時確認",
+      "detail": "預訂確認並選擇上車地點",
+      "description": "即時預訂確認，並可選擇弘益大學／明洞上車地點。"
+    },
+    {
+      "timing": "出發前一天",
+      "title": "接送詳情",
+      "detail": "透過 WhatsApp／簡訊提供確切上車地點及車輛資訊",
+      "description": "出發前一天傳送天氣預報、巴士車牌號碼，以及任何季節性路線說明（晨靜樹木園燈光節時間、雪嶽山紅葉高峰期等）。"
+    },
+    {
+      "timing": "出發當天早上",
+      "title": "上車確認",
+      "detail": "導遊於出發前10分鐘在上車地點完成身份確認",
+      "description": "導遊從05:50起於弘益大學8號出口星巴克等候；從06:20起於明洞2號出口（NorthFace）等候。導遊及巴士照片將於前一晚傳送至您的 WhatsApp。"
+    },
+    {
+      "timing": "行程進行中",
+      "title": "行程中支援",
+      "detail": "每個景點均有導遊現場講解，並提供全天候24/7運營支援",
+      "description": "導遊於現場講解雪嶽山西元652年新羅時代的建寺歷史、南怡島1944年清平水壩的起源及2002年《冬季戀歌》所留下的文化遺產，以及晨靜樹木園1992年的創立構想與1996年正式開園的歷程。"
+    },
+    {
+      "timing": "行程結束",
+      "title": "兩個下車地點",
+      "detail": "明洞約19:00／弘益大學約19:30",
+      "description": "返程巴士以相反順序依序在兩個上車地點下客。"
+    },
+    {
+      "timing": "行程結束後",
+      "title": "評價與後續跟進",
+      "detail": "可選填的行程後評價",
+      "description": "行程結束後將發送意見回饋邀請；關於您首爾剩餘行程的餐廳或景點推薦，當天即可獲得回覆。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "魚飛冰壁是天然的嗎？",
+      "answer": "不是 — 我們寧願事先告訴你，也不想讓你到了當天才發現。自 2023 年冬天起，佳日 2 里的村民在最冷的幾週裡把水噴灑在溪谷岩壁上，任其凍成一面據報導約 25 公尺高的冰面。你會在一些旅遊網站上看到它被描述成天然冰瀑，包括官方的英文頁面。那是錯的。它是村子築起來的景觀，由約三十位當地居民作為淡季創收專案營運，而我們認為這個故事比宣傳冊上的那個更好。"
+    },
+    {
+      "question": "冰壁有保證嗎？",
+      "answer": "沒有，任何保證它的行程都是在過度承諾。這面牆取決於持續的低溫，以及村子自己開不開放 — 一段暖天就會讓它縮小。如果你出發那天無法觀賞，我們會在你出遊前告知，並提供改期或退還該部分費用。1 月與 2 月上旬最可靠。"
+    },
+    {
+      "question": "這個行程到底什麼時候運行？",
+      "answer": "只在冬季。冰壁通常從 12 月中旬開始成形，2025-26 季則在 2 月 19 日結束。準確日期每年由築牆的村子決定，所以我們在預訂時確認運行期，而不是公布一份我們守不住的固定行事曆。"
+    },
+    {
+      "question": "包含雪嶽山纜車嗎？",
+      "answer": "不包含。權金城纜車成人往返 ₩16,000，只在現場售票，無法事先預訂。冬天它被排除在外這一點比平時更重要：營運時間每天變動，遇強風或結冰即停駛，所以這實在不是我們能承諾的事。公園入園本身免費，自 2023 年 5 月起就是如此。"
+    },
+    {
+      "question": "實際會有多冷？",
+      "answer": "冷到鞋子和衣物直接決定你這一天玩得開不開心。雪嶽山谷底預計約 −5 °C 至 +5 °C，風寒強烈，背陰處更冷。南怡島渡輪甲板毫無遮蔽。在魚飛，你是在黃昏時站著不動，緊挨著一面冰牆。請帶手套、帽子和護耳的東西。"
+    },
+    {
+      "question": "需要什麼鞋？",
+      "answer": "防滑的冬季鞋或靴子。這是我們唯一會堅持的一件裝備。三站腳下都有冰 — 雪嶽山的階梯溪谷步道、南怡島平坦的大道，以及魚飛的木棧道與進出通道。一般球鞋不夠用。我們不要求也不提供冰爪；步行距離很短，問題出在地面。"
+    },
+    {
+      "question": "需要走很多路嗎？",
+      "answer": "距離不多 — 難點是地面，而不是長度。雪嶽山只走入口附近的低處溪谷步道，不登山也不嘗試攻頂。南怡島是平地，走半環島的話兩小時約 3 公里。魚飛是一小段木棧道。但這些路面都結冰，所以請比距離本身預留更多時間與小心。"
+    },
+    {
+      "question": "適合兒童或年長旅客嗎？",
+      "answer": "不如我們其他一日遊合適，若這兩點中有一點很明顯，我們會建議你選別的。這是 06:00 出發、全天 13 小時的行程，處在深冬的嚴寒裡，每一站腳下都結冰。魚飛的木棧道不適合嬰兒推車或輪椅，冰壁下方的地面也已圍起。喜歡雪、穿得妥當的孩子沒問題；走路不穩的人不行。"
+    },
+    {
+      "question": "當天需要另外付費嗎？",
+      "answer": "需要，有兩類。午餐自理，約 ₩10,000-15,000。在魚飛，村子會收取少量現場費用 — 冰壁觀賞區此前約為每人 ₩1,000，雪橇另計。這些由當地設定，每年變動，所以請帶一點現金，導遊會在車上確認當天的金額。雪嶽山入園免費，南怡島渡輪與門票已經包含。"
+    },
+    {
+      "question": "為什麼這麼晚才到魚飛？",
+      "answer": "因為它的位置。魚飛溪谷位於加平南部，比雪嶽山或南怡島都更靠近首爾，所以排在最後意味著遊覽車已經朝著返家的方向，返程也就短。隆冬時 16:45 抵達，意味著你能看到最後一點日光落在冰上，然後木棧道的照明亮起，這是拍照的好時段 — 但也是整段停留最冷的時候，請按在戶外站著不動來穿衣。"
+    },
+    {
+      "question": "這和你們其他雪嶽山行程有什麼不同？",
+      "answer": "第三站和季節。我們全年運行的雪嶽山一日遊是公園搭配南怡島與晨靜樹木園 — 更溫和、以花園為主，任何天氣都能走。這一條把花園換成魚飛冰壁，只在冰壁存在期間運行。如果你在 1 月和 2 月之外來訪，全年那條才是你要的。"
+    },
+    {
+      "question": "如果下大雪怎麼辦？",
+      "answer": "通常行程照常 — 遊覽車在雪季配備雪胎，而且雪本來就是重點。返程預計會多花至多一小時。如果降雪嚴重到道路封閉，我們會取消當天出發並全額退費。我們寧願取消，也不願在不安全的條件下跑一趟 13 小時的山區行程。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "僅限冬季 — 選擇日期即可查看冰壁是否運行並完成預訂。",
+    "price": {
+      "amountLabel": "64",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 64
+    }
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "弘大入口站8號出口星巴克",
+      "address": "首爾市麻浦區楊花路（弘大入口站8號出口星巴克門前）",
+      "time": "06:00 接送 / 19:30 下車",
+      "instructions": "在弘大入口站 8 號出口正上方的星巴克店前與導遊會合。請尋找 AtoC Korea 的指示牌與排隊中的遊覽車。"
+    },
+    "alternates": [
+      {
+        "name": "明洞站2號出口（北面旗艦店）",
+        "address": "首爾市中區退溪路（明洞站2號出口北面旗艦店）",
+        "time": "06:30 接送 / 19:00 下車",
+        "instructions": "在明洞站 2 號出口上來的 North Face 旗艦店前與導遊會合。"
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "destination_region": "seoul_gangwon",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "large_coach",
+    "duration_hours": 13.5,
+    "region_tags": [
+      "seoul_mapo",
+      "seoul_jung",
+      "gangwon_sokcho",
+      "gyeonggi_gapyeong"
+    ],
+    "theme_tags": [
+      "national_park",
+      "mountain",
+      "buddhist_temple",
+      "k_drama_filming",
+      "themed_garden",
+      "hallyu_landmark"
+    ],
+    "poi_tags": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.6,
+    "scenic_level": 1,
+    "photo_level": 1,
+    "culture_level": 0.85,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.7,
+    "senior_fit": 0.5,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.85,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.5,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.2,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.3,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.5,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.1,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.25,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0.55,
+    "intangible_heritage_fit": 0.5,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": "high",
+    "comfort_level": 0.55,
+    "budget_fit": 1,
+    "premium_fit": 0.2,
+    "small_group_fit": 0.15,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "seoul_central",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "13h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited",
+        "wheelchair_required"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
+    "walking_notes": [
+      "13-hour day with ~4-5 km total walking.",
+      "Seoraksan paths rocky in places; Nami and Morning Calm flat.",
+      "Closed-toe shoes recommended.",
+      "Cable car at Seoraksan optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "nami island day trip",
+      "garden of morning calm tour",
+      "seoul winter wonder tour",
+      "seoraksan nami one day"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan day tour",
+      "korea three signature stops day trip",
+      "seoul winter sonata tour"
+    ],
+    "seasonality": "winter_only",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.2,
+    "fixed_itinerary_fit": 1,
+    "national_park_fit": 1,
+    "buddhist_temple_fit": 0.6,
+    "k_drama_filming_fit": 1,
+    "winter_sonata_fit": 1,
+    "themed_garden_fit": 0,
+    "history_culture_fit": 0.65,
+    "religious_history_fit": 0.45,
+    "premium_dining_fit": 0.15,
+    "seasonal_fit": 1,
+    "winter_lighting_festival_fit": 0,
+    "autumn_foliage_fit": 0,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 1,
+    "us_market_fit": 0.95,
+    "europe_market_fit": 0.95,
+    "australia_market_fit": 0.95,
+    "japan_market_fit": 1,
+    "first_time_korea_fit": 1,
+    "seoul_day_trip_fit": 1,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "winter",
+      "seasonal",
+      "seoul_day_trip",
+      "national_park",
+      "ice_wall",
+      "k_drama_filming"
+    ],
+    "secondary_themes": [
+      "frozen_waterfall",
+      "snow_scenery",
+      "winter_sonata",
+      "metasequoia_lane",
+      "photo_spots",
+      "first_time_korea"
+    ],
+    "best_for": [
+      "winter_travelers",
+      "photo_lovers",
+      "couples",
+      "first_time_korea",
+      "snow_seekers"
+    ],
+    "not_recommended_for": [
+      "travelers_sensitive_to_cold",
+      "minimal_walking_seekers",
+      "visitors_outside_dec_to_feb"
+    ],
+    "anchor_pois": [
+      "Seoraksan National Park",
+      "Nami Island",
+      "Eobi Ice Valley"
+    ],
+    "anchor_poi_keys": [
+      "seoraksan_national_park",
+      "nami_island",
+      "eobi_ice_valley"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+      "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "Seoraksan is Korea's first UNESCO Biosphere Reserve (1982) and a UNESCO World Heritage tentative site, but no stop on this route is an inscribed World Heritage property."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New seasonal product (owner instruction 2026-08-04). Winter-only Seoraksan + Nami Island + Eobi Ice Valley coach day tour, running roughly 20 Dec – 28 Feb. Donor seoul-seoraksan-nami-island-morning-calm-day-tour supplied the KB-verified Seoraksan and Nami Island stop bodies plus the two-point Seoul pickup and Seoul-region UI blocks. Eobi Ice Valley, pickup, lunch, return and all product-level copy authored fresh in 6 locales (scripts/seoul-winter-eobi-content/) with de/fr/it/ru staged. Eobi Ice Valley ships without photos — no owned imagery yet. matching_profile derived from the donor with seasonality forced to winter_only and the garden/foliage axes zeroed."
+    }
+  },
+  "page_sections": []
+}
