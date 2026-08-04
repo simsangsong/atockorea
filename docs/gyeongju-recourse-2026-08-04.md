@@ -99,6 +99,10 @@
   (황남빵의 고향이 황남동 = 황리단길이 지나는 그 동네다).
 - **가격** — 하루가 1시간 늘었는데 USD 39 그대로. 조정 여부 사장님 결정.
 - **재오픈** — §4.
-- **DB 적용** — `supabase/pending-db-apply/2026-08-04-04-*.sql`, DB 접근 세션에서.
+- ~~**DB 적용**~~ — ✅ **2026-08-04 적용 완료** (`applied/2026-08-04-07-gyeongju-recourse.sql`)
+  + `import-match-v18 --single from-busan-gyeongju-ancient-capital-day-tour`.
+  적용 전후 대조로 **가시성 무변경**을 확인했다: `tours.is_active=false` ·
+  `is_featured=false` · `price=39.00` · 6로케일 전부 `is_published=false`.
+  즉 새 코스는 DB 에 들어갔지만 상품은 여전히 안 팔린다 — 의도한 대로다(§4).
 - **POI KB** — `hwangnidan_gil`·`donggung_wolji_pond`는 아직 `data/poi_kb/` 항목이 없다.
   스톱의 `_poi_meta`에 검증 출처를 남겨 뒀으니, 다음 KB 배치에서 정식 편입하면 된다.

@@ -38,6 +38,13 @@ const en = bundle("en");
 
 const q = (s) => `'${String(s).replace(/'/g, "''")}'`;
 const jsonb = (v) => `${q(JSON.stringify(v))}::jsonb`;
+// tour_product_pages.badges is text[] — only tours.badges is jsonb. Feeding a
+// JSON array into it fails the whole transaction with "column badges is of type
+// text[] but expression is of type jsonb". This bit the 2026-06-24 batch and then
+// bit the 2026-08-04 batch again because only the applied SQL was patched, never
+// the generator. Gate: __tests__/audit/pendingSqlColumnTypes.test.ts.
+const textArray = (v) =>
+  Array.isArray(v) && v.length ? `ARRAY[${v.map(q).join(", ")}]::text[]` : `${q("{}")}::text[]`;
 const num = (v) => (v === null || v === undefined ? "NULL" : Number(v));
 
 const PRICE_USD = Number(en.price.salePriceUsd);
@@ -128,7 +135,7 @@ for (const loc of LOCALES) {
   out += `  region_label = ${q(lcc.region || "")},\n`;
   out += `  duration_label = ${q(lcc.duration || "")},\n`;
   out += `  stops_count = ${num(lcc.stopsCount || 8)},\n`;
-  out += `  badges = ${jsonb(lcc.badges || [])},\n`;
+  out += `  badges = ${textArray(lcc.badges || [])},\n`;
   out += `  hero_image_url = ${q(b.hero?.imageUrl || lcc.heroImage || "")},\n`;
   out += `  thumbnail_url = ${q(lcc.thumbnail || lcc.heroImage || "")},\n`;
   out += `  card_short_description = ${q(lcc.shortCardDescription || "")},\n`;
