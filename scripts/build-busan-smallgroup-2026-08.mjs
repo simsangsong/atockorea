@@ -23,6 +23,52 @@ const DONOR = "busan-top-attractions-day-tour";
 const OUT_DIR = path.join(ROOT, "components/product-tour-static", SLUG);
 const CONTENT_DIR = path.join(__dirname, "busan-smallgroup-content");
 const LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"];
+// Staged locales (owner instruction 2026-08-04: "10-locale full translation").
+// These bundles are NOT registered in the 6-locale product registries — the
+// detail page narrows de/fr/it/ru to EN by design (i18n expansion track's
+// human gate). They exist as staged translations: catalog build picks them up
+// and the DB rows are staged INSERT-only in 2026-08-04-04 SQL, so the pages
+// are ready the day the fallback gate opens. Donor pieces come from
+// scripts/busan-smallgroup-content/donor-overlay/<loc>.json (translated from
+// donor-overlay/en.json, which carries the already-patched pickup text).
+const EXT_LOCALES = ["de", "fr", "it", "ru"];
+const OVERLAY_DIR = path.join(CONTENT_DIR, "donor-overlay");
+
+// Pickup & drop-off accordion for staged locales (donor's three factual lines).
+const EXT_PICKUP_ACCORDION = {
+  de: {
+    title: "Abholung & Rückgabe",
+    content: [
+      "Drei Abholpunkte entlang der U-Bahn Busan: Seomyeon Station Ausgang 4 (08:30), Bahnhof Busan Ausgang 4 — nicht das KTX-Gate (08:50), Haeundae Station Ausgang 5 (09:30).",
+      "Ausstiege in Reihenfolge: Nampo-dong/Jagalchi ≈17:50, Bahnhof Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
+      "Ihre effektive Tourdauer hängt vom Abholpunkt ab: Seomyeon ≈10 Std., Haeundae ≈9,5 Std.",
+    ],
+  },
+  fr: {
+    title: "Prise en charge & dépose",
+    content: [
+      "Trois points de prise en charge le long du métro de Busan : station Seomyeon sortie 4 (08:30), gare de Busan sortie 4 — pas le portillon KTX (08:50), station Haeundae sortie 5 (09:30).",
+      "Déposes dans l'ordre : Nampo-dong/Jagalchi ≈17:50, gare de Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
+      "La durée effective du circuit dépend du point de prise en charge : Seomyeon ≈10 h, Haeundae ≈9,5 h.",
+    ],
+  },
+  it: {
+    title: "Prelievo e rientro",
+    content: [
+      "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+      "Discese in sequenza: Nampo-dong/Jagalchi ≈17:50, stazione di Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
+      "La durata effettiva del tour dipende dal punto di prelievo: Seomyeon ≈10 h, Haeundae ≈9,5 h.",
+    ],
+  },
+  ru: {
+    title: "Посадка и высадка",
+    content: [
+      "Три точки посадки вдоль метро Пусана: станция Сомён, выход 4 (08:30), вокзал Пусана, выход 4 — не турникеты KTX (08:50), станция Хэундэ, выход 5 (09:30).",
+      "Высадка по порядку: Нампхо-дон/Чагальчхи ≈17:50, вокзал Пусана ≈18:10, Сомён ≈18:30, Хэундэ ≈19:00.",
+      "Фактическая длительность тура зависит от точки посадки: Сомён ≈10 ч, Хэундэ ≈9,5 ч.",
+    ],
+  },
+};
 
 const HERO_IMG = "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp";
 const SKYCAP_IMAGES = [
@@ -172,11 +218,31 @@ function clone(v) {
   return JSON.parse(JSON.stringify(v));
 }
 
+const STOP_TEXT_FIELDS = [
+  "name", "category", "duration", "description", "highlights",
+  "timeUsed", "whyOnRoute", "visitBasics", "convenience", "smartNotes",
+];
+
+function applyOverlayStop(stop, overlayStop, ctx) {
+  for (const k of STOP_TEXT_FIELDS) {
+    if (k in overlayStop) stop[k] = clone(overlayStop[k]);
+    else if (k in stop && stop[k] !== undefined) {
+      throw new Error(`${ctx}: overlay missing translated field "${k}"`);
+    }
+  }
+}
+
 function build(loc) {
+  const isExt = EXT_LOCALES.includes(loc);
+  // Staged locales build on the EN donor + translated overlay.
+  const donorLoc = isExt ? "en" : loc;
   const donor = JSON.parse(
-    readFileSync(path.join(ROOT, "components/product-tour-static", DONOR, `${DONOR}.${loc}.json`), "utf8"),
+    readFileSync(path.join(ROOT, "components/product-tour-static", DONOR, `${DONOR}.${donorLoc}.json`), "utf8"),
   );
   const c = JSON.parse(readFileSync(path.join(CONTENT_DIR, `${loc}.json`), "utf8"));
+  const overlay = isExt
+    ? JSON.parse(readFileSync(path.join(OVERLAY_DIR, `${loc}.json`), "utf8"))
+    : null;
 
   if (donor.itineraryStops.length !== 7) throw new Error(`[${loc}] donor stops != 7`);
 
@@ -184,15 +250,20 @@ function build(loc) {
   const sPickup = clone(donor.itineraryStops[0]);
   sPickup.number = 1;
   sPickup.time = TIMES.pickup;
-  const [pFrom, pTo] = PICKUP_DESC_PATCH[loc];
-  if (!sPickup.description.includes(pFrom)) {
-    throw new Error(`[${loc}] pickup desc patch source not found`);
+  if (isExt) {
+    applyOverlayStop(sPickup, overlay.pickupStop, `[${loc}] pickupStop`);
+  } else {
+    const [pFrom, pTo] = PICKUP_DESC_PATCH[loc];
+    if (!sPickup.description.includes(pFrom)) {
+      throw new Error(`[${loc}] pickup desc patch source not found`);
+    }
+    sPickup.description = sPickup.description.split(pFrom).join(pTo);
   }
-  sPickup.description = sPickup.description.split(pFrom).join(pTo);
 
   const sYong = clone(donor.itineraryStops[1]);
   sYong.number = 2;
   sYong.time = TIMES.yonggungsa;
+  if (isExt) applyOverlayStop(sYong, overlay.yonggungsaStop, `[${loc}] yonggungsaStop`);
   sYong.whyOnRoute = c.yonggungsaWhy;
 
   const sDaritdol = authoredStop(c.daritdol, 3, TIMES.daritdol, {
@@ -231,6 +302,7 @@ function build(loc) {
   const sGamcheon = clone(donor.itineraryStops[5]);
   sGamcheon.number = 6;
   sGamcheon.time = TIMES.gamcheon;
+  if (isExt) applyOverlayStop(sGamcheon, overlay.gamcheonStop, `[${loc}] gamcheonStop`);
   sGamcheon.duration = "90 min";
   sGamcheon.whyOnRoute = c.gamcheonWhy;
 
@@ -258,20 +330,24 @@ function build(loc) {
   // ---- route flow ----------------------------------------------------------
   const f = donor.routeFlowStops;
   if (f.length !== 7) throw new Error(`[${loc}] donor flow != 7`);
+  const flowName = (idx, key) =>
+    isExt ? overlay.flowNames[key] : clone(f[idx]).name;
   const routeFlowStops = [
-    clone(f[0]), // origin (pickup)
-    clone(f[1]), // yonggungsa
+    { ...clone(f[0]), name: flowName(0, "pickup") }, // origin
+    { ...clone(f[1]), name: flowName(1, "yonggungsa") },
     { name: c.daritdol.name, ...FLOW_NEW.daritdol },
     { name: c.skycapsule.name, ...FLOW_NEW.skycapsule },
-    clone(f[3]), // lunch
-    clone(f[5]), // gamcheon
+    { ...clone(f[3]), name: flowName(3, "lunch") },
+    { ...clone(f[5]), name: flowName(5, "gamcheon") },
     { name: c.dakbatgol.name, ...FLOW_NEW.dakbatgol },
     { name: c.dropoff.name, type: "return", theme: "Return" },
   ];
 
   // ---- price / cards -------------------------------------------------------
   const price = { amountLabel: "59", currency: "USD", per: "person", salePriceUsd: 59 };
-  const heroStops = String(donor.hero?.meta?.stops ?? "8 stops").replace(/\d+/, "8");
+  const heroStops = isExt
+    ? overlay.heroStopsLabel
+    : String(donor.hero?.meta?.stops ?? "8 stops").replace(/\d+/, "8");
 
   const catalog_card = {
     slug: SLUG,
@@ -304,7 +380,7 @@ function build(loc) {
     imagePosition: "center 40%",
     images: [HERO_IMG],
     tagline: c.heroTagline,
-    pills: clone(donor.hero?.pills || []),
+    pills: clone(isExt ? overlay.heroPills : donor.hero?.pills || []),
     meta: {
       duration: c.heroDuration,
       region: c.region,
@@ -316,7 +392,18 @@ function build(loc) {
 
   // ---- practical accordion -------------------------------------------------
   const practicalAccordionItems = [];
-  for (const item of donor.practicalAccordionItems) {
+  const practicalSource = isExt
+    ? donor.practicalAccordionItems.map((item) => {
+        if (item.id === "pickup") {
+          const t = EXT_PICKUP_ACCORDION[loc];
+          return { id: "pickup", title: t.title, preview: t.content[0], content: t.content };
+        }
+        const tr = overlay.practicalItems[item.id];
+        if (tr) return { ...clone(item), ...clone(tr) };
+        return clone(item); // inclusions/walking replaced below from content spec
+      })
+    : donor.practicalAccordionItems;
+  for (const item of practicalSource) {
     if (item.id === "inclusions") {
       const it = clone(item);
       it.content = c.practical.inclusionsContent;
@@ -378,8 +465,8 @@ function build(loc) {
     headlineLine2: c.headlineLine2,
     price,
     hero,
-    subnavItems: clone(donor.subnavItems),
-    glanceItems: clone(donor.glanceItems),
+    subnavItems: clone(isExt ? overlay.subnavItems : donor.subnavItems),
+    glanceItems: clone(isExt ? overlay.glanceItems : donor.glanceItems),
     galleryItems,
     itineraryStops: stops,
     routeFlowStops,
@@ -399,15 +486,15 @@ function build(loc) {
       ],
     },
     practicalAccordionItems,
-    practicalWeatherStatic: clone(donor.practicalWeatherStatic),
+    practicalWeatherStatic: clone(isExt ? overlay.practicalWeatherStatic : donor.practicalWeatherStatic),
     seasonalVariations: c.seasonalVariations,
-    bookingTrustItems: clone(donor.bookingTrustItems),
-    bookingSupportSteps: clone(donor.bookingSupportSteps),
+    bookingTrustItems: clone(isExt ? overlay.bookingTrustItems : donor.bookingTrustItems),
+    bookingSupportSteps: clone(isExt ? overlay.bookingSupportSteps : donor.bookingSupportSteps),
     staticQuestions: c.staticQuestions,
     guestReviews: [],
-    reviewsSummary: clone(donor.reviewsSummary),
+    reviewsSummary: clone(isExt ? overlay.reviewsSummary : donor.reviewsSummary),
     sticky_booking_bar: {
-      note: donor.sticky_booking_bar?.note || "",
+      note: isExt ? overlay.stickyNote : donor.sticky_booking_bar?.note || "",
       price: clone(price),
     },
     pickup_dropoff,
@@ -447,5 +534,13 @@ function build(loc) {
   console.log(`✓ ${loc} (${(JSON.stringify(doc).length / 1024).toFixed(0)} KB)`);
 }
 
+import { existsSync } from "node:fs";
 for (const loc of LOCALES) build(loc);
+for (const loc of EXT_LOCALES) {
+  if (existsSync(path.join(OVERLAY_DIR, `${loc}.json`)) && existsSync(path.join(CONTENT_DIR, `${loc}.json`))) {
+    build(loc);
+  } else {
+    console.log(`· skip ${loc} (translations not present yet)`);
+  }
+}
 console.log("done");
