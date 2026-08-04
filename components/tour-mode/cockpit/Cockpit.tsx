@@ -1262,11 +1262,18 @@ export default function Cockpit({
   }, [arrItem, arrBusy, arrNoMeeting, arrTime, arrCoords, arrFollow, arrTicket, arrNote, bookingId, session, say]);
 
   // ── background push (hear guests while out in a nav app) ────────────────
-  const enablePush = useCallback(async () => {
+  // `manual` = the driver tapped the bell. A tapped failure must SAY so —
+  // silence here read as "the button does nothing" (owner report 2026-08-04).
+  // The mount-time re-subscribe stays quiet: an uninvited toast on entry is
+  // noise about something the driver didn't just do.
+  const enablePush = useCallback(async (manual = false) => {
     if (!pushSupported()) return;
     try {
       const permission = await Notification.requestPermission();
-      if (permission !== 'granted') return;
+      if (permission !== 'granted') {
+        if (manual) say('브라우저에서 알림이 차단돼 있어요 — 설정에서 허용해 주세요');
+        return;
+      }
       const registration = await navigator.serviceWorker.ready;
       const subscription = await registration.pushManager.subscribe({
         userVisibleOnly: true,
@@ -1277,11 +1284,16 @@ export default function Cockpit({
         headers: { 'Content-Type': 'application/json', 'x-tour-room-auth': session },
         body: JSON.stringify({ subscription: subscription.toJSON() }),
       });
-      if (res.ok) setPushOn(true);
+      if (res.ok) {
+        setPushOn(true);
+        return;
+      }
+      if (manual) say('알림을 켜지 못했어요 — 잠시 후 다시 눌러주세요');
     } catch {
       /* stays off; the button remains for a retry */
+      if (manual) say('알림을 켜지 못했어요 — 잠시 후 다시 눌러주세요');
     }
-  }, [bookingId, session]);
+  }, [bookingId, session, say]);
 
   // Silent re-subscribe when permission was already granted on this device.
   useEffect(() => {
@@ -1830,7 +1842,7 @@ export default function Cockpit({
         {pushSupported() ? (
           <button
             type="button"
-            onClick={() => void enablePush()}
+            onClick={() => void enablePush(true)}
             disabled={pushOn}
             aria-label={pushOn ? '알림 켜짐' : '알림 켜기'}
             /* The signature accent is reclaimed: it was making a secondary

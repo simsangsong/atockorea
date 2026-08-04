@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requestGate } from '@/lib/durable-rate-limit';
 import { resolveRoomActor } from '@/lib/tour-room/access';
+import { isAllowedPushEndpoint } from '@/lib/push-endpoint';
 
 export const dynamic = 'force-dynamic';
 
@@ -61,6 +62,12 @@ export async function POST(
     const auth = typeof body.subscription?.keys?.auth === 'string' ? body.subscription.keys.auth : '';
     if (!endpoint || !p256dh || !auth) {
       return NextResponse.json({ error: 'subscription {endpoint, keys.p256dh, keys.auth} required' }, { status: 400 });
+    }
+    // Stored-SSRF guard, same as the ops route: this endpoint is a URL the
+    // server will later POST to. The guest door stored it unchecked until
+    // 2026-08-04 — same table, same send path, different doors.
+    if (!isAllowedPushEndpoint(endpoint)) {
+      return NextResponse.json({ error: 'Unsupported push endpoint' }, { status: 400 });
     }
 
     // The endpoint is the device identity — re-subscribing replaces the row.
