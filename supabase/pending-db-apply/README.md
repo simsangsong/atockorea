@@ -4,6 +4,28 @@ SQL changes staged here for a later session with DB access to batch-apply to the
 live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 `tour_product_offers`).
 
+> **🔴 2026-08-04 — the sequential numbering broke down. Do not try to repair it.**
+> Four sessions staged work on the same date in parallel, and each picked the
+> next free number from the tree it could see. The result: **three files numbered
+> `10`** (seoul-gapyeong, busan-cruise-listing-alignment, gyeongju-reopen) and
+> **two numbered `11`** (seoul-gapyeong-staged, busan-cruise-course). The Seoul
+> pair was renumbered twice chasing this — 05→08→10 — and still collided.
+>
+> This is harmless *now* because every one of them is in `applied/`, so filename
+> order no longer decides anything. Renumbering archived files would only break
+> the record of what actually ran. **Leave them.**
+>
+> The lesson for the next batch: a date-plus-counter filename is not a
+> reservation. If ordering between two staged files matters, say so in a comment
+> inside the file (as `08` does about `07`) rather than trusting the number, and
+> re-check the number immediately before committing, not when you start.
+>
+> **✅ 2026-08-04 — the whole 2026-08-04 batch (01–13) is applied to prod.**
+> 10–13 are the two Seoul-departure products (see
+> `docs/NEXT-SESSION-SEOUL-GAPYEONG-WINTER-2026-08-04.md`); the winter one is
+> live in the DB but `tours.is_active = false` until the village confirms its
+> 2026-27 season.
+>
 > **✅ 2026-08-04 — the whole 2026-08-04 batch (01–09) is applied to prod.**
 > Files 01–07 were applied by one session; 08 and 09 by another later the same
 > day. All nine are in `applied/`. Verified against the live DB, not assumed:
