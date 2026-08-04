@@ -3,7 +3,25 @@
 import { useState } from "react";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { splitInlineBold } from "@/lib/tour-product/inline-markdown";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
+
+/** Answers are authored with `**bold**` like the rest of the tour copy. */
+function FaqAnswer({ text, className }: { text: string; className: string }) {
+  return (
+    <p className={className}>
+      {splitInlineBold(text).map((seg, i) =>
+        seg.bold ? (
+          <strong key={i} className="font-semibold text-foreground">
+            {seg.text}
+          </strong>
+        ) : (
+          <span key={i}>{seg.text}</span>
+        ),
+      )}
+    </p>
+  );
+}
 
 export type TourFaqSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "staticQuestions" | "sectionUi">;
 
@@ -43,7 +61,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
             <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
-                  <p className="text-sm text-muted-foreground leading-[1.7]">{q.answer}</p>
+                  <FaqAnswer text={q.answer} className="text-sm text-muted-foreground leading-[1.7]" />
                 </div>
               </div>
             </div>
@@ -85,7 +103,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                 <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                   <div className="overflow-hidden">
                     <div className="px-4 pb-4">
-                      <p className="text-sm text-muted-foreground leading-relaxed">{q.answer}</p>
+                      <FaqAnswer text={q.answer} className="text-sm text-muted-foreground leading-relaxed" />
                     </div>
                   </div>
                 </div>

@@ -6,6 +6,7 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { useForecast } from "@/components/product-tour-static/_shared/useForecast";
+import { splitInlineBold, stripInlineBold } from "@/lib/tour-product/inline-markdown";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -80,7 +81,32 @@ function splitTimeSequences(line: string): string[] {
 const INLINE_HIGHLIGHT_RE =
   /(₩[\d,]+(?:\s*[-–~]\s*₩?[\d,]+)?|\b\d{1,2}:\d{2}\b|\b\d+(?:\.\d+)?\s*h\b|\d+(?:\.\d+)?\s*(?:시간|분|hours?|min(?:utes?)?)\b|≈|~)/g;
 
+/**
+ * Authored `**bold**` → `<strong>`, then the automatic token pass on what is
+ * left.
+ *
+ * 🔴 Order matters and the absence of this step is what shipped: the token
+ * scan below only knows about times, prices and durations, so an author's
+ * markers were never consumed and reached the guest as literal asterisks —
+ * "This tour departs **on Mondays, Thursdays and Saturdays only**". The stop
+ * descriptions never showed the bug because `TourStopDetailDrawer` has always
+ * parsed the markers before rendering; this path simply never learned to.
+ * The inner text still goes through the token pass so a bolded price keeps its
+ * tabular figures.
+ */
 function renderInline(text: string): React.ReactNode[] {
+  return splitInlineBold(text).map((seg, i) =>
+    seg.bold ? (
+      <strong key={i} className="font-semibold text-slate-900">
+        {renderAutoHighlight(seg.text)}
+      </strong>
+    ) : (
+      <Fragment key={i}>{renderAutoHighlight(seg.text)}</Fragment>
+    ),
+  );
+}
+
+function renderAutoHighlight(text: string): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let lastIdx = 0;
   let key = 0;
@@ -428,7 +454,10 @@ export function TourPracticalDetails({
                     {item.title}
                   </h3>
                   <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
-                    {item.preview}
+                    {/* One truncated line under a collapsed heading — there is
+                        no room for emphasis here, so the markers only ever read
+                        as stray asterisks. */}
+                    {stripInlineBold(item.preview)}
                   </p>
                 </div>
                 <div

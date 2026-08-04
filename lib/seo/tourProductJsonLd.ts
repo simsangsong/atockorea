@@ -17,6 +17,7 @@
 
 import type { TourProductDetailViewModel } from "@/components/product-tour-static/_shared/tourProductFullPageJsonTypes";
 import { getStaticTourProductBySlug } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { stripInlineBold } from "@/lib/tour-product/inline-markdown";
 
 /**
  * Every tour's booking flow offers a guide in English, Chinese, or Korean
@@ -253,10 +254,14 @@ export function buildTourProductJsonLd(vm: ViewModelLike, slug: string): unknown
     blocks.push({
       "@context": "https://schema.org",
       "@type": "FAQPage",
+      // Structured data is plain text — a search result cannot render emphasis,
+      // so the authored `**bold**` markers would surface as asterisks in the
+      // rich result itself. Strip them here rather than in the source, which
+      // the page renderers legitimately read as markup.
       mainEntity: faqs.map((q) => ({
         "@type": "Question",
-        name: q.question,
-        acceptedAnswer: { "@type": "Answer", text: q.answer },
+        name: stripInlineBold(q.question),
+        acceptedAnswer: { "@type": "Answer", text: stripInlineBold(q.answer) },
       })),
     });
   }
