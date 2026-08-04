@@ -9,7 +9,12 @@
 
 1. **아래 §1·§2·§6 의 상당수는 이미 해결됐다.** 남아 있는 건 역사 기록이다.
    실제 잔여는 이 블록과 §9 뿐이다.
-2. **겨울 상품은 `is_active=false` 로 들어가 있다.** 데이터·페이지·offer 전부 라이브 DB 에
+2. **겨울 상품은 판매 중지 상태다 — `is_active=false` **그리고**
+   `CONSUMER_BLOCKED_TOUR_SLUGS`, 두 쪽 다.**
+   🔴 프로덕션 실측이 제 첫 가정을 반증했다: `is_active=false` 만으로는 `/api/tours`(17건)에서만
+   빠지고 **`/tours/list` 에는 카드 링크가 그대로 있었다**(같은 방식으로 재본 블록리스트 상품은 `href=false`).
+   카드를 떼는 건 블록리스트다. 상품 페이지 자체는 어느 쪽으로도 렌더된다 — 그것까지 숨기려면
+   번들 등록을 빼야 하고 그런 페이지는 404 가 된다(사장님 결정감). 데이터·페이지·offer 전부 라이브 DB 에
    있지만 팔리지 않는다. 이유: 상품 자신의 운영 노트가 "do not open year-round sales" 인데
    **`matching_profile.seasonality`(=`winter_only`)를 읽는 코드가 앱 어디에도 없다**(2026-08-04 확인).
    즉 시즌은 판매를 막지 못한다. 추천 엔진만 `match_tours.available_months=[12,1,2]` 로 막는다.

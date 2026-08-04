@@ -146,6 +146,31 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // 🔴 Re-opened at the UNCHANGED price: USD 39 (compare-at 50) for what is now
   // an 11.5-hour day ending ≈19:50 — it was 10.5 hours when that price was set.
   // Repricing was not part of the re-open instruction; flagged, not assumed.
+  // ── Winter/Eobi booking closed 2026-08-04 until the village confirms its season
+  // seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Its own ops note says
+  // "do not open year-round sales", and nothing in the app reads
+  // matching_profile.seasonality — the field has no consumer, so being a
+  // winter_only product stops nothing by itself.
+  //
+  // 🔴 is_active=false was NOT enough, which is why this line exists. Measured on
+  //    prod 2026-08-04, comparing three slugs on /tours/list the same way:
+  //      winter, is_active=false, not yet listed here → card href PRESENT
+  //      gapyeong, fully active                       → card href PRESENT
+  //      seoul-seoraksan-nami-island-…, on this list  → card href ABSENT
+  //    So the DB flag keeps a product out of /api/tours (17 entries, winter not
+  //    among them) but leaves its card on the catalogue page. This list is what
+  //    removes the card. The product page itself still renders either way —
+  //    hiding that too would mean unregistering the bundle, which 404s the page
+  //    via assertRegisteredConsumerSlug, and that is the owner's call, not a
+  //    side effect of holding sales.
+  //
+  // Re-open = remove this line AND re-run
+  //   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs \
+  //     --only seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour --update-staged
+  // without --inactive. Both halves are needed, same as Gyeongju above. The
+  // trigger is the village (가일2리 자치회, 031-585-3551) confirming the 2026-27
+  // dates; the 2025-26 season ran 20 Dec – 19 Feb.
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",

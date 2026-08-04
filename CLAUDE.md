@@ -11,11 +11,14 @@
 10로케일 번들 20개 · 등록 5곳 · **DB 적용 완료**(SQL 은 10~13 으로 재번호 후 `applied/` 이동).
 빌더 `scripts/build-seoul-{gapyeong,winter-eobi}-2026-08.mjs` · 검증 `scripts/qa-seoul-new-products-2026-08.mjs`.
 
-🔴 **겨울 상품은 `is_active=false` 로 들어가 있다 — 아직 안 팔린다.** 데이터·페이지·offer 는 전부 라이브다.
-이유: 상품 자신의 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
-읽는 코드가 앱에 없다**(2026-08-04 확인 — 전형적인 "선언만 되고 안 읽힘"). 시즌을 막는 건 추천 엔진의
-`match_tours.available_months=[12,1,2]` 뿐이고 상품 페이지·결제는 안 막는다. 오픈 = 마을 확인(031-585-3551) 후
-`apply-seoul-new-products-2026-08.mjs` 를 `--inactive` 없이 재실행.
+🔴 **겨울 상품은 판매 중지 상태다** — `is_active=false` **+ `CONSUMER_BLOCKED_TOUR_SLUGS`**, 두 쪽 다.
+이유: 상품 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
+읽는 코드가 앱에 없다**(전형적인 "선언만 되고 안 읽힘"). 시즌을 보는 건 추천 엔진의
+`match_tours.available_months=[12,1,2]` 뿐이다.
+🔴 **그리고 `is_active=false` 만으로는 카탈로그에서 안 사라진다** — 프로덕션 실측(2026-08-04):
+`/api/tours` 17건에서는 빠졌지만 **`/tours/list` 에 카드 링크가 그대로 있었다.**
+같은 방식으로 재본 블록리스트 상품은 `href=false` — **카드를 떼는 건 블록리스트다.**
+오픈 = 마을 확인(031-585-3551) 후 **블록리스트 한 줄 제거 + `--inactive` 없이 재적용**, 두 쪽이 한 세트.
 
 🔴 **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돈다**(`psql`·`SUPABASE_DB_URL` 둘 다 없음).
 대체 경로 = **`scripts/apply-seoul-new-products-2026-08.mjs`**(supabase-js). 행 매핑은
