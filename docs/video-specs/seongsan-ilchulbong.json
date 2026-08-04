@@ -56,8 +56,7 @@
     "1x 예산 재배분: 몽타주가 예산의 주인 — 돌하르방(06t)·동벽(18)·우도 접근(57)은 1.2x 강등. 해무 그레이드·비네트 PI/12 근거는 v1 노트 유지.",
     "프리즈 4곳(02r·05f·07f·09f) 좌표는 렌더 스틸에서 재조준 예정(자리표시자). 05f는 팬 피크(2.9) 회피해 5.3(직원 손 흔드는 프레임).",
     "클레임 원천 = match_pois(seongsan_ilchulbong) + 사장님 그라운드트루스(해녀쇼 14:00 1회·화장실 위치).",
-    "2026-08-01 사장님: 화살표 폐지 — 중요 포인트는 용궁사 12지신상·달라이라마상처럼 \"정지 + 타이포 라벨\"로만. arrow 비트는 화살표 없이 프리즈+셸 타이포로 남는다.",
-    "2026-08-04 표준화 재단(만장굴 문법 v1, 사장님 지시 「이 느낌을 표준으로」): >2x 트랜짓 전부를 2x 슬라이스(비트당 화면 ≤4.5s)+중간 0.8s 디졸브로 재단 — 화면 시간 보존이라 러닝타임·1x 비율·챕터 간격 불변. 슬라이스 in/out 은 원본 비트 양 끝에 고정해 이웃 접합 유지, 중간 슬라이스 위치는 등간격(소스 미열람 — 🔴 PC 세션에서 실렌더로 중간 슬라이스 내용 검수 필수). 폴라로이드 「정지+피사체 전체」 프레임 검수도 PC 세션 몫(표준 §3). 속도만 2x 로 낮추면 러닝타임이 폭증하므로 '잘라서 느리게'가 이 재단의 본질이다."
+    "2026-08-01 사장님: 화살표 폐지 — 중요 포인트는 용궁사 12지신상·달라이라마상처럼 \"정지 + 타이포 라벨\"로만. arrow 비트는 화살표 없이 프리즈+셸 타이포로 남는다."
   ],
   "beats": [
     {
@@ -163,8 +162,8 @@
       "kind": "clip",
       "src": "A",
       "in": 8,
-      "out": 10.45,
-      "speed": 2,
+      "out": 12.9,
+      "speed": 4,
       "title": "Across the car park",
       "ramp": {
         "seconds": 0.6
@@ -180,40 +179,20 @@
       "stab": true,
       "turn": true,
       "title": "The peak appears",
-      "nosnap": "turn beat — edge is content, not a seam",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "04",
       "kind": "clip",
       "src": "A",
       "in": 15.3,
-      "out": 19.43,
-      "speed": 2,
+      "out": 44.22,
+      "speed": 7,
       "title": "Up the promenade",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
-    },
-    {
-      "id": "04c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 40.09,
-      "out": 44.22,
-      "speed": 2,
-      "title": "Up the promenade",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "05",
@@ -244,8 +223,8 @@
       "kind": "clip",
       "src": "B",
       "in": 5.3,
-      "out": 7.7,
-      "speed": 2,
+      "out": 8.3,
+      "speed": 2.5,
       "title": "Through to the path",
       "ramp": {
         "seconds": 0.6
@@ -256,24 +235,8 @@
       "kind": "clip",
       "src": "C",
       "in": 0,
-      "out": 2.81,
-      "speed": 2,
-      "title": "Onto the approach walk",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "06c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 14.08,
       "out": 16.9,
-      "speed": 2,
+      "speed": 6,
       "title": "Onto the approach walk",
       "ramp": {
         "seconds": 0.6
@@ -299,8 +262,8 @@
       "kind": "clip",
       "src": "C",
       "in": 23.5,
-      "out": 28.14,
-      "speed": 2,
+      "out": 56,
+      "speed": 7,
       "title": "Along the fence line",
       "ramp": {
         "seconds": 0.6
@@ -308,22 +271,6 @@
       "snapped": {
         "from": 23.4,
         "pan": 0.967
-      }
-    },
-    {
-      "id": "07c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 51.36,
-      "out": 56,
-      "speed": 2,
-      "title": "Along the fence line",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -341,27 +288,11 @@
       "kind": "clip",
       "src": "C",
       "in": 56,
-      "out": 58.54,
-      "speed": 2,
-      "title": "Onto the grass",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "08c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 69.96,
       "out": 72.5,
-      "speed": 2,
+      "speed": 6.5,
       "title": "Onto the grass",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -380,27 +311,11 @@
       "kind": "clip",
       "src": "C",
       "in": 72.5,
-      "out": 76.62,
-      "speed": 2,
-      "title": "Down toward the sea",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "10c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 99.28,
       "out": 103.4,
-      "speed": 2,
+      "speed": 7.5,
       "title": "Down toward the sea",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -420,29 +335,13 @@
       "kind": "clip",
       "src": "C",
       "in": 107.8,
-      "out": 110.43,
-      "speed": 2,
+      "out": 124.9,
+      "speed": 6.5,
       "title": "The long stair down",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
-    },
-    {
-      "id": "12c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 122.27,
-      "out": 124.9,
-      "speed": 2,
-      "title": "The long stair down",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "13",
@@ -465,27 +364,11 @@
       "kind": "clip",
       "src": "C",
       "in": 124.9,
-      "out": 129.25,
-      "speed": 2,
-      "title": "The last flights",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "14c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 153.16,
       "out": 157.5,
-      "speed": 2,
+      "speed": 7.5,
       "title": "The last flights",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -493,8 +376,8 @@
       "kind": "clip",
       "src": "D",
       "in": 0,
-      "out": 3.35,
-      "speed": 2,
+      "out": 6.7,
+      "speed": 4,
       "title": "Onto the cove rocks",
       "ramp": {
         "seconds": 0.6
@@ -517,10 +400,6 @@
       "snapped": {
         "from": 5.4,
         "pan": 0.728
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -528,8 +407,8 @@
       "kind": "clip",
       "src": "D",
       "in": 9.8,
-      "out": 13.55,
-      "speed": 2,
+      "out": 20.1,
+      "speed": 5.5,
       "title": "Across the black sand",
       "ramp": {
         "seconds": 0.6
@@ -548,10 +427,6 @@
       "snapped": {
         "from": 21.4,
         "pan": 0.883
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -559,8 +434,8 @@
       "kind": "clip",
       "src": "D",
       "in": 24.5,
-      "out": 27.25,
-      "speed": 2,
+      "out": 41,
+      "speed": 6,
       "title": "Around the point",
       "ramp": {
         "seconds": 0.6
@@ -568,22 +443,6 @@
       "snapped": {
         "from": 25.8,
         "pan": 0.71
-      }
-    },
-    {
-      "id": "19ac1",
-      "kind": "clip",
-      "src": "D",
-      "in": 38.25,
-      "out": 41,
-      "speed": 2,
-      "title": "Around the point",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -607,8 +466,8 @@
       "kind": "clip",
       "src": "D",
       "in": 46,
-      "out": 49.34,
-      "speed": 2,
+      "out": 52.68,
+      "speed": 4,
       "title": "To the show rocks",
       "ramp": {
         "seconds": 0.6
@@ -752,8 +611,8 @@
       "kind": "clip",
       "src": "K",
       "in": 36.6,
-      "out": 41.35,
-      "speed": 2,
+      "out": 53.21,
+      "speed": 7,
       "title": "The show winds down",
       "ramp": {
         "seconds": 0.6
@@ -787,8 +646,8 @@
       "kind": "clip",
       "src": "N",
       "in": 5.5,
-      "out": 8.14,
-      "speed": 2,
+      "out": 22.7,
+      "speed": 6.5,
       "title": "Up the grass avenue",
       "ramp": {
         "seconds": 0.6
@@ -796,22 +655,6 @@
       "snapped": {
         "from": 5,
         "pan": 0.623
-      }
-    },
-    {
-      "id": "32c1",
-      "kind": "clip",
-      "src": "N",
-      "in": 20.05,
-      "out": 22.7,
-      "speed": 2,
-      "title": "Up the grass avenue",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -833,8 +676,8 @@
       "kind": "clip",
       "src": "O",
       "in": 0,
-      "out": 3.68,
-      "speed": 2,
+      "out": 9.2,
+      "speed": 5,
       "title": "The stone path starts",
       "ramp": {
         "seconds": 0.6
@@ -849,8 +692,8 @@
       "kind": "clip",
       "src": "O",
       "in": 9.2,
-      "out": 13.09,
-      "speed": 2,
+      "out": 19.9,
+      "speed": 5.5,
       "title": "Climbing the flank",
       "ramp": {
         "seconds": 0.6
@@ -858,10 +701,6 @@
       "snapped": {
         "from": 7.9,
         "pan": 0.709
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -874,19 +713,15 @@
       "stab": true,
       "turn": true,
       "title": "Look left — the whole coast",
-      "nosnap": "turn beat — edge is content, not a seam",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "37",
       "kind": "clip",
       "src": "O",
       "in": 23.5,
-      "out": 27.92,
-      "speed": 2,
+      "out": 35.66,
+      "speed": 5.5,
       "title": "Into the pines",
       "ramp": {
         "seconds": 0.6
@@ -917,8 +752,8 @@
       "kind": "clip",
       "src": "R",
       "in": 4.5,
-      "out": 7.08,
-      "speed": 2,
+      "out": 20,
+      "speed": 6,
       "title": "Stone stairs, no hurry",
       "ramp": {
         "seconds": 0.6
@@ -926,22 +761,6 @@
       "snapped": {
         "from": 5,
         "pan": 0.831
-      }
-    },
-    {
-      "id": "39c1",
-      "kind": "clip",
-      "src": "R",
-      "in": 17.41,
-      "out": 20,
-      "speed": 2,
-      "title": "Stone stairs, no hurry",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -963,8 +782,8 @@
       "kind": "clip",
       "src": "T",
       "in": 8.3,
-      "out": 11.82,
-      "speed": 2,
+      "out": 32.92,
+      "speed": 7,
       "title": "Higher and higher",
       "ramp": {
         "seconds": 0.6
@@ -975,28 +794,12 @@
       }
     },
     {
-      "id": "41c1",
-      "kind": "clip",
-      "src": "T",
-      "in": 29.41,
-      "out": 32.92,
-      "speed": 2,
-      "title": "Higher and higher",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "42",
       "kind": "clip",
       "src": "U",
       "in": 0,
-      "out": 4.0,
-      "speed": 2,
+      "out": 8,
+      "speed": 4,
       "title": "Keep right at the rail",
       "ramp": {
         "seconds": 0.6
@@ -1021,11 +824,7 @@
       },
       "caption": "On a clear day Hallasan floats over the island.",
       "chapter": "The lookback",
-      "nosnap": "turn beat — edge is content, not a seam",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "44",
@@ -1047,8 +846,8 @@
       "kind": "clip",
       "src": "U",
       "in": 13.5,
-      "out": 17.41,
-      "speed": 2,
+      "out": 23.27,
+      "speed": 5,
       "title": "On up",
       "ramp": {
         "seconds": 0.6
@@ -1059,24 +858,8 @@
       "kind": "clip",
       "src": "V",
       "in": 0,
-      "out": 3.0,
-      "speed": 2,
-      "title": "The summit boards",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "46c1",
-      "kind": "clip",
-      "src": "V",
-      "in": 9.0,
       "out": 12,
-      "speed": 2,
+      "speed": 4,
       "title": "The summit boards",
       "ramp": {
         "seconds": 0.6
@@ -1108,8 +891,8 @@
       "kind": "clip",
       "src": "V",
       "in": 16.5,
-      "out": 18.8,
-      "speed": 2,
+      "out": 23.4,
+      "speed": 6,
       "title": "Along the rim boards",
       "ramp": {
         "seconds": 0.6
@@ -1126,40 +909,20 @@
       "stab": true,
       "turn": true,
       "title": "The bowl, full width",
-      "nosnap": "turn beat — edge is content, not a seam",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "turn beat — edge is content, not a seam"
     },
     {
       "id": "50",
       "kind": "clip",
       "src": "V",
       "in": 27.3,
-      "out": 30.71,
-      "speed": 2,
+      "out": 51.2,
+      "speed": 7,
       "title": "Turning for home",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
-    },
-    {
-      "id": "50c1",
-      "kind": "clip",
-      "src": "V",
-      "in": 47.79,
-      "out": 51.2,
-      "speed": 2,
-      "title": "Turning for home",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "51",
@@ -1180,8 +943,8 @@
       "kind": "clip",
       "src": "V",
       "in": 55.1,
-      "out": 58.52,
-      "speed": 2,
+      "out": 79,
+      "speed": 7,
       "title": "Switchbacks seaward",
       "ramp": {
         "seconds": 0.6
@@ -1192,28 +955,12 @@
       }
     },
     {
-      "id": "52c1",
-      "kind": "clip",
-      "src": "V",
-      "in": 75.59,
-      "out": 79,
-      "speed": 2,
-      "title": "Switchbacks seaward",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "53",
       "kind": "clip",
       "src": "V",
       "in": 79,
-      "out": 82.16,
-      "speed": 2,
+      "out": 101.12,
+      "speed": 7,
       "title": "The town rises to meet you",
       "ramp": {
         "seconds": 0.6
@@ -1221,44 +968,12 @@
       "nosnap": "no pan within ±1.5s (max 0.46)"
     },
     {
-      "id": "53c1",
-      "kind": "clip",
-      "src": "V",
-      "in": 97.96,
-      "out": 101.12,
-      "speed": 2,
-      "title": "The town rises to meet you",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "54",
       "kind": "clip",
       "src": "X",
       "in": 0,
-      "out": 2.57,
-      "speed": 2,
-      "title": "The boardwalk rolls on",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "54c1",
-      "kind": "clip",
-      "src": "X",
-      "in": 15.43,
       "out": 18,
-      "speed": 2,
+      "speed": 7,
       "title": "The boardwalk rolls on",
       "ramp": {
         "seconds": 0.6
@@ -1287,8 +1002,8 @@
       "kind": "clip",
       "src": "Y",
       "in": 6.3,
-      "out": 9.62,
-      "speed": 2,
+      "out": 29.5,
+      "speed": 7,
       "title": "Down the east stairs",
       "ramp": {
         "seconds": 0.6
@@ -1296,22 +1011,6 @@
       "snapped": {
         "from": 5,
         "pan": 0.713
-      }
-    },
-    {
-      "id": "56c1",
-      "kind": "clip",
-      "src": "Y",
-      "in": 26.18,
-      "out": 29.5,
-      "speed": 2,
-      "title": "Down the east stairs",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -1344,27 +1043,11 @@
       "kind": "clip",
       "src": "Y",
       "in": 34.5,
-      "out": 37.79,
-      "speed": 2,
-      "title": "The last flights down",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "59c1",
-      "kind": "clip",
-      "src": "Y",
-      "in": 52.61,
       "out": 55.9,
-      "speed": 2,
+      "speed": 6.5,
       "title": "The last flights down",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -1386,24 +1069,8 @@
       "kind": "clip",
       "src": "Z",
       "in": 3.4,
-      "out": 5.96,
-      "speed": 2,
-      "title": "Down the home stretch",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "61c1",
-      "kind": "clip",
-      "src": "Z",
-      "in": 17.45,
       "out": 20,
-      "speed": 2,
+      "speed": 6.5,
       "title": "Down the home stretch",
       "ramp": {
         "seconds": 0.6
@@ -1430,8 +1097,8 @@
       "kind": "clip",
       "src": "Z",
       "in": 23.8,
-      "out": 28.29,
-      "speed": 2,
+      "out": 39.51,
+      "speed": 7,
       "title": "Back to gate level",
       "ramp": {
         "seconds": 0.6

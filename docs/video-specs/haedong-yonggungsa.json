@@ -27,8 +27,7 @@
     "2026-07-31: A/C를 D:/VIDEO2 원본(3.5x 비트레이트)으로 교체. duration 오차 ±0.002s로 컷 무변경.",
     "B(록쉘프)는 원본 미보유 — 카카오톡 수신본만 존재(재인코딩, 촬영기기 상이 추정). 폴더에 복사해 둠.",
     "2026-08-01: D:/VIDEO2 재편(부산/ 지역 폴더 + 시간순 재순번). 0706 촬영 3편이 01~03으로 앞에 들어와 A: 01→04, C: 02→05로 파일명만 변경 — 내용물 동일, 컷 무변경.",
-    "2026-08-01: 이 컷은 V6-D21(화살표 폐지) 이전에 승인·배포된 물건이라 화살표를 그대로 둔다 — allowArrows 는 재컷 없이 게이트를 통과시키기 위한 표식이지, 새 작업의 선택지가 아니다.",
-    "2026-08-04 표준화 재단(만장굴 문법 v1, 사장님 지시 「이 느낌을 표준으로」): >2x 트랜짓 전부를 2x 슬라이스(비트당 화면 ≤4.5s)+중간 0.8s 디졸브로 재단 — 화면 시간 보존이라 러닝타임·1x 비율·챕터 간격 불변. 슬라이스 in/out 은 원본 비트 양 끝에 고정해 이웃 접합 유지, 중간 슬라이스 위치는 등간격(소스 미열람 — 🔴 PC 세션에서 실렌더로 중간 슬라이스 내용 검수 필수). 폴라로이드 「정지+피사체 전체」 프레임 검수도 PC 세션 몫(표준 §3). 속도만 2x 로 낮추면 러닝타임이 폭증하므로 '잘라서 느리게'가 이 재단의 본질이다."
+    "2026-08-01: 이 컷은 V6-D21(화살표 폐지) 이전에 승인·배포된 물건이라 화살표를 그대로 둔다 — allowArrows 는 재컷 없이 게이트를 통과시키기 위한 표식이지, 새 작업의 선택지가 아니다."
   ],
   "beats": [
     {
@@ -91,8 +90,8 @@
       "kind": "clip",
       "src": "A",
       "in": 4.5,
-      "out": 11.87,
-      "speed": 2,
+      "out": 93,
+      "speed": 8,
       "title": "Through the food stalls",
       "ramp": {
         "seconds": 0.6
@@ -103,44 +102,12 @@
       }
     },
     {
-      "id": "02c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 45.06,
-      "out": 52.43,
-      "speed": 2,
-      "title": "Through the food stalls",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "02c2",
-      "kind": "clip",
-      "src": "A",
-      "in": 85.63,
-      "out": 93,
-      "speed": 2,
-      "title": "Through the food stalls",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "03",
       "kind": "clip",
       "src": "A",
       "in": 93,
       "out": 100,
-      "speed": 2,
+      "speed": 4,
       "title": "Approaching the guardians",
       "ramp": {
         "seconds": 0.6
@@ -227,27 +194,11 @@
       "kind": "clip",
       "src": "A",
       "in": 106,
-      "out": 108.75,
-      "speed": 2,
-      "title": "Onward to the stele",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "07c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 114.25,
       "out": 117,
-      "speed": 2,
+      "speed": 4,
       "title": "Onward to the stele",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -275,27 +226,11 @@
       "kind": "clip",
       "src": "A",
       "in": 117,
-      "out": 120.33,
-      "speed": 2,
-      "title": "To the main gate",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "09c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 133.66,
       "out": 137,
-      "speed": 2,
+      "speed": 6,
       "title": "To the main gate",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -324,27 +259,11 @@
       "kind": "clip",
       "src": "A",
       "in": 139,
-      "out": 143.49,
-      "speed": 2,
-      "title": "Down through the cave passage",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "11c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 170.41,
       "out": 174.9,
-      "speed": 2,
+      "speed": 8,
       "title": "Down through the cave passage",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -370,29 +289,13 @@
       "kind": "clip",
       "src": "A",
       "in": 180,
-      "out": 184.75,
-      "speed": 2,
+      "out": 218,
+      "speed": 8,
       "title": "Down the 108 steps",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.51)"
-    },
-    {
-      "id": "13c1",
-      "kind": "clip",
-      "src": "A",
-      "in": 213.25,
-      "out": 218,
-      "speed": 2,
-      "title": "Down the 108 steps",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "14",
@@ -415,8 +318,8 @@
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 4.5,
-      "speed": 2,
+      "out": 18,
+      "speed": 8,
       "title": "Out onto the rocks",
       "ramp": {
         "seconds": 0.6
@@ -434,11 +337,7 @@
       "out": 39,
       "speed": 1.2,
       "title": "Ocean one way, temple the other",
-      "nosnap": "no pan within ±1.5s (max 0.51)",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "no pan within ±1.5s (max 0.51)"
     },
     {
       "id": "16",
@@ -460,24 +359,8 @@
       "kind": "clip",
       "src": "C",
       "in": 0,
-      "out": 2.5,
-      "speed": 2,
-      "title": "Back down the steps",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
-      "id": "17c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 17.5,
       "out": 20,
-      "speed": 2,
+      "speed": 8,
       "title": "Back down the steps",
       "ramp": {
         "seconds": 0.6
@@ -531,27 +414,11 @@
       "kind": "clip",
       "src": "C",
       "in": 34,
-      "out": 36.52,
-      "speed": 2,
-      "title": "Off the bridge",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "19bc1",
-      "kind": "clip",
-      "src": "C",
-      "in": 41.58,
       "out": 44.1,
-      "speed": 2,
+      "speed": 4,
       "title": "Off the bridge",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -559,8 +426,8 @@
       "kind": "clip",
       "src": "C",
       "in": 44.1,
-      "out": 51.09,
-      "speed": 2,
+      "out": 86,
+      "speed": 6,
       "title": "Up to the main hall",
       "ramp": {
         "seconds": 0.6
@@ -571,28 +438,12 @@
       }
     },
     {
-      "id": "20c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 79.02,
-      "out": 86,
-      "speed": 2,
-      "title": "Up to the main hall",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "21",
       "kind": "clip",
       "src": "C",
       "in": 86,
-      "out": 89.0,
-      "speed": 2,
+      "out": 92,
+      "speed": 4,
       "title": "Daeungbojeon Hall",
       "ramp": {
         "seconds": 0.6
@@ -608,11 +459,7 @@
       "out": 100,
       "speed": 1.2,
       "title": "Maitreya beside the hall",
-      "nosnap": "no pan within ±1.5s (max 0.42)",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "nosnap": "no pan within ±1.5s (max 0.42)"
     },
     {
       "id": "21p",
@@ -634,27 +481,11 @@
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 103.03,
-      "speed": 2,
-      "title": "Around the hall",
-      "ramp": {
-        "seconds": 0.6
-      }
-    },
-    {
-      "id": "22c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 121.27,
       "out": 124.3,
-      "speed": 2,
+      "speed": 8,
       "title": "Around the hall",
       "ramp": {
         "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
       }
     },
     {
@@ -675,8 +506,8 @@
       "kind": "clip",
       "src": "C",
       "in": 141.5,
-      "out": 146.12,
-      "speed": 2,
+      "out": 160,
+      "speed": 8,
       "title": "Back to the steps",
       "ramp": {
         "seconds": 0.6
@@ -695,19 +526,15 @@
       "speed": 1.5,
       "title": "Foot of the stone steps",
       "nosnap": "no pan within ±1.5s (max 0.46)",
-      "chapter": "Up to Haesu Gwaneum",
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
+      "chapter": "Up to Haesu Gwaneum"
     },
     {
       "id": "24",
       "kind": "clip",
       "src": "C",
       "in": 166,
-      "out": 169.38,
-      "speed": 2,
+      "out": 193,
+      "speed": 8,
       "title": "The climb",
       "ramp": {
         "seconds": 0.6
@@ -715,49 +542,17 @@
       "nosnap": "no pan within ±1.5s (max 0.25)"
     },
     {
-      "id": "24c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 189.62,
-      "out": 193,
-      "speed": 2,
-      "title": "The climb",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
-    },
-    {
       "id": "25",
       "kind": "clip",
       "src": "C",
       "in": 193,
-      "out": 197.0,
-      "speed": 2,
+      "out": 209,
+      "speed": 4,
       "title": "Reaching the statue",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.28)"
-    },
-    {
-      "id": "25c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 205.0,
-      "out": 209,
-      "speed": 2,
-      "title": "Reaching the statue",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "26",
@@ -788,29 +583,13 @@
       "kind": "clip",
       "src": "C",
       "in": 226,
-      "out": 234.0,
-      "speed": 2,
+      "out": 290,
+      "speed": 8,
       "title": "Back down",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.48)"
-    },
-    {
-      "id": "28c1",
-      "kind": "clip",
-      "src": "C",
-      "in": 282.0,
-      "out": 290,
-      "speed": 2,
-      "title": "Back down",
-      "ramp": {
-        "seconds": 0.6
-      },
-      "transition": {
-        "kind": "dissolve",
-        "seconds": 0.8
-      }
     },
     {
       "id": "29",
@@ -863,8 +642,8 @@
       "kind": "clip",
       "src": "C",
       "in": 312,
-      "out": 316.0,
-      "speed": 2,
+      "out": 320,
+      "speed": 4,
       "title": "Toward the exit",
       "ramp": {
         "seconds": 0.6
