@@ -1,5 +1,51 @@
 # CLAUDE.md — 프로젝트 메모리
 
+## ✅ 완료: 서울발 신규 상품 2종 — 가평 조인 투어 + 겨울 어비계곡 (2026-08-04, 사장님 지시)
+
+**기록 정본:** `docs/NEXT-SESSION-SEOUL-GAPYEONG-WINTER-2026-08-04.md`
+(**맨 위 블록 = 잔여 · §1′ 사장님 결정 · §2′ 재검증 결과 · §3 인공 빙벽 · §9 잔여/별도 티켓**)
+**PR #722**(브랜치 `claude/seoul-gapyeong-tour-poi-mrjhkf`) + POI 재검증 후속.
+
+`seoul-gapyeong-nami-morning-calm-petite-france-day-tour`(남이섬→점심→아침고요→쁘띠프랑스, **$59**) +
+`seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour`(설악산→점심→남이섬→어비계곡, **$69, 겨울 한정**).
+10로케일 번들 20개 · 등록 5곳 · **DB 적용 완료**(SQL 은 10~13 으로 재번호 후 `applied/` 이동).
+빌더 `scripts/build-seoul-{gapyeong,winter-eobi}-2026-08.mjs` · 검증 `scripts/qa-seoul-new-products-2026-08.mjs`.
+
+🔴 **겨울 상품은 `is_active=false` 로 들어가 있다 — 아직 안 팔린다.** 데이터·페이지·offer 는 전부 라이브다.
+이유: 상품 자신의 노트가 "do not open year-round sales" 인데 **`matching_profile.seasonality`(`winter_only`)를
+읽는 코드가 앱에 없다**(2026-08-04 확인 — 전형적인 "선언만 되고 안 읽힘"). 시즌을 막는 건 추천 엔진의
+`match_tours.available_months=[12,1,2]` 뿐이고 상품 페이지·결제는 안 막는다. 오픈 = 마을 확인(031-585-3551) 후
+`apply-seoul-new-products-2026-08.mjs` 를 `--inactive` 없이 재실행.
+
+🔴 **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돈다**(`psql`·`SUPABASE_DB_URL` 둘 다 없음).
+대체 경로 = **`scripts/apply-seoul-new-products-2026-08.mjs`**(supabase-js). 행 매핑은
+**`scripts/seoul-new-products-rows-2026-08.mjs` 한 곳**에 있고 SQL 생성기도 같은 걸 읽는다(드리프트 불가).
+
+🔴 **어비계곡 얼음벽은 인공이다 — 되돌리지 말 것.** 2023년 겨울부터 **가일2리 주민 30명**이
+물을 뿌려 만든다(경인일보 「인공 빙벽」·「일부 주민 등이 조성한」). KTO 영문·경기관광공사 영문·Klook 이
+전부 "natural" 로 잘못 적고, **한국어 소수 오보도 1건 있다**(아던트뉴스 "자연이 만든 빙벽").
+자연 지형에는 조성 연도가 없다. 높이 **25m**(62m 는 거짓).
+
+**POI 재검증 완료(egress 열린 세션).** 마을 공식 사이트가 정본: 주소 **어비산길 168** ·
+좌표 **37.595339, 127.509512** · **10:00–17:00** · 관람 **₩1,000**(계곡 자체는 무료 — 충돌이 아니라 **대상이 다름**) ·
+체험 ₩5,000~30,000 · **주차 무료** + 데크길 500m · 2025-26 시즌 **12/20–2/19**.
+남이섬 페리 08:00–21:00(출도 21:05)·₩19,000 / 아침고요 08:30–19:00·입장마감 18:00·₩11,000 /
+쁘띠프랑스 ₩12,000(₩10,000 은 **군민·경로 할인가** — 도너 모순의 원인).
+🔴 **"남이섬 마지막 입장 18:00" 은 오정보였다** — 18:00 은 섬 상점이 닫는 시각이고 콘텐츠는 이미 맞았다.
+🔴 **Google Directions 는 한국 내 자동차 경로를 안 준다(ZERO_RESULTS) — Kakao Mobility 를 써라.**
+실측이 결함 3건을 잡았다: **아침고요→쁘띠프랑스 45분**(30분으로 적혀 있었다 → 도착 15:45→16:00) ·
+**소요시간 13→13.5시간**(06:00→19:30) · **어비 16:45 도착 vs 17:00 마감**(사장님: 일정 유지·문구만 정직하게 →
+10로케일에서 「조명/blue hour」약속 제거).
+
+⚠ **도너 `seoul-private-nami-morning-calm-petite-france` 는 쁘띠프랑스 입장료 모순을 아직 라이브로
+내보낸다** — 별도 티켓.
+
+🔴 **`catalog_card.slug` 을 번역하면 404 유령 카드가 생긴다**(생성기가 파일명보다 JSON 값을 믿는다).
+`jeju-eastern-unesco-spots-day-tour` 의 `.es` 가 실제 사고를 냈고 **지금도 라이브다.**
+🔴 **`SLUG_OVERRIDES` 는 두 파일에 중복 존재하고 값이 서로 다르다.** 헤더 주석의 "여기에만 있다"는 거짓.
+실제 카드·홈·사이트맵이 쓰는 건 `catalogRegistrationBuilder.ts` 쪽이다(부산 신상품은 여기 등록이 빠져
+`maxGroupSize` 가 조용히 사라져 있다).
+
 ## 🔴 진행 중 (최신): 스마트앱 **UI/UX 감사 트랙** — U9 수정 중 (통합 트랙 UI 티켓을 흡수)
 
 **이어받으면 이것부터:** **`docs/smartapp-uiux-audit-master-plan-2026-08-03.md`** (§4 루브릭 6축 · §5 WBS)
@@ -68,12 +114,24 @@ P-01 은 ⏸ 데이터 대기(PR #702 판정 — 픽업 장소 0건·시각 상�
 **기존 `schemaDrift` 는 테이블 이름만 본다 — 컬럼 타입은 아무도 안 봤다.**
 **적용 시점의 우회는 수정이 아니다.**
 
+🔴 **또 하나: 이 절은 오랫동안 「01~04 미적용」이라고 적어 둔 채로 틀려 있었다.**
+병행 세션이 적용하고 파일만 안 옳긴 구간이 있었고, 다른 세션이 DB 를 직접 조회해서야
+이미 적용된 걸 확인했다. → **「pending 에 파일이 있다」는 미적용의 증거가 아니다. 판정은 객체 존재로.**
+
+🔴 **서울 2종 SQL 은 10~13 이다** — 08/09 를 병행 세션이 먼저 가져가서 두 번 재번호했다
+(05→08→10). 적용기에 13개 전부 등록돼 있다.
+⚠ **`npm run tours:apply-2026-08-04` 는 이 PC 에서 못 돌다** — `psql` 도 `SUPABASE_DB_URL` 도 없어
+SQL 단계에서 죽는다. 서울 2종은 `scripts/apply-seoul-new-products-2026-08.mjs`(supabase-js)로 적용했다.
+같은 문제를 다시 만나면 그 스크립트를 본으로 삼아라.
+
 ## ✅ 완료: 경주 투어 코스 개편 (2026-08-04, 사장님 지시)
 
 **기록 정본:** `docs/gyeongju-recourse-2026-08-04.md` (§3 발견 결함 표 · §4 가시성 · §5 잔여)
 대상 = `from-busan-gyeongju-ancient-capital-day-tour`. 변환기 `scripts/gyeongju-recourse-2026-08.mjs`
 + 로케일 콘텐츠 `scripts/gyeongju-recourse-content/<loc>.json`(6개). DB는
-`supabase/pending-db-apply/2026-08-04-04-*.sql`(⚠ 미적용) + `import-match-v18 --single`.
+`supabase/pending-db-apply/applied/2026-08-04-07-gyeongju-recourse.sql`(✅ 적용됨 — 교촌·대릉원이
+라이브에 있다) + `import-match-v18 --single`. ⚠ 여기 오래 「04」라고 적혀 있었는데 그건 부산 스테이징
+파일이다(경주는 커밋 e6e9c3b3 에서 07 로 리넘버됐다).
 
 신규 코스: 아홉산숲 → 불국사 → 점심 → **[교촌한옥마을·최부자댁·월정교]** → **[대릉원·황리단길]**
 → **국립경주박물관(11~2월은 동궁과 월지 야경)**. 🔴 **두 신설 정차는 "한 번 하차로 걸어서" 블록**이다 —
@@ -122,14 +180,14 @@ herb-island 가 남아 있는 건 알고 남긴 것이다.
 **POI KB v1.30**: `jaein_falls` 신규 등재 + 아트밸리(2026 요금 ₩6,000/모노레일 ₩5,300·지오사이트)
 + 산정호수(3.2km 둘레길·2005 조각 심포지엄·궁예 전설) 보강.
 빌더 `scripts/build-pocheon-geopark-2026-08.mjs` / 콘텐츠 `scripts/pocheon-geopark-content/`(10로케일).
-DB `2026-08-04-05/06-*.sql`(⚠ 미적용). ⚠ **가격 불일치는 손대지 않았다**: 번들 $54 vs 레지스트리
+DB `2026-08-04-05/06-*.sql`(✅ 적용됨 — 재인폭포·한탄강이 라이브에 있다). ⚠ **가격 불일치는 손대지 않았다**: 번들 $54 vs 레지스트리
 override listPriceUsd 49 — 기존부터 어긋나 있던 것으로 사장님 결정감. 재인폭포·점심은 보유 사진 0.
 
 ## ✅ 완료: 제주 투어 코스 개편 (2026-08-04, 사장님 지시)
 
 수국(hydrangea) 상품 2종 내림 + 동/남/서남 제주 투어 3종 오픈. 가시성은 두 쪽이 한 세트다:
 `lib/tour-consumer-visibility.ts` 블록리스트(레포) + **`supabase/pending-db-apply/2026-08-04-*.sql`
-(⚠ DB 미적용 — DB 접근 세션에서 순서대로 적용 후 `import-match-v18.mjs --single` 3슬러그 재동기화)**.
+(✅ DB 적용 완료 2026-08-04 — 제주 3종 활성·수국 2종 내림 확인, `applied/` 로 이동)**.
 동부(`jeju-eastern-unesco-spots-day-tour`)는 **만장굴→성읍→점심→성산→해녀쇼→함덕**으로 재편
 (6로케일 전부, 변환기 `scripts/jeju-east-reorder-2026-08.mjs` + 콘텐츠 `scripts/jeju-east-reorder-content/`).
 남부·서남부는 v18(2026-06-24)에 이미 요청 코스와 일치했다 — **콘텐츠 재작성 금지, 플래그만**.
@@ -140,7 +198,7 @@ de/fr/it/ru 상품 페이지는 설계상 EN 폴백(i18n 확장 트랙 사람 �
 닥밭골&소망계단 모노레일. 도너 `busan-top-attractions-day-tour`(픽업 3역·용궁사·감천 스톱 재사용) +
 빌더 `scripts/build-busan-smallgroup-2026-08.mjs` / 콘텐츠 `scripts/busan-smallgroup-content/`(6로케일).
 **가격 사장님 확정(2026-08-04): $59(캡슐 제외) / $79(포함).** 다릿돌·닥밭골은 보유 사진 0(이미지 없는 스톱).
-DB는 `2026-08-04-03-*.sql`(⚠ 미적용) + `import-match-v18 --single`.
+DB는 `2026-08-04-03-*.sql`(✅ 적용됨 — `is_active=true`·10로케일 페이지 확인) + `import-match-v18 --single`.
 **10로케일 번역 완료(같은 날, 사장님 지시):** de/fr/it/ru 풀 번들 — 스펙+도너 오버레이
 (`scripts/busan-smallgroup-content/{de,fr,it,ru}.json` + `donor-overlay/`) → 빌더가 EN 도너 위에 조립.
 🔴 **스테이징이다**: 6로케일 레지스트리에 등록하지 않았고(타입이 6로케일 고정) de/fr/it/ru 는

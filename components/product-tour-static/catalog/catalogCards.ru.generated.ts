@@ -57,5 +57,57 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "price": {
       "amountLabel": "54"
     }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Однодневный тур в Капхён из Сеула: остров Нами, Garden of Morning Calm и Petite France",
+      "subtitle": "Три главные точки Капхёна за один автобусный день — без горных походов, три входных билета включены",
+      "region": "Сеул → провинция Кёнгидо (Капхён)",
+      "duration": "11.5 часа",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Однодневная поездка из Сеула",
+        "Капхён",
+        "Сборная группа",
+        "K-drama",
+        "Сады"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Самый простой выезд за город из Сеула: аллея метасеквой на острове Нами, тематический дендрарий площадью 330,000 m² и деревня Маленького принца — все три входных билета включены, возвращение в Сеул к 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Зимний спецтур из Сеула: Сораксан, остров Нами и ледяная стена в долине Оби",
+      "subtitle": "Автобусный день только для зимы — снег на самой известной вершине Кореи, Нами в инее и ледяная стена, построенная деревней",
+      "region": "Сеул → провинция Канвондо → провинция Кёнгидо (Капхён)",
+      "duration": "13.5 часа",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Только зимой",
+        "Сезонный",
+        "Однодневная поездка из Сеула",
+        "Сораксан",
+        "Ледяная стена"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Идёт только в разгар зимы: Сораксан под снегом, заиндевевшие аллеи острова Нами и 25-метровая ледяная стена, которую жители деревни в Капхёне наращивают на скале в долине каждый январь."
+    },
+    "price": {
+      "amountLabel": "69"
+    }
   }
 };

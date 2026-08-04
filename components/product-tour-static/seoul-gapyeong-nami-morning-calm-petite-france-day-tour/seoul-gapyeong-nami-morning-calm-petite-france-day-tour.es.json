@@ -1,0 +1,1228 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+  "locale": "es",
+  "product_id": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+  "seo": {
+    "pageTitle": "Excursión de un día a Gapyeong desde Seúl — Isla Nami, Jardín de la Calma Matutina y Petite France | AtoC Korea",
+    "metaDescription": "Tour de un día en autocar y en grupo compartido desde Seúl hasta Gapyeong: la avenida de metasecuoyas de la Isla Nami, el Jardín de la Calma Matutina y Petite France. Las tres entradas incluidas. Recogida en la estación de Hongik University o en la estación de Myeongdong, de vuelta en Seúl antes de las 19:00.",
+    "title": "Excursión de un día a Gapyeong desde Seúl — Isla Nami, la Calma Matutina y Petite France",
+    "description": "Tres lugares emblemáticos de Gapyeong en un día de 11.5 horas en autocar desde Seúl, con el ferry a la Isla Nami y las entradas al Jardín de la Calma Matutina y a Petite France incluidas.",
+    "primaryKeywords": [
+      "excursión a Gapyeong desde Seúl",
+      "tour isla Nami desde Seúl",
+      "jardín de la calma matutina Corea",
+      "Petite France Gapyeong",
+      "excursiones de un día desde Seúl"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/nami-island/nami-metasequoia-sunset-lake.webp"
+  },
+  "catalog_card": {
+    "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+    "title": "Excursión de un día a Gapyeong desde Seúl: Isla Nami, Jardín de la Calma Matutina y Petite France",
+    "subtitle": "El trío de Gapyeong en un solo día en autocar: sin subida a la montaña y con tres entradas incluidas",
+    "region": "Seúl → Gyeonggi-do (Gapyeong)",
+    "duration": "11.5 horas",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Excursión de un día desde Seúl",
+      "Gapyeong",
+      "Grupo compartido",
+      "K-drama",
+      "Jardines"
+    ],
+    "tags": [
+      "Excursión de un día desde Seúl",
+      "Gapyeong",
+      "Grupo compartido",
+      "K-drama",
+      "Jardines",
+      "Ideal para familias"
+    ],
+    "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "priceLabel": "",
+    "shortCardDescription": "El día de campo más fácil desde Seúl: la avenida de metasecuoyas de la Isla Nami, un arboreto temático de 330,000 m² y un pueblo del Principito, con las tres entradas incluidas y de vuelta en Seúl antes de las 19:00."
+  },
+  "headlineLine1": "Excursión de un día desde Seúl",
+  "headlineLine2": "Nami, la Calma Matutina y Petite France",
+  "price": {
+    "amountLabel": "59",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 59
+  },
+  "hero": {
+    "imageUrl": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "imagePosition": "center 45%",
+    "images": [
+      "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp"
+    ],
+    "tagline": "Las tres paradas emblemáticas de Gapyeong en un día tranquilo en autocar desde Seúl: una isla fluvial bordeada de árboles, el jardín privado más conocido de Corea y un pueblo con licencia de Le Petit Prince",
+    "pills": [
+      "Excursión de un día desde Seúl",
+      "Jardines + hallyu",
+      "Todas las entradas incluidas"
+    ],
+    "meta": {
+      "duration": "11.5 horas",
+      "region": "Seúl → Gyeonggi-do (Gapyeong)",
+      "stops": "3 paradas",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Descripción general"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "details",
+      "label": "Detalles"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reseñas"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "Duración",
+      "value": "11.5 horas"
+    },
+    {
+      "icon": "camera",
+      "label": "Potencial fotográfico",
+      "value": "Muy alto",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Alto",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Fácil a moderada",
+      "level": 2
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Aptitud con lluvia",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud para familias",
+      "value": "Muy buena",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Relajado",
+      "level": 3
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 1",
+      "alt": "Isla Nami (Namiseom) — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 2",
+      "alt": "Isla Nami (Namiseom) — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 3",
+      "alt": "Isla Nami (Namiseom) — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "Isla Nami (Namiseom)",
+      "caption": "Isla Nami (Namiseom) — photo 4",
+      "alt": "Isla Nami (Namiseom) — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 1",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 2",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4",
+      "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "location": "Petite France",
+      "caption": "Petite France — photo 1",
+      "alt": "Petite France — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+      "location": "Petite France",
+      "caption": "Petite France — photo 2",
+      "alt": "Petite France — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+      "location": "Petite France",
+      "caption": "Petite France — photo 3",
+      "alt": "Petite France — gallery image 3"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "07:30 / 08:00",
+      "duration": "Ventana de 30 min",
+      "name": "Recogida (estación de Hongik University o estación de Myeongdong)",
+      "category": "Recogida en autocar",
+      "description": "La recogida se realiza en uno de los dos puntos de encuentro de Seúl: **(1) el Starbucks de la salida 8 de la estación de Hongik University (Mapo-gu)** a las 07:30 — el local de Starbucks está justo al salir por la salida 8; O BIEN **(2) la salida 2 de la estación de Myeongdong (Jung-gu)** a las 08:00 — la tienda insignia de NorthFace es la referencia visible junto a la salida.\n\nAmbos puntos de recogida comparten el mismo autocar con aire acondicionado y los pasajeros de Hongik suben primero. Le rogamos estar en el punto elegido **5 minutos antes de la hora prevista**. Este es un comienzo notablemente más suave que el de las excursiones al Seoraksan, que salen a las 06:00: Gapyeong está lo bastante cerca de Seúl como para que el autocar pueda salir cuando los primeros metros llevan ya dos horas circulando.\n\nEl guía reparte al subir una tarjeta impresa con el itinerario en coreano e inglés y confirma el orden del día, la parada de aseos y las horas de regreso previstas. Desde Myeongdong el autocar toma la autopista Seúl-Chuncheon hacia el noreste para el trayecto de aproximadamente 1.5 horas hasta el muelle de Gapyeong.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "Llegar al punto de recogida elegido 5 minutos antes de la hora prevista (~5 min)",
+        "Identificar el autocar de AtoC Korea frente al Starbucks / NorthFace señalado (~5 min)",
+        "Subir a bordo en la fila de embarque (~10 min)",
+        "Al subir se reparte una tarjeta impresa con el itinerario en coreano e inglés"
+      ],
+      "whyOnRoute": "Los dos puntos de recogida cubren los dos principales núcleos de visitantes de Seúl: la zona de Hongik University, en Mapo-gu, que encaja con viajeros jóvenes y de estancia corta, y Myeongdong, en Jung-gu, el distrito turístico de siempre en torno a los hoteles Lotte, Shilla y Westin. Hongik primero y Myeongdong después es el orden natural para una salida hacia el noreste por la autopista Seúl-Chuncheon. Las 07:30 es una hora lo bastante tardía como para resultar cómoda y lo bastante temprana como para poner el autocar en el ferry de Nami sobre las 10:00, por delante de los excursionistas independientes que llegan en tren ITX.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "Isla Nami (Namiseom)",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "Isla fluvial del río Bukhan — escenario de 'Winter Sonata' (2002)",
+      "duration": "120 min (2 horas)",
+      "timeUsed": [
+        "Cruce en ferry desde el Muelle de Gapyeong (5-10 minutos incluida la fila)",
+        "Tiempo libre para pasear por las avenidas de Metasecuoya / Ginkgo / Pino Coreano — circuito de media isla ~3 km",
+        "Alquiler opcional de bicicleta (individual 7.000 / tándem 14.000 KRW por hora) o tren eléctrico azul (3.000 KRW ida al Salón UNICEF)",
+        "Breve pausa de aperitivos en la isla (Sonata Cafe, hotteok, latte de batata)",
+        "Ferry de regreso al continente"
+      ],
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      },
+      "highlights": [
+        "Isla fluvial con forma de media luna, ~460.000 m² / 5 km de circunferencia; nombrada en honor al General Nami (1441-1468)",
+        "Avenida icónica de metasecuoyas — localización emblemática del rodaje de 'Sonata de Invierno' (2002)",
+        "Autoproclamada 'República de Naminara' desde 2006 — bandera, moneda, pasaporte propios (concepto turístico)",
+        "Ferry de 5 min desde el embarcadero de Gapyeong (08:00-21:00, cada 10-20 min en hora punta)",
+        "Fauna en la isla: pavos reales (incluido el raro albino), avestruces, conejos silvestres, ardillas",
+        "**La tierra se formó en 1944** cuando la Presa de Cheongpyeong, construida por los japoneses, elevó el nivel del río Bukhan — Min Byung-do compró la isla en 1965 y fundó Gyeongchun Tourism Development Co. en 1966",
+        "**República de Naminara declarada el 1 de marzo de 2006** bajo la presidencia de Kang Woo Hyon como marca turística de 'independencia cultural' — el primer concepto turístico de micronación de Corea, con bandera, moneda, pasaporte y sellos propios",
+        "**Designación de Parque Amigo de la Infancia de UNICEF en 2010** + Nami Island Arts & Education organiza **más de 600 actuaciones, exposiciones y festivales al año** — algo excepcional para un único destino turístico coreano",
+        "**Tarifa de VISA** (KTO oficial 2026): Regular ₩19.000 ferry de ida y vuelta (₩29.000 con lancha motora solo ida); bebés de hasta 36 meses gratis; 10 % de descuento para grupos de más de 20 personas"
+      ],
+      "smartNotes": {
+        "photo": "La avenida de metasecuoyas es la imagen mundialmente famosa de 'Sonata de Invierno' — mejor en otoño (dorada, finales de octubre – principios de noviembre) o en invierno (nieve). El Paseo del Ginkgo de los Enamorados a orillas del río en la cara sur es más tranquilo e igualmente fotogénico. En ocasiones aparece un pavo real albino cerca del Paseo de los Enamorados.",
+        "facilities": "Los restaurantes de la isla sirven comida reconfortante coreana (hotteok, latte de boniato, tteok-galbi). El Sonata Cafe, en un hanok tradicional, es la parada emblemática. Mostrador de venta de billetes que admite tarjetas extranjeras en el embarcadero de Gapyeong — las máquinas expendedoras no aceptan tarjetas extranjeras, pregunte en el mostrador.",
+        "tip": "Mejores temporadas: primavera (cerezos en flor de abril a mayo), otoño (ginkgo dorado y arces rojos en octubre), invierno (caminos silenciosos y nevados de diciembre a febrero, evocadores de 'Sonata de Invierno'). Evite la cola del ferry del domingo al final de la tarde — abandone la isla antes de las 16:00. La tirolina (940 m, ~80 km/h, 55.000-58.000 KRW incluida la entrada) ahorra de 15 a 20 min frente a la cola del ferry en hora punta."
+      },
+      "whyOnRoute": "Nami abre el día porque es la parada que más recompensa la luz temprana y más sufre con las multitudes. Las avenidas de metasecuoyas y ginkgos de esta isla en forma de media luna son su sello, y se fotografían mejor antes del mediodía, cuando los viajeros independientes que llegan en tren ITX y el autobús turístico municipal de Gapyeong llenan los senderos centrales. Ponerla en primer lugar hace además que la travesía en ferry ocurra con la calma de la mañana y no con el viento de la tarde, y deja el resto del día encaminado tierra adentro y luego de vuelta a casa sin desandar el camino.",
+      "convenience": {
+        "restroom": "Múltiples en la isla y en el embarcadero de Gapyeong",
+        "parking": "Embarcadero de Gapyeong 6.000 KRW coche pequeño / 10.000 KRW vehículo grande (1.000 KRW adicional por hora a partir de las 12 horas)"
+      },
+      "description": "La Isla Nami abre la jornada con un trayecto en ferry de 5 minutos desde el embarcadero de Gapyeong hasta una isla con forma de media luna en el río Bukhan. Aproximadamente 460.000 m² (140.000 pyeong) y ~5 km de circunferencia, Namiseom debe su nombre al General Nami (Nam Yi, 1441-1468), comandante militar de la era Joseon ejecutado a los 28 años tras ser falsamente acusado de traición durante el reinado del Rey Yejong. \n\nLa isla originalmente solo se convertía en tierra durante las inundaciones; en 1944 el gobierno colonial japonés construyó la Presa de Cheongpyeong, elevando el nivel del río y convirtiendo a Nami en una isla permanente. Adquirió fama mundial en 2002 como localización del K-drama de KBS 'Sonata de Invierno', protagonizado por Bae Yong-joon y Choi Ji-woo — el catalizador de la ola Hallyu de principios de la década de 2000 — y sigue atrayendo a unos 3,3 millones de visitantes al año (1,3 millones extranjeros), lo que la convierte en el destino turístico individual más visitado de Corea después de Seúl, Busan y Jeju. \n\nDesde el 1 de marzo de 2006 la isla se ha rebautizado como la autoproclamada 'República de Naminara', con bandera, moneda (monedas Nami Tongbo), pasaporte y servicio postal propios — un concepto de marketing turístico más que una entidad política real. \n\nLa emblemática avenida bordeada de metasecuoyas (la nevada calle icónica de 'Sonata de Invierno'), el Paseo del Ginkgo de los Enamorados a orillas del río en la cara sur, el Camino del Pino Coreano y el Puente de Sequoyas hecho con vidrio reciclado de botellas de soju son recorribles a pie en una media jornada relajada. \n\nEn 2016, la isla registró **3,3 millones de visitantes anuales, incluidos 1,3 millones de visitantes extranjeros procedentes de 122 países** — la mayor proporción de visitantes extranjeros de cualquier destino turístico individual coreano después de Seúl, Busan y Jeju. Nami se dirige específicamente a los segmentos de la diáspora china y del sudeste asiático de atockorea con señalización dedicada en mandarín/cantonés/tagalo/vietnamita.",
+      "visitBasics": {
+        "hours": "El ferry funciona desde las 08:00; el último barco de entrada sale a las 21:00 y el de salida a las 21:05. Entre las 09:00 y las 18:00 hay salidas cada 10-20 min y cada 30 min fuera de esa franja; la travesía dura unos 5 minutos. La mayoría de las tiendas de la isla cierran hacia las 18:00",
+        "closed": "Abierto todo el año",
+        "admission": "Tasa de visado de la República de Naminara, ferry de ida y vuelta incluido: adulto ₩19,000 — INCLUIDA en este tour",
+        "walking": "Fácil: senderos llanos bordeados de árboles; el recorrido por medio perímetro es de ~3 km y la vuelta completa de ~5 km. En la isla se alquilan bicicletas y buguis eléctricos para quien prefiera no caminarlo."
+      },
+      "image": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "images": [
+        "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+        "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 1",
+          "alt": "Isla Nami (Namiseom) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 2",
+          "alt": "Isla Nami (Namiseom) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 3",
+          "alt": "Isla Nami (Namiseom) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "Isla Nami (Namiseom)",
+          "caption": "Isla Nami (Namiseom) — photo 4",
+          "alt": "Isla Nami (Namiseom) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 12:15",
+      "duration": "60 min",
+      "name": "Almuerzo en Gapyeong (por cuenta propia)",
+      "category": "Parada para almorzar",
+      "description": "El autocar para una hora en un restaurante local de la zona del muelle de Gapyeong, después de la Isla Nami. El almuerzo **no está incluido**: cada persona pide y paga lo que quiere, lo que normalmente supone ₩10,000-15,000 por persona.\n\nEsta es tierra de dakgalbi: el corredor Chuncheon-Gapyeong es la cuna del **dakgalbi**, pollo agridulce y picante salteado en la mesa con col, boniato y pastelitos de arroz, que suele rematarse friendo arroz en la salsa sobrante. El **makguksu** (fideos fríos de trigo sarraceno) es el acompañamiento tradicional. Las opciones vegetarianas son limitadas, pero normalmente hay bibimbap; dígaselo al guía en el autocar por la mañana y llamará con antelación.\n\nLleve efectivo o tarjeta: la mayoría de los restaurantes de la zona aceptan ambos, pero los puestos pequeños cerca del muelle suelen admitir solo efectivo.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "El autocar aparca y el guía acompaña al grupo hasta el restaurante (~5 min)",
+        "Pedir y comer (~45 min)",
+        "Pagar individualmente y volver a reunirse en el autocar (~10 min)"
+      ],
+      "whyOnRoute": "El almuerzo va después de Nami y no antes por dos razones. Primero, protege la mañana: comer antes empujaría la travesía en ferry más allá del mediodía, ya con multitud. Segundo, la zona del muelle de Gapyeong es donde están realmente los restaurantes: el Jardín de la Calma Matutina está en una carretera de valle con muy poco alrededor, y Petite France solo tiene puestos de aperitivos. Esta hora es la última comida sentada fiable del día.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "Jardín de la Mañana Tranquila (Achimsogwon)",
+      "time": "≈ 13:45",
+      "number": 4,
+      "category": "Jardín botánico de 330.000 m² — 5.000 especies, 20 jardines temáticos",
+      "duration": "90 min",
+      "timeUsed": [
+        "Entrada al jardín y breve orientación a cargo del conductor-guía (~5 min)",
+        "Tiempo libre para pasear por los 20 sub-jardines temáticos (~50 min)",
+        "Jardín Hundido opcional (con forma de la Península Coreana) con tiempo ampliado para fotos (~10 min)",
+        "Visitas en invierno: llegada programada para el inicio de la iluminación a las 17:00, para disfrutar del jardín de día y el encendido del festival de luces",
+        "Reunirse de nuevo en el autocar (~5 min)"
+      ],
+      "_poi_meta": {
+        "poi_key": "garden_of_morning_calm",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+          "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+          "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+          "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+          "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+        ]
+      },
+      "highlights": [
+        "Arboreto privado de referencia de Corea — 330.000 m² con ~5.000 especies vegetales",
+        "Fundado por Han Sang-kyung de la Universidad Sahmyook; inaugurado en 1996 (concebido en 1992)",
+        "Festival de Iluminación de Invierno del 5 de diciembre de 2025 al 15 de marzo de 2026 con más de 30.000 LEDs (primer festival de luz en entorno natural de Corea)",
+        "20 sub-jardines temáticos — Jardín Hundido con la forma de la península coreana, Jardín de la Luz de la Luna, Jardín Bonsái, Jardín del Edén",
+        "Localización de rodaje de K-drama para *Moonlight Drawn by Clouds* y otros",
+        "**Concebido en 1992 / parcela adquirida en 1994 / inaugurado el 11 de mayo de 1996**: el fundador, Prof. Han Sang-kyung (Departamento de Horticultura de la Universidad Sahmyook), y su esposa diseñaron y cultivaron personalmente todo el jardín, llegando a vender su casa durante las primeras dificultades financieras",
+        "**Seleccionado por CNN entre las 50 principales atracciones turísticas de Corea** — el Jardín Hundido con la forma de la península coreana (10 parterres grandes y pequeños que expresan el anhelo de unificación) es el rasgo destacado por CNN",
+        "**El Festival de Iluminación emplea más de 200.000 bombillas LED ecológicas** (diciembre–marzo) — primer festival de luz en entorno natural de Corea; encendido cada noche desde el atardecer (17:00)",
+        "**Cheonnyeonhyang (junípero chino)** es el símbolo oficial de la Calma Matutina — la especie insignia del jardín entre las 5.000 catalogadas"
+      ],
+      "smartNotes": {
+        "photo": "Primavera (cerezos en abril), verano (verdes exuberantes), otoño (follaje de octubre a principios de noviembre) e invierno (festival de iluminación tras el atardecer) ofrecen registros distintos. Los túneles de luz al anochecer durante el festival son la toma icónica.",
+        "facilities": "El Food Garden sirve cocina coreana reconfortante (estofado de pasta de soja, bibimbap de verduras, tteokbokki de queso 'snow'). Good Morning Coffee, en una casa-tostadora hanok, es el café insignia. Los restaurantes cierran a las 20:00.",
+        "tip": "Para el festival de iluminación (5 dic – 15 mar), llegue hacia las 16:00 para ver primero el jardín diurno y permanecer durante la iluminación (~17:00 en adelante). Las grandes nevadas de febrero brindan la escena más mágica, al estilo de *Frozen*."
+      },
+      "whyOnRoute": "El Jardín de la Calma Matutina es el capítulo intermedio del día y el más tranquilo: 90 minutos bastan para recorrer el circuito principal, pasar junto a los parterres con forma de península coreana del Jardín Hundido y aun así sentarse en algún sitio. Queda tierra adentro y cuesta arriba desde el río, de modo que tiene que ir después de Nami y antes del regreso; visitarlo a primera hora de la tarde permite además ver el jardín en su momento más templado, algo que importa de noviembre a marzo, cuando el valle retiene el frío.",
+      "convenience": {
+        "restroom": "Múltiples, señalizados",
+        "parking": "Amplio aparcamiento gratuito; consigna con candado por monedas 1.500–2.000 KRW (solo monedas de 500 KRW)"
+      },
+      "description": "A unos 30 minutos al sur de la Isla Nami, el Jardín de la Calma Matutina es el arboreto privado de referencia de Corea — aproximadamente 330.000 m² de paisaje cuidadosamente compuesto con cerca de 5.000 especies vegetales. Concebido en 1992 y abierto al público en 1996, el jardín fue diseñado y cultivado personalmente por Han Sang-kyung, de la Universidad Sahmyook, quien llegó a vender su casa para financiar el proyecto; el nombre evoca el longevo apodo de Corea, 'Tierra de la Calma Matutina' (Joseon). \n\nVeinte sub-jardines temáticos — entre ellos el Jardín Hundido con la silueta de la península coreana, la Casa del Pueblo Natal, el Jardín Bonsái, el Jardín de la Luz de la Luna, el Sendero del Cielo y el Jardín del Edén — poseen identidad visual propia y han servido de plató a numerosos K-dramas, incluido *Moonlight Drawn by Clouds*. \n\nDe principios de diciembre a mediados de marzo cada invierno, el jardín acoge el primer festival de iluminación en entorno natural de Corea — la edición 2025–2026 transcurre del 5 de diciembre de 2025 al 15 de marzo de 2026, con más de 30.000 LEDs cubriendo los terrenos y transformando el jardín tras el ocaso en un país invernal de ensueño. \n\nEl horario del festival se amplía de domingo a viernes de 11:00 a 21:00 y los sábados de 11:00 a 23:00; fuera del festival opera de 08:30 a 19:00, con última entrada a las 18:00. \n\nEl nombre **'Jardín de la Calma Matutina'** procede del poeta indio Rabindranath Tagore, quien en 1929 se refirió a Corea como 'la Tierra de la Calma Matutina'. Han Sang-kyung concibió el proyecto en 1992 mientras era profesor visitante en Estados Unidos, donde lo inspiraron los grandes jardines privados internacionales. \n\nLa parcela se adquirió en 1994 — entonces un erial pedregoso despejado por agricultura de tala y quema. **Han y su esposa diseñaron y trabajaron personalmente en el jardín**, y durante los periodos de dificultad financiera vendieron la casa familiar y vivieron en una pequeña vivienda dentro de la propiedad para continuar la obra. \n\nEl jardín abrió por primera vez al público el 11 de mayo de 1996, con 10 secciones temáticas; hoy se ha ampliado a 20 sub-jardines temáticos sobre 330.000 m².",
+      "visitBasics": {
+        "hours": "Aproximadamente de 08:30 hasta la puesta de sol (habitualmente 08:30-19:00), última entrada a las 18:00. Durante el Festival de Luces de invierno el jardín permanece abierto hasta la noche; el horario cambia cada temporada y el guía confirma la hora de cierre del día en el autocar",
+        "closed": "Abierto todo el año",
+        "admission": "Adulto ₩11,000 — INCLUIDA en este tour",
+        "walking": "Moderada: senderos extensos por terreno ondulado a través de los jardines temáticos; el circuito principal es en general accesible con carrito de bebé"
+      },
+      "image": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+      "images": [
+        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 1",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 2",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 3",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "Jardín de la Mañana Tranquila (Achimsogwon)",
+          "caption": "Jardín de la Mañana Tranquila (Achimsogwon) — photo 4",
+          "alt": "Jardín de la Mañana Tranquila (Achimsogwon) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 16:00",
+      "duration": "60 min",
+      "name": "Petite France",
+      "category": "Pueblo Temático de El Principito",
+      "description": "La última parada compacta del día, Petite France es un pueblo cultural de temática francesa construido en una ladera sobre el lago Cheongpyeong, a unos 25 minutos de la isla de Nami. Inaugurado en julio de 2008 por el fundador Han Hong-seop, el pueblo de 16 edificios está inspirado en «flores, estrellas y El Principito» (la novela de Antoine de Saint-Exupéry de 1943, *Le Petit Prince*) y alberga una sala conmemorativa de Saint-Exupéry, la Casa Orgel (una colección de cajas de música antiguas con una pieza central de 200 años que aún funciona), una exposición de vivienda francesa, un teatro de marionetas y una galería de esculturas y pinturas del *coq gaulois* (gallo galo). \n\nLos aficionados a las series acuden principalmente por su legado en los k-dramas: Petite France fue el lugar de rodaje de *Beethoven Virus* (2008), *Personal Taste* (2010), *Secret Garden* (2010), *My Love from the Star* (2013-2014), el exitoso drama de 2025 *Bon Appétit Your Majesty* (Maison de Marie fue el dormitorio del personaje de Im Yoon-ah), y el popular programa de variedades *Running Man*. \n\nEl adyacente Pueblo Italiano de Pinocho y Da Vinci ofrece una opción de entrada combinada para los visitantes con tiempo extra. El recinto ha sido seleccionado para el Programa Conmemorativo del 140.º Aniversario de las Relaciones Corea-Francia 2026. \n\nEl pueblo cumple una doble función: pueblo cultural de temática francesa + el **Centro de Formación Juvenil de Goseong**, que puede alojar hasta 200 visitantes en habitaciones de 4 a 10 personas para estancias educativas. \n\nEl elemento arquitectónico más distintivo del recinto es la **Galería de Residencia Tradicional Francesa**: una granja francesa completa del siglo XIX procedente de la región central de Francia, desmontada y reensamblada in situ con madera, tejas y ladrillos de más de 200 años, unida sin clavos mediante la técnica tradicional francesa de entramado de madera con mortaja y espiga. \n\nPetite France es también **la única organización en Corea con licencia de la Fundación Saint-Exupéry**, lo que significa que cada motivo de El Principito presente en el recinto está oficialmente autorizado por la Fundación en Francia. \n\nEl adyacente Pueblo Italiano de Pinocho y Da Vinci (entrada separada o combinada a ₩19.500 para adultos) amplía el contenido de pueblo europeo del día en aproximadamente 45 min si se desea.",
+      "highlights": [
+        "Inaugurado en julio de 2008; 16 edificios de estilo francés construidos en torno al tema de «El Principito» (Saint-Exupéry, 1943)",
+        "Participaciones como locación en k-dramas: *Beethoven Virus* (2008), *Personal Taste* (2010), *Secret Garden* (2010), *My Love from the Star* (2013-14), *Bon Appétit Your Majesty* (2025)",
+        "Casa Orgel: colección de cajas de música de 200 años; teatro de marionetas con funciones diarias",
+        "Pueblo Italiano de Pinocho y Da Vinci adyacente — entradas combinadas 19.500 KRW adultos",
+        "Seleccionado para el Programa Conmemorativo del 140.º Aniversario de las Relaciones Corea-Francia 2026",
+        "**Única organización en Corea con acuerdo de licencia internacional con la Fundación Saint-Exupéry en Francia** — cada motivo de El Principito en el recinto cuenta con licencia oficial",
+        "**Los 16 edificios incluyen una granja francesa del siglo XIX** reensamblada con madera, tejas y ladrillos de más de 200 años importados de la región central de Francia, ensamblados sin clavos (método tradicional francés de entramado de madera)",
+        "**Locación del k-drama de 2025 'Bon Appétit, Your Majesty'**: «Maison de Marie» representa el apartamento contemporáneo en Corea de Yeon Ji-yeong (IM YOON-AH) — se suma al repertorio existente de k-dramas (*Beethoven Virus* 2008, *Personal Taste* 2010, *Secret Garden* 2010, *My Love from the Star* 2013, *Vincenzo* 2021)"
+      ],
+      "timeUsed": [
+        "Entrada y orientación rápida",
+        "Recorrido por las coloridas calles y los 16 edificios con sus exposiciones y puntos fotográficos (~45 min)",
+        "Espectáculo de marionetas u demostración del Orgel opcional si hay función programada",
+        "Refrigerio ligero en los puestos de snacks o la cafetería del recinto",
+        "Visita de extensión opcional al Pueblo Italiano de Pinocho y Da Vinci (~45 min, entrada combinada ₩19.500 adultos)"
+      ],
+      "whyOnRoute": "Petite France cierra el día por dónde está, no solo por lo que es: el pueblo se asienta a orillas del lago Cheongpyeong, ya orientado hacia Seúl, así que pasar una hora aquí no añade kilómetros. Es además, con diferencia, la parada más pequeña del día —dieciséis edificios en una ladera, recorribles en menos de una hora—, lo que la convierte en la nota adecuada para terminar después de dos horas en una isla y noventa minutos en un jardín. Los seguidores de My Love from the Star, Secret Garden y Beethoven Virus la reconocerán de inmediato.",
+      "visitBasics": {
+        "hours": "09:00-18:00, última entrada a las 17:00; la hora de cierre varía según la temporada y algunas noches por eventos nocturnos programados",
+        "closed": "Abierto todo el año",
+        "admission": "Adulto ₩12,000 — INCLUIDA en este tour. La entrada combinada con el vecino Pinocchio & Da Vinci Italian Village (₩19,500 adulto) NO está incluida; la hora prevista en este itinerario cubre únicamente Petite France",
+        "walking": "Fácil: un pueblo pequeño en una ladera de pendiente suave, que se recorre cómodamente en menos de una hora"
+      },
+      "convenience": {
+        "restroom": "En el lugar",
+        "parking": "Estacionamiento gratuito"
+      },
+      "smartNotes": {
+        "photo": "Las casas de entramado de madera en colores pastel sobre el fondo verde de la montaña son las fotografías más características. La terraza mirador en lo alto de la colina ofrece la mejor composición panorámica. La búsqueda de escenas de k-dramas es una actividad guiada para los fanáticos (edificio Saint-Exupéry = escenas clave de \"Mi amor de las estrellas\").",
+        "facilities": "Solo puestos de snacks — gofres, dumplings, sopa de pastel de pescado, café. La mayoría de los visitantes prefieren comer en el vecino Italian Village o en la cercana ciudad de Cheongpyeong.",
+        "tip": "Se combina mejor con la Isla Nami y/o el Jardín de la Calma Matutina a través del Autobús Turístico de la Ciudad de Gapyeong para viajes autoguiados. Llegar a última hora de la tarde permite disfrutar de la iluminación diurna y de las primeras horas de la noche. Los visitantes que esperan una gran atracción suelen notar la modesta escala del lugar (típicamente 1,5-2 horas) — gestione sus expectativas."
+      },
+      "_poi_meta": {
+        "poi_key": "petite_france",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+          "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+          "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+          "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+          "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+        ]
+      },
+      "image": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "images": [
+        "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "/images/tours/petite-france/petite-france-couple-colorful.webp",
+        "/images/tours/petite-france/petite-france-ai-pastel-village.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 1",
+          "alt": "Petite France — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 2",
+          "alt": "Petite France — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+          "location": "Petite France",
+          "caption": "Petite France — photo 3",
+          "alt": "Petite France — gallery image 3"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "time": "≈ 18:30",
+      "duration": "≈ 1.5 horas de trayecto",
+      "name": "Regreso a Seúl (estación de Myeongdong o de Hongik University)",
+      "category": "Bajada de regreso",
+      "description": "La salida de Petite France es hacia las 16:45 para el trayecto de ~1.5 horas de vuelta a Seúl por la autopista Seúl-Chuncheon. Las bajadas se hacen en el orden inverso al de la recogida: **estación de Myeongdong sobre las 18:30** y después **estación de Hongik University sobre las 19:00**.\n\nAmbas son estaciones de transbordo de metro, así que las conexiones posteriores son sencillas, y el horario deja la tarde libre: estará de vuelta bastante antes de que los restaurantes de Seúl se llenen. Los viernes por la tarde y los regresos en domingo pueden añadir entre 20 y 40 minutos de tráfico en la aproximación a la ciudad; el guía dará la estimación en tiempo real del autocar durante el trayecto.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "Salida de Petite France (~16:45)",
+        "Trayecto por autopista con una breve parada de descanso si hace falta (~1.5 horas)",
+        "Bajada en la estación de Myeongdong (~18:30)",
+        "Bajada en la estación de Hongik University (~19:00)"
+      ],
+      "whyOnRoute": "Terminar en Petite France en lugar de en el Jardín de la Calma Matutina es lo que acorta el regreso: el pueblo ya está en el lado de Gapyeong que da a Seúl, así que el autocar apunta hacia casa desde el momento en que sale. Invertir el orden de las bajadas hace que los pasajeros de Myeongdong, que subieron los últimos, bajen los primeros.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Recogida (Hongik / Myeongdong)",
+      "type": "origin",
+      "theme": "Seoul pickup"
+    },
+    {
+      "name": "Isla Nami",
+      "type": "primary",
+      "theme": "K-drama island"
+    },
+    {
+      "name": "Almuerzo en Gapyeong",
+      "type": "secondary",
+      "theme": "Lunch break"
+    },
+    {
+      "name": "Jardín de la Calma Matutina",
+      "type": "primary",
+      "theme": "Themed garden"
+    },
+    {
+      "name": "Petite France",
+      "type": "primary",
+      "theme": "French village"
+    },
+    {
+      "name": "Regreso a Seúl",
+      "type": "return",
+      "theme": "Drop-off"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Seúl → Gapyeong",
+      "duration": "≈ 1.5 horas",
+      "description": "Recogida a las 07:30 en Hongik / 08:00 en Myeongdong y, a continuación, un trayecto de ~1.5 horas hacia el noreste hasta el muelle de Gapyeong y el ferry de cinco minutos que cruza a la Isla Nami."
+    },
+    {
+      "phase": "Isla Nami",
+      "duration": "≈ 2 horas",
+      "description": "Avenidas llanas bordeadas de árboles, la alameda de metasecuoyas de Winter Sonata, bancos junto al río y avestruces y pavos reales en libertad. El ferry de ida y vuelta y la tasa de visado de la República de Naminara están incluidos."
+    },
+    {
+      "phase": "Almuerzo → Jardín de la Calma Matutina",
+      "duration": "≈ 2.5 horas",
+      "description": "Almuerzo en un restaurante local de Gapyeong (por cuenta propia; tierra del dakgalbi) y, después, unos 35 minutos tierra adentro y cuesta arriba hasta el Jardín de la Calma Matutina, con 90 minutos para recorrer sus jardines temáticos."
+    },
+    {
+      "phase": "Petite France → Seúl",
+      "duration": "≈ 2.5 horas",
+      "description": "Unos 45 minutos de bajada hasta la orilla del lago Cheongpyeong para pasar una hora en Petite France y, después, el trayecto de ~1.5 horas hasta Seúl: Myeongdong sobre las 18:30, Hongik sobre las 19:00."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Cómo se desarrolla este día desde Seúl",
+    "subtitle": "Una recogida a las 07:30 en Hongik / 08:00 en Myeongdong y un trayecto de ~1.5 horas hacia el noreste le sitúan en el ferry de la Isla Nami antes de que se espese la afluencia de excursionistas. Almuerzo en el pueblo de Gapyeong; después el recorrido gira tierra adentro y sube hasta el Jardín de la Calma Matutina, para finalmente bajar de nuevo a Petite France, a orillas del lago Cheongpyeong, que queda de camino a casa, de modo que la última parada no obliga a desandar el camino. De vuelta en Seúl sobre las 18:30-19:00."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Quienes visitan Corea por primera vez y quieren ver el campo coreano sin subir una montaña",
+      "Parejas y aficionados al hallyu que vienen por la avenida de metasecuoyas de Winter Sonata",
+      "Familias y viajeros mayores: todas las paradas son llanas o de pendiente suave",
+      "Cualquiera que quiera un día completo fuera de Seúl que aun así termine antes de la cena"
+    ],
+    "lessIdealFor": [
+      "Senderistas: en esta ruta no hay montaña ni cima",
+      "Viajeros que prefieren una única parada pausada en lugar de tres",
+      "Quienes esperan vida nocturna o tiempo en la ciudad por la tarde antes de las 19:00"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Ritmo y geografía",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Nami primero, antes de las multitudes",
+            "detail": "Gapyeong está a solo ~75 km de Seúl, así que salir a las 07:30 permite llegar al muelle sobre las 10:00, por delante de los viajeros independientes que llegan en los trenes ITX de media mañana y con la luz baja de la mañana todavía sobre la avenida de metasecuoyas."
+          },
+          {
+            "label": "Los jardines quedan tierra adentro; el pueblo, de camino a casa",
+            "detail": "El Jardín de la Calma Matutina está arriba, en Sang-myeon, a unos 35 minutos tierra adentro desde el río; Petite France queda abajo, a orillas del lago Cheongpyeong, ya orientado hacia Seúl. Visitarlos en ese orden hace que la última parada no obligue a desandar el camino."
+          },
+          {
+            "label": "Tres entradas, un solo precio",
+            "detail": "La tasa de visado de ₩19,000 de Nami (ferry de ida y vuelta incluido), los ₩11,000 del Jardín de la Calma Matutina y los ₩12,000 de Petite France están todos cubiertos: unos ₩42,000 en entradas por las que no hará cola ni volverá a pagar."
+          },
+          {
+            "label": "Un día más corto que las rutas del Seoraksan",
+            "detail": "Como aquí nada está en Gangwon, el autocar pasa unas tres horas en carretera en lugar de cinco. Esa es toda la razón por la que este día resulta relajado allí donde los itinerarios del Seoraksan se hacen largos."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida y regreso",
+      "preview": "Dos puntos de recogida en Seúl: el Starbucks de la salida 8 de la estación…",
+      "content": [
+        "Dos puntos de recogida en Seúl: el Starbucks de la salida 8 de la estación de Hongik University a las 07:30 (Mapo-gu) y la salida 2 de la estación de Myeongdong, junto a la tienda insignia de NorthFace, a las 08:00 (Jung-gu).",
+        "Ambas recogidas comparten el mismo autocar; le rogamos estar en el punto elegido 5 minutos antes.",
+        "Bajadas de regreso en orden inverso: Myeongdong ≈18:30, Hongik University ≈19:00.",
+        "La duración efectiva de su tour depende del punto de recogida: ≈11.5 horas desde Hongik, ≈10.5 horas desde Myeongdong."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "Qué llevar y cómo vestir",
+      "preview": "Calzado cómodo para caminar: no hace falta calzado de montaña, pero estará…",
+      "content": [
+        "Calzado cómodo para caminar: no hace falta calzado de montaña, pero estará de pie a lo largo de 5-6 km durante el día.",
+        "Capas de abrigo de noviembre a marzo; los valles de Gapyeong están varios grados más fríos que el centro de Seúl y la cubierta del ferry de Nami está expuesta.",
+        "Cámara o teléfono: la avenida de metasecuoyas de Nami y el mirador del Jardín Hundido en la Calma Matutina son las dos fotos por las que viene la gente.",
+        "Efectivo y tarjeta para el almuerzo (₩10,000-15,000) y cualquier extra opcional.",
+        "Protección solar en verano; el circuito del jardín tiene tramos largos con poca sombra."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Política meteorológica",
+      "preview": "Funciona todo el año.",
+      "content": [
+        "Funciona todo el año.",
+        "Lluvia ligera: el tour se realiza según lo previsto. Las tres paradas aguantan bien la lluvia: las avenidas arboladas de Nami y el Jardín de la Calma Matutina resultan realmente buenos con tiempo húmedo, y Petite France tiene salas de exposición cubiertas.",
+        "Lluvia intensa o tormenta: el ferry de Nami puede suspenderse con mal tiempo severo. Si ocurre, el guía amplía las paradas del jardín y de Petite France y se reembolsa la entrada de Nami.",
+        "Nieve: en Gapyeong nieva más que en el centro de Seúl. El autocar lleva neumáticos de invierno en temporada; una nevada intensa puede añadir una hora al regreso.",
+        "El orden del itinerario o los horarios pueden variar el mismo día por tráfico, meteorología u horarios de apertura de los recintos: el guía confirma el plan del día en el autocar."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido",
+      "preview": "Dos puntos de recogida en Seúl y los mismos dos puntos de bajada, autocar c…",
+      "content": [
+        "Dos puntos de recogida en Seúl y los mismos dos puntos de bajada, autocar con aire acondicionado y guía titulado de habla inglesa.",
+        "Ferry de ida y vuelta a la Isla Nami + tasa de visado de la República de Naminara (₩19,000) — INCLUIDOS.",
+        "Entrada al Jardín de la Calma Matutina (₩11,000) — INCLUIDA.",
+        "Entrada a Petite France (₩12,000) — INCLUIDA.",
+        "Peajes y aparcamiento — INCLUIDOS.",
+        "NO incluye: almuerzo y bebidas (₩10,000-15,000, por cuenta propia), la entrada combinada de Petite France + Italian Village (₩19,500), el alquiler de bicicleta o bugui eléctrico en la Isla Nami, la tirolina Skyline Zipwire hasta Nami ni los gastos personales.",
+        "Guía de habla china disponible bajo petición; reserve con al menos 3 días de antelación."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Idioma",
+      "preview": "Idioma principal del tour: inglés.",
+      "content": [
+        "Idioma principal del tour: inglés.",
+        "Guía en chino disponible bajo petición — reserve con 3 o más días de antelación.",
+        "Se habla coreano durante todo el día para menús, señalización e interacciones en puestos; el guía se encarga de la traducción."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Caminata y terreno",
+      "preview": "Fácil a moderada: esta ruta no incluye senderismo ni tramos con muchas esca…",
+      "content": [
+        "Fácil a moderada: esta ruta no incluye senderismo ni tramos con muchas escaleras.",
+        "Isla Nami: avenidas llanas, pavimentadas y bordeadas de árboles; ~3 km en 2 horas es el ritmo habitual. En la isla se pueden alquilar bicicletas y buguis eléctricos por cuenta propia.",
+        "Jardín de la Calma Matutina: terreno ondulado por senderos de jardín en su mayoría pavimentados; el circuito principal es en general accesible con carrito de bebé, aunque algunos jardines temáticos quedan tras cuestas cortas.",
+        "Petite France: un pueblo pequeño en ladera, con pendientes suaves, recorrible en menos de una hora a ritmo tranquilo.",
+        "El total caminado a lo largo del día es de aproximadamente 5-6 km, repartidos entre tres paradas con el autocar entre medias. Basta con calzado cómodo; no hace falta calzado de montaña."
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "Almuerzo (por cuenta propia)",
+      "preview": "El almuerzo se toma hacia las 12:15 en un restaurante local de la zona del…",
+      "content": [
+        "El almuerzo se toma hacia las 12:15 en un restaurante local de la zona del muelle de Gapyeong, después de la Isla Nami.",
+        "Esta es tierra de dakgalbi: pollo agridulce y picante salteado en la mesa, que suele rematarse friendo arroz en la salsa. El makguksu (fideos fríos de trigo sarraceno) es el acompañamiento clásico.",
+        "Calcule aproximadamente ₩10,000-15,000 por persona. Normalmente se acepta tanto efectivo como tarjeta; los puestos cerca del muelle suelen admitir solo efectivo.",
+        "Las opciones vegetarianas son limitadas en esta región: dígaselo al guía por la mañana y llamará con antelación."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancelación",
+      "preview": "Cancelación gratuita hasta 24 horas antes de la recogida.",
+      "content": [
+        "Cancelación gratuita hasta 24 horas antes de la recogida.",
+        "Dentro de las 24 horas: reembolso del 50%.",
+        "No presentarse o no acudir al punto de recogida: sin reembolso — pero contacte con las operaciones de AtoC Korea dentro de los 10 minutos del horario de recogida y el autobús podría esperar brevemente si va adelantado."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Ver notas estacionales"
+    },
+    "_seasonalSummary": "Seoul + Gangwon: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April cherry blossoms) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar-may)",
+      "description": "Flores de cerezo a lo largo del río Bukhan a principios de abril y, después, el festival de primavera del Jardín de la Calma Matutina con decenas de miles de tulipanes. Los edificios en tonos pastel de Petite France lucen mejor sobre el verde nuevo."
+    },
+    {
+      "season": "Verano (jun-ago)",
+      "description": "Las avenidas arboladas de Nami dan sombra de verdad y la isla es notablemente más fresca que Seúl. El jardín está frondoso, pero caluroso y en gran parte sin sombra: lleve agua y protección solar. En el monzón de julio son de esperar chubascos por la tarde."
+    },
+    {
+      "season": "Otoño (sep-nov)",
+      "description": "La mejor estación en esta ruta. Las avenidas de metasecuoyas y ginkgos de Nami cambian de color desde finales de octubre hasta mediados de noviembre, y el Jardín de la Calma Matutina celebra su exposición otoñal de crisantemos. Reserve pronto: es el momento de mayor demanda."
+    },
+    {
+      "season": "Invierno (dic-feb)",
+      "description": "El Festival de Luces del Jardín de la Calma Matutina ilumina el recinto desde principios de diciembre hasta mediados de marzo aproximadamente, y durante ese periodo el jardín permanece abierto hasta la noche. Nami bajo la nieve es la imagen misma de Winter Sonata. Abríguese bien: los valles son fríos y la cubierta del ferry está expuesta."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Todas las entradas incluidas",
+      "description": "Ferry de Nami + Morning Calm incluidos",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "La entrada al ferry de la Isla Nami (₩19,000) y al Jardín de Morning Calm (₩11,000) están prepagadas en el precio del tour — sin colas de taquilla en cada parada. La entrada a Seoraksan es GRATUITA (eliminada en mayo de 2023). Ahorro total en entradas: ~₩30,000."
+    },
+    {
+      "icon": "users",
+      "title": "Guía con licencia en inglés",
+      "description": "Guía turístico con licencia coreana",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "Guía con licencia de la Organización de Turismo de Corea con fluidez en inglés; guía de habla china disponible con reserva anticipada. La narración del guía abarca la historia del templo de la era Silla de Seoraksan, el legado de Winter Sonata de Nami y la historia del fundador de Morning Calm."
+    },
+    {
+      "icon": "shield",
+      "title": "Precios transparentes",
+      "description": "Sin paradas de compras ocultas",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Sin tiendas de ginseng, sin tiendas libres de impuestos, sin desvíos a tiendas de souvenirs por comisión. Cada minuto del día de 13 horas se dedica a una atracción o al trayecto: lo que reservas es lo que experimentas."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Inmediatamente",
+      "title": "Confirmación instantánea",
+      "detail": "Confirmación de reserva con selección del punto de recogida",
+      "description": "Confirmación de reserva instantánea con selección del punto de recogida en Hongik/Myeongdong."
+    },
+    {
+      "timing": "El día anterior",
+      "title": "Detalles de la recogida",
+      "detail": "Ubicación exacta de recogida e información del vehículo vía WhatsApp/SMS",
+      "description": "Verificación meteorológica, número de matrícula del autocar y notas sobre rutas de temporada (horario del Festival de Iluminación Morning Calm, época pico del follaje de Seoraksan, etc.) enviadas el día anterior."
+    },
+    {
+      "timing": "La mañana del tour",
+      "title": "Confirmación de recogida",
+      "detail": "Identificación del guía en el punto de recogida 10 minutos antes de la salida",
+      "description": "El guía espera en Starbucks Hongik Salida 8 desde las 05:50; en Myeongdong Salida 2 (NorthFace) desde las 06:20. La foto del guía y del autocar se envía a tu WhatsApp la noche anterior."
+    },
+    {
+      "timing": "Durante el tour",
+      "title": "Asistencia durante el recorrido",
+      "detail": "Narración del guía en cada parada + soporte operativo 24/7",
+      "description": "El guía ofrece narración in situ sobre la fundación de Seoraksan en el año 652 d. C. durante la era Silla, el origen de Nami en la Presa de Cheongpyeong en 1944 + el legado de Winter Sonata en 2002, y la concepción de Morning Calm en 1992 + su inauguración en 1996."
+    },
+    {
+      "timing": "Al final del día",
+      "title": "Dos puntos de bajada",
+      "detail": "Myeongdong ~19:00 / Hongik ~19:30",
+      "description": "El autocar realiza las paradas en ambos puntos de recogida en orden inverso en el regreso."
+    },
+    {
+      "timing": "Después del tour",
+      "title": "Valoración y seguimiento",
+      "detail": "Reseña opcional posterior al tour",
+      "description": "Se envía una solicitud de opinión post-tour; las recomendaciones de restaurantes o atracciones para el resto de tu estancia en Seúl se responden el mismo día."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "¿Están realmente incluidas todas las entradas?",
+      "answer": "Sí: las tres entradas de esta ruta están cubiertas: la tasa de visado de la República de Naminara de ₩19,000 de la Isla Nami (que incluye el ferry de ida y vuelta), los ₩11,000 del Jardín de la Calma Matutina y los ₩12,000 de Petite France. Son unos ₩42,000 por adulto por los que no hará cola ni volverá a pagar. El almuerzo es lo principal que paga usted."
+    },
+    {
+      "question": "¿Es lo mismo que el tour del Seoraksan que también visita Nami y la Calma Matutina?",
+      "answer": "No, y la diferencia son unas tres horas de carretera. La excursión de un día al Seoraksan añade un parque nacional en Gangwon-do, lo que implica salir a las 06:00, cinco horas de carretera y un día de 13 horas. Este tour se queda en Gapyeong: salida a las 07:30, unas tres horas de carretera y Petite France en lugar de la montaña. Elija este si quiere los jardines y la isla sin el tiempo de autocar."
+    },
+    {
+      "question": "¿Cuánto se camina?",
+      "answer": "Aproximadamente 5-6 km a lo largo de todo el día, repartidos en tres paradas separadas con el autocar entre medias. No hay senderismo, ni cima, ni largas subidas de escaleras. Nami es completamente llana, el Jardín de la Calma Matutina es suavemente ondulado y Petite France es un pequeño pueblo en ladera. Basta con calzado cómodo de diario."
+    },
+    {
+      "question": "¿Es adecuado para niños pequeños o viajeros mayores?",
+      "answer": "Sí, más que la mayoría de las excursiones de un día desde Seúl. Todas las paradas son llanas o de pendiente suave, el trayecto más largo es de aproximadamente 1.5 horas y el día termina a las 19:00. En Nami se alquilan bicicletas y buguis eléctricos si caminar la isla resulta excesivo, y el circuito principal del Jardín de la Calma Matutina es en general accesible con carrito de bebé. La única salvedad es la duración total: sigue siendo un día de 11 horas de puerta a puerta."
+    },
+    {
+      "question": "¿Qué es la tasa de visado de la República de Naminara?",
+      "answer": "Es la entrada de la Isla Nami, presentada como un visado porque en 2006 la isla se declaró la 'República de Naminara' como concepto de turismo cultural, con su propia bandera, sus sellos y su mostrador de inmigración. En la práctica es una entrada de adulto de ₩19,000 que incluye la travesía en ferry de cinco minutos en ambos sentidos, y está incluida en este tour."
+    },
+    {
+      "question": "¿Podemos visitar el Italian Village que hay junto a Petite France?",
+      "answer": "No dentro de este itinerario. El Pinocchio & Da Vinci Italian Village está en la colina justo detrás de Petite France y requiere una entrada combinada (₩19,500 adulto) más al menos otra hora. Este tour incluye solo Petite France y prevé una hora allí. Si el Italian Village le importa, nuestro tour privado por Gapyeong puede incorporarlo."
+    },
+    {
+      "question": "¿Qué pasa si llueve?",
+      "answer": "El tour se realiza. Las tres paradas funcionan con lluvia ligera: las avenidas arboladas de Nami y el jardín resultan realmente evocadores con la humedad, y Petite France tiene salas de exposición cubiertas, entre ellas la sala Saint-Exupéry y la Orgel House de cajas de música. El único riesgo meteorológico real es que una tormenta suspenda el ferry de Nami, en cuyo caso el guía amplía las otras dos paradas y se reembolsa la entrada de Nami."
+    },
+    {
+      "question": "¿Está incluido el Festival de Luces del Jardín de la Calma Matutina?",
+      "answer": "El festival no es una entrada aparte: se celebra dentro del jardín y su entrada incluida lo cubre. Pero este es un itinerario diurno: estamos en el jardín a primera hora de la tarde, así que en la temporada del festival, de diciembre a marzo, verá las instalaciones apagadas y no iluminadas. Si el jardín iluminado es su prioridad, díganoslo y le indicaremos una opción nocturna en su lugar."
+    },
+    {
+      "question": "¿Qué K-dramas se rodaron en estas paradas?",
+      "answer": "La Isla Nami es la localización de Winter Sonata (2002): la avenida de metasecuoyas es la escena en la que la gente viene a colocarse. Entre los créditos de Petite France están Beethoven Virus (2008), Personal Taste (2010), Secret Garden (2010) y My Love from the Star (2013-14). El Jardín de la Calma Matutina también se ha usado como localización de rodaje, entre otras para Moonlight Drawn by Clouds."
+    },
+    {
+      "question": "¿A qué hora volvemos a Seúl?",
+      "answer": "A la estación de Myeongdong sobre las 18:30 y a la estación de Hongik University sobre las 19:00. Ambas son estaciones de transbordo de metro. Los viernes por la tarde y los regresos en domingo pueden añadir entre 20 y 40 minutos en la aproximación a la ciudad; el guía da una estimación en tiempo real durante el trayecto. El horario es deliberadamente lo bastante temprano como para dejarle la tarde libre."
+    },
+    {
+      "question": "¿Está incluido el almuerzo?",
+      "answer": "No. El autocar para una hora en un restaurante de la zona del muelle de Gapyeong y usted pide y paga lo que quiera, normalmente ₩10,000-15,000. Esta es la región de origen del dakgalbi —pollo agridulce y picante salteado en la mesa—, que suele comerse con fideos makguksu. Las opciones vegetarianas son limitadas, así que dígaselo al guía por la mañana y llamará con antelación."
+    },
+    {
+      "question": "¿Hay guía, y en qué idioma?",
+      "answer": "Sí: un guía titulado de habla inglesa acompaña al autocar durante todo el día. Hay guía de habla china bajo petición si reserva con al menos tres días de antelación. Las paradas en sí son en gran medida a ritmo libre: el guía se ocupa de las entradas, los horarios, la orientación y la traducción, más que de ofrecer un comentario continuo."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "Seleccione la fecha y el tamaño del grupo para consultar la disponibilidad en tiempo real y completar su reserva.",
+    "price": {
+      "amountLabel": "59",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 59
+    }
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "Starbucks Salida 8 de la Estación Hongik University",
+      "address": "Yanghwa-ro, Mapo-gu, Seúl (frente al Starbucks en la Salida 8 de la Estación Hongik University)",
+      "time": "Recogida 07:30 / bajada 19:00",
+      "instructions": "Encuéntrese con el guía frente al local de Starbucks situado justo encima de la salida 8 de la estación de Hongik University. Busque el cartel de AtoC Korea y el autocar en la fila de embarque."
+    },
+    "alternates": [
+      {
+        "name": "Salida 2 de la Estación Myeongdong (tienda insignia NorthFace)",
+        "address": "Toegye-ro, Jung-gu, Seúl (tienda insignia NorthFace en la Salida 2 de la Estación Myeongdong)",
+        "time": "Recogida 08:00 / bajada 18:30",
+        "instructions": "Encuéntrese con el guía delante de la tienda insignia de NorthFace, en lo alto de la salida 2 de la estación de Myeongdong."
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "destination_region": "seoul_gangwon",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "large_coach",
+    "duration_hours": 11.5,
+    "region_tags": [
+      "seoul_mapo",
+      "seoul_jung",
+      "gangwon_sokcho",
+      "gyeonggi_gapyeong"
+    ],
+    "theme_tags": [
+      "national_park",
+      "mountain",
+      "buddhist_temple",
+      "k_drama_filming",
+      "themed_garden",
+      "hallyu_landmark"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 2,
+    "scenic_level": 1,
+    "photo_level": 5,
+    "culture_level": 0.85,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.7,
+    "senior_fit": 0.8,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.85,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.8,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.6,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.5,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.1,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.25,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0,
+    "intangible_heritage_fit": 0.5,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": 0.65,
+    "comfort_level": 0.55,
+    "budget_fit": 1,
+    "premium_fit": 0.2,
+    "small_group_fit": 0.15,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "seoul_central",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "13h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited",
+        "wheelchair_required"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
+    "walking_notes": [
+      "11.5-hour day with ~4-5 km total walking.",
+      "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
+      "Closed-toe shoes recommended.",
+      "Nami bicycle and e-buggy rental optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "nami island day trip",
+      "garden of morning calm tour",
+      "seoul winter wonder tour",
+      "seoraksan nami one day"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan day tour",
+      "korea three signature stops day trip",
+      "seoul winter sonata tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.2,
+    "fixed_itinerary_fit": 1,
+    "national_park_fit": 0,
+    "buddhist_temple_fit": 0,
+    "k_drama_filming_fit": 1,
+    "winter_sonata_fit": 1,
+    "themed_garden_fit": 1,
+    "history_culture_fit": 0.65,
+    "religious_history_fit": 0.45,
+    "premium_dining_fit": 0.15,
+    "seasonal_fit": 1,
+    "winter_lighting_festival_fit": 1,
+    "autumn_foliage_fit": 1,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 1,
+    "us_market_fit": 0.95,
+    "europe_market_fit": 0.95,
+    "australia_market_fit": 0.95,
+    "japan_market_fit": 1,
+    "first_time_korea_fit": 1,
+    "seoul_day_trip_fit": 1,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "gapyeong",
+      "seoul_day_trip",
+      "k_drama_filming",
+      "themed_garden",
+      "river_island",
+      "french_village"
+    ],
+    "secondary_themes": [
+      "winter_sonata",
+      "metasequoia_lane",
+      "lighting_festival",
+      "photo_spots",
+      "autumn_foliage",
+      "first_time_korea"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "photo_lovers",
+      "families",
+      "k_drama_fans",
+      "seniors"
+    ],
+    "not_recommended_for": [
+      "hikers_seeking_mountains",
+      "nightlife_focused_travelers",
+      "travelers_wanting_a_short_half_day"
+    ],
+    "anchor_pois": [
+      "Nami Island",
+      "The Garden of Morning Calm",
+      "Petite France"
+    ],
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-private-nami-morning-calm-petite-france",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on this route. Cultural weight is popular-culture and horticultural: Winter Sonata's metasequoia lane on Nami Island, a 330,000 m² private arboretum, and a licensed Le Petit Prince village."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). The Gapyeong trio as a join-in-group coach day tour — the join-in counterpart to the existing private seoul-private-nami-morning-calm-petite-france. Donor A (seoul-seoraksan-nami-island-morning-calm-day-tour) supplied the KB-verified Nami Island and Garden of Morning Calm stop bodies plus Seoul-region weather/trust/support blocks and the two-point Seoul pickup; donor B (seoul-private-nami-morning-calm-petite-france) supplied the Petite France stop body. Pickup, lunch, return and all product-level copy authored fresh in 6 locales (scripts/seoul-gapyeong-content/) with de/fr/it/ru staged. Stop admission/hours re-verified 2026-08-04 against operator and KTO sources. matching_profile derived from donor A with the mountain axes zeroed and garden/K-drama axes raised — full KB calibration pending."
+    }
+  },
+  "page_sections": []
+}

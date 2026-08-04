@@ -1,0 +1,1228 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+  "locale": "ko",
+  "product_id": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+  "seo": {
+    "pageTitle": "서울 출발 가평 당일투어 — 남이섬, 아침고요수목원 & 쁘띠프랑스 | AtoC Korea",
+    "metaDescription": "서울에서 가평으로 가는 조인 그룹 버스 일일 투어입니다. 남이섬 메타세쿼이아 길, 아침고요수목원, 쁘띠프랑스를 돌며 입장료 세 곳이 모두 포함됩니다. 홍대입구역 또는 명동역 픽업, 19:00 전 서울 복귀.",
+    "title": "서울 출발 가평 당일투어 — 남이섬, 아침고요수목원 & 쁘띠프랑스",
+    "description": "서울에서 출발하는 11.5시간 버스 하루 코스로 가평의 세 명소를 돕니다. 남이섬 왕복 배편, 아침고요수목원과 쁘띠프랑스 입장료가 모두 포함됩니다.",
+    "primaryKeywords": [
+      "서울 출발 가평 당일투어",
+      "남이섬 투어",
+      "아침고요수목원 당일치기",
+      "쁘띠프랑스 가평",
+      "남이섬 아침고요수목원 코스"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/nami-island/nami-metasequoia-sunset-lake.webp"
+  },
+  "catalog_card": {
+    "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+    "title": "서울 출발 가평 일일 투어: 남이섬, 아침고요수목원 & 쁘띠프랑스",
+    "subtitle": "가평의 세 명소를 버스 하루 코스로 — 등산 없이, 입장료 세 곳 포함",
+    "region": "서울 → 경기도(가평)",
+    "duration": "11.5시간",
+    "stopsCount": 3,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "서울 근교 당일치기",
+      "가평",
+      "조인 그룹",
+      "K-드라마",
+      "정원"
+    ],
+    "tags": [
+      "서울 근교 당일치기",
+      "가평",
+      "조인 그룹",
+      "K-드라마",
+      "정원",
+      "가족 여행"
+    ],
+    "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "priceLabel": "",
+    "shortCardDescription": "서울에서 가장 부담 없는 근교 하루입니다. 남이섬 메타세쿼이아 길, 330,000 m² 규모의 테마 수목원, 그리고 어린 왕자 마을까지 — 입장료 세 곳이 모두 포함되고 19:00 전에 서울로 돌아옵니다."
+  },
+  "headlineLine1": "서울 근교 일일 투어",
+  "headlineLine2": "남이섬, 아침고요수목원 & 쁘띠프랑스",
+  "price": {
+    "amountLabel": "59",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 59
+  },
+  "hero": {
+    "imageUrl": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+    "imagePosition": "center 45%",
+    "images": [
+      "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp"
+    ],
+    "tagline": "서울에서 출발해 가평의 대표 정차지 세 곳을 여유롭게 도는 버스 하루 — 나무가 늘어선 강 위의 섬, 한국에서 가장 잘 알려진 민간 정원, 그리고 정식 라이선스를 받은 어린 왕자 마을입니다",
+    "pills": [
+      "서울 근교 당일치기",
+      "정원 + 한류",
+      "입장료 전부 포함"
+    ],
+    "meta": {
+      "duration": "11.5시간",
+      "region": "서울 → 경기도(가평)",
+      "stops": "정차지 3곳",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "일정"
+    },
+    {
+      "id": "details",
+      "label": "상세 정보"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "리뷰"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "clock",
+      "label": "소요 시간",
+      "value": "11.5시간"
+    },
+    {
+      "icon": "camera",
+      "label": "사진 명소",
+      "value": "매우 높음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경관",
+      "value": "높음",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "보행량",
+      "value": "쉬움~보통",
+      "level": 2
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 적합도",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "매우 좋음",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "일정 강도",
+      "value": "여유로움",
+      "level": 3
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "location": "남이섬 (나미섬)",
+      "caption": "남이섬 (나미섬) — photo 1",
+      "alt": "남이섬 (나미섬) — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "location": "남이섬 (나미섬)",
+      "caption": "남이섬 (나미섬) — photo 2",
+      "alt": "남이섬 (나미섬) — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+      "location": "남이섬 (나미섬)",
+      "caption": "남이섬 (나미섬) — photo 3",
+      "alt": "남이섬 (나미섬) — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+      "location": "남이섬 (나미섬)",
+      "caption": "남이섬 (나미섬) — photo 4",
+      "alt": "남이섬 (나미섬) — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+      "location": "아침고요수목원",
+      "caption": "아침고요수목원 — photo 1",
+      "alt": "아침고요수목원 — gallery image 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+      "location": "아침고요수목원",
+      "caption": "아침고요수목원 — photo 2",
+      "alt": "아침고요수목원 — gallery image 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+      "location": "아침고요수목원",
+      "caption": "아침고요수목원 — photo 3",
+      "alt": "아침고요수목원 — gallery image 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+      "location": "아침고요수목원",
+      "caption": "아침고요수목원 — photo 4",
+      "alt": "아침고요수목원 — gallery image 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "location": "쁘띠프랑스",
+      "caption": "쁘띠프랑스 — photo 1",
+      "alt": "쁘띠프랑스 — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+      "location": "쁘띠프랑스",
+      "caption": "쁘띠프랑스 — photo 2",
+      "alt": "쁘띠프랑스 — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+      "location": "쁘띠프랑스",
+      "caption": "쁘띠프랑스 — photo 3",
+      "alt": "쁘띠프랑스 — gallery image 3"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "07:30 / 08:00",
+      "duration": "30분 창",
+      "name": "픽업(홍대입구역 또는 명동역)",
+      "category": "버스 픽업",
+      "description": "픽업은 서울의 두 집결지 중 한 곳에서 진행됩니다: **(1) 홍대입구역 8번 출구 스타벅스(마포구)** 07:30 — 스타벅스 매장이 8번 출구를 나오면 바로 앞에 있습니다. 또는 **(2) 명동역 2번 출구(중구)** 08:00 — 출구 옆 노스페이스 플래그십 매장이 눈에 띄는 표지물입니다.\n\n두 픽업 지점은 같은 냉방 버스를 이용하며 홍대 승객이 먼저 탑승합니다. 선택하신 지점에 **예정 시각 5분 전까지** 도착해 주세요. 06:00에 출발하는 설악산 당일 코스보다 눈에 띄게 여유로운 출발입니다 — 가평은 첫 지하철이 두 시간쯤 운행한 뒤에 버스가 출발해도 될 만큼 서울에서 가깝습니다.\n\n가이드는 탑승 시 한국어-영어 일정 카드를 나눠 드리고 당일 운행 순서, 휴게소 정차, 예상 복귀 시각을 안내합니다. 명동에서 버스는 서울-춘천고속도로를 타고 북동쪽으로 약 1.5시간을 달려 가평선착장으로 향합니다.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "선택한 픽업 지점에 예정 시각 5분 전 도착(약 5분)",
+        "표시된 스타벅스 / 노스페이스 앞에서 AtoC Korea 버스 확인(약 5분)",
+        "픽업 대기줄에서 탑승(약 10분)",
+        "탑승 시 한국어-영어 일정 카드 배부"
+      ],
+      "whyOnRoute": "두 픽업 지점은 서울의 주요 방문객 밀집 지역 두 곳을 아우릅니다. 마포구 홍대 일대는 젊은 층과 단기 체류 여행객에게 맞고, 중구 명동은 롯데·신라·웨스틴 호텔을 낀 전통적인 관광 지구입니다. 서울-춘천고속도로를 타고 북동쪽으로 향하는 동선에서는 홍대 먼저, 명동 다음이 자연스러운 순서입니다. 07:30 출발은 부담 없을 만큼 늦으면서도, ITX 열차로 오는 개별 여행객보다 앞선 10:00 무렵 남이섬행 배에 오를 만큼 이른 시각입니다.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "남이섬 (나미섬)",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "페리 접근 섬 & K-드라마 랜드마크",
+      "duration": "120분(2시간)",
+      "timeUsed": [
+        "가평 선착장에서 페리 이동 (대기 포함 5~10분)",
+        "메타세쿼이아 / 은행나무 / 잣나무 가로수길을 따라 자유 도보 산책 — 섬 반 바퀴 순환 코스 약 3km",
+        "자전거 대여 선택 (1인용 7,000원 / 2인용 14,000원 / 시간당) 또는 전동 블루 트레인 (유니세프홀까지 편도 3,000원)",
+        "섬 내 간식 타임 (소나타 카페, 호떡, 고구마 라떼)",
+        "본토행 귀환 페리"
+      ],
+      "_poi_meta": {
+        "poi_key": "nami_island",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Korea Tourism Organization (VisitKorea — Nami Island official listing + visa fee schedule)",
+          "Naminara Republic Official Site (namisum-en.imweb.me — own corpus on cultural-independence brand)",
+          "UNICEF Korea (Nami Island 2010 Child Friendly Park designation + International Children's Book Festival)",
+          "KBS / Korea Times (Winter Sonata 2002 production retrospectives + Japanese tourism boom coverage)",
+          "Wikipedia (Namiseom — open corpus on General Nami history + Cheongpyeong Dam 1944 origin)"
+        ]
+      },
+      "highlights": [
+        "반달 모양 강섬, 약 460,000㎡ / 둘레 5km; 남이 장군(1441–1468)에서 명명",
+        "상징적인 메타세쿼이아길 — '겨울연가'(2002) 대표 촬영지",
+        "2006년부터 자칭 '나미나라공화국' — 자체 국기·화폐·여권(관광 콘셉트)",
+        "가평나루에서 5분 페리(08:00–21:00, 피크 시간 10–20분 간격)",
+        "섬 내 야생동물: 공작새(흰 공작 포함), 타조, 산토끼, 다람쥐",
+        "**1944년 청평댐 건설로 형성된 섬** — 1965년 민병도 선생이 매입, 1966년 경춘관광개발(주) 설립",
+        "**2006년 3월 1일 강우현 대표 체제에서 '나미나라공화국' 선언** — 한국 최초의 미니 국가형 관광 브랜드로 자체 국기·화폐·여권·우표 운영",
+        "**2010년 유니세프 어린이친화공원 지정** + 남이섬 아트앤에듀케이션의 **연 600회 이상 공연·전시·축제** — 단일 관광지로는 이례적인 운영 규모",
+        "**비자 요금**(KTO 공식, 2026년): 일반 ₩19,000 왕복 페리(편도 모터보트 포함 시 ₩29,000); 36개월 미만 무료; 20인 이상 단체 10% 할인"
+      ],
+      "smartNotes": {
+        "photo": "메타세쿼이아길은 '겨울연가' 명장면으로 세계적으로 유명한 컷입니다 — 가을(10월 말–11월 초 황금빛)이나 겨울(눈 내린 풍경)이 가장 좋습니다. 남쪽 강변 연인의 은행나무길은 한적하면서도 사진이 잘 어울리는 곳입니다. 연인의 길 인근에서는 흰 공작새가 가끔 모습을 드러내기도 합니다.",
+        "facilities": "섬 내 식당에서는 호떡, 고구마 라떼, 떡갈비 등 한국식 위안 음식을 즐길 수 있습니다. 한옥에 들어선 소나타 카페는 대표 휴식 공간이며, 가평나루 매표소에서는 외국 카드 결제 데스크가 따로 운영됩니다(자동 발권기는 외국 카드를 받지 않으므로 직접 데스크에 문의하세요).",
+        "tip": "추천 시즌은 봄(4–5월 벚꽃), 가을(10월 황금빛 은행과 붉은 단풍), 겨울(12–2월 눈 덮여 한적한 길의 '겨울연가' 분위기)입니다. 일요일 늦은 오후 페리 대기는 피하시고, 16:00 이전에 섬을 떠나는 일정이 좋습니다. 짚와이어(940m, 약 80km/h, 입장료 포함 55,000–58,000원)는 피크 타임 페리 대기 대비 15–20분을 절약해 줍니다."
+      },
+      "whyOnRoute": "남이섬을 하루의 첫 정차지로 두는 이유는, 이곳이 이른 빛에 보답하고 인파에 손해를 보는 유일한 정차지이기 때문입니다. 반달 모양 섬의 메타세쿼이아 길과 은행나무 길이 이 섬의 상징이고, 이 길들은 ITX 열차로 오는 개별 여행객과 가평 시티투어 버스가 중앙 길을 채우기 전인 정오 이전에 가장 잘 담깁니다. 먼저 들르면 배도 오후 바람이 아니라 아침의 잔잔한 시간에 건너게 되고, 이후 일정이 내륙으로 올라갔다가 되돌아가지 않고 그대로 서울로 이어집니다.",
+      "convenience": {
+        "restroom": "섬 내부와 가평나루 양쪽에 다수",
+        "parking": "가평나루 주차장 소형 6,000원 / 대형 10,000원 (12시간 초과 시 시간당 1,000원 추가)"
+      },
+      "description": "남이섬은 가평나루에서 5분 거리 페리를 타고 북한강의 반달 모양 강섬으로 들어서며 하루를 엽니다. 면적 약 460,000㎡(약 14만 평), 둘레 약 5km의 이 섬은 조선 시대 군장으로 28세 나이에 역모 누명을 쓰고 처형된 **남이 장군(1441–1468년, 예종 재위기)**의 이름에서 유래했습니다. 본래 홍수가 날 때만 잠시 모습을 드러내는 땅이었으나, 1944년 일제가 청평댐을 건설하면서 강 수위가 높아져 영구적인 섬이 되었습니다. \n\n2002년 KBS 드라마 '겨울연가'(배용준·최지우 주연)의 촬영지로 세계적 명성을 얻으며 2000년대 초 한류 열풍의 도화선이 되었고, 이후 매년 약 330만 명(외국인 130만 명 포함)이 방문해 서울·부산·제주에 이어 한국에서 가장 많은 방문객이 찾는 단일 관광지로 자리매김했습니다. 2006년 3월 1일부터는 자체 국기, 화폐(나미통보), 여권, 우편 시스템을 갖춘 자칭 '나미나라공화국'으로 브랜드를 새로 세웠는데, 이는 실제 정치 단위가 아닌 관광 마케팅 콘셉트입니다. \n\n'겨울연가' 명장면의 그 눈 덮인 길로 유명한 메타세쿼이아길, 남쪽의 강변 연인의 은행나무길, 잣나무길, 그리고 소주병을 재활용해 만든 세쿼이아 다리 모두 여유로운 반나절 안에 도보로 둘러볼 수 있습니다. 2016년 기준 **연 330만 명 방문, 그중 122개국 외국인 130만 명** — 서울·부산·제주에 이어 외국인 비중이 가장 높은 단일 한국 관광지입니다. \n\n남이섬은 atockorea의 화교·동남아 세그먼트를 겨냥해 만다린·광둥어·따갈로그·베트남어 안내 표지를 별도로 운영합니다.",
+      "visitBasics": {
+        "hours": "배는 08:00부터 운항하며 마지막 입도 배는 21:00, 마지막 출도 배는 21:05입니다. 09:00-18:00 사이에는 10-20분 간격, 그 외 시간대에는 30분 간격이고 승선 시간은 약 5분입니다. 섬 안의 상점 대부분은 18:00 무렵 문을 닫습니다",
+        "closed": "연중무휴",
+        "admission": "나미나라공화국 비자 요금, 왕복 배편 포함: 성인 ₩19,000 — 본 투어에 포함",
+        "walking": "쉬움 — 평탄한 나무 그늘 길입니다. 섬 절반을 도는 코스가 약 3 km, 전체 한 바퀴가 약 5 km입니다. 걷기가 부담스러우면 섬에서 자전거와 전동 버기를 대여할 수 있습니다."
+      },
+      "image": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "images": [
+        "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+        "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+        "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 1",
+          "alt": "남이섬 (나미섬) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 2",
+          "alt": "남이섬 (나미섬) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 3",
+          "alt": "남이섬 (나미섬) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+          "location": "남이섬 (나미섬)",
+          "caption": "남이섬 (나미섬) — photo 4",
+          "alt": "남이섬 (나미섬) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 12:15",
+      "duration": "60분",
+      "name": "가평에서 점심(개인 비용)",
+      "category": "점심 시간",
+      "description": "남이섬을 나온 뒤 버스는 가평선착장 인근 현지 식당에서 한 시간 정차합니다. 점심은 **포함되지 않습니다** — 원하시는 메뉴를 직접 주문하고 계산하시며, 보통 1인당 ₩10,000-15,000 정도입니다.\n\n이곳은 닭갈비의 고장입니다. 춘천-가평 일대는 **닭갈비**의 본고장으로, 양배추·고구마·떡을 넣고 식탁에서 볶아 먹는 달콤 매콤한 닭 요리이며 보통 남은 양념에 밥을 볶아 마무리합니다. **막국수**(차가운 메밀국수)가 전통적인 짝꿍 메뉴입니다. 채식 선택지는 제한적이지만 비빔밥은 대체로 가능합니다. 아침에 버스에서 가이드에게 말씀해 주시면 미리 식당에 연락해 둡니다.\n\n현금이나 카드를 준비하세요 — 이 지역 식당은 대부분 둘 다 받지만, 선착장 근처 작은 노점은 현금만 받는 경우가 많습니다.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "버스 주차 후 가이드가 식당까지 안내(약 5분)",
+        "주문과 식사(약 45분)",
+        "각자 계산 후 버스에 재집결(약 10분)"
+      ],
+      "whyOnRoute": "점심이 남이섬 앞이 아니라 뒤에 오는 데는 두 가지 이유가 있습니다. 첫째, 오전을 지키기 위해서입니다 — 먼저 먹으면 배를 타는 시각이 정오를 넘겨 인파 속으로 들어가게 됩니다. 둘째, 식당이 실제로 있는 곳이 가평선착장 일대이기 때문입니다. 아침고요수목원은 주변에 거의 아무것도 없는 계곡 길 위에 있고, 쁘띠프랑스에는 간식 매점뿐입니다. 이곳에서의 한 시간이 하루 중 마지막으로 확실한 착석 식사입니다.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "name": "아침고요수목원",
+      "time": "≈ 13:45",
+      "number": 4,
+      "category": "테마 식물원",
+      "duration": "90분",
+      "timeUsed": [
+        "정원 입장 및 드라이버 가이드의 간단한 오리엔테이션 (~5분)",
+        "20개 테마 소정원 자유 산책 시간 (~50분)",
+        "선택 관람: 선큰 가든 (한반도 모양) 추가 포토 타임 (~10분)",
+        "겨울 방문: 17:00 점등 시작에 맞춰 도착하여 낮 정원 관람과 빛 축제 점화 장면까지 감상",
+        "버스 앞 집합 (~5분)"
+      ],
+      "_poi_meta": {
+        "poi_key": "garden_of_morning_calm",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Garden of Morning Calm Official Site (morningcalm.co.kr — own corpus on founder + 1996 opening + 20 sub-gardens)",
+          "Korea Tourism Organization (VisitKorea — Lighting Festival listing + lighting-fest schedule)",
+          "Gyeonggi Cultural Foundation (ggc.ggcf.kr — official cultural promotion entry on Sunken Garden + 200,000 LEDs)",
+          "Sahmyook University Department of Horticulture (Prof. Han Sang-kyung honorary professor profile + garden origin)",
+          "Wikipedia (Garden of Morning Calm — corpus on Tagore-derived name + 5,000 species + 330,000 m² total)"
+        ]
+      },
+      "highlights": [
+        "한국 대표 사립 수목원 — 330,000 m² 부지에 약 5,000종 식물",
+        "삼육대학교 한상경 교수가 설립; 1996년 개원(1992년 구상)",
+        "겨울 빛 축제 2025년 12월 5일 – 2026년 3월 15일, 30,000개 이상 LED(한국 최초의 자연환경 빛 축제)",
+        "20개 테마 정원 — 한반도 모양 하경정원, 달빛정원, 분재정원, 에덴정원",
+        "'구르미 그린 달빛' 등 K-드라마 촬영지",
+        "**1992년 구상 / 1994년 부지 매입 / 1996년 5월 11일 개원**: 설립자 한상경 교수(삼육대 원예학과)와 부인이 직접 설계·조성했고, 초기 재정난 때는 자택을 처분하기까지 함",
+        "**CNN 선정 한국 대표 관광지 50선** — 한반도 모양 하경정원(통일 염원을 담은 10여 개 대·소 화단)이 CNN이 짚은 시그니처",
+        "**빛 축제는 친환경 LED 200,000개 이상 사용**(12–3월) — 한국 최초의 자연환경 빛 축제이며, 야간 17:00 일몰 이후 점등",
+        "**천년향(향나무)**이 아침고요수목원의 공식 상징목 — 5,000종의 식물 가운데 시그니처 수종"
+      ],
+      "smartNotes": {
+        "photo": "봄(4월 벚꽃), 여름(짙은 녹음), 가을(10월–11월 초 단풍), 겨울(일몰 이후 빛 축제) — 네 계절 모두 결이 다른 사진을 담을 수 있습니다. 축제 시기 황혼 무렵의 빛 터널이 시그니처 컷입니다.",
+        "facilities": "푸드가든은 한식(된장찌개, 채소비빔밥, 눈치즈 떡볶이)을 제공합니다. 굿모닝커피는 한옥 로스팅 하우스 콘셉트의 시그니처 카페입니다. 식당은 20:00 마감입니다.",
+        "tip": "빛 축제(12.5 – 3.15)에는 16:00 무렵 도착해 낮 정원을 먼저 둘러보고 17:00 이후 점등으로 이어지는 일정을 권합니다. 2월 폭설 직후가 가장 환상적인 '겨울왕국' 풍경을 만들어 냅니다."
+      },
+      "whyOnRoute": "아침고요수목원은 하루의 가운데 장이자 가장 조용한 장입니다. 90분이면 한반도 모양 화단이 있는 하경정원을 지나 주요 순환로를 걷고도 어딘가에 앉아 쉴 여유가 있습니다. 강에서 내륙으로 올라간 곳에 있어 남이섬 다음, 서울로 돌아가기 전에 들를 수밖에 없는 위치입니다. 이른 오후에 방문하면 하루 중 가장 따뜻한 시간의 정원을 보게 되는데, 계곡이 냉기를 품는 11월부터 3월까지는 이 점이 중요합니다.",
+      "convenience": {
+        "restroom": "다수, 안내판 비치",
+        "parking": "대규모 무료 주차장; 코인로커 1,500–2,000원(500원 동전 전용)"
+      },
+      "description": "남이섬에서 남쪽으로 약 30분, 아침고요수목원은 한국을 대표하는 사립 수목원입니다. 약 330,000 m² 부지에 약 5,000종의 식물이 자랍니다. 1992년 구상되어 1996년 일반 공개된 이곳은 삼육대학교 한상경 교수가 직접 설계하고 손수 가꾼 정원으로, 한 시점에는 연구·조성 자금을 마련하기 위해 자택을 처분했을 만큼 정성을 쏟은 공간입니다. \n\n이름은 한국의 오랜 별칭 '고요한 아침의 나라(조선)'에서 따왔습니다. 한반도 모양의 **하경정원**, **하늘정원**, **에덴정원**, **분재정원**, **달빛정원**, **고향집정원** 등 20개 테마 정원이 각자의 시각적 정체성을 갖추고 있으며, '구르미 그린 달빛' 등 다수의 K-드라마 촬영지로도 사용되었습니다. 매년 12월 초부터 3월 중순까지 진행되는 **한국 최초의 자연환경 빛 축제** — 2025–2026 시즌은 **2025년 12월 5일 – 2026년 3월 15일** — 에는 30,000여 개의 LED가 정원을 덮어, 일몰 후 정원 전체가 겨울 동화처럼 변신합니다. \n\n축제 기간에는 일–금 11:00–21:00, 토 11:00–23:00로 운영 시간이 연장되며, 비축제 기간에는 08:30–19:00(마지막 입장 18:00)으로 운영됩니다. **'아침고요수목원'**이라는 이름은 인도 시인 라빈드라나트 타고르가 1929년 한국을 '고요한 아침의 나라'라 부른 데서 유래했습니다. 한상경 교수는 미국 교환교수로 재직하며 세계적 사립 정원에 영감을 받아 1992년 구상을 시작했습니다. \n\n1994년 매입한 부지는 화전민이 일군 척박한 자갈밭이었습니다. **한 교수와 부인이 함께 설계하고 직접 노동으로 조성**했으며, 재정난 시기에는 자택을 매각하고 정원 안 작은 거처에 살면서 공사를 이어 갔습니다. 정원은 1996년 5월 11일 10개 테마 구역으로 처음 공개되었고, 오늘날은 330,000 m² 부지에 20개 테마 정원으로 확장되었습니다.",
+      "visitBasics": {
+        "hours": "대략 08:30부터 일몰까지(보통 08:30-19:00), 마지막 입장 18:00입니다. 겨울 오색별빛정원전 기간에는 저녁까지 개장합니다 — 운영 시간이 계절마다 달라져 가이드가 버스에서 당일 마감 시간을 확인해 드립니다",
+        "closed": "연중무휴",
+        "admission": "성인 ₩11,000 — 본 투어에 포함",
+        "walking": "보통 — 완만한 지형 위로 테마 정원들을 잇는 길이 넓게 펼쳐져 있습니다. 주요 순환로는 대체로 유모차 통행이 가능합니다"
+      },
+      "image": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+      "images": [
+        "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+        "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 1",
+          "alt": "아침고요수목원 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 2",
+          "alt": "아침고요수목원 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 3",
+          "alt": "아침고요수목원 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+          "location": "아침고요수목원",
+          "caption": "아침고요수목원 — photo 4",
+          "alt": "아침고요수목원 — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 16:00",
+      "duration": "60분",
+      "name": "쁘띠프랑스",
+      "category": "어린왕자 테마 마을",
+      "description": "당일 일정의 마지막 방문지인 쁘띠프랑스는 남이섬에서 약 25분 거리, 청평호 위 언덕에 조성된 프랑스 문화 테마 마을입니다. 2008년 7월 한홍섭 대표가 설립한 이 마을은 16개 건물로 이루어져 있으며, '꽃·별·어린왕자'(앙투안 드 생텍쥐페리의 1943년 소설 《어린왕자》)를 주제로 생텍쥐페리 기념관, 오르골 하우스(약 200년 된 센터피스를 포함한 앤티크 오르골 컬렉션), 프랑스 주거 전시관, 마리오네트 극장, 갈리아 수탉(le coq gaulois) 조각·회화 갤러리를 갖추고 있습니다. \n\n드라마 팬들이 즐겨 찾는 이유는 풍부한 K-드라마 촬영지 이력 때문입니다. 쁘띠프랑스는 《베토벤 바이러스》(2008), 《개인의 취향》(2010), 《시크릿 가든》(2010), 《별에서 온 그대》(2013-2014), 2025년 화제작 《폐하, 식사를 하셔야죠》(마종 드 마리가 임윤아 캐릭터의 방으로 등장), 그리고 인기 예능 《런닝맨》의 촬영지로 활용되었습니다. \n\n인근의 피노키오·다빈치 이탈리아 마을에서는 여유 있는 방문객을 위한 통합 입장권을 구매할 수 있습니다. 이 마을은 2026 한·불 수교 140주년 기념 프로그램 선정지이기도 합니다. 쁘띠프랑스는 프랑스 문화 테마 마을이자 **고성 청소년 수련원**으로서 4~10인실 객실에 최대 200명을 수용하는 교육 체험 숙박 기능도 겸하고 있습니다. \n\n이 마을에서 가장 독보적인 건축적 특징은 **전통 프랑스 가옥 갤러리**입니다. 프랑스 중부 지방의 19세기 농가를 통째로 해체해 200년 이상 된 목재·기와·벽돌을 그대로 사용하여 현지에서 재조립한 것으로, 못을 전혀 사용하지 않고 전통 프랑스 목조 프레임 장부(mortise-and-tenon) 방식으로 결합되었습니다. 또한 쁘띠프랑스는 **한국 유일의 생텍쥐페리 재단 공식 라이선스 기관**으로, 마을 내 모든 어린왕자 모티프는 프랑스 재단으로부터 정식 승인을 받은 것입니다. \n\n인근 피노키오·다빈치 이탈리아 마을(별도 입장권 또는 성인 기준 통합권 19,500원)을 함께 방문하면 유럽 마을 콘텐츠를 약 45분 더 즐길 수 있습니다.",
+      "highlights": [
+        "2008년 7월 개장; '어린왕자' 테마(생텍쥐페리, 1943)로 꾸며진 프랑스풍 건물 16채",
+        "K-드라마 촬영 이력: 《베토벤 바이러스》(2008), 《개인의 취향》(2010), 《시크릿 가든》(2010), 《별에서 온 그대》(2013-14), 《폐하, 식사를 하셔야죠》(2025)",
+        "오르골 하우스: 200년 된 오르골 컬렉션; 매일 공연하는 마리오네트 극장",
+        "인근 피노키오·다빈치 이탈리아 마을 — 성인 통합 입장권 19,500원",
+        "2026 한·불 수교 140주년 기념 프로그램 선정",
+        "**프랑스 생텍쥐페리 재단과 국제 라이선스 협약을 체결한 한국 유일의 기관** — 마을 내 모든 어린왕자 모티프는 정식 라이선스 취득",
+        "**16개 건물 중에는 19세기 프랑스 농가**가 포함되어 있으며, 프랑스 중부 지방에서 가져온 200년 이상 된 목재·기와·벽돌로 해체 후 재조립, 못 없이 전통 프랑스 목조 공법으로 결합",
+        "**2025년 K-드라마 《폐하, 식사를 하셔야죠》 촬영지**: '마종 드 마리'가 연지영(임윤아) 역의 현대 한국 아파트로 등장 — 기존 K-드라마 촬영 이력(《베토벤 바이러스》 2008, 《개인의 취향》 2010, 《시크릿 가든》 2010, 《별에서 온 그대》 2013, 《빈센조》 2021)에 추가"
+      ],
+      "timeUsed": [
+        "입장 및 간단한 오리엔테이션",
+        "다채로운 거리와 16개 건물 전시 및 포토존 탐방 (약 45분)",
+        "일정에 따라 마리오네트 공연 또는 오르골 시연 선택 관람",
+        "마을 내 간식 매대 또는 카페에서 간단한 음식 즐기기",
+        "선택: 피노키오·다빈치 이탈리아 마을 추가 방문 (약 45분, 성인 통합권 19,500원)"
+      ],
+      "whyOnRoute": "쁘띠프랑스가 하루의 마지막인 이유는 그곳이 무엇인지만이 아니라 어디에 있는지 때문입니다. 이 마을은 이미 서울 방향을 향한 청평 호숫가에 있어, 여기서 한 시간을 보내도 추가 이동이 생기지 않습니다. 또한 하루 중 가장 작은 정차지이기도 합니다 — 언덕 위 열여섯 채의 건물로, 한 시간이면 충분히 걸을 수 있습니다. 섬에서 두 시간, 정원에서 90분을 보낸 뒤 마무리하기에 알맞은 규모입니다. 별에서 온 그대, 시크릿 가든, 베토벤 바이러스를 본 분이라면 바로 알아보실 겁니다.",
+      "visitBasics": {
+        "hours": "09:00-18:00, 마지막 입장 17:00입니다. 마감 시간은 계절에 따라, 그리고 야간 행사가 있는 일부 저녁에는 달라집니다",
+        "closed": "연중무휴",
+        "admission": "성인 ₩12,000 — 본 투어에 포함. 바로 옆 피노키오 & 다빈치 이탈리아마을과의 통합권(성인 ₩19,500)은 포함되지 않습니다. 이 일정의 한 시간은 쁘띠프랑스만 해당합니다",
+        "walking": "쉬움 — 완만한 언덕에 자리한 작은 마을로, 한 시간 안에 편안히 걸을 수 있습니다"
+      },
+      "convenience": {
+        "restroom": "현장 구매",
+        "parking": "무료 주차"
+      },
+      "smartNotes": {
+        "photo": "녹음 짙은 산을 배경으로 한 파스텔 톤의 목조 가옥이 대표적인 포토 스팟입니다. 언덕 꼭대기의 전망 데크에서는 가장 넓은 구도의 사진을 찍을 수 있습니다. 드라마 촬영지 탐방은 팬들을 위한 인기 활동으로, 생텍쥐페리 건물은 드라마 〈별에서 온 그대〉의 주요 장면 촬영지입니다.",
+        "facilities": "간식 노점만 운영 — 와플, 만두, 어묵탕, 커피. 대부분의 방문객은 인접한 이탈리아 마을이나 인근 청평 시내에서 식사합니다.",
+        "tip": "자유 여행 시 가평 시티투어 버스를 이용해 남이섬 및/또는 아침고요수목원과 함께 묶어서 방문하기 좋습니다. 오후 늦게 도착하면 낮 풍경과 초저녁 조명을 모두 즐길 수 있습니다. 규모가 큰 관광지를 기대하는 방문객은 아담한 규모(보통 1.5~2시간 소요)에 아쉬움을 느낄 수 있으니 기대치를 조율하세요."
+      },
+      "_poi_meta": {
+        "poi_key": "petite_france",
+        "verified": true,
+        "match": "single_poi",
+        "kb_version": "1.27",
+        "verified_date": "2026-04-29",
+        "note": "POI verified in KB v1.10 (Batch 7) and reused here unchanged.",
+        "sources": [
+          "Petite France Official Site (en.pfcamp.com — own corpus on founder + 16-building layout + Goseong Youth Training Center)",
+          "Korea Tourism Organization (VisitKorea — Petite France listing + 2025 'Bon Appétit, Your Majesty' filming-location verification)",
+          "Saint-Exupéry Foundation France (international license agreement — Le Petit Prince motif authorization)",
+          "Gapyeong County Tourism Office (gapyeong.go.kr — official local-government attractions listing)",
+          "Wikipedia (Petite France theme park — corpus on July 2008 opening + Le Petit Prince theme + organizational structure)"
+        ]
+      },
+      "image": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+      "images": [
+        "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+        "/images/tours/petite-france/petite-france-couple-colorful.webp",
+        "/images/tours/petite-france/petite-france-ai-pastel-village.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+          "location": "쁘띠프랑스",
+          "caption": "쁘띠프랑스 — photo 1",
+          "alt": "쁘띠프랑스 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/petite-france/petite-france-couple-colorful.webp",
+          "location": "쁘띠프랑스",
+          "caption": "쁘띠프랑스 — photo 2",
+          "alt": "쁘띠프랑스 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
+          "location": "쁘띠프랑스",
+          "caption": "쁘띠프랑스 — photo 3",
+          "alt": "쁘띠프랑스 — gallery image 3"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "time": "≈ 18:30",
+      "duration": "≈ 1.5시간 이동",
+      "name": "서울 복귀(명동역 또는 홍대입구역)",
+      "category": "복귀 하차",
+      "description": "쁘띠프랑스 출발은 16:45 무렵이며, 서울-춘천고속도로를 따라 약 1.5시간을 달려 서울로 들어옵니다. 하차는 픽업의 역순입니다: **명동역 18:30 무렵**, 이어서 **홍대입구역 19:00 무렵**입니다.\n\n두 곳 모두 지하철 환승역이라 이후 이동이 수월하고, 이 시각이면 저녁 시간이 그대로 남습니다 — 서울의 식당들이 붐비기 한참 전에 도착합니다. 금요일 저녁과 일요일 복귀 편은 도심 진입 구간에서 20-40분이 더 걸릴 수 있습니다. 가이드가 들어오는 길에 버스의 실시간 예상 시각을 알려 드립니다.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "쁘띠프랑스 출발(약 16:45)",
+        "필요 시 짧은 휴게소 정차를 포함한 고속도로 이동(약 1.5시간)",
+        "명동역 하차(약 18:30)",
+        "홍대입구역 하차(약 19:00)"
+      ],
+      "whyOnRoute": "아침고요수목원이 아니라 쁘띠프랑스에서 하루를 마치는 것이 복귀를 짧게 만듭니다. 이 마을은 이미 가평의 서울 쪽에 있어, 출발하는 순간부터 버스가 집 방향을 향합니다. 하차 순서를 뒤집으면 마지막에 탑승한 명동 승객이 먼저 내리게 됩니다.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "픽업(홍대 / 명동)",
+      "type": "origin",
+      "theme": "Seoul pickup"
+    },
+    {
+      "name": "남이섬",
+      "type": "primary",
+      "theme": "K-drama island"
+    },
+    {
+      "name": "가평에서 점심",
+      "type": "secondary",
+      "theme": "Lunch break"
+    },
+    {
+      "name": "아침고요수목원",
+      "type": "primary",
+      "theme": "Themed garden"
+    },
+    {
+      "name": "쁘띠프랑스",
+      "type": "primary",
+      "theme": "French village"
+    },
+    {
+      "name": "서울 복귀",
+      "type": "return",
+      "theme": "Drop-off"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "서울 → 가평",
+      "duration": "≈ 1.5시간",
+      "description": "07:30 홍대 / 08:00 명동 픽업 후 북동쪽으로 약 1.5시간을 달려 가평선착장에 도착하고, 5분간 배를 타고 남이섬으로 건너갑니다."
+    },
+    {
+      "phase": "남이섬",
+      "duration": "≈ 2시간",
+      "description": "평탄한 나무 길, 겨울연가 메타세쿼이아 길, 강가 벤치, 그리고 자유롭게 돌아다니는 타조와 공작이 있습니다. 왕복 배편과 나미나라공화국 입국 비자 요금이 포함됩니다."
+    },
+    {
+      "phase": "점심 → 아침고요수목원",
+      "duration": "≈ 2.5시간",
+      "description": "가평 현지 식당에서 점심(개인 비용 — 닭갈비의 고장입니다)을 먹고, 약 35분간 내륙으로 올라가 아침고요수목원의 테마 정원들을 90분간 돌아봅니다."
+    },
+    {
+      "phase": "쁘띠프랑스 → 서울",
+      "duration": "≈ 2.5시간",
+      "description": "약 45분간 청평 호숫가로 내려와 쁘띠프랑스에서 한 시간을 보낸 뒤, 약 1.5시간을 달려 서울로 들어옵니다 — 명동 18:30 무렵, 홍대 19:00 무렵입니다."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "이 서울 근교 하루의 흐름",
+    "subtitle": "07:30 홍대 / 08:00 명동에서 출발해 북동쪽으로 약 1.5시간을 달리면, 당일 여행객이 몰리기 전에 남이섬행 배에 오르게 됩니다. 가평 읍내에서 점심을 먹고, 코스는 내륙으로 방향을 틀어 아침고요수목원까지 올라갑니다. 마지막으로 청평 호숫가의 쁘띠프랑스로 다시 내려오는데, 이곳은 서울로 돌아오는 길목에 있어 마지막 정차지가 되돌아가는 시간을 만들지 않습니다. 서울 도착은 18:30-19:00 무렵입니다."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "등산 없이 한국의 시골 풍경을 보고 싶은 첫 방문객",
+      "겨울연가 메타세쿼이아 길을 찾아온 커플과 한류 팬",
+      "가족 단위와 연세 있는 여행객 — 모든 정차지가 평지이거나 완만합니다",
+      "서울을 벗어나 하루를 온전히 쓰되 저녁 전에 돌아오고 싶은 분"
+    ],
+    "lessIdealFor": [
+      "등산객 — 이 코스에는 산도 정상도 없습니다",
+      "세 곳을 도는 대신 한 곳에 천천히 머물고 싶은 여행객",
+      "19:00 전에 도심의 밤 시간이나 야간 활동을 원하는 분"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "동선과 속도",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "붐비기 전에, 남이섬부터",
+            "detail": "가평은 서울에서 약 75 km밖에 떨어져 있지 않아 07:30에 출발하면 10:00 무렵 선착장에 닿습니다. 늦은 오전 ITX 열차로 도착하는 개별 여행객보다 앞서고, 메타세쿼이아 길에 낮은 아침 빛이 아직 남아 있는 시간입니다."
+          },
+          {
+            "label": "정원은 내륙에, 마을은 돌아오는 길에",
+            "detail": "아침고요수목원은 강에서 내륙으로 약 35분 들어간 상면에 있고, 쁘띠프랑스는 다시 청평 호숫가로 내려와 이미 서울 방향을 향합니다. 이 순서로 도는 덕분에 마지막 정차지가 되돌아가는 시간을 만들지 않습니다."
+          },
+          {
+            "label": "입장료 세 곳, 하나의 요금",
+            "detail": "남이섬 비자 요금 ₩19,000(왕복 배편 포함), 아침고요수목원 ₩11,000, 쁘띠프랑스 ₩12,000이 모두 포함됩니다 — 줄을 서지도, 따로 내지도 않는 약 ₩42,000의 입장료입니다."
+          },
+          {
+            "label": "설악산 코스보다 짧은 하루",
+            "detail": "이 코스에는 강원도 구간이 없어 버스가 도로 위에서 보내는 시간이 다섯 시간이 아니라 세 시간 정도입니다. 설악산 일정이 길게 느껴지는 자리에서 이 하루가 여유롭게 느껴지는 이유가 바로 그것입니다."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 & 드롭오프",
+      "preview": "서울 픽업 지점 두 곳: 홍대입구역 8번 출구 스타벅스 07:30(마포구), 명동역 2번 출구 노스페이스 플래그십 앞 08:00(중구)…",
+      "content": [
+        "서울 픽업 지점 두 곳: 홍대입구역 8번 출구 스타벅스 07:30(마포구), 명동역 2번 출구 노스페이스 플래그십 앞 08:00(중구).",
+        "두 픽업 모두 같은 버스를 이용합니다. 선택하신 지점에 5분 일찍 도착해 주세요.",
+        "복귀 하차는 역순입니다: 명동 ≈18:30, 홍대입구 ≈19:00.",
+        "실제 투어 소요 시간은 픽업 지점에 따라 달라집니다: 홍대 출발 ≈11.5시간, 명동 출발 ≈10.5시간."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "복장과 준비물",
+      "preview": "편한 워킹화 — 등산화는 필요 없지만 하루 동안 5-6 km를 걷게 됩니다.",
+      "content": [
+        "편한 워킹화 — 등산화는 필요 없지만 하루 동안 5-6 km를 걷게 됩니다.",
+        "11월부터 3월까지는 껴입을 수 있는 따뜻한 옷. 가평 계곡 지대는 서울 도심보다 몇 도 낮고 남이섬 배 갑판은 바람에 그대로 노출됩니다.",
+        "카메라 또는 스마트폰 — 남이섬 메타세쿼이아 길과 아침고요수목원 하경정원 전망대가 사람들이 찾아오는 두 장면입니다.",
+        "점심(₩10,000-15,000)과 선택 비용을 위한 현금과 카드.",
+        "여름에는 자외선 차단 준비물. 수목원 순환로에는 그늘이 거의 없는 긴 구간이 있습니다."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "날씨 정책",
+      "preview": "연중 운행합니다.",
+      "content": [
+        "연중 운행합니다.",
+        "약한 비: 일정대로 진행합니다. 세 정차지 모두 비에 잘 견딥니다 — 남이섬의 나무 길과 아침고요수목원은 비 오는 날에도 정말 좋고, 쁘띠프랑스에는 실내 전시실이 있습니다.",
+        "폭우 또는 폭풍: 기상이 나쁘면 남이섬 배편이 중단될 수 있습니다. 그런 경우 가이드가 수목원과 쁘띠프랑스 체류 시간을 늘리고 남이섬 입장료는 환불해 드립니다.",
+        "눈: 가평은 서울 도심보다 눈이 많이 옵니다. 버스는 계절에 맞춰 겨울용 타이어를 갖추고 있으며, 폭설 시 복귀에 한 시간이 더 걸릴 수 있습니다.",
+        "교통, 날씨, 시설 운영 시간에 따라 당일 일정 순서나 시각이 바뀔 수 있습니다 — 가이드가 버스에서 당일 계획을 확인해 드립니다."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "서울 픽업 지점 두 곳과 동일한 하차 지점 두 곳, 냉방 버스, 자격을 갖춘 영어 가이드.",
+      "content": [
+        "서울 픽업 지점 두 곳과 동일한 하차 지점 두 곳, 냉방 버스, 자격을 갖춘 영어 가이드.",
+        "남이섬 왕복 배편 + 나미나라공화국 비자 요금(₩19,000) — 포함.",
+        "아침고요수목원 입장료(₩11,000) — 포함.",
+        "쁘띠프랑스 입장료(₩12,000) — 포함.",
+        "통행료와 주차료 — 포함.",
+        "불포함: 점심과 음료(₩10,000-15,000, 개인 비용), 쁘띠프랑스 + 이탈리아마을 통합권(₩19,500), 남이섬 자전거·전동 버기 대여, 남이섬행 스카이라인 짚와이어, 개인 지출.",
+        "중국어 가이드는 요청 시 배정 가능합니다 — 최소 3일 전 예약해 주세요."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "사용 언어",
+      "preview": "주요 투어 진행 언어: 영어.",
+      "content": [
+        "주요 투어 진행 언어: 영어.",
+        "중국어 가능 가이드는 요청 시 제공 가능 — 3일 이상 전에 예약 필요.",
+        "메뉴판, 안내판, 노점 이용 시 한국어가 사용되며, 가이드가 통역을 담당합니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 및 지형",
+      "preview": "쉬움~보통 — 이 코스에는 등산이 없고 계단이 많은 구간도 없습니다.",
+      "content": [
+        "쉬움~보통 — 이 코스에는 등산이 없고 계단이 많은 구간도 없습니다.",
+        "남이섬: 평탄하게 포장된 나무 그늘 길입니다. 2시간에 약 3 km가 일반적인 속도입니다. 자전거와 전동 버기는 섬에서 개인 비용으로 대여할 수 있습니다.",
+        "아침고요수목원: 대체로 포장된 정원 길이 완만한 지형 위로 이어집니다. 주요 순환로는 대체로 유모차 통행이 가능하지만 일부 테마 정원은 짧은 경사 위에 있습니다.",
+        "쁘띠프랑스: 완만한 경사의 작은 언덕 마을로, 여유롭게 걸어도 한 시간 안에 돌아볼 수 있습니다.",
+        "하루 총 보행 거리는 약 5-6 km이며, 세 정차지에 나뉘어 있고 사이사이 버스 이동이 있습니다. 편한 신발이면 충분하고 등산화는 필요 없습니다."
+      ]
+    },
+    {
+      "id": "lunch",
+      "title": "점심(개인 비용)",
+      "preview": "점심은 남이섬을 나온 뒤 12:15 무렵 가평선착장 인근 현지 식당에서 먹습니다.",
+      "content": [
+        "점심은 남이섬을 나온 뒤 12:15 무렵 가평선착장 인근 현지 식당에서 먹습니다.",
+        "이곳은 닭갈비의 고장입니다 — 식탁에서 볶아 먹는 달콤 매콤한 닭 요리로, 보통 남은 양념에 밥을 볶아 마무리합니다. 막국수(차가운 메밀국수)가 대표적인 짝꿍 메뉴입니다.",
+        "1인당 약 ₩10,000-15,000을 예상하세요. 현금과 카드 모두 대체로 사용 가능하지만, 선착장 근처 노점은 현금만 받는 경우가 많습니다.",
+        "이 지역은 채식 선택지가 제한적입니다 — 아침에 가이드에게 말씀해 주시면 미리 식당에 연락해 둡니다."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소 가능.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소 가능.",
+        "출발 24시간 이내: 50% 환불.",
+        "노쇼 또는 픽업 불참: 환불 없음 — 단, 픽업 시간 10분 이내에 AtoC Korea 운영팀에 연락하시면, 버스가 일정보다 앞서 운행 중일 경우 잠시 대기할 수 있습니다."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "시즌별 안내 참조"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "시즌별 안내 참조"
+    },
+    "_seasonalSummary": "Seoul + Gangwon: temperate four-season climate. Seoraksan is 5-7°C cooler than Seoul year-round. Hot humid summers (Jun-Aug), crisp cold winters (Dec-Feb), with prime seasons in spring (April cherry blossoms) and autumn (October-November foliage)."
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄(3-5월)",
+      "description": "4월 초 북한강변의 벚꽃, 이어서 수만 송이 튤립이 피는 아침고요수목원 봄 축제가 이어집니다. 쁘띠프랑스의 파스텔 건물은 새로 돋은 초록을 배경으로 가장 예쁩니다."
+    },
+    {
+      "season": "여름(6-8월)",
+      "description": "남이섬의 나무 길은 실제로 그늘을 만들어 주고, 섬은 서울보다 눈에 띄게 시원합니다. 수목원은 무성하지만 덥고 그늘이 거의 없으니 물과 햇빛 가릴 것을 챙기세요. 7월 장마철에는 오후 소나기를 예상하시는 편이 좋습니다."
+    },
+    {
+      "season": "가을(9-11월)",
+      "description": "이 코스에서 가장 강한 계절입니다. 남이섬의 메타세쿼이아 길과 은행나무 길이 10월 말부터 11월 중순에 걸쳐 물들고, 아침고요수목원은 가을 국화 전시를 엽니다. 수요가 가장 몰리는 시기이니 일찍 예약하세요."
+    },
+    {
+      "season": "겨울(12-2월)",
+      "description": "아침고요수목원의 오색별빛정원전이 12월 초부터 3월 중순 무렵까지 정원을 밝히고, 그 기간에는 저녁까지 개장합니다. 눈 덮인 남이섬은 겨울연가의 그 장면 자체입니다. 옷은 제대로 챙겨 입으세요 — 계곡은 춥고 배 갑판은 바람에 노출됩니다."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "모든 입장료 포함",
+      "description": "남이섬 페리 + 아침고요수목원 통합 포함",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "남이섬 페리(₩19,000)와 아침고요수목원(₩11,000) 입장료가 투어 가격에 포함되어 있어, 각 방문지에서 별도로 티켓을 구매할 필요가 없습니다. 설악산 입장료는 무료(2023년 5월 폐지). 총 입장료 절감액: 약 ₩30,000."
+    },
+    {
+      "icon": "users",
+      "title": "공인 영어 가이드",
+      "description": "한국 공인 투어 가이드",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "한국관광공사 공인 자격증을 보유한 영어 유창 가이드; 사전 요청 시 중국어 가이드 이용 가능. 가이드 해설은 설악산의 신라 시대 사찰 역사, 남이섬의 겨울연가 유산, 아침고요수목원 창립자 이야기를 포함합니다."
+    },
+    {
+      "icon": "shield",
+      "title": "투명한 가격 정책",
+      "description": "숨겨진 쇼핑 코스 없음",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "인삼 쇼핑, 면세점, 수수료 기반 기념품 코스 일절 없음. 13시간 일정의 모든 순간은 관광지 방문 또는 이동으로만 채워집니다 — 예약하신 그대로를 경험하실 수 있습니다."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 예약 확정",
+      "detail": "픽업 장소 선택 포함 예약 확인",
+      "description": "홍대/명동 픽업 장소 선택 포함 즉시 예약 확정."
+    },
+    {
+      "timing": "투어 전날",
+      "title": "픽업 안내",
+      "detail": "정확한 픽업 장소 및 차량 정보를 WhatsApp/SMS로 전송",
+      "description": "날씨 정보, 코치 차량 번호판, 계절별 노선 안내(아침고요수목원 빛축제 시간, 설악산 단풍 절정 시기 등)를 전날 발송."
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "픽업 확인",
+      "detail": "출발 10분 전 픽업 장소에서 가이드 확인",
+      "description": "가이드는 05:50부터 홍대 8번 출구 스타벅스 앞, 06:20부터 명동 2번 출구(노스페이스) 앞에서 대기합니다. 가이드 및 차량 사진을 전날 밤 WhatsApp으로 발송해 드립니다."
+    },
+    {
+      "timing": "투어 중",
+      "title": "투어 중 지원",
+      "detail": "각 관광지 가이드 해설 + 24시간 운영 지원",
+      "description": "설악산의 신라시대 652년 창건, 남이섬의 1944년 청평댐 조성 배경 및 2002년 겨울연가 유산, 아침고요수목원의 1992년 구상 및 1996년 개원에 대한 현지 해설을 제공합니다."
+    },
+    {
+      "timing": "투어 종료",
+      "title": "두 곳의 하차 장소",
+      "detail": "명동 약 19:00 / 홍대 약 19:30",
+      "description": "귀환 시 픽업했던 두 장소에 역순으로 하차합니다."
+    },
+    {
+      "timing": "투어 이후",
+      "title": "리뷰 및 사후 지원",
+      "detail": "선택적 투어 후 리뷰",
+      "description": "투어 후 피드백 요청이 발송되며, 남은 서울 일정에 대한 맛집 또는 관광지 추천은 당일 내로 답변해 드립니다."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "입장료가 정말 전부 포함되나요?",
+      "answer": "네 — 이 코스의 입장료 세 곳이 모두 포함됩니다. 남이섬의 나미나라공화국 비자 요금 ₩19,000(왕복 배편 포함), 아침고요수목원 ₩11,000, 쁘띠프랑스 ₩12,000입니다. 성인 1인당 약 ₩42,000에 해당하며, 줄을 서지도 따로 내지도 않으셔도 됩니다. 직접 지불하시는 것은 주로 점심입니다."
+    },
+    {
+      "question": "남이섬과 아침고요수목원을 함께 가는 설악산 투어와 같은 상품인가요?",
+      "answer": "아닙니다. 차이는 약 세 시간의 이동 시간입니다. 설악산 당일 코스는 강원도의 국립공원이 추가되어 06:00 출발, 도로 위 다섯 시간, 총 13시간짜리 하루가 됩니다. 이 투어는 가평 안에 머뭅니다 — 07:30 출발, 약 세 시간의 이동, 그리고 산 대신 쁘띠프랑스입니다. 버스에서 보내는 시간 없이 정원과 섬을 보고 싶다면 이 코스를 고르세요."
+    },
+    {
+      "question": "얼마나 걷나요?",
+      "answer": "하루 전체를 통틀어 약 5-6 km이며, 세 정차지로 나뉘고 사이사이 버스 이동이 있습니다. 등산도, 정상 등반도, 긴 계단 오르기도 없습니다. 남이섬은 완전히 평지이고, 아침고요수목원은 완만하게 오르내리며, 쁘띠프랑스는 작은 언덕 마을입니다. 평소 신는 편한 신발이면 충분합니다."
+    },
+    {
+      "question": "어린아이나 연세 있는 여행객에게 적합한가요?",
+      "answer": "네, 서울 출발 당일 코스 중에서는 특히 그렇습니다. 모든 정차지가 평지이거나 완만하고, 가장 긴 단일 이동 구간이 약 1.5시간이며, 하루가 19:00에 끝납니다. 섬을 걷는 것이 부담스러우면 남이섬에서 자전거와 전동 버기를 대여할 수 있고, 아침고요수목원 주요 순환로는 대체로 유모차 통행이 가능합니다. 다만 하루 전체 길이는 여전히 문에서 문까지 11시간이라는 점을 감안해 주세요."
+    },
+    {
+      "question": "나미나라공화국 비자 요금이 무엇인가요?",
+      "answer": "남이섬의 입장권입니다. 섬이 2006년에 문화관광 콘셉트로 스스로를 '나미나라공화국'이라 선언하면서 국기, 우표, 입국 심사대까지 갖추고 입장권을 비자 형식으로 만든 것입니다. 실제로는 5분간의 왕복 배편이 포함된 성인 ₩19,000 티켓이며, 본 투어에 포함되어 있습니다."
+    },
+    {
+      "question": "쁘띠프랑스 옆 이탈리아마을도 갈 수 있나요?",
+      "answer": "이 일정 안에서는 어렵습니다. 피노키오 & 다빈치 이탈리아마을은 쁘띠프랑스 바로 뒤 언덕에 있고 통합권(성인 ₩19,500)과 최소 한 시간이 더 필요합니다. 본 투어는 쁘띠프랑스만 포함하며 그곳에 한 시간을 배정합니다. 이탈리아마을이 중요하시다면 저희 가평 프라이빗 투어에서 일정에 넣어 드릴 수 있습니다."
+    },
+    {
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "투어는 진행됩니다. 세 정차지 모두 약한 비에는 문제가 없습니다 — 남이섬의 나무 길과 수목원은 젖었을 때 오히려 분위기가 좋고, 쁘띠프랑스에는 생텍쥐페리관과 오르골하우스를 포함한 실내 전시실이 있습니다. 실제 기상 위험은 폭풍으로 남이섬 배편이 중단되는 경우뿐이며, 그때는 가이드가 나머지 두 정차지 체류 시간을 늘리고 남이섬 입장료를 환불해 드립니다."
+    },
+    {
+      "question": "아침고요수목원 오색별빛정원전도 포함되나요?",
+      "answer": "축제는 별도 티켓이 아니라 정원 안에서 진행되므로 포함된 입장료로 관람하실 수 있습니다. 다만 이 일정은 낮 일정입니다. 저희는 이른 오후에 정원에 도착하므로, 12월부터 3월까지의 축제 기간에도 조명이 켜진 모습이 아니라 켜지지 않은 설치물을 보시게 됩니다. 불이 켜진 정원이 우선순위라면 말씀해 주세요. 대신 저녁 일정 옵션을 안내해 드리겠습니다."
+    },
+    {
+      "question": "이 정차지들에서 촬영된 K-드라마는 무엇인가요?",
+      "answer": "남이섬은 겨울연가(2002) 촬영지이며, 메타세쿼이아 길이 사람들이 직접 서 보러 오는 그 장면입니다. 쁘띠프랑스는 베토벤 바이러스(2008), 개인의 취향(2010), 시크릿 가든(2010), 별에서 온 그대(2013-14)에 등장했습니다. 아침고요수목원도 구르미 그린 달빛 등의 촬영지로 쓰였습니다."
+    },
+    {
+      "question": "서울에는 몇 시에 돌아오나요?",
+      "answer": "명동역 18:30 무렵, 홍대입구역 19:00 무렵입니다. 두 곳 모두 지하철 환승역입니다. 금요일 저녁과 일요일 복귀 편은 도심 진입 구간에서 20-40분이 더 걸릴 수 있으며, 가이드가 들어오는 길에 실시간 예상 시각을 알려 드립니다. 저녁 시간을 비워 두실 수 있도록 의도적으로 이른 시각에 맞춘 일정입니다."
+    },
+    {
+      "question": "점심이 포함되나요?",
+      "answer": "아니요. 버스가 가평선착장 일대 식당에서 한 시간 정차하고, 원하시는 메뉴를 직접 주문해 계산하시며 보통 ₩10,000-15,000 정도입니다. 이곳은 닭갈비의 본고장으로, 식탁에서 볶아 먹는 달콤 매콤한 닭 요리이며 보통 막국수와 함께 먹습니다. 채식 선택지는 제한적이니 아침에 가이드에게 말씀해 주시면 미리 식당에 연락해 둡니다."
+    },
+    {
+      "question": "가이드가 동행하나요? 어떤 언어인가요?",
+      "answer": "네 — 자격을 갖춘 영어 가이드가 하루 종일 버스에 동행합니다. 최소 3일 전에 예약하시면 중국어 가이드도 요청하실 수 있습니다. 각 정차지에서는 대체로 자유롭게 둘러보시며, 가이드는 계속 이어지는 해설보다는 입장, 시간 관리, 안내, 통역을 맡습니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "날짜와 인원을 선택하시면 실시간 예약 가능 여부를 확인하고 예약을 완료하실 수 있습니다.",
+    "price": {
+      "amountLabel": "59",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 59
+    }
+  },
+  "pickup_dropoff": {
+    "primary": {
+      "name": "스타벅스 홍익대학교역 8번 출구점",
+      "address": "서울 마포구 양화로 (홍익대학교역 8번 출구 앞 스타벅스)",
+      "time": "07:30 픽업 / 19:00 하차",
+      "instructions": "홍대입구역 8번 출구를 나오면 바로 있는 스타벅스 매장 앞에서 가이드를 만나세요. AtoC Korea 표지판과 픽업 대기줄의 버스를 찾으시면 됩니다."
+    },
+    "alternates": [
+      {
+        "name": "명동역 2번 출구 (노스페이스 플래그십 스토어)",
+        "address": "서울 중구 퇴계로 (명동역 2번 출구 노스페이스 플래그십 스토어)",
+        "time": "08:00 픽업 / 18:30 하차",
+        "instructions": "명동역 2번 출구 위 노스페이스 플래그십 매장 앞에서 가이드를 만나세요."
+      }
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+    "product_type": "bus",
+    "route_type": "fixed_route",
+    "destination_region": "seoul_gangwon",
+    "region_type": "gangwon_seoraksan",
+    "vehicle_type": "large_coach",
+    "duration_hours": 11.5,
+    "region_tags": [
+      "seoul_mapo",
+      "seoul_jung",
+      "gangwon_sokcho",
+      "gyeonggi_gapyeong"
+    ],
+    "theme_tags": [
+      "national_park",
+      "mountain",
+      "buddhist_temple",
+      "k_drama_filming",
+      "themed_garden",
+      "hallyu_landmark"
+    ],
+    "poi_tags": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 2,
+    "scenic_level": 1,
+    "photo_level": 5,
+    "culture_level": 0.85,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.7,
+    "senior_fit": 0.8,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.85,
+    "adult_family_fit": 0.95,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.8,
+    "senior_active_fit": 0.75,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.6,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.1,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 1,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.5,
+    "food_fit": 0.5,
+    "nature_fit": 1,
+    "beach_fit": 0.1,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.25,
+    "no_shopping_fit": 1,
+    "local_culture_fit": 0.7,
+    "storytelling_fit": 0.9,
+    "unesco_fit": 0,
+    "intangible_heritage_fit": 0.5,
+    "indoor_ratio": 0.1,
+    "weather_sensitivity": 0.65,
+    "comfort_level": 0.55,
+    "budget_fit": 1,
+    "premium_fit": 0.2,
+    "small_group_fit": 0.15,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "budget",
+    "pickup_base": "seoul_central",
+    "return_time_band": "19:00-19:30",
+    "duration_band": "13h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited",
+        "wheelchair_required"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "young_kids_under_6"
+      ]
+    },
+    "walking_notes": [
+      "11.5-hour day with ~4-5 km total walking.",
+      "Nami Island is flat; the Garden of Morning Calm is rolling terrain; Petite France sits on a gentle slope.",
+      "Closed-toe shoes recommended.",
+      "Nami bicycle and e-buggy rental optional and not included."
+    ],
+    "keywords": [
+      "seoul seoraksan day tour",
+      "nami island day trip",
+      "garden of morning calm tour",
+      "seoul winter wonder tour",
+      "seoraksan nami one day"
+    ],
+    "synonym_hints": [
+      "seoul to seoraksan day tour",
+      "korea three signature stops day trip",
+      "seoul winter sonata tour"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "seoul",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.05,
+    "flexibility_fit": 0.2,
+    "fixed_itinerary_fit": 1,
+    "national_park_fit": 0,
+    "buddhist_temple_fit": 0,
+    "k_drama_filming_fit": 1,
+    "winter_sonata_fit": 1,
+    "themed_garden_fit": 1,
+    "history_culture_fit": 0.65,
+    "religious_history_fit": 0.45,
+    "premium_dining_fit": 0.15,
+    "seasonal_fit": 1,
+    "winter_lighting_festival_fit": 1,
+    "autumn_foliage_fit": 1,
+    "china_mainland_market_fit": 0.85,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 1,
+    "se_asia_market_fit": 1,
+    "us_market_fit": 0.95,
+    "europe_market_fit": 0.95,
+    "australia_market_fit": 0.95,
+    "japan_market_fit": 1,
+    "first_time_korea_fit": 1,
+    "seoul_day_trip_fit": 1,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "gapyeong",
+      "seoul_day_trip",
+      "k_drama_filming",
+      "themed_garden",
+      "river_island",
+      "french_village"
+    ],
+    "secondary_themes": [
+      "winter_sonata",
+      "metasequoia_lane",
+      "lighting_festival",
+      "photo_spots",
+      "autumn_foliage",
+      "first_time_korea"
+    ],
+    "best_for": [
+      "first_time_korea",
+      "couples",
+      "photo_lovers",
+      "families",
+      "k_drama_fans",
+      "seniors"
+    ],
+    "not_recommended_for": [
+      "hikers_seeking_mountains",
+      "nightlife_focused_travelers",
+      "travelers_wanting_a_short_half_day"
+    ],
+    "anchor_pois": [
+      "Nami Island",
+      "The Garden of Morning Calm",
+      "Petite France"
+    ],
+    "anchor_poi_keys": [
+      "nami_island",
+      "garden_of_morning_calm",
+      "petite_france"
+    ],
+    "competing_products": [
+      "seoul-seoraksan-nami-island-morning-calm-day-tour",
+      "seoul-private-nami-morning-calm-petite-france",
+      "pocheon-sanjeong-lake-herb-island-art-valley"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on this route. Cultural weight is popular-culture and horticultural: Winter Sonata's metasequoia lane on Nami Island, a 330,000 m² private arboretum, and a licensed Le Petit Prince village."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). The Gapyeong trio as a join-in-group coach day tour — the join-in counterpart to the existing private seoul-private-nami-morning-calm-petite-france. Donor A (seoul-seoraksan-nami-island-morning-calm-day-tour) supplied the KB-verified Nami Island and Garden of Morning Calm stop bodies plus Seoul-region weather/trust/support blocks and the two-point Seoul pickup; donor B (seoul-private-nami-morning-calm-petite-france) supplied the Petite France stop body. Pickup, lunch, return and all product-level copy authored fresh in 6 locales (scripts/seoul-gapyeong-content/) with de/fr/it/ru staged. Stop admission/hours re-verified 2026-08-04 against operator and KTO sources. matching_profile derived from donor A with the mountain axes zeroed and garden/K-drama axes raised — full KB calibration pending."
+    }
+  },
+  "page_sections": []
+}

@@ -71,6 +71,11 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
+  // New products 2026-08-04. maxGroupSize 40 (owner, 2026-08-04) — these are
+  // join-in coach tours, so the 8-guest small-group cap the private products
+  // carry would be a false claim; 40 is the coach capacity the operator lists.
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": { listPriceUsd: 59, maxGroupSize: 40 },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": { listPriceUsd: 69, maxGroupSize: 40 },
 };
 
 /** Cents-precise — mirrors `parseListPriceUsd` in `staticTourProductRegistry.ts`. */
