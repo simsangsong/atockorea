@@ -188,3 +188,30 @@ npm run tour:days -- --tour=<uuid 또는 slug> --days=mon,thu,sat --months=6 --a
 정원·가격 오버라이드는 보존 ③ **예약이 있는 날짜는 절대 닫지 않고** 목록으로 보고한다.
 
 재인폭포 슬러그/UUID 는 사장님이 아시는 값을 넣으면 된다. 스크린샷 기준 요일은 **mon,thu,sat**.
+
+## §12 수원 3형제 운행 요일 (사장님 스크린샷 2026-08-04, 2026년 8월 캘린더)
+
+세 상품이 **요일을 나눠 돌린다** — 같은 차량·가이드를 요일별로 다른 패키지에 붙이는 편성으로 보인다.
+
+| 상품(우리 슬러그) | 패키지 | 운행 요일 | Klook 표시가 |
+|---|---|---|---|
+| `seoul-suwon-hwaseong-waujeongsa-starfield` | 화성+행궁+**와우정사**+스타필드 | **화·목·토** (Tue/Thu/Sat) | US$50.49 |
+| `seoul-suwon-hwaseong-folk-village-starfield-library` | 화성+행궁+**민속촌**+스타필드 | **월·목·토** (Mon/Thu/Sat) | US$71.69 |
+| `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` | 화성+행궁+**광명동굴**+스타필드 | **일·수·금** (Sun/Wed/Fri) | US$57.65 |
+
+읽은 날짜 원본 — 와우정사: 6·8·11·13·15·18·20·22·25·27·29 / 민속촌: 8·10·13·15·17·20·22·24·27·29·31 /
+광명동굴: 5·7·9·12·14·16·19·21·23·26·28·30. (8/1~8/4 회색은 리드타임 컷오프 — 스크린샷이 8/4 촬영이다.
+민속촌만 8/6 목요일이 닫혀 있는데 이건 요일 규칙이 아니라 그 날짜 개별 사정으로 보인다 — 8/13 이후 목요일은 다 열려 있다.)
+
+**PC 에서 이대로 돌리면 된다**(슬러그를 그대로 받는다. 드라이런 먼저):
+
+```bash
+npm run tour:days -- --tour=seoul-suwon-hwaseong-waujeongsa-starfield           --days=tue,thu,sat --months=6
+npm run tour:days -- --tour=seoul-suwon-hwaseong-folk-village-starfield-library --days=mon,thu,sat --months=6
+npm run tour:days -- --tour=seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library --days=sun,wed,fri --months=6
+# 출력 확인 후 각 줄에 --apply 를 붙여 다시
+```
+
+⚠ **가격은 건드리지 않았다.** 위 US$ 는 Klook 표시가(플랫폼 마진 포함)이고 우리 `listPriceUsd` 는
+와우정사 51 · 민속촌 60 · 광명동굴 53 이다. 자사 판매가는 사장님 결정 사항이라 그대로 뒀다 —
+맞출지 여부만 알려주시면 반영한다.
