@@ -50,6 +50,8 @@ const COPY: Record<
     /** Marks the viewer in the member list. */
     me: string;
     empty: string;
+    /** T3 — keyset pagination: fetch the next page of a media kind. */
+    more: string;
     schedule: string;
     map: string;
     settings: string;
@@ -70,6 +72,7 @@ const COPY: Record<
     members: 'Members',
     me: '(you)',
     empty: 'Nothing here yet',
+    more: 'More',
     schedule: 'Today',
     map: 'Map',
     settings: 'Settings',
@@ -87,6 +90,7 @@ const COPY: Record<
     members: '대화상대',
     me: '(나)',
     empty: '아직 없어요',
+    more: '더 보기',
     schedule: '오늘 일정',
     map: '지도',
     settings: '설정',
@@ -104,6 +108,7 @@ const COPY: Record<
     members: 'メンバー',
     me: '(自分)',
     empty: 'まだありません',
+    more: 'もっと見る',
     schedule: '本日',
     map: '地図',
     settings: '設定',
@@ -121,6 +126,7 @@ const COPY: Record<
     members: 'Miembros',
     me: '(tú)',
     empty: 'Aún no hay nada',
+    more: 'Ver más',
     schedule: 'Hoy',
     map: 'Mapa',
     settings: 'Ajustes',
@@ -138,6 +144,7 @@ const COPY: Record<
     members: '成员',
     me: '(我)',
     empty: '暂时没有内容',
+    more: '查看更多',
     schedule: '今日',
     map: '地图',
     settings: '设置',
@@ -155,6 +162,7 @@ const COPY: Record<
     members: '成員',
     me: '(我)',
     empty: '目前還沒有內容',
+    more: '查看更多',
     schedule: '今日',
     map: '地圖',
     settings: '設定',
@@ -172,6 +180,7 @@ const COPY: Record<
     members: 'Membres',
     me: '(vous)',
     empty: 'Rien pour l’instant',
+    more: 'Voir plus',
     schedule: 'Aujourd’hui',
     map: 'Carte',
     settings: 'Réglages',
@@ -189,6 +198,7 @@ const COPY: Record<
     members: 'Mitglieder',
     me: '(Sie)',
     empty: 'Noch nichts da',
+    more: 'Mehr anzeigen',
     schedule: 'Heute',
     map: 'Karte',
     settings: 'Einstellungen',
@@ -206,6 +216,7 @@ const COPY: Record<
     members: 'Участники',
     me: '(вы)',
     empty: 'Пока пусто',
+    more: 'Ещё',
     schedule: 'Сегодня',
     map: 'Карта',
     settings: 'Настройки',
@@ -223,6 +234,7 @@ const COPY: Record<
     members: 'Membri',
     me: '(tu)',
     empty: 'Ancora niente qui',
+    more: 'Mostra altro',
     schedule: 'Oggi',
     map: 'Mappa',
     settings: 'Impostazioni',
@@ -296,22 +308,36 @@ export default function RoomDrawer({
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   // 적대적 리뷰 #3 — 만료 세션의 403이 "아직 없어요"로 위장되면 안 된다.
   const [authExpired, setAuthExpired] = useState(false);
+  /**
+   * T3 (§O ⑥) — the media route has been keyset-paginated since U4-D5
+   * (`?cursor=` in, `nextCursor` out) and the drawer never sent the cursor:
+   * the engine existed with no caller, so a room's 31st photo was simply
+   * unreachable. A non-null cursor renders a "more" affordance per kind.
+   */
+  const [cursors, setCursors] = useState<Record<'image' | 'file' | 'link', string | null>>({
+    image: null,
+    file: null,
+    link: null,
+  });
+  const [busyKind, setBusyKind] = useState<'image' | 'file' | 'link' | null>(null);
 
   const fetchKind = useCallback(
-    async (kind: 'image' | 'file' | 'link') => {
+    async (kind: 'image' | 'file' | 'link', cursor?: string) => {
+      const empty = { items: [] as unknown[], nextCursor: null as string | null };
       try {
-        const res = await fetch(`/api/tour-rooms/${bookingId}/media?kind=${kind}`, {
+        const qs = cursor ? `&cursor=${encodeURIComponent(cursor)}` : '';
+        const res = await fetch(`/api/tour-rooms/${bookingId}/media?kind=${kind}${qs}`, {
           headers: { 'x-tour-room-auth': roomSession },
           cache: 'no-store',
         });
         if (res.status === 401 || res.status === 403) {
           setAuthExpired(true);
-          return [];
+          return empty;
         }
         const json = await res.json();
-        return res.ok ? (json.items ?? []) : [];
+        return res.ok ? { items: json.items ?? [], nextCursor: json.nextCursor ?? null } : empty;
       } catch {
-        return [];
+        return empty;
       }
     },
     [bookingId, roomSession],
@@ -322,15 +348,31 @@ export default function RoomDrawer({
     void Promise.all([fetchKind('image'), fetchKind('file'), fetchKind('link')]).then(
       ([img, fil, lnk]) => {
         if (!alive) return;
-        setImages(img as DrawerAttachmentItem[]);
-        setFiles(fil as DrawerAttachmentItem[]);
-        setLinks(lnk as DrawerLinkItem[]);
+        setImages(img.items as DrawerAttachmentItem[]);
+        setFiles(fil.items as DrawerAttachmentItem[]);
+        setLinks(lnk.items as DrawerLinkItem[]);
+        setCursors({ image: img.nextCursor, file: fil.nextCursor, link: lnk.nextCursor });
       },
     );
     return () => {
       alive = false;
     };
   }, [fetchKind]);
+
+  const loadMore = useCallback(
+    async (kind: 'image' | 'file' | 'link') => {
+      const cursor = cursors[kind];
+      if (!cursor || busyKind) return;
+      setBusyKind(kind);
+      const page = await fetchKind(kind, cursor);
+      if (kind === 'image') setImages((prev) => [...(prev ?? []), ...(page.items as DrawerAttachmentItem[])]);
+      else if (kind === 'file') setFiles((prev) => [...(prev ?? []), ...(page.items as DrawerAttachmentItem[])]);
+      else setLinks((prev) => [...(prev ?? []), ...(page.items as DrawerLinkItem[])]);
+      setCursors((prev) => ({ ...prev, [kind]: page.nextCursor }));
+      setBusyKind(null);
+    },
+    [busyKind, cursors, fetchKind],
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -448,6 +490,21 @@ export default function RoomDrawer({
                     <img src={item.url} alt={item.name ?? ''} loading="lazy" className="h-full w-full object-cover" />
                   </button>
                 ))}
+                {cursors.image && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('image')}
+                    className="tr-press text-cjk-safe flex h-20 w-20 shrink-0 items-center justify-center rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-images-more"
+                  >
+                    {busyKind === 'image' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>
@@ -477,6 +534,21 @@ export default function RoomDrawer({
                     <IconInstall size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   </a>
                 ))}
+                {cursors.file && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('file')}
+                    className="tr-press text-cjk-safe flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-files-more"
+                  >
+                    {busyKind === 'file' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>
@@ -506,6 +578,21 @@ export default function RoomDrawer({
                     <IconOpenExternal size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   </a>
                 ))}
+                {cursors.link && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('link')}
+                    className="tr-press text-cjk-safe flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-links-more"
+                  >
+                    {busyKind === 'link' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>
