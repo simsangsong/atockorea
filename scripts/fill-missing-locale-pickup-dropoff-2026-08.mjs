@@ -10,13 +10,22 @@
  * and the timeline runs straight from the last stop into "What's included".
  *
  * Measured on production 2026-08-05 by counting `id="pickup-dropoff"` in the
- * server HTML (⚠ /zh/ renders client-side and returns a ~32 KB shell, so it
- * cannot be measured this way — do not read a 0 there as a defect):
+ * server HTML:
  *
- *   busan-top-attractions-day-tour               en OK · ko/ja/zh-TW/es MISSING
- *   jeju-grand-highlights-loop                   en OK · ko/ja/zh-TW/es MISSING
+ *   busan-top-attractions-day-tour               en OK · ko/ja/zh/zh-TW/es MISSING
+ *   jeju-grand-highlights-loop                   en OK · ko/ja/zh/zh-TW/es MISSING
  *   busan-small-group-sightseeing-…-passengers   en OK · ko MISSING
  *   incheon-seoul-private-car-shore-excursion…   en OK · ko MISSING
+ *
+ * ⚠ HOW `zh` GOT INTO THAT LIST, because the method above cannot see it:
+ * /zh/ renders client-side and the server returns a ~32 KB shell, so the anchor
+ * is absent there on EVERY product, healthy or not. Reading that 0 as a defect
+ * once made three healthy products look broken. `zh` is listed as MISSING on
+ * the strength of a different source — an owner screenshot of the live /zh/
+ * page showing the timeline running straight from the last stop into
+ * "费用包含" — and it agrees with the repo, where the zh bundle carried no
+ * pickup_dropoff either. Do not "correct" zh back out of this list from a
+ * server-HTML count.
  *
  * The cause is the same everywhere: the block only ever existed in the EN
  * bundle. `scripts/gen_pickup_sql.js` once wrote localized copies straight to

@@ -10,12 +10,17 @@
  * 마지막 스톱에서 곧장 「포함 사항」으로 넘어간다.
  *
  * 실측(프로덕션 서버 HTML 에서 `id="pickup-dropoff"` 개수):
- *   busan-top-attractions-day-tour              en 1 · ko/ja/zh-TW/es **0**
- *   jeju-grand-highlights-loop                  en 1 · ko/ja/zh-TW/es **0**
+ *   busan-top-attractions-day-tour              en 1 · ko/ja/zh/zh-TW/es **0**
+ *   jeju-grand-highlights-loop                  en 1 · ko/ja/zh/zh-TW/es **0**
  *   busan-small-group-sightseeing-…-passengers  en 1 · ko **0**
  *   incheon-seoul-private-car-shore-excursion…  en 1 · ko **0**
- * ⚠ `/zh/` 는 클라이언트 렌더라 서버 HTML 이 ~32KB 셸이다. 거기서 나온 0 은
- *   결함의 증거가 아니다 — 이 함정에 한 번 빠졌다.
+ *
+ * ⚠ `zh` 는 위 방법으로 잰 게 아니다. `/zh/` 는 클라이언트 렌더라 서버 HTML 이
+ *   ~32KB 셸이고, 그래서 **멀쩡한 상품에서도 앵커가 0 으로 나온다** — 이 함정에
+ *   한 번 빠져 정상 상품 3개를 결함으로 잘못 셌다. zh 가 결손 목록에 있는 근거는
+ *   라이브 `/zh/` 화면 캡처(타임라인이 곧장 「费用包含」으로 넘어감)이고, 레포
+ *   상태(zh 번들에도 pickup_dropoff 가 없었다)와 일치한다. 서버 HTML 카운트만
+ *   보고 zh 를 목록에서 빼지 말 것.
  *
  * 원인은 코드가 아니라 **소스의 반쪽짜리 상태**였다: 블록이 EN 번들에만 있었고,
  * `scripts/gen_pickup_sql.js` 가 번역본을 DB 에만 한 번 써 넣고 레포에는 안 돌려놨다.

@@ -59,12 +59,17 @@ out.push(`-- ===================================================================
 --    map, no pickup list, no drop-off list.
 --
 --    Measured on production by counting id="pickup-dropoff" in the server HTML:
---      busan-top-attractions-day-tour              en OK · ko/ja/zh-TW/es MISSING
---      jeju-grand-highlights-loop                  en OK · ko/ja/zh-TW/es MISSING
+--      busan-top-attractions-day-tour              en OK · ko/ja/zh/zh-TW/es MISSING
+--      jeju-grand-highlights-loop                  en OK · ko/ja/zh/zh-TW/es MISSING
 --      busan-small-group-sightseeing-…-passengers  en OK · ko MISSING
 --      incheon-seoul-private-car-shore-excursion…  en OK · ko MISSING
---    ⚠ /zh/ renders client-side and returns a ~32 KB shell, so it cannot be
---      measured that way — a 0 there is not evidence of a defect.
+--
+--    ⚠ zh is in that list on OTHER evidence. /zh/ renders client-side and the
+--      server returns a ~32 KB shell, so the anchor is absent there on every
+--      product, healthy or not — reading that 0 as a defect once made three
+--      healthy products look broken. zh is confirmed MISSING from an owner
+--      screenshot of the live /zh/ page (timeline runs straight into 费用包含),
+--      which agrees with the repo: the zh bundle had no pickup_dropoff either.
 --
 --    busan-top-attractions-day-tour is repaired by 2026-08-05-13 (same session)
 --    and is deliberately not repeated here.
