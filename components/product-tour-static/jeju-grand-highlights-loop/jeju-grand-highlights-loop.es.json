@@ -3096,5 +3096,85 @@
       },
       "v18_course_change_2026_06_23": "Course changed to 7-stop UNESCO grand loop: Hallasan 1100 highland → Jusangjeolli → Jeongbang → lunch → Seongsan haenyeo free-diving show (museum alternate) → Seongsan Ilchulbong climb → Manjanggul lava tube (Ilchul Land Micheon Cave alternate). Price → US$100 (≈ ₩138,000). Duration → 10–10.5h, ~180 km, ~5h driving. stopsCount 5→7. Eoseungsaengak swapped for the 1100 wetland; Haenyeo and Manjanggul added. Matching raised: culture 2→3, local_culture_fit 3→4, intangible_heritage_fit 2→4, storytelling 4→5, indoor_ratio 28→32, rain_fit 2→3, duration_band→10.5h. Pickup/drop-off unchanged."
     }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:00",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Encuentro en el vestíbulo del hotel: el guía lleva un cartel de AtoCKorea.",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "time": "08:15",
+        "name": "Aeropuerto Internacional de Jeju (3.ª planta, puerta 3)",
+        "type": "airport",
+        "note": "Zona de salidas de la 3.ª planta. Sigue las indicaciones hacia la puerta 3.",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "time": "08:25",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Espera en el vestíbulo principal: el guía te llamará por tu nombre.",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "time": "08:35",
+        "name": "Shilla Duty Free (tienda de Jeju)",
+        "type": "shopping",
+        "note": "Encuentro en la entrada principal de Shilla Duty Free, sucursal de Jeju.",
+        "lat": 33.48631,
+        "lng": 126.48739
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "name": "Aeropuerto Internacional de Jeju (3.ª planta, puerta 3)",
+        "type": "airport",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (tienda de Jeju)",
+        "type": "shopping",
+        "lat": 33.48631,
+        "lng": 126.48739
+      },
+      {
+        "order": 5,
+        "name": "Mercado Tradicional de Dongmun",
+        "type": "market",
+        "lat": 33.51204,
+        "lng": 126.52828
+      }
+    ],
+    "notes": [
+      "El regreso suele ser entre las 17:30 y las 18:00."
+    ]
   }
 }

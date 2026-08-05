@@ -3096,5 +3096,85 @@
       },
       "v18_course_change_2026_06_23": "Course changed to 7-stop UNESCO grand loop: Hallasan 1100 highland → Jusangjeolli → Jeongbang → lunch → Seongsan haenyeo free-diving show (museum alternate) → Seongsan Ilchulbong climb → Manjanggul lava tube (Ilchul Land Micheon Cave alternate). Price → US$100 (≈ ₩138,000). Duration → 10–10.5h, ~180 km, ~5h driving. stopsCount 5→7. Eoseungsaengak swapped for the 1100 wetland; Haenyeo and Manjanggul added. Matching raised: culture 2→3, local_culture_fit 3→4, intangible_heritage_fit 2→4, storytelling 4→5, indoor_ratio 28→32, rain_fit 2→3, duration_band→10.5h. Pickup/drop-off unchanged."
     }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:00",
+        "name": "海洋套房济州酒店",
+        "type": "hotel",
+        "note": "在酒店大堂集合 — 导游会举着AtoCKorea的牌子。",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "time": "08:15",
+        "name": "济州国际机场（3楼3号门）",
+        "type": "airport",
+        "note": "3楼出发层。请沿着3号门的指示牌前往。",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "time": "08:25",
+        "name": "乐天城市酒店济州",
+        "type": "hotel",
+        "note": "请在大堂等候 — 导游会叫您的名字。",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "time": "08:35",
+        "name": "新罗免税店（济州店）",
+        "type": "shopping",
+        "note": "在新罗免税店济州店正门外集合。",
+        "lat": 33.48631,
+        "lng": 126.48739
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "海洋套房济州酒店",
+        "type": "hotel",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "name": "济州国际机场（3楼3号门）",
+        "type": "airport",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "name": "乐天城市酒店济州",
+        "type": "hotel",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "name": "新罗免税店（济州店）",
+        "type": "shopping",
+        "lat": 33.48631,
+        "lng": 126.48739
+      },
+      {
+        "order": 5,
+        "name": "东门传统市场",
+        "type": "market",
+        "lat": 33.51204,
+        "lng": 126.52828
+      }
+    ],
+    "notes": [
+      "返程通常在17:30–18:00之间。"
+    ]
   }
 }
