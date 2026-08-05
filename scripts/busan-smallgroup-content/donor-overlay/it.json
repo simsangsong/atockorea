@@ -1,25 +1,5 @@
 {
   "_note": "EN source extract for de/fr/it/ru donor-overlay translation of busan-small-group-yonggungsa-skycapsule-gamcheon-tour. Translate every string value; keep structure, keys, markdown ** markers, times, KRW amounts.",
-  "pickupStop": {
-    "name": "Pickup (3 stazioni centrali di Busan)",
-    "category": "Trasferimento / Pickup",
-    "duration": "30 min",
-    "description": "Il pickup è concentrato in tre snodi di trasporto centrali di Busan, per mantenere la giornata gestibile senza attraversare la città avanti e indietro: **stazione di Busan (linea 1)** per gli ospiti alloggiati vicino al terminal KTX o nella zona di Choryang/Nampo-dong; **stazione di Seomyeon (linee 1 e 2)** — l'interscambio metropolitano più trafficato di Busan, centrale per gli ospiti negli hotel di metà città intorno al Lotte Hotel Busan o alla Seomyeon Medical Street; e **stazione di Haeundae (linea 2)** per gli ospiti nel distretto dei resort fronte spiaggia vicino a Westin Josun, Park Hyatt o Signiel Busan. \n\nIl minibus effettua il pickup in sequenza in tutte e tre (di norma prima la stazione di Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) e prosegue poi verso nord-est lungo il percorso costiero del ponte di Gwangan in direzione di Gijang-gun per la prima tappa della giornata. \n\nTrasferimento totale dall'ultimo pickup a Haedong Yonggungsa: ~30-40 minuti a seconda del traffico. L'autista distribuirà una scheda stampata dell'itinerario in coreano-inglese con gli orari; vi preghiamo di trovarvi al punto di pickup 5 minuti prima dell'orario previsto, per mantenere la giornata in orario in vista delle successive tappe ai villaggi di Gamcheon e Dakbatgol.",
-    "highlights": [
-      "Tre opzioni di pickup nel centro di Busan (stazione di Busan, Seomyeon, Haeundae)",
-      "Minibus per piccolo gruppo (max ~14 pax)",
-      "Trasferimento totale fino alla prima tappa: ~30-40 min",
-      "Scheda stampata dell'itinerario in coreano-inglese distribuita al pickup"
-    ],
-    "timeUsed": [
-      "Pickup alla stazione di Busan (~09:00, ~5 min)",
-      "Trasferimento alla stazione di Seomyeon (~10 min)",
-      "Pickup a Seomyeon (~09:15, ~5 min)",
-      "Trasferimento alla stazione di Haeundae (~15 min)",
-      "Pickup a Haeundae (~09:30, ~5 min)"
-    ],
-    "whyOnRoute": "Tre punti di pickup coprono le tre principali zone alberghiere di Busan (KTX/Nampo, Seomyeon in centro, Haeundae fronte spiaggia) senza costringere gli ospiti ad attraversare la città al mattino. La sequenza nord-ovest→est riduce al minimo la distanza del minibus e porta il gruppo a Haedong Yonggungsa verso le 10:00 — abbastanza presto da precedere gli arrivi più affollati dei pullman turistici."
-  },
   "yonggungsaStop": {
     "name": "Tempio Haedong Yonggungsa",
     "category": "Tempio buddhista / Costiero",
@@ -39,9 +19,9 @@
     "timeUsed": [
       "Discesa dal minibus + passeggiata tra le bancarelle fino al piazzale d'ingresso (~10 min)",
       "Dodici Generali dello Zodiaco + pagoda contro gli incidenti (~10 min)",
-      "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~30 min)",
-      "Belvedere della statua Haesu Gwaneum + tempo per le foto (~15 min)",
-      "Risalita + ritrovo al minibus (~10 min)"
+      "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~25 min)",
+      "Belvedere della statua Haesu Gwaneum + tempo per le foto (~10 min)",
+      "Risalita + ritrovo al minibus (~5 min)"
     ],
     "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:00 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
     "visitBasics": {
@@ -79,9 +59,9 @@
     "timeUsed": [
       "Discesa dal minibus al parcheggio pubblico 2 + passeggiata fino all'ingresso (~5 min)",
       "Centro informazioni turistiche + acquisto della mappa dei timbri (~10 min)",
-      "Belvedere Sky Garden + panchina del Piccolo Principe (~25 min)",
-      "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~25 min)",
-      "Ritrovo al minibus (~10 min)"
+      "Belvedere Sky Garden + panchina del Piccolo Principe (~20 min)",
+      "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~20 min)",
+      "Ritrovo al minibus (~5 min)"
     ],
     "whyOnRoute": "**Il villaggio protagonista del pomeriggio — l'anfiteatro pastello di Busan.** Dopo la mattinata costiera, la giornata attraversa la città verso le colline occidentali, dove le terrazze di Gamcheon, nate come insediamento di rifugiati della guerra di Corea e rinate come villaggio d'arte nel 2009, si impilano in colori pastello sopra il mare. Il percorso di 90 minuti copre i belvedere, la balaustra del Piccolo Principe e il tempo per perdersi nei vicoli — e si abbina di proposito al quieto Dakbatgol subito dopo, così vedete sia il villaggio celebre sia quello locale che i pullman saltano.",
     "visitBasics": {
@@ -191,7 +171,7 @@
       "timing": "Immediatamente",
       "title": "Conferma immediata",
       "detail": "Conferma della prenotazione con riepilogo dell'itinerario",
-      "description": "Conferma immediata della prenotazione con le istruzioni per il punto di pickup (stazione di Busan / Seomyeon / Haeundae)."
+      "description": "Conferma immediata della prenotazione, con la vostra finestra di prelievo in hotel (09:00–10:00) e cosa aspettarsi."
     },
     {
       "timing": "Il giorno prima",
@@ -209,7 +189,7 @@
       "timing": "Durante il tour",
       "title": "Assistenza durante il tour",
       "detail": "Linea diretta con l'operativo",
-      "description": "Un messaggio mattutino conferma la vostra stazione di pickup ed eventuali condizioni del traffico in tempo reale."
+      "description": "Un messaggio la sera prima conferma l'orario esatto di prelievo in hotel; uno al mattino copre il traffico in tempo reale."
     },
     {
       "timing": "Fine giornata",
@@ -280,12 +260,13 @@
     "Busan",
     "Ideale per la prima visita"
   ],
-  "heroStopsLabel": "8 tappe",
+  "heroStopsLabel": "9 tappe",
   "flowNames": {
-    "pickup": "Pickup (3 stazioni centrali di Busan)",
+    "pickup": "Prelievo (il vostro hotel nel centro di Busan)",
     "yonggungsa": "Tempio Haedong Yonggungsa",
     "lunch": "Pranzo (ristorante locale di Busan)",
-    "gamcheon": "Villaggio culturale di Gamcheon"
+    "gamcheon": "Villaggio culturale di Gamcheon",
+    "haeundaeBeach": "Spiaggia di Haeundae"
   },
   "reviewsSummary": {
     "averageRating": 0,

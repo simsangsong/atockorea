@@ -1,25 +1,5 @@
 {
   "_note": "EN source extract for de/fr/it/ru donor-overlay translation of busan-small-group-yonggungsa-skycapsule-gamcheon-tour. Translate every string value; keep structure, keys, markdown ** markers, times, KRW amounts.",
-  "pickupStop": {
-    "name": "Abholung (3 zentrale Stationen in Busan)",
-    "category": "Transfer / Abholung",
-    "duration": "30 Min.",
-    "description": "Die Abholung ist an drei zentralen Verkehrsknotenpunkten Busans gebündelt, damit der Tag ohne Kreuz-und-quer-Fahrten durch die Stadt planbar bleibt: **Bahnhof Busan (Linie 1)** für Gäste nahe dem KTX-Terminal oder im Viertel Choryang/Nampo-dong; **Station Seomyeon (Linien 1 & 2)** — Busans verkehrsreichster U-Bahn-Umsteigepunkt, zentral für Gäste in Innenstadthotels rund um das Lotte Hotel Busan oder die Seomyeon Medical Street; und **Station Haeundae (Linie 2)** für Gäste im Strandresort-Viertel nahe Westin Josun, Park Hyatt oder Signiel Busan. \n\nDer Bus holt an allen drei Punkten der Reihe nach ab (typischerweise zuerst Bahnhof Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) und fährt dann über die Küstenroute der Gwangan-Brücke nordostwärts nach Gijang-gun zum ersten Stopp des Tages. \n\nGesamtfahrzeit von der letzten Abholung bis zum Haedong-Yonggungsa-Tempel: ~30-40 Minuten je nach Verkehr. Der Fahrer verteilt eine gedruckte koreanisch-englische Programmkarte mit Zeitangaben; bitte seien Sie 5 Minuten vor der geplanten Zeit an Ihrem Abholpunkt, damit der Tag für die späteren Dorfstopps in Gamcheon und Dakbatgol im Zeitplan bleibt.",
-    "highlights": [
-      "Drei Abholoptionen im zentralen Busan (Bahnhof Busan, Seomyeon, Haeundae)",
-      "Kleingruppen-Bus (max. ~14 Pers.)",
-      "Gesamtfahrzeit zum ersten Stopp: ~30-40 Min.",
-      "Gedruckte koreanisch-englische Programmkarte wird bei der Abholung verteilt"
-    ],
-    "timeUsed": [
-      "Abholung Bahnhof Busan (~09:00, ~5 Min.)",
-      "Fahrt zur Station Seomyeon (~10 Min.)",
-      "Abholung Seomyeon (~09:15, ~5 Min.)",
-      "Fahrt zur Station Haeundae (~15 Min.)",
-      "Abholung Haeundae (~09:30, ~5 Min.)"
-    ],
-    "whyOnRoute": "Drei Abholpunkte decken Busans drei wichtigste Hotelzonen ab (KTX/Nampo, Seomyeon-Innenstadt, Haeundae-Strand), ohne dass Gäste morgens quer durch die Stadt fahren müssen. Die Reihenfolge Nordwest→Ost minimiert die Busstrecke und bringt die Gruppe gegen 10:00 zum Haedong-Yonggungsa-Tempel — früh genug, um den stärksten Reisebus-Ankünften zuvorzukommen."
-  },
   "yonggungsaStop": {
     "name": "Haedong-Yonggungsa-Tempel",
     "category": "Buddhistischer Tempel / Küste",
@@ -39,9 +19,9 @@
     "timeUsed": [
       "Ausstieg aus dem Bus + Gang durch die Händlergasse zum Eingangsplatz (~10 Min.)",
       "Zwölf Tierkreis-Generäle + „Unfallfrei-Pagode“ (~10 Min.)",
-      "Abstieg über die 108 Stufen + Haupthalle Daeungjeon + Meeresterrassen (~30 Min.)",
-      "Aussichtspunkt der Haesu-Gwaneum-Statue + Fotozeit (~15 Min.)",
-      "Rückweg hinauf + Sammeln am Bus (~10 Min.)"
+      "Abstieg über die 108 Stufen + Haupthalle Daeungjeon + Meeresterrassen (~25 Min.)",
+      "Aussichtspunkt der Haesu-Gwaneum-Statue + Fotozeit (~10 Min.)",
+      "Rückweg hinauf + Sammeln am Bus (~5 Min.)"
     ],
     "whyOnRoute": "**Der ikonische Auftakt der Route — Busans meistfotografierter Tempel in seinem ruhigen Fenster.** Die Ankunft um 10:00 liegt vor dem großen Ansturm der Reisebusse (typischerweise ab 11:00), sodass der Abstieg über die 108 Stufen und der Aussichtspunkt der Haesu-Gwaneum-Statue noch ohne Anstehen begehbar sind. Die Klippenlage in Gijang setzt den Tagesbeginn zudem an den äußersten Nordostpunkt der Route, sodass alles Weitere in eine Richtung die Küste hinabfließt — als Nächstes Cheongsapo, dann die Kapselfahrt Richtung Stadt — ganz ohne Zurückfahren.",
     "visitBasics": {
@@ -79,9 +59,9 @@
     "timeUsed": [
       "Ausstieg aus dem Bus am öffentlichen Parkplatz 2 + Fußweg zum Eingang (~5 Min.)",
       "Touristeninformation + Kauf der Stempelkarte (~10 Min.)",
-      "Aussichtspunkt Sky Garden + Bank des Kleinen Prinzen (~25 Min.)",
-      "Gassenspaziergang vorbei an Wandbildern + kleine Café-Pause (~25 Min.)",
-      "Sammeln am Bus (~10 Min.)"
+      "Aussichtspunkt Sky Garden + Bank des Kleinen Prinzen (~20 Min.)",
+      "Gassenspaziergang vorbei an Wandbildern + kleine Café-Pause (~20 Min.)",
+      "Sammeln am Bus (~5 Min.)"
     ],
     "whyOnRoute": "**Das Hauptdorf des Nachmittags — Busans Pastell-Amphitheater.** Nach dem Küstenmorgen wechselt der Tag zu den westlichen Hanglagen, wo sich Gamcheons Flüchtlingsterrassen aus der Koreakriegszeit, 2009 als Kunstdorf wiedergeboren, in Bonbonfarben über dem Meer stapeln. Die 90-minütige Runde umfasst die Aussichtspunkte, den Sims mit dem Kleinen Prinzen und Zeit zum Streifen durch die Gassen — und sie ist bewusst mit dem stillen Dakbatgol direkt danach kombiniert, damit Sie sowohl das berühmte Dorf als auch das lokale sehen, das die Busse auslassen.",
     "visitBasics": {
@@ -191,7 +171,7 @@
       "timing": "Sofort",
       "title": "Sofortige Bestätigung",
       "detail": "Buchungsbestätigung mit Programmübersicht",
-      "description": "Sofortige Buchungsbestätigung mit Hinweisen zum Abholpunkt (Bahnhof Busan / Seomyeon / Haeundae)."
+      "description": "Sofortige Buchungsbestätigung mit Ihrem Abholfenster am Hotel (09:00–10:00) und allem, was Sie erwartet."
     },
     {
       "timing": "Am Vortag",
@@ -209,7 +189,7 @@
       "timing": "Während der Tour",
       "title": "Betreuung unterwegs",
       "detail": "Direkter Draht zum Einsatzteam",
-      "description": "Eine Nachricht am Morgen bestätigt Ihre Abholstation und aktuelle Verkehrslage."
+      "description": "Eine Nachricht am Vorabend bestätigt Ihre genaue Abholzeit am Hotel; eine Nachricht am Morgen deckt die aktuelle Verkehrslage ab."
     },
     {
       "timing": "Am Tagesende",
@@ -280,12 +260,13 @@
     "Busan",
     "Ideal für Erstbesucher"
   ],
-  "heroStopsLabel": "8 Stopps",
+  "heroStopsLabel": "9 Stopps",
   "flowNames": {
-    "pickup": "Abholung (3 zentrale Stationen in Busan)",
+    "pickup": "Abholung (Ihr Hotel im Zentrum von Busan)",
     "yonggungsa": "Haedong-Yonggungsa-Tempel",
     "lunch": "Mittagessen (lokales Restaurant in Busan)",
-    "gamcheon": "Kulturdorf Gamcheon"
+    "gamcheon": "Kulturdorf Gamcheon",
+    "haeundaeBeach": "Haeundae-Strand"
   },
   "reviewsSummary": {
     "averageRating": 0,

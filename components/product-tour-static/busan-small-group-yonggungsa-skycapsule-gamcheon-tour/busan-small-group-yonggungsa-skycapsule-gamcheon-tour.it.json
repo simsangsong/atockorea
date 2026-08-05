@@ -6,7 +6,7 @@
   "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
   "seo": {
     "pageTitle": "Tour di Busan in piccolo gruppo: Yonggungsa, Sky Capsule, Gamcheon | AtoC Korea",
-    "metaDescription": "Tour giornaliero di 10 ore a Busan in piccolo gruppo: tempio Haedong Yonggungsa, passerella di vetro Daritdol di Cheongsapo, Sky Capsule del Blueline Park (biglietto opzionale), villaggio culturale di Gamcheon, villaggio dei murales Dakbatgol e monorotaia.",
+    "metaDescription": "Tour giornaliero di 9 ore a Busan in piccolo gruppo: tempio Haedong Yonggungsa, passerella di vetro Daritdol di Cheongsapo, Sky Capsule del Blueline Park (biglietto opzionale), villaggio culturale di Gamcheon, villaggio dei murales Dakbatgol e monorotaia.",
     "title": "Tour di Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali | AtoC",
     "description": "Tour giornaliero di Busan in piccolo gruppo: Haedong Yonggungsa → osservatorio Daritdol di Cheongsapo → Sky Capsule del Blueline Park (biglietto incluso/escluso — a vostra scelta) → pranzo → villaggio culturale di Gamcheon → villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri.",
     "primaryKeywords": [
@@ -23,8 +23,8 @@
     "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
     "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
     "region": "Busan",
-    "duration": "≈ 10 ore",
-    "stopsCount": 8,
+    "duration": "≈ 9 ore",
+    "stopsCount": 9,
     "rating": 0,
     "reviewCount": 0,
     "badges": [
@@ -68,9 +68,9 @@
       "Ideale per la prima visita"
     ],
     "meta": {
-      "duration": "≈ 10 ore (primo pickup 08:30, ultimo rientro in centro ≈ 18:30)",
+      "duration": "≈ 9 ore (prelievo in hotel alle 09:00, ultimo rientro in centro ≈ 17:50)",
       "region": "Busan",
-      "stops": "8 tappe",
+      "stops": "9 tappe",
       "rating": 0,
       "ratingStars": 0
     }
@@ -251,51 +251,50 @@
   ],
   "itineraryStops": [
     {
-      "name": "Pickup (3 stazioni centrali di Busan)",
-      "time": "≈ 08:30–09:30",
       "number": 1,
-      "category": "Trasferimento / Pickup",
-      "duration": "30 min",
-      "timeUsed": [
-        "Pickup alla stazione di Busan (~09:00, ~5 min)",
-        "Trasferimento alla stazione di Seomyeon (~10 min)",
-        "Pickup a Seomyeon (~09:15, ~5 min)",
-        "Trasferimento alla stazione di Haeundae (~15 min)",
-        "Pickup a Haeundae (~09:30, ~5 min)"
+      "time": "≈ 09:00–10:00",
+      "duration": "60 min",
+      "name": "Prelievo (il vostro hotel nel centro di Busan)",
+      "category": "Trasferimento / Prelievo in hotel",
+      "description": "Prelievo porta a porta presso il vostro hotel nel centro di Busan, tra le **09:00 e le 10:00**. L'orario esatto viene confermato via WhatsApp la sera prima, quando l'autista ha l'elenco degli hotel della giornata e può ordinare il giro in modo efficiente — chi alloggia sul lato Haeundae viene di norma prelevato per ultimo, perché il pullman lascia la città verso nord-est, in direzione di Gijang-gun e della prima tappa.\n\nL'area servita comprende i principali poli alberghieri del centro: **Seomyeon**, **Nampo-dong / stazione di Busan** e **Haeundae / Marine City**. Se il vostro hotel si trova fuori da quest'area, la guida indicherà il punto d'incontro più vicino alla conferma della prenotazione.\n\nVi preghiamo di attendere nella hall 5 minuti prima dell'orario confermato. Il trasferimento dall'ultimo prelievo a Haedong Yonggungsa richiede circa 30-40 minuti a seconda del traffico.",
+      "image": null,
+      "highlights": [
+        "Prelievo porta a porta negli hotel del centro di Busan, 09:00–10:00",
+        "Orario esatto confermato via WhatsApp la sera prima",
+        "Pullman in piccolo gruppo (max ~14 pax)",
+        "Scheda itinerario stampata in coreano e inglese alla partenza"
       ],
+      "timeUsed": [
+        "Prelievi negli hotel del centro di Busan (~40 min)",
+        "Trasferimento verso nord-est a Gijang-gun (~20 min)"
+      ],
+      "whyOnRoute": "Il prelievo in hotel elimina del tutto il trasferimento mattutino: niente metropolitana all'alba, niente uscite di stazione da cercare. Il giro procede da ovest a est, così il pullman termina vicino a Haeundae e lascia la città già orientato verso Gijang e la prima tappa della giornata.",
       "_poi_meta": {
         "match": "transit_only",
-        "poi_key": "OPS_busan_pickup_central",
+        "poi_key": "OPS_busan_hotel_pickup_central",
         "sources": [
-          "Visit Busan",
-          "Busan Metro"
+          "AtoC Korea operations"
         ],
         "verified": true,
-        "kb_version": "1.15",
-        "verified_date": "2026-04-29"
+        "verified_date": "2026-08-05"
       },
-      "highlights": [
-        "Tre opzioni di pickup nel centro di Busan (stazione di Busan, Seomyeon, Haeundae)",
-        "Minibus per piccolo gruppo (max ~14 pax)",
-        "Trasferimento totale fino alla prima tappa: ~30-40 min",
-        "Scheda stampata dell'itinerario in coreano-inglese distribuita al pickup"
-      ],
-      "whyOnRoute": "Tre punti di pickup coprono le tre principali zone alberghiere di Busan (KTX/Nampo, Seomyeon in centro, Haeundae fronte spiaggia) senza costringere gli ospiti ad attraversare la città al mattino. La sequenza nord-ovest→est riduce al minimo la distanza del minibus e porta il gruppo a Haedong Yonggungsa verso le 10:00 — abbastanza presto da precedere gli arrivi più affollati dei pullman turistici.",
-      "description": "Il pickup è concentrato in tre snodi di trasporto centrali di Busan, per mantenere la giornata gestibile senza attraversare la città avanti e indietro: **stazione di Busan (linea 1)** per gli ospiti alloggiati vicino al terminal KTX o nella zona di Choryang/Nampo-dong; **stazione di Seomyeon (linee 1 e 2)** — l'interscambio metropolitano più trafficato di Busan, centrale per gli ospiti negli hotel di metà città intorno al Lotte Hotel Busan o alla Seomyeon Medical Street; e **stazione di Haeundae (linea 2)** per gli ospiti nel distretto dei resort fronte spiaggia vicino a Westin Josun, Park Hyatt o Signiel Busan. \n\nIl minibus effettua il pickup in sequenza in tutte e tre (di norma prima la stazione di Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) e prosegue poi verso nord-est lungo il percorso costiero del ponte di Gwangan in direzione di Gijang-gun per la prima tappa della giornata. \n\nTrasferimento totale dall'ultimo pickup a Haedong Yonggungsa: ~30-40 minuti a seconda del traffico. L'autista distribuirà una scheda stampata dell'itinerario in coreano-inglese con gli orari; vi preghiamo di trovarvi al punto di pickup 5 minuti prima dell'orario previsto, per mantenere la giornata in orario in vista delle successive tappe ai villaggi di Gamcheon e Dakbatgol.",
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": [],
       "_role": "pickup"
     },
     {
       "name": "Tempio Haedong Yonggungsa",
-      "time": "≈ 10:00",
+      "time": "≈ 10:20",
       "number": 2,
       "category": "Tempio buddhista / Costiero",
-      "duration": "75 min",
+      "duration": "60 min",
       "timeUsed": [
         "Discesa dal minibus + passeggiata tra le bancarelle fino al piazzale d'ingresso (~10 min)",
         "Dodici Generali dello Zodiaco + pagoda contro gli incidenti (~10 min)",
-        "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~30 min)",
-        "Belvedere della statua Haesu Gwaneum + tempo per le foto (~15 min)",
-        "Risalita + ritrovo al minibus (~10 min)"
+        "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~25 min)",
+        "Belvedere della statua Haesu Gwaneum + tempo per le foto (~10 min)",
+        "Risalita + ritrovo al minibus (~5 min)"
       ],
       "_poi_meta": {
         "match": "exact",
@@ -328,7 +327,7 @@
         "photo": "La roccia dell'alba sul bordo verso il mare; la scalinata accanto alla sala Daeungjeon regala la classica inquadratura di oceano e tempio; la statua Haesu Gwaneum dalla scogliera superiore offre la veduta grandangolare di tempio e Mare Orientale",
         "facilities": "Bancarelle di souvenir/snack e piccolo caffè al piazzale superiore; il sentiero costiero prosegue lungo le rocce"
       },
-      "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:00 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
+      "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:20 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
       "convenience": {
         "parking": "Parcheggio di Haedong Yonggungsa (a pagamento, secondo il sito ufficiale Visit Busan)",
         "restroom": "Disponibili vicino all'ingresso principale e all'interno del complesso"
@@ -428,7 +427,7 @@
     },
     {
       "number": 3,
-      "time": "≈ 11:45",
+      "time": "≈ 11:40",
       "duration": "40 min",
       "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
       "category": "Osservatorio costiero / Gratuito",
@@ -481,8 +480,8 @@
     },
     {
       "number": 4,
-      "time": "≈ 12:35",
-      "duration": "40 min",
+      "time": "≈ 12:30",
+      "duration": "50 min",
       "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
       "category": "Attrazione costiera / Biglietto opzionale",
       "description": "La **Sky Capsule** è l'attrazione simbolo dello **Haeundae Blueline Park**, la riqualificazione ecologica del 2020 della dismessa ferrovia costiera Donghae Nambu: **cabine pastello da 4 posti che scivolano per 2,3 km su una rotaia sopraelevata a 7–10 metri sopra la costa** tra Cheongsapo e Mipo, con il mare da un lato per tutto il tragitto (~30 minuti). Saliamo a **Cheongsapo e viaggiamo verso Mipo**, dove il minibus è già ad attenderci — così la corsa fa anche da trasferimento della giornata lungo la costa. **Il biglietto della capsula è opzionale e si sceglie alla prenotazione**: con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (il prezzo è per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata); con l'opzione base potete percorrere la **passeggiata gratuita della Green Railway** — la premiata passerella costiera in legno di 2,3 km sotto la stessa rotaia — oppure semplicemente raggiungere Mipo in minibus.",
@@ -496,8 +495,8 @@
         "Funziona con pioggia normale; si ferma solo in caso di forte vento"
       ],
       "timeUsed": [
-        "Imbarco alla stazione di Cheongsapo (~10 min)",
-        "Corsa in Sky Capsule Cheongsapo → Mipo (~30 min)"
+        "Imbarco alla stazione di Cheongsapo (~15 min)",
+        "Corsa in Sky Capsule Cheongsapo → Mipo (~35 min)"
       ],
       "whyOnRoute": "**La corsa che è anche il trasferimento.** Salire a Cheongsapo subito dopo la passerella significa che la capsula vi porta lungo la stessa identica costa che avete appena ammirato dall'alto — e vi lascia a Mipo, dove il minibus e le vie del pranzo sono già ad aspettarvi. Nulla della giornata devia per farle spazio: rinunciate al biglietto e il minibus o la passeggiata gratuita coprono lo stesso tratto.",
       "_poi_meta": {
@@ -591,10 +590,10 @@
       "time": "≈ 13:25",
       "number": 5,
       "category": "Pasto locale",
-      "duration": "60 min",
+      "duration": "45 min",
       "timeUsed": [
         "Passeggiata dalla stazione di Mipo al ristorante (~5 min)",
-        "Pranzo (~50 min)",
+        "Pranzo (~35 min)",
         "Ritrovo al minibus (~5 min)"
       ],
       "_poi_meta": {
@@ -610,20 +609,60 @@
       },
       "highlights": [],
       "whyOnRoute": "**La pausa naturale tra la costa e i villaggi.** La corsa in capsula termina a Mipo all'ora di pranzo, e le vie gastronomiche di Haeundae sono a pochi passi dalla stazione — nessun tragitto extra per raggiungere un buon pasto. Fare rifornimento qui prepara ai due villaggi collinari del pomeriggio, dove la camminata è al suo tratto più verticale.",
-      "description": "Pranzo di circa 60 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+      "description": "Pranzo di circa 45 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+    },
+    {
+      "number": 6,
+      "time": "≈ 14:10",
+      "duration": "20 min",
+      "name": "Spiaggia di Haeundae",
+      "category": "Spiaggia / Gratis",
+      "description": "La **spiaggia di Haeundae (해운대해수욕장)** è il tratto di sabbia più noto della Corea: circa **1,5 km** di costa che si incurva tra l'isola di Dongbaekseom a ovest e Mipo a est, con lo skyline di Marine City alle spalle. Lo Sky Capsule vi lascia a Mipo, che non è altro che l'estremità orientale di questa spiaggia: la sosta non costa alla giornata un minuto di strada in più.\n\nVenti minuti sono una sosta da foto e piedi nell'acqua, non da bagno: si cammina sulla sabbia, si fotografa lo skyline e si torna al pullman. A luglio e agosto la spiaggia è al massimo dell'affollamento, con le file di ombrelloni montate; nel resto dell'anno è ampia, tranquilla e molto percorribile. Gratuita e aperta a ogni ora.",
+      "image": null,
+      "highlights": [
+        "**La spiaggia più famosa della Corea** — ~1,5 km di sabbia, GRATUITA e aperta 24 ore",
+        "Lo skyline di Marine City dal bagnasciuga",
+        "L'isola di Dongbaekseom e la Nurimaru APEC House all'estremità ovest",
+        "Proprio a Mipo, dove finisce lo Sky Capsule — nessun trasferimento aggiuntivo"
+      ],
+      "timeUsed": [
+        "Discesa sulla sabbia da Mipo (~5 min)",
+        "Foto della spiaggia e dello skyline (~10 min)",
+        "Ritrovo al pullman (~5 min)"
+      ],
+      "whyOnRoute": "Il capsule arriva a Mipo, che è l'estremità est della spiaggia: la vista più famosa di Busan è quindi a cinque minuti a piedi e non costa nulla alla giornata. È una sosta volutamente breve: quanto basta per mettere piede sulla sabbia e fotografare lo skyline prima che il pomeriggio viri verso i villaggi in collina.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "haeundae_beach",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan City Tourism"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-05"
+      },
+      "visitBasics": {
+        "hours": "Aperta 24 ore",
+        "closed": "Mai",
+        "walking": "Sabbia pianeggiante e lungomare pavimentato",
+        "admission": "GRATIS"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
     },
     {
       "name": "Villaggio culturale di Gamcheon",
-      "time": "≈ 15:00",
-      "number": 6,
+      "time": "≈ 15:10",
+      "number": 7,
       "category": "Villaggio culturale / Arte murale",
-      "duration": "90 min",
+      "duration": "60 min",
       "timeUsed": [
         "Discesa dal minibus al parcheggio pubblico 2 + passeggiata fino all'ingresso (~5 min)",
         "Centro informazioni turistiche + acquisto della mappa dei timbri (~10 min)",
-        "Belvedere Sky Garden + panchina del Piccolo Principe (~25 min)",
-        "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~25 min)",
-        "Ritrovo al minibus (~10 min)"
+        "Belvedere Sky Garden + panchina del Piccolo Principe (~20 min)",
+        "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~20 min)",
+        "Ritrovo al minibus (~5 min)"
       ],
       "_poi_meta": {
         "match": "exact",
@@ -734,9 +773,9 @@
       ]
     },
     {
-      "number": 7,
-      "time": "≈ 16:50",
-      "duration": "50 min",
+      "number": 8,
+      "time": "≈ 16:30",
+      "duration": "30 min",
       "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
       "category": "Villaggio dei murales / Monorotaia gratuita",
       "description": "**Dakbatgol (닥밭골)** è un villaggio collinare nel distretto di Seo-gu, a Busan, il cui nome ricorda i **campi di gelso da carta (dak)** che un tempo rifornivano i maestri della carta tradizionale coreana hanji. Come Gamcheon si arrampica su un ripido pendio in vicoli stretti — ma non è mai diventato una fermata dei pullman turistici, così i suoi **vicoli di murales, le opere ispirate alla hanji e i punti panoramici restano quieti e locali**, panni stesi compresi. Il simbolo del villaggio è la **'scalinata dei desideri' (소망계단)** — una lunga e ripida via di gradini dipinta di murales — e la **monorotaia inclinata gratuita** che le scorre accanto, installata perché gli anziani del villaggio potessero raggiungere le proprie case; anche i visitatori possono salirvi, trasformando la salita più ripida del pomeriggio in un belvedere al rallentatore. È il contrappunto volutamente a misura d'uomo alla fama di Gamcheon, a dieci minuti dalla zona dei rientri.",
@@ -750,9 +789,9 @@
         "Ingresso GRATUITO; un quartiere autenticamente abitato — parlate a bassa voce"
       ],
       "timeUsed": [
-        "Discesa dal minibus + passeggiata tra i vicoli dei murales (~20 min)",
-        "Salita in monorotaia della scalinata dei desideri + belvedere (~15 min)",
-        "Discesa + tempo per le foto (~10 min)",
+        "Discesa dal minibus + passeggiata tra i vicoli dei murales (~10 min)",
+        "Salita in monorotaia della scalinata dei desideri + belvedere (~10 min)",
+        "Discesa + tempo per le foto (~5 min)",
         "Ritrovo al minibus (~5 min)"
       ],
       "whyOnRoute": "**La chiusura silenziosa che i pullman saltano.** Dopo la folla di Gamcheon, Dakbatgol mostra la stessa Busan collinare a volume di vita quotidiana — murales, la scalinata dei desideri e una monorotaia che fa la salita. Chiude il capitolo dei villaggi a dieci minuti dalla zona di rientro di Nampo, così la giornata termina immersa nella trama locale anziché nel traffico.",
@@ -786,21 +825,21 @@
       "galleryItems": []
     },
     {
-      "number": 8,
-      "time": "≈ 17:50",
+      "number": 9,
+      "time": "≈ 17:10",
       "duration": "≈ 70 min in totale",
       "name": "Rientro (4 punti nel centro di Busan)",
       "category": "Rientro — Stazioni centrali in sequenza",
-      "description": "**I rientri avvengono in sequenza dal lato ovest verso est**: **zona Nampo-dong / Jagalchi (~17:50)** — scendete qui per le migliori vie gastronomiche serali di Busan e l'atmosfera notturna di BIFF Square; **stazione di Busan (~18:10)** per le coincidenze KTX; **Seomyeon (~18:30)** per il nucleo di hotel del centro; e **Haeundae (~19:00)** per ultima. Scegliete il vostro punto di rientro con la guida durante il pomeriggio — restare a bordo fino a Haeundae è il tragitto più lungo, ma vi lascia in spiaggia per la serata.",
+      "description": "**Le discese procedono in sequenza da ovest verso est**: **Nampo-dong / zona Jagalchi (~17:10)** — scendete qui per le migliori vie del cibo serale di Busan e la scena notturna di BIFF Square; **stazione di Busan (~17:30)** per le coincidenze KTX; **Seomyeon (~17:50)** per gli hotel del centro; e infine **Haeundae (~18:20)**. Concordate il vostro punto di discesa con la guida nel pomeriggio: proseguire fino a Haeundae è il tragitto più lungo, ma vi lascia in riva alla spiaggia per la serata.",
       "image": null,
       "highlights": [],
       "timeUsed": [
-        "Zona Nampo-dong / Jagalchi (~17:50)",
-        "Stazione di Busan (~18:10)",
-        "Seomyeon (~18:30)",
-        "Haeundae (~19:00)"
+        "Nampo-dong / zona Jagalchi (~17:10)",
+        "Stazione di Busan (~17:30)",
+        "Seomyeon (~17:50)",
+        "Haeundae (~18:20)"
       ],
-      "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza dei rientri inizia quasi subito dopo l'ultima tappa — nessun tempo morto di trasferimento. L'ordine da ovest a est rispecchia i pickup del mattino e copre i viaggiatori KTX (stazione di Busan), gli hotel del centro (Seomyeon) e gli hotel sulla spiaggia (Haeundae) senza tornare indietro.",
+      "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza delle discese comincia quasi subito dopo l'ultima tappa, senza trasferimenti a vuoto. L'ordine ovest-est copre chi viaggia in KTX (stazione di Busan), gli hotel del centro (Seomyeon) e quelli sulla spiaggia (Haeundae) senza tornare indietro.",
       "_poi_meta": null,
       "images": [],
       "imageCredits": [],
@@ -809,7 +848,7 @@
   ],
   "routeFlowStops": [
     {
-      "name": "Pickup (3 stazioni centrali di Busan)",
+      "name": "Prelievo (il vostro hotel nel centro di Busan)",
       "type": "origin",
       "theme": "Departure"
     },
@@ -834,6 +873,11 @@
       "theme": "Meal"
     },
     {
+      "name": "Spiaggia di Haeundae",
+      "type": "secondary",
+      "theme": "Beach"
+    },
+    {
       "name": "Villaggio culturale di Gamcheon",
       "type": "primary",
       "theme": "Art village"
@@ -851,29 +895,29 @@
   ],
   "routePhases": [
     {
-      "phase": "Mattinata costiera",
-      "duration": "≈ 3 ore",
-      "description": "Pickup in tre stazioni centrali (08:30–09:30), poi il tempio Haedong Yonggungsa prima dell'ondata dei pullman turistici, e a seguire la passerella di vetro Daritdol di Cheongsapo."
+      "phase": "Mattina sulla costa",
+      "duration": "≈ 3,5 ore",
+      "description": "Prelievo porta a porta negli hotel del centro di Busan (09:00–10:00), poi il tempio Haedong Yonggungsa prima dell'ondata dei bus turistici e quindi la passerella di vetro Daritdol a Cheongsapo."
     },
     {
-      "phase": "Sky Capsule + pranzo",
+      "phase": "Sky Capsule, pranzo e spiaggia",
       "duration": "≈ 2 ore",
-      "description": "La corsa in Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prosegue in minibus o percorre a piedi la passeggiata in legno della Green Railway), poi pranzo nei pressi di Haeundae."
+      "description": "Lo Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prende il pullman o percorre la passerella Green Railway), pranzo vicino a Haeundae e poi venti minuti sulla spiaggia di Haeundae stessa."
     },
     {
-      "phase": "Due villaggi collinari",
-      "duration": "≈ 3 ore",
-      "description": "Il percorso fotografico del villaggio culturale di Gamcheon (90 min), poi il tranquillo villaggio dei murales Dakbatgol e la sua monorotaia gratuita della scalinata dei desideri (50 min)."
+      "phase": "Due villaggi in collina",
+      "duration": "≈ 2 ore",
+      "description": "Il giro fotografico del villaggio culturale di Gamcheon (60 min), poi il tranquillo villaggio dei murales di Dakbatgol con la monorotaia gratuita della \"scala dei desideri\" (30 min)."
     },
     {
       "phase": "Chiusura in centro",
       "duration": "≈ 1 ora",
-      "description": "Rientri in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae."
+      "description": "Discese in sequenza: Nampo-dong, stazione di Busan, Seomyeon, poi Haeundae."
     }
   ],
   "routeShapeIntro": {
     "title": "Come si muove questa giornata a Busan",
-    "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 08:30 alle 18:30 circa."
+    "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo e una breve sosta sulla spiaggia di Haeundae la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 09:00 alle 18:20 circa."
   },
   "whyTourWorks": {
     "bestFor": [
@@ -896,7 +940,7 @@
         "items": [
           {
             "label": "Il tempio nella sua ora più quieta",
-            "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei pullman turistici inizia verso le 11:00. Arrivando intorno alle 10:00, la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code."
+            "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei bus turistici comincia verso le 11:00. Arrivare intorno alle 10:20 mantiene percorribili la discesa dei 108 gradini e il punto panoramico di Haesu Gwaneum, senza code."
           },
           {
             "label": "La corsa in capsula È il trasferimento",
@@ -918,11 +962,11 @@
     {
       "id": "pickup",
       "title": "Prelievo e rientro",
-      "preview": "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+      "preview": "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan — Seomyeon, Nampo-dong / stazione di Busan, Haeundae / Marine City — tra le 09:00 e le 10:00. L'orario esatto viene confermato via WhatsApp la sera prima.",
       "content": [
-        "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
-        "Discese in sequenza: Nampo-dong/Jagalchi ≈17:50, stazione di Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
-        "La durata effettiva del tour dipende dal punto di prelievo: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+        "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan — Seomyeon, Nampo-dong / stazione di Busan, Haeundae / Marine City — tra le 09:00 e le 10:00. L'orario esatto viene confermato via WhatsApp la sera prima.",
+        "Discese in sequenza: Nampo-dong/Jagalchi ≈17:10, stazione di Busan ≈17:30, Seomyeon ≈17:50, Haeundae ≈18:20.",
+        "La durata effettiva del tour dipende dall'orario di prelievo e dal punto di discesa: circa 7 ore e 15 minuti nel caso più breve (prelievo alle 10:00, discesa a Nampo-dong) e circa 9 ore e 15 minuti nel più lungo (prelievo alle 09:00, discesa a Haeundae)."
       ]
     },
     {
@@ -1063,7 +1107,7 @@
       "timing": "Immediatamente",
       "title": "Conferma immediata",
       "detail": "Conferma della prenotazione con riepilogo dell'itinerario",
-      "description": "Conferma immediata della prenotazione con le istruzioni per il punto di pickup (stazione di Busan / Seomyeon / Haeundae)."
+      "description": "Conferma immediata della prenotazione, con la vostra finestra di prelievo in hotel (09:00–10:00) e cosa aspettarsi."
     },
     {
       "timing": "Il giorno prima",
@@ -1081,7 +1125,7 @@
       "timing": "Durante il tour",
       "title": "Assistenza durante il tour",
       "detail": "Linea diretta con l'operativo",
-      "description": "Un messaggio mattutino conferma la vostra stazione di pickup ed eventuali condizioni del traffico in tempo reale."
+      "description": "Un messaggio la sera prima conferma l'orario esatto di prelievo in hotel; uno al mattino copre il traffico in tempo reale."
     },
     {
       "timing": "Fine giornata",
@@ -1123,7 +1167,7 @@
     },
     {
       "question": "Dove si effettuano pickup e rientro?",
-      "answer": "Pickup in tre stazioni centrali — Seomyeon (08:30), stazione di Busan (08:50), Haeundae (09:30). I rientri avvengono in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae, indicativamente tra le 17:50 e le 19:00."
+      "answer": "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan, tra le 09:00 e le 10:00 — l'orario esatto viene confermato via WhatsApp la sera prima. Le discese seguono questo ordine: Nampo-dong ≈17:10, stazione di Busan ≈17:30, Seomyeon ≈17:50, Haeundae ≈18:20."
     },
     {
       "question": "Cosa succede se piove?",
@@ -1176,27 +1220,12 @@
     "departure": [
       {
         "order": 1,
-        "time": "08:30",
-        "name": "Seomyeon Station (Exit 4)",
-        "type": "station",
+        "time": "09:00–10:00",
+        "name": "Il vostro hotel nel centro di Busan (porta a porta)",
+        "type": "hotel",
+        "note": "Prelievo porta a porta negli hotel del centro di Busan — Seomyeon, Nampo-dong / stazione di Busan, Haeundae / Marine City. L'orario esatto viene confermato la sera prima.",
         "lat": 35.15782,
         "lng": 129.06003
-      },
-      {
-        "order": 2,
-        "time": "08:50",
-        "name": "Busan Station Exit 4 (not the KTX gate)",
-        "type": "station",
-        "lat": 35.11449,
-        "lng": 129.03933
-      },
-      {
-        "order": 3,
-        "time": "09:30",
-        "name": "Haeundae Station (Exit 5)",
-        "type": "station",
-        "lat": 35.16396,
-        "lng": 129.15853
       }
     ],
     "return": [
@@ -1230,7 +1259,7 @@
       }
     ],
     "notes": [
-      "Alla prenotazione scegliete la stazione di pickup più vicina al vostro hotel. I rientri sono sequenziali (Nampo-dong → stazione di Busan → Seomyeon → Haeundae, ≈ 17:50–19:00); chi sale a Seomyeon ha la giornata più lunga, chi sale a Haeundae la più corta."
+      "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan tra le 09:00 e le 10:00; l'orario esatto viene confermato la sera prima. Le discese avvengono in quattro punti centrali in sequenza (Nampo-dong → stazione di Busan → Seomyeon → Haeundae, ≈ 17:10–18:20): comunicate alla guida nel pomeriggio quale preferite."
     ]
   },
   "matching_profile": {
@@ -1310,7 +1339,7 @@
     "bus_fit": 1,
     "price_band": "mid",
     "pickup_base": "busan_central",
-    "return_time_band": "18:00-19:00",
+    "return_time_band": "17:00-18:30",
     "duration_band": "9h",
     "min_recommended_age": 8,
     "hard_constraints": {
@@ -1455,6 +1484,7 @@
       "v1_authored_2026_08_04"
     ],
     "fix_passes": {
+      "v2_hotel_pickup_2026_08_05": "Owner instruction 2026-08-05: pickup moved from three subway stations to door-to-door pickup at downtown Busan hotels, 09:00–10:00, and the day re-timed to the schedule the owner gave (Yonggungsa 10:20–11:20, Cheongsapo 11:40–13:20, Haeundae Beach 14:10–14:30 as a NEW stop, Gamcheon 15:10–16:10, Dakbatgol 16:30–17:00). Lunch fills the single gap the owner left (13:20–14:10, 45 min) and the four central drop-offs keep their published +20/+20/+30 intervals from a 17:00 finish, landing at 17:10/17:30/17:50/18:20 — both derived, not dictated. Day length falls from the claimed 10 h to ≈9 h, which is what matching_profile.duration_hours already said.",
       "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
     }
   },
@@ -1479,9 +1509,9 @@
             "Ideale per la prima visita"
           ],
           "meta": {
-            "duration": "≈ 10 ore (primo pickup 08:30, ultimo rientro in centro ≈ 18:30)",
+            "duration": "≈ 9 ore (prelievo in hotel alle 09:00, ultimo rientro in centro ≈ 17:50)",
             "region": "Busan",
-            "stops": "8 tappe",
+            "stops": "9 tappe",
             "rating": 0,
             "ratingStars": 0
           }
@@ -1690,51 +1720,50 @@
       "props": {
         "itineraryStops": [
           {
-            "name": "Pickup (3 stazioni centrali di Busan)",
-            "time": "≈ 08:30–09:30",
             "number": 1,
-            "category": "Trasferimento / Pickup",
-            "duration": "30 min",
-            "timeUsed": [
-              "Pickup alla stazione di Busan (~09:00, ~5 min)",
-              "Trasferimento alla stazione di Seomyeon (~10 min)",
-              "Pickup a Seomyeon (~09:15, ~5 min)",
-              "Trasferimento alla stazione di Haeundae (~15 min)",
-              "Pickup a Haeundae (~09:30, ~5 min)"
+            "time": "≈ 09:00–10:00",
+            "duration": "60 min",
+            "name": "Prelievo (il vostro hotel nel centro di Busan)",
+            "category": "Trasferimento / Prelievo in hotel",
+            "description": "Prelievo porta a porta presso il vostro hotel nel centro di Busan, tra le **09:00 e le 10:00**. L'orario esatto viene confermato via WhatsApp la sera prima, quando l'autista ha l'elenco degli hotel della giornata e può ordinare il giro in modo efficiente — chi alloggia sul lato Haeundae viene di norma prelevato per ultimo, perché il pullman lascia la città verso nord-est, in direzione di Gijang-gun e della prima tappa.\n\nL'area servita comprende i principali poli alberghieri del centro: **Seomyeon**, **Nampo-dong / stazione di Busan** e **Haeundae / Marine City**. Se il vostro hotel si trova fuori da quest'area, la guida indicherà il punto d'incontro più vicino alla conferma della prenotazione.\n\nVi preghiamo di attendere nella hall 5 minuti prima dell'orario confermato. Il trasferimento dall'ultimo prelievo a Haedong Yonggungsa richiede circa 30-40 minuti a seconda del traffico.",
+            "image": null,
+            "highlights": [
+              "Prelievo porta a porta negli hotel del centro di Busan, 09:00–10:00",
+              "Orario esatto confermato via WhatsApp la sera prima",
+              "Pullman in piccolo gruppo (max ~14 pax)",
+              "Scheda itinerario stampata in coreano e inglese alla partenza"
             ],
+            "timeUsed": [
+              "Prelievi negli hotel del centro di Busan (~40 min)",
+              "Trasferimento verso nord-est a Gijang-gun (~20 min)"
+            ],
+            "whyOnRoute": "Il prelievo in hotel elimina del tutto il trasferimento mattutino: niente metropolitana all'alba, niente uscite di stazione da cercare. Il giro procede da ovest a est, così il pullman termina vicino a Haeundae e lascia la città già orientato verso Gijang e la prima tappa della giornata.",
             "_poi_meta": {
               "match": "transit_only",
-              "poi_key": "OPS_busan_pickup_central",
+              "poi_key": "OPS_busan_hotel_pickup_central",
               "sources": [
-                "Visit Busan",
-                "Busan Metro"
+                "AtoC Korea operations"
               ],
               "verified": true,
-              "kb_version": "1.15",
-              "verified_date": "2026-04-29"
+              "verified_date": "2026-08-05"
             },
-            "highlights": [
-              "Tre opzioni di pickup nel centro di Busan (stazione di Busan, Seomyeon, Haeundae)",
-              "Minibus per piccolo gruppo (max ~14 pax)",
-              "Trasferimento totale fino alla prima tappa: ~30-40 min",
-              "Scheda stampata dell'itinerario in coreano-inglese distribuita al pickup"
-            ],
-            "whyOnRoute": "Tre punti di pickup coprono le tre principali zone alberghiere di Busan (KTX/Nampo, Seomyeon in centro, Haeundae fronte spiaggia) senza costringere gli ospiti ad attraversare la città al mattino. La sequenza nord-ovest→est riduce al minimo la distanza del minibus e porta il gruppo a Haedong Yonggungsa verso le 10:00 — abbastanza presto da precedere gli arrivi più affollati dei pullman turistici.",
-            "description": "Il pickup è concentrato in tre snodi di trasporto centrali di Busan, per mantenere la giornata gestibile senza attraversare la città avanti e indietro: **stazione di Busan (linea 1)** per gli ospiti alloggiati vicino al terminal KTX o nella zona di Choryang/Nampo-dong; **stazione di Seomyeon (linee 1 e 2)** — l'interscambio metropolitano più trafficato di Busan, centrale per gli ospiti negli hotel di metà città intorno al Lotte Hotel Busan o alla Seomyeon Medical Street; e **stazione di Haeundae (linea 2)** per gli ospiti nel distretto dei resort fronte spiaggia vicino a Westin Josun, Park Hyatt o Signiel Busan. \n\nIl minibus effettua il pickup in sequenza in tutte e tre (di norma prima la stazione di Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) e prosegue poi verso nord-est lungo il percorso costiero del ponte di Gwangan in direzione di Gijang-gun per la prima tappa della giornata. \n\nTrasferimento totale dall'ultimo pickup a Haedong Yonggungsa: ~30-40 minuti a seconda del traffico. L'autista distribuirà una scheda stampata dell'itinerario in coreano-inglese con gli orari; vi preghiamo di trovarvi al punto di pickup 5 minuti prima dell'orario previsto, per mantenere la giornata in orario in vista delle successive tappe ai villaggi di Gamcheon e Dakbatgol.",
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": [],
             "_role": "pickup"
           },
           {
             "name": "Tempio Haedong Yonggungsa",
-            "time": "≈ 10:00",
+            "time": "≈ 10:20",
             "number": 2,
             "category": "Tempio buddhista / Costiero",
-            "duration": "75 min",
+            "duration": "60 min",
             "timeUsed": [
               "Discesa dal minibus + passeggiata tra le bancarelle fino al piazzale d'ingresso (~10 min)",
               "Dodici Generali dello Zodiaco + pagoda contro gli incidenti (~10 min)",
-              "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~30 min)",
-              "Belvedere della statua Haesu Gwaneum + tempo per le foto (~15 min)",
-              "Risalita + ritrovo al minibus (~10 min)"
+              "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~25 min)",
+              "Belvedere della statua Haesu Gwaneum + tempo per le foto (~10 min)",
+              "Risalita + ritrovo al minibus (~5 min)"
             ],
             "_poi_meta": {
               "match": "exact",
@@ -1767,7 +1796,7 @@
               "photo": "La roccia dell'alba sul bordo verso il mare; la scalinata accanto alla sala Daeungjeon regala la classica inquadratura di oceano e tempio; la statua Haesu Gwaneum dalla scogliera superiore offre la veduta grandangolare di tempio e Mare Orientale",
               "facilities": "Bancarelle di souvenir/snack e piccolo caffè al piazzale superiore; il sentiero costiero prosegue lungo le rocce"
             },
-            "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:00 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
+            "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:20 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
             "convenience": {
               "parking": "Parcheggio di Haedong Yonggungsa (a pagamento, secondo il sito ufficiale Visit Busan)",
               "restroom": "Disponibili vicino all'ingresso principale e all'interno del complesso"
@@ -1867,7 +1896,7 @@
           },
           {
             "number": 3,
-            "time": "≈ 11:45",
+            "time": "≈ 11:40",
             "duration": "40 min",
             "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
             "category": "Osservatorio costiero / Gratuito",
@@ -1920,8 +1949,8 @@
           },
           {
             "number": 4,
-            "time": "≈ 12:35",
-            "duration": "40 min",
+            "time": "≈ 12:30",
+            "duration": "50 min",
             "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
             "category": "Attrazione costiera / Biglietto opzionale",
             "description": "La **Sky Capsule** è l'attrazione simbolo dello **Haeundae Blueline Park**, la riqualificazione ecologica del 2020 della dismessa ferrovia costiera Donghae Nambu: **cabine pastello da 4 posti che scivolano per 2,3 km su una rotaia sopraelevata a 7–10 metri sopra la costa** tra Cheongsapo e Mipo, con il mare da un lato per tutto il tragitto (~30 minuti). Saliamo a **Cheongsapo e viaggiamo verso Mipo**, dove il minibus è già ad attenderci — così la corsa fa anche da trasferimento della giornata lungo la costa. **Il biglietto della capsula è opzionale e si sceglie alla prenotazione**: con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (il prezzo è per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata); con l'opzione base potete percorrere la **passeggiata gratuita della Green Railway** — la premiata passerella costiera in legno di 2,3 km sotto la stessa rotaia — oppure semplicemente raggiungere Mipo in minibus.",
@@ -1935,8 +1964,8 @@
               "Funziona con pioggia normale; si ferma solo in caso di forte vento"
             ],
             "timeUsed": [
-              "Imbarco alla stazione di Cheongsapo (~10 min)",
-              "Corsa in Sky Capsule Cheongsapo → Mipo (~30 min)"
+              "Imbarco alla stazione di Cheongsapo (~15 min)",
+              "Corsa in Sky Capsule Cheongsapo → Mipo (~35 min)"
             ],
             "whyOnRoute": "**La corsa che è anche il trasferimento.** Salire a Cheongsapo subito dopo la passerella significa che la capsula vi porta lungo la stessa identica costa che avete appena ammirato dall'alto — e vi lascia a Mipo, dove il minibus e le vie del pranzo sono già ad aspettarvi. Nulla della giornata devia per farle spazio: rinunciate al biglietto e il minibus o la passeggiata gratuita coprono lo stesso tratto.",
             "_poi_meta": {
@@ -2030,10 +2059,10 @@
             "time": "≈ 13:25",
             "number": 5,
             "category": "Pasto locale",
-            "duration": "60 min",
+            "duration": "45 min",
             "timeUsed": [
               "Passeggiata dalla stazione di Mipo al ristorante (~5 min)",
-              "Pranzo (~50 min)",
+              "Pranzo (~35 min)",
               "Ritrovo al minibus (~5 min)"
             ],
             "_poi_meta": {
@@ -2049,20 +2078,60 @@
             },
             "highlights": [],
             "whyOnRoute": "**La pausa naturale tra la costa e i villaggi.** La corsa in capsula termina a Mipo all'ora di pranzo, e le vie gastronomiche di Haeundae sono a pochi passi dalla stazione — nessun tragitto extra per raggiungere un buon pasto. Fare rifornimento qui prepara ai due villaggi collinari del pomeriggio, dove la camminata è al suo tratto più verticale.",
-            "description": "Pranzo di circa 60 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+            "description": "Pranzo di circa 45 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+          },
+          {
+            "number": 6,
+            "time": "≈ 14:10",
+            "duration": "20 min",
+            "name": "Spiaggia di Haeundae",
+            "category": "Spiaggia / Gratis",
+            "description": "La **spiaggia di Haeundae (해운대해수욕장)** è il tratto di sabbia più noto della Corea: circa **1,5 km** di costa che si incurva tra l'isola di Dongbaekseom a ovest e Mipo a est, con lo skyline di Marine City alle spalle. Lo Sky Capsule vi lascia a Mipo, che non è altro che l'estremità orientale di questa spiaggia: la sosta non costa alla giornata un minuto di strada in più.\n\nVenti minuti sono una sosta da foto e piedi nell'acqua, non da bagno: si cammina sulla sabbia, si fotografa lo skyline e si torna al pullman. A luglio e agosto la spiaggia è al massimo dell'affollamento, con le file di ombrelloni montate; nel resto dell'anno è ampia, tranquilla e molto percorribile. Gratuita e aperta a ogni ora.",
+            "image": null,
+            "highlights": [
+              "**La spiaggia più famosa della Corea** — ~1,5 km di sabbia, GRATUITA e aperta 24 ore",
+              "Lo skyline di Marine City dal bagnasciuga",
+              "L'isola di Dongbaekseom e la Nurimaru APEC House all'estremità ovest",
+              "Proprio a Mipo, dove finisce lo Sky Capsule — nessun trasferimento aggiuntivo"
+            ],
+            "timeUsed": [
+              "Discesa sulla sabbia da Mipo (~5 min)",
+              "Foto della spiaggia e dello skyline (~10 min)",
+              "Ritrovo al pullman (~5 min)"
+            ],
+            "whyOnRoute": "Il capsule arriva a Mipo, che è l'estremità est della spiaggia: la vista più famosa di Busan è quindi a cinque minuti a piedi e non costa nulla alla giornata. È una sosta volutamente breve: quanto basta per mettere piede sulla sabbia e fotografare lo skyline prima che il pomeriggio viri verso i villaggi in collina.",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "haeundae_beach",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan City Tourism"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-05"
+            },
+            "visitBasics": {
+              "hours": "Aperta 24 ore",
+              "closed": "Mai",
+              "walking": "Sabbia pianeggiante e lungomare pavimentato",
+              "admission": "GRATIS"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
           },
           {
             "name": "Villaggio culturale di Gamcheon",
-            "time": "≈ 15:00",
-            "number": 6,
+            "time": "≈ 15:10",
+            "number": 7,
             "category": "Villaggio culturale / Arte murale",
-            "duration": "90 min",
+            "duration": "60 min",
             "timeUsed": [
               "Discesa dal minibus al parcheggio pubblico 2 + passeggiata fino all'ingresso (~5 min)",
               "Centro informazioni turistiche + acquisto della mappa dei timbri (~10 min)",
-              "Belvedere Sky Garden + panchina del Piccolo Principe (~25 min)",
-              "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~25 min)",
-              "Ritrovo al minibus (~10 min)"
+              "Belvedere Sky Garden + panchina del Piccolo Principe (~20 min)",
+              "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~20 min)",
+              "Ritrovo al minibus (~5 min)"
             ],
             "_poi_meta": {
               "match": "exact",
@@ -2173,9 +2242,9 @@
             ]
           },
           {
-            "number": 7,
-            "time": "≈ 16:50",
-            "duration": "50 min",
+            "number": 8,
+            "time": "≈ 16:30",
+            "duration": "30 min",
             "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
             "category": "Villaggio dei murales / Monorotaia gratuita",
             "description": "**Dakbatgol (닥밭골)** è un villaggio collinare nel distretto di Seo-gu, a Busan, il cui nome ricorda i **campi di gelso da carta (dak)** che un tempo rifornivano i maestri della carta tradizionale coreana hanji. Come Gamcheon si arrampica su un ripido pendio in vicoli stretti — ma non è mai diventato una fermata dei pullman turistici, così i suoi **vicoli di murales, le opere ispirate alla hanji e i punti panoramici restano quieti e locali**, panni stesi compresi. Il simbolo del villaggio è la **'scalinata dei desideri' (소망계단)** — una lunga e ripida via di gradini dipinta di murales — e la **monorotaia inclinata gratuita** che le scorre accanto, installata perché gli anziani del villaggio potessero raggiungere le proprie case; anche i visitatori possono salirvi, trasformando la salita più ripida del pomeriggio in un belvedere al rallentatore. È il contrappunto volutamente a misura d'uomo alla fama di Gamcheon, a dieci minuti dalla zona dei rientri.",
@@ -2189,9 +2258,9 @@
               "Ingresso GRATUITO; un quartiere autenticamente abitato — parlate a bassa voce"
             ],
             "timeUsed": [
-              "Discesa dal minibus + passeggiata tra i vicoli dei murales (~20 min)",
-              "Salita in monorotaia della scalinata dei desideri + belvedere (~15 min)",
-              "Discesa + tempo per le foto (~10 min)",
+              "Discesa dal minibus + passeggiata tra i vicoli dei murales (~10 min)",
+              "Salita in monorotaia della scalinata dei desideri + belvedere (~10 min)",
+              "Discesa + tempo per le foto (~5 min)",
               "Ritrovo al minibus (~5 min)"
             ],
             "whyOnRoute": "**La chiusura silenziosa che i pullman saltano.** Dopo la folla di Gamcheon, Dakbatgol mostra la stessa Busan collinare a volume di vita quotidiana — murales, la scalinata dei desideri e una monorotaia che fa la salita. Chiude il capitolo dei villaggi a dieci minuti dalla zona di rientro di Nampo, così la giornata termina immersa nella trama locale anziché nel traffico.",
@@ -2225,21 +2294,21 @@
             "galleryItems": []
           },
           {
-            "number": 8,
-            "time": "≈ 17:50",
+            "number": 9,
+            "time": "≈ 17:10",
             "duration": "≈ 70 min in totale",
             "name": "Rientro (4 punti nel centro di Busan)",
             "category": "Rientro — Stazioni centrali in sequenza",
-            "description": "**I rientri avvengono in sequenza dal lato ovest verso est**: **zona Nampo-dong / Jagalchi (~17:50)** — scendete qui per le migliori vie gastronomiche serali di Busan e l'atmosfera notturna di BIFF Square; **stazione di Busan (~18:10)** per le coincidenze KTX; **Seomyeon (~18:30)** per il nucleo di hotel del centro; e **Haeundae (~19:00)** per ultima. Scegliete il vostro punto di rientro con la guida durante il pomeriggio — restare a bordo fino a Haeundae è il tragitto più lungo, ma vi lascia in spiaggia per la serata.",
+            "description": "**Le discese procedono in sequenza da ovest verso est**: **Nampo-dong / zona Jagalchi (~17:10)** — scendete qui per le migliori vie del cibo serale di Busan e la scena notturna di BIFF Square; **stazione di Busan (~17:30)** per le coincidenze KTX; **Seomyeon (~17:50)** per gli hotel del centro; e infine **Haeundae (~18:20)**. Concordate il vostro punto di discesa con la guida nel pomeriggio: proseguire fino a Haeundae è il tragitto più lungo, ma vi lascia in riva alla spiaggia per la serata.",
             "image": null,
             "highlights": [],
             "timeUsed": [
-              "Zona Nampo-dong / Jagalchi (~17:50)",
-              "Stazione di Busan (~18:10)",
-              "Seomyeon (~18:30)",
-              "Haeundae (~19:00)"
+              "Nampo-dong / zona Jagalchi (~17:10)",
+              "Stazione di Busan (~17:30)",
+              "Seomyeon (~17:50)",
+              "Haeundae (~18:20)"
             ],
-            "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza dei rientri inizia quasi subito dopo l'ultima tappa — nessun tempo morto di trasferimento. L'ordine da ovest a est rispecchia i pickup del mattino e copre i viaggiatori KTX (stazione di Busan), gli hotel del centro (Seomyeon) e gli hotel sulla spiaggia (Haeundae) senza tornare indietro.",
+            "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza delle discese comincia quasi subito dopo l'ultima tappa, senza trasferimenti a vuoto. L'ordine ovest-est copre chi viaggia in KTX (stazione di Busan), gli hotel del centro (Seomyeon) e quelli sulla spiaggia (Haeundae) senza tornare indietro.",
             "_poi_meta": null,
             "images": [],
             "imageCredits": [],
@@ -2255,7 +2324,7 @@
       "props": {
         "routeFlowStops": [
           {
-            "name": "Pickup (3 stazioni centrali di Busan)",
+            "name": "Prelievo (il vostro hotel nel centro di Busan)",
             "type": "origin",
             "theme": "Departure"
           },
@@ -2280,6 +2349,11 @@
             "theme": "Meal"
           },
           {
+            "name": "Spiaggia di Haeundae",
+            "type": "secondary",
+            "theme": "Beach"
+          },
+          {
             "name": "Villaggio culturale di Gamcheon",
             "type": "primary",
             "theme": "Art village"
@@ -2297,29 +2371,29 @@
         ],
         "routePhases": [
           {
-            "phase": "Mattinata costiera",
-            "duration": "≈ 3 ore",
-            "description": "Pickup in tre stazioni centrali (08:30–09:30), poi il tempio Haedong Yonggungsa prima dell'ondata dei pullman turistici, e a seguire la passerella di vetro Daritdol di Cheongsapo."
+            "phase": "Mattina sulla costa",
+            "duration": "≈ 3,5 ore",
+            "description": "Prelievo porta a porta negli hotel del centro di Busan (09:00–10:00), poi il tempio Haedong Yonggungsa prima dell'ondata dei bus turistici e quindi la passerella di vetro Daritdol a Cheongsapo."
           },
           {
-            "phase": "Sky Capsule + pranzo",
+            "phase": "Sky Capsule, pranzo e spiaggia",
             "duration": "≈ 2 ore",
-            "description": "La corsa in Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prosegue in minibus o percorre a piedi la passeggiata in legno della Green Railway), poi pranzo nei pressi di Haeundae."
+            "description": "Lo Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prende il pullman o percorre la passerella Green Railway), pranzo vicino a Haeundae e poi venti minuti sulla spiaggia di Haeundae stessa."
           },
           {
-            "phase": "Due villaggi collinari",
-            "duration": "≈ 3 ore",
-            "description": "Il percorso fotografico del villaggio culturale di Gamcheon (90 min), poi il tranquillo villaggio dei murales Dakbatgol e la sua monorotaia gratuita della scalinata dei desideri (50 min)."
+            "phase": "Due villaggi in collina",
+            "duration": "≈ 2 ore",
+            "description": "Il giro fotografico del villaggio culturale di Gamcheon (60 min), poi il tranquillo villaggio dei murales di Dakbatgol con la monorotaia gratuita della \"scala dei desideri\" (30 min)."
           },
           {
             "phase": "Chiusura in centro",
             "duration": "≈ 1 ora",
-            "description": "Rientri in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae."
+            "description": "Discese in sequenza: Nampo-dong, stazione di Busan, Seomyeon, poi Haeundae."
           }
         ],
         "routeShapeIntro": {
           "title": "Come si muove questa giornata a Busan",
-          "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 08:30 alle 18:30 circa."
+          "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo e una breve sosta sulla spiaggia di Haeundae la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 09:00 alle 18:20 circa."
         }
       }
     },
@@ -2349,7 +2423,7 @@
               "items": [
                 {
                   "label": "Il tempio nella sua ora più quieta",
-                  "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei pullman turistici inizia verso le 11:00. Arrivando intorno alle 10:00, la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code."
+                  "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei bus turistici comincia verso le 11:00. Arrivare intorno alle 10:20 mantiene percorribili la discesa dei 108 gradini e il punto panoramico di Haesu Gwaneum, senza code."
                 },
                 {
                   "label": "La corsa in capsula È il trasferimento",
@@ -2378,11 +2452,11 @@
           {
             "id": "pickup",
             "title": "Prelievo e rientro",
-            "preview": "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+            "preview": "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan — Seomyeon, Nampo-dong / stazione di Busan, Haeundae / Marine City — tra le 09:00 e le 10:00. L'orario esatto viene confermato via WhatsApp la sera prima.",
             "content": [
-              "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
-              "Discese in sequenza: Nampo-dong/Jagalchi ≈17:50, stazione di Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
-              "La durata effettiva del tour dipende dal punto di prelievo: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+              "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan — Seomyeon, Nampo-dong / stazione di Busan, Haeundae / Marine City — tra le 09:00 e le 10:00. L'orario esatto viene confermato via WhatsApp la sera prima.",
+              "Discese in sequenza: Nampo-dong/Jagalchi ≈17:10, stazione di Busan ≈17:30, Seomyeon ≈17:50, Haeundae ≈18:20.",
+              "La durata effettiva del tour dipende dall'orario di prelievo e dal punto di discesa: circa 7 ore e 15 minuti nel caso più breve (prelievo alle 10:00, discesa a Nampo-dong) e circa 9 ore e 15 minuti nel più lungo (prelievo alle 09:00, discesa a Haeundae)."
             ]
           },
           {
@@ -2530,7 +2604,7 @@
             "timing": "Immediatamente",
             "title": "Conferma immediata",
             "detail": "Conferma della prenotazione con riepilogo dell'itinerario",
-            "description": "Conferma immediata della prenotazione con le istruzioni per il punto di pickup (stazione di Busan / Seomyeon / Haeundae)."
+            "description": "Conferma immediata della prenotazione, con la vostra finestra di prelievo in hotel (09:00–10:00) e cosa aspettarsi."
           },
           {
             "timing": "Il giorno prima",
@@ -2548,7 +2622,7 @@
             "timing": "Durante il tour",
             "title": "Assistenza durante il tour",
             "detail": "Linea diretta con l'operativo",
-            "description": "Un messaggio mattutino conferma la vostra stazione di pickup ed eventuali condizioni del traffico in tempo reale."
+            "description": "Un messaggio la sera prima conferma l'orario esatto di prelievo in hotel; uno al mattino copre il traffico in tempo reale."
           },
           {
             "timing": "Fine giornata",
@@ -2597,7 +2671,7 @@
           },
           {
             "question": "Dove si effettuano pickup e rientro?",
-            "answer": "Pickup in tre stazioni centrali — Seomyeon (08:30), stazione di Busan (08:50), Haeundae (09:30). I rientri avvengono in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae, indicativamente tra le 17:50 e le 19:00."
+            "answer": "Il prelievo è porta a porta presso il vostro hotel nel centro di Busan, tra le 09:00 e le 10:00 — l'orario esatto viene confermato via WhatsApp la sera prima. Le discese seguono questo ordine: Nampo-dong ≈17:10, stazione di Busan ≈17:30, Seomyeon ≈17:50, Haeundae ≈18:20."
           },
           {
             "question": "Cosa succede se piove?",

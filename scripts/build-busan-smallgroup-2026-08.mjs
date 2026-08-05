@@ -90,43 +90,21 @@ const SKYCAP_IMAGES = [
   "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
 ];
 
+// Owner instruction 2026-08-05: hotel pickup 09:00–10:00, then the day the
+// owner spelled out — Yonggungsa 10:20–11:20, Cheongsapo 11:40–13:20,
+// Haeundae Beach 14:10–14:30, Gamcheon 15:10–16:10, Dakbatgol 16:30–17:00.
+// Lunch fills the only gap the owner left (13:20 → 14:10); drop-offs keep the
+// published +20/+20/+30 intervals from a 17:00 Dakbatgol finish.
 const TIMES = {
-  pickup: "≈ 08:30–09:30",
-  yonggungsa: "≈ 10:00",
-  daritdol: "≈ 11:45",
-  skycapsule: "≈ 12:35",
+  pickup: "≈ 09:00–10:00",
+  yonggungsa: "≈ 10:20",
+  daritdol: "≈ 11:40",
+  skycapsule: "≈ 12:30",
   lunch: "≈ 13:25",
-  gamcheon: "≈ 15:00",
-  dakbatgol: "≈ 16:50",
-  dropoff: "≈ 17:50",
-};
-
-// Donor pickup-stop description names the donor route's later stops — patch to ours.
-const PICKUP_DESC_PATCH = {
-  en: [
-    "to keep the day on track for the later UN Memorial Cemetery and Gamcheon stops, which have stricter operating windows.",
-    "to keep the day on track for the later Gamcheon and Dakbatgol village stops.",
-  ],
-  ko: [
-    "이후 UN기념공원 및 감천문화마을 방문 일정을 원활히 진행하기 위해 예정 시각 5분 전에 탑승 장소에 나와 계시기 바랍니다. 해당 방문지들은 운영 시간이 제한적입니다.",
-    "이후 감천문화마을과 닥밭골 방문 일정을 원활히 진행하기 위해 예정 시각 5분 전에 탑승 장소에 나와 계시기 바랍니다.",
-  ],
-  ja: [
-    "UN記念公園や甘川（カムチョン）への訪問は時間の制約が厳しいため、予定時刻の5分前には乗車場所でお待ちください。",
-    "甘川（カムチョン）やタクバッコルへの訪問時間を確保するため、予定時刻の5分前には乗車場所でお待ちください。",
-  ],
-  zh: [
-    "以确保行程顺利推进，不耽误后续联合国纪念公园和甘川洞等开放时间较严格的景点。",
-    "以确保行程顺利推进，不耽误后续甘川文化村与Dakbatgol的游览时间。",
-  ],
-  "zh-TW": [
-    "以確保後續聯合國紀念公墓及甘川洞等景點的行程順利進行，這些景點的開放時段較為嚴格。",
-    "以確保後續甘川文化村及Dakbatgol的遊覽時間充裕。",
-  ],
-  es: [
-    "para mantener el ritmo del día, especialmente en las paradas posteriores del Cementerio Memorial de la ONU y Gamcheon, que tienen horarios de funcionamiento más estrictos.",
-    "para mantener el ritmo del día, especialmente de cara a las paradas posteriores de Gamcheon y Dakbatgol.",
-  ],
+  haeundaeBeach: "≈ 14:10",
+  gamcheon: "≈ 15:10",
+  dakbatgol: "≈ 16:30",
+  dropoff: "≈ 17:10",
 };
 
 // Route-flow themes stay English across locales (donor convention).
@@ -134,6 +112,7 @@ const FLOW_NEW = {
   daritdol: { type: "secondary", theme: "Glass Skywalk" },
   skycapsule: { type: "primary", theme: "Sky Capsule" },
   dakbatgol: { type: "secondary", theme: "Mural Village" },
+  haeundaeBeach: { type: "secondary", theme: "Beach" },
 };
 
 // Matching metadata is locale-invariant (EN) across all bundles.
@@ -230,6 +209,19 @@ function clone(v) {
   return JSON.parse(JSON.stringify(v));
 }
 
+/**
+ * The donor's support timeline talks about picking a station; this product
+ * picks up at the hotel. Overrides are keyed by index and must land on a step
+ * that exists — a silent miss would leave station copy on a hotel-pickup page.
+ */
+function applyBookingOverrides(steps, overrides) {
+  for (const [idx, description] of Object.entries(overrides || {})) {
+    if (!steps[Number(idx)]) throw new Error(`bookingSupportOverrides: no step ${idx}`);
+    steps[Number(idx)].description = description;
+  }
+  return steps;
+}
+
 const STOP_TEXT_FIELDS = [
   "name", "category", "duration", "description", "highlights",
   "timeUsed", "whyOnRoute", "visitBasics", "convenience", "smartNotes",
@@ -259,23 +251,24 @@ function build(loc) {
   if (donor.itineraryStops.length !== 7) throw new Error(`[${loc}] donor stops != 7`);
 
   // ---- stops ---------------------------------------------------------------
-  const sPickup = clone(donor.itineraryStops[0]);
-  sPickup.number = 1;
-  sPickup.time = TIMES.pickup;
-  if (isExt) {
-    applyOverlayStop(sPickup, overlay.pickupStop, `[${loc}] pickupStop`);
-  } else {
-    const [pFrom, pTo] = PICKUP_DESC_PATCH[loc];
-    if (!sPickup.description.includes(pFrom)) {
-      throw new Error(`[${loc}] pickup desc patch source not found`);
-    }
-    sPickup.description = sPickup.description.split(pFrom).join(pTo);
-  }
+  // Pickup is authored per locale now — the donor picks up at three subway
+  // stations, this product picks up door-to-door at downtown Busan hotels.
+  const sPickup = authoredStop(c.pickupStop, 1, TIMES.pickup, {
+    poiMeta: {
+      match: "transit_only",
+      poi_key: "OPS_busan_hotel_pickup_central",
+      sources: ["AtoC Korea operations"],
+      verified: true,
+      verified_date: "2026-08-05",
+    },
+  });
+  sPickup._role = "pickup";
 
   const sYong = clone(donor.itineraryStops[1]);
   sYong.number = 2;
   sYong.time = TIMES.yonggungsa;
   if (isExt) applyOverlayStop(sYong, overlay.yonggungsaStop, `[${loc}] yonggungsaStop`);
+  sYong.duration = c.yonggungsaDuration;
   sYong.whyOnRoute = c.yonggungsaWhy;
 
   const sDaritdol = authoredStop(c.daritdol, 3, TIMES.daritdol, {
@@ -312,13 +305,23 @@ function build(loc) {
   sLunch.highlights = [];
 
   const sGamcheon = clone(donor.itineraryStops[5]);
-  sGamcheon.number = 6;
+  sGamcheon.number = 7;
   sGamcheon.time = TIMES.gamcheon;
   if (isExt) applyOverlayStop(sGamcheon, overlay.gamcheonStop, `[${loc}] gamcheonStop`);
-  sGamcheon.duration = "90 min";
+  sGamcheon.duration = c.gamcheonDuration;
   sGamcheon.whyOnRoute = c.gamcheonWhy;
 
-  const sDakbatgol = authoredStop(c.dakbatgol, 7, TIMES.dakbatgol, {
+  const sBeach = authoredStop(c.haeundaeBeach, 6, TIMES.haeundaeBeach, {
+    poiMeta: {
+      match: "authored",
+      poi_key: "haeundae_beach",
+      sources: ["Visit Busan", "Busan Metropolitan City Tourism"],
+      verified: false,
+      verified_date: "2026-08-05",
+    },
+  });
+
+  const sDakbatgol = authoredStop(c.dakbatgol, 8, TIMES.dakbatgol, {
     poiMeta: {
       match: "authored",
       poi_key: "dakbatgol_mural_village",
@@ -328,9 +331,9 @@ function build(loc) {
     },
   });
 
-  const sDropoff = authoredStop(c.dropoff, 8, TIMES.dropoff, {});
+  const sDropoff = authoredStop(c.dropoff, 9, TIMES.dropoff, {});
 
-  const stops = [sPickup, sYong, sDaritdol, sCapsule, sLunch, sGamcheon, sDakbatgol, sDropoff];
+  const stops = [sPickup, sYong, sDaritdol, sCapsule, sLunch, sBeach, sGamcheon, sDakbatgol, sDropoff];
 
   // ---- gallery -------------------------------------------------------------
   let gid = 1;
@@ -345,11 +348,12 @@ function build(loc) {
   const flowName = (idx, key) =>
     isExt ? overlay.flowNames[key] : clone(f[idx]).name;
   const routeFlowStops = [
-    { ...clone(f[0]), name: flowName(0, "pickup") }, // origin
+    { ...clone(f[0]), name: c.pickupStop.name }, // origin — authored, not donor
     { ...clone(f[1]), name: flowName(1, "yonggungsa") },
     { name: c.daritdol.name, ...FLOW_NEW.daritdol },
     { name: c.skycapsule.name, ...FLOW_NEW.skycapsule },
     { ...clone(f[3]), name: flowName(3, "lunch") },
+    { name: c.haeundaeBeach.name, ...FLOW_NEW.haeundaeBeach },
     { ...clone(f[5]), name: flowName(5, "gamcheon") },
     { name: c.dakbatgol.name, ...FLOW_NEW.dakbatgol },
     { name: c.dropoff.name, type: "return", theme: "Return" },
@@ -359,7 +363,7 @@ function build(loc) {
   const price = { amountLabel: "59", currency: "USD", per: "person", salePriceUsd: 59 };
   const heroStops = isExt
     ? overlay.heroStopsLabel
-    : String(donor.hero?.meta?.stops ?? "8 stops").replace(/\d+/, "8");
+    : String(donor.hero?.meta?.stops ?? "9 stops").replace(/\d+/, "9");
 
   const catalog_card = {
     slug: SLUG,
@@ -416,6 +420,16 @@ function build(loc) {
       })
     : donor.practicalAccordionItems;
   for (const item of practicalSource) {
+    if (item.id === "pickup") {
+      // Hotel pickup — the donor's three-station text does not apply here.
+      practicalAccordionItems.push({
+        id: "pickup",
+        title: c.practical.pickupTitle,
+        preview: c.practical.pickupContent[0],
+        content: c.practical.pickupContent,
+      });
+      continue;
+    }
     if (item.id === "inclusions") {
       const it = clone(item);
       it.content = c.practical.inclusionsContent;
@@ -452,6 +466,10 @@ function build(loc) {
   if ("unesco_fit" in matching_profile) matching_profile.unesco_fit = 0;
   if ("beach_fit" in matching_profile) matching_profile.beach_fit = 0.6;
   if ("cafe_fit" in matching_profile) matching_profile.cafe_fit = 0.7;
+  // Drop-offs moved to 17:10–18:20 with the 2026-08-05 re-timing; the donor's
+  // band is 40 min later. Left wrong, the recommender would keep filtering this
+  // product out for travellers who need an earlier return.
+  if ("return_time_band" in matching_profile) matching_profile.return_time_band = "17:00-18:30";
 
   // ---- pickup/dropoff (locale overlays omit it — fall back to EN donor) ----
   const donorPd =
@@ -460,7 +478,19 @@ function build(loc) {
       readFileSync(path.join(ROOT, "components/product-tour-static", DONOR, `${DONOR}.en.json`), "utf8"),
     ).pickup_dropoff;
   const pickup_dropoff = {
-    departure: clone(donorPd.departure),
+    departure: [
+      {
+        order: 1,
+        time: "09:00–10:00",
+        name: c.pdDeparture.name,
+        type: "hotel",
+        note: c.pdDeparture.note,
+        // Seomyeon — the geographic middle of the supported hotel area. There is
+        // no single door-to-door coordinate, so the map marker names the zone.
+        lat: 35.15782,
+        lng: 129.06003,
+      },
+    ],
     return: clone(donorPd.return),
     notes: c.pdNotes,
   };
@@ -501,7 +531,10 @@ function build(loc) {
     practicalWeatherStatic: clone(isExt ? overlay.practicalWeatherStatic : donor.practicalWeatherStatic),
     seasonalVariations: c.seasonalVariations,
     bookingTrustItems: clone(isExt ? overlay.bookingTrustItems : donor.bookingTrustItems),
-    bookingSupportSteps: clone(isExt ? overlay.bookingSupportSteps : donor.bookingSupportSteps),
+    bookingSupportSteps: applyBookingOverrides(
+      clone(isExt ? overlay.bookingSupportSteps : donor.bookingSupportSteps),
+      c.bookingSupportOverrides,
+    ),
     staticQuestions: c.staticQuestions,
     guestReviews: [],
     reviewsSummary: clone(isExt ? overlay.reviewsSummary : donor.reviewsSummary),
@@ -519,6 +552,8 @@ function build(loc) {
       last_modified: "2026-08-04",
       version_history: ["v1_authored_2026_08_04"],
       fix_passes: {
+        v2_hotel_pickup_2026_08_05:
+          "Owner instruction 2026-08-05: pickup moved from three subway stations to door-to-door pickup at downtown Busan hotels, 09:00–10:00, and the day re-timed to the schedule the owner gave (Yonggungsa 10:20–11:20, Cheongsapo 11:40–13:20, Haeundae Beach 14:10–14:30 as a NEW stop, Gamcheon 15:10–16:10, Dakbatgol 16:30–17:00). Lunch fills the single gap the owner left (13:20–14:10, 45 min) and the four central drop-offs keep their published +20/+20/+30 intervals from a 17:00 finish, landing at 17:10/17:30/17:50/18:20 — both derived, not dictated. Day length falls from the claimed 10 h to ≈9 h, which is what matching_profile.duration_hours already said.",
         v1_authored_2026_08_04:
           "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet).",
       },

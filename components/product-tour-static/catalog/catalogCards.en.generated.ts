@@ -160,8 +160,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan Small-Group: Sea Temple, Sky Capsule & Culture Villages",
       "subtitle": "Small-group day tour of Busan's coastal icons and hillside villages — Haedong Yonggungsa seaside temple, the Cheongsapo Daritdol glass skywalk, the Blueline Park Sky Capsule ride (ticket optional at booking), Gamcheon Culture Village, and the quiet Dakbatgol mural village with its wish-stairs monorail.",
       "region": "Busan",
-      "duration": "≈ 10 hours",
-      "stopsCount": 8,
+      "duration": "≈ 9 hours",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

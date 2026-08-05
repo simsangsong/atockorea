@@ -160,8 +160,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busán en grupo pequeño: templo junto al mar, Sky Capsule y aldeas culturales",
       "subtitle": "Tour de un día en grupo pequeño por los iconos costeros y las aldeas de ladera de Busán — el templo marino Haedong Yonggungsa, la pasarela de cristal Daritdol de Cheongsapo, el Sky Capsule del Blueline Park (billete incluido o no, a elegir al reservar), la Aldea Cultural de Gamcheon y la tranquila aldea de murales Dakbatgol con su monorraíl de la 'escalera de los deseos'.",
       "region": "Busán",
-      "duration": "≈ 10 horas",
-      "stopsCount": 8,
+      "duration": "≈ 9 horas",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

@@ -160,8 +160,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "釜山小團體：海東龍宮寺·天空膠囊·文化村",
       "subtitle": "一天串聯釜山海岸名勝與山坡村落的小團體之旅 — 海東龍宮寺、青沙浦踏石展望台（玻璃天空步道）、藍線公園天空膠囊（預訂時可選含票／不含票）、甘川文化村，以及擁有「希望階梯」單軌的寧靜닥밭골（Dakbatgol）壁畫村。",
       "region": "釜山",
-      "duration": "≈ 10小時",
-      "stopsCount": 8,
+      "duration": "約9小時",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
