@@ -1,0 +1,820 @@
+{
+  "slug": "osulloc-tea-museum",
+  "poiKey": "osulloc_tea_museum",
+  "title": {
+    "ko": "오설록 티 뮤지엄",
+    "en": "Osulloc Tea Museum"
+  },
+  "theme": "pearl",
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30
+  },
+  "encode": {
+    "crf": 18
+  },
+  "sourceDir": "D:/VIDEO2/제주/오설록티뮤지엄",
+  "sources": {
+    "A": "01_20260803_101257.mp4",
+    "B": "05_20260803_101453.mp4",
+    "C": "06_20260803_101535.mp4",
+    "D": "07_20260803_101624.mp4",
+    "E": "08_20260803_101718.mp4",
+    "F": "09_20260803_101941.mp4",
+    "G": "10_20260803_102026.mp4",
+    "H": "11_20260803_102139.mp4",
+    "I": "15_20260803_102354.mp4",
+    "J": "16_20260803_102517.mp4"
+  },
+  "audio": {
+    "bed": "assets/audio/video-guide/bed-haedong-yonggungsa.m4a",
+    "bedGain": 0.55,
+    "source": "Suno — 상업 이용 허가 (사용자 제공 2026-07-29). 오설록 전용 베드 수급 전까지 공유."
+  },
+  "pacing": {
+    "maxSlowPct": 92,
+    "why": "사장님 2026-08-03: \"빨리감기 넣지 말고 … 직진 구간이 긴 곳만 빨리감기 하고, 앵글이 돌아가는 구간은 절대 빨리감기 넣지 말고.\" 40% 상한은 전체를 압축하는 걷기 코스용 파라미터이고, 이 영상은 사장님이 실속도로 보여달라고 한 코스다. 빨리감기는 긴 직진 4곳(C 복도·G 정원길·H 가로수길·I 공원 복귀)뿐, 최고 3.0x."
+  },
+  "grade": [
+    "lenscorrection=k1=-0.13:k2=0.008:i=bilinear",
+    "crop=iw*0.93:ih*0.93",
+    "vibrance=intensity=0.42",
+    "eq=saturation=1.08",
+    "curves=r='0/0 0.08/0.055 0.3/0.29 0.55/0.575 0.8/0.845 1/1':g='0/0 0.08/0.055 0.3/0.295 0.55/0.575 0.8/0.84 1/1':b='0/0.01 0.08/0.07 0.3/0.3 0.55/0.55 0.8/0.79 1/0.97'",
+    "unsharp=11:11:0.45:5:5:0.0",
+    "unsharp=5:5:0.55:5:5:0.0",
+    "noise=alls=4:allf=t+u",
+    "vignette=a=PI/12"
+  ],
+  "poster": {
+    "src": "H",
+    "at": 71.5
+  },
+  "teaserLead": "48",
+  "city": "Jeju",
+  "_notes": [
+    "5호기 — 사장님 2026-08-03 지시로 페이싱 문법이 앞선 4개와 다르다. 기본 1배속, 빨리감기는 긴 직진 4곳뿐(최고 3.0x, 8x 없음), 회전 구간은 전부 1배속.",
+    "같은 장소가 늘어지면 속도가 아니라 가위로 줄였다 — 잘라낸 곳 7군데(A11.3·C9.5·E23.5·E55.4·E85.6·E112·F6)는 전부 디졸브 0.5–0.6 으로 봉합.",
+    "폴라로이드 0개 (사장님: \"폴라로이드들은 다 빼고\"). 중점 장소 10곳은 전부 프리즈+타이포(V6-D21) — 화살표도 없다.",
+    "동선은 사장님이 불러준 순서 그대로: 주차장 차밭 → 횡단보도 → 양쪽 입구 → 엘베 2층 전망대 → 화장실 → 전시 → 시음 → 매장 → 카페 → 티스톤 → 이니스프리 → 아래쪽 녹차밭 → 공원 복귀 → 처음 입구.",
+    "클레임 원천 = match_pois(osulloc_tea_museum).content_locales.ko — 입장료 무료·시음실·녹차밭·카페 전부 여기서 왔다. 지어낸 사실 없음.",
+    "프리즈 10곳은 렌더 스틸로 눈으로 확인했다(T-53): B@1.3 양쪽 간판 동시 노출 · E@9.5 화장실 픽토그램 · E@43.6 시음 컵 트레이 · E@81 카페 메뉴보드 · H@26.4 innisfree 계산대 · D@18.6 창밖 차밭."
+  ],
+  "beats": [
+    {
+      "id": "c1",
+      "kind": "clip",
+      "src": "H",
+      "in": 58,
+      "out": 61.5,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "role": "title",
+      "title": "Jeju's tea heartland, free entry",
+      "sub": "OSULLOC Tea Museum — Seogwang, Jeju",
+      "chapter": "Osulloc Tea Museum"
+    },
+    {
+      "id": "c2",
+      "kind": "clip",
+      "src": "D",
+      "in": 17.2,
+      "out": 19.7,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the view from level two",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "c3",
+      "kind": "clip",
+      "src": "E",
+      "in": 43.6,
+      "out": 45.8,
+      "speed": 1,
+      "stab": true,
+      "mute": true,
+      "title": "Cold open — the free tasting",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "01",
+      "kind": "clip",
+      "src": "A",
+      "in": 0,
+      "out": 6.5,
+      "speed": 1,
+      "stab": true,
+      "role": "promise",
+      "title": "Start at the car park",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "02",
+      "kind": "clip",
+      "src": "A",
+      "in": 6.5,
+      "out": 11.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The field starts at the kerb",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "03",
+      "kind": "clip",
+      "src": "A",
+      "in": 13.4,
+      "out": 20.4,
+      "speed": 1,
+      "stab": true,
+      "title": "Down to the crossing",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "04",
+      "kind": "clip",
+      "src": "B",
+      "in": 0,
+      "out": 1.3,
+      "speed": 1,
+      "stab": true,
+      "title": "Across the road",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "05",
+      "kind": "arrow",
+      "src": "B",
+      "at": 1.3,
+      "hold": 5.8,
+      "title": "Two Entrances, One Hedge",
+      "sub": "Straight ahead, or right",
+      "caption": "Straight for Osulloc, right for Innisfree.",
+      "chapter": "Two entrances"
+    },
+    {
+      "id": "06",
+      "kind": "clip",
+      "src": "B",
+      "in": 1.3,
+      "out": 9.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Looking both ways"
+    },
+    {
+      "id": "07",
+      "kind": "clip",
+      "src": "B",
+      "in": 9.3,
+      "out": 15.2,
+      "speed": 1,
+      "stab": true,
+      "title": "Up to the doors",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "08",
+      "kind": "clip",
+      "src": "C",
+      "in": 1.5,
+      "out": 9.5,
+      "speed": 1,
+      "stab": true,
+      "title": "In through the glass",
+      "chapter": "Inside",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "09",
+      "kind": "clip",
+      "src": "C",
+      "in": 15.2,
+      "out": 21.6,
+      "speed": 2.4,
+      "stab": false,
+      "title": "Through to the lift",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "10",
+      "kind": "clip",
+      "src": "C",
+      "in": 21.6,
+      "out": 25.7,
+      "speed": 1,
+      "stab": true,
+      "title": "The lift to level two",
+      "nosnap": "no pan within ±1.5s (max 0.34)"
+    },
+    {
+      "id": "11",
+      "kind": "clip",
+      "src": "D",
+      "in": 1.6,
+      "out": 4.6,
+      "speed": 1,
+      "stab": true,
+      "title": "Up one floor",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "12",
+      "kind": "clip",
+      "src": "D",
+      "in": 6.6,
+      "out": 11.5,
+      "speed": 1,
+      "stab": true,
+      "title": "The window wall",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "13",
+      "kind": "arrow",
+      "src": "D",
+      "at": 11.5,
+      "hold": 5.8,
+      "title": "Level Two Lookout",
+      "sub": "Free, and easy to walk past",
+      "caption": "Garden, tea fields and the hills beyond.",
+      "chapter": "Level two lookout"
+    },
+    {
+      "id": "14",
+      "kind": "clip",
+      "src": "D",
+      "in": 11.5,
+      "out": 19.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The window sweep"
+    },
+    {
+      "id": "15",
+      "kind": "clip",
+      "src": "E",
+      "in": 5.4,
+      "out": 9.5,
+      "speed": 1,
+      "stab": true,
+      "title": "Out of the lift",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "16",
+      "kind": "arrow",
+      "src": "E",
+      "at": 9.5,
+      "hold": 5.2,
+      "title": "Restrooms, To The Left",
+      "sub": "Facing you as you step out",
+      "caption": "The pictogram plate on the stone wall."
+    },
+    {
+      "id": "17",
+      "kind": "clip",
+      "src": "E",
+      "in": 9.5,
+      "out": 17,
+      "speed": 1,
+      "stab": true,
+      "title": "The hall opens up"
+    },
+    {
+      "id": "18",
+      "kind": "arrow",
+      "src": "E",
+      "at": 17,
+      "hold": 5.4,
+      "title": "The Exhibition Side",
+      "sub": "Left out of the lift",
+      "caption": "Lit cases and wall panels, left of the lift.",
+      "chapter": "Exhibition side"
+    },
+    {
+      "id": "19",
+      "kind": "clip",
+      "src": "E",
+      "in": 17,
+      "out": 22.5,
+      "speed": 1,
+      "stab": true,
+      "title": "Along the cases"
+    },
+    {
+      "id": "20",
+      "kind": "clip",
+      "src": "E",
+      "in": 38.2,
+      "out": 43.6,
+      "speed": 1,
+      "stab": true,
+      "title": "On to the tasting counter",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "21",
+      "kind": "arrow",
+      "src": "E",
+      "at": 43.6,
+      "hold": 5.8,
+      "title": "Free Tastings",
+      "sub": "Two counters, help yourself",
+      "caption": "Small cups poured all day. No ticket needed.",
+      "chapter": "Free tastings"
+    },
+    {
+      "id": "22",
+      "kind": "clip",
+      "src": "E",
+      "in": 43.6,
+      "out": 50,
+      "speed": 1,
+      "stab": true,
+      "title": "Past the cups"
+    },
+    {
+      "id": "23",
+      "kind": "arrow",
+      "src": "E",
+      "at": 50,
+      "hold": 5.6,
+      "title": "The Tea Shop",
+      "sub": "Straight on from the tastings",
+      "caption": "Loose leaf, tea bags and gift tins, all in one room.",
+      "chapter": "The tea shop"
+    },
+    {
+      "id": "24",
+      "kind": "clip",
+      "src": "E",
+      "in": 50,
+      "out": 54.4,
+      "speed": 1,
+      "stab": true,
+      "title": "Through the shop"
+    },
+    {
+      "id": "25",
+      "kind": "clip",
+      "src": "E",
+      "in": 75,
+      "out": 81,
+      "speed": 1,
+      "stab": true,
+      "title": "The cafe queue",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "26",
+      "kind": "arrow",
+      "src": "E",
+      "at": 81,
+      "hold": 5.8,
+      "title": "The Green Tea Cafe",
+      "sub": "Order here, pick up at A or B",
+      "caption": "Green tea ice cream and the roll cake.",
+      "chapter": "The green tea cafe"
+    },
+    {
+      "id": "27",
+      "kind": "clip",
+      "src": "E",
+      "in": 81,
+      "out": 85.6,
+      "speed": 1,
+      "stab": true,
+      "title": "Out past the counter"
+    },
+    {
+      "id": "28",
+      "kind": "clip",
+      "src": "E",
+      "in": 95.5,
+      "out": 102.5,
+      "speed": 1,
+      "stab": true,
+      "title": "Out the far side",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "29",
+      "kind": "clip",
+      "src": "E",
+      "in": 104,
+      "out": 111,
+      "speed": 1,
+      "stab": true,
+      "title": "Into Tea Stone",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "30",
+      "kind": "clip",
+      "src": "E",
+      "in": 120,
+      "out": 129.8,
+      "speed": 1,
+      "stab": true,
+      "title": "The stone hall",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "33",
+      "kind": "clip",
+      "src": "F",
+      "in": 0,
+      "out": 8,
+      "speed": 1,
+      "stab": true,
+      "title": "Into the cellar",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "34",
+      "kind": "arrow",
+      "src": "F",
+      "at": 8,
+      "hold": 5.6,
+      "title": "Tea Stone",
+      "sub": "Across from the cafe exit",
+      "caption": "Tea aging on the shelves, in the stone cellar.",
+      "chapter": "Tea Stone"
+    },
+    {
+      "id": "35a",
+      "kind": "clip",
+      "src": "F",
+      "in": 8,
+      "out": 14,
+      "speed": 1,
+      "stab": true,
+      "title": "Along the shelves"
+    },
+    {
+      "id": "35b",
+      "kind": "clip",
+      "src": "F",
+      "in": 21,
+      "out": 27,
+      "speed": 1,
+      "stab": true,
+      "title": "The aging boxes",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "35c",
+      "kind": "clip",
+      "src": "F",
+      "in": 27,
+      "out": 31.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Whisks, scoops and leaf",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "35",
+      "kind": "clip",
+      "src": "G",
+      "in": 0,
+      "out": 6,
+      "speed": 1,
+      "stab": true,
+      "title": "Back out to the path",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "36",
+      "kind": "clip",
+      "src": "G",
+      "in": 7.3,
+      "out": 20,
+      "speed": 2.6,
+      "title": "The garden path",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "37",
+      "kind": "clip",
+      "src": "G",
+      "in": 20,
+      "out": 32,
+      "speed": 2.6,
+      "title": "Past the tea house",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.28)"
+    },
+    {
+      "id": "38",
+      "kind": "clip",
+      "src": "G",
+      "in": 32,
+      "out": 44.5,
+      "speed": 2.6,
+      "title": "Uphill to the glass house",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.21)"
+    },
+    {
+      "id": "39",
+      "kind": "clip",
+      "src": "G",
+      "in": 44.5,
+      "out": 49,
+      "speed": 1,
+      "stab": true,
+      "title": "Arriving",
+      "nosnap": "no pan within ±1.5s (max 0.54)"
+    },
+    {
+      "id": "40",
+      "kind": "clip",
+      "src": "H",
+      "in": 0,
+      "out": 8,
+      "speed": 2.4,
+      "title": "The tree walk",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "41",
+      "kind": "clip",
+      "src": "H",
+      "in": 8,
+      "out": 19.4,
+      "speed": 2.4,
+      "title": "Up to the doors",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "nosnap": "no pan within ±1.5s (max 0.34)"
+    },
+    {
+      "id": "42",
+      "kind": "clip",
+      "src": "H",
+      "in": 19.4,
+      "out": 26.4,
+      "speed": 1,
+      "stab": true,
+      "title": "Inside Innisfree",
+      "nosnap": "no pan within ±1.5s (max 0.31)"
+    },
+    {
+      "id": "43",
+      "kind": "arrow",
+      "src": "H",
+      "at": 26.4,
+      "hold": 5.6,
+      "title": "Innisfree Jeju House",
+      "sub": "The right-hand entrance",
+      "caption": "Skincare made from the island, and a cafe.",
+      "chapter": "Innisfree Jeju House"
+    },
+    {
+      "id": "44",
+      "kind": "clip",
+      "src": "H",
+      "in": 26.4,
+      "out": 34.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Around the floor"
+    },
+    {
+      "id": "45",
+      "kind": "clip",
+      "src": "H",
+      "in": 40,
+      "out": 45.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Out the far door",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "46",
+      "kind": "clip",
+      "src": "H",
+      "in": 47.5,
+      "out": 55,
+      "speed": 1,
+      "stab": true,
+      "title": "Left, and downhill",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "47",
+      "kind": "clip",
+      "src": "H",
+      "in": 59.5,
+      "out": 71.5,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The field opens",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.5
+      }
+    },
+    {
+      "id": "48",
+      "kind": "arrow",
+      "src": "H",
+      "at": 71.5,
+      "hold": 6,
+      "title": "The Lower Tea Field",
+      "sub": "Below the Innisfree exit",
+      "caption": "The quiet side — rows running to the hills.",
+      "chapter": "The lower tea field"
+    },
+    {
+      "id": "49",
+      "kind": "clip",
+      "src": "H",
+      "in": 71.5,
+      "out": 76.2,
+      "speed": 1,
+      "stab": true,
+      "title": "Along the rows"
+    },
+    {
+      "id": "50",
+      "kind": "clip",
+      "src": "I",
+      "in": 1.5,
+      "out": 10.3,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "Back up the path",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "51",
+      "kind": "clip",
+      "src": "I",
+      "in": 20.6,
+      "out": 28.7,
+      "speed": 2.6,
+      "title": "Across the lawn",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "52",
+      "kind": "clip",
+      "src": "I",
+      "in": 48.6,
+      "out": 58,
+      "speed": 2.4,
+      "title": "The last avenue",
+      "ramp": {
+        "seconds": 0.6
+      },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.6
+      }
+    },
+    {
+      "id": "53",
+      "kind": "clip",
+      "src": "J",
+      "in": 0,
+      "out": 7.9,
+      "speed": 1,
+      "stab": true,
+      "title": "Back to the road",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "54",
+      "kind": "clip",
+      "src": "J",
+      "in": 7.9,
+      "out": 16.8,
+      "speed": 1,
+      "stab": true,
+      "turn": true,
+      "title": "The same crossing",
+      "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "55",
+      "kind": "clip",
+      "src": "J",
+      "in": 16.8,
+      "out": 23.5,
+      "speed": 1,
+      "stab": true,
+      "role": "recap",
+      "title": "Where you started",
+      "chapter": "Where you started",
+      "nosnap": "turn beat — edge is content, not a seam"
+    }
+  ]
+}

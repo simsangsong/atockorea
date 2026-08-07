@@ -95,7 +95,15 @@ run(['-f', 'concat', '-safe', '0', '-i', list, '-c', 'copy', '-movflags', '+fast
 
 // ---- gate E-5 — judged on the output, not the plan --------------------------
 const firstBeat = spec.beats.find((b) => b.id === order[0]);
-const money = firstBeat && (firstBeat.kind === 'polaroid' || (firstBeat.kind === 'clip' && (firstBeat.speed ?? 1) <= 1.05));
+// A "money beat" is one the film STOPS on. That used to mean a polaroid, because
+// polaroids were the only held beat — but V6-D21 made stop-and-label the standard
+// point-of-interest treatment and V6-D23 left the polaroid optional, so 오설록
+// (2026-08-03, owner: "폴라로이드들은 다 빼고") has ten held stops and zero
+// polaroids. Excluding `arrow` here rejected exactly the beat the teaser should
+// open on. Same trap as T-57: the check was keyed to a signal a format decision
+// had already retired.
+const money = firstBeat && (firstBeat.kind === 'polaroid' || firstBeat.kind === 'arrow'
+  || (firstBeat.kind === 'clip' && (firstBeat.speed ?? 1) <= 1.05));
 const problems = [];
 if (used < BUDGET * 0.8) problems.push(`예산 ${BUDGET}s 중 ${used.toFixed(1)}s — 80% 미달`);
 if (!money) problems.push(`첫 세그먼트(${order[0]})가 머니 비트가 아니다 (polaroid/1x 여야 한다)`);
