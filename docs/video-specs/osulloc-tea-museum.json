@@ -555,8 +555,8 @@
       "kind": "clip",
       "src": "G",
       "in": 7.3,
-      "out": 20,
-      "speed": 2.6,
+      "out": 15,
+      "speed": 2,
       "title": "The garden path",
       "ramp": {
         "seconds": 0.6
@@ -567,12 +567,25 @@
       }
     },
     {
+      "id": "36s1",
+      "kind": "clip",
+      "src": "G",
+      "in": 17.93,
+      "out": 20,
+      "speed": 2,
+      "title": "The garden path (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "37",
       "kind": "clip",
       "src": "G",
       "in": 20,
-      "out": 32,
-      "speed": 2.6,
+      "out": 27,
+      "speed": 2,
       "title": "Past the tea house",
       "ramp": {
         "seconds": 0.6
@@ -580,17 +593,43 @@
       "nosnap": "no pan within ±1.5s (max 0.28)"
     },
     {
+      "id": "37s1",
+      "kind": "clip",
+      "src": "G",
+      "in": 29.77,
+      "out": 32,
+      "speed": 2,
+      "title": "Past the tea house (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "38",
       "kind": "clip",
       "src": "G",
       "in": 32,
-      "out": 44.5,
-      "speed": 2.6,
+      "out": 39.9,
+      "speed": 2,
       "title": "Uphill to the glass house",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.21)"
+    },
+    {
+      "id": "38s1",
+      "kind": "clip",
+      "src": "G",
+      "in": 42.78,
+      "out": 44.5,
+      "speed": 2,
+      "title": "Uphill to the glass house (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "39",
@@ -624,13 +663,26 @@
       "kind": "clip",
       "src": "H",
       "in": 8,
-      "out": 19.4,
-      "speed": 2.4,
+      "out": 10.5,
+      "speed": 2,
       "title": "Up to the doors",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.34)"
+    },
+    {
+      "id": "41s1",
+      "kind": "clip",
+      "src": "H",
+      "in": 12.4,
+      "out": 19.4,
+      "speed": 2,
+      "title": "Up to the doors (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "42",
