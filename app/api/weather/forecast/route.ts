@@ -72,7 +72,7 @@ export async function GET(req: NextRequest) {
     if (!json?.current || !json?.daily?.time?.length) {
       return NextResponse.json({ error: "Invalid forecast payload" }, { status: 502 })
     }
-    const payload = buildForecastPayload(json, areaLabel, lat, lon)
+    const payload = buildForecastPayload(json, areaLabel, lat, lon, locale)
     const today = payload.days[0]
     const tomorrow = payload.days[1] ?? null
     const kinds =
