@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T14:03:39.915Z",
+  "generatedAt": "2026-08-07T15:04:11.012Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
@@ -1958,6 +1958,202 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A1",
+      "status": "flagged",
+      "segments": 60,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/headlineLine2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/title",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2-3",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/3/detail",
+          "message": "길이비 2.10 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:B",
+      "status": "flagged",
+      "segments": 45,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/0/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/3/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops",
+      "status": "auto_pass",
+      "segments": 31,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-2",
+      "status": "auto_pass",
+      "segments": 42,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-3",
+      "status": "flagged",
+      "segments": 27,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/3",
+          "message": "길이비 0.85 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-4",
+      "status": "auto_pass",
+      "segments": 11,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:practicalAccordionItems",
+      "status": "auto_pass",
+      "segments": 52,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 9,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
     },
     {
       "unitId": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:A1",
