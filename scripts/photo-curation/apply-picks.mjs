@@ -24,6 +24,7 @@ import {
 } from "../tour-payload-thumb-sync.mjs";
 import { detectOverlayCrop } from "./overlay-crop.mjs";
 import { FORCE_CROP } from "./force-crop.mjs";
+import { PRODUCT_THUMBNAILS } from "./product-thumbnails.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..", "..");
@@ -258,7 +259,10 @@ async function main() {
         dirty = true;
       });
       if (!dirty) continue;
-      const thumb = firstCatalogImageFromPayload(data);
+      // A deliberate card image wins over "first non-OPS stop". Without this, re-running
+      // the photo pipeline would quietly hand four Busan products the same frame again.
+      const thumb =
+        PRODUCT_THUMBNAILS[folder.name]?.image || firstCatalogImageFromPayload(data);
       if (thumb) applyCatalogHeroThumbnails(data, thumb);
       syncRootGalleryFromItinerary(data);
       if (!DRY) writeFileSync(abs, `${JSON.stringify(data, null, 2)}\n`, "utf8");
