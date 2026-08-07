@@ -60,23 +60,31 @@ CLAUDE.md 맨 위 규칙이다. `scripts/i18n/translate.ts` 는 `--yes-bill-the-
 
 ## §2 표면 B — 투어 콘텐츠 (가장 큰 덩어리)
 
-### 🔴 2-a′. **최종 범위 (2026-08-07 갱신) — 라이브 20종 · 35행**
+### 🔴 2-a″. **현재 범위 (2026-08-07 S2 종료 후 재실측) — 라이브 21종 · 38행**
 
-비공개 2종을 내린 뒤 실측. 판정 쿼리는 `is_published AND tours.is_active` 조인이다
+**S2 가 it `southwest` 를 닫았고(−1), G4 부산 프라이빗이 실제로 라이브에 나타났다(+4).**
+35 − 1 + 4 = **38행**. 판정 쿼리는 `is_published AND tours.is_active` 조인이다
 (둘 중 하나만 보면 틀린다).
 
 | 그룹 | 슬러그 | 부족 |
 |---|---|---|
-| **G2** ru 만 | `from-busan-gyeongju` · `jeju-cruise-small-group` · `jeju-eastern` · `jeju-island-private-car` · `jeju-southern` | 5 |
-| **G1** | `southwest-hallasan-osulloc-aewol` | it, ru = 2 |
+| **G2** ru 만 | `from-busan-gyeongju` · `jeju-cruise-shore-excursion-small-group` · `jeju-eastern` · `jeju-island-private-car` · `jeju-southern` · **`southwest-hallasan-osulloc-aewol`** | 6 |
 | **G3** 🔴 미추출 | `busan-small-group-sightseeing-tour-cruise-passengers` · `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` · `seoul-seoraksan-nami-island-morning-calm-day-tour` · `seoul-suburbs-private-chartered-car-10hr` · `seoul-suwon-hwaseong-folk-village-starfield-library` · `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` · `seoul-suwon-hwaseong-waujeongsa-starfield` | 7×4 = **28** |
-| **G4** | 다른 세션이 추가중인 **부산 프라이빗 투어** — 나타나면 4행 | +4 |
+| **G4** 🔴 미추출 — **새로 나타났다** | `busan-private-car-charter-city-tour` | 4 |
 
-**완비 6종:** busan-cruise-bus · busan-private-charter-cruise · busan-small-group-yonggungsa ·
-busan-top-attractions · incheon-seoul-private-car · jeju-grand-highlights ·
-seoul-winter-eobi. (이 목록도 매번 다시 재라 — 병행 세션이 바꾼다.)
+**완비 7종:** busan-cruise-shore-excursion-bus-tour · busan-private-car-charter-cruise-shore ·
+busan-small-group-yonggungsa-skycapsule-gamcheon · busan-top-attractions ·
+incheon-seoul-private-car-shore-excursion-cruise · jeju-grand-highlights-loop ·
+seoul-winter-seoraksan-nami-eobi. (이 목록도 매번 다시 재라 — 병행 세션이 바꾼다.)
 
-⚠ **G3 7종은 `i18n:extract` 부터** 해야 한다. G1·G2 의 84 unit 은 이미 `in/` 에 있다.
+✅ **G1 종료(S2, 2026-08-07):** it `southwest` 7 unit · 525 세그먼트 · 커버리지 100% · 발행됨
+(payload 89,707자 — fr 90,641 · de 87,686 과 같은 급). `i18n:verify --locale=it` **fail 0 / 40 unit**.
+
+⚠ **G3 7종 + G4 1종은 `i18n:extract` 부터** 해야 한다. G2 의 ru 77 unit 은 이미 `in/` 에 있다.
+
+🔴 **G4 는 이 플랜이 「나타나면」이라고만 적어 둔 것이 실제로 나타난 경우다.** 라이브 목록을
+매번 DB 로 다시 재라는 §0-3-1 이 이번에 값을 했다 — 플랜의 20종/35행을 그대로 믿었으면
+새 상품 하나가 통째로 누락됐다.
 
 ---
 
@@ -218,14 +226,22 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 
 | 단계 | 대상 | 원문 | 세션 | 산출 |
 |---|---|---|---|---|
-| **S1** | §3 `messages/*.json` 잔여 134 | ~6,000자 | **1** | UI+챗봇 동시 |
-| **S2** | it `southwest` 7 unit | 28,819자 | **1** | **1행** |
-| **S3~S12** | ru 6슬러그 63 unit | 262,350자 | **10** | **6행** |
-| **S13** | 🔴 **G3 7슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
+| ✅ **S1** | §3 `messages/*.json` | — | **1 (끝)** | **190건 적용** |
+| ✅ **S2** | it `southwest` 7 unit | 28,819자 | **1 (끝)** | **1행 발행** |
+| **S3~S12** | ru 6슬러그(§2-a″ G2) | 262,350자 | **10** | **6행** |
+| **S13** | 🔴 **G3 7슬러그 + G4 1슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
 | **S14~S48** | G3 7슬러그 × 4로케일 | **추정 968,884자** | **35** | **28행** |
-| **S49** | 신규 부산 프라이빗(다른 세션 산출물) | 미정 | **1~2** | 4행 |
+| **S49** | G4 `busan-private-car-charter-city-tour` × 4로케일 | 미측정 | **1~2** | **4행** |
 | **P1** | POI 빠진 로케일 126건 | 소규모 | **2~3** | §4 |
 | **R** | 검수(§R) — 번역과 **다른 세션**에서 | 병행 | 배치당 40~60 | §R |
+
+🔴 **S1 실측 — 플랜의 134 는 과소집계였다.** 134 는 「3어절 이상」 스캔의 값이고, 그 필터가
+**짧은 문자열로만 된 미번역 구획을 통째로 숨기고 있었다**: `settingsPage` 뒤쪽 24키가
+ja·zh·zh-TW·es 넷에서 전부 영어였는데(`Male`·`Female`·`Friend`·`Save changes`…), 그중
+3어절 이상인 5키만 134 에 잡혔다. **실제 적용은 190건**이고 전체 「영어와 동일」 항목은
+**558 → 368**로 줄었다. **다음에 이 숫자를 셀 땐 §6-4 의 3어절 필터를 빼고도 한 번 세라.**
+남은 51건(3어절 기준)은 **전부 의도된 무작업**이다 — 법인명·미국 등기주소·`{min} – {max}`
+플레이스홀더·언어태그 상수(`verifySuccessEn`/`Es`)·대상 언어에서 철자가 같은 차용어.
 
 **합계 원문 약 1,260,000자 → 46세션(추정).**
 ⚠ **TM 중복제거가 이걸 크게 깎는다** — ru 6슬러그 실측이 **62.6%** 였다(고유 533/전체 1,425).
@@ -302,6 +318,31 @@ node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.
 9. **가시성은 두 쪽이 한 세트다** — `tours.is_active` + 전 로케일 `is_published` + 블록리스트.
    DB 플래그만 내리면 `/tours/list` 카드가 그대로 남는다(그 실측표가 그 파일 안에 있다).
    그리고 **라이브 판정 쿼리는 두 테이블을 조인**해야 한다: `is_published AND tours.is_active`.
+10. 🔴 **「영어와 같은 값」 스캔의 3어절 필터가 미번역 구획을 숨긴다** — S1 실측(§6-3 하단).
+    필터를 빼고도 한 번 세라. 대신 뺀 쪽은 오탐(고유명사·차용어)이 많으니 **눈으로 거르는 건 필수**다.
+11. **de/fr 산출물을 참조할 때 그게 서로 어긋날 수 있다.** it `southwest` 작업 중 실측: 같은
+    장소 라벨을 **페이지 갤러리에선 영어로, 스톱 갤러리에선 번역해서** 내보내고 있었다(de·fr 둘 다).
+    → **판정은 `i18n-work/glossary/<loc>.json` 으로 하라.** 거기 규칙이 정본이다
+    (「고유명사 로마자 유지 · 수식어만 번역」). 앞선 로케일을 그대로 베끼면 그 드리프트를 물려받는다.
+12. **숫자를 말로 풀면 G3 가 실패로 잡는다** — `1.5 km` 를 `il chilometro e mezzo` 로 옮겼다가
+    fail 1 이 났다. 서식(`1,5`)은 정규화되지만 **철자로 푼 숫자는 소실로 잡힌다.**
+
+### 6-6. ⚠ 원문 자체의 결함 2건 — 번역이 아니라 **콘텐츠 티켓**이다
+
+규칙 8(원문 수정 금지)에 따라 **그대로 옮겼다.** 고칠 사람은 콘텐츠 쪽이다.
+
+1. 🔴 **`southwest-hallasan-osulloc-aewol` 의 천제연 영업시간이 한 페이지에서 서로 다르다** —
+   `visitBasics.hours` 는 **09:00–17:50(최종입장 17:10)**, 같은 스톱의 `description` 끝은
+   **09:00–18:00(최종입장 17:30)**. 손님이 보는 시각 정보이고 **전 로케일에 그대로 복제된다**
+   (en·ko·ja·zh·zh-TW·es·de·fr·it 전부). 원문(en)을 고치고 재추출해야 닫힌다.
+2. **`home.customJoinTour.*` 124키는 앱 코드에서 아무도 읽지 않는다.** 리터럴 `customJoinTour`
+   가 `messages/*.json` 밖에서는 `scripts/i18n-loc-c-translations.mjs` 한 줄뿐이고, 그 줄이
+   참조하는 `verifySuccessKo` 는 **en.json 에 존재하지도 않는다.** 즉 이 플랜 §3-a 가
+   「예약 퍼널」이라며 최우선으로 꼽았던 124키는 **사문(死文)일 가능성이 높다.**
+   🔴 **키 삭제는 이 트랙의 범위가 아니다**(§0-2 — 키 추가·삭제 금지). 별도 티켓으로 확인하라.
+   그 안의 `verifySuccess{En,Ja,Zh,ZhTw,Es}` 는 **로케일별 값이 아니라 「그 언어로 된 상수」**다
+   (접미사가 대상 언어를 가리킨다) — 그래서 9개 로케일 파일 전부에서 같은 값이어야 정상이고,
+   ⚠ **`de` 만 `verifySuccessEn` 을 독일어로 번역해 두었다**(누군가 미번역으로 오인한 흔적).
 
 ---
 
@@ -371,9 +412,9 @@ cp /c/Users/sangsong/atockorea/.env.local .env.local
 New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atockorea\node_modules
 ```
 
-그리고 **S1 — `messages/*.json` 잔여 134건**부터. 가장 싸고, UI 와 챗봇 색인을 동시에 채운다.
-(`home.customJoinTour` 는 2026-08-07 에 끝냈다. 남은 건 `home.premium`·`settingsPage`·
-`errors`·`toursList`·`itineraryBuilder`.)
+✅ **S1·S2 는 2026-08-07 에 끝났다.** 다음은 **S3 — ru 6슬러그**(§2-a″ G2)다.
+ru 77 unit 은 이미 `i18n-work/in/` 에 있으므로 도구 작업 0으로 바로 번역에 들어간다.
+슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
 
 ### 착수 전 30초 — 이것만 확인하라
 
