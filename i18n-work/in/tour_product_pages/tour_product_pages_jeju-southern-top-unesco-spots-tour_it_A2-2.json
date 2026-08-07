@@ -1,0 +1,145 @@
+{
+  "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-southern-top-unesco-spots-tour",
+  "locale": "it",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms and canola flowers bloom along the Seogwipo coast and across the route, and it is the best season for the ⟦G0⟧ walk.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "The ⟦G0⟧ and Oedolgae coast are popular summer retreats thanks to the cool sea breeze. Afternoon showers are common, so bring a rain jacket.",
+      "glossary": [
+        "⟦G0⟧ = Cascata di Jeongbang"
+      ]
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clear and crisp — the best season for photography. The Oedolgae coast and the Hallasan views are at their sharpest."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "The coast stays mild, but snow can fall on Hallasan's high slopes. When it snows, Route 1100 and Eoseungsaengak may be closed."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation sent with an itinerary summary"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant confirmation including Jeju City hotel pickup details (free within the city; +₩70,000 outside)."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Advance note on ⟦G0⟧ / Oedolgae coastal conditions and the Hallasan Route 1100 status.",
+      "glossary": [
+        "⟦G0⟧ = Cascata di Jeongbang"
+      ]
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact confirmed"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Final pickup time confirmed the evening before."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Morning weather note and an update on the ⟦G0⟧ / Route 1100 status.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "The guide explains the ⟦G0⟧ 'Seobulgwacha' place-name legend, the formation of Oedolgae and its 'Dae Jang Geum' filming, East Asia's largest temple Yakcheonsa, the 1979 founding of Amorepacific's O'sulloc, and Hallasan's shield-volcano character.",
+      "glossary": [
+        "⟦G0⟧ = Cascata di Jeongbang"
+      ]
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "A tour satisfaction survey request is sent after drop-off."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes"
+    }
+  },
+  "glossaryTokens": {
+    "/seasonalVariations/0/description": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/seasonalVariations/1/description": {
+      "⟦G0⟧": "Cascata di Jeongbang"
+    },
+    "/bookingSupportSteps/1/description": {
+      "⟦G0⟧": "Cascata di Jeongbang"
+    },
+    "/bookingSupportSteps/3/description": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/bookingSupportSteps/4/description": {
+      "⟦G0⟧": "Cascata di Jeongbang"
+    }
+  },
+  "tmHits": 0
+}

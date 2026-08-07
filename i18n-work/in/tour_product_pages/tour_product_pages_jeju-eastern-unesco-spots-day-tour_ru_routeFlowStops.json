@@ -1,0 +1,79 @@
+{
+  "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-eastern-unesco-spots-day-tour",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Jeju City + airport pickup"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Manjanggul (UNESCO)"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "UNESCO Lava Tube"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Heritage Village"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧ (UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "UNESCO Volcano"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Haenyeo Diving Performance"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Haenyeo Intangible Heritage"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Beach"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "Jeju City drop-off"
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    }
+  },
+  "tmHits": 0
+}

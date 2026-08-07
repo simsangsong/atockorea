@@ -1,0 +1,87 @@
+{
+  "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:it:itineraryStops-3",
+  "surface": "tour_product_pages",
+  "slug": "jeju-island-private-car-charter-tour",
+  "locale": "it",
+  "chunk": "itineraryStops-3",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/3/category": {
+      "source_en": "Send Us Your Own Itinerary"
+    },
+    "/itineraryStops/3/timeUsed/0": {
+      "source_en": "Discuss your plan with the driver-guide at pickup or send it 24 hours ahead via the booking confirmation"
+    },
+    "/itineraryStops/3/timeUsed/1": {
+      "source_en": "Driver-guide sequences stops based on real-time traffic, ferry schedules, and individual stop closure days (Seongsan first Monday, Manjanggul first Wednesday, etc.)"
+    },
+    "/itineraryStops/3/timeUsed/2": {
+      "source_en": "Return to your hotel within the 9-hour window (overage by prior agreement)"
+    },
+    "/itineraryStops/3/highlights/0": {
+      "source_en": "Mix East-coast UNESCO (Seongsan, Manjanggul) with West-coast tea fields (O'sulloc) if time permits — typically only feasible if skipping Udo"
+    },
+    "/itineraryStops/3/highlights/1": {
+      "source_en": "Add a haenyeo (female-diver) seafood lunch — best near Hado (East) or Daejeong (West) where the haenyeo cooperatives are active"
+    },
+    "/itineraryStops/3/highlights/2": {
+      "source_en": "Combine a beach morning with a mountain or temple afternoon (Hyeopjae + Sanbangsan, or Hamdeok + Sangumburi)"
+    },
+    "/itineraryStops/3/highlights/3": {
+      "source_en": "Pair with K-drama filming locations: ⟦G0⟧ ('All In'), Hyeopjae area ('Boys Over Flowers'), Cheonjiyeon ('Big')",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/itineraryStops/3/smartNotes/tip": {
+      "source_en": "The custom route is also the best fit for visitors with a flight that day — the 9-hour window can be back-loaded to drop you at Jeju Airport at the end. State this at booking so the route is sequenced toward the airport in the late afternoon."
+    },
+    "/itineraryStops/3/smartNotes/facilities": {
+      "source_en": "Lunch is your call — communicate dietary needs (halal, vegetarian, no-seafood, kids' menu) at booking so the guide can suggest appropriate restaurants"
+    },
+    "/itineraryStops/3/whyOnRoute": {
+      "source_en": "The most flexible option of the four. Best for repeat Jeju visitors, travelers with niche interests (K-drama tracking, photography, food, family-with-kids), and groups of 4-9 where the per-vehicle pricing vs. group-tour pricing tilts strongly toward the private charter."
+    },
+    "/itineraryStops/3/convenience/parking": {
+      "source_en": "Driver-guide handles all parking"
+    },
+    "/itineraryStops/3/convenience/restroom": {
+      "source_en": "Available at all major stops"
+    },
+    "/itineraryStops/3/description": {
+      "source_en": "Beyond the three recommended routes, the 9-hour charter window is fully customizable — you can mix stops across the East/West/South or send a fully custom plan in advance. Common additions include: **⟦G1⟧ (Natural Monument 263** — a **650 m wide × 100 m deep** phreatomagmatic crater famous for autumn silvergrass); **⟦G3⟧** (already-bloomed camellia varieties Nov-Mar); **⟦G0⟧** (alpaca + tangerine farm, family-favorite); **ECO Land Theme Park** (steam-locomotive ride through Gotjawal forest); **Hamdeok Beach** (turquoise shallows, family-friendly); **⟦G4⟧** (coastal volcanic mountain with WWII tunnel network); **⟦G2⟧** (cliff walk under Sanbangsan); Cafe the Cliff (Aewol sunset spot); the **haenyeo Museum** near Hado; and submarine/yacht tours from Seogwipo and Jungmun. \n\nBring a full list to the driver-guide at pickup and they will sequence the day for traffic, ferry timing, and operating hours.",
+      "glossary": [
+        "⟦G0⟧ = Parco naturale di Hueree",
+        "⟦G1⟧ = Cratere di Sangumburi",
+        "⟦G2⟧ = Costa di Yongmeori",
+        "⟦G3⟧ = Camellia Hill",
+        "⟦G4⟧ = Songaksan"
+      ]
+    },
+    "/itineraryStops/3/visitBasics/hours": {
+      "source_en": "Depends on chosen stops — driver-guide flags monthly closure days at booking"
+    },
+    "/itineraryStops/3/visitBasics/closed": {
+      "source_en": "Depends on chosen stops"
+    },
+    "/itineraryStops/3/visitBasics/walking": {
+      "source_en": "Adjustable to your group's mobility"
+    },
+    "/itineraryStops/3/visitBasics/admission": {
+      "source_en": "All admission fees pay directly; driver-guide assists at each gate"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/3/highlights/3": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Parco naturale di Hueree",
+      "⟦G1⟧": "Cratere di Sangumburi",
+      "⟦G2⟧": "Costa di Yongmeori",
+      "⟦G3⟧": "Camellia Hill",
+      "⟦G4⟧": "Songaksan"
+    }
+  },
+  "tmHits": 0
+}

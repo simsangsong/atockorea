@@ -1,0 +1,90 @@
+{
+  "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "it",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "You receive a booking confirmation with a summary of the day."
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Right after booking"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside)."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-hour reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather notes and route adjustments are shared in advance."
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Pre-tour note on 1100 Road current conditions (summer fog, autumn foliage, winter snow probability) and Aewol cafe recommendations."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final pickup notice"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Your exact pickup time and driver contact details are shared."
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "The night before"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Final pickup time confirmed the evening before."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of route note"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "A short morning briefing is given based on live on-site conditions."
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of the tour"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Morning message with weather and any 1100 Road closure note."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Live stop-by-stop guidance"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "You receive the information you need at each stop."
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During the tour"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Guide narrates Hallasan's shield-volcano geology, UNESCO Geopark context of Jusangjeolli, the Seven Nymph waterfall legend, and Osulloc's 1979 Amorepacific founding story."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Additional guidance and recommendations can be shared afterward."
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After the tour"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback request sent after drop-off."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "Live weather integration"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "Updated daily"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 0
+}

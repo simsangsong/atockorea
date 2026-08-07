@@ -1,0 +1,252 @@
+{
+  "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2",
+  "surface": "tour_product_pages",
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "ru",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time Jeju travelers and couples"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Adult family trips"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Travelers who want nature, tea fields, and a softer finish"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Active middle-aged and older travelers"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want to avoid even short stair sections or uphill walks"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Groups relying heavily on strollers"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Itineraries built around very young children"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "An easy start in the Hallasan highlands"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "The 1100 Highland wetland is a flat boardwalk stroll, so it starts the day without physical strain while letting you feel the atmosphere of the Hallasan highlands, and the route flows naturally down to the southern coast."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Lunch sits in the right position"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Lunch resets the day between the more open and dramatic morning stops and the calmer waterfall-and-tea-field section that follows."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "A gentle finish after O'Sulloc"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Once the tea fields soften the mood, Aewol opens the afternoon with coffee and sea views, and the final Iho Tewoo sunset closes the day in golden light."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Pace and structure"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Mountain first, sea second"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "This route is designed so you first experience the altitude and alpine wetland of Hallasan 1100 Highland, then have the view open up dramatically to the coast at Jusangjeolli."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "Waterfall before tea fields"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "Cheonjeyeon settles the route down before O’Sulloc opens the second half in a lighter and gentler way."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "A coastal finish that closes with sunset"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "After enjoying cafés and the coast in Aewol, you meet the sunset at the Iho Tewoo pony lighthouses, closing the day with a lifestyle-oriented finish rather than yet another packed sightseeing stop."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "How the route is designed"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Hallasan road variables"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "At 1100 Highland, Road 1100 may be closed during heavy snow, heavy rain, or icing, in which case the plan is adjusted to an indoor alternative such as the Jeju National Museum."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Wind on the coast"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "Jusangjeolli and Aewol are much more directly exposed to wind than inland stops."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "A balanced overall walking load"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "1100 Highland and Iho Tewoo are flat, but Cheonjeyeon has stairs and short uphill sections that call for some care."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "When conditions change"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-slate-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this route flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Starting at the Hallasan 1100 Highland Ramsar wetland, the route runs through volcanic coast, a waterfall, lunch, and tea fields before finishing with ⟦G0⟧ and the Iho Tewoo sunset. Roughly 09:30 to 18:15.",
+      "glossary": [
+        "⟦G0⟧ = Улица кафе Эволь"
+      ]
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Yes. You get a well-balanced day that takes in the scenery of Hallasan 1100 Highland, volcanic coastline, a waterfall walk, the atmosphere of tea fields, and a finish with Aewol and the Iho Tewoo sunset."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Is this a good choice for first-time visitors to Jeju?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Not really. Cheonjeyeon, which has stairs, is the most active section, but 1100 Highland is a flat boardwalk stroll and the rest of the itinerary is generally manageable."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Is the walking difficult?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Yes. The route can run even in the rain, and if Road 1100 is closed due to heavy snow or rain, 1100 Highland may switch to an indoor alternative or exposed coastal sections may be shortened."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Does the tour run in rainy weather?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Yes, in many cases. It works well for adult family trips, especially when everyone is comfortable with stairs and short uphill sections."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Is it suitable for traveling with parents or older family members?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Yes. It is especially suitable for children around age 8 and up who can keep up with short walks and the rhythm of a full-day tour."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Can I join with children?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Yes. Depending on mountain weather, coastal wind, traffic, sunset time, and visitor flow, there may be minor reordering, especially around 1100 Highland and the coastal sections."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Can the order of stops change depending on conditions on the day?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "That depends on the product condition. Lunch time is built into the route, but whether the meal itself is included follows your booked plan."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is lunch included?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Because it opens the day by lightly experiencing the Hallasan highlands on a flat boardwalk stroll at the time of highest energy, without turning the day into a heavy hiking itinerary."
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Why does the route start at 1100 Highland?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Because it lets Jeju’s volcanic story unfold naturally from mountain terrain into a dramatic basalt coastline."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Why do you go to Jusangjeolli after Hallasan?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Because it softens the mood after the waterfall section, so that the later stops of Aewol and the Iho Tewoo sunset feel more relaxed and comfortable."
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Why does O'Sulloc come before Aewol?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "Lunch and Cheonjeyeon settle the rhythm after the lively morning section, O'Sulloc adds a light tea-field break, and Aewol and the Iho Tewoo sunset close the day naturally and with a lingering afterglow."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "Why is the second half structured this way?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed Korean tour operator — the southwest Jeju year-round circuit covering Hallasan highland, columnar cliffs, waterfall, tea fields, and Aewol cafe coast in a single nine-hour loop."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operation"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Legally operated guiding in Jeju"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "No mandatory shopping stops: ⟦G0⟧ has free admission and the ⟦G1⟧ is free-time exploration — no commission-based retail pressure.",
+      "glossary": [
+        "⟦G0⟧ = Чайный музей Osulloc",
+        "⟦G1⟧ = Улица кафе Эволь"
+      ]
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Built around Jeju Southwest"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Designed specifically for the southwest route"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "All-season routing: the 1100 Road wetland shows misty summer atmosphere, brilliant autumn foliage, and occasional winter snow, making the stop genuinely worthwhile in any season."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Operates in a small group"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Up to 8 guests"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "A season when rapeseed blooms can add yellow color to parts of the coast."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Days are long, and the greens across the route feel especially deep and vivid."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clear skies often make the route’s mountain, coast, and tea-field layers feel especially sharp."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "The route usually feels quieter, with shorter daylight and a calmer overall mood."
+    }
+  },
+  "glossaryTokens": {
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Улица кафе Эволь"
+    },
+    "/bookingTrustItems/1/body": {
+      "⟦G0⟧": "Чайный музей Osulloc",
+      "⟦G1⟧": "Улица кафе Эволь"
+    }
+  },
+  "tmHits": 0
+}
