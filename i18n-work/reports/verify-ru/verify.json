@@ -1,6 +1,6 @@
 {
   "locale": "ru",
-  "generatedAt": "2026-08-07T09:29:19.967Z",
+  "generatedAt": "2026-08-07T09:32:28.719Z",
   "reports": [
     {
       "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A1",
@@ -615,6 +615,102 @@
       "fails": 0,
       "flags": 0,
       "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A1",
+      "status": "flagged",
+      "segments": 88,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/1",
+          "message": "숫자 추가 — 번역에만 [18 19] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/4",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2",
+      "status": "flagged",
+      "segments": 75,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.39 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/1/label",
+          "message": "길이비 0.78 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/2/label",
+          "message": "길이비 0.78 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/2/detail",
+          "message": "길이비 0.81 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2-2",
