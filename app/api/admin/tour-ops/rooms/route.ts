@@ -14,21 +14,33 @@ export const dynamic = 'force-dynamic';
  * last message, message count, participant count. The console pairs this
  * with a client-side Postgres-Changes subscription on tour_room_messages
  * (the M-6 admin SELECT policy + publication exist exactly for this, R-4).
+ *
+ * GET /api/admin/tour-ops/rooms?room_id=<uuid>
+ * 🔴 One room, **whatever day it is on** (2026-08-07).
+ *
+ * 왜 필요한가: 관제 콘솔은 자기 날짜의 룸만 들고 있는데, 룸 드로어는
+ * `rooms.find(id)` 로만 열린다. 그런데 룸·링크 관리 시트는 ◀ ▶ 로 **다른 날짜**를
+ * 볼 수 있다. 그래서 내일 투어를 준비하려고 날짜를 넘긴 뒤 [차량 배정]을 누르면
+ * 콘솔이 그 룸을 모르고 **드로어가 아예 안 열렸다 — 오류도 없이 무반응**.
+ * 날짜를 모르는 호출자도 룸 하나를 정확히 집을 수 있어야 이 구멍이 닫힌다.
  */
 
 export async function GET(req: NextRequest) {
   try {
     await requireAdmin(req);
     const supabase = createServerClient();
+    const roomId = req.nextUrl.searchParams.get('room_id');
     const date = req.nextUrl.searchParams.get('date') || kstToday();
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+    if (!roomId && !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
       return NextResponse.json({ error: 'Invalid date' }, { status: 400 });
     }
 
-    const { data: rooms, error } = await supabase
+    const base = supabase
       .from('tour_rooms')
-      .select('id, booking_id, tour_id, tour_date, status, created_at')
-      .eq('tour_date', date);
+      .select('id, booking_id, tour_id, tour_date, status, created_at');
+    const { data: rooms, error } = await (roomId
+      ? base.eq('id', roomId)
+      : base.eq('tour_date', date));
     if (error) throw error;
     const roomIds = (rooms ?? []).map((room) => room.id);
     const bookingIds = (rooms ?? []).map((room) => room.booking_id);

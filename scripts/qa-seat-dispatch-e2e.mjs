@@ -136,6 +136,44 @@ ok('목록이 로드된다', listLoaded, `${await ops.locator('[data-testid^="ma
 ok('목록에 배차 요약이 있다', (await ops.locator('[data-testid="manager-dispatch-summary"]').count()) > 0);
 
 /**
+ * 🔴 사장님 신고(2026-08-07): "차량배정 눌러도 아무 반응 없어."
+ *
+ * 관제 콘솔은 **자기 날짜**의 룸만 들고 있고 드로어는 그 목록에서 룸을 찾아 열렸다.
+ * 그런데 이 시트는 ◀ ▶ 로 다른 날짜를 본다 — 즉 **내일 투어 배차를 미리 잡는
+ * 정상 업무**를 하는 순간 모든 [차량 배정]이 죽었다. 오류도 토스트도 없이.
+ * 오늘 날짜에서만 눌러 본 검사는 이걸 영원히 못 잡는다. 그래서 날짜를 넘겨서 잰다.
+ */
+const dateInput = ops.locator('[data-testid="date-input"]');
+const todayInSheet = await dateInput.inputValue().catch(() => '');
+let otherDay = null;
+for (let i = 0; i < 3 && !otherDay; i += 1) {
+  await ops.locator('button[aria-label="다음 날짜"]').click({ timeout: 8000 }).catch(() => undefined);
+  await ops.waitForTimeout(2500);
+  await settle(ops, async () => (await ops.locator('[data-testid^="manager-dispatch-badge-"]').count()) > 0, 15_000);
+  if ((await ops.locator('button', { hasText: /^차량 배정$/ }).count()) > 0) {
+    otherDay = await dateInput.inputValue().catch(() => '?');
+  }
+}
+if (otherDay) {
+  await ops.locator('button', { hasText: /^차량 배정$/ }).first().click({ timeout: 10_000 });
+  const openedElsewhere = await settle(ops, async () => (await ops.locator('[role="dialog"]').count()) > 0, 20_000);
+  ok(`다른 날짜(${otherDay})에서 [차량 배정]이 드로어를 연다`, openedElsewhere, openedElsewhere ? '' : '무반응 — 신고된 그 증상');
+  if (openedElsewhere) {
+    const dlg = ops.locator('[role="dialog"]').last();
+    // 차량 칩이 선택된 채로 열려야 한다(패널 본문은 자기 fetch 뒤에 온다).
+    const onVehicleTab = await dlg.locator('button[aria-pressed="true"]', { hasText: /^차량$/ }).count();
+    ok('그 드로어가 차량 탭으로 열린다', onVehicleTab > 0);
+    await shot(ops, '01b-other-day-drawer');
+    await dlg.locator('button[aria-label="닫기"]').last().click({ timeout: 8000 }).catch(() => undefined);
+    await ops.waitForTimeout(1500);
+  }
+  // 오늘로 되돌려 이후 단계가 시뮬 팀을 찾을 수 있게 한다.
+  await dateInput.fill(todayInSheet).catch(() => undefined);
+  await settle(ops, async () => (await dateInput.inputValue().catch(() => '')) === todayInSheet, 10_000);
+  await settle(ops, async () => (await ops.locator('[data-testid^="manager-dispatch-badge-"]').count()) > 0, 30_000);
+} else ok('다른 날짜에 배차 가능한 팀이 있다', false, '3일 내 없음 — 이 회귀는 이번 실행에서 못 쟀다');
+
+/**
  * 🔴 이름으로 카드를 찾으면 안 된다. 이 DB 에는 **여러 세션의 시뮬 예약**이 함께
  * 살아 있고 전부 "Sim Alex" 다(`sim-tour-day --cleanup` 은 자기 태그만 지운다).
  * 첫 판에서 남의 세션 예약에 배차하고는 "이미 배차돼 있다"고 보고했다.
