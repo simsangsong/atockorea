@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
     },
     "price": {
-      "amountLabel": "456.99"
+      "amountLabel": "169"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

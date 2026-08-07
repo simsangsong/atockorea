@@ -42,6 +42,13 @@ interface BookingData {
   preferredLanguage?: 'en' | 'zh' | 'ko';
   totalPrice: number;
   promoCode?: string;
+  /**
+   * Charter products: which column of the duration x party-size rate card the
+   * guest picked. The server re-resolves the price from that card, so without
+   * this it would fall back to the card's first duration and quote a different
+   * number than the page did.
+   */
+  charterDuration?: string | null;
 }
 
 interface CustomerInfo {
@@ -234,6 +241,7 @@ export default function CheckoutPage() {
         numberOfGuests: bookingData.guests,
         pickupPointId: bookingData.pickup != null ? String(bookingData.pickup) : null,
         finalPrice: bookingData.totalPrice,
+        charterDuration: bookingData.charterDuration ?? null,
         paymentMethod: 'full' as const,
         preferredLanguage: bookingData.preferredLanguage || 'en',
         specialRequests: JSON.stringify({

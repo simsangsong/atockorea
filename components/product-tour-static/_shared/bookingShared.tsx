@@ -86,8 +86,21 @@ export function buildBookingPayload(
   dateYmd: string,
   guests: number,
   preferredLanguage: PreferredLanguage,
+  /**
+   * Charter products: the price the card actually showed, and which column of
+   * the rate card it came from.
+   *
+   * 🔴 This used to send `ctx.unitPriceUsd` unconditionally — the `tours.price`
+   * base — while the card displayed the rate-card cell. The two disagreed by up
+   * to 3x on the Busan cruise charter ($169 shown, $456.99 booked), and because
+   * the server recomputed the same `tours.price` the mismatch guard never fired.
+   * The server now resolves the same rate card; passing the duration is what
+   * lets it land on the same cell.
+   */
+  charter?: { unitPriceUsd?: number | null; durationKey?: string | null },
 ) {
-  const unit = ctx.unitPriceUsd;
+  const unit =
+    charter?.unitPriceUsd != null && charter.unitPriceUsd > 0 ? charter.unitPriceUsd : ctx.unitPriceUsd;
   const totalPrice =
     ctx.priceType === "person"
       ? Math.round(unit * guests * 100) / 100
@@ -100,6 +113,7 @@ export function buildBookingPayload(
     paymentMethod: "full" as const,
     preferredLanguage,
     totalPrice,
+    charterDuration: charter?.durationKey ?? null,
   };
 }
 

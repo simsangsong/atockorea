@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
     },
     "price": {
-      "amountLabel": "456.99"
+      "amountLabel": "169"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -405,9 +405,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "77"
     }
   },
-  "jeju-eastern-unesco-lugares-day-tour": {
+  "jeju-eastern-unesco-spots-day-tour": {
     "catalog_card": {
-      "slug": "jeju-eastern-unesco-lugares-day-tour",
+      "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "Jeju Este: UNESCO Día",
       "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — Manjanggul (UNESCO) en su hora más tranquila tras la apertura, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y un final en la playa Hamdeok, en un bucle por el este de 9 horas.",
       "region": "Jeju Este",
