@@ -1,0 +1,1312 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "zh",
+  "product_id": "busan-private-car-charter-city-tour",
+  "seo": {
+    "pageTitle": "釜山私人包车（5–9 小时）| AtoC Korea",
+    "metaDescription": "含英语持证司机导游与酒店接送的釜山私人包车。可选三条推荐路线，也可自行安排行程。5 至 9 小时，7 人以内按车计价，可加金海机场接送与庆州延伸。",
+    "title": "釜山私人包车（司机导游随行）| AtoC Korea",
+    "description": "含酒店接送与持证司机导游的釜山按小时私人包车。推荐路线直接取自我们正在运营的三条釜山线路，可随您调整。",
+    "primaryKeywords": [
+      "釜山私人包车",
+      "釜山包车一日游",
+      "釜山酒店接送包车",
+      "釜山司机导游",
+      "釜山庆州私人包车"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+  },
+  "catalog_card": {
+    "slug": "busan-private-car-charter-city-tour",
+    "title": "釜山私人包车",
+    "subtitle": "专属车辆与持证司机导游到酒店接您，按小时计费，釜山这一天由您自己安排。",
+    "region": "釜山（市区 + 海岸）",
+    "duration": "5–9 小时",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "私人包团",
+      "行程自由调整",
+      "釜山酒店接送"
+    ],
+    "tags": [
+      "private_tour",
+      "fully_customizable",
+      "hotel_pickup",
+      "hourly_rate"
+    ],
+    "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "priceLabel": "",
+    "shortCardDescription": "只属于您一行人的专车与持证司机导游，带您走遍釜山。可从三条推荐路线出发 — 经典的热门景点线、海东龙宫寺与天空胶囊的海岸线、老城区与松岛的环线 — 再把停留点调整、删减或增加，这一天就完全是您的。含酒店接送，5 至 9 小时，7 人以内按车计价。"
+  },
+  "headlineLine1": "釜山市区",
+  "headlineLine2": "私人包车",
+  "price": {
+    "amountLabel": "160",
+    "currency": "USD",
+    "per": "vehicle",
+    "salePriceUsd": 160
+  },
+  "hero": {
+    "imageUrl": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "imagePosition": "center 45%",
+    "images": [
+      "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+    ],
+    "tagline": "三条现成的釜山一日行程作起点，司机导游会把它们重新排列 — 海崖上的寺庙、天空胶囊、彩绘山城、鱼市、海上天空步道 — 拼成您真正想要的那一天。",
+    "pills": [
+      "专属车辆",
+      "持证司机导游",
+      "酒店接送"
+    ],
+    "meta": {
+      "duration": "5–9 小时",
+      "region": "釜山（市区 + 海岸）",
+      "stops": "自由组合",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "概览"
+    },
+    {
+      "id": "itinerary",
+      "label": "行程"
+    },
+    {
+      "id": "details",
+      "label": "详情"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "评价"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "拍照价值",
+      "value": "优质",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "风景优美",
+      "value": "优质",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "步行",
+      "value": "适中",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "雨天安全",
+      "value": "卓越",
+      "level": 5
+    },
+    {
+      "icon": "users",
+      "label": "适合家庭",
+      "value": "卓越",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "均衡",
+      "value": "灵活",
+      "level": 5
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "路线一：釜山热门景点",
+      "caption": "路线一：釜山热门景点 — 1",
+      "alt": "路线一：釜山热门景点 — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "路线一：釜山热门景点",
+      "caption": "路线一：釜山热门景点 — 2",
+      "alt": "路线一：釜山热门景点 — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "路线一：釜山热门景点",
+      "caption": "路线一：釜山热门景点 — 3",
+      "alt": "路线一：釜山热门景点 — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "路线一：釜山热门景点",
+      "caption": "路线一：釜山热门景点 — 4",
+      "alt": "路线一：釜山热门景点 — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "路线一：釜山热门景点",
+      "caption": "路线一：釜山热门景点 — 5",
+      "alt": "路线一：釜山热门景点 — gallery image 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+      "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 1",
+      "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+      "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 2",
+      "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+      "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 3",
+      "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 1",
+      "alt": "路线三：海岸与老城区 — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 2",
+      "alt": "路线三：海岸与老城区 — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 3",
+      "alt": "路线三：海岸与老城区 — gallery image 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 4",
+      "alt": "路线三：海岸与老城区 — gallery image 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 5",
+      "alt": "路线三：海岸与老城区 — gallery image 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "路线三：海岸与老城区",
+      "caption": "路线三：海岸与老城区 — 6",
+      "alt": "路线三：海岸与老城区 — gallery image 6"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "8–9 小时最合适",
+      "duration": "6 个停留点",
+      "name": "路线一：釜山热门景点",
+      "category": "海边寺庙、海岸公园、纪念公园、彩绘村、鱼市",
+      "description": "适合初次到访釜山的经典一日，取自我们的**釜山热门景点一日游**。行程自东向西横穿全城：上午是崖上的海边寺庙，午餐前是青沙浦与蓝线公园一段，之后是联合国纪念公园的安静、甘川彩绘山城，最后以热闹的札嘎其鱼市收尾。 \n\n包车省去了拼团的车站集合环节，同样的停留点走下来还会剩出时间。这段余裕通常都花在甘川 — 大家总想在那儿多待一会儿。",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "路线一：釜山热门景点",
+          "caption": "路线一：釜山热门景点 — 1",
+          "alt": "路线一：釜山热门景点 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "路线一：釜山热门景点",
+          "caption": "路线一：釜山热门景点 — 2",
+          "alt": "路线一：釜山热门景点 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "路线一：釜山热门景点",
+          "caption": "路线一：釜山热门景点 — 3",
+          "alt": "路线一：釜山热门景点 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "路线一：釜山热门景点",
+          "caption": "路线一：釜山热门景点 — 4",
+          "alt": "路线一：釜山热门景点 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "路线一：釜山热门景点",
+          "caption": "路线一：釜山热门景点 — 5",
+          "alt": "路线一：釜山热门景点 — gallery image 5"
+        }
+      ],
+      "highlights": [
+        "海东龙宫寺",
+        "青沙浦 & 海云台蓝线公园",
+        "午餐（釜山本地餐厅）",
+        "驻韩联合国纪念公墓",
+        "甘川文化村",
+        "札嘎其鱼市场"
+      ],
+      "timeUsed": [
+        "≈ 10:00 · 海东龙宫寺 (75分钟)",
+        "≈ 11:30 · 青沙浦 & 海云台蓝线公园 (75分钟)",
+        "≈ 13:00 · 午餐（釜山本地餐厅） (60分钟)",
+        "≈ 14:15 · 驻韩联合国纪念公墓 (60分钟)",
+        "≈ 15:30 · 甘川文化村 (75分钟)",
+        "≈ 17:15 · 札嘎其鱼市场 (60分钟)"
+      ],
+      "whyOnRoute": "如果这是您在釜山的第一天，想按不走回头路的顺序看到那些照片里的画面，这条最合适。除甘川外步行量都不大，每个停留点四季皆宜。",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_highlights",
+        "imported_from": "busan-top-attractions-day-tour",
+        "imported_stop_count": 6,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-top-attractions-day-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 2,
+      "time": "8 小时最合适",
+      "duration": "7 个停留点",
+      "name": "路线二：海边寺庙、天空胶囊与彩绘村",
+      "category": "海边寺庙、玻璃观景台、天空胶囊、海水浴场、两座彩绘村",
+      "description": "取自我们的**小团海边寺庙·天空胶囊·文化村之旅** — 以拍照为主线的釜山一日。上午一直待在东部海岸：海东龙宫寺、青沙浦伸向海面的玻璃地板月光石观景台，以及沿旧铁道开往尾浦的天空胶囊。 \n\n下午转往两座彩绘山村：甘川，以及更小更安静的鸡田谷（Dakbatgol）与许愿阶梯单轨车。 \n\n天空胶囊车票当天购买，不含在包车费用内。最容易让人卡住的其实是排队，这部分由司机导游帮您处理。",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+          "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 1",
+          "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 1"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+          "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 2",
+          "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 2"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "路线二：海边寺庙、天空胶囊与彩绘村",
+          "caption": "路线二：海边寺庙、天空胶囊与彩绘村 — 3",
+          "alt": "路线二：海边寺庙、天空胶囊与彩绘村 — gallery image 3"
+        }
+      ],
+      "highlights": [
+        "海东龙宫寺",
+        "青沙浦踏石展望台（玻璃天空步道）",
+        "海云台蓝线公园天空胶囊（青沙浦→尾浦）",
+        "午餐（海云台/尾浦附近本地餐厅）",
+        "海云台海水浴场",
+        "甘川文化村",
+        "Dakbatgol壁画村＆希望阶梯单轨"
+      ],
+      "timeUsed": [
+        "≈ 10:20 · 海东龙宫寺 (60分钟)",
+        "≈ 11:40 · 青沙浦踏石展望台（玻璃天空步道） (40分钟)",
+        "≈ 12:30 · 海云台蓝线公园天空胶囊（青沙浦→尾浦） (50分钟)",
+        "≈ 13:25 · 午餐（海云台/尾浦附近本地餐厅） (45分钟)",
+        "≈ 14:10 · 海云台海水浴场 (20分钟)",
+        "≈ 15:10 · 甘川文化村 (60分钟)",
+        "≈ 16:30 · Dakbatgol壁画村＆希望阶梯单轨 (30分钟)"
+      ],
+      "whyOnRoute": "最适合情侣与爱拍照的客人，也适合宁愿好好看四个地方、也不想匆匆跑八个的人。除甘川的坡道外，这条路线的步行负担也最轻。",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_skycapsule",
+        "imported_from": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "imported_stop_count": 7,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-small-group-yonggungsa-skycapsule-gamcheon-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 3,
+      "time": "8–9 小时最合适",
+      "duration": "10 个停留点",
+      "name": "路线三：海岸与老城区",
+      "category": "海边寺庙、纪念公园、三处市场、彩绘村、松岛两处观景、市区塔",
+      "description": "三条中最密集的一条，取自我们的**釜山邮轮岸上海岸巴士游** — 它原本就是为了在一次靠港时间里看完整座城市而设计的，因此正适合在釜山只有一天的客人。 \n\n上午走海东龙宫寺与联合国纪念公园，随后在老城区一段接一段地推进：札嘎其、BIFF 广场、国际市场，接着是甘川、伸向海面的松岛云端步道、海岬上的松岛天空公园，最后以有釜山钻石塔的龙头山公园收尾。 \n\n这里的停留时间是有意压短的，每处 20 到 45 分钟。如果您一行人喜欢慢慢看，就把这份清单砍掉一半。",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+        "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 1",
+          "alt": "路线三：海岸与老城区 — gallery image 1"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 2",
+          "alt": "路线三：海岸与老城区 — gallery image 2"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 3",
+          "alt": "路线三：海岸与老城区 — gallery image 3"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 4",
+          "alt": "路线三：海岸与老城区 — gallery image 4"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 5",
+          "alt": "路线三：海岸与老城区 — gallery image 5"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "路线三：海岸与老城区",
+          "caption": "路线三：海岸与老城区 — 6",
+          "alt": "路线三：海岸与老城区 — gallery image 6"
+        }
+      ],
+      "highlights": [
+        "海东龙宫寺",
+        "驻韩联合国纪念公墓",
+        "在釜山当地餐厅用午餐（自费）",
+        "札嘎其鱼市场",
+        "BIFF广场",
+        "国际市场",
+        "甘川文化村",
+        "松岛云端散步路",
+        "松岛天空公园（岩南公园）",
+        "龙头山公园与釜山塔"
+      ],
+      "timeUsed": [
+        "≈ 09:45 · 海东龙宫寺 (50 分钟)",
+        "≈ 11:05 · 驻韩联合国纪念公墓 (30 分钟)",
+        "≈ 11:50 · 在釜山当地餐厅用午餐（自费） (40 分钟)",
+        "≈ 12:45 · 札嘎其鱼市场 (30 分钟)",
+        "≈ 13:15 · BIFF广场 (20 分钟)",
+        "≈ 13:35 · 国际市场 (25 分钟)",
+        "≈ 14:20 · 甘川文化村 (45 分钟)",
+        "≈ 15:25 · 松岛云端散步路 (20 分钟)",
+        "≈ 15:45 · 松岛天空公园（岩南公园） (25 分钟)",
+        "≈ 16:25 · 龙头山公园与釜山塔 (20 分钟)"
+      ],
+      "whyOnRoute": "当釜山只是长途旅程中的一天，比起看透三个地方，您更想看清这座城市的整体轮廓时，就选这条。它也是最好的雨天路线 — 市场、塔与拱廊街都有顶。",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_coastal",
+        "imported_from": "busan-cruise-shore-excursion-bus-tour",
+        "imported_stop_count": 10,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-cruise-shore-excursion-bus-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 4,
+      "time": "5–9 小时的任一选项",
+      "duration": "预订时长能容纳的停留点数量",
+      "name": "路线四：自己安排这一天",
+      "category": "您的地点、您的顺序、您的节奏",
+      "description": "您不必非从三条里选一条。把清单发给我们 — 在哪儿看到的地方、别人推荐的餐厅、市场、寺庙、有景观的咖啡馆、家人想去的店 — 司机导游会围绕它安排这一天，并如实告诉您预订的时长里能放下什么。 \n\n混着来是常态：路线一的海东龙宫寺、路线二的天空胶囊、路线三的松岛，午餐随您挑。 \n\n当天也可以改。天气变了、某个点比想象中挤、或者大家就是想在原地多待一会儿，说一声就行。预订的时长里车是您的，也不需要重新报价。",
+      "image": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": [],
+      "highlights": [
+        "把想去的地方发给我们，我们会告诉您预订的时长里实际能放下哪些",
+        "路线一、二、三的停留点可以自由混搭",
+        "当天仍可改动计划，包括在某处多停留",
+        "可加金海机场接送与庆州一日延伸"
+      ],
+      "timeUsed": [
+        "预订时：发来必去清单，我们确认一个可行的顺序",
+        "出发前 24 小时内：更换或删减停留点不影响价格",
+        "当天：与司机导游一起调整节奏与顺序",
+        "超出预订时长：按小时加收，是否可行取决于司机的档期"
+      ],
+      "whyOnRoute": "这正是选择包车而不是拼团的理由。固定行程是所有买了座位的人之间的折中，而这一天只需要适合您这一行人。",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_custom",
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Custom-route option — no fixed POIs by definition."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "酒店接车",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "上午行程",
+      "type": "primary",
+      "theme": "Choose"
+    },
+    {
+      "name": "午餐",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "下午行程",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "送达",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": 1,
+      "title": "先挑一个起点",
+      "summary": "下面三条推荐路线全部取自我们实际运营的釜山线路，停留顺序与时间都是真实的。可以照单全收，也可以当作底稿。"
+    },
+    {
+      "phase": 2,
+      "title": "想怎么改就怎么改",
+      "summary": "去掉一个点、加上在别处看到的地方、午餐吃久一点、整个下午只待在一个地方都行。价格按车按小时计算，改行程不需要重新报价。"
+    },
+    {
+      "phase": 3,
+      "title": "在您需要的地方结束",
+      "summary": "回酒店，或以付费选项在金海机场、釜山站结束。庆州可作为整日延伸选项加入。"
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "从已经跑通的路线出发，再改成您的一天",
+    "body": "下面三条路线不是示意方案。每一条都是我们实际运营的釜山线路的行程本身，停留顺序、时间与时长都直接取自那些产品。所以在您动手改之前，就能看到这种形状的一天实际是怎么衔接的。多数客人会挑一条，调整两三个点，其余照旧。三条路线里的任何一个停留点，都可以挪到另一条里去。"
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "家庭与三代同行 — 一辆车走完，不用换乘，也不用在车站之间步行",
+      "宁愿自己决定这一天、而不是跟着别人走的情侣与小团体",
+      "在釜山只有一天，需要高效动线而不是折中行程的客人",
+      "在节奏、行动或饮食上有固定团无法照顾到的需求的客人",
+      "抵达日或离开日不想浪费半天，想用金海机场选项的客人"
+    ],
+    "lessIdealFor": [
+      "预算紧张的单人旅客 — 按人计价的拼团更便宜",
+      "希望有领队带团、有讲解结构的客人",
+      "超过 14 人的团体 — 需要大巴而不是两辆车"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "为什么是包车，而不是巴士上的一个座位",
+        "icon": "highlight",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "釜山摊得很开",
+            "detail": "海边寺庙在东北，甘川在西边，松岛还要更南，中间隔着桥梁、海岸公路、坡道与老城的单行道。专车把这些移动变成一天的一部分，而不是一天的代价。"
+          },
+          {
+            "label": "改了也不重新报价",
+            "detail": "去掉一个点、加一个点、午餐吃久一点。价格由用车时长和车辆数决定，改行程不影响账单。"
+          },
+          {
+            "label": "时间由您掌握",
+            "detail": "07:00 出发，几乎独享海东龙宫寺；或者早上想睡晚一点，11:00 再开始。跟团出发这两样都做不到。"
+          }
+        ]
+      },
+      {
+        "title": "价格是怎么算的",
+        "icon": "ticket",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "按车、按小时",
+            "detail": "5 至 9 小时，US$160 至 US$255。1 人到 7 人同价，所以五个人一起来，人均分摊比两个人分摊时低得多。"
+          },
+          {
+            "label": "8 人及以上是两辆车",
+            "detail": "这项产品没有更大的单一车型。8 人及以上按两辆车报价 — 同样时长、两倍价格 — 并一起同行。"
+          },
+          {
+            "label": "附加项目明码标价",
+            "detail": "金海机场接或送 US$35，庆州一日 US$55，超过 9 小时每小时 US$35。门票与餐食在您所选的停留点直接支付。"
+          }
+        ]
+      },
+      {
+        "title": "司机导游会替您处理什么",
+        "icon": "shield-check",
+        "iconBg": "bg-emerald-50/80",
+        "iconColor": "text-emerald-600",
+        "items": [
+          {
+            "label": "停车、买票与排队",
+            "detail": "停车费已包含，由司机安排。在排队买票最耗时的地方 — 尤其是天空胶囊 — 由司机导游去排，您在阴凉处等着即可。"
+          },
+          {
+            "label": "把可行与否说清楚",
+            "detail": "如果您的清单塞不进预订的时长，我们会在出发前告诉您，而不是让您下午四点才发现。提前确认行程的意义就在这份坦白。"
+          },
+          {
+            "label": "合您口味的午餐",
+            "detail": "告诉司机导游您吃什么 — 海鲜、猪肉汤饭、素食、清真、给孩子的不辣口味 — 午餐就在您所在的位置附近挑。"
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "接送地点与用车时长的计算方式",
+      "preview": "釜山市区任何住宿地点都可门口接车，出发时间由您决定 — 西面、海云台、南浦洞、釜山站及周边区域。较偏的地址通常也没问题，预订时会与您确认。",
+      "content": [
+        "釜山市区任何住宿地点都可门口接车，出发时间由您决定 — 西面、海云台、南浦洞、釜山站及周边区域。较偏的地址通常也没问题，预订时会与您确认。",
+        "预订的时长从确认的接车时间开始，到送达时结束，而不是从第一个景点算到最后一个景点。景点之间的车程也是这一天的一部分。",
+        "送达地点在釜山境内可自由指定：回原酒店、若要换住处则送到新酒店、釜山站，或直接送到晚餐的餐厅。",
+        "金海国际机场接送为付费选项 — 请见附加选项一节。"
+      ]
+    },
+    {
+      "id": "rates",
+      "title": "用车时长与价格",
+      "preview": "按车计价而非按人：5 小时 US$160 · 6 小时 US$185 · 7 小时 US$205 · 8 小时 US$225 · 9 小时 US$255，适用 1 至 7 人。",
+      "content": [
+        "按车计价而非按人：5 小时 US$160 · 6 小时 US$185 · 7 小时 US$205 · 8 小时 US$225 · 9 小时 US$255，适用 1 至 7 人。",
+        "1 人与 7 人价格相同。费用针对的是车辆与司机导游，因此人越多，人均分摊越低。",
+        "8 人及以上需要第二辆车，同样时长按上述金额的两倍计算。",
+        "超过 9 小时按小时加收，且取决于司机档期。请在预订时询问，而不是当天再提。"
+      ]
+    },
+    {
+      "id": "addons",
+      "title": "附加选项：机场、庆州、延长时间",
+      "preview": "金海机场接或送 US$35，庆州一日 US$55，超过 9 小时每小时 US$35。",
+      "content": [
+        "金海机场接或送 US$35，庆州一日 US$55，超过 9 小时每小时 US$35。",
+        "机场接送：抵达日或离开日很实用 — 取了行李直接在釜山玩一天，最后送到机场，不必先绕回酒店。",
+        "庆州：新罗古都，距釜山车程约 70 分钟。加进包车就成了完整的一日行程 — 佛国寺、大陵苑王陵、皇理团街 — 想看得从容需要 9 小时以上。",
+        "所有附加选项都在预订时确定，因为司机当天的排班要据此安排。"
+      ]
+    },
+    {
+      "id": "customize",
+      "title": "更改行程",
+      "preview": "三条路线是起点，不是固定产品。任何停留点都可以增加、删除、调换顺序或替换。",
+      "content": [
+        "三条路线是起点，不是固定产品。任何停留点都可以增加、删除、调换顺序或替换。",
+        "预订时或出发前 24 小时内把改动发来，司机导游会确认新的顺序，并如实告诉您哪些放得下、哪些放不下。",
+        "当天仍可因天气、人流，或单纯因为大家想在某处多待而调整顺序。",
+        "改行程不改价格。您支付的金额由用车时长和车辆数决定，与去哪里无关。"
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "车辆、司机与载客量",
+      "preview": "1 至 3 人为轿车或 SUV，4 至 7 人为中型商务车。车辆仅供您一行人使用，不与其他订单拼车。",
+      "content": [
+        "1 至 3 人为轿车或 SUV，4 至 7 人为中型商务车。车辆仅供您一行人使用，不与其他订单拼车。",
+        "司机持证并投保，可用英语沟通。中文司机通常可在预订时提出要求，其他语言视当天排班而定。",
+        "预订时告知孩子年龄，可免费准备儿童安全座椅。",
+        "机场接送带行李没有问题，但满员乘客再加上一整套大号行李箱是装不下的。请告知箱子数量，我们会派合适的车。"
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "费用包含与现场自付",
+      "preview": "包含：仅供您一行人的车辆与司机导游 · 釜山市内接送 · 过路费、停车费与油费 · 预订手续费。",
+      "content": [
+        "包含：仅供您一行人的车辆与司机导游 · 釜山市内接送 · 过路费、停车费与油费 · 预订手续费。",
+        "不包含：您所选停留点的门票与乘车券 · 餐食与饮料 · 路线二的天空胶囊车票 · 个人消费 · 小费 · 旅行保险。",
+        "这些路线的门票都不贵，而且不少最好的停留点是免费的 — 甘川与鸡田谷两座村子、联合国纪念公园、海云台海水浴场、各处市场以及松岛天空步道都不收门票。",
+        "在代排队更快的地方，司机导游可以替您购票，当天以现金结算即可。"
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "附加费、取消政策，以及这项包车适合谁",
+      "preview": "非常规时段附加费：07:00 前出发或 20:00 后结束，按小时加收，当天支付。",
+      "content": [
+        "非常规时段附加费：07:00 前出发或 20:00 后结束，按小时加收，当天支付。",
+        "取消：出发前 24 小时以上免费取消。24 小时以内不予退款。",
+        "庆州以外、离开釜山的目的地需单独报价，请在预订前咨询。",
+        "这项包车适合想自己决定行程的客人。如果您更愿意按既定路线走并少花一些，我们有按人计价的拼团一日游，覆盖路线一与路线三。"
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "summary": "釜山属湿润亚热带气候，四季分明。邮轮旺季集中在春季（3月至5月）和秋季（9月至11月），气温宜人，12–25°C，降雨较少。夏季（6月至8月）温暖潮湿，偶有季风阵雨。冬季（12月至2月）凉爽多风。",
+    "advice": "春秋季建议穿着多层衣物；夏季做好防晒并备轻薄防雨外套；冬季前往太宗台海岸悬崖时请穿厚实外套并戴手套。"
+  },
+  "seasonalVariations": [
+    {
+      "season": "春季（3月至5月）",
+      "summary": "樱花盛开期约在三月下旬至四月初，赏花胜地包括达摩之丘、龙头山公园和广安里海滩。气温宜人，12–22°C，建议穿着轻薄叠层衣物。",
+      "swaps": "樱花季可要求加上迎月岭兜风与广安里的额外停留，从路线一、二过去只要几分钟。"
+    },
+    {
+      "season": "夏季（6月至8月）",
+      "summary": "温暖潮湿，气温25–32°C，6月至7月可能出现季风阵雨。日落较晚，行程末尾可额外安排一处海岸停留。",
+      "swaps": "炎热的午后可把甘川调到上午，正午时段用有空调的天空胶囊或有顶的市场。"
+    },
+    {
+      "season": "秋季（9月至11月）",
+      "summary": "韩国旅行最佳天气——气温15–25°C，湿度低，阳光金灿。邮轮旺季在此时达到高峰。",
+      "swaps": "秋天三条路线都可原样使用；若预订 9 小时，值得加上赏枫的梵鱼寺。"
+    },
+    {
+      "season": "冬季（12月至2月）",
+      "summary": "凉爽多风，气温0–10°C，但邮轮班次仍照常运行。海岸景点在此时呈现出萧瑟而壮美的景致。",
+      "swaps": "冬天天黑得早，把户外观景放在前面，用市场、塔或拱廊街这类有顶的地方收尾。"
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "user-check",
+      "title": "持证的本地司机导游",
+      "detail": "每位司机都持证、投保、可用英语沟通，并经 AtoC Korea 釜山合作网络核实。",
+      "body": "经 AtoC Korea 釜山合作网络核实的持证本地司机导游，不是贴着旅游标签的网约车。"
+    },
+    {
+      "icon": "shield-check",
+      "title": "无论走哪条路线，价格只有一个",
+      "detail": "按车按小时计费，因此增加、删除或调换停留点都不会改变您支付的金额。",
+      "body": "无论走哪条路线价格只有一个：总额由预订时长与车辆数决定，改动停留点不影响金额。"
+    },
+    {
+      "icon": "clock",
+      "title": "提前 24 小时免费取消",
+      "detail": "接车前 24 小时以上可免费取消 — 对靠天气吃饭的釜山一日来说很重要。",
+      "body": "接车前 24 小时以上免费取消。在一场雨就能毁掉一天的海滨城市，这一条很实在。"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "step": 1,
+      "title": "在线预订",
+      "detail": "选好日期与用车时长，先预订、后付款。",
+      "description": "在线预订并选择日期与用车时长，即时确认。"
+    },
+    {
+      "step": 2,
+      "title": "告诉我们您住哪里",
+      "detail": "发来住宿地点与希望的出发时间，我们 24 小时内确认接车安排。",
+      "description": "请发来住宿地点与希望的出发时间，以便确认接车地点与时间。"
+    },
+    {
+      "step": 3,
+      "title": "选一条路线，或自己安排",
+      "detail": "从三条路线中挑一条，或把您自己的清单发来 — 出发前 24 小时内均可。",
+      "description": "从三条推荐路线中选择，或发来您自己的停留点清单，我们会确认预订时长内能安排哪些。"
+    },
+    {
+      "step": 4,
+      "title": "接收司机信息",
+      "detail": "司机姓名、车牌号与联系电话，于前一天傍晚发送。",
+      "description": "司机姓名、车牌号与联系电话会在包车前一天傍晚发送给您。"
+    },
+    {
+      "step": 5,
+      "title": "在酒店会合",
+      "detail": "约定时间，司机导游在大堂或门口等候。",
+      "description": "在确认的时间于住宿处与司机导游会合，预订时长自此开始计算。"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "capacity",
+      "question": "最多能坐几个人？价格会随人数变化吗？",
+      "answer": "1 至 7 人同乘一辆车，价格相同：1 至 3 人为轿车或 SUV，4 至 7 人为中型商务车。价格不随人数变化，所以六口之家和一对情侣付的总额一样。8 人起我们会加派第二辆车，同样时长按单车价格的两倍计算。"
+    },
+    {
+      "id": "hours",
+      "question": "用车时长怎么算？超时怎么办？",
+      "answer": "从确认的接车时间到送达为止都计入时长，包括景点之间的车程。包车按 5、6、7、8、9 小时出售。若需超过 9 小时，每多一小时 US$35，且因取决于司机档期，需在预订时确定，而非当天临时提出。"
+    },
+    {
+      "id": "customise",
+      "question": "推荐路线可以改吗？",
+      "answer": "可以，这正是这项产品的用意。三条路线是我们已在运营的釜山线路的真实行程，作为起点提供。任何停留点都可以增加、删除、调换顺序或替换，也可以在路线之间混搭，或发来一份完全不同的清单。改动免费，出发前 24 小时内发来即可；当天也可因天气或人流调整顺序。"
+    },
+    {
+      "id": "airport",
+      "question": "可以在金海机场接我们或送我们去机场吗？",
+      "answer": "可以，单程 US$35 的付费选项。这是抵达日或离开日常见的用法：取了行李，直接用预订的时长游览釜山，最后送到机场，不必先回酒店。"
+    },
+    {
+      "id": "gyeongju",
+      "question": "可以不待在釜山，改去庆州吗？",
+      "answer": "可以，加收 US$55。庆州距釜山车程约 70 分钟，因此它是整日行程而非半天 — 通常是佛国寺、大陵苑王陵公园与皇理团街这样的组合。想从容一些，建议预订 9 小时以上。"
+    },
+    {
+      "id": "included",
+      "question": "门票和午餐包含在内吗？",
+      "answer": "不包含。包车费用涵盖车辆、司机导游、油费、过路费与停车费。门票、天空胶囊等乘车券以及餐食，在您所选的停留点直接支付。这些路线上不少好去处是免费的 — 两座彩绘村、联合国纪念公园、各处市场与松岛天空步道都不收门票。"
+    },
+    {
+      "id": "language",
+      "question": "司机导游说什么语言？",
+      "answer": "每一次包车都提供英语服务。中文司机导游通常可在预订时提出要求。其他语言取决于当天的排班情况，因此请在预订前询问，而不是预订后。"
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "选择日期、用车时长与人数，即可查看实时可订状态并完成预订。",
+    "price": {
+      "amountLabel": "160",
+      "currency": "USD",
+      "per": "vehicle",
+      "salePriceUsd": 160
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "您在釜山的住宿处",
+        "time": "由您决定的出发时间，通常为 07:00–11:00",
+        "note": "釜山市区任何住宿地点均可门口接车 — 西面、海云台、南浦洞、釜山站及周边区域。较偏的地址通常也可以，预订时确认。"
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "釜山境内您指定的任何地点",
+        "approx_time": "预订时长结束时",
+        "note": "可回原住宿处、若换住处则送到新酒店、釜山站，或直接送到晚餐的餐厅。金海机场为付费选项。"
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": [
+      "预订时长从确认的接车时间算到送达为止，包括景点之间的车程。",
+      "金海国际机场接或送加收 US$35，于预订时安排。"
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "busan-private-car-charter-city-tour",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "busan_city",
+    "region_type": "busan_city",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 8,
+    "region_tags": [
+      "busan",
+      "busan_central",
+      "busan_eastern",
+      "busan_western"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "city_highlights",
+      "coastal",
+      "cultural"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.85,
+    "photo_level": 0.85,
+    "culture_level": 0.8,
+    "relax_level": 0.55,
+    "first_time_fit": 0.95,
+    "family_fit": 0.85,
+    "senior_fit": 0.9,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.5,
+    "active_traveler_fit": 0.65,
+    "adult_family_fit": 0.85,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.65,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.9,
+    "mobility_friendly_fit": 0.75,
+    "stroller_fit": 0.5,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.7,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.55,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.55,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.1,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.7,
+    "comfort_level": 0.85,
+    "budget_fit": 0.2,
+    "premium_fit": 0.85,
+    "small_group_fit": 0,
+    "private_fit": 0.95,
+    "bus_fit": 0.1,
+    "price_band": "mid_to_premium",
+    "pickup_base": "busan_hotel",
+    "return_time_band": "late_afternoon",
+    "duration_band": "5h-9h",
+    "min_recommended_age": 0,
+    "hard_constraints": [
+      "Private charter — 1 to 7 guests in one vehicle. 8 or more guests are quoted as two vehicles.",
+      "Sold by the hour: 5 to 9 hours. Each hour past 9 is a paid extension, subject to driver availability.",
+      "Gimhae Airport pickup or drop-off and the Gyeongju extension are paid add-ons, not included in the base hours."
+    ],
+    "walking_notes": "Door-to-door by vehicle between stops. The only sustained walking is inside a chosen stop — Gamcheon Culture Village is a steep hillside village, and market stops are flat but crowded.",
+    "keywords": [
+      "Busan private car charter",
+      "Busan private day tour",
+      "Busan hotel pickup private tour",
+      "Busan chauffeur day tour",
+      "Busan to Gyeongju private car"
+    ],
+    "synonym_hints": [
+      "private taxi",
+      "private driver",
+      "shore excursion",
+      "cruise day tour",
+      "private guide",
+      "customized itinerary",
+      "cruise terminal pickup"
+    ],
+    "seasonality": {
+      "spring": 0.9,
+      "summer": 0.85,
+      "autumn": 0.95,
+      "winter": 0.7
+    },
+    "pickup_base_normalized": "busan_central_pickup",
+    "vehicle_type_legacy": "private_sedan_or_van",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "private_tour_fit": 1,
+    "shared_tour_fit": 0,
+    "customizable_route_fit": 0.6,
+    "flexibility_fit": 0.85,
+    "solo_fit": 0.5,
+    "family_with_kids_fit": 0.95,
+    "small_party_fit": 1,
+    "large_group_fit": 0.6,
+    "first_time_busan_fit": 1,
+    "repeat_visitor_fit": 0.6,
+    "cruise_passenger_fit": 0.3,
+    "non_cruise_day_tripper_fit": 1,
+    "korean_war_history_fit": 1,
+    "war_memorial_fit": 1,
+    "un_heritage_fit": 1,
+    "wheelchair_accessible_anchor_fit": 0.6,
+    "buddhist_temple_fit": 0,
+    "joseon_era_fit": 0.4,
+    "silla_heritage_fit": 0.2,
+    "modern_korean_history_fit": 0.85,
+    "coastal_fit": 1,
+    "coastal_cliff_fit": 1,
+    "coastal_lighthouse_fit": 1,
+    "city_viewpoint_fit": 1,
+    "panoramic_view_fit": 1,
+    "skywalk_fit": 0,
+    "mountain_fit": 0.3,
+    "forest_fit": 0.5,
+    "geological_heritage_fit": 0.85,
+    "mural_village_fit": 1,
+    "hillside_village_fit": 1,
+    "art_immersive_fit": 0.85,
+    "photo_friendly_fit": 1,
+    "instagrammable_fit": 1,
+    "hanok_village_fit": 0,
+    "fish_market_fit": 1,
+    "seafood_fit": 1,
+    "street_food_fit": 0.85,
+    "market_fit": 1,
+    "lunch_included_fit": 0,
+    "lunch_self_pay_fit": 1,
+    "walking_intensity": 0.7,
+    "stairs_intensity": 0.85,
+    "elderly_friendly_fit": 0.5,
+    "stroller_friendly_fit": 0.4,
+    "compact_route_fit": 0.7,
+    "all_day_fit": 0.7,
+    "half_day_fit": 0,
+    "private_vehicle_fit": 1,
+    "minicoach_fit": 0,
+    "public_transit_alternative_fit": 0.4,
+    "english_guide_fit": 1,
+    "korean_only_fit": 0,
+    "multilingual_fit": 0.85,
+    "spring_fit": 0.95,
+    "summer_fit": 0.85,
+    "autumn_fit": 1,
+    "winter_fit": 0.7,
+    "rainy_day_fit": 0.4,
+    "luxury_fit": 0.7,
+    "value_priced_fit": 0.4,
+    "scenic_intensity": 0.95,
+    "iconic_landmarks_fit": 1,
+    "off_beaten_path_fit": 0.3,
+    "cruise_shore_excursion_fit": 0,
+    "private_cruise_charter_fit": 0,
+    "downtown_busan_fit": 1,
+    "yongdusan_landmark_fit": 1,
+    "diamond_tower_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "cruise_market_segment_fit": 0.2,
+    "busan_port_pickup_fit": 0.2,
+    "cruise_reboarding_safety_buffer_fit": 0,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "private_charter_format_fit": 1,
+    "flexible_pickup_dropoff_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "busan_signature_route_fit": 1,
+    "seaside_temple_fit": 0,
+    "natural_geopark_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (cruise port operating window)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "busan",
+      "private_charter",
+      "customizable_route",
+      "city_highlights",
+      "coastal"
+    ],
+    "secondary_themes": [
+      "seaside_temple",
+      "culture_village",
+      "sky_capsule",
+      "market",
+      "hotel_pickup",
+      "airport_transfer_addon",
+      "gyeongju_extension"
+    ],
+    "best_for": [
+      "families",
+      "small_private_groups",
+      "seniors",
+      "first_time_busan",
+      "flexible_planners"
+    ],
+    "not_recommended_for": [
+      "solo_budget_travelers",
+      "fixed_itinerary_seekers",
+      "large_coach_groups"
+    ],
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Gamcheon Culture Village",
+      "Haeundae Blueline Park Sky Capsule",
+      "Jagalchi Market",
+      "UN Memorial Cemetery in Korea",
+      "Songdo Cloud Trails Skywalk"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "competing_products": [
+      "busan-private-car-charter-cruise-shore",
+      "busan-top-attractions-day-tour",
+      "busan-small-group-yonggungsa-skycapsule-gamcheon-tour"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on these routes. Cultural weight comes from the 1376 seaside temple, the Korean-War refugee hillside at Gamcheon, and the UN Memorial Cemetery."
+  },
+  "itinerary_variants": [],
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "5h",
+      "6h",
+      "7h",
+      "8h",
+      "9h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–7 pax",
+        "paxMin": 1,
+        "paxMax": 7,
+        "prices": {
+          "5h": 160,
+          "6h": 185,
+          "7h": 205,
+          "8h": 225,
+          "9h": 255
+        }
+      },
+      {
+        "paxLabel": "8+ pax",
+        "paxMin": 8,
+        "paxMax": 14,
+        "prices": {
+          "5h": 320,
+          "6h": 370,
+          "7h": 410,
+          "8h": 450,
+          "9h": 510
+        }
+      }
+    ]
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-07",
+    "last_modified": "2026-08-07",
+    "version_history": [
+      "v1_authored_2026_08_07"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_07": "New product (owner instruction 2026-08-07: Busan had a cruise-port private charter but no city one). Structural donor: busan-private-car-charter-cruise-shore (glance/weather/subnav/reviews blocks per locale). The three recommended routes are IMPORTED at build time from busan-top-attractions-day-tour, busan-small-group-yonggungsa-skycapsule-gamcheon-tour and busan-cruise-shore-excursion-bus-tour — stop names and times come from those products' own bundles in the same locale, so nothing here is a re-translation and re-running the builder re-syncs them. Fourth drawer is the custom-route option. Rate card set by the owner in KRW (5h 230,000 / 6h 260,000 / 7h 290,000 / 8h 320,000 / 9h 360,000; 1–7 pax one vehicle, 8+ a second vehicle at twice the cell) and converted at 1,423.48 KRW/USD, rounded to the nearest $5. Add-ons: Gimhae Airport pickup or drop-off +50,000 KRW, Gyeongju +80,000 KRW, each hour past 9h +50,000 KRW."
+    }
+  }
+}

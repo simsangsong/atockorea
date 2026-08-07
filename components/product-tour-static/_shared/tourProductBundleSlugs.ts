@@ -15,6 +15,7 @@ export const STATIC_TOUR_PRODUCT_BUNDLE_SLUG_LIST = [
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-cruise-shore-excursion-bus-tour",
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
+  "busan-private-car-charter-city-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",

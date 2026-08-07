@@ -34,11 +34,31 @@ import { formatChargeDuration } from '@/components/product-tour-static/_shared/c
 
 const HOUR_GRID_CHARTERS = [
   'jeju-island-private-car-charter-tour',
-  'busan-private-car-charter-cruise-shore',
   // Joined the same curve on 2026-08-07 (owner). Its slug still says "10hr" —
   // that is deliberate, the live OTA listing URLs point at it.
   'seoul-suburbs-private-chartered-car-10hr',
+  // New 2026-08-07 — the hotel-pickup Busan charter, sold 5h–9h. It took over
+  // the hour grid from the cruise SKU below on the same day.
+  'busan-private-car-charter-city-tour',
 ] as const;
+
+/**
+ * Charters sold as ONE cell, where the guest picks no duration at all.
+ *
+ * `busan-private-car-charter-cruise-shore` was on the hour grid until
+ * 2026-08-07, when the owner fixed it at 8 hours / ₩380,000 → US$265. Moving it
+ * here rather than deleting the assertion matters: a flat charter has its own
+ * way of going wrong (a second duration creeping back, or a tier priced under a
+ * key nothing selects), and `durations.length === 1` is what makes the booking
+ * card hide the duration picker and the rate sheet head its column "Price".
+ *
+ * ⚠ `incheon-seoul-private-car-shore-excursion-cruise` belongs here by the same
+ * owner decision — its DB row is `["flat"]` at 419 — but its BUNDLE still holds
+ * a 4h–10h grid, including the 4h and 10h tiers retired earlier. It is not
+ * listed because it would fail, and it would fail because it is genuinely wrong,
+ * not because the rule is. Reported separately; fixing the bundle is the fix.
+ */
+const FLAT_RATE_CHARTERS = ['busan-private-car-charter-cruise-shore'] as const;
 
 const LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'] as const;
 
@@ -162,6 +182,38 @@ describe('the charter hour grid is 5h–9h', () => {
         ),
       ];
       expect(`${locale}:${retired.join(',')}`).toBe(`${locale}:`);
+    }
+  });
+});
+
+describe('a flat-rate charter offers exactly one cell', () => {
+  it.each(FLAT_RATE_CHARTERS)('%s stores a single "flat" duration', async (slug) => {
+    for (const locale of LOCALES) {
+      const p = await pricingOf(slug, locale);
+      expect(`${locale}:${JSON.stringify(p?.durations)}`).toBe(`${locale}:${JSON.stringify(['flat'])}`);
+    }
+  });
+
+  it.each(FLAT_RATE_CHARTERS)('%s prices every party size under that one key', async (slug) => {
+    for (const locale of LOCALES) {
+      const p = await pricingOf(slug, locale);
+      expect(p?.tiers?.length ?? 0).toBeGreaterThan(0);
+      for (const tier of p!.tiers!) {
+        expect(`${locale} ${tier.paxLabel}: ${Object.keys(tier.prices ?? {}).join(',')}`).toBe(
+          `${locale} ${tier.paxLabel}: flat`,
+        );
+      }
+    }
+  });
+
+  it.each(FLAT_RATE_CHARTERS)('%s carries no leftover hour tier', async (slug) => {
+    for (const locale of LOCALES) {
+      const p = await pricingOf(slug, locale);
+      const hours = [
+        ...(p?.durations ?? []).filter((d) => /^\d+h$/.test(d)),
+        ...(p?.tiers ?? []).flatMap((t) => Object.keys(t.prices ?? {}).filter((k) => /^\d+h$/.test(k))),
+      ];
+      expect(`${locale}:${hours.join(',')}`).toBe(`${locale}:`);
     }
   });
 });

@@ -30,6 +30,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "busan-gyeongju-unesco-legacy-tour-national-museum",
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+  "busan-private-car-charter-city-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
@@ -167,6 +168,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "Busan Private Car Charter",
+        "subtitle": "Build your own Busan day with a private licensed driver-guide, picked up at your hotel and priced by the hour.",
+        "region": "Busan (city + coast)",
+        "duration": "5–9 hours",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Private Tour",
+          "Fully Customizable",
+          "Busan Hotel Pickup"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "A private car and licensed driver-guide for your group alone, anywhere in Busan. Start from one of three recommended routes — the classic top-attractions day, the sea temple and Sky Capsule coast, or the old-downtown and Songdo loop — then move, drop or add stops until the day is yours. Hotel pickup included, 5 to 9 hours, one price per vehicle for up to 7 guests."
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -188,7 +213,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -1110,6 +1135,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "부산 프라이빗 차량 전세",
+        "subtitle": "숙소로 모시러 가는 전용 차량과 자격증 있는 기사 가이드로, 시간 단위 요금으로 부산 하루를 직접 짭니다.",
+        "region": "부산 (시내 + 해안)",
+        "duration": "5~9시간",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "프라이빗 투어",
+          "일정 자유 변경",
+          "부산 숙소 픽업"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "일행만 타는 전용 차량과 자격증 있는 기사 가이드가 부산 어디든 함께합니다. 추천 코스 세 가지 — 대표 명소를 도는 클래식 코스, 해동 용궁사와 스카이캡슐의 해안 코스, 원도심과 송도를 잇는 코스 — 중 하나로 시작해 스톱을 옮기고 빼고 더하면 그날은 일행의 하루가 됩니다. 숙소 픽업 포함, 5~9시간, 7인까지 차량당 한 가격."
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -1131,7 +1180,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -2053,6 +2102,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "釜山私人包车",
+        "subtitle": "专属车辆与持证司机导游到酒店接您，按小时计费，釜山这一天由您自己安排。",
+        "region": "釜山（市区 + 海岸）",
+        "duration": "5–9 小时",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "私人包团",
+          "行程自由调整",
+          "釜山酒店接送"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "只属于您一行人的专车与持证司机导游，带您走遍釜山。可从三条推荐路线出发 — 经典的热门景点线、海东龙宫寺与天空胶囊的海岸线、老城区与松岛的环线 — 再把停留点调整、删减或增加，这一天就完全是您的。含酒店接送，5 至 9 小时，7 人以内按车计价。"
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -2074,7 +2147,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。"
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -2996,6 +3069,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "釜山私人包車",
+        "subtitle": "專屬車輛與持牌司機導遊到飯店接您，按小時計費，釜山這一天由您自己安排。",
+        "region": "釜山（市區 + 海岸）",
+        "duration": "5–9 小時",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "私人包團",
+          "行程自由調整",
+          "釜山飯店接送"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "只屬於您一行人的專車與持牌司機導遊，帶您走遍釜山。可從三條推薦路線出發 — 經典的熱門景點線、海東龍宮寺與天空膠囊的海岸線、老城區與松島的環線 — 再把停留點調整、刪減或增加，這一天就完全是您的。含飯店接送，5 至 9 小時，7 人以內按車計價。"
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -3017,7 +3114,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -3939,6 +4036,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "Busan: coche privado con chófer",
+        "subtitle": "Diseña tu propio día en Busan con un chófer-guía autorizado, recogida en tu alojamiento y tarifa por horas.",
+        "region": "Busan (ciudad + costa)",
+        "duration": "5–9 horas",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "Tour privado",
+          "Totalmente personalizable",
+          "Recogida en tu hotel de Busan"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "Un coche privado y un chófer-guía autorizado solo para tu grupo, por todo Busan. Empieza por una de las tres rutas recomendadas — el día clásico de imprescindibles, la costa del templo marino y la Sky Capsule, o el circuito del casco antiguo y Songdo — y luego mueve, quita o añade paradas hasta que el día sea tuyo. Recogida en el alojamiento incluida, de 5 a 9 horas, un precio por vehículo para hasta 7 personas."
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -3960,7 +4081,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -4879,6 +5000,30 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "amountLabel": ""
       }
     },
+    "busan-private-car-charter-city-tour": {
+      "catalog_card": {
+        "slug": "busan-private-car-charter-city-tour",
+        "title": "釜山プライベート貸切チャーター",
+        "subtitle": "ホテルまでお迎えに上がる専用車と資格を持つドライバーガイドで、時間制料金の釜山一日を自分で組み立てられます。",
+        "region": "釜山（市内＋海岸）",
+        "duration": "5〜9時間",
+        "stopsCount": 4,
+        "rating": 0,
+        "reviewCount": 0,
+        "badges": [
+          "プライベートツアー",
+          "行程は自由に変更",
+          "釜山ホテル送迎"
+        ],
+        "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "priceLabel": "",
+        "shortCardDescription": "同行者だけの専用車と、資格を持つドライバーガイドが釜山のどこへでもご案内します。おすすめルート3種 — 定番の人気スポット巡り、海東龍宮寺とスカイカプセルの海岸ルート、旧市街と松島を結ぶルート — から選び、立ち寄り先を入れ替え・削除・追加すれば、その日はお客様だけの一日になります。ホテル送迎込み、5〜9時間、7名まで車両1台の同一料金。"
+      },
+      "price": {
+        "amountLabel": "160"
+      }
+    },
     "busan-private-car-charter-cruise-shore": {
       "catalog_card": {
         "slug": "busan-private-car-charter-cruise-shore",
@@ -4900,7 +5045,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
       },
       "price": {
-        "amountLabel": "169"
+        "amountLabel": "265"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {

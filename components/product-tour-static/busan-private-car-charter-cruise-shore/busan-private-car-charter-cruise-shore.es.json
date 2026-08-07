@@ -45,10 +45,10 @@
   "headlineLine1": "Busan Crucero",
   "headlineLine2": "Coche Privado",
   "price": {
-    "amountLabel": "169",
+    "amountLabel": "265",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 169
+    "salePriceUsd": 265
   },
   "hero": {
     "imageUrl": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
@@ -1370,10 +1370,10 @@
   "sticky_booking_bar": {
     "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
-      "amountLabel": "169",
+      "amountLabel": "265",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 169
+      "salePriceUsd": 265
     }
   },
   "pickup_dropoff": {
@@ -2438,11 +2438,7 @@
     "currency": "USD",
     "unit": "vehicle",
     "durations": [
-      "5h",
-      "6h",
-      "7h",
-      "8h",
-      "9h"
+      "flat"
     ],
     "tiers": [
       {
@@ -2450,11 +2446,7 @@
         "paxMin": 1,
         "paxMax": 7,
         "prices": {
-          "5h": 169,
-          "6h": 189,
-          "7h": 209,
-          "8h": 230,
-          "9h": 250
+          "flat": 265
         }
       },
       {
@@ -2462,11 +2454,7 @@
         "paxMin": 8,
         "paxMax": 14,
         "prices": {
-          "5h": 338,
-          "6h": 378,
-          "7h": 418,
-          "8h": 460,
-          "9h": 500
+          "flat": 530
         }
       }
     ]

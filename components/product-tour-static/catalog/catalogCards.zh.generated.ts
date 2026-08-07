@@ -105,6 +105,30 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "busan-private-car-charter-city-tour": {
+    "catalog_card": {
+      "slug": "busan-private-car-charter-city-tour",
+      "title": "釜山私人包车",
+      "subtitle": "专属车辆与持证司机导游到酒店接您，按小时计费，釜山这一天由您自己安排。",
+      "region": "釜山（市区 + 海岸）",
+      "duration": "5–9 小时",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "私人包团",
+        "行程自由调整",
+        "釜山酒店接送"
+      ],
+      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "priceLabel": "",
+      "shortCardDescription": "只属于您一行人的专车与持证司机导游，带您走遍釜山。可从三条推荐路线出发 — 经典的热门景点线、海东龙宫寺与天空胶囊的海岸线、老城区与松岛的环线 — 再把停留点调整、删减或增加，这一天就完全是您的。含酒店接送，5 至 9 小时，7 人以内按车计价。"
+    },
+    "price": {
+      "amountLabel": "160"
+    }
+  },
   "busan-private-car-charter-cruise-shore": {
     "catalog_card": {
       "slug": "busan-private-car-charter-cruise-shore",
@@ -126,7 +150,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。"
     },
     "price": {
-      "amountLabel": "169"
+      "amountLabel": "265"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

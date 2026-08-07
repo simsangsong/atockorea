@@ -69,8 +69,14 @@ export const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   // listings exactly, to the cent. Keep in lockstep with `staticTourProductRegistry.ts`.
   "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
-  // Rate-card minimum (5h, 1–6 pax) — see staticTourProductRegistry.ts.
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169, maxGroupSize: 14 },
+  // Flat 8-hour charter since 2026-08-07 (owner): ₩380,000 → $265 per vehicle,
+  // $530 for 8+ pax because that is a second car. One cell on the card, so the
+  // list price and the charged price are the same number by construction.
+  // maxGroupSize 14 = two vehicles of seven.
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 265, maxGroupSize: 14 },
+  // Sibling city charter, new 2026-08-07 (owner): same 1–7 / 8+ vehicle rule,
+  // sold on a 5h–9h grid instead of one cell. 160 = the cheapest cell (5h).
+  "busan-private-car-charter-city-tour": { listPriceUsd: 160, maxGroupSize: 14 },
   "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },

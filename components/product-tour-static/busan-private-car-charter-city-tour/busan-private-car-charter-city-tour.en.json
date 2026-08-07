@@ -1,0 +1,1312 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "en",
+  "product_id": "busan-private-car-charter-city-tour",
+  "seo": {
+    "pageTitle": "Busan Private Car Charter with Driver (5–9 hours) | AtoC Korea",
+    "metaDescription": "Private car charter in Busan with a licensed English-speaking driver-guide and hotel pickup. Choose from three recommended routes or build your own. 5 to 9 hours, one price per vehicle for up to 7 guests, Gimhae Airport and Gyeongju add-ons available.",
+    "title": "Busan Private Car Charter with Driver-Guide | AtoC Korea",
+    "description": "Hourly private car charter across Busan with hotel pickup, a licensed driver-guide, and a fully customizable route built from our three most-booked Busan itineraries.",
+    "primaryKeywords": [
+      "Busan private car charter",
+      "Busan private day tour",
+      "Busan hotel pickup private tour",
+      "Busan chauffeur day tour",
+      "Busan to Gyeongju private car"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+  },
+  "catalog_card": {
+    "slug": "busan-private-car-charter-city-tour",
+    "title": "Busan Private Car Charter",
+    "subtitle": "Build your own Busan day with a private licensed driver-guide, picked up at your hotel and priced by the hour.",
+    "region": "Busan (city + coast)",
+    "duration": "5–9 hours",
+    "stopsCount": 4,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Private Tour",
+      "Fully Customizable",
+      "Busan Hotel Pickup"
+    ],
+    "tags": [
+      "private_tour",
+      "fully_customizable",
+      "hotel_pickup",
+      "hourly_rate"
+    ],
+    "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "priceLabel": "",
+    "shortCardDescription": "A private car and licensed driver-guide for your group alone, anywhere in Busan. Start from one of three recommended routes — the classic top-attractions day, the sea temple and Sky Capsule coast, or the old-downtown and Songdo loop — then move, drop or add stops until the day is yours. Hotel pickup included, 5 to 9 hours, one price per vehicle for up to 7 guests."
+  },
+  "headlineLine1": "Busan City",
+  "headlineLine2": "Private Car Charter",
+  "price": {
+    "amountLabel": "160",
+    "currency": "USD",
+    "per": "vehicle",
+    "salePriceUsd": 160
+  },
+  "hero": {
+    "imageUrl": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+    "imagePosition": "center 45%",
+    "images": [
+      "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+    ],
+    "tagline": "Three ready-made Busan days to start from, and a driver-guide who will rearrange any of them — sea temple, Sky Capsule, painted hillsides, fish markets, coastal skywalks — into the day your group actually wants.",
+    "pills": [
+      "Private Vehicle",
+      "Licensed Driver-Guide",
+      "Hotel Pickup"
+    ],
+    "meta": {
+      "duration": "5–9 hours",
+      "region": "Busan (city + coast)",
+      "stops": "Custom",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Overview"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerary"
+    },
+    {
+      "id": "details",
+      "label": "Details"
+    },
+    {
+      "id": "faq",
+      "label": "FAQ"
+    },
+    {
+      "id": "reviews",
+      "label": "Reviews"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Photo Potential",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "mountain",
+      "label": "Scenery",
+      "value": "Good",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Walking",
+      "value": "Moderate",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Rain Suitability",
+      "value": "Excellent",
+      "level": 5
+    },
+    {
+      "icon": "users",
+      "label": "Family Suitability",
+      "value": "Excellent",
+      "level": 5
+    },
+    {
+      "icon": "gauge",
+      "label": "Pace",
+      "value": "Flexible",
+      "level": 5
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Route 1: Busan Top Attractions",
+      "caption": "Route 1: Busan Top Attractions — 1",
+      "alt": "Route 1: Busan Top Attractions — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "Route 1: Busan Top Attractions",
+      "caption": "Route 1: Busan Top Attractions — 2",
+      "alt": "Route 1: Busan Top Attractions — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "Route 1: Busan Top Attractions",
+      "caption": "Route 1: Busan Top Attractions — 3",
+      "alt": "Route 1: Busan Top Attractions — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Route 1: Busan Top Attractions",
+      "caption": "Route 1: Busan Top Attractions — 4",
+      "alt": "Route 1: Busan Top Attractions — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Route 1: Busan Top Attractions",
+      "caption": "Route 1: Busan Top Attractions — 5",
+      "alt": "Route 1: Busan Top Attractions — gallery image 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 1",
+      "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 2",
+      "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 2"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 3",
+      "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 3"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 1",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 2",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 3",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 4",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 5",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Route 3: Coast and Old Downtown",
+      "caption": "Route 3: Coast and Old Downtown — 6",
+      "alt": "Route 3: Coast and Old Downtown — gallery image 6"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "Best in 8–9 hours",
+      "duration": "6 stops",
+      "name": "Route 1: Busan Top Attractions",
+      "category": "Sea temple, coastal park, memorial, painted village, fish market",
+      "description": "The classic first-visit Busan day, taken from our **Busan Top Attractions Day Tour**. It runs east to west across the city: the cliffside sea temple in the morning, the coastal park and Blue Line Park stretch before lunch, then the quiet of the UN Memorial Cemetery, the painted hillside of Gamcheon, and Jagalchi's working fish market to finish. \n\nAs a charter, it loses the join-in tour's station-meeting chain, so the same stops fit comfortably with time left over — that spare time usually goes to Gamcheon, which people always want longer at.",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "Route 1: Busan Top Attractions",
+          "caption": "Route 1: Busan Top Attractions — 1",
+          "alt": "Route 1: Busan Top Attractions — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "Route 1: Busan Top Attractions",
+          "caption": "Route 1: Busan Top Attractions — 2",
+          "alt": "Route 1: Busan Top Attractions — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "Route 1: Busan Top Attractions",
+          "caption": "Route 1: Busan Top Attractions — 3",
+          "alt": "Route 1: Busan Top Attractions — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Route 1: Busan Top Attractions",
+          "caption": "Route 1: Busan Top Attractions — 4",
+          "alt": "Route 1: Busan Top Attractions — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Route 1: Busan Top Attractions",
+          "caption": "Route 1: Busan Top Attractions — 5",
+          "alt": "Route 1: Busan Top Attractions — gallery image 5"
+        }
+      ],
+      "highlights": [
+        "Haedong Yonggungsa Temple",
+        "Cheongsapo & Haeundae Blue Line Park",
+        "Lunch (local Busan restaurant)",
+        "UN Memorial Cemetery in Korea",
+        "Gamcheon Culture Village",
+        "Jagalchi Fish Market"
+      ],
+      "timeUsed": [
+        "≈ 10:00 · Haedong Yonggungsa Temple (75 min)",
+        "≈ 11:30 · Cheongsapo & Haeundae Blue Line Park (75 min)",
+        "≈ 13:00 · Lunch (local Busan restaurant) (60 min)",
+        "≈ 14:15 · UN Memorial Cemetery in Korea (60 min)",
+        "≈ 15:30 · Gamcheon Culture Village (75 min)",
+        "≈ 17:15 · Jagalchi Fish Market (60 min)"
+      ],
+      "whyOnRoute": "The strongest choice if it is your first day in Busan and you want the images you came for, in an order that flows without backtracking. Low walking except at Gamcheon, and every stop works in any season.",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_highlights",
+        "imported_from": "busan-top-attractions-day-tour",
+        "imported_stop_count": 6,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-top-attractions-day-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 2,
+      "time": "Best in 8 hours",
+      "duration": "7 stops",
+      "name": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "category": "Sea temple, glass skywalk, Sky Capsule, beach, two mural villages",
+      "description": "Taken from our **Small-Group Sea Temple, Sky Capsule & Culture Villages tour** — the photo-led version of a Busan day. The morning stays on the eastern coast: the sea temple, the glass-floored Daritdol observatory over the water at Cheongsapo, and the Sky Capsule ride along the old railway line to Mipo. \n\nThe afternoon crosses to the two painted hill villages, Gamcheon and the smaller, quieter Dakbatgol with its wish-stairs monorail. \n\nThe Sky Capsule ticket is bought on the day and is not part of the charter price — the driver-guide helps with the queue, which is the part that catches people out.",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+          "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 1",
+          "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 1"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+          "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 2",
+          "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 2"
+        },
+        {
+          "id": 8,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+          "caption": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 3",
+          "alt": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 3"
+        }
+      ],
+      "highlights": [
+        "Haedong Yonggungsa Temple",
+        "Cheongsapo Daritdol Observatory (glass skywalk)",
+        "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+        "Lunch (local restaurant near Haeundae/Mipo)",
+        "Haeundae Beach",
+        "Gamcheon Culture Village",
+        "Dakbatgol Mural Village & Wish-Stairs Monorail"
+      ],
+      "timeUsed": [
+        "≈ 10:20 · Haedong Yonggungsa Temple (60 min)",
+        "≈ 11:40 · Cheongsapo Daritdol Observatory (glass skywalk) (40 min)",
+        "≈ 12:30 · Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) (50 min)",
+        "≈ 13:25 · Lunch (local restaurant near Haeundae/Mipo) (45 min)",
+        "≈ 14:10 · Haeundae Beach (20 min)",
+        "≈ 15:10 · Gamcheon Culture Village (60 min)",
+        "≈ 16:30 · Dakbatgol Mural Village & Wish-Stairs Monorail (30 min)"
+      ],
+      "whyOnRoute": "The best route for couples and photographers, and for anyone who would rather have four strong places than eight quick ones. It is also the gentlest on walking apart from Gamcheon's slopes.",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_skycapsule",
+        "imported_from": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+        "imported_stop_count": 7,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-small-group-yonggungsa-skycapsule-gamcheon-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 3,
+      "time": "Best in 8–9 hours",
+      "duration": "10 stops",
+      "name": "Route 3: Coast and Old Downtown",
+      "category": "Sea temple, memorial, three markets, painted village, two Songdo viewpoints, city tower",
+      "description": "The densest of the three, taken from our **Busan Cruise Shore Coastal Bus Tour** — built originally to show a whole city inside one ship's port call, which makes it the right shape for anyone who has only one day. \n\nIt runs the sea temple and the UN Memorial Cemetery in the morning, then works through old downtown on foot-sized hops: Jagalchi, BIFF Square, Gukje Market, then Gamcheon, the Songdo Cloud Trails skywalk out over the water, Songdo Sky Park on the headland, and Yongdusan Park with the Busan Diamond Tower to close. \n\nStops here are deliberately short — 20 to 45 minutes each. If your group prefers to linger, take this list and cut it in half.",
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+        "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 9,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 1",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 1"
+        },
+        {
+          "id": 10,
+          "type": "photo",
+          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 2",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 2"
+        },
+        {
+          "id": 11,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 3",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 3"
+        },
+        {
+          "id": 12,
+          "type": "photo",
+          "src": "/images/tours/biff-square/biff-gwangbok-night-umbrellas.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 4",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 4"
+        },
+        {
+          "id": 13,
+          "type": "photo",
+          "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 5",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 5"
+        },
+        {
+          "id": 14,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Route 3: Coast and Old Downtown",
+          "caption": "Route 3: Coast and Old Downtown — 6",
+          "alt": "Route 3: Coast and Old Downtown — gallery image 6"
+        }
+      ],
+      "highlights": [
+        "Haedong Yonggungsa Temple",
+        "UN Memorial Cemetery in Korea",
+        "Lunch at a local Busan restaurant (own expense)",
+        "Jagalchi Market",
+        "BIFF Square",
+        "Gukje Market",
+        "Gamcheon Culture Village",
+        "Songdo Cloud Trails Skywalk",
+        "Songdo Sky Park (Amnam Park)",
+        "Yongdusan Park & Busan Diamond Tower"
+      ],
+      "timeUsed": [
+        "≈ 09:45 · Haedong Yonggungsa Temple (50 min)",
+        "≈ 11:05 · UN Memorial Cemetery in Korea (30 min)",
+        "≈ 11:50 · Lunch at a local Busan restaurant (own expense) (40 min)",
+        "≈ 12:45 · Jagalchi Market (30 min)",
+        "≈ 13:15 · BIFF Square (20 min)",
+        "≈ 13:35 · Gukje Market (25 min)",
+        "≈ 14:20 · Gamcheon Culture Village (45 min)",
+        "≈ 15:25 · Songdo Cloud Trails Skywalk (20 min)",
+        "≈ 15:45 · Songdo Sky Park (Amnam Park) (25 min)",
+        "≈ 16:25 · Yongdusan Park & Busan Diamond Tower (20 min)"
+      ],
+      "whyOnRoute": "The right route when Busan is a single day of a longer trip and you would rather see the whole shape of the city than three places properly. Also the best rain-day route: markets, the tower and the arcades are all covered.",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_coastal",
+        "imported_from": "busan-cruise-shore-excursion-bus-tour",
+        "imported_stop_count": 10,
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Recommended route imported from busan-cruise-shore-excursion-bus-tour at build time (owner instruction 2026-08-07). Stop names and times are that product's own, per locale — re-run scripts/build-busan-city-charter-2026-08.mjs after re-coursing it."
+      }
+    },
+    {
+      "number": 4,
+      "time": "Any of the 5–9 hour options",
+      "duration": "As many stops as the hours allow",
+      "name": "Route 4: Build your own day",
+      "category": "Your stops, your order, your pace",
+      "description": "You do not have to pick any of the three. Send us a list — places you saw, a restaurant someone recommended, a market, a temple, a cafe with a view, a shop your family wants — and the driver-guide builds the day around it and tells you honestly what fits in the hours you have booked. \n\nMixing routes is normal: the sea temple from Route 1, the Sky Capsule from Route 2, Songdo from Route 3, and lunch wherever you like. \n\nThe route can still change on the day. If the weather turns, if a stop is busier than expected, or if everyone simply wants to stay where they are, say so — the vehicle is yours for the hours you booked and nothing needs re-quoting.",
+      "image": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": [],
+      "highlights": [
+        "Send any list of places — we will tell you what realistically fits in your booked hours",
+        "Mix stops freely across Routes 1, 2 and 3",
+        "Change the plan on the day, including staying longer somewhere",
+        "Gimhae Airport pickup or drop-off, and a Gyeongju day, can be added"
+      ],
+      "timeUsed": [
+        "At booking: send your must-see list and we confirm a realistic order",
+        "Up to 24 hours before: swap or drop stops with no change in price",
+        "On the day: adjust the pace and the order with your driver-guide",
+        "Beyond your booked hours: extra time is charged per hour, subject to driver availability"
+      ],
+      "whyOnRoute": "The reason to charter rather than join a tour. A fixed itinerary is a compromise between everyone who bought a seat on it; this one only has to suit your group.",
+      "_poi_meta": {
+        "match": "route_variant_no_single_poi",
+        "poi_key": "route_variant_custom",
+        "verified": true,
+        "verified_date": "2026-08-07",
+        "note": "Custom-route option — no fixed POIs by definition."
+      }
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Hotel Pickup",
+      "type": "origin",
+      "theme": "Start"
+    },
+    {
+      "name": "Morning Stops",
+      "type": "primary",
+      "theme": "Choose"
+    },
+    {
+      "name": "Lunch Break",
+      "type": "meal",
+      "theme": "Reset"
+    },
+    {
+      "name": "Afternoon Stops",
+      "type": "primary",
+      "theme": "Continue"
+    },
+    {
+      "name": "Drop-off",
+      "type": "return",
+      "theme": "End"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": 1,
+      "title": "Pick a starting shape",
+      "summary": "Three recommended routes below, each lifted from a Busan day tour we already run, with its real stop order and timings. Take one as it stands or use it as a base."
+    },
+    {
+      "phase": 2,
+      "title": "Change what you like",
+      "summary": "Drop a stop, swap in one you saw somewhere else, sit longer over lunch, or spend the whole afternoon in one place. The price is per vehicle and per hour, so edits do not re-quote."
+    },
+    {
+      "phase": 3,
+      "title": "Finish where you need to be",
+      "summary": "Back at your hotel, or on to Gimhae Airport or the KTX station as a paid add-on. Gyeongju can be added as a full-day extension."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Start from a route that already works, then make it yours",
+    "body": "The three routes below are not sample suggestions. Each is the actual itinerary of a Busan tour we run — the stop order, the times and the durations are imported from those products, so you can see exactly how a day of that shape fits together before you change anything. Most groups pick one, move two or three stops, and leave the rest. Anything on any of the three lists can go into any of the others."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Families and multi-generational groups — one vehicle, no transfers, no walking between stations",
+      "Couples and small groups who would rather decide the day than follow one",
+      "Travellers with one day in Busan who need the route to be efficient rather than democratic",
+      "Anyone with pace, mobility or dietary requirements a fixed group tour cannot accommodate",
+      "Arrival or departure days, using the Gimhae Airport add-on instead of a wasted half-day"
+    ],
+    "lessIdealFor": [
+      "Solo travellers on a tight budget — a per-person join-in tour will be cheaper",
+      "Groups who want the structure and commentary of a guided group departure",
+      "Parties of more than 14, which need a coach rather than two vehicles"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Why a charter, and not a seat on a bus",
+        "icon": "highlight",
+        "iconBg": "bg-amber-50/80",
+        "iconColor": "text-amber-600",
+        "items": [
+          {
+            "label": "Busan is spread out",
+            "detail": "The sea temple is in the north-east, Gamcheon in the west, Songdo further south again — with bridges, coastal roads and one-way downtown streets in between. A private vehicle turns the transfers into part of the day instead of the cost of it."
+          },
+          {
+            "label": "Edits do not re-quote",
+            "detail": "Skip a stop, add one, sit longer over lunch. The price is set by hours and vehicles, so changing the route changes nothing on the invoice."
+          },
+          {
+            "label": "The clock is yours",
+            "detail": "Start at 07:00 to have the sea temple almost to yourself, or at 11:00 because you have a late morning. A group departure cannot do either."
+          }
+        ]
+      },
+      {
+        "title": "How the price works",
+        "icon": "ticket",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Per vehicle, per hour",
+            "detail": "5 to 9 hours, US$160 to US$255. One to seven guests pay the same, so a family of five pays a fifth each of what a couple pays between them."
+          },
+          {
+            "label": "Eight or more is two cars",
+            "detail": "There is no larger single vehicle on this product. Eight guests and up are quoted as two vehicles — twice the rate for the same hours — and travel together."
+          },
+          {
+            "label": "Add-ons are named, not hidden",
+            "detail": "Gimhae Airport pickup or drop-off US$35, a Gyeongju day US$55, each hour past 9 US$35. Entrance fees and meals are paid directly at the stops you choose."
+          }
+        ]
+      },
+      {
+        "title": "What the driver-guide handles",
+        "icon": "shield-check",
+        "iconBg": "bg-emerald-50/80",
+        "iconColor": "text-emerald-600",
+        "items": [
+          {
+            "label": "Parking, tickets and queues",
+            "detail": "Parking is included and arranged. Where a ticket queue is the slow part — the Sky Capsule especially — the driver-guide sorts it while you wait in the shade."
+          },
+          {
+            "label": "A realistic plan, said out loud",
+            "detail": "If your list does not fit the hours you booked, you will be told before the day, not discovered at 16:00. That honesty is the point of confirming the route in advance."
+          },
+          {
+            "label": "Lunch that suits your group",
+            "detail": "Tell the driver-guide what you eat — seafood, pork soup, vegetarian, halal, no spice for the children — and lunch is chosen near where you already are."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Pickup, drop-off and how the hours are counted",
+      "preview": "Pickup is at your accommodation anywhere in central Busan — Seomyeon, Haeundae, Nampo-dong, Busan Station and the surrounding districts — at a start time you choose. Outlying areas are usually fine; we confirm at booking.",
+      "content": [
+        "Pickup is at your accommodation anywhere in central Busan — Seomyeon, Haeundae, Nampo-dong, Busan Station and the surrounding districts — at a start time you choose. Outlying areas are usually fine; we confirm at booking.",
+        "Your booked hours start at the confirmed pickup time and end at drop-off, not at the first or last sightseeing stop. Driving between stops is part of the day.",
+        "Drop-off is anywhere in Busan: back at your hotel, at a different hotel if you are moving on, at Busan Station, or at a restaurant for the evening.",
+        "Gimhae International Airport pickup or drop-off is available as a paid add-on — see the add-ons section."
+      ]
+    },
+    {
+      "id": "rates",
+      "title": "Hours and rates",
+      "preview": "One price per vehicle, not per person: 5 hours US$160 · 6 hours US$185 · 7 hours US$205 · 8 hours US$225 · 9 hours US$255, for 1 to 7 guests.",
+      "content": [
+        "One price per vehicle, not per person: 5 hours US$160 · 6 hours US$185 · 7 hours US$205 · 8 hours US$225 · 9 hours US$255, for 1 to 7 guests.",
+        "A group of one pays the same as a group of seven — the charge is for the car and the driver-guide, so the more of you there are, the less it costs each.",
+        "8 guests or more need a second vehicle, and the price is simply twice the figure above for the same number of hours.",
+        "Time beyond 9 hours is charged per extra hour and is subject to driver availability — please ask at booking rather than on the day."
+      ]
+    },
+    {
+      "id": "addons",
+      "title": "Add-ons: airport, Gyeongju, extra hours",
+      "preview": "Gimhae Airport pickup or drop-off adds US$35. A Gyeongju day adds US$55. Each hour past 9 adds US$35.",
+      "content": [
+        "Gimhae Airport pickup or drop-off adds US$35. A Gyeongju day adds US$55. Each hour past 9 adds US$35.",
+        "Airport transfer: useful on an arrival or departure day — collect your luggage, spend the day in Busan, and finish at the airport instead of doubling back to a hotel.",
+        "Gyeongju: the old Silla capital is about 70 minutes from Busan by road. Added to a charter it becomes a full day out — Bulguksa, the royal tombs at Daereungwon, and Hwangnidan-gil — and needs 9 hours or more to be worth doing.",
+        "All add-ons are arranged at booking so the driver's day is planned around them."
+      ]
+    },
+    {
+      "id": "customize",
+      "title": "Changing the route",
+      "preview": "The three routes are starting points, not fixed products. Add, drop, reorder or replace any stop.",
+      "content": [
+        "The three routes are starting points, not fixed products. Add, drop, reorder or replace any stop.",
+        "Send changes at booking or any time up to 24 hours before, and the driver-guide confirms a revised order and tells you honestly what will and will not fit.",
+        "On the day, the order can still shift for weather, crowds or simply because everyone wants to stay somewhere longer.",
+        "Changing the route does not change the price. What you pay is set by the number of hours and the number of vehicles, not by where you go."
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "Vehicle, driver and capacity",
+      "preview": "Sedan or SUV for 1 to 3 guests; a mid-size van for 4 to 7. The vehicle is yours alone — no other bookings share it.",
+      "content": [
+        "Sedan or SUV for 1 to 3 guests; a mid-size van for 4 to 7. The vehicle is yours alone — no other bookings share it.",
+        "Drivers are licensed, insured and speak English. Chinese-speaking drivers can usually be requested at booking; other languages depend on availability.",
+        "Child seats can be arranged free of charge if you tell us the ages when you book.",
+        "Luggage is fine for airport transfers, but a full van of guests plus a full set of large cases will not fit — tell us the case count and we will send the right vehicle."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "What is included and what you pay directly",
+      "preview": "Included: private vehicle and driver-guide for your group only · pickup and drop-off in Busan · tolls, parking and fuel · booking fee.",
+      "content": [
+        "Included: private vehicle and driver-guide for your group only · pickup and drop-off in Busan · tolls, parking and fuel · booking fee.",
+        "Not included: entrance fees and ride tickets at the stops you choose · meals and drinks · the Sky Capsule ticket on Route 2 · personal expenses · gratuities · travel insurance.",
+        "Entrance fees on these routes are modest and several of the best stops are free — Gamcheon and Dakbatgol villages, the UN Memorial Cemetery, Haeundae Beach, the markets and the Songdo skywalk all cost nothing to enter.",
+        "Your driver-guide can queue and pay on your behalf where that is faster, and you settle in cash on the day."
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "Surcharges, cancellation and who this charter is for",
+      "preview": "Out-of-hours surcharge: a start before 07:00 or a finish after 20:00 adds a per-hour surcharge, paid on the day.",
+      "content": [
+        "Out-of-hours surcharge: a start before 07:00 or a finish after 20:00 adds a per-hour surcharge, paid on the day.",
+        "Cancellation: free up to 24 hours before the charter starts. Inside 24 hours the booking is non-refundable.",
+        "Destinations outside Busan other than Gyeongju are quoted separately — ask before booking.",
+        "This charter suits groups who want to decide their own day. If you would rather be told where to go and pay less, our join-in Busan day tours cover Routes 1 and 3 at a per-person price."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "summary": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
+    "advice": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at Taejongdae."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Spring (Mar–May)",
+      "summary": "Cherry blossoms peak around late March to early April at Dalmaji Hill, Yongdusan Park, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "swaps": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2."
+    },
+    {
+      "season": "Summer (Jun–Aug)",
+      "summary": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "swaps": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day."
+    },
+    {
+      "season": "Autumn (Sep–Nov)",
+      "summary": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "swaps": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours."
+    },
+    {
+      "season": "Winter (Dec–Feb)",
+      "summary": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "swaps": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "user-check",
+      "title": "Licensed local driver-guide",
+      "detail": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network.",
+      "body": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it."
+    },
+    {
+      "icon": "shield-check",
+      "title": "One price, whatever the route",
+      "detail": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay.",
+      "body": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it."
+    },
+    {
+      "icon": "clock",
+      "title": "Free cancellation up to 24 hours",
+      "detail": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather.",
+      "body": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "step": 1,
+      "title": "Reserve online",
+      "detail": "Pick a date and the number of hours. Reserve now and pay later.",
+      "description": "Reserve online and choose your date and duration; confirmation is instant."
+    },
+    {
+      "step": 2,
+      "title": "Tell us where you are staying",
+      "detail": "Send your hotel and preferred start time — we confirm the pickup within 24 hours.",
+      "description": "Send your accommodation and preferred start time so the pickup point and time can be confirmed."
+    },
+    {
+      "step": 3,
+      "title": "Choose or build your route",
+      "detail": "Take one of the three routes, or send your own list — up to 24 hours before.",
+      "description": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours."
+    },
+    {
+      "step": 4,
+      "title": "Receive driver details",
+      "detail": "Driver name, vehicle plate and contact number, sent the evening before.",
+      "description": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter."
+    },
+    {
+      "step": 5,
+      "title": "Meet at your hotel",
+      "detail": "Your driver-guide waits in the lobby or at the entrance at the agreed time.",
+      "description": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "id": "capacity",
+      "question": "How many people can come, and does the price change with group size?",
+      "answer": "One to seven guests travel in one vehicle at one price — a sedan or SUV for one to three, a mid-size van for four to seven. The price does not change with the number of guests, so a family of six pays the same total as a couple. From eight guests we send a second vehicle and the price is twice the single-vehicle rate for the same hours."
+    },
+    {
+      "id": "hours",
+      "question": "How are the hours counted, and what if we run over?",
+      "answer": "Your hours run from the confirmed pickup time to drop-off, including the driving between stops. Charters are sold in 5, 6, 7, 8 and 9-hour blocks. If you want longer than 9 hours, each extra hour is US$35 and needs to be arranged at booking rather than on the day, because it depends on the driver's schedule."
+    },
+    {
+      "id": "customise",
+      "question": "Can I change the recommended routes?",
+      "answer": "Yes — that is what the product is for. The three routes are the real itineraries of Busan tours we already run, offered as starting points. Add, drop, reorder or replace any stop, mix stops between routes, or send a completely different list. Changes are free and can be sent up to 24 hours before; the route can still shift on the day for weather or crowds."
+    },
+    {
+      "id": "airport",
+      "question": "Can you pick us up from, or drop us at, Gimhae Airport?",
+      "answer": "Yes, as a paid add-on of US$35 for either direction. It is a common way to use an arrival or departure day: collect your luggage, spend the booked hours in Busan, and finish at the airport instead of returning to a hotel first."
+    },
+    {
+      "id": "gyeongju",
+      "question": "Can we go to Gyeongju instead of staying in Busan?",
+      "answer": "Yes, as a US$55 extension. Gyeongju is about 70 minutes from Busan by road, so it becomes a full day out rather than an afternoon — Bulguksa temple, the royal tomb park at Daereungwon and the Hwangnidan-gil lanes are the usual shape. Book 9 hours or more for it to be comfortable."
+    },
+    {
+      "id": "included",
+      "question": "Are entrance fees and lunch included?",
+      "answer": "No. The charter covers the vehicle, the driver-guide, fuel, tolls and parking. Entrance fees, ride tickets such as the Sky Capsule, and meals are paid directly at the stops you choose. Several of the best stops on these routes are free to enter, including both mural villages, the UN Memorial Cemetery, the markets and the Songdo skywalk."
+    },
+    {
+      "id": "language",
+      "question": "What language does the driver-guide speak?",
+      "answer": "English, on every charter. A Chinese-speaking driver-guide can usually be requested at booking. Other languages depend on availability on your date, so please ask before booking rather than after."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "Choose your date, hours and group size to check live availability and complete your booking.",
+    "price": {
+      "amountLabel": "160",
+      "currency": "USD",
+      "per": "vehicle",
+      "salePriceUsd": 160
+    }
+  },
+  "pickup_dropoff": {
+    "type": "hotel_pickup",
+    "meeting_points": [
+      {
+        "name": "Your accommodation in Busan",
+        "time": "A start time you choose, usually 07:00–11:00",
+        "note": "Door-to-door pickup anywhere in central Busan — Seomyeon, Haeundae, Nampo-dong, Busan Station and the surrounding districts. Outlying addresses are usually fine and are confirmed at booking."
+      }
+    ],
+    "dropoff_points": [
+      {
+        "name": "Anywhere in Busan you choose",
+        "approx_time": "At the end of your booked hours",
+        "note": "Back at your accommodation, at a different hotel if you are moving on, at Busan Station, or at a restaurant for the evening. Gimhae Airport is available as a paid add-on."
+      }
+    ],
+    "hotel_pickup_available": true,
+    "notes": [
+      "Your booked hours run from the confirmed pickup time to drop-off, and include the driving between stops.",
+      "Gimhae International Airport pickup or drop-off adds US$35 and is arranged at booking."
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "busan-private-car-charter-city-tour",
+    "product_type": "private",
+    "route_type": "customizable",
+    "destination_region": "busan_city",
+    "region_type": "busan_city",
+    "vehicle_type": "private_vehicle",
+    "duration_hours": 8,
+    "region_tags": [
+      "busan",
+      "busan_central",
+      "busan_eastern",
+      "busan_western"
+    ],
+    "theme_tags": [
+      "private_charter",
+      "customizable_route",
+      "city_highlights",
+      "coastal",
+      "cultural"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "pace_level": 0.6,
+    "walking_level": 0.5,
+    "scenic_level": 0.85,
+    "photo_level": 0.85,
+    "culture_level": 0.8,
+    "relax_level": 0.55,
+    "first_time_fit": 0.95,
+    "family_fit": 0.85,
+    "senior_fit": 0.9,
+    "couple_fit": 1,
+    "solo_traveler_fit": 0.5,
+    "active_traveler_fit": 0.65,
+    "adult_family_fit": 0.85,
+    "family_with_teens_fit": 0.85,
+    "young_kids_fit": 0.65,
+    "senior_active_fit": 0.85,
+    "senior_general_fit": 0.9,
+    "mobility_friendly_fit": 0.75,
+    "stroller_fit": 0.5,
+    "one_day_fit": 0.8,
+    "same_day_flight_fit": 0.8,
+    "rain_fit": 0.65,
+    "value_for_money_fit": 0.7,
+    "iconic_landmark_fit": 0.85,
+    "cafe_fit": 0.4,
+    "food_fit": 0.65,
+    "nature_fit": 0.55,
+    "beach_fit": 0.4,
+    "nightlife_fit": 0.1,
+    "shopping_fit": 0.55,
+    "no_shopping_fit": 0.55,
+    "local_culture_fit": 0.8,
+    "storytelling_fit": 0.85,
+    "unesco_fit": 0.1,
+    "intangible_heritage_fit": 0.4,
+    "indoor_ratio": 0.15,
+    "weather_sensitivity": 0.7,
+    "comfort_level": 0.85,
+    "budget_fit": 0.2,
+    "premium_fit": 0.85,
+    "small_group_fit": 0,
+    "private_fit": 0.95,
+    "bus_fit": 0.1,
+    "price_band": "mid_to_premium",
+    "pickup_base": "busan_hotel",
+    "return_time_band": "late_afternoon",
+    "duration_band": "5h-9h",
+    "min_recommended_age": 0,
+    "hard_constraints": [
+      "Private charter — 1 to 7 guests in one vehicle. 8 or more guests are quoted as two vehicles.",
+      "Sold by the hour: 5 to 9 hours. Each hour past 9 is a paid extension, subject to driver availability.",
+      "Gimhae Airport pickup or drop-off and the Gyeongju extension are paid add-ons, not included in the base hours."
+    ],
+    "walking_notes": "Door-to-door by vehicle between stops. The only sustained walking is inside a chosen stop — Gamcheon Culture Village is a steep hillside village, and market stops are flat but crowded.",
+    "keywords": [
+      "Busan private car charter",
+      "Busan private day tour",
+      "Busan hotel pickup private tour",
+      "Busan chauffeur day tour",
+      "Busan to Gyeongju private car"
+    ],
+    "synonym_hints": [
+      "private taxi",
+      "private driver",
+      "shore excursion",
+      "cruise day tour",
+      "private guide",
+      "customized itinerary",
+      "cruise terminal pickup"
+    ],
+    "seasonality": {
+      "spring": 0.9,
+      "summer": 0.85,
+      "autumn": 0.95,
+      "winter": 0.7
+    },
+    "pickup_base_normalized": "busan_central_pickup",
+    "vehicle_type_legacy": "private_sedan_or_van",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "private_tour_fit": 1,
+    "shared_tour_fit": 0,
+    "customizable_route_fit": 0.6,
+    "flexibility_fit": 0.85,
+    "solo_fit": 0.5,
+    "family_with_kids_fit": 0.95,
+    "small_party_fit": 1,
+    "large_group_fit": 0.6,
+    "first_time_busan_fit": 1,
+    "repeat_visitor_fit": 0.6,
+    "cruise_passenger_fit": 0.3,
+    "non_cruise_day_tripper_fit": 1,
+    "korean_war_history_fit": 1,
+    "war_memorial_fit": 1,
+    "un_heritage_fit": 1,
+    "wheelchair_accessible_anchor_fit": 0.6,
+    "buddhist_temple_fit": 0,
+    "joseon_era_fit": 0.4,
+    "silla_heritage_fit": 0.2,
+    "modern_korean_history_fit": 0.85,
+    "coastal_fit": 1,
+    "coastal_cliff_fit": 1,
+    "coastal_lighthouse_fit": 1,
+    "city_viewpoint_fit": 1,
+    "panoramic_view_fit": 1,
+    "skywalk_fit": 0,
+    "mountain_fit": 0.3,
+    "forest_fit": 0.5,
+    "geological_heritage_fit": 0.85,
+    "mural_village_fit": 1,
+    "hillside_village_fit": 1,
+    "art_immersive_fit": 0.85,
+    "photo_friendly_fit": 1,
+    "instagrammable_fit": 1,
+    "hanok_village_fit": 0,
+    "fish_market_fit": 1,
+    "seafood_fit": 1,
+    "street_food_fit": 0.85,
+    "market_fit": 1,
+    "lunch_included_fit": 0,
+    "lunch_self_pay_fit": 1,
+    "walking_intensity": 0.7,
+    "stairs_intensity": 0.85,
+    "elderly_friendly_fit": 0.5,
+    "stroller_friendly_fit": 0.4,
+    "compact_route_fit": 0.7,
+    "all_day_fit": 0.7,
+    "half_day_fit": 0,
+    "private_vehicle_fit": 1,
+    "minicoach_fit": 0,
+    "public_transit_alternative_fit": 0.4,
+    "english_guide_fit": 1,
+    "korean_only_fit": 0,
+    "multilingual_fit": 0.85,
+    "spring_fit": 0.95,
+    "summer_fit": 0.85,
+    "autumn_fit": 1,
+    "winter_fit": 0.7,
+    "rainy_day_fit": 0.4,
+    "luxury_fit": 0.7,
+    "value_priced_fit": 0.4,
+    "scenic_intensity": 0.95,
+    "iconic_landmarks_fit": 1,
+    "off_beaten_path_fit": 0.3,
+    "cruise_shore_excursion_fit": 0,
+    "private_cruise_charter_fit": 0,
+    "downtown_busan_fit": 1,
+    "yongdusan_landmark_fit": 1,
+    "diamond_tower_fit": 1,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "cruise_market_segment_fit": 0.2,
+    "busan_port_pickup_fit": 0.2,
+    "cruise_reboarding_safety_buffer_fit": 0,
+    "weather_fallback_dense_fit": 1,
+    "instagram_dense_route_fit": 1,
+    "private_charter_format_fit": 1,
+    "flexible_pickup_dropoff_fit": 1,
+    "premium_pacing_fit": 1,
+    "small_party_intimate_fit": 1,
+    "busan_signature_route_fit": 1,
+    "seaside_temple_fit": 0,
+    "natural_geopark_fit": 1,
+    "city_panorama_tower_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "available_months_signature": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "signature_window_label": "Year-round (cruise port operating window)",
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "busan",
+      "private_charter",
+      "customizable_route",
+      "city_highlights",
+      "coastal"
+    ],
+    "secondary_themes": [
+      "seaside_temple",
+      "culture_village",
+      "sky_capsule",
+      "market",
+      "hotel_pickup",
+      "airport_transfer_addon",
+      "gyeongju_extension"
+    ],
+    "best_for": [
+      "families",
+      "small_private_groups",
+      "seniors",
+      "first_time_busan",
+      "flexible_planners"
+    ],
+    "not_recommended_for": [
+      "solo_budget_travelers",
+      "fixed_itinerary_seekers",
+      "large_coach_groups"
+    ],
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Gamcheon Culture Village",
+      "Haeundae Blueline Park Sky Capsule",
+      "Jagalchi Market",
+      "UN Memorial Cemetery in Korea",
+      "Songdo Cloud Trails Skywalk"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "gamcheon_culture_village",
+      "cheongsapo_blue_line_park",
+      "jagalchi_market",
+      "un_memorial_cemetery",
+      "songdo_skywalk"
+    ],
+    "competing_products": [
+      "busan-private-car-charter-cruise-shore",
+      "busan-top-attractions-day-tour",
+      "busan-small-group-yonggungsa-skycapsule-gamcheon-tour"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on these routes. Cultural weight comes from the 1376 seaside temple, the Korean-War refugee hillside at Gamcheon, and the UN Memorial Cemetery."
+  },
+  "itinerary_variants": [],
+  "pricingTiers": {
+    "currency": "USD",
+    "unit": "vehicle",
+    "durations": [
+      "5h",
+      "6h",
+      "7h",
+      "8h",
+      "9h"
+    ],
+    "tiers": [
+      {
+        "paxLabel": "1–7 pax",
+        "paxMin": 1,
+        "paxMax": 7,
+        "prices": {
+          "5h": 160,
+          "6h": 185,
+          "7h": 205,
+          "8h": 225,
+          "9h": 255
+        }
+      },
+      {
+        "paxLabel": "8+ pax",
+        "paxMin": 8,
+        "paxMax": 14,
+        "prices": {
+          "5h": 320,
+          "6h": 370,
+          "7h": 410,
+          "8h": 450,
+          "9h": 510
+        }
+      }
+    ]
+  },
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-07",
+    "last_modified": "2026-08-07",
+    "version_history": [
+      "v1_authored_2026_08_07"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_07": "New product (owner instruction 2026-08-07: Busan had a cruise-port private charter but no city one). Structural donor: busan-private-car-charter-cruise-shore (glance/weather/subnav/reviews blocks per locale). The three recommended routes are IMPORTED at build time from busan-top-attractions-day-tour, busan-small-group-yonggungsa-skycapsule-gamcheon-tour and busan-cruise-shore-excursion-bus-tour — stop names and times come from those products' own bundles in the same locale, so nothing here is a re-translation and re-running the builder re-syncs them. Fourth drawer is the custom-route option. Rate card set by the owner in KRW (5h 230,000 / 6h 260,000 / 7h 290,000 / 8h 320,000 / 9h 360,000; 1–7 pax one vehicle, 8+ a second vehicle at twice the cell) and converted at 1,423.48 KRW/USD, rounded to the nearest $5. Add-ons: Gimhae Airport pickup or drop-off +50,000 KRW, Gyeongju +80,000 KRW, each hour past 9h +50,000 KRW."
+    }
+  }
+}

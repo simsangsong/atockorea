@@ -97,6 +97,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     es: () => loadJson(import("@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.es.json")),
     ja: () => loadJson(import("@/components/product-tour-static/busan-cruise-shore-excursion-bus-tour/busan-cruise-shore-excursion-bus-tour.ja.json")),
   },
+  "busan-private-car-charter-city-tour": {
+    en: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.en.json")),
+    ko: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.ko.json")),
+    zh: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.zh.json")),
+    "zh-TW": () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.zh-TW.json")),
+    es: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.es.json")),
+    ja: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-city-tour/busan-private-car-charter-city-tour.ja.json")),
+  },
   "busan-private-car-charter-cruise-shore": {
     en: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.en.json")),
     ko: () => loadJson(import("@/components/product-tour-static/busan-private-car-charter-cruise-shore/busan-private-car-charter-cruise-shore.ko.json")),

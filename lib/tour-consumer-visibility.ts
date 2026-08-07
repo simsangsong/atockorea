@@ -223,6 +223,25 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // re-opening is one line here plus the DB flags, should it turn out to be a
   // real SKU under a name the owner uses for something else.
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+  //
+  // ── Gapyeong join-in day tour retired 2026-08-07 (owner) ──────────────────
+  // The owner sent the operator's package-type selector, which offers exactly
+  // three Seoul→Gangwon/Gyeonggi coach packages — the winter Eobi trip, Nami +
+  // Morning Calm, and Naksansa + Naksan Beach — and said to keep those three
+  // and drop this one.
+  //
+  // It reads as a duplicate of the second of those: same Nami Island, same
+  // Garden of Morning Calm, sold join-in at $59 against that package's $79, so
+  // the catalogue was quoting two prices for an overlapping day. Built
+  // 2026-08-04 from the private $194 sibling
+  // (`seoul-private-nami-morning-calm-petite-france`, untouched and still on
+  // sale — it is the private version of the route, not a duplicate of it).
+  //
+  // Retired the same way as everything else here: this line plus the DB flags
+  // in supabase/pending-db-apply/2026-08-07-04-retire-gapyeong-join-in.sql.
+  // Content, bundles, registry entry and its ten locale rows are left intact,
+  // so re-opening is this one line plus flipping those flags back.
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

@@ -1,0 +1,362 @@
+{
+  "title": "Busan: coche privado con chófer",
+  "subtitle": "Diseña tu propio día en Busan con un chófer-guía autorizado, recogida en tu alojamiento y tarifa por horas.",
+  "region": "Busan (ciudad + costa)",
+  "duration": "5–9 horas",
+  "shortCardDescription": "Un coche privado y un chófer-guía autorizado solo para tu grupo, por todo Busan. Empieza por una de las tres rutas recomendadas — el día clásico de imprescindibles, la costa del templo marino y la Sky Capsule, o el circuito del casco antiguo y Songdo — y luego mueve, quita o añade paradas hasta que el día sea tuyo. Recogida en el alojamiento incluida, de 5 a 9 horas, un precio por vehículo para hasta 7 personas.",
+  "badges": ["Tour privado", "Totalmente personalizable", "Recogida en tu hotel de Busan"],
+  "tags": ["private_tour", "fully_customizable", "hotel_pickup", "hourly_rate"],
+
+  "headlineLine1": "Busan ciudad",
+  "headlineLine2": "Coche privado con chófer",
+  "heroTagline": "Tres días de Busan ya montados como punto de partida, y un chófer-guía que reordenará cualquiera de ellos — templo sobre el acantilado, Sky Capsule, laderas pintadas, mercados de pescado, pasarelas sobre el mar — hasta convertirlo en el día que tu grupo realmente quiere.",
+  "heroDuration": "5–9 horas",
+  "heroStops": "A tu medida",
+  "heroPills": ["Vehículo privado", "Chófer-guía autorizado", "Recogida en el alojamiento"],
+
+  "seo": {
+    "pageTitle": "Coche privado con chófer en Busan (5–9 horas) | AtoC Korea",
+    "metaDescription": "Coche privado en Busan con chófer-guía autorizado de habla inglesa y recogida en tu alojamiento. Elige una de las tres rutas recomendadas o crea la tuya. De 5 a 9 horas, un precio por vehículo para hasta 7 personas, con suplementos opcionales al aeropuerto de Gimhae y a Gyeongju.",
+    "title": "Busan: coche privado con chófer-guía | AtoC Korea",
+    "description": "Alquiler por horas de coche privado en Busan con recogida en el alojamiento, chófer-guía autorizado y una ruta totalmente personalizable construida a partir de nuestros tres itinerarios de Busan más reservados.",
+    "primaryKeywords": [
+      "coche privado con chófer Busan",
+      "tour privado Busan",
+      "Busan recogida en hotel tour privado",
+      "chófer privado Busan día completo",
+      "Busan a Gyeongju coche privado"
+    ]
+  },
+
+  "stickyNote": "Elige fecha, número de horas y tamaño del grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
+
+  "routeFlowStops": [
+    { "name": "Recogida en el alojamiento", "type": "origin", "theme": "Start" },
+    { "name": "Paradas de la mañana", "type": "primary", "theme": "Choose" },
+    { "name": "Pausa para comer", "type": "meal", "theme": "Reset" },
+    { "name": "Paradas de la tarde", "type": "primary", "theme": "Continue" },
+    { "name": "Regreso", "type": "return", "theme": "End" }
+  ],
+
+  "routePhases": [
+    {
+      "phase": 1,
+      "title": "Elige un punto de partida",
+      "summary": "Las tres rutas recomendadas están tomadas de tours de Busan que ya operamos, con su orden de paradas y sus horarios reales. Puedes usarlas tal cual o como base."
+    },
+    {
+      "phase": 2,
+      "title": "Cambia lo que quieras",
+      "summary": "Quita una parada, añade una que viste en otro sitio, alarga la comida o pasa toda la tarde en un solo lugar. El precio es por vehículo y por hora, así que los cambios no se vuelven a presupuestar."
+    },
+    {
+      "phase": 3,
+      "title": "Termina donde te haga falta",
+      "summary": "De vuelta en tu alojamiento, o en el aeropuerto de Gimhae o la estación de Busan como suplemento. Gyeongju puede añadirse como extensión de día completo."
+    }
+  ],
+
+  "routeShapeIntro": {
+    "title": "Empieza por una ruta que ya funciona y hazla tuya",
+    "body": "Las tres rutas de abajo no son sugerencias de ejemplo. Cada una es el itinerario real de un tour de Busan que operamos: el orden de las paradas, las horas y las duraciones están importados de esos productos, así que puedes ver exactamente cómo encaja un día con esa forma antes de cambiar nada. La mayoría de los grupos elige una, mueve dos o tres paradas y deja el resto. Cualquier parada de cualquiera de las tres listas puede pasar a otra."
+  },
+
+  "routes": [
+    {
+      "name": "Ruta 1: imprescindibles de Busan",
+      "category": "Templo marino, parque costero, cementerio conmemorativo, pueblo pintado, mercado de pescado",
+      "fits": "Encaja mejor en 8–9 horas",
+      "duration": "6 paradas",
+      "description": "El día clásico de primera visita a Busan, tomado de nuestro **Tour de un día por los imprescindibles de Busan**. Cruza la ciudad de este a oeste: el templo marino sobre el acantilado por la mañana, el tramo de Cheongsapo y Blue Line Park antes de comer, después la calma del Cementerio Conmemorativo de la ONU, la ladera pintada de Gamcheon y el mercado de pescado de Jagalchi para cerrar. \n\nComo chárter privado desaparece la cadena de encuentros en estaciones del tour compartido, así que las mismas paradas caben con tiempo de sobra. Ese margen suele acabar en Gamcheon, donde todo el mundo quiere quedarse más.",
+      "whyOnRoute": "La mejor opción para un primer día en Busan si quieres las imágenes que viniste a ver, en un orden que no obliga a volver sobre tus pasos. Poco caminar salvo en Gamcheon, y todas las paradas funcionan en cualquier estación."
+    },
+    {
+      "name": "Ruta 2: templo marino, Sky Capsule y pueblos pintados",
+      "category": "Templo marino, mirador de suelo de cristal, Sky Capsule, playa, dos pueblos de murales",
+      "fits": "Encaja mejor en 8 horas",
+      "duration": "7 paradas",
+      "description": "Tomada de nuestro **tour en grupo reducido de templo marino, Sky Capsule y pueblos culturales**: la versión fotográfica de un día en Busan. La mañana se queda en la costa este: el templo marino, el mirador de suelo de cristal de Daritdol sobre el agua en Cheongsapo y el trayecto en Sky Capsule por la antigua vía del tren hasta Mipo. \n\nLa tarde cruza a los dos pueblos pintados de ladera: Gamcheon y el más pequeño y tranquilo Dakbatgol, con su monorraíl de la escalera de los deseos. \n\nEl billete de la Sky Capsule se compra el mismo día y no forma parte del precio del chárter. Lo que suele complicar la visita es la cola, y de eso se encarga el chófer-guía.",
+      "whyOnRoute": "La mejor ruta para parejas y para quien fotografía, y para quien prefiere cuatro lugares bien vistos a ocho de pasada. Es también la más suave para caminar, salvo por las cuestas de Gamcheon."
+    },
+    {
+      "name": "Ruta 3: costa y casco antiguo",
+      "category": "Templo marino, cementerio conmemorativo, tres mercados, pueblo pintado, dos miradores de Songdo, torre urbana",
+      "fits": "Encaja mejor en 8–9 horas",
+      "duration": "10 paradas",
+      "description": "La más densa de las tres, tomada de nuestro **tour costero en autobús para cruceristas de Busan**, pensado en origen para enseñar una ciudad entera dentro de una escala portuaria: justo la forma que necesita quien solo tiene un día. \n\nPor la mañana, el templo marino y el Cementerio Conmemorativo de la ONU; después el casco antiguo en saltos cortos: Jagalchi, la plaza BIFF, el mercado Gukje, luego Gamcheon, la pasarela Songdo Cloud Trails sobre el agua, el Songdo Sky Park en el promontorio y el parque Yongdusan con la Busan Diamond Tower para terminar. \n\nAquí las paradas son cortas a propósito: de 20 a 45 minutos cada una. Si tu grupo prefiere demorarse, coge esta lista y córtala por la mitad.",
+      "whyOnRoute": "La ruta adecuada cuando Busan es un solo día de un viaje más largo y prefieres ver la forma completa de la ciudad antes que tres lugares a fondo. También la mejor con lluvia: mercados, torre y galerías comerciales están bajo techo."
+    }
+  ],
+
+  "customRoute": {
+    "name": "Ruta 4: crea tu propio día",
+    "category": "Tus paradas, tu orden, tu ritmo",
+    "fits": "Cualquiera de las opciones de 5 a 9 horas",
+    "duration": "Tantas paradas como permitan las horas",
+    "description": "No hace falta elegir ninguna de las tres. Mándanos una lista — lugares que has visto, un restaurante que alguien te recomendó, un mercado, un templo, una cafetería con vistas, una tienda a la que quiere ir tu familia — y el chófer-guía construye el día alrededor de eso y te dice con honestidad qué cabe en las horas que has reservado. \n\nMezclar rutas es lo normal: el templo marino de la Ruta 1, la Sky Capsule de la Ruta 2, Songdo de la Ruta 3, y la comida donde te apetezca. \n\nLa ruta todavía puede cambiar el mismo día. Si el tiempo empeora, si una parada está más llena de lo previsto o si sencillamente todo el mundo quiere quedarse donde está, dilo: el vehículo es vuestro durante las horas reservadas y no hay que volver a presupuestar nada.",
+    "highlights": [
+      "Mándanos cualquier lista de lugares y te diremos qué cabe de verdad en tus horas reservadas",
+      "Mezcla paradas libremente entre las Rutas 1, 2 y 3",
+      "Cambia el plan el mismo día, incluido quedarte más tiempo en algún sitio",
+      "Se pueden añadir la recogida o la salida en el aeropuerto de Gimhae y un día en Gyeongju"
+    ],
+    "timeUsed": [
+      "Al reservar: envía tu lista de imprescindibles y confirmamos un orden realista",
+      "Hasta 24 horas antes: cambia o quita paradas sin variación de precio",
+      "El mismo día: ajusta el ritmo y el orden con tu chófer-guía",
+      "Más allá de tus horas reservadas: el tiempo extra se cobra por hora y depende de la disponibilidad del chófer"
+    ],
+    "whyOnRoute": "La razón de contratar un chárter en lugar de sumarse a un tour. Un itinerario fijo es un acuerdo entre todos los que compraron una plaza; este día solo tiene que encajar con tu grupo."
+  },
+
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Recogida, regreso y cómo se cuentan las horas",
+      "content": [
+        "La recogida es en tu alojamiento, en cualquier punto del centro de Busan — Seomyeon, Haeundae, Nampo-dong, la estación de Busan y los barrios de alrededor — a la hora de inicio que elijas. Las direcciones más alejadas suelen ser posibles y se confirman al reservar.",
+        "Tus horas reservadas empiezan a la hora de recogida confirmada y terminan en el regreso, no en la primera ni en la última parada turística. Los trayectos entre paradas forman parte del día.",
+        "El regreso puede ser en cualquier punto de Busan: tu alojamiento, otro hotel si te trasladas, la estación de Busan o directamente un restaurante para la cena.",
+        "La recogida o la salida en el Aeropuerto Internacional de Gimhae está disponible como suplemento — consulta el apartado de suplementos."
+      ]
+    },
+    {
+      "id": "rates",
+      "title": "Horas y tarifas",
+      "preview": "Un precio por vehículo, no por persona: 5 horas 160 US$ · 6 horas 185 US$ · 7 horas 205 US$ · 8 horas 225 US$ · 9 horas 255 US$, para 1 a 7 personas.",
+      "content": [
+        "Un precio por vehículo, no por persona: 5 horas 160 US$ · 6 horas 185 US$ · 7 horas 205 US$ · 8 horas 225 US$ · 9 horas 255 US$, para 1 a 7 personas.",
+        "Un grupo de uno paga lo mismo que un grupo de siete: el cargo es por el coche y el chófer-guía, así que cuantos más seáis, menos cuesta a cada uno.",
+        "A partir de 8 personas hace falta un segundo vehículo, y el precio es sencillamente el doble de la cifra anterior para el mismo número de horas.",
+        "El tiempo por encima de 9 horas se cobra por hora adicional y depende de la disponibilidad del chófer: consúltalo al reservar y no el mismo día."
+      ]
+    },
+    {
+      "id": "addons",
+      "title": "Suplementos: aeropuerto, Gyeongju, horas extra",
+      "preview": "La recogida o la salida en el aeropuerto de Gimhae añade 35 US$. Un día en Gyeongju añade 55 US$. Cada hora por encima de 9 añade 35 US$.",
+      "content": [
+        "La recogida o la salida en el aeropuerto de Gimhae añade 35 US$. Un día en Gyeongju añade 55 US$. Cada hora por encima de 9 añade 35 US$.",
+        "Traslado al aeropuerto: útil en un día de llegada o de salida — recoges el equipaje, pasas el día en Busan y terminas en el aeropuerto en lugar de volver primero al hotel.",
+        "Gyeongju: la antigua capital de Silla está a unos 70 minutos de Busan por carretera. Añadida al chárter se convierte en un día completo — Bulguksa, las tumbas reales de Daereungwon y la calle Hwangnidan-gil — y necesita 9 horas o más para merecer la pena.",
+        "Todos los suplementos se acuerdan al reservar para que la jornada del chófer se planifique en consecuencia."
+      ]
+    },
+    {
+      "id": "customize",
+      "title": "Cambiar la ruta",
+      "preview": "Las tres rutas son puntos de partida, no productos cerrados. Añade, quita, reordena o sustituye cualquier parada.",
+      "content": [
+        "Las tres rutas son puntos de partida, no productos cerrados. Añade, quita, reordena o sustituye cualquier parada.",
+        "Envía los cambios al reservar o en cualquier momento hasta 24 horas antes, y el chófer-guía confirma un orden revisado y te dice con honestidad qué cabe y qué no.",
+        "El mismo día el orden todavía puede moverse por el tiempo, por las aglomeraciones o simplemente porque todos queréis quedaros más en algún sitio.",
+        "Cambiar la ruta no cambia el precio. Lo que pagas lo fijan el número de horas y el número de vehículos, no el lugar al que vas."
+      ]
+    },
+    {
+      "id": "vehicle",
+      "title": "Vehículo, chófer y capacidad",
+      "content": [
+        "Berlina o SUV para 1 a 3 personas; furgoneta mediana para 4 a 7. El vehículo es solo vuestro: no lo comparte ninguna otra reserva.",
+        "Los chóferes están autorizados, asegurados y hablan inglés. Un chófer de habla china suele poder solicitarse al reservar; otros idiomas dependen de la disponibilidad.",
+        "Podemos preparar sillas infantiles sin coste si nos indicas las edades al reservar.",
+        "El equipaje no es problema en los traslados al aeropuerto, pero una furgoneta llena de pasajeros más un juego completo de maletas grandes no cabe: dinos cuántas maletas sois y enviamos el vehículo adecuado."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "Qué está incluido y qué se paga directamente",
+      "content": [
+        "Incluido: vehículo privado y chófer-guía solo para tu grupo · recogida y regreso en Busan · peajes, aparcamiento y combustible · gastos de reserva.",
+        "No incluido: entradas y billetes de atracción en las paradas que elijas · comidas y bebidas · el billete de la Sky Capsule en la Ruta 2 · gastos personales · propinas · seguro de viaje.",
+        "Las entradas en estas rutas son moderadas y varias de las mejores paradas son gratuitas: los pueblos de Gamcheon y Dakbatgol, el Cementerio Conmemorativo de la ONU, la playa de Haeundae, los mercados y la pasarela de Songdo no cobran entrada.",
+        "Tu chófer-guía puede hacer la cola y pagar por ti cuando eso sea más rápido, y lo liquidáis en efectivo el mismo día."
+      ]
+    },
+    {
+      "id": "policy-surcharge-cancellation",
+      "title": "Recargos, cancelación y para quién es este chárter",
+      "content": [
+        "Recargo fuera de horario: empezar antes de las 07:00 o terminar después de las 20:00 añade un recargo por hora, que se paga el mismo día.",
+        "Cancelación: gratuita hasta 24 horas antes del inicio del chárter. Dentro de las 24 horas la reserva no es reembolsable.",
+        "Los destinos fuera de Busan distintos de Gyeongju se presupuestan aparte: consúltanos antes de reservar.",
+        "Este chárter encaja con grupos que quieren decidir su propio día. Si prefieres que te digan adónde ir y pagar menos, nuestros tours compartidos de un día por Busan cubren las Rutas 1 y 3 con precio por persona."
+      ]
+    }
+  ],
+
+  "whyTourWorks": {
+    "bestFor": [
+      "Familias y grupos de varias generaciones: un solo vehículo, sin transbordos ni caminatas entre estaciones",
+      "Parejas y grupos pequeños que prefieren decidir el día antes que seguirlo",
+      "Viajeros con un solo día en Busan que necesitan una ruta eficiente más que democrática",
+      "Quien tenga necesidades de ritmo, movilidad o dieta que un tour de grupo cerrado no puede atender",
+      "Días de llegada o de salida, usando el suplemento del aeropuerto de Gimhae en lugar de perder media jornada"
+    ],
+    "lessIdealFor": [
+      "Viajeros solos con presupuesto ajustado: un tour compartido con precio por persona saldrá más barato",
+      "Grupos que quieren la estructura y el comentario de una salida guiada en grupo",
+      "Grupos de más de 14 personas, que necesitan un autocar y no dos vehículos"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Por qué un chárter y no un asiento en un autobús",
+        "items": [
+          {
+            "label": "Busan está muy repartida",
+            "detail": "El templo marino queda al noreste, Gamcheon al oeste y Songdo aún más al sur, con puentes, carreteras costeras, cuestas y calles de sentido único en medio. Un vehículo privado convierte esos trayectos en parte del día en lugar de en su coste."
+          },
+          {
+            "label": "Los cambios no se vuelven a presupuestar",
+            "detail": "Sáltate una parada, añade otra, alarga la comida. El precio lo fijan las horas y los vehículos, así que cambiar la ruta no cambia nada en la factura."
+          },
+          {
+            "label": "El reloj es vuestro",
+            "detail": "Empezad a las 07:00 para tener el templo marino casi para vosotros, o a las 11:00 porque la mañana se os ha hecho tarde. Una salida en grupo no permite ninguna de las dos cosas."
+          }
+        ]
+      },
+      {
+        "title": "Cómo funciona el precio",
+        "items": [
+          {
+            "label": "Por vehículo y por hora",
+            "detail": "De 5 a 9 horas, de 160 US$ a 255 US$. De una a siete personas pagan lo mismo, así que una familia de cinco paga por cabeza mucho menos de lo que paga una pareja entre dos."
+          },
+          {
+            "label": "Ocho o más son dos coches",
+            "detail": "En este producto no hay un vehículo único mayor. A partir de ocho personas se presupuestan dos vehículos — el doble de la tarifa para las mismas horas — y viajáis juntos."
+          },
+          {
+            "label": "Los suplementos van con nombre, no escondidos",
+            "detail": "Recogida o salida en el aeropuerto de Gimhae 35 US$, un día en Gyeongju 55 US$, cada hora por encima de 9 35 US$. Las entradas y las comidas se pagan directamente en las paradas que elijas."
+          }
+        ]
+      },
+      {
+        "title": "De qué se ocupa el chófer-guía",
+        "items": [
+          {
+            "label": "Aparcamiento, entradas y colas",
+            "detail": "El aparcamiento está incluido y lo gestiona él. Cuando la cola de las entradas es lo que ralentiza el día — la Sky Capsule especialmente — el chófer-guía se encarga mientras vosotros esperáis a la sombra."
+          },
+          {
+            "label": "Un plan realista, dicho en voz alta",
+            "detail": "Si tu lista no cabe en las horas reservadas, te lo diremos antes del día y no lo descubrirás a las 16:00. Esa honestidad es el motivo de confirmar la ruta por adelantado."
+          },
+          {
+            "label": "Una comida que encaje con tu grupo",
+            "detail": "Dile al chófer-guía qué coméis — marisco, sopa de cerdo, vegetariano, halal, sin picante para los niños — y la comida se elige cerca de donde ya estéis."
+          }
+        ]
+      }
+    ]
+  },
+
+  "bookingTrustItems": [
+    {
+      "icon": "user-check",
+      "title": "Chófer-guía local autorizado",
+      "detail": "Todos los chóferes están autorizados profesionalmente, asegurados, hablan inglés y están verificados por la red de socios de AtoC Korea en Busan.",
+      "body": "Chófer-guía local autorizado y verificado por la red de socios de AtoC Korea en Busan, no un coche de aplicación con una etiqueta de tour."
+    },
+    {
+      "icon": "shield-check",
+      "title": "Un precio, sea cual sea la ruta",
+      "detail": "El cargo es por vehículo y por hora, así que añadir, quitar o reordenar paradas nunca cambia lo que pagas.",
+      "body": "Un precio sea cual sea la ruta: el total lo fijan las horas reservadas y el número de vehículos, y los cambios de paradas no lo alteran."
+    },
+    {
+      "icon": "clock",
+      "title": "Cancelación gratuita hasta 24 horas antes",
+      "detail": "Cancela sin coste hasta 24 horas antes de la recogida, algo útil cuando un día en Busan depende del tiempo.",
+      "body": "Cancelación gratuita hasta 24 horas antes de la recogida, lo que importa en una ciudad costera donde la lluvia puede echar el día abajo."
+    }
+  ],
+
+  "bookingSupportSteps": [
+    {
+      "title": "Reserva en línea",
+      "detail": "Elige una fecha y el número de horas. Reserva ahora y paga después.",
+      "description": "Reserva en línea y elige fecha y duración; la confirmación es inmediata."
+    },
+    {
+      "title": "Dinos dónde te alojas",
+      "detail": "Envía tu alojamiento y la hora de inicio que prefieras: confirmamos la recogida en 24 horas.",
+      "description": "Envía tu alojamiento y la hora de inicio preferida para poder confirmar el punto y la hora de recogida."
+    },
+    {
+      "title": "Elige o crea tu ruta",
+      "detail": "Toma una de las tres rutas o envía tu propia lista, hasta 24 horas antes.",
+      "description": "Elige una de las tres rutas recomendadas o envía tu propia lista de paradas; confirmamos qué cabe en tus horas reservadas."
+    },
+    {
+      "title": "Recibe los datos del chófer",
+      "detail": "Nombre del chófer, matrícula del vehículo y teléfono de contacto, enviados la tarde anterior.",
+      "description": "El nombre del chófer, la matrícula del vehículo y un teléfono de contacto se envían la tarde anterior al chárter."
+    },
+    {
+      "title": "Encuentro en tu alojamiento",
+      "detail": "Tu chófer-guía espera en el vestíbulo o en la entrada a la hora acordada.",
+      "description": "Tu chófer-guía te espera en el alojamiento a la hora confirmada y ahí empiezan las horas reservadas."
+    }
+  ],
+
+  "staticQuestions": [
+    {
+      "id": "capacity",
+      "question": "¿Cuántas personas pueden venir y cambia el precio con el tamaño del grupo?",
+      "answer": "De una a siete personas viajan en un vehículo a un mismo precio: berlina o SUV para una a tres, furgoneta mediana para cuatro a siete. El precio no cambia con el número de pasajeros, así que una familia de seis paga el mismo total que una pareja. A partir de ocho enviamos un segundo vehículo y el precio es el doble de la tarifa de un vehículo para las mismas horas."
+    },
+    {
+      "id": "hours",
+      "question": "¿Cómo se cuentan las horas y qué pasa si nos pasamos?",
+      "answer": "Tus horas van desde la hora de recogida confirmada hasta el regreso, incluidos los trayectos entre paradas. Los chárteres se venden en bloques de 5, 6, 7, 8 y 9 horas. Si quieres más de 9 horas, cada hora extra cuesta 35 US$ y hay que acordarla al reservar y no el mismo día, porque depende de la agenda del chófer."
+    },
+    {
+      "id": "customise",
+      "question": "¿Puedo cambiar las rutas recomendadas?",
+      "answer": "Sí, para eso está el producto. Las tres rutas son los itinerarios reales de tours de Busan que ya operamos, ofrecidos como puntos de partida. Añade, quita, reordena o sustituye cualquier parada, mezcla paradas entre rutas o envía una lista completamente distinta. Los cambios son gratuitos y pueden enviarse hasta 24 horas antes; el orden todavía puede moverse el mismo día por el tiempo o las aglomeraciones."
+    },
+    {
+      "id": "airport",
+      "question": "¿Podéis recogernos en el aeropuerto de Gimhae o dejarnos allí?",
+      "answer": "Sí, como suplemento de 35 US$ en cualquiera de los dos sentidos. Es una forma habitual de aprovechar un día de llegada o de salida: recoges el equipaje, pasas en Busan las horas reservadas y terminas en el aeropuerto en lugar de volver antes al hotel."
+    },
+    {
+      "id": "gyeongju",
+      "question": "¿Podemos ir a Gyeongju en lugar de quedarnos en Busan?",
+      "answer": "Sí, como extensión de 55 US$. Gyeongju está a unos 70 minutos de Busan por carretera, así que se convierte en un día completo y no en una tarde: el templo de Bulguksa, el parque de tumbas reales de Daereungwon y las calles de Hwangnidan-gil son el recorrido habitual. Reserva 9 horas o más para hacerlo con calma."
+    },
+    {
+      "id": "included",
+      "question": "¿Están incluidas las entradas y la comida?",
+      "answer": "No. El chárter cubre el vehículo, el chófer-guía, el combustible, los peajes y el aparcamiento. Las entradas, los billetes de atracciones como la Sky Capsule y las comidas se pagan directamente en las paradas que elijas. Varias de las mejores paradas de estas rutas son gratuitas, incluidos los dos pueblos de murales, el Cementerio Conmemorativo de la ONU, los mercados y la pasarela de Songdo."
+    },
+    {
+      "id": "language",
+      "question": "¿Qué idioma habla el chófer-guía?",
+      "answer": "Inglés, en todos los chárteres. Normalmente se puede solicitar un chófer-guía de habla china al reservar. Otros idiomas dependen de la disponibilidad en tu fecha, así que pregunta antes de reservar y no después."
+    }
+  ],
+
+  "seasonalSwaps": [
+    "En la semana de los cerezos en flor, pide el paseo en coche por la colina de Dalmaji y una parada extra en Gwangalli: los dos quedan a minutos de las Rutas 1 y 2.",
+    "En las tardes de calor, pasa Gamcheon a la mañana y usa la Sky Capsule climatizada o los mercados cubiertos en las horas centrales.",
+    "El otoño le sienta bien a las tres rutas tal cual están; el templo de Beomeosa merece añadirse por el follaje si reservas 9 horas.",
+    "En invierno la luz se va pronto, así que pon primero los miradores al aire libre y termina con mercados, la torre o las galerías bajo techo."
+  ],
+
+  "pd": {
+    "pickupName": "Tu alojamiento en Busan",
+    "pickupTime": "La hora de inicio que elijas, normalmente entre las 07:00 y las 11:00",
+    "pickupNote": "Recogida puerta a puerta en cualquier punto del centro de Busan: Seomyeon, Haeundae, Nampo-dong, la estación de Busan y los barrios de alrededor. Las direcciones más alejadas suelen ser posibles y se confirman al reservar.",
+    "dropoffName": "Donde elijas dentro de Busan",
+    "dropoffTime": "Al terminar tus horas reservadas",
+    "dropoffNote": "De vuelta en tu alojamiento, en otro hotel si te trasladas, en la estación de Busan o en un restaurante para la cena. El aeropuerto de Gimhae está disponible como suplemento.",
+    "notes": [
+      "Tus horas reservadas van desde la hora de recogida confirmada hasta el regreso e incluyen los trayectos entre paradas.",
+      "La recogida o la salida en el Aeropuerto Internacional de Gimhae añade 35 US$ y se acuerda al reservar."
+    ]
+  }
+}
