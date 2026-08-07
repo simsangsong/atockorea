@@ -1,0 +1,59 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-nami-island-morning-calm-day-tour",
+  "locale": "it",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Pickup (Hongik / ⟦G0⟧)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Seoul pickup"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parco nazionale di Seoraksan"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Mountain & temple"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Nami Island"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "K-drama island"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "The ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Giardino della quiete mattutina"
+      ]
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Themed garden"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Return to Seoul"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/0/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Parco nazionale di Seoraksan"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Giardino della quiete mattutina"
+    }
+  },
+  "tmHits": 1
+}

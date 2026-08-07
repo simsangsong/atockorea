@@ -1,0 +1,175 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "it",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time visitors to Korea wanting a mountain-and-coast day from a Seoul base"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Travelers drawn to Seoraksan's autumn foliage and granite peaks"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Anyone interested in Korean Buddhist heritage — Naksansa is a thousand-year seaside temple"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Photography enthusiasts wanting mountain, temple, and East Sea coastline in one day"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want a slow-paced single-stop experience"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Guests who can't travel on a Monday or Thursday (the only departure days)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Mobility-limited travelers — Seoraksan and Naksansa both have stairs and uneven paths"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Visitors hoping to swim — ⟦G0⟧ is a walking stop here, not a swim stop (and the tour runs year-round)",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Mountain first, coast after"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Seoraksan is the farthest and most physical stop, so it is visited first while energy is freshest. ⟦G0⟧ and ⟦G1⟧ sit together on the Yangyang coast on the natural return route — no backtracking.",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Mountain → temple → beach"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "The day moves from highest energy (Seoraksan stairs and optional cable car) to medium (Naksansa's cliff paths) to lowest (a flat hour on ⟦G0⟧). Photo style progresses from granite ridge to seaside temple to open coastline.",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Two landscapes, one stream"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "The Namdaecheon Stream that meets the sea at ⟦G0⟧ begins up in Seoraksan — the mountain and the coast on this itinerary are literally linked by water.",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Pacing & geography"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "All three stops are free to enter"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Seoraksan park entrance, ⟦G0⟧ (free since 2023), and ⟦G1⟧ all have no admission fee — the only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense).",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "Two pickup points across Seoul"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "Hongik (Mapo-gu) at 07:00 and ⟦G0⟧ (Jung-gu) at 07:30 cover Seoul's two main accommodation clusters — guests choose the exit closest to their hotel.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Tight coastal cluster"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "⟦G0⟧ and ⟦G1⟧ are adjacent on the Yangyang coast, so the afternoon spends time at the stops rather than in transit between them.",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Why this works in 12 hours"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-pink-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Seoraksan has stairs (cable car is optional)"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "The Tongildaebul + Sinheungsa walk is flat and accessible; steeper trails and the Gwongeumseong platform have rocky steps. The cable car is on-site own-expense and not bookable in advance."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Departs Mondays & Thursdays only"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "This is a fixed-schedule coach tour with two departure days a week. Book the correct date — Monday or Thursday — when you reserve."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Long day from an early start"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "This is a coach group tour — about 12 hours total including ~5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider a private chartered car day trip."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "Trade-offs honestly"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this Seoul day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Early Hongik/⟦G2⟧ pickup at 07:00/07:30; ~2.5 hr northeast drive to Seoraksan for the day's mountain anchor; ~40 min to the Yangyang coast (lunch en route) for the cliffside ⟦G0⟧; a few minutes down to ⟦G1⟧ for the day's gentlest chapter; return to Seoul by 18:45-19:15. Departs Mondays and Thursdays only.",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan",
+        "⟦G2⟧ = Myeongdong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/lessIdealFor/3": {
+      "⟦G0⟧": "Spiaggia di Naksan"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "⟦G0⟧": "Spiaggia di Naksan"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Spiaggia di Naksan"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan",
+      "⟦G2⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 2
+}

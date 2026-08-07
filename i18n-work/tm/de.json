@@ -9138,6 +9138,986 @@
     "1:db96ec4b4a29b4a3": {
       "target": "**Freier Eintritt** — goldenes Licht zur Stunde des Sonnenuntergangs",
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-4"
+    },
+    "1:65e251d1442798d3": {
+      "target": "Suwon Hwaseong, ⟦G0⟧ & Starfield Library — Tagestour ab Seoul | AtoC Korea",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:47af574880b5e56d": {
+      "target": "Suwon Hwaseong, ⟦G0⟧ & Starfield — Tour | AtoC Korea",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:82d1e8340ecf9afa": {
+      "target": "9-stündige Tagestour in der Kleingruppe ab Seoul: UNESCO-⟦G0⟧, Hwaseong Haenggung, Starfield Library und die LED-beleuchtete ⟦G1⟧.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:3796564116b68ab6": {
+      "target": "Suwon-Hwaseong-Tour ab Seoul",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:bae151e4d1ac93cb": {
+      "target": "Tagesausflug zur ⟦G0⟧",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:32c36d72ea265894": {
+      "target": "Tour zur Starfield Library Suwon",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:e4e0808acc2c7889": {
+      "target": "UNESCO-Tagestour in Korea",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:5ca0c7d03ddfc36e": {
+      "target": "6 Stopps",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:b704803a6dfd5d84": {
+      "target": "Suwon & Gwangmyeong",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:606f6e57f533b2b4": {
+      "target": "Kleingruppe",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:cd01d8e321c0a73f": {
+      "target": "Koreas einzige ummauerte Festungsstadt, die mit ihren originalen Uigwe-Aufzeichnungen erbaut wurde, eine ehemalige Goldmine als Kunstraum wiedergeboren und die meistfotografierte Bibliothek des Landes",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:c4eda0d1db5c51c2": {
+      "target": "Kultur",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:2fd8115c002de6cd": {
+      "target": "UNESCO",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:9731fe588ce90b3f": {
+      "target": "Höhle",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:90f6fbd035d497aa": {
+      "target": "Bibliothek",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:a4e529fd722cfccb": {
+      "target": "Shopping",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:082c52176e878902": {
+      "target": "Suwon: Hwaseong, ⟦G0⟧ & Starfield",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:175e4a78888f3046": {
+      "target": "Höhle",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:a8532270bfc13075": {
+      "target": "Bibliothek",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:a130eb1db40acffa": {
+      "target": "Shopping",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:77f6fa188aaf6ba5": {
+      "target": "Tagesausflug",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:aa455628234564ab": {
+      "target": "Ein kultureller Tagesausflug in der Kleingruppe ab Seoul, der vier gegensätzliche Seiten der Provinz Gyeonggi zeigt: die zum UNESCO-Erbe zählende ⟦G0⟧ mit ihren…",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:0f84871e963e66e6": {
+      "target": "Ab US$53 pro Person (statt $59, 10 % Rabatt)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:ec8a9f251dc37347": {
+      "target": "Ein kultureller Tagesausflug in der Kleingruppe ab Seoul, der drei gegensätzliche Seiten der Provinz Gyeonggi zeigt: die zum UNESCO-Erbe zählende ⟦G0⟧ mit ihren Mauern aus dem 18. Jahrhundert und dem Haenggung-Palast, den eindrucksvollen LED-beleuchteten Untertage-Themenpark in der ⟦G1⟧ (einer ehemaligen Goldmine aus der japanischen Kolonialzeit) und die vierstöckige Starfield Library Suwon. 9 Stunden inklusive Transport und Eintritten.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:4f609fd235cce57a": {
+      "target": "Suwon-Erbetag",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:f398340f35dde924": {
+      "target": "Hwaseong, ⟦G0⟧ & Starfield",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:691c55b4d85c66af": {
+      "target": "Feste Treffpunkte — eine Abholung am Hotel wird nicht angeboten. Zuspätkommende können nicht mitgenommen werden; eine Erstattung erfolgt nicht.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:9de758f4430d78ad": {
+      "target": "Station ⟦G0⟧ (Ausgang 2)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:da5a203429702aa4": {
+      "target": "Station Hongik Univ. (Ausgang 8)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:fc4f15c709f80e01": {
+      "target": "Bitte seien Sie 10 Minuten vor der Abfahrtszeit da.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:974375e375669368": {
+      "target": "Hin- und Rückfahrt im Reisebus ab Seoul, englischsprachige Reiseleitung, Eintritt ⟦G1⟧, Eintritt ⟦G0⟧, Eintritt ⟦G2⟧.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:63311a794700ae90": {
+      "target": "Nicht enthalten: Mahlzeiten, Getränke, optionale Weinprobe in der Höhlen-Vinothek, Trinkgelder.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:119ceb5042428d71": {
+      "target": "Der Eintritt in die Starfield Library ist frei.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:2ee7c411fe0912bf": {
+      "target": "Hin- und Rückfahrt im Reisebus ab Seoul, englischsprachige Reiseleitung, Suwon Hwaseong…",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:f5b1b072a8ce85af": {
+      "target": "Station Hongik University (Ausgang 8) um ≈08:00 Uhr oder Station ⟦G0⟧ (Ausgang 2 oder 4) um ≈08:30 Uhr.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:649afb793ff35e16": {
+      "target": "Seien Sie 10 Minuten früher da.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:2709d447c006fd0e": {
+      "target": "Es gibt keine Abholung am Hotel, nur Treffpunkte.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:e3bfa0188ddbb3df": {
+      "target": "Zuspätkommende können nicht mitgenommen werden; eine Erstattung erfolgt nicht.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:78cfca8db5fa3655": {
+      "target": "Der Weg auf der Festungsmauer führt über ansteigende Steinstufen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:764697280c6807f4": {
+      "target": "In der ⟦G0⟧ führen rund 180 Stufen hinunter zu den unteren Ebenen und wieder hinauf — einen Aufzug gibt es nicht.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:438aab91033ff18b": {
+      "target": "Bequeme, geschlossene Wanderschuhe sind unerlässlich.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:1cd545ee71b90a4f": {
+      "target": "Bei erheblichen Mobilitätseinschränkungen nicht zu empfehlen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:de612dfd595c813f": {
+      "target": "Bequeme Schuhe (Sneaker oder Wanderschuhe) und eine leichte Jacke — in der ⟦G0⟧ herrschen ganzjährig 12 °C, sodass es selbst im Sommer kühl ist.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:955b9839b1540826": {
+      "target": "Im Winter brauchen Sie einen warmen Mantel für die Festungsmauer und eine leichtere Schicht für die Höhle.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:e21821d3343d5640": {
+      "target": "Kamera, Wasser und Bargeld für Mittagessen und Streetfood (Budget ₩10.000–₩20.000).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:b0629cfd055a392e": {
+      "target": "Bequeme Schuhe (Sneaker oder Wanderschuhe) und eine leichte Jacke — in der ⟦G0⟧…",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:8f6948ca81e3be3e": {
+      "target": "Kostenlose Stornierung bis 24 Stunden vor Tourbeginn.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:6f6e0c2416fef8ef": {
+      "target": "Montags findet die Tour nicht statt (⟦G0⟧ geschlossen).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:fa50e0478a02c932": {
+      "target": "Kindern gefällt diese Tour in der Regel — die Lichter der Höhle, die Drachenskulptur und Aqua World sind bei Familien beliebt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:7c3d5edf7ad434e3": {
+      "target": "Der Weg auf der Festung hat Treppen und unebene Abschnitte.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:a291779e1b626d39": {
+      "target": "Wegen der über 180 Stufen ist die Höhle für Gäste mit Mobilitätseinschränkungen, mit Kinderwagen oder mit Angst vor engen Räumen nicht geeignet.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:dcf4b1ea16863994": {
+      "target": "Kindern gefällt diese Tour in der Regel — die Lichter der Höhle, die Drachenskulptur und Aqua World…",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1"
+    },
+    "1:409b0f7a688425f5": {
+      "target": "Paare",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:8c5380dd8b55191f": {
+      "target": "Aktive Reisende, denen volle Tage liegen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:daec1870c3277122": {
+      "target": "Reisende, die Stopps am UNESCO-Welterbe möchten",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:6d639828402f04fe": {
+      "target": "Reisende mit Klaustrophobie oder Angst vor engen Räumen (die unteren Ebenen der ⟦G0⟧ sind schmal und niedrig)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:8755b5bd2c8ad875": {
+      "target": "Alle, die die ≈180 Stufen hinunter und hinauf zu den Highlights der unteren Ebenen in Gwangmyeong nicht bewältigen (kein Aufzug)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:e0a2989b9142fa4c": {
+      "target": "Reisende mit eingeschränkter Mobilität auf der Festungsmauer — steile Abschnitte und Treppen an den Toren",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:ae28664b829bd414": {
+      "target": "Gäste, die Seouls zentrale Paläste sehen möchten — diese Tour bleibt vollständig in Gyeonggi",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:fdf08a0d49ca03fa": {
+      "target": "Reisende, die an einem Montag fahren müssen — die ⟦G0⟧ ist wegen Wartung geschlossen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:37c38ccdd440a732": {
+      "target": "Mehr Abwechslung als die übliche Suwon-Tour",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:7b53012537f7ad9a": {
+      "target": "Die meisten Suwon-Tagestouren verbinden Festung, Palast und Starfield Library — drei Stopps, die keine zehn Minuten auseinanderliegen. Diese Variante ergänzt die ⟦G0⟧, eine völlig andere Landschaft (unterirdisch, kunstbespielt, ganzjährig 12 °C), die von Suwon aus mit öffentlichen Verkehrsmitteln kaum zu erreichen ist.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:02371cb902c5b560": {
+      "target": "Wetterunabhängig, weil vieles drinnen liegt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:6b851410aa98f2f6": {
+      "target": "Zwei der vier Hauptstopps — die Starfield Library und die ⟦G0⟧ — liegen vollständig im Innenbereich und sind klimatisiert. Die Wege auf der Festung sind kurz genug für Regen oder Sommerhitze. Eine verlässliche Wahl, wenn das Wetter Kapriolen schlägt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:19dea4a7a3585e4e": {
+      "target": "Freier Eintritt, bezahlter Kontext",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:971428c612f3b502": {
+      "target": "In die Starfield Library kommen Sie auch allein kostenlos hinein — mit einer Reiseleitung lohnt sie sich aber deutlich mehr: warum ein Einkaufszentrum sie überhaupt gebaut hat (Shinsegaes Strategie für die MZ-Generation), worin sie sich vom COEX-Original unterscheidet und wo die besten Fotowinkel liegen, ohne Lesende zu stören.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:92a0453749e320d7": {
+      "target": "Abwechslungsreicher als ein Tag in nur einem Format",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:f7c22ea98b0c6ed8": {
+      "target": "Reine Kulturerbe-Touren können erdrückend wirken, Bibliotheks- und Mall-Touren beliebig. Diese Route wechselt bewusst den Gang — UNESCO-Mauern, Marktküche, moderne Bibliothek und zuletzt ein LED-beleuchteter Untertage-Themenpark —, damit der Tag nicht in einen einzigen Rhythmus verfällt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:5b55472de2e3de34": {
+      "target": "Festungsmauer: der anspruchsvollste Abschnitt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:31fd3b9c7758ad53": {
+      "target": "≈1 km Fußweg mit steilen Steigungen und Treppen an den Toren. Bequeme Schuhe sind unerlässlich. Der weite Blick entschädigt für den Anstieg, rollstuhlgerecht ist der Abschnitt aber nicht.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:f96d008ec2153d75": {
+      "target": "⟦G0⟧: ≈180 Stufen je Richtung",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:ae9c2e330f307bf6": {
+      "target": "Treppen hinunter zu den Highlights der unteren Ebenen (Wine Cave, Golden Waterfall, Aqua World) und ebenso viele zurück. Kein Aufzug. Gäste mit eingeschränkter Mobilität bleiben auf der oberen Ebene — auch dort gibt es ≈40 Min. zu sehen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:98e8b36093dd5614": {
+      "target": "Haenggung und Starfield: leicht",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:7bb96c1902e83c57": {
+      "target": "Palast und Starfield sind eben und barrierefrei und geben der Route einen leichten Abschnitt zwischen den Festungsmauern und den Höhlentreppen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:2034bd5701058dcb": {
+      "target": "Sommerhitze: Gwangmyeong ist die Erholung",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:8478cdfb642c201d": {
+      "target": "Konstante 12 °C in der Höhle machen sie an heißen Tagen zum Zufluchtsstopp. Auf der Mauer werden die Schattenpausen länger, das Marktessen verlagert sich ins Innere von Starfield.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:7b905e564c563149": {
+      "target": "Winterkälte: eine Schicht für die Höhle",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:357e7ae17629a837": {
+      "target": "12 °C sind kühl, wenn es draußen kälter ist. Nehmen Sie in Gwangmyeong selbst im Sommer eine leichte Jacke mit; im Winter behalten Sie Ihre Außenschicht besser an.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:5ef64be6b33a27e5": {
+      "target": "Montags nicht buchbar",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:738931ef13a9926a": {
+      "target": "Die ⟦G0⟧ ist montags wegen Wartung geschlossen, die Tour findet dann nicht statt. Für einen Montag wählen Sie die Variante mit dem Folkloredorf oder mit Waujeongsa.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:a450b81ef9e709c4": {
+      "target": "Wenn Wetter und Jahreszeit wechseln",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:0083677cbdb383b8": {
+      "target": "Eine dreieckige Runde durch Gyeonggi südlich und südwestlich von Seoul: vormittags Suwons UNESCO-Festungsstadt, am frühen Nachmittag Suwons moderne Flaggschiff-Mall und zum Abschluss am späten Nachmittag Gwangmyeongs umgewandelte Goldmine. Drei verschiedene Arten öffentlichen Raums — militärisch, kommerziell, industriell — über 250 Jahre hinweg, in einer einzigen Busrunde.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2"
+    },
+    "1:5d59c9822e3b2c10": {
+      "target": "Die ⟦G0⟧ ist montags wegen Wartung geschlossen. Da die Höhle einer der vier Kernstopps ist, findet die Tour montags nicht statt. Wenn Sie an einem Montag unterwegs sein möchten, kommen die reinen Suwon-Routen infrage (Hwaseong + Folkloredorf oder Hwaseong + Waujeongsa).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:2da66389575de3a3": {
+      "target": "Warum ist die Tour montags nicht verfügbar?",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:b8ce14aef2efd733": {
+      "target": "Ja — die Eintritte für ⟦G1⟧, ⟦G0⟧ und ⟦G2⟧ sind alle enthalten. Die Starfield Library ist für alle kostenfrei. Die optionale Weinprobe in der Höhlen-Vinothek und etwaige Zusatzangebote im Folkloredorf gehen auf eigene Kosten.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:43ab3c910b3cecd8": {
+      "target": "Nein. Das Mittagessen nehmen Sie in der Regel in der Freizeit in der Food Hall von Starfield Suwon ein (große Auswahl, ₩10.000–₩20.000) oder in einem kleinen Lokal in Suwon nahe der Festung (Galbi nach Suwoner Art oder Hähnchen).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:dc4561431a103fc4": {
+      "target": "Rund 180 Stufen hinunter zu den Highlights der unteren Ebenen (Wine Cave, Golden Waterfall, Aqua World) und ebenso viele wieder hinauf. Einen Aufzug gibt es nicht. Gäste mit Mobilitätseinschränkungen oder Angst vor engen Räumen bleiben meist auf der oberen Ebene.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:a0968238e09f9861": {
+      "target": "Wie viele Stufen hat die ⟦G0⟧?",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:91515f72e3654b7c": {
+      "target": "Kühl. In der Höhle herrschen ganzjährig konstante 12 °C (54 °F). Im Sommer ist das eine Wohltat, im Winter behalten Sie besser eine Schicht an. Sommergäste nehmen oft allein für diesen Stopp eine leichte Jacke mit.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:97e94d8ebe4ca453": {
+      "target": "Ist die Höhle warm oder kalt?",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:9b66eaca2f532024": {
+      "target": "Beide besuchen Festung, Palast und Starfield Library. Diese Variante kombiniert sie mit der ⟦G0⟧ (einem LED-beleuchteten Untertage-Themenpark). Die Folkloredorf-Variante lässt die Höhle weg und ergänzt stattdessen das Koreanische Folkloredorf in Yongin (ein Freilichtmuseum mit 270 Häusern). Wählen Sie diese Tour für Abwechslung und wettersicheres Innenprogramm, die Folkloredorf-Variante für tieferes Joseon-Erbe.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:b832b7db776ec8ac": {
+      "target": "Worin unterscheidet sich diese Tour von der Suwon-+-Folkloredorf-Tour?",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:351cb6135df30201": {
+      "target": "Ja — eine starke Wahl beim ersten Besuch, wenn Sie an einem Tag eine UNESCO-Stätte (Festung Hwaseong), einen Joseon-Palast (Haenggung), eine unterirdische Themenattraktion (⟦G0⟧) und einen zeitgenössischen Fotoort (Starfield Library) sehen möchten. Das Format bietet vier sehr unterschiedliche kulturelle Blickwinkel. Hinweis: Montags findet die Tour nicht statt (Wartungstag der ⟦G0⟧).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:941a12cdf9d6b5f7": {
+      "target": "Ist das eine gute Wahl für einen ersten Besuch in Suwon & Gwangmyeong?",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:61c19510d3bceb60": {
+      "target": "Ein aktiver Fußtag mit einem anstrengenden Treppenabschnitt. Die Hwaseong-Mauer hat steile Passagen und Treppen (≈1 km Fußweg). Für die Highlights der unteren Ebenen der ⟦G0⟧ sind ≈180 Stufen hinunter und ebenso viele hinauf nötig — ohne Aufzug. Der Haenggung-Palast ist überwiegend eben, mit einigen Stufen zwischen den Höfen. Die Starfield Library ist vollständig über Rolltreppen und Aufzüge erreichbar. Insgesamt ≈4 km zu Fuß. Bequeme Schuhe sind unerlässlich, besonders für die Höhlentreppen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:82d6d346f1acc2ee": {
+      "target": "Ja, für Familien, deren Kinder den Mauerweg und die Treppen in Gwangmyeong schaffen. Die Höhle ist ein Kinderliebling — LED-beleuchtete Szenerien, das Aquarium Aqua World, die 41 m lange Drachenskulptur, die unterirdische Vinothek (nur für Eltern) und der Golden Waterfall. Kinderwagen funktionieren weder auf der Mauer noch in den Treppenabschnitten der Höhle. Die ganzjährigen 12 °C in der Höhle machen sie zum Erholungsstopp.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:4227ea33a3db4eb4": {
+      "target": "Nur für aktive Seniorinnen und Senioren zu empfehlen, denen Treppen und enge Räume nichts ausmachen. Für die 180 Stufen zu den unteren Ebenen in Gwangmyeong gibt es keine Aufzugsalternative — die obere Ebene (≈40 Min. Programm) ist zugänglich, wenn Treppen nicht möglich sind. Die Festungsmauer hat steile Passagen, die leichteren ebenen Abschnitte sind gut begehbar. Haenggung und Starfield sind vollständig barrierefrei. Nehmen Sie für die Höhle auch im Sommer eine leichte Schicht mit.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:61bee80e2843ebe3": {
+      "target": "Am besten geeignet ab etwa 10 Jahren. Die Festungsmauer hat unebene Abschnitte, die Höhle 180 Stufen je Richtung, und der Tag ist lang (9 Stunden). Jüngere Kinder schaffen es, wenn ihnen Treppen und enge Räume nichts ausmachen (die unteren Stollen der Höhle sind schmal). Kinder lieben die unterirdischen Attraktionen oft — Drachenskulptur, Aqua World, Wine Cave (nur zum Ansehen). Der Streetfood-Markt in Suwon passt für jedes Alter.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:634f00c3bdaf64b7": {
+      "target": "Kirschblüten entlang der Hwaseong-Mauer; in der Höhle starten die Lichtinstallationen zum Frühlingsthema.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:c2bd3d6db09792a7": {
+      "target": "Die 12 °C im Inneren der Höhle sind eine beliebte Flucht vor der Schwüle Seouls; im Sommer findet das Suwon Hwaseong Cultural Festival statt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:f6b35efe79605e50": {
+      "target": "Ahornlaub entlang der Festungsmauer; im Oktober das große Suwon Hwaseong Cultural Festival.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:8ea2a68703d6063b": {
+      "target": "Schnee auf der Festungsmauer ist ein Klassiker fürs Foto; in der Höhle laufen die LED-Szenerien ganzjährig, vom Wetter unbehelligt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2"
+    },
+    "1:f39c068dddd17dfa": {
+      "target": "Hinfahrt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:f7ab02b5f5b32567": {
+      "target": "Seoul → Stadt Suwon über die Gyeongbu-Autobahn.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:a5b2ba396792b23d": {
+      "target": "Die Kulturerbe-Hälfte",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:704223e597a664d9": {
+      "target": "≈ 3 Stunden",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:ba26601b5080823e": {
+      "target": "Die Mauern von Suwon Hwaseong und der Haenggung-Palast, alles fußläufig voneinander entfernt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:4a1fbcb5a9b1e712": {
+      "target": "Moderner Knotenpunkt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:8d7e1ca49fc3a20b": {
+      "target": "15 Minuten Fahrt nach Starfield Suwon zu Bibliothek und Food Hall.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:0e5a7031fdbf6cc2": {
+      "target": "Finale unter Tage",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:3d743708a134d1cd": {
+      "target": "30 Minuten Fahrt nach Nordwesten zur ⟦G0⟧ und ihrem LED-beleuchteten Themenpark.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:2c38f8bf6ebe6756": {
+      "target": "Gwangmyeong → Seoul über die Seohaean-Autobahn.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:cc5923d868e14db0": {
+      "target": "Starfield Library Suwon — Galeriebild 1",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:d9d699cb3da903e2": {
+      "target": "Starfield Library Suwon — Foto 1",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:d0f3ef602a2fe429": {
+      "target": "Starfield Library Suwon",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:cf5928913982fa58": {
+      "target": "Starfield Library Suwon — Galeriebild 2",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:dad69b5ecbc3fdea": {
+      "target": "Starfield Library Suwon — Foto 2",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:ce5926fe0a24a700": {
+      "target": "Starfield Library Suwon — Galeriebild 3",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:dbd69cf19c65aa92": {
+      "target": "Starfield Library Suwon — Foto 3",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:d1592bb755b8ee68": {
+      "target": "Starfield Library Suwon — Galeriebild 4",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:dcd69e84af8e09da": {
+      "target": "Starfield Library Suwon — Foto 4",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B"
+    },
+    "1:28292527bbd9b2cf": {
+      "target": "Seoul",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:routeFlowStops"
+    },
+    "1:d519fc06f952fa57": {
+      "target": "UNESCO-Festung",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:routeFlowStops"
+    },
+    "1:08b82660a2daa582": {
+      "target": "Kulturerbe-Palast",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:routeFlowStops"
+    },
+    "1:17c1af9884f51183": {
+      "target": "Modernes Korea",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:routeFlowStops"
+    },
+    "1:2b36a7af5d45c9eb": {
+      "target": "Abfahrt in Seoul",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:a4cc8ccbd5e1c7ae": {
+      "target": "Abholung & Abfahrt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:95cf3da023edab2b": {
+      "target": "10 Min.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:24c06a8a986185cc": {
+      "target": "Treffen am festgelegten Abholpunkt in Seoul (~5 Min. zum Einsteigen)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:6ff6ba995bf2a672": {
+      "target": "1-stündige Busfahrt nach Suwon (~60 Min. bei wenig Verkehr)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:735429b51df155ab": {
+      "target": "Abholung an der Hongik University (Linie 2) oder ⟦G0⟧ (Linie 4) ~08:30 Uhr",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:fb07a32ac04aeadd": {
+      "target": "1 Stunde mit dem Bus nach Süden bis Suwon über die Gyeongbu-Autobahn",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:e9d79286208a34c8": {
+      "target": "9-Stunden-Tag, so gelegt, dass Hwaseong vor dem größten Andrang erledigt ist",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:e03ab7b805a95ca9": {
+      "target": "Bus mit Klimaanlage und USB-Ladeanschlüssen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:2b39ef4d9f15c6b9": {
+      "target": "Bestätigen Sie die genaue Abholzeit und den Treffpunkt bei der Buchung. Bringen Sie Wasser, Sonnenschutz und bequeme Schuhe für den Weg auf der Festungsmauer mit — und eine leichte Jacke für die Höhle (ganzjährig 12 °C).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:1873e87b0f991084": {
+      "target": "Mit Ankunft um 09:30 Uhr in Suwon steht die Gruppe 60–90 Min. vor dem Mittagsandrang gegen 11:00 Uhr an der Festung Hwaseong. Der Takt des Tages — Festung → Palast → Mittagessen am Markt → Bibliothek → Höhle — hält die Busumsetzungen gering und endet mit dem verlässlichen Innenfinale in der Höhle.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:21e4e95d8683c678": {
+      "target": "Abholung an einem von zwei zentralen Treffpunkten in Seoul: **Station Hongik University, Ausgang 8** (Viertel Hongdae, Seouler U-Bahn-Linie 2 / Airport Express) oder **Station ⟦G1⟧, Ausgang 2 oder 4** (Seouler U-Bahn-Linie 4). Rund **1 Stunde mit dem Bus nach Süden bis Suwon** über die Gyeongbu-Autobahn. \n\nDer 9-Stunden-Tag ist so aufgebaut, dass er an der Festung Hwaseong (UNESCO 1997) beginnt, bevor der Andrang gegen 11:00 Uhr seinen Höhepunkt erreicht, dann am mittleren Nachmittag die Starfield Library mit Mittagspause bringt und mit dem LED-Kunst-Finale der ⟦G0⟧ vor der Rückfahrt am Abend schließt. Der Bus ist klimatisiert und an den meisten Sitzen mit USB-Ladeanschlüssen ausgestattet.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:2557a025cea35f57": {
+      "target": "Ausstieg aus dem Bus nahe Janganmun (~5 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:94e00c32f4050fd4": {
+      "target": "Kurze Orientierung in der Gruppe (~5 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:f2bc3d4e89d07066": {
+      "target": "Weg Janganmun → Hwaseomun (~25–30 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:4ac05625760d73fa": {
+      "target": "Zeit für Fotos und Sammeln am Fahrzeug (~10 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:7d3f66b628b2d3da": {
+      "target": "Optional die Hwaseong-Yeolcha-Sightseeing-Bahn Yeonmudae↔Paldalmun (~30 Min. je Richtung; ₩4.000 für Erwachsene)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:e44ab9800e8b16c2": {
+      "target": "**UNESCO-Welterbe seit 1997** — Koreas einzige ummauerte Festungsstadt mit erhaltenen Originalbauakten",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:1f38f5ea28234462": {
+      "target": "Erbaut 1794–1796 in 2 Jahren und 9 Monaten unter König Jeongjo",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:b5549dd1bba5909e": {
+      "target": "Entworfen von Jeong Yak-yong auf Basis koreanischer, chinesischer und westlicher Festungsbaukunst",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:92498de74b27d2e5": {
+      "target": "Hwaseong Seongyeok Uigwe — UNESCO-Weltdokumentenerbe 2007",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:156b5a284b218ebc": {
+      "target": "5,74 km Mauerumfang, 41 strategische Militärbauten",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:34cac298e6450f8f": {
+      "target": "Nordtor Janganmun — **das größte erhaltene königliche Tor Koreas**",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:e4b20df69ca93250": {
+      "target": "1,2 km geführter Weg Janganmun → Hwaseomun (der fotogenste Abschnitt)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:537f9984e3c7e07e": {
+      "target": "Das Schleusentor Hwahongmun mit 7 Bögen — das meistfotografierte Bauwerk",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:652f2361e971be4d": {
+      "target": "KOSTENLOS für Hanbok-Tragende, Seniorinnen und Senioren ab 65 und am letzten Mittwoch des Monats",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:228a0f9b12b0ae0f": {
+      "target": "Wer am Haenggung-Platz einen Hanbok mietet, kommt KOSTENLOS in Festung und Palast. Der Abschnitt Janganmun → Hwaseomun bietet die höchste Erbedichte pro Meter.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:5e8f0339f9ce9ea8": {
+      "target": "Besucherzentren an allen Haupttoren; durchgehend englisch-koreanische Beschilderung",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:cd9ecf75be65b77a": {
+      "target": "Der UNESCO-Anker der Route — Koreas einzige erhaltene ummauerte Festungsstadt, erbaut 1794–1796 unter König Jeongjo. Der Weg Janganmun → Hwaseomun bietet in einem 60-minütigen Stopp die höchste Dichte erhaltener Militärbauten, zugeschnitten auf einen 9-Stunden-Tag mit 5 substanziellen Stopps. Die vollständige Runde über 5,74 km würde 2,5 Stunden und mehr verschlingen und die übrigen Kultur- und Modernestopps des Tages auffressen. In dieser Route mit 5 Stopps dient Hwaseong als **Anker des Vormittags** — die 5,74 km Umfang sind zu lang, um sie in einem Besuch zu umrunden, deshalb konzentriert sich das Tagesausflugsformat auf den westlichen Abschnitt Janganmun → Seojangdae (~25–30 Min. Fußweg, höchste Erhaltungsdichte). Die Bauakte **Hwaseong Seongyeok Uigwe** von 1801 — seit 2007 UNESCO-Weltdokumentenerbe — hielt jeden Stein, jeden Balken und jeden Arbeiterlohn fest und ermöglichte so ab 1975 den originalgetreuen Wiederaufbau nach den Schäden des Koreakriegs. Jeong Yak-yongs **Geojunggi (거중기), ein Flaschenzugkran**, ist der weltweit erste dokumentierte Einsatz westlicher Hebelmechanik auf einer Joseon-zeitlichen Baustelle — rund 120 Jahre vor Koreas industrieller Mechanisierung.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:df37ca437e0999e0": {
+      "target": "Busausstieg am Parkplatz Janganmun",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:4855ed2dfdeeb6a1": {
+      "target": "An Janganmun, Hwaseomun, Paldalmun und Yeonmudae",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:f549d24c8d4fa541": {
+      "target": "**Suwon Hwaseong (수원화성) — UNESCO-Welterbe seit 1997** — Koreas einzige ummauerte Festungsstadt, die zusammen mit ihrer originalen 10-bändigen Bauakte erhalten ist (Hwaseong Seongyeok Uigwe, 2007 gesondert in das UNESCO-Weltdokumentenerbe aufgenommen). Erbaut **1794–1796 in 2 Jahren und 9 Monaten** unter König Jeongjo (정조, 22. König der Joseon-Dynastie, reg. \n\n1776–1800) — das Vorhaben des Königs, die Joseon-Hauptstadt von Hanyang (Seoul) nach Suwon zu verlegen und seinen hingerichteten Vater, Kronprinz Sado, zu ehren. Entworfen von **Jeong Yak-yong (정약용, Dasan)** — dem führenden Gelehrten und Ingenieur der Silhak-Schule (praktische Lehre) — der koreanische Verteidigungsarchitektur mit chinesischer Belagerungstheorie und der aufkommenden westlichen Festungsbaukunst verband. \n\nJeong Yak-yong erfand den **Geojunggi (거중기), einen Flaschenzugkran** — der erste dokumentierte Einsatz moderner Technik westlicher Art im koreanischen Bauwesen. \n\n**5,74 km Mauerumfang, 41 strategische Bauwerke**, darunter **Janganmun (nördliches Haupttor) — DAS GRÖSSTE ERHALTENE KÖNIGLICHE TOR KOREAS**, größer als Seouls Sungnyemun. \n\nDie Route des 9-Stunden-Tages läuft den **fotogensten Abschnitt von 1,2 km zwischen Janganmun und Hwaseomun (Westtor, Nationalschatz Nr. 403)** — ~25–30 Min. Fußweg durch die höchste Dichte erhaltener Militärbauten. \n\n**Hwahongmun (nördliches Schleusentor)** mit seinen 7 Bögen über dem Suwoncheon-Bach ist das meistfotografierte Bauwerk. **KOSTENLOS für Hanbok-Tragende, am letzten Mittwoch des Monats, für Seniorinnen und Senioren ab 65 und für Kinder bis 6 Jahre** — ein spürbarer Posten im Budget eines Familientages in Suwon.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:35be107b8ff5bb47": {
+      "target": "Mauerweg 24 Stunden zugänglich; empfohlen 09:00–18:00 Uhr im Sommer / 09:00–17:00 Uhr im Winter",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:ed6e637c9cc9a200": {
+      "target": "Ganzjährig geöffnet (die Hwaseong-Bahn ruht montags)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:10968f4dd73a7fcc": {
+      "target": "Mittel — die Mauer hat steile Abschnitte, an den Toren Treppen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:8c44dbf4997b59ef": {
+      "target": "Erwachsene 1.000 / Jugendliche 700 / Kinder 500 KRW (KOSTENLOS: Kinder bis 6, Seniorinnen und Senioren ab 65, Hanbok-Tragende, letzter Mittwoch im Monat)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:b5a7f4669ca1c3cd": {
+      "target": "Königlicher Nebenpalast der Joseon-Zeit",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:5a3a57327bab1a74": {
+      "target": "5 Min. Fußweg von der Festung Hwaseong (Bereich Hwaseomun)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:7fa5809928782fc0": {
+      "target": "Wachablösung der königlichen Garde um 11:00 Uhr (Di–So) — ~15 Min.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops"
+    },
+    "1:959e30cd83284651": {
+      "target": "Rundgang Bongsudang + Naknamheon + Janganheon (~30 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:3d0ddca205a99014": {
+      "target": "Optional die Wachablösung der königlichen Garde am Sinpungnu-Tor (Di–So 11:00 Uhr, ~15 Min., KOSTENLOS — bei passender Witterung)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:b3d61dfbe20dc7fc": {
+      "target": "**Koreas größter erhaltener Haenggung (königlicher Nebenpalast)** — ursprünglich 576 Räume",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:83827534edeabb51": {
+      "target": "König Jeongjos 13 königliche Wallfahrten hierher zu Ehren seines hingerichteten Vaters, Kronprinz Sado",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:ecf6ac5a3ab7fc9a": {
+      "target": "**Naknamheon = das EINZIGE erhaltene Originalgebäude von 1796** (alle anderen sind Rekonstruktionen)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:6bc1618152909546": {
+      "target": "**Wachablösung der königlichen Garde Di–So um 11:00 Uhr am Sinpungnu-Tor (KOSTENLOS)**",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:687be2d9d7f6c8f8": {
+      "target": "Königliche Prozession von 1795 — UNESCO-Weltdokumentenerbe",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:665d958672d34634": {
+      "target": "Drehort der K-Drama-Serie „Jewel in the Palace“",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:6f20deebc04403e4": {
+      "target": "KOSTENLOS für Hanbok-Tragende und Seniorinnen und Senioren ab 65",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:0ba6e39eca0980a2": {
+      "target": "**Naknamheon (낙남헌) ist das EINZIGE Gebäude, das aus dem Originalbau von 1796 erhalten blieb** — die Behörden der japanischen Kolonialzeit bauten es zu Büros einer Polizeiwache um, rissen es aber nicht ab; jedes andere heute sichtbare Haenggung-Bauwerk ist eine Rekonstruktion nach 1996 auf Grundlage des Hwaseong Seongyeok Uigwe (seit 2007 UNESCO-Weltdokumentenerbe)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:83a33fedddf3843b": {
+      "target": "**576 Kan (Räume bzw. Gebäudeachsen)** = der GRÖSSTE erhaltene Haenggung-Nebenpalast Koreas — König Jeongjo ließ ihn eigens errichten, um dort zu übernachten, wenn er das Grab seines hingerichteten Vaters, Kronprinz Sado, besuchte (Hyeollyungwon, 4 km südlich); zwischen 1795 und 1800 unternahm Jeongjo diese Reise 13-mal",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:4a799be9ebbcc705": {
+      "target": "**Planen Sie die Ankunft auf die Wachablösung der königlichen Garde um 11:00 Uhr, Di–So (KOSTENLOS)**. **Naknamheon ist der historisch mit Abstand wichtigste Punkt** — das einzige nicht wiederaufgebaute Bauwerk, das den Abriss in der japanischen Kolonialzeit überstand. Montags meiden — die Wachablösung findet nur Di–So statt.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:9ffdf06d8351a794": {
+      "target": "Besucherzentrum, Hanbok-Verleih am Haenggung-Platz (15.000–20.000 KRW für 4 Std.), die Suwon-Tongdak-Restaurants 5 Min. Fußweg südlich.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:ede2a80b61501f57": {
+      "target": "Die zeitweilige königliche Residenz liegt INNERHALB derselben UNESCO-Stätte wie die Festung Hwaseong, 5 Min. Fußweg entfernt. **Naknamheon = das einzige authentische Originalbauwerk** (alle anderen nach 1996 wiederaufgebaut). Planen Sie die Ankunft auf die Wachablösung der königlichen Garde um 11:00 Uhr — KOSTENLOS, 15 Min., einer der stärksten kostenfreien Programmpunkte im Katalog. Haenggung bildet das **historische und emotionale Zentrum** des Hwaseong-Projekts — die Festungsmauern wurden 1794–1796 genau deshalb darum herum gebaut, um König Jeongjos Wallfahrten der Kindespietät zum Grab seines Vaters zu schützen. Der Besuch nach dem Mauerabschnitt macht aus einer abstrakten Lektion in Militärarchitektur einen gelebten königlichen Joseon-Raum: In derselben **Thronhalle Bongsudang** fand 1795 auch das prachtvolle Bankett zum 60. Geburtstag von Jeongjos Mutter Lady Hyegyeong statt (festgehalten in den erhaltenen Banchado-Hofmalereirollen des Uigwe). Der Ort war in zahlreichen K-Dramen zu sehen, darunter Jewel in the Palace (2003), Sungkyunkwan Scandal (2010) und Moonlight Drawn by Clouds (2016). Ein **Kombiticket für Festung + Haenggung** zu 3.500 KRW (statt 2.500 KRW einzeln) macht Haenggung zu einer besonders lohnenden Ergänzung der Ankerfolge des Tages.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:b64134e2581d7526": {
+      "target": "Öffentlicher Parkplatz Hwaseong Haenggung; kostenpflichtige Parkflächen am Haenggung-Platz",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:9062bae5fb2c4f49": {
+      "target": "Am Haupteingang, nahe Bongsudang und am Haenggung-Platz",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:dc119f60795dbe5c": {
+      "target": "**Hwaseong Haenggung (화성행궁) — Koreas größter erhaltener Haenggung (königlicher Nebenpalast)** — 1789–1796 zusammen mit den Festungsmauern von Hwaseong unter König Jeongjo erbaut. \n\nEin **Haenggung** ist eine zeitweilige königliche Nebenresidenz für Reisen, Kriegszuflucht oder besondere Zeremonien; Hwaseong Haenggung übertrifft die Haenggung von Onyang, Bukhansan und Namhansan an Größe. König Jeongjo ließ ihn vor allem errichten, um dort zu übernachten, wenn er das Grab seines hingerichteten Vaters, Kronprinz Sado, besuchte (Hyeollyungwon, heute Yungneung-Königsgrab, 4 km südlich) — eine Wallfahrt, die er **13-mal während seiner Regierungszeit** unternahm. \n\nDie berühmteste war die **königliche Prozession von 1795** (6.000 Begleitende und 1.400 Pferde) zum 60. Geburtstag von Lady Hyegyeong — dokumentiert im **Wonhaeng Eulmyo Jeongni Uigwe, seit 2007 UNESCO-Weltdokumentenerbe**. Ursprünglich **576 Kan (Räume bzw. Gebäudeachsen)** — ein vollständiger königlicher Palast im Kleinen. \n\nWährend der japanischen Kolonialzeit (1910–1945) weitgehend zerstört, als er zum Provinzkrankenhaus und zur Polizeiwache von Suwon umgebaut wurde. Die Restaurierung begann 1996; die erste Phase war 2003 abgeschlossen (Bongsudang, Naknamheon, Janganheon, Yuyeotaek), die zweite 2009 (königliche Küche Wuhwagwan, Sinpungnu-Tor). \n\n**Wichtiger historischer Hinweis: Naknamheon (낙남헌) ist das EINZIGE Gebäude, das aus dem Originalbau von 1796 erhalten blieb** — die Japaner bauten es zu Büros einer Polizeiwache um, rissen es aber nicht ab. Es ist damit das einzige AUTHENTISCHE Originalbauwerk der Anlage; alles andere ist Rekonstruktion nach 1996. \n\n**Wachablösung der königlichen Garde** am Sinpungnu-Tor — **Dienstag bis Sonntag um 11:00 Uhr**, ~15 Min., KOSTENLOS. Die Ankunft der Route um 10:45 Uhr ist auf die Zeremonie um 11:00 Uhr abgestimmt, sofern der Wochentag es zulässt. Drehort der K-Drama-Serie **„Jewel in the Palace“ (Daejanggeum, 2003)** — dem ikonischen Joseon-Hit (Spitzenquoten um 57 % in Korea).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:992fafde2f0579b1": {
+      "target": "09:00–18:00 Uhr (letzter Einlass 17:30 Uhr); im Sommer von Mai bis Oktober Abendöffnung 18:00–21:00 Uhr",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:abe228fb64a6d4e7": {
+      "target": "Leicht — das Palastgelände ist überwiegend eben, zwischen den Höfen einige Stufen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:2cdcf26e6d8db0be": {
+      "target": "Erwachsene 1.500 / Jugendliche 1.000 / Kinder 700 KRW. Kombiticket Festung + Haenggung 3.500 KRW. KOSTENLOS für Hanbok-Tragende und Seniorinnen und Senioren ab 65",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:db199ed4bc2f6034": {
+      "target": "Modernes Kulturwahrzeichen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:f594d5616f69bcc0": {
+      "target": "15 Min. Busfahrt vom Paldalmun-Platz nach Starfield",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:3fc993fcf5d13db5": {
+      "target": "Rundgang durch Mall und Bibliothek (~45 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:85698889e4ca36d5": {
+      "target": "Cafépause oder Bummel durch die Geschäfte (~20 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:a78de751c5bd08c7": {
+      "target": "Sammeln am Bus (~10 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:f6d0723d5b2e431d": {
+      "target": "Optional die Vinyl-LP-Café-Lounge (5. OG, ~₩18.500 inkl. Getränk, Kopfhörern und Zugang zum Plattenspieler; ~30–45 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:3408fe2648de4a39": {
+      "target": "**Shinsegaes Flaggschiff-Starfield-Mall der 2. Generation — eröffnet am 26. Januar 2024**",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:26bfd59eed563ed2": {
+      "target": "Entwurf von BCHO Partners (auch verantwortlich für die ursprüngliche Starfield Library im COEX)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:2f2832357d7e6b52": {
+      "target": "**4-stöckige Bibliothek mit 22 Meter hohen Bücherregalen** — zu den höchsten Koreas zählend",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:90f2ccbc97f11711": {
+      "target": "Große frei zugängliche Lesesammlung, KOSTENLOS",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:e9fc3199f47c8b7a": {
+      "target": "Vinyl Record Listening Lounge",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2"
+    },
+    "1:77110b828af291fe": {
+      "target": "Kirschblüten-Installation aus LED-Blütenblättern (März–April)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:093380c44ece3ac7": {
+      "target": "Food Hall Eatopia, Wasserpark Aquafield, Toy Kingdom, Kinos CGV und MEGABOX",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:8d6d1218e8724a46": {
+      "target": "Kostenloser Starfield-Shuttle ab Station Suwon, Ausgang 4 (~10 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:f57d3ccbe1e86180": {
+      "target": "**Dachinstallation „The Planets“ des kanadischen Schriftstellers und Designers Douglas Coupland** — exklusiv am Standort Suwon (nicht im Seouler COEX); sie macht Starfield Suwon zum **Flaggschiff der „zweiten Generation“** in Shinsegaes Bibliotheks-Mall-Format, entworfen von **BCHO Partners (Cho Byoung-soo)** und nicht, wie oft fälschlich angegeben, vom niederländischen Büro MVRDV",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:a9fa9ba5f5b84069": {
+      "target": "**Die Bibliothek ist KOSTENLOS** — ein außergewöhnlich gutes Preis-Leistungs-Verhältnis. **22 Meter hohe Bücherregale = die höchsten Koreas** (den Gästen erwähnen, das wirkt). **Die Kirschblüten-Installation im März und April** ist das saisonale Muss. Samstagnachmittage meiden (größter Andrang). Die monatlichen Schließtage von Starfield online prüfen.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:3c88b9704521b51a": {
+      "target": "Food Hall Eatopia im 1. UG, Toy Kingdom im 4. OG, Wasserpark Aquafield im 1.–2. UG, Kinos T-Joy, CGV und MEGABOX, kostenloses WLAN, mehrsprachiger Kundenservice, Schalter für Steuerrückerstattung.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:613c7fed7d1c31ce": {
+      "target": "Das Gegengewicht „modernes Korea“ nach Festung, Palast und Mittagessen am Markt. Shinsegaes Flaggschiff-Starfield-Mall der 2. Generation eröffnete am 26. Januar 2024; die vierstöckige Bibliothek mit 22 m hohen Bücherregalen ist das architektonische Highlight. **Ein Erholungsstopp komplett im Innenbereich** — er federt das Wetterrisiko am Nachmittag ab und spricht wirklich alle Generationen an, bevor die ⟦G0⟧ das Industriekultur-Finale liefert. Die Starfield Library ist der **am häufigsten auf Instagram fotografierte Innenraum im Großraum Seoul außerhalb der Innenstadt** (laut koreanischen Reisemedien-Erhebungen 2024/25) — die 22 m hohen Regale (gegenüber 13 m im Seouler COEX) durchziehen die Mall-Etagen 4 bis 7 als zusammenhängenden Atriumraum. **Freier Eintritt, keine Mitgliedschaft, Fotografieren erlaubt, die gesamte Mall frei zugänglich** — ein reibungsloser Fotostopp mit optionaler Café- und Gastronomie-Nachbarschaft (Food Hall Eatopia im 1. UG mit über 30 koreanischen und internationalen Restaurants). Ab Station Suwon: kostenloser Starfield-Shuttlebus (alle 10–15 Min. ab Ausgang 4) oder U-Bahn-Linie 1 → Station Hwaseo, Ausgang 1/4 (8 Min. Fußweg). Öffnungszeiten der Mall **täglich 10:00–22:00 Uhr**, die Bibliothek ist während der gesamten Mall-Öffnungszeit zugänglich.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:43c78ccb2b744aaf": {
+      "target": "Tiefgarage mit ~5.000 Plätzen; die ersten 3 Stunden KOSTENLOS ab 30.000 KRW Einkauf in der Mall; Busparkplatz für Gruppen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:55f826676e34d651": {
+      "target": "Mehrere Toiletten auf jeder Etage; familienfreundliche Wickelbereiche",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:0fb38cdb610d6859": {
+      "target": "**Starfield Library Suwon (별마당 도서관 수원)** — im Inneren von **Starfield Suwon, Shinsegaes Flaggschiff-Starfield-Mall der „zweiten Generation“, eröffnet am 26. Januar 2024** als fünfte Starfield-Mall. ~334.000 m² Bruttogeschossfläche — Koreas 2. größte Indoor-Mall nach Starfield Hanam. Entworfen in Zusammenarbeit mit **BCHO Partners (Cho Byoung-soo)** — dem koreanischen Büro, das auch die ursprüngliche Starfield Library im COEX (2017) verantwortete. \n\nDie Bibliothek in Suwon steht für die zweite Generation, mit **Bücherregalen von bis zu 22 Metern Höhe** — sie zählen zu den höchsten zylindrischen Regalbauten in einem öffentlichen Raum Koreas; die Bibliothek erstreckt sich über 4 Etagen (Atriumraum 4. bis 7. OG) und beherbergt **eine große Präsenzsammlung an Büchern und Zeitschriften**, darunter koreanische und internationale Veröffentlichungen, Periodika, Kunstbände und eine eigene Kinderabteilung im 4. OG. \n\n**KOSTENLOS und öffentlich zugänglich** während der gesamten Mall-Öffnungszeit (täglich 10:00–22:00 Uhr). Kein Bibliotheksausweis nötig, kein Eintritt. Bücher können nicht ausgeliehen werden (nur Lesen vor Ort). Besonderheiten: die **Vinyl Record Listening Lounge** mit kuratiertem koreanischem Indie sowie Jazz- und Classic-Rock-Vinyl, eine **monatlich wechselnde Kunstausstellung** im Atrium und die **saisonale Kirschblüten-Installation im zentralen Atrium (März–April)** mit Tausenden rosa LED-Blütenblättern — einer der meistfotografierten Frühlingsorte Suwons. \n\nAngrenzende Mall-Angebote: die **Food Hall Eatopia (1. UG)** mit über 30 Restaurants, der **Wasserpark Aquafield Suwon mit koreanischem Spa (1.–2. UG)** gegen gesonderten Eintritt, **Toy Kingdom (4. OG, Koreas größtes Spielzeuggeschäft)** und die **Doppelkino-Anlage CGV/MEGABOX**. \n\nDer **kostenlose Starfield-Shuttlebus** fährt alle 10–15 Min. ab Station Suwon, Ausgang 4 — der einfachste Zugang mit öffentlichen Verkehrsmitteln. **Erholungsstopp** im Tagesablauf: eine überdachte Innenumgebung, die das Tempo vor der 30-minütigen Busfahrt zur ⟦G0⟧ zurücksetzt. \n\n**Cafépause, Bibliotheksfoto und Schaufensterbummel** — bewusst als entspannter Übergang gedacht und nicht als weitere fordernde Attraktion.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:8183155a5c1ffd56": {
+      "target": "Mall 10:00–22:00 Uhr; die Bibliothek ist während der gesamten Mall-Öffnungszeit zugänglich",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:978dcc631828d3fb": {
+      "target": "1–2 Schließtage im Monat (meist montags — online prüfen)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:1da0db6bd2d036d7": {
+      "target": "Leicht — Rolltreppen und Aufzüge zwischen allen Etagen; für Rollstuhl und Kinderwagen zugänglich",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:9d732fc5ee5a4371": {
+      "target": "Bibliothek KOSTENLOS; die gesamte Mall frei zugänglich; Aquafield gesondert ~25.000–35.000 KRW",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:ef8181a41a7992e4": {
+      "target": "Themenhöhle im Industriedenkmal",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:9bb443888bd6fffa": {
+      "target": "100 Min.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:783436c7b098b4c6": {
+      "target": "30 Min. Busfahrt von Starfield Suwon nach Gwangmyeong",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:71c7fb49ee4663bd": {
+      "target": "Höhleneingang und Ticketkauf (~10 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:6dde08f6126e3fa7": {
+      "target": "Rundgang durch die Themenzonen: Aquarium → LED-Tunnel → Drache → Music Hall → Wine Cave → Folk Park (~70–80 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:83b8baa768ba4bcc": {
+      "target": "Optionale Weinprobe (~15 Min., gegen Aufpreis)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:576adf7e9f9e2a2a": {
+      "target": "**Ursprünglich eine Gold-, Silber-, Kupfer- und Zinkmine** — von 1912 bis 1972 unter japanischer Kolonialverwaltung betrieben",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:b9e2314da0683896": {
+      "target": "Im August 2011 als Koreas erste Höhlenattraktion in kommunalem Besitz wiedereröffnet",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:6074e03cbdf2ddd7": {
+      "target": "**Gewinner des Korea Tourism Star Award 2014** (des koreanischen Tourismus-Oscars)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:ef6f97cf4f3faeef": {
+      "target": "Gesamte Stollenlänge 7,8 km; ~2 km öffentlich begehbare Strecke",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:28e388bf0e975f40": {
+      "target": "**Konstant ~12 °C das ganze Jahr über** — leichte Jacke mitbringen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:f72faba0dffd188b": {
+      "target": "**41 Meter langer Drache aus Glasfaser (Yongmaru)** — Koreas größte Skulptur im Inneren einer Höhle",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:76f55a6ef78ad543": {
+      "target": "Wine Cave — Koreas größter unterirdischer Weinkeller (über 200 Weine; Probe 5.000 KRW)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:375142ef1e7dae25": {
+      "target": "LED Art Tunnel, Fluoreszenz-Wandbild, Music Hall und Höhlenaquarium",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:2867be5329cbd979": {
+      "target": "Drehort: „Memories of the Alhambra“ (2018), „A Korean Odyssey“",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:85de9436a9ec7358": {
+      "target": "**Montags geschlossen** — Di–So 09:00–18:00 Uhr",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:13b103cddf901873": {
+      "target": "Hauptroute rollstuhlgerecht",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3"
+    },
+    "1:595041af3e063c6c": {
+      "target": "**Ganzjährig 12 °C — leichte Jacke mitbringen**, auch im Sommer. Ideal als **Flucht vor koreanischen Hitzewellen**. **Montags meiden** — geschlossen. Die **Weinprobe** (5.000 KRW für 3 Weine) ist das am meisten unterschätzte Erlebnis — koreanische Weine aus regionalen Kellereien, die es in Seoul nicht gibt. Planen Sie mindestens 1,5 bis 2 Stunden ein, mit Weinprobe und Konzert in der Music Hall 2,5 Stunden.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:b4f956cfbc42d50c": {
+      "target": "Höhlenrestaurant (koreanisches Buffet ~15.000 KRW), Café mit Weinkarte aus dem Höhlenlager, Souvenirladen, Probierraum der Wine Cave (5.000 KRW für 3 Weine), Veranstaltungsplan der Music Hall.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:cf8d57689b2169c4": {
+      "target": "Der Industriekultur-Anker des Tages und das **Finale komplett im Innenbereich** — es federt jedes Wetterrisiko am späten Nachmittag ab und liefert zugleich Koreas stärkstes Höhlenerlebnis. Die Bergbaugeschichte von 1912 bis 1972, die Wiedereröffnung 2011 und die Verwandlung durch LED-Kunst ergeben die erzählerisch stärkste Industriedenkmal-Geschichte im Katalog. Die rollstuhlgerechte Hauptroute macht sie zum mobilitätsfreundlichsten Kulturstopp des Tages. Das **vielschichtige Industriekultur-Narrativ** der ⟦G0⟧ ist ihr Alleinstellungsmerkmal: eine Gold-, Silber-, Kupfer- und Zinkmine aus dem Jahr 1912, in der japanischen Kolonialzeit angelegt und 60 Jahre lang betrieben (1912–1972), dann aufgegeben, rund 40 Jahre als Gärlager für Garnelenpaste genutzt (dank der konstanten **~12 °C / 54 °F Höhlentemperatur** und der hohen Luftfeuchtigkeit) und schließlich **2011 von der Stadt Gwangmyeong** für 4,3 Milliarden KRW von einem privaten Eigentümer **gekauft** — womit sie zu **Koreas erster Höhlenattraktion in kommunalem Besitz** wurde. Gewinnerin des Korea Tourism Star Award 2014. Auf der **2 km langen begehbaren Besucherstrecke** (von 7,8 km Gesamtstollenlänge) drängen sich Höhlenaquarium, ein 200 m langer LED Art Tunnel, die Wine Cave (Koreas größter unterirdischer Weinkeller mit über 200 koreanischen und importierten Weinen), eine Music Hall mit 200 Plätzen und der 41 Meter lange Glasfaserdrache Yongmaru (die größte Höhlenskulptur im Inneren Koreas) — alles in ~1,5 bis 2 Stunden.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:0c77ee24137de421": {
+      "target": "Großer eigener Parkplatz (~1.000 Plätze); 2.000 KRW für Pkw / 5.000 KRW für Busse; Busparkplatz für Gruppen",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:b0e770281f50e29e": {
+      "target": "Am Haupteingang, in der Höhlenmitte (Bereich Music Hall) und am Ausgang",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:3471adad2ad8fcc1": {
+      "target": "**⟦G0⟧ (광명동굴)** — ursprünglich eine **Gold-, Silber-, Kupfer- und Zinkmine**, **1912 während der japanischen Kolonialzeit** angelegt und 60 Jahre lang bis 1972 betrieben. In ihren aktiven Jahren förderte die Mine 52 kg Gold, 6.070 kg Silber, 1.247 Tonnen Kupfer und 3.247 Tonnen Zink — ein bedeutender Rohstoffabbau der japanischen Kolonialzeit in Korea. \n\nNach dem Ende des Bergbaus dienten die verlassenen Stollen rund 40 Jahre als **Gärlager für Garnelenpaste (Saeujeot)** — die stabilen ~12 °C und die hohe Luftfeuchtigkeit der Höhle machten sie ideal für die Reifung von Jeotgal (koreanischen fermentierten Meeresfrüchten). \n\n**2011 kaufte die Stadt Gwangmyeong die Höhle** für 4,3 Milliarden KRW von einem privaten Eigentümer und eröffnete sie im August 2011 als **Koreas erste Höhlenattraktion in kommunalem Besitz** wieder. Sie gewann den **Korea Tourism Star Award 2014 (den koreanischen Tourismus-Oscar)** — als erste von einer Stadtverwaltung entwickelte Attraktion überhaupt. \n\n**Gesamte Stollenlänge 7,8 km** über mehrere Ebenen; **~2 km öffentlich zugänglich** in Themenzonen. **Konstant ~12 °C (54 °F) das ganze Jahr über** — im Sommer natürlich kühl (eine beliebte Flucht vor koreanischen Hitzewellen) und im Winter wärmer als draußen. \n\n**Bringen Sie eine leichte Jacke mit.** **Themenzonen**: das **Höhlenaquarium** (Koreas tiefstes Süßwasseraquarium im Inneren); die **Wine Cave** (Koreas größter unterirdischer Weinkeller mit über 200 koreanischen und importierten Weinen — Weinprobe für 5.000 KRW für 3 Weine); der **LED Art Tunnel** (200 m langer Stollen mit saisonalen Lichtthemen — Kirschblüte im Frühling, Herbstlaub, Schnee und Eis im Winter); der **Yongmaru-Drache** (41 Meter langer Glasfaserdrache — Koreas größte Skulptur im Inneren einer Höhle und der viralste Social-Media-Spot); das **Fluoreszenz-Wandbild** (Wandmalereien aus natürlichen Fluoreszenzpigmenten, nur unter UV- bzw. Schwarzlicht sichtbar); die **Music Hall** (akustisch optimierter Saal mit 200 Plätzen); und der **Höhlen-Themenpark der koreanischen Volksmärchen** mit Figuren aus koreanischen Sagen (Dokkaebi, Tiger, Hase). \n\nGedreht wurde hier: das K-Drama **„Memories of the Alhambra“ (2018)**, **„A Korean Odyssey“**, **„Doctors“** und mehrere Unterhaltungsshows. **~1,5 Millionen Besuche jährlich** (Zahl für 2024) — eine der Top-5 unter den kostenpflichtigen Attraktionen der Provinz Gyeonggi. \n\n**Montags geschlossen.** Di–So 09:00–18:00 Uhr (letzter Einlass 17:00 Uhr). Erwachsene 10.000 / Jugendliche 5.000 / Kinder 3.000 KRW. Die meisten Hauptwege sind rollstuhlgerecht (ebene Flächen, Rampenabschnitte).",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:eae2ac3164cbee40": {
+      "target": "Di–So 09:00–18:00 Uhr (letzter Einlass 17:00 Uhr); im Sommer (Juli–August) an Wochenenden verlängert bis 19:00 Uhr",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:e9fd8f0abe90ebd3": {
+      "target": "**Montags** (an Feiertagen geöffnet, dafür am Folgetag geschlossen)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:73d0f39999ef533c": {
+      "target": "Leicht bis mittel — Hauptroute ~2 km, überwiegend ebener, befestigter Höhlenboden; Hauptroute rollstuhlgerecht",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:1705fc99dd585da5": {
+      "target": "Erwachsene 10.000 / Jugendliche 5.000 / Kinder 3.000 KRW; KOSTENLOS für Kinder bis 6 Jahre und Seniorinnen und Senioren ab 65",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:1f287c9cb7e82a4e": {
+      "target": "Rückfahrt nach Seoul",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:df7a02e2a8e14ecd": {
+      "target": "Busfahrt von Gwangmyeong nach Seoul (~60 Min.)",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:8c41c05b6c60c64e": {
+      "target": "Ausstieg am festgelegten Punkt",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:84782fcd7c3379e6": {
+      "target": "Rückfahrt ab Gwangmyeong über die Seohaean-Autobahn",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:bdde273625c94174": {
+      "target": "Ausstieg an der Hongik University oder ⟦G0⟧",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:99ac60a9500ca4b3": {
+      "target": "Übliche Ankunft 18:30–19:00 Uhr",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:d7ec0efe92db5645": {
+      "target": "Die endgültige Ankunft hängt vom Verkehr am Freitagabend bzw. am Wochenende ab; an starken Tagen kann sich der Ausstieg um 15–20 Min. verzögern.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:c692ac326d68ecc0": {
+      "target": "Rückfahrtlogistik — die Seohaean-Autobahn ab Gwangmyeong ist schneller als der Umweg über die Gyeongbu-Autobahn ab Suwon und nutzt die geografische Runde des Tages aus.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
+    },
+    "1:2dd9077d84560360": {
+      "target": "Mit dem Bus zurück in die Innenstadt von Seoul über die **Seohaean-Autobahn** (eine andere Rückroute als die Anfahrt über die Gyeongbu-Autobahn am Morgen — die geometrische Runde ergibt sich aus Gwangmyeongs westlicher und Suwons südlicher Lage). Ausstieg an denselben Treffpunkten wie am Morgen (Station Hongik University, Ausgang 8, oder Station ⟦G0⟧, Ausgang 2/4). Übliche Ankunft **18:30–19:00 Uhr**, je nach Verkehr am Freitagabend bzw. am Wochenende.",
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4"
     }
   }
 }

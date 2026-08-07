@@ -1,0 +1,46 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-city-tour:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Hotel Pickup",
+      "tm": "Prise en charge à l'hôtel"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Start",
+      "tm": "Départ"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Morning Stops"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Choose"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Lunch Break",
+      "tm": "Pause déjeuner"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Reset",
+      "tm": "Pause"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Afternoon Stops",
+      "tm": "Arrêts de l'après-midi"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Continue",
+      "tm": "Suite"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "End",
+      "tm": "Fin"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 7
+}

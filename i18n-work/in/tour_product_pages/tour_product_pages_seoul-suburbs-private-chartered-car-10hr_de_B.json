@@ -1,0 +1,124 @@
+{
+  "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:B",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "de",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Pickup at Seoul Hotel"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "Stops 1",
+      "tm": "Stopp 1"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Start: Pickup at Seoul Hotel"
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Choose Your Route",
+      "tm": "Wählen Sie Ihre Route"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "Stops 2–4",
+      "tm": "Stopps 2–4"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Day Out: Choose Your Route",
+      "tm": "Tag unterwegs: Wählen Sie Ihre Route"
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Return to Hotel",
+      "tm": "Rückkehr zum Hotel"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "Stops 5",
+      "tm": "Stopp 5"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Finish: Return to Hotel",
+      "tm": "Abschluss: Rückkehr zum Hotel"
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "Private KIA Carnival by the Han River with N Seoul Tower at night"
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "Private KIA Carnival at the Han River — N Seoul Tower at night"
+    },
+    "/galleryItems/0/location": {
+      "source_en": "Seoul Private Charter"
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ seen from your private car at golden hour",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ from your private car at golden hour",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — Heungnyemun gate with hanbok visitors",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "Gyeongbokgung — Heungnyemun gate with hanbok visitors"
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Gyeongbokgung-Palast"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "N Seoul Tower with a sweet treat in hand"
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "N Seoul Tower — sweet treats at the foot of the tower"
+    },
+    "/galleryItems/3/location": {
+      "source_en": "N Seoul Tower (Namsan)"
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "Lotte World Tower towering over Seoul neighborhoods"
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "Lotte World Tower towering over Songpa streets"
+    },
+    "/galleryItems/4/location": {
+      "source_en": "Lotte World Tower (Songpa)"
+    }
+  },
+  "glossaryTokens": {
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Gyeongbokgung-Palast"
+    }
+  },
+  "tmHits": 9
+}

@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港口接送",
         "保证返回"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "priceLabel": "",
       "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "可定制",
         "保证返船"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
       "priceLabel": "",
       "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。"
     },
@@ -680,8 +680,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "非军事区 + 悬索桥",
         "含酒店接送"
       ],
-      "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-      "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "priceLabel": "",
       "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。"
     },

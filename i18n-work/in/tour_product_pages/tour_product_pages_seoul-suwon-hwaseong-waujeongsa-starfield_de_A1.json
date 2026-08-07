@@ -32,7 +32,8 @@
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "Seoul Suwon heritage tour"
@@ -165,43 +166,45 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "Suwon-Erbetag"
     },
     "/headlineLine2": {
       "source_en": "Hwaseong, Waujeongsa & Starfield"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Return time depends on traffic and is typically between 18:00 and 19:00. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Feste Treffpunkte — eine Abholung am Hotel wird nicht angeboten. Zuspätkommende können nicht mitgenommen werden; eine Erstattung erfolgt nicht."
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "⟦G0⟧ Station",
+      "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Station ⟦G0⟧ (Ausgang 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
-    "/pickup_dropoff/return/0/note": {
-      "source_en": "Standard Seoul drop-off point."
-    },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station"
-    },
-    "/pickup_dropoff/return/1/note": {
-      "source_en": "Standard Seoul drop-off point."
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Station Hongik Univ. (Ausgang 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 4)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Station Hongik Univ. (Ausgang 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "First Seoul meeting point; please arrive 10 minutes early."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Bitte seien Sie 10 Minuten vor der Abfahrtszeit da."
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "⟦G0⟧ Station",
+      "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Station ⟦G0⟧ (Ausgang 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Second Seoul meeting point."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Bitte seien Sie 10 Minuten vor der Abfahrtszeit da."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -337,6 +340,22 @@
     },
     "/practicalAccordionItems/4/preview": {
       "source_en": "Guide, transport, and admission included; lunch pay direct"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Cancellation",
+      "tm": "Stornierung"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Stornierungen am selben Tag und Nichterscheinen werden nicht erstattet."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     }
   },
   "glossaryTokens": {
@@ -370,5 +389,5 @@
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 27
+  "tmHits": 40
 }

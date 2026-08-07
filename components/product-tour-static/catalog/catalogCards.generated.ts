@@ -84,8 +84,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Pickup at port",
           "Return guaranteed"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
       },
@@ -409,8 +409,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Customizable",
           "Guaranteed return"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship."
       },
@@ -743,8 +743,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + Suspension Bridge",
           "Hotel Pickup Included"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "From US$419 per vehicle (1–3 pax)",
         "shortCardDescription": "A private day-trip pairing Korea's heaviest historical site with one of its most photogenic mountain bridges. Morning at the DMZ (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), then an afternoon walk across the 220-meter Gamaksan Red Suspension Bridge. Passport required for the DMZ portion."
       },
@@ -1051,8 +1051,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "항구 픽업",
           "귀환 보장"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
       },
@@ -1376,8 +1376,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "맞춤형",
           "귀선 보장"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다."
       },
@@ -1710,8 +1710,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + 출렁다리",
           "호텔 픽업 포함"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "한국에서 가장 역사적 무게를 지닌 장소와 가장 아름다운 산악 출렁다리를 함께 경험하는 프라이빗 당일 투어. 오전에는 DMZ(임진각 평화공원, 제3침투 땅굴, 도라산 전망대)를 둘러보고, 오후에는 150m 감악산 붉은 출렁다리를 건넙니다. DMZ 구간 입장 시 여권이 필요합니다."
       },
@@ -2018,8 +2018,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港口接送",
           "保证返回"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。"
       },
@@ -2343,8 +2343,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "可定制",
           "保证返船"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。"
       },
@@ -2677,8 +2677,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非军事区 + 悬索桥",
           "含酒店接送"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。"
       },
@@ -2985,8 +2985,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港口接送",
           "保證返回"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
       },
@@ -3310,8 +3310,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "可客製化",
           "保證返船"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "以您的郵輪返航時間為基準安排的8小時私人包車，而非固定行程。在仁川郵輪碼頭舷梯處接送，配備英語導遊兼司機，行程可彈性調整，途經景福宮、北村韓屋村＋仁寺洞、自選午餐、N首爾塔，以及明洞或曹溪寺。導遊兼司機會在返航前預留60分鐘的交通緩衝時間，確保您絕不錯過郵輪。"
       },
@@ -3644,8 +3644,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非軍事區＋吊橋",
           "含飯店接送"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "一趟私人一日遊，將韓國最具歷史份量的地點與最上鏡的山中吊橋完美結合。上午遊覽非軍事區（臨津閣和平公園、第三條滲透地道、都羅展望台），下午漫步於150公尺長的感岳山紅色吊橋。進入非軍事區須出示護照。"
       },
@@ -3952,8 +3952,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Recogida en el puerto",
           "Regreso garantizado"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 9 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
       },
@@ -4277,8 +4277,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "Personalizable",
           "Regreso garantizado"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco."
       },
@@ -4608,8 +4608,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + Puente Colgante",
           "Recogida en el Hotel Incluida"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ."
       },
@@ -4916,8 +4916,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "港での送迎",
           "帰港保証"
         ],
-        "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-        "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "priceLabel": "",
         "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
       },
@@ -5241,8 +5241,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "カスタマイズ可能",
           "帰船保証"
         ],
-        "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-        "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+        "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+        "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
         "priceLabel": "",
         "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
       },
@@ -5573,8 +5573,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ＋吊り橋",
           "ホテルピックアップ込み"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は150メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。"
       },

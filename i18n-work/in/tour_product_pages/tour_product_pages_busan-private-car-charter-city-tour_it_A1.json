@@ -1,0 +1,194 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A1",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "it",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Busan Private Car Charter with Driver-Guide | AtoC Korea"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Busan Private Car Charter with Driver (5–9 hours) | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Hourly private car charter across Busan with hotel pickup, a licensed driver-guide, and a fully customizable route built from our three most-booked Busan itineraries."
+    },
+    "/seo/metaDescription": {
+      "source_en": "Private car charter in Busan with a licensed English-speaking driver-guide and hotel pickup. Choose from three recommended routes or build your own. 5 to 9 hours, one price per vehicle for up to 7 guests, Gimhae Airport and Gyeongju add-ons available."
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Busan private car charter"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Busan private day tour"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Busan hotel pickup private tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Busan chauffeur day tour"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Busan to Gyeongju private car"
+    },
+    "/hero/meta/stops": {
+      "source_en": "Custom",
+      "tm": "Personalizzate"
+    },
+    "/hero/meta/region": {
+      "source_en": "Busan (city + coast)"
+    },
+    "/hero/meta/duration": {
+      "source_en": "5–9 hours"
+    },
+    "/hero/pills/0": {
+      "source_en": "Private Vehicle",
+      "tm": "Veicolo privato"
+    },
+    "/hero/pills/1": {
+      "source_en": "Licensed Driver-Guide",
+      "tm": "Autista-guida abilitato"
+    },
+    "/hero/pills/2": {
+      "source_en": "Hotel Pickup",
+      "tm": "Pick-up in hotel"
+    },
+    "/hero/tagline": {
+      "source_en": "Three ready-made Busan days to start from, and a driver-guide who will rearrange any of them — sea temple, Sky Capsule, painted hillsides, fish markets, coastal skywalks — into the day your group actually wants."
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Potenziale fotografico"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "Good",
+      "tm": "Buono"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery",
+      "tm": "Paesaggio"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Buono"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Camminata"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Adatto in caso di pioggia"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Excellent",
+      "tm": "Eccellente"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Adatto alle famiglie"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Excellent",
+      "tm": "Eccellente"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Ritmo"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Flexible",
+      "tm": "Flessibile"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Panoramica"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinerario"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Dettagli"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Recensioni"
+    },
+    "/catalog_card/title": {
+      "source_en": "Busan Private Car Charter"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Private Tour",
+      "tm": "Tour privato"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Fully Customizable"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Busan Hotel Pickup"
+    },
+    "/catalog_card/region": {
+      "source_en": "Busan (city + coast)"
+    },
+    "/catalog_card/duration": {
+      "source_en": "5–9 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Build your own Busan day with a private licensed driver-guide, picked up at your hotel and priced by the hour."
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A private car and licensed driver-guide for your group alone, anywhere in Busan. Start from one of three recommended routes — the classic top-attractions day, the sea temple and Sky Capsule coast, or the old-downtown and Songdo loop — then move, drop or add stops until the day is yours. Hotel pickup included, 5 to 9 hours, one price per vehicle for up to 7 guests."
+    },
+    "/headlineLine1": {
+      "source_en": "Busan City"
+    },
+    "/headlineLine2": {
+      "source_en": "Private Car Charter"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Your booked hours run from the confirmed pickup time to drop-off, and include the driving between stops."
+    },
+    "/pickup_dropoff/notes/1": {
+      "source_en": "Gimhae International Airport pickup or drop-off adds US$35 and is arranged at booking."
+    },
+    "/pickup_dropoff/dropoff_points/0/name": {
+      "source_en": "Anywhere in Busan you choose"
+    },
+    "/pickup_dropoff/dropoff_points/0/note": {
+      "source_en": "Back at your accommodation, at a different hotel if you are moving on, at Busan Station, or at a restaurant for the evening. Gimhae Airport is available as a paid add-on."
+    },
+    "/pickup_dropoff/dropoff_points/0/approx_time": {
+      "source_en": "At the end of your booked hours"
+    },
+    "/pickup_dropoff/meeting_points/0/name": {
+      "source_en": "Your accommodation in Busan"
+    },
+    "/pickup_dropoff/meeting_points/0/note": {
+      "source_en": "Door-to-door pickup anywhere in central Busan — Seomyeon, Haeundae, Nampo-dong, Busan Station and the surrounding districts. Outlying addresses are usually fine and are confirmed at booking."
+    },
+    "/pickup_dropoff/meeting_points/0/time": {
+      "source_en": "A start time you choose, usually 07:00–11:00"
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Choose your date, hours and group size to check live availability and complete your booking."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "vehicle",
+      "tm": "veicolo"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 23
+}

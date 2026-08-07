@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Pickup at port",
         "Return guaranteed"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "priceLabel": "",
       "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Customizable",
         "Guaranteed return"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
       "priceLabel": "",
       "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship."
     },
@@ -680,8 +680,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "DMZ + Suspension Bridge",
         "Hotel Pickup Included"
       ],
-      "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-      "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "priceLabel": "From US$419 per vehicle (1–3 pax)",
       "shortCardDescription": "A private day-trip pairing Korea's heaviest historical site with one of its most photogenic mountain bridges. Morning at the DMZ (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), then an afternoon walk across the 220-meter Gamaksan Red Suspension Bridge. Passport required for the DMZ portion."
     },

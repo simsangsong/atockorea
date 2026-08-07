@@ -1,0 +1,84 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-4",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "de",
+  "chunk": "itineraryStops-4",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/3/visitBasics/walking": {
+      "source_en": "Easy — flat, soft sand and level pine-forest paths; a short signed footpath connects the beach up to ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Naksansa-Tempel"
+      ]
+    },
+    "/itineraryStops/3/visitBasics/admission": {
+      "source_en": "FREE — no admission fee for the beach"
+    },
+    "/itineraryStops/4/name": {
+      "source_en": "Return to Seoul (⟦G0⟧ Station or Hongik University Station)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/4/category": {
+      "source_en": "Return drop-off"
+    },
+    "/itineraryStops/4/duration": {
+      "source_en": "≈ 2.5 hour drive"
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "source_en": "Coach departs ⟦G0⟧ (~16:10)",
+      "glossary": [
+        "⟦G0⟧ = Naksan-Strand"
+      ]
+    },
+    "/itineraryStops/4/timeUsed/1": {
+      "source_en": "Drive to Seoul via the Seoul-Yangyang Expressway and Inje-Yangyang Tunnel (~2.5 hours depending on traffic)"
+    },
+    "/itineraryStops/4/timeUsed/2": {
+      "source_en": "Drop-off at ⟦G0⟧ Station Exit 2 (~18:45)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/4/timeUsed/3": {
+      "source_en": "Drop-off at Hongik University Station Exit 8 (~19:15)"
+    },
+    "/itineraryStops/4/whyOnRoute": {
+      "source_en": "The return runs in reverse-pickup order: **⟦G0⟧ drop-off first** (~18:45), then **Hongik University Station** (~19:15). The 12-hour tour length is calibrated around this timing — guests with evening dinner reservations should book for 20:00 or later to allow a safety buffer for traffic. Friday and Sunday evenings run heavier on the expressway, but this tour departs only Mondays and Thursdays, so traffic on the return leg is usually moderate; still, notify the driver-guide if you have a flight or hard appointment.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/4/description": {
+      "source_en": "After ⟦G0⟧, the coach takes the **Seoul-Yangyang Expressway** westbound back into Seoul, passing again through the Inje-Yangyang Tunnel. Drop-offs are sequenced in reverse-pickup order: **⟦G1⟧ Station Exit 2 first at approximately 18:45**, then **Hongik University Station Exit 8 at approximately 19:15**. \n\nBoth drop-off points are at the same locations as the morning pickup. Guests connecting to evening plans in Hongdae or ⟦G1⟧ should allow a comfortable buffer for traffic. Exact arrival times depend on East Sea coast and Seoul traffic on the day.",
+      "glossary": [
+        "⟦G0⟧ = Naksan-Strand",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/3/visitBasics/walking": {
+      "⟦G0⟧": "Naksansa-Tempel"
+    },
+    "/itineraryStops/4/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "⟦G0⟧": "Naksan-Strand"
+    },
+    "/itineraryStops/4/timeUsed/2": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/4/whyOnRoute": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/4/description": {
+      "⟦G0⟧": "Naksan-Strand",
+      "⟦G1⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 0
+}
