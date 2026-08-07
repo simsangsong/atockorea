@@ -24,7 +24,7 @@
 | 전달 (forward) | ✗ | `0 hits (components/tour-mode/ChatFeed.tsx · components/tour-mode/Composer.tsx)` |
 | 메시지 단위 공유 (텍스트만, §5-2) | ✅ | `components/tour-mode/ChatFeed.tsx:23` |
 | 채팅 내 검색 (§5-3) | ✅ | `components/tour-mode/RoomDrawer.tsx:515` |
-| 컴포저 이모지 피커 | ✅ | `components/tour-mode/Composer.tsx:48 — 32종 · 4묶음 · 캐럿 삽입` |
+| 컴포저 이모지 피커 | ✅ | `components/tour-mode/Composer.tsx:48 — 32종 · 8열 그리드 · 캐럿 삽입` |
 | 이미지 붙여넣기 (클립보드, §5-6) | ✅ | `components/tour-mode/Composer.tsx:521` |
 | 링크 프리뷰 (텍스트만, §5-4) | ✅ | `components/tour-mode/ChatFeed.tsx:24` |
 | 사진 일괄 저장 | ✗ | `0 hits (components/tour-mode/RoomDrawer.tsx)` |
