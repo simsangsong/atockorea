@@ -13,6 +13,21 @@ export const dynamic = 'force-dynamic';
  * room + invite state, so the 관제센터 홈 can create rooms and issue links
  * without a detour through each order page. Distinct from /rooms, which only
  * returns bookings whose room row already exists.
+ *
+ * 🔴 2026-08-07 — it now also answers **whether that team has a bus**.
+ *
+ * Dispatch has had a working button on this very list since 2026-07-27, added
+ * because the owner could not find the one buried three levels down in the room
+ * drawer. It was still not enough, and the reason is that the list said nothing
+ * about which rows needed it: 32 identical cards, and the only way to learn a
+ * team had no vehicle was to open it. Live proof of where that ends —
+ * `ops_room_vehicles` holds ONE row for the entire history of the product, and
+ * `ops_seat_assignments` holds none. A button you cannot aim is not an entrance.
+ *
+ * Scope note: dispatch is per (tour_id, tour_date) GROUP, not per room — the
+ * bus is attached to one anchor room and `loadRoomVehicles` fans out to its
+ * siblings. The grouping below mirrors that exactly, or the badge would call
+ * every non-anchor booking on a join tour "미배차" while it sits on the bus.
  */
 
 export async function GET(req: NextRequest) {
@@ -62,6 +77,41 @@ export async function GET(req: NextRequest) {
     const roomByBooking = new Map((rooms ?? []).map((room) => [room.booking_id, room]));
     const tourById = new Map((tours ?? []).map((tour) => [tour.id, tour]));
 
+    // ── 배차 상태 ─────────────────────────────────────────────────────────
+    // 룸 → 그 룸이 속한 그룹(tour_id) → 그 그룹에 붙은 차량. 배치도 없는 차는
+    // 좌석이 성립하지 않으므로 배차로 치지 않는다(`loadRoomVehicles`와 같은 규칙).
+    const roomIds = (rooms ?? []).map((room) => room.id as string);
+    const { data: roomVehicles } = roomIds.length
+      ? await supabase
+          .from('ops_room_vehicles')
+          .select('room_id, plate_number, ops_vehicle_layouts ( model, total_seats, layout_json )')
+          .in('room_id', roomIds)
+      : { data: [] };
+
+    const tourByRoomId = new Map<string, string>();
+    for (const booking of bookings ?? []) {
+      const room = roomByBooking.get(booking.id);
+      if (room?.id && booking.tour_id) tourByRoomId.set(room.id as string, booking.tour_id as string);
+    }
+
+    interface VehicleBrief { label: string; plate: string | null; seats: number | null }
+    const vehiclesByTour = new Map<string, VehicleBrief[]>();
+    for (const row of (roomVehicles ?? []) as Array<Record<string, unknown>>) {
+      const layout = row.ops_vehicle_layouts as
+        | { model?: string; total_seats?: number; layout_json?: unknown }
+        | null;
+      if (!layout?.layout_json) continue; // 배치도 없는 차 = 좌석 없음
+      const tourId = tourByRoomId.get(String(row.room_id));
+      if (!tourId) continue;
+      const list = vehiclesByTour.get(tourId) ?? [];
+      list.push({
+        label: layout.model ?? '차량',
+        plate: (row.plate_number as string | null) ?? null,
+        seats: layout.total_seats ?? null,
+      });
+      vehiclesByTour.set(tourId, list);
+    }
+
     const out = (bookings ?? []).map((booking) => {
       const customerInvites = (invites ?? []).filter(
         (invite) => invite.role === 'customer' && invite.booking_id === booking.id,
@@ -75,6 +125,8 @@ export async function GET(req: NextRequest) {
         ...booking,
         tour: booking.tour_id ? tourById.get(booking.tour_id) ?? null : null,
         room: roomByBooking.get(booking.id) ?? null,
+        /** 이 팀에 붙은 차량들. 빈 배열 = 미배차 → 손님은 좌석을 못 고른다. */
+        vehicles: (booking.tour_id ? vehiclesByTour.get(booking.tour_id) : null) ?? [],
         invite: {
           customer_active: customerInvites.some((invite) => !invite.revoked_at),
           customer_last: lastCustomer

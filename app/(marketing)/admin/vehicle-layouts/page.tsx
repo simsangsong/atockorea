@@ -17,9 +17,11 @@
  */
 
 import { useCallback, useEffect, useMemo, useState } from 'react';
+import Link from 'next/link';
 import {
   AlertTriangle,
   ArrowLeft,
+  ArrowRight,
   BadgeCheck,
   Bus,
   Camera,
@@ -428,7 +430,25 @@ export default function VehicleLayoutsPage() {
             마이그레이션 미적용 — 확정·오버라이드 기능 제한
           </span>
         )}
+        <div className="min-w-0 flex-1" />
+        {/* 🔴 이 페이지는 사이드바에서 「차량」이라는 이름을 가진 유일한 항목인데,
+            여기서는 **배차를 할 수 없다** — 차량 등록과 배치도 편집만 된다.
+            그래서 배차하러 온 사람이 여기 도착해 "배차하는 곳이 없다"는 결론을
+            내리고 돌아간다(사장님, 2026-08-07). 나가는 문을 만든다. */}
+        <Link
+          href="/admin/tour-ops"
+          data-testid="vehicle-layouts-to-dispatch"
+          className="text-cjk-safe flex h-8 shrink-0 items-center gap-1.5 rounded-lg bg-emerald-600 px-3 text-xs font-semibold text-white hover:bg-emerald-700"
+        >
+          날짜별 배차하러 가기
+          <ArrowRight className="size-3.5" />
+        </Link>
       </div>
+
+      <p className="text-cjk-safe border-b border-admin-border bg-amber-50 px-4 py-1.5 text-[11px] text-amber-800">
+        여기는 <b>차량과 좌석 배치도를 등록</b>하는 곳이에요. 실제 <b>배차</b>(어느 날 어느 팀에 어느 차)는
+        관제센터의 <b>[배정 · 룸 · 링크]</b>에서 하고, 배차가 되어야 손님 앱에 좌석 선택이 열려요.
+      </p>
 
       {pageTab === 'vehicles' && (
         <div className="min-h-0 flex-1 overflow-y-auto">

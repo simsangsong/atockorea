@@ -34,6 +34,8 @@ export type HomeTileKey =
   | 'schedule'
   | 'map'
   | 'pickup'
+  /** 내 좌석. 좌석이 있는 상품에서만 존재한다(전세엔 없다). */
+  | 'seat'
   | 'plan'
   | 'signal'
   | 'timeline'
@@ -62,10 +64,12 @@ const BY_STATE: Record<NowCardState, readonly HomeTileKey[]> = {
   rally_overdue: ['signal', 'sos', 'smart-guide'],
   free_time: ['signal', 'smart-guide', 'pickup'],
   arrived: ['smart-guide', 'signal', 'timeline'],
-  pickup_window: ['pickup', 'signal', 'smart-guide'],
+  // 픽업 창 = 곧 탄다. 어디로 갈지 다음에 **몇 번 자리인지**가 그 순간의 질문이다.
+  pickup_window: ['pickup', 'seat', 'signal'],
   moving: ['smart-guide', 'signal', 'pickup'],
   ended: ['timeline', 'review', 'smart-guide'],
-  lobby: ['plan', 'smart-guide', 'pickup'],
+  // 로비 = 아직 안 시작. 좌석을 고를 수 있는 유일한 구간이 대체로 여기다.
+  lobby: ['plan', 'seat', 'smart-guide'],
 };
 
 /**
