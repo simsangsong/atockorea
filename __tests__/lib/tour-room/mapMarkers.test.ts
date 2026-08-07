@@ -91,14 +91,38 @@ describe('marker art', () => {
 
   it('gives the guide a car, per 사장님 2026-08-07 — and no emoji anywhere', () => {
     const svg = svgOf(vehiclePin());
-    // lucide `Car`: a body path plus two wheels. Matching the wheels is what
-    // separates "a car" from "some path someone swapped in".
-    expect(svg).toContain('<circle cx="7" cy="17" r="2"/>');
-    expect(svg).toContain('<circle cx="17" cy="17" r="2"/>');
+    // Two wheels, level with each other, plus a hub knocked out of each. That
+    // pairing is what separates "a car" from "some path someone swapped in".
+    const wheels = [...svg.matchAll(/<circle cx="([\d.]+)" cy="([\d.]+)" r="3" fill="white"\/>/g)];
+    expect(wheels).toHaveLength(2);
+    expect(wheels[0][2]).toBe(wheels[1][2]); // same axle line
+    expect(wheels[0][1]).not.toBe(wheels[1][1]);
+    for (const [, cxWheel, cyWheel] of wheels) {
+      expect(svg).toContain(`<circle cx="${cxWheel}" cy="${cyWheel}" r="1.2" fill="#12151a"/>`);
+    }
     for (const [, art] of ALL) {
       // U-D3 — no emoji in UI chrome. The guide used to be a 🚌 label.
       expect(svgOf(art)).not.toMatch(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u);
     }
+  });
+
+  /**
+   * 🔴 사장님 2026-08-07, 두 번째 지시: "자동차 그림으로, 이쁘고 컴팩트한".
+   *
+   * The first cut inlined lucide `Car`, which is a STROKE family — a 1.7px
+   * outline scaled into a 17px pin head is a thin sketch of a car, and at map
+   * size a sketch loses to a shape. Nothing about the glyph may go back to
+   * outlines.
+   */
+  it('draws the car as filled mass, not as an outline', () => {
+    const svg = svgOf(vehiclePin());
+    const glyph = svg.slice(svg.indexOf('<g transform='));
+    expect(glyph).toContain('fill="white"');
+    expect(glyph).not.toContain('fill="none"');
+    expect(glyph).not.toContain('stroke-width');
+    // The knockouts are the PIN's colour, so the glyph stays a hole in the pin
+    // and needs no third value kept in sync with the body.
+    expect(glyph).toContain('fill="#12151a"');
   });
 
   it('makes the vehicle the biggest thing on the map', () => {
