@@ -144,37 +144,28 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // 🔴 Re-opened at the UNCHANGED price: USD 39 (compare-at 50) for what is now
   // an 11.5-hour day ending ≈19:50 — it was 10.5 hours when that price was set.
   // Repricing was not part of the re-open instruction; flagged, not assumed.
-  // ── Winter/Eobi booking closed 2026-08-04 until the village confirms its season
-  // seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Its own ops note says
-  // "do not open year-round sales", and nothing in the app reads
-  // matching_profile.seasonality — the field has no consumer, so being a
-  // winter_only product stops nothing by itself.
+  // ── Winter/Eobi OPENED 2026-08-07 (owner: "겨울 어비는 12월부터 시작이 맞아") ──
   //
-  // 🔴 is_active=false was NOT enough, which is why this line exists, and this
-  //    line does MORE than close the checkout — measured, with controls, rather
-  //    than reasoned from the imports:
+  // It sat here from 2026-08-04 because its ops note says "do not open
+  // year-round sales" and nothing in the app read `matching_profile.seasonality`
+  // — a winter_only flag with no consumer stops nothing by itself. That gap is
+  // now closed properly rather than by hiding the product: the season is a real
+  // rule in `lib/tour-seasonal-windows.ts` (20 Dec – 28 Feb, from the operator's
+  // own listing title) and all four booking-decision surfaces read it, so a
+  // July date is refused by the calendar, the API, the create route and the
+  // chatbot alike. Weekdays (Mon/Wed/Fri) are in `tour-departure-days.ts` and in
+  // all ten bundles. Both were verified against the owner's Klook calendars.
+  //
+  // The measurement that made this line necessary is worth keeping, because it
+  // is the reason a DB flag alone is not "closed" and not "open" either:
   //
   //      surface              is_active=false alone   + this list
   //      /api/tours           absent (17 entries)     absent
   //      /tours/list card     PRESENT                 absent
   //      /tour-product page   renders (349 KB)        404
   //
-  //    Controls in the same run: the fully-open Gapyeong sibling keeps its card
-  //    and renders 20,204 chars; the already-blocked Seoraksan donor loses both,
-  //    exactly like this one. So the DB flag only stops the sale, while this
-  //    list retires the product from view altogether — `assertRegisteredConsumerSlug`
-  //    in tourProductPageBody.tsx calls isTourSlugBlockedFromConsumerSurfaces and
-  //    notFound()s. That is the right state for something that is not for sale,
-  //    and it is what Gyeongju sat in until it was re-opened above, but it does
-  //    mean the page disappears rather than staying readable.
-  //
-  // Re-open = remove this line AND re-run
-  //   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs \
-  //     --only seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour --update-staged
-  // without --inactive. Both halves are needed, same as Gyeongju above. The
-  // trigger is the village (가일2리 자치회, 031-585-3551) confirming the 2026-27
-  // dates; the 2025-26 season ran 20 Dec – 19 Feb.
-  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  // So this list retires a product from view, while `tours.is_active` only stops
+  // the sale. Anything not for sale needs both; anything for sale needs neither.
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
@@ -192,17 +183,14 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   //   seoul-suwon-hwaseong-waujeongsa-starfield                (Tue/Thu/Sat)
   //   seoul-seoraksan-naksansa-temple-naksan-beach-day-trip    (Mon/Thu)
   //   seoul-seoraksan-nami-island-morning-calm-day-tour        (Mon/Wed/Fri)
-  //   seoul-seoraksan-national-park-sokcho-beach-day-trip      (schedule unknown)
   //
-  // 🔴 Two things a later session will be tempted to "fix" — don't:
+  // Sokcho was briefly re-opened with them and is closed again below — see its
+  // own entry. The Seoraksan set the owner actually sells is the three with
+  // Klook calendars: Naksansa, Morning Calm, and the winter Eobi trip.
   //
-  // 1. The Sokcho trip was listed here TWICE, the first time carrying the note
-  //    "Retired 2026-05-14 — replaced by naksansa-temple-naksan-beach". The
-  //    owner re-opened both of them anyway, knowing they overlap. That is a
-  //    product decision, not an oversight, so the Sokcho slug is not going
-  //    back on this list because it looks like a duplicate of its replacement.
+  // 🔴 One thing a later session will be tempted to "fix" — don't:
   //
-  // 2. Every fixed-schedule product here carries its weekdays in BOTH
+  //    Every fixed-schedule product here carries its weekdays in BOTH
   //    `lib/tour-departure-days.ts` and each bundle's `departureWeekdays`.
   //    Both are load-bearing: the table is what the availability routes and the
   //    booking route read, the bundle is what the picker falls back to when the
@@ -218,9 +206,23 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // a row in the schedule table rather than from the source, so for a few hours
   // these two were live and selling days they do not run. An empty table is not
   // evidence that a product runs daily — it is only evidence that nobody
-  // entered it. Sokcho still has no entry because there is genuinely no
-  // calendar for it (no Klook listing; it is the SKU Naksansa replaced), and
-  // that gap is recorded rather than papered over.
+  // entered it.
+  //
+  // ── Sokcho closed again 2026-08-07 (owner) ────────────────────────────────
+  // It was re-opened earlier the same day as one of "the Seoraksan three", but
+  // asked about it the owner said they do not recognise the product
+  // ("속초는 무슨 투어를 얘기하는건지 모르겠네") and to sell only the three that
+  // have Klook calendars — Naksansa, Morning Calm, winter Eobi.
+  //
+  // That fits everything else known about it: no Klook listing, no screenshot,
+  // no schedule, and a 2026-05-14 note saying it was replaced by
+  // naksansa-temple-naksan-beach. It was live for a few hours at $49 with no
+  // weekday rule, which is exactly the state a product nobody is operating
+  // should never be in. `tours.is_active` and its six `is_published` rows are
+  // flipped back with this. Its price and content are left untouched so
+  // re-opening is one line here plus the DB flags, should it turn out to be a
+  // real SKU under a name the owner uses for something else.
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

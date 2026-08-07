@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T05:00:19.541Z",
+  "generatedAt": "2026-08-07T05:35:28.271Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
@@ -701,6 +701,81 @@
       ]
     },
     {
+      "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-5",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/4/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-6",
       "status": "auto_pass",
       "segments": 27,
@@ -767,6 +842,21 @@
           "severity": "flag",
           "pointer": "/staticQuestions/8/question",
           "message": "길이비 0.90 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:staticQuestions-2",
+      "status": "flagged",
+      "segments": 8,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/staticQuestions/14/answer",
+          "message": "숫자 추가 — 번역에만 [17] 이 있다 (날짜 서식 변환이면 정상)"
         }
       ]
     },
@@ -1444,6 +1534,14 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops",
+      "status": "auto_pass",
+      "segments": 54,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-2",
@@ -2176,6 +2274,75 @@
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/4/category",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-4",
+      "status": "flagged",
+      "segments": 56,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/4/alt",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/4/caption",
           "message": "길이비 0.86 가 de 허용범위 0.9–1.5 밖"
         }
       ]
