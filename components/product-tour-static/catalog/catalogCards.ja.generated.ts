@@ -46,8 +46,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "少人数制",
         "釜山発"
       ],
-      "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-      "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "heroImage": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
+      "thumbnail": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
       "shortCardDescription": "釜山発・少人数制慶州日帰りツアー。慶州は992年間（紀元前57年〜935年）にわたり新羅王国の都として栄え、韓国で最もユネスコ世界遺産が集中するエリアです。ルート：アホプサン竹林 → 仏国寺（ユネスコ）→ 慶州サムパプランチ → 慶州国立博物館 → 校村韓屋村 → 月精橋。英語・中国語対応の公認ガイド付き、ミニバン使用、仏国寺・博物館の入場料は無料。"
     },
@@ -120,8 +120,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "行程は自由に変更",
         "釜山ホテル送迎"
       ],
-      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "heroImage": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "priceLabel": "",
       "shortCardDescription": "同行者だけの専用車と、資格を持つドライバーガイドが釜山のどこへでもご案内します。おすすめルート3種 — 定番の人気スポット巡り、海東龍宮寺とスカイカプセルの海岸ルート、旧市街と松島を結ぶルート — から選び、立ち寄り先を入れ替え・削除・追加すれば、その日はお客様だけの一日になります。ホテル送迎込み、5〜9時間、7名まで車両1台の同一料金。"
     },
@@ -144,8 +144,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能なルート",
         "クルーズターミナル送迎込み"
       ],
-      "heroImage": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
-      "thumbnail": "/images/tours/taejongdae/chatgpt-image-2026-5-10-12-26-45.webp",
+      "heroImage": "/images/tours/taejongdae/01-chatgpt-image-2026-5-10-12-27-04.webp",
+      "thumbnail": "/images/tours/taejongdae/01-chatgpt-image-2026-5-10-12-27-04.webp",
       "priceLabel": "",
       "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "海岸",
         "文化村"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
       "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
     },
@@ -269,8 +269,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "初めての方にも安心",
         "済州島東部シグネチャー"
       ],
-      "heroImage": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
-      "thumbnail": "/images/tours/jeju-stone-park/kakaotalk-20260510-230028438-19.webp",
+      "heroImage": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
+      "thumbnail": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
       "priceLabel": "",
       "shortCardDescription": "石の文化と火山の背景からスタートし、海岸と城山日出峰を経て、イルチュルランドと城邑民俗村で締めくくる、充実した1日を過ごせるわかりやすい済州島東部の日帰りルートです。"
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "釜山発",
         "冬は夜景"
       ],
-      "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
-      "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
+      "heroImage": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
+      "thumbnail": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
       "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
@@ -319,8 +319,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "仁川港でのお迎え",
         "9時間のウィンドウ"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
       "priceLabel": "1名様 US$69（定価$76、9%オフ）",
       "shortCardDescription": "仁川クルーズターミナル発のシェアバン日帰りツアー。9時間のウィンドウでソウルの主要スポットを一挙に巡ります：景福宮（火曜日は昌徳宮）、北村韓屋村、広蔵市場でのランチ（ソウルで最も写真映えするストリートフードの路地）、そして仁寺洞文化通り。お客様のクルーズ船の下船時刻に合わせたピックアップ。認定英語・中国語ガイド付き。帰路の車移動約75分を含みます。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能",
         "帰船保証"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
+      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
       "priceLabel": "",
       "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
     },
@@ -370,8 +370,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "桜の季節",
         "済州島東部"
       ],
-      "heroImage": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
-      "thumbnail": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "heroImage": "/images/tours/jeonnong-ro/photo-001.webp",
+      "thumbnail": "/images/tours/jeonnong-ro/photo-001.webp",
       "priceLabel": "",
       "shortCardDescription": "桜並木、10kmの菜の花ロード、溶岩洞窟、そして城山の象徴的なクレーターを巡る、春限定の済州島東部ルート。"
     },
@@ -395,8 +395,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "お手頃クルーズ",
         "大型コーチ"
       ],
-      "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "heroImage": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "thumbnail": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
       "priceLabel": "",
       "shortCardDescription": "寄港地に合わせてルートが変わる、大型コーチによるクルーズ寄港地バスツアー。済州港（北部）は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）はハルラ山1100＋南海岸の地質スポット＋オルレ市場ルートをご案内。いずれも余裕を持ってクルーズターミナルに帰着します。"
     },
@@ -420,8 +420,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "プレミアムクルーズ",
         "少人数グループ"
       ],
-      "heroImage": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "thumbnail": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "heroImage": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "thumbnail": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
       "priceLabel": "",
       "shortCardDescription": "寄港地に合わせてルートが変わる少人数グループ制クルーズ寄港地観光です。済州港（北部）発は城山日出峰を経由する東海岸ユネスコルート、江汀港（南部）発は漢拏山1100高地＋南海岸の地質スポット＋オルレ市場を巡るルートをご案内します。どちらもクルーズターミナルへ余裕を持って帰港します。"
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "お得",
         "全入場料込み"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "heroImage": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "thumbnail": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
       "priceLabel": "",
       "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します — 洞窟を最初に巡る新ルート：開場直後の最も静かな万丈窟、城邑民俗村、城山日出峰と海女の素潜り実演（中止時は海女博物館）、そして夕方前の咸徳ソウボン海水浴場のフィナーレ。2007年にともに登録された2つのユネスコ世界自然遺産、全入場料込み、英語・中国語対応の認定ガイド付き。"
     },
@@ -471,8 +471,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ユネスコ3遺産",
         "日帰り旅行者に最適"
       ],
-      "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "priceLabel": "",
       "shortCardDescription": "3つのユネスコ世界遺産——漢拏山(ハルラサン)、城山日出峰、万丈窟溶岩洞窟——を、生きた海女（ヘニョ）の素潜り実演、柱状節理の断崖、海へ落ちる正房瀑布とつなぐ、密度の高い全島ルート。済州を象徴するハイライトを、1日に凝縮しました。"
     },
@@ -497,8 +497,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ユネスコ",
         "東ルート"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "heroImage": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
+      "thumbnail": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
       "priceLabel": "",
       "shortCardDescription": "済州東部アジサイ祭りシーズン（6〜8月）の少人数日帰りツアー。咸徳海岸→城邑民俗村→城山日出峰（ユネスコ）→日出ランド（アジサイ祭り＋密川洞窟）→ヒュアリ自然公園（韓国有数のアジサイ見どころ）。9時間、済州市内ホテル発着。"
     },
@@ -521,8 +521,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "アジサイのシーズン",
         "済州島南西部"
       ],
-      "heroImage": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
-      "thumbnail": "/images/tours/hyeopjae-beach/kakaotalk-20260510-230009595-01.webp",
+      "heroImage": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+      "thumbnail": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
       "priceLabel": "",
       "shortCardDescription": "夏季限定・済州島南西部ルート — エメラルドのビーチ、アジサイ祭りの庭園、ユネスコ世界遺産の柱状節理帯、三段の滝、アジサイのトンネル、そして茶畑。"
     },
@@ -572,8 +572,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "お手頃価格",
         "買い物なし"
       ],
-      "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "heroImage": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "thumbnail": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "priceLabel": "",
       "shortCardDescription": "済州南部ソギポの定番スポットを少人数で巡る日帰りツアー — アジアで唯一海へ直接落ちる正房瀑布、外突き岩の奇岩とオルレ7コースの海岸散策、東アジア最大の寺院・薬泉寺、オソルロックティーミュージアム、そして漢拏山御乗生岳の登山道。済州市内全域と空港を含む4か所のピックアップポイント、英語・中国語の認定ガイド同行、正房瀑布以外はほぼ全コース入場無料、買い物の押し売りなし。"
     },
@@ -599,8 +599,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カフェ文化",
         "海岸"
       ],
-      "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "priceLabel": "1名様 US$59（定価$69、14%オフ）",
       "shortCardDescription": "済州島の西海岸と南海岸を一度に巡る少人数日帰りツアー。漢拏山1100高地湿地（ユネスコ）、六角形の柱状節理帯、松岳山のパノラマ展望台、天帝淵滝、オソルロックティーミュージアム、そして西海岸の協財海岸カフェエリアをご案内します。南部ユネスコツアーと同じ運営会社ですが、よりライフスタイル志向のコンセプトで構成——「火山の景観とドラマティックな海岸線、トレンディな海辺カフェが融合する」旅をお届けします。"
     },
@@ -627,8 +627,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "椿（つばき）",
         "雪"
       ],
-      "heroImage": "/images/tours/jeju-tangerine-farm/photo-001.webp",
-      "thumbnail": "/images/tours/jeju-tangerine-farm/photo-001.webp",
+      "heroImage": "/images/tours/jeju-tangerine-farm/01-kakaotalk-20250603-221325343-14.webp",
+      "thumbnail": "/images/tours/jeju-tangerine-farm/01-kakaotalk-20250603-221325343-14.webp",
       "priceLabel": "",
       "shortCardDescription": "12月から2月にかけて済州島南西部を巡る季節限定の日帰りツアーです。冬の済州ならではの三つの魅力を中心に構成されています：漢拏山の斜面に広がる雪景色、カメリアヒルで満開を迎える赤い椿、そして現役の農園でのみかん（ギュル）狩り体験。コースには天帝淵の滝、柱状節理帯、オソルロック・ティーミュージアムも含まれます。済州市内のホテルから送迎あり、英語・中国語対応の公認ガイドが同行します。"
     },
@@ -654,8 +654,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "湖畔散策",
         "少人数"
       ],
-      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
       "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。"
     },
@@ -678,8 +678,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "DMZ＋吊り橋",
         "ホテルピックアップ込み"
       ],
-      "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-      "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "priceLabel": "",
       "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は150メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。"
     },
@@ -704,8 +704,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "韓国ドラマ",
         "庭園"
       ],
-      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
-      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウルから最も気軽に行ける田園の一日。南怡島のメタセコイア並木、330,000 m²のテーマ樹木園、そして星の王子さまの村 — 3か所の入場料すべて込みで、19:00までにソウルへ戻ります。"
     },
@@ -728,8 +728,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "韓国ドラマのロケ地",
         "カップル・ファミリー向け"
       ],
-      "heroImage": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-      "thumbnail": "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の貸切日帰りツアーで、ナミ島の並木道とフェリー体験、晨園のテーマガーデン散策、そしてカラフルな星の王子さまの村・プチフランスをお楽しみいただけます。ホテル送迎・貸切車・ゆったりとしたペースで、定番の加平ルートを最高の快適さでご案内します。"
     },
@@ -858,8 +858,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "民俗村",
         "日帰り旅行"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウルから京畿道へ向かう少人数文化日帰り旅行。韓国の歴史遺産と現代の暮らしの対照的な4つの側面をめぐります：ユネスコ世界遺産に登録された水原華城（18世紀の城壁と城門）、朝鮮時代の再現イベントが催される復元された華城行宮、龍仁にある没入感あふれる野外型韓国民俗村、そして圧倒的な存在感を放つ4フロアのスターフィールドライブラリー水原。交通費と入場料込みの10時間ツアー。"
     },
@@ -886,8 +886,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ショッピング",
         "日帰り旅行"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な3つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原。交通費・入場料込みの9時間コースです。"
     },
@@ -910,8 +910,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "世界遺産＋現代文化の日帰り旅行",
         "入場料込み"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/kakaotalk-20260510-222949305.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制日帰りツアーで、対照的な韓国の3つの魅力を巡ります：ユネスコ世界遺産に登録された水原華城（18世紀の軍事建築）、フォトジェニックなスターフィールド水原図書館（現代の文化的名所）、龍仁の臥牛精舎（巨大な野外仏像と石鐘）。交通・入場料込みで、充実した世界遺産体験をお届けします。"
     },
@@ -959,8 +959,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "済州島初訪問者に最適",
         "済州島南西部"
       ],
-      "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "priceLabel": "",
       "shortCardDescription": "漢拏山1100高地の湿地、火山性海岸線、天帝淵滝、オソルロクの茶畑、愛月カフェ通り、梨湖テウの夕日をつなぐ、バランスの取れた済州島南西部の1日コース。"
     },

@@ -74,7 +74,7 @@ export function DestinationsShowcase() {
 
         {/* Mobile keeps the snap rail inset so cards feel intentional, not cut off. */}
         <div className="relative -mx-4 overflow-hidden md:mx-auto md:max-w-4xl md:overflow-visible">
-          <div ref={scrollRef} className="flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto pb-3 pl-6 pr-10 scrollbar-hide md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
+          <div ref={scrollRef} className="flex snap-x snap-mandatory scroll-px-6 gap-4 overflow-x-auto pb-3 pl-6 pr-10 rail-scrollbar md:grid md:auto-rows-fr md:grid-cols-3 md:gap-5 md:overflow-visible md:px-0 md:pb-0">
             {DESTINATIONS.map((dest) => (
               <motion.div
                 key={dest.id}

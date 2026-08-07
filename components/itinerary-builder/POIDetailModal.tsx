@@ -172,7 +172,7 @@ export default function POIDetailModal({ poi, inCart, onClose, onAdd, onRemove, 
               mobile they remain a horizontal carousel. */}
           {allImages.length > 1 ? (
             <div className="bg-slate-50">
-              <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto px-3 py-2.5 scrollbar-hide md:grid md:grid-cols-5 md:gap-2 md:overflow-visible md:px-4 md:py-3">
+              <div className="flex snap-x snap-mandatory gap-2 overflow-x-auto px-3 py-2.5 rail-scrollbar md:grid md:grid-cols-5 md:gap-2 md:overflow-visible md:px-4 md:py-3">
                 {allImages.map((img, i) => (
                   <button
                     key={img}

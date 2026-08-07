@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "서울 DMZ 프라이빗 투어: 제3땅굴 + 출렁다리 | AtoC Korea",
     "metaDescription": "서울 출발 8~9시간 DMZ 프라이빗 당일 투어: 임진각 평화공원, 제3침투 땅굴, 도라산 전망대, 150m 감악산 붉은 출렁다리.",
-    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "서울 DMZ 프라이빗 투어",
       "DMZ 제3땅굴 투어",
@@ -31,8 +31,8 @@
       "DMZ + 출렁다리",
       "호텔 픽업 포함"
     ],
-    "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-    "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "priceLabel": "",
     "shortCardDescription": "한국에서 가장 역사적 무게를 지닌 장소와 가장 아름다운 산악 출렁다리를 함께 경험하는 프라이빗 당일 투어. 오전에는 DMZ(임진각 평화공원, 제3침투 땅굴, 도라산 전망대)를 둘러보고, 오후에는 150m 감악산 붉은 출렁다리를 건넙니다. DMZ 구간 입장 시 여권이 필요합니다.",
     "tags": [
@@ -51,7 +51,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "imagePosition": "center 40%",
     "tagline": "세계에서 가장 삼엄한 국경에서 150m 산악 출렁다리까지 — 하나의 프라이빗 투어로 만나는 완전히 다른 두 얼굴의 한국.",
     "pills": [
@@ -131,7 +131,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "임진각 평화공원",
       "alt": "임진각 평화공원 — gallery image 1",
       "caption": "임진각 평화공원 — photo 1"
@@ -139,7 +139,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "제3땅굴 (지하 침투 땅굴)",
       "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 1",
       "caption": "제3땅굴 (지하 침투 땅굴) — photo 1"
@@ -147,58 +147,66 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "도라산 전망대",
+      "alt": "도라산 전망대 — gallery image 1",
+      "caption": "도라산 전망대 — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "location": "감악산 빨간 출렁다리",
       "alt": "감악산 빨간 출렁다리 — gallery image 1",
       "caption": "감악산 빨간 출렁다리 — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+      "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
       "location": "임진각 평화공원",
       "alt": "임진각 평화공원 — gallery image 2",
       "caption": "임진각 평화공원 — photo 2"
     },
     {
-      "id": 5,
+      "id": 6,
       "type": "photo",
-      "src": "/images/tours/imjingak/dmz-01.webp",
+      "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "location": "임진각 평화공원",
       "alt": "임진각 평화공원 — gallery image 3",
       "caption": "임진각 평화공원 — photo 3"
     },
     {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/imjingak/photo-004.webp",
-      "location": "임진각 평화공원",
-      "alt": "임진각 평화공원 — gallery image 4",
-      "caption": "임진각 평화공원 — photo 4"
-    },
-    {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/imjingak/photo-005.webp",
-      "location": "임진각 평화공원",
-      "alt": "임진각 평화공원 — gallery image 5",
-      "caption": "임진각 평화공원 — photo 5"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "제3땅굴 (지하 침투 땅굴)",
       "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 2",
       "caption": "제3땅굴 (지하 침투 땅굴) — photo 2"
     },
     {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+      "location": "감악산 빨간 출렁다리",
+      "alt": "감악산 빨간 출렁다리 — gallery image 2",
+      "caption": "감악산 빨간 출렁다리 — photo 2"
+    },
+    {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-      "location": "제3땅굴 (지하 침투 땅굴)",
-      "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 3",
-      "caption": "제3땅굴 (지하 침투 땅굴) — photo 3"
+      "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+      "location": "감악산 빨간 출렁다리",
+      "alt": "감악산 빨간 출렁다리 — gallery image 3",
+      "caption": "감악산 빨간 출렁다리 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+      "location": "감악산 빨간 출렁다리",
+      "alt": "감악산 빨간 출렁다리 — gallery image 4",
+      "caption": "감악산 빨간 출렁다리 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -257,33 +265,23 @@
           "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
       },
-      "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "images": [
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-        "/images/tours/imjingak/dmz-01.webp",
-        "/images/tours/imjingak/photo-004.webp",
-        "/images/tours/imjingak/photo-005.webp"
+        "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+        "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/dmz-01.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/imjingak/photo-004.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/imjingak/photo-005.webp",
+          "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "source": "atoc-korea"
         }
       ],
@@ -291,7 +289,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "location": "임진각 평화공원",
           "caption": "임진각 평화공원 — photo 1",
           "alt": "임진각 평화공원 — gallery image 1"
@@ -299,7 +297,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "location": "임진각 평화공원",
           "caption": "임진각 평화공원 — photo 2",
           "alt": "임진각 평화공원 — gallery image 2"
@@ -307,26 +305,10 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/imjingak/dmz-01.webp",
+          "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "location": "임진각 평화공원",
           "caption": "임진각 평화공원 — photo 3",
           "alt": "임진각 평화공원 — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/imjingak/photo-004.webp",
-          "location": "임진각 평화공원",
-          "caption": "임진각 평화공원 — photo 4",
-          "alt": "임진각 평화공원 — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/imjingak/photo-005.webp",
-          "location": "임진각 평화공원",
-          "caption": "임진각 평화공원 — photo 5",
-          "alt": "임진각 평화공원 — gallery image 5"
         }
       ]
     },
@@ -385,23 +367,18 @@
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
         }
       ],
@@ -409,7 +386,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "location": "제3땅굴 (지하 침투 땅굴)",
           "caption": "제3땅굴 (지하 침투 땅굴) — photo 1",
           "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 1"
@@ -417,18 +394,10 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "location": "제3땅굴 (지하 침투 땅굴)",
           "caption": "제3땅굴 (지하 침투 땅굴) — photo 2",
           "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "제3땅굴 (지하 침투 땅굴)",
-          "caption": "제3땅굴 (지하 침투 땅굴) — photo 3",
-          "alt": "제3땅굴 (지하 침투 땅굴) — gallery image 3"
         }
       ]
     },
@@ -487,23 +456,13 @@
           "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "source": "atoc-korea"
         }
       ],
@@ -511,26 +470,10 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "location": "도라산 전망대",
           "caption": "도라산 전망대 — photo 1",
           "alt": "도라산 전망대 — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "도라산 전망대",
-          "caption": "도라산 전망대 — photo 2",
-          "alt": "도라산 전망대 — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "도라산 전망대",
-          "caption": "도라산 전망대 — photo 3",
-          "alt": "도라산 전망대 — gallery image 3"
         }
       ]
     },
@@ -590,28 +533,28 @@
           "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
       },
-      "image": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "images": [
-        "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+        "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+        "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+        "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "source": "atoc-korea"
         }
       ],
@@ -619,7 +562,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "location": "감악산 빨간 출렁다리",
           "caption": "감악산 빨간 출렁다리 — photo 1",
           "alt": "감악산 빨간 출렁다리 — gallery image 1"
@@ -627,26 +570,26 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+          "location": "감악산 빨간 출렁다리",
+          "caption": "감악산 빨간 출렁다리 — photo 2",
+          "alt": "감악산 빨간 출렁다리 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "location": "감악산 빨간 출렁다리",
           "caption": "감악산 빨간 출렁다리 — photo 3",
           "alt": "감악산 빨간 출렁다리 — gallery image 3"
         },
         {
-          "id": 3,
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "location": "감악산 빨간 출렁다리",
           "caption": "감악산 빨간 출렁다리 — photo 4",
           "alt": "감악산 빨간 출렁다리 — gallery image 4"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "감악산 빨간 출렁다리",
-          "caption": "감악산 빨간 출렁다리 — photo 5",
-          "alt": "감악산 빨간 출렁다리 — gallery image 5"
         }
       ]
     }
@@ -1338,7 +1281,7 @@
         "headlineLine1": "서울 DMZ 프라이빗",
         "headlineLine2": "제3땅굴 & 다리",
         "hero": {
-          "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "imagePosition": "center 40%",
           "tagline": "세계에서 가장 견고한 국경에서 150미터 산악 출렁다리까지—프라이빗 하루로 만나는 완전히 다른 두 가지 한국의 모습.",
           "pills": [
@@ -1438,7 +1381,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "임진각 망배단과 자유의 다리, 리본과 추모 현판",
             "caption": "임진각 평화공원 (1972년 조성된 추모 공간)",
             "location": "임진각 평화공원",
@@ -1460,7 +1403,7 @@
             "name": "임진각 평화공원",
             "category": "한국전쟁 기념 공원",
             "description": "서울에서 약 70분 거리에 위치한 임진각은 통일에 대한 염원을 담아 1972년에 조성된 평화공원입니다. 특별한 허가 없이 민간인도 방문할 수 있으며, 분단된 한반도를 상징하는 가장 강렬한 상징물들이 한곳에 모여 있습니다. 명절마다 실향민 가족들이 모이는 망배단, 전쟁 포로 송환에 활용되었던 자유의 다리, 그리고 한국전쟁의 상흔이 고스란히 남은 총탄 자국의 증기기관차가 바로 그것입니다.",
-            "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
             "highlights": [
               "명절마다 가족들이 북쪽을 향해 기도를 올리는 망배단",
               "철조망을 따라 평화 리본이 묶인 자유의 다리",
@@ -1498,59 +1441,21 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-              "/images/tours/imjingak/dmz-01.webp",
-              "/images/tours/imjingak/photo-004.webp",
-              "/images/tours/imjingak/photo-005.webp"
+              "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+              "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+              "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/dmz-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-004.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-005.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/dmz-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-004.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-005.webp",
+                "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1558,7 +1463,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "location": "임진각 평화공원",
                 "caption": "임진각 평화공원 — photo 1",
                 "alt": "임진각 평화공원 — gallery image 1"
@@ -1566,7 +1471,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "location": "임진각 평화공원",
                 "caption": "임진각 평화공원 — photo 2",
                 "alt": "임진각 평화공원 — gallery image 2"
@@ -1574,26 +1479,10 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/imjingak/dmz-01.webp",
+                "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 5",
-                "alt": "임진각 평화공원 — gallery image 5"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-004.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 6",
-                "alt": "임진각 평화공원 — gallery image 6"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-005.webp",
-                "location": "임진각 평화공원",
-                "caption": "임진각 평화공원 — photo 7",
-                "alt": "임진각 평화공원 — gallery image 7"
+                "caption": "임진각 평화공원 — photo 3",
+                "alt": "임진각 평화공원 — gallery image 3"
               }
             ]
           },
@@ -1604,7 +1493,7 @@
             "name": "제3땅굴",
             "category": "지하 침략 땅굴 (1978)",
             "description": "1978년에 발견된 제3땅굴은 북한이 서울을 향해 굴착한 것으로 알려진 네 개의 땅굴 중 가장 규모가 큰 곳입니다. 길이 1,635m, 높이 2m, 너비 2m로, 시간당 3만 명의 병력을 이동시킬 수 있으며, 대한민국 수도에서 52km 거리에 위치합니다. 짧은 안내 영상을 시청한 후, 방문객들은 가파른 경사로를 걷거나 모노레일을 타고 땅굴 내부로 내려갑니다.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
             "highlights": [
               "냉전 시대 침략 루트를 직접 지하에서 체험",
               "땅굴 발견 과정을 담은 단편 다큐멘터리 상영",
@@ -1644,45 +1533,16 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1690,7 +1550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "location": "제3땅굴",
                 "caption": "제3땅굴 — photo 1",
                 "alt": "제3땅굴 — gallery image 1"
@@ -1698,18 +1558,10 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "location": "제3땅굴",
                 "caption": "제3땅굴 — photo 2",
                 "alt": "제3땅굴 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "제3땅굴",
-                "caption": "제3땅굴 — photo 3",
-                "alt": "제3땅굴 — gallery image 3"
               }
             ]
           },
@@ -1720,7 +1572,7 @@
             "name": "도라전망대",
             "category": "DMZ 국경 전망 지점",
             "description": "한국 최북단의 민간인 접근 가능 전망대로, 2018년 말 재건·재개장하였으며 3층에 고배율 망원경이 설치되어 있습니다. 개방된 옥상에서 방문객들은 북한 내부를 직접 조망할 수 있으며, 선전 마을, 개성 시내, 기정동의 대형 깃발, 그리고 개성공단을 바라볼 수 있습니다. 시야는 날씨에 따라 달라집니다.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "북한 영토를 직접 조망할 수 있는 시야",
               "개방된 전망대의 고배율 망원경",
@@ -1758,45 +1610,11 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1804,26 +1622,10 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "location": "도라전망대",
                 "caption": "도라전망대 — photo 1",
                 "alt": "도라전망대 — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 2",
-                "alt": "도라전망대 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "도라전망대",
-                "caption": "도라전망대 — photo 3",
-                "alt": "도라전망대 — gallery image 3"
               }
             ]
           },
@@ -1834,7 +1636,7 @@
             "name": "감악산 붉은 출렁다리",
             "category": "산악 출렁다리",
             "description": "점심 식사 후, 코스는 무거운 역사의 현장에서 산악 풍경으로 전환됩니다. 감악산 출렁다리는 숲으로 뒤덮인 계곡을 가로질러 150미터를 뻗어 있으며, 한국에서 가장 긴 붉은 출렁다리입니다. 다리에 오르려면 이용하는 등산로 입구에 따라 약 10분에서 40분 정도의 짧은 오르막길을 걸어야 하며, 다리 자체는 한 번에 수백 명의 방문객을 수용할 수 있을 만큼 넓습니다.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
             "highlights": [
               "150미터 길이의 한국에서 가장 긴 붉은 출렁다리",
               "오전 DMZ 방문지와의 강렬한 시각적 대비",
@@ -1871,45 +1673,26 @@
               "note": "Operational details based on aggregated visitor info"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+              "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+              "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+              "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1917,7 +1700,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "location": "감악산 붉은 출렁다리",
                 "caption": "감악산 붉은 출렁다리 — photo 1",
                 "alt": "감악산 붉은 출렁다리 — gallery image 1"
@@ -1925,7 +1708,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "location": "감악산 붉은 출렁다리",
                 "caption": "감악산 붉은 출렁다리 — photo 2",
                 "alt": "감악산 붉은 출렁다리 — gallery image 2"
@@ -1933,10 +1716,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "location": "감악산 붉은 출렁다리",
                 "caption": "감악산 붉은 출렁다리 — photo 3",
                 "alt": "감악산 붉은 출렁다리 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+                "location": "감악산 붉은 출렁다리",
+                "caption": "감악산 붉은 출렁다리 — photo 4",
+                "alt": "감악산 붉은 출렁다리 — gallery image 4"
               }
             ]
           }

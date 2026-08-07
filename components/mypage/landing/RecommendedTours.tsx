@@ -58,7 +58,7 @@ export function RecommendedTours({ tours }: RecommendedToursProps) {
           <div
             className={cn(
               'snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth pb-2',
-              '[scrollbar-gutter:stable] scrollbar-hide',
+              '[scrollbar-gutter:stable] rail-scrollbar',
             )}
           >
             <div className="flex w-max shrink-0 flex-nowrap gap-2.5 pr-4 sm:gap-3 sm:pr-2">

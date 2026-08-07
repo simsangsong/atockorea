@@ -7,7 +7,7 @@
  * task — the hub is the task list.
  */
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   BarChart3,
   Bot,
@@ -61,6 +61,59 @@ export default function OpsHomeTab({
       room.participants.some((participant) => isRecent(participant.last_seen_at)),
   ).length;
   const sosCount = sosRooms.size;
+
+  /**
+   * 오늘 미배차 팀 수 — 허브에서 바로 보이는 유일한 배차 신호.
+   *
+   * 🔴 왜 여기까지 올리나. 배차 버튼은 2026-07-27에 이미 목록 행으로 올라왔는데도
+   * 사장님이 또 "배차할 곳이 없다"고 했다. 버튼이 있어도 **열어보기 전에는 열어야
+   * 할 이유를 알 수 없었기** 때문이다. 라이브 배차가 역대 1건인 게 그 결과다.
+   * 팀(투어) 단위로 센다 — 예약 단위로 세면 조인 한 팀이 9로 부풀어 숫자가
+   * 규모를 뜻하게 되고 「해야 할 일」을 뜻하지 않게 된다(목록의 집계와 같은 규칙).
+   *
+   * 실패하면 조용히 배지를 숨긴다. 배차 현황을 못 읽은 것을 「미배차 0」으로
+   * 그리는 건 0을 초록으로 읽는 것과 같은 종류의 거짓말이다.
+   */
+  const [unassignedTeams, setUnassignedTeams] = useState<number | null>(null);
+  useEffect(() => {
+    let alive = true;
+    void (async () => {
+      // 🔴 한 번만 쏘면 안 된다 — `getOpsToken`은 Supabase 세션에서 액세스
+      // 토큰을 꺼내는데, 허브는 그 세션이 복원되기 전에 마운트된다. 실측에서
+      // 첫 시도가 "세션이 만료되었습니다"로 던졌고, 배지는 영영 안 떴다.
+      // 조용히 실패하는 배지는 「미배차 0」과 구별이 안 된다.
+      for (let attempt = 0; attempt < 4 && alive; attempt += 1) {
+        try {
+          const { getOpsToken } = await import('@/components/tour-ops/opsShared');
+          const token = await getOpsToken();
+          const res = await fetch('/api/admin/tour-ops/bookings', {
+            headers: { Authorization: `Bearer ${token}` },
+            credentials: 'include',
+            cache: 'no-store',
+          });
+          if (!res.ok) throw new Error(String(res.status));
+          const json = (await res.json()) as {
+            bookings?: Array<{ tour?: { title?: string } | null; vehicles?: unknown[] }>;
+          };
+          if (!alive || !Array.isArray(json.bookings)) return;
+          setUnassignedTeams(
+            new Set(
+              json.bookings
+                .filter((b) => (b.vehicles?.length ?? 0) === 0)
+                .map((b) => b.tour?.title ?? '기타'),
+            ).size,
+          );
+          return;
+        } catch {
+          await new Promise((r) => setTimeout(r, 1200 * (attempt + 1)));
+        }
+      }
+      /* 네 번 다 실패 = 배지 없음. 모르는 것을 0으로 그리지 않는다. */
+    })();
+    return () => {
+      alive = false;
+    };
+  }, []);
 
   // §11.E 수동 원버튼 [지금 보고서 발송] — POST /api/cron/ops-daily-report (force=true).
   const [reportState, setReportState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
@@ -156,8 +209,13 @@ export default function OpsHomeTab({
       key: 'manager',
       group: 'today',
       title: '배정 · 룸 · 링크',
-      desc: '가이드·기사 링크 발급 · 차량 배정 · QR · 초대 메일',
+      desc:
+        unassignedTeams && unassignedTeams > 0
+          ? `미배차 ${unassignedTeams}팀 — 배차해야 손님이 좌석을 고를 수 있어요`
+          : '가이드·기사 링크 발급 · 차량 배정 · QR · 초대 메일',
       icon: Link2,
+      badge: unassignedTeams && unassignedTeams > 0 ? unassignedTeams : undefined,
+      badgeTone: 'amber',
       onClick: onOpenManager,
     },
     {

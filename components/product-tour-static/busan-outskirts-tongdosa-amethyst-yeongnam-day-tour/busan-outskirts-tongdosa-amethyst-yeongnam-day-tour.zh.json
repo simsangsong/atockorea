@@ -166,10 +166,10 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
+      "alt": "甘川文化村 — gallery image 1",
+      "caption": "甘川文化村 — photo 1"
     },
     {
       "id": 5,
@@ -214,42 +214,18 @@
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
+      "alt": "甘川文化村 — gallery image 2",
+      "caption": "甘川文化村 — photo 2"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/itinerary/jagalchi-market-interior.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/itinerary/jagalchi-night-building.webp",
-      "location": "甘川文化村",
-      "alt": "甘川文化村 — on-route photo",
-      "caption": "甘川文化村"
+      "alt": "甘川文化村 — gallery image 3",
+      "caption": "甘川文化村 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -525,14 +501,51 @@
         "admission": "免费进入村庄；盖章地图（可选）约2,000韩元",
         "walking": "体力消耗较大——小巷及台阶坡度极陡；许多路段不适合婴儿车或轮椅通行"
       },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-        "/images/itinerary/jagalchi-harbor-sign.webp",
-        "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
+        "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+        "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 1",
+          "alt": "甘川文化村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 2",
+          "alt": "甘川文化村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 3",
+          "alt": "甘川文化村 — gallery image 3"
+        }
       ]
     },
     {

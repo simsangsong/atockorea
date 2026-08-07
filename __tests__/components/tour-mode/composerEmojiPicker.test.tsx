@@ -8,7 +8,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import Composer from '@/components/tour-mode/Composer';
-import { COMPOSER_EMOJI } from '@/lib/tour-room/emoji';
+import { COMPOSER_EMOJI, EMOJI_GROUPS } from '@/lib/tour-room/emoji';
 
 function mount(over: Partial<React.ComponentProps<typeof Composer>> = {}) {
   return render(
@@ -34,6 +34,34 @@ describe('composer emoji picker', () => {
     for (const emoji of COMPOSER_EMOJI) {
       expect(screen.getByTestId(`emoji-${emoji}`)).toBeInTheDocument();
     }
+  });
+
+  /**
+   * 🔴 사장님 2026-08-07: 「이모지 리스트 분류는 빼고 그냥 이모지들만 배열하도록
+   * 글씨는 없애고」. A captioned version shipped for one commit and was pulled.
+   * This asserts the ABSENCE, because a heading is exactly the kind of thing a
+   * later "let's make it scannable" pass puts back.
+   */
+  it('shows glyphs only — no headings, no captions, no text of any kind', () => {
+    mount();
+    fireEvent.click(screen.getByTestId('composer-emoji-toggle'));
+    const picker = screen.getByTestId('emoji-picker');
+
+    expect(picker.querySelector('h1, h2, h3, h4, h5, h6, p, label')).toBeNull();
+    // Every character in the tray belongs to a tile, and every tile is one glyph.
+    const glyphs = COMPOSER_EMOJI.join('');
+    expect(picker.textContent).toBe(glyphs);
+    // The name survives for screen readers, where it costs no pixels.
+    expect(picker).toHaveAttribute('aria-label', '이모지');
+  });
+
+  /** 8-wide grid over a set authored in fours of eight = one theme per row. */
+  it('lays the set out so each authored group is exactly one row', () => {
+    expect(EMOJI_GROUPS.every((g) => g.emoji.length === 8)).toBe(true);
+    expect(COMPOSER_EMOJI).toHaveLength(EMOJI_GROUPS.length * 8);
+    mount();
+    fireEvent.click(screen.getByTestId('composer-emoji-toggle'));
+    expect(screen.getByTestId('emoji-picker').querySelector('.grid-cols-8')).not.toBeNull();
   });
 
   it('inserts at the caret, not at the end, and stays open for the next pick', () => {

@@ -8,6 +8,17 @@
  * identically no matter which door the guest came through. The difference is
  * only what precedes it: JoinFlow has to establish WHO you are from a masked
  * roster, because a claim link is anonymous. In the room we already know.
+ *
+ * 🔴 2026-08-07 — it also has to answer when the guest may only LOOK.
+ *
+ * The owner's requirement is that a seat is checkable at any point during the
+ * tour, and by then picking is closed (check-in, or the start gate). The
+ * picker cannot serve that read: `useSeatPicker` calls the seats API, which
+ * takes a booking-scope token and NOT the room session — a guest who relaunched
+ * the PWA without `?rt=` would get a spinner that never resolves. So when
+ * there is nothing to pick, this sheet renders the answer it already has from
+ * `my-seat` (which the room session does authorise) and never touches the
+ * board. The picker mounts only when the guest can actually use it.
  */
 
 import { useState } from 'react';
@@ -16,6 +27,31 @@ import Sheet from '@/components/tour-mode/Sheet';
 import { useSeatPicker } from '@/hooks/useSeatPicker';
 import { joinCopy } from '@/lib/ops/seating/joinCopy';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import type { MySeat } from '@/hooks/useMySeat';
+
+/** Read-only answer for a guest who cannot (or need not) pick right now. */
+function SeatSummary({ seat, locale }: { seat: MySeat; locale: RoomLocale }) {
+  const t = (key: Parameters<typeof joinCopy>[1]) => joinCopy(locale, key);
+  const assigned = seat.state === 'assigned' && seat.seat_number != null;
+  return (
+    <div className="py-6 text-center" data-testid="room-seat-summary" data-seat-state={seat.state}>
+      {assigned ? (
+        <>
+          <p className="tr-card-text text-[var(--tr-ink-2)]">{t('yourSeats')}</p>
+          <p className="tr-numeral mt-2 font-bold text-[var(--tr-accent-ink)]">{seat.seat_number}</p>
+          {seat.plate_number && (
+            <p className="tr-card-text mt-2 text-[var(--tr-ink-2)]">{seat.plate_number}</p>
+          )}
+          <p className="tr-meta mt-3 text-[var(--tr-ink-3)]">{t('seatFixed')}</p>
+        </>
+      ) : (
+        <p className="tr-card-text text-[var(--tr-ink-2)]">
+          {seat.state === 'awaiting' ? t('seatSoon') : t('seatOnSite')}
+        </p>
+      )}
+    </div>
+  );
+}
 
 export default function RoomSeatSheet({
   open,
@@ -26,28 +62,39 @@ export default function RoomSeatSheet({
   bookingId,
   partySize,
   guestLabel,
+  seat,
+  pickable,
 }: {
   open: boolean;
   onClose: () => void;
   locale: RoomLocale;
   roomId: string;
-  token: string;
+  /** null when this device never received a personal link — read-only then. */
+  token: string | null;
   bookingId: string;
   partySize: number;
   guestLabel: string;
+  /** The `my-seat` answer, so the read-only path needs no second request. */
+  seat: MySeat | null;
+  pickable: boolean;
 }) {
   const [note, setNote] = useState<string | null>(null);
   const [doneSeats, setDoneSeats] = useState<number[] | null>(null);
   const t = (key: Parameters<typeof joinCopy>[1], vars?: Record<string, string | number>) =>
     joinCopy(locale, key, vars);
 
+  // 🔴 `enabled` is what keeps the read-only path off the seats API. Without
+  // it a tokenless guest would fire a request that 403s and sit on `loading`
+  // forever — the exact "spinner instead of an answer" this sheet exists to
+  // avoid mid-tour.
+  const canPick = pickable && Boolean(token);
   const picker = useSeatPicker({
     roomId,
-    token,
+    token: token ?? '',
     bookingId,
     partySize,
     guestLabel,
-    enabled: open,
+    enabled: open && canPick,
   });
 
   const onConfirm = async () => {
@@ -63,7 +110,9 @@ export default function RoomSeatSheet({
   };
 
   return (
-    <Sheet open={open} onClose={onClose} title={t('seatTitle')} closeLabel={t('back')}>
+    // 제목도 지금 할 수 있는 일을 말한다 — 못 고르는 시트를
+    // "좌석을 선택하세요"로 열면 바로 아래 본문과 모순된다.
+    <Sheet open={open} onClose={onClose} title={t(canPick ? 'seatTitle' : 'yourSeats')} closeLabel={t('back')}>
       <div className="px-1 pb-2" data-testid="room-seat-sheet">
         {doneSeats ? (
           <div className="py-6 text-center" data-testid="room-seat-done">
@@ -73,6 +122,8 @@ export default function RoomSeatSheet({
             </p>
             <p className="tr-card-text mt-3 text-[var(--tr-ink-2)]">{t('doneHint')}</p>
           </div>
+        ) : !canPick ? (
+          <SeatSummary seat={seat ?? { state: 'awaiting', seat_number: null, plate_number: null, can_pick: false, room_id: roomId, party_size: partySize }} locale={locale} />
         ) : !picker.loaded ? (
           <p className="tr-card-text py-6 text-center text-[var(--tr-ink-3)]">{t('loading')}</p>
         ) : !picker.activeVehicle ? (

@@ -2,12 +2,13 @@
  * §11.C C1 — the cockpit's vehicle-location toggle.
  *
  * The console only ever took one-shot fixes (parking pin / vehicle arrived);
- * this opt-in is what puts a moving van on the guest's map. Contract: OFF on
- * first use, remembered per booking once enabled, and turning it off calls the
- * relay's stop-sharing (DELETE) rather than just muting the UI.
+ * this is what puts a moving van on the guest's map. Contract: ON for the tour
+ * day, an explicit choice (either way) is remembered for that day, and turning
+ * it off calls the relay's stop-sharing (DELETE) rather than just muting the UI.
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import Cockpit, { vehicleShareKey, type CockpitRoom } from '@/components/tour-mode/cockpit/Cockpit';
+import { kstToday } from '@/lib/tour-room/time';
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
@@ -96,56 +97,93 @@ const base = {
 
 const lastEnabled = () => geoWatcherCalls[geoWatcherCalls.length - 1].enabled;
 
+const KEY = () => vehicleShareKey('b1', kstToday());
+
+/**
+ * 🔴 CONTRACT CHANGE, 사장님 2026-08-07 — "투어 당일 자동으로 켜기".
+ *
+ * This used to open with "starts OFF — first use is always a deliberate tap".
+ * That contract lost the morning it was written for: a guest opens the map to
+ * find their ride, and the one position that matters is missing because the
+ * driver had not tapped a button on their own screen. The deliberate tap is now
+ * the tap that turns it OFF.
+ *
+ * What did NOT change: sharing is still foreground-only (the watcher pauses on
+ * a hidden tab and stops on unmount), the off switch is still one tap away, and
+ * turning it off still clears the server snapshot.
+ */
 describe('Cockpit vehicle-location toggle (§11.C C1)', () => {
-  it('starts OFF — the watcher is mounted but not publishing', () => {
+  it('starts ON on the tour day — the guest map has a van without anyone tapping', () => {
     render(<Cockpit {...base} />);
+    expect(lastEnabled()).toBe(true);
     openActionTray();
     const toggle = screen.getByTestId('action-grid-share');
-    expect(toggle).toHaveAttribute('aria-pressed', 'false');
-    expect(toggle).toHaveTextContent('위치공유');
-    expect(lastEnabled()).toBe(false);
-    expect(screen.queryByTestId('action-grid-active-share')).not.toBeInTheDocument();
+    expect(toggle).toHaveAttribute('aria-pressed', 'true');
+    expect(toggle).toHaveTextContent('공유 중');
   });
 
-  it('turning it on enables the watcher and remembers the booking', () => {
+  it('stays OFF before and after the tour day', () => {
+    const { unmount } = render(<Cockpit {...base} lifecycle="lobby" />);
+    expect(lastEnabled()).toBe(false);
+    unmount();
+
+    render(<Cockpit {...base} lifecycle="ended" />);
+    expect(lastEnabled()).toBe(false);
+  });
+
+  it('turning it off is remembered for the day — auto-on must not undo it', () => {
+    render(<Cockpit {...base} />);
+    openActionTray();
+    fireEvent.click(screen.getByTestId('action-grid-share'));
+
+    expect(stopSharingMock).toHaveBeenCalledTimes(1);
+    expect(lastEnabled()).toBe(false);
+    // 🔴 '0', not a cleared key: "no record" means "follow the tour day", so
+    // removing it would switch the staff device back on behind them.
+    expect(window.localStorage.getItem(KEY())).toBe('0');
+  });
+
+  it('a remembered OFF survives the next mount', () => {
+    window.localStorage.setItem(KEY(), '0');
+    render(<Cockpit {...base} />);
+    expect(lastEnabled()).toBe(false);
+    openActionTray();
+    expect(screen.getByTestId('action-grid-share')).toHaveAttribute('aria-pressed', 'false');
+  });
+
+  it('turning it back on is remembered too', () => {
+    window.localStorage.setItem(KEY(), '0');
     render(<Cockpit {...base} />);
     openActionTray();
     fireEvent.click(screen.getByTestId('action-grid-share'));
     expect(lastEnabled()).toBe(true);
-    expect(window.localStorage.getItem(vehicleShareKey('b1'))).toBe('1');
-    expect(screen.getByTestId('action-grid-share')).toHaveTextContent('공유 중');
+    expect(window.localStorage.getItem(KEY())).toBe('1');
     expect(screen.getByTestId('action-grid-active-share')).toBeInTheDocument();
   });
 
-  it('auto-resumes on the next mount once remembered', () => {
-    window.localStorage.setItem(vehicleShareKey('b1'), '1');
-    render(<Cockpit {...base} />);
+  it('an explicit ON before the tour day still wins', () => {
+    window.localStorage.setItem(vehicleShareKey('b1', kstToday()), '1');
+    render(<Cockpit {...base} lifecycle="lobby" />);
     expect(lastEnabled()).toBe(true);
-    openActionTray();
-    expect(screen.getByTestId('action-grid-share')).toHaveAttribute('aria-pressed', 'true');
   });
 
-  it('the memory is per booking — another booking still starts OFF', () => {
-    window.localStorage.setItem(vehicleShareKey('other-booking'), '1');
-    render(<Cockpit {...base} />);
+  it('a choice is scoped to the booking AND the day', () => {
+    window.localStorage.setItem(vehicleShareKey('other-booking', kstToday()), '0');
+    window.localStorage.setItem(vehicleShareKey('b1', '2020-01-01'), '0');
+    render(<Cockpit {...base} lifecycle="lobby" />);
+    // Neither key belongs to this booking-and-day, so neither silences it;
+    // 'lobby' is what keeps it off here.
     expect(lastEnabled()).toBe(false);
-  });
-
-  it('turning it off clears the server snapshot and the memory', () => {
-    window.localStorage.setItem(vehicleShareKey('b1'), '1');
-    render(<Cockpit {...base} />);
-    openActionTray();
-    fireEvent.click(screen.getByTestId('action-grid-share'));
-    expect(stopSharingMock).toHaveBeenCalledTimes(1);
-    expect(lastEnabled()).toBe(false);
-    expect(window.localStorage.getItem(vehicleShareKey('b1'))).toBeNull();
+    expect(window.localStorage.getItem(KEY())).toBeNull();
   });
 
   it('a denied permission is surfaced, not retried in a loop', () => {
+    // Auto-on means the denial now surfaces without anyone tapping — which is
+    // the point: the staff member finds out at the start of the day, not when a
+    // guest asks why the van is missing.
     geoStatus = 'denied';
     render(<Cockpit {...base} />);
     openActionTray();
-    fireEvent.click(screen.getByTestId('action-grid-share'));
     expect(screen.getByTestId('action-grid-share')).toHaveTextContent('권한 필요');
     expect(screen.getByText('위치 권한을 허용해 주세요 (설정 > 위치)')).toBeInTheDocument();
   });

@@ -106,7 +106,7 @@ export default function TourSectionRow({
       <section className="py-6 sm:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-7 w-48 bg-[#E1E5EA] rounded-full animate-pulse mb-4" />
-          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 rail-scrollbar">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex-shrink-0 w-[44vw] sm:w-44 lg:w-52 aspect-[5/4.6] bg-[#E1E5EA] rounded-xl animate-pulse" />
             ))}
@@ -178,7 +178,7 @@ export default function TourSectionRow({
           )}
         </div>
         <div
-          className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-thin"
+          className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory rail-scrollbar"
           style={{ scrollbarWidth: 'thin' }}
         >
           {tours.map((tour) => {

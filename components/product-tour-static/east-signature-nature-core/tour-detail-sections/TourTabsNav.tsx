@@ -107,7 +107,7 @@ export function TourTabsNav({ subnavItems }: TourTabsNavProps) {
       )}
     >
       <div className="relative mx-auto max-w-xl px-5">
-        <div ref={scrollerRef} className="flex items-center gap-1 overflow-x-auto scrollbar-hide py-2.5">
+        <div ref={scrollerRef} className="flex items-center gap-1 overflow-x-auto rail-scrollbar py-2.5">
           {subnavItems.map((item) => (
             <button
               key={item.id}

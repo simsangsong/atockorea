@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "抱川日帰りツアー：サンジョン湖・チェイン滝・アートバレー | AtoC Korea",
     "metaDescription": "漢灘江ユネスコ世界ジオパークを巡る10時間のソウル発日帰りツアー。サンジョン湖の平坦な3.2 km周回路、チェイン滝の18 mの柱状節理と80 mの吊り橋、抱川アートバレーのエメラルド色の採石場湖へ。",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "ソウル発 抱川日帰りツアー",
       "チェイン滝 ツアー",
@@ -34,8 +34,8 @@
       "湖畔散策",
       "少人数"
     ],
-    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。",
     "tags": [
@@ -59,7 +59,7 @@
     "priceNote": "での定価$62、AtoC Korea販売価格は約21%オフ。"
   },
   "hero": {
-    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "築100年の山あいの湖、柱状節理を落ちる滝、エメラルド色の水をたたえた花崗岩の採石場跡 — 抱川と漣川の地質を、一日かけて歩いてたどります",
     "pills": [
@@ -139,7 +139,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "サンジョン湖",
       "alt": "サンジョン湖 — gallery image 1",
       "caption": "サンジョン湖 — photo 1"
@@ -147,26 +147,42 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-      "location": "サンジョン湖",
-      "alt": "サンジョン湖 — gallery image 2",
-      "caption": "サンジョン湖 — photo 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
       "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1",
       "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1"
     },
     {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "サンジョン湖",
+      "alt": "サンジョン湖 — gallery image 2",
+      "caption": "サンジョン湖 — photo 2"
+    },
+    {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
       "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2",
       "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+      "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+      "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 3",
+      "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+      "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+      "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 4",
+      "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 4"
     }
   ],
   "itineraryStops": [
@@ -194,18 +210,18 @@
         "バスへ戻る（約5分）"
       ],
       "whyOnRoute": "**その日いちばん長く歩く区間を、まず最初に。** 3.2 kmの周回路は平坦ですが、それでもこのツアーで最も長く歩く区間であり、脚が元気なうちに歩くのがふさわしい場所です。朝は湖がいちばん美しい時間帯でもあります。春と秋には水面から霧が立ちのぼることが多く、午後のかすみが出る前なら山の稜線もくっきりと見えます。サンジョン湖は4か所のなかでソウルから最も遠いため、ここから始めることで、一日は都心から遠ざかるのではなく着実に都心へ向かって進んでいきます。",
-      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "images": [
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+        "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "source": "atoc-korea"
         }
       ],
@@ -213,18 +229,18 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "location": "サンジョン湖",
-          "alt": "サンジョン湖 — gallery image 1",
-          "caption": "サンジョン湖 — photo 1"
+          "caption": "サンジョン湖 — photo 1",
+          "alt": "サンジョン湖 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "location": "サンジョン湖",
-          "alt": "サンジョン湖 — gallery image 2",
-          "caption": "サンジョン湖 — photo 2"
+          "caption": "サンジョン湖 — photo 2",
+          "alt": "サンジョン湖 — gallery image 2"
         }
       ],
       "visitBasics": {
@@ -352,18 +368,28 @@
         "ヒーリングの森を歩いて下り、集合（約15分）"
       ],
       "whyOnRoute": "**いちばん安心できる最後の立ち寄り先、そしていちばん短い帰り道。** 抱川アートバレーは湖や渓谷よりも遅くまで開いているので、午後をゆっくり過ごしても困ることがありません。しかも4か所のなかでソウルにいちばん近く、ここで締めくくれば最後のドライブはその日いちばん短くなります。地質の物語も、ここで閉じます。チェイン滝で溶岩と向き合ったあと、その溶岩が流れ渡った古い花崗岩の内側に立って一日を終える — 人が掘り出し、大地が静かに満たし返した窪地のなかで。",
-      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "images": [
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+        "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+        "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+        "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
           "source": "atoc-korea"
         }
       ],
@@ -371,18 +397,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
-          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1",
-          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1"
+          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1",
+          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
           "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
-          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2",
-          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2"
+          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2",
+          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 3",
+          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+          "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+          "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 4",
+          "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 4"
         }
       ],
       "visitBasics": {
@@ -1081,7 +1123,7 @@
         "headlineLine1": "湖と滝",
         "headlineLine2": "＆採石場のアートバレー",
         "hero": {
-          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "築100年の山あいの湖、柱状節理を落ちる滝、エメラルド色の水をたたえた花崗岩の採石場跡 — 抱川と漣川の地質を、一日かけて歩いてたどります",
           "pills": [
@@ -1182,7 +1224,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "location": "サンジョン湖",
             "alt": "サンジョン湖 — gallery image 1",
             "caption": "サンジョン湖 — photo 1"
@@ -1190,7 +1232,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+            "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
             "location": "サンジョン湖",
             "alt": "サンジョン湖 — gallery image 2",
             "caption": "サンジョン湖 — photo 2"
@@ -1198,7 +1240,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
             "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
             "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1",
             "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1"
@@ -1206,7 +1248,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+            "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
             "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2",
             "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2"
@@ -1244,18 +1286,18 @@
               "バスへ戻る（約5分）"
             ],
             "whyOnRoute": "**その日いちばん長く歩く区間を、まず最初に。** 3.2 kmの周回路は平坦ですが、それでもこのツアーで最も長く歩く区間であり、脚が元気なうちに歩くのがふさわしい場所です。朝は湖がいちばん美しい時間帯でもあります。春と秋には水面から霧が立ちのぼることが多く、午後のかすみが出る前なら山の稜線もくっきりと見えます。サンジョン湖は4か所のなかでソウルから最も遠いため、ここから始めることで、一日は都心から遠ざかるのではなく着実に都心へ向かって進んでいきます。",
-            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "images": [
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+              "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1263,18 +1305,18 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "location": "サンジョン湖",
-                "alt": "サンジョン湖 — gallery image 1",
-                "caption": "サンジョン湖 — photo 1"
+                "caption": "サンジョン湖 — photo 1",
+                "alt": "サンジョン湖 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "location": "サンジョン湖",
-                "alt": "サンジョン湖 — gallery image 2",
-                "caption": "サンジョン湖 — photo 2"
+                "caption": "サンジョン湖 — photo 2",
+                "alt": "サンジョン湖 — gallery image 2"
               }
             ],
             "visitBasics": {
@@ -1402,18 +1444,28 @@
               "ヒーリングの森を歩いて下り、集合（約15分）"
             ],
             "whyOnRoute": "**いちばん安心できる最後の立ち寄り先、そしていちばん短い帰り道。** 抱川アートバレーは湖や渓谷よりも遅くまで開いているので、午後をゆっくり過ごしても困ることがありません。しかも4か所のなかでソウルにいちばん近く、ここで締めくくれば最後のドライブはその日いちばん短くなります。地質の物語も、ここで閉じます。チェイン滝で溶岩と向き合ったあと、その溶岩が流れ渡った古い花崗岩の内側に立って一日を終える — 人が掘り出し、大地が静かに満たし返した窪地のなかで。",
-            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "images": [
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+              "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+              "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+              "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1421,18 +1473,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
-                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1",
-                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1"
+                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 1",
+                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
                 "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
-                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2",
-                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2"
+                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 2",
+                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 3",
+                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+                "location": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク）",
+                "caption": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — photo 4",
+                "alt": "抱川アートバレー（漢灘江ユネスコ世界ジオパーク） — gallery image 4"
               }
             ],
             "visitBasics": {
