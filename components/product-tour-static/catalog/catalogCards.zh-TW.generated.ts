@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
     },
     "price": {
-      "amountLabel": "456.99"
+      "amountLabel": "169"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

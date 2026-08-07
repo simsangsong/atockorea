@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-07T03:04:52.305Z",
+  "generatedAt": "2026-08-07T05:00:22.264Z",
   "reports": [
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:A1",
@@ -310,16 +310,16 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-3",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 30,
-      "fails": 1,
-      "flags": 6,
+      "fails": 0,
+      "flags": 7,
       "findings": [
         {
           "gate": "G3",
-          "severity": "fail",
+          "severity": "flag",
           "pointer": "/itineraryStops/3/description",
-          "message": "숫자 소실 — 원문의 [1970] 이 번역에 없다 (원문 [15000 1970 25000 60] vs 번역 [15000 25000 60])"
+          "message": "숫자가 낱말로 표기됨 — 원문 [1970] (anni Settanta·rund um die Uhr 류면 정상)"
         },
         {
           "gate": "G9",
@@ -1551,9 +1551,9 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:A1",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 88,
-      "fails": 1,
+      "fails": 0,
       "flags": 11,
       "findings": [
         {
@@ -1579,12 +1579,6 @@
           "severity": "flag",
           "pointer": "/sticky_booking_bar/note",
           "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/practicalAccordionItems/0/content/1",
-          "message": "숫자 소실 — 원문의 [6 7] 이 번역에 없다 (원문 [0 30 6 7] vs 번역 [0 18 19 30])"
         },
         {
           "gate": "G3",

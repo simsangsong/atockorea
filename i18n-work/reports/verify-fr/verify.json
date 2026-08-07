@@ -1,6 +1,6 @@
 {
   "locale": "fr",
-  "generatedAt": "2026-08-07T03:04:50.954Z",
+  "generatedAt": "2026-08-07T05:00:20.882Z",
   "reports": [
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:fr:A1",
@@ -1946,9 +1946,9 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:fr:A1",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 88,
-      "fails": 1,
+      "fails": 0,
       "flags": 11,
       "findings": [
         {
@@ -1974,12 +1974,6 @@
           "severity": "flag",
           "pointer": "/sticky_booking_bar/note",
           "message": "길이비 1.54 가 fr 허용범위 1–1.4 밖"
-        },
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/practicalAccordionItems/0/content/1",
-          "message": "숫자 소실 — 원문의 [6 7] 이 번역에 없다 (원문 [0 30 6 7] vs 번역 [0 18 19 30])"
         },
         {
           "gate": "G3",
