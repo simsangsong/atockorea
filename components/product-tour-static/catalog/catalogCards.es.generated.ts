@@ -328,7 +328,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco."
     },
     "price": {
-      "amountLabel": "424"
+      "amountLabel": "419"
     }
   },
   "jeju-cherry-blossom-tour-east-route": {

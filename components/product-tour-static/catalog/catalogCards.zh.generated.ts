@@ -328,7 +328,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "8小时私人包车行程完全以您的船只返航时间为准，而非固定日程安排。在仁川邮轮码头登船口接送，配备英语导游司机，路线灵活可定制，途经景福宫、北村韩屋村及仁寺洞，自选午餐地点，游览首尔塔及明洞或曹溪寺。导游司机在返航前预留60分钟交通缓冲时间，确保您绝不错过班船。"
     },
     "price": {
-      "amountLabel": "424"
+      "amountLabel": "419"
     }
   },
   "jeju-cherry-blossom-tour-east-route": {

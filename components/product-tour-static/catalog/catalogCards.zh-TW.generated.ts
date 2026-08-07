@@ -328,7 +328,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "以您的郵輪返航時間為基準安排的8小時私人包車，而非固定行程。在仁川郵輪碼頭舷梯處接送，配備英語導遊兼司機，行程可彈性調整，途經景福宮、北村韓屋村＋仁寺洞、自選午餐、N首爾塔，以及明洞或曹溪寺。導遊兼司機會在返航前預留60分鐘的交通緩衝時間，確保您絕不錯過郵輪。"
     },
     "price": {
-      "amountLabel": "424"
+      "amountLabel": "419"
     }
   },
   "jeju-cherry-blossom-tour-east-route": {
