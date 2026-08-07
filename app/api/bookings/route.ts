@@ -17,6 +17,7 @@ import {
   tourListPricesToUsdSync,
   mapNestedTourRowsToUsd,
 } from '@/lib/tour-list-price-usd.server';
+import { parseCharterRateCard, resolveCharterPriceUsd } from '@/lib/tour-product/charterRateCard';
 import {
   claimCouponForBooking,
   attachCouponClaimToBooking,
@@ -125,6 +126,8 @@ export async function POST(req: NextRequest) {
       numberOfGuests,
       pickupPointId,
       finalPrice,
+      /** Charter products only: which column of the rate card the guest picked. */
+      charterDuration,
       paymentMethod,
       preferredLanguage,
       specialRequests,
@@ -361,7 +364,35 @@ export async function POST(req: NextRequest) {
       );
     }
     const guestsCount = parseInt(String(numberOfGuests), 10);
-    const unitPrice = listUnitUsd;
+
+    /**
+     * Charter products are sold on a duration x party-size rate card, and the
+     * booking card has always rendered it. Until now nothing charged from it:
+     * this route recomputed from `tours.price` and rejected anything else, so a
+     * guest quoted US$169 for a 5-hour Busan charter was booked at US$456.99.
+     * Owner decision 2026-08-07 — the rate card is the price.
+     *
+     * Read from `tour_product_pages`, because that is the copy the page rendered.
+     * No card, or no cell for this (duration, party size) → `tours.price`, exactly
+     * as before.
+     */
+    let unitPrice = listUnitUsd;
+    if (tour.slug) {
+      const { data: pageRow } = await supabase
+        .from('tour_product_pages')
+        .select('detail_payload')
+        .eq('slug', tour.slug)
+        .eq('locale', 'en')
+        .maybeSingle();
+      const card = parseCharterRateCard(
+        (pageRow?.detail_payload as { pricingTiers?: unknown } | null)?.pricingTiers,
+      );
+      if (card) {
+        const tierUsd = resolveCharterPriceUsd(card, charterDuration ?? null, guestsCount);
+        if (tierUsd != null && tierUsd > 0) unitPrice = tierUsd;
+      }
+    }
+
     const totalPrice = tour.price_type === 'person'
       ? Math.round(unitPrice * guestsCount * 100) / 100
       : Math.round(unitPrice * 100) / 100;

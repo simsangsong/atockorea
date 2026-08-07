@@ -188,7 +188,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -1131,7 +1131,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -2074,7 +2074,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "为釜山邮轮旅客提供的8小时私人包车服务，配备持牌英语司机导游。默认行程涵盖联合国纪念公墓、太宗台悬崖、甘川文化村、龙头山公园及扎嘎其市场，全程可定制。可在邮轮码头、KTX车站或釜山市区任意酒店接送，保证准时返回船上。"
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -3017,7 +3017,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -3960,7 +3960,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -4900,7 +4900,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
       },
       "price": {
-        "amountLabel": "456.99"
+        "amountLabel": "169"
       }
     },
     "busan-small-group-sightseeing-tour-cruise-passengers": {

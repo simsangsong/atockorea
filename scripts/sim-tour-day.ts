@@ -28,6 +28,9 @@ import path from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
 import { signCustomerRoomToken, signGuideRoomToken } from '../lib/tour-room/token';
+import { signCompanionInviteToken } from '../lib/tour-room/companionToken';
+import { signRoomClaimToken } from '../lib/ops/seating/claimToken';
+import { ensureRoom } from '../lib/tour-room/access';
 import { kstToday } from '../lib/tour-room/time';
 import { purgeRoomMedia, type PurgeStorageClient } from '../lib/tour-room/mediaPurge';
 import { SESSION_SIM_TAG, LEGACY_SIM_TAG } from './simSessionTag';
@@ -347,6 +350,33 @@ async function main() {
   if (signInError || !signIn.session) throw signInError ?? new Error('sign-in failed');
 
   const projectRef = new URL(url).hostname.split('.')[0];
+
+  /**
+   * 🔴 초대 랜딩 두 개는 이 파일이 URL 을 안 써 줘서 오랫동안 측정되지 않았다.
+   *
+   * `qa-uiux-render.mjs` 는 `fx.joinUrl` · `fx.companionUrl` 을 읽는데 여기가 그 키를
+   * 만든 적이 없다. 그래서 `undefined` 가 그대로 주소에 붙어 `…:3181undefined` 로
+   * 나갔고, 9개 표면 중 2개가 매 실행 「unreachable」로 빠졌다. 하니스가 그걸 초록으로
+   * 세지 않고 도달 실패로 보고한 덕에 조용한 통과는 아니었지만, **측정은 계속 0이었다.**
+   *
+   * join 은 `tour_rooms.id` 로 서명하므로 룸이 실제로 있어야 하는데, 룸은 손님이 처음
+   * 열 때 만들어진다 — 시드 시점엔 없다. 그래서 앱이 쓰는 `ensureRoom` 을 그대로 부른다.
+   * 여기서 행을 손으로 넣으면 시드가 만든 룸과 앱이 만든 룸이 달라질 수 있고, 그 차이는
+   * 하니스가 아니라 손님에게서 처음 드러난다.
+   */
+  const room1 = await ensureRoom(service as never, {
+    id: booking1,
+    tour_id: tourA,
+    tour_date: tourDate,
+  });
+
+  const joinUrl = `/tour-mode/join/${encodeURIComponent(
+    signRoomClaimToken({ roomId: String(room1.id), tourId: tourA, tourDate }).token,
+  )}`;
+  const companionUrl = `/tour-mode/companion/${encodeURIComponent(
+    signCompanionInviteToken({ bookingId: booking1, tourDate }).token,
+  )}`;
+
   const fixtures = {
     tourDate,
     booking1,
@@ -354,6 +384,8 @@ async function main() {
     room1Url: `/tour-mode/room/${booking1}?rt=${encodeURIComponent(token1)}`,
     room2Url: `/tour-mode/room/${booking2}?rt=${encodeURIComponent(token2)}`,
     guideUrl: `/tour-mode/guide?rt=${encodeURIComponent(guideToken)}`,
+    joinUrl,
+    companionUrl,
     adminUserId,
     supabaseStorageKey: `sb-${projectRef}-auth-token`,
     adminSession: signIn.session,

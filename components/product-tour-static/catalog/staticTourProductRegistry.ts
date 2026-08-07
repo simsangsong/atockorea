@@ -581,7 +581,13 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   // three entries in `catalogRegistrationBuilder.ts` — they had drifted apart.
   "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 456.99 },
+  // Rate-card minimum (5h, 1–6 pax). Was 456.99, a single number taken from the
+  // channel listing while the product page quoted its own rate card at $169–$378
+  // — the catalogue and the page disagreed, and the booking charged a third
+  // figure. Owner decision 2026-08-07: the rate card is the price, so the
+  // catalogue shows the cheapest cell on it. Keep in sync with the charter's
+  // `pricingTiers`, and with catalogRegistrationBuilder.ts.
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169 },
   // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },

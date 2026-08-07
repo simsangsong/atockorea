@@ -501,3 +501,73 @@ describe('잘림 탐지 — translate.ts 생성 중 가드 (2026-08-07 실측)',
     expect(findTruncatedSegments({}, { '/p': 'y'.repeat(10) })).toEqual([]);
   });
 });
+
+describe('G3 오탐 — 12시제 범위 · 낱말 표기 (2026-08-07 실측 6건)', () => {
+  const fails = (f: ReturnType<typeof checkNumbers>) => f.filter((x) => x.severity === 'fail');
+
+  describe('meridiem 이 범위 끝에만 붙는다', () => {
+    const EN = 'Return is scheduled between 6:30 and 7:00 p.m., after the Iho Tewoo sunset.';
+
+    it('독일어 24시제 변환을 통과시킨다', () => {
+      const de = 'Die Rückfahrt ist zwischen 18:30 und 19:00 Uhr vorgesehen, nach dem Sonnenuntergang in Iho Tewoo.';
+      expect(fails(checkNumbers(EN, de, '/p'))).toEqual([]);
+    });
+
+    it('프랑스어 표기도 통과시킨다', () => {
+      const fr = 'Le retour est prévu entre 18 h 30 et 19 h 00, après le coucher du soleil à Iho Tewoo.';
+      expect(fails(checkNumbers(EN, fr, '/p'))).toEqual([]);
+    });
+
+    it('🔴 시각을 실제로 바꾸면 여전히 fail — H+12 가 없으면 면제가 안 된다', () => {
+      // 19:00 → 20:00. 손님이 30분을 잃는다.
+      const wrong = 'Die Rückfahrt ist zwischen 18:30 und 20:00 Uhr vorgesehen.';
+      expect(fails(checkNumbers(EN, wrong, '/p')).length).toBeGreaterThan(0);
+    });
+
+    it('🔴 문장이 잘리면 여전히 fail', () => {
+      expect(fails(checkNumbers(EN, 'Die Rückfahrt ist zwischen 18:30', '/p')).length).toBeGreaterThan(0);
+    });
+  });
+
+  describe('숫자가 낱말로 옮겨진 자리 — fail 이 아니라 flag', () => {
+    it('이탈리아어 anni Settanta', () => {
+      const en = 'a local meal style that became widely known in the 1970s, reflecting the abundance';
+      const it = 'uno stile di pasto locale che divenne largamente noto negli anni Settanta, riflesso dell abbondanza';
+      const f = checkNumbers(en, it, '/p');
+      expect(fails(f)).toEqual([]);
+      expect(f.some((x) => x.severity === 'flag' && x.message.includes('낱말'))).toBe(true);
+    });
+
+    it('독일어 rund um die Uhr', () => {
+      const en = 'Beach and walking paths open 24 hours (free); visit at the sunset hour';
+      const de = 'Strand und Spazierwege rund um die Uhr geöffnet (kostenlos); Besuch zur Stunde des Sonnenuntergangs';
+      expect(fails(checkNumbers(en, de, '/p'))).toEqual([]);
+    });
+
+    it('같은 문장의 다른 숫자는 그대로 검사한다 — 09:00–17:00 이 사라지면 fail', () => {
+      const en = 'Wetland boardwalk open 24 hours (free); cafe and store about 09:00–17:00';
+      const de = 'Holzsteg rund um die Uhr geöffnet (kostenlos); Café und Laden etwa 09:00–17:00 Uhr';
+      expect(fails(checkNumbers(en, de, '/p'))).toEqual([]);
+      // 영업시간을 통째로 날리면 잡힌다.
+      expect(fails(checkNumbers(en, 'Holzsteg rund um die Uhr geöffnet (kostenlos)', '/p')).length).toBeGreaterThan(0);
+    });
+
+    it('🔴 `s` 없는 맨 연도는 면제 대상이 아니다 — 1771 이 사라지면 fail', () => {
+      const en = 'written after his Pacific drift in 1771 and published later';
+      expect(fails(checkNumbers(en, 'geschrieben nach seiner Pazifikdrift und später veröffentlicht', '/p')).length)
+        .toBeGreaterThan(0);
+    });
+
+    it('🔴 24 가 시간이 아니면 면제 안 된다 — `24 rooms` 는 그대로 fail', () => {
+      expect(fails(checkNumbers('the guesthouse has 24 rooms', 'das Gästehaus hat Zimmer', '/p')).length)
+        .toBeGreaterThan(0);
+    });
+
+    it('🔴 실제로 잘린 번역은 여전히 fail — 면제가 잘림을 가리지 않는다', () => {
+      // 실제 사고 문장(southwest de itineraryStops-4, 길이비 0.08)의 축약판.
+      const en = 'Jang Han Chul (1744-?) drifted for 29 days in December 1770, rescued in 1771; '
+        + 'cafes price ₩6,000-12,000 and the trail runs 13 km from the 1970s pier.';
+      expect(fails(checkNumbers(en, 'Jang Han Chul war ein Gelehrter aus Jeju', '/p')).length).toBeGreaterThan(0);
+    });
+  });
+});

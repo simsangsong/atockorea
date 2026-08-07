@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
     },
     "price": {
-      "amountLabel": "456.99"
+      "amountLabel": "169"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

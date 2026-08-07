@@ -281,7 +281,11 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
     setBusy(true);
     try {
       trackEvent("pd_cta_click", { tourId: checkout.tourId, surface: "sticky" });
-      const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
+      // Same rate-card cell the bar displayed — see buildBookingPayload.
+      const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage, {
+        unitPriceUsd: tierPriceUsd,
+        durationKey: selectedDuration,
+      });
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
       router.push(consumerTourCheckoutHref(checkout.tourId));
     } catch (e) {

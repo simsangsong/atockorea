@@ -54,7 +54,8 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   // listings exactly, to the cent. Keep in lockstep with `staticTourProductRegistry.ts`.
   "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 456.99 },
+  // Rate-card minimum (5h, 1–6 pax) — see staticTourProductRegistry.ts.
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169 },
   "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },

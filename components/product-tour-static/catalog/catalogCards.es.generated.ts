@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
     },
     "price": {
-      "amountLabel": "456.99"
+      "amountLabel": "169"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

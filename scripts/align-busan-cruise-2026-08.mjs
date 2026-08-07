@@ -34,11 +34,21 @@ const SLUGS = {
   private: "busan-private-car-charter-cruise-shore",
 };
 
-/** Exact listing prices, to the cent. */
+/**
+ * Exact listing prices, to the cent.
+ *
+ * 🔴 The private charter is NOT a single-number product. It is sold on a
+ * duration x party-size rate card (`pricingTiers`), which the product page has
+ * always rendered and which the owner confirmed on 2026-08-07 is the price.
+ * Putting the listing's US$456.99 here made the catalogue quote a figure the
+ * page never showed and the booking never honoured. Its list price is now the
+ * cheapest cell on that card, and checkout resolves the exact cell the guest
+ * picked — see lib/tour-product/charterRateCard.ts.
+ */
 const PRICE = {
   [SLUGS.join]: 58.79,
   [SLUGS.small]: 68.95,
-  [SLUGS.private]: 456.99,
+  [SLUGS.private]: 169,
 };
 
 /** "8 hours" per locale, plus the digit forms used inside prose duration strings. */
@@ -147,13 +157,19 @@ function applyTerminals(doc, slug, locale) {
   if (!pd) return;
   const noteText = TERMINAL_NOTE[locale];
   let touched = 0;
+  /**
+   * 🔴 Only rewrite notes that still RANK the terminals. This used to overwrite
+   * unconditionally, which meant every re-run dragged back the i18n track's
+   * retranslated notes — a silent clobber of another session's work, and one
+   * that reappeared every time anyone ran this script. The job here was always
+   * "remove the ranking", not "own this sentence".
+   */
+  const RANKS = /\bprimary\b|\balternate\b|\bsecondary\b|주\s?터미널|보조\s?터미널|메인 터미널|主要ターミナル|副ターミナル|主要码头|備用|备用|terminal principal|terminal alternativa/i;
   const setNote = (obj, key) => {
-    if (obj && typeof obj === "object" && typeof obj[key] === "string") {
-      if (obj[key] !== noteText) {
-        obj[key] = noteText;
-        touched += 1;
-      }
-    }
+    if (!obj || typeof obj !== "object" || typeof obj[key] !== "string") return;
+    if (!RANKS.test(obj[key])) return;
+    obj[key] = noteText;
+    touched += 1;
   };
   // Schema: { primary, alternates[] }
   setNote(pd.primary, "instructions");
