@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Pickup at port",
         "Return guaranteed"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "priceLabel": "",
       "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "From Busan",
         "Winter night view"
       ],
-      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
-      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "heroImage": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
+      "thumbnail": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
       "priceLabel": "From US$39 per person (was $50, 22% off)",
       "shortCardDescription": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at Gyeongju National Museum, or at the Donggung & Wolji night view in winter."
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Customizable",
         "Guaranteed return"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
       "priceLabel": "",
       "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship."
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "All admissions included",
         "13-hour day"
       ],
-      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
-      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "US$79 per person",
       "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
     },
@@ -888,8 +888,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Shopping",
         "Day Trip"
       ],
-      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
-      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
       "priceLabel": "From US$53 per person (was $59, 10% off)",
       "shortCardDescription": "A small-group cultural day-trip from Seoul covering three contrasting sides of Gyeonggi Province: the UNESCO-listed Suwon Hwaseong Fortress with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside Gwangmyeong Cave (a former Japanese-era gold mine), the four-floor Starfield Library Suwon. 9 hours with included transport and admissions."
     },
@@ -912,8 +912,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Heritage + Modern Day Trip",
         "Admission Included"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
       "priceLabel": "From US$51 per person (was $54, 6% off)",
       "shortCardDescription": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed Suwon Hwaseong Fortress (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and Waujeongsa Temple in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission."
     },

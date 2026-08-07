@@ -35,8 +35,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "스카이캡슐이 제목이자 차별점 — 황금빛 해안 캡슐",
   },
   "busan-cruise-shore-excursion-bus-tour": {
-    image: "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-    why: "기항지 상품의 서사는 바다 — 송도 구름산책로가 도심 시장 코스와 대비된다",
+    image: "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+    why: "기항지 상품의 앵커는 용궁사 — 대표 상품과 다른 프레임(용 조각·파란 하늘)이고 **실사진**이다",
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     image: "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
@@ -45,16 +45,16 @@ export const PRODUCT_THUMBNAILS = {
 
   /* ── 수원: 셋이 장안문 야경 한 장을 공유하고 있었다 ────────────────── */
   "seoul-suwon-hwaseong-waujeongsa-starfield": {
-    image: "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-    why: "셋의 공통 앵커인 화성은 한 상품에만 남긴다 — 장안문 야경",
+    image: "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
+    why: "셋의 공통 앵커인 화성은 한 상품에만 남긴다 — **실사진** 성벽 일몰(AI 장안문 야경에서 교체)",
   },
   "seoul-suwon-hwaseong-folk-village-starfield-library": {
     image: "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
     why: "민속촌이 이 상품만의 스톱 — 정문보다 한복 공연이 「무엇을 하는 투어인지」를 카드에서 바로 보여준다",
   },
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": {
-    image: "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
-    why: "광명동굴 보라빛 터널 — 이 상품만의 스톱이자 카드에서 가장 강한 색",
+    image: "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
+    why: "광명동굴이 이 상품만의 스톱 — **실제 광산 레일 터널**. AI 보라빛 터널이 더 화려하지만 진짜가 아니다",
   },
 
   /* ── 설악: 셋이 능선 한 장을 공유하고 있었다 ──────────────────────── */
@@ -67,8 +67,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "낙산사 의상대 — 바다 절벽 위 정자, 이 상품만의 것",
   },
   "seoul-seoraksan-nami-island-morning-calm-day-tour": {
-    image: "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
-    why: "아침고요 봄 정원 — 남이섬은 겨울 상품과 겹쳐서 이쪽으로",
+    image: "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+    why: "겨울 상품과의 차별점은 남이섬·아침고요 — **실사진** 메타세쿼이아길(AI 아침고요 정원에서 교체)",
   },
 
   /* ── 제주 ────────────────────────────────────────────────────── */
@@ -95,14 +95,14 @@ export const PRODUCT_THUMBNAILS = {
 
   /* ── 경주 ────────────────────────────────────────────────────── */
   "from-busan-gyeongju-ancient-capital-day-tour": {
-    image: "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
-    why: "🔴 기존 썸네일이 아홉산 대나무숲 — 부산 기장이라 「경주 고도」 서사와 어긋났다. 월정교 블루아워로 교체",
+    image: "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
+    why: "🔴 기존 썸네일이 아홉산 대나무숲 — 부산 기장이라 「경주 고도」 서사와 어긋났다. **실사진** 월정교 야경으로 교체",
   },
 
   /* ── 서울 ────────────────────────────────────────────────────── */
   "incheon-seoul-private-car-shore-excursion-cruise": {
-    image: "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-    why: "경회루 반영 — 서울 반나절의 대표 장면",
+    image: "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+    why: "흥례문 + 한복 관광객 — **실사진**이고 「무엇을 보는 반나절인지」가 카드에서 바로 읽힌다",
   },
 
   /* ── 전세: 카드가 스톱이 아니라 차량·도시를 판다 (의도) ─────────────── */

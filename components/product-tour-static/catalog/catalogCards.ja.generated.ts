@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港での送迎",
         "帰港保証"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "priceLabel": "",
       "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "釜山発",
         "冬は夜景"
       ],
-      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
-      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "heroImage": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
+      "thumbnail": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
       "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能",
         "帰船保証"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
       "priceLabel": "",
       "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
     },
@@ -778,8 +778,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "入場料すべて込み",
         "13時間の行程"
       ],
-      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
-      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。"
     },
@@ -886,8 +886,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "ショッピング",
         "日帰り旅行"
       ],
-      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
-      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制文化日帰りツアーで、京畿道の対照的な3つの魅力を巡ります。18世紀の城壁と行宮を有するユネスコ世界遺産・水原華城、旧日本時代の金鉱跡に広がるLEDライトアップの地下テーマパーク「光明洞窟」、4フロアにわたるスターフィールドライブラリー水原。交通費・入場料込みの9時間コースです。"
     },
@@ -910,8 +910,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "世界遺産＋現代文化の日帰り旅行",
         "入場料込み"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
       "priceLabel": "",
       "shortCardDescription": "ソウル発の少人数制日帰りツアーで、対照的な韓国の3つの魅力を巡ります：ユネスコ世界遺産に登録された水原華城（18世紀の軍事建築）、フォトジェニックなスターフィールド水原図書館（現代の文化的名所）、龍仁の臥牛精舎（巨大な野外仏像と石鐘）。交通・入場料込みで、充実した世界遺産体験をお届けします。"
     },

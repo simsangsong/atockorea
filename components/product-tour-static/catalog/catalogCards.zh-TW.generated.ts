@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港口接送",
         "保證返回"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "priceLabel": "",
       "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "從釜山出發",
         "冬季看夜景"
       ],
-      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
-      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "heroImage": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
+      "thumbnail": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
       "priceLabel": "每人 US$39（原價$50，22% 優惠）",
       "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "可客製化",
         "保證返船"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
       "priceLabel": "",
       "shortCardDescription": "以您的郵輪返航時間為基準安排的8小時私人包車，而非固定行程。在仁川郵輪碼頭舷梯處接送，配備英語導遊兼司機，行程可彈性調整，途經景福宮、北村韓屋村＋仁寺洞、自選午餐、N首爾塔，以及明洞或曹溪寺。導遊兼司機會在返航前預留60分鐘的交通緩衝時間，確保您絕不錯過郵輪。"
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "全程門票已含",
         "13小時全日行程"
       ],
-      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
-      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "",
       "shortCardDescription": "從首爾出發的13小時巴士一日遊，涵蓋韓國三大熱門攝影打卡景點：雪嶽山國立公園（韓國唯一的聯合國教科文組織生物圈保護區）、南怡島（《冬季戀歌》取景地的水杉林蔭大道）及晨靜苑（韓國代表性私人植物園，擁有5,000種植物）。全程門票已含；提供英語導遊；於弘益大學站或明洞站接送。"
     },
@@ -888,8 +888,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "購物",
         "一日遊"
       ],
-      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
-      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
       "priceLabel": "",
       "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道三大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館。全程9小時，含交通接送與門票。"
     },
@@ -912,8 +912,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "文化遺產與現代融合一日遊",
         "含門票"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
       "priceLabel": "",
       "shortCardDescription": "從首爾出發的小團一日遊，探索韓國三個截然不同的面貌：列入UNESCO世界遺產的水原華城（18世紀軍事建築）、極具拍照魅力的星空水原圖書館（當代文化地標），以及龍仁的臥牛精舍（巨型露天佛像與石鐘）。文化價值豐富，含交通接送與門票。"
     },

@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Recogida en el puerto",
         "Regreso garantizado"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "priceLabel": "",
       "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 9 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Desde Busan",
         "Paisaje nocturno en invierno"
       ],
-      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
-      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "heroImage": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
+      "thumbnail": "/images/tours/woljeonggyo/02-kakaotalk-20260509-231543723-07.webp",
       "priceLabel": "Desde US$39 por persona (antes $50, 22% descuento)",
       "shortCardDescription": "Tour de un día a Gyeongju en grupo pequeño con salida desde tres salidas de metro de Busan. Por la tarde se deja el vehículo y se camina: de la Casa del Clan Choi al Puente Woljeonggyo, y de Daereungwon a Hwangnidan-gil. El cierre es el Museo Nacional de Gyeongju y, en invierno, Donggung y Wolji de noche."
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Personalizable",
         "Regreso garantizado"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
       "priceLabel": "",
       "shortCardDescription": "Un alquiler de auto privado de 8 horas diseñado en torno a la hora de embarque de su crucero, no a un horario fijo. Recogida en la pasarela de la Terminal de Cruceros de Incheon, guía-conductor de habla inglesa e itinerario personalizable por el Palacio Gyeongbokgung, el Pueblo Hanok de Bukchon + Insadong, almuerzo a su elección, la Torre N de Seúl y Myeongdong o el Templo Jogyesa. El guía-conductor mantiene un margen de 60 minutos antes del zarpe para que nunca pierda el barco."
     },
@@ -777,8 +777,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Todas las entradas incluidas",
         "Día de 13 horas"
       ],
-      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
-      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
       "priceLabel": "",
       "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
     },
@@ -885,8 +885,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Compras",
         "Excursión de un día"
       ],
-      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
-      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/05-kakaotalk-20260509-231601211-04.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión cultural de un día en grupo reducido desde Seúl que recorre tres facetas contrastantes de la provincia de Gyeonggi: la Fortaleza Suwon Hwaseong declarada Patrimonio de la UNESCO, con sus murallas del siglo XVIII y el Palacio Haenggung; el impresionante parque temático subterráneo iluminado con LED en el interior de la Cueva Gwangmyeong (una antigua mina de oro de la época japonesa); la Biblioteca Starfield de Suwon de cuatro pisos. 9 horas con transporte y entradas incluidos."
     },
@@ -909,8 +909,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Excursión de un día: Patrimonio + Modernidad",
         "Entradas incluidas"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
+      "thumbnail": "/images/tours/suwon-hwaseong/02-kakaotalk-20260510-222949305.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión en grupo reducido desde Seúl que recorre tres facetas contrastantes de Corea: la Fortaleza de Suwon Hwaseong, declarada Patrimonio UNESCO (arquitectura militar del siglo XVIII), la fotogénica Biblioteca Starfield Suwon (icono cultural contemporáneo) y el Templo Waujeongsa en Yongin (gigantesco Buda al aire libre y campana de piedra). Gran valor patrimonial con transporte y entradas incluidos."
     },
