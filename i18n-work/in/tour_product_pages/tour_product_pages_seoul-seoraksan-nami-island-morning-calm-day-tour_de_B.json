@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seoul → Seoraksan"
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Seoul → Seoraksan"
     },
     "/routePhases/0/duration": {
       "source_en": "≈ 3 hours",
@@ -449,5 +450,5 @@
       "⟦G0⟧": "Garten der Morgenstille"
     }
   },
-  "tmHits": 32
+  "tmHits": 33
 }
