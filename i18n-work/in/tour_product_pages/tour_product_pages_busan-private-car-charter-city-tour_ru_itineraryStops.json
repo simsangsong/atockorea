@@ -1,0 +1,467 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-city-tour:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/0/time": {
+      "source_en": "Best in 8–9 hours"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Sea temple, coastal park, memorial, painted village, fish market"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "6 stops"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "≈ 10:00 · ⟦G0⟧ Temple (75 min)",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "≈ 11:30 · Cheongsapo & Haeundae Blue Line Park (75 min)"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "≈ 13:00 · Lunch (local Busan restaurant) (60 min)"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "≈ 14:15 · ⟦G0⟧ in Korea (60 min)",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "≈ 15:30 · ⟦G0⟧ (75 min)",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/0/timeUsed/5": {
+      "source_en": "≈ 17:15 · Jagalchi Fish Market (60 min)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "Lunch (local Busan restaurant)"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/itineraryStops/0/highlights/4": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/0/highlights/5": {
+      "source_en": "Jagalchi Fish Market"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "The strongest choice if it is your first day in Busan and you want the images you came for, in an order that flows without backtracking. Low walking except at Gamcheon, and every stop works in any season."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "The classic first-visit Busan day, taken from our **Busan Top Attractions Day Tour**. It runs east to west across the city: the cliffside sea temple in the morning, the coastal park and Blue Line Park stretch before lunch, then the quiet of the ⟦G0⟧, the painted hillside of Gamcheon, and Jagalchi's working fish market to finish. \n\nAs a charter, it loses the join-in tour's station-meeting chain, so the same stops fit comfortably with time left over — that spare time usually goes to Gamcheon, which people always want longer at.",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/itineraryStops/0/galleryItems/0/alt": {
+      "source_en": "Route 1: Busan Top Attractions — gallery image 1"
+    },
+    "/itineraryStops/0/galleryItems/0/caption": {
+      "source_en": "Route 1: Busan Top Attractions — 1"
+    },
+    "/itineraryStops/0/galleryItems/0/location": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/0/galleryItems/1/alt": {
+      "source_en": "Route 1: Busan Top Attractions — gallery image 2"
+    },
+    "/itineraryStops/0/galleryItems/1/caption": {
+      "source_en": "Route 1: Busan Top Attractions — 2"
+    },
+    "/itineraryStops/0/galleryItems/1/location": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/0/galleryItems/2/alt": {
+      "source_en": "Route 1: Busan Top Attractions — gallery image 3"
+    },
+    "/itineraryStops/0/galleryItems/2/caption": {
+      "source_en": "Route 1: Busan Top Attractions — 3"
+    },
+    "/itineraryStops/0/galleryItems/2/location": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/0/galleryItems/3/alt": {
+      "source_en": "Route 1: Busan Top Attractions — gallery image 4"
+    },
+    "/itineraryStops/0/galleryItems/3/caption": {
+      "source_en": "Route 1: Busan Top Attractions — 4"
+    },
+    "/itineraryStops/0/galleryItems/3/location": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/0/galleryItems/4/alt": {
+      "source_en": "Route 1: Busan Top Attractions — gallery image 5"
+    },
+    "/itineraryStops/0/galleryItems/4/caption": {
+      "source_en": "Route 1: Busan Top Attractions — 5"
+    },
+    "/itineraryStops/0/galleryItems/4/location": {
+      "source_en": "Route 1: Busan Top Attractions"
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+    },
+    "/itineraryStops/1/time": {
+      "source_en": "Best in 8 hours"
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Sea temple, glass skywalk, Sky Capsule, beach, two mural villages"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "7 stops",
+      "tm": "7 остановок"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "≈ 10:20 · ⟦G0⟧ Temple (60 min)",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "≈ 11:40 · Cheongsapo Daritdol Observatory (glass skywalk) (40 min)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "≈ 12:30 · Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) (50 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "≈ 13:25 · Lunch (local restaurant near Haeundae/Mipo) (45 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "≈ 14:10 · Haeundae Beach (20 min)"
+    },
+    "/itineraryStops/1/timeUsed/5": {
+      "source_en": "≈ 15:10 · ⟦G0⟧ (60 min)",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/1/timeUsed/6": {
+      "source_en": "≈ 16:30 · Dakbatgol Mural Village & Wish-Stairs Monorail (30 min)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Lunch (local restaurant near Haeundae/Mipo)"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "Haeundae Beach"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "Dakbatgol Mural Village & Wish-Stairs Monorail"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "The best route for couples and photographers, and for anyone who would rather have four strong places than eight quick ones. It is also the gentlest on walking apart from Gamcheon's slopes."
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "Taken from our **Small-Group Sea Temple, Sky Capsule & Culture Villages tour** — the photo-led version of a Busan day. The morning stays on the eastern coast: the sea temple, the glass-floored Daritdol observatory over the water at Cheongsapo, and the Sky Capsule ride along the old railway line to Mipo. \n\nThe afternoon crosses to the two painted hill villages, Gamcheon and the smaller, quieter Dakbatgol with its wish-stairs monorail. \n\nThe Sky Capsule ticket is bought on the day and is not part of the charter price — the driver-guide helps with the queue, which is the part that catches people out."
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 1"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 1"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 2"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 2"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 3"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 3"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Route 3: Coast and Old Downtown"
+    },
+    "/itineraryStops/2/time": {
+      "source_en": "Best in 8–9 hours"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Sea temple, memorial, three markets, painted village, two Songdo viewpoints, city tower"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "10 stops"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "≈ 09:45 · ⟦G0⟧ Temple (50 min)",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "source_en": "≈ 11:05 · ⟦G0⟧ in Korea (30 min)",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/2": {
+      "source_en": "≈ 11:50 · Lunch at a local Busan restaurant (own expense) (40 min)"
+    },
+    "/itineraryStops/2/timeUsed/3": {
+      "source_en": "≈ 12:45 · ⟦G0⟧ (30 min)",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/4": {
+      "source_en": "≈ 13:15 · ⟦G0⟧ (20 min)",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/5": {
+      "source_en": "≈ 13:35 · ⟦G0⟧ (25 min)",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/6": {
+      "source_en": "≈ 14:20 · ⟦G0⟧ (45 min)",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/2/timeUsed/7": {
+      "source_en": "≈ 15:25 · Songdo Cloud Trails Skywalk (20 min)"
+    },
+    "/itineraryStops/2/timeUsed/8": {
+      "source_en": "≈ 15:45 · Songdo Sky Park (Amnam Park) (25 min)"
+    },
+    "/itineraryStops/2/timeUsed/9": {
+      "source_en": "≈ 16:25 · ⟦G0⟧ & Busan Diamond Tower (20 min)",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/itineraryStops/2/highlights/0": {
+      "source_en": "⟦G0⟧ Temple",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/2/highlights/1": {
+      "source_en": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/itineraryStops/2/highlights/2": {
+      "source_en": "Lunch at a local Busan restaurant (own expense)"
+    },
+    "/itineraryStops/2/highlights/3": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/itineraryStops/2/highlights/4": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/itineraryStops/2/highlights/5": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/itineraryStops/2/highlights/6": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/itineraryStops/2/highlights/7": {
+      "source_en": "Songdo Cloud Trails Skywalk"
+    },
+    "/itineraryStops/2/highlights/8": {
+      "source_en": "Songdo Sky Park (Amnam Park)"
+    },
+    "/itineraryStops/2/highlights/9": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/itineraryStops/2/whyOnRoute": {
+      "source_en": "The right route when Busan is a single day of a longer trip and you would rather see the whole shape of the city than three places properly. Also the best rain-day route: markets, the tower and the arcades are all covered."
+    },
+    "/itineraryStops/2/description": {
+      "source_en": "The densest of the three, taken from our **Busan Cruise Shore Coastal Bus Tour** — built originally to show a whole city inside one ship's port call, which makes it the right shape for anyone who has only one day. \n\nIt runs the sea temple and the ⟦G0⟧ in the morning, then works through old downtown on foot-sized hops: Jagalchi, ⟦G3⟧, ⟦G2⟧, then Gamcheon, the Songdo Cloud Trails skywalk out over the water, Songdo Sky Park on the headland, and ⟦G1⟧ with the Busan Diamond Tower to close. \n\nStops here are deliberately short — 20 to 45 minutes each. If your group prefers to linger, take this list and cut it in half.",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН",
+        "⟦G1⟧ = Парк Йондусан",
+        "⟦G2⟧ = Рынок Кукче",
+        "⟦G3⟧ = Площадь BIFF"
+      ]
+    },
+    "/itineraryStops/2/galleryItems/0/alt": {
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 1"
+    },
+    "/itineraryStops/2/galleryItems/0/caption": {
+      "source_en": "Route 3: Coast and Old Downtown — 1"
+    },
+    "/itineraryStops/2/galleryItems/0/location": {
+      "source_en": "Route 3: Coast and Old Downtown"
+    },
+    "/itineraryStops/2/galleryItems/1/alt": {
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 2"
+    },
+    "/itineraryStops/2/galleryItems/1/caption": {
+      "source_en": "Route 3: Coast and Old Downtown — 2"
+    },
+    "/itineraryStops/2/galleryItems/1/location": {
+      "source_en": "Route 3: Coast and Old Downtown"
+    },
+    "/itineraryStops/2/galleryItems/2/alt": {
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 3"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/timeUsed/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/itineraryStops/0/highlights/4": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/timeUsed/5": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/itineraryStops/2/timeUsed/3": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/itineraryStops/2/timeUsed/4": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/itineraryStops/2/timeUsed/5": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/itineraryStops/2/timeUsed/6": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/2/timeUsed/9": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/itineraryStops/2/highlights/0": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/2/highlights/1": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/itineraryStops/2/highlights/3": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/itineraryStops/2/highlights/4": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/itineraryStops/2/highlights/5": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/itineraryStops/2/highlights/6": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/itineraryStops/2/highlights/9": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/itineraryStops/2/description": {
+      "⟦G0⟧": "Мемориальное кладбище ООН",
+      "⟦G1⟧": "Парк Йондусан",
+      "⟦G2⟧": "Рынок Кукче",
+      "⟦G3⟧": "Площадь BIFF"
+    }
+  },
+  "tmHits": 7
+}

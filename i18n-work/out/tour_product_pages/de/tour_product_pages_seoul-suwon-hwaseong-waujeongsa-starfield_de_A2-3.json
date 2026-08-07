@@ -1,0 +1,26 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:A2-3",
+  "locale": "de",
+  "segments": {
+    "/bookingSupportSteps/0/title": "Sofortige Bestätigung",
+    "/bookingSupportSteps/0/detail": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs",
+    "/bookingSupportSteps/0/timing": "Sofort",
+    "/bookingSupportSteps/1/title": "Erinnerung 12 Stunden vorher",
+    "/bookingSupportSteps/1/detail": "Wetter-Update und etwaige Routenanpassungen",
+    "/bookingSupportSteps/1/timing": "12 Stunden vorher",
+    "/bookingSupportSteps/2/title": "Endgültige Abholinformationen",
+    "/bookingSupportSteps/2/detail": "Genaue Abholzeit und Kontakt zum Fahrer",
+    "/bookingSupportSteps/2/timing": "Am Abend zuvor",
+    "/bookingSupportSteps/3/title": "Routenhinweise am Tourtag",
+    "/bookingSupportSteps/3/detail": "Morgendliches Briefing auf Basis der aktuellen Bedingungen",
+    "/bookingSupportSteps/3/timing": "Am Morgen der Tour",
+    "/bookingSupportSteps/4/title": "Tipps zu jedem Stopp",
+    "/bookingSupportSteps/4/detail": "Begleitung in Echtzeit an jedem Ort",
+    "/bookingSupportSteps/4/timing": "Während der Tour",
+    "/bookingSupportSteps/5/title": "Betreuung nach der Tour",
+    "/bookingSupportSteps/5/detail": "Nachfassen und Empfehlungen",
+    "/bookingSupportSteps/5/timing": "Nach der Tour",
+    "/practicalWeatherStatic/today/label": "Live-Wetterintegration",
+    "/practicalWeatherStatic/tomorrow/label": "Täglich aktualisiert"
+  }
+}

@@ -188,13 +188,29 @@
     {
       "id": 8,
       "type": "photo",
+      "src": "/images/tours/taejongdae/06-10-20260730-122558.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 6",
+      "caption": "East coast highlights option — photo 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/taejongdae/07-09-20260730-122544.webp",
+      "location": "East coast highlights option",
+      "alt": "East coast highlights option — gallery image 7",
+      "caption": "East coast highlights option — photo 7"
+    },
+    {
+      "id": 10,
+      "type": "photo",
       "src": "/images/tours/busan-tower/02-chatgpt-image-2026-5-10-12-30-57.webp",
       "location": "Yongdusan Park & Busan Tower",
       "alt": "Yongdusan Park & Busan Tower — gallery image 2",
       "caption": "Yongdusan Park & Busan Tower — photo 2"
     },
     {
-      "id": 9,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/busan-tower/03-kakaotalk-20260510-222952680.webp",
       "location": "Yongdusan Park & Busan Tower",
@@ -202,7 +218,7 @@
       "caption": "Yongdusan Park & Busan Tower — photo 3"
     },
     {
-      "id": 10,
+      "id": 12,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -210,7 +226,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 2"
     },
     {
-      "id": 11,
+      "id": 13,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -218,7 +234,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 3"
     },
     {
-      "id": 12,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/photo-001.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -226,7 +242,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 4"
     },
     {
-      "id": 13,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/photo-002.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -234,7 +250,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 5"
     },
     {
-      "id": 14,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-seafood-collage-ai.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -242,7 +258,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 6"
     },
     {
-      "id": 15,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/photo-010.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -250,7 +266,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 7"
     },
     {
-      "id": 16,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-building-facade-night.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -258,7 +274,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 8"
     },
     {
-      "id": 17,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-entrance-arch-night.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -266,7 +282,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 9"
     },
     {
-      "id": 18,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-i-love-sign-harbor.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -274,7 +290,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 10"
     },
     {
-      "id": 19,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-interior-foreign-tourists.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -282,7 +298,7 @@
       "caption": "Nampo-dong & Jagalchi Fish Market — photo 11"
     },
     {
-      "id": 20,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/jagalchi-market/jagalchi-seafood-baskets-kto.webp",
       "location": "Nampo-dong & Jagalchi Fish Market",
@@ -447,7 +463,9 @@
         "/images/tours/taejongdae/02-chatgpt-image-2026-5-10-12-29-06.webp",
         "/images/tours/taejongdae/03-chatgpt-image-2026-5-10-12-26-45.webp",
         "/images/tours/taejongdae/04-chatgpt-image-2026-5-10-12-27-34.webp",
-        "/images/tours/taejongdae/05-chatgpt-image-2026-5-10-12-27-19.webp"
+        "/images/tours/taejongdae/05-chatgpt-image-2026-5-10-12-27-19.webp",
+        "/images/tours/taejongdae/06-10-20260730-122558.webp",
+        "/images/tours/taejongdae/07-09-20260730-122544.webp"
       ],
       "imageCredits": [
         {
@@ -468,6 +486,14 @@
         },
         {
           "url": "/images/tours/taejongdae/05-chatgpt-image-2026-5-10-12-27-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/06-10-20260730-122558.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/taejongdae/07-09-20260730-122544.webp",
           "source": "atoc-korea"
         }
       ],
@@ -511,6 +537,22 @@
           "location": "East coast highlights option",
           "caption": "East coast highlights option — photo 5",
           "alt": "East coast highlights option — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/06-10-20260730-122558.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 6",
+          "alt": "East coast highlights option — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/taejongdae/07-09-20260730-122544.webp",
+          "location": "East coast highlights option",
+          "caption": "East coast highlights option — photo 7",
+          "alt": "East coast highlights option — gallery image 7"
         }
       ]
     },

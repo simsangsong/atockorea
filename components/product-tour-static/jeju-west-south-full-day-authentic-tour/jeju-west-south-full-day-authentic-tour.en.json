@@ -14,12 +14,12 @@
       "Hyeopjae Beach tour",
       "Jeju café strip tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
     "title": "Jeju West & South Authentic Day Tour · Small Group | AtoC",
     "description": "West and south Jeju authentic small-group day tour: Hallasan 1100 Road wetland → Jusangjeolli cliff (UNESCO Geopark) → Cheonjeyeon Waterfall → Osulloc Tea Museum → Aewol cafe coast. 9 hours, certified guide."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+    "thumbnail": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
     "title": "Jeju West & South: Authentic Day Tour",
     "priceLabel": "From US$59 per person (was $69, 14% off)",
     "shortCardDescription": "A small-group day tour pairing Jeju's western and southern coasts in a single loop — Hallasan's 1100 Altitude Wetland (UNESCO), the hexagonal Jusangjeolli Cliff, Songaksan's panoramic viewpoint, Cheonjeyeon Waterfall, O'sulloc Tea Museum, and the Hyeopjae Beach café strip on the west coast. A lifestyle-oriented framing — 'volcanic landscapes meet dramatic coastlines and trendy seaside cafés.'",
@@ -46,7 +46,7 @@
       "Café Culture",
       "Coastal"
     ],
-    "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp"
+    "heroImage": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp"
   },
   "headlineLine1": "Jeju West & South",
   "headlineLine2": "Authentic Day Tour",
@@ -59,7 +59,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+    "imageUrl": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
     "imagePosition": "center 35%",
     "tagline": "Volcanic landscapes meet dramatic coastlines and trendy seaside cafés — Jeju's west-south circuit done right",
     "pills": [
@@ -322,13 +322,21 @@
     {
       "id": 24,
       "type": "photo",
+      "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7"
+    },
+    {
+      "id": 25,
+      "type": "photo",
       "src": "/images/tours/hyeopjae-beach/02-kakaotalk-20260510-230009595-02.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
       "alt": "Hyeopjae Beach + west-coast café strip — gallery image 2",
       "caption": "Hyeopjae Beach + west-coast café strip — photo 2"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/03-kakaotalk-20260510-230009595-01.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
@@ -336,7 +344,7 @@
       "caption": "Hyeopjae Beach + west-coast café strip — photo 3"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/04-kakaotalk-20260508-171002165-02.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
@@ -344,7 +352,7 @@
       "caption": "Hyeopjae Beach + west-coast café strip — photo 4"
     },
     {
-      "id": 27,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/05-kakaotalk-20260508-171202848-19.webp",
       "location": "Hyeopjae Beach + west-coast café strip",
@@ -939,7 +947,8 @@
         "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
         "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
         "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
       ],
       "imageCredits": [
         {
@@ -964,6 +973,10 @@
         },
         {
           "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
           "source": "atoc-korea"
         }
       ],
@@ -1015,6 +1028,14 @@
           "location": "O'sulloc Tea Museum + Green Tea Fields",
           "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
           "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7"
         }
       ]
     },
@@ -2689,7 +2710,8 @@
               "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
               "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
               "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
             ],
             "imageCredits": [
               {
@@ -2714,6 +2736,10 @@
               },
               {
                 "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2765,6 +2791,14 @@
                 "location": "O'sulloc Tea Museum + Green Tea Fields",
                 "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
                 "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7"
               }
             ]
           },

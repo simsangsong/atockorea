@@ -1,0 +1,268 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:it:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "it",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/0/answer": {
+      "source_en": "⟦G0⟧ is closed on Mondays for maintenance. Since the cave is one of the four core stops, the tour doesn't operate on Mondays. If you want to visit on a Monday, consider the Suwon-only itineraries (Hwaseong + Folk Village or Hwaseong + Waujeongsa).",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Why isn't the tour available on Mondays?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Yes — ⟦G1⟧, ⟦G0⟧, and ⟦G2⟧ admissions are all included. Starfield Library is free for everyone. Optional cave-winery tasting and any folk-village extras are at your own cost.",
+      "glossary": [
+        "⟦G0⟧ = Palazzo di Hwaseong Haenggung",
+        "⟦G1⟧ = Fortezza di Suwon Hwaseong",
+        "⟦G2⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Are admissions included?",
+      "tm": "Gli ingressi sono inclusi?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken)."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Is lunch included?",
+      "tm": "Il pranzo è incluso?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "How many stairs are in ⟦G0⟧?",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Is the cave warm or cold?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Both visit the fortress, palace, and Starfield Library. This version pairs them with ⟦G0⟧ (an underground LED-lit theme park). The Folk Village version drops the cave and adds the Korean Folk Village in Yongin (a 270-house open-air heritage park). Choose this one for variety and indoor weather; the Folk Village version for deeper Joseon-era heritage.",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "How is this different from the Suwon + Folk Village tour?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Yes — strong first-time pick for travelers who want one UNESCO site (Hwaseong Fortress), one Joseon palace (Haenggung), one underground themed attraction (⟦G0⟧), and one contemporary photo space (Starfield Library) in a single day. The format gives four very different cultural angles. Note: the tour doesn't operate on Mondays (⟦G0⟧ maintenance day).",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Active walking day with one heavy stair section. Hwaseong wall has steep sections and stairs (≈1 km walked). ⟦G0⟧'s lower-level highlights require ≈180 stairs down and the same back up — no elevator. Haenggung Palace is mostly flat with some courtyard steps. Starfield Library is fully escalator/elevator-accessible. Total walking ≈4 km. Comfortable shoes essential, especially for the cave stairs.",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Is the walking difficult?",
+      "tm": "La camminata è impegnativa?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Year-round 12°C inside the cave makes it a relief stop."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Questo tour è adatto alle famiglie?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer."
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Le persone più anziane possono partecipare comodamente?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Qual è l'età minima consigliata?"
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator",
+      "tm": "Operatore locale autorizzato"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Operatore turistico coreano autorizzato con copertura assicurativa completa"
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists",
+      "tm": "Specialisti dell'itinerario"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Itinerario calibrato a mano, non un giro generico"
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Curated group size"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route",
+      "tm": "Della dimensione giusta per l'itinerario"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring",
+      "tm": "Primavera"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer",
+      "tm": "Estate"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn",
+      "tm": "Autunno"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter",
+      "tm": "Inverno"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Conferma immediata"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Conferma di prenotazione con riepilogo dell'itinerario"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Immediatamente"
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder",
+      "tm": "Promemoria 12 ore prima"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Aggiornamento meteo ed eventuali modifiche del percorso"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before",
+      "tm": "12 ore prima"
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info",
+      "tm": "Informazioni finali sul prelievo"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Orario esatto di prelievo e contatto dell'autista"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before",
+      "tm": "La sera prima"
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes",
+      "tm": "Note sul percorso nel giorno del tour"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Briefing mattutino basato sulle condizioni in tempo reale"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour",
+      "tm": "Mattina del tour"
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Consigli tappa per tappa"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location",
+      "tm": "Guida in tempo reale in ogni località"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour",
+      "tm": "Durante il tour"
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support",
+      "tm": "Assistenza dopo il tour"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations",
+      "tm": "Follow-up e consigli"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "Dopo il tour"
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Consulti le note stagionali"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Consulti le note stagionali"
+    }
+  },
+  "glossaryTokens": {
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/staticQuestions/1/answer": {
+      "⟦G0⟧": "Palazzo di Hwaseong Haenggung",
+      "⟦G1⟧": "Fortezza di Suwon Hwaseong",
+      "⟦G2⟧": "Grotta di Gwangmyeong"
+    },
+    "/staticQuestions/3/question": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/staticQuestions/5/answer": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/staticQuestions/6/answer": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/staticQuestions/7/answer": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    }
+  },
+  "tmHits": 38
+}

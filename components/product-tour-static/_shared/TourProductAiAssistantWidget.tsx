@@ -712,7 +712,7 @@ function TourCardStrip({ cards, uiLang }: { cards: TourCard[]; uiLang: string })
   const cta = VIEW_TOUR_CTA[lk] ?? VIEW_TOUR_CTA.en;
   const priceFrom = PRICE_FROM[lk] ?? PRICE_FROM.en;
   return (
-    <div className="-mx-1.5 mt-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-1.5 pb-1.5 pt-0.5">
+    <div className="rail-scrollbar -mx-1.5 mt-2.5 flex snap-x snap-mandatory gap-2.5 overflow-x-auto px-1.5 pb-1.5 pt-0.5">
       {cards.map((card) => {
         // Deep-audit 2026-07-05: validate href at render (defence-in-depth vs a
         // tampered sessionStorage entry) — the same guard the checkout button
@@ -2098,7 +2098,7 @@ export function TourProductAiAssistantWidget({
                   {labels.contactSupport}
                 </button>
               </div>
-              <div className="flex max-w-full gap-2 overflow-x-auto pb-1.5 pt-0.5 [scrollbar-gutter:stable]">
+              <div className="rail-scrollbar flex max-w-full gap-2 overflow-x-auto pb-1.5 pt-0.5 [scrollbar-gutter:stable]">
                 {quickChips.map((q) => (
                   <button
                     key={q}

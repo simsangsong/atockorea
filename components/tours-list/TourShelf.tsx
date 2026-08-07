@@ -229,11 +229,12 @@ export function TourShelf({ shelf, className, mediaBySlug }: TourShelfProps) {
           <div className="shrink-0 w-3 sm:w-5" aria-hidden />
         </div>
         {/* Right-edge fade — premium magazine cue that more cards exist horizontally.
-            Stops 10px above the bottom so it never washes out the right end of the
-            `.rail-scrollbar` thumb on desktop (the cards already end at `pb-2`). */}
+            Stops 6px above the bottom so it never washes out the right end of the
+            `.rail-scrollbar` thumb on desktop — the bar is 5px tall and the cards
+            already end at `pb-2`. */}
         <div
           aria-hidden
-          className="pointer-events-none absolute bottom-2.5 right-0 top-0 w-12 bg-gradient-to-l from-white via-white/60 to-transparent sm:w-16"
+          className="pointer-events-none absolute bottom-1.5 right-0 top-0 w-12 bg-gradient-to-l from-white via-white/60 to-transparent sm:w-16"
         />
         {/* Sits above the fade (z-10) and is centred on the card image band
             rather than the whole rail, so it never floats over the price row. */}

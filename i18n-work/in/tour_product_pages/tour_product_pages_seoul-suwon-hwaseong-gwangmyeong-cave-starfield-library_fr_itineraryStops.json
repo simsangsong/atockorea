@@ -1,0 +1,265 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:fr:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "fr",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Seoul departure"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Pickup & departure"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "10 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "Pickup from Hongik University (Line 2) or ⟦G0⟧ (Line 4) ~08:30",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "9-hour day designed to clear Hwaseong before crowds peak"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Coach with air conditioning + USB charging"
+    },
+    "/itineraryStops/0/smartNotes/tip": {
+      "source_en": "Confirm exact pickup time and meeting point at booking. Bring water, sunscreen, and comfortable shoes for fortress wall walking — and a light jacket for the cave (12°C year-round)."
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "An 09:30 Suwon arrival puts the group at Hwaseong Fortress with 60-90 min before midday crowds peak around 11:00. The day's clockwork — fortress → palace → market lunch → library → cave — minimizes coach repositioning and ends with the cave's reliable indoor finale."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup from one of two central Seoul meeting points: **Hongik University Station Exit 8** (Hongdae area, Seoul Subway Line 2/Airport Express) or **⟦G1⟧ Station Exit 2 or 4** (Seoul Subway Line 4). About **1 hour by coach south to Suwon** via the Gyeongbu Expressway. \n\nThe 9-hour day is structured to start at Hwaseong Fortress (UNESCO 1997) before crowds peak around 11:00, then enjoy lunch at the mid-afternoon Starfield Library, and close with ⟦G0⟧'s LED-art finale before evening return. Coach is air-conditioned and equipped with USB charging at most seats.",
+      "glossary": [
+        "⟦G0⟧ = Grotte de Gwangmyeong",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "UNESCO Fortress"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "60 min",
+      "tm": "60 min"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Coach drop-off near Janganmun (~5 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Brief group orientation (~5 min)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Walk Janganmun → Hwaseomun (~25-30 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Hwaseong Seongyeok Uigwe — UNESCO Memory of the World 2007"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "5.74 km circumference, 41 strategic military structures"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "FREE for hanbok-wearers + seniors 65+ + last Wed of month"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Hanbok rental at Haenggung Square gives FREE fortress + palace admission. The Janganmun → Hwaseomun section gives the highest per-meter heritage density."
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Visitor Information Centers at all main gates; English-Korean signage throughout"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk gives the highest density of preserved military structures in a 60-min stop, sized for a 9-hour day with 5 substantive stops. The full 5.74 km loop would consume 2.5+ hours and cannibalize the day's other heritage and modern stops. For this 5-stop itinerary, Hwaseong serves as the **morning anchor** — the 5.74 km perimeter is too long to circumnavigate in a single visit, so the day-trip format focuses on the Janganmun → Seojangdae western section (~25-30 min walking, highest preservation density). The 1801 **Hwaseong Seongyeok Uigwe** construction record — UNESCO Memory of the World since 2007 — documented every stone, beam, and laborer's wage, enabling faithful 1975-onwards reconstruction after Korean War damage. Jeong Yak-yong's **Geojunggi (거중기) pulley-and-block crane** is the world's first documented use of Western mechanical-advantage engineering on a Joseon-era construction site, predating Korea's industrial mechanization by ~120 years."
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Coach drop-off at Janganmun lot"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "At Janganmun, Hwaseomun, Paldalmun, Yeonmudae"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**Suwon Hwaseong (수원화성) — UNESCO World Heritage Site since 1997** — Korea's only walled fortress city preserved with its original 10-volume construction record (Hwaseong Seongyeok Uigwe, separately inscribed on the UNESCO Memory of the World Register in 2007). Built **1794-1796 in 2 years 9 months** under King Jeongjo (정조, 22nd Joseon king, r. \n\n1776-1800) — the king's project to relocate the Joseon capital from Hanyang (Seoul) to Suwon and to honor his executed father Crown Prince Sado. Designed by **Jeong Yak-yong (정약용, Dasan)** — Joseon's leading scholar-engineer of the Silhak (practical learning) school — who integrated Korean defensive architecture with Chinese siege defense theory and emerging Western fortification science. \n\nJeong Yak-yong invented the **geojunggi (거중기) pulley-and-block crane** — the first documented use of Western-style modern engineering in Korean construction. \n\n**5.74 km wall circumference, 41 strategic structures**, including **Janganmun (north main gate) — the LARGEST EXISTING ROYAL GATE IN KOREA**, larger than Seoul's Sungnyemun. \n\nThe 9-hour-day route walks the **most photogenic 1.2 km section between Janganmun and Hwaseomun (west gate, National Treasure No. 403)** — ~25-30 min walking through the highest density of preserved military structures. \n\n**Hwahongmun (north sluice gate)** with its 7 arches over Suwoncheon Stream is the most photographed structure. **FREE for hanbok-wearers + last Wed of month + seniors 65+ + children ≤6** — a meaningful budget item across a Suwon family day."
+    },
+    "/itineraryStops/1/visitBasics/hours": {
+      "source_en": "Wall path 24 hours; recommended 09:00-18:00 summer / 09:00-17:00 winter"
+    },
+    "/itineraryStops/1/visitBasics/closed": {
+      "source_en": "Open year-round (Hwaseong Trolley closed Mondays)"
+    },
+    "/itineraryStops/1/visitBasics/walking": {
+      "source_en": "Moderate — wall has steep sections; stairs at gates"
+    },
+    "/itineraryStops/1/visitBasics/admission": {
+      "source_en": "Adults 1,000 / Youth 700 / Children 500 KRW (FREE: children ≤6, seniors 65+, hanbok-wearers, last Wed of month)"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — image de galerie 1",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — image de galerie 2",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — image de galerie 3",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Forteresse Hwaseong de Suwon"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Palais de Hwaseong Haenggung"
+      ]
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Joseon Royal Detached Palace"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "60 min",
+      "tm": "60 min"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "5 min walk from Hwaseong Fortress (Hwaseomun area)"
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "source_en": "Royal Guard Changing Ceremony at 11:00 (Tue-Sun) — ~15 min"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/highlights/0": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Grotte de Gwangmyeong",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Forteresse Hwaseong de Suwon"
+    },
+    "/itineraryStops/2/name": {
+      "⟦G0⟧": "Palais de Hwaseong Haenggung"
+    }
+  },
+  "tmHits": 13
+}

@@ -14,12 +14,12 @@
       "espectáculo de buceo de las haenyeo",
       "tour de un día Ilchulbong Jeju"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
     "title": "Tour Jeju Este: UNESCO, Lava y Haenyeo | AtoC",
     "description": "Tour de un día en grupo pequeño de 9 horas por el este de Jeju: Manjanggul (UNESCO) → Aldea Folclórica de Seongeup → almuerzo → Seongsan Ilchulbong (UNESCO) → espectáculo de buceo de las haenyeo → playa Hamdeok. Todas las entradas incluidas, guía certificado."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+    "thumbnail": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
     "title": "Jeju Este: UNESCO Día",
     "priceLabel": "",
     "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas — ahora con la cueva primero: Manjanggul justo tras la apertura (la hora más tranquila del tubo de lava), la Aldea Folclórica de Seongeup, Seongsan Ilchulbong y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela), y un final a última hora de la tarde en la playa Hamdeok Seoubong. Dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007, todas las entradas incluidas, guía certificado en inglés y chino.",
@@ -45,7 +45,7 @@
       "Haenyeo",
       "Entradas incluidas"
     ],
-    "heroImage": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp"
+    "heroImage": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp"
   },
   "headlineLine1": "Jeju Este",
   "headlineLine2": "UNESCO Día",
@@ -58,7 +58,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+    "imageUrl": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
     "imagePosition": "center 35%",
     "tagline": "El tour del este de Jeju con más reseñas — todas las entradas incluidas",
     "pills": [
@@ -138,7 +138,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "src": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
       "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
       "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1",
       "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1"
@@ -178,7 +178,7 @@
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+      "src": "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
       "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
       "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2",
       "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2"
@@ -186,7 +186,7 @@
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+      "src": "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
       "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
       "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3",
       "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3"
@@ -194,13 +194,29 @@
     {
       "id": 8,
       "type": "photo",
+      "src": "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+      "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 4",
+      "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp",
+      "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+      "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 5",
+      "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
       "src": "/images/tours/seongeup-folk-village/02-chatgpt-image-2026-5-8-07-37-51.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
       "alt": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — gallery image 2",
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 2"
     },
     {
-      "id": 9,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/03-chatgpt-image-2026-5-11-12-24-47.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -208,7 +224,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 3"
     },
     {
-      "id": 10,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/04-chatgpt-image-2026-5-8-07-42-26.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -216,7 +232,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 4"
     },
     {
-      "id": 11,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/seongeup-folk-village/05-kakaotalk-20250901-190338212-01-1.webp",
       "location": "Aldea Folclórica Seongeup (Patrimonio UNESCO)",
@@ -224,7 +240,7 @@
       "caption": "Aldea Folclórica Seongeup (Patrimonio UNESCO) — photo 5"
     },
     {
-      "id": 12,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -232,7 +248,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 2"
     },
     {
-      "id": 13,
+      "id": 15,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -240,7 +256,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 3"
     },
     {
-      "id": 14,
+      "id": 16,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -248,7 +264,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 4"
     },
     {
-      "id": 15,
+      "id": 17,
       "type": "photo",
       "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
       "location": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO)",
@@ -256,7 +272,7 @@
       "caption": "Seongsan Ilchulbong (Pico del Amanecer — Patrimonio Natural UNESCO) — photo 5"
     },
     {
-      "id": 16,
+      "id": 18,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
       "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
@@ -264,7 +280,7 @@
       "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 2"
     },
     {
-      "id": 17,
+      "id": 19,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
       "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
@@ -272,7 +288,7 @@
       "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 3"
     },
     {
-      "id": 18,
+      "id": 20,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
       "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
@@ -280,7 +296,7 @@
       "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 4"
     },
     {
-      "id": 19,
+      "id": 21,
       "type": "photo",
       "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
       "location": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo)",
@@ -288,7 +304,7 @@
       "caption": "Espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela el espectáculo) — photo 5"
     },
     {
-      "id": 20,
+      "id": 22,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/02-kakaotalk-20260510-230028438.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -296,7 +312,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 2"
     },
     {
-      "id": 21,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -304,7 +320,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 3"
     },
     {
-      "id": 22,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/04-kakaotalk-20250915-221050278-14.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -312,7 +328,7 @@
       "caption": "Playa Hamdeok Seoubong — photo 4"
     },
     {
-      "id": 23,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
       "location": "Playa Hamdeok Seoubong",
@@ -354,7 +370,7 @@
       "name": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
       "category": "Patrimonio Natural Mundial de la UNESCO — sistema de tubos de lava de Geomunoreum (inscrito en 2007)",
       "description": "La **Cueva de lava Manjanggul (Manjanggul Lava Tube)** es un tubo de lava formado por la **lava que brotó hace unos 8.000 años del Geomunoreum, un cono parásito del Hallasan**, y en **2007 fue inscrita en el Patrimonio Natural Mundial de la UNESCO junto a Seongsan Ilchulbong y el Hallasan bajo el nombre de 'Isla volcánica y tubos de lava de Jeju'**. Pertenece al **mismo bien inscrito de forma unitaria** que Seongsan Ilchulbong, de modo que este tour reúne **dos sitios del Patrimonio Natural Mundial** en un solo día. \n\nCon una longitud total de unos **7,4 km** (13–15 km si se incluyen los tramos conectados), es uno de los mayores tubos de lava del mundo, y su galería principal alcanza **18 m de ancho y 23–25 m de alto**. De las tres entradas creadas por el derrumbe del techo, **solo se abre al público el tramo de aproximadamente 1 km de la segunda entrada**, en un recorrido de **ida y vuelta de unos 30–45 min** por el mismo camino. Al final del tramo abierto se encuentra **la columna de lava más grande del mundo, de 7,6 m de altura**, el punto fotográfico emblemático de Manjanggul. \n\nEl interior de la cueva se mantiene a **11–13 °C todo el año**, fresco en verano y templado en invierno, pero el suelo es oscuro y algo húmedo, por lo que se recomiendan **una chaqueta y calzado antideslizante**. También está designada como **monumento natural nacional**. La entrada cuesta **₩4.000 por adulto (grupos ₩3.000) / ₩2.000 jóvenes y niños**, con horario de **09:00–18:00 (última entrada 17:10)** y cierre el primer miércoles de cada mes.",
-      "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "image": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
       "highlights": [
         "**Patrimonio Natural Mundial de la UNESCO 2007** — inscrita como 'Isla volcánica y tubos de lava de Jeju' junto a Seongsan Ilchulbong",
         "**Dos sitios del Patrimonio Natural Mundial en un día** — Seongsan Ilchulbong + Manjanggul",
@@ -401,21 +417,31 @@
         "walking": "Moderada — ida y vuelta llana de 1 km, descenso por escaleras en la entrada de la cueva, suelo algo irregular y húmedo"
       },
       "images": [
-        "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
-        "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
-        "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
+        "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
+        "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
+        "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
+        "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+        "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "url": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "url": "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+          "url": "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp",
           "source": "atoc-korea"
         }
       ],
@@ -423,7 +449,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "src": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
           "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
           "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
           "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
@@ -431,7 +457,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "src": "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
           "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
           "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
           "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
@@ -439,10 +465,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+          "src": "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
           "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
           "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
           "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+          "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+          "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 4",
+          "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp",
+          "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+          "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 5",
+          "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 5"
         }
       ]
     },
@@ -2136,7 +2178,7 @@
             "name": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
             "category": "Patrimonio Natural Mundial de la UNESCO — sistema de tubos de lava de Geomunoreum (inscrito en 2007)",
             "description": "La **Cueva de lava Manjanggul (Manjanggul Lava Tube)** es un tubo de lava formado por la **lava que brotó hace unos 8.000 años del Geomunoreum, un cono parásito del Hallasan**, y en **2007 fue inscrita en el Patrimonio Natural Mundial de la UNESCO junto a Seongsan Ilchulbong y el Hallasan bajo el nombre de 'Isla volcánica y tubos de lava de Jeju'**. Pertenece al **mismo bien inscrito de forma unitaria** que Seongsan Ilchulbong, de modo que este tour reúne **dos sitios del Patrimonio Natural Mundial** en un solo día. \n\nCon una longitud total de unos **7,4 km** (13–15 km si se incluyen los tramos conectados), es uno de los mayores tubos de lava del mundo, y su galería principal alcanza **18 m de ancho y 23–25 m de alto**. De las tres entradas creadas por el derrumbe del techo, **solo se abre al público el tramo de aproximadamente 1 km de la segunda entrada**, en un recorrido de **ida y vuelta de unos 30–45 min** por el mismo camino. Al final del tramo abierto se encuentra **la columna de lava más grande del mundo, de 7,6 m de altura**, el punto fotográfico emblemático de Manjanggul. \n\nEl interior de la cueva se mantiene a **11–13 °C todo el año**, fresco en verano y templado en invierno, pero el suelo es oscuro y algo húmedo, por lo que se recomiendan **una chaqueta y calzado antideslizante**. También está designada como **monumento natural nacional**. La entrada cuesta **₩4.000 por adulto (grupos ₩3.000) / ₩2.000 jóvenes y niños**, con horario de **09:00–18:00 (última entrada 17:10)** y cierre el primer miércoles de cada mes.",
-            "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+            "image": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
             "highlights": [
               "**Patrimonio Natural Mundial de la UNESCO 2007** — inscrita como 'Isla volcánica y tubos de lava de Jeju' junto a Seongsan Ilchulbong",
               "**Dos sitios del Patrimonio Natural Mundial en un día** — Seongsan Ilchulbong + Manjanggul",
@@ -2183,21 +2225,31 @@
               "walking": "Moderada — ida y vuelta llana de 1 km, descenso por escaleras en la entrada de la cueva, suelo algo irregular y húmedo"
             },
             "images": [
-              "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
-              "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
-              "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
+              "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
+              "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
+              "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
+              "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+              "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "url": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "url": "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+                "url": "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2205,7 +2257,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "src": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
                 "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
                 "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 1",
                 "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 1"
@@ -2213,7 +2265,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "src": "/images/tours/manjanggul/02-manjanggul-lava-column-02.webp",
                 "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
                 "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 2",
                 "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 2"
@@ -2221,10 +2273,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+                "src": "/images/tours/manjanggul/03-kakaotalk-20250603-212300450-29.webp",
                 "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
                 "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 3",
                 "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/04-kakaotalk-20260508-171119960-19.webp",
+                "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+                "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 4",
+                "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/05-kakaotalk-20250617-211653070-09.webp",
+                "location": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava)",
+                "caption": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — photo 5",
+                "alt": "Manjanggul (Patrimonio Natural Mundial de la UNESCO · tubo de lava) — gallery image 5"
               }
             ]
           },

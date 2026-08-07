@@ -15,7 +15,7 @@
  *   3. 오버라이드가 **그 상품 일정에 실제로 있는 스톱**의 사진 (관련성) —
  *      전세 상품처럼 의도적으로 일정 밖인 경우만 `offItinerary` 로 면제
  */
-import { readFileSync, existsSync } from 'node:fs';
+import { readFileSync, existsSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 import {
   isTourSlugHiddenFromPublicCatalog,
@@ -59,7 +59,18 @@ function itineraryImages(node: unknown, out = new Set<string>()): Set<string> {
   return out;
 }
 
-const sellable = Object.keys(PRODUCT_THUMBNAILS).filter(
+/**
+ * 🔴 2026-08-08 — 이 목록을 `PRODUCT_THUMBNAILS` 에서 뽑고 있었다. 즉 게이트가
+ * **내가 관리하는 21개만 재고 실제로 나가는 38개는 안 쟀다.** 오버라이드에 없던 17개는
+ * 파생 규칙(첫 non-OPS 스톱)이 그대로 굴러서 남이섬 3개·통도사 2개·경복궁 2개·성산 2개·
+ * 설악 2개가 라이브에서 겹쳤고, 게이트는 내내 초록이었다.
+ * → 목록의 출처는 **카탈로그 자신**이어야 한다.
+ */
+const CATALOG_DIRS = readdirSync(STATIC_DIR, { withFileTypes: true })
+  .filter((d) => d.isDirectory() && existsSync(path.join(STATIC_DIR, d.name, `${d.name}.en.json`)))
+  .map((d) => d.name);
+
+const sellable = CATALOG_DIRS.filter(
   (slug) =>
     !isTourSlugHiddenFromPublicCatalog(slug) && !isTourSlugBlockedFromConsumerSurfaces(slug),
 );
@@ -94,6 +105,11 @@ describe('catalogue card thumbnails', () => {
       if (!itineraryImages(payload).has(spec.image)) offRoute.push(`${slug} → ${spec.image}`);
     }
     expect(offRoute).toEqual([]);
+  });
+
+  it('🔴 판매 가능한 상품은 전부 오버라이드를 갖는다 (파생에 맡기면 중복이 자란다)', () => {
+    const unmanaged = sellable.filter((slug) => !PRODUCT_THUMBNAILS[slug]);
+    expect(unmanaged).toEqual([]);
   });
 
   it('선택 이유가 모든 상품에 적혀 있다', () => {

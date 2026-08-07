@@ -1,0 +1,224 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "ru",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/0/answer": {
+      "source_en": "About 12 hours door-to-door from a 07:00 Hongik or 07:30 ⟦G0⟧ pickup. It returns to Seoul between approximately 18:45 (⟦G0⟧) and 19:15 (Hongik).",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "How long is this tour?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "This tour departs **on Mondays and Thursdays only**. Please book a Monday or Thursday date — the itinerary and timing are the same on both days."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "What days does this tour run?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Two pickup points: (1) **Starbucks Hongik University Station Exit 8** (Mapo-gu) at 07:00 — the Starbucks at the top of the exit; or (2) **⟦G0⟧ Station Exit 2** (Jung-gu) at 07:30 — the NorthFace flagship store at the top of the exit. Choose the one closest to your hotel at booking.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Where exactly is the pickup?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Drop-off is at the same two locations in reverse order: ⟦G0⟧ Exit 2 first at approximately 18:45, then Hongik University Exit 8 at approximately 19:15. Exact times depend on traffic on the day.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Where is the drop-off?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Yes — and in practice all three stops are free to enter. ⟦G0⟧ entrance was abolished in May 2023, ⟦G1⟧ has been free since May 2023, and ⟦G2⟧ has no admission fee. The **only optional paid item is the Seorak Cable Car** (₩16,000 round-trip), which is on-site ticketing only and own-expense.",
+      "glossary": [
+        "⟦G0⟧ = Национальный парк Сораксан",
+        "⟦G1⟧ = Храм Наксанса",
+        "⟦G2⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Are admissions included?",
+      "tm": "Включены ли входные билеты?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during the October autumn-foliage peak. If skies are foggy, skip it (no view). With a 2-hour Seoraksan stop, the cable car is realistic mainly when queues are short — otherwise the Tongildaebul + Sinheungsa walk and a short Biseondae streamside path are the recommended use of the time."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Should I ride the Seorak Cable Car?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Naksansa is a thousand-year Buddhist temple built directly above the East Sea, founded in 671 CE by the monk Uisang. It is one of Korea's three great Avalokitesvara (Gwaneum) sanctuaries, and its signature sight is the 16-meter white granite Haesu Gwaneum-sang statue facing the ocean. The temple was rebuilt after the April 2005 Yangyang wildfire and has been free to enter since 2023."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "What is ⟦G0⟧?",
+      "glossary": [
+        "⟦G0⟧ = Храм Наксанса"
+      ]
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "⟦G0⟧'s official swimming season is July-August only, with supervised swimming roughly 09:00-18:00. This tour runs year-round and treats the beach as a walking and photography stop, not a swim stop — there is about an hour to stroll the soft sand and pine-forest paths.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Can I swim at ⟦G0⟧?",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Yes, age 6 and up. The 12-hour day with an early start and ~5 hours of coach time is long for younger children — please consider age 8+ for comfort. Kids tend to enjoy the open space of ⟦G0⟧. Seoraksan and Naksansa both have stairs and rocky or uneven paths.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is this tour suitable for children?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Active seniors are fine — the day's main demands are the walking circuits at Seoraksan and Naksansa, both of which have stairs and uneven surfaces. ⟦G0⟧ is flat and easy. Mobility-limited travelers should consider a private chartered car day trip instead.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Is this OK for seniors?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local restaurant en route between Seoraksan and the Yangyang coast around midday. The region is known for sanchae (mountain-vegetable) bibimbap, buckwheat dishes, and East Sea seafood near the coast. Vegetarian and halal-friendly options may be possible with advance notice."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "Is lunch included?",
+      "tm": "Включён ли обед?"
+    },
+    "/staticQuestions/11/answer": {
+      "source_en": "The guide provides commentary in English and Chinese. The guide handles all menu translation and stall interactions during the day. Please note your preferred language at booking."
+    },
+    "/staticQuestions/11/question": {
+      "source_en": "What languages does the guide speak?"
+    },
+    "/staticQuestions/12/answer": {
+      "source_en": "**Autumn (mid-October to early November)** is Korea's signature foliage season and Seoraksan's foliage is world-famous. **Spring (April)** is fresh and uncrowded. **Winter** brings snow on Seoraksan's peaks and a dramatic East Sea coast — ⟦G0⟧ is a famous New Year sunrise spot. Book 2+ weeks ahead for October.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/12/question": {
+      "source_en": "What's the best season for this tour?"
+    },
+    "/staticQuestions/13/answer": {
+      "source_en": "Light rain: the tour runs as scheduled — all three stops are walkable in rain with the right footwear. Heavy rain: the Seorak Cable Car is typically suspended (the guide pivots to a Sinheungsa-area walk); Naksansa and ⟦G0⟧ still operate. Typhoon-level weather or expressway closure: full refund or rebooking offered.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Наксан"
+      ]
+    },
+    "/staticQuestions/13/question": {
+      "source_en": "What if it rains?",
+      "tm": "Что если пойдёт дождь?"
+    },
+    "/staticQuestions/14/answer": {
+      "source_en": "This is a fixed-schedule coach group tour at a budget price point, departing Mondays and Thursdays. A private chartered car day trip provides door-of-hotel pickup, flexible timing and departure day, and a customizable route — better for travelers who want comfort and flexibility, or who can't travel on a Monday or Thursday."
+    },
+    "/staticQuestions/14/question": {
+      "source_en": "How does this compare to a private chartered tour?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "⟦G0⟧ entrance (abolished May 2023), ⟦G1⟧ (free since May 2023), and ⟦G2⟧ all have no admission fee. The only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense).",
+      "glossary": [
+        "⟦G0⟧ = Национальный парк Сораксан",
+        "⟦G1⟧ = Храм Наксанса",
+        "⟦G2⟧ = Пляж Наксан"
+      ]
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "All three stops free to enter"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "No admission fees, no ticket queues"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "A guide accompanies the group in English and Chinese, with commentary on Seoraksan's UNESCO Biosphere Reserve status, Naksansa's 671 CE founding by the monk Uisang, and the Yangyang coast — plus all logistics on the air-conditioned coach."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "English/Chinese-speaking guide"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-pink-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Guided day with round-trip transfer"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 12-hour day is at an attraction or in transit — what you book is what you experience."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Transparent pricing"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "No hidden shopping stops"
+    }
+  },
+  "glossaryTokens": {
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/staticQuestions/3/answer": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/staticQuestions/4/answer": {
+      "⟦G0⟧": "Национальный парк Сораксан",
+      "⟦G1⟧": "Храм Наксанса",
+      "⟦G2⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/6/question": {
+      "⟦G0⟧": "Храм Наксанса"
+    },
+    "/staticQuestions/7/answer": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/7/question": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/8/answer": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/12/answer": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/staticQuestions/13/answer": {
+      "⟦G0⟧": "Пляж Наксан"
+    },
+    "/bookingTrustItems/0/body": {
+      "⟦G0⟧": "Национальный парк Сораксан",
+      "⟦G1⟧": "Храм Наксанса",
+      "⟦G2⟧": "Пляж Наксан"
+    }
+  },
+  "tmHits": 5
+}

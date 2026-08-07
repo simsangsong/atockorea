@@ -441,14 +441,27 @@ body.lang-tour-app {
 }
 
 @media (hover: hover) and (pointer: fine) {
+  /*
+   * 🔴 `auto`, NOT `thin`. Measured in Chromium (headed, 2026-08-08):
+   *
+   *   scrollbar-width: thin  + ::-webkit-scrollbar{height:5px}  → gutter 10px
+   *   scrollbar-width: auto  + ::-webkit-scrollbar{height:5px}  → gutter  5px
+   *   ::-webkit-scrollbar{height:5px} alone                     → gutter  5px
+   *
+   * A non-initial `scrollbar-width` makes Chromium ignore every
+   * `::-webkit-scrollbar` rule on the element. So the first version of this
+   * block shipped a bar nobody had designed: Chromium's own "thin" chrome,
+   * 10px tall, with none of the thumb styling below. `getComputedStyle` on the
+   * pseudo-element still reported `height: 5px` — the SPECIFIED value, not the
+   * used one. The gutter is what tells the truth.
+   */
   .rail-scrollbar {
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: rgb(168 162 158 / 0.7) transparent; /* stone-400 thumb */
+    scrollbar-width: auto;
   }
 
   .rail-scrollbar::-webkit-scrollbar {
     display: block;
-    height: 10px;
+    height: 5px;
     width: 0; /* rails scroll on one axis — never grow a vertical bar */
   }
 
@@ -459,10 +472,11 @@ body.lang-tour-app {
   .rail-scrollbar::-webkit-scrollbar-thumb {
     background-color: rgb(168 162 158 / 0.6); /* stone-400 */
     border-radius: 999px;
-    /* Transparent border + padding-box clip = a 4px thumb floating in a 10px
-       track. Without this the thumb fills the full track height and reads as
-       an OS chrome bar under the premium cards. */
-    border: 3px solid transparent;
+    /* Transparent border + padding-box clip = a 3px thumb floating in a 5px
+       track. Without it the thumb fills the track and reads as OS chrome under
+       the premium cards. Halved from 10px on 2026-08-08 (사장님: "막대기 아래위
+       높이를 지금의 2분의1로"). Border = (track − thumb) / 2. */
+    border: 1px solid transparent;
     background-clip: padding-box;
   }
 
@@ -475,6 +489,23 @@ body.lang-tour-app {
      the clean rail it can swipe. */
   .rail-arrow {
     display: inline-flex;
+  }
+}
+
+/*
+ * Firefox. It has no `::-webkit-scrollbar`, so the two standard properties are
+ * the only handle there — and setting them is exactly what Chromium must NOT
+ * see (above). The feature query splits the two engines cleanly: Chromium and
+ * Safari match `selector(::-webkit-scrollbar)`, Firefox does not.
+ *
+ * Must stay AFTER the block above — it overrides `scrollbar-width: auto`.
+ */
+@supports not selector(::-webkit-scrollbar) {
+  @media (hover: hover) and (pointer: fine) {
+    .rail-scrollbar {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(168 162 158 / 0.7) transparent; /* stone-400 thumb */
+    }
   }
 }
 

@@ -1,0 +1,345 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:it:B",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "it",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Outbound"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 ora"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Seoul → Suwon city via Gyeongbu Expressway."
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Heritage half"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 3 hours"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other."
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Modern hub"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 ora"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Drive 15 minutes to Starfield Suwon for the library and mall food hall."
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Underground finale"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 1.5 hours",
+      "tm": "≈ 1,5 ore"
+    },
+    "/routePhases/3/description": {
+      "source_en": "Drive 30 minutes northwest to ⟦G0⟧ for the LED-lit themed park.",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/routePhases/4/phase": {
+      "source_en": "Return",
+      "tm": "Ritorno"
+    },
+    "/routePhases/4/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 ora"
+    },
+    "/routePhases/4/description": {
+      "source_en": "Gwangmyeong → Seoul via Seohaean Expressway."
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "Starfield Library Suwon — gallery image 1"
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "Starfield Library Suwon — photo 1"
+    },
+    "/galleryItems/1/location": {
+      "source_en": "Starfield Library Suwon"
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "Starfield Library Suwon — gallery image 2"
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "Starfield Library Suwon — photo 2"
+    },
+    "/galleryItems/5/location": {
+      "source_en": "Starfield Library Suwon"
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "Starfield Library Suwon — gallery image 3"
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "Starfield Library Suwon — photo 3"
+    },
+    "/galleryItems/6/location": {
+      "source_en": "Starfield Library Suwon"
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "Starfield Library Suwon — gallery image 4"
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "Starfield Library Suwon — photo 4"
+    },
+    "/galleryItems/7/location": {
+      "source_en": "Starfield Library Suwon"
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — immagine della galleria 4",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — foto 4",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/10/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — immagine della galleria 5",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — foto 5",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    },
+    "/galleryItems/11/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Grotta di Gwangmyeong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/10/alt": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/10/caption": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/10/location": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/11/alt": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/11/caption": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    },
+    "/galleryItems/11/location": {
+      "⟦G0⟧": "Grotta di Gwangmyeong"
+    }
+  },
+  "tmHits": 29
+}

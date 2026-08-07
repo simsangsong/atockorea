@@ -55,6 +55,21 @@ export const TOP_LEVEL_TIERS: Record<string, Tier> = {
   sticky_booking_bar: 'A1', // CTA 문구 + `price.per` 라벨
   itinerary_variants: 'B', // 대체 일정 — `stops[].name/time/duration/category`
 
+  /**
+   * 같은 부류가 하나 더 있었다 (2026-08-07 추가).
+   *
+   * 추출기의 「등급 미부여」 경고가 `sectionUi` 를 가리키고 있었는데, 그 안은
+   * 섹션 제목·부제·픽업 문구다 — `TourAtAGlance`·`TourAtmosphereGallery`·
+   * `TourBookingSupportSection`·`TourDesktopBookingCard` 가 전부 렌더한다.
+   *
+   * 🔴 판정은 추측이 아니라 라이브 데이터로 했다: 이 키를 가진 유일한 슬러그
+   * (`busan-small-group-sightseeing-tour-cruise-passengers`)의 **ko·ja·zh·zh-TW·es
+   * 다섯 로케일이 전부 번역해 두었다.** 즉 번역 대상인 게 이미 합의돼 있었고,
+   * de/fr/it/ru 파이프라인만 등급이 없어 조용히 건너뛰고 있었다.
+   * 등급은 픽업 문구라 `pickup_dropoff`·`sticky_booking_bar` 와 같은 A1.
+   */
+  sectionUi: 'A1',
+
   // 🚫 금지 — 파이프라인이 건드리면 실패로 간주.
   _publication: 'FORBIDDEN', // 스키마 마이그레이션 내부 기록
   slug: 'FORBIDDEN',
@@ -66,6 +81,11 @@ export const TOP_LEVEL_TIERS: Record<string, Tier> = {
   matching_metadata: 'FORBIDDEN',
   price: 'FORBIDDEN',
   priceSource: 'FORBIDDEN', // 가격 출처 기록(내부)
+  // `{"tours":{"price":249,"original_price":249}}` — SQL 적용용 가격 오버라이드.
+  // 등급을 주는 이유는 번역하려는 게 아니라 **경고에서 빼기 위해서다**: 「미부여」
+  // 경고에 정상 키가 섞여 있으면 경고 자체를 흘려보게 되고, 그러면 `sectionUi`
+  // 같은 진짜 구멍이 다음에도 안 보인다.
+  sql_overrides: 'FORBIDDEN',
   liveStatusSection: 'FORBIDDEN', // 섹션 식별자 enum ("haenyeo")
   departureWeekdays: 'FORBIDDEN', // 요일 키 배열 ("monday"…) — 번역하면 날짜 필터가 죽는다
   ogImage: 'FORBIDDEN',

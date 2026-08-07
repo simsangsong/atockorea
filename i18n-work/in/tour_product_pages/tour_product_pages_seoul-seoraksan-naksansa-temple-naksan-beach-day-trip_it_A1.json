@@ -1,0 +1,298 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A1",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "it",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Gangwon-do Day Tour from Seoul · Seoraksan + ⟦G0⟧ + ⟦G1⟧ | AtoC Korea",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/seo/pageTitle": {
+      "source_en": "Gangwon-do Day Tour from Seoul: Seoraksan & ⟦G0⟧ | AtoC Korea",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa"
+      ]
+    },
+    "/seo/description": {
+      "source_en": "Coach day tour from Seoul to Korea's most iconic national park (Seoraksan), a thousand-year cliffside temple above the sea (Naksansa), and the pine-backed sands of ⟦G0⟧ — a mountain-to-ocean day on the East Sea coast.",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "12-hour coach day trip from Seoul to the East Sea coast: ⟦G0⟧, cliffside ⟦G1⟧, and ⟦G2⟧. Guided, transfers included.",
+      "glossary": [
+        "⟦G0⟧ = Parco nazionale di Seoraksan",
+        "⟦G1⟧ = Tempio di Naksansa",
+        "⟦G2⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Seoul Seoraksan day tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "tour ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa"
+      ]
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Seoraksan day trip from Seoul"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "tour ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Seoraksan Naksansa one-day tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "3 stops"
+    },
+    "/hero/meta/region": {
+      "source_en": "Seoul → Gangwon-do (Seoraksan & Yangyang)"
+    },
+    "/hero/meta/duration": {
+      "source_en": "12 hours"
+    },
+    "/hero/pills/0": {
+      "source_en": "Day trip from Seoul"
+    },
+    "/hero/pills/1": {
+      "source_en": "Mountain + Temple + Coast"
+    },
+    "/hero/pills/2": {
+      "source_en": "Coach tour"
+    },
+    "/hero/tagline": {
+      "source_en": "Korea's most iconic mountain, a thousand-year temple above the sea, and a pine-backed beach — one 12-hour coach day from Seoul to the East Sea coast"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Duration"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "12 hours"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Photo Potential",
+      "tm": "Potenziale fotografico"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Very High"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Scenery",
+      "tm": "Paesaggio"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Very High"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Walking",
+      "tm": "Camminata"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Adatto in caso di pioggia"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Family Suitability",
+      "tm": "Adatto alle famiglie"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Good",
+      "tm": "Buono"
+    },
+    "/glanceItems/6/label": {
+      "source_en": "Pace",
+      "tm": "Ritmo"
+    },
+    "/glanceItems/6/value": {
+      "source_en": "Balanced",
+      "tm": "Equilibrato"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Panoramica"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinerario"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Dettagli"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Recensioni"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Day trip from Seoul"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Coach tour"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "Nature & temples"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "East Sea coast"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Autumn foliage"
+    },
+    "/catalog_card/title": {
+      "source_en": "Gangwon-do Day Tour from Seoul: Seoraksan + ⟦G0⟧ + ⟦G1⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Day trip from Seoul"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Air-conditioned coach"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Mondays & Thursdays"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "12-hour day"
+    },
+    "/catalog_card/region": {
+      "source_en": "Seoul → Gangwon (Seoraksan & Yangyang)"
+    },
+    "/catalog_card/duration": {
+      "source_en": "12 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Seoraksan's granite peaks, a thousand-year seaside temple, and a pine-backed East Sea beach in a single 12-hour Seoul day trip."
+    },
+    "/catalog_card/priceLabel": {
+      "source_en": "From US$56 per person (was $61, 8% off)"
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A 12-hour coach day trip from Seoul to the East Sea coast: hike ⟦G0⟧, visit the cliffside ⟦G1⟧, and walk pine-backed ⟦G2⟧. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or ⟦G3⟧.",
+      "glossary": [
+        "⟦G0⟧ = Parco nazionale di Seoraksan",
+        "⟦G1⟧ = Tempio di Naksansa",
+        "⟦G2⟧ = Spiaggia di Naksan",
+        "⟦G3⟧ = Myeongdong"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Gangwon-do Day Tour from Seoul"
+    },
+    "/headlineLine2": {
+      "source_en": "Seoraksan + ⟦G0⟧ + ⟦G1⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Naksansa",
+        "⟦G1⟧ = Spiaggia di Naksan"
+      ]
+    },
+    "/pickup_dropoff/primary/name": {
+      "source_en": "Starbucks Hongik University Station Exit 8"
+    },
+    "/pickup_dropoff/primary/time": {
+      "source_en": "07:00 pickup / 19:15 drop-off"
+    },
+    "/pickup_dropoff/primary/address": {
+      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)"
+    },
+    "/pickup_dropoff/primary/instructions": {
+      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the air-conditioned coach in the pickup queue."
+    },
+    "/pickup_dropoff/alternates/0/name": {
+      "source_en": "⟦G0⟧ Station Exit 2 (NorthFace flagship)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/pickup_dropoff/alternates/0/time": {
+      "source_en": "07:30 pickup / 18:45 drop-off"
+    },
+    "/pickup_dropoff/alternates/0/address": {
+      "source_en": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at ⟦G0⟧ Station Exit 2)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/pickup_dropoff/alternates/0/instructions": {
+      "source_en": "Meet the guide in front of the NorthFace flagship store at the top of ⟦G0⟧ Station Exit 2.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/seo/title": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/seo/pageTitle": {
+      "⟦G0⟧": "Tempio di Naksansa"
+    },
+    "/seo/description": {
+      "⟦G0⟧": "Spiaggia di Naksan"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Parco nazionale di Seoraksan",
+      "⟦G1⟧": "Tempio di Naksansa",
+      "⟦G2⟧": "Spiaggia di Naksan"
+    },
+    "/seo/primaryKeywords/1": {
+      "⟦G0⟧": "Tempio di Naksansa"
+    },
+    "/seo/primaryKeywords/3": {
+      "⟦G0⟧": "Spiaggia di Naksan"
+    },
+    "/catalog_card/title": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Parco nazionale di Seoraksan",
+      "⟦G1⟧": "Tempio di Naksansa",
+      "⟦G2⟧": "Spiaggia di Naksan",
+      "⟦G3⟧": "Myeongdong"
+    },
+    "/headlineLine2": {
+      "⟦G0⟧": "Tempio di Naksansa",
+      "⟦G1⟧": "Spiaggia di Naksan"
+    },
+    "/pickup_dropoff/alternates/0/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/pickup_dropoff/alternates/0/address": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/pickup_dropoff/alternates/0/instructions": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 17
+}

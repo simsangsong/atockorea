@@ -207,7 +207,7 @@ export default function GuideSeatDashboard({
     <section className="mt-6" data-testid="guide-seat-dashboard">
       {/* counter bar (§5.4b — Realtime 고정) */}
       <div
-        className="sticky top-0 z-10 -mx-4 flex items-center gap-x-2.5 gap-y-1 overflow-x-auto border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2"
+        className="rail-scrollbar sticky top-0 z-10 -mx-4 flex items-center gap-x-2.5 gap-y-1 overflow-x-auto border-b border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-4 py-2"
         data-testid="counter-bar"
       >
         <span className="tr-card-text text-cjk-safe inline-flex items-center gap-1 font-bold text-[var(--tr-ink)] tabular-nums">

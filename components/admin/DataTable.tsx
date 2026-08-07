@@ -42,7 +42,7 @@ export function DataTable<T>({
       {/* Desktop: real table */}
       <div
         className={cn(
-          'hidden overflow-x-auto rounded-design-md border border-admin-border md:block',
+          'rail-scrollbar hidden overflow-x-auto rounded-design-md border border-admin-border md:block',
           className,
         )}
       >

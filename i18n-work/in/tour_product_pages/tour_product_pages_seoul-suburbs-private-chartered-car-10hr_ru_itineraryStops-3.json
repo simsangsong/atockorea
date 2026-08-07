@@ -1,0 +1,85 @@
+{
+  "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:itineraryStops-3",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "ru",
+  "chunk": "itineraryStops-3",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/3/timeUsed/0": {
+      "source_en": "Send your plan with the booking confirmation 24-48 hours ahead so the driver-guide can pre-clear traffic and operating-hour conflicts"
+    },
+    "/itineraryStops/3/timeUsed/1": {
+      "source_en": "Driver-guide sequences to avoid Seoul rush hours (07:00-09:00 inbound, 17:00-20:00 outbound) and individual stop closure days"
+    },
+    "/itineraryStops/3/timeUsed/2": {
+      "source_en": "Return to your hotel within the 10-hour window (overage by prior agreement)"
+    },
+    "/itineraryStops/3/highlights/0": {
+      "source_en": "Mix Gapyeong + Suwon Hwaseong: Nami Island morning + Hwaseong Fortress afternoon — UNESCO heritage with strong photo return"
+    },
+    "/itineraryStops/3/highlights/1": {
+      "source_en": "Pocheon day: Sanjeong Lake + Herb Island + ⟦G0⟧ — quieter than Gapyeong, granite-quarry photogenics",
+      "glossary": [
+        "⟦G0⟧ = Art Valley Пхочхон"
+      ]
+    },
+    "/itineraryStops/3/highlights/2": {
+      "source_en": "Incheon-Seoul half-day: Wolmido Park + Chinatown + Songdo Central Park — coastal alternative with airport-friendly close"
+    },
+    "/itineraryStops/3/highlights/3": {
+      "source_en": "K-pop entertainment day: HYBE / SM / JYP / YG building exteriors + Hongdae street performances + dinner in Itaewon"
+    },
+    "/itineraryStops/3/smartNotes/tip": {
+      "source_en": "For same-day-flight passengers: state your flight time at booking; the route will be sequenced to drop you at Incheon Airport ~3 hours before departure. Heyri Art Valley (Paju) and Suwon Hwaseong are the strongest single 'extra' stops most visitors don't plan for and most enjoy."
+    },
+    "/itineraryStops/3/smartNotes/facilities": {
+      "source_en": "Lunch is your call — communicate dietary needs (halal, vegetarian, no-seafood, kids' menu) at booking so the guide can suggest appropriate restaurants",
+      "tm": "Обед — на ваше усмотрение; сообщите о пищевых требованиях (халяль, вегетарианское, без морепродуктов, детское меню) при бронировании, чтобы гид смог предложить подходящие рестораны"
+    },
+    "/itineraryStops/3/whyOnRoute": {
+      "source_en": "The most flexible option of the four. Best for repeat Seoul visitors, travelers with niche interests (K-pop, K-drama, photography, food, family-with-kids, history-deep), and groups of 4-9 where the per-vehicle pricing vs. group-tour pricing tilts strongly toward the private charter. Same-day-flight scenarios are particularly well served — the 10 hours can include hotel checkout, sightseeing, and Incheon Airport drop-off in one continuous booking."
+    },
+    "/itineraryStops/3/convenience/parking": {
+      "source_en": "Driver-guide handles all parking",
+      "tm": "Водитель-гид берёт на себя всю парковку"
+    },
+    "/itineraryStops/3/convenience/restroom": {
+      "source_en": "Available at all major stops",
+      "tm": "Есть на всех основных остановках"
+    },
+    "/itineraryStops/3/description": {
+      "source_en": "Beyond the three recommended routes, the **10-hour charter window is fully customizable** — mix stops across Gapyeong/DMZ/Yongin or send a fully custom plan in advance. Common custom additions include: **⟦G0⟧** (**UNESCO World Heritage 1997** — **5.7 km of restored 18th-century walls** in central Suwon), Pocheon Sanjeong Lake / Herb Island / Art Valley (1.5-hour drive northeast), **⟦G1⟧** (former gold mine, now an LED-lit theme attraction), **Starfield Library Suwon** (architecturally striking 13 m bookshelves), **Incheon Chinatown + Songdo Central Park**, the K-pop entertainment-district tours of Hannam-dong / Gangnam, the Han River parks (Banpo Bridge rainbow fountain), and traditional markets like Gwangjang or Tongin. \n\nThe driver-guide will sequence stops based on traffic patterns (avoiding Seoul rush hours of 07:00-09:00 and 17:00-20:00) and operating hours. Same-day-flight visits are well supported — the route can be back-loaded to **drop at Incheon Airport** at the end of 10 hours (state this at booking).",
+      "glossary": [
+        "⟦G0⟧ = Крепость Хвасон в Сувоне",
+        "⟦G1⟧ = Пещера Кванмён"
+      ]
+    },
+    "/itineraryStops/3/visitBasics/hours": {
+      "source_en": "Depends on chosen stops",
+      "tm": "Зависит от выбранных остановок"
+    },
+    "/itineraryStops/3/visitBasics/closed": {
+      "source_en": "Depends on chosen stops",
+      "tm": "Зависит от выбранных остановок"
+    },
+    "/itineraryStops/3/visitBasics/walking": {
+      "source_en": "Adjustable to your group's mobility",
+      "tm": "Подстраивается под мобильность вашей группы"
+    },
+    "/itineraryStops/3/visitBasics/admission": {
+      "source_en": "All admission fees pay directly; driver-guide assists at each gate",
+      "tm": "Все входные билеты оплачиваются напрямую; водитель-гид помогает на каждом входе"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/3/highlights/1": {
+      "⟦G0⟧": "Art Valley Пхочхон"
+    },
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Крепость Хвасон в Сувоне",
+      "⟦G1⟧": "Пещера Кванмён"
+    }
+  },
+  "tmHits": 7
+}

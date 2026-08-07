@@ -16,7 +16,7 @@
  * mint-and-copy links with QR, 룸 닫기/재개.
  */
 
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import { useEscapeClose } from '@/hooks/useEscapeClose';
 import { toast } from 'sonner';
 import { CarFront, Copy, Loader2, Mail, Moon, Plus, QrCode, RefreshCw, Sun, X } from 'lucide-react';
@@ -138,11 +138,14 @@ export default function OpsRoomManager({
   onClose,
   onOpenRoom,
   onRoomsChanged,
+  openRoomId = null,
 }: {
   date: string;
   onClose: () => void;
   onOpenRoom: (roomId: string, view?: 'chat' | 'vehicle') => void;
   onRoomsChanged: () => void;
+  /** 지금 열려 있는 룸 드로어(없으면 null). 닫히면 이 목록을 다시 읽는다. */
+  openRoomId?: string | null;
 }) {
   // O5 — Escape closes this overlay. It covers the whole screen, and on the
   // desktop the board actually runs on, 닫기 was the only way out.
@@ -180,6 +183,20 @@ export default function OpsRoomManager({
   useEffect(() => {
     void load();
   }, [load]);
+
+  /**
+   * 룸 드로어가 닫히는 순간 다시 읽는다.
+   *
+   * 🔴 배차·룸 상태를 바꾸는 일은 대부분 저 드로어 안에서 벌어지는데, 이 목록은
+   * 마운트와 날짜 변경 때만 읽었다. 그래서 [차량 배정] → 배차 → 닫기 를 마친
+   * 운영자가 방금 배차한 행에서 「미배차」를 계속 봤다. 실측으로 잡혔다.
+   * 전이(열림 → 닫힘)에서만 재조회한다 — 매 렌더가 아니다.
+   */
+  const prevOpenRoom = useRef<string | null>(openRoomId);
+  useEffect(() => {
+    if (prevOpenRoom.current && !openRoomId) void load();
+    prevOpenRoom.current = openRoomId;
+  }, [openRoomId, load]);
 
   const mintLink = useCallback(
     async (booking: ManagedBooking, role: LinkRole) => {

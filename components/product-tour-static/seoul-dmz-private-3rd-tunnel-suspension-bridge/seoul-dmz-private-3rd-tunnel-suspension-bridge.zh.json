@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "首尔非军事区私人游：第三隧道 + 悬索桥 | AtoC Korea",
     "metaDescription": "首尔出发8–9小时非军事区私人一日游：临津阁和平公园、第三渗透隧道、都罗展望台及150米甘岳山红色悬索桥。",
-    "ogImage": "https://www.atockorea.com/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
     "primaryKeywords": [
       "首尔非军事区私人游",
       "非军事区第三隧道游",
@@ -31,8 +31,8 @@
       "非军事区 + 悬索桥",
       "含酒店接送"
     ],
-    "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-    "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "heroImage": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+    "thumbnail": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
     "priceLabel": "",
     "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。",
     "tags": [
@@ -51,7 +51,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "imageUrl": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
     "imagePosition": "center 40%",
     "tagline": "从世界戒备最森严的边境，到150米山间悬索桥——一天私人专属行程，领略韩国截然不同的两面。",
     "pills": [
@@ -131,7 +131,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "location": "临津阁和平公园",
       "alt": "临津阁和平公园 — gallery image 1",
       "caption": "临津阁和平公园 — photo 1"
@@ -163,7 +163,7 @@
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+      "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "临津阁和平公园",
       "alt": "临津阁和平公园 — gallery image 2",
       "caption": "临津阁和平公园 — photo 2"
@@ -171,7 +171,7 @@
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
       "location": "临津阁和平公园",
       "alt": "临津阁和平公园 — gallery image 3",
       "caption": "临津阁和平公园 — photo 3"
@@ -265,13 +265,17 @@
           "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
       },
-      "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "image": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "images": [
+        "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
-        "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
+        "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp"
       ],
       "imageCredits": [
+        {
+          "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+          "source": "atoc-korea"
+        },
         {
           "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "source": "atoc-korea"
@@ -279,17 +283,13 @@
         {
           "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
-          "source": "atoc-korea"
         }
       ],
       "galleryItems": [
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+          "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "location": "临津阁和平公园",
           "caption": "临津阁和平公园 — photo 1",
           "alt": "临津阁和平公园 — gallery image 1"
@@ -297,7 +297,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+          "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "location": "临津阁和平公园",
           "caption": "临津阁和平公园 — photo 2",
           "alt": "临津阁和平公园 — gallery image 2"
@@ -305,7 +305,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+          "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "location": "临津阁和平公园",
           "caption": "临津阁和平公园 — photo 3",
           "alt": "临津阁和平公园 — gallery image 3"
@@ -1403,7 +1403,7 @@
             "name": "临津阁和平公园",
             "category": "朝鲜战争纪念公园",
             "description": "临津阁距首尔约70分钟车程，是1972年建成的和平公园，象征着对统一的深切期盼。此处无需特别许可，平民即可入内参观，汇聚了分裂半岛诸多最具震撼力的历史象征：节假日离散家庭聚集祭拜的望拜坛、曾用于遣返战俘的自由桥，以及朝鲜战争遗留下来的弹痕累累的蒸汽机车。",
-            "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+            "image": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
             "highlights": [
               "望拜坛——节假日家人们朝北方祈祷之处",
               "自由桥——栅栏上系满了和平祈愿丝带",
@@ -1441,11 +1441,15 @@
               "verified_date": "2026-04-27"
             },
             "images": [
+              "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
               "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
-              "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
+              "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp"
             ],
             "imageCredits": [
+              {
+                "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+                "source": "atoc-korea"
+              },
               {
                 "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
@@ -1453,17 +1457,13 @@
               {
                 "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
-                "source": "atoc-korea"
               }
             ],
             "galleryItems": [
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+                "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "location": "临津阁和平公园",
                 "caption": "临津阁和平公园 — photo 1",
                 "alt": "临津阁和平公园 — gallery image 1"
@@ -1471,7 +1471,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+                "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "location": "临津阁和平公园",
                 "caption": "临津阁和平公园 — photo 2",
                 "alt": "临津阁和平公园 — gallery image 2"
@@ -1479,7 +1479,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+                "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "location": "临津阁和平公园",
                 "caption": "临津阁和平公园 — photo 3",
                 "alt": "临津阁和平公园 — gallery image 3"

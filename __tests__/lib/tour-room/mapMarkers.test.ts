@@ -91,14 +91,90 @@ describe('marker art', () => {
 
   it('gives the guide a car, per 사장님 2026-08-07 — and no emoji anywhere', () => {
     const svg = svgOf(vehiclePin());
-    // lucide `Car`: a body path plus two wheels. Matching the wheels is what
-    // separates "a car" from "some path someone swapped in".
-    expect(svg).toContain('<circle cx="7" cy="17" r="2"/>');
-    expect(svg).toContain('<circle cx="17" cy="17" r="2"/>');
+    // Two wheels, level with each other, plus a hub knocked out of each. That
+    // pairing is what separates "a car" from "some path someone swapped in".
+    const wheels = [...svg.matchAll(/<circle cx="([\d.]+)" cy="([\d.]+)" r="3" fill="white"\/>/g)];
+    expect(wheels).toHaveLength(2);
+    expect(wheels[0][2]).toBe(wheels[1][2]); // same axle line
+    expect(wheels[0][1]).not.toBe(wheels[1][1]);
+    for (const [, cxWheel, cyWheel] of wheels) {
+      expect(svg).toContain(`<circle cx="${cxWheel}" cy="${cyWheel}" r="1.2" fill="#2b5647"/>`);
+    }
     for (const [, art] of ALL) {
       // U-D3 — no emoji in UI chrome. The guide used to be a 🚌 label.
       expect(svgOf(art)).not.toMatch(/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u);
     }
+  });
+
+  /**
+   * 🔴 사장님 2026-08-07, 두 번째 지시: "자동차 그림으로, 이쁘고 컴팩트한".
+   *
+   * The first cut inlined lucide `Car`, which is a STROKE family — a 1.7px
+   * outline scaled into a 17px pin head is a thin sketch of a car, and at map
+   * size a sketch loses to a shape. Nothing about the glyph may go back to
+   * outlines.
+   */
+  it('draws the car as filled mass, not as an outline', () => {
+    const svg = svgOf(vehiclePin());
+    const glyph = svg.slice(svg.indexOf('<g transform='));
+    expect(glyph).toContain('fill="white"');
+    expect(glyph).not.toContain('fill="none"');
+    expect(glyph).not.toContain('stroke-width');
+    // The knockouts are the PIN's colour, so the glyph stays a hole in the pin
+    // and needs no third value kept in sync with the body.
+    expect(glyph).toContain('fill="#2b5647"');
+  });
+
+  /**
+   * 🔴 The palette regression this file exists to prevent.
+   *
+   * The markers shipped with `#f59e0b` amber stops and `#10b981` emerald pickup
+   * — a generic pair inherited from the art they replaced, on the one screen
+   * where the brand should be most present. The room's signature has been DEEP
+   * PINE since U4-D8 (`app/tour-room-theme.css`). If either value comes back,
+   * something copied the old art instead of reading the palette above it.
+   */
+  it('is painted in the room palette, not the generic amber/emerald it shipped with', () => {
+    for (const [, art] of ALL) {
+      expect(svgOf(art)).not.toContain('#f59e0b');
+      expect(svgOf(art)).not.toContain('#10b981');
+    }
+    expect(svgOf(vehiclePin())).toContain('#3c7161'); // pine, the signature
+    expect(svgOf(pickupPin())).toContain('#c08b3e'); // brass, the one warm accent
+    // "You are here" blue is deliberately NOT branded — see the source comment.
+    expect(svgOf(myLocationDot())).toContain('#2563eb');
+  });
+
+  it('gives every pin a gradient body and a soft shadow, not a flat sticker', () => {
+    for (const [name, art] of [
+      ['vehicle', vehiclePin()],
+      ['stop', stopPin()],
+      ['pickup', pickupPin()],
+    ] as const) {
+      const svg = svgOf(art);
+      expect(`${name}:${svg.includes('linearGradient')}`).toBe(`${name}:true`);
+      expect(svg).toContain('fill="url(#g)"');
+      // 🔴 A radial gradient, never `feGaussianBlur` — a filter that silently
+      // no-ops in a WebView leaves a hard black smudge under the pin.
+      expect(svg).toContain('radialGradient');
+      expect(svg).not.toContain('feGaussianBlur');
+    }
+  });
+
+  /**
+   * Stops sit on the white road fill in light and on near-black tiles in dark,
+   * from ONE piece of art. Two earlier drafts each failed one side: an ivory
+   * body vanished on the road, and a near-black body left an empty ivory outline
+   * on the dark basemap — a legibility LOSS, because stops used to be amber.
+   */
+  it('keeps the stop body clear of both basemaps', () => {
+    const top = /stop-color="(#[0-9a-f]{6})"/i.exec(svgOf(stopPin()).split('linearGradient')[1]!)![1];
+    const lum = (hex: string) => {
+      const [r, g, b] = [1, 3, 5].map((i) => parseInt(hex.slice(i, i + 2), 16) / 255);
+      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
+    };
+    expect(lum(top)).toBeLessThan(lum('#eef1ee') - 0.2); // dark against the light canvas
+    expect(lum(top)).toBeGreaterThan(lum('#1b1f24') + 0.02); // still lifts off the dark one
   });
 
   it('makes the vehicle the biggest thing on the map', () => {

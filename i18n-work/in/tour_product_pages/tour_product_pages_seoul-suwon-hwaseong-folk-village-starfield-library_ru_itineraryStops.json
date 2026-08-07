@@ -1,0 +1,135 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Seoul departure"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Pickup & departure"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "10 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "Pickup from Hongik University (Line 2) or ⟦G0⟧ (Line 4) ~08:00",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "Coach with air conditioning + USB charging"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Designed for early arrival at Hwaseong Fortress before tour-group rush"
+    },
+    "/itineraryStops/0/smartNotes/tip": {
+      "source_en": "Confirm exact pickup time and meeting point at booking — Seoul morning rush hour (07:00-09:00) makes punctuality critical. Bring water, sunscreen, and comfortable shoes for the fortress wall walking."
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "An 09:00 Seoul departure puts the group at Hwaseong Fortress before midday crowds and aligns with Korean Folk Village's afternoon performance schedule (Hanbok wedding ceremony reenactment, equestrian show, Nong-ak farmers' percussion)."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup from one of two central Seoul meeting points: **Hongik University Station Exit 8** (Hongdae area, Seoul Subway Line 2/Airport Express) or **⟦G0⟧ Station Exit 2 or 4** (Seoul Subway Line 4). Confirm exact pickup time and location at booking — the schedule is built around an early start to reach Hwaseong Fortress before the late-morning Korean tour-group rush. \n\nAbout **1 hour by coach south to Suwon** via the Gyeongbu Expressway — the historical fortress city of Joseon's King Jeongjo, who built Hwaseong (1794-1796) to honor and protect the tomb of his executed father Crown Prince Sado. Light traffic Mon-Fri morning; weekend traffic adds 15-20 min cushion. Coach is air-conditioned and equipped with USB charging at most seats.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Крепость Хвасон в Сувоне"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "UNESCO Fortress"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "75 min",
+      "tm": "75 мин"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Coach drop-off near Janganmun (~5 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Brief group orientation at Janganmun (~5 min)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~25-30 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo (22nd Joseon king)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Hwaseong Seongyeok Uigwe construction record — UNESCO Memory of the World 2007"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "5.74 km circumference, 41 strategic military structures"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "FREE for hanbok-wearers + last Wed of month + seniors 65+"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Wear comfortable shoes — wall stones are uneven. Hanbok rental shops at Haenggung Square give FREE fortress + palace admission. **Avoid full 5.74 km loop unless allowing 2.5+ hours** — the Janganmun → Hwaseomun section gives the highest per-meter heritage density."
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Visitor Information Center at Janganmun + Paldalmun + Hwaseong Haenggung Square. English-Korean signage throughout. Hwaseong audio guide rental at Janganmun."
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk (~1.2 km) gives the highest density of preserved military structures + the iconic Hwahongmun 7-arch sluice gate in a 75-min stop. Picked over the full 5.74 km loop because the route covers the most photographed and historically rich section while preserving time for the day's three other heritage stops. Hwaseong is also the **mandatory anchor of any Suwon day-trip** because it physically encloses the Haenggung palace and overlooks Nammun Market — meaning a single 4-5-hour Suwon block can deliver UNESCO World Heritage credentials, Joseon royal-residence interiority, and authentic traditional-market street-food without re-positioning the vehicle. The 1.2 km Janganmun → Hwaseomun wall section via Hwaseo Janggak is the highest-density preserved-military-architecture stretch in Korea (4 main gates + 5 secret gates + 4 sluices + Geojunggi-built ramparts coexist within 25-30 minutes walking time)."
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "At Janganmun, Hwaseomun, Paldalmun, and Yeonmudae"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/highlights/0": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Крепость Хвасон в Сувоне"
+    }
+  },
+  "tmHits": 2
+}

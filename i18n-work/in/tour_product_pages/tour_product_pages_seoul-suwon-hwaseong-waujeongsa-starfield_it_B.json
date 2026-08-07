@@ -1,0 +1,281 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:it:B",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "it",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "UNESCO Heritage"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "Stops 1",
+      "tm": "Tappa 1"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Morning: UNESCO Heritage"
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Library & Lunch"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "Stops 2–3"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Midday: Library & Lunch"
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Mountain Temple Finish"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "Stops 4"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Afternoon: Mountain Temple Finish"
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Fortezza di Suwon Hwaseong"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — immagine della galleria 4",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — foto 4",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — immagine della galleria 5",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — foto 5",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Waujeongsa"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Fortezza di Suwon Hwaseong"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Tempio di Waujeongsa"
+    }
+  },
+  "tmHits": 25
+}

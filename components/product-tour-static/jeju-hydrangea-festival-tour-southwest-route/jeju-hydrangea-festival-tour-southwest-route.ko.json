@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "제주 서부 수국 축제 당일 투어 | AtoC Korea",
     "metaDescription": "여름 한정 제주 서부 당일 투어: 협재해수욕장, 한림공원 수국 축제, 주상절리대, 천제연폭포, 카멜리아힐, 오설록 차밭.",
-    "ogImage": "https://www.atockorea.com/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
     "primaryKeywords": [
       "제주 수국 축제 투어",
       "제주 여름 꽃 투어",
@@ -31,8 +31,8 @@
       "수국 시즌",
       "제주 서부"
     ],
-    "heroImage": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
-    "thumbnail": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+    "heroImage": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
+    "thumbnail": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
     "priceLabel": "",
     "shortCardDescription": "여름 한정 제주 서부 코스 — 에메랄드빛 해변, 수국 축제 정원, 유네스코 주상절리, 3단 폭포, 수국 터널, 차밭.",
     "tags": [
@@ -50,7 +50,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+    "imageUrl": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
     "imagePosition": "center 35%",
     "tagline": "해변에서 주상절리를 거쳐 수국 터널까지.",
     "pills": [
@@ -342,6 +342,14 @@
       "location": "오설록 티 뮤지엄 & 차밭",
       "alt": "오설록 티 뮤지엄 & 차밭 — gallery image 6",
       "caption": "오설록 티 뮤지엄 & 차밭 — photo 6"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+      "location": "오설록 티 뮤지엄 & 차밭",
+      "alt": "오설록 티 뮤지엄 & 차밭 — gallery image 7",
+      "caption": "오설록 티 뮤지엄 & 차밭 — photo 7"
     }
   ],
   "itineraryStops": [
@@ -1029,7 +1037,8 @@
         "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
         "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
         "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
       ],
       "imageCredits": [
         {
@@ -1054,6 +1063,10 @@
         },
         {
           "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
           "source": "atoc-korea"
         }
       ],
@@ -1105,6 +1118,14 @@
           "location": "오설록 티 뮤지엄 & 차밭",
           "caption": "오설록 티 뮤지엄 & 차밭 — photo 6",
           "alt": "오설록 티 뮤지엄 & 차밭 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+          "location": "오설록 티 뮤지엄 & 차밭",
+          "caption": "오설록 티 뮤지엄 & 차밭 — photo 7",
+          "alt": "오설록 티 뮤지엄 & 차밭 — gallery image 7"
         }
       ]
     }
@@ -2614,7 +2635,8 @@
               "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
               "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
               "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
             ],
             "imageCredits": [
               {
@@ -2639,6 +2661,10 @@
               },
               {
                 "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2690,6 +2716,14 @@
                 "location": "오설록 티 뮤지엄 & 다원",
                 "caption": "오설록 티 뮤지엄 & 다원 — photo 6",
                 "alt": "오설록 티 뮤지엄 & 다원 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+                "location": "오설록 티 뮤지엄 & 다원",
+                "caption": "오설록 티 뮤지엄 & 다원 — photo 7",
+                "alt": "오설록 티 뮤지엄 & 다원 — gallery image 7"
               }
             ]
           }

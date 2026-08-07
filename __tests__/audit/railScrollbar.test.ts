@@ -71,6 +71,19 @@ function classBlocks(src: string): string[] {
   return out;
 }
 
+/** `@media`/`@supports` 한 덩어리를 중괄호로 세어 떼어낸다. 고정 길이 slice 금지. */
+function braceBlock(css: string, from: number): string {
+  let depth = 0;
+  for (let i = css.indexOf('{', from); i < css.length; i += 1) {
+    if (css[i] === '{') depth += 1;
+    else if (css[i] === '}') {
+      depth -= 1;
+      if (depth === 0) return css.slice(from, i);
+    }
+  }
+  throw new Error(`unbalanced CSS block at ${from}`);
+}
+
 const HAS_X_SCROLL = /\boverflow-x-(auto|scroll)\b/;
 const HIDES_BAR = /\bscrollbar-hide\b/;
 /** Tailwind arbitrary variants that switch the bar off without naming it. */
@@ -78,17 +91,14 @@ const HIDES_BAR_INLINE =
   /\[scrollbar-width:\s*none\]|\[&::-webkit-scrollbar\]:hidden|\[-ms-overflow-style:\s*none\]/;
 
 /**
- * 스마트앱(손님·기사 폰 화면)은 이 트랙 밖이다. `.tr-chiprow` 는 자체 마스크 페이드로
- * "더 있다" 를 이미 말하고 있고, 그 트랙의 레이아웃 게이트가 따로 있다. 열 때는 그쪽
- * 게이트와 함께 열어야 한다.
- *
  * `SortSegmented` 는 레일이 아니라 **높이 고정(h-11) 세그먼트 컨트롤**이다. 10px 바가
  * 생기면 44px 탭 타깃이 34px 로 줄어든다. 데스크톱 실측 가로 넘침 0px.
+ *
+ * 스마트앱은 2026-08-07 에 편입됐다(사장님 지시 "손님 폰 앱 칩 줄도"). `.tr-chiprow` 가
+ * fine pointer 에서 같은 얇은 바를 그린다 — 규칙 ⑦ 참고. `TimeWheel` 은 세로 휠 피커라
+ * `overflow-y-scroll` 이고, 이 규칙은 가로축만 본다.
  */
-const INLINE_HIDE_ALLOWED = [
-  'components/tour-mode/',
-  'components/tours-list/SortSegmented.tsx',
-];
+const INLINE_HIDE_ALLOWED = ['components/tours-list/SortSegmented.tsx'];
 const allowedInlineHide = (rel: string) =>
   INLINE_HIDE_ALLOWED.some((p) => rel.replace(/\\/g, '/').includes(p));
 
@@ -145,12 +155,33 @@ describe('audit: 손님 가로 레일 스크롤바', () => {
 
     // 보여야 한다.
     expect(block).toMatch(/\.rail-scrollbar::-webkit-scrollbar\s*\{[^}]*display:\s*block/);
-    expect(block).toMatch(/scrollbar-width:\s*thin/);
     // 다시 숨기면 실패.
     expect(block).not.toMatch(/\.rail-scrollbar\s*\{[^}]*scrollbar-width:\s*none/);
     expect(block).not.toMatch(/\.rail-scrollbar::-webkit-scrollbar\s*\{[^}]*display:\s*none/);
     // 두께 0 도 "숨김" 이다.
     expect(block).not.toMatch(/\.rail-scrollbar::-webkit-scrollbar\s*\{[^}]*height:\s*0/);
+
+    /*
+     * 🔴 그리고 이 한 줄이 진짜 함정이다.
+     *
+     * Chromium 실측(headed, 2026-08-08):
+     *   scrollbar-width: thin + ::-webkit-scrollbar{height:5px} → gutter 10px
+     *   scrollbar-width: auto + ::-webkit-scrollbar{height:5px} → gutter  5px
+     *
+     * **non-initial `scrollbar-width` 는 그 요소의 `::-webkit-scrollbar` 규칙을
+     * 통째로 무시하게 만든다.** 그래서 첫 버전은 아무도 디자인하지 않은 바를
+     * 내보냈다 — 크로미움 기본 "thin" 크롬 10px. 게다가 pseudo-element 의
+     * `getComputedStyle` 은 **지정값** 5px 을 그대로 돌려줘서 측정도 속였다.
+     * 판정은 `offsetHeight - clientHeight`(gutter) 로 한다.
+     */
+    expect(block).not.toMatch(/\.rail-scrollbar\s*\{[^}]*scrollbar-width:\s*thin/);
+
+    // 파이어폭스는 `::-webkit-scrollbar` 가 없다 — 표준 속성 분기가 있어야 한다.
+    expect(css).toMatch(/@supports not selector\(::-webkit-scrollbar\)/);
+    const ffAt = css.indexOf('@supports not selector(::-webkit-scrollbar)');
+    expect(css.slice(ffAt)).toMatch(/\.rail-scrollbar\s*\{[^}]*scrollbar-width:\s*thin/);
+    // 순서: 파이어폭스 분기가 뒤에 와야 `auto` 를 덮는다.
+    expect(ffAt).toBeGreaterThan(start);
   });
 
   it('④ 인라인 변형으로 가로 레일의 스크롤바를 끄지 않는다', () => {
@@ -190,6 +221,31 @@ describe('audit: 손님 가로 레일 스크롤바', () => {
       .map((d) => d.name);
     const missing = dirs.filter((d) => !listed.includes(d));
     expect(missing).toEqual([]);
+  });
+
+  it('⑦ 스마트앱 `.tr-chiprow` 도 마우스에서 바를 그린다', () => {
+    /*
+     * 손님·기사 폰 앱의 칩 줄. 오래 "모바일 칩 줄에 바가 보이는 건 더 나쁘다" 는
+     * 이유로 꺼 뒀는데, 그 판단은 **손가락 기준**이었다. 스태프는 이 앱을 데스크톱에서
+     * 연다(가이드 좌석 스트립·공지 패널·기사 콕핏이 전부 `.tr-chiprow`).
+     * 마스크 페이드는 "더 있다" 고 말할 뿐 갈 방법을 주지 않는다.
+     */
+    const css = readFileSync(path.join(ROOT, 'app/tour-room-theme.css'), 'utf8');
+    const start = css.indexOf('@media (hover: hover) and (pointer: fine)');
+    expect(start).toBeGreaterThan(-1);
+    /*
+     * 🔴 고정 길이로 잘라내면 안 된다. 처음엔 `slice(start, start + 1400)` 로 떴는데
+     * 그게 **바로 뒤의 파이어폭스 `@supports` 블록까지 삼켜서** 거기 있는
+     * `scrollbar-width: thin` 을 webkit 블록의 위반으로 신고했다. 중괄호로 센다.
+     */
+    const block = braceBlock(css, start);
+    expect(block).toMatch(/\.tr-chiprow::-webkit-scrollbar\s*\{[^}]*display:\s*block/);
+    expect(block).not.toMatch(/\.tr-chiprow::-webkit-scrollbar\s*\{[^}]*height:\s*0/);
+    // `.rail-scrollbar` 와 같은 함정 — `thin` 을 쓰면 webkit 규칙이 통째로 무시된다.
+    expect(block).not.toMatch(/\.tr-chiprow\s*\{[^}]*scrollbar-width:\s*thin/);
+    const ffAt = css.indexOf('@supports not selector(::-webkit-scrollbar)');
+    expect(ffAt).toBeGreaterThan(start);
+    expect(css.slice(ffAt)).toMatch(/\.tr-chiprow\s*\{[^}]*scrollbar-width:\s*thin/);
   });
 
   it('⑤ `.rail-arrow` 기본 숨김이 미디어 블록보다 위에 있다 (순서 뮤테이션 가드)', () => {
