@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "海岸",
         "文化村"
       ],
-      "heroImage": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
-      "thumbnail": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "heroImage": "/images/tours/cheongsapo-blue-line/01-skycapsule-red13-pines-01.webp",
+      "thumbnail": "/images/tours/cheongsapo-blue-line/01-skycapsule-red13-pines-01.webp",
       "priceLabel": "",
       "shortCardDescription": "以海岸与山坡村落为轴心的釜山小团一日游。清静上午时段的海东龙宫寺、免费玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的蓝线公园天空胶囊（预订时选择含票或不含票）、午餐、甘川文化村，以及免费单轨沿“希望阶梯”上行的小众Dakbatgol壁画村。除可选的胶囊外，所有核心停留点均免费入场。"
     },
