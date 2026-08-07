@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Gangwon-do desde Seúl: Seoraksan + Templo Naksansa + Playa de Naksan",
-    "priceLabel": "From US$52 per person (was $58, 10% off)",
+    "priceLabel": "",
     "shortCardDescription": "Una excursión de 12 horas en autocar desde Seúl hasta la costa del Mar del Este: senderismo en el Parque Nacional Seoraksan, visita al Templo Naksansa en los acantilados y paseo por la Playa de Naksan bordeada de pinos. Sale los lunes y jueves con guía en inglés y traslados de ida y vuelta desde Hongik o Myeongdong.",
     "tags": [
       "Excursión de un día desde Seúl",
@@ -1196,5 +1196,9 @@
     ],
     "source_of_truth_note": "Coach day-trip from Seoul combining Seoraksan National Park + Naksansa Temple + Naksan Beach on the Gangwon East Sea coast. Replaces the now-inactive seoul-seoraksan-national-park-sokcho-beach-day-trip. Seoraksan attraction content reused from the verified east-coast Seoraksan tours; Naksansa Temple and Naksan Beach content researched and verified 2026-05-14. Sources: KTO VisitKorea, Cultural Heritage Administration of Korea, Yangyang County official tourism, UNESCO, IUCN Green List, KNPS, Wikipedia.",
     "audit_summary": "Seoul-based 12-hour coach day trip on the Seoraksan + Naksansa Temple + Naksan Beach route, departing Mondays and Thursdays. Direct equivalent on the GetYourGuide market is the 'From Seoul: Mt. Seorak & Naksan Temple Day Trip' listing (t1051985), priced around US$58 with a US$52 sale rate."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "thursday"
+  ]
 }

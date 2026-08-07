@@ -6,8 +6,8 @@ import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
 import {
-  getSeasonalOperatingWindow,
   isDateOutsideSeasonalWindow,
+  seasonalWindowReason,
 } from '@/lib/tour-seasonal-windows';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
@@ -102,8 +102,7 @@ export async function GET(
     }
 
     // Business rule: season-locked tours are bookable only inside their annual operating window.
-    const seasonalWindow = getSeasonalOperatingWindow(tour.slug);
-    if (seasonalWindow && isDateOutsideSeasonalWindow(tour.slug, date)) {
+    if (isDateOutsideSeasonalWindow(tour.slug, date)) {
       return NextResponse.json({
         available: false,
         availableSpots: 0,
@@ -114,7 +113,7 @@ export async function GET(
         priceOverride: null,
         date,
         tourId,
-        reason: `This is a season-locked tour (${seasonalWindow.seasonLabel}, ${seasonalWindow.startMonthDay} – ${seasonalWindow.endMonthDay}). The selected date is outside the operating window.`,
+        reason: seasonalWindowReason(tour.slug),
       });
     }
 

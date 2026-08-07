@@ -733,7 +733,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$52 per person (was $58, 10% off)",
+      "priceLabel": "",
       "shortCardDescription": "서울에서 동해안까지 12시간 코치 당일 여행: 설악산 국립공원 하이킹, 절벽 위의 낙산사 방문, 소나무 숲 낙산해수욕장 산책. 매주 월요일과 목요일 출발, 영어 가이드 동반, 홍대 또는 명동에서 왕복 이동 포함."
     },
     "price": {
@@ -758,7 +758,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "1인 US$59부터 (정가 $82, 28% 할인)",
+      "priceLabel": "",
       "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업."
     },
     "price": {

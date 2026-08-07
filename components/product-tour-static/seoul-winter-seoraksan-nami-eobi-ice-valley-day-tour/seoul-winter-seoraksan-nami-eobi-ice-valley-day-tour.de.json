@@ -1155,5 +1155,10 @@
       "v1_authored_2026_08_04": "New seasonal product (owner instruction 2026-08-04). Winter-only Seoraksan + Nami Island + Eobi Ice Valley coach day tour, running roughly 20 Dec – 28 Feb. Donor seoul-seoraksan-nami-island-morning-calm-day-tour supplied the KB-verified Seoraksan and Nami Island stop bodies plus the two-point Seoul pickup and Seoul-region UI blocks. Eobi Ice Valley, pickup, lunch, return and all product-level copy authored fresh in 6 locales (scripts/seoul-winter-eobi-content/) with de/fr/it/ru staged. Eobi Ice Valley ships without photos — no owned imagery yet. matching_profile derived from the donor with seasonality forced to winter_only and the garden/foliage axes zeroed."
     }
   },
-  "page_sections": []
+  "page_sections": [],
+  "departureWeekdays": [
+    "monday",
+    "wednesday",
+    "friday"
+  ]
 }

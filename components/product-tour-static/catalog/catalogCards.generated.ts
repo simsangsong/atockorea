@@ -795,11 +795,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$53 per person (was $58, 9% off)",
+        "priceLabel": "From US$56 per person (was $61, 8% off)",
         "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong."
       },
       "price": {
-        "amountLabel": "53"
+        "amountLabel": "56"
       }
     },
     "seoul-seoraksan-nami-island-morning-calm-day-tour": {
@@ -820,11 +820,11 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "US$71 per person",
+        "priceLabel": "US$79 per person",
         "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
       },
       "price": {
-        "amountLabel": "71"
+        "amountLabel": "79"
       }
     },
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": {
@@ -1738,7 +1738,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "",
         "shortCardDescription": "서울에서 동해안까지 12시간 코치 당일 여행: 설악산 국립공원 하이킹, 절벽 위의 낙산사 방문, 소나무 숲 낙산해수욕장 산책. 매주 월요일과 목요일 출발, 영어 가이드 동반, 홍대 또는 명동에서 왕복 이동 포함."
       },
       "price": {
@@ -1763,7 +1763,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "1인 US$59부터 (정가 $82, 28% 할인)",
+        "priceLabel": "",
         "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업."
       },
       "price": {
@@ -2681,7 +2681,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "",
         "shortCardDescription": "从首尔出发的12小时大巴东海海岸一日游：徒步雪岳山国家公园，参观悬崖边的洛山寺，漫步松林环抱的洛山海水浴场。每周一及周四出发，配备英语导游，提供弘大或明洞往返接送服务。"
       },
       "price": {
@@ -2706,7 +2706,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "每人起价59美元（原价82美元，立省28%）",
+        "priceLabel": "",
         "shortCardDescription": "从首尔出发的13小时大巴一日游，涵盖韩国三大最热门一日游目的地：雪岳山国立公园（韩国唯一的UNESCO生物圈保护区）、南怡岛（《冬季恋歌》取景地的水杉大道）以及晨静园（拥有5,000种植物的韩国标志性私家植物园）。全程门票已含；配备英语导游；在弘益大学站或明洞站接送。"
       },
       "price": {
@@ -3624,7 +3624,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "",
         "shortCardDescription": "從首爾出發前往東海岸的12小時巴士一日遊：健行雪嶽山國家公園、參觀懸崖上的洛山寺，以及漫步松林環繞的洛山海灘。每週一及週四出發，配備英語導遊，並提供弘大或明洞的來回接送服務。"
       },
       "price": {
@@ -3649,7 +3649,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "每人低至59美元起（原價82美元，立省28%）",
+        "priceLabel": "",
         "shortCardDescription": "從首爾出發的13小時巴士一日遊，涵蓋韓國三大熱門攝影打卡景點：雪嶽山國立公園（韓國唯一的聯合國教科文組織生物圈保護區）、南怡島（《冬季戀歌》取景地的水杉林蔭大道）及晨靜苑（韓國代表性私人植物園，擁有5,000種植物）。全程門票已含；提供英語導遊；於弘益大學站或明洞站接送。"
       },
       "price": {
@@ -4564,7 +4564,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "",
         "shortCardDescription": "Una excursión de 12 horas en autocar desde Seúl hasta la costa del Mar del Este: senderismo en el Parque Nacional Seoraksan, visita al Templo Naksansa en los acantilados y paseo por la Playa de Naksan bordeada de pinos. Sale los lunes y jueves con guía en inglés y traslados de ida y vuelta desde Hongik o Myeongdong."
       },
       "price": {
@@ -4589,7 +4589,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "Desde 59 USD por persona (antes $82, 28% de descuento)",
+        "priceLabel": "",
         "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
       },
       "price": {
@@ -5505,7 +5505,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "From US$52 per person (was $58, 10% off)",
+        "priceLabel": "",
         "shortCardDescription": "ソウルから東海岸へのコーチ12時間日帰りトリップ：雪岳山国立公園をハイキングし、断崖絶壁の洛山寺を訪れ、松林に囲まれた洛山ビーチを散策。毎週月曜・木曜出発、英語ガイド付き、弘大または明洞からの往復送迎込み。"
       },
       "price": {
@@ -5530,7 +5530,7 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
         ],
         "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
         "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-        "priceLabel": "お一人様 US$59〜（通常$82、28%割引）",
+        "priceLabel": "",
         "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。"
       },
       "price": {
