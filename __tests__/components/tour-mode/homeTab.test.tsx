@@ -225,139 +225,97 @@ describe('HomeTab lifecycle variants (H2)', () => {
     });
   });
 
-  it('pickup tile opens the meeting-point sheet, more row reaches settings', () => {
+  it('pickup tile opens the meeting-point sheet, settings row reaches settings', () => {
     renderRoom({ lifecycle: 'live' });
     fireEvent.click(screen.getByTestId('home-tile-pickup'));
     expect(screen.getByText('Seomyeon Stn Exit 2')).toBeInTheDocument();
     fireEvent.click(screen.getByTestId('room-sheet-close'));
 
-    fireEvent.click(screen.getByTestId('home-more'));
     fireEvent.click(screen.getByText('설정 · 언어'));
     expect(screen.getByText('settings-content')).toBeInTheDocument();
   });
 });
 
 /**
- * I7v3 / U-D25 — the promise that makes the restructure safe.
+ * I7v4 / U-D25 — nothing folds, so nothing can be taken away.
  *
- * The shape changed three times. I6 collapsed the grid entirely behind a
- * quiet text pill; the owner's 07-29 answer was the peek strip (icon heads
- * showing), because a guest read that pill's "collapsed" as "there is
- * nothing here". On 2026-07-31 the owner retired the peek: the door became a
- * card-weight long row — same family as the chat preview and the manual —
- * with a bobbing down-arrow. Round 2, same day, on seeing it live: the three
- * still-open tiles read as clutter, so now EVERY tile folds and at rest the
- * grid is just the door. What has NOT changed across any of it is the
- * promise underneath: a guest who learned a tile has not lost it. Everything
- * is still there, one tap away, complete — including the three the tab bar
- * duplicates.
+ * The shape changed four times. I6 collapsed the grid entirely behind a quiet
+ * text pill; the owner's 07-29 answer was the peek strip (icon heads showing),
+ * because a guest read that pill's "collapsed" as "there is nothing here". On
+ * 2026-07-31 the door became a card-weight long row, and round 2 that same day
+ * folded EVERY tile behind it.
  *
- * A side effect worth naming: the fold now uses the `hidden` attribute, which
- * jsdom CAN see — so `toBeVisible()` on a folded tile is a real question
- * again, where the old clip (a max-height and a mask, invisible to jsdom)
- * forced the contract onto class names. The bob is still class-asserted: an
- * animation's rendered motion is a Playwright/eyes matter, its presence and
- * its stopping condition are expressible here.
+ * 2026-08-07 ends the sequence. 사장님, from the room on their own phone:
+ * "다른 화면 선택하기만 하면 대시보드 자체가 사라져 버려 … 각 기능들 버튼들
+ * 전부 다 사라지는거잖아? … 다시 대시보드가 항시 보이도록 해줘." The fold was
+ * worse than a fold: `HomeTab` unmounts on every tab switch (RoomShell renders
+ * it only while `tab === 'home'`), so `moreOpen` reset to false on every
+ * return. Opening the grid never stuck. That is the case pinned first below —
+ * it is the one that was actually reported, and it is invisible to any test
+ * that renders the home tab once and never leaves it.
+ *
+ * The promise underneath never changed: a guest who learned a tile has not
+ * lost it. It is just no longer conditional on finding a door.
  */
-describe('I7v3 — every tile folds, and the door holds all of it (U-D25)', () => {
+describe('I7v4 — the dashboard is always on screen (U-D25)', () => {
   const ALWAYS_PRESENT = ['home-tile-chat', 'home-tile-schedule', 'home-tile-map', 'home-tile-pickup', 'home-tile-sos'];
 
-  it('at rest, the door is the only thing the grid shows — no tile at all', () => {
-    // 사장님, v2 live: the three always-open tiles read as clutter above the
-    // door. U-D24's "which three get promoted" retires with them; the order
-    // inside the fold is still `orderHomeTiles`, so nothing moves between
-    // visits.
+  it('🔴 survives a round trip through another tab — the reported defect', () => {
+    // The fold could not be kept open across tabs, so this is the regression
+    // that matters: leave home, come back, and every tile is still there.
     renderRoom({ lifecycle: 'live' });
-    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'false');
-    for (const id of [...ALWAYS_PRESENT, 'home-tile-smart-guide', 'home-tile-signal']) {
-      expect(screen.getByTestId(id)).not.toBeVisible();
-    }
-  });
+    expect(screen.getByTestId('home-tile-sos')).toBeVisible();
 
-  it('keeps the whole grid truly hidden — SOS included — until asked', () => {
-    renderRoom({ lifecycle: 'live' });
-    expect(screen.getByTestId('home-grid-tiles')).not.toBeVisible();
-    expect(screen.getByTestId('home-tile-sos')).not.toBeVisible();
+    fireEvent.click(screen.getByRole('tab', { name: '채팅' }));
+    expect(screen.queryByTestId('home-tab')).not.toBeInTheDocument();
 
-    fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-tiles')).toBeVisible();
-  });
-
-  it('🔴 the fold is driven by the display class, not the hidden attribute alone', () => {
-    // jsdom honors [hidden] semantically, so toBeVisible() above stayed green
-    // while the real browser rendered every folded tile: the `grid` utility is
-    // an author display declaration and overrides the attribute's UA-level
-    // display none. A Playwright shot caught it. The class swap is the part
-    // that actually folds, so it is asserted by name.
-    renderRoom({ lifecycle: 'live' });
-    const rest = screen.getByTestId('home-grid-tiles');
-    // Token-wise: `grid-cols-3` contains the substring "grid", so substring
-    // checks would pass in both states and prove nothing.
-    const tokens = () => rest.className.split(/\s+/);
-    expect(tokens()).toContain('hidden');
-    expect(tokens()).not.toContain('grid');
-
-    fireEvent.click(screen.getByTestId('home-more'));
-    expect(tokens()).toContain('grid');
-    expect(tokens()).not.toContain('hidden');
-  });
-
-  it('the door is a card row in the chat/manual family, and its arrow bobs only while shut', () => {
-    renderRoom({ lifecycle: 'live' });
-    const door = screen.getByTestId('home-more');
-    expect(door.className).toContain('tr-home-card');
-    expect(door.querySelector('.tr-more-bob')).not.toBeNull();
-
-    fireEvent.click(door);
-    expect(door.querySelector('.tr-more-bob')).toBeNull();
-  });
-
-  it('keeps the extras behind the disclosure', () => {
-    // Install, settings and review are rows rather than tiles; they are not
-    // part of the peek and stay in the `hidden` panel, where toBeVisible() is
-    // a real question.
-    renderRoom({ lifecycle: 'ended' });
-    expect(screen.getByTestId('home-more-review')).not.toBeVisible();
-    fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-more-review')).toBeVisible();
-  });
-
-  it('🔴 every destination survives, including the ones the tab bar duplicates', () => {
-    renderRoom({ lifecycle: 'live' });
-    fireEvent.click(screen.getByTestId('home-more'));
-
+    fireEvent.click(screen.getByRole('tab', { name: '홈' }));
     for (const id of [...ALWAYS_PRESENT, 'home-tile-smart-guide', 'home-tile-signal']) {
       expect(screen.getByTestId(id)).toBeVisible();
     }
-    expect(screen.getByTestId('home-more')).toHaveAttribute('aria-expanded', 'true');
   });
 
-  it('settings and review moved into the same panel rather than a second one', () => {
+  it('at rest, every tile is visible — no door to open first', () => {
+    renderRoom({ lifecycle: 'live' });
+    expect(screen.queryByTestId('home-more')).not.toBeInTheDocument();
+    for (const id of [...ALWAYS_PRESENT, 'home-tile-smart-guide', 'home-tile-signal']) {
+      expect(screen.getByTestId(id)).toBeVisible();
+    }
+  });
+
+  it('🔴 the grid really lays out, rather than only lacking [hidden]', () => {
+    // The fold's own bug, inverted into a guard: `hidden` (UA-level display
+    // none) and the `grid` utility (an author declaration) disagree, and the
+    // author declaration wins — which is how folded tiles once rendered in a
+    // real browser while jsdom's toBeVisible() stayed green. So assert the
+    // display class by token, not by substring: `grid-cols-3` contains "grid".
+    renderRoom({ lifecycle: 'live' });
+    const grid = screen.getByTestId('home-grid-tiles');
+    const tokens = grid.className.split(/\s+/);
+    expect(tokens).toContain('grid');
+    expect(tokens).not.toContain('hidden');
+    expect(grid).not.toHaveAttribute('hidden');
+  });
+
+  it('keeps the extras on screen too — install, settings, review', () => {
+    // These rode inside the same fold, so they vanished with it.
     renderRoom({ lifecycle: 'ended' });
-    fireEvent.click(screen.getByTestId('home-more'));
+    expect(screen.getByTestId('home-more-review')).toBeVisible();
+    expect(screen.getByTestId('home-more-sheet')).not.toHaveAttribute('hidden');
+  });
+
+  it('settings and review live in one panel rather than a second overflow', () => {
+    renderRoom({ lifecycle: 'ended' });
     expect(screen.getByTestId('home-more-review')).toBeVisible();
     fireEvent.click(screen.getByText('설정 · 언어'));
     expect(screen.getByText('settings-content')).toBeInTheDocument();
   });
 
-  it('collapses again, so the choice is reversible', () => {
-    // No focus-capture escape hatch anymore, and none needed: `hidden` content
-    // is unfocusable by construction, so a keyboard user meets the door rather
-    // than a half-visible tile. The old hatch existed for the clipped strip.
-    renderRoom({ lifecycle: 'live' });
-    fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-tiles')).toBeVisible();
-    fireEvent.click(screen.getByTestId('home-more'));
-    expect(screen.getByTestId('home-grid-tiles')).not.toBeVisible();
-  });
-
-  it('the app manual is out of the overflow, on the first screen', () => {
+  it('the app manual is on the first screen', () => {
     // 사장님 결정: a guest who does not know what the app is will not go looking
     // behind a "more" button to find out.
     renderRoom({ lifecycle: 'live', manualKind: 'private' });
-    const slot = screen.queryByTestId('home-manual-slot');
-    expect(slot).not.toBeNull();
-    expect(slot!.closest('[data-testid="home-more-sheet"]')).toBeNull();
+    expect(screen.queryByTestId('home-manual-slot')).not.toBeNull();
   });
 });
 
