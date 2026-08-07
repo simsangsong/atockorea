@@ -615,7 +615,21 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
         </div>
       </aside>
 
-      <div className="flex min-h-screen flex-1 flex-col pl-0 md:pl-[216px]">
+      {/*
+        `min-w-0` is load-bearing. This column is `flex-1` in a row, so its
+        default `min-width: auto` refuses to shrink below the content's
+        min-content width — a wide page then pushes the WHOLE shell past the
+        viewport instead of scrolling inside itself. Measured at 1280px:
+        /admin/products 1856px and /admin/inbox 1770px of document width, with
+        the header's right cluster (search / Help / account) shoved off-screen.
+
+        `main` below is `flex-1 overflow-auto`, and `overflow` other than
+        `visible` normally zeroes a flex item's automatic minimum size — but
+        that rule only applies on the MAIN axis, and this container is
+        `flex-col`, so for `main` the width is the cross axis and the rule never
+        fires. The floor has to be released here, on the row item.
+      */}
+      <div className="flex min-h-screen min-w-0 flex-1 flex-col pl-0 md:pl-[216px]">
         <header className="sticky top-0 z-30 flex min-h-[52px] items-center justify-between gap-2 border-b border-slate-200/90 bg-white/95 px-4 pt-[env(safe-area-inset-top)] shadow-sm backdrop-blur md:px-5">
           <div className="flex min-w-0 items-center gap-2">
             <button
