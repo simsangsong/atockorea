@@ -8,16 +8,24 @@
  * page uses (`signInWithOtp` shouldCreateUser → `verifyOtp type:'email'`), and
  * on confirmation the DB trigger issues the WELCOME10 grant automatically.
  *
- * Visual language (v5, compact-editorial pass 2026-07-16 on user request —
- * "high-end, ~30% of a phone screen, no startling pop"): one warm-ivory
- * invitation card (#fbf9f4) led by typography — caps eyebrow, oversized
- * serif italic offer figure ("10%" / "9折" for zh locales), a single
- * headline line — with an ink CTA and ONE tiny vermilion 낙관 "환영" seal
- * as the Korean-identity detail. The v4 ticket object, sparkles, chips and
- * the desktop two-pane grid are gone; both breakpoints share one centered
- * single-column card (mobile ≤312px, desktop ≤352px). Entrance/exit is the
- * slow wc-pop-in/out pair in globals.css (650ms settle / 300ms exit) — the
- * shared dialog's 100ms zoom read as an abrupt "tick".
+ * Visual language (v6, bright-gallery pass 2026-08-04 on user request — the
+ * v5 card read "촌스러": warm-ivory ground + black slab CTA + a loud
+ * vermilion stamp made three competing accents on one 300px card). v6 is a
+ * single warm-accent system on a bright white ground:
+ *   · card       — near-white (#fff → #fdfcfa wash), hairline ring, soft
+ *                  wide shadow (v5's 0.45 drop shadow read heavy/plastic)
+ *   · accent     — antique brass (eyebrow, seal, links) over a warm-espresso
+ *                  CTA (#46372B), one warm family instead of v5's
+ *                  brass + vermilion + near-black three-way
+ *   · seal       — the Korean-identity 낙관 survives as a hairline brass
+ *                  ring, not a filled vermilion disc; on success it fills
+ *                  with a brass tint and still "lands" (wc-stamp-in)
+ * Typography-led as in v5 — caps eyebrow, oversized serif italic offer
+ * figure ("10%" / "9折" for zh locales) — and one notch more compact
+ * (card ≤304/336px, figure 40px, tighter padding). Both breakpoints share
+ * one centered single-column card. Entrance/exit is the slow wc-pop-in/out
+ * pair in globals.css (650ms settle / 300ms exit) — the shared dialog's
+ * 100ms zoom read as an abrupt "tick".
  *
  * Triggers (§6.3, retuned 2026-07-12): first of 3s delay OR 10% scroll;
  * desktop adds exit-intent.
@@ -60,9 +68,8 @@ type Step = 'email' | 'code' | 'success';
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const SERIF = "Georgia, 'Times New Roman', serif";
 /** Antique brass — the site's single premium accent (tour-detail tone). */
-const BRASS = '#9C7A3C';
+const BRASS = '#9A7B45';
 const INK = '#1c1917';
-const VERMILION = '#c2410c';
 
 /** Local calendar day — "hide today" means the visitor's today, not UTC's. */
 function localDayKey(): string {
@@ -345,14 +352,23 @@ export default function WelcomeCouponPopup() {
     </button>
   );
 
-  /** The one Korean-identity detail — a small 낙관 seal; lands big on success. */
+  /** The one Korean-identity detail — a hairline 낙관 seal in brass (v6: the
+   *  filled vermilion disc was the loudest thing on the card); lands on success. */
   const seal = (size: number, landed = false) => (
     <span
       className={`${landed ? 'wc-stamp-in' : '-rotate-6'} flex items-center justify-center rounded-full`}
-      style={{ width: size, height: size, backgroundColor: VERMILION }}
+      style={{
+        width: size,
+        height: size,
+        border: `1px solid ${landed ? BRASS : `${BRASS}66`}`,
+        backgroundColor: landed ? `${BRASS}14` : 'transparent',
+      }}
       aria-hidden
     >
-      <span className="font-semibold text-white" style={{ fontSize: size * 0.34, letterSpacing: '-0.02em' }}>
+      <span
+        className="font-semibold"
+        style={{ fontSize: size * 0.34, letterSpacing: '-0.02em', color: BRASS }}
+      >
         환영
       </span>
     </span>
@@ -361,12 +377,12 @@ export default function WelcomeCouponPopup() {
   // The serif figure IS the headline — the old h3 repeated "10% off" in
   // words and cost a line; the sr-only DialogTitle keeps the a11y name.
   const masthead = (
-    <div className="space-y-1.5 text-center">
+    <div className="space-y-1 text-center">
       <p className="text-[9px] font-semibold uppercase tracking-[0.34em]" style={{ color: BRASS }}>
         AtoC Korea
       </p>
       <p className="flex items-baseline justify-center leading-none" style={{ color: INK }}>
-        <span className="italic" style={{ fontFamily: SERIF, fontSize: 44, letterSpacing: '-0.02em' }}>
+        <span className="italic" style={{ fontFamily: SERIF, fontSize: 40, letterSpacing: '-0.02em' }}>
           {figure}
         </span>
         {!isZh && (
@@ -385,9 +401,15 @@ export default function WelcomeCouponPopup() {
   );
 
   const inputClass =
-    'h-10 w-full rounded-full border border-stone-200/90 bg-white px-5 text-[13.5px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-[#9C7A3C]/50 focus:ring-2 focus:ring-[#9C7A3C]/25';
+    'h-10 w-full rounded-full border border-stone-200 bg-white px-5 text-[13.5px] text-stone-900 outline-none transition placeholder:text-stone-400 focus:border-[#9A7B45]/55 focus:ring-2 focus:ring-[#9A7B45]/20';
+  // v6 CTA: warm espresso (#46372B, 11.4:1 with white) replacing v5's flat
+  // near-black slab. Rendered against the four candidates on the real card,
+  // brass read mustard-cheap and pure black read like a system dialog; the
+  // espresso sits in the same warm family as the brass accents. Background
+  // lives in the class, NOT an inline style, so the hover variant can win
+  // (inline styles outrank utility classes).
   const ctaClass =
-    'group flex h-10 w-full items-center justify-center gap-1.5 rounded-full text-[13px] font-semibold tracking-wide text-white transition hover:opacity-90 disabled:opacity-60';
+    'group flex h-10 w-full items-center justify-center gap-1.5 rounded-full bg-[#46372B] text-[13px] font-semibold tracking-[0.02em] text-white shadow-[0_10px_22px_-12px_rgba(70,55,43,0.9)] transition-colors hover:bg-[#372B21] disabled:opacity-60';
 
   const emailForm = (
     <div className="space-y-2">
@@ -419,7 +441,6 @@ export default function WelcomeCouponPopup() {
         onClick={handleSendCode}
         disabled={busy}
         className={ctaClass}
-        style={{ backgroundColor: INK }}
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('cta')}
@@ -445,7 +466,7 @@ export default function WelcomeCouponPopup() {
             type="checkbox"
             checked={hideToday}
             onChange={(e) => setHideToday(e.target.checked)}
-            className="h-3.5 w-3.5 accent-stone-600"
+            className="h-3.5 w-3.5 accent-[#46372B]"
           />
           {t('hideToday')}
         </label>
@@ -476,7 +497,7 @@ export default function WelcomeCouponPopup() {
         onKeyDown={(e) => e.key === 'Enter' && !busy && handleVerify()}
         placeholder={t('codePlaceholder')}
         aria-label={t('codePlaceholder')}
-        className="h-10 w-full rounded-full border border-stone-200/90 bg-white px-4 text-center text-[19px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[12px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-[#9C7A3C]/50 focus:ring-2 focus:ring-[#9C7A3C]/25"
+        className="h-10 w-full rounded-full border border-stone-200/90 bg-white px-4 text-center text-[19px] tracking-[0.4em] text-stone-900 outline-none transition placeholder:text-[12px] placeholder:tracking-normal placeholder:text-stone-400 focus:border-[#9A7B45]/55 focus:ring-2 focus:ring-[#9A7B45]/20"
       />
       {error && (
         <p role="alert" className="text-center text-[11px] text-rose-600">
@@ -488,7 +509,6 @@ export default function WelcomeCouponPopup() {
         onClick={handleVerify}
         disabled={busy || code.length < 6}
         className={ctaClass}
-        style={{ backgroundColor: INK }}
       >
         {busy && <Loader2 className="h-4 w-4 animate-spin" aria-hidden />}
         {t('verifyCta')}
@@ -506,14 +526,14 @@ export default function WelcomeCouponPopup() {
 
   const successBody = (
     <div className="space-y-3 text-center">
-      <div className="flex justify-center pt-1">{seal(52, true)}</div>
+      <div className="flex justify-center pt-0.5">{seal(50, true)}</div>
       <div className="space-y-1">
         <h3 className="text-[16px] font-semibold" style={{ color: INK }}>
           {t('successTitle')}
         </h3>
         <p className="break-keep text-[11.5px] leading-relaxed text-stone-500">{t('successSub')}</p>
       </div>
-      <button type="button" onClick={() => setOpen(false)} className={ctaClass} style={{ backgroundColor: INK }}>
+      <button type="button" onClick={() => setOpen(false)} className={ctaClass}>
         {t('successCta')}
       </button>
     </div>
@@ -525,17 +545,25 @@ export default function WelcomeCouponPopup() {
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent
         showCloseButton={false}
-        className="wc-dialog z-[70] w-full max-w-[min(312px,calc(100vw-3rem))] gap-0 overflow-hidden rounded-[24px] border-0 bg-[#fbf9f4] p-0 ring-1 ring-stone-900/[0.05] sm:max-w-[352px]"
-        style={{ boxShadow: '0 32px 80px -24px rgba(28, 25, 23, 0.45)' }}
+        // bg-white pins the ground light: the shared dialog's `bg-background`
+        // flips dark with the theme, and this card is light-only by design.
+        className="wc-dialog z-[70] w-full max-w-[min(304px,calc(100vw-3rem))] gap-0 overflow-hidden rounded-[22px] border-0 bg-white p-0 ring-1 ring-stone-900/[0.06] sm:max-w-[336px]"
+        style={{
+          // Bright white ground with the faintest warm wash toward the base —
+          // flat #fff on a blurred veil reads like a system alert.
+          backgroundImage: 'linear-gradient(180deg, #ffffff 0%, #fdfcfa 100%)',
+          boxShadow:
+            '0 24px 56px -28px rgba(28, 25, 23, 0.30), 0 2px 10px -4px rgba(28, 25, 23, 0.07)',
+        }}
         aria-describedby={undefined}
       >
         <DialogTitle className="sr-only">{t('headline')}</DialogTitle>
         {closeButton}
-        <div className="relative px-6 pb-4 pt-5 sm:px-8 sm:pb-5 sm:pt-6">
+        <div className="relative px-5 pb-[14px] pt-[18px] sm:px-7 sm:pb-4 sm:pt-5">
           {step !== 'success' && (
-            <span className="absolute left-4 top-4 opacity-90 sm:left-5 sm:top-5">{seal(26)}</span>
+            <span className="absolute left-4 top-4 sm:left-5 sm:top-[18px]">{seal(24)}</span>
           )}
-          <div className="space-y-3">
+          <div className="space-y-[11px]">
             {step !== 'success' && masthead}
             {step === 'email' ? emailForm : step === 'code' ? codeForm : successBody}
           </div>
