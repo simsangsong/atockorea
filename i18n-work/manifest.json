@@ -2,7 +2,7 @@
   "version": 1,
   "pipelineVersion": "1",
   "createdAt": "2026-07-25T15:20:31.123Z",
-  "updatedAt": "2026-08-07T07:33:27.025Z",
+  "updatedAt": "2026-08-07T08:58:00.163Z",
   "units": [
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A1",
@@ -2777,10 +2777,12 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 4,
       "segments": 100,
-      "sourceChars": 5045
+      "sourceChars": 5045,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A2",
@@ -2789,10 +2791,12 @@
       "locale": "ru",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 93,
-      "sourceChars": 5000
+      "sourceChars": 5000,
+      "fails": 0,
+      "flags": 15
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:B",
@@ -2801,10 +2805,12 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 36,
-      "sourceChars": 1315
+      "sourceChars": 1315,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops",
@@ -2813,10 +2819,12 @@
       "locale": "ru",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 32,
-      "sourceChars": 5746
+      "sourceChars": 5746,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-2",
@@ -2825,10 +2833,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 29,
-      "sourceChars": 5994
+      "sourceChars": 5994,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-3",
@@ -2837,10 +2847,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 18,
-      "sourceChars": 2742
+      "sourceChars": 2742,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:routeFlowStops",
@@ -2849,10 +2861,12 @@
       "locale": "ru",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 10,
-      "sourceChars": 99
+      "sourceChars": 99,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:A1",
