@@ -13,7 +13,8 @@
       "source_en": "Wall path 24 hours (no gates); recommended 09:00-18:00 summer / 09:00-17:00 winter; evening hours May-Oct Wed-Sun 18:00-21:30"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "Open year-round (Hwaseong Trolley closed Mondays)"
+      "source_en": "Open year-round (Hwaseong Trolley closed Mondays)",
+      "tm": "Ganzjährig geöffnet (die Hwaseong-Bahn ruht montags)"
     },
     "/itineraryStops/1/visitBasics/walking": {
       "source_en": "Moderate — wall has steep sections at Seojangdae; stairs at gates; some sections wheelchair-difficult"
@@ -92,14 +93,16 @@
       ]
     },
     "/itineraryStops/2/category": {
-      "source_en": "Joseon Royal Detached Palace"
+      "source_en": "Joseon Royal Detached Palace",
+      "tm": "Königlicher Nebenpalast der Joseon-Zeit"
     },
     "/itineraryStops/2/duration": {
       "source_en": "75 min",
       "tm": "75 Min."
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "5 min walk from Hwaseong Fortress (Hwaseomun area)"
+      "source_en": "5 min walk from Hwaseong Fortress (Hwaseomun area)",
+      "tm": "5 Min. Fußweg von der Festung Hwaseong (Bereich Hwaseomun)"
     },
     "/itineraryStops/2/timeUsed/1": {
       "source_en": "Arrive in time for **11:00 Royal Guard Changing Ceremony** at Sinpungnu (~15 min)"
@@ -111,10 +114,12 @@
       "source_en": "Photo time + reassembly at vehicle (~15 min)"
     },
     "/itineraryStops/2/timeUsed/4": {
-      "source_en": "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)"
+      "source_en": "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)",
+      "tm": "Optional die Wachablösung der königlichen Garde am Sinpungnu-Tor (Di–So 11:00 Uhr, ~15 Min., KOSTENLOS — bei passender Witterung)"
     },
     "/itineraryStops/2/highlights/0": {
-      "source_en": "**Korea's largest existing haenggung (detached palace)** — originally 576 rooms"
+      "source_en": "**Korea's largest existing haenggung (detached palace)** — originally 576 rooms",
+      "tm": "**Koreas größter erhaltener Haenggung (königlicher Nebenpalast)** — ursprünglich 576 Räume"
     },
     "/itineraryStops/2/highlights/1": {
       "source_en": "Built 1789-1796 alongside Hwaseong Fortress under King Jeongjo"
@@ -138,7 +143,8 @@
       "source_en": "FREE for hanbok-wearers + seniors 65+ + children ≤6"
     },
     "/itineraryStops/2/highlights/8": {
-      "source_en": "**Naknamheon (낙남헌) is the ONLY building surviving from the original 1796 construction** — Japanese colonial-era authorities converted it into Police Station offices but did not demolish it; every other Haenggung structure visible today is a post-1996 reconstruction following the Hwaseong Seongyeok Uigwe (UNESCO Memory of the World since 2007)"
+      "source_en": "**Naknamheon (낙남헌) is the ONLY building surviving from the original 1796 construction** — Japanese colonial-era authorities converted it into Police Station offices but did not demolish it; every other Haenggung structure visible today is a post-1996 reconstruction following the Hwaseong Seongyeok Uigwe (UNESCO Memory of the World since 2007)",
+      "tm": "**Naknamheon (낙남헌) ist das EINZIGE Gebäude, das aus dem Originalbau von 1796 erhalten blieb** — die Behörden der japanischen Kolonialzeit bauten es zu Büros einer Polizeiwache um, rissen es aber nicht ab; jedes andere heute sichtbare Haenggung-Bauwerk ist eine Rekonstruktion nach 1996 auf Grundlage des Hwaseong Seongyeok Uigwe (seit 2007 UNESCO-Weltdokumentenerbe)"
     },
     "/itineraryStops/2/smartNotes/tip": {
       "source_en": "**Time arrival for 11:00 AM Royal Guard Changing Ceremony Tue-Sun (FREE)**. Hanbok rental gives FREE admission to BOTH Fortress and Haenggung. **Naknamheon is THE single most historically important spot** — the only structure not rebuilt, surviving Japanese colonial demolition. Skip Mondays — Royal Guard Changing Ceremony performed Tue-Sun only."
@@ -179,5 +185,5 @@
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 11
+  "tmHits": 17
 }

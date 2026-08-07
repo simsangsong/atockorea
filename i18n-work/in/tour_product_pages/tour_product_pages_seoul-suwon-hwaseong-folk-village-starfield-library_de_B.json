@@ -7,23 +7,28 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Outbound"
+      "source_en": "Outbound",
+      "tm": "Hinfahrt"
     },
     "/routePhases/0/duration": {
       "source_en": "≈ 1 hour",
       "tm": "≈ 1 Stunde"
     },
     "/routePhases/0/description": {
-      "source_en": "Seoul → Suwon city via Gyeongbu Expressway."
+      "source_en": "Seoul → Suwon city via Gyeongbu Expressway.",
+      "tm": "Seoul → Stadt Suwon über die Gyeongbu-Autobahn."
     },
     "/routePhases/1/phase": {
-      "source_en": "Heritage half"
+      "source_en": "Heritage half",
+      "tm": "Die Kulturerbe-Hälfte"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 Stunden"
     },
     "/routePhases/1/description": {
-      "source_en": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other."
+      "source_en": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other.",
+      "tm": "Die Mauern von Suwon Hwaseong und der Haenggung-Palast, alles fußläufig voneinander entfernt."
     },
     "/routePhases/2/phase": {
       "source_en": "Folk village"
@@ -99,13 +104,16 @@
       ]
     },
     "/galleryItems/2/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 1"
+      "source_en": "Starfield Library Suwon — gallery image 1",
+      "tm": "Starfield Library Suwon — Galeriebild 1"
     },
     "/galleryItems/2/caption": {
-      "source_en": "Starfield Library Suwon — photo 1"
+      "source_en": "Starfield Library Suwon — photo 1",
+      "tm": "Starfield Library Suwon — Foto 1"
     },
     "/galleryItems/2/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
@@ -192,31 +200,40 @@
       ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 2"
+      "source_en": "Starfield Library Suwon — gallery image 2",
+      "tm": "Starfield Library Suwon — Galeriebild 2"
     },
     "/galleryItems/7/caption": {
-      "source_en": "Starfield Library Suwon — photo 2"
+      "source_en": "Starfield Library Suwon — photo 2",
+      "tm": "Starfield Library Suwon — Foto 2"
     },
     "/galleryItems/7/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
     },
     "/galleryItems/8/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 3"
+      "source_en": "Starfield Library Suwon — gallery image 3",
+      "tm": "Starfield Library Suwon — Galeriebild 3"
     },
     "/galleryItems/8/caption": {
-      "source_en": "Starfield Library Suwon — photo 3"
+      "source_en": "Starfield Library Suwon — photo 3",
+      "tm": "Starfield Library Suwon — Foto 3"
     },
     "/galleryItems/8/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
     },
     "/galleryItems/9/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 4"
+      "source_en": "Starfield Library Suwon — gallery image 4",
+      "tm": "Starfield Library Suwon — Galeriebild 4"
     },
     "/galleryItems/9/caption": {
-      "source_en": "Starfield Library Suwon — photo 4"
+      "source_en": "Starfield Library Suwon — photo 4",
+      "tm": "Starfield Library Suwon — Foto 4"
     },
     "/galleryItems/9/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
     }
   },
   "glossaryTokens": {
@@ -275,5 +292,5 @@
       "⟦G0⟧": "Koreanisches Folkloredorf (Yongin)"
     }
   },
-  "tmHits": 23
+  "tmHits": 40
 }

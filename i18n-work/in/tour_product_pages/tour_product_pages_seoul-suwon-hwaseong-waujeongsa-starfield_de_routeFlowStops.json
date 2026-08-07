@@ -20,13 +20,15 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Heritage Palace"
+      "source_en": "Heritage Palace",
+      "tm": "Kulturerbe-Palast"
     },
     "/routeFlowStops/2/name": {
       "source_en": "Starfield Library"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Modern Korea"
+      "source_en": "Modern Korea",
+      "tm": "Modernes Korea"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch",
@@ -48,5 +50,5 @@
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 3
+  "tmHits": 5
 }

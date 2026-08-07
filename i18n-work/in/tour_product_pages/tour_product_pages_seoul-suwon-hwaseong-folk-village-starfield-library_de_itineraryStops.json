@@ -7,19 +7,24 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Seoul departure"
+      "source_en": "Seoul departure",
+      "tm": "Abfahrt in Seoul"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup & departure"
+      "source_en": "Pickup & departure",
+      "tm": "Abholung & Abfahrt"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "10 min"
+      "source_en": "10 min",
+      "tm": "10 Min."
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)"
+      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)",
+      "tm": "Treffen am festgelegten Abholpunkt in Seoul (~5 Min. zum Einsteigen)"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)"
+      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)",
+      "tm": "1-stündige Busfahrt nach Suwon (~60 Min. bei wenig Verkehr)"
     },
     "/itineraryStops/0/highlights/0": {
       "source_en": "Pickup from Hongik University (Line 2) or ⟦G0⟧ (Line 4) ~08:00",
@@ -28,10 +33,12 @@
       ]
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway"
+      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway",
+      "tm": "1 Stunde mit dem Bus nach Süden bis Suwon über die Gyeongbu-Autobahn"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Coach with air conditioning + USB charging"
+      "source_en": "Coach with air conditioning + USB charging",
+      "tm": "Bus mit Klimaanlage und USB-Ladeanschlüssen"
     },
     "/itineraryStops/0/highlights/3": {
       "source_en": "Designed for early arrival at Hwaseong Fortress before tour-group rush"
@@ -56,14 +63,16 @@
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "UNESCO Fortress"
+      "source_en": "UNESCO Fortress",
+      "tm": "UNESCO-Festung"
     },
     "/itineraryStops/1/duration": {
       "source_en": "75 min",
       "tm": "75 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Coach drop-off near Janganmun (~5 min)"
+      "source_en": "Coach drop-off near Janganmun (~5 min)",
+      "tm": "Ausstieg aus dem Bus nahe Janganmun (~5 Min.)"
     },
     "/itineraryStops/1/timeUsed/1": {
       "source_en": "Brief group orientation at Janganmun (~5 min)"
@@ -72,34 +81,42 @@
       "source_en": "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~25-30 min)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+      "source_en": "Photo time + reassembly at vehicle (~10 min)",
+      "tm": "Zeit für Fotos und Sammeln am Fahrzeug (~10 Min.)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)",
+      "tm": "Optional die Hwaseong-Yeolcha-Sightseeing-Bahn Yeonmudae↔Paldalmun (~30 Min. je Richtung; ₩4.000 für Erwachsene)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records"
+      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records",
+      "tm": "**UNESCO-Welterbe seit 1997** — Koreas einzige ummauerte Festungsstadt mit erhaltenen Originalbauakten"
     },
     "/itineraryStops/1/highlights/1": {
       "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo (22nd Joseon king)"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science"
+      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science",
+      "tm": "Entworfen von Jeong Yak-yong auf Basis koreanischer, chinesischer und westlicher Festungsbaukunst"
     },
     "/itineraryStops/1/highlights/3": {
       "source_en": "Hwaseong Seongyeok Uigwe construction record — UNESCO Memory of the World 2007"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "5.74 km circumference, 41 strategic military structures"
+      "source_en": "5.74 km circumference, 41 strategic military structures",
+      "tm": "5,74 km Mauerumfang, 41 strategische Militärbauten"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**"
+      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**",
+      "tm": "Nordtor Janganmun — **das größte erhaltene königliche Tor Koreas**"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)"
+      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)",
+      "tm": "1,2 km geführter Weg Janganmun → Hwaseomun (der fotogenste Abschnitt)"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure"
+      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure",
+      "tm": "Das Schleusentor Hwahongmun mit 7 Bögen — das meistfotografierte Bauwerk"
     },
     "/itineraryStops/1/highlights/8": {
       "source_en": "FREE for hanbok-wearers + last Wed of month + seniors 65+"
@@ -131,5 +148,5 @@
       "⟦G0⟧": "Suwon-Hwaseong-Festung"
     }
   },
-  "tmHits": 2
+  "tmHits": 19
 }
