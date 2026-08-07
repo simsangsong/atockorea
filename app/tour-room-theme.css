@@ -1203,6 +1203,12 @@
 
 /* Compact — for genuinely minor controls only. 🔴 Never on a commit: this class
  * on 「Use this route」 is precisely what inverted the hierarchy. Gated. */
+/* The deliberately compact tier — 36px and 12px type, the bottom of the four-step
+ * ladder `plannerMaterial.test.ts` pins. Do NOT raise it to make a thumb target
+ * legal: that collapses it into the 44px base tier and there is no ladder left.
+ * If a control needs a thumb, it is not a compact control — drop the modifier
+ * and let it take the base tier. (Every call site did exactly that in 2026-08-07;
+ * this tier is currently unused and kept for a genuinely non-thumb affordance.) */
 .tr-plan-btn--sm {
   min-height: 36px;
   padding-inline: 12px;
@@ -1317,7 +1323,12 @@
   align-items: center;
   justify-content: center;
   gap: 5px;
-  min-height: 38px;
+  /* 38 → 44. These are the needs checklist (stroller, wheelchair, vegetarian,
+   * halal, no nuts …) and the pace picker — fourteen of them, all fingers, all
+   * under the 40px standing judge. They were never reported because the
+   * editable planner had never been walked; the P axis was only ever measured
+   * on the read-only variant, which has none of them. */
+  min-height: 44px;
   padding-inline: 13px;
   border-radius: 9999px;
   font-weight: 600;
