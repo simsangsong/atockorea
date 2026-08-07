@@ -328,7 +328,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "An 8-hour private car charter built around your ship's all-aboard time, not a fixed schedule. Gangway pickup at Incheon Cruise Terminal, English-speaking driver-guide, and a customizable route through Gyeongbokgung Palace, Bukchon Hanok Village + Insadong, lunch of your choice, N Seoul Tower, and Myeongdong or Jogyesa Temple. The driver-guide holds a 60-minute traffic buffer before sailaway so you never miss the ship."
     },
     "price": {
-      "amountLabel": "424"
+      "amountLabel": "419"
     }
   },
   "jeju-cherry-blossom-tour-east-route": {

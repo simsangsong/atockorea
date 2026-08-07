@@ -70,11 +70,15 @@ export const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
   // Rate-card minimum (5h, 1–6 pax) — see staticTourProductRegistry.ts.
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169, maxGroupSize: 14 },
   "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
-  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 424, maxGroupSize: 12 },
+    // 419 = the flat cell on this charter's rate card. The two SLUG_OVERRIDES
+  // copies disagreed (419 here vs 424 there), so the same product quoted two
+  // prices depending on which surface loaded. maxGroupSize 14 = two vehicles of
+  // seven, matching the 1–7 / 8+ rule (owner 2026-08-07).
+  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 419, maxGroupSize: 14 },
   "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 59 },
   "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 77, maxGroupSize: 8 },

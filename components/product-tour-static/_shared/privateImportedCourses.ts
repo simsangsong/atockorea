@@ -123,6 +123,38 @@ const SEOUL_COURSES: readonly ImportedCourse[] = [
 
 const BUSAN_COURSES: readonly ImportedCourse[] = [
   {
+    // Owner 2026-08-07: the charter should offer the tours we already sell —
+    // "일일투어, 스몰그룹투어, 기항지 투어 등등". The day tour, Gyeongju and
+    // Tongdosa were here; the shore excursion and the small-group tour, the two
+    // the charter's own buyers are most likely to be comparing against, were not.
+    id: "cruise-shore",
+    slug: "busan-cruise-shore-excursion-bus-tour",
+    chipLabel: {
+      ko: "기항지",
+      en: "Shore day",
+      ja: "寄港地",
+      zh: "岸上观光",
+      "zh-TW": "岸上觀光",
+      es: "Escala",
+    },
+  },
+  {
+    // The Yonggungsa / Sky Capsule / Gamcheon course. Deliberately NOT
+    // `busan-small-group-sightseeing-tour-cruise-passengers`: since the listing
+    // alignment that product runs the identical nine stops as the shore
+    // excursion above, so it would render a duplicate tab.
+    id: "small-group",
+    slug: "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    chipLabel: {
+      ko: "스몰그룹",
+      en: "Small group",
+      ja: "少人数",
+      zh: "小团",
+      "zh-TW": "小團",
+      es: "Grupo reducido",
+    },
+  },
+  {
     id: "busan-city",
     slug: "busan-top-attractions-day-tour",
     chipLabel: {
@@ -161,15 +193,40 @@ const BUSAN_COURSES: readonly ImportedCourse[] = [
 ];
 
 /**
+ * Owner 2026-08-07, on the Incheon shore charter: *"인천크루즈터미널에서 픽업,
+ * 광화문, 인사동, 광장시장 그리고 다시 인천 복귀 혹은 서울시내 호텔 드롭"*.
+ *
+ * That is the course our own Incheon shore excursion already runs — terminal
+ * pickup, Gyeongbokgung (whose main gate is Gwanghwamun), Bukchon and Insa-dong,
+ * lunch at Gwangjang Market, back to the terminal — so it is imported rather
+ * than retyped. Until now this product fell through to `seoulConfig()`, which
+ * opens with "Hotel pickup (default)" and five "Stop to be added" slots: wrong
+ * twice over on a cruise SKU, and only visible by opening the page.
+ */
+const INCHEON_COURSES: readonly ImportedCourse[] = [
+  {
+    id: "seoul-classic",
+    slug: "from-incheon-seoul-day-tour-cruise-guests",
+    chipLabel: {
+      ko: "서울 도심",
+      en: "Seoul city",
+      ja: "ソウル都心",
+      zh: "首尔市区",
+      "zh-TW": "首爾市區",
+      es: "Centro de Seúl",
+    },
+  },
+];
+
+/**
  * Host product slug → imported courses. The private charters opt in; every
- * other product returns null. `incheon-seoul-private-car-shore-excursion-cruise`
- * is deliberately absent — it has a real fixed shore-excursion itinerary of
- * its own, not invented meta routes.
+ * other product returns null.
  */
 const PRIVATE_IMPORTED_COURSES: Record<string, readonly ImportedCourse[]> = {
   "jeju-island-private-car-charter-tour": JEJU_COURSES,
   "seoul-suburbs-private-chartered-car-10hr": SEOUL_COURSES,
   "busan-private-car-charter-cruise-shore": BUSAN_COURSES,
+  "incheon-seoul-private-car-shore-excursion-cruise": INCHEON_COURSES,
 };
 
 export function getPrivateImportedCourses(
