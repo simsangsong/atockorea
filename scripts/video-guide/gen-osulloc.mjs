@@ -2,7 +2,7 @@
 /**
  * osulloc-tea-museum 비트 시트 생성기.
  *
- *   node scratch/gen-osulloc.mjs
+ *   node scripts/video-guide/gen-osulloc.mjs
  *
  * 사장님 지시 (2026-08-03):
  *   "빨리감기 넣지 말고 … 만약 한 테이크가 같은 장소에서 너무 길면 중간 조금 잘라서

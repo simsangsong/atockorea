@@ -2,7 +2,7 @@
 /**
  * daepo-jusangjeolli-cliff 비트 시트 생성기.
  *
- *   node scratch/gen-jusangjeolli.mjs
+ *   node scripts/video-guide/gen-jusangjeolli.mjs
  *   (그 다음 반드시)  motioncut.mjs → validate.mjs
  *
  * 동선은 촬영 순서가 아니라 **손님이 걷는 순서**다. 소재 4개 중 04(=A, 10:38 촬영)가
