@@ -82,7 +82,7 @@ function StopCard({
         >
           {/* Spot photos first — filled from English POI name search in authoring JSON */}
           {photos.length > 0 && (
-            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto scrollbar-hide">
+            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto rail-scrollbar">
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}

@@ -758,7 +758,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 above, with a clear "active" affordance on the current thumb. */}
             {galleryPhotos.length > 1 && (
               <div className="flex-shrink-0 border-b border-border/50 bg-white">
-                <div className="flex gap-1.5 overflow-x-auto scrollbar-hide px-5 py-2.5">
+                <div className="flex gap-1.5 overflow-x-auto rail-scrollbar px-5 py-2.5">
                   {galleryPhotos.map((src, i) => {
                     const isActive = i === activeImageIndex;
                     return (

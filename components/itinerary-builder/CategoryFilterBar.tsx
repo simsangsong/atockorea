@@ -75,9 +75,9 @@ export default function CategoryFilterBar({ pois, selected, onToggle, onClear }:
         {t("label")}
       </p>
       {/* Single-row horizontal scroll (compact) instead of a 4-row wrap that
-          shoved the catalog grid far down the page. scrollbar-hide + snap keeps
+          shoved the catalog grid far down the page. rail-scrollbar + snap keeps
           it tidy; -mx/px gutter lets the first/last chip bleed to the edge. */}
-      <div className="scrollbar-hide -mx-4 flex gap-1.5 overflow-x-auto px-4 md:-mx-1 md:px-1">
+      <div className="rail-scrollbar -mx-4 flex gap-1.5 overflow-x-auto px-4 md:-mx-1 md:px-1">
         <button
           type="button"
           onClick={onClear}

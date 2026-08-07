@@ -388,7 +388,7 @@ export function LandingPlannerCard({
         </div>
 
         <div className="mb-3 md:mb-4" role="group" aria-label={t("premium.comparison.chipsAria")}>
-          <div className="flex gap-1.5 overflow-x-auto pb-1 scrollbar-none md:gap-2">
+          <div className="flex gap-1.5 overflow-x-auto pb-1 rail-scrollbar md:gap-2">
             {styleChipOptions.map((tag) => {
               const isSelected = chipLooksSelected(tag.label);
               return (

@@ -510,7 +510,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                         {chargeDurationHeading(locale)}
                       </span>
                       {/* Horizontally scrollable hour pills (4h–10h). */}
-                      <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
+                      <div className="-mx-1 flex gap-1.5 overflow-x-auto rail-scrollbar px-1 pb-0.5">
                         {pricingTiers.durations.map((d) => (
                           <button
                             key={d}
