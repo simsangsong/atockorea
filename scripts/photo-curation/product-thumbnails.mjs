@@ -51,8 +51,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "스카이캡슐이 제목이자 차별점 — 사장님 제공 **실촬본**(2026-08-07). 이 POI 는 쓸 수 있는 실사진이 아예 없어서 AI 를 쓰고 있었다",
   },
   "busan-cruise-shore-excursion-bus-tour": {
-    image: "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-    why: "기항지 서사는 바다 — 송도 해안 항공샷(AI). 용궁사 실사진으로 바꿔봤지만 대표 상품과 **같은 절**이 두 카드에 걸려 되돌렸다",
+    image: "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
+    why: "UN기념공원 만국기 — 기존 송도 해변 항공샷은 어느 해변인지도 모르겠고 기항지 버스투어의 특징이 0이었다. 이 코스에서만 가는 곳이고 다른 어떤 카드와도 안 겹친다",
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     image: "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
@@ -83,8 +83,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "낙산사 의상대 — 바다 절벽 위 정자, 이 상품만의 것",
   },
   "seoul-seoraksan-nami-island-morning-calm-day-tour": {
-    image: "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-    why: "겨울 상품과의 차별점은 남이섬·아침고요 — **실사진** 메타세쿼이아길(AI 아침고요 정원에서 교체)",
+    image: "/images/tours/seoraksan-national-park/photo-001.webp",
+    why: "설악 단풍 계곡 — 남이섬 메타세쿼이아를 셋이 돌려쓰고 있었다. 제목 첫머리가 설악이고 이 단풍 컷은 이 상품만의 것",
   },
 
   /* ── 제주 ────────────────────────────────────────────────────── */
@@ -97,8 +97,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "애월 카페 데크 + 터콰이즈 — 이 코스의 감성이 곧 서사",
   },
   "jeju-eastern-unesco-spots-day-tour": {
-    image: "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
-    why: "만장굴 동굴 내부는 카드 크기에서 어둡기만 하다 — 함덕 터콰이즈로 교체. 스톱 히어로(01)는 삼각대·스피커가 걸려 카드로는 지저분해서 물놀이 프레임을 쓴다",
+    image: "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
+    why: "만장굴 조명 통로(사장님 실촬) — 「동부 UNESCO」 상품에 물놀이 인파는 서사가 없다. 용암동굴이 이 상품의 이야기다",
   },
   "jeju-cruise-shore-excursion-small-group-tour": {
     image: "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
@@ -139,5 +139,76 @@ export const PRODUCT_THUMBNAILS = {
     image: "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     why: "전세 상품은 차량이 상품이다",
     offItinerary: true,
+  },
+
+  /* ── 🔴 아래 17개는 카탈로그에 있는데 오버라이드에 없어서 중복 검사를 못 받고 있었다.
+   *      게이트가 「내가 관리하는 21개」만 재고 실제로 나가는 38개를 안 쟀다. ───────── */
+  "seoul-private-nami-morning-calm-petite-france": {
+    image: "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
+    why: "남이섬 은행나무 터널 + 커플 — 프라이빗 상품의 결. 셋이 같은 메타세쿼이아를 쓰고 있었다",
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    image: "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
+    why: "남이섬 짚와이어 — 조인 데이투어는 액티비티가 팔린다",
+  },
+  "from-incheon-seoul-day-tour-cruise-guests": {
+    image: "/images/tours/gyeongbokgung/03-kakaotalk-20260510-222949305-09.webp",
+    why: "수문장 교대식 — 프라이빗판이 경회루를 쓰므로 조인판은 「무엇을 보는지」로 간다",
+  },
+  "jeju-cruise-shore-excursion-bus-tour": {
+    image: "/images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp",
+    why: "섭지코지 붉은 링 + 일몰 — 소그룹판이 성산을 쓰므로 코치판은 다른 얼굴",
+  },
+  "seoul-seoraksan-national-park-sokcho-beach-day-trip": {
+    image: "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+    why: "울산바위 — 겨울 상품이 능선 컷을 쓰므로 이쪽은 신흥사·울산바위",
+  },
+  "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju": {
+    image: "/images/tours/bulguksa-temple/04-10-20260708-120112.webp",
+    why: "불국사 붉은 연등(실촬) — 통도사 일주문을 두 상품이 돌려쓰고 있었다",
+  },
+  "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": {
+    image: "/images/itinerary/tongdosa-iljumun.webp",
+    why: "통도사 일주문 — 제목이 통도사라 이쪽이 가져간다",
+  },
+  "jeju-hydrangea-festival-tour-east-route": {
+    image: "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
+    why: "함덕 일몰 — 동부 수국 코스의 스톱 사진에 정작 수국이 없다(별도 촬영감)",
+  },
+  "jeju-hydrangea-festival-tour-southwest-route": {
+    image: "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
+    why: "한림공원 수국 + 풍차 — 수국 축제 상품인데 카드가 해수욕장 인파였다",
+  },
+  "seoul-dmz-private-3rd-tunnel-suspension-bridge": {
+    image: "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+    why: "감악산 붉은 출렁다리 — 제목의 suspension bridge 그 자체. 임진각 정자는 DMZ 상품이라는 게 전혀 안 읽혔다",
+  },
+  "east-signature-nature-core": {
+    image: "/images/tours/jeju-stone-park/04-kakaotalk-20260510-230028438-20.webp",
+    why: "돌하르방 열주 — 「화산·해안·민속」 서사를 한 장으로 말한다",
+  },
+  "jeju-west-south-full-day-authentic-tour": {
+    image: "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+    why: "주상절리 육각기둥 — 1100고지 초원은 아무 상품에나 붙을 수 있는 그림이었다",
+  },
+  "busan-gyeongju-unesco-legacy-tour-national-museum": {
+    image: "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
+    why: "아홉산 대나무숲 — 활성 경주 상품이 월정교를 쓰므로 이 비활성 상품이 대나무를 가져간다",
+  },
+  "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
+    image: "/images/itinerary/bomun-lake-cherry-blossom-promenade.webp",
+    why: "보문호 벚꽃 산책로 — 벚꽃 상품의 서사 그대로",
+  },
+  "jeju-cherry-blossom-tour-east-route": {
+    image: "/images/tours/jeonnong-ro/photo-001.webp",
+    why: "전농로 벚꽃길 — 제주 벚꽃 상품의 대표 스팟",
+  },
+  "jeju-winter-southwest-tangerine-snow-camellia-tour": {
+    image: "/images/tours/jeju-tangerine-farm/01-kakaotalk-20250603-221325343-14.webp",
+    why: "감귤 따기 — 겨울 상품의 체험이 곧 서사",
+  },
+  "pocheon-sanjeong-lake-herb-island-art-valley": {
+    image: "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    why: "산정호수 + 명성산 — 이 코스의 출발점",
   },
 };

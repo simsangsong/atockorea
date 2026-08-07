@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Recogida en el puerto",
         "Regreso garantizado"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
+      "thumbnail": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
       "priceLabel": "",
       "shortCardDescription": "Tour diario costero por Busan en autocar grande diseñado para pasajeros de crucero: recogida en la terminal de cruceros, 9 paradas emblemáticas (Haedong Yonggungsa, Cementerio Memorial de la ONU, Mercado de Jagalchi, Plaza BIFF, Mercado de Gukje, Pueblo Cultural de Gamcheon, Playa de Songdo, Parque Yongdusan) y garantía de regreso antes de la salida del barco. Categoría económica — mismo recorrido que el producto en grupo reducido, autocar más grande."
     },
@@ -96,8 +96,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "2 Sitios UNESCO",
         "Recogida en Busan"
       ],
-      "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
-      "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
+      "heroImage": "/images/tours/bulguksa-temple/04-10-20260708-120112.webp",
+      "thumbnail": "/images/tours/bulguksa-temple/04-10-20260708-120112.webp",
       "priceLabel": "",
       "shortCardDescription": "Un servicio de transporte de doble temporada de 8,5 horas con salida desde Busan que cubre Yangsan y Gyeongju. El itinerario estándar visita el Templo Tongdosa (UNESCO Sansa, el Templo de las Tres Joyas de Corea, con el ciruelo Jajangmae de 350 años), el Pueblo de Floración de Ciruelos Wondong (almuerzo de Minari Samgyeopsal en restaurantes emergentes de invernadero), el Templo Bulguksa (Patrimonio Mundial de la UNESCO) y el Lago Bomun (circuito de cerezos en flor de 8 km). Período de operación más amplio que los tours exclusivos de cerezos: ~25 de feb – 10 de abr cubre los picos de floración tanto de ciruelos como de cerezos. La ruta diaria ajusta el énfasis según el estado de floración de ciruelos versus cerezos."
     },
@@ -269,8 +269,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Ideal para Primera Visita",
         "Signature del Este de Jeju"
       ],
-      "heroImage": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
-      "thumbnail": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
+      "heroImage": "/images/tours/jeju-stone-park/04-kakaotalk-20260510-230028438-20.webp",
+      "thumbnail": "/images/tours/jeju-stone-park/04-kakaotalk-20260510-230028438-20.webp",
       "priceLabel": "",
       "shortCardDescription": "Un itinerario de día por el este de Jeju fácil de seguir que comienza con la cultura de la piedra y el contexto volcánico, recorre la costa y Seongsan Ilchulbong, y termina con Ilchulland y la Aldea Folclórica de Seongeup para una jornada más completa."
     },
@@ -319,8 +319,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Recogida en el puerto de Incheon",
         "Ventana de 9 horas"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/03-kakaotalk-20260510-222949305-09.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/03-kakaotalk-20260510-222949305-09.webp",
       "priceLabel": "Desde US$69 por persona (antes $76, 9% descuento)",
       "shortCardDescription": "Excursión de un día en furgoneta compartida desde la Terminal de Cruceros de Incheon visitando los principales puntos turísticos del centro de Seúl en una ventana de 9 horas: Palacio Gyeongbokgung (o Changdeokgung los martes), Pueblo Hanok de Bukchon, almuerzo en el Mercado Gwangjang (el callejón de comida callejera más fotografiado de la ciudad) y la calle cultural de Insadong. Recogida coordinada con el desembarco específico de su barco; guía certificado con inglés y chino; ≈75 min de trayecto de regreso incluidos."
     },
@@ -395,8 +395,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Crucero económico",
         "Autocar grande"
       ],
-      "heroImage": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
-      "thumbnail": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "heroImage": "/images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp",
+      "thumbnail": "/images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp",
       "priceLabel": "",
       "shortCardDescription": "Tour en autobús (autocar grande) desde crucero que adapta la ruta según el puerto de llegada. El Puerto de Jeju (norte) recorre una ruta UNESCO por la costa este pasando por Seongsan Ilchulbong; el Puerto de Gangjeong (sur) recorre una ruta por Hallasan 1100 + geología de la costa sur + Mercado Olle. Ambas rutas regresan a la terminal de cruceros con tiempo de margen suficiente."
     },
@@ -446,8 +446,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Haenyeo",
         "Entradas incluidas"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+      "heroImage": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
+      "thumbnail": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
       "priceLabel": "",
       "shortCardDescription": "Recorre los lugares UNESCO del este de Jeju en un bucle en grupo pequeño de 9 horas — ahora con la cueva primero: Manjanggul justo tras la apertura (la hora más tranquila del tubo de lava), la Aldea Folclórica de Seongeup, Seongsan Ilchulbong y el espectáculo de buceo de las haenyeo (Museo de las Haenyeo si se cancela), y un final a última hora de la tarde en la playa Hamdeok Seoubong. Dos sitios del Patrimonio Natural Mundial de la UNESCO inscritos juntos en 2007, todas las entradas incluidas, guía certificado en inglés y chino."
     },
@@ -496,8 +496,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Seongsan UNESCO",
         "Grupo pequeño"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
+      "heroImage": "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
+      "thumbnail": "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
       "priceLabel": "",
       "shortCardDescription": "El azul del verano de Jeju en un día: Playa Hamdeok (aguas esmeralda) → Aldea Folclórica Seongeup (1423) → Seongsan Ilchulbong (triple UNESCO) → Ilchul Land (Festival de Hortensias + Cueva Micheon) → Parque Natural Hueree (el mayor espectáculo de hortensias del sur de Jeju). Solo temporada de hortensias (junio-agosto). Grupo pequeño, recogida en hotel."
     },
@@ -520,8 +520,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Temporada de hortensias",
         "Suroeste de Jeju"
       ],
-      "heroImage": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
-      "thumbnail": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+      "heroImage": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
+      "thumbnail": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
       "priceLabel": "",
       "shortCardDescription": "Ruta exclusiva de verano por el suroeste de Jeju — playa esmeralda, jardines del festival de hortensias, acantilado columnar de la UNESCO, cascada de tres niveles, túnel de hortensias y campos de té."
     },
@@ -598,8 +598,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Cultura del café",
         "Costero"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+      "thumbnail": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
       "priceLabel": "Desde US$59 por persona (antes $69, 14% descuento)",
       "shortCardDescription": "Un tour en grupo pequeño que combina las costas occidental y meridional de Jeju en un solo circuito: el Humedal de Altitud 1100 de Hallasan (UNESCO), el Acantilado Jusangjeolli de columnas hexagonales, el mirador panorámico de Songaksan, la Cascada Cheonjeyeon, el Museo del Té O'sulloc y la franja de cafés de la playa Hyeopjae en la costa oeste. Mismo operador que el tour UNESCO del sur, pero con un enfoque más orientado al estilo de vida: \"paisajes volcánicos que se encuentran con costas dramáticas y modernos cafés junto al mar.\""
     },
@@ -677,8 +677,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "DMZ + Puente Colgante",
         "Recogida en el Hotel Incluida"
       ],
-      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
-      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "heroImage": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+      "thumbnail": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ."
     },
@@ -703,8 +703,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "K-drama",
         "Jardines"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
+      "thumbnail": "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
       "priceLabel": "",
       "shortCardDescription": "El día de campo más fácil desde Seúl: la avenida de metasecuoyas de la Isla Nami, un arboreto temático de 330,000 m² y un pueblo del Principito, con las tres entradas incluidas y de vuelta en Seúl antes de las 19:00."
     },
@@ -727,8 +727,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Lugares de Rodaje de K-Dramas",
         "Parejas y Familias"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
+      "thumbnail": "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión privada de un día desde Seúl que incluye la experiencia del ferry entre los árboles de la Isla Nami, los paseos temáticos por los jardines del Garden of Morning Calm y el colorido pueblo de El Principito en Petite France. La recogida en hotel, el vehículo privado y el ritmo tranquilo hacen de esta la versión más cómoda del clásico circuito por Gapyeong."
     },
@@ -777,8 +777,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Todas las entradas incluidas",
         "Día de 13 horas"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/seoraksan-national-park/photo-001.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/photo-001.webp",
       "priceLabel": "",
       "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
     },
@@ -805,8 +805,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Follaje Otoñal",
         "Excursión de un día"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión de un día en grupo reducido desde Seúl hasta el parque nacional más querido de Corea y la ciudad costera de Sokcho, a orillas del Mar del Este. El recorrido combina los picos de granito, los valles y el patrimonio budista de Seoraksan con el mercado de mariscos y la playa de Sokcho — una combinación de montaña y océano que solo ofrece la costa este. 12 horas con guía de habla inglesa y transporte de ida y vuelta."
     },

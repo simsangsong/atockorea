@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港口接送",
         "保证返回"
       ],
-      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
-      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "heroImage": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
+      "thumbnail": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
       "priceLabel": "",
       "shortCardDescription": "专为邮轮旅客打造的釜山沿海大巴一日游：提供邮轮码头接送，游览8个标志性景点（海东龙宫寺、联合国纪念公墓、札嘎其市场、BIFF广场、国际市场、甘川文化村、松岛海水浴场、龙头山公园），并保证在邮轮启航前返回。经济实惠之选——与小团产品路线相同，采用大型巴士。"
     },
@@ -96,8 +96,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "2处UNESCO世界遗产",
         "釜山上车接送"
       ],
-      "heroImage": "/images/itinerary/tongdosa-iljumun.webp",
-      "thumbnail": "/images/itinerary/tongdosa-iljumun.webp",
+      "heroImage": "/images/tours/bulguksa-temple/04-10-20260708-120112.webp",
+      "thumbnail": "/images/tours/bulguksa-temple/04-10-20260708-120112.webp",
       "priceLabel": "",
       "shortCardDescription": "8.5小时釜山出发双花期接驳游，途经梁山与庆州。默认行程游览通度寺（UNESCO山寺，韩国三宝寺刹，内有树龄350年慈藏梅）、院洞梅花村（温室快闪餐厅享用水芹五花肉午餐）、佛国寺（UNESCO世界遗产）及普门湖（8公里樱花环湖路）。运营时间比纯樱花游更长：约2月25日 – 4月10日，同时涵盖梅花与樱花花期。每日路线根据梅花及樱花实际开放状况灵活调整侧重。"
     },
@@ -269,8 +269,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "适合初次游客",
         "济州岛东部经典"
       ],
-      "heroImage": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
-      "thumbnail": "/images/tours/jeju-stone-park/01-kakaotalk-20260510-230028438-22.webp",
+      "heroImage": "/images/tours/jeju-stone-park/04-kakaotalk-20260510-230028438-20.webp",
+      "thumbnail": "/images/tours/jeju-stone-park/04-kakaotalk-20260510-230028438-20.webp",
       "priceLabel": "",
       "shortCardDescription": "这条轻松易行的济州岛东部一日游路线，从石文化与火山地貌出发，途经海岸与城山日出峰，最后以日出乐园和城邑民俗村收尾，让整日行程更加丰富完整。"
     },
@@ -319,8 +319,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "仁川港接送",
         "9小时行程窗口"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "heroImage": "/images/tours/gyeongbokgung/03-kakaotalk-20260510-222949305-09.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/03-kakaotalk-20260510-222949305-09.webp",
       "priceLabel": "每人 US$69（原价$76，9% 优惠）",
       "shortCardDescription": "从仁川邮轮码头出发的共乘面包车一日游，在9小时内游览首尔核心市区的标志性景点：景福宫（周二改为昌德宫）、北村韩屋村、广藏市场午餐（首尔最上镜的街头美食街）及仁寺洞文化街。接送时间根据您所乘船只的具体下船时间灵活安排；持证英语/中文双语导游；含约75分钟返程车程。"
     },
@@ -395,8 +395,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "经济型邮轮",
         "旅游大巴"
       ],
-      "heroImage": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
-      "thumbnail": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "heroImage": "/images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp",
+      "thumbnail": "/images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp",
       "priceLabel": "",
       "shortCardDescription": "这是一款根据停靠港口灵活调整路线的旅游大巴邮轮靠岸游。济州港（北部）走东海岸UNESCO路线，途经城山日出峰；江汀港（南部）走汉拿山1100高地+南海岸地质景观+偶来市场路线。两条路线均预留充裕时间返回邮轮码头。"
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "超值定价",
         "所有门票已包含"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+      "heroImage": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
+      "thumbnail": "/images/tours/manjanggul/01-manjanggul-stairs-lit-path-01.webp",
       "priceLabel": "",
       "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点 — 现在洞窟先行：开放后最清静时段的万丈窟、城邑民俗村、城山日出峰与海女潜水表演（取消时改为海女博物馆），再以傍晚前的咸德犀牛峰海滩收尾。2007年共同登录的两处联合国教科文组织世界自然遗产，含全部门票，持证英语·中文导游。"
     },
@@ -499,8 +499,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "世界遗产",
         "节庆活动"
       ],
-      "heroImage": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
-      "thumbnail": "/images/tours/hamdeok-beach/01-kakaotalk-20260510-230028438-01.webp",
+      "heroImage": "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
+      "thumbnail": "/images/tours/hamdeok-beach/03-kakaotalk-20260510-230028438-02.webp",
       "priceLabel": "",
       "shortCardDescription": "夏季限定东济州小团一日游，以岛内绣球花节庆为主题：城山日出峰（UNESCO）、山房山绣球花节、涉地可支海岸及成音浦港游船。6月下旬至7月下旬运营，正值绣球花盛放期。"
     },
@@ -523,8 +523,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "绣球花季",
         "济州西南"
       ],
-      "heroImage": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
-      "thumbnail": "/images/tours/hyeopjae-beach/01-kakaotalk-20260510-230009595-03.webp",
+      "heroImage": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
+      "thumbnail": "/images/tours/hallim-park/01-kakaotalk-20260508-171119960-06.webp",
       "priceLabel": "",
       "shortCardDescription": "仅限夏季的济州岛西南路线——翠绿海滩、绣球花节花园、联合国教科文组织柱状节理带、三级瀑布、绣球花隧道及茶园。"
     },
@@ -601,8 +601,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "咖啡文化",
         "海岸"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+      "thumbnail": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
       "priceLabel": "每人 US$59（原价$69，14% 优惠）",
       "shortCardDescription": "一日小团游，将济州西海岸与南海岸串联成一条环线——汉拿山1100海拔湿地（联合国教科文组织）、六边形柱状节理带、松岳山全景观景台、天帝渊瀑布、O'sulloc茶博物馆，以及西海岸的协涯海滩咖啡街。与南部联合国教科文组织线路为同一运营商，但更注重生活方式体验——\"火山地貌邂逅壮观海岸线与时尚海滨咖啡馆\"。"
     },
@@ -680,8 +680,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "非军事区 + 悬索桥",
         "含酒店接送"
       ],
-      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
-      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "heroImage": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+      "thumbnail": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "priceLabel": "",
       "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。"
     },
@@ -706,8 +706,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "韩剧",
         "花园"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
+      "thumbnail": "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
       "priceLabel": "",
       "shortCardDescription": "首尔近郊最轻松的一天乡野行程：南怡岛的水杉大道、330,000 m² 的主题树木园，以及小王子主题村落 — 三处门票全部包含，19:00 前回到首尔。"
     },
@@ -730,8 +730,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "韩剧取景地",
         "情侣与家庭"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
+      "thumbnail": "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
       "priceLabel": "",
       "shortCardDescription": "从首尔出发的私人一日游，涵盖南怡岛林荫渡船体验、晨静园主题花园漫步，以及充满色彩的小王子风情村小法国。酒店接送、私家车出行，悠闲的游览节奏，带您以最舒适的方式体验经典的加平环线之旅。"
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "全程门票已含",
         "13小时全天行程"
       ],
-      "heroImage": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
-      "thumbnail": "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+      "heroImage": "/images/tours/seoraksan-national-park/photo-001.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/photo-001.webp",
       "priceLabel": "",
       "shortCardDescription": "从首尔出发的13小时大巴一日游，涵盖韩国三大最热门一日游目的地：雪岳山国立公园（韩国唯一的UNESCO生物圈保护区）、南怡岛（《冬季恋歌》取景地的水杉大道）以及晨静园（拥有5,000种植物的韩国标志性私家植物园）。全程门票已含；配备英语导游；在弘益大学站或明洞站接送。"
     },
@@ -808,8 +808,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "秋叶红枫",
         "一日游"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-sinheungsa-ulsanbawi.webp",
       "priceLabel": "",
       "shortCardDescription": "从首尔出发，前往韩国最受欢迎的国家公园及东海岸城市束草的小团一日游。行程将雪岳山的花岗岩山峰、山谷与佛教文化，同束草的海鲜市场和海滩完美结合——这种山海交融的体验只有东海岸才能给你。全程12小时，含英语导游及往返交通。"
     },
