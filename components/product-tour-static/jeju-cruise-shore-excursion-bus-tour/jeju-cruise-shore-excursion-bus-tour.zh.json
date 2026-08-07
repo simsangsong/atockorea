@@ -1608,7 +1608,7 @@
     {
       "id": "wear",
       "title": "穿着与携带物品建议",
-      "preview": "舒适步行鞋 + 多层衣物 + 护照（用于邮轮重新登船） > **注：** 第4行 `bg-amber-50/80` 为 Tailwind CSS 样式类名，属于技术代码，保留原文不作翻译。",
+      "preview": "舒适步行鞋 + 多层衣物 + 护照（用于邮轮重新登船）",
       "content": [
         "舒适的步行鞋",
         "轻便夹克（尤其适用于汉拿山1100高地 / 江汀路线选项）",
@@ -2953,7 +2953,7 @@
   ],
   "priceSource": {
     "discountPct": 10,
-    "discountNote": "直接预订价格可能低于常见第三方平台的价格。 > **注：** 第18、19条（`TourReviewsSection`、`TourStickyBookingBar`）为UI组件标识符，保留原文不作翻译。",
+    "discountNote": "直接预订价格可能低于常见第三方平台的价格。",
     "amount": null,
     "currency": "USD"
   },
