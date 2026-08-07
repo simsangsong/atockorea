@@ -16,6 +16,7 @@ import {
   checkStructure,
   checkUntranslated,
   checkVerbatim,
+  findTruncatedSegments,
   numberMultiset,
   romanNumeralValues,
   verifyUnit,
@@ -457,5 +458,46 @@ describe('G10 키릴 비율 — 고유명사 공제 (2026-07-28 실측)', () => 
   it('평범한 러시아어 산문은 통과한다', () => {
     const f = checkCharset('Сад открыт ежедневно с девяти утра', '/p', 'ru', 'The garden opens daily at nine');
     expect(f).toEqual([]);
+  });
+});
+
+describe('잘림 탐지 — translate.ts 생성 중 가드 (2026-08-07 실측)', () => {
+  // 실제로 잘렸던 세 건. 셋 다 독일어 여는 따옴표 „ 직후에서 끊겼다.
+  const REAL = [
+    { pointer: '/staticQuestions/13/answer', en: 454, tr: 197 },
+    { pointer: '/itineraryStops/1/description', en: 1080, tr: 583 },
+    { pointer: '/itineraryStops/5/description', en: 2394, tr: 196 },
+  ];
+
+  it('문장 중간에서 끊긴 세그먼트를 전부 잡는다', () => {
+    const sources: Record<string, string> = {};
+    const targets: Record<string, string> = {};
+    for (const c of REAL) {
+      sources[c.pointer] = 'a'.repeat(c.en);
+      targets[c.pointer] = 'b'.repeat(c.tr);
+    }
+    expect(findTruncatedSegments(sources, targets).map((h) => h.pointer).sort()).toEqual(
+      REAL.map((c) => c.pointer).sort(),
+    );
+  });
+
+  it('정상적으로 압축된 번역에는 걸리지 않는다 — G8 하한(de 0.9)보다 훨씬 낮게 잡은 이유', () => {
+    const en = 'x'.repeat(1000);
+    // 0.6 바로 위. G8 이라면 플래그하지만 재요청까지 발동시키면 안 된다.
+    expect(findTruncatedSegments({ '/p': en }, { '/p': 'y'.repeat(620) })).toEqual([]);
+    expect(findTruncatedSegments({ '/p': en }, { '/p': 'y'.repeat(1400) })).toEqual([]);
+  });
+
+  it('짧은 문구는 보지 않는다 — 길이비 변동이 커서 의미가 없다', () => {
+    // 라벨·제목류는 비율이 요동친다. 200자 미만은 애초에 대상이 아니다.
+    expect(findTruncatedSegments({ '/p': 'x'.repeat(199) }, { '/p': 'y' })).toEqual([]);
+  });
+
+  it('빈 문자열은 잘림이 아니다 — 규칙 6(확신 없음)이고 apply 가 영어로 폴백한다', () => {
+    expect(findTruncatedSegments({ '/p': 'x'.repeat(1000) }, { '/p': '   ' })).toEqual([]);
+  });
+
+  it('원문이 없는 포인터는 건너뛴다 — 조회 실패로 죽지 않는다', () => {
+    expect(findTruncatedSegments({}, { '/p': 'y'.repeat(10) })).toEqual([]);
   });
 });

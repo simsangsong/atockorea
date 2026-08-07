@@ -465,6 +465,46 @@ export function checkLengthRatio(
   }];
 }
 
+/**
+ * 🔴 번역 **생성 중** 잘림 탐지 — 게이트(G8)가 아니라 translate.ts 가 쓰는 것이다.
+ *
+ * 2026-08-07 실행에서 독일어 세그먼트 3개가 **문장 중간에서 끊긴 채** 출력 파일에
+ * 들어갔다. 셋 다 독일어 여는 따옴표 `„` 직후에 끊겼고, 한 건은 `note` 에
+ * `.}]}``` 같은 JSON 파편이 같이 담겨 있었다 — 모델이 문자열 밖으로 튀어나간 뒤
+ * 스키마가 그 잔해를 삼킨 것이다. `max_tokens` 가 아니다: 잘린 포인터 **뒤의**
+ * 세그먼트들은 멀쩡히 번역돼 있었고 총 출력은 상한의 20%도 안 됐다.
+ *
+ * translate.ts 는 포인터 **집합**만 맞으면 통과시켜서 이걸 못 봤고, 몇 시간 뒤
+ * verify 의 G3(숫자 소실)가 대신 잡았다. 생성하는 자리에서 잡아야 재시도가 싸다.
+ *
+ * 🔴 G8 과 문턱이 다른 것은 의도다. G8(de 0.9–1.5)은 **품질** 대역이라 플래그만
+ * 하지만, 이건 재요청을 발동시키므로 정상적인 압축에는 절대 걸리면 안 된다.
+ * 실측(2026-08-07, de·fr·it 번역 세그먼트 6,752개): 0.6 미만은 정확히 3개이고
+ * **셋 다 진짜 잘림**이었다. 오탐 0. 문턱을 올리려면 같은 corpus 로 다시 재라.
+ */
+export const TRUNCATION_RATIO_FLOOR = 0.6;
+/** 짧은 문구는 길이비 변동이 커서 의미가 없다 — G8 의 30자보다 훨씬 보수적으로 잡는다. */
+export const TRUNCATION_MIN_CHARS = 200;
+
+/**
+ * 잘린 것으로 보이는 포인터를 돌려준다. 빈 문자열은 규칙 6(확신 없음)이라 제외한다 —
+ * 그건 의도된 값이고 apply.ts 가 영어로 폴백한다.
+ */
+export function findTruncatedSegments(
+  sources: Record<string, string>,
+  targets: Record<string, string>,
+): Array<{ pointer: string; ratio: number }> {
+  const hits: Array<{ pointer: string; ratio: number }> = [];
+  for (const [pointer, target] of Object.entries(targets)) {
+    const source = sources[pointer];
+    if (typeof source !== 'string' || source.length < TRUNCATION_MIN_CHARS) continue;
+    if (!target.trim()) continue;
+    const ratio = target.length / source.length;
+    if (ratio < TRUNCATION_RATIO_FLOOR) hits.push({ pointer, ratio });
+  }
+  return hits;
+}
+
 /** G9 — 미번역 잔존. 원문과 동일하면 플래그(고유명사·브랜드는 예외). */
 export function checkUntranslated(
   source: string,
