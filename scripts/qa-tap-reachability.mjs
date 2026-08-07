@@ -44,7 +44,7 @@ const BASE = process.env.WALK_BASE ?? 'http://localhost:3185';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'functional-shots');
 mkdirSync(OUT, { recursive: true });
 
-const PROBE = () => {
+const PROBE = async () => {
   const VW = window.innerWidth;
   const VH = window.innerHeight;
   const out = { tap: [], clip: [], dead: [], hidden: [] }; // clip 은 항상 비어 있다(위 §2 참조)
@@ -133,12 +133,22 @@ const PROBE = () => {
     candidates.push(el);
   }
 
-  // 2단 — 가운데로 굴려서 재판정.
+  // 2단 — 가운데로 굴려서 재판정. 그래도 막혀 있으면 **한 박자 쉬고 한 번 더** 본다.
+  //
+  // 🔴 3단이 필요한 이유: 크로스페이드처럼 **계속 도는 애니메이션**은 전환 도중
+  // 두 카드가 같은 자리에 겹친다. 나가는 카드는 아직 opacity 0.08 이라 "보인다"로
+  // 잡히고, 들어오는 카드의 그라데이션이 그 위를 덮는다. 실측으로 확인했다 —
+  // 그 상태에서도 **손님 눈에 보이는 카드는 3/3 정상으로 클릭돼 이동한다.**
+  // 스크롤로 해소되는 겹침을 결함으로 안 세듯, 한 사이클이면 풀리는 겹침도 아니다.
   const restore = window.scrollY;
   for (const el of candidates) {
     el.scrollIntoView({ block: 'center', inline: 'center', behavior: 'instant' });
-    const blocker = blockerFor(el);
+    let blocker = blockerFor(el);
     if (!blocker) continue; // 굴리니 열렸다 = 그냥 스크롤이었다
+    await new Promise((r) => setTimeout(r, 1200));
+    blocker = blockerFor(el);
+    if (!blocker) continue; // 한 박자 뒤 풀렸다 = 전환 중이었다
+    if (!visible(el)) continue; // 그 사이 사라졌다(크로스페이드 아웃)
     const r = el.getBoundingClientRect();
     out.tap.push({
       control: label(el),
@@ -373,6 +383,23 @@ const wantAdmin = scope === 'all' || scope === 'admin';
 const wantSmartApp = scope === 'all' || scope === 'smartapp';
 
 const slugs = only.length || !wantPublic ? [] : await discoverTourSlugs();
+/**
+ * 🔴 발견이 0건이면 **조용히 2표면이 사라진다.** 실제로 한 번 그랬다: 공개 스윕이
+ * 27→25 표면으로 줄어든 채 `PASS 50` 을 찍었고, 줄었다는 사실은 로그 어디에도 없었다.
+ * 커버리지가 조용히 깎이는 것이 이 하니스가 거짓말하는 방식이라, 크게 적고 표시한다.
+ */
+let slugsMissing = false;
+if (wantPublic && !only.length && slugs.length === 0) {
+  console.log(
+    [
+      '',
+      '🔴 상세 페이지 슬러그를 못 찾았다 — tour-detail 표면 2개가 빠진다.',
+      '   /tours/list 가 느리거나 카드가 안 뜬 것이다. dev 서버를 확인하고 다시 돌려라.',
+      '',
+    ].join('\n'),
+  );
+  slugsMissing = true;
+}
 const SURFACES = [
   ...(wantPublic ? ALL_SURFACES : []),
   ...slugs.map((href, i) => [`tour-detail-${i + 1}`, href, 'body']),
@@ -593,5 +620,6 @@ for (const r of all) {
 // 요약 한 줄이 "다 봤다"는 뜻으로 읽힌다 — 스윕이 거짓말하는 가장 흔한 방식이다.
 console.log(
   `\n${bad === 0 ? 'PASS' : `FAIL — ${bad}건`}   표면 ${all.length}개` +
-    (adminSkipped ? '   ⚠ 어드민 제외 — 이 결과는 어드민을 포함하지 않는다' : ''),
+    (adminSkipped ? '   ⚠ 어드민 제외 — 이 결과는 어드민을 포함하지 않는다' : '') +
+    (slugsMissing ? '   ⚠ tour-detail 2표면 누락' : ''),
 );
