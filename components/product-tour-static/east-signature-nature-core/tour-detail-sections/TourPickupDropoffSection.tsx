@@ -276,7 +276,7 @@ export function TourPickupDropoffSection({
                       />
                     </button>
 
-                    <div
+                    <div inert={!isExpanded}
                       className={cn(
                         "grid transition-all duration-300 ease-out",
                         isExpanded ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0",

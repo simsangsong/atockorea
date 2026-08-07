@@ -127,7 +127,7 @@ export function TourIncludedSection({
           </div>
         </button>
 
-        <div
+        <div inert={!open}
           className={cn(
             "grid transition-[grid-template-rows] duration-300 ease-out",
             open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",

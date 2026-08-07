@@ -468,7 +468,7 @@ export function TourPracticalDetails({
                 </div>
               </button>
 
-              <div
+              <div inert={!isOpen}
                 className={cn(
                   "grid transition-all duration-200 ease-out",
                   isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
