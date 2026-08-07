@@ -46,7 +46,8 @@
       "tm": "4 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon & Yongin"
     },
     "/hero/meta/duration": {
       "source_en": "9–10 hours"
@@ -147,7 +148,8 @@
       "source_en": "Admission Included"
     },
     "/catalog_card/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon & Yongin"
     },
     "/catalog_card/duration": {
       "source_en": "9–10 hours"
@@ -389,5 +391,5 @@
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 40
+  "tmHits": 42
 }
