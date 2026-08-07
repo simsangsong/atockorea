@@ -47,9 +47,11 @@ export function DestinationCard({
       href={href}
       onClick={onClick}
       /* 2026-07-14 owner: destination cards were too big — the 4:5 portrait
-         "cover" ratio is compacted to 4:3 landscape. The editorial treatment
-         (film grain / vignette / serif title) is preserved deliberately. */
-      className="group relative block aspect-[4/3] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
+         "cover" ratio is compacted to 4:3 landscape.
+         2026-08-07 owner: still too big — 4:3 → 3:2 (≈11% shorter). The
+         editorial treatment (film grain / vignette / serif title) is preserved
+         deliberately; only the ratio and the title step down. */
+      className="group relative block aspect-[3/2] overflow-hidden rounded-card shadow-2 transition-[box-shadow,transform] duration-300 ease-out hover:-translate-y-0.5 hover:shadow-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-500/35 motion-reduce:transition-shadow motion-reduce:hover:translate-y-0"
     >
       <div className="absolute inset-0">
         <Image
@@ -102,7 +104,7 @@ export function DestinationCard({
 
       <div className="absolute inset-x-0 bottom-0 px-4 pb-4 md:px-5 md:pb-5">
         <h3
-          className="font-magazine-serif-ko text-[1.35rem] font-light leading-[0.95] tracking-[0.02em] text-white md:text-[1.7rem]"
+          className="font-magazine-serif-ko text-[1.2rem] font-light leading-[0.95] tracking-[0.02em] text-white md:text-[1.5rem]"
           style={{ textShadow: "0 3px 28px rgba(0,0,0,0.55), 0 1px 4px rgba(0,0,0,0.6)" }}
         >
           {name}

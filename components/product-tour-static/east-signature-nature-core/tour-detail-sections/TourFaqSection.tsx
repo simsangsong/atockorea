@@ -28,6 +28,13 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
     setExpandedId(expandedId === id ? null : id);
   };
 
+  const openAssistant = () => {
+    if (typeof window === "undefined") return;
+    window.dispatchEvent(
+      new CustomEvent("atc:open-assistant", { detail: { source: "tour_faq_footer" } }),
+    );
+  };
+
   return (
     <div className="space-y-6">
       <div>
@@ -115,9 +122,18 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
         </div>
         <div>
           <p className="text-sm font-medium text-foreground">{sectionUi.faqFooterTitle}</p>
-          <a href="#" className="text-sm text-primary hover:underline">
+          {/* Was `<a href="#">` with no handler — it looked like a link, and
+              tapping it did nothing but jump to the top of the page. The
+              assistant widget on this page exposes the same open hook the home
+              sections use (`TourProductAiAssistantWidget` OPEN_ASSISTANT_EVENT),
+              so this now opens the thing its label promises. */}
+          <button
+            type="button"
+            onClick={openAssistant}
+            className="text-sm text-primary hover:underline"
+          >
             {sectionUi.faqFooterLink}
-          </a>
+          </button>
         </div>
       </div>
     </div>

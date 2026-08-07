@@ -1482,7 +1482,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               type="button"
               onClick={() => void claimLead()}
               disabled={claimBusy}
-              className="tr-plan-btn tr-plan-btn--soft tr-plan-btn--sm tr-label mt-2.5"
+              className="tr-plan-btn tr-plan-btn--soft tr-label mt-2.5"
               data-testid="plan-claim-lead"
             >
               {copy.claimLead}
@@ -1617,7 +1617,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                               <button
                                 type="button"
                                 onClick={() => setTimeSheetFor(stop.id)}
-                                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label font-semibold !text-[var(--tr-ink)]"
+                                className="tr-plan-btn tr-plan-btn--quiet tr-label font-semibold !text-[var(--tr-ink)]"
                                 data-testid={`plan-stop-time-${index + 1}`}
                               >
                                 {stop.arrival_planned ?? '--:--'}
@@ -1654,7 +1654,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                             }
                             placeholder={copy.memoPlaceholder}
                             maxLength={500}
-                            className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+                            className="tr-label mt-2 min-h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
                           />
                         </div>
                       )}
@@ -2072,10 +2072,27 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       <button
                         type="button"
                         onClick={() => setPreviewTemplate(template)}
-                        /* Previewing commits nothing — soft tier. The loud one
-                           lives in the preview sheet's footer, on the button
-                           that actually replaces the day. */
-                        className="tr-plan-btn tr-plan-btn--soft tr-plan-btn--block tr-plan-btn--tap tr-label mt-3"
+                        data-testid={index === 0 ? 'plan-course-top' : undefined}
+                        /* Previewing commits nothing, so it stays soft — the loud
+                           one lives in the preview sheet's footer, on the button
+                           that actually replaces the day.
+
+                           🔴 Except on the ranked-first card. This list is
+                           ordered by the recommender and each card wears its
+                           rank (#1, #2 …), and then every card's action was
+                           drawn identically — the ranking was computed and
+                           thrown away at the last step. Measured: 33 visible
+                           controls on this screen and not one carrying the
+                           accent, on a screen whose own empty state says
+                           "choose a route below". So #1 gets the hero tier: it
+                           is the recommended next step and nothing else on the
+                           screen competes for that job. The rule the comment
+                           above states still holds where it matters — what this
+                           opens is a preview, and the button that replaces the
+                           day is still the loud one inside the sheet. */
+                        className={`tr-plan-btn tr-plan-btn--block tr-plan-btn--tap tr-label mt-3 ${
+                          index === 0 ? 'tr-plan-btn--hero' : 'tr-plan-btn--soft'
+                        }`}
                       >
                         <IconAsk size={TR_ICON.chip} aria-hidden />
                         {ui.previewCourse}
@@ -2141,7 +2158,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                         type="button"
                         onClick={() => addPoiStop(poi)}
                         disabled={added}
-                        className={`tr-plan-btn tr-plan-btn--sm tr-plan-btn--tap tr-label text-cjk-safe shrink-0 ${
+                        className={`tr-plan-btn tr-plan-btn--tap tr-label text-cjk-safe shrink-0 ${
                           added ? 'tr-plan-btn--done' : 'tr-plan-btn--soft'
                         }`}
                       >
@@ -2156,7 +2173,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   type="button"
                   onClick={() => setGoogleOpen((v) => !v)}
                   aria-expanded={googleOpen}
-                  className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-plan-btn--tap tr-label mt-3"
+                  className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--tap tr-label mt-3"
                 >
                   <IconArrived size={TR_ICON.meta} aria-hidden />
                   {copy.googleToggle}
@@ -2237,7 +2254,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                 onClick={() => setTimeSheetFor('departure')}
                 disabled={!canEdit}
                 aria-label={copy.departureTitle}
-                className="tr-plan-btn tr-plan-btn--quiet tr-plan-btn--sm tr-label mt-2 w-32 font-semibold !text-[var(--tr-ink)]"
+                className="tr-plan-btn tr-plan-btn--quiet tr-label mt-2 w-32 font-semibold !text-[var(--tr-ink)]"
                 data-testid="plan-departure-time"
               >
                 {departureTime ?? '--:--'}
@@ -2254,7 +2271,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   max={40}
                   value={needs.adults}
                   onChange={(e) => mutateNeeds({ adults: Math.max(0, Number.parseInt(e.target.value, 10) || 0) })}
-                  className="tr-label min-h-9 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
+                  className="tr-label min-h-11 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
                 />
               </label>
               <label className="tr-label flex items-center gap-2 text-[var(--tr-ink-2)]">
@@ -2265,7 +2282,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                   max={40}
                   value={needs.children}
                   onChange={(e) => mutateNeeds({ children: Math.max(0, Number.parseInt(e.target.value, 10) || 0) })}
-                  className="tr-label min-h-9 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
+                  className="tr-label min-h-11 w-16 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 text-[var(--tr-ink)]"
                 />
               </label>
               {needs.children > 0 && (
@@ -2335,7 +2352,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
               onChange={(e) => mutateNeeds({ allergy_note: e.target.value })}
               placeholder={copy.allergyPlaceholder}
               maxLength={300}
-              className="tr-label mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
+              className="tr-label mt-2 min-h-11 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)] focus:border-[var(--tr-accent)] focus:outline-none"
             />
 
             <p className="tr-meta mt-3 font-semibold uppercase tracking-wide text-[var(--tr-ink-3)]">{copy.paceTitle}</p>

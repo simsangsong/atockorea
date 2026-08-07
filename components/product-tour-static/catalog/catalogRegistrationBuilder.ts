@@ -67,12 +67,16 @@ export const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   // Klook prep 2026-06-29: +$5 sale price, discount REMOVE (compareAtPriceUsd dropped).
   // Busan cruise shore-excursion trio, 2026-08-04: priced to match the channel
   // listings exactly, to the cent. Keep in lockstep with `staticTourProductRegistry.ts`.
-  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
+  // Struck-through price = the listing's own 30%-off badge worked backwards
+  // (83.99 x 0.7 = 58.79). Owner asked for it shown, 2026-08-07.
+  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79, compareAtPriceUsd: 83.99 },
+  // 98.50 x 0.7 = 68.95, exactly.
+  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, compareAtPriceUsd: 98.5, maxGroupSize: 12 },
   // Flat 8-hour charter since 2026-08-07 (owner): ₩380,000 → $265 per vehicle,
   // $530 for 8+ pax because that is a second car. One cell on the card, so the
   // list price and the charged price are the same number by construction.
-  // maxGroupSize 14 = two vehicles of seven.
+  // maxGroupSize 14 = two vehicles of seven. (Supersedes the 169 rate-card
+  // minimum this line carried while the charter was still sold 5h–9h.)
   "busan-private-car-charter-cruise-shore": { listPriceUsd: 265, maxGroupSize: 14 },
   // Sibling city charter, new 2026-08-07 (owner): same 1–7 / 8+ vehicle rule,
   // sold on a 5h–9h grid instead of one cell. 160 = the cheapest cell (5h).

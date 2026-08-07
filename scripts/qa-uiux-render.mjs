@@ -164,10 +164,27 @@ const measure = () => {
   document.body.appendChild(probe);
   const accentRgb = norm(getComputedStyle(probe).color);
   probe.remove();
+  /**
+   * A saturated accent fill is the obvious primary, but this app has two hero
+   * primitives and only one of them is a slab:
+   *
+   *   .tr-cta-hero        accent fill (guide console 운행 시작, ops home)
+   *   .tr-plan-btn--hero  accent WASH inside a 1.5px accent ring — the planner's
+   *                       commit tier. Its own CSS comment says "Same grammar as
+   *                       the room's .tr-cta-hero … reads as 'this is the button'
+   *                       without adding a second saturated slab to a screen that
+   *                       already had too many."
+   *
+   * Matching only the fill reported the planner as having no primary while its
+   * documented hero tier was on screen. Both are named here rather than trying
+   * to infer 'looks loud' from computed style — the ring-and-wash treatment has
+   * a transparent-ish background and no amount of colour maths finds it.
+   */
+  const HERO_CLASSES = /\btr-cta-hero\b|\btr-plan-btn--hero\b/;
   const primaries = controls.filter((el) => {
     const cs = getComputedStyle(el);
     if (norm(cs.backgroundColor) === accentRgb) return true;
-    return /tr-cta-hero/.test(el.className.toString());
+    return HERO_CLASSES.test(el.className.toString());
   });
 
   return {
@@ -324,6 +341,42 @@ await visit('guide-console', fx.guideUrl, '[data-testid="staff-tab-btn-ops"], [d
 /** Plan editor — same room token as the room URL carries. */
 const rt = (fx.room1Url.split('?')[1] ?? '');
 await visit('plan-editor', `/tour-mode/plan/${fx.booking1}?${rt}`, 'main, [data-testid="plan-root"], h1');
+
+/**
+ * 🔴 The plan editor has two variants and only one had ever been walked.
+ *
+ * `PlanEditorClient` branches on `tour.is_private` (tours.price_type ===
+ * 'vehicle'). Both sim tours are per-person small-group, so `plan-editor` above
+ * is always the VIEW-ONLY variant — a set route, nothing to press. The editable
+ * planner (tabs, POI picker, submit bar) is a different screen, and reporting on
+ * one under the other's name is how it came to be listed as a hierarchy defect.
+ *
+ * Skipped rather than faked when the seeder found no active private tour: a
+ * surface measured against the wrong data is worse than one openly not measured.
+ */
+if (fx.planEditableUrl) {
+  await visit('plan-editor-private', fx.planEditableUrl, 'main, [data-testid="plan-root"], h1', async () => {
+    /**
+     * 🔴 Entry gate, same shape as the cockpit's `ops-drive` branch. Only the
+     * lead traveller may edit (P-D13); everyone else gets "Only the lead
+     * traveller can edit the plan" and one small button. Landing on that and
+     * calling it the editable planner is measuring the doormat.
+     *
+     * Conditional, not unconditional: on a booking where this session already
+     * IS the lead the button does not exist, and waiting for it would look
+     * exactly like a broken app.
+     */
+    const claim = page.locator('[data-testid="plan-claim-lead"]');
+    if (await claim.count().catch(() => 0)) {
+      await claim.click({ timeout: 20000 }).catch(() => {});
+      await page.waitForTimeout(2500);
+    }
+    await page.waitForSelector('[data-testid="plan-tab-pick"], [data-testid="plan-root"]', { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(1200);
+  });
+} else {
+  results.push({ surface: 'plan-editor-private', unreachable: 'no active vehicle-charter tour to seed against' });
+}
 
 /**
  * 관제 — UX-D3 scopes this to the C and H axes only (Korean-only, staff-only,

@@ -24,12 +24,20 @@ import {
   CANONICAL_EAST_SIGNATURE_CATALOG_SLUG,
 } from '@/lib/tour-consumer-visibility';
 
-const RETIRED = ['east-signature-nature-core', 'jeju-west-south-full-day-authentic-tour'];
+const RETIRED = [
+  'east-signature-nature-core',
+  'jeju-west-south-full-day-authentic-tour',
+  // Retired 2026-08-07 by owner instruction (commit 1db9775a). Pocheon was on
+  // the STILL_SELLING list below, so this suite went red on main the moment the
+  // retirement landed — the blocklist and the list of what is selling are two
+  // statements about the same fact, and only one of them moved.
+  'seoul-private-nami-morning-calm-petite-france',
+  'pocheon-sanjeong-lake-herb-island-art-valley',
+];
 
 const STILL_SELLING = [
   'jeju-grand-highlights-loop',
   'busan-top-attractions-day-tour',
-  'pocheon-sanjeong-lake-herb-island-art-valley',
   'jeju-island-private-car-charter-tour',
 ];
 

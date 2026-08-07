@@ -60,6 +60,10 @@ next-env.d.ts
 /.claude/*
 # Exception: project-level skills are versioned alongside the code they describe
 !/.claude/skills/
+# Exception: project-level agents, same reason. i18n-reviewer is a required step
+# in the translation track (docs/i18n-full-coverage-plan-2026-08-07.md §R), so it
+# has to exist in every session and worktree, not just the one that authored it.
+!/.claude/agents/
 
 # generated / scratch script artifacts
 scripts/*.log

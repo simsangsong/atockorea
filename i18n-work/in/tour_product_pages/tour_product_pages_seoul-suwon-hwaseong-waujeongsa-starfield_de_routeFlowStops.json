@@ -1,0 +1,52 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "de",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Hwaseong"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "UNESCO Past"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hwaseong-Haenggung-Palast"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Heritage Palace"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Starfield Library"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Modern Korea"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch",
+      "tm": "Mittagessen"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Reset",
+      "tm": "Pause"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Waujeongsa"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Spiritual Close"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Hwaseong-Haenggung-Palast"
+    }
+  },
+  "tmHits": 3
+}

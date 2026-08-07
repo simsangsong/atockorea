@@ -49,7 +49,9 @@
     "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 68.95
+    "salePriceUsd": 68.95,
+    "originalPriceUsd": 98.5,
+    "discountPercent": 30
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1368,7 +1370,7 @@
     {
       "timing": "ツアー終了後",
       "title": "ツアー後のサポート",
-      "detail": "フォローアップとおすすめ情報 > **備考：** 項目 6・9・12（`bg-emerald-50/80`、`bg-sky-50/80`、`bg-amber-50/80`）はTailwind CSSのクラス名のため、翻訳せずそのまま記載しています。"
+      "detail": "フォローアップとおすすめ情報"
     }
   ],
   "staticQuestions": [
@@ -1487,7 +1489,9 @@
       "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 68.95
+      "salePriceUsd": 68.95,
+      "originalPriceUsd": 98.5,
+      "discountPercent": 30
     }
   },
   "matching_profile": {

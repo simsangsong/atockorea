@@ -791,8 +791,21 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
           {/* Filter bar — Phase 2 ivory+amber rail (B1/B4). */}
           <div className={`relative ${LIST_RAIL_BG} ${LIST_RAIL_BORDER} ${LIST_SHADOW_WARM}`}>
             <div className="mx-auto max-w-5xl px-3 sm:px-4">
-            {/* Desktop: single row */}
-            <div className="hidden h-[64px] items-center gap-2.5 lg:flex">
+            {/*
+              Desktop rail. Wraps — it does NOT fit on one line and never did:
+              the controls measure 1350px inside a max-w-5xl box that is 992px
+              wide, so 358px used to hang outside and get clipped by the shell's
+              overflow-x-hidden. Live effect: "BUS / CL…" sliced mid-word, the
+              Price and More filters entirely off-screen and unreachable, and
+              the search field (the only non-`shrink-0` item) squeezed to 58px —
+              it absorbed the whole deficit alone.
+
+              `overflow-x-auto` is the usual reflex and is wrong here: per spec a
+              non-`visible` overflow on one axis computes the other to `auto`, so
+              it would start clipping the region/sort/price dropdowns vertically.
+              Wrapping adds no scroll container and hides nothing.
+            */}
+            <div className="hidden min-h-[64px] flex-wrap items-center gap-2.5 py-2 lg:flex">
               <div className="flex shrink-0 items-center gap-1.5">
                 <span className="text-[9px] font-black uppercase tracking-[0.28em] text-slate-400">
                   {t('toursList.eyebrow')}
@@ -801,8 +814,12 @@ export default function ToursListClient({ initialMediaBySlug }: ToursListClientP
 
               <div className="mx-1 h-4 w-px shrink-0 bg-slate-200/70" />
 
-              {/* Search with leading magnifier icon (Phase 2.3). */}
-              <div className="relative min-w-0 flex-1">
+              {/* Search with leading magnifier icon (Phase 2.3).
+                  `min-w-[13rem]`, not `min-w-0`: every sibling is `shrink-0`, so
+                  a zero floor let this field alone absorb the row's entire
+                  overflow and collapse to 58px — narrower than its own `pl-10`
+                  icon inset, i.e. no typing room at all. */}
+              <div className="relative min-w-[13rem] flex-1">
                 <svg
                   className="pointer-events-none absolute left-3.5 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400"
                   viewBox="0 0 24 24"
