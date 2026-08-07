@@ -105,6 +105,30 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "busan-private-car-charter-city-tour": {
+    "catalog_card": {
+      "slug": "busan-private-car-charter-city-tour",
+      "title": "Busan Private Car Charter",
+      "subtitle": "Build your own Busan day with a private licensed driver-guide, picked up at your hotel and priced by the hour.",
+      "region": "Busan (city + coast)",
+      "duration": "5–9 hours",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Private Tour",
+        "Fully Customizable",
+        "Busan Hotel Pickup"
+      ],
+      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "priceLabel": "",
+      "shortCardDescription": "A private car and licensed driver-guide for your group alone, anywhere in Busan. Start from one of three recommended routes — the classic top-attractions day, the sea temple and Sky Capsule coast, or the old-downtown and Songdo loop — then move, drop or add stops until the day is yours. Hotel pickup included, 5 to 9 hours, one price per vehicle for up to 7 guests."
+    },
+    "price": {
+      "amountLabel": "160"
+    }
+  },
   "busan-private-car-charter-cruise-shore": {
     "catalog_card": {
       "slug": "busan-private-car-charter-cruise-shore",
@@ -126,7 +150,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
     },
     "price": {
-      "amountLabel": "169"
+      "amountLabel": "265"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

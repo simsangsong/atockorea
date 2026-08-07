@@ -105,6 +105,30 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "busan-private-car-charter-city-tour": {
+    "catalog_card": {
+      "slug": "busan-private-car-charter-city-tour",
+      "title": "釜山プライベート貸切チャーター",
+      "subtitle": "ホテルまでお迎えに上がる専用車と資格を持つドライバーガイドで、時間制料金の釜山一日を自分で組み立てられます。",
+      "region": "釜山（市内＋海岸）",
+      "duration": "5〜9時間",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "プライベートツアー",
+        "行程は自由に変更",
+        "釜山ホテル送迎"
+      ],
+      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "priceLabel": "",
+      "shortCardDescription": "同行者だけの専用車と、資格を持つドライバーガイドが釜山のどこへでもご案内します。おすすめルート3種 — 定番の人気スポット巡り、海東龍宮寺とスカイカプセルの海岸ルート、旧市街と松島を結ぶルート — から選び、立ち寄り先を入れ替え・削除・追加すれば、その日はお客様だけの一日になります。ホテル送迎込み、5〜9時間、7名まで車両1台の同一料金。"
+    },
+    "price": {
+      "amountLabel": "160"
+    }
+  },
   "busan-private-car-charter-cruise-shore": {
     "catalog_card": {
       "slug": "busan-private-car-charter-cruise-shore",
@@ -126,7 +150,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
     },
     "price": {
-      "amountLabel": "169"
+      "amountLabel": "265"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

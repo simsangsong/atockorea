@@ -53,6 +53,12 @@ export const TOUR_WEATHER_ANCHORS: Record<string, TourWeatherAnchor> = {
   "busan-cruise-shore-excursion-bus-tour": { latitude: 35.1885, longitude: 129.2231, areaLabel: "Busan", areaLabelKo: "부산" },
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": { latitude: 35.488, longitude: 129.0643, areaLabel: "Yangsan · Yeongnam", areaLabelKo: "양산·영남" },
   "busan-private-car-charter-cruise-shore": { latitude: 35.0975, longitude: 129.0388, areaLabel: "Busan", areaLabelKo: "부산" },
+  // Seomyeon — the middle of the hotel area this charter is picked up from, and
+  // roughly the centroid of the three imported routes. Added with the product:
+  // an unmapped slug does not fail, it falls through to the East Jeju anchor,
+  // so a Busan page was showing "Live weather · East Jeju region" until this
+  // line existed. Caught on a real render, not in review.
+  "busan-private-car-charter-city-tour": { latitude: 35.1578, longitude: 129.06, areaLabel: "Busan", areaLabelKo: "부산" },
   "busan-small-group-sightseeing-tour-cruise-passengers": { latitude: 35.1885, longitude: 129.2231, areaLabel: "Busan", areaLabelKo: "부산" },
 
   // ── Seoul · Incheon · Gyeonggi · Gangwon ────────────────

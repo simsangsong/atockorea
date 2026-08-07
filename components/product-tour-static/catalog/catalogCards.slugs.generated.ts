@@ -7,6 +7,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "busan-gyeongju-unesco-legacy-tour-national-museum",
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
+  "busan-private-car-charter-city-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",

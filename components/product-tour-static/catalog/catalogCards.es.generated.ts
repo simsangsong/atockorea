@@ -105,6 +105,30 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "busan-private-car-charter-city-tour": {
+    "catalog_card": {
+      "slug": "busan-private-car-charter-city-tour",
+      "title": "Busan: coche privado con chófer",
+      "subtitle": "Diseña tu propio día en Busan con un chófer-guía autorizado, recogida en tu alojamiento y tarifa por horas.",
+      "region": "Busan (ciudad + costa)",
+      "duration": "5–9 horas",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Tour privado",
+        "Totalmente personalizable",
+        "Recogida en tu hotel de Busan"
+      ],
+      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Un coche privado y un chófer-guía autorizado solo para tu grupo, por todo Busan. Empieza por una de las tres rutas recomendadas — el día clásico de imprescindibles, la costa del templo marino y la Sky Capsule, o el circuito del casco antiguo y Songdo — y luego mueve, quita o añade paradas hasta que el día sea tuyo. Recogida en el alojamiento incluida, de 5 a 9 horas, un precio por vehículo para hasta 7 personas."
+    },
+    "price": {
+      "amountLabel": "160"
+    }
+  },
   "busan-private-car-charter-cruise-shore": {
     "catalog_card": {
       "slug": "busan-private-car-charter-cruise-shore",
@@ -126,7 +150,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "Alquiler privado de auto de 8 horas para pasajeros de crucero en Busan con conductor-guía autorizado de habla inglesa. El itinerario predeterminado incluye el Cementerio Memorial de las Naciones Unidas, los acantilados de Taejongdae, la Aldea Cultural de Gamcheon, el Parque Yongdusan y el Mercado de Jagalchi. Totalmente personalizable. Recogida en la terminal de cruceros, la estación KTX o cualquier hotel céntrico de Busan; el regreso puntual al barco está garantizado."
     },
     "price": {
-      "amountLabel": "169"
+      "amountLabel": "265"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {

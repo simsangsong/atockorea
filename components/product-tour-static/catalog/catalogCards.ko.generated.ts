@@ -105,6 +105,30 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": ""
     }
   },
+  "busan-private-car-charter-city-tour": {
+    "catalog_card": {
+      "slug": "busan-private-car-charter-city-tour",
+      "title": "부산 프라이빗 차량 전세",
+      "subtitle": "숙소로 모시러 가는 전용 차량과 자격증 있는 기사 가이드로, 시간 단위 요금으로 부산 하루를 직접 짭니다.",
+      "region": "부산 (시내 + 해안)",
+      "duration": "5~9시간",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "프라이빗 투어",
+        "일정 자유 변경",
+        "부산 숙소 픽업"
+      ],
+      "heroImage": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "thumbnail": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "priceLabel": "",
+      "shortCardDescription": "일행만 타는 전용 차량과 자격증 있는 기사 가이드가 부산 어디든 함께합니다. 추천 코스 세 가지 — 대표 명소를 도는 클래식 코스, 해동 용궁사와 스카이캡슐의 해안 코스, 원도심과 송도를 잇는 코스 — 중 하나로 시작해 스톱을 옮기고 빼고 더하면 그날은 일행의 하루가 됩니다. 숙소 픽업 포함, 5~9시간, 7인까지 차량당 한 가격."
+    },
+    "price": {
+      "amountLabel": "160"
+    }
+  },
   "busan-private-car-charter-cruise-shore": {
     "catalog_card": {
       "slug": "busan-private-car-charter-cruise-shore",
@@ -126,7 +150,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
     },
     "price": {
-      "amountLabel": "169"
+      "amountLabel": "265"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
