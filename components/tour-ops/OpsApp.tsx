@@ -441,6 +441,7 @@ export default function OpsApp() {
             onOpenSchedule={() => setScheduleOpen(true)}
             onOpenAutopilot={() => setAutopilotOpen(true)}
             onOpenMessaging={() => setMessagingOpen(true)}
+            managerOpen={managerOpen}
           />
         )}
         {tab === 'dashboard' && (
@@ -478,6 +479,14 @@ export default function OpsApp() {
           onClose={() => setManagerOpen(false)}
           onOpenRoom={openRoom}
           onRoomsChanged={() => void loadAll()}
+          /**
+           * 🔴 배차는 이 목록이 **아니라** 룸 드로어 안에서 일어난다(목록의
+           * [차량 배정]은 그 드로어를 열어 줄 뿐이다). 드로어가 닫혀도 목록은
+           * 다시 읽지 않아서, 배차를 끝내고 돌아온 운영자에게 그 행이 계속
+           * 「미배차」라고 말했다 — 안 된 줄 알고 2호차를 또 붙이게 만드는 거짓말이다.
+           * 열려 있던 룸 id 를 넘겨 닫히는 순간을 목록이 알게 한다.
+           */
+          openRoomId={openRoomId}
         />
       )}
       {inboxOpen && (
