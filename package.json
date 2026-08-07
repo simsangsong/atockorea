@@ -102,7 +102,8 @@
     "tours:qa-seoul-2026-08": "node scripts/qa-seoul-new-products-2026-08.mjs",
     "qa:overlay-collisions": "node scripts/qa-overlay-collisions.mjs",
     "i18n:translate": "node --env-file=.env.local --import tsx scripts/i18n/translate.ts",
-    "qa:tap-reachability": "node scripts/qa-tap-reachability.mjs"
+    "qa:tap-reachability": "node scripts/qa-tap-reachability.mjs",
+    "qa:rail-scrollbars": "node scripts/qa-rail-scrollbars.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

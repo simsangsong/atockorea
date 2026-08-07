@@ -112,7 +112,7 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
       )}
 
       {reviewPhotos.length > 0 && (
-        <div className="mt-4 flex gap-2 overflow-x-auto scrollbar-hide">
+        <div className="mt-4 flex gap-2 overflow-x-auto rail-scrollbar">
           {reviewPhotos.map((photo, i) => (
             // eslint-disable-next-line @next/next/no-img-element -- Supabase review image
             <img

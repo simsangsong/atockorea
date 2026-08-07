@@ -434,7 +434,7 @@ export function TourDesktopBookingCard({
               </span>
               {/* Horizontally scrollable hour pills (4h–10h) — the row scrolls on
                   narrow rails instead of wrapping/clipping. */}
-              <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
+              <div className="-mx-1 flex gap-1.5 overflow-x-auto rail-scrollbar px-1 pb-0.5">
                 {pricingTiers.durations.map((d) => (
                   <button
                     key={d}

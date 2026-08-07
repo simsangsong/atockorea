@@ -86,7 +86,7 @@ export function TourRatesSheet({ open, onClose, pricingTiers, sectionUi, locale 
             </div>
 
             <div className="min-h-0 flex-1 overflow-y-auto overscroll-contain px-4 py-3 sm:px-5 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))]">
-              <div className="overflow-x-auto rounded-xl border border-slate-200/70 scrollbar-none">
+              <div className="overflow-x-auto rounded-xl border border-slate-200/70 rail-scrollbar">
                 <table className="w-full min-w-max text-[13px]">
                   <thead className="bg-slate-100/70 text-[10.5px] uppercase tracking-wide text-muted-foreground">
                     <tr>
