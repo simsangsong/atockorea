@@ -580,7 +580,13 @@ describe('shared Cockpit', () => {
         await act(async () => {
           fireEvent.change(screen.getByTestId('cockpit-attach-input'), { target: { files: [big] } });
         });
-        expect(fetchMock).not.toHaveBeenCalled();
+        // 🔴 Not `not.toHaveBeenCalled()`. Location sharing now defaults ON for
+        // the tour day (사장님 2026-08-07), and the console fetches the room
+        // snapshot to arm the geofence — a real call that has nothing to do with
+        // this file. What this test is actually about is that the oversized
+        // image never reaches the messages endpoint.
+        const posted = fetchMock.mock.calls.map((c) => String(c[0]));
+        expect(posted.some((url) => url.includes('/messages'))).toBe(false);
         expect(await screen.findByText(/8MB/)).toBeInTheDocument();
       } finally {
         global.fetch = original;

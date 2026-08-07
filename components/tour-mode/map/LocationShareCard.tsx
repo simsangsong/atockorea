@@ -115,7 +115,11 @@ export default function LocationShareCard({
   const live = enabled && status === 'watching';
 
   return (
-    <div className="tr-card px-4 py-3" data-testid="location-share-card">
+    /* 사장님 2026-08-07 "컴팩트": this card sits between the presence bar and the
+       map, so every px of padding here is a px the map does not get. Nothing was
+       removed — the consent line, the denied guidance and the wake-lock hint all
+       still render, just in a tighter box. */
+    <div className="tr-card px-3.5 py-2.5" data-testid="location-share-card">
       <div className="flex items-center justify-between gap-3">
         <p className="tr-title flex items-center gap-1.5 text-[var(--tr-ink)]">
           <IconMyLocation size={TR_ICON.chip} className="text-[var(--tr-safe)]" aria-hidden />
@@ -147,17 +151,17 @@ export default function LocationShareCard({
         </button>
       </div>
       {denied ? (
-        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-danger)]">{copy.denied}</p>
+        <p className="tr-label mt-1 leading-snug text-[var(--tr-danger)]">{copy.denied}</p>
       ) : unsupported ? (
-        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.unsupported}</p>
+        <p className="tr-label mt-1 leading-snug text-[var(--tr-ink-2)]">{copy.unsupported}</p>
       ) : live ? (
-        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-safe)]">
+        <p className="tr-label mt-1 leading-snug text-[var(--tr-safe)]">
           <span className="mr-1 inline-block h-1.5 w-1.5 animate-pulse rounded-full bg-[var(--tr-safe)] align-middle" />
           {copy.sharing}
           {!isWakeLockSupported() && <span className="block text-[var(--tr-ink-2)]">{copy.keepOn}</span>}
         </p>
       ) : (
-        <p className="tr-label mt-1.5 leading-relaxed text-[var(--tr-ink-2)]">{copy.consent}</p>
+        <p className="tr-label mt-1 leading-snug text-[var(--tr-ink-2)]">{copy.consent}</p>
       )}
     </div>
   );

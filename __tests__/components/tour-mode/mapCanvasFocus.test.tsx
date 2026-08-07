@@ -68,6 +68,19 @@ beforeAll(() => {
       Map: FakeMap,
       LatLngBounds: FakeBounds,
       SymbolPath: { CIRCLE: 0 },
+      // Marker art turns `MarkerArt` into `google.maps.Icon`, which needs these.
+      Size: class {
+        constructor(
+          public width: number,
+          public height: number,
+        ) {}
+      },
+      Point: class {
+        constructor(
+          public x: number,
+          public y: number,
+        ) {}
+      },
       // Markers are not what is under test; absorb every setter the library
       // reaches for rather than chasing its updater map.
       Marker: function FakeMarker() {
@@ -79,10 +92,33 @@ beforeAll(() => {
           },
         );
       },
-      event: { addListener: () => ({ remove() {} }), removeListener: () => {}, clearInstanceListeners: () => {} },
+      /**
+       * The library wires every `onX` prop through `google.maps.event`, so the
+       * honest way to simulate a guest dragging the map is to fire the handler
+       * the component actually registered — not to poke its internals.
+       */
+      event: {
+        addListener: (_i: unknown, name: string, handler: () => void) => {
+          const entry = { name, handler };
+          listeners.push(entry);
+          return entry;
+        },
+        removeListener: (entry: { name: string }) => {
+          const i = listeners.findIndex((l) => l === entry);
+          if (i >= 0) listeners.splice(i, 1);
+        },
+        clearInstanceListeners: () => {
+          listeners.length = 0;
+        },
+      },
     },
   };
 });
+
+const listeners: Array<{ name: string; handler: () => void }> = [];
+function fireMapEvent(name: string) {
+  [...listeners].filter((l) => l.name === name).forEach((l) => l.handler());
+}
 
 /**
  * `useJsApiLoader` would try to inject Google's script tag. The loader is not
@@ -100,6 +136,7 @@ beforeEach(() => {
   calls.panTo.length = 0;
   calls.setZoom.length = 0;
   calls.fitBounds.length = 0;
+  listeners.length = 0;
 });
 
 const BASE = {
@@ -113,6 +150,20 @@ const BASE = {
 };
 
 const SEOUL = { latitude: 37.5665, longitude: 126.978 };
+
+/** The person a guest is waiting for, wherever they currently are. */
+function guideAt(lat: number, lng: number): Record<string, RoomLocation> {
+  return {
+    'guide-1': {
+      participant_id: 'guide-1',
+      role: 'guide',
+      display_name: 'Kim',
+      latitude: lat,
+      longitude: lng,
+      recorded_at: new Date().toISOString(),
+    } as RoomLocation,
+  };
+}
 
 describe('RoomMapCanvas — the map does not fight the guest', () => {
   it('applies center exactly once, no matter how many times it re-renders', () => {
@@ -197,15 +248,65 @@ describe('RoomMapCanvas — initial view', () => {
     expect(calls.setZoom.at(-1)).toBe(16);
   });
 
-  it('fits over genuinely distinct points', () => {
+  it('staff open on the whole picture — everyone plus every stop', () => {
     render(
       <RoomMapCanvas
         {...BASE}
+        isOperator
         locations={echoOfMe}
         spots={[{ id: 's1', title: 'Stop', latitude: 35.1, longitude: 129.0 }]}
       />,
     );
     expect(calls.fitBounds).toHaveLength(1);
+    expect((calls.fitBounds[0] as FakeBounds).points).toHaveLength(2);
+  });
+
+  /**
+   * 사장님 2026-08-07 — "아침에 고객이 맵을 켰을 때 실시간 가이드 위치를 볼 수 있도록."
+   * A guest opening on the whole itinerary is what makes the van a speck.
+   */
+  it('a guest opens framed on the vehicle and themselves, not on the itinerary', () => {
+    render(
+      <RoomMapCanvas
+        {...BASE}
+        locations={{ ...echoOfMe, ...guideAt(37.57, 126.99) }}
+        spots={[{ id: 's1', title: 'Far away stop', latitude: 35.1, longitude: 129.0 }]}
+      />,
+    );
+    expect(calls.fitBounds).toHaveLength(1);
+    const framed = (calls.fitBounds[0] as FakeBounds).points as Array<{ lat: number; lng: number }>;
+    expect(framed).toHaveLength(2); // vehicle + me
+    expect(framed.some((p) => p.lat === 35.1)).toBe(false); // the far stop is not in it
+  });
+
+  it('waits for the vehicle rather than settling on the stops', () => {
+    const spots = [{ id: 's1', title: 'Stop', latitude: 35.1, longitude: 129.0 }];
+    // Opens before the guide's first ping: framing the itinerary is allowed…
+    const { rerender } = render(<RoomMapCanvas {...BASE} spots={spots} />);
+    expect(calls.fitBounds.length + calls.panTo.length).toBeGreaterThan(0);
+    calls.fitBounds.length = 0;
+    calls.panTo.length = 0;
+
+    // …but the vehicle still gets to claim the frame when it arrives.
+    rerender(<RoomMapCanvas {...BASE} spots={spots} locations={guideAt(37.57, 126.99)} />);
+    expect(calls.panTo).toEqual([{ lat: 37.57, lng: 126.99 }]);
+
+    // And only once — later pings do not keep yanking the view.
+    calls.panTo.length = 0;
+    rerender(<RoomMapCanvas {...BASE} spots={spots} locations={guideAt(37.58, 126.99)} />);
+    expect(calls.panTo).toHaveLength(0);
+  });
+
+  it('a guest who has dragged the map keeps it, even when the vehicle shows up', () => {
+    const spots = [{ id: 's1', title: 'Stop', latitude: 35.1, longitude: 129.0 }];
+    const { rerender } = render(<RoomMapCanvas {...BASE} spots={spots} />);
+    act(() => fireMapEvent('dragstart'));
+    calls.fitBounds.length = 0;
+    calls.panTo.length = 0;
+
+    rerender(<RoomMapCanvas {...BASE} spots={spots} locations={guideAt(37.57, 126.99)} />);
+    expect(calls.panTo).toHaveLength(0);
+    expect(calls.fitBounds).toHaveLength(0);
   });
 });
 
