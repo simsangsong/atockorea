@@ -86,7 +86,7 @@ const HERO_IMG = "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cl
 const SKYCAP_IMAGES = [
   "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
   "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-  "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+  "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
   "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
 ];
 

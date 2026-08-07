@@ -70,7 +70,7 @@ const OUT_DIR = path.join(STATIC_ROOT, SLUG);
 const CONTENT_DIR = path.join(__dirname, "busan-city-charter-content");
 const LOCALES = ["en", "ko", "ja", "zh", "zh-TW", "es"];
 
-const HERO_IMG = "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp";
+const HERO_IMG = "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp";
 
 /**
  * The three products whose itineraries become the recommended routes, in the

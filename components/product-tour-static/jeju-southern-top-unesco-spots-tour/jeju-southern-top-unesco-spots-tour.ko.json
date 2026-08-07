@@ -15,12 +15,12 @@
       "오설록 티 뮤지엄 투어",
       "한라산 어승생악"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "제주 남부 서귀포 시그니처 당일 투어 · 거의 전 코스 무료 입장 | AtoC",
     "description": "제주 남부 서귀포 소그룹 당일 투어: 정방폭포 → 외돌개 & 올레 7코스 → 약천사 → 점심 → 오설록 티 뮤지엄 → 한라산 어승생악. 거의 전 코스 무료 입장, 소그룹 진행."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "thumbnail": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "제주 남부 서귀포 시그니처 당일 투어",
     "priceLabel": "",
     "shortCardDescription": "제주 남부 서귀포의 대표 명소를 소그룹으로 둘러보는 당일 투어 — 아시아에서 유일하게 바다로 직접 떨어지는 정방폭포, 외돌개 기암과 올레 7코스 해안 산책, 동아시아 최대 사찰 약천사, 오설록 티 뮤지엄, 그리고 한라산 어승생악 탐방로. 제주시 전역 및 공항 포함 4곳의 픽업 포인트, 공인 영어·중국어 가이드 동반, 정방폭포 외 거의 전 코스 무료 입장, 쇼핑 강요 없음.",
@@ -47,7 +47,7 @@
       "합리적인 가격",
       "쇼핑 없음"
     ],
-    "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp"
+    "heroImage": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp"
   },
   "headlineLine1": "제주 남부 서귀포 시그니처",
   "headlineLine2": "당일 투어",
@@ -60,7 +60,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "imageUrl": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "imagePosition": "center 45%",
     "tagline": "제주 남부 서귀포 해안의 대표 명소를 하루에 — 정방폭포, 외돌개 올레길, 약천사, 오설록, 한라산. 거의 전 코스 무료 입장.",
     "pills": [
@@ -139,114 +139,186 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "정방폭포",
-      "alt": "정방폭포 — gallery image 1",
-      "caption": "정방폭포 — photo 1"
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+      "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 1",
+      "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/yakcheonsa/photo-001.webp",
-      "location": "약천사",
-      "alt": "약천사 — gallery image 2",
-      "caption": "약천사 — photo 2"
+      "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+      "location": "외돌개 & 올레 7코스 해안 산책",
+      "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 1",
+      "caption": "외돌개 & 올레 7코스 해안 산책 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+      "location": "약천사 (동아시아 최대 사찰)",
+      "alt": "약천사 (동아시아 최대 사찰) — gallery image 1",
+      "caption": "약천사 (동아시아 최대 사찰) — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+      "location": "한라산 어승생악 (유네스코 세계자연유산)",
+      "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 1",
+      "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+      "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 2",
+      "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+      "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 3",
+      "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+      "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 4",
+      "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+      "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 5",
+      "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+      "location": "외돌개 & 올레 7코스 해안 산책",
+      "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 2",
+      "caption": "외돌개 & 올레 7코스 해안 산책 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+      "location": "외돌개 & 올레 7코스 해안 산책",
+      "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 3",
+      "caption": "외돌개 & 올레 7코스 해안 산책 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+      "location": "외돌개 & 올레 7코스 해안 산책",
+      "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 4",
+      "caption": "외돌개 & 올레 7코스 해안 산책 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+      "location": "약천사 (동아시아 최대 사찰)",
+      "alt": "약천사 (동아시아 최대 사찰) — gallery image 2",
+      "caption": "약천사 (동아시아 최대 사찰) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+      "location": "약천사 (동아시아 최대 사찰)",
+      "alt": "약천사 (동아시아 최대 사찰) — gallery image 3",
+      "caption": "약천사 (동아시아 최대 사찰) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+      "location": "약천사 (동아시아 최대 사찰)",
+      "alt": "약천사 (동아시아 최대 사찰) — gallery image 4",
+      "caption": "약천사 (동아시아 최대 사찰) — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "오설록 티 뮤지엄 + 녹차밭",
       "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3",
       "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3"
     },
     {
-      "id": 4,
+      "id": 18,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-      "location": "한라산 어승생악 탐방로",
-      "alt": "한라산 어승생악 탐방로 — gallery image 4",
-      "caption": "한라산 어승생악 탐방로 — photo 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "정방폭포",
-      "alt": "정방폭포 — gallery image 5",
-      "caption": "정방폭포 — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "정방폭포",
-      "alt": "정방폭포 — gallery image 6",
-      "caption": "정방폭포 — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "오설록 티 뮤지엄 + 녹차밭",
-      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7",
-      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7"
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4"
     },
     {
-      "id": 8,
+      "id": 19,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
       "location": "오설록 티 뮤지엄 + 녹차밭",
-      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 8",
-      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 8"
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5"
     },
     {
-      "id": 9,
+      "id": 20,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
       "location": "오설록 티 뮤지엄 + 녹차밭",
-      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 9",
-      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 9"
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6"
     },
     {
-      "id": 10,
+      "id": 21,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "한라산 어승생악 탐방로",
-      "alt": "한라산 어승생악 탐방로 — gallery image 10",
-      "caption": "한라산 어승생악 탐방로 — photo 10"
+      "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+      "location": "한라산 어승생악 (유네스코 세계자연유산)",
+      "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 2",
+      "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 2"
     },
     {
-      "id": 11,
+      "id": 22,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-      "location": "한라산 어승생악 탐방로",
-      "alt": "한라산 어승생악 탐방로 — gallery image 11",
-      "caption": "한라산 어승생악 탐방로 — photo 11"
+      "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+      "location": "한라산 어승생악 (유네스코 세계자연유산)",
+      "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 3",
+      "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 3"
     },
     {
-      "id": 12,
+      "id": 23,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "location": "한라산 1100 고지",
-      "alt": "한라산 1100 고지 — gallery image 12",
-      "caption": "한라산 1100 고지 — photo 12"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-      "location": "한라산 1100 고지",
-      "alt": "한라산 1100 고지 — gallery image 13",
-      "caption": "한라산 1100 고지 — photo 13"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-      "location": "한라산 1100 고지",
-      "alt": "한라산 1100 고지 — gallery image 14",
-      "caption": "한라산 1100 고지 — photo 14"
+      "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+      "location": "한라산 어승생악 (유네스코 세계자연유산)",
+      "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 4",
+      "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -286,7 +358,7 @@
       "name": "정방폭포 (아시아 유일 해안 직낙 폭포)",
       "category": "해안 폭포 — 영주십경 · 서귀포 지명 유래",
       "description": "**정방폭포(정방, 正房)는 절벽에서 바다로 직접 떨어지는 아시아에서 유일한 폭포**로 알려진 서귀포의 대표 명소입니다. 높이 **23m, 폭 약 8m**의 물줄기가 현무암 해벽을 타고 짙푸른 바다로 쏟아지며, 맑은 날에는 **섶섬(섶섬)과 문섬(문섬)**이 배경에 함께 담깁니다. \n\n정방폭포는 한라산·천제연과 함께 조선시대 문인들이 선정한 **영주십경(영주십경, 제주의 10대 절경)** 중 하나이며, 절벽에는 **‘서불과차(徐市過此)’** 전설이 새겨져 있습니다 — 진시황의 명을 받아 불로초를 찾아온 서불이 이곳을 지나 서쪽으로 돌아갔다는 이야기로, ‘서귀포(西歸浦)’라는 지명의 유래가 되었습니다. \n\n매표소에서 폭포 아래까지는 **약 130개의 계단**을 내려가야 하며, 바닥은 둥근 자갈과 바위로 이루어져 있어 미끄럽지 않은 신발이 필수입니다. 폭포 아래에서는 물보라와 바다를 배경으로 한 인증샷이 인기이며, 절벽 위 전망대에서는 섶섬·문섬을 한눈에 조망할 수 있습니다.",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**아시아에서 유일하게 바다로 직접 떨어지는 폭포** — 높이 23m / 폭 약 8m",
         "**영주십경(제주 10대 절경)** 중 하나 — 한라산·천제연과 함께 선정",
@@ -331,21 +403,31 @@
         "walking": "보통 — 폭포 아래까지 약 130개 계단, 바닥은 고르지 않은 바위; 미끄럼 주의"
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -353,7 +435,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
           "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 1",
           "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 1"
@@ -361,7 +443,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
           "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 2",
           "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 2"
@@ -369,10 +451,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
           "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 3",
           "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+          "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 4",
+          "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+          "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 5",
+          "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 5"
         }
       ]
     },
@@ -383,7 +481,7 @@
       "name": "외돌개 & 올레 7코스 해안 산책",
       "category": "해안 기암 + 올레길 — 제주 세계지질공원 지질명소",
       "description": "**외돌개(외돌개)는 약 150만 년 전 화산 분출로 형성된 높이 약 20m의 해안 돌기둥**으로, 망망대해에 홀로 솟아 있어 ‘외(홀로) 돌(바위) 개’라는 이름이 붙었습니다. ‘장군바위’ 또는 ‘할망바위’로도 불리며, **드라마 「대장금」 촬영지**로 널리 알려졌습니다. 외돌개와 서귀포 층리 해안 절벽은 **제주 세계지질공원(유네스코 글로벌 지오파크)의 공식 지질명소** 중 하나입니다. \n\n외돌개는 **제주올레 7코스** 위에 자리합니다 — 7코스는 제주올레 여행자센터에서 출발해 법환포구를 거쳐 월평까지 이어지는 약 17.6km의 대표 해안 올레로, 올레꾼들이 가장 사랑하는 ‘수봉로’ 구간이 외돌개 인근을 지납니다. \n\n이 코스에서는 외돌개 전망 포인트와 함께 **올레 7코스의 해안 산책로 일부를 짧게 걷습니다.** 소나무 숲 사이로 난 길에서 외돌개와 섶섬·문섬, 끝없이 펼쳐진 남쪽 바다를 조망할 수 있어, 정방폭포의 폭포 풍경과는 또 다른 탁 트인 해안 경관을 선사합니다. **무료 개방**, 산책로는 대체로 평탄하나 일부 자연석 구간이 있습니다.",
-      "image": null,
+      "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
       "highlights": [
         "**외돌개** — 약 150만 년 전 형성된 높이 약 20m 해안 돌기둥(‘장군바위’)",
         "드라마 **「대장금」 촬영지**로 유명한 서귀포 해안 절경",
@@ -426,9 +524,64 @@
         "admission": "무료",
         "walking": "쉬움~보통 — 해안 산책로 대체로 평탄, 일부 자연석·계단 구간"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+        "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+        "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+        "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "location": "외돌개 & 올레 7코스 해안 산책",
+          "caption": "외돌개 & 올레 7코스 해안 산책 — photo 1",
+          "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "location": "외돌개 & 올레 7코스 해안 산책",
+          "caption": "외돌개 & 올레 7코스 해안 산책 — photo 2",
+          "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "location": "외돌개 & 올레 7코스 해안 산책",
+          "caption": "외돌개 & 올레 7코스 해안 산책 — photo 3",
+          "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "location": "외돌개 & 올레 7코스 해안 산책",
+          "caption": "외돌개 & 올레 7코스 해안 산책 — photo 4",
+          "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 4,
@@ -437,7 +590,7 @@
       "name": "약천사 (동아시아 최대 사찰)",
       "category": "사찰 — 동아시아 최대 규모 대적광전",
       "description": "**약천사(약천사, 藥泉寺)는 부지 122,100㎡ 규모로 동아시아 최대 사찰 중 하나**로 꼽히는 서귀포 대포동의 대형 사찰입니다. 이름은 ‘약이 되는 샘물이 흐르는 절’이라는 뜻으로, 사철 마르지 않는 약수가 솟는 옛 ‘약수암’ 자리에 세워졌습니다 — **혜인 스님이 1981년 착공해 1996년 완공**했습니다. \n\n중심 법당인 **대적광전(大寂光殿)은 높이 약 30m, 연면적 약 3,305㎡**에 이르는 동양 최대급 단일 법당으로, 조선 초기 사찰 건축 양식을 따랐습니다. 내부에는 **높이 5m의 비로자나불(국내 최대 목조 좌불)**이 4m 좌대 위에 모셔져 있으며, 다층 벽면을 가득 채운 수만 구의 작은 금불상이 압도적인 장관을 이룹니다. 법당 앞에는 **18톤 규모의 범종**이 자리합니다. \n\n약천사는 **제주올레 7코스(종점)와 8코스(시점)가 만나는 지점**에 있어 올레꾼과 관광객이 함께 찾으며, **2006년부터 템플스테이**를 운영하고 있습니다. **무료 입장**이며, 평탄한 경내는 비교적 둘러보기 편합니다.",
-      "image": "/images/tours/yakcheonsa/photo-001.webp",
+      "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
       "highlights": [
         "**동아시아 최대급 사찰** — 부지 약 122,100㎡",
         "**대적광전** 높이 약 30m / 연면적 약 3,305㎡ — 동양 최대급 단일 법당",
@@ -482,11 +635,26 @@
         "walking": "쉬움 — 평탄한 경내; 법당 진입 시 계단 일부"
       },
       "images": [
-        "/images/tours/yakcheonsa/photo-001.webp"
+        "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+        "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+        "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+        "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/yakcheonsa/photo-001.webp",
+          "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
           "source": "atoc-korea"
         }
       ],
@@ -494,10 +662,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/yakcheonsa/photo-001.webp",
+          "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
           "location": "약천사 (동아시아 최대 사찰)",
           "caption": "약천사 (동아시아 최대 사찰) — photo 1",
           "alt": "약천사 (동아시아 최대 사찰) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "location": "약천사 (동아시아 최대 사찰)",
+          "caption": "약천사 (동아시아 최대 사찰) — photo 2",
+          "alt": "약천사 (동아시아 최대 사찰) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "location": "약천사 (동아시아 최대 사찰)",
+          "caption": "약천사 (동아시아 최대 사찰) — photo 3",
+          "alt": "약천사 (동아시아 최대 사찰) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+          "location": "약천사 (동아시아 최대 사찰)",
+          "caption": "약천사 (동아시아 최대 사찰) — photo 4",
+          "alt": "약천사 (동아시아 최대 사찰) — gallery image 4"
         }
       ]
     },
@@ -534,7 +726,7 @@
       "name": "오설록 티 뮤지엄 + 녹차밭",
       "category": "차 문화 박물관 — 국내 최대 녹차밭 (서광다원)",
       "description": "**오설록 티 뮤지엄(O'Sulloc, ‘눈과 녹색의 만남’)**은 한국 최대 화장품 기업 **아모레퍼시픽**의 차 문화 플래그십 공간입니다. 창업자 **서성환 회장이 1979년** 직접 이 프로젝트를 개척하며 제주 서광 고원의 화산재 농지를 차밭으로 되살렸습니다. 오늘날 **서광다원**은 아모레퍼시픽의 제주 세 농장에 걸쳐 **연간 약 700톤**을 생산하는 **국내 최대 녹차밭**입니다. \n\n박물관 건물은 다원 한가운데에 **2001년 개관**해 미니멀한 디자인으로 **디자인붐(designboom) 세계 10대 미술관**에 선정되었습니다. **무료 입장**, 매일 운영, 연간 방문객 약 **200만 명**. 방문은 세 구간으로 나뉩니다: **(1) 박물관 내부** — 차 제조 과정·고대 다구 컬렉션·옥상 전망대; **(2) 티 하우스 카페** — 시그니처 **녹차 롤케이크**와 **녹차 아이스크림**; **(3) 다원 산책로** — 차 나무 사이 자갈길(석양 사진 명소). \n\n**이니스프리 제주하우스**(아모레퍼시픽 자연주의 브랜드)는 도보 5분 거리이며 무료 입장, 감귤 비누 DIY 워크숍 선택 참여(₩15,000) 가능합니다.",
-      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
       "highlights": [
         "**아모레퍼시픽** 대표 브랜드 — 창업자 서성환이 **1979년** 제주 차 재배 개척",
         "**서광다원 = 국내 최대 녹차밭**; 연간 약 700톤 생산",
@@ -579,26 +771,36 @@
         "walking": "쉬움 — 평탄한 포장길, 유모차·휠체어 이용 가능"
       },
       "images": [
-        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -606,7 +808,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "location": "오설록 티 뮤지엄 + 녹차밭",
           "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1",
           "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1"
@@ -614,7 +816,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "location": "오설록 티 뮤지엄 + 녹차밭",
           "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2",
           "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2"
@@ -622,7 +824,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "location": "오설록 티 뮤지엄 + 녹차밭",
           "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3",
           "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3"
@@ -630,10 +832,26 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
           "location": "오설록 티 뮤지엄 + 녹차밭",
           "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4",
           "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
         }
       ]
     },
@@ -644,7 +862,7 @@
       "name": "한라산 어승생악 (유네스코 세계자연유산)",
       "category": "유네스코 화산 지질 — 한라산 어승생악 탐방로 (3중 자연 지정)",
       "description": "**어승생악(1,169m)**은 어리목 탐방안내소 인근에서 시작되는 한라산 측면의 짧은 화산 분석구(오름) 탐방로입니다. 한라산은 대한민국 최고봉이자 **유네스코 세계자연유산(2007)·생물권보전지역(2002)**으로, 이 코스는 정상 등반 없이도 한라산을 체험하는 적합한 방법입니다. \n\n오늘 코스는 오설록에서 **1100도로(제주 최고 고도 국도)를 따라 한라산을 넘어 제주시로 복귀**하는 길목에 어승생악을 배치했습니다. 탐방로는 성판악·관음사 정상 코스보다 훨씬 짧고 **정상 예약제가 적용되지 않으며**, 넓은 계단과 목재 데크로 이루어져 운동화로도 충분합니다(편도 1.3km / 고도차 약 200m). \n\n맑은 날 상부 데크 전망대에서는 **한라산 고지대 사면, 제주의 오름 군락, 북쪽 바다**를 조망할 수 있고, 정상부에는 **1945년 일본 제국군 토치카(진지)**가 남아 있습니다. 산악 날씨는 빠르게 변하므로 겉옷 준비를 권장합니다. **무료 입장**이며 하루를 마무리하는 시원한 산 공기가 인상적인 피날레가 됩니다.",
-      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**한라산 = 3중 자연 지정**: 유네스코 세계자연유산 2007 + 생물권보전지역 2002 + 국립공원 1970",
         "**어승생악 1,169m** — 한라산 측면 오름(기생화산)",
@@ -690,21 +908,26 @@
         "walking": "보통 — 거리는 짧지만 계단·오르막 구간 있음"
       },
       "images": [
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-        "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+        "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+        "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+        "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
           "source": "atoc-korea"
         }
       ],
@@ -712,7 +935,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "location": "한라산 어승생악 (유네스코 세계자연유산)",
           "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 1",
           "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 1"
@@ -720,7 +943,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "location": "한라산 어승생악 (유네스코 세계자연유산)",
           "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 2",
           "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 2"
@@ -728,10 +951,18 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
           "location": "한라산 어승생악 (유네스코 세계자연유산)",
           "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 3",
           "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+          "location": "한라산 어승생악 (유네스코 세계자연유산)",
+          "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 4",
+          "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 4"
         }
       ]
     },
@@ -1615,7 +1846,7 @@
         "headlineLine1": "제주 남부 서귀포 시그니처",
         "headlineLine2": "당일 투어",
         "hero": {
-          "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "imageUrl": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
           "imagePosition": "center 45%",
           "tagline": "제주 남부 서귀포 해안의 대표 명소를 하루에 — 정방폭포, 외돌개 올레길, 약천사, 오설록, 한라산. 거의 전 코스 무료 입장.",
           "pills": [
@@ -1715,7 +1946,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "정방폭포",
             "alt": "정방폭포 — gallery image 1",
             "caption": "정방폭포 — photo 1"
@@ -1739,7 +1970,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "location": "한라산 어승생악 탐방로",
             "alt": "한라산 어승생악 탐방로 — gallery image 4",
             "caption": "한라산 어승생악 탐방로 — photo 4"
@@ -1747,7 +1978,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "정방폭포",
             "alt": "정방폭포 — gallery image 5",
             "caption": "정방폭포 — photo 5"
@@ -1755,7 +1986,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "정방폭포",
             "alt": "정방폭포 — gallery image 6",
             "caption": "정방폭포 — photo 6"
@@ -1787,7 +2018,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
             "location": "한라산 어승생악 탐방로",
             "alt": "한라산 어승생악 탐방로 — gallery image 10",
             "caption": "한라산 어승생악 탐방로 — photo 10"
@@ -1803,7 +2034,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "한라산 1100 고지",
             "alt": "한라산 1100 고지 — gallery image 12",
             "caption": "한라산 1100 고지 — photo 12"
@@ -1811,7 +2042,7 @@
           {
             "id": 13,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "한라산 1100 고지",
             "alt": "한라산 1100 고지 — gallery image 13",
             "caption": "한라산 1100 고지 — photo 13"
@@ -1819,7 +2050,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "한라산 1100 고지",
             "alt": "한라산 1100 고지 — gallery image 14",
             "caption": "한라산 1100 고지 — photo 14"
@@ -1869,7 +2100,7 @@
             "name": "정방폭포 (아시아 유일 해안 직낙 폭포)",
             "category": "해안 폭포 — 영주십경 · 서귀포 지명 유래",
             "description": "**정방폭포(정방, 正房)는 절벽에서 바다로 직접 떨어지는 아시아에서 유일한 폭포**로 알려진 서귀포의 대표 명소입니다. 높이 **23m, 폭 약 8m**의 물줄기가 현무암 해벽을 타고 짙푸른 바다로 쏟아지며, 맑은 날에는 **섶섬(섶섬)과 문섬(문섬)**이 배경에 함께 담깁니다. \n\n정방폭포는 한라산·천제연과 함께 조선시대 문인들이 선정한 **영주십경(영주십경, 제주의 10대 절경)** 중 하나이며, 절벽에는 **‘서불과차(徐市過此)’** 전설이 새겨져 있습니다 — 진시황의 명을 받아 불로초를 찾아온 서불이 이곳을 지나 서쪽으로 돌아갔다는 이야기로, ‘서귀포(西歸浦)’라는 지명의 유래가 되었습니다. \n\n매표소에서 폭포 아래까지는 **약 130개의 계단**을 내려가야 하며, 바닥은 둥근 자갈과 바위로 이루어져 있어 미끄럽지 않은 신발이 필수입니다. 폭포 아래에서는 물보라와 바다를 배경으로 한 인증샷이 인기이며, 절벽 위 전망대에서는 섶섬·문섬을 한눈에 조망할 수 있습니다.",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**아시아에서 유일하게 바다로 직접 떨어지는 폭포** — 높이 23m / 폭 약 8m",
               "**영주십경(제주 10대 절경)** 중 하나 — 한라산·천제연과 함께 선정",
@@ -1914,21 +2145,31 @@
               "walking": "보통 — 폭포 아래까지 약 130개 계단, 바닥은 고르지 않은 바위; 미끄럼 주의"
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1936,7 +2177,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
                 "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 1",
                 "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 1"
@@ -1944,7 +2185,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
                 "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 2",
                 "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 2"
@@ -1952,10 +2193,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
                 "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 3",
                 "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+                "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 4",
+                "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "정방폭포 (아시아 유일 해안 직낙 폭포)",
+                "caption": "정방폭포 (아시아 유일 해안 직낙 폭포) — photo 5",
+                "alt": "정방폭포 (아시아 유일 해안 직낙 폭포) — gallery image 5"
               }
             ]
           },
@@ -1966,7 +2223,7 @@
             "name": "외돌개 & 올레 7코스 해안 산책",
             "category": "해안 기암 + 올레길 — 제주 세계지질공원 지질명소",
             "description": "**외돌개(외돌개)는 약 150만 년 전 화산 분출로 형성된 높이 약 20m의 해안 돌기둥**으로, 망망대해에 홀로 솟아 있어 ‘외(홀로) 돌(바위) 개’라는 이름이 붙었습니다. ‘장군바위’ 또는 ‘할망바위’로도 불리며, **드라마 「대장금」 촬영지**로 널리 알려졌습니다. 외돌개와 서귀포 층리 해안 절벽은 **제주 세계지질공원(유네스코 글로벌 지오파크)의 공식 지질명소** 중 하나입니다. \n\n외돌개는 **제주올레 7코스** 위에 자리합니다 — 7코스는 제주올레 여행자센터에서 출발해 법환포구를 거쳐 월평까지 이어지는 약 17.6km의 대표 해안 올레로, 올레꾼들이 가장 사랑하는 ‘수봉로’ 구간이 외돌개 인근을 지납니다. \n\n이 코스에서는 외돌개 전망 포인트와 함께 **올레 7코스의 해안 산책로 일부를 짧게 걷습니다.** 소나무 숲 사이로 난 길에서 외돌개와 섶섬·문섬, 끝없이 펼쳐진 남쪽 바다를 조망할 수 있어, 정방폭포의 폭포 풍경과는 또 다른 탁 트인 해안 경관을 선사합니다. **무료 개방**, 산책로는 대체로 평탄하나 일부 자연석 구간이 있습니다.",
-            "image": null,
+            "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
             "highlights": [
               "**외돌개** — 약 150만 년 전 형성된 높이 약 20m 해안 돌기둥(‘장군바위’)",
               "드라마 **「대장금」 촬영지**로 유명한 서귀포 해안 절경",
@@ -2009,9 +2266,64 @@
               "admission": "무료",
               "walking": "쉬움~보통 — 해안 산책로 대체로 평탄, 일부 자연석·계단 구간"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+              "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+              "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+              "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "location": "외돌개 & 올레 7코스 해안 산책",
+                "caption": "외돌개 & 올레 7코스 해안 산책 — photo 1",
+                "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "location": "외돌개 & 올레 7코스 해안 산책",
+                "caption": "외돌개 & 올레 7코스 해안 산책 — photo 2",
+                "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "location": "외돌개 & 올레 7코스 해안 산책",
+                "caption": "외돌개 & 올레 7코스 해안 산책 — photo 3",
+                "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "location": "외돌개 & 올레 7코스 해안 산책",
+                "caption": "외돌개 & 올레 7코스 해안 산책 — photo 4",
+                "alt": "외돌개 & 올레 7코스 해안 산책 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 4,
@@ -2020,7 +2332,7 @@
             "name": "약천사 (동아시아 최대 사찰)",
             "category": "사찰 — 동아시아 최대 규모 대적광전",
             "description": "**약천사(약천사, 藥泉寺)는 부지 122,100㎡ 규모로 동아시아 최대 사찰 중 하나**로 꼽히는 서귀포 대포동의 대형 사찰입니다. 이름은 ‘약이 되는 샘물이 흐르는 절’이라는 뜻으로, 사철 마르지 않는 약수가 솟는 옛 ‘약수암’ 자리에 세워졌습니다 — **혜인 스님이 1981년 착공해 1996년 완공**했습니다. \n\n중심 법당인 **대적광전(大寂光殿)은 높이 약 30m, 연면적 약 3,305㎡**에 이르는 동양 최대급 단일 법당으로, 조선 초기 사찰 건축 양식을 따랐습니다. 내부에는 **높이 5m의 비로자나불(국내 최대 목조 좌불)**이 4m 좌대 위에 모셔져 있으며, 다층 벽면을 가득 채운 수만 구의 작은 금불상이 압도적인 장관을 이룹니다. 법당 앞에는 **18톤 규모의 범종**이 자리합니다. \n\n약천사는 **제주올레 7코스(종점)와 8코스(시점)가 만나는 지점**에 있어 올레꾼과 관광객이 함께 찾으며, **2006년부터 템플스테이**를 운영하고 있습니다. **무료 입장**이며, 평탄한 경내는 비교적 둘러보기 편합니다.",
-            "image": "/images/tours/yakcheonsa/photo-001.webp",
+            "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
             "highlights": [
               "**동아시아 최대급 사찰** — 부지 약 122,100㎡",
               "**대적광전** 높이 약 30m / 연면적 약 3,305㎡ — 동양 최대급 단일 법당",
@@ -2065,11 +2377,26 @@
               "walking": "쉬움 — 평탄한 경내; 법당 진입 시 계단 일부"
             },
             "images": [
-              "/images/tours/yakcheonsa/photo-001.webp"
+              "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+              "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+              "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+              "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/yakcheonsa/photo-001.webp",
+                "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2077,10 +2404,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/yakcheonsa/photo-001.webp",
+                "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
                 "location": "약천사 (동아시아 최대 사찰)",
                 "caption": "약천사 (동아시아 최대 사찰) — photo 1",
                 "alt": "약천사 (동아시아 최대 사찰) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "location": "약천사 (동아시아 최대 사찰)",
+                "caption": "약천사 (동아시아 최대 사찰) — photo 2",
+                "alt": "약천사 (동아시아 최대 사찰) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "location": "약천사 (동아시아 최대 사찰)",
+                "caption": "약천사 (동아시아 최대 사찰) — photo 3",
+                "alt": "약천사 (동아시아 최대 사찰) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+                "location": "약천사 (동아시아 최대 사찰)",
+                "caption": "약천사 (동아시아 최대 사찰) — photo 4",
+                "alt": "약천사 (동아시아 최대 사찰) — gallery image 4"
               }
             ]
           },
@@ -2117,7 +2468,7 @@
             "name": "오설록 티 뮤지엄 + 녹차밭",
             "category": "차 문화 박물관 — 국내 최대 녹차밭 (서광다원)",
             "description": "**오설록 티 뮤지엄(O'Sulloc, ‘눈과 녹색의 만남’)**은 한국 최대 화장품 기업 **아모레퍼시픽**의 차 문화 플래그십 공간입니다. 창업자 **서성환 회장이 1979년** 직접 이 프로젝트를 개척하며 제주 서광 고원의 화산재 농지를 차밭으로 되살렸습니다. 오늘날 **서광다원**은 아모레퍼시픽의 제주 세 농장에 걸쳐 **연간 약 700톤**을 생산하는 **국내 최대 녹차밭**입니다. \n\n박물관 건물은 다원 한가운데에 **2001년 개관**해 미니멀한 디자인으로 **디자인붐(designboom) 세계 10대 미술관**에 선정되었습니다. **무료 입장**, 매일 운영, 연간 방문객 약 **200만 명**. 방문은 세 구간으로 나뉩니다: **(1) 박물관 내부** — 차 제조 과정·고대 다구 컬렉션·옥상 전망대; **(2) 티 하우스 카페** — 시그니처 **녹차 롤케이크**와 **녹차 아이스크림**; **(3) 다원 산책로** — 차 나무 사이 자갈길(석양 사진 명소). \n\n**이니스프리 제주하우스**(아모레퍼시픽 자연주의 브랜드)는 도보 5분 거리이며 무료 입장, 감귤 비누 DIY 워크숍 선택 참여(₩15,000) 가능합니다.",
-            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
             "highlights": [
               "**아모레퍼시픽** 대표 브랜드 — 창업자 서성환이 **1979년** 제주 차 재배 개척",
               "**서광다원 = 국내 최대 녹차밭**; 연간 약 700톤 생산",
@@ -2162,26 +2513,36 @@
               "walking": "쉬움 — 평탄한 포장길, 유모차·휠체어 이용 가능"
             },
             "images": [
-              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2189,7 +2550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "location": "오설록 티 뮤지엄 + 녹차밭",
                 "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 1",
                 "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 1"
@@ -2197,7 +2558,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "location": "오설록 티 뮤지엄 + 녹차밭",
                 "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 2",
                 "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 2"
@@ -2205,7 +2566,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "location": "오설록 티 뮤지엄 + 녹차밭",
                 "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 3",
                 "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 3"
@@ -2213,10 +2574,26 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
                 "location": "오설록 티 뮤지엄 + 녹차밭",
                 "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 4",
                 "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 5",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
               }
             ]
           },
@@ -2227,7 +2604,7 @@
             "name": "한라산 어승생악 (유네스코 세계자연유산)",
             "category": "유네스코 화산 지질 — 한라산 어승생악 탐방로 (3중 자연 지정)",
             "description": "**어승생악(1,169m)**은 어리목 탐방안내소 인근에서 시작되는 한라산 측면의 짧은 화산 분석구(오름) 탐방로입니다. 한라산은 대한민국 최고봉이자 **유네스코 세계자연유산(2007)·생물권보전지역(2002)**으로, 이 코스는 정상 등반 없이도 한라산을 체험하는 적합한 방법입니다. \n\n오늘 코스는 오설록에서 **1100도로(제주 최고 고도 국도)를 따라 한라산을 넘어 제주시로 복귀**하는 길목에 어승생악을 배치했습니다. 탐방로는 성판악·관음사 정상 코스보다 훨씬 짧고 **정상 예약제가 적용되지 않으며**, 넓은 계단과 목재 데크로 이루어져 운동화로도 충분합니다(편도 1.3km / 고도차 약 200m). \n\n맑은 날 상부 데크 전망대에서는 **한라산 고지대 사면, 제주의 오름 군락, 북쪽 바다**를 조망할 수 있고, 정상부에는 **1945년 일본 제국군 토치카(진지)**가 남아 있습니다. 산악 날씨는 빠르게 변하므로 겉옷 준비를 권장합니다. **무료 입장**이며 하루를 마무리하는 시원한 산 공기가 인상적인 피날레가 됩니다.",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**한라산 = 3중 자연 지정**: 유네스코 세계자연유산 2007 + 생물권보전지역 2002 + 국립공원 1970",
               "**어승생악 1,169m** — 한라산 측면 오름(기생화산)",
@@ -2273,21 +2650,26 @@
               "walking": "보통 — 거리는 짧지만 계단·오르막 구간 있음"
             },
             "images": [
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+              "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+              "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+              "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2295,7 +2677,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "location": "한라산 어승생악 (유네스코 세계자연유산)",
                 "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 1",
                 "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 1"
@@ -2303,7 +2685,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "location": "한라산 어승생악 (유네스코 세계자연유산)",
                 "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 2",
                 "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 2"
@@ -2311,10 +2693,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
                 "location": "한라산 어승생악 (유네스코 세계자연유산)",
                 "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 3",
                 "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+                "location": "한라산 어승생악 (유네스코 세계자연유산)",
+                "caption": "한라산 어승생악 (유네스코 세계자연유산) — photo 4",
+                "alt": "한라산 어승생악 (유네스코 세계자연유산) — gallery image 4"
               }
             ]
           },

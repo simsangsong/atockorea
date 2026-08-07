@@ -15,12 +15,12 @@
       "オソルロックティーミュージアムツアー",
       "漢拏山御乗生岳"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "済州南部ソギポ シグネチャー日帰りツアー・ほぼ全コース入場無料｜AtoC",
     "description": "済州南部ソギポ少人数日帰りツアー：正房瀑布 → 外突き岩＆オルレ7コース → 薬泉寺 → ランチ → オソルロックティーミュージアム → 漢拏山御乗生岳。ほぼ全コース入場無料、少人数で進行。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "thumbnail": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "済州南部ソギポ シグネチャー日帰りツアー",
     "priceLabel": "",
     "shortCardDescription": "済州南部ソギポの定番スポットを少人数で巡る日帰りツアー — アジアで唯一海へ直接落ちる正房瀑布、外突き岩の奇岩とオルレ7コースの海岸散策、東アジア最大の寺院・薬泉寺、オソルロックティーミュージアム、そして漢拏山御乗生岳の登山道。済州市内全域と空港を含む4か所のピックアップポイント、英語・中国語の認定ガイド同行、正房瀑布以外はほぼ全コース入場無料、買い物の押し売りなし。",
@@ -47,7 +47,7 @@
       "お手頃価格",
       "買い物なし"
     ],
-    "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp"
+    "heroImage": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp"
   },
   "headlineLine1": "済州南部ソギポ シグネチャー",
   "headlineLine2": "日帰りツアー",
@@ -60,7 +60,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "imageUrl": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "imagePosition": "center 45%",
     "tagline": "済州南部ソギポ海岸の定番スポットを一日で — 正房瀑布、外突き岩のオルレ道、薬泉寺、オソルロック、漢拏山。ほぼ全コース入場無料。",
     "pills": [
@@ -139,114 +139,186 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 1",
-      "caption": "正房瀑布 — photo 1"
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+      "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 1",
+      "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/yakcheonsa/photo-001.webp",
-      "location": "薬泉寺",
-      "alt": "薬泉寺 — gallery image 2",
-      "caption": "薬泉寺 — photo 2"
+      "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+      "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+      "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 1",
+      "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+      "location": "薬泉寺（東アジア最大の寺院）",
+      "alt": "薬泉寺（東アジア最大の寺院） — gallery image 1",
+      "caption": "薬泉寺（東アジア最大の寺院） — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "オソルロックティーミュージアム＋緑茶畑",
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 1",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+      "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 1",
+      "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+      "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 2",
+      "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+      "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 3",
+      "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+      "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 4",
+      "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+      "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 5",
+      "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+      "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+      "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 2",
+      "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+      "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+      "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 3",
+      "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+      "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+      "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 4",
+      "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+      "location": "薬泉寺（東アジア最大の寺院）",
+      "alt": "薬泉寺（東アジア最大の寺院） — gallery image 2",
+      "caption": "薬泉寺（東アジア最大の寺院） — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+      "location": "薬泉寺（東アジア最大の寺院）",
+      "alt": "薬泉寺（東アジア最大の寺院） — gallery image 3",
+      "caption": "薬泉寺（東アジア最大の寺院） — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+      "location": "薬泉寺（東アジア最大の寺院）",
+      "alt": "薬泉寺（東アジア最大の寺院） — gallery image 4",
+      "caption": "薬泉寺（東アジア最大の寺院） — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "オソルロックティーミュージアム＋緑茶畑",
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 2",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "オソルロックティーミュージアム＋緑茶畑",
       "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 3",
       "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 3"
     },
     {
-      "id": 4,
+      "id": 18,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-      "location": "漢拏山御乗生岳の登山道",
-      "alt": "漢拏山御乗生岳の登山道 — gallery image 4",
-      "caption": "漢拏山御乗生岳の登山道 — photo 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 5",
-      "caption": "正房瀑布 — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 6",
-      "caption": "正房瀑布 — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "オソルロックティーミュージアム＋緑茶畑",
-      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 7",
-      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 7"
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 4",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 4"
     },
     {
-      "id": 8,
+      "id": 19,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
       "location": "オソルロックティーミュージアム＋緑茶畑",
-      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 8",
-      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 8"
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 5",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 5"
     },
     {
-      "id": 9,
+      "id": 20,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
       "location": "オソルロックティーミュージアム＋緑茶畑",
-      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 9",
-      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 9"
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 6",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 6"
     },
     {
-      "id": 10,
+      "id": 21,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "漢拏山御乗生岳の登山道",
-      "alt": "漢拏山御乗生岳の登山道 — gallery image 10",
-      "caption": "漢拏山御乗生岳の登山道 — photo 10"
+      "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+      "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+      "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 2",
+      "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 2"
     },
     {
-      "id": 11,
+      "id": 22,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-      "location": "漢拏山御乗生岳の登山道",
-      "alt": "漢拏山御乗生岳の登山道 — gallery image 11",
-      "caption": "漢拏山御乗生岳の登山道 — photo 11"
+      "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+      "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+      "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 3",
+      "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 3"
     },
     {
-      "id": 12,
+      "id": 23,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 12",
-      "caption": "漢拏山1100高地 — photo 12"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 13",
-      "caption": "漢拏山1100高地 — photo 13"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 14",
-      "caption": "漢拏山1100高地 — photo 14"
+      "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+      "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+      "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 4",
+      "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 4"
     }
   ],
   "itineraryStops": [
@@ -286,7 +358,7 @@
       "name": "正房瀑布（アジア唯一の海岸直落瀑布）",
       "category": "海岸瀑布 — 瀛州十景・ソギポ地名の由来",
       "description": "**正房瀑布（チョンバン、正房）は断崖から海へ直接落ちるアジア唯一の瀑布**として知られるソギポの定番スポットです。高さ**23m、幅約8m**の水流が玄武岩の海壁を伝って濃い青の海へ流れ落ち、晴れた日には**森島（ソプソム）と蚊島（ムンソム）**が背景に一緒に収まります。\n\n正房瀑布は漢拏山・天帝淵とともに朝鮮時代の文人が選んだ**瀛州十景（ヨンジュシッキョン、済州の十大絶景）**の一つであり、断崖には**「徐巿過此（ソブルグァチャ）」**の伝説が刻まれています — 秦の始皇帝の命を受けて不老草を探しに来た徐巿（じょふつ）がこの地を過ぎて西へ帰ったという話で、「西帰浦（ソギポ）」という地名の由来となりました。\n\nチケット売り場から瀑布の下までは**約130段の階段**を下りる必要があり、地面は丸い小石と岩で構成されているため、滑りにくい靴が必須です。瀑布の下では水しぶきと海を背景にした記念撮影が人気で、断崖の上の展望台からは森島・蚊島を一望できます。",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**アジアで唯一海へ直接落ちる瀑布** — 高さ23m／幅約8m",
         "**瀛州十景（済州十大絶景）**の一つ — 漢拏山・天帝淵とともに選定",
@@ -331,21 +403,31 @@
         "walking": "普通 — 瀑布の下まで約130段の階段、地面は不揃いな岩；滑りに注意"
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -353,7 +435,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
           "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 1",
           "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 1"
@@ -361,7 +443,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
           "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 2",
           "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 2"
@@ -369,10 +451,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
           "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 3",
           "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+          "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 4",
+          "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+          "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 5",
+          "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 5"
         }
       ]
     },
@@ -383,7 +481,7 @@
       "name": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
       "category": "海岸奇岩＋オルレ道 — 済州世界ジオパークのジオサイト",
       "description": "**外突き岩（オェドルゲ）は約150万年前の火山噴火で形成された高さ約20mの海岸の岩柱**で、大海原に一つだけそびえ立つことから「外（ひとり）・突き（岩）」という名が付きました。「将軍岩」または「ハルマン岩」とも呼ばれ、**ドラマ『宮廷女官チャングムの誓い（大長今）』のロケ地**として広く知られています。外突き岩とソギポの層理海岸断崖は、**済州世界ジオパーク（ユネスコ世界ジオパーク）の公式ジオサイト**の一つです。\n\n外突き岩は**済州オルレ7コース**の上に位置します — 7コースは済州オルレ旅行者センターを出発し法環浦口を経て月坪まで続く約17.6kmの代表的な海岸オルレで、オルレ愛好者に最も愛される「スボンロ」区間が外突き岩付近を通ります。\n\nこのコースでは外突き岩の展望ポイントとともに、**オルレ7コースの海岸散策路の一部を短く歩きます。** 松林の間を抜ける道から外突き岩と森島・蚊島、果てしなく広がる南の海を眺めることができ、正房瀑布の瀑布の景色とはまた違った開放的な海岸景観を楽しめます。**無料開放**、散策路はおおむね平坦ですが一部に自然石の区間があります。",
-      "image": null,
+      "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
       "highlights": [
         "**外突き岩** — 約150万年前に形成された高さ約20mの海岸の岩柱（「将軍岩」）",
         "ドラマ**『大長今』のロケ地**として有名なソギポ海岸の絶景",
@@ -426,9 +524,64 @@
         "admission": "無料",
         "walking": "易しい〜普通 — 海岸散策路はおおむね平坦、一部に自然石・階段の区間"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+        "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+        "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+        "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+          "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 1",
+          "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+          "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 2",
+          "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+          "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 3",
+          "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+          "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 4",
+          "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 4,
@@ -437,7 +590,7 @@
       "name": "薬泉寺（東アジア最大の寺院）",
       "category": "寺院 — 東アジア最大規模の大寂光殿",
       "description": "**薬泉寺（ヤクチョンサ、藥泉寺）は敷地122,100㎡の規模で東アジア最大の寺院の一つ**に数えられるソギポ大浦洞の大型寺院です。名前は「薬になる湧き水が流れる寺」という意味で、四季を通じて枯れない薬水が湧く旧「薬水庵」の跡地に建てられました — **慧印（ヘイン）和尚が1981年に着工し1996年に完成**させました。\n\n中心となる法堂の**大寂光殿（テジョックァンジョン）は高さ約30m、延床面積約3,305㎡**に及ぶ東洋最大級の単一法堂で、朝鮮初期の寺院建築様式に倣っています。内部には**高さ5mの毘盧遮那仏（国内最大の木造坐仏）**が4mの台座の上に祀られており、多層の壁面を埋め尽くす数万体の小さな金仏像が圧倒的な壮観を成しています。法堂の前には**18トン規模の梵鐘**があります。\n\n薬泉寺は**済州オルレ7コース（終点）と8コース（始点）が出会う地点**にあり、オルレ愛好者と観光客がともに訪れ、**2006年からテンプルステイ**を運営しています。**入場無料**で、平坦な境内は比較的巡りやすいです。",
-      "image": "/images/tours/yakcheonsa/photo-001.webp",
+      "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
       "highlights": [
         "**東アジア最大級の寺院** — 敷地約122,100㎡",
         "**大寂光殿** 高さ約30m／延床面積約3,305㎡ — 東洋最大級の単一法堂",
@@ -482,11 +635,26 @@
         "walking": "易しい — 平坦な境内；法堂への進入時に一部階段"
       },
       "images": [
-        "/images/tours/yakcheonsa/photo-001.webp"
+        "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+        "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+        "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+        "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/yakcheonsa/photo-001.webp",
+          "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
           "source": "atoc-korea"
         }
       ],
@@ -494,10 +662,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/yakcheonsa/photo-001.webp",
+          "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
           "location": "薬泉寺（東アジア最大の寺院）",
           "caption": "薬泉寺（東アジア最大の寺院） — photo 1",
           "alt": "薬泉寺（東アジア最大の寺院） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "location": "薬泉寺（東アジア最大の寺院）",
+          "caption": "薬泉寺（東アジア最大の寺院） — photo 2",
+          "alt": "薬泉寺（東アジア最大の寺院） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "location": "薬泉寺（東アジア最大の寺院）",
+          "caption": "薬泉寺（東アジア最大の寺院） — photo 3",
+          "alt": "薬泉寺（東アジア最大の寺院） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+          "location": "薬泉寺（東アジア最大の寺院）",
+          "caption": "薬泉寺（東アジア最大の寺院） — photo 4",
+          "alt": "薬泉寺（東アジア最大の寺院） — gallery image 4"
         }
       ]
     },
@@ -534,7 +726,7 @@
       "name": "オソルロックティーミュージアム＋緑茶畑",
       "category": "茶文化博物館 — 国内最大の緑茶畑（西広茶苑）",
       "description": "**オソルロックティーミュージアム（O'Sulloc、「雪と緑の出会い」）**は、韓国最大の化粧品企業**アモーレパシフィック**の茶文化フラッグシップ空間です。創業者**徐成煥（ソ・ソンファン）会長が1979年**に自らこのプロジェクトを切り拓き、済州・西広高原の火山灰農地を茶畑として蘇らせました。今日、**西広茶苑（ソグァンダウォン）**はアモーレパシフィックの済州3つの農場にわたって**年間約700トン**を生産する**国内最大の緑茶畑**です。\n\n博物館の建物は茶畑の真ん中に**2001年に開館**し、ミニマルなデザインで**designboom（デザインブーム）世界10大美術館**に選ばれました。**入場無料**、毎日営業、年間来館者数は約**200万人**。見学は3つのパートに分かれます：**（1）博物館内部** — お茶の製造工程・古代の茶器コレクション・屋上展望台；**（2）ティーハウスカフェ** — 定番の**緑茶ロールケーキ**と**緑茶アイスクリーム**；**（3）茶畑の散策路** — 茶の木の間の砂利道（夕日の撮影スポット）。\n\n**イニスフリー済州ハウス**（アモーレパシフィックのナチュラルブランド）は徒歩5分の距離にあり入場無料、みかん石けんDIYワークショップへの任意参加（₩15,000）が可能です。",
-      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
       "highlights": [
         "**アモーレパシフィック**の代表ブランド — 創業者・徐成煥が**1979年**に済州での茶栽培を開拓",
         "**西広茶苑 ＝ 国内最大の緑茶畑**；年間約700トン生産",
@@ -579,26 +771,36 @@
         "walking": "易しい — 平坦な舗装路、ベビーカー・車椅子利用可能"
       },
       "images": [
-        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -606,7 +808,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "location": "オソルロックティーミュージアム＋緑茶畑",
           "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 1",
           "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 1"
@@ -614,7 +816,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "location": "オソルロックティーミュージアム＋緑茶畑",
           "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 2",
           "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 2"
@@ -622,7 +824,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "location": "オソルロックティーミュージアム＋緑茶畑",
           "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 3",
           "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 3"
@@ -630,10 +832,26 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
           "location": "オソルロックティーミュージアム＋緑茶畑",
           "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 4",
           "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "location": "オソルロックティーミュージアム＋緑茶畑",
+          "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 5",
+          "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "location": "オソルロックティーミュージアム＋緑茶畑",
+          "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 6",
+          "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 6"
         }
       ]
     },
@@ -644,7 +862,7 @@
       "name": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
       "category": "ユネスコ火山地質 — 漢拏山御乗生岳の登山道（三重自然指定）",
       "description": "**御乗生岳（オスンセンアク、1,169m）**は、於里牧（オリモク）登山案内所付近からスタートする漢拏山中腹の短い火山スコリア丘（オルム）の登山道です。漢拏山は韓国最高峰であり、**ユネスコ世界自然遺産（2007年）・生物圏保護区（2002年）**で、このコースは山頂登山をせずとも漢拏山を体験できる手頃な方法です。\n\n本日のコースはオソルロックから**国道1100号（済州最高標高の国道）に沿って漢拏山を越えて済州市へ戻る**道筋に御乗生岳を配置しました。登山道は城板岳・観音寺の山頂コースよりはるかに短く**山頂予約制が適用されず**、広い階段と木製デッキで構成されているためスニーカーでも十分です（片道1.3km／標高差約200m）。\n\n晴れた日には上部デッキの展望台から**漢拏山の高地の斜面、済州のオルム群、北の海**を眺めることができ、山頂には**1945年の旧日本軍のトーチカ（陣地）**が残っています。山の天気は急変するため上着の準備を推奨します。**入場無料**で、一日を締めくくる涼しい山の空気が印象的なフィナーレとなります。",
-      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拏山 ＝ 三重自然指定**：ユネスコ世界自然遺産2007年 ＋ 生物圏保護区2002年 ＋ 国立公園1970年",
         "**御乗生岳 1,169m** — 漢拏山中腹のオルム（寄生火山）",
@@ -690,21 +908,26 @@
         "walking": "普通 — 距離は短いが階段・登りの区間あり"
       },
       "images": [
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-        "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+        "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+        "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+        "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
           "source": "atoc-korea"
         }
       ],
@@ -712,7 +935,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
           "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 1",
           "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 1"
@@ -720,7 +943,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
           "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 2",
           "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 2"
@@ -728,10 +951,18 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
           "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
           "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 3",
           "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+          "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+          "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 4",
+          "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 4"
         }
       ]
     },
@@ -1615,7 +1846,7 @@
         "headlineLine1": "済州南部ソギポ シグネチャー",
         "headlineLine2": "日帰りツアー",
         "hero": {
-          "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "imageUrl": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
           "imagePosition": "center 45%",
           "tagline": "済州南部ソギポ海岸の定番スポットを一日で — 正房瀑布、外突き岩のオルレ道、薬泉寺、オソルロック、漢拏山。ほぼ全コース入場無料。",
           "pills": [
@@ -1715,7 +1946,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 1",
             "caption": "正房瀑布 — photo 1"
@@ -1739,7 +1970,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "location": "漢拏山御乗生岳の登山道",
             "alt": "漢拏山御乗生岳の登山道 — gallery image 4",
             "caption": "漢拏山御乗生岳の登山道 — photo 4"
@@ -1747,7 +1978,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 5",
             "caption": "正房瀑布 — photo 5"
@@ -1755,7 +1986,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 6",
             "caption": "正房瀑布 — photo 6"
@@ -1787,7 +2018,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
             "location": "漢拏山御乗生岳の登山道",
             "alt": "漢拏山御乗生岳の登山道 — gallery image 10",
             "caption": "漢拏山御乗生岳の登山道 — photo 10"
@@ -1803,7 +2034,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 12",
             "caption": "漢拏山1100高地 — photo 12"
@@ -1811,7 +2042,7 @@
           {
             "id": 13,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 13",
             "caption": "漢拏山1100高地 — photo 13"
@@ -1819,7 +2050,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 14",
             "caption": "漢拏山1100高地 — photo 14"
@@ -1869,7 +2100,7 @@
             "name": "正房瀑布（アジア唯一の海岸直落瀑布）",
             "category": "海岸瀑布 — 瀛州十景・ソギポ地名の由来",
             "description": "**正房瀑布（チョンバン、正房）は断崖から海へ直接落ちるアジア唯一の瀑布**として知られるソギポの定番スポットです。高さ**23m、幅約8m**の水流が玄武岩の海壁を伝って濃い青の海へ流れ落ち、晴れた日には**森島（ソプソム）と蚊島（ムンソム）**が背景に一緒に収まります。\n\n正房瀑布は漢拏山・天帝淵とともに朝鮮時代の文人が選んだ**瀛州十景（ヨンジュシッキョン、済州の十大絶景）**の一つであり、断崖には**「徐巿過此（ソブルグァチャ）」**の伝説が刻まれています — 秦の始皇帝の命を受けて不老草を探しに来た徐巿（じょふつ）がこの地を過ぎて西へ帰ったという話で、「西帰浦（ソギポ）」という地名の由来となりました。\n\nチケット売り場から瀑布の下までは**約130段の階段**を下りる必要があり、地面は丸い小石と岩で構成されているため、滑りにくい靴が必須です。瀑布の下では水しぶきと海を背景にした記念撮影が人気で、断崖の上の展望台からは森島・蚊島を一望できます。",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**アジアで唯一海へ直接落ちる瀑布** — 高さ23m／幅約8m",
               "**瀛州十景（済州十大絶景）**の一つ — 漢拏山・天帝淵とともに選定",
@@ -1914,21 +2145,31 @@
               "walking": "普通 — 瀑布の下まで約130段の階段、地面は不揃いな岩；滑りに注意"
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1936,7 +2177,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
                 "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 1",
                 "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 1"
@@ -1944,7 +2185,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
                 "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 2",
                 "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 2"
@@ -1952,10 +2193,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
                 "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 3",
                 "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+                "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 4",
+                "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "正房瀑布（アジア唯一の海岸直落瀑布）",
+                "caption": "正房瀑布（アジア唯一の海岸直落瀑布） — photo 5",
+                "alt": "正房瀑布（アジア唯一の海岸直落瀑布） — gallery image 5"
               }
             ]
           },
@@ -1966,7 +2223,7 @@
             "name": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
             "category": "海岸奇岩＋オルレ道 — 済州世界ジオパークのジオサイト",
             "description": "**外突き岩（オェドルゲ）は約150万年前の火山噴火で形成された高さ約20mの海岸の岩柱**で、大海原に一つだけそびえ立つことから「外（ひとり）・突き（岩）」という名が付きました。「将軍岩」または「ハルマン岩」とも呼ばれ、**ドラマ『宮廷女官チャングムの誓い（大長今）』のロケ地**として広く知られています。外突き岩とソギポの層理海岸断崖は、**済州世界ジオパーク（ユネスコ世界ジオパーク）の公式ジオサイト**の一つです。\n\n外突き岩は**済州オルレ7コース**の上に位置します — 7コースは済州オルレ旅行者センターを出発し法環浦口を経て月坪まで続く約17.6kmの代表的な海岸オルレで、オルレ愛好者に最も愛される「スボンロ」区間が外突き岩付近を通ります。\n\nこのコースでは外突き岩の展望ポイントとともに、**オルレ7コースの海岸散策路の一部を短く歩きます。** 松林の間を抜ける道から外突き岩と森島・蚊島、果てしなく広がる南の海を眺めることができ、正房瀑布の瀑布の景色とはまた違った開放的な海岸景観を楽しめます。**無料開放**、散策路はおおむね平坦ですが一部に自然石の区間があります。",
-            "image": null,
+            "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
             "highlights": [
               "**外突き岩** — 約150万年前に形成された高さ約20mの海岸の岩柱（「将軍岩」）",
               "ドラマ**『大長今』のロケ地**として有名なソギポ海岸の絶景",
@@ -2009,9 +2266,64 @@
               "admission": "無料",
               "walking": "易しい〜普通 — 海岸散策路はおおむね平坦、一部に自然石・階段の区間"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+              "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+              "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+              "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+                "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 1",
+                "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+                "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 2",
+                "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+                "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 3",
+                "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "location": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策",
+                "caption": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — photo 4",
+                "alt": "外突き岩（オェドルゲ）＆オルレ7コース海岸散策 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 4,
@@ -2020,7 +2332,7 @@
             "name": "薬泉寺（東アジア最大の寺院）",
             "category": "寺院 — 東アジア最大規模の大寂光殿",
             "description": "**薬泉寺（ヤクチョンサ、藥泉寺）は敷地122,100㎡の規模で東アジア最大の寺院の一つ**に数えられるソギポ大浦洞の大型寺院です。名前は「薬になる湧き水が流れる寺」という意味で、四季を通じて枯れない薬水が湧く旧「薬水庵」の跡地に建てられました — **慧印（ヘイン）和尚が1981年に着工し1996年に完成**させました。\n\n中心となる法堂の**大寂光殿（テジョックァンジョン）は高さ約30m、延床面積約3,305㎡**に及ぶ東洋最大級の単一法堂で、朝鮮初期の寺院建築様式に倣っています。内部には**高さ5mの毘盧遮那仏（国内最大の木造坐仏）**が4mの台座の上に祀られており、多層の壁面を埋め尽くす数万体の小さな金仏像が圧倒的な壮観を成しています。法堂の前には**18トン規模の梵鐘**があります。\n\n薬泉寺は**済州オルレ7コース（終点）と8コース（始点）が出会う地点**にあり、オルレ愛好者と観光客がともに訪れ、**2006年からテンプルステイ**を運営しています。**入場無料**で、平坦な境内は比較的巡りやすいです。",
-            "image": "/images/tours/yakcheonsa/photo-001.webp",
+            "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
             "highlights": [
               "**東アジア最大級の寺院** — 敷地約122,100㎡",
               "**大寂光殿** 高さ約30m／延床面積約3,305㎡ — 東洋最大級の単一法堂",
@@ -2065,11 +2377,26 @@
               "walking": "易しい — 平坦な境内；法堂への進入時に一部階段"
             },
             "images": [
-              "/images/tours/yakcheonsa/photo-001.webp"
+              "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+              "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+              "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+              "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/yakcheonsa/photo-001.webp",
+                "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2077,10 +2404,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/yakcheonsa/photo-001.webp",
+                "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
                 "location": "薬泉寺（東アジア最大の寺院）",
                 "caption": "薬泉寺（東アジア最大の寺院） — photo 1",
                 "alt": "薬泉寺（東アジア最大の寺院） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "location": "薬泉寺（東アジア最大の寺院）",
+                "caption": "薬泉寺（東アジア最大の寺院） — photo 2",
+                "alt": "薬泉寺（東アジア最大の寺院） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "location": "薬泉寺（東アジア最大の寺院）",
+                "caption": "薬泉寺（東アジア最大の寺院） — photo 3",
+                "alt": "薬泉寺（東アジア最大の寺院） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+                "location": "薬泉寺（東アジア最大の寺院）",
+                "caption": "薬泉寺（東アジア最大の寺院） — photo 4",
+                "alt": "薬泉寺（東アジア最大の寺院） — gallery image 4"
               }
             ]
           },
@@ -2117,7 +2468,7 @@
             "name": "オソルロックティーミュージアム＋緑茶畑",
             "category": "茶文化博物館 — 国内最大の緑茶畑（西広茶苑）",
             "description": "**オソルロックティーミュージアム（O'Sulloc、「雪と緑の出会い」）**は、韓国最大の化粧品企業**アモーレパシフィック**の茶文化フラッグシップ空間です。創業者**徐成煥（ソ・ソンファン）会長が1979年**に自らこのプロジェクトを切り拓き、済州・西広高原の火山灰農地を茶畑として蘇らせました。今日、**西広茶苑（ソグァンダウォン）**はアモーレパシフィックの済州3つの農場にわたって**年間約700トン**を生産する**国内最大の緑茶畑**です。\n\n博物館の建物は茶畑の真ん中に**2001年に開館**し、ミニマルなデザインで**designboom（デザインブーム）世界10大美術館**に選ばれました。**入場無料**、毎日営業、年間来館者数は約**200万人**。見学は3つのパートに分かれます：**（1）博物館内部** — お茶の製造工程・古代の茶器コレクション・屋上展望台；**（2）ティーハウスカフェ** — 定番の**緑茶ロールケーキ**と**緑茶アイスクリーム**；**（3）茶畑の散策路** — 茶の木の間の砂利道（夕日の撮影スポット）。\n\n**イニスフリー済州ハウス**（アモーレパシフィックのナチュラルブランド）は徒歩5分の距離にあり入場無料、みかん石けんDIYワークショップへの任意参加（₩15,000）が可能です。",
-            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
             "highlights": [
               "**アモーレパシフィック**の代表ブランド — 創業者・徐成煥が**1979年**に済州での茶栽培を開拓",
               "**西広茶苑 ＝ 国内最大の緑茶畑**；年間約700トン生産",
@@ -2162,26 +2513,36 @@
               "walking": "易しい — 平坦な舗装路、ベビーカー・車椅子利用可能"
             },
             "images": [
-              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2189,7 +2550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "location": "オソルロックティーミュージアム＋緑茶畑",
                 "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 1",
                 "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 1"
@@ -2197,7 +2558,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "location": "オソルロックティーミュージアム＋緑茶畑",
                 "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 2",
                 "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 2"
@@ -2205,7 +2566,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "location": "オソルロックティーミュージアム＋緑茶畑",
                 "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 3",
                 "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 3"
@@ -2213,10 +2574,26 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
                 "location": "オソルロックティーミュージアム＋緑茶畑",
                 "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 4",
                 "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "location": "オソルロックティーミュージアム＋緑茶畑",
+                "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 5",
+                "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "location": "オソルロックティーミュージアム＋緑茶畑",
+                "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 6",
+                "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 6"
               }
             ]
           },
@@ -2227,7 +2604,7 @@
             "name": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
             "category": "ユネスコ火山地質 — 漢拏山御乗生岳の登山道（三重自然指定）",
             "description": "**御乗生岳（オスンセンアク、1,169m）**は、於里牧（オリモク）登山案内所付近からスタートする漢拏山中腹の短い火山スコリア丘（オルム）の登山道です。漢拏山は韓国最高峰であり、**ユネスコ世界自然遺産（2007年）・生物圏保護区（2002年）**で、このコースは山頂登山をせずとも漢拏山を体験できる手頃な方法です。\n\n本日のコースはオソルロックから**国道1100号（済州最高標高の国道）に沿って漢拏山を越えて済州市へ戻る**道筋に御乗生岳を配置しました。登山道は城板岳・観音寺の山頂コースよりはるかに短く**山頂予約制が適用されず**、広い階段と木製デッキで構成されているためスニーカーでも十分です（片道1.3km／標高差約200m）。\n\n晴れた日には上部デッキの展望台から**漢拏山の高地の斜面、済州のオルム群、北の海**を眺めることができ、山頂には**1945年の旧日本軍のトーチカ（陣地）**が残っています。山の天気は急変するため上着の準備を推奨します。**入場無料**で、一日を締めくくる涼しい山の空気が印象的なフィナーレとなります。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**漢拏山 ＝ 三重自然指定**：ユネスコ世界自然遺産2007年 ＋ 生物圏保護区2002年 ＋ 国立公園1970年",
               "**御乗生岳 1,169m** — 漢拏山中腹のオルム（寄生火山）",
@@ -2273,21 +2650,26 @@
               "walking": "普通 — 距離は短いが階段・登りの区間あり"
             },
             "images": [
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+              "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+              "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+              "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2295,7 +2677,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
                 "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 1",
                 "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 1"
@@ -2303,7 +2685,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
                 "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 2",
                 "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 2"
@@ -2311,10 +2693,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
                 "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
                 "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 3",
                 "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+                "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
+                "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 4",
+                "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 4"
               }
             ]
           },

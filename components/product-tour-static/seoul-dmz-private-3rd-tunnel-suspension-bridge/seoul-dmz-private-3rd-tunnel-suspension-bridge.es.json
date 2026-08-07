@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Tour Privado DMZ Seúl: 3er Túnel + Puente | AtoC Korea",
     "metaDescription": "Tour privado de día al DMZ desde Seúl de 8 a 9 horas: Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora y el Puente Colgante Rojo de Gamaksan de 150 m.",
-    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "Tour privado al DMZ desde Seúl",
       "Tour al 3er Túnel del DMZ",
@@ -31,8 +31,8 @@
       "DMZ + Puente Colgante",
       "Recogida en el Hotel Incluida"
     ],
-    "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-    "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "priceLabel": "",
     "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ.",
     "tags": [
@@ -51,7 +51,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "imagePosition": "center 40%",
     "tagline": "De la frontera más fortificada del mundo a un puente colgante de montaña de 150 metros: un día privado, dos caras completamente distintas de Corea.",
     "pills": [
@@ -131,7 +131,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "Parque de la Paz Imjingak",
       "alt": "Parque de la Paz Imjingak — gallery image 1",
       "caption": "Parque de la Paz Imjingak — photo 1"
@@ -139,7 +139,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
       "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 1",
       "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 1"
@@ -147,58 +147,66 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "Observatorio Dora",
+      "alt": "Observatorio Dora — gallery image 1",
+      "caption": "Observatorio Dora — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "location": "Puente Colgante Rojo de Gamaksan",
       "alt": "Puente Colgante Rojo de Gamaksan — gallery image 1",
       "caption": "Puente Colgante Rojo de Gamaksan — photo 1"
     },
     {
-      "id": 4,
+      "id": 5,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+      "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
       "location": "Parque de la Paz Imjingak",
       "alt": "Parque de la Paz Imjingak — gallery image 2",
       "caption": "Parque de la Paz Imjingak — photo 2"
     },
     {
-      "id": 5,
+      "id": 6,
       "type": "photo",
-      "src": "/images/tours/imjingak/dmz-01.webp",
+      "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "location": "Parque de la Paz Imjingak",
       "alt": "Parque de la Paz Imjingak — gallery image 3",
       "caption": "Parque de la Paz Imjingak — photo 3"
     },
     {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/imjingak/photo-004.webp",
-      "location": "Parque de la Paz Imjingak",
-      "alt": "Parque de la Paz Imjingak — gallery image 4",
-      "caption": "Parque de la Paz Imjingak — photo 4"
-    },
-    {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/imjingak/photo-005.webp",
-      "location": "Parque de la Paz Imjingak",
-      "alt": "Parque de la Paz Imjingak — gallery image 5",
-      "caption": "Parque de la Paz Imjingak — photo 5"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
       "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 2",
       "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 2"
     },
     {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+      "location": "Puente Colgante Rojo de Gamaksan",
+      "alt": "Puente Colgante Rojo de Gamaksan — gallery image 2",
+      "caption": "Puente Colgante Rojo de Gamaksan — photo 2"
+    },
+    {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-      "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
-      "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 3",
-      "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 3"
+      "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+      "location": "Puente Colgante Rojo de Gamaksan",
+      "alt": "Puente Colgante Rojo de Gamaksan — gallery image 3",
+      "caption": "Puente Colgante Rojo de Gamaksan — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+      "location": "Puente Colgante Rojo de Gamaksan",
+      "alt": "Puente Colgante Rojo de Gamaksan — gallery image 4",
+      "caption": "Puente Colgante Rojo de Gamaksan — photo 4"
     }
   ],
   "itineraryStops": [
@@ -257,33 +265,23 @@
           "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
       },
-      "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "images": [
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-        "/images/tours/imjingak/dmz-01.webp",
-        "/images/tours/imjingak/photo-004.webp",
-        "/images/tours/imjingak/photo-005.webp"
+        "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+        "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/dmz-01.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/imjingak/photo-004.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/imjingak/photo-005.webp",
+          "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "source": "atoc-korea"
         }
       ],
@@ -291,7 +289,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "location": "Parque de la Paz Imjingak",
           "caption": "Parque de la Paz Imjingak — photo 1",
           "alt": "Parque de la Paz Imjingak — gallery image 1"
@@ -299,7 +297,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "location": "Parque de la Paz Imjingak",
           "caption": "Parque de la Paz Imjingak — photo 2",
           "alt": "Parque de la Paz Imjingak — gallery image 2"
@@ -307,26 +305,10 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/imjingak/dmz-01.webp",
+          "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "location": "Parque de la Paz Imjingak",
           "caption": "Parque de la Paz Imjingak — photo 3",
           "alt": "Parque de la Paz Imjingak — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/imjingak/photo-004.webp",
-          "location": "Parque de la Paz Imjingak",
-          "caption": "Parque de la Paz Imjingak — photo 4",
-          "alt": "Parque de la Paz Imjingak — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/tours/imjingak/photo-005.webp",
-          "location": "Parque de la Paz Imjingak",
-          "caption": "Parque de la Paz Imjingak — photo 5",
-          "alt": "Parque de la Paz Imjingak — gallery image 5"
         }
       ]
     },
@@ -385,23 +367,18 @@
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
         }
       ],
@@ -409,7 +386,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
           "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 1",
           "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 1"
@@ -417,18 +394,10 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
           "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 2",
           "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo)",
-          "caption": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — photo 3",
-          "alt": "3.er Túnel de Infiltración (Túnel de Invasión Subterráneo) — gallery image 3"
         }
       ]
     },
@@ -487,23 +456,13 @@
           "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "source": "atoc-korea"
         }
       ],
@@ -511,26 +470,10 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "location": "Observatorio Dora",
           "caption": "Observatorio Dora — photo 1",
           "alt": "Observatorio Dora — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "Observatorio Dora",
-          "caption": "Observatorio Dora — photo 2",
-          "alt": "Observatorio Dora — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "Observatorio Dora",
-          "caption": "Observatorio Dora — photo 3",
-          "alt": "Observatorio Dora — gallery image 3"
         }
       ]
     },
@@ -590,28 +533,28 @@
           "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
       },
-      "image": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "images": [
-        "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+        "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+        "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+        "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "source": "atoc-korea"
         }
       ],
@@ -619,7 +562,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "location": "Puente Colgante Rojo de Gamaksan",
           "caption": "Puente Colgante Rojo de Gamaksan — photo 1",
           "alt": "Puente Colgante Rojo de Gamaksan — gallery image 1"
@@ -627,26 +570,26 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+          "location": "Puente Colgante Rojo de Gamaksan",
+          "caption": "Puente Colgante Rojo de Gamaksan — photo 2",
+          "alt": "Puente Colgante Rojo de Gamaksan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "location": "Puente Colgante Rojo de Gamaksan",
           "caption": "Puente Colgante Rojo de Gamaksan — photo 3",
           "alt": "Puente Colgante Rojo de Gamaksan — gallery image 3"
         },
         {
-          "id": 3,
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "location": "Puente Colgante Rojo de Gamaksan",
           "caption": "Puente Colgante Rojo de Gamaksan — photo 4",
           "alt": "Puente Colgante Rojo de Gamaksan — gallery image 4"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "Puente Colgante Rojo de Gamaksan",
-          "caption": "Puente Colgante Rojo de Gamaksan — photo 5",
-          "alt": "Puente Colgante Rojo de Gamaksan — gallery image 5"
         }
       ]
     }
@@ -1450,7 +1393,7 @@
             "name": "Parque de la Paz Imjingak",
             "category": "Parque Memorial de la Guerra de Corea",
             "description": "A unos 70 minutos de Seúl, Imjingak es un parque de la paz construido en 1972 como símbolo de la esperada reunificación. Está abierto a civiles sin necesidad de permiso especial y reúne en un solo lugar algunos de los símbolos más poderosos de la península dividida: el Altar Mangbaedan, donde las familias desplazadas se congregan en días festivos, el Puente de la Libertad, utilizado en su momento para repatriar prisioneros de guerra, y una locomotora de vapor acribillada a balazos que quedó de la Guerra de Corea.",
-            "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
             "highlights": [
               "Altar Mangbaedan, donde las familias oran hacia el Norte en días festivos",
               "Puente de la Libertad con cintas de paz atadas a lo largo de la valla",
@@ -1488,59 +1431,21 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-              "/images/tours/imjingak/dmz-01.webp",
-              "/images/tours/imjingak/photo-004.webp",
-              "/images/tours/imjingak/photo-005.webp"
+              "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+              "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+              "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/dmz-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-004.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-005.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/dmz-01.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-004.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/imjingak/photo-005.webp",
+                "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1548,7 +1453,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "location": "Parque de la Paz Imjingak",
                 "caption": "Parque de la Paz Imjingak — photo 1",
                 "alt": "Parque de la Paz Imjingak — gallery image 1"
@@ -1556,7 +1461,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "location": "Parque de la Paz Imjingak",
                 "caption": "Parque de la Paz Imjingak — photo 2",
                 "alt": "Parque de la Paz Imjingak — gallery image 2"
@@ -1564,26 +1469,10 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/imjingak/dmz-01.webp",
+                "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "location": "Parque de la Paz Imjingak",
-                "caption": "Parque de la Paz Imjingak — photo 5",
-                "alt": "Parque de la Paz Imjingak — gallery image 5"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-004.webp",
-                "location": "Parque de la Paz Imjingak",
-                "caption": "Parque de la Paz Imjingak — photo 6",
-                "alt": "Parque de la Paz Imjingak — gallery image 6"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/tours/imjingak/photo-005.webp",
-                "location": "Parque de la Paz Imjingak",
-                "caption": "Parque de la Paz Imjingak — photo 7",
-                "alt": "Parque de la Paz Imjingak — gallery image 7"
+                "caption": "Parque de la Paz Imjingak — photo 3",
+                "alt": "Parque de la Paz Imjingak — gallery image 3"
               }
             ]
           },
@@ -1594,7 +1483,7 @@
             "name": "3.er Túnel de Infiltración",
             "category": "Túnel de Invasión Subterráneo (1978)",
             "description": "Descubierto en 1978, el 3.er Túnel de Infiltración es el mayor de los cuatro túneles conocidos construidos por Corea del Norte en dirección a Seúl. Tiene 1.635 metros de longitud, 2 metros de altura y 2 metros de anchura, con capacidad para desplazar 30.000 soldados por hora, y se encuentra a 52 kilómetros de la capital surcoreana. Tras un breve vídeo introductorio, los visitantes descienden por una empinada rampa de monorriel o a pie hasta el interior del túnel.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
             "highlights": [
               "Experiencia directa bajo tierra en una ruta de invasión de la Guerra Fría",
               "Breve documental sobre el descubrimiento del túnel",
@@ -1634,45 +1523,16 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1680,7 +1540,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "location": "3.er Túnel de Infiltración",
                 "caption": "3.er Túnel de Infiltración — photo 1",
                 "alt": "3.er Túnel de Infiltración — gallery image 1"
@@ -1688,18 +1548,10 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "location": "3.er Túnel de Infiltración",
                 "caption": "3.er Túnel de Infiltración — photo 2",
                 "alt": "3.er Túnel de Infiltración — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "3.er Túnel de Infiltración",
-                "caption": "3.er Túnel de Infiltración — photo 3",
-                "alt": "3.er Túnel de Infiltración — gallery image 3"
               }
             ]
           },
@@ -1710,7 +1562,7 @@
             "name": "Observatorio Dora",
             "category": "Mirador de la Frontera de la DMZ",
             "description": "El observatorio más septentrional de Corea accesible para civiles, reconstruido y reinaugurado a finales de 2018 con binoculares de gran alcance en el tercer piso. Desde la terraza abierta, los visitantes pueden ver directamente el interior de Corea del Norte: una aldea de propaganda, la ciudad de Kaesong, la enorme bandera de Kijongdong y el Complejo Industrial de Kaesong. La visibilidad depende de las condiciones meteorológicas.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "Línea de visión directa al territorio de Corea del Norte",
               "Binoculares de gran alcance en la terraza de observación abierta",
@@ -1748,45 +1600,11 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1794,26 +1612,10 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "location": "Observatorio Dora",
                 "caption": "Observatorio Dora — photo 1",
                 "alt": "Observatorio Dora — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "Observatorio Dora",
-                "caption": "Observatorio Dora — photo 2",
-                "alt": "Observatorio Dora — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "Observatorio Dora",
-                "caption": "Observatorio Dora — photo 3",
-                "alt": "Observatorio Dora — gallery image 3"
               }
             ]
           },
@@ -1824,7 +1626,7 @@
             "name": "Puente Colgante Rojo de Gamaksan",
             "category": "Puente Colgante de Montaña",
             "description": "Después del almuerzo, la ruta pasa de la historia intensa a los paisajes de montaña. El Puente Chulleong de Gamaksan se extiende 150 metros sobre un valle boscoso, convirtiéndolo en el puente colgante rojo más largo de Corea. Para llegar al puente se requiere una corta caminata cuesta arriba de entre 10 y 40 minutos según el punto de partida utilizado; el puente en sí es lo suficientemente amplio para albergar a cientos de visitantes a la vez.",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
             "highlights": [
               "El puente colgante rojo más largo de Corea, con 150 metros",
               "Fuerte contraste visual con las paradas de la mañana en la DMZ",
@@ -1861,45 +1663,26 @@
               "note": "Operational details based on aggregated visitor info"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+              "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+              "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+              "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1907,7 +1690,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "location": "Puente Colgante Rojo de Gamaksan",
                 "caption": "Puente Colgante Rojo de Gamaksan — photo 1",
                 "alt": "Puente Colgante Rojo de Gamaksan — gallery image 1"
@@ -1915,7 +1698,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "location": "Puente Colgante Rojo de Gamaksan",
                 "caption": "Puente Colgante Rojo de Gamaksan — photo 2",
                 "alt": "Puente Colgante Rojo de Gamaksan — gallery image 2"
@@ -1923,10 +1706,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "location": "Puente Colgante Rojo de Gamaksan",
                 "caption": "Puente Colgante Rojo de Gamaksan — photo 3",
                 "alt": "Puente Colgante Rojo de Gamaksan — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+                "location": "Puente Colgante Rojo de Gamaksan",
+                "caption": "Puente Colgante Rojo de Gamaksan — photo 4",
+                "alt": "Puente Colgante Rojo de Gamaksan — gallery image 4"
               }
             ]
           }

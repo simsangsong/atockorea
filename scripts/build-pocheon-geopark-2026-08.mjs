@@ -51,12 +51,12 @@ const KB_VERSION = KB._metadata.version;
 
 const IMG = {
   sanjeong: [
-    "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+    "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
   ],
   artvalley: [
-    "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-    "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+    "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+    "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
   ],
   // Jaein Falls and the lunch stop have no owned imagery yet — they ship
   // image-less rather than borrowing another POI's photo.

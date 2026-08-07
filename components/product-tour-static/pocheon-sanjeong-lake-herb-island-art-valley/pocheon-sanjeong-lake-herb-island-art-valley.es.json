@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Excursión a Pocheon: lago Sanjeong, cascada de Jaein y Art Valley | AtoC Korea",
     "metaDescription": "Excursión de 10 horas desde Seúl al Geoparque Mundial de la UNESCO del Hantangang: el circuito llano de 3,2 km del lago Sanjeong, los 18 m de basalto y el puente colgante de 80 m de la cascada de Jaein, y el lago esmeralda de la cantera de Pocheon Art Valley.",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "excursión de un día a Pocheon desde Seúl",
       "tour a la cascada de Jaein",
@@ -34,8 +34,8 @@
       "Paseo junto al lago",
       "Grupo reducido"
     ],
-    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas. Sale lunes, jueves y sábados.",
     "tags": [
@@ -59,7 +59,7 @@
     "priceNote": "Precio original 62 USD en ; AtoC Korea ~21% más barato."
   },
   "hero": {
-    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "Un lago de montaña centenario, una cascada que cae entre columnas de basalto y un hueco de granito lleno de agua esmeralda: la geología de Pocheon y Yeoncheon, caminada en un solo día",
     "pills": [
@@ -139,7 +139,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "Lago Sanjeong",
       "alt": "Lago Sanjeong — gallery image 1",
       "caption": "Lago Sanjeong — photo 1"
@@ -147,26 +147,42 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-      "location": "Lago Sanjeong",
-      "alt": "Lago Sanjeong — gallery image 2",
-      "caption": "Lago Sanjeong — photo 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
       "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1",
       "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1"
     },
     {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "Lago Sanjeong",
+      "alt": "Lago Sanjeong — gallery image 2",
+      "caption": "Lago Sanjeong — photo 2"
+    },
+    {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
       "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2",
       "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+      "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+      "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 3",
+      "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+      "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+      "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 4",
+      "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -194,18 +210,18 @@
         "Regreso al autocar (~5 min)"
       ],
       "whyOnRoute": "**La caminata más larga del día, hecha la primera.** El circuito de 3,2 km es llano, pero sigue siendo el mayor tramo a pie de esta excursión, y le corresponde el inicio, con las piernas frescas. La mañana es además el mejor momento del lago: en primavera y otoño suele levantarse niebla de la superficie, y las montañas se leen con nitidez antes de la calima de la tarde. El lago Sanjeong es la más lejana de Seúl de las cuatro paradas, así que empezar aquí significa también que el resto del día avanza de forma constante de vuelta hacia la ciudad y no alejándose de ella.",
-      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "images": [
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+        "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "source": "atoc-korea"
         }
       ],
@@ -213,18 +229,18 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "location": "Lago Sanjeong",
-          "alt": "Lago Sanjeong — gallery image 1",
-          "caption": "Lago Sanjeong — photo 1"
+          "caption": "Lago Sanjeong — photo 1",
+          "alt": "Lago Sanjeong — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "location": "Lago Sanjeong",
-          "alt": "Lago Sanjeong — gallery image 2",
-          "caption": "Lago Sanjeong — photo 2"
+          "caption": "Lago Sanjeong — photo 2",
+          "alt": "Lago Sanjeong — gallery image 2"
         }
       ],
       "visitBasics": {
@@ -352,18 +368,28 @@
         "Bajada a pie por el Bosque Sanador y reagrupación (~15 min)"
       ],
       "whyOnRoute": "**La última parada más segura, y el camino más corto a casa.** Art Valley cierra más tarde que el lago o el desfiladero, así que una tarde pausada no cuesta nada aquí y, de las cuatro paradas, es la más cercana a Seúl: terminar aquí hace que el trayecto final sea el más corto del día. También cierra la geología: después de haber estado frente a la lava en la cascada de Jaein, termina usted dentro del antiguo granito sobre el que aquella lava corrió, en un hueco que la gente excavó y que la tierra volvió a llenar en silencio.",
-      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "images": [
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+        "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+        "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+        "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
           "source": "atoc-korea"
         }
       ],
@@ -371,18 +397,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
-          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1",
-          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1"
+          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1",
+          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
           "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
-          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2",
-          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2"
+          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2",
+          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 3",
+          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+          "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+          "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 4",
+          "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 4"
         }
       ],
       "visitBasics": {
@@ -1081,7 +1123,7 @@
         "headlineLine1": "Lago, cascada",
         "headlineLine2": "y la cantera Art Valley",
         "hero": {
-          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "Un lago de montaña centenario, una cascada que cae entre columnas de basalto y un hueco de granito lleno de agua esmeralda: la geología de Pocheon y Yeoncheon, caminada en un solo día",
           "pills": [
@@ -1182,7 +1224,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "location": "Lago Sanjeong",
             "alt": "Lago Sanjeong — gallery image 1",
             "caption": "Lago Sanjeong — photo 1"
@@ -1190,7 +1232,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+            "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
             "location": "Lago Sanjeong",
             "alt": "Lago Sanjeong — gallery image 2",
             "caption": "Lago Sanjeong — photo 2"
@@ -1198,7 +1240,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
             "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
             "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1",
             "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1"
@@ -1206,7 +1248,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+            "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
             "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2",
             "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2"
@@ -1244,18 +1286,18 @@
               "Regreso al autocar (~5 min)"
             ],
             "whyOnRoute": "**La caminata más larga del día, hecha la primera.** El circuito de 3,2 km es llano, pero sigue siendo el mayor tramo a pie de esta excursión, y le corresponde el inicio, con las piernas frescas. La mañana es además el mejor momento del lago: en primavera y otoño suele levantarse niebla de la superficie, y las montañas se leen con nitidez antes de la calima de la tarde. El lago Sanjeong es la más lejana de Seúl de las cuatro paradas, así que empezar aquí significa también que el resto del día avanza de forma constante de vuelta hacia la ciudad y no alejándose de ella.",
-            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "images": [
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+              "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1263,18 +1305,18 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "location": "Lago Sanjeong",
-                "alt": "Lago Sanjeong — gallery image 1",
-                "caption": "Lago Sanjeong — photo 1"
+                "caption": "Lago Sanjeong — photo 1",
+                "alt": "Lago Sanjeong — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "location": "Lago Sanjeong",
-                "alt": "Lago Sanjeong — gallery image 2",
-                "caption": "Lago Sanjeong — photo 2"
+                "caption": "Lago Sanjeong — photo 2",
+                "alt": "Lago Sanjeong — gallery image 2"
               }
             ],
             "visitBasics": {
@@ -1402,18 +1444,28 @@
               "Bajada a pie por el Bosque Sanador y reagrupación (~15 min)"
             ],
             "whyOnRoute": "**La última parada más segura, y el camino más corto a casa.** Art Valley cierra más tarde que el lago o el desfiladero, así que una tarde pausada no cuesta nada aquí y, de las cuatro paradas, es la más cercana a Seúl: terminar aquí hace que el trayecto final sea el más corto del día. También cierra la geología: después de haber estado frente a la lava en la cascada de Jaein, termina usted dentro del antiguo granito sobre el que aquella lava corrió, en un hueco que la gente excavó y que la tierra volvió a llenar en silencio.",
-            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "images": [
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+              "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+              "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+              "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1421,18 +1473,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
-                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1",
-                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1"
+                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 1",
+                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
                 "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
-                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2",
-                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2"
+                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 2",
+                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 3",
+                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+                "location": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+                "caption": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — photo 4",
+                "alt": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang) — gallery image 4"
               }
             ],
             "visitBasics": {

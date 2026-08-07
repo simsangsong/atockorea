@@ -38,7 +38,7 @@ const STOPWORDS = new Set([
 function extractStemTokens(srcUrl) {
   if (!srcUrl || typeof srcUrl !== "string") return new Set();
   // /images/itinerary/bomun-lake-cherry-blossom-promenade.webp
-  // /images/tours/seopjikoji/kakaotalk-20260510-230009595-10.webp
+  // /images/tours/seopjikoji/02-kakaotalk-20260510-230009595-10.webp
   const filename = srcUrl.split("/").pop() || "";
   const stem = filename.replace(/\.[a-z0-9]+$/i, "");
   // also include the parent folder name (often the canonical poi slug)

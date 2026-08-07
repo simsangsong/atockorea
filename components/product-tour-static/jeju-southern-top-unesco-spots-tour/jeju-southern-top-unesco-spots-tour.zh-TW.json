@@ -15,12 +15,12 @@
       "雪綠茶博物館之旅",
       "漢拏山御乘生岳"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "濟州南部西歸浦招牌一日遊・幾乎全程免費入場 | AtoC",
     "description": "濟州南部西歸浦小團一日遊：正房瀑布 → 外突岩＆偶來7號路線 → 藥泉寺 → 午餐 → 雪綠茶博物館（Osulloc）→ 漢拏山御乘生岳。幾乎全程免費入場，小團出發。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "thumbnail": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "濟州南部西歸浦招牌一日遊",
     "priceLabel": "",
     "shortCardDescription": "小團一日遊，深度遊覽濟州南部西歸浦的經典景點——亞洲唯一直落入海的正房瀑布、外突岩奇岩與偶來7號路線海岸漫步、東亞最大寺院藥泉寺、雪綠茶博物館（Osulloc），以及漢拏山御乘生岳步道。濟州市全區及機場設有四個接送地點，持證英語・中文導遊全程陪同，除正房瀑布外幾乎全程免費入場，絕無購物壓力。",
@@ -47,7 +47,7 @@
       "價格實惠",
       "無購物"
     ],
-    "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp"
+    "heroImage": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp"
   },
   "headlineLine1": "濟州南部西歸浦招牌",
   "headlineLine2": "一日遊",
@@ -60,7 +60,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "imageUrl": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "imagePosition": "center 45%",
     "tagline": "一天遊覽濟州南部西歸浦海岸的經典景點——正房瀑布、外突岩偶來步道、藥泉寺、Osulloc、漢拏山。幾乎全程免費入場。",
     "pills": [
@@ -139,114 +139,186 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 1",
-      "caption": "正房瀑布 — photo 1"
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+      "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 1",
+      "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/yakcheonsa/photo-001.webp",
-      "location": "藥泉寺",
-      "alt": "藥泉寺 — gallery image 2",
-      "caption": "藥泉寺 — photo 2"
+      "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+      "location": "外突岩＆偶來7號路線海岸漫步",
+      "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 1",
+      "caption": "外突岩＆偶來7號路線海岸漫步 — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+      "location": "藥泉寺（東亞最大寺院）",
+      "alt": "藥泉寺（東亞最大寺院） — gallery image 1",
+      "caption": "藥泉寺（東亞最大寺院） — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "雪綠茶博物館 + 綠茶田",
+      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 1",
+      "caption": "雪綠茶博物館 + 綠茶田 — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+      "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+      "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 1",
+      "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+      "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 2",
+      "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+      "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 3",
+      "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+      "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 4",
+      "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+      "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 5",
+      "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+      "location": "外突岩＆偶來7號路線海岸漫步",
+      "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 2",
+      "caption": "外突岩＆偶來7號路線海岸漫步 — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+      "location": "外突岩＆偶來7號路線海岸漫步",
+      "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 3",
+      "caption": "外突岩＆偶來7號路線海岸漫步 — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+      "location": "外突岩＆偶來7號路線海岸漫步",
+      "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 4",
+      "caption": "外突岩＆偶來7號路線海岸漫步 — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+      "location": "藥泉寺（東亞最大寺院）",
+      "alt": "藥泉寺（東亞最大寺院） — gallery image 2",
+      "caption": "藥泉寺（東亞最大寺院） — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+      "location": "藥泉寺（東亞最大寺院）",
+      "alt": "藥泉寺（東亞最大寺院） — gallery image 3",
+      "caption": "藥泉寺（東亞最大寺院） — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+      "location": "藥泉寺（東亞最大寺院）",
+      "alt": "藥泉寺（東亞最大寺院） — gallery image 4",
+      "caption": "藥泉寺（東亞最大寺院） — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "雪綠茶博物館 + 綠茶田",
+      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 2",
+      "caption": "雪綠茶博物館 + 綠茶田 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "雪綠茶博物館 + 綠茶田",
       "alt": "雪綠茶博物館 + 綠茶田 — gallery image 3",
       "caption": "雪綠茶博物館 + 綠茶田 — photo 3"
     },
     {
-      "id": 4,
+      "id": 18,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-      "location": "漢拏山御乘生岳步道",
-      "alt": "漢拏山御乘生岳步道 — gallery image 4",
-      "caption": "漢拏山御乘生岳步道 — photo 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 5",
-      "caption": "正房瀑布 — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 6",
-      "caption": "正房瀑布 — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "雪綠茶博物館 + 綠茶田",
-      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 7",
-      "caption": "雪綠茶博物館 + 綠茶田 — photo 7"
+      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 4",
+      "caption": "雪綠茶博物館 + 綠茶田 — photo 4"
     },
     {
-      "id": 8,
+      "id": 19,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
       "location": "雪綠茶博物館 + 綠茶田",
-      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 8",
-      "caption": "雪綠茶博物館 + 綠茶田 — photo 8"
+      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 5",
+      "caption": "雪綠茶博物館 + 綠茶田 — photo 5"
     },
     {
-      "id": 9,
+      "id": 20,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
       "location": "雪綠茶博物館 + 綠茶田",
-      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 9",
-      "caption": "雪綠茶博物館 + 綠茶田 — photo 9"
+      "alt": "雪綠茶博物館 + 綠茶田 — gallery image 6",
+      "caption": "雪綠茶博物館 + 綠茶田 — photo 6"
     },
     {
-      "id": 10,
+      "id": 21,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "漢拏山御乘生岳步道",
-      "alt": "漢拏山御乘生岳步道 — gallery image 10",
-      "caption": "漢拏山御乘生岳步道 — photo 10"
+      "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+      "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+      "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 2",
+      "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 2"
     },
     {
-      "id": 11,
+      "id": 22,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-      "location": "漢拏山御乘生岳步道",
-      "alt": "漢拏山御乘生岳步道 — gallery image 11",
-      "caption": "漢拏山御乘生岳步道 — photo 11"
+      "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+      "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+      "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 3",
+      "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 3"
     },
     {
-      "id": 12,
+      "id": 23,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 12",
-      "caption": "漢拏山1100高地 — photo 12"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 13",
-      "caption": "漢拏山1100高地 — photo 13"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-      "location": "漢拏山1100高地",
-      "alt": "漢拏山1100高地 — gallery image 14",
-      "caption": "漢拏山1100高地 — photo 14"
+      "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+      "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+      "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 4",
+      "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 4"
     }
   ],
   "itineraryStops": [
@@ -286,7 +358,7 @@
       "name": "正房瀑布（亞洲唯一直落入海的瀑布）",
       "category": "海岸瀑布 — 瀛洲十景・西歸浦地名由來",
       "description": "**正房瀑布（정방，正房）以從懸崖直落入海、為亞洲唯一直落入海的瀑布**而聞名，是西歸浦的代表性景點。高**23公尺、寬約8公尺**的水流沿玄武岩海壁傾瀉入深藍大海，晴天時背景還可一併納入**森島（섶섬）與蚊島（문섬）**。\n\n正房瀑布與漢拏山、天帝淵並列為朝鮮時代文人選定的**瀛洲十景（영주십경，濟州十大絕景）**之一，懸崖上刻有**「徐市過此（서불과차）」傳說** — 相傳奉秦始皇之命尋找長生不老草的徐市曾路過此地後向西返回，這也是「西歸浦（西歸浦）」地名的由來。\n\n從售票處到瀑布下方須走**約130級階梯**，地面由圓潤的卵石與岩石構成，因此務必穿著防滑鞋。瀑布下方以水霧與大海為背景的留影十分熱門，懸崖上的觀景台則可一覽森島・蚊島。",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**亞洲唯一直落入海的瀑布** — 高23公尺／寬約8公尺",
         "**瀛洲十景（濟州十大絕景）**之一 — 與漢拏山・天帝淵一同入選",
@@ -331,21 +403,31 @@
         "walking": "中等 — 通往瀑布下方須走約130級階梯，地面為崎嶇岩石；請注意濕滑"
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -353,7 +435,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
           "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 1",
           "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 1"
@@ -361,7 +443,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
           "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 2",
           "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 2"
@@ -369,10 +451,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
           "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 3",
           "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+          "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 4",
+          "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+          "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 5",
+          "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 5"
         }
       ]
     },
@@ -383,7 +481,7 @@
       "name": "外突岩＆偶來7號路線海岸漫步",
       "category": "海岸奇岩 + 偶來步道 — 濟州世界地質公園地質名勝",
       "description": "**外突岩（외돌개）是約150萬年前火山噴發形成、高約20公尺的海岸石柱**，獨自聳立於茫茫大海之中，因而得名「外（獨）突（岩）」。它又被稱為「將軍岩」或「老婆婆岩」，並因作為**《大長今》拍攝地**而廣為人知。外突岩與西歸浦的層理海岸懸崖是**濟州世界地質公園（UNESCO世界地質公園）的官方地質名勝**之一。\n\n外突岩座落於**濟州偶來7號路線**之上 — 7號路線自濟州偶來旅客中心出發，途經法還浦口直至月坪，是全長約17.6公里的代表性海岸偶來步道，偶來健行者最喜愛的「秀峰路」路段就行經外突岩附近。\n\n此站除了外突岩觀景點外，還會**短暫漫步偶來7號路線的部分海岸步道。** 在松林間的小徑上，可眺望外突岩與森島・蚊島，以及無垠延展的南方大海，帶來與正房瀑布瀑布風光截然不同的開闊海岸景致。**免費開放**，步道大致平坦，但部分為天然石路段。",
-      "image": null,
+      "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
       "highlights": [
         "**外突岩** — 約150萬年前形成、高約20公尺的海岸石柱（「將軍岩」）",
         "因作為**《大長今》拍攝地**而聞名的西歸浦海岸絕景",
@@ -426,9 +524,64 @@
         "admission": "免費",
         "walking": "輕鬆～中等 — 海岸步道大致平坦，部分為天然石・階梯路段"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+        "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+        "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+        "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "location": "外突岩＆偶來7號路線海岸漫步",
+          "caption": "外突岩＆偶來7號路線海岸漫步 — photo 1",
+          "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "location": "外突岩＆偶來7號路線海岸漫步",
+          "caption": "外突岩＆偶來7號路線海岸漫步 — photo 2",
+          "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "location": "外突岩＆偶來7號路線海岸漫步",
+          "caption": "外突岩＆偶來7號路線海岸漫步 — photo 3",
+          "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "location": "外突岩＆偶來7號路線海岸漫步",
+          "caption": "外突岩＆偶來7號路線海岸漫步 — photo 4",
+          "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 4"
+        }
+      ]
     },
     {
       "number": 4,
@@ -437,7 +590,7 @@
       "name": "藥泉寺（東亞最大寺院）",
       "category": "寺院 — 東亞最大規模大寂光殿",
       "description": "**藥泉寺（약천사，藥泉寺）佔地122,100㎡，是東亞最大寺院之一**，為位於西歸浦大浦洞的大型寺院。其名意為「流淌著藥用泉水之寺」，建於四季不竭的藥水湧出的舊「藥水庵」遺址之上 — **由慧印法師於1981年動工，1996年竣工**。\n\n中心法堂**大寂光殿（大寂光殿）高約30公尺、總樓地板面積約3,305㎡**，是東洋最大級的單一法堂，沿襲朝鮮初期的寺院建築樣式。內部供奉**高5公尺的毗盧遮那佛（韓國最大木造坐佛）**於4公尺佛座之上，覆滿多層牆面的數萬尊小型金佛像構成壓倒性的壯觀景象。法堂前則設有**18噸規模的梵鐘**。\n\n藥泉寺位於**濟州偶來7號路線（終點）與8號路線（起點）的交會處**，偶來健行者與觀光客皆會造訪，並**自2006年起運營寺院寄宿（Templestay）**。**免費入場**，平坦的寺院境內相對便於遊覽。",
-      "image": "/images/tours/yakcheonsa/photo-001.webp",
+      "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
       "highlights": [
         "**東亞最大級寺院** — 佔地約122,100㎡",
         "**大寂光殿**高約30公尺／總樓地板面積約3,305㎡ — 東洋最大級的單一法堂",
@@ -482,11 +635,26 @@
         "walking": "輕鬆 — 平坦的寺院境內；進入法堂時有部分階梯"
       },
       "images": [
-        "/images/tours/yakcheonsa/photo-001.webp"
+        "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+        "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+        "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+        "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/yakcheonsa/photo-001.webp",
+          "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
           "source": "atoc-korea"
         }
       ],
@@ -494,10 +662,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/yakcheonsa/photo-001.webp",
+          "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
           "location": "藥泉寺（東亞最大寺院）",
           "caption": "藥泉寺（東亞最大寺院） — photo 1",
           "alt": "藥泉寺（東亞最大寺院） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "location": "藥泉寺（東亞最大寺院）",
+          "caption": "藥泉寺（東亞最大寺院） — photo 2",
+          "alt": "藥泉寺（東亞最大寺院） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "location": "藥泉寺（東亞最大寺院）",
+          "caption": "藥泉寺（東亞最大寺院） — photo 3",
+          "alt": "藥泉寺（東亞最大寺院） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+          "location": "藥泉寺（東亞最大寺院）",
+          "caption": "藥泉寺（東亞最大寺院） — photo 4",
+          "alt": "藥泉寺（東亞最大寺院） — gallery image 4"
         }
       ]
     },
@@ -534,7 +726,7 @@
       "name": "雪綠茶博物館 + 綠茶田",
       "category": "茶文化博物館 — 韓國最大綠茶田（西廣茶園）",
       "description": "**雪綠茶博物館（O'Sulloc，意為「邂逅白雪與翠綠」）**是韓國最大美妝企業**愛茉莉太平洋**的茶文化旗艦空間。創辦人**徐成煥會長於1979年**親自開創這項計畫，將濟州西廣高原的火山灰農地重新開墾為茶園。時至今日，**西廣茶園**已成為橫跨愛茉莉太平洋在濟州三處莊園、**年產量約700噸**的**韓國最大綠茶田**。\n\n博物館建築坐落於茶園中心，**於2001年開幕**，以極簡設計入選**designboom全球十大藝術博物館**。**免費入場**，每日開放，年訪客量約**200萬人次**。參觀分為三個部分：**(1) 館內展覽** — 茶葉製程・古代茶器收藏・屋頂觀景台；**(2) 茶房咖啡廳** — 招牌**綠茶瑞士捲**與**綠茶冰淇淋**；**(3) 茶園步道** — 茶叢間的碎石小徑（夕陽攝影名勝）。\n\n**悅詩風吟濟州之家（Innisfree Jeju House）**（愛茉莉太平洋的自然主義品牌）步行5分鐘即達，免費入場，並可選擇參加柑橘皂DIY工作坊（₩15,000）。",
-      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
       "highlights": [
         "**愛茉莉太平洋**旗艦品牌 — 創辦人徐成煥於**1979年**開創濟州茶葉栽培",
         "**西廣茶園 = 韓國最大綠茶田**；年產量約700噸",
@@ -579,26 +771,36 @@
         "walking": "輕鬆 — 平坦的鋪面道路，可推嬰兒車・輪椅通行"
       },
       "images": [
-        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -606,7 +808,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "location": "雪綠茶博物館 + 綠茶田",
           "caption": "雪綠茶博物館 + 綠茶田 — photo 1",
           "alt": "雪綠茶博物館 + 綠茶田 — gallery image 1"
@@ -614,7 +816,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "location": "雪綠茶博物館 + 綠茶田",
           "caption": "雪綠茶博物館 + 綠茶田 — photo 2",
           "alt": "雪綠茶博物館 + 綠茶田 — gallery image 2"
@@ -622,7 +824,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "location": "雪綠茶博物館 + 綠茶田",
           "caption": "雪綠茶博物館 + 綠茶田 — photo 3",
           "alt": "雪綠茶博物館 + 綠茶田 — gallery image 3"
@@ -630,10 +832,26 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
           "location": "雪綠茶博物館 + 綠茶田",
           "caption": "雪綠茶博物館 + 綠茶田 — photo 4",
           "alt": "雪綠茶博物館 + 綠茶田 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "location": "雪綠茶博物館 + 綠茶田",
+          "caption": "雪綠茶博物館 + 綠茶田 — photo 5",
+          "alt": "雪綠茶博物館 + 綠茶田 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "location": "雪綠茶博物館 + 綠茶田",
+          "caption": "雪綠茶博物館 + 綠茶田 — photo 6",
+          "alt": "雪綠茶博物館 + 綠茶田 — gallery image 6"
         }
       ]
     },
@@ -644,7 +862,7 @@
       "name": "漢拏山御乘生岳（UNESCO世界自然遺產）",
       "category": "UNESCO火山地質 — 漢拏山御乘生岳步道（三重自然認定）",
       "description": "**御乘生岳（1,169公尺）**是一條起點鄰近於御里牧遊客中心、位於漢拏山側面的短程火山錐（岳）步道。漢拏山是大韓民國最高峰，亦是**UNESCO世界自然遺產（2007年）・生物圈保護區（2002年）**，此路線讓旅客得以在無需登頂的情況下體驗漢拏山。\n\n今日路線將御乘生岳安排在從Osulloc**沿1100號公路（濟州最高海拔國道）越過漢拏山返回濟州市**的路途上。此步道比城板岳・觀音寺登頂路線短得多，**不適用登頂預約制**，由寬闊階梯與木棧道構成，穿運動鞋即可（單程1.3公里／海拔落差約200公尺）。\n\n晴天時，於上方棧道觀景台可眺望**漢拏山高地山坡、濟州的岳群與北部海域**，山頂部保存有**1945年日本帝國軍碉堡（陣地）**。山上天氣變化迅速，建議準備外套。**免費入場**，為一天劃下清涼山間空氣的深刻句點。",
-      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**漢拏山 = 三重自然認定**：UNESCO世界自然遺產2007 + 生物圈保護區2002 + 國立公園1970",
         "**御乘生岳1,169公尺** — 漢拏山側面的岳（寄生火山）",
@@ -690,21 +908,26 @@
         "walking": "中等 — 路程雖短但有階梯・上坡路段"
       },
       "images": [
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-        "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+        "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+        "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+        "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
           "source": "atoc-korea"
         }
       ],
@@ -712,7 +935,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
           "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 1",
           "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 1"
@@ -720,7 +943,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
           "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 2",
           "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 2"
@@ -728,10 +951,18 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
           "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
           "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 3",
           "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+          "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+          "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 4",
+          "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 4"
         }
       ]
     },
@@ -1615,7 +1846,7 @@
         "headlineLine1": "濟州南部西歸浦招牌",
         "headlineLine2": "一日遊",
         "hero": {
-          "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "imageUrl": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
           "imagePosition": "center 45%",
           "tagline": "一天遊覽濟州南部西歸浦海岸的經典景點——正房瀑布、外突岩偶來步道、藥泉寺、Osulloc、漢拏山。幾乎全程免費入場。",
           "pills": [
@@ -1715,7 +1946,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 1",
             "caption": "正房瀑布 — photo 1"
@@ -1739,7 +1970,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "location": "漢拏山御乘生岳步道",
             "alt": "漢拏山御乘生岳步道 — gallery image 4",
             "caption": "漢拏山御乘生岳步道 — photo 4"
@@ -1747,7 +1978,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 5",
             "caption": "正房瀑布 — photo 5"
@@ -1755,7 +1986,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 6",
             "caption": "正房瀑布 — photo 6"
@@ -1787,7 +2018,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
             "location": "漢拏山御乘生岳步道",
             "alt": "漢拏山御乘生岳步道 — gallery image 10",
             "caption": "漢拏山御乘生岳步道 — photo 10"
@@ -1803,7 +2034,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 12",
             "caption": "漢拏山1100高地 — photo 12"
@@ -1811,7 +2042,7 @@
           {
             "id": 13,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 13",
             "caption": "漢拏山1100高地 — photo 13"
@@ -1819,7 +2050,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "漢拏山1100高地",
             "alt": "漢拏山1100高地 — gallery image 14",
             "caption": "漢拏山1100高地 — photo 14"
@@ -1869,7 +2100,7 @@
             "name": "正房瀑布（亞洲唯一直落入海的瀑布）",
             "category": "海岸瀑布 — 瀛洲十景・西歸浦地名由來",
             "description": "**正房瀑布（정방，正房）以從懸崖直落入海、為亞洲唯一直落入海的瀑布**而聞名，是西歸浦的代表性景點。高**23公尺、寬約8公尺**的水流沿玄武岩海壁傾瀉入深藍大海，晴天時背景還可一併納入**森島（섶섬）與蚊島（문섬）**。\n\n正房瀑布與漢拏山、天帝淵並列為朝鮮時代文人選定的**瀛洲十景（영주십경，濟州十大絕景）**之一，懸崖上刻有**「徐市過此（서불과차）」傳說** — 相傳奉秦始皇之命尋找長生不老草的徐市曾路過此地後向西返回，這也是「西歸浦（西歸浦）」地名的由來。\n\n從售票處到瀑布下方須走**約130級階梯**，地面由圓潤的卵石與岩石構成，因此務必穿著防滑鞋。瀑布下方以水霧與大海為背景的留影十分熱門，懸崖上的觀景台則可一覽森島・蚊島。",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**亞洲唯一直落入海的瀑布** — 高23公尺／寬約8公尺",
               "**瀛洲十景（濟州十大絕景）**之一 — 與漢拏山・天帝淵一同入選",
@@ -1914,21 +2145,31 @@
               "walking": "中等 — 通往瀑布下方須走約130級階梯，地面為崎嶇岩石；請注意濕滑"
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1936,7 +2177,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
                 "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 1",
                 "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 1"
@@ -1944,7 +2185,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
                 "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 2",
                 "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 2"
@@ -1952,10 +2193,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
                 "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 3",
                 "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+                "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 4",
+                "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "正房瀑布（亞洲唯一直落入海的瀑布）",
+                "caption": "正房瀑布（亞洲唯一直落入海的瀑布） — photo 5",
+                "alt": "正房瀑布（亞洲唯一直落入海的瀑布） — gallery image 5"
               }
             ]
           },
@@ -1966,7 +2223,7 @@
             "name": "外突岩＆偶來7號路線海岸漫步",
             "category": "海岸奇岩 + 偶來步道 — 濟州世界地質公園地質名勝",
             "description": "**外突岩（외돌개）是約150萬年前火山噴發形成、高約20公尺的海岸石柱**，獨自聳立於茫茫大海之中，因而得名「外（獨）突（岩）」。它又被稱為「將軍岩」或「老婆婆岩」，並因作為**《大長今》拍攝地**而廣為人知。外突岩與西歸浦的層理海岸懸崖是**濟州世界地質公園（UNESCO世界地質公園）的官方地質名勝**之一。\n\n外突岩座落於**濟州偶來7號路線**之上 — 7號路線自濟州偶來旅客中心出發，途經法還浦口直至月坪，是全長約17.6公里的代表性海岸偶來步道，偶來健行者最喜愛的「秀峰路」路段就行經外突岩附近。\n\n此站除了外突岩觀景點外，還會**短暫漫步偶來7號路線的部分海岸步道。** 在松林間的小徑上，可眺望外突岩與森島・蚊島，以及無垠延展的南方大海，帶來與正房瀑布瀑布風光截然不同的開闊海岸景致。**免費開放**，步道大致平坦，但部分為天然石路段。",
-            "image": null,
+            "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
             "highlights": [
               "**外突岩** — 約150萬年前形成、高約20公尺的海岸石柱（「將軍岩」）",
               "因作為**《大長今》拍攝地**而聞名的西歸浦海岸絕景",
@@ -2009,9 +2266,64 @@
               "admission": "免費",
               "walking": "輕鬆～中等 — 海岸步道大致平坦，部分為天然石・階梯路段"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+              "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+              "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+              "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "location": "外突岩＆偶來7號路線海岸漫步",
+                "caption": "外突岩＆偶來7號路線海岸漫步 — photo 1",
+                "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "location": "外突岩＆偶來7號路線海岸漫步",
+                "caption": "外突岩＆偶來7號路線海岸漫步 — photo 2",
+                "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "location": "外突岩＆偶來7號路線海岸漫步",
+                "caption": "外突岩＆偶來7號路線海岸漫步 — photo 3",
+                "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "location": "外突岩＆偶來7號路線海岸漫步",
+                "caption": "外突岩＆偶來7號路線海岸漫步 — photo 4",
+                "alt": "外突岩＆偶來7號路線海岸漫步 — gallery image 4"
+              }
+            ]
           },
           {
             "number": 4,
@@ -2020,7 +2332,7 @@
             "name": "藥泉寺（東亞最大寺院）",
             "category": "寺院 — 東亞最大規模大寂光殿",
             "description": "**藥泉寺（약천사，藥泉寺）佔地122,100㎡，是東亞最大寺院之一**，為位於西歸浦大浦洞的大型寺院。其名意為「流淌著藥用泉水之寺」，建於四季不竭的藥水湧出的舊「藥水庵」遺址之上 — **由慧印法師於1981年動工，1996年竣工**。\n\n中心法堂**大寂光殿（大寂光殿）高約30公尺、總樓地板面積約3,305㎡**，是東洋最大級的單一法堂，沿襲朝鮮初期的寺院建築樣式。內部供奉**高5公尺的毗盧遮那佛（韓國最大木造坐佛）**於4公尺佛座之上，覆滿多層牆面的數萬尊小型金佛像構成壓倒性的壯觀景象。法堂前則設有**18噸規模的梵鐘**。\n\n藥泉寺位於**濟州偶來7號路線（終點）與8號路線（起點）的交會處**，偶來健行者與觀光客皆會造訪，並**自2006年起運營寺院寄宿（Templestay）**。**免費入場**，平坦的寺院境內相對便於遊覽。",
-            "image": "/images/tours/yakcheonsa/photo-001.webp",
+            "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
             "highlights": [
               "**東亞最大級寺院** — 佔地約122,100㎡",
               "**大寂光殿**高約30公尺／總樓地板面積約3,305㎡ — 東洋最大級的單一法堂",
@@ -2065,11 +2377,26 @@
               "walking": "輕鬆 — 平坦的寺院境內；進入法堂時有部分階梯"
             },
             "images": [
-              "/images/tours/yakcheonsa/photo-001.webp"
+              "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+              "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+              "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+              "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/yakcheonsa/photo-001.webp",
+                "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2077,10 +2404,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/yakcheonsa/photo-001.webp",
+                "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
                 "location": "藥泉寺（東亞最大寺院）",
                 "caption": "藥泉寺（東亞最大寺院） — photo 1",
                 "alt": "藥泉寺（東亞最大寺院） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "location": "藥泉寺（東亞最大寺院）",
+                "caption": "藥泉寺（東亞最大寺院） — photo 2",
+                "alt": "藥泉寺（東亞最大寺院） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "location": "藥泉寺（東亞最大寺院）",
+                "caption": "藥泉寺（東亞最大寺院） — photo 3",
+                "alt": "藥泉寺（東亞最大寺院） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+                "location": "藥泉寺（東亞最大寺院）",
+                "caption": "藥泉寺（東亞最大寺院） — photo 4",
+                "alt": "藥泉寺（東亞最大寺院） — gallery image 4"
               }
             ]
           },
@@ -2117,7 +2468,7 @@
             "name": "雪綠茶博物館 + 綠茶田",
             "category": "茶文化博物館 — 韓國最大綠茶田（西廣茶園）",
             "description": "**雪綠茶博物館（O'Sulloc，意為「邂逅白雪與翠綠」）**是韓國最大美妝企業**愛茉莉太平洋**的茶文化旗艦空間。創辦人**徐成煥會長於1979年**親自開創這項計畫，將濟州西廣高原的火山灰農地重新開墾為茶園。時至今日，**西廣茶園**已成為橫跨愛茉莉太平洋在濟州三處莊園、**年產量約700噸**的**韓國最大綠茶田**。\n\n博物館建築坐落於茶園中心，**於2001年開幕**，以極簡設計入選**designboom全球十大藝術博物館**。**免費入場**，每日開放，年訪客量約**200萬人次**。參觀分為三個部分：**(1) 館內展覽** — 茶葉製程・古代茶器收藏・屋頂觀景台；**(2) 茶房咖啡廳** — 招牌**綠茶瑞士捲**與**綠茶冰淇淋**；**(3) 茶園步道** — 茶叢間的碎石小徑（夕陽攝影名勝）。\n\n**悅詩風吟濟州之家（Innisfree Jeju House）**（愛茉莉太平洋的自然主義品牌）步行5分鐘即達，免費入場，並可選擇參加柑橘皂DIY工作坊（₩15,000）。",
-            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
             "highlights": [
               "**愛茉莉太平洋**旗艦品牌 — 創辦人徐成煥於**1979年**開創濟州茶葉栽培",
               "**西廣茶園 = 韓國最大綠茶田**；年產量約700噸",
@@ -2162,26 +2513,36 @@
               "walking": "輕鬆 — 平坦的鋪面道路，可推嬰兒車・輪椅通行"
             },
             "images": [
-              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2189,7 +2550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "location": "雪綠茶博物館 + 綠茶田",
                 "caption": "雪綠茶博物館 + 綠茶田 — photo 1",
                 "alt": "雪綠茶博物館 + 綠茶田 — gallery image 1"
@@ -2197,7 +2558,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "location": "雪綠茶博物館 + 綠茶田",
                 "caption": "雪綠茶博物館 + 綠茶田 — photo 2",
                 "alt": "雪綠茶博物館 + 綠茶田 — gallery image 2"
@@ -2205,7 +2566,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "location": "雪綠茶博物館 + 綠茶田",
                 "caption": "雪綠茶博物館 + 綠茶田 — photo 3",
                 "alt": "雪綠茶博物館 + 綠茶田 — gallery image 3"
@@ -2213,10 +2574,26 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
                 "location": "雪綠茶博物館 + 綠茶田",
                 "caption": "雪綠茶博物館 + 綠茶田 — photo 4",
                 "alt": "雪綠茶博物館 + 綠茶田 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "location": "雪綠茶博物館 + 綠茶田",
+                "caption": "雪綠茶博物館 + 綠茶田 — photo 5",
+                "alt": "雪綠茶博物館 + 綠茶田 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "location": "雪綠茶博物館 + 綠茶田",
+                "caption": "雪綠茶博物館 + 綠茶田 — photo 6",
+                "alt": "雪綠茶博物館 + 綠茶田 — gallery image 6"
               }
             ]
           },
@@ -2227,7 +2604,7 @@
             "name": "漢拏山御乘生岳（UNESCO世界自然遺產）",
             "category": "UNESCO火山地質 — 漢拏山御乘生岳步道（三重自然認定）",
             "description": "**御乘生岳（1,169公尺）**是一條起點鄰近於御里牧遊客中心、位於漢拏山側面的短程火山錐（岳）步道。漢拏山是大韓民國最高峰，亦是**UNESCO世界自然遺產（2007年）・生物圈保護區（2002年）**，此路線讓旅客得以在無需登頂的情況下體驗漢拏山。\n\n今日路線將御乘生岳安排在從Osulloc**沿1100號公路（濟州最高海拔國道）越過漢拏山返回濟州市**的路途上。此步道比城板岳・觀音寺登頂路線短得多，**不適用登頂預約制**，由寬闊階梯與木棧道構成，穿運動鞋即可（單程1.3公里／海拔落差約200公尺）。\n\n晴天時，於上方棧道觀景台可眺望**漢拏山高地山坡、濟州的岳群與北部海域**，山頂部保存有**1945年日本帝國軍碉堡（陣地）**。山上天氣變化迅速，建議準備外套。**免費入場**，為一天劃下清涼山間空氣的深刻句點。",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**漢拏山 = 三重自然認定**：UNESCO世界自然遺產2007 + 生物圈保護區2002 + 國立公園1970",
               "**御乘生岳1,169公尺** — 漢拏山側面的岳（寄生火山）",
@@ -2273,21 +2650,26 @@
               "walking": "中等 — 路程雖短但有階梯・上坡路段"
             },
             "images": [
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+              "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+              "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+              "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2295,7 +2677,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
                 "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 1",
                 "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 1"
@@ -2303,7 +2685,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
                 "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 2",
                 "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 2"
@@ -2311,10 +2693,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
                 "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
                 "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 3",
                 "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+                "location": "漢拏山御乘生岳（UNESCO世界自然遺產）",
+                "caption": "漢拏山御乘生岳（UNESCO世界自然遺產） — photo 4",
+                "alt": "漢拏山御乘生岳（UNESCO世界自然遺產） — gallery image 4"
               }
             ]
           },

@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "ソウルDMZプライベートツアー：第3トンネル＋橋 | AtoC Korea",
     "metaDescription": "ソウル発8〜9時間のDMZプライベートデイツアー：臨津閣平和公園、第3浸透トンネル、都羅展望台、そして150mのガマクサン・レッド吊り橋。",
-    "ogImage": "https://www.atockorea.com/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "primaryKeywords": [
       "ソウルDMZプライベートツアー",
       "DMZ第3トンネルツアー",
@@ -31,8 +31,8 @@
       "DMZ＋吊り橋",
       "ホテルピックアップ込み"
     ],
-    "heroImage": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-    "thumbnail": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+    "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "priceLabel": "",
     "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は150メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。",
     "tags": [
@@ -51,7 +51,7 @@
     "priceNote": ""
   },
   "hero": {
-    "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+    "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
     "imagePosition": "center 40%",
     "tagline": "世界で最も要塞化された国境から150メートルの山岳吊り橋まで——プライベートで巡る1日で、まったく異なる韓国の2つの顔を体験。",
     "pills": [
@@ -131,15 +131,15 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "location": "臨津閣平和公園",
-      "alt": "臨津閣平和公園 — ギャラリー画像1",
-      "caption": "臨津閣平和公園 — 写真1"
+      "alt": "臨津閣平和公園 — gallery image 1",
+      "caption": "臨津閣平和公園 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "location": "第3浸透トンネル（地下侵入トンネル）",
       "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 1",
       "caption": "第3浸透トンネル（地下侵入トンネル） — photo 1"
@@ -147,34 +147,66 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
+      "location": "都羅展望台",
+      "alt": "都羅展望台 — gallery image 1",
+      "caption": "都羅展望台 — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "location": "カマクサン（紺岳山）レッド吊り橋",
       "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 1",
       "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 1"
     },
     {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-      "location": "臨津閣平和公園",
-      "alt": "臨津閣平和公園 — ギャラリー画像2",
-      "caption": "臨津閣平和公園 — 写真2"
-    },
-    {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+      "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+      "location": "臨津閣平和公園",
+      "alt": "臨津閣平和公園 — gallery image 2",
+      "caption": "臨津閣平和公園 — photo 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "location": "臨津閣平和公園",
+      "alt": "臨津閣平和公園 — gallery image 3",
+      "caption": "臨津閣平和公園 — photo 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
       "location": "第3浸透トンネル（地下侵入トンネル）",
       "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 2",
       "caption": "第3浸透トンネル（地下侵入トンネル） — photo 2"
     },
     {
-      "id": 6,
+      "id": 8,
       "type": "photo",
-      "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-      "location": "第3浸透トンネル（地下侵入トンネル）",
-      "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 3",
-      "caption": "第3浸透トンネル（地下侵入トンネル） — photo 3"
+      "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+      "location": "カマクサン（紺岳山）レッド吊り橋",
+      "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 2",
+      "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+      "location": "カマクサン（紺岳山）レッド吊り橋",
+      "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 3",
+      "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+      "location": "カマクサン（紺岳山）レッド吊り橋",
+      "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 4",
+      "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 4"
     }
   ],
   "itineraryStops": [
@@ -233,21 +265,23 @@
           "Wikipedia (Imjingak — open verifiable corpus on Freedom Bridge POW exchange + 2ID Memorial)"
         ]
       },
-      "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+      "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
       "images": [
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-        "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
-        "/images/tours/imjingak/dmz-01.webp",
-        "/images/tours/imjingak/photo-004.webp",
-        "/images/tours/imjingak/photo-005.webp"
+        "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+        "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
           "source": "atoc-korea"
         }
       ],
@@ -255,18 +289,26 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "location": "臨津閣平和公園",
-          "caption": "臨津閣平和公園 — 写真1",
-          "alt": "臨津閣平和公園 — ギャラリー画像1"
+          "caption": "臨津閣平和公園 — photo 1",
+          "alt": "臨津閣平和公園 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+          "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
           "location": "臨津閣平和公園",
-          "caption": "臨津閣平和公園 — 写真2",
-          "alt": "臨津閣平和公園 — ギャラリー画像2"
+          "caption": "臨津閣平和公園 — photo 2",
+          "alt": "臨津閣平和公園 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+          "location": "臨津閣平和公園",
+          "caption": "臨津閣平和公園 — photo 3",
+          "alt": "臨津閣平和公園 — gallery image 3"
         }
       ]
     },
@@ -325,23 +367,18 @@
           "Korea Herald / Yonhap News archival coverage (Korean defector tip-off + 30,000 troops/hour estimate)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+        "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "source": "atoc-korea"
         }
       ],
@@ -349,7 +386,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
           "location": "第3浸透トンネル（地下侵入トンネル）",
           "caption": "第3浸透トンネル（地下侵入トンネル） — photo 1",
           "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 1"
@@ -357,18 +394,10 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
           "location": "第3浸透トンネル（地下侵入トンネル）",
           "caption": "第3浸透トンネル（地下侵入トンネル） — photo 2",
           "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "第3浸透トンネル（地下侵入トンネル）",
-          "caption": "第3浸透トンネル（地下侵入トンネル） — photo 3",
-          "alt": "第3浸透トンネル（地下侵入トンネル） — gallery image 3"
         }
       ]
     },
@@ -427,23 +456,13 @@
           "Wikipedia (Dora Observatory — corpus on 304 ft² capacity + 500-person observatory replacement of Songaksan)"
         ]
       },
-      "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+      "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
       "images": [
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "source": "atoc-korea"
         }
       ],
@@ -451,26 +470,10 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
           "location": "都羅展望台",
           "caption": "都羅展望台 — photo 1",
           "alt": "都羅展望台 — gallery image 1"
-        },
-        {
-          "id": 2,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-          "location": "都羅展望台",
-          "caption": "都羅展望台 — photo 2",
-          "alt": "都羅展望台 — gallery image 2"
-        },
-        {
-          "id": 3,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "都羅展望台",
-          "caption": "都羅展望台 — photo 3",
-          "alt": "都羅展望台 — gallery image 3"
         }
       ]
     },
@@ -530,28 +533,28 @@
           "Wikipedia (Battle of the Imjin River — 1st Battalion Gloucester Regiment + 170th Mortar Battery courageous-stand record)"
         ]
       },
-      "image": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+      "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
       "images": [
-        "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-        "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+        "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+        "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+        "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+        "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+          "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "source": "atoc-korea"
         }
       ],
@@ -559,7 +562,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/gamaksan-suspension-bridge/chatgpt-image-2026-5-10-10-36-38.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
           "location": "カマクサン（紺岳山）レッド吊り橋",
           "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 1",
           "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 1"
@@ -567,26 +570,26 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+          "location": "カマクサン（紺岳山）レッド吊り橋",
+          "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 2",
+          "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
           "location": "カマクサン（紺岳山）レッド吊り橋",
           "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 3",
           "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 3"
         },
         {
-          "id": 3,
+          "id": 4,
           "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+          "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
           "location": "カマクサン（紺岳山）レッド吊り橋",
           "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 4",
           "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 4"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-          "location": "カマクサン（紺岳山）レッド吊り橋",
-          "caption": "カマクサン（紺岳山）レッド吊り橋 — photo 5",
-          "alt": "カマクサン（紺岳山）レッド吊り橋 — gallery image 5"
         }
       ]
     }
@@ -1278,7 +1281,7 @@
         "headlineLine1": "ソウル DMZ プライベートツアー",
         "headlineLine2": "第3トンネル＆橋",
         "hero": {
-          "imageUrl": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+          "imageUrl": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
           "imagePosition": "center 40%",
           "tagline": "世界で最も要塞化された国境から、標高150メートルの山岳吊り橋まで―プライベートな1日で、まったく異なる韓国の2つの顔を体験できます。",
           "pills": [
@@ -1378,7 +1381,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
             "alt": "臨津閣の望拝壇と自由の橋、リボンや記念プレートが飾られている",
             "caption": "臨津閣平和公園（1972年建立の記念地）",
             "location": "臨津閣平和公園",
@@ -1400,7 +1403,7 @@
             "name": "臨津閣平和公園",
             "category": "朝鮮戦争記念公園",
             "description": "ソウルから約70分の臨津閣は、統一への願いを込めたシンボルとして1972年に建設された平和公園です。特別な許可なく一般市民が訪れることができ、分断された半島を象徴する最も印象的なスポットが一か所に集まっています。離散家族が祝日に集う望拝壇、かつて戦争捕虜の送還に使われた自由の橋、そして朝鮮戦争当時の弾痕が残る蒸気機関車などを見ることができます。",
-            "image": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+            "image": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
             "highlights": [
               "祝日に家族が北に向かって祈りを捧げる望拝壇",
               "フェンスに平和のリボンが結ばれた自由の橋",
@@ -1438,16 +1441,21 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
-              "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp"
+              "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+              "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+              "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "url": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "url": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1455,18 +1463,26 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-40-40.webp",
+                "src": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
                 "location": "臨津閣平和公園",
-                "caption": "臨津閣平和公園 — 写真1",
-                "alt": "臨津閣平和公園 — ギャラリー画像1"
+                "caption": "臨津閣平和公園 — photo 1",
+                "alt": "臨津閣平和公園 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/imjingak/chatgpt-image-2026-5-10-10-42-31-3.webp",
+                "src": "/images/tours/imjingak/02-chatgpt-image-2026-5-10-10-42-31.webp",
                 "location": "臨津閣平和公園",
-                "caption": "臨津閣平和公園 — 写真2",
-                "alt": "臨津閣平和公園 — ギャラリー画像2"
+                "caption": "臨津閣平和公園 — photo 2",
+                "alt": "臨津閣平和公園 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+                "location": "臨津閣平和公園",
+                "caption": "臨津閣平和公園 — photo 3",
+                "alt": "臨津閣平和公園 — gallery image 3"
               }
             ]
           },
@@ -1477,7 +1493,7 @@
             "name": "第3浸透トンネル",
             "category": "地下侵攻トンネル（1978年）",
             "description": "1978年に発見された第3浸透トンネルは、北朝鮮がソウルに向けて掘った4本の既知のトンネルの中で最大のものです。全長1,635メートル、高さ2メートル、幅2メートルで、1時間あたり3万人の兵士を移動させることが可能であり、韓国の首都から52キロメートルの地点に達しています。短いオリエンテーションビデオを視聴した後、来場者はモノレールまたはウォーキングランプを降りてトンネル内へと進みます。",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
             "highlights": [
               "冷戦時代の侵攻ルートを地下で直接体験",
               "トンネル発見に関する短編ドキュメンタリー",
@@ -1517,45 +1533,16 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
+              "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1563,7 +1550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-third-tunnel/01-chatgpt-image-2026-5-10-10-39-00.webp",
                 "location": "第3浸透トンネル",
                 "caption": "第3浸透トンネル — photo 1",
                 "alt": "第3浸透トンネル — gallery image 1"
@@ -1571,18 +1558,10 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/dmz-third-tunnel/02-chatgpt-image-2026-5-10-10-40-32.webp",
                 "location": "第3浸透トンネル",
                 "caption": "第3浸透トンネル — photo 2",
                 "alt": "第3浸透トンネル — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "第3浸透トンネル",
-                "caption": "第3浸透トンネル — photo 3",
-                "alt": "第3浸透トンネル — gallery image 3"
               }
             ]
           },
@@ -1593,7 +1572,7 @@
             "name": "都羅展望台",
             "category": "DMZ国境展望スポット",
             "description": "韓国最北端の一般市民がアクセスできる展望台で、2018年末に再建・再開館されました。3階には高性能双眼鏡が設置されています。屋上の開放デッキからは北朝鮮を直接見渡すことができ、宣伝村、開城市、基井洞（キジョンドン）の巨大な旗、そして開城工業団地を望むことができます。視界は天候によって異なります。",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
             "highlights": [
               "北朝鮮領土への直接の視線",
               "開放型展望デッキに設置された高性能双眼鏡",
@@ -1631,45 +1610,11 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1677,26 +1622,10 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/dmz-dora-observatory/01-chatgpt-image-2026-5-10-10-36-43.webp",
                 "location": "都羅展望台",
                 "caption": "都羅展望台 — photo 1",
                 "alt": "都羅展望台 — gallery image 1"
-              },
-              {
-                "id": 2,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "location": "都羅展望台",
-                "caption": "都羅展望台 — photo 2",
-                "alt": "都羅展望台 — gallery image 2"
-              },
-              {
-                "id": 3,
-                "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "location": "都羅展望台",
-                "caption": "都羅展望台 — photo 3",
-                "alt": "都羅展望台 — gallery image 3"
               }
             ]
           },
@@ -1707,7 +1636,7 @@
             "name": "カマクサン レッドサスペンションブリッジ",
             "category": "山の吊り橋",
             "description": "昼食後、ルートは重厚な歴史から山岳景観へと移ります。カマクサン チョルロン橋は、森に覆われた渓谷を150メートルにわたって架かる、韓国最長の赤い吊り橋です。橋に至るには、利用する登山口によって約10〜40分ほどの上り坂の歩行が必要ですが、橋自体は一度に数百人もの来訪者を収容できるほどの幅があります。",
-            "image": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+            "image": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
             "highlights": [
               "全長150メートル、韓国最長の赤い吊り橋",
               "午前中のDMZ見学スポットとの強い視覚的コントラスト",
@@ -1744,45 +1673,26 @@
               "note": "Operational details based on aggregated visitor info"
             },
             "images": [
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-              "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp"
+              "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
+              "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
+              "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
+              "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "url": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1790,7 +1700,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-36-43.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/01-kakaotalk-20260509-231613245-29.webp",
                 "location": "カマクサン レッドサスペンションブリッジ",
                 "caption": "カマクサン レッドサスペンションブリッジ — photo 1",
                 "alt": "カマクサン レッドサスペンションブリッジ — gallery image 1"
@@ -1798,7 +1708,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-39-00.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/02-kakaotalk-20260509-231613245-28.webp",
                 "location": "カマクサン レッドサスペンションブリッジ",
                 "caption": "カマクサン レッドサスペンションブリッジ — photo 2",
                 "alt": "カマクサン レッドサスペンションブリッジ — gallery image 2"
@@ -1806,10 +1716,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/dmz/chatgpt-image-2026-5-10-10-40-32.webp",
+                "src": "/images/tours/gamaksan-suspension-bridge/03-chatgpt-image-2026-5-10-10-36-38.webp",
                 "location": "カマクサン レッドサスペンションブリッジ",
                 "caption": "カマクサン レッドサスペンションブリッジ — photo 3",
                 "alt": "カマクサン レッドサスペンションブリッジ — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gamaksan-suspension-bridge/04-kakaotalk-20260509-231601211.webp",
+                "location": "カマクサン レッドサスペンションブリッジ",
+                "caption": "カマクサン レッドサスペンションブリッジ — photo 4",
+                "alt": "カマクサン レッドサスペンションブリッジ — gallery image 4"
               }
             ]
           }
