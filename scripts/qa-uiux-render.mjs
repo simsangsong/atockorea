@@ -164,10 +164,27 @@ const measure = () => {
   document.body.appendChild(probe);
   const accentRgb = norm(getComputedStyle(probe).color);
   probe.remove();
+  /**
+   * A saturated accent fill is the obvious primary, but this app has two hero
+   * primitives and only one of them is a slab:
+   *
+   *   .tr-cta-hero        accent fill (guide console 운행 시작, ops home)
+   *   .tr-plan-btn--hero  accent WASH inside a 1.5px accent ring — the planner's
+   *                       commit tier. Its own CSS comment says "Same grammar as
+   *                       the room's .tr-cta-hero … reads as 'this is the button'
+   *                       without adding a second saturated slab to a screen that
+   *                       already had too many."
+   *
+   * Matching only the fill reported the planner as having no primary while its
+   * documented hero tier was on screen. Both are named here rather than trying
+   * to infer 'looks loud' from computed style — the ring-and-wash treatment has
+   * a transparent-ish background and no amount of colour maths finds it.
+   */
+  const HERO_CLASSES = /\btr-cta-hero\b|\btr-plan-btn--hero\b/;
   const primaries = controls.filter((el) => {
     const cs = getComputedStyle(el);
     if (norm(cs.backgroundColor) === accentRgb) return true;
-    return /tr-cta-hero/.test(el.className.toString());
+    return HERO_CLASSES.test(el.className.toString());
   });
 
   return {
