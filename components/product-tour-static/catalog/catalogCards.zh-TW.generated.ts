@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港口接送",
         "保證返回"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "priceLabel": "",
       "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
     },
@@ -169,8 +169,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港口接送",
         "8小時行程"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
+      "thumbnail": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
       "priceLabel": "",
       "shortCardDescription": "為郵輪旅客設計的釜山小團岸上行程，使用限乘12人的廂型車。八小時走九個點 — 海東龍宮寺、聯合國紀念公園、自費午餐，接著步行走完札嘎其市場、BIFF廣場與國際市場，然後是甘川文化村、松島雲端散步路（是否搭纜車上天空公園由您現場決定），最後是龍頭山公園。接送在您船隻靠泊的郵輪碼頭，返程對齊您的登船截止時間。"
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "海岸",
         "文化村"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "thumbnail": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
       "priceLabel": "",
       "shortCardDescription": "以海岸與山坡村落為軸心的釜山小團體一日遊。清幽上午時段的海東龍宮寺、免費玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的藍線公園天空膠囊（預訂時選擇含票或不含票）、午餐、甘川文化村，以及免費單軌沿「希望階梯」上行的私房景點Dakbatgol壁畫村。除可選的膠囊外，所有核心停留點皆免費入場。"
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "從釜山出發",
         "冬季看夜景"
       ],
-      "heroImage": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
-      "thumbnail": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
+      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
       "priceLabel": "每人 US$39（原價$50，22% 優惠）",
       "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "超值定價",
         "所有門票已包含"
       ],
-      "heroImage": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
-      "thumbnail": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "heroImage": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+      "thumbnail": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
       "priceLabel": "",
       "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點 — 現在洞窟先行：開放後最清靜時段的萬丈窟、城邑民俗村、城山日出峰與海女潛水表演（取消時改為海女博物館），再以傍晚前的咸德西牛峰海水浴場收尾。2007年一同登錄的兩處聯合國教科文組織世界自然遺產，含全部門票，配備認證英語·中文導遊。"
     },
@@ -471,8 +471,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "3 處聯合國教科文組織遺址",
         "最適合一日遊旅客"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+      "thumbnail": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "priceLabel": "",
       "shortCardDescription": "一條高強度的全島路線，串聯三處聯合國教科文組織世界遺產——漢拏山、城山日出峰與萬丈窟熔岩洞——並結合現場海女自由潛水表演、柱狀節理海崖，以及直落入海的正房瀑布。濟州的代表性精華，濃縮於一日之內。"
     },
@@ -755,8 +755,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "每週一及週四",
         "12小時全日行程"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "thumbnail": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
       "priceLabel": "",
       "shortCardDescription": "從首爾出發前往東海岸的12小時巴士一日遊：健行雪嶽山國家公園、參觀懸崖上的洛山寺，以及漫步松林環繞的洛山海灘。每週一及週四出發，配備英語導遊，並提供弘大或明洞的來回接送服務。"
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "全程門票已含",
         "13小時全日行程"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
       "priceLabel": "",
       "shortCardDescription": "從首爾出發的13小時巴士一日遊，涵蓋韓國三大熱門攝影打卡景點：雪嶽山國立公園（韓國唯一的聯合國教科文組織生物圈保護區）、南怡島（《冬季戀歌》取景地的水杉林蔭大道）及晨靜苑（韓國代表性私人植物園，擁有5,000種植物）。全程門票已含；提供英語導遊；於弘益大學站或明洞站接送。"
     },
@@ -860,8 +860,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "民俗村",
         "一日遊"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
+      "thumbnail": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
       "priceLabel": "",
       "shortCardDescription": "從首爾出發前往京畿道的小團體文化一日遊，帶您體驗韓國歷史遺產與現代生活的四大截然不同面貌：列入UNESCO世界遺產的水原華城（18世紀城牆與城門）、修復後的華城行宮及其朝鮮時代重現活動、龍仁引人入勝的露天韓國民俗村，以及壯觀的四層樓星野水原圖書館。全程10小時，含交通及門票費用。"
     },
@@ -888,8 +888,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "購物",
         "一日遊"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
       "priceLabel": "",
       "shortCardDescription": "首爾出發小團體文化一日遊，帶您探索京畿道三大截然不同的面貌：列入UNESCO世界遺產名錄的水原華城，擁有18世紀古城牆與行宮；前日據時代金礦改建而成、璀璨LED燈光點綴的地下主題樂園光明洞窟；四層樓高的水原星空圖書館。全程9小時，含交通接送與門票。"
     },
@@ -961,8 +961,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "適合初次造訪濟州的旅客",
         "濟州西南部"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
+      "thumbnail": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
       "priceLabel": "",
       "shortCardDescription": "串聯漢拿山1100高地濕地、火山海岸線、天帝淵瀑布、O'Sulloc茶園、涯月咖啡街與梨湖泰烏日落的均衡濟州西南部一日行程。"
     },

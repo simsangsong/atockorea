@@ -52,8 +52,8 @@ const FEATURED_JOIN_TOUR_PRODUCT: FeaturedJoinTourProduct = {
   rating: 0,
   reviewCount: 0,
   badges: ["Small group", "3 UNESCO Sites", "Best for One-Day Visitors"],
-  heroImage: "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-  thumbnail: "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+  heroImage: "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+  thumbnail: "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
   priceLabel: "From US$80 per person",
   shortCardDescription:
     "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, Seongsan Ilchulbong and Manjanggul lava tube — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall.",

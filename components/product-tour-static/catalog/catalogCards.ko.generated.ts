@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "항구 픽업",
         "귀환 보장"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "priceLabel": "",
       "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
     },
@@ -169,8 +169,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "항구 픽업",
         "8시간 일정"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
+      "thumbnail": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
       "priceLabel": "",
       "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다."
     },
@@ -195,8 +195,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "해안",
         "문화마을"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "heroImage": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "thumbnail": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
       "priceLabel": "",
       "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
     },
@@ -294,8 +294,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "부산 출발",
         "겨울엔 야경"
       ],
-      "heroImage": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
-      "thumbnail": "/images/tours/ahopsan-bamboo/01-chatgpt-image-2026-5-10-12-22-47.webp",
+      "heroImage": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
+      "thumbnail": "/images/tours/woljeonggyo/01-chatgpt-image-2026-5-11-12-33-57.webp",
       "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
       "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
     },
@@ -447,8 +447,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "합리적 가격",
         "전 입장료 포함"
       ],
-      "heroImage": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
-      "thumbnail": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "heroImage": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
+      "thumbnail": "/images/tours/hamdeok-beach/05-kakaotalk-20260510-230028438-04.webp",
       "priceLabel": "",
       "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다 — 이제 동굴을 먼저 갑니다: 개장 직후 가장 한적한 만장굴, 성읍민속마을, 성산일출봉과 해녀 물질공연(취소 시 해녀박물관), 그리고 늦은 오후의 함덕 서우봉해변 피날레. 2007년 함께 등재된 두 유네스코 세계자연유산, 전 입장료 포함, 공인 영어·중국어 가이드."
     },
@@ -471,8 +471,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "유네스코 3대 명소",
         "당일 여행객에게 최적"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+      "thumbnail": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "priceLabel": "",
       "shortCardDescription": "한라산, 성산일출봉, 만장굴 용암동굴까지 유네스코 세계유산 3곳을 연결하고, 살아 있는 해녀 물질 시연, 주상절리 절벽, 바다로 떨어지는 정방폭포를 더한 고밀도 전 지역 코스입니다. 제주의 대표 명소를 하루에 응축한 일정입니다."
     },
@@ -755,8 +755,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "매주 월요일 & 목요일",
         "12시간 일정"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
+      "thumbnail": "/images/tours/naksansa-temple/naksansa-uisangdae-pavilion.webp",
       "priceLabel": "",
       "shortCardDescription": "서울에서 동해안까지 12시간 코치 당일 여행: 설악산 국립공원 하이킹, 절벽 위의 낙산사 방문, 소나무 숲 낙산해수욕장 산책. 매주 월요일과 목요일 출발, 영어 가이드 동반, 홍대 또는 명동에서 왕복 이동 포함."
     },
@@ -780,8 +780,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "입장료 전액 포함",
         "13시간 당일 일정"
       ],
-      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "heroImage": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
+      "thumbnail": "/images/tours/garden-of-morning-calm/01-chatgpt-image-2026-5-10-10-44-02.webp",
       "priceLabel": "",
       "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업."
     },
@@ -860,8 +860,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "민속촌",
         "당일 여행"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
+      "thumbnail": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
       "priceLabel": "",
       "shortCardDescription": "서울에서 출발하는 소그룹 문화 당일 투어로, 경기도의 네 가지 대조적인 한국 유산과 현대 생활을 경험합니다: 유네스코 세계유산으로 등재된 수원 화성(18세기 성벽과 성문), 조선 시대 재현 행사가 펼쳐지는 화성행궁, 용인의 몰입형 야외 한국민속촌, 그리고 웅장한 4층 규모의 스타필드 수원 도서관. 교통 및 입장료 포함 10시간 투어."
     },
@@ -888,8 +888,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "쇼핑",
         "당일 여행"
       ],
-      "heroImage": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
-      "thumbnail": "/images/tours/suwon-hwaseong/01-chatgpt-image-2026-5-11-01-00-57.webp",
+      "heroImage": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
+      "thumbnail": "/images/tours/gwangmyeong-cave/01-chatgpt-image-2026-5-10-12-03-22.webp",
       "priceLabel": "",
       "shortCardDescription": "경기도의 대조적인 세 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 18세기 성곽과 행궁을 품은 유네스코 세계문화유산 수원 화성, 일제강점기 금광이었던 광명동굴 내 화려한 LED 지하 테마파크, 4층 규모의 스타필드 라이브러리 수원. 교통 및 입장료 포함, 총 9시간 진행."
     },
@@ -961,8 +961,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "제주 첫 방문자에게 적합",
         "제주 서남부"
       ],
-      "heroImage": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
-      "thumbnail": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+      "heroImage": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
+      "thumbnail": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
       "priceLabel": "",
       "shortCardDescription": "한라산 1100고지 습지, 화산 해안선, 천제연 폭포, 오설록 차밭, 애월 카페거리, 이호테우 일몰을 잇는 균형 잡힌 제주 서남부 하루 코스."
     },
