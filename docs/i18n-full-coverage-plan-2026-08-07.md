@@ -229,7 +229,8 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 | ✅ **S1** | §3 `messages/*.json` | — | **1 (끝)** | **190건 적용** |
 | ✅ **S2** | it `southwest` 7 unit | 28,819자 | **1 (끝)** | **1행 발행** |
 | ✅ **S3a** | ru `jeju-island-private-car-charter-tour` 7 unit | 318 세그먼트 | **끝** | **1행 발행** |
-| **S3b~S12** | ru 잔여 **5슬러그 · 56 unit · 2,847 세그먼트** | — | **9** | **5행** |
+| ✅ **S3b** | ru `jeju-southern-top-unesco-spots-tour` 9 unit | 470 세그먼트 | **끝** | **1행 발행** |
+| **S3c~S12** | ru 잔여 **4슬러그 · 47 unit · 2,377 세그먼트** | — | **8** | **4행** |
 | **S13** | 🔴 **G3 7슬러그 + G4 1슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
 | **S14~S48** | G3 7슬러그 × 4로케일 | **추정 968,884자** | **35** | **28행** |
 | **S49** | G4 `busan-private-car-charter-city-tour` × 4로케일 | 미측정 | **1~2** | **4행** |
@@ -429,12 +430,14 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 
 | 슬러그 | unit | 세그먼트 |
 |---|---|---|
-| `jeju-southern-top-unesco-spots-tour` | 9 | 470 |
 | `jeju-eastern-unesco-spots-day-tour` | 9 | 536 |
 | `southwest-hallasan-osulloc-aewol` | 10 | 525 |
 | `from-busan-gyeongju-ancient-capital-day-tour` | 14 | 603 |
 | `jeju-cruise-shore-excursion-small-group-tour` | 14 | 713 |
-| **합계** | **56** | **2,847** |
+| **합계** | **47** | **2,377** |
+
+🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
+은퇴 상품이다(§6-5-14). 세지 마라.
 
 입력은 전부 `i18n-work/in/` 에 있으니 도구 작업 0이다. 용어는 **지어내지 말고 이미 발행된 ru 행에서
 가져와라**(§6-5 아래 「ru 착수 메모」). 슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
@@ -447,8 +450,21 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
    `чеджуская чёрная свинина` · `пибим-куксу` · `хэнё` · `лицензированный англоговорящий водитель-гид` ·
    `индивидуальный чартер автомобиля`. 조회: `SELECT detail_payload FROM tour_product_pages WHERE locale='ru'`.
 2. **고유명사는 `glossary/ru.json`(Kontsevich)에서만.** 없으면 **로마자 유지**가 정답이다
-   (styleguide: 잘못된 전사는 존재하지 않는 지명을 만든다). `Gotjawal` 을 그렇게 남겼다.
+   (styleguide: 잘못된 전사는 존재하지 않는 지명을 만든다).
+   🔴 지금까지 그렇게 남긴 것: **`Oedolgae` · `Gotjawal` · `Seogwang Dawon`.** 뒤 세션도 그대로 두라
+   — 한 슬러그에서만 키릴로 바꾸면 그게 곧 드리프트다. (`Oedolgae` 는 손으로 유도해 보니
+   **Ведолькэ / Ведольге 두 답**이 나왔다. 중간 자음 유성화 여부에서 갈린다 — 정확히 이런 경우를
+   styleguide 가 경고한다.)
 3. **G10(키릴 60%)과 G3(숫자)를 의식하고 써라** — §6-5-12·13.
+4. 🔴 **호텔 브랜드명만으로 된 세그먼트는 G10 을 통째로 실패시킨다**(키릴 0자).
+   해법은 **수식어를 번역하고 브랜드는 남기는 것** — `Ocean Suites Jeju Hotel` →
+   `отель Ocean Suites Jeju`.
+   ⚠ **이미 발행된 `jeju-grand-highlights-loop` ru 행에는 원문 그대로 `Ocean Suites Jeju Hotel` ·
+   `LOTTE City Hotel Jeju` 가 들어 있다 — 지금 게이트로 재면 실패한다.**
+   즉 **라이브 ru 데이터가 일관되게 게이트를 통과한 상태가 아니다.** 기존 행을 참고할 땐
+   용어는 가져오되 **게이트 적합성까지 믿지는 마라.**
+5. **드라마 제목은 원어 유지**(`«All In»` · `«Dae Jang Geum»` · `«Boys Over Flowers»`).
+   러시아 개봉명으로 바꾸지 마라 — 슬러그마다 갈리면 그게 드리프트다.
 
 ### 착수 전 30초 — 이것만 확인하라
 
