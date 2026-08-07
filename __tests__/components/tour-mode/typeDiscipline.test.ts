@@ -46,9 +46,15 @@ const TEXT_ALLOWLIST: Record<string, { pattern: string; reason: string }[]> = {
     { pattern: 'text-[10px]', reason: 'user-protected tray hint size' },
   ],
   'ChatFeed.tsx': [
-    // Emoji glyphs in the reaction picker are pictographs, not typography —
-    // they do not participate in the text scale.
-    { pattern: 'text-2xl', reason: 'reaction picker emoji glyph size' },
+    // Emoji glyphs in the reaction row are pictographs, not typography —
+    // they do not participate in the text scale. 사장님 2026-08-07 shrank the
+    // row to five small quick reactions (2xl → xl); the full set moved to the
+    // composer picker below.
+    { pattern: 'text-xl', reason: 'quick-reaction emoji glyph size' },
+  ],
+  'EmojiPicker.tsx': [
+    // Same carve-out, same reason: the tiles ARE the glyphs.
+    { pattern: 'text-2xl', reason: 'composer emoji picker glyph size' },
   ],
   'Cockpit.tsx': [
     /**

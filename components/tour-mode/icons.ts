@@ -56,6 +56,10 @@ export {
   Check as IconDone,
   Search as IconAsk,
   SmilePlus as IconReact,
+  // The composer's emoji-picker toggle (사장님 2026-08-07). A lucide glyph, not
+  // an emoji character — U-D3 keeps emoji inside message CONTENT only, and the
+  // thing this button opens is exactly that content.
+  Smile as IconEmoji,
   CornerUpLeft as IconReply,
   Copy as IconCopy,
   Trash2 as IconTrash,

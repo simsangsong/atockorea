@@ -30,6 +30,7 @@ A-plan-review R6: A1은 "하나도 빠짐없이 소진"이라고 적혀 있었�
 | `ChatFeed.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 | `Composer.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 | `ConfirmSheet.tsx` | A1.1 | ✅ |
+| `EmojiPicker.tsx` | A1.1 | ✅ 신설(2026-08-07, 사장님 지시) — 컴포저 이모지 트레이. 30종을 액션 시트에서 여기로 옮기고 시트에는 자주 쓰는 5종만 남김. 세트 정본은 `lib/tour-room/emoji.ts` |
 | `Lightbox.tsx` | A1.1 | P2 ×3 **전부 수정완료** → `A1-1-chat-core.md` |
 | `ReplyPreview.tsx` | A1.1 | P2 **수정완료** → `A1-1-chat-core.md` |
 
