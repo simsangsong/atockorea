@@ -230,7 +230,8 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 | ✅ **S2** | it `southwest` 7 unit | 28,819자 | **1 (끝)** | **1행 발행** |
 | ✅ **S3a** | ru `jeju-island-private-car-charter-tour` 7 unit | 318 세그먼트 | **끝** | **1행 발행** |
 | ✅ **S3b** | ru `jeju-southern-top-unesco-spots-tour` 9 unit | 470 세그먼트 | **끝** | **1행 발행** |
-| **S3c~S12** | ru 잔여 **4슬러그 · 47 unit · 2,377 세그먼트** | — | **8** | **4행** |
+| ✅ **S3c** | ru `southwest-hallasan-osulloc-aewol` 10 unit | 525 세그먼트 | **끝** | **1행 발행** |
+| **S3d~S12** | ru 잔여 **3슬러그 · 37 unit · 1,852 세그먼트** | — | **6** | **3행** |
 | **S13** | 🔴 **G3 7슬러그 + G4 1슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
 | **S14~S48** | G3 7슬러그 × 4로케일 | **추정 968,884자** | **35** | **28행** |
 | **S49** | G4 `busan-private-car-charter-city-tour` × 4로케일 | 미측정 | **1~2** | **4행** |
@@ -431,10 +432,9 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 | 슬러그 | unit | 세그먼트 |
 |---|---|---|
 | `jeju-eastern-unesco-spots-day-tour` | 9 | 536 |
-| `southwest-hallasan-osulloc-aewol` | 10 | 525 |
 | `from-busan-gyeongju-ancient-capital-day-tour` | 14 | 603 |
 | `jeju-cruise-shore-excursion-small-group-tour` | 14 | 713 |
-| **합계** | **47** | **2,377** |
+| **합계** | **37** | **1,852** |
 
 🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
 은퇴 상품이다(§6-5-14). 세지 마라.
@@ -465,6 +465,19 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
    용어는 가져오되 **게이트 적합성까지 믿지는 마라.**
 5. **드라마 제목은 원어 유지**(`«All In»` · `«Dae Jang Geum»` · `«Boys Over Flowers»`).
    러시아 개봉명으로 바꾸지 마라 — 슬러그마다 갈리면 그게 드리프트다.
+   ⚠ 단 **영어 제목만 든 짧은 줄은 G10 을 깬다**(55%). 같은 문서가 이미 말한 「K-드라마」를
+   되풀이해 주면 풀린다 — `место съёмок корейской дорамы **«…»**`.
+6. 🔴 **`Ихо Тхэу`·`Хандам` 은 전사하고 `Oedolgae`·`Gotjawal`·`Seogwang Dawon` 은 로마자로 둔다.**
+   기준은 취향이 아니라 **Kontsevich 유도가 자음 유성화에서 갈리는가**다. 갈리면 로마자,
+   안 갈리면 전사. 어차피 **맨 지명 라벨은 G10 이 키릴을 강제**한다(`Пляж Iho Tewoo` = 33%).
+7. 🔴 **`npm run i18n:verify` 는 스크립트 혼입을 못 잡는다 — 별도로 훑어라.**
+   이 슬러그에서 키릴 단어 안에 **한자·타밀·말라얄람 글자가 각각 하나씩** 박혀 있었다
+   (`Чеджу形` · `Кваகчи` · `Кваകчи` · `Дни長`). G1~G11 어디에도 「문자 체계 혼입」 검사가 없고,
+   눈으로는 글자가 비슷해 그냥 읽힌다. 실행:
+   ```bash
+   node -e "const fs=require('fs');const d='i18n-work/out/tour_product_pages/ru';for(const f of fs.readdirSync(d)){const j=JSON.parse(fs.readFileSync(d+'/'+f,'utf8'));for(const[k,v]of Object.entries(j.segments)){const m=v.match(/[^Ѐ-ӿ -ɏ가-힯一-鿿　-〿 -⁯₠-⃏⟦-⟿←-⇿∀-⋿№㎡\s ]/g);if(m)console.log(f,k,[...new Set(m)].join(' '))}}"
+   ```
+   (⟦⟧·화살표·₩·№·㎡ 는 정상이라 화이트리스트에 있다.)
 
 ### 착수 전 30초 — 이것만 확인하라
 
