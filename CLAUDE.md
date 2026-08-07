@@ -413,9 +413,25 @@ X11 → X19 → T0 → T1v2 → T3 → T5 → O6 → R6.
   `clientHeight` 는 그대로고 박스만 10px 커진다(실측 — 내용이 잘리지 않는다).
 - 🔴 **`scrollbar-none`·`scrollbar-thin` 은 이 레포에 존재하지 않는 클래스다**(`plugins: []`,
   스크롤바 플러그인 없음). 5곳이 그걸 붙여 놓고 "숨겼다"고 믿고 있었다 — 실제론 OS 기본 바가 나왔다.
-- 게이트 2종: 소스 `__tests__/audit/railScrollbar.test.ts`(뮤테이션 가드 포함) +
-  실렌더 `npm run qa:rail-scrollbars`(데스크톱=보여야, 모바일=숨어야. exit 2 = 판정 불가).
-- ⚠ 어드민 칩 레일은 인라인 `[&::-webkit-scrollbar]:hidden` 이라 게이트 밖이다 — **같은 결함, 별도 티켓.**
+- 좌우 화살표 = **`components/ui/RailArrows.tsx`**(`RailArrows` / 서버 컴포넌트용 `ScrollRail`).
+  데스크톱 전용(`.rail-arrow`), 갈 데 없는 방향은 **렌더 안 함**, 넘침 **32px 미만이면 안 나옴**
+  (12px 짜리 선반 3개에 붙던 헛버튼). 🔴 `<button>` 안에 들어가는 레일에는 붙이지 마라 —
+  타임라인 사진 띠가 그렇다(버튼 중첩 = 잘못된 HTML + 카드가 같이 눌림).
+- 게이트 2종: 소스 `__tests__/audit/railScrollbar.test.ts`(①~⑥, 뮤테이션 가드 포함) +
+  실렌더 `npm run qa:rail-scrollbars`(데스크톱=보여야·눌러서 움직여야, 모바일=숨어야. exit 2 = 판정 불가).
+- ⚠ 스마트앱 `.tr-chiprow`(손님·기사 폰)는 **일부러 그대로** — 마스크 페이드가 이미 어포던스고
+  그 트랙의 레이아웃 게이트와 함께 열어야 한다. `SortSegmented` 도 제외(h-11 고정, 넘침 0).
+
+## 🔴 `tailwind.config.js` 의 `content` 는 **폴더 화이트리스트**다 — 새 폴더는 조용히 죽는다
+
+`components/**` 를 통으로 못 쓰는 이유(v0 export 폴더의 node_modules)로 폴더를 하나씩 적어 두는데,
+**목록에 없는 폴더의 클래스는 생성되지 않는다. DOM 엔 클래스가 있고 규칙만 없다 — 아무도 안 운다.**
+`tour-ops` 가 2026-07-18 까지 스타일시트를 통째로 잃었고, **2026-08-07 에 `tours-list` 도 같았다**:
+`/tours/list` 카탈로그가 자기 디자인(눈썹 금색 헤어라인·`text-[40px]` 헤드라인·`px-5` 여백)을
+**라이브에서 못 내고 있었다.** 화살표의 `top-[38%]` 이 안 생겨 `top:auto` 로 떨어져 버튼이 레일
+바닥에 붙은 걸 실렌더에서 재다가 잡혔다(`top` 이 363px = 레일 높이).
+누락 5개(`analytics`·`legal`·`ops`·`pwa`·`tours-list`) 추가 + 게이트 `railScrollbar.test.ts` ⑥ 가
+`components/` 하위 폴더 목록과 설정을 대조한다. **소스만 읽어선 절대 안 보인다.**
 
 ## 완료: 투어룸 UI/UX 글로벌 리디자인 v1 (프레젠테이션 전용, U0~U8)
 

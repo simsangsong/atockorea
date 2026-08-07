@@ -9,7 +9,7 @@
  * Data plumbing (catalog registrations + admin card media + currency) unchanged.
  */
 
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,6 +17,7 @@ import {
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { ClockIcon, MapIcon, StarIcon } from "@/components/Icons";
+import { RailArrows } from "@/components/ui/RailArrows";
 import { MYPAGE_FOCUS_RING, MYPAGE_SURFACE_PAGE } from "@/lib/mypage-ui";
 import { useCurrencyOptional } from "@/lib/currency";
 import { useI18n, useTranslations } from "@/lib/i18n";
@@ -37,6 +38,7 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
   const currencyCtx = useCurrencyOptional();
   const t = useTranslations();
   const { locale } = useI18n();
+  const railRef = useRef<HTMLDivElement>(null);
   const recommendationSlugs = useMemo(
     () => recommendations.map((rec) => rec.slug),
     [recommendations],
@@ -67,8 +69,9 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
         </Link>
       </div>
 
-      <div className="-mx-1 min-w-0 px-1 sm:mx-0 sm:px-0">
+      <div className="relative -mx-1 min-w-0 px-1 sm:mx-0 sm:px-0">
         <div
+          ref={railRef}
           className={cn(
             "snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth pb-2",
             "[scrollbar-gutter:stable] rail-scrollbar",
@@ -147,6 +150,7 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
             })}
           </div>
         </div>
+        <RailArrows scrollerRef={railRef} className="top-[42%]" />
       </div>
     </section>
   );

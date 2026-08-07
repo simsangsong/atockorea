@@ -24,10 +24,15 @@
  *     실제로 5곳이 그 상태였고 OS 기본 스크롤바가 그대로 나오고 있었다.
  *  ③ 뮤테이션 가드: `.rail-scrollbar` 의 fine-pointer 블록 안에서 다시 숨기면 실패한다.
  *
- * 범위 주석: 어드민(`components/admin/*`, `app/(marketing)/admin/*`)의 칩 레일은
- * `.scrollbar-hide` 가 아니라 인라인 arbitrary variant
- * (`[&::-webkit-scrollbar]:hidden`)를 쓰므로 이 게이트에 안 걸린다. **의도적이다** —
- * 이 트랙은 손님 표면만 손댔다. 어드민도 같은 결함을 갖고 있으니 별도 티켓감.
+ * 계약 ④ (2026-08-07 확장, 사장님 지시 "관리자화면도 다 문제 있으면 수정하고"):
+ * 인라인 변형(`[scrollbar-width:none]` · `[&::-webkit-scrollbar]:hidden` ·
+ * `style={{ scrollbarWidth: 'none' }}`)으로 숨기는 것도 금지다. 어드민·관제 칩 레일
+ * **6곳**이 정확히 그 형태로 게이트 밖에 숨어 있었다 — 클래스 이름만 보는 게이트는
+ * 자기 어휘 밖의 같은 결함을 못 본다(PR #768 과 같은 함정).
+ *
+ * 계약 ⑤: `.rail-arrow` 의 기본 `display:none` 은 fine-pointer 미디어 블록 **위**에
+ * 있어야 한다. 같은 특정도라 아래에 두면 나중 규칙이 이겨 화살표가 영영 안 나온다.
+ * 이 실수를 실제로 한 번 저질렀다.
  */
 import { readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
@@ -68,6 +73,24 @@ function classBlocks(src: string): string[] {
 
 const HAS_X_SCROLL = /\boverflow-x-(auto|scroll)\b/;
 const HIDES_BAR = /\bscrollbar-hide\b/;
+/** Tailwind arbitrary variants that switch the bar off without naming it. */
+const HIDES_BAR_INLINE =
+  /\[scrollbar-width:\s*none\]|\[&::-webkit-scrollbar\]:hidden|\[-ms-overflow-style:\s*none\]/;
+
+/**
+ * 스마트앱(손님·기사 폰 화면)은 이 트랙 밖이다. `.tr-chiprow` 는 자체 마스크 페이드로
+ * "더 있다" 를 이미 말하고 있고, 그 트랙의 레이아웃 게이트가 따로 있다. 열 때는 그쪽
+ * 게이트와 함께 열어야 한다.
+ *
+ * `SortSegmented` 는 레일이 아니라 **높이 고정(h-11) 세그먼트 컨트롤**이다. 10px 바가
+ * 생기면 44px 탭 타깃이 34px 로 줄어든다. 데스크톱 실측 가로 넘침 0px.
+ */
+const INLINE_HIDE_ALLOWED = [
+  'components/tour-mode/',
+  'components/tours-list/SortSegmented.tsx',
+];
+const allowedInlineHide = (rel: string) =>
+  INLINE_HIDE_ALLOWED.some((p) => rel.replace(/\\/g, '/').includes(p));
 
 describe('audit: 손님 가로 레일 스크롤바', () => {
   it('① `overflow-x-auto` 요소가 `scrollbar-hide` 를 달고 있지 않다', () => {
@@ -128,5 +151,56 @@ describe('audit: 손님 가로 레일 스크롤바', () => {
     expect(block).not.toMatch(/\.rail-scrollbar::-webkit-scrollbar\s*\{[^}]*display:\s*none/);
     // 두께 0 도 "숨김" 이다.
     expect(block).not.toMatch(/\.rail-scrollbar::-webkit-scrollbar\s*\{[^}]*height:\s*0/);
+  });
+
+  it('④ 인라인 변형으로 가로 레일의 스크롤바를 끄지 않는다', () => {
+    const offenders: string[] = [];
+    for (const file of FILES) {
+      const rel = path.relative(ROOT, file);
+      if (allowedInlineHide(rel)) continue;
+      const src = stripComments(readFileSync(file, 'utf8'));
+
+      for (const block of classBlocks(src)) {
+        if (HAS_X_SCROLL.test(block) && HIDES_BAR_INLINE.test(block)) {
+          offenders.push(`${rel} :: ${block.replace(/\s+/g, ' ').trim().slice(0, 110)}`);
+        }
+      }
+      // `style={{ scrollbarWidth: 'none' }}` — 인라인 스타일은 클래스를 이긴다.
+      if (/scrollbarWidth\s*:\s*['"]none['"]/.test(src)) {
+        offenders.push(`${rel} :: style={{ scrollbarWidth: 'none' }}`);
+      }
+    }
+    expect(offenders).toEqual([]);
+  });
+
+  it('⑥ `components/` 하위 폴더가 전부 Tailwind 스캔 대상이다', () => {
+    /*
+     * 🔴 `tailwind.config.js` 의 `content` 는 폴더 **화이트리스트**다. 목록에 없는
+     * 폴더의 클래스는 조용히 생성되지 않는다 — DOM 엔 클래스가 있는데 규칙이 없다.
+     * `tour-ops` 가 그렇게 스타일시트를 통째로 잃었고(설정 파일 주석), 2026-08-07 에
+     * `tours-list` 가 같은 걸 했다: 선반 화살표의 `top-[38%]` 이 생성 안 돼 `top:auto`
+     * 로 떨어지면서 버튼이 레일 **바닥**에 붙었다. 실렌더에서 `top` 을 재서야 잡혔다.
+     */
+    const cfg = readFileSync(path.join(ROOT, 'tailwind.config.js'), 'utf8');
+    const listed = [...cfg.matchAll(/^\s*'([^']+)',/gm)].map((m) => m[1]);
+    const dirs = readdirSync(path.join(ROOT, 'components'), { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      // v0 export folders carry their own node_modules — deliberately unscanned.
+      .filter((d) => !/^b_/.test(d.name))
+      .map((d) => d.name);
+    const missing = dirs.filter((d) => !listed.includes(d));
+    expect(missing).toEqual([]);
+  });
+
+  it('⑤ `.rail-arrow` 기본 숨김이 미디어 블록보다 위에 있다 (순서 뮤테이션 가드)', () => {
+    const css = readFileSync(path.join(ROOT, 'app/globals.css'), 'utf8');
+    const base = css.search(/\.rail-arrow\s*\{\s*display:\s*none/);
+    const media = css.indexOf('@media (hover: hover) and (pointer: fine)');
+    expect(base).toBeGreaterThan(-1);
+    expect(media).toBeGreaterThan(-1);
+    // 같은 특정도 — 아래에 두면 화살표가 영영 안 나온다.
+    expect(base).toBeLessThan(media);
+    const shown = css.slice(media);
+    expect(shown).toMatch(/\.rail-arrow\s*\{\s*display:\s*(inline-)?flex/);
   });
 });

@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { TourPhotoOverlay } from "@/components/tour/TourPhotoOverlay";
+import { ScrollRail } from "@/components/ui/RailArrows";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import { HaenyeoStatusButton } from "./HaenyeoStatusButton";
 
@@ -758,7 +759,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 above, with a clear "active" affordance on the current thumb. */}
             {galleryPhotos.length > 1 && (
               <div className="flex-shrink-0 border-b border-border/50 bg-white">
-                <div className="flex gap-1.5 overflow-x-auto rail-scrollbar px-5 py-2.5">
+                <ScrollRail className="flex gap-1.5 overflow-x-auto px-5 py-2.5" arrowSize="sm">
                   {galleryPhotos.map((src, i) => {
                     const isActive = i === activeImageIndex;
                     return (
@@ -791,7 +792,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                     );
                   })}
                   <div className="flex-shrink-0 w-1" aria-hidden />
-                </div>
+                </ScrollRail>
               </div>
             )}
 
