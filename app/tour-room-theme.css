@@ -1840,14 +1840,15 @@
  * Gate: `__tests__/audit/railScrollbar.test.ts`.
  */
 @media (hover: hover) and (pointer: fine) {
+  /* 🔴 `auto`, not `thin` — a non-initial `scrollbar-width` makes Chromium drop
+     every `::-webkit-scrollbar` rule below. Measured; see `app/globals.css`. */
   .tr-chiprow {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(168 162 158 / 0.7) transparent;
+    scrollbar-width: auto;
   }
 
   .tr-chiprow::-webkit-scrollbar {
     display: block;
-    height: 10px;
+    height: 5px;
     width: 0;
   }
 
@@ -1858,13 +1859,25 @@
   .tr-chiprow::-webkit-scrollbar-thumb {
     background-color: rgb(168 162 158 / 0.6);
     border-radius: 999px;
-    border: 3px solid transparent;
+    /* (track − thumb) / 2 — 5px track, 3px thumb. Mirrors `.rail-scrollbar`. */
+    border: 1px solid transparent;
     background-clip: padding-box;
   }
 
   .tr-chiprow:hover::-webkit-scrollbar-thumb,
   .tr-chiprow::-webkit-scrollbar-thumb:hover {
     background-color: rgb(120 113 108 / 0.75);
+  }
+}
+
+/* Firefox — no `::-webkit-scrollbar` there, and these two are what Chromium
+   must not see. Same split as `app/globals.css`; must stay after the block. */
+@supports not selector(::-webkit-scrollbar) {
+  @media (hover: hover) and (pointer: fine) {
+    .tr-chiprow {
+      scrollbar-width: thin;
+      scrollbar-color: rgb(168 162 158 / 0.7) transparent;
+    }
   }
 }
 @supports (animation-timeline: scroll()) {
