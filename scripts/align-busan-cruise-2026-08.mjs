@@ -45,10 +45,45 @@ const SLUGS = {
  * cheapest cell on that card, and checkout resolves the exact cell the guest
  * picked — see lib/tour-product/charterRateCard.ts.
  */
+/**
+ * 🔴 The private charter is NOT listed here, on purpose.
+ *
+ * It is not a single-number product: it sells off a duration x party-size rate
+ * card, and since 2026-08-07 the checkout charges the exact cell the guest
+ * picked (lib/tour-product/charterRateCard.ts). Its headline is therefore
+ * derived from that card, and the card is owned by whoever is repricing the
+ * charter — as of this writing a parallel session was moving it to a flat $269.
+ *
+ * This script used to hardcode 169 for it. Leaving that in means the next person
+ * to run this file silently reverts their reprice — exactly the way the terminal
+ * note below used to drag back the i18n track's retranslations. A hardcoded
+ * price in a re-runnable script is a landmine with a delay on it.
+ */
 const PRICE = {
   [SLUGS.join]: 58.79,
   [SLUGS.small]: 68.95,
-  [SLUGS.private]: 169,
+};
+
+/**
+ * Pre-discount price, shown struck through beside the sale price.
+ *
+ * Owner 2026-08-07: show it. The listing itself never prints the "before"
+ * figure — it prints a **30% off** badge next to each join tier (recorded in the
+ * competitor analysis, commit e10b63fe: "US$58.79 (30% off 배지)" and
+ * "US$68.95 (30% off)"). So the before-price is arithmetic on the listing's own
+ * badge, not a number anyone invented here, and it round-trips to the cent:
+ *
+ *     98.50 x 0.7 = 68.95   exactly
+ *     83.99 x 0.7 = 58.793  -> 58.79
+ *
+ * 🔴 The private charter gets NO strike-through. Its price is our own rate card
+ * (cheapest cell $169), not a discounted listing price, so there is no "before"
+ * to strike — inventing one would be the thing we refused to do all along.
+ */
+const LISTING_DISCOUNT_PERCENT = 30;
+const ORIGINAL = {
+  [SLUGS.join]: 83.99,
+  [SLUGS.small]: 98.5,
 };
 
 /** "8 hours" per locale, plus the digit forms used inside prose duration strings. */
@@ -101,24 +136,32 @@ function mapStrings(node, fn) {
   return node;
 }
 
+/** Set or clear the struck-through price on one `price`-shaped object. */
+function setPriceBlock(price, usd, original) {
+  price.amountLabel = String(usd);
+  price.salePriceUsd = usd;
+  if (original) {
+    price.originalPriceUsd = original;
+    price.discountPercent = LISTING_DISCOUNT_PERCENT;
+  } else {
+    delete price.originalPriceUsd;
+    delete price.discountPercent;
+  }
+}
+
 function applyPrice(doc, slug, locale) {
   const usd = PRICE[slug];
-  const label = String(usd);
+  if (usd == null) return; // rate-card product — see the comment on PRICE
+  const original = ORIGINAL[slug] ?? null;
   if (doc.price && typeof doc.price === "object") {
     const before = JSON.stringify(doc.price);
-    doc.price.amountLabel = label;
-    doc.price.salePriceUsd = usd;
-    // No strike-through: the listing's "30% off" is a channel promo badge, not a
-    // price we hold. Inventing an original price would be fabricating data.
-    delete doc.price.originalPriceUsd;
-    delete doc.price.discountPercent;
-    if (JSON.stringify(doc.price) !== before) note(slug, locale, `price -> ${usd}`);
+    setPriceBlock(doc.price, usd, original);
+    if (JSON.stringify(doc.price) !== before) {
+      note(slug, locale, original ? `price -> ${usd} (was ${original}, ${LISTING_DISCOUNT_PERCENT}% off)` : `price -> ${usd}`);
+    }
   }
   if (doc.sticky_booking_bar && typeof doc.sticky_booking_bar === "object" && doc.sticky_booking_bar.price) {
-    doc.sticky_booking_bar.price.amountLabel = label;
-    doc.sticky_booking_bar.price.salePriceUsd = usd;
-    delete doc.sticky_booking_bar.price.originalPriceUsd;
-    delete doc.sticky_booking_bar.price.discountPercent;
+    setPriceBlock(doc.sticky_booking_bar.price, usd, original);
   }
   // Let the card render the formatted listPriceUsd (currency switcher aware)
   // instead of a hardcoded, now-stale English price sentence.
