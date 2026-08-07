@@ -3065,5 +3065,85 @@
         }
       }
     }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:30",
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "note": "Encuentro en el vestíbulo del hotel: el guía lleva un cartel de AtoCKorea.",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "time": "08:45",
+        "name": "Aeropuerto Internacional de Jeju (3.ª planta, puerta 3)",
+        "type": "airport",
+        "note": "Zona de salidas de la 3.ª planta. Sigue las indicaciones hacia la puerta 3.",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "time": "08:55",
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "note": "Espera en el vestíbulo principal: el guía te llamará por tu nombre.",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "time": "09:05",
+        "name": "Shilla Duty Free (tienda de Jeju)",
+        "type": "shopping",
+        "note": "Encuentro en la entrada principal de Shilla Duty Free, sucursal de Jeju.",
+        "lat": 33.48631,
+        "lng": 126.48739
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Ocean Suites Jeju Hotel",
+        "type": "hotel",
+        "lat": 33.51823,
+        "lng": 126.52317
+      },
+      {
+        "order": 2,
+        "name": "Aeropuerto Internacional de Jeju (3.ª planta, puerta 3)",
+        "type": "airport",
+        "lat": 33.50708,
+        "lng": 126.49343
+      },
+      {
+        "order": 3,
+        "name": "LOTTE City Hotel Jeju",
+        "type": "hotel",
+        "lat": 33.4906,
+        "lng": 126.48643
+      },
+      {
+        "order": 4,
+        "name": "Shilla Duty Free (tienda de Jeju)",
+        "type": "shopping",
+        "lat": 33.48631,
+        "lng": 126.48739
+      },
+      {
+        "order": 5,
+        "name": "Mercado Tradicional de Dongmun",
+        "type": "market",
+        "lat": 33.51204,
+        "lng": 126.52828
+      }
+    ],
+    "notes": [
+      "El regreso suele ser entre las 17:30 y las 18:00."
+    ]
   }
 }

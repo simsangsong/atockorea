@@ -3336,5 +3336,46 @@
     "pickupDropoffSubtitle": "Recogida en la terminal de cruceros incluida. Toca cualquier ubicación para detalles.",
     "pickupTrustFooter": "Recogida en la terminal de cruceros incluida · Sin cargo adicional",
     "pickupCategoryLabel": "Recogida en terminal de cruceros"
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "Se confirma al reservar (≈30 min después del atraque)",
+        "name": "Terminal Internacional de Cruceros de Busan (Dongsam, Yeongdo)",
+        "type": "cruise_terminal",
+        "note": "Los cruceros de Busan atracan en una de las dos terminales; cuál te corresponde depende de dónde amarre tu barco y se confirma al reservar. Encuentra a tu guía en la sala de llegadas.",
+        "lat": 35.0747,
+        "lng": 129.0884
+      },
+      {
+        "order": 2,
+        "time": "Se confirma al reservar (≈30 min después del atraque)",
+        "name": "Terminal Internacional de Pasajeros del Puerto de Busan (Choryang)",
+        "type": "cruise_terminal",
+        "note": "Los cruceros de Busan atracan en una de las dos terminales; cuál te corresponde depende de dónde amarre tu barco y se confirma al reservar. Encuentra a tu guía en la sala de llegadas.",
+        "lat": 35.1149,
+        "lng": 129.0455
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Terminal Internacional de Cruceros de Busan (Yeongdo)",
+        "type": "cruise_terminal",
+        "lat": 35.0747,
+        "lng": 129.0884
+      },
+      {
+        "order": 2,
+        "name": "Terminal Internacional de Pasajeros del Puerto de Busan (Choryang)",
+        "type": "cruise_terminal",
+        "lat": 35.1149,
+        "lng": 129.0455
+      }
+    ],
+    "notes": [
+      "Indica al reservar el nombre del barco, la fecha de escala, la hora prevista de desembarque y la hora de embarque final. La terminal de recogida (Cruceros de Yeongdo o Pasajeros de Choryang) la determina dónde amarre tu barco. Furgoneta compartida con otros pasajeros de crucero; el regreso puntual es el producto."
+    ]
   }
 }

@@ -160,8 +160,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・文化村",
       "subtitle": "釜山の海岸名所と丘の村を一日でつなぐ少人数ツアー — 海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーラインパークのスカイカプセル（チケット込み／別を予約時に選択）、甘川文化村、そして「願いの階段」モノレールのある静かなタクバッコル壁画村。",
       "region": "釜山",
-      "duration": "≈ 10時間",
-      "stopsCount": 8,
+      "duration": "約9時間",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

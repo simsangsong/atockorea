@@ -61,7 +61,7 @@
       "first_time"
     ],
     "meta": {
-      "duration": "10,5 horas (primera recogida a las 08:30, última entrega ≈ 19:00)",
+      "duration": "10,5 horas (primera recogida a las 08:10, última entrega ≈ 19:00)",
       "region": "Busan",
       "stops": "5 paradas",
       "rating": 0,
@@ -405,11 +405,11 @@
   "itineraryStops": [
     {
       "number": 1,
-      "time": "≈ 09:00",
-      "duration": "30 min",
+      "time": "≈ 08:10",
+      "duration": "65 min",
       "name": "Recogida (3 estaciones centrales de Busan)",
       "category": "Tránsito / Recogida",
-      "description": "La recogida está centralizada en tres nodos de transporte del centro de Busan para facilitar el día sin tener que cruzar la ciudad de un extremo a otro: **Estación de Busan (Línea 1)** para los huéspedes alojados cerca de la terminal KTX o en la zona de Choryang/Nampo-dong; **Estación de Seomyeon (Líneas 1 y 2)** — el intercambiador de metro más transitado de Busan, céntrico para los huéspedes en hoteles del centro como el Lotte Hotel Busan o la calle médica de Seomyeon; y **Estación de Haeundae (Línea 2)** para los huéspedes en el distrito turístico frente al mar cerca del Westin Josun, Park Hyatt o Signiel Busan. \n\nEl autobús recoge en los tres puntos en secuencia (generalmente Estación de Busan primero ~09:00, Seomyeon ~09:15, Haeundae ~09:30) y luego se dirige al noreste por la ruta costera del Puente Gwangan hacia Gijang-gun para la primera parada del día. Tiempo total de tránsito desde la última recogida hasta Haedong Yonggungsa: ~30-40 minutos según el tráfico. \n\nEl conductor repartirá una tarjeta impresa con el itinerario en coreano e inglés con los horarios; por favor, esté en su punto de recogida 5 minutos antes de la hora programada para mantener el ritmo del día, especialmente en las paradas posteriores del Cementerio Memorial de la ONU y Gamcheon, que tienen horarios de funcionamiento más estrictos.",
+      "description": "La recogida está centralizada en tres nodos de transporte del centro de Busan para facilitar el día sin tener que cruzar la ciudad de un extremo a otro: **Estación de Busan (Línea 1)** para los huéspedes alojados cerca de la terminal KTX o en la zona de Choryang/Nampo-dong; **Estación de Seomyeon (Líneas 1 y 2)** — el intercambiador de metro más transitado de Busan, céntrico para los huéspedes en hoteles del centro como el Lotte Hotel Busan o la calle médica de Seomyeon; y **Estación de Haeundae (Línea 2)** para los huéspedes en el distrito turístico frente al mar cerca del Westin Josun, Park Hyatt o Signiel Busan. \n\nEl autobús recoge en los tres puntos en secuencia (Estación de Busan Salida 4 a las 08:10, Estación Seomyeon Salida 4 a las 08:30, Estación Haeundae Salida 5 a las 09:10) y luego se dirige al noreste por la ruta costera del Puente Gwangan hacia Gijang-gun para la primera parada del día. Tiempo total de tránsito desde la última recogida hasta Haedong Yonggungsa: ~30-40 minutos según el tráfico. \n\nEl conductor repartirá una tarjeta impresa con el itinerario en coreano e inglés con los horarios; por favor, esté en su punto de recogida 5 minutos antes de la hora programada para mantener el ritmo del día, especialmente en las paradas posteriores del Cementerio Memorial de la ONU y Gamcheon, que tienen horarios de funcionamiento más estrictos.",
       "highlights": [
         "Tres opciones de recogida en el centro de Busan (Estación de Busan, Seomyeon, Haeundae)",
         "El autobús es de grupo reducido (máx. ~14 personas)",
@@ -417,13 +417,13 @@
         "Tarjeta de itinerario impresa en coreano e inglés distribuida en la recogida"
       ],
       "timeUsed": [
-        "Recogida en la Estación de Busan (~09:00, ~5 min)",
-        "Traslado a la Estación de Seomyeon (~10 min)",
-        "Recogida en Seomyeon (~09:15, ~5 min)",
-        "Traslado a la Estación de Haeundae (~15 min)",
-        "Recogida en Haeundae (~09:30, ~5 min)"
+        "Recogida en la Estación de Busan (~08:10, ~5 min)",
+        "Traslado a la Estación de Seomyeon (~15 min)",
+        "Recogida en Seomyeon (~08:30, ~5 min)",
+        "Traslado a la Estación de Haeundae (~35 min)",
+        "Recogida en Haeundae (~09:10, ~5 min)"
       ],
-      "whyOnRoute": "Los tres puntos de recogida cubren las tres principales zonas hoteleras de Busan (KTX/Nampo, Seomyeon centro, playa de Haeundae) sin obligar a los huéspedes a cruzar la ciudad por la mañana. La secuencia noroeste→este minimiza la distancia del autobús y lleva al grupo a Haedong Yonggungsa hacia las 10:00, con tiempo suficiente para adelantarse a la llegada de los autobuses turísticos más concurridos.",
+      "whyOnRoute": "Los tres puntos de recogida cubren las tres principales zonas hoteleras de Busan (KTX/Nampo, Seomyeon centro, playa de Haeundae) sin obligar a los huéspedes a cruzar la ciudad por la mañana. La secuencia oeste→este minimiza la distancia del autobús y lleva al grupo a Haedong Yonggungsa hacia las 09:50, con tiempo suficiente para adelantarse a la llegada de los autobuses turísticos más concurridos.",
       "_poi_meta": {
         "poi_key": "OPS_busan_pickup_central",
         "verified": true,
@@ -1358,7 +1358,7 @@
   ],
   "routeShapeIntro": {
     "title": "Cómo transcurre este día en Busan",
-    "subtitle": "Primero el templo costero del noreste, luego el parque Blue Line, el memorial de la ONU a mediodía, el pueblo de Gamcheon con almuerzo y cierre en el mercado Jagalchi en el centro de Busan. De 08:30 a 18:00."
+    "subtitle": "Primero el templo costero del noreste, luego el parque Blue Line, el memorial de la ONU a mediodía, el pueblo de Gamcheon con almuerzo y cierre en el mercado Jagalchi en el centro de Busan. De 08:10 a 18:00."
   },
   "whyTourWorks": {
     "bestFor": [
@@ -1409,7 +1409,7 @@
           },
           {
             "label": "Tres puntos de recogida",
-            "detail": "Recogida en Seomyeon, Estación de Busan o Haeundae — accesible desde la mayoría de alojamientos en el centro de Busan. Elige la salida más cercana a tu hotel; la duración del tour varía ±30 min según el punto de recogida."
+            "detail": "Recogida en la Estación de Busan, Seomyeon o Haeundae — accesible desde la mayoría de alojamientos en el centro de Busan. Elige la salida más cercana a tu hotel; la duración efectiva del tour varía unos 15 min según el punto de recogida."
           }
         ]
       },
@@ -1435,11 +1435,11 @@
     {
       "id": "pickup",
       "title": "Recogida y regreso",
-      "preview": "Tres puntos de recogida a lo largo del Metro de Busan: Salida 4 de la Estación Seomyeon (08:30), Estación de Busan…",
+      "preview": "Tres puntos de recogida a lo largo del Metro de Busan: Salida 4 de la Estación de Busan (08:10), Estación Seomyeon…",
       "content": [
-        "Tres puntos de recogida a lo largo del Metro de Busan: Salida 4 de la Estación Seomyeon (08:30), Salida 4 de la Estación de Busan — no la puerta KTX (08:50), Salida 5 de la Estación Haeundae (09:30).",
+        "Tres puntos de recogida a lo largo del Metro de Busan: Salida 4 de la Estación de Busan — no la puerta KTX (08:10), Salida 4 de la Estación Seomyeon (08:30), Salida 5 de la Estación Haeundae (09:10).",
         "Bajadas en orden: Nampo-dong/Jagalchi ≈17:50, Estación de Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
-        "La duración efectiva del tour depende del punto de recogida: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+        "La duración efectiva del tour depende del punto de recogida: Estación de Busan y Seomyeon ≈10 h, Haeundae algo menos de 10 h."
       ]
     },
     {
@@ -1635,7 +1635,7 @@
     {
       "id": "pickup",
       "question": "¿Dónde es la recogida?",
-      "answer": "Tres estaciones del centro de Busan: Estación Seomyeon Salida 4 (08:30), Estación Busan Salida 4 — no la puerta del KTX (08:50), Estación Haeundae Salida 5 (09:30). Elige la salida más cercana a tu hotel al reservar."
+      "answer": "Tres estaciones del centro de Busan: Estación Busan Salida 4 — no la puerta del KTX (08:10), Estación Seomyeon Salida 4 (08:30), Estación Haeundae Salida 5 (09:10). Elige la salida más cercana a tu hotel al reservar."
     },
     {
       "id": "drop-off",
@@ -1981,7 +1981,7 @@
             "first_time"
           ],
           "meta": {
-            "duration": "10,5 horas (primera recogida a las 08:30, última entrega ≈ 19:00)",
+            "duration": "10,5 horas (primera recogida a las 08:10, última entrega ≈ 19:00)",
             "region": "Busan",
             "stops": "5 paradas",
             "rating": 0,
@@ -2028,7 +2028,7 @@
           {
             "icon": "clock",
             "label": "Duración",
-            "value": "≈ 10,5 horas (primera recogida a las 08:30, última entrega ≈ 19:00)"
+            "value": "≈ 10,5 horas (primera recogida a las 08:10, última entrega ≈ 19:00)"
           },
           {
             "icon": "calendar",
@@ -2084,14 +2084,14 @@
         "itineraryStops": [
           {
             "number": 1,
-            "time": "08:30",
-            "duration": "60 min",
+            "time": "08:10–09:10",
+            "duration": "65 min",
             "name": "Recogida (3 estaciones centrales de Busan)",
             "category": "Salida",
             "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-            "description": "Recogida secuencial a lo largo de la Línea 1 / Línea 2 del Metro de Busan: Estación Seomyeon, Salida 4 (08:30); Estación Busan, Salida 4 (08:50); Estación Haeundae, Salida 5 (09:30). Elija la salida más cercana a su hotel. El pasajero de Haeundae sube al último porque la ruta continúa hacia el este en dirección a Yonggungsa, ubicado en Gijang-gun (aproximadamente 25 minutos desde Haeundae).",
+            "description": "Recogida secuencial a lo largo de la Línea 1 / Línea 2 del Metro de Busan: Estación de Busan, Salida 4 (08:10); Estación Seomyeon, Salida 4 (08:30); Estación Haeundae, Salida 5 (09:10). Elija la salida más cercana a su hotel. El pasajero de Haeundae sube al último porque la ruta continúa hacia el este en dirección a Yonggungsa, ubicado en Gijang-gun (aproximadamente 25 minutos desde Haeundae).",
             "timeUsed": [
-              "Logística operativa (recogida)"
+              "Recogida en la Estación de Busan (~08:10, ~5 min)"
             ],
             "whyOnRoute": "Las tres opciones de recogida cubren la mayoría de las zonas de alojamiento del centro de Busan.",
             "_poi_meta": {
@@ -2832,7 +2832,7 @@
         ],
         "routeShapeIntro": {
           "title": "Cómo transcurre este día en Busan",
-          "subtitle": "Primero el templo costero al noreste, luego el parque Blue Line, el memorial de la ONU a mediodía, el pueblo de Gamcheon con almuerzo y cierre en el Mercado Jagalchi en el centro de Busan. De 08:30 a 18:00."
+          "subtitle": "Primero el templo costero al noreste, luego el parque Blue Line, el memorial de la ONU a mediodía, el pueblo de Gamcheon con almuerzo y cierre en el Mercado Jagalchi en el centro de Busan. De 08:10 a 18:00."
         }
       }
     },
@@ -2923,7 +2923,7 @@
           {
             "title": "Recogida y regreso",
             "id": "pickup",
-            "content": "Tres puntos de recogida en el Metro de Busan: Salida 4 de la Estación Seomyeon (08:30), Salida 4 de la Estación de Busan — no la puerta del KTX (08:50), Salida 5 de la Estación Haeundae (09:30). Retornos en orden: Nampo-dong/Jagalchi ≈17:50, Estación de Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00. La duración efectiva del tour depende del punto de recogida: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+            "content": "Tres puntos de recogida en el Metro de Busan: Salida 4 de la Estación de Busan — no la puerta del KTX (08:10), Salida 4 de la Estación Seomyeon (08:30), Salida 5 de la Estación Haeundae (09:10). Retornos en orden: Nampo-dong/Jagalchi ≈17:50, Estación de Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00. La duración efectiva del tour depende del punto de recogida: Estación de Busan y Seomyeon ≈10 h, Haeundae algo menos de 10 h."
           },
           {
             "title": "Qué vestir y qué llevar",
@@ -3093,7 +3093,7 @@
           {
             "id": "pickup",
             "question": "¿Dónde es el punto de recogida?",
-            "answer": "Tres estaciones en el centro de Busan: Estación Seomyeon, Salida 4 (08:30); Estación de Busan, Salida 4 — no la puerta del KTX (08:50); Estación Haeundae, Salida 5 (09:30). Elige la salida más cercana a tu hotel al hacer la reserva."
+            "answer": "Tres estaciones en el centro de Busan: Estación de Busan, Salida 4 — no la puerta del KTX (08:10); Estación Seomyeon, Salida 4 (08:30); Estación Haeundae, Salida 5 (09:10). Elige la salida más cercana a tu hotel al hacer la reserva."
           },
           {
             "id": "drop-off",
@@ -3220,5 +3220,66 @@
     "discountNote": "10% de descuento sobre el precio base del mercado",
     "amount": null,
     "currency": "USD"
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:10",
+        "name": "Estación de Busan, Salida 4 (no la puerta del KTX)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 2,
+        "time": "08:30",
+        "name": "Estación Seomyeon (Salida 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 3,
+        "time": "09:10",
+        "name": "Estación Haeundae (Salida 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Nampo-dong / zona de Jagalchi",
+        "type": "station",
+        "lat": 35.09663,
+        "lng": 129.0308
+      },
+      {
+        "order": 2,
+        "name": "Estación de Busan (Salida 4)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "name": "Estación Seomyeon (Salida 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 4,
+        "name": "Estación Haeundae (Salida 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "notes": [
+      "Elige la salida más cercana a tu hotel al reservar. Las bajadas siguen el orden de la ruta de regreso; quienes suben en la Estación de Busan (08:10) o en Seomyeon (08:30) tienen el día más largo (≈10 horas) y quienes suben en Haeundae, el más corto (algo menos de 10 horas)."
+    ]
   }
 }

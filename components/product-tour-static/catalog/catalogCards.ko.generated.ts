@@ -160,8 +160,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "부산 스몰그룹: 해동용궁사·스카이캡슐·문화마을",
       "subtitle": "부산의 해안 명소와 산비탈 마을을 하루에 잇는 스몰그룹 투어 — 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인파크 스카이캡슐(티켓 포함/불포함 선택), 감천문화마을, 그리고 소망계단 모노레일이 있는 조용한 닥밭골 벽화마을.",
       "region": "부산",
-      "duration": "≈ 10시간",
-      "stopsCount": 8,
+      "duration": "약 9시간",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

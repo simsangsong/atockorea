@@ -11,8 +11,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
       "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
       "region": "Busan",
-      "duration": "≈ 10 ore",
-      "stopsCount": 8,
+      "duration": "≈ 9 ore",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

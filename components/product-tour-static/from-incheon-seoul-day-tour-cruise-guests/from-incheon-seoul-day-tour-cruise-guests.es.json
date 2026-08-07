@@ -2565,5 +2565,29 @@
         }
       }
     }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "Ajustado al desembarque del barco",
+        "name": "Terminal de Cruceros de Incheon (Songdo)",
+        "type": "station",
+        "lat": 37.42414,
+        "lng": 126.60557
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Terminal de Cruceros de Incheon",
+        "type": "station",
+        "lat": 37.42414,
+        "lng": 126.60557
+      }
+    ],
+    "notes": [
+      "Indica al reservar el nombre del barco, la fecha de escala, la hora prevista de desembarque y la hora de embarque final. La recogida es en la Terminal de Cruceros de Incheon, en Songdo (la terminal dedicada a cruceros oceánicos; NO la confundas con la Terminal Internacional de Ferris de Incheon ni con el aeropuerto de Incheon, en la isla de Yeongjong). Furgoneta compartida con pasajeros de varios cruceros; si los barcos zarpan a horas distintas, se deja primero a quienes salen antes. El regreso puntual es el producto."
+    ]
   }
 }

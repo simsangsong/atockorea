@@ -11,8 +11,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan en petit groupe : temple marin, Sky Capsule & villages culturels",
       "subtitle": "Excursion d'une journée en petit groupe entre les icônes côtières de Busan et ses villages à flanc de colline — le temple marin Haedong Yonggungsa, la passerelle de verre Daritdol de Cheongsapo, le trajet en Sky Capsule du Blueline Park (billet en option à la réservation), le village culturel de Gamcheon et le paisible village de fresques Dakbatgol avec son monorail de l'escalier des vœux.",
       "region": "Busan",
-      "duration": "≈ 10 heures",
-      "stopsCount": 8,
+      "duration": "≈ 9 heures",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [

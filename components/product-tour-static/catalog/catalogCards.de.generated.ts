@@ -11,8 +11,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan Kleingruppe: Meerestempel, Sky Capsule & Kulturdörfer",
       "subtitle": "Kleingruppen-Tagestour zu Busans Küstenikonen und Hangdörfern — der Haedong-Yonggungsa-Tempel am Meer, der Glas-Skywalk des Cheongsapo-Daritdol-Observatoriums, die Fahrt mit der Sky Capsule im Blueline Park (Ticket bei der Buchung wählbar), das Kulturdorf Gamcheon und das stille Dakbatgol-Wandmalereidorf mit seiner Monorail an der „Wunschtreppe“ (소망계단).",
       "region": "Busan",
-      "duration": "≈ 10 Stunden",
-      "stopsCount": 8,
+      "duration": "≈ 9 Stunden",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
