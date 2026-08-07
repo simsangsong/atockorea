@@ -426,7 +426,8 @@ cp /c/Users/sangsong/atockorea/.env.local .env.local
 New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atockorea\node_modules
 ```
 
-✅ **S1·S2·S3a 는 2026-08-07 에 끝났다.** 다음은 **ru 잔여 5슬러그**다. 남은 단위는 이렇게 센다
+✅ **S1 · S2 · S3a · S3b · S3c 는 2026-08-07 에 끝났다**(PR #773 · #776 · #777 · #781, 전부 머지).
+다음은 **ru 잔여 3슬러그**다. 남은 단위는 이렇게 센다
 (🔴 **은퇴 슬러그를 빼고 세는 게 핵심** — §6-5-14):
 
 | 슬러그 | unit | 세그먼트 |
