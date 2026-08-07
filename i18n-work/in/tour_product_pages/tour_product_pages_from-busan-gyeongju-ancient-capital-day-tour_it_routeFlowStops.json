@@ -1,0 +1,93 @@
+{
+  "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "from-busan-gyeongju-ancient-capital-day-tour",
+  "locale": "it",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Busan subway pickup (3 stations)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ (or Haeundae Dalmaji Hill in cherry season)",
+      "glossary": [
+        "⟦G0⟧ = Foresta di bambù di Ahopsan"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Forest / Coastal road (seasonal)"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧ (UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Tempio di Bulguksa"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "UNESCO heritage"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch (Gyeongju ssambap)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧ & Choi Family House & ⟦G1⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio hanok di Gyochon",
+        "⟦G1⟧ = Ponte di Woljeonggyo"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Head-family hanok + Silla bridge"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "⟦G0⟧ & Hwangnidan-gil",
+      "glossary": [
+        "⟦G0⟧ = Complesso tombale di Daereungwon"
+      ]
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Royal tombs + cafe street"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧ (winter: Donggung & Wolji by night)",
+      "glossary": [
+        "⟦G0⟧ = Museo nazionale di Gyeongju"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Silla artifacts / winter night view"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "Busan subway drop-off"
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Foresta di bambù di Ahopsan"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Tempio di Bulguksa"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Villaggio hanok di Gyochon",
+      "⟦G1⟧": "Ponte di Woljeonggyo"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Complesso tombale di Daereungwon"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Museo nazionale di Gyeongju"
+    }
+  },
+  "tmHits": 0
+}
