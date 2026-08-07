@@ -27,7 +27,7 @@ import { writeFileSync, readFileSync, existsSync, unlinkSync } from 'node:fs';
 import path from 'node:path';
 import { loadEnvConfig } from '@next/env';
 import { createClient } from '@supabase/supabase-js';
-import { signCustomerRoomToken, signGuideRoomToken } from '../lib/tour-room/token';
+import { signCustomerRoomToken, signGuideRoomToken, signDriverRoomToken } from '../lib/tour-room/token';
 import { signCompanionInviteToken } from '../lib/tour-room/companionToken';
 import { signRoomClaimToken } from '../lib/ops/seating/claimToken';
 import { ensureRoom } from '../lib/tour-room/access';
@@ -346,6 +346,10 @@ async function main() {
   const token1 = signCustomerRoomToken({ bookingId: booking1, displayName: 'Sim Alex', tourDate }).token;
   const token2 = signCustomerRoomToken({ bookingId: booking2, displayName: 'Sim Yuki', tourDate }).token;
   const guideToken = signGuideRoomToken({ tourId: tourA, tourDate, displayName: 'Sim Guide' }).token;
+  // 기사 콘솔도 토큰이 있어야 열린다. 없으면 `/tour-mode/driver` 는 "링크가 올바르지
+  // 않아요" 39자짜리 화면을 렌더하는데, 하니스들은 그걸 정상 표면으로 세고 있었다
+  // (qa-chrome-overlap 도 같은 URL 을 토큰 없이 걷는다). 발급해서 그 구멍을 막는다.
+  const driverToken = signDriverRoomToken({ tourId: tourA, tourDate, displayName: 'Sim Driver' }).token;
 
   // throwaway admin + session
   const password = `Sim!${Math.random().toString(36).slice(2, 12)}Aa1`;
@@ -409,6 +413,7 @@ async function main() {
     room1Url: `/tour-mode/room/${booking1}?rt=${encodeURIComponent(token1)}`,
     room2Url: `/tour-mode/room/${booking2}?rt=${encodeURIComponent(token2)}`,
     guideUrl: `/tour-mode/guide?rt=${encodeURIComponent(guideToken)}`,
+    driverUrl: `/tour-mode/driver?rt=${encodeURIComponent(driverToken)}`,
     joinUrl,
     companionUrl,
     ...(bookingPrivate

@@ -261,6 +261,36 @@ const ADMIN_SURFACES = [
   ['admin-vehicle-layouts', '/admin/vehicle-layouts'],
 ].map(([name, url]) => [name, url, 'body', true]);
 
+/**
+ * 스마트앱(투어모드). 룸/가이드 토큰이 필요해 어드민과 같은 픽스처를 쓴다.
+ *
+ * 🔴 탭은 **각각 다른 화면**이다. 룸 탭바 4개·가이드 4개를 안 누르면 이 앱의 3/4 를
+ * 안 본 것이다. 탭마다 표면을 따로 두고(누르고 나서 잰다) 매번 새로 로드한다 —
+ * 한 컨텍스트에서 탭을 연달아 누르는 것보다 느리지만 상태가 안 섞인다.
+ */
+const tourModeSurfaces = () => {
+  if (!fx) return [];
+  const roomTab = (n) => `[data-testid="room-tabbar"] button:nth-child(${n})`;
+  const guideTab = (n) => `nav button:nth-child(${n})`;
+  const ROOM = '[data-testid="room-tabbar"]';
+  return [
+    ['tm-entry', '/tour-mode', 'body', false, null],
+    ['tm-driver', fx.driverUrl ?? '/tour-mode/driver', 'body', false, null],
+    ['tm-join', fx.joinUrl, 'body', false, null],
+    ['tm-companion', fx.companionUrl, 'body', false, null],
+    ['tm-plan', fx.planEditableUrl, 'body', false, null],
+    ['tm-room', fx.room1Url, ROOM, false, null],
+    ['tm-room-chat', fx.room1Url, ROOM, false, roomTab(2)],
+    ['tm-room-today', fx.room1Url, ROOM, false, roomTab(3)],
+    ['tm-room-more', fx.room1Url, ROOM, false, roomTab(4)],
+    ['tm-room2', fx.room2Url, ROOM, false, null],
+    ['tm-guide', fx.guideUrl, 'nav', false, null],
+    ['tm-guide-t2', fx.guideUrl, 'nav', false, guideTab(2)],
+    ['tm-guide-t3', fx.guideUrl, 'nav', false, guideTab(3)],
+    ['tm-guide-t4', fx.guideUrl, 'nav', false, guideTab(4)],
+  ];
+};
+
 const only = (process.env.SURFACES ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 
 const VIEWPORTS = [
@@ -270,10 +300,48 @@ const VIEWPORTS = [
 
 /** 로케일. 한국어는 라벨 길이가 달라 레이아웃이 다르게 깨진다 — 중립 브라우저는 회귀를 숨긴다. */
 const LOCALES = (process.env.LOCALES ?? 'en-US').split(',').map((s) => s.trim()).filter(Boolean);
-const localePrefix = (loc) => (loc.startsWith('ko') ? '/ko' : '');
+/**
+ * 🔴 `/tour-mode`·`/admin` 은 **로케일 세그먼트가 없는 라우트다.** `/ko` 를 붙이면
+ * 404 를 재게 되고, 404 페이지에는 가려진 버튼이 없으니 스윕이 조용히 초록이 된다.
+ * 접두사는 공개 마케팅 경로에만 붙인다. (앱 언어는 룸 토큰이 정하지 브라우저가 아니다.)
+ */
+const localePrefix = (loc, url) =>
+  loc.startsWith('ko') && !/^\/(tour-mode|admin)(\/|$)/.test(url) ? '/ko' : '';
+
+/**
+ * 🔴 고정 sleep 이 아니라 **정착**을 기다린다. 단, "안 변한다"만으로는 부족하다.
+ *
+ * 붙박이 `waitForTimeout` 으로 재면 마운트 중인 화면을 잰다 — `/admin/ops-finance`
+ * 가 6초에 41자, 22초엔 494자였다. 그래서 길이가 안 변할 때까지 기다리게 고쳤는데
+ * **그것도 틀렸다**: 어드민 셸은 인증을 기다리며 **17자에서 한참 머문다.** 정지한
+ * 상태라 "정착"으로 통과했고, 오탐이 3건에서 9건으로 늘었다(매번 다른 표면 —
+ * 무작위성이야말로 이게 결함이 아니라 타이밍이라는 증거였다).
+ *
+ * 그래서 **바닥값**을 같이 요구한다: 안 변하고 **동시에** FLOOR 이상이어야 정착이다.
+ * 끝까지 바닥에 못 닿으면 그건 진짜 빈 화면이고, BLANK 가 정당하게 운다.
+ */
+const SETTLE_FLOOR = 150;
+async function waitSettled(page, { max = 25000, step = 700 } = {}) {
+  let last = -1;
+  let stable = 0;
+  const until = Date.now() + max;
+  while (Date.now() < until) {
+    const len = await page.evaluate(() => document.body.innerText.trim().length).catch(() => -1);
+    if (len === last && len >= SETTLE_FLOOR) {
+      stable += 1;
+      if (stable >= 2) return len;
+    } else {
+      stable = 0;
+    }
+    last = len;
+    await page.waitForTimeout(step);
+  }
+  return last;
+}
 
 const browser = await chromium.launch();
 const all = [];
+let adminSkipped = false;
 
 /**
  * 상세 페이지 슬러그는 하드코딩하지 않는다 — 카탈로그가 바뀌면 조용히 404 를
@@ -298,16 +366,18 @@ async function discoverTourSlugs() {
   }
 }
 
-/** SCOPE=public|admin|all (기본 all). 어드민만 따로 돌릴 때 쓴다. */
+/** SCOPE=public|admin|smartapp|all (기본 all). */
 const scope = process.env.SCOPE ?? 'all';
-const wantPublic = scope !== 'admin';
-const wantAdmin = scope !== 'public';
+const wantPublic = scope === 'all' || scope === 'public';
+const wantAdmin = scope === 'all' || scope === 'admin';
+const wantSmartApp = scope === 'all' || scope === 'smartapp';
 
 const slugs = only.length || !wantPublic ? [] : await discoverTourSlugs();
 const SURFACES = [
   ...(wantPublic ? ALL_SURFACES : []),
   ...slugs.map((href, i) => [`tour-detail-${i + 1}`, href, 'body']),
   ...(fx && wantAdmin ? ADMIN_SURFACES : []),
+  ...(wantSmartApp ? tourModeSurfaces() : []),
 ].filter(([name]) => !only.length || only.includes(name));
 console.log(`표면 ${SURFACES.length}개 × 뷰포트 ${VIEWPORTS.length} × 로케일 ${LOCALES.length}`);
 if (slugs.length) console.log(`  상세 슬러그 자동 발견: ${slugs.join(' , ')}`);
@@ -318,10 +388,30 @@ console.log(
 );
 
 /**
+ * 🔴 어드민 프리플라이트. 한 표면만 먼저 찔러 보고 세션이 죽었으면 어드민 블록을
+ * **통째로 뺀다.**
+ *
+ * 왜: sim 어드민 세션은 오래 못 간다. supabase-js 가 세션을 갱신하면 서버가 옛
+ * 리프레시 토큰을 폐기하는데, 모든 컨텍스트가 픽스처의 **같은** 세션을 재생하므로
+ * 한 번 회전한 뒤엔 전부 `/signin` 으로 튕긴다(실측: 갓 시드한 세션이 7표면까지
+ * 통과하고 8번째부터 무너졌다). 그대로 두면 **똑같은 에러 84줄**이 쏟아져 진짜
+ * 결함을 덮는다. 한 줄로 줄이고, 할 일을 알려준다.
+ *
+ * ⚠ 그래서 어드민 스윕은 **시드 직후에** 돌려야 한다. 공개/스마트앱과 한 번에
+ * 묶어 돌리면 어드민 차례가 올 때쯤 세션이 이미 죽어 있다.
+ */
+async function adminSessionAlive() {
+  const probe = SURFACES.find(([, , , isAdmin]) => isAdmin);
+  if (!probe) return true;
+  const res = await measure('preflight', probe[1], probe[2], true, 'desktop', 1280, 900, false, 'en-US', null);
+  return !res.error;
+}
+
+/**
  * 한 표면 한 번 재기. 결과를 `all` 에 밀어넣지 않고 **돌려준다** — 재시도가
  * 실패분을 버릴 수 있어야 하기 때문이다.
  */
-async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
+async function measure(name, url, ready, admin, vpName, w, h, mobile, locale, click) {
     const ctx = await browser.newContext({
       viewport: { width: w, height: h },
       deviceScaleFactor: 1,
@@ -368,7 +458,7 @@ async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
       await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 180000 });
       await page.waitForSelector(ready, { timeout: 120000 });
       await page.addStyleTag({ content: 'nextjs-portal{display:none !important}' });
-      await page.waitForTimeout(2500);
+      await waitSettled(page);
 
       // 🔴 어드민은 클라이언트 가드가 늦게 튕긴다. 세션이 죽었는데도 로그인 화면을
       // 조용히 재고 "ok" 를 뱉으면 이 스윕은 0 을 초록으로 읽는 것이다.
@@ -379,7 +469,8 @@ async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
       // 분석의 지표 이름을 로그인 화면으로 오인해 3표면을 헛짚었다 —
       // 게이트 어휘로 상태를 추측하지 말고 상태 자체를 봐라.
       if (admin) {
-        await page.waitForTimeout(3500); // 가드가 판단할 시간
+        await page.waitForTimeout(1500); // 클라이언트 가드가 튕길 시간
+        await waitSettled(page);
         const gate = await page.evaluate(() => ({
           path: location.pathname,
           text: document.body.innerText.trim().length,
@@ -391,6 +482,15 @@ async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
         if (gate.text < 40) {
           return { surface: key, blank: gate.text };
         }
+      }
+
+      if (click) {
+        const target = page.locator(click).first();
+        if (!(await target.count())) {
+          return { surface: key, error: `탭 셀렉터가 없다: ${click} — 탭바가 바뀌었나` };
+        }
+        await target.click({ force: true });
+        await page.waitForTimeout(1600);
       }
 
       const docH = await page.evaluate(() => document.documentElement.scrollHeight);
@@ -421,17 +521,31 @@ async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
     }
 }
 
+if (SURFACES.some(([, , , isAdmin]) => isAdmin) && !(await adminSessionAlive())) {
+  console.log(
+    [
+      '',
+      '🔴 어드민 세션이 죽었다 — 어드민 표면을 건너뛴다 (초록으로 오해하지 말 것).',
+      '   고치는 법: npx tsx scripts/sim-tour-day.ts --cleanup && ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts',
+      '   그리고 어드민은 SCOPE=admin 으로 **시드 직후 단독** 실행하라.',
+      '',
+    ].join('\n'),
+  );
+  for (let i = SURFACES.length - 1; i >= 0; i -= 1) if (SURFACES[i][3]) SURFACES.splice(i, 1);
+  adminSkipped = true;
+}
+
 for (const locale of LOCALES)
 for (const [vpName, w, h, mobile] of VIEWPORTS) {
-  for (const [rawName, rawUrl, ready, admin] of SURFACES) {
+  for (const [rawName, rawUrl, ready, admin, click] of SURFACES) {
     const name = LOCALES.length > 1 ? `${locale.slice(0, 2)}:${rawName}` : rawName;
-    const url = localePrefix(locale) + rawUrl;
+    const url = localePrefix(locale, rawUrl) + rawUrl;
     // dev 서버는 첫 방문에 라우트를 컴파일하고 그 사이 네비게이션이 한 번 튄다
     // ("Execution context was destroyed"). 재시도 한 번이면 warm 이라 통과한다 —
     // 안 그러면 매 스윕마다 무작위 표면 하나가 가짜 ERR 로 뜬다.
     let res;
     for (let attempt = 0; attempt < 2; attempt += 1) {
-      res = await measure(name, url, ready, admin, vpName, w, h, mobile, locale);
+      res = await measure(name, url, ready, admin, vpName, w, h, mobile, locale, click);
       if (!res.error) break;
     }
     all.push(res);
@@ -475,4 +589,9 @@ for (const r of all) {
     console.log(`   HIDDEN ${f.control}  접힌 패널 안인데 inert 가 없다 — 키보드가 안 보이는 컨트롤에 들어간다  ← ${f.panel}`);
   if (r.xscroll) console.log(`   XSCROLL 문서 ${r.xscroll.docW}px > 뷰포트 ${r.xscroll.vw}px`);
 }
-console.log(`\n${bad === 0 ? 'PASS' : `FAIL — ${bad}건`}   표면 ${all.length}개`);
+// 🔴 어드민을 빼고 통과했다면 그 사실이 PASS 옆에 붙어야 한다. 안 붙이면 이
+// 요약 한 줄이 "다 봤다"는 뜻으로 읽힌다 — 스윕이 거짓말하는 가장 흔한 방식이다.
+console.log(
+  `\n${bad === 0 ? 'PASS' : `FAIL — ${bad}건`}   표면 ${all.length}개` +
+    (adminSkipped ? '   ⚠ 어드민 제외 — 이 결과는 어드민을 포함하지 않는다' : ''),
+);
