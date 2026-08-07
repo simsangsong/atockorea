@@ -51,7 +51,9 @@
     "amountLabel": "68.95",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 68.95
+    "salePriceUsd": 68.95,
+    "originalPriceUsd": 98.5,
+    "discountPercent": 30
   },
   "hero": {
     "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
@@ -1830,7 +1832,9 @@
       "amountLabel": "68.95",
       "currency": "USD",
       "per": "person",
-      "salePriceUsd": 68.95
+      "salePriceUsd": 68.95,
+      "originalPriceUsd": 98.5,
+      "discountPercent": 30
     }
   },
   "pickup_dropoff": {
