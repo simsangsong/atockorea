@@ -37,13 +37,34 @@ const WEEKDAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'] as const
 const TOUR_DEPARTURE_DAYS: Record<string, DepartureDays> = {
   // The three Suwon packages rotate one vehicle across the week.
   //
-  // 🔴 Before opening any of these: their bundles carry no `departureWeekdays`,
-  // so the booking calendar will NOT grey the dead dates — only this table will
-  // reject them, at submit. Verified 2026-08-07: all three are is_active=false
-  // with zero published locales, which is the only reason that is not a live
-  // defect today. Pocheon has the field in all ten bundles; copy that shape
-  // across before flipping these on, or a guest picks Wednesday, fills the
-  // form, and learns at the last step that the tour never runs.
+  // ✅ Resolved 2026-08-07, when these three were re-opened (owner instruction).
+  // All three now carry `departureWeekdays` in all six of their bundles, and
+  // `departureWeekdays.test.ts` asserts every slug in this table agrees with
+  // every one of its bundles, so the two cannot drift apart again.
+  //
+  // 🔴 The warning that stood here named the right gap but the wrong mechanism,
+  // and the correction is worth keeping because the wrong version is the
+  // intuitive one. It said a missing bundle field means "the calendar will NOT
+  // grey the dead dates, only this table rejects them, at submit". Measured
+  // against a real render, with the field deliberately deleted and dev
+  // restarted, the calendar greyed them perfectly anyway — because
+  // `/api/tours/[id]/availability/range` reads this same table server-side and
+  // the picker paints from that response.
+  //
+  // What the bundle field actually buys is the failure case. `loadMonth` in
+  // `_shared/bookingShared.tsx` fails OPEN: on !res.ok or a throw it returns
+  // early and leaves `unavailableYmd` empty. Measured both ways with the
+  // availability route aborted:
+  //
+  //     bundle field   healthy API        API failing
+  //     present        correct            correct (10 open, 0 wrong)
+  //     absent         correct            ALL 24 future days offered,
+  //                                       14 of them non-departure days
+  //
+  // So it is a second, client-side guard for when the availability call fails,
+  // aborts, or has not landed yet — not the primary greying mechanism. Note
+  // that `scripts/qa-departure-days.ts` runs against a healthy API and so
+  // reports a clean pass either way; use its `--offline` mode to see this.
   'seoul-suwon-hwaseong-waujeongsa-starfield': {
     weekdays: [2, 4, 6],
     label: 'Tue, Thu, Sat',
@@ -64,6 +85,18 @@ const TOUR_DEPARTURE_DAYS: Record<string, DepartureDays> = {
     label: 'Mon, Thu, Sat',
   },
 };
+
+/**
+ * Every slug with a fixed departure schedule.
+ *
+ * Exported so `__tests__/audit/departureWeekdays.test.ts` can walk the table
+ * rather than repeating a hand-written list — a gate that only knows about the
+ * products someone remembered to add to it is how the Suwon three shipped
+ * without `departureWeekdays` in the first place.
+ */
+export const DEPARTURE_SCHEDULE_SLUGS: readonly string[] = Object.freeze(
+  Object.keys(TOUR_DEPARTURE_DAYS),
+);
 
 export function getDepartureDays(slug: string | null | undefined): DepartureDays | null {
   if (!slug) return null;

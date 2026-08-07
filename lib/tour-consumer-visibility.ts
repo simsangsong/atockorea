@@ -96,8 +96,6 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // /api/tours + the matcher (match_tours rows deleted).
   "east-signature-nature-core",
   "jeju-west-south-full-day-authentic-tour",
-  // Retired 2026-05-14 — replaced by seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.
-  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
   // Retired 2026-05-23 — overlapped with from-busan-gyeongju-ancient-capital-day-tour
   // (same Busan→Gyeongju route, same $39 price). Keeping the small-group variant active.
   "busan-gyeongju-unesco-legacy-tour-national-museum",
@@ -182,12 +180,37 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
   "from-incheon-seoul-day-tour-cruise-guests",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
-  "seoul-seoraksan-nami-island-morning-calm-day-tour",
-  "seoul-seoraksan-national-park-sokcho-beach-day-trip",
-  "seoul-suwon-hwaseong-folk-village-starfield-library",
-  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
-  "seoul-suwon-hwaseong-waujeongsa-starfield",
+  //
+  // ── Suwon three + Gangwon/Seoraksan three re-opened 2026-08-07 (owner) ────
+  // Six slugs removed from this list. They were hidden by the 2026-06-29 Klook
+  // 12-SKU narrowing, not by anything wrong with the products. The DB half —
+  // tours.is_active plus the six tour_product_pages.is_published rows each —
+  // was flipped in the same change; both halves are needed, and re-blocking
+  // either one alone puts the pair back out of step. Removed:
+  //   seoul-suwon-hwaseong-folk-village-starfield-library      (Mon/Thu/Sat)
+  //   seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library  (Sun/Wed/Fri)
+  //   seoul-suwon-hwaseong-waujeongsa-starfield                (Tue/Thu/Sat)
+  //   seoul-seoraksan-naksansa-temple-naksan-beach-day-trip
+  //   seoul-seoraksan-nami-island-morning-calm-day-tour
+  //   seoul-seoraksan-national-park-sokcho-beach-day-trip
+  //
+  // 🔴 Two things a later session will be tempted to "fix" — don't:
+  //
+  // 1. The Sokcho trip was listed here TWICE, the first time carrying the note
+  //    "Retired 2026-05-14 — replaced by naksansa-temple-naksan-beach". The
+  //    owner re-opened both of them anyway, knowing they overlap. That is a
+  //    product decision, not an oversight, so the Sokcho slug is not going
+  //    back on this list because it looks like a duplicate of its replacement.
+  //
+  // 2. The three Suwon packages carry weekday schedules in
+  //    `lib/tour-departure-days.ts` and now in all six of each bundle's
+  //    `departureWeekdays` arrays. Both are load-bearing: the table rejects a
+  //    bad date at submit, the bundle greys it in the picker. Opening a
+  //    fixed-schedule product with only the table is what
+  //    `__tests__/audit/departureWeekdays.test.ts` now fails on.
+  //
+  // The Seoraksan three have no schedule entry, which is correct — nothing
+  // says they are anything but daily on-demand, same as the rest of the catalog.
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {
