@@ -165,6 +165,7 @@ Phase 진행 시 한 줄씩 추가. 커밋 단위.
 | 2026-06-23 (3) | **Phase F(챗봇 홍보) L1+L3 착수 — 사용자 승인 "L1+L3 진행"(§D 2026-06-23 row).** "멍청한 챗봇 아님" 포지셔닝을 실능력(추천·견적·예약조회·휴먼 핸드오프)으로 증명. **L1**: `TourProductAiAssistantWidget`에 idle 티저 버블 — `placement==="global"`(랜딩/사이트 전역)에서만, 6초 idle 후 1회 노출, dismiss/오픈 시 sessionStorage(`atc-assistant-teaser-dismissed`)로 세션 내 재노출 차단. 카피 = 위젯 자체 i18n(KO/EN, 나머지 EN 폴백) `teaserTitle/teaserBody/teaserCta` 신규. **L3**: 위젯에 외부 오픈 훅 `window` CustomEvent `atc:open-assistant` 리스너 추가(기존 내부 state·FAB만 있던 한계 해소) + `choose-travel-style.tsx` 추천받기 카드 아래 "또는 AI 에이전트에게 바로 물어보기" 보조 버튼이 이벤트 디스패치. analytics `HomeCtaSource`에 `chatbot_open_choose_style` 추가. i18n `premium.v2.chooseStyle.askAgentCta` 6 로케일(파리티 6/6 검증). framer-motion만(신규 의존성 0), 스키마/엔진 무변경. **검증 보류**: 컨테이너에 node_modules 부재로 tsc/build 미실행 — 기존 import/패턴만 사용, JSON 6/6 parse OK. L2/L4는 미착수(후속). |
 | 2026-06-23 (4) | **Phase F(챗봇 홍보) L2+L4 — "이어서 진행" 지시.** **L2**: 신규 전용 밴드 `components/home/v2/sections/ai-agent-band.tsx` — eyebrow+h2("챗봇이 아니라 진짜 여행 에이전트")+서브카피 + **6능력 칩**(상담/추천/견적/정보수집/예약조회/휴먼 — 각 칩 = assistant API 실능력 매핑) + **샘플 대화**(user/agent 말풍선, "예시" 라벨로 illustrative 명시 — §13 가짜카드 가드) + "지금 대화 시작" 버튼(`atc:open-assistant` 디스패치). `HomeV2Page`에서 Destinations 직후·Why 직전 마운트. `sections/index.ts` 배럴 export 추가. **L4**: `final-cta.tsx` 보조 CTA 아래 "또는 AI 에이전트에게 물어보기" 3차 링크(이벤트 디스패치, Sparkles import 추가). analytics `HomeCtaSource`에 `chatbot_open_aiagent_band`+`chatbot_open_final_cta` 추가. i18n `home.premium.v2.aiAgent.*`(14키, cap 6개 포함) + `finalCtaBlock.askAgent` 6 로케일 node 패치(parse+파리티 6/6 검증). framer-motion만(신규 의존성 0), 스키마/엔진 무변경. **검증 보류**: node_modules 부재로 tsc/build 미실행 — 기존 import/패턴만 사용, JSON 6/6 parse+키 파리티 OK. |
 | 2026-08-07 | **StickyHomeCta가 모바일 `BottomNav` 밑에 깔려 있었다 — 수정 (사용자 보고 스크린샷, in-flight bug-fix 1c)** | (pending) | **사용자 보고**: "모바일에서 Get My Recommendation / Browse all tours가 보텀바에 가려서 아무것도 안 보여". **실측(Playwright 390×844, `/`, scrollY=1126)**: CTA `top 776 / bottom 832 / h 56 / z-40` vs `BottomNav` `top 783 / bottom 844 / h 61 / z-50` → **56px 중 49px이 nav 밑**(7px만 노출). 게다가 **Chromium은 `env(safe-area-inset-*)`를 항상 0으로 준다**(`scripts/qa-chrome-overlap.mjs` §노치 시뮬레이터) — 노치 기기에선 nav top이 `VH−60−34`로 올라가 CTA가 **전부** 사라진다. 원인: `StickyHomeCta.tsx:106`이 `bottom-3`(뷰포트 바닥 12px)뿐이라 하단 크롬 오프셋이 없었음. 같은 셸의 다른 두 오버레이는 이미 오프셋을 갖고 있었다 — `FloatingLanguageToggle`(`+80px`)·챗봇 FAB(`8.5rem`) — **이 하나만 빠져 있었다.** 수정: `bottom-[calc(env(safe-area-inset-bottom,0px)+72px)]`(nav top=`60+safe` → 12px 여유, `bottom-3`이 노리던 간격 그대로) + `md:bottom-5` 유지(`BottomNav`가 `md:hidden`이라 데스크톱 무변경). **재실측**: mobile 390 → CTA `top 716 / bottom 772`, nav top 783, **겹침 0**(여유 11px), FAB 하단 708과도 8px 여유 / md 경계 768 → 갭 20px·nav 없음 / desktop 1280 → 갭 20px·nav 없음 (`md:hidden`과 `md:bottom-5`가 같은 브레이크포인트라 "nav는 보이는데 오프셋은 없는" 구간이 없음). 스크린샷 전후 대조 확인. tsc 0 / eslint 0. §2.6.1은 **히어로** CTA가 fold 아래로 밀리는 별건이며 그대로 유효(여기서 안 건드림). 🔴 **기존 게이트가 이걸 못 잡은 이유: `qa-chrome-overlap.mjs:102`가 `position:fixed` 요소를 일부러 건너뛴다**("오버레이는 이 컨테이너 소유가 아니다") — 고정 오버레이끼리의 겹침은 아무도 안 본다. |
+| 2026-08-07 (2) | **위 결함의 상설 게이트 2종 + §2.6.1 재실측** (사용자 "이거 다 이어서 진행하면 안 돼?") | (pending) | **① 실렌더 하니스 `scripts/qa-overlay-collisions.mjs`**(`npm run qa:overlay-collisions`) — 보이는 고정/스티키 오버레이를 모아 쌍마다 교집합을 재고, **낮은 z 의 글자·컨트롤이 높은 z 의 불투명 면에 20% 넘게 덮이면 실패**. 사이트 7표면 × **flat/notch 2패스 = 14**. 뮤테이션 검증: `bottom-3` 으로 되돌리면 `button"Get My Recommendation"` **flat 98% / notch 100%** 덮임으로 정확히 잡는다. **② 소스 게이트 `__tests__/audit/overlayClearance.test.ts`**(`npm run gate` 안에서 항상 돎, 8검사) — `BottomNav` 높이를 **소스에서 뽑아**(하드코딩 금지) 등록부의 각 오버레이가 그 이상 띄우는지 검사 + 미등록 신규 오버레이 차단 + 하니스가 npm 에 등록돼 있는지(FA-008 교훈). 뮤테이션 검증 통과. 🔴 **하니스를 만들며 내 판정이 세 번 틀렸다**: (a) 최신 Chromium 은 CSS 중첩 때문에 **평범한 `CSSStyleRule` 에도 `cssRules` 가 있다** → `if (rule.cssRules)` 로 그룹을 가리면 4,537 규칙을 훑고 **치환 0건인데 조용히 성공**(노치 패스가 통째로 가짜였다) → `.length` 를 봐야 한다 (b) 배경 이미지를 잉크로 세니 **히어로 사진이 반투명 헤더 밑으로 6px 무는 것**을 결함이라 외쳤다 — `qa-chrome-overlap.mjs:103-105` 가 같은 이유로 이미 거부해 둔 오탐이다("늑대소년") → **글자·컨트롤만** 센다 (c) 파일 안 아무 `bottom-*` 이나 검사하니 패널 **안쪽 배지 `bottom-1.5`** 가 걸렸다 → 등록부가 **계약 클래스를 못 박고** 스캔은 발견에만 쓴다. ⚠ 스캐너는 **주석을 먼저 지운다** — 이 수정을 설명하는 주석에 `bottom-3` 이 그대로 적혀 있어 자기 설명문을 반례로 신고한다(전용 회귀 테스트 있음). **③ §2.6.2 재실측** — §2.6 이 잰 「매처 CTA」는 W1e-3 로 **소멸**했고 히어로엔 컨트롤이 0개다. 첫 액션은 이제 인원 스테퍼(790→834)이고 iPhone 14 유효 fold(flat 783/notch 749) **아래**(−51/−85), Pro Max 는 +32/−2. **구조적 결론은 살아 있으나 성격이 다르다** — 흐름 콘텐츠라 스크롤로 해소되므로 버그가 아니라 IA 판단 → §D 3행으로 올림(사장님 결정). 검증: tsc 0 / jest 전체 green / 하니스 14표면 PASS |
 
 
 Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말 것. 추가 시 출처 + 보류 이유 명시.
@@ -178,7 +179,9 @@ Phase 안에 없지만 좋은 아이디어. Phase 끝나기 전엔 손대지 말
 | 매처 입력 음성 입력 | — | 우선순위 매우 낮음 |
 | 매처 결과 PDF/이미지 공유 기능 | — | 마케팅 가치 미검증 |
 | Phase E.2 OTA 로고 strip | Phase E 분할 결정 (2026-05-17) | OTA 4-6사 라이선스 확인 필요. §B "플랫폼명 텍스트 유지" 결정과 시너지 평가 후 진행 |
-| Phase B.3.3 hero `min-h-[44vh]` 축소 | Phase 0c audit (§2.6.1) | 모바일 bottom nav overlay로 user-visible CTA가 여전히 가려짐. 정량 데이터(0b) 후 결정 |
+| ~~Phase B.3.3 hero `min-h-[44vh]` 축소~~ → **대상 소멸, 아래 행으로 대체 (2026-08-07)** | Phase 0c audit (§2.6.1) | ~~모바일 bottom nav overlay로 user-visible CTA가 여전히 가려짐~~ — W1e-3 가 히어로 플래너를 제거했고 히어로엔 `min-h-[…]` 가 아예 없다. §2.6.2 재실측 참조 |
+| **모바일 첫 화면 fold — 인원 스테퍼가 iPhone 14 에서 유효 fold 아래(−51px flat / −85px notch)** (§2.6.2). 선택지: ① 수용(현행 — 조금만 스크롤하면 드러남) ② 트러스트 4카드 2×2 → 1줄 압축(~90px 회수) ③ 히어로 사진 높이 축소 ④ 인원 스테퍼를 타입 3카드 아래로 이동 | 재실측 2026-08-07 (§2.6.2) | **사장님 결정 대기.** 코드 버그가 아니라 IA 판단이고, §13 이 0b baseline 없는 정량 주장을 금지한다(baseline 미수집). 고정 오버레이였던 PR #738 건과 달리 스크롤로 해소되므로 자동 수정 대상이 아니다 |
+| 첫 화면에서 챗봇 FAB(z-65)·EN pill(z-40)이 h2 마지막 단어와 시즌 칩 꼬리를 덮음 | §2.6.2 관찰 2026-08-07 | 떠 있는 오버레이가 **흐름 콘텐츠**를 가리는 제3 범주. 어느 게이트도 안 봄. 스크롤하면 해소되고 FAB 은 원래 그런 물건이라 게이트화하면 늑대소년 — 배치 조정할지 사장님 판단 |
 | PostHog 무료 티어 보강 (세션 리플레이용) | 자체 분석 plan §B-3 부산물 | 자체 timeline으로 demo 충분. 필요 시 hybrid (자체 정량 + PostHog 정성) |
 | ~~화면 우하단 floating 언어 토글~~ ↗ **랜딩 2026-05-17 (옵션 A 채택)** | 사용자 요청 2026-05-17 | ~~옵션 A/B/C 대기~~ — 옵션 A로 랜딩 완료. §C 참조 |
 | **"투어타입 우선" 홈 개혁** (Match/Build 토글 제거 → 인원수-first → 투어타입 3카드 개인화 + 실시간 가격 → Private=리스트/그룹=리스트/추천받기=매처, 13 업그레이드 3 웨이브) | 사용자 요청 2026-06-21 | **신규 스코프 — 통합 플래너 "단일 surface" 전제 부분 번복.** 상세 플랜 `docs/landing-home-tour-type-reform-plan-2026-06-21.md`(감사 패치 완료). Phase 0 게이트 마감(분류 `fit≥0.8` / 가격 N*=ceil(PV/GP) / 인원 스테퍼 위치 / 서울 재활성화 PR #115). **다음 = Wave 0(골격+계측) 코드 착수.** 인벤토리 충분(그룹 ~29), 가격 크로스오버는 엔진÷from 도출 |
@@ -315,6 +318,40 @@ B.3 (2472b0ae) 랜딩 후 CDP 재측정에선 iPhone 14 CTA가 fold +2px 위로 
 3. **MobileBottomNav 동적 hide** — 히어로 단계에서 nav 숨김 (별도 feature, B 범위 밖).
 
 권장: **옵션 2 수용 + B.4/B.5 진행.** 효과 측정은 Phase 0b baseline 후 정량 판단. 단, §C에 audit 발견 row를 남겨 추후 데이터로 재판단 가능하게 함.
+
+#### 2.6.2 재실측 — **위 §2.6/§2.6.1 의 전제가 낡았다 (사실 수정, 2026-08-07)**
+
+🔴 **§2.6 표가 잰 「매처 CTA」는 이제 존재하지 않는다.** 그 표(873→925px)는 히어로 안의
+플래너 카드 CTA 를 잰 것인데, 「투어타입 우선」 개혁의 **W1e-3 가 히어로 플래너를 제거했다**
+(`HomeV2Page.tsx:21-26`). 히어로에는 지금 **컨트롤이 하나도 없다** — 사진 + H1 + 서브헤드뿐이다.
+그래서 §2.6.1 이 제시한 회수 옵션 둘도 같이 사라졌다: **B.3 매처 헤더 슬림화**는 대상이 없고,
+**hero `min-h-[44vh]` 축소**는 히어로에 `min-h-[…]` 클래스가 **아예 없다**(실측 확인).
+
+**재실측 (Playwright, `/`, scrollY=0, 2026-08-07):**
+
+| Viewport | Hero | nav 높이 | 유효 fold (flat / notch) | 첫 액션 컨트롤 | Δ flat | Δ notch |
+|---|---|---|---|---|---|---|
+| iPhone 14 (390×844) | 49→575 | 61 | 783 / 749 | 인원 스테퍼 790→834 | **−51** | **−85** |
+| Pro Max (430×932) | 49→609 | 61 | 871 / 837 | 인원 스테퍼 795→839 | **+32** | **−2** |
+
+첫 액션 = `aria-label="Fewer travelers"`/`"More travelers"` 인원 스테퍼(U6). 즉 **§2.6.1 의
+구조적 결론은 그대로 살아 있다** — iPhone 14 에서 첫 조작 가능 요소가 여전히 유효 fold 아래고,
+Pro Max 조차 노치를 넣으면 −2px 로 걸친다. 바뀐 건 *무엇이* 잘리느냐뿐이다.
+
+⚠ 단, 이건 §2.6.1 과 성격이 다르다. 인원 스테퍼는 **문서 흐름 콘텐츠**라 조금만 스크롤하면
+드러난다(`qa-chrome-overlap.mjs` 의 판정 기준 = "스크롤로 치울 수 있으면 정상"). PR #738 의
+스티키 CTA 는 **고정 오버레이**라 스크롤해도 영영 안 나왔다 — 그래서 그건 버그였고 즉시 고쳤다.
+여기 남은 건 버그가 아니라 **IA 판단**이다.
+
+🔴 **그래서 이 항목은 코드 수정으로 닫지 않는다.** 히어로 압축·섹션 재배치는 §5 Phase 작업이고
+§B 결정 사항이며, §13 은 **0b baseline 없이 정량 주장 금지**를 못 박아 두었다(baseline 은 §A 기준
+아직 미수집). 사장님 결정 사항으로 §D 에 올린다.
+
+**같이 본 것(결정 아님, 관찰):** 첫 화면에서 챗봇 FAB(z-65)과 EN 언어 pill(z-40)이 h2
+"Pick your pace. We'll handle **the** rest." 의 한 단어와 시즌 칩 꼬리("…days **left**")를 덮는다.
+이건 **떠 있는 오버레이가 흐름 콘텐츠를 가리는** 제3의 범주로, `qa-chrome-overlap.mjs`(전폭 크롬만 봄)도
+`qa-overlay-collisions.mjs`(오버레이끼리만 봄)도 안 본다. 스크롤하면 해소되고 FAB 은 원래 그런
+물건이라 게이트로 만들면 늑대소년이 된다 — 판단이 필요한 자리라 기록만 남긴다.
 
 ---
 

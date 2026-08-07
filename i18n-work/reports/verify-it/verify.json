@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-07T02:53:16.818Z",
+  "generatedAt": "2026-08-07T03:04:52.305Z",
   "reports": [
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:A1",
@@ -310,7 +310,7 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-3",
-      "status": "verify_fail",
+      "status": "blocked",
       "segments": 30,
       "fails": 1,
       "flags": 6,
@@ -1551,7 +1551,7 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:A1",
-      "status": "verify_fail",
+      "status": "blocked",
       "segments": 88,
       "fails": 1,
       "flags": 11,

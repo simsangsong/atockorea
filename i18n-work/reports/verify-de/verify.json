@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T02:53:14.210Z",
+  "generatedAt": "2026-08-07T03:13:59.892Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
@@ -771,33 +771,6 @@
       ]
     },
     {
-      "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:staticQuestions-2",
-      "status": "verify_fail",
-      "segments": 8,
-      "fails": 1,
-      "flags": 2,
-      "findings": [
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/staticQuestions/13/answer",
-          "message": "숫자 소실 — 원문의 [1939 20 2017 30] 이 번역에 없다 (원문 [1939 20 2017 30] vs 번역 [])"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/staticQuestions/13/answer",
-          "message": "길이비 0.43 가 de 허용범위 0.9–1.5 밖"
-        },
-        {
-          "gate": "G3",
-          "severity": "flag",
-          "pointer": "/staticQuestions/14/answer",
-          "message": "숫자 추가 — 번역에만 [0 17] 이 있다 (날짜 서식 변환이면 정상)"
-        }
-      ]
-    },
-    {
       "unitId": "tour_product_pages:jeju-grand-highlights-loop:de:A1",
       "status": "flagged",
       "segments": 111,
@@ -1473,57 +1446,6 @@
       ]
     },
     {
-      "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops",
-      "status": "verify_fail",
-      "segments": 54,
-      "fails": 1,
-      "flags": 6,
-      "findings": [
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/0/category",
-          "message": "길이비 1.59 가 de 허용범위 0.9–1.5 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/0/highlights/1",
-          "message": "길이비 1.54 가 de 허용범위 0.9–1.5 밖"
-        },
-        {
-          "gate": "G6",
-          "severity": "flag",
-          "pointer": "/itineraryStops/1/highlights/2",
-          "message": "강조 개수 불일치 — 원문 1 vs 번역 0"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/1/highlights/2",
-          "message": "길이비 0.26 가 de 허용범위 0.9–1.5 밖"
-        },
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/itineraryStops/1/description",
-          "message": "숫자 소실 — 원문의 [130] 이 번역에 없다 (원문 [0 10 130 23 8] vs 번역 [0 10 23 8])"
-        },
-        {
-          "gate": "G6",
-          "severity": "flag",
-          "pointer": "/itineraryStops/1/description",
-          "message": "강조 개수 불일치 — 원문 7 vs 번역 4"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/1/description",
-          "message": "길이비 0.54 가 de 허용범위 0.9–1.5 밖"
-        }
-      ]
-    },
-    {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-2",
       "status": "flagged",
       "segments": 59,
@@ -1941,7 +1863,7 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:A1",
-      "status": "verify_fail",
+      "status": "blocked",
       "segments": 88,
       "fails": 1,
       "flags": 6,
@@ -2192,7 +2114,7 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops",
-      "status": "verify_fail",
+      "status": "blocked",
       "segments": 50,
       "fails": 1,
       "flags": 4,
@@ -2265,83 +2187,8 @@
       ]
     },
     {
-      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-4",
-      "status": "verify_fail",
-      "segments": 56,
-      "fails": 2,
-      "flags": 9,
-      "findings": [
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/name",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G6",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/highlights/1",
-          "message": "강조 개수 불일치 — 원문 2 vs 번역 1"
-        },
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/itineraryStops/5/description",
-          "message": "숫자 소실 — 원문의 [1 12000 13 15 15 1744 1770 1771 2014 29 30 30 5 6000 9] 이 번역에 없다 (원문 [0 1 12000 13 15 15 1744 1770 1771 2014 29 30 30 5 5 6000 9] vs 번역 [0 5])"
-        },
-        {
-          "gate": "G4",
-          "severity": "fail",
-          "pointer": "/itineraryStops/5/description",
-          "message": "통화 표기 불일치 — 원문 [₩] vs 번역 []"
-        },
-        {
-          "gate": "G6",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/description",
-          "message": "강조 개수 불일치 — 원문 20 vs 번역 2"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/description",
-          "message": "길이비 0.08 가 de 허용범위 0.9–1.5 밖"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/galleryItems/0/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/galleryItems/1/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/galleryItems/2/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/galleryItems/3/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/galleryItems/4/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        }
-      ]
-    },
-    {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-5",
-      "status": "verify_fail",
+      "status": "blocked",
       "segments": 16,
       "fails": 1,
       "flags": 3,
