@@ -46,18 +46,18 @@ const HERO_IMG = "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp";
 
 const NAMI_IMAGES = [
   "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
-  "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-  "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
-  "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+  "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
+  "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+  "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
 ];
 const GMC_IMAGES = [
   "/images/tours/garden-of-morning-calm/garden-of-morning-calm-flowers.webp",
-  "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-36-31.webp",
-  "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-10-10-43-58.webp",
-  "/images/tours/garden-of-morning-calm/chatgpt-image-2026-5-11-01-09-33.webp",
+  "/images/tours/garden-of-morning-calm/04-chatgpt-image-2026-5-10-10-36-31.webp",
+  "/images/tours/garden-of-morning-calm/02-chatgpt-image-2026-5-10-10-43-58.webp",
+  "/images/tours/garden-of-morning-calm/03-chatgpt-image-2026-5-11-01-09-33.webp",
 ];
 const PETITE_IMAGES = [
-  "/images/tours/petite-france/kakaotalk-20260510-222949305-02.webp",
+  "/images/tours/petite-france/01-kakaotalk-20260510-222949305-02.webp",
   "/images/tours/petite-france/petite-france-couple-colorful.webp",
   "/images/tours/petite-france/petite-france-ai-pastel-village.webp",
 ];

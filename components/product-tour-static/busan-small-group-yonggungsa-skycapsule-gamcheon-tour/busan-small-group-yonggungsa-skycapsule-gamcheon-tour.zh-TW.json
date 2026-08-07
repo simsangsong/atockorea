@@ -16,7 +16,7 @@
       "甘川文化村一日遊",
       "青沙浦踏石展望台"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp"
   },
   "catalog_card": {
     "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
@@ -42,8 +42,8 @@
       "文化村",
       "首訪推薦"
     ],
-    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "priceLabel": "",
     "shortCardDescription": "以海岸與山坡村落為軸心的釜山小團體一日遊。清幽上午時段的海東龍宮寺、免費玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的藍線公園天空膠囊（預訂時選擇含票或不含票）、午餐、甘川文化村，以及免費單軌沿「希望階梯」上行的私房景點Dakbatgol壁畫村。除可選的膠囊外，所有核心停留點皆免費入場。"
   },
@@ -56,9 +56,10 @@
     "salePriceUsd": 59
   },
   "hero": {
-    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
     "imagePosition": "center 40%",
     "images": [
+      "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
     ],
     "tagline": "清幽時段的海濱寺院、懸於海上的玻璃步道、乘粉彩膠囊滑下海岸線，以及氣質迥異的兩座山坡村落 — 一座舉世聞名，一座仍是道地街坊",
@@ -141,80 +142,144 @@
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 1",
-      "alt": "海東龍宮寺 — gallery image 1"
+      "alt": "海東龍宮寺 — gallery image 1",
+      "caption": "海東龍宮寺 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 2",
-      "alt": "海東龍宮寺 — gallery image 2"
+      "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "青沙浦踏石展望台（玻璃天空步道）",
+      "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 1",
+      "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 3",
-      "alt": "海東龍宮寺 — gallery image 3"
+      "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 1",
+      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-      "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 4",
-      "alt": "海東龍宮寺 — gallery image 4"
+      "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+      "location": "海雲台海水浴場",
+      "alt": "海雲台海水浴場 — gallery image 1",
+      "caption": "海雲台海水浴場 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-      "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 5",
-      "alt": "海東龍宮寺 — gallery image 5"
+      "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — gallery image 1",
+      "caption": "甘川文化村 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "海東龍宮寺",
-      "caption": "海東龍宮寺 — photo 6",
-      "alt": "海東龍宮寺 — gallery image 6"
+      "alt": "海東龍宮寺 — gallery image 2",
+      "caption": "海東龍宮寺 — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
-      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 1",
-      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 1"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — gallery image 3",
+      "caption": "海東龍宮寺 — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
-      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 2",
-      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — gallery image 4",
+      "caption": "海東龍宮寺 — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
-      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 3",
-      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 3"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — gallery image 5",
+      "caption": "海東龍宮寺 — photo 5"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "海東龍宮寺",
+      "alt": "海東龍宮寺 — gallery image 6",
+      "caption": "海東龍宮寺 — photo 6"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "青沙浦踏石展望台（玻璃天空步道）",
+      "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 2",
+      "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 2"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
       "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
-      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 4",
-      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 4"
+      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 2",
+      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 3",
+      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 4",
+      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+      "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 5",
+      "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+      "location": "海雲台海水浴場",
+      "alt": "海雲台海水浴場 — gallery image 2",
+      "caption": "海雲台海水浴場 — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — gallery image 2",
+      "caption": "甘川文化村 — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "甘川文化村",
+      "alt": "甘川文化村 — gallery image 3",
+      "caption": "甘川文化村 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -400,7 +465,7 @@
       "name": "青沙浦踏石展望台（玻璃天空步道）",
       "category": "海岸展望台／免費",
       "description": "**青沙浦踏石展望台（청사포 다릿돌전망대）**建於青沙浦與松亭之間的海岸懸崖，是一條**距海面約20公尺、向海面弧形伸出72.5公尺的天空步道**，2017年8月啟用。名字來自甲板下海中如踏腳石般排列的**五塊礁岩「다릿돌（橋石）」** — 意為伸向海平線的石橋。步道末端地板為**玻璃**，腳下湧浪翻滾一覽無遺（提供保護玻璃的鞋套），**免費入場**。回到村裡，**青沙浦雙子燈塔**（紅·白）與因神似《灌籃高手》畫面而爆紅的小平交道拍照點都在幾步之遙。",
-      "image": null,
+      "image": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
       "highlights": [
         "**距海約20公尺、全長72.5公尺的天空步道** — 2017年8月啟用，免費",
         "名字來自甲板下的五塊礁岩**「踏石（다릿돌）」**",
@@ -442,9 +507,38 @@
         "walking": "步道平坦；從村裡有一小段上坡",
         "admission": "免費（玻璃段提供鞋套）"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+        "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "青沙浦踏石展望台（玻璃天空步道）",
+          "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 1",
+          "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "青沙浦踏石展望台（玻璃天空步道）",
+          "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 2",
+          "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -453,7 +547,7 @@
       "name": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
       "category": "海岸搭乘／車票自選",
       "description": "**天空膠囊**是**海雲台藍線公園**的招牌項目 — 2020年對廢棄的東海南部線海岸鐵路進行環保改造而來：**粉彩4座艙體沿海岸7〜10公尺高的高架軌道，在青沙浦與尾浦之間滑行2.3公里**（約30分鐘），一路一側皆海。我們**從青沙浦上車駛向尾浦**，車輛已先行在尾浦等候 — 搭乘本身就是這一天的海岸移動。**膠囊車票為自選項，預訂時決定**：選含票選項，我們提前為小組預留膠囊（按膠囊計價：2人約₩30,000／3人₩39,000／4人₩44,000 單程）；選基本選項，則可步行同一軌道下方屢獲殊榮的2.3公里木製海岸棧道**綠色鐵路（免費）**，或乘車前往尾浦。",
-      "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "image": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
       "highlights": [
         "**高架海岸軌道上的粉彩4座膠囊** — 藍線公園招牌（2020年開放）",
         "**青沙浦→尾浦 2.3公里／約30分鐘**，全程海景",
@@ -495,26 +589,31 @@
         "admission": "按膠囊·單程：約₩30,000（2人）／₩39,000（3人）／₩44,000（4人）— 預訂時可選含票選項"
       },
       "images": [
-        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-        "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+        "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+        "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
+        "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+        "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "url": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "url": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "url": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "url": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
           "source": "atoc-korea"
         }
       ],
@@ -522,7 +621,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
           "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
           "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 1",
           "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 1"
@@ -530,7 +629,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
           "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
           "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 2",
           "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 2"
@@ -538,7 +637,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
           "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
           "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 3",
           "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 3"
@@ -546,10 +645,18 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
           "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
           "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 4",
           "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+          "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 5",
+          "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 5"
         }
       ]
     },
@@ -586,7 +693,7 @@
       "name": "海雲台海水浴場",
       "category": "海灘 / 免費",
       "description": "**海雲台海水浴場（해운대해수욕장）**是韓國最負盛名的沙灘，西起冬柏島、東至尾浦，弧線綿延約**1.5公里**，背後是Marine City的天際線。天空膠囊的終點尾浦正是這片沙灘的東端，因此這一站不額外增加任何車程。\n\n20分鐘是拍照與踩水的時間，而非游泳：走上沙灘、拍下天際線，然後回到車上。7、8月最為熱鬧，遮陽傘一字排開；其餘季節則寬闊安靜、適合散步。免費，全天開放。",
-      "image": null,
+      "image": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
       "highlights": [
         "**韓國最著名的沙灘**——約1.5公里沙灘，免費且24小時開放",
         "在水邊取景的Marine City天際線",
@@ -615,9 +722,38 @@
         "walking": "平坦沙灘與鋪面海濱步道",
         "admission": "免費"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+        "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+          "location": "海雲台海水浴場",
+          "caption": "海雲台海水浴場 — photo 1",
+          "alt": "海雲台海水浴場 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+          "location": "海雲台海水浴場",
+          "caption": "海雲台海水浴場 — photo 2",
+          "alt": "海雲台海水浴場 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 7,
@@ -676,14 +812,51 @@
           "Busan Cultural Foundation"
         ]
       },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-        "/images/itinerary/jagalchi-harbor-sign.webp",
-        "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
+        "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+        "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 1",
+          "alt": "甘川文化村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 2",
+          "alt": "甘川文化村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 3",
+          "alt": "甘川文化村 — gallery image 3"
+        }
       ]
     },
     {
@@ -1572,7 +1745,7 @@
           {
             "id": 9,
             "type": "photo",
-            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+            "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
             "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
             "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 3",
             "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 3"
@@ -1776,7 +1949,7 @@
             "name": "青沙浦踏石展望台（玻璃天空步道）",
             "category": "海岸展望台／免費",
             "description": "**青沙浦踏石展望台（청사포 다릿돌전망대）**建於青沙浦與松亭之間的海岸懸崖，是一條**距海面約20公尺、向海面弧形伸出72.5公尺的天空步道**，2017年8月啟用。名字來自甲板下海中如踏腳石般排列的**五塊礁岩「다릿돌（橋石）」** — 意為伸向海平線的石橋。步道末端地板為**玻璃**，腳下湧浪翻滾一覽無遺（提供保護玻璃的鞋套），**免費入場**。回到村裡，**青沙浦雙子燈塔**（紅·白）與因神似《灌籃高手》畫面而爆紅的小平交道拍照點都在幾步之遙。",
-            "image": null,
+            "image": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
             "highlights": [
               "**距海約20公尺、全長72.5公尺的天空步道** — 2017年8月啟用，免費",
               "名字來自甲板下的五塊礁岩**「踏石（다릿돌）」**",
@@ -1818,9 +1991,38 @@
               "walking": "步道平坦；從村裡有一小段上坡",
               "admission": "免費（玻璃段提供鞋套）"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "青沙浦踏石展望台（玻璃天空步道）",
+                "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 1",
+                "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "青沙浦踏石展望台（玻璃天空步道）",
+                "caption": "青沙浦踏石展望台（玻璃天空步道） — photo 2",
+                "alt": "青沙浦踏石展望台（玻璃天空步道） — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -1829,7 +2031,7 @@
             "name": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
             "category": "海岸搭乘／車票自選",
             "description": "**天空膠囊**是**海雲台藍線公園**的招牌項目 — 2020年對廢棄的東海南部線海岸鐵路進行環保改造而來：**粉彩4座艙體沿海岸7〜10公尺高的高架軌道，在青沙浦與尾浦之間滑行2.3公里**（約30分鐘），一路一側皆海。我們**從青沙浦上車駛向尾浦**，車輛已先行在尾浦等候 — 搭乘本身就是這一天的海岸移動。**膠囊車票為自選項，預訂時決定**：選含票選項，我們提前為小組預留膠囊（按膠囊計價：2人約₩30,000／3人₩39,000／4人₩44,000 單程）；選基本選項，則可步行同一軌道下方屢獲殊榮的2.3公里木製海岸棧道**綠色鐵路（免費）**，或乘車前往尾浦。",
-            "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "image": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
             "highlights": [
               "**高架海岸軌道上的粉彩4座膠囊** — 藍線公園招牌（2020年開放）",
               "**青沙浦→尾浦 2.3公里／約30分鐘**，全程海景",
@@ -1871,26 +2073,31 @@
               "admission": "按膠囊·單程：約₩30,000（2人）／₩39,000（3人）／₩44,000（4人）— 預訂時可選含票選項"
             },
             "images": [
-              "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-              "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+              "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+              "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
+              "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+              "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "url": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "url": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "url": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "url": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1898,7 +2105,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
                 "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
                 "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 1",
                 "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 1"
@@ -1906,7 +2113,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
                 "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
                 "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 2",
                 "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 2"
@@ -1914,7 +2121,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
                 "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
                 "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 3",
                 "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 3"
@@ -1922,10 +2129,18 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
                 "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
                 "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 4",
                 "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "海雲台藍線公園天空膠囊（青沙浦→尾浦）",
+                "caption": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — photo 5",
+                "alt": "海雲台藍線公園天空膠囊（青沙浦→尾浦） — gallery image 5"
               }
             ]
           },
@@ -1962,7 +2177,7 @@
             "name": "海雲台海水浴場",
             "category": "海灘 / 免費",
             "description": "**海雲台海水浴場（해운대해수욕장）**是韓國最負盛名的沙灘，西起冬柏島、東至尾浦，弧線綿延約**1.5公里**，背後是Marine City的天際線。天空膠囊的終點尾浦正是這片沙灘的東端，因此這一站不額外增加任何車程。\n\n20分鐘是拍照與踩水的時間，而非游泳：走上沙灘、拍下天際線，然後回到車上。7、8月最為熱鬧，遮陽傘一字排開；其餘季節則寬闊安靜、適合散步。免費，全天開放。",
-            "image": null,
+            "image": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
             "highlights": [
               "**韓國最著名的沙灘**——約1.5公里沙灘，免費且24小時開放",
               "在水邊取景的Marine City天際線",
@@ -1991,9 +2206,38 @@
               "walking": "平坦沙灘與鋪面海濱步道",
               "admission": "免費"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+              "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+                "location": "海雲台海水浴場",
+                "caption": "海雲台海水浴場 — photo 1",
+                "alt": "海雲台海水浴場 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+                "location": "海雲台海水浴場",
+                "caption": "海雲台海水浴場 — photo 2",
+                "alt": "海雲台海水浴場 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 7,
@@ -2052,14 +2296,51 @@
                 "Busan Cultural Foundation"
               ]
             },
-            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
             "images": [
-              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-              "/images/itinerary/jagalchi-harbor-sign.webp",
-              "/images/itinerary/jagalchi-market-interior.webp",
-              "/images/itinerary/jagalchi-night-building.webp"
+              "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+              "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+                "location": "甘川文化村",
+                "caption": "甘川文化村 — photo 1",
+                "alt": "甘川文化村 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+                "location": "甘川文化村",
+                "caption": "甘川文化村 — photo 2",
+                "alt": "甘川文化村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "甘川文化村",
+                "caption": "甘川文化村 — photo 3",
+                "alt": "甘川文化村 — gallery image 3"
+              }
             ]
           },
           {

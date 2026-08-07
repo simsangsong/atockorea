@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "抱川一日游：山井湖、载仁瀑布与艺术谷 | AtoC Korea",
     "metaDescription": "10 小时首尔一日游，走进汉滩江联合国教科文组织世界地质公园：山井湖平坦的 3.2 公里环湖步道、载仁瀑布 18 米玄武岩水幕与 80 米吊桥，以及抱川艺术谷的翡翠色采石场湖。",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "首尔出发抱川一日游",
       "载仁瀑布旅行团",
@@ -34,8 +34,8 @@
       "环湖漫步",
       "小团"
     ],
-    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "一趟建立在真实地质之上、节奏更从容的首尔一日游。先在鸣声山脚下绕山井湖走完平坦的 3.2 公里环湖步道，尝一顿抱川本地的梨洞排骨，再走过 80 米长的吊桥，正面迎向载仁瀑布沿玄武岩柱状节理垂落的 18 米水幕，最后走进抱川艺术谷的花岗岩采石坑 — 泉水已把这个深坑注满，成为翡翠色的天柱湖。载仁瀑布与艺术谷同属汉滩江联合国教科文组织世界地质公园的地质遗产点 — 同一片大地，从截然相反的两半各看一次。 周一、周四、周六出发。",
     "tags": [
@@ -59,7 +59,7 @@
     "priceNote": "原价 $62，AtoC Korea 售价约低 21%。"
   },
   "hero": {
-    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "一座百年山中湖、一道穿过玄武岩石柱坠落的瀑布，以及一个被翡翠色湖水填满的花岗岩深坑 — 抱川与涟川的地质，用一天走完",
     "pills": [
@@ -139,7 +139,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "山井湖",
       "alt": "山井湖 — gallery image 1",
       "caption": "山井湖 — photo 1"
@@ -147,26 +147,42 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-      "location": "山井湖",
-      "alt": "山井湖 — gallery image 2",
-      "caption": "山井湖 — photo 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
       "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1",
       "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1"
     },
     {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "山井湖",
+      "alt": "山井湖 — gallery image 2",
+      "caption": "山井湖 — photo 2"
+    },
+    {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
       "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2",
       "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+      "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+      "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 3",
+      "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+      "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+      "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 4",
+      "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 4"
     }
   ],
   "itineraryStops": [
@@ -194,18 +210,18 @@
         "返回车上（约 5 分钟）"
       ],
       "whyOnRoute": "**全天最长的一段步行，放在最前面走。** 3.2 公里的环湖步道虽然平坦，却仍是本行程最大的一段步行量，理应安排在腿脚轻快的开头。清晨也是这座湖状态最好的时候：春秋两季薄雾常自水面升起，山形在午后霾气到来之前最为清晰。山井湖是四站中距离首尔最远的一处，因此从这里开场，也意味着接下来的一整天都在稳稳地朝城市方向折返，而不是越走越远。",
-      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "images": [
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+        "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "source": "atoc-korea"
         }
       ],
@@ -213,18 +229,18 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "location": "山井湖",
-          "alt": "山井湖 — gallery image 1",
-          "caption": "山井湖 — photo 1"
+          "caption": "山井湖 — photo 1",
+          "alt": "山井湖 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "location": "山井湖",
-          "alt": "山井湖 — gallery image 2",
-          "caption": "山井湖 — photo 2"
+          "caption": "山井湖 — photo 2",
+          "alt": "山井湖 — gallery image 2"
         }
       ],
       "visitBasics": {
@@ -352,18 +368,28 @@
         "沿治愈之林步行下山并集合（约 15 分钟）"
       ],
       "whyOnRoute": "**最稳妥的最后一站，也是最短的回家路。** 艺术谷比湖泊或峡谷都关得晚，所以在这里悠着点走不会付出任何代价；而在四站之中，它离首尔最近 — 收在这里，能让最后一段车程成为全天最短的一段。它同时也把地质叙事合上了：在载仁瀑布站在熔岩面前之后，你最终站进了熔岩当年流过的那层远古花岗岩之中，站在一个由人挖开、又被大地悄悄填回的深坑里。",
-      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "images": [
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+        "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+        "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+        "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
           "source": "atoc-korea"
         }
       ],
@@ -371,18 +397,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
-          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1",
-          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1"
+          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1",
+          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
           "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
-          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2",
-          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2"
+          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2",
+          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 3",
+          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+          "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+          "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 4",
+          "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 4"
         }
       ],
       "visitBasics": {
@@ -1081,7 +1123,7 @@
         "headlineLine1": "湖泊、瀑布",
         "headlineLine2": "与采石场艺术谷",
         "hero": {
-          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "一座百年山中湖、一道穿过玄武岩石柱坠落的瀑布，以及一个被翡翠色湖水填满的花岗岩深坑 — 抱川与涟川的地质，用一天走完",
           "pills": [
@@ -1182,7 +1224,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "location": "山井湖",
             "alt": "山井湖 — gallery image 1",
             "caption": "山井湖 — photo 1"
@@ -1190,7 +1232,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+            "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
             "location": "山井湖",
             "alt": "山井湖 — gallery image 2",
             "caption": "山井湖 — photo 2"
@@ -1198,7 +1240,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
             "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
             "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1",
             "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1"
@@ -1206,7 +1248,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+            "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
             "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2",
             "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2"
@@ -1244,18 +1286,18 @@
               "返回车上（约 5 分钟）"
             ],
             "whyOnRoute": "**全天最长的一段步行，放在最前面走。** 3.2 公里的环湖步道虽然平坦，却仍是本行程最大的一段步行量，理应安排在腿脚轻快的开头。清晨也是这座湖状态最好的时候：春秋两季薄雾常自水面升起，山形在午后霾气到来之前最为清晰。山井湖是四站中距离首尔最远的一处，因此从这里开场，也意味着接下来的一整天都在稳稳地朝城市方向折返，而不是越走越远。",
-            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "images": [
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+              "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1263,18 +1305,18 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "location": "山井湖",
-                "alt": "山井湖 — gallery image 1",
-                "caption": "山井湖 — photo 1"
+                "caption": "山井湖 — photo 1",
+                "alt": "山井湖 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "location": "山井湖",
-                "alt": "山井湖 — gallery image 2",
-                "caption": "山井湖 — photo 2"
+                "caption": "山井湖 — photo 2",
+                "alt": "山井湖 — gallery image 2"
               }
             ],
             "visitBasics": {
@@ -1402,18 +1444,28 @@
               "沿治愈之林步行下山并集合（约 15 分钟）"
             ],
             "whyOnRoute": "**最稳妥的最后一站，也是最短的回家路。** 艺术谷比湖泊或峡谷都关得晚，所以在这里悠着点走不会付出任何代价；而在四站之中，它离首尔最近 — 收在这里，能让最后一段车程成为全天最短的一段。它同时也把地质叙事合上了：在载仁瀑布站在熔岩面前之后，你最终站进了熔岩当年流过的那层远古花岗岩之中，站在一个由人挖开、又被大地悄悄填回的深坑里。",
-            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "images": [
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+              "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+              "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+              "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1421,18 +1473,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
-                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1",
-                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1"
+                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 1",
+                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
                 "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
-                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2",
-                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2"
+                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 2",
+                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 3",
+                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+                "location": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园）",
+                "caption": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — photo 4",
+                "alt": "抱川艺术谷（汉滩江联合国教科文组织世界地质公园） — gallery image 4"
               }
             ],
             "visitBasics": {

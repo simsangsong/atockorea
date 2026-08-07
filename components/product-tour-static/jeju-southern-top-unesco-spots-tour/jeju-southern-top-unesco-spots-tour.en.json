@@ -15,12 +15,12 @@
       "O'sulloc Tea Museum tour",
       "Hallasan Eoseungsaengak"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "Jeju Southern (Seogwipo) Signature Day Tour · Almost All Stops Free Admission | AtoC",
     "description": "South Jeju (Seogwipo) small-group day tour: Jeongbang Falls → Oedolgae & Olle Route 7 → Yakcheonsa Temple → lunch → O'sulloc Tea Museum → Hallasan Eoseungsaengak. Almost all stops free admission, small group."
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "thumbnail": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "title": "Jeju Southern (Seogwipo) Signature Day Tour",
     "priceLabel": "",
     "shortCardDescription": "A small-group day tour through southern Jeju's signature Seogwipo stops — Jeongbang Falls, Asia's only waterfall that drops directly into the sea, the Oedolgae rock pinnacle with a coastal walk on Olle Route 7, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the Hallasan Eoseungsaengak Trail. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, free admission at almost every stop except Jeongbang Falls, no shopping pressure.",
@@ -47,7 +47,7 @@
       "Value priced",
       "No shopping"
     ],
-    "heroImage": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp"
+    "heroImage": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp"
   },
   "headlineLine1": "Jeju Southern (Seogwipo) Signature",
   "headlineLine2": "Day Tour",
@@ -60,7 +60,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    "imageUrl": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
     "imagePosition": "center 45%",
     "tagline": "South Jeju Seogwipo's signature coastal stops in one day — Jeongbang Falls, Oedolgae Olle Trail, Yakcheonsa Temple, O'sulloc, Hallasan. Free admission at almost every stop.",
     "pills": [
@@ -139,114 +139,186 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "Jeongbang Falls",
-      "alt": "Jeongbang Falls — gallery image 1",
-      "caption": "Jeongbang Falls — photo 1"
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+      "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 1",
+      "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/yakcheonsa/photo-001.webp",
-      "location": "Yakcheonsa Temple",
-      "alt": "Yakcheonsa Temple — gallery image 2",
-      "caption": "Yakcheonsa Temple — photo 2"
+      "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+      "location": "Oedolgae & Olle Route 7 Coastal Walk",
+      "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1",
+      "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+      "location": "Yakcheonsa Temple (East Asia's largest temple)",
+      "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 1",
+      "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+      "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+      "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 1",
+      "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+      "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 2",
+      "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 2"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+      "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 3",
+      "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 3"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+      "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 4",
+      "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 4"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+      "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 5",
+      "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 5"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+      "location": "Oedolgae & Olle Route 7 Coastal Walk",
+      "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2",
+      "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+      "location": "Oedolgae & Olle Route 7 Coastal Walk",
+      "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3",
+      "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+      "location": "Oedolgae & Olle Route 7 Coastal Walk",
+      "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4",
+      "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+      "location": "Yakcheonsa Temple (East Asia's largest temple)",
+      "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 2",
+      "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 2"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+      "location": "Yakcheonsa Temple (East Asia's largest temple)",
+      "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 3",
+      "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 3"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+      "location": "Yakcheonsa Temple (East Asia's largest temple)",
+      "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 4",
+      "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 4"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "O'sulloc Tea Museum + Green Tea Fields",
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
       "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3",
       "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
     },
     {
-      "id": 4,
+      "id": 18,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-      "location": "Hallasan Eoseungsaengak Trail",
-      "alt": "Hallasan Eoseungsaengak Trail — gallery image 4",
-      "caption": "Hallasan Eoseungsaengak Trail — photo 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "Jeongbang Falls",
-      "alt": "Jeongbang Falls — gallery image 5",
-      "caption": "Jeongbang Falls — photo 5"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "Jeongbang Falls",
-      "alt": "Jeongbang Falls — gallery image 6",
-      "caption": "Jeongbang Falls — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+      "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
-      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7",
-      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 7"
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4"
     },
     {
-      "id": 8,
+      "id": 19,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+      "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
-      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 8",
-      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 8"
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5"
     },
     {
-      "id": 9,
+      "id": 20,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+      "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
       "location": "O'sulloc Tea Museum + Green Tea Fields",
-      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 9",
-      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 9"
+      "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6",
+      "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6"
     },
     {
-      "id": 10,
+      "id": 21,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-      "location": "Hallasan Eoseungsaengak Trail",
-      "alt": "Hallasan Eoseungsaengak Trail — gallery image 10",
-      "caption": "Hallasan Eoseungsaengak Trail — photo 10"
+      "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+      "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+      "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 2",
+      "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 2"
     },
     {
-      "id": 11,
+      "id": 22,
       "type": "photo",
-      "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
-      "location": "Hallasan Eoseungsaengak Trail",
-      "alt": "Hallasan Eoseungsaengak Trail — gallery image 11",
-      "caption": "Hallasan Eoseungsaengak Trail — photo 11"
+      "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+      "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+      "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 3",
+      "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 3"
     },
     {
-      "id": 12,
+      "id": 23,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-      "location": "Hallasan 1100 Highland",
-      "alt": "Hallasan 1100 Highland — gallery image 12",
-      "caption": "Hallasan 1100 Highland — photo 12"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-      "location": "Hallasan 1100 Highland",
-      "alt": "Hallasan 1100 Highland — gallery image 13",
-      "caption": "Hallasan 1100 Highland — photo 13"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
-      "location": "Hallasan 1100 Highland",
-      "alt": "Hallasan 1100 Highland — gallery image 14",
-      "caption": "Hallasan 1100 Highland — photo 14"
+      "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+      "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+      "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 4",
+      "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -286,7 +358,7 @@
       "name": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
       "category": "Coastal Waterfall — Yeongjusipgyeong · Origin of the name Seogwipo",
       "description": "**Jeongbang Falls (정방, 正房) is known as the only waterfall in Asia that drops directly from a cliff into the sea**, and it is one of Seogwipo's signature sights. A **23 m-high, roughly 8 m-wide** sheet of water pours down the basalt sea-wall into the deep blue ocean, and on clear days **Seopseom (섶섬) and Munseom (문섬)** sit in the background. \n\nAlong with Hallasan and Cheonjeyeon, Jeongbang is one of the **Yeongjusipgyeong (영주십경, Jeju's 10 Scenic Wonders)** chosen by Joseon-era literati, and the cliff is inscribed with the **'Seobulgwacha (徐市過此)' legend** — the story that Seobul, sent by Emperor Qin Shi Huang to find the elixir of immortality, passed this place and turned back to the west. This is said to be the origin of the place name **'Seogwipo (西歸浦)'**. \n\nFrom the ticket office down to the foot of the falls there are **about 130 steps**, and the ground is made of rounded pebbles and rock, so non-slip footwear is essential. Photos with the spray and the sea as a backdrop are popular at the base, while the clifftop observation deck takes in Seopseom and Munseom at a glance.",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**The only waterfall in Asia that drops directly into the sea** — 23 m high / approx. 8 m wide",
         "One of the **Yeongjusipgyeong (Jeju's 10 Scenic Wonders)** — chosen alongside Hallasan and Cheonjeyeon",
@@ -331,21 +403,31 @@
         "walking": "Moderate — about 130 steps down to the falls, uneven rocky ground; mind slipping"
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -353,7 +435,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
           "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 1",
           "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 1"
@@ -361,7 +443,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
           "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 2",
           "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 2"
@@ -369,10 +451,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
           "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 3",
           "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+          "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 4",
+          "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+          "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 5",
+          "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 5"
         }
       ]
     },
@@ -383,7 +481,7 @@
       "name": "Oedolgae & Olle Route 7 Coastal Walk",
       "category": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite",
       "description": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections.",
-      "image": null,
+      "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
       "highlights": [
         "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')",
         "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**",
@@ -426,9 +524,64 @@
         "admission": "Free",
         "walking": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+        "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+        "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+        "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+          "location": "Oedolgae & Olle Route 7 Coastal Walk",
+          "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 1",
+          "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+          "location": "Oedolgae & Olle Route 7 Coastal Walk",
+          "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 2",
+          "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+          "location": "Oedolgae & Olle Route 7 Coastal Walk",
+          "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 3",
+          "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+          "location": "Oedolgae & Olle Route 7 Coastal Walk",
+          "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 4",
+          "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4"
+        }
+      ]
     },
     {
       "number": 4,
@@ -437,7 +590,7 @@
       "name": "Yakcheonsa Temple (East Asia's largest temple)",
       "category": "Temple — East Asia's largest Daejeokgwangjeon hall",
       "description": "**Yakcheonsa (약천사, 藥泉寺), at 122,100 ㎡, is counted among the largest temples in East Asia** — a vast temple in Daepo-dong, Seogwipo. Its name means 'the temple where medicinal spring water flows', as it was built on the site of the old 'Yaksuam' hermitage, where a year-round spring of healing water rises. **Monk Hyein broke ground in 1981 and completed it in 1996.** \n\nThe main hall, the **Daejeokgwangjeon (大寂光殿), reaches about 30 m in height with a total floor area of about 3,305 ㎡** — one of the largest single Buddhist halls in the East, built in the early-Joseon temple-architecture style. Inside, a **5 m-tall Vairocana Buddha (Korea's largest wooden seated Buddha)** is enshrined on a 4 m pedestal, and tens of thousands of small gilded Buddha statues filling the multi-tiered walls create an overwhelming sight. In front of the hall stands an **18-tonne temple bell**. \n\nYakcheonsa sits at the **junction where Jeju Olle Route 7 (its end point) meets Route 8 (its start point)**, drawing both Olle walkers and tourists, and it has run a **templestay since 2006**. **Free admission**, and the flat grounds are relatively easy to explore.",
-      "image": "/images/tours/yakcheonsa/photo-001.webp",
+      "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
       "highlights": [
         "**One of East Asia's largest temples** — grounds of about 122,100 ㎡",
         "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls",
@@ -482,11 +635,26 @@
         "walking": "Easy — flat grounds; some steps when entering the main hall"
       },
       "images": [
-        "/images/tours/yakcheonsa/photo-001.webp"
+        "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+        "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+        "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+        "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/yakcheonsa/photo-001.webp",
+          "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
           "source": "atoc-korea"
         }
       ],
@@ -494,10 +662,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/yakcheonsa/photo-001.webp",
+          "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
           "location": "Yakcheonsa Temple (East Asia's largest temple)",
           "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 1",
           "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+          "location": "Yakcheonsa Temple (East Asia's largest temple)",
+          "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 2",
+          "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+          "location": "Yakcheonsa Temple (East Asia's largest temple)",
+          "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 3",
+          "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+          "location": "Yakcheonsa Temple (East Asia's largest temple)",
+          "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 4",
+          "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 4"
         }
       ]
     },
@@ -534,7 +726,7 @@
       "name": "O'sulloc Tea Museum + Green Tea Fields",
       "category": "Tea Culture Museum — Korea's largest green-tea field (Seogwang Dawon)",
       "description": "**O'sulloc Tea Museum (O'Sulloc, 'meeting snow + green')** is the tea-culture flagship of **Amorepacific**, Korea's largest beauty company. Founder **Chairman Suh Sung-whan personally pioneered the project in 1979**, reclaiming the volcanic-ash farmland of Jeju's Seogwang plateau into tea fields. Today the **Seogwang Dawon** is **Korea's largest green-tea field**, producing **~700 tonnes a year** across Amorepacific's three Jeju estates. \n\nThe museum building **opened in 2001** in the heart of the plantation, and its minimalist design earned it a place among **designboom's Top 10 art museums in the world**. **Free admission**, open daily, with about **2 million visitors a year**. The visit splits into three parts: **(1) Museum interior** — the tea-making process, an antique tea-ware collection, and a rooftop observation deck; **(2) Tea House cafe** — the signature **green tea rolling cake** and **green tea ice cream**; **(3) Plantation walking paths** — gravel paths between the tea bushes (a sunset photo spot). \n\n**Innisfree Jeju House** (Amorepacific's natural-cosmetics brand) is a 5-minute walk away, with free admission and an optional tangerine soap DIY workshop (₩15,000).",
-      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
       "highlights": [
         "**Amorepacific** flagship brand — founder Suh Sung-whan pioneered Jeju tea cultivation in **1979**",
         "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -579,26 +771,36 @@
         "walking": "Easy — flat paved paths, stroller- and wheelchair-accessible"
       },
       "images": [
-        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -606,7 +808,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "location": "O'sulloc Tea Museum + Green Tea Fields",
           "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
           "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1"
@@ -614,7 +816,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "location": "O'sulloc Tea Museum + Green Tea Fields",
           "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
           "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2"
@@ -622,7 +824,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "location": "O'sulloc Tea Museum + Green Tea Fields",
           "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
           "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
@@ -630,10 +832,26 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
           "location": "O'sulloc Tea Museum + Green Tea Fields",
           "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
           "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "location": "O'sulloc Tea Museum + Green Tea Fields",
+          "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
+          "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
         }
       ]
     },
@@ -644,7 +862,7 @@
       "name": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
       "category": "UNESCO Volcanic Geology — Hallasan Eoseungsaengak Trail (triple natural designation)",
       "description": "**Eoseungsaengak (1,169 m)** is a short Hallasan-side volcanic cone (oreum) trail starting near the Eorimok Visitor Center. Hallasan is Korea's highest peak and a **UNESCO World Natural Heritage site (2007) and Biosphere Reserve (2002)**, and this trail is a manageable way to experience the mountain without attempting the summit climb. \n\nToday's route places Eoseungsaengak on the way **back over Hallasan to Jeju City from O'sulloc, taking Route 1100 (Jeju's highest-altitude national road)**. The trail is far shorter than the Seongpanak or Gwaneumsa summit courses, **does not require the summit reservation system**, and consists of wide steps and wooden decking — sneakers are enough (1.3 km one-way / about 200 m elevation gain). \n\nOn clear days the upper deck observation point looks out over **Hallasan's high-altitude slopes, Jeju's oreum field, and the northern sea**, and a **1945 Imperial Japanese tochika (pillbox)** remains at the summit. Mountain weather changes quickly, so bringing a layer is recommended. **Free admission**, and the cool mountain air makes an impressive finale to close the day.",
-      "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+      "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
       "highlights": [
         "**Hallasan = triple natural designation**: UNESCO World Heritage 2007 + Biosphere Reserve 2002 + National Park 1970",
         "**Eoseungsaengak 1,169 m** — a Hallasan-side oreum (parasitic cone)",
@@ -690,21 +908,26 @@
         "walking": "Moderate — short distance but with stairs and uphill sections"
       },
       "images": [
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-        "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-        "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+        "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+        "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+        "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+        "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
           "source": "atoc-korea"
         }
       ],
@@ -712,7 +935,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
           "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
           "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 1",
           "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 1"
@@ -720,7 +943,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
           "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
           "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 2",
           "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 2"
@@ -728,10 +951,18 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+          "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
           "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
           "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 3",
           "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+          "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+          "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 4",
+          "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 4"
         }
       ]
     },
@@ -1615,7 +1846,7 @@
         "headlineLine1": "Jeju Southern (Seogwipo) Signature",
         "headlineLine2": "Day Tour",
         "hero": {
-          "imageUrl": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "imageUrl": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
           "imagePosition": "center 45%",
           "tagline": "South Jeju Seogwipo's signature coastal stops in one day — Jeongbang Falls, Oedolgae Olle Trail, Yakcheonsa Temple, O'sulloc, Hallasan. Free admission at almost every stop.",
           "pills": [
@@ -1715,7 +1946,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "Jeongbang Falls",
             "alt": "Jeongbang Falls — gallery image 1",
             "caption": "Jeongbang Falls — photo 1"
@@ -1739,7 +1970,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "location": "Hallasan Eoseungsaengak Trail",
             "alt": "Hallasan Eoseungsaengak Trail — gallery image 4",
             "caption": "Hallasan Eoseungsaengak Trail — photo 4"
@@ -1747,7 +1978,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "Jeongbang Falls",
             "alt": "Jeongbang Falls — gallery image 5",
             "caption": "Jeongbang Falls — photo 5"
@@ -1755,7 +1986,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "Jeongbang Falls",
             "alt": "Jeongbang Falls — gallery image 6",
             "caption": "Jeongbang Falls — photo 6"
@@ -1787,7 +2018,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+            "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
             "location": "Hallasan Eoseungsaengak Trail",
             "alt": "Hallasan Eoseungsaengak Trail — gallery image 10",
             "caption": "Hallasan Eoseungsaengak Trail — photo 10"
@@ -1803,7 +2034,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 12",
             "caption": "Hallasan 1100 Highland — photo 12"
@@ -1811,7 +2042,7 @@
           {
             "id": 13,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 13",
             "caption": "Hallasan 1100 Highland — photo 13"
@@ -1819,7 +2050,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 14",
             "caption": "Hallasan 1100 Highland — photo 14"
@@ -1869,7 +2100,7 @@
             "name": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
             "category": "Coastal Waterfall — Yeongjusipgyeong · Origin of the name Seogwipo",
             "description": "**Jeongbang Falls (정방, 正房) is known as the only waterfall in Asia that drops directly from a cliff into the sea**, and it is one of Seogwipo's signature sights. A **23 m-high, roughly 8 m-wide** sheet of water pours down the basalt sea-wall into the deep blue ocean, and on clear days **Seopseom (섶섬) and Munseom (문섬)** sit in the background. \n\nAlong with Hallasan and Cheonjeyeon, Jeongbang is one of the **Yeongjusipgyeong (영주십경, Jeju's 10 Scenic Wonders)** chosen by Joseon-era literati, and the cliff is inscribed with the **'Seobulgwacha (徐市過此)' legend** — the story that Seobul, sent by Emperor Qin Shi Huang to find the elixir of immortality, passed this place and turned back to the west. This is said to be the origin of the place name **'Seogwipo (西歸浦)'**. \n\nFrom the ticket office down to the foot of the falls there are **about 130 steps**, and the ground is made of rounded pebbles and rock, so non-slip footwear is essential. Photos with the spray and the sea as a backdrop are popular at the base, while the clifftop observation deck takes in Seopseom and Munseom at a glance.",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**The only waterfall in Asia that drops directly into the sea** — 23 m high / approx. 8 m wide",
               "One of the **Yeongjusipgyeong (Jeju's 10 Scenic Wonders)** — chosen alongside Hallasan and Cheonjeyeon",
@@ -1914,21 +2145,31 @@
               "walking": "Moderate — about 130 steps down to the falls, uneven rocky ground; mind slipping"
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1936,7 +2177,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
                 "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 1",
                 "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 1"
@@ -1944,7 +2185,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
                 "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 2",
                 "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 2"
@@ -1952,10 +2193,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
                 "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 3",
                 "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+                "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 4",
+                "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "Jeongbang Falls (Asia's only ocean-falling waterfall)",
+                "caption": "Jeongbang Falls (Asia's only ocean-falling waterfall) — photo 5",
+                "alt": "Jeongbang Falls (Asia's only ocean-falling waterfall) — gallery image 5"
               }
             ]
           },
@@ -1966,7 +2223,7 @@
             "name": "Oedolgae & Olle Route 7 Coastal Walk",
             "category": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite",
             "description": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections.",
-            "image": null,
+            "image": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
             "highlights": [
               "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')",
               "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**",
@@ -2009,9 +2266,64 @@
               "admission": "Free",
               "walking": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+              "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+              "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+              "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/01-kakaotalk-20250721-193348071-11.webp",
+                "location": "Oedolgae & Olle Route 7 Coastal Walk",
+                "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 1",
+                "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/02-kakaotalk-20250916-131058587-03.webp",
+                "location": "Oedolgae & Olle Route 7 Coastal Walk",
+                "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 2",
+                "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/03-kakaotalk-20250728-201705655-01.webp",
+                "location": "Oedolgae & Olle Route 7 Coastal Walk",
+                "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 3",
+                "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/oedolgae/04-kakaotalk-20250617-124101163-04.webp",
+                "location": "Oedolgae & Olle Route 7 Coastal Walk",
+                "caption": "Oedolgae & Olle Route 7 Coastal Walk — photo 4",
+                "alt": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4"
+              }
+            ]
           },
           {
             "number": 4,
@@ -2020,7 +2332,7 @@
             "name": "Yakcheonsa Temple (East Asia's largest temple)",
             "category": "Temple — East Asia's largest Daejeokgwangjeon hall",
             "description": "**Yakcheonsa (약천사, 藥泉寺), at 122,100 ㎡, is counted among the largest temples in East Asia** — a vast temple in Daepo-dong, Seogwipo. Its name means 'the temple where medicinal spring water flows', as it was built on the site of the old 'Yaksuam' hermitage, where a year-round spring of healing water rises. **Monk Hyein broke ground in 1981 and completed it in 1996.** \n\nThe main hall, the **Daejeokgwangjeon (大寂光殿), reaches about 30 m in height with a total floor area of about 3,305 ㎡** — one of the largest single Buddhist halls in the East, built in the early-Joseon temple-architecture style. Inside, a **5 m-tall Vairocana Buddha (Korea's largest wooden seated Buddha)** is enshrined on a 4 m pedestal, and tens of thousands of small gilded Buddha statues filling the multi-tiered walls create an overwhelming sight. In front of the hall stands an **18-tonne temple bell**. \n\nYakcheonsa sits at the **junction where Jeju Olle Route 7 (its end point) meets Route 8 (its start point)**, drawing both Olle walkers and tourists, and it has run a **templestay since 2006**. **Free admission**, and the flat grounds are relatively easy to explore.",
-            "image": "/images/tours/yakcheonsa/photo-001.webp",
+            "image": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
             "highlights": [
               "**One of East Asia's largest temples** — grounds of about 122,100 ㎡",
               "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls",
@@ -2065,11 +2377,26 @@
               "walking": "Easy — flat grounds; some steps when entering the main hall"
             },
             "images": [
-              "/images/tours/yakcheonsa/photo-001.webp"
+              "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+              "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+              "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+              "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/yakcheonsa/photo-001.webp",
+                "url": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2077,10 +2404,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/yakcheonsa/photo-001.webp",
+                "src": "/images/tours/yakcheonsa/01-kakaotalk-20250603-212236141-02.webp",
                 "location": "Yakcheonsa Temple (East Asia's largest temple)",
                 "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 1",
                 "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/02-kakaotalk-20250714-210411918-09.webp",
+                "location": "Yakcheonsa Temple (East Asia's largest temple)",
+                "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 2",
+                "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/03-kakaotalk-20250603-220800957-18.webp",
+                "location": "Yakcheonsa Temple (East Asia's largest temple)",
+                "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 3",
+                "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/yakcheonsa/04-kakaotalk-20250714-201501212.webp",
+                "location": "Yakcheonsa Temple (East Asia's largest temple)",
+                "caption": "Yakcheonsa Temple (East Asia's largest temple) — photo 4",
+                "alt": "Yakcheonsa Temple (East Asia's largest temple) — gallery image 4"
               }
             ]
           },
@@ -2117,7 +2468,7 @@
             "name": "O'sulloc Tea Museum + Green Tea Fields",
             "category": "Tea Culture Museum — Korea's largest green-tea field (Seogwang Dawon)",
             "description": "**O'sulloc Tea Museum (O'Sulloc, 'meeting snow + green')** is the tea-culture flagship of **Amorepacific**, Korea's largest beauty company. Founder **Chairman Suh Sung-whan personally pioneered the project in 1979**, reclaiming the volcanic-ash farmland of Jeju's Seogwang plateau into tea fields. Today the **Seogwang Dawon** is **Korea's largest green-tea field**, producing **~700 tonnes a year** across Amorepacific's three Jeju estates. \n\nThe museum building **opened in 2001** in the heart of the plantation, and its minimalist design earned it a place among **designboom's Top 10 art museums in the world**. **Free admission**, open daily, with about **2 million visitors a year**. The visit splits into three parts: **(1) Museum interior** — the tea-making process, an antique tea-ware collection, and a rooftop observation deck; **(2) Tea House cafe** — the signature **green tea rolling cake** and **green tea ice cream**; **(3) Plantation walking paths** — gravel paths between the tea bushes (a sunset photo spot). \n\n**Innisfree Jeju House** (Amorepacific's natural-cosmetics brand) is a 5-minute walk away, with free admission and an optional tangerine soap DIY workshop (₩15,000).",
-            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
             "highlights": [
               "**Amorepacific** flagship brand — founder Suh Sung-whan pioneered Jeju tea cultivation in **1979**",
               "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -2162,26 +2513,36 @@
               "walking": "Easy — flat paved paths, stroller- and wheelchair-accessible"
             },
             "images": [
-              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2189,7 +2550,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "location": "O'sulloc Tea Museum + Green Tea Fields",
                 "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
                 "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1"
@@ -2197,7 +2558,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "location": "O'sulloc Tea Museum + Green Tea Fields",
                 "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
                 "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2"
@@ -2205,7 +2566,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "location": "O'sulloc Tea Museum + Green Tea Fields",
                 "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
                 "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
@@ -2213,10 +2574,26 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
                 "location": "O'sulloc Tea Museum + Green Tea Fields",
                 "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
                 "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 5",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "location": "O'sulloc Tea Museum + Green Tea Fields",
+                "caption": "O'sulloc Tea Museum + Green Tea Fields — photo 6",
+                "alt": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
               }
             ]
           },
@@ -2227,7 +2604,7 @@
             "name": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
             "category": "UNESCO Volcanic Geology — Hallasan Eoseungsaengak Trail (triple natural designation)",
             "description": "**Eoseungsaengak (1,169 m)** is a short Hallasan-side volcanic cone (oreum) trail starting near the Eorimok Visitor Center. Hallasan is Korea's highest peak and a **UNESCO World Natural Heritage site (2007) and Biosphere Reserve (2002)**, and this trail is a manageable way to experience the mountain without attempting the summit climb. \n\nToday's route places Eoseungsaengak on the way **back over Hallasan to Jeju City from O'sulloc, taking Route 1100 (Jeju's highest-altitude national road)**. The trail is far shorter than the Seongpanak or Gwaneumsa summit courses, **does not require the summit reservation system**, and consists of wide steps and wooden decking — sneakers are enough (1.3 km one-way / about 200 m elevation gain). \n\nOn clear days the upper deck observation point looks out over **Hallasan's high-altitude slopes, Jeju's oreum field, and the northern sea**, and a **1945 Imperial Japanese tochika (pillbox)** remains at the summit. Mountain weather changes quickly, so bringing a layer is recommended. **Free admission**, and the cool mountain air makes an impressive finale to close the day.",
-            "image": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+            "image": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
             "highlights": [
               "**Hallasan = triple natural designation**: UNESCO World Heritage 2007 + Biosphere Reserve 2002 + National Park 1970",
               "**Eoseungsaengak 1,169 m** — a Hallasan-side oreum (parasitic cone)",
@@ -2273,21 +2650,26 @@
               "walking": "Moderate — short distance but with stairs and uphill sections"
             },
             "images": [
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
-              "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
-              "/images/tours/hallasan-eoseungsaengak/photo-003.webp"
+              "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
+              "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
+              "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+              "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "url": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2295,7 +2677,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
                 "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
                 "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 1",
                 "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 1"
@@ -2303,7 +2685,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-20.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
                 "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
                 "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 2",
                 "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 2"
@@ -2311,10 +2693,18 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-eoseungsaengak/photo-003.webp",
+                "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
                 "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
                 "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 3",
                 "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
+                "location": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage)",
+                "caption": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — photo 4",
+                "alt": "Hallasan Eoseungsaengak (UNESCO World Natural Heritage) — gallery image 4"
               }
             ]
           },

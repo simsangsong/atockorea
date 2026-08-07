@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "포천 당일치기: 산정호수·재인폭포·아트밸리 | AtoC Korea",
     "metaDescription": "한탄강 유네스코 세계지질공원을 걷는 10시간 서울 근교 당일 투어. 산정호수의 평탄한 3.2 km 둘레길, 재인폭포의 18 m 주상절리 낙차와 80 m 출렁다리, 포천 아트밸리의 에메랄드빛 채석장 호수까지.",
-    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "primaryKeywords": [
       "서울 출발 포천 당일 투어",
       "재인폭포 투어",
@@ -34,8 +34,8 @@
       "호수 산책",
       "소규모 그룹"
     ],
-    "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-    "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+    "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "priceLabel": "",
     "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발.",
     "tags": [
@@ -59,7 +59,7 @@
     "priceNote": "정가 $62, AtoC Korea 판매가 약 21% 할인."
   },
   "hero": {
-    "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+    "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
     "imagePosition": "center 50%",
     "tagline": "100년 된 산속 호수, 주상절리 사이로 떨어지는 폭포, 에메랄드빛 물이 고인 화강암 구덩이 — 포천과 연천의 지질을 하루에 걸어서 만납니다",
     "pills": [
@@ -139,7 +139,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "location": "산정호수",
       "alt": "산정호수 — gallery image 1",
       "caption": "산정호수 — photo 1"
@@ -147,26 +147,42 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
-      "location": "산정호수",
-      "alt": "산정호수 — gallery image 2",
-      "caption": "산정호수 — photo 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
       "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1",
       "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1"
     },
     {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
+      "location": "산정호수",
+      "alt": "산정호수 — gallery image 2",
+      "caption": "산정호수 — photo 2"
+    },
+    {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+      "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
       "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
       "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2",
       "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+      "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+      "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 3",
+      "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 3"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+      "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+      "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 4",
+      "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 4"
     }
   ],
   "itineraryStops": [
@@ -194,18 +210,18 @@
         "차량으로 복귀 (약 5분)"
       ],
       "whyOnRoute": "**하루에서 가장 긴 걷기를, 가장 먼저.** 3.2 km 둘레길은 평탄하지만 그래도 이 투어에서 가장 긴 도보 구간이라, 다리가 가벼운 출발 시점에 두는 것이 맞습니다. 아침은 호수가 가장 좋은 시간이기도 합니다. 봄과 가을에는 수면 위로 물안개가 자주 피어오르고, 오후의 흐릿한 대기 전에 산 능선이 또렷하게 보입니다. 산정호수는 네 곳 중 서울에서 가장 먼 스팟이라, 여기서 시작하면 남은 하루가 도시에서 멀어지는 대신 꾸준히 도시 쪽으로 돌아오게 됩니다.",
-      "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "images": [
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-        "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+        "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+        "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "source": "atoc-korea"
         }
       ],
@@ -213,18 +229,18 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "location": "산정호수",
-          "alt": "산정호수 — gallery image 1",
-          "caption": "산정호수 — photo 1"
+          "caption": "산정호수 — photo 1",
+          "alt": "산정호수 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+          "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
           "location": "산정호수",
-          "alt": "산정호수 — gallery image 2",
-          "caption": "산정호수 — photo 2"
+          "caption": "산정호수 — photo 2",
+          "alt": "산정호수 — gallery image 2"
         }
       ],
       "visitBasics": {
@@ -352,18 +368,28 @@
         "힐링 숲길로 걸어 내려와 집합 (약 15분)"
       ],
       "whyOnRoute": "**가장 안전한 마지막 스팟이자, 가장 짧은 귀갓길.** 아트밸리는 호수나 협곡보다 늦게까지 열려 있어 오후를 느리게 써도 부담이 없고, 네 곳 중 서울에서 가장 가까워 여기서 마치면 마지막 이동이 하루 중 가장 짧습니다. 지질 이야기도 여기서 닫힙니다. 재인폭포에서 용암 앞에 섰다면, 마지막에는 그 용암이 흘러간 오래된 화강암 안에 섭니다. 사람이 파낸 구덩이를, 땅이 조용히 다시 채워 놓은 자리에서.",
-      "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+      "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
       "images": [
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-        "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+        "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+        "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+        "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+        "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
           "source": "atoc-korea"
         }
       ],
@@ -371,18 +397,34 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+          "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
           "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
-          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1",
-          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1"
+          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1",
+          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+          "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
           "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
-          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2",
-          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2"
+          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2",
+          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+          "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 3",
+          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+          "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+          "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 4",
+          "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 4"
         }
       ],
       "visitBasics": {
@@ -1081,7 +1123,7 @@
         "headlineLine1": "호수와 폭포,",
         "headlineLine2": "그리고 채석장 아트밸리",
         "hero": {
-          "imageUrl": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+          "imageUrl": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
           "imagePosition": "center 50%",
           "tagline": "100년 된 산속 호수, 주상절리 사이로 떨어지는 폭포, 에메랄드빛 물이 고인 화강암 구덩이 — 포천과 연천의 지질을 하루에 걸어서 만납니다",
           "pills": [
@@ -1182,7 +1224,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "location": "산정호수",
             "alt": "산정호수 — gallery image 1",
             "caption": "산정호수 — photo 1"
@@ -1190,7 +1232,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+            "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
             "location": "산정호수",
             "alt": "산정호수 — gallery image 2",
             "caption": "산정호수 — photo 2"
@@ -1198,7 +1240,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
             "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
             "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1",
             "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1"
@@ -1206,7 +1248,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+            "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
             "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2",
             "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2"
@@ -1244,18 +1286,18 @@
               "차량으로 복귀 (약 5분)"
             ],
             "whyOnRoute": "**하루에서 가장 긴 걷기를, 가장 먼저.** 3.2 km 둘레길은 평탄하지만 그래도 이 투어에서 가장 긴 도보 구간이라, 다리가 가벼운 출발 시점에 두는 것이 맞습니다. 아침은 호수가 가장 좋은 시간이기도 합니다. 봄과 가을에는 수면 위로 물안개가 자주 피어오르고, 오후의 흐릿한 대기 전에 산 능선이 또렷하게 보입니다. 산정호수는 네 곳 중 서울에서 가장 먼 스팟이라, 여기서 시작하면 남은 하루가 도시에서 멀어지는 대신 꾸준히 도시 쪽으로 돌아오게 됩니다.",
-            "image": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+            "image": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
             "images": [
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-              "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp"
+              "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+              "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "url": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "url": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1263,18 +1305,18 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+                "src": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
                 "location": "산정호수",
-                "alt": "산정호수 — gallery image 1",
-                "caption": "산정호수 — photo 1"
+                "caption": "산정호수 — photo 1",
+                "alt": "산정호수 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-29.webp",
+                "src": "/images/tours/sanjeong-lake/02-chatgpt-image-2026-5-10-10-42-29.webp",
                 "location": "산정호수",
-                "alt": "산정호수 — gallery image 2",
-                "caption": "산정호수 — photo 2"
+                "caption": "산정호수 — photo 2",
+                "alt": "산정호수 — gallery image 2"
               }
             ],
             "visitBasics": {
@@ -1402,18 +1444,28 @@
               "힐링 숲길로 걸어 내려와 집합 (약 15분)"
             ],
             "whyOnRoute": "**가장 안전한 마지막 스팟이자, 가장 짧은 귀갓길.** 아트밸리는 호수나 협곡보다 늦게까지 열려 있어 오후를 느리게 써도 부담이 없고, 네 곳 중 서울에서 가장 가까워 여기서 마치면 마지막 이동이 하루 중 가장 짧습니다. 지질 이야기도 여기서 닫힙니다. 재인폭포에서 용암 앞에 섰다면, 마지막에는 그 용암이 흘러간 오래된 화강암 안에 섭니다. 사람이 파낸 구덩이를, 땅이 조용히 다시 채워 놓은 자리에서.",
-            "image": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+            "image": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
             "images": [
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
-              "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp"
+              "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
+              "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+              "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+              "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "url": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "url": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1421,18 +1473,34 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-52.webp",
+                "src": "/images/tours/pocheon-art-valley/01-chatgpt-image-2026-5-10-10-38-57.webp",
                 "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
-                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1",
-                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1"
+                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 1",
+                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/pocheon-art-valley/chatgpt-image-2026-5-10-10-38-57.webp",
+                "src": "/images/tours/pocheon-art-valley/02-chatgpt-image-2026-5-10-10-38-52.webp",
                 "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
-                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2",
-                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2"
+                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 2",
+                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/03-kakaotalk-20260509-231601211-16.webp",
+                "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 3",
+                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/pocheon-art-valley/04-kakaotalk-20260509-231601211-17.webp",
+                "location": "포천 아트밸리 (한탄강 유네스코 세계지질공원)",
+                "caption": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — photo 4",
+                "alt": "포천 아트밸리 (한탄강 유네스코 세계지질공원) — gallery image 4"
               }
             ],
             "visitBasics": {

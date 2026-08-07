@@ -166,9 +166,9 @@ const SEORAK_IMAGES = [
 ];
 const NAMI_IMAGES = [
   "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
-  "/images/tours/nami-island/kakaotalk-20260510-222949305-04.webp",
-  "/images/tours/nami-island/kakaotalk-20260510-222949305-05.webp",
-  "/images/tours/nami-island/chatgpt-image-2026-5-11-01-12-05.webp",
+  "/images/tours/nami-island/02-kakaotalk-20260510-222949305-04.webp",
+  "/images/tours/nami-island/01-kakaotalk-20260510-222949305-05.webp",
+  "/images/tours/nami-island/03-chatgpt-image-2026-5-11-01-12-05.webp",
 ];
 // Eobi Ice Valley ships without photos — no owned imagery yet (same posture as
 // Daritdol/Dakbatgol on the Busan small-group product).

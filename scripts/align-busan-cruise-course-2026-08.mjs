@@ -161,7 +161,7 @@ function songdoStop(which, c, base) {
   const images =
     which === "songdo_cloud_trails"
       ? ["/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp", "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"]
-      : ["/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp", "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"];
+      : ["/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp", "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"];
   const stop = {
     number: 0,
     time: "",
