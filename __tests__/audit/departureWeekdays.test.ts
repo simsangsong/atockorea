@@ -27,6 +27,7 @@ import { readFileSync, readdirSync } from 'fs';
 import path from 'path';
 import { isDepartureWeekday } from '@/components/product-tour-static/_shared/bookingShared';
 import { TOUR_PRODUCT_VIEW_MODEL_KEYS } from '@/components/product-tour-static/_shared/tourProductFullPageJsonTypes';
+import { DEPARTURE_SCHEDULE_SLUGS, getDepartureDays } from '@/lib/tour-departure-days';
 
 const POCHEON = 'pocheon-sanjeong-lake-herb-island-art-valley';
 const BUNDLE_DIR = path.join(process.cwd(), 'components/product-tour-static', POCHEON);
@@ -83,6 +84,53 @@ describe('the Pocheon bundles declare it', () => {
     expect([...(en.matching_profile?.available_days_signature ?? [])].sort()).toEqual(
       [...MTS].sort(),
     );
+  });
+});
+
+/**
+ * 🔴 Generalised 2026-08-07, when the three Suwon packages were re-opened.
+ *
+ * Until then this file only knew about Pocheon, and the Suwon three sat in
+ * `lib/tour-departure-days.ts` with NO `departureWeekdays` in any of their six
+ * bundles. That was survivable only because they were blocked and inactive —
+ * the moment they went on sale, their booking calendar would have offered every
+ * day of the week and the table would have rejected the choice at submit.
+ *
+ * A gate that only covers the product someone remembered to add to it is how
+ * that happened. So walk the schedule table itself: every slug in it, every
+ * bundle it has, must agree. Adding a fourth scheduled product with missing or
+ * wrong bundle keys now fails here instead of at a guest's checkout.
+ */
+describe('every fixed-schedule product declares it in every bundle', () => {
+  /** `Date.getDay()` order — the index IS the weekday number in the table. */
+  const FULL_NAMES = [
+    'sunday',
+    'monday',
+    'tuesday',
+    'wednesday',
+    'thursday',
+    'friday',
+    'saturday',
+  ];
+  const STATIC_ROOT = path.join(process.cwd(), 'components/product-tour-static');
+
+  const cases = DEPARTURE_SCHEDULE_SLUGS.flatMap((slug) =>
+    readdirSync(path.join(STATIC_ROOT, slug))
+      .filter((f) => f.endsWith('.json'))
+      .map((file) => [slug, file] as [string, string]),
+  );
+
+  it('the table is non-empty and every slug in it has bundles on disk', () => {
+    expect(DEPARTURE_SCHEDULE_SLUGS.length).toBeGreaterThan(0);
+    for (const slug of DEPARTURE_SCHEDULE_SLUGS) {
+      expect(cases.filter(([s]) => s === slug)).not.toHaveLength(0);
+    }
+  });
+
+  it.each(cases)('%s / %s matches the schedule table', (slug, file) => {
+    const doc = JSON.parse(readFileSync(path.join(STATIC_ROOT, slug, file), 'utf8'));
+    const expected = getDepartureDays(slug)!.weekdays.map((n) => FULL_NAMES[n]);
+    expect(doc.departureWeekdays).toEqual(expected);
   });
 });
 

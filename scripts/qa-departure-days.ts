@@ -23,6 +23,25 @@ const flag = (n: string, d: string): string => {
 const BASE = flag('base', 'http://localhost:3000').replace(/\/$/, '');
 const SLUGS = (flag('slugs', 'pocheon-sanjeong-lake-herb-island-art-valley')).split(',').filter(Boolean);
 
+/**
+ * `--offline` — run with `/api/tours/.../availability/...` aborted.
+ *
+ * 🔴 Why this mode exists. The range endpoint applies the departure rule
+ * server-side, so a healthy-API run paints the calendar correctly whether or
+ * not the product's bundle carries `departureWeekdays`. Measured 2026-08-07:
+ * deleting the field from a bundle and restarting dev changed nothing in the
+ * default run — this harness reported a clean pass on a product whose bundle
+ * field was gone.
+ *
+ * `loadMonth` fails OPEN (bookingShared.tsx returns early on !res.ok and on
+ * throw, leaving nothing blocked), so with the fetch dead the bundle's
+ * `filterDate` is the only guard left. Same product, same day, offline: with
+ * the field, 10 future days offered and all correct; without it, all 24 —
+ * 14 of them non-departure days. That is the gap this mode measures and the
+ * default mode cannot see.
+ */
+const OFFLINE = argv.includes('--offline');
+
 const WEEK = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
 const MONTHS = [
   'january', 'february', 'march', 'april', 'may', 'june',
@@ -76,6 +95,11 @@ type Result = {
 // tsx transforms these scripts to CJS, where top-level await is a hard error.
 async function main(): Promise<number> {
 const results: Result[] = [];
+/** Availability requests intercepted in `--offline` mode. */
+let aborted = 0;
+if (OFFLINE) {
+  console.log('◆ --offline: 가용성 API 를 끊고 잰다 (번들 departureWeekdays 만 남는 상태)');
+}
 const browser = await chromium.launch();
 try {
   for (const slug of SLUGS) {
@@ -83,6 +107,12 @@ try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 } });
     const url = `${BASE}/tour-product/${slug}`;
     let opened = false;
+    if (OFFLINE) {
+      await page.route('**/api/tours/**/availability/**', (route) => {
+        aborted += 1;
+        return route.abort();
+      });
+    }
     try {
       await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 60_000 });
       await page.waitForTimeout(2500); // let the idle-callback availability fetch land
@@ -161,6 +191,15 @@ for (const r of results) {
 
 console.log('\n════ 요약 ════');
 console.log(`  판정한 날짜 ${checked} · 어긋난 날짜 ${bad} · 못 읽은 상품 ${blind}`);
+if (OFFLINE) {
+  console.log(`  끊은 가용성 요청 ${aborted}건`);
+  // Same rule as the blind counter: an offline run that never intercepted a
+  // request did not test offline behaviour, so its pass means nothing.
+  if (aborted === 0) {
+    console.log('\n🔴 --offline 인데 가로챈 요청이 0건이다 — 이 실행은 아무것도 증명하지 않는다.');
+    return 2;
+  }
+}
 if (blind) { console.log('\n🔴 달력을 못 연 상품이 있다 — 0 을 초록으로 읽지 마라.'); return 2; }
 if (!checked) { console.log('\n🔴 아무 날짜도 판정하지 않았다.'); return 2; }
 return bad ? 1 : 0;
