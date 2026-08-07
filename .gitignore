@@ -103,6 +103,9 @@ scripts/.qa-prod-*.json
 
 # video-guide build artefacts
 out/
+# 🔴 위 out/ 는 경로가 없어 i18n-work/out/ 까지 잡는다. 그쪽은 번역 산출물이고,
+#    잃으면 API 크레딧을 다시 써서 만들어야 한다 — extract 결과(in/)는 이미 추적 중이다.
+!i18n-work/out/
 .cache/
 assets/audio/video-guide/
 
