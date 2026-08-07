@@ -29,8 +29,16 @@
  * ⚠ 워크트리는 HMR 이 안 먹는다 — 소스를 고쳤으면 **dev 재시작 후** 돌려라.
  */
 import { chromium } from 'playwright';
-import { mkdirSync } from 'node:fs';
+import { mkdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+
+/** 어드민 표면용 세션. 없으면 어드민은 통째로 건너뛴다. */
+let fx = null;
+try {
+  fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
+} catch {
+  /* 공개 표면만 돈다 */
+}
 
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3185';
 const OUT = path.join(process.env.SHOT_DIR ?? '.', 'functional-shots');
@@ -201,6 +209,58 @@ const ALL_SURFACES = [
   ['dsa', '/dsa', 'body'],
 ];
 
+/**
+ * 어드민. 클라이언트 가드(`decideAdminGuard`)가 Supabase 세션을 보므로 쿠키가
+ * 필요하다 — 픽스처가 없으면 통째로 건너뛴다(로그인 화면을 35번 재는 건 무의미).
+ *   ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts   → scripts/.sim-fixtures.json
+ *   npx tsx scripts/sim-tour-day.ts --cleanup          → 끝나면 되돌린다
+ * 동적 세그먼트([id]/[period])는 실제 ID 가 필요해 뺐다.
+ */
+const ADMIN_SURFACES = [
+  ['admin-home', '/admin'],
+  ['admin-orders', '/admin/orders'],
+  ['admin-products', '/admin/products'],
+  ['admin-merchants', '/admin/merchants'],
+  ['admin-merchants-create', '/admin/merchants/create'],
+  ['admin-analytics', '/admin/analytics'],
+  ['admin-analytics-product', '/admin/analytics/product'],
+  ['admin-analytics-events', '/admin/analytics/product/events'],
+  ['admin-analytics-funnels', '/admin/analytics/product/funnels'],
+  ['admin-analytics-experiments', '/admin/analytics/product/experiments'],
+  ['admin-analytics-retention', '/admin/analytics/product/retention'],
+  ['admin-analytics-sessions', '/admin/analytics/product/sessions'],
+  ['admin-analytics-health', '/admin/analytics/product/health'],
+  ['admin-chatbot-analytics', '/admin/chatbot-analytics'],
+  ['admin-cms', '/admin/cms'],
+  ['admin-contacts', '/admin/contacts'],
+  ['admin-dining-cache', '/admin/dining-cache'],
+  ['admin-emails', '/admin/emails'],
+  ['admin-external-reviews', '/admin/external-reviews'],
+  ['admin-facility-pins', '/admin/facility-pins'],
+  ['admin-guide-settlements', '/admin/guide-settlements'],
+  ['admin-guides', '/admin/guides'],
+  ['admin-inbox', '/admin/inbox'],
+  ['admin-match-pois', '/admin/match-pois'],
+  ['admin-meeting-photos', '/admin/meeting-photos'],
+  ['admin-ops-finance', '/admin/ops-finance'],
+  ['admin-ops-finance-filings', '/admin/ops-finance/filings'],
+  ['admin-ops-finance-periods', '/admin/ops-finance/periods'],
+  ['admin-parse-rules', '/admin/parse-rules'],
+  ['admin-pickup-dictionary', '/admin/pickup-dictionary'],
+  ['admin-poi-content-locales', '/admin/poi-content-locales'],
+  ['admin-poi-videos', '/admin/poi-videos'],
+  ['admin-qa-review', '/admin/qa-review'],
+  ['admin-settings', '/admin/settings'],
+  ['admin-support', '/admin/support'],
+  ['admin-tour-mode-spots', '/admin/tour-mode-spots'],
+  ['admin-tour-ops', '/admin/tour-ops'],
+  ['admin-tour-ops-card-sets', '/admin/tour-ops/card-sets'],
+  ['admin-tour-ops-reclaims', '/admin/tour-ops/reclaims'],
+  ['admin-travel-matrix', '/admin/travel-matrix'],
+  ['admin-upload', '/admin/upload'],
+  ['admin-vehicle-layouts', '/admin/vehicle-layouts'],
+].map(([name, url]) => [name, url, 'body', true]);
+
 const only = (process.env.SURFACES ?? '').split(',').map((s) => s.trim()).filter(Boolean);
 
 const VIEWPORTS = [
@@ -238,19 +298,30 @@ async function discoverTourSlugs() {
   }
 }
 
-const slugs = only.length ? [] : await discoverTourSlugs();
+/** SCOPE=public|admin|all (기본 all). 어드민만 따로 돌릴 때 쓴다. */
+const scope = process.env.SCOPE ?? 'all';
+const wantPublic = scope !== 'admin';
+const wantAdmin = scope !== 'public';
+
+const slugs = only.length || !wantPublic ? [] : await discoverTourSlugs();
 const SURFACES = [
-  ...ALL_SURFACES,
+  ...(wantPublic ? ALL_SURFACES : []),
   ...slugs.map((href, i) => [`tour-detail-${i + 1}`, href, 'body']),
+  ...(fx && wantAdmin ? ADMIN_SURFACES : []),
 ].filter(([name]) => !only.length || only.includes(name));
 console.log(`표면 ${SURFACES.length}개 × 뷰포트 ${VIEWPORTS.length} × 로케일 ${LOCALES.length}`);
 if (slugs.length) console.log(`  상세 슬러그 자동 발견: ${slugs.join(' , ')}`);
+console.log(
+  fx
+    ? `  어드민 ${ADMIN_SURFACES.length}개 포함 (sim 세션)`
+    : '  ⚠ 어드민 건너뜀 — ALLOW_SIM_SEED=1 npx tsx scripts/sim-tour-day.ts',
+);
 
-for (const locale of LOCALES)
-for (const [vpName, w, h, mobile] of VIEWPORTS) {
-  for (const [rawName, rawUrl, ready] of SURFACES) {
-    const name = LOCALES.length > 1 ? `${locale.slice(0, 2)}:${rawName}` : rawName;
-    const url = localePrefix(locale) + rawUrl;
+/**
+ * 한 표면 한 번 재기. 결과를 `all` 에 밀어넣지 않고 **돌려준다** — 재시도가
+ * 실패분을 버릴 수 있어야 하기 때문이다.
+ */
+async function measure(name, url, ready, admin, vpName, w, h, mobile, locale) {
     const ctx = await browser.newContext({
       viewport: { width: w, height: h },
       deviceScaleFactor: 1,
@@ -268,6 +339,29 @@ for (const [vpName, w, h, mobile] of VIEWPORTS) {
         /* ignore */
       }
     });
+    if (admin && fx) {
+      // 세션은 쿠키로 넣는다. 3180자를 넘으면 Supabase 는 `.0`/`.1` 로 쪼개 읽으므로
+      // 여기서도 같은 규칙으로 쪼갠다 (qa-chrome-overlap.mjs 와 동일).
+      const raw = `base64-${Buffer.from(JSON.stringify(fx.adminSession)).toString('base64')}`;
+      const CHUNK = 3180;
+      const cookies =
+        raw.length <= CHUNK
+          ? [{ name: fx.supabaseStorageKey, value: raw }]
+          : Array.from({ length: Math.ceil(raw.length / CHUNK) }, (_, i) => ({
+              name: `${fx.supabaseStorageKey}.${i}`,
+              value: raw.slice(i * CHUNK, (i + 1) * CHUNK),
+            }));
+      await ctx.addCookies(
+        cookies.map((c) => ({
+          ...c,
+          domain: 'localhost',
+          path: '/',
+          httpOnly: false,
+          secure: false,
+          sameSite: 'Lax',
+        })),
+      );
+    }
     const page = await ctx.newPage();
     const key = `${vpName}/${name}`;
     try {
@@ -275,6 +369,29 @@ for (const [vpName, w, h, mobile] of VIEWPORTS) {
       await page.waitForSelector(ready, { timeout: 120000 });
       await page.addStyleTag({ content: 'nextjs-portal{display:none !important}' });
       await page.waitForTimeout(2500);
+
+      // 🔴 어드민은 클라이언트 가드가 늦게 튕긴다. 세션이 죽었는데도 로그인 화면을
+      // 조용히 재고 "ok" 를 뱉으면 이 스윕은 0 을 초록으로 읽는 것이다.
+      //
+      // ⚠ 판정은 **경로만** 본다. 가드가 실패하면 `/signin?redirect=/admin` 으로
+      // 밀어내므로(`admin/layout.tsx`) 경로가 곧 답이다. 본문에서 "로그인/비밀번호"
+      // 같은 낱말을 찾던 첫 판은 **머천트 생성 폼의 비밀번호 필드**와 리텐션
+      // 분석의 지표 이름을 로그인 화면으로 오인해 3표면을 헛짚었다 —
+      // 게이트 어휘로 상태를 추측하지 말고 상태 자체를 봐라.
+      if (admin) {
+        await page.waitForTimeout(3500); // 가드가 판단할 시간
+        const gate = await page.evaluate(() => ({
+          path: location.pathname,
+          text: document.body.innerText.trim().length,
+        }));
+        if (!gate.path.startsWith('/admin')) {
+          return { surface: key, error: `어드민 세션 불통 (→ ${gate.path}) — 픽스처 재생성 필요` };
+        }
+        // 렌더는 됐는데 사실상 빈 화면이면 그건 세션 문제가 아니라 **그 페이지의 결함**이다.
+        if (gate.text < 40) {
+          return { surface: key, blank: gate.text };
+        }
+      }
 
       const docH = await page.evaluate(() => document.documentElement.scrollHeight);
       const stops = [];
@@ -296,18 +413,40 @@ for (const [vpName, w, h, mobile] of VIEWPORTS) {
           }
         }
       }
-      all.push({ surface: key, ...findings });
+      return { surface: key, ...findings };
     } catch (error) {
-      all.push({ surface: key, error: String(error).slice(0, 130) });
+      return { surface: key, error: String(error).slice(0, 130) };
     } finally {
       await ctx.close();
     }
+}
+
+for (const locale of LOCALES)
+for (const [vpName, w, h, mobile] of VIEWPORTS) {
+  for (const [rawName, rawUrl, ready, admin] of SURFACES) {
+    const name = LOCALES.length > 1 ? `${locale.slice(0, 2)}:${rawName}` : rawName;
+    const url = localePrefix(locale) + rawUrl;
+    // dev 서버는 첫 방문에 라우트를 컴파일하고 그 사이 네비게이션이 한 번 튄다
+    // ("Execution context was destroyed"). 재시도 한 번이면 warm 이라 통과한다 —
+    // 안 그러면 매 스윕마다 무작위 표면 하나가 가짜 ERR 로 뜬다.
+    let res;
+    for (let attempt = 0; attempt < 2; attempt += 1) {
+      res = await measure(name, url, ready, admin, vpName, w, h, mobile, locale);
+      if (!res.error) break;
+    }
+    all.push(res);
   }
 }
 await browser.close();
 
 let bad = 0;
 for (const r of all) {
+  if (r.blank !== undefined) {
+    console.log(`🔴 ${r.surface}
+   BLANK  본문 글자 ${r.blank}자 — 사실상 빈 화면`);
+    bad += 1;
+    continue;
+  }
   if (r.error) {
     console.log(`ERR   ${r.surface}: ${r.error}`);
     bad += 1;
