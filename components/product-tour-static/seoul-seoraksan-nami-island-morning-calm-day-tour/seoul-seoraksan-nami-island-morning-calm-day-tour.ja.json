@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "ソウル発：雪岳山 ＋ 南怡島 ＋ 晨静苑",
-    "priceLabel": "お一人様 US$59〜（通常$82、28%割引）",
+    "priceLabel": "",
     "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。",
     "tags": [
       "ソウルからの日帰り旅行",
@@ -1172,5 +1172,10 @@
     ],
     "source_of_truth_note": "Coach-tour combining Seoraksan + Nami Island + Garden of Morning Calm from Seoul. Attraction content reused from seoul-seoraksan-national-park-sokcho-beach-day-trip (Seoraksan) and seoul-private-nami-morning-calm-petite-france (Nami, Morning Calm). Sources: KTO VisitKorea, IUCN Green List, UNESCO, KNPS, Garden of Morning Calm official, Naminara Republic official, KBS Winter Sonata records, Wikipedia.",
     "audit_summary": "Seoul-based 13-hour coach day trip on the classic Seoraksan + Nami + Morning Calm circuit. Direct equivalent on GetYourGuide market is the $82 'From Seoul: Seoraksan, Nami Island, Garden of Morning Calm' (t1137310)."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "wednesday",
+    "friday"
+  ]
 }

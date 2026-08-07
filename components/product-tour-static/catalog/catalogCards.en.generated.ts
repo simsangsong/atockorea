@@ -733,11 +733,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$53 per person (was $58, 9% off)",
+      "priceLabel": "From US$56 per person (was $61, 8% off)",
       "shortCardDescription": "A 12-hour coach day trip from Seoul to the East Sea coast: hike Seoraksan National Park, visit the cliffside Naksansa Temple, and walk pine-backed Naksan Beach. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or Myeongdong."
     },
     "price": {
-      "amountLabel": "53"
+      "amountLabel": "56"
     }
   },
   "seoul-seoraksan-nami-island-morning-calm-day-tour": {
@@ -758,11 +758,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "US$71 per person",
+      "priceLabel": "US$79 per person",
       "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station."
     },
     "price": {
-      "amountLabel": "71"
+      "amountLabel": "79"
     }
   },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": {

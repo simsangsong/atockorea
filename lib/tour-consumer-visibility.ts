@@ -190,9 +190,9 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   //   seoul-suwon-hwaseong-folk-village-starfield-library      (Mon/Thu/Sat)
   //   seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library  (Sun/Wed/Fri)
   //   seoul-suwon-hwaseong-waujeongsa-starfield                (Tue/Thu/Sat)
-  //   seoul-seoraksan-naksansa-temple-naksan-beach-day-trip
-  //   seoul-seoraksan-nami-island-morning-calm-day-tour
-  //   seoul-seoraksan-national-park-sokcho-beach-day-trip
+  //   seoul-seoraksan-naksansa-temple-naksan-beach-day-trip    (Mon/Thu)
+  //   seoul-seoraksan-nami-island-morning-calm-day-tour        (Mon/Wed/Fri)
+  //   seoul-seoraksan-national-park-sokcho-beach-day-trip      (schedule unknown)
   //
   // 🔴 Two things a later session will be tempted to "fix" — don't:
   //
@@ -202,15 +202,25 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   //    product decision, not an oversight, so the Sokcho slug is not going
   //    back on this list because it looks like a duplicate of its replacement.
   //
-  // 2. The three Suwon packages carry weekday schedules in
-  //    `lib/tour-departure-days.ts` and now in all six of each bundle's
-  //    `departureWeekdays` arrays. Both are load-bearing: the table rejects a
-  //    bad date at submit, the bundle greys it in the picker. Opening a
-  //    fixed-schedule product with only the table is what
+  // 2. Every fixed-schedule product here carries its weekdays in BOTH
+  //    `lib/tour-departure-days.ts` and each bundle's `departureWeekdays`.
+  //    Both are load-bearing: the table is what the availability routes and the
+  //    booking route read, the bundle is what the picker falls back to when the
+  //    availability fetch fails (it fails open). Opening a fixed-schedule
+  //    product with only one of them is what
   //    `__tests__/audit/departureWeekdays.test.ts` now fails on.
   //
-  // The Seoraksan three have no schedule entry, which is correct — nothing
-  // says they are anything but daily on-demand, same as the rest of the catalog.
+  // 🔴 This block first shipped saying "The Seoraksan three have no schedule
+  // entry, which is correct — nothing says they are anything but daily
+  // on-demand". That was false, and it was false at the moment it was written:
+  // the owner had already sent the Klook calendars showing Naksansa on Mon/Thu
+  // and Morning Calm on Mon/Wed/Fri. The claim was reasoned from the absence of
+  // a row in the schedule table rather than from the source, so for a few hours
+  // these two were live and selling days they do not run. An empty table is not
+  // evidence that a product runs daily — it is only evidence that nobody
+  // entered it. Sokcho still has no entry because there is genuinely no
+  // calendar for it (no Klook listing; it is the SKU Naksansa replaced), and
+  // that gap is recorded rather than papered over.
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

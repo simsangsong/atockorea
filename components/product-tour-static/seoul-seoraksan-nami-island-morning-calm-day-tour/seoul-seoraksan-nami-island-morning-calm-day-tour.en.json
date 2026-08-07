@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "Seoul: Seoraksan + Nami + Morning Calm",
-    "priceLabel": "US$71 per person",
+    "priceLabel": "US$79 per person",
     "shortCardDescription": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: Seoraksan National Park (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the Garden of Morning Calm (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or Myeongdong Station.",
     "tags": [
       "Day trip from Seoul",
@@ -48,10 +48,10 @@
   "headlineLine1": "Seoul Day Tour",
   "headlineLine2": "Seoraksan + Nami + Morning Calm",
   "price": {
-    "amountLabel": "71",
+    "amountLabel": "79",
     "currency": "USD",
     "per": "person",
-    "salePriceUsd": 71,
+    "salePriceUsd": 79,
     "originalPriceUsd": null,
     "discountPercent": null
   },
@@ -1025,7 +1025,7 @@
     {
       "id": "private",
       "question": "How does this compare to a private chartered tour?",
-      "answer": "This is a coach group tour at the budget price point ($59/person). Our **private chartered car day trip** option provides door-of-hotel pickup, flexible timing, customizable route (e.g. add Petite France or drop Seoraksan), and private vehicle for typically $300-450 per group of 4 — comparable per-person at 5+ pax. Choose the coach tour for budget, choose private for flexibility and comfort."
+      "answer": "This is a coach group tour at the budget price point ($79/person). Our **private chartered car day trip** option provides door-of-hotel pickup, flexible timing, customizable route (e.g. add Petite France or drop Seoraksan), and private vehicle for typically $300-450 per group of 4 — comparable per-person at 5+ pax. Choose the coach tour for budget, choose private for flexibility and comfort."
     },
     {
       "id": "walking",
@@ -1258,5 +1258,10 @@
     ],
     "source_of_truth_note": "Coach-tour combining Seoraksan + Nami Island + Garden of Morning Calm from Seoul. Attraction content reused from seoul-seoraksan-national-park-sokcho-beach-day-trip (Seoraksan) and seoul-private-nami-morning-calm-petite-france (Nami, Morning Calm). Sources: KTO VisitKorea, IUCN Green List, UNESCO, KNPS, Garden of Morning Calm official, Naminara Republic official, KBS Winter Sonata records, Wikipedia.",
     "audit_summary": "Seoul-based 13-hour coach day trip on the classic Seoraksan + Nami + Morning Calm circuit. Direct equivalent on GetYourGuide market is the $82 'From Seoul: Seoraksan, Nami Island, Garden of Morning Calm' (t1137310)."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "wednesday",
+    "friday"
+  ]
 }

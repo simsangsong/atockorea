@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울: 설악산 + 남이섬 + 아침고요",
-    "priceLabel": "1인 US$59부터 (정가 $82, 28% 할인)",
+    "priceLabel": "",
     "shortCardDescription": "서울 출발 13시간 코치 당일 투어로, 한국에서 가장 많이 촬영되는 당일 여행지 세 곳을 모두 방문합니다: 설악산 국립공원(한국 유일의 유네스코 생물권보전지역), 남이섬(겨울연가의 메타세쿼이아길), 아침고요수목원(5,000여 종의 식물을 보유한 한국 대표 프라이빗 수목원). 전 일정 입장료 포함, 영어 안내 가이드, 홍익대입구역 또는 명동역 픽업.",
     "tags": [
       "서울 출발 당일 여행",
@@ -1029,7 +1029,7 @@
     {
       "id": "private",
       "question": "개인 전세 투어와 비교하면 어떤가요?",
-      "answer": "이 상품은 합리적인 가격($59/인)의 단체 버스 투어입니다. **개인 전세차 당일치기 투어** 옵션은 호텔 앞 픽업, 유연한 일정, 맞춤형 루트(예: 쁘띠프랑스 추가 또는 설악산 제외) 및 전용 차량을 제공하며, 4인 그룹 기준 통상 $300~450입니다 — 5인 이상이면 1인당 비용이 비슷해집니다. 예산을 중시한다면 버스 투어를, 유연성과 편의를 중시한다면 전세 투어를 선택하세요."
+      "answer": "이 상품은 합리적인 가격($79/인)의 단체 버스 투어입니다. **개인 전세차 당일치기 투어** 옵션은 호텔 앞 픽업, 유연한 일정, 맞춤형 루트(예: 쁘띠프랑스 추가 또는 설악산 제외) 및 전용 차량을 제공하며, 4인 그룹 기준 통상 $300~450입니다 — 5인 이상이면 1인당 비용이 비슷해집니다. 예산을 중시한다면 버스 투어를, 유연성과 편의를 중시한다면 전세 투어를 선택하세요."
     },
     {
       "id": "walking",
@@ -1262,5 +1262,10 @@
     ],
     "source_of_truth_note": "Coach-tour combining Seoraksan + Nami Island + Garden of Morning Calm from Seoul. Attraction content reused from seoul-seoraksan-national-park-sokcho-beach-day-trip (Seoraksan) and seoul-private-nami-morning-calm-petite-france (Nami, Morning Calm). Sources: KTO VisitKorea, IUCN Green List, UNESCO, KNPS, Garden of Morning Calm official, Naminara Republic official, KBS Winter Sonata records, Wikipedia.",
     "audit_summary": "Seoul-based 13-hour coach day trip on the classic Seoraksan + Nami + Morning Calm circuit. Direct equivalent on GetYourGuide market is the $82 'From Seoul: Seoraksan, Nami Island, Garden of Morning Calm' (t1137310)."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "wednesday",
+    "friday"
+  ]
 }

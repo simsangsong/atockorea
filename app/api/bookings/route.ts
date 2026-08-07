@@ -11,6 +11,7 @@ import {
 } from '@/lib/validation';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
+import { isDateOutsideSeasonalWindow, seasonalWindowReason } from '@/lib/tour-seasonal-windows';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import {
   tourListPricesToUsdSync,
@@ -238,6 +239,21 @@ export async function POST(req: NextRequest) {
         {
           error: departureDayReason((tour as { slug?: string | null }).slug),
           code: 'OFF_DEPARTURE_DAY',
+        },
+        { status: 400 }
+      );
+    }
+
+    // Business rule: season-locked tours are bookable only inside their annual
+    // operating window. Same reasoning as the weekday rule above — this route
+    // is the last gate before a row is written, and until 2026-08-07 it was the
+    // one place the seasonal rule was NOT checked, so a caller that skipped the
+    // calendar could book a winter tour in July.
+    if (isDateOutsideSeasonalWindow((tour as { slug?: string | null }).slug, dateStr)) {
+      return NextResponse.json(
+        {
+          error: seasonalWindowReason((tour as { slug?: string | null }).slug),
+          code: 'OUTSIDE_SEASONAL_WINDOW',
         },
         { status: 400 }
       );

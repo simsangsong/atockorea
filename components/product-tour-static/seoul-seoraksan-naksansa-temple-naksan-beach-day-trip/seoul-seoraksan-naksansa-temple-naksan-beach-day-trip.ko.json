@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "서울 출발 강원도: 설악산 + 낙산사 + 낙산해수욕장",
-    "priceLabel": "From US$52 per person (was $58, 10% off)",
+    "priceLabel": "",
     "shortCardDescription": "서울에서 동해안까지 12시간 코치 당일 여행: 설악산 국립공원 하이킹, 절벽 위의 낙산사 방문, 소나무 숲 낙산해수욕장 산책. 매주 월요일과 목요일 출발, 영어 가이드 동반, 홍대 또는 명동에서 왕복 이동 포함.",
     "tags": [
       "서울 출발 당일 여행",
@@ -1196,5 +1196,9 @@
     ],
     "source_of_truth_note": "Coach day-trip from Seoul combining Seoraksan National Park + Naksansa Temple + Naksan Beach on the Gangwon East Sea coast. Replaces the now-inactive seoul-seoraksan-national-park-sokcho-beach-day-trip. Seoraksan attraction content reused from the verified east-coast Seoraksan tours; Naksansa Temple and Naksan Beach content researched and verified 2026-05-14. Sources: KTO VisitKorea, Cultural Heritage Administration of Korea, Yangyang County official tourism, UNESCO, IUCN Green List, KNPS, Wikipedia.",
     "audit_summary": "Seoul-based 12-hour coach day trip on the Seoraksan + Naksansa Temple + Naksan Beach route, departing Mondays and Thursdays. Direct equivalent on the GetYourGuide market is the 'From Seoul: Mt. Seorak & Naksan Temple Day Trip' listing (t1051985), priced around US$58 with a US$52 sale rate."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "thursday"
+  ]
 }
