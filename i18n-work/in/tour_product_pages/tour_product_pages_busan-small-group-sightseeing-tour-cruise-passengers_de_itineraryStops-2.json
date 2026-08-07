@@ -20,6 +20,7 @@
     },
     "/itineraryStops/1/galleryItems/5/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -176,7 +177,8 @@
       ]
     },
     "/itineraryStops/3/name": {
-      "source_en": "Lunch at a local Busan restaurant (own expense)"
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Mittagessen in einem lokalen Restaurant in Busan (auf eigene Kosten)"
     },
     "/itineraryStops/3/category": {
       "source_en": "Meal",
@@ -264,5 +266,5 @@
       "⟦G0⟧": "UN-Gedenkfriedhof"
     }
   },
-  "tmHits": 18
+  "tmHits": 20
 }
