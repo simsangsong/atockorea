@@ -162,8 +162,19 @@ const CERTAIN_CEILING = 492;
  * count line breaks landing between two CJK characters. Both report 0, and the
  * action label carries `.text-cjk-safe` so a squeezed box truncates instead of
  * collapsing. `suspect` means "source cannot tell"; the render can, and did.
+ *
+ * 429 → 430 on 2026-08-07: `EmojiPicker.tsx` — the composer's emoji tray
+ * (사장님 지시). One new element, and the scanner's own reason for flagging it
+ * is `control` + an unresolved `{emoji}` child, i.e. "source cannot tell".
+ *
+ * Here the source CAN tell, which is why this is evidence and not faith: the
+ * child is `COMPOSER_EMOJI.map()` over a literal array of single pictographs
+ * (`lib/tour-room/emoji.ts`), so the button never holds CJK and a one-glyph
+ * button has no break opportunity to place. ChatFeed's identical `{emoji}`
+ * reaction button is already inside this 429 for the same shape — counting
+ * this one keeps the population honest rather than carving an exception.
  */
-const SUSPECT_CEILING = 429;
+const SUSPECT_CEILING = 430;
 
 describe('ratchet — the count that grew unwatched now has a ceiling', () => {
   const hits: CjkBreakHit[] = [];
