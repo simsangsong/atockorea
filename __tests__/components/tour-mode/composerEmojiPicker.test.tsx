@@ -8,7 +8,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import Composer from '@/components/tour-mode/Composer';
-import { COMPOSER_EMOJI } from '@/lib/tour-room/emoji';
+import { COMPOSER_EMOJI, EMOJI_GROUPS } from '@/lib/tour-room/emoji';
 
 function mount(over: Partial<React.ComponentProps<typeof Composer>> = {}) {
   return render(
@@ -34,6 +34,16 @@ describe('composer emoji picker', () => {
     for (const emoji of COMPOSER_EMOJI) {
       expect(screen.getByTestId(`emoji-${emoji}`)).toBeInTheDocument();
     }
+  });
+
+  /** Shelves are labelled in the viewer's language, not just English. */
+  it('labels every shelf in the room locale', () => {
+    mount();
+    fireEvent.click(screen.getByTestId('composer-emoji-toggle'));
+    for (const group of EMOJI_GROUPS) {
+      expect(screen.getByTestId(`emoji-group-${group.key}`)).toBeInTheDocument();
+    }
+    expect(screen.getByTestId('emoji-group-travel')).toHaveTextContent('여행');
   });
 
   it('inserts at the caret, not at the end, and stays open for the next pick', () => {
