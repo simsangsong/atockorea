@@ -34,6 +34,8 @@ const OUT = process.argv[2] ?? ".";
 /** Hangul in a non-Korean locale means `pickLocalized` fell through to `ko`. */
 const HANGUL = /[가-힣]/;
 /** The corrected inclusions line, per locale — parking is inside the fee. */
+const CONTENT_LOCALE = { "zh-CN": "zh" };
+
 const PARKING_INCLUDED = {
   ko: /주차료/,
   ja: /駐車料金/,
@@ -45,6 +47,7 @@ const PARKING_INCLUDED = {
 
 const CASES = [
   { slug: "jeju-island-private-car-charter-tour", locale: "zh-TW", imported: true },
+  { slug: "jeju-island-private-car-charter-tour", locale: "zh-CN", imported: true },
   { slug: "jeju-island-private-car-charter-tour", locale: "es", imported: true },
   { slug: "busan-private-car-charter-cruise-shore", locale: "ja", imported: true },
   { slug: "busan-private-car-charter-cruise-shore", locale: "ko", imported: true },
@@ -53,10 +56,16 @@ const CASES = [
   // a separate live defect, raised as its own ticket. Adding those locales
   // here would make this harness permanently red for a reason it does not own.
   { slug: "incheon-seoul-private-car-shore-excursion-cruise", locale: "ko", imported: false },
+  { slug: "seoul-suburbs-private-chartered-car-10hr", locale: "ja", imported: true },
 ];
 
 const browser = await chromium.launch();
-const page = await browser.newPage({ viewport: { width: 1280, height: 1000 } });
+// A Korean-language browser is the case that was broken: `I18nProvider` read
+// localStorage/navigator and ignored the URL, so every client component —
+// header nav, currency, login, the welcome popup, the sticky CTA — rendered
+// Korean over non-Korean server copy. Testing with a neutral browser hides it.
+const ctx = await browser.newContext({ locale: "ko-KR", viewport: { width: 1280, height: 1000 } });
+const page = await ctx.newPage();
 
 // The welcome-coupon dialog opens over every page and its overlay swallows all
 // clicks, so nothing below the fold is reachable. Mark it dismissed-for-today
@@ -79,7 +88,11 @@ page.on("pageerror", (e) => errors.push(String(e)));
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
 
 for (const c of CASES) {
+  // 🔴 The site routes Simplified Chinese as /zh-CN/ while the DB, the bundles
+  // and this file's copy tables all key it "zh". Probing /zh/ hits no route at
+  // all and renders the 404 page — which reads exactly like a broken product.
   const url = `${BASE}/${c.locale}/tour-product/${c.slug}`;
+  const content = CONTENT_LOCALE[c.locale] ?? c.locale;
   const tag = `${c.locale} :: ${c.slug}`;
   await page.goto(url, { waitUntil: "domcontentloaded", timeout: 90_000 });
   // `domcontentloaded` fires before the RSC payload paints, and a cold dev
@@ -139,9 +152,9 @@ for (const c of CASES) {
   }
 
   const blob = rules.join(" ");
-  const hangulLeak = c.locale !== "ko" && HANGUL.test(blob);
-  const parkingOk = PARKING_INCLUDED[c.locale].test(blob);
-  if (hangulLeak) failures.push(`${tag}: Hangul leaked into the ${c.locale} rules`);
+  const hangulLeak = content !== "ko" && HANGUL.test(blob);
+  const parkingOk = PARKING_INCLUDED[content].test(blob);
+  if (hangulLeak) failures.push(`${tag}: Hangul leaked into the ${content} rules`);
   if (!parkingOk) failures.push(`${tag}: parking not listed as included`);
 
   // `durations[0]` leads the sticky bar, so a retired tier does not just sit in
@@ -155,6 +168,21 @@ for (const c of CASES) {
   });
   if (fourHour.length) failures.push(`${tag}: retired 4h option still offered ${JSON.stringify(fourHour)}`);
 
+  // The page chrome is client-rendered, so it must follow the URL locale too —
+  // a Korean header over Japanese page copy is what a real visitor saw.
+  const chrome = await page.evaluate(() => ({
+    htmlLang: document.documentElement.lang,
+    nav: [...document.querySelectorAll("header a, header button")]
+      .map((e) => (e.textContent || "").trim()).filter(Boolean).slice(0, 6),
+  }));
+  const chromeKorean = HANGUL.test(chrome.nav.join(" "));
+  if (chromeKorean !== (content === "ko")) {
+    failures.push(`${tag}: page chrome is ${chromeKorean ? "Korean" : "not Korean"} — ${JSON.stringify(chrome.nav)}`);
+  }
+  if (chrome.htmlLang !== content) {
+    failures.push(`${tag}: <html lang> is "${chrome.htmlLang}", expected "${content}"`);
+  }
+
   // Imported-course pages must show the real course switch; the one page
   // without imported courses must still show its own sample section.
   const importedPills = await page.locator('[data-testid="imported-course-pill"], [role="tab"]').count();
@@ -166,6 +194,7 @@ for (const c of CASES) {
   console.log(`   shape: ${c.imported ? "imported courses + rulesOnly" : "sample itineraries"}`);
   console.log(`   rules: ${rules.length} lines · hangul leak: ${hangulLeak ? "YES" : "no"} · parking included: ${parkingOk ? "yes" : "NO"}`);
   console.log(`   retired 4h option: ${fourHour.length ? JSON.stringify(fourHour) : "no"}`);
+  console.log(`   chrome: <html lang="${chrome.htmlLang}"> ${JSON.stringify(chrome.nav.slice(1, 4))}`);
   console.log(`   tab/pill controls on page: ${importedPills}`);
   console.log(`   shot: ${file}`);
 }
