@@ -587,13 +587,13 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   // figure. Owner decision 2026-08-07: the rate card is the price, so the
   // catalogue shows the cheapest cell on it. Keep in sync with the charter's
   // `pricingTiers`, and with catalogRegistrationBuilder.ts.
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169, maxGroupSize: 14 },
   // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
-  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 419, maxGroupSize: 12 },
+  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 419, maxGroupSize: 14 },
   "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 52, compareAtPriceUsd: 59 },
   "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
