@@ -197,12 +197,39 @@ function roundUpTo5(hhmm: string): string {
 }
 
 /**
- * §11.C C1 — per-booking memory of the vehicle-location opt-in. Default OFF
- * (first use is always a deliberate tap); once ON it auto-resumes on the next
- * mount so the driver never re-taps it every morning of the same tour.
+ * §11.C C1 — memory of the vehicle-location opt-in, per booking AND per day.
+ *
+ * 🔴 사장님 2026-08-07: 투어 당일에는 자동으로 켠다. The old contract was "default
+ * OFF, first use is always a deliberate tap", and it did not survive contact
+ * with the morning: the guest opens the map to find their ride and there is
+ * nothing on it, because the one person whose position matters had not tapped
+ * a button on their own screen. `vehicleShareDefault` below is the whole rule.
+ *
+ * The date is part of the key on purpose. A remembered choice that outlived its
+ * tour day would either silence a later tour ('0' forever) or turn a staff
+ * device on for a day nobody asked about ('1' forever); scoping to the day
+ * means every decision expires with the tour it was made for.
  */
-export function vehicleShareKey(bookingId: string): string {
-  return `tr.vehicleShare.${bookingId}`;
+export function vehicleShareKey(bookingId: string, tourDay: string): string {
+  return `tr.vehicleShare.${bookingId}.${tourDay}`;
+}
+
+/**
+ * Whether the vehicle-location switch starts ON.
+ *
+ * `stored` is what the staff member last chose TODAY ('1' on, '0' off) — an
+ * explicit choice always wins, in both directions, which is what keeps this an
+ * automatic default rather than a policy that fights its user. With no choice
+ * on record it follows the tour day: live → on, lobby/ended → off.
+ *
+ * Sharing itself is unchanged and still foreground-only (`useGeoWatcher` pauses
+ * on a hidden tab and stops on unmount), so "auto" means "while the console is
+ * open", never background tracking.
+ */
+export function vehicleShareDefault(stored: string | null, lifecycle: CockpitLifecycle): boolean {
+  if (stored === '1') return true;
+  if (stored === '0') return false;
+  return lifecycle === 'live';
 }
 
 /** Chat font zoom (pinch) bounds + storage key. */
@@ -474,13 +501,17 @@ export default function Cockpit({
   // watcher — no new endpoint, no background tracking (foreground only, the
   // hook pauses on a hidden tab), and permission denial stays terminal.
   const [shareLocation, setShareLocation] = useState(false);
+  // Resolved in an effect, not a lazy initializer: reading storage during the
+  // first render would make the server and client markup disagree.
   useEffect(() => {
+    let stored: string | null = null;
     try {
-      if (window.localStorage.getItem(vehicleShareKey(bookingId)) === '1') setShareLocation(true);
+      stored = window.localStorage.getItem(vehicleShareKey(bookingId, kstToday()));
     } catch {
-      /* private-mode storage — the toggle just starts OFF */
+      /* private-mode storage — fall through to the tour-day default */
     }
-  }, [bookingId]);
+    setShareLocation(vehicleShareDefault(stored, lifecycle));
+  }, [bookingId, lifecycle]);
   /**
    * ── X15 Phase 1: arrival detection on the STAFF device ─────────────────
    *
@@ -577,8 +608,10 @@ export default function Cockpit({
     setShareLocation((on) => {
       const next = !on;
       try {
-        if (next) window.localStorage.setItem(vehicleShareKey(bookingId), '1');
-        else window.localStorage.removeItem(vehicleShareKey(bookingId));
+        // 🔴 '0' is written, not removed. "No record" now means "follow the tour
+        // day", so clearing the key would let the auto-on default switch the
+        // staff member's device back on behind them.
+        window.localStorage.setItem(vehicleShareKey(bookingId, kstToday()), next ? '1' : '0');
       } catch {
         /* best-effort memory only */
       }
