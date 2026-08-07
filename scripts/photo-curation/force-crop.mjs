@@ -8,6 +8,11 @@
  *
  *   left   — force a left crop of this fraction, instead of the detector's guess
  *   bottom — additionally trim this fraction off the bottom, applied after the left crop
+ *   ratio  — crop to this aspect (e.g. 16/9) instead. `focusY` (0..1, default 0.5) picks
+ *            the band to keep. Phone photos of a moving subject come in portrait; a card
+ *            crops them to 16:9 anyway, and letting the pipeline choose the band beats
+ *            letting `object-fit: cover` guess — it centred on empty track and cut the
+ *            Sky Capsules out of frame entirely.
  *
  * A crop on a frame that turns out to be clean costs nothing — it is a slightly tighter
  * composition. Shipping UI chrome on an OTA card does not have that property, so this
@@ -58,4 +63,9 @@ export const FORCE_CROP = new Map([
 
   // Camera date stamp burned into the bottom-left.
   ["yongmeori-coast/H", { bottom: 0.11 }],
+
+  // 사장님 제공 실촬본 (2026-08-07) — 세로 폰 사진이라 16:9 로 재단한다.
+  ["cheongsapo-blue-line/H", { ratio: 16 / 9, focusY: 0.45 }],
+  ["cheongsapo-blue-line/g1", { ratio: 16 / 9, focusY: 0.45 }],
+  ["cheongsapo-blue-line/g2", { ratio: 16 / 9, focusY: 0.45 }],
 ]);

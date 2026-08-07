@@ -61,8 +61,13 @@ for (const slug of slugs) {
     if (m) byStem.set(m[2], f);
   }
   for (const f of files) {
-    if (NEW.test(f)) continue;
+    // Every WebP in a curated folder is a sweep candidate — including `NN-` ones. A pick
+    // that gets re-chosen (the owner supplying a real photo for a POI that had none)
+    // leaves its predecessor behind under the same numbering, and an earlier version of
+    // this sweep skipped exactly those. The reference scan below is what protects live
+    // files, so widening the candidate set is safe.
     candidates.push({ slug, file: f, path: join(dir, f) });
+    if (NEW.test(f)) continue;
     const stem = f.replace(/\.webp$/i, "");
     const replacement = byStem.get(stem);
     if (replacement) {
