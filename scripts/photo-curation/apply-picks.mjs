@@ -202,6 +202,17 @@ async function main() {
       }
     }
 
+    // Assets the site already ships that are worth keeping alongside the curated set —
+    // replacing a stop wholesale would otherwise throw away good photography that simply
+    // is not in the D: library (e.g. the three Woljeonggyo frames under /images/itinerary).
+    for (const extra of pick.extraPaths || []) {
+      if (!existsSync(join(ROOT, "public", extra.replace(/^\//, "")))) {
+        console.warn(`  extraPath missing on disk, skipped: ${extra}`);
+        continue;
+      }
+      if (!paths.includes(extra)) paths.push(extra);
+    }
+
     console.log(`${slug}: ${paths.length} images → ${pick.poiKeys.join(", ") || "(no poi keys)"}`);
     if (pick.poiKeys.length) {
       batches.push({ poiKeys: pick.poiKeys, paths, set: new Set(pick.poiKeys) });
