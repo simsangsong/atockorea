@@ -149,8 +149,22 @@ describe('rule 2 — break-all on CJK is the one opt-out the default cannot save
  * standing risk and it is the population that grew 576 → 583 unwatched, so it
  * gets a ceiling. Lower this number when a sweep lowers the count — a ratchet
  * left above the real figure is a gate that has stopped measuring.
+ *
+ * 492 → 494 on 2026-08-07: the 배차 요약 strip in `OpsRoomManager.tsx` — one
+ * wrapper `<div>` and the `<p>` inside it ("미배차 N팀 — 배차해야 손님이 좌석을
+ * 고를 수 있어요"). Two new elements carrying CJK, both deliberately WITHOUT
+ * `.text-cjk-safe`: this line must wrap, not truncate — it is the sentence that
+ * tells the operator why the guest's seat picker is shut, and half of it is
+ * worth nothing.
+ *
+ * Evidence is a real render, not a reading of the source (a ratchet may only
+ * move up on evidence). The strip was driven in the live ops sheet in Korean at
+ * 1280 / 768 / 390 / 320px, measuring per-character client rects and counting
+ * line breaks that land between two CJK characters: **0 at every width**, and
+ * the strip stayed one row (70px) throughout. The root `word-break: keep-all`
+ * default carries it, which is exactly what that default exists for.
  */
-const CERTAIN_CEILING = 492;
+const CERTAIN_CEILING = 494;
 /**
  * 428 → 429 on 2026-07-30: the in-room seat card (`seat/RoomSeatCard.tsx`) is
  * one new element carrying CJK.

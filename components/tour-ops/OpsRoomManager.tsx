@@ -39,6 +39,12 @@ interface ManagedBooking {
   source?: string | null;
   tour: { id?: string; title: string; city?: string | null } | null;
   room: { id: string; status: string } | null;
+  /**
+   * 이 팀(tour_id+tour_date 그룹)에 붙은 차량. 빈 배열 = 미배차.
+   * 🔴 미배차면 **손님 앱의 좌석 선택이 통째로 잠긴다** — 그래서 이건 부가
+   * 정보가 아니라 이 목록에서 가장 행동을 요구하는 신호다.
+   */
+  vehicles?: Array<{ label: string; plate: string | null; seats: number | null }>;
   invite: {
     customer_active: boolean;
     customer_last: { sent_via: string | null; created_at: string; revoked: boolean } | null;
@@ -89,6 +95,8 @@ function palette() {
     badgeActive: 'bg-[var(--tr-safe-soft)] text-[var(--tr-safe)]  ',
     badgeCustomer: 'bg-[var(--tr-accent-soft)] text-[var(--tr-accent)]  ',
     badgeGuide: 'bg-violet-100 text-violet-700 dark:bg-violet-500/15 dark:text-violet-300',
+    /** 미배차 — 경고. 손님 좌석이 이것 때문에 잠겨 있다는 뜻이다. */
+    badgeUnassigned: 'bg-[var(--tr-warn-soft)] text-[var(--tr-warn)]',
     input:
       'border-[var(--tr-hairline)] bg-[var(--tr-surface-2)] text-[var(--tr-ink)] placeholder:text-[var(--tr-ink-3)]',
     sheet: 'bg-[var(--tr-surface)] text-[var(--tr-ink)]',
@@ -256,9 +264,22 @@ export default function OpsRoomManager({
     [load, onRoomsChanged],
   );
 
+  /**
+   * 미배차 집계는 **팀(투어) 단위**다 — 배차는 그룹에 붙기 때문이다. 예약 수로
+   * 세면 조인 투어 한 팀이 9건으로 부풀어 "미배차 9"가 되고, 차 한 대만 붙이면
+   * 9가 한 번에 0이 되어 숫자가 아무 것도 뜻하지 않게 된다.
+   */
+  const unassignedTours = new Set(
+    bookings.filter((b) => (b.vehicles?.length ?? 0) === 0).map((b) => b.tour?.title ?? '기타'),
+  );
+  const [unassignedOnly, setUnassignedOnly] = useState(false);
+  const visible = unassignedOnly
+    ? bookings.filter((b) => (b.vehicles?.length ?? 0) === 0)
+    : bookings;
+
   // Group by tour title for scanability on a busy day.
   const groups = new Map<string, ManagedBooking[]>();
-  for (const booking of bookings) {
+  for (const booking of visible) {
     const title = booking.tour?.title ?? '기타';
     groups.set(title, [...(groups.get(title) ?? []), booking]);
   }
@@ -356,8 +377,44 @@ export default function OpsRoomManager({
       {/* §11.F — 이 날짜에 휴무로 등록된 가이드 알림. 경고만, 배정 차단 없음. */}
       <GuideRestNotice date={viewDate} />
       <div className="mx-auto w-full max-w-3xl">
+        {/* 배차 요약 — 이 날의 "해야 할 일"을 목록 위에서 한 줄로. 미배차면
+            손님 좌석이 잠긴 상태라는 걸 여기서 말한다(그 인과를 아는 사람이
+            운영 쪽엔 없었다). */}
+        {bookings.length > 0 && (
+          <div
+            className={`mb-3 flex items-center gap-2 rounded-2xl border p-3 ${T.card}`}
+            data-testid="manager-dispatch-summary"
+          >
+            <CarFront className={`size-4 shrink-0 ${unassignedTours.size > 0 ? 'text-[var(--tr-warn)]' : T.sub}`} />
+            <p className="min-w-0 flex-1 tr-label">
+              {unassignedTours.size > 0 ? (
+                <>
+                  <b className="text-[var(--tr-warn)]">미배차 {unassignedTours.size}팀</b>
+                  <span className={`ml-1.5 ${T.sub}`}>— 배차해야 손님이 좌석을 고를 수 있어요.</span>
+                </>
+              ) : (
+                <span className={T.sub}>이 날짜의 모든 팀에 차량이 배정됐어요.</span>
+              )}
+            </p>
+            {unassignedTours.size > 0 && (
+              <button
+                type="button"
+                onClick={() => setUnassignedOnly((v) => !v)}
+                aria-pressed={unassignedOnly}
+                data-testid="manager-unassigned-filter"
+                className={`text-cjk-safe h-9 shrink-0 rounded-lg px-3 tr-label font-semibold ${
+                  unassignedOnly ? 'bg-[var(--tr-accent)] text-white' : T.secondaryBtn
+                }`}
+              >
+                미배차만
+              </button>
+            )}
+          </div>
+        )}
         {loading && bookings.length === 0 ? (
           <SkeletonRows rows={3} className="mt-8" />
+        ) : bookings.length > 0 && visible.length === 0 ? (
+          <p className={`mt-12 text-center tr-card-text ${T.sub}`}>미배차 팀이 없어요.</p>
         ) : bookings.length === 0 ? (
           <div className="mt-16 text-center">
             <p className={`tr-card-text ${T.sub}`}>{viewDate}에 예약이 없습니다.</p>
@@ -425,6 +482,18 @@ export default function OpsRoomManager({
                                 운영자 링크 발급됨
                               </span>
                             )}
+                            {/* 배차 상태. 미배차는 경고색으로 — 이 한 줄이 없어서
+                                32장의 똑같은 카드를 하나씩 열어봐야 했다. */}
+                            <span
+                              className={`text-cjk-safe rounded-full px-2 py-0.5 tr-meta font-semibold ${
+                                (booking.vehicles?.length ?? 0) > 0 ? T.badgeActive : T.badgeUnassigned
+                              }`}
+                              data-testid={`manager-dispatch-badge-${booking.id}`}
+                            >
+                              {(booking.vehicles?.length ?? 0) > 0
+                                ? booking.vehicles!.map((v) => v.plate || v.label).join(' · ')
+                                : '미배차'}
+                            </span>
                           </p>
                         </div>
                         {room && <span className={`shrink-0 tr-meta ${T.sub}`}>룸 열기 →</span>}

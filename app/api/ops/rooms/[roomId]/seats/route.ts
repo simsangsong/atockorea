@@ -1,6 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
-import { kstToday } from '@/lib/tour-room/time';
 import { recordRoomEvent } from '@/lib/tour-room/events';
 import { resolveOpsRoomActor, isStaffActor } from '@/lib/ops/seating/access';
 import {
@@ -22,12 +21,18 @@ export const dynamic = 'force-dynamic';
  *        UNIQUE 위반(동시 선점) → 409 + 최신 좌석판 상태 (C-10).
  *        locked/체크인 이후 변경 → 400 (C-11: 게스트는 당일부터 잠금).
  * DELETE 좌석 해제 (출발 전만): { roomVehicleId, seatNumbers?, bookingId? }.
+ *
+ * 🔴 C-11 개정 (사장님 결정 2026-08-07) — **날짜 잠금을 걷어냈다.**
+ *
+ * 예전에는 `tour_date` 00:00 KST 부터 게스트 쓰기를 통째로 막았다. 그런데
+ * 지켜야 할 것은 **체크인·노쇼 증거가 붙은 좌석**이고, 그건 이 라우트가
+ * 처음부터 좌석 단위로 지키고 있었다(POST 는 `checked_in_at | absent_at |
+ * locked` 중 하나라도 있으면 400, DELETE 는 그 세 조건을 쿼리에서 제외).
+ * 날짜 잠금은 그보다 넓어서, **아직 체크인도 안 했고 조인 투어라 좌석을
+ * 받지도 못한 손님**까지 당일 아침에 얼어붙였다 — 좌석이 가장 필요한 그 아침에.
+ * 출발 게이트의 보드 잠금(C-16 `locked=true`)은 그대로 남아 있어 출발 후
+ * 변경은 여전히 막힌다.
  */
-
-function seatChangeLockedForCustomer(tourDate: string | null): boolean {
-  // C-11/C-12 — 체크인 오픈(tour_date 00:00 KST)부터 게스트 자율 변경 금지.
-  return Boolean(tourDate) && kstToday() >= (tourDate as string);
-}
 
 async function stateResponse(
   supabase: ReturnType<typeof createServerClient>,
@@ -107,10 +112,8 @@ export async function POST(
     // 대상 booking: 게스트는 본인, staff는 명시 필수 (§5.4b 현장 지정).
     let targetBookingId: string;
     if (actor.role === 'customer') {
+      // C-11 개정 — 잠금 판정은 아래 좌석 단위 검사가 한다(체크인/노쇼/출발).
       targetBookingId = actor.bookingId;
-      if (seatChangeLockedForCustomer(room.tour_date)) {
-        return NextResponse.json({ error: 'seat_change_locked' }, { status: 400 });
-      }
     } else {
       targetBookingId = String(body.bookingId || '');
       if (!targetBookingId) {
@@ -150,12 +153,24 @@ export async function POST(
       }
     }
 
+    const onThisVehicle = await loadAssignments(supabase, [roomVehicleId]);
+
     // 기존 배정 검사: 체크인/노쇼/잠금 좌석이 있으면 재배치 금지 (C-11).
-    const existing = (await loadAssignments(supabase, [roomVehicleId])).filter(
+    const existing = onThisVehicle.filter(
       (a: SeatAssignmentRow) => a.booking_id === targetBookingId,
     );
     if (existing.some((a) => a.checked_in_at || a.absent_at || a.locked)) {
       return NextResponse.json({ error: 'seats_locked_or_resolved' }, { status: 400 });
+    }
+
+    // 🔴 C-11 개정의 뒷문 — 날짜 잠금을 걷어낸 자리에 이게 없으면, **좌석이
+    // 하나도 없던 손님**은 출발 게이트가 내려간 뒤에도 빈 자리를 새로 집을 수
+    // 있다(위 검사는 이미 내 좌석이 있을 때만 발동하므로 빈손인 손님을 못 잡는다).
+    // 출발한 보드는 그 자체로 닫혀야 한다 — 판정은 게이트가 남긴 `locked`로.
+    // 위 검사 **뒤에** 둔다: 내 좌석이 결론난 경우의 에러 코드
+    // (`seats_locked_or_resolved`)를 이게 덮어쓰면 피커의 분기가 바뀐다.
+    if (actor.role === 'customer' && onThisVehicle.some((a) => a.locked)) {
+      return NextResponse.json({ error: 'seat_change_locked' }, { status: 400 });
     }
 
     // 교체 배정: 기존 행 삭제 → 새 행 삽입. UNIQUE(room_vehicle_id,
@@ -237,10 +252,8 @@ export async function DELETE(
 
     let targetBookingId: string;
     if (actor.role === 'customer') {
+      // C-11 개정 — 해제 쿼리 자체가 체크인·노쇼·잠긴 좌석을 제외한다(아래).
       targetBookingId = actor.bookingId;
-      if (seatChangeLockedForCustomer(room.tour_date)) {
-        return NextResponse.json({ error: 'seat_change_locked' }, { status: 400 });
-      }
     } else {
       targetBookingId = String(body.bookingId || '');
       if (!targetBookingId) {

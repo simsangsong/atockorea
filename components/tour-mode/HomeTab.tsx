@@ -21,6 +21,7 @@
  */
 
 import { useEffect, useMemo, useState } from 'react';
+import dynamicImport from 'next/dynamic';
 import Link from 'next/link';
 import InstallCard from '@/components/tour-mode/InstallCard';
 import LobbyCard from '@/components/tour-mode/LobbyCard';
@@ -34,6 +35,8 @@ import MeetSetCard from '@/components/tour-mode/MeetSetCard';
 import QuickSignalBar from '@/components/tour-mode/QuickSignalBar';
 import ArrivalUnlockCard from '@/components/tour-mode/ArrivalUnlockCard';
 import RoomSeatCard from '@/components/tour-mode/seat/RoomSeatCard';
+import { useMySeat } from '@/hooks/useMySeat';
+import { joinCopy } from '@/lib/ops/seating/joinCopy';
 import type { GeoWatcherStatus } from '@/hooks/useGeoWatcher';
 import VehicleLocationCard from '@/components/tour-mode/map/VehicleLocationCard';
 import Sheet from '@/components/tour-mode/Sheet';
@@ -52,6 +55,7 @@ import {
   IconReview,
   IconTabChat,
   IconTabSettings,
+  IconTicket,
   IconTileChat,
   IconTileMap,
   IconTilePickup,
@@ -64,6 +68,11 @@ import type { RoomLocale } from '@/lib/tour-room/snapshot';
 import type { RoomReviewPolicy } from '@/lib/tour-room/reviewPolicy';
 import type { VehicleLocationLike } from '@/lib/tour-room/vehicleEta';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
+
+/** Only mounted once the guest opens it — the board is a heavy, rare screen. */
+const RoomSeatSheet = dynamicImport(() => import('@/components/tour-mode/seat/RoomSeatSheet'), {
+  ssr: false,
+});
 
 interface ScheduleItem {
   time?: string;
@@ -518,6 +527,13 @@ export default function HomeTab({
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
+  /**
+   * 좌석 — 한 번 읽어 카드와 타일이 같은 답을 본다. 조회가 카드 안에 있던
+   * 동안에는 타일이 같은 시트를 열 방법이 없었고, 그래서 좌석에 닿는 길이
+   * 홈을 스크롤해서 카드를 찾는 것 하나뿐이었다(사장님 지적, 2026-08-07).
+   */
+  const mySeat = useMySeat({ bookingId, roomSession, authToken });
+  const [seatSheetOpen, setSeatSheetOpen] = useState(false);
   // Now marker advances on a 1-min tick, kept out of render so it stays pure
   // (a bare clock read in render is impure/unstable) — mirrors RoomShell.
   // SG-0c: the source is the room's corrected clock, not the device's.
@@ -682,6 +698,23 @@ export default function HomeTab({
       label: copy.tiles.plan,
       Icon: IconPlanEdit,
       href: `/tour-mode/plan/${encodeURIComponent(bookingId)}`,
+    });
+  }
+  /**
+   * 내 좌석 — 좌석이 있는 상품이면 **어느 시점에나** 여기 있다. 라벨은
+   * `joinCopy('yourSeats')`를 그대로 쓴다: 같은 문구가 카드·시트에도 쓰이므로
+   * 여기 10로케일을 또 적으면 그 순간부터 세 곳이 따로 논다.
+   *
+   * lifecycle로 거르지 않는다 — 고르는 건 전날이지만 **확인**은 탑승 직전과
+   * 투어 중이 정확히 그 순간이다. 못 고르는 상태에서는 시트가 읽기 전용으로
+   * 답한다(RoomSeatSheet).
+   */
+  if (mySeat.hasSeating) {
+    tiles.push({
+      key: 'seat',
+      label: joinCopy(locale, 'yourSeats'),
+      Icon: IconTicket,
+      onPress: () => setSeatSheetOpen(true),
     });
   }
   if (canSignal) {
@@ -873,17 +906,32 @@ export default function HomeTab({
           The picker existed and worked; nothing in the room linked to it, and
           the only entrance (an ops claim link) has never been sent — live DB:
           zero `room_claim` invites, zero seat assignments. The card decides
-          for itself whether to appear: no vehicle assigned, no seating, no
-          card. Not lifecycle-gated here — the server's `can_pick` already
-          closes it at 00:00 KST on the tour day (C-11), and an ASSIGNED seat
-          is exactly what a guest wants to see on the morning itself. */}
-      {lifecycle !== 'ended' && (
-        <RoomSeatCard
-          bookingId={bookingId}
-          roomSession={roomSession}
+          for itself whether to appear: no seating on this product, no card.
+          Not lifecycle-gated — an ASSIGNED seat is exactly what a guest wants
+          on the morning itself and mid-tour, and after the tour it is the
+          record of where they sat. The server's `can_pick` (C-11 as revised
+          2026-08-07: open until check-in) decides picking, not this. */}
+      <RoomSeatCard
+        seat={mySeat.seat}
+        locale={locale}
+        pickable={mySeat.pickable}
+        onOpen={() => setSeatSheetOpen(true)}
+      />
+      {seatSheetOpen && (
+        <RoomSeatSheet
+          open={seatSheetOpen}
+          onClose={() => {
+            setSeatSheetOpen(false);
+            mySeat.reload();
+          }}
           locale={locale}
-          guestName={guestName ?? ''}
-          authToken={authToken}
+          roomId={mySeat.seat?.room_id ?? ''}
+          token={mySeat.personalToken}
+          bookingId={bookingId}
+          partySize={mySeat.seat?.party_size ?? 1}
+          guestLabel={guestName ?? ''}
+          seat={mySeat.seat}
+          pickable={mySeat.pickable}
         />
       )}
 
