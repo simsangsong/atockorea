@@ -907,11 +907,26 @@ export default function Composer({
               }`}
             />
             {voiceSupported && !hasDraft && (
+              /*
+               * The accent belongs here while the draft is empty.
+               *
+               * With nothing typed there is no send button, so the chat tab had
+               * no primary at all — measured, 29 visible controls and not one
+               * carrying the accent. Speaking is also the thing this screen is
+               * built around and says so in its own empty state ("write in your
+               * own language — your guide reads it in theirs"), yet it was the
+               * one grey icon next to a grey `+`.
+               *
+               * It hands the accent straight to send the moment a draft exists,
+               * so the screen has exactly one primary in both states rather
+               * than two competing ones. Same treatment the cockpit already
+               * gives `driver-mic`.
+               */
               <button
                 type="button"
                 onClick={() => void startRecording()}
                 aria-label={(A11Y[locale] ?? A11Y.en).recordVoice}
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
+                className="tr-btn-raised flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[var(--tr-accent)] text-[var(--tr-bubble-me-ink)]"
                 data-testid="mic-button"
               >
                 <IconMic size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />

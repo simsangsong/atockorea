@@ -100,7 +100,7 @@ export default function AppManual({
   if (variant === 'inline') {
     // R4 — this is the first-run onboarding door, but it used to be a grey
     // card that read like a divider. It is now a physical button in the
-    // accent material (tr-btn-physical): pressable depth, gloss chip, and
+    // accent material (tr-btn-physical tr-btn-physical--chip): pressable depth, gloss chip, and
     // the app's signature color, so it is unmistakably a thing to tap.
     return (
       <section data-testid="app-manual-inline">
@@ -108,7 +108,7 @@ export default function AppManual({
           type="button"
           onClick={() => setExpanded((v) => !v)}
           aria-expanded={expanded}
-          className="tr-btn-physical flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
+          className="tr-btn-physical tr-btn-physical--chip flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
           style={{ background: 'var(--tr-chip-grad-accent)' }}
           data-testid="app-manual-toggle"
         >

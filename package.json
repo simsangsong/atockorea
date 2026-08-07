@@ -101,7 +101,8 @@
     "tours:build-seoul-2026-08": "node scripts/gen-seoul-overlay-en-2026-08.mjs && node scripts/build-seoul-gapyeong-2026-08.mjs && node scripts/build-seoul-winter-eobi-2026-08.mjs && node scripts/build-catalog-cards.mjs && node scripts/gen-seoul-new-products-sql-2026-08.mjs",
     "tours:qa-seoul-2026-08": "node scripts/qa-seoul-new-products-2026-08.mjs",
     "qa:overlay-collisions": "node scripts/qa-overlay-collisions.mjs",
-    "i18n:translate": "node --env-file=.env.local --import tsx scripts/i18n/translate.ts"
+    "i18n:translate": "node --env-file=.env.local --import tsx scripts/i18n/translate.ts",
+    "qa:tap-reachability": "node scripts/qa-tap-reachability.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

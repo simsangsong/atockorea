@@ -1506,9 +1506,35 @@
 /* ---- Button physics (M-D4): three materials, one press feel. ----------
  * pressed = sink 1px + scale 0.97 + shadow compression + gloss dimming.
  * Palette untouched (M-D2) — depth and motion only. */
+/* 🔴 This class used to paint as well as lift, and its paint beat every caller.
+ *
+ * It set `color: var(--tr-chip-ink)` and `background: var(--tr-chip-grad)` —
+ * the latter a SHORTHAND, which also resets `background-color`. Ten of the
+ * fourteen call sites pair it with `bg-[var(--tr-…)]` + `text-[var(--tr-…)]`
+ * utilities, and this stylesheet loads after the Tailwind layer, so at equal
+ * specificity the theme won both properties.
+ *
+ * Measured on the guest home: `home-now-action` ("Open map") is authored
+ * `bg-[var(--tr-accent)] text-[var(--tr-on-accent)]` and computed to
+ *   background-color: rgba(0, 0, 0, 0)
+ *   background-image: linear-gradient(140deg, #3a4144, #181c1e)
+ * — the charcoal chip. So the control the screen is built around had been
+ * rendering as the same dark slab as the secondary beside it, and the hierarchy
+ * axis reported "0 primaries" on a screen whose primary was in the source all
+ * along. `ArrivalUnlockCard`'s intended accent-soft secondary was flattened to
+ * the same charcoal, which is why the two looked identical.
+ *
+ * So the class now carries only physicality — radius, shadow, press. The chip
+ * look moved to `.tr-btn-physical--chip` for the four callers that want it.
+ * Callers with their own paint simply keep their utilities and nothing fights
+ * them. `__tests__/audit/physicalButtonFill.test.ts` holds the split.
+ *
+ * ⚠ Halfway through this fix I added a `--fill` modifier that cleared the
+ * gradient but also set `color: inherit`. That clobbered the caller's text
+ * utility the same way, and the freshly-green button rendered near-black ink at
+ * 2.41:1. The lesson is the one above, applied to the property I had not
+ * thought about yet: a shared class that sets paint will beat the caller. */
 .tr-btn-physical {
-  color: var(--tr-chip-ink);
-  background: var(--tr-chip-grad);
   border-radius: 16px;
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.18),
@@ -1518,6 +1544,13 @@
     transform var(--tr-dur-fast) var(--tr-ease-out),
     box-shadow var(--tr-dur-fast) var(--tr-ease-out),
     filter var(--tr-dur-fast) var(--tr-ease-out);
+}
+/* The charcoal chip look, for the four callers that want it. Separated from
+ * `.tr-btn-physical` so that class carries only physicality (radius, shadow,
+ * press) and never fights a caller's own paint. */
+.tr-btn-physical--chip {
+  color: var(--tr-chip-ink);
+  background-image: var(--tr-chip-grad);
 }
 .tr-btn-physical:active {
   transform: translateY(1px) scale(0.97);
