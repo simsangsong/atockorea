@@ -99,7 +99,7 @@ function CardPhotoStrip({
   tone: "slate" | "emerald";
 }) {
   return (
-    <div className="relative -mx-4 -mt-4 mb-4 h-24 overflow-hidden md:-mx-5 md:-mt-5 md:h-28">
+    <div className="relative -mx-4 -mt-4 mb-3 h-20 overflow-hidden md:h-24">
       <Image
         src={src}
         alt={alt}
@@ -269,7 +269,7 @@ export function ChooseTravelStyle() {
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
             className={cn(
-              "relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 md:p-5 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
+              "relative w-[62vw] flex-none snap-start overflow-hidden rounded-card border border-slate-700/50 bg-slate-900 p-4 shadow-2 transition-all duration-300 ease-out hover:-translate-y-0.5 flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
               // V7 — elevate the recommended card (small-group below the crossover).
               !recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
             )}
@@ -279,9 +279,9 @@ export function ChooseTravelStyle() {
               alt={t("premium.v2.chooseStyle.smallGroupTitle")}
               tone="slate"
             />
-            <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
-                <Users className="w-4 h-4 md:w-5 md:h-5 text-white" />
+            <div className="flex items-center justify-between mb-3 mt-1">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-white/10 border border-white/15 flex items-center justify-center">
+                <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-white" />
               </div>
               {/* U5 — recommended badge shows here only while small-group is the
                   better value (party below the private crossover). */}
@@ -296,11 +296,11 @@ export function ChooseTravelStyle() {
             <h3 className="text-base md:text-lg font-bold text-white mb-1">
               {t("premium.v2.chooseStyle.smallGroupTitle")}
             </h3>
-            <p className="text-caption text-slate-300 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-300 mb-2.5 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.smallGroupDesc")}
             </p>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-2">
                 {featuredJoin.compareAtPriceUsd != null ? (
@@ -308,7 +308,7 @@ export function ChooseTravelStyle() {
                     {formatPrice(featuredJoin.compareAtPriceUsd)}
                   </span>
                 ) : null}
-                <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
+                <span className="text-lg md:text-xl font-bold text-white tracking-tight">
                   {formatPrice(featuredJoin.listPriceUsd)}
                 </span>
                 <span className="text-micro text-white/70 font-semibold">{t("premium.v2.chooseStyle.perPerson")}</span>
@@ -349,7 +349,7 @@ export function ChooseTravelStyle() {
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
             className={cn(
-              "group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
+              "group relative w-[62vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto",
               // V7 — elevate the recommended card (private at/above the crossover).
               recommendPrivate && "ring-2 ring-amber-300/70 ring-offset-2 ring-offset-slate-50",
             )}
@@ -359,9 +359,9 @@ export function ChooseTravelStyle() {
               alt={t("premium.v2.chooseStyle.privateTitle")}
               tone="emerald"
             />
-            <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
-                <Car className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
+            <div className="flex items-center justify-between mb-3 mt-1">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
+                <Car className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-700" />
               </div>
               {/* U5 — the "Recommended" badge lands here once a private charter
                   is the better value (party ≥ crossover); otherwise the neutral
@@ -390,10 +390,10 @@ export function ChooseTravelStyle() {
               {t("premium.v2.chooseStyle.privateFlexLine")}
             </p>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-xl md:text-2xl font-bold text-slate-900 tabular-nums tracking-tight">
+                <span className="text-lg md:text-xl font-bold text-slate-900 tabular-nums tracking-tight">
                   {formatPrice(privateVehicle)}
                 </span>
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.privatePerVehicle")}</span>
@@ -444,16 +444,16 @@ export function ChooseTravelStyle() {
           {/* Bus — white pod with subtle mint warm-light (matches Private card) */}
           <motion.div
             variants={REVEAL_ITEM_VARIANTS}
-            className="group relative w-[68vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 md:p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
+            className="group relative w-[62vw] flex-none snap-start overflow-hidden rounded-card border border-emerald-100/60 bg-gradient-to-b from-white via-white to-emerald-50/40 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.9),0_1px_2px_rgba(15,23,42,0.04),0_8px_22px_-12px_rgba(16,122,87,0.10),0_18px_36px_-18px_rgba(15,23,42,0.12)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-emerald-200/75 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.95),0_2px_4px_rgba(15,23,42,0.05),0_10px_28px_-12px_rgba(16,122,87,0.16),0_22px_42px_-18px_rgba(15,23,42,0.16)] flex flex-col motion-reduce:hover:translate-y-0 motion-reduce:transition-none md:w-auto"
           >
             <CardPhotoStrip
               src="/images/tours/busan-cruise-terminal/busan-cruise-terminal-bus-pickup.webp"
               alt={t("premium.v2.chooseStyle.busTitle")}
               tone="emerald"
             />
-            <div className="flex items-center justify-between mb-4 mt-1">
-              <div className="w-9 h-9 md:w-10 md:h-10 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
-                <Bus className="w-4 h-4 md:w-5 md:h-5 text-slate-700" />
+            <div className="flex items-center justify-between mb-3 mt-1">
+              <div className="w-8 h-8 md:w-9 md:h-9 rounded-lg bg-emerald-50/70 border border-emerald-100/70 flex items-center justify-center">
+                <Bus className="w-3.5 h-3.5 md:w-4 md:h-4 text-slate-700" />
               </div>
               <span className="text-micro font-bold text-slate-700 bg-white/70 border border-emerald-100/60 px-2.5 py-1 rounded-full tracking-wide backdrop-blur-[2px]">
                 {t("premium.v2.chooseStyle.busBadge")}
@@ -463,14 +463,14 @@ export function ChooseTravelStyle() {
             <h3 className="text-base md:text-lg font-bold text-slate-900 tracking-tight mb-1">
               {t("premium.v2.chooseStyle.busTitle")}
             </h3>
-            <p className="text-caption text-slate-600 mb-3 leading-relaxed line-clamp-3 flex-1">
+            <p className="text-caption text-slate-600 mb-2.5 leading-relaxed line-clamp-3 flex-1">
               {t("premium.v2.chooseStyle.busDesc")}
             </p>
 
-            <div className="mb-4">
+            <div className="mb-3">
               <p className="text-micro text-slate-400 mb-0.5 uppercase tracking-wider">{t("premium.v2.chooseStyle.from")}</p>
               <div className="flex items-baseline gap-1.5">
-                <span className="text-xl md:text-2xl font-bold text-slate-900 tracking-tight">
+                <span className="text-lg md:text-xl font-bold text-slate-900 tracking-tight">
                   {formatPrice(CHOOSE_STYLE_CARD_USD.bus.from)}
                 </span>
                 <span className="text-slate-500 text-micro font-semibold">{t("premium.v2.chooseStyle.busPerPerson")}</span>
