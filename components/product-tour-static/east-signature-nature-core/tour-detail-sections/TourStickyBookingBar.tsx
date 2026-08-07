@@ -5,6 +5,10 @@ import { useRouter } from "next/navigation";
 import dynamic from "next/dynamic";
 import { AnimatePresence, motion, useDragControls } from "framer-motion";
 import { enUS } from "date-fns/locale/en-US";
+import {
+  chargeDurationHeading,
+  formatChargeDuration,
+} from "@/components/product-tour-static/_shared/chargeDurationLabel";
 
 /** See TourDesktopBookingCard for the rationale on deferring react-datepicker. */
 const DatePicker = dynamic(
@@ -72,6 +76,8 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   sectionUi?: TourProductSectionUiV1;
   /** Optional — private/charter products price by group size × duration. */
   pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
+  /** Page locale — duration codes are localized for display only, never as keys. */
+  locale?: string;
   /** Fixed-schedule departures (Pocheon = Mon/Thu/Sat). Absent = runs any day. */
   departureWeekdays?: readonly string[];
   /**
@@ -85,7 +91,7 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   seedLanguage?: PreferredLanguage;
 };
 
-export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, departureWeekdays, initialGuests, seedDateYmd, seedLanguage }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, locale, departureWeekdays, initialGuests, seedDateYmd, seedLanguage }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
@@ -250,7 +256,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
    */
   const groupRateActive = tierPriceUsd != null && checkout?.priceType !== "person";
   const groupRateEyebrow = `${sectionUi?.priceGroupRateLabel ?? "Group rate"}${
-    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration ? ` · ${selectedDuration}` : ""
+    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration ? ` · ${formatChargeDuration(selectedDuration, locale)}` : ""
   }`;
   const partyTotalEyebrow = (sectionUi?.priceTotalForGuestsTemplate ?? "Total for {count} guests").replace(
     "{count}",
@@ -496,7 +502,9 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                 <div className="tour-booking-drawer-footer shrink-0 overflow-visible border-t border-border/60 px-3 py-2 sm:px-5">
                   {pricingTiers && pricingTiers.durations.length > 1 && (
                     <div className="mb-2">
-                      <span className={`${fieldLabelClass} mb-1.5 block`}>Duration</span>
+                      <span className={`${fieldLabelClass} mb-1.5 block`}>
+                        {chargeDurationHeading(locale)}
+                      </span>
                       {/* Horizontally scrollable hour pills (4h–10h). */}
                       <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
                         {pricingTiers.durations.map((d) => (
@@ -511,7 +519,7 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                                 : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                             }`}
                           >
-                            {d}
+                            {formatChargeDuration(d, locale)}
                           </button>
                         ))}
                       </div>

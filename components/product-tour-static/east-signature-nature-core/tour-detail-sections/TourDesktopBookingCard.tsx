@@ -60,6 +60,11 @@ import {
   isDepartureWeekday,
 } from "@/components/product-tour-static/_shared/bookingShared";
 
+import {
+  chargeDurationHeading,
+  formatChargeDuration,
+} from "@/components/product-tour-static/_shared/chargeDurationLabel";
+
 import "react-datepicker/dist/react-datepicker.css";
 
 export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailViewModel, "price"> & {
@@ -67,6 +72,8 @@ export type TourDesktopBookingCardProps = Pick<EastSignatureNatureCoreDetailView
   selectedPortLabel?: string;
   sectionUi?: TourProductSectionUiV1;
   pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
+  /** Page locale — duration codes are localized for display only, never as keys. */
+  locale?: string;
   /** Fixed-schedule departures (Pocheon = Mon/Thu/Sat). Absent = runs any day. */
   departureWeekdays?: readonly string[];
   /**
@@ -94,6 +101,7 @@ export function TourDesktopBookingCard({
   selectedPortLabel,
   sectionUi,
   pricingTiers,
+  locale,
   departureWeekdays,
   initialGuests,
   seedDateYmd,
@@ -275,7 +283,9 @@ export function TourDesktopBookingCard({
    */
   const groupRateActive = tierPriceUsd != null && checkout?.priceType !== "person";
   const groupRateEyebrow = `${sectionUi?.priceGroupRateLabel ?? "Group rate"}${
-    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration ? ` · ${selectedDuration}` : ""
+    pricingTiers && pricingTiers.durations.length > 1 && selectedDuration
+      ? ` · ${formatChargeDuration(selectedDuration, locale)}`
+      : ""
   }`;
   const partyTotalLabel = (sectionUi?.priceTotalForGuestsTemplate ?? "Total for {count} guests").replace(
     "{count}",
@@ -414,7 +424,9 @@ export function TourDesktopBookingCard({
         <div className="mb-4 rounded-2xl border border-slate-200/70 bg-slate-50/60 p-3">
           {pricingTiers.durations.length > 1 && (
             <div className="mb-2.5">
-              <span className={`${fieldLabelClass} mb-1.5 block`}>Duration</span>
+              <span className={`${fieldLabelClass} mb-1.5 block`}>
+                {chargeDurationHeading(locale)}
+              </span>
               {/* Horizontally scrollable hour pills (4h–10h) — the row scrolls on
                   narrow rails instead of wrapping/clipping. */}
               <div className="-mx-1 flex gap-1.5 overflow-x-auto scrollbar-none px-1 pb-0.5">
@@ -430,7 +442,7 @@ export function TourDesktopBookingCard({
                         : "bg-white text-muted-foreground ring-slate-200 hover:text-foreground"
                     }`}
                   >
-                    {d}
+                    {formatChargeDuration(d, locale)}
                   </button>
                 ))}
               </div>
@@ -448,7 +460,7 @@ export function TourDesktopBookingCard({
                   ? (sectionUi?.guestsCountSingularTemplate ?? "{count} guest")
                   : (sectionUi?.guestsCountTemplate ?? "{count} guests")
                 ).replace("{count}", String(guestCount))}
-                {selectedDuration ? ` · ${selectedDuration}` : ""}
+                {selectedDuration ? ` · ${formatChargeDuration(selectedDuration, locale)}` : ""}
                 {ctaUnitFormatted ? ` — ${ctaUnitFormatted}` : ""}
               </p>
             </div>

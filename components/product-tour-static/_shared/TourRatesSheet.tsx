@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { formatChargeDuration } from "@/components/product-tour-static/_shared/chargeDurationLabel";
 import { X } from "lucide-react";
 import type { EastSignatureNatureCoreDetailViewModel } from "@/components/product-tour-static/east-signature-nature-core/eastSignatureNatureCoreDetailViewModel";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
@@ -11,6 +12,8 @@ export type TourRatesSheetProps = {
   onClose: () => void;
   pricingTiers: NonNullable<EastSignatureNatureCoreDetailViewModel["pricingTiers"]>;
   sectionUi?: TourProductSectionUiV1;
+  /** Page locale — the duration codes are localized for display only. */
+  locale?: string;
 };
 
 /**
@@ -20,7 +23,7 @@ export type TourRatesSheetProps = {
  * closed) so the full rate matrix survives the DOM round-trip check, and the
  * open/close animation is pure CSS — no new motion library work.
  */
-export function TourRatesSheet({ open, onClose, pricingTiers, sectionUi }: TourRatesSheetProps) {
+export function TourRatesSheet({ open, onClose, pricingTiers, sectionUi, locale }: TourRatesSheetProps) {
   const title = sectionUi?.ratesSheetTitle ?? "Rate card";
   const groupSizeLabel = sectionUi?.ratesGroupSizeLabel ?? "Group size";
   const priceLabel = sectionUi?.ratesPriceLabel ?? "Price";
@@ -90,7 +93,9 @@ export function TourRatesSheet({ open, onClose, pricingTiers, sectionUi }: TourR
                       <th className="px-3 py-2 text-left font-semibold">{groupSizeLabel}</th>
                       {pricingTiers.durations.map((d) => (
                         <th key={d} className="px-3 py-2 text-right font-semibold">
-                          {pricingTiers.durations.length === 1 ? priceLabel : d}
+                          {pricingTiers.durations.length === 1
+                            ? priceLabel
+                            : formatChargeDuration(d, locale)}
                         </th>
                       ))}
                     </tr>
