@@ -11,6 +11,22 @@
  *
  * Markers: guide 🚌 · me/you initial dots · numbered spot pins · pickup 🅿 ·
  * facility dots. Follow mode pans with every guide frame.
+ *
+ * 🔴 `center` and `options` MUST stay referentially stable.
+ *
+ * @react-google-maps/api diffs props by identity (`nextValue !== prevProps[key]`
+ * in `applyUpdaterToNextProps`) and its `center` updater is a bare
+ * `map.setCenter(center)`. Both used to be object literals built during render,
+ * so EVERY re-render re-applied the center — measured: 1 call at mount, +1 per
+ * re-render. While the guest is sharing, `useGeoWatcher` sets `lastPosition` on
+ * every `watchPosition` frame, which re-renders TourRoomClient → this canvas,
+ * so the map snapped back to the guide (or to the hardcoded Seoul fallback)
+ * about as fast as anyone could pan it. "Recenter to me", follow mode and the
+ * guest's own finger were all being undone within a frame or two.
+ *
+ * Everything that MOVES the map is imperative from here on (`panTo`,
+ * `fitBounds`, `setZoom`); `center` is only the pre-fit value handed over once
+ * at mount. Guarded by `__tests__/components/tour-mode/mapCanvasFocus.test.tsx`.
  */
 
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
@@ -49,6 +65,29 @@ function initialOf(name: string | undefined): string {
   return ((name ?? '').trim()[0] ?? '•').toUpperCase();
 }
 
+/** Last-resort view when the room has nothing to show yet (central Seoul). */
+const FALLBACK_CENTER = { lat: 37.5665, lng: 126.978 } as const;
+/** Zoom used whenever we deliberately put ONE point on screen. */
+const FOCUS_ZOOM = 16;
+
+/**
+ * The two map controls are the only strings in this file that were English-free
+ * but not locale-aware: both `aria-label`s were hardcoded Korean, so every
+ * non-Korean guest's screen reader announced "내 위치로" / "전체 보기".
+ */
+const MAP_CONTROL: Record<RoomLocale, { recenter: string; fitAll: string }> = {
+  en: { recenter: 'Center on my location', fitAll: 'Show everything' },
+  ko: { recenter: '내 위치로', fitAll: '전체 보기' },
+  ja: { recenter: '現在地に移動', fitAll: '全体表示' },
+  es: { recenter: 'Centrar en mi ubicación', fitAll: 'Ver todo' },
+  zh: { recenter: '回到我的位置', fitAll: '查看全部' },
+  'zh-TW': { recenter: '回到我的位置', fitAll: '檢視全部' },
+  fr: { recenter: 'Centrer sur ma position', fitAll: 'Tout afficher' },
+  de: { recenter: 'Auf meinen Standort zentrieren', fitAll: 'Alles anzeigen' },
+  ru: { recenter: 'Центрировать на мне', fitAll: 'Показать всё' },
+  it: { recenter: 'Centra sulla mia posizione', fitAll: 'Mostra tutto' },
+};
+
 /**
  * 🔴 What a guest saw when the map did not come up (UX walk, 2026-07-28):
  *
@@ -86,6 +125,8 @@ export default function RoomMapCanvas({
   pickup,
   followGuide,
   locale,
+  myPosition = null,
+  sharing = false,
 }: {
   locations: Record<string, RoomLocation>;
   myParticipantId: string | null;
@@ -94,6 +135,19 @@ export default function RoomMapCanvas({
   pickup: MapPoint | null;
   followGuide: boolean;
   locale: RoomLocale;
+  /**
+   * 🔴 This device's own live fix, straight from the watcher — NOT the server echo.
+   *
+   * The canvas used to learn where "me" is only from `locations[myParticipantId]`,
+   * i.e. after a ping round-tripped through `POST /location` → broadcast. That
+   * publish is gated on `isAccurateEnough` (accuracy ≤ 100 m) AND throttled to
+   * one ping per 15 s, so on any device geolocating by Wi-Fi the ping is never
+   * sent at all: sharing reads "Sharing live", and the map still has no idea
+   * where the guest is — no dot, and "recenter to me" with nothing to center on.
+   */
+  myPosition?: { latitude: number; longitude: number } | null;
+  /** Opting in should take the guest to their own dot — see the effect below. */
+  sharing?: boolean;
 }) {
   const { isLoaded, loadError } = useJsApiLoader({
     id: GOOGLE_MAPS_LOADER_ID,
@@ -103,6 +157,19 @@ export default function RoomMapCanvas({
   });
   const mapRef = useRef<google.maps.Map | null>(null);
   const fittedRef = useRef(false);
+  /** A fresh literal here re-runs `map.setOptions` every render — see header. */
+  const mapOptions = useMemo<google.maps.MapOptions>(
+    () => ({
+      disableDefaultUI: true,
+      zoomControl: true,
+      streetViewControl: false,
+      mapTypeControl: false,
+      fullscreenControl: false,
+      clickableIcons: false,
+      styles: MAP_STYLE,
+    }),
+    [],
+  );
   /**
    * `loadError` only catches the SCRIPT failing. When the script loads but
    * Google rejects the key (referer not allowed, billing, quota) it paints its
@@ -126,9 +193,26 @@ export default function RoomMapCanvas({
   const people = useMemo(() => Object.values(locations), [locations]);
   const guide = people.find((p) => p.role === 'guide') ?? null;
 
+  /** Where I am, freshest source first: my own watcher, then the server echo. */
+  const myEcho = myParticipantId ? locations[myParticipantId] ?? null : null;
+  const myLat = myPosition?.latitude ?? myEcho?.latitude ?? null;
+  const myLng = myPosition?.longitude ?? myEcho?.longitude ?? null;
+  const myPoint = useMemo(
+    () => (myLat !== null && myLng !== null ? { lat: myLat, lng: myLng } : null),
+    [myLat, myLng],
+  );
+
   const allPoints = useMemo(() => {
     const pts: Array<{ lat: number; lng: number }> = [];
-    for (const p of people) pts.push({ lat: p.latitude, lng: p.longitude });
+    // Exactly one point per person — mirrors the markers below, where my own
+    // row rides `myPoint` and the standalone "me" marker only exists when the
+    // room has no echo of me. Pushing both would put me in twice and collapse
+    // fitBounds onto a ~zero-size box.
+    for (const p of people) {
+      const isMine = p.participant_id === myParticipantId;
+      pts.push(isMine && myPoint ? myPoint : { lat: p.latitude, lng: p.longitude });
+    }
+    if (!myEcho && myPoint) pts.push(myPoint);
     for (const s of spots) {
       if (typeof s.latitude === 'number' && typeof s.longitude === 'number') {
         pts.push({ lat: s.latitude, lng: s.longitude });
@@ -138,23 +222,101 @@ export default function RoomMapCanvas({
       pts.push({ lat: pickup.lat, lng: pickup.lng });
     }
     return pts;
-  }, [people, spots, pickup]);
+  }, [people, myParticipantId, myEcho, myPoint, spots, pickup]);
+
+  /**
+   * The one and only value the map ever receives as `center`.
+   *
+   * A lazy `useState` initializer, not a render-time literal: it is computed on
+   * the first render and then never changes identity, so the library's
+   * identity diff sees no change and `map.setCenter` is never re-applied. From
+   * here the view moves only where the code says so — `onLoad`'s fit, the
+   * first-points fit, follow mode, the two control buttons.
+   */
+  const [center] = useState<{ lat: number; lng: number }>(
+    () =>
+      (guide ? { lat: guide.latitude, lng: guide.longitude } : null) ??
+      myPoint ??
+      allPoints[0] ??
+      FALLBACK_CENTER,
+  );
+
+  /**
+   * `fitBounds` over a single point zooms to the maximum level — a street-tile
+   * void. One point is a "focus", not a "fit".
+   */
+  const fitTo = useCallback((points: Array<{ lat: number; lng: number }>) => {
+    const map = mapRef.current;
+    if (!map) return;
+    // Coincident points (the pickup point that IS the first stop, two phones on
+    // the same bench) would otherwise make a zero-size box.
+    const unique = Array.from(new Map(points.map((p) => [`${p.lat},${p.lng}`, p])).values());
+    if (unique.length === 0) return;
+    if (unique.length === 1) {
+      map.panTo(unique[0]);
+      map.setZoom(FOCUS_ZOOM);
+      return;
+    }
+    const bounds = new google.maps.LatLngBounds();
+    unique.forEach((p) => bounds.extend(p));
+    map.fitBounds(bounds, 48);
+  }, []);
 
   const onLoad = useCallback(
     (map: google.maps.Map) => {
       mapRef.current = map;
       if (allPoints.length > 0 && !fittedRef.current) {
         fittedRef.current = true;
-        const bounds = new google.maps.LatLngBounds();
-        allPoints.forEach((p) => bounds.extend(p));
-        map.fitBounds(bounds, 48);
+        fitTo(allPoints);
       }
     },
-    [allPoints],
+    [allPoints, fitTo],
   );
   const onUnmount = useCallback(() => {
     mapRef.current = null;
   }, []);
+
+  /**
+   * Flipping "Share my location" ON takes the guest to their own dot. That is
+   * what the switch reads as a promise, and nothing was doing it.
+   *
+   * One shot per opt-in, and only for a real OFF→ON transition: the ref seeds
+   * from the mount-time value, so re-entering the map tab while already sharing
+   * leaves the view alone. Continuous re-centering is `followGuide`'s job, and
+   * making it implicit here would be the same "map fights your finger" bug in a
+   * new costume.
+   *
+   * Declared BEFORE the first-fit effect on purpose — effects run in order, and
+   * a fresh opt-in outranks "fit everyone" for the same frame. It claims
+   * `fittedRef` so the two do not both move the map.
+   */
+  const focusedForSharingRef = useRef(sharing);
+  useEffect(() => {
+    if (!sharing) {
+      focusedForSharingRef.current = false;
+      return;
+    }
+    if (focusedForSharingRef.current) return;
+    const map = mapRef.current;
+    if (!map || !myPoint) return; // the first fix takes a moment — retry on the next frame
+    focusedForSharingRef.current = true;
+    fittedRef.current = true;
+    map.panTo(myPoint);
+    map.setZoom(FOCUS_ZOOM);
+  }, [sharing, myPoint]);
+
+  /**
+   * People arrive over the realtime channel, so at mount `allPoints` is usually
+   * just the itinerary (often nothing at all). The static `center` prop used to
+   * paper over that by re-centering forever; now that it is applied once, the
+   * first real point has to earn the view itself — once, then the map is the
+   * guest's.
+   */
+  useEffect(() => {
+    if (fittedRef.current || !mapRef.current || allPoints.length === 0) return;
+    fittedRef.current = true;
+    fitTo(allPoints);
+  }, [allPoints, fitTo]);
 
   // Follow mode: every guide frame pans the map (T3.3 AC — live distance).
   useEffect(() => {
@@ -163,22 +325,21 @@ export default function RoomMapCanvas({
     }
   }, [followGuide, guide]);
 
-  // One-tap "recenter to me": prefer my shared marker, else ask the device
-  // (works even when location sharing is off — the common case).
+  // One-tap "recenter to me": my live fix if the watcher has one, else ask the
+  // device directly (works even when location sharing is off — the common case).
   const recenterToMe = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
-    const mine = myParticipantId ? locations[myParticipantId] : null;
-    if (mine) {
-      map.panTo({ lat: mine.latitude, lng: mine.longitude });
-      map.setZoom(16);
+    if (myPoint) {
+      map.panTo(myPoint);
+      map.setZoom(FOCUS_ZOOM);
       return;
     }
     if (typeof navigator !== 'undefined' && navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (pos) => {
           map.panTo({ lat: pos.coords.latitude, lng: pos.coords.longitude });
-          map.setZoom(16);
+          map.setZoom(FOCUS_ZOOM);
         },
         () => {
           /* denied/unavailable — the button just no-ops */
@@ -186,16 +347,12 @@ export default function RoomMapCanvas({
         { enableHighAccuracy: true, timeout: 8000 },
       );
     }
-  }, [locations, myParticipantId]);
+  }, [myPoint]);
 
   // Re-fit the map to everyone + every stop (undo an accidental zoom-out).
   const fitAll = useCallback(() => {
-    const map = mapRef.current;
-    if (!map || allPoints.length === 0) return;
-    const bounds = new google.maps.LatLngBounds();
-    allPoints.forEach((p) => bounds.extend(p));
-    map.fitBounds(bounds, 48);
-  }, [allPoints]);
+    fitTo(allPoints);
+  }, [allPoints, fitTo]);
 
   if (loadError || authFailed) {
     const copy = MAP_DOWN[locale];
@@ -235,9 +392,7 @@ export default function RoomMapCanvas({
     );
   }
 
-  const center = guide
-    ? { lat: guide.latitude, lng: guide.longitude }
-    : allPoints[0] ?? { lat: 37.5665, lng: 126.978 };
+  const control = MAP_CONTROL[locale];
 
   return (
     <div className="relative h-full w-full">
@@ -247,7 +402,7 @@ export default function RoomMapCanvas({
         <button
           type="button"
           onClick={recenterToMe}
-          aria-label="내 위치로"
+          aria-label={control.recenter}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-accent-deep)] active:scale-95"
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="map-recenter-me"
@@ -257,7 +412,7 @@ export default function RoomMapCanvas({
         <button
           type="button"
           onClick={fitAll}
-          aria-label="전체 보기"
+          aria-label={control.fitAll}
           className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-2)] active:scale-95"
           style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
           data-testid="map-fit-all"
@@ -271,15 +426,7 @@ export default function RoomMapCanvas({
         zoom={14}
         onLoad={onLoad}
         onUnmount={onUnmount}
-        options={{
-          disableDefaultUI: true,
-          zoomControl: true,
-          streetViewControl: false,
-          mapTypeControl: false,
-          fullscreenControl: false,
-          clickableIcons: false,
-          styles: MAP_STYLE,
-        }}
+        options={mapOptions}
       >
       {/* numbered spot pins */}
       {spots.map((spot, index) =>
@@ -337,6 +484,26 @@ export default function RoomMapCanvas({
         />
       )}
 
+      {/* Me, from this device — only when the room has no echo of me yet. The
+          publish path drops samples coarser than 100 m and throttles to 15 s,
+          so "sharing is live but I am not on the map" was the normal state on
+          any Wi-Fi fix, not an edge case. */}
+      {!myEcho && myPoint && (
+        <Marker
+          position={myPoint}
+          zIndex={20}
+          label={{ text: '•', color: '#ffffff', fontSize: '10px', fontWeight: '700' }}
+          icon={{
+            path: google.maps.SymbolPath.CIRCLE,
+            scale: 9,
+            fillColor: '#2563eb',
+            fillOpacity: 1,
+            strokeColor: '#ffffff',
+            strokeWeight: 2,
+          }}
+        />
+      )}
+
       {/* people */}
       {people.map((person) => {
         const isGuide = person.role === 'guide';
@@ -344,7 +511,9 @@ export default function RoomMapCanvas({
         return (
           <Marker
             key={`person-${person.participant_id}`}
-            position={{ lat: person.latitude, lng: person.longitude }}
+            /* My own echo is up to 15s stale by design (§O-5 throttle); the
+               watcher's fix is current, so my dot rides that instead. */
+            position={isMe && myPoint ? myPoint : { lat: person.latitude, lng: person.longitude }}
             title={person.display_name ?? undefined}
             zIndex={isGuide ? 30 : isMe ? 20 : 10}
             label={
