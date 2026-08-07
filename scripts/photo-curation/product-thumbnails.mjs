@@ -47,8 +47,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "대표·최저가 상품이 가장 아이코닉한 프레임을 가져간다 — 나머지 셋을 옮겼다",
   },
   "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
-    image: "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
-    why: "스카이캡슐이 제목이자 차별점 — 황금빛 해안 캡슐",
+    image: "/images/tours/cheongsapo-blue-line/01-skycapsule-red13-pines-01.webp",
+    why: "스카이캡슐이 제목이자 차별점 — 사장님 제공 **실촬본**(2026-08-07). 이 POI 는 쓸 수 있는 실사진이 아예 없어서 AI 를 쓰고 있었다",
   },
   "busan-cruise-shore-excursion-bus-tour": {
     image: "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",

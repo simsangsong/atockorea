@@ -75,7 +75,18 @@ async function toWebp(file, { override }) {
   const H = (rotated ? meta.width : meta.height) || 0;
 
   let crop = null;
-  if (override?.left) {
+  if (override?.ratio) {
+    const focusY = override.focusY ?? 0.5;
+    let cw = W;
+    let chh = Math.round(W / override.ratio);
+    if (chh > H) {
+      chh = H;
+      cw = Math.round(H * override.ratio);
+    }
+    const top = Math.max(0, Math.min(H - chh, Math.round(H * focusY - chh / 2)));
+    const left = Math.max(0, Math.min(W - cw, Math.round((W - cw) / 2)));
+    crop = { left, top, width: cw, height: chh, reason: "ratio-16x9" };
+  } else if (override?.left) {
     const left = Math.round(W * override.left);
     crop = { left, top: 0, width: W - left, height: H, reason: "forced-left" };
   } else {

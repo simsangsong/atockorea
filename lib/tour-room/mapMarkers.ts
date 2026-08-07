@@ -22,13 +22,41 @@
  * against the token values by hand, which is why they are named below.
  */
 
-/** Mirrors of the room tokens these markers are meant to sit beside. */
-const INK = '#12151a'; // --tr-ink (the FindGuideCard surface)
-const ACCENT = '#f59e0b'; // --tr-accent
-const SAFE = '#10b981'; // --tr-safe
-const ME = '#2563eb';
+/**
+ * 🔴 The palette was off-brand, and the token names were lying about it.
+ *
+ * `ACCENT` here was `#f59e0b` and `SAFE` was `#10b981` — a generic amber and a
+ * generic emerald, inherited from the markers this file replaced. The room's
+ * signature has been DEEP PINE since U4-D8 (`app/tour-room-theme.css`:
+ * `--tr-accent: #2e5e4e`, `--tr-safe: #3f6b58`, canvas `#eef1ee`, ivory
+ * surfaces). So the one screen where the brand should be most present was the
+ * one screen still painted in another app's colours.
+ *
+ * Colours here are gradient PAIRS, not flats. A pin is a small object with a
+ * shadow under it; a flat fill reads as a sticker, and this is the surface the
+ * guest stares at while they wait.
+ */
+const PINE = ['#3c7161', '#234a3d'] as const; // the vehicle — the hero marker
+/**
+ * Itinerary stops — slate, not black.
+ *
+ * 🔴 Drawn as near-black first, and the dark basemap ate it: `#14171b` on
+ * `#1b1f24` leaves an ivory outline with nothing inside, and stops used to be
+ * amber, so that would have been a legibility LOSS traded for a nicer light
+ * theme. This slate is still unmistakably dark against the ivory canvas and
+ * still lifts off the dark one, which is what one marker set for two themes has
+ * to do.
+ */
+const INK = ['#3a424a', '#1e232a'] as const;
+const BRASS = ['#c08b3e', '#96682a'] as const; // the pickup point — warm, singular
+const PINE_HOLLOW = '#2b5647'; // the car's knockouts, one step darker than PINE
+const ME = '#2563eb'; // "you are here" blue stays conventional on purpose
+const COMPANION = '#565d66'; // --tr-ink-2
 const FACILITY = '#9ca3af';
-const WHITE = '#ffffff';
+const IVORY = '#fcfcfb'; // --tr-surface: the ring, and the ink on every pin
+
+/** The colour a Google `label` must use to sit on these pins. */
+export const MARKER_LABEL_INK = IVORY;
 
 export interface MarkerArt {
   /** `data:image/svg+xml` URI, ready for `google.maps.Icon.url`. */
@@ -51,13 +79,29 @@ function dataUri(svg: string): string {
 }
 
 /**
- * The drop shadow every pin stands on. A plain low-opacity ellipse rather than
- * a Gaussian filter: filters inside an SVG *image* are honoured unevenly across
- * the WebViews this app actually runs in, and a missing filter would leave the
- * pin looking pasted on.
+ * The shadow every pin stands on — a soft radial falloff, not a hard ellipse.
+ *
+ * 🔴 Deliberately NOT `feGaussianBlur`. Filters inside an SVG *image* are
+ * honoured unevenly across the WebViews this app actually runs in, and a filter
+ * that silently no-ops leaves a hard black smudge under the pin. A radial
+ * gradient is plain painting: every renderer that draws the pin draws this.
+ *
+ * IDs are safe to repeat across markers — each data URI is its own document.
  */
-function groundShadow(cx: number, cy: number, rx = 4.5, ry = 1.6): string {
-  return `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="#000000" opacity="0.18"/>`;
+function groundShadow(cx: number, cy: number, rx: number, ry: number): string {
+  return [
+    '<defs><radialGradient id="s">',
+    '<stop offset="0" stop-color="#000" stop-opacity=".30"/>',
+    '<stop offset=".55" stop-color="#000" stop-opacity=".13"/>',
+    '<stop offset="1" stop-color="#000" stop-opacity="0"/>',
+    '</radialGradient></defs>',
+    `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="url(#s)"/>`,
+  ].join('');
+}
+
+/** Vertical body gradient — the difference between an object and a sticker. */
+function bodyGradient([top, bottom]: readonly [string, string]): string {
+  return `<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${top}"/><stop offset="1" stop-color="${bottom}"/></linearGradient></defs>`;
 }
 
 /**
@@ -69,7 +113,7 @@ function groundShadow(cx: number, cy: number, rx = 4.5, ry = 1.6): string {
  * tail's own corners stay sharp where a pin should flare. Merging head and tail
  * into a single outline means one continuous stroke and a real teardrop.
  */
-function pinBody(cx: number, cy: number, r: number, tipY: number, fill: string, ring: number): string {
+function pinBody(cx: number, cy: number, r: number, tipY: number, ring: number): string {
   const neck = r * 0.3; // how wide the tail still is as it meets the tip
   const d = [
     `M${cx} ${tipY}`,
@@ -78,7 +122,7 @@ function pinBody(cx: number, cy: number, r: number, tipY: number, fill: string, 
     `C${cx + r} ${cy + r * 0.62},${cx + neck} ${cy + r * 0.95},${cx} ${tipY}`,
     'Z',
   ].join('');
-  return `<path d="${d}" fill="${fill}" stroke="${WHITE}" stroke-width="${ring}" stroke-linejoin="round"/>`;
+  return `<path d="${d}" fill="url(#g)" stroke="${IVORY}" stroke-width="${ring}" stroke-linejoin="round"/>`;
 }
 
 /**
@@ -115,7 +159,11 @@ function carGlyph(hollow: string): string {
   ].join('');
 }
 
-/** The guide / driver — the one marker the guest is actually looking for. */
+/**
+ * The guide / driver — deep pine, the app's signature, and the only marker that
+ * carries a glyph. It is the biggest thing on the map because it is the thing
+ * the guest opened the map to find.
+ */
 export function vehiclePin(): MarkerArt {
   const W = 40;
   const H = 50;
@@ -125,19 +173,24 @@ export function vehiclePin(): MarkerArt {
   const glyph = 20 / 24;
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-      ${groundShadow(cx, H - 2)}
-      ${pinBody(cx, cy, r, H - 3, INK, 3)}
+      ${groundShadow(cx, H - 2.2, 7.5, 3)}
+      ${bodyGradient(PINE)}
+      ${pinBody(cx, cy, r, H - 3, 3)}
       <g transform="translate(${cx - 12 * glyph} ${cy - 11.7 * glyph}) scale(${glyph})">
-        ${carGlyph(INK)}
+        ${carGlyph(PINE_HOLLOW)}
       </g>
     </svg>`;
   return { url: dataUri(svg), width: W, height: H, anchorX: cx, anchorY: H - 3, labelX: cx, labelY: cy };
 }
 
 /**
- * Me — a bearing-less blue dot with a white collar and a soft halo, the shape
+ * Me — a bearing-less blue dot with an ivory collar and a soft halo, the shape
  * every phone map has trained people to read as "you are here". Anchored at
  * its centre, not a tip: it marks a point, it does not point at one.
+ *
+ * Blue stays blue while everything around it went pine. This one marker is not
+ * ours to brand — a guest looking for themselves scans for the colour their
+ * phone's own map uses, and losing that costs more than the consistency buys.
  */
 export function myLocationDot(): MarkerArt {
   const S = 34;
@@ -145,7 +198,7 @@ export function myLocationDot(): MarkerArt {
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">
       <circle cx="${c}" cy="${c}" r="15" fill="${ME}" opacity="0.14"/>
-      <circle cx="${c}" cy="${c}" r="9.5" fill="${WHITE}"/>
+      <circle cx="${c}" cy="${c}" r="9.5" fill="${IVORY}"/>
       <circle cx="${c}" cy="${c}" r="6.5" fill="${ME}"/>
     </svg>`;
   return { url: dataUri(svg), width: S, height: S, anchorX: c, anchorY: c, labelX: c, labelY: c };
@@ -157,7 +210,7 @@ export function companionDot(): MarkerArt {
   const c = S / 2;
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">
-      <circle cx="${c}" cy="${c}" r="9" fill="#6b7280" stroke="${WHITE}" stroke-width="2.5"/>
+      <circle cx="${c}" cy="${c}" r="9" fill="${COMPANION}" stroke="${IVORY}" stroke-width="2.5"/>
     </svg>`;
   return { url: dataUri(svg), width: S, height: S, anchorX: c, anchorY: c, labelX: c, labelY: c };
 }
@@ -168,31 +221,36 @@ export function companionDot(): MarkerArt {
  * engine, whereas a label is real DOM the SDK positions for us. `labelX/Y` is
  * what the caller feeds to `labelOrigin`.
  */
-export function stopPin(): MarkerArt {
+function labelledPin(gradient: readonly [string, string]): MarkerArt {
   const W = 30;
   const H = 38;
   const cx = 15;
   const cy = 14;
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-      ${groundShadow(cx, H - 2, 4.5, 1.8)}
-      ${pinBody(cx, cy, 12, H - 3, ACCENT, 2.5)}
+      ${groundShadow(cx, H - 2, 5.8, 2.4)}
+      ${bodyGradient(gradient)}
+      ${pinBody(cx, cy, 12, H - 3, 2.5)}
     </svg>`;
   return { url: dataUri(svg), width: W, height: H, anchorX: cx, anchorY: H - 3, labelX: cx, labelY: cy };
 }
 
-/** The pickup point — same shape as a stop, "safe" green, carries a P label. */
+/**
+ * An itinerary stop — near-black, so the numbers stay crisp and the stops stay
+ * BEHIND the vehicle in the visual order. An ivory-bodied version was drawn and
+ * rejected: it vanishes on the white road fill, which is where stops sit.
+ */
+export function stopPin(): MarkerArt {
+  return labelledPin(INK);
+}
+
+/**
+ * The pickup point — brass. There is exactly one of these on a tour, and it is
+ * the only place a guest has to BE at a time, so it gets the one warm colour on
+ * the map rather than a second green nobody can tell from the vehicle.
+ */
 export function pickupPin(): MarkerArt {
-  const W = 30;
-  const H = 38;
-  const cx = 15;
-  const cy = 14;
-  const svg = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-      ${groundShadow(cx, H - 2, 4.5, 1.8)}
-      ${pinBody(cx, cy, 12, H - 3, SAFE, 2.5)}
-    </svg>`;
-  return { url: dataUri(svg), width: W, height: H, anchorX: cx, anchorY: H - 3, labelX: cx, labelY: cy };
+  return labelledPin(BRASS);
 }
 
 /** Toilets / shops / photo spots — present, never competing with the group. */
@@ -201,7 +259,7 @@ export function facilityDot(): MarkerArt {
   const c = S / 2;
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${S}" height="${S}" viewBox="0 0 ${S} ${S}">
-      <circle cx="${c}" cy="${c}" r="5" fill="${FACILITY}" stroke="${WHITE}" stroke-width="1.5"/>
+      <circle cx="${c}" cy="${c}" r="5" fill="${FACILITY}" stroke="${IVORY}" stroke-width="1.5"/>
     </svg>`;
   return { url: dataUri(svg), width: S, height: S, anchorX: c, anchorY: c, labelX: c, labelY: c };
 }
