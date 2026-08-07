@@ -164,6 +164,13 @@ export default function RoomMapTab({
           pickup={pickup}
           followGuide={followGuide}
           locale={locale}
+          /* 🔴 The canvas used to see "me" only once a ping round-tripped
+             through the server, and the publish path drops anything coarser
+             than 100m. `lastPosition` was already in this component's props,
+             handed to FindGuideCard and nowhere else — so the map was the one
+             surface that could not answer "where am I". */
+          myPosition={lastPosition}
+          sharing={sharing}
         />
         {followTarget && (
           <button
