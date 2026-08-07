@@ -88,10 +88,10 @@ const VERBS = [
     name: '컴포저 이모지 피커',
     files: [COMPOSER, EMOJI_SET],
     pattern: /EmojiPicker|emoji-picker/i,
-    detail: () => {
-      const { picker, shelves } = emojiCounts();
-      return `${picker}종 · ${shelves}묶음 · 캐럿 삽입`;
-    },
+    // 🔴 No "N묶음" here. The set is authored in fours of eight, but the tray
+    // shows no captions (사장님 2026-08-07) and this grid records what the UI
+    // DOES, not how the constant is written.
+    detail: () => `${emojiCounts().picker}종 · 8열 그리드 · 캐럿 삽입`,
   },
   { name: '이미지 붙여넣기 (클립보드, §5-6)', files: [COMPOSER], pattern: /onPaste|clipboardData/ },
   { name: '링크 프리뷰 (텍스트만, §5-4)', files: [CHAT], pattern: /LinkPreviewCard/ },
