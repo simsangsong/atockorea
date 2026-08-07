@@ -306,7 +306,12 @@ export function TourDesktopBookingCard({
     setBusy(true);
     try {
       trackEvent("pd_cta_click", { tourId: checkout.tourId, surface: "card" });
-      const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage);
+      // Send the price this card actually displayed, and the rate-card column it
+      // came from, so checkout charges what the guest was quoted.
+      const payload = buildBookingPayload(checkout, dateYmd, guestCount, preferredLanguage, {
+        unitPriceUsd: tierPriceUsd,
+        durationKey: selectedDuration,
+      });
       sessionStorage.setItem("bookingData", JSON.stringify(payload));
       router.push(consumerTourCheckoutHref(checkout.tourId));
     } catch (e) {

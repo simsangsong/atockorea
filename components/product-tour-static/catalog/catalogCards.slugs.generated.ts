@@ -19,7 +19,6 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
   "jeju-cruise-shore-excursion-small-group-tour",
-  "jeju-eastern-unesco-lugares-day-tour",
   "jeju-eastern-unesco-spots-day-tour",
   "jeju-grand-highlights-loop",
   "jeju-hydrangea-festival-tour-east-route",
