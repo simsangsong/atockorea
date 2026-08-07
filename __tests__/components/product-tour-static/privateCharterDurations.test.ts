@@ -35,6 +35,9 @@ import { formatChargeDuration } from '@/components/product-tour-static/_shared/c
 const HOUR_GRID_CHARTERS = [
   'jeju-island-private-car-charter-tour',
   'busan-private-car-charter-cruise-shore',
+  // Joined the same curve on 2026-08-07 (owner). Its slug still says "10hr" —
+  // that is deliberate, the live OTA listing URLs point at it.
+  'seoul-suburbs-private-chartered-car-10hr',
 ] as const;
 
 const LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'] as const;
@@ -86,6 +89,43 @@ describe('duration codes stay codes', () => {
       }
     }
     expect(gaps).toEqual([]);
+  });
+});
+
+describe('price is the same number in every language', () => {
+  /**
+   * 🔴 Found twice on 2026-08-07. `busan-private-car-charter-cruise-shore` had
+   * de/fr/it/ru on a different pricing MODEL entirely — bands 1–6 / 7–12 / 13+
+   * at $359 / $718 / $1077, one/two/three vehicles — while the six sold locales
+   * ran a per-vehicle 5h–9h curve. And `seoul-suburbs` had a bundle grid that
+   * disagreed with its own DB row.
+   *
+   * A price is a number, not copy. If two locales of one product disagree, one
+   * of them is quoting a figure nobody decided.
+   */
+  it.each(STATIC_TOUR_PRODUCT_BUNDLE_SLUG_LIST)('%s quotes one price per tier', async (slug) => {
+    const seen = new Map<string, string>();
+    const clashes: string[] = [];
+    for (const locale of LOCALES) {
+      const p = await pricingOf(slug, locale);
+      if (!p) continue;
+      // paxLabel is copy and may legitimately differ; the bands and the money
+      // may not. Key by the band so a reordered tier list still compares right.
+      const shape = JSON.stringify({
+        durations: p.durations,
+        tiers: (p.tiers ?? [])
+          .map((t) => [
+            (t as { paxMin?: number }).paxMin,
+            (t as { paxMax?: number }).paxMax,
+            t.prices,
+          ])
+          .sort((a, b) => Number(a[0] ?? 0) - Number(b[0] ?? 0)),
+      });
+      const first = [...seen.entries()][0];
+      if (first && first[1] !== shape) clashes.push(`${locale} differs from ${first[0]}`);
+      seen.set(locale, shape);
+    }
+    expect(clashes).toEqual([]);
   });
 });
 

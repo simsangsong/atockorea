@@ -375,6 +375,28 @@ async function translateUnit(
 async function main(): Promise<void> {
   const locale = LOCALE as string;
 
+  // 🔴 상시 규칙(CLAUDE.md 맨 위): Anthropic API 를 돌리지 않는다. 번역은 Claude Code 가
+  //    플랜 한도 안에서 직접 한다 — 길면 여러 세션으로 쪼갠다.
+  //    이 스크립트는 그 규칙을 어기고 태어났다(헤더 주석이 스스로 그 경위를 적어 두었다).
+  //    지우지 않고 남겨 둔 건 계약(in/ → out/ 파일 모양)이 문서 노릇을 하기 때문이고,
+  //    **돌리려면 사장님이 명시적으로 승인해야 한다.**
+  if (!argv.includes('--yes-bill-the-api')) {
+    console.error(
+      [
+        '🔴 이 스크립트는 Anthropic API 에 종량 과금된다 — 사장님 플랜과 별개 지갑이다.',
+        '   상시 규칙(CLAUDE.md 맨 위)은 "API 를 돌리지 말고 Claude Code 가 직접 한다" 이다.',
+        '',
+        '   직접 하는 법: i18n-work/in/tour_product_pages/<unit>.json 을 읽고',
+        '   i18n-work/RULES.md + styleguide/<locale>.md 를 지켜 번역해',
+        '   i18n-work/out/tour_product_pages/<locale>/<unit>.json 에 쓴다.',
+        '   포인터 키 집합은 입력과 정확히 같아야 한다. 진척은 파일에 남으니 세션을 쪼개도 된다.',
+        '',
+        '   그래도 API 로 돌려야 한다면 사장님 승인을 받고 --yes-bill-the-api 를 붙여라.',
+      ].join('\n'),
+    );
+    process.exit(2);
+  }
+
   if (!process.env.ANTHROPIC_API_KEY) {
     console.error('ANTHROPIC_API_KEY 가 없다 — --env-file=.env.local 로 실행하라.');
     process.exit(1);

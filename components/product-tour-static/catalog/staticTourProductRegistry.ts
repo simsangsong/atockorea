@@ -562,68 +562,24 @@ const SLUG_ORDER: readonly string[] = [
   "southwest-hallasan-osulloc-aewol",];
 
 /**
- * Locale-invariant per-slug overrides — translated catalog_card never owns
- * pricing/capacity; those are sourced here so locale switch can't drift them.
+ * Locale-invariant per-slug pricing/capacity overrides — a translated
+ * `catalog_card` never owns pricing or capacity, so a locale switch cannot
+ * drift them.
+ *
+ * 🔴 Read from `catalogRegistrationBuilder.ts` since 2026-08-07 rather than
+ * duplicated here. This module used to hold its own copy of the same map, and
+ * the two had drifted apart on THIRTEEN slugs — `jeju-grand-highlights-loop`
+ * said 79/89 here, 93 there, while checkout charged 80. One product, three
+ * prices, and a header comment in the other file insisting the map "lives HERE
+ * and only here".
+ *
+ * Nothing imports this module today (verified 2026-08-07), which is precisely
+ * why its copy was free to rot: no screen contradicted it. Deleting the module
+ * outright is the real fix and is worth its own ticket — several docs and
+ * `scripts/qa-seoul-new-products-2026-08.mjs` still name this path as a price
+ * surface. Until then, one map with two readers beats two maps.
  */
-type SlugOverride = {
-  listPriceUsd?: number;
-  compareAtPriceUsd?: number;
-  maxGroupSize?: number;
-};
-
-const SLUG_OVERRIDES: Record<string, SlugOverride> = {
-  "east-signature-nature-core": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-grand-highlights-loop": { listPriceUsd: 79, compareAtPriceUsd: 89, maxGroupSize: 8 },
-  "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  // Busan cruise shore-excursion trio, 2026-08-04: priced to match the channel
-  // listings exactly, to the cent. Keep these three in lockstep with the same
-  // three entries in `catalogRegistrationBuilder.ts` — they had drifted apart.
-  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
-  // Rate-card minimum (5h, 1–6 pax). Was 456.99, a single number taken from the
-  // channel listing while the product page quoted its own rate card at $169–$378
-  // — the catalogue and the page disagreed, and the booking charged a third
-  // figure. Owner decision 2026-08-07: the rate card is the price, so the
-  // catalogue shows the cheapest cell on it. Keep in sync with the charter's
-  // `pricingTiers`, and with catalogRegistrationBuilder.ts.
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169, maxGroupSize: 14 },
-  // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
-  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
-  "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
-  "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
-  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 419, maxGroupSize: 14 },
-  "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 52, compareAtPriceUsd: 59 },
-  "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
-  "jeju-eastern-unesco-spots-day-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-hydrangea-festival-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-hydrangea-festival-tour-southwest-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 49, compareAtPriceUsd: 59, maxGroupSize: 8 },
-  "jeju-west-south-full-day-authentic-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-winter-southwest-tangerine-snow-camellia-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  // 54, not 49 — owner confirmed 2026-08-04. The bundle, tours.price, the offer
-  // and every locale's detail_payload all already said 54; this override was the
-  // lone outlier, and the owner's Klook availability calendar reads 54.55 USD.
-  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, compareAtPriceUsd: 62, maxGroupSize: 8 },
-  "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
-  "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
-  // Repriced 2026-08-07 from Klook at 1 USD = 1,429 KRW (₩80,000 → $56,
-  // ₩113,000 → $79). ⚠ Mirror of the map in `catalogRegistrationBuilder.ts`.
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 56, compareAtPriceUsd: 61, maxGroupSize: 8 },
-  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 79, maxGroupSize: 8 },
-  "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
-  "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 179, maxGroupSize: 13 },
-  "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
-  "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
-  // New products 2026-08-04. maxGroupSize 40 (owner, 2026-08-04) — these are
-  // join-in coach tours, so the 8-guest small-group cap the private products
-  // carry would be a false claim; 40 is the coach capacity the operator lists.
-  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": { listPriceUsd: 59, maxGroupSize: 40 },
-  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": { listPriceUsd: 69, maxGroupSize: 40 },
-};
+import { SLUG_OVERRIDES } from "./catalogRegistrationBuilder";
 
 /**
  * Parse `listPriceUsd` from authoring JSON. Prefer `price.amountLabel`

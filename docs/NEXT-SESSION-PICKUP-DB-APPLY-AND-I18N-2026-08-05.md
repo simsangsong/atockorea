@@ -1,4 +1,26 @@
-# NEXT SESSION — de/fr/it/ru 번역 잔여 (2026-08-07 2차 갱신)
+# NEXT SESSION — de/fr/it/ru 번역 잔여 (2026-08-07 3차 갱신)
+
+## 🔴 맨 먼저 — **API 를 돌리지 마라. 번역은 네가 직접 한다.**
+
+사장님 상시 지시다(CLAUDE.md 맨 위). 이 문서의 이전 판이 「API 크레딧 대기」라고 적어 둔 건
+**대기가 아니라 그 지시를 어긴 것**이었고, 사장님이 2026-08-07 에 직접 지적했다.
+
+**하는 법 — 도구도 스크립트도 필요 없다:**
+1. `i18n-work/in/tour_product_pages/<unit>.json` 을 읽는다.
+2. `i18n-work/RULES.md` 전문 + `i18n-work/styleguide/<locale>.md` 를 지켜 번역한다.
+3. `i18n-work/out/tour_product_pages/<locale>/<unit>.json` 에 쓴다 —
+   `{ "unitId", "locale", "segments": { "<포인터>": "<번역>" } }`.
+   🔴 **포인터 키 집합은 입력과 정확히 같아야 한다.**
+4. `npm run i18n:verify -- --locale=<loc>` → fail 0 이면
+   `npm run i18n:apply -- --locale=<loc> --slugs=<slug> --apply`.
+
+**유닛 하나 끝낼 때마다 파일이 남으므로 세션을 몇 번이든 쪼개도 된다.**
+커버리지 100% 가 된 슬러그는 **그때그때 발행하라** — 진척이 DB 에 굳는다.
+
+**이번 세션 실적(전부 직접 번역): de 4 unit → 3행 발행. 독일어·프랑스어 공백 0.**
+
+---
+
 
 **§1(픽업 SQL 적용·머지)은 끝났다.** PR #735 머지 — 기록으로만 읽어라.
 **§2 는 여전히 크레딧에 막혀 있다.** 번역은 한 줄도 못 돌렸다.
@@ -164,28 +186,25 @@ npm run i18n:apply     -- --locale=ru --slugs=<slug> --apply   # INSERT-only
 - 포인터 집합이 어긋나면 어긋난 목록을 되돌려주며 3회까지 다시 시킨다.
 - **잘리면 잘린 포인터만 다시 시킨다**(신규 — §F).
 
-### 크레딧이 돌아오면 이것만 하면 끝난다 (잔여 88 unit → 11행)
+### 잔여 84 unit → 8행 — 네가 직접 번역한다
+
+**아직 출력 파일이 없는 unit 만 하면 된다.** 목록 뽑는 법:
 
 ```bash
-# 1) ru 7슬러그 (77 unit) — 가장 큰 덩어리
-npm run i18n:translate -- --locale=ru --concurrency=3
-
-# 2) de 4 unit (잘림 3 + 미번역 1) — 파일을 지워 뒀으므로 이것만 다시 돈다
-npm run i18n:translate -- --locale=de --slugs=from-busan-gyeongju-ancient-capital-day-tour,jeju-southern-top-unesco-spots-tour,southwest-hallasan-osulloc-aewol
-
-# 3) it southwest 7 unit
-npm run i18n:translate -- --locale=it --slugs=southwest-hallasan-osulloc-aewol
-
-# 4) 검증 → 발행
-for L in ru de it; do npm run i18n:verify -- --locale=$L && npm run i18n:apply -- --locale=$L --apply; done
+node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('i18n-work/manifest.json','utf8'));const GAP={it:['southwest-hallasan-osulloc-aewol'],ru:['from-busan-gyeongju-ancient-capital-day-tour','jeju-cruise-shore-excursion-bus-tour','jeju-cruise-shore-excursion-small-group-tour','jeju-eastern-unesco-spots-day-tour','jeju-island-private-car-charter-tour','jeju-southern-top-unesco-spots-tour','southwest-hallasan-osulloc-aewol']};for(const u of m.units){if(!(GAP[u.locale]||[]).includes(u.slug))continue;const f=u.id.replace(/[^\w.-]+/g,'_');if(fs.existsSync('i18n-work/out/tour_product_pages/'+u.locale+'/'+f+'.json'))continue;console.log(u.locale+' '+f+' — 세그먼트 '+u.segments)}"
 ```
 
-🔴 **`--force` 를 붙이지 마라.** 붙이면 그 슬러그의 **멀쩡한 유닛 30여 개까지** 다시
-번역해 크레딧을 버린다. 다시 해야 할 것만 골라 파일을 지워 뒀다.
+| 로케일 | 슬러그 | unit | 원문 |
+|---|---|---|---|
+| it | `southwest-hallasan-osulloc-aewol` | 7 | 28,819자 |
+| ru | 7슬러그 전부 | 77 | 322,621자 |
 
-🔴 **`--partial` 도 쓰지 마라.** `apply.ts` 는 INSERT-only라 **부분 발행한 행은 영원히
-그대로다.** 지금 남은 11행은 전부 「번역이 실제로 없는」 것이라, 부분 발행하면 그 자리가
-영구히 영어로 박힌다. 반드시 번역을 끝내고 커버리지 100% 로 발행하라.
+**it 부터 하라** — 7 unit 이면 한 세션에 끝나고 1행이 바로 발행된다.
+ru 는 슬러그 단위로 끊어 여러 세션에 나눠라(TM 중복 62.6% 라 뒤로 갈수록 빨라진다).
+
+🔴 **`--partial` 을 쓰지 마라.** `apply.ts` 는 INSERT-only라 **부분 발행한 행은 영원히
+그대로다.** 남은 8행은 전부 「번역이 실제로 없는」 것이라, 부분 발행하면 그 자리가
+영구히 영어로 박힌다. 반드시 커버리지 100% 로 발행하라.
 
 ---
 
