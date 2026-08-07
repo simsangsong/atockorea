@@ -6,18 +6,6 @@
   "chunk": "itineraryStops-2",
   "tier": "B",
   "segments": {
-    "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Bongsudang Throne Hall + Naknamheon + Janganheon walk (~30 min)"
-    },
-    "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Photo time + reassembly at vehicle (~15 min)"
-    },
-    "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional Royal Guard Changing Ceremony at Sinpungnu Gate (Tue-Sun 11:00 AM, ~15 min, FREE — weather permitting)"
-    },
-    "/itineraryStops/1/highlights/0": {
-      "source_en": "**Korea's largest existing haenggung (detached palace)** — originally 576 rooms"
-    },
     "/itineraryStops/1/highlights/1": {
       "source_en": "Built 1789-1796 alongside Hwaseong Fortress under King Jeongjo"
     },
@@ -121,6 +109,39 @@
       "glossary": [
         "⟦G0⟧ = Hwaseong-Haenggung-Palast"
       ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
+      "glossary": [
+        "⟦G0⟧ = Hwaseong-Haenggung-Palast"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hwaseong-Haenggung-Palast"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Starfield Suwon Library & Mall"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Modern Cultural Landmark + Lunch"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "90 min",
+      "tm": "90 Min."
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "30-min coach drive from Hwaseong Fortress to Starfield Suwon"
+    },
+    "/itineraryStops/2/timeUsed/1": {
+      "source_en": "Lunch at Eatopia food hall (~30-45 min)"
+    },
+    "/itineraryStops/2/timeUsed/2": {
+      "source_en": "Library + atrium walking + photo time (~30-40 min)"
     }
   },
   "glossaryTokens": {
@@ -144,7 +165,13 @@
     },
     "/itineraryStops/1/galleryItems/2/alt": {
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Hwaseong-Haenggung-Palast"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 8
+  "tmHits": 11
 }

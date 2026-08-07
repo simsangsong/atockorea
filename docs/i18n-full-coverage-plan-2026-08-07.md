@@ -232,9 +232,8 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 | ✅ **S3b** | ru `jeju-southern-top-unesco-spots-tour` 9 unit | 470 세그먼트 | **끝** | **1행 발행** |
 | ✅ **S3c** | ru `southwest-hallasan-osulloc-aewol` 10 unit | 525 세그먼트 | **끝** | **1행 발행** |
 | ✅ **S3d~S3f** | ru 잔여 3슬러그 · 37 unit · 1,852 세그먼트 | — | **1 (끝)** | **3행 발행** |
-| **S13** | 🔴 **G3 7슬러그 + G4 1슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
-| **S14~S48** | G3 7슬러그 × 4로케일 | **추정 968,884자** | **35** | **28행** |
-| **S49** | G4 `busan-private-car-charter-city-tour` × 4로케일 | 미측정 | **1~2** | **4행** |
+| ✅ **S13** | G3 7 + G4 1 슬러그 추출 ×4로케일 + `sectionUi` 등급 구멍 수정 | — | **1 (끝)** | **328 unit** |
+| **S14~** | 8슬러그 × 4로케일 — **실측 1,181,476자 · 328 unit** | 실측 | **~40** | **32행** |
 | **P1** | POI 빠진 로케일 126건 | 소규모 | **2~3** | §4 |
 | **R** | 검수(§R) — 번역과 **다른 세션**에서 | 병행 | 배치당 40~60 | §R |
 
@@ -254,19 +253,39 @@ ja·zh·zh-TW·es 넷에서 전부 영어였는데(`Male`·`Female`·`Friend`·`
 🔴 **G3 가 전체의 77% 다.** S1~S12(12세션)까지 하면 **라이브 20종 중 13종이 4언어 완비**가 되고,
 남은 7종이 G3 다. **게이트는 그 7종까지 끝난 뒤에 연다**(§0-3).
 
-### 6-3′. G3 7슬러그 — 추출부터 해야 한다
+### 6-3′. ✅ G3+G4 8슬러그 — **추출 완료(2026-08-07, S13). 이제 추정이 아니라 실측이다.**
 
-| 슬러그 | payload | 번역대상(추정) |
-|---|---|---|
-| `busan-small-group-sightseeing-tour-cruise-passengers` | 132,554 | 59,600 |
-| `seoul-suburbs-private-chartered-car-10hr` | 79,229 | 35,700 |
-| `seoul-suwon-hwaseong-folk-village-starfield-library` | 69,482 | 31,300 |
-| `seoul-suwon-hwaseong-waujeongsa-starfield` | 69,393 | 31,200 |
-| `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` | 68,586 | 30,900 |
-| `seoul-seoraksan-nami-island-morning-calm-day-tour` | 60,483 | 27,200 |
-| `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` | 58,542 | 26,300 |
+| 슬러그 | unit | **번역대상(실측)** | 고유 | payload 대비 |
+|---|---|---|---|---|
+| `busan-small-group-sightseeing-tour-cruise-passengers` | 15 | **58,705** | 496 | 0.441 |
+| `seoul-suwon-hwaseong-folk-village-starfield-library` | 10 | **38,381** | 330 | 0.382 |
+| `seoul-seoraksan-nami-island-morning-calm-day-tour` | 10 | **36,529** | 333 | 0.603 |
+| `seoul-suwon-hwaseong-waujeongsa-starfield` | 11 | **36,499** | 321 | 0.380 |
+| `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` | 9 | **35,947** | 334 | 0.353 |
+| `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` | 11 | **35,406** | 331 | 0.604 |
+| `seoul-suburbs-private-chartered-car-10hr` | 8 | **28,106** | 301 | 0.353 |
+| `busan-private-car-charter-city-tour` | 8 | **25,796** | 281 | 0.518 |
+| **로케일당 합계** | **82** | **295,369** | 2,160 | — |
 
-**번역대상 추정은 payload × 0.45** 다(추출 끝난 4슬러그 실측, 0.32~0.65).
+**4언어 합계 = 1,181,476자 · 328 unit.** (로케일당 3,411 세그먼트 중 고유 2,160 —
+**같은 로케일 안에서 36.7% 가 중복**이라 실제 손으로 쓰는 양은 이보다 적다.)
+
+🔴 **`payload × 비율` 은 애초에 나쁜 추정기였다 — 이번에 그게 증명됐다.**
+플랜은 와우정사 한 슬러그를 재서 **0.558** 을 전체에 밀었는데, 같은 슬러그의 지금 비율은
+**0.380** 이다. 번역대상이 줄어서가 아니다(38,744 → 36,499, 거의 그대로) —
+**payload 가 69,393 → 95,931 로 커졌다.** 사진 큐레이션 트랙(PR #787·#792)이 갤러리를
+늘렸기 때문이다. 즉 **분모에 이미지 URL 이 들어 있어서, 번역과 무관한 트랙이 비율을 움직인다.**
+→ **비율로 추정하지 마라. 추출은 읽기 전용이고 몇 분이면 끝나니 그냥 뽑아서 세라.**
+(실측 폭 0.353~0.604 — 서울 설악 2종만 0.6대인 건 그쪽 갤러리가 아직 안 늘어서다.)
+
+🔴 **추출기의 「등급 미부여」 경고가 진짜 구멍을 가리키고 있었다 — `sectionUi`.**
+안에 든 것은 섹션 제목·부제·픽업 문구이고 `TourAtAGlance`·`TourAtmosphereGallery`·
+`TourBookingSupportSection`·`TourDesktopBookingCard` 가 전부 렌더한다. 판정은 추측이 아니라
+라이브 데이터로 했다 — 이 키를 가진 유일한 슬러그의 **ko·ja·zh·zh-TW·es 다섯 로케일이 전부
+번역해 두었다.** 번역 대상인 게 이미 합의돼 있었고 **de/fr/it/ru 파이프라인만 등급이 없어
+조용히 건너뛰고 있었다.** `sectionUi: 'A1'` 추가(`sticky_booking_bar` 와 같은 부류·같은 이유).
+같이 `sql_overrides: 'FORBIDDEN'`(가격 오버라이드) — **번역하려는 게 아니라 경고에서 빼려는 것**이다.
+정상 키가 경고에 섞여 있으면 경고 자체를 흘려보게 되고, 그러면 다음 `sectionUi` 도 안 보인다.
 
 ### 🔴 2026-08-07 검증 프로브 — 가정 하나를 실제로 재봤다
 
@@ -455,19 +474,13 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 ✅ **S1 · S2 · S3a~S3f 는 2026-08-07 에 끝났다.** **러시아어 트랙 종료 —
 지금 라이브인 21종 중 ru 행이 없는 슬러그는 0개다**(판정은 DB 조인 쿼리, 아래).
 
-🔴 **다음은 S13 — G3 7슬러그 + G4 1슬러그의 `i18n:extract`다.** 이 8종만 de/fr/it/ru **네 언어 전부**가
-비어 있다(32행). 그 전까지 `in/` 에 입력이 없으므로 **번역 세션이 아니라 도구 세션**이다.
+✅ **S13 도 끝났다(2026-08-07)** — 8슬러그 × 4로케일 추출 완료, 입력이 전부 `i18n-work/in/` 에 있다.
+**남은 건 순수 번역이다: 328 unit · 1,181,476자**(§6-3′ 에 슬러그별 실측표).
 
-| 슬러그 | payload |
-|---|---|
-| `busan-small-group-sightseeing-tour-cruise-passengers` | 132,554 |
-| `seoul-suburbs-private-chartered-car-10hr` | 79,229 |
-| `seoul-suwon-hwaseong-folk-village-starfield-library` | 69,482 |
-| `seoul-suwon-hwaseong-waujeongsa-starfield` | 69,393 |
-| `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` | 68,586 |
-| `seoul-seoraksan-nami-island-morning-calm-day-tour` | 60,483 |
-| `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` | 58,542 |
-| `busan-private-car-charter-city-tour`(G4) | 미측정 |
+🔴 **다음 세션은 배치를 슬러그군 × 한 로케일로 잡아라**(§6-3 하단 규약).
+수원 3종은 뼈대가 같아 로케일당 고유 세그먼트가 321~334 로 거의 겹치고, 설악 2종도 마찬가지다.
+로케일별로 흩으면 그 이득을 버린다. 권장 순서:
+**① 수원 3종(de) → ② 설악 2종(de) → ③ 부산 소그룹(de) → ④ 서울근교+부산전세(de) → fr·it·ru 반복.**
 
 🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
 은퇴 상품이다(§6-5-14). `npm run i18n:verify -- --locale=ru` 의 「미번역 14 unit」이 정확히 이것이고,

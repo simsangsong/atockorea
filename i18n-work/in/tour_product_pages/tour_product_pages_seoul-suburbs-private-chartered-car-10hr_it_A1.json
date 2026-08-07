@@ -1,0 +1,376 @@
+{
+  "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:it:A1",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "it",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Seoul City or Suburbs Private Chartered Car Tour 10HR | Custom Itinerary | AtoC Korea"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Seoul City or Suburbs Private 10HR Charter | AtoC Korea"
+    },
+    "/seo/metaDescription": {
+      "source_en": "Private 10-hour Seoul-area charter with EN-speaking driver-guide: Gapyeong (Nami, Morning Calm), DMZ + Paju, or ⟦G0⟧ + Folk Village. Free Seoul pickup.",
+      "glossary": [
+        "⟦G0⟧ = Everland"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Seoul suburbs private car"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Seoul private 10-hour tour"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Seoul chartered car day tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Seoul private day trip"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Seoul custom itinerary tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "Custom",
+      "tm": "Personalizzate"
+    },
+    "/hero/meta/region": {
+      "source_en": "Seoul & Suburbs"
+    },
+    "/hero/meta/duration": {
+      "source_en": "10 hours"
+    },
+    "/hero/pills/0": {
+      "source_en": "Private Vehicle",
+      "tm": "Veicolo privato"
+    },
+    "/hero/pills/1": {
+      "source_en": "Licensed Driver-Guide",
+      "tm": "Autista-guida abilitato"
+    },
+    "/hero/pills/2": {
+      "source_en": "Custom Itinerary"
+    },
+    "/hero/tagline": {
+      "source_en": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours."
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Value"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "Good",
+      "tm": "Buono"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenic"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Buono"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Camminata"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Safety"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Excellent",
+      "tm": "Eccellente"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Fit"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Excellent",
+      "tm": "Eccellente"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Balance"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Flexible",
+      "tm": "Flessibile"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Panoramica"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinerario"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Dettagli"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Recensioni"
+    },
+    "/catalog_card/title": {
+      "source_en": "Seoul Private Car Charter"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Private Tour",
+      "tm": "Tour privato"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Fully Customizable"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Free Seoul Hotel Pickup"
+    },
+    "/catalog_card/region": {
+      "source_en": "Seoul & Suburbs"
+    },
+    "/catalog_card/duration": {
+      "source_en": "10 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Design your own day around Seoul or its suburbs with a private licensed driver-guide."
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A premium 10-hour private car charter that lets you build your own Seoul-area day. Choose one of three recommended routes—Nami Island + Morning Calm + ⟦G0⟧ + Gangchon Railbike, DMZ + Paju Outlet, or ⟦G1⟧ + Korean Folk Village—or send your own itinerary. Free hotel pickup is included for Seoul downtown stays.",
+      "glossary": [
+        "⟦G0⟧ = Petite France",
+        "⟦G1⟧ = Everland"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Seoul Private Car"
+    },
+    "/headlineLine2": {
+      "source_en": "Charter Tour (10HR)"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 10-hour service window starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 30,000 KRW per hour, cash to driver, subject to driver availability."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Your Seoul hotel (door-to-door)"
+    },
+    "/pickup_dropoff/return/0/note": {
+      "source_en": "Drop-off at the same hotel or any address within the supported area.",
+      "tm": "Rientro allo stesso hotel o a qualsiasi indirizzo all'interno dell'area coperta."
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Incheon International Airport (optional)"
+    },
+    "/pickup_dropoff/return/1/note": {
+      "source_en": "Same-day departure drop-off available; counts inside the service window."
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Your Seoul hotel (door-to-door)"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Door-to-door pickup at any hotel within the supported area.",
+      "tm": "Prelievo porta a porta presso qualsiasi hotel all'interno dell'area coperta."
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "Incheon International Airport (optional)"
+    },
+    "/pickup_dropoff/departure/1/note": {
+      "source_en": "Incheon and Gimpo airport pickups available on request; counts inside the 10-hour window."
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Selezioni la data e il numero di partecipanti per verificare la disponibilità in tempo reale e completare la prenotazione."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "vehicle",
+      "tm": "veicolo"
+    },
+    "/practicalAccordionItems/0/title": {
+      "source_en": "Pickup & drop-off",
+      "tm": "Prelievo e rientro"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Free hotel pickup is included for Seoul downtown areas (⟦G0⟧, Hongdae, Dongdaemun, ⟦G1⟧, Itaewon, etc.)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Stays outside Seoul downtown may incur an additional pickup fee"
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+      "tm": "La preghiamo di attendere nella hall dell'hotel 10 minuti prima dell'orario di partenza concordato"
+    },
+    "/practicalAccordionItems/0/content/3": {
+      "source_en": "Drop-off is at your Seoul hotel or any Seoul downtown location of your choice"
+    },
+    "/practicalAccordionItems/0/content/4": {
+      "source_en": "Incheon Airport pickup or drop-off is available with an additional 100,000 KRW one-way transfer fee"
+    },
+    "/practicalAccordionItems/0/content/5": {
+      "source_en": "If you need to reschedule, please contact us at least 2 days before the original reservation date"
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Free Seoul downtown hotel pickup; lobby meeting 10 minutes early"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Vehicle and Group Size",
+      "tm": "Veicolo e dimensione del gruppo"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "The vehicle type is matched to the exact number of passengers and luggage pieces",
+      "tm": "Il tipo di veicolo viene abbinato al numero esatto di passeggeri e di bagagli"
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Please fill in the exact passenger count and luggage count when booking",
+      "tm": "La preghiamo di indicare il numero esatto di passeggeri e di bagagli al momento della prenotazione"
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
+      "tm": "I veicoli tipici comprendono berline per 1 a 3 ospiti, SUV di media taglia per 4 a 5 ospiti e minivan Staria o Carnival per 6 a 9 ospiti"
+    },
+    "/practicalAccordionItems/1/content/3": {
+      "source_en": "Larger groups may be split across multiple vehicles or quoted separately",
+      "tm": "I gruppi più numerosi possono essere suddivisi su più veicoli o ricevere un preventivo separato"
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Vehicle assigned by group size and luggage volume",
+      "tm": "Veicolo assegnato in base alla dimensione del gruppo e al volume dei bagagli"
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "10-Hour Window and Overtime"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "The 10-hour window starts from your hotel pickup time"
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "Airport pickup or drop-off, when added, is included inside the same 10 hours"
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "Overtime is charged at 30,000 KRW per additional hour, paid in cash directly to the driver"
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "Overtime is subject to driver availability and applicable hours of service rules",
+      "tm": "Le ore aggiuntive sono subordinate alla disponibilità dell'autista e alle norme applicabili sull'orario di servizio"
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Strict 10-hour service window from pickup"
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "Extra Fees You Should Know About",
+      "tm": "Costi aggiuntivi da conoscere"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Alpaca World or Legoland: additional 60,000 KRW for crossing the province line (Gangwon-do)"
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "Incheon Airport pickup or drop-off: additional 100,000 KRW per one-way transfer"
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "All admission fees, meals, and personal shopping are paid directly by guests"
+    },
+    "/practicalAccordionItems/3/content/3": {
+      "source_en": "Optional driver gratuities are appreciated but not required",
+      "tm": "Le mance facoltative all'autista sono gradite ma non obbligatorie"
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Province-crossing, airport transfer, and admission costs"
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Weather policy",
+      "tm": "Politica in caso di maltempo"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "On rainy days, the driver-guide can shift toward indoor stops (museums, Paju Outlets, Heyri Art Village)"
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Heavy snow may close the 1100 Highland-equivalent winter routes in Gangwon-do"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "DMZ access can be affected by military training schedules and may require a same-day route change"
+    },
+    "/practicalAccordionItems/4/content/3": {
+      "source_en": "Final route adjustments are made together with the driver-guide on the day"
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Private format adapts well to changing conditions"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "What's included",
+      "tm": "Cosa è incluso"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Private vehicle (sedan, SUV, or van based on group size)",
+      "tm": "Veicolo privato (berlina, SUV o minivan in base alla dimensione del gruppo)"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Licensed English-speaking driver-guide",
+      "tm": "Autista-guida abilitato di lingua inglese"
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "Free hotel pickup and drop-off in Seoul downtown"
+    },
+    "/practicalAccordionItems/5/content/3": {
+      "source_en": "Fuel and tolls for the standard route"
+    },
+    "/practicalAccordionItems/5/content/4": {
+      "source_en": "All admission fees are not included; pay directly at each venue",
+      "tm": "Tutti i biglietti d'ingresso non sono inclusi; si pagano direttamente presso ciascuna struttura"
+    },
+    "/practicalAccordionItems/5/content/5": {
+      "source_en": "Meals are not included",
+      "tm": "I pasti non sono inclusi"
+    },
+    "/practicalAccordionItems/5/content/6": {
+      "source_en": "Personal shopping is not included",
+      "tm": "Gli acquisti personali non sono inclusi"
+    },
+    "/practicalAccordionItems/5/content/7": {
+      "source_en": "Driver gratuities are not included",
+      "tm": "Le mance all'autista non sono incluse"
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Vehicle and licensed driver-guide; admission and meals pay direct",
+      "tm": "Veicolo e autista-guida abilitato; ingressi e pasti a pagamento diretto"
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Cancellation",
+      "tm": "Cancellazione"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima del prelievo."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Le cancellazioni in giornata e le mancate presentazioni non sono rimborsabili."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima del prelievo."
+    }
+  },
+  "glossaryTokens": {
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Everland"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Petite France",
+      "⟦G1⟧": "Everland"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "⟦G0⟧": "Myeongdong",
+      "⟦G1⟧": "Insadong"
+    }
+  },
+  "tmHits": 44
+}

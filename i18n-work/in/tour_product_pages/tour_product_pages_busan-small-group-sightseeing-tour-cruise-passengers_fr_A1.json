@@ -1,0 +1,272 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:fr:A1",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
+  "locale": "fr",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Busan Small-Group Cruise Shore Excursion | AtoC Korea"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Busan Cruise Shore Excursion: Small-Group Day Tour | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule."
+    },
+    "/seo/metaDescription": {
+      "source_en": "8-hour small-group shore excursion from your Busan cruise terminal: ⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G6⟧, ⟦G5⟧, ⟦G0⟧, Songdo Cloud Trails and ⟦G4⟧. Van capped at 12.",
+      "glossary": [
+        "⟦G0⟧ = Village culturel de Gamcheon",
+        "⟦G1⟧ = Cimetière commémoratif de l'ONU",
+        "⟦G2⟧ = Haedong Yonggungsa",
+        "⟦G3⟧ = Marché Jagalchi",
+        "⟦G4⟧ = Parc Yongdusan",
+        "⟦G5⟧ = Marché Gukje",
+        "⟦G6⟧ = BIFF Square"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Busan cruise day tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Busan small group sightseeing"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "circuit ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Village culturel de Gamcheon"
+      ]
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Songdo cable car cruise tour"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "circuit ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Marché Jagalchi"
+      ]
+    },
+    "/hero/meta/stops": {
+      "source_en": "9 stops"
+    },
+    "/hero/meta/region": {
+      "source_en": "Busan"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 8 hours, planned to your cruise's port-call period"
+    },
+    "/hero/pills/0": {
+      "source_en": "Small group",
+      "tm": "Petit groupe"
+    },
+    "/hero/pills/1": {
+      "source_en": "Cruise"
+    },
+    "/hero/pills/2": {
+      "source_en": "Busan"
+    },
+    "/hero/tagline": {
+      "source_en": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers"
+    },
+    "/sectionUi/pickupTrustFooter": {
+      "source_en": "Cruise terminal pickup included · No extra charge"
+    },
+    "/sectionUi/pickupCategoryLabel": {
+      "source_en": "Cruise terminal pickup"
+    },
+    "/sectionUi/pickupDropoffSubtitle": {
+      "source_en": "Cruise terminal pickup included. Tap any location for details."
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Potentiel photo"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High",
+      "tm": "Élevé"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery",
+      "tm": "Paysages"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Bons"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Marche"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Challenging"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Adapté à la pluie"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Modéré"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Adapté aux familles"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Moderate",
+      "tm": "Modéré"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Rythme"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced",
+      "tm": "Équilibré"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Aperçu"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinéraire"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Détails"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Avis"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Small group",
+      "tm": "Petit groupe"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Busan"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "Cruise excursion"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "Cruise pickup"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Shared van"
+    },
+    "/catalog_card/title": {
+      "source_en": "Busan Cruise Shore: Small-Group Tour"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Cruise excursion"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Small shared van"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Pickup at port"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "8-hour shore day"
+    },
+    "/catalog_card/region": {
+      "source_en": "Busan"
+    },
+    "/catalog_card/duration": {
+      "source_en": "8 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time."
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: ⟦G2⟧, the ⟦G1⟧, lunch at your own expense, then ⟦G3⟧, ⟦G6⟧ and ⟦G5⟧ on foot, ⟦G0⟧, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and ⟦G4⟧. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard.",
+      "glossary": [
+        "⟦G0⟧ = Village culturel de Gamcheon",
+        "⟦G1⟧ = Cimetière commémoratif de l'ONU",
+        "⟦G2⟧ = Haedong Yonggungsa",
+        "⟦G3⟧ = Marché Jagalchi",
+        "⟦G4⟧ = Parc Yongdusan",
+        "⟦G5⟧ = Marché Gukje",
+        "⟦G6⟧ = BIFF Square"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Busan Cruise Shore"
+    },
+    "/headlineLine2": {
+      "source_en": "Small-Group Tour"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항)"
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Busan Port International Passenger Terminal (Choryang)"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+    },
+    "/pickup_dropoff/departure/0/time": {
+      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
+    },
+    "/pickup_dropoff/departure/1/note": {
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+    },
+    "/pickup_dropoff/departure/1/time": {
+      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en temps réel et finaliser votre réservation."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "personne"
+    }
+  },
+  "glossaryTokens": {
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Village culturel de Gamcheon",
+      "⟦G1⟧": "Cimetière commémoratif de l'ONU",
+      "⟦G2⟧": "Haedong Yonggungsa",
+      "⟦G3⟧": "Marché Jagalchi",
+      "⟦G4⟧": "Parc Yongdusan",
+      "⟦G5⟧": "Marché Gukje",
+      "⟦G6⟧": "BIFF Square"
+    },
+    "/seo/primaryKeywords/2": {
+      "⟦G0⟧": "Village culturel de Gamcheon"
+    },
+    "/seo/primaryKeywords/4": {
+      "⟦G0⟧": "Marché Jagalchi"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Village culturel de Gamcheon",
+      "⟦G1⟧": "Cimetière commémoratif de l'ONU",
+      "⟦G2⟧": "Haedong Yonggungsa",
+      "⟦G3⟧": "Marché Jagalchi",
+      "⟦G4⟧": "Parc Yongdusan",
+      "⟦G5⟧": "Marché Gukje",
+      "⟦G6⟧": "BIFF Square"
+    }
+  },
+  "tmHits": 22
+}

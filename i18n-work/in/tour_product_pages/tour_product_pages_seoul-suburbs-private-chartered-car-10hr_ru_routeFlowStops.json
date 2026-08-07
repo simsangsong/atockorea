@@ -1,0 +1,50 @@
+{
+  "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Hotel Pickup",
+      "tm": "Посадка у отеля"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Start",
+      "tm": "Начало"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Custom Route"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Choose"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Lunch Break",
+      "tm": "Перерыв на обед"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Reset",
+      "tm": "Пауза"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Afternoon Stops",
+      "tm": "Остановки во второй половине дня"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Continue",
+      "tm": "Продолжение"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Hotel Dropoff",
+      "tm": "Высадка у отеля"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "End",
+      "tm": "Конец"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 8
+}
