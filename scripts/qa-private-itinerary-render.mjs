@@ -2,6 +2,16 @@
  * Real-render check for the private-charter "Sample Itineraries" section.
  * A headless Chromium composites frames, so lazy images load and React hydrates
  * — neither is true in a backgrounded pane tab.
+ *
+ * Run: `node scripts/qa-private-itinerary-render.mjs <out-dir>` against a dev
+ * server on :3180. ⚠ The bundle registry loads JSON through cached `import()`,
+ * so after editing a bundle you must restart dev — a running server keeps
+ * serving the old durations and prices.
+ *
+ * No `COVERS` declaration on purpose: `gen-uiux-coverage.mjs` only knows the
+ * `app/(app)/tour-mode` surfaces and throws on a declaration outside them. This
+ * harness drives `/tour-product/[slug]`, so it lands in that doc's 판정 불가
+ * bucket by construction. That is a scope mismatch, not a coverage hole.
  */
 import { chromium } from "playwright";
 
@@ -89,6 +99,18 @@ for (const c of CASES) {
     els.map((i) => ({ src: i.currentSrc || i.src, w: i.naturalWidth })),
   );
 
+  // Owner instruction 2026-07-29: the 4-hour charter is no longer sold, and
+  // `durations[0]` is what the sticky bar defaults to — so a stale entry does
+  // not just sit in a list, it leads the page. Read it from the rendered
+  // picker rather than from the bundle: `pricingTiers` comes from the DB when
+  // the row has one and from the JSON only when it does not.
+  const durationOptions = await page.evaluate(() => {
+    const re = /^\s*4\s*(h|시간|小时|小時|時間|horas?)\s*$/i;
+    return [...document.querySelectorAll("button, option, label")]
+      .map((el) => (el.textContent || "").trim())
+      .filter((t) => t.length <= 8 && re.test(t));
+  });
+
   const file = `${OUT}/private-${c.slug.slice(0, 12)}-${c.locale}.png`;
   await section.screenshot({ path: file });
 
@@ -98,6 +120,7 @@ for (const c of CASES) {
   console.log(`   tab "${c.tab}" aria-selected=${selected}  contentChanged=${firstBefore !== firstAfter}`);
   console.log(`   images: ${imgs.length}, broken(naturalWidth=0): ${imgs.filter((i) => !i.w).length}`);
   for (const i of imgs.filter((x) => !x.w)) console.log(`      BROKEN ${i.src}`);
+  console.log(`   retired 4h option still offered: ${durationOptions.length ? JSON.stringify(durationOptions) : "no"}`);
   console.log(`   shot: ${file}`);
 }
 
