@@ -29,6 +29,7 @@ import OpsRoomVehiclePanel from '@/components/tour-ops/OpsRoomVehiclePanel';
 import OpsRoomCardSetPanel from '@/components/tour-ops/OpsRoomCardSetPanel';
 import OpsRoomNotesPanel from '@/components/tour-ops/OpsRoomNotesPanel';
 import { SkeletonRows } from '@/components/tour-mode/LoadingHint';
+import { ScrollRail } from '@/components/ui/RailArrows';
 
 const FEED_LIMIT = 80;
 
@@ -328,7 +329,7 @@ export default function OpsRoomDrawer({
 
         {view === 'chat' && (
         <div className="border-t border-[var(--tr-hairline)] px-3 pt-2">
-          <div className="flex gap-1.5 overflow-x-auto pb-2" style={{ scrollbarWidth: 'none' }}>
+          <ScrollRail className="flex gap-1.5 overflow-x-auto pb-2" arrowSize="sm">
             {/* A6 — ops speaks with the staff (guide) set, never guest phrases. */}
             {GUIDE_QUICK_REPLIES.map((preset) => (
               <button
@@ -342,7 +343,7 @@ export default function OpsRoomDrawer({
                 {preset.text.ko}
               </button>
             ))}
-          </div>
+          </ScrollRail>
           <form
             className="flex gap-2 pb-3"
             onSubmit={(event) => {

@@ -9,7 +9,7 @@
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
-import { COMPOSER_EMOJI, QUICK_REACTIONS } from '@/lib/tour-room/emoji';
+import { COMPOSER_EMOJI, EMOJI_GROUPS, QUICK_REACTIONS } from '@/lib/tour-room/emoji';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 const MSG: RoomMessage = {
@@ -55,8 +55,26 @@ describe('chat grammar — §5 decisions', () => {
   it('keeps the original five, in order, for aggregation continuity', () => {
     expect([...QUICK_REACTIONS]).toEqual(['👍', '❤️', '😂', '😮', '🙏']);
     expect(COMPOSER_EMOJI.slice(0, 5)).toEqual([...QUICK_REACTIONS]);
-    expect(COMPOSER_EMOJI).toHaveLength(30);
-    expect(new Set(COMPOSER_EMOJI).size).toBe(30);
+    expect(new Set(COMPOSER_EMOJI).size).toBe(COMPOSER_EMOJI.length);
+  });
+
+  /**
+   * The curated shelves (사장님 「고급스럽고 이쁘게」) have two properties the eye
+   * cannot check but the layout depends on: eight per shelf is what makes a
+   * row land on the room's 44px tap floor at 375px, and every glyph must fit
+   * the server's 8-unit cap — a ZWJ sequence would be rejected on POST and
+   * render as loose pieces on older phones.
+   */
+  it('every shelf is eight wide and every glyph is short enough to POST', () => {
+    expect(EMOJI_GROUPS).toHaveLength(4);
+    for (const group of EMOJI_GROUPS) {
+      expect(group.emoji).toHaveLength(8);
+      for (const emoji of group.emoji) {
+        expect(emoji.length).toBeLessThanOrEqual(8);
+        expect(emoji).not.toContain('‍'); // zero-width joiner
+      }
+    }
+    expect(EMOJI_GROUPS[0].emoji.slice(0, 5)).toEqual([...QUICK_REACTIONS]);
   });
 
   it('share is present on a text message; promote only when wired', () => {

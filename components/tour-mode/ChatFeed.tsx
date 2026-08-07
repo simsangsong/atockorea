@@ -1289,24 +1289,33 @@ export default function ChatFeed({
         <Sheet open onClose={() => setActionMsg(null)} closeLabel={action.close} title={action.title}>
           <div className="flex flex-col">
             {onReact && (
-              <div
-                className="mb-1 flex items-center justify-center gap-1 border-b border-[var(--tr-hairline)] px-1 pb-2.5"
-                data-testid="quick-reactions"
-              >
-                {QUICK_REACTIONS.map((emoji) => (
-                  <button
-                    key={emoji}
-                    type="button"
-                    onClick={() => {
-                      onReact(actionMsg.id, emoji);
-                      setActionMsg(null);
-                    }}
-                    className="flex h-10 w-10 items-center justify-center rounded-full text-xl leading-none active:bg-[var(--tr-surface-2)]"
-                    data-testid={`react-${emoji}`}
-                  >
-                    {emoji}
-                  </button>
-                ))}
+              /*
+               * 「좀 더 고급스럽고 이쁘게」 (사장님 2026-08-07) — five glyphs
+               * floating on white read as leftovers from the grid that used to
+               * be here. Riding a soft pill, the way every tapback bar does,
+               * makes them one designed control: the eye lands on the strip,
+               * not on five separate objects.
+               */
+              <div className="mb-1 flex justify-center border-b border-[var(--tr-hairline)] px-1 pb-3 pt-0.5">
+                <div
+                  className="flex items-center gap-0.5 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5"
+                  data-testid="quick-reactions"
+                >
+                  {QUICK_REACTIONS.map((emoji) => (
+                    <button
+                      key={emoji}
+                      type="button"
+                      onClick={() => {
+                        onReact(actionMsg.id, emoji);
+                        setActionMsg(null);
+                      }}
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-xl leading-none transition-transform duration-100 active:scale-90"
+                      data-testid={`react-${emoji}`}
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
             {onReply && (

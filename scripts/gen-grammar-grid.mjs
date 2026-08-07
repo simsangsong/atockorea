@@ -42,10 +42,22 @@ const EMOJI_SET = 'lib/tour-room/emoji.ts';
  * feature was fine. Listing EMOJI_SET in `files` keeps the missing/empty guard
  * on it even when the pattern matches elsewhere.
  */
-const emojiCount = (name) => {
+const emojiCounts = () => {
   const src = readFileSync(path.join(ROOT, EMOJI_SET), 'utf8');
-  const m = src.match(new RegExp(`export const ${name} = \\[([^\\]]*)\\]`));
-  return m ? (m[1].match(/'/g) ?? []).length / 2 : 0;
+  const quick = (src.match(/export const QUICK_REACTIONS = \[([^\]]*)\]/)?.[1].match(/'/g) ?? []).length / 2;
+  // Count the `emoji: [...]` arrays, not the whole EMOJI_GROUPS block — the
+  // block also carries a quoted `key:` per shelf, and counting those would
+  // report four phantom glyphs. A `...QUICK_REACTIONS` spread contributes its
+  // own length.
+  const shelves = [...src.matchAll(/emoji:\s*\[([^\]]*)\]/g)].map((m) => m[1]);
+  const picker = shelves.reduce(
+    (sum, body) =>
+      sum +
+      (body.match(/'/g) ?? []).length / 2 +
+      (body.match(/\.\.\.QUICK_REACTIONS/g) ?? []).length * quick,
+    0,
+  );
+  return { quick, picker, shelves: shelves.length };
 };
 
 /** verb → probe. `must` marks verbs the self-check requires to be present. */
@@ -56,7 +68,7 @@ const VERBS = [
     files: [CHAT, EMOJI_SET],
     pattern: /data-testid="quick-reactions"/,
     must: true,
-    detail: () => `${emojiCount('QUICK_REACTIONS')}종 · 소형 1행 (사장님 2026-08-07)`,
+    detail: () => `${emojiCounts().quick}종 · 소형 1행 (사장님 2026-08-07)`,
   },
   { name: '복사', files: [CHAT], pattern: /action-copy/, must: true },
   { name: '원문 ↔ 번역 토글', files: [CHAT], pattern: /toggleOriginal/, must: true },
@@ -76,7 +88,10 @@ const VERBS = [
     name: '컴포저 이모지 피커',
     files: [COMPOSER, EMOJI_SET],
     pattern: /EmojiPicker|emoji-picker/i,
-    detail: () => `${emojiCount('QUICK_REACTIONS') + emojiCount('COMPOSER_EMOJI')}종 · 캐럿 삽입`,
+    // 🔴 No "N묶음" here. The set is authored in fours of eight, but the tray
+    // shows no captions (사장님 2026-08-07) and this grid records what the UI
+    // DOES, not how the constant is written.
+    detail: () => `${emojiCounts().picker}종 · 8열 그리드 · 캐럿 삽입`,
   },
   { name: '이미지 붙여넣기 (클립보드, §5-6)', files: [COMPOSER], pattern: /onPaste|clipboardData/ },
   { name: '링크 프리뷰 (텍스트만, §5-4)', files: [CHAT], pattern: /LinkPreviewCard/ },

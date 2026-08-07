@@ -13,11 +13,12 @@
  * still defends with an explicit `tours.length === 0` short-circuit.
  */
 
-import { useMemo } from "react";
+import { useMemo, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Sparkles } from "lucide-react";
 import TourListCard from "@/components/tour/TourListCard";
+import { RailArrows } from "@/components/ui/RailArrows";
 import { useI18n, useTranslations } from "@/lib/i18n";
 import {
   inferTourCatalogType,
@@ -112,6 +113,7 @@ export type TourShelfProps = {
 export function TourShelf({ shelf, className, mediaBySlug }: TourShelfProps) {
   const { locale } = useI18n();
   const t = useTranslations();
+  const railRef = useRef<HTMLDivElement>(null);
   const titleKey = `toursList.shelves.${shelf.labelI18nKey}`;
   const subtitleKey = shelf.subtitleI18nKey ? `toursList.shelves.${shelf.subtitleI18nKey}` : null;
   const title = t(titleKey);
@@ -211,9 +213,10 @@ export function TourShelf({ shelf, className, mediaBySlug }: TourShelfProps) {
           Right edge: matches with `mx` + the trailing spacer below.
         */}
         <div
+          ref={railRef}
           className="
             -mx-2 flex snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain
-            scroll-smooth scrollbar-hide px-5 pb-2 [-webkit-overflow-scrolling:touch]
+            scroll-smooth rail-scrollbar px-5 pb-2 [-webkit-overflow-scrolling:touch]
             sm:-mx-4 sm:gap-4 sm:px-7
           "
         >
@@ -225,11 +228,16 @@ export function TourShelf({ shelf, className, mediaBySlug }: TourShelfProps) {
               `px-` so the rail reads symmetric. */}
           <div className="shrink-0 w-3 sm:w-5" aria-hidden />
         </div>
-        {/* Right-edge fade — premium magazine cue that more cards exist horizontally. */}
+        {/* Right-edge fade — premium magazine cue that more cards exist horizontally.
+            Stops 10px above the bottom so it never washes out the right end of the
+            `.rail-scrollbar` thumb on desktop (the cards already end at `pb-2`). */}
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-white via-white/60 to-transparent sm:w-16"
+          className="pointer-events-none absolute bottom-2.5 right-0 top-0 w-12 bg-gradient-to-l from-white via-white/60 to-transparent sm:w-16"
         />
+        {/* Sits above the fade (z-10) and is centred on the card image band
+            rather than the whole rail, so it never floats over the price row. */}
+        <RailArrows scrollerRef={railRef} className="top-[38%]" />
       </div>
     </section>
   );

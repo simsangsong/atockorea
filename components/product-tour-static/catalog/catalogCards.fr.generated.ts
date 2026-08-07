@@ -49,8 +49,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Balade au bord du lac",
         "Petit groupe"
       ],
-      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
-      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "heroImage": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/01-chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
       "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées. Départs les lundis, jeudis et samedis."
     },

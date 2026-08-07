@@ -12,12 +12,22 @@
  *
  * It stays OPEN after a tap. Emoji come in runs ("😂😂"), and a picker that
  * closes on every pick makes the second one cost four taps.
+ *
+ * 🔴 NO CAPTIONS. 사장님 지시(같은 날, 세 번째): 「이모지 리스트 분류는 빼고 그냥
+ * 이모지들만 배열하도록 글씨는 없애고」. A short-lived 반응/기분/여행/하루 label row
+ * per group was removed — this is a grid of glyphs and nothing else. The set is
+ * still AUTHORED in fours of eight (`EMOJI_GROUPS`) and the grid is 8 wide, so
+ * each theme still lands as its own row; it simply is not announced.
+ *
+ * Do not reintroduce headings here. If the set ever needs sections, the fix is
+ * a wider tray or fewer glyphs, not text over them.
  */
 
 import { useEffect } from 'react';
 import { COMPOSER_EMOJI } from '@/lib/tour-room/emoji';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
+/** Screen-reader name for the tray. Not rendered — the panel shows no text. */
 const TITLE: Record<RoomLocale, string> = {
   en: 'Emoji',
   ko: '이모지',
@@ -61,10 +71,10 @@ export default function EmojiPicker({
       role="group"
       aria-label={TITLE[locale] ?? TITLE.en}
       data-testid="emoji-picker"
-      className="tr-anim-panel-in max-h-[38dvh] overflow-y-auto border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 pt-3"
+      className="tr-anim-panel-in max-h-[42dvh] overflow-y-auto border-t border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-2 pt-3"
       style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))' }}
     >
-      <div className="grid grid-cols-8 justify-items-center gap-y-1">
+      <div className="grid grid-cols-8 justify-items-center gap-y-1.5">
         {COMPOSER_EMOJI.map((emoji) => (
           <button
             key={emoji}
@@ -74,7 +84,10 @@ export default function EmojiPicker({
             // which silently turned "insert at the caret" into "append".
             onMouseDown={(event) => event.preventDefault()}
             onClick={() => onPick(emoji)}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-2xl leading-none active:bg-[var(--tr-surface-2)]"
+            // The press state is a scale, not a grey disc: at this tile size a
+            // filled background reads as a chip and the glyph stops being the
+            // object you are picking.
+            className="flex h-11 w-11 items-center justify-center rounded-2xl text-2xl leading-none transition-transform duration-100 active:scale-90 active:bg-[var(--tr-surface-2)]"
             data-testid={`emoji-${emoji}`}
           >
             {emoji}

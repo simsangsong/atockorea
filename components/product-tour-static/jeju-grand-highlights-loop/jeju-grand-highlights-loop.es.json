@@ -15,7 +15,7 @@
       "Tour al tubo de lava de Manjanggul",
       "Tour del espectáculo de haenyeo en Jeju"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "title": "Gran Circuito de los Mejores Atractivos de Jeju · 3 sitios UNESCO + haenyeo + acantilados | AtoC",
     "description": "Tour de un día en grupo reducido por los mejores atractivos de toda la isla de Jeju: humedal de Hallasan 1100 → acantilado de Jusangjeolli → cascada Jeongbang → espectáculo de buceo libre de las haenyeo → Seongsan Ilchulbong → tubo de lava de Manjanggul. Tres sitios del Patrimonio Mundial de la UNESCO en un día de 10,5 horas."
   },
@@ -33,8 +33,8 @@
       "3 sitios UNESCO",
       "Ideal para visitantes de un solo día"
     ],
-    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "heroImage": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+    "thumbnail": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "priceLabel": "",
     "shortCardDescription": "Una ruta intensa por toda la isla que enlaza tres sitios del Patrimonio Mundial de la UNESCO —Hallasan, Seongsan Ilchulbong y el tubo de lava de Manjanggul— con un espectáculo en vivo de buceo libre de las haenyeo, los acantilados columnares de Jusangjeolli y la cascada Jeongbang que cae al océano. Los atractivos emblemáticos de Jeju, concentrados en un solo día.",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "imageUrl": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "imagePosition": "center 35%",
     "tagline": "Un día intenso por toda la isla: un humedal alpino de Hallasan, acantilados marinos columnares, una cascada que cae al océano, un espectáculo en vivo de buceo libre de las haenyeo, el cono de tobas de Seongsan Ilchulbong y el tubo de lava de Manjanggul. Tres sitios del Patrimonio Mundial de la UNESCO más los dos hitos naturales más queridos de Jeju.",
     "pills": [
@@ -135,7 +135,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1",
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1"
@@ -143,122 +143,202 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 1",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 1",
+      "caption": "Cascada Jeongbang — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 1",
+      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 1",
+      "caption": "Seongsan Ilchulbong — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "location": "Tubo de lava de Manjanggul",
+      "alt": "Tubo de lava de Manjanggul — gallery image 1",
+      "caption": "Tubo de lava de Manjanggul — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2",
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2"
     },
     {
-      "id": 3,
+      "id": 8,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
       "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3",
       "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3"
     },
     {
-      "id": 4,
+      "id": 9,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+      "location": "Acantilado de Daepo Jusangjeolli",
+      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 3",
+      "caption": "Acantilado de Daepo Jusangjeolli — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
       "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4",
       "caption": "Acantilado de Daepo Jusangjeolli — photo 4"
     },
     {
-      "id": 5,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
       "location": "Acantilado de Daepo Jusangjeolli",
       "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5",
       "caption": "Acantilado de Daepo Jusangjeolli — photo 5"
     },
     {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "Acantilado de Daepo Jusangjeolli",
-      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 6",
-      "caption": "Acantilado de Daepo Jusangjeolli — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "Acantilado de Daepo Jusangjeolli",
-      "alt": "Acantilado de Daepo Jusangjeolli — gallery image 7",
-      "caption": "Acantilado de Daepo Jusangjeolli — photo 7"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "Cascada Jeongbang",
-      "alt": "Cascada Jeongbang — gallery image 8",
-      "caption": "Cascada Jeongbang — photo 8"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "Cascada Jeongbang",
-      "alt": "Cascada Jeongbang — gallery image 9",
-      "caption": "Cascada Jeongbang — photo 9"
-    },
-    {
-      "id": 10,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "Cascada Jeongbang",
-      "alt": "Cascada Jeongbang — gallery image 10",
-      "caption": "Cascada Jeongbang — photo 10"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
-      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 11",
-      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 11"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "Seongsan Ilchulbong",
-      "alt": "Seongsan Ilchulbong — gallery image 12",
-      "caption": "Seongsan Ilchulbong — photo 12"
-    },
-    {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "Seongsan Ilchulbong",
-      "alt": "Seongsan Ilchulbong — gallery image 13",
-      "caption": "Seongsan Ilchulbong — photo 13"
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 2",
+      "caption": "Cascada Jeongbang — photo 2"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "Seongsan Ilchulbong",
-      "alt": "Seongsan Ilchulbong — gallery image 14",
-      "caption": "Seongsan Ilchulbong — photo 14"
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 3",
+      "caption": "Cascada Jeongbang — photo 3"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "Seongsan Ilchulbong",
-      "alt": "Seongsan Ilchulbong — gallery image 15",
-      "caption": "Seongsan Ilchulbong — photo 15"
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 4",
+      "caption": "Cascada Jeongbang — photo 4"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "Cascada Jeongbang",
+      "alt": "Cascada Jeongbang — gallery image 5",
+      "caption": "Cascada Jeongbang — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 2",
+      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 3",
+      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 4",
+      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+      "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+      "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 5",
+      "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 2",
+      "caption": "Seongsan Ilchulbong — photo 2"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 3",
+      "caption": "Seongsan Ilchulbong — photo 3"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 4",
+      "caption": "Seongsan Ilchulbong — photo 4"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
+      "location": "Seongsan Ilchulbong",
+      "alt": "Seongsan Ilchulbong — gallery image 5",
+      "caption": "Seongsan Ilchulbong — photo 5"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
       "location": "Tubo de lava de Manjanggul",
-      "alt": "Tubo de lava de Manjanggul — gallery image 16",
-      "caption": "Tubo de lava de Manjanggul — photo 16"
+      "alt": "Tubo de lava de Manjanggul — gallery image 2",
+      "caption": "Tubo de lava de Manjanggul — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+      "location": "Tubo de lava de Manjanggul",
+      "alt": "Tubo de lava de Manjanggul — gallery image 3",
+      "caption": "Tubo de lava de Manjanggul — photo 3"
     }
   ],
   "itineraryStops": [
@@ -269,7 +349,7 @@
       "name": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
       "category": "Humedal Alpino — Sitio Ramsar + dentro del Patrimonio Mundial UNESCO de Hallasan",
       "description": "**El Humedal de Altitud 1100 de Hallasan (한라산 1100고지 습지)** es un sistema de humedales alpinos de gran altitud en la meseta de Hallasan, ubicado **exactamente a 1.100 m sobre el nivel del mar** a lo largo de la **Ruta 1100 — la carretera nacional más alta de Corea** que une la ciudad de Jeju con Seogwipo Jungmun. \n\nEl sitio es un **Humedal de Importancia Internacional Ramsar (Sitio n.º 1893, designado el 12 de octubre de 2009)**, incluido dentro del **Sitio Patrimonio Mundial UNESCO de Hallasan (2007)**, la **Reserva de la Biosfera UNESCO de la Isla de Jeju (2002)** y el **Parque Nacional de Hallasan (1970)** — lo que convierte a este lugar en uno de los pocos del mundo con **cuatro designaciones internacionales/nacionales superpuestas**. \n\nEl humedal comprende **más de 16 marismas y pozas de agua dulce discontinuas** distribuidas a lo largo de una sección de meseta de baja pendiente que capta y retiene el agua de lluvia, formando **pequeños lagos permanentes y turberas** que albergan diversas comunidades florísticas con un endemismo significativo de Jeju. \n\nLa biodiversidad registrada incluye **3 especies de aves amenazadas y 1 especie vegetal amenazada en Corea**, además de especies de mamíferos, reptiles e insectos endémicas de la isla de Jeju. \n\nEl sitio recibió **900.000 visitantes en 2008** (datos del Centro de Visitantes del Monte Halla). Experiencia para el visitante: un **paseo entablado en bucle de 1 km** con miradores, señalización interpretativa y una pequeña exposición de historia natural en el punto de inicio. \n\n**El follaje otoñal (octubre–noviembre)** y **las escenas nevadas invernales (diciembre–febrero)** son las temporadas más fotografiadas; **primavera + verano** ofrecen visibilidad de la flora del humedal y las especies endémicas. \n\n**Entrada GRATUITA**; el **Área de Descanso 1100 (1100 휴게소)** adyacente dispone de baños interiores + cafetería + pequeña tienda de recuerdos. \n\n**La importancia cultural y religiosa** para las comunidades locales está documentada en la ficha Ramsar — peregrinaciones chamánicas históricas vinculadas a los espíritus del agua de la montaña.",
-      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "highlights": [
         "**Sitio Ramsar n.º 1893** (designado el 12 de oct. de 2009) — Humedal de Importancia Internacional",
         "**1.100 m sobre el nivel del mar** — en la **carretera nacional más alta** de Corea (Ruta 1100)",
@@ -316,21 +396,21 @@
         "tip": "Lleve ropa de abrigo en capas — la temperatura es entre 5 y 10 °C más fría que en la costa de Jeju; compruebe las condiciones de la carretera en invierno; combínelo con las Cataratas Cheonjeyeon si desciende hacia el sur"
       },
       "images": [
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+        "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+        "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -338,7 +418,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
           "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1",
           "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1"
@@ -346,7 +426,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
           "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2",
           "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2"
@@ -354,7 +434,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
           "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3",
           "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3"
@@ -368,7 +448,7 @@
       "name": "Acantilado de Daepo Jusangjeolli",
       "category": "Costa Volcánica — Lava con Juntas Columnares Hexagonales",
       "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** es un **tramo de 1 km de acantilado de basalto con juntas columnares hexagonales** en la costa de Jungmun — declarado **Monumento Natural n.º 443 el 6 de enero de 2005**. \n\nLas columnas se elevan **30–40 m** sobre el mar, dispuestas en **polígonos de 5 a 7 lados** perfectamente encajados (principalmente hexágonos) — una geometría producida cuando **la lava basáltica fundida de una erupción en el flanco del Hallasan (~250 000–140 000 años atrás) alcanzó el océano y se contrajo al enfriarse**, fracturándose de forma perpendicular a la superficie de enfriamiento. \n\nA nivel mundial, las juntas columnares son más conocidas en **Giant's Causeway (Reino Unido)**, **Devils Postpile (EE. UU.)** y **la Cueva de Fingal (Escocia)** — Jusangjeolli es el **ejemplo más destacado de Asia Oriental** y el más accesible. \n\nEl **paseo marítimo de 800 m en bucle** lleva a los visitantes hasta el borde del acantilado con barandilla, directamente sobre las columnas; **en días de marea alta, las olas rompen contra las columnas y lanzan spray hasta 20 m de altura**, en ocasiones por encima de la barandilla. \n\nEntrada: **Adultos ₩2 000 / Jóvenes ₩1 000 / GRATIS menores de 7 años y mayores de 65**. El lugar forma parte del **Geoparque Global de Jeju (designación UNESCO octubre de 2010)** — uno de los **13 geositios oficiales** de la isla, junto a Seongsan Ilchulbong, el Tubo de Lava de Manjanggul y Suwolbong. \n\nLa plataforma superior del acantilado es **totalmente accesible** (para sillas de ruedas y cochecitos). Tres miradores a lo largo del recorrido ofrecen distintos ángulos de las columnas: el **primer mirador** muestra las columnas de perfil (ideal para capturar la geometría hexagonal), el **mirador intermedio** permite mirar directamente hacia abajo para ver los patrones en la parte superior de las columnas, y el **mirador del fondo** capta el trazado costero de 1 km con el Hallasan de fondo en días despejados. \n\n**Ventana óptima para fotografía: 14:00–16:00**, cuando la luz del sol en descenso ilumina de frente las caras de las columnas; las visitas al atardecer ofrecen composiciones en silueta, pero pierden la textura del detalle columnar. Horario: **09:00–18:00 (última entrada 17:30)**, abierto todo el año.",
-      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "highlights": [
         "**Monumento Natural n.º 443** — declarado el **6 de enero de 2005**, el Monumento Natural costero de Jeju más reciente",
         "Las columnas se elevan **30–40 m**, dispuestas en **polígonos de 5 a 7 lados** (principalmente hexágonos) a lo largo de **1 km** de costa",
@@ -416,31 +496,31 @@
         "tip": "Incluso en un día soleado, la costa suele sentirse más fría y ventosa que el interior de Jeju."
       },
       "images": [
-        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-        "/images/tours/jusangjeolli/photo-005.webp"
+        "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+        "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+        "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -448,7 +528,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 1",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 1"
@@ -456,7 +536,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 2",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2"
@@ -464,7 +544,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 3",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 3"
@@ -472,7 +552,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 4",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4"
@@ -480,7 +560,7 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "location": "Acantilado de Daepo Jusangjeolli",
           "caption": "Acantilado de Daepo Jusangjeolli — photo 5",
           "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5"
@@ -494,7 +574,7 @@
       "name": "Cascada Jeongbang",
       "category": "Cascada Costera — Cae Directamente al Océano (Única en Asia)",
       "description": "**Las Cataratas Jeongbang (정방폭포, 'cataratas que caen directamente al mar')** son la **única cascada en Asia que cae directamente al océano** — una **caída vertical de 23 m** desde un acantilado de basalto al Pacífico, sin poza intermedia ni desembocadura de lecho fluvial. \n\nLa cascada mide **8 m de ancho** con una poza basal de 5 m que alcanza el mar abierto en cada marea. Esta distinción geográfica única es la razón por la que Jeongbang es una de las **'Yeongjusipgyeong (영주십경, Las 10 Maravillas Escénicas de Jeju)'** — un canon literario de la era Joseon de los paisajes más poéticos de la isla. \n\nLa lista Yeongjusipgyeong, codificada por el **erudito confuciano del siglo XVIII Lee Won-jo (이원조)**, incluye también el Amanecer de Seongsan, la cima del Hallasan y Cheonjeyeon — lo que significa que el circuito de hoy abarca **3 de las 10** en un solo día. Tallada en la cara del acantilado junto a las cataratas se encuentra la inscripción **'Seobulgwacha (서불과차, Seobul se dirigió de vuelta al oeste)'**, atribuida a **Xu Fu (서복)**, el legendario alquimista de la dinastía Qin enviado por el **Emperador Qin Shi Huang (~219 a. C.)** en busca del elixir de la inmortalidad. \n\nLa tradición local cuenta que pasó por aquí en su camino de regreso — la inscripción es la raíz etimológica del topónimo **'Seogwipo' (서귀포, 'donde Seo se dirigió de regreso')**. \n\nEl acceso es a través de **130 escalones de piedra** que descienden a la cala (bastante empinados — se recomienda calzado cómodo para las rodillas). Entrada: **Adulto ₩2.000 / Joven ₩1.000 / GRATIS para menores de 7 años y mayores de 65**. \n\nEl fresco microclima generado por el estruendoso oleaje en la base es un reconocido refugio en verano. Las **haenyeo locales (해녀, mujeres buceadoras — Patrimonio Cultural Inmaterial de la UNESCO 2016)** venden a veces erizo de mar fresco, abulón y caracola directamente en la cala en días de mar en calma — una rara oportunidad fotográfica para ver a la comunidad de buceo trabajando fuera de su contexto formal de museo.",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**La única cascada de Asia que cae directamente al océano** — caída vertical de 23 m, sin lecho fluvial",
         "Las cataratas miden **8 m de ancho** con una poza basal de 5 m que desemboca en el Pacífico con cada marea",
@@ -542,21 +622,31 @@
         "tip": "Debido a las escaleras y el camino rocoso, la visita suele sentirse más activa físicamente sobre el terreno de lo que parece en el mapa."
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -564,7 +654,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "Cascada Jeongbang",
           "caption": "Cascada Jeongbang — photo 1",
           "alt": "Cascada Jeongbang — gallery image 1"
@@ -572,7 +662,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "Cascada Jeongbang",
           "caption": "Cascada Jeongbang — photo 2",
           "alt": "Cascada Jeongbang — gallery image 2"
@@ -580,10 +670,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "Cascada Jeongbang",
           "caption": "Cascada Jeongbang — photo 3",
           "alt": "Cascada Jeongbang — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 4",
+          "alt": "Cascada Jeongbang — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "Cascada Jeongbang",
+          "caption": "Cascada Jeongbang — photo 5",
+          "alt": "Cascada Jeongbang — gallery image 5"
         }
       ]
     },
@@ -632,7 +738,7 @@
       "name": "Espectáculo de buceo libre de las haenyeo de Seongsan",
       "category": "Patrimonio Inmaterial de la UNESCO — Actuación en vivo de las mujeres buceadoras",
       "description": "Las haenyeo (mujeres buceadoras) de Jeju están reconocidas como Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO (2016). En la cala del lado sur de Seongsan Ilchulbong, buceadoras veteranas —muchas de entre 60 y 80 años— ofrecen una demostración de buceo libre una vez al día, normalmente alrededor de las 14:00. Abren con los tradicionales cantos de trabajo y luego se sumergen entre 5 y 10 m sin equipo de respiración para recolectar caracola, erizo de mar y abulón, emergiendo con el característico silbido de respiración 'sumbi-sori' que les permite liberar el aire tras una larga inmersión. Después del espectáculo, las buceadoras venden su captura fresca cortada como sashimi justo junto al agua. Es un encuentro raro y vivo con una cultura de buceo matrifocal de 400 años que va desapareciendo poco a poco a medida que las buceadoras que quedan envejecen. La demostración se realiza al aire libre y depende de las condiciones del mar; los días en que se cancela, la ruta visita en su lugar el Museo de las Haenyeo en la cercana Hado, que cuenta la misma historia en interiores a través de equipo de buceo, historia y películas.",
-      "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "image": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
       "highlights": [
         "Patrimonio Cultural Inmaterial de la UNESCO (2016) — las mujeres buceadoras de Jeju",
         "Demostración de buceo libre en vivo en la cala de Seongsan (una vez al día, alrededor de las 14:00)",
@@ -672,15 +778,76 @@
         "walking": "Mínima — un breve sendero llano que baja hasta la cala"
       },
       "images": [
-        "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+        "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+        "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+        "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+        "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+        "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+          "url": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
           "source": "atoc-korea"
         }
       ],
-      "galleryItems": [],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+          "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+          "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 1",
+          "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+          "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+          "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 2",
+          "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+          "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+          "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 3",
+          "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+          "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+          "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 4",
+          "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+          "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+          "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 5",
+          "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 5"
+        }
+      ],
       "number": 5,
       "alternate": {
         "label": "Si el espectáculo se cancela",
@@ -695,7 +862,7 @@
       "name": "Seongsan Ilchulbong",
       "category": "Cono de Tobas UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
       "description": "**Seongsan Ilchulbong (성산일출봉, 'Pico del Amanecer')** es un **cono hidrovolcánico de tipo surtseyano de 5.000 años de antigüedad** — una rara forma de relieve creada cuando una erupción basáltica submarina irrumpió en la superficie del mar, el magma encontró el agua del océano y la explosión de vapor resultante formó un **cráter en forma de fortaleza de 182 m** de altura en lugar de un cono de lava típico. \n\nEl resultado es lo que la UNESCO denomina formalmente **'un ejemplo excepcional de un edificio volcánico emergente de tipo surtseyano'**. El cráter mide **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas en el borde** que la tradición local compara con una corona de piedra. \n\nSeongsan posee la **triple designación UNESCO**: **Patrimonio Natural Mundial (inscrito el 02-07-2007)** como parte de la propiedad **'Isla Volcánica de Jeju y Tubos de Lava'**, **Reserva de la Biosfera (2002)** y **Geoparque Mundial (10-2010)** — una combinación igualada únicamente por el propio Hallasan entre los sitios coreanos. \n\n**18 cuevas militares japonesas de la Segunda Guerra Mundial** (refugios para embarcaciones kamikazes, 1945) están excavadas en la base marítima. Sendero: **0,8 km de ida, ~140 m de desnivel, 60 min de ida y vuelta** por amplios escalones de piedra. \n\nLas **demostraciones de haenyeo (해녀)** se realizan **diariamente a las 14:00 (1 espectáculo/día)** en la cala rocosa bajo el cono — las buceadoras de Jeju (Patrimonio Cultural Inmaterial de la UNESCO 2016) se sumergen sin equipo de buceo. Entrada actualizada en **abril de 2025**: **Adultos ₩5.000 / Jóvenes y niños ₩2.500 / Grupo adultos ₩1.600**, gratis menores de 7 años y mayores de 65. \n\nLa plataforma de la cumbre también forma parte del canon de las **Yeongjusipgyeong (Las 10 Vistas Panorámicas de Jeju)**, y sigue siendo el principal destino de **peregrinación anual al amanecer de Año Nuevo** en Corea — más de 50.000 visitantes ascienden antes del alba el 1 de enero, con programación del festival municipal del amanecer desde 1995. \n\nLa **Isla Udo (우도, 'Isla de la Vaca')** — la mayor isla volcánica secundaria de Corea — se distingue claramente a 4 km de la costa desde la cima, accesible en **ferry de 15 min desde el Puerto de Seongsan** (₩10.500 ida y vuelta) para los visitantes con tiempo extra en otro itinerario.",
-      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "image": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**Triple UNESCO**: Patrimonio Mundial 02-07-2007 + Reserva de la Biosfera 2002 + Geoparque Mundial 10-2010",
         "**5.000 años de antigüedad** — erupción hidrovolcánica de tipo surtseyano, nacida de la explosión de vapor al encontrarse el magma con el agua del mar",
@@ -743,45 +910,31 @@
         "tip": "La afluencia de visitantes, el estado del tiempo y el nivel físico del grupo pueden influir en la exigencia y el disfrute de la experiencia en la cima."
       },
       "images": [
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-        "/images/tours/seongsan-ilchulbong/photo-006.webp",
-        "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp"
+        "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+        "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+        "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "url": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "url": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "url": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "url": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "url": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
           "source": "atoc-korea"
         }
       ],
@@ -789,7 +942,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 1",
           "alt": "Seongsan Ilchulbong — gallery image 1"
@@ -797,7 +950,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 2",
           "alt": "Seongsan Ilchulbong — gallery image 2"
@@ -805,7 +958,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 3",
           "alt": "Seongsan Ilchulbong — gallery image 3"
@@ -813,7 +966,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 4",
           "alt": "Seongsan Ilchulbong — gallery image 4"
@@ -821,26 +974,10 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
           "location": "Seongsan Ilchulbong",
           "caption": "Seongsan Ilchulbong — photo 5",
           "alt": "Seongsan Ilchulbong — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-          "location": "Seongsan Ilchulbong",
-          "caption": "Seongsan Ilchulbong — photo 6",
-          "alt": "Seongsan Ilchulbong — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-          "location": "Seongsan Ilchulbong",
-          "caption": "Seongsan Ilchulbong — photo 12",
-          "alt": "Seongsan Ilchulbong — gallery image 12"
         }
       ],
       "liveStatusWidget": "haenyeo"
@@ -851,7 +988,7 @@
       "name": "Tubo de lava de Manjanggul",
       "category": "Tubo de lava UNESCO — Final en cueva del Patrimonio Natural Mundial",
       "description": "Manjanggul es uno de los mejores tubos de lava del mundo y la cueva que está en el corazón de la inscripción UNESCO de Jeju. Se formó hace aproximadamente entre 100.000 y 300.000 años, cuando la lava del sistema volcánico de Geomunoreum drenó hacia el mar, dejando un túnel de unos 7,4 km de longitud. Un tramo de 1 km está abierto a los visitantes y termina en una columna de lava de 7,6 m —la columna de lava más alta conocida de la Tierra—, formada donde la lava se derramó desde un pasaje superior. Por el camino, la cueva muestra rasgos volcánicos de manual: estalactitas de lava, líneas de flujo que rayan las paredes, lava cordada en forma de cuerda en el suelo, coral de cueva y una roca 'tortuga de lava' que, por coincidencia, recuerda la forma de la propia isla de Jeju. Forma parte del sitio del Patrimonio Mundial de la UNESCO 'Isla Volcánica de Jeju y Tubos de Lava', inscrito en 2007. La cueva mantiene una temperatura estable de aproximadamente 11–21 °C durante todo el año, por lo que es fresca en verano y templada en invierno, y un refugio natural en un día de lluvia. El suelo es irregular, húmedo y poco iluminado, y el recorrido público es de aproximadamente 1 km de ida y vuelta, que toma entre 30 y 45 minutos. Manjanggul cierra periódicamente por conservación y gestión del aforo; esos días la ruta visita la cercana cueva Micheon de Ilchul Land, otro tubo de lava del mismo sistema.",
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
       "highlights": [
         "Parte del sitio del Patrimonio Mundial de la UNESCO 'Isla Volcánica de Jeju y Tubos de Lava' (2007)",
         "Termina en la columna de lava más alta conocida del mundo — unos 7,6 m",
@@ -891,15 +1028,50 @@
         "walking": "Moderada — alrededor de 1 km de ida y vuelta sobre un suelo de cueva irregular, húmedo y poco iluminado"
       },
       "images": [
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+        "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+        "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+        "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
           "source": "atoc-korea"
         }
       ],
-      "galleryItems": [],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "location": "Tubo de lava de Manjanggul",
+          "caption": "Tubo de lava de Manjanggul — photo 1",
+          "alt": "Tubo de lava de Manjanggul — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "location": "Tubo de lava de Manjanggul",
+          "caption": "Tubo de lava de Manjanggul — photo 2",
+          "alt": "Tubo de lava de Manjanggul — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+          "location": "Tubo de lava de Manjanggul",
+          "caption": "Tubo de lava de Manjanggul — photo 3",
+          "alt": "Tubo de lava de Manjanggul — gallery image 3"
+        }
+      ],
       "number": 7
     }
   ],
@@ -1681,7 +1853,7 @@
         "headlineLine1": "Jeju Completo",
         "headlineLine2": "Hitos del Día",
         "hero": {
-          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "imageUrl": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "Un día intenso por toda la isla: un humedal alpino de Hallasan, acantilados marinos columnares, una cascada que cae al océano, un espectáculo en vivo de buceo libre de las haenyeo, el cono de tobas de Seongsan Ilchulbong y el tubo de lava de Manjanggul. Tres sitios del Patrimonio Mundial de la UNESCO más los dos hitos naturales más queridos de Jeju.",
           "pills": [
@@ -1779,7 +1951,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
             "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1",
             "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1"
@@ -1787,7 +1959,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
             "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2",
             "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2"
@@ -1795,7 +1967,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
             "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3",
             "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3"
@@ -1803,7 +1975,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
             "location": "Acantilado de Daepo Jusangjeolli",
             "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4",
             "caption": "Acantilado de Daepo Jusangjeolli — photo 4"
@@ -1811,7 +1983,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+            "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
             "location": "Acantilado de Daepo Jusangjeolli",
             "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5",
             "caption": "Acantilado de Daepo Jusangjeolli — photo 5"
@@ -1827,7 +1999,7 @@
           {
             "id": 7,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+            "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "location": "Acantilado de Daepo Jusangjeolli",
             "alt": "Acantilado de Daepo Jusangjeolli — gallery image 7",
             "caption": "Acantilado de Daepo Jusangjeolli — photo 7"
@@ -1835,7 +2007,7 @@
           {
             "id": 8,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "Cascada Jeongbang",
             "alt": "Cascada Jeongbang — gallery image 8",
             "caption": "Cascada Jeongbang — photo 8"
@@ -1843,7 +2015,7 @@
           {
             "id": 9,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "Cascada Jeongbang",
             "alt": "Cascada Jeongbang — gallery image 9",
             "caption": "Cascada Jeongbang — photo 9"
@@ -1851,7 +2023,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "Cascada Jeongbang",
             "alt": "Cascada Jeongbang — gallery image 10",
             "caption": "Cascada Jeongbang — photo 10"
@@ -1867,7 +2039,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
             "location": "Seongsan Ilchulbong",
             "alt": "Seongsan Ilchulbong — gallery image 12",
             "caption": "Seongsan Ilchulbong — photo 12"
@@ -1883,7 +2055,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
             "location": "Seongsan Ilchulbong",
             "alt": "Seongsan Ilchulbong — gallery image 14",
             "caption": "Seongsan Ilchulbong — photo 14"
@@ -1899,7 +2071,7 @@
           {
             "id": 16,
             "type": "photo",
-            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "src": "/images/tours/ilchulland/05-chatgpt-image-2026-5-8-07-45-52.webp",
             "location": "Tubo de lava de Manjanggul",
             "alt": "Tubo de lava de Manjanggul — gallery image 16",
             "caption": "Tubo de lava de Manjanggul — photo 16"
@@ -1919,7 +2091,7 @@
             "name": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
             "category": "Humedal Alpino — Sitio Ramsar + dentro del Patrimonio Mundial UNESCO de Hallasan",
             "description": "**El Humedal de Altitud 1100 de Hallasan (한라산 1100고지 습지)** es un sistema de humedales alpinos de gran altitud en la meseta de Hallasan, ubicado **exactamente a 1.100 m sobre el nivel del mar** a lo largo de la **Ruta 1100 — la carretera nacional más alta de Corea** que une la ciudad de Jeju con Seogwipo Jungmun. \n\nEl sitio es un **Humedal de Importancia Internacional Ramsar (Sitio n.º 1893, designado el 12 de octubre de 2009)**, incluido dentro del **Sitio Patrimonio Mundial UNESCO de Hallasan (2007)**, la **Reserva de la Biosfera UNESCO de la Isla de Jeju (2002)** y el **Parque Nacional de Hallasan (1970)** — lo que convierte a este lugar en uno de los pocos del mundo con **cuatro designaciones internacionales/nacionales superpuestas**. \n\nEl humedal comprende **más de 16 marismas y pozas de agua dulce discontinuas** distribuidas a lo largo de una sección de meseta de baja pendiente que capta y retiene el agua de lluvia, formando **pequeños lagos permanentes y turberas** que albergan diversas comunidades florísticas con un endemismo significativo de Jeju. \n\nLa biodiversidad registrada incluye **3 especies de aves amenazadas y 1 especie vegetal amenazada en Corea**, además de especies de mamíferos, reptiles e insectos endémicas de la isla de Jeju. \n\nEl sitio recibió **900.000 visitantes en 2008** (datos del Centro de Visitantes del Monte Halla). Experiencia para el visitante: un **paseo entablado en bucle de 1 km** con miradores, señalización interpretativa y una pequeña exposición de historia natural en el punto de inicio. \n\n**El follaje otoñal (octubre–noviembre)** y **las escenas nevadas invernales (diciembre–febrero)** son las temporadas más fotografiadas; **primavera + verano** ofrecen visibilidad de la flora del humedal y las especies endémicas. \n\n**Entrada GRATUITA**; el **Área de Descanso 1100 (1100 휴게소)** adyacente dispone de baños interiores + cafetería + pequeña tienda de recuerdos. \n\n**La importancia cultural y religiosa** para las comunidades locales está documentada en la ficha Ramsar — peregrinaciones chamánicas históricas vinculadas a los espíritus del agua de la montaña.",
-            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "highlights": [
               "**Sitio Ramsar n.º 1893** (designado el 12 de oct. de 2009) — Humedal de Importancia Internacional",
               "**1.100 m sobre el nivel del mar** — en la **carretera nacional más alta** de Corea (Ruta 1100)",
@@ -1966,21 +2138,21 @@
               "tip": "Lleve ropa de abrigo en capas — la temperatura es entre 5 y 10 °C más fría que en la costa de Jeju; compruebe las condiciones de la carretera en invierno; combínelo con las Cataratas Cheonjeyeon si desciende hacia el sur"
             },
             "images": [
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1988,7 +2160,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
                 "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 1",
                 "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 1"
@@ -1996,7 +2168,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
                 "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 2",
                 "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 2"
@@ -2004,7 +2176,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "location": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO)",
                 "caption": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — photo 3",
                 "alt": "Humedal de Altitud 1100 de Hallasan (Ramsar + UNESCO) — gallery image 3"
@@ -2018,7 +2190,7 @@
             "name": "Acantilado de Daepo Jusangjeolli",
             "category": "Costa Volcánica — Lava con Juntas Columnares Hexagonales",
             "description": "**Daepo Jusangjeolli (대포 주상절리, 'Jisatgae')** es un **tramo de 1 km de acantilado de basalto con juntas columnares hexagonales** en la costa de Jungmun — declarado **Monumento Natural n.º 443 el 6 de enero de 2005**. \n\nLas columnas se elevan **30–40 m** sobre el mar, dispuestas en **polígonos de 5 a 7 lados** perfectamente encajados (principalmente hexágonos) — una geometría producida cuando **la lava basáltica fundida de una erupción en el flanco del Hallasan (~250 000–140 000 años atrás) alcanzó el océano y se contrajo al enfriarse**, fracturándose de forma perpendicular a la superficie de enfriamiento. \n\nA nivel mundial, las juntas columnares son más conocidas en **Giant's Causeway (Reino Unido)**, **Devils Postpile (EE. UU.)** y **la Cueva de Fingal (Escocia)** — Jusangjeolli es el **ejemplo más destacado de Asia Oriental** y el más accesible. \n\nEl **paseo marítimo de 800 m en bucle** lleva a los visitantes hasta el borde del acantilado con barandilla, directamente sobre las columnas; **en días de marea alta, las olas rompen contra las columnas y lanzan spray hasta 20 m de altura**, en ocasiones por encima de la barandilla. \n\nEntrada: **Adultos ₩2 000 / Jóvenes ₩1 000 / GRATIS menores de 7 años y mayores de 65**. El lugar forma parte del **Geoparque Global de Jeju (designación UNESCO octubre de 2010)** — uno de los **13 geositios oficiales** de la isla, junto a Seongsan Ilchulbong, el Tubo de Lava de Manjanggul y Suwolbong. \n\nLa plataforma superior del acantilado es **totalmente accesible** (para sillas de ruedas y cochecitos). Tres miradores a lo largo del recorrido ofrecen distintos ángulos de las columnas: el **primer mirador** muestra las columnas de perfil (ideal para capturar la geometría hexagonal), el **mirador intermedio** permite mirar directamente hacia abajo para ver los patrones en la parte superior de las columnas, y el **mirador del fondo** capta el trazado costero de 1 km con el Hallasan de fondo en días despejados. \n\n**Ventana óptima para fotografía: 14:00–16:00**, cuando la luz del sol en descenso ilumina de frente las caras de las columnas; las visitas al atardecer ofrecen composiciones en silueta, pero pierden la textura del detalle columnar. Horario: **09:00–18:00 (última entrada 17:30)**, abierto todo el año.",
-            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "highlights": [
               "**Monumento Natural n.º 443** — declarado el **6 de enero de 2005**, el Monumento Natural costero de Jeju más reciente",
               "Las columnas se elevan **30–40 m**, dispuestas en **polígonos de 5 a 7 lados** (principalmente hexágonos) a lo largo de **1 km** de costa",
@@ -2066,31 +2238,31 @@
               "tip": "Incluso en un día soleado, la costa suele sentirse más fría y ventosa que el interior de Jeju."
             },
             "images": [
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-              "/images/tours/jusangjeolli/photo-005.webp"
+              "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+              "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/photo-005.webp",
+                "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2098,7 +2270,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "location": "Acantilado de Daepo Jusangjeolli",
                 "caption": "Acantilado de Daepo Jusangjeolli — photo 1",
                 "alt": "Acantilado de Daepo Jusangjeolli — gallery image 1"
@@ -2106,7 +2278,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "location": "Acantilado de Daepo Jusangjeolli",
                 "caption": "Acantilado de Daepo Jusangjeolli — photo 2",
                 "alt": "Acantilado de Daepo Jusangjeolli — gallery image 2"
@@ -2114,7 +2286,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "location": "Acantilado de Daepo Jusangjeolli",
                 "caption": "Acantilado de Daepo Jusangjeolli — photo 3",
                 "alt": "Acantilado de Daepo Jusangjeolli — gallery image 3"
@@ -2122,7 +2294,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "location": "Acantilado de Daepo Jusangjeolli",
                 "caption": "Acantilado de Daepo Jusangjeolli — photo 4",
                 "alt": "Acantilado de Daepo Jusangjeolli — gallery image 4"
@@ -2130,7 +2302,7 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "location": "Acantilado de Daepo Jusangjeolli",
                 "caption": "Acantilado de Daepo Jusangjeolli — photo 5",
                 "alt": "Acantilado de Daepo Jusangjeolli — gallery image 5"
@@ -2144,7 +2316,7 @@
             "name": "Cascada Jeongbang",
             "category": "Cascada Costera — Cae Directamente al Océano (Única en Asia)",
             "description": "**Las Cataratas Jeongbang (정방폭포, 'cataratas que caen directamente al mar')** son la **única cascada en Asia que cae directamente al océano** — una **caída vertical de 23 m** desde un acantilado de basalto al Pacífico, sin poza intermedia ni desembocadura de lecho fluvial. \n\nLa cascada mide **8 m de ancho** con una poza basal de 5 m que alcanza el mar abierto en cada marea. Esta distinción geográfica única es la razón por la que Jeongbang es una de las **'Yeongjusipgyeong (영주십경, Las 10 Maravillas Escénicas de Jeju)'** — un canon literario de la era Joseon de los paisajes más poéticos de la isla. \n\nLa lista Yeongjusipgyeong, codificada por el **erudito confuciano del siglo XVIII Lee Won-jo (이원조)**, incluye también el Amanecer de Seongsan, la cima del Hallasan y Cheonjeyeon — lo que significa que el circuito de hoy abarca **3 de las 10** en un solo día. Tallada en la cara del acantilado junto a las cataratas se encuentra la inscripción **'Seobulgwacha (서불과차, Seobul se dirigió de vuelta al oeste)'**, atribuida a **Xu Fu (서복)**, el legendario alquimista de la dinastía Qin enviado por el **Emperador Qin Shi Huang (~219 a. C.)** en busca del elixir de la inmortalidad. \n\nLa tradición local cuenta que pasó por aquí en su camino de regreso — la inscripción es la raíz etimológica del topónimo **'Seogwipo' (서귀포, 'donde Seo se dirigió de regreso')**. \n\nEl acceso es a través de **130 escalones de piedra** que descienden a la cala (bastante empinados — se recomienda calzado cómodo para las rodillas). Entrada: **Adulto ₩2.000 / Joven ₩1.000 / GRATIS para menores de 7 años y mayores de 65**. \n\nEl fresco microclima generado por el estruendoso oleaje en la base es un reconocido refugio en verano. Las **haenyeo locales (해녀, mujeres buceadoras — Patrimonio Cultural Inmaterial de la UNESCO 2016)** venden a veces erizo de mar fresco, abulón y caracola directamente en la cala en días de mar en calma — una rara oportunidad fotográfica para ver a la comunidad de buceo trabajando fuera de su contexto formal de museo.",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**La única cascada de Asia que cae directamente al océano** — caída vertical de 23 m, sin lecho fluvial",
               "Las cataratas miden **8 m de ancho** con una poza basal de 5 m que desemboca en el Pacífico con cada marea",
@@ -2192,21 +2364,31 @@
               "tip": "Debido a las escaleras y el camino rocoso, la visita suele sentirse más activa físicamente sobre el terreno de lo que parece en el mapa."
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2214,7 +2396,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "Cascada Jeongbang",
                 "caption": "Cascada Jeongbang — photo 1",
                 "alt": "Cascada Jeongbang — gallery image 1"
@@ -2222,7 +2404,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "Cascada Jeongbang",
                 "caption": "Cascada Jeongbang — photo 2",
                 "alt": "Cascada Jeongbang — gallery image 2"
@@ -2230,10 +2412,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "Cascada Jeongbang",
                 "caption": "Cascada Jeongbang — photo 3",
                 "alt": "Cascada Jeongbang — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "Cascada Jeongbang",
+                "caption": "Cascada Jeongbang — photo 4",
+                "alt": "Cascada Jeongbang — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "Cascada Jeongbang",
+                "caption": "Cascada Jeongbang — photo 5",
+                "alt": "Cascada Jeongbang — gallery image 5"
               }
             ]
           },
@@ -2283,7 +2481,7 @@
             "name": "Espectáculo de buceo libre de las haenyeo de Seongsan",
             "category": "Patrimonio Inmaterial de la UNESCO — Actuación en vivo de las mujeres buceadoras",
             "description": "Las haenyeo (mujeres buceadoras) de Jeju están reconocidas como Patrimonio Cultural Inmaterial de la Humanidad de la UNESCO (2016). En la cala del lado sur de Seongsan Ilchulbong, buceadoras veteranas —muchas de entre 60 y 80 años— ofrecen una demostración de buceo libre una vez al día, normalmente alrededor de las 14:00. Abren con los tradicionales cantos de trabajo y luego se sumergen entre 5 y 10 m sin equipo de respiración para recolectar caracola, erizo de mar y abulón, emergiendo con el característico silbido de respiración 'sumbi-sori' que les permite liberar el aire tras una larga inmersión. Después del espectáculo, las buceadoras venden su captura fresca cortada como sashimi justo junto al agua. Es un encuentro raro y vivo con una cultura de buceo matrifocal de 400 años que va desapareciendo poco a poco a medida que las buceadoras que quedan envejecen. La demostración se realiza al aire libre y depende de las condiciones del mar; los días en que se cancela, la ruta visita en su lugar el Museo de las Haenyeo en la cercana Hado, que cuenta la misma historia en interiores a través de equipo de buceo, historia y películas.",
-            "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "image": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
             "highlights": [
               "Patrimonio Cultural Inmaterial de la UNESCO (2016) — las mujeres buceadoras de Jeju",
               "Demostración de buceo libre en vivo en la cala de Seongsan (una vez al día, alrededor de las 14:00)",
@@ -2323,15 +2521,76 @@
               "walking": "Mínima — un breve sendero llano que baja hasta la cala"
             },
             "images": [
-              "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+              "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+              "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+              "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+              "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+              "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+                "url": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
                 "source": "atoc-korea"
               }
             ],
-            "galleryItems": [],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+                "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+                "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 1",
+                "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+                "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+                "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 2",
+                "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+                "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+                "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 3",
+                "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+                "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+                "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 4",
+                "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+                "location": "Espectáculo de buceo libre de las haenyeo de Seongsan",
+                "caption": "Espectáculo de buceo libre de las haenyeo de Seongsan — photo 5",
+                "alt": "Espectáculo de buceo libre de las haenyeo de Seongsan — gallery image 5"
+              }
+            ],
             "number": 5
           },
           {
@@ -2341,7 +2600,7 @@
             "name": "Seongsan Ilchulbong",
             "category": "Cono de Tobas UNESCO — Pico del Amanecer (Triple Designación UNESCO)",
             "description": "**Seongsan Ilchulbong (성산일출봉, 'Pico del Amanecer')** es un **cono hidrovolcánico de tipo surtseyano de 5.000 años de antigüedad** — una rara forma de relieve creada cuando una erupción basáltica submarina irrumpió en la superficie del mar, el magma encontró el agua del océano y la explosión de vapor resultante formó un **cráter en forma de fortaleza de 182 m** de altura en lugar de un cono de lava típico. \n\nEl resultado es lo que la UNESCO denomina formalmente **'un ejemplo excepcional de un edificio volcánico emergente de tipo surtseyano'**. El cráter mide **600 m de ancho × 90 m de profundidad**, rodeado por **99 rocas dentadas en el borde** que la tradición local compara con una corona de piedra. \n\nSeongsan posee la **triple designación UNESCO**: **Patrimonio Natural Mundial (inscrito el 02-07-2007)** como parte de la propiedad **'Isla Volcánica de Jeju y Tubos de Lava'**, **Reserva de la Biosfera (2002)** y **Geoparque Mundial (10-2010)** — una combinación igualada únicamente por el propio Hallasan entre los sitios coreanos. \n\n**18 cuevas militares japonesas de la Segunda Guerra Mundial** (refugios para embarcaciones kamikazes, 1945) están excavadas en la base marítima. Sendero: **0,8 km de ida, ~140 m de desnivel, 60 min de ida y vuelta** por amplios escalones de piedra. \n\nLas **demostraciones de haenyeo (해녀)** se realizan **diariamente a las 14:00 (1 espectáculo/día)** en la cala rocosa bajo el cono — las buceadoras de Jeju (Patrimonio Cultural Inmaterial de la UNESCO 2016) se sumergen sin equipo de buceo. Entrada actualizada en **abril de 2025**: **Adultos ₩5.000 / Jóvenes y niños ₩2.500 / Grupo adultos ₩1.600**, gratis menores de 7 años y mayores de 65. \n\nLa plataforma de la cumbre también forma parte del canon de las **Yeongjusipgyeong (Las 10 Vistas Panorámicas de Jeju)**, y sigue siendo el principal destino de **peregrinación anual al amanecer de Año Nuevo** en Corea — más de 50.000 visitantes ascienden antes del alba el 1 de enero, con programación del festival municipal del amanecer desde 1995. \n\nLa **Isla Udo (우도, 'Isla de la Vaca')** — la mayor isla volcánica secundaria de Corea — se distingue claramente a 4 km de la costa desde la cima, accesible en **ferry de 15 min desde el Puerto de Seongsan** (₩10.500 ida y vuelta) para los visitantes con tiempo extra en otro itinerario.",
-            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "image": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**Triple UNESCO**: Patrimonio Mundial 02-07-2007 + Reserva de la Biosfera 2002 + Geoparque Mundial 10-2010",
               "**5.000 años de antigüedad** — erupción hidrovolcánica de tipo surtseyano, nacida de la explosión de vapor al encontrarse el magma con el agua del mar",
@@ -2389,45 +2648,31 @@
               "tip": "La afluencia de visitantes, el estado del tiempo y el nivel físico del grupo pueden influir en la exigencia y el disfrute de la experiencia en la cima."
             },
             "images": [
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-              "/images/tours/seongsan-ilchulbong/photo-006.webp",
-              "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp"
+              "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+              "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "url": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "url": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "url": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "url": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "url": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2435,7 +2680,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
                 "location": "Seongsan Ilchulbong",
                 "caption": "Seongsan Ilchulbong — photo 1",
                 "alt": "Seongsan Ilchulbong — gallery image 1"
@@ -2443,7 +2688,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
                 "location": "Seongsan Ilchulbong",
                 "caption": "Seongsan Ilchulbong — photo 2",
                 "alt": "Seongsan Ilchulbong — gallery image 2"
@@ -2451,7 +2696,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
                 "location": "Seongsan Ilchulbong",
                 "caption": "Seongsan Ilchulbong — photo 3",
                 "alt": "Seongsan Ilchulbong — gallery image 3"
@@ -2459,7 +2704,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
                 "location": "Seongsan Ilchulbong",
                 "caption": "Seongsan Ilchulbong — photo 4",
                 "alt": "Seongsan Ilchulbong — gallery image 4"
@@ -2467,26 +2712,10 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
                 "location": "Seongsan Ilchulbong",
                 "caption": "Seongsan Ilchulbong — photo 5",
                 "alt": "Seongsan Ilchulbong — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-                "location": "Seongsan Ilchulbong",
-                "caption": "Seongsan Ilchulbong — photo 6",
-                "alt": "Seongsan Ilchulbong — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-                "location": "Seongsan Ilchulbong",
-                "caption": "Seongsan Ilchulbong — photo 12",
-                "alt": "Seongsan Ilchulbong — gallery image 12"
               }
             ],
             "liveStatusWidget": "haenyeo"
@@ -2497,7 +2726,7 @@
             "name": "Tubo de lava de Manjanggul",
             "category": "Tubo de lava UNESCO — Final en cueva del Patrimonio Natural Mundial",
             "description": "Manjanggul es uno de los mejores tubos de lava del mundo y la cueva que está en el corazón de la inscripción UNESCO de Jeju. Se formó hace aproximadamente entre 100.000 y 300.000 años, cuando la lava del sistema volcánico de Geomunoreum drenó hacia el mar, dejando un túnel de unos 7,4 km de longitud. Un tramo de 1 km está abierto a los visitantes y termina en una columna de lava de 7,6 m —la columna de lava más alta conocida de la Tierra—, formada donde la lava se derramó desde un pasaje superior. Por el camino, la cueva muestra rasgos volcánicos de manual: estalactitas de lava, líneas de flujo que rayan las paredes, lava cordada en forma de cuerda en el suelo, coral de cueva y una roca 'tortuga de lava' que, por coincidencia, recuerda la forma de la propia isla de Jeju. Forma parte del sitio del Patrimonio Mundial de la UNESCO 'Isla Volcánica de Jeju y Tubos de Lava', inscrito en 2007. La cueva mantiene una temperatura estable de aproximadamente 11–21 °C durante todo el año, por lo que es fresca en verano y templada en invierno, y un refugio natural en un día de lluvia. El suelo es irregular, húmedo y poco iluminado, y el recorrido público es de aproximadamente 1 km de ida y vuelta, que toma entre 30 y 45 minutos. Manjanggul cierra periódicamente por conservación y gestión del aforo; esos días la ruta visita la cercana cueva Micheon de Ilchul Land, otro tubo de lava del mismo sistema.",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
             "highlights": [
               "Parte del sitio del Patrimonio Mundial de la UNESCO 'Isla Volcánica de Jeju y Tubos de Lava' (2007)",
               "Termina en la columna de lava más alta conocida del mundo — unos 7,6 m",
@@ -2537,15 +2766,50 @@
               "walking": "Moderada — alrededor de 1 km de ida y vuelta sobre un suelo de cueva irregular, húmedo y poco iluminado"
             },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+              "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+              "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+              "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
                 "source": "atoc-korea"
               }
             ],
-            "galleryItems": [],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "location": "Tubo de lava de Manjanggul",
+                "caption": "Tubo de lava de Manjanggul — photo 1",
+                "alt": "Tubo de lava de Manjanggul — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "location": "Tubo de lava de Manjanggul",
+                "caption": "Tubo de lava de Manjanggul — photo 2",
+                "alt": "Tubo de lava de Manjanggul — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+                "location": "Tubo de lava de Manjanggul",
+                "caption": "Tubo de lava de Manjanggul — photo 3",
+                "alt": "Tubo de lava de Manjanggul — gallery image 3"
+              }
+            ],
             "number": 7
           }
         ]

@@ -38,15 +38,21 @@ import {
   GOOGLE_MAPS_LOADER_VERSION,
   libraries as GOOGLE_MAPS_LIBRARIES,
 } from '@/lib/google-maps';
+import {
+  basemapStyle,
+  companionDot,
+  facilityDot,
+  myLocationDot,
+  pickupPin,
+  stopPin,
+  vehiclePin,
+  type MarkerArt,
+} from '@/lib/tour-room/mapMarkers';
+import { useResolvedTourTheme } from '@/hooks/useResolvedTourTheme';
 import type { RoomLocation } from '@/hooks/useTourRoomChannel';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const GOOGLE_MAPS_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? '';
-
-const MAP_STYLE: google.maps.MapTypeStyle[] = [
-  { featureType: 'poi', elementType: 'labels', stylers: [{ visibility: 'off' }] },
-  { featureType: 'transit', elementType: 'labels.icon', stylers: [{ visibility: 'off' }] },
-];
 
 export interface MapSpot {
   id: string;
@@ -127,6 +133,7 @@ export default function RoomMapCanvas({
   locale,
   myPosition = null,
   sharing = false,
+  isOperator = false,
 }: {
   locations: Record<string, RoomLocation>;
   myParticipantId: string | null;
@@ -148,6 +155,11 @@ export default function RoomMapCanvas({
   myPosition?: { latitude: number; longitude: number } | null;
   /** Opting in should take the guest to their own dot — see the effect below. */
   sharing?: boolean;
+  /**
+   * Staff see the whole picture; a guest opens the map to find one thing.
+   * 사장님 2026-08-07: "아침에 고객이 맵을 켰을 때 실시간 가이드 위치를 볼 수 있도록."
+   */
+  isOperator?: boolean;
 }) {
   const { isLoaded, loadError } = useJsApiLoader({
     id: GOOGLE_MAPS_LOADER_ID,
@@ -156,8 +168,12 @@ export default function RoomMapCanvas({
     version: GOOGLE_MAPS_LOADER_VERSION,
   });
   const mapRef = useRef<google.maps.Map | null>(null);
-  const fittedRef = useRef(false);
-  /** A fresh literal here re-runs `map.setOptions` every render — see header. */
+  const theme = useResolvedTourTheme();
+  /**
+   * A fresh literal here re-runs `map.setOptions` every render — see header.
+   * Keyed on the theme only, which is the one thing that legitimately restyles
+   * the tiles (a white map inside a dark room is the eyesore this avoids).
+   */
   const mapOptions = useMemo<google.maps.MapOptions>(
     () => ({
       disableDefaultUI: true,
@@ -166,9 +182,9 @@ export default function RoomMapCanvas({
       mapTypeControl: false,
       fullscreenControl: false,
       clickableIcons: false,
-      styles: MAP_STYLE,
+      styles: basemapStyle(theme),
     }),
-    [],
+    [theme],
   );
   /**
    * `loadError` only catches the SCRIPT failing. When the script loads but
@@ -190,8 +206,37 @@ export default function RoomMapCanvas({
     };
   }, []);
 
+  /**
+   * Marker art, built once the SDK exists — `Size`/`Point` are SDK classes, so
+   * this cannot be module scope. `MarkerArt` itself is pure and pre-tested.
+   */
+  const icons = useMemo(() => {
+    if (!isLoaded || typeof google === 'undefined') return null;
+    const toIcon = (art: MarkerArt): google.maps.Icon => ({
+      url: art.url,
+      scaledSize: new google.maps.Size(art.width, art.height),
+      anchor: new google.maps.Point(art.anchorX, art.anchorY),
+      labelOrigin: new google.maps.Point(art.labelX, art.labelY),
+    });
+    return {
+      vehicle: toIcon(vehiclePin()),
+      me: toIcon(myLocationDot()),
+      companion: toIcon(companionDot()),
+      stop: toIcon(stopPin()),
+      pickup: toIcon(pickupPin()),
+      facility: toIcon(facilityDot()),
+    };
+  }, [isLoaded]);
+
   const people = useMemo(() => Object.values(locations), [locations]);
-  const guide = people.find((p) => p.role === 'guide') ?? null;
+  /**
+   * 🔴 The operator a guest is looking for may be a guide OR a driver. This
+   * only ever looked for 'guide', so on a driver-run tour follow mode had no
+   * target — while `RoomMapTab` (which does fall back to the driver) happily
+   * showed the follow button. The button was there and did nothing.
+   */
+  const guide =
+    people.find((p) => p.role === 'guide') ?? people.find((p) => p.role === 'driver') ?? null;
 
   /** Where I am, freshest source first: my own watcher, then the server echo. */
   const myEcho = myParticipantId ? locations[myParticipantId] ?? null : null;
@@ -262,15 +307,56 @@ export default function RoomMapCanvas({
     map.fitBounds(bounds, 48);
   }, []);
 
+  /**
+   * The opening frame — what the map looks at before anyone touches it.
+   *
+   * 사장님 2026-08-07: "아침에 고객이 맵을 켰을 때 실시간 가이드 위치를 볼 수 있도록."
+   * A guest opens this to answer one question — where is my ride — so the first
+   * frame is the vehicle, plus the guest themselves when we know where they
+   * are. Fitting every itinerary stop instead (which is what the [전체 보기]
+   * button is for) shrinks the van to a speck among the whole day. Staff are
+   * looking AT the group rather than FOR it, so they keep the wide view.
+   */
+  const openingTargets = useMemo(() => {
+    if (isOperator) return allPoints;
+    const vehicle = guide ? { lat: guide.latitude, lng: guide.longitude } : null;
+    const focus = [vehicle, myPoint].filter((p): p is { lat: number; lng: number } => p !== null);
+    return focus.length > 0 ? focus : allPoints;
+  }, [isOperator, allPoints, guide, myPoint]);
+
+  /**
+   * Auto-framing runs at most twice and then never again:
+   *   'none'    — nothing has been framed yet
+   *   'partial' — framed, but without the vehicle a guest is waiting for
+   *   'final'   — done; the view now belongs to whoever asked for it last
+   *
+   * 'partial' exists because positions arrive over the channel while stops come
+   * from the snapshot: without it, a guest who opens the map two seconds before
+   * the guide's first ping gets framed on the itinerary and the vehicle never
+   * earns the screen. With it, the vehicle gets exactly one chance to claim the
+   * frame — and loses it the moment the guest drags the map (`touchedRef`) or
+   * presses anything.
+   */
+  const autoFrameRef = useRef<'none' | 'partial' | 'final'>('none');
+  const touchedRef = useRef(false);
+  const onDragStart = useCallback(() => {
+    touchedRef.current = true;
+    autoFrameRef.current = 'final';
+  }, []);
+
+  const autoFrame = useCallback(() => {
+    if (autoFrameRef.current === 'final' || touchedRef.current) return;
+    if (!mapRef.current || openingTargets.length === 0) return;
+    autoFrameRef.current = !isOperator && !guide ? 'partial' : 'final';
+    fitTo(openingTargets);
+  }, [openingTargets, isOperator, guide, fitTo]);
+
   const onLoad = useCallback(
     (map: google.maps.Map) => {
       mapRef.current = map;
-      if (allPoints.length > 0 && !fittedRef.current) {
-        fittedRef.current = true;
-        fitTo(allPoints);
-      }
+      autoFrame();
     },
-    [allPoints, fitTo],
+    [autoFrame],
   );
   const onUnmount = useCallback(() => {
     mapRef.current = null;
@@ -286,9 +372,9 @@ export default function RoomMapCanvas({
    * making it implicit here would be the same "map fights your finger" bug in a
    * new costume.
    *
-   * Declared BEFORE the first-fit effect on purpose — effects run in order, and
-   * a fresh opt-in outranks "fit everyone" for the same frame. It claims
-   * `fittedRef` so the two do not both move the map.
+   * Declared BEFORE the auto-frame effect on purpose — effects run in order, so
+   * a deliberate opt-in claims the frame ('final') before anything automatic can
+   * take it for the same commit.
    */
   const focusedForSharingRef = useRef(sharing);
   useEffect(() => {
@@ -300,27 +386,21 @@ export default function RoomMapCanvas({
     const map = mapRef.current;
     if (!map || !myPoint) return; // the first fix takes a moment — retry on the next frame
     focusedForSharingRef.current = true;
-    fittedRef.current = true;
+    autoFrameRef.current = 'final';
     map.panTo(myPoint);
     map.setZoom(FOCUS_ZOOM);
   }, [sharing, myPoint]);
 
-  /**
-   * People arrive over the realtime channel, so at mount `allPoints` is usually
-   * just the itinerary (often nothing at all). The static `center` prop used to
-   * paper over that by re-centering forever; now that it is applied once, the
-   * first real point has to earn the view itself — once, then the map is the
-   * guest's.
-   */
+  // People arrive over the realtime channel, so at mount there is often nothing
+  // to frame. Re-run as targets land; `autoFrame` decides whether it may act.
   useEffect(() => {
-    if (fittedRef.current || !mapRef.current || allPoints.length === 0) return;
-    fittedRef.current = true;
-    fitTo(allPoints);
-  }, [allPoints, fitTo]);
+    autoFrame();
+  }, [autoFrame]);
 
   // Follow mode: every guide frame pans the map (T3.3 AC — live distance).
   useEffect(() => {
     if (followGuide && guide && mapRef.current) {
+      autoFrameRef.current = 'final';
       mapRef.current.panTo({ lat: guide.latitude, lng: guide.longitude });
     }
   }, [followGuide, guide]);
@@ -330,6 +410,7 @@ export default function RoomMapCanvas({
   const recenterToMe = useCallback(() => {
     const map = mapRef.current;
     if (!map) return;
+    autoFrameRef.current = 'final'; // an explicit ask ends automatic framing
     if (myPoint) {
       map.panTo(myPoint);
       map.setZoom(FOCUS_ZOOM);
@@ -351,6 +432,7 @@ export default function RoomMapCanvas({
 
   // Re-fit the map to everyone + every stop (undo an accidental zoom-out).
   const fitAll = useCallback(() => {
+    autoFrameRef.current = 'final';
     fitTo(allPoints);
   }, [allPoints, fitTo]);
 
@@ -384,7 +466,7 @@ export default function RoomMapCanvas({
     );
   }
 
-  if (!isLoaded) {
+  if (!isLoaded || !icons) {
     return (
       <div className="tr-skeleton flex h-full min-h-[300px] items-center justify-center rounded-[var(--tr-radius-card)]">
         <span className="tr-card-text text-[var(--tr-ink-3)]">{MAP_DOWN[locale].loading}</span>
@@ -396,25 +478,28 @@ export default function RoomMapCanvas({
 
   return (
     <div className="relative h-full w-full">
-      {/* Map option controls — recenter to me + fit everyone (bottom-left, clear
-          of the native zoom control on the right). */}
-      <div className="absolute bottom-3 left-3 z-10 flex flex-col gap-2">
+      {/* Map controls — one card with a hairline between the buttons rather than
+          two loose bubbles, which is how Kakao and Naver stack theirs. Bottom
+          LEFT keeps them clear of the native zoom control on the right. */}
+      <div
+        className="absolute bottom-3 left-3 z-10 overflow-hidden rounded-[14px] bg-[var(--tr-surface)]"
+        style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+      >
         <button
           type="button"
           onClick={recenterToMe}
           aria-label={control.recenter}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-accent-deep)] active:scale-95"
-          style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+          className="flex h-11 w-11 items-center justify-center text-[var(--tr-accent-deep)] active:bg-[var(--tr-bubble-system)]"
           data-testid="map-recenter-me"
         >
           <IconRecenter size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
         </button>
+        <div className="mx-2 h-px bg-[var(--tr-hairline)]" aria-hidden />
         <button
           type="button"
           onClick={fitAll}
           aria-label={control.fitAll}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--tr-surface)] text-[var(--tr-ink-2)] active:scale-95"
-          style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
+          className="flex h-11 w-11 items-center justify-center text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
           data-testid="map-fit-all"
         >
           <IconFitAll size={TR_ICON.action} strokeWidth={TR_STROKE.default} aria-hidden />
@@ -426,6 +511,7 @@ export default function RoomMapCanvas({
         zoom={14}
         onLoad={onLoad}
         onUnmount={onUnmount}
+        onDragStart={onDragStart}
         options={mapOptions}
       >
       {/* numbered spot pins */}
@@ -436,14 +522,7 @@ export default function RoomMapCanvas({
             position={{ lat: spot.latitude, lng: spot.longitude }}
             title={spot.title ?? undefined}
             label={{ text: String(index + 1), color: '#ffffff', fontSize: '11px', fontWeight: '700' }}
-            icon={{
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 11,
-              fillColor: '#f59e0b',
-              fillOpacity: 1,
-              strokeColor: '#ffffff',
-              strokeWeight: 2,
-            }}
+            icon={icons.stop}
           />
         ) : null,
       )}
@@ -455,14 +534,7 @@ export default function RoomMapCanvas({
             key={`facility-${i}`}
             position={{ lat: f.lat, lng: f.lng }}
             title={f.name ?? undefined}
-            icon={{
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: 5,
-              fillColor: '#9ca3af',
-              fillOpacity: 0.9,
-              strokeColor: '#ffffff',
-              strokeWeight: 1,
-            }}
+            icon={icons.facility}
           />
         ) : null,
       )}
@@ -473,14 +545,7 @@ export default function RoomMapCanvas({
           position={{ lat: pickup.lat, lng: pickup.lng }}
           title={pickup.name ?? 'Pickup'}
           label={{ text: 'P', color: '#ffffff', fontSize: '11px', fontWeight: '700' }}
-          icon={{
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 11,
-            fillColor: '#10b981',
-            fillOpacity: 1,
-            strokeColor: '#ffffff',
-            strokeWeight: 2,
-          }}
+          icon={icons.pickup}
         />
       )}
 
@@ -488,25 +553,14 @@ export default function RoomMapCanvas({
           publish path drops samples coarser than 100 m and throttles to 15 s,
           so "sharing is live but I am not on the map" was the normal state on
           any Wi-Fi fix, not an edge case. */}
-      {!myEcho && myPoint && (
-        <Marker
-          position={myPoint}
-          zIndex={20}
-          label={{ text: '•', color: '#ffffff', fontSize: '10px', fontWeight: '700' }}
-          icon={{
-            path: google.maps.SymbolPath.CIRCLE,
-            scale: 9,
-            fillColor: '#2563eb',
-            fillOpacity: 1,
-            strokeColor: '#ffffff',
-            strokeWeight: 2,
-          }}
-        />
-      )}
+      {!myEcho && myPoint && <Marker position={myPoint} zIndex={20} icon={icons.me} />}
 
       {/* people */}
       {people.map((person) => {
-        const isGuide = person.role === 'guide';
+        // 🔴 Guide AND driver both get the vehicle pin. On a driver-run tour the
+        // person the guest is waiting for has role 'driver', and they used to be
+        // drawn as an anonymous grey initial among the other travellers.
+        const isVehicle = person.role === 'guide' || person.role === 'driver';
         const isMe = person.participant_id === myParticipantId;
         return (
           <Marker
@@ -515,10 +569,14 @@ export default function RoomMapCanvas({
                watcher's fix is current, so my dot rides that instead. */
             position={isMe && myPoint ? myPoint : { lat: person.latitude, lng: person.longitude }}
             title={person.display_name ?? undefined}
-            zIndex={isGuide ? 30 : isMe ? 20 : 10}
+            zIndex={isVehicle ? 30 : isMe ? 20 : 10}
+            /* The vehicle carries its glyph inside the pin art (사장님: 자동차
+               아이콘) and "me" is the blue dot every phone map has taught people
+               to read — neither wants a letter stamped on it. Other travellers
+               keep an initial so a group of six stays readable. */
             label={
-              isGuide
-                ? { text: '🚌', fontSize: '16px' }
+              isVehicle || isMe
+                ? undefined
                 : {
                     text: initialOf(person.display_name),
                     color: '#ffffff',
@@ -526,14 +584,7 @@ export default function RoomMapCanvas({
                     fontWeight: '700',
                   }
             }
-            icon={{
-              path: google.maps.SymbolPath.CIRCLE,
-              scale: isGuide ? 14 : 9,
-              fillColor: isGuide ? '#111827' : isMe ? '#2563eb' : '#6b7280',
-              fillOpacity: 1,
-              strokeColor: '#ffffff',
-              strokeWeight: 2,
-            }}
+            icon={isVehicle ? icons.vehicle : isMe ? icons.me : icons.companion}
           />
         );
       })}

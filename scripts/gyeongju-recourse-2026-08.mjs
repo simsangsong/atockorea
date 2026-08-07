@@ -71,8 +71,8 @@ function loadContent(loc) {
  *  from Hwangnam-dong — the very neighbourhood Hwangnidan-gil runs through). */
 const HWANGNAM_BREAD_RE = /hwangnam-bread/;
 const DAEREUNGWON_PHOTOS = [
-  "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
-  "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-33.webp",
+  "/images/tours/daereungwon/01-chatgpt-image-2026-5-10-01-37-30.webp",
+  "/images/tours/daereungwon/02-chatgpt-image-2026-5-10-01-37-33.webp",
   "/images/tours/daereungwon/daereungwon-cheonmachong-interior.webp",
 ];
 

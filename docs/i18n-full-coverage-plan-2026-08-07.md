@@ -68,7 +68,7 @@ CLAUDE.md 맨 위 규칙이다. `scripts/i18n/translate.ts` 는 `--yes-bill-the-
 
 | 그룹 | 슬러그 | 부족 |
 |---|---|---|
-| **G2** ru 만 | `from-busan-gyeongju` · `jeju-cruise-shore-excursion-small-group` · `jeju-eastern` · `jeju-island-private-car` · `jeju-southern` · **`southwest-hallasan-osulloc-aewol`** | 6 |
+| ~~**G2** ru 만~~ | ✅ **2026-08-07 전부 종료** — ru 행 21/21 완비 | 0 |
 | **G3** 🔴 미추출 | `busan-small-group-sightseeing-tour-cruise-passengers` · `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` · `seoul-seoraksan-nami-island-morning-calm-day-tour` · `seoul-suburbs-private-chartered-car-10hr` · `seoul-suwon-hwaseong-folk-village-starfield-library` · `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` · `seoul-suwon-hwaseong-waujeongsa-starfield` | 7×4 = **28** |
 | **G4** 🔴 미추출 — **새로 나타났다** | `busan-private-car-charter-city-tour` | 4 |
 
@@ -231,7 +231,7 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 | ✅ **S3a** | ru `jeju-island-private-car-charter-tour` 7 unit | 318 세그먼트 | **끝** | **1행 발행** |
 | ✅ **S3b** | ru `jeju-southern-top-unesco-spots-tour` 9 unit | 470 세그먼트 | **끝** | **1행 발행** |
 | ✅ **S3c** | ru `southwest-hallasan-osulloc-aewol` 10 unit | 525 세그먼트 | **끝** | **1행 발행** |
-| **S3d~S12** | ru 잔여 **3슬러그 · 37 unit · 1,852 세그먼트** | — | **6** | **3행** |
+| ✅ **S3d~S3f** | ru 잔여 3슬러그 · 37 unit · 1,852 세그먼트 | — | **1 (끝)** | **3행 발행** |
 | **S13** | 🔴 **G3 7슬러그 + G4 1슬러그 추출**(`i18n:extract` ×4로케일) | — | **1** | 도구 |
 | **S14~S48** | G3 7슬러그 × 4로케일 | **추정 968,884자** | **35** | **28행** |
 | **S49** | G4 `busan-private-car-charter-city-tour` × 4로케일 | 미측정 | **1~2** | **4행** |
@@ -340,6 +340,32 @@ node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.
     `is_active=false` + `is_published=false` 즉 **은퇴 상품**이다. 사장님 라이브 전용 규칙(§0-3-1)에
     따라 범위 밖 → **실제 잔여는 63 unit / 6슬러그.** 매니페스트만 보고 착수했으면
     **팔지도 않는 상품에 세션 하나를 통째로 썼다.**
+15. 🔴 **`apply.ts` 의 「포인터 불일치」는 대개 정상 드리프트지만, 세어 보지 말고 *어떤* 포인터인지 봐라.**
+    실측: jeju-eastern 9 · **gyeongju 135** · cruise 24 — 전부 갤러리 `alt`/`caption`/`location` 이었다.
+    gyeongju 는 EN 갤러리가 추출 이후 **35 → 9 로 잘렸고**, 그래서 이미 발행된 de/fr/it 는 낡은 35개를
+    아직 들고 있다(적용 603 vs ru 468). 즉 **payload 가 작은 쪽이 최신이다** — 잘림이 아니다.
+    확인은 EN payload 를 직접 조회해 포인터 존재를 보는 것. 산문·요금·시각 포인터가 하나라도 섞여
+    있으면 그건 드리프트가 아니라 재추출 신호다. 커버리지는 **unit 단위**라 이 숫자와 무관하다.
+16. 🔴 **TM 자동 재사용은 문맥 의존 문자열에서 거짓말한다.** cruise 슬러그는 이미 번역한 것과
+    **40.3% 가 정확히 같은 원문**이라 재사용이 크게 이득이었는데, 같은 원문이 두 값을 갖는 소스가
+    **23건** 있었다. 대부분은 `мин.`/`мин` 차이(앞 세션 잔재)지만 **`High` 는 진짜다** —
+    `Фотопотенциал`(남성) 은 `Высокий`, `Пригодность для семей`(여성) 은 `Высокая`.
+    → **값이 둘 이상인 소스는 자동 재사용에서 빼고 손으로 정하라.**
+17. 🔴 **같은 본문이 `\n\n` 있는 판과 없는 판으로 두 번 들어 있다.** cruise 슬러그의
+    `itineraryStops/*` 와 `itinerary_variants/0/stops/*` 가 그렇다. 두 번 번역하면 그 자체가 드리프트다 —
+    **문단 구분만 접었다 폈다 해서 파생시켜라.**
+18. 🔴 **기계 태그를 번역하면 매칭이 깨진다 — 그리고 라이브에 그 사고가 이미 있다.**
+    `theme_tags_in_variant`(`volcano`·`coast`·`culture`·`alpine`…)는 en·fr·it·ja 넷이 원문을 유지하는데
+    **de 만 번역했다**(`Vulkan`·`Küste`). de 조차 `iconic_landmarks`·`first_time_friendly` 는 남겼다 —
+    **밑줄이 있으면 태그로 보이고 낱말처럼 생기면 번역해 버린 것**이 그 증거다.
+    `liveStatusWidget`·`bgClass`·`iconBg` 도 같은 부류. **규칙 6(빈 문자열 + note)** 로 두면
+    apply 가 영어로 폴백해 값이 같아지고 G9 플래그도 안 난다.
+19. 🔴 **숫자를 관용구로 바꾸면 G3 가 잡는다 — §6-5-12 의 다른 얼굴이고, 이번에 세 번 더 밟았다.**
+    `Top-3`→`трёх` · `24/7`→`круглосуточный` · `24 hours`→`круглосуточно` 전부 실패.
+    셋 다 러시아어로는 **더 자연스러운** 표현이라 손이 그리로 간다 — 그게 함정이다.
+    ⚠ 반대로 **12시제→24시제는 안전하다**: `around 2 pm`→`около 14:00` 은 게이트의
+    `clockNotationLosses` 가 흡수한다(gates.ts:267 에 그렇게 적혀 있다). 로마 숫자(`7th`→`VII`)와
+    연대 축약(`1970s`→`1970-е`)도 흡수된다. **흡수되는 것과 실패하는 것을 헷갈리지 마라.**
 
 ### 6-6. ⚠ 원문 자체의 결함 2건 — 번역이 아니라 **콘텐츠 티켓**이다
 
@@ -426,21 +452,49 @@ cp /c/Users/sangsong/atockorea/.env.local .env.local
 New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atockorea\node_modules
 ```
 
-✅ **S1·S2·S3a 는 2026-08-07 에 끝났다.** 다음은 **ru 잔여 5슬러그**다. 남은 단위는 이렇게 센다
-(🔴 **은퇴 슬러그를 빼고 세는 게 핵심** — §6-5-14):
+✅ **S1 · S2 · S3a~S3f 는 2026-08-07 에 끝났다.** **러시아어 트랙 종료 —
+지금 라이브인 21종 중 ru 행이 없는 슬러그는 0개다**(판정은 DB 조인 쿼리, 아래).
 
-| 슬러그 | unit | 세그먼트 |
-|---|---|---|
-| `jeju-eastern-unesco-spots-day-tour` | 9 | 536 |
-| `from-busan-gyeongju-ancient-capital-day-tour` | 14 | 603 |
-| `jeju-cruise-shore-excursion-small-group-tour` | 14 | 713 |
-| **합계** | **37** | **1,852** |
+🔴 **다음은 S13 — G3 7슬러그 + G4 1슬러그의 `i18n:extract`다.** 이 8종만 de/fr/it/ru **네 언어 전부**가
+비어 있다(32행). 그 전까지 `in/` 에 입력이 없으므로 **번역 세션이 아니라 도구 세션**이다.
+
+| 슬러그 | payload |
+|---|---|
+| `busan-small-group-sightseeing-tour-cruise-passengers` | 132,554 |
+| `seoul-suburbs-private-chartered-car-10hr` | 79,229 |
+| `seoul-suwon-hwaseong-folk-village-starfield-library` | 69,482 |
+| `seoul-suwon-hwaseong-waujeongsa-starfield` | 69,393 |
+| `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` | 68,586 |
+| `seoul-seoraksan-nami-island-morning-calm-day-tour` | 60,483 |
+| `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` | 58,542 |
+| `busan-private-car-charter-city-tour`(G4) | 미측정 |
 
 🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
-은퇴 상품이다(§6-5-14). 세지 마라.
+은퇴 상품이다(§6-5-14). `npm run i18n:verify -- --locale=ru` 의 「미번역 14 unit」이 정확히 이것이고,
+**0 이 되면 안 된다.** 세지 마라.
 
-입력은 전부 `i18n-work/in/` 에 있으니 도구 작업 0이다. 용어는 **지어내지 말고 이미 발행된 ru 행에서
-가져와라**(§6-5 아래 「ru 착수 메모」). 슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
+용어는 **지어내지 말고 이미 발행된 ru 행에서 가져와라**(§6-5 아래 「ru 착수 메모」).
+슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
+
+### 🔴 ru 트랙 종료 기록 (2026-08-07, S3d~S3f) — de/fr/it 를 할 때 그대로 쓴다
+
+**라이브 ru 행 21/21 완비.** 이 세션에서 확정한 것 중 다음 로케일에도 그대로 적용되는 것:
+
+- 🔴 **`glanceItems` 라벨이 ru 안에서 두 갈래로 갈려 있었다.** 제주 3행은
+  `Насыщенность пейзажами`/`Сложность пеших участков`, 부산 2행은 `Пейзажи`/`Ходьба` —
+  **영문 라벨은 같은데 러시아어가 다르다.** 플랜 §7-1 이 이름한 제주 쪽(3행 대 1행)으로 통일했다.
+  **부산 행이 이상치이고, 그걸 고치는 건 별도 티켓이다** — 번역 도중에 손대지 마라.
+  ⚠ 단 크루즈 슬러그는 **영문 라벨 자체가 다르다**(`Photo Value`·`Scenic`·`Rain Safety`·`Family Fit`) —
+  다른 영어를 다르게 옮기는 건 드리프트가 아니다. `Duration` → `Продолжительность` 는 부산 크루즈 행에서.
+- **경주·크루즈에서 새로 고정한 표기**(다음 로케일도 이 뜻으로 옮겨라):
+  `Хваннидан-гиль`(황리단길, ㅇ+ㄹ 비음동화) · `Кённидан-гиль` · `выпечка Хваннам`(황남빵) ·
+  `Кёдон Попчу` · `Ёсоккун` · `Соль Чхон` · `Чхонмачхон` · `Хваннамдэчхон` · `Комунорым` ·
+  `Ильчжумун`·`Чхонунгё`·`Пэгунгё`·`Тэунджон`·`Таботхап`·`Соккатхап`·`Пироджон`·`Кыннакчон` ·
+  `порт Канджон` · `время окончания посадки на судно`(all-aboard) · `отход судна`(sail-away).
+- 🔴 **`Damyang Juknokwon` 은 로마자로 남겼다** — Kontsevich 유도가 비음동화 연쇄에서 갈린다.
+  §7-6 의 기준을 그대로 적용한 것이고, `Oedolgae`·`Gotjawal`·`Seogwang Dawon` 과 같은 부류다.
+- **드라마 제목은 원어 유지**가 이번에도 유지됐다: `«Dae Jang Geum»` · `«The King: Eternal Monarch»` ·
+  `«Moon Lovers»` · `«All In»` · `«My Girl»`.
 
 ### 🔴 ru 착수 메모 — 이 셋을 먼저 하면 재작업이 없다
 

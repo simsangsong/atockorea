@@ -15,7 +15,7 @@
       "万丈窟熔岩洞游览",
       "济州海女表演游"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "title": "济州精华环岛游 · 3处联合国教科文组织遗址 + 海女 + 海崖 | AtoC",
     "description": "济州全岛精华小团一日游：汉拿山1100高地 → 柱状节理海崖 → 正房瀑布 → 海女徒手潜水表演 → 城山日出峰 → 万丈窟熔岩洞。一天10.5小时尽览三处联合国教科文组织世界遗产。"
   },
@@ -33,8 +33,8 @@
       "3处联合国教科文组织遗址",
       "最适合一日游客"
     ],
-    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "heroImage": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+    "thumbnail": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "priceLabel": "",
     "shortCardDescription": "一条高强度的全岛线路，串联三处联合国教科文组织世界遗产——汉拿山、城山日出峰与万丈窟熔岩洞，并融入海女徒手潜水现场表演、柱状节理海崖以及直泻入海的正房瀑布。济州的标志性精华，浓缩于一日之内。",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "imageUrl": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
     "imagePosition": "center 35%",
     "tagline": "用高强度的一天纵贯全岛——汉拿山高山湿地、柱状节理海崖、直泻入海的瀑布、海女徒手潜水现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞。三处联合国教科文组织世界遗产，外加济州两大最受喜爱的自然地标。",
     "pills": [
@@ -135,7 +135,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
       "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1",
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1"
@@ -143,122 +143,202 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 1",
+      "caption": "大浦柱状节理壁 — photo 1"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 1",
+      "caption": "正房瀑布 — photo 1"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 1",
+      "caption": "城山海女徒手潜水表演 — photo 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 1",
+      "caption": "城山日出峰 — photo 1"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+      "location": "万丈窟熔岩洞",
+      "alt": "万丈窟熔岩洞 — gallery image 1",
+      "caption": "万丈窟熔岩洞 — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
       "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2",
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2"
     },
     {
-      "id": 3,
+      "id": 8,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
       "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
       "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3",
       "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3"
     },
     {
-      "id": 4,
+      "id": 9,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 2",
+      "caption": "大浦柱状节理壁 — photo 2"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+      "location": "大浦柱状节理壁",
+      "alt": "大浦柱状节理壁 — gallery image 3",
+      "caption": "大浦柱状节理壁 — photo 3"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "大浦柱状节理壁",
       "alt": "大浦柱状节理壁 — gallery image 4",
       "caption": "大浦柱状节理壁 — photo 4"
     },
     {
-      "id": 5,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
       "location": "大浦柱状节理壁",
       "alt": "大浦柱状节理壁 — gallery image 5",
       "caption": "大浦柱状节理壁 — photo 5"
     },
     {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — gallery image 6",
-      "caption": "大浦柱状节理壁 — photo 6"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-      "location": "大浦柱状节理壁",
-      "alt": "大浦柱状节理壁 — gallery image 7",
-      "caption": "大浦柱状节理壁 — photo 7"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 8",
-      "caption": "正房瀑布 — photo 8"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 9",
-      "caption": "正房瀑布 — photo 9"
-    },
-    {
-      "id": 10,
-      "type": "photo",
-      "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
-      "location": "正房瀑布",
-      "alt": "正房瀑布 — gallery image 10",
-      "caption": "正房瀑布 — photo 10"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-      "location": "城山海女徒手潜水表演",
-      "alt": "城山海女徒手潜水表演 — gallery image 11",
-      "caption": "城山海女徒手潜水表演 — photo 11"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 12",
-      "caption": "城山日出峰 — photo 12"
-    },
-    {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 13",
-      "caption": "城山日出峰 — photo 13"
+      "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 2",
+      "caption": "正房瀑布 — photo 2"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 14",
-      "caption": "城山日出峰 — photo 14"
+      "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 3",
+      "caption": "正房瀑布 — photo 3"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "城山日出峰",
-      "alt": "城山日出峰 — gallery image 15",
-      "caption": "城山日出峰 — photo 15"
+      "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 4",
+      "caption": "正房瀑布 — photo 4"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+      "location": "正房瀑布",
+      "alt": "正房瀑布 — gallery image 5",
+      "caption": "正房瀑布 — photo 5"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 2",
+      "caption": "城山海女徒手潜水表演 — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 3",
+      "caption": "城山海女徒手潜水表演 — photo 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 4",
+      "caption": "城山海女徒手潜水表演 — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+      "location": "城山海女徒手潜水表演",
+      "alt": "城山海女徒手潜水表演 — gallery image 5",
+      "caption": "城山海女徒手潜水表演 — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 2",
+      "caption": "城山日出峰 — photo 2"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 3",
+      "caption": "城山日出峰 — photo 3"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 4",
+      "caption": "城山日出峰 — photo 4"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
+      "location": "城山日出峰",
+      "alt": "城山日出峰 — gallery image 5",
+      "caption": "城山日出峰 — photo 5"
+    },
+    {
+      "id": 25,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
       "location": "万丈窟熔岩洞",
-      "alt": "万丈窟熔岩洞 — gallery image 16",
-      "caption": "万丈窟熔岩洞 — photo 16"
+      "alt": "万丈窟熔岩洞 — gallery image 2",
+      "caption": "万丈窟熔岩洞 — photo 2"
+    },
+    {
+      "id": 26,
+      "type": "photo",
+      "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+      "location": "万丈窟熔岩洞",
+      "alt": "万丈窟熔岩洞 — gallery image 3",
+      "caption": "万丈窟熔岩洞 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -269,7 +349,7 @@
       "name": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
       "category": "高山湿地 — 拉姆萨尔遗址 + 汉拿山联合国教科文组织世界遗产区内",
       "description": "**汉拿山1100高地湿地（한라산 1100고지 습지）**是位于汉拿山高原的高海拔山地湿地系统，**海拔恰好1,100米**，沿**1100号国道——韩国海拔最高的国道**，连接济州市与西归浦中文区。该遗址被列为**国际重要湿地（拉姆萨尔湿地，编号1893，2009年10月12日指定）**，同时位于**汉拿山联合国教科文组织世界遗产（2007年）**、**济州岛联合国教科文组织生物圈保护区（2002年）**及**汉拿山国家公园（1970年）**范围之内，是全球少数同时拥有**四项国际/国家重叠认定**的遗址之一。\n\n湿地由**16处以上不连续的淡水沼泽和水池**组成，分布于低坡度高原地段，可汇聚并留存雨水，形成**小型永久湖泊和泥炭沼泽**，孕育多样的植物群落，济州特有种比例较高。已记录的生物多样性包括**韩国境内3种濒危鸟类和1种濒危植物**，以及济州岛特有的哺乳动物、爬行动物和昆虫物种。该遗址**2008年接待游客90万人次**（汉拿山游客中心数据）。\n\n游客体验：设有**1公里木栈道环线**，配备观景台、解说标牌，以及登山口的小型自然历史展览。**秋季红叶（10月至11月）**与**冬季雪景（12月至2月）**是拍照最多的季节；**春夏季节**则可欣赏湿地植物及特有物种。**免费入场**；毗邻的**1100休息区（1100 휴게소）**提供室内卫生间、咖啡厅及小型纪念品商店。拉姆萨尔名录中记录了该遗址对当地社区的**文化与宗教重要意义**——历史上与山水神灵相关的萨满朝圣活动由来已久。",
-      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "highlights": [
         "**拉姆萨尔湿地第1893号**（2009年10月12日指定）— 国际重要湿地",
         "**海拔1,100米** — 位于韩国**最高国道**（1100号国道）沿线",
@@ -316,21 +396,21 @@
         "tip": "请备多层衣物 — 此处气温较济州沿海低5–10°C；冬季请提前查看路况；如向南下行，可顺道游览天帝渊瀑布"
       },
       "images": [
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+        "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+        "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -338,7 +418,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
           "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1",
           "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1"
@@ -346,7 +426,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
           "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2",
           "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2"
@@ -354,7 +434,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
           "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3",
           "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3"
@@ -368,7 +448,7 @@
       "name": "大浦柱状节理壁",
       "category": "火山海岸线——六边形柱状节理熔岩",
       "description": "**大浦柱状节理（대포 주상절리，\"Jisatgae\"）**是位于中门海岸的一段**长约1公里的六边形柱状节理玄武岩崖壁**，于**2005年1月6日被列为天然纪念物第443号**。石柱从海面耸立**30至40米**，紧密排列成**5至7边形多边形**（多为六边形）——这一几何形态源于**约25万至14万年前汉拿山侧翼喷发的熔融玄武岩浆抵达海洋后冷却收缩**，沿垂直于冷却面的方向断裂而成。\n\n在全球范围内，柱状节理以**英国巨人堤道（Giant's Causeway）**、**美国魔鬼柱（Devils Postpile）**和**苏格兰芬加尔洞穴（Fingal's Cave）**最为著名——大浦柱状节理是**东亚最具代表性的柱状节理景观**，也是最易抵达的。长达800米的**木栈道环路**将游客引至可直接俯瞰石柱的护栏崖边；**涨潮时海浪拍打石柱，浪花可飞溅至20米高**，偶尔越过护栏。\n\n门票：**成人₩2,000 / 青少年₩1,000 / 7岁以下及65岁以上免费**。该景点隶属**济州全球地质公园（联合国教科文组织2010年10月认定）**，是岛上**13个官方地质遗址**之一，与城山日出峰、万丈窟熔岩洞、水月峰并列。崖顶观景台**无障碍设施完善**（可供轮椅及婴儿车通行）。环路沿线设有三个观景平台，各呈现不同的石柱角度：**第一观景台**以侧面展现石柱（最适合拍摄六边形几何构图），**中间观景台**可俯瞰石柱顶部的纹理图案，**远端观景台**则在晴天以汉拿山为背景，尽收1公里海岸线全景。\n\n**最佳拍摄时段为14:00至16:00**，此时西斜阳光正面照射石柱面；黄昏时分可拍摄剪影构图，但石柱细节质感有所欠缺。开放时间：**09:00至18:00（最后入场17:30）**，全年运营。",
-      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "highlights": [
         "**天然纪念物第443号**——**2005年1月6日**指定，是济州最新认定的海岸天然纪念物",
         "石柱耸立**30至40米**，沿**1公里**海岸线紧密排列成**5至7边形多边形**（多为六边形）",
@@ -416,31 +496,31 @@
         "tip": "即便是晴天，海岸通常也比济州内陆感觉更寒冷、风更大。"
       },
       "images": [
-        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-        "/images/tours/jusangjeolli/photo-005.webp"
+        "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+        "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+        "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -448,7 +528,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "location": "大浦柱状节理壁",
           "caption": "大浦柱状节理壁 — photo 1",
           "alt": "大浦柱状节理壁 — gallery image 1"
@@ -456,7 +536,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "location": "大浦柱状节理壁",
           "caption": "大浦柱状节理壁 — photo 2",
           "alt": "大浦柱状节理壁 — gallery image 2"
@@ -464,7 +544,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "location": "大浦柱状节理壁",
           "caption": "大浦柱状节理壁 — photo 3",
           "alt": "大浦柱状节理壁 — gallery image 3"
@@ -472,7 +552,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "location": "大浦柱状节理壁",
           "caption": "大浦柱状节理壁 — photo 4",
           "alt": "大浦柱状节理壁 — gallery image 4"
@@ -480,7 +560,7 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "location": "大浦柱状节理壁",
           "caption": "大浦柱状节理壁 — photo 5",
           "alt": "大浦柱状节理壁 — gallery image 5"
@@ -494,7 +574,7 @@
       "name": "正房瀑布",
       "category": "海岸瀑布 — 直接飞流入海（亚洲唯一）",
       "description": "**正房瀑布（정방폭포，意为\"直泻入海之瀑\"）**是**亚洲唯一一座直接流入大海的瀑布** — 从玄武岩峭壁垂直跌落**23米**，直泻太平洋，无中间水潭，无河床出口。瀑布宽**8米**，底部形成5米深的水潭，每逢涨潮便与大海相连。正是这一独特的地理特征，使正房瀑布跻身**\"瀛州十景（영주십경，济州十大风景名胜）\"**之列 — 这是朝鲜时代文人记录岛上最具诗意景观的经典名录。\n\n瀛州十景由**18世纪儒学学者李源祚（이원조）**整理成文，其中还包括城山日出、汉拿山顶和天帝渊，意味着今日行程一日之内便可涵盖**十景中的3处**。峭壁旁刻有铭文**\"徐불과차（서불과차，徐福向西而归）\"**，相传出自**徐福（서복）**之手 — 他是传说中秦朝炼丹方士，奉**秦始皇（约公元前219年）**之命寻访长生不老之药。当地传说称他途经此处踏上归途，这处铭文亦成为地名**\"西归浦\"（서귀포，\"徐福西归之地\"）**的语源根据。\n\n进入景区需沿**130级石阶**下至海湾（坡度较陡，建议穿着护膝鞋履）。门票：**成人2,000韩元 / 青少年1,000韩元 / 7岁以下及65岁以上免费**。瀑布底部飞溅的水雾营造出清凉宜人的微气候，是夏季著名的消暑胜地。**当地海女（해녀，女性潜水员 — 2016年联合国教科文组织非物质文化遗产）**在风平浪静的日子里，有时会直接在海湾出售新鲜海胆、鲍鱼和海螺 — 这是在正式博物馆场景之外，亲眼目睹潜水社群劳作的珍贵拍摄机会。",
-      "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+      "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
       "highlights": [
         "**亚洲唯一直接飞流入海的瀑布** — 垂直落差23米，无河床",
         "瀑布宽**8米**，底部5米水潭随每次涨潮汇入太平洋",
@@ -542,21 +622,31 @@
         "tip": "由于存在台阶和崎岖石路，实地游览通常比地图上看起来更耗费体力。"
       },
       "images": [
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-        "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+        "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+        "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+        "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+        "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+        "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
           "source": "atoc-korea"
         }
       ],
@@ -564,7 +654,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+          "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
           "location": "正房瀑布",
           "caption": "正房瀑布 — photo 1",
           "alt": "正房瀑布 — gallery image 1"
@@ -572,7 +662,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+          "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
           "location": "正房瀑布",
           "caption": "正房瀑布 — photo 2",
           "alt": "正房瀑布 — gallery image 2"
@@ -580,10 +670,26 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+          "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
           "location": "正房瀑布",
           "caption": "正房瀑布 — photo 3",
           "alt": "正房瀑布 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+          "location": "正房瀑布",
+          "caption": "正房瀑布 — photo 4",
+          "alt": "正房瀑布 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+          "location": "正房瀑布",
+          "caption": "正房瀑布 — photo 5",
+          "alt": "正房瀑布 — gallery image 5"
         }
       ]
     },
@@ -632,7 +738,7 @@
       "name": "城山海女徒手潜水表演",
       "category": "联合国教科文组织非物质文化遗产——女性潜水员现场表演",
       "description": "济州的海女（女性潜水员）于2016年被列为联合国教科文组织人类非物质文化遗产。在城山日出峰南侧的小湾,资深潜水员——许多已年逾六旬乃至八旬——每日进行徒手潜水表演,通常于14:00前后举行（每日一场）。她们以传统劳作歌谣开场,随后在不借助任何呼吸装备的情况下潜入水下5至10米,采集海螺、海胆与鲍鱼,出水时发出标志性的“숨비소리（sumbi-sori）”——一种让她们在长时间潜水后吐气换气的哨音般呼吸声。表演结束后,潜水员会在海边将新鲜渔获切成生鱼片现场售卖。这是一次罕见而鲜活的相遇,得以亲见一种已传承400年、却随着潜水员逐渐老去而日渐消失的母系潜水文化。表演在露天进行,取决于海况;遇取消之日,路线将改为参观附近下道的海女博物馆,以潜水装备、历史与影像在室内讲述同样的故事。",
-      "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "image": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
       "highlights": [
         "联合国教科文组织非物质文化遗产（2016年）——济州的女性潜水员",
         "城山小湾的徒手潜水现场表演（每日一场，约14:00）",
@@ -672,15 +778,76 @@
         "walking": "极少——一小段平缓步道下至小湾"
       },
       "images": [
-        "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+        "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+        "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+        "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+        "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+        "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+          "url": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
           "source": "atoc-korea"
         }
       ],
-      "galleryItems": [],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+          "location": "城山海女徒手潜水表演",
+          "caption": "城山海女徒手潜水表演 — photo 1",
+          "alt": "城山海女徒手潜水表演 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+          "location": "城山海女徒手潜水表演",
+          "caption": "城山海女徒手潜水表演 — photo 2",
+          "alt": "城山海女徒手潜水表演 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+          "location": "城山海女徒手潜水表演",
+          "caption": "城山海女徒手潜水表演 — photo 3",
+          "alt": "城山海女徒手潜水表演 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+          "location": "城山海女徒手潜水表演",
+          "caption": "城山海女徒手潜水表演 — photo 4",
+          "alt": "城山海女徒手潜水表演 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+          "location": "城山海女徒手潜水表演",
+          "caption": "城山海女徒手潜水表演 — photo 5",
+          "alt": "城山海女徒手潜水表演 — gallery image 5"
+        }
+      ],
       "number": 5,
       "alternate": {
         "label": "表演取消时",
@@ -695,7 +862,7 @@
       "name": "城山日出峰",
       "category": "UNESCO世界遗产凝灰岩锥 — 日出峰（三重UNESCO认定）",
       "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有5,000年历史的苏特塞型水成火山凝灰岩锥** — 这是一种罕见的地貌，形成于水下玄武岩喷发冲破海面之际：岩浆与海水相遇，蒸汽爆炸产生的火山灰堆积成**高182米、形如要塞的火山口**边缘，而非典型的熔岩锥。UNESCO将其正式认定为**\"苏特塞型火山地貌出露过程的杰出典范\"**。火山口**直径600米、深90米**，周围环绕着**99块锯齿状岩石**，当地传说将其比作石制王冠。\n\n城山日出峰拥有**三重UNESCO认定**：**世界自然遗产（2007年7月2日列入）**，作为**\"济州火山岛与熔岩洞穴\"**遗产地的组成部分；**生物圈保护区（2002年）**；以及**世界地质公园（2010年10月）** — 在韩国，仅有汉拿山与其并列享有此等殊荣。火山锥海侧基部凿有**18处日本二战遗迹洞穴**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，海拔上升约140米，石阶步道往返约60分钟**。\n\n**海女（해녀）表演**在火山锥下方礁石海湾**每日14:00各举行一场** — 济州女性潜水员（2016年UNESCO非物质文化遗产）不借助水肺装备潜水作业。门票自**2025年4月更新**：**成人₩5,000 / 青少年及儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。峰顶观景台同时也是**瀛洲十景**之一，且是韩国最具代表性的**年度元旦日出朝圣地** — 每年1月1日凌晨有逾5万名游客登顶迎接日出，自1995年起举办市政日出节活动。\n\n从峰顶可清晰望见4公里外的**牛岛（우도，\"牛岛\"）** — 韩国最大的附属火山岛，可从城山港乘坐**15分钟轮渡**（往返₩10,500）前往，适合行程有余裕的游客另行安排游览。",
-      "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "image": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
       "highlights": [
         "**三重UNESCO认定**：2007年7月2日世界遗产 + 2002年生物圈保护区 + 2010年10月世界地质公园",
         "**距今5,000年** — 苏特塞型水成火山喷发，岩浆遇海水蒸汽爆炸而成",
@@ -743,45 +910,31 @@
         "tip": "人流、天气以及团队体能水平均会影响登顶体验的难度与满意度。"
       },
       "images": [
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-        "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-        "/images/tours/seongsan-ilchulbong/photo-006.webp",
-        "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp"
+        "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+        "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+        "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+        "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+        "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "url": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "url": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "url": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "url": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+          "url": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
           "source": "atoc-korea"
         }
       ],
@@ -789,7 +942,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+          "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
           "location": "城山日出峰",
           "caption": "城山日出峰 — photo 1",
           "alt": "城山日出峰 — gallery image 1"
@@ -797,7 +950,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+          "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
           "location": "城山日出峰",
           "caption": "城山日出峰 — photo 2",
           "alt": "城山日出峰 — gallery image 2"
@@ -805,7 +958,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+          "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
           "location": "城山日出峰",
           "caption": "城山日出峰 — photo 3",
           "alt": "城山日出峰 — gallery image 3"
@@ -813,7 +966,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+          "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
           "location": "城山日出峰",
           "caption": "城山日出峰 — photo 4",
           "alt": "城山日出峰 — gallery image 4"
@@ -821,26 +974,10 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+          "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
           "location": "城山日出峰",
           "caption": "城山日出峰 — photo 5",
           "alt": "城山日出峰 — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-          "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 6",
-          "alt": "城山日出峰 — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-          "location": "城山日出峰",
-          "caption": "城山日出峰 — photo 12",
-          "alt": "城山日出峰 — gallery image 12"
         }
       ],
       "liveStatusWidget": "haenyeo"
@@ -851,7 +988,7 @@
       "name": "万丈窟熔岩洞",
       "category": "联合国教科文组织熔岩洞——世界自然遗产洞穴终章",
       "description": "万丈窟是世界上最优秀的熔岩洞之一,也是济州联合国教科文组织名录的核心洞穴。它形成于约10万至30万年前,当时拒文岳火山系统的熔岩向海洋下泄,留下一条约7.4公里长的隧道。其中1公里路段对游客开放,终点是一根高7.6米的熔岩石柱——已知地球上最高的熔岩石柱——由熔岩从上层通道倾泻而下凝结而成。沿途洞穴呈现教科书般的火山特征:熔岩钟乳石、条纹状的熔岩流痕、地面上绳状的绳状熔岩、洞穴珊瑚,以及一块巧合之下酷似济州岛轮廓的“熔岩龟”岩石。它属于2007年列入的“济州火山岛与熔岩洞穴”联合国教科文组织世界遗产地。洞内全年保持约11–21°C的稳定温度,因此夏凉冬暖——雨天更是天然的避雨之所。地面崎岖、潮湿、光线昏暗,公众步道往返约1公里,需30至45分钟。万丈窟会因保护与客流管控而不定期关闭;遇此情况,路线将改为参观附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。",
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+      "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
       "highlights": [
         "属于联合国教科文组织“济州火山岛与熔岩洞穴”世界遗产地（2007年）",
         "终点是已知世界上最高的熔岩石柱——约7.6米",
@@ -891,15 +1028,50 @@
         "walking": "中等——往返约1公里,洞内地面崎岖、潮湿、光线昏暗,部分顶部低矮"
       },
       "images": [
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+        "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+        "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+        "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+          "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
           "source": "atoc-korea"
         }
       ],
-      "galleryItems": [],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+          "location": "万丈窟熔岩洞",
+          "caption": "万丈窟熔岩洞 — photo 1",
+          "alt": "万丈窟熔岩洞 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+          "location": "万丈窟熔岩洞",
+          "caption": "万丈窟熔岩洞 — photo 2",
+          "alt": "万丈窟熔岩洞 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+          "location": "万丈窟熔岩洞",
+          "caption": "万丈窟熔岩洞 — photo 3",
+          "alt": "万丈窟熔岩洞 — gallery image 3"
+        }
+      ],
       "number": 7
     }
   ],
@@ -1681,7 +1853,7 @@
         "headlineLine1": "济州全岛精华一日游",
         "headlineLine2": "一日游",
         "hero": {
-          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "imageUrl": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "用高强度的一天纵贯全岛——汉拿山高山湿地、柱状节理海崖、直泻入海的瀑布、海女徒手潜水现场表演、城山日出峰凝灰岩锥与万丈窟熔岩洞。三处联合国教科文组织世界遗产，外加济州两大最受喜爱的自然地标。",
           "pills": [
@@ -1779,7 +1951,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
             "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1",
             "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1"
@@ -1787,7 +1959,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
             "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2",
             "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2"
@@ -1795,7 +1967,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
             "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3",
             "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3"
@@ -1803,7 +1975,7 @@
           {
             "id": 4,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
             "location": "大浦柱状节理壁",
             "alt": "大浦柱状节理壁 — gallery image 4",
             "caption": "大浦柱状节理壁 — photo 4"
@@ -1811,7 +1983,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+            "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
             "location": "大浦柱状节理壁",
             "alt": "大浦柱状节理壁 — gallery image 5",
             "caption": "大浦柱状节理壁 — photo 5"
@@ -1827,7 +1999,7 @@
           {
             "id": 7,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+            "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "location": "大浦柱状节理壁",
             "alt": "大浦柱状节理壁 — gallery image 7",
             "caption": "大浦柱状节理壁 — photo 7"
@@ -1835,7 +2007,7 @@
           {
             "id": 8,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 8",
             "caption": "正房瀑布 — photo 8"
@@ -1843,7 +2015,7 @@
           {
             "id": 9,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+            "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 9",
             "caption": "正房瀑布 — photo 9"
@@ -1851,7 +2023,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+            "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "location": "正房瀑布",
             "alt": "正房瀑布 — gallery image 10",
             "caption": "正房瀑布 — photo 10"
@@ -1867,7 +2039,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
             "location": "城山日出峰",
             "alt": "城山日出峰 — gallery image 12",
             "caption": "城山日出峰 — photo 12"
@@ -1883,7 +2055,7 @@
           {
             "id": 14,
             "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
             "location": "城山日出峰",
             "alt": "城山日出峰 — gallery image 14",
             "caption": "城山日出峰 — photo 14"
@@ -1899,7 +2071,7 @@
           {
             "id": 16,
             "type": "photo",
-            "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "src": "/images/tours/ilchulland/05-chatgpt-image-2026-5-8-07-45-52.webp",
             "location": "万丈窟熔岩洞",
             "alt": "万丈窟熔岩洞 — gallery image 16",
             "caption": "万丈窟熔岩洞 — photo 16"
@@ -1919,7 +2091,7 @@
             "name": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
             "category": "高山湿地 — 拉姆萨尔遗址 + 汉拿山联合国教科文组织世界遗产区内",
             "description": "**汉拿山1100高地湿地（한라산 1100고지 습지）**是位于汉拿山高原的高海拔山地湿地系统，**海拔恰好1,100米**，沿**1100号国道——韩国海拔最高的国道**，连接济州市与西归浦中文区。该遗址被列为**国际重要湿地（拉姆萨尔湿地，编号1893，2009年10月12日指定）**，同时位于**汉拿山联合国教科文组织世界遗产（2007年）**、**济州岛联合国教科文组织生物圈保护区（2002年）**及**汉拿山国家公园（1970年）**范围之内，是全球少数同时拥有**四项国际/国家重叠认定**的遗址之一。\n\n湿地由**16处以上不连续的淡水沼泽和水池**组成，分布于低坡度高原地段，可汇聚并留存雨水，形成**小型永久湖泊和泥炭沼泽**，孕育多样的植物群落，济州特有种比例较高。已记录的生物多样性包括**韩国境内3种濒危鸟类和1种濒危植物**，以及济州岛特有的哺乳动物、爬行动物和昆虫物种。该遗址**2008年接待游客90万人次**（汉拿山游客中心数据）。\n\n游客体验：设有**1公里木栈道环线**，配备观景台、解说标牌，以及登山口的小型自然历史展览。**秋季红叶（10月至11月）**与**冬季雪景（12月至2月）**是拍照最多的季节；**春夏季节**则可欣赏湿地植物及特有物种。**免费入场**；毗邻的**1100休息区（1100 휴게소）**提供室内卫生间、咖啡厅及小型纪念品商店。拉姆萨尔名录中记录了该遗址对当地社区的**文化与宗教重要意义**——历史上与山水神灵相关的萨满朝圣活动由来已久。",
-            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "highlights": [
               "**拉姆萨尔湿地第1893号**（2009年10月12日指定）— 国际重要湿地",
               "**海拔1,100米** — 位于韩国**最高国道**（1100号国道）沿线",
@@ -1966,21 +2138,21 @@
               "tip": "请备多层衣物 — 此处气温较济州沿海低5–10°C；冬季请提前查看路况；如向南下行，可顺道游览天帝渊瀑布"
             },
             "images": [
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1988,7 +2160,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
                 "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 1",
                 "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 1"
@@ -1996,7 +2168,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
                 "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 2",
                 "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 2"
@@ -2004,7 +2176,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "location": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织）",
                 "caption": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — photo 3",
                 "alt": "汉拿山1100高地湿地（拉姆萨尔湿地 + 联合国教科文组织） — gallery image 3"
@@ -2018,7 +2190,7 @@
             "name": "大浦柱状节理壁",
             "category": "火山海岸线——六边形柱状节理熔岩",
             "description": "**大浦柱状节理（대포 주상절리，\"Jisatgae\"）**是位于中门海岸的一段**长约1公里的六边形柱状节理玄武岩崖壁**，于**2005年1月6日被列为天然纪念物第443号**。石柱从海面耸立**30至40米**，紧密排列成**5至7边形多边形**（多为六边形）——这一几何形态源于**约25万至14万年前汉拿山侧翼喷发的熔融玄武岩浆抵达海洋后冷却收缩**，沿垂直于冷却面的方向断裂而成。\n\n在全球范围内，柱状节理以**英国巨人堤道（Giant's Causeway）**、**美国魔鬼柱（Devils Postpile）**和**苏格兰芬加尔洞穴（Fingal's Cave）**最为著名——大浦柱状节理是**东亚最具代表性的柱状节理景观**，也是最易抵达的。长达800米的**木栈道环路**将游客引至可直接俯瞰石柱的护栏崖边；**涨潮时海浪拍打石柱，浪花可飞溅至20米高**，偶尔越过护栏。\n\n门票：**成人₩2,000 / 青少年₩1,000 / 7岁以下及65岁以上免费**。该景点隶属**济州全球地质公园（联合国教科文组织2010年10月认定）**，是岛上**13个官方地质遗址**之一，与城山日出峰、万丈窟熔岩洞、水月峰并列。崖顶观景台**无障碍设施完善**（可供轮椅及婴儿车通行）。环路沿线设有三个观景平台，各呈现不同的石柱角度：**第一观景台**以侧面展现石柱（最适合拍摄六边形几何构图），**中间观景台**可俯瞰石柱顶部的纹理图案，**远端观景台**则在晴天以汉拿山为背景，尽收1公里海岸线全景。\n\n**最佳拍摄时段为14:00至16:00**，此时西斜阳光正面照射石柱面；黄昏时分可拍摄剪影构图，但石柱细节质感有所欠缺。开放时间：**09:00至18:00（最后入场17:30）**，全年运营。",
-            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "highlights": [
               "**天然纪念物第443号**——**2005年1月6日**指定，是济州最新认定的海岸天然纪念物",
               "石柱耸立**30至40米**，沿**1公里**海岸线紧密排列成**5至7边形多边形**（多为六边形）",
@@ -2066,31 +2238,31 @@
               "tip": "即便是晴天，海岸通常也比济州内陆感觉更寒冷、风更大。"
             },
             "images": [
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-              "/images/tours/jusangjeolli/photo-005.webp"
+              "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+              "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/photo-005.webp",
+                "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2098,7 +2270,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "location": "大浦柱状节理壁",
                 "caption": "大浦柱状节理壁 — photo 1",
                 "alt": "大浦柱状节理壁 — gallery image 1"
@@ -2106,7 +2278,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "location": "大浦柱状节理壁",
                 "caption": "大浦柱状节理壁 — photo 2",
                 "alt": "大浦柱状节理壁 — gallery image 2"
@@ -2114,7 +2286,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "location": "大浦柱状节理壁",
                 "caption": "大浦柱状节理壁 — photo 3",
                 "alt": "大浦柱状节理壁 — gallery image 3"
@@ -2122,7 +2294,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "location": "大浦柱状节理壁",
                 "caption": "大浦柱状节理壁 — photo 4",
                 "alt": "大浦柱状节理壁 — gallery image 4"
@@ -2130,7 +2302,7 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "location": "大浦柱状节理壁",
                 "caption": "大浦柱状节理壁 — photo 5",
                 "alt": "大浦柱状节理壁 — gallery image 5"
@@ -2144,7 +2316,7 @@
             "name": "正房瀑布",
             "category": "海岸瀑布 — 直接飞流入海（亚洲唯一）",
             "description": "**正房瀑布（정방폭포，意为\"直泻入海之瀑\"）**是**亚洲唯一一座直接流入大海的瀑布** — 从玄武岩峭壁垂直跌落**23米**，直泻太平洋，无中间水潭，无河床出口。瀑布宽**8米**，底部形成5米深的水潭，每逢涨潮便与大海相连。正是这一独特的地理特征，使正房瀑布跻身**\"瀛州十景（영주십경，济州十大风景名胜）\"**之列 — 这是朝鲜时代文人记录岛上最具诗意景观的经典名录。\n\n瀛州十景由**18世纪儒学学者李源祚（이원조）**整理成文，其中还包括城山日出、汉拿山顶和天帝渊，意味着今日行程一日之内便可涵盖**十景中的3处**。峭壁旁刻有铭文**\"徐불과차（서불과차，徐福向西而归）\"**，相传出自**徐福（서복）**之手 — 他是传说中秦朝炼丹方士，奉**秦始皇（约公元前219年）**之命寻访长生不老之药。当地传说称他途经此处踏上归途，这处铭文亦成为地名**\"西归浦\"（서귀포，\"徐福西归之地\"）**的语源根据。\n\n进入景区需沿**130级石阶**下至海湾（坡度较陡，建议穿着护膝鞋履）。门票：**成人2,000韩元 / 青少年1,000韩元 / 7岁以下及65岁以上免费**。瀑布底部飞溅的水雾营造出清凉宜人的微气候，是夏季著名的消暑胜地。**当地海女（해녀，女性潜水员 — 2016年联合国教科文组织非物质文化遗产）**在风平浪静的日子里，有时会直接在海湾出售新鲜海胆、鲍鱼和海螺 — 这是在正式博物馆场景之外，亲眼目睹潜水社群劳作的珍贵拍摄机会。",
-            "image": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+            "image": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
             "highlights": [
               "**亚洲唯一直接飞流入海的瀑布** — 垂直落差23米，无河床",
               "瀑布宽**8米**，底部5米水潭随每次涨潮汇入太平洋",
@@ -2192,21 +2364,31 @@
               "tip": "由于存在台阶和崎岖石路，实地游览通常比地图上看起来更耗费体力。"
             },
             "images": [
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
-              "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp"
+              "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
+              "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
+              "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+              "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+              "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "url": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "url": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "url": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2214,7 +2396,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+                "src": "/images/tours/jeongbang-falls/01-kakaotalk-20260510-230028438-17.webp",
                 "location": "正房瀑布",
                 "caption": "正房瀑布 — photo 1",
                 "alt": "正房瀑布 — gallery image 1"
@@ -2222,7 +2404,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-16.webp",
+                "src": "/images/tours/jeongbang-falls/02-kakaotalk-20260510-230028438-16.webp",
                 "location": "正房瀑布",
                 "caption": "正房瀑布 — photo 2",
                 "alt": "正房瀑布 — gallery image 2"
@@ -2230,10 +2412,26 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-17.webp",
+                "src": "/images/tours/jeongbang-falls/03-kakaotalk-20260508-170934455-12.webp",
                 "location": "正房瀑布",
                 "caption": "正房瀑布 — photo 3",
                 "alt": "正房瀑布 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
+                "location": "正房瀑布",
+                "caption": "正房瀑布 — photo 4",
+                "alt": "正房瀑布 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeongbang-falls/05-kakaotalk-20260508-170934455-11.webp",
+                "location": "正房瀑布",
+                "caption": "正房瀑布 — photo 5",
+                "alt": "正房瀑布 — gallery image 5"
               }
             ]
           },
@@ -2283,7 +2481,7 @@
             "name": "城山海女徒手潜水表演",
             "category": "联合国教科文组织非物质文化遗产——女性潜水员现场表演",
             "description": "济州的海女（女性潜水员）于2016年被列为联合国教科文组织人类非物质文化遗产。在城山日出峰南侧的小湾,资深潜水员——许多已年逾六旬乃至八旬——每日进行徒手潜水表演,通常于14:00前后举行（每日一场）。她们以传统劳作歌谣开场,随后在不借助任何呼吸装备的情况下潜入水下5至10米,采集海螺、海胆与鲍鱼,出水时发出标志性的“숨비소리（sumbi-sori）”——一种让她们在长时间潜水后吐气换气的哨音般呼吸声。表演结束后,潜水员会在海边将新鲜渔获切成生鱼片现场售卖。这是一次罕见而鲜活的相遇,得以亲见一种已传承400年、却随着潜水员逐渐老去而日渐消失的母系潜水文化。表演在露天进行,取决于海况;遇取消之日,路线将改为参观附近下道的海女博物馆,以潜水装备、历史与影像在室内讲述同样的故事。",
-            "image": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "image": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
             "highlights": [
               "联合国教科文组织非物质文化遗产（2016年）——济州的女性潜水员",
               "城山小湾的徒手潜水现场表演（每日一场，约14:00）",
@@ -2323,15 +2521,76 @@
               "walking": "极少——一小段平缓步道下至小湾"
             },
             "images": [
-              "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp"
+              "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+              "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+              "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+              "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+              "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+                "url": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
                 "source": "atoc-korea"
               }
             ],
-            "galleryItems": [],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/01-17-20260731-140606.webp",
+                "location": "城山海女徒手潜水表演",
+                "caption": "城山海女徒手潜水表演 — photo 1",
+                "alt": "城山海女徒手潜水表演 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/02-kakaotalk-20250603-193324685-03.webp",
+                "location": "城山海女徒手潜水表演",
+                "caption": "城山海女徒手潜水表演 — photo 2",
+                "alt": "城山海女徒手潜水表演 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/03-kakaotalk-20250603-193324685-02.webp",
+                "location": "城山海女徒手潜水表演",
+                "caption": "城山海女徒手潜水表演 — photo 3",
+                "alt": "城山海女徒手潜水表演 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/04-08-20260731-135953-001.webp",
+                "location": "城山海女徒手潜水表演",
+                "caption": "城山海女徒手潜水表演 — photo 4",
+                "alt": "城山海女徒手潜水表演 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/jeju-haenyeo-museum/05-kakaotalk-20260510-230009595-17.webp",
+                "location": "城山海女徒手潜水表演",
+                "caption": "城山海女徒手潜水表演 — photo 5",
+                "alt": "城山海女徒手潜水表演 — gallery image 5"
+              }
+            ],
             "number": 5
           },
           {
@@ -2341,7 +2600,7 @@
             "name": "城山日出峰",
             "category": "UNESCO世界遗产凝灰岩锥 — 日出峰（三重UNESCO认定）",
             "description": "**城山日出峰（성산일출봉，\"日出峰\"）**是一座**有5,000年历史的苏特塞型水成火山凝灰岩锥** — 这是一种罕见的地貌，形成于水下玄武岩喷发冲破海面之际：岩浆与海水相遇，蒸汽爆炸产生的火山灰堆积成**高182米、形如要塞的火山口**边缘，而非典型的熔岩锥。UNESCO将其正式认定为**\"苏特塞型火山地貌出露过程的杰出典范\"**。火山口**直径600米、深90米**，周围环绕着**99块锯齿状岩石**，当地传说将其比作石制王冠。\n\n城山日出峰拥有**三重UNESCO认定**：**世界自然遗产（2007年7月2日列入）**，作为**\"济州火山岛与熔岩洞穴\"**遗产地的组成部分；**生物圈保护区（2002年）**；以及**世界地质公园（2010年10月）** — 在韩国，仅有汉拿山与其并列享有此等殊荣。火山锥海侧基部凿有**18处日本二战遗迹洞穴**（1945年神风特攻队自杀艇掩体）。步道：**单程0.8公里，海拔上升约140米，石阶步道往返约60分钟**。\n\n**海女（해녀）表演**在火山锥下方礁石海湾**每日14:00各举行一场** — 济州女性潜水员（2016年UNESCO非物质文化遗产）不借助水肺装备潜水作业。门票自**2025年4月更新**：**成人₩5,000 / 青少年及儿童₩2,500 / 团体成人₩1,600**，7岁以下及65岁以上免费。峰顶观景台同时也是**瀛洲十景**之一，且是韩国最具代表性的**年度元旦日出朝圣地** — 每年1月1日凌晨有逾5万名游客登顶迎接日出，自1995年起举办市政日出节活动。\n\n从峰顶可清晰望见4公里外的**牛岛（우도，\"牛岛\"）** — 韩国最大的附属火山岛，可从城山港乘坐**15分钟轮渡**（往返₩10,500）前往，适合行程有余裕的游客另行安排游览。",
-            "image": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "image": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
             "highlights": [
               "**三重UNESCO认定**：2007年7月2日世界遗产 + 2002年生物圈保护区 + 2010年10月世界地质公园",
               "**距今5,000年** — 苏特塞型水成火山喷发，岩浆遇海水蒸汽爆炸而成",
@@ -2389,45 +2648,31 @@
               "tip": "人流、天气以及团队体能水平均会影响登顶体验的难度与满意度。"
             },
             "images": [
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-              "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-              "/images/tours/seongsan-ilchulbong/photo-006.webp",
-              "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp"
+              "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
+              "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
+              "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
+              "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
+              "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "url": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "url": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "url": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "url": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+                "url": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2435,7 +2680,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+                "src": "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
                 "location": "城山日出峰",
                 "caption": "城山日出峰 — photo 1",
                 "alt": "城山日出峰 — gallery image 1"
@@ -2443,7 +2688,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+                "src": "/images/tours/seongsan-ilchulbong/02-kakaotalk-20260510-230028438-08.webp",
                 "location": "城山日出峰",
                 "caption": "城山日出峰 — photo 2",
                 "alt": "城山日出峰 — gallery image 2"
@@ -2451,7 +2696,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+                "src": "/images/tours/seongsan-ilchulbong/03-kakaotalk-20260510-230028438-10.webp",
                 "location": "城山日出峰",
                 "caption": "城山日出峰 — photo 3",
                 "alt": "城山日出峰 — gallery image 3"
@@ -2459,7 +2704,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+                "src": "/images/tours/seongsan-ilchulbong/04-kakaotalk-20250603-220800957-10.webp",
                 "location": "城山日出峰",
                 "caption": "城山日出峰 — photo 4",
                 "alt": "城山日出峰 — gallery image 4"
@@ -2467,26 +2712,10 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+                "src": "/images/tours/seongsan-ilchulbong/05-kakaotalk-20250915-223414219-02.webp",
                 "location": "城山日出峰",
                 "caption": "城山日出峰 — photo 5",
                 "alt": "城山日出峰 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 6",
-                "alt": "城山日出峰 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-                "location": "城山日出峰",
-                "caption": "城山日出峰 — photo 12",
-                "alt": "城山日出峰 — gallery image 12"
               }
             ],
             "liveStatusWidget": "haenyeo"
@@ -2497,7 +2726,7 @@
             "name": "万丈窟熔岩洞",
             "category": "联合国教科文组织熔岩洞——世界自然遗产洞穴终章",
             "description": "万丈窟是世界上最优秀的熔岩洞之一,也是济州联合国教科文组织名录的核心洞穴。它形成于约10万至30万年前,当时拒文岳火山系统的熔岩向海洋下泄,留下一条约7.4公里长的隧道。其中1公里路段对游客开放,终点是一根高7.6米的熔岩石柱——已知地球上最高的熔岩石柱——由熔岩从上层通道倾泻而下凝结而成。沿途洞穴呈现教科书般的火山特征:熔岩钟乳石、条纹状的熔岩流痕、地面上绳状的绳状熔岩、洞穴珊瑚,以及一块巧合之下酷似济州岛轮廓的“熔岩龟”岩石。它属于2007年列入的“济州火山岛与熔岩洞穴”联合国教科文组织世界遗产地。洞内全年保持约11–21°C的稳定温度,因此夏凉冬暖——雨天更是天然的避雨之所。地面崎岖、潮湿、光线昏暗,公众步道往返约1公里,需30至45分钟。万丈窟会因保护与客流管控而不定期关闭;遇此情况,路线将改为参观附近的日出乐园美千洞——同属一火山系统的另一处熔岩洞。",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+            "image": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
             "highlights": [
               "属于联合国教科文组织“济州火山岛与熔岩洞穴”世界遗产地（2007年）",
               "终点是已知世界上最高的熔岩石柱——约7.6米",
@@ -2537,15 +2766,50 @@
               "walking": "中等——往返约1公里,洞内地面崎岖、潮湿、光线昏暗,部分顶部低矮"
             },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp"
+              "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+              "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+              "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-45-52.webp",
+                "url": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
                 "source": "atoc-korea"
               }
             ],
-            "galleryItems": [],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/01-kakaotalk-20250603-212300450-29.webp",
+                "location": "万丈窟熔岩洞",
+                "caption": "万丈窟熔岩洞 — photo 1",
+                "alt": "万丈窟熔岩洞 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/02-kakaotalk-20260508-171119960-19.webp",
+                "location": "万丈窟熔岩洞",
+                "caption": "万丈窟熔岩洞 — photo 2",
+                "alt": "万丈窟熔岩洞 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/manjanggul/03-kakaotalk-20250617-211653070-09.webp",
+                "location": "万丈窟熔岩洞",
+                "caption": "万丈窟熔岩洞 — photo 3",
+                "alt": "万丈窟熔岩洞 — gallery image 3"
+              }
+            ],
             "number": 7
           }
         ]

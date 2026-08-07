@@ -53,10 +53,10 @@
 
 | 표면 | 방문하는 하니스 |
 |---|---|
-| `/tour-mode` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-private-itinerary-render.mjs`[리터럴] |
+| `/tour-mode` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-private-itinerary-render.mjs`[리터럴] · `qa-tap-reachability.mjs`[리터럴] |
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
 | `/tour-mode/companion/[token]` | `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] |
+| `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-tap-reachability.mjs`[리터럴] |
 | `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cjk-render.mjs`[선언] · `qa-cockpit-tray.ts`[선언] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/join/[roomToken]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
@@ -65,7 +65,7 @@
 
 **실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
-**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 19개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-tour-product.mjs` · `qa-departure-days.ts` · `qa-home-walk.mjs` · `qa-markdown-leak.ts` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-overlay-collisions.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tap-reachability.mjs` · `qa-tick-discipline.mjs`
+**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 19개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-tour-product.mjs` · `qa-departure-days.ts` · `qa-home-walk.mjs` · `qa-markdown-leak.ts` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-overlay-collisions.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-rail-scrollbars.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs`
 
 > 판정 불가는 "커버 안 됨"이 **아니다.** 런타임 URL·환경변수로 이동해서 소스가 볼 수 없다는 뜻이고,
 > 어느 쪽으로든 추측하면 게이트가 거짓말을 한다. 해소하려면 그 하니스에 `COVERS` 를 선언한다.

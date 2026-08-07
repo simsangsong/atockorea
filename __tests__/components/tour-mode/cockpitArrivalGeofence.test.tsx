@@ -18,6 +18,7 @@ import { render, screen, waitFor, fireEvent, within } from '@testing-library/rea
 import Cockpit from '@/components/tour-mode/cockpit/Cockpit';
 import { __resetTourRoomSettingsForTests } from '@/hooks/useTourRoomSettings';
 import { vehicleShareKey } from '@/components/tour-mode/cockpit/Cockpit';
+import { kstToday } from '@/lib/tour-room/time';
 
 jest.mock('next/navigation', () => ({ useRouter: () => ({ push: jest.fn(), back: jest.fn() }) }));
 jest.mock('@/hooks/useTourRoomChannel', () => ({
@@ -64,9 +65,13 @@ jest.mock('@/hooks/useSpotGeofence', () => ({
   },
 }));
 
-/** The cockpit remembers the vehicle-share opt-in per booking. */
+/** The cockpit remembers the vehicle-share choice per booking, per tour day. */
 function enableSharing() {
-  window.localStorage.setItem(vehicleShareKey('b-1'), '1');
+  window.localStorage.setItem(vehicleShareKey('b-1', kstToday()), '1');
+}
+/** '0' = the driver said no for today; it outranks the tour-day auto-on. */
+function disableSharing() {
+  window.localStorage.setItem(vehicleShareKey('b-1', kstToday()), '0');
 }
 
 const SPOT = {
@@ -149,8 +154,13 @@ describe('cockpit arrival geofence (X15 Phase 1)', () => {
    * 🔴 No share, no geofence. The driver's location toggle is the single
    * consent point; arrival detection must not become a second, invisible reason
    * to read position.
+   *
+   * Sharing now defaults ON for the tour day (사장님 2026-08-07), so "off" has to
+   * be said out loud here — and that is exactly the case worth pinning: the one
+   * tap that stops the van from being on the guest map must also stop this.
    */
-  it('stays disarmed while location sharing is off', async () => {
+  it('stays disarmed once the driver turns location sharing off', async () => {
+    disableSharing();
     mount();
     await waitFor(() => expect(geofenceCalls.length).toBeGreaterThan(0));
     expect(geofenceCalls.every((c) => !c.enabled)).toBe(true);

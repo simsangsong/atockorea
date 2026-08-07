@@ -16,7 +16,7 @@
       "감천문화마을 투어",
       "청사포 다릿돌전망대"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+    "ogImage": "https://www.atockorea.com/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp"
   },
   "catalog_card": {
     "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
@@ -42,8 +42,8 @@
       "문화마을",
       "첫 방문 추천"
     ],
-    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
-    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "heroImage": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+    "thumbnail": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
     "priceLabel": "",
     "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
   },
@@ -56,9 +56,11 @@
     "salePriceUsd": 59
   },
   "hero": {
-    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "imageUrl": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
     "imagePosition": "center 40%",
     "images": [
+      "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
     ],
     "tagline": "한적한 시간대의 해안 사찰, 바다 위 유리 스카이워크, 파스텔 캡슐을 타고 내려가는 해안선, 그리고 성격이 다른 두 산비탈 마을 — 하나는 세계적으로 유명하고, 하나는 아직 동네답습니다",
@@ -141,136 +143,144 @@
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 1",
-      "alt": "해동 용궁사 — gallery image 1"
+      "alt": "해동 용궁사 — gallery image 1",
+      "caption": "해동 용궁사 — photo 1"
     },
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
-      "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 2",
-      "alt": "해동 용궁사 — gallery image 2"
+      "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+      "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+      "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 1",
+      "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 1"
     },
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 3",
-      "alt": "해동 용궁사 — gallery image 3"
+      "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1"
     },
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
-      "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 4",
-      "alt": "해동 용궁사 — gallery image 4"
+      "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+      "location": "해운대해수욕장",
+      "alt": "해운대해수욕장 — gallery image 1",
+      "caption": "해운대해수욕장 — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
-      "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 5",
-      "alt": "해동 용궁사 — gallery image 5"
+      "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 1",
+      "caption": "감천문화마을 — photo 1"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "해동 용궁사",
-      "caption": "해동 용궁사 — photo 6",
-      "alt": "해동 용궁사 — gallery image 6"
+      "alt": "해동 용궁사 — gallery image 2",
+      "caption": "해동 용궁사 — photo 2"
     },
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
-      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
-      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 3",
+      "caption": "해동 용궁사 — photo 3"
     },
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
-      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
-      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 4",
+      "caption": "해동 용궁사 — photo 4"
     },
     {
       "id": 9,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
-      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
-      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 5",
+      "caption": "해동 용궁사 — photo 5"
     },
     {
       "id": 10,
       "type": "photo",
-      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
-      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
-      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
-      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "해동 용궁사",
+      "alt": "해동 용궁사 — gallery image 6",
+      "caption": "해동 용궁사 — photo 6"
     },
     {
       "id": 11,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 1",
-      "alt": "감천문화마을 — gallery image 1"
+      "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+      "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+      "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 2",
+      "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 2"
     },
     {
       "id": 12,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 2",
-      "alt": "감천문화마을 — gallery image 2"
+      "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2"
     },
     {
       "id": 13,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 3",
-      "alt": "감천문화마을 — gallery image 3"
+      "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3"
     },
     {
       "id": 14,
       "type": "photo",
-      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 4",
-      "alt": "감천문화마을 — gallery image 4"
+      "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4"
     },
     {
       "id": 15,
       "type": "photo",
-      "src": "/images/itinerary/jagalchi-market-interior.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 5",
-      "alt": "감천문화마을 — gallery image 5"
+      "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 5",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 5"
     },
     {
       "id": 16,
       "type": "photo",
-      "src": "/images/itinerary/jagalchi-night-building.webp",
-      "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 6",
-      "alt": "감천문화마을 — gallery image 6"
+      "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+      "location": "해운대해수욕장",
+      "alt": "해운대해수욕장 — gallery image 2",
+      "caption": "해운대해수욕장 — photo 2"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+      "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "감천문화마을",
-      "caption": "감천문화마을 — photo 8",
-      "alt": "감천문화마을 — gallery image 8"
+      "alt": "감천문화마을 — gallery image 2",
+      "caption": "감천문화마을 — photo 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "감천문화마을",
+      "alt": "감천문화마을 — gallery image 3",
+      "caption": "감천문화마을 — photo 3"
     }
   ],
   "itineraryStops": [
@@ -456,7 +466,7 @@
       "name": "청사포 다릿돌전망대 (유리 스카이워크)",
       "category": "해안 전망대 / 무료",
       "description": "**청사포 다릿돌전망대**는 청사포와 송정 사이 해안 절벽에서 **바다 위 약 20m 높이로 72.5m를 굽어 나가는 스카이워크**로, 2017년 8월 개장했습니다. 이름은 데크 아래 바다에 징검다리처럼 놓인 **다섯 개의 암초, '다릿돌'**에서 왔습니다 — 수평선을 향해 놓인 돌다리라는 뜻입니다. 데크 끝 구간의 바닥은 **유리**로, 발밑에 너울이 굽이치는 것을 그대로 내려다보게 되며(유리 보호용 덧신 제공), **입장은 무료**입니다. 마을 쪽으로 내려오면 **청사포 쌍둥이 등대**(홍·백)와 슬램덩크풍 애니메이션 프레임으로 유명해진 작은 건널목 포토존이 짧은 산책 거리에 있습니다.",
-      "image": null,
+      "image": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
       "highlights": [
         "**바다 위 약 20m, 길이 72.5m 스카이워크** — 2017년 8월 개장, 무료",
         "데크 아래 보이는 다섯 암초 **'다릿돌'**에서 온 이름",
@@ -498,9 +508,38 @@
         "walking": "데크는 평탄한 워크아웃; 마을에서 짧은 오르막",
         "admission": "무료(유리 구간 덧신 제공)"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+        "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+          "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+          "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 1",
+          "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+          "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+          "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 2",
+          "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 2"
+        }
+      ]
     },
     {
       "number": 4,
@@ -509,7 +548,7 @@
       "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
       "category": "해안 라이드 / 티켓 선택",
       "description": "**스카이캡슐**은 폐선된 동해남부선 해안 철길을 2020년 친환경 재개발한 **해운대 블루라인파크**의 시그너처 라이드입니다: **파스텔 색 4인승 캐빈이 해안 7~10m 높이의 고가 레일 위로 청사포~미포 2.3km를 미끄러져 갑니다**(약 30분) — 가는 내내 한쪽은 바다입니다. 우리는 **청사포에서 타고 미포 방향으로 내려가며**, 미포에는 차량이 먼저 가서 기다립니다 — 탑승 자체가 이 하루의 해안 이동이 되는 구조입니다. **캡슐 티켓은 선택 사항으로 예약 시 정합니다**: 티켓 포함 옵션이면 그룹 몫의 캡슐을 사전 예약하고(요금은 캡슐당: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도), 기본 옵션이면 같은 레일 아래의 수상 경력 있는 2.3km 목재 해안 산책로 **그린레일웨이(무료)**를 걷거나 차량으로 미포까지 이동하면 됩니다.",
-      "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "image": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
       "highlights": [
         "**고가 해안 레일 위 파스텔 4인승 캡슐** — 블루라인파크 시그너처(2020년 개장)",
         "**청사포→미포 2.3km / 약 30분**, 내내 바다 전망",
@@ -551,26 +590,31 @@
         "admission": "캡슐당 편도: 약 ₩30,000(2인) / ₩39,000(3인) / ₩44,000(4인) — 예약 시 티켓 포함 옵션 선택 가능"
       },
       "images": [
-        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-        "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+        "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+        "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
+        "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+        "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "url": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "url": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "url": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "url": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
           "source": "atoc-korea"
         }
       ],
@@ -578,7 +622,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
           "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
           "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
           "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
@@ -586,7 +630,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
           "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
           "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
           "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
@@ -594,7 +638,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
           "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
           "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
           "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
@@ -602,10 +646,18 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
           "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
           "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
           "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+          "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+          "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 5",
+          "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 5"
         }
       ]
     },
@@ -642,7 +694,7 @@
       "name": "해운대해수욕장",
       "category": "해변 / 무료",
       "description": "**해운대해수욕장**은 한국에서 가장 잘 알려진 백사장으로, 서쪽 끝 동백섬과 동쪽 끝 미포 사이를 약 **1.5km** 곡선으로 잇고 뒤로는 마린시티 스카이라인이 서 있습니다. 스카이캡슐이 내려 주는 미포가 바로 이 해변의 동쪽 끝이라, 이 정차에는 추가 이동이 전혀 들지 않습니다.\n\n20분은 수영이 아니라 사진과 발끝을 위한 시간입니다. 모래사장으로 걸어 나가 스카이라인을 찍고 차량으로 돌아옵니다. 7~8월에는 가장 붐비고 파라솔이 늘어서며, 그 외 기간에는 넓고 조용해 걷기 좋습니다. 무료이며 24시간 개방입니다.",
-      "image": null,
+      "image": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
       "highlights": [
         "**한국에서 가장 유명한 해변** — 약 1.5km 백사장, 무료·24시간 개방",
         "물가에서 바라보는 마린시티 스카이라인",
@@ -671,9 +723,38 @@
         "walking": "평평한 백사장과 포장 산책로",
         "admission": "무료"
       },
-      "images": [],
-      "imageCredits": [],
-      "galleryItems": []
+      "images": [
+        "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+        "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+          "location": "해운대해수욕장",
+          "caption": "해운대해수욕장 — photo 1",
+          "alt": "해운대해수욕장 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+          "location": "해운대해수욕장",
+          "caption": "해운대해수욕장 — photo 2",
+          "alt": "해운대해수욕장 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 7,
@@ -732,47 +813,23 @@
           "Busan Cultural Foundation"
         ]
       },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-        "/images/itinerary/jagalchi-harbor-sign.webp",
-        "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp",
-        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+        "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+        "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/itinerary/jagalchi-market-interior.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/itinerary/jagalchi-night-building.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
           "source": "atoc-korea"
         }
       ],
@@ -780,7 +837,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
           "location": "감천문화마을",
           "caption": "감천문화마을 — photo 1",
           "alt": "감천문화마을 — gallery image 1"
@@ -788,7 +845,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
           "location": "감천문화마을",
           "caption": "감천문화마을 — photo 2",
           "alt": "감천문화마을 — gallery image 2"
@@ -796,42 +853,10 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
           "location": "감천문화마을",
           "caption": "감천문화마을 — photo 3",
           "alt": "감천문화마을 — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
-          "location": "감천문화마을",
-          "caption": "감천문화마을 — photo 4",
-          "alt": "감천문화마을 — gallery image 4"
-        },
-        {
-          "id": 5,
-          "type": "photo",
-          "src": "/images/itinerary/jagalchi-market-interior.webp",
-          "location": "감천문화마을",
-          "caption": "감천문화마을 — photo 5",
-          "alt": "감천문화마을 — gallery image 5"
-        },
-        {
-          "id": 6,
-          "type": "photo",
-          "src": "/images/itinerary/jagalchi-night-building.webp",
-          "location": "감천문화마을",
-          "caption": "감천문화마을 — photo 6",
-          "alt": "감천문화마을 — gallery image 6"
-        },
-        {
-          "id": 7,
-          "type": "photo",
-          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
-          "location": "감천문화마을",
-          "caption": "감천문화마을 — photo 8",
-          "alt": "감천문화마을 — gallery image 8"
         }
       ]
     },
@@ -1721,7 +1746,7 @@
           {
             "id": 9,
             "type": "photo",
-            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+            "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
             "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
             "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
             "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
@@ -1737,7 +1762,7 @@
           {
             "id": 11,
             "type": "photo",
-            "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
             "location": "감천문화마을",
             "caption": "감천문화마을 — photo 1",
             "alt": "감천문화마을 — gallery image 1"
@@ -1745,7 +1770,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+            "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
             "location": "감천문화마을",
             "caption": "감천문화마을 — photo 2",
             "alt": "감천문화마을 — gallery image 2"
@@ -1981,7 +2006,7 @@
             "name": "청사포 다릿돌전망대 (유리 스카이워크)",
             "category": "해안 전망대 / 무료",
             "description": "**청사포 다릿돌전망대**는 청사포와 송정 사이 해안 절벽에서 **바다 위 약 20m 높이로 72.5m를 굽어 나가는 스카이워크**로, 2017년 8월 개장했습니다. 이름은 데크 아래 바다에 징검다리처럼 놓인 **다섯 개의 암초, '다릿돌'**에서 왔습니다 — 수평선을 향해 놓인 돌다리라는 뜻입니다. 데크 끝 구간의 바닥은 **유리**로, 발밑에 너울이 굽이치는 것을 그대로 내려다보게 되며(유리 보호용 덧신 제공), **입장은 무료**입니다. 마을 쪽으로 내려오면 **청사포 쌍둥이 등대**(홍·백)와 슬램덩크풍 애니메이션 프레임으로 유명해진 작은 건널목 포토존이 짧은 산책 거리에 있습니다.",
-            "image": null,
+            "image": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
             "highlights": [
               "**바다 위 약 20m, 길이 72.5m 스카이워크** — 2017년 8월 개장, 무료",
               "데크 아래 보이는 다섯 암초 **'다릿돌'**에서 온 이름",
@@ -2023,9 +2048,38 @@
               "walking": "데크는 평탄한 워크아웃; 마을에서 짧은 오르막",
               "admission": "무료(유리 구간 덧신 제공)"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+              "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-daritdol/01-chatgpt-image-2026-5-10-01-37-36.webp",
+                "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+                "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 1",
+                "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-daritdol/02-chatgpt-image-2026-5-10-01-03-54.webp",
+                "location": "청사포 다릿돌전망대 (유리 스카이워크)",
+                "caption": "청사포 다릿돌전망대 (유리 스카이워크) — photo 2",
+                "alt": "청사포 다릿돌전망대 (유리 스카이워크) — gallery image 2"
+              }
+            ]
           },
           {
             "number": 4,
@@ -2034,7 +2088,7 @@
             "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
             "category": "해안 라이드 / 티켓 선택",
             "description": "**스카이캡슐**은 폐선된 동해남부선 해안 철길을 2020년 친환경 재개발한 **해운대 블루라인파크**의 시그너처 라이드입니다: **파스텔 색 4인승 캐빈이 해안 7~10m 높이의 고가 레일 위로 청사포~미포 2.3km를 미끄러져 갑니다**(약 30분) — 가는 내내 한쪽은 바다입니다. 우리는 **청사포에서 타고 미포 방향으로 내려가며**, 미포에는 차량이 먼저 가서 기다립니다 — 탑승 자체가 이 하루의 해안 이동이 되는 구조입니다. **캡슐 티켓은 선택 사항으로 예약 시 정합니다**: 티켓 포함 옵션이면 그룹 몫의 캡슐을 사전 예약하고(요금은 캡슐당: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도), 기본 옵션이면 같은 레일 아래의 수상 경력 있는 2.3km 목재 해안 산책로 **그린레일웨이(무료)**를 걷거나 차량으로 미포까지 이동하면 됩니다.",
-            "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "image": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
             "highlights": [
               "**고가 해안 레일 위 파스텔 4인승 캡슐** — 블루라인파크 시그너처(2020년 개장)",
               "**청사포→미포 2.3km / 약 30분**, 내내 바다 전망",
@@ -2076,26 +2130,31 @@
               "admission": "캡슐당 편도: 약 ₩30,000(2인) / ₩39,000(3인) / ₩44,000(4인) — 예약 시 티켓 포함 옵션 선택 가능"
             },
             "images": [
-              "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
-              "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
-              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+              "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
+              "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
+              "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
+              "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "url": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "url": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "url": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "url": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2103,7 +2162,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "src": "/images/tours/cheongsapo-blue-line/01-chatgpt-image-2026-5-10-12-53-23.webp",
                 "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
                 "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
                 "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
@@ -2111,7 +2170,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "src": "/images/tours/cheongsapo-blue-line/02-chatgpt-image-2026-5-10-12-54-19.webp",
                 "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
                 "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
                 "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
@@ -2119,7 +2178,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "src": "/images/tours/cheongsapo-blue-line/03-chatgpt-image-2026-5-10-12-35-39.webp",
                 "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
                 "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
                 "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
@@ -2127,10 +2186,18 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "src": "/images/tours/cheongsapo-blue-line/04-chatgpt-image-2026-5-10-01-01-18.webp",
                 "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
                 "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
                 "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/05-chatgpt-image-2026-5-10-12-53-26.webp",
+                "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+                "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 5",
+                "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 5"
               }
             ]
           },
@@ -2167,7 +2234,7 @@
             "name": "해운대해수욕장",
             "category": "해변 / 무료",
             "description": "**해운대해수욕장**은 한국에서 가장 잘 알려진 백사장으로, 서쪽 끝 동백섬과 동쪽 끝 미포 사이를 약 **1.5km** 곡선으로 잇고 뒤로는 마린시티 스카이라인이 서 있습니다. 스카이캡슐이 내려 주는 미포가 바로 이 해변의 동쪽 끝이라, 이 정차에는 추가 이동이 전혀 들지 않습니다.\n\n20분은 수영이 아니라 사진과 발끝을 위한 시간입니다. 모래사장으로 걸어 나가 스카이라인을 찍고 차량으로 돌아옵니다. 7~8월에는 가장 붐비고 파라솔이 늘어서며, 그 외 기간에는 넓고 조용해 걷기 좋습니다. 무료이며 24시간 개방입니다.",
-            "image": null,
+            "image": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
             "highlights": [
               "**한국에서 가장 유명한 해변** — 약 1.5km 백사장, 무료·24시간 개방",
               "물가에서 바라보는 마린시티 스카이라인",
@@ -2196,9 +2263,38 @@
               "walking": "평평한 백사장과 포장 산책로",
               "admission": "무료"
             },
-            "images": [],
-            "imageCredits": [],
-            "galleryItems": []
+            "images": [
+              "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+              "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/haeundae-beach/01-kakaotalk-20260509-231527969-19.webp",
+                "location": "해운대해수욕장",
+                "caption": "해운대해수욕장 — photo 1",
+                "alt": "해운대해수욕장 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/haeundae-beach/02-kakaotalk-20260509-231527969-18.webp",
+                "location": "해운대해수욕장",
+                "caption": "해운대해수욕장 — photo 2",
+                "alt": "해운대해수욕장 — gallery image 2"
+              }
+            ]
           },
           {
             "number": 7,
@@ -2257,47 +2353,23 @@
                 "Busan Cultural Foundation"
               ]
             },
-            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
             "images": [
-              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-              "/images/itinerary/jagalchi-harbor-sign.webp",
-              "/images/itinerary/jagalchi-market-interior.webp",
-              "/images/itinerary/jagalchi-night-building.webp",
-              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+              "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+              "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/itinerary/jagalchi-harbor-sign.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/itinerary/jagalchi-market-interior.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/itinerary/jagalchi-night-building.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2305,7 +2377,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
                 "location": "감천문화마을",
                 "caption": "감천문화마을 — photo 1",
                 "alt": "감천문화마을 — gallery image 1"
@@ -2313,7 +2385,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
                 "location": "감천문화마을",
                 "caption": "감천문화마을 — photo 2",
                 "alt": "감천문화마을 — gallery image 2"
@@ -2321,42 +2393,10 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
                 "location": "감천문화마을",
                 "caption": "감천문화마을 — photo 3",
                 "alt": "감천문화마을 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/itinerary/jagalchi-harbor-sign.webp",
-                "location": "감천문화마을",
-                "caption": "감천문화마을 — photo 4",
-                "alt": "감천문화마을 — gallery image 4"
-              },
-              {
-                "id": 5,
-                "type": "photo",
-                "src": "/images/itinerary/jagalchi-market-interior.webp",
-                "location": "감천문화마을",
-                "caption": "감천문화마을 — photo 5",
-                "alt": "감천문화마을 — gallery image 5"
-              },
-              {
-                "id": 6,
-                "type": "photo",
-                "src": "/images/itinerary/jagalchi-night-building.webp",
-                "location": "감천문화마을",
-                "caption": "감천문화마을 — photo 6",
-                "alt": "감천문화마을 — gallery image 6"
-              },
-              {
-                "id": 7,
-                "type": "photo",
-                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
-                "location": "감천문화마을",
-                "caption": "감천문화마을 — photo 8",
-                "alt": "감천문화마을 — gallery image 8"
               }
             ]
           },

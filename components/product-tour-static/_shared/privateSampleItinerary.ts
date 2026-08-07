@@ -405,7 +405,7 @@ const JEJU_EAST_STOPS: SampleSlot[] = [
       "zh-TW": "翡翠色淺灘與白沙 — 前往東部的第一站",
       es: "Aguas turquesas poco profundas y arena blanca: la primera parada rumbo al este",
     },
-    image: "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+    image: "/images/tours/hamdeok-beach/02-kakaotalk-20260510-230028438.webp",
     stay: stayMinutes(45),
   },
   {
@@ -426,7 +426,7 @@ const JEJU_EAST_STOPS: SampleSlot[] = [
       "zh-TW": "聯合國教科文組織世界自然遺產 — 全年11~13℃，7.6公尺熔岩石柱",
       es: "Patrimonio Natural de la UNESCO: 11–13 °C todo el año y una columna de lava de 7,6 m",
     },
-    image: "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+    image: "/images/tours/ilchulland/02-chatgpt-image-2026-5-8-07-49-08.webp",
     stay: stayMinutes(60),
   },
   {
@@ -447,7 +447,7 @@ const JEJU_EAST_STOPS: SampleSlot[] = [
       "zh-TW": "自海中隆起的凝灰岩火山口 — 登頂往返約60分鐘",
       es: "Un cono de toba surgido del mar; unos 60 minutos ida y vuelta hasta el borde",
     },
-    image: "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+    image: "/images/tours/seongsan-ilchulbong/01-kakaotalk-20260510-230028438-06.webp",
     stay: stayMinutes(90),
   },
   {
@@ -489,7 +489,7 @@ const JEJU_EAST_STOPS: SampleSlot[] = [
       "zh-TW": "始建於1423年的城郭村落 — 茅草屋頂與石牆小巷",
       es: "Una villa amurallada fundada en 1423, con techos de paja y callejones de piedra",
     },
-    image: "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+    image: "/images/tours/seongeup-folk-village/02-chatgpt-image-2026-5-8-07-37-51.webp",
     stay: stayMinutes(50),
   },
 ];
@@ -513,7 +513,7 @@ const JEJU_SOUTHWEST_STOPS: SampleSlot[] = [
       "zh-TW": "驅車即可抵達的拉姆薩濕地 — 木棧道走一圈即可飽覽高山景致",
       es: "Un humedal Ramsar al que se llega en coche: una vuelta por la pasarela basta para el paisaje alpino",
     },
-    image: "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    image: "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
     stay: stayMinutes(40),
   },
   {
@@ -534,7 +534,7 @@ const JEJU_SOUTHWEST_STOPS: SampleSlot[] = [
       "zh-TW": "海浪拍擊六角柱狀熔岩絕壁之處",
       es: "Olas rompiendo contra lava solidificada en columnas hexagonales",
     },
-    image: "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+    image: "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
     stay: stayMinutes(45),
   },
   {
@@ -555,7 +555,7 @@ const JEJU_SOUTHWEST_STOPS: SampleSlot[] = [
       "zh-TW": "三段瀑布與仙臨橋 — 沿林蔭步行的短程路線",
       es: "Una cascada de tres niveles y el puente Seonimgyo, en un paseo corto y sombreado",
     },
-    image: "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+    image: "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
     stay: stayMinutes(50),
   },
   {
@@ -597,7 +597,7 @@ const JEJU_SOUTHWEST_STOPS: SampleSlot[] = [
       "zh-TW": "沿漢潭海岸步道的海景咖啡街",
       es: "Cafés con vistas al mar junto al paseo costero de Handam",
     },
-    image: "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+    image: "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
     stay: stayMinutes(60),
   },
   {
@@ -618,7 +618,7 @@ const JEJU_SOUTHWEST_STOPS: SampleSlot[] = [
       "zh-TW": "紅白雙色馬形燈塔 — 鄰近機場，適合作為日落收尾",
       es: "Faros con forma de caballo, rojo y blanco; cerca del aeropuerto, ideal para cerrar al atardecer",
     },
-    image: "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+    image: "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
     stay: stayMinutes(30),
   },
 ];
@@ -642,7 +642,7 @@ const JEJU_SOUTH_STOPS: SampleSlot[] = [
       "zh-TW": "直接落入海中的瀑布 — 亞洲罕見的地貌",
       es: "Una cascada que cae directamente al mar, un accidente raro en Asia",
     },
-    image: "/images/tours/jeongbang-falls/kakaotalk-20260510-230028438-15.webp",
+    image: "/images/tours/jeongbang-falls/04-kakaotalk-20260510-230028438-15.webp",
     stay: stayMinutes(50),
   },
   {
@@ -726,7 +726,7 @@ const JEJU_SOUTH_STOPS: SampleSlot[] = [
       "zh-TW": "往返約一小時的平緩登山 — 天晴時可俯瞰濟州北部全景",
       es: "Una subida suave de aproximadamente una hora; en días claros se ve todo el norte de Jeju",
     },
-    image: "/images/tours/hallasan-eoseungsaengak/kakaotalk-20260510-230009595-19.webp",
+    image: "/images/tours/hallasan-eoseungsaengak/01-kakaotalk-20260510-230009595-19.webp",
     stay: stayMinutes(75),
   },
 ];
@@ -822,7 +822,7 @@ const BUSAN_COAST_STOPS: SampleSlot[] = [
       "zh-TW": "全球唯一的聯合國軍墓園 — 參與韓戰的21個國家",
       es: "El único cementerio de la ONU del mundo: 21 países de la Guerra de Corea",
     },
-    image: "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+    image: "/images/tours/un-memorial-cemetery/03-chatgpt-image-2026-5-10-12-32-23.webp",
     stay: stayMinutes(50),
   },
   GAMCHEON,
@@ -904,7 +904,7 @@ const GYEONGJU_STOPS: SampleSlot[] = [
       "zh-TW": "聯合國教科文組織世界文化遺產 — 8世紀新羅建於石台之上的伽藍",
       es: "Patrimonio Mundial de la UNESCO: un templo silla del siglo VIII sobre terrazas de piedra",
     },
-    image: "/images/tours/bulguksa-temple/chatgpt-image-2026-5-11-12-22-06.webp",
+    image: "/images/tours/bulguksa-temple/01-chatgpt-image-2026-5-11-12-22-06.webp",
     stay: stayMinutes(80),
   },
   {
@@ -925,7 +925,7 @@ const GYEONGJU_STOPS: SampleSlot[] = [
       "zh-TW": "下車後步行遊覽的一段 — 村落南端即月精橋北岸",
       es: "Una sola bajada, recorrida a pie: el extremo sur de la aldea es la orilla norte del puente",
     },
-    image: "/images/tours/gyochon-hanok-village/chatgpt-image-2026-5-11-12-33-48.webp",
+    image: "/images/tours/gyochon-hanok-village/03-chatgpt-image-2026-5-11-12-33-48.webp",
     stay: stayMinutes(80),
   },
   {
@@ -946,7 +946,7 @@ const GYEONGJU_STOPS: SampleSlot[] = [
       "zh-TW": "新羅王陵古墳群，一牆之隔即是咖啡街",
       es: "Los túmulos reales de Silla y, al otro lado del muro, la calle de cafés",
     },
-    image: "/images/tours/daereungwon/chatgpt-image-2026-5-10-01-37-30.webp",
+    image: "/images/tours/daereungwon/01-chatgpt-image-2026-5-10-01-37-30.webp",
     stay: stayMinutes(90),
   },
   {
@@ -967,7 +967,7 @@ const GYEONGJU_STOPS: SampleSlot[] = [
       "zh-TW": "入場截止17:30，因此作為一天的最後一站 — 冬季改為東宮與月池夜景",
       es: "Última entrada a las 17:30, así que cierra la jornada; en invierno, Donggung y Wolji de noche",
     },
-    image: "/images/tours/gyeongju-national-museum/chatgpt-image-2026-5-11-12-21-49.webp",
+    image: "/images/tours/gyeongju-national-museum/01-chatgpt-image-2026-5-11-12-21-49.webp",
     stay: stayMinutes(70),
   },
 ];

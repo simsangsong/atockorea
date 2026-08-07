@@ -14,7 +14,7 @@
       "Aewol Cafe Street tour",
       "Iho Tewoo sunset tour"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
     "title": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9-Hour Small Group",
     "description": "Southwest Jeju small-group year-round day tour: Hallasan 1100 Highland Ramsar wetland (flat boardwalk) → Daepo Jusangjeolli cliff (UNESCO Geopark) → Cheonjeyeon Waterfall → lunch → O'Sulloc Tea Museum + green tea fields → Aewol Handam coastal cafe trail → Iho Tewoo Beach sunset (horse lighthouses). 9 hours, 7 stops, all admissions included."
   },
@@ -31,8 +31,8 @@
       "Great for First-Time Jeju Visitors",
       "Jeju Southwest"
     ],
-    "heroImage": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-    "thumbnail": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "heroImage": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
+    "thumbnail": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
     "priceLabel": "",
     "shortCardDescription": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, Aewol Cafe Street, and the Iho Tewoo sunset.",
     "tags": [
@@ -55,7 +55,7 @@
     "per": "person"
   },
   "hero": {
-    "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+    "imageUrl": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
     "imagePosition": "center 35%",
     "tagline": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
     "pills": [
@@ -134,7 +134,7 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "location": "Hallasan 1100 Highland",
       "alt": "Hallasan 1100 Highland — gallery image 1",
       "caption": "Hallasan 1100 Highland — photo 1"
@@ -142,7 +142,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "location": "Daepo Jusangjeolli Cliff",
       "alt": "Daepo Jusangjeolli Cliff — gallery image 1",
       "caption": "Daepo Jusangjeolli Cliff — photo 1"
@@ -150,7 +150,7 @@
     {
       "id": 3,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "src": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
       "location": "Cheonjeyeon Waterfall",
       "alt": "Cheonjeyeon Waterfall — gallery image 1",
       "caption": "Cheonjeyeon Waterfall — photo 1"
@@ -158,15 +158,15 @@
     {
       "id": 4,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 1",
-      "caption": "O'sulloc Tea Museum — photo 1"
+      "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 1",
+      "caption": "O'Sulloc Tea Museum — photo 1"
     },
     {
       "id": 5,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "src": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 1",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 1"
@@ -174,146 +174,194 @@
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+      "src": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
+      "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 1",
+      "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 1"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
       "location": "Hallasan 1100 Highland",
       "alt": "Hallasan 1100 Highland — gallery image 2",
       "caption": "Hallasan 1100 Highland — photo 2"
     },
     {
-      "id": 7,
+      "id": 8,
       "type": "photo",
-      "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+      "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
       "location": "Hallasan 1100 Highland",
       "alt": "Hallasan 1100 Highland — gallery image 3",
       "caption": "Hallasan 1100 Highland — photo 3"
     },
     {
-      "id": 8,
+      "id": 9,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+      "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
       "location": "Daepo Jusangjeolli Cliff",
       "alt": "Daepo Jusangjeolli Cliff — gallery image 2",
       "caption": "Daepo Jusangjeolli Cliff — photo 2"
     },
     {
-      "id": 9,
+      "id": 10,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+      "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
       "location": "Daepo Jusangjeolli Cliff",
       "alt": "Daepo Jusangjeolli Cliff — gallery image 3",
       "caption": "Daepo Jusangjeolli Cliff — photo 3"
     },
     {
-      "id": 10,
+      "id": 11,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+      "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
       "location": "Daepo Jusangjeolli Cliff",
       "alt": "Daepo Jusangjeolli Cliff — gallery image 4",
       "caption": "Daepo Jusangjeolli Cliff — photo 4"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
-      "src": "/images/tours/jusangjeolli/photo-005.webp",
+      "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
       "location": "Daepo Jusangjeolli Cliff",
       "alt": "Daepo Jusangjeolli Cliff — gallery image 5",
       "caption": "Daepo Jusangjeolli Cliff — photo 5"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+      "src": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
       "location": "Cheonjeyeon Waterfall",
       "alt": "Cheonjeyeon Waterfall — gallery image 2",
       "caption": "Cheonjeyeon Waterfall — photo 2"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+      "src": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
       "location": "Cheonjeyeon Waterfall",
       "alt": "Cheonjeyeon Waterfall — gallery image 3",
       "caption": "Cheonjeyeon Waterfall — photo 3"
     },
     {
-      "id": 14,
+      "id": 15,
       "type": "photo",
-      "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+      "src": "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
       "location": "Cheonjeyeon Waterfall",
       "alt": "Cheonjeyeon Waterfall — gallery image 4",
       "caption": "Cheonjeyeon Waterfall — photo 4"
     },
     {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 2",
-      "caption": "O'sulloc Tea Museum — photo 2"
-    },
-    {
       "id": 16,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 3",
-      "caption": "O'sulloc Tea Museum — photo 3"
+      "src": "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp",
+      "location": "Cheonjeyeon Waterfall",
+      "alt": "Cheonjeyeon Waterfall — gallery image 5",
+      "caption": "Cheonjeyeon Waterfall — photo 5"
     },
     {
       "id": 17,
       "type": "photo",
-      "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-      "location": "O'sulloc Tea Museum",
-      "alt": "O'sulloc Tea Museum — gallery image 4",
-      "caption": "O'sulloc Tea Museum — photo 4"
+      "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 2",
+      "caption": "O'Sulloc Tea Museum — photo 2"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+      "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 3",
+      "caption": "O'Sulloc Tea Museum — photo 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 4",
+      "caption": "O'Sulloc Tea Museum — photo 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 5",
+      "caption": "O'Sulloc Tea Museum — photo 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+      "location": "O'Sulloc Tea Museum",
+      "alt": "O'Sulloc Tea Museum — gallery image 6",
+      "caption": "O'Sulloc Tea Museum — photo 6"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 2",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2"
     },
     {
-      "id": 19,
+      "id": 23,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+      "src": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 3",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3"
     },
     {
-      "id": 20,
+      "id": 24,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+      "src": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 4",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4"
     },
     {
-      "id": 21,
+      "id": 25,
       "type": "photo",
-      "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+      "src": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
       "location": "Aewol Cafe Street (Handam Coastal Trail)",
       "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5",
       "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5"
     },
     {
-      "id": 22,
+      "id": 26,
       "type": "photo",
-      "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
-      "location": "Iho Tewoo Beach",
-      "caption": "Iho Tewoo Beach — photo 1",
-      "alt": "Iho Tewoo Beach — gallery image 1"
+      "src": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+      "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 2",
+      "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 2"
     },
     {
-      "id": 23,
+      "id": 27,
       "type": "photo",
-      "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
-      "location": "Iho Tewoo Beach",
-      "caption": "Iho Tewoo Beach — photo 2",
-      "alt": "Iho Tewoo Beach — gallery image 2"
+      "src": "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+      "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 3",
+      "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 3"
+    },
+    {
+      "id": 28,
+      "type": "photo",
+      "src": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+      "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 4",
+      "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 4"
+    },
+    {
+      "id": 29,
+      "type": "photo",
+      "src": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
+      "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 5",
+      "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 5"
     }
   ],
   "itineraryStops": [
@@ -324,7 +372,7 @@
       "name": "Hallasan 1100 Highland",
       "category": "Alpine Ramsar Wetland Boardwalk — A Taste of UNESCO Hallasan",
       "description": "**The Hallasan 1100 Highland Wetland (한라산 1100고지 습지)** is an alpine wetland on the western flank of Hallasan at **1,100 m above sea level**, registered on **12 October 2009 as a Ramsar Convention Wetland of International Importance (Site No. 1893)**. Covering about **13 ha**, it sits within the boundary of Hallasan's **UNESCO World Natural Heritage and Biosphere Reserve** — meaning you can lightly experience Hallasan's UNESCO value without climbing all the way to the Baengnokdam summit. \n\nThe wetland is made up of **more than 16 freshwater marshes and ponds** scattered across the plateau, and you can loop around it on a **flat wooden boardwalk of about 1 km (around 20 minutes)**. The boardwalk is almost level, so it is relatively easy even for strollers or those with limited mobility. It is home to three endangered bird species and one nationally designated threatened plant species, along with Jeju's native mammals, reptiles, and insects, and interpretive panels along the boardwalk explain the wetland ecology. \n\n**Road 1100 (opened 1973, 36.6 km long)**, which leads to the wetland, is **the highest national road in Korea**, linking Jeju City and Seogwipo's Jungmun district from north to south. Across the road, the **1100 Highland Rest Area** has a convenience store (GS25), a café serving warm drinks and ramen, an observation deck, and a park honoring the **White Deer (Baekrok, 白鹿) statue** (a Jeju legend in which an immortal rode a white deer up Hallasan) and **Go Sang-don, the first Korean to summit Everest** — a good spot for a 10–15 minute break. \n\nAt 1,100 m, the temperature is **7–10°C lower** than at the coast, so even in midsummer a light layer is needed. In winter, the snow-covered boardwalk and frozen wetland become one of Jeju's most prized snowscape photo spots, but **Road 1100 is also the first road to be closed during heavy snow, heavy rain, or icing** — in which case the itinerary is replaced with an indoor Jeju City attraction (e.g., the Jeju National Museum). \n\nBoth admission and parking are **free**, and no reservation is required.",
-      "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+      "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
       "highlights": [
         "**Ramsar Wetland of International Importance No. 1893** (registered 2009) — within the boundary of Hallasan's UNESCO World Heritage + Biosphere Reserve",
         "**Alpine wetland at 1,100 m** — more than 16 freshwater marshes and ponds across the plateau",
@@ -371,21 +419,21 @@
         "walking": "Very easy — one loop of about 1 km on flat wooden boardwalk, 15–20 min; manageable for most mobility levels, including strollers"
       },
       "images": [
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-        "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+        "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+        "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+        "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -393,7 +441,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
           "location": "Hallasan 1100 Highland",
           "caption": "Hallasan 1100 Highland — photo 1",
           "alt": "Hallasan 1100 Highland — gallery image 1"
@@ -401,7 +449,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+          "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
           "location": "Hallasan 1100 Highland",
           "caption": "Hallasan 1100 Highland — photo 2",
           "alt": "Hallasan 1100 Highland — gallery image 2"
@@ -409,7 +457,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+          "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "location": "Hallasan 1100 Highland",
           "caption": "Hallasan 1100 Highland — photo 3",
           "alt": "Hallasan 1100 Highland — gallery image 3"
@@ -423,7 +471,7 @@
       "name": "Daepo Jusangjeolli Cliff",
       "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
       "description": "**Daepo Jusangjeolli Cliff** is a dramatic stretch of columnar basalt on the Jungmun coast. The stone pillars were formed as lava cooled and contracted, creating the polygonal columns seen along the sea. \n\nThe columns are commonly described as 30-40 m high and continue for about 1 km along the coast. Visitors use a clifftop boardwalk and viewing decks to see the columns, ocean, and wave action. \n\nOn windy or high-tide days, waves may create strong spray, so the guide may adjust photo time for safety and comfort.",
-      "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+      "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
       "highlights": [
         "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
         "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
@@ -471,31 +519,31 @@
         "walking": "Easy"
       },
       "images": [
-        "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-        "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-        "/images/tours/jusangjeolli/photo-005.webp"
+        "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+        "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+        "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+        "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+        "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/jusangjeolli/photo-005.webp",
+          "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "source": "atoc-korea"
         }
       ],
@@ -503,7 +551,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+          "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 1",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 1"
@@ -511,7 +559,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+          "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 2",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 2"
@@ -519,7 +567,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+          "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 3",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 3"
@@ -527,7 +575,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+          "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 4",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 4"
@@ -535,7 +583,7 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/jusangjeolli/photo-005.webp",
+          "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
           "location": "Daepo Jusangjeolli Cliff",
           "caption": "Daepo Jusangjeolli Cliff — photo 5",
           "alt": "Daepo Jusangjeolli Cliff — gallery image 5"
@@ -549,7 +597,7 @@
       "name": "Cheonjeyeon Waterfall",
       "category": "Three-Tier Waterfall + Forest — 'Pond of the Emperor of Heaven'",
       "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. \n\nThe name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. \n\nThe **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. \n\nThe **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. \n\nSurrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. \n\nAdmission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. \n\nThe biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-      "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+      "image": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
       "highlights": [
         "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
         "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
@@ -597,26 +645,31 @@
         "walking": "Moderate, with stairs and sometimes wet sections"
       },
       "images": [
-        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-        "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-        "/images/tours/cheonjeyeon-falls/photo-004.webp"
+        "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
+        "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
+        "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
+        "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
+        "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "url": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "url": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "url": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "url": "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp",
           "source": "atoc-korea"
         }
       ],
@@ -624,7 +677,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+          "src": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
           "location": "Cheonjeyeon Waterfall",
           "caption": "Cheonjeyeon Waterfall — photo 1",
           "alt": "Cheonjeyeon Waterfall — gallery image 1"
@@ -632,7 +685,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+          "src": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
           "location": "Cheonjeyeon Waterfall",
           "caption": "Cheonjeyeon Waterfall — photo 2",
           "alt": "Cheonjeyeon Waterfall — gallery image 2"
@@ -640,7 +693,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+          "src": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
           "location": "Cheonjeyeon Waterfall",
           "caption": "Cheonjeyeon Waterfall — photo 3",
           "alt": "Cheonjeyeon Waterfall — gallery image 3"
@@ -648,10 +701,18 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+          "src": "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
           "location": "Cheonjeyeon Waterfall",
           "caption": "Cheonjeyeon Waterfall — photo 4",
           "alt": "Cheonjeyeon Waterfall — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp",
+          "location": "Cheonjeyeon Waterfall",
+          "caption": "Cheonjeyeon Waterfall — photo 5",
+          "alt": "Cheonjeyeon Waterfall — gallery image 5"
         }
       ]
     },
@@ -701,7 +762,7 @@
       "name": "O'Sulloc Tea Museum",
       "category": "Tea Culture & Seogwang Plantation — AmorePacific Heritage",
       "description": "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific Corporation** — Korea's largest beauty company. Founder **Suh Sung-whan personally pioneered the project in 1979**, reclaiming volcanic ash farmland on Jeju's Seogwang plateau when conventional wisdom held tea couldn't be grown commercially in Korea. \n\nToday the **Seogwang Dawon plantation (서광다원)** is **Korea's largest green-tea field**, producing **~700 tonnes annually** across Amorepacific's three Jeju estates. \n\nThe museum building **opened 2001** in the plantation's heart and was named to **designboom's Top 10 art museums** for its minimalist green-roofed pavilion-amid-tea-rows design. \n\n**FREE admission**, daily **09:00–18:00**, ~**2 million annual visitors**. The visit splits naturally into three segments: **(1) Museum interior** — tea production process, antique tea-ware collection from Tang dynasty (618–907 CE) onward, and rooftop observation deck with panoramic plantation view; **(2) Tea House cafe** — signature **green tea rolling cake (오설록 롤케이크)** and **green tea ice cream** served from the tea-leaf harvest year directly; **(3) Plantation walking paths** — gravel rows between tea bushes, popular for sunset photography at the western edge. \n\n**Innisfree Jeju House** (Amorepacific's natural cosmetics brand) is a **5-minute walk** for guests interested in the broader brand ecosystem — also free admission with optional tangerine soap DIY workshop (₩15,000). \n\nThe museum building itself, designed by Korean architect **Mass Studies (Cho Min-suk)**, takes a deliberately low-profile horizontal form that mirrors the tea-row geometry rather than competing with the agricultural landscape — the architectural deference earning it both the designboom Top 10 listing and ongoing use as a case study in Korean contemporary museum design. \n\nOptional add-on: the **Osulloc Tea Class (₩30,000 per person, 60 min, advance booking required)** — guided tea-flight tasting with brewing technique demonstration on Korean ceramics, available daily **10:00–16:00**, English-speaking instruction on Wed/Sat sessions.",
-      "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+      "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
       "highlights": [
         "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
         "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -808,26 +869,36 @@
         "walking": "Easy"
       },
       "images": [
-        "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-        "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-        "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+        "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+        "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+        "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+        "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+        "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+          "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+          "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+          "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+          "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -835,34 +906,50 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-          "location": "O'sulloc Tea Museum",
-          "alt": "O'sulloc Tea Museum — gallery image 1",
-          "caption": "O'sulloc Tea Museum — photo 1"
+          "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 1",
+          "alt": "O'Sulloc Tea Museum — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-          "location": "O'sulloc Tea Museum",
-          "alt": "O'sulloc Tea Museum — gallery image 2",
-          "caption": "O'sulloc Tea Museum — photo 2"
+          "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 2",
+          "alt": "O'Sulloc Tea Museum — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-          "location": "O'sulloc Tea Museum",
-          "alt": "O'sulloc Tea Museum — gallery image 3",
-          "caption": "O'sulloc Tea Museum — photo 3"
+          "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 3",
+          "alt": "O'Sulloc Tea Museum — gallery image 3"
         },
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-          "location": "O'sulloc Tea Museum",
-          "alt": "O'sulloc Tea Museum — gallery image 4",
-          "caption": "O'sulloc Tea Museum — photo 4"
+          "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 4",
+          "alt": "O'Sulloc Tea Museum — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 5",
+          "alt": "O'Sulloc Tea Museum — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "location": "O'Sulloc Tea Museum",
+          "caption": "O'Sulloc Tea Museum — photo 6",
+          "alt": "O'Sulloc Tea Museum — gallery image 6"
         }
       ]
     },
@@ -873,7 +960,7 @@
       "name": "Aewol Cafe Street (Handam Coastal Trail)",
       "category": "Coastal Cafe Strip — Afternoon Café + Olle Trail 15A Segment",
       "description": "**Aewol Cafe Street (애월 카페거리)** is the **5 km coastal stretch of Aewol-eup along the Handam Coastal Trail (한담해안산책로)** on Jeju's northwest coast — Korea's most concentrated **'sea-view cafe' destination**, with 30+ design-forward cafes packed into the cliff-edge strip between Handam Beach and Gwakji Beach. \n\nThe promenade itself is officially named **Jang Han Chul Promenade (장한철산책로)** after **Jang Han Chul (장한철, 1744–?)** — a Jeju-born Joseon-era scholar whose **'Pyohaerok (표해록)'** is one of the earliest Korean accounts of survival at sea, written after his Pacific drift in 1771. \n\nThe walking path is a **30-minute one-way coastal segment of Jeju Olle Trail 15A (Hallim → Gonae)** — black basalt clifftops, tide pools, hexagonal jointing on a smaller scale than Daepo, and unobstructed west-facing horizon = Jeju's premier sunset viewing strip. \n\n**Signature cafes in rotation by season**: **Bomnal Cafe (봄날 카페)** — appeared in the **2014 K-drama 'You Who Came From the Stars (별에서 온 그대)'** and made Aewol a celebrity-pilgrimage destination overnight; **Randy's Donuts** (LA brand, Korean franchise — large rooftop deck); **Cafe Knotted** (signature cream donut + sea-view); **Haejigae Cafe** (literally 'sunset cafe', dedicated to evening light service); **Aewol the Sunset** (rooftop terrace, premium pricing). \n\nFREE admission to the trail and beaches; cafes pricing typical ₩6,000–12,000 per drink + dessert. **Jang Han Chul's 'Pyohaerok (표해록)'** — the eponymous source of the promenade's name — is considered one of the foundational texts of **Korean maritime literature**, recording his 29-day Pacific drift after a Jeju-bound ship was blown off course in **December 1770**. \n\nRescued by Ryukyu (modern Okinawa) fishermen and eventually returned home via Nagasaki, his account predates similar Western survival memoirs by decades and informs modern Korean ocean-history scholarship. \n\nThe promenade's signage along the cliff path quotes passages from the work in Korean + English — a rare in-situ literary heritage marker. Note for **photography enthusiasts**: drone use along the Aewol coast is permitted **outside the 9 km Jeju International Airport approach corridor** — confirm exact perimeter via Korea Drone Map app before flying. \n\nThe **Olle Trail 15A segment** officially runs Hallim Port → Aewol → Gonae Port over 13 km; today's tour walks the central 1.5 km between Handam and Gwakji.",
-      "image": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+      "image": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
       "highlights": [
         "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row",
         "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir",
@@ -921,31 +1008,31 @@
         "walking": "Easy"
       },
       "images": [
-        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
-        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
-        "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
-        "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp"
+        "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
+        "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
+        "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
+        "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
+        "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+          "url": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+          "url": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+          "url": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+          "url": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+          "url": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
           "source": "atoc-korea"
         }
       ],
@@ -953,7 +1040,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+          "src": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 1",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 1"
@@ -961,7 +1048,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+          "src": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 2"
@@ -969,7 +1056,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+          "src": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 3"
@@ -977,7 +1064,7 @@
         {
           "id": 4,
           "type": "photo",
-          "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+          "src": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 4"
@@ -985,7 +1072,7 @@
         {
           "id": 5,
           "type": "photo",
-          "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+          "src": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
           "location": "Aewol Cafe Street (Handam Coastal Trail)",
           "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5",
           "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5"
@@ -999,7 +1086,7 @@
       "name": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
       "category": "Jeju City Beach — Jeju Pony Lighthouses + Sunset Finale",
       "description": "**Iho Tewoo Beach (이호테우해변, Iho Beach)** is the closest beach to downtown Jeju and Jeju International Airport, and serves as the **sunset finale** that wraps up the day. Its most iconic sight is the pair of **Jeju pony lighthouses (horse lighthouses)** facing each other atop the breakwaters — a **red horse lighthouse and a white horse lighthouse, each about 12 m tall**, shaped like Jeju ponies and standing on the outer and inner breakwaters respectively. The white and red colors are navigational markers that help ships distinguish the sides of the channel, and against the blue sea and sky they have become one of Jeju's most prized photo spots. \n\nThe sandy beach is made of **fine, silvery sand** mixed with shell fragments, and its gentle slope draws many family visitors. Behind the beach is a **pine forest** that offers shade and walking paths, and at the lowest tide the broad sands reveal a **wondam** — a traditional Jeju fishing method that used the difference between high and low tide to trap fish. At Iho Tewoo, a restored example survives as the **Iho Mosalwon**. \n\nRight alongside the beach runs the **Dodu-dong Rainbow Coastal Road**, where you can enjoy colorful seaside barrier blocks and a coastal drive, and its proximity to the airport makes it **a great last stop before an evening flight**. Admission to the beach and walking paths is **free**.",
-      "image": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+      "image": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
       "highlights": [
         "**The closest beach to downtown Jeju and the airport** — sunset finale + easy airport transfer",
         "Iconic **Jeju pony lighthouses (horse lighthouses)** — a red and a white one, about 12 m tall, a signature photo spot",
@@ -1043,16 +1130,31 @@
         "walking": "Easy — flat sands and breakwater walk, about 15–20 min"
       },
       "images": [
-        "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
-        "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp"
+        "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
+        "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+        "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+        "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+        "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+          "url": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
+          "url": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
           "source": "atoc-korea"
         }
       ],
@@ -1060,18 +1162,42 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
-          "location": "Iho Tewoo Beach",
-          "caption": "Iho Tewoo Beach — photo 1",
-          "alt": "Iho Tewoo Beach — gallery image 1"
+          "src": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
+          "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+          "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 1",
+          "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
-          "location": "Iho Tewoo Beach",
-          "caption": "Iho Tewoo Beach — photo 2",
-          "alt": "Iho Tewoo Beach — gallery image 2"
+          "src": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+          "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+          "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 2",
+          "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+          "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+          "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 3",
+          "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+          "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+          "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 4",
+          "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
+          "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+          "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 5",
+          "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 5"
         }
       ]
     }
@@ -1904,7 +2030,7 @@
         "headlineLine1": "Jeju Southwest",
         "headlineLine2": "Hallasan, O'Sulloc, Aewol & Iho Tewoo",
         "hero": {
-          "imageUrl": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+          "imageUrl": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
           "imagePosition": "center 35%",
           "tagline": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
           "pills": [
@@ -2001,7 +2127,7 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 1",
             "caption": "Hallasan 1100 Highland — photo 1"
@@ -2009,7 +2135,7 @@
           {
             "id": 2,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
             "location": "Daepo Jusangjeolli Cliff",
             "alt": "Daepo Jusangjeolli Cliff — gallery image 1",
             "caption": "Daepo Jusangjeolli Cliff — photo 1"
@@ -2017,7 +2143,7 @@
           {
             "id": 3,
             "type": "photo",
-            "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+            "src": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
             "location": "Cheonjeyeon Waterfall",
             "alt": "Cheonjeyeon Waterfall — gallery image 1",
             "caption": "Cheonjeyeon Waterfall — photo 1"
@@ -2033,7 +2159,7 @@
           {
             "id": 5,
             "type": "photo",
-            "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+            "src": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
             "location": "Aewol Cafe Street (Handam Coastal Trail)",
             "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 1",
             "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 1"
@@ -2041,7 +2167,7 @@
           {
             "id": 6,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+            "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 2",
             "caption": "Hallasan 1100 Highland — photo 2"
@@ -2049,7 +2175,7 @@
           {
             "id": 7,
             "type": "photo",
-            "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+            "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "location": "Hallasan 1100 Highland",
             "alt": "Hallasan 1100 Highland — gallery image 3",
             "caption": "Hallasan 1100 Highland — photo 3"
@@ -2057,7 +2183,7 @@
           {
             "id": 8,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+            "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
             "location": "Daepo Jusangjeolli Cliff",
             "alt": "Daepo Jusangjeolli Cliff — gallery image 2",
             "caption": "Daepo Jusangjeolli Cliff — photo 2"
@@ -2073,7 +2199,7 @@
           {
             "id": 10,
             "type": "photo",
-            "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+            "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "location": "Daepo Jusangjeolli Cliff",
             "alt": "Daepo Jusangjeolli Cliff — gallery image 4",
             "caption": "Daepo Jusangjeolli Cliff — photo 4"
@@ -2089,7 +2215,7 @@
           {
             "id": 12,
             "type": "photo",
-            "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+            "src": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
             "location": "Cheonjeyeon Waterfall",
             "alt": "Cheonjeyeon Waterfall — gallery image 2",
             "caption": "Cheonjeyeon Waterfall — photo 2"
@@ -2097,7 +2223,7 @@
           {
             "id": 13,
             "type": "photo",
-            "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+            "src": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
             "location": "Cheonjeyeon Waterfall",
             "alt": "Cheonjeyeon Waterfall — gallery image 3",
             "caption": "Cheonjeyeon Waterfall — photo 3"
@@ -2137,7 +2263,7 @@
           {
             "id": 18,
             "type": "photo",
-            "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+            "src": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
             "location": "Aewol Cafe Street (Handam Coastal Trail)",
             "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 2",
             "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2"
@@ -2145,7 +2271,7 @@
           {
             "id": 19,
             "type": "photo",
-            "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+            "src": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
             "location": "Aewol Cafe Street (Handam Coastal Trail)",
             "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 3",
             "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3"
@@ -2153,7 +2279,7 @@
           {
             "id": 20,
             "type": "photo",
-            "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+            "src": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
             "location": "Aewol Cafe Street (Handam Coastal Trail)",
             "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 4",
             "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4"
@@ -2161,7 +2287,7 @@
           {
             "id": 21,
             "type": "photo",
-            "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+            "src": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
             "location": "Aewol Cafe Street (Handam Coastal Trail)",
             "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5",
             "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5"
@@ -2169,7 +2295,7 @@
           {
             "id": 22,
             "type": "photo",
-            "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+            "src": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
             "location": "Iho Tewoo Beach",
             "caption": "Iho Tewoo Beach — photo 1",
             "alt": "Iho Tewoo Beach — gallery image 1"
@@ -2177,7 +2303,7 @@
           {
             "id": 23,
             "type": "photo",
-            "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
+            "src": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
             "location": "Iho Tewoo Beach",
             "caption": "Iho Tewoo Beach — photo 2",
             "alt": "Iho Tewoo Beach — gallery image 2"
@@ -2197,7 +2323,7 @@
             "name": "Hallasan 1100 Highland",
             "category": "Alpine Ramsar Wetland Boardwalk — A Taste of UNESCO Hallasan",
             "description": "**The Hallasan 1100 Highland Wetland (한라산 1100고지 습지)** is an alpine wetland on the western flank of Hallasan at **1,100 m above sea level**, registered on **12 October 2009 as a Ramsar Convention Wetland of International Importance (Site No. 1893)**. Covering about **13 ha**, it sits within the boundary of Hallasan's **UNESCO World Natural Heritage and Biosphere Reserve** — meaning you can lightly experience Hallasan's UNESCO value without climbing all the way to the Baengnokdam summit. \n\nThe wetland is made up of **more than 16 freshwater marshes and ponds** scattered across the plateau, and you can loop around it on a **flat wooden boardwalk of about 1 km (around 20 minutes)**. The boardwalk is almost level, so it is relatively easy even for strollers or those with limited mobility. It is home to three endangered bird species and one nationally designated threatened plant species, along with Jeju's native mammals, reptiles, and insects, and interpretive panels along the boardwalk explain the wetland ecology. \n\n**Road 1100 (opened 1973, 36.6 km long)**, which leads to the wetland, is **the highest national road in Korea**, linking Jeju City and Seogwipo's Jungmun district from north to south. Across the road, the **1100 Highland Rest Area** has a convenience store (GS25), a café serving warm drinks and ramen, an observation deck, and a park honoring the **White Deer (Baekrok, 白鹿) statue** (a Jeju legend in which an immortal rode a white deer up Hallasan) and **Go Sang-don, the first Korean to summit Everest** — a good spot for a 10–15 minute break. \n\nAt 1,100 m, the temperature is **7–10°C lower** than at the coast, so even in midsummer a light layer is needed. In winter, the snow-covered boardwalk and frozen wetland become one of Jeju's most prized snowscape photo spots, but **Road 1100 is also the first road to be closed during heavy snow, heavy rain, or icing** — in which case the itinerary is replaced with an indoor Jeju City attraction (e.g., the Jeju National Museum). \n\nBoth admission and parking are **free**, and no reservation is required.",
-            "image": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+            "image": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
             "highlights": [
               "**Ramsar Wetland of International Importance No. 1893** (registered 2009) — within the boundary of Hallasan's UNESCO World Heritage + Biosphere Reserve",
               "**Alpine wetland at 1,100 m** — more than 16 freshwater marshes and ponds across the plateau",
@@ -2244,21 +2370,21 @@
               "walking": "Very easy — one loop of about 1 km on flat wooden boardwalk, 15–20 min; manageable for most mobility levels, including strollers"
             },
             "images": [
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
-              "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp"
+              "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
+              "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
+              "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "url": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "url": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "url": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2266,7 +2392,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-21.webp",
+                "src": "/images/tours/hallasan-1100/01-kakaotalk-20260510-230009595-23.webp",
                 "location": "Hallasan 1100 Highland",
                 "caption": "Hallasan 1100 Highland — photo 1",
                 "alt": "Hallasan 1100 Highland — gallery image 1"
@@ -2274,7 +2400,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-22.webp",
+                "src": "/images/tours/hallasan-1100/02-kakaotalk-20260510-230009595-22.webp",
                 "location": "Hallasan 1100 Highland",
                 "caption": "Hallasan 1100 Highland — photo 2",
                 "alt": "Hallasan 1100 Highland — gallery image 2"
@@ -2282,7 +2408,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hallasan-1100/kakaotalk-20260510-230009595-23.webp",
+                "src": "/images/tours/hallasan-1100/03-kakaotalk-20260510-230009595-21.webp",
                 "location": "Hallasan 1100 Highland",
                 "caption": "Hallasan 1100 Highland — photo 3",
                 "alt": "Hallasan 1100 Highland — gallery image 3"
@@ -2296,7 +2422,7 @@
             "name": "Daepo Jusangjeolli Cliff",
             "category": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
             "description": "**Daepo Jusangjeolli Cliff** is a dramatic stretch of columnar basalt on the Jungmun coast. The stone pillars were formed as lava cooled and contracted, creating the polygonal columns seen along the sea. \n\nThe columns are commonly described as 30-40 m high and continue for about 1 km along the coast. Visitors use a clifftop boardwalk and viewing decks to see the columns, ocean, and wave action. \n\nOn windy or high-tide days, waves may create strong spray, so the guide may adjust photo time for safety and comfort.",
-            "image": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+            "image": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
             "highlights": [
               "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
               "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
@@ -2344,31 +2470,31 @@
               "walking": "Easy"
             },
             "images": [
-              "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
-              "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
-              "/images/tours/jusangjeolli/photo-005.webp"
+              "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
+              "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
+              "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
+              "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
+              "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "url": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "url": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "url": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "url": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/jusangjeolli/photo-005.webp",
+                "url": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2376,7 +2502,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/chatgpt-image-2026-2-15-10-01-04.webp",
+                "src": "/images/tours/jusangjeolli/01-kakaotalk-20260510-230028438-13.webp",
                 "location": "Daepo Jusangjeolli Cliff",
                 "caption": "Daepo Jusangjeolli Cliff — photo 1",
                 "alt": "Daepo Jusangjeolli Cliff — gallery image 1"
@@ -2384,7 +2510,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-11.webp",
+                "src": "/images/tours/jusangjeolli/02-kakaotalk-20260510-230028438-11.webp",
                 "location": "Daepo Jusangjeolli Cliff",
                 "caption": "Daepo Jusangjeolli Cliff — photo 2",
                 "alt": "Daepo Jusangjeolli Cliff — gallery image 2"
@@ -2392,7 +2518,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-12.webp",
+                "src": "/images/tours/jusangjeolli/03-kakaotalk-20250603-145857934-28.webp",
                 "location": "Daepo Jusangjeolli Cliff",
                 "caption": "Daepo Jusangjeolli Cliff — photo 3",
                 "alt": "Daepo Jusangjeolli Cliff — gallery image 3"
@@ -2400,7 +2526,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/kakaotalk-20260510-230028438-13.webp",
+                "src": "/images/tours/jusangjeolli/04-chatgpt-image-2026-2-15-10-01-04.webp",
                 "location": "Daepo Jusangjeolli Cliff",
                 "caption": "Daepo Jusangjeolli Cliff — photo 4",
                 "alt": "Daepo Jusangjeolli Cliff — gallery image 4"
@@ -2408,7 +2534,7 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/jusangjeolli/photo-005.webp",
+                "src": "/images/tours/jusangjeolli/05-kakaotalk-20250825-161843088-21.webp",
                 "location": "Daepo Jusangjeolli Cliff",
                 "caption": "Daepo Jusangjeolli Cliff — photo 5",
                 "alt": "Daepo Jusangjeolli Cliff — gallery image 5"
@@ -2422,7 +2548,7 @@
             "name": "Cheonjeyeon Waterfall",
             "category": "Three-Tier Waterfall + Forest — 'Pond of the Emperor of Heaven'",
             "description": "**Cheonjeyeon Falls (천제연, '연 = pond + 천제 = Emperor of Heaven')** is a **three-tier waterfall** in Jungmun's volcanic gorge, designated **Natural Monument No. 378 (1993)** for its rare ecological combination. \n\nThe name comes from a **Joseon-era Daoist legend that seven nymphs (선녀, *seonnyeo*) descended from heaven nightly to bathe in the upper pond** — a myth reinforced by the dramatic site's microclimate of perpetual mist. \n\nThe **1st tier (22 m fall, 21 m deep pond)** drops into a circular basalt cauldron and only flows after heavy rain — most days the upper pond sits glassy and reflective. \n\nThe **2nd tier (30 m fall) flows year-round** — the dominant photographic subject. The 3rd tier completes the descent to the sea. The **120 m / 78 m-high Seonimgyo Bridge (선임교, 'Bridge of the Seven Nymphs')** crosses the gorge midway through the loop — its cast-bronze relief panels along both sides depict **all seven nymphs in flight**, a literal architectural realization of the founding legend. \n\nSurrounding forest is a **rare-plant habitat** including **Korean toadlily (***Tricyrtis macropoda***)** and the endangered **Mankyua chejuense fern** (Jeju endemic, IUCN Critically Endangered). Loop length: **0.8 km, ~30 min walk** with several steep stair sections. \n\nAdmission: **Adult ₩2,500 / Youth ₩1,350 / FREE under 7 + over 65**. Cheonjeyeon is also a member of the **'Yeongjusipgyeong (영주십경, 10 Scenic Wonders of Jeju)'** Joseon-era literati canon — alongside Hallasan summit, Seongsan Sunrise, and Jeongbang Falls — meaning today's southwest loop covers **2 of the 10 (Hallasan + Cheonjeyeon)** in a single day. \n\nThe biennial **Jeju Chilseonyeo (Seven Nymphs) Festival** held at the bridge in May (every odd year) reenacts the descent legend with traditional dance and musical performance — reservations required when the festival coincides with a tour date. Hours **09:00–18:00** year-round (last entry 17:30).",
-            "image": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+            "image": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
             "highlights": [
               "**Natural Monument No. 378 (designated 1993)** — three-tier waterfall + rare-plant habitat",
               "Name **'Cheonjeyeon' = 'Pond of the Emperor of Heaven'** — Joseon Daoist legend",
@@ -2470,26 +2596,31 @@
               "walking": "Moderate, with stairs and sometimes wet sections"
             },
             "images": [
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
-              "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
-              "/images/tours/cheonjeyeon-falls/photo-004.webp"
+              "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
+              "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
+              "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
+              "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
+              "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "url": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "url": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "url": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "url": "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2497,7 +2628,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-04.webp",
+                "src": "/images/tours/cheonjeyeon-falls/01-kakaotalk-20260510-230009595-07.webp",
                 "location": "Cheonjeyeon Waterfall",
                 "caption": "Cheonjeyeon Waterfall — photo 1",
                 "alt": "Cheonjeyeon Waterfall — gallery image 1"
@@ -2505,7 +2636,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-07.webp",
+                "src": "/images/tours/cheonjeyeon-falls/02-kakaotalk-20260510-230009595-08.webp",
                 "location": "Cheonjeyeon Waterfall",
                 "caption": "Cheonjeyeon Waterfall — photo 2",
                 "alt": "Cheonjeyeon Waterfall — gallery image 2"
@@ -2513,7 +2644,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/kakaotalk-20260510-230009595-08.webp",
+                "src": "/images/tours/cheonjeyeon-falls/03-kakaotalk-20260510-230009595-04.webp",
                 "location": "Cheonjeyeon Waterfall",
                 "caption": "Cheonjeyeon Waterfall — photo 3",
                 "alt": "Cheonjeyeon Waterfall — gallery image 3"
@@ -2521,10 +2652,18 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/cheonjeyeon-falls/photo-004.webp",
+                "src": "/images/tours/cheonjeyeon-falls/04-kakaotalk-20250721-193336974-09.webp",
                 "location": "Cheonjeyeon Waterfall",
                 "caption": "Cheonjeyeon Waterfall — photo 4",
                 "alt": "Cheonjeyeon Waterfall — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/cheonjeyeon-falls/05-kakaotalk-20250714-191549857-02.webp",
+                "location": "Cheonjeyeon Waterfall",
+                "caption": "Cheonjeyeon Waterfall — photo 5",
+                "alt": "Cheonjeyeon Waterfall — gallery image 5"
               }
             ]
           },
@@ -2574,7 +2713,7 @@
             "name": "O'Sulloc Tea Museum",
             "category": "Tea Culture & Seogwang Plantation — AmorePacific Heritage",
             "description": "**O'Sulloc Tea Museum (오설록 티 뮤지엄, '오설록' meaning 'meeting snow + green')** is the tea-culture flagship of **Amorepacific Corporation** — Korea's largest beauty company. Founder **Suh Sung-whan personally pioneered the project in 1979**, reclaiming volcanic ash farmland on Jeju's Seogwang plateau when conventional wisdom held tea couldn't be grown commercially in Korea. \n\nToday the **Seogwang Dawon plantation (서광다원)** is **Korea's largest green-tea field**, producing **~700 tonnes annually** across Amorepacific's three Jeju estates. \n\nThe museum building **opened 2001** in the plantation's heart and was named to **designboom's Top 10 art museums** for its minimalist green-roofed pavilion-amid-tea-rows design. \n\n**FREE admission**, daily **09:00–18:00**, ~**2 million annual visitors**. The visit splits naturally into three segments: **(1) Museum interior** — tea production process, antique tea-ware collection from Tang dynasty (618–907 CE) onward, and rooftop observation deck with panoramic plantation view; **(2) Tea House cafe** — signature **green tea rolling cake (오설록 롤케이크)** and **green tea ice cream** served from the tea-leaf harvest year directly; **(3) Plantation walking paths** — gravel rows between tea bushes, popular for sunset photography at the western edge. \n\n**Innisfree Jeju House** (Amorepacific's natural cosmetics brand) is a **5-minute walk** for guests interested in the broader brand ecosystem — also free admission with optional tangerine soap DIY workshop (₩15,000). \n\nThe museum building itself, designed by Korean architect **Mass Studies (Cho Min-suk)**, takes a deliberately low-profile horizontal form that mirrors the tea-row geometry rather than competing with the agricultural landscape — the architectural deference earning it both the designboom Top 10 listing and ongoing use as a case study in Korean contemporary museum design. \n\nOptional add-on: the **Osulloc Tea Class (₩30,000 per person, 60 min, advance booking required)** — guided tea-flight tasting with brewing technique demonstration on Korean ceramics, available daily **10:00–16:00**, English-speaking instruction on Wed/Sat sessions.",
-            "image": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+            "image": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
             "highlights": [
               "**Amorepacific** flagship — Korea's largest beauty company; founder Suh Sung-whan pioneered Jeju tea **1979**",
               "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
@@ -2681,26 +2820,36 @@
               "walking": "Easy"
             },
             "images": [
-              "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-              "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-              "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp"
+              "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+              "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+              "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+              "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+              "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
+                "url": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
+                "url": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
+                "url": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
+                "url": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2708,34 +2857,50 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-sign-couple-20260521.webp",
-                "location": "O'sulloc Tea Museum",
-                "alt": "O'sulloc Tea Museum — gallery image 1",
-                "caption": "O'sulloc Tea Museum — photo 1"
+                "src": "/images/tours/osulloc-tea/01-chatgpt-image-2026-5-11-12-23-19.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 1",
+                "alt": "O'Sulloc Tea Museum — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-museum-interior-20260511.webp",
-                "location": "O'sulloc Tea Museum",
-                "alt": "O'sulloc Tea Museum — gallery image 2",
-                "caption": "O'sulloc Tea Museum — photo 2"
+                "src": "/images/tours/osulloc-tea/02-chatgpt-image-2026-5-11-01-14-03.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 2",
+                "alt": "O'Sulloc Tea Museum — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-tea-fields-20260511.webp",
-                "location": "O'sulloc Tea Museum",
-                "alt": "O'sulloc Tea Museum — gallery image 3",
-                "caption": "O'sulloc Tea Museum — photo 3"
+                "src": "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 3",
+                "alt": "O'Sulloc Tea Museum — gallery image 3"
               },
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/osulloc-tea/osulloc-aerial-20260511.webp",
-                "location": "O'sulloc Tea Museum",
-                "alt": "O'sulloc Tea Museum — gallery image 4",
-                "caption": "O'sulloc Tea Museum — photo 4"
+                "src": "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 4",
+                "alt": "O'Sulloc Tea Museum — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 5",
+                "alt": "O'Sulloc Tea Museum — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "location": "O'Sulloc Tea Museum",
+                "caption": "O'Sulloc Tea Museum — photo 6",
+                "alt": "O'Sulloc Tea Museum — gallery image 6"
               }
             ]
           },
@@ -2746,7 +2911,7 @@
             "name": "Aewol Cafe Street (Handam Coastal Trail)",
             "category": "Coastal Cafe Strip — Afternoon Café + Olle Trail 15A Segment",
             "description": "**Aewol Cafe Street (애월 카페거리)** is the **5 km coastal stretch of Aewol-eup along the Handam Coastal Trail (한담해안산책로)** on Jeju's northwest coast — Korea's most concentrated **'sea-view cafe' destination**, with 30+ design-forward cafes packed into the cliff-edge strip between Handam Beach and Gwakji Beach. \n\nThe promenade itself is officially named **Jang Han Chul Promenade (장한철산책로)** after **Jang Han Chul (장한철, 1744–?)** — a Jeju-born Joseon-era scholar whose **'Pyohaerok (표해록)'** is one of the earliest Korean accounts of survival at sea, written after his Pacific drift in 1771. \n\nThe walking path is a **30-minute one-way coastal segment of Jeju Olle Trail 15A (Hallim → Gonae)** — black basalt clifftops, tide pools, hexagonal jointing on a smaller scale than Daepo, and unobstructed west-facing horizon = Jeju's premier sunset viewing strip. \n\n**Signature cafes in rotation by season**: **Bomnal Cafe (봄날 카페)** — appeared in the **2014 K-drama 'You Who Came From the Stars (별에서 온 그대)'** and made Aewol a celebrity-pilgrimage destination overnight; **Randy's Donuts** (LA brand, Korean franchise — large rooftop deck); **Cafe Knotted** (signature cream donut + sea-view); **Haejigae Cafe** (literally 'sunset cafe', dedicated to evening light service); **Aewol the Sunset** (rooftop terrace, premium pricing). \n\nFREE admission to the trail and beaches; cafes pricing typical ₩6,000–12,000 per drink + dessert. **Jang Han Chul's 'Pyohaerok (표해록)'** — the eponymous source of the promenade's name — is considered one of the foundational texts of **Korean maritime literature**, recording his 29-day Pacific drift after a Jeju-bound ship was blown off course in **December 1770**. \n\nRescued by Ryukyu (modern Okinawa) fishermen and eventually returned home via Nagasaki, his account predates similar Western survival memoirs by decades and informs modern Korean ocean-history scholarship. \n\nThe promenade's signage along the cliff path quotes passages from the work in Korean + English — a rare in-situ literary heritage marker. Note for **photography enthusiasts**: drone use along the Aewol coast is permitted **outside the 9 km Jeju International Airport approach corridor** — confirm exact perimeter via Korea Drone Map app before flying. \n\nThe **Olle Trail 15A segment** officially runs Hallim Port → Aewol → Gonae Port over 13 km; today's tour walks the central 1.5 km between Handam and Gwakji.",
-            "image": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+            "image": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
             "highlights": [
               "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row",
               "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir",
@@ -2794,31 +2959,31 @@
               "walking": "Easy"
             },
             "images": [
-              "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
-              "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
-              "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
-              "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
-              "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp"
+              "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
+              "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
+              "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
+              "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
+              "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+                "url": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+                "url": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+                "url": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+                "url": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+                "url": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2826,7 +2991,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-24.webp",
+                "src": "/images/tours/aewol-cafe-street/01-chatgpt-image-2026-5-11-01-14-08.webp",
                 "location": "Aewol Cafe Street (Handam Coastal Trail)",
                 "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 1",
                 "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 1"
@@ -2834,7 +2999,7 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-25.webp",
+                "src": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
                 "location": "Aewol Cafe Street (Handam Coastal Trail)",
                 "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 2",
                 "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 2"
@@ -2842,7 +3007,7 @@
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-26.webp",
+                "src": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
                 "location": "Aewol Cafe Street (Handam Coastal Trail)",
                 "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 3",
                 "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 3"
@@ -2850,7 +3015,7 @@
               {
                 "id": 4,
                 "type": "photo",
-                "src": "/images/tours/aewol-cafe-street/kakaotalk-20260510-230009595-27.webp",
+                "src": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
                 "location": "Aewol Cafe Street (Handam Coastal Trail)",
                 "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 4",
                 "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 4"
@@ -2858,7 +3023,7 @@
               {
                 "id": 5,
                 "type": "photo",
-                "src": "/images/tours/aewol-cafe-street/chatgpt-image-2026-5-11-01-14-08.webp",
+                "src": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
                 "location": "Aewol Cafe Street (Handam Coastal Trail)",
                 "caption": "Aewol Cafe Street (Handam Coastal Trail) — photo 5",
                 "alt": "Aewol Cafe Street (Handam Coastal Trail) — gallery image 5"
@@ -2872,7 +3037,7 @@
             "name": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
             "category": "Jeju City Beach — Jeju Pony Lighthouses + Sunset Finale",
             "description": "**Iho Tewoo Beach (이호테우해변, Iho Beach)** is the closest beach to downtown Jeju and Jeju International Airport, and serves as the **sunset finale** that wraps up the day. Its most iconic sight is the pair of **Jeju pony lighthouses (horse lighthouses)** facing each other atop the breakwaters — a **red horse lighthouse and a white horse lighthouse, each about 12 m tall**, shaped like Jeju ponies and standing on the outer and inner breakwaters respectively. The white and red colors are navigational markers that help ships distinguish the sides of the channel, and against the blue sea and sky they have become one of Jeju's most prized photo spots. \n\nThe sandy beach is made of **fine, silvery sand** mixed with shell fragments, and its gentle slope draws many family visitors. Behind the beach is a **pine forest** that offers shade and walking paths, and at the lowest tide the broad sands reveal a **wondam** — a traditional Jeju fishing method that used the difference between high and low tide to trap fish. At Iho Tewoo, a restored example survives as the **Iho Mosalwon**. \n\nRight alongside the beach runs the **Dodu-dong Rainbow Coastal Road**, where you can enjoy colorful seaside barrier blocks and a coastal drive, and its proximity to the airport makes it **a great last stop before an evening flight**. Admission to the beach and walking paths is **free**.",
-            "image": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+            "image": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
             "highlights": [
               "**The closest beach to downtown Jeju and the airport** — sunset finale + easy airport transfer",
               "Iconic **Jeju pony lighthouses (horse lighthouses)** — a red and a white one, about 12 m tall, a signature photo spot",
@@ -2916,16 +3081,31 @@
               "walking": "Easy — flat sands and breakwater walk, about 15–20 min"
             },
             "images": [
-              "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
-              "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp"
+              "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
+              "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+              "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+              "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+              "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
+                "url": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
+                "url": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2933,18 +3113,42 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-13.webp",
-                "location": "Iho Tewoo Beach",
-                "caption": "Iho Tewoo Beach — photo 1",
-                "alt": "Iho Tewoo Beach — gallery image 1"
+                "src": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
+                "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+                "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 1",
+                "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/iho-teu/chatgpt-image-2026-5-9-01-17-19.webp",
-                "location": "Iho Tewoo Beach",
-                "caption": "Iho Tewoo Beach — photo 2",
-                "alt": "Iho Tewoo Beach — gallery image 2"
+                "src": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
+                "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+                "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 2",
+                "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/iho-teu/03-kakaotalk-20250603-220800957-09.webp",
+                "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+                "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 3",
+                "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
+                "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+                "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 4",
+                "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
+                "location": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+                "caption": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — photo 5",
+                "alt": "Iho Tewoo Beach (Horse Lighthouses · Sunset) — gallery image 5"
               }
             ]
           }

@@ -1,20 +1,21 @@
 import type { ReactNode } from 'react';
+import { ScrollRail } from '@/components/ui/RailArrows';
 import { cn } from '@/lib/utils';
 
 /**
  * Horizontally-scrolling filter row (W1.7 / spec §3.2 layer ②, §8.2). Holds
- * FilterChip children; the scrollbar is hidden for a clean chip strip.
+ * FilterChip children.
+ *
+ * 🔴 The scrollbar used to be hidden here "for a clean chip strip". On desktop
+ * that made overflowing chips unreachable — a vertical wheel scrolls the page,
+ * not a horizontal-only row. `.rail-scrollbar` keeps the strip clean on touch
+ * and gives a mouse a slim bar to drag. See `__tests__/audit/railScrollbar.test.ts`.
  */
 export function FilterBar({ children, className }: { children: ReactNode; className?: string }) {
   return (
-    <div
-      className={cn(
-        'flex items-center gap-2 overflow-x-auto [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden',
-        className,
-      )}
-    >
+    <ScrollRail className={cn('flex items-center gap-2 overflow-x-auto', className)} arrowSize="sm">
       {children}
-    </div>
+    </ScrollRail>
   );
 }
 
