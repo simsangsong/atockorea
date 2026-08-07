@@ -92,12 +92,47 @@ export default function OpsHomeTab({
     }
   };
 
-  const stats: Array<{ label: string; value: number; tone?: 'red' | 'amber' | 'emerald' }> = [
+  type Stat = { label: string; value: number; tone?: 'red' | 'amber' | 'emerald' };
+
+  /** Something is wrong and a person must act. */
+  const exceptionStats: Stat[] = [
+    { label: '응대 필요', value: attention.length, tone: attention.length ? 'amber' : undefined },
+    { label: 'SOS', value: sosCount, tone: sosCount ? 'red' : undefined },
+  ];
+  /** How big today is. Useful, never urgent. */
+  const contextStats: Stat[] = [
     { label: '오늘 룸', value: rooms.length },
     { label: 'LIVE', value: liveCount, tone: 'emerald' },
     { label: '안읽음', value: unreadTotal },
-    { label: '응대 필요', value: attention.length, tone: attention.length ? 'amber' : undefined },
-    { label: 'SOS', value: sosCount, tone: sosCount ? 'red' : undefined },
+  ];
+
+  /**
+   * The single accent action, chosen by what the day actually needs.
+   *
+   * Guests waiting on a reply outrank everything else that is not an SOS;
+   * otherwise the morning job is issuing guide/driver links and assigning
+   * vehicles, which is the tile an operator opens first every single day.
+   */
+  const primary = attention.length
+    ? {
+        title: `응대 필요 ${attention.length}건 처리`,
+        // The queue itself lives on the dashboard tab (`ops-attention-queue`).
+        desc: '기다리는 손님부터 — 대시보드 큐로',
+        run: () => onNavigate('dashboard'),
+      }
+    : {
+        // Deliberately not the tile's own name. A primary says what you are
+        // about to do; repeating the destination put the same words on screen
+        // twice and made the button read as a duplicate of the tile below it.
+        title: '오늘 링크 · 배차 시작',
+        desc: '가이드·기사 링크 발급 · 차량 배정 · QR',
+        run: onOpenManager,
+      };
+
+  const GROUPS: Array<{ key: 'today' | 'review' | 'analysis'; label: string }> = [
+    { key: 'today', label: '오늘 운영' },
+    { key: 'review', label: '검토 · 배차' },
+    { key: 'analysis', label: '분석 · 보고' },
   ];
 
   const tiles: Array<{
@@ -105,6 +140,13 @@ export default function OpsHomeTab({
     title: string;
     desc: string;
     icon: typeof Link2;
+    /**
+     * Which band the tile belongs to. Ten identical cards in one flat grid is
+     * the defect this fixes: nothing about the grid said that 배정·룸·링크 is
+     * touched every morning while 챗봇 분석 is touched once a month, so the
+     * operator re-read all ten every time.
+     */
+    group: 'today' | 'review' | 'analysis';
     badge?: number;
     badgeTone?: 'red' | 'amber' | 'blue';
     onClick?: () => void;
@@ -112,6 +154,7 @@ export default function OpsHomeTab({
   }> = [
     {
       key: 'manager',
+      group: 'today',
       title: '배정 · 룸 · 링크',
       desc: '가이드·기사 링크 발급 · 차량 배정 · QR · 초대 메일',
       icon: Link2,
@@ -119,6 +162,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'inbox',
+      group: 'today',
       title: '메시지 모아보기',
       desc: '모든 룸의 메시지를 한 타임라인으로',
       icon: Inbox,
@@ -126,6 +170,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'review',
+      group: 'review',
       title: '인박스 리뷰 큐',
       desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
       icon: MailCheck,
@@ -133,6 +178,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'messaging',
+      group: 'today',
       title: '손님 안내 보내기',
       desc: '내일 투어 · 이메일 일괄 + 왓츠앱 순차 · 날씨 자동 포함',
       icon: Send,
@@ -140,6 +186,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'autopilot',
+      group: 'review',
       title: '오토파일럿',
       desc: '미배정 · 미배차 · 단가 누락 점검 (제안만)',
       icon: Bot,
@@ -147,6 +194,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'room-history',
+      group: 'today',
       title: '투어룸 생성 내역',
       desc: '이번 달 방 · 손님 미입장 방 찾기 · 엑셀',
       icon: History,
@@ -154,6 +202,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'schedule',
+      group: 'review',
       title: '가이드 · 차량 달력',
       desc: '월 매트릭스 · 배정 충돌 · 휴무 한눈에',
       icon: CalendarRange,
@@ -161,6 +210,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'qa',
+      group: 'analysis',
       title: '문답 학습',
       desc: '컨시어지 Q&A 검토 · 승인 · 학습',
       icon: GraduationCap,
@@ -168,6 +218,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'analytics',
+      group: 'analysis',
       title: '챗봇 분석',
       desc: '해결률 · 커버리지 갭 · 피드백',
       icon: BarChart3,
@@ -175,6 +226,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'daily-report',
+      group: 'analysis',
       title: reportState === 'sending' ? '보고서 발송 중…' : '지금 보고서 발송',
       desc: '오늘 실적 · 신규 · 내일 · 연락 · 요주의 每日報表',
       icon: FileBarChart,
@@ -191,38 +243,104 @@ export default function OpsHomeTab({
 
   return (
     <div className="space-y-4 pb-4">
-      {/* Vitals */}
-      <div className="grid grid-cols-5 gap-1.5" data-testid="ops-home-stats">
-        {stats.map(({ label, value, tone }) => (
-          <div
-            key={label}
-            data-testid={`ops-kpi-${label}`}
-            data-kpi-tone={value ? (tone ?? 'none') : 'none'}
-            className={`rounded-xl border px-1 py-2.5 text-center ${
-              tone === 'red' && value
-                ? 'border-[var(--tr-danger)] bg-[var(--tr-danger-soft)]'
-                : tone === 'amber' && value
-                  ? 'border-[var(--tr-warn)] bg-[var(--tr-warn-soft)]'
-                  : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
-            }`}
-          >
-            <p
-              className={`tr-title font-bold tabular-nums ${
-                tone === 'red' && value
-                  ? 'text-[var(--tr-danger)] '
-                  : tone === 'amber' && value
-                    ? 'text-[var(--tr-warn)] '
-                    : tone === 'emerald' && value
-                      ? 'text-[var(--tr-safe)] '
-                      : 'text-[var(--tr-ink)]'
-              }`}
+      {/*
+        Vitals, in two bands rather than five equal boxes.
+
+        🔴 The five-across grid gave `SOS 0` exactly the weight of `오늘 룸 4`.
+        Tone only arrived once a value was non-zero, and even then it was a tint
+        on a box the same size as the others — so the screen looked identical
+        whether the day was calm or someone had pressed SOS. Exceptions and
+        context are not the same kind of number and must not share a row.
+
+        The `ops-kpi-*` testids and `data-kpi-tone` contract are unchanged;
+        `opsHomeHierarchy.test.tsx` pins them.
+      */}
+      <div className="space-y-1.5" data-testid="ops-home-stats">
+        <div className="grid grid-cols-2 gap-1.5">
+          {exceptionStats.map(({ label, value, tone }) => {
+            const hot = Boolean(value);
+            return (
+              <div
+                key={label}
+                data-testid={`ops-kpi-${label}`}
+                data-kpi-tone={value ? (tone ?? 'none') : 'none'}
+                className={`flex items-center gap-2.5 rounded-2xl border px-3 py-2.5 ${
+                  hot && tone === 'red'
+                    ? 'border-[var(--tr-danger)] bg-[var(--tr-danger-soft)]'
+                    : hot && tone === 'amber'
+                      ? 'border-[var(--tr-warn)] bg-[var(--tr-warn-soft)]'
+                      : 'border-[var(--tr-hairline)] bg-[var(--tr-surface)]'
+                }`}
+              >
+                <p
+                  className={`tr-title font-bold tabular-nums ${
+                    hot && tone === 'red'
+                      ? 'text-[var(--tr-danger)]'
+                      : hot && tone === 'amber'
+                        ? 'text-[var(--tr-warn)]'
+                        : 'text-[var(--tr-ink-3)]'
+                  }`}
+                >
+                  {value}
+                </p>
+                <p
+                  className={`text-cjk-safe tr-label ${
+                    hot ? 'font-bold text-[var(--tr-ink)]' : 'text-[var(--tr-ink-3)]'
+                  }`}
+                >
+                  {label}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+        {/* Context: how big today is. Never an alarm, so it never looks like one. */}
+        <div className="flex items-center gap-3 rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2">
+          {contextStats.map(({ label, value, tone }) => (
+            <div
+              key={label}
+              data-testid={`ops-kpi-${label}`}
+              data-kpi-tone={value ? (tone ?? 'none') : 'none'}
+              className="flex items-baseline gap-1.5"
             >
-              {value}
-            </p>
-            <p className="mt-0.5 tr-meta text-[var(--tr-ink-3)]">{label}</p>
-          </div>
-        ))}
+              <span
+                className={`tr-card-text font-bold tabular-nums ${
+                  tone === 'emerald' && value ? 'text-[var(--tr-safe)]' : 'text-[var(--tr-ink)]'
+                }`}
+              >
+                {value}
+              </span>
+              <span className="text-cjk-safe tr-meta text-[var(--tr-ink-3)]">{label}</span>
+            </div>
+          ))}
+        </div>
       </div>
+
+      {/*
+        The one thing to press.
+
+        🔴 This screen had no accent control at all — eighteen controls, every
+        one of them a white card or a plain counter, so nothing won and the
+        operator had to read the whole grid to decide what to do. What the
+        primary points at changes with the day: unanswered guests first, then
+        the morning's real job (issuing links and assigning vehicles). SOS is
+        deliberately NOT this button — an alarm is not an action, and it keeps
+        its own louder red banner directly below.
+      */}
+      <button
+        type="button"
+        data-testid="ops-primary"
+        onClick={primary.run}
+        className="tr-cta-hero text-cjk-safe justify-between text-left"
+      >
+        <span className="min-w-0">
+          <span className="block font-bold">{primary.title}</span>
+          <span className="mt-0.5 block tr-meta opacity-80">{primary.desc}</span>
+        </span>
+        <span aria-hidden className="shrink-0 font-bold">
+          →
+        </span>
+      </button>
 
       {/* SOS shortcut rides above the tiles only while one is active. */}
       {sosCount > 0 && (
@@ -250,9 +368,30 @@ export default function OpsHomeTab({
         </div>
       )}
 
-      {/* Action tiles */}
-      <div className="grid grid-cols-2 gap-2" data-testid="ops-home-tiles">
-        {tiles.map(({ key, title, desc, icon: Icon, badge, badgeTone, onClick, href }) => {
+      {/*
+        Action tiles, in three named bands.
+
+        Same ten destinations, same testids — what changes is that the grid no
+        longer claims they are peers. A band heading is cheaper than teaching
+        every operator which of ten identical cards is the one they need.
+      */}
+      <div className="space-y-3" data-testid="ops-home-tiles">
+        {GROUPS.map(({ key: groupKey, label }) => {
+          const inGroup = tiles.filter((t) => t.group === groupKey);
+          if (inGroup.length === 0) return null;
+          return (
+            <section key={groupKey} data-testid={`ops-tile-group-${groupKey}`}>
+              <h2 className="text-cjk-safe px-1 pb-1.5 tr-label font-semibold text-[var(--tr-ink-3)]">{label}</h2>
+              <div className="grid grid-cols-2 gap-2">{inGroup.map(renderTile)}</div>
+            </section>
+          );
+        })}
+      </div>
+    </div>
+  );
+
+  function renderTile({ key, title, desc, icon: Icon, badge, badgeTone, onClick, href }: (typeof tiles)[number]) {
+    {
           const body = (
             <>
               <span className="relative inline-flex">
@@ -307,8 +446,6 @@ export default function OpsHomeTab({
               {body}
             </button>
           );
-        })}
-      </div>
-    </div>
-  );
+    }
+  }
 }

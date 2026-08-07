@@ -15,7 +15,7 @@
  * Nothing here is decoration — a dashboard that is red all the time is a
  * dashboard nobody looks at.
  */
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import OpsHomeTab from '@/components/tour-ops/OpsHomeTab';
 import type { OpsRoom, SosInfo } from '@/components/tour-ops/opsShared';
 import type { AttentionItem } from '@/lib/tour-ops/attention';
@@ -67,6 +67,52 @@ describe('I4 — ops home hierarchy (U-D19)', () => {
     renderHome({ sos: 1, attention: 1 });
     expect(screen.getByTestId('ops-kpi-오늘 룸')).toHaveAttribute('data-kpi-tone', 'none');
     expect(screen.getByTestId('ops-kpi-LIVE')).toHaveAttribute('data-kpi-tone', 'none');
+  });
+});
+
+describe('UX-006 — exactly one thing wins on this screen', () => {
+  /**
+   * 🔴 The measured defect: eighteen visible controls, not one of them carrying
+   * the accent. Every tile was the same white card and every counter the same
+   * box, so the operator had to read the whole grid to decide what to do.
+   *
+   * `qa-uiux-render` judges this by computed background, which only a browser
+   * can do. What is pinned here is the contract that survives refactors: one
+   * primary exists, it is the hero primitive the render harness recognises, and
+   * what it points at follows the day.
+   */
+  it('renders exactly one primary, using the app hero primitive', () => {
+    renderHome();
+    const primary = screen.getByTestId('ops-primary');
+    // `tr-cta-hero` is what qa-uiux-render counts as a primary; a hand-rolled
+    // bg utility silently lost to `.tr-btn-physical`'s background shorthand and
+    // measured as transparent.
+    expect(primary.className).toMatch(/tr-cta-hero/);
+    expect(screen.getAllByTestId('ops-primary')).toHaveLength(1);
+  });
+
+  it('points at waiting guests first, and at the morning job otherwise', () => {
+    renderHome({ attention: 3 });
+    expect(screen.getByTestId('ops-primary')).toHaveTextContent('응대 필요 3건');
+
+    cleanup();
+    renderHome({ attention: 0 });
+    expect(screen.getByTestId('ops-primary')).toHaveTextContent('오늘 링크 · 배차 시작');
+  });
+
+  it('🔴 does not repeat a tile name — the primary is an action, not a duplicate label', () => {
+    renderHome({ attention: 0 });
+    // The manager tile still exists and still says its own name; the primary
+    // must not say the same words, or the screen shows one instruction twice.
+    expect(screen.getByTestId('ops-tile-manager')).toHaveTextContent('배정 · 룸 · 링크');
+    expect(screen.getByTestId('ops-primary')).not.toHaveTextContent('배정 · 룸 · 링크');
+  });
+
+  it('groups the tools instead of presenting ten peers', () => {
+    renderHome();
+    for (const g of ['today', 'review', 'analysis']) {
+      expect(screen.getByTestId(`ops-tile-group-${g}`)).toBeInTheDocument();
+    }
   });
 });
 
