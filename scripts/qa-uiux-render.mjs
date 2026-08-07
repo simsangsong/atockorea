@@ -326,6 +326,42 @@ const rt = (fx.room1Url.split('?')[1] ?? '');
 await visit('plan-editor', `/tour-mode/plan/${fx.booking1}?${rt}`, 'main, [data-testid="plan-root"], h1');
 
 /**
+ * 🔴 The plan editor has two variants and only one had ever been walked.
+ *
+ * `PlanEditorClient` branches on `tour.is_private` (tours.price_type ===
+ * 'vehicle'). Both sim tours are per-person small-group, so `plan-editor` above
+ * is always the VIEW-ONLY variant — a set route, nothing to press. The editable
+ * planner (tabs, POI picker, submit bar) is a different screen, and reporting on
+ * one under the other's name is how it came to be listed as a hierarchy defect.
+ *
+ * Skipped rather than faked when the seeder found no active private tour: a
+ * surface measured against the wrong data is worse than one openly not measured.
+ */
+if (fx.planEditableUrl) {
+  await visit('plan-editor-private', fx.planEditableUrl, 'main, [data-testid="plan-root"], h1', async () => {
+    /**
+     * 🔴 Entry gate, same shape as the cockpit's `ops-drive` branch. Only the
+     * lead traveller may edit (P-D13); everyone else gets "Only the lead
+     * traveller can edit the plan" and one small button. Landing on that and
+     * calling it the editable planner is measuring the doormat.
+     *
+     * Conditional, not unconditional: on a booking where this session already
+     * IS the lead the button does not exist, and waiting for it would look
+     * exactly like a broken app.
+     */
+    const claim = page.locator('[data-testid="plan-claim-lead"]');
+    if (await claim.count().catch(() => 0)) {
+      await claim.click({ timeout: 20000 }).catch(() => {});
+      await page.waitForTimeout(2500);
+    }
+    await page.waitForSelector('[data-testid="plan-tab-pick"], [data-testid="plan-root"]', { timeout: 20000 }).catch(() => {});
+    await page.waitForTimeout(1200);
+  });
+} else {
+  results.push({ surface: 'plan-editor-private', unreachable: 'no active vehicle-charter tour to seed against' });
+}
+
+/**
  * 관제 — UX-D3 scopes this to the C and H axes only (Korean-only, staff-only,
  * indoor), so D/L/P numbers are collected but not judged for this surface.
  */
