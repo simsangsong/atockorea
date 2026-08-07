@@ -225,7 +225,7 @@ export default function OpsRoomDrawer({
         {/* Phase 2 §3.2 — [대화|명단|차량|카드] 세그먼트 (명단 = tour_id+tour_date
             파생 뷰, 차량 = §4.1 B-2 배차, 카드 = §5.4 C-17 시작 브리핑 세트.
             차량·카드 탭은 룸만 있으면 되므로 항상 노출된다). */}
-        <div className="flex gap-1.5 overflow-x-auto border-b border-[var(--tr-hairline)] px-4 py-2">
+        <div className="rail-scrollbar flex gap-1.5 overflow-x-auto border-b border-[var(--tr-hairline)] px-4 py-2">
           {(
             [
               { key: 'chat', label: '대화' },

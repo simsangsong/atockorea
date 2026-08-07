@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/auth';
 import { getOpsRoom } from '@/lib/ops/seating/access';
-import { selectRoomVehicles } from '@/lib/ops/seating/layoutUsage';
+import { vehicleInGroup } from '@/lib/ops/seating/dispatchScope';
 import {
   ensureLayoutPhotoBucket,
   layoutPhotoSignedUrl,
@@ -35,14 +35,17 @@ export const dynamic = 'force-dynamic';
  * (Cockpit.tsx B1), 여기는 **관제가 보관하는** 배차 기록이다. 목적이 다르다.
  */
 
+/**
+ * 🔴 그룹 스코프. 형제 라우트와 **같은 규칙**을 쓴다 — 예전엔 여기도
+ * `room_id === roomId` 라, 앵커가 아닌 팀에서 열면 차량 사진 첨부·삭제가
+ * 404 로 죽었다(배차 화면엔 그 차가 멀쩡히 보이는 채로).
+ */
 async function loadDispatch(
   supabase: ReturnType<typeof createServerClient>,
-  roomId: string,
+  room: { id: string; tour_id: string | null; tour_date: string | null },
   vehicleId: string,
 ) {
-  const { rows } = await selectRoomVehicles(supabase, { ids: [vehicleId] });
-  const vehicle = rows[0];
-  return vehicle && vehicle.room_id === roomId ? vehicle : null;
+  return vehicleInGroup(supabase, room, vehicleId);
 }
 
 export async function POST(req: NextRequest, { params }: { params: Promise<{ roomId: string }> }) {
@@ -58,7 +61,7 @@ export async function POST(req: NextRequest, { params }: { params: Promise<{ roo
     const vehicleId = typeof form?.get('vehicle_id') === 'string' ? String(form.get('vehicle_id')) : '';
     if (!vehicleId) return NextResponse.json({ error: 'vehicle_id is required' }, { status: 400 });
 
-    const vehicle = await loadDispatch(supabase, roomId, vehicleId);
+    const vehicle = await loadDispatch(supabase, room, vehicleId);
     if (!vehicle) return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
 
     const file = form?.get('photo');
@@ -110,7 +113,7 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ r
     const vehicleId = req.nextUrl.searchParams.get('vehicle_id') ?? '';
     if (!vehicleId) return NextResponse.json({ error: 'vehicle_id is required' }, { status: 400 });
 
-    const vehicle = await loadDispatch(supabase, roomId, vehicleId);
+    const vehicle = await loadDispatch(supabase, room, vehicleId);
     if (!vehicle) return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
 
     const { error } = await supabase.from('ops_room_vehicles').update({ photo_path: null }).eq('id', vehicleId);

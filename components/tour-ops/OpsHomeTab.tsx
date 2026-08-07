@@ -7,7 +7,7 @@
  * task — the hub is the task list.
  */
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import {
   BarChart3,
   Bot,
@@ -37,6 +37,7 @@ export default function OpsHomeTab({
   onOpenSchedule,
   onOpenAutopilot,
   onOpenMessaging,
+  managerOpen = false,
 }: {
   rooms: OpsRoom[];
   sosRooms: Map<string, SosInfo>;
@@ -54,6 +55,8 @@ export default function OpsHomeTab({
   onOpenAutopilot?: () => void;
   /** M4 — 손님 안내 보내기(이메일 일괄 + 왓츠앱 순차). */
   onOpenMessaging?: () => void;
+  /** 룸·링크 관리 시트가 열려 있나. 닫히면 미배차 수를 다시 읽는다. */
+  managerOpen?: boolean;
 }) {
   const liveCount = rooms.filter(
     (room) =>
@@ -75,14 +78,27 @@ export default function OpsHomeTab({
    * 그리는 건 0을 초록으로 읽는 것과 같은 종류의 거짓말이다.
    */
   const [unassignedTeams, setUnassignedTeams] = useState<number | null>(null);
+  /**
+   * 🔴 배차는 이 화면 밖(룸·링크 관리 시트 → 룸 드로어)에서 일어난다. 마운트에서
+   * 한 번만 읽으면, 배차를 끝내고 시트를 닫고 돌아온 운영자에게 허브가 낡은
+   * 「미배차 N팀」을 계속 말한다. 시트가 닫힐 때 다시 읽는다.
+   */
+  const [dispatchEpoch, setDispatchEpoch] = useState(0);
+  const prevManagerOpen = useRef(managerOpen);
+  useEffect(() => {
+    if (prevManagerOpen.current && !managerOpen) setDispatchEpoch((n) => n + 1);
+    prevManagerOpen.current = managerOpen;
+  }, [managerOpen]);
+
   useEffect(() => {
     let alive = true;
     void (async () => {
       // 🔴 한 번만 쏘면 안 된다 — `getOpsToken`은 Supabase 세션에서 액세스
       // 토큰을 꺼내는데, 허브는 그 세션이 복원되기 전에 마운트된다. 실측에서
       // 첫 시도가 "세션이 만료되었습니다"로 던졌고, 배지는 영영 안 떴다.
-      // 조용히 실패하는 배지는 「미배차 0」과 구별이 안 된다.
-      for (let attempt = 0; attempt < 4 && alive; attempt += 1) {
+      // 조용히 실패하는 배지는 「미배차 0」과 구별이 안 된다. 그래서 포기하지
+      // 않고 상한(≈1분)까지 물러서며 다시 시도한다.
+      for (let attempt = 0; attempt < 8 && alive; attempt += 1) {
         try {
           const { getOpsToken } = await import('@/components/tour-ops/opsShared');
           const token = await getOpsToken();
@@ -105,15 +121,15 @@ export default function OpsHomeTab({
           );
           return;
         } catch {
-          await new Promise((r) => setTimeout(r, 1200 * (attempt + 1)));
+          await new Promise((r) => setTimeout(r, Math.min(1200 * (attempt + 1), 12_000)));
         }
       }
-      /* 네 번 다 실패 = 배지 없음. 모르는 것을 0으로 그리지 않는다. */
+      /* 여덟 번 다 실패 = 배지 없음. 모르는 것을 0으로 그리지 않는다. */
     })();
     return () => {
       alive = false;
     };
-  }, []);
+  }, [dispatchEpoch]);
 
   // §11.E 수동 원버튼 [지금 보고서 발송] — POST /api/cron/ops-daily-report (force=true).
   const [reportState, setReportState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');

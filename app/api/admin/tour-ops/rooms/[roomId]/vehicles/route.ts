@@ -4,6 +4,7 @@ import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/aut
 import { getOpsRoom } from '@/lib/ops/seating/access';
 import { broadcastSeatUpdate } from '@/lib/ops/seating/service';
 import { loadLayoutUsage, selectRoomVehicles } from '@/lib/ops/seating/layoutUsage';
+import { roomIdsInGroup, vehicleInGroup } from '@/lib/ops/seating/dispatchScope';
 import { ensureTourGroup } from '@/lib/ops/seating/group';
 import {
   capacityVerdict,
@@ -128,19 +129,6 @@ function seatNumbersOf(layout: VehicleLayoutJson | null): Set<number> {
  * §K B2.4 — 이 룸이 속한 그룹의 룸 id 전부.
  * `lib/ops/seating/service.ts`의 같은 규칙(B0.4)과 짝을 맞춘다.
  */
-async function roomIdsInGroup(
-  supabase: ReturnType<typeof createServerClient>,
-  room: { id: string; tour_id: string | null; tour_date: string | null },
-): Promise<string[]> {
-  if (!room.tour_id || !room.tour_date) return [room.id];
-  const { data } = await supabase
-    .from('tour_rooms')
-    .select('id')
-    .eq('tour_id', room.tour_id)
-    .eq('tour_date', room.tour_date);
-  const ids = Array.isArray(data) ? (data as Array<{ id: string }>).map((r) => r.id) : [];
-  return ids.length > 0 ? [...new Set([room.id, ...ids])] : [room.id];
-}
 
 /**
  * §K B2.4 — 이 그룹의 정원 판정. 배차 화면이 "2호차가 필요한가"를 스스로
@@ -567,10 +555,11 @@ export async function PATCH(req: NextRequest, { params }: { params: Promise<{ ro
     const vehicleId = typeof body.vehicle_id === 'string' ? body.vehicle_id : '';
     if (!vehicleId) return NextResponse.json({ error: 'vehicle_id is required' }, { status: 400 });
 
-    const { rows } = await selectRoomVehicles(supabase, { ids: [vehicleId] });
-    const vehicle = rows[0];
-    if (!vehicle || vehicle.room_id !== roomId) {
-      return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
+    // 🔴 그룹 스코프. 조회가 그룹 단위인데 여기만 룸 단위였고, 그래서 앵커가
+    // 아닌 팀에서 열면 차가 보이는데 손대면 404 였다 (lib/ops/seating/dispatchScope.ts).
+    const vehicle = await vehicleInGroup(supabase, room, vehicleId);
+    if (!vehicle) {
+      return NextResponse.json({ error: 'Vehicle not found in this tour group' }, { status: 404 });
     }
 
     // §2-1 — 등록 차량 선택/해제. 키가 없으면 기존 연결을 그대로 둔다.
@@ -791,10 +780,11 @@ export async function DELETE(req: NextRequest, { params }: { params: Promise<{ r
     const vehicleId = req.nextUrl.searchParams.get('vehicle_id') ?? '';
     if (!vehicleId) return NextResponse.json({ error: 'vehicle_id is required' }, { status: 400 });
 
-    const { rows } = await selectRoomVehicles(supabase, { ids: [vehicleId] });
-    const vehicle = rows[0];
-    if (!vehicle || vehicle.room_id !== roomId) {
-      return NextResponse.json({ error: 'Vehicle not found in this room' }, { status: 404 });
+    // 🔴 그룹 스코프. 조회가 그룹 단위인데 여기만 룸 단위였고, 그래서 앵커가
+    // 아닌 팀에서 열면 차가 보이는데 손대면 404 였다 (lib/ops/seating/dispatchScope.ts).
+    const vehicle = await vehicleInGroup(supabase, room, vehicleId);
+    if (!vehicle) {
+      return NextResponse.json({ error: 'Vehicle not found in this tour group' }, { status: 404 });
     }
 
     // 설계안 §1-2 — 배차 해제는 좌석을 확실히 줄인다. 줄인 뒤 앉을 자리가 없어지면
