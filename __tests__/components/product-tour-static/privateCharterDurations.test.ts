@@ -35,6 +35,9 @@ import { formatChargeDuration } from '@/components/product-tour-static/_shared/c
 const HOUR_GRID_CHARTERS = [
   'jeju-island-private-car-charter-tour',
   'busan-private-car-charter-cruise-shore',
+  // Joined the same curve on 2026-08-07 (owner). Its slug still says "10hr" —
+  // that is deliberate, the live OTA listing URLs point at it.
+  'seoul-suburbs-private-chartered-car-10hr',
 ] as const;
 
 const LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'] as const;
