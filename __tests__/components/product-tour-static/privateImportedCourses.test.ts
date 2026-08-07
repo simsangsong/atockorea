@@ -13,7 +13,21 @@ const LOCALES = ['en', 'ko', 'ja', 'zh', 'zh-TW', 'es'] as const;
 const HOSTS: Record<string, string[]> = {
   'jeju-island-private-car-charter-tour': ['south', 'southwest', 'east'],
   'seoul-suburbs-private-chartered-car-10hr': ['gapyeong', 'dmz', 'suwon', 'pocheon'],
-  'busan-private-car-charter-cruise-shore': ['busan-city', 'gyeongju', 'outskirts'],
+  // Owner 2026-08-07: offer the tours we already sell — "일일투어, 스몰그룹투어,
+  // 기항지 투어 등등". The shore excursion and the small-group tour were the two
+  // missing, and they are what a charter buyer is most likely comparing against.
+  'busan-private-car-charter-cruise-shore': [
+    'cruise-shore',
+    'small-group',
+    'busan-city',
+    'gyeongju',
+    'outskirts',
+  ],
+  // Same instruction for the Incheon charter: terminal pickup, Gwanghwamun,
+  // Insa-dong, Gwangjang Market. That is our own Incheon shore excursion, so it
+  // is imported. It used to fall through to `seoulConfig()` — "Hotel pickup
+  // (default)" plus five "Stop to be added" slots, on a cruise-only product.
+  'incheon-seoul-private-car-shore-excursion-cruise': ['seoul-classic'],
 };
 
 describe('privateImportedCourses', () => {
@@ -53,9 +67,8 @@ describe('privateImportedCourses', () => {
     }
   });
 
-  it('returns null for non-charter products and the shore-excursion charter', () => {
+  it('returns null for non-charter products', () => {
     expect(getPrivateImportedCourses('east-signature-nature-core')).toBeNull();
-    // Real fixed shore-excursion itinerary of its own — deliberately not configured.
-    expect(getPrivateImportedCourses('incheon-seoul-private-car-shore-excursion-cruise')).toBeNull();
+    expect(getPrivateImportedCourses('busan-cruise-shore-excursion-bus-tour')).toBeNull();
   });
 });

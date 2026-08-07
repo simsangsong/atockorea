@@ -37,16 +37,31 @@ export type StaticTourProductRegistration = {
   maxGroupSize?: number;
 };
 
-/** Locale-invariant per-slug overrides — kept in sync with the heavy registry. */
-type SlugOverride = {
+/** Locale-invariant per-slug overrides. */
+export type SlugOverride = {
   listPriceUsd?: number;
   compareAtPriceUsd?: number;
   maxGroupSize?: number;
 };
 
-const SLUG_OVERRIDES: Record<string, SlugOverride> = {
+/**
+ * The single price-override map.
+ *
+ * Exported since 2026-08-07 so `staticTourProductRegistry.ts` can read this one
+ * instead of keeping its own copy. It had a copy, and the copies had drifted on
+ * 13 slugs — see the jeju-grand note below for what that cost.
+ */
+export const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "east-signature-nature-core": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "jeju-grand-highlights-loop": { listPriceUsd: 93, maxGroupSize: 8 },
+  // 🔴 Was 93 until 2026-08-07, while checkout charged 80. One product was
+  // quoting three different numbers: this file said 93 (and this is the copy
+  // that feeds /api/tours, /match, the chatbot and the recommendations rail),
+  // the dead `staticTourProductRegistry.ts` copy said 79/89, and `tours.price`,
+  // the default offer and `detail_payload.price` all said 80. Measured on a
+  // real render: the catalogue card read "$93" and the product page read
+  // ₩113,863, which is 80 at the day's rate. Set to what checkout actually
+  // charges. If 93 was the intended list price, the DB is the half to move.
+  "jeju-grand-highlights-loop": { listPriceUsd: 80, maxGroupSize: 8 },
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 49, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   // Klook prep 2026-06-29: +$5 sale price, discount REMOVE (compareAtPriceUsd dropped).
@@ -55,11 +70,15 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
   "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
   // Rate-card minimum (5h, 1–6 pax) — see staticTourProductRegistry.ts.
-  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 169, maxGroupSize: 14 },
   "busan-top-attractions-day-tour": { listPriceUsd: 34, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
-  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 424, maxGroupSize: 12 },
+    // 419 = the flat cell on this charter's rate card. The two SLUG_OVERRIDES
+  // copies disagreed (419 here vs 424 there), so the same product quoted two
+  // prices depending on which surface loaded. maxGroupSize 14 = two vehicles of
+  // seven, matching the 1–7 / 8+ rule (owner 2026-08-07).
+  "incheon-seoul-private-car-shore-excursion-cruise": { listPriceUsd: 419, maxGroupSize: 14 },
   "jeju-cherry-blossom-tour-east-route": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-cruise-shore-excursion-bus-tour": { listPriceUsd: 59 },
   "jeju-cruise-shore-excursion-small-group-tour": { listPriceUsd: 77, maxGroupSize: 8 },

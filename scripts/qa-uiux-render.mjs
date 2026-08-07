@@ -388,6 +388,46 @@ await visit('cockpit', fx.guideUrl, '[data-testid="drive-hero"], [data-testid="s
 
 await browser.close();
 
+/**
+ * Surfaces where "exactly one primary" is the wrong question.
+ *
+ * 🔴 Not an excuse list. The rule assumes a screen exists so the reader can
+ * decide something; on a screen with no decision, promoting one control is a
+ * downgrade, not a fix. Both entries were checked in a browser before being
+ * written here, and both are the same shape as `join-landing`, which this
+ * harness already declines to fail for having nothing to press:
+ *
+ *   plan-editor        for a fixed-route booking it renders "SET ITINERARY …
+ *                      this tour runs a set route planned by our team". Read-
+ *                      only by design; there is nothing to press. The EDITABLE
+ *                      variant is a different screen and is NOT exempt — it is
+ *                      still an open item on the U9 list.
+ *
+ * A surface that grows a real decision must come off this list.
+ *
+ * `guest-room-drawer` was on here and has been removed: it is an overlay, the
+ * home screen renders behind it, and the harness counts what is visible — so
+ * it now reports home's `home-now-action`. Passing on a neighbour's primary is
+ * not much of a verdict, but it is the honest reading of "what can the guest
+ * see and press right now", and a dead exemption that never fires is worse
+ * than no exemption at all.
+ */
+const H_EXEMPT = new Map([
+  ['plan-editor', '고정코스 변형 — 읽기 전용 (편집가능 변형은 면제 아님)'],
+]);
+
+function verdictH(r) {
+  if (r.primaries.count === 1) return '';
+  if (r.primaries.count > 1) return '🔴 초과';
+  // Nothing to rank. `join-landing` renders its real "no vehicle assigned yet"
+  // state with zero controls; ranking one of none is not a thing to ask for.
+  // This is a rule, not a name, so a surface that grows a control is judged
+  // again automatically.
+  if (r.controls === 0) return '— 판정 불가: 누를 것이 하나도 없다';
+  const why = H_EXEMPT.get(r.surface);
+  return why ? `— 판정 제외: ${why}` : '🔴 없음 — 이길 것이 없다';
+}
+
 const out = { base: BASE, pageErrors: errors, results };
 if (process.argv.includes('--json')) {
   console.log(JSON.stringify(out, null, 2));
@@ -402,7 +442,7 @@ if (process.argv.includes('--json')) {
     console.log(`  D  docked ${r.docked.px}px = ${r.docked.pct}% ${r.docked.pct > 25 ? '🔴 초과' : ''}  [${r.docked.parts.join(' | ')}]`);
     console.log(`  L  truncated ${r.truncated.count} ${r.truncated.count ? '🔴' : ''} ${r.truncated.sample.join(' · ')}`);
     console.log(
-      `  H  primaries ${r.primaries.count} ${r.primaries.count === 1 ? '' : r.primaries.count === 0 ? '🔴 없음 — 이길 것이 없다' : '🔴 초과'} ${r.primaries.sample.join(' · ')}`,
+      `  H  primaries ${r.primaries.count} ${verdictH(r)} ${r.primaries.sample.join(' · ')}`,
     );
   }
   if (errors.length) console.log(`\npage errors: ${errors.length}\n  ${errors.slice(0, 4).join('\n  ')}`);

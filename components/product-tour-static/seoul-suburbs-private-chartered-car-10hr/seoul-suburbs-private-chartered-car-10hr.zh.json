@@ -1912,9 +1912,9 @@
     ],
     "tiers": [
       {
-        "paxLabel": "1–6 pax",
+        "paxLabel": "1–7 pax",
         "paxMin": 1,
-        "paxMax": 6,
+        "paxMax": 7,
         "prices": {
           "5h": 169,
           "6h": 189,
@@ -1924,27 +1924,15 @@
         }
       },
       {
-        "paxLabel": "7–9 pax",
-        "paxMin": 7,
-        "paxMax": 9,
+        "paxLabel": "8+ pax",
+        "paxMin": 8,
+        "paxMax": 14,
         "prices": {
-          "5h": 203,
-          "6h": 223,
-          "7h": 243,
-          "8h": 264,
-          "9h": 284
-        }
-      },
-      {
-        "paxLabel": "10–13 pax",
-        "paxMin": 10,
-        "paxMax": 13,
-        "prices": {
-          "5h": 270,
-          "6h": 291,
-          "7h": 311,
-          "8h": 331,
-          "9h": 351
+          "5h": 338,
+          "6h": 378,
+          "7h": 418,
+          "8h": 460,
+          "9h": 500
         }
       }
     ]

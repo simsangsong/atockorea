@@ -121,7 +121,7 @@ export function useConfirmSheet(labels?: { confirm?: string; cancel?: string }) 
               }}
               disabled={options.input && !options.allowEmpty ? text.trim().length === 0 : false}
               className={`tr-title min-h-[52px] flex-1 font-bold ${
-                options.danger ? 'tr-btn-physical tr-btn-physical--danger' : 'tr-btn-physical'
+                options.danger ? 'tr-btn-physical tr-btn-physical--chip tr-btn-physical--danger' : 'tr-btn-physical'
               }`}
               data-testid="confirm-sheet-ok"
             >

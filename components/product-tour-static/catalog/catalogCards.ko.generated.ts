@@ -328,7 +328,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "정해진 일정이 아닌, 출항 시간에 맞춰 설계된 8시간 프라이빗 차량 투어. 인천 크루즈 터미널 갱웨이 픽업, 영어 구사 드라이버 가이드, 경복궁, 북촌 한옥마을 + 인사동, 원하시는 점심 식사, N서울타워, 명동 또는 조계사로 이어지는 맞춤형 코스. 드라이버 가이드가 출항 전 60분의 교통 여유 시간을 확보하여 절대 배를 놓치지 않습니다."
     },
     "price": {
-      "amountLabel": "424"
+      "amountLabel": "419"
     }
   },
   "jeju-cherry-blossom-tour-east-route": {

@@ -50,10 +50,10 @@
   "headlineLine1": "인천 크루즈 → 서울 프라이빗 차량",
   "headlineLine2": "투어",
   "price": {
-    "amountLabel": "424",
+    "amountLabel": "419",
     "currency": "USD",
     "per": "vehicle",
-    "salePriceUsd": 424
+    "salePriceUsd": 419
   },
   "hero": {
     "imageUrl": "/images/tours/gyeongbokgung/kakaotalk-20260510-222949305-09.webp",
@@ -1355,10 +1355,10 @@
   "sticky_booking_bar": {
     "note": "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
     "price": {
-      "amountLabel": "424",
+      "amountLabel": "419",
       "currency": "USD",
       "per": "vehicle",
-      "salePriceUsd": 424
+      "salePriceUsd": 419
     }
   },
   "matching_profile": {
@@ -2480,9 +2480,9 @@
     ],
     "tiers": [
       {
-        "paxLabel": "1–6 pax",
+        "paxLabel": "1–7 pax",
         "paxMin": 1,
-        "paxMax": 6,
+        "paxMax": 7,
         "prices": {
           "4h": 149,
           "5h": 169,
@@ -2494,31 +2494,17 @@
         }
       },
       {
-        "paxLabel": "7–9 pax",
-        "paxMin": 7,
-        "paxMax": 9,
+        "paxLabel": "8+ pax",
+        "paxMin": 8,
+        "paxMax": 14,
         "prices": {
-          "4h": 182,
-          "5h": 203,
-          "6h": 223,
-          "7h": 243,
-          "8h": 264,
-          "9h": 284,
-          "10h": 311
-        }
-      },
-      {
-        "paxLabel": "10–13 pax",
-        "paxMin": 10,
-        "paxMax": 13,
-        "prices": {
-          "4h": 250,
-          "5h": 270,
-          "6h": 291,
-          "7h": 311,
-          "8h": 331,
-          "9h": 351,
-          "10h": 378
+          "4h": 298,
+          "5h": 338,
+          "6h": 378,
+          "7h": 418,
+          "8h": 460,
+          "9h": 500,
+          "10h": 554
         }
       }
     ]
