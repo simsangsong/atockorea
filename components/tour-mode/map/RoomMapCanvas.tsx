@@ -42,6 +42,7 @@ import {
   basemapStyle,
   companionDot,
   facilityDot,
+  MARKER_LABEL_INK,
   myLocationDot,
   pickupPin,
   stopPin,
@@ -521,7 +522,7 @@ export default function RoomMapCanvas({
             key={`spot-${spot.id}`}
             position={{ lat: spot.latitude, lng: spot.longitude }}
             title={spot.title ?? undefined}
-            label={{ text: String(index + 1), color: '#ffffff', fontSize: '11px', fontWeight: '700' }}
+            label={{ text: String(index + 1), color: MARKER_LABEL_INK, fontSize: '11px', fontWeight: '700' }}
             icon={icons.stop}
           />
         ) : null,
@@ -544,7 +545,7 @@ export default function RoomMapCanvas({
         <Marker
           position={{ lat: pickup.lat, lng: pickup.lng }}
           title={pickup.name ?? 'Pickup'}
-          label={{ text: 'P', color: '#ffffff', fontSize: '11px', fontWeight: '700' }}
+          label={{ text: 'P', color: MARKER_LABEL_INK, fontSize: '11px', fontWeight: '700' }}
           icon={icons.pickup}
         />
       )}
@@ -579,7 +580,7 @@ export default function RoomMapCanvas({
                 ? undefined
                 : {
                     text: initialOf(person.display_name),
-                    color: '#ffffff',
+                    color: MARKER_LABEL_INK,
                     fontSize: '10px',
                     fontWeight: '700',
                   }
