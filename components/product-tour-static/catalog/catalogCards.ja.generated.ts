@@ -21,8 +21,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "港での送迎",
         "帰港保証"
       ],
-      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "heroImage": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "thumbnail": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "priceLabel": "",
       "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
     },
@@ -346,8 +346,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "カスタマイズ可能",
         "帰船保証"
       ],
-      "heroImage": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-      "thumbnail": "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
+      "heroImage": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+      "thumbnail": "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
       "priceLabel": "",
       "shortCardDescription": "船の出港時刻に合わせて組み立てる、8時間のプライベート専用車チャーター。固定スケジュールはありません。仁川クルーズターミナルのタラップでお出迎えし、英語対応のドライバーガイドが景福宮・北村韓屋村＋仁寺洞・お好みのランチ・Nソウルタワー・明洞または曹渓寺をご案内します。ドライバーガイドは出港時刻の60分前を交通渋滞バッファーとして確保するため、乗り遅れの心配はありません。"
     },
