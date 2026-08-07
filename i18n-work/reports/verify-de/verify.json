@@ -1,7 +1,384 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T15:04:11.012Z",
+  "generatedAt": "2026-08-07T15:49:45.628Z",
   "reports": [
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:A1",
+      "status": "flagged",
+      "segments": 53,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/badges/0",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:A2",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/routeShapeIntro/title",
+          "message": "길이비 1.68 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:A2-2",
+      "status": "auto_pass",
+      "segments": 38,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:B",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 18,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:itineraryStops",
+      "status": "flagged",
+      "segments": 95,
+      "fails": 0,
+      "flags": 13,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/3",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/name",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/7",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/9",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:itineraryStops-2",
+      "status": "flagged",
+      "segments": 25,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/alt",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/caption",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/location",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:practicalAccordionItems",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.58 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.58 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:routeFlowStops",
+      "status": "flagged",
+      "segments": 9,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/theme",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
       "status": "flagged",
@@ -351,6 +728,487 @@
       "fails": 0,
       "flags": 0,
       "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A1",
+      "status": "flagged",
+      "segments": 63,
+      "fails": 0,
+      "flags": 9,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/pills/2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/tags/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/catalog_card/title",
+          "message": "길이비 0.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2",
+      "status": "flagged",
+      "segments": 20,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2-3",
+      "status": "auto_pass",
+      "segments": 34,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:B",
+      "status": "flagged",
+      "segments": 123,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/32/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/34/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/35/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops",
+      "status": "flagged",
+      "segments": 51,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/2",
+          "message": "길이비 1.63 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-2",
+      "status": "flagged",
+      "segments": 49,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/parking",
+          "message": "길이비 1.51 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 1.68 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-3",
+      "status": "flagged",
+      "segments": 64,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/closed",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/1",
+          "message": "길이비 1.70 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/0",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "길이비 1.89 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/convenience/restroom",
+          "message": "길이비 0.85 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/walking",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/admission",
+          "message": "길이비 1.73 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-4",
+      "status": "flagged",
+      "segments": 53,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/6",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-5",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/hours",
+          "message": "길이비 1.57 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/7/timeUsed/3",
+          "message": "길이비 1.51 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-6",
+      "status": "flagged",
+      "segments": 55,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/highlights/2",
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/highlights/2",
+          "message": "길이비 1.64 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/visitBasics/hours",
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/8/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-7",
+      "status": "flagged",
+      "segments": 38,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/9/visitBasics/walking",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/timeUsed/3",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/highlights/6",
+          "message": "길이비 1.65 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/convenience/restroom",
+          "message": "길이비 0.90 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/visitBasics/hours",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-8",
+      "status": "flagged",
+      "segments": 12,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/10/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/11/highlights/0",
+          "message": "길이비 1.66 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:practicalAccordionItems",
+      "status": "auto_pass",
+      "segments": 41,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:routeFlowStops",
+      "status": "flagged",
+      "segments": 24,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/8/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/10/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:A1",
@@ -857,6 +1715,699 @@
           "severity": "flag",
           "pointer": "/staticQuestions/14/answer",
           "message": "숫자 추가 — 번역에만 [17] 이 있다 (날짜 서식 변환이면 정상)"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:A1",
+      "status": "flagged",
+      "segments": 102,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/pills/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/tags/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/badges/1",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/return/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/departure/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/1",
+          "message": "길이비 1.77 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/preview",
+          "message": "길이비 0.90 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:A2",
+      "status": "flagged",
+      "segments": 78,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/0",
+          "message": "길이비 0.74 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/1/question",
+          "message": "길이비 1.58 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/3/season",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:B",
+      "status": "flagged",
+      "segments": 90,
+      "fails": 0,
+      "flags": 35,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/16/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops",
+      "status": "flagged",
+      "segments": 46,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/name",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/0/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-2",
+      "status": "flagged",
+      "segments": 67,
+      "fails": 0,
+      "flags": 31,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/1/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/2/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/4/alt",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/4/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/4/location",
+          "message": "길이비 0.81 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/name",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/4",
+          "message": "길이비 1.54 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/2",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/hours",
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/alt",
+          "message": "길이비 0.84 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/caption",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/location",
+          "message": "길이비 0.82 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 0.75 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-3",
+      "status": "flagged",
+      "segments": 56,
+      "fails": 0,
+      "flags": 9,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/4",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/4/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G1",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/liveStatusWidget",
+          "message": "빈 번역 — 규칙 6에 따른 미번역. 이 포인터는 발행에서 제외(영어 폴백)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/3",
+          "message": "길이비 0.88 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-4",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/2",
+          "message": "길이비 1.85 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-5",
+      "status": "flagged",
+      "segments": 39,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/hours",
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/walking",
+          "message": "길이비 1.55 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:routeFlowStops",
+      "status": "flagged",
+      "segments": 16,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/4/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
     },
@@ -2154,6 +3705,367 @@
       "fails": 0,
       "flags": 0,
       "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A1",
+      "status": "flagged",
+      "segments": 109,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/0/label",
+          "message": "길이비 1.55 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 0.83 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/10/answer",
+          "message": "길이비 1.55 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2-3",
+      "status": "auto_pass",
+      "segments": 34,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:B",
+      "status": "flagged",
+      "segments": 54,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/0/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/1/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops",
+      "status": "auto_pass",
+      "segments": 31,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-2",
+      "status": "flagged",
+      "segments": 40,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/category",
+          "message": "길이비 0.87 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-3",
+      "status": "auto_pass",
+      "segments": 38,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-4",
+      "status": "auto_pass",
+      "segments": 26,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 9,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A1",
+      "status": "flagged",
+      "segments": 99,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/glanceItems/5/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/subnavItems/2/label",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/badges/0",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A2",
+      "status": "flagged",
+      "segments": 35,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.54 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A2-2",
+      "status": "flagged",
+      "segments": 63,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/3/season",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:B",
+      "status": "flagged",
+      "segments": 24,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "길이비 0.72 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops",
+      "status": "flagged",
+      "segments": 37,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.72 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops-2",
+      "status": "flagged",
+      "segments": 28,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/closed",
+          "message": "길이비 1.53 가 de 허용범위 0.9–1.5 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops-3",
+      "status": "flagged",
+      "segments": 17,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.72 가 de 허용범위 0.9–1.5 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:routeFlowStops",
+      "status": "flagged",
+      "segments": 10,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/theme",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
     },
     {
       "unitId": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:A1",
