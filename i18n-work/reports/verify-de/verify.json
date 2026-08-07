@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T03:13:59.892Z",
+  "generatedAt": "2026-08-07T05:00:19.541Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
@@ -1863,9 +1863,9 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:A1",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 88,
-      "fails": 1,
+      "fails": 0,
       "flags": 6,
       "findings": [
         {
@@ -1891,12 +1891,6 @@
           "severity": "flag",
           "pointer": "/headlineLine2",
           "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G3",
-          "severity": "fail",
-          "pointer": "/practicalAccordionItems/0/content/1",
-          "message": "숫자 소실 — 원문의 [6 7] 이 번역에 없다 (원문 [0 30 6 7] vs 번역 [0 18 19 30])"
         },
         {
           "gate": "G3",
@@ -2114,10 +2108,10 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 50,
-      "fails": 1,
-      "flags": 4,
+      "fails": 0,
+      "flags": 5,
       "findings": [
         {
           "gate": "G9",
@@ -2127,9 +2121,9 @@
         },
         {
           "gate": "G3",
-          "severity": "fail",
+          "severity": "flag",
           "pointer": "/itineraryStops/0/visitBasics/hours",
-          "message": "숫자 소실 — 원문의 [24] 이 번역에 없다 (원문 [0 0 1100 17 24 9] vs 번역 [0 0 1100 17 9])"
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
         },
         {
           "gate": "G9",
@@ -2188,10 +2182,10 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-5",
-      "status": "blocked",
+      "status": "flagged",
       "segments": 16,
-      "fails": 1,
-      "flags": 3,
+      "fails": 0,
+      "flags": 4,
       "findings": [
         {
           "gate": "G8",
@@ -2201,9 +2195,9 @@
         },
         {
           "gate": "G3",
-          "severity": "fail",
+          "severity": "flag",
           "pointer": "/itineraryStops/6/visitBasics/hours",
-          "message": "숫자 소실 — 원문의 [24] 이 번역에 없다 (원문 [24] vs 번역 [])"
+          "message": "숫자가 낱말로 표기됨 — 원문 [24] (anni Settanta·rund um die Uhr 류면 정상)"
         },
         {
           "gate": "G9",
