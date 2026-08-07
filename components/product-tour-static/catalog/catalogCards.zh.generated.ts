@@ -733,7 +733,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$52 per person (was $58, 10% off)",
+      "priceLabel": "",
       "shortCardDescription": "从首尔出发的12小时大巴东海海岸一日游：徒步雪岳山国家公园，参观悬崖边的洛山寺，漫步松林环抱的洛山海水浴场。每周一及周四出发，配备英语导游，提供弘大或明洞往返接送服务。"
     },
     "price": {
@@ -758,7 +758,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "每人起价59美元（原价82美元，立省28%）",
+      "priceLabel": "",
       "shortCardDescription": "从首尔出发的13小时大巴一日游，涵盖韩国三大最热门一日游目的地：雪岳山国立公园（韩国唯一的UNESCO生物圈保护区）、南怡岛（《冬季恋歌》取景地的水杉大道）以及晨静园（拥有5,000种植物的韩国标志性私家植物园）。全程门票已含；配备英语导游；在弘益大学站或明洞站接送。"
     },
     "price": {

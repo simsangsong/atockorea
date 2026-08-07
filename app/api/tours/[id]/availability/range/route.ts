@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
 import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
+import { isDateOutsideSeasonalWindow, seasonalWindowReason } from '@/lib/tour-seasonal-windows';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -134,6 +135,23 @@ export async function GET(
           maxCapacity: availabilityMap[dateStr]?.maxCapacity ?? null,
           priceOverride: availabilityMap[dateStr]?.priceOverride ?? null,
           reason: departureDayReason(tour?.slug),
+        };
+        currentDate.setDate(currentDate.getDate() + 1);
+        continue;
+      }
+
+      // Business rule: season-locked tours are bookable only inside their
+      // annual operating window. Same standing as the weekday rule above and
+      // closed for the same reason — this route is what paints the calendar,
+      // so leaving it out (as it was until 2026-08-07) offers dates the
+      // single-date check would then refuse.
+      if (isDateOutsideSeasonalWindow(tour?.slug, dateStr)) {
+        availabilityMap[dateStr] = {
+          available: false,
+          availableSpots: 0,
+          maxCapacity: availabilityMap[dateStr]?.maxCapacity ?? null,
+          priceOverride: availabilityMap[dateStr]?.priceOverride ?? null,
+          reason: seasonalWindowReason(tour?.slug),
         };
         currentDate.setDate(currentDate.getDate() + 1);
         continue;

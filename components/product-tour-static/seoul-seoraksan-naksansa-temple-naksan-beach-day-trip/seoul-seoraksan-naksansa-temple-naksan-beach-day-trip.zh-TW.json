@@ -21,7 +21,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首爾出發 江原道：雪嶽山＋洛山寺＋洛山海灘",
-    "priceLabel": "From US$52 per person (was $58, 10% off)",
+    "priceLabel": "",
     "shortCardDescription": "從首爾出發前往東海岸的12小時巴士一日遊：健行雪嶽山國家公園、參觀懸崖上的洛山寺，以及漫步松林環繞的洛山海灘。每週一及週四出發，配備英語導遊，並提供弘大或明洞的來回接送服務。",
     "tags": [
       "首爾出發一日遊",
@@ -1110,5 +1110,9 @@
     ],
     "source_of_truth_note": "Coach day-trip from Seoul combining Seoraksan National Park + Naksansa Temple + Naksan Beach on the Gangwon East Sea coast. Replaces the now-inactive seoul-seoraksan-national-park-sokcho-beach-day-trip. Seoraksan attraction content reused from the verified east-coast Seoraksan tours; Naksansa Temple and Naksan Beach content researched and verified 2026-05-14. Sources: KTO VisitKorea, Cultural Heritage Administration of Korea, Yangyang County official tourism, UNESCO, IUCN Green List, KNPS, Wikipedia.",
     "audit_summary": "Seoul-based 12-hour coach day trip on the Seoraksan + Naksansa Temple + Naksan Beach route, departing Mondays and Thursdays. Direct equivalent on the GetYourGuide market is the 'From Seoul: Mt. Seorak & Naksan Temple Day Trip' listing (t1051985), priced around US$58 with a US$52 sale rate."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "thursday"
+  ]
 }

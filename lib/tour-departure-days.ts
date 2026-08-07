@@ -84,6 +84,38 @@ const TOUR_DEPARTURE_DAYS: Record<string, DepartureDays> = {
     weekdays: [1, 4, 6],
     label: 'Mon, Thu, Sat',
   },
+  // ── Seoraksan / Gangwon products (owner's Klook calendars, 2026-08-07) ──────
+  //
+  // 🔴 These three were re-opened earlier the same day with NO entry here, and
+  // the commit that did it asserted in `tour-consumer-visibility.ts` that they
+  // "have no schedule entry, which is correct — nothing says they are anything
+  // but daily on-demand". That was written without checking, and it was wrong:
+  // the owner had already supplied the calendars. For the hours between the two
+  // commits the products were live and accepting bookings on days they do not
+  // run. Read the source before writing "nothing says otherwise".
+  //
+  // Screenshot dates, verified against the real weekdays before being trusted
+  // (2026-08-01 was a Saturday; 2027-02-01 a Monday):
+  //   Naksansa    Aug 10·13·17·20·24·27·31  → Mon Thu Mon Thu Mon Thu Mon
+  //   Morning Calm Aug 10·12·14·17·19·21·24·26·28·31 → Mon Wed Fri, repeating
+  //   Winter Eobi  Feb 1·3·5·8·10·12·15·17·19·22·24·26 → Mon Wed Fri, repeating
+  'seoul-seoraksan-naksansa-temple-naksan-beach-day-trip': {
+    weekdays: [1, 4],
+    label: 'Mon, Thu',
+  },
+  'seoul-seoraksan-nami-island-morning-calm-day-tour': {
+    weekdays: [1, 3, 5],
+    label: 'Mon, Wed, Fri',
+  },
+  // Winter-only product; its season window lives in `tour-seasonal-windows.ts`
+  // (20 Dec – 28 Feb, from the same listing's "[Winter Special: Dec/20~Feb/28]"
+  // title). Both constraints apply — a Monday in October is still not a
+  // departure. Currently blocked from consumer surfaces, so this is recorded
+  // ahead of the re-open rather than in response to one.
+  'seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour': {
+    weekdays: [1, 3, 5],
+    label: 'Mon, Wed, Fri',
+  },
 };
 
 /**

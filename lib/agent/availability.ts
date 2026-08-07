@@ -15,6 +15,7 @@
 import { createServerClient } from "@/lib/supabase";
 import { ACTIVE_BOOKING_STATUSES } from "@/lib/constants/booking-status";
 import { isDateOffDepartureDay } from "@/lib/tour-departure-days";
+import { isDateOutsideSeasonalWindow } from "@/lib/tour-seasonal-windows";
 
 const DEFAULT_CAPACITY = 50;
 
@@ -45,6 +46,14 @@ export async function checkAvailability(
   // property of the slug, so it answers without a DB round-trip — and unlike
   // the capacity read below, "sold_out" here is a certainty, not best-effort.
   if (isDateOffDepartureDay(slug, date)) {
+    return { slug, date, status: "sold_out", available_spots: 0, max_capacity: null, authoritative: false };
+  }
+
+  // Same for a season-locked tour asked about out of season: a property of the
+  // slug and the date, certain without a DB read. Added 2026-08-07 — the
+  // chatbot had the weekday rule but not this one, so it would happily quote a
+  // winter-only tour for a July date the booking route then refuses.
+  if (isDateOutsideSeasonalWindow(slug, date)) {
     return { slug, date, status: "sold_out", available_spots: 0, max_capacity: null, authoritative: false };
   }
 

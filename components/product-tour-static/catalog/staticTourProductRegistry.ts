@@ -603,8 +603,10 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, compareAtPriceUsd: 62, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },
-  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 71, maxGroupSize: 8 },
+  // Repriced 2026-08-07 from Klook at 1 USD = 1,429 KRW (₩80,000 → $56,
+  // ₩113,000 → $79). ⚠ Mirror of the map in `catalogRegistrationBuilder.ts`.
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 56, compareAtPriceUsd: 61, maxGroupSize: 8 },
+  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 79, maxGroupSize: 8 },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
   "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 179, maxGroupSize: 13 },
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },

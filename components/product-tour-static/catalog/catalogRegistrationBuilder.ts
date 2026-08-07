@@ -4,8 +4,15 @@
  * path (`staticTourCatalogCards.lazy.ts`) can build registrations WITHOUT
  * importing the combined 6-locale generated data module.
  *
- * ⚠ SLUG_OVERRIDES lives HERE and only here — it is a real pricing surface
- * (see tour price/type change runbook). Do not copy it into other modules.
+ * 🔴 SLUG_OVERRIDES is a real pricing surface (see the tour price/type change
+ * runbook), and this header used to claim it "lives HERE and only here". That
+ * is not true and was not true when it was written: a second copy sits in
+ * `staticTourProductRegistry.ts` (search SLUG_OVERRIDES). Both are read — this
+ * one by the lazy per-locale client path, that one by the combined registry —
+ * so a price changed in one and not the other ships two different numbers to
+ * two different surfaces. Change both, and do not trust this comment over a
+ * grep. Corrected 2026-08-07 while repricing the Seoraksan products, where the
+ * two copies did agree only because nobody had edited either since seeding.
  */
 
 import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visibility";
@@ -64,8 +71,14 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 194 },
-  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },
-  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 71, maxGroupSize: 8 },
+  // Repriced 2026-08-07 from the operator's own Klook listings (owner
+  // screenshots) at the day's rate, 1 USD = 1,429 KRW:
+  //   ₩80,000 → $55.98 → $56   ₩113,000 → $79.08 → $79
+  // compareAtPriceUsd is scaled to keep the discount the owner had set
+  // (8.6% → 8.2%), not re-invented. ⚠ The same map exists in
+  // `staticTourProductRegistry.ts` — change both or the two disagree.
+  "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 56, compareAtPriceUsd: 61, maxGroupSize: 8 },
+  "seoul-seoraksan-nami-island-morning-calm-day-tour": { listPriceUsd: 79, maxGroupSize: 8 },
   "seoul-seoraksan-national-park-sokcho-beach-day-trip": { listPriceUsd: 49, compareAtPriceUsd: 57, maxGroupSize: 8 },
   "seoul-suburbs-private-chartered-car-10hr": { listPriceUsd: 184, maxGroupSize: 13 },
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },

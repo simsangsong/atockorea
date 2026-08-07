@@ -405,9 +405,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "amountLabel": "77"
     }
   },
-  "jeju-eastern-unesco-lugares-day-tour": {
+  "jeju-eastern-unesco-spots-day-tour": {
     "catalog_card": {
-      "slug": "jeju-eastern-unesco-lugares-day-tour",
+      "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "Jeju Este: UNESCO Día",
       "subtitle": "Minibús de grupo pequeño, guía en inglés y chino — Manjanggul (UNESCO) en su hora más tranquila tras la apertura, la Aldea Folclórica de Seongeup, Seongsan Ilchulbong (UNESCO), el espectáculo de buceo de las haenyeo y un final en la playa Hamdeok, en un bucle por el este de 9 horas.",
       "region": "Jeju Este",
@@ -730,7 +730,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$52 per person (was $58, 10% off)",
+      "priceLabel": "",
       "shortCardDescription": "Una excursión de 12 horas en autocar desde Seúl hasta la costa del Mar del Este: senderismo en el Parque Nacional Seoraksan, visita al Templo Naksansa en los acantilados y paseo por la Playa de Naksan bordeada de pinos. Sale los lunes y jueves con guía en inglés y traslados de ida y vuelta desde Hongik o Myeongdong."
     },
     "price": {
@@ -755,7 +755,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "Desde 59 USD por persona (antes $82, 28% de descuento)",
+      "priceLabel": "",
       "shortCardDescription": "Un tour de un día en autobús de 13 horas desde Seúl que recorre las tres paradas más fotografiadas de Corea: el Parque Nacional Seoraksan (la única Reserva de Biosfera de la UNESCO en Corea), la Isla Nami (el Paseo de las Metasecuoyas de Winter Sonata) y el Jardín de la Calma Matutina (el arboreto privado más emblemático de Corea con 5.000 especies de plantas). Todas las entradas incluidas; guía en inglés; recogida en la Estación de la Universidad Hongik o en la Estación de Myeongdong."
     },
     "price": {

@@ -731,7 +731,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$52 per person (was $58, 10% off)",
+      "priceLabel": "",
       "shortCardDescription": "ソウルから東海岸へのコーチ12時間日帰りトリップ：雪岳山国立公園をハイキングし、断崖絶壁の洛山寺を訪れ、松林に囲まれた洛山ビーチを散策。毎週月曜・木曜出発、英語ガイド付き、弘大または明洞からの往復送迎込み。"
     },
     "price": {
@@ -756,7 +756,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "お一人様 US$59〜（通常$82、28%割引）",
+      "priceLabel": "",
       "shortCardDescription": "ソウル発13時間バス日帰りツアーで、韓国で最も写真に撮られる3大スポットを訪問：雪岳山国立公園（韓国唯一のユネスコ生物圏保護区）、南怡島（冬のソナタのメタセコイア並木）、晨静苑（5,000種類の植物を誇る韓国を代表するプライベート樹木園）。入場料すべて込み、英語ガイド付き、弘大入口駅または明洞駅よりピックアップ。"
     },
     "price": {

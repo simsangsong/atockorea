@@ -733,7 +733,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "From US$52 per person (was $58, 10% off)",
+      "priceLabel": "",
       "shortCardDescription": "從首爾出發前往東海岸的12小時巴士一日遊：健行雪嶽山國家公園、參觀懸崖上的洛山寺，以及漫步松林環繞的洛山海灘。每週一及週四出發，配備英語導遊，並提供弘大或明洞的來回接送服務。"
     },
     "price": {
@@ -758,7 +758,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
       "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
-      "priceLabel": "每人低至59美元起（原價82美元，立省28%）",
+      "priceLabel": "",
       "shortCardDescription": "從首爾出發的13小時巴士一日遊，涵蓋韓國三大熱門攝影打卡景點：雪嶽山國立公園（韓國唯一的聯合國教科文組織生物圈保護區）、南怡島（《冬季戀歌》取景地的水杉林蔭大道）及晨靜苑（韓國代表性私人植物園，擁有5,000種植物）。全程門票已含；提供英語導遊；於弘益大學站或明洞站接送。"
     },
     "price": {

@@ -20,7 +20,7 @@
   "catalog_card": {
     "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
     "title": "首尔：雪岳山 + 南怡岛 + 晨静园",
-    "priceLabel": "每人起价59美元（原价82美元，立省28%）",
+    "priceLabel": "",
     "shortCardDescription": "从首尔出发的13小时大巴一日游，涵盖韩国三大最热门一日游目的地：雪岳山国立公园（韩国唯一的UNESCO生物圈保护区）、南怡岛（《冬季恋歌》取景地的水杉大道）以及晨静园（拥有5,000种植物的韩国标志性私家植物园）。全程门票已含；配备英语导游；在弘益大学站或明洞站接送。",
     "tags": [
       "首尔出发一日游",
@@ -1175,5 +1175,10 @@
     ],
     "source_of_truth_note": "Coach-tour combining Seoraksan + Nami Island + Garden of Morning Calm from Seoul. Attraction content reused from seoul-seoraksan-national-park-sokcho-beach-day-trip (Seoraksan) and seoul-private-nami-morning-calm-petite-france (Nami, Morning Calm). Sources: KTO VisitKorea, IUCN Green List, UNESCO, KNPS, Garden of Morning Calm official, Naminara Republic official, KBS Winter Sonata records, Wikipedia.",
     "audit_summary": "Seoul-based 13-hour coach day trip on the classic Seoraksan + Nami + Morning Calm circuit. Direct equivalent on GetYourGuide market is the $82 'From Seoul: Seoraksan, Nami Island, Garden of Morning Calm' (t1137310)."
-  }
+  },
+  "departureWeekdays": [
+    "monday",
+    "wednesday",
+    "friday"
+  ]
 }
