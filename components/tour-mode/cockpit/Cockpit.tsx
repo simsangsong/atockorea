@@ -2167,9 +2167,12 @@ export default function Cockpit({
         <>
           {/* A6 — driver quick messages: one tap sends the 5-locale capsule
               (zero LLM), sized for use at the wheel. */}
+          {/* 🔴 No inline `scrollbarWidth` — an inline style beats the stylesheet,
+              so it would keep the bar off on desktop too and undo the fix in
+              `.tr-chiprow` (app/tour-room-theme.css). That class owns the
+              pointer-type decision: hidden on touch, slim bar on a mouse. */}
           <div
             className="tr-chiprow flex gap-1.5 px-4 pt-1.5"
-            style={{ scrollbarWidth: 'none' }}
             data-testid="driver-quick-replies"
           >
             {DRIVER_QUICK_REPLIES.map((preset) => (

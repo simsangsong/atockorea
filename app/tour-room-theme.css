@@ -1777,6 +1777,48 @@
 .tr-chiprow::-webkit-scrollbar {
   display: none;
 }
+
+/*
+ * 🔴 …but "scrollbars stay hidden" was only ever true reasoning for a phone.
+ *
+ * On a mouse there is no swipe, and a vertical wheel over a rail that scrolls
+ * only horizontally moves the PAGE, not the rail (measured in Chromium,
+ * headless and headed). The mask fade says "more exists" and then offers no way
+ * to get there. Staff open this app on a desktop — the guide seat strip, the
+ * announce panel and the cockpit dock are all `.tr-chiprow`.
+ *
+ * So: hidden on touch exactly as before, and on a fine pointer the same slim
+ * bar the rest of the site uses (`.rail-scrollbar` in `app/globals.css`).
+ * Gate: `__tests__/audit/railScrollbar.test.ts`.
+ */
+@media (hover: hover) and (pointer: fine) {
+  .tr-chiprow {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(168 162 158 / 0.7) transparent;
+  }
+
+  .tr-chiprow::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+    width: 0;
+  }
+
+  .tr-chiprow::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .tr-chiprow::-webkit-scrollbar-thumb {
+    background-color: rgb(168 162 158 / 0.6);
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .tr-chiprow:hover::-webkit-scrollbar-thumb,
+  .tr-chiprow::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(120 113 108 / 0.75);
+  }
+}
 @supports (animation-timeline: scroll()) {
   .tr-chiprow {
     animation-name: tr-chiprow-edges;
