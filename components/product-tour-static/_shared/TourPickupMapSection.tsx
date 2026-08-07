@@ -118,7 +118,7 @@ function PickupPointCard({
       </button>
 
       {/* Expanded detail */}
-      <div className={cn("grid transition-all duration-200", expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+      <div inert={!expanded} className={cn("grid transition-all duration-200", expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
         <div className="overflow-hidden">
           <div className="border-t border-border/50 px-3.5 py-3 space-y-2">
             {point.photo && (

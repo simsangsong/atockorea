@@ -57,7 +57,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
               </div>
             </button>
 
-            <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+            <div inert={!(expandedId === q.id)} className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
                   <p className="text-sm text-muted-foreground leading-[1.7]">
@@ -85,7 +85,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
           </button>
         </div>
 
-        <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showMore ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+        <div inert={!showMore} className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showMore ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden divide-y divide-border/60">
             {moreQuestions.map((q) => (
               <div key={q.id}>
@@ -101,7 +101,7 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                   </div>
                 </button>
 
-                <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+                <div inert={!(expandedId === q.id)} className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                   <div className="overflow-hidden">
                     <div className="px-4 pb-4">
                       <p className="text-sm text-muted-foreground leading-relaxed">

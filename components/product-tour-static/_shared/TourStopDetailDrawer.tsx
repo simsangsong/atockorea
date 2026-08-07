@@ -484,7 +484,7 @@ function CollapsibleSection({
           <ChevronDown className="h-4 w-4" strokeWidth={2.25} />
         </div>
       </button>
-      <div
+      <div inert={!open}
         className={cn(
           "grid transition-all duration-300 ease-out",
           open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",

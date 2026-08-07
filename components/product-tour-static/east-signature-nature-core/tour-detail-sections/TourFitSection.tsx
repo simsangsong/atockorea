@@ -109,7 +109,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
         </button>
 
-        <div
+        <div inert={!open}
           className={cn(
             "grid transition-[grid-template-rows] duration-300 ease-out",
             open ? "grid-rows-[1fr]" : "grid-rows-[0fr]",
@@ -167,7 +167,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
                     />
                   </button>
 
-                  <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLessIdeal ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
+                  <div inert={!showLessIdeal} className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLessIdeal ? "mt-2.5 grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0")}>
                     <div className="overflow-hidden">
                       <ul className="grid grid-cols-1 gap-1.5 sm:grid-cols-2">
                         {lessIdealItems.map((item, i) => {
@@ -217,7 +217,7 @@ export function TourFitSection({ whyTourWorks, sectionUi }: TourFitSectionProps)
           </div>
         </button>
 
-        <div className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
+        <div inert={!showLogic} className={cn("grid transition-[grid-template-rows] duration-300 ease-out", showLogic ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
           <div className="overflow-hidden">
             <div className="space-y-4 border-t border-border/60 p-4">
               {(whyTourWorks.routeLogicSections ?? []).map((section) => {
