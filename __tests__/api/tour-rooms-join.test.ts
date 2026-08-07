@@ -46,6 +46,8 @@ interface DbConfig {
   roomStatus?: string;
   participants?: Array<Record<string, unknown>>;
   messages?: Array<Record<string, unknown>>;
+  /** Role already on this device's participant row, if it has entered before. */
+  seatedRole?: string;
 }
 
 function fakeDb(config: DbConfig = {}) {
@@ -77,7 +79,13 @@ function fakeDb(config: DbConfig = {}) {
       const chain: Record<string, unknown> = {};
       for (const m of ['select', 'eq', 'gt', 'gte', 'in', 'order', 'limit']) chain[m] = jest.fn(() => chain);
       chain.single = jest.fn(resolveSelect);
-      chain.maybeSingle = jest.fn(resolveSelect);
+      // The route's seat lookup is the only single-row read of this table; the
+      // list form (lead check, snapshot roster) still lands on `then` below.
+      chain.maybeSingle = jest.fn(async () =>
+        table === 'tour_room_participants'
+          ? { data: config.seatedRole ? { role: config.seatedRole } : null, error: null }
+          : resolveSelect(),
+      );
       chain.then = (res: (v: unknown) => unknown, rej?: (e: unknown) => unknown) => resolveSelect().then(res, rej);
       chain.upsert = jest.fn((values: Record<string, unknown>, options: Record<string, unknown>) => {
         (upserts[table] ??= []).push({ values, options });
@@ -130,6 +138,72 @@ beforeEach(() => {
 
 afterEach(() => {
   jest.restoreAllMocks();
+});
+
+/**
+ * 🔴 2026-08-07 — "the guest dashboard disappears when I change the language".
+ *
+ * `/join` wrote `role: actor.role` on every call, and the language switch
+ * re-joins. The entry token is long gone from the URL by then, so a logged-in
+ * admin's cookie took the seat back and rewrote the guest's participant row to
+ * `admin` — permanently, and on the silent TTS probe even without touching the
+ * language. `viewerRole` then stopped being `customer`, and the home dashboard,
+ * the chat-language selector and the companion invite all render only for a
+ * customer, so they vanished together.
+ *
+ * 사장님: *"role이 서로 전환되고 오염되는건 아예 차단해야하는거 아니야?"* — so the seat is
+ * pinned. These cases measure the pin from the route, not the helper.
+ */
+describe('🔴 the seat is pinned to the device (2026-08-07)', () => {
+  it('an admin cookie cannot re-seat a device that already entered as a guest', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+    const db = fakeDb({ seatedRole: 'customer' });
+    createServerClientMock.mockReturnValue(db);
+
+    const res = await joinPOST(fakeReq({ json: { deviceKey: DEVICE_KEY, locale: 'ja' } }), routeParams());
+    expect(res.status).toBe(201);
+    const json = await res.json();
+
+    // All three must agree, or the next request re-opens the gap.
+    expect(db.upserts.tour_room_participants[0].values).toMatchObject({ role: 'customer' });
+    expect(verifyRoomSession(json.session)).toMatchObject({ role: 'customer' });
+    expect(json.participant.role).toBe('customer');
+  });
+
+  it('a stale admin row cannot lift a guest credential (no escalation)', async () => {
+    getAuthUserMock.mockResolvedValue(null);
+    const db = fakeDb({ seatedRole: 'admin' });
+    createServerClientMock.mockReturnValue(db);
+
+    const res = await joinPOST(
+      fakeReq({ json: { deviceKey: DEVICE_KEY, contactEmail: 'alex@example.com' } }),
+      routeParams(),
+    );
+    expect(res.status).toBe(201);
+    expect(db.upserts.tour_room_participants[0].values).toMatchObject({ role: 'customer' });
+    expect(verifyRoomSession((await res.json()).session)).toMatchObject({ role: 'customer' });
+  });
+
+  it('an explicit token still changes the seat — that is the one way', async () => {
+    getAuthUserMock.mockResolvedValue(null);
+    const db = fakeDb({ seatedRole: 'customer' });
+    createServerClientMock.mockReturnValue(db);
+    const { token } = signGuideRoomToken({ tourId: 'tour-1', tourDate: '2026-07-14', displayName: 'Guide Lee' });
+
+    const res = await joinPOST(fakeReq({ json: { deviceKey: DEVICE_KEY, token } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(db.upserts.tour_room_participants[0].values).toMatchObject({ role: 'guide' });
+  });
+
+  it('a first-time admin device is still an admin (ops console is untouched)', async () => {
+    getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+    const db = fakeDb();
+    createServerClientMock.mockReturnValue(db);
+
+    const res = await joinPOST(fakeReq({ json: { deviceKey: DEVICE_KEY } }), routeParams());
+    expect(res.status).toBe(201);
+    expect(db.upserts.tour_room_participants[0].values).toMatchObject({ role: 'admin' });
+  });
 });
 
 describe('POST /api/tour-rooms/[bookingId]/join', () => {

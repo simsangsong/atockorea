@@ -6,6 +6,7 @@ import type { NextRequest } from 'next/server';
 import {
   ensureRoom,
   matchesGuestCredentials,
+  pinnedParticipantRole,
   resolveRoomActor,
   signRoomSession,
   tokenMatchesBooking,
@@ -116,6 +117,133 @@ describe('lib/tour-room/access', () => {
   it('404s when the booking does not exist', async () => {
     const result = await resolveRoomActor(fakeReq(), 'missing', { supabase: fakeDb({ booking: null }) });
     expect(result).toMatchObject({ ok: false, status: 404 });
+  });
+
+  /**
+   * 🔴 2026-08-07 — the guest dashboard vanished mid-session, and this block is
+   * the hole it came through.
+   *
+   * The suite already proved "a customer token outranks the admin cookie", and
+   * that was true — for exactly one request. The room client scrubs `?rt=` from
+   * the URL right after joining, so every LATER call (language switch, chat
+   * language, the TTS probe, a reload) arrived carrying only the room session,
+   * and the admin cookie took the seat back. Nobody measured the SECOND request.
+   *
+   * Every case below is about what happens after the token is gone.
+   */
+  describe('🔴 the seat survives the token being gone (2026-08-07)', () => {
+    const customerSession = () =>
+      signRoomSession({
+        roomId: 'room-1',
+        bookingId: BOOKING.id,
+        participantId: 'p-1',
+        role: 'customer',
+        displayName: 'Alex',
+      }).session;
+
+    it('a customer room session outranks the admin cookie', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const result = await resolveRoomActor(
+        fakeReq({ headers: { 'x-tour-room-auth': customerSession() } }),
+        BOOKING.id,
+        { supabase: fakeDb() },
+      );
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'session', role: 'customer' } });
+    });
+
+    it('holds for the `rs` query form too (SSE cannot set headers)', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const result = await resolveRoomActor(fakeReq({ query: { rs: customerSession() } }), BOOKING.id, {
+        supabase: fakeDb(),
+      });
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'session', role: 'customer' } });
+    });
+
+    it('an admin with NO room session still resolves as admin (ops console is untouched)', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const result = await resolveRoomActor(fakeReq(), BOOKING.id, { supabase: fakeDb() });
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'admin', role: 'admin' } });
+    });
+
+    it('a session for ANOTHER booking falls through to the admin cookie', async () => {
+      getAuthUserMock.mockResolvedValue({ id: 'admin-1', role: 'admin' });
+      const foreign = signRoomSession({
+        roomId: 'room-9',
+        bookingId: 'someone-elses-booking',
+        participantId: 'p-9',
+        role: 'customer',
+        displayName: 'Mallory',
+      }).session;
+      const result = await resolveRoomActor(fakeReq({ headers: { 'x-tour-room-auth': foreign } }), BOOKING.id, {
+        supabase: fakeDb(),
+      });
+      expect(result).toMatchObject({ ok: true, actor: { kind: 'admin', role: 'admin' } });
+    });
+
+    it('a forged session falls through instead of granting its claimed role', async () => {
+      getAuthUserMock.mockResolvedValue(null);
+      const forged = `${Buffer.from(
+        JSON.stringify({
+          v: 1,
+          roomId: 'room-1',
+          bookingId: BOOKING.id,
+          participantId: 'p-1',
+          role: 'admin',
+          displayName: 'Mallory',
+          iat: 1,
+          exp: 9_999_999_999,
+        }),
+      ).toString('base64url')}.deadbeef`;
+      const result = await resolveRoomActor(fakeReq({ headers: { 'x-tour-room-auth': forged } }), BOOKING.id, {
+        supabase: fakeDb(),
+      });
+      expect(result).toMatchObject({ ok: false, status: 403 });
+    });
+  });
+
+  /**
+   * 사장님 지시 (2026-08-07): *"role이 서로 전환되고 오염되는건 아예 차단해야하는거 아니야?"*
+   * The seat is decided once and only an explicit token may move it — and the
+   * pin itself must never become a way to gain a seat you no longer hold.
+   */
+  describe('🔴 pinnedParticipantRole — a seat cannot drift', () => {
+    const tokenActor = (role: 'customer' | 'guide' | 'driver') =>
+      ({ kind: 'token', role, tokenPayload: {}, displayName: 'X' }) as never;
+    const adminActor = { kind: 'admin', role: 'admin', userId: 'a1' } as never;
+    const guestActor = { kind: 'guest', role: 'customer' } as never;
+    const sessionActor = (role: 'customer' | 'guide' | 'admin' | 'driver') =>
+      ({ kind: 'session', role, sessionPayload: {}, displayName: 'X' }) as never;
+
+    it('🔴 an admin cookie cannot take a seated customer device (the reported defect)', () => {
+      expect(pinnedParticipantRole(adminActor, 'customer')).toBe('customer');
+    });
+
+    it('🔴 a stale admin row cannot lift a customer credential (no escalation)', () => {
+      expect(pinnedParticipantRole(guestActor, 'admin')).toBe('customer');
+      expect(pinnedParticipantRole(sessionActor('customer'), 'admin')).toBe('customer');
+    });
+
+    it('an explicit token is the ONE way to change seats — in both directions', () => {
+      expect(pinnedParticipantRole(tokenActor('guide'), 'customer')).toBe('guide');
+      expect(pinnedParticipantRole(tokenActor('customer'), 'admin')).toBe('customer');
+    });
+
+    it('a first-time device takes the role it authenticated as', () => {
+      expect(pinnedParticipantRole(adminActor, null)).toBe('admin');
+      expect(pinnedParticipantRole(guestActor, undefined)).toBe('customer');
+      expect(pinnedParticipantRole(sessionActor('driver'), '')).toBe('driver');
+    });
+
+    it('a garbage row value is not trusted as a seat', () => {
+      expect(pinnedParticipantRole(adminActor, 'superuser')).toBe('admin');
+      expect(pinnedParticipantRole(adminActor, 42)).toBe('admin');
+    });
+
+    it('re-entering with the same credential is a no-op', () => {
+      for (const role of ['customer', 'guide', 'driver', 'admin'] as const) {
+        expect(pinnedParticipantRole(sessionActor(role), role)).toBe(role);
+      }
+    });
   });
 
   describe('path 2 — admin', () => {

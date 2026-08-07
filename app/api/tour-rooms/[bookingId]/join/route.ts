@@ -3,6 +3,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requestGate, clientIpKey } from '@/lib/durable-rate-limit';
 import {
   ensureRoom,
+  pinnedParticipantRole,
   resolveRoomActor,
   signRoomSession,
   type RoomActor,
@@ -119,13 +120,24 @@ export async function POST(
     // Korean in French even though the UI chrome stays in one of the 5.
     const chatLocale = normalizeChatLocale(body.chatLocale);
 
+    // 🔴 이 기기가 이 방에서 "누구"인지는 입장할 때 한 번 정해지고, 명시적 토큰으로만 바뀐다.
+    // `pinnedParticipantRole` 의 주석에 왜인지가 적혀 있다 — 어드민 쿠키 하나가 손님 참가자
+    // 행을 조용히 admin 으로 덮어써서 홈 대시보드가 세션 중간에 사라지던 결함.
+    const { data: seated } = await supabase
+      .from('tour_room_participants')
+      .select('role')
+      .eq('room_id', room.id)
+      .eq('device_key', deviceKey)
+      .maybeSingle();
+    const role = pinnedParticipantRole(actor, (seated as { role?: unknown } | null)?.role);
+
     const { data: participant, error: participantError } = await supabase
       .from('tour_room_participants')
       .upsert(
         {
           room_id: room.id,
           booking_id: booking.id,
-          role: actor.role,
+          role,
           user_id: authUserId,
           display_name: displayName,
           locale,
@@ -152,7 +164,7 @@ export async function POST(
     // P-D13 — lead guest: the first customer participant becomes the sole
     // /plan draft editor; the logged-in booking owner takes lead over on join.
     // Best-effort — a failure here never blocks entry.
-    if (actor.role === 'customer' && !participant.is_lead && !isCompanionDevice) {
+    if (role === 'customer' && !participant.is_lead && !isCompanionDevice) {
       try {
         const isOwner = actor.kind === 'owner' || (authUserId !== null && authUserId === booking.user_id);
         const { data: leadRows } = await supabase
@@ -188,7 +200,9 @@ export async function POST(
       roomId: room.id,
       bookingId: booking.id,
       participantId: participant.id,
-      role: actor.role,
+      // The session must agree with the row, or the next request would re-open
+      // the very gap this pin closes.
+      role,
       displayName,
     });
 

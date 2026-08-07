@@ -113,7 +113,22 @@ export function useTourRoomSession(bookingId: string | null | undefined): UseTou
   const doJoin = useCallback(
     async (credentials: JoinCredentials, sessionHeader: string | null): Promise<TourRoomJoinResult | null> => {
       if (!bookingId || !deviceKey) return null;
-      setState({ status: 'joining' });
+      /**
+       * 🔴 A RE-join must not tear the room down.
+       *
+       * This used to be an unconditional `setState({ status: 'joining' })`, and
+       * `TourRoomClient` returns a full-screen skeleton for that status — so
+       * every language switch (which re-joins so the participant row follows)
+       * unmounted the live room and rebuilt it. The guest was standing in
+       * Settings and got put back on a fresh shell, which is why the reported
+       * "the dashboard disappeared" screenshot is of the CHAT tab: the tab state
+       * lives in `RoomShell` and died with it.
+       *
+       * Only the FIRST join has nothing to show. A refresh keeps the last good
+       * room on screen and swaps the data in when it lands. Failures are
+       * unchanged — they still surface as `error`.
+       */
+      setState((prev) => (prev.status === 'joined' ? prev : { status: 'joining' }));
       try {
         const res = await fetch(`/api/tour-rooms/${encodeURIComponent(bookingId)}/join`, {
           method: 'POST',

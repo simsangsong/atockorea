@@ -69,6 +69,11 @@ function fakeDb(dispatches: Array<Record<string, unknown>>) {
       }
       if (table === 'tour_room_participants') {
         return {
+          // The seat lookup that pins the role (2026-08-07). No row here: this
+          // suite is about a first-time driver device passing the plate PIN.
+          select: () => ({
+            eq: () => ({ eq: () => ({ maybeSingle: async () => ({ data: null, error: null }) }) }),
+          }),
           upsert: () => ({
             select: () => ({
               single: async () => ({ data: { id: 'p1', is_lead: false }, error: null }),
