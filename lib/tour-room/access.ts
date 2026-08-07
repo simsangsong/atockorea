@@ -11,16 +11,44 @@
  *   - short-lived room-session signatures issued by the join API and sent as
  *     the `x-tour-room-auth` header on subsequent requests.
  *
- * Server authorization priority (§B D-2, revised 2026-07-18):
- *   valid invite token > admin > room session > booking owner
+ * Server authorization priority (§B D-2, revised 2026-08-07):
+ *   valid invite token > room session > admin > booking owner
  *         > merchant guide > guest email match.
  *
- * An explicit invite token outranks the admin cookie on purpose: clicking a
+ * An explicit invite token outranks everything on purpose: clicking a
  * guest/guide/driver link means "enter as that link's role" — otherwise a
  * logged-in admin can never preview the guest experience (the home dashboard,
  * customer banners) in their own browser. This is a privilege DOWNGRADE for
- * admins, never an escalation; with no token in the request, admins resolve
- * exactly as before.
+ * admins, never an escalation.
+ *
+ * 🔴 **The room session outranks the admin cookie (2026-08-07).** It used to sit
+ * BELOW it, and that one line was the whole "the guest dashboard disappears when
+ * I change the language" defect:
+ *
+ *   · the token only ever reaches the server on the FIRST request — the room
+ *     client scrubs `?rt=` from the URL right after joining and never replays it;
+ *   · so every LATER call (language switch, chat-language switch, the TTS
+ *     capability probe, a plain reload) re-ran this ladder with no token;
+ *   · with no token, the ambient admin cookie won, and the device that had
+ *     explicitly entered as `customer` came back as `admin`.
+ *
+ * The home dashboard, the chat-language selector and the companion invite all
+ * render only for `customer`, so they vanished mid-session. The "view-as
+ * downgrade" the paragraph above promises was real but lasted exactly one
+ * request.
+ *
+ * Putting the session above the admin cookie makes a device's role in a room
+ * STICKY: it is decided once, at entry, and afterwards only an explicit token
+ * (a deliberate human act — clicking a different link) can change it. An
+ * ambient cookie never can.
+ *
+ * This cannot escalate anyone. A room session is signed by THIS gate and only
+ * ever issued after the full ladder ran, so it can carry no role its holder was
+ * not already granted; promoting it can only ever hand back the same role, i.e.
+ * downgrade an admin to what they chose to enter as. And it costs the ops
+ * console nothing — the admin surfaces call these routes with the admin cookie
+ * alone and send no `x-tour-room-auth` header, so this branch never fires for
+ * them (measured: components/tour-ops/OpsRoomDrawer.tsx).
  *
  * The guest path stays rate-limited (PA-4): callers pass `guestGate`, which is
  * invoked only when no stronger credential authenticated the request — same
@@ -91,6 +119,49 @@ export type RoomActor =
   | { kind: 'owner'; role: 'customer'; userId: string }
   | { kind: 'merchant-guide'; role: 'guide'; userId: string; merchantId: string }
   | { kind: 'guest'; role: 'customer' };
+
+export type RoomRole = 'customer' | 'guide' | 'admin' | 'driver';
+
+/** Least → most privileged. Only used to prove `pinnedParticipantRole` cannot escalate. */
+const ROLE_RANK: Record<RoomRole, number> = { customer: 0, driver: 1, guide: 2, admin: 3 };
+
+function asRoomRole(value: unknown): RoomRole | null {
+  return typeof value === 'string' && value in ROLE_RANK ? (value as RoomRole) : null;
+}
+
+/**
+ * 🔴 사장님 지시 (2026-08-07): *"role이 서로 전환되고 오염되는건 아예 차단해야하는거 아니야?"*
+ *
+ * What a device IS inside a room is decided ONCE, when it first enters, and
+ * afterwards only an explicit token — a human clicking a different link — can
+ * move it. No ambient credential may.
+ *
+ * Before this, `/join` wrote `role: actor.role` on every call, and the ladder
+ * in `resolveRoomActor` re-ran per request. So an admin cookie sitting in the
+ * browser silently rewrote a guest device's participant row to `admin` — on the
+ * TTS capability probe alone, which fires on every single room open and throws
+ * its response away. The row stayed wrong after that, so a plain reload came
+ * back as staff too.
+ *
+ * The rule is deliberately asymmetric, because "pin it" must never become a way
+ * to gain a seat you no longer hold:
+ *
+ *   · token join     → the token's role, always. This is the ONE way to change
+ *                      seats, and it is an explicit act.
+ *   · every other    → the LEAST privileged of {row so far, this request}.
+ *
+ * Taking the minimum is what makes escalation impossible rather than merely
+ * unlikely: a stale `admin` row can never lift a customer credential (the pair
+ * folds to `customer`), while an admin cookie can never lift a `customer` row
+ * (the same fold, in the other direction) — which is exactly the defect this
+ * function exists to kill.
+ */
+export function pinnedParticipantRole(actor: RoomActor, existingRole: unknown): RoomRole {
+  if (actor.kind === 'token') return actor.role;
+  const existing = asRoomRole(existingRole);
+  if (!existing) return actor.role;
+  return ROLE_RANK[existing] <= ROLE_RANK[actor.role] ? existing : actor.role;
+}
 
 export type ResolveRoomActorResult =
   | {
@@ -317,14 +388,12 @@ export async function resolveRoomActor(
     // (admin/login/guest match) may still legitimately authenticate the request.
   }
 
-  // 2. Admin.
-  if (user?.role === 'admin') {
-    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id }, authUserId };
-  }
-
-  // 3. Room session issued by the join API. EventSource (SSE fallback) cannot
+  // 2. Room session issued by the join API. EventSource (SSE fallback) cannot
   // set headers, so the signed session is also accepted as the `rs` query
   // param — short-lived, same-origin, never shown in the address bar.
+  //
+  // Above the admin cookie on purpose (see module doc): this is what makes a
+  // device's role in a room stick after the entry token is gone from the URL.
   const sessionHeader = req.headers.get('x-tour-room-auth') ?? req.nextUrl?.searchParams?.get('rs');
   if (sessionHeader) {
     const session = verifyRoomSession(sessionHeader);
@@ -336,6 +405,13 @@ export async function resolveRoomActor(
         authUserId,
       };
     }
+    // An expired/forged/other-booking session falls through — the admin cookie
+    // or a weaker credential may still legitimately authenticate the request.
+  }
+
+  // 3. Admin.
+  if (user?.role === 'admin') {
+    return { ok: true, booking, actor: { kind: 'admin', role: 'admin', userId: user.id }, authUserId };
   }
 
   // 4. Logged-in booking owner.

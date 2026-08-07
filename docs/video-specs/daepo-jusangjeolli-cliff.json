@@ -170,13 +170,26 @@
       "kind": "clip",
       "src": "A",
       "in": 20.8,
-      "out": 31.4,
-      "speed": 2.2,
+      "out": 26.1,
+      "speed": 2,
       "title": "Along the souvenir stalls",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "07s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 27.06,
+      "out": 31.4,
+      "speed": 2,
+      "title": "Along the souvenir stalls (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "08",
@@ -460,13 +473,26 @@
       "kind": "clip",
       "src": "B",
       "in": 95.3,
-      "out": 113.9,
-      "speed": 5,
+      "out": 100.94,
+      "speed": 2,
       "title": "On around the loop",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "31s1",
+      "kind": "clip",
+      "src": "B",
+      "in": 112.1,
+      "out": 113.9,
+      "speed": 2,
+      "title": "On around the loop (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "32",
@@ -511,13 +537,26 @@
       "kind": "clip",
       "src": "C",
       "in": 10.3,
-      "out": 29.4,
-      "speed": 5,
+      "out": 16,
+      "speed": 2,
       "title": "Out to the far deck",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "turn beat — edge is content, not a seam"
+    },
+    {
+      "id": "35s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 27.46,
+      "out": 29.4,
+      "speed": 2,
+      "title": "Out to the far deck (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "36",
@@ -572,8 +611,8 @@
       "kind": "clip",
       "src": "C",
       "in": 58.5,
-      "out": 70,
-      "speed": 4.5,
+      "out": 60.2,
+      "speed": 2,
       "title": "Back up the steps",
       "chapter": "The way back",
       "ramp": {
@@ -585,12 +624,25 @@
       }
     },
     {
+      "id": "40s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 66.59,
+      "out": 70,
+      "speed": 2,
+      "title": "Back up the steps (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "41",
       "kind": "clip",
       "src": "C",
       "in": 78,
-      "out": 92.4,
-      "speed": 4,
+      "out": 80.5,
+      "speed": 2,
       "title": "Up through the pines",
       "ramp": {
         "seconds": 0.6
@@ -598,6 +650,32 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "41s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 84,
+      "out": 86,
+      "speed": 2,
+      "title": "Up through the pines (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "41s2",
+      "kind": "clip",
+      "src": "C",
+      "in": 89.7,
+      "out": 92.4,
+      "speed": 2,
+      "title": "Up through the pines (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -617,8 +695,8 @@
       "kind": "clip",
       "src": "C",
       "in": 101.8,
-      "out": 113.4,
-      "speed": 3.4,
+      "out": 104.6,
+      "speed": 2,
       "title": "Past the rock garden",
       "ramp": {
         "seconds": 0.6
@@ -626,6 +704,19 @@
       "transition": {
         "kind": "dissolve",
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "43s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 109.38,
+      "out": 113.4,
+      "speed": 2,
+      "title": "Past the rock garden (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {

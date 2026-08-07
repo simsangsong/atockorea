@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-07T05:00:22.264Z",
+  "generatedAt": "2026-08-07T07:33:27.025Z",
   "reports": [
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:A1",
@@ -1711,6 +1711,441 @@
           "severity": "flag",
           "pointer": "/bookingSupportSteps/3/description",
           "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:B",
+      "status": "flagged",
+      "segments": 72,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/17/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/18/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/19/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/20/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/21/alt",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/22/alt",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops",
+      "status": "flagged",
+      "segments": 50,
+      "fails": 0,
+      "flags": 17,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/category",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/restroom",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/hours",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/admission",
+          "message": "길이비 1.60 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/1",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/2",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/3",
+          "message": "길이비 1.55 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/2",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/5",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 74,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/walking",
+          "message": "길이비 0.85 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-3",
+      "status": "flagged",
+      "segments": 54,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/4",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/5",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/0",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/6",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/8",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-4",
+      "status": "flagged",
+      "segments": 56,
+      "fails": 0,
+      "flags": 12,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/1",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/3",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/visitBasics/closed",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/4/alt",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/0",
+          "message": "길이비 1.63 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/timeUsed/2",
+          "message": "길이비 0.90 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-5",
+      "status": "flagged",
+      "segments": 16,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/convenience/parking",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/hours",
+          "message": "숫자 추가 — 번역에만 [24] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/walking",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/visitBasics/admission",
+          "message": "길이비 1.79 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/alt",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/alt",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:routeFlowStops",
+      "status": "flagged",
+      "segments": 14,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/0/theme",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/1/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/2/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/4/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/5/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routeFlowStops/6/name",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
     }
