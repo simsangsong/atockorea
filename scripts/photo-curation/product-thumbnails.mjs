@@ -19,6 +19,22 @@
  * general OTA listing standard, not a quoted requirement. If the real spec turns up
  * (text/border/logo bans, aspect minimums), re-check the picks against it.
  *
+ * 🔴 AI 프레임에 대한 사장님 방침 (2026-08-07, 두 번에 걸쳐 확정):
+ *   "ai 생성이나 보정 거친 사진들도 적극 활용하도록" → 이후 →
+ *   "AI 사진도 적절히 섞는게 좋아, 다만 실 사진 넣는것도 좋지만
+ *    그렇다고 AI사진을 다 짤라버리는건 원하지 않아"
+ *
+ * 즉 **섞는 게 목표지 실사진 비율이 목표가 아니다.** 한 번 과교정해서 AI 9→3 까지
+ * 밀었다가 두 장을 되돌렸다. 다음 세션이 또 흔들지 않도록 판단 규칙을 박아 둔다:
+ *
+ *   실사진으로 바꾼다 — 실사진이 카드 크기에서 **동급 이상**일 때, 또는
+ *                      AI 를 쓰면 **다른 카드와 피사체가 겹칠** 때
+ *   AI 를 남긴다   — AI 가 카드에서 **확실히 더 강하고**, 그 일정에 **실제로 있는
+ *                    것**을 담고 있을 때 (스카이캡슐처럼 실촬본 자체가 없을 때 포함)
+ *
+ * ⚠ 실사진이라는 이유만으로 바꾸지 마라. 부산 기항지 버스를 용궁사 실사진으로 바꿨더니
+ * 대표 상품과 **같은 절**이 두 카드에 걸려, 처음에 지적받은 중복이 되살아났다.
+ *
  * `offItinerary` marks the charter products, whose cards deliberately sell the vehicle or
  * the city rather than a stop — their route variants carry no stop photography at all.
  */
@@ -35,8 +51,8 @@ export const PRODUCT_THUMBNAILS = {
     why: "스카이캡슐이 제목이자 차별점 — 황금빛 해안 캡슐",
   },
   "busan-cruise-shore-excursion-bus-tour": {
-    image: "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
-    why: "기항지 상품의 앵커는 용궁사 — 대표 상품과 다른 프레임(용 조각·파란 하늘)이고 **실사진**이다",
+    image: "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+    why: "기항지 서사는 바다 — 송도 해안 항공샷(AI). 용궁사 실사진으로 바꿔봤지만 대표 상품과 **같은 절**이 두 카드에 걸려 되돌렸다",
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     image: "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
@@ -101,8 +117,8 @@ export const PRODUCT_THUMBNAILS = {
 
   /* ── 서울 ────────────────────────────────────────────────────── */
   "incheon-seoul-private-car-shore-excursion-cruise": {
-    image: "/images/tours/gyeongbokgung/04-kakaotalk-20260510-222949305-10.webp",
-    why: "흥례문 + 한복 관광객 — **실사진**이고 「무엇을 보는 반나절인지」가 카드에서 바로 읽힌다",
+    image: "/images/tours/gyeongbokgung/01-chatgpt-image-2026-5-11-12-21-39.webp",
+    why: "경회루 연못 반영(AI) — $424 프리미엄 전세라 카드가 고급스러워야 한다. 흥례문 실사진으로 바꿔봤지만 스냅샷에 가까워 되돌렸다",
   },
 
   /* ── 전세: 카드가 스톱이 아니라 차량·도시를 판다 (의도) ─────────────── */
