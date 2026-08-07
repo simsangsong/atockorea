@@ -82,30 +82,53 @@ function pinBody(cx: number, cy: number, r: number, tipY: number, fill: string, 
 }
 
 /**
- * The guide / driver — 사장님 2026-08-07: "가이드 아이콘은 자동차 아이콘으로".
+ * The car, as a SOLID silhouette on a 24-unit grid.
  *
- * The glyph is lucide `Car` (the same family as every other icon in the room,
- * exported as `IconVehicle`), inlined at its native 24-unit grid and scaled
- * into the pin head. Stroke width is pre-multiplied so it reads the same
- * weight as the icons in the cards below the map.
+ * 🔴 사장님 2026-08-07, 두 번째: "자동차 그림으로, 이쁘고 컴팩트한". The first cut
+ * inlined lucide `Car` — the room's own icon family — but lucide is a STROKE
+ * family: a 1.7px outline scaled into a 17px pin head is a thin sketch of a car,
+ * and at map size a sketch loses to a shape. This is drawn as filled mass:
+ * cabin, body and wheels read at a glance, and the two knockouts (windscreen,
+ * wheel hubs) are what stop the mass from being a blob.
+ *
+ * `hollow` is the pin colour, not a second white — the glyph is a hole in the
+ * pin, so it works on any body colour without a third value to keep in sync.
  */
+function carGlyph(hollow: string): string {
+  return [
+    /*
+     * One silhouette, not a cabin box stacked on a body box. Three shapes were
+     * drawn and compared at 1x / 2x / 5x over light, road and dark tiles; the
+     * stacked version reads as a pickup with a step in its roof, and a chunkier
+     * "cute" version goes toy at size. This roofline — rake up from the bonnet,
+     * shallow curve over the cabin, drop to the boot — is the one that still
+     * says "car" when it is 15px wide on a phone.
+     */
+    '<path d="M3 12.2c0-.5.3-.9.7-1.1l3.2-1.3 2-2.4C9.4 6.8 10.1 6.5 10.9 6.5h3.6c.8 0 1.5.3 2 .9l2 2.4 3.2 1.3c.4.2.7.6.7 1.1v3.4c0 .6-.5 1.1-1.1 1.1H4.1c-.6 0-1.1-.5-1.1-1.1Z" fill="white"/>',
+    // wheels, sitting proud of the body so the profile is unmistakable
+    '<circle cx="7.6" cy="16.9" r="3" fill="white"/>',
+    '<circle cx="16.4" cy="16.9" r="3" fill="white"/>',
+    // knockouts — the glass and the hubs are what stop the mass being a blob
+    `<path d="M9.5 10.4 10.9 8.6c.2-.2.4-.3.7-.3h2.8c.3 0 .5.1.7.3l1.4 1.8Z" fill="${hollow}"/>`,
+    `<circle cx="7.6" cy="16.9" r="1.2" fill="${hollow}"/>`,
+    `<circle cx="16.4" cy="16.9" r="1.2" fill="${hollow}"/>`,
+  ].join('');
+}
+
+/** The guide / driver — the one marker the guest is actually looking for. */
 export function vehiclePin(): MarkerArt {
   const W = 40;
   const H = 50;
   const cx = 20;
   const cy = 19;
   const r = 15;
-  const glyph = 17 / 24;
+  const glyph = 20 / 24;
   const svg = `
     <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
       ${groundShadow(cx, H - 2)}
       ${pinBody(cx, cy, r, H - 3, INK, 3)}
-      <g transform="translate(${cx - 8.5} ${cy - 8.5}) scale(${glyph})"
-         fill="none" stroke="${WHITE}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/>
-        <circle cx="7" cy="17" r="2"/>
-        <path d="M9 17h6"/>
-        <circle cx="17" cy="17" r="2"/>
+      <g transform="translate(${cx - 12 * glyph} ${cy - 11.7 * glyph}) scale(${glyph})">
+        ${carGlyph(INK)}
       </g>
     </svg>`;
   return { url: dataUri(svg), width: W, height: H, anchorX: cx, anchorY: H - 3, labelX: cx, labelY: cy };
