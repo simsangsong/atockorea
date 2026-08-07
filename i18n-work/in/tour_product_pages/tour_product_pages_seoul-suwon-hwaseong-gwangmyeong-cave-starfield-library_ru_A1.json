@@ -1,0 +1,431 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A1",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "ru",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Library Day Tour from Seoul | AtoC Korea",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/seo/pageTitle": {
+      "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Tour | AtoC Korea",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "9-hour small-group day tour from Seoul: UNESCO ⟦G0⟧, Hwaseong Haenggung, Starfield Library, LED-lit ⟦G1⟧.",
+      "glossary": [
+        "⟦G0⟧ = Крепость Хвасон в Сувоне",
+        "⟦G1⟧ = Пещера Кванмён"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Suwon Hwaseong tour from Seoul"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "⟦G0⟧ day trip",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Starfield Library Suwon tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "UNESCO Korea day tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "6 stops"
+    },
+    "/hero/meta/region": {
+      "source_en": "Suwon & Gwangmyeong"
+    },
+    "/hero/meta/duration": {
+      "source_en": "9 hours",
+      "tm": "9 часов"
+    },
+    "/hero/pills/0": {
+      "source_en": "Small Group"
+    },
+    "/hero/pills/1": {
+      "source_en": "Culture",
+      "tm": "Культура"
+    },
+    "/hero/tagline": {
+      "source_en": "Korea's only walled fortress city built with its original Uigwe records, a former gold mine reborn as art, and the country's most-photographed library"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Value",
+      "tm": "Фотопотенциал"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "Excellent",
+      "tm": "Отличная"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenic",
+      "tm": "Насыщенность пейзажами"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Хорошая"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "High",
+      "tm": "Высокий"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Safety",
+      "tm": "Пригодность в дождь"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Excellent",
+      "tm": "Отличная"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Fit",
+      "tm": "Пригодность для семей"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Good",
+      "tm": "Хорошая"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Balance"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Обзор"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Детали"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Отзывы"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "culture"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "unesco"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "cave"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "library"
+    },
+    "/catalog_card/tags/5": {
+      "source_en": "shopping"
+    },
+    "/catalog_card/title": {
+      "source_en": "Suwon: Hwaseong, ⟦G0⟧ & Starfield",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Small Group"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Culture",
+      "tm": "Культура"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "UNESCO",
+      "tm": "ЮНЕСКО"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "Cave"
+    },
+    "/catalog_card/badges/4": {
+      "source_en": "Library"
+    },
+    "/catalog_card/badges/5": {
+      "source_en": "Shopping"
+    },
+    "/catalog_card/badges/6": {
+      "source_en": "Day Trip"
+    },
+    "/catalog_card/region": {
+      "source_en": "Suwon & Gwangmyeong"
+    },
+    "/catalog_card/duration": {
+      "source_en": "9 hours",
+      "tm": "9 часов"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed ⟦G0⟧ with its…",
+      "glossary": [
+        "⟦G0⟧ = Крепость Хвасон в Сувоне"
+      ]
+    },
+    "/catalog_card/priceLabel": {
+      "source_en": "From US$53 per person (was $59, 10% off)"
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A small-group cultural day-trip from Seoul covering three contrasting sides of Gyeonggi Province: the UNESCO-listed ⟦G0⟧ with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside ⟦G1⟧ (a former Japanese-era gold mine), the four-floor Starfield Library Suwon. 9 hours with included transport and admissions.",
+      "glossary": [
+        "⟦G0⟧ = Крепость Хвасон в Сувоне",
+        "⟦G1⟧ = Пещера Кванмён"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Suwon Heritage Day"
+    },
+    "/headlineLine2": {
+      "source_en": "Hwaseong, ⟦G0⟧ & Starfield",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "⟦G0⟧ Station (Exit 2)",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Hongik Univ. Station (Exit 8)"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Hongik Univ. Station (Exit 8)"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Please arrive 10 minutes before the departure time."
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "⟦G0⟧ Station (Exit 2)",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/pickup_dropoff/departure/1/note": {
+      "source_en": "Please arrive 10 minutes before the departure time."
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "человек"
+    },
+    "/practicalAccordionItems/0/title": {
+      "source_en": "What's included",
+      "tm": "Что включено"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, ⟦G1⟧ admission, ⟦G0⟧ admission, ⟦G2⟧ admission.",
+      "glossary": [
+        "⟦G0⟧ = Дворец Хвасон Хэнгун",
+        "⟦G1⟧ = Крепость Хвасон в Сувоне",
+        "⟦G2⟧ = Пещера Кванмён"
+      ]
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Not included: meals, drinks, optional cave-winery tasting, tips."
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "Starfield Library entry is free."
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Pickup & drop-off",
+      "tm": "Посадка и высадка"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Arrive 10 minutes early."
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "There is no hotel pickup; meeting points only."
+    },
+    "/practicalAccordionItems/1/content/3": {
+      "source_en": "Latecomers cannot be accommodated and are non-refundable."
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Walking & terrain",
+      "tm": "Пешие участки и рельеф"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "Moderate.",
+      "tm": "Средняя сложность."
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "The fortress wall walk involves uphill stone steps."
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "⟦G0⟧ has approximately 180 steps down to the lower levels and back up — there is no elevator.",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "Comfortable closed-toe walking shoes are essential."
+    },
+    "/practicalAccordionItems/2/content/4": {
+      "source_en": "Not recommended if you have significant mobility limitations."
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Moderate.",
+      "tm": "Средняя сложность."
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "What to wear & bring",
+      "tm": "Что надеть и взять с собой"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Comfortable walking shoes (sneakers or hiking shoes), a light jacket — ⟦G0⟧ is 12°C year-round, so even in summer it's chilly.",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "In winter, bring a warm coat for the fortress wall and a lighter layer for the cave."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "Camera, water, cash for lunch and street food (₩10,000–₩20,000 budget)."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Comfortable walking shoes (sneakers or hiking shoes), a light jacket — ⟦G0⟧…",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Cancellation",
+      "tm": "Отмена"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "Free cancellation up to 24 hours before the tour starts."
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "Tour does not operate on Mondays (⟦G0⟧ closed).",
+      "glossary": [
+        "⟦G0⟧ = Пещера Кванмён"
+      ]
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Free cancellation up to 24 hours before the tour starts."
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Children & accessibility",
+      "tm": "Дети и доступность"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World are popular with families."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "The fortress walk has stairs and uneven surfaces."
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "The cave's 180+ stairs make it unsuitable for guests with mobility issues, strollers, or fear of confined spaces."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World…"
+    }
+  },
+  "glossaryTokens": {
+    "/seo/title": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/seo/pageTitle": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Крепость Хвасон в Сувоне",
+      "⟦G1⟧": "Пещера Кванмён"
+    },
+    "/seo/primaryKeywords/1": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/catalog_card/title": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/catalog_card/subtitle": {
+      "⟦G0⟧": "Крепость Хвасон в Сувоне"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Крепость Хвасон в Сувоне",
+      "⟦G1⟧": "Пещера Кванмён"
+    },
+    "/headlineLine2": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/pickup_dropoff/return/0/name": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "⟦G0⟧": "Дворец Хвасон Хэнгун",
+      "⟦G1⟧": "Крепость Хвасон в Сувоне",
+      "⟦G2⟧": "Пещера Кванмён"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/practicalAccordionItems/1/preview": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/practicalAccordionItems/3/preview": {
+      "⟦G0⟧": "Пещера Кванмён"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "⟦G0⟧": "Пещера Кванмён"
+    }
+  },
+  "tmHits": 32
+}

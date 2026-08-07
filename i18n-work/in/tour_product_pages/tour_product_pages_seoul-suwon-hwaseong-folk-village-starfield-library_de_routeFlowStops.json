@@ -1,0 +1,78 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
+  "locale": "de",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Seoul",
+      "tm": "Seoul"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure",
+      "tm": "Abfahrt"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Suwon-Hwaseong-Festung"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "UNESCO Fortress",
+      "tm": "UNESCO-Festung"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hwaseong-Haenggung-Palast"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Heritage Palace",
+      "tm": "Kulturerbe-Palast"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Koreanisches Folkloredorf (Yongin)"
+      ]
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Heritage Village"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Starfield Library Suwon",
+      "tm": "Starfield Library Suwon"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Modern Korea",
+      "tm": "Modernes Korea"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Seoul",
+      "tm": "Seoul"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Return",
+      "tm": "Rückfahrt"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Suwon-Hwaseong-Festung"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Hwaseong-Haenggung-Palast"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Koreanisches Folkloredorf (Yongin)"
+    }
+  },
+  "tmHits": 11
+}

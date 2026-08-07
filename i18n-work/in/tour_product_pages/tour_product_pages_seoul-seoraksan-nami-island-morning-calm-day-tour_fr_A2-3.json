@@ -1,0 +1,139 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:fr:A2-3",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-nami-island-morning-calm-day-tour",
+  "locale": "fr",
+  "chunk": "A2-3",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar-May)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms at Nami Island and Morning Calm in early-mid April; Seoraksan azaleas and forsythia bloom late April. Most comfortable temperature for the long coach day."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun-Aug)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Lush green Seoraksan trails; Nami's tree-lined avenues at peak shade. July monsoon may shorten Seoraksan time. Morning Calm's hydrangeas and roses peak in June."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep-Nov)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Korea's signature season — Seoraksan foliage mid-October to early November is world-famous; Nami's ginkgo and metasequoia gold in late October-November; Morning Calm's chrysanthemum and maple in October. Highest demand — book 2+ weeks ahead."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec-Feb)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "**Winter is the signature 'Winter Wonder' season for this tour**: Seoraksan snow on granite peaks; Nami's snowy Metasequoia avenue evokes the Winter Sonata visual identity; Morning Calm's Winter Lighting Festival (Dec 5 - Mar 15) lights 200,000+ LEDs across the gardens — visiting at the tour's 17:00 arrival catches both daytime garden colours and the illumination ignition."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Confirmation instantanée"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with pickup point selection"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Immédiatement"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant booking confirmation with Hongik/⟦G0⟧ pickup point selection.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "Pickup Details"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Exact pickup location and vehicle info via WhatsApp/SMS"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "Day before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Weather check, coach plate number, and any seasonal route notes (Morning Calm Lighting Festival timing, Seoraksan foliage peak, etc.) sent the day before."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Pickup Confirmation"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Guide identification at pickup point 10 min before departure"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Morning of"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Guide waits at Starbucks Hongik Exit 8 from 05:50; at ⟦G0⟧ Exit 2 (NorthFace) from 06:20. Photo of the guide and coach sent to your WhatsApp the night before.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "On-tour Support"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Guide narration at each stop + 24/7 ops support"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "During tour",
+      "tm": "Pendant la visite"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Guide provides on-site narration on Seoraksan's 652 CE Silla-era founding, Nami's 1944 Cheongpyeong Dam origin + 2002 Winter Sonata legacy, and Morning Calm's 1992 conception + 1996 opening."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Two Drop-off Points"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "⟦G0⟧ ~19:00 / Hongik ~19:30",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "End of day"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Coach drops at both pickup points in reverse order on return."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Review & Follow-up"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Optional post-tour review"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "Après la visite"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your Seoul stay answered same day."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Voir les notes saisonnières"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Voir les notes saisonnières"
+    }
+  },
+  "glossaryTokens": {
+    "/bookingSupportSteps/0/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/bookingSupportSteps/2/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 6
+}

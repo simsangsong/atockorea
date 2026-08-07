@@ -1,0 +1,142 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:A2-3",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
+  "locale": "ru",
+  "chunk": "A2-3",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Лето (июнь–август)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight; coastal stops (Yonggungsa, Songdo, Gamcheon) stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat. ⟦G0⟧ Festival runs June–August with sand-sculpture displays.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Сондо"
+      ]
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Сразу"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Book online; instant confirmation with the cruise terminal meeting point and name-placard instructions."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder",
+      "tm": "Напоминание за 12 часов"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Обновление по погоде и корректировки маршрута"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before",
+      "tm": "За 12 часов"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Send your ship name, port date, and all-aboard time so we can adjust the start."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info",
+      "tm": "Финальная информация о посадке"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Точное время посадки и контакт водителя"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before",
+      "tm": "Накануне вечером"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Drop-off timing confirmed 48 hours before departure based on your vessel's schedule."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes",
+      "tm": "Заметки по маршруту в день тура"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Утренний брифинг с учётом текущих условий"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour",
+      "tm": "Утром в день тура"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Van plate and guide contact sent the evening before your tour."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Подсказки на каждой остановке"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location",
+      "tm": "Сопровождение в реальном времени на каждой локации"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour",
+      "tm": "Во время тура"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Guide meets your group at the terminal arrival hall with an 'AtoC Korea' name placard."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support",
+      "tm": "Поддержка после тура"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations",
+      "tm": "Обратная связь и рекомендации"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "После тура"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Drop-off at the same terminal 60+ minutes before all-aboard; brief review request sent after."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
+    }
+  },
+  "glossaryTokens": {
+    "/seasonalVariations/1/description": {
+      "⟦G0⟧": "Пляж Сондо"
+    }
+  },
+  "tmHits": 21
+}

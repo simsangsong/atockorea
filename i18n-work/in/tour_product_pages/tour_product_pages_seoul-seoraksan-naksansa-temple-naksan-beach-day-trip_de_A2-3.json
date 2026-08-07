@@ -1,0 +1,151 @@
+{
+  "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2-3",
+  "surface": "tour_product_pages",
+  "slug": "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
+  "locale": "de",
+  "chunk": "A2-3",
+  "tier": "A2",
+  "segments": {
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar-May)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Seoraksan azaleas and forsythia bloom late April; the East Sea coast is fresh and uncrowded. The most comfortable temperatures for the long coach day."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun-Aug)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Lush green Seoraksan trails and Naksansa's pine-shaded paths; ⟦G0⟧ is in full swimming season (though this tour is a walking stop). July monsoon rain may shorten Seoraksan time.",
+      "glossary": [
+        "⟦G0⟧ = Naksan-Strand"
+      ]
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep-Nov)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Korea's signature season — Seoraksan's mid-October to early-November foliage is world-famous, and the clear autumn light is ideal for Naksansa above the sea. Highest demand; book 2+ weeks ahead."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec-Feb)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Snow on Seoraksan's granite peaks and a quiet, dramatic East Sea coast. ⟦G0⟧ is a famous New Year sunrise spot — the Yangyang Sunrise Festival pairs a bell-tolling ceremony at Naksansa with fireworks on the beach. Dress warmly.",
+      "glossary": [
+        "⟦G0⟧ = Naksan-Strand"
+      ]
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with pickup point selection"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Sofort"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant booking confirmation with Hongik/⟦G0⟧ pickup point selection. Please confirm your Monday or Thursday departure date.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "Pickup Details"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Exact pickup location and vehicle info via WhatsApp/SMS"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "Day before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Weather check, coach plate number, and any seasonal route notes (Seoraksan foliage peak, winter conditions) sent the day before."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Pickup Confirmation"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Guide identification at pickup point ahead of departure"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Morning of"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "The guide waits at Starbucks Hongik Exit 8 from ~06:50 and at ⟦G0⟧ Exit 2 (NorthFace) from ~07:20.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "On-tour Support"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Guide narration at each stop + ops support"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "During tour",
+      "tm": "Während der Tour"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Guide commentary on Seoraksan's Silla-era Sinheungsa Temple, Naksansa's 671 CE founding and 2005 reconstruction, and the Yangyang coast's sunrise tradition."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Two Drop-off Points"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "⟦G0⟧ ~18:45 / Hongik ~19:15",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "End of day"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "The coach drops at both pickup points in reverse order on return."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Review & Follow-up"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Optional post-tour review"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your stay answered same day."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
+    }
+  },
+  "glossaryTokens": {
+    "/seasonalVariations/1/description": {
+      "⟦G0⟧": "Naksan-Strand"
+    },
+    "/seasonalVariations/3/description": {
+      "⟦G0⟧": "Naksan-Strand"
+    },
+    "/bookingSupportSteps/0/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/bookingSupportSteps/2/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 6
+}

@@ -1,0 +1,305 @@
+{
+  "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suburbs-private-chartered-car-10hr",
+  "locale": "de",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/0/answer": {
+      "source_en": "This is a private vehicle for your group only — flexible itinerary, hotel pickup, no shared schedule. Small-group bus tours follow fixed timing across multiple groups. Choose this if you want hotel pickup, a custom route mix (Gapyeong nature + DMZ + ⟦G0⟧ or your own list), or pacing that fits seniors and young kids. Choose a fixed group tour if you're 1-2 travelers on a budget — private pricing is per vehicle, not per person.",
+      "glossary": [
+        "⟦G0⟧ = Everland"
+      ]
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "How does this differ from a small-group bus tour to Nami or DMZ?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "The clock starts at your Seoul hotel pickup time and runs continuously to drop-off — including driving time, stops, and any airport transfer if added. Overtime past 10 hours is 30,000 KRW per additional hour, paid in cash to the driver, and subject to driver availability. Plan stops with the driver-guide on the morning of the tour or send your priorities the night before."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "How does the 10-hour window work?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "The driver-guide will shift toward indoor stops on rainy days — Paju Premium Outlets, Heyri Art Village, museum stops, or Starfield Suwon. The DMZ portion of Route 2 can also be affected by military training schedules and may require a same-day route change. Final routing is confirmed with the driver-guide on the morning of the tour based on conditions."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "What if it rains?",
+      "tm": "Was passiert bei Regen?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Vehicle is matched to your party size and luggage at booking. Typical pairings are sedans for 1-3 guests, mid-size SUVs for 4-5 guests, and Hyundai Staria or Kia Carnival vans for 6-9 guests. Provide exact passenger and luggage counts when booking. Larger groups (10+) can be arranged as a multi-vehicle quote."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "What kind of vehicle will I get?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Province-line surcharges: Alpaca World or Legoland in Gangwon-do adds 60,000 KRW. Incheon Airport pickup or drop-off is 100,000 KRW per one-way transfer. All admission fees and meals are paid directly by guests at each venue (not included in the tour price). Driver gratuities are optional but appreciated for full-day service."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "What extra fees should I know about?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Free pickup covers the central Seoul downtown zone: ⟦G0⟧, Hongdae, Dongdaemun, ⟦G1⟧, Itaewon, and adjacent neighborhoods. Stays outside this zone (e.g. Gangnam east of Yangjae, Gimpo Airport area, far western Mapo) may incur a small additional pickup fee — confirmed at booking. Always send your hotel address when booking so the driver can pre-route.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Which Seoul areas qualify for free hotel pickup?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Yes, but with a caveat: this format works best when you have a clear preference for one of the three preset routes (Gapyeong nature loop, DMZ + Paju, ⟦G0⟧ + Folk Village) or specific stops in mind. First-timers without an opinion sometimes get more from a fixed small-group tour where the route is decided. The driver-guide can suggest a route on the morning if you're undecided.",
+      "glossary": [
+        "⟦G0⟧ = Everland"
+      ]
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is this a good choice for first-time visitors to Seoul & Suburbs?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Mostly easy walking — this is a vehicle-based tour with the driver dropping you at each stop. Walking demand depends on the route: Nami Island has flat tree-lined paths (≈2 km perimeter); the ⟦G0⟧ has mild slopes; DMZ sites involve some uneven ground at the 3rd Tunnel and Imjingak. ⟦G1⟧ and Folk Village involve more walking but the driver waits and you control pace.",
+      "glossary": [
+        "⟦G0⟧ = Garten der Morgenstille",
+        "⟦G1⟧ = Everland"
+      ]
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Is the walking difficult?",
+      "tm": "Sind die Fußwege anstrengend?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "Yes — one of the easier Seoul-area formats for families. The private vehicle removes the bus-coordination problem with strollers and car seats, and the driver-guide can pause for snack breaks or pivot if a child is tired. Route 3 (⟦G0⟧ + Korean Folk Village) is the strongest family pick; Route 1 (Gapyeong) works for older kids; Route 2 (DMZ) is for teens and up only.",
+      "glossary": [
+        "⟦G0⟧ = Everland"
+      ]
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Ist diese Tour für Familien geeignet?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Yes — this is one of the strongest senior-friendly formats available. The private vehicle, hotel pickup, and pacing flexibility let active seniors and lower-mobility seniors join comfortably. The driver-guide can drop closer to entrances on request, build in seated breaks, and skip uphill optionals (e.g. the ⟦G0⟧ hillside, Sky Park spiral stairs). Confirm specific mobility constraints at booking so the route can be tuned.",
+      "glossary": [
+        "⟦G0⟧ = Petite France"
+      ]
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Können ältere Gäste bequem teilnehmen?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "All ages welcome. The private vehicle, flexible pacing, and hotel pickup make this one of the easier Seoul day-tour formats for very young children — bring car seats if needed (the driver can advise). Route 3 (⟦G0⟧ + Korean Folk Village) is the most family-friendly preset. For toddlers, the driver-guide can build in extra rest breaks at no penalty to your itinerary.",
+      "glossary": [
+        "⟦G0⟧ = Everland"
+      ]
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Was ist das empfohlene Mindestalter?"
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator",
+      "tm": "Lizenzierter lokaler Veranstalter"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Zugelassener koreanischer Tourveranstalter mit vollem Versicherungsschutz"
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists",
+      "tm": "Routenspezialisten"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Handfein abgestimmter Reiseverlauf, keine Standardrunde"
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Curated group size",
+      "tm": "Kuratierte Gruppengröße"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route",
+      "tm": "Passend zur Route dimensioniert"
+    },
+    "/seasonalVariations/0/title": {
+      "source_en": "Best for blossoms"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring",
+      "tm": "Frühling"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms across Seoul and Gapyeong; ⟦G0⟧ shifts into magnolia and azalea bloom.",
+      "glossary": [
+        "⟦G0⟧ = Garten der Morgenstille"
+      ]
+    },
+    "/seasonalVariations/1/title": {
+      "source_en": "Long days"
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer",
+      "tm": "Sommer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight hours stretch the 10-hour window; expect humidity and possible monsoon rain in late June and July."
+    },
+    "/seasonalVariations/2/title": {
+      "source_en": "Best photo season",
+      "tm": "Beste Fotosaison"
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn",
+      "tm": "Herbst"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Korea's strongest scenic season; Nami Island, ⟦G0⟧, and Korean Folk Village all photograph beautifully.",
+      "glossary": [
+        "⟦G0⟧ = Garten der Morgenstille"
+      ]
+    },
+    "/seasonalVariations/3/title": {
+      "source_en": "Lighting Festival season"
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter",
+      "tm": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "⟦G0⟧ hosts its famous Lighting Festival from December to mid-March; DMZ winters can be very cold and exposed.",
+      "glossary": [
+        "⟦G0⟧ = Garten der Morgenstille"
+      ]
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Sofort"
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder",
+      "tm": "Erinnerung 12 Stunden vorher"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Wetter-Update und etwaige Routenanpassungen"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before",
+      "tm": "12 Stunden vorher"
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info",
+      "tm": "Endgültige Abholinformationen"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Genaue Abholzeit und Kontakt zum Fahrer"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before",
+      "tm": "Am Abend zuvor"
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes",
+      "tm": "Routenhinweise am Tourtag"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Morgendliches Briefing auf Basis der aktuellen Bedingungen"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour",
+      "tm": "Am Morgen der Tour"
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Tipps zu jedem Stopp"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location",
+      "tm": "Begleitung in Echtzeit an jedem Ort"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour",
+      "tm": "Während der Tour"
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support",
+      "tm": "Betreuung nach der Tour"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations",
+      "tm": "Nachfassen und Empfehlungen"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "Live weather integration",
+      "tm": "Live-Wetterintegration"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "Updated daily",
+      "tm": "Täglich aktualisiert"
+    }
+  },
+  "glossaryTokens": {
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Everland"
+    },
+    "/staticQuestions/5/answer": {
+      "⟦G0⟧": "Myeongdong",
+      "⟦G1⟧": "Insadong"
+    },
+    "/staticQuestions/6/answer": {
+      "⟦G0⟧": "Everland"
+    },
+    "/staticQuestions/7/answer": {
+      "⟦G0⟧": "Garten der Morgenstille",
+      "⟦G1⟧": "Everland"
+    },
+    "/staticQuestions/8/answer": {
+      "⟦G0⟧": "Everland"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "Petite France"
+    },
+    "/staticQuestions/10/answer": {
+      "⟦G0⟧": "Everland"
+    },
+    "/seasonalVariations/0/description": {
+      "⟦G0⟧": "Garten der Morgenstille"
+    },
+    "/seasonalVariations/2/description": {
+      "⟦G0⟧": "Garten der Morgenstille"
+    },
+    "/seasonalVariations/3/description": {
+      "⟦G0⟧": "Garten der Morgenstille"
+    }
+  },
+  "tmHits": 39
+}

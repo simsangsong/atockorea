@@ -1,0 +1,171 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
+  "locale": "de",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time visitors to the area",
+      "tm": "Erstbesucher der Region"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Couples"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Adult families",
+      "tm": "Familien mit Erwachsenen"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Active travelers comfortable with full days"
+    },
+    "/whyTourWorks/bestFor/4": {
+      "source_en": "Travelers who want UNESCO World Heritage stops"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers with claustrophobia or fear of confined spaces (⟦G0⟧'s lower levels are narrow with low ceilings)",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Anyone unable to handle ≈180 stairs down/up at Gwangmyeong's lower-level highlights (no elevator)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Travelers with limited mobility on the fortress wall — steep sections and stairs at gates"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Visitors who want to see Seoul's central palaces — this trip stays entirely in Gyeonggi"
+    },
+    "/whyTourWorks/lessIdealFor/4": {
+      "source_en": "Travelers who must visit on a Monday — ⟦G0⟧ is closed for maintenance",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "More variety than the standard Suwon tour"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Most Suwon day tours combine the fortress, palace, and Starfield Library — three stops within ten minutes of each other. This version adds ⟦G0⟧, a completely different landscape (underground, art-themed, year-round 12°C) that you can't easily reach from Suwon by public transit.",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Indoor-friendly fallback for any weather"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Two of the four major stops — Starfield Library and ⟦G0⟧ — are fully indoors and climate-controlled. The fortress walks are short enough to handle rain or summer heat. A reliable choice when the weather is dramatic.",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Free admission, paid context"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "Cooler than a single-format day"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "Heritage tours can feel relentless. Library-and-mall tours can feel light. This itinerary deliberately shifts gears — UNESCO walls, market food, modern library, then an LED-lit underground theme park — so the day doesn't fall into a single rhythm."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why this route is built this way",
+      "tm": "Warum diese Route so aufgebaut ist"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Fortress wall: hardest section"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "≈1 km walked with steep gradients and stairs at gates. Comfortable shoes essential. Sweeping views reward the climb but it isn't wheelchair-friendly."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "⟦G0⟧: ≈180 stairs each way",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "Stairs to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back. No elevator. Visitors with mobility limits stay on the upper level — still ≈40 min of content there."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Haenggung and Starfield: easy"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Palace and Starfield are flat and accessible, giving the route an easy stretch between the fortress walls and the cave stairs."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "How the walking load actually feels",
+      "tm": "Wie sich die Gehbelastung tatsächlich anfühlt"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Summer heat: Gwangmyeong is the relief"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "12°C constant inside the cave makes it the refuge stop on hot days. The wall walk lengthens shade breaks; market lunch shifts indoors at Starfield."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Winter cold: layer for the cave"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "12°C is cool when outside is colder. Bring a light jacket inside Gwangmyeong even in summer; in winter, expect to keep your outdoor layer on."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Mondays are not available"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "⟦G0⟧ closes Mondays for maintenance. Tour doesn't operate. Pick the Folk Village or Waujeongsa version for Monday travel.",
+      "glossary": [
+        "⟦G0⟧ = Gwangmyeong-Höhle"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "When weather and seasons shift"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this day flows",
+      "tm": "Wie dieser Tag verläuft"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "A triangular Gyeonggi loop south and southwest of Seoul: Suwon's UNESCO fortress city for the morning, Suwon's flagship modern mall for early afternoon, and Gwangmyeong's transformed gold mine for the late-afternoon finale. Three different kinds of public space — military, commercial, industrial — across 250 years, in a single coach loop."
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/lessIdealFor/0": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    },
+    "/whyTourWorks/lessIdealFor/4": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "⟦G0⟧": "Gwangmyeong-Höhle"
+    }
+  },
+  "tmHits": 8
+}

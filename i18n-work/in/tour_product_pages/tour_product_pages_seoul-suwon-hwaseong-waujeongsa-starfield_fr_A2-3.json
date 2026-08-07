@@ -1,0 +1,92 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:fr:A2-3",
+  "surface": "tour_product_pages",
+  "slug": "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "locale": "fr",
+  "chunk": "A2-3",
+  "tier": "A2",
+  "segments": {
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Confirmation instantanée"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Confirmation de réservation avec résumé de l'itinéraire"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Immédiatement"
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder",
+      "tm": "Rappel 12 heures avant"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Point météo et éventuels ajustements d'itinéraire"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before",
+      "tm": "12 heures avant"
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info",
+      "tm": "Informations finales de prise en charge"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Heure exacte de prise en charge et contact du chauffeur"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before",
+      "tm": "La veille au soir"
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes",
+      "tm": "Notes d'itinéraire du jour"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Briefing du matin selon les conditions du moment"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour",
+      "tm": "Le matin de la visite"
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Conseils arrêt par arrêt"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location",
+      "tm": "Accompagnement en temps réel à chaque site"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour",
+      "tm": "Pendant la visite"
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support",
+      "tm": "Assistance après la visite"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations",
+      "tm": "Suivi et recommandations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "Après la visite"
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "Live weather integration",
+      "tm": "Intégration météo en direct"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "Updated daily",
+      "tm": "Mis à jour quotidiennement"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 20
+}

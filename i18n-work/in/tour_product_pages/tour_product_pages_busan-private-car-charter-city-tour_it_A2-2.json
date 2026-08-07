@@ -1,0 +1,140 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-city-tour",
+  "locale": "it",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local driver-guide"
+    },
+    "/bookingTrustItems/0/detail": {
+      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network."
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "One price, whatever the route"
+    },
+    "/bookingTrustItems/1/detail": {
+      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay."
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Free cancellation up to 24 hours"
+    },
+    "/bookingTrustItems/2/detail": {
+      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather."
+    },
+    "/seasonalVariations/0/swaps": {
+      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2."
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)"
+    },
+    "/seasonalVariations/0/summary": {
+      "source_en": "Cherry blossoms peak around late March to early April at Dalmaji Hill, ⟦G0⟧, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "glossary": [
+        "⟦G0⟧ = Parco di Yongdusan"
+      ]
+    },
+    "/seasonalVariations/1/swaps": {
+      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Estate (giu–ago)"
+    },
+    "/seasonalVariations/1/summary": {
+      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well."
+    },
+    "/seasonalVariations/2/swaps": {
+      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)"
+    },
+    "/seasonalVariations/2/summary": {
+      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here."
+    },
+    "/seasonalVariations/3/swaps": {
+      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)"
+    },
+    "/seasonalVariations/3/summary": {
+      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Reserve online"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Pick a date and the number of hours. Reserve now and pay later."
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Reserve online and choose your date and duration; confirmation is instant."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "Tell us where you are staying"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours."
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Choose or build your route"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before."
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Receive driver details"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Driver name, vehicle plate and contact number, sent the evening before."
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Meet at your hotel"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time."
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin."
+    },
+    "/practicalWeatherStatic/advice": {
+      "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Taejongdae"
+      ]
+    },
+    "/practicalWeatherStatic/summary": {
+      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy."
+    }
+  },
+  "glossaryTokens": {
+    "/seasonalVariations/0/summary": {
+      "⟦G0⟧": "Parco di Yongdusan"
+    },
+    "/practicalWeatherStatic/advice": {
+      "⟦G0⟧": "Taejongdae"
+    }
+  },
+  "tmHits": 1
+}
