@@ -2,7 +2,7 @@
   "version": 1,
   "pipelineVersion": "1",
   "createdAt": "2026-07-25T15:20:31.123Z",
-  "updatedAt": "2026-08-07T08:58:00.163Z",
+  "updatedAt": "2026-08-07T09:15:54.502Z",
   "units": [
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A1",
@@ -2778,7 +2778,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 9,
       "segments": 100,
       "sourceChars": 5045,
       "fails": 0,
@@ -2792,7 +2792,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 93,
       "sourceChars": 5000,
       "fails": 0,
@@ -2806,7 +2806,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 36,
       "sourceChars": 1315,
       "fails": 0,
@@ -2820,7 +2820,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 32,
       "sourceChars": 5746,
       "fails": 0,
@@ -2834,7 +2834,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 29,
       "sourceChars": 5994,
       "fails": 0,
@@ -2848,7 +2848,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 18,
       "sourceChars": 2742,
       "fails": 0,
@@ -2862,7 +2862,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 2,
+      "attempts": 7,
       "segments": 10,
       "sourceChars": 99,
       "fails": 0,
@@ -3253,10 +3253,12 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 5,
       "segments": 107,
-      "sourceChars": 5088
+      "sourceChars": 5088,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:A2",
@@ -3265,10 +3267,12 @@
       "locale": "ru",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 54,
-      "sourceChars": 5505
+      "sourceChars": 5505,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:A2-2",
@@ -3277,10 +3281,12 @@
       "locale": "ru",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 34,
-      "sourceChars": 1674
+      "sourceChars": 1674,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:B",
@@ -3289,10 +3295,12 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 57,
-      "sourceChars": 1984
+      "sourceChars": 1984,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops",
@@ -3301,10 +3309,12 @@
       "locale": "ru",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 54,
-      "sourceChars": 5967
+      "sourceChars": 5967,
+      "fails": 0,
+      "flags": 16
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-2",
@@ -3313,10 +3323,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 59,
-      "sourceChars": 5952
+      "sourceChars": 5952,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-3",
@@ -3325,10 +3337,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 1,
       "segments": 58,
-      "sourceChars": 5898
+      "sourceChars": 5898,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-4",
@@ -3337,10 +3351,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 31,
-      "sourceChars": 3808
+      "sourceChars": 3808,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:routeFlowStops",
@@ -3349,10 +3365,12 @@
       "locale": "ru",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 16,
-      "sourceChars": 220
+      "sourceChars": 220,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:de:A1",
