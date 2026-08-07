@@ -107,22 +107,79 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // was enforced by this blocklist + the landing-planner Seoul gate only).
   //
   // ── Klook onboarding prep 2026-06-29 ──────────────────────────────────────
-  // Catalog narrowed to exactly 12 active SKUs for the Klook listing. The 19
+  // Catalog narrowed to exactly 12 active SKUs for the Klook listing. The
   // slugs below are hidden from every consumer surface (chatbot catalog, home,
   // sitemap, agent channel, matcher) AND set is_active=false / is_published=false
   // in the AtoC DB (migration 20260629000000_klook_prep_activate_12_tours.sql).
   // Reversible: remove a slug here + flip its DB flags back to re-list it.
-  "busan-cruise-shore-excursion-bus-tour",
+  //
+  // ── Jeju course revision 2026-08-04 (owner instruction) ───────────────────
+  // Hydrangea season SKUs retired (added below); the three regional Jeju day
+  // tours re-opened (removed from this list): jeju-eastern-unesco-spots-day-tour
+  // (re-coursed Manjanggul→Seongeup→lunch→Seongsan→haenyeo→Hamdeok),
+  // jeju-southern-top-unesco-spots-tour, southwest-hallasan-osulloc-aewol.
+  // DB half staged in supabase/pending-db-apply/2026-08-04-*.sql.
+  "jeju-hydrangea-festival-tour-east-route",
+  "jeju-hydrangea-festival-tour-southwest-route",
+  // ── Busan cruise shore-excursion trio re-opened 2026-08-04 (owner instruction) ──
+  // busan-cruise-shore-excursion-bus-tour was hidden by the 2026-06-29 Klook
+  // 12-SKU narrowing. All three Busan cruise SKUs are now priced to match their
+  // channel listings exactly, so the join-in tier has to be sellable again.
+  // DB half staged in supabase/pending-db-apply/ — is_active/is_published must be
+  // flipped back for this slug or the row stays dark on /api/tours.
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
-  "from-busan-gyeongju-ancient-capital-day-tour",
+  // ── Gyeongju re-opened 2026-08-04 (owner decision) ────────────────────────
+  // The from-busan-gyeongju-ancient-capital-day-tour slug was removed from this
+  // list. (Deliberately written without quotes: a naive scraper that greps this
+  // file for quoted slugs would otherwise read the slug back OUT of this comment
+  // and believe it is still blocked — that happened once while writing this.)
+  // It was narrowed out for the Klook 12-SKU listing on 2026-06-29, then re-coursed
+  // on 2026-08-04 (Ahopsan → Bulguksa → lunch → Gyochon+Choi+Woljeonggyo →
+  // Daereungwon+Hwangnidan-gil → National Museum, or Donggung & Wolji by night
+  // in Nov–Feb). This is the repo half; the DB half is
+  // supabase/pending-db-apply/applied/2026-08-04-10-gyeongju-reopen.sql, which
+  // flips tours.is_active and the six tour_product_pages.is_published flags that
+  // file 07 deliberately left alone. Both halves are needed to put it on sale.
+  //
+  // 🔴 Re-opened at the UNCHANGED price: USD 39 (compare-at 50) for what is now
+  // an 11.5-hour day ending ≈19:50 — it was 10.5 hours when that price was set.
+  // Repricing was not part of the re-open instruction; flagged, not assumed.
+  // ── Winter/Eobi booking closed 2026-08-04 until the village confirms its season
+  // seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour. Its own ops note says
+  // "do not open year-round sales", and nothing in the app reads
+  // matching_profile.seasonality — the field has no consumer, so being a
+  // winter_only product stops nothing by itself.
+  //
+  // 🔴 is_active=false was NOT enough, which is why this line exists, and this
+  //    line does MORE than close the checkout — measured, with controls, rather
+  //    than reasoned from the imports:
+  //
+  //      surface              is_active=false alone   + this list
+  //      /api/tours           absent (17 entries)     absent
+  //      /tours/list card     PRESENT                 absent
+  //      /tour-product page   renders (349 KB)        404
+  //
+  //    Controls in the same run: the fully-open Gapyeong sibling keeps its card
+  //    and renders 20,204 chars; the already-blocked Seoraksan donor loses both,
+  //    exactly like this one. So the DB flag only stops the sale, while this
+  //    list retires the product from view altogether — `assertRegisteredConsumerSlug`
+  //    in tourProductPageBody.tsx calls isTourSlugBlockedFromConsumerSurfaces and
+  //    notFound()s. That is the right state for something that is not for sale,
+  //    and it is what Gyeongju sat in until it was re-opened above, but it does
+  //    mean the page disappears rather than staying readable.
+  //
+  // Re-open = remove this line AND re-run
+  //   node --env-file=.env.local scripts/apply-seoul-new-products-2026-08.mjs \
+  //     --only seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour --update-staged
+  // without --inactive. Both halves are needed, same as Gyeongju above. The
+  // trigger is the village (가일2리 자치회, 031-585-3551) confirming the 2026-27
+  // dates; the 2025-26 season ran 20 Dec – 19 Feb.
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "jeju-cherry-blossom-tour-east-route",
   "jeju-cruise-shore-excursion-bus-tour",
-  "jeju-eastern-unesco-spots-day-tour",
-  "jeju-southern-top-unesco-spots-tour",
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
-  "southwest-hallasan-osulloc-aewol",
   "from-incheon-seoul-day-tour-cruise-guests",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",

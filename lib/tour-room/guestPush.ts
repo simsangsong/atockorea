@@ -84,14 +84,48 @@ async function deliver(
 async function fetchSubscriptions(
   supabase: RoomDbClient,
   role: 'customer' | 'driver' | 'guide',
-  bookingId: string,
+  bookingIds: string | string[],
 ): Promise<SubscriptionRow[]> {
+  const ids = Array.isArray(bookingIds) ? bookingIds : [bookingIds];
   const { data } = await supabase
     .from('push_subscriptions')
     .select('id, endpoint, p256dh, auth')
     .eq('role', role)
-    .eq('booking_id', bookingId);
+    .in('booking_id', ids);
   return (data as SubscriptionRow[]) ?? [];
+}
+
+/**
+ * The day's sibling bookings (same tour, same date). A staff DEVICE holds one
+ * push row (the endpoint is UNIQUE), subscribed under whichever booking's
+ * cockpit it opened — but on a join tour every party rides the same van, so a
+ * signal fired in ANY sibling room must still find that device. Guests stay
+ * booking-scoped; this widening is for the people driving the vehicle.
+ * Falls back to the single booking on any lookup failure — never fail a push
+ * because the sibling query hiccuped.
+ */
+async function siblingBookingIds(supabase: RoomDbClient, bookingId: string): Promise<string[]> {
+  try {
+    const { data: booking } = await supabase
+      .from('bookings')
+      .select('tour_id, tour_date')
+      .eq('id', bookingId)
+      .maybeSingle();
+    const tourId = (booking as { tour_id?: string | null } | null)?.tour_id;
+    const tourDate = (booking as { tour_date?: string | null } | null)?.tour_date;
+    if (!tourId || !tourDate) return [bookingId];
+    const { data: siblings } = await supabase
+      .from('bookings')
+      .select('id')
+      .eq('tour_id', tourId)
+      .eq('tour_date', tourDate);
+    const ids = ((siblings as Array<{ id?: string }> | null) ?? [])
+      .map((row) => row.id)
+      .filter((id): id is string => typeof id === 'string');
+    return ids.length ? ids : [bookingId];
+  } catch {
+    return [bookingId];
+  }
 }
 
 export async function sendGuestRoomPush(
@@ -139,10 +173,13 @@ export async function sendDriverRoomPush(
       { role: 'driver', url: '/tour-mode/driver' },
       { role: 'guide', url: '/tour-mode/guide' },
     ];
+    // Join tours: the device may be subscribed under a SIBLING booking of the
+    // same van — widen the lookup to the whole tour day (see siblingBookingIds).
+    const bookingIds = await siblingBookingIds(supabase, bookingId);
     let sent = 0;
     let pruned = 0;
     for (const target of targets) {
-      const rows = await fetchSubscriptions(supabase, target.role, bookingId);
+      const rows = await fetchSubscriptions(supabase, target.role, bookingIds);
       if (!rows.length) continue;
       setVapid();
       const payload = JSON.stringify({

@@ -211,6 +211,11 @@ export default function OpsManifestView({
       if (Number(json.failed ?? 0) > 0) parts.push(`실패 ${json.failed}명`);
       if (Number(json.revokedPrevious ?? 0) > 0) parts.push(`이전 링크 ${json.revokedPrevious}건 무효화`);
       toast.success(parts.join(' · '));
+      // 시나리오 감사 #6 — AI 도착 해설은 plan confirm 이 생성 트리거다.
+      // 기사 단독 투어일수록 "confirm 후 출발"이 절차여야 해설이 미리 준비된다.
+      if (Number(json.unconfirmedPlans ?? 0) > 0) {
+        toast(`⚠ 일정 미확정 ${json.unconfirmedPlans}팀 — confirm 해야 도착 해설이 미리 생성돼요`, { icon: '📋' });
+      }
       void load();
     } catch (e) {
       toast.error(e instanceof Error ? e.message : '초대 발송 실패');

@@ -1,8 +1,8 @@
 {
   "_metadata": {
-    "version": "1.26",
-    "compiled": "2026-04-29",
-    "purpose": "Authoritative POI knowledge base for the AtoC Korea catalog — 82 verified-fact entries with visitBasics + convenience + smartNotes + _poi_meta. Surfaced into 30 tour itinerary stops at the v17 schema with per-stop kb_version tracking. Two metadata surfaces (`_metadata` legacy + `_kb_metadata` modern) version-consistent since Batch 14a (v1.18) reconciliation. v1.21 introduces the compound-stop pattern (Jusangjeolli+Cheonjeyeon) with no new POI additions.",
+    "version": "1.30",
+    "compiled": "2026-08-04",
+    "purpose": "Authoritative POI knowledge base for the AtoC Korea catalog — 84 verified-fact entries with visitBasics + convenience + smartNotes + _poi_meta. Surfaced into 30 tour itinerary stops at the v17 schema with per-stop kb_version tracking. Two metadata surfaces (`_metadata` legacy + `_kb_metadata` modern) version-consistent since Batch 14a (v1.18) reconciliation. v1.21 introduces the compound-stop pattern (Jusangjeolli+Cheonjeyeon) with no new POI additions. v1.30 (2026-08-04) adds jaein_falls for the Pocheon/Yeoncheon geopark course revision and refreshes pocheon_art_valley (2026 fares, geosite status, Cheonjuho depth) + sanjeong_lake (3.2 km loop, sculpture symposium, Gungye legend, centenary).",
     "field_format": {
       "visitBasics": "{hours, closed, admission, walking}",
       "convenience": "{restroom, parking}",
@@ -1027,7 +1027,7 @@
       "wetland_protected_area": "Designated National Wetland Protected Area 2009",
       "within_unesco": "Inside Hallasan UNESCO World Heritage Site + UNESCO Biosphere Reserve",
       "wetland_count": "16+ separate freshwater wetlands and pools spread discontinuously across the highland",
-      "trail_length_km": 1.0,
+      "trail_length_km": 1,
       "trail_time_min": 20,
       "trail_type": "Wooden boardwalk (flat — accessible-grade)",
       "biodiversity": "3 threatened bird species + 1 threatened plant species (national designations); endemic mammals, reptiles, insects unique to Jeju",
@@ -1083,8 +1083,8 @@
         "Yongmeori Coast",
         "Hyeongjeseom (Brother Islets)"
       ],
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "100% outdoor coastal trail. Adjacent restaurants and cafes at the parking lot (Starbucks, seafood places) are off-trail.",
       "history_japanese_invasion": "Used by Japanese army during late WWII invasion of China — Korea's most accessible WWII-era forced-labor heritage walk"
     },
@@ -1122,8 +1122,8 @@
       "amenities": "Public restrooms, changing rooms, showers, equipment rentals, life-guarded swim zones in summer, ramp-style wheelchair access",
       "tide_features": "Low tide reveals tidal pools with hermit crabs, small shrimp, juvenile fish — shallow enough that Biyangdo 'appears walkable' at low tide",
       "famous_for": "Sunset (sun setting behind Biyangdo Island over emerald water)",
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "Beach itself is 100% outdoor. The west-coast cafe strip behind the beach offers indoor refuges if needed — most tour stops are outdoor walks + photos.",
       "adjacent_attraction": "Hallim Park — botanical garden + lava caves + folk village (separate ₩10,000 admission, 1.5 km away)",
       "swim_period": "Designated swim period typically July 1–August 31 (lifeguarded)"
@@ -1162,8 +1162,8 @@
         "Food stalls along the route",
         "Night lighting installed around the trees — strolls and photography after dark"
       ],
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "Entirely outdoor street walk. Side cafes and restaurants nearby provide indoor refuge if needed.",
       "best_photo_time": "Morning (7am) or 1-2 PM for peak sun direction; night for lit cherry tunnel",
       "drive_from_airport_min": 10
@@ -1204,8 +1204,8 @@
         "Jeju Horse Park (pony rides) at the Noksan-ro entrance",
         "Saryeoni Forest Trail accessible nearby"
       ],
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "100% outdoor — country road with photo stops along the route. Cafes in Pyoseon and the Jeju Horse Park visitor center offer occasional indoor refuge.",
       "peak_bloom_window": "Late March to early April (cherry blossoms + canola simultaneously)"
     },
@@ -1390,8 +1390,8 @@
         "Eorimok ↑ + Yeongsil ↓ (point-to-point, 7 mi, 4.5-5 hrs, moderate) — most popular non-summit traverse",
         "Eorimok ↑ + Donnaeko ↓ (longer non-summit traverse across the volcano)"
       ],
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "100% outdoor mountain trail. Visitor center at trailhead has minor indoor refuge (toilets, info). Witseoreum Shelter at turnaround is a small wooden enclosure but not a heated indoor space.",
       "drive_min_from_jeju_city": 25,
       "parking": "Free trailhead car park; fills on autumn weekends — arrive before 7AM on peak days",
@@ -1530,8 +1530,8 @@
         "K-ride / Kakao T apps recommended for English-language taxi booking",
         "On-foot: 25-min walk to Jeju City center (mostly flat)"
       ],
-      "indoor_ratio_at_stop": 1.0,
-      "outdoor_ratio_at_stop": 0.0,
+      "indoor_ratio_at_stop": 1,
+      "outdoor_ratio_at_stop": 0,
       "indoor_outdoor_note": "Logistic node — pickup/dropoff stop only; ~30 min total spent inside terminal building or in adjacent bus parking area (counted as indoor for time-weighting since the meaningful activity is meeting the guide and boarding the vehicle).",
       "history": "The Port of Jeju (제주항) was made a seaport around 1913; the modern Jeju International Passenger Terminal (cruise + ferry) opened in 2015 to receive international cruise ships. South Korea's Ministry of Oceans & Fisheries announced in August 2019 a third dedicated cruise harbor on Jeju's northern coast (areas: Samdo-dong, Geonip-dong, Yongdam-dong) — KRW 2.8 trillion budget, scheduled completion 2040.",
       "korea_2024_cruise_volume": "South Korea welcomed 810,000 cruise tourists aboard 414 ships in 2024 (Ministry of Culture, Sports and Tourism) — nearly tripling from 273,000 the prior year.",
@@ -1593,8 +1593,8 @@
         "Taxi to Jungmun Resort Complex / Seogwipo downtown (~15 min)",
         "K-ride / Kakao T apps recommended"
       ],
-      "indoor_ratio_at_stop": 1.0,
-      "outdoor_ratio_at_stop": 0.0,
+      "indoor_ratio_at_stop": 1,
+      "outdoor_ratio_at_stop": 0,
       "indoor_outdoor_note": "Logistic node — pickup/dropoff stop only; ~30 min total inside terminal or adjacent bus area.",
       "history": "Construction started 2007 as a joint civilian-military project. Plan first announced 1993 (Kim Young Sam presidency); Gangjeong selected May 2007 over Hwasun and Wimi candidate sites. Construction halted 7 times by environmental + anti-militarization protests (2011 referendum: 94% of Gangjeong's eligible voters opposed). South Korean Supreme Court upheld construction July 2012. The Civilian-Military Complex Port for Beautiful Tourism opened February 2016; cruise passenger operations began 2017. Hosts up to 20 ROK Navy warships + 3 submarines + 2 cruise ships of up to 150,000 tons (per cruise pier dimensions).",
       "infamous_2017_incident": "On March 11, 2017, Costa Serena docked at Jeju Port (north) with 3,400+ passengers, but ALL passengers refused to disembark — they remained on board for 4 hours before the ship departed for Tianjin. Eighty waiting tour buses, customs officers, and local guides went home empty. The vessel was a chartered exclusive Chinese-corporate trip from Fukuoka, Japan; the no-disembark protest was politically motivated.",
@@ -1642,7 +1642,7 @@
       "name_meaning": "'Sky meets earth' — Cheon (sky) + Ji (earth/land) + Yeon (pond)",
       "alt_meaning": "'Pond of the heavenly emperor' (locals' translation)",
       "distinction_from_cheonjeyeon": "CRITICAL: Cheonjiyeon Falls (천지연 폭포) is in downtown Seogwipo, near the Olle Market. Cheonjeyeon Falls (천제연 폭포 — three-tier waterfall in Jungmun) is a DIFFERENT waterfall ~15 min west. The two names sound nearly identical and are commonly confused.",
-      "trail_length_one_way_km": 1.0,
+      "trail_length_one_way_km": 1,
       "trail_one_way_min": 15,
       "trail_surface": "Flat paved + wooden bridge sections through subtropical garden",
       "trail_features": [
@@ -1670,8 +1670,8 @@
       ],
       "rock_type": "Trachyte andesite",
       "stream_source": "Spring rising from the floor of Somban Stream (Yeonhee-chun)",
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "Trail and falls are 100% outdoor. Coffee shops + 7-11 at the parking area provide indoor refuge for separate visits.",
       "famous_legend": "Seven fairies serving the King of Heaven descended on cloud stairs to bathe in Cheonjiyeon's clear water — the name 'sky-meets-earth' commemorates this mythic descent.",
       "swimming_status": "Strictly prohibited (eel habitat protection + Natural Monument designation)",
@@ -1838,7 +1838,7 @@
       "facilities": "Information center near the parking lot explains lava-tube formation before entering — strongly worth 10 minutes for context. No food inside the cave.",
       "tip": "Bring a light jacket even in summer (interior 11-13°C). Confirm reopening status before driving out — the cave was closed for multi-year maintenance through early 2026."
     },
-    "indoor_ratio_at_stop": 1.0,
+    "indoor_ratio_at_stop": 1,
     "sources": [
       "visitjeju.net (Visit Jeju official)",
       "english.visitkorea.or.kr",
@@ -2125,7 +2125,7 @@
     ]
   },
   "_kb_metadata": {
-    "version": "1.29",
+    "version": "1.30",
     "version_date": "2026-04-29",
     "compatible_schema_version": 7,
     "compatible_profile_version": 6,
@@ -2163,7 +2163,8 @@
         "busan-private-car-charter-cruise-shore"
       ],
       "next_phase": "C — Locale (zh-TW + zh-CN + ja) OR D — atockorea API + kursoflow integration"
-    }
+    },
+    "compiled": "2026-08-04"
   },
   "nami_island": {
     "name": "Nami Island (Namiseom)",
@@ -2365,7 +2366,7 @@
       "facilities": "Small cafe and snack stalls at parking area; minimal facilities at bridge itself. CU convenience store within ~5 min drive.",
       "tip": "Pair with DMZ tour (Imjingak / 3rd Tunnel / Dora Observatory) to balance heavy history with light scenery — the contrast is the day's emotional payoff. Avoid in heavy wind (bridge closed). Family-safe due to low height (10 m) — kids enjoy the wobble. Early morning has the best light and lowest crowds."
     },
-    "indoor_ratio_at_stop": 0.0,
+    "indoor_ratio_at_stop": 0,
     "sources": [
       "english.visitkorea.or.kr Gamaksan Suspension Bridge",
       "thesoulofseoul.net Gamaksan Bridge (Nov 2023)",
@@ -2500,7 +2501,7 @@
       "facilities": "Restaurants and convenience shops along Haeoreum Road. Photo zones with art installations. Air/water pumps to clean shoes after sand. Public washrooms.",
       "tip": "Best for beach experience: July-August (swim + night vibes). Best for photo + walking: spring/autumn (mild weather, fewer crowds). The northern part (around Sokcho Eye) has more visitors than the southern part. Sunrise visits in winter are exceptional. Pair with Sokcho Tourist Fishery Market within walking distance and Seoraksan day-trip via Bus 7/7-1."
     },
-    "indoor_ratio_at_stop": 0.0,
+    "indoor_ratio_at_stop": 0,
     "sources": [
       "english.visitkorea.or.kr Sokcho Beach",
       "Tripadvisor Sokcho Beach 2026",
@@ -2519,25 +2520,28 @@
     "verified_facts": {
       "etymology": "Name means 'lake clear as a mountain well' — 'san' (mountain) + 'jeong' (well) + 'ho' (lake). Surrounded by Myeongseongsan Mountain, Mangbongsan Mountain, and Mangmubong Peak.",
       "origin": "Built in 1925 as an agricultural reservoir to supply water to nearby farmlands. Today serves as a recreational destination.",
-      "loop_trail": "3 km circuit walking trail around the lake (~50 min easy walk per AllTrails 2.3 mi loop). Well-maintained promenades. Floating bridges and observation decks at scenic points.",
-      "myeongseongsan_silver_grass": "Mid-trail along the Myeongseongsan summit hike features a famous silver grass (eulalia) habitat — host of the autumn Silvergrass Festival (eokpul-chuk-je). The Myeongseongsan + Sanjeong Lake hard loop is 7.8 mi (12.5 km) with 770 m elevation gain — about 5-5.5 hours.",
+      "loop_trail": "3.2 km circuit walking trail around the lake — lakeside boardwalk plus packed-earth path, entirely flat with no uphill section, 60-90 min at an unhurried pace. Floating bridge sections carry the path out over the water; observation decks at scenic points. Lake sits at roughly 300 m elevation.",
+      "myeongseongsan_silver_grass": "The Myeongseongsan slopes above the lake hold a 198,347 m² (about 60,000 pyeong) silver-grass (eulalia) field, counted among Korea's five great eulalia colonies, and host the Sanjeong Lake Myeongseongsan Silvergrass Festival each October. The Myeongseongsan + Sanjeong Lake hard loop is 12.5 km with 770 m elevation gain — about 5-5.5 hours — and is a separate route from the lakeside loop.",
       "winter_activities": "Annual sledding festival on the frozen lake; ice skating; hot springs nearby. Family-friendly snow-sledding slopes adjacent.",
       "year_round_attractions": "Spring/fall fog rises from the lake creating picturesque mist scenes for photography. Boating year-round (manual or motor swan/duck boats, rowboats). Summer swimming pools and amusement park nearby (Sanjeong Lake Amusement Park).",
       "local_food": "Local restaurants renowned for freshwater snail (uleong) dishes and mushroom dishes (Pocheon is famous for both). Idong Galbi (Pocheon-style ribs) nearby.",
       "nearby_attractions": "Hantangang River, Herb Island, Pocheon Art Valley, Korea National Arboretum, Sambuyeon Falls, Gungmangbong Recreational Forest.",
       "cultural_role": "Popular dating destination for Korean couples (visited in many K-dramas as a 'serene escape'). Family-friendly all-season destination.",
       "admission_and_safety": "Open 24 hours but admission STRICTLY PROHIBITED from sunset until 2 hours before sunrise (visitor safety + natural environment protection). Free to enter. Parking available.",
-      "wildlife": "Korean musk deer, Korean goral occasionally sighted in surrounding mountains."
+      "wildlife": "Korean musk deer, Korean goral occasionally sighted in surrounding mountains.",
+      "sculpture_park": "Sculpture park on the northern shore created through the 2005 Pocheon International Sculpture Symposium: 17 Korean and international artists carved their works on site across a 13,383 m² field rather than shipping finished pieces in.",
+      "centenary": "Built 1925 as an agricultural reservoir; the 28th Myeongseongsan Silvergrass Festival (2025-10-17 to 10-19) was held to mark the lake's 100th anniversary.",
+      "gungye_legend": "Myeongseongsan (명성산, 鳴聲山) reads as 'mountain of crying sounds' — named, per local telling, for the mountain birds said to have wept over the final years of Gungye, the fallen founder of the Taebong kingdom, who is remembered as having fled through these hills. The festival runs a Gungye-legend interpretive tour."
     },
     "visitBasics": {
       "hours": "Open 24 hours but no admission from sunset to 2 hr before sunrise",
       "closed": "Open year-round",
       "admission": "Free entry to lake/walking trail; activities (boating, sledding, amusement park) cost separately",
-      "walking": "Easy — flat 3 km loop in 50-60 min. Optional Myeongseongsan summit hike is hard (7.8 mi, 5-5.5 hr)."
+      "walking": "Easy — flat 3.2 km loop, 60-90 min, no uphill. The Myeongseongsan summit hike is a separate hard route (12.5 km, 5-5.5 hr)."
     },
     "convenience": {
       "restroom": "At parking area and amusement park section",
-      "parking": "Available, paid"
+      "parking": "Paid parking at the main lot (~2,000 KRW)"
     },
     "smartNotes": {
       "photo": "Lake-with-mountain reflection (especially with morning fog spring/fall). Silver grass (October-November) on Myeongseongsan slopes. Floating bridge mid-loop. Frozen-lake winter sledding. Autumn foliage around the lake.",
@@ -2552,7 +2556,10 @@
       "OnTrip.kr Pocheon travel guide (Nov 2024)",
       "Trippose Pocheon Sanjeonghosu Lake",
       "Korea Trip Tips Pocheon Sanjeonghosu Lake",
-      "Expedia Pocheon Sanjeong Lake"
+      "Expedia Pocheon Sanjeong Lake",
+      "korean.visitkorea.or.kr — '산정호수, 그 물 위를 걷다: 포천 산정호수 둘레길' feature (3.2 km loop)",
+      "pocheon.go.kr — Sanjeong Lake Myeongseongsan Silvergrass Festival official page",
+      "pocheon.grandculture.net (디지털포천문화대전) — Myeongseongsan etymology + Gungye legend + sculpture symposium"
     ]
   },
   "herb_island": {
@@ -2611,19 +2618,21 @@
       "abandonment": "Quarry decommissioned and abandoned in 2003 due to depleted granite reserves and environmental damage. Became a regional eyesore with environmental scarring.",
       "restoration_project": "2005: Pocheon City began Korea's first ecological restoration project of an abandoned quarry. Construction of monorail, cafe, concert stage, and seating area 2005-2011.",
       "opening": "Officially opened 2009 as an eco-friendly culture and art park. Hit 1,000,000+ cumulative visitors by 2014.",
-      "cheonjuho_lake": "Cheonjuho Lake (Cheonju Lake) — emerald/turquoise spring-fed lake formed in the former quarry pit at ~340 m altitude. Surrounded by 50 m vertical granite cliffs with quarry-pattern textures. Water sourced from spring water + rainwater filtered through granite. 'Entering is prohibited for safety and environmental protection' (English brochure).",
-      "monorail": "420 m monorail from base ticket office to top garden — ~5 min ride. Adult Round-trip 4,500 / One-way 3,500 KRW. Youth/Military RT 3,500 / OW 2,500 KRW. Children RT 2,500 / OW 1,800 KRW. Recommended: ride up, walk down via Healing Forest Promenade (10-15 min forest trail).",
+      "cheonjuho_lake": "Cheonjuho Lake (Cheonju Lake) — emerald/turquoise spring-fed lake formed in the former quarry pit at ~340 m altitude. Surrounded by 50 m vertical granite cliffs with quarry-pattern textures. Water sourced from spring water + rainwater filtered through granite; maximum depth ~20 m. The emerald colour comes from granite sediment suspended in the water reflecting light back up. 'Entering is prohibited for safety and environmental protection' (English brochure).",
+      "monorail": "420 m monorail from base ticket office to top garden — ~5 min ride. 2026 fares: Adult/military round-trip 5,300 KRW, Youth 4,300 KRW, Child 3,300 KRW. Operating hours Mon-Fri and Sun/holidays 09:00-17:50; Saturdays to 21:50. Recommended: ride up, walk down via Healing Forest Promenade (10-15 min forest trail). (Superseded the 2026-04 figures of 4,500/3,500/2,500 KRW — re-verify on site.)",
       "astronomical_science_museum": "Officially opened August 1, 2014. Space exhibition hall, cutting-edge 4D video room, astronomical observation room with constellation reading.",
       "key_features": "Cheonjuho Lake observation deck (Lake Observatory), Sky Garden of Hope observation deck, Doleum Stairway (steep spiral stairs), Sculpture Park with stone artworks scattered along trails, Stone Culture Exhibition Center, Educational Exhibition Center, Hosur Concert Hall (300-person open-air stage built between 50 m granite cliff and Cheonjuho Lake — performance area 220 m²), Wishing Sky Park (visitors write wishes on paper).",
       "k_drama_filming": "Legend of the Blue Sea (2016, with Lee Min-ho), Moon Lovers: Scarlet Heart Ryeo (2016), Hwayugi (Korean Odyssey, 2017-2018). Korean wave fans visit primarily for these scene locations.",
       "address_and_access": "234 Artvalley-ro, Sinbuk-myeon, Pocheon-si, Gyeonggi-do. ~60 km north of Seoul; ~1.5-2 hours by car (no expressway). From Pocheon Bus Terminal: Bus 67 or 67-1.",
-      "admission": "Adults 5,000 KRW / Children (ages 7-12) 1,500 KRW. Monorail extra. Parking free.",
-      "quarry_remnants": "Quarry shot-holes (perfectly round drilled holes for dynamite) still visible near the concert hall — only physical trace of the original quarry. Doleum (Stone-Path) Stairway preserves quarrying-era infrastructure."
+      "admission": "2026 rates: Adult ~6,000 KRW (non-resident of Pocheon), Youth/military ~4,000 KRW, Child ~2,000 KRW. Some listings still show the older 5,000 KRW adult rate — re-verify on site. Monorail is charged separately. Parking free.",
+      "quarry_remnants": "Quarry shot-holes (perfectly round drilled holes for dynamite) still visible near the concert hall — only physical trace of the original quarry. Doleum (Stone-Path) Stairway preserves quarrying-era infrastructure.",
+      "geopark_status": "Designated geosite of the Hantangang UNESCO Global Geopark (certified 2020-07-07, re-designated 2024), listed as 'Art Valley and Pocheon Stone'. The Pocheonseok granite exposed here is the ancient basement rock that the Hantangang basalt lava later flowed across — the counterpart to the young lava exposed at Jaein Falls. Global Geopark designation, NOT a World Heritage inscription.",
+      "visitor_volume": "Approximately 400,000 visitors per year (2025-2026 reporting)."
     },
     "visitBasics": {
-      "hours": "09:00-19:00 (last admission ~17:30); seasonal variation",
+      "hours": "09:00-19:00 (last admission ~17:30); monorail Mon-Fri and Sun/holidays 09:00-17:50, Sat to 21:50; seasonal variation",
       "closed": "Open year-round",
-      "admission": "Adult 5,000 / Child (7-12) 1,500 KRW. Monorail extra: Adult RT 4,500 / OW 3,500 KRW",
+      "admission": "Adult ~6,000 / Youth-military ~4,000 / Child ~2,000 KRW (2026; re-verify on site). Monorail extra: Adult RT ~5,300 KRW",
       "walking": "Moderate — steep hill from base to top (recommend monorail up); flat at top garden; Doleum Stairway is steep spiral; Healing Forest down-walk 10-15 min"
     },
     "convenience": {
@@ -2646,7 +2655,10 @@
       "Coffeehan Pocheon Art Valley (Sep 2023)",
       "Lifestyle.INQ Pocheon Art Valley (May 2017)",
       "ibtravel.co.kr (Jun 2024)",
-      "Tripadvisor Pocheon Art Valley 2026"
+      "Tripadvisor Pocheon Art Valley 2026",
+      "hantangeopark.kr — geosite listing 'Art Valley and Pocheon Stone'",
+      "pocheon.go.kr / artvalley.pcfac.or.kr — 2026 admission + monorail fare schedule",
+      "telltrip.com Pocheon Art Valley feature (2026) — annual visitor volume + Cheonjuho depth"
     ]
   },
   "changdeokgung_palace": {
@@ -2890,7 +2902,7 @@
       "facilities": "Free Wi-Fi, ATMs, currency exchange, family rooms, retail/dining inside terminal, Yacht Club + boat marina + indoor-outdoor water park + Ferris wheel + Urban Entertainment Center + resort hotels in 'Golden Harbor' complex.",
       "tip": "**For Seoul shore excursions: book a tour or private transfer in advance.** DIY taxi from terminal is straightforward but the 60-90 min one-way drive consumes 2-3 hours of port-time. Always carry the Korean address 인천항 크루즈터미널 (연수구 국제항만대로 438) — drivers frequently confuse with the older Ferry Terminal. Build a 90-min All-Aboard buffer for traffic. Currency exchange rates inside terminal are poor — exchange downtown banks or pre-arrival KRW. Korea has 4 international cruise ports (Incheon + Busan + Jeju + Sokcho) so transit calls and turnarounds are both common."
     },
-    "indoor_ratio_at_stop": 1.0,
+    "indoor_ratio_at_stop": 1,
     "sources": [
       "english.visitkorea.or.kr Incheon Port Cruise Terminal",
       "CruiseMapper Incheon (Seoul) port",
@@ -3150,7 +3162,7 @@
       "facilities": "Eatopia food hall (B1F, 30+ restaurants 5,000-40,000 KRW), Toy Kingdom (4F, Korea's largest toy store), Aquafield water park (B1-2F separate admission), T-Joy Cinema + CGV/MEGABOX, Kids Play Zone, free WiFi throughout, multilingual customer service, tax-refund counters at major stores.",
       "tip": "**Library is FREE and open during all mall hours** — exceptional value attraction. **Free Starfield shuttle bus from Suwon Station Exit 4** (every 10-15 min, ~10 min ride) — the easiest access. **Best photographic time**: weekday afternoons (less crowded vs. weekends). **Cherry blossom installation March-April** is the seasonal must-see. **22-meter bookshelves** — Korea's TALLEST library bookshelves; mention to guests for impact. **3+ hours free parking with 30,000 KRW mall purchase** — natural for a lunch + shopping + library combination. Avoid Saturday afternoons (mall is at peak crowd density)."
     },
-    "indoor_ratio_at_stop": 1.0,
+    "indoor_ratio_at_stop": 1,
     "sources": [
       "Starfield Suwon official (starfield.co.kr/suwon)",
       "Shinsegae Property press release January 2024",
@@ -3262,7 +3274,7 @@
       "wetland_protected_area_designation_year": 2009,
       "ramsar_area_hectares": 13,
       "wetland_count": "16+ discontinuous wetlands distributed across the highland plateau",
-      "boardwalk_length_km": 1.0,
+      "boardwalk_length_km": 1,
       "annual_visitors_2008": 900000,
       "managed_by": "Mt Halla Visitor Centre",
       "international_designations": [
@@ -3276,8 +3288,8 @@
       "highest_national_highway": "Route 1100 is the highest national highway in Korea — links Jeju City and Seogwipo Jungmun",
       "best_seasons": "Autumn foliage + winter snow scenes are the most photographed; spring + summer offer wetland flora",
       "weather_closure_risk": "Route 1100 closes during heavy snow/freezing rain; wetland boardwalk operates year-round when road is accessible",
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "100% outdoor boardwalk + observation deck. Adjacent rest area (1100 휴게소) provides indoor restroom + cafe but is operationally a separate stop.",
       "bus_access": "Bus Route 240 (formerly 704) — Jeju Cross-country Bus Terminal ↔ Jungmun, stops directly at 1100 Highland"
     },
@@ -3331,8 +3343,8 @@
       "landscape_character": "Grassy plains + jagged volcanic cliffs; black + red volcanic ash deposits visible in crater rim",
       "wildlife": "Free-roaming horses + ponies graze the slopes; sparse vegetation due to grazing + volcanic ash soil",
       "best_seasons": "Spring (greenery) + autumn (golden grass slopes); summer hot + sunny; winter strong coastal winds",
-      "indoor_ratio_at_stop": 0.0,
-      "outdoor_ratio_at_stop": 1.0,
+      "indoor_ratio_at_stop": 0,
+      "outdoor_ratio_at_stop": 1,
       "indoor_outdoor_note": "100% outdoor coastal trail. Small seafood restaurants ~30-40 min into the loop offer optional indoor refuge but are not part of the standard tour stop.",
       "wind_advisory": "Strong sea winds even on sunny days — windbreaker recommended year-round",
       "ferry_to_marado_nearby": "Marado ferry departs from Sanyisu Port at the trailhead — 30-min crossing each way; not part of typical tour but available for extended stops",
@@ -3358,5 +3370,48 @@
       "marado_gapado_panorama": true,
       "summit_closed_periodically": true
     }
+  },
+  "jaein_falls": {
+    "name": "Jaein Falls",
+    "koreanName": "재인폭포",
+    "category": "waterfall_geosite",
+    "region": "Gyeonggi — Gomun-ri, Yeoncheon-eup, Yeoncheon-gun",
+    "verified_facts": {
+      "geopark_status": "Designated geosite of the Hantangang UNESCO Global Geopark, certified by UNESCO's 209th Executive Board in Paris on 2020-07-07 and re-designated in 2024. The geopark spans the Hantangang river basin across Pocheon and Yeoncheon (Gyeonggi-do) and Cheorwon (Gangwon-do). NOTE: Global Geopark designation, NOT a World Heritage inscription.",
+      "falls_and_geology": "A small stream flowing down from Jijangbong to the north drops approximately 18 m over a basalt cliff of columnar jointing — hexagonal columns formed as a thick lava flow cooled and contracted. The falls are still retreating upstream, cutting headward into the flow.",
+      "readable_features": "At the base: hasik-donggul (하식동굴, a river-erosion cave undercut at the foot of the columns), potholes ground out by pebbles spinning in the current, and gas tubes — frozen bubbles left where gas escaped the cooling lava.",
+      "suspension_bridge": "80 m long × 2 m wide suspension bridge (출렁다리) spanning the gorge cliff-to-cliff, positioned to face the waterfall head-on. It sways underfoot by design.",
+      "skywalk": "Observation skywalk with a transparent glass floor, reached after crossing the suspension bridge — gives a downward view into the gorge and a second angle on the Hantangang geology.",
+      "boardwalk_and_pool": "A boardwalk descends from the rim toward the emerald plunge pool at the foot of the falls. Deck sections can be closed during heavy summer rain.",
+      "name_legend": "'Jaein' (재인, 才人) meant a tightrope performer. In the best-known telling, a local magistrate coveted the performer's wife, had a rope strung across this gorge, ordered him out onto it and had the rope cut. The widow feigned submission, bit off the magistrate's nose, then bit her own tongue and died. The village below was afterwards called Komun-ri ('the village where the nose was bitten'), which became today's Gomun-ri (고문리). A second variant frames it as a wager the performer made on his own wife.",
+      "scenic_designation": "Recognised nationally for its scenery and legend; reported as advancing to National Scenic Site (명승) designation.",
+      "admission_and_access": "Free admission, open access with no ticket gate. Daylight visiting strongly recommended — the gorge is unlit. Free visitor parking and restrooms at the entrance above the gorge, with interpretive geopark panels. Public transport: Gyeongwon Line to Yeoncheon Station, then local bus 53 to the Jaein Falls entrance.",
+      "distinction_from_art_valley": "Jaein Falls exposes the YOUNG basalt lava of the Hantangang flow; Pocheon Art Valley exposes the ANCIENT granite basement rock the lava flowed across. Both are geosites of the same geopark — they are the two halves of one stratigraphic story, roughly 40 minutes apart by road."
+    },
+    "visitBasics": {
+      "hours": "Open access; daylight hours strongly recommended — the gorge is unlit",
+      "closed": "Deck and boardwalk sections may close during heavy summer rain or storms",
+      "admission": "Free",
+      "walking": "Moderate — the 80 m suspension bridge is flat but sways; the boardwalk down toward the plunge pool and back has stairs"
+    },
+    "convenience": {
+      "restroom": "At the visitor parking area above the gorge",
+      "parking": "Free visitor parking at the falls entrance"
+    },
+    "smartNotes": {
+      "tip": "The bridge moves underfoot by design — hold the rail and keep to one direction of travel when busy. Guests who prefer not to cross can see the falls from the rim viewpoint. Check the forecast in the summer monsoon: deck closures are the one real access risk.",
+      "photo": "Head-on from the middle of the suspension bridge is the signature frame. Straight down through the skywalk glass for the columnar joints; from the lower boardwalk for the plunge pool and the full ~18 m drop.",
+      "facilities": "Parking, restrooms and geopark interpretive panels at the entrance; no shops at the gorge itself — bring water."
+    },
+    "indoor_ratio_at_stop": 0,
+    "sources": [
+      "hantangeopark.kr — Hantangang UNESCO Global Geopark official geosite listing (재인폭포)",
+      "yeoncheon.go.kr — Yeoncheon County culture & tourism (재인폭포)",
+      "korean.visitkorea.or.kr — Korea Tourism Organization listing + '줄 타는 광대 부부의 슬픈 전설, 재인폭포' feature",
+      "unesco.or.kr / overseas.mofa.go.kr — Hantangang UNESCO Global Geopark certification, 209th Executive Board, 2020-07-07",
+      "gyeonggido-korea.com — Gyeonggi Province official blog, Jaein Waterfall summer feature",
+      "ko.wikipedia.org / namu.wiki 재인폭포 — name legend variants and Gomun-ri etymology"
+    ],
+    "_kb_note": "Added 2026-08-04 for the Pocheon/Yeoncheon geopark course revision. No prior entry existed."
   }
 }

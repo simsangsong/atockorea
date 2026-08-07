@@ -9,10 +9,10 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "busan-cruise-shore-excursion-bus-tour",
       "title": "부산 크루즈 기항지: 해안 버스 투어",
-      "subtitle": "대형 버스로 떠나는 부산 해안 8개 코스 순환 투어, 크루즈 터미널 픽업과 선박 출항 시간에 맞춘 귀환 일정 포함.",
+      "subtitle": "대형 버스로 떠나는 부산 해안 9개 코스 순환 투어, 크루즈 터미널 픽업과 선박 출항 시간에 맞춘 귀환 일정 포함.",
       "region": "부산",
-      "duration": "9시간",
-      "stopsCount": 8,
+      "duration": "8시간",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -23,11 +23,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "priceLabel": "1인 US$49부터 (정가 $55, 11% 할인)",
+      "priceLabel": "",
       "shortCardDescription": "크루즈 승객을 위해 설계된 대형 버스 부산 해안 당일 투어: 크루즈 터미널 픽업, 8개 대표 명소(해동용궁사, UN기념공원, 자갈치시장, BIFF광장, 국제시장, 감천문화마을, 송도해수욕장, 용두산공원) 방문, 출항 전 귀환 보장. 합리적인 가격대 — 소규모 그룹 상품과 동일한 코스, 대형 버스 이용."
     },
     "price": {
-      "amountLabel": ""
+      "amountLabel": "58.79"
     }
   },
   "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -126,32 +126,58 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "공인 영어 구사 드라이버 가이드와 함께하는 크루즈 승객을 위한 8시간 부산 프라이빗 전세차. 기본 일정은 UN기념공원, 태종대 절벽, 감천문화마을, 용두산공원, 자갈치시장으로 구성됩니다. 완전 맞춤 변경 가능. 크루즈 터미널, KTX역, 또는 부산 시내 호텔 어디서든 픽업 가능; 선박으로의 정시 귀환 보장."
     },
     "price": {
-      "amountLabel": "364"
+      "amountLabel": "456.99"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     "catalog_card": {
       "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
       "title": "부산 크루즈 기항지 소그룹 투어",
-      "subtitle": "크루즈 터미널에서 출발해 하루 9시간, 공유 밴으로 부산의 대표 명소 다섯 곳을 한 번에.",
+      "subtitle": "크루즈 터미널에서 출발해 하루 8시간, 공유 밴으로 부산의 대표 명소 다섯 곳을 한 번에.",
       "region": "부산",
-      "duration": "9시간",
-      "stopsCount": 8,
+      "duration": "8시간",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "크루즈 기항지 투어",
         "소형 공유 밴",
         "항구 픽업",
-        "9시간 일정"
+        "8시간 일정"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "부산 크루즈 터미널에서 출발해 9시간 동안 가장 인기 있는 다섯 곳을 공유 밴으로 둘러보는 당일 투어: 유엔기념공원(한국전쟁 역사), 태종대 해안 절벽, 현지 부산 식당에서의 점심, 감천문화마을(색채 가득한 산복 마을), 부산타워 전망대 관람이 가능한 용두산공원, 그리고 자갈치시장. 승선한 선박의 하선 일정에 맞춰 픽업 시간을 조율해 드립니다. 영어·중국어 공인 가이드 동행."
+      "shortCardDescription": "크루즈 승객을 위한 부산 소그룹 기항지 투어, 정원 12명 밴으로 운행합니다. 여덟 시간에 아홉 곳 — 해동용궁사, 재한유엔기념공원, 자비 부담 점심, 이어 자갈치시장·BIFF광장·국제시장을 걸어서, 감천문화마을, 송도 구름산책로(케이블카로 스카이파크까지 오르는 것은 현장 선택), 마지막으로 용두산공원입니다. 픽업은 배가 접안하는 크루즈 터미널이며, 귀항은 승선 마감 시각에 맞춥니다."
     },
     "price": {
-      "amountLabel": "84"
+      "amountLabel": "68.95"
+    }
+  },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "부산 스몰그룹: 해동용궁사·스카이캡슐·문화마을",
+      "subtitle": "부산의 해안 명소와 산비탈 마을을 하루에 잇는 스몰그룹 투어 — 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인파크 스카이캡슐(티켓 포함/불포함 선택), 감천문화마을, 그리고 소망계단 모노레일이 있는 조용한 닥밭골 벽화마을.",
+      "region": "부산",
+      "duration": "≈ 10시간",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "스몰그룹",
+        "부산",
+        "스카이캡슐",
+        "해안",
+        "문화마을"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -232,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "부산 → 경주 고도 일일 투어",
-      "subtitle": "여유로운 페이스로 즐기는 경주의 클래식 6개 명소와 이른 귀환.",
+      "subtitle": "소그룹 미니밴 · 영어 가이드 — 아홉산숲, 불국사(유네스코), 교촌한옥마을+최부자댁+월정교, 대릉원+황리단길, 그리고 국립경주박물관(겨울엔 동궁과 월지 야경)까지 하루에.",
       "region": "경주 (부산 출발)",
-      "duration": "10.5시간",
+      "duration": "11.5시간",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -242,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "소규모 그룹",
         "여유로운 페이스",
         "부산 출발",
-        "이른 귀환"
+        "겨울엔 야경"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1인 US$39 (정가 $50, 22% 할인)",
-      "shortCardDescription": "신라 왕국의 고도(古都) 경주(기원전 57년~935년)로 떠나는 부산 출발 소규모 당일 투어. 유네스코 레거시 버전과 동일한 클래식 6개 명소 코스(아홉산 숲 대나무숲 → 불국사 유네스코 → 경주 쌈밥 점심 → 국립박물관 → 교촌 한옥마을 → 월정교)로 진행되지만, 여유로운 페이스와 이른 귀환(약 18:50)이 특징입니다. 영어·중국어 가능 공인 가이드, 미니밴 제공, 전 일정 입장료 무료(아홉산 ₩5,000 및 점심 식사는 현장 결제)."
+      "shortCardDescription": "부산 지하철역 3곳에서 출발하는 경주 당일 소그룹 투어. 오후는 차를 세워두고 걷습니다 — 최부자댁에서 월정교, 대릉원에서 황리단길. 마지막은 국립경주박물관, 겨울에는 동궁과 월지 야경."
     },
     "price": {
       "amountLabel": ""
@@ -383,7 +409,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "제주 동부 유네스코 일일 투어",
-      "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 함덕해변·성읍민속마을·성산일출봉(유네스코)·해녀 물질공연·만장굴(유네스코)을 9시간 동부 루프로 일주합니다.",
+      "subtitle": "소그룹 미니버스, 영어·중국어 가이드 — 개장 직후의 한적한 만장굴(유네스코), 성읍민속마을, 성산일출봉(유네스코), 해녀 물질공연, 함덕해변 피날레를 9시간 동부 루프로 일주합니다.",
       "region": "동제주",
       "duration": "9시간",
       "stopsCount": 8,
@@ -400,7 +426,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다. 함덕 서우봉해변, 성읍민속마을(유네스코 민속), 성산일출봉과 만장굴 — 2007년 함께 등재된 두 유네스코 세계자연유산, 그리고 해녀 물질공연(취소 시 해녀박물관) 포함. 전 입장료 포함, 공인 영어·중국어 가이드."
+      "shortCardDescription": "제주 동부 유네스코 명소를 9시간 소그룹으로 일주합니다 — 이제 동굴을 먼저 갑니다: 개장 직후 가장 한적한 만장굴, 성읍민속마을, 성산일출봉과 해녀 물질공연(취소 시 해녀박물관), 그리고 늦은 오후의 함덕 서우봉해변 피날레. 2007년 함께 등재된 두 유네스코 세계자연유산, 전 입장료 포함, 공인 영어·중국어 가이드."
     },
     "price": {
       "amountLabel": "49"
@@ -591,22 +617,25 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "포천: 산정호수·허브아일랜드·아트밸리",
-      "subtitle": "산속 호수, 지중해풍 허브 정원, 채석장이 변신한 아트파크—서울에서 떠나는 가장 여유로운 계절 당일 여행.",
-      "region": "포천 (서울 당일 여행)",
+      "title": "포천·연천: 호수, 폭포, 그리고 채석장 아트밸리",
+      "subtitle": "산이 둘러싼 호수를 걷고, 주상절리 위로 18 m를 떨어지는 폭포를 마주하고, 에메랄드빛 채석장 호수에서 마무리합니다 — 유네스코 세계지질공원 지질명소 두 곳을 서울 근교 하루에 여유롭게.",
+      "region": "포천·연천 (서울 근교 당일치기)",
       "duration": "10시간",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "자연 & 사진 여행",
-        "계절별 볼거리",
-        "낭만적인 야간 조명"
+        "서울 근교 당일치기",
+        "월·목·토 출발",
+        "유네스코 세계지질공원",
+        "폭포",
+        "호수 산책",
+        "소규모 그룹"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "호수, 허브 정원, 그리고 인상적인 아트파크 풍경으로 유명한 경기도 포천으로 떠나는 여유로운 계절 당일 여행. 산으로 둘러싸인 산정호수, 지중해풍 정원과 야간 조명이 매력적인 허브아일랜드, 모노레일로 오르는 포천 아트밸리 채석장 전망대를 차례로 둘러봅니다. 남이섬보다 한적하며, 명소를 빠르게 도는 것이 아닌 사진 중심의 여유로운 일정으로 구성되어 있습니다."
+      "shortCardDescription": "진짜 지질 이야기 위에 세운, 조금 더 느린 서울 근교 하루입니다. 명성산 아래 산정호수를 도는 평탄한 3.2 km 둘레길을 걷고, 포천의 음식인 이동갈비로 점심을 들고, 80 m 출렁다리를 건너 주상절리 위로 18 m를 떨어지는 재인폭포를 정면으로 마주한 뒤, 화강암 채석장이 용천수로 채워져 에메랄드빛 천주호가 된 포천 아트밸리에서 하루를 닫습니다. 재인폭포와 아트밸리는 모두 한탄강 유네스코 세계지질공원의 지질명소로, 같은 땅을 정반대의 두 단면에서 보여 줍니다. 월·목·토 출발."
     },
     "price": {
       "amountLabel": "54"
@@ -634,6 +663,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "서울 출발 가평 일일 투어: 남이섬, 아침고요수목원 & 쁘띠프랑스",
+      "subtitle": "가평의 세 명소를 버스 하루 코스로 — 등산 없이, 입장료 세 곳 포함",
+      "region": "서울 → 경기도(가평)",
+      "duration": "11.5시간",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "서울 근교 당일치기",
+        "가평",
+        "조인 그룹",
+        "K-드라마",
+        "정원"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "서울에서 가장 부담 없는 근교 하루입니다. 남이섬 메타세쿼이아 길, 330,000 m² 규모의 테마 수목원, 그리고 어린 왕자 마을까지 — 입장료 세 곳이 모두 포함되고 19:00 전에 서울로 돌아옵니다."
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "seoul-private-nami-morning-calm-petite-france": {
@@ -840,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "서울 출발 겨울 특별 코스: 설악산, 남이섬 & 어비계곡 얼음벽",
+      "subtitle": "겨울에만 운행하는 버스 하루 — 눈 덮인 한국 대표 산, 서리 내린 남이섬, 그리고 마을이 만든 얼음벽",
+      "region": "서울 → 강원도 → 경기도(가평)",
+      "duration": "13.5시간",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "겨울 한정",
+        "계절 상품",
+        "서울 근교 당일치기",
+        "설악산",
+        "얼음벽"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "한겨울에만 운행합니다. 눈 덮인 설악산, 서리 앉은 남이섬의 나무 길, 그리고 가평 주민들이 매년 1월 계곡 암벽에 키워 올리는 25미터 얼음벽을 함께 봅니다."
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

@@ -9,6 +9,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "busan-plum-cherry-blossom-day-tour-to-yangsan-gyeongju",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
   "busan-top-attractions-day-tour",
   "east-signature-nature-core",
@@ -29,6 +30,7 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
   "seoul-private-nami-morning-calm-petite-france",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
@@ -37,5 +39,6 @@ export const SLIM_CATALOG_SLUG_ORDER: readonly string[] = [
   "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
   "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "southwest-hallasan-osulloc-aewol"
 ] as const;

@@ -4,4 +4,110 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan en petit groupe : temple marin, Sky Capsule & villages culturels",
+      "subtitle": "Excursion d'une journée en petit groupe entre les icônes côtières de Busan et ses villages à flanc de colline — le temple marin Haedong Yonggungsa, la passerelle de verre Daritdol de Cheongsapo, le trajet en Sky Capsule du Blueline Park (billet en option à la réservation), le village culturel de Gamcheon et le paisible village de fresques Dakbatgol avec son monorail de l'escalier des vœux.",
+      "region": "Busan",
+      "duration": "≈ 10 heures",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Petit groupe",
+        "Busan",
+        "Sky Capsule",
+        "Côtier",
+        "Villages culturels"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Une journée à Busan en petit groupe, construite autour de la côte et des villages perchés : le temple marin Haedong Yonggungsa dans son créneau matinal tranquille, l'observatoire Daritdol de Cheongsapo et son plancher de verre gratuit, le trajet en Sky Capsule du Blueline Park de Cheongsapo à Mipo (billet inclus ou non inclus — à choisir lors de la réservation), le déjeuner, le village culturel de Gamcheon, et le méconnu village de fresques Dakbatgol où un monorail gratuit gravit l'« escalier des vœux ». Tous les sites majeurs sont en entrée libre, à l'exception de la capsule optionnelle."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "pocheon-sanjeong-lake-herb-island-art-valley": {
+    "catalog_card": {
+      "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+      "title": "Pocheon et Yeoncheon : lac, cascade et Art Valley en carrière",
+      "subtitle": "Une boucle à pied autour d'un lac cerné de montagnes, une cascade de 18 m sur des orgues basaltiques et un lac de carrière émeraude — deux géosites du Géoparc mondial UNESCO en une seule journée sans hâte au départ de Séoul.",
+      "region": "Pocheon et Yeoncheon (excursion depuis Séoul)",
+      "duration": "10 heures",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Excursion depuis Séoul",
+        "Lun · jeu · sam",
+        "Géoparc UNESCO",
+        "Cascade",
+        "Balade au bord du lac",
+        "Petit groupe"
+      ],
+      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Une excursion d'une journée plus paisible au départ de Séoul, bâtie sur une géologie bien réelle. Vous parcourez la boucle plate de 3,2 km autour du lac Sanjeong, au pied du mont Myeongseongsan, goûtez l'Idong galbi dont Pocheon a fait sa spécialité, puis traversez un pont suspendu de 80 m pour faire face à la cascade de Jaein, qui tombe de 18 m sur des orgues basaltiques, avant de terminer au cœur de la carrière de granit de Pocheon Art Valley, où l'eau de source a rempli la fosse pour former le lac émeraude de Cheonjuho. La cascade de Jaein et Art Valley sont toutes deux des géosites du Géoparc mondial UNESCO du Hantangang — un même paysage vu de ses deux moitiés opposées. Départs les lundis, jeudis et samedis."
+    },
+    "price": {
+      "amountLabel": "54"
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Excursion d'une journée à Gapyeong depuis Séoul : île de Nami, Garden of Morning Calm et Petite France",
+      "subtitle": "Le trio de Gapyeong en une seule journée en autocar — aucune randonnée en montagne, trois entrées incluses",
+      "region": "Séoul → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 heures",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Excursion depuis Séoul",
+        "Gapyeong",
+        "Groupe partagé",
+        "K-drama",
+        "Jardins"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "La journée à la campagne la plus facile au départ de Séoul : l'allée de métaséquoias de l'île de Nami, un arboretum thématique de 330,000 m² et un village du Petit Prince — les trois entrées incluses, retour à Séoul avant 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Spécial hiver depuis Séoul : Seoraksan, île de Nami et le mur de glace de la vallée d'Eobi",
+      "subtitle": "Une journée en autocar réservée à l'hiver — la neige sur le sommet le plus célèbre de Corée, Nami sous le givre, et un mur de glace bâti par un village",
+      "region": "Séoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13.5 heures",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Hiver uniquement",
+        "Saisonnier",
+        "Excursion depuis Séoul",
+        "Seoraksan",
+        "Mur de glace"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Ne fonctionne qu'au cœur de l'hiver : le Seoraksan sous la neige, les allées d'arbres givrées de l'île de Nami, et le mur de glace de 25 mètres que les villageois de Gapyeong font grandir chaque janvier sur une paroi rocheuse de la vallée."
+    },
+    "price": {
+      "amountLabel": "69"
+    }
+  }
+};

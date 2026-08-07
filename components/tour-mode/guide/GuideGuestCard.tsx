@@ -32,6 +32,17 @@ const HIGHLIGHT_META: Record<string, { Icon: LucideIcon; label: string }> = {
   infant: { Icon: IconInfant, label: '유아 동반' },
 };
 
+/**
+ * 🔴 Unmapped sources fall through to the raw column value, so anything missing
+ * here is printed to a guide as a snake_case database token. `tour_product` —
+ * the source stamped on a booking made through `/tour-product/[slug]` checkout,
+ * i.e. our own site — was doing exactly that on the roster line: "좌석 미지정 ·
+ * tour_product". Seven live bookings carry it.
+ *
+ * Live values as of 2026-08-05: gyg 21 · tour_product 7 · test 4 · klook 3 ·
+ * viator 1. `test` stays unmapped on purpose — a seeded booking SHOULD look
+ * unlike a real one on a guide's screen.
+ */
 const CHANNEL_LABEL: Record<string, string> = {
   gyg: 'GetYourGuide',
   getyourguide: 'GetYourGuide',
@@ -40,6 +51,8 @@ const CHANNEL_LABEL: Record<string, string> = {
   kkday: 'KKday',
   atoc: 'AtoC',
   atockorea: 'AtoC',
+  // Own-site checkout — same brand the two aliases above already print.
+  tour_product: 'AtoC',
 };
 
 export function channelLabel(source: string | null | undefined): string | null {

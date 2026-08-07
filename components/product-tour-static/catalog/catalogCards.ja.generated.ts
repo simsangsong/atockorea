@@ -9,10 +9,10 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "busan-cruise-shore-excursion-bus-tour",
       "title": "釜山クルーズ寄港地：沿岸バスツアー",
-      "subtitle": "大型バスで巡る釜山沿岸8スポット周遊、クルーズターミナル送迎付き、船の出港時刻に合わせた帰港スケジュール。",
+      "subtitle": "大型バスで巡る釜山沿岸9スポット周遊、クルーズターミナル送迎付き、船の出港時刻に合わせた帰港スケジュール。",
       "region": "釜山",
-      "duration": "9時間",
-      "stopsCount": 8,
+      "duration": "8時間",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -23,11 +23,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "priceLabel": "お一人様49米ドルから（通常55ドル、11%オフ）",
-      "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選8スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
+      "priceLabel": "",
+      "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。"
     },
     "price": {
-      "amountLabel": ""
+      "amountLabel": "58.79"
     }
   },
   "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -126,32 +126,58 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "公認英語対応ドライバーガイド付きの、釜山クルーズ乗客向け8時間プライベートカーチャーター。標準行程はUN記念公園、太宗台、甘川文化村、龍頭山公園、チャガルチ市場をカバー。完全カスタマイズ可能。クルーズターミナル、KTX駅、釜山市内の主要ホテルからの送迎；時間厳守での帰港を保証。"
     },
     "price": {
-      "amountLabel": "364"
+      "amountLabel": "456.99"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     "catalog_card": {
       "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
       "title": "釜山クルーズ寄港地・少人数ツアー",
-      "subtitle": "クルーズターミナルから出発、乗合バンで9時間、釜山を代表する5つのスポットを巡る。",
+      "subtitle": "クルーズターミナルから出発、乗合バンで8時間、釜山を代表する5つのスポットを巡る。",
       "region": "釜山",
-      "duration": "9時間",
-      "stopsCount": 8,
+      "duration": "8時間",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "クルーズ寄港地観光",
         "小型乗合バン",
         "港でのピックアップ",
-        "9時間の行程"
+        "8時間の行程"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "釜山クルーズターミナル発の乗合バン日帰りツアーで、人気の5スポットを9時間で巡ります：国連記念公園（朝鮮戦争の歴史）、太宗台の海岸断崖、地元レストランでの昼食、甘川文化村（カラフルな丘の街）、龍頭山公園（釜山タワー展望台はオプション）、チャガルチ市場。お客様の船の下船時刻に合わせたピックアップ。英語・中国語対応の認定ガイド付き。"
+      "shortCardDescription": "クルーズ乗客のための釜山少人数寄港地ツアー、定員12名のバンで運行します。8時間で9か所 — 海東龍宮寺、在韓国連記念公園、自己負担の昼食、続いてチャガルチ市場・BIFFスクエア・国際市場を徒歩で、甘川文化村、松島雲の散歩道（ケーブルカーでスカイパークへ上がるかは現地で選択）、最後に龍頭山公園です。お迎えは船が着岸するクルーズターミナルで、帰着は乗船締切時刻に合わせます。"
     },
     "price": {
-      "amountLabel": "84"
+      "amountLabel": "68.95"
+    }
+  },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "釜山少人数ツアー：海東龍宮寺・スカイカプセル・文化村",
+      "subtitle": "釜山の海岸名所と丘の村を一日でつなぐ少人数ツアー — 海東龍宮寺、青沙浦タリットル展望台（ガラスのスカイウォーク）、ブルーラインパークのスカイカプセル（チケット込み／別を予約時に選択）、甘川文化村、そして「願いの階段」モノレールのある静かなタクバッコル壁画村。",
+      "region": "釜山",
+      "duration": "≈ 10時間",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "少人数",
+        "釜山",
+        "スカイカプセル",
+        "海岸",
+        "文化村"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "海岸と丘の村を軸に組んだ釜山の少人数日帰りツアーです。静かな午前の時間帯の海東龍宮寺、無料のガラス床展望台・青沙浦タリットル展望台、青沙浦→尾浦のブルーラインパーク・スカイカプセル（予約時にチケット込み／別を選択）、昼食、甘川文化村、そして無料モノレールが「願いの階段」を登る穴場のタクバッコル壁画村まで。選択制のカプセルを除き、主要な立ち寄り先はすべて入場無料です。"
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -232,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山発・慶州古都ツアー",
-      "subtitle": "慶州の定番6スポットをゆったりとしたペースで、早めの帰着。",
+      "subtitle": "少人数ミニバン · 英語ガイド — アホプサン竹林、仏国寺（ユネスコ）、校村韓屋村＋崔富豪邸＋月精橋、大陵苑＋ファンリダンギル、そして国立慶州博物館（冬は東宮と月池の夜景）まで一日で。",
       "region": "慶州（釜山発）",
-      "duration": "10.5時間",
+      "duration": "11.5時間",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -242,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "少人数グループ",
         "ゆったりとしたペース",
         "釜山発",
-        "早めの帰着"
+        "冬は夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "1名様 US$39（定価$50、22%オフ）",
-      "shortCardDescription": "釜山から新羅王国の古都・慶州（紀元前57年〜935年）への少人数日帰りツアー。ユネスコレガシー版と同じ定番6スポットルート（アホプサン竹林 → 仏国寺ユネスコ → 慶州サムバップランチ → 国立博物館 → 校村韓屋村 → 月精橋）を、よりゆったりとしたペースで巡り、早めの帰着（約18:50）。英語・中国語対応の認定ガイド付き、ミニバン使用、全施設入場料込み（アホプサンの₩5,000とランチのみ当日払い）。"
+      "shortCardDescription": "釜山の地下鉄駅3か所から出発する慶州日帰り少人数ツアー。午後は車を停めて歩きます — 崔富豪邸から月精橋へ、大陵苑からファンリダンギルへ。最後は国立慶州博物館、冬は東宮と月池の夜景。"
     },
     "price": {
       "amountLabel": ""
@@ -383,7 +409,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "済州東部ユネスコ日帰りツアー",
-      "subtitle": "少人数ミニバス、英語・中国語ガイド — 咸徳ビーチ・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・万丈窟（ユネスコ）を9時間の東部ループで一周します。",
+      "subtitle": "少人数ミニバス、英語・中国語ガイド — 開場直後の静かな万丈窟（ユネスコ）・城邑民俗村・城山日出峰（ユネスコ）・海女の素潜り実演・咸徳ビーチのフィナーレを9時間の東部ループで巡ります。",
       "region": "東済州",
       "duration": "9時間",
       "stopsCount": 8,
@@ -400,7 +426,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します。咸徳ソウボン海水浴場、城邑民俗村（ユネスコ民俗）、城山日出峰と万丈窟 — 2007年にともに登録された2つのユネスコ世界自然遺産、そして海女の素潜り実演（中止時は海女博物館）を含みます。全入場料込み、英語・中国語対応の認定ガイド付き。"
+      "shortCardDescription": "済州東部のユネスコ見どころを9時間の少人数で一周します — 洞窟を最初に巡る新ルート：開場直後の最も静かな万丈窟、城邑民俗村、城山日出峰と海女の素潜り実演（中止時は海女博物館）、そして夕方前の咸徳ソウボン海水浴場のフィナーレ。2007年にともに登録された2つのユネスコ世界自然遺産、全入場料込み、英語・中国語対応の認定ガイド付き。"
     },
     "price": {
       "amountLabel": "49"
@@ -589,22 +615,25 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "抱川：山正湖・ハーブ・アートバレー",
-      "subtitle": "山の湖、地中海式ハーブガーデン、採石場を転用したアートパーク——ソウルから行く、最もゆったりとした季節の日帰り旅行。",
-      "region": "ポチョン（ソウル日帰り旅行）",
+      "title": "抱川＆漣川：湖と滝、そして採石場のアートバレー",
+      "subtitle": "山に囲まれた湖畔の散歩道、柱状節理を18 m落ちる滝、そしてエメラルド色の採石場湖 — ソウルから日帰りで、ユネスコ世界ジオパークのジオサイト2か所をゆったりと巡る一日です。",
+      "region": "抱川＆漣川（ソウル発日帰り）",
       "duration": "10時間",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "自然＆フォトトリップ",
-        "季節のハイライト",
-        "ロマンティックなイルミネーション"
+        "ソウル発日帰り",
+        "月・木・土出発",
+        "ユネスコ世界ジオパーク",
+        "滝",
+        "湖畔散策",
+        "少人数"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "ソウルから京畿道の田舎・ポチョンへのゆったりとした季節の日帰り旅行。湖、ハーブガーデン、そしてドラマチックなアートパークの風景で知られるこの地を巡るルートは、山に囲まれた山井湖、地中海スタイルのガーデンと夜のイルミネーションが魅力のハーブアイランド、モノレールでアクセスするポチョン・アートバレーの採石場展望台を組み合わせています。南怡島より混雑が少なく、名所を駆け足で回るのではなく、写真撮影を中心とした落ち着いた旅を楽しめます。"
+      "shortCardDescription": "本物の地質に根ざした、落ち着いたソウル発の日帰りツアーです。鳴声山（ミョンソンサン）のふもとに広がるサンジョン湖（산정호수）の平坦な3.2 kmの周回路を歩き、抱川ならではのイドンカルビ（이동갈비）を味わい、80 mの吊り橋を渡ってチェイン滝（재인폭포）が柱状節理の崖を18 m落ちる姿と正面から向き合います。締めくくりは抱川アートバレーの花崗岩採石場跡 — 湧き水が窪地を満たし、エメラルド色の天柱湖（チョンジュホ）となった場所です。チェイン滝と抱川アートバレーはどちらも漢灘江ユネスコ世界ジオパークのジオサイトで、ひとつの大地を正反対の二つの断面から見ることになります。 月・木・土出発。"
     },
     "price": {
       "amountLabel": "54"
@@ -632,6 +661,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "ソウル発 加平（カピョン）日帰りツアー：南怡島（ナミソム）・晨静苑・プチフランス",
+      "subtitle": "加平の三大スポットをバス1日で — 山登りなし、入場料3か所込み",
+      "region": "ソウル → 京畿道（加平）",
+      "duration": "11.5時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "ソウル発日帰り",
+        "加平（カピョン）",
+        "混載グループ",
+        "韓国ドラマ",
+        "庭園"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "ソウルから最も気軽に行ける田園の一日。南怡島のメタセコイア並木、330,000 m²のテーマ樹木園、そして星の王子さまの村 — 3か所の入場料すべて込みで、19:00までにソウルへ戻ります。"
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "seoul-private-nami-morning-calm-petite-france": {
@@ -838,6 +893,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "ソウル発 冬季限定：雪岳山（ソラクサン）・南怡島（ナミソム）・オビ渓谷の氷壁",
+      "subtitle": "冬季限定のバス1日 — 韓国で最も名高い峰の雪、霜をまとった南怡島、そして村がつくる氷壁",
+      "region": "ソウル → 江原道 → 京畿道（加平）",
+      "duration": "13.5時間",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "冬季限定",
+        "季節限定",
+        "ソウル発日帰り",
+        "雪岳山（ソラクサン）",
+        "氷壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "厳冬期のみの運行です。雪に覆われた雪岳山、霜をまとった南怡島の並木道、そして加平の村人が毎年1月に渓谷の岩肌へ育てる高さ25メートルの氷壁を訪ねます。"
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

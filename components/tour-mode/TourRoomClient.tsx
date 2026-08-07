@@ -656,6 +656,9 @@ function TourRoomLive({
   // Phase 3 — deep link (?message=&reply=1). TourRoomLive is client-only (renders
   // after join), so a lazy read is hydration-safe.
   const [deepLink] = useState(readDeepLink);
+  /** §5-3 — chat focus target: seeded by the deep link, re-aimed by drawer
+   *  search. ChatFeed's focus effect keys on the id changing. */
+  const [focusMessageId, setFocusMessageId] = useState<string | null>(deepLink.focusMessageId);
   // SG-1e — mirror of RoomShell's tab (initialTab logic included) so the
   // banner knows when the guest is actually LOOKING at the home hero.
   const [activeTab, setActiveTab] = useState<RoomTab>(
@@ -1159,6 +1162,13 @@ function TourRoomLive({
               .map((p) => ({ id: p.id, role: p.role ?? 'customer', display_name: p.display_name! }))
           }
           myParticipantId={data.participant.id}
+          messages={messages}
+          onJumpToMessage={(id) => {
+            setFocusMessageId(id);
+            setActiveTab('chat');
+            api.selectTab('chat');
+            api.close();
+          }}
           onClose={api.close}
           onSelectTab={api.selectTab}
           /* 🔴 `onOpenConcierge` 는 여기 있었고 서랍이 한 번도 부르지 않았다.
@@ -1370,14 +1380,62 @@ function TourRoomLive({
             viewerRole={viewerRole}
             textScale={settings.textScale}
             tts={{ bookingId, roomSession: data.session }}
+            myParticipantId={data.participant.id}
             opsHighlightAfter={viewerRole === 'customer' ? sosSentAt : null}
             preferredLocale={viewerRole === 'customer' ? chatLocale : null}
             onReply={!readOnly ? (m) => setReplyTo(m) : undefined}
+            /* §5-6 (GR-002) — a good answer already typed once gets promoted to
+               the all-rooms announce instead of being retyped. Guide only: the
+               broadcast route authorises the guide tour-date token, which this
+               client retains (B1) when the guide entered via their link. */
+            onPromoteToNotice={(() => {
+              if (viewerRole !== 'guide' || !authToken) return undefined;
+              // The guide's own tour-date token carries tourId/tourDate in its
+              // (unverified-here, server-verified) body — the snapshot's
+              // PII-minimal booking deliberately does not.
+              let meta: { tourId?: string; tourDate?: string } = {};
+              try {
+                meta = JSON.parse(atob(authToken.split('.')[0].replace(/-/g, '+').replace(/_/g, '/')));
+              } catch {
+                return undefined;
+              }
+              if (!meta.tourId || !meta.tourDate) return undefined;
+              return (text: string) => {
+                /**
+                 * 🔴 A success announces itself — the broadcast comes back over
+                 * realtime and lands in this very feed about five seconds later
+                 * (measured). A failure announced nothing at all: the old
+                 * `.catch(() => undefined)` swallowed both network errors and
+                 * non-2xx responses, so a fan-out that never happened looked
+                 * exactly like one still in flight. On a send to every guest on
+                 * the tour, that is the wrong thing to be quiet about.
+                 *
+                 * Visible failure UI is still owed (there is no toaster in this
+                 * surface, and this repo retired native dialogs on purpose) —
+                 * tracked as UX-012. Until then the failure is at least
+                 * diagnosable instead of erased.
+                 */
+                void (async () => {
+                  try {
+                    const res = await fetch('/api/tour-rooms/broadcast', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ tourId: meta.tourId, tourDate: meta.tourDate, token: authToken, text }),
+                    });
+                    if (!res.ok) {
+                      console.error('[promote-to-notice] broadcast rejected', res.status, await res.text().catch(() => ''));
+                    }
+                  } catch (error) {
+                    console.error('[promote-to-notice] broadcast failed', error);
+                  }
+                })();
+              };
+            })()}
             reactions={reactions}
             onReact={!readOnly ? (id, emoji) => void react(id, emoji) : undefined}
             lastReadByOthersAt={othersLastReadAt}
             typingUsers={typingUsers}
-            focusMessageId={deepLink.focusMessageId}
+            focusMessageId={focusMessageId}
             onExtraConfirm={
               viewerRole === 'customer' && !readOnly
                 ? async (extraId) => {

@@ -1,0 +1,500 @@
+{
+  "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
+  "title": "Pocheon y Yeoncheon: lago, cascada y la cantera Art Valley",
+  "subtitle": "Un paseo alrededor de un lago rodeado de montañas, una cascada de 18 m sobre columnas basálticas y un lago esmeralda en una cantera: dos geositios de un Geoparque Mundial de la UNESCO en un solo día sin prisas desde Seúl.",
+  "shortCardDescription": "Una excursión de un día desde Seúl más sosegada y construida sobre geología real. Recorra el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan; pruebe el Idong galbi (costillas de ternera), el plato propio de Pocheon; cruce después un puente colgante de 80 m para quedar frente a la cascada de Jaein mientras cae 18 m por columnas de basalto, y termine dentro de la cantera de granito de Pocheon Art Valley (el valle del arte de Pocheon), donde el agua de manantial ha llenado el hueco hasta formar el esmeralda lago Cheonjuho. La cascada de Jaein y Art Valley son geositios del Geoparque Mundial de la UNESCO del Hantangang: el mismo paisaje visto desde sus dos mitades opuestas. Sale lunes, jueves y sábados.",
+  "badges": [
+    "Excursión de un día desde Seúl",
+    "Geoparque UNESCO",
+    "Cascada",
+    "Paseo junto al lago",
+    "Grupo reducido"
+  ],
+  "tags": [
+    "Excursión de un día desde Seúl",
+    "Pocheon",
+    "Yeoncheon",
+    "Geoparque Mundial de la UNESCO",
+    "Cascada",
+    "Naturaleza",
+    "Fotogénico"
+  ],
+  "headlineLine1": "Lago, cascada",
+  "headlineLine2": "y la cantera Art Valley",
+  "heroTagline": "Un lago de montaña centenario, una cascada que cae entre columnas de basalto y un hueco de granito lleno de agua esmeralda: la geología de Pocheon y Yeoncheon, caminada en un solo día",
+  "heroDuration": "≈ 10 horas (primera recogida a las 08:00, último regreso a las 18:30)",
+  "heroPills": [
+    "Excursión de naturaleza",
+    "Geoparque Mundial de la UNESCO",
+    "Variedad estacional"
+  ],
+  "region": "Pocheon y Yeoncheon (excursión de un día desde Seúl)",
+  "duration": "10 horas",
+  "stopsCount": 4,
+  "heroStopsLabel": "4 paradas",
+  "seo": {
+    "pageTitle": "Excursión a Pocheon: lago Sanjeong, cascada de Jaein y Art Valley | AtoC Korea",
+    "metaDescription": "Excursión de 10 horas desde Seúl al Geoparque Mundial de la UNESCO del Hantangang: el circuito llano de 3,2 km del lago Sanjeong, los 18 m de basalto y el puente colgante de 80 m de la cascada de Jaein, y el lago esmeralda de la cantera de Pocheon Art Valley.",
+    "title": "Excursión de un día a Pocheon y Yeoncheon desde Seúl: lago, cascada de Jaein y Art Valley | AtoC Korea",
+    "primaryKeywords": [
+      "excursión de un día a Pocheon desde Seúl",
+      "tour a la cascada de Jaein",
+      "tour a Pocheon Art Valley",
+      "tour al lago Sanjeong",
+      "tour al Geoparque Mundial de la UNESCO del Hantangang"
+    ]
+  },
+  "routeShapeIntro": {
+    "title": "Cómo transcurre el día",
+    "subtitle": "Dos puntos de encuentro en Seúl — la estación de la Universidad Hongik (salida 8) a las 08:00 y la estación de Myeongdong (salida 2) a las 08:30 — y, después, unos 90 minutos hacia el noreste hasta Pocheon. El lago va primero, con las piernas frescas y la niebla de la mañana todavía sobre el agua. El almuerzo es el plato propio de Pocheon, comido allí donde nace. La tarde cruza a Yeoncheon para ver la cascada de Jaein a plena luz del día — el desfiladero no tiene iluminación — y se cierra en Pocheon Art Valley, el último de los tres en cerrar sus puertas y el más cercano a Seúl, de modo que el trayecto de vuelta es el más corto de la jornada. De vuelta en Myeongdong hacia las 18:00 y en la estación de la Universidad Hongik hacia las 18:30."
+  },
+  "routePhases": [
+    {
+      "phase": "El lago por la mañana",
+      "duration": "≈ 2 horas",
+      "description": "Recogidas en Seúl en la estación de la Universidad Hongik (salida 8, 08:00) y en la estación de Myeongdong (salida 2, 08:30) y trayecto hasta Pocheon; después, el circuito llano de 3,2 km alrededor del lago Sanjeong, bajo el monte Myeongseongsan."
+    },
+    {
+      "phase": "El almuerzo propio de Pocheon",
+      "duration": "≈ 1 hora",
+      "description": "Idong galbi (costillas de ternera), el plato que da nombre a este distrito, o una mesa de setas o de caracol de agua dulce. El almuerzo no está incluido."
+    },
+    {
+      "phase": "Dentro del geoparque",
+      "duration": "≈ 2 horas",
+      "description": "Hacia el oeste, a Yeoncheon, para ver la cascada de Jaein: un puente colgante de 80 m, una pasarela de cristal (skywalk) y 18 m de agua cayendo sobre columnas de basalto."
+    },
+    {
+      "phase": "Final en la cantera",
+      "duration": "≈ 2,5 horas",
+      "description": "Vuelta a Pocheon Art Valley: monorraíl hasta el borde superior, el esmeralda lago Cheonjuho al pie de las paredes de granito y un sendero por el bosque para bajar; después, el trayecto más corto del día de regreso a Seúl."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Lago Sanjeong",
+      "type": "origin",
+      "theme": "Lago de montaña"
+    },
+    {
+      "name": "Almuerzo de Idong galbi",
+      "type": "meal",
+      "theme": "El plato de Pocheon"
+    },
+    {
+      "name": "Cascada de Jaein",
+      "type": "primary",
+      "theme": "Geositio UNESCO"
+    },
+    {
+      "name": "Art Valley",
+      "type": "return",
+      "theme": "Final en la cantera"
+    }
+  ],
+  "whyTourWorks": {
+    "bestFor": [
+      "Viajeros que buscan una alternativa más tranquila a la isla de Nami",
+      "Parejas y fotógrafos que persiguen agua, acantilados y reflejos",
+      "Familias adultas y grupos multigeneracionales",
+      "Quien sienta curiosidad por cómo se formó realmente un paisaje",
+      "Visitantes que prefieren los paseos pausados a las agendas apretadas"
+    ],
+    "lessIdealFor": [
+      "Viajeros que quieran un día de compras o de mucha actividad",
+      "Quien necesite un plan totalmente cubierto para un día de lluvia",
+      "Visitantes decididos a ver un gran monumento único (mejor la fortaleza Hwaseong de Suwon)",
+      "Grupos que necesiten acceso sin escalones en todas las paradas"
+    ],
+    "items": [
+      {
+        "label": "Dos geositios UNESCO, las dos mitades opuestas de una misma historia",
+        "detail": "La cascada de Jaein y Art Valley pertenecen ambas al Geoparque Mundial de la UNESCO del Hantangang, certificado en julio de 2020, y muestran las dos mitades de un mismo terreno. En Art Valley se sitúa usted dentro del antiguo basamento de granito que la gente cortó a mano; en la cascada de Jaein queda frente a la joven lava basáltica que un día fluyó sobre ese mismo basamento y se enfrió formando columnas. Un hueco excavado por canteros y un desfiladero abierto por un río a través de la lava."
+      },
+      {
+        "label": "La caminata más larga va primero",
+        "detail": "El circuito del lago Sanjeong mide 3,2 km y es completamente llano: el mayor tramo de caminata del día, hecho con las piernas frescas. Las mañanas de primavera y otoño suelen levantar niebla del agua, y por eso esta parada no se deja para más tarde."
+      },
+      {
+        "label": "El almuerzo es el plato propio de la región, comido en su lugar de origen",
+        "detail": "El Idong galbi (costillas de ternera), que debe su nombre al distrito de Idong, en Pocheon, está a diez minutos en coche del lago, así que la comida no añade ni un kilómetro de trayecto. Las setas y el caracol de agua dulce son las otras mesas locales, y el makgeolli de Idong se elabora en este mismo valle."
+      },
+      {
+        "label": "Luz de día donde importa, y el trayecto de vuelta más corto",
+        "detail": "La cascada de Jaein está en un desfiladero sin iluminación: el puente colgante, el skywalk y la poza necesitan luz de tarde, por eso va antes del final. Art Valley es el que cierra más tarde de los tres y el más cercano a Seúl, lo que lo convierte a la vez en una última parada segura y en el trayecto de vuelta más corto."
+      }
+    ]
+  },
+  "stops": {
+    "sanjeong": {
+      "name": "Lago Sanjeong",
+      "time": "10:00",
+      "duration": "90 min",
+      "category": "Embalse rodeado de montañas y circuito junto al agua",
+      "description": "El **lago Sanjeong (산정호수)** se encuentra a unos 300 m de altitud, en un cuenco formado por tres montañas — el **monte Myeongseongsan (명성산, 923 m)**, Mangbongsan y Mangmubong — y su nombre significa literalmente *un lago tan claro como un pozo de montaña*. No es un lago natural: se construyó en **1925 como embalse agrícola** para los campos de cultivo de más abajo, de modo que el agua junto a la que pasea tiene ya un siglo.\n\nEl recorrido es un **circuito de 3,2 km** de pasarela de madera junto al agua y sendero de tierra compactada **sin una sola cuesta en todo su trazado**: entre una hora y hora y media a paso tranquilo, y el tramo de caminata más largo de toda la excursión. Algunos tramos de puente flotante llevan el sendero por encima del agua, y el **parque de esculturas** de la orilla norte nació del **Simposio Internacional de Escultura de Pocheon de 2005**, en el que 17 artistas coreanos e internacionales tallaron sus piezas in situ sobre un terreno de 13.383 m² en lugar de traer las obras ya terminadas.\n\nLa montaña que domina el lago guarda la primera historia del día. **Myeongseongsan significa «la montaña de los sonidos del llanto»**: se le puso ese nombre, según se cuenta, por los pájaros que habrían llorado los últimos años de **Gungye**, el caído fundador del reino de Taebong, de quien se recuerda que huyó por estos montes. Sus laderas altas albergan un **campo de hierba plateada de 198.347 m²**, considerado una de las cinco grandes colonias de eulalia de Corea, que tiñe toda la cresta de blanco plateado cada octubre y da al lago su festival de otoño.\n\n**La entrada al lago y a su sendero es gratuita.** En primavera y otoño es habitual que la niebla se levante de la superficie en las primeras horas del día: esa es la razón por la que esta parada abre el itinerario en lugar de cerrarlo.",
+      "highlights": [
+        "**Construido en 1925** como embalse agrícola: el lago cumplió su centenario en 2025",
+        "**Circuito de 3,2 km, completamente llano**: pasarela de madera y sendero de tierra, 60–90 min a paso lento",
+        "Rodeado por el **monte Myeongseongsan (923 m)**, Mangbongsan y Mangmubong",
+        "**Parque de esculturas** del Simposio Internacional de Escultura de Pocheon de 2005: 17 artistas, talladas in situ",
+        "**Myeongseongsan = «la montaña de los sonidos del llanto»**, por los pájaros que habrían llorado al rey Gungye",
+        "**Campo de hierba plateada de 198.347 m²** en las laderas de arriba: una de las cinco grandes colonias de eulalia de Corea",
+        "Las mañanas de primavera y otoño suelen levantar **niebla del agua**",
+        "**Entrada gratuita**; tramos de puente flotante y terrazas junto al agua a lo largo del circuito"
+      ],
+      "timeUsed": [
+        "Llegada, orientación y mirador junto al lago (~10 min)",
+        "El circuito de 3,2 km a paso tranquilo (~60 min)",
+        "Parque de esculturas y tiempo de fotos en el puente flotante (~15 min)",
+        "Regreso al autocar (~5 min)"
+      ],
+      "whyOnRoute": "**La caminata más larga del día, hecha la primera.** El circuito de 3,2 km es llano, pero sigue siendo el mayor tramo a pie de esta excursión, y le corresponde el inicio, con las piernas frescas. La mañana es además el mejor momento del lago: en primavera y otoño suele levantarse niebla de la superficie, y las montañas se leen con nitidez antes de la calima de la tarde. El lago Sanjeong es la más lejana de Seúl de las cuatro paradas, así que empezar aquí significa también que el resto del día avanza de forma constante de vuelta hacia la ciudad y no alejándose de ella.",
+      "visitBasics": {
+        "hours": "Abierto 24 horas, pero sin acceso desde la puesta de sol hasta 2 horas antes del amanecer",
+        "closed": "Abierto todo el año",
+        "admission": "Gratuita para el lago y el sendero circular; las barcas, el trineo y el parque de atracciones se pagan aparte",
+        "walking": "Fácil: circuito llano de 3,2 km, 60–90 min. La ascensión a la cima del monte Myeongseongsan es una ruta aparte, dura y de 5 horas, y no forma parte de esta excursión."
+      },
+      "convenience": {
+        "restroom": "En la zona de aparcamiento y a lo largo del paseo junto al lago",
+        "parking": "Aparcamiento de pago en el estacionamiento principal"
+      },
+      "smartNotes": {
+        "tip": "El circuito es llano de principio a fin; si prefiere sentarse, las terrazas junto al agua y el parque de esculturas están a pocos minutos del autocar. En octubre llegan el festival de la hierba plateada y la mayor afluencia del año.",
+        "photo": "Reflejos del lago y las montañas, más intensos con la niebla matinal de primavera u otoño. El puente flotante a mitad del circuito es el encuadre insignia; el parque de esculturas aporta primer plano.",
+        "facilities": "Cafeterías y restaurantes en la entrada del lago, embarcadero, parque de esculturas y zona de pícnic."
+      }
+    },
+    "lunch": {
+      "name": "Almuerzo: Idong galbi (mesa local de Pocheon)",
+      "time": "11:40",
+      "duration": "60 min",
+      "category": "Comida local (no incluida)",
+      "description": "El almuerzo está a diez minutos en coche del lago, en **Idong (이동)**, el distrito de Pocheon que dio nombre al **Idong galbi (이동갈비)**: las costillas de ternera que este valle lleva generaciones asando y por las que los coreanos salen de Seúl expresamente. Las otras mesas locales son los **platos de setas** y el **uleong (caracol de agua dulce)**, ambos especialidades de Pocheon, y el **makgeolli de Idong** se elabora en este mismo valle si desea el maridaje.\n\nEl almuerzo **no está incluido** (unos ₩15.000–20.000 según lo que pida), así que puede elegir mesa y presupuesto libremente. Su guía le indicará qué locales son adecuados para vegetarianos, ya que una casa de galbi no es la respuesta para todo el mundo.",
+      "highlights": [
+        "**Idong galbi (이동갈비)**: las costillas de ternera que deben su nombre a este mismo distrito",
+        "Las mesas de **setas** y de **uleong (caracol de agua dulce)** son las otras especialidades de Pocheon",
+        "El **makgeolli de Idong** se elabora en este mismo valle",
+        "A unos diez minutos del lago Sanjeong: la comida no añade trayecto alguno",
+        "**No incluido** (≈ ₩15.000–20.000): elija usted mismo su mesa",
+        "El guía le señalará las opciones aptas para vegetarianos"
+      ],
+      "timeUsed": [
+        "Breve trayecto desde el lago y acomodación en la mesa (~10 min)",
+        "Almuerzo (~45 min)",
+        "Regreso al autocar (~5 min)"
+      ],
+      "whyOnRoute": "**El plato propio de la región, comido allí donde nace.** Idong está a diez minutos del lago Sanjeong y prácticamente de camino hacia el oeste, de modo que la comida no le cuesta al día ni un kilómetro. Además cae a la hora adecuada: los 3,2 km de la mañana quedan atrás y por delante esperan las dos paradas del geoparque, que piden piernas firmes y algo de paciencia en escaleras y puentes."
+    },
+    "jaein": {
+      "name": "Cascada de Jaein (Geoparque Mundial de la UNESCO del Hantangang)",
+      "time": "13:30",
+      "duration": "65 min",
+      "category": "Cascada de basalto y puente colgante — geositio UNESCO",
+      "description": "La **cascada de Jaein (재인폭포)** está en **Yeoncheon**, no en Pocheon, y cruzar esa frontera comarcal es precisamente el sentido de la tarde. Un pequeño arroyo que baja desde el **Jijangbong**, al norte, alcanza el borde de un **acantilado de basalto y se precipita unos 18 m** hasta una poza verde. El acantilado no es roca cualquiera: es **disyunción columnar (columnar jointing)**, las columnas hexagonales que se forman cuando una colada de lava espesa se enfría y se contrae, y es la forma del relieve insignia del **Geoparque Mundial de la UNESCO del Hantangang**, certificado por la UNESCO el **7 de julio de 2020** y revalidado en 2024.\n\nTodo en esta parada es una lectura de aquella lava. Junto a la cascada podrá distinguir una **hasik-donggul (하식동굴)**, cueva de erosión fluvial excavada por el río en la base de las columnas; **marmitas de gigante** labradas en la roca por guijarros girando en la corriente; y **tubos de gas**, las burbujas congeladas que dejó el gas al escapar de la lava en enfriamiento. La cascada sigue avanzando lentamente aguas arriba, cortando hacia atrás la colada.\n\nEl acceso está pensado para contemplarla. Un **puente colgante de 80 m de largo y 2 m de ancho** salva el desfiladero de acantilado a acantilado y encara la cascada de frente; más allá, una **pasarela de cristal (skywalk) con suelo transparente** deja el desfiladero justo bajo sus pies. Una pasarela de madera desciende hacia la propia poza.\n\nEl nombre encierra la segunda historia del día. *Jaein* (재인, 才人) designaba a un **funámbulo**, un artista de la cuerda floja. Según se cuenta, un magistrado local codició a la esposa del artista, hizo tender una cuerda sobre este desfiladero y le ordenó salir a ella; después mandó cortarla. La viuda fingió someterse, le arrancó la nariz de un mordisco al magistrado y se quitó la vida. Desde entonces la aldea de abajo fue conocida como **Komun-ri, «la aldea donde mordieron la nariz»**, que con el tiempo se suavizó en el actual **Gomun-ri (고문리)**.\n\n**La entrada es gratuita.** Los tramos de pasarela pueden cerrarse durante las lluvias fuertes del verano, y el desfiladero no tiene iluminación: por eso esta parada se sitúa en plena tarde y no al final del día.",
+      "highlights": [
+        "**Cascada de ≈ 18 m sobre un acantilado de disyunción columnar basáltica**: la forma del relieve insignia del geoparque",
+        "**Geoparque Mundial de la UNESCO del Hantangang**, certificado el 7 de julio de 2020 y revalidado en 2024",
+        "**Puente colgante de 80 m × 2 m** sobre el desfiladero, encarando la cascada de frente",
+        "**Skywalk de suelo de cristal** más allá del puente, sobre el desfiladero",
+        "Lea la lava de cerca: **cueva fluvial hasik-donggul**, **marmitas de gigante**, **tubos de gas**",
+        "Debe su nombre a un **funámbulo (재인)**, y por él la aldea de abajo se sigue llamando Gomun-ri",
+        "**Entrada gratuita**; una pasarela de madera desciende hacia la poza esmeralda",
+        "Los tramos de pasarela pueden cerrarse con lluvias fuertes en verano"
+      ],
+      "timeUsed": [
+        "Bajada del autocar y paseo hasta el borde del desfiladero (~10 min)",
+        "Cruce del puente colgante y skywalk (~20 min)",
+        "Pasarela de bajada hacia la poza y las columnas (~25 min)",
+        "Subida de vuelta y reagrupación (~10 min)"
+      ],
+      "whyOnRoute": "**La mitad del geoparque que no se puede ver en Art Valley.** En la cantera se sitúa usted dentro de la antigua roca de granito del basamento; aquí queda frente a la joven lava basáltica que fluyó sobre ella y se enfrió en columnas: el mismo terreno, su otra capa, a cuarenta minutos de distancia. Además necesita la luz: el desfiladero no está iluminado y el puente, el skywalk y la poza piden pleno sol de tarde, de modo que va antes del final y no después.",
+      "visitBasics": {
+        "hours": "Acceso libre; muy recomendable durante las horas de luz, ya que el desfiladero no tiene iluminación",
+        "closed": "Los tramos de pasarela y las plataformas pueden cerrarse durante lluvias fuertes o tormentas de verano",
+        "admission": "Gratuita",
+        "walking": "Moderada: el puente colgante es llano pero se balancea; el esfuerzo está en la pasarela de bajada hacia la poza y la vuelta, con escaleras"
+      },
+      "convenience": {
+        "restroom": "En la zona de aparcamiento de visitantes, sobre el desfiladero",
+        "parking": "Aparcamiento gratuito para visitantes en la entrada de la cascada"
+      },
+      "smartNotes": {
+        "tip": "El puente se mueve bajo los pies por diseño: agárrese al pasamanos y mantenga un único sentido de marcha cuando haya mucha gente. Si prefiere no cruzarlo, el mirador del borde permite ver la cascada sin puente.",
+        "photo": "De frente, desde la mitad del puente colgante, está la foto. En vertical a través del cristal del skywalk para las columnas; desde la pasarela de abajo para la poza y los 18 m completos de caída.",
+        "facilities": "Aparcamiento, aseos y paneles interpretativos del geoparque en la entrada; no hay tiendas en el desfiladero, así que lleve agua."
+      }
+    },
+    "artvalley": {
+      "name": "Pocheon Art Valley (Geoparque Mundial de la UNESCO del Hantangang)",
+      "time": "15:20",
+      "duration": "70 min",
+      "category": "Cantera convertida en parque de arte, con monorraíl — geositio UNESCO",
+      "description": "**Pocheon Art Valley (포천 아트밸리)** es un agujero hecho por la gente. El granito de aquí — el **Pocheonseok (포천석)**, la piedra de Pocheon extraída de esta ladera — se empleó en la **Casa Azul (Blue House), la Asamblea Nacional y el Aeropuerto Internacional de Incheon**, y cuando se agotó la roca aprovechable la cantera fue **abandonada en 2003**, dejando sobre el pueblo un hueco lleno de cicatrices. En 2005 Pocheon emprendió la **primera restauración ecológica de una cantera abandonada de Corea**, y el lugar reabrió en **2009** convertido en parque de arte. Hoy recibe unos **400.000 visitantes al año**.\n\nEl hueco se llenó solo. El agua de manantial y la de lluvia se acumularon en la excavación hasta formar el **Cheonjuho (천주호)**, de hasta **20 m de profundidad**, cuyo sorprendente color esmeralda procede del sedimento de granito en suspensión, que devuelve la luz hacia arriba. A su alrededor se alzan **paredes verticales de granito de unos 50 m**, que aún conservan las marcas de las herramientas de corte, y cerca del auditorio todavía se pueden encontrar los **barrenos perfectamente redondos** perforados para la dinamita, la firma más clara que ha sobrevivido de la cantera. Este granito es la roca del *basamento* de la región, el antiguo suelo sobre el que después fluyó la lava del Hantangang, y por eso el lugar es geositio del mismo geoparque que la cascada de Jaein, inscrito allí como **«Art Valley y la piedra de Pocheon»**.\n\nUn **monorraíl de 420 m** sube la ladera desde la taquilla hasta el borde superior en unos cinco minutos. Lo habitual es **subir en monorraíl y bajar a pie** por el paseo del Bosque Sanador: de diez a quince minutos de sendero a la sombra. Arriba están el parque de esculturas, el **auditorio Hosu** — un escenario al aire libre de 300 plazas encajado entre el acantilado de 50 m y el lago —, los miradores del Sky Garden y un museo de astronomía inaugurado en 2014. Los seguidores de **The Legend of the Blue Sea**, **Moon Lovers: Scarlet Heart Ryeo** y **Hwayugi** reconocerán estas aguas.\n\n**La entrada y el monorraíl se pagan por separado** y no están incluidos en el precio de la excursión: aproximadamente **₩6.000** de entrada y **₩5.300** por el trayecto de ida y vuelta en monorraíl para un adulto en 2026, con tarifas más bajas para jóvenes, militares y niños. Su guía se encarga de la cola de las taquillas.",
+      "highlights": [
+        "El **granito Pocheonseok** de esta cantera construyó la Casa Azul, la Asamblea Nacional y el aeropuerto de Incheon",
+        "Cantera **abandonada en 2003**; **primera restauración ecológica** de una cantera en Corea, reabierta en **2009**",
+        "**Cheonjuho**: lago de cantera alimentado por manantiales, de hasta **20 m de profundidad**, esmeralda por el sedimento de granito en suspensión",
+        "**Paredes verticales de granito de ≈ 50 m** que aún conservan marcas de corte y **barrenos** redondos de dinamita",
+        "Geositio del **Geoparque Mundial de la UNESCO del Hantangang** con el nombre de *«Art Valley y la piedra de Pocheon»*",
+        "**Monorraíl de 420 m**, ~5 min hasta el borde: se sube en él y se baja a pie por el paseo del Bosque Sanador",
+        "**Auditorio Hosu**, escenario al aire libre de 300 plazas entre el acantilado y el lago",
+        "Localización de rodaje de **The Legend of the Blue Sea**, **Moon Lovers** y **Hwayugi**",
+        "≈ **400.000 visitantes al año**; la entrada y el monorraíl se pagan por separado (no incluidos)"
+      ],
+      "timeUsed": [
+        "Compra de entradas en la base y subida en monorraíl (~15 min)",
+        "Orilla del Cheonjuho y miradores (~25 min)",
+        "Parque de esculturas y auditorio (~15 min)",
+        "Bajada a pie por el Bosque Sanador y reagrupación (~15 min)"
+      ],
+      "whyOnRoute": "**La última parada más segura, y el camino más corto a casa.** Art Valley cierra más tarde que el lago o el desfiladero, así que una tarde pausada no cuesta nada aquí y, de las cuatro paradas, es la más cercana a Seúl: terminar aquí hace que el trayecto final sea el más corto del día. También cierra la geología: después de haber estado frente a la lava en la cascada de Jaein, termina usted dentro del antiguo granito sobre el que aquella lava corrió, en un hueco que la gente excavó y que la tierra volvió a llenar en silencio.",
+      "visitBasics": {
+        "hours": "09:00–19:00 (último acceso ≈ 17:30); monorraíl de lunes a viernes y domingos/festivos 09:00–17:50, sábados hasta las 21:50 — con variación estacional",
+        "closed": "Abierto todo el año",
+        "admission": "No incluida. ≈ ₩6.000 adultos / ₩4.000 jóvenes y militares / ₩2.000 niños. Monorraíl aparte: ≈ ₩5.300 por adulto, ida y vuelta. Confírmelo in situ — tarifas de 2026.",
+        "walking": "Moderada: pendiente pronunciada de la base al borde superior (se recomienda el monorraíl); llano alrededor del lago y en el jardín de arriba; la bajada a pie por el Bosque Sanador es de 10–15 min"
+      },
+      "convenience": {
+        "restroom": "En la taquilla de la base y en la zona ajardinada de arriba",
+        "parking": "Aparcamiento gratuito en la base"
+      },
+      "smartNotes": {
+        "tip": "Tome el monorraíl **para subir** y baje **a pie**: cinco minutos ahorrados en la cuesta, y el paseo por el bosque es la dirección más agradable para caminar. Está prohibido entrar en el agua, por seguridad y para proteger el lago.",
+        "photo": "El Cheonjuho desde la terraza junto al agua es el encuadre icónico: agua esmeralda contra granito vertical. El mirador del lago ofrece el ángulo elevado; los barrenos cerca del auditorio son la huella dactilar de la cantera.",
+        "facilities": "Cafetería mirador, pequeño restaurante y quiosco, parque de esculturas, Centro de Exposición de la Cultura de la Piedra, museo de astronomía y Sky Garden."
+      }
+    }
+  },
+  "staticQuestions": [
+    {
+      "question": "¿Qué ha cambiado en esta excursión? ¿No incluía Herb Island?",
+      "answer": "Así era. Desde agosto de 2026 la ruta cambia Herb Island por la cascada de Jaein, en Yeoncheon, y añade una parada para comer en un local de la zona. El motivo es que la cascada de Jaein y Pocheon Art Valley son ambas geositios del Geoparque Mundial de la UNESCO del Hantangang, de manera que el día cuenta ahora una única historia geológica encadenada en lugar de tres paradas inconexas. Si desea concretamente Herb Island, contacte con nosotros antes de reservar: lo organizamos como un servicio aparte."
+    },
+    {
+      "question": "¿Qué hace que la cascada de Jaein y Art Valley sean «UNESCO»?",
+      "answer": "Ambas están designadas geositios del Geoparque Mundial de la UNESCO del Hantangang, certificado el 7 de julio de 2020 y revalidado en 2024. Se trata de una designación de geoparque, no de una inscripción en el Patrimonio Mundial: reconoce la geología de la cuenca del río Hantangang a su paso por Pocheon, Yeoncheon y Cheorwon. La cascada de Jaein muestra la lava basáltica y su disyunción columnar; Art Valley muestra el antiguo basamento de granito sobre el que fluyó esa lava."
+    },
+    {
+      "question": "¿Da miedo el puente colgante de la cascada de Jaein? ¿Puedo saltármelo?",
+      "answer": "Mide 80 m de largo y 2 m de ancho, y sí se balancea bajo los pies por diseño; para la mayoría de los clientes ese es justamente su atractivo. Puede omitirlo por completo: el mirador del borde permite ver la cascada sin cruzar, y la pasarela hacia la poza es un camino independiente. Nadie se queda atrás si prefiere permanecer en tierra firme."
+    },
+    {
+      "question": "¿Están incluidas las entradas?",
+      "answer": "El lago Sanjeong y la cascada de Jaein son ambos gratuitos. Pocheon Art Valley no está incluido: unos ₩6.000 de entrada más unos ₩5.300 por el trayecto de ida y vuelta en monorraíl para un adulto en 2026, con tarifas más bajas para jóvenes, militares y niños. El almuerzo tampoco está incluido (≈ ₩15.000–20.000). Todo lo demás — transporte, guía, peajes y aparcamiento — está cubierto."
+    },
+    {
+      "question": "¿Cuánto se camina y qué dificultad tiene?",
+      "answer": "Entre 5 y 6 km a lo largo del día, la mayor parte en el circuito llano de 3,2 km del lago por la mañana. La cascada de Jaein tiene escaleras en la pasarela que baja hacia la poza. Art Valley presenta una pendiente pronunciada de la base al borde superior, que el monorraíl resuelve: se sube en él y se baja a pie por el bosque. En esta excursión no hay senderismo ni ascensión a ninguna cima."
+    },
+    {
+      "question": "¿Está incluido el almuerzo y qué opciones hay?",
+      "answer": "No está incluido; unos ₩15.000–20.000. El almuerzo es en Idong, el distrito de Pocheon que da nombre al Idong galbi (costillas de ternera). Los platos de setas y el uleong (caracol de agua dulce) son las otras especialidades locales, y el makgeolli de Idong se elabora en este mismo valle. Comunique a su guía si necesita opciones vegetarianas y le indicará la mesa adecuada."
+    },
+    {
+      "question": "¿En qué se diferencia de una excursión a la isla de Nami?",
+      "answer": "La isla de Nami es un único destino, muy popular, al que se llega en ferry. Esta ruta reúne tres paisajes verdaderamente distintos — un embalse centenario, un desfiladero con una cascada de basalto y una cantera de granito inundada — en una parte de Gyeonggi que recibe una fracción del gentío de Nami, con el hilo conductor de un Geoparque Mundial de la UNESCO recorriendo toda la tarde."
+    },
+    {
+      "question": "¿Merece la pena en invierno?",
+      "answer": "Sí, con sus contrapartidas. El Cheonjuho helado en Art Valley es una de las mejores estampas del lugar, el lago acoge un festival de trineos y todas las paradas están en su momento más tranquilo. En contra: los días son cortos, por lo que la tarde va más justa, y la pasarela de la cascada de Jaein puede tener hielo. Bien abrigado, es un gran día de invierno."
+    },
+    {
+      "question": "¿Qué pasa si llueve?",
+      "answer": "La excursión se realiza igualmente. El circuito del lago y Art Valley se disfrutan bien con paraguas, y la lluvia incluso refuerza la cascada de Jaein. La única excepción real son las lluvias fuertes del verano, cuando los tramos de pasarela del desfiladero pueden cerrarse por seguridad; en ese caso ampliamos las demás paradas en lugar de cancelar el día."
+    },
+    {
+      "question": "¿Dónde son la recogida y el regreso?",
+      "answer": "Dos puntos de encuentro en Seúl: la estación de la Universidad Hongik (salida 8) a las 08:00 y la estación de Myeongdong (salida 2) a las 08:30. Le rogamos llegar 10 minutos antes de su hora de salida: el guía espera en la salida con el autobús. El regreso invierte el orden: Myeongdong hacia las 18:00 y la estación de la Universidad Hongik hacia las 18:30, según el tráfico."
+    },
+    {
+      "question": "¿Es adecuada para niños o personas mayores?",
+      "answer": "Para la mayoría, sí. El circuito del lago es llano y el monorraíl elimina la subida de Art Valley. Los dos puntos a valorar son las escaleras de la pasarela de la cascada de Jaein y el balanceo del puente colgante: ambos son opcionales, y el mirador del borde ofrece la cascada a quien prefiera no cruzarlo. Es una jornada de 10 horas, así que se adapta mejor a viajeros mayores activos que a quien necesite descansos frecuentes."
+    },
+    {
+      "question": "¿Puedo hacerlo por mi cuenta en transporte público?",
+      "answer": "Sería difícil. El lago Sanjeong, la cascada de Jaein y Art Valley se reparten en tres distritos distintos de dos comarcas, y los autobuses a Art Valley pasan solo cada dos horas aproximadamente. Hacer los tres en un día sin vehículo no es realista, y esa es buena parte de la razón por la que esta ruta existe como excursión organizada."
+    }
+  ],
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar.–may.)",
+      "description": "La niebla se levanta del lago Sanjeong en las mañanas frescas, y el deshielo mantiene la cascada de Jaein con mucho caudal. El Cheonjuho luce su esmeralda más nítido a medida que se alargan los días."
+    },
+    {
+      "season": "Verano (jun.–ago.)",
+      "description": "La cascada alcanza su máxima potencia y el desfiladero se mantiene varios grados más fresco que la ciudad. Las lluvias intensas del monzón pueden cerrar los tramos de pasarela de la cascada de Jaein: el único riesgo meteorológico de esta ruta."
+    },
+    {
+      "season": "Otoño (sept.–nov.)",
+      "description": "La mejor estación aquí. La hierba plateada tiñe de blanco plateado las laderas del monte Myeongseongsan durante todo octubre, el lago ofrece los mejores reflejos del año y las paredes de granito de Art Valley quedan enmarcadas por el follaje en pleno color."
+    },
+    {
+      "season": "Invierno (dic.–feb.)",
+      "description": "La menor afluencia del año. El Cheonjuho puede helarse por completo, el lago acoge su festival de trineos y la cascada puede congelarse parcialmente. Los días son cortos, así que la tarde va más justa y la pasarela de Jaein puede resbalar."
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Valor fotográfico",
+      "value": "Excelente",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Paisaje",
+      "value": "Excelente",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Caminata",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Seguridad ante la lluvia",
+      "value": "Moderada",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Aptitud familiar",
+      "value": "Buena",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Equilibrio",
+      "value": "Flexible",
+      "level": 5
+    }
+  ],
+  "practical": {
+    "walkingTitle": "Caminata y terreno",
+    "walkingContent": [
+      "Moderada en conjunto: entre 5 y 6 km a lo largo del día, con algunos tramos exigentes y breves.",
+      "Lago Sanjeong: circuito llano de 3,2 km, sin cuestas, 60–90 min.",
+      "Cascada de Jaein: el puente colgante de 80 m es llano pero se balancea; la pasarela que baja hacia la poza tiene escaleras en ambos sentidos.",
+      "Pocheon Art Valley: pendiente pronunciada de la base al borde superior, que el monorraíl resuelve; la bajada a pie por el Bosque Sanador es de 10–15 min.",
+      "No se incluye senderismo ni ascensión a ninguna cima en ninguna parada.",
+      "Se recomienda calzado cerrado y cómodo; la pasarela del desfiladero puede estar mojada."
+    ],
+    "includedTitle": "Qué incluye",
+    "includedContent": [
+      "Transporte de ida y vuelta desde el centro de Seúl, guía titulado en inglés, combustible, peajes y aparcamiento.",
+      "Paradas de entrada gratuita: el lago Sanjeong y su sendero circular, la cascada de Jaein, el puente colgante y el skywalk.",
+      "No incluido: la entrada a Pocheon Art Valley (≈ ₩6.000 adultos) y el monorraíl (≈ ₩5.300 por adulto, ida y vuelta), tarifas de 2026.",
+      "No incluido: el almuerzo (≈ ₩15.000–20.000), las bebidas, los gastos personales y las propinas."
+    ],
+    "geoparkTitle": "Sobre el Geoparque Mundial de la UNESCO",
+    "geoparkPreview": "Dos de las paradas de hoy son geositios designados.",
+    "geoparkContent": [
+      "El Geoparque Mundial de la UNESCO del Hantangang fue certificado el 7 de julio de 2020 por el 209.º Consejo Ejecutivo de la UNESCO en París, y revalidado en 2024. Abarca la cuenca del río Hantangang a su paso por Pocheon y Yeoncheon, en Gyeonggi-do, y Cheorwon, en Gangwon-do.",
+      "La cascada de Jaein es un geositio: una cascada de ≈18 m sobre disyunción columnar basáltica, con una cueva excavada por el río, marmitas de gigante y tubos de gas legibles en su base.",
+      "Pocheon Art Valley es un geositio inscrito como «Art Valley y la piedra de Pocheon»: la antigua roca de granito del basamento sobre la que después fluyó la lava del Hantangang.",
+      "Un Geoparque Mundial de la UNESCO es una designación geológica: no es lo mismo que una inscripción en el Patrimonio Mundial de la UNESCO."
+    ]
+  },
+  "pdNotes": "Dos puntos de encuentro: la estación de la Universidad Hongik (salida 8) a las 08:00 y la estación de Myeongdong (salida 2) a las 08:30; le rogamos llegar 10 minutos antes de su hora de salida. El regreso pasa por Myeongdong hacia las 18:00 y después por la estación de la Universidad Hongik hacia las 18:30; las horas exactas dependen del tráfico.",
+  "stickyNote": "Seleccione su fecha y el tamaño del grupo para consultar la disponibilidad en tiempo real y completar su reserva.",
+  "matchingMetadata": {
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Jaein Falls",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "jaein_falls",
+      "pocheon_art_valley"
+    ],
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
+    ],
+    "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
+    "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
+  },
+  "pickupDropoff": {
+    "meetingPoints": [
+      {
+        "name": "Estación de la Universidad Hongik (salida 8)",
+        "time": "08:00",
+        "note": "Primer punto de encuentro en Seúl. Reúnase con su guía en la salida 8: el personal espera allí con el autobús."
+      },
+      {
+        "name": "Estación de Myeongdong (salida 2)",
+        "time": "08:30",
+        "note": "Segundo punto de encuentro en Seúl. Reúnase con su guía en la salida 2: el personal espera allí con el autobús."
+      }
+    ],
+    "dropoffPoints": [
+      {
+        "name": "Estación de Myeongdong",
+        "time": "18:00",
+        "note": "Primera parada de regreso en Seúl, aproximada."
+      },
+      {
+        "name": "Estación de la Universidad Hongik",
+        "time": "18:30",
+        "note": "Última parada de regreso en Seúl, aproximada."
+      }
+    ],
+    "accordionContent": [
+      "Dos puntos de recogida: la estación de la Universidad Hongik (salida 8, 08:00) y la estación de Myeongdong (salida 2, 08:30).",
+      "Le rogamos llegar a su punto de encuentro 10 minutos antes de la hora de salida.",
+      "Su guía espera con el autobús en la salida de la estación.",
+      "El regreso invierte el orden: Myeongdong hacia las 18:00 y la estación de la Universidad Hongik hacia las 18:30.",
+      "Las horas de regreso son aproximadas y dependen del tráfico.",
+      "Se trata de un formato de grupo con ruta fija; los viajeros llegan por su cuenta al punto de encuentro."
+    ]
+  },
+  "departureDays": {
+    "badge": "Lun · jue · sáb",
+    "accordionTitle": "Días de salida",
+    "accordionContent": [
+      "Este tour sale **únicamente los lunes, jueves y sábados**: reserva una de esas fechas.",
+      "La ruta, los horarios y los dos puntos de recogida son idénticos en los tres días de salida.",
+      "Si tus fechas no incluyen un lunes, jueves o sábado, el tour no puede trasladarse a otro día: es una salida de grupo reducido con horario fijo, no un vehículo privado."
+    ],
+    "faqQ": "¿Qué días de la semana opera este tour?",
+    "faqA": "Opera **solo los lunes, jueves y sábados**. El itinerario es el mismo los tres días, así que reserva el que mejor encaje en tu viaje. El resto de días no están disponibles en este producto.",
+    "lessIdeal": "Viajeros que no pueden viajar un lunes, jueves o sábado (los únicos días de salida)",
+    "cardSuffix": " Sale lunes, jueves y sábados."
+  }
+}

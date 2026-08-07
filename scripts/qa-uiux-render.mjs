@@ -28,7 +28,13 @@ import { chromium } from 'playwright';
 import { readFileSync } from 'node:fs';
 
 /** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
-export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide', '/tour-mode/plan/[bookingId]'];
+export const COVERS = [
+  '/tour-mode/room/[bookingId]',
+  '/tour-mode/guide',
+  '/tour-mode/plan/[bookingId]',
+  '/tour-mode/join/[roomToken]',
+  '/tour-mode/companion/[token]',
+];
 
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3181';
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
@@ -242,7 +248,7 @@ const results = [];
  * exists to stop. An unreachable surface is recorded as unreachable and the
  * process exits non-zero, so a silent skip can never be mistaken for a pass.
  */
-async function visit(name, url, ready, after) {
+async function visit(name, url, ready, after, alive) {
   try {
     await newPage();
     await page.goto(BASE + url, { waitUntil: 'domcontentloaded', timeout: 120000 });
@@ -263,6 +269,22 @@ async function visit(name, url, ready, after) {
      * empty one manufactures failures, and manufactured failures get ignored.
      */
     const text = (await page.evaluate(() => document.body.innerText ?? '')).replace(/\s+/g, ' ').trim();
+    /**
+     * 🔴 The invite landings broke the count-based heuristic the first time it
+     * met them: `join-landing` renders its real "no vehicle assigned yet" state
+     * with **0 controls and 30 characters**, and `companion-landing` its real
+     * name form with 2 controls and 58. Both are the app working, and both were
+     * reported as unreachable — the very "manufactured failure" this function's
+     * comment warns about, arriving from the other direction.
+     *
+     * So a surface may name a marker that proves the app rendered a state of its
+     * own. When it does, that beats the counts; the counts stay as the fallback
+     * for surfaces that have no such marker.
+     */
+    if (alive && (await page.locator(alive).count().catch(() => 0)) > 0) {
+      results.push({ surface: name, ...m });
+      return;
+    }
     if (m.controls < 5 && text.length < 80) {
       results.push({ surface: name, unreachable: `${m.controls} controls, ${text.length} chars — "${text.slice(0, 100)}"` });
       return;
@@ -308,6 +330,47 @@ await visit('plan-editor', `/tour-mode/plan/${fx.booking1}?${rt}`, 'main, [data-
  * indoor), so D/L/P numbers are collected but not judged for this surface.
  */
 await visit('ops-console', '/admin/tour-ops', 'main, [data-testid="ops-shell"], h1');
+
+/**
+ * 🔴 G2 — the two invite landings. Until 2026-08-04 these were the ONLY
+ * tour-mode surfaces no real-render harness had ever visited
+ * (`docs/audit/UIUX-COVERAGE.md` §2 listed both as **없음**). The reason was
+ * never difficulty: reaching them needs a signed token, no fixture carried one,
+ * so every harness silently skipped them. `sim-populate.ts` now mints both.
+ *
+ * They are the first thing a guest ever sees of this product — a link from
+ * KakaoTalk — and nothing had ever measured them.
+ *
+ * ⚠ `join` is a client state machine (`JoinFlow`); its SSR body is only
+ * "Loading…", so waiting on server markup here would report a working screen as
+ * dead. Wait for the hydrated form instead.
+ */
+await visit(
+  'join-landing',
+  fx.joinUrl,
+  'main',
+  async () => {
+    // The flow settles through loading → roster/verify/seats; wait for a phase
+    // that is not the spinner rather than for any control (there may be none).
+    await page
+      .waitForSelector('[data-testid="join-seats"], [data-testid="join-roster"], [data-testid="join-verify"], [data-testid="join-error"], [data-testid="join-already"], [data-testid="join-done"]', {
+        timeout: 45000,
+      })
+      .catch(() => {});
+    await page.waitForTimeout(900);
+  },
+  '[data-testid^="join-"]:not([data-testid="join-loading"])',
+);
+await visit(
+  'companion-landing',
+  fx.companionUrl,
+  'main',
+  async () => {
+    await page.waitForSelector('input, button', { timeout: 30000 }).catch(() => {});
+    await page.waitForTimeout(900);
+  },
+  'input, button',
+);
 
 await visit('cockpit', fx.guideUrl, '[data-testid="drive-hero"], [data-testid="staff-tab-btn-ops"]', async () => {
   const hero = page.locator('[data-testid="drive-hero"]');

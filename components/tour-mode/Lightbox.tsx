@@ -55,7 +55,13 @@ export default function Lightbox({
     restoreRef.current = (document.activeElement as HTMLElement | null) ?? null;
     containerRef.current?.focus();
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onCloseRef.current();
+      if (e.key === 'Escape') {
+        // T3 (§O ⑥) — the viewer is the topmost layer, so it CONSUMES the key.
+        // The drawer beneath listens on window (document fires first on the
+        // bubble path); without this, one Esc closed both layers at once.
+        e.stopPropagation();
+        onCloseRef.current();
+      }
     };
     document.addEventListener('keydown', onKey);
     const prevOverflow = document.body.style.overflow;

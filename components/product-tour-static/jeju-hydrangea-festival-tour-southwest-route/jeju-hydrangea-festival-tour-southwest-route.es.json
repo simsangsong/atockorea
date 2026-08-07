@@ -1016,7 +1016,7 @@
             "detail": "Si tus fechas caen fuera de la temporada de hortensias, nuestra ruta anual del Oeste y Sur cubre la misma región con puntos de interés durante todo el año (Hallasan, Osulloc, Aewol)."
           },
           {
-            "label": "Camellia Hill no es temporada de camelias > **Notes:** > - Items **17** and **25** (`bg-amber-50/80`, `bg-pink-50/80`) are Tailwind CSS class names and have been left untranslated as they are technical identifiers. > - Proper nouns (Hyeopjae, Hallim, Camellia Hill, Osulloc, Hallasan, Aewol, UNESCO) are retained as-is, which is standard practice in travel content.",
+            "label": "Camellia Hill no es temporada de camelias",
             "detail": "A pesar del nombre, este tour visita Camellia Hill específicamente por las hortensias — las camelias reales florecen en invierno."
           }
         ]
@@ -1083,7 +1083,7 @@
     },
     {
       "id": "weather-policy",
-      "title": "Política en caso de mal tiempo > **Nota sobre la línea 3:** `bg-sky-50/80` es un nombre de clase CSS/Tailwind y se ha dejado sin traducir, ya que es código técnico.",
+      "title": "Política en caso de mal tiempo",
       "preview": "Con lluvia ligera, el tour opera; con lluvia intensa, se reprograma",
       "content": [
         "Lluvia ligera: el tour opera (las hortensias se fotografían muy bien con lluvia suave)",
@@ -1297,7 +1297,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / env; no forma parte del JSONB estático.",
+    "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
     "price": {
       "amountLabel": "64",
       "salePriceUsd": 64,
@@ -2913,7 +2913,7 @@
       "section_html_id": null,
       "component": "BarDereservaSuperiorDeTour",
       "props": {
-        "note": "checkout_tour_id se resuelve en tiempo de ejecución desde Supabase / variables de entorno; no forma parte del JSONB estático.",
+        "note": "Selecciona la fecha y el tamaño de tu grupo para comprobar la disponibilidad en tiempo real y completar tu reserva.",
         "price": {
           "amountLabel": "",
           "currency": "USD",

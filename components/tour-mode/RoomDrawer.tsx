@@ -20,6 +20,7 @@ import Avatar from '@/components/tour-mode/Avatar';
 import Lightbox from '@/components/tour-mode/Lightbox';
 import type { DrawerAttachmentItem, DrawerLinkItem } from '@/lib/tour-room/drawer';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
+import { formatBubbleTime } from '@/lib/tour-room/timeFormat';
 import { useInstallPrompt } from '@/hooks/useInstallPrompt';
 import { useTourRoomSettings } from '@/hooks/useTourRoomSettings';
 import {
@@ -50,6 +51,10 @@ const COPY: Record<
     /** Marks the viewer in the member list. */
     me: string;
     empty: string;
+    /** T3 — keyset pagination: fetch the next page of a media kind. */
+    more: string;
+    /** §5-3 (2026-08-04) — in-room chat search. */
+    search: string;
     schedule: string;
     map: string;
     settings: string;
@@ -70,6 +75,8 @@ const COPY: Record<
     members: 'Members',
     me: '(you)',
     empty: 'Nothing here yet',
+    more: 'More',
+    search: 'Search chat',
     schedule: 'Today',
     map: 'Map',
     settings: 'Settings',
@@ -87,6 +94,8 @@ const COPY: Record<
     members: '대화상대',
     me: '(나)',
     empty: '아직 없어요',
+    more: '더 보기',
+    search: '대화 검색',
     schedule: '오늘 일정',
     map: '지도',
     settings: '설정',
@@ -104,6 +113,8 @@ const COPY: Record<
     members: 'メンバー',
     me: '(自分)',
     empty: 'まだありません',
+    more: 'もっと見る',
+    search: 'チャット検索',
     schedule: '本日',
     map: '地図',
     settings: '設定',
@@ -121,6 +132,8 @@ const COPY: Record<
     members: 'Miembros',
     me: '(tú)',
     empty: 'Aún no hay nada',
+    more: 'Ver más',
+    search: 'Buscar en el chat',
     schedule: 'Hoy',
     map: 'Mapa',
     settings: 'Ajustes',
@@ -138,6 +151,8 @@ const COPY: Record<
     members: '成员',
     me: '(我)',
     empty: '暂时没有内容',
+    more: '查看更多',
+    search: '搜索聊天',
     schedule: '今日',
     map: '地图',
     settings: '设置',
@@ -155,6 +170,8 @@ const COPY: Record<
     members: '成員',
     me: '(我)',
     empty: '目前還沒有內容',
+    more: '查看更多',
+    search: '搜尋聊天',
     schedule: '今日',
     map: '地圖',
     settings: '設定',
@@ -172,6 +189,8 @@ const COPY: Record<
     members: 'Membres',
     me: '(vous)',
     empty: 'Rien pour l’instant',
+    more: 'Voir plus',
+    search: 'Rechercher dans le chat',
     schedule: 'Aujourd’hui',
     map: 'Carte',
     settings: 'Réglages',
@@ -189,6 +208,8 @@ const COPY: Record<
     members: 'Mitglieder',
     me: '(Sie)',
     empty: 'Noch nichts da',
+    more: 'Mehr anzeigen',
+    search: 'Chat durchsuchen',
     schedule: 'Heute',
     map: 'Karte',
     settings: 'Einstellungen',
@@ -206,6 +227,8 @@ const COPY: Record<
     members: 'Участники',
     me: '(вы)',
     empty: 'Пока пусто',
+    more: 'Ещё',
+    search: 'Поиск в чате',
     schedule: 'Сегодня',
     map: 'Карта',
     settings: 'Настройки',
@@ -223,6 +246,8 @@ const COPY: Record<
     members: 'Membri',
     me: '(tu)',
     empty: 'Ancora niente qui',
+    more: 'Mostra altro',
+    search: 'Cerca nella chat',
     schedule: 'Oggi',
     map: 'Mappa',
     settings: 'Impostazioni',
@@ -255,6 +280,8 @@ export default function RoomDrawer({
   roomSession,
   participants,
   myParticipantId,
+  messages,
+  onJumpToMessage,
   onClose,
   onSelectTab,
   onOpenEmergency,
@@ -270,6 +297,10 @@ export default function RoomDrawer({
    * not find themselves in the list of who is here.
    */
   myParticipantId?: string | null;
+  /** §5-3 — the loaded feed, searched in place; absent = no search section. */
+  messages?: Array<{ id: string; created_at: string; source_text: string; translations?: Record<string, string> | null; metadata?: Record<string, unknown> | null }>;
+  /** §5-3 — jump the chat to a message (reuses the focusMessageId engine). */
+  onJumpToMessage?: (id: string) => void;
   onClose: () => void;
   onSelectTab: (tab: 'schedule' | 'map' | 'settings') => void;
   onOpenEmergency: () => void;
@@ -296,22 +327,50 @@ export default function RoomDrawer({
   const [lightbox, setLightbox] = useState<{ url: string; name?: string | null } | null>(null);
   // 적대적 리뷰 #3 — 만료 세션의 403이 "아직 없어요"로 위장되면 안 된다.
   const [authExpired, setAuthExpired] = useState(false);
+  /**
+   * T3 (§O ⑥) — the media route has been keyset-paginated since U4-D5
+   * (`?cursor=` in, `nextCursor` out) and the drawer never sent the cursor:
+   * the engine existed with no caller, so a room's 31st photo was simply
+   * unreachable. A non-null cursor renders a "more" affordance per kind.
+   */
+  const [cursors, setCursors] = useState<Record<'image' | 'file' | 'link', string | null>>({
+    image: null,
+    file: null,
+    link: null,
+  });
+  const [busyKind, setBusyKind] = useState<'image' | 'file' | 'link' | null>(null);
+  /** §5-3 — in-memory search over the loaded feed (tombstones excluded). */
+  const [query, setQuery] = useState('');
+  const queryTrim = query.trim().toLowerCase();
+  const searchHits =
+    messages && queryTrim.length >= 2
+      ? messages
+          .filter((m) => (m.metadata as { deleted?: unknown } | null)?.deleted !== true)
+          .filter((m) => {
+            const hay = [m.source_text ?? '', ...Object.values(m.translations ?? {})].join('\n').toLowerCase();
+            return hay.includes(queryTrim);
+          })
+          .slice(-20)
+          .reverse()
+      : [];
 
   const fetchKind = useCallback(
-    async (kind: 'image' | 'file' | 'link') => {
+    async (kind: 'image' | 'file' | 'link', cursor?: string) => {
+      const empty = { items: [] as unknown[], nextCursor: null as string | null };
       try {
-        const res = await fetch(`/api/tour-rooms/${bookingId}/media?kind=${kind}`, {
+        const qs = cursor ? `&cursor=${encodeURIComponent(cursor)}` : '';
+        const res = await fetch(`/api/tour-rooms/${bookingId}/media?kind=${kind}${qs}`, {
           headers: { 'x-tour-room-auth': roomSession },
           cache: 'no-store',
         });
         if (res.status === 401 || res.status === 403) {
           setAuthExpired(true);
-          return [];
+          return empty;
         }
         const json = await res.json();
-        return res.ok ? (json.items ?? []) : [];
+        return res.ok ? { items: json.items ?? [], nextCursor: json.nextCursor ?? null } : empty;
       } catch {
-        return [];
+        return empty;
       }
     },
     [bookingId, roomSession],
@@ -322,15 +381,31 @@ export default function RoomDrawer({
     void Promise.all([fetchKind('image'), fetchKind('file'), fetchKind('link')]).then(
       ([img, fil, lnk]) => {
         if (!alive) return;
-        setImages(img as DrawerAttachmentItem[]);
-        setFiles(fil as DrawerAttachmentItem[]);
-        setLinks(lnk as DrawerLinkItem[]);
+        setImages(img.items as DrawerAttachmentItem[]);
+        setFiles(fil.items as DrawerAttachmentItem[]);
+        setLinks(lnk.items as DrawerLinkItem[]);
+        setCursors({ image: img.nextCursor, file: fil.nextCursor, link: lnk.nextCursor });
       },
     );
     return () => {
       alive = false;
     };
   }, [fetchKind]);
+
+  const loadMore = useCallback(
+    async (kind: 'image' | 'file' | 'link') => {
+      const cursor = cursors[kind];
+      if (!cursor || busyKind) return;
+      setBusyKind(kind);
+      const page = await fetchKind(kind, cursor);
+      if (kind === 'image') setImages((prev) => [...(prev ?? []), ...(page.items as DrawerAttachmentItem[])]);
+      else if (kind === 'file') setFiles((prev) => [...(prev ?? []), ...(page.items as DrawerAttachmentItem[])]);
+      else setLinks((prev) => [...(prev ?? []), ...(page.items as DrawerLinkItem[])]);
+      setCursors((prev) => ({ ...prev, [kind]: page.nextCursor }));
+      setBusyKind(null);
+    },
+    [busyKind, cursors, fetchKind],
+  );
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -428,6 +503,50 @@ export default function RoomDrawer({
                               : 'Session expired — reopen the room from your invite link.'}
             </p>
           )}
+          {/* §5-3 — 대화 검색 (불러온 대화 안에서, 탭하면 그 메시지로 점프) */}
+          {messages && onJumpToMessage ? (
+            <section>
+              <h3 className={sectionLabel}>{copy.search}</h3>
+              <input
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                placeholder={copy.search}
+                className="tr-body mt-2 w-full rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2.5 text-[var(--tr-ink)]"
+                data-testid="drawer-search-input"
+              />
+              {queryTrim.length >= 2 ? (
+                searchHits.length === 0 ? (
+                  <p className="tr-meta mt-2 text-[var(--tr-ink-3)]">{copy.empty}</p>
+                ) : (
+                  <div className="mt-2 space-y-1" data-testid="drawer-search-results">
+                    {searchHits.map((m) => (
+                      <button
+                        key={m.id}
+                        type="button"
+                        onClick={() => onJumpToMessage(m.id)}
+                        className="text-cjk-body flex w-full items-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] px-3 py-2 text-left"
+                        data-testid="drawer-search-hit"
+                      >
+                        <span className="tr-card-text text-cjk-safe min-w-0 flex-1 text-[var(--tr-ink)]">
+                          {(m.source_text || Object.values(m.translations ?? {})[0] || '').slice(0, 60)}
+                        </span>
+                        <span className="tr-meta tr-num shrink-0 text-[var(--tr-ink-3)]">
+                          {/* 🔴 Use the room's formatter, not the device's. `toLocaleTimeString([])`
+                              follows the DEVICE locale and timezone: an English room on a Korean
+                              phone printed "오후 08:00" next to English labels, and a guest whose
+                              phone is still on their home timezone would read a different time here
+                              than on the very bubble this hit scrolls to. `formatBubbleTime` is what
+                              ChatFeed uses for exactly this. */}
+                          {formatBubbleTime(m.created_at, locale)}
+                        </span>
+                      </button>
+                    ))}
+                  </div>
+                )
+              ) : null}
+            </section>
+          ) : null}
+
           {/* ① 모아보기 — 사진/동영상 */}
           <section className={images !== null && images.length === 0 ? 'hidden' : undefined}>
             <h3 className={sectionLabel}>{copy.media}</h3>
@@ -448,6 +567,21 @@ export default function RoomDrawer({
                     <img src={item.url} alt={item.name ?? ''} loading="lazy" className="h-full w-full object-cover" />
                   </button>
                 ))}
+                {cursors.image && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('image')}
+                    className="tr-press text-cjk-safe flex h-20 w-20 shrink-0 items-center justify-center rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-images-more"
+                  >
+                    {busyKind === 'image' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>
@@ -477,6 +611,21 @@ export default function RoomDrawer({
                     <IconInstall size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   </a>
                 ))}
+                {cursors.file && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('file')}
+                    className="tr-press text-cjk-safe flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-files-more"
+                  >
+                    {busyKind === 'file' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>
@@ -506,6 +655,21 @@ export default function RoomDrawer({
                     <IconOpenExternal size={TR_ICON.chip} className="shrink-0 text-[var(--tr-ink-3)]" aria-hidden />
                   </a>
                 ))}
+                {cursors.link && (
+                  <button
+                    type="button"
+                    disabled={busyKind !== null}
+                    onClick={() => void loadMore('link')}
+                    className="tr-press text-cjk-safe flex min-h-[44px] w-full items-center justify-center gap-2 rounded-xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)]"
+                    data-testid="drawer-links-more"
+                  >
+                    {busyKind === 'link' ? (
+                      <span className="h-4 w-4 animate-spin rounded-full border-2 border-[var(--tr-accent)] border-t-transparent" aria-hidden />
+                    ) : (
+                      <span className="tr-label text-[var(--tr-ink-2)]">{copy.more}</span>
+                    )}
+                  </button>
+                )}
               </div>
             )}
           </section>

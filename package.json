@@ -96,7 +96,10 @@
     "i18n:apply": "node --env-file=.env.local --import tsx scripts/i18n/apply.ts",
     "i18n:status": "npx tsx scripts/i18n/status.ts",
     "video:guide": "node scripts/video-guide/run.mjs",
-    "tour:days": "node --env-file=.env.local --import tsx scripts/tours/set-departure-days.ts"
+    "tour:days": "node --env-file=.env.local --import tsx scripts/tours/set-departure-days.ts",
+    "tours:apply-2026-08-04": "node --env-file=.env.local scripts/apply-tour-catalog-2026-08-04.mjs",
+    "tours:build-seoul-2026-08": "node scripts/gen-seoul-overlay-en-2026-08.mjs && node scripts/build-seoul-gapyeong-2026-08.mjs && node scripts/build-seoul-winter-eobi-2026-08.mjs && node scripts/build-catalog-cards.mjs && node scripts/gen-seoul-new-products-sql-2026-08.mjs",
+    "tours:qa-seoul-2026-08": "node scripts/qa-seoul-new-products-2026-08.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.78.0",

@@ -1,27 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { renderEmphasis } from "@/components/product-tour-static/_shared/inlineEmphasis";
 import { ChevronDown, MessageCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { splitInlineBold } from "@/lib/tour-product/inline-markdown";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
-/** Answers are authored with `**bold**` like the rest of the tour copy. */
-function FaqAnswer({ text, className }: { text: string; className: string }) {
-  return (
-    <p className={className}>
-      {splitInlineBold(text).map((seg, i) =>
-        seg.bold ? (
-          <strong key={i} className="font-semibold text-foreground">
-            {seg.text}
-          </strong>
-        ) : (
-          <span key={i}>{seg.text}</span>
-        ),
-      )}
-    </p>
-  );
-}
+/**
+ * Answers are authored with `**bold**` like the rest of the tour copy.
+ *
+ * `text-foreground` rather than the renderer's `text-slate-900` default: the FAQ
+ * body already uses `text-muted-foreground`, so a hardcoded near-black would be
+ * the one element in this section that ignores the theme.
+ */
+const FAQ_BOLD = "font-semibold text-foreground";
 
 export type TourFaqSectionProps = Pick<EastSignatureNatureCoreDetailViewModel, "staticQuestions" | "sectionUi">;
 
@@ -61,7 +53,9 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
             <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
               <div className="overflow-hidden">
                 <div className="px-4 pb-5">
-                  <FaqAnswer text={q.answer} className="text-sm text-muted-foreground leading-[1.7]" />
+                  <p className="text-sm text-muted-foreground leading-[1.7]">
+                    {renderEmphasis(q.answer, undefined, FAQ_BOLD)}
+                  </p>
                 </div>
               </div>
             </div>
@@ -103,7 +97,9 @@ export function TourFaqSection({ staticQuestions, sectionUi }: TourFaqSectionPro
                 <div className={cn("grid transition-[grid-template-rows] duration-200 ease-out", expandedId === q.id ? "grid-rows-[1fr]" : "grid-rows-[0fr]")}>
                   <div className="overflow-hidden">
                     <div className="px-4 pb-4">
-                      <FaqAnswer text={q.answer} className="text-sm text-muted-foreground leading-relaxed" />
+                      <p className="text-sm text-muted-foreground leading-relaxed">
+                        {renderEmphasis(q.answer, undefined, FAQ_BOLD)}
+                      </p>
                     </div>
                   </div>
                 </div>

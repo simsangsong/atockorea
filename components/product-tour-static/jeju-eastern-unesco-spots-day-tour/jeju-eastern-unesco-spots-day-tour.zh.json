@@ -6,7 +6,7 @@
   "product_id": "jeju-eastern-unesco-spots-day-tour",
   "seo": {
     "pageTitle": "东济州UNESCO景点小团一日游 | AtoC Korea",
-    "metaDescription": "9小时东济州小团环线：咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰（联合国教科文组织）与万丈窟（联合国教科文组织）两处世界自然遗产、海女潜水表演。含全部门票。",
+    "metaDescription": "9小时东济州小团环线：开放时段最清静的万丈窟（联合国教科文组织）、城邑民俗村、城山日出峰（联合国教科文组织）、海女潜水表演、咸德海滩终章。含全部门票。",
     "primaryKeywords": [
       "济州东部世界遗产旅游",
       "城山日出峰旅游",
@@ -16,13 +16,13 @@
     ],
     "ogImage": "https://www.atockorea.com/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "济州东部UNESCO景点一日游 · 9小时小团 · 含全部门票 | AtoC Korea",
-    "description": "济州东部9小时小团一日游：咸德海水浴场 → 城邑民俗村 → 午餐 → 城山日出峰（联合国教科文组织）→ 海女潜水表演 → 万丈窟（联合国教科文组织）。含全部门票，持证导游。"
+    "description": "济州东部9小时小团一日游：万丈窟（联合国教科文组织）→ 城邑民俗村 → 午餐 → 城山日出峰（联合国教科文组织）→ 海女潜水表演 → 咸德海滩。含全部门票，持证导游。"
   },
   "catalog_card": {
     "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
     "title": "济州东部UNESCO一日游",
     "priceLabel": "",
-    "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点。涵盖咸德海水浴场、城邑民俗村（联合国教科文组织民俗）、城山日出峰与万丈窟 — 2007年共同登录的两处联合国教科文组织世界自然遗产，以及海女潜水表演（取消时改为海女博物馆）。含全部门票，持证英语·中文导游。",
+    "shortCardDescription": "以9小时小团环游济州东部联合国教科文组织景点 — 现在洞窟先行：开放后最清静时段的万丈窟、城邑民俗村、城山日出峰与海女潜水表演（取消时改为海女博物馆），再以傍晚前的咸德犀牛峰海滩收尾。2007年共同登录的两处联合国教科文组织世界自然遗产，含全部门票，持证英语·中文导游。",
     "tags": [
       "小团",
       "jeju",
@@ -34,7 +34,7 @@
     "rating": 0,
     "reviewCount": 0,
     "slug": "jeju-eastern-unesco-spots-day-tour",
-    "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览咸德海水浴场·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·万丈窟（联合国教科文组织）。",
+    "subtitle": "小团迷你巴士，英语·中文导游 — 以9小时东部环线游览开放后最清静的万丈窟（联合国教科文组织）·城邑民俗村·城山日出峰（联合国教科文组织）·海女潜水表演·咸德海滩终章。",
     "region": "济州东部",
     "duration": "9小时",
     "stopsCount": 8,
@@ -138,181 +138,13 @@
     {
       "id": 1,
       "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-      "location": "咸德西牛峰海滩",
-      "caption": "咸德西牛峰海滩 — photo 1",
-      "alt": "咸德西牛峰海滩 — gallery image 1"
-    },
-    {
-      "id": 2,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-      "location": "咸德西牛峰海滩",
-      "caption": "咸德西牛峰海滩 — photo 2",
-      "alt": "咸德西牛峰海滩 — gallery image 2"
-    },
-    {
-      "id": 3,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-      "location": "咸德西牛峰海滩",
-      "caption": "咸德西牛峰海滩 — photo 3",
-      "alt": "咸德西牛峰海滩 — gallery image 3"
-    },
-    {
-      "id": 4,
-      "type": "photo",
-      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-      "location": "咸德西牛峰海滩",
-      "caption": "咸德西牛峰海滩 — photo 4",
-      "alt": "咸德西牛峰海滩 — gallery image 4"
-    },
-    {
-      "id": 5,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-      "location": "城邑民俗村",
-      "caption": "城邑民俗村 — photo 1",
-      "alt": "城邑民俗村 — gallery image 1"
-    },
-    {
-      "id": 6,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-      "location": "城邑民俗村",
-      "caption": "城邑民俗村 — photo 2",
-      "alt": "城邑民俗村 — gallery image 2"
-    },
-    {
-      "id": 7,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-      "location": "城邑民俗村",
-      "caption": "城邑民俗村 — photo 3",
-      "alt": "城邑民俗村 — gallery image 3"
-    },
-    {
-      "id": 8,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-      "location": "城邑民俗村",
-      "caption": "城邑民俗村 — photo 4",
-      "alt": "城邑民俗村 — gallery image 4"
-    },
-    {
-      "id": 9,
-      "type": "photo",
-      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-      "location": "城邑民俗村",
-      "caption": "城邑民俗村 — photo 6",
-      "alt": "城邑民俗村 — gallery image 6"
-    },
-    {
-      "id": 10,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 1",
-      "alt": "城山日出峰 — gallery image 1"
-    },
-    {
-      "id": 11,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 2",
-      "alt": "城山日出峰 — gallery image 2"
-    },
-    {
-      "id": 12,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 3",
-      "alt": "城山日出峰 — gallery image 3"
-    },
-    {
-      "id": 13,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 4",
-      "alt": "城山日出峰 — gallery image 4"
-    },
-    {
-      "id": 14,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 5",
-      "alt": "城山日出峰 — gallery image 5"
-    },
-    {
-      "id": 15,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 6",
-      "alt": "城山日出峰 — gallery image 6"
-    },
-    {
-      "id": 16,
-      "type": "photo",
-      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-      "location": "城山日出峰",
-      "caption": "城山日出峰 — photo 12",
-      "alt": "城山日出峰 — gallery image 12"
-    },
-    {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-      "location": "海女潜水表演（表演取消时改为海女博物馆）",
-      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 1",
-      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 1"
-    },
-    {
-      "id": 18,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-      "location": "海女潜水表演（表演取消时改为海女博物馆）",
-      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 2",
-      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 2"
-    },
-    {
-      "id": 19,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-      "location": "海女潜水表演（表演取消时改为海女博物馆）",
-      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 3",
-      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 3"
-    },
-    {
-      "id": 20,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-      "location": "海女潜水表演（表演取消时改为海女博物馆）",
-      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 4",
-      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 4"
-    },
-    {
-      "id": 21,
-      "type": "photo",
-      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-      "location": "海女潜水表演（表演取消时改为海女博物馆）",
-      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 5",
-      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 5"
-    },
-    {
-      "id": 22,
-      "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
       "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
       "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
     },
     {
-      "id": 23,
+      "id": 2,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
       "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
@@ -320,12 +152,180 @@
       "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
     },
     {
-      "id": 24,
+      "id": 3,
       "type": "photo",
       "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
       "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
       "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
       "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+      "location": "城邑民俗村",
+      "caption": "城邑民俗村 — photo 1",
+      "alt": "城邑民俗村 — gallery image 1"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+      "location": "城邑民俗村",
+      "caption": "城邑民俗村 — photo 2",
+      "alt": "城邑民俗村 — gallery image 2"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+      "location": "城邑民俗村",
+      "caption": "城邑民俗村 — photo 3",
+      "alt": "城邑民俗村 — gallery image 3"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+      "location": "城邑民俗村",
+      "caption": "城邑民俗村 — photo 4",
+      "alt": "城邑民俗村 — gallery image 4"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+      "location": "城邑民俗村",
+      "caption": "城邑民俗村 — photo 6",
+      "alt": "城邑民俗村 — gallery image 6"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 1",
+      "alt": "城山日出峰 — gallery image 1"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 2",
+      "alt": "城山日出峰 — gallery image 2"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 3",
+      "alt": "城山日出峰 — gallery image 3"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 4",
+      "alt": "城山日出峰 — gallery image 4"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 5",
+      "alt": "城山日出峰 — gallery image 5"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 6",
+      "alt": "城山日出峰 — gallery image 6"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+      "location": "城山日出峰",
+      "caption": "城山日出峰 — photo 12",
+      "alt": "城山日出峰 — gallery image 12"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+      "location": "海女潜水表演（表演取消时改为海女博物馆）",
+      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 1",
+      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 1"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+      "location": "海女潜水表演（表演取消时改为海女博物馆）",
+      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 2",
+      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 2"
+    },
+    {
+      "id": 18,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+      "location": "海女潜水表演（表演取消时改为海女博物馆）",
+      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 3",
+      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 3"
+    },
+    {
+      "id": 19,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+      "location": "海女潜水表演（表演取消时改为海女博物馆）",
+      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 4",
+      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 4"
+    },
+    {
+      "id": 20,
+      "type": "photo",
+      "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+      "location": "海女潜水表演（表演取消时改为海女博物馆）",
+      "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 5",
+      "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 5"
+    },
+    {
+      "id": 21,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "location": "咸德西牛峰海滩",
+      "caption": "咸德西牛峰海滩 — photo 1",
+      "alt": "咸德西牛峰海滩 — gallery image 1"
+    },
+    {
+      "id": 22,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+      "location": "咸德西牛峰海滩",
+      "caption": "咸德西牛峰海滩 — photo 2",
+      "alt": "咸德西牛峰海滩 — gallery image 2"
+    },
+    {
+      "id": 23,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+      "location": "咸德西牛峰海滩",
+      "caption": "咸德西牛峰海滩 — photo 3",
+      "alt": "咸德西牛峰海滩 — gallery image 3"
+    },
+    {
+      "id": 24,
+      "type": "photo",
+      "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+      "location": "咸德西牛峰海滩",
+      "caption": "咸德西牛峰海滩 — photo 4",
+      "alt": "咸德西牛峰海滩 — gallery image 4"
     }
   ],
   "itineraryStops": [
@@ -335,7 +335,7 @@
       "duration": "30分钟",
       "name": "接送（济州市4个地点）",
       "category": "接送——济州市酒店/集散点顺序",
-      "description": "**四个济州市接送点，覆盖主要酒店及交通枢纽**。按西→东顺序接客，确保巴士约09:50抵达含德——比游客尖峰人流更早，也为含德犀牛峰海滩保留最佳光线时段。Ocean Suites（08:30）→ 济州机场1号门1楼国内入境厅（08:45，**注意：与南部行程不同，使用1号门**）→ LOTTE City Hotel济州（08:55）→ 新罗免税店济州（09:05）。",
+      "description": "**四个济州市接送点，覆盖主要酒店及交通枢纽**。按西→东顺序接客，确保巴士约09:50抵达万丈窟——开放后最清静的时段入洞，赶在团体巴士人潮之前。Ocean Suites（08:30）→ 济州机场1号门1楼国内入境厅（08:45，**注意：与南部行程不同，使用1号门**）→ LOTTE City Hotel济州（08:55）→ 新罗免税店济州（09:05）。",
       "image": null,
       "highlights": [
         "四个接送点：**Ocean Suites（08:30）→ 济州机场1号门（08:45）→ LOTTE City Hotel（08:55）→ 新罗免税店（09:05）**",
@@ -351,7 +351,7 @@
         "东门接送 ~09:30 — 5分钟",
         "沿1132号公路东行前往咸德 — 约30分钟"
       ],
-      "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽地带，无需让宾客横穿城市。西→东顺序接送让巴士约09:50抵达含德——比游客尖峰人流更早，同时为含德犀牛峰海滩保留最佳早晨光线时段。",
+      "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽地带，无需让宾客横穿城市。西→东顺序接送让巴士在万丈窟09:00开放后不久抵达——赶在正午团体巴士人潮之前走进熔岩洞。",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {},
@@ -360,78 +360,72 @@
     {
       "number": 2,
       "time": "≈ 09:50",
-      "duration": "60分钟",
-      "name": "咸德西牛峰海滩",
-      "category": "海岸",
-      "description": "**咸德犀牛峰海水浴场 (함덕 서우봉 해변)** 长期位列 **济州前三名海滩**,以 **白沙滩(主沙带约 500 米,3 段相连海湾合计约 900 米)** 与紧邻的 **犀牛峰 (서우봉,'形似牛头的寄生火山') 火山锥** 形成的反差为标志,后者自沙滩东端直起。海水标志性的 **翡翠绿松石色** 来自浅海珊瑚沙海底对清澈海水的反射——这种近似地中海的色彩反差(在韩国少见)使咸德成为韩国国内拍照最多的海滨之一。\n\n海滩在夏季高峰期日承载力可达 **5 万人**,但春秋来访通常人潮不多。**犀牛峰**(可徒步攀登,约 1 小时登顶)在 **3–4 月披上油菜花黄**,登顶可远眺东向 **万丈窟熔岩洞一带** 的全景。**历史层次**:犀牛峰以西的海岸悬崖中藏有 **二战时期日本陆军开凿的隧道**——神风敢死小艇掩体与弹药储藏所,与城山日出峰的 18 个洞穴类似。这些隧道对公众开放(配有解释历史背景的标识)。\n\n海滩为 **济州 Olle 19 号路线(朝天 → 金宁)** 的中段,以蓝橙双色丝带标识。**Cafe Delmoondo (델문도 카페)** 坐落在沙滩边——大露台、海景视野,深受 Instagram 拍照与休闲驻足喜爱。**免费入场**;距济州国际机场 **20 公里 / 沿 1132 号公路驾车约 40 分钟**。",
-      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+      "duration": "55分钟",
+      "name": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+      "category": "联合国教科文组织世界自然遗产 — 拒文岳熔岩洞系统（2007年列入）",
+      "description": "**万丈窟（Manjanggul Lava Tube）**是约**8,000年前由汉拿山侧火山拒文岳喷发的熔岩**所形成的熔岩洞，**2007年与城山日出峰、汉拿山一同以“济州火山岛与熔岩洞窟”之名列入联合国教科文组织世界自然遗产**。它与城山日出峰同属**一项单一登录资产**，因此本行程在一天之内同时收揽**两处世界自然遗产**。\n\n全长约**7.4公里**（连同连接区段为13〜15公里），属世界最大级的熔岩洞，主通道**宽18米、高23〜25米**。因天顶塌陷形成的三个入口中，**仅第二入口约1公里区段对公众开放**，是进入后沿原路返回的**往返约30〜45分钟**路线。开放区段尽头矗立着**高7.6米、世界最大的熔岩石柱**，是万丈窟标志性的拍照点。\n\n洞内**常年维持11〜13℃**，夏季凉爽、冬季温和，但地面昏暗且略为潮湿，建议**备外套与防滑鞋**。万丈窟同时被指定为**国家天然纪念物**。门票为**成人₩4,000（团体₩3,000）/ 青少年·儿童₩2,000**，运营时间**09:00〜18:00（最后入场17:10）**，每月第一个星期三休馆。",
+      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
       "highlights": [
-        "**济州前三名海滩**——翡翠绿松石海水 + 白色珊瑚沙",
-        "**主沙带 500 米** + 3 段相连海湾(合计约 900 米)",
-        "**犀牛峰火山锥** 约 1 小时登顶——3–4 月披油菜花黄",
-        "**二战日本陆军隧道** 位于相邻悬崖——神风敢死小艇掩体",
-        "**Olle 19 号路线(朝天 → 金宁)**——蓝橙丝带标识",
-        "**Cafe Delmoondo**——大露台、海景、标志性驻足点",
-        "夏季高峰日承载 **5 万游客**;春秋人潮稀少",
-        "**免费入场**;距济州国际机场 20 公里 / 约 40 分钟",
-        "近似地中海的色彩反差——在朝鲜半岛少有"
+        "**2007年联合国教科文组织世界自然遗产** — 与城山日出峰同列“济州火山岛与熔岩洞窟”",
+        "**一天两处世界自然遗产** — 城山日出峰 + 万丈窟",
+        "全长约**7.4公里**，开放区段约**1公里**（往返约30〜45分钟）",
+        "开放区段尽头有**高7.6米的世界最大熔岩石柱**",
+        "主通道**宽18米 · 高23〜25米** — 世界最大级熔岩洞",
+        "**拒文岳熔岩洞系统** — 约8,000年前形成，国家天然纪念物",
+        "洞内**常年11〜13℃** — 夏日避暑地，建议备外套",
+        "门票**成人₩4,000 / 青少年·儿童₩2,000**，运营**09:00〜18:00（最后入场17:10）**"
       ],
       "timeUsed": [
-        "大巴抵达+停车——约5分钟",
-        "主海滩+第二处海湾漫步——约25分钟",
-        "二战坑道外观参观——约10分钟",
-        "Delmoondo咖啡馆或海滩拍照——约15分钟",
-        "集合时间——约5分钟"
+        "停车 + 购票 + 入场 — 约5分钟",
+        "下行至第二入口 + 进入洞穴 — 约5分钟",
+        "开放区段1公里往返（至熔岩石柱）— 约30分钟",
+        "导览中心熔岩洞形成讲解 — 约10分钟",
+        "集合 + 移动缓冲 — 约5分钟"
       ],
-      "whyOnRoute": "**以海开启上午的第一站。** 在济州市4个地点接送后，前往车程约40分钟的咸德海水浴场开启一天。轻松享受翡翠色海水、白沙与偶来19号路线的步行遗产之后，动线便延伸至内陆的城邑与东部尽头的城山·万丈窟。因是上午较早时段，即便夏季旺季也相对清静。",
+      "whyOnRoute": "**一天的开场，也是第一处联合国教科文组织世界自然遗产。** 接送结束后径直向东，赶在万丈窟09:00开放后不久抵达——此时洞内最为清静，您可在正午团体巴士人潮到来之前，趁上午双腿最轻快时走完常年11〜13℃的清凉熔岩洞约1公里区间。在这里开启的“济州火山岛与熔岩洞窟”（2007年单一登录资产）叙事，将于午后在城山日出峰画上句点。若万丈窟因整修或天气关闭，则以同一熔岩洞系统的**日出乐园美川窟**替代，以保留洞穴体验。",
       "_poi_meta": {
-        "poi_key": "hamdeok_seoubong_beach",
-        "kb_version": "1.19",
+        "poi_key": "manjanggul_lava_tube",
+        "kb_version": "1.29",
         "verified_date": "2026-04-29",
         "sources": [
-          "Jeju Olle Foundation — Trail Course 19 official map",
-          "VisitJeju — Hamdeok Seoubong Beach",
-          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
-          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
-          "Jocheon-eup local cultural office — Seoubong oreum trail records"
+          "visitjeju.net (Visit Jeju official)",
+          "english.visitkorea.or.kr",
+          "jeju.go.kr/geopark",
+          "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+          "Wikipedia Manjanggul (Dec 2025)"
         ]
       },
       "convenience": {
-        "restroom": "海滩设有公共洗手间和淋浴设施",
-        "parking": "公共停车场(夏季收费)"
+        "restroom": "入口导览中心设有洗手间",
+        "parking": "入口免费停车场"
       },
       "smartNotes": {
-        "photo": "犀牛峰剪影衬托下的日落是经典画面;犀牛峰山顶的航拍视角能呈现白沙湾的弧线",
-        "facilities": "沙滩前一带多家咖啡馆;附近便利店若干",
-        "tip": "比挟才或金宁海滩人少;东侧 Delmoondo 咖啡馆一带是热门日落点"
+        "photo": "开放区段尽头**高7.6米、世界最大的熔岩石柱**是标志画面，朝向宽18米·高23米长通道拍摄的透视照，规模感同样震撼。",
+        "facilities": "入口停车场旁的导览中心会讲解熔岩洞的形成过程 — 建议入场前观览10分钟。洞内没有小卖部。",
+        "tip": "即使夏季也请备外套（洞内11〜13℃）。地面潮湿且昏暗，宜穿防滑鞋。可能因整修而关闭，请提前确认到访当日的运营情况。"
       },
       "visitBasics": {
-        "hours": "24 小时开放(海滩);7–8 月开放游泳期,配救生员",
-        "closed": "全年开放",
-        "admission": "免费",
-        "walking": "轻松——沙滩平整;犀牛峰徒步为中等(有台阶)"
+        "hours": "09:00〜18:00（最后入场17:10）",
+        "closed": "每月第一个星期三 / 暴雨时临时休馆",
+        "admission": "成人4,000韩元（团体3,000韩元）/ 青少年·儿童2,000韩元（团体1,500韩元）",
+        "walking": "适中 — 平坦的1公里往返，洞穴入口需下行台阶，地面略为崎岖潮湿"
       },
       "images": [
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-          "source": "atoc-korea"
-        },
-        {
-          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
           "source": "atoc-korea"
         }
       ],
@@ -439,40 +433,32 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-          "location": "咸德西牛峰海滩",
-          "caption": "咸德西牛峰海滩 — photo 1",
-          "alt": "咸德西牛峰海滩 — gallery image 1"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
+          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-          "location": "咸德西牛峰海滩",
-          "caption": "咸德西牛峰海滩 — photo 2",
-          "alt": "咸德西牛峰海滩 — gallery image 2"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 2",
+          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-          "location": "咸德西牛峰海滩",
-          "caption": "咸德西牛峰海滩 — photo 3",
-          "alt": "咸德西牛峰海滩 — gallery image 3"
-        },
-        {
-          "id": 4,
-          "type": "photo",
-          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-          "location": "咸德西牛峰海滩",
-          "caption": "咸德西牛峰海滩 — photo 4",
-          "alt": "咸德西牛峰海滩 — gallery image 4"
+          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
+          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
         }
       ]
     },
     {
       "number": 3,
-      "time": "≈ 11:00",
+      "time": "≈ 11:15",
       "duration": "60分钟",
       "name": "城邑民俗村",
       "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
@@ -497,7 +483,7 @@
         "奥莱小巷散步+拍照——约10分钟",
         "集合时间——约5分钟"
       ],
-      "whyOnRoute": "**本日行程唯一的内陆朝鲜时代遗产，也是地理上的转折点。** 它位于从咸德海岸前往城山的途中（表善内陆），把单纯的行车时间转化为有意义的一站。国家民俗文化遗产村落的石墙·茅屋与600年古树，为午后的火山·海女遗产增添了一段对比鲜明的“悠闲文化步行”，让一天不至于沦为单纯的拍照名胜巡礼，从而取得平衡。",
+      "whyOnRoute": "**本日行程唯一的内陆朝鲜时代遗产，也是地理上的转折点。** 它位于从金宁熔岩地带前往城山海岸的途中（表善内陆），把单纯的行车时间转化为有意义的一站。上午在万丈窟完成地下地质探访后，国家民俗文化遗产村落的石墙·茅屋与600年古树，在午后的火山·海女遗产之前增添一段“悠闲文化步行”，让一天不至于沦为单纯的拍照名胜巡礼，从而取得平衡。",
       "_poi_meta": {
         "poi_key": "seongeup_folk_village",
         "kb_version": "1.19",
@@ -607,7 +593,7 @@
     },
     {
       "number": 4,
-      "time": "≈ 12:20",
+      "time": "≈ 12:40",
       "duration": "60分钟",
       "name": "午餐（济州本地餐厅）",
       "category": "午间休息——东济州本地菜",
@@ -626,7 +612,7 @@
         "点餐 + 用餐 — 约45分钟",
         "大巴前往城山日出峰入口 — 约10分钟"
       ],
-      "whyOnRoute": "**联合国教科文组织核心行程之前的补给。** 在城邑前往城山途中的本地餐厅，以黑猪肉·鲍鱼石锅·时令海鲜等东济州乡土料理用午餐（餐费另计）。这是在进入全日最具活力的午后 — 城山攀登、海女潜水表演、万丈窟 — 之前补充体力的时刻。",
+      "whyOnRoute": "**教科文组织高潮之前的补给。** 在城邑前往城山途中的本地餐厅，以黑猪肉·鲍鱼石锅·时令海鲜等东济州乡土料理用午餐（餐费另计）。这是进入午后最活跃的区段 — 城山攀登与海女潜水表演 — 之前补充体力的时刻，而收尾的咸德海滩漫步则轻松惬意。",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {}
@@ -657,7 +643,7 @@
         "下山——约20分钟",
         "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
       ],
-      "whyOnRoute": "**本日两处世界自然遗产中的第一处。** 午餐后登上城山日出峰（自选攀登往返约30分钟），观赏约5,000年前因水下喷发隆起的凝灰岩锥。攀登后随即衔接同一海域举行的海女潜水表演，再以同属2007年登录资产的万丈窟熔岩洞收尾，于一天之内完成“火山岛与熔岩洞窟”的叙事。",
+      "whyOnRoute": "**本日两处世界自然遗产中的第二处 — 完成叙事的一站。** 午餐后登上城山日出峰（自选攀登往返约30分钟），观赏约5,000年前因水下喷发隆起的凝灰岩锥。它与上午走过的万丈窟同属**2007年的同一项单一登录资产**，“火山岛与熔岩洞窟”的叙事在此完成；攀登后随即衔接同一海域举行的海女潜水表演。",
       "_poi_meta": {
         "poi_key": "seongsan_ilchulbong",
         "kb_version": "1.19",
@@ -914,73 +900,79 @@
     },
     {
       "number": 7,
-      "time": "≈ 16:30",
-      "duration": "55分钟",
-      "name": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-      "category": "联合国教科文组织世界自然遗产 — 拒文岳熔岩洞系统（2007年列入）",
-      "description": "**万丈窟（Manjanggul Lava Tube）**是约**8,000年前由汉拿山侧火山拒文岳喷发的熔岩**所形成的熔岩洞，**2007年与城山日出峰、汉拿山一同以“济州火山岛与熔岩洞窟”之名列入联合国教科文组织世界自然遗产**。它与城山日出峰同属**一项单一登录资产**，因此本行程在一天之内同时收揽**两处世界自然遗产**。\n\n全长约**7.4公里**（连同连接区段为13〜15公里），属世界最大级的熔岩洞，主通道**宽18米、高23〜25米**。因天顶塌陷形成的三个入口中，**仅第二入口约1公里区段对公众开放**，是进入后沿原路返回的**往返约30〜45分钟**路线。开放区段尽头矗立着**高7.6米、世界最大的熔岩石柱**，是万丈窟标志性的拍照点。\n\n洞内**常年维持11〜13℃**，夏季凉爽、冬季温和，但地面昏暗且略为潮湿，建议**备外套与防滑鞋**。万丈窟同时被指定为**国家天然纪念物**。门票为**成人₩4,000（团体₩3,000）/ 青少年·儿童₩2,000**，运营时间**09:00〜18:00（最后入场17:10）**，每月第一个星期三休馆。",
-      "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+      "time": "≈ 16:35",
+      "duration": "60分钟",
+      "name": "咸德西牛峰海滩",
+      "category": "海岸",
+      "description": "**咸德犀牛峰海水浴场 (함덕 서우봉 해변)** 长期位列 **济州前三名海滩**,以 **白沙滩(主沙带约 500 米,3 段相连海湾合计约 900 米)** 与紧邻的 **犀牛峰 (서우봉,'形似牛头的寄生火山') 火山锥** 形成的反差为标志,后者自沙滩东端直起。海水标志性的 **翡翠绿松石色** 来自浅海珊瑚沙海底对清澈海水的反射——这种近似地中海的色彩反差(在韩国少见)使咸德成为韩国国内拍照最多的海滨之一。\n\n海滩在夏季高峰期日承载力可达 **5 万人**,但春秋来访通常人潮不多。**犀牛峰**(可徒步攀登,约 1 小时登顶)在 **3–4 月披上油菜花黄**,登顶可远眺东向 **万丈窟熔岩洞一带** 的全景。**历史层次**:犀牛峰以西的海岸悬崖中藏有 **二战时期日本陆军开凿的隧道**——神风敢死小艇掩体与弹药储藏所,与城山日出峰的 18 个洞穴类似。这些隧道对公众开放(配有解释历史背景的标识)。\n\n海滩为 **济州 Olle 19 号路线(朝天 → 金宁)** 的中段,以蓝橙双色丝带标识。**Cafe Delmoondo (델문도 카페)** 坐落在沙滩边——大露台、海景视野,深受 Instagram 拍照与休闲驻足喜爱。**免费入场**;距济州国际机场 **20 公里 / 沿 1132 号公路驾车约 40 分钟**。",
+      "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "highlights": [
-        "**2007年联合国教科文组织世界自然遗产** — 与城山日出峰同列“济州火山岛与熔岩洞窟”",
-        "**一天两处世界自然遗产** — 城山日出峰 + 万丈窟",
-        "全长约**7.4公里**，开放区段约**1公里**（往返约30〜45分钟）",
-        "开放区段尽头有**高7.6米的世界最大熔岩石柱**",
-        "主通道**宽18米 · 高23〜25米** — 世界最大级熔岩洞",
-        "**拒文岳熔岩洞系统** — 约8,000年前形成，国家天然纪念物",
-        "洞内**常年11〜13℃** — 夏日避暑地，建议备外套",
-        "门票**成人₩4,000 / 青少年·儿童₩2,000**，运营**09:00〜18:00（最后入场17:10）**"
+        "**济州前三名海滩**——翡翠绿松石海水 + 白色珊瑚沙",
+        "**主沙带 500 米** + 3 段相连海湾(合计约 900 米)",
+        "**犀牛峰火山锥** 约 1 小时登顶——3–4 月披油菜花黄",
+        "**二战日本陆军隧道** 位于相邻悬崖——神风敢死小艇掩体",
+        "**Olle 19 号路线(朝天 → 金宁)**——蓝橙丝带标识",
+        "**Cafe Delmoondo**——大露台、海景、标志性驻足点",
+        "夏季高峰日承载 **5 万游客**;春秋人潮稀少",
+        "**免费入场**;距济州国际机场 20 公里 / 约 40 分钟",
+        "近似地中海的色彩反差——在朝鲜半岛少有"
       ],
       "timeUsed": [
-        "停车 + 购票 + 入场 — 约5分钟",
-        "下行至第二入口 + 进入洞穴 — 约5分钟",
-        "开放区段1公里往返（至熔岩石柱）— 约30分钟",
-        "导览中心熔岩洞形成讲解 — 约10分钟",
-        "集合 + 移动缓冲 — 约5分钟"
+        "大巴抵达+停车——约5分钟",
+        "主海滩+第二处海湾漫步——约25分钟",
+        "二战坑道外观参观——约10分钟",
+        "Delmoondo咖啡馆或海滩拍照——约15分钟",
+        "集合时间——约5分钟"
       ],
-      "whyOnRoute": "**本日行程的第二处联合国教科文组织世界自然遗产，也是自然终章。** 在游览城山日出峰（三重联合国教科文组织凝灰岩锥）与海女潜水表演（非物质文化遗产）之后，位于金宁的万丈窟自然地落在从城山返回济州市的动线上。它与城山日出峰同属**2007年的同一项单一登录资产**，因此把两地放在同一天，便完成了“火山岛与熔岩洞窟”这一联合国教科文组织叙事。安排在午后较晚时段，可**避开正午暑热与团体拥挤**，并在户外行程之后，于**常年11〜13℃的清凉洞穴**中惬意地为一天收尾。若万丈窟因整修或天气关闭，则以同一熔岩洞系统的**日出乐园美川窟（替代洞窟）**替代，以保留洞穴体验。",
+      "whyOnRoute": "**以大海收尾的终章 — 距济州市最近的一站。** 在城山结束教科文组织的午后行程之后，于咸德犀牛峰海滩放缓一天的节奏：在傍晚前柔和的光线中，欣赏翡翠色海水与白沙，并走一段偶来19号路线 — 此时一日游人潮已散，格外清静。咸德就位于返回济州市的海岸公路上，在此收尾也让归程成为全天最短的一段。",
       "_poi_meta": {
-        "poi_key": "manjanggul_lava_tube",
-        "kb_version": "1.29",
+        "poi_key": "hamdeok_seoubong_beach",
+        "kb_version": "1.19",
         "verified_date": "2026-04-29",
         "sources": [
-          "visitjeju.net (Visit Jeju official)",
-          "english.visitkorea.or.kr",
-          "jeju.go.kr/geopark",
-          "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
-          "Wikipedia Manjanggul (Dec 2025)"
+          "Jeju Olle Foundation — Trail Course 19 official map",
+          "VisitJeju — Hamdeok Seoubong Beach",
+          "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+          "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+          "Jocheon-eup local cultural office — Seoubong oreum trail records"
         ]
       },
       "convenience": {
-        "restroom": "入口导览中心设有洗手间",
-        "parking": "入口免费停车场"
+        "restroom": "海滩设有公共洗手间和淋浴设施",
+        "parking": "公共停车场(夏季收费)"
       },
       "smartNotes": {
-        "photo": "开放区段尽头**高7.6米、世界最大的熔岩石柱**是标志画面，朝向宽18米·高23米长通道拍摄的透视照，规模感同样震撼。",
-        "facilities": "入口停车场旁的导览中心会讲解熔岩洞的形成过程 — 建议入场前观览10分钟。洞内没有小卖部。",
-        "tip": "即使夏季也请备外套（洞内11〜13℃）。地面潮湿且昏暗，宜穿防滑鞋。可能因整修而关闭，请提前确认到访当日的运营情况。"
+        "photo": "犀牛峰剪影衬托下的日落是经典画面;犀牛峰山顶的航拍视角能呈现白沙湾的弧线",
+        "facilities": "沙滩前一带多家咖啡馆;附近便利店若干",
+        "tip": "比挟才或金宁海滩人少;东侧 Delmoondo 咖啡馆一带是热门日落点"
       },
       "visitBasics": {
-        "hours": "09:00〜18:00（最后入场17:10）",
-        "closed": "每月第一个星期三 / 暴雨时临时休馆",
-        "admission": "成人4,000韩元（团体3,000韩元）/ 青少年·儿童2,000韩元（团体1,500韩元）",
-        "walking": "适中 — 平坦的1公里往返，洞穴入口需下行台阶，地面略为崎岖潮湿"
+        "hours": "24 小时开放(海滩);7–8 月开放游泳期,配救生员",
+        "closed": "全年开放",
+        "admission": "免费",
+        "walking": "轻松——沙滩平整;犀牛峰徒步为中等(有台阶)"
       },
       "images": [
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-        "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+        "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
           "source": "atoc-korea"
         }
       ],
@@ -988,40 +980,48 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
-          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+          "location": "咸德西牛峰海滩",
+          "caption": "咸德西牛峰海滩 — photo 1",
+          "alt": "咸德西牛峰海滩 — gallery image 1"
         },
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 2",
-          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+          "location": "咸德西牛峰海滩",
+          "caption": "咸德西牛峰海滩 — photo 2",
+          "alt": "咸德西牛峰海滩 — gallery image 2"
         },
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-          "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-          "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
-          "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+          "location": "咸德西牛峰海滩",
+          "caption": "咸德西牛峰海滩 — photo 3",
+          "alt": "咸德西牛峰海滩 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+          "location": "咸德西牛峰海滩",
+          "caption": "咸德西牛峰海滩 — photo 4",
+          "alt": "咸德西牛峰海滩 — gallery image 4"
         }
       ]
     },
     {
       "number": 8,
-      "time": "≈ 17:45",
+      "time": "≈ 18:00",
       "duration": "30分钟",
       "name": "下车（2个地点+东门市场）",
       "category": "下车——济州市集散点顺序",
-      "description": "**济州市三个下车点，方便返回酒店或晚餐**。下车点：济州市政厅∕涯月洞（约17:30至18:00）→ 济州机场（约17:40）→ 东门传统市场（约18:00）。东门传统市场下车后可自行前往晚餐（司机不陪同进入市场）；黑猪肉街距东门步行约5分钟。机场下车适合当晚有晚班机的旅客（济州国际机场末班机约21:30，17:40下车后时间充裕）。",
+      "description": "**济州市三个下车点，方便返回酒店或晚餐**。**东门传统市场**距咸德海滩车程约25分钟，是济州最具人气的傍晚市场——新鲜海产、济州柑橘特产与街头小吃；可在此下车自行晚餐与逛市场（司机不陪同进入市场），或继续前往**济州市政厅**与**济州机场**下车点。\n\n预计到达：**东门市场约18:00、市政厅约18:15、机场约18:30**。搭乘当晚航班（末班机约21:30）的旅客时间充裕。",
       "image": null,
       "highlights": [
-        "三个下车点：**市政厅∕涯月洞（≈17:30–18:00）→ 机场（≈17:40）→ 东门市场（≈18:00）**",
-        "**机场下车（≈17:40）**——末班机前充裕时间办理登机",
+        "三个下车点：**东门市场（≈18:00）→ 市政厅（≈18:15）→ 机场（≈18:30）**",
+        "**机场下车（≈18:30）**——末班机（约21:30）前充裕时间办理登机",
         "**东门传统市场**下车后可步行至**黑猪肉街（约5分钟）**",
         "下车后为自由时间，司机不陪同"
       ],
@@ -1033,7 +1033,7 @@
         "大巴前往机场 — 约15分钟",
         "机场下车 — 5分钟"
       ],
-      "whyOnRoute": "东门市场下车 = 可选的晚餐停留。市政厅＋机场覆盖酒店区及晚班机旅客。距海女博物馆至机场约40分钟车程。",
+      "whyOnRoute": "东门市场下车 = 可选的晚餐停留。市政厅＋机场覆盖酒店区及晚班机旅客。自咸德出发总车程约55分钟，依次覆盖三个下车点、不走回头路。",
       "smartNotes": {},
       "convenience": {},
       "visitBasics": {},
@@ -1047,9 +1047,9 @@
       "theme": "出发"
     },
     {
-      "name": "咸德西牛峰海滩",
-      "type": "secondary",
-      "theme": "海滩"
+      "name": "万丈窟（联合国教科文组织）",
+      "type": "primary",
+      "theme": "联合国教科文组织熔岩洞"
     },
     {
       "name": "城邑民俗村",
@@ -1072,9 +1072,9 @@
       "theme": "海女非物质文化遗产"
     },
     {
-      "name": "万丈窟（联合国教科文组织）",
-      "type": "primary",
-      "theme": "联合国教科文组织熔岩洞"
+      "name": "咸德西牛峰海滩",
+      "type": "secondary",
+      "theme": "海滩"
     },
     {
       "name": "济州市下车",
@@ -1084,34 +1084,34 @@
   ],
   "routePhases": [
     {
-      "phase": "接送及海岸出发",
+      "phase": "接送并向东出发",
       "duration": "约1小时",
-      "description": "济州市4个地点接送（08:30〜09:05）后前往咸德海水浴场。"
+      "description": "济州市4个地点接送（08:30〜09:05）后，直达金宁万丈窟。"
     },
     {
-      "phase": "从海岸到内陆文化遗产",
+      "phase": "人潮之前的教科文组织熔岩洞",
+      "duration": "约1.5小时",
+      "description": "万丈窟（联合国教科文组织世界自然遗产，55分钟）— 开放后最清静的时段参观，随后前往内陆城邑。"
+    },
+    {
+      "phase": "朝鲜民俗村＋午餐",
       "duration": "约2小时",
-      "description": "咸德海水浴场（60分钟）→ 城邑民俗村（朝鲜时代国家民俗文化遗产，60分钟）。"
+      "description": "城邑民俗村（朝鲜时代国家民俗文化遗产，60分钟）→ 城山附近本地餐厅 — 黑猪肉、鲍鱼石锅、时令海鲜。午餐费用另计。"
     },
     {
-      "phase": "午餐",
-      "duration": "约1小时",
-      "description": "城山附近本地餐厅 — 黑猪肉、鲍鱼石锅、时令海鲜。午餐费用另计。"
+      "phase": "城山教科文组织核心＋海女",
+      "duration": "约2.5小时",
+      "description": "城山日出峰（自选攀登）→ 峰下海域海女潜水表演（取消时改为海女博物馆）。"
     },
     {
-      "phase": "联合国教科文组织核心",
-      "duration": "约3小时",
-      "description": "城山日出峰（自选攀登）→ 海女潜水表演（取消时改为海女博物馆）→ 万丈窟熔岩洞（联合国教科文组织世界自然遗产）。"
-    },
-    {
-      "phase": "返程",
-      "duration": "约1小时",
-      "description": "金宁 → 济州市，于2个地点及东门市场下车。"
+      "phase": "海滩终章与返程",
+      "duration": "约2小时",
+      "description": "傍晚前光线中的咸德犀牛峰海滩（60分钟）→ 短程海岸路线返回济州市，于2个地点及东门市场下车。"
     }
   ],
   "routeShapeIntro": {
     "title": "行程路线一览",
-    "subtitle": "这是一条东济州环线，从东部尽头出发，在一天之内串联起岛上两处联合国教科文组织世界自然遗产 — 城山日出峰（凝灰岩锥）与万丈窟（熔岩洞），二者均于2007年作为同一项资产登录。再加上属于联合国教科文组织非物质文化遗产的海女潜水表演。高效的路线安排可避开主要景点的拥挤。"
+    "subtitle": "这是一条在一天之内串联岛上两处联合国教科文组织世界自然遗产的东济州环线 — 赶在人潮之前于开放后不久走进万丈窟，午后在同属2007年登录资产的城山日出峰完成叙事。两者之间是朝鲜时代的城邑民俗村；其后是教科文组织非物质遗产的海女潜水表演，以及距济州市最近的咸德海滩黄昏前收尾。"
   },
   "whyTourWorks": {
     "bestFor": [
@@ -1136,6 +1136,10 @@
           {
             "label": "一天内2处联合国教科文组织世界自然遗产 + 非物质文化遗产",
             "detail": "城山日出峰与万丈窟于2007年以“济州火山岛与熔岩洞窟”共同登录为世界自然遗产。再加上2016年人类非物质文化遗产的海女潜水表演，一天之内便能看到三重联合国教科文组织遗产。"
+          },
+          {
+            "label": "洞窟在前、海滩在后 — 顺序本身就是设计",
+            "detail": "万丈窟09:00开放后的第一小时最为清静，因此接送后直奔于此 — 在正午团体巴士人潮之前走完熔岩洞，常年11〜13℃的清凉在上午也是一种舒爽。随后经城邑、城山与海女表演层层展开，最后在距济州市最近的咸德海滩以柔和的午后光线收尾，让全天最后一段车程也最短。"
           },
           {
             "label": "真正的万丈窟 — 不再是替代，而是原版联合国教科文组织熔岩洞",
@@ -1179,11 +1183,11 @@
       "preview": "中等难度。",
       "content": [
         "中等难度。",
-        "咸德海滩为平坦沙地。",
+        "万丈窟约1公里平坦往返，洞穴入口有台阶，洞内地面略为崎岖·潮湿（常年11〜13℃，建议备外套）。",
         "城邑民俗村为土路与石墙。",
         "城山日出峰火山口边缘攀登约30分钟陡峭石阶（可跳过）。",
         "海女潜水表演在平坦海岸观赏。",
-        "万丈窟约1公里平坦往返，洞穴入口有台阶，洞内地面略为崎岖·潮湿（常年11〜13℃，建议备外套）。",
+        "咸德海滩为平坦沙地。",
         "必须穿包脚趾鞋。",
         "全天步行约4〜5公里。"
       ]
@@ -1483,7 +1487,7 @@
       }
     ],
     "notes": [
-      "返回通常在17:30–18:00左右。"
+      "返回通常在18:00–18:30左右。"
     ]
   },
   "matching_profile": {
@@ -1950,181 +1954,13 @@
           {
             "id": 1,
             "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-            "location": "咸德西牛峰海滩",
-            "caption": "咸德西牛峰海滩 — photo 1",
-            "alt": "咸德西牛峰海滩 — gallery image 1"
-          },
-          {
-            "id": 2,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-            "location": "咸德西牛峰海滩",
-            "caption": "咸德西牛峰海滩 — photo 2",
-            "alt": "咸德西牛峰海滩 — gallery image 2"
-          },
-          {
-            "id": 3,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-            "location": "咸德西牛峰海滩",
-            "caption": "咸德西牛峰海滩 — photo 3",
-            "alt": "咸德西牛峰海滩 — gallery image 3"
-          },
-          {
-            "id": 4,
-            "type": "photo",
-            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-            "location": "咸德西牛峰海滩",
-            "caption": "咸德西牛峰海滩 — photo 4",
-            "alt": "咸德西牛峰海滩 — gallery image 4"
-          },
-          {
-            "id": 5,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
-            "location": "城邑民俗村",
-            "caption": "城邑民俗村 — photo 1",
-            "alt": "城邑民俗村 — gallery image 1"
-          },
-          {
-            "id": 6,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
-            "location": "城邑民俗村",
-            "caption": "城邑民俗村 — photo 2",
-            "alt": "城邑民俗村 — gallery image 2"
-          },
-          {
-            "id": 7,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
-            "location": "城邑民俗村",
-            "caption": "城邑民俗村 — photo 3",
-            "alt": "城邑民俗村 — gallery image 3"
-          },
-          {
-            "id": 8,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
-            "location": "城邑民俗村",
-            "caption": "城邑民俗村 — photo 4",
-            "alt": "城邑民俗村 — gallery image 4"
-          },
-          {
-            "id": 9,
-            "type": "photo",
-            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
-            "location": "城邑民俗村",
-            "caption": "城邑民俗村 — photo 6",
-            "alt": "城邑民俗村 — gallery image 6"
-          },
-          {
-            "id": 10,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 1",
-            "alt": "城山日出峰 — gallery image 1"
-          },
-          {
-            "id": 11,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 2",
-            "alt": "城山日出峰 — gallery image 2"
-          },
-          {
-            "id": 12,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 3",
-            "alt": "城山日出峰 — gallery image 3"
-          },
-          {
-            "id": 13,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 4",
-            "alt": "城山日出峰 — gallery image 4"
-          },
-          {
-            "id": 14,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 5",
-            "alt": "城山日出峰 — gallery image 5"
-          },
-          {
-            "id": 15,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 6",
-            "alt": "城山日出峰 — gallery image 6"
-          },
-          {
-            "id": 16,
-            "type": "photo",
-            "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
-            "location": "城山日出峰",
-            "caption": "城山日出峰 — photo 12",
-            "alt": "城山日出峰 — gallery image 12"
-          },
-          {
-            "id": 17,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
-            "location": "海女潜水表演（表演取消时改为海女博物馆）",
-            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 1",
-            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 1"
-          },
-          {
-            "id": 18,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
-            "location": "海女潜水表演（表演取消时改为海女博物馆）",
-            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 2",
-            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 2"
-          },
-          {
-            "id": 19,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
-            "location": "海女潜水表演（表演取消时改为海女博物馆）",
-            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 3",
-            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 3"
-          },
-          {
-            "id": 20,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
-            "location": "海女潜水表演（表演取消时改为海女博物馆）",
-            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 4",
-            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 4"
-          },
-          {
-            "id": 21,
-            "type": "photo",
-            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
-            "location": "海女潜水表演（表演取消时改为海女博物馆）",
-            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 5",
-            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 5"
-          },
-          {
-            "id": 22,
-            "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
             "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
             "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
             "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
           },
           {
-            "id": 23,
+            "id": 2,
             "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
             "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
@@ -2132,12 +1968,180 @@
             "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
           },
           {
-            "id": 24,
+            "id": 3,
             "type": "photo",
             "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
             "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
             "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
             "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-37-51.webp",
+            "location": "城邑民俗村",
+            "caption": "城邑民俗村 — photo 1",
+            "alt": "城邑民俗村 — gallery image 1"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-38-22.webp",
+            "location": "城邑民俗村",
+            "caption": "城邑民俗村 — photo 2",
+            "alt": "城邑民俗村 — gallery image 2"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-26.webp",
+            "location": "城邑民俗村",
+            "caption": "城邑民俗村 — photo 3",
+            "alt": "城邑民俗村 — gallery image 3"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-8-07-42-34.webp",
+            "location": "城邑民俗村",
+            "caption": "城邑民俗村 — photo 4",
+            "alt": "城邑民俗村 — gallery image 4"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/seongeup-folk-village/chatgpt-image-2026-5-11-12-24-47.webp",
+            "location": "城邑民俗村",
+            "caption": "城邑民俗村 — photo 6",
+            "alt": "城邑民俗村 — gallery image 6"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-06.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 1",
+            "alt": "城山日出峰 — gallery image 1"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-07.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 2",
+            "alt": "城山日出峰 — gallery image 2"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-08.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 3",
+            "alt": "城山日出峰 — gallery image 3"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-09.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 4",
+            "alt": "城山日出峰 — gallery image 4"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/kakaotalk-20260510-230028438-10.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 5",
+            "alt": "城山日出峰 — gallery image 5"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/photo-006.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 6",
+            "alt": "城山日出峰 — gallery image 6"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/tours/seongsan-ilchulbong/seongsan-haenyeo-show-ai.webp",
+            "location": "城山日出峰",
+            "caption": "城山日出峰 — photo 12",
+            "alt": "城山日出峰 — gallery image 12"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-16.webp",
+            "location": "海女潜水表演（表演取消时改为海女博物馆）",
+            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 1",
+            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 1"
+          },
+          {
+            "id": 17,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-17.webp",
+            "location": "海女潜水表演（表演取消时改为海女博物馆）",
+            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 2",
+            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 2"
+          },
+          {
+            "id": 18,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/kakaotalk-20260510-230009595-18.webp",
+            "location": "海女潜水表演（表演取消时改为海女博物馆）",
+            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 3",
+            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 3"
+          },
+          {
+            "id": 19,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-diving-ai.webp",
+            "location": "海女潜水表演（表演取消时改为海女博物馆）",
+            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 4",
+            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 4"
+          },
+          {
+            "id": 20,
+            "type": "photo",
+            "src": "/images/tours/jeju-haenyeo-museum/haenyeo-sunset-silhouette-ai.webp",
+            "location": "海女潜水表演（表演取消时改为海女博物馆）",
+            "caption": "海女潜水表演（表演取消时改为海女博物馆） — photo 5",
+            "alt": "海女潜水表演（表演取消时改为海女博物馆） — gallery image 5"
+          },
+          {
+            "id": 21,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+            "location": "咸德西牛峰海滩",
+            "caption": "咸德西牛峰海滩 — photo 1",
+            "alt": "咸德西牛峰海滩 — gallery image 1"
+          },
+          {
+            "id": 22,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+            "location": "咸德西牛峰海滩",
+            "caption": "咸德西牛峰海滩 — photo 2",
+            "alt": "咸德西牛峰海滩 — gallery image 2"
+          },
+          {
+            "id": 23,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+            "location": "咸德西牛峰海滩",
+            "caption": "咸德西牛峰海滩 — photo 3",
+            "alt": "咸德西牛峰海滩 — gallery image 3"
+          },
+          {
+            "id": 24,
+            "type": "photo",
+            "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+            "location": "咸德西牛峰海滩",
+            "caption": "咸德西牛峰海滩 — photo 4",
+            "alt": "咸德西牛峰海滩 — gallery image 4"
           }
         ]
       }
@@ -2154,7 +2158,7 @@
             "duration": "30分钟",
             "name": "接送（济州市4个地点）",
             "category": "接送——济州市酒店/集散点顺序",
-            "description": "**四个济州市接送点，覆盖主要酒店及交通枢纽**。按西→东顺序接客，确保巴士约09:50抵达含德——比游客尖峰人流更早，也为含德犀牛峰海滩保留最佳光线时段。Ocean Suites（08:30）→ 济州机场1号门1楼国内入境厅（08:45，**注意：与南部行程不同，使用1号门**）→ LOTTE City Hotel济州（08:55）→ 新罗免税店济州（09:05）。",
+            "description": "**四个济州市接送点，覆盖主要酒店及交通枢纽**。按西→东顺序接客，确保巴士约09:50抵达万丈窟——开放后最清静的时段入洞，赶在团体巴士人潮之前。Ocean Suites（08:30）→ 济州机场1号门1楼国内入境厅（08:45，**注意：与南部行程不同，使用1号门**）→ LOTTE City Hotel济州（08:55）→ 新罗免税店济州（09:05）。",
             "image": null,
             "highlights": [
               "四个接送点：**Ocean Suites（08:30）→ 济州机场1号门（08:45）→ LOTTE City Hotel（08:55）→ 新罗免税店（09:05）**",
@@ -2170,7 +2174,7 @@
               "东门接送 ~09:30 — 5分钟",
               "沿1132号公路东行前往咸德 — 约30分钟"
             ],
-            "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽地带，无需让宾客横穿城市。西→东顺序接送让巴士约09:50抵达含德——比游客尖峰人流更早，同时为含德犀牛峰海滩保留最佳早晨光线时段。",
+            "whyOnRoute": "四个接送点覆盖济州市主要酒店＋交通枢纽地带，无需让宾客横穿城市。西→东顺序接送让巴士在万丈窟09:00开放后不久抵达——赶在正午团体巴士人潮之前走进熔岩洞。",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {},
@@ -2179,78 +2183,72 @@
           {
             "number": 2,
             "time": "≈ 09:50",
-            "duration": "60分钟",
-            "name": "咸德西牛峰海滩",
-            "category": "海岸",
-            "description": "**咸德犀牛峰海水浴场 (함덕 서우봉 해변)** 长期位列 **济州前三名海滩**,以 **白沙滩(主沙带约 500 米,3 段相连海湾合计约 900 米)** 与紧邻的 **犀牛峰 (서우봉,'形似牛头的寄生火山') 火山锥** 形成的反差为标志,后者自沙滩东端直起。海水标志性的 **翡翠绿松石色** 来自浅海珊瑚沙海底对清澈海水的反射——这种近似地中海的色彩反差(在韩国少见)使咸德成为韩国国内拍照最多的海滨之一。\n\n海滩在夏季高峰期日承载力可达 **5 万人**,但春秋来访通常人潮不多。**犀牛峰**(可徒步攀登,约 1 小时登顶)在 **3–4 月披上油菜花黄**,登顶可远眺东向 **万丈窟熔岩洞一带** 的全景。**历史层次**:犀牛峰以西的海岸悬崖中藏有 **二战时期日本陆军开凿的隧道**——神风敢死小艇掩体与弹药储藏所,与城山日出峰的 18 个洞穴类似。这些隧道对公众开放(配有解释历史背景的标识)。\n\n海滩为 **济州 Olle 19 号路线(朝天 → 金宁)** 的中段,以蓝橙双色丝带标识。**Cafe Delmoondo (델문도 카페)** 坐落在沙滩边——大露台、海景视野,深受 Instagram 拍照与休闲驻足喜爱。**免费入场**;距济州国际机场 **20 公里 / 沿 1132 号公路驾车约 40 分钟**。",
-            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+            "duration": "55分钟",
+            "name": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+            "category": "联合国教科文组织世界自然遗产 — 拒文岳熔岩洞系统（2007年列入）",
+            "description": "**万丈窟（Manjanggul Lava Tube）**是约**8,000年前由汉拿山侧火山拒文岳喷发的熔岩**所形成的熔岩洞，**2007年与城山日出峰、汉拿山一同以“济州火山岛与熔岩洞窟”之名列入联合国教科文组织世界自然遗产**。它与城山日出峰同属**一项单一登录资产**，因此本行程在一天之内同时收揽**两处世界自然遗产**。\n\n全长约**7.4公里**（连同连接区段为13〜15公里），属世界最大级的熔岩洞，主通道**宽18米、高23〜25米**。因天顶塌陷形成的三个入口中，**仅第二入口约1公里区段对公众开放**，是进入后沿原路返回的**往返约30〜45分钟**路线。开放区段尽头矗立着**高7.6米、世界最大的熔岩石柱**，是万丈窟标志性的拍照点。\n\n洞内**常年维持11〜13℃**，夏季凉爽、冬季温和，但地面昏暗且略为潮湿，建议**备外套与防滑鞋**。万丈窟同时被指定为**国家天然纪念物**。门票为**成人₩4,000（团体₩3,000）/ 青少年·儿童₩2,000**，运营时间**09:00〜18:00（最后入场17:10）**，每月第一个星期三休馆。",
+            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
             "highlights": [
-              "**济州前三名海滩**——翡翠绿松石海水 + 白色珊瑚沙",
-              "**主沙带 500 米** + 3 段相连海湾(合计约 900 米)",
-              "**犀牛峰火山锥** 约 1 小时登顶——3–4 月披油菜花黄",
-              "**二战日本陆军隧道** 位于相邻悬崖——神风敢死小艇掩体",
-              "**Olle 19 号路线(朝天 → 金宁)**——蓝橙丝带标识",
-              "**Cafe Delmoondo**——大露台、海景、标志性驻足点",
-              "夏季高峰日承载 **5 万游客**;春秋人潮稀少",
-              "**免费入场**;距济州国际机场 20 公里 / 约 40 分钟",
-              "近似地中海的色彩反差——在朝鲜半岛少有"
+              "**2007年联合国教科文组织世界自然遗产** — 与城山日出峰同列“济州火山岛与熔岩洞窟”",
+              "**一天两处世界自然遗产** — 城山日出峰 + 万丈窟",
+              "全长约**7.4公里**，开放区段约**1公里**（往返约30〜45分钟）",
+              "开放区段尽头有**高7.6米的世界最大熔岩石柱**",
+              "主通道**宽18米 · 高23〜25米** — 世界最大级熔岩洞",
+              "**拒文岳熔岩洞系统** — 约8,000年前形成，国家天然纪念物",
+              "洞内**常年11〜13℃** — 夏日避暑地，建议备外套",
+              "门票**成人₩4,000 / 青少年·儿童₩2,000**，运营**09:00〜18:00（最后入场17:10）**"
             ],
             "timeUsed": [
-              "大巴抵达+停车——约5分钟",
-              "主海滩+第二处海湾漫步——约25分钟",
-              "二战坑道外观参观——约10分钟",
-              "Delmoondo咖啡馆或海滩拍照——约15分钟",
-              "集合时间——约5分钟"
+              "停车 + 购票 + 入场 — 约5分钟",
+              "下行至第二入口 + 进入洞穴 — 约5分钟",
+              "开放区段1公里往返（至熔岩石柱）— 约30分钟",
+              "导览中心熔岩洞形成讲解 — 约10分钟",
+              "集合 + 移动缓冲 — 约5分钟"
             ],
-            "whyOnRoute": "**以海开启上午的第一站。** 在济州市4个地点接送后，前往车程约40分钟的咸德海水浴场开启一天。轻松享受翡翠色海水、白沙与偶来19号路线的步行遗产之后，动线便延伸至内陆的城邑与东部尽头的城山·万丈窟。因是上午较早时段，即便夏季旺季也相对清静。",
+            "whyOnRoute": "**一天的开场，也是第一处联合国教科文组织世界自然遗产。** 接送结束后径直向东，赶在万丈窟09:00开放后不久抵达——此时洞内最为清静，您可在正午团体巴士人潮到来之前，趁上午双腿最轻快时走完常年11〜13℃的清凉熔岩洞约1公里区间。在这里开启的“济州火山岛与熔岩洞窟”（2007年单一登录资产）叙事，将于午后在城山日出峰画上句点。若万丈窟因整修或天气关闭，则以同一熔岩洞系统的**日出乐园美川窟**替代，以保留洞穴体验。",
             "_poi_meta": {
-              "poi_key": "hamdeok_seoubong_beach",
-              "kb_version": "1.19",
+              "poi_key": "manjanggul_lava_tube",
+              "kb_version": "1.29",
               "verified_date": "2026-04-29",
               "sources": [
-                "Jeju Olle Foundation — Trail Course 19 official map",
-                "VisitJeju — Hamdeok Seoubong Beach",
-                "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
-                "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
-                "Jocheon-eup local cultural office — Seoubong oreum trail records"
+                "visitjeju.net (Visit Jeju official)",
+                "english.visitkorea.or.kr",
+                "jeju.go.kr/geopark",
+                "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
+                "Wikipedia Manjanggul (Dec 2025)"
               ]
             },
             "convenience": {
-              "restroom": "海滩设有公共洗手间和淋浴设施",
-              "parking": "公共停车场(夏季收费)"
+              "restroom": "入口导览中心设有洗手间",
+              "parking": "入口免费停车场"
             },
             "smartNotes": {
-              "photo": "犀牛峰剪影衬托下的日落是经典画面;犀牛峰山顶的航拍视角能呈现白沙湾的弧线",
-              "facilities": "沙滩前一带多家咖啡馆;附近便利店若干",
-              "tip": "比挟才或金宁海滩人少;东侧 Delmoondo 咖啡馆一带是热门日落点"
+              "photo": "开放区段尽头**高7.6米、世界最大的熔岩石柱**是标志画面，朝向宽18米·高23米长通道拍摄的透视照，规模感同样震撼。",
+              "facilities": "入口停车场旁的导览中心会讲解熔岩洞的形成过程 — 建议入场前观览10分钟。洞内没有小卖部。",
+              "tip": "即使夏季也请备外套（洞内11〜13℃）。地面潮湿且昏暗，宜穿防滑鞋。可能因整修而关闭，请提前确认到访当日的运营情况。"
             },
             "visitBasics": {
-              "hours": "24 小时开放(海滩);7–8 月开放游泳期,配救生员",
-              "closed": "全年开放",
-              "admission": "免费",
-              "walking": "轻松——沙滩平整;犀牛峰徒步为中等(有台阶)"
+              "hours": "09:00〜18:00（最后入场17:10）",
+              "closed": "每月第一个星期三 / 暴雨时临时休馆",
+              "admission": "成人4,000韩元（团体3,000韩元）/ 青少年·儿童2,000韩元（团体1,500韩元）",
+              "walking": "适中 — 平坦的1公里往返，洞穴入口需下行台阶，地面略为崎岖潮湿"
             },
             "images": [
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2258,40 +2256,32 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
-                "location": "咸德西牛峰海滩",
-                "caption": "咸德西牛峰海滩 — photo 1",
-                "alt": "咸德西牛峰海滩 — gallery image 1"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
+                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
-                "location": "咸德西牛峰海滩",
-                "caption": "咸德西牛峰海滩 — photo 2",
-                "alt": "咸德西牛峰海滩 — gallery image 2"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 2",
+                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
-                "location": "咸德西牛峰海滩",
-                "caption": "咸德西牛峰海滩 — photo 3",
-                "alt": "咸德西牛峰海滩 — gallery image 3"
-              },
-              {
-                "id": 4,
-                "type": "photo",
-                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
-                "location": "咸德西牛峰海滩",
-                "caption": "咸德西牛峰海滩 — photo 4",
-                "alt": "咸德西牛峰海滩 — gallery image 4"
+                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
+                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
+                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
               }
             ]
           },
           {
             "number": 3,
-            "time": "≈ 11:00",
+            "time": "≈ 11:15",
             "duration": "60分钟",
             "name": "城邑民俗村",
             "category": "朝鲜时代城郭城镇——重要民俗文化遗产（1423年创立）",
@@ -2316,7 +2306,7 @@
               "奥莱小巷散步+拍照——约10分钟",
               "集合时间——约5分钟"
             ],
-            "whyOnRoute": "**本日行程唯一的内陆朝鲜时代遗产，也是地理上的转折点。** 它位于从咸德海岸前往城山的途中（表善内陆），把单纯的行车时间转化为有意义的一站。国家民俗文化遗产村落的石墙·茅屋与600年古树，为午后的火山·海女遗产增添了一段对比鲜明的“悠闲文化步行”，让一天不至于沦为单纯的拍照名胜巡礼，从而取得平衡。",
+            "whyOnRoute": "**本日行程唯一的内陆朝鲜时代遗产，也是地理上的转折点。** 它位于从金宁熔岩地带前往城山海岸的途中（表善内陆），把单纯的行车时间转化为有意义的一站。上午在万丈窟完成地下地质探访后，国家民俗文化遗产村落的石墙·茅屋与600年古树，在午后的火山·海女遗产之前增添一段“悠闲文化步行”，让一天不至于沦为单纯的拍照名胜巡礼，从而取得平衡。",
             "_poi_meta": {
               "poi_key": "seongeup_folk_village",
               "kb_version": "1.19",
@@ -2426,7 +2416,7 @@
           },
           {
             "number": 4,
-            "time": "≈ 12:20",
+            "time": "≈ 12:40",
             "duration": "60分钟",
             "name": "午餐（济州本地餐厅）",
             "category": "午间休息——东济州本地菜",
@@ -2445,7 +2435,7 @@
               "点餐 + 用餐 — 约45分钟",
               "大巴前往城山日出峰入口 — 约10分钟"
             ],
-            "whyOnRoute": "**联合国教科文组织核心行程之前的补给。** 在城邑前往城山途中的本地餐厅，以黑猪肉·鲍鱼石锅·时令海鲜等东济州乡土料理用午餐（餐费另计）。这是在进入全日最具活力的午后 — 城山攀登、海女潜水表演、万丈窟 — 之前补充体力的时刻。",
+            "whyOnRoute": "**教科文组织高潮之前的补给。** 在城邑前往城山途中的本地餐厅，以黑猪肉·鲍鱼石锅·时令海鲜等东济州乡土料理用午餐（餐费另计）。这是进入午后最活跃的区段 — 城山攀登与海女潜水表演 — 之前补充体力的时刻，而收尾的咸德海滩漫步则轻松惬意。",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {}
@@ -2476,7 +2466,7 @@
               "下山——约20分钟",
               "可选：在底部观看海女表演（每日1场，下午2点；恶劣天气时可能取消）——约10分钟"
             ],
-            "whyOnRoute": "**本日两处世界自然遗产中的第一处。** 午餐后登上城山日出峰（自选攀登往返约30分钟），观赏约5,000年前因水下喷发隆起的凝灰岩锥。攀登后随即衔接同一海域举行的海女潜水表演，再以同属2007年登录资产的万丈窟熔岩洞收尾，于一天之内完成“火山岛与熔岩洞窟”的叙事。",
+            "whyOnRoute": "**本日两处世界自然遗产中的第二处 — 完成叙事的一站。** 午餐后登上城山日出峰（自选攀登往返约30分钟），观赏约5,000年前因水下喷发隆起的凝灰岩锥。它与上午走过的万丈窟同属**2007年的同一项单一登录资产**，“火山岛与熔岩洞窟”的叙事在此完成；攀登后随即衔接同一海域举行的海女潜水表演。",
             "_poi_meta": {
               "poi_key": "seongsan_ilchulbong",
               "kb_version": "1.19",
@@ -2733,73 +2723,79 @@
           },
           {
             "number": 7,
-            "time": "≈ 16:30",
-            "duration": "55分钟",
-            "name": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-            "category": "联合国教科文组织世界自然遗产 — 拒文岳熔岩洞系统（2007年列入）",
-            "description": "**万丈窟（Manjanggul Lava Tube）**是约**8,000年前由汉拿山侧火山拒文岳喷发的熔岩**所形成的熔岩洞，**2007年与城山日出峰、汉拿山一同以“济州火山岛与熔岩洞窟”之名列入联合国教科文组织世界自然遗产**。它与城山日出峰同属**一项单一登录资产**，因此本行程在一天之内同时收揽**两处世界自然遗产**。\n\n全长约**7.4公里**（连同连接区段为13〜15公里），属世界最大级的熔岩洞，主通道**宽18米、高23〜25米**。因天顶塌陷形成的三个入口中，**仅第二入口约1公里区段对公众开放**，是进入后沿原路返回的**往返约30〜45分钟**路线。开放区段尽头矗立着**高7.6米、世界最大的熔岩石柱**，是万丈窟标志性的拍照点。\n\n洞内**常年维持11〜13℃**，夏季凉爽、冬季温和，但地面昏暗且略为潮湿，建议**备外套与防滑鞋**。万丈窟同时被指定为**国家天然纪念物**。门票为**成人₩4,000（团体₩3,000）/ 青少年·儿童₩2,000**，运营时间**09:00〜18:00（最后入场17:10）**，每月第一个星期三休馆。",
-            "image": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+            "time": "≈ 16:35",
+            "duration": "60分钟",
+            "name": "咸德西牛峰海滩",
+            "category": "海岸",
+            "description": "**咸德犀牛峰海水浴场 (함덕 서우봉 해변)** 长期位列 **济州前三名海滩**,以 **白沙滩(主沙带约 500 米,3 段相连海湾合计约 900 米)** 与紧邻的 **犀牛峰 (서우봉,'形似牛头的寄生火山') 火山锥** 形成的反差为标志,后者自沙滩东端直起。海水标志性的 **翡翠绿松石色** 来自浅海珊瑚沙海底对清澈海水的反射——这种近似地中海的色彩反差(在韩国少见)使咸德成为韩国国内拍照最多的海滨之一。\n\n海滩在夏季高峰期日承载力可达 **5 万人**,但春秋来访通常人潮不多。**犀牛峰**(可徒步攀登,约 1 小时登顶)在 **3–4 月披上油菜花黄**,登顶可远眺东向 **万丈窟熔岩洞一带** 的全景。**历史层次**:犀牛峰以西的海岸悬崖中藏有 **二战时期日本陆军开凿的隧道**——神风敢死小艇掩体与弹药储藏所,与城山日出峰的 18 个洞穴类似。这些隧道对公众开放(配有解释历史背景的标识)。\n\n海滩为 **济州 Olle 19 号路线(朝天 → 金宁)** 的中段,以蓝橙双色丝带标识。**Cafe Delmoondo (델문도 카페)** 坐落在沙滩边——大露台、海景视野,深受 Instagram 拍照与休闲驻足喜爱。**免费入场**;距济州国际机场 **20 公里 / 沿 1132 号公路驾车约 40 分钟**。",
+            "image": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
             "highlights": [
-              "**2007年联合国教科文组织世界自然遗产** — 与城山日出峰同列“济州火山岛与熔岩洞窟”",
-              "**一天两处世界自然遗产** — 城山日出峰 + 万丈窟",
-              "全长约**7.4公里**，开放区段约**1公里**（往返约30〜45分钟）",
-              "开放区段尽头有**高7.6米的世界最大熔岩石柱**",
-              "主通道**宽18米 · 高23〜25米** — 世界最大级熔岩洞",
-              "**拒文岳熔岩洞系统** — 约8,000年前形成，国家天然纪念物",
-              "洞内**常年11〜13℃** — 夏日避暑地，建议备外套",
-              "门票**成人₩4,000 / 青少年·儿童₩2,000**，运营**09:00〜18:00（最后入场17:10）**"
+              "**济州前三名海滩**——翡翠绿松石海水 + 白色珊瑚沙",
+              "**主沙带 500 米** + 3 段相连海湾(合计约 900 米)",
+              "**犀牛峰火山锥** 约 1 小时登顶——3–4 月披油菜花黄",
+              "**二战日本陆军隧道** 位于相邻悬崖——神风敢死小艇掩体",
+              "**Olle 19 号路线(朝天 → 金宁)**——蓝橙丝带标识",
+              "**Cafe Delmoondo**——大露台、海景、标志性驻足点",
+              "夏季高峰日承载 **5 万游客**;春秋人潮稀少",
+              "**免费入场**;距济州国际机场 20 公里 / 约 40 分钟",
+              "近似地中海的色彩反差——在朝鲜半岛少有"
             ],
             "timeUsed": [
-              "停车 + 购票 + 入场 — 约5分钟",
-              "下行至第二入口 + 进入洞穴 — 约5分钟",
-              "开放区段1公里往返（至熔岩石柱）— 约30分钟",
-              "导览中心熔岩洞形成讲解 — 约10分钟",
-              "集合 + 移动缓冲 — 约5分钟"
+              "大巴抵达+停车——约5分钟",
+              "主海滩+第二处海湾漫步——约25分钟",
+              "二战坑道外观参观——约10分钟",
+              "Delmoondo咖啡馆或海滩拍照——约15分钟",
+              "集合时间——约5分钟"
             ],
-            "whyOnRoute": "**本日行程的第二处联合国教科文组织世界自然遗产，也是自然终章。** 在游览城山日出峰（三重联合国教科文组织凝灰岩锥）与海女潜水表演（非物质文化遗产）之后，位于金宁的万丈窟自然地落在从城山返回济州市的动线上。它与城山日出峰同属**2007年的同一项单一登录资产**，因此把两地放在同一天，便完成了“火山岛与熔岩洞窟”这一联合国教科文组织叙事。安排在午后较晚时段，可**避开正午暑热与团体拥挤**，并在户外行程之后，于**常年11〜13℃的清凉洞穴**中惬意地为一天收尾。若万丈窟因整修或天气关闭，则以同一熔岩洞系统的**日出乐园美川窟（替代洞窟）**替代，以保留洞穴体验。",
+            "whyOnRoute": "**以大海收尾的终章 — 距济州市最近的一站。** 在城山结束教科文组织的午后行程之后，于咸德犀牛峰海滩放缓一天的节奏：在傍晚前柔和的光线中，欣赏翡翠色海水与白沙，并走一段偶来19号路线 — 此时一日游人潮已散，格外清静。咸德就位于返回济州市的海岸公路上，在此收尾也让归程成为全天最短的一段。",
             "_poi_meta": {
-              "poi_key": "manjanggul_lava_tube",
-              "kb_version": "1.29",
+              "poi_key": "hamdeok_seoubong_beach",
+              "kb_version": "1.19",
               "verified_date": "2026-04-29",
               "sources": [
-                "visitjeju.net (Visit Jeju official)",
-                "english.visitkorea.or.kr",
-                "jeju.go.kr/geopark",
-                "UNESCO Jeju Volcanic Island and Lava Tubes (whc.unesco.org)",
-                "Wikipedia Manjanggul (Dec 2025)"
+                "Jeju Olle Foundation — Trail Course 19 official map",
+                "VisitJeju — Hamdeok Seoubong Beach",
+                "Jeju 4·3 Peace Foundation — Imperial Japanese Army tunnel records",
+                "Korea Tourism Organization — Top 3 Jeju Beaches ranking",
+                "Jocheon-eup local cultural office — Seoubong oreum trail records"
               ]
             },
             "convenience": {
-              "restroom": "入口导览中心设有洗手间",
-              "parking": "入口免费停车场"
+              "restroom": "海滩设有公共洗手间和淋浴设施",
+              "parking": "公共停车场(夏季收费)"
             },
             "smartNotes": {
-              "photo": "开放区段尽头**高7.6米、世界最大的熔岩石柱**是标志画面，朝向宽18米·高23米长通道拍摄的透视照，规模感同样震撼。",
-              "facilities": "入口停车场旁的导览中心会讲解熔岩洞的形成过程 — 建议入场前观览10分钟。洞内没有小卖部。",
-              "tip": "即使夏季也请备外套（洞内11〜13℃）。地面潮湿且昏暗，宜穿防滑鞋。可能因整修而关闭，请提前确认到访当日的运营情况。"
+              "photo": "犀牛峰剪影衬托下的日落是经典画面;犀牛峰山顶的航拍视角能呈现白沙湾的弧线",
+              "facilities": "沙滩前一带多家咖啡馆;附近便利店若干",
+              "tip": "比挟才或金宁海滩人少;东侧 Delmoondo 咖啡馆一带是热门日落点"
             },
             "visitBasics": {
-              "hours": "09:00〜18:00（最后入场17:10）",
-              "closed": "每月第一个星期三 / 暴雨时临时休馆",
-              "admission": "成人4,000韩元（团体3,000韩元）/ 青少年·儿童2,000韩元（团体1,500韩元）",
-              "walking": "适中 — 平坦的1公里往返，洞穴入口需下行台阶，地面略为崎岖潮湿"
+              "hours": "24 小时开放(海滩);7–8 月开放游泳期,配救生员",
+              "closed": "全年开放",
+              "admission": "免费",
+              "walking": "轻松——沙滩平整;犀牛峰徒步为中等(有台阶)"
             },
             "images": [
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-              "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp"
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+              "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2807,40 +2803,48 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 1",
-                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 1"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
+                "location": "咸德西牛峰海滩",
+                "caption": "咸德西牛峰海滩 — photo 1",
+                "alt": "咸德西牛峰海滩 — gallery image 1"
               },
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 2",
-                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 2"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-01.webp",
+                "location": "咸德西牛峰海滩",
+                "caption": "咸德西牛峰海滩 — photo 2",
+                "alt": "咸德西牛峰海滩 — gallery image 2"
               },
               {
                 "id": 3,
                 "type": "photo",
-                "src": "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
-                "location": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞）",
-                "caption": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — photo 3",
-                "alt": "万丈窟（联合国教科文组织世界自然遗产 · 熔岩洞） — gallery image 3"
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-02.webp",
+                "location": "咸德西牛峰海滩",
+                "caption": "咸德西牛峰海滩 — photo 3",
+                "alt": "咸德西牛峰海滩 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438-04.webp",
+                "location": "咸德西牛峰海滩",
+                "caption": "咸德西牛峰海滩 — photo 4",
+                "alt": "咸德西牛峰海滩 — gallery image 4"
               }
             ]
           },
           {
             "number": 8,
-            "time": "≈ 17:45",
+            "time": "≈ 18:00",
             "duration": "30分钟",
             "name": "下车（2个地点+东门市场）",
             "category": "下车——济州市集散点顺序",
-            "description": "**济州市三个下车点，方便返回酒店或晚餐**。下车点：济州市政厅∕涯月洞（约17:30至18:00）→ 济州机场（约17:40）→ 东门传统市场（约18:00）。东门传统市场下车后可自行前往晚餐（司机不陪同进入市场）；黑猪肉街距东门步行约5分钟。机场下车适合当晚有晚班机的旅客（济州国际机场末班机约21:30，17:40下车后时间充裕）。",
+            "description": "**济州市三个下车点，方便返回酒店或晚餐**。**东门传统市场**距咸德海滩车程约25分钟，是济州最具人气的傍晚市场——新鲜海产、济州柑橘特产与街头小吃；可在此下车自行晚餐与逛市场（司机不陪同进入市场），或继续前往**济州市政厅**与**济州机场**下车点。\n\n预计到达：**东门市场约18:00、市政厅约18:15、机场约18:30**。搭乘当晚航班（末班机约21:30）的旅客时间充裕。",
             "image": null,
             "highlights": [
-              "三个下车点：**市政厅∕涯月洞（≈17:30–18:00）→ 机场（≈17:40）→ 东门市场（≈18:00）**",
-              "**机场下车（≈17:40）**——末班机前充裕时间办理登机",
+              "三个下车点：**东门市场（≈18:00）→ 市政厅（≈18:15）→ 机场（≈18:30）**",
+              "**机场下车（≈18:30）**——末班机（约21:30）前充裕时间办理登机",
               "**东门传统市场**下车后可步行至**黑猪肉街（约5分钟）**",
               "下车后为自由时间，司机不陪同"
             ],
@@ -2852,7 +2856,7 @@
               "大巴前往机场 — 约15分钟",
               "机场下车 — 5分钟"
             ],
-            "whyOnRoute": "东门市场下车 = 可选的晚餐停留。市政厅＋机场覆盖酒店区及晚班机旅客。距海女博物馆至机场约40分钟车程。",
+            "whyOnRoute": "东门市场下车 = 可选的晚餐停留。市政厅＋机场覆盖酒店区及晚班机旅客。自咸德出发总车程约55分钟，依次覆盖三个下车点、不走回头路。",
             "smartNotes": {},
             "convenience": {},
             "visitBasics": {},
@@ -2873,9 +2877,9 @@
             "theme": "出发"
           },
           {
-            "name": "咸德西牛峰海滩",
-            "type": "secondary",
-            "theme": "海滩"
+            "name": "万丈窟（联合国教科文组织）",
+            "type": "primary",
+            "theme": "联合国教科文组织熔岩洞"
           },
           {
             "name": "城邑民俗村",
@@ -2898,9 +2902,9 @@
             "theme": "海女非物质文化遗产"
           },
           {
-            "name": "万丈窟（联合国教科文组织）",
-            "type": "primary",
-            "theme": "联合国教科文组织熔岩洞"
+            "name": "咸德西牛峰海滩",
+            "type": "secondary",
+            "theme": "海滩"
           },
           {
             "name": "济州市下车",
@@ -2910,34 +2914,34 @@
         ],
         "routePhases": [
           {
-            "phase": "接送及海岸出发",
+            "phase": "接送并向东出发",
             "duration": "约1小时",
-            "description": "济州市4个地点接送（08:30〜09:05）后前往咸德海水浴场。"
+            "description": "济州市4个地点接送（08:30〜09:05）后，直达金宁万丈窟。"
           },
           {
-            "phase": "从海岸到内陆文化遗产",
+            "phase": "人潮之前的教科文组织熔岩洞",
+            "duration": "约1.5小时",
+            "description": "万丈窟（联合国教科文组织世界自然遗产，55分钟）— 开放后最清静的时段参观，随后前往内陆城邑。"
+          },
+          {
+            "phase": "朝鲜民俗村＋午餐",
             "duration": "约2小时",
-            "description": "咸德海水浴场（60分钟）→ 城邑民俗村（朝鲜时代国家民俗文化遗产，60分钟）。"
+            "description": "城邑民俗村（朝鲜时代国家民俗文化遗产，60分钟）→ 城山附近本地餐厅 — 黑猪肉、鲍鱼石锅、时令海鲜。午餐费用另计。"
           },
           {
-            "phase": "午餐",
-            "duration": "约1小时",
-            "description": "城山附近本地餐厅 — 黑猪肉、鲍鱼石锅、时令海鲜。午餐费用另计。"
+            "phase": "城山教科文组织核心＋海女",
+            "duration": "约2.5小时",
+            "description": "城山日出峰（自选攀登）→ 峰下海域海女潜水表演（取消时改为海女博物馆）。"
           },
           {
-            "phase": "联合国教科文组织核心",
-            "duration": "约3小时",
-            "description": "城山日出峰（自选攀登）→ 海女潜水表演（取消时改为海女博物馆）→ 万丈窟熔岩洞（联合国教科文组织世界自然遗产）。"
-          },
-          {
-            "phase": "返程",
-            "duration": "约1小时",
-            "description": "金宁 → 济州市，于2个地点及东门市场下车。"
+            "phase": "海滩终章与返程",
+            "duration": "约2小时",
+            "description": "傍晚前光线中的咸德犀牛峰海滩（60分钟）→ 短程海岸路线返回济州市，于2个地点及东门市场下车。"
           }
         ],
         "routeShapeIntro": {
           "title": "行程路线一览",
-          "subtitle": "这是一条东济州环线，从东部尽头出发，在一天之内串联起岛上两处联合国教科文组织世界自然遗产 — 城山日出峰（凝灰岩锥）与万丈窟（熔岩洞），二者均于2007年作为同一项资产登录。再加上属于联合国教科文组织非物质文化遗产的海女潜水表演。高效的路线安排可避开主要景点的拥挤。"
+          "subtitle": "这是一条在一天之内串联岛上两处联合国教科文组织世界自然遗产的东济州环线 — 赶在人潮之前于开放后不久走进万丈窟，午后在同属2007年登录资产的城山日出峰完成叙事。两者之间是朝鲜时代的城邑民俗村；其后是教科文组织非物质遗产的海女潜水表演，以及距济州市最近的咸德海滩黄昏前收尾。"
         }
       }
     },
@@ -2969,6 +2973,10 @@
                 {
                   "label": "一天内2处联合国教科文组织世界自然遗产 + 非物质文化遗产",
                   "detail": "城山日出峰与万丈窟于2007年以“济州火山岛与熔岩洞窟”共同登录为世界自然遗产。再加上2016年人类非物质文化遗产的海女潜水表演，一天之内便能看到三重联合国教科文组织遗产。"
+                },
+                {
+                  "label": "洞窟在前、海滩在后 — 顺序本身就是设计",
+                  "detail": "万丈窟09:00开放后的第一小时最为清静，因此接送后直奔于此 — 在正午团体巴士人潮之前走完熔岩洞，常年11〜13℃的清凉在上午也是一种舒爽。随后经城邑、城山与海女表演层层展开，最后在距济州市最近的咸德海滩以柔和的午后光线收尾，让全天最后一段车程也最短。"
                 },
                 {
                   "label": "真正的万丈窟 — 不再是替代，而是原版联合国教科文组织熔岩洞",
@@ -3019,11 +3027,11 @@
             "preview": "中等难度。",
             "content": [
               "中等难度。",
-              "咸德海滩为平坦沙地。",
+              "万丈窟约1公里平坦往返，洞穴入口有台阶，洞内地面略为崎岖·潮湿（常年11〜13℃，建议备外套）。",
               "城邑民俗村为土路与石墙。",
               "城山日出峰火山口边缘攀登约30分钟陡峭石阶（可跳过）。",
               "海女潜水表演在平坦海岸观赏。",
-              "万丈窟约1公里平坦往返，洞穴入口有台阶，洞内地面略为崎岖·潮湿（常年11〜13℃，建议备外套）。",
+              "咸德海滩为平坦沙地。",
               "必须穿包脚趾鞋。",
               "全天步行约4〜5公里。"
             ]
@@ -3266,10 +3274,10 @@
       "props": {
         "note": "可订状态将在支付步骤中确认。",
         "price": {
-          "amountLabel": "47",
+          "amountLabel": "49",
           "originalPriceUsd": 59,
-          "salePriceUsd": 47,
-          "discountPercent": 20,
+          "salePriceUsd": 49,
+          "discountPercent": 17,
           "currency": "USD",
           "per": "person"
         }
@@ -3279,7 +3287,7 @@
   "itinerary_variants": [],
   "_publication": {
     "schema_version": "v4_canonical",
-    "last_modified": "2026-04-28",
+    "last_modified": "2026-08-04",
     "version_history": [
       "v11",
       "v12",
@@ -3432,7 +3440,8 @@
             "reason": "Still has Haenyeo Museum as anchor refuge but 70% of stop time is weather-exposed"
           }
         }
-      }
+      },
+      "v19_reorder_2026_08_04": "Course reorder (owner instruction): Manjanggul → Seongeup → Lunch → Seongsan → Haenyeo performance → Hamdeok. Same stop set — cave-first at 09:00 opening (before tour-bus crowds), Hamdeok Beach becomes the golden-hour finale closest to Jeju City. Times shifted (Manjanggul ≈09:50, Seongeup ≈11:15, lunch ≈12:40, Seongsan/haenyeo unchanged, Hamdeok ≈16:35, drop-off ≈18:00–18:30). routePhases/routeShapeIntro/whyTourWorks/SEO/catalog updated across 6 locales. matching_profile/metadata unchanged (identical POI set)."
     }
   },
   "liveStatusSection": "haenyeo"

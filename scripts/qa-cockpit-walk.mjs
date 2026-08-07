@@ -212,9 +212,20 @@ async function openCockpit(page) {
     await hero.click();
     await page.waitForTimeout(1_500);
   }
+  /**
+   * 🔴 Entry BRANCHES on room count (UX-D10), and this waited on one branch
+   * only. With several rooms 운행 시작 just switches the shell to the 운행 tab
+   * and each room carries its own 운전 모드; with a SINGLE room `drive-hero`
+   * enters drive mode directly and `ops-drive` never exists — so the harness
+   * sat for 60s and reported a healthy app as broken. That is the same class
+   * the comment above describes, and `qa-uiux-render.mjs` had already been
+   * taught both branches; this file had not. Take whichever branch the data
+   * actually produced.
+   */
   const drive = page.locator('[data-testid="ops-drive"]').first();
-  await drive.waitFor({ state: 'visible', timeout: 60_000 });
-  await drive.click();
+  if (await drive.count()) {
+    await drive.click();
+  }
   await page.waitForSelector('[data-testid="driver-feed"]', { timeout: 90_000 });
 }
 

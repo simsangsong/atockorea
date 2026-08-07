@@ -11,8 +11,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan Cruise Shore: Coastal Bus Tour",
       "subtitle": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away.",
       "region": "Busan",
-      "duration": "9 hours",
-      "stopsCount": 8,
+      "duration": "8 hours",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -23,11 +23,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "priceLabel": "From US$49 per person (was $55, 11% off)",
-      "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
+      "priceLabel": "",
+      "shortCardDescription": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi Market, BIFF Square, Gukje Market, Gamcheon Culture Village, Songdo Beach, Yongdusan Park), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach."
     },
     "price": {
-      "amountLabel": "49"
+      "amountLabel": "58.79"
     }
   },
   "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -126,7 +126,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "A private Busan shore excursion for cruise guests. Choose the places that matter most — Haedong Yonggungsa, Cheongsapo, Blue Line Park, UN Memorial Cemetery, Gamcheon Culture Village, Songdo, Nampo-dong, Jagalchi Market, and more — then adjust the day with your guide around your ship schedule."
     },
     "price": {
-      "amountLabel": "364"
+      "amountLabel": "456.99"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
@@ -135,23 +135,49 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "Busan Cruise Shore: Small-Group Tour",
       "subtitle": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
       "region": "Busan",
-      "duration": "9 hours",
-      "stopsCount": 8,
+      "duration": "8 hours",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "Cruise excursion",
         "Small shared van",
         "Pickup at port",
-        "9-hour shore day"
+        "8-hour shore day"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers. Visit a balanced mix of Busan highlights such as Haedong Yonggungsa, UN Memorial Cemetery, Jagalchi/BIFF/Gukje market area, Gamcheon Culture Village, Songdo Beach, and Yongdusan Park when time allows. Route order and stops may adjust to ship schedule, traffic, and weather."
+      "shortCardDescription": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: Haedong Yonggungsa, the UN Memorial Cemetery, lunch at your own expense, then Jagalchi Market, BIFF Square and Gukje Market on foot, Gamcheon Culture Village, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and Yongdusan Park. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard."
     },
     "price": {
-      "amountLabel": "84"
+      "amountLabel": "68.95"
+    }
+  },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Busan Small-Group: Sea Temple, Sky Capsule & Culture Villages",
+      "subtitle": "Small-group day tour of Busan's coastal icons and hillside villages — Haedong Yonggungsa seaside temple, the Cheongsapo Daritdol glass skywalk, the Blueline Park Sky Capsule ride (ticket optional at booking), Gamcheon Culture Village, and the quiet Dakbatgol mural village with its wish-stairs monorail.",
+      "region": "Busan",
+      "duration": "≈ 10 hours",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Small group",
+        "Busan",
+        "Sky Capsule",
+        "Coastal",
+        "Culture villages"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "A small-group Busan day built around the coast and the hillside villages: Haedong Yonggungsa seaside temple in its quiet morning window, the free glass-floor Daritdol Observatory at Cheongsapo, the Blueline Park Sky Capsule ride from Cheongsapo to Mipo (ticket included or excluded — choose at booking), lunch, Gamcheon Culture Village, and the little-known Dakbatgol mural village where a free monorail glides up the 'wish stairs'. Every anchor except the optional capsule is free admission."
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -232,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "Busan to Gyeongju: Ancient Capital",
-      "subtitle": "Gyeongju's six classic stops at a calmer pace and an earlier return.",
+      "subtitle": "Small-group mini-van · English-speaking guide — Ahopsan Bamboo Forest, Bulguksa (UNESCO), Gyochon Hanok Village + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and Gyeongju National Museum (Donggung & Wolji night view in winter), all in one day.",
       "region": "Gyeongju (from Busan)",
-      "duration": "10.5 hours",
+      "duration": "11.5 hours",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -242,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "Small group",
         "Calmer pace",
         "From Busan",
-        "Earlier return"
+        "Winter night view"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "From US$39 per person (was $50, 22% off)",
-      "shortCardDescription": "Small-group day tour from Busan to Gyeongju, the Silla kingdom's ancient capital (57 BCE–935 CE). Same classic six-attraction route as the longer Busan→Gyeongju UNESCO Legacy tour (Ahopsan Bamboo Forest → Bulguksa Temple UNESCO → Gyeongju ssambap lunch → National Museum → Gyochon Hanok Village → Woljeonggyo Bridge) but at a calmer pace and earlier return (≈18:50). English/Chinese-speaking certified guide; mini-van; free admissions throughout (only Ahopsan ₩5,000 and lunch paid on-day)."
+      "shortCardDescription": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at Gyeongju National Museum, or at the Donggung & Wolji night view in winter."
     },
     "price": {
       "amountLabel": "39"
@@ -383,7 +409,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "Jeju East UNESCO Day Tour",
-      "subtitle": "Small-group minibus with English/Chinese guide — loop Hamdeok Beach, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and Manjanggul (UNESCO) in a 9-hour eastern route.",
+      "subtitle": "Small-group minibus with English/Chinese guide — Manjanggul (UNESCO) in its quiet opening hour, Seongeup Folk Village, Seongsan Ilchulbong (UNESCO), the haenyeo diving performance, and a Hamdeok Beach finale in a 9-hour eastern route.",
       "region": "Eastern Jeju",
       "duration": "9 hours",
       "stopsCount": 8,
@@ -400,7 +426,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group. Includes Hamdeok Seoubong Beach, Seongeup Folk Village (UNESCO folk heritage), Seongsan Ilchulbong and Manjanggul — two UNESCO World Natural Heritage sites inscribed together in 2007 — plus a haenyeo diving performance (Haenyeo Museum if canceled). All admissions included, certified English/Chinese-speaking guide."
+      "shortCardDescription": "Loop eastern Jeju's UNESCO sights in a 9-hour small group — now routed cave-first: Manjanggul right after opening (the quietest hour in the lava tube), Seongeup Folk Village, Seongsan Ilchulbong and the haenyeo diving performance (Haenyeo Museum if canceled), then a late-afternoon finale at Hamdeok Seoubong Beach. Two UNESCO World Natural Heritage sites inscribed together in 2007, all admissions included, certified English/Chinese-speaking guide."
     },
     "price": {
       "amountLabel": "49"
@@ -591,22 +617,25 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "Pocheon: Lake, Herb Island & Art Valley",
-      "subtitle": "Mountain lake, Mediterranean herb gardens, and a quarry-turned-art-park—the calmest seasonal day-trip from Seoul.",
-      "region": "Pocheon (Seoul Day Trip)",
+      "title": "Pocheon & Yeoncheon: Lake, Waterfall & Quarry Art Valley",
+      "subtitle": "A mountain-ringed lake walk, an 18 m waterfall over basalt columns, and an emerald quarry lake — two UNESCO Global Geopark geosites in one unhurried day from Seoul.",
+      "region": "Pocheon & Yeoncheon (Seoul Day Trip)",
       "duration": "10 hours",
-      "stopsCount": 3,
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "Nature & Photo Trip",
-        "Seasonal Highlights",
-        "Romantic Evening Lights"
+        "Seoul day trip",
+        "Mon · Thu · Sat",
+        "UNESCO Geopark",
+        "Waterfall",
+        "Lake walk",
+        "Small group"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "A relaxed seasonal day-trip from Seoul to Pocheon, the Gyeonggi countryside known for its lakes, herb gardens, and dramatic art-park landscapes. The route combines Sanjeong Lake's mountain-circled waters, Herb Island's Mediterranean-style gardens and evening lights, and Pocheon Art Valley's monorail-accessed quarry observatory. Less crowded than Nami Island and built around photo-led calm rather than landmark sprint."
+      "shortCardDescription": "A calmer Seoul day-trip built on real geology. Walk the flat 3.2 km loop around Sanjeong Lake under Myeongseongsan, eat Pocheon's own Idong galbi, then cross an 80 m suspension bridge to face Jaein Falls as it drops 18 m over basalt columns, and finish inside Pocheon Art Valley's granite quarry, where spring water has filled the pit into the emerald Cheonjuho. Jaein Falls and Art Valley are both geosites of the Hantangang UNESCO Global Geopark — the same landscape seen from its two opposite halves. Departs Mondays, Thursdays and Saturdays."
     },
     "price": {
       "amountLabel": "54"
@@ -634,6 +663,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": "419"
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Gapyeong Day Tour from Seoul: Nami Island, Garden of Morning Calm & Petite France",
+      "subtitle": "The Gapyeong trio in one coach day — no mountain hike, three admissions included",
+      "region": "Seoul → Gyeonggi-do (Gapyeong)",
+      "duration": "11.5 hours",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Day trip from Seoul",
+        "Gapyeong",
+        "Join-in group",
+        "K-drama",
+        "Gardens"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Seoul's easiest countryside day: Nami Island's metasequoia avenue, a 330,000 m² themed arboretum, and a Little Prince village — all three admissions included, back in Seoul by 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "seoul-private-nami-morning-calm-petite-france": {
@@ -840,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": "51"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Winter Special from Seoul: Seoraksan, Nami Island & Eobi Valley Ice Wall",
+      "subtitle": "A winter-only coach day — snow on Korea's most famous peak, Nami under frost, and a village-built ice wall",
+      "region": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)",
+      "duration": "13.5 hours",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Winter only",
+        "Seasonal",
+        "Day trip from Seoul",
+        "Seoraksan",
+        "Ice wall"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Runs in deep winter only: Seoraksan under snow, Nami Island's frosted tree avenues, and the 25-metre ice wall that Gapyeong villagers grow on a valley rock face each January."
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

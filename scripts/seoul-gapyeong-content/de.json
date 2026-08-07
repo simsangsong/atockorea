@@ -1,0 +1,322 @@
+{
+  "_note": "EN master for seoul-gapyeong-nami-morning-calm-petite-france-day-tour. Authored 2026-08-04. Stop bodies for Nami / Morning Calm / Petite France come from the two donors (KB-verified 2026-04-29); everything in this file is product-level copy plus the pickup, lunch and return stops. Admission figures re-checked 2026-08-04: Nami ₩19,000 incl. round-trip ferry, Morning Calm ₩11,000, Petite France ₩12,000 (combo with the adjacent Italian Village ₩19,500).",
+
+  "title": "Gapyeong-Tagestour ab Seoul: Insel Nami, Garden of Morning Calm & Petite France",
+  "subtitle": "Das Gapyeong-Trio an einem Bustag — keine Bergwanderung, drei Eintritte inklusive",
+  "shortCardDescription": "Seouls unkompliziertester Landtag: die Metasequoien-Allee der Insel Nami, ein 330,000 m² großes Themen-Arboretum und ein Dorf zum Kleinen Prinzen — alle drei Eintritte inklusive, zurück in Seoul bis 19:00.",
+  "badges": ["Tagesausflug ab Seoul", "Gapyeong", "Gruppentour zum Zusteigen", "K-Drama", "Gärten"],
+  "tags": ["Tagesausflug ab Seoul", "Gapyeong", "Gruppentour zum Zusteigen", "K-Drama", "Gärten", "Familienfreundlich"],
+
+  "headlineLine1": "Tagestour ab Seoul",
+  "headlineLine2": "Nami, Morning Calm & Petite France",
+  "heroTagline": "Gapyeongs drei bekannteste Stopps an einem entspannten Bustag ab Seoul — eine baumbestandene Flussinsel, Koreas bekanntester Privatgarten und ein offiziell lizenziertes Dorf zu „Le Petit Prince“",
+  "heroPills": ["Tagesausflug ab Seoul", "Gärten + Hallyu", "Alle Eintritte inklusive"],
+  "heroDuration": "11,5 Stunden",
+  "heroStopsLabel": "3 Stopps",
+  "region": "Seoul → Gyeonggi-do (Gapyeong)",
+  "duration": "11,5 Stunden",
+  "stopsCount": 3,
+
+  "seo": {
+    "pageTitle": "Gapyeong-Tagestour ab Seoul — Insel Nami, Garden of Morning Calm & Petite France | AtoC Korea",
+    "metaDescription": "Bus-Gruppentagestour ab Seoul nach Gapyeong: die Metasequoien-Allee der Insel Nami, der Garden of Morning Calm und Petite France. Alle drei Eintritte inklusive. Abholung am Bahnhof Hongik University oder an der Station Myeongdong, zurück in Seoul bis 19:00.",
+    "title": "Gapyeong-Tagestour ab Seoul — Insel Nami, Morning Calm & Petite France",
+    "description": "Drei Wahrzeichen Gapyeongs an einem 11,5-stündigen Bustag ab Seoul, inklusive Fähre zur Insel Nami sowie Eintritt in den Garden of Morning Calm und nach Petite France.",
+    "primaryKeywords": [
+      "Gapyeong Tagestour ab Seoul",
+      "Nami Island Tour",
+      "Garden of Morning Calm Tour",
+      "Petite France Gapyeong",
+      "Tagesausflug ab Seoul Nami Island Morning Calm"
+    ]
+  },
+
+  "glanceItems": [
+    { "icon": "clock", "label": "Dauer", "value": "11,5 Stunden" },
+    { "icon": "camera", "label": "Fotopotenzial", "value": "Sehr hoch", "level": 5 },
+    { "icon": "mountain", "label": "Landschaft", "value": "Hoch", "level": 4 },
+    { "icon": "footprints", "label": "Gehanteil", "value": "Leicht bis mittel", "level": 2 },
+    { "icon": "cloud-rain", "label": "Regentauglichkeit", "value": "Mittel", "level": 3 },
+    { "icon": "users", "label": "Familientauglichkeit", "value": "Sehr gut", "level": 5 },
+    { "icon": "gauge", "label": "Tempo", "value": "Entspannt", "level": 3 }
+  ],
+
+  "flow": {
+    "pickup": "Abholung (Hongik / Myeongdong)",
+    "nami": "Insel Nami",
+    "lunch": "Mittagessen in Gapyeong",
+    "gmc": "The Garden of Morning Calm",
+    "petite": "Petite France",
+    "dropoff": "Rückfahrt nach Seoul"
+  },
+
+  "routeShapeIntro": {
+    "title": "So verläuft dieser Tag ab Seoul",
+    "subtitle": "Abholung um 07:30 an der Hongik University bzw. um 08:00 in Myeongdong und eine rund 1,5-stündige Fahrt nach Nordosten bringen Sie auf die Fähre zur Insel Nami, bevor der Tagesausflugsandrang dichter wird. Mittagessen im Ort Gapyeong, dann dreht die Route landeinwärts und steigt zum Garden of Morning Calm hinauf, um schließlich wieder hinunter nach Petite France am Ufer des Cheongpyeong-Sees zu führen — das ohnehin auf dem Heimweg liegt, sodass der letzte Stopp keinen Umweg kostet. Zurück in Seoul gegen 18:30-19:00."
+  },
+
+  "routePhases": [
+    {
+      "phase": "Seoul → Gapyeong",
+      "duration": "≈ 1,5 Stunden",
+      "description": "Abholung um 07:30 an der Hongik University bzw. um 08:00 in Myeongdong, dann eine rund 1,5-stündige Fahrt nach Nordosten zum Fähranleger Gapyeong und die fünfminütige Überfahrt zur Insel Nami."
+    },
+    {
+      "phase": "Insel Nami",
+      "duration": "≈ 2 Stunden",
+      "description": "Flache, baumbestandene Alleen, die Metasequoien-Allee aus „Winter Sonata“, Bänke am Fluss sowie frei laufende Strauße und Pfauen. Die Hin- und Rückfahrt mit der Fähre und die Visa-Gebühr der Naminara Republic sind inklusive."
+    },
+    {
+      "phase": "Mittagessen → Garden of Morning Calm",
+      "duration": "≈ 2,5 Stunden",
+      "description": "Mittagessen in einem lokalen Restaurant in Gapyeong (auf eigene Kosten — Dakgalbi-Land), dann rund 35 Minuten landeinwärts und bergauf zum Garden of Morning Calm für 90 Minuten in dessen thematischen Teilgärten."
+    },
+    {
+      "phase": "Petite France → Seoul",
+      "duration": "≈ 2,5 Stunden",
+      "description": "Rund 45 Minuten zurück hinunter ans Ufer des Cheongpyeong-Sees für eine Stunde in Petite France, dann die rund 1,5-stündige Fahrt nach Seoul — Myeongdong gegen 18:30, Hongik gegen 19:00."
+    }
+  ],
+
+  "whyTourWorks": {
+    "routeLogicTitle": "Tempo & Geografie",
+    "bestFor": [
+      "Erstbesucher, die Koreas Landschaft ohne Bergwanderung sehen möchten",
+      "Paare und Hallyu-Fans, die wegen der Metasequoien-Allee aus „Winter Sonata“ kommen",
+      "Familien und ältere Reisende — jeder Stopp ist flach oder sanft hügelig",
+      "Alle, die einen ganzen Tag außerhalb Seouls wollen, der trotzdem vor dem Abendessen endet"
+    ],
+    "lessIdealFor": [
+      "Wanderer — auf dieser Route gibt es weder Berg noch Gipfel",
+      "Reisende, die lieber einen einzigen ruhigen Stopp hätten statt drei",
+      "Gäste, die vor 19:00 Nachtleben oder Zeit in der Stadt am Abend erwarten"
+    ],
+    "items": [
+      {
+        "label": "Nami zuerst, vor dem Andrang",
+        "detail": "Gapyeong liegt nur rund 75 km von Seoul entfernt, sodass eine Abfahrt um 07:30 den Anleger gegen 10:00 erreicht — vor den Individualreisenden, die mit den ITX-Zügen am späten Vormittag ankommen, und noch im tiefen Morgenlicht auf der Metasequoien-Allee."
+      },
+      {
+        "label": "Die Gärten liegen landeinwärts, das Dorf liegt auf dem Heimweg",
+        "detail": "Der Garden of Morning Calm liegt oben in Sang-myeon, rund 35 Minuten landeinwärts vom Fluss; Petite France liegt wieder unten am Ufer des Cheongpyeong-Sees und damit bereits Richtung Seoul. In dieser Reihenfolge kostet der letzte Stopp keinen Umweg."
+      },
+      {
+        "label": "Drei Eintritte, ein Preis",
+        "detail": "Namis Visa-Gebühr von ₩19,000 (Fähre hin und zurück inklusive), die ₩11,000 des Garden of Morning Calm und die ₩12,000 für Petite France sind alle abgedeckt — rund ₩42,000 an Eintritten, für die Sie weder anstehen noch erneut zahlen."
+      },
+      {
+        "label": "Ein kürzerer Tag als die Seoraksan-Routen",
+        "detail": "Weil hier nichts in Gangwon liegt, ist der Bus etwa drei statt fünf Stunden unterwegs. Genau deshalb wirkt dieser Tag entspannt, wo die Seoraksan-Programme lang wirken."
+      }
+    ]
+  },
+
+  "namiDuration": "120 Min. (2 Stunden)",
+  "namiWhy": "Nami eröffnet den Tag, weil es der eine Stopp ist, den frühes Licht belohnt und Menschenmengen bestrafen. Die Metasequoien- und Ginkgo-Alleen der halbmondförmigen Insel sind ihr Markenzeichen, und sie fotografieren sich am besten vor Mittag, bevor die mit dem ITX-Zug anreisenden Individualreisenden und der Gapyeong-Stadtrundfahrtbus die zentralen Wege füllen. Nami zuerst zu setzen heißt außerdem, dass die Überfahrt in der Morgenruhe statt im Nachmittagswind stattfindet, und es legt den Rest des Tages so an, dass es landeinwärts und dann nach Hause geht, ohne zurückfahren zu müssen.",
+  "namiVisitBasics": {
+    "hours": "Fähre ab 08:00, letzte Einfahrt um 21:00, letzte Ausfahrt um 21:05. Zwischen 09:00 und 18:00 alle 10-20 Minuten, außerhalb dieser Zeit alle 30 Minuten; die Überfahrt dauert etwa 5 Minuten. Die meisten Läden auf der Insel schließen gegen 18:00",
+    "closed": "Ganzjährig geöffnet",
+    "admission": "Visa-Gebühr der Naminara Republic, Fähre hin und zurück inklusive: Erwachsene ₩19,000 — in dieser Tour INKLUSIVE",
+    "walking": "Leicht — flache, baumbestandene Wege; die Runde über die halbe Insel misst ~3 km, die komplette Runde ~5 km. Auf der Insel können Fahrräder und E-Buggys gemietet werden, wenn Sie lieber nicht laufen möchten."
+  },
+
+  "gmcDuration": "90 Min.",
+  "gmcWhy": "Der Garden of Morning Calm — der „Garten der Morgenstille“ — ist das mittlere und ruhigste Kapitel des Tages: 90 Minuten reichen, um die Hauptrunde am Sunken Garden mit seinen Blumenbeeten in Form der koreanischen Halbinsel entlangzugehen und sich trotzdem irgendwo hinzusetzen. Der Garten liegt landeinwärts und oberhalb des Flusses, also muss er nach Nami und vor der Heimfahrt kommen; ein Besuch am frühen Nachmittag erwischt den Garten außerdem in seiner wärmsten Phase, was von November bis März zählt, wenn die Kälte im Tal hängen bleibt.",
+  "gmcVisitBasics": {
+    "hours": "Etwa 08:30 bis Sonnenuntergang (üblicherweise 08:30-19:00), letzter Einlass 18:00. Während des winterlichen Lichterfestivals bleibt der Garten bis in den Abend geöffnet — die Zeiten wechseln mit der Saison, und der Guide bestätigt die Schließzeit des Tages im Bus",
+    "closed": "Ganzjährig geöffnet",
+    "admission": "Erwachsene ₩11,000 — in dieser Tour INKLUSIVE",
+    "walking": "Mittel — weitläufige Wege über welliges Gelände durch die thematischen Teilgärten; die Hauptrunde ist weitgehend kinderwagentauglich"
+  },
+
+  "petiteDuration": "60 Min.",
+  "petiteWhy": "Petite France beschließt den Tag wegen seiner Lage, nicht nur wegen seines Charakters: Das Dorf liegt am Ufer des Cheongpyeong-Sees und damit bereits in Richtung Seoul, sodass eine Stunde hier keine zusätzliche Fahrzeit kostet. Es ist außerdem mit Abstand der kleinste Stopp des Tages — sechzehn Gebäude an einem Hang, in unter einer Stunde erlaufen —, was nach zwei Stunden auf einer Insel und neunzig Minuten in einem Garten den richtigen Schlusston setzt. Fans von My Love from the Star, Secret Garden und Beethoven Virus erkennen es sofort wieder.",
+  "petiteVisitBasics": {
+    "hours": "09:00-18:00, letzter Einlass 17:00; die Schließzeit verschiebt sich mit der Saison und an manchen Abenden wegen geplanter Nachtveranstaltungen",
+    "closed": "Ganzjährig geöffnet",
+    "admission": "Erwachsene ₩12,000 — in dieser Tour INKLUSIVE. Das Kombiticket mit dem benachbarten Pinocchio & Da Vinci Italian Village (₩19,500 für Erwachsene) ist NICHT enthalten; die Stunde in diesem Programm gilt nur für Petite France",
+    "walking": "Leicht — ein kleines Dorf an einem sanften Hang, in unter einer Stunde bequem zu erlaufen"
+  },
+
+  "_petiteHighlightDropMarkerNote": "Substring identifying the donor highlight that repeats a stale ₩10,000 gate price, contradicting the ₩12,000 in visitBasics. The builder drops that one highlight and throws if the marker is not found — so each locale must carry the marker exactly as it appears in that locale's donor bundle.",
+  "petiteHighlightDropMarker": "**Tageseintritt 2026**",
+
+  "pickup": {
+    "name": "Abholung (Bahnhof Hongik University oder Station Myeongdong)",
+    "category": "Bus-Abholung",
+    "duration": "30-Minuten-Fenster",
+    "description": "Die Abholung erfolgt an einem von zwei Treffpunkten in Seoul: **(1) Starbucks am Bahnhof Hongik University, Ausgang 8 (Mapo-gu)** um 07:30 — die Starbucks-Filiale liegt unmittelbar oben an Ausgang 8; ODER **(2) Station Myeongdong, Ausgang 2 (Jung-gu)** um 08:00 — der NorthFace-Flagshipstore ist das sichtbare Wahrzeichen neben dem Ausgang.\n\nBeide Abholpunkte teilen sich denselben klimatisierten Bus, und die Gäste von Hongik steigen zuerst ein. Bitte seien Sie **5 Minuten vor der angegebenen Zeit** an Ihrem gewählten Punkt. Das ist ein merklich sanfterer Start als bei den Seoraksan-Tagestouren, die um 06:00 losfahren — Gapyeong liegt nah genug an Seoul, dass der Bus erst starten kann, wenn die ersten U-Bahnen bereits zwei Stunden fahren.\n\nDer Guide verteilt beim Einsteigen eine gedruckte koreanisch-englische Programmkarte und bestätigt den Ablauf des Tages, den Rastplatzstopp und die erwarteten Rückkehrzeiten. Von Myeongdong fährt der Bus auf der Schnellstraße Seoul-Chuncheon nach Nordosten, rund 1,5 Stunden bis zum Fähranleger Gapyeong.",
+    "timeUsed": [
+      "Treffen Sie 5 Minuten vor der angegebenen Zeit an Ihrem gewählten Abholpunkt ein (~5 Min.)",
+      "Bus von AtoC Korea am gekennzeichneten Starbucks / NorthFace erkennen (~5 Min.)",
+      "Einsteigen in der Abholschlange (~10 Min.)",
+      "Gedruckte koreanisch-englische Programmkarte wird beim Einsteigen verteilt"
+    ],
+    "whyOnRoute": "Zwei Abholpunkte decken Seouls beide großen Besucherzentren ab: das Viertel um die Hongik University in Mapo-gu, das jüngeren und kurz bleibenden Reisenden entgegenkommt, und Myeongdong in Jung-gu, das klassische Touristenviertel um die Hotels Lotte, Shilla und Westin. Hongik zuerst und Myeongdong danach ist die natürliche Reihenfolge für eine Fahrt nach Nordosten auf die Schnellstraße Seoul-Chuncheon. Der Start um 07:30 ist spät genug, um bequem zu sein, und früh genug, um den Bus gegen 10:00 an die Nami-Fähre zu bringen — vor den Individualreisenden, die mit dem ITX-Zug anreisen."
+  },
+
+  "lunch": {
+    "name": "Mittagessen in Gapyeong (auf eigene Kosten)",
+    "category": "Mittagspause",
+    "duration": "60 Min.",
+    "description": "Nach der Insel Nami hält der Bus eine Stunde an einem lokalen Restaurant im Bereich des Fähranlegers Gapyeong. Das Mittagessen ist **nicht inklusive** — Sie bestellen und bezahlen selbst, üblicherweise ₩10,000-15,000 pro Person.\n\nDies ist Dakgalbi-Land: Der Korridor Chuncheon-Gapyeong ist die Heimat von **Dakgalbi**, süßscharfem Hähnchen, das am Tisch mit Kohl, Süßkartoffel und Reiskuchen gebraten wird und meist damit endet, dass Reis in der übrigen Sauce angebraten wird. **Makguksu** (kalte Buchweizennudeln) ist das traditionelle Begleitgericht. Vegetarische Optionen sind begrenzt, Bibimbap ist aber normalerweise verfügbar; sagen Sie es dem Guide morgens im Bus, dann ruft er vorab an.\n\nBringen Sie Bargeld oder Karte mit — die meisten Restaurants der Gegend nehmen beides, kleine Stände am Anleger jedoch oft nur Bargeld.",
+    "timeUsed": [
+      "Bus parkt, und der Guide führt die Gruppe zum Restaurant (~5 Min.)",
+      "Bestellen und essen (~45 Min.)",
+      "Einzeln bezahlen und sich am Bus wieder einfinden (~10 Min.)"
+    ],
+    "whyOnRoute": "Das Mittagessen liegt aus zwei Gründen nach Nami und nicht davor. Erstens schützt das den Vormittag: Zuerst zu essen würde die Überfahrt über Mittag hinaus und in den Andrang schieben. Zweitens ist der Bereich um den Fähranleger Gapyeong dort, wo die Restaurants tatsächlich sind — der Garden of Morning Calm liegt an einer Talstraße mit sehr wenig drumherum, und Petite France hat vor Ort nur Imbissstände. Eine Stunde hier ist die letzte verlässliche Mahlzeit im Sitzen an diesem Tag."
+  },
+
+  "dropoff": {
+    "name": "Rückfahrt nach Seoul (Station Myeongdong oder Bahnhof Hongik University)",
+    "category": "Rückfahrt und Ausstieg",
+    "duration": "≈ 1,5 Stunden Fahrt",
+    "description": "Die Abfahrt in Petite France ist gegen 16:45 für die rund 1,5-stündige Fahrt zurück nach Seoul auf der Schnellstraße Seoul-Chuncheon. Die Ausstiege erfolgen in umgekehrter Reihenfolge der Abholung: **Station Myeongdong gegen 18:30**, dann **Bahnhof Hongik University gegen 19:00**.\n\nBeide sind U-Bahn-Umsteigepunkte, sodass Anschlüsse unkompliziert sind, und die Zeitplanung lässt den Abend frei — Sie sind deutlich zurück, bevor Seouls Restaurants voll werden. Freitagabende und Rückfahrten am Sonntag können auf der Einfahrt in die Stadt 20-40 Minuten Verkehr hinzufügen; der Guide gibt unterwegs die aktuelle Schätzung des Busses durch.",
+    "timeUsed": [
+      "Abfahrt in Petite France (~16:45)",
+      "Fahrt über die Schnellstraße mit einem kurzen Zwischenstopp bei Bedarf (~1,5 Stunden)",
+      "Ausstieg Station Myeongdong (~18:30)",
+      "Ausstieg Bahnhof Hongik University (~19:00)"
+    ],
+    "whyOnRoute": "Dass der Tag in Petite France endet und nicht im Garden of Morning Calm, hält die Rückfahrt kurz: Das Dorf liegt bereits auf der Seouler Seite von Gapyeong, der Bus ist also von der Abfahrt an heimwärts gerichtet. Die umgekehrte Ausstiegsreihenfolge bedeutet, dass die Gäste aus Myeongdong, die zuletzt eingestiegen sind, zuerst aussteigen."
+  },
+
+  "practical": {
+    "pickup": {
+      "content": [
+        "Zwei Abholpunkte in Seoul: **Starbucks am Bahnhof Hongik University, Ausgang 8, um 07:30** (Mapo-gu) und **Station Myeongdong, Ausgang 2, beim NorthFace-Flagshipstore, um 08:00** (Jung-gu).",
+        "Beide Abholungen teilen sich denselben Bus; bitte seien Sie 5 Minuten früher an Ihrem gewählten Punkt.",
+        "Ausstiege in umgekehrter Reihenfolge: **Myeongdong ≈18:30**, **Hongik University ≈19:00**.",
+        "Ihre tatsächliche Tourdauer hängt vom Abholpunkt ab: ≈11,5 Stunden ab Hongik, ≈10,5 Stunden ab Myeongdong."
+      ]
+    },
+    "inclusions": {
+      "content": [
+        "Zwei Abholpunkte in Seoul und dieselben zwei Ausstiegspunkte, klimatisierter Bus, lizenzierter englischsprachiger Guide.",
+        "**Fähre hin und zurück zur Insel Nami + Visa-Gebühr der Naminara Republic (₩19,000) — INKLUSIVE.**",
+        "**Eintritt in den Garden of Morning Calm (₩11,000) — INKLUSIVE.**",
+        "**Eintritt Petite France (₩12,000) — INKLUSIVE.**",
+        "Maut- und Parkgebühren — INKLUSIVE.",
+        "**NICHT inklusive:** Mittagessen und Getränke (₩10,000-15,000, auf eigene Kosten), das Kombiticket Petite France + Italian Village (₩19,500), Fahrrad- oder E-Buggy-Miete auf der Insel Nami, die Skyline-Zipwire nach Nami sowie persönliche Ausgaben.",
+        "Chinesischsprachiger Guide auf Anfrage verfügbar — bitte mindestens 3 Tage im Voraus buchen."
+      ]
+    },
+    "walking": {
+      "content": [
+        "Leicht bis mittel — diese Route enthält keine Wanderung und keine treppenlastigen Abschnitte.",
+        "Insel Nami: flache, gepflasterte, baumbestandene Alleen; ~3 km in 2 Stunden ist das übliche Tempo. Fahrräder und E-Buggys können auf der Insel auf eigene Kosten gemietet werden.",
+        "Garden of Morning Calm: welliges Gelände auf überwiegend gepflasterten Gartenwegen; die Hauptrunde ist weitgehend kinderwagentauglich, einige thematische Teilgärten liegen jedoch kurze Steigungen hinauf.",
+        "Petite France: ein kleines Hangdorf, sanfte Steigungen, in unter einer Stunde in entspanntem Tempo.",
+        "Insgesamt kommen über den Tag etwa 5-6 km zusammen, verteilt auf drei Stopps mit dem Bus dazwischen. Bequeme Schuhe genügen — Wanderschuhe sind nicht nötig."
+      ]
+    },
+    "lunch": {
+      "title": "Mittagessen (auf eigene Kosten)",
+      "content": [
+        "Das Mittagessen findet gegen 12:15 in einem lokalen Restaurant im Bereich des Fähranlegers Gapyeong statt, nach der Insel Nami.",
+        "Dies ist Dakgalbi-Land — süßscharfes Hähnchen, am Tisch gebraten und meist damit beendet, dass Reis in der Sauce angebraten wird. Makguksu (kalte Buchweizennudeln) ist das klassische Begleitgericht.",
+        "Rechnen Sie mit etwa ₩10,000-15,000 pro Person. Bargeld und Karte werden normalerweise beide akzeptiert; Stände am Anleger nehmen oft nur Bargeld.",
+        "Vegetarische Optionen sind in dieser Region begrenzt — sagen Sie es dem Guide morgens, dann ruft er vorab an."
+      ]
+    },
+    "weather-policy": {
+      "content": [
+        "Ganzjähriger Betrieb.",
+        "Leichter Regen: Die Tour läuft wie geplant. Alle drei Stopps halten Regen stand — Namis Baumalleen und der Garden of Morning Calm sind bei nassem Wetter beide wirklich schön, und Petite France hat Ausstellungsräume im Innenbereich.",
+        "Starkregen oder Sturm: Die Nami-Fähre kann bei schwerem Wetter ausgesetzt werden. Passiert das, verlängert der Guide die Stopps im Garten und in Petite France, und der Nami-Eintritt wird erstattet.",
+        "Schnee: In Gapyeong fällt mehr Schnee als im Zentrum Seouls. Der Bus fährt in der Saison mit Winterreifen; starker Schneefall kann die Rückfahrt um eine Stunde verlängern.",
+        "Reihenfolge oder Zeiten des Programms können sich am Tag wegen Verkehr, Wetter oder Öffnungszeiten verschieben — der Guide bestätigt den Tagesplan im Bus."
+      ]
+    },
+    "what-to-bring": {
+      "title": "Kleidung & Ausrüstung",
+      "content": [
+        "Bequeme Schuhe zum Gehen — Wanderschuhe sind nicht nötig, aber Sie sind über den Tag 5-6 km auf den Beinen.",
+        "Warme Kleidung im Zwiebelprinzip von November bis März; die Täler um Gapyeong sind mehrere Grad kälter als das Zentrum Seouls, und das Deck der Nami-Fähre ist ungeschützt.",
+        "Kamera oder Smartphone — die Metasequoien-Allee auf Nami und der Aussichtspunkt am Sunken Garden im Morning Calm sind die beiden Aufnahmen, für die Leute kommen.",
+        "Bargeld und Karte für das Mittagessen (₩10,000-15,000) und mögliche Extras.",
+        "Sonnenschutz im Sommer; die Gartenrunde hat lange Abschnitte mit wenig Schatten."
+      ]
+    }
+  },
+
+  "seasonalVariations": [
+    {
+      "season": "Frühling (März-Mai)",
+      "description": "Kirschblüte am Bukhan-Fluss Anfang April, dann das Frühlingsfestival des Garden of Morning Calm mit Zehntausenden Tulpen. Petite France' pastellfarbene Gebäude wirken vor frischem Grün am besten."
+    },
+    {
+      "season": "Sommer (Juni-August)",
+      "description": "Namis Baumalleen spenden echten Schatten, und die Insel ist merklich kühler als Seoul. Der Garten ist üppig, aber heiß und weitgehend unbeschattet — Wasser und Sonnenschutz mitnehmen. Im Juli-Monsun sind Schauer am Nachmittag zu erwarten."
+    },
+    {
+      "season": "Herbst (September-November)",
+      "description": "Die stärkste Saison auf dieser Route. Namis Metasequoien- und Ginkgo-Alleen färben sich von Ende Oktober bis Mitte November, und der Garden of Morning Calm zeigt seine herbstliche Chrysanthemenschau. Früh buchen — das ist die Zeit der höchsten Nachfrage."
+    },
+    {
+      "season": "Winter (Dezember-Februar)",
+      "description": "Das Lichterfestival des Garden of Morning Calm beleuchtet das Gelände von Anfang Dezember bis etwa Mitte März, und der Garten bleibt währenddessen bis in den Abend geöffnet. Nami unter Schnee ist das Bild aus „Winter Sonata“ selbst. Ziehen Sie sich richtig an — die Täler sind kalt und das Fährdeck ist ungeschützt."
+    }
+  ],
+
+  "staticQuestions": [
+    {
+      "question": "Sind wirklich alle Eintritte inklusive?",
+      "answer": "Ja — die drei Eintritte auf dieser Route sind alle abgedeckt: die Visa-Gebühr der Naminara Republic von ₩19,000 für die Insel Nami (inklusive Fähre hin und zurück), die ₩11,000 des Garden of Morning Calm und die ₩12,000 für Petite France. Das sind rund ₩42,000 pro Erwachsenem, für die Sie weder anstehen noch erneut zahlen. Das Mittagessen ist der wesentliche Posten, den Sie selbst tragen."
+    },
+    {
+      "question": "Ist das dasselbe wie die Seoraksan-Tour, die auch Nami und Morning Calm besucht?",
+      "answer": "Nein, und der Unterschied sind etwa drei Stunden Fahrt. Die Seoraksan-Tagestour ergänzt einen Nationalpark in Gangwon-do, was einen Start um 06:00, fünf Stunden auf der Straße und einen 13-Stunden-Tag bedeutet. Diese Tour bleibt in Gapyeong: Start um 07:30, etwa drei Stunden Fahrt und Petite France anstelle des Bergs. Wählen Sie diese, wenn Sie die Gärten und die Insel ohne die Buszeit möchten."
+    },
+    {
+      "question": "Wie viel wird gelaufen?",
+      "answer": "Etwa 5-6 km über den ganzen Tag, aufgeteilt auf drei getrennte Stopps mit dem Bus dazwischen. Es gibt keine Wanderung, keinen Gipfel und keine langen Treppenaufstiege. Nami ist völlig flach, der Garden of Morning Calm ist sanft wellig, und Petite France ist ein kleines Hangdorf. Bequeme Alltagsschuhe genügen."
+    },
+    {
+      "question": "Ist das für kleine Kinder oder ältere Reisende geeignet?",
+      "answer": "Ja, mehr als die meisten Tagesausflüge ab Seoul. Jeder Stopp ist flach oder sanft geneigt, die längste einzelne Fahrt dauert etwa 1,5 Stunden, und der Tag endet um 19:00. Auf Nami gibt es Fahrräder und E-Buggys zu mieten, falls die Insel zu Fuß zu viel ist, und die Hauptrunde des Garden of Morning Calm ist weitgehend kinderwagentauglich. Der eine Vorbehalt ist die Gesamtlänge des Tages — es sind trotzdem 11 Stunden von Tür zu Tür."
+    },
+    {
+      "question": "Was ist die Visa-Gebühr der Naminara Republic?",
+      "answer": "Es ist das Eintrittsticket der Insel Nami, gestaltet als Visum, weil sich die Insel 2006 als kulturtouristisches Konzept zur „Naminara Republic“ erklärt hat — samt eigener Flagge, Briefmarken und Einreiseschalter. Praktisch ist es ein Erwachsenenticket für ₩19,000, das die fünfminütige Fährüberfahrt in beide Richtungen einschließt, und es ist in dieser Tour enthalten."
+    },
+    {
+      "question": "Können wir das Italian Village neben Petite France besuchen?",
+      "answer": "Nicht in diesem Programm. Das Pinocchio & Da Vinci Italian Village liegt auf dem Hügel direkt hinter Petite France und erfordert ein Kombiticket (₩19,500 für Erwachsene) sowie mindestens eine weitere Stunde. Diese Tour enthält nur Petite France und sieht dort eine Stunde vor. Wenn Ihnen das Italian Village wichtig ist, kann unsere private Gapyeong-Tour es einbauen."
+    },
+    {
+      "question": "Was passiert, wenn es regnet?",
+      "answer": "Die Tour läuft. Alle drei Stopps funktionieren bei leichtem Regen — Namis baumbestandene Alleen und der Garten sind nass wirklich stimmungsvoll, und Petite France hat Ausstellungsräume im Innenbereich, darunter die Saint-Exupéry-Halle und das Orgel House. Das einzige echte Wetterrisiko ist ein Sturm, der die Nami-Fähre aussetzt; in diesem Fall verlängert der Guide die beiden anderen Stopps, und der Nami-Eintritt wird erstattet."
+    },
+    {
+      "question": "Ist das Lichterfestival im Garden of Morning Calm inklusive?",
+      "answer": "Das Festival ist kein separates Ticket — es findet innerhalb des Gartens statt, und Ihr enthaltener Eintritt deckt es ab. Dies ist aber ein Tagesprogramm: Wir sind am frühen Nachmittag im Garten, in der Festivalsaison von Dezember bis März sehen Sie die Installationen also unbeleuchtet statt illuminiert. Wenn der beleuchtete Garten Ihre Priorität ist, sagen Sie es uns, und wir weisen Ihnen stattdessen eine Abendoption."
+    },
+    {
+      "question": "Welche K-Dramen wurden an diesen Stopps gedreht?",
+      "answer": "Die Insel Nami ist der Drehort von Winter Sonata (2002) — die Metasequoien-Allee ist die Szene, in der die Leute stehen wollen. Zu den Credits von Petite France zählen Beethoven Virus (2008), Personal Taste (2010), Secret Garden (2010) und My Love from the Star (2013-14). Auch der Garden of Morning Calm diente als Drehort, unter anderem für Moonlight Drawn by Clouds."
+    },
+    {
+      "question": "Wann sind wir zurück in Seoul?",
+      "answer": "Station Myeongdong gegen 18:30 und Bahnhof Hongik University gegen 19:00. Beide sind U-Bahn-Umsteigepunkte. Freitagabende und Rückfahrten am Sonntag können auf der Einfahrt in die Stadt 20-40 Minuten hinzufügen — der Guide gibt unterwegs eine aktuelle Schätzung durch. Die Zeitplanung ist bewusst früh genug, um Ihren Abend frei zu lassen."
+    },
+    {
+      "question": "Ist das Mittagessen inklusive?",
+      "answer": "Nein. Der Bus hält eine Stunde an einem Restaurant im Bereich des Fähranlegers Gapyeong, und Sie bestellen und bezahlen selbst, üblicherweise ₩10,000-15,000. Dies ist die Heimatregion von Dakgalbi — süßscharfes Hähnchen, am Tisch gebraten —, das meist mit Makguksu-Nudeln gegessen wird. Vegetarische Auswahl ist begrenzt, sagen Sie es also dem Guide morgens, dann ruft er vorab an."
+    },
+    {
+      "question": "Gibt es einen Guide, und in welcher Sprache?",
+      "answer": "Ja — ein lizenzierter englischsprachiger Guide begleitet den Bus den ganzen Tag. Ein chinesischsprachiger Guide ist auf Anfrage verfügbar, wenn Sie mindestens drei Tage im Voraus buchen. Die Stopps selbst sind weitgehend selbstbestimmt: Der Guide kümmert sich um Eintritt, Zeitplanung, Orientierung und Übersetzung, statt durchgehend zu kommentieren."
+    }
+  ],
+
+  "pd": {
+    "primaryTime": "Abholung 07:30 / Ausstieg 19:00",
+    "primaryInstructions": "Treffen Sie den Guide an der Starbucks-Filiale unmittelbar oberhalb von Ausgang 8 des Bahnhofs Hongik University. Achten Sie auf das Schild von AtoC Korea und den Bus in der Abholschlange.",
+    "alternateTime": "Abholung 08:00 / Ausstieg 18:30",
+    "alternateInstructions": "Treffen Sie den Guide vor dem NorthFace-Flagshipstore oben an Ausgang 2 der Station Myeongdong."
+  },
+
+  "stickyNote": "Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen."
+}

@@ -16,9 +16,23 @@ function formatBookingCount(n: number): string {
   return n.toLocaleString();
 }
 
-function fallbackPrice(priceFrom: number, currency: string): string {
-  if (currency === 'KRW') return `₩${Math.round(priceFrom).toLocaleString('ko-KR')}`;
-  return `₩${Math.round(priceFrom).toLocaleString('ko-KR')}`;
+/**
+ * Price label used when the call site passes no `formatPriceFn`.
+ *
+ * 🔴 Both branches used to return `₩`. The `if` tested for KRW and the fallback
+ * — the USD path — returned won as well, so every card on /tours/list rendered
+ * a dollar amount under a won symbol: a $93 tour advertised as ₩93, which is
+ * about seven cents. Every active tour is USD, so this was the whole catalogue,
+ * in every locale.
+ *
+ * It survived review because the conditional looks like it branches. Reading it
+ * as source, the shape is right; only the two return values give it away.
+ *
+ * Exported for the regression test — a private function cannot be pinned.
+ */
+export function fallbackPrice(priceFrom: number, currency: string): string {
+  const amount = Math.round(priceFrom).toLocaleString('ko-KR');
+  return currency === 'KRW' ? `₩${amount}` : `$${amount}`;
 }
 
 export interface TourListCardProps {

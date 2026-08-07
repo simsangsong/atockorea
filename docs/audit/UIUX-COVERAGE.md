@@ -11,18 +11,18 @@
 
 ## 1. 축별 커버리지
 
-### locale — 그물 안 4 / 전체 10
+### locale — 그물 안 5 / 전체 10
 
 - **정본:** `lib/tour-room/snapshot.ts ROOM_LOCALES`
-- **그물 안:** `en` · `ko` · `de` · `ru`
-- **그물 밖:** `zh` · `zh-TW` · `ja` · `es` · `fr` · `it`
+- **그물 안:** `en` · `ko` · `fr` · `de` · `ru`
+- **그물 밖:** `zh` · `zh-TW` · `ja` · `es` · `it`
 - **위험단:** 가장 긴 불가분 토큰을 가진 로케일이 위험단. `npm run locale:fit` 이 판정한다.
 
-### skin — 그물 안 3 / 전체 10
+### skin — 그물 안 5 / 전체 10
 
 - **정본:** `hooks/useTourRoomSettings.ts TOUR_SKINS`
-- **그물 안:** `classic` · `jeju` · `contrast`
-- **그물 밖:** `sky` · `winter` · `forest` · `meadow` · `seoul` · `busan` · `blossom`
+- **그물 안:** `classic` · `forest` · `jeju` · `busan` · `contrast`
+- **그물 밖:** `sky` · `winter` · `meadow` · `seoul` · `blossom`
 - **위험단:** `contrast` 가 대비 극단, 어두운 계열(`forest`·`busan`)이 다크와 겹칠 때 위험단.
 
 ### textScale — 그물 안 2 / 전체 5
@@ -32,11 +32,11 @@
 - **그물 밖:** `1` · `2` · `4`
 - **위험단:** 5 가 노안 최대. 레이아웃 붕괴는 여기서만 보인다.
 
-### rallyStage — 그물 안 0 / 전체 5
+### rallyStage — 그물 안 5 / 전체 5
 
 - **정본:** `lib/tour-room/notices.ts RallyStage`
-- **그물 안:** **없음**
-- **그물 밖:** `set` · `remind` · `due` · `overdue` · `contact`
+- **그물 안:** `set` · `remind` · `due` · `overdue` · `contact`
+- **그물 밖:** 없음 ✅
 - **위험단:** `overdue`·`contact` 가 공지 배너를 전면 점유한다 — 다른 카드를 덮는 유일한 상태.
 
 ### theme — 그물 안 2 / 전체 2
@@ -55,17 +55,17 @@
 |---|---|
 | `/tour-mode` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
-| `/tour-mode/companion/[token]` | 🔴 **없음** |
+| `/tour-mode/companion/[token]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] |
-| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/join/[roomToken]` | 🔴 **없음** |
+| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cjk-render.mjs`[선언] · `qa-cockpit-tray.ts`[선언] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/join/[roomToken]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/plan/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chat-bubble-fit.mjs`[선언] · `qa-cjk-render.mjs`[선언] · `qa-door-fixes-walk.mjs`[선언] · `qa-guest-tray.ts`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-overlay-photo-probe.mjs`[선언] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-seat-door-walk.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 
-**실렌더 하니스가 한 번도 방문하지 않는 표면: 2개** — `/tour-mode/companion/[token]` · `/tour-mode/join/[roomToken]`
+**실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
-**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 24개** — `qa-admin-cjk.ts` · `qa-chat-bubble-fit.mjs` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-render.mjs` · `qa-cockpit-tray.ts` · `qa-departure-days.ts` · `qa-door-fixes-walk.mjs` · `qa-guest-tray.ts` · `qa-home-walk.mjs` · `qa-markdown-leak.ts` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-overlay-photo-probe.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-seat-door-walk.mjs` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs` · `qa-touch-target.mjs`
+**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 17개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-tour-product.mjs` · `qa-departure-days.ts` · `qa-home-walk.mjs` · `qa-markdown-leak.ts` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs`
 
 > 판정 불가는 "커버 안 됨"이 **아니다.** 런타임 URL·환경변수로 이동해서 소스가 볼 수 없다는 뜻이고,
 > 어느 쪽으로든 추측하면 게이트가 거짓말을 한다. 해소하려면 그 하니스에 `COVERS` 를 선언한다.
@@ -74,8 +74,12 @@
 
 ### `scripts/qa-hero-grid.mjs`
 
-- `LOCALES` (locale): `ko` · `en` · `de` · `ru`
+- `LOCALES` (locale): `ko` · `en` · `de` · `ru` · `fr`
 - `SCHEMES` (theme): `light` · `dark`
-- `SKINS` (skin): `classic` · `contrast` · `jeju`
+- `SKINS` (skin): `classic` · `contrast` · `jeju` · `forest` · `busan`
 - `SCALES` (textScale): `3` · `5`
+
+### `scripts/qa-rally-stages.mjs`
+
+- `RALLY_STAGES` (rallyStage): `set` · `remind` · `due` · `overdue` · `contact`
 

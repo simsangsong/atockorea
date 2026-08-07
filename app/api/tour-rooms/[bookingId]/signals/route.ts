@@ -173,6 +173,14 @@ export async function POST(
         .single();
       if (message) await broadcastToRoom(room, 'message', { message });
 
+      // The operator's device rings too — a party running late is the
+      // driver's problem first, and on a solo tour the nav app is where they
+      // are (2026-08-04 scenario audit).
+      void sendDriverRoomPush(supabase, booking.id, {
+        body: (bundle.translations.ko ?? bundle.source_text).slice(0, 160),
+        tag: `rally_overdue-${room.id}`,
+      }).catch(() => undefined);
+
       // W4.1 / E2 ladder fallbacks — push to opted-in devices, and the email
       // rail for guests who never opted in. Both fire-and-forget, once per
       // notice (this branch only runs on the first UNIQUE insert).
@@ -315,14 +323,15 @@ export async function POST(
 
     await broadcastToRoom(room, 'message', { message });
 
-    // A3/M-D3 — location-bearing requests must reach the operator who is
-    // likely in a nav app: ring the driver/guide devices (fire-and-forget).
-    if (
-      type === 'pickup_request' ||
-      type === 'dropoff_change' ||
-      type === 'share_location' ||
-      type === 'meeting_propose'
-    ) {
+    // A3/M-D3 — a guest signal must reach the operator who is likely in a nav
+    // app: ring the driver/guide devices (fire-and-forget).
+    //
+    // 🔴 This used to ring only the four location-bearing types, which left
+    // 늦어요·잠깐 정차·길잃음 SILENT on the staff device — on a driver-solo
+    // tour the person ten meters away was the only one not told a guest was
+    // lost (2026-08-04 scenario audit). Every guest signal rings now; the
+    // quiet ones were exactly the urgent ones.
+    {
       const line = bundle.translations.ko ?? bundle.source_text;
       void sendDriverRoomPush(supabase, booking.id, {
         body: line.slice(0, 160),

@@ -77,12 +77,18 @@ export default function DriverConsole() {
   const [pinNeeded, setPinNeeded] = useState(false);
   const [pin, setPin] = useState('');
   const [joining, setJoining] = useState(false);
-  const [joined, setJoined] = useState<{
-    bookingId: string;
-    session: string;
-    channelTopic: string;
-    initialMessages: RoomMessage[];
-  } | null>(null);
+  /**
+   * 🔴 조인 투어 — the app's first purpose is a Korean-only driver running the
+   * tour ALONE, and a join tour is several bookings riding ONE van. This used
+   * to read `rooms[0]` ("private mode: one party per day"), which silently cut
+   * every party but the first. Multiple rooms now get a party list; sessions
+   * are kept per booking so switching back is instant, and the vehicle PIN is
+   * asked once (same van, same last-4).
+   */
+  const [activeBookingId, setActiveBookingId] = useState<string | null>(null);
+  const [joinedByBooking, setJoinedByBooking] = useState<
+    Record<string, { bookingId: string; session: string; channelTopic: string; initialMessages: RoomMessage[] }>
+  >({});
   const [audioUnlocked, setAudioUnlocked] = useState(false);
 
   // ── boot: token → overview ────────────────────────────────────────────
@@ -114,7 +120,15 @@ export default function DriverConsole() {
     };
   }, [token]);
 
-  const room = overview?.rooms?.[0] ?? null; // private mode: one party per day
+  const rooms = overview?.rooms ?? [];
+  const room = activeBookingId ? (rooms.find((r) => r.booking_id === activeBookingId) ?? null) : null;
+  const joined = activeBookingId ? (joinedByBooking[activeBookingId] ?? null) : null;
+
+  // A single party selects itself — the private-mode flow is unchanged.
+  useEffect(() => {
+    if (overview && rooms.length === 1 && !activeBookingId) setActiveBookingId(rooms[0].booking_id);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [overview, rooms.length]);
 
   // ── join (with PIN gate) ──────────────────────────────────────────────
   const join = useCallback(
@@ -145,12 +159,15 @@ export default function DriverConsole() {
           return;
         }
         setPinNeeded(false);
-        setJoined({
-          bookingId: room.booking_id,
-          session: data.session,
-          channelTopic: data.channel?.topic ?? null,
-          initialMessages: (data.snapshot?.messages ?? []) as RoomMessage[],
-        });
+        setJoinedByBooking((prev) => ({
+          ...prev,
+          [room.booking_id]: {
+            bookingId: room.booking_id,
+            session: data.session,
+            channelTopic: data.channel?.topic ?? null,
+            initialMessages: (data.snapshot?.messages ?? []) as RoomMessage[],
+          },
+        }));
       } catch {
         setError('네트워크 오류 — 다시 시도해 주세요.');
       } finally {
@@ -161,17 +178,67 @@ export default function DriverConsole() {
   );
 
   useEffect(() => {
-    if (overview && room && !joined && !pinNeeded && !joining) void join();
+    // Later parties reuse the PIN that opened the first one — one van, one PIN.
+    if (overview && room && !joined && !pinNeeded && !joining) void join(pin || undefined);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [overview, room?.booking_id]);
+  }, [overview, room?.booking_id, joined]);
 
   if (error && !overview) return <Screen><Note>{error}</Note></Screen>;
-  if (!overview || !room) return <Screen><LoadingHint label="불러오는 중…" /></Screen>;
+  if (!overview) return <Screen><LoadingHint label="불러오는 중…" /></Screen>;
+  if (rooms.length === 0) return <Screen><Note>오늘 배정된 팀이 없어요.</Note></Screen>;
 
   // 완료(ended): a calm wrap-up — no join / audio needed.
   if (overview.lifecycle === 'ended') {
-    return <EndScreen overview={overview} room={room} />;
+    return <EndScreen overview={overview} room={room ?? rooms[0]} />;
   }
+
+  // Join tour: several parties, one van — pick who you're talking to. The
+  // vehicle PIN and the audio unlock survive the switch; alerts from every
+  // party reach this device by push regardless of which room is open.
+  if (rooms.length > 1 && !activeBookingId) {
+    return (
+      <Screen>
+        <div className="text-cjk-body flex flex-1 flex-col gap-3 overflow-y-auto px-5 py-8">
+          <div className="text-center">
+            <p className="text-2xl font-bold text-[var(--tr-ink)]">{overview.tour.title}</p>
+            <p className="tr-body-lg mt-1 text-[var(--tr-ink-3)]">
+              {overview.tour_date} · {rooms.length}팀 조인
+            </p>
+          </div>
+          <div className="mt-2 space-y-2.5" data-testid="driver-room-list">
+            {[...rooms]
+              .sort((a, b) => (a.pickup?.pickup_time ?? '99:99').localeCompare(b.pickup?.pickup_time ?? '99:99'))
+              .map((r, index) => (
+                <button
+                  key={r.booking_id}
+                  type="button"
+                  onClick={() => setActiveBookingId(r.booking_id)}
+                  className="text-cjk-body flex w-full items-center gap-3 rounded-2xl bg-[var(--tr-surface)] px-4 py-4 text-left"
+                  data-testid={`driver-room-row-${index}`}
+                >
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[var(--tr-accent-soft)] tr-body-lg font-bold text-[var(--tr-accent-deep)]">
+                    {index + 1}
+                  </span>
+                  <span className="text-cjk-body min-w-0 flex-1">
+                    <span className="text-cjk-safe tr-body-lg block font-bold text-[var(--tr-ink)]">
+                      {r.pickup?.pickup_time ? `${r.pickup.pickup_time} · ` : ''}손님 {r.number_of_guests ?? '-'}명
+                    </span>
+                    {r.pickup?.name ? (
+                      <span className="text-cjk-safe tr-body block text-[var(--tr-ink-3)]">{r.pickup.name}</span>
+                    ) : null}
+                  </span>
+                </button>
+              ))}
+          </div>
+          <p className="tr-body mt-1 text-center text-[var(--tr-ink-3)]">
+            어느 팀 방에 있어도 다른 팀의 호출·SOS는 알림으로 와요.
+          </p>
+        </div>
+      </Screen>
+    );
+  }
+
+  if (!room) return <Screen><LoadingHint label="불러오는 중…" /></Screen>;
 
   if (pinNeeded && !joined) {
     return (
@@ -248,8 +315,9 @@ export default function DriverConsole() {
       city={overview.tour.city ?? null}
       tourKind={overview.tour_kind ?? 'private'}
       /* P1-2 — Cockpit already ships the 대시보드 control; without onExit it
-         never rendered, leaving the driver with no way home at all. */
-      onExit={() => router.push('/tour-mode/driver')}
+         never rendered, leaving the driver with no way home at all. On a join
+         tour the way home is the party list, session kept warm. */
+      onExit={rooms.length > 1 ? () => setActiveBookingId(null) : () => router.push('/tour-mode/driver')}
     />
   );
 }

@@ -6,6 +6,7 @@ import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { broadcastToRoom } from '@/lib/tour-room/realtime';
 import { renderSpotEventTranslations } from '@/lib/tour-room/spotContent';
 import { sendOpsPush } from '@/lib/tour-ops/push';
+import { sendDriverRoomPush } from '@/lib/tour-room/guestPush';
 import { escapeHtml } from '@/lib/email-templates/tour-room';
 
 export const dynamic = 'force-dynamic';
@@ -111,6 +112,18 @@ ${mapsLink ? `<p>One-shot location: <a href="${mapsLink}">${mapsLink}</a></p>` :
       body: note || (hasLocation ? '위치 포함 SOS 발생' : '위치 없는 SOS 발생'),
       tag: `sos-${room.id}`,
     }).catch(() => undefined);
+
+    // 🔴 The staff device on site rings too. Until 2026-08-04 an SOS paged the
+    // remote ops desk and said nothing to the operator ten meters away — the
+    // cockpit only spoke it if the app was foreground with audio unlocked,
+    // and a driver mid-tour lives in a nav app. Skipped when the presser IS
+    // staff: they know. Body stays generic (no name/note on a lock screen).
+    if (actor.role === 'customer') {
+      void sendDriverRoomPush(supabase, booking.id, {
+        body: '🆘 손님 SOS — 콕핏을 확인하세요',
+        tag: `sos-${room.id}`,
+      }).catch(() => undefined);
+    }
 
     return NextResponse.json({ ok: true, message }, { status: 201 });
   } catch (error) {

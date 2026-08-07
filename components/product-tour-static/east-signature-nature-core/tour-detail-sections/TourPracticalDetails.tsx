@@ -6,7 +6,7 @@ import { useI18n } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { useForecast } from "@/components/product-tour-static/_shared/useForecast";
-import { splitInlineBold, stripInlineBold } from "@/lib/tour-product/inline-markdown";
+import { renderEmphasis, stripEmphasisMarkers } from "@/components/product-tour-static/_shared/inlineEmphasis";
 
 /**
  * °C / °F pill toggle rendered below the two live-weather cards. Stays inside
@@ -94,19 +94,11 @@ const INLINE_HIGHLIGHT_RE =
  * The inner text still goes through the token pass so a bolded price keeps its
  * tabular figures.
  */
-function renderInline(text: string): React.ReactNode[] {
-  return splitInlineBold(text).map((seg, i) =>
-    seg.bold ? (
-      <strong key={i} className="font-semibold text-slate-900">
-        {renderAutoHighlight(seg.text)}
-      </strong>
-    ) : (
-      <Fragment key={i}>{renderAutoHighlight(seg.text)}</Fragment>
-    ),
-  );
+export function renderInline(text: string): React.ReactNode[] {
+  return renderEmphasis(text, (run) => renderHighlights(run));
 }
 
-function renderAutoHighlight(text: string): React.ReactNode[] {
+function renderHighlights(text: string): React.ReactNode[] {
   const out: React.ReactNode[] = [];
   let lastIdx = 0;
   let key = 0;
@@ -454,10 +446,11 @@ export function TourPracticalDetails({
                     {item.title}
                   </h3>
                   <p className="mt-1 truncate text-[12px] leading-snug text-slate-500">
-                    {/* One truncated line under a collapsed heading — there is
+                    {/* One `truncate`d line under a collapsed heading — there is
                         no room for emphasis here, so the markers only ever read
-                        as stray asterisks. */}
-                    {stripInlineBold(item.preview)}
+                        as stray asterisks, and a near-black <strong> inside a
+                        muted teaser would read as a rendering accident. */}
+                    {stripEmphasisMarkers(item.preview ?? "")}
                   </p>
                 </div>
                 <div

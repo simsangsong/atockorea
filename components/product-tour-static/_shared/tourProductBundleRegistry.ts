@@ -113,6 +113,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     es: () => loadJson(import("@/components/product-tour-static/busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.es.json")),
     ja: () => loadJson(import("@/components/product-tour-static/busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.ja.json")),
   },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    en: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.en.json")),
+    ko: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ko.json")),
+    zh: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh.json")),
+    "zh-TW": () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh-TW.json")),
+    es: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.es.json")),
+    ja: () => loadJson(import("@/components/product-tour-static/busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ja.json")),
+  },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
     en: () => loadJson(import("@/components/product-tour-static/busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json")),
     ko: () => loadJson(import("@/components/product-tour-static/busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.ko.json")),
@@ -265,6 +273,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     es: () => loadJson(import("@/components/product-tour-static/seoul-dmz-private-3rd-tunnel-suspension-bridge/seoul-dmz-private-3rd-tunnel-suspension-bridge.es.json")),
     ja: () => loadJson(import("@/components/product-tour-static/seoul-dmz-private-3rd-tunnel-suspension-bridge/seoul-dmz-private-3rd-tunnel-suspension-bridge.ja.json")),
   },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    en: () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.en.json")),
+    ko: () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ko.json")),
+    zh: () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh.json")),
+    "zh-TW": () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh-TW.json")),
+    es: () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.es.json")),
+    ja: () => loadJson(import("@/components/product-tour-static/seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ja.json")),
+  },
   "seoul-private-nami-morning-calm-petite-france": {
     en: () => loadJson(import("@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.en.json")),
     ko: () => loadJson(import("@/components/product-tour-static/seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ko.json")),
@@ -328,6 +344,14 @@ export const STATIC_TOUR_PRODUCT_BUNDLES: Record<StaticTourProductBundleSlug, To
     "zh-TW": () => loadJson(import("@/components/product-tour-static/seoul-suwon-hwaseong-waujeongsa-starfield/seoul-suwon-hwaseong-waujeongsa-starfield.zh-TW.json")),
     es: () => loadJson(import("@/components/product-tour-static/seoul-suwon-hwaseong-waujeongsa-starfield/seoul-suwon-hwaseong-waujeongsa-starfield.es.json")),
     ja: () => loadJson(import("@/components/product-tour-static/seoul-suwon-hwaseong-waujeongsa-starfield/seoul-suwon-hwaseong-waujeongsa-starfield.ja.json")),
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    en: () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.en.json")),
+    ko: () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ko.json")),
+    zh: () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh.json")),
+    "zh-TW": () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh-TW.json")),
+    es: () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.es.json")),
+    ja: () => loadJson(import("@/components/product-tour-static/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ja.json")),
   },
   "southwest-hallasan-osulloc-aewol": {
     en: () => loadJson(import("@/components/product-tour-static/southwest-hallasan-osulloc-aewol/southwest-hallasan-osulloc-aewol.en.json")),

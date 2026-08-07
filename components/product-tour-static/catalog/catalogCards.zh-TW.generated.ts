@@ -11,8 +11,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "title": "釜山郵輪岸上：海岸巴士遊覽",
       "subtitle": "乘坐大型巴士暢遊釜山海岸8站行程，提供郵輪碼頭接送，並依郵輪啟航時間安排返程。",
       "region": "釜山",
-      "duration": "9小時",
-      "stopsCount": 8,
+      "duration": "8小時",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
@@ -23,11 +23,11 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
-      "priceLabel": "每人起價 US$49（原價 $55，優惠 11%）",
+      "priceLabel": "",
       "shortCardDescription": "專為郵輪旅客打造的釜山海岸大型巴士一日遊：提供郵輪碼頭接送，涵蓋8個經典景點（海東龍宮寺、聯合國軍紀念公墓、札嘎其市場、BIFF廣場、國際市場、甘川文化村、松島海灘、龍頭山公園），並保證於郵輪啟航前返回。經濟型方案——與小團體行程路線相同，改以大型巴士出發。"
     },
     "price": {
-      "amountLabel": ""
+      "amountLabel": "58.79"
     }
   },
   "busan-gyeongju-unesco-legacy-tour-national-museum": {
@@ -126,32 +126,58 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "shortCardDescription": "專為釜山郵輪旅客提供的8小時私人包車服務，配備持牌英語司機導遊。預設行程涵蓋聯合國紀念公墓、太宗臺懸崖、甘川文化村、龍頭山公園及札嘎其市場。全程可客製化。可於郵輪碼頭、KTX車站或釜山市區任意飯店接送，保證準時返回郵輪。"
     },
     "price": {
-      "amountLabel": "364"
+      "amountLabel": "456.99"
     }
   },
   "busan-small-group-sightseeing-tour-cruise-passengers": {
     "catalog_card": {
       "slug": "busan-small-group-sightseeing-tour-cruise-passengers",
       "title": "釜山郵輪岸上小團遊",
-      "subtitle": "從郵輪碼頭出發，一趟9小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
+      "subtitle": "從郵輪碼頭出發，一趟8小時的共乘廂型車一日遊，盡覽釜山五大代表性景點。",
       "region": "釜山",
-      "duration": "9小時",
-      "stopsCount": 8,
+      "duration": "8小時",
+      "stopsCount": 9,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
         "郵輪靠港觀光",
         "小型共乘廂型車",
         "港口接送",
-        "9小時行程"
+        "8小時行程"
       ],
       "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
       "priceLabel": "",
-      "shortCardDescription": "從釜山郵輪碼頭出發的共乘廂型車一日遊，在9小時內走遍城市五大人氣景點：聯合國紀念公墓（韓戰歷史背景）、太宗臺海岸懸崖、當地釜山餐廳午餐、甘川文化村（彩繪山城聚落）、龍頭山公園（可選擇前往釜山塔觀景台）及札嘎其市場。接送時間依您所搭船隻的下船時間靈活調整。配備英語／中文認證導遊。"
+      "shortCardDescription": "為郵輪旅客設計的釜山小團岸上行程，使用限乘12人的廂型車。八小時走九個點 — 海東龍宮寺、聯合國紀念公園、自費午餐，接著步行走完札嘎其市場、BIFF廣場與國際市場，然後是甘川文化村、松島雲端散步路（是否搭纜車上天空公園由您現場決定），最後是龍頭山公園。接送在您船隻靠泊的郵輪碼頭，返程對齊您的登船截止時間。"
     },
     "price": {
-      "amountLabel": "84"
+      "amountLabel": "68.95"
+    }
+  },
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "釜山小團體：海東龍宮寺·天空膠囊·文化村",
+      "subtitle": "一天串聯釜山海岸名勝與山坡村落的小團體之旅 — 海東龍宮寺、青沙浦踏石展望台（玻璃天空步道）、藍線公園天空膠囊（預訂時可選含票／不含票）、甘川文化村，以及擁有「希望階梯」單軌的寧靜닥밭골（Dakbatgol）壁畫村。",
+      "region": "釜山",
+      "duration": "≈ 10小時",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "小團體",
+        "釜山",
+        "天空膠囊",
+        "海岸",
+        "文化村"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "以海岸與山坡村落為軸心的釜山小團體一日遊。清幽上午時段的海東龍宮寺、免費玻璃地板的青沙浦踏石展望台、青沙浦→尾浦的藍線公園天空膠囊（預訂時選擇含票或不含票）、午餐、甘川文化村，以及免費單軌沿「希望階梯」上行的私房景點Dakbatgol壁畫村。除可選的膠囊外，所有核心停留點皆免費入場。"
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": {
@@ -232,9 +258,9 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "from-busan-gyeongju-ancient-capital-day-tour",
       "title": "釜山出發慶州千年古都一日遊",
-      "subtitle": "以更從容的節奏遊覽慶州六大經典景點，並提早返回。",
+      "subtitle": "小團體廂型車·英語導遊——阿弘山竹林、佛國寺（UNESCO）、校村韓屋村＋崔富豪宅邸＋月精橋、大陵苑＋皇理團街，再加上國立慶州博物館（冬季為東宮與月池夜景），一天走完。",
       "region": "慶州（從釜山出發）",
-      "duration": "10.5小時",
+      "duration": "11.5小時",
       "stopsCount": 8,
       "rating": 0,
       "reviewCount": 0,
@@ -242,12 +268,12 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "小團體",
         "從容慢遊",
         "從釜山出發",
-        "提早返回"
+        "冬季看夜景"
       ],
       "heroImage": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "thumbnail": "/images/tours/ahopsan-bamboo/chatgpt-image-2026-5-10-12-22-47.webp",
       "priceLabel": "每人 US$39（原價$50，22% 優惠）",
-      "shortCardDescription": "從釜山出發前往新羅王國古都慶州（西元前57年—西元935年）的小團體一日遊。行程與UNESCO遺產版本相同的六大經典景點路線（鵝項山竹林 → 佛國寺UNESCO → 慶州拌飯午餐 → 國立博物館 → 校村韓屋村 → 月精橋），但節奏更從容，返回時間更早（約18:50）。英語／中文認證導遊；小型廂型車；全程免票（僅鵝項山₩5,000及午餐費用需當日自付）。"
+      "shortCardDescription": "由釜山3座地鐵站出口出發的慶州一日小團體遊。下午把車停下來用走的——從崔富豪宅邸走到月精橋，從大陵苑走到皇理團街。最後一站是國立慶州博物館，冬季則改為東宮與月池夜景。"
     },
     "price": {
       "amountLabel": ""
@@ -383,7 +409,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     "catalog_card": {
       "slug": "jeju-eastern-unesco-spots-day-tour",
       "title": "濟州東部UNESCO一日遊",
-      "subtitle": "小團體迷你巴士、英語·中文導遊 — 以9小時東部環線環遊咸德海灘·城邑民俗村·城山日出峰（聯合國教科文組織）·海女潛水表演·萬丈窟（聯合國教科文組織）。",
+      "subtitle": "小團體迷你巴士、英語·中文導遊 — 以9小時東部環線遊覽開放後最清靜的萬丈窟（聯合國教科文組織）·城邑民俗村·城山日出峰（聯合國教科文組織）·海女潛水表演·咸德海灘壓軸。",
       "region": "濟州東部",
       "duration": "9小時",
       "stopsCount": 8,
@@ -400,7 +426,7 @@ export const PAGES: Record<string, SlimCatalogPage> = {
       "heroImage": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "thumbnail": "/images/tours/hamdeok-beach/kakaotalk-20260510-230028438.webp",
       "priceLabel": "",
-      "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點。涵蓋咸德西牛峰海水浴場、城邑民俗村（聯合國教科文組織民俗）、城山日出峰與萬丈窟 — 2007年一同登錄的兩處聯合國教科文組織世界自然遺產，以及海女潛水表演（取消時改為海女博物館）。含全部門票，配備認證英語·中文導遊。"
+      "shortCardDescription": "以9小時小團體環遊濟州東部的聯合國教科文組織景點 — 現在洞窟先行：開放後最清靜時段的萬丈窟、城邑民俗村、城山日出峰與海女潛水表演（取消時改為海女博物館），再以傍晚前的咸德西牛峰海水浴場收尾。2007年一同登錄的兩處聯合國教科文組織世界自然遺產，含全部門票，配備認證英語·中文導遊。"
     },
     "price": {
       "amountLabel": "49"
@@ -591,22 +617,25 @@ export const PAGES: Record<string, SlimCatalogPage> = {
   "pocheon-sanjeong-lake-herb-island-art-valley": {
     "catalog_card": {
       "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
-      "title": "抱川：山亭湖·香草島·藝術谷",
-      "subtitle": "山中湖泊、地中海香草花園，以及採石場改建的藝術公園——從首爾出發最寧靜的季節性一日遊。",
-      "region": "抱川（首爾一日遊）",
-      "duration": "10小時",
-      "stopsCount": 3,
+      "title": "抱川與漣川：山中湖、瀑布與採石場藝術谷",
+      "subtitle": "群山環抱的環湖漫步、自柱狀玄武岩上傾瀉 18 公尺的瀑布，以及一座翡翠色的採石場湖——一天之內，不趕行程地走訪兩處聯合國教科文組織世界地質公園的地質景點。",
+      "region": "抱川與漣川（首爾一日遊）",
+      "duration": "10 小時",
+      "stopsCount": 4,
       "rating": 0,
       "reviewCount": 0,
       "badges": [
-        "自然與攝影之旅",
-        "季節性亮點",
-        "浪漫夜燈"
+        "首爾一日遊",
+        "週一·週四·週六出發",
+        "世界地質公園",
+        "瀑布",
+        "環湖漫步",
+        "小團"
       ],
       "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
       "priceLabel": "",
-      "shortCardDescription": "從首爾出發前往抱川的輕鬆季節性一日遊，抱川是京畿道鄉村地區，以湖泊、香草花園和壯觀的藝術公園景觀聞名。行程結合山井湖的群山環抱水景、香草島的地中海風格花園與夜間燈光，以及搭乘單軌列車前往的抱川藝術谷採石場觀景台。比南怡島人潮稀少，以攝影主導的寧靜體驗取代名勝景點的快速打卡。"
+      "shortCardDescription": "一趟以真實地質為骨架、步調更從容的首爾一日遊。先在鳴聲山下走完山井湖平坦的 3.2 公里環湖步道，品嘗抱川自家的梨洞排骨，接著跨過 80 公尺長的吊橋，正面迎接載仁瀑布自柱狀玄武岩上落下 18 公尺的水勢，最後走進抱川藝術谷的花崗岩採石場——湧泉在這座礦坑裡積成了翡翠色的天柱湖。載仁瀑布與藝術谷同為漢灘江聯合國教科文組織世界地質公園的地質景點，是同一片地景相對的兩半。 週一、週四、週六出發。"
     },
     "price": {
       "amountLabel": "54"
@@ -634,6 +663,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "首爾出發加平一日遊：南怡島、晨靜樹木園與小法國村",
+      "subtitle": "一天遊覽車走完加平三處招牌 — 不必登山，三處門票全含",
+      "region": "首爾 → 京畿道（加平）",
+      "duration": "11.5 小時",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "首爾出發一日遊",
+        "加平",
+        "併團",
+        "韓劇",
+        "花園"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "首爾近郊最輕鬆的一天鄉野行程：南怡島的水杉大道、330,000 m² 的主題樹木園，以及小王子主題村落 — 三處門票全數包含，19:00 前回到首爾。"
+    },
+    "price": {
+      "amountLabel": "59"
     }
   },
   "seoul-private-nami-morning-calm-petite-france": {
@@ -840,6 +895,32 @@ export const PAGES: Record<string, SlimCatalogPage> = {
     },
     "price": {
       "amountLabel": ""
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "首爾冬季特別行程：雪嶽山、南怡島與魚飛溪谷冰壁",
+      "subtitle": "只在冬季運行的遊覽車一日遊 — 韓國最著名山峰的積雪、覆霜的南怡島，以及一面由村民造出的冰壁",
+      "region": "首爾 → 江原道 → 京畿道（加平）",
+      "duration": "13.5 小時",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "僅限冬季",
+        "季節限定",
+        "首爾出發一日遊",
+        "雪嶽山",
+        "冰壁"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "只在深冬運行：雪中的雪嶽山、南怡島覆霜的林蔭大道，以及加平村民每年一月在溪谷岩壁上養出的 25 公尺冰壁。"
+    },
+    "price": {
+      "amountLabel": "69"
     }
   },
   "southwest-hallasan-osulloc-aewol": {

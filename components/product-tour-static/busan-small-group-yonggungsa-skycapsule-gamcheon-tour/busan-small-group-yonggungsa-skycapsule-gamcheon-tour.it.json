@@ -1,0 +1,2664 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "it",
+  "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "seo": {
+    "pageTitle": "Tour di Busan in piccolo gruppo: Yonggungsa, Sky Capsule, Gamcheon | AtoC Korea",
+    "metaDescription": "Tour giornaliero di 10 ore a Busan in piccolo gruppo: tempio Haedong Yonggungsa, passerella di vetro Daritdol di Cheongsapo, Sky Capsule del Blueline Park (biglietto opzionale), villaggio culturale di Gamcheon, villaggio dei murales Dakbatgol e monorotaia.",
+    "title": "Tour di Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali | AtoC",
+    "description": "Tour giornaliero di Busan in piccolo gruppo: Haedong Yonggungsa → osservatorio Daritdol di Cheongsapo → Sky Capsule del Blueline Park (biglietto incluso/escluso — a vostra scelta) → pranzo → villaggio culturale di Gamcheon → villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri.",
+    "primaryKeywords": [
+      "tour Busan piccolo gruppo",
+      "tour Haedong Yonggungsa",
+      "Sky Capsule Blueline Park",
+      "tour villaggio culturale Gamcheon",
+      "osservatorio Daritdol Cheongsapo"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+  },
+  "catalog_card": {
+    "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "title": "Busan in piccolo gruppo: tempio sul mare, Sky Capsule e villaggi culturali",
+    "subtitle": "Tour giornaliero in piccolo gruppo tra le icone costiere e i villaggi collinari di Busan — il tempio sul mare Haedong Yonggungsa, la passerella di vetro dell'osservatorio Daritdol di Cheongsapo, la corsa in Sky Capsule del Blueline Park (biglietto opzionale al momento della prenotazione), il villaggio culturale di Gamcheon e il tranquillo villaggio dei murales Dakbatgol con la monorotaia della scalinata dei desideri.",
+    "region": "Busan",
+    "duration": "≈ 10 ore",
+    "stopsCount": 8,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "Piccolo gruppo",
+      "Busan",
+      "Sky Capsule",
+      "Costa",
+      "Villaggi culturali"
+    ],
+    "tags": [
+      "Piccolo gruppo",
+      "Busan",
+      "Sky Capsule",
+      "Costa",
+      "Villaggi culturali",
+      "Ideale per la prima visita"
+    ],
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "priceLabel": "",
+    "shortCardDescription": "Una giornata a Busan in piccolo gruppo costruita intorno alla costa e ai villaggi collinari: il tempio sul mare Haedong Yonggungsa nella sua quieta finestra mattutina, l'osservatorio Daritdol di Cheongsapo con pavimento di vetro e ingresso gratuito, la corsa in Sky Capsule del Blueline Park da Cheongsapo a Mipo (biglietto incluso o escluso — a vostra scelta alla prenotazione), il pranzo, il villaggio culturale di Gamcheon e il poco conosciuto villaggio dei murales Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. Ogni tappa principale, tranne la capsula opzionale, è a ingresso gratuito."
+  },
+  "headlineLine1": "Tempio sul mare, Sky Capsule",
+  "headlineLine2": "e villaggi culturali",
+  "price": {
+    "amountLabel": "59",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 59
+  },
+  "hero": {
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "imagePosition": "center 40%",
+    "images": [
+      "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+    ],
+    "tagline": "Il tempio sul mare di Busan nella sua ora più quieta, una passerella di vetro sospesa sull'acqua, una corsa in capsula pastello lungo la costa e due villaggi collinari — uno celebre, uno ancora autenticamente locale",
+    "pills": [
+      "Piccolo gruppo",
+      "Busan",
+      "Ideale per la prima visita"
+    ],
+    "meta": {
+      "duration": "≈ 10 ore (primo pickup 08:30, ultimo rientro in centro ≈ 18:30)",
+      "region": "Busan",
+      "stops": "8 tappe",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "Panoramica"
+    },
+    {
+      "id": "itinerary",
+      "label": "Itinerario"
+    },
+    {
+      "id": "practical",
+      "label": "Info pratiche"
+    },
+    {
+      "id": "reviews",
+      "label": "Recensioni"
+    },
+    {
+      "id": "booking",
+      "label": "Prenotazione"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Potenziale fotografico",
+      "value": "Alto",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Paesaggio",
+      "value": "Buono",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "Camminata",
+      "value": "Impegnativa",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Adatto alla pioggia",
+      "value": "Moderato",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Adatto alle famiglie",
+      "value": "Buono",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Ritmo",
+      "value": "Equilibrato",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 1",
+      "alt": "Haedong Yonggungsa Temple — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 2",
+      "alt": "Haedong Yonggungsa Temple — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 3",
+      "alt": "Haedong Yonggungsa Temple — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 4",
+      "alt": "Haedong Yonggungsa Temple — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 5",
+      "alt": "Haedong Yonggungsa Temple — gallery image 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "Haedong Yonggungsa Temple",
+      "caption": "Haedong Yonggungsa Temple — photo 6",
+      "alt": "Haedong Yonggungsa Temple — gallery image 6"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 1",
+      "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+      "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 2",
+      "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 3",
+      "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 4",
+      "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "Gamcheon Culture Village",
+      "caption": "Gamcheon Culture Village — photo 1",
+      "alt": "Gamcheon Culture Village — gallery image 1"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "Gamcheon Culture Village",
+      "caption": "Gamcheon Culture Village — photo 2",
+      "alt": "Gamcheon Culture Village — gallery image 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "location": "Gamcheon Culture Village",
+      "caption": "Gamcheon Culture Village — photo 3",
+      "alt": "Gamcheon Culture Village — gallery image 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+      "location": "Gamcheon Culture Village",
+      "caption": "Gamcheon Culture Village — photo 8",
+      "alt": "Gamcheon Culture Village — gallery image 8"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "name": "Pickup (3 stazioni centrali di Busan)",
+      "time": "≈ 08:30–09:30",
+      "number": 1,
+      "category": "Trasferimento / Pickup",
+      "duration": "30 min",
+      "timeUsed": [
+        "Pickup alla stazione di Busan (~09:00, ~5 min)",
+        "Trasferimento alla stazione di Seomyeon (~10 min)",
+        "Pickup a Seomyeon (~09:15, ~5 min)",
+        "Trasferimento alla stazione di Haeundae (~15 min)",
+        "Pickup a Haeundae (~09:30, ~5 min)"
+      ],
+      "_poi_meta": {
+        "match": "transit_only",
+        "poi_key": "OPS_busan_pickup_central",
+        "sources": [
+          "Visit Busan",
+          "Busan Metro"
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "Tre opzioni di pickup nel centro di Busan (stazione di Busan, Seomyeon, Haeundae)",
+        "Minibus per piccolo gruppo (max ~14 pax)",
+        "Trasferimento totale fino alla prima tappa: ~30-40 min",
+        "Scheda stampata dell'itinerario in coreano-inglese distribuita al pickup"
+      ],
+      "whyOnRoute": "Tre punti di pickup coprono le tre principali zone alberghiere di Busan (KTX/Nampo, Seomyeon in centro, Haeundae fronte spiaggia) senza costringere gli ospiti ad attraversare la città al mattino. La sequenza nord-ovest→est riduce al minimo la distanza del minibus e porta il gruppo a Haedong Yonggungsa verso le 10:00 — abbastanza presto da precedere gli arrivi più affollati dei pullman turistici.",
+      "description": "Il pickup è concentrato in tre snodi di trasporto centrali di Busan, per mantenere la giornata gestibile senza attraversare la città avanti e indietro: **stazione di Busan (linea 1)** per gli ospiti alloggiati vicino al terminal KTX o nella zona di Choryang/Nampo-dong; **stazione di Seomyeon (linee 1 e 2)** — l'interscambio metropolitano più trafficato di Busan, centrale per gli ospiti negli hotel di metà città intorno al Lotte Hotel Busan o alla Seomyeon Medical Street; e **stazione di Haeundae (linea 2)** per gli ospiti nel distretto dei resort fronte spiaggia vicino a Westin Josun, Park Hyatt o Signiel Busan. \n\nIl minibus effettua il pickup in sequenza in tutte e tre (di norma prima la stazione di Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) e prosegue poi verso nord-est lungo il percorso costiero del ponte di Gwangan in direzione di Gijang-gun per la prima tappa della giornata. \n\nTrasferimento totale dall'ultimo pickup a Haedong Yonggungsa: ~30-40 minuti a seconda del traffico. L'autista distribuirà una scheda stampata dell'itinerario in coreano-inglese con gli orari; vi preghiamo di trovarvi al punto di pickup 5 minuti prima dell'orario previsto, per mantenere la giornata in orario in vista delle successive tappe ai villaggi di Gamcheon e Dakbatgol.",
+      "_role": "pickup"
+    },
+    {
+      "name": "Tempio Haedong Yonggungsa",
+      "time": "≈ 10:00",
+      "number": 2,
+      "category": "Tempio buddhista / Costiero",
+      "duration": "75 min",
+      "timeUsed": [
+        "Discesa dal minibus + passeggiata tra le bancarelle fino al piazzale d'ingresso (~10 min)",
+        "Dodici Generali dello Zodiaco + pagoda contro gli incidenti (~10 min)",
+        "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~30 min)",
+        "Belvedere della statua Haesu Gwaneum + tempo per le foto (~15 min)",
+        "Risalita + ritrovo al minibus (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "haedong_yonggungsa",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**Fondato nel 1376** dal maestro buddhista Naong Hyegeun (in origine 'Bomunsa')",
+        "Uno dei pochissimi grandi templi coreani affacciati sul mare (la maggior parte è in montagna)",
+        "Ribattezzato **Haedong Yonggungsa nel 1974** dopo la visione del drago e della Dea avuta dal monaco Jeong-am",
+        "**108 gradini di pietra** = le 108 illusioni della mente nel buddhismo",
+        "**12 Sibiji-shin (Generali dello Zodiaco)** all'ingresso; santuario delle monete della '**pagoda contro gli incidenti**'",
+        "**Haesu Gwaneum Daebul** (Dea della Misericordia del mare) — la veduta più fotografata della scogliera",
+        "Sala principale Daeungjeon restaurata nel 1970 con cura per i colori originali",
+        "Orari tutti i giorni 04:30-19:20, ingresso GRATUITO; festival delle lanterne per il compleanno di Buddha (maggio)",
+        "**La fila di colonne di pietra dei 12 Generali dello Zodiaco Sibiji-shin alla porta del tempio** — unica tra i templi costieri coreani"
+      ],
+      "smartNotes": {
+        "tip": "Per entrare nelle sale usate le porte laterali (la porta frontale è riservata ai monaci); il compleanno di Buddha (apr–mag) porta l'esposizione delle lanterne; arrivate prima delle 10:30 per evitare la folla peggiore dei pullman turistici",
+        "photo": "La roccia dell'alba sul bordo verso il mare; la scalinata accanto alla sala Daeungjeon regala la classica inquadratura di oceano e tempio; la statua Haesu Gwaneum dalla scogliera superiore offre la veduta grandangolare di tempio e Mare Orientale",
+        "facilities": "Bancarelle di souvenir/snack e piccolo caffè al piazzale superiore; il sentiero costiero prosegue lungo le rocce"
+      },
+      "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:00 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
+      "convenience": {
+        "parking": "Parcheggio di Haedong Yonggungsa (a pagamento, secondo il sito ufficiale Visit Busan)",
+        "restroom": "Disponibili vicino all'ingresso principale e all'interno del complesso"
+      },
+      "description": "**Haedong Yonggungsa (해동 용궁사) — il tempio buddhista sul mare più famoso della Corea** — è arroccato sulle scogliere rocciose di Gijang-gun, sulla costa nord-orientale di Busan: uno dei pochissimi grandi templi coreani NON collocato in montagna. Fu fondato in origine nel **1376, durante la dinastia Goryeo, dal grande maestro buddhista Naong Hyegeun (나옹 혜근, 1320-1376)** — consigliere reale e maestro che avrebbe contribuito a plasmare il buddhismo coreano fino agli albori dell'era Joseon. \n\nSecondo la leggenda, Naong praticava l'ascesi al tempio Bunhwangsa di Gyeongju durante una siccità nazionale; il dio del Mare Orientale gli apparve in sogno e gli disse che costruire un tempio sul monte Bongrae (il nome originario di questa scogliera sul mare) avrebbe restituito prosperità al regno. \n\nNaong fondò il tempio e lo chiamò **Bomunsa**, dedicandolo a Gwanseum-bosal (관세음보살, il Bodhisattva della Compassione). Il tempio fu distrutto durante l'**invasione giapponese Imjin del 1592** e rimase in rovina per oltre 300 anni, finché **il monaco Ungang del tempio Tongdosa non ne avviò la ricostruzione nei primi anni Trenta del Novecento**. \n\nIl nome attuale, **Haedong Yonggungsa (tempio del Palazzo del Drago di Corea)**, risale soltanto al **1974** — quando il monaco superiore Jeong-am, durante una preghiera di 100 giorni (jeong-geon kido), ebbe la visione della Dea della Misericordia che discendeva sul dorso di un drago, irradiando una luce multicolore. \n\nIl tempio fu ribattezzato in onore di questa visione. La visita segue il caratteristico percorso processionale del tempio: attraverso la fila dei **12 Sibiji-shin (i Dodici Generali dello Zodiaco)** nel piazzale d'ingresso, oltre la **pagoda a 7 piani 'contro gli incidenti'** (dove gli automobilisti lasciano monete in offerta sotto un santuario di pietra a forma di ruota), giù per i celebri **108 gradini di pietra** (che rappresentano le 108 illusioni della mente buddhista) attraverso un piccolo boschetto di bambù, fino alle terrazze sul mare e alla sala principale Daeungjeon. \n\nLa **Haesu Gwaneum Daebul** (statua della Dea della Misericordia del mare) sulla scogliera superiore è la veduta più fotografata, e incornicia insieme i tetti del tempio e il Mare Orientale. \n\nOrari **04:30-19:20 tutti i giorni, ultimo ingresso 18:50, ingresso GRATUITO**. Il **compleanno di Buddha (maggio)** porta le installazioni di lanterne del festival Yeondunhoe.",
+      "visitBasics": {
+        "hours": "Tutti i giorni 04:30–19:20 (ultimo ingresso 18:50)",
+        "closed": "Aperto tutto l'anno",
+        "walking": "Moderato — 108 gradini attraverso una pineta, diverse terrazze sul mare e scalinate",
+        "admission": "Gratuito; il parcheggio per auto private è a pagamento"
+      },
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 1",
+          "alt": "Haedong Yonggungsa Temple — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 2",
+          "alt": "Haedong Yonggungsa Temple — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 3",
+          "alt": "Haedong Yonggungsa Temple — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 4",
+          "alt": "Haedong Yonggungsa Temple — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 5",
+          "alt": "Haedong Yonggungsa Temple — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "location": "Haedong Yonggungsa Temple",
+          "caption": "Haedong Yonggungsa Temple — photo 6",
+          "alt": "Haedong Yonggungsa Temple — gallery image 6"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "40 min",
+      "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
+      "category": "Osservatorio costiero / Gratuito",
+      "description": "L'**osservatorio Daritdol di Cheongsapo (청사포 다릿돌전망대)** è una **passerella di 72,5 metri che si incurva sul mare a circa 20 metri sopra l'acqua**, inaugurata nell'agosto 2017 sulla scogliera costiera tra Cheongsapo e Songjeong. Il nome viene dai **daritdol — i cinque scogli 'pietre di guado'** che punteggiano il mare sotto la piattaforma e che, si dice, avanzano verso l'orizzonte come un ponte. Il tratto finale del pavimento è in **vetro**, con copriscarpe forniti per proteggere (e mettere alla prova la vostra fiducia!) le lastre mentre le onde rotolano sotto i vostri piedi. L'ingresso è **gratuito**. Tornando al villaggio, i **fari gemelli di Cheongsapo** (uno rosso, uno bianco) e il piccolo passaggio pedonale della stazione, reso celebre dalla sua inquadratura in stile anime alla Slam Dunk, sono a due passi.",
+      "image": null,
+      "highlights": [
+        "**Passerella di 72,5 m, ~20 m sopra il mare** — inaugurata nell'agosto 2017, GRATUITA",
+        "Prende il nome dai cinque **scogli daritdol, le 'pietre di guado'** visibili sotto la piattaforma",
+        "**Tratto con pavimento di vetro** all'estremità verso il mare (copriscarpe forniti)",
+        "**Fari gemelli di Cheongsapo** (rosso + bianco) a due passi",
+        "Cheongsapo è una delle **otto vedute panoramiche** di Busan — un villaggio di pescatori ancora attivo",
+        "Il passaggio pedonale della stazione, celebre spot fotografico in stile anime"
+      ],
+      "timeUsed": [
+        "Discesa dal minibus + passeggiata fino all'ingresso della passerella (~5 min)",
+        "Percorso sulla passerella + tratto con pavimento di vetro (~20 min)",
+        "Passeggiata fotografica ai fari gemelli / passaggio pedonale (~10 min)",
+        "Ritrovo per la stazione della capsula (~5 min)"
+      ],
+      "whyOnRoute": "**Il brivido gratuito tra il tempio e la capsula.** Il Daritdol regala alla giornata il suo momento sospeso sul mare — un pavimento di vetro con le onde che rotolano sotto — senza biglietto, e sorge proprio sulla scogliera di Cheongsapo, così si concatena con l'imbarco sulla Sky Capsule a pochi minuti di distanza. Vedere prima la costa dalla passerella fissa fa leggere in modo diverso, dieci minuti dopo, il panorama in movimento dalla capsula.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "cheongsapo_daritdol_observatory",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan City Tourism",
+          "Blue Line Park official"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "Nei giorni ventosi la piattaforma chiude occasionalmente — la guida verifica le condizioni e, se necessario, riordina le tappe di Cheongsapo",
+        "photo": "Fotografate verso il basso attraverso il vetro gli scogli daritdol; la curva della piattaforma vista dal sentiero costiero regala il miglior scatto panoramico",
+        "facilities": "Caffè e bancarelle di pesce nel villaggio di Cheongsapo, in basso"
+      },
+      "convenience": {
+        "parking": "Fermata del minibus al villaggio di Cheongsapo; breve passeggiata fino alla piattaforma",
+        "restroom": "Servizi pubblici nei pressi della stazione di Cheongsapo"
+      },
+      "visitBasics": {
+        "hours": "Accesso libero; osservatorio presidiato indicativamente 09:00–18:00 (in base a stagione/meteo)",
+        "closed": "Può chiudere temporaneamente in caso di forte vento o tempesta",
+        "walking": "Percorso pianeggiante sulla piattaforma; breve pendenza dal villaggio",
+        "admission": "GRATUITO (copriscarpe forniti per il tratto in vetro)"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:35",
+      "duration": "40 min",
+      "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "category": "Attrazione costiera / Biglietto opzionale",
+      "description": "La **Sky Capsule** è l'attrazione simbolo dello **Haeundae Blueline Park**, la riqualificazione ecologica del 2020 della dismessa ferrovia costiera Donghae Nambu: **cabine pastello da 4 posti che scivolano per 2,3 km su una rotaia sopraelevata a 7–10 metri sopra la costa** tra Cheongsapo e Mipo, con il mare da un lato per tutto il tragitto (~30 minuti). Saliamo a **Cheongsapo e viaggiamo verso Mipo**, dove il minibus è già ad attenderci — così la corsa fa anche da trasferimento della giornata lungo la costa. **Il biglietto della capsula è opzionale e si sceglie alla prenotazione**: con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (il prezzo è per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata); con l'opzione base potete percorrere la **passeggiata gratuita della Green Railway** — la premiata passerella costiera in legno di 2,3 km sotto la stessa rotaia — oppure semplicemente raggiungere Mipo in minibus.",
+      "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "highlights": [
+        "**Capsule pastello da 4 posti su una rotaia costiera sopraelevata** — l'attrazione simbolo del Blueline Park (inaugurata nel 2020)",
+        "**Cheongsapo → Mipo, 2,3 km / ~30 min**, vista mare per tutto il tragitto",
+        "**Biglietto incluso o escluso — a vostra scelta alla prenotazione** (prezzo per capsula ≈ ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata)",
+        "Chi non sale: **passeggiata gratuita in legno della Green Railway** lungo la stessa costa, oppure minibus fino a Mipo",
+        "La corsa finisce dove inizia il pranzo — Mipo è a due passi dalle vie gastronomiche di Haeundae",
+        "Funziona con pioggia normale; si ferma solo in caso di forte vento"
+      ],
+      "timeUsed": [
+        "Imbarco alla stazione di Cheongsapo (~10 min)",
+        "Corsa in Sky Capsule Cheongsapo → Mipo (~30 min)"
+      ],
+      "whyOnRoute": "**La corsa che è anche il trasferimento.** Salire a Cheongsapo subito dopo la passerella significa che la capsula vi porta lungo la stessa identica costa che avete appena ammirato dall'alto — e vi lascia a Mipo, dove il minibus e le vie del pranzo sono già ad aspettarvi. Nulla della giornata devia per farle spazio: rinunciate al biglietto e il minibus o la passeggiata gratuita coprono lo stesso tratto.",
+      "_poi_meta": {
+        "match": "partial",
+        "poi_key": "cheongsapo_blue_line_park",
+        "sources": [
+          "Blue Line Park official",
+          "Visit Busan",
+          "Busan Metropolitan City Tourism"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "Le fasce del tramonto e del fine settimana si esauriscono con 1–2 settimane di anticipo — scegliete l'opzione con biglietto incluso alla prenotazione e le riserviamo noi per voi",
+        "photo": "Sedetevi sul lato mare (lato destro in direzione Mipo); la curva oltre il tunnel di Dalmaji è l'inquadratura simbolo",
+        "facilities": "Caffè e minimarket al piazzale di Mipo; biglietterie automatiche in entrambe le stazioni"
+      },
+      "convenience": {
+        "parking": "Il minibus attende il gruppo al piazzale della stazione di Mipo",
+        "restroom": "In entrambe le stazioni di Cheongsapo e Mipo"
+      },
+      "visitBasics": {
+        "hours": "≈ 09:30–18:30 (prolungati fino a sera in alta stagione)",
+        "closed": "Dipende dal meteo; il forte vento sospende il servizio",
+        "walking": "Banchine di stazione in piano; l'alternativa a piedi è di 2,3 km (~30 min) su passerella in legno",
+        "admission": "Per capsula, sola andata: ≈ ₩30,000 (2 pax) / ₩39,000 (3) / ₩44,000 (4) — opzione con biglietto incluso disponibile alla prenotazione"
+      },
+      "images": [
+        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+        "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+          "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 1",
+          "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+          "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 2",
+          "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+          "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 3",
+          "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+          "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 4",
+          "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "name": "Pranzo (ristorante locale nei pressi di Haeundae/Mipo)",
+      "time": "≈ 13:25",
+      "number": 5,
+      "category": "Pasto locale",
+      "duration": "60 min",
+      "timeUsed": [
+        "Passeggiata dalla stazione di Mipo al ristorante (~5 min)",
+        "Pranzo (~50 min)",
+        "Ritrovo al minibus (~5 min)"
+      ],
+      "_poi_meta": {
+        "match": "lunch_placeholder",
+        "poi_key": "OPS_busan_lunch",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ],
+        "verified": true,
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [],
+      "whyOnRoute": "**La pausa naturale tra la costa e i villaggi.** La corsa in capsula termina a Mipo all'ora di pranzo, e le vie gastronomiche di Haeundae sono a pochi passi dalla stazione — nessun tragitto extra per raggiungere un buon pasto. Fare rifornimento qui prepara ai due villaggi collinari del pomeriggio, dove la camminata è al suo tratto più verticale.",
+      "description": "Pranzo di circa 60 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+    },
+    {
+      "name": "Villaggio culturale di Gamcheon",
+      "time": "≈ 15:00",
+      "number": 6,
+      "category": "Villaggio culturale / Arte murale",
+      "duration": "90 min",
+      "timeUsed": [
+        "Discesa dal minibus al parcheggio pubblico 2 + passeggiata fino all'ingresso (~5 min)",
+        "Centro informazioni turistiche + acquisto della mappa dei timbri (~10 min)",
+        "Belvedere Sky Garden + panchina del Piccolo Principe (~25 min)",
+        "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~25 min)",
+        "Ritrovo al minibus (~10 min)"
+      ],
+      "_poi_meta": {
+        "match": "exact",
+        "poi_key": "gamcheon_culture_village",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29"
+      },
+      "highlights": [
+        "**'La Machu Picchu della Corea' / 'la Santorini della Corea'** — premio UN-HABITAT Asian Townscape Award 2012",
+        "Origini: trasferimenti dell'amministrazione di Busan negli **anni Venti-Trenta** + **rifugiati Taegeukdo del 1955** (~800 famiglie)",
+        "**La filosofia Taegeukdo del 'lasciar prosperare gli altri'** = nessuna casa blocca la vista di quella dietro",
+        "**2009 'Dreaming of Machu Picchu' + 2010 'Miro Miro'**: i progetti di arte pubblica del Ministero della Cultura",
+        "**La panchina del 'Piccolo Principe e la Volpe'** allo Sky Garden — il punto più fotografato del villaggio",
+        "**~1,4 milioni di visitatori l'anno** dalla rigenerazione tramite arte pubblica",
+        "**Comunità residenziale viva** — voce bassa, niente droni, niente flash verso le case",
+        "Ingresso al villaggio gratuito; mappa dei timbri opzionale ~₩2,000",
+        "**Premio UN-HABITAT Asian Townscape Award 2012** — riconoscimento al progetto artistico 'Dreaming of Machu Picchu' del 2009 che ha trasformato l'insediamento di rifugiati Taegeukdo del 1955 nel villaggio dei murales simbolo di Busan"
+      ],
+      "smartNotes": {
+        "tip": "Qui vivono i residenti — parlate a bassa voce, niente droni, portate via i rifiuti; indossate scarpe con buona presa per i vicoli ripidi; l'ora dorata del pomeriggio, ~16:00-17:00, è la luce migliore del villaggio",
+        "photo": "La panchina del Piccolo Principe e la Volpe (lunga coda) e l'osservatorio Haneul Maru / Sky Garden per la veduta panoramica sui tetti arcobaleno e sulla baia",
+        "facilities": "Noleggio hanbok, botteghe artigiane, bancarelle di dolciumi coreani, caffè; piccolo museo del villaggio all'ingresso; la mappa dei timbri è il modo più semplice per orientarsi"
+      },
+      "whyOnRoute": "**Il villaggio protagonista del pomeriggio — l'anfiteatro pastello di Busan.** Dopo la mattinata costiera, la giornata attraversa la città verso le colline occidentali, dove le terrazze di Gamcheon, nate come insediamento di rifugiati della guerra di Corea e rinate come villaggio d'arte nel 2009, si impilano in colori pastello sopra il mare. Il percorso di 90 minuti copre i belvedere, la balaustra del Piccolo Principe e il tempo per perdersi nei vicoli — e si abbina di proposito al quieto Dakbatgol subito dopo, così vedete sia il villaggio celebre sia quello locale che i pullman saltano.",
+      "convenience": {
+        "parking": "Parcheggio pubblico 2 di Gamcheon (a pagamento)",
+        "restroom": "Servizi pubblici al centro informazioni turistiche e intorno ai belvedere principali"
+      },
+      "description": "Il **villaggio culturale di Gamcheon (감천문화마을)** — soprannominato sia **'la Machu Picchu della Corea'** sia **'la Santorini della Corea'** — è un quartiere collinare di Saha-gu, nella Busan occidentale, le cui case dipinte in colori pastello scendono a cascata in file terrazzate lungo il pendio. \n\nL'insediamento nacque negli **anni Venti-Trenta del Novecento**, quando l'amministrazione di Busan trasferì i residenti della classe operaia lontano dal porto. Il carattere del villaggio si definì nel **1955**, quando **~800 famiglie (circa 4.000 persone) della comunità religiosa Taegeukdo** — una religione sincretica unicamente coreana che fonde elementi buddhisti, confuciani e dello yin-yang, fondata da **Jo Cheol-je** durante il periodo coloniale giapponese — si stabilirono qui come rifugiati della guerra di Corea in fuga dal Nord. \n\nLa filosofia Taegeukdo del '**lasciar prosperare gli altri**' plasmò direttamente il tratto più distintivo del villaggio: le case sono volutamente disposte a gradoni, così che **nessun tetto blocchi la vista della casa retrostante**, con l'intera comunità aperta al cielo e al mare. Gamcheon rimase uno dei quartieri più poveri di Busan fino al **2009**, quando il Ministero della Cultura coreano lanciò il progetto di rigenerazione tramite arte pubblica **'Dreaming of Machu Picchu in Busan'**, seguito dal **progetto 'Miro Miro' (labirinto) del 2010** — con l'aggiunta di oltre 22 murales commissionati, sculture e installazioni artistiche, tra cui l'iconica **panchina del 'Piccolo Principe e la Volpe'** al belvedere Sky Garden. \n\nGamcheon ha vinto il **premio UN-HABITAT Asian Townscape Award 2012** e accoglie oggi **~1,4 milioni di visitatori l'anno**. La visita segue il caratteristico percorso a piedi con la mappa dei timbri: dall'ingresso presso il **centro informazioni turistiche**, su fino al **belvedere Sky Garden** per lo scatto panoramico sui tetti arcobaleno, poi giù attraverso i vicoli labirintici tra murales, negozi di noleggio hanbok, botteghe artigiane e piccoli caffè. \n\n**Il villaggio è una comunità residenziale viva** — si richiede di parlare a bassa voce, niente droni, niente flash verso le abitazioni e i rifiuti si portano via con sé. \n\nOrari **09:00-18:00 mar-ott / 09:00-17:00 nov-feb (centro informazioni)**; **il villaggio in sé è aperto 24 ore su 24, ingresso GRATUITO**.",
+      "visitBasics": {
+        "hours": "Tutti i giorni 09:00–18:00 (mar–ott) / 09:00–17:00 (nov–feb); alcuni negozi/caffè seguono orari propri",
+        "closed": "Aperto tutto l'anno (una comunità residenziale viva)",
+        "walking": "Impegnativo — vicoli e scalinate molto ripidi; in molti tratti non adatto a passeggini o sedie a rotelle",
+        "admission": "Ingresso al villaggio gratuito; mappa dei timbri opzionale ≈ 2,000 KRW"
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 1",
+          "alt": "Gamcheon Culture Village — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 2",
+          "alt": "Gamcheon Culture Village — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 3",
+          "alt": "Gamcheon Culture Village — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "location": "Gamcheon Culture Village",
+          "caption": "Gamcheon Culture Village — photo 8",
+          "alt": "Gamcheon Culture Village — gallery image 8"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:50",
+      "duration": "50 min",
+      "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
+      "category": "Villaggio dei murales / Monorotaia gratuita",
+      "description": "**Dakbatgol (닥밭골)** è un villaggio collinare nel distretto di Seo-gu, a Busan, il cui nome ricorda i **campi di gelso da carta (dak)** che un tempo rifornivano i maestri della carta tradizionale coreana hanji. Come Gamcheon si arrampica su un ripido pendio in vicoli stretti — ma non è mai diventato una fermata dei pullman turistici, così i suoi **vicoli di murales, le opere ispirate alla hanji e i punti panoramici restano quieti e locali**, panni stesi compresi. Il simbolo del villaggio è la **'scalinata dei desideri' (소망계단)** — una lunga e ripida via di gradini dipinta di murales — e la **monorotaia inclinata gratuita** che le scorre accanto, installata perché gli anziani del villaggio potessero raggiungere le proprie case; anche i visitatori possono salirvi, trasformando la salita più ripida del pomeriggio in un belvedere al rallentatore. È il contrappunto volutamente a misura d'uomo alla fama di Gamcheon, a dieci minuti dalla zona dei rientri.",
+      "image": null,
+      "highlights": [
+        "**Villaggio dei murales silenzioso** — l'omologo locale di Gamcheon, quasi senza folla",
+        "Prende il nome dai **campi di gelso da carta (dak)** dell'eredità hanji di Busan",
+        "**'Scalinata dei desideri' (소망계단)** — una ripida via di gradini coperta di murales",
+        "**Monorotaia inclinata gratuita** accanto alla scalinata — costruita per gli anziani del villaggio, aperta ai visitatori",
+        "Belvedere collinari sul vecchio quartiere del porto",
+        "Ingresso GRATUITO; un quartiere autenticamente abitato — parlate a bassa voce"
+      ],
+      "timeUsed": [
+        "Discesa dal minibus + passeggiata tra i vicoli dei murales (~20 min)",
+        "Salita in monorotaia della scalinata dei desideri + belvedere (~15 min)",
+        "Discesa + tempo per le foto (~10 min)",
+        "Ritrovo al minibus (~5 min)"
+      ],
+      "whyOnRoute": "**La chiusura silenziosa che i pullman saltano.** Dopo la folla di Gamcheon, Dakbatgol mostra la stessa Busan collinare a volume di vita quotidiana — murales, la scalinata dei desideri e una monorotaia che fa la salita. Chiude il capitolo dei villaggi a dieci minuti dalla zona di rientro di Nampo, così la giornata termina immersa nella trama locale anziché nel traffico.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "dakbatgol_mural_village",
+        "sources": [
+          "Visit Busan",
+          "Busan Seo-gu Office"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "È un villaggio abitato, non un parco a tema — parlate a bassa voce nei vicoli e non fotografate verso le porte aperte delle case",
+        "photo": "Fotografate la scalinata dei desideri dal basso con il binario della monorotaia che le corre accanto; il belvedere in cima inquadra il quartiere del porto",
+        "facilities": "Piccoli caffè vicino all'ingresso; più scelta a Nampo-dong dopo il rientro"
+      },
+      "convenience": {
+        "parking": "Fermata del minibus all'ingresso del villaggio",
+        "restroom": "Servizi pubblici nei pressi dell'ingresso del villaggio"
+      },
+      "visitBasics": {
+        "hours": "Villaggio ad accesso libero; la monorotaia funziona in orario diurno (≈ 09:00–18:00, in base al meteo)",
+        "closed": "La monorotaia può fermarsi per manutenzione o maltempo — la scalinata resta aperta",
+        "walking": "Vicoli ripidi e scalinate; la monorotaia copre il tratto più ripido",
+        "admission": "GRATUITO (villaggio e monorotaia)"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:50",
+      "duration": "≈ 70 min in totale",
+      "name": "Rientro (4 punti nel centro di Busan)",
+      "category": "Rientro — Stazioni centrali in sequenza",
+      "description": "**I rientri avvengono in sequenza dal lato ovest verso est**: **zona Nampo-dong / Jagalchi (~17:50)** — scendete qui per le migliori vie gastronomiche serali di Busan e l'atmosfera notturna di BIFF Square; **stazione di Busan (~18:10)** per le coincidenze KTX; **Seomyeon (~18:30)** per il nucleo di hotel del centro; e **Haeundae (~19:00)** per ultima. Scegliete il vostro punto di rientro con la guida durante il pomeriggio — restare a bordo fino a Haeundae è il tragitto più lungo, ma vi lascia in spiaggia per la serata.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "Zona Nampo-dong / Jagalchi (~17:50)",
+        "Stazione di Busan (~18:10)",
+        "Seomyeon (~18:30)",
+        "Haeundae (~19:00)"
+      ],
+      "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza dei rientri inizia quasi subito dopo l'ultima tappa — nessun tempo morto di trasferimento. L'ordine da ovest a est rispecchia i pickup del mattino e copre i viaggiatori KTX (stazione di Busan), gli hotel del centro (Seomyeon) e gli hotel sulla spiaggia (Haeundae) senza tornare indietro.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Pickup (3 stazioni centrali di Busan)",
+      "type": "origin",
+      "theme": "Departure"
+    },
+    {
+      "name": "Tempio Haedong Yonggungsa",
+      "type": "primary",
+      "theme": "Seaside temple"
+    },
+    {
+      "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
+      "type": "secondary",
+      "theme": "Glass Skywalk"
+    },
+    {
+      "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+      "type": "primary",
+      "theme": "Sky Capsule"
+    },
+    {
+      "name": "Pranzo (ristorante locale di Busan)",
+      "type": "meal",
+      "theme": "Meal"
+    },
+    {
+      "name": "Villaggio culturale di Gamcheon",
+      "type": "primary",
+      "theme": "Art village"
+    },
+    {
+      "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
+      "type": "secondary",
+      "theme": "Mural Village"
+    },
+    {
+      "name": "Rientro (4 punti nel centro di Busan)",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "Mattinata costiera",
+      "duration": "≈ 3 ore",
+      "description": "Pickup in tre stazioni centrali (08:30–09:30), poi il tempio Haedong Yonggungsa prima dell'ondata dei pullman turistici, e a seguire la passerella di vetro Daritdol di Cheongsapo."
+    },
+    {
+      "phase": "Sky Capsule + pranzo",
+      "duration": "≈ 2 ore",
+      "description": "La corsa in Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prosegue in minibus o percorre a piedi la passeggiata in legno della Green Railway), poi pranzo nei pressi di Haeundae."
+    },
+    {
+      "phase": "Due villaggi collinari",
+      "duration": "≈ 3 ore",
+      "description": "Il percorso fotografico del villaggio culturale di Gamcheon (90 min), poi il tranquillo villaggio dei murales Dakbatgol e la sua monorotaia gratuita della scalinata dei desideri (50 min)."
+    },
+    {
+      "phase": "Chiusura in centro",
+      "duration": "≈ 1 ora",
+      "description": "Rientri in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "Come si muove questa giornata a Busan",
+    "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 08:30 alle 18:30 circa."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "Chi visita Busan per la prima volta",
+      "Coppie e viaggiatori appassionati di fotografia",
+      "Famiglie con adulti e gruppi di amici",
+      "Chi vuole la costa E i villaggi in un solo giorno"
+    ],
+    "lessIdealFor": [
+      "Chi preferisce camminare poco o evitare le salite",
+      "Gruppi con passeggini (vicoli e scalinate dei villaggi)",
+      "Chi cerca panorami notturni — è un itinerario diurno"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "Pacing & geography",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "Il tempio nella sua ora più quieta",
+            "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei pullman turistici inizia verso le 11:00. Arrivando intorno alle 10:00, la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code."
+          },
+          {
+            "label": "La corsa in capsula È il trasferimento",
+            "detail": "Da Cheongsapo la Sky Capsule pastello scivola per 2,3 km lungo la costa fino a Mipo — la corsa sostituisce quindi un tratto in minibus invece di aggiungere una deviazione. Chi rinuncia al biglietto raggiunge Mipo in minibus oppure percorre gratuitamente la passeggiata in legno della Green Railway lungo la stessa costa."
+          },
+          {
+            "label": "Due villaggi collinari, due atmosfere",
+            "detail": "Gamcheon è l'anfiteatro pastello di Busan, celebre in tutto il mondo; Dakbatgol, a dieci minuti, è il suo quieto omologo locale — vicoli di murales quasi senza folla, dove una monorotaia inclinata gratuita, costruita per gli anziani del villaggio, vi porta su per la 'scalinata dei desideri'."
+          },
+          {
+            "label": "Tappe principali gratuite, un solo biglietto opzionale",
+            "detail": "Yonggungsa, la passerella Daritdol, Gamcheon e Dakbatgol (monorotaia inclusa) sono tutti gratuiti. L'unica attrazione a pagamento della giornata è la Sky Capsule — e la scelta è vostra al momento della prenotazione: biglietto incluso, oppure escluso se preferite la passeggiata sulla passerella in legno."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "Prelievo e rientro",
+      "preview": "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+      "content": [
+        "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+        "Discese in sequenza: Nampo-dong/Jagalchi ≈17:50, stazione di Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
+        "La durata effettiva del tour dipende dal punto di prelievo: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "Cosa indossare e portare",
+      "preview": "Scarpe comode con buona presa — i vicoli collinari di Gamcheon e i 108 gradini di Yonggungsa…",
+      "content": [
+        "Scarpe comode con buona presa — i vicoli collinari di Gamcheon e i 108 gradini di Yonggungsa richiedono entrambi aderenza.",
+        "Uno strato leggero per il veicolo climatizzato e la brezza marina a Yonggungsa.",
+        "Macchina fotografica o smartphone (Gamcheon e Cheongsapo sono i momenti fotografici clou).",
+        "Contanti o carta per il pranzo (₩10,000–₩20,000), i biglietti opzionali di Sky Capsule / Beach Train a Cheongsapo e l'osservatorio opzionale della Busan Tower."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "Politica meteo",
+      "preview": "Operativo tutto l'anno.",
+      "content": [
+        "Operativo tutto l'anno.",
+        "Pioggia leggera: il tour si svolge come da programma — Yonggungsa sotto la pioggia ha un fascino tutto suo, e i vicoli di Gamcheon restano percorribili.",
+        "Pioggia forte o temporali: la guida può modificare l'itinerario, perché la parte bassa del tempio di Yonggungsa può diventare scivolosa e le scalinate di Gamcheon insidiose.",
+        "Meteo di livello tifone: viene offerto il rimborso completo o la riprenotazione."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "What's included",
+      "preview": "Minibus per piccolo gruppo (max ≈12 ospiti), guida certificata di lingua inglese, carburante/pedaggi/parcheggi.",
+      "content": [
+        "Minibus per piccolo gruppo (max ≈12 ospiti), guida certificata di lingua inglese, carburante/pedaggi/parcheggi.",
+        "Tutte le attrazioni principali sono a ingresso GRATUITO: Haedong Yonggungsa, osservatorio Daritdol di Cheongsapo, villaggio culturale di Gamcheon, villaggio dei murales Dakbatgol (monorotaia della scalinata dei desideri gratuita).",
+        "Biglietto Sky Capsule: a scelta alla prenotazione — incluso (riserviamo in anticipo le capsule per il vostro gruppo; base di 2 persone per capsula) oppure escluso (passeggiata gratuita sulla passerella in legno della Green Railway o trasferimento in minibus fino a Mipo).",
+        "Non incluso: pranzo (≈ ₩10,000–15,000), bevande, spese personali, mance."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "Lingua",
+      "preview": "Lingua principale del tour: inglese.",
+      "content": [
+        "Lingua principale del tour: inglese.",
+        "Guida di lingua cinese disponibile su richiesta — prenotare con almeno 3 giorni di anticipo.",
+        "Il coreano è presente per tutta la giornata su menu, cartelli e nelle interazioni con le bancarelle; la guida si occupa della traduzione."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "Walking & terrain",
+      "preview": "Difficoltà moderata con brevi tratti impegnativi.",
+      "content": [
+        "Difficoltà moderata con brevi tratti impegnativi.",
+        "Yonggungsa ha 108 gradini di pietra in discesa e risalita.",
+        "La passerella Daritdol è pianeggiante (pavimento di vetro, copriscarpe forniti).",
+        "Le stazioni della Sky Capsule sono in piano con qualche gradino sulle banchine.",
+        "Gamcheon è fatta di vicoli collinari e scalinate — indossate scarpe comode.",
+        "La scalinata dei desideri di Dakbatgol è ripida, ma la monorotaia gratuita fa la salita.",
+        "Camminata totale di circa 4–5 km."
+      ]
+    },
+    {
+      "id": "capsule",
+      "title": "Sky Capsule (opzione biglietto)",
+      "preview": "Incluso o escluso — a vostra scelta alla prenotazione.",
+      "content": [
+        "La Sky Capsule percorre 2,3 km su una rotaia sopraelevata tra Cheongsapo e Mipo (~30 min), in cabine pastello da 4 posti sospese sopra la costa.",
+        "Opzione con biglietto incluso: riserviamo in anticipo le capsule per il vostro gruppo (prezzo per capsula ≈ ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4 sola andata; l'opzione inclusa è calcolata sulla base di 2 persone per capsula).",
+        "Opzione con biglietto escluso: passeggiata gratuita sulla passerella in legno della Green Railway (2,3 km, ~30 min, stessa costa) oppure trasferimento in minibus fino a Mipo.",
+        "Il servizio dipende dal meteo (il forte vento sospende la linea); se la capsula non può circolare, la passeggiata sulla passerella e il trasferimento in minibus mantengono l'itinerario in orario."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "Cancellazione",
+      "preview": "Cancellazione gratuita fino a 24 ore prima del pickup.",
+      "content": [
+        "Cancellazione gratuita fino a 24 ore prima del pickup.",
+        "Le cancellazioni il giorno stesso e i mancati arrivi non sono rimborsabili."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "Vedi note stagionali"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "Vedi note stagionali"
+    },
+    "_seasonalSummary": "Busan: la grande città più meridionale della Corea, più mite e piovosa di Seoul. Inverni miti (5–10 °C), estati umide, piogge al culmine con il monsone di luglio."
+  },
+  "seasonalVariations": [
+    {
+      "season": "Primavera (mar–mag)",
+      "description": "I ciliegi in fiore costeggiano la Blueline tra fine marzo e inizio aprile — la corsa in capsula nella stagione della fioritura è la migliore dell'anno. Mattinate limpide al tempio."
+    },
+    {
+      "season": "Estate (giu–ago)",
+      "description": "Giornate lunghe e una costa più fresca del centro città; il monsone di luglio può ridurre il tempo sulla passerella. Gli orari della capsula si estendono fino a sera."
+    },
+    {
+      "season": "Autunno (set–nov)",
+      "description": "I cieli più limpidi dell'anno — la migliore visibilità dal pavimento di vetro del Daritdol e i colori più nitidi dai belvedere di Gamcheon."
+    },
+    {
+      "season": "Inverno (dic–feb)",
+      "description": "La minore affluenza dell'anno a ogni tappa; luce nitida per le fotografie. La capsula è riscaldata; vestitevi con capi caldi per le terrazze del tempio e i vicoli dei villaggi."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "Operatore locale autorizzato",
+      "description": "Guide con licenza di Busan",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600",
+      "body": "Operatore locale autorizzato che gestisce regolarmente tour urbani di Busan, con guide certificate di lingua inglese, veicoli assicurati e orari dell'itinerario studiati per evitare, quando possibile, le ore più affollate al tempio."
+    },
+    {
+      "icon": "users",
+      "title": "Piccolo gruppo",
+      "description": "≈12 ospiti max",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600",
+      "body": "Il minivan per piccolo gruppo (max ~12) mantiene confortevoli i vicoli stretti di Gamcheon e il percorso dei 108 gradini di Yonggungsa — tutt'altra cosa rispetto ai tour in pullman da 40 persone."
+    },
+    {
+      "icon": "shield",
+      "title": "Ingressi tutti compresi",
+      "description": "Ingressi principali coperti",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600",
+      "body": "Tutte e sette le tappe principali sono a ingresso gratuito, quindi il giorno del tour non ci sono costi nascosti per i singoli siti dell'itinerario principale."
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "Immediatamente",
+      "title": "Conferma immediata",
+      "detail": "Conferma della prenotazione con riepilogo dell'itinerario",
+      "description": "Conferma immediata della prenotazione con le istruzioni per il punto di pickup (stazione di Busan / Seomyeon / Haeundae)."
+    },
+    {
+      "timing": "Il giorno prima",
+      "title": "Dettagli del pickup",
+      "detail": "Luogo esatto del pickup e informazioni sul veicolo via WhatsApp",
+      "description": "Verifica del meteo ed eventuali note sull'itinerario (consiglio sul trenino Danubi per Taejongdae, orari delle maree a Yonggungsa) inviate il giorno prima."
+    },
+    {
+      "timing": "La mattina stessa",
+      "title": "Conferma del pickup",
+      "detail": "L'autista si annuncia 10 minuti prima dell'arrivo",
+      "description": "Targa del van e contatto della guida confermati la sera precedente."
+    },
+    {
+      "timing": "Durante il tour",
+      "title": "Assistenza durante il tour",
+      "detail": "Linea diretta con l'operativo",
+      "description": "Un messaggio mattutino conferma la vostra stazione di pickup ed eventuali condizioni del traffico in tempo reale."
+    },
+    {
+      "timing": "Fine giornata",
+      "title": "Rientro flessibile",
+      "detail": "Scegliete il rientro a Nampo-dong, alla stazione di Busan, a Seomyeon o a Haeundae",
+      "description": "La guida offre narrazione dal vivo a ogni tappa — la fondazione di Yonggungsa nel 1376, la storia delle 22 nazioni dell'UNMCK, l'origine di Gamcheon come insediamento di rifugiati del 1955."
+    },
+    {
+      "timing": "Dopo il tour",
+      "title": "Recensione e follow-up",
+      "detail": "Recensione facoltativa e follow-up",
+      "description": "Invio di una richiesta di feedback post-tour; le domande sui ristoranti consigliati a Busan ricevono risposta in giornata."
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "Il biglietto della Sky Capsule è incluso?",
+      "answer": "A vostra scelta al momento della prenotazione. Con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (prezzo per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata — l'opzione inclusa è calcolata sulla base di 2 persone per capsula). Con l'opzione base potete invece percorrere gratuitamente la passeggiata in legno della Green Railway o raggiungere Mipo in minibus mentre gli altri salgono in capsula."
+    },
+    {
+      "question": "Devo prenotare la Sky Capsule in anticipo?",
+      "answer": "Le fasce del tramonto e del fine settimana si esauriscono con 1–2 settimane di anticipo. Se scegliete l'opzione con biglietto incluso, gestiamo noi la prenotazione per il vostro gruppo alla conferma della prenotazione. Nei giorni feriali tranquilli è possibile acquistare i biglietti in giornata al chiosco, ma senza garanzia."
+    },
+    {
+      "question": "Il pranzo è incluso?",
+      "answer": "No — il pranzo è a parte (circa ₩10,000–15,000). La guida consiglia opzioni locali nei pressi di Haeundae/Mipo come il dwaeji-gukbap (la zuppa di riso al maiale simbolo di Busan), i milmyeon (noodle freddi di grano) o un ristorante di pesce."
+    },
+    {
+      "question": "Quanto si cammina e quanto è ripido il percorso?",
+      "answer": "Difficoltà da moderata a impegnativa in brevi tratti: 108 gradini in discesa e risalita a Yonggungsa, passerella di vetro pianeggiante al Daritdol, percorsi per lo più piani alle stazioni della capsula, vicoli in pendenza a Gamcheon e scalinate a Dakbatgol — dove però la monorotaia gratuita fa la salita al posto vostro. La distanza totale a piedi è di circa 4–5 km."
+    },
+    {
+      "question": "È adatto a bambini o anziani?",
+      "answer": "Sì, per la maggior parte dei viaggiatori attivi. I bambini adorano il pavimento di vetro e la capsula; la monorotaia di Dakbatgol evita la salita più ripida. I gradini di Yonggungsa e le pendenze di Gamcheon sono i due tratti impegnativi — affrontateli con calma e saltate i vicoli laterali se necessario."
+    },
+    {
+      "question": "In cosa si differenzia dal tour giornaliero Busan Top Attractions?",
+      "answer": "Stesso operatore, focus diverso. Top Attractions copre il classico giro della città (cimitero commemorativo delle Nazioni Unite, mercato di Jagalchi). Questo itinerario in piccolo gruppo punta tutto sulla costa e sui villaggi: una sosta dedicata alla passerella Daritdol, la corsa in Sky Capsule con opzione di biglietto incluso e il tranquillo villaggio dei murales Dakbatgol che i grandi pullman saltano."
+    },
+    {
+      "question": "Dove si effettuano pickup e rientro?",
+      "answer": "Pickup in tre stazioni centrali — Seomyeon (08:30), stazione di Busan (08:50), Haeundae (09:30). I rientri avvengono in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae, indicativamente tra le 17:50 e le 19:00."
+    },
+    {
+      "question": "Cosa succede se piove?",
+      "answer": "Il tour si svolge con qualsiasi tempo. La capsula e la monorotaia funzionano con pioggia normale (si fermano solo in caso di forte vento), la passerella fornisce copriscarpe e i vicoli dei villaggi restano percorribili con l'ombrello. In caso di maltempo intenso il tempo all'aperto sulle terrazze del tempio può essere ridotto."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "Selezionate la data e la dimensione del gruppo per verificare la disponibilità in tempo reale e completare la prenotazione.",
+    "price": {
+      "amountLabel": "59",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 59
+    }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:30",
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 2,
+        "time": "08:50",
+        "name": "Busan Station Exit 4 (not the KTX gate)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "time": "09:30",
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Nampo-dong / Jagalchi area",
+        "type": "station",
+        "lat": 35.09663,
+        "lng": 129.0308
+      },
+      {
+        "order": 2,
+        "name": "Busan Station (Exit 4)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 4,
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "notes": [
+      "Alla prenotazione scegliete la stazione di pickup più vicina al vostro hotel. I rientri sono sequenziali (Nampo-dong → stazione di Busan → Seomyeon → Haeundae, ≈ 17:50–19:00); chi sale a Seomyeon ha la giornata più lunga, chi sale a Haeundae la più corta."
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "busan_city",
+    "region_type": "busan_city",
+    "vehicle_type": "coach",
+    "duration_hours": 9,
+    "region_tags": [
+      "busan_haeundae",
+      "busan_gijang",
+      "busan_namgu",
+      "busan_saha",
+      "busan_jung"
+    ],
+    "theme_tags": [
+      "temple",
+      "coastal",
+      "war_memorial",
+      "mural_village",
+      "fish_market",
+      "korean_war_history"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.85,
+    "scenic_level": 0.9,
+    "photo_level": 1,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.7,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.7,
+    "food_fit": 0.8,
+    "nature_fit": 0.8,
+    "beach_fit": 0.6,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 0.85,
+    "premium_fit": 0.3,
+    "small_group_fit": 1,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with several flights of stairs (Yonggungsa 108 steps, Gamcheon hillside).",
+      "Average fitness expected.",
+      "Sturdy closed-toe shoes recommended (Jagalchi 1F floor is wet)."
+    ],
+    "keywords": [
+      "busan top attractions day tour",
+      "busan small group tour",
+      "haedong yonggungsa",
+      "gamcheon culture village",
+      "jagalchi market",
+      "un memorial cemetery busan"
+    ],
+    "synonym_hints": [
+      "busan one day classic tour",
+      "busan must-see day trip",
+      "busan top 5 highlights"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "coastal_temple_fit": 1,
+    "seaside_temple_fit": 1,
+    "war_memorial_fit": 1,
+    "korean_war_history_fit": 1,
+    "mural_village_fit": 1,
+    "fish_market_fit": 1,
+    "market_fit": 1,
+    "street_food_fit": 0.9,
+    "skywalk_fit": 1,
+    "sky_capsule_fit": 0.7,
+    "coastal_railway_fit": 1,
+    "history_culture_fit": 1,
+    "k_drama_filming_fit": 0.5,
+    "religious_history_fit": 0.85,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "busan_signature_route_fit": 1,
+    "skywalk_coastal_railway_fit": 1,
+    "first_time_busan_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "busan",
+      "coastal",
+      "seaside_temple",
+      "sky_capsule",
+      "culture_village",
+      "mural_village",
+      "small_group"
+    ],
+    "secondary_themes": [
+      "glass_skywalk",
+      "blueline_park",
+      "gamcheon",
+      "dakbatgol_monorail",
+      "photo_spots",
+      "free_admission_anchors",
+      "first_time_busan"
+    ],
+    "best_for": [
+      "first_time_busan",
+      "couples",
+      "photo_lovers",
+      "adult_families",
+      "small_group_seekers"
+    ],
+    "not_recommended_for": [
+      "minimal_walking_seekers",
+      "stroller_heavy_groups",
+      "nightlife_focused_travelers"
+    ],
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Cheongsapo Daritdol Observatory",
+      "Haeundae Blueline Park Sky Capsule",
+      "Gamcheon Culture Village",
+      "Dakbatgol Mural Village"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "competing_products": [
+      "busan-top-attractions-day-tour",
+      "busan-small-group-sightseeing-tour-cruise-passengers",
+      "busan-private-car-charter-cruise-shore"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on this route. Cultural weight comes from the seaside temple (1376 founding), Korean-War refugee village heritage at Gamcheon, and hanji paper-mulberry heritage at Dakbatgol."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "Tempio sul mare, Sky Capsule",
+        "headlineLine2": "e villaggi culturali",
+        "hero": {
+          "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "imagePosition": "center 40%",
+          "images": [
+            "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+          ],
+          "tagline": "Il tempio sul mare di Busan nella sua ora più quieta, una passerella di vetro sospesa sull'acqua, una corsa in capsula pastello lungo la costa e due villaggi collinari — uno celebre, uno ancora autenticamente locale",
+          "pills": [
+            "Piccolo gruppo",
+            "Busan",
+            "Ideale per la prima visita"
+          ],
+          "meta": {
+            "duration": "≈ 10 ore (primo pickup 08:30, ultimo rientro in centro ≈ 18:30)",
+            "region": "Busan",
+            "stops": "8 tappe",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "Panoramica"
+          },
+          {
+            "id": "itinerary",
+            "label": "Itinerario"
+          },
+          {
+            "id": "practical",
+            "label": "Info pratiche"
+          },
+          {
+            "id": "reviews",
+            "label": "Recensioni"
+          },
+          {
+            "id": "booking",
+            "label": "Prenotazione"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "Potenziale fotografico",
+            "value": "Alto",
+            "level": 5
+          },
+          {
+            "icon": "mountain",
+            "label": "Paesaggio",
+            "value": "Buono",
+            "level": 4
+          },
+          {
+            "icon": "footprints",
+            "label": "Camminata",
+            "value": "Impegnativa",
+            "level": 4
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "Adatto alla pioggia",
+            "value": "Moderato",
+            "level": 3
+          },
+          {
+            "icon": "users",
+            "label": "Adatto alle famiglie",
+            "value": "Buono",
+            "level": 4
+          },
+          {
+            "icon": "gauge",
+            "label": "Ritmo",
+            "value": "Equilibrato",
+            "level": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 1",
+            "alt": "Haedong Yonggungsa Temple — gallery image 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 2",
+            "alt": "Haedong Yonggungsa Temple — gallery image 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 3",
+            "alt": "Haedong Yonggungsa Temple — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 4",
+            "alt": "Haedong Yonggungsa Temple — gallery image 4"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 5",
+            "alt": "Haedong Yonggungsa Temple — gallery image 5"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+            "location": "Haedong Yonggungsa Temple",
+            "caption": "Haedong Yonggungsa Temple — photo 6",
+            "alt": "Haedong Yonggungsa Temple — gallery image 6"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 1",
+            "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 1"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+            "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 2",
+            "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 2"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+            "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 3",
+            "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 3"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+            "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 4",
+            "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 4"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "location": "Gamcheon Culture Village",
+            "caption": "Gamcheon Culture Village — photo 1",
+            "alt": "Gamcheon Culture Village — gallery image 1"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+            "location": "Gamcheon Culture Village",
+            "caption": "Gamcheon Culture Village — photo 2",
+            "alt": "Gamcheon Culture Village — gallery image 2"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+            "location": "Gamcheon Culture Village",
+            "caption": "Gamcheon Culture Village — photo 3",
+            "alt": "Gamcheon Culture Village — gallery image 3"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+            "location": "Gamcheon Culture Village",
+            "caption": "Gamcheon Culture Village — photo 8",
+            "alt": "Gamcheon Culture Village — gallery image 8"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "name": "Pickup (3 stazioni centrali di Busan)",
+            "time": "≈ 08:30–09:30",
+            "number": 1,
+            "category": "Trasferimento / Pickup",
+            "duration": "30 min",
+            "timeUsed": [
+              "Pickup alla stazione di Busan (~09:00, ~5 min)",
+              "Trasferimento alla stazione di Seomyeon (~10 min)",
+              "Pickup a Seomyeon (~09:15, ~5 min)",
+              "Trasferimento alla stazione di Haeundae (~15 min)",
+              "Pickup a Haeundae (~09:30, ~5 min)"
+            ],
+            "_poi_meta": {
+              "match": "transit_only",
+              "poi_key": "OPS_busan_pickup_central",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ],
+              "verified": true,
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
+            },
+            "highlights": [
+              "Tre opzioni di pickup nel centro di Busan (stazione di Busan, Seomyeon, Haeundae)",
+              "Minibus per piccolo gruppo (max ~14 pax)",
+              "Trasferimento totale fino alla prima tappa: ~30-40 min",
+              "Scheda stampata dell'itinerario in coreano-inglese distribuita al pickup"
+            ],
+            "whyOnRoute": "Tre punti di pickup coprono le tre principali zone alberghiere di Busan (KTX/Nampo, Seomyeon in centro, Haeundae fronte spiaggia) senza costringere gli ospiti ad attraversare la città al mattino. La sequenza nord-ovest→est riduce al minimo la distanza del minibus e porta il gruppo a Haedong Yonggungsa verso le 10:00 — abbastanza presto da precedere gli arrivi più affollati dei pullman turistici.",
+            "description": "Il pickup è concentrato in tre snodi di trasporto centrali di Busan, per mantenere la giornata gestibile senza attraversare la città avanti e indietro: **stazione di Busan (linea 1)** per gli ospiti alloggiati vicino al terminal KTX o nella zona di Choryang/Nampo-dong; **stazione di Seomyeon (linee 1 e 2)** — l'interscambio metropolitano più trafficato di Busan, centrale per gli ospiti negli hotel di metà città intorno al Lotte Hotel Busan o alla Seomyeon Medical Street; e **stazione di Haeundae (linea 2)** per gli ospiti nel distretto dei resort fronte spiaggia vicino a Westin Josun, Park Hyatt o Signiel Busan. \n\nIl minibus effettua il pickup in sequenza in tutte e tre (di norma prima la stazione di Busan ~09:00, Seomyeon ~09:15, Haeundae ~09:30) e prosegue poi verso nord-est lungo il percorso costiero del ponte di Gwangan in direzione di Gijang-gun per la prima tappa della giornata. \n\nTrasferimento totale dall'ultimo pickup a Haedong Yonggungsa: ~30-40 minuti a seconda del traffico. L'autista distribuirà una scheda stampata dell'itinerario in coreano-inglese con gli orari; vi preghiamo di trovarvi al punto di pickup 5 minuti prima dell'orario previsto, per mantenere la giornata in orario in vista delle successive tappe ai villaggi di Gamcheon e Dakbatgol.",
+            "_role": "pickup"
+          },
+          {
+            "name": "Tempio Haedong Yonggungsa",
+            "time": "≈ 10:00",
+            "number": 2,
+            "category": "Tempio buddhista / Costiero",
+            "duration": "75 min",
+            "timeUsed": [
+              "Discesa dal minibus + passeggiata tra le bancarelle fino al piazzale d'ingresso (~10 min)",
+              "Dodici Generali dello Zodiaco + pagoda contro gli incidenti (~10 min)",
+              "Discesa dei 108 gradini + sala principale Daeungjeon + terrazze sul mare (~30 min)",
+              "Belvedere della statua Haesu Gwaneum + tempo per le foto (~15 min)",
+              "Risalita + ritrovo al minibus (~10 min)"
+            ],
+            "_poi_meta": {
+              "match": "exact",
+              "poi_key": "haedong_yonggungsa",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ],
+              "verified": true,
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29"
+            },
+            "highlights": [
+              "**Fondato nel 1376** dal maestro buddhista Naong Hyegeun (in origine 'Bomunsa')",
+              "Uno dei pochissimi grandi templi coreani affacciati sul mare (la maggior parte è in montagna)",
+              "Ribattezzato **Haedong Yonggungsa nel 1974** dopo la visione del drago e della Dea avuta dal monaco Jeong-am",
+              "**108 gradini di pietra** = le 108 illusioni della mente nel buddhismo",
+              "**12 Sibiji-shin (Generali dello Zodiaco)** all'ingresso; santuario delle monete della '**pagoda contro gli incidenti**'",
+              "**Haesu Gwaneum Daebul** (Dea della Misericordia del mare) — la veduta più fotografata della scogliera",
+              "Sala principale Daeungjeon restaurata nel 1970 con cura per i colori originali",
+              "Orari tutti i giorni 04:30-19:20, ingresso GRATUITO; festival delle lanterne per il compleanno di Buddha (maggio)",
+              "**La fila di colonne di pietra dei 12 Generali dello Zodiaco Sibiji-shin alla porta del tempio** — unica tra i templi costieri coreani"
+            ],
+            "smartNotes": {
+              "tip": "Per entrare nelle sale usate le porte laterali (la porta frontale è riservata ai monaci); il compleanno di Buddha (apr–mag) porta l'esposizione delle lanterne; arrivate prima delle 10:30 per evitare la folla peggiore dei pullman turistici",
+              "photo": "La roccia dell'alba sul bordo verso il mare; la scalinata accanto alla sala Daeungjeon regala la classica inquadratura di oceano e tempio; la statua Haesu Gwaneum dalla scogliera superiore offre la veduta grandangolare di tempio e Mare Orientale",
+              "facilities": "Bancarelle di souvenir/snack e piccolo caffè al piazzale superiore; il sentiero costiero prosegue lungo le rocce"
+            },
+            "whyOnRoute": "**L'apertura iconica dell'itinerario — il tempio più fotografato di Busan nella sua ora più quieta.** L'arrivo alle 10:00 precede la grande ondata dei pullman turistici (in genere dalle 11:00), così la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code. La sua posizione sulla scogliera di Gijang, inoltre, fa iniziare la giornata dal punto più a nord-est dell'itinerario, così tutto ciò che segue scorre in un'unica direzione lungo la costa — prima Cheongsapo, poi la corsa in capsula verso la città — senza mai tornare indietro.",
+            "convenience": {
+              "parking": "Parcheggio di Haedong Yonggungsa (a pagamento, secondo il sito ufficiale Visit Busan)",
+              "restroom": "Disponibili vicino all'ingresso principale e all'interno del complesso"
+            },
+            "description": "**Haedong Yonggungsa (해동 용궁사) — il tempio buddhista sul mare più famoso della Corea** — è arroccato sulle scogliere rocciose di Gijang-gun, sulla costa nord-orientale di Busan: uno dei pochissimi grandi templi coreani NON collocato in montagna. Fu fondato in origine nel **1376, durante la dinastia Goryeo, dal grande maestro buddhista Naong Hyegeun (나옹 혜근, 1320-1376)** — consigliere reale e maestro che avrebbe contribuito a plasmare il buddhismo coreano fino agli albori dell'era Joseon. \n\nSecondo la leggenda, Naong praticava l'ascesi al tempio Bunhwangsa di Gyeongju durante una siccità nazionale; il dio del Mare Orientale gli apparve in sogno e gli disse che costruire un tempio sul monte Bongrae (il nome originario di questa scogliera sul mare) avrebbe restituito prosperità al regno. \n\nNaong fondò il tempio e lo chiamò **Bomunsa**, dedicandolo a Gwanseum-bosal (관세음보살, il Bodhisattva della Compassione). Il tempio fu distrutto durante l'**invasione giapponese Imjin del 1592** e rimase in rovina per oltre 300 anni, finché **il monaco Ungang del tempio Tongdosa non ne avviò la ricostruzione nei primi anni Trenta del Novecento**. \n\nIl nome attuale, **Haedong Yonggungsa (tempio del Palazzo del Drago di Corea)**, risale soltanto al **1974** — quando il monaco superiore Jeong-am, durante una preghiera di 100 giorni (jeong-geon kido), ebbe la visione della Dea della Misericordia che discendeva sul dorso di un drago, irradiando una luce multicolore. \n\nIl tempio fu ribattezzato in onore di questa visione. La visita segue il caratteristico percorso processionale del tempio: attraverso la fila dei **12 Sibiji-shin (i Dodici Generali dello Zodiaco)** nel piazzale d'ingresso, oltre la **pagoda a 7 piani 'contro gli incidenti'** (dove gli automobilisti lasciano monete in offerta sotto un santuario di pietra a forma di ruota), giù per i celebri **108 gradini di pietra** (che rappresentano le 108 illusioni della mente buddhista) attraverso un piccolo boschetto di bambù, fino alle terrazze sul mare e alla sala principale Daeungjeon. \n\nLa **Haesu Gwaneum Daebul** (statua della Dea della Misericordia del mare) sulla scogliera superiore è la veduta più fotografata, e incornicia insieme i tetti del tempio e il Mare Orientale. \n\nOrari **04:30-19:20 tutti i giorni, ultimo ingresso 18:50, ingresso GRATUITO**. Il **compleanno di Buddha (maggio)** porta le installazioni di lanterne del festival Yeondunhoe.",
+            "visitBasics": {
+              "hours": "Tutti i giorni 04:30–19:20 (ultimo ingresso 18:50)",
+              "closed": "Aperto tutto l'anno",
+              "walking": "Moderato — 108 gradini attraverso una pineta, diverse terrazze sul mare e scalinate",
+              "admission": "Gratuito; il parcheggio per auto private è a pagamento"
+            },
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "images": [
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 1",
+                "alt": "Haedong Yonggungsa Temple — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 2",
+                "alt": "Haedong Yonggungsa Temple — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 3",
+                "alt": "Haedong Yonggungsa Temple — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 4",
+                "alt": "Haedong Yonggungsa Temple — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 5",
+                "alt": "Haedong Yonggungsa Temple — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "location": "Haedong Yonggungsa Temple",
+                "caption": "Haedong Yonggungsa Temple — photo 6",
+                "alt": "Haedong Yonggungsa Temple — gallery image 6"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:45",
+            "duration": "40 min",
+            "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
+            "category": "Osservatorio costiero / Gratuito",
+            "description": "L'**osservatorio Daritdol di Cheongsapo (청사포 다릿돌전망대)** è una **passerella di 72,5 metri che si incurva sul mare a circa 20 metri sopra l'acqua**, inaugurata nell'agosto 2017 sulla scogliera costiera tra Cheongsapo e Songjeong. Il nome viene dai **daritdol — i cinque scogli 'pietre di guado'** che punteggiano il mare sotto la piattaforma e che, si dice, avanzano verso l'orizzonte come un ponte. Il tratto finale del pavimento è in **vetro**, con copriscarpe forniti per proteggere (e mettere alla prova la vostra fiducia!) le lastre mentre le onde rotolano sotto i vostri piedi. L'ingresso è **gratuito**. Tornando al villaggio, i **fari gemelli di Cheongsapo** (uno rosso, uno bianco) e il piccolo passaggio pedonale della stazione, reso celebre dalla sua inquadratura in stile anime alla Slam Dunk, sono a due passi.",
+            "image": null,
+            "highlights": [
+              "**Passerella di 72,5 m, ~20 m sopra il mare** — inaugurata nell'agosto 2017, GRATUITA",
+              "Prende il nome dai cinque **scogli daritdol, le 'pietre di guado'** visibili sotto la piattaforma",
+              "**Tratto con pavimento di vetro** all'estremità verso il mare (copriscarpe forniti)",
+              "**Fari gemelli di Cheongsapo** (rosso + bianco) a due passi",
+              "Cheongsapo è una delle **otto vedute panoramiche** di Busan — un villaggio di pescatori ancora attivo",
+              "Il passaggio pedonale della stazione, celebre spot fotografico in stile anime"
+            ],
+            "timeUsed": [
+              "Discesa dal minibus + passeggiata fino all'ingresso della passerella (~5 min)",
+              "Percorso sulla passerella + tratto con pavimento di vetro (~20 min)",
+              "Passeggiata fotografica ai fari gemelli / passaggio pedonale (~10 min)",
+              "Ritrovo per la stazione della capsula (~5 min)"
+            ],
+            "whyOnRoute": "**Il brivido gratuito tra il tempio e la capsula.** Il Daritdol regala alla giornata il suo momento sospeso sul mare — un pavimento di vetro con le onde che rotolano sotto — senza biglietto, e sorge proprio sulla scogliera di Cheongsapo, così si concatena con l'imbarco sulla Sky Capsule a pochi minuti di distanza. Vedere prima la costa dalla passerella fissa fa leggere in modo diverso, dieci minuti dopo, il panorama in movimento dalla capsula.",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "cheongsapo_daritdol_observatory",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan City Tourism",
+                "Blue Line Park official"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "Nei giorni ventosi la piattaforma chiude occasionalmente — la guida verifica le condizioni e, se necessario, riordina le tappe di Cheongsapo",
+              "photo": "Fotografate verso il basso attraverso il vetro gli scogli daritdol; la curva della piattaforma vista dal sentiero costiero regala il miglior scatto panoramico",
+              "facilities": "Caffè e bancarelle di pesce nel villaggio di Cheongsapo, in basso"
+            },
+            "convenience": {
+              "parking": "Fermata del minibus al villaggio di Cheongsapo; breve passeggiata fino alla piattaforma",
+              "restroom": "Servizi pubblici nei pressi della stazione di Cheongsapo"
+            },
+            "visitBasics": {
+              "hours": "Accesso libero; osservatorio presidiato indicativamente 09:00–18:00 (in base a stagione/meteo)",
+              "closed": "Può chiudere temporaneamente in caso di forte vento o tempesta",
+              "walking": "Percorso pianeggiante sulla piattaforma; breve pendenza dal villaggio",
+              "admission": "GRATUITO (copriscarpe forniti per il tratto in vetro)"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:35",
+            "duration": "40 min",
+            "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "category": "Attrazione costiera / Biglietto opzionale",
+            "description": "La **Sky Capsule** è l'attrazione simbolo dello **Haeundae Blueline Park**, la riqualificazione ecologica del 2020 della dismessa ferrovia costiera Donghae Nambu: **cabine pastello da 4 posti che scivolano per 2,3 km su una rotaia sopraelevata a 7–10 metri sopra la costa** tra Cheongsapo e Mipo, con il mare da un lato per tutto il tragitto (~30 minuti). Saliamo a **Cheongsapo e viaggiamo verso Mipo**, dove il minibus è già ad attenderci — così la corsa fa anche da trasferimento della giornata lungo la costa. **Il biglietto della capsula è opzionale e si sceglie alla prenotazione**: con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (il prezzo è per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata); con l'opzione base potete percorrere la **passeggiata gratuita della Green Railway** — la premiata passerella costiera in legno di 2,3 km sotto la stessa rotaia — oppure semplicemente raggiungere Mipo in minibus.",
+            "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "highlights": [
+              "**Capsule pastello da 4 posti su una rotaia costiera sopraelevata** — l'attrazione simbolo del Blueline Park (inaugurata nel 2020)",
+              "**Cheongsapo → Mipo, 2,3 km / ~30 min**, vista mare per tutto il tragitto",
+              "**Biglietto incluso o escluso — a vostra scelta alla prenotazione** (prezzo per capsula ≈ ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata)",
+              "Chi non sale: **passeggiata gratuita in legno della Green Railway** lungo la stessa costa, oppure minibus fino a Mipo",
+              "La corsa finisce dove inizia il pranzo — Mipo è a due passi dalle vie gastronomiche di Haeundae",
+              "Funziona con pioggia normale; si ferma solo in caso di forte vento"
+            ],
+            "timeUsed": [
+              "Imbarco alla stazione di Cheongsapo (~10 min)",
+              "Corsa in Sky Capsule Cheongsapo → Mipo (~30 min)"
+            ],
+            "whyOnRoute": "**La corsa che è anche il trasferimento.** Salire a Cheongsapo subito dopo la passerella significa che la capsula vi porta lungo la stessa identica costa che avete appena ammirato dall'alto — e vi lascia a Mipo, dove il minibus e le vie del pranzo sono già ad aspettarvi. Nulla della giornata devia per farle spazio: rinunciate al biglietto e il minibus o la passeggiata gratuita coprono lo stesso tratto.",
+            "_poi_meta": {
+              "match": "partial",
+              "poi_key": "cheongsapo_blue_line_park",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Busan Metropolitan City Tourism"
+              ],
+              "verified": true,
+              "kb_version": "1.24",
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "Le fasce del tramonto e del fine settimana si esauriscono con 1–2 settimane di anticipo — scegliete l'opzione con biglietto incluso alla prenotazione e le riserviamo noi per voi",
+              "photo": "Sedetevi sul lato mare (lato destro in direzione Mipo); la curva oltre il tunnel di Dalmaji è l'inquadratura simbolo",
+              "facilities": "Caffè e minimarket al piazzale di Mipo; biglietterie automatiche in entrambe le stazioni"
+            },
+            "convenience": {
+              "parking": "Il minibus attende il gruppo al piazzale della stazione di Mipo",
+              "restroom": "In entrambe le stazioni di Cheongsapo e Mipo"
+            },
+            "visitBasics": {
+              "hours": "≈ 09:30–18:30 (prolungati fino a sera in alta stagione)",
+              "closed": "Dipende dal meteo; il forte vento sospende il servizio",
+              "walking": "Banchine di stazione in piano; l'alternativa a piedi è di 2,3 km (~30 min) su passerella in legno",
+              "admission": "Per capsula, sola andata: ≈ ₩30,000 (2 pax) / ₩39,000 (3) / ₩44,000 (4) — opzione con biglietto incluso disponibile alla prenotazione"
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+              "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+                "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 1",
+                "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+                "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 2",
+                "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+                "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 3",
+                "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+                "caption": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — photo 4",
+                "alt": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo) — gallery image 4"
+              }
+            ]
+          },
+          {
+            "name": "Pranzo (ristorante locale nei pressi di Haeundae/Mipo)",
+            "time": "≈ 13:25",
+            "number": 5,
+            "category": "Pasto locale",
+            "duration": "60 min",
+            "timeUsed": [
+              "Passeggiata dalla stazione di Mipo al ristorante (~5 min)",
+              "Pranzo (~50 min)",
+              "Ritrovo al minibus (~5 min)"
+            ],
+            "_poi_meta": {
+              "match": "lunch_placeholder",
+              "poi_key": "OPS_busan_lunch",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ],
+              "verified": true,
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29"
+            },
+            "highlights": [],
+            "whyOnRoute": "**La pausa naturale tra la costa e i villaggi.** La corsa in capsula termina a Mipo all'ora di pranzo, e le vie gastronomiche di Haeundae sono a pochi passi dalla stazione — nessun tragitto extra per raggiungere un buon pasto. Fare rifornimento qui prepara ai due villaggi collinari del pomeriggio, dove la camminata è al suo tratto più verticale.",
+            "description": "Pranzo di circa 60 minuti nei pressi di Mipo/Haeundae, subito dopo l'arrivo della Sky Capsule. Opzioni tipiche consigliate dalla guida: il **dwaeji-gukbap (돼지국밥)** — la zuppa di riso in brodo di maiale simbolo di Busan, nata nell'epoca dei rifugiati della guerra di Corea (~₩10,000), i **milmyeon**, noodle freddi di grano, oppure una tavola di pesce vista porto. Il pranzo non è incluso (≈ ₩10,000–15,000), così potete scegliere secondo appetito e budget."
+          },
+          {
+            "name": "Villaggio culturale di Gamcheon",
+            "time": "≈ 15:00",
+            "number": 6,
+            "category": "Villaggio culturale / Arte murale",
+            "duration": "90 min",
+            "timeUsed": [
+              "Discesa dal minibus al parcheggio pubblico 2 + passeggiata fino all'ingresso (~5 min)",
+              "Centro informazioni turistiche + acquisto della mappa dei timbri (~10 min)",
+              "Belvedere Sky Garden + panchina del Piccolo Principe (~25 min)",
+              "Passeggiata nei vicoli tra i murales + pausa in un piccolo caffè (~25 min)",
+              "Ritrovo al minibus (~10 min)"
+            ],
+            "_poi_meta": {
+              "match": "exact",
+              "poi_key": "gamcheon_culture_village",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ],
+              "verified": true,
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29"
+            },
+            "highlights": [
+              "**'La Machu Picchu della Corea' / 'la Santorini della Corea'** — premio UN-HABITAT Asian Townscape Award 2012",
+              "Origini: trasferimenti dell'amministrazione di Busan negli **anni Venti-Trenta** + **rifugiati Taegeukdo del 1955** (~800 famiglie)",
+              "**La filosofia Taegeukdo del 'lasciar prosperare gli altri'** = nessuna casa blocca la vista di quella dietro",
+              "**2009 'Dreaming of Machu Picchu' + 2010 'Miro Miro'**: i progetti di arte pubblica del Ministero della Cultura",
+              "**La panchina del 'Piccolo Principe e la Volpe'** allo Sky Garden — il punto più fotografato del villaggio",
+              "**~1,4 milioni di visitatori l'anno** dalla rigenerazione tramite arte pubblica",
+              "**Comunità residenziale viva** — voce bassa, niente droni, niente flash verso le case",
+              "Ingresso al villaggio gratuito; mappa dei timbri opzionale ~₩2,000",
+              "**Premio UN-HABITAT Asian Townscape Award 2012** — riconoscimento al progetto artistico 'Dreaming of Machu Picchu' del 2009 che ha trasformato l'insediamento di rifugiati Taegeukdo del 1955 nel villaggio dei murales simbolo di Busan"
+            ],
+            "smartNotes": {
+              "tip": "Qui vivono i residenti — parlate a bassa voce, niente droni, portate via i rifiuti; indossate scarpe con buona presa per i vicoli ripidi; l'ora dorata del pomeriggio, ~16:00-17:00, è la luce migliore del villaggio",
+              "photo": "La panchina del Piccolo Principe e la Volpe (lunga coda) e l'osservatorio Haneul Maru / Sky Garden per la veduta panoramica sui tetti arcobaleno e sulla baia",
+              "facilities": "Noleggio hanbok, botteghe artigiane, bancarelle di dolciumi coreani, caffè; piccolo museo del villaggio all'ingresso; la mappa dei timbri è il modo più semplice per orientarsi"
+            },
+            "whyOnRoute": "**Il villaggio protagonista del pomeriggio — l'anfiteatro pastello di Busan.** Dopo la mattinata costiera, la giornata attraversa la città verso le colline occidentali, dove le terrazze di Gamcheon, nate come insediamento di rifugiati della guerra di Corea e rinate come villaggio d'arte nel 2009, si impilano in colori pastello sopra il mare. Il percorso di 90 minuti copre i belvedere, la balaustra del Piccolo Principe e il tempo per perdersi nei vicoli — e si abbina di proposito al quieto Dakbatgol subito dopo, così vedete sia il villaggio celebre sia quello locale che i pullman saltano.",
+            "convenience": {
+              "parking": "Parcheggio pubblico 2 di Gamcheon (a pagamento)",
+              "restroom": "Servizi pubblici al centro informazioni turistiche e intorno ai belvedere principali"
+            },
+            "description": "Il **villaggio culturale di Gamcheon (감천문화마을)** — soprannominato sia **'la Machu Picchu della Corea'** sia **'la Santorini della Corea'** — è un quartiere collinare di Saha-gu, nella Busan occidentale, le cui case dipinte in colori pastello scendono a cascata in file terrazzate lungo il pendio. \n\nL'insediamento nacque negli **anni Venti-Trenta del Novecento**, quando l'amministrazione di Busan trasferì i residenti della classe operaia lontano dal porto. Il carattere del villaggio si definì nel **1955**, quando **~800 famiglie (circa 4.000 persone) della comunità religiosa Taegeukdo** — una religione sincretica unicamente coreana che fonde elementi buddhisti, confuciani e dello yin-yang, fondata da **Jo Cheol-je** durante il periodo coloniale giapponese — si stabilirono qui come rifugiati della guerra di Corea in fuga dal Nord. \n\nLa filosofia Taegeukdo del '**lasciar prosperare gli altri**' plasmò direttamente il tratto più distintivo del villaggio: le case sono volutamente disposte a gradoni, così che **nessun tetto blocchi la vista della casa retrostante**, con l'intera comunità aperta al cielo e al mare. Gamcheon rimase uno dei quartieri più poveri di Busan fino al **2009**, quando il Ministero della Cultura coreano lanciò il progetto di rigenerazione tramite arte pubblica **'Dreaming of Machu Picchu in Busan'**, seguito dal **progetto 'Miro Miro' (labirinto) del 2010** — con l'aggiunta di oltre 22 murales commissionati, sculture e installazioni artistiche, tra cui l'iconica **panchina del 'Piccolo Principe e la Volpe'** al belvedere Sky Garden. \n\nGamcheon ha vinto il **premio UN-HABITAT Asian Townscape Award 2012** e accoglie oggi **~1,4 milioni di visitatori l'anno**. La visita segue il caratteristico percorso a piedi con la mappa dei timbri: dall'ingresso presso il **centro informazioni turistiche**, su fino al **belvedere Sky Garden** per lo scatto panoramico sui tetti arcobaleno, poi giù attraverso i vicoli labirintici tra murales, negozi di noleggio hanbok, botteghe artigiane e piccoli caffè. \n\n**Il villaggio è una comunità residenziale viva** — si richiede di parlare a bassa voce, niente droni, niente flash verso le abitazioni e i rifiuti si portano via con sé. \n\nOrari **09:00-18:00 mar-ott / 09:00-17:00 nov-feb (centro informazioni)**; **il villaggio in sé è aperto 24 ore su 24, ingresso GRATUITO**.",
+            "visitBasics": {
+              "hours": "Tutti i giorni 09:00–18:00 (mar–ott) / 09:00–17:00 (nov–feb); alcuni negozi/caffè seguono orari propri",
+              "closed": "Aperto tutto l'anno (una comunità residenziale viva)",
+              "walking": "Impegnativo — vicoli e scalinate molto ripidi; in molti tratti non adatto a passeggini o sedie a rotelle",
+              "admission": "Ingresso al villaggio gratuito; mappa dei timbri opzionale ≈ 2,000 KRW"
+            },
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 1",
+                "alt": "Gamcheon Culture Village — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 2",
+                "alt": "Gamcheon Culture Village — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 3",
+                "alt": "Gamcheon Culture Village — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+                "location": "Gamcheon Culture Village",
+                "caption": "Gamcheon Culture Village — photo 8",
+                "alt": "Gamcheon Culture Village — gallery image 8"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:50",
+            "duration": "50 min",
+            "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
+            "category": "Villaggio dei murales / Monorotaia gratuita",
+            "description": "**Dakbatgol (닥밭골)** è un villaggio collinare nel distretto di Seo-gu, a Busan, il cui nome ricorda i **campi di gelso da carta (dak)** che un tempo rifornivano i maestri della carta tradizionale coreana hanji. Come Gamcheon si arrampica su un ripido pendio in vicoli stretti — ma non è mai diventato una fermata dei pullman turistici, così i suoi **vicoli di murales, le opere ispirate alla hanji e i punti panoramici restano quieti e locali**, panni stesi compresi. Il simbolo del villaggio è la **'scalinata dei desideri' (소망계단)** — una lunga e ripida via di gradini dipinta di murales — e la **monorotaia inclinata gratuita** che le scorre accanto, installata perché gli anziani del villaggio potessero raggiungere le proprie case; anche i visitatori possono salirvi, trasformando la salita più ripida del pomeriggio in un belvedere al rallentatore. È il contrappunto volutamente a misura d'uomo alla fama di Gamcheon, a dieci minuti dalla zona dei rientri.",
+            "image": null,
+            "highlights": [
+              "**Villaggio dei murales silenzioso** — l'omologo locale di Gamcheon, quasi senza folla",
+              "Prende il nome dai **campi di gelso da carta (dak)** dell'eredità hanji di Busan",
+              "**'Scalinata dei desideri' (소망계단)** — una ripida via di gradini coperta di murales",
+              "**Monorotaia inclinata gratuita** accanto alla scalinata — costruita per gli anziani del villaggio, aperta ai visitatori",
+              "Belvedere collinari sul vecchio quartiere del porto",
+              "Ingresso GRATUITO; un quartiere autenticamente abitato — parlate a bassa voce"
+            ],
+            "timeUsed": [
+              "Discesa dal minibus + passeggiata tra i vicoli dei murales (~20 min)",
+              "Salita in monorotaia della scalinata dei desideri + belvedere (~15 min)",
+              "Discesa + tempo per le foto (~10 min)",
+              "Ritrovo al minibus (~5 min)"
+            ],
+            "whyOnRoute": "**La chiusura silenziosa che i pullman saltano.** Dopo la folla di Gamcheon, Dakbatgol mostra la stessa Busan collinare a volume di vita quotidiana — murales, la scalinata dei desideri e una monorotaia che fa la salita. Chiude il capitolo dei villaggi a dieci minuti dalla zona di rientro di Nampo, così la giornata termina immersa nella trama locale anziché nel traffico.",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "dakbatgol_mural_village",
+              "sources": [
+                "Visit Busan",
+                "Busan Seo-gu Office"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "È un villaggio abitato, non un parco a tema — parlate a bassa voce nei vicoli e non fotografate verso le porte aperte delle case",
+              "photo": "Fotografate la scalinata dei desideri dal basso con il binario della monorotaia che le corre accanto; il belvedere in cima inquadra il quartiere del porto",
+              "facilities": "Piccoli caffè vicino all'ingresso; più scelta a Nampo-dong dopo il rientro"
+            },
+            "convenience": {
+              "parking": "Fermata del minibus all'ingresso del villaggio",
+              "restroom": "Servizi pubblici nei pressi dell'ingresso del villaggio"
+            },
+            "visitBasics": {
+              "hours": "Villaggio ad accesso libero; la monorotaia funziona in orario diurno (≈ 09:00–18:00, in base al meteo)",
+              "closed": "La monorotaia può fermarsi per manutenzione o maltempo — la scalinata resta aperta",
+              "walking": "Vicoli ripidi e scalinate; la monorotaia copre il tratto più ripido",
+              "admission": "GRATUITO (villaggio e monorotaia)"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:50",
+            "duration": "≈ 70 min in totale",
+            "name": "Rientro (4 punti nel centro di Busan)",
+            "category": "Rientro — Stazioni centrali in sequenza",
+            "description": "**I rientri avvengono in sequenza dal lato ovest verso est**: **zona Nampo-dong / Jagalchi (~17:50)** — scendete qui per le migliori vie gastronomiche serali di Busan e l'atmosfera notturna di BIFF Square; **stazione di Busan (~18:10)** per le coincidenze KTX; **Seomyeon (~18:30)** per il nucleo di hotel del centro; e **Haeundae (~19:00)** per ultima. Scegliete il vostro punto di rientro con la guida durante il pomeriggio — restare a bordo fino a Haeundae è il tragitto più lungo, ma vi lascia in spiaggia per la serata.",
+            "image": null,
+            "highlights": [],
+            "timeUsed": [
+              "Zona Nampo-dong / Jagalchi (~17:50)",
+              "Stazione di Busan (~18:10)",
+              "Seomyeon (~18:30)",
+              "Haeundae (~19:00)"
+            ],
+            "whyOnRoute": "Dakbatgol dista dieci minuti da Nampo-dong, così la sequenza dei rientri inizia quasi subito dopo l'ultima tappa — nessun tempo morto di trasferimento. L'ordine da ovest a est rispecchia i pickup del mattino e copre i viaggiatori KTX (stazione di Busan), gli hotel del centro (Seomyeon) e gli hotel sulla spiaggia (Haeundae) senza tornare indietro.",
+            "_poi_meta": null,
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "Pickup (3 stazioni centrali di Busan)",
+            "type": "origin",
+            "theme": "Departure"
+          },
+          {
+            "name": "Tempio Haedong Yonggungsa",
+            "type": "primary",
+            "theme": "Seaside temple"
+          },
+          {
+            "name": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)",
+            "type": "secondary",
+            "theme": "Glass Skywalk"
+          },
+          {
+            "name": "Sky Capsule dello Haeundae Blueline Park (Cheongsapo → Mipo)",
+            "type": "primary",
+            "theme": "Sky Capsule"
+          },
+          {
+            "name": "Pranzo (ristorante locale di Busan)",
+            "type": "meal",
+            "theme": "Meal"
+          },
+          {
+            "name": "Villaggio culturale di Gamcheon",
+            "type": "primary",
+            "theme": "Art village"
+          },
+          {
+            "name": "Villaggio dei murales Dakbatgol e monorotaia della scalinata dei desideri",
+            "type": "secondary",
+            "theme": "Mural Village"
+          },
+          {
+            "name": "Rientro (4 punti nel centro di Busan)",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "Mattinata costiera",
+            "duration": "≈ 3 ore",
+            "description": "Pickup in tre stazioni centrali (08:30–09:30), poi il tempio Haedong Yonggungsa prima dell'ondata dei pullman turistici, e a seguire la passerella di vetro Daritdol di Cheongsapo."
+          },
+          {
+            "phase": "Sky Capsule + pranzo",
+            "duration": "≈ 2 ore",
+            "description": "La corsa in Sky Capsule pastello da Cheongsapo a Mipo (biglietto opzionale — chi non sale prosegue in minibus o percorre a piedi la passeggiata in legno della Green Railway), poi pranzo nei pressi di Haeundae."
+          },
+          {
+            "phase": "Due villaggi collinari",
+            "duration": "≈ 3 ore",
+            "description": "Il percorso fotografico del villaggio culturale di Gamcheon (90 min), poi il tranquillo villaggio dei murales Dakbatgol e la sua monorotaia gratuita della scalinata dei desideri (50 min)."
+          },
+          {
+            "phase": "Chiusura in centro",
+            "duration": "≈ 1 ora",
+            "description": "Rientri in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "Come si muove questa giornata a Busan",
+          "subtitle": "Prima la costa orientale: il tempio sul mare nella sua quieta finestra mattutina, poi il nucleo di Cheongsapo — passerella di vetro, fari gemelli — dove la corsa in Sky Capsule diventa essa stessa il trasferimento lungo la costa fino a Mipo. Dopo pranzo la giornata attraversa la città verso le colline occidentali per due villaggi dagli umori opposti: i colori celebri in tutto il mondo di Gamcheon, poi i murales silenziosi di Dakbatgol, dove una monorotaia gratuita risale la 'scalinata dei desideri'. I rientri nelle stazioni centrali chiudono l'anello, dalle 08:30 alle 18:30 circa."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "Chi visita Busan per la prima volta",
+            "Coppie e viaggiatori appassionati di fotografia",
+            "Famiglie con adulti e gruppi di amici",
+            "Chi vuole la costa E i villaggi in un solo giorno"
+          ],
+          "lessIdealFor": [
+            "Chi preferisce camminare poco o evitare le salite",
+            "Gruppi con passeggini (vicoli e scalinate dei villaggi)",
+            "Chi cerca panorami notturni — è un itinerario diurno"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "Pacing & geography",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "Il tempio nella sua ora più quieta",
+                  "detail": "Haedong Yonggungsa è il tempio più fotografato di Busan e l'ondata dei pullman turistici inizia verso le 11:00. Arrivando intorno alle 10:00, la discesa dei 108 gradini e il belvedere della Haesu Gwaneum restano percorribili senza code."
+                },
+                {
+                  "label": "La corsa in capsula È il trasferimento",
+                  "detail": "Da Cheongsapo la Sky Capsule pastello scivola per 2,3 km lungo la costa fino a Mipo — la corsa sostituisce quindi un tratto in minibus invece di aggiungere una deviazione. Chi rinuncia al biglietto raggiunge Mipo in minibus oppure percorre gratuitamente la passeggiata in legno della Green Railway lungo la stessa costa."
+                },
+                {
+                  "label": "Due villaggi collinari, due atmosfere",
+                  "detail": "Gamcheon è l'anfiteatro pastello di Busan, celebre in tutto il mondo; Dakbatgol, a dieci minuti, è il suo quieto omologo locale — vicoli di murales quasi senza folla, dove una monorotaia inclinata gratuita, costruita per gli anziani del villaggio, vi porta su per la 'scalinata dei desideri'."
+                },
+                {
+                  "label": "Tappe principali gratuite, un solo biglietto opzionale",
+                  "detail": "Yonggungsa, la passerella Daritdol, Gamcheon e Dakbatgol (monorotaia inclusa) sono tutti gratuiti. L'unica attrazione a pagamento della giornata è la Sky Capsule — e la scelta è vostra al momento della prenotazione: biglietto incluso, oppure escluso se preferite la passeggiata sulla passerella in legno."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "Prelievo e rientro",
+            "preview": "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+            "content": [
+              "Tre punti di prelievo lungo la metropolitana di Busan: stazione Seomyeon uscita 4 (08:30), stazione di Busan uscita 4 — non il varco KTX (08:50), stazione Haeundae uscita 5 (09:30).",
+              "Discese in sequenza: Nampo-dong/Jagalchi ≈17:50, stazione di Busan ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00.",
+              "La durata effettiva del tour dipende dal punto di prelievo: Seomyeon ≈10 h, Haeundae ≈9,5 h."
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "Cosa indossare e portare",
+            "preview": "Scarpe comode con buona presa — i vicoli collinari di Gamcheon e i 108 gradini di Yonggungsa…",
+            "content": [
+              "Scarpe comode con buona presa — i vicoli collinari di Gamcheon e i 108 gradini di Yonggungsa richiedono entrambi aderenza.",
+              "Uno strato leggero per il veicolo climatizzato e la brezza marina a Yonggungsa.",
+              "Macchina fotografica o smartphone (Gamcheon e Cheongsapo sono i momenti fotografici clou).",
+              "Contanti o carta per il pranzo (₩10,000–₩20,000), i biglietti opzionali di Sky Capsule / Beach Train a Cheongsapo e l'osservatorio opzionale della Busan Tower."
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "Politica meteo",
+            "preview": "Operativo tutto l'anno.",
+            "content": [
+              "Operativo tutto l'anno.",
+              "Pioggia leggera: il tour si svolge come da programma — Yonggungsa sotto la pioggia ha un fascino tutto suo, e i vicoli di Gamcheon restano percorribili.",
+              "Pioggia forte o temporali: la guida può modificare l'itinerario, perché la parte bassa del tempio di Yonggungsa può diventare scivolosa e le scalinate di Gamcheon insidiose.",
+              "Meteo di livello tifone: viene offerto il rimborso completo o la riprenotazione."
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "What's included",
+            "preview": "Minibus per piccolo gruppo (max ≈12 ospiti), guida certificata di lingua inglese, carburante/pedaggi/parcheggi.",
+            "content": [
+              "Minibus per piccolo gruppo (max ≈12 ospiti), guida certificata di lingua inglese, carburante/pedaggi/parcheggi.",
+              "Tutte le attrazioni principali sono a ingresso GRATUITO: Haedong Yonggungsa, osservatorio Daritdol di Cheongsapo, villaggio culturale di Gamcheon, villaggio dei murales Dakbatgol (monorotaia della scalinata dei desideri gratuita).",
+              "Biglietto Sky Capsule: a scelta alla prenotazione — incluso (riserviamo in anticipo le capsule per il vostro gruppo; base di 2 persone per capsula) oppure escluso (passeggiata gratuita sulla passerella in legno della Green Railway o trasferimento in minibus fino a Mipo).",
+              "Non incluso: pranzo (≈ ₩10,000–15,000), bevande, spese personali, mance."
+            ]
+          },
+          {
+            "id": "language",
+            "title": "Lingua",
+            "preview": "Lingua principale del tour: inglese.",
+            "content": [
+              "Lingua principale del tour: inglese.",
+              "Guida di lingua cinese disponibile su richiesta — prenotare con almeno 3 giorni di anticipo.",
+              "Il coreano è presente per tutta la giornata su menu, cartelli e nelle interazioni con le bancarelle; la guida si occupa della traduzione."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "Walking & terrain",
+            "preview": "Difficoltà moderata con brevi tratti impegnativi.",
+            "content": [
+              "Difficoltà moderata con brevi tratti impegnativi.",
+              "Yonggungsa ha 108 gradini di pietra in discesa e risalita.",
+              "La passerella Daritdol è pianeggiante (pavimento di vetro, copriscarpe forniti).",
+              "Le stazioni della Sky Capsule sono in piano con qualche gradino sulle banchine.",
+              "Gamcheon è fatta di vicoli collinari e scalinate — indossate scarpe comode.",
+              "La scalinata dei desideri di Dakbatgol è ripida, ma la monorotaia gratuita fa la salita.",
+              "Camminata totale di circa 4–5 km."
+            ]
+          },
+          {
+            "id": "capsule",
+            "title": "Sky Capsule (opzione biglietto)",
+            "preview": "Incluso o escluso — a vostra scelta alla prenotazione.",
+            "content": [
+              "La Sky Capsule percorre 2,3 km su una rotaia sopraelevata tra Cheongsapo e Mipo (~30 min), in cabine pastello da 4 posti sospese sopra la costa.",
+              "Opzione con biglietto incluso: riserviamo in anticipo le capsule per il vostro gruppo (prezzo per capsula ≈ ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4 sola andata; l'opzione inclusa è calcolata sulla base di 2 persone per capsula).",
+              "Opzione con biglietto escluso: passeggiata gratuita sulla passerella in legno della Green Railway (2,3 km, ~30 min, stessa costa) oppure trasferimento in minibus fino a Mipo.",
+              "Il servizio dipende dal meteo (il forte vento sospende la linea); se la capsula non può circolare, la passeggiata sulla passerella e il trasferimento in minibus mantengono l'itinerario in orario."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "Cancellazione",
+            "preview": "Cancellazione gratuita fino a 24 ore prima del pickup.",
+            "content": [
+              "Cancellazione gratuita fino a 24 ore prima del pickup.",
+              "Le cancellazioni il giorno stesso e i mancati arrivi non sono rimborsabili."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "Vedi note stagionali"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "Vedi note stagionali"
+          },
+          "_seasonalSummary": "Busan: la grande città più meridionale della Corea, più mite e piovosa di Seoul. Inverni miti (5–10 °C), estati umide, piogge al culmine con il monsone di luglio."
+        },
+        "seasonalVariations": [
+          {
+            "season": "Primavera (mar–mag)",
+            "description": "I ciliegi in fiore costeggiano la Blueline tra fine marzo e inizio aprile — la corsa in capsula nella stagione della fioritura è la migliore dell'anno. Mattinate limpide al tempio."
+          },
+          {
+            "season": "Estate (giu–ago)",
+            "description": "Giornate lunghe e una costa più fresca del centro città; il monsone di luglio può ridurre il tempo sulla passerella. Gli orari della capsula si estendono fino a sera."
+          },
+          {
+            "season": "Autunno (set–nov)",
+            "description": "I cieli più limpidi dell'anno — la migliore visibilità dal pavimento di vetro del Daritdol e i colori più nitidi dai belvedere di Gamcheon."
+          },
+          {
+            "season": "Inverno (dic–feb)",
+            "description": "La minore affluenza dell'anno a ogni tappa; luce nitida per le fotografie. La capsula è riscaldata; vestitevi con capi caldi per le terrazze del tempio e i vicoli dei villaggi."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "Operatore locale autorizzato",
+            "description": "Guide con licenza di Busan",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600",
+            "body": "Operatore locale autorizzato che gestisce regolarmente tour urbani di Busan, con guide certificate di lingua inglese, veicoli assicurati e orari dell'itinerario studiati per evitare, quando possibile, le ore più affollate al tempio."
+          },
+          {
+            "icon": "users",
+            "title": "Piccolo gruppo",
+            "description": "≈12 ospiti max",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600",
+            "body": "Il minivan per piccolo gruppo (max ~12) mantiene confortevoli i vicoli stretti di Gamcheon e il percorso dei 108 gradini di Yonggungsa — tutt'altra cosa rispetto ai tour in pullman da 40 persone."
+          },
+          {
+            "icon": "shield",
+            "title": "Ingressi tutti compresi",
+            "description": "Ingressi principali coperti",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600",
+            "body": "Tutte e sette le tappe principali sono a ingresso gratuito, quindi il giorno del tour non ci sono costi nascosti per i singoli siti dell'itinerario principale."
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "Immediatamente",
+            "title": "Conferma immediata",
+            "detail": "Conferma della prenotazione con riepilogo dell'itinerario",
+            "description": "Conferma immediata della prenotazione con le istruzioni per il punto di pickup (stazione di Busan / Seomyeon / Haeundae)."
+          },
+          {
+            "timing": "Il giorno prima",
+            "title": "Dettagli del pickup",
+            "detail": "Luogo esatto del pickup e informazioni sul veicolo via WhatsApp",
+            "description": "Verifica del meteo ed eventuali note sull'itinerario (consiglio sul trenino Danubi per Taejongdae, orari delle maree a Yonggungsa) inviate il giorno prima."
+          },
+          {
+            "timing": "La mattina stessa",
+            "title": "Conferma del pickup",
+            "detail": "L'autista si annuncia 10 minuti prima dell'arrivo",
+            "description": "Targa del van e contatto della guida confermati la sera precedente."
+          },
+          {
+            "timing": "Durante il tour",
+            "title": "Assistenza durante il tour",
+            "detail": "Linea diretta con l'operativo",
+            "description": "Un messaggio mattutino conferma la vostra stazione di pickup ed eventuali condizioni del traffico in tempo reale."
+          },
+          {
+            "timing": "Fine giornata",
+            "title": "Rientro flessibile",
+            "detail": "Scegliete il rientro a Nampo-dong, alla stazione di Busan, a Seomyeon o a Haeundae",
+            "description": "La guida offre narrazione dal vivo a ogni tappa — la fondazione di Yonggungsa nel 1376, la storia delle 22 nazioni dell'UNMCK, l'origine di Gamcheon come insediamento di rifugiati del 1955."
+          },
+          {
+            "timing": "Dopo il tour",
+            "title": "Recensione e follow-up",
+            "detail": "Recensione facoltativa e follow-up",
+            "description": "Invio di una richiesta di feedback post-tour; le domande sui ristoranti consigliati a Busan ricevono risposta in giornata."
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "TourFaqSection",
+      "props": {
+        "staticQuestions": [
+          {
+            "question": "Il biglietto della Sky Capsule è incluso?",
+            "answer": "A vostra scelta al momento della prenotazione. Con l'opzione con biglietto incluso riserviamo in anticipo le capsule per il vostro gruppo (prezzo per capsula: circa ₩30,000 per 2 / ₩39,000 per 3 / ₩44,000 per 4, sola andata — l'opzione inclusa è calcolata sulla base di 2 persone per capsula). Con l'opzione base potete invece percorrere gratuitamente la passeggiata in legno della Green Railway o raggiungere Mipo in minibus mentre gli altri salgono in capsula."
+          },
+          {
+            "question": "Devo prenotare la Sky Capsule in anticipo?",
+            "answer": "Le fasce del tramonto e del fine settimana si esauriscono con 1–2 settimane di anticipo. Se scegliete l'opzione con biglietto incluso, gestiamo noi la prenotazione per il vostro gruppo alla conferma della prenotazione. Nei giorni feriali tranquilli è possibile acquistare i biglietti in giornata al chiosco, ma senza garanzia."
+          },
+          {
+            "question": "Il pranzo è incluso?",
+            "answer": "No — il pranzo è a parte (circa ₩10,000–15,000). La guida consiglia opzioni locali nei pressi di Haeundae/Mipo come il dwaeji-gukbap (la zuppa di riso al maiale simbolo di Busan), i milmyeon (noodle freddi di grano) o un ristorante di pesce."
+          },
+          {
+            "question": "Quanto si cammina e quanto è ripido il percorso?",
+            "answer": "Difficoltà da moderata a impegnativa in brevi tratti: 108 gradini in discesa e risalita a Yonggungsa, passerella di vetro pianeggiante al Daritdol, percorsi per lo più piani alle stazioni della capsula, vicoli in pendenza a Gamcheon e scalinate a Dakbatgol — dove però la monorotaia gratuita fa la salita al posto vostro. La distanza totale a piedi è di circa 4–5 km."
+          },
+          {
+            "question": "È adatto a bambini o anziani?",
+            "answer": "Sì, per la maggior parte dei viaggiatori attivi. I bambini adorano il pavimento di vetro e la capsula; la monorotaia di Dakbatgol evita la salita più ripida. I gradini di Yonggungsa e le pendenze di Gamcheon sono i due tratti impegnativi — affrontateli con calma e saltate i vicoli laterali se necessario."
+          },
+          {
+            "question": "In cosa si differenzia dal tour giornaliero Busan Top Attractions?",
+            "answer": "Stesso operatore, focus diverso. Top Attractions copre il classico giro della città (cimitero commemorativo delle Nazioni Unite, mercato di Jagalchi). Questo itinerario in piccolo gruppo punta tutto sulla costa e sui villaggi: una sosta dedicata alla passerella Daritdol, la corsa in Sky Capsule con opzione di biglietto incluso e il tranquillo villaggio dei murales Dakbatgol che i grandi pullman saltano."
+          },
+          {
+            "question": "Dove si effettuano pickup e rientro?",
+            "answer": "Pickup in tre stazioni centrali — Seomyeon (08:30), stazione di Busan (08:50), Haeundae (09:30). I rientri avvengono in sequenza: Nampo-dong, stazione di Busan, Seomyeon, infine Haeundae, indicativamente tra le 17:50 e le 19:00."
+          },
+          {
+            "question": "Cosa succede se piove?",
+            "answer": "Il tour si svolge con qualsiasi tempo. La capsula e la monorotaia funzionano con pioggia normale (si fermano solo in caso di forte vento), la passerella fornisce copriscarpe e i vicoli dei villaggi restano percorribili con l'ombrello. In caso di maltempo intenso il tempo all'aperto sulle terrazze del tempio può essere ridotto."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "TourReviewsSection",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "TourStickyBookingBar",
+      "props": {
+        "note": "Selezionate la data e la dimensione del gruppo per verificare la disponibilità in tempo reale e completare la prenotazione.",
+        "price": {
+          "amountLabel": "59",
+          "currency": "USD",
+          "per": "person",
+          "salePriceUsd": 59
+        }
+      }
+    }
+  ]
+}

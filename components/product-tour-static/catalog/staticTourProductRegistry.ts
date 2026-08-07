@@ -49,6 +49,12 @@ import busanSmallGroupSightseeingCruiseZh from "../busan-small-group-sightseeing
 import busanSmallGroupSightseeingCruiseZhTw from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.zh-TW.json";
 import busanSmallGroupSightseeingCruiseEs from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.es.json";
 import busanSmallGroupSightseeingCruiseJa from "../busan-small-group-sightseeing-tour-cruise-passengers/busan-small-group-sightseeing-tour-cruise-passengers.ja.json";
+import busanSmallGroupYonggungsaSkycapsuleEn from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.en.json";
+import busanSmallGroupYonggungsaSkycapsuleKo from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ko.json";
+import busanSmallGroupYonggungsaSkycapsuleZh from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh.json";
+import busanSmallGroupYonggungsaSkycapsuleZhTw from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.zh-TW.json";
+import busanSmallGroupYonggungsaSkycapsuleEs from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.es.json";
+import busanSmallGroupYonggungsaSkycapsuleJa from "../busan-small-group-yonggungsa-skycapsule-gamcheon-tour/busan-small-group-yonggungsa-skycapsule-gamcheon-tour.ja.json";
 import busanSpringCherryBlossomGyeongjuEn from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.en.json";
 import busanSpringCherryBlossomGyeongjuKo from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.ko.json";
 import busanSpringCherryBlossomGyeongjuZh from "../busan-spring-cherry-blossom-gyeongju-highlights-day-tour/busan-spring-cherry-blossom-gyeongju-highlights-day-tour.zh.json";
@@ -169,6 +175,18 @@ import seoulPrivateNamiMorningCalmZh from "../seoul-private-nami-morning-calm-pe
 import seoulPrivateNamiMorningCalmZhTw from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.zh-TW.json";
 import seoulPrivateNamiMorningCalmEs from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.es.json";
 import seoulPrivateNamiMorningCalmJa from "../seoul-private-nami-morning-calm-petite-france/seoul-private-nami-morning-calm-petite-france.ja.json";
+import seoulGapyeongNamiMorningCalmPetiteEn from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.en.json";
+import seoulGapyeongNamiMorningCalmPetiteKo from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ko.json";
+import seoulGapyeongNamiMorningCalmPetiteZh from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh.json";
+import seoulGapyeongNamiMorningCalmPetiteZhTw from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.zh-TW.json";
+import seoulGapyeongNamiMorningCalmPetiteEs from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.es.json";
+import seoulGapyeongNamiMorningCalmPetiteJa from "../seoul-gapyeong-nami-morning-calm-petite-france-day-tour/seoul-gapyeong-nami-morning-calm-petite-france-day-tour.ja.json";
+import seoulWinterSeoraksanNamiEobiEn from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.en.json";
+import seoulWinterSeoraksanNamiEobiKo from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ko.json";
+import seoulWinterSeoraksanNamiEobiZh from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh.json";
+import seoulWinterSeoraksanNamiEobiZhTw from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.zh-TW.json";
+import seoulWinterSeoraksanNamiEobiEs from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.es.json";
+import seoulWinterSeoraksanNamiEobiJa from "../seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour/seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour.ja.json";
 import seoulSeoraksanNaksansaBeachEn from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.en.json";
 import seoulSeoraksanNaksansaBeachKo from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.ko.json";
 import seoulSeoraksanNaksansaBeachZh from "../seoul-seoraksan-naksansa-temple-naksan-beach-day-trip/seoul-seoraksan-naksansa-temple-naksan-beach-day-trip.zh.json";
@@ -275,6 +293,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaEn as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreEn as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseEn as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleEn as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuEn as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayEn as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageEn as PageJsonShape,
@@ -295,6 +314,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEn as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEn as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEn as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteEn as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiEn as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEn as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEn as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEn as PageJsonShape,
@@ -311,6 +332,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaKo as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreKo as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseKo as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleKo as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuKo as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayKo as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageKo as PageJsonShape,
@@ -331,6 +353,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandKo as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelKo as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmKo as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteKo as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiKo as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachKo as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmKo as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachKo as PageJsonShape,
@@ -347,6 +371,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaZh as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreZh as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseZh as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleZh as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuZh as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayZh as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageZh as PageJsonShape,
@@ -367,6 +392,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZh as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZh as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZh as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteZh as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiZh as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZh as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZh as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZh as PageJsonShape,
@@ -383,6 +410,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaZhTw as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreZhTw as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseZhTw as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleZhTw as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuZhTw as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayZhTw as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageZhTw as PageJsonShape,
@@ -403,6 +431,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandZhTw as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelZhTw as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmZhTw as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteZhTw as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiZhTw as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachZhTw as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmZhTw as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachZhTw as PageJsonShape,
@@ -419,6 +449,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaEs as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreEs as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseEs as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleEs as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuEs as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayEs as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageEs as PageJsonShape,
@@ -439,6 +470,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandEs as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelEs as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmEs as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteEs as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiEs as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachEs as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmEs as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachEs as PageJsonShape,
@@ -455,6 +488,7 @@ const RAW_PAGES_BY_LOCALE = {
     "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour": busanOutskirtsTongdosaJa as PageJsonShape,
     "busan-private-car-charter-cruise-shore": busanPrivateCarCharterCruiseShoreJa as PageJsonShape,
     "busan-small-group-sightseeing-tour-cruise-passengers": busanSmallGroupSightseeingCruiseJa as PageJsonShape,
+    "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": busanSmallGroupYonggungsaSkycapsuleJa as PageJsonShape,
     "busan-spring-cherry-blossom-gyeongju-highlights-day-tour": busanSpringCherryBlossomGyeongjuJa as PageJsonShape,
     "busan-top-attractions-day-tour": busanTopAttractionsDayJa as PageJsonShape,
     "east-signature-nature-core": eastSignaturePageJa as PageJsonShape,
@@ -475,6 +509,8 @@ const RAW_PAGES_BY_LOCALE = {
     "pocheon-sanjeong-lake-herb-island-art-valley": pocheonSanjeongLakeHerbIslandJa as PageJsonShape,
     "seoul-dmz-private-3rd-tunnel-suspension-bridge": seoulDmzPrivate3rdTunnelJa as PageJsonShape,
     "seoul-private-nami-morning-calm-petite-france": seoulPrivateNamiMorningCalmJa as PageJsonShape,
+    "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": seoulGapyeongNamiMorningCalmPetiteJa as PageJsonShape,
+    "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": seoulWinterSeoraksanNamiEobiJa as PageJsonShape,
     "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": seoulSeoraksanNaksansaBeachJa as PageJsonShape,
     "seoul-seoraksan-nami-island-morning-calm-day-tour": seoulSeoraksanNamiMorningCalmJa as PageJsonShape,
     "seoul-seoraksan-national-park-sokcho-beach-day-trip": seoulSeoraksanSokchoBeachJa as PageJsonShape,
@@ -493,6 +529,7 @@ const SLUG_ORDER: readonly string[] = [
   "busan-outskirts-tongdosa-amethyst-yeongnam-day-tour",
   "busan-private-car-charter-cruise-shore",
   "busan-small-group-sightseeing-tour-cruise-passengers",
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
   "busan-spring-cherry-blossom-gyeongju-highlights-day-tour",
   "busan-top-attractions-day-tour",
   "east-signature-nature-core",
@@ -512,6 +549,7 @@ const SLUG_ORDER: readonly string[] = [
   "jeju-winter-southwest-tangerine-snow-camellia-tour",
   "pocheon-sanjeong-lake-herb-island-art-valley",
   "seoul-dmz-private-3rd-tunnel-suspension-bridge",
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
   "seoul-private-nami-morning-calm-petite-france",
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip",
   "seoul-seoraksan-nami-island-morning-calm-day-tour",
@@ -520,6 +558,7 @@ const SLUG_ORDER: readonly string[] = [
   "seoul-suwon-hwaseong-folk-village-starfield-library",
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
   "seoul-suwon-hwaseong-waujeongsa-starfield",
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
   "southwest-hallasan-osulloc-aewol",];
 
 /**
@@ -537,7 +576,14 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-grand-highlights-loop": { listPriceUsd: 79, compareAtPriceUsd: 89, maxGroupSize: 8 },
   "southwest-hallasan-osulloc-aewol": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "busan-gyeongju-unesco-legacy-tour-national-museum": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
-  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 79, compareAtPriceUsd: 85, maxGroupSize: 8 },
+  // Busan cruise shore-excursion trio, 2026-08-04: priced to match the channel
+  // listings exactly, to the cent. Keep these three in lockstep with the same
+  // three entries in `catalogRegistrationBuilder.ts` — they had drifted apart.
+  "busan-cruise-shore-excursion-bus-tour": { listPriceUsd: 58.79 },
+  "busan-small-group-sightseeing-tour-cruise-passengers": { listPriceUsd: 68.95, maxGroupSize: 12 },
+  "busan-private-car-charter-cruise-shore": { listPriceUsd: 456.99 },
+  // New 2026-08-04 — base price = Sky Capsule ticket EXCLUDED; ticket-included offer $79 (offers SQL). Owner-confirmed 2026-08-04.
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": { listPriceUsd: 59, maxGroupSize: 12 },
   "busan-top-attractions-day-tour": { listPriceUsd: 29, compareAtPriceUsd: 41, maxGroupSize: 12 },
   "from-busan-gyeongju-ancient-capital-day-tour": { listPriceUsd: 39, compareAtPriceUsd: 50, maxGroupSize: 8 },
   "from-incheon-seoul-day-tour-cruise-guests": { listPriceUsd: 69, compareAtPriceUsd: 76, maxGroupSize: 8 },
@@ -551,7 +597,10 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "jeju-southern-top-unesco-spots-tour": { listPriceUsd: 49, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "jeju-west-south-full-day-authentic-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
   "jeju-winter-southwest-tangerine-snow-camellia-tour": { listPriceUsd: 59, compareAtPriceUsd: 69, maxGroupSize: 8 },
-  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 49, compareAtPriceUsd: 62, maxGroupSize: 8 },
+  // 54, not 49 — owner confirmed 2026-08-04. The bundle, tours.price, the offer
+  // and every locale's detail_payload all already said 54; this override was the
+  // lone outlier, and the owner's Klook availability calendar reads 54.55 USD.
+  "pocheon-sanjeong-lake-herb-island-art-valley": { listPriceUsd: 54, compareAtPriceUsd: 62, maxGroupSize: 8 },
   "seoul-dmz-private-3rd-tunnel-suspension-bridge": { listPriceUsd: 419, maxGroupSize: 15 },
   "seoul-private-nami-morning-calm-petite-france": { listPriceUsd: 189 },
   "seoul-seoraksan-naksansa-temple-naksan-beach-day-trip": { listPriceUsd: 53, compareAtPriceUsd: 58, maxGroupSize: 8 },
@@ -561,24 +610,35 @@ const SLUG_OVERRIDES: Record<string, SlugOverride> = {
   "seoul-suwon-hwaseong-folk-village-starfield-library": { listPriceUsd: 60, compareAtPriceUsd: 66, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library": { listPriceUsd: 53, compareAtPriceUsd: 59, maxGroupSize: 8 },
   "seoul-suwon-hwaseong-waujeongsa-starfield": { listPriceUsd: 51, compareAtPriceUsd: 54, maxGroupSize: 8 },
+  // New products 2026-08-04. maxGroupSize 40 (owner, 2026-08-04) — these are
+  // join-in coach tours, so the 8-guest small-group cap the private products
+  // carry would be a false claim; 40 is the coach capacity the operator lists.
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": { listPriceUsd: 59, maxGroupSize: 40 },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": { listPriceUsd: 69, maxGroupSize: 40 },
 };
 
 /**
  * Parse `listPriceUsd` from authoring JSON. Prefer `price.amountLabel`
  * ("78"), fall back to digits in `catalog_card.priceLabel`. Always read
  * from the EN page so localized priceLabel formatting can't break parsing.
+ *
+ * Rounded to cents, not to whole dollars: the Busan cruise SKUs are priced
+ * to match their channel listings exactly ($58.79 / $68.95 / $456.99), and
+ * whole-dollar rounding made that impossible. Integer-priced products are
+ * unaffected (49 -> 49). `formatPrice` already renders cents only when the
+ * amount actually has a fractional part.
  */
 function parseListPriceUsd(page: PageJsonShape): number {
   const amountLabel = page.price && typeof page.price.amountLabel === "string" ? page.price.amountLabel : "";
   if (amountLabel) {
     const n = Number(amountLabel.replace(/[^0-9.]/g, ""));
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   const priceLabel = page.catalog_card?.priceLabel ?? "";
   const m = priceLabel.match(/(\d+(?:\.\d+)?)/);
   if (m) {
     const n = Number(m[1]);
-    if (Number.isFinite(n) && n > 0) return Math.round(n);
+    if (Number.isFinite(n) && n > 0) return Math.round(n * 100) / 100;
   }
   return 0;
 }

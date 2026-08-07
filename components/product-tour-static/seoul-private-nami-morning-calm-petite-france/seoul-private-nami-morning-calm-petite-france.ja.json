@@ -592,7 +592,7 @@
   ],
   "routePhases": [
     {
-      "phase": "南怡島オープナー > **Notes:** File paths (8–10) are kept verbatim. Proper nouns — *Petite France, Nami Island (南怡島), Garden of Morning Calm (朝の静寂の庭), My Love from the Star (星から来たあなた), Saint-Exupéry, Gapyeong (加平), Cheongpyeong (清平)* — are rendered in their established Japanese equivalents or phonetic katakana where no standard kanji form exists.",
+      "phase": "南怡島オープナー",
       "duration": "ストップ 1",
       "description": "午前：南怡島（ナミソム）オープナー"
     },
@@ -956,7 +956,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id は Supabase / 環境変数から実行時に解決されます。静的 JSONB には含まれません。",
+    "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
     "price": {
       "amountLabel": "194",
       "currency": "USD",
@@ -2156,7 +2156,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "checkout_tour_id は Supabase / 環境変数から実行時に解決されます。静的 JSONB には含まれません。",
+        "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

@@ -869,7 +869,7 @@
     {
       "icon": "users",
       "title": "精選團體規模",
-      "description": "專為本路線量身調配的人數規模 > **Notes:** Lines 20 & 23 (`bg-emerald-50/80`, `bg-sky-50/80`) are Tailwind CSS class names — kept as-is since they are code tokens, not translatable text. Korean place names rendered in Hanja: 都羅展望台 (도라전망대 · Dora Observatory), 紺岳山 (감악산 · Gamaksan).",
+      "description": "專為本路線量身調配的人數規模",
       "iconBg": "bg-amber-50/80",
       "iconColor": "text-amber-600"
     }
@@ -997,7 +997,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_id 於執行時期從 Supabase／環境變數解析；非靜態 JSONB 的一部分。",
+    "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
     "price": {
       "amountLabel": "",
       "currency": "USD",
@@ -2285,7 +2285,7 @@
       "section_html_id": null,
       "component": "旅遊固定預訂欄（TourStickyBookingBar）",
       "props": {
-        "note": "checkout_tour_id 於執行時期從 Supabase／環境變數解析；不屬於靜態 JSONB 的一部分。",
+        "note": "選擇日期與人數，即可查看即時可訂狀態並完成預訂。",
         "price": {
           "amountLabel": "",
           "currency": "USD",
@@ -2510,7 +2510,7 @@
         }
       },
       {
-        "paxLabel": "14–15 人 > **Note:** *pax* (travel industry term for passengers/persons) is rendered as **人** throughout. *Flat* is rendered as **統一價** (fixed/flat rate), appropriate for a pricing-tier context.",
+        "paxLabel": "14–15 人",
         "paxMin": 14,
         "paxMax": 15,
         "prices": {

@@ -33,6 +33,10 @@
 import { chromium } from 'playwright';
 import { readFileSync } from 'fs';
 
+/** U1 coverage contract — read by scripts/gen-uiux-coverage.mjs. */
+// (also walks /admin/orders and /admin/guides — the coverage grid counts tour-mode surfaces only)
+export const COVERS = ['/tour-mode/room/[bookingId]', '/tour-mode/guide'];
+
 const BASE = process.env.WALK_BASE ?? 'http://localhost:3161';
 const fx = JSON.parse(readFileSync('scripts/.sim-fixtures.json', 'utf8'));
 

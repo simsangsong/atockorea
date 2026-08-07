@@ -619,6 +619,25 @@ const SPECS: Record<string, Spec> = {
   },
 
   // ── device ────────────────────────────────────────────────────────────────
+  // Unsend (2026-08-04) — delete the shared message, then clear the pointer so
+  // any later needsMessage spec re-arms with a fresh send instead of poking a
+  // tombstone. Runs on the guest's own message, well inside the 15-min window.
+  'DELETE /api/tour-rooms/[bookingId]/messages/[messageId]': {
+    needsMessage: true,
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/messages/${c.room.messageId}`,
+    headers: guestH,
+    ok: [200],
+    after: (_b, c) => {
+      c.room.messageId = null;
+    },
+  },
+  // §5-4 — the preview endpoint answers honest nulls for an unreachable page,
+  // which is exactly what a sim run should exercise (no external fetch lands).
+  'GET /api/tour-rooms/[bookingId]/link-preview': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/link-preview?url=${encodeURIComponent('https://example.com/k4')}`,
+    headers: guestH,
+    ok: [200, 429],
+  },
   'POST /api/tour-rooms/[bookingId]/push-subscribe': {
     path: (c) => `/api/tour-rooms/${c.room.bookingId}/push-subscribe`,
     headers: guestH,
@@ -632,6 +651,14 @@ const SPECS: Record<string, Spec> = {
   },
 
   // ── operator ──────────────────────────────────────────────────────────────
+  // 현장 재합류 (2026-08-04) — staff mints a customer join QR. The mint is
+  // audited in tour_room_invites; 429 is the mint gate doing its job when the
+  // sweep runs twice in a minute.
+  'POST /api/tour-rooms/[bookingId]/reinvite': {
+    path: (c) => `/api/tour-rooms/${c.room.bookingId}/reinvite`,
+    headers: guideH,
+    ok: [201, 429],
+  },
   'POST /api/tour-rooms/broadcast': {
     path: () => '/api/tour-rooms/broadcast',
     headers: () => ({}),

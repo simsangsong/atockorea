@@ -23,7 +23,12 @@ function fakeDb(byRole: Record<string, Array<{ id: string; endpoint: string; p25
       const builder: Record<string, unknown> = {
         select: () => builder,
         delete: () => builder,
-        in: () => Promise.resolve({ data: null, error: null }),
+        // 2026-08-04 조인 확장 — the subscription lookup is now .in('booking_id',
+        // siblings); resolve it with the role's rows. The sibling discovery
+        // itself (bookings .maybeSingle) answers null here, so the helper falls
+        // back to the single booking — which is exactly this file's scope.
+        in: () => Promise.resolve({ data: role ? byRole[role] ?? [] : [], error: null }),
+        maybeSingle: async () => ({ data: null, error: null }),
         eq: (col: string, value: unknown) => {
           if (col === 'role') role = String(value);
           return builder;

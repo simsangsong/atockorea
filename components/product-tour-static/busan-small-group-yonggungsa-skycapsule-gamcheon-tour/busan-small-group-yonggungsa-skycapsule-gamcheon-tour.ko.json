@@ -1,0 +1,2772 @@
+{
+  "document_kind": "tour_product_full_page_v1",
+  "schema_version": 7,
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "ko",
+  "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "seo": {
+    "pageTitle": "부산 스몰그룹 투어: 해동용궁사·스카이캡슐·감천 | AtoC Korea",
+    "metaDescription": "10시간 부산 스몰그룹 일일 투어: 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인 스카이캡슐(티켓 선택), 감천문화마을, 닥밭골 벽화마을 & 소망계단 모노레일.",
+    "title": "부산 해안 사찰·스카이캡슐·문화마을 스몰그룹 투어 | AtoC",
+    "description": "부산 스몰그룹 일일 투어: 해동용궁사 → 청사포 다릿돌전망대 → 블루라인파크 스카이캡슐(티켓 포함/불포함 선택) → 점심 → 감천문화마을 → 닥밭골 벽화마을 & 소망계단 모노레일.",
+    "primaryKeywords": [
+      "부산 스몰그룹 투어",
+      "해동용궁사 투어",
+      "블루라인파크 스카이캡슐",
+      "감천문화마을 투어",
+      "청사포 다릿돌전망대"
+    ],
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+  },
+  "catalog_card": {
+    "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "title": "부산 스몰그룹: 해동용궁사·스카이캡슐·문화마을",
+    "subtitle": "부산의 해안 명소와 산비탈 마을을 하루에 잇는 스몰그룹 투어 — 해동용궁사, 청사포 다릿돌전망대(유리 스카이워크), 블루라인파크 스카이캡슐(티켓 포함/불포함 선택), 감천문화마을, 그리고 소망계단 모노레일이 있는 조용한 닥밭골 벽화마을.",
+    "region": "부산",
+    "duration": "≈ 10시간",
+    "stopsCount": 8,
+    "rating": 0,
+    "reviewCount": 0,
+    "badges": [
+      "스몰그룹",
+      "부산",
+      "스카이캡슐",
+      "해안",
+      "문화마을"
+    ],
+    "tags": [
+      "스몰그룹",
+      "부산",
+      "스카이캡슐",
+      "해안",
+      "문화마을",
+      "첫 방문 추천"
+    ],
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "priceLabel": "",
+    "shortCardDescription": "해안과 산비탈 마을을 축으로 짠 부산 스몰그룹 일일 투어입니다. 한적한 오전 시간대의 해동용궁사, 무료 유리 바닥 전망대인 청사포 다릿돌전망대, 청사포→미포 블루라인파크 스카이캡슐(예약 시 티켓 포함/불포함 선택), 점심, 감천문화마을, 그리고 무료 모노레일이 '소망계단'을 오르는 숨은 명소 닥밭골 벽화마을까지. 선택형 캡슐을 제외한 모든 핵심 정차지가 무료입장입니다."
+  },
+  "headlineLine1": "해동용궁사·스카이캡슐",
+  "headlineLine2": "& 문화마을",
+  "price": {
+    "amountLabel": "59",
+    "currency": "USD",
+    "per": "person",
+    "salePriceUsd": 59
+  },
+  "hero": {
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+    "imagePosition": "center 40%",
+    "images": [
+      "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+    ],
+    "tagline": "한적한 시간대의 해안 사찰, 바다 위 유리 스카이워크, 파스텔 캡슐을 타고 내려가는 해안선, 그리고 성격이 다른 두 산비탈 마을 — 하나는 세계적으로 유명하고, 하나는 아직 동네답습니다",
+    "pills": [
+      "small_group",
+      "부산",
+      "first_time"
+    ],
+    "meta": {
+      "duration": "≈ 10시간 (08:30 첫 픽업, ≈ 18:30 마지막 시내 하차)",
+      "region": "부산",
+      "stops": "8개 코스",
+      "rating": 0,
+      "ratingStars": 0
+    }
+  },
+  "subnavItems": [
+    {
+      "id": "overview",
+      "label": "개요"
+    },
+    {
+      "id": "itinerary",
+      "label": "여행 일정"
+    },
+    {
+      "id": "practical",
+      "label": "실용 정보"
+    },
+    {
+      "id": "reviews",
+      "label": "리뷰"
+    },
+    {
+      "id": "booking",
+      "label": "예약"
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "사진 가치",
+      "value": "높음",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "경관",
+      "value": "좋음",
+      "level": 4
+    },
+    {
+      "icon": "footprints",
+      "label": "도보",
+      "value": "높음",
+      "level": 4
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "우천 안전성",
+      "value": "보통",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "가족 적합도",
+      "value": "좋음",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "균형",
+      "value": "균형 잡힘",
+      "level": 4
+    }
+  ],
+  "galleryItems": [
+    {
+      "id": 1,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 1",
+      "alt": "해동 용궁사 — gallery image 1"
+    },
+    {
+      "id": 2,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 2",
+      "alt": "해동 용궁사 — gallery image 2"
+    },
+    {
+      "id": 3,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 3",
+      "alt": "해동 용궁사 — gallery image 3"
+    },
+    {
+      "id": 4,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 4",
+      "alt": "해동 용궁사 — gallery image 4"
+    },
+    {
+      "id": 5,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 5",
+      "alt": "해동 용궁사 — gallery image 5"
+    },
+    {
+      "id": 6,
+      "type": "photo",
+      "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "location": "해동 용궁사",
+      "caption": "해동 용궁사 — photo 6",
+      "alt": "해동 용궁사 — gallery image 6"
+    },
+    {
+      "id": 7,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
+    },
+    {
+      "id": 8,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
+    },
+    {
+      "id": 10,
+      "type": "photo",
+      "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+      "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
+      "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+    },
+    {
+      "id": 11,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 1",
+      "alt": "감천문화마을 — gallery image 1"
+    },
+    {
+      "id": 12,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 2",
+      "alt": "감천문화마을 — gallery image 2"
+    },
+    {
+      "id": 13,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 3",
+      "alt": "감천문화마을 — gallery image 3"
+    },
+    {
+      "id": 14,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 4",
+      "alt": "감천문화마을 — gallery image 4"
+    },
+    {
+      "id": 15,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-market-interior.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 5",
+      "alt": "감천문화마을 — gallery image 5"
+    },
+    {
+      "id": 16,
+      "type": "photo",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 6",
+      "alt": "감천문화마을 — gallery image 6"
+    },
+    {
+      "id": 17,
+      "type": "photo",
+      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+      "location": "감천문화마을",
+      "caption": "감천문화마을 — photo 8",
+      "alt": "감천문화마을 — gallery image 8"
+    }
+  ],
+  "itineraryStops": [
+    {
+      "number": 1,
+      "time": "≈ 08:30–09:30",
+      "duration": "30분",
+      "name": "탑승 (부산 중심부 3개 역)",
+      "category": "이동 / 탑승",
+      "description": "탑승 장소는 하루 일정을 효율적으로 진행하기 위해 도심 내 세 곳의 주요 교통 거점으로 통합됩니다. **부산역 (1호선)**은 KTX 터미널 인근 또는 초량·남포동 일대에 숙박하시는 분들을 위한 거점이며, **서면역 (1·2호선)**은 부산에서 가장 분주한 지하철 환승역으로 롯데호텔 부산 및 서면 의료거리 주변 도심 호텔 투숙객에게 최적의 위치입니다. \n\n**해운대역 (2호선)**은 웨스틴조선, 파크하얏트, 시그니엘 부산 등 해변 리조트 지구에 숙박하시는 분들을 위한 거점입니다. 차량은 세 곳을 순서대로 경유합니다 (일반적으로 부산역 약 09:00, 서면 약 09:15, 해운대 약 09:30). 이후 해안 광안대교 경로를 따라 기장군 방면으로 이동하여 당일 첫 번째 목적지로 향합니다. 마지막 탑승 지점에서 해동 용궁사까지의 총 이동 시간은 교통 상황에 따라 약 30~40분입니다. \n\n기사님이 한국어·영어 병기 일정표 카드를 배포해 드리오니, 이후 감천문화마을과 닥밭골 방문 일정을 원활히 진행하기 위해 예정 시각 5분 전에 탑승 장소에 나와 계시기 바랍니다.",
+      "highlights": [
+        "부산 중심부 세 곳의 탑승 옵션 (부산역, 서면, 해운대)",
+        "소규모 그룹 전용 차량 (최대 약 14명)",
+        "첫 번째 목적지까지 총 이동 시간: 약 30~40분",
+        "탑승 시 한국어·영어 병기 일정표 카드 배포"
+      ],
+      "timeUsed": [
+        "부산역 탑승 (약 09:00, 약 5분)",
+        "서면역까지 이동 (약 10분)",
+        "서면 탑승 (약 09:15, 약 5분)",
+        "해운대역까지 이동 (약 15분)",
+        "해운대 탑승 (약 09:30, 약 5분)"
+      ],
+      "whyOnRoute": "세 곳의 탑승 지점은 부산의 주요 호텔 밀집 지역 (KTX/남포, 서면 도심, 해운대 해변)을 커버하므로, 투숙객들이 아침 일찍 도시를 가로질러 이동할 필요가 없습니다. 북서→동쪽 순서로 경유함으로써 차량 이동 거리를 최소화하고, 오전 10시경 해동 용궁사에 도착할 수 있어 관광버스 혼잡이 심해지기 전에 방문이 가능합니다.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_pickup_central",
+        "verified": true,
+        "match": "transit_only",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metro"
+        ]
+      },
+      "_role": "pickup"
+    },
+    {
+      "number": 2,
+      "time": "≈ 10:00",
+      "duration": "75분",
+      "name": "해동 용궁사",
+      "category": "불교 사찰 / 해안",
+      "description": "**해동 용궁사 — 한국에서 가장 유명한 해변 불교 사찰**로, 부산 북동부 기장군의 바위 절벽 위에 자리하며, 산이 아닌 바닷가에 위치한 몇 안 되는 주요 한국 사찰 중 하나입니다. 원래 **1376년 고려 시대에 나옹 혜근(1320-1376)**이라는 위대한 불교 고승이 창건하였으며, 그는 왕실 고문이자 선사로서 조선 초기 한국 불교의 형성에 큰 영향을 미쳤습니다. \n\n전설에 따르면, 나옹은 전국적인 가뭄이 들었을 때 경주 분황사에서 수행 중이었는데, 동해 신이 꿈에 나타나 봉래산(이 해변 절벽의 원래 이름) 위에 사찰을 세우면 나라의 번영이 회복될 것이라 하였습니다. 나옹은 사찰을 창건하고 관세음보살에게 봉헌하여 **보문사**라 이름 지었습니다. 사찰은 **1592년 임진왜란** 때 소실되어 300여 년간 폐허로 남아 있다가, **1930년대 초 통도사의 운강 스님이 중창을 시작**하였습니다. \n\n현재의 이름인 **해동 용궁사**는 **1974년**에 붙여졌는데, 이는 정암 주지 스님이 100일 기도(정건 기도) 중 관세음보살이 용의 등을 타고 오색빛을 발산하며 내려오는 환상을 보았기 때문입니다. 방문은 사찰의 대표적인 참배 동선을 따라 진행됩니다: 입구 광장의 **십이지신(12 수호신)** 줄을 지나, **7층 무사탑**(운전자들이 돌 법륜 앞에 동전을 올리며 소원을 비는 곳)을 지나, 작은 대나무 숲을 통과하는 유명한 **108계단**(불교의 108번뇌를 상징)을 내려가 해변 테라스와 대웅전으로 이어집니다. \n\n상부 절벽의 **해수 관음 대불**은 사찰 지붕과 동해를 배경으로 가장 많이 촬영되는 경관을 자랑합니다. 운영 시간은 **매일 04:30~19:20, 마지막 입장 18:50이며 입장료는 무료**입니다. **부처님 오신 날(5월)**에는 연등회 등불 축제가 열립니다.",
+      "highlights": [
+        "**1376년 창건**, 불교 고승 나옹 혜근 (원래 이름 '보문사')",
+        "바닷가에 위치한 몇 안 되는 주요 한국 사찰 중 하나 (대부분은 산속에 위치)",
+        "**1974년 해동 용궁사로 개명** — 정암 스님의 용과 관세음보살 환상에서 비롯됨",
+        "**108계단** = 불교의 108번뇌를 상징",
+        "입구의 **십이지신 (12지 수호신)**; **'무사탑'** 동전 기원 성소",
+        "**해수 관음 대불** — 절벽에서 가장 많이 촬영되는 전망",
+        "대웅전은 1970년에 원래 색채를 최대한 살려 복원되었습니다",
+        "매일 04:30~19:20 운영, 입장 **무료**; 부처님오신날(5월) 연등 축제",
+        "**사찰 문 앞에 석주(石柱) 형태로 도열한 불교 12 십이지신 장군상** — 한국 해안 사찰 중 유일"
+      ],
+      "timeUsed": [
+        "관광버스 하차 + 상점 골목을 지나 입장 광장까지 도보 (약 10분)",
+        "십이지신 장군상 + 무사고 탑 관람 (약 10분)",
+        "108계단 하강 + 대웅전 + 해안 테라스 관람 (약 30분)",
+        "해수관음상 전망 포인트 + 사진 촬영 (약 15분)",
+        "다시 올라오기 + 관광버스 앞 집합 (약 10분)"
+      ],
+      "whyOnRoute": "**이 코스의 상징적인 오프너 — 부산에서 가장 많이 촬영되는 사찰을 한적한 시간대에.** 10:00 도착은 단체버스 인파(보통 11:00부터)보다 앞서, 108계단과 해수관음대불 뷰포인트를 줄 서지 않고 걷게 해 줍니다. 기장 절벽 위라는 위치가 하루를 코스의 북동쪽 끝에서 열어 주기 때문에, 이후 일정은 청사포, 캡슐, 도심 방향으로 해안을 따라 한 방향으로만 흘러 되돌아가는 구간이 없습니다.",
+      "visitBasics": {
+        "hours": "매일 04:30~19:20 (마지막 입장 18:50)",
+        "closed": "연중 개방",
+        "admission": "무료; 자가용 주차는 유료",
+        "walking": "보통 수준 — 소나무 숲을 지나는 108계단, 여러 개의 해안 테라스와 계단"
+      },
+      "convenience": {
+        "restroom": "정문 근처 및 경내에서 이용 가능",
+        "parking": "해동용궁사 주차장 (유료, Visit Busan 공식 안내 기준)"
+      },
+      "smartNotes": {
+        "photo": "해안 쪽 일출 바위; 대웅전 옆 계단에서 바다와 사찰이 어우러지는 대표 풍경 촬영 가능; 위쪽 절벽의 해수관음상 지점에서 사찰과 동해가 한눈에 담기는 광각 뷰 감상",
+        "facilities": "상단 광장에 기념품·간식 판매대와 소규모 카페 위치; 해안 산책로가 바위 너머까지 이어짐",
+        "tip": "전각 출입 시 옆문 이용 (정문은 스님 전용); 부처님오신날(4~5월)에는 연등 전시 진행; 관광버스가 가장 붐비는 시간대를 피하려면 10:30 이전 도착 권장"
+      },
+      "_poi_meta": {
+        "poi_key": "haedong_yonggungsa",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "VisitKorea",
+          "Wikipedia",
+          "Culture Trip",
+          "Korean Temple Guide",
+          "Korea Tourism Organization Official"
+        ]
+      },
+      "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+      "images": [
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+        "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 1",
+          "alt": "해동 용궁사 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 2",
+          "alt": "해동 용궁사 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 3",
+          "alt": "해동 용궁사 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 4",
+          "alt": "해동 용궁사 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 5",
+          "alt": "해동 용궁사 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "location": "해동 용궁사",
+          "caption": "해동 용궁사 — photo 6",
+          "alt": "해동 용궁사 — gallery image 6"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "time": "≈ 11:45",
+      "duration": "40분",
+      "name": "청사포 다릿돌전망대 (유리 스카이워크)",
+      "category": "해안 전망대 / 무료",
+      "description": "**청사포 다릿돌전망대**는 청사포와 송정 사이 해안 절벽에서 **바다 위 약 20m 높이로 72.5m를 굽어 나가는 스카이워크**로, 2017년 8월 개장했습니다. 이름은 데크 아래 바다에 징검다리처럼 놓인 **다섯 개의 암초, '다릿돌'**에서 왔습니다 — 수평선을 향해 놓인 돌다리라는 뜻입니다. 데크 끝 구간의 바닥은 **유리**로, 발밑에 너울이 굽이치는 것을 그대로 내려다보게 되며(유리 보호용 덧신 제공), **입장은 무료**입니다. 마을 쪽으로 내려오면 **청사포 쌍둥이 등대**(홍·백)와 슬램덩크풍 애니메이션 프레임으로 유명해진 작은 건널목 포토존이 짧은 산책 거리에 있습니다.",
+      "image": null,
+      "highlights": [
+        "**바다 위 약 20m, 길이 72.5m 스카이워크** — 2017년 8월 개장, 무료",
+        "데크 아래 보이는 다섯 암초 **'다릿돌'**에서 온 이름",
+        "**끝 구간 유리 바닥**(덧신 제공)",
+        "짧은 산책 거리의 **청사포 쌍둥이 등대**(홍·백)",
+        "청사포는 **부산 8경**의 하나 — 지금도 살아 있는 어촌",
+        "애니메이션으로 유명해진 건널목 포토존"
+      ],
+      "timeUsed": [
+        "차량 하차 + 전망대 입구까지 도보(약 5분)",
+        "스카이워크 워크아웃 + 유리 바닥 구간(약 20분)",
+        "쌍둥이 등대 / 건널목 포토 산책(약 10분)",
+        "캡슐 역으로 재집합(약 5분)"
+      ],
+      "whyOnRoute": "**사찰과 캡슐 사이의 무료 스릴.** 다릿돌은 발밑에 너울이 흐르는 유리 바닥으로 이 하루의 '바다 위' 순간을 티켓 없이 선사하고, 청사포 절벽 바로 위라 몇 분 거리의 스카이캡슐 탑승으로 그대로 이어집니다. 고정된 스카이워크에서 해안을 먼저 본 뒤라, 10분 뒤 움직이는 캡슐에서 보는 같은 해안이 다르게 읽힙니다.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "cheongsapo_daritdol_observatory",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan City Tourism",
+          "Blue Line Park official"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "바람이 강한 날은 데크가 일시 폐쇄되기도 합니다 — 가이드가 당일 상황을 확인해 청사포 클러스터 순서를 조정합니다",
+        "photo": "유리 아래 다릿돌 암초를 내려찍기; 해안 산책로에서 데크의 곡선을 담는 와이드 샷",
+        "facilities": "아래 청사포 마을에 카페·해산물 노점"
+      },
+      "convenience": {
+        "parking": "청사포 마을 차량 정차 후 데크까지 도보",
+        "restroom": "청사포역 인근 공중화장실"
+      },
+      "visitBasics": {
+        "hours": "개방형; 전망대 운영 약 09:00~18:00(계절·기상에 따라 변동)",
+        "closed": "강풍·폭풍 시 일시 폐쇄될 수 있음",
+        "walking": "데크는 평탄한 워크아웃; 마을에서 짧은 오르막",
+        "admission": "무료(유리 구간 덧신 제공)"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 4,
+      "time": "≈ 12:35",
+      "duration": "40분",
+      "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "category": "해안 라이드 / 티켓 선택",
+      "description": "**스카이캡슐**은 폐선된 동해남부선 해안 철길을 2020년 친환경 재개발한 **해운대 블루라인파크**의 시그너처 라이드입니다: **파스텔 색 4인승 캐빈이 해안 7~10m 높이의 고가 레일 위로 청사포~미포 2.3km를 미끄러져 갑니다**(약 30분) — 가는 내내 한쪽은 바다입니다. 우리는 **청사포에서 타고 미포 방향으로 내려가며**, 미포에는 차량이 먼저 가서 기다립니다 — 탑승 자체가 이 하루의 해안 이동이 되는 구조입니다. **캡슐 티켓은 선택 사항으로 예약 시 정합니다**: 티켓 포함 옵션이면 그룹 몫의 캡슐을 사전 예약하고(요금은 캡슐당: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도), 기본 옵션이면 같은 레일 아래의 수상 경력 있는 2.3km 목재 해안 산책로 **그린레일웨이(무료)**를 걷거나 차량으로 미포까지 이동하면 됩니다.",
+      "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+      "highlights": [
+        "**고가 해안 레일 위 파스텔 4인승 캡슐** — 블루라인파크 시그너처(2020년 개장)",
+        "**청사포→미포 2.3km / 약 30분**, 내내 바다 전망",
+        "**티켓 포함/불포함 — 예약 시 선택**(캡슐당 약 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도)",
+        "미탑승 게스트: 같은 해안의 **무료 그린레일웨이 산책로** 또는 차량으로 미포 이동",
+        "라이드가 끝나는 곳에서 점심이 시작 — 미포는 해운대 먹자골목 도보 거리",
+        "일반적인 비에는 운행; 강풍 시에만 일시 중단"
+      ],
+      "timeUsed": [
+        "청사포역 탑승 수속(약 10분)",
+        "스카이캡슐 청사포→미포 탑승(약 30분)"
+      ],
+      "whyOnRoute": "**이동을 겸하는 라이드.** 스카이워크 직후 청사포에서 타면, 방금 내려다본 바로 그 해안선을 캡슐이 따라 내려가 — 차량과 점심 골목이 기다리는 미포에 내려 줍니다. 이 라이드를 위해 우회하는 구간이 전혀 없습니다: 티켓을 건너뛰어도 차량이나 무료 산책로가 같은 구간을 커버합니다.",
+      "_poi_meta": {
+        "match": "partial",
+        "poi_key": "cheongsapo_blue_line_park",
+        "sources": [
+          "Blue Line Park official",
+          "Visit Busan",
+          "Busan Metropolitan City Tourism"
+        ],
+        "verified": true,
+        "kb_version": "1.24",
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "일몰·주말 시간대는 1~2주 전 매진 — 예약 시 티켓 포함 옵션을 고르면 저희가 대신 예약합니다",
+        "photo": "미포 방향 기준 바다 쪽(우측) 좌석; 달맞이터널을 지나는 곡선 구간이 시그너처 프레임",
+        "facilities": "미포 광장에 카페·편의점; 양쪽 역에 발권 키오스크"
+      },
+      "convenience": {
+        "parking": "미포역 광장에서 차량이 그룹과 합류",
+        "restroom": "청사포·미포 양쪽 역에 있음"
+      },
+      "visitBasics": {
+        "hours": "약 09:30~18:30(성수기 저녁 연장)",
+        "closed": "기상 의존 운행; 강풍 시 일시 중단",
+        "walking": "역 플랫폼은 평탄; 산책로 대안은 목재 데크 2.3km(약 30분)",
+        "admission": "캡슐당 편도: 약 ₩30,000(2인) / ₩39,000(3인) / ₩44,000(4인) — 예약 시 티켓 포함 옵션 선택 가능"
+      },
+      "images": [
+        "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+        "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+        "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+          "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+          "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
+          "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+          "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+          "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
+          "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+          "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+          "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
+          "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+          "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+          "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
+          "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "time": "≈ 13:25",
+      "duration": "60분",
+      "name": "점심 (해운대/미포 인근 현지 식당)",
+      "category": "현지 식사",
+      "description": "스카이캡슐이 도착한 직후 미포/해운대 인근에서 약 60분의 점심 시간을 갖습니다. 가이드 추천 메뉴: **돼지국밥** — 한국전쟁 피란 시절에 태어난 부산 대표 국밥(약 ₩10,000), **밀면**, 또는 항구 곁 해산물 한 상. 점심은 불포함(약 ₩10,000~15,000)이라 입맛과 예산에 맞게 고를 수 있습니다.",
+      "highlights": [],
+      "timeUsed": [
+        "미포역에서 식당까지 도보(약 5분)",
+        "점심(약 50분)",
+        "차량 재집합(약 5분)"
+      ],
+      "whyOnRoute": "**해안과 마을 사이의 자연스러운 쉼표.** 캡슐이 점심시간에 맞춰 미포에 도착하고, 해운대 먹자골목이 역에서 도보 거리라 좋은 식사를 위해 따로 달릴 필요가 없습니다. 여기서 든든히 채우고, 도보가 가장 가파른 오후의 두 산비탈 마을로 들어갑니다.",
+      "_poi_meta": {
+        "poi_key": "OPS_busan_lunch",
+        "verified": true,
+        "match": "lunch_placeholder",
+        "kb_version": "1.15",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Visit Busan",
+          "Busan Metropolitan Government cuisine guide"
+        ]
+      }
+    },
+    {
+      "number": 6,
+      "time": "≈ 15:00",
+      "duration": "90 min",
+      "name": "감천문화마을",
+      "category": "문화마을 / 벽화 예술",
+      "description": "**감천문화마을**은 **'한국의 마추픽추'** 이자 **'한국의 산토리니'**로 불리는 곳으로, 부산 사하구의 한 언덕 마을입니다. 파스텔 색조로 칠해진 집들이 비탈면을 따라 계단식으로 내려앉은 모습이 인상적입니다. 이 마을은 **1920-1930년대** 부산시가 항만 인근 저소득층 주민들을 이주시키면서 형성되기 시작하였습니다. 마을의 본격적인 성격은 **1955년** 한국전쟁을 피해 남쪽으로 내려온 피란민들 중 **태극도 신도 약 800가구(약 4,000명)**가 이곳에 정착하면서 굳어졌습니다. \n\n태극도는 불교·유교·음양 사상을 융합한 한국 고유의 신흥 종교로, 일제강점기에 **조철제**가 창시하였습니다. **'남을 잘 되게 한다'**는 태극도의 철학은 마을의 가장 독특한 특징을 직접적으로 만들어냈습니다: 집들은 의도적으로 층층이 배치되어 **앞집 지붕이 뒷집의 전망을 가리지 않으며**, 마을 전체가 하늘과 바다를 향해 열려 있습니다. \n\n감천마을은 **2009년** 한국 문화체육관광부가 **'부산의 마추픽추를 꿈꾸다'** 공공 미술 재생 사업을 시작하기 전까지 부산에서 가장 낙후된 지역 중 하나였습니다. 이후 **2010년 '미로 미로' 프로젝트**가 이어지며 22점 이상의 위탁 벽화·조각품·예술 설치물이 조성되었고, 그중 하늘정원 전망대의 **'어린 왕자와 여우' 벤치**가 대표 명물로 자리잡았습니다. \n\n감천마을은 **2012년 UN-HABITAT 아시아 도시경관상**을 수상하였으며, 현재 연간 **약 140만 명**의 방문객을 맞이하고 있습니다. 방문은 마을 대표 스탬프 지도 도보 코스를 따라 이루어집니다: **관광안내소** 입구에서 시작해 파노라마 무지개 지붕 전경이 펼쳐지는 **하늘정원 전망대**까지 올라간 뒤, 벽화·한복 대여점·공방·소규모 카페가 늘어선 미로 같은 골목을 따라 내려옵니다. \n\n**마을은 실제 주민들이 거주하는 생활 공간**이므로 — 조용한 대화, 드론 비행 금지, 가정집 내부 플래시 촬영 금지, 쓰레기 반드시 수거해 나가기가 요구됩니다. 운영시간 **09:00-18:00 (3-10월) / 09:00-17:00 (11-2월, 안내센터 기준)**; **마을 자체는 24시간 개방, 입장 무료**.",
+      "highlights": [
+        "**'한국의 마추픽추' / '한국의 산토리니'** — 2012년 UN-HABITAT 아시아 도시경관상",
+        "형성 배경: **1920~30년대** 부산 행정기관 이전 + **1955년 태극도 신도 피란민** (약 800가구)",
+        "**'남을 잘 되게 하라'는 태극도의 가르침** = 뒷집의 전망을 가리지 않는 집 구조",
+        "**2009년 '마추픽추의 꿈' + 2010년 '미로미로'** 문화체육관광부 공공미술 프로젝트",
+        "하늘마루의 **'어린 왕자와 여우' 벤치** — 마을에서 가장 많이 사진 찍히는 명소",
+        "공공미술 재생 사업 이후 **연간 방문객 약 140만 명**",
+        "**주민 거주 마을** — 조용히 대화하기, 드론 금지, 가정집에 플래시 금지",
+        "마을 입장 무료; 스탬프 지도 선택 구매 약 ₩2,000",
+        "**2012년 UN-HABITAT 아시아 도시경관상** — 1955년 태극도 피란민 정착지를 부산의 대표 벽화마을로 탈바꿈시킨 2009년 '마추픽추의 꿈' 공공미술 프로젝트에 수여"
+      ],
+      "timeUsed": [
+        "2번 공영주차장 버스 하차 후 입구까지 도보 이동 (약 5분)",
+        "관광안내소 + 스탬프 지도 구매 (약 10분)",
+        "하늘마루 전망대 + 어린 왕자 벤치 (약 25분)",
+        "골목 벽화 관람 + 소규모 카페 휴식 (약 25분)",
+        "버스로 재집결 (약 10분)"
+      ],
+      "whyOnRoute": "**오후의 대표 마을 — 부산의 파스텔 원형극장.** 해안의 오전을 마치고 서쪽 산비탈로 건너가면, 한국전쟁 피란민의 계단식 터전이 2009년 예술 마을로 다시 태어난 감천이 바다 위로 사탕색 집들을 쌓아 올리고 있습니다. 90분 루프로 뷰포인트와 어린왕자 포토존, 골목 산책까지 돌고 — 바로 뒤의 조용한 닥밭골과 의도적으로 짝을 이뤄, 유명한 마을과 버스가 지나치는 동네 마을을 모두 보게 됩니다.",
+      "visitBasics": {
+        "hours": "매일 09:00–18:00 (3~10월) / 09:00–17:00 (11~2월); 일부 상점·카페는 자체 운영시간 적용",
+        "closed": "연중 개방 (주민 거주 마을)",
+        "admission": "마을 입장 무료; 스탬프 지도 선택 구매 약 2,000원",
+        "walking": "체력 소모 많음 — 경사가 매우 가파른 골목과 계단; 유모차·휠체어 이용이 어려운 구간 다수"
+      },
+      "convenience": {
+        "restroom": "관광안내소 및 주요 전망 포인트 인근에 공중화장실 있음",
+        "parking": "감천 공영주차장 2번 (유료)"
+      },
+      "smartNotes": {
+        "photo": "어린 왕자와 여우 벤치 (대기 줄 길 수 있음) 및 하늘마루 전망대에서 무지개 지붕과 항만의 탁 트인 전경 감상",
+        "facilities": "한복 대여, 공예 체험, 뽑기 등 전통 과자 가판대, 카페; 입구의 소규모 마을 박물관; 스탬프 지도가 마을 탐방의 가장 편리한 방법",
+        "tip": "주민이 거주하는 마을 — 목소리를 낮추고, 드론 금지, 쓰레기는 직접 가져갈 것; 가파른 골목을 위해 미끄럼 방지 신발 착용 권장; 오후 황금빛 노을 시간대 약 16:00–17:00가 마을에서 가장 아름다운 빛을 볼 수 있는 시간"
+      },
+      "_poi_meta": {
+        "poi_key": "gamcheon_culture_village",
+        "verified": true,
+        "match": "exact",
+        "kb_version": "1.24",
+        "verified_date": "2026-04-29",
+        "sources": [
+          "Wikipedia",
+          "CNN",
+          "Visit Busan",
+          "Hapskorea",
+          "Columban Society",
+          "Lifeguin",
+          "Busan Cultural Foundation"
+        ]
+      },
+      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "images": [
+        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+        "/images/itinerary/jagalchi-harbor-sign.webp",
+        "/images/itinerary/jagalchi-market-interior.webp",
+        "/images/itinerary/jagalchi-night-building.webp",
+        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-market-interior.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/itinerary/jagalchi-night-building.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 1",
+          "alt": "감천문화마을 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 2",
+          "alt": "감천문화마을 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 3",
+          "alt": "감천문화마을 — gallery image 3"
+        },
+        {
+          "id": 4,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 4",
+          "alt": "감천문화마을 — gallery image 4"
+        },
+        {
+          "id": 5,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-market-interior.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 5",
+          "alt": "감천문화마을 — gallery image 5"
+        },
+        {
+          "id": 6,
+          "type": "photo",
+          "src": "/images/itinerary/jagalchi-night-building.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 6",
+          "alt": "감천문화마을 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+          "location": "감천문화마을",
+          "caption": "감천문화마을 — photo 8",
+          "alt": "감천문화마을 — gallery image 8"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "time": "≈ 16:50",
+      "duration": "50분",
+      "name": "닥밭골 벽화마을 & 소망계단 모노레일",
+      "category": "벽화마을 / 무료 모노레일",
+      "description": "**닥밭골**은 부산 서구의 산비탈 마을로, 이름에는 한국 전통 한지의 원료인 **닥나무 밭**이 있던 시절의 기억이 담겨 있습니다. 감천처럼 좁은 골목이 가파른 비탈을 타고 오르지만, 단체 관광버스 코스가 된 적이 없어 **벽화 골목과 한지 모티프 작품, 전망 포인트가 빨랫줄 풍경 그대로 조용하고 동네답게** 남아 있습니다. 마을의 랜드마크는 벽화가 그려진 길고 가파른 계단길 **'소망계단'**과 그 옆을 오르는 **무료 경사형 모노레일**입니다 — 마을 어르신들의 귀갓길을 위해 설치됐고 방문객도 탈 수 있어, 오후의 가장 가파른 오르막이 느린 화면의 전망대로 바뀝니다. 감천의 유명세에 대한 의도된 사람-크기의 대구이자, 하차 지점까지 10분 거리의 마지막 정차지입니다.",
+      "image": null,
+      "highlights": [
+        "**조용한 벽화마을** — 인파가 거의 없는 감천의 동네 버전",
+        "한지 종이 유산의 **닥나무 밭**에서 온 이름",
+        "벽화가 그려진 가파른 계단길 **'소망계단'**",
+        "계단 옆 **무료 경사 모노레일** — 마을 어르신용으로 설치, 방문객 탑승 가능",
+        "옛 항구 동네를 내려다보는 산비탈 전망",
+        "무료입장; 실제로 주민이 사는 마을 — 골목에서는 목소리를 낮춰 주세요"
+      ],
+      "timeUsed": [
+        "차량 하차 + 벽화 골목 산책(약 20분)",
+        "소망계단 모노레일 탑승 + 전망(약 15분)",
+        "하강 + 포토 타임(약 10분)",
+        "차량 재집합(약 5분)"
+      ],
+      "whyOnRoute": "**버스들이 지나치는 조용한 마무리.** 감천의 인파 뒤에 닥밭골은 같은 산비탈 부산을 생활의 볼륨으로 보여 줍니다 — 벽화, 소망계단, 그리고 오르막을 대신해 주는 모노레일. 남포 하차 구역까지 10분 거리에서 마을 챕터를 닫아, 하루가 정체 속이 아니라 동네의 질감 속에서 끝납니다.",
+      "_poi_meta": {
+        "match": "authored",
+        "poi_key": "dakbatgol_mural_village",
+        "sources": [
+          "Visit Busan",
+          "Busan Seo-gu Office"
+        ],
+        "verified": false,
+        "verified_date": "2026-08-04"
+      },
+      "smartNotes": {
+        "tip": "테마파크가 아니라 실제 사는 마을입니다 — 골목에서는 목소리를 낮추고 열린 문 안쪽은 촬영하지 마세요",
+        "photo": "모노레일 궤도를 곁에 두고 소망계단을 아래에서 올려찍기; 꼭대기 전망에서 항구 동네 프레임",
+        "facilities": "입구 인근 작은 카페; 하차 후 남포동에 선택지가 더 많습니다"
+      },
+      "convenience": {
+        "parking": "마을 입구 차량 정차",
+        "restroom": "마을 입구 인근 공중화장실"
+      },
+      "visitBasics": {
+        "hours": "개방형 마을; 모노레일은 주간 운행(약 09:00~18:00, 기상에 따라 변동)",
+        "closed": "모노레일은 정비·악천후 시 일시 중단될 수 있음 — 계단은 항상 열려 있음",
+        "walking": "가파른 골목과 계단; 가장 가파른 구간은 모노레일이 커버",
+        "admission": "무료(마을·모노레일)"
+      },
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    },
+    {
+      "number": 8,
+      "time": "≈ 17:50",
+      "duration": "총 ≈ 70분",
+      "name": "하차 (부산 시내 4개 지점)",
+      "category": "하차 — 시내 순차 하차",
+      "description": "**하차는 서쪽에서 동쪽으로 순차 진행됩니다**: **남포동/자갈치 일대(약 17:50)** — 부산 최고의 저녁 먹자골목과 BIFF광장 밤 분위기를 즐기려면 여기서 내리세요; **부산역(약 18:10)** KTX 환승; **서면(약 18:30)** 중심 호텔 클러스터; 마지막으로 **해운대(약 19:00)**. 오후 중에 가이드와 하차 지점을 정하면 됩니다 — 해운대까지 가는 길이 가장 길지만 저녁의 해변 앞에 내려 줍니다.",
+      "image": null,
+      "highlights": [],
+      "timeUsed": [
+        "남포동/자갈치 일대(약 17:50)",
+        "부산역(약 18:10)",
+        "서면(약 18:30)",
+        "해운대(약 19:00)"
+      ],
+      "whyOnRoute": "닥밭골이 남포동에서 10분 거리라 마지막 정차 직후 곧바로 하차 시퀀스가 시작됩니다 — 죽은 이동 시간이 없습니다. 서→동 순서는 아침 픽업의 거울상으로, KTX 이용자(부산역), 중심 호텔(서면), 해변 호텔(해운대)을 되돌아가기 없이 커버합니다.",
+      "_poi_meta": null,
+      "images": [],
+      "imageCredits": [],
+      "galleryItems": []
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "탑승 (부산 도심 3개 거점)",
+      "type": "origin",
+      "theme": "출발"
+    },
+    {
+      "name": "해동 용궁사",
+      "type": "primary",
+      "theme": "해변 사찰"
+    },
+    {
+      "name": "청사포 다릿돌전망대 (유리 스카이워크)",
+      "type": "secondary",
+      "theme": "Glass Skywalk"
+    },
+    {
+      "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+      "type": "primary",
+      "theme": "Sky Capsule"
+    },
+    {
+      "name": "점심 식사 (부산 현지 식당)",
+      "type": "meal",
+      "theme": "식사"
+    },
+    {
+      "name": "감천문화마을",
+      "type": "primary",
+      "theme": "예술 마을"
+    },
+    {
+      "name": "닥밭골 벽화마을 & 소망계단 모노레일",
+      "type": "secondary",
+      "theme": "Mural Village"
+    },
+    {
+      "name": "하차 (부산 시내 4개 지점)",
+      "type": "return",
+      "theme": "Return"
+    }
+  ],
+  "routePhases": [
+    {
+      "phase": "해안의 오전",
+      "duration": "≈ 3시간",
+      "description": "시내 3개 역 픽업(08:30~09:30) 후 단체버스 인파 전의 해동용궁사, 이어 청사포 다릿돌전망대(유리 스카이워크)."
+    },
+    {
+      "phase": "스카이캡슐 + 점심",
+      "duration": "≈ 2시간",
+      "description": "청사포→미포 파스텔 스카이캡슐 탑승(티켓 선택 — 미탑승 게스트는 차량 이동 또는 그린레일웨이 산책로 도보), 해운대 인근 점심."
+    },
+    {
+      "phase": "두 산비탈 마을",
+      "duration": "≈ 3시간",
+      "description": "감천문화마을 포토 루프(90분), 이어 조용한 닥밭골 벽화마을과 무료 소망계단 모노레일(50분)."
+    },
+    {
+      "phase": "시내 마무리",
+      "duration": "≈ 1시간",
+      "description": "순차 하차: 남포동 → 부산역 → 서면 → 해운대."
+    }
+  ],
+  "routeShapeIntro": {
+    "title": "이 부산 하루의 흐름",
+    "subtitle": "동해안부터 시작합니다: 한적한 오전 시간대의 해안 사찰, 이어서 청사포 클러스터 — 유리 스카이워크와 쌍둥이 등대 — 에서 스카이캡슐 탑승 자체가 미포까지의 해안 이동이 됩니다. 점심 후에는 부산 서쪽 산비탈로 건너가 분위기가 다른 두 마을을 만납니다: 세계적으로 유명한 감천의 색, 그리고 무료 모노레일이 '소망계단'을 오르는 조용한 닥밭골. 시내 하차로 하루를 닫습니다. 08:30~약 18:30."
+  },
+  "whyTourWorks": {
+    "bestFor": [
+      "부산 첫 방문자",
+      "커플·사진 중심 여행자",
+      "성인 가족·친구 그룹",
+      "해안과 마을을 하루에 모두 보고 싶은 여행자"
+    ],
+    "lessIdealFor": [
+      "도보·경사를 최소화하고 싶은 여행자",
+      "유아차 동반 그룹(마을 골목과 계단)",
+      "야경 중심 여행자 — 주간 코스입니다"
+    ],
+    "routeLogicSections": [
+      {
+        "title": "일정 속도 및 지리적 구성",
+        "icon": "route",
+        "iconBg": "bg-sky-50/80",
+        "iconColor": "text-sky-600",
+        "items": [
+          {
+            "label": "사찰은 한적한 시간대에",
+            "detail": "해동용궁사는 부산에서 가장 많이 촬영되는 사찰로, 단체버스 인파는 보통 11:00부터 몰립니다. 약 10:00 도착이면 108계단과 해수관음대불 뷰포인트를 줄 서지 않고 걸을 수 있습니다."
+          },
+          {
+            "label": "캡슐 탑승이 곧 이동",
+            "detail": "청사포에서 파스텔 스카이캡슐이 해안을 따라 2.3km를 미포까지 미끄러져 갑니다 — 우회가 아니라 차량 이동 한 구간을 대체하는 셈입니다. 티켓을 선택하지 않은 게스트는 차량으로 미포까지 이동하거나 같은 해안의 무료 그린레일웨이 산책로를 걷습니다."
+          },
+          {
+            "label": "두 산비탈 마을, 두 분위기",
+            "detail": "감천은 부산의 세계적인 파스텔 원형극장이고, 10분 거리의 닥밭골은 그 조용한 동네 버전입니다 — 인파가 거의 없는 벽화 골목, 그리고 마을 어르신들을 위해 놓인 무료 경사 모노레일이 '소망계단'을 대신 올라 줍니다."
+          },
+          {
+            "label": "핵심 정차지는 전부 무료, 유료는 단 하나뿐 — 그것도 선택",
+            "detail": "용궁사·다릿돌전망대·감천·닥밭골(모노레일 포함)은 모두 무료입니다. 이 하루의 유일한 유료 어트랙션은 스카이캡슐이고, 그마저 예약 시 선택입니다: 티켓 포함으로 예약하거나, 산책로를 걷고 싶다면 불포함으로."
+          }
+        ]
+      }
+    ]
+  },
+  "practicalAccordionItems": [
+    {
+      "id": "pickup",
+      "title": "픽업 및 드롭오프",
+      "preview": "부산 도시철도 연선의 픽업 장소 3곳: 서면역 4번 출구 (08:30), 부산역…",
+      "content": [
+        "부산 도시철도 연선의 픽업 장소 3곳: 서면역 4번 출구 (08:30), 부산역 4번 출구 — KTX 개찰구 아님 (08:50), 해운대역 5번 출구 (09:30).",
+        "드롭오프 순서: 남포동/자갈치 ≈17:50, 부산역 ≈18:10, 서면 ≈18:30, 해운대 ≈19:00.",
+        "실질적인 투어 시간은 픽업 지점에 따라 다릅니다: 서면 ≈10시간, 해운대 ≈9.5시간."
+      ]
+    },
+    {
+      "id": "what-to-bring",
+      "title": "복장 및 준비물",
+      "preview": "미끄럼 방지 편안한 워킹화 — 감천의 언덕 골목길과 용궁사 108계단 모두…",
+      "content": [
+        "미끄럼 방지 편안한 워킹화 — 감천의 언덕 골목길과 용궁사 108계단 모두 접지력이 좋은 신발이 필요합니다.",
+        "냉방이 강한 차량 내부와 용궁사의 해풍을 대비한 얇은 겉옷.",
+        "카메라 또는 스마트폰 (감천과 청사포가 이번 투어의 주요 포토 스팟입니다).",
+        "점심 식사 비용(₩10,000–₩20,000), 청사포의 선택 옵션인 스카이캡슐/해변열차 탑승권, 부산타워 전망대 입장권을 위한 현금 또는 카드."
+      ]
+    },
+    {
+      "id": "weather-policy",
+      "title": "날씨 정책",
+      "preview": "연중 운영.",
+      "content": [
+        "연중 운영.",
+        "가벼운 비: 투어는 예정대로 진행됩니다 — 비 내리는 용궁사는 특유의 분위기가 있으며, 감천의 골목길도 통행에 문제가 없습니다.",
+        "폭우 또는 폭풍 시: 운영사가 경로를 변경할 수 있습니다(용궁사 하단 경내가 미끄러워지고, 감천 계단이 위험해질 수 있음). 사전 통보 후 일정 변경을 제공합니다.",
+        "태풍 수준의 날씨: 운영사 측에서 전액 환불 또는 일정 변경을 제공합니다."
+      ]
+    },
+    {
+      "id": "inclusions",
+      "title": "포함 사항",
+      "preview": "스몰그룹 미니코치(최대 약 12인), 공인 영어 가이드, 유류·톨비·주차비.",
+      "content": [
+        "스몰그룹 미니코치(최대 약 12인), 공인 영어 가이드, 유류·톨비·주차비.",
+        "핵심 정차지는 전부 무료입장: 해동용궁사, 청사포 다릿돌전망대, 감천문화마을, 닥밭골 벽화마을(소망계단 모노레일 무료).",
+        "스카이캡슐 티켓: 예약 시 선택 — 포함(그룹 몫 캡슐 사전 예약, 캡슐 2인 기준) 또는 불포함(무료 그린레일웨이 산책로 도보 또는 차량으로 미포 이동).",
+        "불포함: 점심(약 ₩10,000~15,000), 음료, 개인 지출, 팁."
+      ]
+    },
+    {
+      "id": "language",
+      "title": "언어",
+      "preview": "투어 주요 언어: 영어.",
+      "content": [
+        "투어 주요 언어: 영어.",
+        "중국어 가이드는 요청 시 가능 — 3일 이상 전에 예약 필요.",
+        "메뉴판, 간판, 노점 상인과의 대화 등 하루 종일 한국어가 사용되며, 가이드가 통역을 담당합니다."
+      ]
+    },
+    {
+      "id": "walking",
+      "title": "도보 및 지형",
+      "preview": "짧게 힘든 구간이 있는 중간 난이도.",
+      "content": [
+        "짧게 힘든 구간이 있는 중간 난이도.",
+        "용궁사는 108개 돌계단을 내려갔다 다시 올라옵니다.",
+        "다릿돌전망대는 평탄한 유리 데크(신발 커버 제공).",
+        "스카이캡슐 역은 평탄하고 플랫폼 계단이 조금 있습니다.",
+        "감천은 산비탈 골목과 계단 — 편한 신발 필수.",
+        "닥밭골 소망계단은 가파르지만 무료 모노레일이 대신 올라 줍니다.",
+        "총 도보 약 4~5km."
+      ]
+    },
+    {
+      "id": "capsule",
+      "title": "스카이캡슐 (티켓 선택)",
+      "preview": "포함/불포함 — 예약 시 선택합니다.",
+      "content": [
+        "스카이캡슐은 청사포~미포 2.3km 고가 레일을 파스텔 4인승 캐빈으로 달립니다(약 30분), 해안선을 내내 곁에 두고.",
+        "티켓 포함 옵션: 그룹 몫의 캡슐을 사전 예약해 드립니다(캡슐당 요금 약 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도, 포함 옵션은 캡슐 2인 기준 책정).",
+        "티켓 불포함 옵션: 같은 해안의 무료 그린레일웨이 산책로(2.3km, 약 30분)를 걷거나 차량으로 미포까지 이동합니다.",
+        "운행은 기상에 따라 달라집니다(강풍 시 일시 중단). 캡슐이 서면 산책로 도보와 차량 이동으로 일정은 그대로 유지됩니다."
+      ]
+    },
+    {
+      "id": "cancellation",
+      "title": "취소 정책",
+      "preview": "픽업 24시간 전까지 무료 취소.",
+      "content": [
+        "픽업 24시간 전까지 무료 취소.",
+        "당일 취소 및 노쇼는 환불되지 않습니다."
+      ]
+    }
+  ],
+  "practicalWeatherStatic": {
+    "today": {
+      "temp": "—",
+      "label": "계절별 안내 참조"
+    },
+    "tomorrow": {
+      "temp": "—",
+      "label": "계절별 안내 참조"
+    },
+    "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+  },
+  "seasonalVariations": [
+    {
+      "season": "봄 (3~5월)",
+      "description": "3월 말~4월 초 블루라인 해안을 따라 벚꽃이 늘어섭니다 — 벚꽃 시기의 캡슐 탑승이 연중 최고입니다. 사찰의 오전 공기도 맑습니다."
+    },
+    {
+      "season": "여름 (6~8월)",
+      "description": "해가 길고 해안은 도심보다 시원합니다. 7월 장마에는 스카이워크 체류가 짧아질 수 있고, 캡슐은 저녁까지 연장 운행합니다."
+    },
+    {
+      "season": "가을 (9~11월)",
+      "description": "연중 가장 맑은 하늘 — 다릿돌 유리 바닥의 시야가 가장 좋고 감천 뷰포인트의 색감도 가장 선명합니다."
+    },
+    {
+      "season": "겨울 (12~2월)",
+      "description": "모든 정차지가 가장 한산하고 빛이 청명합니다. 캡슐은 난방이 되며, 사찰 테라스와 마을 골목은 따뜻하게 입으세요."
+    }
+  ],
+  "bookingTrustItems": [
+    {
+      "icon": "check-circle",
+      "title": "공인 현지 가이드",
+      "description": "부산 공인 가이드 동행",
+      "iconBg": "bg-emerald-50/80",
+      "iconColor": "text-emerald-600"
+    },
+    {
+      "icon": "users",
+      "title": "소규모 그룹",
+      "description": "최대 약 12명",
+      "iconBg": "bg-pink-50/80",
+      "iconColor": "text-pink-600"
+    },
+    {
+      "icon": "shield",
+      "title": "입장료 포함",
+      "description": "주요 입장료 포함",
+      "iconBg": "bg-sky-50/80",
+      "iconColor": "text-sky-600"
+    }
+  ],
+  "bookingSupportSteps": [
+    {
+      "timing": "즉시",
+      "title": "즉시 예약 확정",
+      "detail": "일정 요약이 포함된 예약 확인서 발송"
+    },
+    {
+      "timing": "투어 전날",
+      "title": "픽업 안내",
+      "detail": "정확한 픽업 장소 및 차량 정보를 WhatsApp으로 안내"
+    },
+    {
+      "timing": "투어 당일 아침",
+      "title": "픽업 확인",
+      "detail": "기사가 도착 10분 전에 확인 연락 드립니다"
+    },
+    {
+      "timing": "투어 중",
+      "title": "투어 중 지원",
+      "detail": "운영팀 직통 연락"
+    },
+    {
+      "timing": "당일 종료 시",
+      "title": "유연한 하차 장소 선택",
+      "detail": "남포동, 부산역, 서면, 해운대 중 원하시는 곳에서 하차 가능"
+    },
+    {
+      "timing": "투어 후",
+      "title": "리뷰 및 후속 조치",
+      "detail": "선택적 리뷰 및 후속 조치"
+    }
+  ],
+  "staticQuestions": [
+    {
+      "question": "스카이캡슐 티켓이 포함인가요?",
+      "answer": "예약 시 선택입니다. 티켓 포함 옵션을 고르면 그룹 몫의 캡슐을 사전 예약해 드립니다(캡슐당 요금: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도 — 포함 옵션은 캡슐 2인 기준 책정). 기본 옵션을 고르면 다른 게스트가 캡슐을 타는 동안 무료 그린레일웨이 산책로를 걷거나 차량으로 미포까지 이동하면 됩니다."
+    },
+    {
+      "question": "스카이캡슐은 미리 예약해야 하나요?",
+      "answer": "일몰·주말 시간대는 1~2주 전에 매진됩니다. 티켓 포함 옵션을 선택하시면 예약 확정 시 저희가 그룹 예약을 처리합니다. 한산한 평일에는 현장 키오스크 발권도 가능하지만 보장되지는 않습니다."
+    },
+    {
+      "question": "점심이 포함인가요?",
+      "answer": "아니요 — 점심은 별도입니다(약 ₩10,000~15,000). 가이드가 해운대/미포 인근의 돼지국밥(부산 대표 국밥), 밀면, 해산물 식당 등을 추천해 드립니다."
+    },
+    {
+      "question": "도보량과 경사는 어느 정도인가요?",
+      "answer": "짧게 힘든 구간이 있는 중상 난이도입니다: 용궁사 108계단 왕복, 다릿돌전망대는 평탄한 유리 데크, 캡슐 역은 대체로 평탄, 감천은 산비탈 골목, 닥밭골은 계단이지만 무료 모노레일이 대신 올라 줍니다. 총 도보 약 4~5km."
+    },
+    {
+      "question": "아이·시니어도 괜찮을까요?",
+      "answer": "활동적인 여행자라면 대부분 괜찮습니다. 아이들은 유리 바닥과 캡슐을 특히 좋아하고, 닥밭골 모노레일이 가장 가파른 오르막을 대신합니다. 용궁사 계단과 감천 경사가 이 하루의 두 고비이니 천천히, 필요하면 샛골목은 건너뛰세요."
+    },
+    {
+      "question": "부산 대표명소 일일 투어와는 무엇이 다른가요?",
+      "answer": "같은 운영사의 다른 초점입니다. 대표명소 투어는 도시 클래식 스윕(유엔기념공원, 자갈치시장)을 돌고, 이 스몰그룹 코스는 해안과 마을에 집중합니다: 다릿돌전망대 단독 정차, 티켓 포함 옵션이 있는 스카이캡슐 탑승, 그리고 대형 버스가 지나치는 조용한 닥밭골 벽화마을."
+    },
+    {
+      "question": "픽업·하차는 어디서 하나요?",
+      "answer": "시내 3개 역에서 픽업합니다 — 서면(08:30), 부산역(08:50), 해운대(09:30). 하차는 남포동 → 부산역 → 서면 → 해운대 순서로 약 17:50~19:00에 진행됩니다."
+    },
+    {
+      "question": "비가 오면 어떻게 되나요?",
+      "answer": "우천 시에도 진행됩니다. 캡슐과 모노레일은 일반적인 비에는 운행하고(강풍 시에만 일시 중단), 스카이워크는 신발 커버를 제공하며, 마을 골목은 우산으로 충분합니다. 기상이 심하면 사찰 해안 테라스 체류가 짧아질 수 있습니다."
+    }
+  ],
+  "guestReviews": [],
+  "reviewsSummary": {
+    "averageRating": 0,
+    "totalReviews": 0,
+    "ratingDistribution": [
+      {
+        "stars": 5,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 4,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 3,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 2,
+        "count": 0,
+        "percentage": 0
+      },
+      {
+        "stars": 1,
+        "count": 0,
+        "percentage": 0
+      }
+    ],
+    "highlights": []
+  },
+  "sticky_booking_bar": {
+    "note": "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
+    "price": {
+      "amountLabel": "59",
+      "currency": "USD",
+      "per": "person",
+      "salePriceUsd": 59
+    }
+  },
+  "pickup_dropoff": {
+    "departure": [
+      {
+        "order": 1,
+        "time": "08:30",
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 2,
+        "time": "08:50",
+        "name": "Busan Station Exit 4 (not the KTX gate)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "time": "09:30",
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "return": [
+      {
+        "order": 1,
+        "name": "Nampo-dong / Jagalchi area",
+        "type": "station",
+        "lat": 35.09663,
+        "lng": 129.0308
+      },
+      {
+        "order": 2,
+        "name": "Busan Station (Exit 4)",
+        "type": "station",
+        "lat": 35.11449,
+        "lng": 129.03933
+      },
+      {
+        "order": 3,
+        "name": "Seomyeon Station (Exit 4)",
+        "type": "station",
+        "lat": 35.15782,
+        "lng": 129.06003
+      },
+      {
+        "order": 4,
+        "name": "Haeundae Station (Exit 5)",
+        "type": "station",
+        "lat": 35.16396,
+        "lng": 129.15853
+      }
+    ],
+    "notes": [
+      "예약 시 호텔에서 가장 가까운 픽업 역을 선택하세요. 하차는 남포동 → 부산역 → 서면 → 해운대 순차 진행(약 17:50~19:00)이며, 서면 탑승 게스트의 하루가 가장 길고 해운대가 가장 짧습니다."
+    ]
+  },
+  "matching_profile": {
+    "profile_version": 1,
+    "is_active": true,
+    "product_id": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+    "product_type": "small_group",
+    "route_type": "fixed_route",
+    "destination_region": "busan_city",
+    "region_type": "busan_city",
+    "vehicle_type": "coach",
+    "duration_hours": 9,
+    "region_tags": [
+      "busan_haeundae",
+      "busan_gijang",
+      "busan_namgu",
+      "busan_saha",
+      "busan_jung"
+    ],
+    "theme_tags": [
+      "temple",
+      "coastal",
+      "war_memorial",
+      "mural_village",
+      "fish_market",
+      "korean_war_history"
+    ],
+    "poi_tags": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "pace_level": 0.7,
+    "walking_level": 0.85,
+    "scenic_level": 0.9,
+    "photo_level": 1,
+    "culture_level": 0.95,
+    "relax_level": 0.5,
+    "first_time_fit": 1,
+    "family_fit": 0.85,
+    "senior_fit": 0.7,
+    "couple_fit": 0.95,
+    "solo_traveler_fit": 0.9,
+    "active_traveler_fit": 0.8,
+    "adult_family_fit": 1,
+    "family_with_teens_fit": 0.95,
+    "young_kids_fit": 0.55,
+    "senior_active_fit": 0.7,
+    "senior_general_fit": 0.55,
+    "mobility_friendly_fit": 0.4,
+    "stroller_fit": 0.4,
+    "one_day_fit": 1,
+    "same_day_flight_fit": 0.3,
+    "rain_fit": 0.5,
+    "value_for_money_fit": 0.95,
+    "iconic_landmark_fit": 1,
+    "cafe_fit": 0.7,
+    "food_fit": 0.8,
+    "nature_fit": 0.8,
+    "beach_fit": 0.6,
+    "nightlife_fit": 0.2,
+    "shopping_fit": 0.2,
+    "no_shopping_fit": 0.5,
+    "local_culture_fit": 1,
+    "storytelling_fit": 0.8,
+    "unesco_fit": 0,
+    "intangible_heritage_fit": 0.2,
+    "indoor_ratio": 0.2,
+    "weather_sensitivity": 0.5,
+    "comfort_level": 0.6,
+    "budget_fit": 0.85,
+    "premium_fit": 0.3,
+    "small_group_fit": 1,
+    "private_fit": 0.05,
+    "bus_fit": 1,
+    "price_band": "mid",
+    "pickup_base": "busan_central",
+    "return_time_band": "18:00-19:00",
+    "duration_band": "9h",
+    "min_recommended_age": 8,
+    "hard_constraints": {
+      "avoidIf": [
+        "mobility_limited"
+      ],
+      "notIdealFor": [
+        "very_low_mobility",
+        "stroller_heavy_groups"
+      ]
+    },
+    "walking_notes": [
+      "Active walking day with several flights of stairs (Yonggungsa 108 steps, Gamcheon hillside).",
+      "Average fitness expected.",
+      "Sturdy closed-toe shoes recommended (Jagalchi 1F floor is wet)."
+    ],
+    "keywords": [
+      "busan top attractions day tour",
+      "busan small group tour",
+      "haedong yonggungsa",
+      "gamcheon culture village",
+      "jagalchi market",
+      "un memorial cemetery busan"
+    ],
+    "synonym_hints": [
+      "busan one day classic tour",
+      "busan must-see day trip",
+      "busan top 5 highlights"
+    ],
+    "seasonality": "year_round",
+    "pickup_base_normalized": "busan",
+    "vehicle_type_legacy": "bus_coach",
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "private_tour_fit": 0.05,
+    "customizable_route_fit": 0.1,
+    "flexibility_fit": 0.3,
+    "fixed_itinerary_fit": 1,
+    "buddhist_temple_fit": 1,
+    "scenic_temple_fit": 1,
+    "coastal_temple_fit": 1,
+    "seaside_temple_fit": 1,
+    "war_memorial_fit": 1,
+    "korean_war_history_fit": 1,
+    "mural_village_fit": 1,
+    "fish_market_fit": 1,
+    "market_fit": 1,
+    "street_food_fit": 0.9,
+    "skywalk_fit": 1,
+    "sky_capsule_fit": 0.7,
+    "coastal_railway_fit": 1,
+    "history_culture_fit": 1,
+    "k_drama_filming_fit": 0.5,
+    "religious_history_fit": 0.85,
+    "premium_dining_fit": 0.3,
+    "seasonal_fit": 0.85,
+    "china_mainland_market_fit": 0,
+    "korea_domestic_market_fit": 0,
+    "taiwan_market_fit": 1,
+    "singapore_market_fit": 1,
+    "hong_kong_market_fit": 1,
+    "china_diaspora_overseas_market_fit": 0.95,
+    "se_asia_market_fit": 0.95,
+    "us_market_fit": 0.85,
+    "europe_market_fit": 0.85,
+    "australia_market_fit": 0.85,
+    "japan_market_fit": 0.85,
+    "busan_signature_route_fit": 1,
+    "skywalk_coastal_railway_fit": 1,
+    "first_time_busan_fit": 1,
+    "no_inter_city_travel_fit": 1,
+    "differentiates_from_busan_gyeongju_routes": true,
+    "deep_history_traveler_fit_minimum": 0.7,
+    "english_speaking_guide_provided": true,
+    "chinese_speaking_guide_available_on_advance_notice": true,
+    "japanese_speaking_guide_available_on_advance_notice": true
+  },
+  "matching_metadata": {
+    "primary_themes": [
+      "busan",
+      "coastal",
+      "seaside_temple",
+      "sky_capsule",
+      "culture_village",
+      "mural_village",
+      "small_group"
+    ],
+    "secondary_themes": [
+      "glass_skywalk",
+      "blueline_park",
+      "gamcheon",
+      "dakbatgol_monorail",
+      "photo_spots",
+      "free_admission_anchors",
+      "first_time_busan"
+    ],
+    "best_for": [
+      "first_time_busan",
+      "couples",
+      "photo_lovers",
+      "adult_families",
+      "small_group_seekers"
+    ],
+    "not_recommended_for": [
+      "minimal_walking_seekers",
+      "stroller_heavy_groups",
+      "nightlife_focused_travelers"
+    ],
+    "anchor_pois": [
+      "Haedong Yonggungsa Temple",
+      "Cheongsapo Daritdol Observatory",
+      "Haeundae Blueline Park Sky Capsule",
+      "Gamcheon Culture Village",
+      "Dakbatgol Mural Village"
+    ],
+    "anchor_poi_keys": [
+      "haedong_yonggungsa",
+      "cheongsapo_daritdol_observatory",
+      "cheongsapo_blue_line_park",
+      "gamcheon_culture_village",
+      "dakbatgol_mural_village"
+    ],
+    "competing_products": [
+      "busan-top-attractions-day-tour",
+      "busan-small-group-sightseeing-tour-cruise-passengers",
+      "busan-private-car-charter-cruise-shore"
+    ],
+    "reviews_attribution": "New product (2026-08) — no imported reviews; rating starts at 0.",
+    "unesco_fit_note": "No UNESCO property on this route. Cultural weight comes from the seaside temple (1376 founding), Korean-War refugee village heritage at Gamcheon, and hanji paper-mulberry heritage at Dakbatgol."
+  },
+  "itinerary_variants": [],
+  "_publication": {
+    "schema_version": "v4_canonical",
+    "created": "2026-08-04",
+    "last_modified": "2026-08-04",
+    "version_history": [
+      "v1_authored_2026_08_04"
+    ],
+    "fix_passes": {
+      "v1_authored_2026_08_04": "New product (owner instruction 2026-08-04). Donor: busan-top-attractions-day-tour — pickup/Yonggungsa/lunch-slot/Gamcheon stops, 3-station pickup_dropoff, Busan weather/glance/trust/support blocks reused per locale; Daritdol Observatory, Sky Capsule (ticket-optional), Dakbatgol Mural Village & wish-stairs monorail, and all product-level copy authored fresh in 6 locales (scripts/busan-smallgroup-content/). matching_profile derived from donor with identity/anchor patches — full KB calibration pending. Price set by owner (2026-08-04): USD 59 Sky Capsule ticket excluded / USD 79 ticket included. Daritdol and Dakbatgol ship without photos (no owned imagery yet)."
+    }
+  },
+  "page_sections": [
+    {
+      "id": "hero",
+      "section_html_id": null,
+      "component": "TourHeroSection",
+      "props": {
+        "headlineLine1": "해동용궁사·스카이캡슐",
+        "headlineLine2": "& 문화마을",
+        "hero": {
+          "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+          "imagePosition": "center 40%",
+          "images": [
+            "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+          ],
+          "tagline": "한적한 시간대의 해안 사찰, 바다 위 유리 스카이워크, 파스텔 캡슐을 타고 내려가는 해안선, 그리고 성격이 다른 두 산비탈 마을 — 하나는 세계적으로 유명하고, 하나는 아직 동네답습니다",
+          "pills": [
+            "small_group",
+            "부산",
+            "first_time"
+          ],
+          "meta": {
+            "duration": "≈ 10시간 (08:30 첫 픽업, ≈ 18:30 마지막 시내 하차)",
+            "region": "부산",
+            "stops": "8개 코스",
+            "rating": 0,
+            "ratingStars": 0
+          }
+        }
+      }
+    },
+    {
+      "id": "subnav",
+      "section_html_id": null,
+      "component": "TourTabsNav",
+      "props": {
+        "subnavItems": [
+          {
+            "id": "overview",
+            "label": "개요"
+          },
+          {
+            "id": "itinerary",
+            "label": "여행 일정"
+          },
+          {
+            "id": "practical",
+            "label": "실용 정보"
+          },
+          {
+            "id": "reviews",
+            "label": "리뷰"
+          },
+          {
+            "id": "booking",
+            "label": "예약"
+          }
+        ]
+      }
+    },
+    {
+      "id": "overview",
+      "section_html_id": "overview",
+      "component": "TourAtAGlance",
+      "props": {
+        "glanceItems": [
+          {
+            "icon": "camera",
+            "label": "사진 가치",
+            "value": "높음",
+            "level": 5
+          },
+          {
+            "icon": "mountain",
+            "label": "경관",
+            "value": "좋음",
+            "level": 4
+          },
+          {
+            "icon": "footprints",
+            "label": "도보",
+            "value": "높음",
+            "level": 4
+          },
+          {
+            "icon": "cloud-rain",
+            "label": "우천 안전성",
+            "value": "보통",
+            "level": 3
+          },
+          {
+            "icon": "users",
+            "label": "가족 적합도",
+            "value": "좋음",
+            "level": 4
+          },
+          {
+            "icon": "gauge",
+            "label": "균형",
+            "value": "균형 잡힘",
+            "level": 4
+          }
+        ]
+      }
+    },
+    {
+      "id": "atmosphere",
+      "section_html_id": null,
+      "component": "TourAtmosphereGallery",
+      "props": {
+        "galleryItems": [
+          {
+            "id": 1,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 1",
+            "alt": "해동 용궁사 — gallery image 1"
+          },
+          {
+            "id": 2,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 2",
+            "alt": "해동 용궁사 — gallery image 2"
+          },
+          {
+            "id": 3,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 3",
+            "alt": "해동 용궁사 — gallery image 3"
+          },
+          {
+            "id": 4,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 4",
+            "alt": "해동 용궁사 — gallery image 4"
+          },
+          {
+            "id": 5,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 5",
+            "alt": "해동 용궁사 — gallery image 5"
+          },
+          {
+            "id": 6,
+            "type": "photo",
+            "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+            "location": "해동 용궁사",
+            "caption": "해동 용궁사 — photo 6",
+            "alt": "해동 용궁사 — gallery image 6"
+          },
+          {
+            "id": 7,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
+            "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
+          },
+          {
+            "id": 8,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+            "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
+            "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
+          },
+          {
+            "id": 9,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+            "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
+            "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
+          },
+          {
+            "id": 10,
+            "type": "photo",
+            "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+            "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
+            "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+          },
+          {
+            "id": 11,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 1",
+            "alt": "감천문화마을 — gallery image 1"
+          },
+          {
+            "id": 12,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 2",
+            "alt": "감천문화마을 — gallery image 2"
+          },
+          {
+            "id": 13,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 3",
+            "alt": "감천문화마을 — gallery image 3"
+          },
+          {
+            "id": 14,
+            "type": "photo",
+            "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 4",
+            "alt": "감천문화마을 — gallery image 4"
+          },
+          {
+            "id": 15,
+            "type": "photo",
+            "src": "/images/itinerary/jagalchi-market-interior.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 5",
+            "alt": "감천문화마을 — gallery image 5"
+          },
+          {
+            "id": 16,
+            "type": "photo",
+            "src": "/images/itinerary/jagalchi-night-building.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 6",
+            "alt": "감천문화마을 — gallery image 6"
+          },
+          {
+            "id": 17,
+            "type": "photo",
+            "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+            "location": "감천문화마을",
+            "caption": "감천문화마을 — photo 8",
+            "alt": "감천문화마을 — gallery image 8"
+          }
+        ]
+      }
+    },
+    {
+      "id": "itinerary",
+      "section_html_id": "itinerary",
+      "component": "TourTimelineSection",
+      "props": {
+        "itineraryStops": [
+          {
+            "number": 1,
+            "time": "≈ 08:30–09:30",
+            "duration": "30분",
+            "name": "탑승 (부산 중심부 3개 역)",
+            "category": "이동 / 탑승",
+            "description": "탑승 장소는 하루 일정을 효율적으로 진행하기 위해 도심 내 세 곳의 주요 교통 거점으로 통합됩니다. **부산역 (1호선)**은 KTX 터미널 인근 또는 초량·남포동 일대에 숙박하시는 분들을 위한 거점이며, **서면역 (1·2호선)**은 부산에서 가장 분주한 지하철 환승역으로 롯데호텔 부산 및 서면 의료거리 주변 도심 호텔 투숙객에게 최적의 위치입니다. \n\n**해운대역 (2호선)**은 웨스틴조선, 파크하얏트, 시그니엘 부산 등 해변 리조트 지구에 숙박하시는 분들을 위한 거점입니다. 차량은 세 곳을 순서대로 경유합니다 (일반적으로 부산역 약 09:00, 서면 약 09:15, 해운대 약 09:30). 이후 해안 광안대교 경로를 따라 기장군 방면으로 이동하여 당일 첫 번째 목적지로 향합니다. 마지막 탑승 지점에서 해동 용궁사까지의 총 이동 시간은 교통 상황에 따라 약 30~40분입니다. \n\n기사님이 한국어·영어 병기 일정표 카드를 배포해 드리오니, 이후 감천문화마을과 닥밭골 방문 일정을 원활히 진행하기 위해 예정 시각 5분 전에 탑승 장소에 나와 계시기 바랍니다.",
+            "highlights": [
+              "부산 중심부 세 곳의 탑승 옵션 (부산역, 서면, 해운대)",
+              "소규모 그룹 전용 차량 (최대 약 14명)",
+              "첫 번째 목적지까지 총 이동 시간: 약 30~40분",
+              "탑승 시 한국어·영어 병기 일정표 카드 배포"
+            ],
+            "timeUsed": [
+              "부산역 탑승 (약 09:00, 약 5분)",
+              "서면역까지 이동 (약 10분)",
+              "서면 탑승 (약 09:15, 약 5분)",
+              "해운대역까지 이동 (약 15분)",
+              "해운대 탑승 (약 09:30, 약 5분)"
+            ],
+            "whyOnRoute": "세 곳의 탑승 지점은 부산의 주요 호텔 밀집 지역 (KTX/남포, 서면 도심, 해운대 해변)을 커버하므로, 투숙객들이 아침 일찍 도시를 가로질러 이동할 필요가 없습니다. 북서→동쪽 순서로 경유함으로써 차량 이동 거리를 최소화하고, 오전 10시경 해동 용궁사에 도착할 수 있어 관광버스 혼잡이 심해지기 전에 방문이 가능합니다.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_pickup_central",
+              "verified": true,
+              "match": "transit_only",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metro"
+              ]
+            },
+            "_role": "pickup"
+          },
+          {
+            "number": 2,
+            "time": "≈ 10:00",
+            "duration": "75분",
+            "name": "해동 용궁사",
+            "category": "불교 사찰 / 해안",
+            "description": "**해동 용궁사 — 한국에서 가장 유명한 해변 불교 사찰**로, 부산 북동부 기장군의 바위 절벽 위에 자리하며, 산이 아닌 바닷가에 위치한 몇 안 되는 주요 한국 사찰 중 하나입니다. 원래 **1376년 고려 시대에 나옹 혜근(1320-1376)**이라는 위대한 불교 고승이 창건하였으며, 그는 왕실 고문이자 선사로서 조선 초기 한국 불교의 형성에 큰 영향을 미쳤습니다. \n\n전설에 따르면, 나옹은 전국적인 가뭄이 들었을 때 경주 분황사에서 수행 중이었는데, 동해 신이 꿈에 나타나 봉래산(이 해변 절벽의 원래 이름) 위에 사찰을 세우면 나라의 번영이 회복될 것이라 하였습니다. 나옹은 사찰을 창건하고 관세음보살에게 봉헌하여 **보문사**라 이름 지었습니다. 사찰은 **1592년 임진왜란** 때 소실되어 300여 년간 폐허로 남아 있다가, **1930년대 초 통도사의 운강 스님이 중창을 시작**하였습니다. \n\n현재의 이름인 **해동 용궁사**는 **1974년**에 붙여졌는데, 이는 정암 주지 스님이 100일 기도(정건 기도) 중 관세음보살이 용의 등을 타고 오색빛을 발산하며 내려오는 환상을 보았기 때문입니다. 방문은 사찰의 대표적인 참배 동선을 따라 진행됩니다: 입구 광장의 **십이지신(12 수호신)** 줄을 지나, **7층 무사탑**(운전자들이 돌 법륜 앞에 동전을 올리며 소원을 비는 곳)을 지나, 작은 대나무 숲을 통과하는 유명한 **108계단**(불교의 108번뇌를 상징)을 내려가 해변 테라스와 대웅전으로 이어집니다. \n\n상부 절벽의 **해수 관음 대불**은 사찰 지붕과 동해를 배경으로 가장 많이 촬영되는 경관을 자랑합니다. 운영 시간은 **매일 04:30~19:20, 마지막 입장 18:50이며 입장료는 무료**입니다. **부처님 오신 날(5월)**에는 연등회 등불 축제가 열립니다.",
+            "highlights": [
+              "**1376년 창건**, 불교 고승 나옹 혜근 (원래 이름 '보문사')",
+              "바닷가에 위치한 몇 안 되는 주요 한국 사찰 중 하나 (대부분은 산속에 위치)",
+              "**1974년 해동 용궁사로 개명** — 정암 스님의 용과 관세음보살 환상에서 비롯됨",
+              "**108계단** = 불교의 108번뇌를 상징",
+              "입구의 **십이지신 (12지 수호신)**; **'무사탑'** 동전 기원 성소",
+              "**해수 관음 대불** — 절벽에서 가장 많이 촬영되는 전망",
+              "대웅전은 1970년에 원래 색채를 최대한 살려 복원되었습니다",
+              "매일 04:30~19:20 운영, 입장 **무료**; 부처님오신날(5월) 연등 축제",
+              "**사찰 문 앞에 석주(石柱) 형태로 도열한 불교 12 십이지신 장군상** — 한국 해안 사찰 중 유일"
+            ],
+            "timeUsed": [
+              "관광버스 하차 + 상점 골목을 지나 입장 광장까지 도보 (약 10분)",
+              "십이지신 장군상 + 무사고 탑 관람 (약 10분)",
+              "108계단 하강 + 대웅전 + 해안 테라스 관람 (약 30분)",
+              "해수관음상 전망 포인트 + 사진 촬영 (약 15분)",
+              "다시 올라오기 + 관광버스 앞 집합 (약 10분)"
+            ],
+            "whyOnRoute": "**이 코스의 상징적인 오프너 — 부산에서 가장 많이 촬영되는 사찰을 한적한 시간대에.** 10:00 도착은 단체버스 인파(보통 11:00부터)보다 앞서, 108계단과 해수관음대불 뷰포인트를 줄 서지 않고 걷게 해 줍니다. 기장 절벽 위라는 위치가 하루를 코스의 북동쪽 끝에서 열어 주기 때문에, 이후 일정은 청사포, 캡슐, 도심 방향으로 해안을 따라 한 방향으로만 흘러 되돌아가는 구간이 없습니다.",
+            "visitBasics": {
+              "hours": "매일 04:30~19:20 (마지막 입장 18:50)",
+              "closed": "연중 개방",
+              "admission": "무료; 자가용 주차는 유료",
+              "walking": "보통 수준 — 소나무 숲을 지나는 108계단, 여러 개의 해안 테라스와 계단"
+            },
+            "convenience": {
+              "restroom": "정문 근처 및 경내에서 이용 가능",
+              "parking": "해동용궁사 주차장 (유료, Visit Busan 공식 안내 기준)"
+            },
+            "smartNotes": {
+              "photo": "해안 쪽 일출 바위; 대웅전 옆 계단에서 바다와 사찰이 어우러지는 대표 풍경 촬영 가능; 위쪽 절벽의 해수관음상 지점에서 사찰과 동해가 한눈에 담기는 광각 뷰 감상",
+              "facilities": "상단 광장에 기념품·간식 판매대와 소규모 카페 위치; 해안 산책로가 바위 너머까지 이어짐",
+              "tip": "전각 출입 시 옆문 이용 (정문은 스님 전용); 부처님오신날(4~5월)에는 연등 전시 진행; 관광버스가 가장 붐비는 시간대를 피하려면 10:30 이전 도착 권장"
+            },
+            "_poi_meta": {
+              "poi_key": "haedong_yonggungsa",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "VisitKorea",
+                "Wikipedia",
+                "Culture Trip",
+                "Korean Temple Guide",
+                "Korea Tourism Organization Official"
+              ]
+            },
+            "image": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+            "images": [
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+              "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 1",
+                "alt": "해동 용궁사 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 2",
+                "alt": "해동 용궁사 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 3",
+                "alt": "해동 용궁사 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 4",
+                "alt": "해동 용궁사 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 5",
+                "alt": "해동 용궁사 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+                "location": "해동 용궁사",
+                "caption": "해동 용궁사 — photo 6",
+                "alt": "해동 용궁사 — gallery image 6"
+              }
+            ]
+          },
+          {
+            "number": 3,
+            "time": "≈ 11:45",
+            "duration": "40분",
+            "name": "청사포 다릿돌전망대 (유리 스카이워크)",
+            "category": "해안 전망대 / 무료",
+            "description": "**청사포 다릿돌전망대**는 청사포와 송정 사이 해안 절벽에서 **바다 위 약 20m 높이로 72.5m를 굽어 나가는 스카이워크**로, 2017년 8월 개장했습니다. 이름은 데크 아래 바다에 징검다리처럼 놓인 **다섯 개의 암초, '다릿돌'**에서 왔습니다 — 수평선을 향해 놓인 돌다리라는 뜻입니다. 데크 끝 구간의 바닥은 **유리**로, 발밑에 너울이 굽이치는 것을 그대로 내려다보게 되며(유리 보호용 덧신 제공), **입장은 무료**입니다. 마을 쪽으로 내려오면 **청사포 쌍둥이 등대**(홍·백)와 슬램덩크풍 애니메이션 프레임으로 유명해진 작은 건널목 포토존이 짧은 산책 거리에 있습니다.",
+            "image": null,
+            "highlights": [
+              "**바다 위 약 20m, 길이 72.5m 스카이워크** — 2017년 8월 개장, 무료",
+              "데크 아래 보이는 다섯 암초 **'다릿돌'**에서 온 이름",
+              "**끝 구간 유리 바닥**(덧신 제공)",
+              "짧은 산책 거리의 **청사포 쌍둥이 등대**(홍·백)",
+              "청사포는 **부산 8경**의 하나 — 지금도 살아 있는 어촌",
+              "애니메이션으로 유명해진 건널목 포토존"
+            ],
+            "timeUsed": [
+              "차량 하차 + 전망대 입구까지 도보(약 5분)",
+              "스카이워크 워크아웃 + 유리 바닥 구간(약 20분)",
+              "쌍둥이 등대 / 건널목 포토 산책(약 10분)",
+              "캡슐 역으로 재집합(약 5분)"
+            ],
+            "whyOnRoute": "**사찰과 캡슐 사이의 무료 스릴.** 다릿돌은 발밑에 너울이 흐르는 유리 바닥으로 이 하루의 '바다 위' 순간을 티켓 없이 선사하고, 청사포 절벽 바로 위라 몇 분 거리의 스카이캡슐 탑승으로 그대로 이어집니다. 고정된 스카이워크에서 해안을 먼저 본 뒤라, 10분 뒤 움직이는 캡슐에서 보는 같은 해안이 다르게 읽힙니다.",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "cheongsapo_daritdol_observatory",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan City Tourism",
+                "Blue Line Park official"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "바람이 강한 날은 데크가 일시 폐쇄되기도 합니다 — 가이드가 당일 상황을 확인해 청사포 클러스터 순서를 조정합니다",
+              "photo": "유리 아래 다릿돌 암초를 내려찍기; 해안 산책로에서 데크의 곡선을 담는 와이드 샷",
+              "facilities": "아래 청사포 마을에 카페·해산물 노점"
+            },
+            "convenience": {
+              "parking": "청사포 마을 차량 정차 후 데크까지 도보",
+              "restroom": "청사포역 인근 공중화장실"
+            },
+            "visitBasics": {
+              "hours": "개방형; 전망대 운영 약 09:00~18:00(계절·기상에 따라 변동)",
+              "closed": "강풍·폭풍 시 일시 폐쇄될 수 있음",
+              "walking": "데크는 평탄한 워크아웃; 마을에서 짧은 오르막",
+              "admission": "무료(유리 구간 덧신 제공)"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 4,
+            "time": "≈ 12:35",
+            "duration": "40분",
+            "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "category": "해안 라이드 / 티켓 선택",
+            "description": "**스카이캡슐**은 폐선된 동해남부선 해안 철길을 2020년 친환경 재개발한 **해운대 블루라인파크**의 시그너처 라이드입니다: **파스텔 색 4인승 캐빈이 해안 7~10m 높이의 고가 레일 위로 청사포~미포 2.3km를 미끄러져 갑니다**(약 30분) — 가는 내내 한쪽은 바다입니다. 우리는 **청사포에서 타고 미포 방향으로 내려가며**, 미포에는 차량이 먼저 가서 기다립니다 — 탑승 자체가 이 하루의 해안 이동이 되는 구조입니다. **캡슐 티켓은 선택 사항으로 예약 시 정합니다**: 티켓 포함 옵션이면 그룹 몫의 캡슐을 사전 예약하고(요금은 캡슐당: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도), 기본 옵션이면 같은 레일 아래의 수상 경력 있는 2.3km 목재 해안 산책로 **그린레일웨이(무료)**를 걷거나 차량으로 미포까지 이동하면 됩니다.",
+            "image": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+            "highlights": [
+              "**고가 해안 레일 위 파스텔 4인승 캡슐** — 블루라인파크 시그너처(2020년 개장)",
+              "**청사포→미포 2.3km / 약 30분**, 내내 바다 전망",
+              "**티켓 포함/불포함 — 예약 시 선택**(캡슐당 약 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도)",
+              "미탑승 게스트: 같은 해안의 **무료 그린레일웨이 산책로** 또는 차량으로 미포 이동",
+              "라이드가 끝나는 곳에서 점심이 시작 — 미포는 해운대 먹자골목 도보 거리",
+              "일반적인 비에는 운행; 강풍 시에만 일시 중단"
+            ],
+            "timeUsed": [
+              "청사포역 탑승 수속(약 10분)",
+              "스카이캡슐 청사포→미포 탑승(약 30분)"
+            ],
+            "whyOnRoute": "**이동을 겸하는 라이드.** 스카이워크 직후 청사포에서 타면, 방금 내려다본 바로 그 해안선을 캡슐이 따라 내려가 — 차량과 점심 골목이 기다리는 미포에 내려 줍니다. 이 라이드를 위해 우회하는 구간이 전혀 없습니다: 티켓을 건너뛰어도 차량이나 무료 산책로가 같은 구간을 커버합니다.",
+            "_poi_meta": {
+              "match": "partial",
+              "poi_key": "cheongsapo_blue_line_park",
+              "sources": [
+                "Blue Line Park official",
+                "Visit Busan",
+                "Busan Metropolitan City Tourism"
+              ],
+              "verified": true,
+              "kb_version": "1.24",
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "일몰·주말 시간대는 1~2주 전 매진 — 예약 시 티켓 포함 옵션을 고르면 저희가 대신 예약합니다",
+              "photo": "미포 방향 기준 바다 쪽(우측) 좌석; 달맞이터널을 지나는 곡선 구간이 시그너처 프레임",
+              "facilities": "미포 광장에 카페·편의점; 양쪽 역에 발권 키오스크"
+            },
+            "convenience": {
+              "parking": "미포역 광장에서 차량이 그룹과 합류",
+              "restroom": "청사포·미포 양쪽 역에 있음"
+            },
+            "visitBasics": {
+              "hours": "약 09:30~18:30(성수기 저녁 연장)",
+              "closed": "기상 의존 운행; 강풍 시 일시 중단",
+              "walking": "역 플랫폼은 평탄; 산책로 대안은 목재 데크 2.3km(약 30분)",
+              "admission": "캡슐당 편도: 약 ₩30,000(2인) / ₩39,000(3인) / ₩44,000(4인) — 예약 시 티켓 포함 옵션 선택 가능"
+            },
+            "images": [
+              "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+              "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+              "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/cheongsapo-sky-capsule-interior.webp",
+                "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+                "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 1",
+                "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/blueline-tram-cherry-sea.webp",
+                "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+                "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 2",
+                "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-01-01-18.webp",
+                "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+                "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 3",
+                "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/tours/cheongsapo-blue-line/chatgpt-image-2026-5-10-12-53-19.webp",
+                "location": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+                "caption": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — photo 4",
+                "alt": "해운대 블루라인파크 스카이캡슐 (청사포→미포) — gallery image 4"
+              }
+            ]
+          },
+          {
+            "number": 5,
+            "time": "≈ 13:25",
+            "duration": "60분",
+            "name": "점심 (해운대/미포 인근 현지 식당)",
+            "category": "현지 식사",
+            "description": "스카이캡슐이 도착한 직후 미포/해운대 인근에서 약 60분의 점심 시간을 갖습니다. 가이드 추천 메뉴: **돼지국밥** — 한국전쟁 피란 시절에 태어난 부산 대표 국밥(약 ₩10,000), **밀면**, 또는 항구 곁 해산물 한 상. 점심은 불포함(약 ₩10,000~15,000)이라 입맛과 예산에 맞게 고를 수 있습니다.",
+            "highlights": [],
+            "timeUsed": [
+              "미포역에서 식당까지 도보(약 5분)",
+              "점심(약 50분)",
+              "차량 재집합(약 5분)"
+            ],
+            "whyOnRoute": "**해안과 마을 사이의 자연스러운 쉼표.** 캡슐이 점심시간에 맞춰 미포에 도착하고, 해운대 먹자골목이 역에서 도보 거리라 좋은 식사를 위해 따로 달릴 필요가 없습니다. 여기서 든든히 채우고, 도보가 가장 가파른 오후의 두 산비탈 마을로 들어갑니다.",
+            "_poi_meta": {
+              "poi_key": "OPS_busan_lunch",
+              "verified": true,
+              "match": "lunch_placeholder",
+              "kb_version": "1.15",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Visit Busan",
+                "Busan Metropolitan Government cuisine guide"
+              ]
+            }
+          },
+          {
+            "number": 6,
+            "time": "≈ 15:00",
+            "duration": "90 min",
+            "name": "감천문화마을",
+            "category": "문화마을 / 벽화 예술",
+            "description": "**감천문화마을**은 **'한국의 마추픽추'** 이자 **'한국의 산토리니'**로 불리는 곳으로, 부산 사하구의 한 언덕 마을입니다. 파스텔 색조로 칠해진 집들이 비탈면을 따라 계단식으로 내려앉은 모습이 인상적입니다. 이 마을은 **1920-1930년대** 부산시가 항만 인근 저소득층 주민들을 이주시키면서 형성되기 시작하였습니다. 마을의 본격적인 성격은 **1955년** 한국전쟁을 피해 남쪽으로 내려온 피란민들 중 **태극도 신도 약 800가구(약 4,000명)**가 이곳에 정착하면서 굳어졌습니다. \n\n태극도는 불교·유교·음양 사상을 융합한 한국 고유의 신흥 종교로, 일제강점기에 **조철제**가 창시하였습니다. **'남을 잘 되게 한다'**는 태극도의 철학은 마을의 가장 독특한 특징을 직접적으로 만들어냈습니다: 집들은 의도적으로 층층이 배치되어 **앞집 지붕이 뒷집의 전망을 가리지 않으며**, 마을 전체가 하늘과 바다를 향해 열려 있습니다. \n\n감천마을은 **2009년** 한국 문화체육관광부가 **'부산의 마추픽추를 꿈꾸다'** 공공 미술 재생 사업을 시작하기 전까지 부산에서 가장 낙후된 지역 중 하나였습니다. 이후 **2010년 '미로 미로' 프로젝트**가 이어지며 22점 이상의 위탁 벽화·조각품·예술 설치물이 조성되었고, 그중 하늘정원 전망대의 **'어린 왕자와 여우' 벤치**가 대표 명물로 자리잡았습니다. \n\n감천마을은 **2012년 UN-HABITAT 아시아 도시경관상**을 수상하였으며, 현재 연간 **약 140만 명**의 방문객을 맞이하고 있습니다. 방문은 마을 대표 스탬프 지도 도보 코스를 따라 이루어집니다: **관광안내소** 입구에서 시작해 파노라마 무지개 지붕 전경이 펼쳐지는 **하늘정원 전망대**까지 올라간 뒤, 벽화·한복 대여점·공방·소규모 카페가 늘어선 미로 같은 골목을 따라 내려옵니다. \n\n**마을은 실제 주민들이 거주하는 생활 공간**이므로 — 조용한 대화, 드론 비행 금지, 가정집 내부 플래시 촬영 금지, 쓰레기 반드시 수거해 나가기가 요구됩니다. 운영시간 **09:00-18:00 (3-10월) / 09:00-17:00 (11-2월, 안내센터 기준)**; **마을 자체는 24시간 개방, 입장 무료**.",
+            "highlights": [
+              "**'한국의 마추픽추' / '한국의 산토리니'** — 2012년 UN-HABITAT 아시아 도시경관상",
+              "형성 배경: **1920~30년대** 부산 행정기관 이전 + **1955년 태극도 신도 피란민** (약 800가구)",
+              "**'남을 잘 되게 하라'는 태극도의 가르침** = 뒷집의 전망을 가리지 않는 집 구조",
+              "**2009년 '마추픽추의 꿈' + 2010년 '미로미로'** 문화체육관광부 공공미술 프로젝트",
+              "하늘마루의 **'어린 왕자와 여우' 벤치** — 마을에서 가장 많이 사진 찍히는 명소",
+              "공공미술 재생 사업 이후 **연간 방문객 약 140만 명**",
+              "**주민 거주 마을** — 조용히 대화하기, 드론 금지, 가정집에 플래시 금지",
+              "마을 입장 무료; 스탬프 지도 선택 구매 약 ₩2,000",
+              "**2012년 UN-HABITAT 아시아 도시경관상** — 1955년 태극도 피란민 정착지를 부산의 대표 벽화마을로 탈바꿈시킨 2009년 '마추픽추의 꿈' 공공미술 프로젝트에 수여"
+            ],
+            "timeUsed": [
+              "2번 공영주차장 버스 하차 후 입구까지 도보 이동 (약 5분)",
+              "관광안내소 + 스탬프 지도 구매 (약 10분)",
+              "하늘마루 전망대 + 어린 왕자 벤치 (약 25분)",
+              "골목 벽화 관람 + 소규모 카페 휴식 (약 25분)",
+              "버스로 재집결 (약 10분)"
+            ],
+            "whyOnRoute": "**오후의 대표 마을 — 부산의 파스텔 원형극장.** 해안의 오전을 마치고 서쪽 산비탈로 건너가면, 한국전쟁 피란민의 계단식 터전이 2009년 예술 마을로 다시 태어난 감천이 바다 위로 사탕색 집들을 쌓아 올리고 있습니다. 90분 루프로 뷰포인트와 어린왕자 포토존, 골목 산책까지 돌고 — 바로 뒤의 조용한 닥밭골과 의도적으로 짝을 이뤄, 유명한 마을과 버스가 지나치는 동네 마을을 모두 보게 됩니다.",
+            "visitBasics": {
+              "hours": "매일 09:00–18:00 (3~10월) / 09:00–17:00 (11~2월); 일부 상점·카페는 자체 운영시간 적용",
+              "closed": "연중 개방 (주민 거주 마을)",
+              "admission": "마을 입장 무료; 스탬프 지도 선택 구매 약 2,000원",
+              "walking": "체력 소모 많음 — 경사가 매우 가파른 골목과 계단; 유모차·휠체어 이용이 어려운 구간 다수"
+            },
+            "convenience": {
+              "restroom": "관광안내소 및 주요 전망 포인트 인근에 공중화장실 있음",
+              "parking": "감천 공영주차장 2번 (유료)"
+            },
+            "smartNotes": {
+              "photo": "어린 왕자와 여우 벤치 (대기 줄 길 수 있음) 및 하늘마루 전망대에서 무지개 지붕과 항만의 탁 트인 전경 감상",
+              "facilities": "한복 대여, 공예 체험, 뽑기 등 전통 과자 가판대, 카페; 입구의 소규모 마을 박물관; 스탬프 지도가 마을 탐방의 가장 편리한 방법",
+              "tip": "주민이 거주하는 마을 — 목소리를 낮추고, 드론 금지, 쓰레기는 직접 가져갈 것; 가파른 골목을 위해 미끄럼 방지 신발 착용 권장; 오후 황금빛 노을 시간대 약 16:00–17:00가 마을에서 가장 아름다운 빛을 볼 수 있는 시간"
+            },
+            "_poi_meta": {
+              "poi_key": "gamcheon_culture_village",
+              "verified": true,
+              "match": "exact",
+              "kb_version": "1.24",
+              "verified_date": "2026-04-29",
+              "sources": [
+                "Wikipedia",
+                "CNN",
+                "Visit Busan",
+                "Hapskorea",
+                "Columban Society",
+                "Lifeguin",
+                "Busan Cultural Foundation"
+              ]
+            },
+            "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+            "images": [
+              "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+              "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+              "/images/itinerary/jagalchi-harbor-sign.webp",
+              "/images/itinerary/jagalchi-market-interior.webp",
+              "/images/itinerary/jagalchi-night-building.webp",
+              "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp"
+            ],
+            "imageCredits": [
+              {
+                "url": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/itinerary/jagalchi-harbor-sign.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/itinerary/jagalchi-market-interior.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/itinerary/jagalchi-night-building.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "source": "atoc-korea"
+              }
+            ],
+            "galleryItems": [
+              {
+                "id": 1,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 1",
+                "alt": "감천문화마을 — gallery image 1"
+              },
+              {
+                "id": 2,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 2",
+                "alt": "감천문화마을 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 3",
+                "alt": "감천문화마을 — gallery image 3"
+              },
+              {
+                "id": 4,
+                "type": "photo",
+                "src": "/images/itinerary/jagalchi-harbor-sign.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 4",
+                "alt": "감천문화마을 — gallery image 4"
+              },
+              {
+                "id": 5,
+                "type": "photo",
+                "src": "/images/itinerary/jagalchi-market-interior.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 5",
+                "alt": "감천문화마을 — gallery image 5"
+              },
+              {
+                "id": 6,
+                "type": "photo",
+                "src": "/images/itinerary/jagalchi-night-building.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 6",
+                "alt": "감천문화마을 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-day-sign.webp",
+                "location": "감천문화마을",
+                "caption": "감천문화마을 — photo 8",
+                "alt": "감천문화마을 — gallery image 8"
+              }
+            ]
+          },
+          {
+            "number": 7,
+            "time": "≈ 16:50",
+            "duration": "50분",
+            "name": "닥밭골 벽화마을 & 소망계단 모노레일",
+            "category": "벽화마을 / 무료 모노레일",
+            "description": "**닥밭골**은 부산 서구의 산비탈 마을로, 이름에는 한국 전통 한지의 원료인 **닥나무 밭**이 있던 시절의 기억이 담겨 있습니다. 감천처럼 좁은 골목이 가파른 비탈을 타고 오르지만, 단체 관광버스 코스가 된 적이 없어 **벽화 골목과 한지 모티프 작품, 전망 포인트가 빨랫줄 풍경 그대로 조용하고 동네답게** 남아 있습니다. 마을의 랜드마크는 벽화가 그려진 길고 가파른 계단길 **'소망계단'**과 그 옆을 오르는 **무료 경사형 모노레일**입니다 — 마을 어르신들의 귀갓길을 위해 설치됐고 방문객도 탈 수 있어, 오후의 가장 가파른 오르막이 느린 화면의 전망대로 바뀝니다. 감천의 유명세에 대한 의도된 사람-크기의 대구이자, 하차 지점까지 10분 거리의 마지막 정차지입니다.",
+            "image": null,
+            "highlights": [
+              "**조용한 벽화마을** — 인파가 거의 없는 감천의 동네 버전",
+              "한지 종이 유산의 **닥나무 밭**에서 온 이름",
+              "벽화가 그려진 가파른 계단길 **'소망계단'**",
+              "계단 옆 **무료 경사 모노레일** — 마을 어르신용으로 설치, 방문객 탑승 가능",
+              "옛 항구 동네를 내려다보는 산비탈 전망",
+              "무료입장; 실제로 주민이 사는 마을 — 골목에서는 목소리를 낮춰 주세요"
+            ],
+            "timeUsed": [
+              "차량 하차 + 벽화 골목 산책(약 20분)",
+              "소망계단 모노레일 탑승 + 전망(약 15분)",
+              "하강 + 포토 타임(약 10분)",
+              "차량 재집합(약 5분)"
+            ],
+            "whyOnRoute": "**버스들이 지나치는 조용한 마무리.** 감천의 인파 뒤에 닥밭골은 같은 산비탈 부산을 생활의 볼륨으로 보여 줍니다 — 벽화, 소망계단, 그리고 오르막을 대신해 주는 모노레일. 남포 하차 구역까지 10분 거리에서 마을 챕터를 닫아, 하루가 정체 속이 아니라 동네의 질감 속에서 끝납니다.",
+            "_poi_meta": {
+              "match": "authored",
+              "poi_key": "dakbatgol_mural_village",
+              "sources": [
+                "Visit Busan",
+                "Busan Seo-gu Office"
+              ],
+              "verified": false,
+              "verified_date": "2026-08-04"
+            },
+            "smartNotes": {
+              "tip": "테마파크가 아니라 실제 사는 마을입니다 — 골목에서는 목소리를 낮추고 열린 문 안쪽은 촬영하지 마세요",
+              "photo": "모노레일 궤도를 곁에 두고 소망계단을 아래에서 올려찍기; 꼭대기 전망에서 항구 동네 프레임",
+              "facilities": "입구 인근 작은 카페; 하차 후 남포동에 선택지가 더 많습니다"
+            },
+            "convenience": {
+              "parking": "마을 입구 차량 정차",
+              "restroom": "마을 입구 인근 공중화장실"
+            },
+            "visitBasics": {
+              "hours": "개방형 마을; 모노레일은 주간 운행(약 09:00~18:00, 기상에 따라 변동)",
+              "closed": "모노레일은 정비·악천후 시 일시 중단될 수 있음 — 계단은 항상 열려 있음",
+              "walking": "가파른 골목과 계단; 가장 가파른 구간은 모노레일이 커버",
+              "admission": "무료(마을·모노레일)"
+            },
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          },
+          {
+            "number": 8,
+            "time": "≈ 17:50",
+            "duration": "총 ≈ 70분",
+            "name": "하차 (부산 시내 4개 지점)",
+            "category": "하차 — 시내 순차 하차",
+            "description": "**하차는 서쪽에서 동쪽으로 순차 진행됩니다**: **남포동/자갈치 일대(약 17:50)** — 부산 최고의 저녁 먹자골목과 BIFF광장 밤 분위기를 즐기려면 여기서 내리세요; **부산역(약 18:10)** KTX 환승; **서면(약 18:30)** 중심 호텔 클러스터; 마지막으로 **해운대(약 19:00)**. 오후 중에 가이드와 하차 지점을 정하면 됩니다 — 해운대까지 가는 길이 가장 길지만 저녁의 해변 앞에 내려 줍니다.",
+            "image": null,
+            "highlights": [],
+            "timeUsed": [
+              "남포동/자갈치 일대(약 17:50)",
+              "부산역(약 18:10)",
+              "서면(약 18:30)",
+              "해운대(약 19:00)"
+            ],
+            "whyOnRoute": "닥밭골이 남포동에서 10분 거리라 마지막 정차 직후 곧바로 하차 시퀀스가 시작됩니다 — 죽은 이동 시간이 없습니다. 서→동 순서는 아침 픽업의 거울상으로, KTX 이용자(부산역), 중심 호텔(서면), 해변 호텔(해운대)을 되돌아가기 없이 커버합니다.",
+            "_poi_meta": null,
+            "images": [],
+            "imageCredits": [],
+            "galleryItems": []
+          }
+        ]
+      }
+    },
+    {
+      "id": "day_flow",
+      "section_html_id": null,
+      "component": "TourDayFlowSection",
+      "props": {
+        "routeFlowStops": [
+          {
+            "name": "탑승 (부산 도심 3개 거점)",
+            "type": "origin",
+            "theme": "출발"
+          },
+          {
+            "name": "해동 용궁사",
+            "type": "primary",
+            "theme": "해변 사찰"
+          },
+          {
+            "name": "청사포 다릿돌전망대 (유리 스카이워크)",
+            "type": "secondary",
+            "theme": "Glass Skywalk"
+          },
+          {
+            "name": "해운대 블루라인파크 스카이캡슐 (청사포→미포)",
+            "type": "primary",
+            "theme": "Sky Capsule"
+          },
+          {
+            "name": "점심 식사 (부산 현지 식당)",
+            "type": "meal",
+            "theme": "식사"
+          },
+          {
+            "name": "감천문화마을",
+            "type": "primary",
+            "theme": "예술 마을"
+          },
+          {
+            "name": "닥밭골 벽화마을 & 소망계단 모노레일",
+            "type": "secondary",
+            "theme": "Mural Village"
+          },
+          {
+            "name": "하차 (부산 시내 4개 지점)",
+            "type": "return",
+            "theme": "Return"
+          }
+        ],
+        "routePhases": [
+          {
+            "phase": "해안의 오전",
+            "duration": "≈ 3시간",
+            "description": "시내 3개 역 픽업(08:30~09:30) 후 단체버스 인파 전의 해동용궁사, 이어 청사포 다릿돌전망대(유리 스카이워크)."
+          },
+          {
+            "phase": "스카이캡슐 + 점심",
+            "duration": "≈ 2시간",
+            "description": "청사포→미포 파스텔 스카이캡슐 탑승(티켓 선택 — 미탑승 게스트는 차량 이동 또는 그린레일웨이 산책로 도보), 해운대 인근 점심."
+          },
+          {
+            "phase": "두 산비탈 마을",
+            "duration": "≈ 3시간",
+            "description": "감천문화마을 포토 루프(90분), 이어 조용한 닥밭골 벽화마을과 무료 소망계단 모노레일(50분)."
+          },
+          {
+            "phase": "시내 마무리",
+            "duration": "≈ 1시간",
+            "description": "순차 하차: 남포동 → 부산역 → 서면 → 해운대."
+          }
+        ],
+        "routeShapeIntro": {
+          "title": "이 부산 하루의 흐름",
+          "subtitle": "동해안부터 시작합니다: 한적한 오전 시간대의 해안 사찰, 이어서 청사포 클러스터 — 유리 스카이워크와 쌍둥이 등대 — 에서 스카이캡슐 탑승 자체가 미포까지의 해안 이동이 됩니다. 점심 후에는 부산 서쪽 산비탈로 건너가 분위기가 다른 두 마을을 만납니다: 세계적으로 유명한 감천의 색, 그리고 무료 모노레일이 '소망계단'을 오르는 조용한 닥밭골. 시내 하차로 하루를 닫습니다. 08:30~약 18:30."
+        }
+      }
+    },
+    {
+      "id": "details",
+      "section_html_id": "details",
+      "component": "TourFitSection",
+      "props": {
+        "whyTourWorks": {
+          "bestFor": [
+            "부산 첫 방문자",
+            "커플·사진 중심 여행자",
+            "성인 가족·친구 그룹",
+            "해안과 마을을 하루에 모두 보고 싶은 여행자"
+          ],
+          "lessIdealFor": [
+            "도보·경사를 최소화하고 싶은 여행자",
+            "유아차 동반 그룹(마을 골목과 계단)",
+            "야경 중심 여행자 — 주간 코스입니다"
+          ],
+          "routeLogicSections": [
+            {
+              "title": "일정 속도 및 지리적 구성",
+              "icon": "route",
+              "iconBg": "bg-sky-50/80",
+              "iconColor": "text-sky-600",
+              "items": [
+                {
+                  "label": "사찰은 한적한 시간대에",
+                  "detail": "해동용궁사는 부산에서 가장 많이 촬영되는 사찰로, 단체버스 인파는 보통 11:00부터 몰립니다. 약 10:00 도착이면 108계단과 해수관음대불 뷰포인트를 줄 서지 않고 걸을 수 있습니다."
+                },
+                {
+                  "label": "캡슐 탑승이 곧 이동",
+                  "detail": "청사포에서 파스텔 스카이캡슐이 해안을 따라 2.3km를 미포까지 미끄러져 갑니다 — 우회가 아니라 차량 이동 한 구간을 대체하는 셈입니다. 티켓을 선택하지 않은 게스트는 차량으로 미포까지 이동하거나 같은 해안의 무료 그린레일웨이 산책로를 걷습니다."
+                },
+                {
+                  "label": "두 산비탈 마을, 두 분위기",
+                  "detail": "감천은 부산의 세계적인 파스텔 원형극장이고, 10분 거리의 닥밭골은 그 조용한 동네 버전입니다 — 인파가 거의 없는 벽화 골목, 그리고 마을 어르신들을 위해 놓인 무료 경사 모노레일이 '소망계단'을 대신 올라 줍니다."
+                },
+                {
+                  "label": "핵심 정차지는 전부 무료, 유료는 단 하나뿐 — 그것도 선택",
+                  "detail": "용궁사·다릿돌전망대·감천·닥밭골(모노레일 포함)은 모두 무료입니다. 이 하루의 유일한 유료 어트랙션은 스카이캡슐이고, 그마저 예약 시 선택입니다: 티켓 포함으로 예약하거나, 산책로를 걷고 싶다면 불포함으로."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "practical",
+      "section_html_id": null,
+      "component": "TourPracticalDetails",
+      "props": {
+        "practicalAccordionItems": [
+          {
+            "id": "pickup",
+            "title": "픽업 및 드롭오프",
+            "preview": "부산 도시철도 연선의 픽업 장소 3곳: 서면역 4번 출구 (08:30), 부산역…",
+            "content": [
+              "부산 도시철도 연선의 픽업 장소 3곳: 서면역 4번 출구 (08:30), 부산역 4번 출구 — KTX 개찰구 아님 (08:50), 해운대역 5번 출구 (09:30).",
+              "드롭오프 순서: 남포동/자갈치 ≈17:50, 부산역 ≈18:10, 서면 ≈18:30, 해운대 ≈19:00.",
+              "실질적인 투어 시간은 픽업 지점에 따라 다릅니다: 서면 ≈10시간, 해운대 ≈9.5시간."
+            ]
+          },
+          {
+            "id": "what-to-bring",
+            "title": "복장 및 준비물",
+            "preview": "미끄럼 방지 편안한 워킹화 — 감천의 언덕 골목길과 용궁사 108계단 모두…",
+            "content": [
+              "미끄럼 방지 편안한 워킹화 — 감천의 언덕 골목길과 용궁사 108계단 모두 접지력이 좋은 신발이 필요합니다.",
+              "냉방이 강한 차량 내부와 용궁사의 해풍을 대비한 얇은 겉옷.",
+              "카메라 또는 스마트폰 (감천과 청사포가 이번 투어의 주요 포토 스팟입니다).",
+              "점심 식사 비용(₩10,000–₩20,000), 청사포의 선택 옵션인 스카이캡슐/해변열차 탑승권, 부산타워 전망대 입장권을 위한 현금 또는 카드."
+            ]
+          },
+          {
+            "id": "weather-policy",
+            "title": "날씨 정책",
+            "preview": "연중 운영.",
+            "content": [
+              "연중 운영.",
+              "가벼운 비: 투어는 예정대로 진행됩니다 — 비 내리는 용궁사는 특유의 분위기가 있으며, 감천의 골목길도 통행에 문제가 없습니다.",
+              "폭우 또는 폭풍 시: 운영사가 경로를 변경할 수 있습니다(용궁사 하단 경내가 미끄러워지고, 감천 계단이 위험해질 수 있음). 사전 통보 후 일정 변경을 제공합니다.",
+              "태풍 수준의 날씨: 운영사 측에서 전액 환불 또는 일정 변경을 제공합니다."
+            ]
+          },
+          {
+            "id": "inclusions",
+            "title": "포함 사항",
+            "preview": "스몰그룹 미니코치(최대 약 12인), 공인 영어 가이드, 유류·톨비·주차비.",
+            "content": [
+              "스몰그룹 미니코치(최대 약 12인), 공인 영어 가이드, 유류·톨비·주차비.",
+              "핵심 정차지는 전부 무료입장: 해동용궁사, 청사포 다릿돌전망대, 감천문화마을, 닥밭골 벽화마을(소망계단 모노레일 무료).",
+              "스카이캡슐 티켓: 예약 시 선택 — 포함(그룹 몫 캡슐 사전 예약, 캡슐 2인 기준) 또는 불포함(무료 그린레일웨이 산책로 도보 또는 차량으로 미포 이동).",
+              "불포함: 점심(약 ₩10,000~15,000), 음료, 개인 지출, 팁."
+            ]
+          },
+          {
+            "id": "language",
+            "title": "언어",
+            "preview": "투어 주요 언어: 영어.",
+            "content": [
+              "투어 주요 언어: 영어.",
+              "중국어 가이드는 요청 시 가능 — 3일 이상 전에 예약 필요.",
+              "메뉴판, 간판, 노점 상인과의 대화 등 하루 종일 한국어가 사용되며, 가이드가 통역을 담당합니다."
+            ]
+          },
+          {
+            "id": "walking",
+            "title": "도보 및 지형",
+            "preview": "짧게 힘든 구간이 있는 중간 난이도.",
+            "content": [
+              "짧게 힘든 구간이 있는 중간 난이도.",
+              "용궁사는 108개 돌계단을 내려갔다 다시 올라옵니다.",
+              "다릿돌전망대는 평탄한 유리 데크(신발 커버 제공).",
+              "스카이캡슐 역은 평탄하고 플랫폼 계단이 조금 있습니다.",
+              "감천은 산비탈 골목과 계단 — 편한 신발 필수.",
+              "닥밭골 소망계단은 가파르지만 무료 모노레일이 대신 올라 줍니다.",
+              "총 도보 약 4~5km."
+            ]
+          },
+          {
+            "id": "capsule",
+            "title": "스카이캡슐 (티켓 선택)",
+            "preview": "포함/불포함 — 예약 시 선택합니다.",
+            "content": [
+              "스카이캡슐은 청사포~미포 2.3km 고가 레일을 파스텔 4인승 캐빈으로 달립니다(약 30분), 해안선을 내내 곁에 두고.",
+              "티켓 포함 옵션: 그룹 몫의 캡슐을 사전 예약해 드립니다(캡슐당 요금 약 2인 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도, 포함 옵션은 캡슐 2인 기준 책정).",
+              "티켓 불포함 옵션: 같은 해안의 무료 그린레일웨이 산책로(2.3km, 약 30분)를 걷거나 차량으로 미포까지 이동합니다.",
+              "운행은 기상에 따라 달라집니다(강풍 시 일시 중단). 캡슐이 서면 산책로 도보와 차량 이동으로 일정은 그대로 유지됩니다."
+            ]
+          },
+          {
+            "id": "cancellation",
+            "title": "취소 정책",
+            "preview": "픽업 24시간 전까지 무료 취소.",
+            "content": [
+              "픽업 24시간 전까지 무료 취소.",
+              "당일 취소 및 노쇼는 환불되지 않습니다."
+            ]
+          }
+        ],
+        "practicalWeatherStatic": {
+          "today": {
+            "temp": "—",
+            "label": "계절별 안내 참조"
+          },
+          "tomorrow": {
+            "temp": "—",
+            "label": "계절별 안내 참조"
+          },
+          "_seasonalSummary": "Busan: Korea's southernmost major city, milder and wetter than Seoul. Mild winters (5–10 °C), humid summers, peak rainfall in July monsoon."
+        },
+        "seasonalVariations": [
+          {
+            "season": "봄 (3~5월)",
+            "description": "3월 말~4월 초 블루라인 해안을 따라 벚꽃이 늘어섭니다 — 벚꽃 시기의 캡슐 탑승이 연중 최고입니다. 사찰의 오전 공기도 맑습니다."
+          },
+          {
+            "season": "여름 (6~8월)",
+            "description": "해가 길고 해안은 도심보다 시원합니다. 7월 장마에는 스카이워크 체류가 짧아질 수 있고, 캡슐은 저녁까지 연장 운행합니다."
+          },
+          {
+            "season": "가을 (9~11월)",
+            "description": "연중 가장 맑은 하늘 — 다릿돌 유리 바닥의 시야가 가장 좋고 감천 뷰포인트의 색감도 가장 선명합니다."
+          },
+          {
+            "season": "겨울 (12~2월)",
+            "description": "모든 정차지가 가장 한산하고 빛이 청명합니다. 캡슐은 난방이 되며, 사찰 테라스와 마을 골목은 따뜻하게 입으세요."
+          }
+        ]
+      }
+    },
+    {
+      "id": "booking_support",
+      "section_html_id": null,
+      "component": "TourBookingSupportSection",
+      "props": {
+        "bookingTrustItems": [
+          {
+            "icon": "check-circle",
+            "title": "공인 현지 가이드",
+            "description": "부산 공인 가이드 동행",
+            "iconBg": "bg-emerald-50/80",
+            "iconColor": "text-emerald-600"
+          },
+          {
+            "icon": "users",
+            "title": "소규모 그룹",
+            "description": "최대 약 12명",
+            "iconBg": "bg-pink-50/80",
+            "iconColor": "text-pink-600"
+          },
+          {
+            "icon": "shield",
+            "title": "입장료 포함",
+            "description": "주요 입장료 포함",
+            "iconBg": "bg-sky-50/80",
+            "iconColor": "text-sky-600"
+          }
+        ],
+        "bookingSupportSteps": [
+          {
+            "timing": "즉시",
+            "title": "즉시 예약 확정",
+            "detail": "일정 요약이 포함된 예약 확인서 발송"
+          },
+          {
+            "timing": "투어 전날",
+            "title": "픽업 안내",
+            "detail": "정확한 픽업 장소 및 차량 정보를 WhatsApp으로 안내"
+          },
+          {
+            "timing": "투어 당일 아침",
+            "title": "픽업 확인",
+            "detail": "기사가 도착 10분 전에 확인 연락 드립니다"
+          },
+          {
+            "timing": "투어 중",
+            "title": "투어 중 지원",
+            "detail": "운영팀 직통 연락"
+          },
+          {
+            "timing": "당일 종료 시",
+            "title": "유연한 하차 장소 선택",
+            "detail": "남포동, 부산역, 서면, 해운대 중 원하시는 곳에서 하차 가능"
+          },
+          {
+            "timing": "투어 후",
+            "title": "리뷰 및 후속 조치",
+            "detail": "선택적 리뷰 및 후속 조치"
+          }
+        ]
+      }
+    },
+    {
+      "id": "faq",
+      "section_html_id": "faq",
+      "component": "투어 자주 묻는 질문",
+      "props": {
+        "staticQuestions": [
+          {
+            "question": "스카이캡슐 티켓이 포함인가요?",
+            "answer": "예약 시 선택입니다. 티켓 포함 옵션을 고르면 그룹 몫의 캡슐을 사전 예약해 드립니다(캡슐당 요금: 2인 약 ₩30,000 / 3인 ₩39,000 / 4인 ₩44,000 편도 — 포함 옵션은 캡슐 2인 기준 책정). 기본 옵션을 고르면 다른 게스트가 캡슐을 타는 동안 무료 그린레일웨이 산책로를 걷거나 차량으로 미포까지 이동하면 됩니다."
+          },
+          {
+            "question": "스카이캡슐은 미리 예약해야 하나요?",
+            "answer": "일몰·주말 시간대는 1~2주 전에 매진됩니다. 티켓 포함 옵션을 선택하시면 예약 확정 시 저희가 그룹 예약을 처리합니다. 한산한 평일에는 현장 키오스크 발권도 가능하지만 보장되지는 않습니다."
+          },
+          {
+            "question": "점심이 포함인가요?",
+            "answer": "아니요 — 점심은 별도입니다(약 ₩10,000~15,000). 가이드가 해운대/미포 인근의 돼지국밥(부산 대표 국밥), 밀면, 해산물 식당 등을 추천해 드립니다."
+          },
+          {
+            "question": "도보량과 경사는 어느 정도인가요?",
+            "answer": "짧게 힘든 구간이 있는 중상 난이도입니다: 용궁사 108계단 왕복, 다릿돌전망대는 평탄한 유리 데크, 캡슐 역은 대체로 평탄, 감천은 산비탈 골목, 닥밭골은 계단이지만 무료 모노레일이 대신 올라 줍니다. 총 도보 약 4~5km."
+          },
+          {
+            "question": "아이·시니어도 괜찮을까요?",
+            "answer": "활동적인 여행자라면 대부분 괜찮습니다. 아이들은 유리 바닥과 캡슐을 특히 좋아하고, 닥밭골 모노레일이 가장 가파른 오르막을 대신합니다. 용궁사 계단과 감천 경사가 이 하루의 두 고비이니 천천히, 필요하면 샛골목은 건너뛰세요."
+          },
+          {
+            "question": "부산 대표명소 일일 투어와는 무엇이 다른가요?",
+            "answer": "같은 운영사의 다른 초점입니다. 대표명소 투어는 도시 클래식 스윕(유엔기념공원, 자갈치시장)을 돌고, 이 스몰그룹 코스는 해안과 마을에 집중합니다: 다릿돌전망대 단독 정차, 티켓 포함 옵션이 있는 스카이캡슐 탑승, 그리고 대형 버스가 지나치는 조용한 닥밭골 벽화마을."
+          },
+          {
+            "question": "픽업·하차는 어디서 하나요?",
+            "answer": "시내 3개 역에서 픽업합니다 — 서면(08:30), 부산역(08:50), 해운대(09:30). 하차는 남포동 → 부산역 → 서면 → 해운대 순서로 약 17:50~19:00에 진행됩니다."
+          },
+          {
+            "question": "비가 오면 어떻게 되나요?",
+            "answer": "우천 시에도 진행됩니다. 캡슐과 모노레일은 일반적인 비에는 운행하고(강풍 시에만 일시 중단), 스카이워크는 신발 커버를 제공하며, 마을 골목은 우산으로 충분합니다. 기상이 심하면 사찰 해안 테라스 체류가 짧아질 수 있습니다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "reviews",
+      "section_html_id": "reviews",
+      "component": "투어 리뷰 섹션",
+      "props": {
+        "guestReviews": [],
+        "reviewsSummary": {
+          "averageRating": 0,
+          "totalReviews": 0,
+          "ratingDistribution": [
+            {
+              "stars": 5,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 4,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 3,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 2,
+              "count": 0,
+              "percentage": 0
+            },
+            {
+              "stars": 1,
+              "count": 0,
+              "percentage": 0
+            }
+          ],
+          "highlights": []
+        }
+      }
+    },
+    {
+      "id": "sticky_booking",
+      "section_html_id": null,
+      "component": "투어 스티키 예약 바",
+      "props": {
+        "note": "날짜와 인원을 선택하면 실시간 예약 가능 여부를 확인하고 예약을 완료할 수 있습니다.",
+        "price": {
+          "amountLabel": "59",
+          "currency": "USD",
+          "per": "person",
+          "salePriceUsd": 59
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,500 @@
+{
+  "_note": "EN source spec for the 2026-08-04 Pocheon course revision (owner instruction, referencing the competitor Klook listing). Herb Island is dropped; Jaein Falls (Yeoncheon) and a local lunch are added. Translate every human-readable string; keep keys, markdown ** markers, times, KRW figures, Korean parentheticals, and arrows exactly.",
+  "title": "Pocheon & Yeoncheon: See, Wasserfall & Kunsttal im Steinbruch",
+  "subtitle": "Ein Rundweg um einen von Bergen umringten See, ein 18 m hoher Wasserfall über Säulenbasalt und ein smaragdgrüner Steinbruchsee — zwei Geostätten des UNESCO Global Geopark Hantangang an einem unaufgeregten Tag ab Seoul.",
+  "shortCardDescription": "Ein ruhigerer Tagesausflug ab Seoul, der auf echter Geologie aufbaut. Gehen Sie den flachen 3,2 km langen Rundweg um den Sanjeong-See unterhalb des Myeongseongsan, essen Sie Pocheons eigenes Idong-Galbi, überqueren Sie dann eine 80 m lange Hängebrücke direkt vor dem Jaein-Wasserfall, der 18 m über Säulenbasalt in die Tiefe stürzt, und lassen Sie den Tag im Granitsteinbruch des Pocheon Art Valley ausklingen, wo Quellwasser die Grube zum smaragdgrünen Cheonjuho-See gefüllt hat. Der Jaein-Wasserfall und das Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang — dieselbe Landschaft, gesehen von ihren beiden gegenüberliegenden Hälften. Abfahrt montags, donnerstags und samstags.",
+  "badges": [
+    "Tagesausflug ab Seoul",
+    "UNESCO-Geopark",
+    "Wasserfall",
+    "Seerundweg",
+    "Kleine Gruppe"
+  ],
+  "tags": [
+    "Tagesausflug ab Seoul",
+    "Pocheon",
+    "Yeoncheon",
+    "UNESCO Global Geopark",
+    "Wasserfall",
+    "Natur",
+    "Fotogen"
+  ],
+  "headlineLine1": "See, Wasserfall",
+  "headlineLine2": "& Kunsttal im Steinbruch",
+  "heroTagline": "Ein hundert Jahre alter Bergsee, ein Wasserfall, der durch Basaltsäulen stürzt, und eine Granitgrube voll smaragdgrünem Wasser — die Geologie von Pocheon und Yeoncheon, an einem einzigen Tag erlaufen",
+  "heroDuration": "≈ 10 Stunden (08:00 erste Abholung, 18:30 letzte Rückgabe)",
+  "heroPills": [
+    "Naturtagesausflug",
+    "UNESCO Global Geopark",
+    "Jahreszeitliche Vielfalt"
+  ],
+  "region": "Pocheon & Yeoncheon (Tagesausflug ab Seoul)",
+  "duration": "10 Stunden",
+  "stopsCount": 4,
+  "heroStopsLabel": "4 Stationen",
+  "seo": {
+    "pageTitle": "Tagesausflug Pocheon: Sanjeong-See, Jaein-Wasserfall & Art Valley | AtoC Korea",
+    "metaDescription": "10-stündiger Tagesausflug ab Seoul in den UNESCO Global Geopark Hantangang: der flache 3,2 km lange Rundweg am Sanjeong-See, der 18 m hohe Basaltsturz des Jaein-Wasserfalls mit 80 m langer Hängebrücke und der smaragdgrüne Steinbruchsee im Pocheon Art Valley.",
+    "title": "Tagesausflug ab Seoul nach Pocheon & Yeoncheon: See, Jaein-Wasserfall & Art Valley | AtoC Korea",
+    "primaryKeywords": [
+      "Pocheon Tagestour ab Seoul",
+      "Jaein-Wasserfall Tour",
+      "Pocheon Art Valley Tour",
+      "Sanjeong-See Tour",
+      "UNESCO Global Geopark Hantangang Tour"
+    ]
+  },
+  "routeShapeIntro": {
+    "title": "So verläuft dieser Tag",
+    "subtitle": "Zwei Treffpunkte in Seoul — Station Hongik University (Ausgang 8) um 08:00 und Station Myeongdong (Ausgang 2) um 08:30 —, dann rund 90 Minuten nach Nordosten nach Pocheon. Der See kommt zuerst, solange die Beine frisch sind und der Morgennebel noch über dem Wasser liegt. Zum Mittagessen gibt es Pocheons eigenes Gericht, gegessen dort, wo es herkommt. Am Nachmittag geht es hinüber nach Yeoncheon zum Jaein-Wasserfall bei vollem Tageslicht — die Schlucht ist unbeleuchtet — und der Tag endet im Pocheon Art Valley, das von den dreien am spätesten schließt und Seoul am nächsten liegt, sodass die Heimfahrt die kürzeste des Tages ist. Zurück in Myeongdong gegen 18:00 und an der Station Hongik University gegen 18:30."
+  },
+  "routePhases": [
+    {
+      "phase": "See am Morgen",
+      "duration": "≈ 2 Stunden",
+      "description": "Abholungen in Seoul an der Station Hongik University (Ausgang 8, 08:00) und der Station Myeongdong (Ausgang 2, 08:30), die Fahrt nach Pocheon, dann der flache 3,2 km lange Rundweg um den Sanjeong-See unterhalb des Myeongseongsan."
+    },
+    {
+      "phase": "Pocheons eigenes Mittagessen",
+      "duration": "≈ 1 Stunde",
+      "description": "Idong-Galbi — die Rinderrippchen, nach denen dieser Bezirk benannt ist — oder ein Pilz- oder Süßwasserschnecken-Menü. Das Mittagessen ist nicht inbegriffen."
+    },
+    {
+      "phase": "Hinein in den Geopark",
+      "duration": "≈ 2 Stunden",
+      "description": "Westwärts nach Yeoncheon zum Jaein-Wasserfall: eine 80 m lange Hängebrücke, ein Skywalk mit Glasboden und 18 m Wasser über Basaltsäulen."
+    },
+    {
+      "phase": "Finale im Steinbruch",
+      "duration": "≈ 2,5 Stunden",
+      "description": "Zurück ins Pocheon Art Valley — mit der Monorail hinauf zum Kraterrand, der smaragdgrüne Cheonjuho-See unter den Granitwänden, zu Fuß über den Waldweg hinab — und dann die kürzeste Fahrt des Tages zurück nach Seoul."
+    }
+  ],
+  "routeFlowStops": [
+    {
+      "name": "Sanjeong-See",
+      "type": "origin",
+      "theme": "Bergsee"
+    },
+    {
+      "name": "Mittagessen: Idong-Galbi",
+      "type": "meal",
+      "theme": "Pocheons Gericht"
+    },
+    {
+      "name": "Jaein-Wasserfall",
+      "type": "primary",
+      "theme": "UNESCO-Geostätte"
+    },
+    {
+      "name": "Art Valley",
+      "type": "return",
+      "theme": "Finale im Steinbruch"
+    }
+  ],
+  "whyTourWorks": {
+    "bestFor": [
+      "Reisende, die eine ruhigere Alternative zur Insel Nami suchen",
+      "Paare und Fotografinnen und Fotografen auf der Jagd nach Wasser, Felsen und Spiegelungen",
+      "Erwachsenenfamilien und Mehrgenerationengruppen",
+      "Alle, die wissen möchten, wie eine Landschaft tatsächlich entstanden ist",
+      "Gäste, die langsame Spaziergänge einem vollgepackten Programm vorziehen"
+    ],
+    "lessIdealFor": [
+      "Reisende, die einen shoppinglastigen oder sehr actionreichen Tag wollen",
+      "Alle, die ein reines Schlechtwetterprogramm in Innenräumen brauchen",
+      "Gäste, die auf berühmte Einzelsehenswürdigkeiten festgelegt sind (dann eher die Festung Hwaseong in Suwon)",
+      "Gruppen, die an jeder Station stufenlosen Zugang benötigen"
+    ],
+    "items": [
+      {
+        "label": "Zwei UNESCO-Geostätten, zwei Hälften derselben Geschichte",
+        "detail": "Der Jaein-Wasserfall und das Art Valley gehören beide zum UNESCO Global Geopark Hantangang, zertifiziert im Juli 2020 — und sie zeigen Ihnen die zwei Hälften desselben Untergrunds. Im Art Valley stehen Sie mitten im alten Granit-Grundgebirge, das Menschen von Hand abgetragen haben; am Jaein-Wasserfall stehen Sie vor der jungen Basaltlava, die einst über genau dieses Grundgebirge floss und zu Säulen erkaltete. Eine Grube, von Steinbrucharbeitern gegraben, und eine Schlucht, von einem Fluss durch die Lava geschnitten."
+      },
+      {
+        "label": "Der längste Spaziergang kommt zuerst",
+        "detail": "Der Rundweg um den Sanjeong-See ist 3,2 km lang und vollkommen flach — das größte Gehpensum des Tages, absolviert mit frischen Beinen. An Frühlings- und Herbstmorgen steigt oft Nebel vom Wasser auf, und genau deshalb wird diese Station nicht auf später verschoben."
+      },
+      {
+        "label": "Zu Mittag gibt es das Gericht der Region, gegessen an seinem Ursprungsort",
+        "detail": "Idong-Galbi — die Rinderrippchen, benannt nach Pocheons Bezirk Idong — liegt zehn Fahrminuten vom See entfernt, das Essen kostet also keine zusätzliche Fahrzeit. Pilze und Süßwasserschnecken sind die anderen lokalen Klassiker, und der Idong-Makgeolli wird im selben Tal gebraut."
+      },
+      {
+        "label": "Tageslicht dort, wo es zählt, und die kürzeste Heimfahrt",
+        "detail": "Der Jaein-Wasserfall liegt in einer unbeleuchteten Schlucht: Die Hängebrücke, der Skywalk und der Gumpen brauchen alle das Nachmittagslicht, deshalb kommt er vor dem Finale. Das Art Valley hat von den dreien am längsten geöffnet und liegt Seoul am nächsten — das macht es zugleich zur sicheren letzten Station und zur kürzesten Rückfahrt."
+      }
+    ]
+  },
+  "stops": {
+    "sanjeong": {
+      "name": "Sanjeong-See",
+      "time": "10:00",
+      "duration": "90 Min.",
+      "category": "Von Bergen umringter Stausee & Rundweg am Ufer",
+      "description": "Der **Sanjeong-See (산정호수)** liegt auf rund 300 m in einem Kessel aus drei Bergen — **Myeongseongsan (명성산, 923 m)**, Mangbongsan und Mangmubong — und sein Name bedeutet wörtlich *ein See so klar wie ein Bergbrunnen*. Er ist kein natürlicher See: Er wurde **1925 als landwirtschaftlicher Stausee** für die Felder unterhalb angelegt, das Wasser, an dem Sie entlanggehen, ist also hundert Jahre alt.\n\nDer Weg ist ein **3,2 km langer Rundweg** aus Uferstegen und festgetretener Erde **ohne eine einzige Steigung** — eine bis anderthalb Stunden in gemächlichem Tempo und die mit Abstand längste Gehstrecke dieser Tour. Schwimmende Brückenabschnitte führen den Weg über das Wasser hinaus, und der **Skulpturenpark** am Nordufer geht auf das **Internationale Skulpturensymposium Pocheon 2005** zurück, bei dem 17 koreanische und internationale Kunstschaffende ihre Werke auf einem 13.383 m² großen Gelände vor Ort behauten, statt fertige Arbeiten anliefern zu lassen.\n\nDer Berg über dem See trägt die erste Geschichte des Tages. **Myeongseongsan bedeutet „Berg der weinenden Klänge“** — benannt, so heißt es, nach den Vögeln, die über die letzten Jahre von **Gungye** geweint haben sollen, dem gestürzten Gründer des Taebong-Reiches, der der Überlieferung nach durch diese Hügel floh. Seine oberen Hänge tragen ein **198.347 m² großes Silbergrasfeld**, das zu den fünf großen Silbergrasflächen Koreas zählt, den ganzen Grat jeden Oktober silberweiß färbt und dem See sein Herbstfest gibt.\n\n**Der Zugang zum See und zu seinem Weg ist kostenlos.** Im Frühling und Herbst hebt sich in den ersten Tagesstunden häufig Nebel von der Oberfläche — der Grund, weshalb diese Station den Tag eröffnet und ihn nicht beschließt.",
+      "highlights": [
+        "**1925 erbaut** als landwirtschaftlicher Stausee — 2025 hat der See sein hundertjähriges Bestehen überschritten",
+        "**3,2 km Rundweg, durchgehend flach** — Holzsteg und Erdweg, 60–90 Min. in langsamem Tempo",
+        "Umringt von **Myeongseongsan (923 m)**, Mangbongsan und Mangmubong",
+        "**Skulpturenpark** vom Internationalen Skulpturensymposium Pocheon 2005 — 17 Kunstschaffende, vor Ort behauen",
+        "**Myeongseongsan = „Berg der weinenden Klänge“**, nach den Vögeln, die König Gungye betrauert haben sollen",
+        "**198.347 m² Silbergrasfeld** an den Hängen darüber — eine der fünf großen Silbergrasflächen Koreas",
+        "An Frühlings- und Herbstmorgen steigt oft **Nebel vom Wasser auf**",
+        "**Freier Eintritt**; schwimmende Brückenabschnitte und Uferdecks entlang des Rundwegs"
+      ],
+      "timeUsed": [
+        "Ankunft, Orientierung und Aussichtspunkt am Ufer (~10 Min.)",
+        "Der 3,2 km lange Rundweg in gemächlichem Tempo (~60 Min.)",
+        "Fotozeit an Skulpturenpark und schwimmender Brücke (~15 Min.)",
+        "Zurück zum Bus (~5 Min.)"
+      ],
+      "whyOnRoute": "**Der längste Spaziergang des Tages, zuerst gegangen.** Der 3,2 km lange Rundweg ist flach, bleibt aber die größte Gehstrecke dieser Tour, und er gehört an den Anfang, solange die Beine frisch sind. Der Morgen ist zudem die beste Zeit für den See: Im Frühling und Herbst hebt sich häufig Nebel von der Oberfläche, und die Berge zeichnen sich klar ab, bevor der Nachmittagsdunst kommt. Der Sanjeong-See ist die von Seoul am weitesten entfernte der vier Stationen — hier zu beginnen bedeutet also auch, dass der Rest des Tages stetig auf die Stadt zurückführt statt von ihr weg.",
+      "visitBasics": {
+        "hours": "Rund um die Uhr geöffnet, aber kein Zutritt von Sonnenuntergang bis 2 Stunden vor Sonnenaufgang",
+        "closed": "Ganzjährig geöffnet",
+        "admission": "See und Rundweg kostenlos; Bootfahren, Schlittenfahren und der Vergnügungspark werden separat berechnet",
+        "walking": "Leicht — flacher 3,2 km Rundweg, 60–90 Min. Die Gipfelwanderung auf den Myeongseongsan ist eine eigene, anspruchsvolle 5-Stunden-Route und nicht Teil dieser Tour."
+      },
+      "convenience": {
+        "restroom": "Am Parkplatz und entlang der Uferpromenade",
+        "parking": "Gebührenpflichtiges Parken auf dem Hauptparkplatz"
+      },
+      "smartNotes": {
+        "tip": "Der Rundweg ist durchgehend flach — wer lieber sitzen möchte, erreicht die Uferdecks und den Skulpturenpark in wenigen Minuten vom Bus aus. Im Oktober finden das Silbergrasfest und der größte Andrang des Jahres statt.",
+        "photo": "Spiegelungen von See und Bergen, am stärksten mit Frühlings- oder Herbstmorgennebel. Die schwimmende Brücke auf halber Strecke ist das Signaturmotiv; der Skulpturenpark liefert den Vordergrund.",
+        "facilities": "Cafés und Restaurants am Seeeingang, Bootsanleger, Skulpturenpark, Picknickwiesen."
+      }
+    },
+    "lunch": {
+      "name": "Mittagessen — Idong-Galbi (lokale Küche in Pocheon)",
+      "time": "11:40",
+      "duration": "60 Min.",
+      "category": "Lokales Essen (nicht inbegriffen)",
+      "description": "Das Mittagessen liegt zehn Fahrminuten vom See entfernt in **Idong (이동)**, dem Bezirk von Pocheon, der **Idong-Galbi (이동갈비)** seinen Namen gab — Rinderrippchen, die dieses Tal seit Generationen grillt und für die Koreanerinnen und Koreaner eigens aus Seoul herausfahren. Die anderen lokalen Klassiker sind **Pilzgerichte** und **uleong (Süßwasserschnecke)**, beides Spezialitäten aus Pocheon, und **Idong-Makgeolli** wird im selben Tal gebraut, falls Sie die passende Begleitung möchten.\n\nDas Mittagessen ist **nicht inbegriffen** (je nach Bestellung etwa ₩15.000–20.000), Sie wählen Lokal und Budget also selbst. Ihre Reiseleitung weist darauf hin, welche Häuser für Vegetarierinnen und Vegetarier geeignet sind — ein Galbi-Restaurant ist schließlich nicht für alle die Antwort.",
+      "highlights": [
+        "**Idong-Galbi (이동갈비)** — die Rinderrippchen, benannt nach genau diesem Bezirk",
+        "**Pilzgerichte** und **uleong (Süßwasserschnecke)** sind die weiteren Spezialitäten Pocheons",
+        "**Idong-Makgeolli** wird im selben Tal gebraut",
+        "Rund zehn Minuten vom Sanjeong-See entfernt — das Essen kostet keine zusätzliche Fahrzeit",
+        "**Nicht inbegriffen** (≈ ₩15.000–20.000) — Lokalwahl liegt bei Ihnen",
+        "Vegetarierfreundliche Optionen werden von der Reiseleitung gezeigt"
+      ],
+      "timeUsed": [
+        "Kurze Fahrt vom See und Platznahme (~10 Min.)",
+        "Mittagessen (~45 Min.)",
+        "Zurück zum Bus (~5 Min.)"
+      ],
+      "whyOnRoute": "**Das Gericht der Region, gegessen dort, wo es herkommt.** Idong liegt zehn Minuten vom Sanjeong-See entfernt und ungefähr auf dem Weg nach Westen, das Essen kostet den Tag also keine Fahrzeit. Es fällt außerdem auf die richtige Stunde: Der 3,2 km lange Vormittagsspaziergang liegt hinter Ihnen, und die beiden Geopark-Stationen des Nachmittags liegen vor Ihnen — beide verlangen stabile Beine und etwas Geduld auf Treppen und Brücken."
+    },
+    "jaein": {
+      "name": "Jaein-Wasserfall (UNESCO Global Geopark Hantangang)",
+      "time": "13:30",
+      "duration": "65 Min.",
+      "category": "Basaltwasserfall & Hängebrücke — UNESCO-Geostätte",
+      "description": "Der **Jaein-Wasserfall (재인폭포)** liegt in **Yeoncheon**, nicht in Pocheon, und genau diese Kreisgrenze zu überqueren ist der Sinn des Nachmittags. Ein kleiner Bach, der vom **Jijangbong** im Norden herabfließt, erreicht die Kante einer **Basaltklippe und stürzt rund 18 m** in einen grünen Gumpen. Die Klippe ist kein gewöhnlicher Fels: Sie zeigt **Säulenabsonderung** — die sechseckigen Säulen, die entstehen, wenn ein mächtiger Lavastrom abkühlt und sich zusammenzieht — und sie ist die Signaturlandform des **UNESCO Global Geopark Hantangang**, von der UNESCO am **7. Juli 2020** zertifiziert und 2024 erneut bestätigt.\n\nAlles an dieser Station ist eine Lesart dieser Lava. Neben dem Wasserfall erkennen Sie eine **hasik-donggul (하식동굴)**, eine vom Fluss am Fuß der Säulen ausgehöhlte Flusserosionshöhle; **Strudeltöpfe**, die von im Strom kreisenden Kieseln in den Fels geschliffen wurden; und **Gasröhren**, die eingefrorenen Blasen dort, wo Gas aus der erkaltenden Lava entwich. Der Wasserfall arbeitet sich noch immer langsam flussaufwärts und schneidet sich rückwärts in den Lavastrom.\n\nDer Zugang ist ganz aufs Schauen gebaut. Eine **80 m lange und 2 m breite Hängebrücke** spannt sich von Klippe zu Klippe über die Schlucht und blickt dem Wasserfall frontal entgegen; dahinter legt Ihnen ein **Skywalk mit durchsichtigem Glasboden** die Schlucht direkt unter die Füße. Ein Holzsteg führt hinab zum Gumpen selbst.\n\nDer Name trägt die zweite Geschichte des Tages. *Jaein* (재인, 才人) bezeichnete eine **Seiltänzerin oder einen Seiltänzer**. Der Überlieferung nach begehrte ein örtlicher Magistrat die Frau des Seiltänzers, ließ ein Seil über diese Schlucht spannen und befahl ihm hinaus — und ließ dann das Seil kappen. Seine Witwe täuschte Fügsamkeit vor, biss dem Magistrat die Nase ab und nahm sich das Leben. Das Dorf unterhalb hieß danach **Komun-ri, „das Dorf, in dem die Nase abgebissen wurde“**, woraus mit der Zeit das heutige **Gomun-ri (고문리)** wurde.\n\n**Der Eintritt ist frei.** Bei starkem Sommerregen können Stegabschnitte gesperrt werden, und die Schlucht ist unbeleuchtet — deshalb liegt diese Station mitten am Nachmittag und nicht am Tagesende.",
+      "highlights": [
+        "**≈ 18 m Wasserfall über eine Klippe aus Säulenbasalt** — die Signaturlandform des Geoparks",
+        "**UNESCO Global Geopark Hantangang**, zertifiziert am 7. Juli 2020, 2024 erneut bestätigt",
+        "**80 m × 2 m Hängebrücke** über die Schlucht, frontal zum Wasserfall",
+        "**Skywalk mit Glasboden** hinter der Brücke, über der Schlucht",
+        "Die Lava aus der Nähe lesen: **hasik-donggul (Flusserosionshöhle)**, **Strudeltöpfe**, **Gasröhren**",
+        "Benannt nach einem **Seiltänzer (재인)** — und das Dorf darunter heißt bis heute deswegen Gomun-ri",
+        "**Freier Eintritt**; der Holzsteg führt hinab zum smaragdgrünen Gumpen",
+        "Stegabschnitte können bei starkem Sommerregen gesperrt sein"
+      ],
+      "timeUsed": [
+        "Ausstieg am Bus und Weg zum Schluchtrand (~10 Min.)",
+        "Überquerung der Hängebrücke und Skywalk (~20 Min.)",
+        "Holzsteg hinab zum Gumpen und zu den Säulen (~25 Min.)",
+        "Aufstieg zurück und Sammeln (~10 Min.)"
+      ],
+      "whyOnRoute": "**Die Hälfte des Geoparks, die Sie im Art Valley nicht sehen können.** Im Steinbruch stehen Sie mitten im alten Granit-Grundgebirge; hier stehen Sie vor der jungen Basaltlava, die darüber floss und zu Säulen erkaltete — derselbe Untergrund, seine andere Schicht, vierzig Minuten voneinander entfernt. Der Ort braucht außerdem das Licht: Die Schlucht ist unbeleuchtet, und Brücke, Skywalk und Gumpen wollen alle die volle Nachmittagssonne, deshalb kommt er vor dem Finale und nicht danach.",
+      "visitBasics": {
+        "hours": "Frei zugänglich; Besuch bei Tageslicht dringend empfohlen — die Schlucht ist unbeleuchtet",
+        "closed": "Steg- und Holzwegabschnitte können bei starkem Sommerregen oder Unwettern gesperrt werden",
+        "admission": "Kostenlos",
+        "walking": "Mittel — die Hängebrücke ist eben, schwingt aber; anstrengend ist der Holzsteg hinab zum Gumpen und wieder hinauf, mit Treppen"
+      },
+      "convenience": {
+        "restroom": "Am Besucherparkplatz oberhalb der Schlucht",
+        "parking": "Kostenloses Besucherparken am Eingang zum Wasserfall"
+      },
+      "smartNotes": {
+        "tip": "Die Brücke bewegt sich konstruktionsbedingt unter den Füßen — halten Sie sich am Geländer fest und bleiben Sie bei Andrang in einer Gehrichtung. Wer lieber nicht hinübergeht: Vom Aussichtspunkt am Schluchtrand sieht man den Wasserfall auch ohne Brücke.",
+        "photo": "Frontal von der Mitte der Hängebrücke ist die Aufnahme. Senkrecht nach unten durch das Skywalk-Glas für die Säulen; vom Holzsteg unten für den Gumpen und den vollen 18 m Sturz.",
+        "facilities": "Parkplatz, Toiletten und Geopark-Informationstafeln am Eingang; an der Schlucht selbst keine Läden — Wasser mitnehmen."
+      }
+    },
+    "artvalley": {
+      "name": "Pocheon Art Valley (UNESCO Global Geopark Hantangang)",
+      "time": "15:20",
+      "duration": "70 Min.",
+      "category": "Steinbruch als Kunstpark mit Monorail — UNESCO-Geostätte",
+      "description": "Das **Pocheon Art Valley (포천 아트밸리)** ist ein Loch, das Menschen gemacht haben. Der Granit von hier — **Pocheonseok (포천석)**, der aus diesem Hang gebrochene Stein — ging in das **Blue House, die Nationalversammlung und den Flughafen Incheon**, und als der abbaubare Fels erschöpft war, wurde der Steinbruch **2003 aufgegeben** und hinterließ eine vernarbte Grube über der Stadt. 2005 begann Pocheon die **erste ökologische Renaturierung eines aufgelassenen Steinbruchs in Korea**, und 2009 wurde das Gelände als Kunstpark wiedereröffnet. Heute zieht es rund **400.000 Besucherinnen und Besucher im Jahr** an.\n\nDie Grube füllte sich von selbst. Quell- und Regenwasser sammelten sich im Abbauloch und bildeten den **Cheonjuho-See (천주호)**, bis zu **20 m tief**, dessen verblüffend smaragdgrüne Farbe von im Wasser schwebendem Granitsediment stammt, das das Licht zurückwirft. **Senkrechte Granitwände ragen rund 50 m** darüber auf und tragen noch immer die Werkzeugspuren des Abbaus — und nahe der Konzerthalle finden Sie bis heute die **perfekt runden Sprenglöcher**, die für das Dynamit gebohrt wurden, die deutlichste erhaltene Signatur des Steinbruchs. Dieser Granit ist das *Grundgebirge* der Region, der uralte Boden, über den später die Hantangang-Lava floss — und genau deshalb ist der Ort eine Geostätte desselben Geoparks wie der Jaein-Wasserfall, dort geführt als **„Art Valley und Pocheon-Stein“**.\n\nEine **420 m lange Monorail** klettert in etwa fünf Minuten vom Ticketschalter den Hang hinauf zum Rand. Üblich ist es, **mit der Monorail hinauf und zu Fuß hinab** über die Promenade des Heilwaldes zu gehen — zehn bis fünfzehn Minuten schattiger Pfad. Oben liegen der Skulpturenpark, die **Hosu-Konzerthalle** — eine Freilichtbühne mit 300 Plätzen zwischen der 50 m hohen Felswand und dem See —, die Aussichtspunkte des Sky Garden und ein 2014 eröffnetes Astronomiemuseum. Fans von **Legend of the Blue Sea**, **Moon Lovers: Scarlet Heart Ryeo** und **Hwayugi** werden das Wasser wiedererkennen.\n\n**Eintritt und Monorail werden separat berechnet** und sind nicht im Tourpreis enthalten — 2026 rund **₩6.000** Eintritt und **₩5.300** für eine Monorail-Hin- und -Rückfahrt für Erwachsene, mit günstigeren Tarifen für Jugendliche, Militärangehörige und Kinder. Ihre Reiseleitung übernimmt das Anstehen an der Kasse.",
+      "highlights": [
+        "**Pocheonseok-Granit** aus diesem Steinbruch baute das Blue House, die Nationalversammlung und den Flughafen Incheon",
+        "Steinbruch **2003 aufgegeben**; Koreas **erste ökologische Renaturierung** eines solchen, wiedereröffnet **2009**",
+        "**Cheonjuho** — quellgespeister Steinbruchsee, bis zu **20 m tief**, smaragdgrün durch schwebendes Granitsediment",
+        "**≈ 50 m hohe senkrechte Granitwände** mit erhaltenen Schnittspuren und runden **Dynamit-Sprenglöchern**",
+        "Eine Geostätte des **UNESCO Global Geopark Hantangang** als *„Art Valley und Pocheon-Stein“*",
+        "**420 m Monorail**, ~5 Min. bis zum Rand — hinauf fahren, über die Heilwald-Promenade hinabgehen",
+        "**Hosu-Konzerthalle**, eine Freilichtbühne mit 300 Plätzen zwischen Felswand und See",
+        "Drehort für **Legend of the Blue Sea**, **Moon Lovers** und **Hwayugi**",
+        "≈ **400.000 Besucherinnen und Besucher im Jahr**; Eintritt und Monorail separat berechnet (nicht inbegriffen)"
+      ],
+      "timeUsed": [
+        "Ticketkauf an der Talstation und Monorail hinauf (~15 Min.)",
+        "Cheonjuho-Ufer und die Aussichtsplattformen (~25 Min.)",
+        "Skulpturenpark und Konzerthalle (~15 Min.)",
+        "Abstieg durch den Heilwald und Sammeln (~15 Min.)"
+      ],
+      "whyOnRoute": "**Die sicherste letzte Station und der kürzeste Heimweg.** Das Art Valley hat länger geöffnet als der See oder die Schlucht, ein langsamer Nachmittag kostet hier also nichts, und von den vier Stationen liegt es Seoul am nächsten — hier zu enden macht die Schlussfahrt zur kürzesten des Tages. Es schließt außerdem die Geologie: Nachdem Sie am Jaein-Wasserfall vor der Lava standen, stehen Sie zum Abschluss mitten im uralten Granit, über den diese Lava lief — in einer Grube, die Menschen herausgeschnitten haben und die der Untergrund still wieder aufgefüllt hat.",
+      "visitBasics": {
+        "hours": "09:00–19:00 (letzter Einlass ≈ 17:30); Monorail Mo–Fr und So/Feiertage 09:00–17:50, Sa bis 21:50 — saisonale Abweichungen",
+        "closed": "Ganzjährig geöffnet",
+        "admission": "Nicht inbegriffen. ≈ ₩6.000 Erwachsene / ₩4.000 Jugendliche und Militärangehörige / ₩2.000 Kinder. Monorail extra: ≈ ₩5.300 Erwachsene, Hin- und Rückfahrt. Vor Ort bestätigen — Tarife 2026.",
+        "walking": "Mittel — steil von der Talstation zum Rand (Monorail empfohlen); flach rund um den See und im oberen Garten; der Abstieg durch den Heilwald dauert 10–15 Min."
+      },
+      "convenience": {
+        "restroom": "Am Ticketschalter der Talstation und im oberen Gartenbereich",
+        "parking": "Kostenloses Parken an der Talstation"
+      },
+      "smartNotes": {
+        "tip": "Nehmen Sie die Monorail **hinauf** und gehen Sie **hinab** — fünf Minuten Aufstieg gespart, und die Waldpromenade ist zu Fuß die schönere Richtung. Das Betreten des Wassers ist verboten, aus Sicherheitsgründen und zum Schutz des Sees.",
+        "photo": "Der Cheonjuho von der Uferterrasse ist das ikonische Motiv — smaragdgrünes Wasser vor senkrechtem Granit. Der Pavillon des Seeobservatoriums liefert den erhöhten Blickwinkel; die Sprenglöcher nahe der Konzerthalle sind der Fingerabdruck des Steinbruchs.",
+        "facilities": "Observatoriums-Café, kleines Restaurant und Imbiss, Skulpturenpark, Ausstellungszentrum zur Steinkultur, Astronomiemuseum, Sky Garden."
+      }
+    }
+  },
+  "staticQuestions": [
+    {
+      "question": "Was hat sich an dieser Tour geändert — war Herb Island nicht dabei?",
+      "answer": "Doch, war es. Ab August 2026 tauscht die Route Herb Island gegen den Jaein-Wasserfall in Yeoncheon und ergänzt einen richtigen lokalen Mittagsstopp. Der Grund: Der Jaein-Wasserfall und das Pocheon Art Valley sind beide Geostätten des UNESCO Global Geopark Hantangang, der Tag erzählt damit eine zusammenhängende geologische Geschichte statt drei unverbundener Stationen. Wenn Sie ausdrücklich Herb Island möchten, sprechen Sie uns vor der Buchung an — wir organisieren das gesondert."
+    },
+    {
+      "question": "Was genau macht den Jaein-Wasserfall und das Art Valley „UNESCO“?",
+      "answer": "Beide sind ausgewiesene Geostätten des UNESCO Global Geopark Hantangang, zertifiziert am 7. Juli 2020 und 2024 erneut bestätigt. Es handelt sich um eine Geopark-Auszeichnung, nicht um eine Eintragung in die Welterbeliste — sie würdigt die Geologie des Hantangang-Flussbeckens in Pocheon, Yeoncheon und Cheorwon. Der Jaein-Wasserfall zeigt die Basaltlava und ihre Säulenabsonderung; das Art Valley zeigt das uralte Granit-Grundgebirge, über das die Lava floss."
+    },
+    {
+      "question": "Ist die Hängebrücke am Jaein-Wasserfall gruselig? Kann ich sie auslassen?",
+      "answer": "Sie ist 80 m lang und 2 m breit und schwingt konstruktionsbedingt unter den Füßen — für die meisten Gäste ist genau das der Reiz. Sie können sie vollständig auslassen: Vom Aussichtspunkt am Schluchtrand sieht man den Wasserfall ohne Überquerung, und der Holzsteg zum Gumpen ist ein eigener Weg. Niemand bleibt zurück, wenn Sie lieber auf festem Boden bleiben."
+    },
+    {
+      "question": "Ist der Eintritt inbegriffen?",
+      "answer": "Der Sanjeong-See und der Jaein-Wasserfall sind beide kostenlos. Das Pocheon Art Valley ist nicht inbegriffen — 2026 rund ₩6.000 Eintritt plus etwa ₩5.300 für eine Monorail-Hin- und -Rückfahrt für Erwachsene, mit günstigeren Tarifen für Jugendliche, Militärangehörige und Kinder. Auch das Mittagessen ist nicht inbegriffen (≈ ₩15.000–20.000). Alles Übrige — Transport, Reiseleitung, Maut und Parkgebühren — ist abgedeckt."
+    },
+    {
+      "question": "Wie viel wird gelaufen, und wie anstrengend ist es?",
+      "answer": "Etwa 5–6 km über den Tag verteilt, davon der größte Teil auf dem flachen 3,2 km langen Seerundweg am Vormittag. Am Jaein-Wasserfall hat der Holzsteg hinab zum Gumpen Treppen. Das Art Valley ist von der Talstation bis zum Rand steil, was die Monorail löst — Sie fahren hinauf und gehen durch den Wald hinab. Es gibt auf dieser Tour keine Wanderung und keinen Gipfelaufstieg."
+    },
+    {
+      "question": "Ist das Mittagessen inbegriffen, und welche Optionen gibt es?",
+      "answer": "Nicht inbegriffen, etwa ₩15.000–20.000. Gegessen wird in Idong, dem Bezirk von Pocheon, der Idong-Galbi (Rinderrippchen) seinen Namen gibt. Pilzgerichte und uleong — Süßwasserschnecke — sind die anderen lokalen Spezialitäten, und Idong-Makgeolli wird im selben Tal gebraut. Sagen Sie Ihrer Reiseleitung Bescheid, wenn Sie vegetarische Optionen brauchen, dann führt sie Sie zum richtigen Lokal."
+    },
+    {
+      "question": "Worin unterscheidet sich das von einem Tagesausflug zur Insel Nami?",
+      "answer": "Die Insel Nami ist ein einzelnes, sehr beliebtes Ziel, das man per Fähre erreicht. Diese Route bietet drei wirklich unterschiedliche Landschaften — einen hundert Jahre alten Stausee, eine Basalt-Wasserfallschlucht und einen gefluteten Granitsteinbruch — in einem Teil von Gyeonggi, der nur einen Bruchteil von Namis Besucherandrang sieht, mit einem UNESCO Global Geopark als roter Faden durch den Nachmittag."
+    },
+    {
+      "question": "Lohnt sich das im Winter?",
+      "answer": "Ja, mit Abstrichen. Der zugefrorene Cheonjuho im Art Valley gehört zu den schönsten Anblicken des Geländes, am See findet ein Schlittenfest statt, und jede Station ist so ruhig wie nie. Dagegen steht: Das Tageslicht ist kurz, der Nachmittag wird also enger getaktet, und der Holzsteg am Jaein-Wasserfall kann vereist sein. Mit passender Kleidung ist es ein starker Wintertag."
+    },
+    {
+      "question": "Was passiert, wenn es regnet?",
+      "answer": "Die Tour findet statt. Der Seerundweg und das Art Valley sind mit Schirm gut machbar, und Regen verstärkt den Jaein-Wasserfall sogar. Die einzige echte Ausnahme ist starker Sommerregen, wenn die Stegabschnitte an der Schlucht aus Sicherheitsgründen gesperrt werden können — in diesem Fall verlängern wir die übrigen Stationen, statt den Tag abzusagen."
+    },
+    {
+      "question": "Wo findet die Abholung und die Rückgabe statt?",
+      "answer": "Zwei Treffpunkte in Seoul: Station Hongik University (Ausgang 8) um 08:00 und Station Myeongdong (Ausgang 2) um 08:30. Bitte treffen Sie 10 Minuten vor Ihrer Abfahrtszeit ein — die Reiseleitung wartet mit dem Bus am Ausgang. Die Rückfahrt erfolgt in umgekehrter Reihenfolge: Myeongdong gegen 18:00 und Station Hongik University gegen 18:30, je nach Verkehr."
+    },
+    {
+      "question": "Ist das für Kinder oder ältere Gäste geeignet?",
+      "answer": "Für die meisten ja. Der Seerundweg ist flach, und die Monorail nimmt dem Art Valley den Aufstieg. Abzuwägen sind zwei Dinge: die Treppen am Holzsteg des Jaein-Wasserfalls und die schwingende Hängebrücke — beides ist optional, und der Aussichtspunkt am Schluchtrand zeigt den Wasserfall auch allen, die lieber verzichten. Es ist ein 10-Stunden-Tag, er passt also besser zu aktiven älteren Reisenden als zu jemandem, der häufige Pausen braucht."
+    },
+    {
+      "question": "Kann ich das stattdessen mit öffentlichen Verkehrsmitteln machen?",
+      "answer": "Das wäre schwierig. Der Sanjeong-See, der Jaein-Wasserfall und das Art Valley liegen in drei verschiedenen Bezirken über zwei Landkreise verteilt, und Busse zum Art Valley fahren nur alle paar Stunden. Alle drei an einem Tag ohne Fahrzeug zu schaffen, ist nicht realistisch — was der Hauptgrund dafür ist, dass es diese Route als Tour gibt."
+    }
+  ],
+  "seasonalVariations": [
+    {
+      "season": "Frühling (März–Mai)",
+      "description": "An kühlen Morgen hebt sich Nebel vom Sanjeong-See, und die Schneeschmelze lässt den Jaein-Wasserfall kräftig fließen. Der Cheonjuho zeigt sein klarstes Smaragdgrün, wenn die Tage länger werden."
+    },
+    {
+      "season": "Sommer (Juni–August)",
+      "description": "Der Wasserfall ist am kraftvollsten, und die Schlucht bleibt mehrere Grad kühler als die Stadt. Starker Monsunregen kann die Stegabschnitte am Jaein-Wasserfall sperren — das einzige Wetterrisiko auf dieser Route."
+    },
+    {
+      "season": "Herbst (September–November)",
+      "description": "Die stärkste Jahreszeit hier. Silbergras färbt die Hänge des Myeongseongsan den Oktober hindurch silberweiß, der See trägt die besten Spiegelungen des Jahres, und die Granitwände des Art Valley stehen mitten im vollen Laub."
+    },
+    {
+      "season": "Winter (Dezember–Februar)",
+      "description": "Die ruhigste Zeit des Jahres. Der Cheonjuho kann zufrieren, am See findet das Schlittenfest statt, und der Wasserfall kann teilweise vereisen. Das Tageslicht ist kurz, der Nachmittag wird also enger getaktet, und der Holzsteg am Jaein kann rutschig sein."
+    }
+  ],
+  "glanceItems": [
+    {
+      "icon": "camera",
+      "label": "Fotowert",
+      "value": "Ausgezeichnet",
+      "level": 5
+    },
+    {
+      "icon": "mountain",
+      "label": "Landschaft",
+      "value": "Ausgezeichnet",
+      "level": 5
+    },
+    {
+      "icon": "footprints",
+      "label": "Gehpensum",
+      "value": "Mittel",
+      "level": 3
+    },
+    {
+      "icon": "cloud-rain",
+      "label": "Regensicherheit",
+      "value": "Mittel",
+      "level": 3
+    },
+    {
+      "icon": "users",
+      "label": "Familientauglich",
+      "value": "Gut",
+      "level": 4
+    },
+    {
+      "icon": "gauge",
+      "label": "Balance",
+      "value": "Flexibel",
+      "level": 5
+    }
+  ],
+  "practical": {
+    "walkingTitle": "Gehen & Gelände",
+    "walkingContent": [
+      "Insgesamt mittel — etwa 5–6 km über den Tag verteilt, mit kurzen anspruchsvollen Abschnitten.",
+      "Sanjeong-See: flacher 3,2 km Rundweg, keine Steigung, 60–90 Min.",
+      "Jaein-Wasserfall: Die 80 m lange Hängebrücke ist eben, schwingt aber; der Holzsteg hinab zum Gumpen hat in beide Richtungen Treppen.",
+      "Pocheon Art Valley: steil von der Talstation zum Rand — das übernimmt die Monorail; der Abstieg durch den Heilwald dauert 10–15 Min.",
+      "An keiner Station ist eine Wanderung oder ein Gipfelaufstieg enthalten.",
+      "Bequeme geschlossene Schuhe empfohlen; der Holzsteg in der Schlucht kann nass sein."
+    ],
+    "includedTitle": "Enthaltene Leistungen",
+    "includedContent": [
+      "Hin- und Rückfahrt ab dem Zentrum von Seoul, lizenzierte englischsprachige Reiseleitung, Kraftstoff, Maut und Parkgebühren.",
+      "Stationen mit freiem Eintritt: Sanjeong-See und sein Rundweg, Jaein-Wasserfall, Hängebrücke und Skywalk.",
+      "Nicht inbegriffen — Eintritt Pocheon Art Valley (≈ ₩6.000 Erwachsene) und Monorail (≈ ₩5.300 Erwachsene, Hin- und Rückfahrt), Tarife 2026.",
+      "Nicht inbegriffen — Mittagessen (≈ ₩15.000–20.000), Getränke, persönliche Ausgaben und Trinkgelder."
+    ],
+    "geoparkTitle": "Über den UNESCO Global Geopark",
+    "geoparkPreview": "Zwei der heutigen Stationen sind ausgewiesene Geostätten.",
+    "geoparkContent": [
+      "Der UNESCO Global Geopark Hantangang wurde am 7. Juli 2020 vom 209. Exekutivrat der UNESCO in Paris zertifiziert und 2024 erneut bestätigt. Er umfasst das Flussbecken des Hantangang mit Pocheon und Yeoncheon in Gyeonggi-do sowie Cheorwon in Gangwon-do.",
+      "Der Jaein-Wasserfall ist eine Geostätte: ein ≈18 m hoher Wasserfall über Säulenbasalt, mit einer vom Fluss geschnittenen Höhle, Strudeltöpfen und Gasröhren, die an seinem Fuß ablesbar sind.",
+      "Das Pocheon Art Valley ist eine Geostätte, geführt als „Art Valley und Pocheon-Stein“: das uralte Granit-Grundgebirge, über das später die Hantangang-Lava floss.",
+      "Ein UNESCO Global Geopark ist eine geologische Auszeichnung — er ist nicht dasselbe wie eine Eintragung in die UNESCO-Welterbeliste."
+    ]
+  },
+  "pdNotes": "Zwei Treffpunkte: Station Hongik University (Ausgang 8) um 08:00 und Station Myeongdong (Ausgang 2) um 08:30 — bitte treffen Sie 10 Minuten vor Ihrer Abfahrtszeit ein. Die Rückfahrt führt gegen 18:00 nach Myeongdong und gegen 18:30 zur Station Hongik University; die genauen Zeiten hängen vom Verkehr ab.",
+  "stickyNote": "Wählen Sie Datum und Gruppengröße, um die aktuelle Verfügbarkeit zu prüfen und Ihre Buchung abzuschließen.",
+  "matchingMetadata": {
+    "anchor_pois": [
+      "Sanjeong Lake",
+      "Jaein Falls",
+      "Pocheon Art Valley"
+    ],
+    "anchor_poi_keys": [
+      "sanjeong_lake",
+      "jaein_falls",
+      "pocheon_art_valley"
+    ],
+    "primary_themes": [
+      "seoul_day_trip",
+      "unesco_global_geopark",
+      "waterfall",
+      "lake_walk",
+      "quarry_art_park",
+      "gyeonggi_nature"
+    ],
+    "secondary_themes": [
+      "suspension_bridge",
+      "skywalk",
+      "columnar_jointing",
+      "monorail",
+      "silver_grass",
+      "k_drama_filming",
+      "local_food"
+    ],
+    "best_for": [
+      "nature_lovers",
+      "couples",
+      "photographers",
+      "adult_families",
+      "geology_curious",
+      "nami_island_alternative_seekers"
+    ],
+    "not_recommended_for": [
+      "shopping_focused_travelers",
+      "indoor_only_rainy_day_seekers",
+      "step_free_access_required",
+      "nightlife_focused_travelers"
+    ],
+    "competing_products": [
+      "seoul-private-nami-morning-calm-petite-france",
+      "seoul-suburbs-private-chartered-car-10hr",
+      "seoul-seoraksan-nami-island-morning-calm-day-tour"
+    ],
+    "unesco_fit_note": "Two of three attraction stops (Jaein Falls, Pocheon Art Valley) are designated geosites of the Hantangang UNESCO Global Geopark, certified 2020-07-07 and re-designated 2024. This is a UNESCO Global Geopark designation, NOT a World Heritage inscription — do not conflate the two in copy.",
+    "reviews_attribution": "Route revised 2026-08; prior Herb Island reviews are not carried over. Rating starts at 0."
+  },
+  "pickupDropoff": {
+    "meetingPoints": [
+      {
+        "name": "Station Hongik University (Ausgang 8)",
+        "time": "08:00",
+        "note": "Erster Treffpunkt in Seoul. Treffen Sie Ihre Reiseleitung an Ausgang 8 — das Personal wartet dort mit dem Bus."
+      },
+      {
+        "name": "Station Myeongdong (Ausgang 2)",
+        "time": "08:30",
+        "note": "Zweiter Treffpunkt in Seoul. Treffen Sie Ihre Reiseleitung an Ausgang 2 — das Personal wartet dort mit dem Bus."
+      }
+    ],
+    "dropoffPoints": [
+      {
+        "name": "Station Myeongdong",
+        "time": "18:00",
+        "note": "Erste Rückgabe in Seoul, ungefähre Zeit."
+      },
+      {
+        "name": "Station Hongik University",
+        "time": "18:30",
+        "note": "Letzte Rückgabe in Seoul, ungefähre Zeit."
+      }
+    ],
+    "accordionContent": [
+      "Zwei Abholpunkte: Station Hongik University (Ausgang 8, 08:00) und Station Myeongdong (Ausgang 2, 08:30).",
+      "Bitte treffen Sie 10 Minuten vor der Abfahrtszeit an Ihrem Treffpunkt ein.",
+      "Ihre Reiseleitung wartet mit dem Bus am Stationsausgang.",
+      "Die Rückgabe erfolgt in umgekehrter Reihenfolge: Myeongdong gegen 18:00, Station Hongik University gegen 18:30.",
+      "Die Rückkehrzeiten sind ungefähre Angaben und hängen vom Verkehr ab.",
+      "Dies ist ein Gruppenformat mit fester Route; die Reisenden gelangen selbstständig zum Treffpunkt."
+    ]
+  },
+  "departureDays": {
+    "badge": "Mo · Do · Sa",
+    "accordionTitle": "Abfahrtstage",
+    "accordionContent": [
+      "Diese Tour startet **nur montags, donnerstags und samstags** – bitte buchen Sie eines dieser Daten.",
+      "Route, Zeiten und beide Abholpunkte sind an allen drei Abfahrtstagen identisch.",
+      "Fällt in Ihren Reisezeitraum kein Montag, Donnerstag oder Samstag, lässt sich die Tour nicht auf einen anderen Tag verlegen – es ist eine Kleingruppentour mit festem Fahrplan, keine Privatcharter."
+    ],
+    "faqQ": "An welchen Wochentagen findet diese Tour statt?",
+    "faqA": "Sie findet **nur montags, donnerstags und samstags** statt. Der Ablauf ist an allen drei Tagen gleich – buchen Sie einfach den Tag, der zu Ihrer Reise passt. An anderen Wochentagen wird dieses Produkt nicht angeboten.",
+    "lessIdeal": "Reisende, die nicht an einem Montag, Donnerstag oder Samstag unterwegs sein können (die einzigen Abfahrtstage)",
+    "cardSuffix": " Abfahrt montags, donnerstags und samstags."
+  }
+}

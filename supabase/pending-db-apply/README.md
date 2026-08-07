@@ -4,6 +4,49 @@ SQL changes staged here for a later session with DB access to batch-apply to the
 live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 `tour_product_offers`).
 
+> **🔴 2026-08-04 — the sequential numbering broke down. Do not try to repair it.**
+> Four sessions staged work on the same date in parallel, and each picked the
+> next free number from the tree it could see. The result: **three files numbered
+> `10`** (seoul-gapyeong, busan-cruise-listing-alignment, gyeongju-reopen) and
+> **two numbered `11`** (seoul-gapyeong-staged, busan-cruise-course). The Seoul
+> pair was renumbered twice chasing this — 05→08→10 — and still collided.
+>
+> This is harmless *now* because every one of them is in `applied/`, so filename
+> order no longer decides anything. Renumbering archived files would only break
+> the record of what actually ran. **Leave them.**
+>
+> The lesson for the next batch: a date-plus-counter filename is not a
+> reservation. If ordering between two staged files matters, say so in a comment
+> inside the file (as `08` does about `07`) rather than trusting the number, and
+> re-check the number immediately before committing, not when you start.
+>
+> **✅ 2026-08-04 — the whole 2026-08-04 batch (01–13) is applied to prod.**
+> 10–13 are the two Seoul-departure products (see
+> `docs/NEXT-SESSION-SEOUL-GAPYEONG-WINTER-2026-08-04.md`); the winter one is
+> live in the DB but `tours.is_active = false` until the village confirms its
+> 2026-27 season.
+>
+> **✅ 2026-08-04 — the whole 2026-08-04 batch (01–09) is applied to prod.**
+> Files 01–07 were applied by one session; 08 and 09 by another later the same
+> day. All nine are in `applied/`. Verified against the live DB, not assumed:
+> booking-bar dev comment **145 → 0** rows, corrupted `iconBg` **24 + 13 → 0**,
+> Pocheon Mon/Thu/Sat departure days present in **10/10** locales.
+>
+> 🔴 **Two things worth knowing before touching this batch again.**
+>
+> 1. The archived copies of **05/06 are the versions that actually ran**, which
+>    predate the Pocheon departure-day work — so they carry no Mon/Thu/Sat
+>    claim. That is deliberate: `applied/` is a record of what was executed, not
+>    of what the bundles say now. `09` is the delta that closed the gap.
+> 2. **08 must run after 07.** Gyeongju's re-course rewrites whole
+>    `detail_payload`s and still writes five of the polluted strings, so a
+>    repair applied earlier is simply overwritten.
+>
+> On this machine there was no `psql` and no Postgres connection string, so
+> 08/09 were applied with **`scripts/apply-jsonb-repair-sql.mjs`**, which
+> executes a guarded-`jsonb_set` file over supabase-js. `psql` remains the
+> intended route when a connection string is available.
+
 > **✅ 2026-06-24 — all staged SQL applied to prod and moved to `applied/`.**
 > Batch-applied via the Supabase MCP. Because the legacy `tour_matching_profiles`
 > table was dropped (migration `drop_legacy_tour_matching_profiles`), every
@@ -16,6 +59,42 @@ live consumer Supabase database (`tour_product_pages`, `match_tours`, `tours`,
 > **⏳ 2026-06-24 (later) — two new files pending:**
 > `2026-06-24-13-tour-cancellation-policy-backfill.sql` and
 > `2026-06-24-14-tour-lessidealfor-backfill-3-tours.sql` (both append-only, idempotent).
+>
+> **⏳ 2026-08-04 — Jeju course revision (owner instruction), two files pending:**
+> `2026-08-04-01-jeju-course-revision-activation.sql` (hydrangea SKUs
+> is_active/is_published → false; East/South/Southwest Jeju tours → true — pairs
+> with the `lib/tour-consumer-visibility.ts` blocklist change in the same commit)
+> then `2026-08-04-02-jeju-eastern-unesco-reorder.sql` (East tour re-coursed
+> Manjanggul→Seongeup→lunch→Seongsan→haenyeo→Hamdeok, 6-locale detail_payload
+> refresh). After both, run `node scripts/import-match-v18.mjs --single <slug>`
+> for the three re-opened slugs to restore/refresh their `match_tours` rows.
+>
+> **⏳ 2026-08-04 (later) — new Busan product:**
+> `2026-08-04-03-busan-smallgroup-new-product.sql` seeds
+> `busan-small-group-yonggungsa-skycapsule-gamcheon-tour` (tours + 6 locale
+> pages + TWO offers: default USD 49 Sky-Capsule-ticket-excluded, USD 64
+> ticket-included — ⚠ prices seeded pending owner review). Then
+> `node scripts/import-match-v18.mjs --single busan-small-group-yonggungsa-skycapsule-gamcheon-tour`.
+>
+> **⏳ 2026-08-04 (later still) — Pocheon course revision:**
+> `2026-08-04-05-pocheon-geopark-recourse.sql` (Herb Island dropped; Jaein Falls +
+> Idong-galbi lunch added; new 2-point pickup/drop-off; tours copy/schedule +
+> 6-locale detail_payload refresh) then
+> `2026-08-04-06-pocheon-geopark-staged-locales.sql` (de/fr/it/ru, INSERT-only).
+> After both: `node scripts/import-match-v18.mjs --single pocheon-sanjeong-lake-herb-island-art-valley`
+> — this also imports the NEW `jaein_falls` POI (KB v1.30) into `match_pois`.
+>
+> **⏳ 2026-08-04 (last) — Gyeongju course revision:**
+> `2026-08-04-07-gyeongju-recourse.sql` refreshes copy / schedule / 6-locale
+> `detail_payload` for `from-busan-gyeongju-ancient-capital-day-tour`
+> (Gyochon+Choi House+Woljeonggyo and Daereungwon+Hwangnidan-gil as walked
+> blocks; museum moved last with a Nov–Feb Donggung & Wolji night alternate).
+> Then `node scripts/import-match-v18.mjs --single from-busan-gyeongju-ancient-capital-day-tour`.
+> 🔴 **This file is UPDATE-only and deliberately does NOT touch `is_active` /
+> `is_published`** — the slug is still on the consumer blocklist, so applying it
+> changes what the product says without putting it on sale. Re-opening is an
+> owner decision; the commented block at the end of the file is that half, and
+> it pairs with removing the slug from `lib/tour-consumer-visibility.ts`.
 
 ## Why this folder exists
 

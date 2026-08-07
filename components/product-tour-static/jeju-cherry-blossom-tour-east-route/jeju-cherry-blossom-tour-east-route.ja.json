@@ -1080,21 +1080,21 @@
       "icon": "check-circle",
       "title": "認定地元ガイド",
       "description": "済州公認ガイドによる案内",
-      "iconBg": "bg-emerald-50/80 *(UIクラス名・翻訳対象外)*",
+      "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
       "icon": "calendar",
       "title": "シーズン期間内の日程変更可",
       "description": "開花期間内は無料で日程変更可能",
-      "iconBg": "bg-pink-50/80 *(UIクラス名・翻訳対象外)*",
+      "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600"
     },
     {
       "icon": "shield",
       "title": "天候保証",
       "description": "大雨の場合は無料で日程変更可能",
-      "iconBg": "bg-sky-50/80 *(UIクラス名・翻訳対象外)*",
+      "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
     }
   ],
@@ -1221,7 +1221,7 @@
     "highlights": []
   },
   "sticky_booking_bar": {
-    "note": "checkout_tour_idはSupabase／環境変数から実行時に解決されます。静的JSONBには含まれません。",
+    "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
     "price": {
       "amountLabel": "",
       "originalPriceUsd": null,
@@ -2402,7 +2402,7 @@
       "section_html_id": null,
       "component": "TourStickyBookingBar",
       "props": {
-        "note": "`checkout_tour_id` は Supabase / 環境変数から実行時に解決されます。静的 JSONB の一部ではありません。",
+        "note": "日付と人数を選択すると、リアルタイムの空き状況を確認して予約を完了できます。",
         "price": {
           "amountLabel": "",
           "currency": "USD",

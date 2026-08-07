@@ -52,6 +52,7 @@ import {
   useAvailabilityRange,
   ymdFromLocalDate,
   ymdToLocalDate,
+  isDepartureWeekday,
 } from "@/components/product-tour-static/_shared/bookingShared";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -71,6 +72,8 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   sectionUi?: TourProductSectionUiV1;
   /** Optional — private/charter products price by group size × duration. */
   pricingTiers?: EastSignatureNatureCoreDetailViewModel["pricingTiers"];
+  /** Fixed-schedule departures (Pocheon = Mon/Thu/Sat). Absent = runs any day. */
+  departureWeekdays?: readonly string[];
   /**
    * U9 carry-through — initial guest count seeded from the upstream `?party=`
    * query param (home stepper → /tours/list → detail). Clamped to
@@ -82,7 +85,7 @@ export type TourStickyBookingBarProps = Pick<EastSignatureNatureCoreDetailViewMo
   seedLanguage?: PreferredLanguage;
 };
 
-export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, initialGuests, seedDateYmd, seedLanguage }: TourStickyBookingBarProps) {
+export function TourStickyBookingBar({ price, checkout, selectedPortLabel, sectionUi, pricingTiers, departureWeekdays, initialGuests, seedDateYmd, seedLanguage }: TourStickyBookingBarProps) {
   const portCtaPrefix = sectionUi?.portSelectorCtaPrefix ?? "Docking at";
   const router = useRouter();
   const currencyCtx = useCurrencyOptional();
@@ -478,7 +481,10 @@ export function TourStickyBookingBar({ price, checkout, selectedPortLabel, secti
                       monthsShown={1}
                       calendarClassName="premium-booking-datepicker"
                       locale={datePickerLocale}
-                      filterDate={(date) => !isYmdUnavailable(ymdFromLocalDate(date))}
+                      filterDate={(date) =>
+            !isYmdUnavailable(ymdFromLocalDate(date)) &&
+            isDepartureWeekday(date, departureWeekdays)
+          }
                       onMonthChange={loadMonth}
                       dayClassName={(date) =>
                         isSameDay(date, selectedDate) ? "premium-cal-day-selected-exact" : ""

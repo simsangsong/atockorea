@@ -4,4 +4,110 @@
 
 import type { SlimCatalogPage } from "./catalogCards.generated";
 
-export const PAGES: Record<string, SlimCatalogPage> = {};
+export const PAGES: Record<string, SlimCatalogPage> = {
+  "busan-small-group-yonggungsa-skycapsule-gamcheon-tour": {
+    "catalog_card": {
+      "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+      "title": "Пусан в мини-группе: морской храм, Sky Capsule и культурные деревни",
+      "subtitle": "Однодневный тур по прибрежным символам и холмистым деревням Пусана в мини-группе — приморский храм Хэдон Ёнгунса, стеклянный скайвок на смотровой площадке Таритдоль в Чхонсапхо, поездка на Sky Capsule в парке «Блюлайн» в Хэундэ (билет — по выбору при бронировании), культурная деревня Камчхон и тихая деревня фресок Такпатколь с монорельсом вдоль «лестницы желаний».",
+      "region": "Пусан",
+      "duration": "≈ 10 часов",
+      "stopsCount": 8,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Мини-группа",
+        "Пусан",
+        "Sky Capsule",
+        "Побережье",
+        "Культурные деревни"
+      ],
+      "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
+      "priceLabel": "",
+      "shortCardDescription": "День в Пусане в мини-группе, построенный вокруг побережья и деревень на холмах: приморский храм Хэдон Ёнгунса в его тихое утреннее окно, бесплатная смотровая площадка Таритдоль со стеклянным полом в Чхонсапхо, поездка на Sky Capsule по парку «Блюлайн» от Чхонсапхо до Мипхо (билет включён или не включён — выбираете при бронировании), обед, культурная деревня Камчхон и малоизвестная деревня фресок Такпатколь, где бесплатный монорельс скользит вверх вдоль «лестницы желаний». Все ключевые точки, кроме опциональной капсулы, — с бесплатным входом."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "pocheon-sanjeong-lake-herb-island-art-valley": {
+    "catalog_card": {
+      "slug": "pocheon-sanjeong-lake-herb-island-art-valley",
+      "title": "Пхочхон и Ёнчхон: озеро, водопад и Художественная долина в карьере",
+      "subtitle": "Прогулка вокруг озера в кольце гор, водопад высотой 18 м над базальтовыми колоннами и изумрудное озеро в карьере — два геосайта Всемирного геопарка ЮНЕСКО за один неспешный день из Сеула.",
+      "region": "Пхочхон и Ёнчхон (поездка из Сеула на день)",
+      "duration": "10 часов",
+      "stopsCount": 4,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Поездка из Сеула на день",
+        "Пн · чт · сб",
+        "Геопарк ЮНЕСКО",
+        "Водопад",
+        "Прогулка у озера",
+        "Малая группа"
+      ],
+      "heroImage": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "thumbnail": "/images/tours/sanjeong-lake/chatgpt-image-2026-5-10-10-42-25.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Спокойная однодневная поездка из Сеула, построенная на настоящей геологии. Пройдите ровный круг в 3,2 км вокруг озера Санджонхо под горой Мёнсонсан, попробуйте фирменные пхочхонские идон-кальби, затем перейдите 80-метровый подвесной мост и окажитесь лицом к лицу с водопадом Чэин, падающим с 18 м по базальтовым колоннам, а завершите день в гранитном карьере Pocheon Art Valley, где родниковая вода заполнила выработку и превратила её в изумрудное озеро Чхонджухо. Водопад Чэин и Art Valley — оба геосайты Всемирного геопарка ЮНЕСКО Хантанган: один и тот же ландшафт, увиденный с двух противоположных сторон. Отправление по понедельникам, четвергам и субботам."
+    },
+    "price": {
+      "amountLabel": "54"
+    }
+  },
+  "seoul-gapyeong-nami-morning-calm-petite-france-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-gapyeong-nami-morning-calm-petite-france-day-tour",
+      "title": "Однодневный тур в Капхён из Сеула: остров Нами, Garden of Morning Calm и Petite France",
+      "subtitle": "Три главные точки Капхёна за один автобусный день — без горных походов, три входных билета включены",
+      "region": "Сеул → провинция Кёнгидо (Капхён)",
+      "duration": "11.5 часа",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Однодневная поездка из Сеула",
+        "Капхён",
+        "Сборная группа",
+        "K-drama",
+        "Сады"
+      ],
+      "heroImage": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "thumbnail": "/images/tours/nami-island/nami-metasequoia-sunset-lake.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Самый простой выезд за город из Сеула: аллея метасеквой на острове Нами, тематический дендрарий площадью 330,000 m² и деревня Маленького принца — все три входных билета включены, возвращение в Сеул к 19:00."
+    },
+    "price": {
+      "amountLabel": "59"
+    }
+  },
+  "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour": {
+    "catalog_card": {
+      "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+      "title": "Зимний спецтур из Сеула: Сораксан, остров Нами и ледяная стена в долине Оби",
+      "subtitle": "Автобусный день только для зимы — снег на самой известной вершине Кореи, Нами в инее и ледяная стена, построенная деревней",
+      "region": "Сеул → провинция Канвондо → провинция Кёнгидо (Капхён)",
+      "duration": "13.5 часа",
+      "stopsCount": 3,
+      "rating": 0,
+      "reviewCount": 0,
+      "badges": [
+        "Только зимой",
+        "Сезонный",
+        "Однодневная поездка из Сеула",
+        "Сораксан",
+        "Ледяная стена"
+      ],
+      "heroImage": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "thumbnail": "/images/tours/seoraksan-national-park/seoraksan-ridge-view.webp",
+      "priceLabel": "",
+      "shortCardDescription": "Идёт только в разгар зимы: Сораксан под снегом, заиндевевшие аллеи острова Нами и 25-метровая ледяная стена, которую жители деревни в Капхёне наращивают на скале в долине каждый январь."
+    },
+    "price": {
+      "amountLabel": "69"
+    }
+  }
+};

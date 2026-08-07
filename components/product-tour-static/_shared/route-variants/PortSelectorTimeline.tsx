@@ -3,7 +3,7 @@
 import { Anchor, ChevronRight, Clock, MapPin, Ship } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { stripInlineBold } from "@/lib/tour-product/inline-markdown";
+import { stripEmphasisMarkers } from "@/components/product-tour-static/_shared/inlineEmphasis";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import type {
   PortRouteVariant,
@@ -73,7 +73,7 @@ function VariantStopCard({
                   <span aria-hidden className="mt-[5px] h-1 w-1 flex-shrink-0 rounded-full bg-slate-400" />
                   {/* A single clamped line has no room for emphasis, so the
                       authored `**bold**` only reads as stray asterisks. */}
-                  <span className="line-clamp-1">{stripInlineBold(stop.highlights[0])}</span>
+                  <span className="line-clamp-1">{stripEmphasisMarkers(stop.highlights[0])}</span>
                 </p>
               )}
             </div>

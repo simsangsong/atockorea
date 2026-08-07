@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
+import { isAllowedPushEndpoint } from '@/lib/push-endpoint';
 
 export const dynamic = 'force-dynamic';
 
@@ -21,29 +22,6 @@ interface SubscriptionBody {
   };
 }
 
-// Known Web Push service hosts. The stored endpoint is later POSTed to by the
-// server (web-push), so an unvalidated URL is a stored-SSRF vector — restrict
-// to https on a real push provider before persisting.
-const PUSH_HOST_SUFFIXES = [
-  'push.services.mozilla.com',
-  'fcm.googleapis.com',
-  'android.googleapis.com',
-  'push.apple.com', // *.push.apple.com
-  'notify.windows.com', // *.notify.windows.com
-  'notify.live.net',
-];
-
-function isAllowedPushEndpoint(endpoint: string): boolean {
-  try {
-    const url = new URL(endpoint);
-    if (url.protocol !== 'https:') return false;
-    return PUSH_HOST_SUFFIXES.some(
-      (suffix) => url.hostname === suffix || url.hostname.endsWith(`.${suffix}`),
-    );
-  } catch {
-    return false;
-  }
-}
 
 export async function POST(req: NextRequest) {
   try {
