@@ -53,7 +53,7 @@
 
 | 표면 | 방문하는 하니스 |
 |---|---|
-| `/tour-mode` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
+| `/tour-mode` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-private-itinerary-render.mjs`[리터럴] |
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
 | `/tour-mode/companion/[token]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] |
