@@ -38,6 +38,7 @@ import { startVoiceRecording } from '@/lib/tour-room/recorder';
 import { isDeviceSttSupported, startDeviceStt } from '@/lib/tour-room/deviceStt';
 import { primeAudio } from '@/lib/tour-room/tts';
 import MicPrime from '@/components/tour-mode/MicPrime';
+import { useMicPermission } from '@/hooks/useMicPermission';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
 import GuideSeatDashboard from '@/components/tour-mode/guide/GuideSeatDashboard';
 import OnsiteJoinQr from '@/components/tour-mode/OnsiteJoinQr';
@@ -345,6 +346,8 @@ export default function Cockpit({
   // Voice is a small phase machine: idle → recording → pending (undo window) →
   // sending → idle. Device STT (Web Speech) is preferred; audio upload is the
   // fallback. `recMode` picks which the current capture is.
+  /** Only to tell the unfixable  state apart — see the mic block below. */
+  const { state: micState } = useMicPermission();
   const [phase, setPhase] = useState<'idle' | 'recording' | 'transcribing' | 'pending' | 'sending'>('idle');
   const [recMode, setRecMode] = useState<'device' | 'audio'>('audio');
   const [level, setLevel] = useState(0);
@@ -2231,7 +2234,26 @@ export default function Cockpit({
             </form>
           </div>
           <div className="px-4 pb-2 pt-1.5">
-            <MicPrime variant="dark" locale="ko" className="mb-1.5" />
+            {/*
+              🔴 Before permission is granted this used to stack a second full
+              button ("🎤 마이크 허용") plus a line of explanation ON TOP of the
+              button it was asking permission for — two controls for one
+              intention, and 79px of them, which pushed the driving screen's
+              fixed bottom furniture to 258px / 31% (the 25% line). Measured
+              both ways: granted 179px = 21%, prompt 258px = 31%. The whole
+              overage was this block.
+
+              It was also redundant, which is the part worth writing down:
+              `startVoiceRecording` calls `getUserMedia` (lib/tour-room/recorder
+              .ts), and that IS the browser prompt. Tapping 눌러서 말하기 has
+              always asked for the microphone by itself. The extra button made
+              the driver tap twice for what one tap already did.
+
+              So there is nothing to replace it with. `denied` still renders
+              MicPrime, because that is the one state no tap can fix and the
+              browser-settings path is the only real help.
+            */}
+            {micState === 'denied' ? <MicPrime variant="dark" locale="ko" className="mb-1.5" /> : null}
             <button
               type="button"
               onClick={startRecording}
