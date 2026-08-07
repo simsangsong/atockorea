@@ -57,11 +57,11 @@
 | `/tour-mode/checkin/[token]` | `qa-chrome-overlap.mjs`[리터럴] |
 | `/tour-mode/companion/[token]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/driver` | `qa-chrome-overlap.mjs`[리터럴] · `qa-driver-walk.ts`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-tap-reachability.mjs`[리터럴] |
-| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cjk-render.mjs`[선언] · `qa-cockpit-tray.ts`[선언] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/guide` | `qa-bundle-baseline.mjs`[리터럴] · `qa-cjk-render.mjs`[선언] · `qa-cockpit-tray.ts`[선언] · `qa-cockpit-walk.mjs`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-seat-dispatch-e2e.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/join/[roomToken]` | `qa-uiux-render.mjs`[선언] |
 | `/tour-mode/plan` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] |
 | `/tour-mode/plan/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chrome-overlap.mjs`[리터럴] · `qa-ios-smoke.ts`[리터럴] · `qa-perf-throttled.mjs`[리터럴] · `qa-planner-walk.mjs`[리터럴] · `qa-uiux-render.mjs`[선언] |
-| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chat-bubble-fit.mjs`[선언] · `qa-cjk-render.mjs`[선언] · `qa-door-fixes-walk.mjs`[선언] · `qa-guest-tray.ts`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-overlay-photo-probe.mjs`[선언] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-seat-door-walk.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
+| `/tour-mode/room/[bookingId]` | `qa-bundle-baseline.mjs`[리터럴] · `qa-chat-bubble-fit.mjs`[선언] · `qa-cjk-render.mjs`[선언] · `qa-door-fixes-walk.mjs`[선언] · `qa-guest-tray.ts`[선언] · `qa-hero-grid.mjs`[선언] · `qa-ios-smoke.ts`[리터럴] · `qa-overlay-photo-probe.mjs`[선언] · `qa-perf-throttled.mjs`[리터럴] · `qa-rally-stages.mjs`[선언] · `qa-seat-dispatch-e2e.mjs`[선언] · `qa-seat-door-walk.mjs`[선언] · `qa-smartapp-walk.mjs`[선언] · `qa-touch-target.mjs`[선언] · `qa-uiux-flow.mjs`[선언] · `qa-uiux-render.mjs`[선언] |
 
 **실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
