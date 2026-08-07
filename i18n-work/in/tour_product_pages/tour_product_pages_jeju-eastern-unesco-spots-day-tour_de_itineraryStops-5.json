@@ -6,87 +6,153 @@
   "chunk": "itineraryStops-5",
   "tier": "B",
   "segments": {
-    "/itineraryStops/6/description": {
-      "source_en": "**⟦G0⟧ (⟦G0⟧)** is a lava tube formed by **lava that erupted roughly 8,000 years ago from Geomunoreum, a parasitic volcano on the flank of Hallasan**, and in **2007 it was inscribed on the UNESCO World Natural Heritage list together with ⟦G1⟧ and Hallasan under the name 'Jeju Volcanic Island and Lava Tubes'**. Because it belongs to the **same single inscribed property** as ⟦G1⟧, this tour packs **two World Natural Heritage sites** into a single day. \n\nWith a total length of about **7.4 km** (13–15 km including connected sections), it is one of the largest lava tubes in the world, and its main passage reaches **18 m wide and 23–25 m high**. Of the three entrances created by ceiling collapse, **only about a 1 km stretch from the second entrance is open to the public**, making it an **out-and-back course of about 30–45 min** in which you return the way you came. At the end of the open section stands the **world's tallest lava column at 7.6 m high**, Manjanggul's iconic photo spot. \n\nThe inside of the cave stays at **11–13°C year-round**, cool in summer and mild in winter, but the floor is dark and somewhat damp, so we recommend **a jacket and non-slip shoes**. It is also designated a **National Natural Monument**. Admission is **₩4,000 for adults (₩3,000 for groups) / ₩2,000 for teens and children**, hours are **09:00–18:00 (last entry 17:10)**, closed the first Wednesday of every month.",
+    "/itineraryStops/6/whyOnRoute": {
+      "source_en": "**The seaside finale — and the closest stop to Jeju City.** After the UNESCO afternoon at Seongsan, the day winds down at ⟦G0⟧: emerald water, white sand, and a stretch of Olle Trail Course 19 in the softer late-afternoon light, when the day-trip crowds have thinned. Because Hamdeok sits on the coastal road back to Jeju City, ending here also makes the ride home the shortest of the day — an easy landing before drop-off.",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre",
-        "⟦G1⟧ = Seongsan Ilchulbong"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/convenience/parking": {
+      "source_en": "Public parking lot (paid in summer)"
+    },
+    "/itineraryStops/6/convenience/restroom": {
+      "source_en": "Public restrooms and shower facilities at beach"
+    },
+    "/itineraryStops/6/description": {
+      "source_en": "**⟦G0⟧ (함덕 서우봉 해변)** is one of Jeju's best-known east-coast beaches, loved for its bright sand, shallow emerald water, and the small volcanic cone of **Seoubong (서우봉)** rising at the eastern end. \n\nThe main beach and connected coves give guests an easy, unhurried look at Jeju's coastal scenery without a long walk, and the seaside promenade is suitable for families and seniors. \n\nIn spring, the slopes around Seoubong often turn yellow with canola flowers; in clear weather, the short upper path gives a broad view over the eastern coastline. \n\nThe area also has a historical layer: coastal caves and wartime remains around Seoubong are connected with Japan's late-colonial military presence on Jeju, adding context beyond the beach view. Hamdeok is also part of **Jeju Olle Trail Course 19**, so guests can experience a small piece of Jeju's walking culture before moving inland. \n\nAdmission is free, and the stop works well as a relaxed photo and wind-down point at the end of the eastern route.",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/visitBasics/hours": {
-      "source_en": "09:00–18:00 (last entry 17:10)"
+      "source_en": "Open 24 hours (beach); managed swim season July–August with lifeguards"
     },
     "/itineraryStops/6/visitBasics/closed": {
-      "source_en": "First Wednesday of every month / temporary closure during heavy rain"
+      "source_en": "Open year-round",
+      "tm": "Ganzjährig geöffnet"
     },
     "/itineraryStops/6/visitBasics/walking": {
-      "source_en": "Moderate — flat 1 km round trip, stair descent at the cave entrance, somewhat uneven and damp floor"
+      "source_en": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
     },
     "/itineraryStops/6/visitBasics/admission": {
-      "source_en": "Adult ₩4,000 (group ₩3,000) / teens and children ₩2,000 (group ₩1,500)"
+      "source_en": "Free",
+      "tm": "Kostenlos"
     },
     "/itineraryStops/6/galleryItems/0/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 1",
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — Galeriebild 1",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/0/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 1",
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — Foto 1",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/0/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/1/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — Galeriebild 2",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/1/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 2",
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — Foto 2",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/1/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/2/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 3",
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — Galeriebild 3",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/2/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 3",
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/6/galleryItems/2/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — Galeriebild 4",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — Foto 4",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — Galeriebild 5",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — Foto 5",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/itineraryStops/7/name": {
       "source_en": "Drop-off (2 points + Dongmun Market)"
     },
     "/itineraryStops/7/category": {
-      "source_en": "Drop-off — Jeju City Hub Sequence"
+      "source_en": "Drop-off — Jeju City Hub Sequence",
+      "tm": "Rückfahrt — Abfolge der Haltepunkte in Jeju City"
     },
     "/itineraryStops/7/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itineraryStops/7/timeUsed/0": {
       "source_en": "Coach Haenyeo Museum → Dongmun — ~25 min"
@@ -113,7 +179,7 @@
       "source_en": "**Dongmun Traditional Market** — Jeju's most popular evening market, seafood + tangerine + street food"
     },
     "/itineraryStops/7/highlights/2": {
-      "source_en": "Estimated arrival: Dongmun ~17:55, City Hall ~18:10, Airport ~18:25"
+      "source_en": "Estimated arrival: Dongmun ~18:00, City Hall ~18:15, Airport ~18:30"
     },
     "/itineraryStops/7/highlights/3": {
       "source_en": "**Same-day evening flights from JIA** typically viable (last departure ~21:30)"
@@ -122,44 +188,64 @@
       "source_en": "Drop-off sequence aligned with morning pickup mirroring"
     },
     "/itineraryStops/7/whyOnRoute": {
-      "source_en": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Haenyeo Museum transit ~55 min covers all 3 points without backtracking."
+      "source_en": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Hamdeok transit ~55 min covers all 3 points without backtracking."
     },
     "/itineraryStops/7/description": {
-      "source_en": "**Drop-off mirrors the morning pickup** with optional Dongmun Market end-of-day stop: **Dongmun Traditional Market (동문시장)** is a 25-min coach from Haenyeo Museum and offers Jeju's most popular evening market for **fresh seafood, Jeju tangerine products, and street-food dinner options** — guests can choose to drop here for independent dining + market shopping or continue to **Jeju City Hall** and **Jeju International Airport** drop-off points. \n\nEstimated arrival: **Dongmun Market ~17:55, City Hall ~18:10, Airport ~18:25**. Same-day evening flights from JIA (last departure ~21:30) are typically viable from this drop-off timing."
+      "source_en": "**Drop-off mirrors the morning pickup** with an optional Dongmun Market end-of-day stop: **Dongmun Traditional Market (동문시장)** is a ~25-min coach ride from Hamdeok Beach and offers Jeju's most popular evening market for **fresh seafood, Jeju tangerine products, and street-food dinner options** — guests can choose to drop here for independent dining + market shopping or continue to **Jeju City Hall** and **Jeju International Airport** drop-off points. \n\nEstimated arrival: **Dongmun Market ~18:00, City Hall ~18:15, Airport ~18:30**. Same-day evening flights from JIA (last departure ~21:30) are typically viable from this drop-off timing."
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/6/whyOnRoute": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
     "/itineraryStops/6/description": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre",
-      "⟦G1⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/0/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/0/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/0/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/1/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/1/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/1/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/2/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/2/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/itineraryStops/6/galleryItems/2/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/3/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/3/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/3/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/4/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/4/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/itineraryStops/6/galleryItems/4/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     }
   },
-  "tmHits": 0
+  "tmHits": 19
 }

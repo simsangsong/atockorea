@@ -7,310 +7,301 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Pickup and coastal departure"
+      "source_en": "Pickup and eastbound departure"
     },
     "/routePhases/0/duration": {
       "source_en": "about 1 hour"
     },
     "/routePhases/0/description": {
-      "source_en": "Pickup at four points across Jeju City (08:30–09:05), then transfer to ⟦G0⟧.",
+      "source_en": "Pickup at four points across Jeju City (08:30–09:05), then a direct transfer east to the ⟦G0⟧ in Gimnyeong.",
       "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "From the coast to inland cultural heritage"
+      "source_en": "UNESCO lava tube before the crowds"
     },
     "/routePhases/1/duration": {
-      "source_en": "about 2 hours"
+      "source_en": "about 1.5 hours"
     },
     "/routePhases/1/description": {
-      "source_en": "⟦G0⟧ (60 min) → ⟦G1⟧ (Joseon-era National Folklore Cultural Heritage, 60 min).",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage, 55 min) right after opening — the quietest hour inside the cave — then inland to Seongeup.",
       "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand",
-        "⟦G1⟧ = Folkloredorf Seongeup"
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/routePhases/2/phase": {
-      "source_en": "Lunch",
-      "tm": "Mittagessen"
+      "source_en": "Joseon heritage village + lunch"
     },
     "/routePhases/2/duration": {
-      "source_en": "about 1 hour"
+      "source_en": "about 2 hours"
     },
     "/routePhases/2/description": {
-      "source_en": "Local restaurant near Seongsan — black pig, abalone hot pot, seasonal seafood. Lunch not included."
+      "source_en": "⟦G0⟧ (Joseon-era National Folklore Cultural Heritage, 60 min) → local restaurant near Seongsan — black pig, abalone hot pot, seasonal seafood. Lunch not included.",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
     },
     "/routePhases/3/phase": {
-      "source_en": "UNESCO core"
+      "source_en": "Seongsan UNESCO core + haenyeo"
     },
     "/routePhases/3/duration": {
-      "source_en": "about 3 hours"
+      "source_en": "about 2.5 hours"
     },
     "/routePhases/3/description": {
-      "source_en": "⟦G1⟧ (optional climb) → haenyeo diving performance (Haenyeo Museum if canceled) → ⟦G0⟧ (UNESCO World Natural Heritage).",
+      "source_en": "⟦G0⟧ (optional climb) → haenyeo diving performance in the sea below the peak (Haenyeo Museum if canceled).",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre",
-        "⟦G1⟧ = Seongsan Ilchulbong"
+        "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/routePhases/4/phase": {
-      "source_en": "Return"
+      "source_en": "Beach finale and return"
     },
     "/routePhases/4/duration": {
-      "source_en": "about 1 hour"
+      "source_en": "about 2 hours"
     },
     "/routePhases/4/description": {
-      "source_en": "Gimnyeong → transfer to Jeju City + drop-off at two points and Dongmun Market."
-    },
-    "/galleryItems/0/alt": {
-      "source_en": "⟦G0⟧ — gallery image 1",
+      "source_en": "⟦G0⟧ in the late-afternoon light (60 min) → short coastal transfer back to Jeju City + drop-off at two points and Dongmun Market.",
       "glossary": [
         "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/galleryItems/0/caption": {
-      "source_en": "⟦G0⟧ — photo 1",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 1",
       "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/galleryItems/0/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
       "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
       ]
     },
     "/galleryItems/1/alt": {
-      "source_en": "⟦G0⟧ — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/1/caption": {
-      "source_en": "⟦G0⟧ — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/1/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/2/alt": {
-      "source_en": "⟦G0⟧ — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/2/caption": {
-      "source_en": "⟦G0⟧ — photo 3",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/2/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/3/alt": {
-      "source_en": "⟦G0⟧ — gallery image 4",
-      "tm": "⟦G0⟧ — Galeriebild 4",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/3/caption": {
-      "source_en": "⟦G0⟧ — photo 4",
-      "tm": "⟦G0⟧ — Foto 4",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/3/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
-    },
-    "/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 1",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
-    "/galleryItems/4/caption": {
+    "/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 1",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
-    "/galleryItems/4/location": {
+    "/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
-    "/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/5/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/6/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/6/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 3",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/6/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/7/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 4",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/7/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 4",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/7/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/8/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 6",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/8/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 6",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/8/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/galleryItems/9/alt": {
+    "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 1",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/galleryItems/9/caption": {
+    "/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 1",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/galleryItems/9/location": {
+    "/galleryItems/2/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
+    "/galleryItems/3/alt": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 1"
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 1"
+    },
+    "/galleryItems/3/location": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — Galeriebild 1",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — Foto 1",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
     "/galleryItems/10/alt": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/10/location": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/11/location": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/12/location": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/galleryItems/13/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 2",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/galleryItems/10/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/10/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/11/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/11/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 3",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/11/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/12/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 4",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/12/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 4",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/12/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/galleryItems/13/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 5",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
     "/galleryItems/13/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 5",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 2",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -322,13 +313,13 @@
       ]
     },
     "/galleryItems/14/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 6",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 3",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/galleryItems/14/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 6",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 3",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -340,13 +331,13 @@
       ]
     },
     "/galleryItems/15/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 12",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 4",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/galleryItems/15/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 12",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 4",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -358,13 +349,22 @@
       ]
     },
     "/galleryItems/16/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 1"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
     },
     "/galleryItems/16/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 1"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
     },
     "/galleryItems/16/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
     },
     "/galleryItems/17/alt": {
       "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 2"
@@ -403,188 +403,213 @@
       "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
     },
     "/galleryItems/21/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 1",
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — Galeriebild 2",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/21/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 1",
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — Foto 2",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/21/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/22/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — Galeriebild 3",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/22/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 2",
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/22/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/23/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 3",
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — Galeriebild 4",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/23/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 3",
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — Foto 4",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     },
     "/galleryItems/23/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = Manjanggul-Lavaröhre"
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/24/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — Galeriebild 5",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/24/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — Foto 5",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
+    },
+    "/galleryItems/24/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
       ]
     }
   },
   "glossaryTokens": {
     "/routePhases/0/description": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/routePhases/1/description": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand",
-      "⟦G1⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
+    },
+    "/routePhases/2/description": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/routePhases/3/description": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre",
-      "⟦G1⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/routePhases/4/description": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/0/alt": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/0/caption": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/0/location": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/1/alt": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/1/caption": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/1/location": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/2/alt": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Seongsan Ilchulbong"
     },
     "/galleryItems/2/caption": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Seongsan Ilchulbong"
     },
     "/galleryItems/2/location": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
-    },
-    "/galleryItems/3/alt": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
-    },
-    "/galleryItems/3/caption": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
-    },
-    "/galleryItems/3/location": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+      "⟦G0⟧": "Seongsan Ilchulbong"
     },
     "/galleryItems/4/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/4/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/4/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/5/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/5/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/5/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/6/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/6/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/6/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/7/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/7/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/7/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/8/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/8/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/8/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
+      "⟦G0⟧": "Manjanggul-Lavaröhre"
     },
     "/galleryItems/9/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/9/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/9/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/10/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/10/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/10/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/11/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/11/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/11/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/12/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/12/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/12/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/galleryItems/13/alt": {
       "⟦G0⟧": "Seongsan Ilchulbong"
@@ -613,33 +638,51 @@
     "/galleryItems/15/location": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
+    "/galleryItems/16/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/16/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/16/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
     "/galleryItems/21/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/21/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/21/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/22/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/22/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/22/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/23/alt": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/23/caption": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     },
     "/galleryItems/23/location": {
-      "⟦G0⟧": "Manjanggul-Lavaröhre"
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/24/alt": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/24/caption": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
+    },
+    "/galleryItems/24/location": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     }
   },
-  "tmHits": 7
+  "tmHits": 15
 }

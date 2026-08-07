@@ -7,28 +7,35 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "First-time visitors to the area"
+      "source_en": "First-time visitors to the area",
+      "tm": "Erstbesucher der Region"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples"
+      "source_en": "Couples",
+      "tm": "Paare"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Adult families"
+      "source_en": "Adult families",
+      "tm": "Familien mit Erwachsenen"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Active travelers comfortable with full days"
+      "source_en": "Active travelers comfortable with full days",
+      "tm": "Aktive Reisende, denen volle Tage liegen"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Travelers who want UNESCO World Heritage stops"
+      "source_en": "Travelers who want UNESCO World Heritage stops",
+      "tm": "Reisende, die Stopps am UNESCO-Welterbe möchten"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who want minimal walking"
+      "source_en": "Travelers who want minimal walking",
+      "tm": "Reisende, die möglichst wenig laufen möchten"
     },
     "/whyTourWorks/lessIdealFor/1": {
       "source_en": "Stroller-heavy groups"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Travelers needing a tight same-day flight buffer"
+      "source_en": "Travelers needing a tight same-day flight buffer",
+      "tm": "Reisende mit knappem Zeitpuffer für einen Flug am selben Tag"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
       "source_en": "Two UNESCO World Natural Heritage sites + intangible heritage in one day"
@@ -40,42 +47,53 @@
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "The real Manjanggul — the original UNESCO lava tube, no longer a substitute"
+      "source_en": "Cave first, beach last — the order is the point"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "In the past we substituted Micheon Cave during closures, but now you explore Manjanggul itself — one of the world's largest lava tubes, home to the world's largest lava column at 7.6 m high."
+      "source_en": "Manjanggul opens at 09:00 and is emptiest in its first hour, so the route goes there directly from pickup — you walk the lava tube before the midday tour-bus wave, while the 11–13°C cool is a refreshment rather than a chill. The day then builds through Seongeup and Seongsan to the haenyeo performance, and closes at Hamdeok Beach in the soft late-afternoon light — the closest stop to Jeju City, which keeps the final transfer the shortest of the day."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "All admissions included — the value at this price"
+      "source_en": "The real Manjanggul — the original UNESCO lava tube, no longer a substitute"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "In the past we substituted Micheon Cave during closures, but now you explore Manjanggul itself — one of the world's largest lava tubes, home to the world's largest lava column at 7.6 m high."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "All admissions included — the value at this price"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
       "source_en": "⟦G0⟧ ₩5,000 + Manjanggul ₩4,000 (Seongeup free, haenyeo diving performance free) — two World Natural Heritage sites are covered by just ₩9,000 in admissions.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+    "/whyTourWorks/routeLogicSections/0/items/4/label": {
       "source_en": "⟦G0⟧ is an optional climb",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+    "/whyTourWorks/routeLogicSections/0/items/4/detail": {
       "source_en": "The roughly 30-minute round-trip climb to the crater rim is steep and not right for everyone. There is also a coastal loop path with a similar view and no stairs, so you can choose according to your fitness."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why this route is built this way"
+      "source_en": "Why this route is built this way",
+      "tm": "Warum diese Route so aufgebaut ist"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this day flows"
+      "source_en": "How this day flows",
+      "tm": "Wie dieser Tag verläuft"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "An East Jeju loop that connects the island's two UNESCO World Natural Heritage sites in a single day from the eastern tip — ⟦G0⟧ (a tuff cone) and Manjanggul (a lava tube), both inscribed in 2007 as the same property. To these it adds the haenyeo diving performance, a UNESCO intangible heritage. An efficient route that avoids the crowds at the major sights.",
+      "source_en": "An East Jeju loop that runs the island's two UNESCO World Natural Heritage sites in a single day — entering the ⟦G1⟧ right after opening, ahead of the crowds, and completing the same 2007 inscription at ⟦G2⟧ in the afternoon. Between them sits the Joseon-era ⟦G0⟧; after them, the haenyeo diving performance (a UNESCO intangible heritage) and a golden-hour finish at Hamdeok Beach, the closest stop to Jeju City.",
       "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
+        "⟦G0⟧ = Folkloredorf Seongeup",
+        "⟦G1⟧ = Manjanggul-Lavaröhre",
+        "⟦G2⟧ = Seongsan Ilchulbong"
       ]
     },
     "/staticQuestions/0/answer": {
@@ -118,19 +136,23 @@
       "source_en": "It is not included. Lunch is separate (about ₩15,000), and the guide will recommend a good local spot."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is lunch included?"
+      "source_en": "Is lunch included?",
+      "tm": "Ist das Mittagessen inbegriffen?"
     },
     "/bookingTrustItems/0/body": {
       "source_en": "Licensed Korean tour operator with full insurance and KTO-certified English/Chinese-speaking guides — no shopping detours, every minute on the route."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Lizenzierter lokaler Veranstalter"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour operator with full insurance"
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Zugelassener koreanischer Tourveranstalter mit vollem Versicherungsschutz"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "All admissions included in the tour fee: ⟦G1⟧ (₩5,000), Manjanggul (₩4,000), ⟦G0⟧ (free), haenyeo diving performance (free) — nothing extra to pay on site.",
@@ -140,13 +162,16 @@
       ]
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Routenspezialisten"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Handfein abgestimmter Reiseverlauf, keine Standardrunde"
     },
     "/bookingTrustItems/2/body": {
       "source_en": "A small-group minibus (max 14) lets you explore Seongeup's alleys, the ⟦G0⟧, and the haenyeo diving performance at a relaxed pace.",
@@ -155,13 +180,16 @@
       ]
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Angenehme Gruppengröße"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Passend zur Route dimensioniert"
     },
     "/seasonalVariations/0/season": {
       "source_en": "Spring",
@@ -192,22 +220,27 @@
       "source_en": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Sofort"
     },
     "/bookingSupportSteps/0/description": {
       "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside city)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Erinnerung 12 Stunden vorher"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Wetter-Update und etwaige Routenanpassungen"
     },
     "/bookingSupportSteps/1/timing": {
       "source_en": "12 hours before",
@@ -217,73 +250,89 @@
       "source_en": "Pre-tour note on haenyeo demonstration schedule (14:00 at Seongsan) so you know which timing to target."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Endgültige Abholinformationen"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Genaue Abholzeit und Kontakt zum Fahrer"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Am Abend zuvor"
     },
     "/bookingSupportSteps/2/description": {
       "source_en": "Final pickup time confirmed the evening before.",
       "tm": "Die endgültige Abholzeit wird am Vorabend bestätigt."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Routenhinweise am Tourtag"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Morgendliches Briefing auf Basis der aktuellen Bedingungen"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Am Morgen der Tour"
     },
     "/bookingSupportSteps/3/description": {
       "source_en": "Morning message with any weather note or Seongsan rim status (closes in high wind)."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Tipps zu jedem Stopp"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Begleitung in Echtzeit an jedem Ort"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Während der Tour"
     },
     "/bookingSupportSteps/4/description": {
       "source_en": "Guide provides depth at every stop: haenyeo UNESCO 2016 inscription, Seongeup's 500-year administrative history, lava-tube geology, Seongsan's triple UNESCO designation."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Betreuung nach der Tour"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Nachfassen und Empfehlungen"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
       "source_en": "Post-tour feedback request; Jeju travel questions answered same day."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     }
   },
   "glossaryTokens": {
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
-    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
-    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+    "/whyTourWorks/routeLogicSections/0/items/4/label": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
     "/routeShapeIntro/subtitle": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
+      "⟦G0⟧": "Folkloredorf Seongeup",
+      "⟦G1⟧": "Manjanggul-Lavaröhre",
+      "⟦G2⟧": "Seongsan Ilchulbong"
     },
     "/staticQuestions/0/answer": {
       "⟦G0⟧": "Seongsan Ilchulbong"
@@ -305,5 +354,5 @@
       "⟦G0⟧": "Manjanggul-Lavaröhre"
     }
   },
-  "tmHits": 6
+  "tmHits": 45
 }

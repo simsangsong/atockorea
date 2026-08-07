@@ -7,20 +7,18 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Jeju City + airport pickup"
+      "source_en": "Jeju City + airport pickup",
+      "tm": "Jeju City + Abholung am Flughafen"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
-      ]
+      "source_en": "Manjanggul (UNESCO)"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Beach"
+      "source_en": "UNESCO Lava Tube"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -30,17 +28,20 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Heritage Village"
+      "source_en": "Heritage Village",
+      "tm": "Historisches Dorf"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch",
       "tm": "Mittagessen"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧ (UNESCO)",
+      "tm": "⟦G0⟧ (UNESCO)",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -55,28 +56,33 @@
       "source_en": "Haenyeo Intangible Heritage"
     },
     "/routeFlowStops/6/name": {
-      "source_en": "Manjanggul (UNESCO)"
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hamdeok-Seoubong-Strand"
+      ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "UNESCO Lava Tube"
+      "source_en": "Beach"
     },
     "/routeFlowStops/7/name": {
       "source_en": "Jeju City drop-off"
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Rückfahrt"
     }
   },
   "glossaryTokens": {
-    "/routeFlowStops/1/name": {
-      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
-    },
     "/routeFlowStops/2/name": {
       "⟦G0⟧": "Folkloredorf Seongeup"
     },
     "/routeFlowStops/4/name": {
       "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     }
   },
-  "tmHits": 3
+  "tmHits": 9
 }
