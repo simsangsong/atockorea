@@ -109,15 +109,20 @@ for (const testCase of CASES) {
   await page.screenshot({ path: path.join(OUT, `${testCase.label}-home.png`), fullPage: false });
   await page.screenshot({ path: path.join(OUT, `${testCase.label}-home-full.png`), fullPage: true });
 
-  // Expand whatever "more" affordance exists, so the testid set below is the
-  // FULL set of destinations rather than only the ones on first paint.
+  // I7v4 (2026-08-07): there is no fold any more, so first paint IS the full
+  // set of destinations. The expand step stays only for the case where a
+  // future disclosure appears — and it reports when it found nothing to
+  // expand, rather than leaving an empty "expanded" column looking like a
+  // measurement that was taken and came back the same.
   let expanded = null;
-  const more = page.locator('[data-testid="home-more-toggle"]').first();
+  const more = page.locator('[data-testid="home-more"], [data-testid="home-more-toggle"]').first();
   if (await more.count()) {
     await more.click().catch(() => {});
     await page.waitForTimeout(1200);
     expanded = await page.evaluate(MEASURE);
     await page.screenshot({ path: path.join(OUT, `${testCase.label}-home-expanded.png`), fullPage: true });
+  } else {
+    console.log(`[${testCase.label}] no disclosure on the home tab — first paint is the full set.`);
   }
 
   results.push({ case: testCase.label, collapsed, expanded });

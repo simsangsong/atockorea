@@ -10,7 +10,11 @@
  *   │   shell sheets (Smart Guide, emergency), shell tabs (chat/map/schedule),
  *   │   local sheets (pickup, quick signals, travel timeline), or links
  *   │   (/plan D-1 editor, review). No new capabilities, only new entrances.
- *   └ "more" row — overflow sheet (settings & language, review)
+ *   └ extras rows — install, settings & language, review
+ *
+ * Everything above is on screen at once (I7v4). Nothing folds: this component
+ * unmounts on every tab switch, so any collapse state reset itself behind the
+ * guest's back — see the grid block below.
  *
  * Customers only — guides/drivers keep their chat-first / console surfaces.
  * All copy is static 5-locale, zero LLM, renders from the join snapshot.
@@ -42,7 +46,6 @@ import {
   IconChevronRight,
   IconConcierge,
   IconJourney,
-  IconMore,
   IconPickup,
   IconPlanEdit,
   IconQuickReply,
@@ -82,7 +85,6 @@ const COPY: Record<
     chatTitle: string;
     chatEmpty: string;
     signalHint: string;
-    more: string;
     settingsRow: string;
     reviewRow: string;
     close: string;
@@ -111,7 +113,6 @@ const COPY: Record<
     chatTitle: 'Chat',
     chatEmpty: 'No messages yet — say hello anytime.',
     signalHint: 'One tap tells your guide.',
-    more: 'More features',
     settingsRow: 'Settings & language',
     reviewRow: 'Leave a review',
     close: 'Close',
@@ -139,7 +140,6 @@ const COPY: Record<
     chatTitle: '채팅',
     chatEmpty: '아직 메시지가 없어요 — 언제든 인사를 남겨보세요.',
     signalHint: '탭 한 번이면 가이드에게 전달돼요.',
-    more: '더 많은 기능',
     settingsRow: '설정 · 언어',
     reviewRow: '리뷰 남기기',
     close: '닫기',
@@ -167,7 +167,6 @@ const COPY: Record<
     chatTitle: 'チャット',
     chatEmpty: 'まだメッセージはありません — いつでもどうぞ。',
     signalHint: 'ワンタップでガイドに伝わります。',
-    more: 'その他の機能',
     settingsRow: '設定・言語',
     reviewRow: 'レビューを書く',
     close: '閉じる',
@@ -195,7 +194,6 @@ const COPY: Record<
     chatTitle: 'Chat',
     chatEmpty: 'Aún no hay mensajes — saluda cuando quieras.',
     signalHint: 'Un toque avisa a tu guía.',
-    more: 'Más funciones',
     settingsRow: 'Ajustes e idioma',
     reviewRow: 'Dejar una reseña',
     close: 'Cerrar',
@@ -223,7 +221,6 @@ const COPY: Record<
     chatTitle: '聊天',
     chatEmpty: '还没有消息 — 随时打个招呼吧。',
     signalHint: '轻点一下即可通知导游。',
-    more: '更多功能',
     settingsRow: '设置 · 语言',
     reviewRow: '写评价',
     close: '关闭',
@@ -251,7 +248,6 @@ const COPY: Record<
     chatTitle: '聊天',
     chatEmpty: '還沒有訊息 — 隨時打個招呼吧。',
     signalHint: '輕觸一下即可通知導遊。',
-    more: '更多功能',
     settingsRow: '設定 · 語言',
     reviewRow: '寫評價',
     close: '關閉',
@@ -279,7 +275,6 @@ const COPY: Record<
     chatTitle: 'Chat',
     chatEmpty: 'Pas encore de messages — dites bonjour quand vous voulez.',
     signalHint: 'Un geste suffit pour prévenir votre guide.',
-    more: 'Plus de fonctions',
     settingsRow: 'Réglages et langue',
     reviewRow: 'Laisser un avis',
     close: 'Fermer',
@@ -307,7 +302,6 @@ const COPY: Record<
     chatTitle: 'Chat',
     chatEmpty: 'Noch keine Nachrichten — sagen Sie einfach Hallo.',
     signalHint: 'Ein Tipp genügt — Ihr Guide weiß Bescheid.',
-    more: 'Mehr Funktionen',
     settingsRow: 'Einstellungen & Sprache',
     reviewRow: 'Bewertung schreiben',
     close: 'Schließen',
@@ -335,7 +329,6 @@ const COPY: Record<
     chatTitle: 'Чат',
     chatEmpty: 'Сообщений пока нет — напишите первым.',
     signalHint: 'Одно касание — и гид уже знает.',
-    more: 'Еще функции',
     settingsRow: 'Настройки и язык',
     reviewRow: 'Оставить отзыв',
     close: 'Закрыть',
@@ -363,7 +356,6 @@ const COPY: Record<
     chatTitle: 'Chat',
     chatEmpty: 'Ancora nessun messaggio — saluta quando vuoi.',
     signalHint: 'Basta un tocco per avvisare la guida.',
-    more: 'Altre funzioni',
     settingsRow: 'Impostazioni e lingua',
     reviewRow: 'Lascia una recensione',
     close: 'Chiudi',
@@ -526,8 +518,6 @@ export default function HomeTab({
 }) {
   const copy = COPY[locale];
   const [sheet, setSheet] = useState<HomeSheet>(null);
-  // I6 default: collapsed. One boolean, so the owner's answer is a one-line change.
-  const [moreOpen, setMoreOpen] = useState(false);
   // Now marker advances on a 1-min tick, kept out of render so it stays pure
   // (a bare clock read in render is impure/unstable) — mirrors RoomShell.
   // SG-0c: the source is the room's corrected clock, not the device's.
@@ -952,65 +942,38 @@ export default function HomeTab({
         </div>
       )}
 
-      {/* ---- Action grid + the fold (I7v3, 2026-07-31 round 2) --------
-          EVERY tile folds behind the card-row door. 사장님, on seeing v2
-          live: the three always-open tiles read as clutter above the door —
-          "평소에는 접혀서 more features 버튼만 보이도록". So at rest the home
-          is the hero plus three long rows (chat · manual · this door), and
-          the whole grid unfolds BELOW the door on demand. The tab bar and the
-          header's SOS shield keep every critical destination one tap away
-          while the grid sleeps.
+      {/* ---- Action grid (I7v4, 2026-08-07) ---------------------------
+          🔴 The fold is GONE. I7v3 put every tile behind a "더 많은 기능"
+          door that was shut by default. 사장님 lived with it and reported the
+          cost: "다른 화면 선택하기만 하면 대시보드 자체가 사라져 버려 …
+          대시보드에 있는 각 기능들 버튼들 전부 다 사라지는거잖아? … 다시
+          대시보드가 항시 보이도록 해줘."
 
-          U-D24's promotion rule retires with the open trio; `orderHomeTiles`
-          still fixes the order, so nothing moves between visits.
-          U-D25 still holds: nothing is filtered. Folded content is `hidden`,
-          not unmounted — expanding reveals rather than rebuilds, and no tile
-          a guest learned has moved. `hidden` also means nothing half-visible
-          is focusable: a keyboard user meets the door, not the fold. */}
+          They were describing something the code guaranteed. RoomShell renders
+          this component only while `tab === 'home'`, so it UNMOUNTS on every
+          tab switch and `moreOpen` reset to false on every return. A guest who
+          opened the grid, tapped a tile, and came back found the dashboard shut
+          again — every time, with no way to keep it open. The door was not a
+          collapse the guest controlled; it was one that undid them.
+
+          So the grid is simply on. What made "hide the tiles to cut clutter" a
+          bad trade here is visible in 사장님's own screenshot: below the door
+          sat most of a phone screen of empty canvas.
+
+          U-D25 still holds and is now trivially true — nothing is filtered,
+          nothing is hidden. `orderHomeTiles` still fixes the order, so no tile
+          a guest has learned ever moves between visits. */}
       <div data-testid="home-grid">
-        {/* The door — same long row as its two siblings above; only the arrow
-            differs. It sits inline after the label (사장님: 글씨 옆에), points
-            into the fold, and stops bobbing the moment there is nothing left
-            to hint at. Rotation lives on the icon and the bob on a wrapper
-            span, because both are transforms and one element can't do both. */}
-        <button
-          type="button"
-          onClick={() => setMoreOpen((v) => !v)}
-          data-testid="home-more"
-          aria-expanded={moreOpen}
-          aria-controls="home-grid-tiles home-more-panel"
-          className="tr-home-card tr-press text-cjk-safe mt-2 flex min-h-[56px] w-full items-center gap-3 px-4 py-3 text-left"
-        >
-          <span className="tr-chip tr-chip--base flex h-9 w-9 shrink-0 items-center justify-center" aria-hidden>
-            <IconMore size={TR_ICON.chip} />
-          </span>
-          <span className="tr-card-text text-cjk-safe min-w-0 font-bold text-[var(--tr-ink)]">{copy.more}</span>
-          <span className={`flex shrink-0 ${moreOpen ? '' : 'tr-more-bob'}`} aria-hidden>
-            <IconChevronRight
-              size={TR_ICON.chip}
-              className={`text-[var(--tr-ink-3)] transition-transform ${moreOpen ? '-rotate-90' : 'rotate-90'}`}
-            />
-          </span>
-        </button>
-
         <div
           id="home-grid-tiles"
-          hidden={!moreOpen}
-          /* 🔴 The `hidden` ATTRIBUTE alone cannot fold this: it is UA-level
-             display none, and any author display declaration — like the
-             `grid` utility — overrides it. Caught by a Playwright shot
-             after jsdom and DOM-property checks all passed green. So the
-             display driver is the class swap; the attribute stays for
-             semantics, and the two must never disagree. */
-          className={`${moreOpen ? 'grid' : 'hidden'} tr-stagger mt-1.5 grid-cols-3 gap-1.5`}
+          className="tr-stagger mt-2 grid grid-cols-3 gap-1.5"
           data-testid="home-grid-tiles"
         >
           {/* 🔴 N-b — the orphan row.
               The tile count is conditional (5 to 10 depending on lifecycle,
               privacy, concierge and whether a review link exists), so at 7 or
               10 tiles the last row holds exactly ONE and the grid reads as
-              unfinished. The fold moved where the break falls; it did not
-              remove the possibility.
+              unfinished.
               The stranded tile is always SOS — it is pushed last — so rather
               than leaving it hanging in a third of a row, it takes the whole
               row. An emergency action owning its own line reads as deliberate
@@ -1021,7 +984,9 @@ export default function HomeTab({
         </div>
       </div>
 
-      <div id="home-more-panel" hidden={!moreOpen} data-testid="home-more-sheet">
+      {/* Install / settings / review rode inside the same fold, so they went
+          missing with it. They are three short rows; they stay on screen too. */}
+      <div id="home-more-panel" data-testid="home-more-sheet">
       {/* ---- Install entry (T-D2) — self-hides when no install path. -- */}
       <div className="mt-1.5">
         <InstallCard locale={locale} surface="home" />
