@@ -139,7 +139,7 @@ export function TourImportedCoursesSection({
           not have — the Incheon charter imports a single course. 4 pills can
           outgrow narrow phones, so the row scrolls, never wraps/shrinks. */}
       {courses.length > 1 && (
-        <div className="max-w-full overflow-x-auto scrollbar-hide">
+        <div className="max-w-full overflow-x-auto rail-scrollbar">
           <SegmentedToggle
             ariaLabel={COURSE_SWITCH_LABEL[locale] ?? COURSE_SWITCH_LABEL.en}
             value={course.id}

@@ -14,6 +14,7 @@ import { useUrlFilters } from '@/lib/admin/useUrlFilters';
 import { useRealtimeActivity } from '@/lib/admin/useRealtimeActivity';
 import { formatBookingPrice, type BookingCurrency } from '@/lib/format/currency';
 import { cn } from '@/lib/utils';
+import { ScrollRail } from '@/components/ui/RailArrows';
 
 interface Booking {
   id: string;
@@ -302,7 +303,7 @@ export default function OrdersPage() {
           )}
         </div>
 
-        <div className="mt-2.5 flex items-center gap-2 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ScrollRail wrapperClassName="mt-2.5" className="flex items-center gap-2 overflow-x-auto pb-0.5" arrowSize="sm">
           {SOURCE_CHIPS.map((opt) => {
             const active = filters.source === opt.value;
             return (
@@ -354,7 +355,7 @@ export default function OrdersPage() {
             <option value="desc">최신순</option>
             <option value="asc">오래된순</option>
           </select>
-        </div>
+        </ScrollRail>
 
         {/* U-8 saved views — bookmark the current filter combination. Applying a
             view resets every key (defaults overlaid by the view's filters). */}

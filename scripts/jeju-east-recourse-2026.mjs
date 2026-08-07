@@ -25,9 +25,9 @@ const SLUG = "jeju-eastern-unesco-spots-day-tour";
 const LOCALES = ["ko", "en", "ja", "zh", "zh-TW", "es"];
 
 const MANJANG_IMAGES = [
-  "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-08.webp",
-  "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-22.webp",
-  "/images/tours/ilchulland/chatgpt-image-2026-5-8-07-49-24.webp",
+  "/images/tours/ilchulland/02-chatgpt-image-2026-5-8-07-49-08.webp",
+  "/images/tours/ilchulland/01-chatgpt-image-2026-5-8-07-49-22.webp",
+  "/images/tours/ilchulland/03-chatgpt-image-2026-5-8-07-49-24.webp",
 ];
 
 // New times / numbers (shared across locales)

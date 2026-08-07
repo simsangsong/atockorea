@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Star, ThumbsUp, ChevronDown, Check, Camera, MapPin, Calendar, PenSquare } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { ScrollRail } from "@/components/ui/RailArrows";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 
@@ -112,7 +113,7 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
       )}
 
       {reviewPhotos.length > 0 && (
-        <div className="mt-4 flex gap-2 overflow-x-auto scrollbar-hide">
+        <ScrollRail wrapperClassName="mt-4" className="flex gap-2 overflow-x-auto" arrowSize="sm">
           {reviewPhotos.map((photo, i) => (
             // eslint-disable-next-line @next/next/no-img-element -- Supabase review image
             <img
@@ -126,7 +127,7 @@ function ReviewCard({ review, sectionUi }: { review: Review; sectionUi: TourProd
               className="h-20 w-28 flex-shrink-0 rounded-lg object-cover"
             />
           ))}
-        </div>
+        </ScrollRail>
       )}
 
       {reviewHelpful > 0 && (

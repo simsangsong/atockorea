@@ -5,6 +5,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import type { EastSignatureNatureCoreDetailViewModel } from "../eastSignatureNatureCoreDetailViewModel";
 import { observeSpyTarget } from "@/components/product-tour-static/_shared/sectionScrollSpy";
+import { RailArrows } from "@/components/ui/RailArrows";
 
 export type TourDayFlowSectionProps = Pick<
   EastSignatureNatureCoreDetailViewModel,
@@ -77,7 +78,8 @@ export function TourDayFlowSection({ routeFlowStops, routeShapeIntro, itineraryS
           "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
         )}
       >
-        <div ref={scrollerRef} className="relative overflow-x-auto scrollbar-hide">
+        <RailArrows scrollerRef={scrollerRef} size="sm" />
+        <div ref={scrollerRef} className="relative overflow-x-auto rail-scrollbar">
           <div className="flex items-start gap-0.5 min-w-max px-4 py-5">
             {flexStops.map((stop, i) => {
               const photoUrl = itineraryStops?.[i]?.images?.[0] ?? itineraryStops?.[i]?.image ?? null;

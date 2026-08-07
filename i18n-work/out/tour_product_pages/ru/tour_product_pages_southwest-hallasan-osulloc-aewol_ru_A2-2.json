@@ -1,0 +1,32 @@
+{
+  "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2-2",
+  "locale": "ru",
+  "segments": {
+    "/bookingSupportSteps/0/title": "Мгновенное подтверждение",
+    "/bookingSupportSteps/0/detail": "Вы получаете подтверждение бронирования с кратким описанием дня.",
+    "/bookingSupportSteps/0/timing": "Сразу после бронирования",
+    "/bookingSupportSteps/0/description": "Мгновенное подтверждение с данными о посадке у отеля в городе Чеджу (в черте города бесплатно; за её пределами +₩70 000).",
+    "/bookingSupportSteps/1/title": "Напоминание за 12 часов",
+    "/bookingSupportSteps/1/detail": "Заметки о погоде и корректировки маршрута сообщаются заранее.",
+    "/bookingSupportSteps/1/timing": "За 12 часов",
+    "/bookingSupportSteps/1/description": "Предварительная информация о текущем состоянии дороги 1100 (летний туман, осенняя листва, вероятность снега зимой) и рекомендации по кафе в Эволе.",
+    "/bookingSupportSteps/2/title": "Финальное уведомление о посадке",
+    "/bookingSupportSteps/2/detail": "Вам сообщают точное время посадки и контакт водителя.",
+    "/bookingSupportSteps/2/timing": "Накануне вечером",
+    "/bookingSupportSteps/2/description": "Окончательное время посадки подтверждается накануне вечером.",
+    "/bookingSupportSteps/3/title": "Заметка по маршруту в день тура",
+    "/bookingSupportSteps/3/detail": "Утром даётся короткий брифинг с учётом текущей обстановки на месте.",
+    "/bookingSupportSteps/3/timing": "Утром в день тура",
+    "/bookingSupportSteps/3/description": "Утреннее сообщение о погоде и о возможном закрытии дороги 1100.",
+    "/bookingSupportSteps/4/title": "Сопровождение на каждой остановке",
+    "/bookingSupportSteps/4/detail": "На каждой остановке вы получаете нужную информацию.",
+    "/bookingSupportSteps/4/timing": "Во время тура",
+    "/bookingSupportSteps/4/description": "Гид рассказывает о геологии Халласана как щитового вулкана, о контексте геопарка ЮНЕСКО для Чусанджолли, о легенде водопада Семи Небесных Дев и об истории основания Osulloc компанией Amorepacific в 1979 году.",
+    "/bookingSupportSteps/5/title": "Поддержка после тура",
+    "/bookingSupportSteps/5/detail": "После тура можно получить дополнительные советы и рекомендации.",
+    "/bookingSupportSteps/5/timing": "После тура",
+    "/bookingSupportSteps/5/description": "После высадки отправляется запрос на отзыв о туре.",
+    "/practicalWeatherStatic/today/label": "Интеграция с актуальным прогнозом погоды",
+    "/practicalWeatherStatic/tomorrow/label": "Обновляется ежедневно"
+  }
+}

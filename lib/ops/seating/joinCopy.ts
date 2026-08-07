@@ -24,6 +24,14 @@ export type JoinCopyKey =
   | 'seatTitle'
   | 'seatHint' // {n}
   | 'seatSoon'
+  /**
+   * 차는 붙었는데 내 좌석은 아직이고, 내가 고를 수도 없는 상태.
+   * 여기서 `seatSoon`("배차되면 열려요")을 쓰면 이미 배차된 손님에게 거짓말이
+   * 된다 — 실제로 그렇게 렌더되고 있었다.
+   */
+  | 'seatOnSite'
+  /** 좌석은 있는데 체크인·출발로 결론이 나 더는 못 바꾸는 상태. */
+  | 'seatFixed'
   | 'seatTaken'
   | 'seatLocked'
   | 'selectedCount' // {sel} {n}
@@ -197,6 +205,30 @@ const COPY: Record<JoinCopyKey, Record<RoomLocale, string>> = {
     de: 'Die Sitzplatzwahl öffnet, sobald Ihr Fahrzeug zugeteilt ist.',
     ru: 'Выбор мест откроется, когда будет назначен транспорт.',
     it: 'La scelta dei posti si apre una volta assegnato il veicolo.',
+  },
+  seatOnSite: {
+    en: 'Your guide will seat you at the meeting point.',
+    ko: '집합 장소에서 가이드가 좌석을 안내해 드려요.',
+    zh: '导游会在集合地点为您安排座位。',
+    'zh-TW': '導遊會在集合地點為您安排座位。',
+    ja: '集合場所でガイドが座席をご案内します。',
+    es: 'Su guía le asignará el asiento en el punto de encuentro.',
+    fr: 'Votre guide vous placera au point de rendez-vous.',
+    de: 'Ihre Reiseleitung weist Ihnen den Platz am Treffpunkt zu.',
+    ru: 'Гид укажет ваше место на месте сбора.',
+    it: 'La guida ti assegnerà il posto al punto d’incontro.',
+  },
+  seatFixed: {
+    en: 'Your seat is set — it can no longer be changed.',
+    ko: '좌석이 확정돼 더는 변경할 수 없어요.',
+    zh: '座位已确定，无法再更改。',
+    'zh-TW': '座位已確定，無法再更改。',
+    ja: '座席が確定したため変更できません。',
+    es: 'Su asiento está fijado y ya no se puede cambiar.',
+    fr: 'Votre siège est fixé et ne peut plus être modifié.',
+    de: 'Ihr Sitzplatz steht fest und kann nicht mehr geändert werden.',
+    ru: 'Место закреплено и больше не может быть изменено.',
+    it: 'Il tuo posto è confermato e non può più essere cambiato.',
   },
   seatTaken: {
     en: 'That seat was just taken — please pick another.',

@@ -280,7 +280,7 @@ function SortableStopCard({
       >
         {/* Compose photo strip (RR1) — every image, horizontally scrollable. */}
         {photos.length > 0 ? (
-          <div className="flex gap-1.5 overflow-x-auto px-3 pb-1.5 pt-3 scrollbar-hide">
+          <div className="flex gap-1.5 overflow-x-auto px-3 pb-1.5 pt-3 rail-scrollbar">
             {photos.map((src, i) => (
               <span
                 key={`${src}-${i}`}

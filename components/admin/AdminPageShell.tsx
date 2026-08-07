@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ChevronLeft } from 'lucide-react';
 import type { ReactNode } from 'react';
+import { ScrollRail } from '@/components/ui/RailArrows';
 import { cn } from '@/lib/utils';
 
 /**
@@ -58,9 +59,9 @@ export function AdminPageShell({
           {actions ? <div className="flex flex-shrink-0 items-center gap-2">{actions}</div> : null}
         </div>
         {filterBar ? (
-          <div className="flex items-center gap-2 overflow-x-auto px-4 pb-2 md:px-5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <ScrollRail className="flex items-center gap-2 overflow-x-auto px-4 pb-2 md:px-5" arrowSize="sm">
             {filterBar}
-          </div>
+          </ScrollRail>
         ) : null}
       </header>
 

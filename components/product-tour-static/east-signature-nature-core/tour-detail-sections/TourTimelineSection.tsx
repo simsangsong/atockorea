@@ -80,9 +80,13 @@ function StopCard({
             accent.glowHover,
           )}
         >
-          {/* Spot photos first — filled from English POI name search in authoring JSON */}
+          {/* Spot photos first — filled from English POI name search in authoring JSON.
+              🔴 No `RailArrows` on this one: the strip lives inside the stop
+              `<button>`, and a button may not contain another button — invalid
+              HTML, and an arrow click would fire the card behind it. The slim
+              bar is the whole desktop affordance here. */}
           {photos.length > 0 && (
-            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto scrollbar-hide">
+            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto rail-scrollbar">
               {photos.map((src, i) => (
                 <div
                   key={`${src}-${i}`}

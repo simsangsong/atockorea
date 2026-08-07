@@ -395,7 +395,92 @@ body.lang-tour-app {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
+/*
+ * ── Horizontal rails ─────────────────────────────────────────────────────
+ *
+ * `.rail-scrollbar` is the utility every consumer-facing `overflow-x-auto`
+ * rail (shelves, chip rows, timeline strips, sub-navs) must carry.
+ *
+ * 🔴 Why it exists — measured 2026-08-07 on live `www.atockorea.com` @1440px:
+ *   the `/tours/list` "Classic Bus Tour" shelf hid **1748px** of cards and the
+ *   tour-product recommendation rail hid **588px**, with
+ *   `scrollbar-width: none` + `::-webkit-scrollbar { display: none }` and no
+ *   arrow buttons, `tabIndex = -1`. A lab run (Chromium headless + headed)
+ *   confirmed the mechanism: a plain vertical mouse wheel over a rail that can
+ *   only scroll horizontally scrolls the **page**, not the rail. So on desktop
+ *   a mouse user had no way whatsoever to reach the hidden cards — the
+ *   scrollbar was the only affordance and it had been switched off.
+ *
+ * Shape: hidden by default (touch swipes need no bar and iOS draws a transient
+ * one anyway); a slim, on-brand bar appears only where a real pointer exists.
+ * The 4px thumb is painted inside a 10px track via `background-clip` so the
+ * rail keeps its editorial calm instead of wearing a chunky OS scrollbar.
+ *
+ * Gate: `__tests__/audit/railScrollbar.test.ts` — do not re-hide these.
+ */
+.rail-scrollbar {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  /* Touch / no-pointer: keep the bar out of the way. */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.rail-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prev/next buttons (`components/ui/RailArrows.tsx`) — default off.
+   🔴 `display: none`, not `opacity`/`visibility`: it must also drop the buttons
+   out of the tab order on touch. A focusable control nobody can see is the
+   keyboard trap this repo already paid for once (`inert` sweep, PR #762).
+   ⚠ This rule has to stay ABOVE the media block — same specificity, so the
+   later rule wins, and putting it after would keep the arrows hidden forever. */
+.rail-arrow {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .rail-scrollbar {
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: rgb(168 162 158 / 0.7) transparent; /* stone-400 thumb */
+  }
+
+  .rail-scrollbar::-webkit-scrollbar {
+    display: block;
+    height: 10px;
+    width: 0; /* rails scroll on one axis — never grow a vertical bar */
+  }
+
+  .rail-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .rail-scrollbar::-webkit-scrollbar-thumb {
+    background-color: rgb(168 162 158 / 0.6); /* stone-400 */
+    border-radius: 999px;
+    /* Transparent border + padding-box clip = a 4px thumb floating in a 10px
+       track. Without this the thumb fills the full track height and reads as
+       an OS chrome bar under the premium cards. */
+    border: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  .rail-scrollbar:hover::-webkit-scrollbar-thumb,
+  .rail-scrollbar::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(120 113 108 / 0.75); /* stone-500 */
+  }
+
+  /* Same pointer gate as the bar: a mouse gets a click target, a finger keeps
+     the clean rail it can swipe. */
+  .rail-arrow {
+    display: inline-flex;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera.
+   ⚠ Reaching for this on a horizontal rail is the defect described above —
+   use `.rail-scrollbar` instead. Kept for genuinely bar-less surfaces. */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }

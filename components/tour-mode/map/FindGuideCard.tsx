@@ -137,12 +137,12 @@ export default function FindGuideCard({
 
   return (
     <div
-      className="flex items-center gap-3 rounded-[var(--tr-radius-card)] bg-[#12151a] px-4 py-3 text-white"
+      className="flex items-center gap-2.5 rounded-[var(--tr-radius-card)] bg-[#12151a] px-3.5 py-2.5 text-white"
       style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
       data-testid="find-guide-card"
     >
       <span
-        className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/10"
+        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/10"
         aria-hidden
         title={arrow}
       >

@@ -238,7 +238,7 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               rides directly under the hero. Booking surfaces keep their own
               single reassurance line (§F-1: trust copy appears exactly twice). */}
           <div className="mx-auto max-w-2xl px-4 pb-1 pt-2 sm:px-5">
-            <div className="flex items-center gap-x-3.5 overflow-x-auto whitespace-nowrap scrollbar-hide">
+            <div className="flex items-center gap-x-3.5 overflow-x-auto whitespace-nowrap rail-scrollbar">
               <span className="flex items-center gap-1.5 text-[11.5px] font-semibold text-[color:var(--tpc-jade-deep)]">
                 <ShieldCheck className="h-3.5 w-3.5 flex-shrink-0 text-[color:var(--tpc-jade-full)]" strokeWidth={2.25} />
                 {t("tour.freeCancellation")}

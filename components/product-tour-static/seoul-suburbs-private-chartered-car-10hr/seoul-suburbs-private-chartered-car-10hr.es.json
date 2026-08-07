@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "Servicio Privado de Auto Chárter por Seúl o sus Alrededores 10 HR | AtoC Korea",
     "metaDescription": "Chárter privado de 10 horas por la zona de Seúl con conductor-guía de habla inglesa: Gapyeong (Nami, Morning Calm), DMZ + Paju, o Everland + Pueblo Folclórico. Recogida gratuita en Seúl.",
-    "ogImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "primaryKeywords": [
       "Auto privado por los alrededores de Seúl",
       "Tour privado de 10 horas por Seúl",
@@ -1194,7 +1194,7 @@
             "name": "Ruta 3: Everland + Pueblo Folclórico Coreano",
             "category": "Parque Temático + Pueblo Patrimonial",
             "description": "Un día de contraste familiar que combina Everland, el parque temático más grande de Corea, con el Pueblo Folclórico Coreano en Yongin, un museo al aire libre de patrimonio vivo que muestra la vida de la era Joseon y actuaciones tradicionales.",
-            "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+            "image": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
             "highlights": [
               "El parque temático más grande y más visitado de Corea",
               "Pueblo tradicional vivo con actuaciones diarias",
@@ -1233,32 +1233,21 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+              "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
+              "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
+              "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "url": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "url": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "url": "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1266,7 +1255,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "src": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
                 "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
                 "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 1",
                 "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 1"
@@ -1274,10 +1263,18 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "src": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
                 "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
                 "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 2",
                 "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp",
+                "location": "Ruta 3: Everland + Pueblo Folclórico Coreano",
+                "caption": "Ruta 3: Everland + Pueblo Folclórico Coreano — photo 3",
+                "alt": "Ruta 3: Everland + Pueblo Folclórico Coreano — gallery image 3"
               }
             ]
           },

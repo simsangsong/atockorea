@@ -1,11 +1,15 @@
 /**
- * §5 결정 구현 (2026-08-04) — the action sheet's new verbs and the widened
- * reaction set, in one place: share is text-only and always offered on text,
- * promote appears only when a handler is wired (guide surfaces), and the
- * reaction grid carries the 30-emoji set with the original five leading.
+ * §5 결정 구현 (2026-08-04) — the action sheet's new verbs, in one place: share
+ * is text-only and always offered on text, promote appears only when a handler
+ * is wired (guide surfaces).
+ *
+ * 사장님 2026-08-07 amended the reaction row: the sheet shows only the five
+ * most-used, small; the other 25 moved to the composer's emoji picker. Both
+ * halves are asserted here so the split cannot silently become a deletion.
  */
 import { fireEvent, render, screen } from '@testing-library/react';
 import ChatFeed from '@/components/tour-mode/ChatFeed';
+import { COMPOSER_EMOJI, EMOJI_GROUPS, QUICK_REACTIONS } from '@/lib/tour-room/emoji';
 import type { RoomMessage } from '@/hooks/useTourRoomChannel';
 
 const MSG: RoomMessage = {
@@ -34,12 +38,43 @@ beforeEach(() => {
 });
 
 describe('chat grammar — §5 decisions', () => {
-  it('offers 30 reactions, the original five first (aggregation continuity)', () => {
+  it('offers only the five most-used reactions in the sheet (사장님 2026-08-07)', () => {
     mount();
     fireEvent.click(screen.getByTestId('msg-actions'));
     const reactions = screen.getAllByTestId(/^react-/);
-    expect(reactions).toHaveLength(30);
-    expect(reactions.slice(0, 5).map((el) => el.textContent)).toEqual(['👍', '❤️', '😂', '😮', '🙏']);
+    expect(reactions).toHaveLength(5);
+    expect(reactions.map((el) => el.textContent)).toEqual(['👍', '❤️', '😂', '😮', '🙏']);
+  });
+
+  /**
+   * 🔴 The five are a DB key, not a style choice: `tour_room_reactions` stores
+   * the emoji character, so reordering or swapping one orphans every reaction
+   * already aggregated. Pinned as a literal — reading them back off the
+   * constant would assert nothing.
+   */
+  it('keeps the original five, in order, for aggregation continuity', () => {
+    expect([...QUICK_REACTIONS]).toEqual(['👍', '❤️', '😂', '😮', '🙏']);
+    expect(COMPOSER_EMOJI.slice(0, 5)).toEqual([...QUICK_REACTIONS]);
+    expect(new Set(COMPOSER_EMOJI).size).toBe(COMPOSER_EMOJI.length);
+  });
+
+  /**
+   * The curated shelves (사장님 「고급스럽고 이쁘게」) have two properties the eye
+   * cannot check but the layout depends on: eight per shelf is what makes a
+   * row land on the room's 44px tap floor at 375px, and every glyph must fit
+   * the server's 8-unit cap — a ZWJ sequence would be rejected on POST and
+   * render as loose pieces on older phones.
+   */
+  it('every shelf is eight wide and every glyph is short enough to POST', () => {
+    expect(EMOJI_GROUPS).toHaveLength(4);
+    for (const group of EMOJI_GROUPS) {
+      expect(group.emoji).toHaveLength(8);
+      for (const emoji of group.emoji) {
+        expect(emoji.length).toBeLessThanOrEqual(8);
+        expect(emoji).not.toContain('‍'); // zero-width joiner
+      }
+    }
+    expect(EMOJI_GROUPS[0].emoji.slice(0, 5)).toEqual([...QUICK_REACTIONS]);
   });
 
   it('share is present on a text message; promote only when wired', () => {

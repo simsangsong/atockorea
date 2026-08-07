@@ -141,7 +141,10 @@ export default function RoomMapTab({
   const followLabel = MAP_FOLLOW_LABEL[isOperator ? 'operator' : 'customer'][locale];
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col gap-2">
+    /* 사장님 2026-08-07: "좀 더 컴팩트하게". The chrome above and below the map
+       keeps its structure — the gaps between the cards just stopped costing the
+       map three rows of its own height. */
+    <div className="flex min-h-0 flex-1 flex-col gap-1.5">
       <PresenceBar presence={presence} locale={locale} myParticipantId={myParticipantId} />
       <LocationShareCard
         locale={locale}
@@ -164,14 +167,24 @@ export default function RoomMapTab({
           pickup={pickup}
           followGuide={followGuide}
           locale={locale}
+          /* 🔴 The canvas used to see "me" only once a ping round-tripped
+             through the server, and the publish path drops anything coarser
+             than 100m. `lastPosition` was already in this component's props,
+             handed to FindGuideCard and nowhere else — so the map was the one
+             surface that could not answer "where am I". */
+          myPosition={lastPosition}
+          sharing={sharing}
+          isOperator={isOperator}
         />
         {followTarget && (
           <button
             type="button"
             onClick={() => setFollowGuide((v) => !v)}
             aria-pressed={followGuide}
-            className={`tr-label text-cjk-safe absolute right-2 top-2 flex min-h-[44px] items-center gap-1.5 rounded-full px-3.5 font-semibold ${
-              followGuide ? 'bg-[#12151a] text-white' : 'bg-[var(--tr-surface)] text-[var(--tr-ink)]'
+            className={`tr-label text-cjk-safe absolute right-2 top-2 flex min-h-[44px] items-center gap-1.5 rounded-full px-3 font-semibold ${
+              followGuide
+                ? 'bg-[#12151a] text-white'
+                : 'bg-[var(--tr-surface)]/95 text-[var(--tr-ink)] backdrop-blur-sm'
             }`}
             style={{ boxShadow: 'var(--tr-shadow-overlay)' }}
             data-testid="follow-guide-toggle"

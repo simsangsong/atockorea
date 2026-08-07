@@ -72,7 +72,7 @@ export function TourPrivateSampleItinerarySection({
 
       {/* Course switch — segmented track, horizontally scrollable on narrow phones */}
       {config.samples.length > 1 && (
-        <div className="-mx-1 overflow-x-auto scrollbar-hide px-1">
+        <div className="-mx-1 overflow-x-auto rail-scrollbar px-1">
           <div
             role="tablist"
             aria-label={pickLocalized(config.title, locale)}

@@ -149,8 +149,22 @@ describe('rule 2 — break-all on CJK is the one opt-out the default cannot save
  * standing risk and it is the population that grew 576 → 583 unwatched, so it
  * gets a ceiling. Lower this number when a sweep lowers the count — a ratchet
  * left above the real figure is a gate that has stopped measuring.
+ *
+ * 492 → 494 on 2026-08-07: the 배차 요약 strip in `OpsRoomManager.tsx` — one
+ * wrapper `<div>` and the `<p>` inside it ("미배차 N팀 — 배차해야 손님이 좌석을
+ * 고를 수 있어요"). Two new elements carrying CJK, both deliberately WITHOUT
+ * `.text-cjk-safe`: this line must wrap, not truncate — it is the sentence that
+ * tells the operator why the guest's seat picker is shut, and half of it is
+ * worth nothing.
+ *
+ * Evidence is a real render, not a reading of the source (a ratchet may only
+ * move up on evidence). The strip was driven in the live ops sheet in Korean at
+ * 1280 / 768 / 390 / 320px, measuring per-character client rects and counting
+ * line breaks that land between two CJK characters: **0 at every width**, and
+ * the strip stayed one row (70px) throughout. The root `word-break: keep-all`
+ * default carries it, which is exactly what that default exists for.
  */
-const CERTAIN_CEILING = 492;
+const CERTAIN_CEILING = 494;
 /**
  * 428 → 429 on 2026-07-30: the in-room seat card (`seat/RoomSeatCard.tsx`) is
  * one new element carrying CJK.
@@ -162,8 +176,27 @@ const CERTAIN_CEILING = 492;
  * count line breaks landing between two CJK characters. Both report 0, and the
  * action label carries `.text-cjk-safe` so a squeezed box truncates instead of
  * collapsing. `suspect` means "source cannot tell"; the render can, and did.
+ *
+ * 429 → 430 on 2026-08-07: `EmojiPicker.tsx` — the composer's emoji tray
+ * (사장님 지시). One new element, and the scanner's own reason for flagging it
+ * is `control` + an unresolved `{emoji}` child, i.e. "source cannot tell".
+ *
+ * Here the source CAN tell, which is why this is evidence and not faith: the
+ * child is `COMPOSER_EMOJI.map()` over a literal array of single pictographs
+ * (`lib/tour-room/emoji.ts`), so the button never holds CJK and a one-glyph
+ * button has no break opportunity to place. ChatFeed's identical `{emoji}`
+ * reaction button is already inside this 429 for the same shape — counting
+ * this one keeps the population honest rather than carving an exception.
+ *
+ * 430 → 431 on 2026-08-07: `RailArrows.tsx` — the prev/next buttons on
+ * horizontal rails (사장님 지시 "좌우 화살표 버튼도 넣도록"). Same `control` +
+ * unresolved-child shape as the two above, and again the source CAN tell: the
+ * button's only child is a `lucide-react` chevron `<svg>`. Its Korean text
+ * (`이전`/`다음`) lives in the `aria-label` **attribute**, which the screen
+ * reader speaks and the layout engine never boxes — there is no text run to
+ * break. Counted rather than excepted, for the same reason as the emoji tray.
  */
-const SUSPECT_CEILING = 429;
+const SUSPECT_CEILING = 431;
 
 describe('ratchet — the count that grew unwatched now has a ceiling', () => {
   const hits: CjkBreakHit[] = [];

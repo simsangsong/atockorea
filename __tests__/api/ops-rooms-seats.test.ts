@@ -154,8 +154,50 @@ describe('POST /api/ops/rooms/[roomId]/seats', () => {
     expect(body.vehicles).toBeDefined(); // 재선택 유도용 최신 상태
   });
 
-  it('blocks guest changes from the tour day (C-11)', async () => {
-    seatsDb();
+  /**
+   * C-11 개정 (사장님 결정 2026-08-07) — 기준이 **날짜에서 증거로** 옮겨졌다.
+   * 예전 테스트는 "당일이면 400"을 지켰는데, 그 규칙이 지키려던 것은 날짜가
+   * 아니라 체크인·노쇼가 붙은 좌석이었다. 아래 셋이 새 계약이다.
+   */
+  it('lets a guest still pick on the tour day when nothing is checked in (C-11 개정)', async () => {
+    const { log } = seatsDb();
+    kstTodayMock.mockReturnValue(FUTURE); // 오늘이 투어 당일
+    const res = await seatsPOST(
+      fakeNextRequest({
+        headers: { 'x-tour-room-token': customerToken() },
+        body: { roomVehicleId: 'v1', seats: [{ seatNumber: 3 }] },
+      }),
+      params,
+    );
+    expect(res.status).toBe(201);
+    expect(queriesFor(log, 'ops_seat_assignments', 'insert')).toHaveLength(1);
+  });
+
+  it('still refuses once my own seat carries check-in evidence', async () => {
+    seatsDb({
+      assignments: [{ id: 'a1', room_vehicle_id: 'v1', booking_id: 'b1', seat_number: 1, checked_in_at: 'T' }],
+    });
+    kstTodayMock.mockReturnValue(FUTURE);
+    const res = await seatsPOST(
+      fakeNextRequest({
+        headers: { 'x-tour-room-token': customerToken() },
+        body: { roomVehicleId: 'v1', seats: [{ seatNumber: 3 }] },
+      }),
+      params,
+    );
+    expect(res.status).toBe(400);
+    expect((await res.json()).error).toBe('seats_locked_or_resolved');
+  });
+
+  /**
+   * 🔴 The back door the date lock used to cover: a guest with NO seat of their
+   * own. The per-assignment guard above only fires when `existing` is non-empty,
+   * so without this the departed board would still accept a fresh grab.
+   */
+  it('refuses a seatless guest once the start gate has locked the board', async () => {
+    seatsDb({
+      assignments: [{ id: 'a9', room_vehicle_id: 'v1', booking_id: 'b9', seat_number: 2, locked: true }],
+    });
     kstTodayMock.mockReturnValue(FUTURE);
     const res = await seatsPOST(
       fakeNextRequest({
@@ -247,8 +289,14 @@ describe('DELETE /api/ops/rooms/[roomId]/seats', () => {
     expect(methods).toEqual(expect.arrayContaining(['is', 'eq']));
   });
 
-  it('blocks guest release on the tour day', async () => {
-    seatsDb();
+  /**
+   * C-11 개정 — 해제도 당일에 열린다. 안전장치는 날짜가 아니라 **삭제 쿼리의
+   * 필터**다: 체크인·노쇼·잠긴 행은 어느 날이든 애초에 대상이 아니다.
+   */
+  it('still releases on the tour day, with the evidence filters intact', async () => {
+    const { log } = seatsDb({
+      assignments: [{ id: 'a1', room_vehicle_id: 'v1', booking_id: 'b1', seat_number: 3 }],
+    });
     kstTodayMock.mockReturnValue(FUTURE);
     const res = await seatsDELETE(
       fakeNextRequest({
@@ -257,6 +305,13 @@ describe('DELETE /api/ops/rooms/[roomId]/seats', () => {
       }),
       params,
     );
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(200);
+    const deletes = queriesFor(log, 'ops_seat_assignments', 'delete');
+    expect(deletes).toHaveLength(1);
+    // 삭제가 절대 건드리면 안 되는 셋 — 이 필터가 사라지면 증거가 지워진다.
+    const filters = deletes[0].filters.map((f) => `${f.method}:${String(f.args[0])}`);
+    expect(filters).toEqual(
+      expect.arrayContaining(['is:checked_in_at', 'is:absent_at', 'eq:locked']),
+    );
   });
 });

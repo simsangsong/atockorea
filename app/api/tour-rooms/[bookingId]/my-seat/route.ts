@@ -24,21 +24,34 @@
  *    그 판정까지 답한다(`can_pick`). 배차 전이면 문이 없는 게 아니라
  *    닫혀 있는 것이고, 손님은 "아직"이라는 정직한 답을 본다.
  *
- * 상태는 그대로 셋이다:
+ * 🔴 2026-08-07 개정 — **`none`이 두 가지 다른 사실을 뭉개고 있었다.**
+ *
+ * 배차가 없으면 이 라우트는 `none`을 줬고 카드는 `none`에 아무것도 안 그렸다.
+ * 그런데 배차가 없는 이유는 둘이다: ① 아직 차를 안 붙였다(조인 투어 — 곧
+ * 좌석이 생긴다) ② 이 상품에는 좌석이라는 개념이 없다(전세 — 차가 통째로
+ * 일행 것이다). 둘을 같은 값으로 답하니 손님 화면에서 좌석은 **닫힌 문이
+ * 아니라 없는 문**이 됐다 — 카드 헤더 주석이 약속한 "배차되면 열려요"는
+ * 한 번도 렌더된 적이 없다. 라이브 배차가 0건이라 사실상 전 손님이 이 경로다.
+ *
+ * 판별은 `isPrivateTour(tours.price_type)` — 조인/프라이빗의 정본 판정자다
+ * (`lib/tour-room/tourKind.ts`). 새로 만들지 않고 그걸 쓴다.
+ *
+ * 상태는 이제 넷이다:
  *   assigned  좌석이 배정됐다 → 번호를 준다
  *   pending   차량은 붙었는데 내 좌석은 아직
- *   none      이 투어엔 좌석 배치가 없다 → 찾지 않게 말해 준다
+ *   awaiting  좌석 있는 상품인데 배차 전 → "배차되면 고를 수 있어요"
+ *   none      이 투어엔 좌석 배치가 없다(전세) → 찾지 않게 아무 말도 안 한다
  */
 
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ensureRoom, resolveRoomActor } from '@/lib/tour-room/access';
 import { loadAssignments, loadRoomVehicles } from '@/lib/ops/seating/service';
-import { kstToday } from '@/lib/tour-room/time';
+import { isPrivateTour } from '@/lib/tour-room/tourKind';
 
 export const dynamic = 'force-dynamic';
 
-export type MySeatState = 'assigned' | 'pending' | 'none';
+export type MySeatState = 'assigned' | 'pending' | 'awaiting' | 'none';
 
 export interface MySeatResponse {
   state: MySeatState;
@@ -48,11 +61,18 @@ export interface MySeatResponse {
    * May this guest still choose? Everything the picker needs, decided once on
    * the server so the client never has to re-derive the rules:
    *   · a vehicle with a layout exists for this tour group, AND
-   *   · it is still before the tour day (C-11 — the seats route refuses guest
-   *     writes from 00:00 KST on the day, so offering the picker then would be
-   *     offering a button that 400s), AND
+   *   · my own seats are not checked in / marked absent / locked yet
+   *     (C-11 as revised by the owner 2026-08-07 — see below), AND
    *   · the start gate has not locked the board, AND
    *   · the caller is a guest (staff have their own board).
+   *
+   * 🔴 The old rule was a blanket date lock: guest writes closed at 00:00 KST
+   * on the tour day. That is wider than the thing it protects. What must not
+   * move is a seat that already carries check-in or no-show evidence — and the
+   * seats route has always enforced exactly that, per assignment. The date
+   * lock additionally froze guests who had not checked in and, on a join tour,
+   * had not even been given a seat yet — on the one morning they most need to
+   * pick one. Owner decision (2026-08-07): allow changes until check-in.
    */
   can_pick: boolean;
   /** The ops room to address; the seats API expands to its tour-date siblings. */
@@ -76,8 +96,8 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ bookingId: 
     const { booking, actor } = resolved;
     const room = await ensureRoom(supabase, booking);
 
-    const empty = (): MySeatResponse => ({
-      state: 'none',
+    const empty = (state: 'awaiting' | 'none'): MySeatResponse => ({
+      state,
       seat_number: null,
       plate_number: null,
       can_pick: false,
@@ -87,7 +107,16 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ bookingId: 
 
     // 그룹의 차량 전부. 배치도 없는 차는 좌석이라는 개념이 성립하지 않는다.
     const vehicles = (await loadRoomVehicles(supabase, room.id)).filter((v) => v.layout);
-    if (vehicles.length === 0) return NextResponse.json(empty());
+    if (vehicles.length === 0) {
+      // 배차 전이다. 좌석이 생길 상품인지(조인) 아예 없는 상품인지(전세)를
+      // 가른다 — 전세에 "배차되면 좌석을 고를 수 있어요"라고 하면 오지 않을
+      // 문을 기다리게 만든다.
+      const { data: tourRow } = booking.tour_id
+        ? await supabase.from('tours').select('price_type').eq('id', booking.tour_id).maybeSingle()
+        : { data: null };
+      const priceType = (tourRow as { price_type?: string | null } | null)?.price_type ?? null;
+      return NextResponse.json(empty(isPrivateTour(priceType) ? 'none' : 'awaiting'));
+    }
 
     const assignments = await loadAssignments(
       supabase,
@@ -101,8 +130,11 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ bookingId: 
 
     const vehicle = vehicles.find((v) => v.id === mine?.room_vehicle_id) ?? vehicles[0];
     const boardLocked = assignments.some((a) => a.locked);
-    // C-11 — guest writes close at 00:00 KST on the tour day.
-    const beforeTourDay = Boolean(booking.tour_date) && kstToday() < (booking.tour_date as string);
+    // C-11 (2026-08-07 개정) — 내 좌석이 이미 결론난 뒤에만 잠근다. 판정 대상은
+    // 날짜가 아니라 **내 배정 행들**이다. 일행 중 한 명이라도 체크인/노쇼로
+    // 결론이 났으면 그 원장은 손대지 않는다.
+    const myRows = assignments.filter((a) => a.booking_id === booking.id);
+    const myRowsResolved = myRows.some((a) => a.checked_in_at || a.absent_at || a.locked);
     const isGuest = actor.role === 'customer';
 
     const { data: bookingRow } = await supabase
@@ -120,7 +152,7 @@ export async function GET(req: NextRequest, ctx: { params: Promise<{ bookingId: 
       seat_number: mine?.seat_number ?? null,
       // 번호판은 손님이 차를 알아보는 데 쓰인다. 없으면 굳이 지어내지 않는다.
       plate_number: vehicle?.plate_number ?? null,
-      can_pick: isGuest && beforeTourDay && !boardLocked,
+      can_pick: isGuest && !myRowsResolved && !boardLocked,
       room_id: room.id,
       party_size: partySize,
     };

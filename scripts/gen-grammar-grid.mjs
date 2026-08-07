@@ -33,15 +33,43 @@ const LIGHTBOX = 'components/tour-mode/Lightbox.tsx';
 const COCKPIT = 'components/tour-mode/cockpit/Cockpit.tsx';
 const MSG_ROUTE = 'app/api/tour-rooms/[bookingId]/messages/route.ts';
 const UNSEND_ROUTE = 'app/api/tour-rooms/[bookingId]/messages/[messageId]/route.ts';
+const EMOJI_SET = 'lib/tour-room/emoji.ts';
+
+/**
+ * Emoji counts come from the module, not from whichever component happened to
+ * hit the probe — the set moved out of ChatFeed on 2026-08-07 and a probe that
+ * counts quotes in the *renderer* would have started reporting 0 while the
+ * feature was fine. Listing EMOJI_SET in `files` keeps the missing/empty guard
+ * on it even when the pattern matches elsewhere.
+ */
+const emojiCounts = () => {
+  const src = readFileSync(path.join(ROOT, EMOJI_SET), 'utf8');
+  const quick = (src.match(/export const QUICK_REACTIONS = \[([^\]]*)\]/)?.[1].match(/'/g) ?? []).length / 2;
+  // Count the `emoji: [...]` arrays, not the whole EMOJI_GROUPS block — the
+  // block also carries a quoted `key:` per shelf, and counting those would
+  // report four phantom glyphs. A `...QUICK_REACTIONS` spread contributes its
+  // own length.
+  const shelves = [...src.matchAll(/emoji:\s*\[([^\]]*)\]/g)].map((m) => m[1]);
+  const picker = shelves.reduce(
+    (sum, body) =>
+      sum +
+      (body.match(/'/g) ?? []).length / 2 +
+      (body.match(/\.\.\.QUICK_REACTIONS/g) ?? []).length * quick,
+    0,
+  );
+  return { quick, picker, shelves: shelves.length };
+};
 
 /** verb → probe. `must` marks verbs the self-check requires to be present. */
 const VERBS = [
   { name: '답장 (인용 + 원본 점프)', files: [CHAT], pattern: /reply-jump/, must: true },
-  { name: '반응 이모지 (고정 세트)', files: [CHAT], pattern: /REACTION_EMOJI\s*=\s*\[/, must: true, detail: (src) => {
-      const m = src.match(/REACTION_EMOJI\s*=\s*\[([^\]]*)\]/);
-      const n = m ? (m[1].match(/'/g) ?? []).length / 2 : 0;
-      return `${n}종 고정 · 피커 없음`;
-    } },
+  {
+    name: '반응 이모지 (액션 시트 빠른 세트)',
+    files: [CHAT, EMOJI_SET],
+    pattern: /data-testid="quick-reactions"/,
+    must: true,
+    detail: () => `${emojiCounts().quick}종 · 소형 1행 (사장님 2026-08-07)`,
+  },
   { name: '복사', files: [CHAT], pattern: /action-copy/, must: true },
   { name: '원문 ↔ 번역 토글', files: [CHAT], pattern: /toggleOriginal/, must: true },
   { name: '삭제 (unsend, 15분 툼스톤)', files: [CHAT, UNSEND_ROUTE], pattern: /action-unsend|UNSEND_WINDOW_MS/, must: true },
@@ -56,7 +84,15 @@ const VERBS = [
   { name: '전달 (forward)', files: [CHAT, COMPOSER], pattern: /forward|전달하기/i },
   { name: '메시지 단위 공유 (텍스트만, §5-2)', files: [CHAT], pattern: /shareTimelineText|action-share/ },
   { name: '채팅 내 검색 (§5-3)', files: [DRAWER], pattern: /drawer-search-input/ },
-  { name: '컴포저 이모지 피커', files: [COMPOSER], pattern: /EmojiPicker|emoji-picker/i },
+  {
+    name: '컴포저 이모지 피커',
+    files: [COMPOSER, EMOJI_SET],
+    pattern: /EmojiPicker|emoji-picker/i,
+    // 🔴 No "N묶음" here. The set is authored in fours of eight, but the tray
+    // shows no captions (사장님 2026-08-07) and this grid records what the UI
+    // DOES, not how the constant is written.
+    detail: () => `${emojiCounts().picker}종 · 8열 그리드 · 캐럿 삽입`,
+  },
   { name: '이미지 붙여넣기 (클립보드, §5-6)', files: [COMPOSER], pattern: /onPaste|clipboardData/ },
   { name: '링크 프리뷰 (텍스트만, §5-4)', files: [CHAT], pattern: /LinkPreviewCard/ },
   { name: '사진 일괄 저장', files: [DRAWER], pattern: /downloadAll|일괄 저장/ },
@@ -79,7 +115,11 @@ for (const verb of VERBS) {
     }
   }
   const hit = hits[0] ?? null;
-  const status = hit ? (verb.detail ? '◐' : '✅') : '✗';
+  // `partial` is explicit. It used to be inferred from "has a detail string",
+  // which married the two: the moment the reaction row earned its picker and
+  // stopped being partial, it would still have printed ◐ purely because it
+  // still printed a count.
+  const status = hit ? (verb.partial ? '◐' : '✅') : '✗';
   if (hit) present += 1;
   rows.push({
     name: verb.name,

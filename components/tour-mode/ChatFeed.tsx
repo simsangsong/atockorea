@@ -68,21 +68,18 @@ import {
 import type { ReplySnapshot } from '@/lib/tour-room/reply';
 import type { ReactionAgg } from '@/hooks/useTourRoomChannel';
 
-/** Quick emoji set for the reaction row (Phase 2c). */
 /**
- * 사장님 결정 2026-08-04 §5-1: 5종 → 30종. 앞의 다섯은 기존 집계 데이터와의
- * 연속성 때문에 자리를 지킨다. 서버(reactions route)는 짧은 이모지면 무엇이든
- * 받으므로(≤8 유닛) 정본은 이 리터럴 하나다. ZWJ 합성 이모지는 서버 길이 캡에
- * 걸릴 수 있어 제외.
+ * Quick emoji row for the bubble action sheet (Phase 2c).
+ *
+ * 사장님 2026-08-07: 「점 세개 누르면 전체 이모지 몽땅 보여주지 말고 그냥 가장
+ * 자주쓰는 5개만 자그마하게」 — the 30-tile grid (사장님 결정 2026-08-04 §5-1)
+ * moved to the composer's emoji picker, where it is content rather than a
+ * menu. What is left here is five, in one small row.
+ *
+ * The list itself lives in `lib/tour-room/emoji.ts` because two surfaces read
+ * it now; see that file for why these five specifically cannot be reordered.
  */
-const REACTION_EMOJI = [
-  '👍', '❤️', '😂', '😮', '🙏',
-  '😢', '🎉', '👏', '🔥', '💯',
-  '😍', '🤩', '😊', '😅', '😭',
-  '🥰', '🙌', '👌', '✨', '🤔',
-  '😴', '🫶', '💪', '☕', '🍜',
-  '🍺', '📸', '🌊', '🚌', '⏰',
-];
+import { QUICK_REACTIONS } from '@/lib/tour-room/emoji';
 
 const READ_LABEL: Record<RoomLocale, string> = { en: 'Read', ko: '읽음', ja: '既読', es: 'Leído', zh: '已读', 'zh-TW': '已讀', fr: 'Lu', de: 'Gelesen', ru: 'Прочитано', it: 'Letto' };
 const TYPING_LABEL: Record<RoomLocale, string> = {
@@ -1292,21 +1289,33 @@ export default function ChatFeed({
         <Sheet open onClose={() => setActionMsg(null)} closeLabel={action.close} title={action.title}>
           <div className="flex flex-col">
             {onReact && (
-              <div className="mb-1 grid grid-cols-6 justify-items-center gap-0.5 border-b border-[var(--tr-hairline)] px-1 pb-3">
-                {REACTION_EMOJI.map((emoji) => (
-                  <button
-                    key={emoji}
-                    type="button"
-                    onClick={() => {
-                      onReact(actionMsg.id, emoji);
-                      setActionMsg(null);
-                    }}
-                    className="flex h-11 w-11 items-center justify-center rounded-full text-2xl active:bg-[var(--tr-surface-2)]"
-                    data-testid={`react-${emoji}`}
-                  >
-                    {emoji}
-                  </button>
-                ))}
+              /*
+               * 「좀 더 고급스럽고 이쁘게」 (사장님 2026-08-07) — five glyphs
+               * floating on white read as leftovers from the grid that used to
+               * be here. Riding a soft pill, the way every tapback bar does,
+               * makes them one designed control: the eye lands on the strip,
+               * not on five separate objects.
+               */
+              <div className="mb-1 flex justify-center border-b border-[var(--tr-hairline)] px-1 pb-3 pt-0.5">
+                <div
+                  className="flex items-center gap-0.5 rounded-full bg-[var(--tr-surface-2)] px-1.5 py-0.5"
+                  data-testid="quick-reactions"
+                >
+                  {QUICK_REACTIONS.map((emoji) => (
+                    <button
+                      key={emoji}
+                      type="button"
+                      onClick={() => {
+                        onReact(actionMsg.id, emoji);
+                        setActionMsg(null);
+                      }}
+                      className="flex h-10 w-10 items-center justify-center rounded-full text-xl leading-none transition-transform duration-100 active:scale-90"
+                      data-testid={`react-${emoji}`}
+                    >
+                      {emoji}
+                    </button>
+                  ))}
+                </div>
               </div>
             )}
             {onReply && (

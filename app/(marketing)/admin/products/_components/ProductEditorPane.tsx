@@ -28,6 +28,7 @@ import { MediaSection, type MediaState, type GalleryEntry } from './sections/Med
 import { HeroSection, type HeroState } from './sections/HeroSection';
 import { ItinerarySection, type ItineraryStop } from './sections/ItinerarySection';
 import { FAQSection, type FAQItem } from './sections/FAQSection';
+import { ScrollRail } from '@/components/ui/RailArrows';
 
 type Props = {
   slug: string;
@@ -506,7 +507,7 @@ export function ProductEditorPane({
         </div>
 
         {/* Meta strip — locale + publish + live */}
-        <div className="-mx-px flex items-center gap-2 overflow-x-auto px-3 pb-2.5 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ScrollRail className="-mx-px flex items-center gap-2 overflow-x-auto px-3 pb-2.5" arrowSize="sm">
           <LocaleSwitcher value={locale} onChange={onLocaleChange} />
           {draft && (
             <button
@@ -532,10 +533,10 @@ export function ProductEditorPane({
               <ExternalLink className="size-3.5" /> 라이브
             </a>
           )}
-        </div>
+        </ScrollRail>
 
         {/* Section tabs */}
-        <div className="flex items-center gap-1.5 overflow-x-auto px-3 pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+        <ScrollRail className="flex items-center gap-1.5 overflow-x-auto px-3 pb-2" arrowSize="sm">
           {EDITOR_SECTIONS.map((s) => {
             const SIcon = s.icon;
             const active = activeSection === s.id;
@@ -555,7 +556,7 @@ export function ProductEditorPane({
               </button>
             );
           })}
-        </div>
+        </ScrollRail>
       </div>
 
       {/* Body */}

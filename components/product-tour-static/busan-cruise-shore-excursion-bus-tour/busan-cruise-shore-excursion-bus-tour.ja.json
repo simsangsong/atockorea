@@ -14,12 +14,12 @@
       "甘川クルーズツアー",
       "龍宮寺クルーズツアー"
     ],
-    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
     "title": "釜山クルーズ寄港地観光・沿岸バスツアー | AtoC Korea",
     "description": "クルーズ乗客のための大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎付き、厳選9スポット巡り、出港前帰港保証。"
   },
   "catalog_card": {
-    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "thumbnail": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
     "title": "釜山クルーズ寄港地：沿岸バスツアー",
     "priceLabel": "",
     "shortCardDescription": "クルーズ乗客のために設計された大型バス釜山沿岸日帰りツアー：クルーズターミナル送迎、厳選9スポット（海東龍宮寺、国連記念公園、チャガルチ市場、BIFFスクエア、国際市場、甘川文化村、松島ビーチ、龍頭山公園）、出港前帰港保証付き。バジェットプラン — 少人数制商品と同じルートを大型バスで。",
@@ -43,7 +43,7 @@
       "港での送迎",
       "帰港保証"
     ],
-    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "heroImage": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
     "imageAlt": "釜山国際クルーズターミナル前に停泊中のクルーズ船とAtoC Koreaの白いツアーバス、ガイドが手を振りながら4名のゲストを出迎える様子"
   },
   "headlineLine1": "釜山クルーズ寄港地",
@@ -57,7 +57,7 @@
     "discountPercent": 30
   },
   "hero": {
-    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunset-cliff.webp",
+    "imageUrl": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
     "imagePosition": "center 40%",
     "tagline": "大型コーチで巡る釜山の8つの名所 — クルーズターミナルでのお迎えから、出港前に余裕を持ってのご帰港まで",
     "pills": [
@@ -150,7 +150,7 @@
     {
       "id": 2,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "src": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
       "location": "韓国国連記念公園",
       "alt": "韓国国連記念公園 — gallery image 1",
       "caption": "韓国国連記念公園 — photo 1"
@@ -160,8 +160,8 @@
       "type": "photo",
       "src": "/images/itinerary/jagalchi-harbor-sign.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 1",
-      "caption": "ジャガルチ水産市場 — photo 1"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 4,
@@ -176,13 +176,13 @@
       "type": "photo",
       "src": "/images/itinerary/gukje-market-arcade-sign-forest.webp",
       "location": "国際市場（クッチェシジャン）",
-      "alt": "国際市場（クッチェシジャン） — gallery image 1",
-      "caption": "国際市場（クッチェシジャン） — photo 1"
+      "alt": "国際市場（クッチェシジャン） — on-route photo",
+      "caption": "国際市場（クッチェシジャン）"
     },
     {
       "id": 6,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — gallery image 1",
       "caption": "甘川文化村 — photo 1"
@@ -190,7 +190,7 @@
     {
       "id": 7,
       "type": "photo",
-      "src": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+      "src": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "location": "松島（ソンド）雲の散歩道",
       "alt": "松島（ソンド）雲の散歩道 — gallery image 1",
       "caption": "松島（ソンド）雲の散歩道 — photo 1"
@@ -198,13 +198,21 @@
     {
       "id": 8,
       "type": "photo",
-      "src": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "src": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+      "location": "松島スカイパーク（岩南公園）",
+      "alt": "松島スカイパーク（岩南公園） — on-route photo",
+      "caption": "松島スカイパーク（岩南公園）"
+    },
+    {
+      "id": 9,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
       "location": "龍頭山公園＆釜山タワー",
       "alt": "龍頭山公園＆釜山タワー — gallery image 1",
       "caption": "龍頭山公園＆釜山タワー — photo 1"
     },
     {
-      "id": 9,
+      "id": 10,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-haesu-gwaneum.webp",
       "location": "海東龍宮寺",
@@ -212,7 +220,7 @@
       "caption": "海東龍宮寺 — photo 2"
     },
     {
-      "id": 10,
+      "id": 11,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-dragon-hall.webp",
       "location": "海東龍宮寺",
@@ -220,7 +228,7 @@
       "caption": "海東龍宮寺 — photo 3"
     },
     {
-      "id": 11,
+      "id": 12,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-main-courtyard.webp",
       "location": "海東龍宮寺",
@@ -228,7 +236,7 @@
       "caption": "海東龍宮寺 — photo 4"
     },
     {
-      "id": 12,
+      "id": 13,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-zodiac-statues.webp",
       "location": "海東龍宮寺",
@@ -236,7 +244,7 @@
       "caption": "海東龍宮寺 — photo 5"
     },
     {
-      "id": 13,
+      "id": 14,
       "type": "photo",
       "src": "/images/tours/haedong-yonggungsa/haedong-yonggungsa-sunrise-cliff.webp",
       "location": "海東龍宮寺",
@@ -244,71 +252,71 @@
       "caption": "海東龍宮寺 — photo 6"
     },
     {
-      "id": 14,
+      "id": 15,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+      "src": "/images/tours/un-memorial-cemetery/02-chatgpt-image-2026-5-10-12-35-43.webp",
       "location": "韓国国連記念公園",
       "alt": "韓国国連記念公園 — gallery image 2",
       "caption": "韓国国連記念公園 — photo 2"
     },
     {
-      "id": 15,
+      "id": 16,
       "type": "photo",
-      "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+      "src": "/images/tours/un-memorial-cemetery/03-chatgpt-image-2026-5-10-12-32-23.webp",
       "location": "韓国国連記念公園",
       "alt": "韓国国連記念公園 — gallery image 3",
       "caption": "韓国国連記念公園 — photo 3"
     },
     {
-      "id": 16,
+      "id": 17,
       "type": "photo",
       "src": "/images/itinerary/jagalchi-market-interior.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 2",
-      "caption": "ジャガルチ水産市場 — photo 2"
-    },
-    {
-      "id": 17,
-      "type": "photo",
-      "src": "/images/itinerary/jagalchi-night-building.webp",
-      "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 3",
-      "caption": "ジャガルチ水産市場 — photo 3"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 18,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/photo-001.webp",
+      "src": "/images/itinerary/jagalchi-night-building.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 4",
-      "caption": "ジャガルチ水産市場 — photo 4"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 19,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/photo-002.webp",
+      "src": "/images/tours/jagalchi-market/photo-001.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 5",
-      "caption": "ジャガルチ水産市場 — photo 5"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 20,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/jagalchi-seafood-collage-ai.webp",
+      "src": "/images/tours/jagalchi-market/photo-002.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 6",
-      "caption": "ジャガルチ水産市場 — photo 6"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 21,
       "type": "photo",
-      "src": "/images/tours/jagalchi-market/photo-010.webp",
+      "src": "/images/tours/jagalchi-market/jagalchi-seafood-collage-ai.webp",
       "location": "ジャガルチ水産市場",
-      "alt": "ジャガルチ水産市場 — gallery image 7",
-      "caption": "ジャガルチ水産市場 — photo 7"
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
     },
     {
       "id": 22,
+      "type": "photo",
+      "src": "/images/tours/jagalchi-market/photo-010.webp",
+      "location": "ジャガルチ水産市場",
+      "alt": "ジャガルチ水産市場 — on-route photo",
+      "caption": "ジャガルチ水産市場"
+    },
+    {
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/biff-square/biff-square-arch-ai.webp",
       "location": "BIFFスクエア",
@@ -316,7 +324,7 @@
       "caption": "BIFFスクエア — photo 2"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/biff-square/biff-square-arch-day.webp",
       "location": "BIFFスクエア",
@@ -324,7 +332,7 @@
       "caption": "BIFFスクエア — photo 3"
     },
     {
-      "id": 24,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/biff-square/biff-street-food-collage.webp",
       "location": "BIFFスクエア",
@@ -332,41 +340,57 @@
       "caption": "BIFFスクエア — photo 4"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "photo",
       "src": "/images/itinerary/gukje-market-fresh-produce-aisle.webp",
       "location": "国際市場（クッチェシジャン）",
-      "alt": "国際市場（クッチェシジャン） — gallery image 2",
-      "caption": "国際市場（クッチェシジャン） — photo 2"
+      "alt": "国際市場（クッチェシジャン） — on-route photo",
+      "caption": "国際市場（クッチェシジャン）"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
+      "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — gallery image 2",
       "caption": "甘川文化村 — photo 2"
     },
     {
-      "id": 27,
+      "id": 28,
       "type": "photo",
-      "src": "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
+      "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
       "location": "甘川文化村",
       "alt": "甘川文化村 — gallery image 3",
       "caption": "甘川文化村 — photo 3"
     },
     {
-      "id": 28,
+      "id": 29,
       "type": "photo",
-      "src": "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
+      "src": "/images/tours/songdo-beach/02-kakaotalk-20260509-231527969-09.webp",
+      "location": "松島（ソンド）雲の散歩道",
+      "alt": "松島（ソンド）雲の散歩道 — gallery image 2",
+      "caption": "松島（ソンド）雲の散歩道 — photo 2"
+    },
+    {
+      "id": 30,
+      "type": "photo",
+      "src": "/images/tours/songdo-beach/songdo-beach-sign-couple.webp",
+      "location": "松島スカイパーク（岩南公園）",
+      "alt": "松島スカイパーク（岩南公園） — on-route photo",
+      "caption": "松島スカイパーク（岩南公園）"
+    },
+    {
+      "id": 31,
+      "type": "photo",
+      "src": "/images/tours/busan-tower/02-chatgpt-image-2026-5-10-12-30-57.webp",
       "location": "龍頭山公園＆釜山タワー",
       "alt": "龍頭山公園＆釜山タワー — gallery image 2",
       "caption": "龍頭山公園＆釜山タワー — photo 2"
     },
     {
-      "id": 29,
+      "id": 32,
       "type": "photo",
-      "src": "/images/tours/busan-tower/busan-tower-yongdusan-pavilion-night.webp",
+      "src": "/images/tours/busan-tower/03-kakaotalk-20260510-222952680.webp",
       "location": "龍頭山公園＆釜山タワー",
       "alt": "龍頭山公園＆釜山タワー — gallery image 3",
       "caption": "龍頭山公園＆釜山タワー — photo 3"
@@ -586,23 +610,23 @@
         "admission": "無料",
         "walking": "容易 — 14ヘクタールの敷地内に広がる平坦な芝生の小道と舗装された歩道；車椅子完全対応"
       },
-      "image": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+      "image": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
       "images": [
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
-        "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp"
+        "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
+        "/images/tours/un-memorial-cemetery/02-chatgpt-image-2026-5-10-12-35-43.webp",
+        "/images/tours/un-memorial-cemetery/03-chatgpt-image-2026-5-10-12-32-23.webp"
       ],
       "imageCredits": [
         {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "url": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "url": "/images/tours/un-memorial-cemetery/02-chatgpt-image-2026-5-10-12-35-43.webp",
           "source": "atoc-korea"
         },
         {
-          "url": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "url": "/images/tours/un-memorial-cemetery/03-chatgpt-image-2026-5-10-12-32-23.webp",
           "source": "atoc-korea"
         }
       ],
@@ -610,7 +634,7 @@
         {
           "id": 1,
           "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-32-23.webp",
+          "src": "/images/tours/un-memorial-cemetery/01-chatgpt-image-2026-5-10-12-35-47.webp",
           "location": "韓国国連記念公園",
           "caption": "韓国国連記念公園 — photo 1",
           "alt": "韓国国連記念公園 — gallery image 1"
@@ -618,7 +642,7 @@
         {
           "id": 2,
           "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-43.webp",
+          "src": "/images/tours/un-memorial-cemetery/02-chatgpt-image-2026-5-10-12-35-43.webp",
           "location": "韓国国連記念公園",
           "caption": "韓国国連記念公園 — photo 2",
           "alt": "韓国国連記念公園 — gallery image 2"
@@ -626,7 +650,7 @@
         {
           "id": 3,
           "type": "photo",
-          "src": "/images/tours/un-memorial-cemetery/chatgpt-image-2026-5-10-12-35-47.webp",
+          "src": "/images/tours/un-memorial-cemetery/03-chatgpt-image-2026-5-10-12-32-23.webp",
           "location": "韓国国連記念公園",
           "caption": "韓国国連記念公園 — photo 3",
           "alt": "韓国国連記念公園 — gallery image 3"
@@ -946,14 +970,51 @@
         "admission": "村の入場無料；スタンプマップ（任意）約 2,000ウォン",
         "walking": "体力を要する — 非常に急な路地と階段；多くの区間でベビーカーや車椅子での移動は困難"
       },
-      "image": "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
+      "image": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
       "images": [
-        "/images/tours/gamcheon-culture-village/kakaotalk-20260510-222952680-01.webp",
-        "/images/tours/gamcheon-culture-village/chatgpt-image-2026-5-11-01-00-53.webp",
-        "/images/tours/gamcheon-culture-village/gamcheon-little-prince-night.webp",
-        "/images/itinerary/jagalchi-harbor-sign.webp",
-        "/images/itinerary/jagalchi-market-interior.webp",
-        "/images/itinerary/jagalchi-night-building.webp"
+        "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+        "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+        "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/01-kakaotalk-20260510-222952680-01.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 1",
+          "alt": "甘川文化村 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/02-chatgpt-image-2026-5-11-12-22-38.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 2",
+          "alt": "甘川文化村 — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/gamcheon-culture-village/03-chatgpt-image-2026-5-11-01-00-53.webp",
+          "location": "甘川文化村",
+          "caption": "甘川文化村 — photo 3",
+          "alt": "甘川文化村 — gallery image 3"
+        }
       ]
     },
     {
@@ -991,10 +1052,10 @@
         "walking": "易しい — 平坦なデッキ、階段なし",
         "admission": "無料"
       },
-      "image": "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
+      "image": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "images": [
-        "/images/tours/songdo-beach/songdo-skywalk-v-bridge.webp",
-        "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
+        "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+        "/images/tours/songdo-beach/02-kakaotalk-20260509-231527969-09.webp"
       ],
       "_poi_meta": {
         "match": "exact",
@@ -1008,7 +1069,35 @@
         "verified": true,
         "kb_version": "1.24",
         "verified_date": "2026-04-29"
-      }
+      },
+      "imageCredits": [
+        {
+          "url": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/songdo-beach/02-kakaotalk-20260509-231527969-09.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
+          "location": "松島（ソンド）雲の散歩道",
+          "caption": "松島（ソンド）雲の散歩道 — photo 1",
+          "alt": "松島（ソンド）雲の散歩道 — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/songdo-beach/02-kakaotalk-20260509-231527969-09.webp",
+          "location": "松島（ソンド）雲の散歩道",
+          "caption": "松島（ソンド）雲の散歩道 — photo 2",
+          "alt": "松島（ソンド）雲の散歩道 — gallery image 2"
+        }
+      ]
     },
     {
       "number": 10,
@@ -1046,9 +1135,9 @@
         "walking": "易しい — 駅のエレベーターと平坦なデッキ",
         "admission": "ケーブルカーは含まれません — 大人往復17,000ウォン、クリスタルキャビン25,000ウォン、現地払い。岩南公園自体は無料。"
       },
-      "image": "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+      "image": "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
       "images": [
-        "/images/tours/songdo-beach/chatgpt-image-2026-5-10-12-32-12.webp",
+        "/images/tours/songdo-beach/01-chatgpt-image-2026-5-10-12-32-12.webp",
         "/images/tours/songdo-beach/songdo-beach-sign-couple.webp"
       ]
     },
@@ -1103,11 +1192,51 @@
         "admission": "公園入場無料；釜山ダイヤモンドタワー ₩12,000（大人）/ ₩9,000（65歳以上のシニアまたは3〜12歳の子ども）",
         "walking": "光復路ファッション通りからの屋根付きエスカレーターで登頂（下り用エスカレーターなし — 階段にて下山）"
       },
-      "image": "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
+      "image": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
       "images": [
-        "/images/tours/busan-tower/chatgpt-image-2026-5-10-12-30-57.webp",
-        "/images/tours/busan-tower/kakaotalk-20260510-222952680.webp",
-        "/images/tours/busan-tower/busan-tower-yongdusan-pavilion-night.webp"
+        "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
+        "/images/tours/busan-tower/02-chatgpt-image-2026-5-10-12-30-57.webp",
+        "/images/tours/busan-tower/03-kakaotalk-20260510-222952680.webp"
+      ],
+      "imageCredits": [
+        {
+          "url": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/02-chatgpt-image-2026-5-10-12-30-57.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/busan-tower/03-kakaotalk-20260510-222952680.webp",
+          "source": "atoc-korea"
+        }
+      ],
+      "galleryItems": [
+        {
+          "id": 1,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/01-kakaotalk-20260510-230009595.webp",
+          "location": "龍頭山公園＆釜山タワー",
+          "caption": "龍頭山公園＆釜山タワー — photo 1",
+          "alt": "龍頭山公園＆釜山タワー — gallery image 1"
+        },
+        {
+          "id": 2,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/02-chatgpt-image-2026-5-10-12-30-57.webp",
+          "location": "龍頭山公園＆釜山タワー",
+          "caption": "龍頭山公園＆釜山タワー — photo 2",
+          "alt": "龍頭山公園＆釜山タワー — gallery image 2"
+        },
+        {
+          "id": 3,
+          "type": "photo",
+          "src": "/images/tours/busan-tower/03-kakaotalk-20260510-222952680.webp",
+          "location": "龍頭山公園＆釜山タワー",
+          "caption": "龍頭山公園＆釜山タワー — photo 3",
+          "alt": "龍頭山公園＆釜山タワー — gallery image 3"
+        }
       ]
     },
     {

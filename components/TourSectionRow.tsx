@@ -1,7 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import TourCard from '@/components/TourCard';
+import { RailArrows } from '@/components/ui/RailArrows';
 import { useTranslations, useI18n } from '@/lib/i18n';
 import type { Locale } from '@/lib/i18n';
 
@@ -40,6 +41,7 @@ export default function TourSectionRow({
   const [tours, setTours] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [fetchError, setFetchError] = useState(false);
+  const railRef = useRef<HTMLDivElement>(null);
 
   const fetchTours = () => {
     setLoading(true);
@@ -106,7 +108,7 @@ export default function TourSectionRow({
       <section className="py-6 sm:py-8">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-7 w-48 bg-[#E1E5EA] rounded-full animate-pulse mb-4" />
-          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0">
+          <div className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 rail-scrollbar">
             {[1, 2, 3, 4].map((i) => (
               <div key={i} className="flex-shrink-0 w-[44vw] sm:w-44 lg:w-52 aspect-[5/4.6] bg-[#E1E5EA] rounded-xl animate-pulse" />
             ))}
@@ -177,9 +179,13 @@ export default function TourSectionRow({
             </a>
           )}
         </div>
+        {/* 🔴 No inline `scrollbarWidth` here — an inline style beats the class,
+            so it would force the bar on for touch users too. `.rail-scrollbar`
+            owns the pointer-type decision. */}
+        <div className="relative">
         <div
-          className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory scrollbar-thin"
-          style={{ scrollbarWidth: 'thin' }}
+          ref={railRef}
+          className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x snap-mandatory rail-scrollbar"
         >
           {tours.map((tour) => {
             const hasDiscount = tour.originalPrice != null && tour.price != null && tour.originalPrice > tour.price;
@@ -214,6 +220,8 @@ export default function TourSectionRow({
               </div>
             );
           })}
+        </div>
+        <RailArrows scrollerRef={railRef} />
         </div>
       </div>
     </section>

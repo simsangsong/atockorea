@@ -7,7 +7,7 @@
   "seo": {
     "pageTitle": "首爾市區或近郊私人10小時包車 | AtoC Korea",
     "metaDescription": "附英語司機導遊的首爾地區10小時私人包車：加平（南怡島、晨靜樹木園）、非武裝地帶（DMZ）＋坡州，或愛寶樂園＋韓國民俗村。提供首爾市區免費接送。",
-    "ogImage": "/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
+    "ogImage": "https://www.atockorea.com/images/tours/seoul-private-charter/seoul-private-carnival-han-river-night.webp",
     "primaryKeywords": [
       "首爾近郊私人包車",
       "首爾私人10小時遊覽",
@@ -1194,7 +1194,7 @@
             "name": "路線三：愛寶樂園 + 韓國民俗村",
             "category": "主題樂園 + 文化遺產村落",
             "description": "專為家庭設計的對比之旅，將韓國最大主題樂園愛寶樂園，與位於龍仁的韓國民俗村相結合——後者是一座展示朝鮮時代生活樣貌與傳統表演的活態文化遺產露天博物館。",
-            "image": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+            "image": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
             "highlights": [
               "韓國規模最大、遊客最多的主題樂園",
               "每日均有精彩表演的活態傳統村落",
@@ -1233,32 +1233,21 @@
               "verified_date": "2026-04-27"
             },
             "images": [
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-              "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp"
+              "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
+              "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
+              "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp"
             ],
             "imageCredits": [
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "url": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "url": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
                 "source": "atoc-korea"
               },
               {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
-                "source": "atoc-korea"
-              },
-              {
-                "url": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "url": "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -1266,7 +1255,7 @@
               {
                 "id": 1,
                 "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-44-02.webp",
+                "src": "/images/tours/korean-folk-village/01-chatgpt-image-2026-5-9-11-44-02.webp",
                 "location": "路線三：愛寶樂園 + 韓國民俗村",
                 "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 1",
                 "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 1"
@@ -1274,10 +1263,18 @@
               {
                 "id": 2,
                 "type": "photo",
-                "src": "/images/tours/korean-folk-village/chatgpt-image-2026-5-9-11-59-38.webp",
+                "src": "/images/tours/korean-folk-village/02-kakaotalk-20260509-223603273-13.webp",
                 "location": "路線三：愛寶樂園 + 韓國民俗村",
                 "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 2",
                 "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 2"
+              },
+              {
+                "id": 3,
+                "type": "photo",
+                "src": "/images/tours/korean-folk-village/03-chatgpt-image-2026-5-9-11-59-38.webp",
+                "location": "路線三：愛寶樂園 + 韓國民俗村",
+                "caption": "路線三：愛寶樂園 + 韓國民俗村 — photo 3",
+                "alt": "路線三：愛寶樂園 + 韓國民俗村 — gallery image 3"
               }
             ]
           },

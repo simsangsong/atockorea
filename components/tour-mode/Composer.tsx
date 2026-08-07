@@ -35,6 +35,7 @@ import {
   IconAsk,
   IconCamera,
   IconDone,
+  IconEmoji,
   IconFile,
   IconMic,
   IconPaperclip,
@@ -44,6 +45,7 @@ import {
   TR_STROKE,
 } from '@/components/tour-mode/icons';
 import ActionGrid, { type ActionGridItem } from '@/components/tour-mode/ActionGrid';
+import EmojiPicker from '@/components/tour-mode/EmojiPicker';
 import type { RoomLocale } from '@/lib/tour-room/snapshot';
 
 const PRESET_COOLDOWN_MS = 1500;
@@ -70,17 +72,17 @@ const TRAY_LABEL: Record<RoomLocale, { photo: string; camera: string }> = {
   it: { photo: 'Foto', camera: 'Chiedi con foto' },
 };
 
-const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: string; send: string }> = {
-  en: { attach: 'Attach a photo or file', askPhoto: 'Ask about a photo', recordVoice: 'Record a voice message', send: 'Send' },
-  ko: { attach: '사진·파일 첨부', askPhoto: '사진에 대해 물어보기', recordVoice: '음성 메시지 녹음', send: '보내기' },
-  ja: { attach: '写真・ファイルを添付', askPhoto: '写真について質問', recordVoice: '音声メッセージを録音', send: '送信' },
-  es: { attach: 'Adjuntar foto o archivo', askPhoto: 'Preguntar sobre una foto', recordVoice: 'Grabar un mensaje de voz', send: 'Enviar' },
-  zh: { attach: '添加照片或文件', askPhoto: '询问照片', recordVoice: '录制语音消息', send: '发送' },
-  'zh-TW': { attach: '加入照片或檔案', askPhoto: '詢問照片', recordVoice: '錄製語音訊息', send: '傳送' },
-  fr: { attach: 'Joindre une photo ou un fichier', askPhoto: 'Poser une question sur une photo', recordVoice: 'Enregistrer un message vocal', send: 'Envoyer' },
-  de: { attach: 'Foto oder Datei anhängen', askPhoto: 'Frage zu einem Foto stellen', recordVoice: 'Sprachnachricht aufnehmen', send: 'Senden' },
-  ru: { attach: 'Прикрепить фото или файл', askPhoto: 'Задать вопрос по фото', recordVoice: 'Записать голосовое сообщение', send: 'Отправить' },
-  it: { attach: 'Allega una foto o un file', askPhoto: 'Fai una domanda su una foto', recordVoice: 'Registra un messaggio vocale', send: 'Invia' },
+const A11Y: Record<RoomLocale, { attach: string; askPhoto: string; recordVoice: string; send: string; emoji: string }> = {
+  en: { attach: 'Attach a photo or file', askPhoto: 'Ask about a photo', recordVoice: 'Record a voice message', send: 'Send', emoji: 'Emoji' },
+  ko: { attach: '사진·파일 첨부', askPhoto: '사진에 대해 물어보기', recordVoice: '음성 메시지 녹음', send: '보내기', emoji: '이모지' },
+  ja: { attach: '写真・ファイルを添付', askPhoto: '写真について質問', recordVoice: '音声メッセージを録音', send: '送信', emoji: '絵文字' },
+  es: { attach: 'Adjuntar foto o archivo', askPhoto: 'Preguntar sobre una foto', recordVoice: 'Grabar un mensaje de voz', send: 'Enviar', emoji: 'Emojis' },
+  zh: { attach: '添加照片或文件', askPhoto: '询问照片', recordVoice: '录制语音消息', send: '发送', emoji: '表情' },
+  'zh-TW': { attach: '加入照片或檔案', askPhoto: '詢問照片', recordVoice: '錄製語音訊息', send: '傳送', emoji: '表情' },
+  fr: { attach: 'Joindre une photo ou un fichier', askPhoto: 'Poser une question sur une photo', recordVoice: 'Enregistrer un message vocal', send: 'Envoyer', emoji: 'Émojis' },
+  de: { attach: 'Foto oder Datei anhängen', askPhoto: 'Frage zu einem Foto stellen', recordVoice: 'Sprachnachricht aufnehmen', send: 'Senden', emoji: 'Emojis' },
+  ru: { attach: 'Прикрепить фото или файл', askPhoto: 'Задать вопрос по фото', recordVoice: 'Записать голосовое сообщение', send: 'Отправить', emoji: 'Эмодзи' },
+  it: { attach: 'Allega una foto o un file', askPhoto: 'Fai una domanda su una foto', recordVoice: 'Registra un messaggio vocale', send: 'Invia', emoji: 'Emoji' },
 };
 
 const PLACEHOLDER: Record<RoomLocale, string> = {
@@ -313,6 +315,7 @@ export default function Composer({
   const [voiceNote, setVoiceNote] = useState<string | null>(null);
   const [confirmHint, setConfirmHint] = useState(false);
   const [actionsOpen, setActionsOpen] = useState(false);
+  const [emojiOpen, setEmojiOpen] = useState(false);
   // Device STT (Web Speech) is preferred when the browser supports it — the
   // transcript lands instantly with no server round trip; `interim` streams the
   // live words. `recMode` says which engine the current capture uses.
@@ -460,11 +463,45 @@ export default function Composer({
     el.style.height = `${Math.min(el.scrollHeight, MAX_TEXTAREA_PX)}px`;
   }, []);
 
+  /**
+   * Emoji land at the CARET, not at the end — a guest fixing the middle of a
+   * sentence expects the same behaviour as their system keyboard. The textarea
+   * keeps focus (the picker swallows mousedown), so selectionStart is real.
+   *
+   * `maxLength` on the element only guards typing and paste; a programmatic
+   * setState walks straight past it, so the cap is re-checked here.
+   */
+  const insertEmoji = useCallback(
+    (emoji: string) => {
+      const el = inputRef.current;
+      setDraft((prev) => {
+        if (prev.length + emoji.length > 2000) return prev;
+        const start = el?.selectionStart ?? prev.length;
+        const end = el?.selectionEnd ?? start;
+        const next = prev.slice(0, start) + emoji + prev.slice(end);
+        if (el) {
+          const caret = start + emoji.length;
+          // After React commits the new value; setting it before would be
+          // overwritten by the controlled re-render.
+          queueMicrotask(() => {
+            el.focus();
+            el.setSelectionRange(caret, caret);
+            autosize();
+          });
+        }
+        return next;
+      });
+      onTyping?.();
+    },
+    [autosize, onTyping],
+  );
+
   const submitDraft = () => {
     const text = draft.trim();
     if (!text) return;
     setDraft('');
     setConfirmHint(false);
+    setEmojiOpen(false);
     if (inputRef.current) inputRef.current.style.height = 'auto';
     onSendText(text);
   };
@@ -775,8 +812,16 @@ export default function Composer({
       )}
 
       {/* The "+" tray sits directly on top of the docked bar, the way every
-          messenger stacks its attachment panel — not floating mid-canvas. */}
+          messenger stacks its attachment panel — not floating mid-canvas.
+          The emoji tray shares that slot and the two are mutually exclusive:
+          both docked at once would push the input off a short phone screen. */}
       <ActionGrid open={actionsOpen} onClose={() => setActionsOpen(false)} items={trayItems} />
+      <EmojiPicker
+        open={emojiOpen}
+        onClose={() => setEmojiOpen(false)}
+        onPick={insertEmoji}
+        locale={locale}
+      />
 
       {/* Docked bar — full-bleed surface with a hairline, like every messenger. */}
       <div className="tr-hairline-t bg-[var(--tr-surface)] px-3 py-2">
@@ -874,7 +919,10 @@ export default function Composer({
             {(onSendAttachment || vision || (extraActions?.length ?? 0) > 0) && !hasDraft ? (
               <button
                 type="button"
-                onClick={() => setActionsOpen((v) => !v)}
+                onClick={() => {
+                  setEmojiOpen(false);
+                  setActionsOpen((v) => !v);
+                }}
                 aria-expanded={actionsOpen}
                 aria-label={(A11Y[locale] ?? A11Y.en).attach}
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-[var(--tr-ink-2)] active:bg-[var(--tr-bubble-system)]"
@@ -887,6 +935,28 @@ export default function Composer({
                 />
               </button>
             ) : null}
+            {/*
+              사장님 2026-08-07 — emoticons get ONE door, and it is here.
+              Unlike "+", this stays through a draft: adding a 🎉 to a sentence
+              you already typed is the whole point, and hiding it the moment a
+              character exists would make the button reachable only on an empty
+              box.
+            */}
+            <button
+              type="button"
+              onClick={() => {
+                setActionsOpen(false);
+                setEmojiOpen((v) => !v);
+              }}
+              aria-expanded={emojiOpen}
+              aria-label={(A11Y[locale] ?? A11Y.en).emoji}
+              className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full active:bg-[var(--tr-bubble-system)] ${
+                emojiOpen ? 'text-[var(--tr-accent)]' : 'text-[var(--tr-ink-2)]'
+              }`}
+              data-testid="composer-emoji-toggle"
+            >
+              <IconEmoji size={TR_ICON.nav} strokeWidth={TR_STROKE.default} />
+            </button>
             <textarea
               ref={inputRef}
               value={draft}
