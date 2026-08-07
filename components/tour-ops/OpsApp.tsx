@@ -345,7 +345,56 @@ export default function OpsApp() {
     [rooms, streams, sosRooms, nowTick],
   );
 
-  const openRoomObject = openRoomId ? rooms.find((room) => room.id === openRoomId) ?? null : null;
+  /**
+   * 🔴 드로어는 **누른 버튼이 지목한 룸**으로 열려야 한다 (2026-08-07).
+   *
+   * 예전엔 `rooms.find(id)` 하나뿐이었다. 그런데 `rooms` 는 이 콘솔의 `date`
+   * 하루치이고, 룸·링크 관리 시트는 ◀ ▶ 로 다른 날짜를 본다. 그래서 **내일 투어
+   * 배차를 준비하려고 날짜를 넘긴 뒤 [차량 배정]을 누르면** `openRoomId` 만 세팅되고
+   * `openRoomObject` 는 null 이라 **드로어가 렌더되지 않았다 — 오류도 토스트도 없이
+   * 완전 무반응.** 배차를 미리 잡는 게 정상 업무이므로 실무에선 이쪽이 기본 경로였고,
+   * 사장님이 "눌러도 아무 반응 없다"고 반복해서 말한 것이 정확히 이것이다.
+   *
+   * 목록에 없으면 그 룸 하나를 날짜 무관하게 가져온다. 실패하면 **조용히 넘어가지
+   * 않고** 말한다 — 무반응이 이 버그의 본체였다.
+   */
+  const [offListRoom, setOffListRoom] = useState<OpsRoom | null>(null);
+  useEffect(() => {
+    if (!openRoomId) {
+      setOffListRoom(null);
+      return;
+    }
+    if (rooms.some((room) => room.id === openRoomId)) return;
+    if (offListRoom?.id === openRoomId) return;
+    let alive = true;
+    void (async () => {
+      try {
+        const token = await getOpsToken();
+        const res = await fetch(`/api/admin/tour-ops/rooms?room_id=${encodeURIComponent(openRoomId)}`, {
+          headers: { Authorization: `Bearer ${token}` },
+          credentials: 'include',
+          cache: 'no-store',
+        });
+        const json = await res.json();
+        const found = (json?.rooms as OpsRoom[] | undefined)?.[0] ?? null;
+        if (!alive) return;
+        if (!found) throw new Error('룸을 찾지 못했어요.');
+        setOffListRoom(found);
+      } catch (error) {
+        if (!alive) return;
+        setOpenRoomId(null);
+        toast.error(error instanceof Error ? error.message : '룸을 열지 못했어요.');
+      }
+    })();
+    return () => {
+      alive = false;
+    };
+  }, [openRoomId, rooms, offListRoom?.id]);
+
+  const openRoomObject = openRoomId
+    ? rooms.find((room) => room.id === openRoomId) ??
+      (offListRoom?.id === openRoomId ? offListRoom : null)
+    : null;
   const sosCount = sosRooms.size;
   const unreadTotal = useMemo(() => Object.values(unread).reduce((sum, n) => sum + n, 0), [unread]);
 
