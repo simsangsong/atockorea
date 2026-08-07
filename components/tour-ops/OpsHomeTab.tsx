@@ -198,6 +198,13 @@ export default function OpsHomeTab({
         run: onOpenManager,
       };
 
+  /** 묶음 머리글의 색 막대 — 그 묶음에서 가장 자주 눌리는 타일의 색을 쓴다. */
+  const GROUP_HUE: Record<'today' | 'review' | 'analysis', string> = {
+    today: 'pine',
+    review: 'clay',
+    analysis: 'plum',
+  };
+
   const GROUPS: Array<{ key: 'today' | 'review' | 'analysis'; label: string }> = [
     { key: 'today', label: '오늘 운영' },
     { key: 'review', label: '검토 · 배차' },
@@ -216,6 +223,11 @@ export default function OpsHomeTab({
      * operator re-read all ten every time.
      */
     group: 'today' | 'review' | 'analysis';
+    /**
+     * 이 목적지의 색. 장식이 아니라 **주소**다 — 같은 자리에 늘 같은 색이 있으면
+     * 두 번째부터는 읽지 않고 집는다. 값은 `--tr-tile-<hue>` 토큰과 짝이다.
+     */
+    hue: 'pine' | 'teal' | 'indigo' | 'plum' | 'clay' | 'slate';
     badge?: number;
     badgeTone?: 'red' | 'amber' | 'blue';
     onClick?: () => void;
@@ -223,6 +235,7 @@ export default function OpsHomeTab({
   }> = [
     {
       key: 'manager',
+      hue: 'pine',
       group: 'today',
       title: '배정 · 룸 · 링크',
       desc:
@@ -236,6 +249,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'inbox',
+      hue: 'teal',
       group: 'today',
       title: '메시지 모아보기',
       desc: '모든 룸의 메시지를 한 타임라인으로',
@@ -245,6 +259,7 @@ export default function OpsHomeTab({
     {
       key: 'review',
       group: 'review',
+      hue: 'clay',
       title: '인박스 리뷰 큐',
       desc: 'OTA 메일 파싱 검토 · 승인 커밋 · 상품 매핑',
       icon: MailCheck,
@@ -252,6 +267,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'messaging',
+      hue: 'teal',
       group: 'today',
       title: '손님 안내 보내기',
       desc: '내일 투어 · 이메일 일괄 + 왓츠앱 순차 · 날씨 자동 포함',
@@ -260,6 +276,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'autopilot',
+      hue: 'clay',
       group: 'review',
       title: '오토파일럿',
       desc: '미배정 · 미배차 · 단가 누락 점검 (제안만)',
@@ -268,6 +285,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'room-history',
+      hue: 'slate',
       group: 'today',
       title: '투어룸 생성 내역',
       desc: '이번 달 방 · 손님 미입장 방 찾기 · 엑셀',
@@ -276,6 +294,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'schedule',
+      hue: 'indigo',
       group: 'review',
       title: '가이드 · 차량 달력',
       desc: '월 매트릭스 · 배정 충돌 · 휴무 한눈에',
@@ -284,6 +303,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'qa',
+      hue: 'plum',
       group: 'analysis',
       title: '문답 학습',
       desc: '컨시어지 Q&A 검토 · 승인 · 학습',
@@ -292,6 +312,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'analytics',
+      hue: 'plum',
       group: 'analysis',
       title: '챗봇 분석',
       desc: '해결률 · 커버리지 갭 · 피드백',
@@ -300,6 +321,7 @@ export default function OpsHomeTab({
     },
     {
       key: 'daily-report',
+      hue: 'indigo',
       group: 'analysis',
       title: reportState === 'sending' ? '보고서 발송 중…' : '지금 보고서 발송',
       desc: '오늘 실적 · 신규 · 내일 · 연락 · 요주의 每日報表',
@@ -308,11 +330,17 @@ export default function OpsHomeTab({
     },
   ];
 
+  /**
+   * 🔴 호박 배지의 숫자가 안 읽혔다. `--tr-warn` 은 라이트에서 짙은 갈색,
+   * 다크에서 밝은 호박이라 **명도가 테마마다 뒤집히는데** 글자는 양쪽 다
+   * `--tr-ink-3`(회색)로 찍고 있었다 — 어느 쪽에서도 대비가 안 난다.
+   * 뒤집히는 배경에는 뒤집히는 글자색이 필요하다: `--tr-warn-ink`.
+   */
   const badgeClass = (tone?: 'red' | 'amber' | 'blue') =>
     tone === 'red'
       ? 'bg-[var(--tr-danger)] text-white'
       : tone === 'amber'
-        ? 'bg-[var(--tr-warn)] text-[var(--tr-ink-3)]'
+        ? 'bg-[var(--tr-warn)] text-[var(--tr-warn-ink)]'
         : 'bg-[var(--tr-accent)] text-white';
 
   return (
@@ -455,8 +483,20 @@ export default function OpsHomeTab({
           if (inGroup.length === 0) return null;
           return (
             <section key={groupKey} data-testid={`ops-tile-group-${groupKey}`}>
-              <h2 className="text-cjk-safe px-1 pb-1.5 tr-label font-semibold text-[var(--tr-ink-3)]">{label}</h2>
-              <div className="grid grid-cols-2 gap-2">{inGroup.map(renderTile)}</div>
+              {/* 머리글도 회색 글자 한 줄이었다. 짧은 색 막대 하나가 「여기서
+                  새 묶음이 시작된다」를 글자보다 먼저 말한다. */}
+              <h2 className="text-cjk-safe flex items-center gap-2 px-1 pb-2 tr-label font-bold uppercase tracking-wide text-[var(--tr-ink-2)]">
+                <span
+                  aria-hidden
+                  className="h-3.5 w-1 shrink-0 rounded-full"
+                  style={{ background: `var(--tr-tile-${GROUP_HUE[groupKey]})` }}
+                />
+                {label}
+              </h2>
+              {/* 관제는 폰과 데스크톱에서 같이 쓰인다. 2열 고정이면 넓은 화면에서
+                  타일 하나가 500px 짜리 현수막이 되고 세 묶음이 스크롤 밖으로
+                  밀린다 — 넓어지면 열을 늘려 한 화면에 담는다. */}
+              <div className="grid grid-cols-2 gap-2.5 sm:grid-cols-3">{inGroup.map(renderTile)}</div>
             </section>
           );
         })}
@@ -464,62 +504,74 @@ export default function OpsHomeTab({
     </div>
   );
 
-  function renderTile({ key, title, desc, icon: Icon, badge, badgeTone, onClick, href }: (typeof tiles)[number]) {
-    {
-          const body = (
-            <>
-              <span className="relative inline-flex">
-                <span
-                  className={`flex size-9 items-center justify-center rounded-xl ${
-                    badge && badgeTone === 'amber'
-                      ? 'bg-[var(--tr-warn-soft)]'
-                      : badge && badgeTone === 'red'
-                        ? 'bg-[var(--tr-danger-soft)]'
-                        : 'bg-[var(--tr-surface-2)]'
-                  }`}
-                >
-                  <Icon
-                    className={`size-[18px] ${
-                      badge && badgeTone === 'amber'
-                        ? 'text-[var(--tr-warn)]'
-                        : badge && badgeTone === 'red'
-                          ? 'text-[var(--tr-danger)]'
-                          : 'text-[var(--tr-ink-2)]'
-                    }`}
-                  />
-                </span>
-                {badge ? (
-                  <span
-                    className={`absolute -right-2 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 tr-meta font-bold ${badgeClass(badgeTone)}`}
-                  >
-                    {badge > 99 ? '99+' : badge}
-                  </span>
-                ) : null}
-              </span>
-              <span className="mt-2.5 block tr-card-text font-semibold text-[var(--tr-ink)]">{title}</span>
-              <span className="mt-0.5 block tr-meta leading-snug text-[var(--tr-ink-3)]">{desc}</span>
-            </>
-          );
-          const className =
-            'block min-h-[104px] rounded-2xl border border-[var(--tr-hairline)] bg-[var(--tr-surface)] p-3.5 text-left transition-colors active:bg-[var(--tr-surface-2)]';
-          // O0 — every ops overlay is reached through one of these tiles, so the
-          // walk opens them by key rather than by Korean title text (which O2
-          // re-typesets and O5 may reword).
-          return href ? (
-            <a key={key} href={href} className={className} data-testid={`ops-tile-${key}`}>
-              {body}
-            </a>
-          ) : (
-            <button
-              key={key}
-              type="button"
-              onClick={onClick}
-              className={className}
-              data-testid={`ops-tile-${key}`}
+  function renderTile({ key, title, desc, icon: Icon, hue, badge, badgeTone, onClick, href }: (typeof tiles)[number]) {
+    /**
+     * 배지가 붙은 타일은 자기 색을 잠시 내려놓고 경고색을 쓴다 — 「지금 봐야
+     * 한다」가 「이건 배차 메뉴다」를 이겨야 하고, 한 카드에 두 색이 다투면
+     * 둘 다 안 읽힌다.
+     */
+    const alert = badge ? (badgeTone === 'red' ? 'danger' : 'warn') : null;
+    const ink = alert ? `var(--tr-${alert})` : `var(--tr-tile-${hue})`;
+    const wash = alert ? `var(--tr-${alert}-soft)` : `var(--tr-tile-${hue}-soft)`;
+
+    const body = (
+      <>
+        <span className="relative inline-flex">
+          {/* 칩: 색면 + 안쪽 링 + 위쪽 하이라이트. 회색 사각형이 아니라 물건처럼. */}
+          <span
+            className="flex size-10 items-center justify-center rounded-[14px]"
+            style={{
+              background: wash,
+              boxShadow: `inset 0 0 0 1px color-mix(in srgb, ${ink} 22%, transparent), var(--tr-rim)`,
+            }}
+          >
+            <Icon className="size-[19px]" style={{ color: ink }} strokeWidth={1.9} />
+          </span>
+          {badge ? (
+            <span
+              className={`absolute -right-2 -top-1.5 flex h-4 min-w-4 items-center justify-center rounded-full px-1 tr-meta font-bold ${badgeClass(badgeTone)}`}
             >
-              {body}
-            </button>
-          );
-    }
+              {badge > 99 ? '99+' : badge}
+            </span>
+          ) : null}
+        </span>
+        <span className="mt-2.5 block tr-card-text font-bold text-[var(--tr-ink)]">{title}</span>
+        <span className="mt-1 block tr-meta leading-snug text-[var(--tr-ink-3)]">{desc}</span>
+      </>
+    );
+
+    /**
+     * 카드 자체도 흰 사각형이 아니다: 자기 색을 아주 옅게 깐 코너 워시 + 색을
+     * 머금은 테두리 + 두 겹 그림자. 워시는 아이콘 쪽(좌상단)에서 나와 대각선으로
+     * 사라지므로, 제목·설명이 앉는 자리는 그대로 깨끗한 표면이다.
+     */
+    const className =
+      'group relative block min-h-[116px] overflow-hidden rounded-[18px] p-3.5 text-left ' +
+      'transition-[transform,box-shadow] duration-150 active:translate-y-px';
+    const style = {
+      background: `radial-gradient(120% 100% at 0% 0%, color-mix(in srgb, ${ink} 9%, transparent) 0%, transparent 62%), var(--tr-surface)`,
+      boxShadow: `inset 0 0 0 1px color-mix(in srgb, ${ink} 16%, var(--tr-hairline)), var(--tr-rim), var(--tr-elev-1)`,
+    } as const;
+
+    // O0 — every ops overlay is reached through one of these tiles, so the
+    // walk opens them by key rather than by Korean title text (which O2
+    // re-typesets and O5 may reword).
+    return href ? (
+      <a key={key} href={href} className={className} style={style} data-testid={`ops-tile-${key}`} data-tile-hue={hue}>
+        {body}
+      </a>
+    ) : (
+      <button
+        key={key}
+        type="button"
+        onClick={onClick}
+        className={className}
+        style={style}
+        data-testid={`ops-tile-${key}`}
+        data-tile-hue={hue}
+      >
+        {body}
+      </button>
+    );
   }
 }
