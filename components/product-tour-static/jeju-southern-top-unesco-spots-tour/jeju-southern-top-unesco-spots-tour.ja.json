@@ -299,13 +299,21 @@
     {
       "id": 21,
       "type": "photo",
+      "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+      "location": "オソルロックティーミュージアム＋緑茶畑",
+      "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 7",
+      "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 7"
+    },
+    {
+      "id": 22,
+      "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/02-kakaotalk-20260510-230009595-20.webp",
       "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
       "alt": "漢拏山御乗生岳（ユネスコ世界自然遺産） — gallery image 2",
       "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 2"
     },
     {
-      "id": 22,
+      "id": 23,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/03-kakaotalk-20250617-142231230-17.webp",
       "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
@@ -313,7 +321,7 @@
       "caption": "漢拏山御乗生岳（ユネスコ世界自然遺産） — photo 3"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/hallasan-eoseungsaengak/04-kakaotalk-20250916-131058587-01.webp",
       "location": "漢拏山御乗生岳（ユネスコ世界自然遺産）",
@@ -776,7 +784,8 @@
         "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
         "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
         "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
       ],
       "imageCredits": [
         {
@@ -801,6 +810,10 @@
         },
         {
           "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
           "source": "atoc-korea"
         }
       ],
@@ -852,6 +865,14 @@
           "location": "オソルロックティーミュージアム＋緑茶畑",
           "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 6",
           "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+          "location": "オソルロックティーミュージアム＋緑茶畑",
+          "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 7",
+          "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 7"
         }
       ]
     },
@@ -2518,7 +2539,8 @@
               "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
               "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
               "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
             ],
             "imageCredits": [
               {
@@ -2543,6 +2565,10 @@
               },
               {
                 "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2594,6 +2620,14 @@
                 "location": "オソルロックティーミュージアム＋緑茶畑",
                 "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 6",
                 "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+                "location": "オソルロックティーミュージアム＋緑茶畑",
+                "caption": "オソルロックティーミュージアム＋緑茶畑 — photo 7",
+                "alt": "オソルロックティーミュージアム＋緑茶畑 — gallery image 7"
               }
             ]
           },

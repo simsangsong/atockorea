@@ -301,13 +301,21 @@
     {
       "id": 22,
       "type": "photo",
+      "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+      "location": "Museo del Té O'Sulloc",
+      "alt": "Museo del Té O'Sulloc — gallery image 7",
+      "caption": "Museo del Té O'Sulloc — photo 7"
+    },
+    {
+      "id": 23,
+      "type": "photo",
       "src": "/images/tours/aewol-cafe-street/02-kakaotalk-20260510-230009595-27.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
       "alt": "Calle de Cafés de Aewol (Sendero Costero Handam) — gallery image 2",
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 2"
     },
     {
-      "id": 23,
+      "id": 24,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/03-kakaotalk-20260510-230009595-26.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -315,7 +323,7 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 3"
     },
     {
-      "id": 24,
+      "id": 25,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/04-kakaotalk-20260510-230009595-24.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -323,7 +331,7 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 4"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/aewol-cafe-street/05-kakaotalk-20260510-230009595-25.webp",
       "location": "Calle de Cafés de Aewol (Sendero Costero Handam)",
@@ -331,7 +339,7 @@
       "caption": "Calle de Cafés de Aewol (Sendero Costero Handam) — photo 5"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/iho-teu/01-chatgpt-image-2026-5-9-01-17-19.webp",
       "location": "Playa de Iho Tewoo (faros con forma de poni · atardecer)",
@@ -339,7 +347,7 @@
       "caption": "Playa de Iho Tewoo (faros con forma de poni · atardecer) — photo 2"
     },
     {
-      "id": 27,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/iho-teu/02-chatgpt-image-2026-5-9-01-17-13.webp",
       "location": "Playa de Iho Tewoo (faros con forma de poni · atardecer)",
@@ -347,7 +355,7 @@
       "caption": "Playa de Iho Tewoo (faros con forma de poni · atardecer) — photo 3"
     },
     {
-      "id": 28,
+      "id": 29,
       "type": "photo",
       "src": "/images/tours/iho-teu/04-kakaotalk-20260508-171002165-14.webp",
       "location": "Playa de Iho Tewoo (faros con forma de poni · atardecer)",
@@ -355,7 +363,7 @@
       "caption": "Playa de Iho Tewoo (faros con forma de poni · atardecer) — photo 4"
     },
     {
-      "id": 29,
+      "id": 30,
       "type": "photo",
       "src": "/images/tours/iho-teu/05-kakaotalk-20250908-230645551.webp",
       "location": "Playa de Iho Tewoo (faros con forma de poni · atardecer)",
@@ -873,7 +881,8 @@
         "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
         "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
         "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
       ],
       "imageCredits": [
         {
@@ -898,6 +907,10 @@
         },
         {
           "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
           "source": "atoc-korea"
         }
       ],
@@ -949,6 +962,14 @@
           "location": "Museo del Té O'Sulloc",
           "caption": "Museo del Té O'Sulloc — photo 6",
           "alt": "Museo del Té O'Sulloc — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+          "location": "Museo del Té O'Sulloc",
+          "caption": "Museo del Té O'Sulloc — photo 7",
+          "alt": "Museo del Té O'Sulloc — gallery image 7"
         }
       ]
     },
@@ -2815,7 +2836,8 @@
               "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
               "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
               "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
             ],
             "imageCredits": [
               {
@@ -2840,6 +2862,10 @@
               },
               {
                 "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2891,6 +2917,14 @@
                 "location": "Museo del Té O'Sulloc",
                 "caption": "Museo del Té O'Sulloc — photo 6",
                 "alt": "Museo del Té O'Sulloc — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+                "location": "Museo del Té O'Sulloc",
+                "caption": "Museo del Té O'Sulloc — photo 7",
+                "alt": "Museo del Té O'Sulloc — gallery image 7"
               }
             ]
           },
