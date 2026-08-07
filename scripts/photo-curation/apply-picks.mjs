@@ -203,6 +203,16 @@ async function main() {
       }
     }
 
+    // `promote` moves one already-converted frame to the front so it becomes the stop hero
+    // (and, through it, `match_pois.default_image_url` — the POI card). Deliberately does
+    // NOT renumber the files: `product-thumbnails.mjs` addresses frames by filename, and
+    // renumbering would silently break those references.
+    if (pick.promote) {
+      const target = paths.find((p) => basename(p).startsWith(`${pick.promote}-`));
+      if (!target) console.warn(`  promote ${pick.promote} not found in ${slug}`);
+      else paths.splice(0, 0, ...paths.splice(paths.indexOf(target), 1));
+    }
+
     // Assets the site already ships that are worth keeping alongside the curated set —
     // replacing a stop wholesale would otherwise throw away good photography that simply
     // is not in the D: library (e.g. the three Woljeonggyo frames under /images/itinerary).

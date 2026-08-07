@@ -680,8 +680,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "DMZ + Suspension Bridge",
         "Hotel Pickup Included"
       ],
-      "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-      "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "priceLabel": "From US$419 per vehicle (1–3 pax)",
       "shortCardDescription": "A private day-trip pairing Korea's heaviest historical site with one of its most photogenic mountain bridges. Morning at the DMZ (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), then an afternoon walk across the 220-meter Gamaksan Red Suspension Bridge. Passport required for the DMZ portion."
     },

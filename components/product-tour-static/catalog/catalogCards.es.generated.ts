@@ -677,8 +677,8 @@ export const PAGES: Record<string, SlimCatalogPage> = {
         "DMZ + Puente Colgante",
         "Recogida en el Hotel Incluida"
       ],
-      "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-      "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+      "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+      "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
       "priceLabel": "",
       "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ."
     },

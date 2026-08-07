@@ -743,8 +743,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + Suspension Bridge",
           "Hotel Pickup Included"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "From US$419 per vehicle (1–3 pax)",
         "shortCardDescription": "A private day-trip pairing Korea's heaviest historical site with one of its most photogenic mountain bridges. Morning at the DMZ (Imjingak Peace Park, 3rd Infiltration Tunnel, Dora Observatory), then an afternoon walk across the 220-meter Gamaksan Red Suspension Bridge. Passport required for the DMZ portion."
       },
@@ -1710,8 +1710,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + 출렁다리",
           "호텔 픽업 포함"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "한국에서 가장 역사적 무게를 지닌 장소와 가장 아름다운 산악 출렁다리를 함께 경험하는 프라이빗 당일 투어. 오전에는 DMZ(임진각 평화공원, 제3침투 땅굴, 도라산 전망대)를 둘러보고, 오후에는 150m 감악산 붉은 출렁다리를 건넙니다. DMZ 구간 입장 시 여권이 필요합니다."
       },
@@ -2677,8 +2677,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非军事区 + 悬索桥",
           "含酒店接送"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "私人一日游，将韩国历史底蕴最深厚的景点与最上镜的山间桥梁完美结合。上午游览非军事区（临津阁和平公园、第三渗透隧道、都罗展望台），下午漫步150米甘岳山红色悬索桥。进入非军事区须携带护照。"
       },
@@ -3644,8 +3644,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "非軍事區＋吊橋",
           "含飯店接送"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "一趟私人一日遊，將韓國最具歷史份量的地點與最上鏡的山中吊橋完美結合。上午遊覽非軍事區（臨津閣和平公園、第三條滲透地道、都羅展望台），下午漫步於150公尺長的感岳山紅色吊橋。進入非軍事區須出示護照。"
       },
@@ -4608,8 +4608,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ + Puente Colgante",
           "Recogida en el Hotel Incluida"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "Una excursión privada de un día que combina el lugar histórico más solemne de Corea con uno de sus puentes de montaña más fotogénicos. Mañana en el DMZ (Parque de la Paz de Imjingak, 3er Túnel de Infiltración, Observatorio Dora), y por la tarde un paseo sobre el Puente Colgante Rojo de Gamaksan de 150 metros. Se requiere pasaporte para la sección del DMZ."
       },
@@ -5573,8 +5573,8 @@ export const SLIM_CATALOG_PAGES_BY_LOCALE: Record<string, Record<string, SlimCat
           "DMZ＋吊り橋",
           "ホテルピックアップ込み"
         ],
-        "heroImage": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
-        "thumbnail": "/images/tours/imjingak/01-chatgpt-image-2026-5-10-10-40-40.webp",
+        "heroImage": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
+        "thumbnail": "/images/tours/imjingak/03-kakaotalk-20260509-231601211-09.webp",
         "priceLabel": "",
         "shortCardDescription": "韓国で最も重みのある歴史的スポットと、最も絵になる山岳吊り橋のひとつを組み合わせたプライベートデイトリップ。午前はDMZ（臨津閣平和公園、第3浸透トンネル、都羅展望台）を訪れ、午後は150メートルのガマクサン・レッド吊り橋を渡ります。DMZエリアへの入場にはパスポートが必要です。"
       },
