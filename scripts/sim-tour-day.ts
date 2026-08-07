@@ -36,7 +36,19 @@ import { purgeRoomMedia, type PurgeStorageClient } from '../lib/tour-room/mediaP
 import { SESSION_SIM_TAG, LEGACY_SIM_TAG } from './simSessionTag';
 
 const SIM_EMAIL = 'sim-tour-mode@atockorea.test';
-const SIM_ADMIN_EMAIL = 'sim-tour-ops-admin@atockorea.test';
+/**
+ * 🔴 어드민 계정도 **워크트리 단위**로 가른다 (2026-08-07 사고).
+ *
+ * 예약은 `sim_tag` 로 갈라 두고 어드민 계정만 이메일 하나를 공유하고 있었다. 그래서
+ * 두 세션이 겹치면: 뒤에 시딩한 쪽의 `createUser` 가 "이미 있음"으로 떨어져 **같은 계정의
+ * 비밀번호를 재설정**하고(앞 세션의 토큰이 무효화된다), 그쪽 `--cleanup` 이 그 계정을
+ * **통째로 지운다**. 앞 세션의 어드민 스윕은 도중에 전부 `/signin` 으로 튕긴다.
+ *
+ * 증상이 "5~8표면 뒤 붕괴"라 토큰 만료·리프레시 회전·레이트리밋을 차례로 의심했는데
+ * 전부 틀렸다. 진짜 증거는 `auth.users` 에 그 계정이 **아예 없었다**는 것이다.
+ * 이 파일이 예약에 대해 이미 해결해 둔 문제와 같은 것 — 격리 단위만 빠져 있었다.
+ */
+const SIM_ADMIN_EMAIL = `sim-tour-ops-admin+${(SESSION_SIM_TAG.split(':')[1] || 'global')}@atockorea.test`;
 /**
  * 🔴 이제 세션(=워크트리)마다 다른 태그를 쓴다. 이유와 사고 경위는 `simSessionTag.ts`.
  * 요약: 전역 `'sim'` 하나였을 때 한쪽의 `--cleanup` 이 다른 세션 예약을 같이 지웠다.
@@ -176,10 +188,22 @@ async function main() {
       if (error) throw error;
     }
 
-    if (fixtures?.adminUserId) {
-      await service.from('push_subscriptions').delete().eq('user_id', fixtures.adminUserId);
-      await service.from('user_profiles').delete().eq('id', fixtures.adminUserId);
-      await service.auth.admin.deleteUser(fixtures.adminUserId).catch(() => undefined);
+    // 픽스처가 이미 지워졌어도 이 세션의 어드민 계정은 이메일로 찾아 지운다 —
+    // 안 그러면 고아 계정이 남아 다음 시딩이 "이미 있음" 경로로 빠진다.
+    const adminIds = new Set<string>();
+    if (fixtures?.adminUserId) adminIds.add(String(fixtures.adminUserId));
+    {
+      const { data: list } = await service.auth.admin.listUsers();
+      for (const u of list?.users ?? []) {
+        if (u.email === SIM_ADMIN_EMAIL) adminIds.add(u.id);
+        // --all 일 때만 옛 전역 계정까지 거둔다. 기본 드레인은 남의 것을 안 건드린다.
+        if (drainAll && u.email?.startsWith('sim-tour-ops-admin')) adminIds.add(u.id);
+      }
+    }
+    for (const id of adminIds) {
+      await service.from('push_subscriptions').delete().eq('user_id', id);
+      await service.from('user_profiles').delete().eq('id', id);
+      await service.auth.admin.deleteUser(id).catch(() => undefined);
     }
 
     /**
@@ -427,6 +451,9 @@ async function main() {
     adminUserId,
     supabaseStorageKey: `sb-${projectRef}-auth-token`,
     adminSession: signIn.session,
+    // 어느 계정으로 잰 스윕인지 남긴다(디버깅용). 비밀번호는 안 적는다 — 컨텍스트마다
+    // 로그인하는 방식은 Supabase 가 password grant 를 레이트리밋해서(6회 뒤 차단) 폐기했다.
+    adminEmail: SIM_ADMIN_EMAIL,
   };
   writeFileSync(OUT, JSON.stringify(fixtures, null, 2));
   console.log(JSON.stringify({ tourDate, booking1, booking2, adminUserId, storageKey: fixtures.supabaseStorageKey }, null, 2));
