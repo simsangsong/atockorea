@@ -101,3 +101,82 @@ describe('kkdayAdapter — order email', () => {
     expect(b.phone).toBeUndefined()
   })
 })
+
+// ── Private-charter variant (live email 2026-08-04, BR-1431526097) ───────────
+//
+// First non-cruise Viator confirmation observed on bookings@ — the Jeju private
+// car charter. Differs from the cruise fixture above in every drift-prone spot:
+//   • lead label "여행 인솔자 이름" (no 자 — batch B drift)
+//   • pax label "여행자: 6 Adults" (no 수)
+//   • pickup via "호텔 픽업:" (no 만남의 장소 / Pick up Location)
+//   • real traveler names (no "Passenger Two" placeholders)
+//   • 투어 등급 설명 carries "Duration: 9 hours" + "<br/>" remnants — must NOT
+//     become a pickupTime; the customer's "10:15"/"10:30" ask lives in 특별 요구
+//     사항 and must land in notes, not in any time field.
+const VIATOR_PRIVATE_CHARTER_EMAIL = `---- Forwarded Message ----
+From: Viator <booking@t1.viator.com>
+Date: 08/04/2026 14:52
+To: bookings <bookings@atockorea.com>
+Subject: Thu, Nov 05, 2026 (#BR-1431526097)에 대한 새로운 예약
+
+viator
+예약 확인
+Jeju Private Car Charter Tour에 대한 새로운 예약이 있습니다. 이는 즉석 확인 예약이므로 어떤 조치도 취하실 필요가 없습니다.
+자세한 내용은 아래를 참조하시거나 대시보드를 방문하여 모든 예약을 관리하십시오.
+
+예약 세부 정보
+예약 참조: BR-1431526097
+투어 이름: Jeju Private Car Charter Tour
+여행 날짜: Thu, Nov 05, 2026
+여행 인솔자 이름: Maria Valdez
+여행자 이름: Maria Valdez, Edison Valdez, Rona Garcia, Rhona Baltazar, Joselito Oanes, Rhodona Oanes
+여행자: 6 Adults
+상품 코드: 5664240P2
+투어 등급: Jeju Private Car Charter Tour
+투어 등급 코드: TG1
+투어 등급 설명: Duration: 9 hours: Full-day private charter (9 hours). Enjoy a flexible and unhurried schedule. Your 9 hours begin from the moment of pick-up at<br/>100% Customizable Jeju Itinera: Work with your driver to create a bespoke itinerary. Choose to explore the East, West, South, or North of Jeju, or simply let<br/>Premium & Spacious Minivan: Comfortable seating and air-conditioning, perfect for up to 7 passengers.<br/>Pickup included
+투어 언어: English - Guide
+위치: Cheju, South Korea
+기본 요금: USD $209.30
+호텔 픽업: Jeju Airport (CJU), Jeju Airport (CJU), Gonghang-ro, 특별자치도, Jeju-si, Jeju-do, South Korea
+특별 요구 사항: Group of 13 - Booking 2 transfers. Please coordinate booking. Flight does not arrive until 10:15. Is it possible to start the tour around 10:30?
+전화: (Alternate Phone)US+1 6479632462 고객에게 메시지를 전송합니다.
+선택 사항: 기록을 위해 이 예약을 승인하십시오.
+
+질문이 있거나 도움이 필요하십니까?
+© 2026 Viator, Inc. All rights reserved.`
+
+describe('viatorAdapter — private-charter booking email (BR-1431526097 form)', () => {
+  const body = stripEmailEnvelope(VIATOR_PRIVATE_CHARTER_EMAIL).text
+
+  it('detects above threshold', () => {
+    expect(viatorAdapter.detect(body)).toBeGreaterThanOrEqual(0.8)
+  })
+
+  it('extracts the charter booking across all drifted labels', () => {
+    const { bookings, leftover } = viatorAdapter.parse(body)
+    expect(bookings).toHaveLength(1)
+    expect(leftover).toHaveLength(0)
+    const b = bookings[0]
+    expect(b.externalBookingId).toBe('BR-1431526097')
+    expect(b.leadName).toBe('Maria Valdez') // "여행 인솔자 이름" (no 자) variant
+    expect(b.partySize).toBe(6) // "여행자: 6 Adults" (no 수) variant
+    expect(b.tourDate).toBe('2026-11-05')
+    expect(b.productName).toBe('Jeju Private Car Charter Tour')
+    expect(b.pickupPointRaw).toMatch(/^Jeju Airport \(CJU\)/) // 호텔 픽업 label
+    expect(b.phone).toBe('+16479632462')
+    expect(b.language).toBe('en')
+    expect(b.issues).toEqual([]) // date+pickup+contact all present
+    expect(b.confidenceScore).toBeGreaterThanOrEqual(0.88) // auto-commit eligible
+  })
+
+  it('never turns the description duration or the special-request clock into a meet time', () => {
+    const { bookings } = viatorAdapter.parse(body)
+    const b = bookings[0]
+    expect(b.pickupTime).toBeUndefined() // NOT "10:15" / "10:30" / anything from "9 hours"
+    expect(b.notes).toMatch(/Group of 13/)
+    expect(b.notes).toMatch(/10:30/) // the request survives, as prose in notes
+    expect(b.cruiseShipText).toBeUndefined() // charter email has no cruise lines
+    expect(b.whatsapp).toBeUndefined() // no WhatsApp line — must not steal 전화
+  })
+})

@@ -26,6 +26,8 @@ import {
   TourTimelineSection,
 } from "@/components/product-tour-static/east-signature-nature-core/tour-detail-sections";
 import { getPrivateSampleItineraryConfig } from "@/components/product-tour-static/_shared/privateSampleItinerary";
+import { getPrivateImportedCourses } from "@/components/product-tour-static/_shared/privateImportedCourses";
+import { TourImportedCoursesSection } from "@/components/product-tour-static/_shared/TourImportedCoursesSection";
 import { TourRatesSheet } from "@/components/product-tour-static/_shared/TourRatesSheet";
 import { SegmentedToggle } from "@/components/product-tour-static/_shared/SegmentedToggle";
 import { parseListUnitUsd } from "@/components/product-tour-static/_shared/bookingShared";
@@ -139,6 +141,14 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
   // day plans + private-tour rules). Returns null for every other product.
   const privateSampleItinerary = useMemo(
     () => getPrivateSampleItineraryConfig(tourProductSlug),
+    [tourProductSlug],
+  );
+  // Imported course itineraries (Jeju charter): the text-only route stops and
+  // placeholder sample slots step down (code kept — config-gated) in favour of
+  // the real course products' rich timelines behind a South/Southwest/East
+  // switch. Null for every other product → the section renders as before.
+  const importedCourses = useMemo(
+    () => getPrivateImportedCourses(tourProductSlug),
     [tourProductSlug],
   );
   const viatorListingUrl = VIATOR_LISTING_URL_BY_SLUG[tourProductSlug];
@@ -297,12 +307,30 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
           id="itinerary"
           className="mx-3 mt-4 scroll-mt-24 lg:mx-0"
         >
+          {importedCourses ? (
+            /* Imported course itineraries — the course switch replaces both the
+               charter's own text route stops and the Standard|Sample toggle.
+               The old sections below stay in code for non-configured products.
+               `sample-itinerary` keeps old deep links landing here. */
+            <div id="sample-itinerary" className="mx-auto max-w-2xl scroll-mt-24 px-4 pt-6 pb-4 sm:px-5">
+              <TourImportedCoursesSection courses={importedCourses} locale={locale} />
+              {privateSampleItinerary ? (
+                <div className="mt-8">
+                  <TourPrivateSampleItinerarySection
+                    config={privateSampleItinerary}
+                    locale={locale}
+                    rulesOnly
+                  />
+                </div>
+              ) : null}
+            </div>
+          ) : null}
           {/* W2.4 — charter products switch Standard|Sample inside the
               itinerary section via THE shared segmented toggle (§F-8 ③).
               Both views stay mounted (hidden attr) so the locale copy
               survives the DOM round-trip check. The `sample-itinerary` id
               keeps old deep links landing here (W2.7 anchor compat). */}
-          {privateSampleItinerary ? (
+          {!importedCourses && privateSampleItinerary ? (
             <div id="sample-itinerary" className="mx-auto max-w-2xl scroll-mt-24 px-4 pt-6 sm:px-5">
               <SegmentedToggle
                 ariaLabel="Itinerary view"
@@ -315,29 +343,31 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               />
             </div>
           ) : null}
-          <div hidden={itineraryView !== "standard"}>
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
-              <TourDayFlowSection
-                routeFlowStops={vm.routeFlowStops}
-                routePhases={vm.routePhases}
-                routeShapeIntro={vm.routeShapeIntro}
-                sectionUi={vm.sectionUi}
-                itineraryStops={vm.itineraryStops}
-              />
+          {!importedCourses && (
+            <div hidden={itineraryView !== "standard"}>
+              <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-6 pb-3 space-y-7">
+                <TourDayFlowSection
+                  routeFlowStops={vm.routeFlowStops}
+                  routePhases={vm.routePhases}
+                  routeShapeIntro={vm.routeShapeIntro}
+                  sectionUi={vm.sectionUi}
+                  itineraryStops={vm.itineraryStops}
+                />
+              </div>
+              <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
+                <TourTimelineSection
+                  itineraryStops={vm.itineraryStops}
+                  sectionUi={vm.sectionUi}
+                  pickup_dropoff={vm.pickup_dropoff}
+                  routeVariants={vm.routeVariants}
+                  selectedPortIndex={selectedPortIndex}
+                  onPortChange={setSelectedPortIndex}
+                  locale={locale}
+                />
+              </div>
             </div>
-            <div className="mx-auto max-w-2xl px-4 sm:px-5 pt-2 pb-4">
-              <TourTimelineSection
-                itineraryStops={vm.itineraryStops}
-                sectionUi={vm.sectionUi}
-                pickup_dropoff={vm.pickup_dropoff}
-                routeVariants={vm.routeVariants}
-                selectedPortIndex={selectedPortIndex}
-                onPortChange={setSelectedPortIndex}
-                locale={locale}
-              />
-            </div>
-          </div>
-          {privateSampleItinerary ? (
+          )}
+          {!importedCourses && privateSampleItinerary ? (
             <div hidden={itineraryView !== "sample"} className="mx-auto max-w-2xl px-4 sm:px-5 pt-4 pb-4">
               <TourPrivateSampleItinerarySection
                 config={privateSampleItinerary}
@@ -353,6 +383,9 @@ export function TourProductDetailClient({ viewModel, checkout, tourProductSlug, 
               <TourPickupDropoffSection
                 pickup_dropoff={vm.pickup_dropoff}
                 sectionUi={vm.sectionUi}
+                /* Private charters (the products with a sample-itinerary
+                   config) list pickup CHOICES, not a shuttle sequence. */
+                charterChoiceMode={privateSampleItinerary !== null}
               />
             </div>
           </section>

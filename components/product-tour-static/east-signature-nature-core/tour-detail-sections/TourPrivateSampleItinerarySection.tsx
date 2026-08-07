@@ -13,6 +13,12 @@ import {
 export type TourPrivateSampleItinerarySectionProps = {
   config: PrivateSampleItineraryConfig;
   locale?: PrivateLocale;
+  /**
+   * Render only the private-tour rules block (surcharge/pickup guidelines) —
+   * used when the sample day plans are superseded by imported course
+   * itineraries but the binding rules must stay on the page.
+   */
+  rulesOnly?: boolean;
 };
 
 function slotAccent(kind: SampleSlot["kind"]): {
@@ -32,11 +38,20 @@ function slotAccent(kind: SampleSlot["kind"]): {
 export function TourPrivateSampleItinerarySection({
   config,
   locale = "en",
+  rulesOnly = false,
 }: TourPrivateSampleItinerarySectionProps) {
   const [activeId, setActiveId] = useState(config.samples[0]?.id ?? "");
   const active =
     config.samples.find((s) => s.id === activeId) ?? config.samples[0];
   if (!active) return null;
+
+  if (rulesOnly) {
+    return (
+      <div className="space-y-5">
+        <RulesBlock config={config} locale={locale} />
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5">
@@ -146,43 +161,55 @@ export function TourPrivateSampleItinerarySection({
         </ol>
       </div>
 
-      {/* Private-tour rules block */}
-      <div className="overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50/40">
-        <div className="flex items-center gap-2 border-b border-stone-200/60 px-4 py-3 sm:px-5">
-          <Info className="h-4 w-4 flex-shrink-0 text-[#c8956c]" strokeWidth={2} />
-          <p className="text-[13.5px] font-semibold tracking-tight text-foreground">
-            {pickLocalized(config.rulesTitle, locale)}
-          </p>
-        </div>
-        <ul className="divide-y divide-stone-200/45">
-          {config.rules.map((rule, idx) => (
-            <li
-              key={idx}
+      <RulesBlock config={config} locale={locale} />
+    </div>
+  );
+}
+
+/** Private-tour rules block — shared by the full section and `rulesOnly` mode. */
+function RulesBlock({
+  config,
+  locale,
+}: {
+  config: PrivateSampleItineraryConfig;
+  locale: PrivateLocale;
+}) {
+  return (
+    <div className="overflow-hidden rounded-2xl border border-stone-200/70 bg-stone-50/40">
+      <div className="flex items-center gap-2 border-b border-stone-200/60 px-4 py-3 sm:px-5">
+        <Info className="h-4 w-4 flex-shrink-0 text-[#c8956c]" strokeWidth={2} />
+        <p className="text-[13.5px] font-semibold tracking-tight text-foreground">
+          {pickLocalized(config.rulesTitle, locale)}
+        </p>
+      </div>
+      <ul className="divide-y divide-stone-200/45">
+        {config.rules.map((rule, idx) => (
+          <li
+            key={idx}
+            className={cn(
+              "flex items-start gap-2.5 px-4 py-2.5 sm:px-5",
+              rule.emphasis && "bg-[#c8956c]/[0.06]",
+            )}
+          >
+            <span
               className={cn(
-                "flex items-start gap-2.5 px-4 py-2.5 sm:px-5",
-                rule.emphasis && "bg-[#c8956c]/[0.06]",
+                "mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full",
+                rule.emphasis ? "bg-[#c8956c]" : "bg-stone-300",
+              )}
+            />
+            <p
+              className={cn(
+                "text-[12.5px] leading-relaxed",
+                rule.emphasis
+                  ? "font-semibold text-foreground"
+                  : "text-muted-foreground",
               )}
             >
-              <span
-                className={cn(
-                  "mt-[7px] h-1.5 w-1.5 flex-shrink-0 rounded-full",
-                  rule.emphasis ? "bg-[#c8956c]" : "bg-stone-300",
-                )}
-              />
-              <p
-                className={cn(
-                  "text-[12.5px] leading-relaxed",
-                  rule.emphasis
-                    ? "font-semibold text-foreground"
-                    : "text-muted-foreground",
-                )}
-              >
-                {pickLocalized(rule.text, locale)}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </div>
+              {pickLocalized(rule.text, locale)}
+            </p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

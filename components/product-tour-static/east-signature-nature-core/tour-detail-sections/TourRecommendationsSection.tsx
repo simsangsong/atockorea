@@ -1,15 +1,26 @@
 "use client";
 
+/**
+ * "You might also like" — restyled to the My-page recommendation grid
+ * (`components/mypage/landing/RecommendedTours.tsx`) per direction 2026-08-04
+ * ("마이 페이지 밑에 상품그리드 스타일로"): compact snap-scroll cards sharing the
+ * my-page surface/focus tokens — photo with a small rating pill, title, region +
+ * duration meta, bold price — instead of the old wide overlay-gradient cards.
+ * Data plumbing (catalog registrations + admin card media + currency) unchanged.
+ */
+
 import { useMemo } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Clock, Star } from "lucide-react";
 import {
   hrefStaticTourProductDetail,
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
+import { ClockIcon, MapIcon, StarIcon } from "@/components/Icons";
+import { MYPAGE_FOCUS_RING, MYPAGE_SURFACE_PAGE } from "@/lib/mypage-ui";
 import { useCurrencyOptional } from "@/lib/currency";
-import { useI18n } from "@/lib/i18n";
+import { useI18n, useTranslations } from "@/lib/i18n";
+import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
 import {
   getCardImageFromAdminMedia,
@@ -18,12 +29,13 @@ import {
 
 export type TourRecommendationsSectionProps = {
   recommendations: readonly StaticTourProductRegistration[];
-  /** Optional sectionUi for localized header/footer copy. */
+  /** Optional sectionUi for localized header copy. */
   sectionUi?: TourProductSectionUiV1;
 };
 
 export function TourRecommendationsSection({ recommendations, sectionUi }: TourRecommendationsSectionProps) {
   const currencyCtx = useCurrencyOptional();
+  const t = useTranslations();
   const { locale } = useI18n();
   const recommendationSlugs = useMemo(
     () => recommendations.map((rec) => rec.slug),
@@ -33,126 +45,109 @@ export function TourRecommendationsSection({ recommendations, sectionUi }: TourR
 
   if (recommendations.length === 0) return null;
 
-  const eyebrow = sectionUi?.recommendationsEyebrow ?? "Explore next";
   const title = sectionUi?.recommendationsTitle ?? "You might also like";
   const subtitle =
     sectionUi?.recommendationsSubtitle ?? "Different pacing, different emphasis. Each is its own day.";
-  const fromLabel = sectionUi?.recommendationsFromLabel ?? "from";
 
   return (
-    <div className="space-y-5">
-      <div>
-        <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary/85">{eyebrow}</p>
-        <h2 className="mt-1 text-lg font-semibold text-foreground tracking-tight">{title}</h2>
-        <p className="mt-1.5 text-sm text-muted-foreground leading-relaxed">{subtitle}</p>
+    <section>
+      <div className="mb-3 flex items-end justify-between gap-3 px-1">
+        <div className="min-w-0">
+          <h2 className="text-[15px] font-bold tracking-tight text-[#0f172a]">{title}</h2>
+          <p className="mt-0.5 text-[12px] text-slate-500">{subtitle}</p>
+        </div>
+        <Link
+          href="/tours/list"
+          className={cn(
+            "shrink-0 whitespace-nowrap text-[12px] font-semibold text-slate-600 underline-offset-4 transition-colors hover:text-slate-900 hover:underline",
+            MYPAGE_FOCUS_RING,
+          )}
+        >
+          {t("mypage.viewAll")} →
+        </Link>
       </div>
 
-      <div
-        className="-mx-4 flex gap-3.5 overflow-x-auto px-4 pb-1 scrollbar-hide snap-x snap-mandatory sm:-mx-5 sm:px-5"
-        style={{ scrollPaddingLeft: "16px" }}
-      >
-        {recommendations.map((rec) => {
-          const rawSrc = rec.thumbnail?.trim() || rec.heroImage?.trim() || "";
-          const mediaSrc = rawSrc.length > 0
-            ? getCardImageFromAdminMedia(rec.slug, rawSrc, mediaBySlug)
-            : "";
-          const imageSrc = mediaSrc.length > 0 ? mediaSrc : null;
-          const tag = rec.badges[0] ?? rec.region;
-          const priceFormatted = currencyCtx ? currencyCtx.formatPrice(rec.listPriceUsd) : `$${rec.listPriceUsd}`;
-          const compareAtFormatted =
-            rec.compareAtPriceUsd && currencyCtx
-              ? currencyCtx.formatPrice(rec.compareAtPriceUsd)
-              : rec.compareAtPriceUsd
-                ? `$${rec.compareAtPriceUsd}`
-                : null;
-          return (
-            <Link
-              key={rec.slug}
-              href={hrefStaticTourProductDetail(rec.slug)}
-              className="group relative flex-shrink-0 snap-start overflow-hidden rounded-2xl bg-white ring-1 ring-slate-900/[0.07] shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)] transition-all duration-300 hover:-translate-y-1 hover:ring-slate-900/[0.11] hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-300/60 focus-visible:ring-offset-2"
-              style={{ width: "calc(78vw - 16px)", maxWidth: "300px" }}
-            >
-              <div className="relative h-44 overflow-hidden bg-muted/40">
-                {imageSrc ? (
-                  <Image
-                    src={imageSrc}
-                    alt={rec.title}
-                    fill
-                    sizes="(max-width: 640px) 78vw, 300px"
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.05]"
-                  />
-                ) : (
-                  <div
-                    aria-hidden
-                    className="h-full w-full bg-gradient-to-br from-muted via-muted/80 to-muted/60"
-                  />
-                )}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent" />
-                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-[#0c1622]/15" />
-                <div aria-hidden className="absolute inset-0 pointer-events-none rounded-2xl ring-1 ring-inset ring-white/10" />
-
-                {tag && (
-                  <div className="absolute top-3 left-3">
-                    <span
-                      className="rounded-md px-2.5 py-1 text-[10px] font-semibold tracking-[0.01em] text-foreground shadow-md"
-                      style={{
-                        background: "rgba(255,255,255,0.94)",
-                        backdropFilter: "blur(8px) saturate(140%)",
-                        WebkitBackdropFilter: "blur(8px) saturate(140%)",
-                      }}
-                    >
-                      {tag}
-                    </span>
-                  </div>
-                )}
-
-                <div
-                  className="absolute bottom-3 right-3 flex items-center gap-1.5 rounded-md px-2.5 py-1.5 text-[11.5px] font-medium text-foreground shadow-md"
-                  style={{
-                    background: "rgba(255,255,255,0.94)",
-                    backdropFilter: "blur(8px) saturate(140%)",
-                    WebkitBackdropFilter: "blur(8px) saturate(140%)",
-                  }}
+      <div className="-mx-1 min-w-0 px-1 sm:mx-0 sm:px-0">
+        <div
+          className={cn(
+            "snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth pb-2",
+            "[scrollbar-gutter:stable] scrollbar-hide",
+          )}
+        >
+          <div className="flex w-max shrink-0 flex-nowrap gap-2.5 pr-4 sm:gap-3 sm:pr-2">
+            {recommendations.map((rec) => {
+              const rawSrc = rec.thumbnail?.trim() || rec.heroImage?.trim() || "";
+              const mediaSrc = rawSrc.length > 0
+                ? getCardImageFromAdminMedia(rec.slug, rawSrc, mediaBySlug)
+                : "";
+              const priceFormatted = currencyCtx
+                ? currencyCtx.formatPrice(rec.listPriceUsd)
+                : `$${rec.listPriceUsd}`;
+              return (
+                <Link
+                  key={rec.slug}
+                  href={hrefStaticTourProductDetail(rec.slug)}
+                  className={cn(
+                    MYPAGE_SURFACE_PAGE,
+                    "group relative flex flex-shrink-0 snap-start flex-col overflow-hidden",
+                    "w-[min(11.75rem,_calc(100vw-6rem))] min-w-[min(11.75rem,_calc(100vw-6rem))]",
+                    "sm:w-[12rem] sm:min-w-[12rem]",
+                    "transition-all duration-200 hover:-translate-y-[2px] hover:shadow-[0_12px_32px_-10px_rgba(15,23,42,0.14)]",
+                    MYPAGE_FOCUS_RING,
+                  )}
                 >
-                  <Clock className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
-                  {rec.duration}
-                </div>
-              </div>
-
-              <div className="p-4 pb-5">
-                <h3 className="text-[15px] font-semibold text-foreground group-hover:text-primary transition-colors leading-snug tracking-tight line-clamp-2">
-                  {rec.title}
-                </h3>
-                {rec.shortCardDescription ? (
-                  <p className="mt-1.5 text-[12.5px] text-muted-foreground line-clamp-2 leading-relaxed">
-                    {rec.shortCardDescription}
-                  </p>
-                ) : null}
-
-                <div className="mt-3.5 flex items-center justify-between gap-2">
-                  <div className="flex items-center gap-1.5">
-                    <Star className="h-3.5 w-3.5 fill-[color:var(--tpc-star)] text-[color:var(--tpc-star)]" strokeWidth={0} />
-                    <span className="text-[13px] font-semibold text-foreground tabular-nums">{rec.rating}</span>
-                    <span className="text-[11px] text-muted-foreground tabular-nums">({rec.reviewCount})</span>
-                  </div>
-                  <div className="text-right">
-                    <span className="block text-[10px] text-muted-foreground leading-none">{fromLabel}</span>
-                    <div className="flex items-baseline gap-1">
-                      {compareAtFormatted ? (
-                        <span className="text-[10px] text-muted-foreground line-through tabular-nums">
-                          {compareAtFormatted}
+                  <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden sm:aspect-[5/3]">
+                    {mediaSrc.length > 0 ? (
+                      <Image
+                        src={mediaSrc}
+                        alt={rec.title}
+                        fill
+                        className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        sizes="172px, (min-width: 640px) 192px"
+                      />
+                    ) : (
+                      <div aria-hidden className="h-full w-full bg-gradient-to-br from-muted via-muted/80 to-muted/60" />
+                    )}
+                    {rec.rating > 0 && (
+                      <span className="pointer-events-none absolute left-2 top-2 z-[1] inline-flex max-w-[min(10rem,calc(100%-0.75rem))] flex-wrap items-center gap-x-1 gap-y-0.5 rounded-full bg-white/95 px-2 py-0.5 text-[10px] font-semibold leading-tight text-slate-800 shadow sm:text-[11px]">
+                        <StarIcon className="h-2.5 w-2.5 shrink-0 text-amber-500 sm:h-3 sm:w-3" />
+                        <span className="break-all">
+                          {rec.rating.toFixed(1)}
+                          {rec.reviewCount > 0 && (
+                            <span className="text-slate-500"> ({rec.reviewCount})</span>
+                          )}
                         </span>
-                      ) : null}
-                      <span className="text-[15px] font-semibold text-foreground tabular-nums">{priceFormatted}</span>
-                    </div>
+                      </span>
+                    )}
                   </div>
-                </div>
-              </div>
-            </Link>
-          );
-        })}
-        <div className="flex-shrink-0 w-1" aria-hidden />
+                  <div className="min-w-0 flex-1 space-y-1 p-2.5 sm:p-3">
+                    <h3 className="line-clamp-3 break-words text-[12px] font-semibold leading-snug text-[#0f172a] sm:text-[13px]">
+                      {rec.title}
+                    </h3>
+                    <div className="flex min-w-0 flex-wrap items-start gap-x-2 gap-y-0.5 text-[10px] leading-snug text-slate-500 sm:text-[11px]">
+                      {rec.region && (
+                        <span className="inline-flex min-w-0 max-w-full items-start gap-0.5 break-words hyphens-auto [overflow-wrap:anywhere] [&>svg]:mt-px">
+                          <MapIcon className="h-2.5 w-2.5 shrink-0 sm:h-3 sm:w-3" />
+                          <span>{rec.region}</span>
+                        </span>
+                      )}
+                      {rec.duration && (
+                        <span className="inline-flex shrink-0 items-center gap-0.5">
+                          <ClockIcon className="h-2.5 w-2.5 sm:h-3 sm:w-3" />
+                          {rec.duration}
+                        </span>
+                      )}
+                    </div>
+                    <p className="pt-0.5 text-[12.5px] font-bold tabular-nums text-[#0f172a] sm:text-[14px]">
+                      {priceFormatted}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }

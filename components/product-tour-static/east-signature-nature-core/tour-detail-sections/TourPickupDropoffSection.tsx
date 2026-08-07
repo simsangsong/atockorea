@@ -84,11 +84,20 @@ function buildStaticMapUrl(
 export type TourPickupDropoffSectionProps = {
   pickup_dropoff?: PickupDropoffSection;
   sectionUi: TourProductSectionUiV1;
+  /**
+   * Private charters: the departure entries are pickup CHOICES (hotel
+   * door-to-door, airport on request…), not a shuttle route. Choice mode drops
+   * the "departs after final pickup" footer and the first–last time span
+   * (there is no pickup sequence on a private tour), and swaps the sequence
+   * numbers for location-type icons.
+   */
+  charterChoiceMode?: boolean;
 };
 
 export function TourPickupDropoffSection({
   pickup_dropoff,
   sectionUi,
+  charterChoiceMode = false,
 }: TourPickupDropoffSectionProps) {
   const [expandedOrder, setExpandedOrder] = useState<number | null>(null);
   const [mapError, setMapError] = useState(false);
@@ -100,20 +109,32 @@ export function TourPickupDropoffSection({
 
   const firstPickup = pickupPoints[0];
   const lastPickup = pickupPoints[pickupPoints.length - 1];
-  const range =
-    firstPickup?.time && lastPickup?.time
+  const range = charterChoiceMode
+    ? (firstPickup?.time ?? "")
+    : firstPickup?.time && lastPickup?.time
       ? `${firstPickup.time} – ${lastPickup.time}`
       : firstPickup?.time ?? "";
   const returnBand = inferReturnBand(pickup_dropoff.notes);
   const lastDropoff = dropoffPoints[dropoffPoints.length - 1];
 
   const routeDepartsText =
-    lastPickup?.time
+    !charterChoiceMode && lastPickup?.time
       ? (sectionUi.pickupRouteDepartsTemplate ?? "Route departs after final pickup at {time}").replace(
           "{time}",
           lastPickup.time,
         )
       : null;
+
+  const pickupCountLine =
+    charterChoiceMode && pickupPoints.length > 1
+      ? (sectionUi.pickupChoiceTemplate ?? "{count} pickup options — choose one").replace(
+          "{count}",
+          String(pickupPoints.length),
+        )
+      : (sectionUi.pickupPointsTemplate ?? "{count} pickup points").replace(
+          "{count}",
+          String(pickupPoints.length),
+        );
 
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const mapUrl = useMemo(
@@ -194,7 +215,7 @@ export function TourPickupDropoffSection({
                     {sectionUi.pickupCardTitle ?? "Pickup"}
                   </p>
                   <p className="text-[10.5px] text-muted-foreground">
-                    {(sectionUi.pickupPointsTemplate ?? "{count} pickup points").replace("{count}", String(pickupPoints.length))}
+                    {pickupCountLine}
                   </p>
                 </div>
               </div>
@@ -225,7 +246,11 @@ export function TourPickupDropoffSection({
                             "#c8956c",
                         }}
                       >
-                        {point.order}
+                        {charterChoiceMode ? (
+                          <Icon className="h-3.5 w-3.5" strokeWidth={2} />
+                        ) : (
+                          point.order
+                        )}
                       </span>
                       <div className="min-w-0 flex-1">
                         <p className="truncate text-[13px] font-medium text-foreground">

@@ -4,6 +4,8 @@ import type { ItineraryStop } from "@/components/product-tour-static/_shared/tou
 import type { Database } from "@/lib/supabase";
 import type { TourProductDetailPayloadV1 } from "@/lib/tour-product/detailPayloadV1";
 import { assembleTourProductReviews } from "@/lib/tour-product/assembleTourProductReviews";
+import { getStaticTourProductFullPageJson } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
+import { toTourProductPageLocale } from "@/lib/tour-product/tourProductPageLocale";
 import { mergeTourProductSectionUi } from "@/lib/tour-product/tourProductSectionUi";
 import { mapItineraryVariantsToRouteVariants } from "@/lib/tour-product/portRouteVariantsAdapter";
 
@@ -302,8 +304,11 @@ export async function loadTourProductViewModelBySlugFromSupabase(
  * plan §G tab ①). Returns just the ordered itinerary stops for a slug — no
  * reviews assemble and no flagship-completeness gate (which would reject a tour
  * whose OTHER sections are incomplete even when its itinerary is fine). Falls
- * back to the English page when the requested locale has no row. Empty array =
- * no rich itinerary (the planner then shows the generic course templates).
+ * back to the English page when the requested locale has no row, then to the
+ * static bundle registry — course products registered there may have no
+ * `tour_product_pages` row yet, and the planner's course preview should still
+ * get the same rich stops the product page renders. Empty array = no rich
+ * itinerary (the planner then shows the generic course templates).
  */
 export async function loadTourItineraryStopsBySlug(
   supabase: Sb,
@@ -313,6 +318,10 @@ export async function loadTourItineraryStopsBySlug(
   const page =
     (await fetchTourProductPageRow(supabase, slug, locale)) ??
     (locale === "en" ? null : await fetchTourProductPageRow(supabase, slug, "en"));
-  if (!page) return [];
-  return [...(parsePayload(page.detail_payload)?.itineraryStops ?? [])];
+  const dbStops = page ? (parsePayload(page.detail_payload)?.itineraryStops ?? []) : [];
+  if (dbStops.length > 0) return [...dbStops];
+  const json = await getStaticTourProductFullPageJson(slug, toTourProductPageLocale(locale)).catch(
+    () => null,
+  );
+  return [...(json?.itineraryStops ?? [])];
 }

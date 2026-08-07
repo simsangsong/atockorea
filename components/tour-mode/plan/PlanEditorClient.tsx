@@ -53,6 +53,7 @@ import {
   toCourseOptions,
   type CourseOption,
 } from '@/lib/tour-room/courseOptions';
+import { getPrivateImportedCourses } from '@/components/product-tour-static/_shared/privateImportedCourses';
 import PlanStopCards from '@/components/tour-mode/plan/PlanStopCards';
 import { PoiThumb } from '@/components/tour-mode/plan/PoiThumb';
 import { dayPhase } from '@/lib/tour-room/dayPhase';
@@ -558,6 +559,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
   // §G tab ① — the BOOKED tour's own itinerary (rich stop cards + shared drawer).
   const [tourStops, setTourStops] = useState<ItineraryStop[]>([]);
   const [tourTitle, setTourTitle] = useState<string | null>(null);
+  const [tourSlug, setTourSlug] = useState<string | null>(null);
   const [submitBusy, setSubmitBusy] = useState(false);
   // R2 — this page opens standalone from the invite email, so a hardware back
   // press used to close the installed PWA outright. One press now closes the
@@ -686,9 +688,14 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
         try {
           const itinRes = await authedFetch(`/tour-itinerary?locale=${locale}`);
           if (itinRes.ok) {
-            const itinBody = (await itinRes.json()) as { stops?: ItineraryStop[]; tourTitle?: string | null };
+            const itinBody = (await itinRes.json()) as {
+              stops?: ItineraryStop[];
+              tourTitle?: string | null;
+              slug?: string | null;
+            };
             setTourStops(Array.isArray(itinBody.stops) ? itinBody.stops : []);
             setTourTitle(itinBody.tourTitle ?? null);
+            setTourSlug(typeof itinBody.slug === 'string' ? itinBody.slug : null);
           }
         } catch {
           /* templates remain the fallback */
@@ -1016,6 +1023,19 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
    * 일정으로 가져오면 코스 네 개가 관광지 네 곳으로 들어앉는다(사용자 리포트
    * 2026-07-27). 구조로 판별해 선택지면 코스 카드로 렌더한다.
    */
+  /**
+   * 임포트 코스 연결(제주/서울/부산 전세) — 템플릿 응답에 이 예약의 임포트
+   * 코스(원본 투어 슬러그 매치)가 있으면, 같은 선택지를 조문(메타 스톱)
+   * 코스 카드로 한 번 더 그리지 않는다. 리치 프리뷰(사진 카드 + 드로어)가
+   * 있는 템플릿 쪽이 정본이다.
+   */
+  const importedCoursesServed = useMemo(() => {
+    const configured = tourSlug ? getPrivateImportedCourses(tourSlug) : null;
+    if (!configured) return false;
+    const slugs = new Set(configured.map((c) => c.slug));
+    return templates.some((t) => t.origin_tour_slug && slugs.has(t.origin_tour_slug));
+  }, [tourSlug, templates]);
+
   const courseOptions = useMemo(
     () => (isCourseOptionItinerary(tourStops) ? toCourseOptions(tourStops) : null),
     [tourStops],
@@ -1855,8 +1875,11 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
             {tab === 'courses' && (
               <div className="mt-3 flex flex-col gap-3">
                 {/* P0 — 코스 택1 상품은 "일정"이 아니라 "선택지"를 싣고 온다.
-                    정류지 카드로 렌더하면 네 코스가 네 관광지가 된다. */}
-                {courseOptions ? (
+                    정류지 카드로 렌더하면 네 코스가 네 관광지가 된다.
+                    임포트 코스 템플릿이 서빙되는 예약(제주/서울/부산 전세)은
+                    같은 선택지가 리치 프리뷰 카드로 아래 템플릿 목록에 있으므로
+                    메타 스톱 코스 카드를 겹쳐 그리지 않는다. */}
+                {courseOptions && !importedCoursesServed ? (
                   <section aria-labelledby="plan-course-options">
                     <h2
                       id="plan-course-options"
@@ -1972,7 +1995,7 @@ export default function PlanEditorClient({ bookingId }: { bookingId: string }) {
                       })}
                     </div>
                   </section>
-                ) : (
+                ) : courseOptions ? null : (
                 <PlanTourItinerary
                   stops={tourStops}
                   locale={locale}
