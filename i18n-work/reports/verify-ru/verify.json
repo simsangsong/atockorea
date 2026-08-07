@@ -1,0 +1,259 @@
+{
+  "locale": "ru",
+  "generatedAt": "2026-08-07T08:58:00.163Z",
+  "reports": [
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A1",
+      "status": "flagged",
+      "segments": 100,
+      "fails": 0,
+      "flags": 11,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/title",
+          "message": "길이비 1.46 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/dropoff_points/1/note",
+          "message": "길이비 0.82 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/3",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.31 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/title",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/3",
+          "message": "길이비 0.83 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/content/0",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/preview",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/0",
+          "message": "길이비 1.70 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/6",
+          "message": "길이비 0.79 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/7",
+          "message": "길이비 0.79 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A2",
+      "status": "flagged",
+      "segments": 93,
+      "fails": 0,
+      "flags": 15,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/2",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.30 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/0",
+          "message": "길이비 1.72 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/2/detail",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/title",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/0/label",
+          "message": "길이비 1.78 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/3/question",
+          "message": "길이비 1.65 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/body",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "길이비 1.43 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:B",
+      "status": "flagged",
+      "segments": 36,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops",
+      "status": "flagged",
+      "segments": 32,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "길이비 1.56 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/1",
+          "message": "길이비 1.37 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/closed",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-2",
+      "status": "flagged",
+      "segments": 29,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/name",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-3",
+      "status": "auto_pass",
+      "segments": 18,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 10,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    }
+  ]
+}
