@@ -360,6 +360,35 @@ TM 41% 가 그걸 보여줬다. 한 세션에 3종을 **같은 로케일로 묶�
 node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('i18n-work/manifest.json','utf8'));for(const u of m.units){const f=u.id.replace(/[^\w.-]+/g,'_');if(fs.existsSync('i18n-work/out/tour_product_pages/'+u.locale+'/'+f+'.json'))continue;console.log(u.locale+' '+u.slug+' '+u.chunk+' — 세그먼트 '+u.segments)}"
 ```
 
+🔴 **위 명령은 「번역이 남은 unit」을 센다 — 「발행 가능한 슬러그」가 아니다.** 둘은 다르다(§7 S15c).
+발행 가능 여부는 DB 에만 있으니 착수 전에 이걸 돌려라:
+
+```bash
+# 로케일별로 (매니페스트 슬러그 ∩ 라이브 행) 을 갈라 본다 — 행이 있으면 apply 가 건너뛴다
+cat > .probe.mjs <<'EOF'
+import fs from 'fs';
+import { createClient } from '@supabase/supabase-js';
+const sb = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const IND = 'i18n-work/in/tour_product_pages', per = {};
+for (const f of fs.readdirSync(IND)) {
+  const m = f.match(/^tour_product_pages_(.+)_(de|fr|it|ru)_[^_]+\.json$/);
+  if (m) (per[m[2]] ||= new Set()).add(m[1]);
+}
+for (const loc of ['de','fr','it','ru']) {
+  const slugs = [...(per[loc]||[])].sort(); if (!slugs.length) continue;
+  const { data } = await sb.from('tour_product_pages').select('slug,created_at,detail_payload').eq('locale',loc).in('slug',slugs);
+  const by = new Map((data||[]).map(r=>[r.slug,r]));
+  const none = slugs.filter(s=>!by.has(s));
+  console.log(`${loc}: 발행가능 ${none.length} / 구행 ${slugs.length-none.length}`);
+  console.log('  ', none.join(', ') || '-');
+  for (const s of slugs) { const r = by.get(s); if (!r) continue;
+    const en = (JSON.stringify(r.detail_payload||{}).match(/\b(the|and|with|for|you|your|from|this)\b/g)||[]).length;
+    console.log(`   [행있음] ${s} · created ${r.created_at.slice(0,10)} · 영어마커 ${en}`); }
+}
+EOF
+node --env-file=.env.local ./node_modules/tsx/dist/cli.mjs .probe.mjs; rm -f .probe.mjs
+```
+
 ```bash
 # A messages — 영어와 값이 같은 키(고유명사 오탐 포함, 눈으로 거르기)
 node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.entries(o)){const K=p?p+'.'+k:k;typeof v==='string'?t[K]=v:v&&typeof v==='object'&&F(v,K,t)}return t};const en=F(JSON.parse(fs.readFileSync('messages/en.json','utf8')));for(const L of ['ko','ja','zh','zh-TW','es','fr','de','it','ru']){const m=F(JSON.parse(fs.readFileSync('messages/'+L+'.json','utf8')));const g=Object.keys(en).filter(k=>m[k]===en[k]&&/\p{L}/u.test(en[k])&&en[k].trim().split(/\s+/).length>=3);console.log(L+': '+g.length)}"
@@ -370,6 +399,15 @@ node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.
 1. **워크트리엔 `.env.local` 도 `node_modules` 도 없다.** 본체에서 복사 + 정션. `ERR_MODULE_NOT_FOUND` 는 크레딧 문제가 아니다.
 2. **포인터 집합만 맞으면 통과한다 — 내용 완결성은 별개다.** `findTruncatedSegments` 가 잡지만, 직접 번역할 땐 **끝까지 옮겼는지 스스로 확인**하라.
 3. **독일어 숫자 서식은 안전하다** — `numberMultiset` 은 숫자 런으로 쪼개므로 `5,5` 와 `5.5` 가 같다. 천단위 `1.000` 도 정규화된다.
+   🔴 **하지만 「서식」이 안전한 것이지 「숙어」가 안전한 게 아니다.** 이 트랙에서 G3 로 잡힌 게
+   **세 언어 합쳐 23건**이고 뿌리는 하나다 — **원문에 숫자가 있는데 번역에서 낱말이 됐다.**
+   `Top-3`→`Один из трёх лучших` · `24/7`→`круглосуточный` · `1-hour`→`Einstündige` ·
+   `10-volume`→`zehnbändigen` · `2nd-largest`→`zweitgrößte` · `open 24h`→`rund um die Uhr` ·
+   `7-story`→`siebenstöckig` · `7-minute walk`→`sieben Gehminuten` · `adult 1-day`→`Tagesticket`.
+   **규칙: 원문에 아라비아 숫자가 있으면 번역에도 아라비아 숫자로 남긴다.**
+   낱말·서수부사·복합명사에 삼키지 마라(`24 Stunden` · `7-stöckig` · `1-Tages-Ticket` · `Топ-3`).
+   🔴 **층수는 특히 위험하다** — `1F/2F/5F` 를 `Erdgeschoss/1. Stock/4. Stock` 으로 옮기면
+   숫자가 사라지는 데다 **한국식 1F 는 지상층**이라 전 층이 한 칸씩 밀린다. `1./2./5. Etage` 로 둬라.
 4. **`**강조**` 개수를 맞춰라**(G6). 긴 설명문은 20~25쌍이 흔하다.
 5. **`⟦G숫자⟧` 토큰은 그대로.** 번역·공백 삽입 금지(G2 즉시 실패).
 6. **갤러리 캡션처럼 고유명사뿐인 문자열은 원문과 같아도 정상**이다(G9 flag, 발행됨).
@@ -524,16 +562,52 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 ✅ **S13 도 끝났다(2026-08-07)** — 8슬러그 × 4로케일 추출 완료, 입력이 전부 `i18n-work/in/` 에 있다.
 **남은 건 순수 번역이다: 328 unit · 1,181,476자**(§6-3′ 에 슬러그별 실측표).
 
-✅ **S14a~c 도 끝났다 — de 수원 3종 전부 발행**(430 + 415 + 389 세그먼트, 전부 fail 0).
+✅ **S14 · S15 도 끝났다 — 🔴 독일어는 발행 가능한 슬러그가 0개다(2026-08-07).**
+수원 3종(430+415+389) · 설악 2종(387+417) · 전세 2종(358+313) · 부산 소그룹(698) = **8슬러그 발행**,
+전부 fail 0 · 문자혼입 0. 매니페스트의 나머지 de 슬러그는 아래 「구행 7건」이라 INSERT 가 거부된다.
 
-🔴 **다음은 de 설악 2종이다** — `seoul-seoraksan-nami-island-morning-calm-day-tour`(10 unit) ·
-`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip`(11 unit). 수원과 같은 형제 관계라
-같은 이득이 난다. 그다음 부산 소그룹(15 unit) → 서울근교 10hr + 부산 전세.
+🔴 **다음은 fr 이다 — 그리고 대상 8슬러그가 방금 끝낸 de 8슬러그와 정확히 같다.**
+`seoul-suwon-hwaseong-{gwangmyeong-cave,folk-village,waujeongsa}-starfield*` ·
+`seoul-seoraksan-{nami-island-morning-calm,naksansa-temple-naksan-beach}*` ·
+`{busan-private-car-charter-city-tour,seoul-suburbs-private-chartered-car-10hr}` ·
+`busan-small-group-sightseeing-tour-cruise-passengers`.
+**원문이 같으니 de 생성기의 `NEW` 맵 키를 그대로 재사용하고 값만 프랑스어로 바꾸면 된다.**
+it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만 범위 밖).
 
 배치는 **슬러그군 × 한 로케일**로 잡아라(§6-3′ 에 실측표). 권장 순서:
-**① 수원 3종(de) ✅ → ② 설악 2종(de) → ③ 부산 소그룹(de) → ④ 서울근교+부산전세(de) → fr·it·ru 반복.**
+**① de 8슬러그 ✅ → ② fr 8슬러그 → ③ it 8슬러그 → ④ ru 8슬러그.**
 ⚠ 🔴 **한 슬러그를 끝낼 때마다 `verify` 를 돌리고 다음 슬러그를 재추출하라.**
 수원 3번째에서 이 한 번의 재추출이 **손번역을 31,596 → 22,707자로 줄였다**(§6-3′ 표).
+⚠ **다만 재추출 이득은 「같은 상품군」일 때만 난다** — 전세 2종은 둘 다 프라이빗 차터인데도
+공유 세그먼트가 **2개뿐**이었다(설악 2종은 78개). 갈림선은 카테고리가 아니라 **상품군**이다.
+
+### 🔴 S15c 의 발견 — **매니페스트로 남은 일을 세면 틀린다. 판정은 DB 다.**
+
+`jeju-eastern-unesco-spots-day-tour` 를 de 로 다 번역하고 나서야 `apply` 가 거부했다:
+**행이 이미 있다.** 조사해 보니 「남았다」고 세고 있던 de 8슬러그 중 **7건이 이미 라이브 행을 갖고 있다** —
+전부 `created_at = 2026-07-26`, 즉 최초 독일어 Tier1 배치의 산물이다.
+
+| 슬러그 | detail_payload 안 영어 마커 | 비고 |
+|---|---|---|
+| `busan-cruise-shore-excursion-bus-tour` | 50 | |
+| `incheon-seoul-private-car-shore-excursion-cruise` | 305 | |
+| `from-incheon-seoul-day-tour-cruise-guests` | 313 | |
+| `jeju-cruise-shore-excursion-small-group-tour` | 388 | |
+| `jeju-cruise-shore-excursion-bus-tour` | 400 | 은퇴 상품 |
+| `busan-top-attractions-day-tour` | 424 | |
+| `jeju-eastern-unesco-spots-day-tour` | 576 | 🔴 **낡았다** |
+
+🔴 **`jeju-eastern` 은 부분 영어인 데다 내용이 낡았다** — subtitle 이 아직 **함덕 먼저** 코스를 말한다.
+2026-08-04 제주 동부 재편이 **만장굴 먼저**로 바꾼 그 코스다. 즉 이 행은 손님에게
+**틀린 순서를 독일어로** 말하고 있다(오픈 게이트가 닫혀 있어 지금은 안 보인다).
+
+**고칠 수 없다 — UPDATE 는 이 트랙의 금지 사항이다**(CLAUDE.md: `apply.ts` 는 INSERT-only,
+기존 로케일 행 UPDATE 금지). 번역 파일은 커밋해 뒀으니 **UPDATE 경로가 열리면 비용 0**이다.
+→ **사장님 결정 대기 항목:** ① 구행 7건을 새 번역으로 갱신할 것인가 ②
+갱신한다면 `apply.ts` 에 UPDATE 경로를 열 것인가, 아니면 행을 지우고 INSERT 할 것인가.
+
+⚠ **세는 법을 바꿔라.** `i18n-work/in/` 에 입력이 있고 `out/` 에 출력이 없다 = **번역이 남았다**는 뜻일 뿐,
+**발행 가능하다는 뜻이 아니다.** 발행 가능 여부는 DB 에만 있다 — §6-4 에 조회 명령을 넣어 뒀다.
 
 🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
 은퇴 상품이다(§6-5-14). `npm run i18n:verify -- --locale=ru` 의 「미번역 14 unit」이 정확히 이것이고,
