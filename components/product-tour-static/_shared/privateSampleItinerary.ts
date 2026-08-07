@@ -1,6 +1,23 @@
 /**
  * Private-tour "Sample Itineraries" config.
  *
+ * 🔴 **Read this before editing a course below.** As of `a8790f4b` the three
+ * charters that have real course products — Jeju, Seoul-suburbs and Busan —
+ * render `TourImportedCoursesSection` from `privateImportedCourses.ts`
+ * instead, and this component is mounted `rulesOnly`. So on those pages the
+ * `samples` below are **not on screen**; only `rules`, `rulesTitle` are.
+ * Importing the real course is the better answer: a course-product edit flows
+ * through with no copy step here.
+ *
+ * What still depends on this file, everywhere:
+ *   - the rules block, in all six locales, on all four charters,
+ *   - the full sample section on `incheon-seoul-private-car-shore-excursion-cruise`,
+ *     which has no imported courses,
+ *   - `samples` staying non-empty, because the component reads `samples[0]`.
+ *
+ * The authored Jeju/Busan courses are kept as the fallback for a slug that
+ * leaves `PRIVATE_IMPORTED_COURSES`: real places beat "Itinerary slot 1".
+ *
  * Powers the `샘플 일정` section on private car-charter product detail pages.
  * The private charter is fully customizable, so these are *example* day plans:
  * real stops, real photos, but the actual order is agreed after booking.

@@ -1,0 +1,318 @@
+{
+  "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:it:A2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-island-private-car-charter-tour",
+  "locale": "it",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Families with children, including very young kids"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Multi-generational groups including seniors"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Couples and honeymooners wanting a relaxed K-drama day"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Repeat Jeju visitors who want a tailored route"
+    },
+    "/whyTourWorks/bestFor/4": {
+      "source_en": "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Solo budget travelers (private pricing is per vehicle)"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers wanting to mix with other guests for a social experience"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Travelers wanting fully included admission and meals"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Jeju is genuinely large"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Weather changes fast"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Jeju microclimates shift hourly. A driver-guide can swap an outdoor stop for an indoor one (⟦G0⟧ caves, O'sulloc, Yakcheonsa) without ruining the day.",
+      "glossary": [
+        "⟦G0⟧ = Parco di Hallim"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Door-to-door comfort"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why a private charter wins on Jeju"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "East for first-time landmark coverage"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "⟦G0⟧ and Manjanggul are Jeju's two strongest UNESCO names; the East route delivers maximum recognition value.",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "West for relaxed scenery and photos"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "⟦G0⟧, ⟦G1⟧, O'sulloc, and Aewol form a softer, more couple-friendly day with strong photo payoff and a sunset finish.",
+      "glossary": [
+        "⟦G0⟧ = Spiaggia di Hyeopjae",
+        "⟦G1⟧ = Parco di Hallim"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "South for geological drama"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "How to choose between East, West, and South"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Weather adjustments"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol)."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Udo ferry on the East route"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Overtime is possible"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "What changes on the day"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-slate-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this private day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00."
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Moderate walking with some active sections."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Is the walking difficult?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Yes — comfortable for most families."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Is this tour suitable for families?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Yes — pacing and walking are comfortable for active seniors."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Can older adults join comfortably?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local driver-guide with full Jeju island knowledge — east, west, and south route expertise so the day isn't constrained to a single corridor."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Authorized Korean tour operator with full insurance"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "Fully private vehicle: no other passengers, no fixed departure times — the guide meets you at your hotel and the day runs entirely around your group's pace."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Hand-tuned itinerary, not a generic loop"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Hotel pickup included island-wide; outside Jeju City areas with an additional pickup fee disclosed at booking."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Comfortable group size"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route"
+    },
+    "/seasonalVariations/0/title": {
+      "source_en": "Canola season"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season."
+    },
+    "/seasonalVariations/1/title": {
+      "source_en": "Beach season"
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August."
+    },
+    "/seasonalVariations/2/title": {
+      "source_en": "Best photo season"
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Pink muhly fields usually peak from mid-October to early November, and autumn often brings clear views toward Hallasan and Seongsan. It is one of Jeju's best photo seasons."
+    },
+    "/seasonalVariations/3/title": {
+      "source_en": "Camellia & snow"
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "⟦G0⟧ blooms December to February; Hallasan can carry snow on its summit. Cold but visually rewarding, with fewer crowds at all major stops.",
+      "glossary": [
+        "⟦G0⟧ = Camellia Hill"
+      ]
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant confirmation with region/route preference intake and hotel pickup details."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "12-Hour Reminder"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Weather update and any route adjustments"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "12 hours before"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "Route finalized 24 hours before based on weather forecast and your priorities."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Final Pickup Info"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Exact pickup time and driver contact"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Evening before"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Driver-guide details (name, vehicle plate) sent the evening before."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "Day-of Route Notes"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Morning briefing based on live conditions"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "Morning of tour"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Driver at your hotel lobby at the agreed time with name placard."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Stop-by-Stop Tips"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Real-time guidance at each location"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "During tour"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "On-the-day adjustments via direct message — extend at a spot you love, add a cafe stop, skip what isn't interesting."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Post-tour Support"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Follow-up and recommendations"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback request sent after drop-off."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "Live weather integration"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "Updated daily"
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "⟦G0⟧": "Parco di Hallim"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "⟦G0⟧": "Spiaggia di Hyeopjae",
+      "⟦G1⟧": "Parco di Hallim"
+    },
+    "/seasonalVariations/3/description": {
+      "⟦G0⟧": "Camellia Hill"
+    }
+  },
+  "tmHits": 0
+}

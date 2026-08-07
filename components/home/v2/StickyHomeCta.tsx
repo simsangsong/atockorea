@@ -17,6 +17,16 @@ import { analytics, getExperimentVariantAsync } from "@/src/design/analytics";
  * Renders on every viewport. Layout collapses to a centered max-width bar so
  * it doesn't fight the persistent chat widget that sits in the bottom-right
  * corner on desktop.
+ *
+ * Mobile bottom-fold stacking (all measured from the viewport bottom, above
+ * `env(safe-area-inset-bottom)`):
+ *   0–60px    `BottomNav`   (z-50, `md:hidden`)
+ *   72–128px  this bar      (z-40)
+ *   136px+    chat FAB      (z-65, `TourProductAiAssistantWidget` 8.5rem)
+ * The bar used to sit at `bottom-3`, which put it at 12–68px — underneath a
+ * z-50 nav, so 49px of 56px was covered on a flat viewport and *all* of it on
+ * a notched one. `+72px` clears the nav by the same 12px the old `bottom-3`
+ * was reaching for. Desktop keeps `bottom-5` since `BottomNav` is `md:hidden`.
  */
 export function StickyHomeCta() {
   const t = useTranslations("home");
@@ -103,7 +113,7 @@ export function StickyHomeCta() {
           animate={{ y: 0, opacity: 1 }}
           exit={reduceMotion ? { opacity: 0 } : { y: 64, opacity: 0 }}
           transition={{ duration: 0.34, ease: [0.22, 1, 0.36, 1] }}
-          className="fixed bottom-3 left-3 right-3 z-40 mx-auto md:bottom-5 md:max-w-md"
+          className="fixed bottom-[calc(env(safe-area-inset-bottom,0px)+72px)] left-3 right-3 z-40 mx-auto md:bottom-5 md:max-w-md"
         >
           <div className="flex items-stretch gap-1.5 rounded-full bg-slate-900/95 p-1.5 shadow-2 ring-1 ring-white/10 backdrop-blur-md">
             <button

@@ -1,0 +1,247 @@
+{
+  "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:fr:B",
+  "surface": "tour_product_pages",
+  "slug": "jeju-island-private-car-charter-tour",
+  "locale": "fr",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Pickup at Jeju Hotel"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "Stops 1"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Start: Pickup at Jeju Hotel"
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Choose Your Route"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "Stops 2–4"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Day Out: Choose Your Route"
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Return to Hotel"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "Stops 5"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Finish: Return to Hotel"
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+    },
+    "/galleryItems/0/location": {
+      "source_en": "Jeju Private Tour"
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seopjikoji"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Cheonjeyeon"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Cheonjeyeon"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Cheonjeyeon"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "glossary": [
+        "⟦G0⟧ = Camellia Hill"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "glossary": [
+        "⟦G0⟧ = Camellia Hill"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Camellia Hill"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "glossary": [
+        "⟦G0⟧ = Plage de Hyeopjae"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "glossary": [
+        "⟦G0⟧ = Plage de Hyeopjae"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Plage de Hyeopjae"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+    },
+    "/galleryItems/7/location": {
+      "source_en": "Jusangjeolli Cliff"
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "glossary": [
+        "⟦G0⟧ = Rue des cafés d'Aewol"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "glossary": [
+        "⟦G0⟧ = Rue des cafés d'Aewol"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Rue des cafés d'Aewol"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Seopjikoji"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Cascade de Cheonjeyeon"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Cascade de Cheonjeyeon"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Cascade de Cheonjeyeon"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Camellia Hill"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Camellia Hill"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Camellia Hill"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Plage de Hyeopjae"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Plage de Hyeopjae"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Plage de Hyeopjae"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Rue des cafés d'Aewol"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Rue des cafés d'Aewol"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Rue des cafés d'Aewol"
+    }
+  },
+  "tmHits": 0
+}

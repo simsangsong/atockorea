@@ -172,3 +172,53 @@ describe('🔴 P0 — 전세 상품의 코스는 정류지가 아니다', () => 
     expect(screen.queryByText('Choose your route')).not.toBeInTheDocument();
   });
 });
+
+describe('임포트 코스 연결 — 전세 예약의 추천 탭', () => {
+  /**
+   * 제주/서울/부산 전세 예약은 /plan/templates 가 임포트 코스(원본 투어
+   * 슬러그 포함)를 서빙한다. 그때 같은 선택지를 메타 스톱 코스 카드로 한 번
+   * 더 그리면 추천 탭에 "동부"가 두 벌 생긴다 — 리치 프리뷰가 있는 템플릿
+   * 쪽만 남긴다. 템플릿이 임포트 코스를 못 실은 경우(로드 실패·미배선)는
+   * 기존 코스 카드가 그대로 있어야 한다(fail-safe, 위 P0 스위트가 잠근다).
+   */
+  it('임포트 코스 템플릿이 오면 메타 스톱 코스 카드를 겹쳐 그리지 않는다', async () => {
+    global.fetch = jest.fn(async (input: RequestInfo | URL) => {
+      const url = String(input);
+      if (url.includes('/plan/templates')) {
+        return jsonResponse({
+          region: 'jeju',
+          templates: [
+            {
+              id: 'imported-east-signature-nature-core',
+              region: 'jeju',
+              title_i18n: { en: 'Jeju East — Volcano, Coast & Folk Village' },
+              stops: [
+                { id: 'tpl-1', seq: 1, source: 'free', name_i18n: { en: 'Seongsan Ilchulbong' }, stop_type: 'sight', duration_min: 90, status: 'pending' },
+              ],
+              total_hours: null,
+              origin_tour_slug: 'east-signature-nature-core',
+            },
+          ],
+        });
+      }
+      if (url.includes('/api/itinerary-builder/pois')) return jsonResponse({ pois: POIS });
+      if (url.includes('/tour-itinerary')) {
+        return jsonResponse({ ...CHARTER_ITINERARY, slug: 'jeju-island-private-car-charter-tour' });
+      }
+      if (url.includes('/plan')) return jsonResponse(DRAFT_PLAN);
+      return jsonResponse({});
+    }) as jest.Mock;
+
+    await renderPlanner();
+
+    // 임포트 코스 템플릿 카드는 있다.
+    await waitFor(() =>
+      expect(screen.getByText('Jeju East — Volcano, Coast & Folk Village')).toBeInTheDocument(),
+    );
+    // 메타 스톱 코스 카드(같은 선택지의 조문 버전)는 겹쳐 그리지 않는다.
+    expect(screen.queryByTestId('plan-course-option-1')).not.toBeInTheDocument();
+    expect(screen.queryByText('Choose your route')).not.toBeInTheDocument();
+    // 전세의 메타 스톱을 "이 일정으로 시작하기"로 붓는 경로도 여전히 없다.
+    expect(screen.queryByText(/Start from this itinerary/i)).not.toBeInTheDocument();
+  });
+});

@@ -1,0 +1,276 @@
+{
+  "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:A2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-southern-top-unesco-spots-tour",
+  "locale": "de",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time visitors to the area"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Couples & honeymooners"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Adult families"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Active travelers who enjoy coastal walks and the Olle Trail"
+    },
+    "/whyTourWorks/bestFor/4": {
+      "source_en": "Travelers interested in Korean culture such as temples and tea"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want minimal walking"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Groups with strollers"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Travelers with a tight same-day flight buffer"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Free admission at almost every stop — only ⟦G0⟧ is ₩2,000",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Oedolgae & Olle Route 7, Yakcheonsa, O'sulloc, and ⟦G0⟧ are all free, and only the ⟦G1⟧ admission (adult ₩2,000) is included in the base price. Unlike most Jeju group tours, which charge ₩15,000–₩20,000 per person in separate admissions, the only real extra cost on the day is lunch (~₩15,000).",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Explicit 'no shopping' policy"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "The operator publishes an explicit no-shopping clause — there are no ginseng shops, cosmetic-mall detours, or commission lunch stops. Every stop on the route is an actual attraction. The Dongmun Market drop-off is self-guided after the tour ends, not a forced stop."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "A route that starts on the coast and finishes on Hallasan"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "See the Seogwipo coast (⟦G0⟧, Oedolgae) early in the morning before the tour buses arrive, pass through the temple, lunch and tea field, then cross Hallasan via Route 1100 at the end of the day back to Jeju City. A counter-clockwise loop that never retraces the same road.",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "Mini-coach format, not a 40-person bus"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "The shared mini-coach format keeps groups small enough for personal guide attention on the Oedolgae Olle trail and within the Yakcheonsa grounds. Unlike large commission-bus tours (30–40 people), this runs closer to 12–18 — the sweet spot for ample attention without paying private-tour rates."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why this route is built this way"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this day flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "A counter-clockwise route that descends in the morning to the southern Seogwipo coast for ⟦G0⟧ and Oedolgae & the Olle Trail, passes East Asia's largest temple Yakcheonsa and lunch and the O'sulloc Tea Museum, then crosses Hallasan via Route 1100 at the end of the day to finish on the Eoseungsaengak Trail. A day designed to take in waterfall, coast, temple, tea field, and volcano all at once.",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Yes. This route runs every day of the year. The atmosphere of the Seogwipo coast and the Hallasan views change with the season, but the day's pacing stays the same. In winter snow, ⟦G0⟧ may be substituted for a lower-elevation alternate.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Is this tour available year-round?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "At ⟦G1⟧ you go down and back up about 130 steps to the foot of the falls, and ⟦G0⟧ is a 1.3 km one-way wooden-stair climb (about 60–75 min round-trip). Comfortable closed-toe sneakers are enough — no technical hiking gear required. This route does not include the Hallasan summit (Baengnokdam) climb.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Is the walking at ⟦G0⟧ and Hallasan difficult?",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "You take in ⟦G1⟧ (Asia's only ocean-falling waterfall), the Oedolgae and Olle Route 7 coastal walk, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the ⟦G0⟧ Trail. It is a south Jeju signature route that starts on the Seogwipo coast and finishes on Hallasan.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Which sights are included on this route?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Yes. The ⟦G1⟧ admission (adult ₩2,000) is included in the base price. Oedolgae & Olle Route 7, Yakcheonsa, O'sulloc, and ⟦G0⟧ are all free admission. The only real extra cost on the day is lunch (~₩15,000).",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Are admissions included?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "No — lunch is at your own expense (~₩15,000). The guide will recommend a local restaurant, and if you advise at booking we can support vegetarian, vegan, halal, or allergy-related dietary needs."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Is lunch included?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Yes. Please notify the operator of your luggage volume in advance. The mini-coach has dedicated luggage space, and travelers arriving on early-morning flights can join the tour directly with their bags."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Can I bring luggage on the airport pickup?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Yes — in a single day you get a balanced look at the area's most distinctive sights, from the Seogwipo coast to the temple, tea field, and Hallasan."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is this a good choice for first-time visitors to southern Jeju?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "It is an active day with the ⟦G1⟧ stairs and the ⟦G0⟧ climb, but the Oedolgae Olle trail and Yakcheonsa and O'sulloc are relatively flat.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Is the walking difficult?",
+      "tm": "Sind die Fußwege anstrengend?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "It suits families with children who can handle a full day of moving around. The coastal walks and the temple and tea field are easy for kids to enjoy too."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Ist diese Tour für Familien geeignet?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Recommended for active seniors comfortable with the ⟦G0⟧ stairs and the Eoseungsaengak climb. Oedolgae, Yakcheonsa, and O'sulloc are relatively comfortable.",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Können ältere Gäste bequem teilnehmen?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "Best fit is around age 10 and up — children who can handle a full-day itinerary and the walking notes above."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Was ist das empfohlene Mindestalter?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local operator — a great-value route taking in southern Seogwipo's signature coastal stops in a small group."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local operator",
+      "tm": "Lizenzierter lokaler Veranstalter"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Fully insured, authorized Korean tour operator"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "Free admission at almost every stop: Oedolgae & Olle Route 7 (free), Yakcheonsa (free), O'sulloc (free), ⟦G0⟧ (free) — only ⟦G1⟧ (₩2,000) included in the base.",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak",
+        "⟦G1⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Route specialists",
+      "tm": "Routenspezialisten"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "A hand-designed custom itinerary, not a generic loop"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Run as a small-group minicoach, so you can enjoy the Oedolgae Olle trail, the Yakcheonsa grounds, and the ⟦G0⟧ stairs in comfort — clearly different from a large bus tour.",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Comfortable group size"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Right-sized for the route",
+      "tm": "Passend zur Route dimensioniert"
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/0/answer": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/staticQuestions/1/answer": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/1/question": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/3/answer": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/7/answer": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/bookingTrustItems/1/body": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak",
+      "⟦G1⟧": "Jeongbang-Wasserfall"
+    },
+    "/bookingTrustItems/2/body": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    }
+  },
+  "tmHits": 11
+}
