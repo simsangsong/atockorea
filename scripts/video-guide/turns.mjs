@@ -66,14 +66,27 @@ export function turnsIn(file, { min = MIN_PAN, step = STEP } = {}) {
 
 if (CLI && process.argv[1].endsWith('turns.mjs')) {
   const srcDir = spec.sourceDir;
+  const measured = {};
   for (const [id, name] of Object.entries(spec.sources)) {
     if (ONLY_SRC && id !== ONLY_SRC) continue;
     const file = path.join(srcDir, name);
     const evs = turnsIn(file);
+    measured[id] = evs;
     console.log(`\n[${id}] ${name}  (${durationOf(file).toFixed(0)}s)  회전 ${evs.length}건  pan>=${MIN_PAN}`);
     for (const e of evs) {
       console.log(`  ${String(e.in).padStart(7)}s → ${String(e.out).padStart(7)}s`
         + `  (${(e.out - e.in).toFixed(1)}s)  peak ${e.peak} @${e.at}s`);
     }
+  }
+  // Cache the measurement beside the spec so validate.mjs can enforce "a turn is
+  // never sped up" (Gate 3d) without paying for the decode. A full sweep only —
+  // a --src run would write a partial map and the gate would go quiet on the
+  // sources it could not see.
+  if (!ONLY_SRC) {
+    const out = specPath.replace(/\.json$/, '.turns.json');
+    fs.writeFileSync(out, JSON.stringify({ min: MIN_PAN, step: STEP, padIn: PAD_IN, padOut: PAD_OUT, turns: measured }, null, 1));
+    console.log(`\n측정 캐시 → ${out}  (게이트 3d 가 읽는다)`);
+  } else {
+    console.log('\n⚠ --src 단일 실행이라 캐시를 쓰지 않았다 — 게이트 3d 용 캐시는 전체 실행으로 만들어라');
   }
 }

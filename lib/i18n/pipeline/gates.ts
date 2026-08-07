@@ -163,6 +163,35 @@ export function checkGlossaryTokens(source: string, target: string, pointer: str
  * 대칭 비교로 두면 정상적인 날짜 현지화가 전부 실패로 잡혀 재큐 루프에 빠진다
  * (2026-07-26 실측 오탐).
  */
+/**
+ * 시각 표기 현지화 때문에 사라지는 숫자 토큰만 골라낸다. 두 갈래뿐이다.
+ *
+ *  - **`HH:00` 의 분** — 프랑스어·이탈리아어는 정각을 `9 h` 로 쓴다. 시(hour)가
+ *    번역에 남아 있을 때만 `0` 하나를 면제한다.
+ *  - **12시제 → 24시제** — 독일어·러시아어는 `2 pm` 을 `14:00` 으로 쓴다.
+ *    `H` 나 `H+12` 가 번역에 있을 때만 `H` 하나를 면제한다.
+ *
+ * 면제에는 항상 상한이 있다 — 원문이 그 표기를 쓴 횟수만큼만. 그래서 번역이
+ * 통째로 잘려도 나머지 숫자는 면제 대상이 아니고 fail 로 남는다.
+ */
+function clockNotationLosses(source: string, target: string): string[] {
+  const inTarget = new Set(numberMultiset(target));
+  const forgivable: string[] = [];
+
+  for (const m of source.matchAll(/(?<!\d)(\d{1,2}):00(?!\d)/g)) {
+    if (inTarget.has(String(Number(m[1])))) forgivable.push('0');
+  }
+
+  for (const m of source.matchAll(/(?<!\d)(\d{1,2})\s*([ap])\.?m\.?(?![\p{L}])/giu)) {
+    const h = Number(m[1]);
+    if (h < 1 || h > 12) continue;
+    const twentyFour = String(m[2].toLowerCase() === 'p' ? (h % 12) + 12 : h % 12);
+    if (inTarget.has(twentyFour) || inTarget.has(String(h))) forgivable.push(String(h));
+  }
+
+  return forgivable;
+}
+
 export function checkNumbers(source: string, target: string, pointer: string): Finding[] {
   const a = numberMultiset(source);
   const b = numberMultiset(target);
@@ -188,7 +217,20 @@ export function checkNumbers(source: string, target: string, pointer: string): F
   const shorthandYears = lostRaw.filter(
     (n) => /^(1[89]|20)\d{2}$/.test(n) && added.includes(String(Number(n.slice(2)))),
   );
-  const lost = lostRaw.filter((n) => !shorthandYears.includes(n));
+  // 시각 표기는 언어마다 다르고, 그 차이가 숫자 토큰으로 새어 나온다.
+  //   `09:00–18:00`(en) → `9 h à 18 h`(fr) — `:00` 이 사라져 `0` 두 개가 "소실"
+  //   `around 2 pm`(en) → `gegen 14:00 Uhr`(de) — 12시제→24시제라 `2` 가 "소실"
+  // 두 경우 다 같은 시각이고 손님이 잃는 정보가 없다. 로마 숫자·연대 축약과 같은
+  // 층위의 서식 처리다(2026-08-07 실측: 프랑스어·이탈리아어 fail 의 대부분이 이것).
+  // 흡수 범위는 **그 시각에서 비롯한 토큰만**이라, 잘린 번역이 잃는 나머지 숫자는
+  // 그대로 fail 로 남는다 — 아래 뮤테이션 테스트가 그걸 못박는다.
+  // 멀티셋 차집합으로 뺀다 — 원문이 `HH:00` 을 두 번 썼으면 `0` 도 두 개까지만
+  // 면제된다. `filter(includes)` 로 두면 같은 값 전부가 한꺼번에 면제돼 버린다.
+  const clockOnly = clockNotationLosses(source, target);
+  const lost = missingFrom(
+    lostRaw.filter((n) => !shorthandYears.includes(n)),
+    clockOnly,
+  );
 
   if (lost.length > 0) {
     findings.push({
@@ -227,8 +269,13 @@ export function checkNumbers(source: string, target: string, pointer: string): F
  * 2. **숫자가 앞에 와야 단위다.** 독일어 `Fuß`는 "발·밑동"이 본뜻이고 측정 단위는
  *    드문 용법이다 — `Becken am Fuß`(밑동의 웅덩이) · `zu Fuß`(걸어서)가 전부
  *    오탐이었다. 실제 단위 변환은 언제나 `30 miles` · `12 Fuß`처럼 수치를 동반한다.
+ *
+ * 3. **약어 `mi` 도 세어야 한다.** 재는 것은 "번역이 원문보다 야드파운드를 더 쓰는가"
+ *    이므로, 원문 쪽의 `0.6 mi` 를 놓치면 번역의 `0,6 mile` 이 새로 생긴 단위로
+ *    보인다(2026-08-07 실측 오탐 — 영어 원문 자체가 `mi` 로 적혀 있었다).
+ *    수치가 앞서고 뒤가 글자가 아닐 때만이라 이탈리아어 `mi`(=나에게)는 안 걸린다.
  */
-const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
+const IMPERIAL_RE = /\d[\d.,]*[\s -]*(?<![\p{L}])(miles?|mi\.|mi|Meilen?|miglia|miglio|мил[ья]|inch(?:es)?|Zoll|pollici|дюйм|foot|feet|Fuß|piedi|фут|pounds?|lbs?|Pfund|libbre|фунт)(?![\p{L}])/giu;
 
 /**
  * 텍스트 안 로마 숫자의 값 집합.
@@ -283,9 +330,18 @@ export function checkCurrencyAndUnits(source: string, target: string, pointer: s
   // 코드와 기호는 **같은 통화의 다른 표기**다. `KRW` → `₩` 는 값도 통화도 바뀌지
   // 않았는데 문자열 비교로는 불일치였다(2026-07-28 실측, 프랑스어 다수 탈락).
   // 정규화 후 비교하므로 `₩` → `€` 같은 진짜 통화 변조는 그대로 잡힌다.
-  const a = multiset(source, CURRENCY_RE).map(normalizeCurrency).sort();
-  const b = multiset(target, CURRENCY_RE).map(normalizeCurrency).sort();
-  if (!sameMultiset(a, b)) {
+  //
+  // **횟수가 아니라 종류를 센다.** 기호를 몇 번 되풀이하는지는 통화가 아니라 서식이다 —
+  // 프랑스어는 기호를 숫자 뒤에 두고 범위마다 다시 쓰지 않는다:
+  //   `≈₩15,000–₩25,000` → `≈15 000–25 000 ₩`  (₩ 5개 → 4개, 금액은 그대로)
+  // 잡아야 할 것은 종류가 어긋나는 것이고, 그건 집합 차집합으로 양방향 다 걸린다 —
+  // `₩`→`€`(변조)도, `₩`→없음(잘림·소실)도 그대로 실패한다. 금액 자체가 사라지는
+  // 경우는 G3 이 숫자 소실로 따로 잡는다.
+  const a = [...new Set(multiset(source, CURRENCY_RE).map(normalizeCurrency))].sort();
+  const b = [...new Set(multiset(target, CURRENCY_RE).map(normalizeCurrency))].sort();
+  const dropped = a.filter((c) => !b.includes(c));
+  const appeared = b.filter((c) => !a.includes(c));
+  if (dropped.length > 0 || appeared.length > 0) {
     findings.push({
       gate: 'G4',
       severity: 'fail',

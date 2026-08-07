@@ -1,0 +1,79 @@
+{
+  "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-southern-top-unesco-spots-tour",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Jeju City + airport pickup"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Waterfall"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Oedolgae & Olle Route 7"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Coast"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Temple"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Lunch"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Meal"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "O'sulloc Tea Museum"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Culture"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧ (UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Volcano"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "Jeju City drop-off (5 options)"
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/routeFlowStops/3/name": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    }
+  },
+  "tmHits": 0
+}

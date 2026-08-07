@@ -1,0 +1,271 @@
+{
+  "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "jeju-southern-top-unesco-spots-tour",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Pickup (4 points across Jeju City)"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Pickup — Jeju City Hotel/Hub Sequence"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "30 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Hagwi pickup ~09:00 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Airport pickup ~09:10 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "City Hall pickup ~09:20 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Dongmun pickup ~09:30 — 5 min"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "Southbound Route 5.16 toward Seogwipo coast — ~60 min"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "**4 pickup points** — Airport, City Hall, Hagwi, Dongmun"
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "West-to-east sequence minimizes morning coach distance"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "**Small-group minicoach (max 14 pax)** with English guide"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Bilingual itinerary card + weather brief at first stop"
+    },
+    "/itineraryStops/0/highlights/4": {
+      "source_en": "**Route 1100 closure check** — before departure (for the return Hallasan leg)"
+    },
+    "/itineraryStops/0/highlights/5": {
+      "source_en": "Morning transit Jeju City → Seogwipo ⟦G0⟧: ~60 min (via Route 5.16)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Four pickup points cover Jeju City's major hotel and transport hubs (airport, downtown, old town, market district), minimizing the hassle of crossing the city. In the morning the route descends first to the Seogwipo coast to see ⟦G0⟧ and Oedolgae before the midday crowds, then crosses Hallasan via Route 1100 at the end of the day to return to Jeju City — an efficient counter-clockwise loop. The **Route 1100 closure protocol** keeps guests informed about winter return conditions before departure.",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "**Pickup is consolidated at four central Jeju City points** to minimize morning crisscrossing: **Jeju International Airport (제주공항)** for guests with same-day arrivals; **Jeju City Hall (제주시청)** for the Yeon-dong / Nohyeong / Old Town hotel cluster; **Hagwi-dong (하귀동)** as the westernmost pickup; and **Dongmun Traditional Market (동문시장)** as the optional eastern Jeju City pickup near the Tapdong waterfront. \n\nThe sequence runs Hagwi → Airport → City Hall → Dongmun, then heads south **along Route 5.16 (National Road 1131), crossing the eastern flank of Hallasan toward the southern Seogwipo coast**. The minicoach is **small-group (max ~14 pax)** with an English-speaking guide. \n\nA **bilingual printed itinerary card** is distributed at pickup, and a weather brief is given at the first stop. Because today's route starts on the Seogwipo coast and **returns to Jeju City at the end of the day by taking Route 1100 back over Hallasan**, a **Route 1100 closure check** is performed before departure — if closed for snow or ice, the final ⟦G0⟧ stop substitutes to a lower-elevation alternate (typically Mysterious Road or Jeju National Museum).",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Coastal Waterfall — Yeongjusipgyeong · Origin of the name Seogwipo"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "50 min"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Ticketing + entrance briefing — ~5 min"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Descent of about 130 steps — ~10 min"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Falls + coastal rock photography — ~20 min"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Climb back up + clifftop observation deck — ~15 min"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**The only waterfall in Asia that drops directly into the sea** — 23 m high / approx. 8 m wide"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "One of the **Yeongjusipgyeong (Jeju's 10 Scenic Wonders)** — chosen alongside Hallasan and Cheonjeyeon"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "**'Seobulgwacha' legend** — the Qin Shi Huang / elixir-of-immortality tale that gave 'Seogwipo' its name"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Coastal scenery with **Seopseom and Munseom** as a backdrop on clear days"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "**About 130 steps** down to the foot of the falls — non-slip shoes essential"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "Open **09:00–17:40** (last entry 30 min before closing), year-round"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "Mind the waves and slippery rocks when shooting on the rocky shelf — safety first"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Stairs and rocks are very slippery when wet — non-slip shoes recommended; don't confuse it with ⟦G0⟧ in Seogwipo",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чхонджиён"
+      ]
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Restrooms and ticket office at the entrance (before the stair descent); no facilities at the foot of the falls"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "**The opening highlight of the Seogwipo coast.** Visited early in the morning, ⟦G0⟧ can be enjoyed quietly at the base before the tour buses arrive. It is a 15-minute drive from Oedolgae and Olle Route 7, so it links efficiently along the Seogwipo coast and opens the day with a striking ocean view.",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Available at the entrance parking lot"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "Available at the entrance/ticketing area"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**⟦G0⟧ (정방, 正房) is known as the only waterfall in Asia that drops directly from a cliff into the sea**, and it is one of Seogwipo's signature sights. A **23 m-high, roughly 8 m-wide** sheet of water pours down the basalt sea-wall into the deep blue ocean, and on clear days **Seopseom (섶섬) and Munseom (문섬)** sit in the background. \n\nAlong with Hallasan and Cheonjeyeon, Jeongbang is one of the **Yeongjusipgyeong (영주십경, Jeju's 10 Scenic Wonders)** chosen by Joseon-era literati, and the cliff is inscribed with the **'Seobulgwacha (徐市過此)' legend** — the story that Seobul, sent by Emperor Qin Shi Huang to find the elixir of immortality, passed this place and turned back to the west. This is said to be the origin of the place name **'Seogwipo (西歸浦)'**. \n\nFrom the ticket office down to the foot of the falls there are **about 130 steps**, and the ground is made of rounded pebbles and rock, so non-slip footwear is essential. Photos with the spray and the sea as a backdrop are popular at the base, while the clifftop observation deck takes in Seopseom and Munseom at a glance.",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/visitBasics/hours": {
+      "source_en": "Daily 09:00–17:40 (last entry 30 min before closing, minor seasonal variation)"
+    },
+    "/itineraryStops/1/visitBasics/closed": {
+      "source_en": "Open year-round (may be temporarily closed at high tide or during typhoons)"
+    },
+    "/itineraryStops/1/visitBasics/walking": {
+      "source_en": "Moderate — about 130 steps down to the falls, uneven rocky ground; mind slipping"
+    },
+    "/itineraryStops/1/visitBasics/admission": {
+      "source_en": "Adult 2,000 KRW / Youth 1,000 KRW (FREE under 7 + over 65)"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "50 min"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "Parking + entry onto the Olle trail — ~5 min"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/highlights/5": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "⟦G0⟧": "Водопад Чхонджиён"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/description": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Водопад Чонбан"
+    }
+  },
+  "tmHits": 0
+}

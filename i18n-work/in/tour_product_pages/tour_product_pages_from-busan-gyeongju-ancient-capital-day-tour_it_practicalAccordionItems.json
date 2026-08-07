@@ -1,0 +1,128 @@
+{
+  "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:practicalAccordionItems",
+  "surface": "tour_product_pages",
+  "slug": "from-busan-gyeongju-ancient-capital-day-tour",
+  "locale": "it",
+  "chunk": "practicalAccordionItems",
+  "tier": "A1",
+  "segments": {
+    "/practicalAccordionItems/0/title": {
+      "source_en": "What's included"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking."
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Not included: lunch (≈₩15,000–₩25,000), ⟦G0⟧ admission (₩5,000, paid on site), Cheonmachong interior (adult ₩3,000, optional), Donggung & Wolji admission on winter departures (adult ₩3,000), tips.",
+      "glossary": [
+        "⟦G0⟧ = Foresta di bambù di Ahopsan"
+      ]
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "All other site admissions are free: Bulguksa (free since May 2023), ⟦G0⟧ permanent exhibitions (free since 2008), ⟦G1⟧ and the Choi Family House, ⟦G2⟧, the Daereungwon park grounds, Hwangnidan-gil.",
+      "glossary": [
+        "⟦G0⟧ = Museo nazionale di Gyeongju",
+        "⟦G1⟧ = Villaggio hanok di Gyochon",
+        "⟦G2⟧ = Ponte di Woljeonggyo"
+      ]
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide,…"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Pickup & drop-off"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4 (Line 1) at 08:10, Seomyeon Station Exit 4 (Lines 1 & 2) at 08:30, Haeundae Station Exit 5 (Line 2) at 09:10."
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle."
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "Drop-off is in reverse order, at the same exits you boarded at: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50."
+    },
+    "/practicalAccordionItems/1/content/3": {
+      "source_en": "Provide a WhatsApp or KakaoTalk number at booking; the guide will message vehicle details the day before."
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4…"
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Walking & terrain"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "Moderate."
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "Total walking distance across the day is ≈5–5.5 km — more than the previous course, because the two afternoon blocks (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) are linked on foot."
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "Bulguksa has stone steps between terraces. Gyochon, Woljeonggyo, Daereungwon and Hwangnidan-gil are all flat, and Daereungwon's grass paths are comfortable for strollers and older guests."
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "Climbing the tomb mounds is prohibited (fines apply). Comfortable closed-toe shoes essential — Bulguksa stone is uneven."
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Moderate."
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "Cancellation"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup."
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "If the tour is cancelled because of force majeure, severe weather, or road closure, full refund applies."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup."
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Seasonal route notes"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): ⟦G0⟧ is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. The cherry blossoms on Daereungwon's stone-wall lane peak in early April.",
+      "glossary": [
+        "⟦G0⟧ = Foresta di bambù di Ahopsan"
+      ]
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Winter (November–February): because sunset falls at 17:15–17:30, the last stop is swapped from ⟦G0⟧ to the Donggung & Wolji night view (admission adult ₩3,000, paid on site). It is the hour that runs from dusk to the lights coming on.",
+      "glossary": [
+        "⟦G0⟧ = Museo nazionale di Gyeongju"
+      ]
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "In summer (June–August) sunset is around 19:30, so a night-view stop does not work and the last stop stays fixed as ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Museo nazionale di Gyeongju"
+      ]
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…"
+    }
+  },
+  "glossaryTokens": {
+    "/practicalAccordionItems/0/content/1": {
+      "⟦G0⟧": "Foresta di bambù di Ahopsan"
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "⟦G0⟧": "Museo nazionale di Gyeongju",
+      "⟦G1⟧": "Villaggio hanok di Gyochon",
+      "⟦G2⟧": "Ponte di Woljeonggyo"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "⟦G0⟧": "Foresta di bambù di Ahopsan"
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "⟦G0⟧": "Museo nazionale di Gyeongju"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "⟦G0⟧": "Museo nazionale di Gyeongju"
+    }
+  },
+  "tmHits": 0
+}

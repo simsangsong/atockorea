@@ -1,0 +1,255 @@
+{
+  "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:A1",
+  "surface": "tour_product_pages",
+  "slug": "from-busan-gyeongju-ancient-capital-day-tour",
+  "locale": "de",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Gyeongju Ancient Capital Day Tour from Busan | AtoC Korea"
+    },
+    "/seo/pageTitle": {
+      "source_en": "From Busan: Gyeongju Ancient Capital Day Tour | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "A small-group mini-van day tour from Busan to Gyeongju. The day opens on the bamboo paths of ⟦G1⟧, takes UNESCO World Heritage ⟦G4⟧ at an unhurried pace, and then spends the afternoon on two blocks covered entirely on foot — ⟦G2⟧ and the Choi Family House across to ⟦G3⟧, and the Daereungwon royal tombs across to the Hwangnidan-gil cafe street. It finishes at ⟦G0⟧ (Cheonmachong Gold Crown, Emille Bell), which in winter (Nov–Feb) is replaced at the same hour by the Donggung & Wolji night view. Pickup and drop-off are Busan Station Exit 4, Seomyeon Station Exit 4 and Haeundae Station Exit 5 — all subway stations.",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju",
+        "⟦G1⟧ = Bambuswald Ahopsan",
+        "⟦G2⟧ = Hanok-Dorf Gyochon",
+        "⟦G3⟧ = Woljeonggyo-Brücke",
+        "⟦G4⟧ = Bulguksa-Tempel"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "Small-group day tour from Busan to Gyeongju: ⟦G1⟧ · Bulguksa (UNESCO) · lunch · ⟦G2⟧ + Choi Family House + Woljeonggyo · Daereungwon + Hwangnidan-gil · ⟦G0⟧ (Donggung & Wolji night view in winter). Pickup at Busan, Seomyeon and Haeundae subway exits.",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju",
+        "⟦G1⟧ = Bambuswald Ahopsan",
+        "⟦G2⟧ = Hanok-Dorf Gyochon"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Gyeongju ancient capital tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Gyeongju from Busan day trip"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Bulguksa from Busan"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Silla Kingdom heritage tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "8 stops"
+    },
+    "/hero/meta/region": {
+      "source_en": "Gyeongju (from Busan)"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 11.5 hours (08:10 first pickup, ≈ 19:50 last drop)"
+    },
+    "/hero/pills/0": {
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
+    },
+    "/hero/pills/1": {
+      "source_en": "Gyeongju"
+    },
+    "/hero/pills/2": {
+      "source_en": "Ancient capital"
+    },
+    "/hero/tagline": {
+      "source_en": "Choi House to Woljeonggyo, Daereungwon to Hwangnidan-gil — the afternoon is walked, not driven"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Fotopotenzial"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High",
+      "tm": "Hoch"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery",
+      "tm": "Landschaft"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Gut"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Gehstrecke"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Fairly High"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Regentauglichkeit"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Mittel"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Familientauglichkeit"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Good",
+      "tm": "Gut"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Tempo"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Überblick"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Reiseverlauf"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Details"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Bewertungen"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Gyeongju"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "From Busan"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "Silla Kingdom"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Ancient capital"
+    },
+    "/catalog_card/title": {
+      "source_en": "Busan to Gyeongju: Ancient Capital"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Calmer pace"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "From Busan"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "Winter night view"
+    },
+    "/catalog_card/region": {
+      "source_en": "Gyeongju (from Busan)"
+    },
+    "/catalog_card/duration": {
+      "source_en": "11.5 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Small-group mini-van · English-speaking guide — ⟦G1⟧, Bulguksa (UNESCO), ⟦G2⟧ + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and ⟦G0⟧ (Donggung & Wolji night view in winter), all in one day.",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju",
+        "⟦G1⟧ = Bambuswald Ahopsan",
+        "⟦G2⟧ = Hanok-Dorf Gyochon"
+      ]
+    },
+    "/catalog_card/priceLabel": {
+      "source_en": "From US$39 per person (was $50, 22% off)"
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at ⟦G0⟧, or at the Donggung & Wolji night view in winter.",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Busan to Gyeongju"
+    },
+    "/headlineLine2": {
+      "source_en": "Ancient Capital"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "All three pickup and drop-off points are subway station exits — Busan Station Exit 4 (Line 1), Seomyeon Station Exit 4 (Lines 1 & 2), Haeundae Station Exit 5 (Line 2). At Busan Station we meet at the subway exit in front of the building, NOT inside the KTX railway terminal. Choose the exit closest to your hotel when you book. The tour runs year-round; in cherry blossom season (mid-March to mid-April) ⟦G1⟧ is replaced by Haeundae Dalmaji Hill, and in winter (Nov–Feb) the last stop changes from ⟦G0⟧ to the Donggung & Wolji night view.",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju",
+        "⟦G1⟧ = Bambuswald Ahopsan"
+      ]
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+    },
+    "/pickup_dropoff/return/2/name": {
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+    },
+    "/pickup_dropoff/departure/2/name": {
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Wählen Sie Ihr Datum und Ihre Gruppengröße, um die Verfügbarkeit in Echtzeit zu prüfen und Ihre Buchung abzuschließen."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "Person"
+    }
+  },
+  "glossaryTokens": {
+    "/seo/description": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju",
+      "⟦G1⟧": "Bambuswald Ahopsan",
+      "⟦G2⟧": "Hanok-Dorf Gyochon",
+      "⟦G3⟧": "Woljeonggyo-Brücke",
+      "⟦G4⟧": "Bulguksa-Tempel"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju",
+      "⟦G1⟧": "Bambuswald Ahopsan",
+      "⟦G2⟧": "Hanok-Dorf Gyochon"
+    },
+    "/catalog_card/subtitle": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju",
+      "⟦G1⟧": "Bambuswald Ahopsan",
+      "⟦G2⟧": "Hanok-Dorf Gyochon"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju"
+    },
+    "/pickup_dropoff/notes/0": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju",
+      "⟦G1⟧": "Bambuswald Ahopsan"
+    }
+  },
+  "tmHits": 20
+}

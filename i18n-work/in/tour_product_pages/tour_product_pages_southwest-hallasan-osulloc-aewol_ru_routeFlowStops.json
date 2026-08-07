@@ -1,0 +1,54 @@
+{
+  "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "southwest-hallasan-osulloc-aewol",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "1100 Highland"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Hallasan"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "Jusangjeolli"
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Coast"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Cheonjeyeon"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Waterfall"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Reset"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "O'Sulloc"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Tea Fields"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Aewol"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Café"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "Iho Tewoo"
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Sunset"
+    }
+  },
+  "glossaryTokens": {},
+  "tmHits": 0
+}

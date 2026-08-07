@@ -1,0 +1,16 @@
+{
+  "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:it:routeFlowStops",
+  "locale": "it",
+  "segments": {
+    "/routeFlowStops/0/name": "Pick-up in hotel",
+    "/routeFlowStops/0/theme": "Inizio",
+    "/routeFlowStops/1/name": "Scelta dell'itinerario",
+    "/routeFlowStops/1/theme": "Est/Ovest/Sud",
+    "/routeFlowStops/2/name": "Pausa pranzo",
+    "/routeFlowStops/2/theme": "Pausa",
+    "/routeFlowStops/3/name": "Tappe del pomeriggio",
+    "/routeFlowStops/3/theme": "Si continua",
+    "/routeFlowStops/4/name": "Rientro in hotel",
+    "/routeFlowStops/4/theme": "Fine"
+  }
+}

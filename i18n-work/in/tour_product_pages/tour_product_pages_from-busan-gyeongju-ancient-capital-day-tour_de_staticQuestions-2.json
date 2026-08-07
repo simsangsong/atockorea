@@ -1,0 +1,44 @@
+{
+  "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:staticQuestions-2",
+  "surface": "tour_product_pages",
+  "slug": "from-busan-gyeongju-ancient-capital-day-tour",
+  "locale": "de",
+  "chunk": "staticQuestions-2",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/12/answer": {
+      "source_en": "Best fit is around age 8 and up. The day covers ≈5–5.5 km of walking and runs ≈11.5 hours (08:10 first pickup, ≈19:50 last drop), so a child needs to be comfortable with that rhythm. The two afternoon blocks are actually the kid-friendliest part of the day — Daereungwon is flat, step-free lawn paths with room to move, and Hwangnidan-gil has cafes and Hwangnam bread. The museum's quiet galleries and the early start are the harder parts for young children."
+    },
+    "/staticQuestions/12/question": {
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Was ist das empfohlene Mindestalter?"
+    },
+    "/staticQuestions/13/answer": {
+      "source_en": "It is a street of cafes, studios and gift shops converted out of hanok houses, directly across Daereungwon's west wall. The name means 'Hwangnam-dong's Gyeongnidan-gil', and since around 2017 it has been the youngest street in Gyeongju. You get roughly 20–30 minutes of free time — enough for a coffee, a box of Hwangnam bread (the red-bean pastry that started in this neighbourhood in 1939), and a restroom stop. Anything you buy is at your own expense."
+    },
+    "/staticQuestions/13/question": {
+      "source_en": "What do we do on Hwangnidan-gil?"
+    },
+    "/staticQuestions/14/answer": {
+      "source_en": "Yes — on Nov–Feb departures the last stop is replaced by the Donggung & Wolji night view. In winter the sun is already low by around 5 pm, which shortens a museum visit, while that same hour is exactly when Gyeongju's best night view begins. The two sites are 5 minutes apart by car, and since the 33,000-plus artifacts in the museum's Wolji Hall came out of the bed of that very pond, the story still connects. If the museum is essential for you, choose a departure between March and October."
+    },
+    "/staticQuestions/14/question": {
+      "source_en": "Do I miss ⟦G0⟧ if I go in winter?",
+      "glossary": [
+        "⟦G0⟧ = Nationalmuseum Gyeongju"
+      ]
+    },
+    "/staticQuestions/15/answer": {
+      "source_en": "All three are subway station exits — Busan Station Exit 4 (Subway Line 1), Seomyeon Station Exit 4 (Lines 1 & 2), Haeundae Station Exit 5 (Line 2). At Busan Station in particular we meet at Exit 4 of the subway station in front of the building, not inside the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle, so please navigate by the subway exit number. Drop-off is at the same three points."
+    },
+    "/staticQuestions/15/question": {
+      "source_en": "Is the pickup point a train station or a subway station?"
+    }
+  },
+  "glossaryTokens": {
+    "/staticQuestions/14/question": {
+      "⟦G0⟧": "Nationalmuseum Gyeongju"
+    }
+  },
+  "tmHits": 1
+}
