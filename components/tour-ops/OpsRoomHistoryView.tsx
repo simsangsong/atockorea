@@ -157,7 +157,7 @@ export default function OpsRoomHistoryView({
           )}
         </div>
 
-        <div className="-mx-1 mt-2 flex gap-1 overflow-x-auto pb-1">
+        <div className="rail-scrollbar -mx-1 mt-2 flex gap-1 overflow-x-auto pb-1">
           {FILTERS.map((f) => {
             const count =
               !summary

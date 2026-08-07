@@ -68,4 +68,9 @@ export const FORCE_CROP = new Map([
   ["cheongsapo-blue-line/H", { ratio: 16 / 9, focusY: 0.45 }],
   ["cheongsapo-blue-line/g1", { ratio: 16 / 9, focusY: 0.45 }],
   ["cheongsapo-blue-line/g2", { ratio: 16 / 9, focusY: 0.45 }],
+
+  // VIDEO2 실촬본 — 4:3 폰 사진이라 카드용으로 16:9 로 재단한다.
+  ["cheongsapo-daritdol/H", { ratio: 16 / 9, focusY: 0.55 }],
+  ["cheongsapo-daritdol/g1", { ratio: 16 / 9, focusY: 0.5 }],
+  ["daereungwon/H", { ratio: 16 / 9, focusY: 0.55 }],
 ]);

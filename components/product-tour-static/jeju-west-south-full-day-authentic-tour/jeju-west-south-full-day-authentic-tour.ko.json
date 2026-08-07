@@ -321,13 +321,21 @@
     {
       "id": 24,
       "type": "photo",
+      "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+      "location": "오설록 티 뮤지엄 + 녹차밭",
+      "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7",
+      "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7"
+    },
+    {
+      "id": 25,
+      "type": "photo",
       "src": "/images/tours/hyeopjae-beach/02-kakaotalk-20260510-230009595-02.webp",
       "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
       "alt": "협재 해수욕장 + 서쪽 해안 카페 거리 — gallery image 2",
       "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 2"
     },
     {
-      "id": 25,
+      "id": 26,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/03-kakaotalk-20260510-230009595-01.webp",
       "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
@@ -335,7 +343,7 @@
       "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 3"
     },
     {
-      "id": 26,
+      "id": 27,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/04-kakaotalk-20260508-171002165-02.webp",
       "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
@@ -343,7 +351,7 @@
       "caption": "협재 해수욕장 + 서쪽 해안 카페 거리 — photo 4"
     },
     {
-      "id": 27,
+      "id": 28,
       "type": "photo",
       "src": "/images/tours/hyeopjae-beach/05-kakaotalk-20260508-171202848-19.webp",
       "location": "협재 해수욕장 + 서쪽 해안 카페 거리",
@@ -938,7 +946,8 @@
         "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
         "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
         "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+        "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+        "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
       ],
       "imageCredits": [
         {
@@ -963,6 +972,10 @@
         },
         {
           "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+          "source": "atoc-korea"
+        },
+        {
+          "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
           "source": "atoc-korea"
         }
       ],
@@ -1014,6 +1027,14 @@
           "location": "오설록 티 뮤지엄 + 녹차밭",
           "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
           "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
+        },
+        {
+          "id": 7,
+          "type": "photo",
+          "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+          "location": "오설록 티 뮤지엄 + 녹차밭",
+          "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7",
+          "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7"
         }
       ]
     },
@@ -2607,7 +2628,8 @@
               "/images/tours/osulloc-tea/03-chatgpt-image-2026-5-11-12-23-51.webp",
               "/images/tours/osulloc-tea/04-chatgpt-image-2026-5-11-12-23-25.webp",
               "/images/tours/osulloc-tea/05-kakaotalk-20260508-171202848-07.webp",
-              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp"
+              "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+              "/images/tours/osulloc-tea/07-12-20260803-102302.webp"
             ],
             "imageCredits": [
               {
@@ -2632,6 +2654,10 @@
               },
               {
                 "url": "/images/tours/osulloc-tea/06-kakaotalk-20260511-005035505-04.webp",
+                "source": "atoc-korea"
+              },
+              {
+                "url": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
                 "source": "atoc-korea"
               }
             ],
@@ -2683,6 +2709,14 @@
                 "location": "오설록 티 뮤지엄 + 녹차밭",
                 "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 6",
                 "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 6"
+              },
+              {
+                "id": 7,
+                "type": "photo",
+                "src": "/images/tours/osulloc-tea/07-12-20260803-102302.webp",
+                "location": "오설록 티 뮤지엄 + 녹차밭",
+                "caption": "오설록 티 뮤지엄 + 녹차밭 — photo 7",
+                "alt": "오설록 티 뮤지엄 + 녹차밭 — gallery image 7"
               }
             ]
           },
