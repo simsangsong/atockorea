@@ -124,7 +124,9 @@ export function buildForecastPayload(
   raw: OpenMeteoForecastJson,
   areaLabel: string,
   latitude: number,
-  longitude: number
+  longitude: number,
+  /** UI locale for the condition wording. Omit for English. */
+  locale?: string | null
 ): ForecastApiPayload {
   const d = raw.daily
   const n = Math.min(2, d.time.length)
@@ -145,7 +147,7 @@ export function buildForecastPayload(
       tempMax: Math.round(d.temperature_2m_max[i]),
       tempMin: Math.round(d.temperature_2m_min[i]),
       weatherCode: code,
-      conditionLabel: wmoWeatherLabel(code),
+      conditionLabel: wmoWeatherLabel(code, locale),
       popMax: Math.round(popMax),
       precipSumMm,
       windMaxKmh: Math.round(windMaxKmh),
@@ -165,7 +167,7 @@ export function buildForecastPayload(
       feelsLikeC: Math.round(cur.apparent_temperature),
       humidityPct: Math.round(cur.relative_humidity_2m),
       weatherCode: cur.weather_code,
-      conditionLabel: wmoWeatherLabel(cur.weather_code),
+      conditionLabel: wmoWeatherLabel(cur.weather_code, locale),
       windKmh: Math.round(cur.wind_speed_10m),
       gustKmh: Math.round(cur.wind_gusts_10m ?? cur.wind_speed_10m),
     },
