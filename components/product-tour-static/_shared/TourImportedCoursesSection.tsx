@@ -30,6 +30,16 @@ type LoadedCourse = {
   sectionUi: TourProductSectionUiV1;
 };
 
+/** Screen-reader name for the course switch — was hardcoded English. */
+const COURSE_SWITCH_LABEL: Record<PrivateLocale, string> = {
+  ko: "코스 선택",
+  en: "Course",
+  ja: "コース選択",
+  zh: "线路选择",
+  "zh-TW": "路線選擇",
+  es: "Ruta",
+};
+
 type CourseLoadState =
   | { state: "loading" }
   | { state: "error" }
@@ -125,16 +135,20 @@ export function TourImportedCoursesSection({
 
   return (
     <div className="space-y-5" data-testid="imported-courses-section">
-      {/* 4 pills can outgrow narrow phones — scroll the row, never wrap/shrink. */}
-      <div className="max-w-full overflow-x-auto scrollbar-hide">
-        <SegmentedToggle
-          ariaLabel="Course"
-          value={course.id}
-          onChange={setCourseId}
-          className="whitespace-nowrap"
-          options={courses.map((c) => ({ value: c.id, label: c.chipLabel[locale] ?? c.chipLabel.en }))}
-        />
-      </div>
+      {/* A switch with one option is a control that promises a choice it does
+          not have — the Incheon charter imports a single course. 4 pills can
+          outgrow narrow phones, so the row scrolls, never wraps/shrinks. */}
+      {courses.length > 1 && (
+        <div className="max-w-full overflow-x-auto scrollbar-hide">
+          <SegmentedToggle
+            ariaLabel={COURSE_SWITCH_LABEL[locale] ?? COURSE_SWITCH_LABEL.en}
+            value={course.id}
+            onChange={setCourseId}
+            className="whitespace-nowrap"
+            options={courses.map((c) => ({ value: c.id, label: c.chipLabel[locale] ?? c.chipLabel.en }))}
+          />
+        </div>
+      )}
 
       {current?.state === "ready" ? (
         <TourTimelineSection
