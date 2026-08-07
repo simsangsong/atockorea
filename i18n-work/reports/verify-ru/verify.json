@@ -1,6 +1,6 @@
 {
   "locale": "ru",
-  "generatedAt": "2026-08-07T09:25:43.794Z",
+  "generatedAt": "2026-08-07T09:29:19.967Z",
   "reports": [
     {
       "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A1",
@@ -738,6 +738,54 @@
           "severity": "flag",
           "pointer": "/itineraryStops/2/galleryItems/3/caption",
           "message": "길이비 0.84 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-3",
+      "status": "flagged",
+      "segments": 54,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/3",
+          "message": "길이비 0.85 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/6",
+          "message": "길이비 1.39 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/smartNotes/tip",
+          "message": "길이비 0.72 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-4",
+      "status": "flagged",
+      "segments": 56,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/highlights/6",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/name",
+          "message": "길이비 0.77 가 ru 허용범위 0.85–1.3 밖"
         }
       ]
     },
