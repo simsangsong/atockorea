@@ -1,8 +1,11 @@
 # NEXT SESSION — de/fr/it/ru 번역 잔여 (2026-08-07 2차 갱신)
 
 **§1(픽업 SQL 적용·머지)은 끝났다.** PR #735 머지 — 기록으로만 읽어라.
-**§2 는 여전히 크레딧에 막혀 있다.** 이번 세션은 번역을 한 줄도 못 돌렸고,
-대신 **막힌 이유를 정확히 재고 · 다음 실행이 싸고 안전해지도록 준비만** 했다.
+**§2 는 여전히 크레딧에 막혀 있다.** 번역은 한 줄도 못 돌렸다.
+
+**그러나 오탐 6건은 게이트를 고쳐서 닫았고**(검증 실패 **9 → 0**), 그 덕에
+**크레딧 없이 2행을 발행했다** — `southwest…:fr`(세그먼트 525) · `from-busan-gyeongju…:it`(603).
+잔여는 **11행**이고 전부 번역이 실제로 필요한 것들이다.
 
 ---
 
@@ -58,11 +61,16 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 | `jeju-cruise-shore-excursion-small-group-tour` | ✅ | ✅ | ✅ | **없음** |
 | `jeju-eastern-unesco-spots-day-tour` | ✅ | ✅ | ✅ | **없음** |
 | `jeju-island-private-car-charter-tour` | ✅ | ✅ | ✅ | **없음** |
-| `jeju-southern-top-unesco-spots-tour` | **잘림** | ✅ | ✅ | **없음** |
-| `from-busan-gyeongju-ancient-capital-day-tour` | **잘림** | ✅ | **오탐** | **없음** |
-| `southwest-hallasan-osulloc-aewol` | **잘림+오탐** | **오탐** | **오탐** | **없음** |
+| `jeju-southern-top-unesco-spots-tour` | **잘림 1** | ✅ | ✅ | **없음** |
+| `from-busan-gyeongju-ancient-capital-day-tour` | **잘림 1 + 미번역 1** | ✅ | ✅ 신규 | **없음** |
+| `southwest-hallasan-osulloc-aewol` | **잘림 1** | ✅ 신규 | **미번역 7** | **없음** |
 
-**남은 것 = 13행** — ru 7 · de 3 · it 2 · fr 1.
+**남은 것 = 11행** — ru 7 · de 3 · it 1.
+**부족한 unit 은 총 88개**: ru 77 · it southwest 7 · de 4(잘림 3 + 미번역 1).
+
+⚠ de 매니페스트에는 `busan-*`·`incheon-*`·`jeju-cruise-*`·`jeju-eastern` 의 `pending` unit 이
+잔뜩 남아 있는데 **그 슬러그들은 이미 de 행이 있다**(다른 경로로 먼저 들어갔다). apply 가
+`행이 이미 존재` 로 건너뛰므로 **공백이 아니다.** 매니페스트 pending 수를 잔여로 세지 마라.
 
 🔴 **`jeju-cruise-*` 두 슬러그는 ru 매니페스트에 아예 없었다** — 그래서 원본이 5개로 셌다.
 **이번에 추출해 넣었다**(ru 49 → **77 unit**, 7슬러그 전부). 크레딧만 돌아오면 명령 하나로 덮인다.
@@ -111,21 +119,33 @@ de/fr/it 상태는 손대지 않았다(extract 는 `status: existing?.status ?? 
 **`translate.ts` 는 포인터 *집합*만 맞으면 통과시켜서 못 봤고, 몇 시간 뒤 verify 의
 G3(숫자 소실)가 대신 잡았다.** → §F 에서 고쳤다.
 
-### 남은 오탐 5건 — 고치지 말고 알고만 있어라
+### 오탐 6건 — ✅ **닫혔다**(사장님 승인 2026-08-07). 다시 열지 마라
 
-전부 같은 두 유형이고, 번역 자체는 **맞다**.
+전부 같은 세 유형이었고 번역 자체는 **맞았다**. G3 를 좁게 고쳐 통과시킨다.
 
-| 원문 | 번역 | 게이트가 보는 것 |
-|---|---|---|
-| `between 6:30 and 7:00 p.m.` | `entre 18 h 30 et 19 h 00` / `zwischen 18:30 und 19:00` | `6 7` 소실 (12→24시 변환) |
-| `open 24 hours` | `rund um die Uhr geöffnet` | `24` 소실 (독일어 관용구) |
-| `in the 1970s` | `negli anni Settanta` | `1970` 소실 (연대 표기) |
+| 원문 | 번역 | 게이트가 보던 것 | 처리 |
+|---|---|---|---|
+| `between 6:30 and 7:00 p.m.` | `entre 18 h 30 et 19 h 00` | `6 7` 소실 | **면제**(값이 같음이 증명됨) |
+| `open 24 hours` | `rund um die Uhr geöffnet` | `24` 소실 | fail → **flag** |
+| `in the 1970s` | `negli anni Settanta` | `1970` 소실 | fail → **flag** |
 
-포인터는 `southwest…:*:A1` 의 `/practicalAccordionItems/0/content/1`(de·fr·it 3건) ·
-`southwest…:de` 의 `itineraryStops/{0,6}/visitBasics/hours`(2건) ·
-`from-busan-gyeongju…:it` 의 `/itineraryStops/3/description`(1건) = **6건**.
+🔴 **`--partial` 로 가지 않은 이유 — 실측하고 결정을 뒤집었다.**
+원래 권고는 `--partial` 이었는데, blocked unit 이 들고 있는 세그먼트를 세어 보니
+**478개**였다(fr A1 88 · it A1 88 · de A1 88 · de itineraryStops 50 …).
+`apply.ts` 는 **INSERT-only 라 발행 후 갱신 경로가 없다** — 오탐 6개를 피하려고
+**478개를 영구히 영어로** 박는 거래였다. 게이트를 좁게 고치는 쪽이 압도적으로 싸다.
 
-**이 오탐이 막고 있는 것 = 4행**(southwest de·fr·it + gyeongju it). 사장님 결정 §G-4.
+🔴 **게이트를 무디게 만들지 않았다는 근거:**
+- 12시제는 **`H+12` 가 번역에 있고 `H` 는 없을 때만** 면제한다. 시각을 실제로 바꾸면
+  (`19:00`→`20:00`) 그대로 fail 이다.
+- 낱말 표기는 **원문의 리터럴 패턴**으로만 정한다 — `1970s`(s 필수) · `24 hours`.
+  맨 연도 `1771` 이나 `24 rooms` 는 면제 대상이 아니다. 로케일별 어휘표도 필요 없다.
+- `flag` 는 `PUBLISHABLE` 이라 발행되면서 **사람 감수 큐에는 남는다**(연대 축약과 같은 처리).
+- **뮤테이션 테스트 6개**가 위 경계를 못 박는다 — 특히 「잘린 번역은 여전히 fail」.
+- 그리고 이제 잘림은 **G3 가 아니라 `findTruncatedSegments` 가** 생성 시점에 잡는다(§F).
+  「G3 를 엄격히 둬야 잘림을 잡는다」는 근거가 그만큼 약해졌다.
+
+**결과: 검증 실패 de 3·fr 1·it 2 = 9 → 전부 0.**
 
 ---
 
@@ -144,22 +164,28 @@ npm run i18n:apply     -- --locale=ru --slugs=<slug> --apply   # INSERT-only
 - 포인터 집합이 어긋나면 어긋난 목록을 되돌려주며 3회까지 다시 시킨다.
 - **잘리면 잘린 포인터만 다시 시킨다**(신규 — §F).
 
-### 크레딧이 돌아오면 이 순서로
+### 크레딧이 돌아오면 이것만 하면 끝난다 (잔여 88 unit → 11행)
 
 ```bash
 # 1) ru 7슬러그 (77 unit) — 가장 큰 덩어리
 npm run i18n:translate -- --locale=ru --concurrency=3
 
-# 2) de 잘림 3건 — 출력 파일을 지워 뒀으므로 --force 없이 이것만 다시 돈다
+# 2) de 4 unit (잘림 3 + 미번역 1) — 파일을 지워 뒀으므로 이것만 다시 돈다
 npm run i18n:translate -- --locale=de --slugs=from-busan-gyeongju-ancient-capital-day-tour,jeju-southern-top-unesco-spots-tour,southwest-hallasan-osulloc-aewol
 
-# 3) 검증 → 발행
-npm run i18n:verify -- --locale=ru && npm run i18n:apply -- --locale=ru --apply
-npm run i18n:verify -- --locale=de && npm run i18n:apply -- --locale=de --apply
+# 3) it southwest 7 unit
+npm run i18n:translate -- --locale=it --slugs=southwest-hallasan-osulloc-aewol
+
+# 4) 검증 → 발행
+for L in ru de it; do npm run i18n:verify -- --locale=$L && npm run i18n:apply -- --locale=$L --apply; done
 ```
 
-🔴 **2번에 `--force` 를 붙이지 마라.** 붙이면 그 3슬러그의 **멀쩡한 유닛 30여 개까지** 다시
-번역해 크레딧을 버린다. 잘린 3개만 골라 파일을 지워 뒀다.
+🔴 **`--force` 를 붙이지 마라.** 붙이면 그 슬러그의 **멀쩡한 유닛 30여 개까지** 다시
+번역해 크레딧을 버린다. 다시 해야 할 것만 골라 파일을 지워 뒀다.
+
+🔴 **`--partial` 도 쓰지 마라.** `apply.ts` 는 INSERT-only라 **부분 발행한 행은 영원히
+그대로다.** 지금 남은 11행은 전부 「번역이 실제로 없는」 것이라, 부분 발행하면 그 자리가
+영구히 영어로 박힌다. 반드시 번역을 끝내고 커버리지 100% 로 발행하라.
 
 ---
 
@@ -193,7 +219,17 @@ npm run i18n:verify -- --locale=de && npm run i18n:apply -- --locale=de --apply
 3. **`stop_reason === 'max_tokens'` 판정** — 전엔 이게 잘린 JSON → `JSON parse` 오류로
    위장돼서 "unit 을 쪼개라" 는 처방이 안 보였다.
 
-게이트: `npx tsc --noEmit` **0** · `gates.test.ts` **75 pass**(잘림 케이스 5개 신규).
+### 그리고 G3 오탐 3유형을 좁게 닫았다 (§C)
+
+`clockNotationLosses` 에 **12시제 범위**(meridiem 이 범위 끝에만 붙는 경우) 추가 +
+`spelledOutLosses` 신설(`1970s`·`24 hours` → fail 대신 flag). 둘 다 상한이 있고,
+**로케일별 어휘표가 필요 없다** — 「어떤 낱말로 옮겼는가」가 아니라 「낱말로 옮겨지는 게
+정상인 자리인가」만 원문 패턴으로 묻기 때문이다.
+
+게이트: `npx tsc --noEmit` **0** · `gates.test.ts` **85 pass**(잘림 5 + G3 오탐 10 신규,
+그중 6개가 「경계를 넘으면 여전히 fail」 뮤테이션) · `lib/i18n`+`__tests__/audit` **524 pass**.
+검증 실패 **9 → 0**. 이 변경은 `apply-region-script-locale.ts`·`translate-poi-locales.ts`
+(ja/es/zh/zh-TW)도 같은 게이트를 쓰지만, fail→flag 하향과 값이 증명된 면제뿐이라 안전하다.
 
 **잘린 출력 파일 3개는 지웠다**(`git rm`) — 그래야 다음 실행이 `--force` 없이 그것만 다시 집는다.
 매니페스트에서 그 3 unit 은 `blocked` 로 남아 있는데 의도된 상태다: verify 는 출력 파일이
@@ -221,11 +257,8 @@ npm run i18n:verify -- --locale=de && npm run i18n:apply -- --locale=de --apply
    (08:10 → 약 19:00 = 10.8시간)보다 20분 적다. 11시간으로 올릴지는 결정 사항.
 2. **스몰그룹 하차.** 픽업만 호텔 도어투도어가 됐고 하차는 시내 4개 역 그대로다.
 3. **스몰그룹 점심·하차 시각은 유도값이다.**
-4. 🔴 **§C 오탐 6건을 어떻게 할지 — 이게 4행을 막고 있다.**
-   번역은 맞는데 게이트가 12→24시 변환·`rund um die Uhr`·`anni Settanta` 를 숫자 소실로 읽는다.
-   - (a) 게이트를 넓힌다 — **권장 안 함.** 잘림 3건을 잡아낸 게 바로 이 G3 다.
-   - (b) 해당 세그먼트만 원문 표기를 유지하도록 다시 시킨다 — 크레딧 들고, 번역이 어색해진다.
-   - (c) `--partial` 로 부분 발행한다 — 그 세그먼트만 영어로 남고 나머지는 발행된다.
-   **권고: (c).** 어차피 `TOUR_PRODUCT_FALLBACK_URL_LOCALES` 때문에 손님에게는 아직 안 보이고,
-   나중에 오픈할 때 영어로 남은 6개 세그먼트만 사람이 보면 된다. (a) 는 게이트를 무디게 만들고
-   (b) 는 맞는 번역을 일부러 어색하게 만든다.
+4. ✅ **§C 오탐 — 2026-08-07 사장님 승인으로 닫혔다.** 게이트를 좁게 고쳤고 2행이 발행됐다.
+   결정 과정에서 **`--partial` 권고를 실측으로 뒤집었다**(478 세그먼트 영구 영어 vs 오탐 6개).
+   다시 열지 마라.
+5. 🔴 **남은 진짜 게이트는 Anthropic API 크레딧 하나뿐이다.** 코드 잔여 없음.
+   충전되면 §D 의 4줄로 11행이 닫힌다.

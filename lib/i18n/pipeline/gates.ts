@@ -189,7 +189,52 @@ function clockNotationLosses(source: string, target: string): string[] {
     if (inTarget.has(twentyFour) || inTarget.has(String(h))) forgivable.push(String(h));
   }
 
+  // 12시제 **범위** — meridiem 이 범위의 끝에만 한 번 붙는다.
+  //   `between 6:30 and 7:00 p.m.` → `zwischen 18:30 und 19:00` · `entre 18 h 30 et 19 h 00`
+  // 위 규칙은 숫자에 **바로 붙은** meridiem 만 보므로 `6` 이 소실로 남았다
+  // (`7:00 p.m.` 조차 매치되는 건 `00` 이라 시간대 밖으로 걸러진다).
+  // 상한 두 겹: 원문에 실제로 있는 `H:MM` 토큰 수만큼만, 그리고 **`H+12` 가 번역에
+  // 있고 `H` 는 없을 때만**. 잘린 번역에는 `H+12` 가 없으니 면제되지 않는다.
+  if (/(?<!\d)\d{1,2}(?::\d{2})?\s*p\.?m\.?(?![\p{L}])/iu.test(source)) {
+    for (const m of source.matchAll(/(?<!\d)(\d{1,2}):\d{2}(?!\d)/g)) {
+      const h = Number(m[1]);
+      if (h < 1 || h > 12) continue;
+      const shifted = String((h % 12) + 12);
+      if (inTarget.has(shifted) && !inTarget.has(String(h))) forgivable.push(String(h));
+    }
+  }
+
   return forgivable;
+}
+
+/**
+ * 숫자가 **낱말로** 옮겨진 자리를 골라낸다. 값이 사라진 게 아니라 표기가 바뀐 것이라
+ * `fail` 이 아니라 `flag` 로 내린다 — 연대 축약(`shorthandYears`)과 똑같은 층위다.
+ * `flag` 는 `PUBLISHABLE` 이라 발행되면서 사람 감수 큐에는 남는다.
+ *
+ *   `in the 1970s`  → `negli anni Settanta`(it) · `in den Siebzigern`(de)
+ *   `open 24 hours` → `rund um die Uhr geöffnet`(de)
+ *
+ * 🔴 **범위는 원문의 리터럴 패턴으로만 정한다** — 번역에 무엇이 있는지로 정하지 않는다.
+ * 그래서 잘린 번역이 잃는 나머지 숫자는 전부 그대로 `fail` 이다(뮤테이션 테스트가 못박음).
+ * 로케일별 어휘표가 필요 없는 것도 이 때문이다: 「어떤 낱말로 옮겼는가」를 묻지 않고
+ * 「낱말로 옮겨지는 게 정상인 자리인가」만 묻는다.
+ */
+function spelledOutLosses(source: string, lost: string[]): string[] {
+  const remaining = [...lost];
+  const out: string[] = [];
+  const take = (n: string): void => {
+    const i = remaining.indexOf(n);
+    if (i >= 0) {
+      remaining.splice(i, 1);
+      out.push(n);
+    }
+  };
+  // 연대 — `1970s` 처럼 `s` 가 붙은 4자리만. 맨 연도(`1771`)는 해당 없다.
+  for (const m of source.matchAll(/(?<!\d)((?:18|19|20)\d0)s(?![\p{L}])/gu)) take(m[1]);
+  // 상시개방 관용구 — `open 24 hours`. 독일어는 숫자를 아예 안 쓴다.
+  for (const m of source.matchAll(/(?<!\d)(24)\s*hours?(?![\p{L}])/giu)) take(m[1]);
+  return out;
 }
 
 export function checkNumbers(source: string, target: string, pointer: string): Finding[] {
@@ -227,10 +272,13 @@ export function checkNumbers(source: string, target: string, pointer: string): F
   // 멀티셋 차집합으로 뺀다 — 원문이 `HH:00` 을 두 번 썼으면 `0` 도 두 개까지만
   // 면제된다. `filter(includes)` 로 두면 같은 값 전부가 한꺼번에 면제돼 버린다.
   const clockOnly = clockNotationLosses(source, target);
-  const lost = missingFrom(
+  const lostAfterClock = missingFrom(
     lostRaw.filter((n) => !shorthandYears.includes(n)),
     clockOnly,
   );
+  // 낱말로 옮겨진 자리는 fail 에서 빼고 아래에서 flag 로 따로 알린다.
+  const spelledOut = spelledOutLosses(source, lostAfterClock);
+  const lost = missingFrom(lostAfterClock, spelledOut);
 
   if (lost.length > 0) {
     findings.push({
@@ -246,6 +294,14 @@ export function checkNumbers(source: string, target: string, pointer: string): F
       severity: 'flag',
       pointer,
       message: `연대 축약 — 원문 [${shorthandYears.join(' ')}] 이 두 자리로 표기됐다 (현지 관례면 정상)`,
+    });
+  }
+  if (spelledOut.length > 0) {
+    findings.push({
+      gate: 'G3',
+      severity: 'flag',
+      pointer,
+      message: `숫자가 낱말로 표기됨 — 원문 [${spelledOut.join(' ')}] (anni Settanta·rund um die Uhr 류면 정상)`,
     });
   }
   if (added.length > 0) {
