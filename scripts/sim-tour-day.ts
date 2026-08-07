@@ -318,6 +318,31 @@ async function main() {
   const booking1 = await mk('Sim Alex', 'en', 2, tourA);
   const booking2 = await mk('Sim Yuki', 'ja', 4, tourB);
 
+  /**
+   * 🔴 A third booking, on a PRIVATE (vehicle-charter) tour, purely so the
+   * editable planner exists in the fixtures.
+   *
+   * `PlanEditorClient` branches on `tour.is_private`, which is
+   * `tours.price_type === 'vehicle'`. Both tours above are per-person
+   * small-group, so every walk of `/tour-mode/plan/...` has only ever rendered
+   * the VIEW-ONLY variant — "this tour runs a set route planned by our team",
+   * eight controls, nothing to press. That variant was then recorded as a
+   * hierarchy defect, when in fact the editable planner (the one with tabs, a
+   * picker and a submit bar) had never been looked at at all.
+   *
+   * Left undefined when no private tour is active rather than pointed at a join
+   * tour, so the harness reports "not measured" instead of measuring the wrong
+   * variant under the right name.
+   */
+  const { data: privateTour } = await service
+    .from('tours')
+    .select('id')
+    .eq('price_type', 'vehicle')
+    .eq('is_active', true)
+    .limit(1)
+    .maybeSingle();
+  const bookingPrivate = privateTour?.id ? await mk('Sim Priya', 'en', 3, String(privateTour.id)) : null;
+
   const token1 = signCustomerRoomToken({ bookingId: booking1, displayName: 'Sim Alex', tourDate }).token;
   const token2 = signCustomerRoomToken({ bookingId: booking2, displayName: 'Sim Yuki', tourDate }).token;
   const guideToken = signGuideRoomToken({ tourId: tourA, tourDate, displayName: 'Sim Guide' }).token;
@@ -386,6 +411,14 @@ async function main() {
     guideUrl: `/tour-mode/guide?rt=${encodeURIComponent(guideToken)}`,
     joinUrl,
     companionUrl,
+    ...(bookingPrivate
+      ? {
+          bookingPrivate,
+          planEditableUrl: `/tour-mode/plan/${bookingPrivate}?rt=${encodeURIComponent(
+            signCustomerRoomToken({ bookingId: bookingPrivate, displayName: 'Sim Priya', tourDate }).token,
+          )}`,
+        }
+      : {}),
     adminUserId,
     supabaseStorageKey: `sb-${projectRef}-auth-token`,
     adminSession: signIn.session,
