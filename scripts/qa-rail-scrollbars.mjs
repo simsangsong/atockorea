@@ -132,6 +132,66 @@ for (const [mode, ctx] of Object.entries(contexts)) {
     judged += 1;
     console.log(`\n${mode.toUpperCase()} ${p} — 넘치는 레일 ${rails.length}개`);
 
+    // ── 화살표 ────────────────────────────────────────────────────────────
+    // 데스크톱에선 눌러서 실제로 움직여야 하고, 터치에선 아예 없어야 한다
+    // (`display:none` — 안 그러면 안 보이는 버튼이 탭 순서에 남는다).
+    const arrows = page.locator('.rail-arrow');
+    const arrowCount = await arrows.count();
+    const visibleArrows = [];
+    for (let i = 0; i < arrowCount; i += 1) {
+      if (await arrows.nth(i).isVisible()) visibleArrows.push(i);
+    }
+    console.log(`  화살표: DOM ${arrowCount}개 · 보이는 것 ${visibleArrows.length}개`);
+
+    if (mode === 'mobile' && visibleArrows.length > 0) {
+      defects.push(`[${p}] 터치에서 화살표가 보인다 (${visibleArrows.length}개)`);
+    }
+
+    if (mode === 'desktop' && visibleArrows.length > 0) {
+      /*
+       * 가장 많이 숨긴 레일의 "다음" 화살표를 눌러 실제로 움직이는지 잰다.
+       * 🔴 `element.click()` 로 직접 부른다 — Playwright 의 `.click()` 은 가림/안정성
+       * 검사에 걸려 타임아웃 나는데, 그건 이 하니스가 묻는 질문이 아니다(가림은
+       * `qa-tap-reachability` 담당). 여기서 묻는 건 "핸들러가 레일을 굴리는가" 다.
+       * 그리고 실패를 `.catch(()=>{})` 로 삼키면 조용한 초록이 된다.
+       */
+      const result = await page.evaluate(async () => {
+        const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+        const rails = [...document.querySelectorAll('*')].filter((e) => {
+          const cs = getComputedStyle(e);
+          return (
+            (cs.overflowX === 'auto' || cs.overflowX === 'scroll') &&
+            e.scrollWidth - e.clientWidth > 200 &&
+            e.parentElement?.querySelector('.rail-arrow')
+          );
+        });
+        if (!rails.length) return { skipped: 'no rail with arrows over 200px' };
+        rails.sort((a, b) => b.scrollWidth - b.clientWidth - (a.scrollWidth - a.clientWidth));
+        const rail = rails[0];
+        // 마지막 화살표 = "다음" (아직 안 굴렸으면 그것 하나뿐이다).
+        const candidates = [...rail.parentElement.querySelectorAll('.rail-arrow')];
+        const target = candidates[candidates.length - 1];
+        if (!target) return { skipped: 'rail has no arrow sibling' };
+        const before = rail.scrollLeft;
+        target.click();
+        await wait(800);
+        return { before, after: rail.scrollLeft, hidden: rail.scrollWidth - rail.clientWidth };
+      });
+      if (result.skipped) {
+        console.log(`  화살표 클릭: 건너뜀 (${result.skipped})`);
+      } else {
+        const moved = result.after !== result.before;
+        console.log(
+          `  화살표 클릭: ${result.hidden}px 숨긴 레일에서 scrollLeft ${result.before} → ${result.after} ${moved ? '✓' : '✗'}`,
+        );
+        if (!moved) {
+          defects.push(
+            `[${p}] 화살표를 눌러도 레일이 안 움직인다 (scrollLeft ${result.before} → ${result.after})`,
+          );
+        }
+      }
+    }
+
     for (const r of rails) {
       const isVisible = visible(r);
       const wanted = mode === 'desktop';

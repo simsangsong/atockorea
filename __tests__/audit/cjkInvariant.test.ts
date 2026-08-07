@@ -187,8 +187,16 @@ const CERTAIN_CEILING = 494;
  * button has no break opportunity to place. ChatFeed's identical `{emoji}`
  * reaction button is already inside this 429 for the same shape — counting
  * this one keeps the population honest rather than carving an exception.
+ *
+ * 430 → 431 on 2026-08-07: `RailArrows.tsx` — the prev/next buttons on
+ * horizontal rails (사장님 지시 "좌우 화살표 버튼도 넣도록"). Same `control` +
+ * unresolved-child shape as the two above, and again the source CAN tell: the
+ * button's only child is a `lucide-react` chevron `<svg>`. Its Korean text
+ * (`이전`/`다음`) lives in the `aria-label` **attribute**, which the screen
+ * reader speaks and the layout engine never boxes — there is no text run to
+ * break. Counted rather than excepted, for the same reason as the emoji tray.
  */
-const SUSPECT_CEILING = 430;
+const SUSPECT_CEILING = 431;
 
 describe('ratchet — the count that grew unwatched now has a ceiling', () => {
   const hits: CjkBreakHit[] = [];

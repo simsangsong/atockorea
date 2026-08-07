@@ -1,8 +1,10 @@
 'use client';
 
+import { useRef } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ClockIcon, MapIcon, StarIcon } from '@/components/Icons';
+import { RailArrows } from '@/components/ui/RailArrows';
 import { useCurrency } from '@/lib/currency';
 import { useTranslations } from '@/lib/i18n';
 import { MYPAGE_FOCUS_RING, MYPAGE_SECTION_TITLE, MYPAGE_SURFACE_PAGE } from '@/lib/mypage-ui';
@@ -28,6 +30,7 @@ interface RecommendedToursProps {
 export function RecommendedTours({ tours }: RecommendedToursProps) {
   const t = useTranslations();
   const { formatPrice } = useCurrency();
+  const railRef = useRef<HTMLDivElement>(null);
 
   return (
     <section>
@@ -54,8 +57,9 @@ export function RecommendedTours({ tours }: RecommendedToursProps) {
           <p className="text-[13px] text-slate-500">{t('mypage.landing.recommendations.empty')}</p>
         </div>
       ) : (
-        <div className="-mx-1 min-w-0 px-1 sm:mx-0 sm:px-0">
+        <div className="relative -mx-1 min-w-0 px-1 sm:mx-0 sm:px-0">
           <div
+            ref={railRef}
             className={cn(
               'snap-x snap-mandatory overflow-x-auto overscroll-x-contain scroll-smooth pb-2',
               '[scrollbar-gutter:stable] rail-scrollbar',
@@ -127,6 +131,7 @@ export function RecommendedTours({ tours }: RecommendedToursProps) {
               })}
             </div>
           </div>
+          <RailArrows scrollerRef={railRef} className="top-[42%]" />
         </div>
       )}
     </section>

@@ -1,13 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 // Avoid `./components/**/*`: v0 export folders `components/b_<id>/` include their own node_modules;
 // Tailwind would scan that tree and dev compile of `/` can hang.
+//
+// 🔴 An allowlist means a NEW folder is invisible until someone remembers this
+// file, and the failure is silent: the class sits in the DOM with no rule
+// behind it. `tour-ops` lost its whole stylesheet that way (comment below), and
+// on 2026-08-07 `tours-list` did the same — a `top-[38%]` on the `/tours/list`
+// shelf arrows compiled to nothing, so `top` fell back to `auto` and the
+// buttons dropped to the bottom edge of the rail. Caught by measuring the
+// rendered `top` (363px = the rail's own height), not by reading the source.
+// Gate: `__tests__/audit/railScrollbar.test.ts` ⑥ keeps this list complete.
 const COMPONENT_SUBDIRS = [
   'admin',
+  'analytics',
   'app-shell',
   'auth',
   'charts',
   'checkout',
   'Detailpage',
+  'legal',
+  'ops',
+  'pwa',
+  'tours-list',
   'home',
   'itinerary',
   'itinerary-builder',

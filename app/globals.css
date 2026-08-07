@@ -430,6 +430,16 @@ body.lang-tour-app {
   display: none;
 }
 
+/* Prev/next buttons (`components/ui/RailArrows.tsx`) — default off.
+   🔴 `display: none`, not `opacity`/`visibility`: it must also drop the buttons
+   out of the tab order on touch. A focusable control nobody can see is the
+   keyboard trap this repo already paid for once (`inert` sweep, PR #762).
+   ⚠ This rule has to stay ABOVE the media block — same specificity, so the
+   later rule wins, and putting it after would keep the arrows hidden forever. */
+.rail-arrow {
+  display: none;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .rail-scrollbar {
     scrollbar-width: thin; /* Firefox */
@@ -459,6 +469,12 @@ body.lang-tour-app {
   .rail-scrollbar:hover::-webkit-scrollbar-thumb,
   .rail-scrollbar::-webkit-scrollbar-thumb:hover {
     background-color: rgb(120 113 108 / 0.75); /* stone-500 */
+  }
+
+  /* Same pointer gate as the bar: a mouse gets a click target, a finger keeps
+     the clean rail it can swipe. */
+  .rail-arrow {
+    display: inline-flex;
   }
 }
 
