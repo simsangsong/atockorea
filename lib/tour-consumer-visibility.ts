@@ -223,6 +223,20 @@ export const CONSUMER_BLOCKED_TOUR_SLUGS = new Set<string>([
   // re-opening is one line here plus the DB flags, should it turn out to be a
   // real SKU under a name the owner uses for something else.
   "seoul-seoraksan-national-park-sokcho-beach-day-trip",
+  // ── Retired 2026-08-07 (owner instruction, from the live /tours/list) ──────
+  // Two products taken off sale while the de/fr/it/ru translation track opens
+  // the remaining live catalogue. Both halves flipped in the same breath, since
+  // the DB flag alone leaves the card on /tours/list (see the measured table
+  // above): tours.is_active=false + every tour_product_pages.is_published=false.
+  //
+  // Translation is deliberately NOT done for these two — the owner's rule is
+  // that anything already private, or on its way private, waits. Only the live
+  // catalogue gets the four locales, and the URL gate opens once that set is
+  // complete. Re-opening either one therefore also re-opens a translation gap.
+  //
+  // Re-open = remove the line here AND flip both DB flags back.
+  "seoul-private-nami-morning-calm-petite-france",
+  "pocheon-sanjeong-lake-herb-island-art-valley",
 ]);
 
 function normalizeTourIdForBlocklist(id: string): string {

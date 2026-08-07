@@ -21,17 +21,25 @@ CLAUDE.md 맨 위 규칙이다. `scripts/i18n/translate.ts` 는 `--yes-bill-the-
 | `messages/*.json` | 기존 키 **값만** 채운다. 키 추가·삭제 금지(파이프라인이 EN 키를 덮은 전례 있음 — `[[feedback-i18n-translate-script-drops-keys]]`). |
 | `match_pois` | 🔴 **`names_other_locales` 는 게이트가 없어 쓰는 즉시 손님에게 반영된다. 절대 손대지 마라.** `content_locales` 는 별개 컬럼이지만 **§4 에서 안전성부터 확인**하고 착수한다. |
 
-### 0-3. ✅ 사장님 결정 3건 — **전부 정해졌다 (2026-08-07)**
+### 0-3. ✅ 사장님 결정 — **전부 정해졌다 (2026-08-07)**
 
-1. **은퇴 14종은 하지 않는다.** 라이브 23종만. → 대상 **39행**.
-2. **§4 POI — 실측 결과 번역 작업이 아니었다.** 번역은 이미 쓰여 있고 **approved 가 0**이다.
-   할 일은 「433건 검수를 열지」 사장님 판단 하나. **이 플랜의 작업 범위에서 뺀다.**
-3. **§5 챗봇/왓츠앱 — 실측 결과 이것도 번역 작업이 아니었다.** 청크는 파생물이고
-   생성기가 **6로케일 타입에 묶여 있다**. **손대지 않는다** — §2·§3 를 채우면 따라온다.
+1. 🔴 **번역 대상은 「지금 라이브인 상품」뿐이다.**
+   **이미 비공개인 것도, 비공개 예정인 것도 번역을 보류한다.** 판정은 매번 DB 로 다시 하라 —
+   병행 세션이 상품을 열고 닫는다(이 세션에서만 가평이 남의 손에 닫혔고, 수원 3종·설악 3종은
+   내 워크트리가 낡아서 「막혀 있다」고 잘못 볼 뻔했다. §6-5-8 참조).
+2. **비공개 전환 2종(2026-08-07 지시):** `seoul-private-nami-morning-calm-petite-france` ·
+   `pocheon-sanjeong-lake-herb-island-art-valley`. **두 쪽 다 내렸다** —
+   `tours.is_active=false` + 전 로케일 `is_published=false` + `CONSUMER_BLOCKED_TOUR_SLUGS`.
+   (DB 플래그만으로는 `/tours/list` 카드가 남는다 — 그 실측표가 그 파일 안에 있다.)
+   **이 둘은 번역하지 않는다.**
+3. 🔴 **POI 는 상품과 무관하게 전부 번역한다** — §4. 앞서 「범위에서 뺀다」고 적었던 것을
+   사장님 지시로 **되돌린다.**
+4. **§5 챗봇/왓츠앱은 손대지 않는다** — 청크는 파생물이고 생성기가 6로케일 타입에 묶여 있다.
+   §2·§3 를 채우면 따라온다.
 
-🔴 **결론: 남은 작업은 §3(messages)과 §2(투어 콘텐츠) 둘뿐이다.**
-표면 6개를 셌는데 실제로 번역해야 하는 건 2개였다 — **나머지는 「채우는 문제」가 아니라
-「게이트를 여는 문제」였다.** 이 트랙의 지배적 결함 유형(CLAUDE.md 「선언만 되고 안 읽힘」)과 같은 모양이다.
+**게이트 오픈 순서(사장님 지시):** 라이브 상품 + 신규 부산 프라이빗 번역을 **끝내고 나서**
+`TOUR_PRODUCT_FALLBACK_URL_LOCALES` 를 연다. 🔴 **먼저 열면 안 된다** — 지금 라이브 20종 중
+행이 없는 게 7종이라, 여는 순간 그 7종이 어떻게 되는지(영어 폴백인지 깨지는지) 미검증이다.
 
 ---
 
@@ -52,7 +60,27 @@ CLAUDE.md 맨 위 규칙이다. `scripts/i18n/translate.ts` 는 `--yes-bill-the-
 
 ## §2 표면 B — 투어 콘텐츠 (가장 큰 덩어리)
 
-### 2-a. 판매중 23슬러그 — **39행 부족** (우선순위 1)
+### 🔴 2-a′. **최종 범위 (2026-08-07 갱신) — 라이브 20종 · 35행**
+
+비공개 2종을 내린 뒤 실측. 판정 쿼리는 `is_published AND tours.is_active` 조인이다
+(둘 중 하나만 보면 틀린다).
+
+| 그룹 | 슬러그 | 부족 |
+|---|---|---|
+| **G2** ru 만 | `from-busan-gyeongju` · `jeju-cruise-small-group` · `jeju-eastern` · `jeju-island-private-car` · `jeju-southern` | 5 |
+| **G1** | `southwest-hallasan-osulloc-aewol` | it, ru = 2 |
+| **G3** 🔴 미추출 | `busan-small-group-sightseeing-tour-cruise-passengers` · `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` · `seoul-seoraksan-nami-island-morning-calm-day-tour` · `seoul-suburbs-private-chartered-car-10hr` · `seoul-suwon-hwaseong-folk-village-starfield-library` · `seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` · `seoul-suwon-hwaseong-waujeongsa-starfield` | 7×4 = **28** |
+| **G4** | 다른 세션이 추가중인 **부산 프라이빗 투어** — 나타나면 4행 | +4 |
+
+**완비 6종:** busan-cruise-bus · busan-private-charter-cruise · busan-small-group-yonggungsa ·
+busan-top-attractions · incheon-seoul-private-car · jeju-grand-highlights ·
+seoul-winter-eobi. (이 목록도 매번 다시 재라 — 병행 세션이 바꾼다.)
+
+⚠ **G3 7종은 `i18n:extract` 부터** 해야 한다. G1·G2 의 84 unit 은 이미 `in/` 에 있다.
+
+---
+
+### 2-a. (기록) 착수 시점 실측 — 판매중 23슬러그 · 39행
 
 | 그룹 | 슬러그 | 부족 | 상태 |
 |---|---|---|---|
@@ -123,9 +151,20 @@ G3 착수 전에 §0-3 결정을 받아 범위를 확정하라.
 | **approved** | 114 | 77 | 77 | 77 | 77 | **0** | **0** | **0** | **0** |
 
 **433개 POI-로케일 항목이 안 열린 검수 게이트 뒤에 쌓여 있다.**
-→ **권고: 여기서 번역하지 마라.** 아무것도 approved 가 아닌데 더 채우는 건 의미가 없다.
-남은 진짜 공백(de 12·fr 7·it 13·ru 35 = 67)도 **게이트가 열린 뒤에** 채우는 게 순서다.
-**사장님께 올릴 것은 「433건 검수 열지 말지」 하나다**(코드 작업 아님).
+🔴 **사장님 지시(2026-08-07): POI 는 상품과 무관하게 전부 번역한다.**
+위의 「번역하지 마라」 권고는 **철회됐다.** 상품 범위(라이브만)와 달리 POI 에는 제한이 없다.
+
+**할 일 두 가지 — 성격이 다르니 섞지 마라:**
+
+| | 무엇 | 규모 | 성격 |
+|---|---|---|---|
+| **P1** | 빠진 로케일 채우기 | de 12 · fr 7 · it 13 · ru 35 · ko 11 · ja 48 = **126** | 번역 (내가 한다) |
+| **P2** | 이미 쓰여 있는 433건 검수 | de 113 · fr 118 · it 112 · ru 90 | **사람 판단** (기계번역이 손님에게 나간다) |
+
+**P1 은 지금 해도 된다** — approved 가 아니면 서빙되지 않으므로 `tour_product_pages` 와 같은
+스테이징이다. **P2 는 사장님 결정**이고, P1 을 끝낸 뒤 한 번에 올리는 편이 낫다.
+
+⚠ **`names_other_locales` 는 여전히 손대지 마라** — 그쪽은 게이트가 없다.
 
 ---
 
@@ -207,6 +246,14 @@ node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.
 5. **`⟦G숫자⟧` 토큰은 그대로.** 번역·공백 삽입 금지(G2 즉시 실패).
 6. **갤러리 캡션처럼 고유명사뿐인 문자열은 원문과 같아도 정상**이다(G9 flag, 발행됨).
 7. **매니페스트 `pending` 을 잔여로 세지 마라** — 이미 DB 행이 있는 슬러그가 섞여 있다. **판정은 DB 로.**
+8. 🔴 **`lib/tour-consumer-visibility.ts` 를 고치기 전에 반드시 `git fetch origin main` 하라.**
+   이 세션에서 워크트리가 **52커밋 뒤처져** 있었고, 그 낡은 블록리스트에는 수원 3종·설악 3종이
+   **아직 막힌 것으로** 들어 있었다(PR #748·#753 이 재오픈한 것들이다). 그대로 고쳐 머지했으면
+   **방금 연 상품 6종을 다시 닫을 뻔했다.** 스크린샷의 라이브 목록과 파일이 어긋나면
+   **파일이 낡은 것을 먼저 의심하라.**
+9. **가시성은 두 쪽이 한 세트다** — `tours.is_active` + 전 로케일 `is_published` + 블록리스트.
+   DB 플래그만 내리면 `/tours/list` 카드가 그대로 남는다(그 실측표가 그 파일 안에 있다).
+   그리고 **라이브 판정 쿼리는 두 테이블을 조인**해야 한다: `is_published AND tours.is_active`.
 
 ---
 
