@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
+import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
 
 function isJejuEastTour(tour: { city?: string | null; slug?: string | null; title?: string | null }) {
   const city = (tour.city || '').toLowerCase();
@@ -59,7 +60,13 @@ export async function GET(
       .eq('tour_id', tourId)
       .gte('tour_date', start.toISOString().split('T')[0])
       .lte('tour_date', end.toISOString().split('T')[0])
-      .eq('is_available', true)
+      // 🔴 Do NOT filter on is_available. Closed days are exactly the rows we
+      // need: a date with no entry in `availabilityMap` falls through to the
+      // "no inventory record" branch below and is published as OPEN with the
+      // default capacity. Filtering them out therefore turned every day an
+      // operator had explicitly closed back into a bookable one. The map
+      // construction already reads `inv.is_available`, so keeping the rows is
+      // enough to honour the closure.
       .order('tour_date', { ascending: true });
 
     // Get all bookings for the date range
@@ -115,6 +122,22 @@ export async function GET(
     while (currentDate <= end) {
       const dateStr = currentDate.toISOString().split('T')[0];
       dates.push(dateStr);
+
+      // Business rule: fixed-schedule products do not run off their departure
+      // weekdays. Checked before the inventory map is consulted, and it wins:
+      // a date the tour does not depart on is closed no matter what capacity
+      // an inventory row claims.
+      if (isDateOffDepartureDay(tour?.slug, dateStr)) {
+        availabilityMap[dateStr] = {
+          available: false,
+          availableSpots: 0,
+          maxCapacity: availabilityMap[dateStr]?.maxCapacity ?? null,
+          priceOverride: availabilityMap[dateStr]?.priceOverride ?? null,
+          reason: departureDayReason(tour?.slug),
+        };
+        currentDate.setDate(currentDate.getDate() + 1);
+        continue;
+      }
 
       // Business rule: Jeju East tours are not bookable on Mondays
       const weekday = currentDate.getUTCDay(); // 0=Sun, 1=Mon, ...

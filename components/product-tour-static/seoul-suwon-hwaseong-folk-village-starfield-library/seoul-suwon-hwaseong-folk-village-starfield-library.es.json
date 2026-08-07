@@ -34,7 +34,7 @@
     "reviewCount": 0,
     "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
     "subtitle": "Una excursión cultural de día en grupo reducido desde Seúl hasta la provincia de Gyeonggi, que abarca cuatro facetas contrastantes del patrimonio coreano y la vida moderna: la declarada Patrimonio de la Humanidad…",
-    "region": "Gyeonggi-do (al sur de Seúl)",
+    "region": "Suwon y Yongin",
     "duration": "10 horas",
     "stopsCount": 6,
     "badges": [
@@ -68,7 +68,7 @@
     ],
     "meta": {
       "duration": "10 horas",
-      "region": "Gyeonggi-do (al sur de Seúl)",
+      "region": "Suwon y Yongin",
       "stops": "6 paradas",
       "rating": 0,
       "ratingStars": 5
@@ -1224,14 +1224,16 @@
         "time": "08:00",
         "name": "Estación Hongik Univ. (Salida 8)",
         "type": "station",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
-        "name": "Estación Myeongdong (Salida 2 o 4)",
+        "name": "Estación Myeongdong (Salida 2)",
         "type": "station",
+        "note": "Llegue 10 minutos antes de la hora de salida.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1239,21 +1241,23 @@
     "return": [
       {
         "order": 1,
+        "time": "18:00",
+        "name": "Estación Myeongdong (Salida 2)",
+        "type": "station",
+        "lat": 37.56099,
+        "lng": 126.98619
+      },
+      {
+        "order": 2,
+        "time": "18:30",
         "name": "Estación Hongik Univ. (Salida 8)",
         "type": "station",
         "lat": 37.55753,
         "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "Estación Myeongdong (Salida 4)",
-        "type": "station",
-        "lat": 37.56099,
-        "lng": 126.98619
       }
     ],
     "notes": [
-      "Llega 10 minutos antes. No se podrá atender a quienes lleguen tarde y no se realizarán reembolsos."
+      "Puntos de encuentro fijos; no se ofrece recogida en el hotel. No se podrá atender a quienes lleguen tarde y no habrá reembolso."
     ]
   },
   "matching_profile": {

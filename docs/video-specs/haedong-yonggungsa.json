@@ -90,8 +90,8 @@
       "kind": "clip",
       "src": "A",
       "in": 4.5,
-      "out": 93,
-      "speed": 8,
+      "out": 11.873,
+      "speed": 2,
       "title": "Through the food stalls",
       "ramp": {
         "seconds": 0.6
@@ -102,12 +102,38 @@
       }
     },
     {
+      "id": "02s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 21.5,
+      "out": 28.873,
+      "speed": 2,
+      "title": "Through the food stalls (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "02s2",
+      "kind": "clip",
+      "src": "A",
+      "in": 85.627,
+      "out": 93,
+      "speed": 2,
+      "title": "Through the food stalls (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "03",
       "kind": "clip",
       "src": "A",
       "in": 93,
       "out": 100,
-      "speed": 4,
+      "speed": 2,
       "title": "Approaching the guardians",
       "ramp": {
         "seconds": 0.6
@@ -194,11 +220,24 @@
       "kind": "clip",
       "src": "A",
       "in": 106,
-      "out": 117,
-      "speed": 4,
+      "out": 108.75,
+      "speed": 2,
       "title": "Onward to the stele",
       "ramp": {
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "07s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 114.25,
+      "out": 117,
+      "speed": 2,
+      "title": "Onward to the stele (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -226,11 +265,24 @@
       "kind": "clip",
       "src": "A",
       "in": 117,
-      "out": 137,
-      "speed": 6,
+      "out": 120.333,
+      "speed": 2,
       "title": "To the main gate",
       "ramp": {
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "09s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 133.667,
+      "out": 137,
+      "speed": 2,
+      "title": "To the main gate (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -259,11 +311,24 @@
       "kind": "clip",
       "src": "A",
       "in": 139,
-      "out": 174.9,
-      "speed": 8,
+      "out": 143.488,
+      "speed": 2,
       "title": "Down through the cave passage",
       "ramp": {
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "11s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 170.413,
+      "out": 174.9,
+      "speed": 2,
+      "title": "Down through the cave passage (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -289,13 +354,26 @@
       "kind": "clip",
       "src": "A",
       "in": 180,
-      "out": 218,
-      "speed": 8,
+      "out": 184.75,
+      "speed": 2,
       "title": "Down the 108 steps",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.51)"
+    },
+    {
+      "id": "13s1",
+      "kind": "clip",
+      "src": "A",
+      "in": 213.25,
+      "out": 218,
+      "speed": 2,
+      "title": "Down the 108 steps (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "14",
@@ -318,12 +396,25 @@
       "kind": "clip",
       "src": "B",
       "in": 0,
-      "out": 18,
-      "speed": 8,
+      "out": 2.25,
+      "speed": 2,
       "title": "Out onto the rocks",
       "ramp": {
         "seconds": 0.6
       },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "15s1",
+      "kind": "clip",
+      "src": "B",
+      "in": 15.75,
+      "out": 18,
+      "speed": 2,
+      "title": "Out onto the rocks (cont.)",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
@@ -359,12 +450,25 @@
       "kind": "clip",
       "src": "C",
       "in": 0,
-      "out": 20,
-      "speed": 8,
+      "out": 2.5,
+      "speed": 2,
       "title": "Back down the steps",
       "ramp": {
         "seconds": 0.6
       },
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
+      "id": "17s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 17.5,
+      "out": 20,
+      "speed": 2,
+      "title": "Back down the steps (cont.)",
       "transition": {
         "kind": "dissolve",
         "seconds": 0.8
@@ -415,7 +519,7 @@
       "src": "C",
       "in": 34,
       "out": 44.1,
-      "speed": 4,
+      "speed": 2,
       "title": "Off the bridge",
       "ramp": {
         "seconds": 0.6
@@ -426,8 +530,8 @@
       "kind": "clip",
       "src": "C",
       "in": 44.1,
-      "out": 86,
-      "speed": 6,
+      "out": 51.083,
+      "speed": 2,
       "title": "Up to the main hall",
       "ramp": {
         "seconds": 0.6
@@ -438,12 +542,25 @@
       }
     },
     {
+      "id": "20s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 79.017,
+      "out": 86,
+      "speed": 2,
+      "title": "Up to the main hall (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "21",
       "kind": "clip",
       "src": "C",
       "in": 86,
       "out": 92,
-      "speed": 4,
+      "speed": 2,
       "title": "Daeungbojeon Hall",
       "ramp": {
         "seconds": 0.6
@@ -481,11 +598,24 @@
       "kind": "clip",
       "src": "C",
       "in": 100,
-      "out": 124.3,
-      "speed": 8,
+      "out": 103.038,
+      "speed": 2,
       "title": "Around the hall",
       "ramp": {
         "seconds": 0.6
+      }
+    },
+    {
+      "id": "22s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 121.263,
+      "out": 124.3,
+      "speed": 2,
+      "title": "Around the hall (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -506,8 +636,8 @@
       "kind": "clip",
       "src": "C",
       "in": 141.5,
-      "out": 160,
-      "speed": 8,
+      "out": 143.813,
+      "speed": 2,
       "title": "Back to the steps",
       "ramp": {
         "seconds": 0.6
@@ -515,6 +645,19 @@
       "snapped": {
         "from": 142,
         "pan": 0.619
+      }
+    },
+    {
+      "id": "22cs1",
+      "kind": "clip",
+      "src": "C",
+      "in": 157.688,
+      "out": 160,
+      "speed": 2,
+      "title": "Back to the steps (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
       }
     },
     {
@@ -533,8 +676,8 @@
       "kind": "clip",
       "src": "C",
       "in": 166,
-      "out": 193,
-      "speed": 8,
+      "out": 169.375,
+      "speed": 2,
       "title": "The climb",
       "ramp": {
         "seconds": 0.6
@@ -542,17 +685,43 @@
       "nosnap": "no pan within ±1.5s (max 0.25)"
     },
     {
+      "id": "24s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 189.625,
+      "out": 193,
+      "speed": 2,
+      "title": "The climb (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
+    },
+    {
       "id": "25",
       "kind": "clip",
       "src": "C",
       "in": 193,
-      "out": 209,
-      "speed": 4,
+      "out": 197,
+      "speed": 2,
       "title": "Reaching the statue",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.28)"
+    },
+    {
+      "id": "25s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 205,
+      "out": 209,
+      "speed": 2,
+      "title": "Reaching the statue (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "26",
@@ -583,13 +752,26 @@
       "kind": "clip",
       "src": "C",
       "in": 226,
-      "out": 290,
-      "speed": 8,
+      "out": 234,
+      "speed": 2,
       "title": "Back down",
       "ramp": {
         "seconds": 0.6
       },
       "nosnap": "no pan within ±1.5s (max 0.48)"
+    },
+    {
+      "id": "28s1",
+      "kind": "clip",
+      "src": "C",
+      "in": 282,
+      "out": 290,
+      "speed": 2,
+      "title": "Back down (cont.)",
+      "transition": {
+        "kind": "dissolve",
+        "seconds": 0.8
+      }
     },
     {
       "id": "29",
@@ -643,7 +825,7 @@
       "src": "C",
       "in": 312,
       "out": 320,
-      "speed": 4,
+      "speed": 2,
       "title": "Toward the exit",
       "ramp": {
         "seconds": 0.6

@@ -4,6 +4,7 @@ import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
 import { tourListPricesToUsdSync } from '@/lib/tour-list-price-usd.server';
 import { ACTIVE_BOOKING_STATUSES } from '@/lib/constants/booking-status';
 import { isTourIdBlockedFromConsumerSurfaces } from '@/lib/tour-consumer-visibility';
+import { departureDayReason, isDateOffDepartureDay } from '@/lib/tour-departure-days';
 import {
   getSeasonalOperatingWindow,
   isDateOutsideSeasonalWindow,
@@ -84,6 +85,22 @@ export async function GET(
       });
     }
 
+    // Business rule: fixed-schedule products do not run off their departure weekdays.
+    if (isDateOffDepartureDay(tour.slug, date)) {
+      return NextResponse.json({
+        available: false,
+        availableSpots: 0,
+        maxCapacity: null,
+        requestedGuests: guests,
+        canAccommodate: false,
+        price: listUnitUsd,
+        priceOverride: null,
+        date,
+        tourId,
+        reason: departureDayReason(tour.slug),
+      });
+    }
+
     // Business rule: season-locked tours are bookable only inside their annual operating window.
     const seasonalWindow = getSeasonalOperatingWindow(tour.slug);
     if (seasonalWindow && isDateOutsideSeasonalWindow(tour.slug, date)) {
@@ -107,7 +124,10 @@ export async function GET(
       .select('*')
       .eq('tour_id', tourId)
       .eq('tour_date', date)
-      .eq('is_available', true)
+      // 🔴 Do NOT filter on is_available — the same defect the range route
+      // carried. A closed row matched by this filter disappears, the miss is
+      // read below as "no inventory record", and the branch reopens the date
+      // at 999 spots. Keeping the row lets `isAvailable` below honour it.
       .single();
 
     let availableSpots = 0;

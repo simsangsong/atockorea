@@ -34,7 +34,7 @@
     "reviewCount": 0,
     "slug": "seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library",
     "subtitle": "경기도의 대조적인 네 가지 매력을 경험하는 서울 출발 소그룹 문화 당일 여행: 유네스코 세계문화유산 수원 화성과…",
-    "region": "경기도 (서울 남쪽)",
+    "region": "수원 & 광명",
     "duration": "9시간",
     "stopsCount": 6,
     "badges": [
@@ -68,7 +68,7 @@
     ],
     "meta": {
       "duration": "9시간",
-      "region": "경기도 (서울 남쪽)",
+      "region": "수원 & 광명",
       "stops": "6개 방문지",
       "rating": 0,
       "ratingStars": 5
@@ -1271,14 +1271,16 @@
         "time": "08:00",
         "name": "홍대입구역 (8번 출구)",
         "type": "station",
+        "note": "출발 시각 10분 전까지 도착해 주세요.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
-        "name": "명동역 (2번 또는 4번 출구)",
+        "name": "명동역 (2번 출구)",
         "type": "station",
+        "note": "출발 시각 10분 전까지 도착해 주세요.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1286,21 +1288,23 @@
     "return": [
       {
         "order": 1,
+        "time": "18:00",
+        "name": "명동역 (2번 출구)",
+        "type": "station",
+        "lat": 37.56099,
+        "lng": 126.98619
+      },
+      {
+        "order": 2,
+        "time": "18:30",
         "name": "홍대입구역 (8번 출구)",
         "type": "station",
         "lat": 37.55753,
         "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "명동역 (4번 출구)",
-        "type": "station",
-        "lat": 37.56099,
-        "lng": 126.98619
       }
     ],
     "notes": [
-      "10분 일찍 도착해 주세요. 지각자는 수용이 불가하며 환불되지 않습니다. 월요일에는 투어가 운영되지 않습니다 (광명동굴 휴관일)."
+      "지정 탑승 장소 방식으로 운영되며 호텔 픽업은 제공되지 않습니다. 지각하시는 경우 탑승이 불가하며 환불되지 않습니다."
     ]
   },
   "matching_profile": {

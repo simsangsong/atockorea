@@ -34,7 +34,7 @@
     "reviewCount": 0,
     "slug": "seoul-suwon-hwaseong-folk-village-starfield-library",
     "subtitle": "從首爾出發前往京畿道的小團體文化一日遊，帶您體驗韓國歷史遺產與現代生活的四大截然不同面貌：列入UNESCO世界遺產的……",
-    "region": "京畿道（首爾以南）",
+    "region": "水原與龍仁",
     "duration": "10小時",
     "stopsCount": 6,
     "badges": [
@@ -68,7 +68,7 @@
     ],
     "meta": {
       "duration": "10小時",
-      "region": "京畿道（首爾以南）",
+      "region": "水原與龍仁",
       "stops": "6個景點",
       "rating": 0,
       "ratingStars": 5
@@ -1192,14 +1192,16 @@
         "time": "08:00",
         "name": "弘大入口站（8號出口）",
         "type": "station",
+        "note": "請於出發時間前10分鐘抵達。",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
         "time": "08:30",
-        "name": "明洞站（2號或4號出口）",
+        "name": "明洞站（2號出口）",
         "type": "station",
+        "note": "請於出發時間前10分鐘抵達。",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1207,21 +1209,23 @@
     "return": [
       {
         "order": 1,
+        "time": "18:00",
+        "name": "明洞站（2號出口）",
+        "type": "station",
+        "lat": 37.56099,
+        "lng": 126.98619
+      },
+      {
+        "order": 2,
+        "time": "18:30",
         "name": "弘大入口站（8號出口）",
         "type": "station",
         "lat": 37.55753,
         "lng": 126.92447
-      },
-      {
-        "order": 2,
-        "name": "明洞站（4號出口）",
-        "type": "station",
-        "lat": 37.56099,
-        "lng": 126.98619
       }
     ],
     "notes": [
-      "請提前10分鐘抵達。遲到者恕不接待，費用亦不予退還。"
+      "採指定集合地點，不提供飯店接送。遲到者恕不接待，費用亦不予退還。"
     ]
   },
   "matching_profile": {

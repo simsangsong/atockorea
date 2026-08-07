@@ -1157,19 +1157,19 @@
     "departure": [
       {
         "order": 1,
-        "time": "08:30",
-        "name": "Hongik Univ. Station (Exit 4)",
+        "time": "08:00",
+        "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
-        "note": "First Seoul meeting point; please arrive 10 minutes early.",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.55753,
         "lng": 126.92447
       },
       {
         "order": 2,
-        "time": "09:00",
-        "name": "Myeongdong Station",
+        "time": "08:30",
+        "name": "Myeongdong Station (Exit 2)",
         "type": "station",
-        "note": "Second Seoul meeting point.",
+        "note": "Please arrive 10 minutes before the departure time.",
         "lat": 37.56099,
         "lng": 126.98619
       }
@@ -1177,23 +1177,23 @@
     "return": [
       {
         "order": 1,
-        "name": "Myeongdong Station",
+        "time": "18:00",
+        "name": "Myeongdong Station (Exit 2)",
         "type": "station",
-        "note": "Standard Seoul drop-off point.",
         "lat": 37.56099,
         "lng": 126.98619
       },
       {
         "order": 2,
-        "name": "Hongik Univ. Station",
+        "time": "18:30",
+        "name": "Hongik Univ. Station (Exit 8)",
         "type": "station",
-        "note": "Standard Seoul drop-off point.",
         "lat": 37.55753,
         "lng": 126.92447
       }
     ],
     "notes": [
-      "Return time depends on traffic and is typically between 18:00 and 19:00. Drop-off order may be adjusted slightly for operational efficiency. Please arrive at least 10 minutes early at your selected meeting point. This is a fixed-meeting-point format, not hotel pickup."
+      "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
     ]
   },
   "matching_profile": {

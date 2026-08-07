@@ -65,7 +65,7 @@
 
 **실렌더 하니스가 한 번도 방문하지 않는 표면: 0개** ✅
 
-**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 15개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-tour-product.mjs` · `qa-home-walk.mjs` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs`
+**판정 불가 — 선언도 리터럴도 없는 실렌더 하니스: 17개** — `qa-admin-cjk.ts` · `qa-cjk-mechanism.mjs` · `qa-cjk-narrow-cell.mjs` · `qa-cjk-tour-product.mjs` · `qa-departure-days.ts` · `qa-home-walk.mjs` · `qa-markdown-leak.ts` · `qa-midnight-meeting.ts` · `qa-ops-walk.mjs` · `qa-perf-dining.mjs` · `qa-perf-idle.mjs` · `qa-perf-interactions.mjs` · `qa-perf-payload.mjs` · `qa-perf-routes.mjs` · `qa-recovery-p4.ts` · `qa-sse-reconnect.ts` · `qa-tick-discipline.mjs`
 
 > 판정 불가는 "커버 안 됨"이 **아니다.** 런타임 URL·환경변수로 이동해서 소스가 볼 수 없다는 뜻이고,
 > 어느 쪽으로든 추측하면 게이트가 거짓말을 한다. 해소하려면 그 하니스에 `COVERS` 를 선언한다.

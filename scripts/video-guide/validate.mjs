@@ -154,6 +154,24 @@ for (const b of spec.beats) {
   }
 }
 
+// Gate 3a — 2x is the ceiling (표준 문법 §1). This is the headline rule of the
+// standard and nothing was measuring it: gate 3b caps how long a fast run may
+// sit ON SCREEN, and screen time is source time divided by speed, so the FASTER
+// a beat runs the more easily it passes. An 8x transit compressing 64s of walk
+// into 8s cleared every gate. Gamcheon passed the whole suite with 28 beats
+// between 4x and 8x — the exact "휙휙 돌아가는 빨리감기" the standard was written
+// to end. Compress by cutting (§2), not by spinning the picture faster.
+const SPEED_MAX = 2;
+const tooFast = spec.beats.filter((b) => b.kind === 'clip' && (b.speed ?? 1) > SPEED_MAX);
+if (tooFast.length) {
+  const worst = Math.max(...tooFast.map((b) => b.speed));
+  problems.push(
+    `${tooFast.length}개 비트가 ${SPEED_MAX}배속을 넘는다 (최대 ${worst}배속) — 표준 문법 §1 위반`
+    + `\n      → 속도로 압축하지 말고 §2 패턴으로 잘라라(2x 슬라이스 + 0.8s 디졸브). 재단 절차는 문법 §6.`
+    + `\n      → 해당 비트: ${tooFast.map((b) => `${b.id}(${b.speed}x)`).join(' ')}`,
+  );
+}
+
 // Gate 3c — turns must play at real speed (V6-D18). A swing is the moment the
 // shooter decided to look at something; sped up it is a whip-pan, which is what
 // "휙휙 고개꺾인다" meant. Any beat marked `turn` is 1x with its approach and
