@@ -105,6 +105,42 @@ describe('G3 숫자 — 값 변조 검출, 서식 변경 허용 (H2)', () => {
     const f = checkNumbers('festival 6/18–7/5', 'festival du 18/06 au 05/07', '/p');
     expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
   });
+
+  // ── 시각 표기 현지화 (2026-08-07 실측) ──────────────────────────────────────
+  // 프랑스어·이탈리아어 fail 의 대부분이 이것이었다. 값이 아니라 서식이다.
+
+  it('정각의 분을 생략한 프랑스어 표기를 값 소실로 보지 않는다', () => {
+    const f = checkNumbers('open 09:00–18:00 daily', 'ouvert de 9 h à 18 h tous les jours', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  it('12시제 → 24시제 변환을 값 소실로 보지 않는다', () => {
+    const f = checkNumbers('we arrive around 2 pm', 'wir kommen gegen 14:00 Uhr an', '/p');
+    expect(f.filter((x) => x.severity === 'fail')).toHaveLength(0);
+  });
+
+  // 🔴 아래 셋이 이 완화의 안전판이다. 면제 범위를 넓히면 여기가 먼저 깨진다.
+
+  it('면제는 원문이 쓴 횟수까지다 — 시각 하나에 0 두 개를 면제하지 않는다', () => {
+    // 원문에 정각이 하나뿐인데 번역이 `0` 을 두 개 잃었다면 하나는 진짜 소실이다.
+    const f = checkNumbers('open 09:00, 40 people, 0 pets', 'ouvert 9 h, 40 personnes, aucun animal', '/p');
+    expect(f.some((x) => x.gate === 'G3' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('시각을 면제해도 잘린 번역은 여전히 fail', () => {
+    // 실측 케이스의 축약: 정각 표기는 살아 있지만 뒤 문장이 통째로 사라졌다.
+    const f = checkNumbers(
+      'Open 09:00. The name dates to 2017 and the walk takes 20 minutes.',
+      'Ouvert 9 h.',
+      '/p',
+    );
+    expect(f.some((x) => x.gate === 'G3' && x.severity === 'fail')).toBe(true);
+  });
+
+  it('시각이 아닌 수치 변조는 그대로 fail — 09:00 이 있어도', () => {
+    const f = checkNumbers('open 09:00, ₩70,000 per person', 'ouvert 9 h, 50 000 ₩ par personne', '/p');
+    expect(f.some((x) => x.gate === 'G3' && x.severity === 'fail')).toBe(true);
+  });
 });
 
 describe('G4 통화·단위', () => {
@@ -120,6 +156,26 @@ describe('G4 통화·단위', () => {
 
   it('원문에 이미 mile이 있으면 통과', () => {
     expect(checkCurrencyAndUnits('2 miles', '2 Meilen', '/p')).toEqual([]);
+  });
+
+  it('원문의 약어 `mi` 도 단위로 센다', () => {
+    // 2026-08-07 실측: 영어 원문이 `0.6 mi` 였는데 약어를 세지 않아, 정상적인
+    // 프랑스어 `0,6 mile` 이 "원문에 없는 야드파운드"로 잡혔다.
+    expect(checkCurrencyAndUnits('stairs 0.6 mi to the temple', 'escaliers sur 0,6 mile', '/p')).toEqual([]);
+  });
+
+  it('통화 기호 반복 횟수는 서식이다 — 종류가 같으면 통과', () => {
+    // 프랑스어는 기호를 숫자 뒤에 두고 범위마다 되풀이하지 않는다. 금액은 그대로다.
+    expect(
+      checkCurrencyAndUnits('≈₩15,000–₩25,000', '≈15 000–25 000 ₩', '/p').filter(
+        (x) => x.severity === 'fail',
+      ),
+    ).toHaveLength(0);
+  });
+
+  it('통화가 통째로 사라지면 여전히 fail — 반복 면제가 소실까지 덮지 않는다', () => {
+    const f = checkCurrencyAndUnits('admission ₩5,000', 'entrée comprise', '/p');
+    expect(f.some((x) => x.gate === 'G4' && x.severity === 'fail')).toBe(true);
   });
 
   it('원문의 하이픈 결합 단위도 인식한다 — "0.4-mile"', () => {
