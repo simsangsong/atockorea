@@ -878,60 +878,60 @@
   "routePhases": [
     {
       "phase": "Picos de floración de los cerezos",
-      "duration": "**Paradas 1–2**",
+      "duration": "Paradas 1–2",
       "description": "**Mañana: Pico de floración de los cerezos**"
     },
     {
-      "phase": "**Almuerzo**",
-      "duration": "**Parada 3**",
+      "phase": "Almuerzo",
+      "duration": "Parada 3",
       "description": "**Mediodía: Almuerzo**"
     },
     {
-      "phase": "**De la cueva al jardín al cráter**",
-      "duration": "**Paradas 4–6**",
+      "phase": "De la cueva al jardín al cráter",
+      "duration": "Paradas 4–6",
       "description": "**Tarde: De la cueva al jardín al cráter**"
     }
   ],
   "routeShapeIntro": {
-    "title": "**Cómo transcurre este día de primavera**",
-    "subtitle": "**Primero los cerezos en flor mientras la luz es suave, tubo de lava y jardín por la tarde, Seongsan para cerrar. De 09:00 a 17:30.**"
+    "title": "Cómo transcurre este día de primavera",
+    "subtitle": "Primero los cerezos en flor mientras la luz es suave, tubo de lava y jardín por la tarde, Seongsan para cerrar. De 09:00 a 17:30."
   },
   "whyTourWorks": {
     "bestFor": [
-      "**Visitantes de primavera por primera vez**",
-      "**Parejas y viajeros enfocados en la fotografía**",
-      "**Familias adultas**",
-      "**Viajeros en busca del pico de los cerezos en flor**"
+      "Visitantes de primavera por primera vez",
+      "Parejas y viajeros enfocados en la fotografía",
+      "Familias adultas",
+      "Viajeros en busca del pico de los cerezos en flor"
     ],
     "routeLogicSections": [
       {
-        "title": "**Ritmo y estructura**",
+        "title": "Ritmo y estructura",
         "icon": "sun",
         "iconBg": "bg-amber-50/80",
         "iconColor": "text-amber-600",
         "items": [
           {
-            "label": "**Flores primero, antes del calor**",
-            "detail": "**Ambas paradas de cerezos en flor ocurren antes del mediodía, para que la luz sea más suave y los pétalos no hayan caído por el viento de la tarde.**"
+            "label": "Flores primero, antes del calor",
+            "detail": "Ambas paradas de cerezos en flor ocurren antes del mediodía, para que la luz sea más suave y los pétalos no hayan caído por el viento de la tarde."
           },
           {
-            "label": "**La cueva como protección ante el clima**",
-            "detail": "**La cueva Micheongul al mediodía ofrece una parada interior estable: un seguro útil si el tiempo empeora por la tarde.**"
+            "label": "La cueva como protección ante el clima",
+            "detail": "La cueva Micheongul al mediodía ofrece una parada interior estable: un seguro útil si el tiempo empeora por la tarde."
           },
           {
-            "label": "**El cráter al final, como punto de cierre**",
-            "detail": "**Seongsan cierra la ruta como un hito visual reconocible del este de Jeju, sin añadir una subida a la cima al final del día.**"
+            "label": "El cráter al final, como punto de cierre",
+            "detail": "Seongsan cierra la ruta como un hito visual reconocible del este de Jeju, sin añadir una subida a la cima al final del día."
           }
         ]
       },
       {
-        "title": "**Por qué este itinerario es exclusivo de primavera**",
+        "title": "Por qué este itinerario es exclusivo de primavera",
         "icon": "flower",
         "iconBg": "bg-pink-50/80",
         "iconColor": "text-pink-600",
         "items": [
           {
-            "label": "**La ventana de los cerezos dura de 7 a 10 días**",
+            "label": "La ventana de los cerezos dura de 7 a 10 días",
             "detail": "Los cerezos en flor alcanzan su punto máximo brevemente entre finales de marzo y principios de abril — reserva el día 1 de tu viaje a Jeju si puedes."
           },
           {
@@ -1051,26 +1051,26 @@
   },
   "seasonalVariations": [
     {
-      "season": "**Primavera (Mar-Abr)**",
-      "title": "**El tour opera**",
+      "season": "Primavera (Mar-Abr)",
+      "title": "El tour opera",
       "description": "**Temporada alta — flores de cerezo y campos de colza**",
       "icon": "flower"
     },
     {
-      "season": "**Primavera tardía (May)**",
-      "title": "**Temporada baja**",
+      "season": "Primavera tardía (May)",
+      "title": "Temporada baja",
       "description": "**La temporada de cerezos ha finalizado; considere en su lugar nuestro tour del Este UNESCO disponible todo el año**",
       "icon": "leaf"
     },
     {
-      "season": "**Verano-Otoño (Jun-Nov)**",
-      "title": "**Temporada baja**",
+      "season": "Verano-Otoño (Jun-Nov)",
+      "title": "Temporada baja",
       "description": "**Fuera de temporada — se recomienda nuestra ruta del tour del Este UNESCO disponible todo el año**",
       "icon": "sun"
     },
     {
-      "season": "**Invierno (Dic-Feb)**",
-      "title": "**Temporada baja**",
+      "season": "Invierno (Dic-Feb)",
+      "title": "Temporada baja",
       "description": "**Fuera de temporada — se recomienda nuestra ruta del tour del Este UNESCO disponible todo el año**",
       "icon": "snowflake"
     }
@@ -1078,21 +1078,21 @@
   "bookingTrustItems": [
     {
       "icon": "check-circle",
-      "title": "**Guía local con licencia**",
+      "title": "Guía local con licencia",
       "description": "**Guía con licencia de Jeju**",
       "iconBg": "bg-emerald-50/80",
       "iconColor": "text-emerald-600"
     },
     {
       "icon": "calendar",
-      "title": "**Flexibilidad en la ventana de temporada**",
+      "title": "Flexibilidad en la ventana de temporada",
       "description": "**Reprogramación gratuita dentro de la ventana de floración**",
       "iconBg": "bg-pink-50/80",
       "iconColor": "text-pink-600"
     },
     {
       "icon": "shield",
-      "title": "**Garantía climática**",
+      "title": "Garantía climática",
       "description": "**Reprogramación gratuita en caso de lluvia intensa**",
       "iconBg": "bg-sky-50/80",
       "iconColor": "text-sky-600"
@@ -1100,12 +1100,12 @@
   ],
   "bookingSupportSteps": [
     {
-      "timing": "**Inmediatamente**",
-      "title": "**Confirmación inmediata**",
-      "detail": "**Confirmación de reserva con resumen del itinerario**"
+      "timing": "Inmediatamente",
+      "title": "Confirmación inmediata",
+      "detail": "Confirmación de reserva con resumen del itinerario"
     },
     {
-      "timing": "**2 días antes**",
+      "timing": "2 días antes",
       "title": "Verificación del clima",
       "detail": "Monitoreamos el pronóstico y nos ponemos en contacto si se recomienda reprogramar"
     },

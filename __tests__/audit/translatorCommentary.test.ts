@@ -34,6 +34,34 @@ const ROOT = path.join(process.cwd(), 'components', 'product-tour-static');
 
 const NOTE =
   /\*\*\s*(?:Notes?|Note|注意|注|注釈|Notas|Nota|Примечание|Hinweis|Remarque)\s*[:：]\s*\*\*/;
+
+/**
+ * 🔴 The bold-wrapped form above is not the only one. Twelve leaks were still
+ * live on 2026-08-07, across six products, and this gate passed on every one:
+ *
+ *   "象征区（22 面旗帜）+ 纪念墙（约 20 分钟） > 注： 第 18–21 行为图片文件路径，保留原文不作翻译。"
+ *   "フォローアップとおすすめ情報 > **備考：** 項目 6・9・12（`bg-emerald-50/80`…）はTailwind CSSの…"
+ *   "季節時段彈性 --- **譯注：** … 第 24 行為前端 CSS 類別名稱，建議保留英文原文不譯。"
+ *
+ * Two gaps: the marker is not always bold (`> 注：`), and the vocabulary was
+ * missing `備考` and `譯注` entirely.
+ *
+ * Widening the word list alone costs eight false positives — real guest copy
+ * uses note words ("참고: 노포역이 세 번째 픽업 장소로 대체됩니다"). What separates a
+ * translator's note from a traveller's note is that it talks about the
+ * IMPLEMENTATION: a backticked Tailwind class, a source line number, an
+ * instruction to keep something untranslated. Requiring both the marker and an
+ * artifact matched exactly the twelve and nothing else, measured over every
+ * bundle in the repo.
+ */
+const NOTE_WORD =
+  '(?:Notes?|注意|注釈|譯注|译注|備考|备考|注|비고|참고|Nota|Notas|Hinweis|Remarque|Примечание)';
+const COMMENTARY = new RegExp(`\\s(?:>|---|—)\\s*\\**\\s*${NOTE_WORD}\\s*\\**\\s*[:：]`);
+const ARTIFACT =
+  /`[a-z-]+-[a-z0-9/.[\]]+`|Tailwind|CSS|UI ?(?:컴포넌트|コンポーネント|component)|第\s*\d+[–\-~]?\d*\s*[行項]|\d+\s*[・,、]\s*\d+\s*(?:番|행|行|項)|保留原文|不作翻译|不译|不譯|そのまま(?:保持|維持|記載)|원문 유지|kept untranslated/i;
+
+/** A note about the code, appended to a string a guest reads. */
+const isImplementationNote = (s: string) => COMMENTARY.test(s) && ARTIFACT.test(s);
 const ARROW = /^\s*\*\*[A-Za-z0-9 '&/().,-]{1,40}\*\*\s*(?:→|->|=>)\s*[^*\n]{1,60}\s*$/;
 
 type Hit = { file: string; where: string; text: string };
@@ -44,7 +72,7 @@ function scan(): { rendered: Hit[]; legacy: number } {
 
   const walk = (node: unknown, where: string, file: string) => {
     if (typeof node === 'string') {
-      if (NOTE.test(node) || ARROW.test(node)) {
+      if (NOTE.test(node) || ARROW.test(node) || isImplementationNote(node)) {
         rendered.push({ file, where, text: node.slice(0, 120) });
       }
       return;
@@ -68,7 +96,7 @@ function scan(): { rendered: Hit[]; legacy: number } {
     let n = 0;
     const rec = (x: unknown) => {
       if (typeof x === 'string') {
-        if (NOTE.test(x) || ARROW.test(x)) n++;
+        if (NOTE.test(x) || ARROW.test(x) || isImplementationNote(x)) n++;
       } else if (Array.isArray(x)) x.forEach(rec);
       else if (x && typeof x === 'object') Object.values(x as Record<string, unknown>).forEach(rec);
     };
@@ -96,8 +124,14 @@ function scan(): { rendered: Hit[]; legacy: number } {
 /**
  * Legacy residue as measured on 2026-08-07, after the rendered fields were
  * cleaned. A ratchet, not a target: it may fall, never rise.
+ *
+ * 335 → 340 the same day. Not five new notes: the detector grew an
+ * implementation-note rule (see `isImplementationNote`), and it sees five more
+ * inside the legacy blob than the bold-only pattern did. Re-baselined on
+ * purpose, with the widening recorded — a ratchet quietly re-baselined is just
+ * a number.
  */
-const LEGACY_CEILING = 335;
+const LEGACY_CEILING = 340;
 
 describe('translator commentary must not reach guests', () => {
   const { rendered, legacy } = scan();
@@ -125,5 +159,31 @@ describe('translator commentary must not reach guests', () => {
     // …and still catches the notation it is for.
     expect(ARROW.test('**Photo Value** → Valor fotográfico')).toBe(true);
     expect(NOTE.test('passport > **注：** line 4 is a CSS class')).toBe(true);
+  });
+
+  it('catches the unbolded and 備考/譯注 forms that were live for weeks', () => {
+    // Verbatim from the bundles, before the 2026-08-07 clean.
+    expect(
+      isImplementationNote('象征区（22 面旗帜）+ 纪念墙（约 20 分钟） > 注： 第 18–21 行为图片文件路径，保留原文不作翻译。'),
+    ).toBe(true);
+    expect(
+      isImplementationNote(
+        'フォローアップとおすすめ情報 > **備考：** 項目 6・9・12（`bg-emerald-50/80`）はTailwind CSSのクラス名のため、翻訳せずそのまま記載しています。',
+      ),
+    ).toBe(true);
+    expect(
+      isImplementationNote('季節時段彈性 --- **譯注：** 第 24 行為前端 CSS 類別名稱，建議保留英文原文不譯。'),
+    ).toBe(true);
+  });
+
+  it('leaves a traveller-facing note that uses the same words', () => {
+    // 🔴 The reason the rule needs an implementation artifact and not just a
+    // note word: these are real guest copy from live bundles, and a word-only
+    // rule flagged eight of them.
+    expect(isImplementationNote('참고: 노포역이 세 번째 픽업 장소로 해운대를 대체합니다 (약 25분).')).toBe(false);
+    expect(isImplementationNote('注：老圃站取代海云台成为第三上车地点（约需25分钟）。')).toBe(false);
+    expect(isImplementationNote('**注意：機場使用1號門1樓國內入境廳**（與南部行程的3號門不同）')).toBe(false);
+    // And a route arrow is not a separator.
+    expect(isImplementationNote('Jagalchi Market > BIFF Square > Gukje Market')).toBe(false);
   });
 });

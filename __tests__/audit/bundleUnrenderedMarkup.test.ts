@@ -123,7 +123,10 @@ describe('🔴 손님 문구에 렌더되지 않는 표기가 없어야 한다',
   // 소그룹에 도너한 스톱(자갈치·BIFF·국제시장·용두산)이 `visitBasics`·`smartNotes.photo`
   // 에 별표를 달고 있었다. 그대로 복사했으면 1544 가 됐을 것이고, 게이트가 그걸 잡았다.
   // 옮기는 대신 떼어냈고, 조인 버스 상품 쪽 원본도 같이 정리돼 순감했다.
-  const BOLD_CEILING = 1474;
+  // 1474 → 1389 (2026-08-07). Eight products cleaned while removing the
+  // translator commentary that was leaking beside these asterisks; the rest is
+  // still the separate track this file describes.
+  const BOLD_CEILING = 1389;
   const CLEANED_SLUG_PREFIX = 'from-busan-gyeongju-ancient-capital-day-tour/';
 
   it('정리한 상품(경주)은 raw 필드 bold 가 0 이다', () => {
