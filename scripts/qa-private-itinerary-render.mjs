@@ -83,6 +83,7 @@ await page.addInitScript(() => {
 });
 
 const errors = [];
+const allErrors = [];
 const failures = [];
 page.on("pageerror", (e) => errors.push(String(e)));
 page.on("console", (m) => { if (m.type() === "error") errors.push(m.text()); });
@@ -91,6 +92,7 @@ for (const c of CASES) {
   // 🔴 The site routes Simplified Chinese as /zh-CN/ while the DB, the bundles
   // and this file's copy tables all key it "zh". Probing /zh/ hits no route at
   // all and renders the 404 page — which reads exactly like a broken product.
+  errors.length = 0; // attribute console noise to the case that caused it
   const url = `${BASE}/${c.locale}/tour-product/${c.slug}`;
   const content = CONTENT_LOCALE[c.locale] ?? c.locale;
   const tag = `${c.locale} :: ${c.slug}`;
@@ -197,10 +199,15 @@ for (const c of CASES) {
   console.log(`   chrome: <html lang="${chrome.htmlLang}"> ${JSON.stringify(chrome.nav.slice(1, 4))}`);
   console.log(`   tab/pill controls on page: ${importedPills}`);
   console.log(`   shot: ${file}`);
+  if (errors.length) {
+    console.log(`   console errors (${errors.length}):`);
+    for (const e of errors.slice(0, 4)) console.log(`      ${e.replace(/\s+/g, " ").slice(0, 300)}`);
+    allErrors.push(...errors.map((e) => `${tag} :: ${e.replace(/\s+/g, " ").slice(0, 220)}`));
+  }
 }
 
 console.log(`\nconsole/page errors: ${errors.length}`);
-for (const e of errors.slice(0, 6)) console.log(`   ${e.slice(0, 160)}`);
+
 
 if (failures.length) {
   console.log(`\nFAILURES (${failures.length}):`);
