@@ -104,7 +104,8 @@
       ]
     },
     "/itineraryStops/4/category": {
-      "source_en": "Return drop-off"
+      "source_en": "Return drop-off",
+      "tm": "Высадка по возвращении"
     },
     "/itineraryStops/4/duration": {
       "source_en": "60 min drive"
@@ -190,5 +191,5 @@
       "⟦G0⟧": "Мёндон"
     }
   },
-  "tmHits": 1
+  "tmHits": 2
 }
