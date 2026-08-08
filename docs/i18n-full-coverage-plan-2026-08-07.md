@@ -567,40 +567,46 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 수원 3종(430+415+389) · 설악 2종(387+417) · 전세 2종(358+313) · 부산 소그룹(698) = **8슬러그 발행**,
 전부 fail 0 · 문자혼입 0. 매니페스트의 나머지 de 슬러그는 아래 「구행 7건」이라 INSERT 가 거부된다.
 
-🔴 **다음은 fr 이다 — 그리고 대상 8슬러그가 방금 끝낸 de 8슬러그와 정확히 같다.**
+✅ **S16 도 끝났다 — 🔴 프랑스어도 발행 가능한 슬러그가 0개다(2026-08-08).**
+전세 2종(358+313) · 수원 2종(390+415) · 설악 2종(387+417) · 부산 소그룹(698) = **7슬러그 발행**
+(+ 앞 세션의 gwangmyeong). 전부 커버리지 100% · fail 0 · 문자혼입 0.
+
+🔴 **다음은 it 이다 — 대상 8슬러그가 de·fr 과 정확히 같다.**
 `seoul-suwon-hwaseong-{gwangmyeong-cave,folk-village,waujeongsa}-starfield*` ·
 `seoul-seoraksan-{nami-island-morning-calm,naksansa-temple-naksan-beach}*` ·
 `{busan-private-car-charter-city-tour,seoul-suburbs-private-chartered-car-10hr}` ·
 `busan-small-group-sightseeing-tour-cruise-passengers`.
-**원문이 같으니 de 생성기의 `NEW` 맵 키를 그대로 재사용하고 값만 프랑스어로 바꾸면 된다.**
-it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만 범위 밖).
+**원문이 같으니 생성기의 `NEW` 맵 키를 그대로 재사용하고 값만 바꾸면 된다.**
+ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만 범위 밖).
 
-### 🔴 잔여 실측 (2026-08-08, DB 조인으로 잰 것 — 매니페스트 아님)
+### 🔴 잔여 실측 (2026-08-08 세션 종료 시점, DB 조인으로 잰 것 — 매니페스트 아님)
 
-| 로케일 | 발행가능 | unit | 손번역 글자 |
-|---|---|---|---|
-| **de** | **0** | — | — (8슬러그 발행 완료 + 구행 7건은 결정 대기) |
-| **fr** | 7 | 73 | 238,365 |
-| **it** | 8 | 82 | 271,234 |
-| **ru** | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
-| | **23슬러그** | **237** | **≈780,000** |
+| 로케일 | 라이브 21종 중 행 있음 | 발행가능 잔여 | unit | 손번역 글자 |
+|---|---|---|---|---|
+| **de** | **21/21** | **0** | — | — (+ 구행 7건은 사장님 결정 대기) |
+| **fr** | **21/21** | **0** | — | — |
+| **it** | 13/21 | 8 | 82 | 271,234 |
+| **ru** | 13/21 | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
 
-슬러그별(fr 기준 · it/ru 도 ±1% 안):
+슬러그별(fr 실측 · it/ru 도 ±1% 안):
 `busan-private-car-charter-city-tour` 8u/22,166 → `seoul-suburbs-private-chartered-car-10hr` 8u/24,743 →
-`seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` 9u/32,869(fr ✅) →
+`seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` 9u/32,869 →
 `seoul-suwon-hwaseong-waujeongsa-starfield` 11u/34,079 →
 `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` 11u/34,132 →
 `seoul-seoraksan-nami-island-morning-calm-day-tour` 10u/34,677 →
 `seoul-suwon-hwaseong-folk-village-starfield-library` 10u/35,577 →
 `busan-small-group-sightseeing-tour-cruise-passengers` 15u/52,991.
-**작은 것부터** 잡으면 세션당 1~2슬러그가 현실적이다.
 
-배치는 **슬러그군 × 한 로케일**로 잡아라(§6-3′ 에 실측표). 권장 순서:
-**① de 8슬러그 ✅ → ② fr 나머지 7 → ③ it 8 → ④ ru 8.**
+배치는 **슬러그군 × 한 로케일**로 잡아라. 권장 순서:
+**① de 8슬러그 ✅ → ② fr 8슬러그 ✅ → ③ it 8 → ④ ru 8.**
 ⚠ 🔴 **한 슬러그를 끝낼 때마다 `verify` 를 돌리고 다음 슬러그를 재추출하라.**
-수원 3번째에서 이 한 번의 재추출이 **손번역을 31,596 → 22,707자로 줄였다**(§6-3′ 표).
-⚠ **다만 재추출 이득은 「같은 상품군」일 때만 난다** — 전세 2종은 둘 다 프라이빗 차터인데도
-공유 세그먼트가 **2개뿐**이었다(설악 2종은 78개). 갈림선은 카테고리가 아니라 **상품군**이다.
+🔴 **그리고 크기순이 아니라 상품군순으로 돌려라 — fr 에서 실측으로 갈렸다.**
+수원 와우정사 직후에 형제인 수원 민속촌을 돌렸더니 **TM 279/415(67%)**,
+설악 2종은 193/417, 전세 2종은 126/313. 반대로 크기순으로 갔으면 이 이득이 흩어진다.
+⚠ **다만 「같은 상품군」의 갈림선은 카테고리가 아니다** — de 에서 전세 2종은 둘 다 프라이빗
+차터인데도 공유 세그먼트가 **2개뿐**이었다. fr 에서 같은 쌍이 40% 를 적중한 건 이미 발행된
+**프랑스어 제주 전세 행**이 TM 에 있었기 때문이다. **TM 의 이득은 앞 로케일이 아니라
+같은 로케일의 앞 슬러그에서 온다.**
 
 ### 🔴 한 슬러그를 처리하는 레시피 (2026-08-08 에 9슬러그를 이대로 돌렸다 — 그대로 따라라)
 
@@ -618,7 +624,13 @@ it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙
    ```bash
    node -e "const r=require('fs').readFileSync('i18n-work/reports/verify-<loc>/verify.json','utf8');for(const u of JSON.parse(r).reports){if(!String(u.unitId).includes('<slug>'))continue;for(const f of u.findings||[])if(f.severity==='fail')console.log(u.unitId,JSON.stringify(f))}"
    ```
-5. **문자 혼입 스캔**(§7-7) — `i18n:verify` 가 못 잡는다. 매번 돌려라.
+5. **문자 혼입 스캔** — `i18n:verify` 가 못 잡는다. 매번 돌려라. 이제 스크립트다:
+   `node scripts/i18n/charset-scan.mjs <loc> [slug]` (`--selftest` 로 스캐너 자체를 검증).
+   🔴 **§7-7 의 한 줄짜리를 그대로 복붙하지 마라** — 리터럴 문자 범위(`[ -ɏ]` 꼴)로 적으면
+   보이지 않는 문자가 섞여 범위가 넓어진다. 2026-08-08 에 실제로 NUL 이 들어가
+   **키릴을 통과시키면서 초록**을 냈다. 스크립트 쪽은 `\u` 이스케이프 + selftest 를 들고 있다.
+   ⚠ 허용 문자는 **로케일별로 다르다** — 키릴은 ru 에서 본문이고 fr·de·it 에서는 사고다.
+   한글·한자는 전 로케일 허용(괄호 원어 병기가 이 레포의 관례).
 6. **발행** — `node --env-file=.env.local ./node_modules/tsx/dist/cli.mjs scripts/i18n/apply.ts --locale=<loc> --slugs=<slug> --apply`
    (⚠ 맨 `npx tsx` 는 env 를 못 읽어 죽는다. `--partial` 금지.)
 7. **커밋** — `i18n-work/out/... in/... tm/<loc>.json` 경로 명시(⚠ `git add -A` 금지, 워크트리 경합).
@@ -682,6 +694,36 @@ food hall · niveau B1 / 4e étage(층은 **숫자를 살려서**).
 
 🔴 **fr 은 `2nd-generation`→`deuxième`, de 는 `1F/2F`→`Erdgeschoss/1. Stock` 에서 G3 로 죽었다.**
 로마 세기(`18th-century`→`XVIIIe siècle`)는 흡수되지만 **서수를 낱말로 풀면 안 된다.**
+⚠ 단 **원문이 낱말이면 낱말로 옮겨도 된다** — `'second-generation'`(따옴표째 낱말)은
+`« deuxième génération »`, `2nd-generation`(숫자)은 `2e génération`. **원문을 보고 정하라.**
+
+**프랑스어 고정 어휘 추가(2026-08-08, S16 8슬러그에서 확정)** — 지어내지 말고 여기서:
+chauffeur-guide (agréé) · location de voiture privée · prise en charge à l'hôtel · dépose ·
+autocar(coach) · van · étape(stop) · rempart / chemin de ronde(fortress wall) · haenggung =
+palais détaché · relève de la garde royale · Mémoire du monde de l'UNESCO · rayonnages(bookshelves) ·
+food hall · village folklorique coréen · funambulisme jultagi · Jardin du matin calme(Morning Calm) ·
+île de Nami · République de Naminara · allée des métaséquoias · mer de l'Est · téléphérique(cable car) ·
+passerelle(skywalk) · marché aux poissons · village de fresques(mural village) · croisiériste ·
+terminal de croisière · heure d'embarquement final(all-aboard) · escale(port call).
+
+🔴 **fr 에서 G3 로 실제로 죽은 것 — 전부 「숫자를 프랑스어답게 풀어쓴」 자리다:**
+`1 km` → `le kilomètre` **2건**. §6-5-12 의 러시아어 `километровый`·이탈리아어
+`il chilometro e mezzo` 와 **완전히 같은 모양**이다. 로망스어는 이걸 계속 반복한다 —
+**`la section de 1 km` 처럼 숫자를 살린 명사구로 쓰면 자연스럽고 게이트도 통과한다.**
+
+⚠ **반대로 「숫자 추가」도 flag 이 난다.** `24 hours` → 관용적인 `24 h sur 24` / `24 heures sur 24`
+는 **원문에 하나뿐인 24 를 두 개로 늘린다**. fail 은 아니지만 두 형제 페이지가 갈리므로
+`24 heures` 로 통일했다. `1 trillion KRW` 도 함정 — `1 000 milliards` 는 `1000` 으로 정규화돼
+원문의 `1` 이 **소실(fail)** 된다. **`1 billion de KRW`**(프랑스어 장음계)가 정답이다.
+
+🔴 **생성기 `NEW` 맵이 소스를 놓치는 1순위 원인은 어포스트로피다.** 타이포그래피 `’` 로
+키를 쓰면 ASCII `'` 인 원문과 매칭되지 않는다. S16 에서 **7건 + 2건 + 8건**을 이렇게 놓쳤고,
+매번 「미해결이면 exit 1」 가드가 잡아 줬다. 개별 문자열을 고치지 말고 **조회를 정규화하라**:
+`const norm = s => s.replace(/[‘’]/g, "'")` 후 `NEW` 를 `Map` 으로 뒤집어 조회.
+
+🔴 **TM 은 고친 번역을 되살린다.** 출력 파일에서 문구를 고쳐도 `i18n-work/tm/<loc>.json` 에
+이미 들어간 옛 값이 다음 슬러그로 그대로 흘러 들어간다(S16 에서 `24 h sur 24` 가 실제로 그랬다).
+**출력만 고치는 건 절반이다 — TM 엔트리도 같이 고치고 재추출하라.**
 
 ### 🔴 ru 트랙 종료 기록 (2026-08-07, S3d~S3f) — de/fr/it 를 할 때 그대로 쓴다
 
