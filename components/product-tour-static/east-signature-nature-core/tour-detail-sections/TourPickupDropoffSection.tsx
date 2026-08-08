@@ -9,12 +9,17 @@ import {
   ChevronDown,
   Navigation,
   Plane,
+  Ship,
   ShoppingBag,
   Store,
   TrainFront,
   MapPin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import {
+  inferReturnBand,
+  isClockTime,
+} from "@/components/product-tour-static/_shared/pickupDropoffTypes";
 import type {
   PickupDropoffPoint,
   PickupDropoffSection,
@@ -30,17 +35,8 @@ function pointTypeIcon(type: string | undefined): LucideIcon {
   if (t === "shopping") return ShoppingBag;
   if (t === "market") return Store;
   if (t === "station") return TrainFront;
+  if (t === "port" || t === "cruise_terminal") return Ship;
   return MapPin;
-}
-
-function inferReturnBand(notes: string[] | string | undefined): string | null {
-  if (!notes?.length) return null;
-  // Tolerate `notes` arriving as a single string (some cruise tour rows) —
-  // same latent SSR crash as PickupDropoffCards.inferReturnBand.
-  const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
-  const match =
-    joined.match(/around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ?? null;
-  return match?.[1] ?? null;
 }
 
 function buildStaticMapUrl(
@@ -109,19 +105,58 @@ export function TourPickupDropoffSection({
 
   const firstPickup = pickupPoints[0];
   const lastPickup = pickupPoints[pickupPoints.length - 1];
+  const firstTime = firstPickup?.time;
+  const lastTime = lastPickup?.time;
+  // Cruise rows carry descriptive times ("Confirmed at booking (≈30 min after
+  // ship docking)"), and both terminals carry the SAME one. Joined with "–"
+  // into the header's no-shrink slot, the sentence crushed the label column
+  // into vertical per-letter wrapping. Only clock times earn the header slot
+  // and the route-departs footer; descriptive times render inside each row.
   const range = charterChoiceMode
-    ? (firstPickup?.time ?? "")
-    : firstPickup?.time && lastPickup?.time
-      ? `${firstPickup.time} – ${lastPickup.time}`
-      : firstPickup?.time ?? "";
+    ? (isClockTime(firstTime) ? firstTime : "")
+    : isClockTime(firstTime) && isClockTime(lastTime)
+      ? firstTime === lastTime
+        ? firstTime
+        : `${firstTime} – ${lastTime}`
+      : "";
   const returnBand = inferReturnBand(pickup_dropoff.notes);
   const lastDropoff = dropoffPoints[dropoffPoints.length - 1];
+  const lastDropoffTime = lastDropoff?.time;
+  // No fabricated fallback here: the old literal "17:30" rendered as a real
+  // promise on cruise products whose only truth is "back before sail-away".
+  const returnTime = returnBand ?? (isClockTime(lastDropoffTime) ? lastDropoffTime : null);
+  const notesText = pickup_dropoff.notes
+    ? Array.isArray(pickup_dropoff.notes)
+      ? pickup_dropoff.notes.join(" ")
+      : String(pickup_dropoff.notes)
+    : "";
+  // Cruise pages (every return point is a terminal) have no return clock time;
+  // their notes END with the return promise ("on-time return is the product"),
+  // while the leading sentences are booking/pickup guidance — so take the LAST
+  // sentence, not the first. Non-cruise notes lead with pickup guidance that
+  // has no business under "Drop-off", so they get no notes-derived caption.
+  const cruiseShaped =
+    dropoffPoints.length > 0 &&
+    dropoffPoints.every((p) => {
+      const t = (p.type ?? "").toLowerCase();
+      return t === "port" || t === "cruise_terminal";
+    });
+  const notesLastSentence =
+    notesText
+      .split(/[.。!！?？]/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .pop() ?? null;
+  const dropoffSubtitle =
+    lastDropoff?.note?.split(".")[0] ??
+    (returnTime ? (sectionUi.pickupApproximateLabel ?? "Approximate") : null) ??
+    (cruiseShaped ? notesLastSentence : null);
 
   const routeDepartsText =
-    !charterChoiceMode && lastPickup?.time
+    !charterChoiceMode && isClockTime(lastTime)
       ? (sectionUi.pickupRouteDepartsTemplate ?? "Route departs after final pickup at {time}").replace(
           "{time}",
-          lastPickup.time,
+          lastTime,
         )
       : null;
 
@@ -258,11 +293,16 @@ export function TourPickupDropoffSection({
                         </p>
                         {point.type ? (
                           <p className="mt-0.5 text-[10.5px] uppercase tracking-[0.08em] text-muted-foreground">
-                            {point.type}
+                            {point.type.replace(/_/g, " ")}
+                          </p>
+                        ) : null}
+                        {point.time && !isClockTime(point.time) ? (
+                          <p className="mt-0.5 text-[11px] leading-snug text-muted-foreground">
+                            {point.time}
                           </p>
                         ) : null}
                       </div>
-                      {point.time ? (
+                      {isClockTime(point.time) ? (
                         <span className="flex-shrink-0 text-[13px] font-semibold tabular-nums text-foreground">
                           {point.time}
                         </span>
@@ -354,19 +394,23 @@ export function TourPickupDropoffSection({
                   <p className="text-[13px] font-semibold tracking-tight text-white">
                     {sectionUi.dropoffCardTitle ?? "Drop-off"}
                   </p>
-                  <p className="text-[10.5px] text-white/55">
-                    {lastDropoff?.note ? lastDropoff.note.split(".")[0] : (sectionUi.pickupApproximateLabel ?? "Approximate")}
-                  </p>
+                  {dropoffSubtitle ? (
+                    <p className="text-[10.5px] text-white/55">
+                      {dropoffSubtitle}
+                    </p>
+                  ) : null}
                 </div>
               </div>
-              <div className="flex-shrink-0 text-right">
-                <p className="text-[13px] font-bold tabular-nums text-white sm:text-[13.5px]">
-                  ~{returnBand ?? lastDropoff?.time ?? "17:30"}
-                </p>
-                <p className="text-[9.5px] uppercase tracking-[0.12em] text-white/45">
-                  {sectionUi.dropoffApproxLabel ?? "approx."}
-                </p>
-              </div>
+              {returnTime ? (
+                <div className="flex-shrink-0 text-right">
+                  <p className="text-[13px] font-bold tabular-nums text-white sm:text-[13.5px]">
+                    ~{returnTime}
+                  </p>
+                  <p className="text-[9.5px] uppercase tracking-[0.12em] text-white/45">
+                    {sectionUi.dropoffApproxLabel ?? "approx."}
+                  </p>
+                </div>
+              ) : null}
             </div>
 
             {/* Return-to pills */}

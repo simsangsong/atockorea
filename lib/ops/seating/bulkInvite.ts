@@ -40,6 +40,12 @@
 import { hashToken, signCustomerRoomToken } from '@/lib/tour-room/token';
 import { signRoomClaimToken } from '@/lib/ops/seating/claimToken';
 import { buildInviteEmail } from '@/lib/ops/seating/inviteEmailCopy';
+import {
+  ensureBookingReference,
+  generateInviteShortCode,
+  shortLinkUrl,
+} from '@/lib/tour-room/entryCode';
+import type { RoomDbClient } from '@/lib/tour-room/access';
 
 /** 최소한의 Supabase 계약 — from(table)만 쓴다(주입/모킹 용이). */
 export interface BulkInviteDb {
@@ -233,7 +239,11 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
         tourDate: booking.tour_date || tourDate,
       });
       const expiresAt = new Date(minted.payload.exp * 1000).toISOString();
-      const personalUrl = `${appUrl()}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(minted.token)}`;
+      // entry-code plan §C-2 — 메일에는 345자 토큰 URL 대신 짧은 별칭이 실린다.
+      // 별칭은 아래 원장 행에 붙어 살므로, 위 폐기가 곧 "옛 짧은 링크의 죽음"이다.
+      const shortCode = generateInviteShortCode();
+      const personalUrl = shortLinkUrl(appUrl(), shortCode);
+      const entryCode = await ensureBookingReference(supabase as unknown as RoomDbClient, booking.id);
 
       const content = buildInviteEmail(booking.preferred_language, {
         guestName: booking.contact_name ?? '',
@@ -241,17 +251,8 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
         tourDate,
         inviteUrl: personalUrl,
         priceType: deps.priceType ?? null,
+        entryCode,
       });
-      const result = await send({
-        to: email,
-        subject: content.subject,
-        html: content.html,
-        text: content.text,
-      });
-      if (!result || result.success === false) {
-        failed += 1;
-        continue;
-      }
 
       // 원장 1행이 이제 **두 가지를 동시에** 한다:
       //   ① 실제 개인 토큰 (claim 가능한 살아있는 초대)
@@ -259,14 +260,15 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
       //      (daily.ts buildContactStatus: role='customer' + booking_id,
       //       emailed = sent_via==='email' || Boolean(sent_to))
       //
-      // 이전 구현은 공유 claim 링크를 보내느라 "born-revoked 마커"라는
-      // 합성 행을 따로 넣어야 했다(토큰이 개인 것이 아니었으므로 살아있는
-      // 초대로 세면 거짓말이 됐다). 개인 링크로 바뀌면서 그 우회가 사라진다 —
-      // 이제는 revoked_at을 비워두는 것이 **사실**이다.
+      // 🔴 entry-code 이후 순서가 뒤집혔다: **원장 먼저, 발송은 그다음.**
+      // 짧은 별칭(/r/{code})은 이 행이 있어야 열린다 — 발송을 먼저 하면
+      // (발송 성공, 원장 실패)에서 손님이 죽은 링크를 들고 있게 된다.
+      // 자기완결 토큰 URL 시절의 발송-후-기록은 그 시절에만 안전했다.
       const { error: inviteError } = await supabase.from('tour_room_invites').insert({
         role: 'customer',
         booking_id: booking.id,
         token_hash: hashToken(minted.token),
+        short_code: shortCode,
         sent_via: 'email',
         sent_to: email,
         display_name: booking.contact_name || 'Guest',
@@ -276,6 +278,27 @@ export async function buildBulkInvite(deps: BulkInviteDeps): Promise<BulkInviteO
         expires_at: expiresAt,
       });
       if (inviteError) throw inviteError;
+
+      // throw 도 {success:false}와 같은 "발송 실패"다 — 두 경로가 갈리면
+      // 롤백이 한쪽에서만 돌게 된다.
+      let result: Awaited<ReturnType<InviteSend>> | null = null;
+      try {
+        result = await send({
+          to: email,
+          subject: content.subject,
+          html: content.html,
+          text: content.text,
+        });
+      } catch {
+        result = null;
+      }
+      if (!result || result.success === false) {
+        // 발송이 죽었으면 방금 만든 초대를 되물린다 — "발송 기록" 행이
+        // 거짓이 되지 않게. 실패해도 배치는 계속(다음 재발송이 어차피 폐기한다).
+        await revokeLivePersonalInvites(supabase, booking.id, new Date().toISOString());
+        failed += 1;
+        continue;
+      }
       sent += 1;
     } catch {
       failed += 1;

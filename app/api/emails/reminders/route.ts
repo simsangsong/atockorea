@@ -16,9 +16,19 @@ import type { TourRelation, UserProfileRelation, PickupPointRelation } from '@/l
  * Additive: the legacy reminder loop above is untouched. Gated by the launch
  * flag (links open the coming-soon page while it's off) and deduped by the
  * invites ledger — a booking with a live customer invite is never re-mailed.
+ *
+ * 🔴 사장님 결정(2026-08-03, 재확인 2026-08-08): 투어룸 초대는 **수동으로만**
+ * 보낸다. 이 크론 경로는 원래 `isTourModeEnabled()` 만 보고 있어서, 런칭
+ * 플래그를 켜는 날 자동 발송이 함께 시작되는 지뢰였다 — 그래서 별도 서버 env
+ * `TOUR_ROOM_AUTO_DISPATCH=1` 뒤로 옮겼다(기본 OFF). 자동 전환을 결정하는 날
+ * 이 env 한 줄만 켜면 된다. 게이트: __tests__/audit/entryCodeDoors.test.ts ⑤.
  */
+function isAutoDispatchEnabled(): boolean {
+  return process.env.TOUR_ROOM_AUTO_DISPATCH === '1';
+}
+
 async function dispatchTomorrowsRooms(supabase: ReturnType<typeof createServerClient>) {
-  if (!isTourModeEnabled()) {
+  if (!isTourModeEnabled() || !isAutoDispatchEnabled()) {
     return { enabled: false, dispatched: 0, skipped: 0, failed: 0 };
   }
   // Tomorrow in KST — tour_date is the Korean tour day (§B D-9).

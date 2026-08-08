@@ -422,6 +422,20 @@ X11 → X19 → T0 → T1v2 → T3 → T5 → O6 → R6.
 - ⚠ 스마트앱 `.tr-chiprow`(손님·기사 폰)는 **일부러 그대로** — 마스크 페이드가 이미 어포던스고
   그 트랙의 레이아웃 게이트와 함께 열어야 한다. `SortSegmented` 도 제외(h-11 고정, 넘침 0).
 
+## 🔴 시맨틱 색에 `/불투명도` 를 붙이면 클래스가 통째로 조용히 죽는다 (2026-08-08)
+
+`tailwind.config.js` 의 `primary`·`muted`·`accent`·`border` 등은 `'var(--x)'` **문자열**이라
+Tailwind 가 알파를 합성하지 못한다. `bg-primary/[0.08]`·`ring-primary/85`·`bg-muted/80` 같은
+클래스는 **경고 없이 아예 생성되지 않는다** — 배경은 투명, ring 은 **스톡 blue-500/50 으로 폴백**.
+투어 상세 스톱 서랍에서만 15곳이 이렇게 죽어 있었고(틴트 전멸 = "흰 껍데기 + 남의 파랑"),
+§8.12 의 "Reviews 3% 그라데이션이 사실상 안 보임"도 디자인 절제가 아니라 이 함정이다.
+- 스코프 색은 **`bg-[color-mix(in_srgb,var(--primary)_8%,white)]`** 꼴로 쓰거나 scope CSS 에 클래스를 만들 것.
+- `emerald-50/70` 같은 **스톡 팔레트는 정상 동작** — 그래서 화면 절반만 살아 있는 기괴한 상태가 된다.
+- 전역 `<alpha-value>` 배관 추가는 **앱 전체의 죽은 클래스를 일괄 소생**시키므로 별도 검토 트랙.
+같은 날 형제 발견: **`space-y-*` 는 `fixed` 자식에도 마진을 준다** — 타임라인 `space-y-7` 안의
+서랍이 28px 내려앉아 백드롭 위 미차폐 띠가 생겼다. 오버레이는 **portal** 로 빼는 게 정답
+(`TourStopDetailDrawer` 는 가장 가까운 `.tour-product-v2-static-root` 로 포털 — 토큰·next/font 변수 보존).
+
 ## 🔴 `tailwind.config.js` 의 `content` 는 **폴더 화이트리스트**다 — 새 폴더는 조용히 죽는다
 
 `components/**` 를 통으로 못 쓰는 이유(v0 export 폴더의 node_modules)로 폴더를 하나씩 적어 두는데,

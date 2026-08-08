@@ -195,8 +195,15 @@ const CERTAIN_CEILING = 494;
  * (`이전`/`다음`) lives in the `aria-label` **attribute**, which the screen
  * reader speaks and the layout engine never boxes — there is no text run to
  * break. Counted rather than excepted, for the same reason as the emoji tray.
+ *
+ * 431 → 432 on 2026-08-08: `OpsManifestView.tsx` — 명단 행의 입장 코드 칩
+ * (entry-code plan §C, 전화로 코드를 불러줄 때 보는 값). Unresolved-child shape
+ * (`{booking.bookingReference}`), but the source CAN tell: the value is always
+ * `'A2C-' + 8 uppercase hex` (backfilled 61/61 + `ensureBookingReference`
+ * mints the same shape), i.e. pure ASCII in a `font-mono` chip — there is no
+ * CJK pair for a break to land between. Counted, per the emoji-tray precedent.
  */
-const SUSPECT_CEILING = 431;
+const SUSPECT_CEILING = 432;
 
 describe('ratchet — the count that grew unwatched now has a ceiling', () => {
   const hits: CjkBreakHit[] = [];

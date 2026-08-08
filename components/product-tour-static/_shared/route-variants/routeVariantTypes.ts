@@ -23,6 +23,10 @@ export type PortVariantStop = {
   /** Authoring time-of-day hint (e.g. "Cruise arrival + 30 min"). Surfaced by the
    *  shared `TourStopDetailDrawer` when present. */
   time?: string;
+  /** Stop photo(s) — same `/images/tours/...` paths as `itineraryStops[].image`.
+   *  Rendered as the card thumb strip and passed through to the stop drawer. */
+  image?: string;
+  images?: readonly string[];
   /** Optional one-liner explaining why this stop fits the day route. */
   whyOnRoute?: string;
   /** Optional visit-basics block. Each inner field is independently optional so

@@ -450,15 +450,51 @@ export default function OpsRoomManager({
         ) : (
           [...groups.entries()].map(([title, rows]) => (
             <section key={title} className="mb-4">
-              <h3 className={`mb-1.5 px-1 tr-label font-semibold ${T.groupTitle}`}>
-                {title} <span className={`font-normal ${T.groupCount}`}>· {rows.length}팀</span>
-              </h3>
+              {/* entry-code plan §C-4 — 운영자·기사 링크는 (투어,날짜) 스코프라
+                  하루 1개다. 예약 행마다 버튼이 있던 시절, 사장님이 "기사도
+                  손님별로 매칭해 복사해야 하나"를 물었다 — 버튼의 위치가
+                  스코프를 거짓말하고 있었다. 그룹 헤더 1곳으로 올린다. */}
+              <div className="mb-1.5 flex items-center justify-between gap-2 px-1">
+                <h3 className={`min-w-0 truncate tr-label font-semibold ${T.groupTitle}`}>
+                  {title} <span className={`font-normal ${T.groupCount}`}>· {rows.length}팀</span>
+                </h3>
+                <div className="flex shrink-0 items-center gap-1.5">
+                  <GroupLinkAction
+                    label="운영자 링크"
+                    minted={links[`${rows[0].id}:guide`]}
+                    busy={busy === `${rows[0].id}:guide`}
+                    onMint={() => void mintLink(rows[0], 'guide')}
+                    onQr={() =>
+                      links[`${rows[0].id}:guide`] &&
+                      setQrOpen({
+                        title: `${title} — 운영자 링크 (이 날짜 전체 팀)`,
+                        link: links[`${rows[0].id}:guide`],
+                        role: 'guide',
+                      })
+                    }
+                    T={T}
+                  />
+                  <GroupLinkAction
+                    label="기사 (PIN)"
+                    minted={links[`${rows[0].id}:driver`]}
+                    busy={busy === `${rows[0].id}:driver`}
+                    onMint={() => void mintLink(rows[0], 'driver')}
+                    onQr={() =>
+                      links[`${rows[0].id}:driver`] &&
+                      setQrOpen({
+                        title: `${title} — 기사 링크 (이 날짜 전체 팀 · 차량번호 뒤 4자리로 입장)`,
+                        link: links[`${rows[0].id}:driver`],
+                        role: 'driver',
+                      })
+                    }
+                    T={T}
+                  />
+                </div>
+              </div>
               <div className="space-y-2">
                 {rows.map((booking) => {
                   const room = booking.room;
                   const customerLink = links[`${booking.id}:customer`];
-                  const guideLink = links[`${booking.id}:guide`];
-                  const driverLink = links[`${booking.id}:driver`];
                   const channel = booking.source ? CHANNEL_BADGES[booking.source] : null;
                   return (
                     <div key={booking.id} className={`rounded-2xl border p-3 ${T.card}`}>
@@ -577,22 +613,6 @@ export default function OpsRoomManager({
                           }
                           T={T}
                         />
-                        <LinkAction
-                          label="운영자 링크 (가이드·운전)"
-                          minted={guideLink}
-                          busy={busy === `${booking.id}:guide`}
-                          onMint={() => void mintLink(booking, 'guide')}
-                          onQr={() => guideLink && setQrOpen({ title: `${title} — 운영자 링크`, link: guideLink, role: 'guide' })}
-                          T={T}
-                        />
-                        <LinkAction
-                          label="별도 기사 (PIN)"
-                          minted={driverLink}
-                          busy={busy === `${booking.id}:driver`}
-                          onMint={() => void mintLink(booking, 'driver')}
-                          onQr={() => driverLink && setQrOpen({ title: `${title} — 별도 기사 링크`, link: driverLink, role: 'driver' })}
-                          T={T}
-                        />
                       </div>
                     </div>
                   );
@@ -632,7 +652,10 @@ export default function OpsRoomManager({
               <button
                 type="button"
                 onClick={() => {
-                  void copyText(qrOpen.link.url.replace('/tour-mode/room/', '/tour-mode/plan/')).then((ok) =>
+                  // entry-code 이후 손님 링크는 /r/{code} — /plan 착지는 ?to=plan 이다
+                  // (예전 경로 치환은 짧은 링크에서 무동작이라 방 링크를 일정
+                  // 링크라고 복사해 주는 사고가 된다).
+                  void copyText(`${qrOpen.link.url}?to=plan`).then((ok) =>
                     ok ? toast.success('일정(/plan) 링크를 복사했습니다') : toast.error('복사 실패'),
                   );
                 }}
@@ -666,6 +689,51 @@ export default function OpsRoomManager({
         />
       )}
       {confirmSheetEl}
+    </div>
+  );
+}
+
+/**
+ * 그룹 헤더용 컴팩트 링크 버튼 — (투어,날짜) 스코프 링크(운영자·기사) 전용.
+ * 누르면 발급+복사, 발급된 뒤 QR 아이콘이 초록으로 바뀐다(LinkAction 과 동일 계약).
+ */
+function GroupLinkAction({
+  label,
+  minted,
+  busy,
+  onMint,
+  onQr,
+  T,
+}: {
+  label: string;
+  minted: MintedLink | undefined;
+  busy: boolean;
+  onMint: () => void;
+  onQr: () => void;
+  T: ReturnType<typeof palette>;
+}) {
+  return (
+    <div className={`flex h-8 items-stretch overflow-hidden rounded-lg ${T.linkWrap}`}>
+      <button
+        type="button"
+        onClick={onMint}
+        disabled={busy}
+        className={`text-cjk-safe flex items-center gap-1 px-2 tr-meta font-semibold disabled:opacity-50 ${T.linkText}`}
+      >
+        {busy ? <Loader2 className="size-3.5 animate-spin" /> : <Copy className="size-3" />}
+        {label}
+      </button>
+      <button
+        type="button"
+        onClick={minted ? onQr : onMint}
+        disabled={busy}
+        aria-label={`${label} QR`}
+        className={`flex w-8 items-center justify-center border-l disabled:opacity-50 ${T.linkDivider} ${
+          minted ? 'text-[var(--tr-safe)]' : T.qrIdle
+        }`}
+      >
+        <QrCode className="size-3.5" />
+      </button>
     </div>
   );
 }

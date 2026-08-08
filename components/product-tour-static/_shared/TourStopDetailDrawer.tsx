@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import {
   Bath,
@@ -96,16 +97,27 @@ function classifyTerm(inner: string): TermTier {
   return "keyterm";
 }
 
-/** Premium chip styles per tier — used inside the full-description modal. */
+/** Premium chip styles per tier — used inside the full-description modal.
+ *  ⚠ Semantic colors here must not use Tailwind `/opacity` modifiers on the
+ *  CSS-var palette (`primary`, `muted`, …): the config defines them as plain
+ *  `var(--x)` strings, so Tailwind silently drops the whole utility and the
+ *  chip renders unstyled. Use `color-mix()` arbitrary values instead. */
 const TIER_MODAL_CLASS: Record<TermTier, string> = {
   price:
     "rounded-[3px] bg-emerald-50/70 px-[3px] py-[0.5px] font-semibold text-emerald-700 ring-1 ring-emerald-600/15 tabular-nums",
   time: "rounded-[3px] bg-sky-50/70 px-[3px] py-[0.5px] font-semibold text-sky-700 ring-1 ring-sky-600/15 tabular-nums",
-  metric: "rounded-[3px] bg-primary/[0.06] px-[3px] py-[0.5px] font-semibold text-primary tabular-nums",
+  metric:
+    "rounded-[3px] bg-[color-mix(in_srgb,var(--primary)_6%,white)] px-[3px] py-[0.5px] font-semibold text-primary tabular-nums",
   caution:
     "font-semibold text-amber-800 underline decoration-amber-500/50 decoration-1 underline-offset-[3px]",
   keyterm: "font-semibold tracking-tight text-foreground",
 };
+
+/** Chips only earn their background when the bolded span is a short value
+ *  ("7.4 km", "₩4,000"). Authors sometimes bold whole clauses; a 3-line chip
+ *  reads as a link farm, so long spans fall back to quiet ink emphasis.
+ *  Caution keeps its amber treatment at any length — it is safety copy. */
+const TIER_CHIP_MAX_CHARS = 28;
 
 /** Lighter, color-only styles per tier — used in bullet lists / callouts where
  *  chip backgrounds would clutter the layout (highlights, whyOnRoute, smart notes). */
@@ -117,22 +129,45 @@ const TIER_INLINE_CLASS: Record<TermTier, string> = {
   keyterm: "font-semibold text-foreground",
 };
 
-/** Inline `**bold**` → `<strong>` parser. Authors write descriptions/highlights
- *  in light markdown; this turns the markers into tier-colored typographic
- *  emphasis instead of rendering literal asterisks. */
+/** Renders `*italic*` spans inside a non-bold text run. Guards: the span must
+ *  open on a non-space character and contain no `*`, so "3*4" or a stray star
+ *  never italicizes. Without this, authored terms like *tewak* shipped with
+ *  literal asterisks on the guest screen. */
+function renderItalicRuns(text: string, keyPrefix: string): React.ReactNode[] {
+  const parts = text.split(/(\*[^*\s][^*]*\*)/g);
+  return parts.map((part, i) => {
+    if (part.length > 2 && part.startsWith("*") && part.endsWith("*")) {
+      return (
+        <em key={`${keyPrefix}-${i}`} className="italic">
+          {part.slice(1, -1)}
+        </em>
+      );
+    }
+    return <Fragment key={`${keyPrefix}-${i}`}>{part}</Fragment>;
+  });
+}
+
+/** Inline `**bold**` / `*italic*` parser. Authors write descriptions and
+ *  highlights in light markdown; this turns the markers into tier-colored
+ *  typographic emphasis instead of rendering literal asterisks. */
 function renderInlineMarkdown(text: string): React.ReactNode[] {
   if (!text) return [];
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
+  return parts.flatMap((part, i) => {
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       const inner = part.slice(2, -2);
+      const tier = classifyTerm(inner);
+      const cls =
+        tier === "caution" || inner.length <= TIER_CHIP_MAX_CHARS
+          ? TIER_INLINE_CLASS[tier]
+          : TIER_INLINE_CLASS.keyterm;
       return (
-        <strong key={i} className={TIER_INLINE_CLASS[classifyTerm(inner)]}>
+        <strong key={i} className={cls}>
           {inner}
         </strong>
       );
     }
-    return <Fragment key={i}>{part}</Fragment>;
+    return renderItalicRuns(part, String(i));
   });
 }
 
@@ -143,19 +178,22 @@ function renderInlineMarkdown(text: string): React.ReactNode[] {
 function renderModalInline(text: string, seen: Set<string>): React.ReactNode[] {
   if (!text) return [];
   const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
+  return parts.flatMap((part, i) => {
     if (part.startsWith("**") && part.endsWith("**") && part.length > 4) {
       const inner = part.slice(2, -2);
       const tier = classifyTerm(inner);
       let className: string = TIER_MODAL_CLASS[tier];
-      if (tier === "keyterm") {
+      // Long bolded clauses degrade to quiet ink — a 3-line colored chip reads
+      // as a link farm (real-render audit 2026-08-08). Caution stays amber.
+      if (tier !== "caution" && inner.length > TIER_CHIP_MAX_CHARS) {
+        className = "font-semibold tracking-tight text-foreground";
+      } else if (tier === "keyterm") {
         const key = inner.trim().toLowerCase().replace(/\s+/g, " ");
         if (seen.has(key)) {
-          // Repeat mention — keep it emphasized but drop the editorial accent.
+          // Repeat mention — keep it emphasized but drop the editorial weight.
           className = "font-medium text-foreground";
         } else {
           seen.add(key);
-          className = cn(className, "border-b-[1.5px] border-primary/30");
         }
       }
       return (
@@ -164,7 +202,7 @@ function renderModalInline(text: string, seen: Set<string>): React.ReactNode[] {
         </strong>
       );
     }
-    return <Fragment key={i}>{part}</Fragment>;
+    return renderItalicRuns(part, String(i));
   });
 }
 
@@ -364,7 +402,9 @@ function VisitBasicsRow({
       <span
         className={cn(
           "mt-0.5 flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full",
-          tone === "closed" ? "bg-rose-50 text-rose-500" : "bg-primary/[0.07] text-primary",
+          tone === "closed"
+            ? "bg-rose-50 text-rose-500"
+            : "bg-[color-mix(in_srgb,var(--primary)_7%,white)] text-primary",
         )}
       >
         {icon}
@@ -427,7 +467,7 @@ function SmartNoteCard({
           {label}
         </span>
       </div>
-      <p className="text-[13px] leading-[1.55] text-foreground/85">
+      <p className="text-[13px] leading-[1.55] text-[color-mix(in_srgb,var(--foreground)_85%,white)]">
         {renderInlineMarkdown(body)}
       </p>
     </div>
@@ -451,10 +491,10 @@ function CollapsibleSection({
   return (
     <div
       className={cn(
-        "overflow-hidden rounded-xl border bg-white transition-all duration-200",
+        "overflow-hidden rounded-xl border bg-white shadow-premium transition-colors duration-200",
         open
-          ? "border-primary/20 shadow-premium-elevated"
-          : "border-border/70 shadow-premium hover:border-primary/15 hover:shadow-premium-elevated",
+          ? "border-[color-mix(in_srgb,var(--primary)_22%,var(--border))]"
+          : "border-[var(--border)] hover:border-[color-mix(in_srgb,var(--primary)_15%,var(--border))]",
       )}
     >
       <button
@@ -463,7 +503,7 @@ function CollapsibleSection({
         aria-expanded={open}
         className="flex w-full items-center gap-3 px-4 py-3.5 text-left"
       >
-        <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/[0.08] text-primary">
+        <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-[color-mix(in_srgb,var(--primary)_8%,white)] text-primary">
           {icon}
         </div>
         <div className="min-w-0 flex-1">
@@ -474,12 +514,11 @@ function CollapsibleSection({
             </p>
           ) : null}
         </div>
+        {/* State change stays quiet — rotation only, no dark disc (§8.6). */}
         <div
           className={cn(
-            "flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full transition-all duration-300",
-            open
-              ? "rotate-180 bg-foreground text-white shadow-md"
-              : "bg-muted/70 text-muted-foreground",
+            "flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full bg-[var(--muted)] transition-transform duration-300",
+            open ? "rotate-180 text-foreground" : "text-muted-foreground",
           )}
         >
           <ChevronDown className="h-4 w-4" strokeWidth={2.25} />
@@ -492,7 +531,7 @@ function CollapsibleSection({
         )}
       >
         <div className="overflow-hidden">
-          <div className="border-t border-border/60 px-4 py-4">{children}</div>
+          <div className="border-t border-[var(--border)] px-4 py-4">{children}</div>
         </div>
       </div>
     </div>
@@ -517,6 +556,31 @@ const HIGHLIGHTS_DEFAULT_COUNT = 5;
 const SHORT_WHY_THRESHOLD = 140;
 
 export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = "en" }: TourStopDetailDrawerProps) {
+  /**
+   * Portal host — the drawer used to render in place, inside the timeline's
+   * `space-y-7` column. Tailwind's space-y margin applies to *any* child, so
+   * the `fixed` backdrop and panel both inherited `margin-top: 1.75rem` and
+   * the whole drawer sat 28px below the viewport top, leaving an undimmed
+   * strip of page above it (real-render audit 2026-08-08). Portaling to
+   * `document.body` removes the drawer from ancestor margin/transform/clip
+   * reach for every consumer (product page + tour-mode plan). The wrapper
+   * re-applies the token scope class with `display: contents` so the scope's
+   * CSS variables cascade without painting a box.
+   */
+  const portalAnchorRef = useRef<HTMLSpanElement | null>(null);
+  const [portalHost, setPortalHost] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    // Prefer the nearest token-scope root: the layout's next/font variables
+    // (--font-tour-v2-serif etc.) live on ancestors of it, so portaling there
+    // keeps the editorial serif alive. It has no transform/margin trap
+    // (measured 2026-08-08). Outside the product page (tour-mode plan) there
+    // is no scope root — fall back to <body>, where the wrapper class below
+    // still supplies the palette variables.
+    setPortalHost(
+      (portalAnchorRef.current?.closest(".tour-product-v2-static-root") as HTMLElement | null) ??
+        document.body,
+    );
+  }, []);
   const [highlightsExpanded, setHighlightsExpanded] = useState(false);
   const [whyExpanded, setWhyExpanded] = useState(false);
   const [descModalOpen, setDescModalOpen] = useState(false);
@@ -629,7 +693,14 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
     };
   }, [open, onClose]);
 
-  return (
+  if (!portalHost) {
+    // In-tree sentinel (pre-mount only) — lets the effect above find the
+    // nearest scope root. `hidden` keeps it out of space-y sibling margins.
+    return <span ref={portalAnchorRef} hidden aria-hidden />;
+  }
+
+  return createPortal(
+    <div className="tour-product-v2-static-root contents">
     <AnimatePresence>
       {open && stop && (
         <>
@@ -651,7 +722,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
             initial={{ x: "100%" }}
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
-            transition={{ duration: 0.42, ease: drawerEase }}
+            transition={{ duration: 0.36, ease: drawerEase }}
             className="fixed bottom-0 right-0 top-0 z-[71] flex w-full max-w-[520px] flex-col bg-white shadow-[0_0_60px_rgba(12,22,34,0.18)]"
           >
             {/* Hero image area — slide+fade crossfade between photos. The image
@@ -712,19 +783,25 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0c1622]/55 via-[#0c1622]/10 to-transparent pointer-events-none" />
               </button>
-              {/* Editorial overlay — only stop name at bottom-right; top-right is
-                  already occupied by the photo counter + close button. */}
-              <TourPhotoOverlay src={activeImage} size="sm" hideRegion className="p-4" />
+              {/* No TourPhotoOverlay here — the stop name repeats 30px below as
+                  the body H2, and the overlay label anchors flush to the corner
+                  (its wrapper padding never reaches absolutely-positioned
+                  children), so it clipped against the panel edge. The lightbox
+                  keeps the full-size editorial overlay. */}
 
-              <div className="pointer-events-none absolute left-4 top-4 flex h-10 w-10 items-center justify-center rounded-full bg-white text-sm font-semibold text-foreground shadow-lg ring-[3px] ring-white/70">
+              <div
+                className="pointer-events-none absolute left-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-[13px] font-semibold tabular-nums text-foreground shadow-md ring-1 ring-black/[0.06]"
+                style={{ top: 'calc(1rem + env(safe-area-inset-top, 0px))' }}
+              >
                 {String(stop.number).padStart(2, "0")}
               </div>
 
+              {/* Photo count + zoom affordance — bottom-right, out of the
+                  top-corner control cluster (Apple Photos placement). */}
               {galleryPhotos.length > 1 && (
                 <span
                   aria-hidden
-                  style={{ top: 'calc(1rem + env(safe-area-inset-top, 0px))' }}
-                  className="pointer-events-none absolute right-16 flex h-9 items-center gap-1.5 rounded-full bg-white/85 px-2.5 text-[11px] font-semibold tabular-nums text-foreground shadow-md backdrop-blur-md transition-transform duration-200 group-hover:scale-[1.03]"
+                  className="pointer-events-none absolute bottom-3 right-3 flex h-8 items-center gap-1.5 rounded-full bg-white/95 px-2.5 text-[11px] font-semibold tabular-nums text-foreground shadow-md transition-transform duration-200 group-hover:scale-[1.03]"
                 >
                   <Maximize2 className="h-3 w-3" strokeWidth={2.25} />
                   {activeImageIndex + 1}/{galleryPhotos.length}
@@ -737,22 +814,21 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                   is 0 in a normal browser tab, so the marketing page is
                   unchanged. Same reasoning for the counter badge above and the
                   scroll body's bottom inset below. */}
+              {/* Solid white close — the old bg-white/15 glass disc vanished on
+                  bright photos; visibility of the exit is part of premium
+                  (§8.6: usable + invisible ≠ premium). */}
               <button
                 type="button"
                 onClick={onClose}
                 aria-label="Close"
                 style={{ top: 'calc(1rem + env(safe-area-inset-top, 0px))' }}
-                className="absolute right-4 flex h-10 w-10 items-center justify-center rounded-full border border-white/30 bg-white/15 text-white backdrop-blur-md transition-all hover:bg-white/25 active:scale-95"
+                className="absolute right-4 flex h-9 w-9 items-center justify-center rounded-full bg-white/95 text-foreground shadow-md ring-1 ring-black/[0.06] transition-all hover:bg-white active:scale-95"
               >
-                <X className="h-5 w-5" strokeWidth={2} />
+                <X className="h-[18px] w-[18px]" strokeWidth={2} />
               </button>
 
-              {stop.duration && (
-                <div className="pointer-events-none absolute bottom-3 right-3 flex items-center gap-1.5 rounded-full bg-white/95 px-3 py-1.5 text-xs font-semibold text-foreground shadow-md backdrop-blur-sm">
-                  <Clock className="h-3.5 w-3.5 text-primary" strokeWidth={2} />
-                  {stop.duration}
-                </div>
-              )}
+              {/* Duration pill removed — it duplicated the time · duration meta
+                  that sits directly below in the body header. */}
             </div>
 
             {/* Photo selector strip — clicking a thumbnail crossfades the hero
@@ -770,10 +846,16 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         aria-pressed={isActive}
                         aria-label={`Show photo ${i + 1}`}
                         className={cn(
-                          "flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted transition-all duration-300",
+                          // Minimum-difference active state (§8.6): one brand
+                          // ring + full brightness vs dimmed inactive. The old
+                          // `ring-primary/85` / `ring-border/40` opacity
+                          // modifiers never compiled (var-based palette), so
+                          // every thumb shipped with Tailwind's stock blue
+                          // fallback ring.
+                          "flex-shrink-0 h-16 w-24 overflow-hidden rounded-lg bg-muted shadow-[0_1px_2px_rgba(26,35,50,0.05),0_4px_10px_-4px_rgba(26,35,50,0.14)] transition-all duration-300",
                           isActive
-                            ? "ring-2 ring-primary/85 ring-offset-2 ring-offset-white shadow-[0_2px_4px_rgba(26,35,50,0.08),0_10px_24px_-12px_rgba(26,35,50,0.30)] -translate-y-0.5"
-                            : "ring-1 ring-border/40 shadow-[0_1px_2px_rgba(26,35,50,0.04),0_4px_10px_-4px_rgba(26,35,50,0.16)] hover:ring-border hover:-translate-y-0.5",
+                            ? "ring-2 ring-[var(--primary)]"
+                            : "ring-1 ring-black/[0.07] opacity-70 hover:opacity-100",
                         )}
                       >
                         <img
@@ -783,10 +865,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           decoding="async"
                           draggable={false}
                           onContextMenu={(e) => e.preventDefault()}
-                          className={cn(
-                            "h-full w-full object-cover transition-transform duration-500 tour-photo-protected",
-                            isActive ? "scale-[1.04]" : "hover:scale-[1.05]",
-                          )}
+                          className="h-full w-full object-cover tour-photo-protected"
                         />
                       </button>
                     );
@@ -802,22 +881,28 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
               style={{ paddingBottom: 'env(safe-area-inset-bottom, 0px)' }}
             >
               <div className="space-y-5 p-5">
-                {/* Header — time + name + category */}
+                {/* Header — eyebrow category → display title → time meta.
+                    The category used to render as a `bg-muted/80` badge whose
+                    tint never compiled; as an editorial eyebrow it carries the
+                    classification without fake-chip chrome (§8.6). */}
                 <div>
-                  {(stop.time || stop.duration) && (
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      {stop.time && <span className="font-semibold text-foreground">{stop.time}</span>}
-                      {stop.time && stop.duration && <span className="text-border">·</span>}
-                      {stop.duration && <span>{stop.duration}</span>}
-                    </div>
+                  {stop.category && (
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--tpc-amber-deep)]">
+                      {stop.category}
+                    </p>
                   )}
-                  <h2 className="mt-2 text-xl font-semibold tracking-tight text-foreground">
+                  <h2 className={cn("text-[22px] font-semibold leading-snug tracking-tight text-foreground sm:text-[24px]", stop.category && "mt-1.5")}>
                     {stop.name}
                   </h2>
-                  {stop.category && (
-                    <span className="mt-2 inline-block rounded-md bg-muted/80 px-2.5 py-0.5 text-[10.5px] font-medium text-muted-foreground">
-                      {stop.category}
-                    </span>
+                  {(stop.time || stop.duration) && (
+                    <div className="mt-2 flex items-center gap-2 text-[12.5px] text-muted-foreground">
+                      <Clock className="h-3.5 w-3.5 text-muted-foreground/80" strokeWidth={2} />
+                      {stop.time && (
+                        <span className="font-semibold tabular-nums text-foreground">{stop.time}</span>
+                      )}
+                      {stop.time && stop.duration && <span className="text-border">·</span>}
+                      {stop.duration && <span className="tabular-nums">{stop.duration}</span>}
+                    </div>
                   )}
                 </div>
 
@@ -854,13 +939,13 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         {visible.map((highlight, i) => (
                           <li
                             key={i}
-                            className="flex items-start gap-2 text-[13px] leading-[1.5] text-foreground"
+                            className="flex items-start gap-2.5 text-[13px] leading-[1.55] text-foreground"
                           >
                             <span
                               aria-hidden
-                              className="mt-[7px] h-1 w-1 flex-shrink-0 rounded-full bg-accent"
+                              className="mt-[7.5px] h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent"
                             />
-                            <span>{renderInlineMarkdown(highlight)}</span>
+                            <span className="min-w-0">{renderInlineMarkdown(highlight)}</span>
                           </li>
                         ))}
                       </ul>
@@ -869,7 +954,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           type="button"
                           onClick={() => setHighlightsExpanded((v) => !v)}
                           aria-expanded={highlightsExpanded}
-                          className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-primary transition-colors hover:text-primary/80"
+                          className="mt-2.5 inline-flex items-center gap-1 text-[12px] font-semibold text-primary transition-opacity hover:opacity-80"
                         >
                           {/* 🔴 여기가 영어로 하드코딩돼 있어서 중국어 화면에 `Show all 9`
                               가 그대로 찍혔다. 문자열은 로케일 표에서 온다. */}
@@ -899,7 +984,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
 
                 {/* Cancellation / weather alternate venue */}
                 {stop.alternate?.name && (
-                  <div className="flex items-start gap-3 rounded-xl border border-border/60 bg-muted/40 px-4 py-3.5">
+                  <div className="flex items-start gap-3 rounded-xl border border-[var(--border)] bg-[color-mix(in_srgb,var(--muted)_45%,white)] px-4 py-3.5">
                     <Repeat2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-muted-foreground" strokeWidth={2} />
                     <p className="min-w-0 flex-1 text-[13px] leading-relaxed text-foreground">
                       {stop.alternate.label && (
@@ -916,8 +1001,11 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 {/* Why on route — clamped to 3 lines for long copy, "Read more" reveals full */}
                 {stop.whyOnRoute && (() => {
                   const isLong = stop.whyOnRoute.length > SHORT_WHY_THRESHOLD;
+                  // Editorial "why this route" callout — warm amber wash from the
+                  // curated palette (§F-6 tint formula). The old `bg-sand-blush/80`
+                  // never compiled, so this shipped as a bare white box.
                   return (
-                    <div className="flex items-start gap-3 rounded-xl border border-accent/20 bg-sand-blush/80 px-4 py-3.5">
+                    <div className="flex items-start gap-3 rounded-xl border border-[color-mix(in_srgb,var(--accent)_26%,transparent)] bg-[var(--tpc-amber-wash)] px-4 py-3.5">
                       <Lightbulb
                         className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent"
                         strokeWidth={2}
@@ -936,9 +1024,13 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                             type="button"
                             onClick={() => setWhyExpanded((v) => !v)}
                             aria-expanded={whyExpanded}
-                            className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-semibold text-accent transition-colors hover:text-accent/80"
+                            className="mt-1.5 inline-flex items-center gap-1 text-[12px] font-semibold text-accent transition-opacity hover:opacity-75"
                           >
-                            {whyExpanded ? "Show less" : "Read more"}
+                            {/* Localized via the generic reviews read-more pair —
+                                this label was hardcoded English on all locales. */}
+                            {whyExpanded
+                              ? (sectionUi.reviewsShowLess ?? "Show less")
+                              : (sectionUi.reviewsReadMore ?? "Read more")}
                             <ChevronDown
                               className={cn(
                                 "h-3 w-3 transition-transform duration-200",
@@ -968,16 +1060,16 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                           <li key={i} className="flex items-start gap-2.5">
                             <span
                               aria-hidden
-                              className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-primary/[0.08] text-[10.5px] font-semibold text-primary tabular-nums"
+                              className="mt-[1px] flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full bg-[color-mix(in_srgb,var(--primary)_8%,white)] text-[10.5px] font-semibold text-primary tabular-nums"
                             >
                               {i + 1}
                             </span>
                             <div className="flex min-w-0 flex-1 items-start justify-between gap-2.5">
-                              <p className="min-w-0 flex-1 text-[13px] leading-[1.5] text-foreground/85">
+                              <p className="min-w-0 flex-1 text-[13px] leading-[1.5] text-[color-mix(in_srgb,var(--foreground)_85%,white)]">
                                 {desc}
                               </p>
                               {duration && (
-                                <span className="mt-[1px] flex-shrink-0 rounded-md bg-muted/70 px-1.5 py-[1.5px] text-[10.5px] font-semibold tracking-[0.02em] text-muted-foreground tabular-nums">
+                                <span className="mt-[1px] flex-shrink-0 rounded-md bg-[var(--muted)] px-1.5 py-[1.5px] text-[10.5px] font-semibold tracking-[0.02em] text-muted-foreground tabular-nums">
                                   {duration}
                                 </span>
                               )}
@@ -993,7 +1085,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                     icon={<Clock className="h-4 w-4" strokeWidth={2} />}
                     title={sectionUi.stopTimeUsedHeading}
                   >
-                    <p className="text-[14px] leading-relaxed text-foreground/85">
+                    <p className="text-[14px] leading-relaxed text-[color-mix(in_srgb,var(--foreground)_85%,white)]">
                       {renderInlineMarkdown(stop.timeUsed)}
                     </p>
                   </CollapsibleSection>
@@ -1144,18 +1236,24 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                 >
                   {/* Mobile drag handle (visual only) */}
                   <div className="flex justify-center pt-2 pb-1 sm:hidden">
-                    <span aria-hidden className="h-1 w-9 rounded-full bg-muted-foreground/30" />
+                    <span
+                      aria-hidden
+                      className="h-1 w-9 rounded-full bg-[color-mix(in_srgb,var(--muted-foreground)_35%,transparent)]"
+                    />
                   </div>
 
                   {/* Modal header — title + close */}
-                  <div className="relative flex flex-shrink-0 items-start justify-between gap-3 border-b border-border/50 bg-white px-5 py-4 sm:px-6 sm:py-5">
+                  <div className="relative flex flex-shrink-0 items-start justify-between gap-3 border-b border-[var(--border)] bg-white px-5 py-4 sm:px-6 sm:py-5">
                     {/* Left accent line */}
-                    <span aria-hidden className="absolute left-0 top-3.5 h-[calc(100%-1.75rem)] w-[3px] rounded-r-full bg-primary/50" />
+                    <span
+                      aria-hidden
+                      className="absolute left-0 top-3.5 h-[calc(100%-1.75rem)] w-[3px] rounded-r-full bg-[color-mix(in_srgb,var(--primary)_55%,transparent)]"
+                    />
                     <div className="min-w-0 flex-1 pl-3">
                       <p className="text-[10px] font-semibold uppercase tracking-[0.16em] text-primary">
                         {sectionUi.stopFullDescriptionTitle ?? "Full description"}
                       </p>
-                      <h3 className="mt-1 text-[17px] font-semibold tracking-tight text-foreground sm:text-[18px]">
+                      <h3 className="mt-1 text-[18px] font-semibold leading-snug tracking-tight text-foreground sm:text-[19px]">
                         {stop.name}
                       </h3>
                     </div>
@@ -1163,7 +1261,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                       type="button"
                       onClick={() => setDescModalOpen(false)}
                       aria-label="Close"
-                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-muted/70 text-muted-foreground transition-all hover:bg-muted active:scale-95"
+                      className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-[var(--muted)] text-muted-foreground transition-all hover:bg-[color-mix(in_srgb,var(--muted)_75%,var(--border))] active:scale-95"
                     >
                       <X className="h-4 w-4" strokeWidth={2.25} />
                     </button>
@@ -1182,7 +1280,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                         const isLatin = locale === "en" || locale === "es";
                         return splitDescriptionToParagraphs(stop.description, locale).map((p, i) => {
                           const paragraphClass = cn(
-                            "break-words [overflow-wrap:anywhere] hyphens-auto text-foreground/88",
+                            "break-words [overflow-wrap:anywhere] hyphens-auto text-[color-mix(in_srgb,var(--foreground)_88%,white)]",
                             i === 0
                               ? "text-[15px] leading-[1.82] tracking-[-0.004em]"
                               : "mt-5 text-[14px] leading-[1.8] tracking-[-0.003em]",
@@ -1191,10 +1289,20 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
                             const { lead, rest } = splitLeadSentence(p, locale);
                             return (
                               <p key={i} className={paragraphClass}>
+                                {/* Lead sentence in the page's editorial serif.
+                                    `--font-display-serif` was never defined in
+                                    this scope — the intended serif silently
+                                    fell back to sans. The page-wide serif var
+                                    is `--font-tour-v2-serif` (Bodoni Moda). */}
                                 <span
-                                  className="text-[15.5px] font-medium text-foreground"
+                                  className="text-[16px] font-medium text-foreground"
                                   style={
-                                    isLatin ? { fontFamily: "var(--font-display-serif)" } : undefined
+                                    isLatin
+                                      ? {
+                                          fontFamily:
+                                            "var(--font-tour-v2-serif), 'Bodoni Moda', 'Bodoni 72', Didot, 'Times New Roman', serif",
+                                        }
+                                      : undefined
                                   }
                                 >
                                   {renderModalInline(lead, seen)}
@@ -1352,5 +1460,7 @@ export function TourStopDetailDrawer({ stop, open, onClose, sectionUi, locale = 
         </>
       )}
     </AnimatePresence>
+    </div>,
+    portalHost,
   );
 }

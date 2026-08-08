@@ -35,6 +35,8 @@ const CUSTOMER_COPY: Record<
     planTitle: string;
     planBody: string;
     planCta: string;
+    /** entry-code plan §C-2 문 2 — 링크 없이도 들어오는 길을 메일에 병기한다. */
+    codeLine: (code: string) => string;
   }
 > = {
   en: {
@@ -54,6 +56,7 @@ const CUSTOMER_COPY: Record<
     planBody:
       'Pick the places you dream of (or start from a recommended course) and your guide will confirm the route tonight. Takes 3 minutes — or leave it to your guide.',
     planCta: 'Build my day plan',
+    codeLine: (code) => `No link handy? Go to <b>atockorea.com/room</b> and enter code <b>${code}</b>.`,
   },
   ko: {
     subject: (tour) => `투어룸이 준비됐어요 — ${tour}`,
@@ -72,6 +75,7 @@ const CUSTOMER_COPY: Record<
     planBody:
       '가고 싶은 곳을 직접 담거나 추천 코스로 시작해 보세요 — 가이드가 오늘 밤 동선을 확정해 드려요. 3분이면 충분하고, 가이드에게 맡겨도 좋아요.',
     planCta: '나의 일정 만들기',
+    codeLine: (code) => `링크가 없을 땐 <b>atockorea.com/room</b> 에서 코드 <b>${code}</b> 를 입력하세요.`,
   },
   ja: {
     subject: (tour) => `ツアールームのご案内 — ${tour}`,
@@ -90,6 +94,7 @@ const CUSTOMER_COPY: Record<
     planBody:
       '行きたい場所を選ぶか、おすすめコースから始めてください — 今夜ガイドがルートを確定します。3分で完了、ガイドにお任せもOKです。',
     planCta: 'プランを作る',
+    codeLine: (code) => `リンクが使えないときは <b>atockorea.com/room</b> でコード <b>${code}</b> を入力してください。`,
   },
   es: {
     subject: (tour) => `Tu sala de tour está lista — ${tour}`,
@@ -108,6 +113,7 @@ const CUSTOMER_COPY: Record<
     planBody:
       'Elige los lugares que sueñas (o parte de una ruta recomendada) y tu guía confirmará el recorrido esta noche. Toma 3 minutos, o déjalo en manos del guía.',
     planCta: 'Crear mi plan del día',
+    codeLine: (code) => `¿Sin el enlace a mano? Entra en <b>atockorea.com/room</b> e introduce el código <b>${code}</b>.`,
   },
   zh: {
     subject: (tour) => `您的旅行房间已就绪 — ${tour}`,
@@ -121,6 +127,7 @@ const CUSTOMER_COPY: Record<
     planTitle: '按您的心意规划明天',
     planBody: '选择您向往的地点(或从推荐路线开始)，导游今晚就会确定行程。只需3分钟，也可以完全交给导游。',
     planCta: '创建我的行程',
+    codeLine: (code) => `没有链接时，请访问 <b>atockorea.com/room</b> 并输入代码 <b>${code}</b>。`,
   },
 };
 
@@ -147,6 +154,8 @@ export function buildCustomerRoomInviteHtml(params: {
   roomUrl: string;
   /** W1/A1 — private-mode D-1 pre-selection link (same token as roomUrl). */
   planUrl?: string | null;
+  /** entry-code plan §C-2 — 예약 상설 코드(A2C-…). 있으면 코드 입장 줄을 병기. */
+  entryCode?: string | null;
 }): { subject: string; html: string } {
   const copy = CUSTOMER_COPY[params.locale] ?? CUSTOMER_COPY.en;
   const meta = [
@@ -175,6 +184,11 @@ export function buildCustomerRoomInviteHtml(params: {
     <div style="text-align:center;margin:22px 0;">
       <a href="${params.roomUrl}" style="${BTN_STYLE}">${copy.cta}</a>
     </div>
+    ${
+      params.entryCode
+        ? `<p style="margin:0 0 16px;padding:10px 14px;background:#f9fafb;border:1px dashed #d1d5db;border-radius:10px;color:#4b5563;font-size:13px;text-align:center;">${copy.codeLine(escapeHtml(params.entryCode))}</p>`
+        : ''
+    }
     <ol style="margin:0 0 14px;padding-left:20px;color:#4b5563;font-size:13px;line-height:1.8;">
       ${copy.how.map((line) => `<li>${line}</li>`).join('')}
     </ol>
