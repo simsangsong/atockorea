@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-08T11:53:38.760Z",
+  "generatedAt": "2026-08-08T12:28:00.497Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A1",
@@ -2165,6 +2165,619 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A1",
+      "status": "flagged",
+      "segments": 60,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/headlineLine2",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A2",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/1/detail",
+          "message": "길이비 0.95 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/8/question",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/11/question",
+          "message": "길이비 0.72 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/description",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/body",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:A2-3",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/1/description",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/3/description",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/5/description",
+          "message": "길이비 1.53 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:B",
+      "status": "flagged",
+      "segments": 45,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/0/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:itineraryStops",
+      "status": "flagged",
+      "segments": 31,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/3",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/facilities",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/parking",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/restroom",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/closed",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/parking",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:itineraryStops-3",
+      "status": "flagged",
+      "segments": 27,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/6",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/restroom",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:itineraryStops-4",
+      "status": "flagged",
+      "segments": 11,
+      "fails": 0,
+      "flags": 1,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/admission",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:practicalAccordionItems",
+      "status": "flagged",
+      "segments": 52,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/2",
+          "message": "길이비 0.88 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/1",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/0",
+          "message": "길이비 0.74 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:it:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 9,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:A1",
+      "status": "flagged",
+      "segments": 109,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/hero/meta/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/catalog_card/region",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/2",
+          "message": "길이비 0.88 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/1",
+          "message": "길이비 1.53 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/2",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/1",
+          "message": "길이비 1.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/content/1",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/3",
+          "message": "길이비 1.49 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:A2",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/0/detail",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:A2-2",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/7/question",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/10/answer",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/10/question",
+          "message": "길이비 0.72 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/body",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:A2-3",
+      "status": "flagged",
+      "segments": 34,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/1/description",
+          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/3/description",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/5/description",
+          "message": "길이비 1.52 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:B",
+      "status": "flagged",
+      "segments": 54,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/0/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/routePhases/1/phase",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:itineraryStops",
+      "status": "flagged",
+      "segments": 31,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/3",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/facilities",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/parking",
+          "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/restroom",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 40,
+      "fails": 0,
+      "flags": 3,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/closed",
+          "message": "길이비 1.39 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/category",
+          "message": "길이비 1.58 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/smartNotes/tip",
+          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:itineraryStops-3",
+      "status": "flagged",
+      "segments": 38,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:itineraryStops-4",
+      "status": "flagged",
+      "segments": 26,
+      "fails": 0,
+      "flags": 2,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/hours",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/0",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:it:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 9,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
     },
     {
       "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:it:A1",

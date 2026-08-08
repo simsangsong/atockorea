@@ -8,15 +8,18 @@
   "segments": {
     "/itineraryStops/0/name": {
       "source_en": "Pickup (Hongik University Station or ⟦G0⟧ Station)",
+      "tm": "Ritrovo (stazione Hongik University o stazione ⟦G0⟧)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/itineraryStops/0/category": {
-      "source_en": "Coach pickup"
+      "source_en": "Coach pickup",
+      "tm": "Ritrovo del pullman"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "30 min window"
+      "source_en": "30 min window",
+      "tm": "Finestra di 30 min"
     },
     "/itineraryStops/0/timeUsed/0": {
       "source_en": "Arrive at your chosen pickup point 5 min before scheduled time (~5 min)"
@@ -50,67 +53,84 @@
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "National Park (Mountain)"
+      "source_en": "National Park (Mountain)",
+      "tm": "Parco nazionale (montagna)"
     },
     "/itineraryStops/1/duration": {
       "source_en": "180 min (3 hours)"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)"
+      "source_en": "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
+      "tm": "Arrivo all’ingresso di Seorakdong + presentazione della guida (~10 min)"
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)"
+      "source_en": "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)",
+      "tm": "Cammino fino al Tongildaebul e al tempio Sinheungsa (~15-20 min dal parcheggio principale)"
     },
     "/itineraryStops/1/timeUsed/2": {
       "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Photo time + reassembly at vehicle (~15 min)"
+      "source_en": "Photo time + reassembly at vehicle (~15 min)",
+      "tm": "Tempo per le foto + rientro al veicolo (~15 min)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min)"
+      "source_en": "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min)",
+      "tm": "Sosta fotografica facoltativa al pino di 800 anni, vicino a Sinheungsa (~5 min)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "Korea's 5th national park (1970) and first UNESCO Biosphere Reserve (Aug 1982)"
+      "source_en": "Korea's 5th national park (1970) and first UNESCO Biosphere Reserve (Aug 1982)",
+      "tm": "5° parco nazionale della Corea (1970) e prima riserva della biosfera UNESCO del Paese (ago. 1982)"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "Tongildaebul: 14.6 m / 108 tons bronze — Korea's largest seated bronze Buddha (1997)"
+      "source_en": "Tongildaebul: 14.6 m / 108 tons bronze — Korea's largest seated bronze Buddha (1997)",
+      "tm": "Tongildaebul: 14,6 m e 108 tonnellate di bronzo — il più grande Buddha seduto in bronzo della Corea (1997)"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Sinheungsa Temple (652 CE Silla) — one of Korea's oldest active Buddhist temples and a Jogye Order monastery"
+      "source_en": "Sinheungsa Temple (652 CE Silla) — one of Korea's oldest active Buddhist temples and a Jogye Order monastery",
+      "tm": "Tempio Sinheungsa (652 d.C., epoca Silla) — uno dei più antichi templi buddhisti ancora attivi della Corea e monastero dell’ordine Jogye"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)"
+      "source_en": "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)",
+      "tm": "Funivia del Seorak facoltativa, 1.132 m fino alla piattaforma della fortezza di Gwongeumseong (700 m, leggenda del 1253)"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)"
+      "source_en": "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)",
+      "tm": "30 cime, oltre 2.000 specie animali, 1.400-1.562 specie vegetali; fauna rara (cervo muschiato, goral, orso nero asiatico)"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "Park entrance FREE since May 2023 (was 3,500 KRW); cable car still paid"
+      "source_en": "Park entrance FREE since May 2023 (was 3,500 KRW); cable car still paid",
+      "tm": "Ingresso al parco GRATUITO da maggio 2023 (prima 3.500 KRW); la funivia resta a pagamento"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan"
+      "source_en": "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan",
+      "tm": "**Categoria II IUCN (parco nazionale) dal 2005 + Green List IUCN delle aree protette dal 2014** — il primo parco nazionale coreano a entrare nella Green List durante la fase pilota, insieme all’Odaesan e al Jirisan"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "**Korea's first UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park"
+      "source_en": "**Korea's first UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park",
+      "tm": "**Prima riserva della biosfera UNESCO della Corea, dall’agosto 1982** + **iscritto nella lista propositiva del patrimonio mondiale UNESCO**: un riconoscimento combinato che nessun altro parco nazionale coreano possiede"
     },
     "/itineraryStops/1/highlights/8": {
-      "source_en": "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species"
+      "source_en": "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species",
+      "tm": "**Luogo chiave per la conservazione del goral dalla coda lunga**: popolazione stabile di ~260 individui (specie vulnerabile nella Lista rossa IUCN) — il parco gestisce 10 zone di protezione speciale su 39 km² (il 10% della superficie totale) per le specie minacciate"
     },
     "/itineraryStops/1/smartNotes/tip": {
       "source_en": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance."
+      "source_en": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
+      "tm": "Centro visitatori, caffè (Dahyang Cafe), ristoranti e negozi di souvenir all’ingresso di Seorakdong. Noleggio gratuito di attrezzatura da escursionismo dalle 9:00 alle 14:00 (da restituire entro le 16:00). Statua-mascotte dell’orso nero asiatico vicino all’ingresso."
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's first UNESCO Biosphere Reserve (1982) — combined with the Korea's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Placing Seoraksan first uses the freshest morning energy on the day's most physically active stop, with Nami and Morning Calm afterward as flatter walking-and-photography stops. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day trip earn its 5-hour round-trip drive cost for first-time-Korea travelers seeking a single mountain anchor."
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Available at Sogongwon main entrance (paid)"
+      "source_en": "Available at Sogongwon main entrance (paid)",
+      "tm": "Disponibile all’ingresso principale di Sogongwon (a pagamento)"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails"
+      "source_en": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails",
+      "tm": "Nella zona dell’ingresso principale, alla stazione della funivia, sul sito del tempio Sinheungsa e lungo i sentieri principali"
     }
   },
   "glossaryTokens": {
@@ -127,5 +147,5 @@
       "⟦G0⟧": "Parco nazionale di Seoraksan"
     }
   },
-  "tmHits": 1
+  "tmHits": 21
 }
