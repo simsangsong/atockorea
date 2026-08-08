@@ -26,7 +26,8 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Seoul Seoraksan day tour"
+      "source_en": "Seoul Seoraksan day tour",
+      "tm": "Seoraksan-Tagestour ab Seoul"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "Nami Island day trip"
@@ -45,7 +46,8 @@
       "source_en": "Seoraksan Nami one-day tour"
     },
     "/hero/meta/stops": {
-      "source_en": "3 stops"
+      "source_en": "3 stops",
+      "tm": "3 Stopps"
     },
     "/hero/meta/region": {
       "source_en": "Seoul → Gangwon-do → Gyeonggi-do"
@@ -54,13 +56,15 @@
       "source_en": "13 hours"
     },
     "/hero/pills/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/hero/pills/1": {
       "source_en": "Nature + Hallyu + Gardens"
     },
     "/hero/pills/2": {
-      "source_en": "Coach tour"
+      "source_en": "Coach tour",
+      "tm": "Bustour"
     },
     "/hero/tagline": {
       "source_en": "Korea's three most-photographed day-trip stops in one 13-hour coach day from Seoul: Seoraksan mountain, Nami Island's tree-lined lanes, and the ⟦G0⟧",
@@ -69,7 +73,8 @@
       ]
     },
     "/glanceItems/0/label": {
-      "source_en": "Duration"
+      "source_en": "Duration",
+      "tm": "Dauer"
     },
     "/glanceItems/0/value": {
       "source_en": "13 hours"
@@ -143,10 +148,12 @@
       "tm": "Bewertungen"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Coach tour"
+      "source_en": "Coach tour",
+      "tm": "Bustour"
     },
     "/catalog_card/tags/2": {
       "source_en": "Nature & gardens"
@@ -161,7 +168,8 @@
       "source_en": "Seoul: Seoraksan + Nami + Morning Calm"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/catalog_card/badges/1": {
       "source_en": "Large coach"
@@ -199,19 +207,22 @@
       "source_en": "Seoraksan + Nami + Morning Calm"
     },
     "/pickup_dropoff/primary/name": {
-      "source_en": "Starbucks Hongik University Station Exit 8"
+      "source_en": "Starbucks Hongik University Station Exit 8",
+      "tm": "Starbucks an der Station Hongik University, Ausgang 8"
     },
     "/pickup_dropoff/primary/time": {
       "source_en": "06:00 pickup / 19:30 drop-off"
     },
     "/pickup_dropoff/primary/address": {
-      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)"
+      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)",
+      "tm": "Yanghwa-ro, Mapo-gu, Seoul (vor dem Starbucks an der Station Hongik University, Ausgang 8)"
     },
     "/pickup_dropoff/primary/instructions": {
       "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the large coach in the pickup queue."
     },
     "/pickup_dropoff/alternates/0/name": {
       "source_en": "⟦G0⟧ Station Exit 2 (NorthFace flagship)",
+      "tm": "Station ⟦G0⟧, Ausgang 2 (NorthFace-Flagshipstore)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -221,12 +232,14 @@
     },
     "/pickup_dropoff/alternates/0/address": {
       "source_en": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at ⟦G0⟧ Station Exit 2)",
+      "tm": "Toegye-ro, Jung-gu, Seoul (NorthFace-Flagshipstore an der Station ⟦G0⟧, Ausgang 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/alternates/0/instructions": {
       "source_en": "Meet the guide in front of the NorthFace flagship store at the top of ⟦G0⟧ Station Exit 2.",
+      "tm": "Treffen Sie die Reiseleitung vor dem NorthFace-Flagshipstore oben am Ausgang 2 der Station ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -283,7 +296,8 @@
       "tm": "Wetterregelung"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Year-round operation."
+      "source_en": "Year-round operation.",
+      "tm": "Ganzjähriger Betrieb."
     },
     "/practicalAccordionItems/2/content/1": {
       "source_en": "Light rain: tour runs as scheduled — Nami and Morning Calm both have charm in rain; Seoraksan's lower paths remain walkable with grip shoes."
@@ -292,10 +306,12 @@
       "source_en": "Heavy rain: Seorak Cable Car typically suspended in storm conditions (refunded if pre-paid); the guide will steer guests to the Biseondae walk or extended Sinheungsa visit instead."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Typhoon-level weather or expressway closure: full refund or rebooking offered."
+      "source_en": "Typhoon-level weather or expressway closure: full refund or rebooking offered.",
+      "tm": "Wetter in Taifunstärke oder Autobahnsperrung: volle Erstattung oder Umbuchung."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Year-round operation."
+      "source_en": "Year-round operation.",
+      "tm": "Ganzjähriger Betrieb."
     },
     "/practicalAccordionItems/3/title": {
       "source_en": "What's included",
@@ -326,7 +342,8 @@
       "source_en": "Two Seoul pickups, large coach, English-speaking guide, Nami and Morning Calm admissions…"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Language"
+      "source_en": "Language",
+      "tm": "Sprache"
     },
     "/practicalAccordionItems/4/content/0": {
       "source_en": "Primary tour language: English."
@@ -368,7 +385,8 @@
       "tm": "Mittel."
     },
     "/practicalAccordionItems/6/title": {
-      "source_en": "Lunch (own expense)"
+      "source_en": "Lunch (own expense)",
+      "tm": "Mittagessen (auf eigene Kosten)"
     },
     "/practicalAccordionItems/6/content/0": {
       "source_en": "Lunch is taken en route from Seoraksan to Nami, around 13:30 at a local restaurant in the Inje-Chuncheon corridor."
@@ -391,10 +409,12 @@
       "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     },
     "/practicalAccordionItems/7/content/1": {
-      "source_en": "Inside 24 hours: 50% refund."
+      "source_en": "Inside 24 hours: 50% refund.",
+      "tm": "Innerhalb von 24 Stunden: 50 % Erstattung."
     },
     "/practicalAccordionItems/7/content/2": {
-      "source_en": "No-show or missed pickup: no refund — but contact AtoC Korea operations within 10 minutes of pickup time and the coach may briefly wait if running ahead of schedule."
+      "source_en": "No-show or missed pickup: no refund — but contact AtoC Korea operations within 10 minutes of pickup time and the coach may briefly wait if running ahead of schedule.",
+      "tm": "Nichterscheinen oder verpasste Abholung: keine Erstattung — melden Sie sich aber innerhalb von 10 Minuten nach der Abholzeit bei der Einsatzleitung von AtoC Korea, dann wartet der Bus unter Umständen kurz, sofern er der Zeit voraus ist."
     },
     "/practicalAccordionItems/7/preview": {
       "source_en": "Free cancellation up to 24 hours before pickup.",
@@ -442,5 +462,5 @@
       "⟦G0⟧": "Nationalpark Seoraksan"
     }
   },
-  "tmHits": 28
+  "tmHits": 48
 }
