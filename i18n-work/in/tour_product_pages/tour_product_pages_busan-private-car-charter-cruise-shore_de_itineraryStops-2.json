@@ -6,143 +6,195 @@
   "chunk": "itineraryStops-2",
   "tier": "B",
   "segments": {
+    "/itineraryStops/3/visitBasics/hours": {
+      "source_en": "Restaurant-dependent (typical 11:30–14:30 lunch service)",
+      "tm": "Je nach Restaurant (üblicher Mittagsservice 11:30–14:30 Uhr)"
+    },
+    "/itineraryStops/3/visitBasics/closed": {
+      "source_en": "Varies by venue; driver confirms availability",
+      "tm": "Je nach Lokal unterschiedlich; der Fahrer bestätigt die Verfügbarkeit"
+    },
     "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Minimal — restaurant within 5 min walk of vehicle drop-off"
+      "source_en": "Minimal — restaurant within 5 min walk of vehicle drop-off",
+      "tm": "Minimal — Restaurant 5 Min. Fußweg vom Absetzpunkt des Fahrzeugs entfernt"
     },
     "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "**Pay direct, ~₩10,000–25,000 per person**; lunch is **NOT included** in tour price"
+      "source_en": "**Pay direct, ~₩10,000–25,000 per person**; lunch is **NOT included** in tour price",
+      "tm": "**Direkt zahlen, ca. ₩10.000–25.000 pro Person**; das Mittagessen ist im Tourpreis **NICHT enthalten**"
     },
     "/itineraryStops/4/name": {
-      "source_en": "Return to Busan Cruise Port"
+      "source_en": "Return to Busan Cruise Port",
+      "tm": "Rückfahrt zum Kreuzfahrthafen Busan"
     },
     "/itineraryStops/4/time": {
-      "source_en": "Before all-aboard"
+      "source_en": "Before all-aboard",
+      "tm": "Vor der All-Aboard-Zeit"
     },
     "/itineraryStops/4/category": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Rückfahrt"
     },
     "/itineraryStops/4/duration": {
-      "source_en": "30–60 min buffer"
+      "source_en": "30–60 min buffer",
+      "tm": "30–60 Min. Puffer"
     },
     "/itineraryStops/4/timeUsed/0": {
-      "source_en": "30–60 min buffer"
+      "source_en": "30–60 min buffer",
+      "tm": "30–60 Min. Puffer"
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Star Viewing Hall + rainbow-roof panorama (~15 min)"
+      "source_en": "Star Viewing Hall + rainbow-roof panorama (~15 min)",
+      "tm": "Star Viewing Hall + Regenbogendach-Panorama (ca. 15 Min.)"
     },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Sky Garden + Little Prince & Fox bench photo (~20 min)"
+      "source_en": "Sky Garden + Little Prince & Fox bench photo (~20 min)",
+      "tm": "Sky Garden + Foto an der Bank mit Kleinem Prinzen & Fuchs (ca. 20 Min.)"
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Maze-alley walk down through murals + craft shops (~25 min)"
+      "source_en": "Maze-alley walk down through murals + craft shops (~25 min)",
+      "tm": "Abstieg durch die Labyrinth-Gassen vorbei an Wandmalereien + Kunsthandwerksläden (ca. 25 Min.)"
     },
     "/itineraryStops/4/timeUsed/4": {
-      "source_en": "Reassemble at lower exit (~10 min)"
+      "source_en": "Reassemble at lower exit (~10 min)",
+      "tm": "Sammeln am unteren Ausgang (ca. 10 Min.)"
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "Return buffer before ship departure"
+      "source_en": "Return buffer before ship departure",
+      "tm": "Zeitpuffer für die Rückfahrt vor dem Auslaufen des Schiffs"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "Last stop may be adjusted for traffic"
+      "source_en": "Last stop may be adjusted for traffic",
+      "tm": "Der letzte Stopp kann wegen des Verkehrs angepasst werden"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "Direct drop-off at the cruise terminal"
+      "source_en": "Direct drop-off at the cruise terminal",
+      "tm": "Direktes Absetzen am Kreuzfahrtterminal"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "**UN-HABITAT Asian Townscape Award 2012**"
+      "source_en": "**UN-HABITAT Asian Townscape Award 2012**",
+      "tm": "**UN-HABITAT Asian Townscape Award 2012**"
     },
     "/itineraryStops/4/highlights/4": {
-      "source_en": "**~1.4 million visitors annually**"
+      "source_en": "**~1.4 million visitors annually**",
+      "tm": "**ca. 1,4 Millionen Besucher jährlich**"
     },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "**Little Prince and Fox bench** at Sky Garden = signature photo (long queue, free)"
+      "source_en": "**Little Prince and Fox bench** at Sky Garden = signature photo (long queue, free)",
+      "tm": "**Bank mit Kleinem Prinzen und Fuchs** im Sky Garden = das Signature-Foto (lange Schlange, kostenlos)"
     },
     "/itineraryStops/4/highlights/6": {
-      "source_en": "Stamp Tour map ₩2,000 (9 numbered installations)"
+      "source_en": "Stamp Tour map ₩2,000 (9 numbered installations)",
+      "tm": "Stamp-Tour-Karte ₩2.000 (9 nummerierte Installationen)"
     },
     "/itineraryStops/4/highlights/7": {
-      "source_en": "Steep alleys + stairs = not stroller-/wheelchair-friendly"
+      "source_en": "Steep alleys + stairs = not stroller-/wheelchair-friendly",
+      "tm": "Steile Gassen + Treppen = nicht kinderwagen-/rollstuhlgerecht"
     },
     "/itineraryStops/4/highlights/8": {
-      "source_en": "**K-content pilgrimage site** — Running Man Episode 126 (Choi Ji-woo guest), Luca: The Beginning (2021), Ode to My Father (2014), A Little Princess; **KTO '100 Must-Visit Tourist Spots in Korea' five consecutive times**"
+      "source_en": "**K-content pilgrimage site** — Running Man Episode 126 (Choi Ji-woo guest), Luca: The Beginning (2021), Ode to My Father (2014), A Little Princess; **KTO '100 Must-Visit Tourist Spots in Korea' five consecutive times**",
+      "tm": "**Pilgerstätte für K-Content** — Running Man Folge 126 (Gast: Choi Ji-woo), Luca: The Beginning (2021), Ode to My Father (2014), A Little Princess; **fünfmal in Folge in der KTO-Liste „100 Must-Visit Tourist Spots in Korea“**"
     },
     "/itineraryStops/4/whyOnRoute": {
-      "source_en": "Cruise shore excursions must protect the return first; sightseeing is planned around that rule."
+      "source_en": "Cruise shore excursions must protect the return first; sightseeing is planned around that rule.",
+      "tm": "Landausflüge von Kreuzfahrten müssen zuerst die Rückkehr absichern; die Besichtigungen werden um diese Regel herum geplant."
     },
     "/itineraryStops/4/description": {
-      "source_en": "The final route is planned backward from your ship’s departure time. Your guide will keep a return buffer and adjust the last stop if traffic or weather makes the schedule too tight."
+      "source_en": "The final route is planned backward from your ship’s departure time. Your guide will keep a return buffer and adjust the last stop if traffic or weather makes the schedule too tight.",
+      "tm": "Die endgültige Route wird von der Abfahrtszeit Ihres Schiffes rückwärts geplant. Ihr Guide hält einen Zeitpuffer für die Rückfahrt bereit und passt den letzten Stopp an, wenn Verkehr oder Wetter den Zeitplan zu eng werden lassen."
     },
     "/itineraryStops/5/name": {
       "source_en": "⟦G0⟧ & Busan Tower",
+      "tm": "⟦G0⟧ & Busan Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/5/category": {
-      "source_en": "City Viewpoint"
+      "source_en": "City Viewpoint",
+      "tm": "Stadtaussichtspunkt"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 Min."
     },
     "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Escalator from Gwangbok-ro Fashion Street up to park (~5 min)"
+      "source_en": "Escalator from Gwangbok-ro Fashion Street up to park (~5 min)",
+      "tm": "Rolltreppe von der Gwangbok-ro Fashion Street hinauf zum Park (ca. 5 Min.)"
     },
     "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Flower clock + Yi Sun-sin statue + Citizens' Bell photos (~10 min)"
+      "source_en": "Flower clock + Yi Sun-sin statue + Citizens' Bell photos (~10 min)",
+      "tm": "Blumenuhr + Yi Sun-sin-Statue + Fotos der Bürgerglocke (ca. 10 Min.)"
     },
     "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Tower observatory ascent + 360° panorama (~25 min)"
+      "source_en": "Tower observatory ascent + 360° panorama (~25 min)",
+      "tm": "Auffahrt zur Aussichtsplattform des Turms + 360°-Panorama (ca. 25 Min.)"
     },
     "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Descent via stairs (~5 min)"
+      "source_en": "Descent via stairs (~5 min)",
+      "tm": "Abstieg über die Treppen (ca. 5 Min.)"
     },
     "/itineraryStops/5/timeUsed/4": {
-      "source_en": "Citizens' Bell pavilion + flower clock + bronze dragon photo (~5 min)"
+      "source_en": "Citizens' Bell pavilion + flower clock + bronze dragon photo (~5 min)",
+      "tm": "Pavillon der Bürgerglocke + Blumenuhr + Foto des Bronzedrachen (ca. 5 Min.)"
     },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**'Dragon Head Mountain'** — historically protective barrier against wokou (Japanese pirates)"
+      "source_en": "**'Dragon Head Mountain'** — historically protective barrier against wokou (Japanese pirates)",
+      "tm": "**„Drachenkopfberg“** — historisch ein Schutzwall gegen Wokou (japanische Piraten)"
     },
     "/itineraryStops/5/highlights/1": {
-      "source_en": "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown"
+      "source_en": "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown",
+      "tm": "Standort eines **Waegwan aus der Joseon-Zeit (japanische Handelsenklave 1678–1878)** + des **Ryūtōsan-Schreins** + einer Barackensiedlung aus dem Koreakrieg"
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment"
+      "source_en": "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment",
+      "tm": "**Busan Tower 1973** → nach dem Umbau umbenannt in **Busan Diamond Tower 2021**"
     },
     "/itineraryStops/5/highlights/3": {
-      "source_en": "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation"
+      "source_en": "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation",
+      "tm": "**Turmspitze dem Baldachin der Dabotap-Pagode in Bulguksa nachempfunden** (NT 20, Gyeongju) — Zitat des Silla-Erbes"
     },
     "/itineraryStops/5/highlights/4": {
-      "source_en": "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship"
+      "source_en": "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship",
+      "tm": "**Statue von Admiral Yi Sun-sin** (1545–1598) — Held der Schildkrötenschiffe im Imjin-Krieg, der nie ein Schiff verlor"
     },
     "/itineraryStops/5/highlights/5": {
-      "source_en": "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1"
+      "source_en": "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1",
+      "tm": "**Bürgerglocke** — 100.000 Spender; wird an Silvester + am 1. März 33× geschlagen"
     },
     "/itineraryStops/5/highlights/6": {
-      "source_en": "Tower observatory ₩12,000 adult; park free 24h"
+      "source_en": "Tower observatory ₩12,000 adult; park free 24h",
+      "tm": "Aussichtsplattform des Turms ₩12.000 für Erwachsene; Park kostenlos, 24 Std."
     },
     "/itineraryStops/5/highlights/7": {
-      "source_en": "**Covered escalator from Gwangbok-ro** — no return escalator"
+      "source_en": "**Covered escalator from Gwangbok-ro** — no return escalator",
+      "tm": "**Überdachte Rolltreppe von der Gwangbok-ro** — keine Rolltreppe für den Rückweg"
     },
     "/itineraryStops/5/highlights/8": {
-      "source_en": "**Citizens' Bell 33-strike ritual** — struck **33 times on New Year's Eve and March 1st (Independence Movement Day)** — the **33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence** read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative"
+      "source_en": "**Citizens' Bell 33-strike ritual** — struck **33 times on New Year's Eve and March 1st (Independence Movement Day)** — the **33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence** read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative",
+      "tm": "**33-Schläge-Ritual der Bürgerglocke** — **an Silvester und am 1. März (Tag der Unabhängigkeitsbewegung) 33-mal geschlagen** — die **33 Schläge erinnern an die 33 koreanischen Unterzeichner der Unabhängigkeitserklärung von 1919**, die im Tapgol Park in Seoul verlesen wurde; verbindet Busans bürgerliche Identität mit dem nationalen Unabhängigkeitsnarrativ"
     },
     "/itineraryStops/5/smartNotes/tip": {
-      "source_en": "Pair tower visit with **Admiral Yi Sun-sin statue** (Imjin War turtle-ship hero who never lost a ship) and the **Citizens' Bell** (struck **33 times on New Year's Eve and March 1**, commemorating the 33 signatories of the 1919 Independence Declaration)."
+      "source_en": "Pair tower visit with **Admiral Yi Sun-sin statue** (Imjin War turtle-ship hero who never lost a ship) and the **Citizens' Bell** (struck **33 times on New Year's Eve and March 1**, commemorating the 33 signatories of the 1919 Independence Declaration).",
+      "tm": "Verbinden Sie den Turmbesuch mit der **Statue von Admiral Yi Sun-sin** (Held der Schildkrötenschiffe im Imjin-Krieg, der nie ein Schiff verlor) und der **Bürgerglocke** (wird **33-mal an Silvester und am 1. März geschlagen**, zum Gedenken an die 33 Unterzeichner der Unabhängigkeitserklärung von 1919)."
     },
     "/itineraryStops/5/whyOnRoute": {
       "source_en": "Yongdusan delivers **Busan's most-recognized 360° panorama** near sunset — and the tower's quotation of Bulguksa Dabotap connects this stop conceptually to the Gyeongju heritage circuit you might pair this charter with on a multi-day cruise stop. The 45-minute stop gives enough time for the observatory ascent without forcing a full park stroll; the escalator from Gwangbok-ro removes the climb. For cruise guests Yongdusan is the day's primary weather-alternative — if rain or fog cancels ⟦G0⟧'s outdoor cliff loop, the Diamond Tower observatory + park provides a ~75-min indoor alternative within a similar stop length.",
+      "tm": "Yongdusan bietet gegen Sonnenuntergang **Busans bekanntestes 360°-Panorama** — und das Zitat der Bulguksa-Dabotap am Turm verbindet diesen Stopp gedanklich mit dem Gyeongju-Kulturerbe-Rundweg, den Sie bei einem mehrtägigen Kreuzfahrtaufenthalt mit dieser Charter kombinieren könnten. Der 45-minütige Stopp lässt genug Zeit für die Auffahrt zur Aussichtsplattform, ohne einen kompletten Parkspaziergang zu erzwingen; die Rolltreppe von der Gwangbok-ro nimmt Ihnen den Aufstieg ab. Für Kreuzfahrtgäste ist Yongdusan die primäre Wetteralternative des Tages — wenn Regen oder Nebel die Klippenrunde im Freien von ⟦G0⟧ ausfallen lässt, bieten die Aussichtsplattform des Diamond Tower + der Park eine ca. 75-minütige Alternative im Innenbereich bei ähnlicher Stopplänge.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/itineraryStops/5/convenience/parking": {
-      "source_en": "No on-site parking — use Nampo-dong public lots and walk up via escalator"
+      "source_en": "No on-site parking — use Nampo-dong public lots and walk up via escalator",
+      "tm": "Keine Parkplätze vor Ort — nutzen Sie die öffentlichen Parkplätze in Nampo-dong und gehen Sie über die Rolltreppe hinauf"
     },
     "/itineraryStops/5/convenience/restroom": {
-      "source_en": "At the park plaza and inside Busan Diamond Tower"
+      "source_en": "At the park plaza and inside Busan Diamond Tower",
+      "tm": "Am Platz im Park und im Busan Diamond Tower"
     },
     "/itineraryStops/5/description": {
       "source_en": "**⟦G2⟧ (용두산공원, 'Dragon Head Mountain Park')** — a **69,000 m²** civic park at the heart of Nampo-dong with **70 tree species** — is a layered historical site: it was once a **Joseon-era waegwan** (Choryang Wakan, the **Japanese trade-and-diplomacy enclave from 1678 to 1878**), then a Japanese **Ryūtōsan Shrine (17th–early 20th century)**, then a **Korean War refugee shantytown** (most destroyed by 1950s fires), and finally redeveloped as the modern park. \n\nThe **120-meter-tall Busan Tower** (originally **opened 1973**, **rebranded 'Busan Diamond Tower' after a 2021 redevelopment**) is the park's centerpiece — its **observation deck top is modeled after the baldaquin (canopy) of Dabotap Pagoda (NT 20) at ⟦G0⟧ in Gyeongju**, an explicit architectural quotation linking Busan's modern landmark to Silla heritage. \n\nThe tower stands at **69m above sea level + 120m height = 189m total summit elevation**, offering **360° panoramas** to Busan Port, Yeongdo Bridge, Tsushima Island (clear days), and ⟦G1⟧ below. Other park monuments: the **bronze statue of Admiral Yi Sun-sin (1545–1598)** (Busan's hometown naval hero who defeated Japanese forces in the 1592–1598 Imjin War, famously **never lost a single ship**), the **Citizens' Bell** donated by **100,000 Busan citizens** (struck **33 times on New Year's Eve and March 1 Independence Movement Day**), the **flower clock** at the entrance, and a **bronze dragon sculpture** symbolic of the mountain's name. \n\nAccess is via a **covered escalator from Gwangbok-ro Fashion Street** (no return escalator — descend by stairs). **Park free 24h**; **Busan Diamond Tower observatory ₩12,000 adult / ₩9,000 senior 65+ or child 3–12, hours 10:00–22:00 (last admission 21:30)**.",
+      "tm": "**⟦G2⟧ (용두산공원, „Drachenkopfberg-Park“)** — ein **69.000 m²** großer städtischer Park im Herzen von Nampo-dong mit **70 Baumarten** — ist ein vielschichtiger historischer Ort: Er war einst ein **Waegwan aus der Joseon-Zeit** (Choryang Wakan, die **japanische Handels- und Diplomatie-Enklave von 1678 bis 1878**), dann ein japanischer **Ryūtōsan-Schrein (17. bis frühes 20. Jahrhundert)**, dann eine **Barackensiedlung für Flüchtlinge des Koreakriegs** (überwiegend durch Brände in den 1950er-Jahren zerstört) und wurde schließlich zum heutigen Park umgestaltet. \n\nDer **120 Meter hohe Busan Tower** (ursprünglich **1973 eröffnet**, nach einem Umbau **2021 in „Busan Diamond Tower“ umbenannt**) ist das Herzstück des Parks — die **Spitze seiner Aussichtsplattform ist dem Baldachin (Schirmdach) der Dabotap-Pagode (NT 20) im ⟦G0⟧ in Gyeongju nachempfunden**, ein ausdrückliches architektonisches Zitat, das Busans modernes Wahrzeichen mit dem Silla-Erbe verbindet. \n\nDer Turm steht auf **69 m über dem Meeresspiegel + 120 m Höhe = 189 m Gesamthöhe des Gipfels** und bietet **360°-Panoramen** auf den Hafen von Busan, die Yeongdo-Brücke, die Insel Tsushima (an klaren Tagen) und den ⟦G1⟧ unterhalb. Weitere Denkmäler im Park: die **Bronzestatue von Admiral Yi Sun-sin (1545–1598)** (Busans heimischer Marineheld, der die japanischen Streitkräfte im Imjin-Krieg von 1592–1598 besiegte und bekanntlich **nie ein einziges Schiff verlor**), die **Bürgerglocke**, gestiftet von **100.000 Bürgerinnen und Bürgern Busans** (wird **33-mal an Silvester und am 1. März, dem Tag der Unabhängigkeitsbewegung, geschlagen**), die **Blumenuhr** am Eingang und eine **Bronzedrachen-Skulptur**, die für den Namen des Berges steht. \n\nDer Zugang erfolgt über eine **überdachte Rolltreppe von der Gwangbok-ro Fashion Street** (keine Rolltreppe für den Rückweg — Abstieg über die Treppen). **Park kostenlos, 24 Std.**; **Aussichtsplattform des Busan Diamond Tower ₩12.000 für Erwachsene / ₩9.000 für Senioren ab 65 oder Kinder von 3–12 Jahren, Öffnungszeiten 10:00–22:00 Uhr (letzter Einlass 21:30 Uhr)**.",
       "glossary": [
         "⟦G0⟧ = Bulguksa-Tempel",
         "⟦G1⟧ = Jagalchi-Markt",
@@ -150,61 +202,52 @@
       ]
     },
     "/itineraryStops/5/visitBasics/hours": {
-      "source_en": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**"
+      "source_en": "Park open 24h; **Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)**",
+      "tm": "Park 24 Std. geöffnet; **Aussichtsplattform des Busan Diamond Tower 10:00–22:00 Uhr (letzter Einlass 21:30 Uhr)**"
     },
     "/itineraryStops/5/visitBasics/closed": {
-      "source_en": "Tower open year-round (occasional safety closures in extreme wind)"
+      "source_en": "Tower open year-round (occasional safety closures in extreme wind)",
+      "tm": "Turm ganzjährig geöffnet (gelegentliche Schließungen aus Sicherheitsgründen bei extremem Wind)"
     },
     "/itineraryStops/5/visitBasics/walking": {
-      "source_en": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)"
+      "source_en": "**Covered escalator from Gwangbok-ro Fashion Street** for ascent (no return escalator — descend by stairs)",
+      "tm": "**Überdachte Rolltreppe von der Gwangbok-ro Fashion Street** für den Aufstieg (keine Rolltreppe für den Rückweg — Abstieg über die Treppen)"
     },
     "/itineraryStops/5/visitBasics/admission": {
-      "source_en": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**"
+      "source_en": "Park FREE; **Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12**",
+      "tm": "Park KOSTENLOS; **Busan Diamond Tower ₩12.000 für Erwachsene / ₩9.000 für Senioren ab 65 oder Kinder von 3–12 Jahren**"
     },
     "/itineraryStops/5/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ & Busan Tower — gallery image 1",
+      "tm": "⟦G0⟧ & Busan Tower — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/5/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ & Busan Tower — photo 1",
+      "tm": "⟦G0⟧ & Busan Tower — Foto 1",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/5/galleryItems/0/location": {
       "source_en": "⟦G0⟧ & Busan Tower",
+      "tm": "⟦G0⟧ & Busan Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/5/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ & Busan Tower — gallery image 2",
+      "tm": "⟦G0⟧ & Busan Tower — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/5/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ & Busan Tower — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/1/location": {
-      "source_en": "⟦G0⟧ & Busan Tower",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/2/alt": {
-      "source_en": "⟦G0⟧ & Busan Tower — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/2/caption": {
-      "source_en": "⟦G0⟧ & Busan Tower — photo 3",
+      "tm": "⟦G0⟧ & Busan Tower — Foto 2",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
@@ -236,16 +279,7 @@
     },
     "/itineraryStops/5/galleryItems/1/caption": {
       "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/1/location": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/2/alt": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/2/caption": {
-      "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 0
+  "tmHits": 55
 }

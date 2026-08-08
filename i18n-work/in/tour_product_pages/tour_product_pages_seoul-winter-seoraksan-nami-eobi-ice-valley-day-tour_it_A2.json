@@ -1,0 +1,81 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:it:A2",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "it",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Travellers visiting Korea in January or February who want the winter landscape, not a city day"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Photographers after snow on granite, frosted tree avenues and a blue-hour ice wall"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Couples and small groups comfortable with a long, cold, full day"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Anyone who wants to see something most Seoul day trips do not include"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Anyone travelling outside the winter season — the ice wall simply does not exist in warm months"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travellers sensitive to cold, or who need guaranteed sightseeing regardless of weather"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Guests wanting minimal walking — there is icy ground and a deck path at the last stop"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Young children and anyone unsteady on their feet in winter conditions"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Seoraksan first, while the snow is still clean"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "The park is the furthest point of the day and the one most affected by afternoon melt and cloud. Going there first uses the clearest light and the freshest snow, and it means the long drive happens before anyone is tired."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Nami in the middle, because the ferry needs daylight"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Nami's appeal in winter is its tree avenues under frost, which need light to be worth the crossing. A mid-afternoon slot gets you across while the island is still bright and before the wind picks up on the exposed ferry deck."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Eobi last, because it is already on the way home"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Eobi Valley is in Seorak-myeon in southern Gapyeong, on the Seoul side of everything else on this route. Ending there costs no backtracking, and in deep winter the late arrival coincides with the valley's night lighting coming on along the deck path."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "A route built around one short season"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "The ice wall only exists when the cold holds — the village starts building it in mid-December and it comes down in February. That single constraint is why this itinerary exists at all and why it does not run the rest of the year."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Pacing & geography",
+      "tm": "Ritmo e geografia"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this winter day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "A 06:00 Hongik / 06:30 ⟦G0⟧ start and a ~3-hour run northeast puts you at Seoraksan mid-morning, when the snow is still clean and the light is on the granite. Lunch near Sokcho, then the long drive back west through the Chuncheon corridor to Nami Island for the frosted tree avenues. The last stop, Eobi Valley, sits in southern Gapyeong already pointing at Seoul — you reach it late in the afternoon, near the end of the village's opening hours. Back in Seoul around 19:00-19:30.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 2
+}

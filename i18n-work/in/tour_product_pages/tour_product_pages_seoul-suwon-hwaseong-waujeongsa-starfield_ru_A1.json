@@ -8,58 +8,73 @@
   "segments": {
     "/seo/title": {
       "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Library Heritage Day Tour | AtoC Korea",
+      "tm": "Хвасон в Сувоне, ⟦G0⟧ и библиотека Starfield: день наследия | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Храм Вауджонса"
       ]
     },
     "/seo/pageTitle": {
-      "source_en": "Suwon Hwaseong, Waujeongsa & Starfield Day Tour | AtoC Korea"
+      "source_en": "Suwon Hwaseong, Waujeongsa & Starfield Day Tour | AtoC Korea",
+      "tm": "Хвасон в Сувоне, Вауджонса и Starfield: однодневная экскурсия | AtoC Korea"
     },
     "/seo/metaDescription": {
       "source_en": "9–10-hour day trip from Seoul: UNESCO ⟦G0⟧, Starfield Suwon Library, and ⟦G1⟧ with its giant outdoor Buddha. EN guide, transfers.",
+      "tm": "Поездка на день из Сеула на 9–10 часов: ⟦G0⟧ из списка ЮНЕСКО, библиотека Starfield в Сувоне и ⟦G1⟧ с огромным Буддой под открытым небом. Англоговорящий гид, трансферы.",
       "glossary": [
         "⟦G0⟧ = Крепость Хвасон в Сувоне",
         "⟦G1⟧ = Храм Вауджонса"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Suwon Hwaseong day tour"
+      "source_en": "Suwon Hwaseong day tour",
+      "tm": "однодневная экскурсия в Хвасон в Сувоне"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ Yongin",
+      "tm": "⟦G0⟧ в Йонъине",
       "glossary": [
         "⟦G0⟧ = Храм Вауджонса"
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Seoul Suwon heritage tour"
+      "source_en": "Seoul Suwon heritage tour",
+      "tm": "экскурсия по наследию Сеула и Сувона"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Hwaseong Fortress UNESCO tour"
+      "source_en": "Hwaseong Fortress UNESCO tour",
+      "tm": "экскурсия в крепость Хвасон из списка ЮНЕСКО"
     },
     "/hero/meta/stops": {
-      "source_en": "4 stops"
+      "source_en": "4 stops",
+      "tm": "4 остановки"
     },
     "/hero/meta/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Сувон и Йонъин"
     },
     "/hero/meta/duration": {
-      "source_en": "9–10 hours"
+      "source_en": "9–10 hours",
+      "tm": "9–10 часов"
     },
     "/hero/pills/0": {
-      "source_en": "UNESCO Site"
+      "source_en": "UNESCO Site",
+      "tm": "Объект ЮНЕСКО"
     },
     "/hero/pills/1": {
-      "source_en": "Admission Included"
+      "source_en": "Admission Included",
+      "tm": "Входные билеты включены"
     },
     "/hero/pills/2": {
-      "source_en": "Round-Trip Seoul Transfers"
+      "source_en": "Round-Trip Seoul Transfers",
+      "tm": "Трансферы из Сеула и обратно"
     },
     "/hero/tagline": {
-      "source_en": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day."
+      "source_en": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day.",
+      "tm": "От крепости XVIII века из списка ЮНЕСКО к одной из самых фотографируемых современных библиотек Кореи и дальше к тихому буддийскому храму в горах — три стороны Кореи в одном уравновешенном дне."
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Value",
@@ -102,7 +117,8 @@
       "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Баланс"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -129,71 +145,90 @@
       "tm": "Отзывы"
     },
     "/catalog_card/tags/1": {
-      "source_en": "heritage__modern_day_trip"
+      "source_en": "heritage__modern_day_trip",
+      "tm": "наследие__и_современность_на_день"
     },
     "/catalog_card/title": {
-      "source_en": "Suwon: Hwaseong, Waujeongsa & Starfield"
+      "source_en": "Suwon: Hwaseong, Waujeongsa & Starfield",
+      "tm": "Сувон: Хвасон, Вауджонса и Starfield"
     },
     "/catalog_card/badges/0": {
-      "source_en": "UNESCO Heritage"
+      "source_en": "UNESCO Heritage",
+      "tm": "Наследие ЮНЕСКО"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Heritage + Modern Day Trip"
+      "source_en": "Heritage + Modern Day Trip",
+      "tm": "Наследие и современность за день"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Admission Included"
+      "source_en": "Admission Included",
+      "tm": "Входные билеты включены"
     },
     "/catalog_card/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Сувон и Йонъин"
     },
     "/catalog_card/duration": {
-      "source_en": "9–10 hours"
+      "source_en": "9–10 hours",
+      "tm": "9–10 часов"
     },
     "/catalog_card/subtitle": {
-      "source_en": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip."
+      "source_en": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip.",
+      "tm": "Крепость из списка ЮНЕСКО, храм в горах и библиотека, ставшая интернет-хитом: прошлое, дух и настоящее Кореи в одной поездке из Сеула."
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$51 per person (was $54, 6% off)"
+      "source_en": "From US$51 per person (was $54, 6% off)",
+      "tm": "От US$51 с человека (было $54, скидка 6 %)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed ⟦G0⟧ (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and ⟦G1⟧ in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission.",
+      "tm": "Поездка на день малой группой из Сеула, охватывающая три контрастные стороны Кореи: ⟦G0⟧ из списка ЮНЕСКО (военная архитектура XVIII века), фотогеничная библиотека Starfield в Сувоне (икона современной культуры) и ⟦G1⟧ в Йонъине (огромный Будда под открытым небом и каменный колокол). Насыщенное наследие, транспорт и входные билеты включены.",
       "glossary": [
         "⟦G0⟧ = Крепость Хвасон в Сувоне",
         "⟦G1⟧ = Храм Вауджонса"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "День наследия в Сувоне"
     },
     "/headlineLine2": {
-      "source_en": "Hwaseong, Waujeongsa & Starfield"
+      "source_en": "Hwaseong, Waujeongsa & Starfield",
+      "tm": "Хвасон, Вауджонса и Starfield"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Фиксированные точки сбора — посадка у отеля не предусмотрена. Опоздавших ждать не могут, и оплата им не возвращается."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Станция ⟦G0⟧ (выход 2)",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Станция Hongik Univ. (выход 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Станция Hongik Univ. (выход 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Пожалуйста, приходите за 10 минут до времени выезда."
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Станция ⟦G0⟧ (выход 2)",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Пожалуйста, приходите за 10 минут до времени выезда."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -209,125 +244,156 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Pickup typically from Hongik University Station (Exit 4) and ⟦G0⟧ Station",
+      "tm": "Сбор обычно у станции Hongik University (выход 4) и у станции ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Departure typically around 08:30 to 09:00 from the first meeting point"
+      "source_en": "Departure typically around 08:30 to 09:00 from the first meeting point",
+      "tm": "Выезд от первой точки сбора обычно около 08:30–09:00"
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Please arrive at least 10 minutes early at your selected meeting point"
+      "source_en": "Please arrive at least 10 minutes early at your selected meeting point",
+      "tm": "Пожалуйста, приходите в выбранную точку сбора минимум на 10 минут раньше"
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Drop-off at the same Seoul meeting points"
+      "source_en": "Drop-off at the same Seoul meeting points",
+      "tm": "Высадка в тех же точках сбора в Сеуле"
     },
     "/practicalAccordionItems/0/content/4": {
-      "source_en": "Expected return between 18:00 and 19:00 depending on traffic and Sunday delays"
+      "source_en": "Expected return between 18:00 and 19:00 depending on traffic and Sunday delays",
+      "tm": "Возвращение ожидается между 18:00 и 19:00, в зависимости от пробок и воскресных задержек"
     },
     "/practicalAccordionItems/0/content/5": {
-      "source_en": "This is a fixed-route group format, not hotel pickup; travelers must reach the meeting point themselves"
+      "source_en": "This is a fixed-route group format, not hotel pickup; travelers must reach the meeting point themselves",
+      "tm": "Это групповой формат с фиксированным маршрутом, а не посадка у отеля: до точки сбора нужно добраться самостоятельно"
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Two Seoul meeting points; ≈09:00 departure"
+      "source_en": "Two Seoul meeting points; ≈09:00 departure",
+      "tm": "Две точки сбора в Сеуле; выезд ≈09:00"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "Walking & terrain",
       "tm": "Пешие участки и рельеф"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Hwaseong Fortress: stone steps along the wall walk and at the main gates; uneven historic surfaces"
+      "source_en": "Hwaseong Fortress: stone steps along the wall walk and at the main gates; uneven historic surfaces",
+      "tm": "Крепость Хвасон: каменные ступени вдоль стены и у главных ворот, неровная историческая поверхность"
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Starfield Library and Mall: easy indoor walking on flat floors"
+      "source_en": "Starfield Library and Mall: easy indoor walking on flat floors",
+      "tm": "Библиотека и торговый центр Starfield: лёгкая ходьба внутри, ровные полы"
     },
     "/practicalAccordionItems/1/content/2": {
       "source_en": "⟦G0⟧: moderate with some uphill paths and stairs",
+      "tm": "⟦G0⟧: умеренная нагрузка, есть подъёмы и ступени",
       "glossary": [
         "⟦G0⟧ = Храм Вауджонса"
       ]
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Comfortable walking shoes with grip are recommended"
+      "source_en": "Comfortable walking shoes with grip are recommended",
+      "tm": "Рекомендуется удобная обувь для ходьбы с нескользящей подошвой"
     },
     "/practicalAccordionItems/1/content/4": {
-      "source_en": "Stroller use is possible at Starfield only; Hwaseong walls and Waujeongsa are not stroller-friendly"
+      "source_en": "Stroller use is possible at Starfield only; Hwaseong walls and Waujeongsa are not stroller-friendly",
+      "tm": "Коляска подойдёт только в Starfield; на стенах Хвасона и в Вауджонса с ней неудобно"
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Moderate; the Hwaseong wall is the main physical section"
+      "source_en": "Moderate; the Hwaseong wall is the main physical section",
+      "tm": "Умеренная; главная физическая нагрузка — стена Хвасона"
     },
     "/practicalAccordionItems/2/title": {
       "source_en": "Weather policy",
       "tm": "Правила по погоде"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Light rain: tour usually proceeds with normal adjustments"
+      "source_en": "Light rain: tour usually proceeds with normal adjustments",
+      "tm": "Лёгкий дождь: экскурсия обычно проходит с обычными поправками"
     },
     "/practicalAccordionItems/2/content/1": {
       "source_en": "Heavy rain or snow: the Hwaseong wall walk may be shortened in favor of ⟦G0⟧",
+      "tm": "Сильный дождь или снег: прогулку по стене Хвасона могут сократить в пользу ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Дворец Хвасон Хэнгун"
       ]
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Starfield is a fully indoor stop and works as a wet-weather anchor"
+      "source_en": "Starfield is a fully indoor stop and works as a wet-weather anchor",
+      "tm": "Starfield — остановка полностью под крышей и служит опорой в непогоду"
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Waujeongsa is partially exposed; temple operations continue in light rain"
+      "source_en": "Waujeongsa is partially exposed; temple operations continue in light rain",
+      "tm": "Вауджонса частично под открытым небом; при лёгком дожде храм работает как обычно"
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Light rain workable; heavy rain reduces the fortress walk"
+      "source_en": "Light rain workable; heavy rain reduces the fortress walk",
+      "tm": "Лёгкий дождь не помеха; сильный сокращает прогулку по крепости"
     },
     "/practicalAccordionItems/3/title": {
       "source_en": "What to wear & bring",
       "tm": "Что надеть и взять с собой"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)"
+      "source_en": "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)",
+      "tm": "Удобная обувь с нескользящей подошвой (обязательна для Хвасона и Вауджонса)"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Modest clothing for the temple visit (covered shoulders recommended)"
+      "source_en": "Modest clothing for the temple visit (covered shoulders recommended)",
+      "tm": "Скромная одежда для посещения храма (плечи желательно закрыть)"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Light layers for changing temperatures between exposed walls and indoor spaces"
+      "source_en": "Light layers for changing temperatures between exposed walls and indoor spaces",
+      "tm": "Одежда слоями — температура меняется между открытыми стенами и помещениями"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Sun protection and water in summer"
+      "source_en": "Sun protection and water in summer",
+      "tm": "Защита от солнца и вода летом"
     },
     "/practicalAccordionItems/3/content/4": {
-      "source_en": "Camera or phone with wide-angle for Starfield Library shots"
+      "source_en": "Camera or phone with wide-angle for Starfield Library shots",
+      "tm": "Фотоаппарат или телефон с широким углом для снимков библиотеки Starfield"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Walking shoes, modest temple clothing, layers"
+      "source_en": "Walking shoes, modest temple clothing, layers",
+      "tm": "Обувь для ходьбы, скромная одежда для храма, одежда слоями"
     },
     "/practicalAccordionItems/4/title": {
       "source_en": "What's included",
       "tm": "Что включено"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Professional English-speaking guide"
+      "source_en": "Professional English-speaking guide",
+      "tm": "Профессиональный англоговорящий гид"
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Round-trip transport from Seoul (small-group vehicle)"
+      "source_en": "Round-trip transport from Seoul (small-group vehicle)",
+      "tm": "Транспорт из Сеула и обратно (автомобиль для малой группы)"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "All admission fees (Hwaseong, Hwaseong Haenggung, Starfield is free, Waujeongsa)"
+      "source_en": "All admission fees (Hwaseong, Hwaseong Haenggung, Starfield is free, Waujeongsa)",
+      "tm": "Все входные билеты (Хвасон, Хвасон Хэнгун, Starfield бесплатно, Вауджонса)"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "Lunch is not included; pay directly at Starfield mall restaurants"
+      "source_en": "Lunch is not included; pay directly at Starfield mall restaurants",
+      "tm": "Обед не включён; оплачивается прямо в ресторанах торгового центра Starfield"
     },
     "/practicalAccordionItems/4/content/4": {
       "source_en": "Personal shopping is not included",
       "tm": "Личные покупки не включены"
     },
     "/practicalAccordionItems/4/content/5": {
-      "source_en": "Optional cafe purchases are not included"
+      "source_en": "Optional cafe purchases are not included",
+      "tm": "Покупки в кафе по желанию не включены"
     },
     "/practicalAccordionItems/4/content/6": {
-      "source_en": "Guide gratuities are optional"
+      "source_en": "Guide gratuities are optional",
+      "tm": "Чаевые гиду не обязательны"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Guide, transport, and admission included; lunch pay direct"
+      "source_en": "Guide, transport, and admission included; lunch pay direct",
+      "tm": "Гид, транспорт и входные билеты включены; обед оплачивается на месте"
     },
     "/practicalAccordionItems/5/title": {
       "source_en": "Cancellation",
@@ -377,5 +443,5 @@
       "⟦G0⟧": "Дворец Хвасон Хэнгун"
     }
   },
-  "tmHits": 28
+  "tmHits": 94
 }

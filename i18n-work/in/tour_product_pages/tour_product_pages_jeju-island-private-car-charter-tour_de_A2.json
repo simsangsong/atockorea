@@ -7,153 +7,190 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Families with children, including very young kids"
+      "source_en": "Families with children, including very young kids",
+      "tm": "Familien mit Kindern, auch mit sehr kleinen Kindern"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Multi-generational groups including seniors"
+      "source_en": "Multi-generational groups including seniors",
+      "tm": "Gruppen mehrerer Generationen, auch mit Senioren"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Couples and honeymooners wanting a relaxed K-drama day"
+      "source_en": "Couples and honeymooners wanting a relaxed K-drama day",
+      "tm": "Paare und Hochzeitsreisende, die einen entspannten K-Drama-Tag möchten"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Repeat Jeju visitors who want a tailored route"
+      "source_en": "Repeat Jeju visitors who want a tailored route",
+      "tm": "Wiederholte Jeju-Besucher, die eine maßgeschneiderte Route wünschen"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)"
+      "source_en": "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)",
+      "tm": "Fotografinnen und Fotografen auf der Suche nach bestimmten saisonalen Motiven (Raps, Hortensien, Pink Muhly)"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Solo budget travelers (private pricing is per vehicle)"
+      "source_en": "Solo budget travelers (private pricing is per vehicle)",
+      "tm": "Alleinreisende mit knappem Budget (der Privatpreis gilt pro Fahrzeug)"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Travelers wanting to mix with other guests for a social experience"
+      "source_en": "Travelers wanting to mix with other guests for a social experience",
+      "tm": "Reisende, die sich für ein geselliges Erlebnis mit anderen Gästen mischen möchten"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)"
+      "source_en": "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)",
+      "tm": "Alle, die eine durchgehend kommentierte Tour mit zertifizierter Reiseleitung benötigen (der Fahrer-Guide ist lizenziert, bietet aber keine Erläuterungen auf vollem Guide-Niveau)"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Travelers wanting fully included admission and meals"
+      "source_en": "Travelers wanting fully included admission and meals",
+      "tm": "Reisende, die Eintritte und Mahlzeiten vollständig inklusive wünschen"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Jeju is genuinely large"
+      "source_en": "Jeju is genuinely large",
+      "tm": "Jeju ist wirklich groß"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead."
+      "source_en": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead.",
+      "tm": "Die Insel erstreckt sich von Ost nach West über rund 73 km. Bei Bus-Gruppentouren gehen an jedem Stopp Stunden mit Warten verloren; eine private Charterfahrt spart diesen Aufwand."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Weather changes fast"
+      "source_en": "Weather changes fast",
+      "tm": "Das Wetter schlägt schnell um"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
       "source_en": "Jeju microclimates shift hourly. A driver-guide can swap an outdoor stop for an indoor one (⟦G0⟧ caves, O'sulloc, Yakcheonsa) without ruining the day.",
+      "tm": "Die Mikroklimata auf Jeju wechseln stündlich. Ein Fahrer-Guide kann einen Stopp im Freien gegen einen im Innenbereich tauschen (⟦G0⟧, Höhlen, O'sulloc, Yakcheonsa), ohne dass der Tag verdorben wird.",
       "glossary": [
         "⟦G0⟧ = Hallim-Park"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Door-to-door comfort"
+      "source_en": "Door-to-door comfort",
+      "tm": "Komfort von Tür zu Tür"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers."
+      "source_en": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers.",
+      "tm": "Abholung am Hotel bedeutet: kein Shuttle im Flughafenbereich, kein Stress mit dem Bus am späten Abend und kein Laufen mit Gepäck zwischen Umstiegen."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why a private charter wins on Jeju"
+      "source_en": "Why a private charter wins on Jeju",
+      "tm": "Warum eine private Charterfahrt auf Jeju überzeugt"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
       "source_en": "bg-sky-50/80",
       "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "East for first-time landmark coverage"
+      "source_en": "East for first-time landmark coverage",
+      "tm": "Osten für die Wahrzeichen beim ersten Besuch"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
       "source_en": "⟦G0⟧ and Manjanggul are Jeju's two strongest UNESCO names; the East route delivers maximum recognition value.",
+      "tm": "⟦G0⟧ und Manjanggul sind Jejus zwei stärkste UNESCO-Namen; die Ostroute bietet den höchsten Wiedererkennungswert.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "West for relaxed scenery and photos"
+      "source_en": "West for relaxed scenery and photos",
+      "tm": "Westen für entspannte Landschaften und Fotos"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "⟦G0⟧, ⟦G1⟧, O'sulloc, and Aewol form a softer, more couple-friendly day with strong photo payoff and a sunset finish.",
+      "tm": "⟦G0⟧, ⟦G1⟧, O'sulloc und Aewol ergeben einen sanfteren, paarfreundlicheren Tag mit starker fotografischer Ausbeute und einem Abschluss bei Sonnenuntergang.",
       "glossary": [
         "⟦G0⟧ = Hyeopjae-Strand",
         "⟦G1⟧ = Hallim-Park"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "South for geological drama"
+      "source_en": "South for geological drama",
+      "tm": "Süden für geologische Dramatik"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative."
+      "source_en": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative.",
+      "tm": "Wasserfälle, Basaltklippen, eine vulkanische Kuppel und ein Tempel an einem Tag geben dieser Route Jejus stärkste Erzählung der „Vulkaninsel"
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "How to choose between East, West, and South"
+      "source_en": "How to choose between East, West, and South",
+      "tm": "Wie Sie zwischen Ost, West und Süd wählen"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-amber-50/80",
       "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Weather adjustments"
+      "source_en": "Weather adjustments",
+      "tm": "Wetterbedingte Anpassungen"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol)."
+      "source_en": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol).",
+      "tm": "Leichter Regen beeinträchtigt die Route selten; starker Wind verkürzt in der Regel die Stopps an der Küste (Seongsan, Jusangjeolli, Aewol)."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Udo ferry on the East route"
+      "source_en": "Udo ferry on the East route",
+      "tm": "Udo-Fähre auf der Ostroute"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow."
+      "source_en": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow.",
+      "tm": "Die Insel Udo erfordert eine separate Fähre. Fahrzeuge können übergesetzt werden (gegen Aufpreis) oder am Kai bleiben. Die Fährzeiten wirken sich auf den gesamten Tagesablauf aus."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Overtime is possible"
+      "source_en": "Overtime is possible",
+      "tm": "Überstunden sind möglich"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability."
+      "source_en": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability.",
+      "tm": "Wenn Sie mehr als 9 Stunden benötigen, kostet eine zusätzliche Stunde 25.000 KRW, bar an den Fahrer zu zahlen, vorbehaltlich der Verfügbarkeit des Fahrers."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "What changes on the day"
+      "source_en": "What changes on the day",
+      "tm": "Was sich am Tag selbst ändert"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
-      "source_en": "bg-slate-50/80"
+      "source_en": "bg-slate-50/80",
+      "tm": "bg-slate-50/80"
     },
     "/routeShapeIntro/title": {
       "source_en": "How this private day moves",
       "tm": "Wie dieser private Tag abläuft"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00."
+      "source_en": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00.",
+      "tm": "Abholung an Ihrem Hotel auf Jeju zwischen 08:00 und 09:00 Uhr, danach ein völlig flexibler 9-stündiger Tag entlang der Ost-, West- oder Südroute – oder nach Ihrem eigenen Wunschplan. Der Fahrer-Guide passt das Tempo an Wetter und Verkehr an. Rückfahrt und Absetzen gegen 17:00 bis 18:00 Uhr."
     },
     "/staticQuestions/0/answer": {
       "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day.",
       "tm": "Ja — sie deckt die markantesten Stopps der Region an einem einzigen, ausgewogenen Tag ab."
     },
     "/staticQuestions/0/question": {
-      "source_en": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?"
+      "source_en": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?",
+      "tm": "Ist das eine gute Wahl für Erstbesucher auf Jeju (Ost, West oder Süd)?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Moderate walking with some active sections."
+      "source_en": "Moderate walking with some active sections.",
+      "tm": "Mäßige Fußwege mit einigen aktiveren Abschnitten."
     },
     "/staticQuestions/1/question": {
       "source_en": "Is the walking difficult?",
       "tm": "Sind die Fußwege anstrengend?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Yes — comfortable for most families."
+      "source_en": "Yes — comfortable for most families.",
+      "tm": "Ja — für die meisten Familien angenehm."
     },
     "/staticQuestions/2/question": {
       "source_en": "Is this tour suitable for families?",
       "tm": "Ist diese Tour für Familien geeignet?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes — pacing and walking are comfortable for active seniors."
+      "source_en": "Yes — pacing and walking are comfortable for active seniors.",
+      "tm": "Ja — Tempo und Fußwege sind für aktive Senioren angenehm."
     },
     "/staticQuestions/3/question": {
       "source_en": "Can older adults join comfortably?",
       "tm": "Können ältere Gäste bequem teilnehmen?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local driver-guide with full Jeju island knowledge — east, west, and south route expertise so the day isn't constrained to a single corridor."
+      "source_en": "Licensed local driver-guide with full Jeju island knowledge — east, west, and south route expertise so the day isn't constrained to a single corridor.",
+      "tm": "Lizenzierter lokaler Fahrer-Guide mit umfassender Ortskenntnis der Insel Jeju — Expertise für die Ost-, West- und Südroute, damit der Tag nicht auf einen einzigen Korridor beschränkt bleibt."
     },
     "/bookingTrustItems/0/title": {
       "source_en": "Licensed local operator",
@@ -168,7 +205,8 @@
       "tm": "Zugelassener koreanischer Tourveranstalter mit vollem Versicherungsschutz"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "Fully private vehicle: no other passengers, no fixed departure times — the guide meets you at your hotel and the day runs entirely around your group's pace."
+      "source_en": "Fully private vehicle: no other passengers, no fixed departure times — the guide meets you at your hotel and the day runs entirely around your group's pace.",
+      "tm": "Vollständig privates Fahrzeug: keine weiteren Mitfahrenden, keine festen Abfahrtszeiten — der Guide trifft Sie an Ihrem Hotel und der Tag richtet sich ganz nach dem Tempo Ihrer Gruppe."
     },
     "/bookingTrustItems/1/title": {
       "source_en": "Route specialists",
@@ -183,10 +221,12 @@
       "tm": "Handfein abgestimmter Reiseverlauf, keine Standardrunde"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Hotel pickup included island-wide; outside Jeju City areas with an additional pickup fee disclosed at booking."
+      "source_en": "Hotel pickup included island-wide; outside Jeju City areas with an additional pickup fee disclosed at booking.",
+      "tm": "Hotelabholung inselweit inbegriffen; außerhalb der Gebiete von Jeju City mit einer zusätzlichen Abholgebühr, die bei der Buchung ausgewiesen wird."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Angenehme Gruppengröße"
     },
     "/bookingTrustItems/2/iconBg": {
       "source_en": "bg-amber-50/80",
@@ -197,37 +237,44 @@
       "tm": "Passend zur Route dimensioniert"
     },
     "/seasonalVariations/0/title": {
-      "source_en": "Canola season"
+      "source_en": "Canola season",
+      "tm": "Rapsblütenzeit"
     },
     "/seasonalVariations/0/season": {
       "source_en": "Spring",
       "tm": "Frühling"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season."
+      "source_en": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season.",
+      "tm": "Von Ende März bis April überziehen Rapsblüten die Ostküste; die Kirschblüte erreicht Anfang April ihren Höhepunkt. Milde Temperaturen und klarer Himmel machen dies zur ausgewogensten Jahreszeit."
     },
     "/seasonalVariations/1/title": {
-      "source_en": "Beach season"
+      "source_en": "Beach season",
+      "tm": "Strandsaison"
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer",
       "tm": "Sommer"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August."
+      "source_en": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August.",
+      "tm": "Hochsaison am Strand, wenn Hyeopjae und Hamdeok am schönsten sind; im Juni färben Hortensien die Westküste. Rechnen Sie mit Luftfeuchtigkeit und im August mit möglichem Taifunwetter."
     },
     "/seasonalVariations/2/title": {
-      "source_en": "Best photo season"
+      "source_en": "Best photo season",
+      "tm": "Beste Fotosaison"
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn",
       "tm": "Herbst"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Pink muhly fields usually peak from mid-October to early November, and autumn often brings clear views toward Hallasan and Seongsan. It is one of Jeju's best photo seasons."
+      "source_en": "Pink muhly fields usually peak from mid-October to early November, and autumn often brings clear views toward Hallasan and Seongsan. It is one of Jeju's best photo seasons.",
+      "tm": "Die Pink-Muhly-Felder stehen meist von Mitte Oktober bis Anfang November in voller Pracht, und der Herbst bringt oft klare Sicht auf Hallasan und Seongsan. Es ist eine der besten Fotosaisons auf Jeju."
     },
     "/seasonalVariations/3/title": {
-      "source_en": "Camellia & snow"
+      "source_en": "Camellia & snow",
+      "tm": "Kamelien & Schnee"
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter",
@@ -235,6 +282,7 @@
     },
     "/seasonalVariations/3/description": {
       "source_en": "⟦G0⟧ blooms December to February; Hallasan can carry snow on its summit. Cold but visually rewarding, with fewer crowds at all major stops.",
+      "tm": "⟦G0⟧ blüht von Dezember bis Februar; auf dem Gipfel des Hallasan kann Schnee liegen. Kalt, aber visuell lohnend, mit weniger Andrang an allen wichtigen Stopps.",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
@@ -252,7 +300,8 @@
       "tm": "Sofort"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with region/route preference intake and hotel pickup details."
+      "source_en": "Instant confirmation with region/route preference intake and hotel pickup details.",
+      "tm": "Sofortige Bestätigung mit Abfrage Ihrer Regions-/Routenpräferenz und der Details zur Hotelabholung."
     },
     "/bookingSupportSteps/1/title": {
       "source_en": "12-Hour Reminder",
@@ -267,7 +316,8 @@
       "tm": "12 Stunden vorher"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Route finalized 24 hours before based on weather forecast and your priorities."
+      "source_en": "Route finalized 24 hours before based on weather forecast and your priorities.",
+      "tm": "Die Route wird 24 Stunden vorher anhand der Wettervorhersage und Ihrer Prioritäten festgelegt."
     },
     "/bookingSupportSteps/2/title": {
       "source_en": "Final Pickup Info",
@@ -282,7 +332,8 @@
       "tm": "Am Abend zuvor"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Driver-guide details (name, vehicle plate) sent the evening before."
+      "source_en": "Driver-guide details (name, vehicle plate) sent the evening before.",
+      "tm": "Angaben zum Fahrer-Guide (Name, Kennzeichen des Fahrzeugs) werden am Abend zuvor gesendet."
     },
     "/bookingSupportSteps/3/title": {
       "source_en": "Day-of Route Notes",
@@ -297,7 +348,8 @@
       "tm": "Am Morgen der Tour"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver at your hotel lobby at the agreed time with name placard."
+      "source_en": "Driver at your hotel lobby at the agreed time with name placard.",
+      "tm": "Der Fahrer wartet zur vereinbarten Zeit mit Namensschild in Ihrer Hotellobby."
     },
     "/bookingSupportSteps/4/title": {
       "source_en": "Stop-by-Stop Tips",
@@ -312,7 +364,8 @@
       "tm": "Während der Tour"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "On-the-day adjustments via direct message — extend at a spot you love, add a cafe stop, skip what isn't interesting."
+      "source_en": "On-the-day adjustments via direct message — extend at a spot you love, add a cafe stop, skip what isn't interesting.",
+      "tm": "Anpassungen am Tag selbst per Direktnachricht — verlängern Sie an einem Ort, der Ihnen gefällt, ergänzen Sie einen Café-Stopp, lassen Sie weg, was Sie nicht interessiert."
     },
     "/bookingSupportSteps/5/title": {
       "source_en": "Post-tour Support",
@@ -327,7 +380,8 @@
       "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after drop-off."
+      "source_en": "Post-tour feedback request sent after drop-off.",
+      "tm": "Nach dem Absetzen wird eine Bitte um Feedback zur Tour versendet."
     },
     "/practicalWeatherStatic/today/label": {
       "source_en": "Live weather integration",
@@ -353,5 +407,5 @@
       "⟦G0⟧": "Camellia Hill"
     }
   },
-  "tmHits": 39
+  "tmHits": 93
 }

@@ -7,67 +7,86 @@
   "tier": "A2",
   "segments": {
     "/bookingSupportSteps/0/title": {
-      "source_en": "Reserve online"
+      "source_en": "Reserve online",
+      "tm": "Online reservieren"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Pick a date and pay nothing today — reserve now & pay later."
+      "source_en": "Pick a date and pay nothing today — reserve now & pay later.",
+      "tm": "Wählen Sie ein Datum und zahlen Sie heute nichts — jetzt reservieren & später bezahlen."
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Reserve online; instant confirmation includes the cruise detail intake form (ship name, port, all-aboard time)."
+      "source_en": "Reserve online; instant confirmation includes the cruise detail intake form (ship name, port, all-aboard time).",
+      "tm": "Online reservieren; die sofortige Bestätigung enthält das Formular für Ihre Kreuzfahrtdaten (Schiffsname, Hafen, All-aboard-Zeit)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Send your cruise details"
+      "source_en": "Send your cruise details",
+      "tm": "Ihre Kreuzfahrtdaten senden"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Share your ship name, arrival date, and dock — we confirm timing within 24 hours."
+      "source_en": "Share your ship name, arrival date, and dock — we confirm timing within 24 hours.",
+      "tm": "Teilen Sie uns Ihren Schiffsnamen, das Ankunftsdatum und den Liegeplatz mit — wir bestätigen die Zeitplanung innerhalb von 24 Stunden."
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Send us your cruise details within 48 hours of booking so we can adjust your 8-hour period."
+      "source_en": "Send us your cruise details within 48 hours of booking so we can adjust your 8-hour period.",
+      "tm": "Senden Sie uns Ihre Kreuzfahrtdaten innerhalb von 48 Stunden nach der Buchung, damit wir Ihren 8-Stunden-Zeitraum anpassen können."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Customize your stops (optional)"
+      "source_en": "Customize your stops (optional)",
+      "tm": "Ihre Stopps anpassen (optional)"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Send any preferred or skipped stops at least 2 days before the tour."
+      "source_en": "Send any preferred or skipped stops at least 2 days before the tour.",
+      "tm": "Teilen Sie uns bevorzugte oder auszulassende Stopps mindestens 2 Tage vor der Tour mit."
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Optionally adjust your stop list (add or swap attractions) up to 24 hours before — we'll confirm the revised route."
+      "source_en": "Optionally adjust your stop list (add or swap attractions) up to 24 hours before — we'll confirm the revised route.",
+      "tm": "Optional können Sie Ihre Stopp-Liste bis zu 24 Stunden vorher anpassen (Sehenswürdigkeiten ergänzen oder tauschen) — wir bestätigen die geänderte Route."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Receive driver details"
+      "source_en": "Receive driver details",
+      "tm": "Fahrerdaten erhalten"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Vehicle plate number, driver name, and contact phone are sent the day before."
+      "source_en": "Vehicle plate number, driver name, and contact phone are sent the day before.",
+      "tm": "Kennzeichen des Fahrzeugs, Name des Fahrers und Kontakttelefonnummer werden am Vortag zugesendet."
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver details (name, vehicle plate, meeting point at the terminal) sent the evening before."
+      "source_en": "Driver details (name, vehicle plate, meeting point at the terminal) sent the evening before.",
+      "tm": "Fahrerdaten (Name, Kennzeichen, Treffpunkt am Terminal) werden am Vorabend zugesendet."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Meet at the cruise terminal"
+      "source_en": "Meet at the cruise terminal",
+      "tm": "Treffen am Kreuzfahrtterminal"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Driver waits at the arrival hall with an AtoC Korea sign within 30 min of disembarkation."
+      "source_en": "Driver waits at the arrival hall with an AtoC Korea sign within 30 min of disembarkation.",
+      "tm": "Der Fahrer wartet innerhalb von 30 Min. nach dem Ausschiffen mit einem AtoC Korea-Schild in der Ankunftshalle."
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Driver meets you at the cruise terminal arrival hall with a name placard for your group."
+      "source_en": "Driver meets you at the cruise terminal arrival hall with a name placard for your group.",
+      "tm": "Der Fahrer empfängt Sie in der Ankunftshalle des Kreuzfahrtterminals mit einem Namensschild für Ihre Gruppe."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "On-time return to your ship"
+      "source_en": "On-time return to your ship",
+      "tm": "Pünktliche Rückkehr zu Ihrem Schiff"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Drop-off ≈ 90 min before all-aboard call. Hotel or KTX drop-off available instead."
+      "source_en": "Drop-off at the same cruise terminal at least 60 minutes before your all-aboard call."
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Drop-off at the same terminal at least 60 minutes before all-aboard; brief feedback form sent afterward."
+      "source_en": "Drop-off at the same terminal at least 60 minutes before all-aboard; brief feedback form sent afterward.",
+      "tm": "Absetzen am selben Terminal mindestens 60 Minuten vor der All-aboard-Zeit; im Anschluss wird ein kurzes Feedback-Formular zugesendet."
     },
     "/practicalWeatherStatic/advice": {
       "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
+      "tm": "Im Frühjahr/Herbst Kleidung nach dem Zwiebelprinzip; im Sommer Sonnenschutz und eine leichte Regenjacke; im Winter warmer Mantel und Handschuhe für die Küstenklippen von ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/practicalWeatherStatic/summary": {
-      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy."
+      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
+      "tm": "Busan hat ein feuchtes subtropisches Klima mit vier ausgeprägten Jahreszeiten. Die Kreuzfahrtsaison konzentriert sich auf den Frühling (März–Mai) und den Herbst (Sep–Nov), beide angenehm mit 12–25 °C und geringen Niederschlägen. Der Sommer (Jun–Aug) bringt warmes, schwüles Wetter und gelegentliche Monsunschauer. Der Winter (Dez–Feb) ist kühl und windig."
     }
   },
   "glossaryTokens": {
@@ -75,5 +94,5 @@
       "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 0
+  "tmHits": 19
 }

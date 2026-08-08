@@ -15,10 +15,12 @@
       "tm": "Start"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Morning Stops"
+      "source_en": "Morning Stops",
+      "tm": "Stopps am Vormittag"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Choose"
+      "source_en": "Choose",
+      "tm": "Wählen"
     },
     "/routeFlowStops/2/name": {
       "source_en": "Lunch Break",
@@ -42,5 +44,5 @@
     }
   },
   "glossaryTokens": {},
-  "tmHits": 7
+  "tmHits": 9
 }

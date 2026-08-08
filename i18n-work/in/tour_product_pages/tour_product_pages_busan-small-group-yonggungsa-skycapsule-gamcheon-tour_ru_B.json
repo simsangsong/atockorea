@@ -1,0 +1,464 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:ru:B",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "ru",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Coastal morning"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 3.5 hours"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Door-to-door hotel pickup across central Busan (09:00–10:00), then ⟦G0⟧ Temple before the tour-bus surge, and on to Cheongsapo's Daritdol glass skywalk.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Sky Capsule, lunch & beach"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 часа"
+    },
+    "/routePhases/1/description": {
+      "source_en": "The pastel Sky Capsule ride from Cheongsapo to Mipo (ticket optional — non-riders take the coach or walk the Green Railway boardwalk), lunch near Haeundae, then twenty minutes on Haeundae Beach itself."
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Two hillside villages"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 часа"
+    },
+    "/routePhases/2/description": {
+      "source_en": "⟦G0⟧'s photo loop (60 min), then the quiet Dakbatgol mural village and its free wish-stairs monorail (30 min).",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Central close"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 час"
+    },
+    "/routePhases/3/description": {
+      "source_en": "Sequential drop-offs: Nampo-dong, Busan Station, Seomyeon, then Haeundae."
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Храм ⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 1"
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 1"
+    },
+    "/galleryItems/1/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Смотровая площадка Таритдоль в Чхонсапхо (стеклянный скайвок)"
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 1"
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 1"
+    },
+    "/galleryItems/2/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "Haeundae Beach — gallery image 1"
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "Haeundae Beach — photo 1"
+    },
+    "/galleryItems/3/location": {
+      "source_en": "Haeundae Beach",
+      "tm": "Пляж Хэундэ"
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Храм ⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Храм ⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Храм ⟦G0⟧ — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Храм ⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 6",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Храм ⟦G0⟧ — фото 6",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 2"
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 2"
+    },
+    "/galleryItems/10/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Смотровая площадка Таритдоль в Чхонсапхо (стеклянный скайвок)"
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 3"
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 3"
+    },
+    "/galleryItems/11/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Смотровая площадка Таритдоль в Чхонсапхо (стеклянный скайвок)"
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 4"
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 4"
+    },
+    "/galleryItems/12/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Смотровая площадка Таритдоль в Чхонсапхо (стеклянный скайвок)"
+    },
+    "/galleryItems/13/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 2"
+    },
+    "/galleryItems/13/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 2"
+    },
+    "/galleryItems/13/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/14/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 3"
+    },
+    "/galleryItems/14/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 3"
+    },
+    "/galleryItems/14/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/15/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 4"
+    },
+    "/galleryItems/15/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 4"
+    },
+    "/galleryItems/15/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/16/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 5"
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 5"
+    },
+    "/galleryItems/16/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 6"
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 6"
+    },
+    "/galleryItems/17/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 7"
+    },
+    "/galleryItems/18/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 7"
+    },
+    "/galleryItems/18/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/galleryItems/19/alt": {
+      "source_en": "Haeundae Beach — gallery image 2"
+    },
+    "/galleryItems/19/caption": {
+      "source_en": "Haeundae Beach — photo 2"
+    },
+    "/galleryItems/19/location": {
+      "source_en": "Haeundae Beach",
+      "tm": "Пляж Хэундэ"
+    },
+    "/galleryItems/20/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/20/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/20/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/21/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/21/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/21/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/routePhases/2/description": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/20/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/20/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/20/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/21/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/21/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/21/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    }
+  },
+  "tmHits": 43
+}

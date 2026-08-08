@@ -8,39 +8,48 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "About 12 hours door-to-door from a 07:00 Hongik or 07:30 ⟦G0⟧ pickup. It returns to Seoul between approximately 18:45 (⟦G0⟧) and 19:15 (Hongik).",
+      "tm": "Около 12 часов от двери до двери, со сбором в 07:00 у Hongik или в 07:30 в ⟦G0⟧. Возвращение в Сеул примерно между 18:45 (⟦G0⟧) и 19:15 (Hongik).",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "How long is this tour?"
+      "source_en": "How long is this tour?",
+      "tm": "Сколько длится экскурсия?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "This tour departs **on Mondays and Thursdays only**. Please book a Monday or Thursday date — the itinerary and timing are the same on both days."
+      "source_en": "This tour departs **on Mondays and Thursdays only**. Please book a Monday or Thursday date — the itinerary and timing are the same on both days.",
+      "tm": "Эта экскурсия отправляется **только по понедельникам и четвергам**. Пожалуйста, выбирайте при бронировании понедельник или четверг — маршрут и расписание в оба дня одинаковые."
     },
     "/staticQuestions/1/question": {
-      "source_en": "What days does this tour run?"
+      "source_en": "What days does this tour run?",
+      "tm": "В какие дни проходит экскурсия?"
     },
     "/staticQuestions/2/answer": {
       "source_en": "Two pickup points: (1) **Starbucks Hongik University Station Exit 8** (Mapo-gu) at 07:00 — the Starbucks at the top of the exit; or (2) **⟦G0⟧ Station Exit 2** (Jung-gu) at 07:30 — the NorthFace flagship store at the top of the exit. Choose the one closest to your hotel at booking.",
+      "tm": "Две точки сбора: (1) **Starbucks у выхода 8 станции Hongik University** (Мапхо-гу) в 07:00 — Starbucks наверху выхода; или (2) **станция ⟦G0⟧, выход 2** (Чун-гу) в 07:30 — флагманский магазин NorthFace наверху выхода. При бронировании выберите ту, что ближе к вашему отелю.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/staticQuestions/2/question": {
-      "source_en": "Where exactly is the pickup?"
+      "source_en": "Where exactly is the pickup?",
+      "tm": "Где именно проходит сбор?"
     },
     "/staticQuestions/3/answer": {
       "source_en": "Drop-off is at the same two locations in reverse order: ⟦G0⟧ Exit 2 first at approximately 18:45, then Hongik University Exit 8 at approximately 19:15. Exact times depend on traffic on the day.",
+      "tm": "Высадка — в тех же двух местах, но в обратном порядке: сначала ⟦G0⟧, выход 2, примерно в 18:45, затем Hongik University, выход 8, примерно в 19:15. Точное время зависит от пробок в этот день.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/staticQuestions/3/question": {
-      "source_en": "Where is the drop-off?"
+      "source_en": "Where is the drop-off?",
+      "tm": "Где происходит высадка?"
     },
     "/staticQuestions/4/answer": {
       "source_en": "Yes — and in practice all three stops are free to enter. ⟦G0⟧ entrance was abolished in May 2023, ⟦G1⟧ has been free since May 2023, and ⟦G2⟧ has no admission fee. The **only optional paid item is the Seorak Cable Car** (₩16,000 round-trip), which is on-site ticketing only and own-expense.",
+      "tm": "Да, и на практике вход на все три остановки бесплатный. Плату за вход в ⟦G0⟧ отменили в мае 2023 года, ⟦G1⟧ бесплатен с мая 2023 года, а ⟦G2⟧ вообще не берёт плату за вход. **Единственное платное дополнение по желанию — канатная дорога Сорак** (₩16 000 туда и обратно): билеты продают только на месте и оплачиваются они самостоятельно.",
       "glossary": [
         "⟦G0⟧ = Национальный парк Сораксан",
         "⟦G1⟧ = Храм Наксанса",
@@ -52,74 +61,90 @@
       "tm": "Включены ли входные билеты?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during the October autumn-foliage peak. If skies are foggy, skip it (no view). With a 2-hour Seoraksan stop, the cable car is realistic mainly when queues are short — otherwise the Tongildaebul + Sinheungsa walk and a short Biseondae streamside path are the recommended use of the time."
+      "source_en": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during the October autumn-foliage peak. If skies are foggy, skip it (no view). With a 2-hour Seoraksan stop, the cable car is realistic mainly when queues are short — otherwise the Tongildaebul + Sinheungsa walk and a short Biseondae streamside path are the recommended use of the time.",
+      "tm": "В ясную погоду вид на хребет великолепный, но билеты НЕЛЬЗЯ забронировать заранее, а очередь на месте в октябрьский пик осенней листвы может превышать 1–2 часа. Если небо затянуто туманом, лучше отказаться (вида не будет). При остановке в Сораксане на 2 часа канатная дорога реальна в основном при короткой очереди — иначе лучше потратить время на прогулку к Тхонъильдэбуль и Синхынса и короткий путь вдоль ручья к Писондэ."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Should I ride the Seorak Cable Car?"
+      "source_en": "Should I ride the Seorak Cable Car?",
+      "tm": "Стоит ли подниматься на канатной дороге Сорак?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Naksansa is a thousand-year Buddhist temple built directly above the East Sea, founded in 671 CE by the monk Uisang. It is one of Korea's three great Avalokitesvara (Gwaneum) sanctuaries, and its signature sight is the 16-meter white granite Haesu Gwaneum-sang statue facing the ocean. The temple was rebuilt after the April 2005 Yangyang wildfire and has been free to enter since 2023."
+      "source_en": "Naksansa is a thousand-year Buddhist temple built directly above the East Sea, founded in 671 CE by the monk Uisang. It is one of Korea's three great Avalokitesvara (Gwaneum) sanctuaries, and its signature sight is the 16-meter white granite Haesu Gwaneum-sang statue facing the ocean. The temple was rebuilt after the April 2005 Yangyang wildfire and has been free to enter since 2023.",
+      "tm": "Наксанса — тысячелетний буддийский храм, построенный прямо над Восточным морем и основанный в 671 году монахом Ыйсаном. Это одно из трёх великих корейских святилищ Авалокитешвары (Гваным), а его главная достопримечательность — статуя Хэсу Гванымсан из белого гранита высотой 16 метров, обращённая к океану. Храм восстановили после лесного пожара в Янъяне в апреле 2005 года, и с 2023 года вход в него бесплатный."
     },
     "/staticQuestions/6/question": {
       "source_en": "What is ⟦G0⟧?",
+      "tm": "Что такое ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса"
       ]
     },
     "/staticQuestions/7/answer": {
       "source_en": "⟦G0⟧'s official swimming season is July-August only, with supervised swimming roughly 09:00-18:00. This tour runs year-round and treats the beach as a walking and photography stop, not a swim stop — there is about an hour to stroll the soft sand and pine-forest paths.",
+      "tm": "Официальный купальный сезон на ⟦G0⟧ длится только в июле и августе, купание под присмотром спасателей примерно с 09:00 до 18:00. Эта экскурсия работает круглый год, и пляж здесь — остановка для прогулки и фотографий, а не для купания: примерно час на то, чтобы пройтись по мягкому песку и сосновым дорожкам.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
     },
     "/staticQuestions/7/question": {
       "source_en": "Can I swim at ⟦G0⟧?",
+      "tm": "Можно ли купаться на ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
     },
     "/staticQuestions/8/answer": {
       "source_en": "Yes, age 6 and up. The 12-hour day with an early start and ~5 hours of coach time is long for younger children — please consider age 8+ for comfort. Kids tend to enjoy the open space of ⟦G0⟧. Seoraksan and Naksansa both have stairs and rocky or uneven paths.",
+      "tm": "Да, с 6 лет. День на 12 часов с ранним стартом и ~5 часами в автобусе долгий для малышей — для комфорта лучше ориентироваться на 8 лет и старше. Детям обычно нравится простор ⟦G0⟧. И в Сораксане, и в Наксанса есть ступени и каменистые или неровные дорожки.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
     },
     "/staticQuestions/8/question": {
-      "source_en": "Is this tour suitable for children?"
+      "source_en": "Is this tour suitable for children?",
+      "tm": "Подходит ли экскурсия для детей?"
     },
     "/staticQuestions/9/answer": {
       "source_en": "Active seniors are fine — the day's main demands are the walking circuits at Seoraksan and Naksansa, both of which have stairs and uneven surfaces. ⟦G0⟧ is flat and easy. Mobility-limited travelers should consider a private chartered car day trip instead.",
+      "tm": "Активным пожилым гостям всё по силам: основная нагрузка дня — пешие круги в Сораксане и Наксанса, где есть ступени и неровная поверхность. ⟦G0⟧ ровный и лёгкий. Тем, кому тяжело ходить, лучше рассмотреть однодневную поездку на частном автомобиле с водителем.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
     },
     "/staticQuestions/9/question": {
-      "source_en": "Is this OK for seniors?"
+      "source_en": "Is this OK for seniors?",
+      "tm": "Подходит ли это пожилым гостям?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local restaurant en route between Seoraksan and the Yangyang coast around midday. The region is known for sanchae (mountain-vegetable) bibimbap, buckwheat dishes, and East Sea seafood near the coast. Vegetarian and halal-friendly options may be possible with advance notice."
+      "source_en": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local restaurant en route between Seoraksan and the Yangyang coast around midday. The region is known for sanchae (mountain-vegetable) bibimbap, buckwheat dishes, and East Sea seafood near the coast. Vegetarian and halal-friendly options may be possible with advance notice.",
+      "tm": "Нет, обед оплачивает гость (~₩10 000–15 000 с человека). Автобус останавливается в местном ресторане по дороге между Сораксаном и побережьем Янъяна около полудня. Регион известен пибимпапом с горными травами санчхэ, блюдами из гречихи, а ближе к морю — морепродуктами Восточного моря. Вегетарианские и халяльные варианты возможны при заблаговременном предупреждении."
     },
     "/staticQuestions/10/question": {
       "source_en": "Is lunch included?",
       "tm": "Включён ли обед?"
     },
     "/staticQuestions/11/answer": {
-      "source_en": "The guide provides commentary in English and Chinese. The guide handles all menu translation and stall interactions during the day. Please note your preferred language at booking."
+      "source_en": "The guide provides commentary in English and Chinese. The guide handles all menu translation and stall interactions during the day. Please note your preferred language at booking.",
+      "tm": "Гид ведёт рассказ на английском и китайском. В течение дня он же переводит меню и помогает общаться с продавцами. Укажите предпочтительный язык при бронировании."
     },
     "/staticQuestions/11/question": {
-      "source_en": "What languages does the guide speak?"
+      "source_en": "What languages does the guide speak?",
+      "tm": "На каких языках говорит гид?"
     },
     "/staticQuestions/12/answer": {
       "source_en": "**Autumn (mid-October to early November)** is Korea's signature foliage season and Seoraksan's foliage is world-famous. **Spring (April)** is fresh and uncrowded. **Winter** brings snow on Seoraksan's peaks and a dramatic East Sea coast — ⟦G0⟧ is a famous New Year sunrise spot. Book 2+ weeks ahead for October.",
+      "tm": "**Осень (с середины октября до начала ноября)** — главный сезон листвы в Корее, а листва Сораксана известна на весь мир. **Весна (апрель)** свежая и без толп. **Зима** приносит снег на вершины Сораксана и суровое, эффектное побережье Восточного моря; ⟦G0⟧ — знаменитое место встречи новогоднего рассвета. На октябрь бронируйте за 2 недели и более.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
     },
     "/staticQuestions/12/question": {
-      "source_en": "What's the best season for this tour?"
+      "source_en": "What's the best season for this tour?",
+      "tm": "Какой сезон лучше всего для этой экскурсии?"
     },
     "/staticQuestions/13/answer": {
       "source_en": "Light rain: the tour runs as scheduled — all three stops are walkable in rain with the right footwear. Heavy rain: the Seorak Cable Car is typically suspended (the guide pivots to a Sinheungsa-area walk); Naksansa and ⟦G0⟧ still operate. Typhoon-level weather or expressway closure: full refund or rebooking offered.",
+      "tm": "Лёгкий дождь: экскурсия идёт по расписанию — все три остановки проходимы в дождь при подходящей обуви. Сильный дождь: канатную дорогу Сорак обычно закрывают (гид переключается на прогулку в районе Синхынса), Наксанса и ⟦G0⟧ работают. Погода уровня тайфуна или закрытие автомагистрали: полный возврат или перенос брони.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
@@ -129,13 +154,16 @@
       "tm": "Что если пойдёт дождь?"
     },
     "/staticQuestions/14/answer": {
-      "source_en": "This is a fixed-schedule coach group tour at a budget price point, departing Mondays and Thursdays. A private chartered car day trip provides door-of-hotel pickup, flexible timing and departure day, and a customizable route — better for travelers who want comfort and flexibility, or who can't travel on a Monday or Thursday."
+      "source_en": "This is a fixed-schedule coach group tour at a budget price point, departing Mondays and Thursdays. A private chartered car day trip provides door-of-hotel pickup, flexible timing and departure day, and a customizable route — better for travelers who want comfort and flexibility, or who can't travel on a Monday or Thursday.",
+      "tm": "Это групповая автобусная экскурсия с фиксированным расписанием и невысокой ценой, отправление по понедельникам и четвергам. Однодневная поездка на частном автомобиле с водителем даёт сбор у дверей отеля, свободное время и день выезда, а также маршрут под вас — она лучше для тех, кому важны комфорт и гибкость, или кто не может поехать в понедельник или четверг."
     },
     "/staticQuestions/14/question": {
-      "source_en": "How does this compare to a private chartered tour?"
+      "source_en": "How does this compare to a private chartered tour?",
+      "tm": "Чем это отличается от частной поездки с водителем?"
     },
     "/bookingTrustItems/0/body": {
       "source_en": "⟦G0⟧ entrance (abolished May 2023), ⟦G1⟧ (free since May 2023), and ⟦G2⟧ all have no admission fee. The only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense).",
+      "tm": "Вход в ⟦G0⟧ (отменён в мае 2023 года), ⟦G1⟧ (бесплатен с мая 2023 года) и ⟦G2⟧ — везде без платы за вход. Единственное платное дополнение по желанию — канатная дорога Сорак (₩16 000 туда и обратно, за свой счёт).",
       "glossary": [
         "⟦G0⟧ = Национальный парк Сораксан",
         "⟦G1⟧ = Храм Наксанса",
@@ -143,39 +171,48 @@
       ]
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "All three stops free to enter"
+      "source_en": "All three stops free to enter",
+      "tm": "Все три остановки с бесплатным входом"
     },
     "/bookingTrustItems/0/iconBg": {
       "source_en": "bg-emerald-50/80",
       "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "No admission fees, no ticket queues"
+      "source_en": "No admission fees, no ticket queues",
+      "tm": "Ни платы за вход, ни очередей за билетами"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "A guide accompanies the group in English and Chinese, with commentary on Seoraksan's UNESCO Biosphere Reserve status, Naksansa's 671 CE founding by the monk Uisang, and the Yangyang coast — plus all logistics on the air-conditioned coach."
+      "source_en": "A guide accompanies the group in English and Chinese, with commentary on Seoraksan's UNESCO Biosphere Reserve status, Naksansa's 671 CE founding by the monk Uisang, and the Yangyang coast — plus all logistics on the air-conditioned coach.",
+      "tm": "Гид сопровождает группу на английском и китайском и рассказывает о статусе Сораксана как биосферного заповедника ЮНЕСКО, об основании Наксанса монахом Ыйсаном в 671 году и о побережье Янъяна, а также берёт на себя всю логистику в автобусе с кондиционером."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "English/Chinese-speaking guide"
+      "source_en": "English/Chinese-speaking guide",
+      "tm": "Гид со знанием английского и китайского"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-pink-50/80"
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Guided day with round-trip transfer"
+      "source_en": "Guided day with round-trip transfer",
+      "tm": "День с гидом и трансфером туда и обратно"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 12-hour day is at an attraction or in transit — what you book is what you experience."
+      "source_en": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 12-hour day is at an attraction or in transit — what you book is what you experience.",
+      "tm": "Никаких магазинов женьшеня, duty-free и заездов в сувенирные лавки за комиссию. Каждая минута этого 12-часового дня проходит на достопримечательности или в дороге: вы получаете ровно то, что забронировали."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Transparent pricing"
+      "source_en": "Transparent pricing",
+      "tm": "Прозрачная цена"
     },
     "/bookingTrustItems/2/iconBg": {
       "source_en": "bg-sky-50/80",
       "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "No hidden shopping stops"
+      "source_en": "No hidden shopping stops",
+      "tm": "Без скрытых остановок для шопинга"
     }
   },
   "glossaryTokens": {
@@ -220,5 +257,5 @@
       "⟦G2⟧": "Пляж Наксан"
     }
   },
-  "tmHits": 5
+  "tmHits": 42
 }

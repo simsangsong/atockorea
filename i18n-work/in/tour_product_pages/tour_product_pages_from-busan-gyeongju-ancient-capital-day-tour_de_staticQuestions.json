@@ -8,6 +8,7 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "The morning is two places reached by road; the afternoon is two blocks covered on foot. You leave the three Busan subway stations between 08:10 and 09:10, then ⟦G1⟧ (60 min) → Bulguksa (75 min) → lunch in central Gyeongju (60 min) closes out the morning. In the afternoon the van stops only twice — from ⟦G2⟧ and the Choi Family House across the Namcheon to Woljeonggyo (75 min), and from the Daereungwon tombs over one wall into Hwangnidan-gil (75 min). The last slot belongs to the season: March to October it is ⟦G0⟧ (arriving ≈17:00, ahead of its 17:30 last admission), and November to February that same hour is the night-view hour, so it becomes Donggung & Wolji. Drop-off in Busan is Haeundae Station ≈19:15, Seomyeon Station ≈19:35 and Busan Station ≈19:50 — ≈11.5 hours in total.",
+      "tm": "Der Vormittag besteht aus zwei Orten, die mit dem Fahrzeug erreicht werden; der Nachmittag aus zwei Abschnitten, die zu Fuß zurückgelegt werden. Sie starten zwischen 08:10 und 09:10 Uhr an den drei U-Bahn-Stationen in Busan, dann beschließen ⟦G1⟧ (60 Min.) → Bulguksa (75 Min.) → Mittagessen im Zentrum von Gyeongju (60 Min.) den Vormittag. Am Nachmittag hält der Van nur zweimal — von ⟦G2⟧ und dem Choi-Familienhaus über den Namcheon zur Woljeonggyo (75 Min.) und von den Daereungwon-Gräbern über eine Mauer hinweg in die Hwangnidan-gil (75 Min.). Der letzte Programmpunkt richtet sich nach der Saison: von März bis Oktober ist es ⟦G0⟧ (Ankunft ≈17:00 Uhr, vor dem letzten Einlass um 17:30 Uhr), und von November bis Februar ist genau diese Stunde die Stunde der Nachtansicht, sodass daraus Donggung & Wolji wird. Der Ausstieg in Busan erfolgt an der Station Haeundae ≈19:15 Uhr, der Station Seomyeon ≈19:35 Uhr und der Station Busan ≈19:50 Uhr — insgesamt ≈11,5 Stunden.",
       "glossary": [
         "⟦G0⟧ = Nationalmuseum Gyeongju",
         "⟦G1⟧ = Bambuswald Ahopsan",
@@ -15,28 +16,34 @@
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "How does the day flow?"
+      "source_en": "How does the day flow?",
+      "tm": "Wie verläuft der Tag?"
     },
     "/staticQuestions/1/answer": {
       "source_en": "On this tour you see Woljeonggyo in daylight, because we arrive around 2 pm together with ⟦G0⟧ and the Choi Family House — and the timber joinery detail and the reflections on the river are actually clearer by day, with none of the sunset crowd. If you want the illumination, book a winter departure (Nov–Feb): in that season the last stop becomes the Donggung & Wolji night view, so you see Gyeongju's most famous night scene right at the hour the lights come on.",
+      "tm": "Auf dieser Tour sehen Sie die Woljeonggyo bei Tageslicht, denn wir kommen gegen 14:00 Uhr zusammen mit ⟦G0⟧ und dem Choi-Familienhaus dort an — und die Details der Holzverbindungen sowie die Spiegelungen auf dem Fluss sind bei Tag tatsächlich deutlicher zu erkennen, ganz ohne den Andrang zum Sonnenuntergang. Wenn Sie die Beleuchtung sehen möchten, buchen Sie eine Abfahrt im Winter (Nov.–Feb.): In dieser Saison wird der letzte Halt die Nachtansicht von Donggung & Wolji, sodass Sie Gyeongjus berühmteste Nachtszene genau zu der Stunde erleben, in der die Lichter angehen.",
       "glossary": [
         "⟦G0⟧ = Hanok-Dorf Gyochon"
       ]
     },
     "/staticQuestions/1/question": {
       "source_en": "Will we see ⟦G0⟧ illuminated at night?",
+      "tm": "Sehen wir ⟦G0⟧ nachts beleuchtet?",
       "glossary": [
         "⟦G0⟧ = Woljeonggyo-Brücke"
       ]
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Seokguram is on the same UNESCO inscription as Bulguksa but sits 8 km up the mountain by a steep narrow road, with parking constraints and a 10-minute walk from the lot. The combination makes it impractical to add to a day that also includes the museum, Gyochon, and the bridge. Most one-day Gyeongju tours include Bulguksa or Seokguram, not both."
+      "source_en": "Seokguram is on the same UNESCO inscription as Bulguksa but sits 8 km up the mountain by a steep narrow road, with parking constraints and a 10-minute walk from the lot. The combination makes it impractical to add to a day that also includes the museum, Gyochon, and the bridge. Most one-day Gyeongju tours include Bulguksa or Seokguram, not both.",
+      "tm": "Seokguram gehört zur selben UNESCO-Eintragung wie Bulguksa, liegt aber 8 km bergauf über eine steile, schmale Straße, mit begrenzten Parkmöglichkeiten und einem 10-minütigen Fußweg vom Parkplatz. Diese Kombination macht es unpraktikabel, den Ort an einem Tag zu ergänzen, der auch das Museum, Gyochon und die Brücke umfasst. Die meisten Tagestouren nach Gyeongju beinhalten entweder Bulguksa oder Seokguram, nicht beides."
     },
     "/staticQuestions/2/question": {
-      "source_en": "Why no Seokguram Grotto?"
+      "source_en": "Why no Seokguram Grotto?",
+      "tm": "Warum ist die Seokguram-Grotte nicht dabei?"
     },
     "/staticQuestions/3/answer": {
       "source_en": "Most are free. Free: Bulguksa (since May 2023), the ⟦G0⟧ permanent exhibition (since 2008), ⟦G2⟧ and the Choi Family House, ⟦G3⟧, the Daereungwon park grounds, and Hwangnidan-gil. \n\nPaid on site: ⟦G1⟧ ₩5,000 (required) · the Cheonmachong tomb interior ₩3,000 inside Daereungwon (optional — you can walk the mounds without going in) · on winter departures (Nov–Feb) the last stop changes, so Donggung & Wolji ₩3,000 · lunch ₩15,000–₩25,000. \n\nTypical total out-of-pocket per person therefore runs about ₩20,000–₩33,000 in summer and about ₩23,000–₩36,000 in winter.",
+      "tm": "Das meiste ist kostenlos. Kostenlos: Bulguksa (seit Mai 2023), die Dauerausstellung von ⟦G0⟧ (seit 2008), ⟦G2⟧ und das Choi-Familienhaus, ⟦G3⟧, das Parkgelände von Daereungwon sowie die Hwangnidan-gil. \n\nVor Ort kostenpflichtig: ⟦G1⟧ ₩5.000 (erforderlich) · das Innere des Cheonmachong-Grabes ₩3.000 innerhalb von Daereungwon (optional — Sie können die Grabhügel auch ohne Innenbesuch ablaufen) · bei Abfahrten im Winter (Nov.–Feb.) ändert sich der letzte Halt, daher Donggung & Wolji ₩3.000 · Mittagessen ₩15.000–₩25.000. \n\nDie üblichen Gesamtausgaben pro Person liegen damit bei etwa ₩20.000–₩33.000 im Sommer und etwa ₩23.000–₩36.000 im Winter.",
       "glossary": [
         "⟦G0⟧ = Nationalmuseum Gyeongju",
         "⟦G1⟧ = Bambuswald Ahopsan",
@@ -45,58 +52,74 @@
       ]
     },
     "/staticQuestions/3/question": {
-      "source_en": "Are admissions included?"
+      "source_en": "Are admissions included?",
+      "tm": "Sind die Eintritte inbegriffen?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Yes. Major exhibits carry bilingual Korean/English panels, and a recent renovation added digital labels. The permanent exhibitions are free, hours are 10:00–18:00 (last admission 17:30), and regular closures are Jan 1, Seollal and Chuseok only — so it is open as normal on Mondays. This tour arrives around 17:00 and spends 60 minutes on the highlights: the gold crown, the Emille Bell and the Wolji Hall. Winter departures (Nov–Feb) replace the museum with the Donggung & Wolji night view."
+      "source_en": "Yes. Major exhibits carry bilingual Korean/English panels, and a recent renovation added digital labels. The permanent exhibitions are free, hours are 10:00–18:00 (last admission 17:30), and regular closures are Jan 1, Seollal and Chuseok only — so it is open as normal on Mondays. This tour arrives around 17:00 and spends 60 minutes on the highlights: the gold crown, the Emille Bell and the Wolji Hall. Winter departures (Nov–Feb) replace the museum with the Donggung & Wolji night view.",
+      "tm": "Ja. Die wichtigsten Exponate sind mit zweisprachigen Tafeln auf Koreanisch/Englisch versehen, und eine kürzliche Renovierung hat digitale Beschriftungen hinzugefügt. Die Dauerausstellungen sind kostenlos, die Öffnungszeiten sind 10:00–18:00 Uhr (letzter Einlass 17:30 Uhr), und reguläre Schließtage sind nur der 1. Januar, Seollal und Chuseok — montags ist also normal geöffnet. Diese Tour kommt gegen 17:00 Uhr an und verbringt 60 Minuten mit den Höhepunkten: der Goldkrone, der Emille-Glocke und der Wolji-Halle. Bei Abfahrten im Winter (Nov.–Feb.) wird das Museum durch die Nachtansicht von Donggung & Wolji ersetzt."
     },
     "/staticQuestions/4/question": {
       "source_en": "Is there English signage in ⟦G0⟧?",
+      "tm": "Gibt es englische Beschilderung in ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Nationalmuseum Gyeongju"
       ]
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes throughout the temple grounds, including the two pagodas and lower-terrace stone bridges. Avoid flash and tripods inside the worship halls where services may be in progress. Cherry blossoms peak in mid-April; autumn foliage in late October — the most-photographed times."
+      "source_en": "Yes throughout the temple grounds, including the two pagodas and lower-terrace stone bridges. Avoid flash and tripods inside the worship halls where services may be in progress. Cherry blossoms peak in mid-April; autumn foliage in late October — the most-photographed times.",
+      "tm": "Ja, auf dem gesamten Tempelgelände, einschließlich der beiden Pagoden und der Steinbrücken auf der unteren Terrasse. Verzichten Sie in den Andachtshallen, in denen möglicherweise Zeremonien stattfinden, auf Blitzlicht und Stative. Die Kirschblüte erreicht Mitte April ihren Höhepunkt, das Herbstlaub Ende Oktober — die meistfotografierten Zeiten."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Can I take photos at Bulguksa?"
+      "source_en": "Can I take photos at Bulguksa?",
+      "tm": "Darf ich in Bulguksa fotografieren?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Yes. Gyeongju ssambap is naturally vegetable-heavy; ordering it without meat banchan is straightforward. The guide can also route to a temple-cuisine (사찰음식) restaurant for fully vegetarian meals on request — please advise at booking."
+      "source_en": "Yes. Gyeongju ssambap is naturally vegetable-heavy; ordering it without meat banchan is straightforward. The guide can also route to a temple-cuisine (사찰음식) restaurant for fully vegetarian meals on request — please advise at booking.",
+      "tm": "Ja. Gyeongju-Ssambap ist von Natur aus gemüsereich; es ohne Fleisch-Banchan zu bestellen, ist unkompliziert. Auf Wunsch kann der Guide für vollständig vegetarische Mahlzeiten auch ein Restaurant mit Tempelküche (사찰음식) ansteuern — bitte teilen Sie uns dies bei der Buchung mit."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Are there vegetarian options for lunch?"
+      "source_en": "Are there vegetarian options for lunch?",
+      "tm": "Gibt es vegetarische Optionen zum Mittagessen?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "Light rain: the tour runs as planned. \n\nHeavy rain: Bulguksa's stone steps get slippery and Ahopsan's earth paths get muddy, so the guide trims outdoor dwell and shifts the balance indoors. From March to October that means more time at ⟦G0⟧ — still the last stop, indoors and climate-controlled — and at Daereungwon less time among the mounds in exchange for more time in Hwangnidan-gil's indoor cafes and shops. In winter (Nov–Feb) the last stop is the open-air Donggung & Wolji pond, so in rain it can be swapped back to the museum, provided arrival still clears the 17:30 last admission. \n\nTyphoon-grade weather: rescheduling or a full refund.",
+      "tm": "Leichter Regen: Die Tour findet wie geplant statt. \n\nStarker Regen: Die Steinstufen von Bulguksa werden rutschig und die Erdwege von Ahopsan matschig, daher kürzt der Guide die Aufenthalte im Freien und verlagert den Schwerpunkt nach drinnen. Von März bis Oktober bedeutet das mehr Zeit in ⟦G0⟧ — nach wie vor der letzte Halt, drinnen und klimatisiert — und in Daereungwon weniger Zeit zwischen den Grabhügeln im Austausch für mehr Zeit in den Cafés und Läden der Hwangnidan-gil. Im Winter (Nov.–Feb.) ist der letzte Halt der Teich Donggung & Wolji unter freiem Himmel, sodass bei Regen wieder zum Museum gewechselt werden kann, sofern die Ankunft noch vor dem letzten Einlass um 17:30 Uhr liegt. \n\nWetter in Taifunstärke: Umbuchung oder vollständige Rückerstattung.",
       "glossary": [
         "⟦G0⟧ = Nationalmuseum Gyeongju"
       ]
     },
     "/staticQuestions/7/question": {
-      "source_en": "What if it rains?"
+      "source_en": "What if it rains?",
+      "tm": "Was passiert bei Regen?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Yes. The day covers Gyeongju's headline sites at an unhurried pace, which suits a first visit well. What makes the difference is that the two afternoon blocks are walked — from the Choi Family House across to Woljeonggyo, and from the Daereungwon mounds over one wall into Hwangnidan-gil — so you come away having seen the texture of the city, not just a checklist of monuments. \n\nThat said, if you want an early evening return, this is not the tour for you: the day runs ≈11.5 hours and Busan drop-offs are 19:15–19:50. In that case a shorter Busan-area tour is the better choice."
+      "source_en": "Yes. The day covers Gyeongju's headline sites at an unhurried pace, which suits a first visit well. What makes the difference is that the two afternoon blocks are walked — from the Choi Family House across to Woljeonggyo, and from the Daereungwon mounds over one wall into Hwangnidan-gil — so you come away having seen the texture of the city, not just a checklist of monuments. \n\nThat said, if you want an early evening return, this is not the tour for you: the day runs ≈11.5 hours and Busan drop-offs are 19:15–19:50. In that case a shorter Busan-area tour is the better choice.",
+      "tm": "Ja. Der Tag deckt die bekanntesten Sehenswürdigkeiten Gyeongjus in gemächlichem Tempo ab, was einem ersten Besuch gut entspricht. Den Unterschied macht, dass die beiden Nachmittagsabschnitte zu Fuß zurückgelegt werden — vom Choi-Familienhaus hinüber zur Woljeonggyo und von den Daereungwon-Grabhügeln über eine Mauer hinweg in die Hwangnidan-gil — sodass Sie mit dem Eindruck der Textur dieser Stadt nach Hause gehen und nicht nur mit einer abgehakten Liste von Monumenten. \n\nWenn Sie allerdings am frühen Abend zurück sein möchten, ist dies nicht die richtige Tour für Sie: Der Tag dauert ≈11,5 Stunden, und die Ausstiege in Busan liegen zwischen 19:15 und 19:50 Uhr. In diesem Fall ist eine kürzere Tour im Raum Busan die bessere Wahl."
     },
     "/staticQuestions/8/question": {
-      "source_en": "Is this a good choice for first-time visitors to Gyeongju?"
+      "source_en": "Is this a good choice for first-time visitors to Gyeongju?",
+      "tm": "Ist das eine gute Wahl für Erstbesucher in Gyeongju?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "≈5–5.5 km across the day. It grew from the previous version of this route because both afternoon blocks are now linked on foot — Gyochon to Woljeonggyo along the Namcheon (10–15 min), and Daereungwon out through its west gate into Hwangnidan-gil. Bulguksa is the most active part (uneven stone, gentle uphill); Daereungwon's grass paths are flat and step-free; the museum is flat indoor walking. Comfortable closed-toe shoes essential."
+      "source_en": "≈5–5.5 km across the day. It grew from the previous version of this route because both afternoon blocks are now linked on foot — Gyochon to Woljeonggyo along the Namcheon (10–15 min), and Daereungwon out through its west gate into Hwangnidan-gil. Bulguksa is the most active part (uneven stone, gentle uphill); Daereungwon's grass paths are flat and step-free; the museum is flat indoor walking. Comfortable closed-toe shoes essential.",
+      "tm": "≈5–5,5 km über den Tag verteilt. Es ist mehr geworden als in der vorherigen Version dieser Route, weil beide Nachmittagsabschnitte nun zu Fuß verbunden sind — von Gyochon entlang des Namcheon zur Woljeonggyo (10–15 Min.) und von Daereungwon durch das Westtor hinaus in die Hwangnidan-gil. Bulguksa ist der aktivste Teil (unebener Stein, sanfter Anstieg); die Graswege von Daereungwon sind flach und stufenfrei; im Museum geht man ebenerdig drinnen. Bequeme geschlossene Schuhe sind unerlässlich."
     },
     "/staticQuestions/9/question": {
-      "source_en": "How much walking is there?"
+      "source_en": "How much walking is there?",
+      "tm": "Wie viel wird gelaufen?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Yes for school-age children (≈8+) who can manage a full-day rhythm. The museum's gold crown and the giant bell are typically the kid-favorite stops; the bamboo forest is sensory-friendly. Younger children may flag during the museum visit."
+      "source_en": "Yes for school-age children (≈8+) who can manage a full-day rhythm. The museum's gold crown and the giant bell are typically the kid-favorite stops; the bamboo forest is sensory-friendly. Younger children may flag during the museum visit.",
+      "tm": "Ja, für Kinder im Schulalter (≈8+), die einen ganztägigen Rhythmus bewältigen können. Die Goldkrone im Museum und die riesige Glocke sind typischerweise die Lieblingsstationen der Kinder; der Bambuswald ist sinnesfreundlich. Jüngere Kinder ermüden möglicherweise während des Museumsbesuchs."
     },
     "/staticQuestions/10/question": {
-      "source_en": "Is this suitable for families?"
+      "source_en": "Is this suitable for families?",
+      "tm": "Ist das für Familien geeignet?"
     },
     "/staticQuestions/11/answer": {
-      "source_en": "Recommended for active seniors comfortable with ≈5–5.5 km of walking and uneven stone at Bulguksa. The afternoon is easier than the distance suggests — Daereungwon is flat, step-free lawn, and Hwangnidan-gil has plenty of cafes to sit down in. Do be aware the day is long: ≈11.5 hours, with drop-off back in Busan around 19:50."
+      "source_en": "Recommended for active seniors comfortable with ≈5–5.5 km of walking and uneven stone at Bulguksa. The afternoon is easier than the distance suggests — Daereungwon is flat, step-free lawn, and Hwangnidan-gil has plenty of cafes to sit down in. Do be aware the day is long: ≈11.5 hours, with drop-off back in Busan around 19:50.",
+      "tm": "Empfohlen für aktive Seniorinnen und Senioren, denen ≈5–5,5 km Fußweg und unebener Stein in Bulguksa nichts ausmachen. Der Nachmittag ist einfacher, als die Distanz vermuten lässt — Daereungwon ist flache, stufenfreie Rasenfläche, und in der Hwangnidan-gil gibt es zahlreiche Cafés zum Hinsetzen. Bitte beachten Sie, dass der Tag lang ist: ≈11,5 Stunden, mit Ausstieg zurück in Busan gegen 19:50 Uhr."
     },
     "/staticQuestions/11/question": {
       "source_en": "Can older adults join comfortably?",
@@ -128,5 +151,5 @@
       "⟦G0⟧": "Nationalmuseum Gyeongju"
     }
   },
-  "tmHits": 1
+  "tmHits": 24
 }

@@ -1,3 +1,4 @@
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   getStaticTourProductBySlug,
   hrefStaticTourProductDetail,
@@ -96,7 +97,7 @@ export function buildV2BestMatchResultViewModelFromApi(
   }
 
   const slug = api.winner.product_id;
-  const product = getStaticTourProductBySlug(slug, locale);
+  const product = getStaticTourProductBySlug(slug, toTourProductBaseLocale(locale));
   const title = product?.title ?? slug;
   const words = title.split(/\s+/).filter(Boolean);
   const half = Math.min(4, Math.ceil(words.length / 2));

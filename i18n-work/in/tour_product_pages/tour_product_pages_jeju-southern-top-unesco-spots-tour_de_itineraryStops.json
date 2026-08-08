@@ -7,218 +7,264 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Pickup (4 points across Jeju City)"
+      "source_en": "Pickup (4 points across Jeju City)",
+      "tm": "Abholung (4 Punkte in Jeju City)"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup — Jeju City Hotel/Hub Sequence"
+      "source_en": "Pickup — Jeju City Hotel/Hub Sequence",
+      "tm": "Abholung — Hotel-/Knotenpunkt-Abfolge in Jeju City"
     },
     "/itineraryStops/0/duration": {
       "source_en": "30 min",
       "tm": "30 Min."
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Hagwi pickup ~09:00 — 5 min"
+      "source_en": "Hagwi pickup ~09:00 — 5 min",
+      "tm": "Abholung Hagwi ~09:00 Uhr — 5 Min."
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Airport pickup ~09:10 — 5 min"
+      "source_en": "Airport pickup ~09:10 — 5 min",
+      "tm": "Abholung Flughafen ~09:10 Uhr — 5 Min."
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "City Hall pickup ~09:20 — 5 min"
+      "source_en": "City Hall pickup ~09:20 — 5 min",
+      "tm": "Abholung City Hall ~09:20 Uhr — 5 Min."
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Dongmun pickup ~09:30 — 5 min"
+      "source_en": "Dongmun pickup ~09:30 — 5 min",
+      "tm": "Abholung Dongmun ~09:30 Uhr — 5 Min."
     },
     "/itineraryStops/0/timeUsed/4": {
-      "source_en": "Southbound Route 5.16 toward Seogwipo coast — ~60 min"
+      "source_en": "Southbound Route 5.16 toward Seogwipo coast — ~60 min",
+      "tm": "Südwärts über die Route 5.16 zur Küste von Seogwipo — ~60 Min."
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**4 pickup points** — Airport, City Hall, Hagwi, Dongmun"
+      "source_en": "**4 pickup points** — Airport, City Hall, Hagwi, Dongmun",
+      "tm": "**4 Abholpunkte** — Flughafen, City Hall, Hagwi, Dongmun"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "West-to-east sequence minimizes morning coach distance"
+      "source_en": "West-to-east sequence minimizes morning coach distance",
+      "tm": "Die Abfolge von West nach Ost minimiert die morgendliche Fahrstrecke"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "**Small-group minicoach (max 14 pax)** with English guide"
+      "source_en": "**Small-group minicoach (max 14 pax)** with English guide",
+      "tm": "**Kleingruppen-Minibus (max. 14 Personen)** mit englischsprachigem Guide"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Bilingual itinerary card + weather brief at first stop"
+      "source_en": "Bilingual itinerary card + weather brief at first stop",
+      "tm": "Zweisprachige Routenkarte + Wetterbriefing am ersten Stopp"
     },
     "/itineraryStops/0/highlights/4": {
-      "source_en": "**Route 1100 closure check** — before departure (for the return Hallasan leg)"
+      "source_en": "**Route 1100 closure check** — before departure (for the return Hallasan leg)",
+      "tm": "**Sperrungsprüfung der Route 1100** — vor der Abfahrt (für die Rückfahrt über den Hallasan)"
     },
     "/itineraryStops/0/highlights/5": {
       "source_en": "Morning transit Jeju City → Seogwipo ⟦G0⟧: ~60 min (via Route 5.16)",
+      "tm": "Morgendliche Fahrt Jeju City → Seogwipo ⟦G0⟧: ~60 Min. (über die Route 5.16)",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/0/whyOnRoute": {
       "source_en": "Four pickup points cover Jeju City's major hotel and transport hubs (airport, downtown, old town, market district), minimizing the hassle of crossing the city. In the morning the route descends first to the Seogwipo coast to see ⟦G0⟧ and Oedolgae before the midday crowds, then crosses Hallasan via Route 1100 at the end of the day to return to Jeju City — an efficient counter-clockwise loop. The **Route 1100 closure protocol** keeps guests informed about winter return conditions before departure.",
+      "tm": "Vier Abholpunkte decken die wichtigsten Hotel- und Verkehrsknoten von Jeju City ab (Flughafen, Innenstadt, Altstadt, Marktviertel) und ersparen die Mühe, die Stadt zu durchqueren. Am Morgen führt die Route zuerst hinunter an die Küste von Seogwipo, um ⟦G0⟧ und Oedolgae vor dem Mittagsandrang zu sehen, und überquert am Ende des Tages über die Route 1100 den Hallasan zurück nach Jeju City — eine effiziente Schleife gegen den Uhrzeigersinn. Das **Sperrungsprotokoll für die Route 1100** informiert die Gäste schon vor der Abfahrt über die winterlichen Rückfahrbedingungen.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/0/description": {
       "source_en": "**Pickup is consolidated at four central Jeju City points** to minimize morning crisscrossing: **Jeju International Airport (제주공항)** for guests with same-day arrivals; **Jeju City Hall (제주시청)** for the Yeon-dong / Nohyeong / Old Town hotel cluster; **Hagwi-dong (하귀동)** as the westernmost pickup; and **Dongmun Traditional Market (동문시장)** as the optional eastern Jeju City pickup near the Tapdong waterfront. \n\nThe sequence runs Hagwi → Airport → City Hall → Dongmun, then heads south **along Route 5.16 (National Road 1131), crossing the eastern flank of Hallasan toward the southern Seogwipo coast**. The minicoach is **small-group (max ~14 pax)** with an English-speaking guide. \n\nA **bilingual printed itinerary card** is distributed at pickup, and a weather brief is given at the first stop. Because today's route starts on the Seogwipo coast and **returns to Jeju City at the end of the day by taking Route 1100 back over Hallasan**, a **Route 1100 closure check** is performed before departure — if closed for snow or ice, the final ⟦G0⟧ stop substitutes to a lower-elevation alternate (typically Mysterious Road or Jeju National Museum).",
+      "tm": "**Die Abholung ist an vier zentralen Punkten in Jeju City gebündelt**, um morgendliches Kreuz-und-quer durch die Stadt zu vermeiden: **Jeju International Airport (제주공항)** für Gäste mit Ankunft am selben Tag; **Jeju City Hall (제주시청)** für die Hotelgruppe Yeon-dong / Nohyeong / Altstadt; **Hagwi-dong (하귀동)** als westlichster Abholpunkt; und **Dongmun Traditional Market (동문시장)** als optionale Abholung im Osten von Jeju City nahe der Uferpromenade Tapdong. \n\nDie Abfolge verläuft Hagwi → Flughafen → City Hall → Dongmun und führt dann nach Süden **über die Route 5.16 (Nationalstraße 1131), die Ostflanke des Hallasan querend zur südlichen Küste von Seogwipo**. Der Minibus fährt **in kleiner Gruppe (max. ~14 Personen)** mit englischsprachigem Guide. \n\nEine **zweisprachige gedruckte Routenkarte** wird bei der Abholung verteilt, und am ersten Stopp gibt es ein Wetterbriefing. Da die heutige Route an der Küste von Seogwipo beginnt und **am Ende des Tages über die Route 1100 zurück über den Hallasan nach Jeju City führt**, wird vor der Abfahrt eine **Sperrungsprüfung der Route 1100** durchgeführt — bei Sperrung wegen Schnee oder Eis wird der letzte Stopp ⟦G0⟧ durch eine tiefer gelegene Alternative ersetzt (in der Regel Mysterious Road oder das Jeju National Museum).",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "Coastal Waterfall — Yeongjusipgyeong · Origin of the name Seogwipo"
+      "source_en": "Coastal Waterfall — Yeongjusipgyeong · Origin of the name Seogwipo",
+      "tm": "Küstenwasserfall — Yeongjusipgyeong · Ursprung des Namens Seogwipo"
     },
     "/itineraryStops/1/duration": {
       "source_en": "50 min",
       "tm": "50 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Ticketing + entrance briefing — ~5 min"
+      "source_en": "Ticketing + entrance briefing — ~5 min",
+      "tm": "Ticketkauf + Einweisung am Eingang — ~5 Min."
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Descent of about 130 steps — ~10 min"
+      "source_en": "Descent of about 130 steps — ~10 min",
+      "tm": "Abstieg über etwa 130 Stufen — ~10 Min."
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Falls + coastal rock photography — ~20 min"
+      "source_en": "Falls + coastal rock photography — ~20 min",
+      "tm": "Wasserfall + Fotos an den Küstenfelsen — ~20 Min."
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Climb back up + clifftop observation deck — ~15 min"
+      "source_en": "Climb back up + clifftop observation deck — ~15 min",
+      "tm": "Wiederaufstieg + Aussichtsplattform auf der Klippe — ~15 Min."
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**The only waterfall in Asia that drops directly into the sea** — 23 m high / approx. 8 m wide"
+      "source_en": "**The only waterfall in Asia that drops directly into the sea** — 23 m high / approx. 8 m wide",
+      "tm": "**Der einzige Wasserfall Asiens, der direkt ins Meer stürzt** — 23 m hoch / ca. 8 m breit"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "One of the **Yeongjusipgyeong (Jeju's 10 Scenic Wonders)** — chosen alongside Hallasan and Cheonjeyeon"
+      "source_en": "One of the **Yeongjusipgyeong (Jeju's 10 Scenic Wonders)** — chosen alongside Hallasan and Cheonjeyeon",
+      "tm": "Eines der **Yeongjusipgyeong (die 10 landschaftlichen Wunder Jejus)** — ausgewählt neben Hallasan und Cheonjeyeon"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "**'Seobulgwacha' legend** — the Qin Shi Huang / elixir-of-immortality tale that gave 'Seogwipo' its name"
+      "source_en": "**'Seobulgwacha' legend** — the Qin Shi Huang / elixir-of-immortality tale that gave 'Seogwipo' its name",
+      "tm": "**Die Legende „Seobulgwacha“** — die Erzählung von Qin Shi Huang und dem Elixier der Unsterblichkeit, die „Seogwipo“ seinen Namen gab"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Coastal scenery with **Seopseom and Munseom** as a backdrop on clear days"
+      "source_en": "Coastal scenery with **Seopseom and Munseom** as a backdrop on clear days",
+      "tm": "Küstenlandschaft mit **Seopseom und Munseom** im Hintergrund an klaren Tagen"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**About 130 steps** down to the foot of the falls — non-slip shoes essential"
+      "source_en": "**About 130 steps** down to the foot of the falls — non-slip shoes essential",
+      "tm": "**Etwa 130 Stufen** hinunter zum Fuß des Wasserfalls — rutschfeste Schuhe unerlässlich"
     },
     "/itineraryStops/1/highlights/5": {
       "source_en": "Admission **₩2,000 adult / ₩1,000 youth / FREE under 7 + over 65**",
       "tm": "Eintritt **₩2.000 Erwachsene / ₩1.000 Jugendliche / FREI unter 7 + über 65**"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Open **09:00–17:40** (last entry 30 min before closing), year-round"
+      "source_en": "Open **09:00–17:40** (last entry 30 min before closing), year-round",
+      "tm": "Geöffnet **09:00–17:40 Uhr** (letzter Einlass 30 Min. vor Schließung), ganzjährig"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Mind the waves and slippery rocks when shooting on the rocky shelf — safety first"
+      "source_en": "Mind the waves and slippery rocks when shooting on the rocky shelf — safety first",
+      "tm": "Achten Sie beim Fotografieren auf dem Felsplateau auf Wellen und rutschige Steine — Sicherheit geht vor"
     },
     "/itineraryStops/1/smartNotes/tip": {
       "source_en": "Stairs and rocks are very slippery when wet — non-slip shoes recommended; don't confuse it with ⟦G0⟧ in Seogwipo",
+      "tm": "Treppen und Felsen sind bei Nässe sehr rutschig — rutschfeste Schuhe empfohlen; nicht zu verwechseln mit dem ⟦G0⟧ in Seogwipo",
       "glossary": [
         "⟦G0⟧ = Cheonjiyeon-Wasserfall"
       ]
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Restrooms and ticket office at the entrance (before the stair descent); no facilities at the foot of the falls"
+      "source_en": "Restrooms and ticket office at the entrance (before the stair descent); no facilities at the foot of the falls",
+      "tm": "Toiletten und Ticketschalter am Eingang (vor dem Treppenabstieg); am Fuß des Wasserfalls keine Einrichtungen"
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "**The opening highlight of the Seogwipo coast.** Visited early in the morning, ⟦G0⟧ can be enjoyed quietly at the base before the tour buses arrive. It is a 15-minute drive from Oedolgae and Olle Route 7, so it links efficiently along the Seogwipo coast and opens the day with a striking ocean view.",
+      "tm": "**Das eröffnende Highlight der Küste von Seogwipo.** Am frühen Morgen besucht, lässt sich ⟦G0⟧ unten in Ruhe genießen, bevor die Reisebusse eintreffen. Von Oedolgae und dem Olle-Weg 7 sind es 15 Fahrminuten, sodass sich der Stopp effizient in die Küste von Seogwipo einfügt und den Tag mit einem eindrucksvollen Meerblick eröffnet.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Available at the entrance parking lot"
+      "source_en": "Available at the entrance parking lot",
+      "tm": "Am Parkplatz beim Eingang vorhanden"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Available at the entrance/ticketing area"
+      "source_en": "Available at the entrance/ticketing area",
+      "tm": "Im Eingangs-/Ticketbereich vorhanden"
     },
     "/itineraryStops/1/description": {
       "source_en": "**⟦G0⟧ (정방, 正房) is known as the only waterfall in Asia that drops directly from a cliff into the sea**, and it is one of Seogwipo's signature sights. A **23 m-high, roughly 8 m-wide** sheet of water pours down the basalt sea-wall into the deep blue ocean, and on clear days **Seopseom (섶섬) and Munseom (문섬)** sit in the background. \n\nAlong with Hallasan and Cheonjeyeon, Jeongbang is one of the **Yeongjusipgyeong (영주십경, Jeju's 10 Scenic Wonders)** chosen by Joseon-era literati, and the cliff is inscribed with the **'Seobulgwacha (徐市過此)' legend** — the story that Seobul, sent by Emperor Qin Shi Huang to find the elixir of immortality, passed this place and turned back to the west. This is said to be the origin of the place name **'Seogwipo (西歸浦)'**. \n\nFrom the ticket office down to the foot of the falls there are **about 130 steps**, and the ground is made of rounded pebbles and rock, so non-slip footwear is essential. Photos with the spray and the sea as a backdrop are popular at the base, while the clifftop observation deck takes in Seopseom and Munseom at a glance.",
+      "tm": "**⟦G0⟧ (정방, 正房) gilt als der einzige Wasserfall Asiens, der direkt von einer Klippe ins Meer stürzt**, und ist eines der Wahrzeichen von Seogwipo. Ein **23 m hoher und rund 8 m breiter** Wasservorhang ergießt sich über die Basaltsteilküste in das tiefblaue Meer, und an klaren Tagen liegen **Seopseom (섶섬) und Munseom (문섬)** im Hintergrund. \n\nZusammen mit dem Hallasan und Cheonjeyeon zählt Jeongbang zu den **Yeongjusipgyeong (영주십경, die 10 landschaftlichen Wunder Jejus)**, die von Gelehrten der Joseon-Zeit ausgewählt wurden, und in die Klippe ist die **Legende „Seobulgwacha (徐市過此)“** eingraviert — die Geschichte, dass Seobul, von Kaiser Qin Shi Huang zur Suche nach dem Elixier der Unsterblichkeit ausgesandt, an diesem Ort vorbeikam und nach Westen zurückkehrte. Darauf soll der Ortsname **„Seogwipo (西歸浦)“** zurückgehen. \n\nVom Ticketschalter hinunter zum Fuß des Wasserfalls sind es **etwa 130 Stufen**, und der Boden besteht aus rundgeschliffenen Kieseln und Fels, weshalb rutschfestes Schuhwerk unerlässlich ist. Am Fuß sind Fotos mit der Gischt und dem Meer im Hintergrund beliebt, während die Aussichtsplattform auf der Klippe Seopseom und Munseom auf einen Blick erfasst.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/visitBasics/hours": {
-      "source_en": "Daily 09:00–17:40 (last entry 30 min before closing, minor seasonal variation)"
+      "source_en": "Daily 09:00–17:40 (last entry 30 min before closing, minor seasonal variation)",
+      "tm": "Täglich 09:00–17:40 Uhr (letzter Einlass 30 Min. vor Schließung, geringe saisonale Abweichungen)"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "Open year-round (may be temporarily closed at high tide or during typhoons)"
+      "source_en": "Open year-round (may be temporarily closed at high tide or during typhoons)",
+      "tm": "Ganzjährig geöffnet (bei Flut oder Taifunen vorübergehend geschlossen)"
     },
     "/itineraryStops/1/visitBasics/walking": {
-      "source_en": "Moderate — about 130 steps down to the falls, uneven rocky ground; mind slipping"
+      "source_en": "Moderate — about 130 steps down to the falls, uneven rocky ground; mind slipping",
+      "tm": "Mittel — etwa 130 Stufen hinunter zum Wasserfall, unebener felsiger Boden; Rutschgefahr beachten"
     },
     "/itineraryStops/1/visitBasics/admission": {
-      "source_en": "Adult 2,000 KRW / Youth 1,000 KRW (FREE under 7 + over 65)"
+      "source_en": "Adult 2,000 KRW / Youth 1,000 KRW (FREE under 7 + over 65)",
+      "tm": "Erwachsene 2.000 KRW / Jugendliche 1.000 KRW (FREI unter 7 + über 65)"
     },
     "/itineraryStops/1/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 1",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 1",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Foto 1",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 2",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 2",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Foto 2",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 3",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 3",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall) — Foto 3",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/1/galleryItems/2/location": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
-    "/itineraryStops/2/name": {
-      "source_en": "Oedolgae & Olle Route 7 Coastal Walk"
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
     },
-    "/itineraryStops/2/category": {
-      "source_en": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite"
-    },
-    "/itineraryStops/2/duration": {
-      "source_en": "50 min",
-      "tm": "50 Min."
-    },
-    "/itineraryStops/2/timeUsed/0": {
-      "source_en": "Parking + entry onto the Olle trail — ~5 min"
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
     }
   },
   "glossaryTokens": {
@@ -269,7 +315,13 @@
     },
     "/itineraryStops/1/galleryItems/2/location": {
       "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
     }
   },
-  "tmHits": 4
+  "tmHits": 50
 }

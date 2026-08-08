@@ -10,10 +10,12 @@
       "source_en": "Busan Port pickup (International Cruise Terminal)"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Cruise terminal pickup"
+      "source_en": "Cruise terminal pickup",
+      "tm": "Abholung am Kreuzfahrtterminal"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "30 min window"
+      "source_en": "15 min window",
+      "tm": "15-Minuten-Fenster"
     },
     "/itineraryStops/0/timeUsed/0": {
       "source_en": "Disembark and clear cruise terminal (~10 min)"
@@ -25,137 +27,237 @@
       "source_en": "Board large coach in terminal coach lot (~10 min)"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Printed Korean-English itinerary card distributed at boarding"
+      "source_en": "Printed Korean-English itinerary card distributed at boarding",
+      "tm": "Beim Einsteigen wird eine gedruckte koreanisch-englische Routenkarte ausgeteilt"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "Direct pickup at the Busan Port International Cruise Terminal coach lot removes the need for cruise passengers to find local transport. The 08:30 meet allows clear time after the ship's morning disembarkation while keeping the day on schedule for the 18:00 sail-away buffer at the typical Busan cruise port call. The large coach lets the route stay budget-tier — same eight signature stops as our small-group product at roughly two-thirds the price."
+      "source_en": "Picking you up in the terminal arrival hall removes the one thing that goes wrong on a port day: finding local transport with a clock running. The 09:00 meet leaves clear time after the ship's morning disembarkation and still fits the full nine-stop route into an eight-hour day, back at the terminal by 17:00.",
+      "tm": "Sie in der Ankunftshalle des Terminals abzuholen nimmt genau das aus dem Tag heraus, was an einem Hafentag schiefgeht: mit tickender Uhr ein Verkehrsmittel vor Ort suchen zu müssen. Das Treffen um 09:00 Uhr lässt nach der morgendlichen Ausschiffung genug Luft und bringt die vollständige Route mit neun Stopps dennoch in einen achtstündigen Tag, zurück am Terminal um 17:00 Uhr."
     },
     "/itineraryStops/0/description": {
-      "source_en": "Pickup is at the **Busan Port International Cruise Terminal (부산항국제여객터미널)**, Korea's largest dedicated cruise terminal, located on the Yeongdo-side waterfront in Jung-gu. \n\nAfter disembarking, follow signs to the terminal **arrival hall** — the AtoC Korea guide waits there with an 'AtoC Korea / Busan Coastal Tour' sign and a printed Korean-English itinerary card for each guest. \n\nThe large coach (typical 28–45 seats depending on group size) waits in the terminal coach lot, a 2-minute walk through the covered concourse. Please be at the meeting point **by 08:25** for an 08:30 departure. \n\nFrom the terminal the coach drives ~30 minutes northeast along the **Gwangan Bridge** scenic route toward Gijang-gun for the day's first stop at **⟦G0⟧ Temple**. \n\nThe guide will brief on the day's running order, restroom stops, and the cruise-return buffer (typically returning to terminal by 17:30 for a 19:00+ sail-away).",
-      "glossary": [
-        "⟦G0⟧ = Haedong Yonggungsa"
-      ]
+      "source_en": "Pickup is in the **arrival hall of whichever Busan cruise terminal your ship berths at** — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). Neither is a default: it depends on where your ship docks, and it is confirmed at booking.\n\nAfter disembarking, follow the signs to the arrival hall. Your guide is waiting there with an AtoC Korea sign and a printed itinerary card. Please be at the meeting point **by 08:50 for a 09:00 departure**.\n\nThe day runs about **8 hours**, ending back at your terminal around 17:00. The guide reconfirms your ship's all-aboard time at pickup and adjusts the running order if your sail-away is unusually early.",
+      "tm": "Die Abholung findet in der **Ankunftshalle jenes Busaner Kreuzfahrtterminals statt, an dem Ihr Schiff anlegt** — dem Busan International Cruise Terminal (Yeongdo) oder dem Internationalen Passagierterminal des Hafens Busan (Choryang). Keines von beiden ist voreingestellt: Es hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt.\n\nFolgen Sie nach dem Ausschiffen den Schildern zur Ankunftshalle. Dort wartet Ihre Reiseleitung mit einem AtoC-Korea-Schild und einer gedruckten Routenkarte. Bitte seien Sie **bis 08:50 Uhr am Treffpunkt, damit um 09:00 Uhr abgefahren werden kann**.\n\nDer Tag dauert etwa **8 Stunden** und endet gegen 17:00 Uhr wieder an Ihrem Terminal. Die Reiseleitung bestätigt bei der Abholung noch einmal die All-aboard-Zeit Ihres Schiffes und passt die Reihenfolge an, falls Sie ungewöhnlich früh auslaufen."
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "Buddhist Temple / Coastal"
+      "source_en": "Buddhist Temple / Coastal",
+      "tm": "Buddhistischer Tempel / Küste"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "75 min"
+      "source_en": "50 min",
+      "tm": "50 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
       "source_en": "Coach drop-off + walk through vendor lane to entry plaza (~10 min)"
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)"
+      "source_en": "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
+      "tm": "Die zwölf Tierkreisgeneräle + die Pagode gegen Unfälle (~10 Min.)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)"
+      "source_en": "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
+      "tm": "Abstieg über 108 Stufen + Haupthalle Daeungjeon + Terrassen am Meer (~30 Min.)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Haesu Gwaneum statue viewpoint + photo time (~15 min)"
+      "source_en": "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
+      "tm": "Aussichtspunkt an der Haesu-Gwaneum-Statue + Fotozeit (~15 Min.)"
     },
     "/itineraryStops/1/timeUsed/4": {
       "source_en": "Walk back up + reassemble at coach (~10 min)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**Founded 1376** by Buddhist master Naong Hyegeun (originally 'Bomunsa')"
+      "source_en": "**Founded 1376** by Buddhist master Naong Hyegeun (originally 'Bomunsa')",
+      "tm": "**1376 gegründet** vom buddhistischen Meister Naong Hyegeun (ursprünglich „Bomunsa“)"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "One of very few major Korean temples set on the seaside (most are in mountains)"
+      "source_en": "One of very few major Korean temples set on the seaside (most are in mountains)",
+      "tm": "Einer der ganz wenigen bedeutenden koreanischen Tempel am Meer (die meisten liegen in den Bergen)"
     },
     "/itineraryStops/1/highlights/2": {
       "source_en": "Renamed **⟦G0⟧ in 1974** after Monk Jeong-am's dragon-Goddess vision",
+      "tm": "Nach der Drachengöttin-Vision des Mönchs Jeong-am **1974 in ⟦G0⟧ umbenannt**",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "**108 stone stairs** = Buddhism's 108 delusions of the mind"
+      "source_en": "**108 stone stairs** = Buddhism's 108 delusions of the mind",
+      "tm": "**108 Steinstufen** = die 108 Verblendungen des Geistes im Buddhismus"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**12 Sibiji-shin (Zodiac Generals)** at entry; '**No-Accident Pagoda**' coin shrine"
+      "source_en": "**12 Sibiji-shin (Zodiac Generals)** at entry; '**No-Accident Pagoda**' coin shrine",
+      "tm": "**12 Sibiji-shin (Tierkreisgeneräle)** am Eingang; der Münzschrein **„Pagode gegen Unfälle“**"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "**Haesu Gwaneum Daebul** (Sea Goddess of Mercy) — most photographed cliff view"
+      "source_en": "**Haesu Gwaneum Daebul** (Sea Goddess of Mercy) — most photographed cliff view",
+      "tm": "**Haesu Gwaneum Daebul** (Meeresgöttin der Barmherzigkeit) — der meistfotografierte Blick von der Klippe"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Daeungjeon main hall restored in 1970 with attention to original colors"
+      "source_en": "Daeungjeon main hall restored in 1970 with attention to original colors",
+      "tm": "Die Haupthalle Daeungjeon wurde 1970 unter Beachtung der ursprünglichen Farben restauriert"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Hours daily 04:30–19:20, FREE admission; Buddha's Birthday (May) lantern festival"
+      "source_en": "Hours daily 04:30–19:20, FREE admission; Buddha's Birthday (May) lantern festival",
+      "tm": "Täglich 04:30–19:20 Uhr, Eintritt KOSTENLOS; Laternenfest zu Buddhas Geburtstag (Mai)"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arriving by 09:45 helps beat the worst tour-bus crowds that build from ~10:30"
+      "source_en": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arriving by 09:45 helps beat the worst tour-bus crowds that build from ~10:30",
+      "tm": "Die Hallen betritt man durch die Seitentüren (die Vordertür ist den Mönchen vorbehalten); zu Buddhas Geburtstag (April/Mai) gibt es die Laternenschau; wer bis 09:45 Uhr da ist, entgeht dem schlimmsten Reisebusandrang, der sich ab ~10:30 Uhr aufbaut"
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks"
+      "source_en": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
+      "tm": "Souvenir- und Snackstände sowie ein kleines Café auf dem oberen Vorplatz; ein Küstenpfad führt weiter an den Felsen entlang"
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "The route's iconic anchor — the most-photographed temple in Busan, with a 650-year history and a rare Korean seaside Buddhist setting. The 09:30 arrival window lands before the major tour-bus surge (typically 11:00 onward) so the 108-stair descent and the Haesu Gwaneum viewpoint are still walkable without queuing. From the cruise terminal it is also the most efficient morning anchor — the coach drives one direction (northeast along Gwangan Bridge) to the temple, then swings back across the city for the remaining seven stops without crisscrossing."
     },
     "/itineraryStops/1/convenience/parking": {
       "source_en": "⟦G0⟧ Parking Lot (paid, per Visit Busan official)",
+      "tm": "Parkplatz ⟦G0⟧ (kostenpflichtig, laut offizieller Angabe von Visit Busan)",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Available near main entrance and inside complex"
+      "source_en": "Available near main entrance and inside complex",
+      "tm": "Am Haupteingang und innerhalb der Anlage vorhanden"
     },
     "/itineraryStops/1/description": {
       "source_en": "**⟦G0⟧ (해동 용궁사) — Korea's most famous seaside Buddhist temple** — perches on the rocky cliffs of Gijang-gun on Busan's northeastern coast, one of the very few major Korean temples NOT set in the mountains. Originally founded in **1376 during the Goryeo Dynasty by the great Buddhist teacher Naong Hyegeun (나옹 혜근, 1320–1376)** — a royal consultant and master who would help shape Korean Buddhism into the early Joseon era. \n\nPer legend, Naong was practicing asceticism at Bunhwangsa Temple in Gyeongju during a national drought; the East Sea god appeared to him in a dream and told him that building a temple on Bongrae Mountain (the original name of this seaside cliff) would restore the kingdom's prosperity. \n\nNaong founded the temple and named it **Bomunsa**, dedicated to Gwanseum-bosal (관세음보살, the Bodhisattva of Compassion). The temple was destroyed in the **Japanese Imjin Invasion of 1592** and lay in ruins for over 300 years until **Monk Ungang of ⟦G1⟧ began reconstruction in the early 1930s**. \n\nThe current name, **⟦G0⟧ (Korean Dragon Palace Temple)**, dates only to **1974** — when Head Monk Jeong-am, during a 100-day prayer (jeong-geon kido), had a vision of the Goddess of Mercy descending on the back of a dragon, emanating multicolor light. \n\nThe temple was renamed to honor this vision. The visit follows the temple's signature processional path: through the row of **12 Sibiji-shin (Twelve Zodiac Generals)** at the entry plaza, past the **7-story 'No-Accident Pagoda'** (where drivers leave coin offerings under a stone wheel-shrine), down the famous **108 stone stairs** (representing the 108 delusions of the Buddhist mind) through a small bamboo grove, and out onto the seaside terraces and Daeungjeon main hall. \n\nThe **Haesu Gwaneum Daebul** (Sea-Goddess of Mercy statue) on the upper cliff is the most photographed view, framing both the temple rooftops and the East Sea. \n\nHours **04:30–19:20 daily, last entry 18:50, FREE admission**. **Buddha's Birthday (May)** brings Yeondunhoe lantern festival displays.",
+      "tm": "**⟦G0⟧ (해동 용궁사) — Koreas berühmtester buddhistischer Tempel am Meer** — thront auf den Felsklippen von Gijang-gun an Busans Nordostküste und ist einer der ganz wenigen bedeutenden koreanischen Tempel, der NICHT in den Bergen liegt. Ursprünglich **1376 während der Goryeo-Dynastie von dem großen buddhistischen Lehrer Naong Hyegeun (나옹 혜근, 1320–1376)** gegründet — einem königlichen Berater und Meister, der den koreanischen Buddhismus bis in die frühe Joseon-Zeit hinein prägen sollte. \n\nDer Legende nach übte sich Naong während einer landesweiten Dürre im Bunhwangsa-Tempel in Gyeongju in Askese; da erschien ihm der Gott des Ostmeers im Traum und sagte ihm, ein Tempel auf dem Berg Bongrae (dem ursprünglichen Namen dieser Meeresklippe) werde dem Reich seinen Wohlstand zurückgeben. \n\nNaong gründete den Tempel und nannte ihn **Bomunsa**, geweiht Gwanseum-bosal (관세음보살, der Bodhisattva des Mitgefühls). Bei der **japanischen Imjin-Invasion von 1592** wurde der Tempel zerstört und lag über 300 Jahre in Trümmern, bis **der Mönch Ungang aus ⟦G1⟧ Anfang der 1930er Jahre mit dem Wiederaufbau begann**. \n\nDer heutige Name **⟦G0⟧ (Koreanischer Drachenpalast-Tempel)** stammt erst aus dem Jahr **1974** — als der Abt Jeong-am während eines 100-tägigen Gebets (Jeong-geon Kido) eine Vision hatte, in der die Göttin der Barmherzigkeit auf dem Rücken eines Drachen herabstieg und vielfarbiges Licht ausstrahlte. \n\nZu Ehren dieser Vision wurde der Tempel umbenannt. Der Besuch folgt dem charakteristischen Prozessionsweg des Tempels: durch die Reihe der **12 Sibiji-shin (zwölf Tierkreisgeneräle)** auf dem Vorplatz, vorbei an der **7-stöckigen „Pagode gegen Unfälle“** (wo Fahrerinnen und Fahrer unter einem steinernen Radschrein Münzen als Opfer hinterlegen), hinab über die berühmten **108 Steinstufen** (Sinnbild der 108 Verblendungen des buddhistischen Geistes) durch einen kleinen Bambushain und hinaus auf die Terrassen am Meer und zur Haupthalle Daeungjeon. \n\nDer **Haesu Gwaneum Daebul** (die Statue der Meeresgöttin der Barmherzigkeit) auf der oberen Klippe ist der meistfotografierte Blick, der zugleich die Tempeldächer und das Ostmeer einfasst. \n\nGeöffnet **täglich 04:30–19:20 Uhr, letzter Einlass 18:50 Uhr, Eintritt KOSTENLOS**. Zu **Buddhas Geburtstag (Mai)** gibt es die Laternenschau des Yeondunhoe.",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa",
         "⟦G1⟧ = Tongdosa-Tempel"
       ]
     },
     "/itineraryStops/1/visitBasics/hours": {
-      "source_en": "Daily 04:30–19:20 (last admission 18:50)"
+      "source_en": "Daily 04:30–19:20 (last admission 18:50)",
+      "tm": "Täglich 04:30–19:20 Uhr (letzter Einlass 18:50 Uhr)"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "Open year-round"
+      "source_en": "Open year-round",
+      "tm": "Ganzjährig geöffnet"
     },
     "/itineraryStops/1/visitBasics/walking": {
-      "source_en": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs"
+      "source_en": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs",
+      "tm": "Mittel — 108 Stufen durch einen Kiefernhain, mehrere Terrassen am Meer und Treppen"
     },
     "/itineraryStops/1/visitBasics/admission": {
       "source_en": "Free; coach parking is paid"
     },
     "/itineraryStops/1/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Tempel ⟦G0⟧ — Foto 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/galleryItems/0/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Tempel ⟦G0⟧ — Foto 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Tempel ⟦G0⟧ — Foto 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Tempel ⟦G0⟧ — Foto 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Tempel ⟦G0⟧ — Foto 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/0/description": {
-      "⟦G0⟧": "Haedong Yonggungsa"
-    },
     "/itineraryStops/1/name": {
       "⟦G0⟧": "Haedong Yonggungsa"
     },
@@ -180,7 +282,40 @@
     },
     "/itineraryStops/1/galleryItems/1/alt": {
       "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
     }
   },
-  "tmHits": 0
+  "tmHits": 42
 }

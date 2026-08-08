@@ -7,75 +7,91 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Route 1: Gapyeong Nature & Culture Loop"
+      "source_en": "Route 1: Gapyeong Nature & Culture Loop",
+      "tm": "Itinéraire 1 : boucle nature et culture de Gapyeong"
     },
     "/itineraryStops/0/category": {
       "source_en": "Nami Island + Morning Calm + ⟦G0⟧ + Gangchon Railbike",
+      "tm": "Île de Nami + Jardin du matin calme + ⟦G0⟧ + rail-bike de Gangchon",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Seoul hotel pickup ~08:00-09:00, ~70-90 min transfer to Gapyeong"
+      "source_en": "Seoul hotel pickup ~08:00-09:00, ~70-90 min transfer to Gapyeong",
+      "tm": "Prise en charge à l'hôtel à Séoul vers 08h00-09h00, ~70-90 min de trajet jusqu'à Gapyeong"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Morning: Nami Island (2-3 hours) OR Gangchon Rail Bike (90 min) — typically choose one"
+      "source_en": "Morning: Nami Island (2-3 hours) OR Gangchon Rail Bike (90 min) — typically choose one",
+      "tm": "Matin : île de Nami (2-3 heures) OU rail-bike de Gangchon (90 min) — on choisit généralement l’un des deux"
     },
     "/itineraryStops/0/timeUsed/2": {
       "source_en": "Lunch in Cheongpyeong town or ⟦G0⟧ entrance area (dak-galbi spicy chicken is the local specialty)",
+      "tm": "Déjeuner en ville à Cheongpyeong ou près de l'entrée de ⟦G0⟧ (le dak-galbi, poulet épicé, est la spécialité locale)",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/timeUsed/3": {
       "source_en": "Afternoon: ⟦G1⟧ (1.5-2 hours) + ⟦G0⟧ (1.5-2 hours, plus light festival in winter if staying past sunset)",
+      "tm": "Après-midi : ⟦G1⟧ (1,5-2 heures) + le ⟦G0⟧ (1,5-2 heures, plus le festival des lumières en hiver si vous restez après le coucher du soleil)",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme",
         "⟦G1⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/timeUsed/4": {
-      "source_en": "Return to Seoul ~18:00-20:00 (later in winter for the lighting festival)"
+      "source_en": "Return to Seoul ~18:00-20:00 (later in winter for the lighting festival)",
+      "tm": "Retour à Séoul vers 18h00-20h00 (plus tard en hiver pour le festival des lumières)"
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "Nami Island: 460,000 m² river island, 5-min ferry, Winter Sonata Metasequoia avenue + Ginkgo lane; full-day pricing 18,000 KRW adult includes ferry"
+      "source_en": "Nami Island: 460,000 m² river island, 5-min ferry, Winter Sonata Metasequoia avenue + Ginkgo lane; full-day pricing 18,000 KRW adult includes ferry",
+      "tm": "Île de Nami : île fluviale de 460 000 m², 5 min de ferry, l'allée de métaséquoias de Winter Sonata + l'allée des ginkgos ; tarif journée 18 000 KRW adulte, ferry compris"
     },
     "/itineraryStops/0/highlights/1": {
       "source_en": "⟦G0⟧: 330,000 m² arboretum, 5,000 plant species, winter lighting festival Dec 5 - Mar 15 with 30,000+ LEDs; admission 11,000 KRW adult",
+      "tm": "⟦G0⟧ : arboretum de 330 000 m², 5 000 espèces végétales, festival des lumières hivernal du 5 décembre au 15 mars avec plus de 30 000 LED ; entrée 11 000 KRW adulte",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/itineraryStops/0/highlights/2": {
       "source_en": "⟦G0⟧: opened 2008, 16 French-style buildings, Saint-Exupéry / Little Prince theme, multi-K-drama filming site; admission 12,000 KRW adult, 19,500 combined with adjacent Italian Village",
+      "tm": "⟦G0⟧ : ouvert en 2008, 16 bâtiments de style français, thème Saint-Exupéry / Petit Prince, lieu de tournage de plusieurs K-dramas ; entrée 12 000 KRW adulte, 19 500 en billet combiné avec le village italien voisin",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Gangchon / Gapyeong Rail Bike: 8 km pedal-rail along the old Gyeongchun Line, 30-40 min ride; ~30,000-35,000 KRW per 4-person bike"
+      "source_en": "Gangchon / Gapyeong Rail Bike: 8 km pedal-rail along the old Gyeongchun Line, 30-40 min ride; ~30,000-35,000 KRW per 4-person bike",
+      "tm": "Rail-bike de Gangchon / Gapyeong : 8 km de vélo-rail le long de l’ancienne ligne Gyeongchun, 30-40 min de trajet ; ~30 000-35 000 KRW par vélo de 4 personnes"
     },
     "/itineraryStops/0/smartNotes/tip": {
-      "source_en": "If visiting in December-March, time the route to arrive at Morning Calm by 16:00 so you see the daytime garden first, then stay through illumination (~17:00 onward). Pre-book Rail Bike slots — they sell out on weekends."
+      "source_en": "If visiting in December-March, time the route to arrive at Morning Calm by 16:00 so you see the daytime garden first, then stay through illumination (~17:00 onward). Pre-book Rail Bike slots — they sell out on weekends.",
+      "tm": "Si vous venez entre décembre et mars, calez l'itinéraire pour arriver au Jardin du matin calme vers 16h00 : vous verrez d'abord le jardin de jour, puis resterez pour les illuminations (à partir de ~17h00). Réservez vos créneaux de rail-bike à l'avance — ils se remplissent le week-end."
     },
     "/itineraryStops/0/smartNotes/facilities": {
       "source_en": "Nami Island has multiple cafés and a hanok-style restaurant on site; ⟦G0⟧ has snack stalls only (eat lunch elsewhere); Morning Calm's Food Garden serves Korean comfort food.",
+      "tm": "L'île de Nami compte plusieurs cafés et un restaurant de style hanok sur place ; ⟦G0⟧ ne dispose que de stands de snacks (déjeunez ailleurs) ; le Food Garden du Jardin du matin calme sert une cuisine coréenne réconfortante.",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "The strongest route for first-time Seoul visitors who want a nature-and-photo day with low walking demand and high Instagram return. All four stops are within 15-20 minutes of each other, the per-stop entrance fees are modest, and the seasonal signatures (cherry blossoms in April, foliage in October, snow + lighting festival in December-February) make repeat visits worthwhile."
+      "source_en": "The strongest route for first-time Seoul visitors who want a nature-and-photo day with low walking demand and high Instagram return. All four stops are within 15-20 minutes of each other, the per-stop entrance fees are modest, and the seasonal signatures (cherry blossoms in April, foliage in October, snow + lighting festival in December-February) make repeat visits worthwhile.",
+      "tm": "Le meilleur itinéraire pour une première visite de Séoul, si vous voulez une journée nature et photo peu exigeante en marche et très rentable sur Instagram. Les quatre étapes sont à 15-20 minutes les unes des autres, les droits d'entrée y sont modestes, et les signatures saisonnières (cerisiers en avril, feuillages en octobre, neige et festival des lumières de décembre à février) donnent envie de revenir."
     },
     "/itineraryStops/0/convenience/parking": {
       "source_en": "Driver-guide handles all parking",
       "tm": "Le chauffeur-guide s'occupe de tous les stationnements"
     },
     "/itineraryStops/0/convenience/restroom": {
-      "source_en": "Available at all stops"
+      "source_en": "Available at all stops",
+      "tm": "Disponibles à toutes les étapes"
     },
     "/itineraryStops/0/description": {
       "source_en": "The most scenically diverse route, looping through **Gapyeong's signature nature-and-culture cluster** about 60-90 minutes northeast of Seoul. **Nami Island** is a **460,000 m²** crescent-shaped river island reached by a 5-minute ferry, world-famous since the **2002 K-drama Winter Sonata** for its tree-lined avenues (Metasequoia, Ginkgo, and Cherry). \n\nThe **⟦G0⟧** is a **330,000 m² arboretum** cultivating about 5,000 plant species — opened in 1996 by Han Sang-kyung of Sahmyook University and home to Korea's first natural-environment lighting festival (December 5 to March 15) where **30,000+ LEDs** cover the garden after sunset. \n\n**⟦G1⟧, opened in 2008**, is a 16-building French-themed cultural village built around 'flowers, stars, and the Little Prince' — Korean drama fans will recognize it as the filming set for Beethoven Virus, Secret Garden, My Love from the Star, and most recently Bon Appétit Your Majesty (2025). \n\n**Gangchon Rail Park** / Bike adds a 30-40 minute pedal-rail ride along the disused Gyeongchun Line tracks beside the Bukhangang River. The route works year-round, with each season delivering a different signature: cherry blossoms (April), green tunnels (summer), foliage (October-early November), and snow + lighting festival (December-February).",
+      "tm": "L'itinéraire le plus varié sur le plan des paysages, qui parcourt en boucle l'**ensemble nature-et-culture emblématique de Gapyeong**, à environ 60-90 minutes au nord-est de Séoul. L'**île de Nami** est une île fluviale en croissant de **460 000 m²**, accessible par un ferry de 5 minutes, mondialement connue depuis le **K-drama Winter Sonata de 2002** pour ses allées bordées d'arbres (métaséquoias, ginkgos et cerisiers). \n\nLe **⟦G0⟧** est un **arboretum de 330 000 m²** cultivant environ 5 000 espèces végétales — ouvert en 1996 par Han Sang-kyung, de l'université Sahmyook, et berceau du premier festival des lumières en milieu naturel de Corée (du 5 décembre au 15 mars), où **plus de 30 000 LED** recouvrent le jardin après le coucher du soleil. \n\n**⟦G1⟧, ouvert en 2008**, est un village culturel de 16 bâtiments d'inspiration française bâti autour des « fleurs, étoiles et du Petit Prince » — les amateurs de séries coréennes y reconnaîtront le décor de Beethoven Virus, Secret Garden, My Love from the Star et, plus récemment, Bon Appétit Your Majesty (2025). \n\nLe **Gangchon Rail Park** / vélo-rail ajoute un parcours de 30 à 40 minutes sur les voies désaffectées de la ligne Gyeongchun, le long de la rivière Bukhangang. L'itinéraire fonctionne toute l'année, chaque saison offrant sa signature : cerisiers en fleur (avril), tunnels de verdure (été), feuillages (octobre-début novembre) et neige avec festival des lumières (décembre-février).",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme",
         "⟦G1⟧ = Petite France"
@@ -83,6 +99,7 @@
     },
     "/itineraryStops/0/visitBasics/hours": {
       "source_en": "Nami Island: 07:30-21:00 daily; ⟦G0⟧: 08:30-19:00 standard, 11:00-21:00/23:00 during winter lighting festival; ⟦G1⟧: 09:00-18:00 (last entry 17:00); Rail Bike: 09:00-17:30 with timed slots",
+      "tm": "Île de Nami : 07h30-21h00 tous les jours ; ⟦G0⟧ : 08h30-19h00 en temps normal, 11h00-21h00/23h00 pendant le festival des lumières hivernal ; ⟦G1⟧ : 09h00-18h00 (dernière entrée 17h00) ; rail-bike : 09h00-17h30 sur créneaux horaires",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme",
         "⟦G1⟧ = Petite France"
@@ -90,75 +107,94 @@
     },
     "/itineraryStops/0/visitBasics/closed": {
       "source_en": "All open year-round; ⟦G0⟧ closes some Mondays in off-season",
+      "tm": "Tous ouverts toute l'année ; ⟦G0⟧ ferme certains lundis hors saison",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/visitBasics/walking": {
       "source_en": "Moderate — Nami Island walking loop is ~3 km flat; Morning Calm 1.5-2 hours of garden paths; ⟦G0⟧ gentle slopes between buildings",
+      "tm": "Modérée — la boucle piétonne de l'île de Nami fait ~3 km de plain-pied ; 1,5-2 heures d'allées de jardin au Jardin du matin calme ; pentes douces entre les bâtiments à ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/0/visitBasics/admission": {
       "source_en": "Nami 18,000 / Morning Calm 11,000 / ⟦G0⟧ 12,000 / Rail Bike ~30,000-35,000 per bike (1-4 people). Driver-guide assists with ticket purchase.",
+      "tm": "Nami 18 000 / Jardin du matin calme 11 000 / ⟦G0⟧ 12 000 / rail-bike ~30 000-35 000 par vélo (1-4 personnes). Le chauffeur-guide vous aide pour l'achat des billets.",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
     },
     "/itineraryStops/1/name": {
-      "source_en": "Route 2: DMZ History & Paju Shopping"
+      "source_en": "Route 2: DMZ History & Paju Shopping",
+      "tm": "Itinéraire 2 : histoire de la DMZ et shopping à Paju"
     },
     "/itineraryStops/1/category": {
-      "source_en": "DMZ Tour + Paju Premium Outlets"
+      "source_en": "DMZ Tour + Paju Premium Outlets",
+      "tm": "Visite de la DMZ + Paju Premium Outlets"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Seoul hotel pickup ~08:00, ~70 min transfer to Imjingak"
+      "source_en": "Seoul hotel pickup ~08:00, ~70 min transfer to Imjingak",
+      "tm": "Prise en charge à l'hôtel à Séoul vers 08h00, ~70 min de trajet jusqu'à Imjingak"
     },
     "/itineraryStops/1/timeUsed/1": {
       "source_en": "Morning: Imjingak + 3rd Tunnel + ⟦G0⟧ + Dorasan Station (~3-4 hours)",
+      "tm": "Matin : Imjingak + 3e tunnel + ⟦G0⟧ + gare de Dorasan (~3-4 heures)",
       "glossary": [
         "⟦G0⟧ = Observatoire de Dora"
       ]
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Lunch break (Paju local pork-belly BBQ or Munsan-area Korean restaurant)"
+      "source_en": "Lunch break (Paju local pork-belly BBQ or Munsan-area Korean restaurant)",
+      "tm": "Pause déjeuner (barbecue de poitrine de porc local à Paju ou restaurant coréen du secteur de Munsan)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Afternoon: Paju Premium Outlets + optional Lotte Premium Outlets across the road (~3-4 hours)"
+      "source_en": "Afternoon: Paju Premium Outlets + optional Lotte Premium Outlets across the road (~3-4 hours)",
+      "tm": "Après-midi : Paju Premium Outlets + éventuellement les Lotte Premium Outlets de l'autre côté de la route (~3-4 heures)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Return to Seoul by ~18:00-19:00"
+      "source_en": "Return to Seoul by ~18:00-19:00",
+      "tm": "Retour à Séoul vers 18h00-19h00"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "3rd Infiltration Tunnel: 1,635 m North-Korean-built tunnel discovered Oct 17, 1978; visitors descend ~73 m via shuttle monorail or steep walking ramp"
+      "source_en": "3rd Infiltration Tunnel: 1,635 m North-Korean-built tunnel discovered Oct 17, 1978; visitors descend ~73 m via shuttle monorail or steep walking ramp",
+      "tm": "3e tunnel d’infiltration : tunnel de 1 635 m creusé par la Corée du Nord, découvert le 17 octobre 1978 ; on descend ~73 m en monorail-navette ou par une rampe piétonne raide"
     },
     "/itineraryStops/1/highlights/1": {
       "source_en": "⟦G0⟧: high-zoom views into Kaesong (North Korea); on clear days the Kaesong Industrial Complex is visible",
+      "tm": "⟦G0⟧ : vues au téléobjectif sur Kaesong (Corée du Nord) ; par temps clair, le complexe industriel de Kaesong est visible",
       "glossary": [
         "⟦G0⟧ = Observatoire de Dora"
       ]
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Imjingak Peace Park: Freedom Bridge (1953 prisoner-of-war exchange site) + Mangbaedan altar + 1953 rusting locomotive"
+      "source_en": "Imjingak Peace Park: Freedom Bridge (1953 prisoner-of-war exchange site) + Mangbaedan altar + 1953 rusting locomotive",
+      "tm": "Parc de la Paix d’Imjingak : pont de la Liberté (lieu de l’échange de prisonniers de guerre de 1953) + autel Mangbaedan + locomotive rouillée de 1953"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Paju Premium Outlets: 230+ international brands at 25-50% off; Lotte Premium Outlets adjacent for another ~150 brands"
+      "source_en": "Paju Premium Outlets: 230+ international brands at 25-50% off; Lotte Premium Outlets adjacent for another ~150 brands",
+      "tm": "Paju Premium Outlets : plus de 230 marques internationales de 25 à 50 % moins cher ; les Lotte Premium Outlets voisins ajoutent ~150 enseignes"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Bring passports — required for DMZ entry. The 3rd Tunnel ramp is the bottleneck for low-mobility travelers — the monorail option (9,000 KRW return) covers the same descent without the steep walk. DMZ tours run on operational schedules so the driver-guide will confirm available stops the morning of the tour."
+      "source_en": "Bring passports — required for DMZ entry. The 3rd Tunnel ramp is the bottleneck for low-mobility travelers — the monorail option (9,000 KRW return) covers the same descent without the steep walk. DMZ tours run on operational schedules so the driver-guide will confirm available stops the morning of the tour.",
+      "tm": "Emportez vos passeports — ils sont exigés à l'entrée de la DMZ. La rampe du 3e tunnel est le point bloquant pour les personnes à mobilité réduite — l'option monorail (9 000 KRW aller-retour) couvre la même descente sans la marche en pente raide. Les visites de la DMZ suivent des horaires opérationnels : le chauffeur-guide confirmera donc les étapes accessibles le matin même."
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Lunch is best in Paju city (between DMZ and Outlets) — Paju is famous for grilled pork belly (samgyeopsal). DMZ-area food is limited and tourist-priced."
+      "source_en": "Lunch is best in Paju city (between DMZ and Outlets) — Paju is famous for grilled pork belly (samgyeopsal). DMZ-area food is limited and tourist-priced.",
+      "tm": "Le déjeuner se prend idéalement en ville à Paju (entre la DMZ et les outlets) — Paju est réputée pour sa poitrine de porc grillée (samgyeopsal). L'offre de restauration aux abords de la DMZ est limitée et à des prix touristiques."
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "The strongest route for travelers who want a substantive Korean War / inter-Korean-relations history experience without the rigid scheduling and bus-tour pacing of the standard JSA tour. The private charter format means the DMZ portion adapts to military operational closures (which are common) and the afternoon shifts to shopping or art depending on group interest. The Paju Outlets afternoon also balances the heavy history morning with practical retail — strong combination for travelers on a winter trip when outdoor walking time is limited."
+      "source_en": "The strongest route for travelers who want a substantive Korean War / inter-Korean-relations history experience without the rigid scheduling and bus-tour pacing of the standard JSA tour. The private charter format means the DMZ portion adapts to military operational closures (which are common) and the afternoon shifts to shopping or art depending on group interest. The Paju Outlets afternoon also balances the heavy history morning with practical retail — strong combination for travelers on a winter trip when outdoor walking time is limited.",
+      "tm": "Le meilleur itinéraire pour les voyageurs qui veulent une véritable plongée dans l'histoire de la guerre de Corée et des relations intercoréennes, sans les horaires rigides ni le rythme d'un circuit en bus comme la visite classique de la JSA. Le format en location privée permet d'adapter la partie DMZ aux fermetures opérationnelles militaires (fréquentes) et de basculer l'après-midi vers le shopping ou l'art selon l'intérêt du groupe. L'après-midi aux outlets de Paju équilibre aussi une matinée d'histoire chargée par un moment plus pratique — une bonne combinaison pour un voyage hivernal, quand le temps de marche en extérieur est limité."
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Driver-guide handles all parking; DMZ has dedicated tour-bus lots"
+      "source_en": "Driver-guide handles all parking; DMZ has dedicated tour-bus lots",
+      "tm": "Le chauffeur-guide gère tout le stationnement ; la DMZ dispose de parkings réservés aux autocars"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Available at all DMZ stops and at Paju Outlets food courts"
+      "source_en": "Available at all DMZ stops and at Paju Outlets food courts",
+      "tm": "Disponibles à toutes les étapes de la DMZ et dans les aires de restauration des outlets de Paju"
     }
   },
   "glossaryTokens": {
@@ -205,5 +241,5 @@
       "⟦G0⟧": "Observatoire de Dora"
     }
   },
-  "tmHits": 1
+  "tmHits": 37
 }

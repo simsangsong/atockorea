@@ -7,13 +7,16 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Suwon Hwaseong, Korean Folk Village & Starfield Library Day Tour from Seoul | AtoC Korea"
+      "source_en": "Suwon Hwaseong, Korean Folk Village & Starfield Library Day Tour from Seoul | AtoC Korea",
+      "tm": "Suwon Hwaseong, villaggio folcloristico coreano e biblioteca Starfield: escursione da Seoul | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Suwon Hwaseong, Folk Village & Starfield Library | AtoC Korea"
+      "source_en": "Suwon Hwaseong, Folk Village & Starfield Library | AtoC Korea",
+      "tm": "Suwon Hwaseong, villaggio folcloristico e biblioteca Starfield | AtoC Korea"
     },
     "/seo/metaDescription": {
       "source_en": "10-hour small-group day tour from Seoul: UNESCO ⟦G2⟧, ⟦G1⟧, ⟦G0⟧, and Starfield Suwon Library.",
+      "tm": "Escursione di 10 ore in piccolo gruppo da Seoul: la ⟦G2⟧ patrimonio UNESCO, il ⟦G1⟧, il ⟦G0⟧ e la biblioteca Starfield di Suwon.",
       "glossary": [
         "⟦G0⟧ = Villaggio folcloristico coreano (Yongin)",
         "⟦G1⟧ = Palazzo di Hwaseong Haenggung",
@@ -21,45 +24,56 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Suwon Hwaseong tour from Seoul"
+      "source_en": "Suwon Hwaseong tour from Seoul",
+      "tm": "tour di Suwon Hwaseong da Seoul"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Korean Folk Village day trip"
+      "source_en": "Korean Folk Village day trip",
+      "tm": "escursione al villaggio folcloristico coreano"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon tour"
+      "source_en": "Starfield Library Suwon tour",
+      "tm": "visita alla biblioteca Starfield di Suwon"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "UNESCO Korea day tour"
+      "source_en": "UNESCO Korea day tour",
+      "tm": "escursione UNESCO in Corea"
     },
     "/hero/meta/stops": {
-      "source_en": "6 stops"
+      "source_en": "6 stops",
+      "tm": "6 tappe"
     },
     "/hero/meta/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon e Yongin"
     },
     "/hero/meta/duration": {
-      "source_en": "10 hours"
+      "source_en": "10 hours",
+      "tm": "10 ore"
     },
     "/hero/pills/0": {
-      "source_en": "Small Group"
+      "source_en": "Small Group",
+      "tm": "Piccolo gruppo"
     },
     "/hero/pills/1": {
       "source_en": "Culture",
       "tm": "Cultura"
     },
     "/hero/tagline": {
-      "source_en": "Korea's only walled fortress city built with its original Uigwe records, a folk village, and the library that's all over Instagram"
+      "source_en": "Korea's only walled fortress city built with its original Uigwe records, a folk village, and the library that's all over Instagram",
+      "tm": "L’unica città-fortezza cinta da mura della Corea costruita con i suoi registri Uigwe originali, un villaggio folcloristico e la biblioteca che si vede in ogni angolo di Instagram"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Valore fotografico"
     },
     "/glanceItems/0/value": {
       "source_en": "Excellent",
       "tm": "Eccellente"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Panorami"
     },
     "/glanceItems/1/value": {
       "source_en": "Good",
@@ -74,21 +88,24 @@
       "tm": "Alto"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Sicurezza con la pioggia"
     },
     "/glanceItems/3/value": {
       "source_en": "Good",
       "tm": "Buono"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Adatto alle famiglie"
     },
     "/glanceItems/4/value": {
       "source_en": "Good",
       "tm": "Buono"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Equilibrio"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -115,93 +132,118 @@
       "tm": "Recensioni"
     },
     "/catalog_card/tags/1": {
-      "source_en": "culture"
+      "source_en": "culture",
+      "tm": "cultura"
     },
     "/catalog_card/tags/2": {
-      "source_en": "unesco"
+      "source_en": "unesco",
+      "tm": "unesco"
     },
     "/catalog_card/tags/3": {
-      "source_en": "heritage"
+      "source_en": "heritage",
+      "tm": "patrimonio"
     },
     "/catalog_card/tags/4": {
-      "source_en": "library"
+      "source_en": "library",
+      "tm": "biblioteca"
     },
     "/catalog_card/title": {
-      "source_en": "Suwon: Hwaseong, Folk Village & Starfield"
+      "source_en": "Suwon: Hwaseong, Folk Village & Starfield",
+      "tm": "Suwon: Hwaseong, villaggio folcloristico e Starfield"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small Group"
+      "source_en": "Small Group",
+      "tm": "Piccolo gruppo"
     },
     "/catalog_card/badges/1": {
       "source_en": "Culture",
       "tm": "Cultura"
     },
     "/catalog_card/badges/2": {
-      "source_en": "UNESCO"
+      "source_en": "UNESCO",
+      "tm": "UNESCO"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Heritage"
+      "source_en": "Heritage",
+      "tm": "Patrimonio"
     },
     "/catalog_card/badges/4": {
-      "source_en": "Library"
+      "source_en": "Library",
+      "tm": "Biblioteca"
     },
     "/catalog_card/badges/5": {
-      "source_en": "Folk Village"
+      "source_en": "Folk Village",
+      "tm": "Villaggio folcloristico"
     },
     "/catalog_card/badges/6": {
-      "source_en": "Day Trip"
+      "source_en": "Day Trip",
+      "tm": "Escursione di un giorno"
     },
     "/catalog_card/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon e Yongin"
     },
     "/catalog_card/duration": {
-      "source_en": "10 hours"
+      "source_en": "10 hours",
+      "tm": "10 ore"
     },
     "/catalog_card/subtitle": {
-      "source_en": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed…"
+      "source_en": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed…",
+      "tm": "Un’escursione culturale di un giorno in piccolo gruppo da Seoul alla provincia di Gyeonggi, che attraversa quattro volti contrastanti del patrimonio coreano e della vita moderna: la…"
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$60 per person (was $66, 9% off)"
+      "source_en": "From US$60 per person (was $66, 9% off)",
+      "tm": "Da 60 US$ a persona (invece di 66 $, 9% di sconto)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group cultural day-trip from Seoul to Gyeonggi Province covering four contrasting sides of Korean heritage and modern life: the UNESCO-listed ⟦G1⟧ (18th-century walls and gates), the restored ⟦G0⟧ with its Joseon-era reenactments, the immersive open-air Korean Folk Village in Yongin, and the dramatic four-floor Starfield Library Suwon. 10 hours with included transport and admissions.",
+      "tm": "Un’escursione culturale di un giorno in piccolo gruppo da Seoul alla provincia di Gyeonggi, che attraversa quattro volti contrastanti del patrimonio coreano e della vita moderna: la ⟦G1⟧ iscritta all’UNESCO (mura e porte del XVIII secolo), il ⟦G0⟧ restaurato con le sue rievocazioni dell’epoca Joseon, l’immersivo villaggio folcloristico coreano all’aperto di Yongin e la spettacolare biblioteca Starfield di Suwon su quattro piani. 10 ore, trasporto e ingressi compresi.",
       "glossary": [
         "⟦G0⟧ = Palazzo di Hwaseong Haenggung",
         "⟦G1⟧ = Fortezza di Suwon Hwaseong"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "Giornata del patrimonio di Suwon"
     },
     "/headlineLine2": {
-      "source_en": "Hwaseong, Folk Village & Starfield"
+      "source_en": "Hwaseong, Folk Village & Starfield",
+      "tm": "Hwaseong, villaggio folcloristico e Starfield"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Punti di ritrovo fissi: non è previsto il prelievo in hotel. I ritardatari non possono essere attesi e non hanno diritto al rimborso."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -217,19 +259,23 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, ⟦G1⟧ admission, ⟦G0⟧ admission, Korean Folk Village admission.",
+      "tm": "Trasporto in pullman andata e ritorno da Seoul, guida di lingua inglese, ingresso alla ⟦G1⟧, ingresso al ⟦G0⟧, ingresso al villaggio folcloristico coreano.",
       "glossary": [
         "⟦G0⟧ = Palazzo di Hwaseong Haenggung",
         "⟦G1⟧ = Fortezza di Suwon Hwaseong"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Not included: meals, drinks, optional folk-village experiences (hanbok rental, archery), tips."
+      "source_en": "Not included: meals, drinks, optional folk-village experiences (hanbok rental, archery), tips.",
+      "tm": "Non incluso: pasti, bevande, attività facoltative al villaggio folcloristico (noleggio hanbok, tiro con l’arco), mance."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Starfield Library entry is free."
+      "source_en": "Starfield Library entry is free.",
+      "tm": "L’ingresso alla biblioteca Starfield è gratuito."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…"
+      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…",
+      "tm": "Trasporto in pullman andata e ritorno da Seoul, guida di lingua inglese, Suwon Hwaseong…"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "Pickup & drop-off",
@@ -237,21 +283,26 @@
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "tm": "Stazione Hongik University (uscita 8) alle ≈08:00 oppure stazione ⟦G0⟧ (uscita 2 o 4) alle ≈08:30.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Arrive 10 minutes early."
+      "source_en": "Arrive 10 minutes early.",
+      "tm": "Arrivi 10 minuti in anticipo."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "There is no hotel pickup; meeting points only."
+      "source_en": "There is no hotel pickup; meeting points only.",
+      "tm": "Non è previsto il prelievo in hotel: soltanto punti di ritrovo."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Latecomers cannot be accommodated."
+      "source_en": "Latecomers cannot be accommodated.",
+      "tm": "I ritardatari non possono essere attesi."
     },
     "/practicalAccordionItems/1/preview": {
       "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "tm": "Stazione Hongik University (uscita 8) alle ≈08:00 oppure stazione ⟦G0⟧ (uscita 2 o 4) alle ≈08:30.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -265,68 +316,84 @@
       "tm": "Moderato."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "The fortress wall walk involves uphill stone steps and uneven surfaces — about 1 km of the 5.7 km loop is typically covered."
+      "source_en": "The fortress wall walk involves uphill stone steps and uneven surfaces — about 1 km of the 5.7 km loop is typically covered.",
+      "tm": "Il percorso sulle mura comporta gradini di pietra in salita e superfici irregolari: di norma si copre circa 1 km dell’anello di 5,7 km."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "The Folk Village is a large open-air site (≈245 acres) but flat."
+      "source_en": "The Folk Village is a large open-air site (≈245 acres) but flat.",
+      "tm": "Il villaggio folcloristico è un vasto sito all’aperto (≈245 acri), ma pianeggiante."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Starfield Library involves stairs and escalators between floors."
+      "source_en": "Starfield Library involves stairs and escalators between floors.",
+      "tm": "La biblioteca Starfield comporta scale e scale mobili fra i piani."
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "Comfortable walking shoes essential."
+      "source_en": "Comfortable walking shoes essential.",
+      "tm": "Scarpe da camminata comode indispensabili."
     },
     "/practicalAccordionItems/2/preview": {
       "source_en": "Moderate.",
       "tm": "Moderato."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Come vestirsi e cosa portare"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in spring/autumn, warm coat in winter (the fortress walls are exposed to wind)."
+      "source_en": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in spring/autumn, warm coat in winter (the fortress walls are exposed to wind).",
+      "tm": "Scarpe da camminata comode e chiuse, cappello da sole in estate, abbigliamento a strati in primavera e autunno, cappotto caldo in inverno (le mura della fortezza sono esposte al vento)."
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Camera, water, light snacks."
+      "source_en": "Camera, water, light snacks.",
+      "tm": "Macchina fotografica, acqua, spuntini leggeri."
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Cash for lunch and any optional folk-village add-ons."
+      "source_en": "Cash for lunch and any optional folk-village add-ons.",
+      "tm": "Contanti per il pranzo e per le eventuali attività facoltative al villaggio folcloristico."
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in…"
+      "source_en": "Comfortable closed-toe walking shoes, sunhat in summer, layered clothing in…",
+      "tm": "Scarpe da camminata comode e chiuse, cappello da sole in estate, abbigliamento a strati in…"
     },
     "/practicalAccordionItems/4/title": {
       "source_en": "Cancellation",
       "tm": "Cancellazione"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Free cancellation up to 24 hours before the tour starts."
+      "source_en": "Free cancellation up to 24 hours before the tour starts.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima dell’inizio del tour."
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Same-day cancellations and no-shows are non-refundable.",
       "tm": "Le cancellazioni in giornata e le mancate presentazioni non sono rimborsabili."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Free cancellation up to 24 hours before the tour starts."
+      "source_en": "Free cancellation up to 24 hours before the tour starts.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima dell’inizio del tour."
     },
     "/practicalAccordionItems/5/title": {
       "source_en": "Children & accessibility",
       "tm": "Bambini e accessibilità"
     },
     "/practicalAccordionItems/5/content/0": {
-      "source_en": "Children are welcome — the folk village in particular is family-friendly, with horse shows and traditional games."
+      "source_en": "Children are welcome — the folk village in particular is family-friendly, with horse shows and traditional games.",
+      "tm": "I bambini sono benvenuti: il villaggio folcloristico in particolare si presta alle famiglie, con spettacoli equestri e giochi tradizionali."
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Strollers can navigate Haenggung and the folk village's main paths."
+      "source_en": "Strollers can navigate Haenggung and the folk village's main paths.",
+      "tm": "Il passeggino passa al Haenggung e sui sentieri principali del villaggio folcloristico."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "The fortress wall walk has stairs and is not stroller-friendly."
+      "source_en": "The fortress wall walk has stairs and is not stroller-friendly.",
+      "tm": "Il percorso sulle mura presenta scale e non si presta al passeggino."
     },
     "/practicalAccordionItems/5/content/3": {
-      "source_en": "Limited accessibility for wheelchair users on fortress sections."
+      "source_en": "Limited accessibility for wheelchair users on fortress sections.",
+      "tm": "Accessibilità limitata in sedia a rotelle nelle sezioni della fortezza."
     },
     "/practicalAccordionItems/5/preview": {
-      "source_en": "Children are welcome — the folk village in particular is family-friendly, with horse…"
+      "source_en": "Children are welcome — the folk village in particular is family-friendly, with horse…",
+      "tm": "I bambini sono benvenuti: il villaggio folcloristico in particolare si presta alle famiglie, con spettacoli…"
     }
   },
   "glossaryTokens": {
@@ -356,5 +423,5 @@
       "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 24
+  "tmHits": 91
 }

@@ -1,0 +1,160 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:staticQuestions",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "it",
+  "chunk": "staticQuestions",
+  "tier": "A2",
+  "segments": {
+    "/staticQuestions/0/answer": {
+      "source_en": "At the cruise terminal arrival hall. Large cruise ships dock at the Busan International Cruise Terminal (Yeongdo, Dongsam); smaller cruise ships and ferries dock at the Busan Port International Passenger Terminal (Choryang). The pickup terminal is determined by your ship — confirm at booking. Your guide waits with an 'AtoC Korea' sign in the arrival hall, and the coach is parked in the terminal coach lot."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Where exactly is the cruise terminal pickup?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Yes — the route is built around a 16:45–17:00 return to the cruise terminal, giving a 30–60 minute reboarding buffer for the typical 17:00–21:00 Busan sail-away window. AtoC Korea has not missed a sail-away on this route in 4 seasons of operation. If your ship departs earlier than 17:00, notify at booking and the route will be shortened by abbreviating Songdo and Yongdusan."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Will I make it back in time for my ship?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Same nine stops, same 8-hour day, different vehicle. This tour runs on a large coach shared with cruise passengers from several ships, at US$58.79 per person. The small-group tour runs the identical route in a van capped at 12 guests, at US$68.95 per person. Choose the coach on price; choose the van for a quieter group and a little more flexibility in how long each stop actually runs."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "How is the bus tour different from the small-group cruise tour?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Private cruise tours run only for your group with door-of-ship pickup, custom itinerary, and unlimited stop time — typically $300–$500+ per group. This bus tour runs at $58.79 per person on a fixed circuit. Choose this for budget and standardized timing; choose private if you want flexibility, accessibility, or to skip the standard stops in favor of (e.g.) ⟦G1⟧ or ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Cheongsapo Blue Line Park",
+        "⟦G1⟧ = Taejongdae"
+      ]
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "How does this compare to the private cruise charter?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "108 stone steps down from the upper plaza to the temple platform — the single steepest physical demand of the day. The 108 number is symbolic (the 108 worldly defilements in Buddhist teaching). Skip option: stay at the upper viewing area, which gives a strong photo of the temple from above without the descent."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "How many stairs at Yonggungsa?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Moderate to challenging — the alleys are steep, narrow, and stair-heavy. Wear shoes with grip; take it slow and use the stair handrails. The main photo zone (Little Prince bench, Sky Garden) is reachable on a relatively gentle path; deeper exploration requires the steepest stairs. The 90-min stop accommodates a slow pace."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Is Gamcheon's hillside hard?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Lunch is NOT included (₩8,000–₩12,000 own expense). The lunch STOP itself is also optional — cruise guests on a tight sail-away schedule may notify the guide at pickup and skip the 60-min lunch slot, releasing the time back to the afternoon stops. Typical local choices when you do stop: dwaeji-gukbap (Busan pork-bone soup) or milmyeon (cold wheat noodles, the city's signature Korean War refugee dish). Vegetarian / halal options possible with advance notice."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Is lunch included? Is it skippable?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "Yes — it is the Songdo Sky Park stop, and it is your choice on the day. The cable car is not included in the tour price: you buy at the base station, ₩17,000 adult round-trip or ₩25,000 for the glass-floored Crystal cabin. If you would rather not ride, spend the stop on the free Cloud Trails skywalk and the beach promenade instead; the vehicle waits either way.",
+      "tm": "Sì: è la tappa dello Songdo Sky Park, e la scelta è Sua nel giorno stesso. La funivia non è compresa nel prezzo del tour: il biglietto si acquista alla stazione di partenza, ₩17.000 andata e ritorno per gli adulti o ₩25.000 per la cabina Crystal con pavimento di vetro. Se preferisce non salire, dedichi la sosta alla passerella gratuita Cloud Trails e alla passeggiata sulla spiaggia; il veicolo attende in ogni caso."
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "Can I ride the Songdo Marine Cable Car?",
+      "tm": "Posso prendere la funivia marina di Songdo?"
+    },
+    "/staticQuestions/8/answer": {
+      "source_en": "No — the observatory ticket (₩12,000 adult / ₩9,000 child/senior) is NOT included. The 30-min Yongdusan stop covers the park plaza, Citizens' Bell, Yi Sun-sin statue, and the panorama from the park-level (already 69 m above sea level). Guests wanting the 189-m observatory deck would need to skip the park-level photo time and queue at the tower; we discourage it within a single 30-min slot."
+    },
+    "/staticQuestions/8/question": {
+      "source_en": "Is the Busan Diamond Tower observatory included?"
+    },
+    "/staticQuestions/9/answer": {
+      "source_en": "Yes, age 6 and up. Yonggungsa stairs, Gamcheon hillside, and Yongdusan stair descent are the main physical considerations. Kids tend to like the live-fish floor at Jagalchi, the ssiat-hotteok at ⟦G0⟧, and the Cloud Trails skywalk at Songdo. Strollers are not viable at Gamcheon or Yongdusan.",
+      "tm": "Sì, dai 6 anni in su. Le scale di Yonggungsa, la salita di Gamcheon e la discesa a piedi da Yongdusan sono i punti fisicamente più impegnativi. Ai bambini piacciono di solito il piano del pesce vivo a Jagalchi, lo ssiat-hotteok alla ⟦G0⟧ e la passerella Cloud Trails a Songdo. Il passeggino non è utilizzabile a Gamcheon né a Yongdusan.",
+      "glossary": [
+        "⟦G0⟧ = Piazza BIFF"
+      ]
+    },
+    "/staticQuestions/9/question": {
+      "source_en": "Is this suitable for children?",
+      "tm": "È adatto ai bambini?"
+    },
+    "/staticQuestions/10/answer": {
+      "source_en": "Challenging due to Yonggungsa stairs and Gamcheon hillside. Active seniors are fine; mobility-limited travelers should consider our private cruise charter where the route can be modified to skip the steepest stops.",
+      "tm": "Impegnativo, per le scale di Yonggungsa e la salita di Gamcheon. Le persone anziane attive non avranno problemi; chi ha mobilità ridotta dovrebbe considerare il nostro noleggio privato per crocieristi, dove l’itinerario può essere modificato per evitare le tappe più ripide."
+    },
+    "/staticQuestions/10/question": {
+      "source_en": "Is this OK for seniors?",
+      "tm": "È adatto alle persone anziane?"
+    },
+    "/staticQuestions/11/answer": {
+      "source_en": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead for Chinese. The guide handles all menu translation and stall interactions during the day. Multi-language printed itinerary card distributed at pickup."
+    },
+    "/staticQuestions/11/question": {
+      "source_en": "What languages does the guide speak?",
+      "tm": "Che lingue parla la guida?"
+    },
+    "/staticQuestions/12/answer": {
+      "source_en": "Light rain: tour runs as scheduled. Heavy rain: Yonggungsa's lower temple area becomes slippery, Gamcheon's stairs unsafe, Songdo Cloud Trails closed in storms — the guide will shorten outdoor time and extend indoor stops (Jagalchi, ⟦G1⟧, ⟦G0⟧). Typhoon-level weather or port closure: full refund or cruise-line rebooking arranged.",
+      "tm": "Pioggia leggera: il tour si svolge come previsto. Pioggia intensa: la parte bassa del tempio di Yonggungsa diventa scivolosa, le scale di Gamcheon non sono sicure e la Songdo Cloud Trails chiude in caso di temporale — la guida ridurrà il tempo all’aperto e allungherà le tappe al coperto (Jagalchi, la ⟦G1⟧, il ⟦G0⟧). Condizioni da tifone o chiusura del porto: rimborso integrale o riprenotazione tramite la compagnia di crociera.",
+      "glossary": [
+        "⟦G0⟧ = Mercato Gukje",
+        "⟦G1⟧ = Piazza BIFF"
+      ]
+    },
+    "/staticQuestions/12/question": {
+      "source_en": "What if it rains?",
+      "tm": "E se piove?"
+    },
+    "/staticQuestions/13/answer": {
+      "source_en": "Brief shopping time at Jagalchi (dried seafood), ⟦G1⟧ (ssiat-hotteok and street snacks), and ⟦G0⟧ (clothing, kitchenware, cosmetics). The cluster's combined 95 min is the day's most shopping-friendly window. Yongdusan and Gamcheon have small souvenir shops as well.",
+      "glossary": [
+        "⟦G0⟧ = Mercato Gukje",
+        "⟦G1⟧ = Piazza BIFF"
+      ]
+    },
+    "/staticQuestions/13/question": {
+      "source_en": "Is there time to shop?"
+    },
+    "/staticQuestions/14/answer": {
+      "source_en": "≈5–6 km total plus the 108 stairs at Yonggungsa (skippable), the Gamcheon hillside, and the Yongdusan stair descent. UN Cemetery, Jagalchi, ⟦G2⟧, ⟦G0⟧, and ⟦G1⟧ are flat. Comfortable walking shoes with grip are essential.",
+      "tm": "≈5–6 km in tutto, più le 108 scale di Yonggungsa (che si possono tralasciare), la salita di Gamcheon e la discesa a piedi da Yongdusan. Il cimitero delle Nazioni Unite, Jagalchi, la ⟦G2⟧, il ⟦G0⟧ e la ⟦G1⟧ sono in piano. Sono indispensabili scarpe comode con buona presa.",
+      "glossary": [
+        "⟦G0⟧ = Mercato Gukje",
+        "⟦G1⟧ = Spiaggia di Songdo",
+        "⟦G2⟧ = Piazza BIFF"
+      ]
+    },
+    "/staticQuestions/14/question": {
+      "source_en": "How much walking is there?",
+      "tm": "Quanto si cammina?"
+    },
+    "/staticQuestions/15/answer": {
+      "source_en": "Not expected (tipping is not standard practice in Korea) but appreciated for the guide and driver — typical guest tip $5–10 USD per person if you wish to. Not built into the tour price."
+    },
+    "/staticQuestions/15/question": {
+      "source_en": "Is tipping expected?"
+    }
+  },
+  "glossaryTokens": {
+    "/staticQuestions/3/answer": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park",
+      "⟦G1⟧": "Taejongdae"
+    },
+    "/staticQuestions/9/answer": {
+      "⟦G0⟧": "Piazza BIFF"
+    },
+    "/staticQuestions/12/answer": {
+      "⟦G0⟧": "Mercato Gukje",
+      "⟦G1⟧": "Piazza BIFF"
+    },
+    "/staticQuestions/13/answer": {
+      "⟦G0⟧": "Mercato Gukje",
+      "⟦G1⟧": "Piazza BIFF"
+    },
+    "/staticQuestions/14/answer": {
+      "⟦G0⟧": "Mercato Gukje",
+      "⟦G1⟧": "Spiaggia di Songdo",
+      "⟦G2⟧": "Piazza BIFF"
+    }
+  },
+  "tmHits": 11
+}

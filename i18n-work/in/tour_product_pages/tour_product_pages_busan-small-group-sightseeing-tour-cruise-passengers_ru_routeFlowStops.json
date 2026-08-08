@@ -7,31 +7,38 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Busan Port pickup (cruise terminal)"
+      "source_en": "Busan Port pickup (cruise terminal)",
+      "tm": "Сбор в порту Пусана (круизный терминал)"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Transit / Pickup"
+      "source_en": "Transit / Pickup",
+      "tm": "Переезд / сбор"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Хэдон Йонгунса"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Seaside temple"
+      "source_en": "Seaside temple",
+      "tm": "Храм у моря"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ в Корее",
       "glossary": [
         "⟦G0⟧ = Мемориальное кладбище ООН"
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "History / Memorial"
+      "source_en": "History / Memorial",
+      "tm": "История / мемориал"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch at a local Busan restaurant (own expense)"
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Обед в местном ресторане в Пусане (за свой счёт)"
     },
     "/routeFlowStops/3/theme": {
       "source_en": "Meal",
@@ -45,7 +52,8 @@
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Fish Market / Local Culture"
+      "source_en": "Fish Market / Local Culture",
+      "tm": "Рыбный рынок / местная культура"
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧",
@@ -55,7 +63,8 @@
       ]
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Film District / Street Food"
+      "source_en": "Film District / Street Food",
+      "tm": "Кинокварталы / уличная еда"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧",
@@ -65,7 +74,8 @@
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Traditional Market / Korean War Heritage"
+      "source_en": "Traditional Market / Korean War Heritage",
+      "tm": "Традиционный рынок / наследие Корейской войны"
     },
     "/routeFlowStops/7/name": {
       "source_en": "⟦G0⟧",
@@ -75,31 +85,39 @@
       ]
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Culture village / Photo stop"
+      "source_en": "Culture village / Photo stop",
+      "tm": "Культурная деревня / фотоостановка"
     },
     "/routeFlowStops/8/name": {
-      "source_en": "Songdo Cloud Trails Skywalk"
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Скайвок Songdo Cloud Trails"
     },
     "/routeFlowStops/8/theme": {
-      "source_en": "Coastal skywalk"
+      "source_en": "Coastal skywalk",
+      "tm": "Скайвок над морем"
     },
     "/routeFlowStops/9/name": {
-      "source_en": "Songdo Sky Park (Amnam Park)"
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (парк Амнам)"
     },
     "/routeFlowStops/9/theme": {
-      "source_en": "Headland park / optional cable car"
+      "source_en": "Headland park / optional cable car",
+      "tm": "Парк на мысу / канатная дорога по желанию"
     },
     "/routeFlowStops/10/name": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ и Busan Diamond Tower",
       "glossary": [
         "⟦G0⟧ = Парк Йондусан"
       ]
     },
     "/routeFlowStops/10/theme": {
-      "source_en": "City Viewpoint / Civic Park"
+      "source_en": "City Viewpoint / Civic Park",
+      "tm": "Смотровая площадка над городом / городской парк"
     },
     "/routeFlowStops/11/name": {
-      "source_en": "Return to Busan Port"
+      "source_en": "Return to Busan Port",
+      "tm": "Возвращение в порт Пусана"
     },
     "/routeFlowStops/11/theme": {
       "source_en": "Return",
@@ -129,5 +147,5 @@
       "⟦G0⟧": "Парк Йондусан"
     }
   },
-  "tmHits": 6
+  "tmHits": 24
 }

@@ -1,0 +1,321 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Busan Port pickup (International Cruise Terminal)"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Cruise terminal pickup",
+      "tm": "Сбор у круизного терминала"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "15 min window",
+      "tm": "Окно в 15 мин"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Disembark and clear cruise terminal (~10 min)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Meet guide at terminal arrival hall holding 'AtoC Korea' sign (~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "Board large coach in terminal coach lot (~10 min)"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Printed Korean-English itinerary card distributed at boarding",
+      "tm": "При посадке раздают печатную карточку маршрута на корейском и английском"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Picking you up in the terminal arrival hall removes the one thing that goes wrong on a port day: finding local transport with a clock running. The 09:00 meet leaves clear time after the ship's morning disembarkation and still fits the full nine-stop route into an eight-hour day, back at the terminal by 17:00.",
+      "tm": "Встреча в зале прибытия терминала снимает главную проблему дня в порту: поиск местного транспорта, когда часы уже тикают. Сбор в 09:00 оставляет достаточный запас после утреннего схода с судна и при этом позволяет уместить весь маршрут из девяти остановок в восьмичасовой день с возвращением к терминалу к 17:00."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup is in the **arrival hall of whichever Busan cruise terminal your ship berths at** — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). Neither is a default: it depends on where your ship docks, and it is confirmed at booking.\n\nAfter disembarking, follow the signs to the arrival hall. Your guide is waiting there with an AtoC Korea sign and a printed itinerary card. Please be at the meeting point **by 08:50 for a 09:00 departure**.\n\nThe day runs about **8 hours**, ending back at your terminal around 17:00. The guide reconfirms your ship's all-aboard time at pickup and adjusts the running order if your sail-away is unusually early.",
+      "tm": "Сбор проходит в **зале прибытия того круизного терминала Пусана, к которому пришвартовано ваше судно** — Международного круизного терминала Пусана (Йондо) или Международного пассажирского терминала порта Пусан (Чорян). По умолчанию не назначается ни один: всё зависит от места стоянки судна и подтверждается при бронировании.\n\nСойдя на берег, идите по указателям в зал прибытия. Гид ждёт там с табличкой AtoC Korea и печатной карточкой маршрута. Пожалуйста, будьте в точке встречи **к 08:50, чтобы выехать в 09:00**.\n\nДень длится около **8 часов** и заканчивается у вашего терминала примерно в 17:00. На сборе гид ещё раз уточнит время посадки на ваше судно и изменит порядок остановок, если отход необычно ранний."
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Buddhist Temple / Coastal",
+      "tm": "Буддийский храм / побережье"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "50 min",
+      "tm": "50 мин"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Coach drop-off + walk through vendor lane to entry plaza (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
+      "tm": "Двенадцать генералов зодиака и «пагода без происшествий» (~10 мин)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
+      "tm": "Спуск по 108 ступеням, главный зал Тэунджон и террасы над морем (~30 мин)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
+      "tm": "Смотровая точка у статуи Хэсу Гваным и время на фото (~15 мин)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Walk back up + reassemble at coach (~10 min)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**Founded 1376** by Buddhist master Naong Hyegeun (originally 'Bomunsa')",
+      "tm": "**Основан в 1376 году** буддийским наставником Наон Хегыном (первоначально «Помунса»)"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "One of very few major Korean temples set on the seaside (most are in mountains)",
+      "tm": "Один из очень немногих крупных корейских храмов у моря (почти все стоят в горах)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Renamed **⟦G0⟧ in 1974** after Monk Jeong-am's dragon-Goddess vision",
+      "tm": "Переименован в **⟦G0⟧ в 1974 году** после видения монаха Чон Ама с богиней на драконе",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "**108 stone stairs** = Buddhism's 108 delusions of the mind",
+      "tm": "**108 каменных ступеней** = 108 омрачений ума в буддизме"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "**12 Sibiji-shin (Zodiac Generals)** at entry; '**No-Accident Pagoda**' coin shrine",
+      "tm": "У входа **12 сибиджи-син (генералов зодиака)**; святилище с монетами — «**пагода без происшествий**»"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "**Haesu Gwaneum Daebul** (Sea Goddess of Mercy) — most photographed cliff view",
+      "tm": "**Хэсу Гваным Тэбуль** (морская богиня милосердия) — самый фотографируемый вид со скалы"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "Daeungjeon main hall restored in 1970 with attention to original colors",
+      "tm": "Главный зал Тэунджон восстановлен в 1970 году с вниманием к исходным цветам"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "Hours daily 04:30–19:20, FREE admission; Buddha's Birthday (May) lantern festival",
+      "tm": "Часы работы 04:30–19:20 ежедневно, вход БЕСПЛАТНЫЙ; в день рождения Будды (май) — фестиваль фонарей"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arriving by 09:45 helps beat the worst tour-bus crowds that build from ~10:30",
+      "tm": "В залы входят через боковые двери (центральная предназначена для монахов); в день рождения Будды (апрель–май) разворачивают фонари; приезд к 09:45 помогает опередить основной поток экскурсионных автобусов, который нарастает примерно с 10:30"
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
+      "tm": "На верхней площади лавки с сувенирами и закусками и небольшое кафе; прибрежная тропа уходит дальше вдоль скал"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "The route's iconic anchor — the most-photographed temple in Busan, with a 650-year history and a rare Korean seaside Buddhist setting. The 09:30 arrival window lands before the major tour-bus surge (typically 11:00 onward) so the 108-stair descent and the Haesu Gwaneum viewpoint are still walkable without queuing. From the cruise terminal it is also the most efficient morning anchor — the coach drives one direction (northeast along Gwangan Bridge) to the temple, then swings back across the city for the remaining seven stops without crisscrossing."
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "⟦G0⟧ Parking Lot (paid, per Visit Busan official)",
+      "tm": "Парковка ⟦G0⟧ (платная, по данным официального сайта Visit Busan)",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "Available near main entrance and inside complex",
+      "tm": "Есть у главного входа и внутри комплекса"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**⟦G0⟧ (해동 용궁사) — Korea's most famous seaside Buddhist temple** — perches on the rocky cliffs of Gijang-gun on Busan's northeastern coast, one of the very few major Korean temples NOT set in the mountains. Originally founded in **1376 during the Goryeo Dynasty by the great Buddhist teacher Naong Hyegeun (나옹 혜근, 1320–1376)** — a royal consultant and master who would help shape Korean Buddhism into the early Joseon era. \n\nPer legend, Naong was practicing asceticism at Bunhwangsa Temple in Gyeongju during a national drought; the East Sea god appeared to him in a dream and told him that building a temple on Bongrae Mountain (the original name of this seaside cliff) would restore the kingdom's prosperity. \n\nNaong founded the temple and named it **Bomunsa**, dedicated to Gwanseum-bosal (관세음보살, the Bodhisattva of Compassion). The temple was destroyed in the **Japanese Imjin Invasion of 1592** and lay in ruins for over 300 years until **Monk Ungang of ⟦G1⟧ began reconstruction in the early 1930s**. \n\nThe current name, **⟦G0⟧ (Korean Dragon Palace Temple)**, dates only to **1974** — when Head Monk Jeong-am, during a 100-day prayer (jeong-geon kido), had a vision of the Goddess of Mercy descending on the back of a dragon, emanating multicolor light. \n\nThe temple was renamed to honor this vision. The visit follows the temple's signature processional path: through the row of **12 Sibiji-shin (Twelve Zodiac Generals)** at the entry plaza, past the **7-story 'No-Accident Pagoda'** (where drivers leave coin offerings under a stone wheel-shrine), down the famous **108 stone stairs** (representing the 108 delusions of the Buddhist mind) through a small bamboo grove, and out onto the seaside terraces and Daeungjeon main hall. \n\nThe **Haesu Gwaneum Daebul** (Sea-Goddess of Mercy statue) on the upper cliff is the most photographed view, framing both the temple rooftops and the East Sea. \n\nHours **04:30–19:20 daily, last entry 18:50, FREE admission**. **Buddha's Birthday (May)** brings Yeondunhoe lantern festival displays.",
+      "tm": "**⟦G0⟧ (해동 용궁사) — самый известный буддийский храм Кореи у моря** — стоит на скалистых обрывах уезда Кичжан-гун на северо-восточном побережье Пусана и относится к тем немногим крупным корейским храмам, которые НЕ расположены в горах. Он был основан в **1376 году, при династии Корё, великим буддийским наставником Наон Хегыном (나옹 혜근, 1320–1376)** — советником двора и учителем, чьё влияние формировало корейский буддизм вплоть до начала эпохи Чосон. \n\nПо преданию, Наон предавался аскезе в храме Пунхванса в Кёнджу во время всенародной засухи; бог Восточного моря явился ему во сне и сказал, что храм, построенный на горе Понрэ (так тогда называлась эта прибрежная скала), вернёт королевству процветание. \n\nНаон основал храм и назвал его **Помунса**, посвятив Гвансеым-босаль (관세음보살, бодхисаттве сострадания). Храм был разрушен во время **японского вторжения Имджин в 1592 году** и пролежал в руинах более 300 лет, пока **монах Унган из ⟦G1⟧ не начал восстановление в начале 1930-х годов**. \n\nНынешнее название, **⟦G0⟧ (корейский храм драконьего дворца)**, появилось лишь в **1974 году**, когда настоятелю Чон Аму во время молитвы длиной 100 дней (чонгон кидо) явилось видение: богиня милосердия спускалась на спине дракона, излучая разноцветный свет. \n\nВ честь этого видения храм и переименовали. Визит следует по фирменному процессионному пути храма: через ряд **12 сибиджи-син (двенадцати генералов зодиака)** на входной площади, мимо **«пагоды без происшествий» на 7 ярусов** (где водители оставляют монеты под каменным святилищем-колесом), вниз по знаменитым **108 каменным ступеням** (они означают 108 омрачений буддийского ума) через небольшую бамбуковую рощу — и дальше, на террасы над морем и к главному залу Тэунджон. \n\n**Хэсу Гваным Тэбуль** (статуя морской богини милосердия) на верхней скале даёт самый фотографируемый вид, в который попадают и крыши храма, и Восточное море. \n\nЧасы работы **04:30–19:20 ежедневно, последний вход 18:50, вход БЕСПЛАТНЫЙ**. В **день рождения Будды (май)** разворачивают фонари фестиваля Ёндынхве.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса",
+        "⟦G1⟧ = Храм Тхондоса"
+      ]
+    },
+    "/itineraryStops/1/visitBasics/hours": {
+      "source_en": "Daily 04:30–19:20 (last admission 18:50)",
+      "tm": "Ежедневно 04:30–19:20 (последний вход 18:50)"
+    },
+    "/itineraryStops/1/visitBasics/closed": {
+      "source_en": "Open year-round",
+      "tm": "Открыто круглый год"
+    },
+    "/itineraryStops/1/visitBasics/walking": {
+      "source_en": "Moderate — 108 steps through pine grove, multiple seaside terraces and stairs",
+      "tm": "Умеренная — 108 ступеней через сосновую рощу, несколько террас над морем и лестниц"
+    },
+    "/itineraryStops/1/visitBasics/admission": {
+      "source_en": "Free; coach parking is paid"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Храм ⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Храм ⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Храм ⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Храм ⟦G0⟧ — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Храм ⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/description": {
+      "⟦G0⟧": "Хэдон Йонгунса",
+      "⟦G1⟧": "Храм Тхондоса"
+    },
+    "/itineraryStops/1/galleryItems/0/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/0/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/0/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/1/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/1/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/1/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/2/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/2/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/2/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/3/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/3/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/3/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    }
+  },
+  "tmHits": 42
+}

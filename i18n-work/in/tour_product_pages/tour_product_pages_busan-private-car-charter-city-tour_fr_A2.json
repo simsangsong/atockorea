@@ -7,157 +7,202 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Families and multi-generational groups — one vehicle, no transfers, no walking between stations"
+      "source_en": "Families and multi-generational groups — one vehicle, no transfers, no walking between stations",
+      "tm": "Les familles et les groupes multigénérationnels — un seul véhicule, aucune correspondance, aucune marche entre les stations"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples and small groups who would rather decide the day than follow one"
+      "source_en": "Couples and small groups who would rather decide the day than follow one",
+      "tm": "Les couples et les petits groupes qui préfèrent décider de leur journée plutôt que de la suivre"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Travellers with one day in Busan who need the route to be efficient rather than democratic"
+      "source_en": "Travellers with one day in Busan who need the route to be efficient rather than democratic",
+      "tm": "Les voyageurs qui n'ont qu'une journée à Busan et veulent un itinéraire efficace plutôt que consensuel"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Anyone with pace, mobility or dietary requirements a fixed group tour cannot accommodate"
+      "source_en": "Anyone with pace, mobility or dietary requirements a fixed group tour cannot accommodate",
+      "tm": "Quiconque a des exigences de rythme, de mobilité ou d'alimentation qu'un circuit de groupe figé ne peut satisfaire"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Arrival or departure days, using the Gimhae Airport add-on instead of a wasted half-day"
+      "source_en": "Arrival or departure days, using the Gimhae Airport add-on instead of a wasted half-day",
+      "tm": "Les jours d'arrivée ou de départ, grâce à l'option aéroport de Gimhae qui évite une demi-journée perdue"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Solo travellers on a tight budget — a per-person join-in tour will be cheaper"
+      "source_en": "Solo travellers on a tight budget — a per-person join-in tour will be cheaper",
+      "tm": "Les voyageurs seuls au budget serré — un circuit en groupe facturé par personne reviendra moins cher"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Groups who want the structure and commentary of a guided group departure"
+      "source_en": "Groups who want the structure and commentary of a guided group departure",
+      "tm": "Les groupes qui recherchent le cadre et les commentaires d'un départ guidé en groupe"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Parties of more than 14, which need a coach rather than two vehicles"
+      "source_en": "Parties of more than 14, which need a coach rather than two vehicles",
+      "tm": "Les groupes de plus de 14 personnes, qui nécessitent un autocar plutôt que deux véhicules"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Busan is spread out"
+      "source_en": "Busan is spread out",
+      "tm": "Busan est une ville étendue"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "The sea temple is in the north-east, Gamcheon in the west, Songdo further south again — with bridges, coastal roads and one-way downtown streets in between. A private vehicle turns the transfers into part of the day instead of the cost of it."
+      "source_en": "The sea temple is in the north-east, Gamcheon in the west, Songdo further south again — with bridges, coastal roads and one-way downtown streets in between. A private vehicle turns the transfers into part of the day instead of the cost of it.",
+      "tm": "Le temple marin est au nord-est, Gamcheon à l'ouest, Songdo plus au sud encore — avec entre les deux des ponts, des routes côtières et des rues à sens unique en centre-ville. Un véhicule privé fait des trajets une partie de la journée au lieu de son prix à payer."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Edits do not re-quote"
+      "source_en": "Edits do not re-quote",
+      "tm": "Les modifications ne changent pas le devis"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "Skip a stop, add one, sit longer over lunch. The price is set by hours and vehicles, so changing the route changes nothing on the invoice."
+      "source_en": "Skip a stop, add one, sit longer over lunch. The price is set by hours and vehicles, so changing the route changes nothing on the invoice.",
+      "tm": "Sautez une étape, ajoutez-en une, prolongez le déjeuner. Le prix dépend des heures et des véhicules : modifier l'itinéraire ne change rien à la facture."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "The clock is yours"
+      "source_en": "The clock is yours",
+      "tm": "L'horloge vous appartient"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Start at 07:00 to have the sea temple almost to yourself, or at 11:00 because you have a late morning. A group departure cannot do either."
+      "source_en": "Start at 07:00 to have the sea temple almost to yourself, or at 11:00 because you have a late morning. A group departure cannot do either.",
+      "tm": "Partez à 07h00 pour avoir le temple marin presque pour vous seul, ou à 11h00 parce que vous aimez les matinées tranquilles. Un départ en groupe ne permet ni l'un ni l'autre."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why a charter, and not a seat on a bus"
+      "source_en": "Why a charter, and not a seat on a bus",
+      "tm": "Pourquoi une location privée plutôt qu'une place dans un bus"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
       "source_en": "bg-amber-50/80",
       "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "Per vehicle, per hour"
+      "source_en": "Per vehicle, per hour",
+      "tm": "Par véhicule et par heure"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
-      "source_en": "5 to 9 hours, US$160 to US$255. One to seven guests pay the same, so a family of five pays a fifth each of what a couple pays between them."
+      "source_en": "5 to 9 hours, US$160 to US$255. One to seven guests pay the same, so a family of five pays a fifth each of what a couple pays between them.",
+      "tm": "De 5 à 9 heures, de 160 à 255 US$. De un à sept voyageurs paient la même chose : une famille de cinq paie donc, par personne, un cinquième de ce qu’un couple débourse à deux."
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "Eight or more is two cars"
+      "source_en": "Eight or more is two cars",
+      "tm": "À partir de huit, ce sont deux voitures"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
-      "source_en": "There is no larger single vehicle on this product. Eight guests and up are quoted as two vehicles — twice the rate for the same hours — and travel together."
+      "source_en": "There is no larger single vehicle on this product. Eight guests and up are quoted as two vehicles — twice the rate for the same hours — and travel together.",
+      "tm": "Il n'existe pas de véhicule unique plus grand sur ce produit. À partir de 8 voyageurs, le devis porte sur deux véhicules — le double du tarif pour le même nombre d'heures — et le groupe voyage ensemble."
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Add-ons are named, not hidden"
+      "source_en": "Add-ons are named, not hidden",
+      "tm": "Les options sont annoncées, pas dissimulées"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Gimhae Airport pickup or drop-off US$35, a Gyeongju day US$55, each hour past 9 US$35. Entrance fees and meals are paid directly at the stops you choose."
+      "source_en": "Gimhae Airport pickup or drop-off US$35, a Gyeongju day US$55, each hour past 9 US$35. Entrance fees and meals are paid directly at the stops you choose.",
+      "tm": "Prise en charge ou dépose à l'aéroport de Gimhae 35 US$, une journée à Gyeongju 55 US$, chaque heure au-delà de 9 heures 35 US$. Les droits d'entrée et les repas se règlent directement aux étapes que vous choisissez."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "How the price works"
+      "source_en": "How the price works",
+      "tm": "Comment fonctionne le prix"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-sky-50/80",
       "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Parking, tickets and queues"
+      "source_en": "Parking, tickets and queues",
+      "tm": "Stationnement, billets et files d’attente"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "Parking is included and arranged. Where a ticket queue is the slow part — the Sky Capsule especially — the driver-guide sorts it while you wait in the shade."
+      "source_en": "Parking is included and arranged. Where a ticket queue is the slow part — the Sky Capsule especially — the driver-guide sorts it while you wait in the shade.",
+      "tm": "Le stationnement est inclus et organisé. Là où la file d'attente aux billets fait perdre du temps — au Sky Capsule surtout — le chauffeur-guide s'en charge pendant que vous patientez à l'ombre."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "A realistic plan, said out loud"
+      "source_en": "A realistic plan, said out loud",
+      "tm": "Un programme réaliste, annoncé clairement"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "If your list does not fit the hours you booked, you will be told before the day, not discovered at 16:00. That honesty is the point of confirming the route in advance."
+      "source_en": "If your list does not fit the hours you booked, you will be told before the day, not discovered at 16:00. That honesty is the point of confirming the route in advance.",
+      "tm": "Si votre liste ne tient pas dans les heures réservées, on vous le dira avant le jour J — vous ne le découvrirez pas à 16h00. C'est tout l'intérêt de confirmer l'itinéraire à l'avance."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Lunch that suits your group"
+      "source_en": "Lunch that suits your group",
+      "tm": "Un déjeuner adapté à votre groupe"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "Tell the driver-guide what you eat — seafood, pork soup, vegetarian, halal, no spice for the children — and lunch is chosen near where you already are."
+      "source_en": "Tell the driver-guide what you eat — seafood, pork soup, vegetarian, halal, no spice for the children — and lunch is chosen near where you already are.",
+      "tm": "Dites au chauffeur-guide ce que vous mangez — fruits de mer, soupe de porc, végétarien, halal, sans piment pour les enfants — et le déjeuner sera choisi près de là où vous vous trouvez déjà."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "What the driver-guide handles"
+      "source_en": "What the driver-guide handles",
+      "tm": "Ce dont le chauffeur-guide se charge"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-emerald-50/80",
       "tm": "bg-emerald-50/80"
     },
     "/routeShapeIntro/body": {
-      "source_en": "The three routes below are not sample suggestions. Each is the actual itinerary of a Busan tour we run — the stop order, the times and the durations are imported from those products, so you can see exactly how a day of that shape fits together before you change anything. Most groups pick one, move two or three stops, and leave the rest. Anything on any of the three lists can go into any of the others."
+      "source_en": "The three routes below are not sample suggestions. Each is the actual itinerary of a Busan tour we run — the stop order, the times and the durations are imported from those products, so you can see exactly how a day of that shape fits together before you change anything. Most groups pick one, move two or three stops, and leave the rest. Anything on any of the three lists can go into any of the others.",
+      "tm": "Les trois itinéraires ci-dessous ne sont pas des suggestions théoriques. Chacun est le programme réel d'un circuit que nous opérons à Busan — l'ordre des étapes, les horaires et les durées sont repris de ces produits, si bien que vous voyez exactement comment une journée de cette forme s'articule avant d'y toucher. La plupart des groupes en choisissent un, déplacent deux ou trois étapes et laissent le reste. Tout élément de l'une des trois listes peut être intégré à n'importe quelle autre."
     },
     "/routeShapeIntro/title": {
-      "source_en": "Start from a route that already works, then make it yours"
+      "source_en": "Start from a route that already works, then make it yours",
+      "tm": "Partez d'un itinéraire qui fonctionne déjà, puis faites-en le vôtre"
     },
     "/staticQuestions/0/answer": {
-      "source_en": "One to seven guests travel in one vehicle at one price — a sedan or SUV for one to three, a mid-size van for four to seven. The price does not change with the number of guests, so a family of six pays the same total as a couple. From eight guests we send a second vehicle and the price is twice the single-vehicle rate for the same hours."
+      "source_en": "One to seven guests travel in one vehicle at one price — a sedan or SUV for one to three, a mid-size van for four to seven. The price does not change with the number of guests, so a family of six pays the same total as a couple. From eight guests we send a second vehicle and the price is twice the single-vehicle rate for the same hours.",
+      "tm": "De un à sept voyageurs prennent place dans un seul véhicule à un prix unique — une berline ou un SUV pour une à trois personnes, un van de taille moyenne pour quatre à sept. Le prix ne varie pas selon le nombre de voyageurs : une famille de six paie donc le même total qu'un couple. À partir de huit voyageurs, nous envoyons un second véhicule et le prix correspond au double du tarif d'un véhicule pour le même nombre d'heures."
     },
     "/staticQuestions/0/question": {
-      "source_en": "How many people can come, and does the price change with group size?"
+      "source_en": "How many people can come, and does the price change with group size?",
+      "tm": "Combien de personnes peuvent venir, et le prix varie-t-il selon la taille du groupe ?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Your hours run from the confirmed pickup time to drop-off, including the driving between stops. Charters are sold in 5, 6, 7, 8 and 9-hour blocks. If you want longer than 9 hours, each extra hour is US$35 and needs to be arranged at booking rather than on the day, because it depends on the driver's schedule."
+      "source_en": "Your hours run from the confirmed pickup time to drop-off, including the driving between stops. Charters are sold in 5, 6, 7, 8 and 9-hour blocks. If you want longer than 9 hours, each extra hour is US$35 and needs to be arranged at booking rather than on the day, because it depends on the driver's schedule.",
+      "tm": "Vos heures courent de l'heure de prise en charge confirmée jusqu'à la dépose, trajets entre les étapes compris. Les locations se vendent par blocs de 5, 6, 7, 8 et 9 heures. Si vous souhaitez dépasser 9 heures, chaque heure supplémentaire coûte 35 US$ et doit être organisée lors de la réservation plutôt que le jour même, car elle dépend du planning du chauffeur."
     },
     "/staticQuestions/1/question": {
-      "source_en": "How are the hours counted, and what if we run over?"
+      "source_en": "How are the hours counted, and what if we run over?",
+      "tm": "Comment les heures sont-elles comptées, et que se passe-t-il si nous dépassons ?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Yes — that is what the product is for. The three routes are the real itineraries of Busan tours we already run, offered as starting points. Add, drop, reorder or replace any stop, mix stops between routes, or send a completely different list. Changes are free and can be sent up to 24 hours before; the route can still shift on the day for weather or crowds."
+      "source_en": "Yes — that is what the product is for. The three routes are the real itineraries of Busan tours we already run, offered as starting points. Add, drop, reorder or replace any stop, mix stops between routes, or send a completely different list. Changes are free and can be sent up to 24 hours before; the route can still shift on the day for weather or crowds.",
+      "tm": "Oui — c'est précisément à cela que sert ce produit. Les trois itinéraires sont les programmes réels de circuits que nous opérons déjà à Busan, proposés comme points de départ. Ajoutez, retirez, réordonnez ou remplacez n'importe quelle étape, mélangez les étapes entre les itinéraires, ou envoyez une liste entièrement différente. Les modifications sont gratuites et peuvent être transmises jusqu'à 24 heures avant ; l'itinéraire peut encore évoluer le jour même en fonction de la météo ou de l'affluence."
     },
     "/staticQuestions/2/question": {
-      "source_en": "Can I change the recommended routes?"
+      "source_en": "Can I change the recommended routes?",
+      "tm": "Puis-je modifier les itinéraires recommandés ?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes, as a paid add-on of US$35 for either direction. It is a common way to use an arrival or departure day: collect your luggage, spend the booked hours in Busan, and finish at the airport instead of returning to a hotel first."
+      "source_en": "Yes, as a paid add-on of US$35 for either direction. It is a common way to use an arrival or departure day: collect your luggage, spend the booked hours in Busan, and finish at the airport instead of returning to a hotel first.",
+      "tm": "Oui, en option payante de 35 US$ dans un sens comme dans l'autre. C'est une façon courante d'occuper un jour d'arrivée ou de départ : récupérez vos bagages, passez les heures réservées à Busan et terminez à l'aéroport au lieu de repasser d'abord par un hôtel."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Can you pick us up from, or drop us at, Gimhae Airport?"
+      "source_en": "Can you pick us up from, or drop us at, Gimhae Airport?",
+      "tm": "Pouvez-vous venir nous chercher à l'aéroport de Gimhae, ou nous y déposer ?"
     },
     "/staticQuestions/4/answer": {
       "source_en": "Yes, as a US$55 extension. Gyeongju is about 70 minutes from Busan by road, so it becomes a full day out rather than an afternoon — ⟦G0⟧, the royal tomb park at Daereungwon and the Hwangnidan-gil lanes are the usual shape. Book 9 hours or more for it to be comfortable.",
+      "tm": "Oui, sous forme d'extension à 55 US$. Gyeongju se trouve à environ 70 minutes de Busan par la route : la sortie devient donc une journée entière plutôt qu'un après-midi — ⟦G0⟧, le parc des tombes royales de Daereungwon et les ruelles de Hwangnidan-gil en constituent la trame habituelle. Réservez 9 heures ou plus pour que ce soit confortable.",
       "glossary": [
         "⟦G0⟧ = Temple Bulguksa"
       ]
     },
     "/staticQuestions/4/question": {
-      "source_en": "Can we go to Gyeongju instead of staying in Busan?"
+      "source_en": "Can we go to Gyeongju instead of staying in Busan?",
+      "tm": "Pouvons-nous aller à Gyeongju au lieu de rester à Busan ?"
     },
     "/staticQuestions/5/answer": {
       "source_en": "No. The charter covers the vehicle, the driver-guide, fuel, tolls and parking. Entrance fees, ride tickets such as the Sky Capsule, and meals are paid directly at the stops you choose. Several of the best stops on these routes are free to enter, including both mural villages, the ⟦G0⟧, the markets and the Songdo skywalk.",
+      "tm": "Non. La location couvre le véhicule, le chauffeur-guide, le carburant, les péages et le stationnement. Les droits d'entrée, les billets d'attraction comme le Sky Capsule et les repas se règlent directement aux étapes que vous choisissez. Plusieurs des plus belles étapes de ces itinéraires sont gratuites, notamment les deux villages de fresques, le ⟦G0⟧, les marchés et la passerelle de Songdo.",
       "glossary": [
         "⟦G0⟧ = Cimetière commémoratif de l'ONU"
       ]
     },
     "/staticQuestions/5/question": {
-      "source_en": "Are entrance fees and lunch included?"
+      "source_en": "Are entrance fees and lunch included?",
+      "tm": "Les droits d'entrée et le déjeuner sont-ils inclus ?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "English, on every charter. A Chinese-speaking driver-guide can usually be requested at booking. Other languages depend on availability on your date, so please ask before booking rather than after."
+      "source_en": "English, on every charter. A Chinese-speaking driver-guide can usually be requested at booking. Other languages depend on availability on your date, so please ask before booking rather than after.",
+      "tm": "L'anglais, sur toutes les locations. Un chauffeur-guide sinophone peut généralement être demandé lors de la réservation. Les autres langues dépendent des disponibilités à votre date : renseignez-vous donc avant de réserver plutôt qu'après."
     },
     "/staticQuestions/6/question": {
-      "source_en": "What language does the driver-guide speak?"
+      "source_en": "What language does the driver-guide speak?",
+      "tm": "Quelle langue parle le chauffeur-guide ?"
     }
   },
   "glossaryTokens": {
@@ -168,5 +213,5 @@
       "⟦G0⟧": "Cimetière commémoratif de l'ONU"
     }
   },
-  "tmHits": 3
+  "tmHits": 48
 }

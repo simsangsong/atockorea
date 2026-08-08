@@ -6,112 +6,6 @@
   "chunk": "itineraryStops-5",
   "tier": "B",
   "segments": {
-    "/itineraryStops/4/galleryItems/1/caption": {
-      "source_en": "N Seoul Tower (Namsan) — photo 2"
-    },
-    "/itineraryStops/4/galleryItems/1/location": {
-      "source_en": "N Seoul Tower (Namsan)"
-    },
-    "/itineraryStops/4/galleryItems/2/alt": {
-      "source_en": "N Seoul Tower (Namsan) — gallery image 3"
-    },
-    "/itineraryStops/4/galleryItems/2/caption": {
-      "source_en": "N Seoul Tower (Namsan) — photo 3"
-    },
-    "/itineraryStops/4/galleryItems/2/location": {
-      "source_en": "N Seoul Tower (Namsan)"
-    },
-    "/itineraryStops/4/galleryItems/3/alt": {
-      "source_en": "N Seoul Tower (Namsan) — gallery image 4"
-    },
-    "/itineraryStops/4/galleryItems/3/caption": {
-      "source_en": "N Seoul Tower (Namsan) — photo 4"
-    },
-    "/itineraryStops/4/galleryItems/3/location": {
-      "source_en": "N Seoul Tower (Namsan)"
-    },
-    "/itineraryStops/4/galleryItems/4/alt": {
-      "source_en": "N Seoul Tower (Namsan) — gallery image 5"
-    },
-    "/itineraryStops/4/galleryItems/4/caption": {
-      "source_en": "N Seoul Tower (Namsan) — photo 5"
-    },
-    "/itineraryStops/4/galleryItems/4/location": {
-      "source_en": "N Seoul Tower (Namsan)"
-    },
-    "/itineraryStops/5/name": {
-      "source_en": "⟦G1⟧ OR ⟦G0⟧ (your choice)",
-      "glossary": [
-        "⟦G0⟧ = Jogyesa-Tempel",
-        "⟦G1⟧ = Myeongdong"
-      ]
-    },
-    "/itineraryStops/5/category": {
-      "source_en": "Shopping & Local Culture — Customizable"
-    },
-    "/itineraryStops/5/duration": {
-      "source_en": "60 min"
-    },
-    "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Driver-guide drop-off at chosen venue (~5 min)"
-    },
-    "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Self-paced exploration (~50 min)"
-    },
-    "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Reassembly at vehicle"
-    },
-    "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Optional ⟦G0⟧ Cathedral interior visit (5-min walk from main shopping street, FREE) (~10 min)",
-      "glossary": [
-        "⟦G0⟧ = Myeongdong"
-      ]
-    },
-    "/itineraryStops/5/timeUsed/4": {
-      "source_en": "Optional Lotte Department Store rooftop garden + tax-refund counter (~15 min)"
-    },
-    "/itineraryStops/5/highlights/0": {
-      "source_en": "**⟦G0⟧ (Option A)**: Seoul's #1 shopping/K-beauty district + 1898 ⟦G0⟧ Cathedral",
-      "glossary": [
-        "⟦G0⟧ = Myeongdong"
-      ]
-    },
-    "/itineraryStops/5/highlights/1": {
-      "source_en": "Major K-beauty flagships (Innisfree, Olive Young, etc.) with generous free samples"
-    },
-    "/itineraryStops/5/highlights/2": {
-      "source_en": "⟦G0⟧ street food: tornado potatoes, hotteok, cheesy corn dogs, tanghulu",
-      "glossary": [
-        "⟦G0⟧ = Myeongdong"
-      ]
-    },
-    "/itineraryStops/5/highlights/3": {
-      "source_en": "**⟦G0⟧ (Option B)**: Head temple of Jogye Order (Korea's largest Buddhist Order)",
-      "glossary": [
-        "⟦G0⟧ = Jogyesa-Tempel"
-      ]
-    },
-    "/itineraryStops/5/highlights/4": {
-      "source_en": "Daeungjeon = largest temple building in Seoul; 500-year-old Baeksong (Natural Monument No. 9)"
-    },
-    "/itineraryStops/5/highlights/5": {
-      "source_en": "Jogyesa FREE admission; Seoul's only major traditional temple in city center"
-    },
-    "/itineraryStops/5/highlights/6": {
-      "source_en": "Driver-guide adjusts based on your group's interest"
-    },
-    "/itineraryStops/5/highlights/7": {
-      "source_en": "**⟦G0⟧ Cathedral (1898)** — Korea's first brick Gothic Catholic church; **historically significant role in 1980s democratization movement** as a sanctuary for protesters during military rule (1987 June Democratic Struggle key gathering point)",
-      "glossary": [
-        "⟦G0⟧ = Myeongdong"
-      ]
-    },
-    "/itineraryStops/5/highlights/8": {
-      "source_en": "**Lotte Department Store ⟦G0⟧ main branch** — Korea's flagship department store with **rooftop garden + observation deck** (free); largest tax-refund counter in Korea for tourist purchases over ₩30,000",
-      "glossary": [
-        "⟦G0⟧ = Myeongdong"
-      ]
-    },
     "/itineraryStops/5/smartNotes/tip": {
       "source_en": "**⟦G0⟧**: bring CASH 20,000 KRW. Free K-beauty samples generous. POPMART for Labubu blind-boxes. **Jogyesa**: wear modest clothing entering Main Hall. Visit during Lotus Lantern Festival (May) for the iconic illumination experience. Pair with ⟦G1⟧ (5-min walk) if time allows.",
       "glossary": [
@@ -155,7 +49,8 @@
       ]
     },
     "/itineraryStops/5/visitBasics/closed": {
-      "source_en": "Both open year-round"
+      "source_en": "Both open year-round",
+      "tm": "Beide ganzjährig geöffnet"
     },
     "/itineraryStops/5/visitBasics/walking": {
       "source_en": "Easy at both — ⟦G0⟧ flat pedestrian zone; Jogyesa flat compact temple grounds",
@@ -222,31 +117,15 @@
     },
     "/itineraryStops/6/smartNotes/tip": {
       "source_en": "Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438) — keep handy. All-aboard time on your cruise card; confirm before driver-guide picks you up at last stop. Rare-traffic note: expressway delays during Korean public holidays (Chuseok, Lunar New Year) may extend transit."
+    },
+    "/itineraryStops/6/whyOnRoute": {
+      "source_en": "Return logistics with sail-away guarantee — the private-tour structure means your group is not waiting on other passengers at multiple drop points; the driver routes direct to terminal. The 90-min buffer is the operator's commitment, not the cruise passenger's responsibility."
+    },
+    "/itineraryStops/6/description": {
+      "source_en": "Private return drive **60-90 minutes** to **Incheon Cruise Terminal** — your driver-guide adjusts the day's pacing throughout to ensure arrival **90+ minutes before your specific ship's all-aboard time**. \n\nThis buffer absorbs unexpected traffic on the **Incheon-Seoul Expressway** (rare but possible) and allows you to clear immigration re-entry without rush. Curbside drop-off at the terminal entrance — followed by Korean immigration re-entry to the cruise ship. \n\nThe **'Guaranteed return' badge** on this tour means the operator commits to your sail-away schedule — a critical assurance for cruise passengers because **the ship will not wait**."
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/5/name": {
-      "⟦G0⟧": "Jogyesa-Tempel",
-      "⟦G1⟧": "Myeongdong"
-    },
-    "/itineraryStops/5/timeUsed/3": {
-      "⟦G0⟧": "Myeongdong"
-    },
-    "/itineraryStops/5/highlights/0": {
-      "⟦G0⟧": "Myeongdong"
-    },
-    "/itineraryStops/5/highlights/2": {
-      "⟦G0⟧": "Myeongdong"
-    },
-    "/itineraryStops/5/highlights/3": {
-      "⟦G0⟧": "Jogyesa-Tempel"
-    },
-    "/itineraryStops/5/highlights/7": {
-      "⟦G0⟧": "Myeongdong"
-    },
-    "/itineraryStops/5/highlights/8": {
-      "⟦G0⟧": "Myeongdong"
-    },
     "/itineraryStops/5/smartNotes/tip": {
       "⟦G0⟧": "Myeongdong",
       "⟦G1⟧": "Insadong"
@@ -287,5 +166,5 @@
       "⟦G1⟧": "Myeongdong"
     }
   },
-  "tmHits": 0
+  "tmHits": 1
 }

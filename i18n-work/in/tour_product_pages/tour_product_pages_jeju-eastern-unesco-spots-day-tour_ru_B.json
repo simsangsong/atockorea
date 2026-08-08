@@ -7,448 +7,550 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Pickup and eastbound departure"
+      "source_en": "Pickup and eastbound departure",
+      "tm": "Посадка и выезд на восток"
     },
     "/routePhases/0/duration": {
-      "source_en": "about 1 hour"
+      "source_en": "about 1 hour",
+      "tm": "около 1 часа"
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at four points across Jeju City (08:30–09:05), then a direct transfer east to the ⟦G0⟧ in Gimnyeong.",
+      "tm": "Посадка в четырёх точках по городу Чеджу (08:30–09:05), затем прямой переезд на восток к ⟦G0⟧ в Кимнёне.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "UNESCO lava tube before the crowds"
+      "source_en": "UNESCO lava tube before the crowds",
+      "tm": "Лавовая трубка ЮНЕСКО до наплыва туристов"
     },
     "/routePhases/1/duration": {
-      "source_en": "about 1.5 hours"
+      "source_en": "about 1.5 hours",
+      "tm": "около 1,5 часа"
     },
     "/routePhases/1/description": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage, 55 min) right after opening — the quietest hour inside the cave — then inland to Seongeup.",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО, 55 мин.) сразу после открытия — самый тихий час внутри пещеры — затем вглубь острова в Сонъып.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/routePhases/2/phase": {
-      "source_en": "Joseon heritage village + lunch"
+      "source_en": "Joseon heritage village + lunch",
+      "tm": "Деревня эпохи Чосон и обед"
     },
     "/routePhases/2/duration": {
-      "source_en": "about 2 hours"
+      "source_en": "about 2 hours",
+      "tm": "около 2 часов"
     },
     "/routePhases/2/description": {
       "source_en": "⟦G0⟧ (Joseon-era National Folklore Cultural Heritage, 60 min) → local restaurant near Seongsan — black pig, abalone hot pot, seasonal seafood. Lunch not included.",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие эпохи Чосон, 60 мин.) → местный ресторан рядом с Сонсаном — чёрная свинина, горячий котелок с морским ушком, сезонные морепродукты. Обед не включён.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/routePhases/3/phase": {
-      "source_en": "Seongsan UNESCO core + haenyeo"
+      "source_en": "Seongsan UNESCO core + haenyeo",
+      "tm": "Ядро ЮНЕСКО в Сонсане и хэнё"
     },
     "/routePhases/3/duration": {
-      "source_en": "about 2.5 hours"
+      "source_en": "about 2.5 hours",
+      "tm": "около 2,5 часа"
     },
     "/routePhases/3/description": {
       "source_en": "⟦G0⟧ (optional climb) → haenyeo diving performance in the sea below the peak (Haenyeo Museum if canceled).",
+      "tm": "⟦G0⟧ (подъём по желанию) → шоу ныряния хэнё в море у подножия пика (Музей хэнё, если шоу отменят).",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/routePhases/4/phase": {
-      "source_en": "Beach finale and return"
+      "source_en": "Beach finale and return",
+      "tm": "Финал на пляже и возвращение"
     },
     "/routePhases/4/duration": {
-      "source_en": "about 2 hours"
+      "source_en": "about 2 hours",
+      "tm": "около 2 часов"
     },
     "/routePhases/4/description": {
       "source_en": "⟦G0⟧ in the late-afternoon light (60 min) → short coastal transfer back to Jeju City + drop-off at two points and Dongmun Market.",
+      "tm": "⟦G0⟧ в мягком свете позднего дня (60 мин.) → короткий переезд по побережью обратно в город Чеджу и высадка в двух точках и на рынке Тонмун.",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — изображение галереи 1",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — фото 1",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/1/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 1",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — изображение галереи 1",
       "glossary": [
-        "⟦G0⟧ = Лавовая трубка Манджангуль"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/1/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 2",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 1",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — фото 1",
       "glossary": [
-        "⟦G0⟧ = Лавовая трубка Манджангуль"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/1/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи)",
       "glossary": [
-        "⟦G0⟧ = Лавовая трубка Манджангуль"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/2/alt": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 3",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 1",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 1",
       "glossary": [
-        "⟦G0⟧ = Лавовая трубка Манджангуль"
+        "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/2/caption": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 3",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 1",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 1",
       "glossary": [
-        "⟦G0⟧ = Лавовая трубка Манджангуль"
+        "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/2/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 1",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — изображение галереи 1"
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 1",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — фото 1"
+    },
+    "/galleryItems/3/location": {
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
-    "/galleryItems/3/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 1",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/3/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 1",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/3/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/4/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/4/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/4/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
-    "/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
-      ]
-    },
     "/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 3",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 2",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — фото 2",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/5/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/6/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 4",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 3",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — изображение галереи 3",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/6/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 4",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 3",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — фото 3",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/6/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 6",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 4",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/7/caption": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 6",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 4",
       "glossary": [
-        "⟦G0⟧ = Фольклорная деревня Сонъып"
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/galleryItems/7/location": {
-      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 2",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
-    "/galleryItems/8/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 1",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/galleryItems/8/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 1",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/galleryItems/8/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/galleryItems/9/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
     "/galleryItems/9/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 2",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 2",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — фото 2",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/9/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи)",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/10/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 3",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 3",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — изображение галереи 3",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/10/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 3",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 3",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — фото 3",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/10/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи)",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/11/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 4",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 4",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — изображение галереи 4",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/11/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 4",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 4",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи) — фото 4",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/11/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи)",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/12/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 5",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — gallery image 5",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/12/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 5",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage) — photo 5",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/12/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "source_en": "⟦G0⟧ (Korean National Folklore Cultural Heritage)",
+      "tm": "⟦G0⟧ (Национальное фольклорное культурное наследие Кореи)",
       "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
+        "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/galleryItems/13/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 6",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 2",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/13/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 6",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 2",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 2",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/13/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/14/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 12",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 3",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 3",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/14/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 12",
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 3",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 3",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/14/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/15/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 1"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 4",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/15/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 1"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 4",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/15/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/16/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 2"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 5",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/16/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 2"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 5",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/16/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
     },
     "/galleryItems/17/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 3"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 2",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — изображение галереи 2"
     },
     "/galleryItems/17/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 3"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 2",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — фото 2"
     },
     "/galleryItems/17/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
     },
     "/galleryItems/18/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 4"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 3",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — изображение галереи 3"
     },
     "/galleryItems/18/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 4"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 3",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — фото 3"
     },
     "/galleryItems/18/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
     },
     "/galleryItems/19/alt": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 5"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 4",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — изображение галереи 4"
     },
     "/galleryItems/19/caption": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 5"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 4",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — фото 4"
     },
     "/galleryItems/19/location": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
     },
     "/galleryItems/20/alt": {
-      "source_en": "⟦G0⟧ — gallery image 1",
-      "glossary": [
-        "⟦G0⟧ = Пляж Хамдок Соубон"
-      ]
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — gallery image 5",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — изображение галереи 5"
     },
     "/galleryItems/20/caption": {
-      "source_en": "⟦G0⟧ — photo 1",
-      "glossary": [
-        "⟦G0⟧ = Пляж Хамдок Соубон"
-      ]
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled) — photo 5",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено) — фото 5"
     },
     "/galleryItems/20/location": {
-      "source_en": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Пляж Хамдок Соубон"
-      ]
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
     },
     "/galleryItems/21/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/21/caption": {
       "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/21/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/22/alt": {
       "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/22/caption": {
       "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/22/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/23/alt": {
       "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — изображение галереи 4",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/23/caption": {
       "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — фото 4",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/galleryItems/23/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/24/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/24/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/galleryItems/24/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
@@ -480,112 +582,103 @@
       "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/1/alt": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/1/caption": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/1/location": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/2/alt": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
     "/galleryItems/2/caption": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
     "/galleryItems/2/location": {
-      "⟦G0⟧": "Лавовая трубка Манджангуль"
-    },
-    "/galleryItems/3/alt": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
-    },
-    "/galleryItems/3/caption": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
-    },
-    "/galleryItems/3/location": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
     "/galleryItems/4/alt": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Пляж Хамдок Соубон"
     },
     "/galleryItems/4/caption": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Пляж Хамдок Соубон"
     },
     "/galleryItems/4/location": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Пляж Хамдок Соубон"
     },
     "/galleryItems/5/alt": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/5/caption": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/5/location": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/6/alt": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/6/caption": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/6/location": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/7/alt": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/7/caption": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/7/location": {
-      "⟦G0⟧": "Фольклорная деревня Сонъып"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/8/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/8/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/8/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
     },
     "/galleryItems/9/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/9/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/9/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/10/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/10/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/10/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/11/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/11/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/11/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/12/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/12/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/12/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
+      "⟦G0⟧": "Фольклорная деревня Сонъып"
     },
     "/galleryItems/13/alt": {
       "⟦G0⟧": "Сонсан Ильчхульбон"
@@ -605,14 +698,23 @@
     "/galleryItems/14/location": {
       "⟦G0⟧": "Сонсан Ильчхульбон"
     },
-    "/galleryItems/20/alt": {
-      "⟦G0⟧": "Пляж Хамдок Соубон"
+    "/galleryItems/15/alt": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
-    "/galleryItems/20/caption": {
-      "⟦G0⟧": "Пляж Хамдок Соубон"
+    "/galleryItems/15/caption": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
-    "/galleryItems/20/location": {
-      "⟦G0⟧": "Пляж Хамдок Соубон"
+    "/galleryItems/15/location": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/galleryItems/16/alt": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/galleryItems/16/caption": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/galleryItems/16/location": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
     },
     "/galleryItems/21/alt": {
       "⟦G0⟧": "Пляж Хамдок Соубон"
@@ -640,7 +742,16 @@
     },
     "/galleryItems/23/location": {
       "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/galleryItems/24/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/galleryItems/24/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/galleryItems/24/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
     }
   },
-  "tmHits": 0
+  "tmHits": 84
 }

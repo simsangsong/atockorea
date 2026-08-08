@@ -6,6 +6,7 @@
  * more reliable than keyword scoring. We parse the query with the deterministic
  * rule parser (no LLM) so this stays cheap and synchronous.
  */
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import { ruleParse } from "@/lib/tour-match-v2/parser";
 import { fetchMatchTours } from "@/lib/tour-match-v2/fetch-tours";
@@ -45,7 +46,7 @@ export async function recommendToursViaMatcher(
   const rows = await fetchMatchTours(sb, "en");
   const res = matchTours(parsed, rows, limit);
 
-  const cards = new Map(listStaticTourProducts(locale).map((t) => [t.slug, t]));
+  const cards = new Map(listStaticTourProducts(toTourProductBaseLocale(locale)).map((t) => [t.slug, t]));
   const recommendations: MatcherRecommendation[] = res.top_matches.map((m) => {
     const card = cards.get(m.slug);
     return {

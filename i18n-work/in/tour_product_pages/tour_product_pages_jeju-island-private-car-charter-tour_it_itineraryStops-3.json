@@ -7,49 +7,63 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/3/category": {
-      "source_en": "Send Us Your Own Itinerary"
+      "source_en": "Send Us Your Own Itinerary",
+      "tm": "Ci invii il Suo itinerario personalizzato"
     },
     "/itineraryStops/3/timeUsed/0": {
-      "source_en": "Discuss your plan with the driver-guide at pickup or send it 24 hours ahead via the booking confirmation"
+      "source_en": "Discuss your plan with the driver-guide at pickup or send it 24 hours ahead via the booking confirmation",
+      "tm": "Discuta il Suo programma con l'autista-guida al momento del prelievo oppure lo invii 24 ore prima tramite la conferma di prenotazione"
     },
     "/itineraryStops/3/timeUsed/1": {
-      "source_en": "Driver-guide sequences stops based on real-time traffic, ferry schedules, and individual stop closure days (Seongsan first Monday, Manjanggul first Wednesday, etc.)"
+      "source_en": "Driver-guide sequences stops based on real-time traffic, ferry schedules, and individual stop closure days (Seongsan first Monday, Manjanggul first Wednesday, etc.)",
+      "tm": "L'autista-guida ordina le tappe in base al traffico in tempo reale, agli orari dei traghetti e ai giorni di chiusura delle singole tappe (Seongsan il primo lunedì, Manjanggul il primo mercoledì, ecc.)"
     },
     "/itineraryStops/3/timeUsed/2": {
-      "source_en": "Return to your hotel within the 9-hour window (overage by prior agreement)"
+      "source_en": "Return to your hotel within the 9-hour window (overage by prior agreement)",
+      "tm": "Rientro in hotel entro la finestra di 9 ore (tempo aggiuntivo previo accordo)"
     },
     "/itineraryStops/3/highlights/0": {
-      "source_en": "Mix East-coast UNESCO (Seongsan, Manjanggul) with West-coast tea fields (O'sulloc) if time permits — typically only feasible if skipping Udo"
+      "source_en": "Mix East-coast UNESCO (Seongsan, Manjanggul) with West-coast tea fields (O'sulloc) if time permits — typically only feasible if skipping Udo",
+      "tm": "Combini i siti UNESCO della costa orientale (Seongsan, Manjanggul) con le piantagioni di tè della costa occidentale (O'sulloc) se il tempo lo consente — di norma è possibile solo rinunciando a Udo"
     },
     "/itineraryStops/3/highlights/1": {
-      "source_en": "Add a haenyeo (female-diver) seafood lunch — best near Hado (East) or Daejeong (West) where the haenyeo cooperatives are active"
+      "source_en": "Add a haenyeo (female-diver) seafood lunch — best near Hado (East) or Daejeong (West) where the haenyeo cooperatives are active",
+      "tm": "Aggiunga un pranzo di pesce haenyeo (pescatrici subacquee) — meglio nei pressi di Hado (est) o Daejeong (ovest), dove le cooperative di haenyeo sono attive"
     },
     "/itineraryStops/3/highlights/2": {
-      "source_en": "Combine a beach morning with a mountain or temple afternoon (Hyeopjae + Sanbangsan, or Hamdeok + Sangumburi)"
+      "source_en": "Combine a beach morning with a mountain or temple afternoon (Hyeopjae + Sanbangsan, or Hamdeok + Sangumburi)",
+      "tm": "Unisca una mattinata in spiaggia a un pomeriggio in montagna o al tempio (Hyeopjae + Sanbangsan, oppure Hamdeok + Sangumburi)"
     },
     "/itineraryStops/3/highlights/3": {
       "source_en": "Pair with K-drama filming locations: ⟦G0⟧ ('All In'), Hyeopjae area ('Boys Over Flowers'), Cheonjiyeon ('Big')",
+      "tm": "Abbini le location delle riprese dei K-drama: ⟦G0⟧ («All In»), zona di Hyeopjae («Boys Over Flowers»), Cheonjiyeon («Big»)",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
     },
     "/itineraryStops/3/smartNotes/tip": {
-      "source_en": "The custom route is also the best fit for visitors with a flight that day — the 9-hour window can be back-loaded to drop you at Jeju Airport at the end. State this at booking so the route is sequenced toward the airport in the late afternoon."
+      "source_en": "The custom route is also the best fit for visitors with a flight that day — the 9-hour window can be back-loaded to drop you at Jeju Airport at the end. State this at booking so the route is sequenced toward the airport in the late afternoon.",
+      "tm": "L'itinerario personalizzato è anche la soluzione migliore per chi ha un volo lo stesso giorno — la finestra di 9 ore può essere spostata verso la fine della giornata per lasciarLa all'aeroporto di Jeju. Lo indichi al momento della prenotazione, così il percorso verrà organizzato in direzione dell'aeroporto nel tardo pomeriggio."
     },
     "/itineraryStops/3/smartNotes/facilities": {
-      "source_en": "Lunch is your call — communicate dietary needs (halal, vegetarian, no-seafood, kids' menu) at booking so the guide can suggest appropriate restaurants"
+      "source_en": "Lunch is your call — communicate dietary needs (halal, vegetarian, no-seafood, kids' menu) at booking so the guide can suggest appropriate restaurants",
+      "tm": "Il pranzo è a Sua scelta — comunichi le esigenze alimentari (halal, vegetariano, senza pesce, menù per bambini) al momento della prenotazione, così la guida potrà suggerire ristoranti adeguati"
     },
     "/itineraryStops/3/whyOnRoute": {
-      "source_en": "The most flexible option of the four. Best for repeat Jeju visitors, travelers with niche interests (K-drama tracking, photography, food, family-with-kids), and groups of 4-9 where the per-vehicle pricing vs. group-tour pricing tilts strongly toward the private charter."
+      "source_en": "The most flexible option of the four. Best for repeat Jeju visitors, travelers with niche interests (K-drama tracking, photography, food, family-with-kids), and groups of 4-9 where the per-vehicle pricing vs. group-tour pricing tilts strongly toward the private charter.",
+      "tm": "L'opzione più flessibile delle quattro. Ideale per chi torna a Jeju, per viaggiatori con interessi specifici (ricerca delle location dei K-drama, fotografia, gastronomia, famiglie con bambini) e per gruppi di 4-9 persone, dove la tariffa per veicolo rispetto a quella dei tour di gruppo fa pendere netta mente la bilancia a favore del noleggio privato."
     },
     "/itineraryStops/3/convenience/parking": {
-      "source_en": "Driver-guide handles all parking"
+      "source_en": "Driver-guide handles all parking",
+      "tm": "L'autista-guida si occupa di tutti i parcheggi"
     },
     "/itineraryStops/3/convenience/restroom": {
-      "source_en": "Available at all major stops"
+      "source_en": "Available at all major stops",
+      "tm": "Disponibili in tutte le tappe principali"
     },
     "/itineraryStops/3/description": {
       "source_en": "Beyond the three recommended routes, the 9-hour charter window is fully customizable — you can mix stops across the East/West/South or send a fully custom plan in advance. Common additions include: **⟦G1⟧ (Natural Monument 263** — a **650 m wide × 100 m deep** phreatomagmatic crater famous for autumn silvergrass); **⟦G3⟧** (already-bloomed camellia varieties Nov-Mar); **⟦G0⟧** (alpaca + tangerine farm, family-favorite); **ECO Land Theme Park** (steam-locomotive ride through Gotjawal forest); **Hamdeok Beach** (turquoise shallows, family-friendly); **⟦G4⟧** (coastal volcanic mountain with WWII tunnel network); **⟦G2⟧** (cliff walk under Sanbangsan); Cafe the Cliff (Aewol sunset spot); the **haenyeo Museum** near Hado; and submarine/yacht tours from Seogwipo and Jungmun. \n\nBring a full list to the driver-guide at pickup and they will sequence the day for traffic, ferry timing, and operating hours.",
+      "tm": "Oltre ai tre itinerari consigliati, la finestra di 9 ore del noleggio è completamente personalizzabile — può combinare tappe tra est, ovest e sud oppure inviare in anticipo un programma interamente su misura. Tra le aggiunte più frequenti: **⟦G1⟧ (Monumento naturale 263** — un cratere freatomagmatico di **650 m di larghezza × 100 m di profondità**, celebre per l'erba argentata autunnale); **⟦G3⟧** (varietà di camelie già in fiore da novembre a marzo); **⟦G0⟧** (fattoria di alpaca e mandarini, molto amata dalle famiglie); **ECO Land Theme Park** (giro in locomotiva a vapore attraverso la foresta di Gotjawal); **Hamdeok Beach** (acque basse turchesi, adatta alle famiglie); **⟦G4⟧** (montagna vulcanica costiera con una rete di gallerie della Seconda guerra mondiale); **⟦G2⟧** (passeggiata sulle scogliere ai piedi del Sanbangsan); Cafe the Cliff (punto panoramico al tramonto ad Aewol); il **Museo delle haenyeo** vicino a Hado; e le escursioni in sottomarino o in yacht da Seogwipo e Jungmun. \n\nPorti un elenco completo all'autista-guida al momento del prelievo: sarà lui a organizzare la giornata tenendo conto del traffico, degli orari dei traghetti e degli orari di apertura.",
       "glossary": [
         "⟦G0⟧ = Parco naturale di Hueree",
         "⟦G1⟧ = Cratere di Sangumburi",
@@ -59,16 +73,20 @@
       ]
     },
     "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Depends on chosen stops — driver-guide flags monthly closure days at booking"
+      "source_en": "Depends on chosen stops — driver-guide flags monthly closure days at booking",
+      "tm": "Dipende dalle tappe scelte — l'autista-guida segnala i giorni di chiusura mensili al momento della prenotazione"
     },
     "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Depends on chosen stops"
+      "source_en": "Depends on chosen stops",
+      "tm": "Dipende dalle tappe scelte"
     },
     "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Adjustable to your group's mobility"
+      "source_en": "Adjustable to your group's mobility",
+      "tm": "Adattabile alla mobilità del Suo gruppo"
     },
     "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "All admission fees pay directly; driver-guide assists at each gate"
+      "source_en": "All admission fees pay directly; driver-guide assists at each gate",
+      "tm": "Tutti i biglietti d'ingresso si pagano direttamente sul posto; l'autista-guida assiste a ogni accesso"
     }
   },
   "glossaryTokens": {
@@ -83,5 +101,5 @@
       "⟦G4⟧": "Songaksan"
     }
   },
-  "tmHits": 0
+  "tmHits": 18
 }

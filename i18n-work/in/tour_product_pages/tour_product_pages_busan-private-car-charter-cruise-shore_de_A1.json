@@ -7,146 +7,187 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Busan Private Cruise Shore Excursion | AtoC Korea"
+      "source_en": "Busan Private Cruise Shore Excursion | AtoC Korea",
+      "tm": "Privater Kreuzfahrt-Landausflug in Busan | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea"
+      "source_en": "Busan Private Car Charter for Cruise Shore (8hr) | AtoC Korea",
+      "tm": "Privater Autocharter in Busan für Kreuzfahrt-Landausflug (8 Std.) | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Private Busan cruise shore excursion with port pickup and drop-off, flexible route planning, and a private guide/vehicle planned around your ship schedule."
+      "source_en": "Private Busan cruise shore excursion with port pickup and drop-off, flexible route planning, and a private guide/vehicle planned around your ship schedule.",
+      "tm": "Privater Kreuzfahrt-Landausflug in Busan mit Abholung und Rückbringung am Hafen, flexibler Routenplanung und privatem Guide/Fahrzeug, geplant nach Ihrem Schiffsfahrplan."
     },
     "/seo/metaDescription": {
-      "source_en": "8-hour fully customizable Busan private car charter for cruise passengers. English-speaking driver, on-time return planned, hotel/KTX/cruise port pickup."
+      "source_en": "8-hour fully customizable Busan private car charter for cruise passengers. English- and Chinese-speaking guide, private vehicle and driver, pickup and drop-off at your cruise terminal, and a return timed to your ship's all-aboard."
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Busan private car charter"
+      "source_en": "Busan private car charter",
+      "tm": "Privater Autocharter Busan"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Busan cruise shore excursion"
+      "source_en": "Busan cruise shore excursion",
+      "tm": "Busan Kreuzfahrt-Landausflug"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Busan private day tour cruise"
+      "source_en": "Busan private day tour cruise",
+      "tm": "Busan private Tagestour Kreuzfahrt"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Busan English-speaking driver"
+      "source_en": "Busan English-speaking driver",
+      "tm": "Busan englischsprachiger Fahrer"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "8-hour Busan private tour"
+      "source_en": "8-hour Busan private tour",
+      "tm": "8-stündige private Tour in Busan"
     },
     "/hero/meta/stops": {
-      "source_en": "Custom"
+      "source_en": "Custom",
+      "tm": "Individuell"
     },
     "/hero/meta/region": {
-      "source_en": "Busan (cruise + downtown)"
+      "source_en": "Busan (cruise + downtown)",
+      "tm": "Busan (Kreuzfahrt + Innenstadt)"
     },
     "/hero/meta/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/hero/pills/0": {
-      "source_en": "Private Vehicle"
+      "source_en": "Private Vehicle",
+      "tm": "Privatfahrzeug"
     },
     "/hero/pills/1": {
-      "source_en": "Licensed Driver-Guide"
+      "source_en": "Licensed Driver-Guide",
+      "tm": "Lizenzierter Fahrer-Guide"
     },
     "/hero/pills/2": {
-      "source_en": "Cruise Return Planned"
+      "source_en": "Cruise Return Planned",
+      "tm": "Rückkehr zum Kreuzfahrtschiff eingeplant"
     },
     "/hero/tagline": {
       "source_en": "From ⟦G0⟧ to ⟦G1⟧ cliffs to Gamcheon's painted alleys to Jagalchi's working harbor — eight private hours, your route, your pace, with return planned around your ship time.",
+      "tm": "Vom ⟦G0⟧ über die Klippen von ⟦G1⟧ und Gamcheons bemalte Gassen bis zum betriebsamen Hafen von Jagalchi — acht private Stunden, Ihre Route, Ihr Tempo, mit einer Rückkehr, die auf Ihre Schiffszeit abgestimmt ist.",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof",
         "⟦G1⟧ = Taejongdae"
       ]
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Fotopotenzial"
     },
     "/glanceItems/0/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Gut"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Landschaft"
     },
     "/glanceItems/1/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Gut"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Gehstrecke"
     },
     "/glanceItems/2/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Regentauglichkeit"
     },
     "/glanceItems/3/value": {
-      "source_en": "Excellent"
+      "source_en": "Excellent",
+      "tm": "Ausgezeichnet"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Familientauglichkeit"
     },
     "/glanceItems/4/value": {
-      "source_en": "Excellent"
+      "source_en": "Excellent",
+      "tm": "Ausgezeichnet"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Tempo"
     },
     "/glanceItems/5/value": {
-      "source_en": "Flexible"
+      "source_en": "Flexible",
+      "tm": "Flexibel"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Überblick"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Reiseverlauf"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Details"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Bewertungen"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Private tour"
+      "source_en": "Private tour",
+      "tm": "Private Tour"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Customizable route"
+      "source_en": "Customizable route",
+      "tm": "Anpassbare Route"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Cruise pickup included"
+      "source_en": "Cruise pickup included",
+      "tm": "Abholung am Kreuzfahrthafen inklusive"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Return planned around ship schedule"
+      "source_en": "Return planned around ship schedule",
+      "tm": "Rückkehr nach Schiffsfahrplan geplant"
     },
     "/catalog_card/title": {
-      "source_en": "Busan Cruise Shore: Private Car Charter"
+      "source_en": "Busan Cruise Shore: Private Car Charter",
+      "tm": "Busan Kreuzfahrt-Landausflug: Privater Autocharter"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Private Tour"
+      "source_en": "Private Tour",
+      "tm": "Private Tour"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Customizable Route"
+      "source_en": "Customizable Route",
+      "tm": "Anpassbare Route"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Cruise Pickup Included"
+      "source_en": "Cruise Pickup Included",
+      "tm": "Abholung am Kreuzfahrthafen inklusive"
     },
     "/catalog_card/region": {
-      "source_en": "Busan (cruise port + downtown)"
+      "source_en": "Busan (cruise port + downtown)",
+      "tm": "Busan (Kreuzfahrthafen + Innenstadt)"
     },
     "/catalog_card/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/catalog_card/subtitle": {
-      "source_en": "A private Busan shore day with cruise-port pickup, flexible sightseeing, and a route planned around your ship’s arrival and all-aboard time."
-    },
-    "/catalog_card/priceLabel": {
-      "source_en": "From US$359 per vehicle (was $379, 1–6 pax, 8h) · 7–12 pax 2× · 13+ pax 3×"
+      "source_en": "A private Busan shore day with cruise-port pickup, flexible sightseeing, and a route planned around your ship’s arrival and all-aboard time.",
+      "tm": "Ein privater Landausflug in Busan mit Abholung am Kreuzfahrthafen, flexiblem Sightseeing und einer Route, die auf die Ankunftszeit und die letzte Einschiffungszeit Ihres Schiffes abgestimmt ist."
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A private Busan shore excursion for cruise guests. Choose the places that matter most — ⟦G2⟧, Cheongsapo, Blue Line Park, ⟦G1⟧, ⟦G0⟧, Songdo, Nampo-dong, ⟦G3⟧, and more — then adjust the day with your guide around your ship schedule.",
+      "tm": "Ein privater Landausflug in Busan für Kreuzfahrtgäste. Wählen Sie die Orte, die Ihnen am wichtigsten sind — ⟦G2⟧, Cheongsapo, Blue Line Park, ⟦G1⟧, ⟦G0⟧, Songdo, Nampo-dong, ⟦G3⟧ und mehr — und stimmen Sie den Tag dann gemeinsam mit Ihrem Guide auf Ihren Schiffsfahrplan ab.",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon",
         "⟦G1⟧ = UN-Gedenkfriedhof",
@@ -155,155 +196,60 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan Cruise Shore"
+      "source_en": "Busan Cruise Shore",
+      "tm": "Busan Kreuzfahrt-Landausflug"
     },
     "/headlineLine2": {
-      "source_en": "Private Car Charter"
+      "source_en": "Private Car Charter",
+      "tm": "Privater Autocharter"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "This is a cruise shore-excursion product — pickup is at the cruise terminal, not a hotel. Hotel pickup is not offered on this SKU; for hotel-based pickup, see our separate private Busan day-charter."
+      "source_en": "This is a cruise shore-excursion product — pickup is at the cruise terminal, not a hotel. Hotel pickup is not offered on this SKU; for hotel-based pickup, see our separate private Busan day-charter.",
+      "tm": "Dies ist ein Produkt für Kreuzfahrt-Landausflüge — die Abholung erfolgt am Kreuzfahrtterminal, nicht am Hotel. Eine Abholung am Hotel wird bei dieser SKU nicht angeboten; für die Abholung ab Hotel sehen Sie sich bitte unseren separaten privaten Tagescharter in Busan an."
     },
     "/pickup_dropoff/dropoff_points/0/name": {
-      "source_en": "Back to your originating cruise terminal (Yeongdo or Choryang)"
+      "source_en": "Back to your originating cruise terminal (Yeongdo or Choryang)",
+      "tm": "Zurück zu Ihrem Ausgangs-Kreuzfahrtterminal (Yeongdo oder Choryang)"
     },
     "/pickup_dropoff/dropoff_points/0/note": {
-      "source_en": "Return planned around your ship's posted departure time. On-time return is guaranteed — we have never missed a sail-away across 4 seasons of cruise charters."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Kreuzfahrtschiffe in Busan legen an einem der beiden Terminals an — welches für Sie gilt, hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt. Ihre Reiseleitung treffen Sie in der Ankunftshalle."
     },
     "/pickup_dropoff/dropoff_points/0/approx_time": {
-      "source_en": "≈ 90 min before your ship's all-aboard call"
+      "source_en": "≈ 90 min before your ship's all-aboard call",
+      "tm": "≈ 90 Min. vor dem letzten Einschiffungsaufruf Ihres Schiffes"
     },
     "/pickup_dropoff/meeting_points/0/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "tm": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
     },
     "/pickup_dropoff/meeting_points/0/note": {
-      "source_en": "Primary terminal for large cruise ships. Driver waits at the arrival hall with an 'AtoC Korea' sign — please share your cruise name and docking timeline at booking."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Kreuzfahrtschiffe in Busan legen an einem der beiden Terminals an — welches für Sie gilt, hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt. Ihre Reiseleitung treffen Sie in der Ankunftshalle."
     },
     "/pickup_dropoff/meeting_points/0/time": {
-      "source_en": "Within 30 min of cruise disembarkation"
+      "source_en": "Within 30 min of cruise disembarkation",
+      "tm": "Innerhalb von 30 Min. nach der Ausschiffung"
     },
     "/pickup_dropoff/meeting_points/1/name": {
-      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+      "tm": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
     },
     "/pickup_dropoff/meeting_points/1/note": {
-      "source_en": "Secondary terminal for smaller cruise ships and ferries. Driver waits at the arrival hall with an 'AtoC Korea' sign — please share your cruise name and docking timeline at booking."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Kreuzfahrtschiffe in Busan legen an einem der beiden Terminals an — welches für Sie gilt, hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt. Ihre Reiseleitung treffen Sie in der Ankunftshalle."
     },
     "/pickup_dropoff/meeting_points/1/time": {
-      "source_en": "Within 30 min of cruise disembarkation"
+      "source_en": "Within 30 min of cruise disembarkation",
+      "tm": "Innerhalb von 30 Min. nach der Ausschiffung"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Wählen Sie Ihr Datum und Ihre Gruppengröße, um die Verfügbarkeit in Echtzeit zu prüfen und Ihre Buchung abzuschließen."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "vehicle"
-    },
-    "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup, drop-off, and the 8-hour period"
-    },
-    "/practicalAccordionItems/0/content/0": {
-      "source_en": "Pickup at Busan Port International Cruise Terminal (Dongsam-dong) for large ships, or International Passenger Terminal (Choryang) for smaller vessels — whichever terminal your ship uses."
-    },
-    "/practicalAccordionItems/0/content/1": {
-      "source_en": "The 8-hour service time is planned around your specific all-aboard time, not a fixed clock."
-    },
-    "/practicalAccordionItems/0/content/2": {
-      "source_en": "Return drop-off at the same terminal, minimum 60 minutes before your all-aboard time."
-    },
-    "/practicalAccordionItems/0/preview": {
-      "source_en": "Pickup at Busan Port cruise terminal; return 60 min before all-aboard"
-    },
-    "/practicalAccordionItems/1/title": {
-      "source_en": "What's included vs. pay-direct"
-    },
-    "/practicalAccordionItems/1/content/0": {
-      "source_en": "Included: private vehicle (sedan, SUV, or van based on group size), licensed English-speaking driver-guide, fuel, tolls, parking."
-    },
-    "/practicalAccordionItems/1/content/1": {
-      "source_en": "Excluded: all site admissions (most Busan stops are free), lunch (~₩10,000–20,000), Gamcheon stamp-tour map (₩2,000), ⟦G0⟧ Danubi Train (₩4,000), Busan Tower observatory (₩12,000), tips.",
-      "glossary": [
-        "⟦G0⟧ = Taejongdae"
-      ]
-    },
-    "/practicalAccordionItems/1/preview": {
-      "source_en": "Private vehicle, licensed driver-guide, fuel and tolls included"
-    },
-    "/practicalAccordionItems/2/title": {
-      "source_en": "Customization and stop swaps"
-    },
-    "/practicalAccordionItems/2/content/0": {
-      "source_en": "The default route covers ⟦G1⟧, ⟦G4⟧, ⟦G0⟧, ⟦G3⟧, and ⟦G2⟧.",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon",
-        "⟦G1⟧ = UN-Gedenkfriedhof",
-        "⟦G2⟧ = Jagalchi-Markt",
-        "⟦G3⟧ = Yongdusan-Park",
-        "⟦G4⟧ = Taejongdae"
-      ]
-    },
-    "/practicalAccordionItems/2/content/1": {
-      "source_en": "You can swap or add stops (e.g., ⟦G0⟧ Temple, Haeundae Beach) up to 24 hours before, subject to time availability.",
-      "glossary": [
-        "⟦G0⟧ = Haedong Yonggungsa"
-      ]
-    },
-    "/practicalAccordionItems/2/content/2": {
-      "source_en": "Guide can also adjust timing within the day to spend more time at your preferred stop."
-    },
-    "/practicalAccordionItems/2/preview": {
-      "source_en": "Route can be adjusted up to 24 hours before departure"
-    },
-    "/practicalAccordionItems/3/title": {
-      "source_en": "Vehicle, driver, and capacity"
-    },
-    "/practicalAccordionItems/3/content/0": {
-      "source_en": "Sedan (up to 3 guests), SUV/MPV (up to 5), or van (up to 8–10) — vehicle type assigned based on group size at booking."
-    },
-    "/practicalAccordionItems/3/content/1": {
-      "source_en": "No other passengers share the vehicle; the day runs entirely around your group's schedule."
-    },
-    "/practicalAccordionItems/3/content/2": {
-      "source_en": "All vehicles are air-conditioned with USB charging."
-    },
-    "/practicalAccordionItems/3/preview": {
-      "source_en": "Fully private vehicle — no other passengers"
-    },
-    "/practicalAccordionItems/4/title": {
-      "source_en": "Weather and ship cancellation policy"
-    },
-    "/practicalAccordionItems/4/content/0": {
-      "source_en": "If your ship diverts or cancels the Busan port call, notify us immediately for a full refund."
-    },
-    "/practicalAccordionItems/4/content/1": {
-      "source_en": "Light rain: tour operates as normal. Typhoon-force weather: full refund or reschedule."
-    },
-    "/practicalAccordionItems/4/content/2": {
-      "source_en": "⟦G0⟧ cliff trail closes in heavy rain; the Danubi Train continues operating.",
-      "glossary": [
-        "⟦G0⟧ = Taejongdae"
-      ]
-    },
-    "/practicalAccordionItems/4/preview": {
-      "source_en": "Free cancellation if your ship can't dock; light rain operates as normal"
-    },
-    "/practicalAccordionItems/5/title": {
-      "source_en": "Languages and accessibility"
-    },
-    "/practicalAccordionItems/5/content/0": {
-      "source_en": "Driver-guide speaks fluent English; Korean-English bilingual service available on request."
-    },
-    "/practicalAccordionItems/5/content/1": {
-      "source_en": "⟦G0⟧'s hillside alleys are not wheelchair-accessible and stroller-difficult.",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/practicalAccordionItems/5/content/2": {
-      "source_en": "⟦G0⟧ Danubi Train (₩4,000) is a good alternative to the cliff walk for mobility-limited guests.",
-      "glossary": [
-        "⟦G0⟧ = Taejongdae"
-      ]
-    },
-    "/practicalAccordionItems/5/preview": {
-      "source_en": "English-speaking driver-guide; some stops not wheelchair-accessible"
+      "source_en": "vehicle",
+      "tm": "Fahrzeug"
     }
   },
   "glossaryTokens": {
@@ -316,29 +262,7 @@
       "⟦G1⟧": "UN-Gedenkfriedhof",
       "⟦G2⟧": "Haedong Yonggungsa",
       "⟦G3⟧": "Jagalchi-Markt"
-    },
-    "/practicalAccordionItems/1/content/1": {
-      "⟦G0⟧": "Taejongdae"
-    },
-    "/practicalAccordionItems/2/content/0": {
-      "⟦G0⟧": "Kulturdorf Gamcheon",
-      "⟦G1⟧": "UN-Gedenkfriedhof",
-      "⟦G2⟧": "Jagalchi-Markt",
-      "⟦G3⟧": "Yongdusan-Park",
-      "⟦G4⟧": "Taejongdae"
-    },
-    "/practicalAccordionItems/2/content/1": {
-      "⟦G0⟧": "Haedong Yonggungsa"
-    },
-    "/practicalAccordionItems/4/content/2": {
-      "⟦G0⟧": "Taejongdae"
-    },
-    "/practicalAccordionItems/5/content/1": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/practicalAccordionItems/5/content/2": {
-      "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 0
+  "tmHits": 58
 }

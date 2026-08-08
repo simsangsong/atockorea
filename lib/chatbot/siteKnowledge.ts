@@ -7,7 +7,11 @@ import zhTwMessages from "@/messages/zh-TW.json";
 import poiKnowledgeBase from "@/data/poi_kb/poi_knowledge_base_v1.29.json";
 import matchPoiNameSnapshot from "@/scripts/seed-match-pois-snapshot.json";
 import globalPolicies from "@/data/tour-policies/global-policies.json";
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 
 type JsonRecord = Record<string, unknown>;
 
@@ -26,7 +30,7 @@ type MatchPoiNameRow = {
   poi_key?: string;
   name_en?: string;
   name_ko?: string;
-  names_other_locales?: Partial<Record<TourProductPageLocale, string>>;
+  names_other_locales?: Partial<Record<TourProductBaseLocale, string>>;
   region?: string;
   category?: string;
 };
@@ -39,7 +43,7 @@ type GlobalPolicy = {
   text: string;
 };
 
-const MESSAGES_BY_LOCALE: Record<TourProductPageLocale, JsonRecord> = {
+const MESSAGES_BY_LOCALE: Record<TourProductBaseLocale, JsonRecord> = {
   en: enMessages as JsonRecord,
   ko: koMessages as JsonRecord,
   ja: jaMessages as JsonRecord,
@@ -310,7 +314,7 @@ function buildLegalPolicyChunks(
 }
 
 function buildMessageChunks(locale: TourProductPageLocale): SiteKnowledgeChunk[] {
-  const messages = MESSAGES_BY_LOCALE[locale] ?? MESSAGES_BY_LOCALE.en;
+  const messages = MESSAGES_BY_LOCALE[toTourProductBaseLocale(locale)] ?? MESSAGES_BY_LOCALE.en;
   const chunks: SiteKnowledgeChunk[] = [];
   const footer = asRecord(getNested(messages, "home.footer"));
   const footerKnowledge = {
@@ -445,7 +449,7 @@ function buildChunksForLocale(locale: TourProductPageLocale): SiteKnowledgeChunk
 }
 
 export function getSiteKnowledgeChunks(locale: TourProductPageLocale = "en"): SiteKnowledgeChunk[] {
-  const normalizedLocale = MESSAGES_BY_LOCALE[locale] ? locale : "en";
+  const normalizedLocale = MESSAGES_BY_LOCALE[toTourProductBaseLocale(locale)] ? locale : "en";
   const cached = chunkCache.get(normalizedLocale);
   if (cached) return cached;
   const chunks = buildChunksForLocale(normalizedLocale);

@@ -6,146 +6,218 @@
   "chunk": "itineraryStops-5",
   "tier": "B",
   "segments": {
+    "/itineraryStops/6/whyOnRoute": {
+      "source_en": "**The seaside finale — and the closest stop to Jeju City.** After the UNESCO afternoon at Seongsan, the day winds down at ⟦G0⟧: emerald water, white sand, and a stretch of Olle Trail Course 19 in the softer late-afternoon light, when the day-trip crowds have thinned. Because Hamdeok sits on the coastal road back to Jeju City, ending here also makes the ride home the shortest of the day — an easy landing before drop-off.",
+      "tm": "**Финал у моря — и ближайшая к городу Чеджу остановка.** После дня ЮНЕСКО в Сонсане день затихает на ⟦G0⟧: изумрудная вода, белый песок и отрезок 19-го маршрута тропы Олле в мягком свете позднего дня, когда толпы однодневных туристов уже разошлись. Поскольку Хамдок стоит на прибрежной дороге обратно в город Чеджу, финал здесь делает дорогу домой самой короткой за день — лёгкое приземление перед высадкой.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/6/convenience/parking": {
+      "source_en": "Public parking lot (paid in summer)",
+      "tm": "Общественная парковка (летом платная)"
+    },
+    "/itineraryStops/6/convenience/restroom": {
+      "source_en": "Public restrooms and shower facilities at beach",
+      "tm": "Общественные туалеты и душевые на пляже"
+    },
     "/itineraryStops/6/description": {
       "source_en": "**⟦G0⟧ (함덕 서우봉 해변)** is one of Jeju's best-known east-coast beaches, loved for its bright sand, shallow emerald water, and the small volcanic cone of **Seoubong (서우봉)** rising at the eastern end. \n\nThe main beach and connected coves give guests an easy, unhurried look at Jeju's coastal scenery without a long walk, and the seaside promenade is suitable for families and seniors. \n\nIn spring, the slopes around Seoubong often turn yellow with canola flowers; in clear weather, the short upper path gives a broad view over the eastern coastline. \n\nThe area also has a historical layer: coastal caves and wartime remains around Seoubong are connected with Japan's late-colonial military presence on Jeju, adding context beyond the beach view. Hamdeok is also part of **Jeju Olle Trail Course 19**, so guests can experience a small piece of Jeju's walking culture before moving inland. \n\nAdmission is free, and the stop works well as a relaxed photo and wind-down point at the end of the eastern route.",
+      "tm": "**⟦G0⟧ (함덕 서우봉 해변)** — один из самых известных пляжей восточного побережья Чеджу, который любят за светлый песок, мелкую изумрудную воду и небольшой вулканический конус **Соубон (서우봉)**, поднимающийся у восточного края. \n\nОсновной пляж и соединённые с ним бухты позволяют без долгой прогулки спокойно и неспешно посмотреть на прибрежные пейзажи Чеджу, а набережная подходит семьям и пожилым гостям. \n\nВесной склоны вокруг Соубона часто желтеют от цветущего рапса; в ясную погоду короткая верхняя тропа открывает широкий вид на восточное побережье. \n\nЕсть у этого места и исторический слой: прибрежные пещеры и военные остатки вокруг Соубона связаны с японским военным присутствием на Чеджу в поздний колониальный период и добавляют контекст к пляжному виду. Хамдок входит также в **19-й маршрут чеджуской тропы Олле**, так что гости могут прикоснуться к культуре пеших прогулок Чеджу, прежде чем двигаться вглубь острова. \n\nВход бесплатный, и остановка хорошо работает как спокойная фото- и релакс-точка в конце восточного маршрута.",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/visitBasics/hours": {
-      "source_en": "Open 24 hours (beach); managed swim season July–August with lifeguards"
+      "source_en": "Open 24 hours (beach); managed swim season July–August with lifeguards",
+      "tm": "Открыто 24 часа (пляж); купальный сезон с дежурными спасателями в июле–августе"
     },
     "/itineraryStops/6/visitBasics/closed": {
-      "source_en": "Open year-round"
+      "source_en": "Open year-round",
+      "tm": "Открыто круглый год"
     },
     "/itineraryStops/6/visitBasics/walking": {
-      "source_en": "Easy — beach is flat sand; Seoubong hike is moderate (steps)"
+      "source_en": "Easy — beach is flat sand; Seoubong hike is moderate (steps)",
+      "tm": "Легко — на пляже ровный песок; подъём на Соубон средней сложности (ступени)"
     },
     "/itineraryStops/6/visitBasics/admission": {
-      "source_en": "Free"
+      "source_en": "Free",
+      "tm": "Бесплатно"
     },
     "/itineraryStops/6/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/0/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/1/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/2/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — изображение галереи 4",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — фото 4",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/6/galleryItems/3/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Пляж Хамдок Соубон"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон"
       ]
     },
     "/itineraryStops/7/name": {
-      "source_en": "Drop-off (2 points + Dongmun Market)"
+      "source_en": "Drop-off (2 points + Dongmun Market)",
+      "tm": "Высадка (2 точки и рынок Тонмун)"
     },
     "/itineraryStops/7/category": {
-      "source_en": "Drop-off — Jeju City Hub Sequence"
+      "source_en": "Drop-off — Jeju City Hub Sequence",
+      "tm": "Высадка — последовательность узлов в городе Чеджу"
     },
     "/itineraryStops/7/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 мин"
     },
     "/itineraryStops/7/timeUsed/0": {
-      "source_en": "Coach Haenyeo Museum → Dongmun — ~25 min"
+      "source_en": "Coach Haenyeo Museum → Dongmun — ~25 min",
+      "tm": "Переезд Музей хэнё → Тонмун — ~25 мин."
     },
     "/itineraryStops/7/timeUsed/1": {
-      "source_en": "Dongmun Market drop-off — 5 min"
+      "source_en": "Dongmun Market drop-off — 5 min",
+      "tm": "Высадка у рынка Тонмун — 5 мин."
     },
     "/itineraryStops/7/timeUsed/2": {
-      "source_en": "Coach to City Hall — ~10 min"
+      "source_en": "Coach to City Hall — ~10 min",
+      "tm": "Переезд к мэрии — ~10 мин."
     },
     "/itineraryStops/7/timeUsed/3": {
-      "source_en": "City Hall drop-off — 5 min"
+      "source_en": "City Hall drop-off — 5 min",
+      "tm": "Высадка у мэрии — 5 мин."
     },
     "/itineraryStops/7/timeUsed/4": {
-      "source_en": "Coach to Airport — ~15 min"
+      "source_en": "Coach to Airport — ~15 min",
+      "tm": "Переезд в аэропорт — ~15 мин."
     },
     "/itineraryStops/7/timeUsed/5": {
-      "source_en": "Airport drop-off — 5 min"
+      "source_en": "Airport drop-off — 5 min",
+      "tm": "Высадка в аэропорту — 5 мин."
     },
     "/itineraryStops/7/highlights/0": {
-      "source_en": "**3 drop-off points** — Dongmun Market, City Hall, Airport"
+      "source_en": "**3 drop-off points** — Dongmun Market, City Hall, Airport",
+      "tm": "**3 точки высадки** — рынок Тонмун, мэрия, аэропорт"
     },
     "/itineraryStops/7/highlights/1": {
-      "source_en": "**Dongmun Traditional Market** — Jeju's most popular evening market, seafood + tangerine + street food"
+      "source_en": "**Dongmun Traditional Market** — Jeju's most popular evening market, seafood + tangerine + street food",
+      "tm": "**Традиционный рынок Тонмун** — самый популярный вечерний рынок Чеджу: морепродукты, мандарины, уличная еда"
     },
     "/itineraryStops/7/highlights/2": {
-      "source_en": "Estimated arrival: Dongmun ~18:00, City Hall ~18:15, Airport ~18:30"
+      "source_en": "Estimated arrival: Dongmun ~18:00, City Hall ~18:15, Airport ~18:30",
+      "tm": "Ориентировочное прибытие: Тонмун ~18:00, мэрия ~18:15, аэропорт ~18:30"
     },
     "/itineraryStops/7/highlights/3": {
-      "source_en": "**Same-day evening flights from JIA** typically viable (last departure ~21:30)"
+      "source_en": "**Same-day evening flights from JIA** typically viable (last departure ~21:30)",
+      "tm": "**Вечерние рейсы из аэропорта Чеджу в тот же день** обычно возможны (последний вылет ~21:30)"
     },
     "/itineraryStops/7/highlights/4": {
-      "source_en": "Drop-off sequence aligned with morning pickup mirroring"
+      "source_en": "Drop-off sequence aligned with morning pickup mirroring",
+      "tm": "Порядок высадки повторяет утреннюю последовательность посадки"
     },
     "/itineraryStops/7/whyOnRoute": {
-      "source_en": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Hamdeok transit ~55 min covers all 3 points without backtracking."
+      "source_en": "Dongmun Market drop-off = optional dinner stop for guests who want to end the day with Jeju seafood + market browsing rather than coach return to hotel. City Hall + Airport drop-offs cover hotel-zone + departure-flight guests. Total post-Hamdeok transit ~55 min covers all 3 points without backtracking.",
+      "tm": "Высадка у рынка Тонмун = необязательная остановка на ужин для гостей, которые хотят завершить день чеджускими морепродуктами и прогулкой по рынку, а не возвращаться автобусом в отель. Высадки у мэрии и в аэропорту покрывают гостей из гостиничной зоны и тех, у кого вылет. Весь переезд после Хамдока ~55 мин. охватывает все 3 точки без возвратов."
     },
     "/itineraryStops/7/description": {
-      "source_en": "**Drop-off mirrors the morning pickup** with an optional Dongmun Market end-of-day stop: **Dongmun Traditional Market (동문시장)** is a ~25-min coach ride from Hamdeok Beach and offers Jeju's most popular evening market for **fresh seafood, Jeju tangerine products, and street-food dinner options** — guests can choose to drop here for independent dining + market shopping or continue to **Jeju City Hall** and **Jeju International Airport** drop-off points. \n\nEstimated arrival: **Dongmun Market ~18:00, City Hall ~18:15, Airport ~18:30**. Same-day evening flights from JIA (last departure ~21:30) are typically viable from this drop-off timing."
+      "source_en": "**Drop-off mirrors the morning pickup** with an optional Dongmun Market end-of-day stop: **Dongmun Traditional Market (동문시장)** is a ~25-min coach ride from Hamdeok Beach and offers Jeju's most popular evening market for **fresh seafood, Jeju tangerine products, and street-food dinner options** — guests can choose to drop here for independent dining + market shopping or continue to **Jeju City Hall** and **Jeju International Airport** drop-off points. \n\nEstimated arrival: **Dongmun Market ~18:00, City Hall ~18:15, Airport ~18:30**. Same-day evening flights from JIA (last departure ~21:30) are typically viable from this drop-off timing.",
+      "tm": "**Высадка повторяет утреннюю посадку** с необязательной остановкой у рынка Тонмун в конце дня: **Традиционный рынок Тонмун (동문시장)** находится примерно в 25 мин. езды от пляжа Хамдок и предлагает самый популярный вечерний рынок Чеджу: **свежие морепродукты, мандариновые продукты Чеджу и уличная еда на ужин** — гости могут выйти здесь, чтобы поужинать самостоятельно и походить по рынку, или доехать до точек высадки **мэрия города Чеджу** и **Международный аэропорт Чеджу**. \n\nОриентировочное прибытие: **рынок Тонмун ~18:00, мэрия ~18:15, аэропорт ~18:30**. Вечерние рейсы из аэропорта Чеджу в тот же день (последний вылет ~21:30) при таком времени высадки обычно возможны."
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/6/whyOnRoute": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
     "/itineraryStops/6/description": {
       "⟦G0⟧": "Пляж Хамдок Соубон"
     },
@@ -184,7 +256,16 @@
     },
     "/itineraryStops/6/galleryItems/3/location": {
       "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/6/galleryItems/4/alt": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/6/galleryItems/4/caption": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
+    },
+    "/itineraryStops/6/galleryItems/4/location": {
+      "⟦G0⟧": "Пляж Хамдок Соубон"
     }
   },
-  "tmHits": 0
+  "tmHits": 39
 }

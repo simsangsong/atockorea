@@ -1,0 +1,143 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "it",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Busan Port pickup (International Cruise Terminal)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Cruise terminal pickup",
+      "tm": "Prelievo al terminal crociere"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Seaside temple",
+      "tm": "Tempio in riva al mare"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Corea",
+      "glossary": [
+        "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
+      ]
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Memorial / War History",
+      "tm": "Memoriale / storia della guerra"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Pranzo in un ristorante locale di Busan (a proprie spese)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Lunch / Local Cuisine — optional"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Mercato Jagalchi"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Seafood market"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Piazza BIFF"
+      ]
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Film & street food"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Mercato Gukje"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Refugee-era market"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Art village"
+    },
+    "/routeFlowStops/8/name": {
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Passerella Songdo Cloud Trails"
+    },
+    "/routeFlowStops/8/theme": {
+      "source_en": "Coastal skywalk",
+      "tm": "Passerella panoramica sul mare"
+    },
+    "/routeFlowStops/9/name": {
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (parco di Amnam)"
+    },
+    "/routeFlowStops/9/theme": {
+      "source_en": "Headland park / optional cable car",
+      "tm": "Parco sul promontorio / funivia facoltativa"
+    },
+    "/routeFlowStops/10/name": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ e Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Parco di Yongdusan"
+      ]
+    },
+    "/routeFlowStops/10/theme": {
+      "source_en": "City Viewpoint / Civic Park",
+      "tm": "Punto panoramico sulla città / parco civico"
+    },
+    "/routeFlowStops/11/name": {
+      "source_en": "Return to Busan Port (International Cruise Terminal)"
+    },
+    "/routeFlowStops/11/theme": {
+      "source_en": "Cruise terminal return"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routeFlowStops/2/name": {
+      "⟦G0⟧": "Cimitero commemorativo delle Nazioni Unite"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Mercato Jagalchi"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Piazza BIFF"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Mercato Gukje"
+    },
+    "/routeFlowStops/7/name": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/routeFlowStops/10/name": {
+      "⟦G0⟧": "Parco di Yongdusan"
+    }
+  },
+  "tmHits": 16
+}

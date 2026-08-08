@@ -40,79 +40,102 @@
       "source_en": "Jeju (port-dependent)"
     },
     "/hero/meta/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/hero/pills/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/hero/pills/1": {
       "source_en": "Port-based route"
     },
     "/hero/pills/2": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/hero/tagline": {
       "source_en": "Pick your cruise port: Jeju Port runs the east UNESCO route, Gangjeong Port runs the Hallasan + Olle Market route. Both 8-hour routes run on a small-group mini-coach."
     },
     "/glanceItems/0/label": {
-      "source_en": "Duration"
+      "source_en": "Duration",
+      "tm": "Dauer"
     },
     "/glanceItems/0/value": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/glanceItems/1/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Fotopotenzial"
     },
     "/glanceItems/1/value": {
-      "source_en": "Very High"
+      "source_en": "Very High",
+      "tm": "Sehr hoch"
     },
     "/glanceItems/2/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Landschaft"
     },
     "/glanceItems/2/value": {
-      "source_en": "Very High"
+      "source_en": "Very High",
+      "tm": "Sehr hoch"
     },
     "/glanceItems/3/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Gehstrecke"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/4/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Regentauglichkeit"
     },
     "/glanceItems/4/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/5/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Familientauglichkeit"
     },
     "/glanceItems/5/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Hoch"
     },
     "/glanceItems/6/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Tempo"
     },
     "/glanceItems/6/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Ausgewogen"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Überblick"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Reiseverlauf"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Details"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Bewertungen"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/catalog_card/tags/1": {
       "source_en": "Port-based route"
@@ -121,13 +144,15 @@
       "source_en": "Premium cruise"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/catalog_card/title": {
       "source_en": "Jeju Cruise Shore: Small-Group Tour"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/catalog_card/badges/1": {
       "source_en": "Port-based routing"
@@ -136,13 +161,15 @@
       "source_en": "Premium cruise"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/catalog_card/region": {
       "source_en": "Jeju (port-dependent)"
     },
     "/catalog_card/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/catalog_card/imageAlt": {
       "source_en": "Black Kia Carnival waiting at Gangjeong International Cruise Terminal in Jeju with a private driver-guide holding a personalized welcome sign as four guests arrive with luggage"
@@ -160,7 +187,8 @@
       "source_en": "Jeju Cruise Shore"
     },
     "/headlineLine2": {
-      "source_en": "Small-Group Tour"
+      "source_en": "Small-Group Tour",
+      "tm": "Kleingruppentour"
     },
     "/pickup_dropoff/notes": {
       "source_en": "Return is to the same cruise terminal your tour started from, with comfortable buffer before sail-away. We have never missed a sail-away — on-time return is the core of the cruise shore-excursion product."
@@ -178,7 +206,8 @@
       "source_en": "For ships docking at Jeju Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name."
     },
     "/pickup_dropoff/departure/0/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Wird bei der Buchung bestätigt (≈30 Min. nach dem Anlegen des Schiffes)"
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "Gangjeong Civil-Military Cruise Terminal (강정항 — south Jeju, Seogwipo)"
@@ -187,16 +216,19 @@
       "source_en": "For ships docking at Gangjeong Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name."
     },
     "/pickup_dropoff/departure/1/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Wird bei der Buchung bestätigt (≈30 Min. nach dem Anlegen des Schiffes)"
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your cruise port, travel date, and group size to check availability and complete your booking."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "Person"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Abholung & Rückfahrt"
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Jeju Port pickup: Jeju cruise terminal (north Jeju)"
@@ -214,7 +246,8 @@
       "source_en": "Cruise terminal pickup — route option by port"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Gehstrecken & Gelände"
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Jeju port: ⟦G0⟧ rim climb is steepest (optional)",
@@ -232,7 +265,8 @@
       "source_en": "Moderate; varies by port route option"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Weather policy"
+      "source_en": "Weather policy",
+      "tm": "Wetterregelung"
     },
     "/practicalAccordionItems/2/content/0": {
       "source_en": "Heavy rain: Seongsan rim climb may be skipped (Jeju port route option)"
@@ -253,7 +287,8 @@
       "source_en": "Cruise schedule is fixed — route adjusts"
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Was anziehen & mitbringen"
     },
     "/practicalAccordionItems/3/content/0": {
       "source_en": "Comfortable walking shoes"
@@ -262,7 +297,8 @@
       "source_en": "Light jacket (especially Hallasan 1100 / Gangjeong route option)"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Hat and sunscreen"
+      "source_en": "Hat and sunscreen",
+      "tm": "Hut und Sonnenschutz"
     },
     "/practicalAccordionItems/3/content/3": {
       "source_en": "Cruise ID + passport for terminal re-entry"
@@ -274,7 +310,8 @@
       "source_en": "Included / Not included"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "English-speaking guide"
+      "source_en": "English-speaking guide",
+      "tm": "Englischsprachiger Guide"
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Mini-coach transport"
@@ -286,7 +323,8 @@
       "source_en": "All site admissions"
     },
     "/practicalAccordionItems/4/content/4": {
-      "source_en": "Bottled water"
+      "source_en": "Bottled water",
+      "tm": "Wasser in Flaschen"
     },
     "/practicalAccordionItems/4/content/5": {
       "source_en": "Lunch break — own expense at local restaurant (₩10–15k)"
@@ -299,6 +337,22 @@
     },
     "/practicalAccordionItems/4/preview": {
       "source_en": "Guide, vehicle, pickup, admissions — lunch / shopping / tips own expense"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Cancellation",
+      "tm": "Stornierung"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Stornierungen am selben Tag und Nichterscheinen werden nicht erstattet."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     }
   },
   "glossaryTokens": {
@@ -312,5 +366,5 @@
       "⟦G0⟧": "Seopjikoji"
     }
   },
-  "tmHits": 0
+  "tmHits": 42
 }

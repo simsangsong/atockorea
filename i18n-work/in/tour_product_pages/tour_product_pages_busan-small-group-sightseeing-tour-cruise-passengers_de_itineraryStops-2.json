@@ -8,12 +8,14 @@
   "segments": {
     "/itineraryStops/1/galleryItems/5/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/galleryItems/5/caption": {
       "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Tempel ⟦G0⟧ — Foto 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -33,81 +35,102 @@
       ]
     },
     "/itineraryStops/2/category": {
-      "source_en": "Memorial / War History"
+      "source_en": "Memorial / War History",
+      "tm": "Gedenkstätte / Kriegsgeschichte"
     },
     "/itineraryStops/2/duration": {
       "source_en": "30 min",
       "tm": "30 Min."
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "Van drop-off + walk to Memorial Hall (~5 min)"
+      "source_en": "Van drop-off + walk to Memorial Hall (~5 min)",
+      "tm": "Ausstieg aus dem Van + Weg zur Gedenkhalle (~5 Min.)"
     },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "12-minute Korean War documentary + introduction (~15 min)"
+      "source_en": "12-minute Korean War documentary + introduction (~15 min)",
+      "tm": "12-minütiger Dokumentarfilm zum Koreakrieg + Einführung (~15 Min.)"
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Symbolic Area (22 flags) + Wall of Remembrance (~20 min)"
+      "source_en": "Symbolic Area (22 flags) + Wall of Remembrance (~20 min)",
+      "tm": "Symbolbereich (22 Flaggen) + Gedenkmauer (~20 Min.)"
     },
     "/itineraryStops/2/timeUsed/3": {
-      "source_en": "Walk grounds + return to van (~20 min)"
+      "source_en": "Walk grounds + return to van (~20 min)",
+      "tm": "Rundgang über das Gelände + Rückkehr zum Van (~20 Min.)"
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "**Only ⟦G0⟧ in the world** — established January 1951 by UN Command",
+      "tm": "**Der weltweit einzige ⟦G0⟧** — im Januar 1951 vom UN-Oberkommando eingerichtet",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/2/highlights/1": {
-      "source_en": "Land donated by Republic of Korea to United Nations in **1959**"
+      "source_en": "Land donated by Republic of Korea to United Nations in **1959**",
+      "tm": "Das Grundstück wurde **1959** von der Republik Korea an die Vereinten Nationen übertragen"
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "**22 sending nations** under UN flag during Korean War (1950–1953)"
+      "source_en": "**22 sending nations** under UN flag during Korean War (1950–1953)",
+      "tm": "**22 entsendende Nationen** unter der UN-Flagge im Koreakrieg (1950–1953)"
     },
     "/itineraryStops/2/highlights/3": {
-      "source_en": "Today **2,300 graves from 11 nations** (after most repatriations post-armistice)"
+      "source_en": "Today **2,300 graves from 11 nations** (after most repatriations post-armistice)",
+      "tm": "Heute **2.300 Gräber aus 11 Nationen** (nachdem die meisten Gefallenen nach dem Waffenstillstand überführt wurden)"
     },
     "/itineraryStops/2/highlights/4": {
-      "source_en": "**Wall of Remembrance (2006)**: 40,896 UN casualty names on 140 marble panels"
+      "source_en": "**Wall of Remembrance (2006)**: 40,896 UN casualty names on 140 marble panels",
+      "tm": "**Gedenkmauer (2006)**: 40.896 Namen von UN-Gefallenen auf 140 Marmortafeln"
     },
     "/itineraryStops/2/highlights/5": {
-      "source_en": "Main Gate designed by **Korean architect Kim Joong-up (1966)**"
+      "source_en": "Main Gate designed by **Korean architect Kim Joong-up (1966)**",
+      "tm": "Das Haupttor wurde vom **koreanischen Architekten Kim Joong-up (1966)** entworfen"
     },
     "/itineraryStops/2/highlights/6": {
-      "source_en": "**'Turn Toward Busan' ceremony** annually Nov 11 at 11:00 AM — global silent tribute"
+      "source_en": "**'Turn Toward Busan' ceremony** annually Nov 11 at 11:00 AM — global silent tribute",
+      "tm": "Die **Zeremonie „Turn Toward Busan“** jährlich am 11. Nov. um 11:00 Uhr — ein weltweites stilles Gedenken"
     },
     "/itineraryStops/2/highlights/7": {
-      "source_en": "Hours daily 09:00–18:00 May–Sep / 09:00–17:00 Oct–Apr; FREE; 100% wheelchair-accessible"
+      "source_en": "Hours daily 09:00–18:00 May–Sep / 09:00–17:00 Oct–Apr; FREE; 100% wheelchair-accessible",
+      "tm": "Täglich 09:00–18:00 Uhr von Mai bis Sept. / 09:00–17:00 Uhr von Okt. bis April; KOSTENLOS; zu 100 % rollstuhlgerecht"
     },
     "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds; ground is sacred — no climbing on graves or grass between markers"
+      "source_en": "Watch the 12-minute documentary in Memorial Service Hall first (English available); dress neatly, keep voices low, and no food on the grounds; ground is sacred — no climbing on graves or grass between markers",
+      "tm": "Sehen Sie sich zuerst den 12-minütigen Dokumentarfilm in der Gedenkhalle an (auf Englisch verfügbar); kleiden Sie sich ordentlich, sprechen Sie leise und essen Sie nichts auf dem Gelände; der Boden ist geweiht — steigen Sie nicht auf Gräber oder auf das Gras zwischen den Grabsteinen"
     },
     "/itineraryStops/2/smartNotes/facilities": {
-      "source_en": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall"
+      "source_en": "Memorial Service Hall, Memorabilia Hall, UN Forces Monument, US Korean War Memorial (2013 Frank Gaylord sculpture), and adjacent UN Peace Memorial Hall",
+      "tm": "Gedenkhalle, Erinnerungshalle, Denkmal der UN-Streitkräfte, US-Koreakriegsdenkmal (Skulptur von Frank Gaylord, 2013) und die angrenzende UN-Friedensgedenkhalle"
     },
     "/itineraryStops/2/whyOnRoute": {
-      "source_en": "The route's **moral counterweight** — Busan's identity is inseparable from its role as the only Korean city the North Korean Army never captured during the war (population spiked from 880,000 to 1.4 million as refugees flooded south). Gamcheon's hillside refugee settlement and Jagalchi's 'ajumma' fish-vendor culture both trace directly to this same Korean War narrative. Visiting UNMCK before Gamcheon and Jagalchi gives cruise guests the historical context that makes the rest of the day's stops more than just photo opportunities. The 11:05 arrival also lands well inside the May–Sep evening 18:00 close (or Oct–Apr 17:00 close)."
+      "source_en": "The route's **moral counterweight** — Busan's identity is inseparable from its role as the only Korean city the North Korean Army never captured during the war (population spiked from 880,000 to 1.4 million as refugees flooded south). Gamcheon's hillside refugee settlement and Jagalchi's 'ajumma' fish-vendor culture both trace directly to this same Korean War narrative. Visiting UNMCK before Gamcheon and Jagalchi gives cruise guests the historical context that makes the rest of the day's stops more than just photo opportunities. The 11:05 arrival also lands well inside the May–Sep evening 18:00 close (or Oct–Apr 17:00 close).",
+      "tm": "Das **moralische Gegengewicht** der Route — Busans Identität ist untrennbar davon, dass es die einzige koreanische Stadt war, die die nordkoreanische Armee im Krieg nie einnahm (die Einwohnerzahl schnellte von 880.000 auf 1,4 Millionen, als die Flüchtlinge nach Süden strömten). Gamcheons Flüchtlingssiedlung am Hang und die „Ajumma“-Kultur der Fischhändlerinnen in Jagalchi gehen beide unmittelbar auf dieselbe Koreakrieg-Erzählung zurück. Den UNMCK vor Gamcheon und Jagalchi zu besuchen gibt Kreuzfahrtgästen den historischen Zusammenhang, der die übrigen Stopps des Tages zu mehr macht als Fotogelegenheiten. Die Ankunft um 11:05 Uhr liegt zudem klar innerhalb der Schließung um 18:00 Uhr (Mai bis Sept.) bzw. 17:00 Uhr (Okt. bis April)."
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "On-site van lot — free for first 90 min, then ₩1,200/hr"
+      "source_en": "On-site van lot — free for first 90 min, then ₩1,200/hr",
+      "tm": "Eigener Parkplatz für Vans — die ersten 90 Min. kostenlos, danach ₩1.200 pro Stunde"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "Available at Memorial Service Hall and visitor center"
+      "source_en": "Available at Memorial Service Hall and visitor center",
+      "tm": "In der Gedenkhalle und im Besucherzentrum vorhanden"
     },
     "/itineraryStops/2/description": {
       "source_en": "**The ⟦G0⟧ in Korea (재한유엔기념공원, UNMCK)** is the **only United Nations memorial cemetery anywhere in the world** — established January 18, 1951 by the UN Command during the Korean War, dedicated April 6, 1951 by US General Matthew Ridgway, and formally donated to the United Nations by the Republic of Korea in **1959** in gratitude for the UN forces who died defending South Korea. \n\n**22 sending nations participated in the Korean War (1950–1953)** under the UN flag — 16 nations sent combat troops + 5 sent medical aid + 1 sent observers. Initially up to **11,000 graves** were here; most fallen were repatriated post-armistice, leaving today **2,300 graves from 11 countries** (UK, US, Türkiye, Canada, Australia, Netherlands, France, Norway, South Korea, New Zealand, South Africa). \n\nThe visit walks the cemetery's main monumental sequence: (1) the **Main Gate** (designed by Korean architect Kim Joong-up, built by Busan City in 1966 — the eight roof-supporting pillars symbolize the moment and eternity of soldiers' standing watch); (2) the **Memorial Service Hall** featuring a 12-minute documentary in English/Korean on the cemetery's history; (3) the **Symbolic Area** where the **22 sending-state flags + Korean + UN flag** fly daily; (4) the **Wall of Remembrance**, completed **2006**, with all **40,896 UN casualty names inscribed on 140 marble panels** — many veterans' relatives find their ancestors here for the first time; and (5) the **US Korean War Memorial**, dedicated **2013** with the Frank Gaylord sculpture commissioned by the American Battle Monuments Commission. \n\n**Hours: 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr); FREE; 100% wheelchair-accessible**. Annual **'Turn Toward Busan' silent ceremony** Nov 11 11:00 AM, where the world turns symbolically toward this cemetery.",
+      "tm": "**Der ⟦G0⟧ in Korea (재한유엔기념공원, UNMCK)** ist der **weltweit einzige Gedenkfriedhof der Vereinten Nationen** — am 18. Januar 1951 vom UN-Oberkommando während des Koreakriegs eingerichtet, am 6. April 1951 von US-General Matthew Ridgway eingeweiht und **1959** von der Republik Korea förmlich an die Vereinten Nationen übertragen, aus Dankbarkeit gegenüber den UN-Truppen, die bei der Verteidigung Südkoreas fielen. \n\n**22 entsendende Nationen nahmen unter der UN-Flagge am Koreakrieg (1950–1953) teil** — 16 Nationen schickten Kampftruppen, 5 medizinische Hilfe und 1 Beobachter. Anfangs lagen hier bis zu **11.000 Gräber**; die meisten Gefallenen wurden nach dem Waffenstillstand überführt, sodass heute **2.300 Gräber aus 11 Ländern** bleiben (Vereinigtes Königreich, USA, Türkiye, Kanada, Australien, Niederlande, Frankreich, Norwegen, Südkorea, Neuseeland, Südafrika). \n\nDer Besuch folgt der monumentalen Hauptachse des Friedhofs: (1) dem **Haupttor** (entworfen vom koreanischen Architekten Kim Joong-up, 1966 von der Stadt Busan errichtet — die acht das Dach tragenden Pfeiler stehen sinnbildlich für den Augenblick und die Ewigkeit der Wache stehenden Soldaten); (2) der **Gedenkhalle** mit einem 12-minütigen Dokumentarfilm auf Englisch und Koreanisch zur Geschichte des Friedhofs; (3) dem **Symbolbereich**, wo täglich die **22 Flaggen der entsendenden Staaten sowie die koreanische und die UN-Flagge** wehen; (4) der **Gedenkmauer**, fertiggestellt **2006**, auf der alle **40.896 Namen der UN-Gefallenen auf 140 Marmortafeln eingraviert** sind — viele Angehörige von Veteranen finden hier zum ersten Mal ihre Vorfahren; und (5) dem **US-Koreakriegsdenkmal**, eingeweiht **2013**, mit der von der American Battle Monuments Commission in Auftrag gegebenen Skulptur von Frank Gaylord. \n\n**Öffnungszeiten: 09:00–18:00 Uhr (Mai bis Sept.) / 09:00–17:00 Uhr (Okt. bis April); KOSTENLOS; zu 100 % rollstuhlgerecht**. Die jährliche stille **Zeremonie „Turn Toward Busan“** findet am 11. Nov. um 11:00 Uhr statt, wenn sich die Welt sinnbildlich diesem Friedhof zuwendet.",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/2/visitBasics/hours": {
-      "source_en": "Daily 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)"
+      "source_en": "Daily 09:00–18:00 (May–Sep) / 09:00–17:00 (Oct–Apr)",
+      "tm": "Täglich 09:00–18:00 Uhr (Mai bis Sept.) / 09:00–17:00 Uhr (Okt. bis April)"
     },
     "/itineraryStops/2/visitBasics/closed": {
       "source_en": "Open year-round",
       "tm": "Ganzjährig geöffnet"
     },
     "/itineraryStops/2/visitBasics/walking": {
-      "source_en": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible"
+      "source_en": "Easy — flat grass paths and paved walkways across 14 ha of grounds; 100% wheelchair-accessible",
+      "tm": "Leicht — ebene Rasen- und befestigte Wege über 14 ha Gelände; zu 100 % rollstuhlgerecht"
     },
     "/itineraryStops/2/visitBasics/admission": {
       "source_en": "Free",
@@ -189,26 +212,32 @@
       "tm": "40 Min."
     },
     "/itineraryStops/3/highlights/0": {
-      "source_en": "Lunch is at your own expense — it is not included in the tour price"
+      "source_en": "Lunch is at your own expense — it is not included in the tour price",
+      "tm": "Das Mittagessen zahlen Sie selbst — es ist nicht im Tourpreis enthalten"
     },
     "/itineraryStops/3/highlights/1": {
-      "source_en": "**Dwaeji-gukbap** (Busan pork-bone soup) or **milmyeon** (Busan cold wheat noodles) — both regional specialities"
+      "source_en": "**Dwaeji-gukbap** (Busan pork-bone soup) or **milmyeon** (Busan cold wheat noodles) — both regional specialities",
+      "tm": "**Dwaeji-Gukbap** (Busaner Schweineknochensuppe) oder **Milmyeon** (Busaner kalte Weizennudeln) — beides regionale Spezialitäten"
     },
     "/itineraryStops/3/highlights/2": {
-      "source_en": "Both dishes have Korean War refugee origins unique to Busan"
+      "source_en": "Both dishes have Korean War refugee origins unique to Busan",
+      "tm": "Beide Gerichte gehen auf die Flüchtlinge des Koreakriegs zurück und sind so nur in Busan entstanden"
     },
     "/itineraryStops/3/highlights/3": {
-      "source_en": "Typical price ₩8,000–12,000 per dish; drinks ₩3,000–6,000 if ordered"
+      "source_en": "Typical price ₩8,000–12,000 per dish; drinks ₩3,000–6,000 if ordered",
+      "tm": "Übliche Preise ₩8.000–12.000 pro Gericht; Getränke ₩3.000–6.000, wenn Sie welche bestellen"
     },
     "/itineraryStops/3/highlights/4": {
-      "source_en": "Vegetarian / halal-friendly substitution available on request at booking"
+      "source_en": "Vegetarian / halal-friendly substitution available on request at booking",
+      "tm": "Vegetarische und halal-freundliche Alternativen sind auf Wunsch bei der Buchung möglich"
     },
     "/itineraryStops/3/smartNotes/tip": {
       "source_en": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup.",
       "tm": "**Wünsche nach vegetarischer Kost, Halal oder allergenfreien Gerichten benötigen 24 Std. Vorankündigung**. Der Fahrer empfiehlt je nach Vorliebe der Gruppe (koreanisch / Meeresfrüchte / international); folgen Sie der Empfehlung oder nennen Sie bei der Abholung am Morgen eine bestimmte Küche."
     },
     "/itineraryStops/3/whyOnRoute": {
-      "source_en": "A flexible lunch keeps the group comfortable before the downtown and village stops."
+      "source_en": "A flexible lunch keeps the group comfortable before the downtown and village stops.",
+      "tm": "Ein flexibles Mittagessen hält die Gruppe vor den Stopps in der Innenstadt und im Dorf bei Kräften."
     },
     "/itineraryStops/3/convenience/parking": {
       "source_en": "Driver drops off and waits at nearest legal stand",
@@ -266,5 +295,5 @@
       "⟦G0⟧": "UN-Gedenkfriedhof"
     }
   },
-  "tmHits": 20
+  "tmHits": 49
 }

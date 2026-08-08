@@ -15,10 +15,12 @@
       "tm": "Начало"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Custom Route"
+      "source_en": "Custom Route",
+      "tm": "Свой маршрут"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Choose"
+      "source_en": "Choose",
+      "tm": "Выбор"
     },
     "/routeFlowStops/2/name": {
       "source_en": "Lunch Break",
@@ -46,5 +48,5 @@
     }
   },
   "glossaryTokens": {},
-  "tmHits": 8
+  "tmHits": 10
 }

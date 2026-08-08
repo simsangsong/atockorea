@@ -7,43 +7,55 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Cruise Terminal"
+      "source_en": "Cruise Terminal",
+      "tm": "Круизный терминал"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Отправление"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Sunrise Peak"
+      "source_en": "Sunrise Peak",
+      "tm": "Пик Восхода Солнца"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Volcano"
+      "source_en": "Volcano",
+      "tm": "Вулкан"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сопчикходжи"
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Побережье"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Обед"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Питание"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Folk Village"
+      "source_en": "Folk Village",
+      "tm": "Фольклорная деревня"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Культура"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "Cruise Terminal"
+      "source_en": "Cruise Terminal",
+      "tm": "Круизный терминал"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Возвращение"
     }
   },
   "glossaryTokens": {
@@ -51,5 +63,5 @@
       "⟦G0⟧": "Сопчикходжи"
     }
   },
-  "tmHits": 0
+  "tmHits": 12
 }

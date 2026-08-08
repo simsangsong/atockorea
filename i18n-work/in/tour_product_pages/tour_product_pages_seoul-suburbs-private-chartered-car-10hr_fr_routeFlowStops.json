@@ -15,10 +15,12 @@
       "tm": "Départ"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Custom Route"
+      "source_en": "Custom Route",
+      "tm": "Itinéraire sur mesure"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Choose"
+      "source_en": "Choose",
+      "tm": "Choisir"
     },
     "/routeFlowStops/2/name": {
       "source_en": "Lunch Break",
@@ -46,5 +48,5 @@
     }
   },
   "glossaryTokens": {},
-  "tmHits": 8
+  "tmHits": 10
 }

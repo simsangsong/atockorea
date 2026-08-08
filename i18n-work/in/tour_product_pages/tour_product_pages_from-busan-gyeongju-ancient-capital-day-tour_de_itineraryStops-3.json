@@ -6,99 +6,145 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
+    "/itineraryStops/3/category": {
+      "source_en": "Meal — Gyeongju regional cuisine",
+      "tm": "Mahlzeit — regionale Küche aus Gyeongju"
+    },
+    "/itineraryStops/3/duration": {
+      "source_en": "60 min",
+      "tm": "60 Min."
+    },
+    "/itineraryStops/3/timeUsed/0": {
+      "source_en": "Walk from Bulguksa exit to restaurant (~5 min)",
+      "tm": "Fußweg vom Bulguksa-Ausgang zum Restaurant (ca. 5 Min.)"
+    },
+    "/itineraryStops/3/timeUsed/1": {
+      "source_en": "Order + meal (~50 min)",
+      "tm": "Bestellung + Essen (ca. 50 Min.)"
+    },
     "/itineraryStops/3/timeUsed/2": {
-      "source_en": "Reassemble at coach (~5 min)"
+      "source_en": "Reassemble at coach (~5 min)",
+      "tm": "Sammeln am Bus (ca. 5 Min.)"
     },
     "/itineraryStops/3/highlights/0": {
-      "source_en": "Guide-picked local restaurant in central Gyeongju"
+      "source_en": "Guide-picked local restaurant in central Gyeongju",
+      "tm": "Vom Guide ausgewähltes lokales Restaurant im Zentrum von Gyeongju"
     },
     "/itineraryStops/3/highlights/1": {
-      "source_en": "**Gyeongju-style ssambap** — rice with seasonal banchan and lettuce wraps"
+      "source_en": "**Gyeongju-style ssambap** — rice with seasonal banchan and lettuce wraps",
+      "tm": "**Ssambap nach Gyeongju-Art** — Reis mit saisonalen Banchan und Salatblättern zum Einwickeln"
     },
     "/itineraryStops/3/highlights/2": {
-      "source_en": "**Vegetarian and allergy requests** arranged if flagged the day before"
+      "source_en": "**Vegetarian and allergy requests** arranged if flagged the day before",
+      "tm": "**Vegetarische Wünsche und Allergiehinweise** werden berücksichtigt, wenn sie am Vortag angemeldet werden"
     },
     "/itineraryStops/3/highlights/3": {
-      "source_en": "**60 minutes allotted** — the proper rest before the afternoon's two walked blocks"
+      "source_en": "**60 minutes allotted** — the proper rest before the afternoon's two walked blocks",
+      "tm": "**60 Minuten eingeplant** — die richtige Pause vor den beiden zu Fuß zurückgelegten Abschnitten am Nachmittag"
     },
     "/itineraryStops/3/highlights/4": {
-      "source_en": "Cost about **₩15,000–₩25,000** per person, NOT included in the tour price"
+      "source_en": "Cost about **₩15,000–₩25,000** per person, NOT included in the tour price",
+      "tm": "Kosten etwa **₩15.000–₩25.000** pro Person, NICHT im Tourpreis enthalten"
     },
     "/itineraryStops/3/whyOnRoute": {
-      "source_en": "This is where you sit down after Bulguksa's steps and uneven stone, back in central Gyeongju. The afternoon is **covered on foot in two blocks** (Gyochon and the Choi Family House → Woljeonggyo, then Daereungwon → Hwangnidan-gil), so resting properly here is what sets the pace for the rest of the day. The restaurant serves **ssambap**, the local Gyeongju style, and vegetarian or allergy requests are arranged if you flag them the day before. The 55–60 minutes allotted mean nobody has to hurry — restrooms included."
+      "source_en": "This is where you sit down after Bulguksa's steps and uneven stone, back in central Gyeongju. The afternoon is **covered on foot in two blocks** (Gyochon and the Choi Family House → Woljeonggyo, then Daereungwon → Hwangnidan-gil), so resting properly here is what sets the pace for the rest of the day. The restaurant serves **ssambap**, the local Gyeongju style, and vegetarian or allergy requests are arranged if you flag them the day before. The 55–60 minutes allotted mean nobody has to hurry — restrooms included.",
+      "tm": "Hier setzen Sie sich nach den Stufen und dem unebenen Stein von Bulguksa wieder hin, zurück im Zentrum von Gyeongju. Der Nachmittag wird **in zwei Abschnitten zu Fuß zurückgelegt** (Gyochon und das Choi Family House → Woljeonggyo, dann Daereungwon → Hwangnidan-gil), deshalb bestimmt eine richtige Pause hier das Tempo für den restlichen Tag. Das Restaurant serviert **Ssambap** in der lokalen Gyeongju-Art, und vegetarische Wünsche oder Allergiehinweise werden berücksichtigt, wenn Sie sie am Vortag angeben. Die eingeplanten 55–60 Minuten bedeuten, dass sich niemand beeilen muss — Toilettenbesuch inbegriffen."
     },
     "/itineraryStops/3/description": {
-      "source_en": "Lunch comes as the van moves from Bulguksa into central Gyeongju, at a local restaurant picked by the guide. The signature dish is **Gyeongju-style ssambap** (rice with seasonal banchan and lettuce wraps — a local meal style that became widely known in the 1970s, reflecting the region's agricultural abundance). \n\n**Vegetarian and allergy requests are arranged if you flag them the day before.** The meal is not included in the tour price and runs **about ₩15,000–₩25,000 per person**. The 60 minutes allotted let you eat and use the restrooms without watching the clock — **because the afternoon is spent walking two blocks**, resting properly here is what sets the pace for the rest of the day."
+      "source_en": "Lunch comes as the van moves from Bulguksa into central Gyeongju, at a local restaurant picked by the guide. The signature dish is **Gyeongju-style ssambap** (rice with seasonal banchan and lettuce wraps — a local meal style that became widely known in the 1970s, reflecting the region's agricultural abundance). \n\n**Vegetarian and allergy requests are arranged if you flag them the day before.** The meal is not included in the tour price and runs **about ₩15,000–₩25,000 per person**. The 60 minutes allotted let you eat and use the restrooms without watching the clock — **because the afternoon is spent walking two blocks**, resting properly here is what sets the pace for the rest of the day.",
+      "tm": "Das Mittagessen findet statt, während der Van von Bulguksa ins Zentrum von Gyeongju fährt, in einem vom Guide ausgewählten lokalen Restaurant. Das Signature-Gericht ist **Ssambap nach Gyeongju-Art** (Reis mit saisonalen Banchan und Salatblättern zum Einwickeln — ein lokaler Essensstil, der in den 1970er-Jahren weithin bekannt wurde und den landwirtschaftlichen Reichtum der Region widerspiegelt). \n\n**Vegetarische Wünsche und Allergiehinweise werden berücksichtigt, wenn Sie sie am Vortag angeben.** Die Mahlzeit ist nicht im Tourpreis enthalten und kostet **etwa ₩15.000–₩25.000 pro Person**. Die eingeplanten 60 Minuten lassen Ihnen Zeit zum Essen und für die Toiletten, ohne auf die Uhr zu schauen — **da der Nachmittag mit zwei Abschnitten zu Fuß verbracht wird**, bestimmt eine richtige Pause hier das Tempo für den restlichen Tag."
     },
     "/itineraryStops/4/name": {
       "source_en": "⟦G0⟧ & Choi Family House & ⟦G1⟧",
+      "tm": "⟦G0⟧ & Choi Family House & ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Hanok-Dorf Gyochon",
         "⟦G1⟧ = Woljeonggyo-Brücke"
       ]
     },
     "/itineraryStops/4/category": {
-      "source_en": "Joseon head-family hanok village + reconstructed Silla wooden bridge (one drop-off, walked)"
+      "source_en": "Joseon head-family hanok village + reconstructed Silla wooden bridge (one drop-off, walked)",
+      "tm": "Hanok-Dorf einer Joseon-Hauptfamilie + rekonstruierte Holzbrücke aus der Silla-Zeit (ein Ausstieg, zu Fuß)"
     },
     "/itineraryStops/4/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Choi Family House courtyard + main lane walk (≈20 min)"
+      "source_en": "Choi Family House courtyard + main lane walk (≈20 min)",
+      "tm": "Innenhof des Choi Family House + Spaziergang durch die Hauptgasse (ca. 20 Min.)"
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Gyodong Beopju tasting + souvenir purchase (≈10 min)"
+      "source_en": "Gyodong Beopju tasting + souvenir purchase (≈10 min)",
+      "tm": "Verkostung von Gyodong Beopju + Souvenirkauf (ca. 10 Min.)"
     },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Riverside walk along the Namcheon (≈10 min)"
+      "source_en": "Riverside walk along the Namcheon (≈10 min)",
+      "tm": "Uferspaziergang am Namcheon (ca. 10 Min.)"
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Crossing Woljeonggyo + gatehouse interpretive exhibit + photos (≈25 min)"
+      "source_en": "Crossing Woljeonggyo + gatehouse interpretive exhibit + photos (≈25 min)",
+      "tm": "Überquerung der Woljeonggyo + Ausstellung im Torhaus + Fotos (ca. 25 Min.)"
     },
     "/itineraryStops/4/timeUsed/4": {
-      "source_en": "River panorama + reassemble (≈10 min)"
+      "source_en": "River panorama + reassemble (≈10 min)",
+      "tm": "Flusspanorama + Sammeln (ca. 10 Min.)"
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "**Two places, one drop-off** — Gyochon ↔ Woljeonggyo is a 10–15 min walk along the Namcheon"
+      "source_en": "**Two places, one drop-off** — Gyochon ↔ Woljeonggyo is a 10–15 min walk along the Namcheon",
+      "tm": "**Zwei Orte, ein Ausstieg** — Gyochon ↔ Woljeonggyo sind 10–15 Min. zu Fuß entlang des Namcheon"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "**Choi Family House = head house of the Gyeongju Choi clan, Important Folklore Material No. 27** — 12 generations, 300 years, six house rules"
+      "source_en": "**Choi Family House = head house of the Gyeongju Choi clan, Important Folklore Material No. 27** — 12 generations, 300 years, six house rules",
+      "tm": "**Choi Family House = Stammhaus des Choi-Clans von Gyeongju, Wichtiges Volkskulturgut Nr. 27** — 12 Generationen, 300 Jahre, sechs Hausregeln"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "**Gyodong Beopju = Important Intangible Cultural Asset No. 86-3** — 350-year recipe, brewed and sold inside the head house"
+      "source_en": "**Gyodong Beopju = Important Intangible Cultural Asset No. 86-3** — 350-year recipe, brewed and sold inside the head house",
+      "tm": "**Gyodong Beopju = Wichtiges immaterielles Kulturgut Nr. 86-3** — 350 Jahre altes Rezept, im Stammhaus gebraut und verkauft"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "**Site of Yoseokgung** — 7th-century home of Princess Yoseok, mother of Seol Chong (Idu script)"
+      "source_en": "**Site of Yoseokgung** — 7th-century home of Princess Yoseok, mother of Seol Chong (Idu script)",
+      "tm": "**Standort des Yoseokgung** — Wohnsitz der Prinzessin Yoseok aus dem 7. Jahrhundert, Mutter von Seol Chong (Idu-Schrift)"
     },
     "/itineraryStops/4/highlights/4": {
-      "source_en": "**Woljeonggyo = Korea's largest wooden bridge** (60.57 m × 13 m), built **760 CE** per the Samguk Sagi"
+      "source_en": "**Woljeonggyo = Korea's largest wooden bridge** (60.57 m × 13 m), built **760 CE** per the Samguk Sagi",
+      "tm": "**Woljeonggyo = Koreas größte Holzbrücke** (60,57 m × 13 m), laut Samguk Sagi **760 n. Chr.** erbaut"
     },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "**Reopened April 2018 — 1,258 years after the original**, designated a Historic Site in 2004"
+      "source_en": "**Reopened April 2018 — 1,258 years after the original**, designated a Historic Site in 2004",
+      "tm": "**Im April 2018 wiedereröffnet — 1.258 Jahre nach dem Original**, 2004 als historische Stätte ausgewiesen"
     },
     "/itineraryStops/4/highlights/6": {
-      "source_en": "**Zero modern metal fasteners** in the reconstruction — traditional hanok timber joinery"
+      "source_en": "**Zero modern metal fasteners** in the reconstruction — traditional hanok timber joinery",
+      "tm": "**Keinerlei moderne Metallverbindungen** bei der Rekonstruktion — traditionelle Hanok-Holzverbindungen"
     },
     "/itineraryStops/4/highlights/7": {
-      "source_en": "**'100 Best Tourist Attractions in Korea 2025–2026'** (Ministry of Culture, Sports and Tourism)"
+      "source_en": "**'100 Best Tourist Attractions in Korea 2025–2026'** (Ministry of Culture, Sports and Tourism)",
+      "tm": "**„100 Best Tourist Attractions in Korea 2025–2026“** (Ministerium für Kultur, Sport und Tourismus)"
     },
     "/itineraryStops/4/highlights/8": {
-      "source_en": "**Both free to enter** · the village is flat, the bridge a gentle slope"
+      "source_en": "**Both free to enter** · the village is flat, the bridge a gentle slope",
+      "tm": "**Beide kostenlos zugänglich** · das Dorf ist eben, die Brücke leicht ansteigend"
     },
     "/itineraryStops/4/smartNotes/tip": {
-      "source_en": "Gyodong Beopju is sold directly inside the head house (750 ml, about ₩30,000, boxed on request). The Woljeonggyo gatehouse holds an interpretive exhibit on the reconstruction archaeology — five minutes is enough to take it in."
+      "source_en": "Gyodong Beopju is sold directly inside the head house (750 ml, about ₩30,000, boxed on request). The Woljeonggyo gatehouse holds an interpretive exhibit on the reconstruction archaeology — five minutes is enough to take it in.",
+      "tm": "Gyodong Beopju wird direkt im Stammhaus verkauft (750 ml, etwa ₩30.000, auf Wunsch in Geschenkbox). Im Torhaus der Woljeonggyo gibt es eine Ausstellung zur Archäologie der Rekonstruktion — fünf Minuten genügen, um sie zu erfassen."
     },
     "/itineraryStops/4/smartNotes/facilities": {
-      "source_en": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)"
+      "source_en": "Gyodong Beopju shop (souvenir bottles); small artisan stores along the main lane (traditional rice cake, hwangnam-bbang); Yosukgung 1779 (luxury restaurant, reservation required)",
+      "tm": "Gyodong-Beopju-Laden (Souvenirflaschen); kleine Handwerksläden entlang der Hauptgasse (traditioneller Reiskuchen, Hwangnam-bbang); Yosukgung 1779 (gehobenes Restaurant, Reservierung erforderlich)"
     },
     "/itineraryStops/4/whyOnRoute": {
-      "source_en": "After lunch this is where the day shifts **from the grand royal-Buddhist scale of Bulguksa to the scale of lived history** — Gyeongju seen through a merchant family's eyes rather than a king's. The two places are bundled into one stop because the geography already does it: the southern edge of Gyochon **is** the north bank of Woljeonggyo, so **there is no reason to park twice**, and the time saved on boarding becomes time on foot. The 75-minute block lets you do both the Beopju tasting and the photos on the bridge without hurrying. Mid-afternoon is also when Woljeonggyo shows its **timber detail and river reflections most clearly in daylight**, and you avoid the crowd that gathers at sunset."
+      "source_en": "After lunch this is where the day shifts **from the grand royal-Buddhist scale of Bulguksa to the scale of lived history** — Gyeongju seen through a merchant family's eyes rather than a king's. The two places are bundled into one stop because the geography already does it: the southern edge of Gyochon **is** the north bank of Woljeonggyo, so **there is no reason to park twice**, and the time saved on boarding becomes time on foot. The 75-minute block lets you do both the Beopju tasting and the photos on the bridge without hurrying. Mid-afternoon is also when Woljeonggyo shows its **timber detail and river reflections most clearly in daylight**, and you avoid the crowd that gathers at sunset.",
+      "tm": "Nach dem Mittagessen wechselt der Tag hier **vom großen königlich-buddhistischen Maßstab von Bulguksa zum Maßstab gelebter Geschichte** — Gyeongju gesehen durch die Augen einer Kaufmannsfamilie statt durch die eines Königs. Die beiden Orte sind zu einem Stopp zusammengefasst, weil die Geografie es bereits so vorgibt: Der südliche Rand von Gyochon **ist** das Nordufer der Woljeonggyo, es gibt also **keinen Grund, zweimal zu parken**, und die beim Ein- und Aussteigen gesparte Zeit wird zu Zeit zu Fuß. Der 75-Minuten-Block lässt Ihnen Raum für die Beopju-Verkostung und die Fotos auf der Brücke, ohne zu hetzen. Am mittleren Nachmittag zeigt die Woljeonggyo zudem **ihre Holzdetails und die Spiegelungen im Fluss bei Tageslicht am deutlichsten**, und Sie umgehen die Menschenmenge, die sich bei Sonnenuntergang versammelt."
     },
     "/itineraryStops/4/convenience/parking": {
-      "source_en": "Coach drop-off lot at the western entrance (free)"
+      "source_en": "Coach drop-off lot at the western entrance (free)",
+      "tm": "Ausstiegsparkplatz für Reisebusse am westlichen Eingang (kostenlos)"
     },
     "/itineraryStops/4/convenience/restroom": {
-      "source_en": "Public restrooms at the village entrance and near Gyeongjuhyanggyo"
+      "source_en": "Public restrooms at the village entrance and near Gyeongjuhyanggyo",
+      "tm": "Öffentliche Toiletten am Dorfeingang und in der Nähe von Gyeongjuhyanggyo"
     }
   },
   "glossaryTokens": {
@@ -107,5 +153,5 @@
       "⟦G1⟧": "Woljeonggyo-Brücke"
     }
   },
-  "tmHits": 0
+  "tmHits": 34
 }

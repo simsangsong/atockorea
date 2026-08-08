@@ -8,18 +8,22 @@
   "segments": {
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "The strongest route for travelers who prefer relaxed pacing, photogenic backdrops, and curated café/dessert culture over UNESCO checklist completion. Walking volume is materially lower than the East route, the indoor-fallback density is good (⟦G0⟧ caves + greenhouse, O'sulloc + Innisfree), and the route works equally well on a sunny or partly-cloudy day.",
+      "tm": "Лучший маршрут для тех, кто предпочитает спокойный темп, фотогеничные виды и продуманную культуру кафе и десертов, а не галочки в списке объектов ЮНЕСКО. Пеших участков заметно меньше, чем на восточном маршруте, вариантов укрыться от дождя достаточно (пещеры ⟦G0⟧ и оранжерея, Osulloc и Innisfree), и маршрут одинаково хорош и в солнечный, и в переменно облачный день.",
       "glossary": [
         "⟦G0⟧ = Парк Халлим"
       ]
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Driver-guide handles all parking; Aewol street parking is tight on weekends — private charter solves this"
+      "source_en": "Driver-guide handles all parking; Aewol street parking is tight on weekends — private charter solves this",
+      "tm": "Водитель-гид берёт на себя всю парковку; в Эволе с уличной парковкой по выходным тяжело — индивидуальный чартер снимает эту проблему"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Available at all major stops; cafés have facilities for paying customers"
+      "source_en": "Available at all major stops; cafés have facilities for paying customers",
+      "tm": "Есть на всех основных остановках; в кафе — для гостей, сделавших заказ"
     },
     "/itineraryStops/1/description": {
       "source_en": "The most relaxed and Instagram-friendly route, anchored on Jeju's western coastline of pale sand beaches, subtropical gardens, and tea fields. **⟦G1⟧** delivers the iconic Jeju shot — turquoise shallows, white shell-fragment sand, and **Biyangdo Island** floating offshore. **⟦G2⟧** (annexed to the beach area) is a **100,000 m² horticultural park** with the Hyeopjae and Ssangyong lava caves inside its grounds and seasonal flower displays from camellia (winter) through tulips (spring) to lotus (summer). \n\n**O'sulloc Tea Museum, opened in 2001 by AmorePacific** on a working green-tea estate, draws design-minded visitors for its tea-plantation walks, the **Innisfree Jeju House** next door, and rotating tea-themed café menus including the famed green-tea soft-serve and roll cake. \n\nThe day usually closes along **⟦G0⟧**, a **5 km coastal strip** lined with sea-view cafés and restaurants where afternoon and sunset hours are the local rhythm. \n\nThe driver-guide adapts the sequence depending on tide for the beaches and on weather for the tea fields.",
+      "tm": "Самый спокойный и «инстаграмный» маршрут, построенный вокруг западного побережья Чеджу с его светлыми песчаными пляжами, субтропическими садами и чайными полями. **⟦G1⟧** даёт тот самый кадр Чеджу — бирюзовое мелководье, белый песок из ракушечной крошки и **остров Пияндо**, плывущий у горизонта. **⟦G2⟧** (примыкает к пляжной зоне) — это **садовый парк площадью 100 000 м²** с лавовыми пещерами Хёпчэ и Ссанъён на своей территории и сезонными цветочными экспозициями от камелий (зима) через тюльпаны (весна) до лотосов (лето). \n\n**Чайный музей Osulloc, открытый в 2001 году компанией AmorePacific** на действующей плантации зелёного чая, привлекает ценителей дизайна прогулками по чайным полям, соседним **Innisfree Jeju House** и сменяющимся меню кафе на чайную тему, включая знаменитое мягкое мороженое с зелёным чаем и рулет. \n\nДень обычно завершается вдоль **⟦G0⟧** — **5-километровой прибрежной полосы** с кафе и ресторанами с видом на море, где послеобеденные и закатные часы задают местный ритм. \n\nВодитель-гид подстраивает последовательность под прилив для пляжей и под погоду для чайных полей.",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь",
         "⟦G1⟧ = Пляж Хёпчэ",
@@ -27,77 +31,97 @@
       ]
     },
     "/itineraryStops/1/visitBasics/hours": {
-      "source_en": "Most stops 09:00-18:00; Aewol cafés typically 10:00-22:00 with last-order ~21:30"
+      "source_en": "Most stops 09:00-18:00; Aewol cafés typically 10:00-22:00 with last-order ~21:30",
+      "tm": "Большинство остановок 09:00-18:00; кафе в Эволе обычно 10:00-22:00, последний заказ ~21:30"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "Most stops open year-round; individual cafés close on rotating weekdays"
+      "source_en": "Most stops open year-round; individual cafés close on rotating weekdays",
+      "tm": "Большинство остановок работает круглый год; отдельные кафе закрываются в разные будние дни"
     },
     "/itineraryStops/1/visitBasics/walking": {
-      "source_en": "Low-to-moderate — beach walks, flat park paths, café-to-café strolls; suitable for all ages and mobility levels"
+      "source_en": "Low-to-moderate — beach walks, flat park paths, café-to-café strolls; suitable for all ages and mobility levels",
+      "tm": "От низкой до средней — прогулки по пляжу, ровные дорожки парка, переходы от кафе к кафе; подходит для любого возраста и уровня мобильности"
     },
     "/itineraryStops/1/visitBasics/admission": {
       "source_en": "⟦G0⟧ free; ⟦G1⟧ ~12,000 KRW adult; O'sulloc Tea Museum free; Aewol cafés pay-per-order. Driver-guide assists with park ticket purchase.",
+      "tm": "⟦G0⟧ бесплатно; ⟦G1⟧ ~12 000 KRW для взрослых; Чайный музей Osulloc бесплатно; в кафе Эволя оплата по заказу. Водитель-гид помогает с покупкой билетов в парк.",
       "glossary": [
         "⟦G0⟧ = Пляж Хёпчэ",
         "⟦G1⟧ = Парк Халлим"
       ]
     },
     "/itineraryStops/2/name": {
-      "source_en": "South Route: Waterfalls & Volcanic Coast"
+      "source_en": "South Route: Waterfalls & Volcanic Coast",
+      "tm": "Южный маршрут: водопады и вулканическое побережье"
     },
     "/itineraryStops/2/category": {
-      "source_en": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market"
+      "source_en": "Cheonjiyeon, Jusangjeolli, Sanbangsan, Olle Market",
+      "tm": "Чхонджиён, Чусанджолли, Санбансан, рынок Олле"
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "Hotel pickup and ~60-90 min transfer to the South coast (Seogwipo)"
+      "source_en": "Hotel pickup and ~60-90 min transfer to the South coast (Seogwipo)",
+      "tm": "Посадка у отеля и переезд ~60-90 мин на южное побережье (Согвипхо)"
     },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "Morning waterfall + basalt-cliff stops (Cheonjiyeon then Jusangjeolli)"
+      "source_en": "Morning waterfall + basalt-cliff stops (Cheonjiyeon then Jusangjeolli)",
+      "tm": "Утренние остановки у водопада и базальтовых утёсов (сначала Чхонджиён, затем Чусанджолли)"
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Lunch break in Seogwipo (Olle Market street food, or Jungmun area for sit-down meal)"
+      "source_en": "Lunch break in Seogwipo (Olle Market street food, or Jungmun area for sit-down meal)",
+      "tm": "Перерыв на обед в Согвипхо (уличная еда на рынке Олле или район Чунмун для обеда в ресторане)"
     },
     "/itineraryStops/2/timeUsed/3": {
-      "source_en": "Afternoon Sanbangsan or Yakcheonsa + market browse before return"
+      "source_en": "Afternoon Sanbangsan or Yakcheonsa + market browse before return",
+      "tm": "Днём Санбансан или Якчхонса + прогулка по рынку перед возвращением"
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "⟦G0⟧: 22 m single-tier waterfall with daily night illumination, 1 km flat subtropical-forest trail; Mutae eel (Natural Monument 27) habitat; admission 2,000 KRW",
+      "tm": "⟦G0⟧: одноступенчатый водопад высотой 22 м с ежедневной вечерней подсветкой, ровная тропа 1 км через субтропический лес; место обитания угря мутхэ (природный памятник 27); вход 2 000 KRW",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджиён"
       ]
     },
     "/itineraryStops/2/highlights/1": {
       "source_en": "⟦G0⟧: 1 km of hexagonal basalt columns up to 30-40 m tall, UNESCO Global Geopark; admission ~2,000 KRW",
+      "tm": "⟦G0⟧: 1 км шестигранных базальтовых колонн высотой до 30-40 м, Всемирный геопарк ЮНЕСКО; вход ~2 000 KRW",
       "glossary": [
         "⟦G0⟧ = Утёс Тэпхо Чусанджолли"
       ]
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "Sanbangsan + Yakcheonsa: 395 m trachytic lava dome + Asia's largest Buddhist temple complex; cave-temple climb to 150 m elevation; combined ~1,000-2,500 KRW"
+      "source_en": "Sanbangsan + Yakcheonsa: 395 m trachytic lava dome + Asia's largest Buddhist temple complex; cave-temple climb to 150 m elevation; combined ~1,000-2,500 KRW",
+      "tm": "Санбансан и Якчхонса: трахитовый лавовый купол высотой 395 м и крупнейший буддийский храмовый комплекс Азии; подъём к пещерному храму на высоту 150 м; вместе ~1 000-2 500 KRW"
     },
     "/itineraryStops/2/highlights/3": {
       "source_en": "⟦G0⟧: 620 m covered arcade, ~200 shops + ~140 vendors + 20-stall night market; signature Hallabong tangerines, black pork, octopus buns",
+      "tm": "⟦G0⟧: крытая галерея 620 м, ~200 магазинов, ~140 торговцев и ночной рынок из 20 прилавков; фирменные мандарины халлабон, чёрная свинина и булочки с осьминогом",
       "glossary": [
         "⟦G0⟧ = Рынок Олле Мэиль"
       ]
     },
     "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "For a rainy day on Jeju, this is the strongest of the three named routes — Yakcheonsa main hall, Sanbanggulsa cave, and Olle Market covered arcade together cover ~3-4 hours of indoor time. The Sanbangsan summit itself is closed; the cave temple at 150 m is the visitor endpoint."
+      "source_en": "For a rainy day on Jeju, this is the strongest of the three named routes — Yakcheonsa main hall, Sanbanggulsa cave, and Olle Market covered arcade together cover ~3-4 hours of indoor time. The Sanbangsan summit itself is closed; the cave temple at 150 m is the visitor endpoint.",
+      "tm": "Для дождливого дня на Чеджу это лучший из трёх названных маршрутов — главный зал Якчхонса, пещера Санбангульса и крытая галерея рынка Олле вместе закрывают ~3-4 часа под крышей. Сама вершина Санбансана закрыта; конечная точка для посетителей — пещерный храм на высоте 150 м."
     },
     "/itineraryStops/2/smartNotes/facilities": {
-      "source_en": "Olle Market is the strongest single food stop on Jeju — Jeseong Bakery's octopus buns, mochi-pancakes, and Hallabong-juice stalls. The black-pork restaurants near Sanbangsan/Daejeong are also strong. Yakcheonsa's templestay vegetarian meal is bookable separately."
+      "source_en": "Olle Market is the strongest single food stop on Jeju — Jeseong Bakery's octopus buns, mochi-pancakes, and Hallabong-juice stalls. The black-pork restaurants near Sanbangsan/Daejeong are also strong. Yakcheonsa's templestay vegetarian meal is bookable separately.",
+      "tm": "Рынок Олле — сильнейшая гастрономическая остановка на Чеджу: булочки с осьминогом из пекарни Чесон, блинчики-моти и прилавки с соком халлабон. Рестораны с чёрной свининой рядом с Санбансаном и Тэджоном тоже хороши. Вегетарианский обед в рамках темплстея в Якчхонса бронируется отдельно."
     },
     "/itineraryStops/2/whyOnRoute": {
-      "source_en": "The strongest route for travelers who want geological variety in one day — a temple, a waterfall, a basalt cliff, a volcanic dome, and a traditional market all cover Jeju's signature 'volcanic island' identity. It also has the highest density of indoor-fallback options of the three routes (Yakcheonsa main hall, Olle Market covered arcade, Sanbanggulsa cave) — making it the strongest weather-flexible choice."
+      "source_en": "The strongest route for travelers who want geological variety in one day — a temple, a waterfall, a basalt cliff, a volcanic dome, and a traditional market all cover Jeju's signature 'volcanic island' identity. It also has the highest density of indoor-fallback options of the three routes (Yakcheonsa main hall, Olle Market covered arcade, Sanbanggulsa cave) — making it the strongest weather-flexible choice.",
+      "tm": "Лучший маршрут для тех, кто хочет геологического разнообразия за один день: храм, водопад, базальтовый утёс, вулканический купол и традиционный рынок вместе раскрывают фирменную идентичность Чеджу как вулканического острова. Здесь же самая высокая среди трёх маршрутов концентрация вариантов на случай дождя (главный зал Якчхонса, крытая галерея рынка Олле, пещера Санбангульса) — это делает его самым устойчивым к погоде выбором."
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "Driver-guide handles all parking; Olle Market parking can be tight at weekends — private charter avoids this"
+      "source_en": "Driver-guide handles all parking; Olle Market parking can be tight at weekends — private charter avoids this",
+      "tm": "Водитель-гид берёт на себя всю парковку; на рынке Олле по выходным с парковкой тяжело — индивидуальный чартер этого избегает"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "Available at all major stops; market has multiple"
+      "source_en": "Available at all major stops; market has multiple",
+      "tm": "Есть на всех основных остановках; на рынке их несколько"
     },
     "/itineraryStops/2/description": {
       "source_en": "The most scenically dramatic route, weaving together Jeju's southern volcanic geology, subtropical waterfalls, and traditional market food. **⟦G2⟧** in downtown Seogwipo is a **22 m single-tier waterfall** with a 12 m wide × 20 m deep plunge pool, **illuminated daily 09:00-22:00** and reached via a 1 km flat trail through subtropical forest where camphor trees (Natural Monument 163) grow. \n\n**⟦G0⟧** displays a 1 km coastal stretch of hexagonal basalt columns formed by cooling lava — part of the **Jeju UNESCO Global Geopark**. **⟦G1⟧** is a **395 m trachytic lava dome formed 700,000-800,000 years ago**, with the Sanbanggulsa cave temple at 145-150 m elevation reached by a stair climb; in spring the rapeseed flower fields at the base create the iconic golden-and-volcanic-grey contrast. \n\n**⟦G4⟧** — at **122,100 m²** considered the largest Buddhist temple complex in East Asia, with a 30 m-tall main hall, 5 m wooden Vairocana Buddha, and 18-ton bell — sits between Daepo and Jungmun. **⟦G5⟧** is one of the few waterfalls in Asia that flows directly into the sea, while Seogwipo ⟦G3⟧ closes the day with Hallabong tangerines, black-pork specialties, and Jeseong Bakery's octopus-stuffed buns.",
+      "tm": "Самый зрелищный маршрут, соединяющий южную вулканическую геологию Чеджу, субтропические водопады и еду традиционного рынка. **⟦G2⟧** в центре Согвипхо — это **одноступенчатый водопад высотой 22 м** с чашей шириной 12 м и глубиной 20 м, **с подсветкой ежедневно 09:00-22:00**, к которому ведёт ровная тропа 1 км через субтропический лес с камфорными деревьями (природный памятник 163). \n\n**⟦G0⟧** показывает прибрежный участок длиной 1 км из шестигранных базальтовых колонн, образовавшихся при остывании лавы, — часть **Всемирного геопарка ЮНЕСКО на Чеджу**. **⟦G1⟧** — это **трахитовый лавовый купол высотой 395 м, образовавшийся 700 000-800 000 лет назад**, с пещерным храмом Санбангульса на высоте 145-150 м, куда ведёт лестница; весной поля рапса у подножия создают тот самый контраст золотого и вулканически-серого. \n\n**⟦G4⟧** — площадью **122 100 м²**, считается крупнейшим буддийским храмовым комплексом Восточной Азии, с главным залом высотой 30 м, деревянным Буддой Вайрочаной высотой 5 м и колоколом весом 18 тонн — расположен между Тэпхо и Чунмуном. **⟦G5⟧** — один из немногих водопадов Азии, падающих прямо в море, а ⟦G3⟧ в Согвипхо завершает день мандаринами халлабон, блюдами из чёрной свинины и булочками с осьминогом из пекарни Чесон.",
       "glossary": [
         "⟦G0⟧ = Утёс Тэпхо Чусанджолли",
         "⟦G1⟧ = Гора Санбансан",
@@ -108,19 +132,24 @@
       ]
     },
     "/itineraryStops/2/visitBasics/hours": {
-      "source_en": "Most stops 09:00-17:30. Cheonjiyeon illuminated 09:00-22:00. Olle Market: 07:00-21:00 summer, 07:00-20:00 winter; night market 18:00-24:00 daily."
+      "source_en": "Most stops 09:00-17:30. Cheonjiyeon illuminated 09:00-22:00. Olle Market: 07:00-21:00 summer, 07:00-20:00 winter; night market 18:00-24:00 daily.",
+      "tm": "Большинство остановок 09:00-17:30. Чхонджиён с подсветкой 09:00-22:00. Рынок Олле: 07:00-21:00 летом, 07:00-20:00 зимой; ночной рынок 18:00-24:00 ежедневно."
     },
     "/itineraryStops/2/visitBasics/closed": {
-      "source_en": "Most stops open year-round; individual market shops close on rotating weekdays"
+      "source_en": "Most stops open year-round; individual market shops close on rotating weekdays",
+      "tm": "Большинство остановок работает круглый год; отдельные лавки рынка закрываются в разные будние дни"
     },
     "/itineraryStops/2/visitBasics/walking": {
-      "source_en": "Moderate — Cheonjiyeon trail flat 1 km, Sanbangsan stairs 0.6 mi to cave temple, market browse on flat covered arcade. Sanbangsan stairs are the bottleneck for low-mobility travelers."
+      "source_en": "Moderate — Cheonjiyeon trail flat 1 km, Sanbangsan stairs 0.6 mi to cave temple, market browse on flat covered arcade. Sanbangsan stairs are the bottleneck for low-mobility travelers.",
+      "tm": "Средняя — ровная тропа 1 км у Чхонджиёна, лестница 0,6 мили на Санбансане до пещерного храма, прогулка по ровной крытой галерее рынка. Лестница на Санбансане — самое узкое место для гостей с ограниченной мобильностью."
     },
     "/itineraryStops/2/visitBasics/admission": {
-      "source_en": "Cheonjiyeon 2,000 KRW; Jusangjeolli ~2,000 KRW; Sanbanggulsa ~1,000 KRW; Yakcheonsa free; Olle Market free entry. Driver-guide assists with tickets."
+      "source_en": "Cheonjiyeon 2,000 KRW; Jusangjeolli ~2,000 KRW; Sanbanggulsa ~1,000 KRW; Yakcheonsa free; Olle Market free entry. Driver-guide assists with tickets.",
+      "tm": "Чхонджиён 2 000 KRW; Чусанджолли ~2 000 KRW; Санбангульса ~1 000 KRW; Якчхонса бесплатно; вход на рынок Олле свободный. Водитель-гид помогает с билетами."
     },
     "/itineraryStops/3/name": {
-      "source_en": "Custom Route: Build Your Own Day"
+      "source_en": "Custom Route: Build Your Own Day",
+      "tm": "Индивидуальный маршрут: составьте свой день"
     }
   },
   "glossaryTokens": {
@@ -154,5 +183,5 @@
       "⟦G5⟧": "Водопад Чонбан"
     }
   },
-  "tmHits": 0
+  "tmHits": 29
 }

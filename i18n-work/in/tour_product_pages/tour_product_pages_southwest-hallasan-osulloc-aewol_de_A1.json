@@ -7,31 +7,38 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9-Hour Small Group"
+      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9-Hour Small Group",
+      "tm": "Südwest-Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9 Stunden Kleingruppe"
     },
     "/seo/pageTitle": {
-      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc Tour | AtoC Korea"
+      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc Tour | AtoC Korea",
+      "tm": "Südwest-Jeju Hallasan 1100 Highland + O'Sulloc Tour | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "Southwest Jeju small-group year-round day tour: Hallasan 1100 Highland Ramsar wetland (flat boardwalk) → ⟦G0⟧ (UNESCO Geopark) → Cheonjeyeon Waterfall → lunch → O'Sulloc Tea Museum + green tea fields → Aewol Handam coastal cafe trail → Iho Tewoo Beach sunset (horse lighthouses). 9 hours, 7 stops, all admissions included.",
+      "tm": "Ganzjährige Kleingruppen-Tagestour im Südwesten von Jeju: Hallasan 1100 Highland Ramsar-Feuchtgebiet (flacher Holzsteg) → ⟦G0⟧ (UNESCO-Geopark) → Cheonjeyeon-Wasserfall → Mittagessen → O'Sulloc Tea Museum + Grünteefelder → Küstencafé-Weg Aewol Handam → Sonnenuntergang am Iho Tewoo Beach (Pferdeleuchttürme). 9 Stunden, 7 Stopps, alle Eintritte inklusive.",
       "glossary": [
         "⟦G0⟧ = Daepo-Jusangjeolli-Klippe"
       ]
     },
     "/seo/metaDescription": {
       "source_en": "Small-group southwest Jeju tour: Hallasan 1100 Highland Ramsar wetland, Daepo Jusangjeolli, Cheonjeyeon Waterfall, O'Sulloc tea fields, ⟦G0⟧, Iho Tewoo sunset.",
+      "tm": "Kleingruppentour im Südwesten von Jeju: Hallasan 1100 Highland Ramsar-Feuchtgebiet, Daepo Jusangjeolli, Cheonjeyeon-Wasserfall, O'Sulloc-Teefelder, ⟦G0⟧, Sonnenuntergang in Iho Tewoo.",
       "glossary": [
         "⟦G0⟧ = Caféstraße Aewol"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Southwest Jeju small group tour"
+      "source_en": "Southwest Jeju small group tour",
+      "tm": "Kleingruppentour Südwest-Jeju"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Hallasan 1100 Highland tour"
+      "source_en": "Hallasan 1100 Highland tour",
+      "tm": "Hallasan 1100 Highland Tour"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "O'Sulloc Tea Museum tour"
+      "source_en": "O'Sulloc Tea Museum tour",
+      "tm": "O'Sulloc Tea Museum Tour"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "⟦G0⟧ tour",
@@ -41,26 +48,32 @@
       ]
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Iho Tewoo sunset tour"
+      "source_en": "Iho Tewoo sunset tour",
+      "tm": "Iho Tewoo Sonnenuntergangstour"
     },
     "/hero/meta/stops": {
       "source_en": "7 stops",
       "tm": "7 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Jeju Südwest"
     },
     "/hero/meta/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 Stunden"
     },
     "/hero/pills/0": {
-      "source_en": "Great for First-Time Jeju Visitors"
+      "source_en": "Great for First-Time Jeju Visitors",
+      "tm": "Ideal für Jeju-Erstbesucher"
     },
     "/hero/pills/1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Jeju Südwest"
     },
     "/hero/tagline": {
-      "source_en": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish"
+      "source_en": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
+      "tm": "Eine Feuchtgebietswanderung im 1100 Highland, vulkanische Klippen, ein Wasserfallweg, Teefelder und zum Abschluss der Sonnenuntergang von Aewol bis Iho Tewoo"
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Potential",
@@ -107,7 +120,8 @@
       "tm": "Tempo"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Ausgewogen"
     },
     "/subnavItems/0/label": {
       "source_en": "Overview",
@@ -130,55 +144,71 @@
       "tm": "Bewertungen"
     },
     "/catalog_card/tags/1": {
-      "source_en": "제주"
+      "source_en": "제주",
+      "tm": "Jeju"
     },
     "/catalog_card/tags/3": {
-      "source_en": "자연"
+      "source_en": "자연",
+      "tm": "Natur"
     },
     "/catalog_card/tags/4": {
-      "source_en": "카페"
+      "source_en": "카페",
+      "tm": "Café"
     },
     "/catalog_card/tags/5": {
-      "source_en": "일몰"
+      "source_en": "일몰",
+      "tm": "Sonnenuntergang"
     },
     "/catalog_card/title": {
-      "source_en": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo"
+      "source_en": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+      "tm": "Südwest-Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Great for First-Time Jeju Visitors"
+      "source_en": "Great for First-Time Jeju Visitors",
+      "tm": "Ideal für Jeju-Erstbesucher"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Jeju Südwest"
     },
     "/catalog_card/region": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Jeju Südwest"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 Stunden"
     },
     "/catalog_card/subtitle": {
-      "source_en": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish"
+      "source_en": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
+      "tm": "Der Feuchtgebiets-Holzsteg im 1100 Highland, vulkanische Klippen, ein Wasserfallweg, Teefelder und zum Abschluss der Sonnenuntergang von Aewol bis Iho Tewoo"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, ⟦G0⟧, and the Iho Tewoo sunset.",
+      "tm": "Eine ausgewogene Tagesroute durch den Südwesten von Jeju, die das Feuchtgebiet im Hallasan 1100 Highland, die vulkanische Küste, den Cheonjeyeon-Wasserfall, die O'Sulloc-Teefelder, ⟦G0⟧ und den Sonnenuntergang in Iho Tewoo verbindet.",
       "glossary": [
         "⟦G0⟧ = Caféstraße Aewol"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Jeju Südwest"
     },
     "/headlineLine2": {
-      "source_en": "Hallasan, O'Sulloc, Aewol & Iho Tewoo"
+      "source_en": "Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+      "tm": "Hallasan, O'Sulloc, Aewol & Iho Tewoo"
     },
     "/pickup_dropoff/notes": {
-      "source_en": "Pickup time 08:30–09:00 a.m., based on hotel lobbies within Jeju City; the final time is confirmed the evening before. Return is after the Iho Tewoo sunset, and depending on circumstances airport pickup/drop-off may also be possible."
+      "source_en": "Pickup time 08:30–09:00 a.m., based on hotel lobbies within Jeju City; the final time is confirmed the evening before. Return is after the Iho Tewoo sunset, and depending on circumstances airport pickup/drop-off may also be possible.",
+      "tm": "Abholung zwischen 08:30 und 09:00 Uhr, ausgehend von Hotellobbys innerhalb der Stadt Jeju; die endgültige Uhrzeit wird am Vorabend bestätigt. Die Rückfahrt erfolgt nach dem Sonnenuntergang in Iho Tewoo, und je nach Umständen ist auch eine Abholung bzw. ein Absetzen am Flughafen möglich."
     },
     "/pickup_dropoff/dropoff_points/0/name": {
-      "source_en": "Jeju City hotels (return)"
+      "source_en": "Jeju City hotels (return)",
+      "tm": "Hotels in Jeju City (Rückfahrt)"
     },
     "/pickup_dropoff/meeting_points/0/name": {
-      "source_en": "Jeju City hotel lobbies"
+      "source_en": "Jeju City hotel lobbies",
+      "tm": "Hotellobbys in Jeju City"
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -189,108 +219,136 @@
       "tm": "Person"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup and Return"
+      "source_en": "Pickup and Return",
+      "tm": "Abholung und Rückfahrt"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Pickup takes place at your hotel lobby between 8:20 and 8:50 a.m."
+      "source_en": "Pickup takes place at your hotel lobby between 8:20 and 8:50 a.m.",
+      "tm": "Die Abholung erfolgt in Ihrer Hotellobby zwischen 08:20 und 08:50 Uhr."
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Return is scheduled between 6:30 and 7:00 p.m., after the Iho Tewoo sunset."
+      "source_en": "Return is scheduled between 6:30 and 7:00 p.m., after the Iho Tewoo sunset.",
+      "tm": "Die Rückfahrt ist zwischen 18:30 und 19:00 Uhr vorgesehen, nach dem Sonnenuntergang in Iho Tewoo."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Airport pickup/drop-off may be possible on request."
+      "source_en": "Airport pickup/drop-off may be possible on request.",
+      "tm": "Abholung bzw. Absetzen am Flughafen ist auf Anfrage möglich."
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Your exact pickup time is confirmed the night before."
+      "source_en": "Your exact pickup time is confirmed the night before.",
+      "tm": "Ihre genaue Abholzeit wird am Vorabend bestätigt."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Hotel-lobby pickup in the Jeju City area"
+      "source_en": "Hotel-lobby pickup in the Jeju City area",
+      "tm": "Abholung an der Hotellobby im Gebiet Jeju City"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "Walking and Terrain",
       "tm": "Fußwege und Gelände"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Total walking across the day is usually around 3.5–4.5 km."
+      "source_en": "Total walking across the day is usually around 3.5–4.5 km.",
+      "tm": "Die gesamte Gehstrecke des Tages beträgt in der Regel etwa 3,5–4,5 km."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "1100 Highland: about 1 km of flat boardwalk (around 20 min), the easiest section."
+      "source_en": "1100 Highland: about 1 km of flat boardwalk (around 20 min), the easiest section.",
+      "tm": "1100 Highland: rund 1 km flacher Holzsteg (ca. 20 Min.), der einfachste Abschnitt."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Jusangjeolli: an easy coastal walking path."
+      "source_en": "Jusangjeolli: an easy coastal walking path.",
+      "tm": "Jusangjeolli: ein leichter Küstenspazierweg."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Cheonjeyeon: forest path, stairs, and occasionally slippery sections."
+      "source_en": "Cheonjeyeon: forest path, stairs, and occasionally slippery sections.",
+      "tm": "Cheonjeyeon: Waldweg, Treppen und gelegentlich rutschige Abschnitte."
     },
     "/practicalAccordionItems/1/content/4": {
-      "source_en": "O'Sulloc, Aewol, Iho Tewoo: comfortable stops where you can take it easy."
+      "source_en": "O'Sulloc, Aewol, Iho Tewoo: comfortable stops where you can take it easy.",
+      "tm": "O'Sulloc, Aewol, Iho Tewoo: bequeme Stopps, an denen Sie es ruhig angehen lassen können."
     },
     "/practicalAccordionItems/1/content/5": {
-      "source_en": "Walking shoes with good grip are recommended."
+      "source_en": "Walking shoes with good grip are recommended.",
+      "tm": "Wanderschuhe mit gutem Grip werden empfohlen."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Moderate overall, and manageable for most guests"
+      "source_en": "Moderate overall, and manageable for most guests",
+      "tm": "Insgesamt mittel und für die meisten Gäste gut machbar"
     },
     "/practicalAccordionItems/2/title": {
       "source_en": "Weather and Closure Adjustments",
       "tm": "Anpassungen bei Wetter und Schließungen"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Light rain: the tour usually runs as planned."
+      "source_en": "Light rain: the tour usually runs as planned.",
+      "tm": "Leichter Regen: Die Tour findet in der Regel wie geplant statt."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "If Road 1100 is closed due to heavy snow, heavy rain, or icing: 1100 Highland may be adjusted to an indoor alternative (e.g., the Jeju National Museum)."
+      "source_en": "If Road 1100 is closed due to heavy snow, heavy rain, or icing: 1100 Highland may be adjusted to an indoor alternative (e.g., the Jeju National Museum).",
+      "tm": "Wenn die Straße 1100 wegen starken Schneefalls, starken Regens oder Eisglätte gesperrt ist: Das 1100 Highland kann durch eine Alternative in Innenräumen ersetzt werden (z. B. das Jeju National Museum)."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "In strong wind: time at Jusangjeolli, Aewol, or Iho Tewoo may be shortened."
+      "source_en": "In strong wind: time at Jusangjeolli, Aewol, or Iho Tewoo may be shortened.",
+      "tm": "Bei starkem Wind: Die Zeit in Jusangjeolli, Aewol oder Iho Tewoo kann verkürzt werden."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "If the weather worsens in the afternoon: a larger share of the afternoon may be spent at O'Sulloc."
+      "source_en": "If the weather worsens in the afternoon: a larger share of the afternoon may be spent at O'Sulloc.",
+      "tm": "Wenn sich das Wetter am Nachmittag verschlechtert: Ein größerer Teil des Nachmittags kann bei O'Sulloc verbracht werden."
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "If a particular stop is closed: an alternative stop may be used."
+      "source_en": "If a particular stop is closed: an alternative stop may be used.",
+      "tm": "Wenn ein bestimmter Stopp geschlossen ist: Es kann ein alternativer Stopp genutzt werden."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "The tour usually runs, with changes if needed"
+      "source_en": "The tour usually runs, with changes if needed",
+      "tm": "Die Tour findet in der Regel statt, mit Änderungen bei Bedarf"
     },
     "/practicalAccordionItems/3/title": {
       "source_en": "What to Wear and Bring",
       "tm": "Was anziehen und mitbringen"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Shoes with good grip"
+      "source_en": "Shoes with good grip",
+      "tm": "Schuhe mit gutem Grip"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Layered clothing for mountain and coastal temperature differences"
+      "source_en": "Layered clothing for mountain and coastal temperature differences",
+      "tm": "Kleidung im Zwiebellook für die Temperaturunterschiede zwischen Berg und Küste"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "A light windbreaker"
+      "source_en": "A light windbreaker",
+      "tm": "Eine leichte Windjacke"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Hat and sunscreen"
+      "source_en": "Hat and sunscreen",
+      "tm": "Hut und Sonnenschutz"
     },
     "/practicalAccordionItems/3/content/4": {
       "source_en": "Water bottle",
       "tm": "Wasserflasche"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Good shoes, layers, and a light jacket"
+      "source_en": "Good shoes, layers, and a light jacket",
+      "tm": "Gute Schuhe, mehrere Kleidungsschichten und eine leichte Jacke"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "What’s Included / Not Included"
+      "source_en": "What’s Included / Not Included",
+      "tm": "Inbegriffen / Nicht inbegriffen"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "English-speaking guide"
+      "source_en": "English-speaking guide",
+      "tm": "Englischsprachiger Guide"
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Small-group vehicle",
       "tm": "Fahrzeug für Kleingruppen"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Jeju City area hotel pickup and drop-off"
+      "source_en": "Jeju City area hotel pickup and drop-off",
+      "tm": "Abholung und Rückfahrt zum Hotel im Gebiet Jeju City"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "All admission tickets"
+      "source_en": "All admission tickets",
+      "tm": "Alle Eintrittskarten"
     },
     "/practicalAccordionItems/4/content/4": {
       "source_en": "Bottled water",
@@ -309,7 +367,24 @@
       "tm": "Trinkgeld für den Guide"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Guide, vehicle, pickup, and admission included"
+      "source_en": "Guide, vehicle, pickup, and admission included",
+      "tm": "Guide, Fahrzeug, Abholung und Eintritt inbegriffen"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Cancellation",
+      "tm": "Stornierung"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Stornierungen am selben Tag und Nichterscheinen werden nicht erstattet."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     }
   },
   "glossaryTokens": {
@@ -326,5 +401,5 @@
       "⟦G0⟧": "Caféstraße Aewol"
     }
   },
-  "tmHits": 29
+  "tmHits": 92
 }

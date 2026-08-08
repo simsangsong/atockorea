@@ -7,132 +7,164 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "First-time visitors to Korea wanting a mountain-and-coast day from a Seoul base"
+      "source_en": "First-time visitors to Korea wanting a mountain-and-coast day from a Seoul base",
+      "tm": "Les primo-visiteurs en Corée qui veulent une journée montagne et côte au départ de Séoul"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Travelers drawn to Seoraksan's autumn foliage and granite peaks"
+      "source_en": "Travelers drawn to Seoraksan's autumn foliage and granite peaks",
+      "tm": "Les voyageurs attirés par les feuillages d’automne et les sommets de granit du Seoraksan"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Anyone interested in Korean Buddhist heritage — Naksansa is a thousand-year seaside temple"
+      "source_en": "Anyone interested in Korean Buddhist heritage — Naksansa is a thousand-year seaside temple",
+      "tm": "Quiconque s’intéresse au patrimoine bouddhique coréen — Naksansa est un temple millénaire au bord de la mer"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Photography enthusiasts wanting mountain, temple, and East Sea coastline in one day"
+      "source_en": "Photography enthusiasts wanting mountain, temple, and East Sea coastline in one day",
+      "tm": "Les passionnés de photographie qui veulent la montagne, un temple et le littoral de la mer de l’Est en une journée"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who want a slow-paced single-stop experience"
+      "source_en": "Travelers who want a slow-paced single-stop experience",
+      "tm": "Les voyageurs qui recherchent une expérience lente, sur un seul site"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Guests who can't travel on a Monday or Thursday (the only departure days)"
+      "source_en": "Guests who can't travel on a Monday or Thursday (the only departure days)",
+      "tm": "Les voyageurs qui ne peuvent pas partir un lundi ou un jeudi (les seuls jours de départ)"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Mobility-limited travelers — Seoraksan and Naksansa both have stairs and uneven paths"
+      "source_en": "Mobility-limited travelers — Seoraksan and Naksansa both have stairs and uneven paths",
+      "tm": "Les voyageurs à mobilité réduite — le Seoraksan et Naksansa comportent tous deux des escaliers et des sentiers irréguliers"
     },
     "/whyTourWorks/lessIdealFor/3": {
       "source_en": "Visitors hoping to swim — ⟦G0⟧ is a walking stop here, not a swim stop (and the tour runs year-round)",
+      "tm": "Les visiteurs qui espèrent se baigner — ⟦G0⟧ est ici une étape de promenade, pas de baignade (et le circuit fonctionne toute l'année)",
       "glossary": [
         "⟦G0⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Mountain first, coast after"
+      "source_en": "Mountain first, coast after",
+      "tm": "La montagne d’abord, la côte ensuite"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "source_en": "Seoraksan is the farthest and most physical stop, so it is visited first while energy is freshest. ⟦G0⟧ and ⟦G1⟧ sit together on the Yangyang coast on the natural return route — no backtracking.",
+      "tm": "Le Seoraksan est l'étape la plus éloignée et la plus physique : on la visite donc en premier, quand l'énergie est intacte. ⟦G0⟧ et ⟦G1⟧ sont voisins sur la côte de Yangyang, sur la route naturelle du retour — aucun retour en arrière.",
       "glossary": [
         "⟦G0⟧ = Temple Naksansa",
         "⟦G1⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Mountain → temple → beach"
+      "source_en": "Mountain → temple → beach",
+      "tm": "Montagne → temple → plage"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
       "source_en": "The day moves from highest energy (Seoraksan stairs and optional cable car) to medium (Naksansa's cliff paths) to lowest (a flat hour on ⟦G0⟧). Photo style progresses from granite ridge to seaside temple to open coastline.",
+      "tm": "La journée passe du plus intense (les escaliers du Seoraksan et le téléphérique en option) au moyen (les sentiers de falaise de Naksansa) au plus doux (une heure de plat sur ⟦G0⟧). Le registre photographique évolue de la crête de granit au temple maritime, puis au littoral ouvert.",
       "glossary": [
         "⟦G0⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Two landscapes, one stream"
+      "source_en": "Two landscapes, one stream",
+      "tm": "Deux paysages, un même cours d’eau"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
       "source_en": "The Namdaecheon Stream that meets the sea at ⟦G0⟧ begins up in Seoraksan — the mountain and the coast on this itinerary are literally linked by water.",
+      "tm": "Le ruisseau Namdaecheon, qui rejoint la mer à ⟦G0⟧, prend sa source en haut du Seoraksan — la montagne et la côte de cet itinéraire sont littéralement reliées par l’eau.",
       "glossary": [
         "⟦G0⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Pacing & geography"
+      "source_en": "Pacing & geography",
+      "tm": "Rythme et géographie"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
       "source_en": "bg-amber-50/80",
       "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "All three stops are free to enter"
+      "source_en": "All three stops are free to enter",
+      "tm": "Les trois étapes sont d’entrée libre"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
       "source_en": "Seoraksan park entrance, ⟦G0⟧ (free since 2023), and ⟦G1⟧ all have no admission fee — the only optional paid item is the Seorak Cable Car (₩16,000 round-trip, own expense).",
+      "tm": "L'entrée du parc du Seoraksan, ⟦G0⟧ (gratuit depuis 2023) et ⟦G1⟧ n'ont aucun droit d'entrée — le seul supplément facultatif est le téléphérique du Seorak (₩16 000 aller-retour, à votre charge).",
       "glossary": [
         "⟦G0⟧ = Temple Naksansa",
         "⟦G1⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "Two pickup points across Seoul"
+      "source_en": "Two pickup points across Seoul",
+      "tm": "Deux points de prise en charge dans Séoul"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "Hongik (Mapo-gu) at 07:00 and ⟦G0⟧ (Jung-gu) at 07:30 cover Seoul's two main accommodation clusters — guests choose the exit closest to their hotel.",
+      "tm": "Hongik (Mapo-gu) à 07h00 et ⟦G0⟧ (Jung-gu) à 07h30 couvrent les deux principaux pôles d'hébergement de Séoul — les voyageurs choisissent la sortie la plus proche de leur hôtel.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Tight coastal cluster"
+      "source_en": "Tight coastal cluster",
+      "tm": "Un groupe côtier resserré"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
       "source_en": "⟦G0⟧ and ⟦G1⟧ are adjacent on the Yangyang coast, so the afternoon spends time at the stops rather than in transit between them.",
+      "tm": "⟦G0⟧ et ⟦G1⟧ sont voisins sur la côte de Yangyang : l’après-midi se passe donc sur les sites plutôt que sur la route entre eux.",
       "glossary": [
         "⟦G0⟧ = Temple Naksansa",
         "⟦G1⟧ = Plage de Naksan"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "Why this works in 12 hours"
+      "source_en": "Why this works in 12 hours",
+      "tm": "Pourquoi cela tient en 12 heures"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-pink-50/80"
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Seoraksan has stairs (cable car is optional)"
+      "source_en": "Seoraksan has stairs (cable car is optional)",
+      "tm": "Le Seoraksan comporte des escaliers (le téléphérique est facultatif)"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "The Tongildaebul + Sinheungsa walk is flat and accessible; steeper trails and the Gwongeumseong platform have rocky steps. The cable car is on-site own-expense and not bookable in advance."
+      "source_en": "The Tongildaebul + Sinheungsa walk is flat and accessible; steeper trails and the Gwongeumseong platform have rocky steps. The cable car is on-site own-expense and not bookable in advance.",
+      "tm": "La promenade Tongildaebul + Sinheungsa est plate et accessible ; les sentiers plus raides et la plate-forme de Gwongeumseong comportent des marches rocailleuses. Le téléphérique se paie sur place, à votre charge, et n’est pas réservable à l’avance."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Departs Mondays & Thursdays only"
+      "source_en": "Departs Mondays & Thursdays only",
+      "tm": "Départs les lundis et jeudis uniquement"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "This is a fixed-schedule coach tour with two departure days a week. Book the correct date — Monday or Thursday — when you reserve."
+      "source_en": "This is a fixed-schedule coach tour with two departure days a week. Book the correct date — Monday or Thursday — when you reserve.",
+      "tm": "Il s’agit d’un circuit en autocar à horaires fixes, avec deux jours de départ par semaine. Réservez la bonne date — un lundi ou un jeudi."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Long day from an early start"
+      "source_en": "Long day from an early start",
+      "tm": "Une longue journée, avec un départ matinal"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "This is a coach group tour — about 12 hours total including ~5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider a private chartered car day trip."
+      "source_en": "This is a coach group tour — about 12 hours total including ~5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider a private chartered car day trip.",
+      "tm": "Il s'agit d'un circuit de groupe en autocar — environ 12 heures au total, dont ~5 heures de route. Les voyageurs qui souhaitent une journée plus courte ou un temps libre illimité aux étapes devraient envisager une excursion en voiture privée avec chauffeur."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "Trade-offs honestly"
+      "source_en": "Trade-offs honestly",
+      "tm": "Les compromis, en toute franchise"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-sky-50/80",
       "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this Seoul day moves"
+      "source_en": "How this Seoul day moves",
+      "tm": "Comment se déroule cette journée au départ de Séoul"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "Early Hongik/⟦G2⟧ pickup at 07:00/07:30; ~2.5 hr northeast drive to Seoraksan for the day's mountain anchor; ~40 min to the Yangyang coast (lunch en route) for the cliffside ⟦G0⟧; a few minutes down to ⟦G1⟧ for the day's gentlest chapter; return to Seoul by 18:45-19:15. Departs Mondays and Thursdays only.",
+      "tm": "Prise en charge matinale à Hongik ou ⟦G2⟧ à 07h00/07h30 ; ~2,5 h de route vers le nord-est jusqu'au Seoraksan, l'ancrage montagnard de la journée ; ~40 min jusqu'à la côte de Yangyang (déjeuner en chemin) pour ⟦G0⟧ à flanc de falaise ; quelques minutes plus bas jusqu'à ⟦G1⟧ pour le chapitre le plus doux de la journée ; retour à Séoul entre 18h45 et 19h15. Départs les lundis et jeudis uniquement.",
       "glossary": [
         "⟦G0⟧ = Temple Naksansa",
         "⟦G1⟧ = Plage de Naksan",
@@ -171,5 +203,5 @@
       "⟦G2⟧": "Myeongdong"
     }
   },
-  "tmHits": 2
+  "tmHits": 34
 }

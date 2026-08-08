@@ -1,0 +1,261 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:ru:A2",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "ru",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Travelers who only have one day in Jeju"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "First-time visitors who want the island's UNESCO sites"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Travelers who want iconic landmarks and local culture together"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Travelers who enjoy active, full-day sightseeing"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who prefer a slow, relaxed pace"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers who want to avoid stairs or uphill walking"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Groups traveling with very young children"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Guests who are uncomfortable in cool, dim cave passages"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Open on the Hallasan highland"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Starting at the 1,100 m alpine wetland sets the day against Jeju's mountain core before the long cross-island drive begins."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Keep the south coast in the middle"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Jusangjeolli, Jeongbang and lunch hold the west-to-east flow together while keeping the visual density high through midday."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Finish in the east with crater and cave"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Haenyeo culture, the Seongsan climb and the ⟦G0⟧ turn the eastern leg into a strong UNESCO finale rather than a string of separate stops.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Built to cover Jeju's best in one day"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Three UNESCO World Heritage sites"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Hallasan, ⟦G0⟧ and Manjanggul are all part of Jeju's UNESCO inscription — the highest UNESCO density possible in a single Jeju day.",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "A living cultural layer"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "The haenyeo free-diving show adds UNESCO Intangible Cultural Heritage to a day otherwise built on volcanic landforms."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Maximum value for the time"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Mountain, cliffs, waterfall, culture, crater and cave in one circuit — designed so a single day still feels like a complete Jeju trip."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Why this day feels especially substantial"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Haenyeo show is weather-dependent"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "The open-air free-diving demonstration can be cancelled in high seas; on those days the route visits the Haenyeo Museum instead."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Manjanggul has periodic closures"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "If the lava tube is closed for conservation or capacity, the nearby Ilchul Land Micheon Cave lava tube is used as the alternate."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Return time may shift slightly"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "Traffic, group walking speed and crowd levels can all cause small changes to the final return time."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "When on-site conditions change"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-slate-50/80",
+      "tm": "bg-slate-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How the day flows"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "The day runs from the Hallasan 1100 highland through the south-coast cliffs and waterfall, then crosses east to Seongsan for lunch beneath Ilchulbong, a live haenyeo free-diving show, the ⟦G1⟧ climb, and the ⟦G0⟧. About 180 km and roughly 5 hours of driving in total; pickup is usually 08:00–08:35, with return to Jeju City around 18:00–18:30.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Yes. This route is built to cover Jeju's core landmarks — three UNESCO sites, haenyeo culture, cliffs and a waterfall — in one day, at a faster pace than a standard day tour."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "If I only have one day in Jeju, is this the right route?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Three: the Hallasan 1100 highland (part of the Hallasan World Heritage area), ⟦G1⟧, and the ⟦G0⟧ — all within Jeju's 'Volcanic Island and Lava Tubes' inscription. The haenyeo show is also UNESCO Intangible Cultural Heritage.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Which stops are the UNESCO sites?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "The open-air free-diving demonstration depends on sea conditions. If it is cancelled, the route visits the Haenyeo Museum nearby, which tells the same women-divers' story indoors."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "What happens if the haenyeo show is cancelled?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Manjanggul closes periodically for conservation and capacity. When it is closed, the tour visits the nearby Ilchul Land Micheon Cave — another lava tube from the same volcanic system — instead."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Is Manjanggul always open?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "It is more active than a typical small-group day tour: the route covers most of the island and includes the Seongsan climb, the Jeongbang stairs and the Manjanggul cave walk."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Will this route feel tiring?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Possibly, but only with a generous evening buffer. If your flight timing is tight, this route is not recommended."
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "Can I join if I arrive in or leave Jeju on the same day?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "It sits on the way back toward Jeju City and works as a cool, sheltered UNESCO finale after a long day of open-air landforms."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Why is Manjanggul scheduled last?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local operator designing this loop for travelers who have one day and want Jeju's most recognizable landmarks — a Hallasan highland, columnar cliffs, an ocean waterfall, a living haenyeo show, the Seongsan tuff cone and the ⟦G0⟧ — in a single circuit.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Jeju's best, in a single day"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Three UNESCO sites plus haenyeo culture"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "Route specialists who run the full-island loop regularly — the stop sequence minimizes backtracking and times the south-coast and haenyeo stops to tide, light and demonstration schedules."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Focused on iconic landmarks"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "From the Hallasan highland to a UNESCO lava tube"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Small-group format keeps the day flexible — the guide can swap the haenyeo show for the museum, or Manjanggul for the Ilchul Land lava tube, without breaking the route."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Small-group operation"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Better able to adapt to closures and on-site conditions"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring",
+      "tm": "Весна"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Mountain air feels especially fresh, and island-wide visibility is often cleaner and brighter."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer",
+      "tm": "Лето"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Days are longest, and the coastal colors tend to feel the most vivid and saturated."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn",
+      "tm": "Осень"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clear skies often make the full-island route feel especially satisfying from start to finish."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter",
+      "tm": "Зима"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "The air turns sharper and clearer, and the contrast between mountain and sea becomes even stronger."
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/staticQuestions/1/answer": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/bookingTrustItems/0/body": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
+    }
+  },
+  "tmHits": 10
+}

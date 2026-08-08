@@ -3,15 +3,19 @@
  *
  * middleware.ts SUPPORTED_LOCALES grew to 10 when fr/de/it/ru were added with
  * their messages/*.json, but the product page's own whitelist stayed at 5, so
- * /fr/tour-product/<slug> routed fine and then called notFound().
+ * /fr/tour-product/<slug> routed fine and then called notFound(). The fix at
+ * the time was a fallback, not a wider whitelist — listing a locale with no
+ * rows would have served an empty page.
  *
- * tour_product_pages only holds en/ko/ja/es/zh/zh-TW (verified live: 34 slugs
- * each, zero rows for fr/de/it/ru), so the fix is a fallback, not a wider
- * whitelist — listing a locale we cannot render would serve an empty page.
+ * 🔴 2026-08-08: fr/de/it/ru now HAVE rows (all 21 live slugs, verified by DB
+ * join), so they moved out of the fallback list and into the served list. The
+ * assertion that used to pin the trap open ("fr must not be served") is gone —
+ * it described a content gap that no longer exists.
  *
- * This test is the guard: every locale the site routes must either resolve to a
- * db locale or be declared an English-fallback locale. Adding a locale to
- * middleware without doing one of the two fails here instead of in production.
+ * The invariant this file guards is unchanged and is what matters: every locale
+ * the site routes must either resolve to a db locale or be declared an
+ * English-fallback locale. Adding a locale to middleware without doing one of
+ * the two fails here instead of in production.
  */
 import { readFileSync } from 'node:fs';
 import { join } from 'node:path';
@@ -36,9 +40,16 @@ function supportedLocalesFromMiddleware(): string[] {
 describe('P1-7 product detail routing covers every site locale', () => {
   const supported = supportedLocalesFromMiddleware();
 
-  it('middleware advertises more locales than the page can render (the trap)', () => {
+  it('every locale the middleware advertises is actually served by this page', () => {
     expect(supported).toEqual(expect.arrayContaining(['fr', 'de', 'it', 'ru']));
-    expect(TOUR_PRODUCT_URL_LOCALES).not.toEqual(expect.arrayContaining(['fr']));
+    // The four expansion locales are served, not redirected to English.
+    for (const locale of ['fr', 'de', 'it', 'ru']) {
+      expect(tourProductDbLocaleFromUrlLocale(locale)).toBe(locale);
+      expect(tourProductLocaleNeedsEnglishFallback(locale)).toBe(false);
+    }
+    // Nothing is parked in the fallback list right now — if a future locale
+    // lands in middleware before its rows exist, it belongs there, not here.
+    expect(TOUR_PRODUCT_FALLBACK_URL_LOCALES).toEqual([]);
   });
 
   it.each(supportedLocalesFromMiddleware())('%s resolves or falls back — never 404', (locale) => {

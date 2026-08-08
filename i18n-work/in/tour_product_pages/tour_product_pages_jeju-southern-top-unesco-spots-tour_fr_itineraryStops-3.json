@@ -6,194 +6,278 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
+    "/itineraryStops/3/description": {
+      "source_en": "**Yakcheonsa (약천사, 藥泉寺), at 122,100 ㎡, is counted among the largest temples in East Asia** — a vast temple in Daepo-dong, Seogwipo. Its name means 'the temple where medicinal spring water flows', as it was built on the site of the old 'Yaksuam' hermitage, where a year-round spring of healing water rises. **Monk Hyein broke ground in 1981 and completed it in 1996.** \n\nThe main hall, the **Daejeokgwangjeon (大寂光殿), reaches about 30 m in height with a total floor area of about 3,305 ㎡** — one of the largest single Buddhist halls in the East, built in the early-Joseon temple-architecture style. Inside, a **5 m-tall Vairocana Buddha (Korea's largest wooden seated Buddha)** is enshrined on a 4 m pedestal, and tens of thousands of small gilded Buddha statues filling the multi-tiered walls create an overwhelming sight. In front of the hall stands an **18-tonne temple bell**. \n\nYakcheonsa sits at the **junction where Jeju Olle Route 7 (its end point) meets Route 8 (its start point)**, drawing both Olle walkers and tourists, and it has run a **templestay since 2006**. **Free admission**, and the flat grounds are relatively easy to explore.",
+      "tm": "**Avec ses 122 100 ㎡, Yakcheonsa (약천사, 藥泉寺) compte parmi les plus grands temples d'Asie de l'Est** — un vaste temple situé à Daepo-dong, à Seogwipo. Son nom signifie « le temple où coule une eau de source médicinale », car il a été édifié sur le site de l'ancien ermitage « Yaksuam », où jaillit toute l'année une source aux vertus curatives. **Le moine Hyein a lancé les travaux en 1981 et les a achevés en 1996.** \n\nLe hall principal, le **Daejeokgwangjeon (大寂光殿), atteint environ 30 m de hauteur pour une surface au sol totale d'environ 3 305 ㎡** — l'un des plus grands halls bouddhiques d'un seul tenant de l'Orient, bâti dans le style architectural des temples du début de la période Joseon. À l'intérieur, un **bouddha Vairocana de 5 m de haut (le plus grand bouddha assis en bois de Corée)** est vénéré sur un socle de 4 m, et des dizaines de milliers de petites statues de bouddha dorées garnissant les parois à plusieurs niveaux composent un spectacle saisissant. Devant le hall se dresse une **cloche de temple de 18 tonnes**. \n\nYakcheonsa se situe à la **jonction où l'Olle 7 de Jeju (son point d'arrivée) rejoint l'Olle 8 (son point de départ)**, attirant à la fois les marcheurs de l'Olle et les touristes, et il propose un **templestay depuis 2006**. **Entrée gratuite**, et l'enceinte plate se parcourt assez facilement."
+    },
+    "/itineraryStops/3/visitBasics/hours": {
+      "source_en": "Sunrise–sunset (main hall open at all times)",
+      "tm": "Du lever au coucher du soleil (hall principal ouvert en permanence)"
+    },
+    "/itineraryStops/3/visitBasics/closed": {
+      "source_en": "Open year-round",
+      "tm": "Ouvert toute l'année"
+    },
+    "/itineraryStops/3/visitBasics/walking": {
+      "source_en": "Easy — flat grounds; some steps when entering the main hall",
+      "tm": "Facile — enceinte plate ; quelques marches à l'entrée du hall principal"
+    },
+    "/itineraryStops/3/visitBasics/admission": {
+      "source_en": "Free",
+      "tm": "Gratuit"
+    },
+    "/itineraryStops/3/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 1",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est) — image 1 de la galerie",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 1",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est) — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/2/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/3/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/itineraryStops/4/name": {
+      "source_en": "Lunch — South Jeju Local Meal",
+      "tm": "Déjeuner — repas local du sud de Jeju"
+    },
+    "/itineraryStops/4/category": {
+      "source_en": "Midday Reset — Seogwipo / Daepo Local Cuisine",
+      "tm": "Pause de midi — cuisine locale de Seogwipo / Daepo"
+    },
+    "/itineraryStops/4/duration": {
+      "source_en": "60 min",
+      "tm": "60 min"
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "source_en": "Coach to lunch venue — ~10 min",
+      "tm": "Autocar jusqu'au lieu du déjeuner — env. 10 min"
+    },
+    "/itineraryStops/4/timeUsed/1": {
+      "source_en": "Order + meal — ~45 min",
+      "tm": "Commande + repas — env. 45 min"
+    },
+    "/itineraryStops/4/timeUsed/2": {
+      "source_en": "Coach to O'sulloc — ~25 min",
+      "tm": "Autocar jusqu'à O'sulloc — env. 25 min"
+    },
+    "/itineraryStops/4/highlights/0": {
+      "source_en": "**South Jeju seafood corridor** — Seogwipo/Daepo coastal restaurants",
+      "tm": "**Corridor des fruits de mer du sud de Jeju** — restaurants côtiers de Seogwipo/Daepo"
+    },
+    "/itineraryStops/4/highlights/1": {
+      "source_en": "**Galchi-jorim** — Jeju is Korea's largest cutlassfish source",
+      "tm": "**Galchi-jorim** — Jeju est la première source de poisson-sabre de Corée"
+    },
+    "/itineraryStops/4/highlights/2": {
+      "source_en": "**Mulhoe** in summer; **heuk-doeji (black pig)** year-round option",
+      "tm": "**Mulhoe** en été ; option **heuk-doeji (porc noir)** toute l'année"
+    },
+    "/itineraryStops/4/highlights/3": {
+      "source_en": "Black pig is a **Cultural Heritage Material No. 5 (2015)** breed",
+      "tm": "Le porc noir est une race classée **Bien culturel n° 5 (2015)**"
+    },
+    "/itineraryStops/4/highlights/4": {
+      "source_en": "**Vegetarian + halal-friendly** options on request (please disclose at pickup)",
+      "tm": "Options **végétariennes + halal-friendly** sur demande (merci de le signaler à la prise en charge)"
+    },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "**About a 25-min coach ride to O'sulloc** — heading inland to the tea fields after lunch"
+      "source_en": "**About a 25-min coach ride to O'sulloc** — heading inland to the tea fields after lunch",
+      "tm": "**Environ 25 min de route en autocar jusqu'à O'sulloc** — cap vers l'intérieur des terres et les champs de thé après le déjeuner"
     },
     "/itineraryStops/4/whyOnRoute": {
-      "source_en": "A natural mealtime after seeing the Seogwipo coastal sights. Lunch gives a real rest between the morning coastal walk and temple visit and the afternoon tea-field and Hallasan stops, then the route continues inland to the Seogwang tea field."
+      "source_en": "A natural mealtime after seeing the Seogwipo coastal sights. Lunch gives a real rest between the morning coastal walk and temple visit and the afternoon tea-field and Hallasan stops, then the route continues inland to the Seogwang tea field.",
+      "tm": "Une pause repas naturelle après la découverte des sites côtiers de Seogwipo. Le déjeuner offre un vrai temps de repos entre la marche côtière du matin et la visite du temple d'une part, et les étapes de l'après-midi au champ de thé et au Hallasan d'autre part ; l'itinéraire se poursuit ensuite vers l'intérieur des terres jusqu'au champ de thé de Seogwang."
     },
     "/itineraryStops/4/description": {
-      "source_en": "**A 60-minute break between Yakcheonsa and O'sulloc** — the southern Seogwipo coast is one of Korea's premier seafood landing zones, and the Daepo-Andeok stretch sits close to the next stop. Default rotation: **galchi-jorim (braised cutlassfish)** — Jeju is Korea's leading cutlassfish source, with the freshest catches along the south coast; **mulhoe (cold raw-fish soup)** in summer (June–September); or **heuk-doeji gui (Jeju black pig BBQ)** year-round (a native Jeju black pig breed designated **Cultural Heritage Material No. 5 in 2015**). \n\n**Vegetarian alternative**: bibim-guksu with seasonal Jeju vegetables. **Halal-friendly options** available at one venue in the rotation — please disclose at pickup. The lunch venue is **about a 25-min coach ride to O'sulloc**."
+      "source_en": "**A 60-minute break between Yakcheonsa and O'sulloc** — the southern Seogwipo coast is one of Korea's premier seafood landing zones, and the Daepo-Andeok stretch sits close to the next stop. Default rotation: **galchi-jorim (braised cutlassfish)** — Jeju is Korea's leading cutlassfish source, with the freshest catches along the south coast; **mulhoe (cold raw-fish soup)** in summer (June–September); or **heuk-doeji gui (Jeju black pig BBQ)** year-round (a native Jeju black pig breed designated **Cultural Heritage Material No. 5 in 2015**). \n\n**Vegetarian alternative**: bibim-guksu with seasonal Jeju vegetables. **Halal-friendly options** available at one venue in the rotation — please disclose at pickup. The lunch venue is **about a 25-min coach ride to O'sulloc**.",
+      "tm": "**Une pause de 60 minutes entre Yakcheonsa et O'sulloc** — la côte sud de Seogwipo est l'une des principales zones de débarquement de produits de la mer de Corée, et le tronçon Daepo-Andeok se trouve à proximité de l'étape suivante. Rotation par défaut : **galchi-jorim (poisson-sabre braisé)** — Jeju est la première source de poisson-sabre de Corée, avec les prises les plus fraîches le long de la côte sud ; **mulhoe (soupe froide de poisson cru)** en été (juin–septembre) ; ou **heuk-doeji gui (barbecue de porc noir de Jeju)** toute l'année (une race de porc noir native de Jeju désignée **Bien culturel matériel n° 5 en 2015**). \n\n**Alternative végétarienne** : bibim-guksu aux légumes de saison de Jeju. **Options halal-friendly** disponibles dans l'un des établissements de la rotation — merci de le signaler à la prise en charge. Le lieu du déjeuner se trouve à **environ 25 min de route en autocar d'O'sulloc**."
     },
     "/itineraryStops/5/name": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
     },
     "/itineraryStops/5/category": {
-      "source_en": "Tea Culture Museum — Korea's largest green-tea field (Seogwang Dawon)"
+      "source_en": "Tea Culture Museum — Korea's largest green-tea field (Seogwang Dawon)",
+      "tm": "Musée de la culture du thé — le plus grand champ de thé vert de Corée (Seogwang Dawon)"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "60 min"
+      "source_en": "60 min",
+      "tm": "60 min"
     },
     "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Parking + entrance — ~5 min"
+      "source_en": "Parking + entrance — ~5 min",
+      "tm": "Stationnement + entrée — env. 5 min"
     },
     "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Museum interior + tea-ware collection — ~20 min"
+      "source_en": "Museum interior + tea-ware collection — ~20 min",
+      "tm": "Intérieur du musée + collection d'ustensiles à thé — env. 20 min"
     },
     "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Tea House cafe (rolling cake + ice cream) — ~20 min"
+      "source_en": "Tea House cafe (rolling cake + ice cream) — ~20 min",
+      "tm": "Café Tea House (roulé et glace) — env. 20 min"
     },
     "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Green tea field walking path — ~15 min"
+      "source_en": "Green tea field walking path — ~15 min",
+      "tm": "Sentier de promenade dans les champs de thé vert — env. 15 min"
     },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**Amorepacific** flagship brand — founder Suh Sung-whan pioneered Jeju tea cultivation in **1979**"
+      "source_en": "**Amorepacific** flagship brand — founder Suh Sung-whan pioneered Jeju tea cultivation in **1979**",
+      "tm": "Marque phare d'**Amorepacific** — le fondateur Suh Sung-whan a lancé la culture du thé à Jeju en **1979**"
     },
     "/itineraryStops/5/highlights/1": {
-      "source_en": "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production"
+      "source_en": "**Seogwang Dawon = Korea's largest green-tea field**; ~700 tonnes annual production",
+      "tm": "**Seogwang Dawon = le plus grand champ de thé vert de Corée** ; production annuelle d'environ 700 tonnes"
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "Museum **opened 2001** — named to designboom's Top 10 art museums (architecture)"
+      "source_en": "Museum **opened 2001** — named to designboom's Top 10 art museums (architecture)",
+      "tm": "Musée **ouvert en 2001** — cité parmi les 10 meilleurs musées d'art de designboom (architecture)"
     },
     "/itineraryStops/5/highlights/3": {
-      "source_en": "**Free admission**, about 2 million visitors a year"
+      "source_en": "**Free admission**, about 2 million visitors a year",
+      "tm": "**Entrée gratuite**, environ 2 millions de visiteurs par an"
     },
     "/itineraryStops/5/highlights/4": {
-      "source_en": "**Green tea rolling cake** + **green tea ice cream** = the cafe's signature items"
+      "source_en": "**Green tea rolling cake** + **green tea ice cream** = the cafe's signature items",
+      "tm": "**Roulé au thé vert** + **glace au thé vert** = les spécialités du café"
     },
     "/itineraryStops/5/highlights/5": {
-      "source_en": "**Innisfree Jeju House** 5-min walk — free admission, optional tangerine soap DIY ₩15,000"
+      "source_en": "**Innisfree Jeju House** 5-min walk — free admission, optional tangerine soap DIY ₩15,000",
+      "tm": "**Innisfree Jeju House** à 5 min à pied — entrée gratuite, atelier DIY de savon à la mandarine en option ₩15 000"
     },
     "/itineraryStops/5/highlights/6": {
-      "source_en": "Plantation paths best for photography at **golden hour (16:00–17:00)**"
+      "source_en": "Plantation paths best for photography at **golden hour (16:00–17:00)**",
+      "tm": "Les allées de la plantation sont idéales pour la photo à l'**heure dorée (16:00–17:00)**"
     },
     "/itineraryStops/5/highlights/7": {
-      "source_en": "Rooftop deck + ground-level tea field — two elevations for composing tea-field shots"
+      "source_en": "Rooftop deck + ground-level tea field — two elevations for composing tea-field shots",
+      "tm": "Terrasse sur le toit + champ de thé au niveau du sol — deux hauteurs pour composer vos photos des champs de thé"
     },
     "/itineraryStops/5/smartNotes/tip": {
-      "source_en": "Early afternoon is quieter before the tour buses arrive; allow 1–1.5 hours including the cafe and the walk"
+      "source_en": "Early afternoon is quieter before the tour buses arrive; allow 1–1.5 hours including the cafe and the walk",
+      "tm": "Le début d'après-midi est plus calme, avant l'arrivée des cars de touristes ; comptez 1 à 1,5 heure en incluant le café et la promenade"
     },
     "/itineraryStops/5/smartNotes/facilities": {
-      "source_en": "Cafe (the green tea ice cream is a must), gift shop, Innisfree Jeju House right next door, observation deck"
+      "source_en": "Cafe (the green tea ice cream is a must), gift shop, Innisfree Jeju House right next door, observation deck",
+      "tm": "Café (la glace au thé vert est incontournable), boutique de souvenirs, Innisfree Jeju House juste à côté, terrasse panoramique"
     },
     "/itineraryStops/5/whyOnRoute": {
-      "source_en": "**The afternoon tea-culture highlight.** After the coastal sights and the temple, O'sulloc's tea fields and cafe add a gentle break to the day. It is a 25-minute drive inland from the lunch venue and well placed to head on toward Hallasan via Route 1100 — just the right afternoon window to stroll the tea rows and sample tea desserts."
+      "source_en": "**The afternoon tea-culture highlight.** After the coastal sights and the temple, O'sulloc's tea fields and cafe add a gentle break to the day. It is a 25-minute drive inland from the lunch venue and well placed to head on toward Hallasan via Route 1100 — just the right afternoon window to stroll the tea rows and sample tea desserts.",
+      "tm": "**Le temps fort de l'après-midi consacré à la culture du thé.** Après les sites côtiers et le temple, les champs de thé et le café d'O'sulloc apportent une pause douce à la journée. Le site se trouve à 25 minutes de route vers l'intérieur des terres depuis le lieu du déjeuner et est bien placé pour poursuivre vers le Hallasan par la route 1100 — la fenêtre idéale en après-midi pour flâner entre les rangées de théiers et goûter aux desserts au thé."
     },
     "/itineraryStops/5/convenience/parking": {
-      "source_en": "Free parking available"
+      "source_en": "Free parking available",
+      "tm": "Stationnement gratuit disponible"
     },
     "/itineraryStops/5/convenience/restroom": {
-      "source_en": "Well provided throughout the museum"
-    },
-    "/itineraryStops/5/description": {
-      "source_en": "**O'sulloc Tea Museum (O'Sulloc, 'meeting snow + green')** is the tea-culture flagship of **Amorepacific**, Korea's largest beauty company. Founder **Chairman Suh Sung-whan personally pioneered the project in 1979**, reclaiming the volcanic-ash farmland of Jeju's Seogwang plateau into tea fields. Today the **Seogwang Dawon** is **Korea's largest green-tea field**, producing **~700 tonnes a year** across Amorepacific's three Jeju estates. \n\nThe museum building **opened in 2001** in the heart of the plantation, and its minimalist design earned it a place among **designboom's Top 10 art museums in the world**. **Free admission**, open daily, with about **2 million visitors a year**. The visit splits into three parts: **(1) Museum interior** — the tea-making process, an antique tea-ware collection, and a rooftop observation deck; **(2) Tea House cafe** — the signature **green tea rolling cake** and **green tea ice cream**; **(3) Plantation walking paths** — gravel paths between the tea bushes (a sunset photo spot). \n\n**Innisfree Jeju House** (Amorepacific's natural-cosmetics brand) is a 5-minute walk away, with free admission and an optional tangerine soap DIY workshop (₩15,000)."
-    },
-    "/itineraryStops/5/visitBasics/hours": {
-      "source_en": "Summer (Apr–Oct) 09:00–19:00 / Winter (Nov–Mar) 09:00–18:00"
-    },
-    "/itineraryStops/5/visitBasics/closed": {
-      "source_en": "Open year-round (may vary temporarily in bad weather)"
-    },
-    "/itineraryStops/5/visitBasics/walking": {
-      "source_en": "Easy — flat paved paths, stroller- and wheelchair-accessible"
-    },
-    "/itineraryStops/5/visitBasics/admission": {
-      "source_en": "Museum and tea field free; cafe drinks, desserts and classes charged separately"
-    },
-    "/itineraryStops/5/galleryItems/0/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1"
-    },
-    "/itineraryStops/5/galleryItems/0/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 1"
-    },
-    "/itineraryStops/5/galleryItems/0/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
-    },
-    "/itineraryStops/5/galleryItems/1/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2"
-    },
-    "/itineraryStops/5/galleryItems/1/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 2"
-    },
-    "/itineraryStops/5/galleryItems/1/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
-    },
-    "/itineraryStops/5/galleryItems/2/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
-    },
-    "/itineraryStops/5/galleryItems/2/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
-    },
-    "/itineraryStops/5/galleryItems/2/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
-    },
-    "/itineraryStops/5/galleryItems/3/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4"
-    },
-    "/itineraryStops/5/galleryItems/3/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 4"
-    },
-    "/itineraryStops/5/galleryItems/3/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
-    },
-    "/itineraryStops/6/name": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
-    },
-    "/itineraryStops/6/category": {
-      "source_en": "UNESCO Volcanic Geology — ⟦G0⟧ Trail (triple natural designation)",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
-    },
-    "/itineraryStops/6/duration": {
-      "source_en": "75 min"
-    },
-    "/itineraryStops/6/timeUsed/0": {
-      "source_en": "Eorimok parking + restroom + trail briefing — ~10 min"
-    },
-    "/itineraryStops/6/timeUsed/1": {
-      "source_en": "1.3 km decking ascent one-way — ~25 min"
-    },
-    "/itineraryStops/6/timeUsed/2": {
-      "source_en": "Summit deck + photos + tochika viewing — ~15 min"
-    },
-    "/itineraryStops/6/timeUsed/3": {
-      "source_en": "Descent — ~20 min"
-    },
-    "/itineraryStops/6/timeUsed/4": {
-      "source_en": "Buffer / regroup — ~5 min"
-    },
-    "/itineraryStops/6/highlights/0": {
-      "source_en": "**Hallasan = triple natural designation**: UNESCO World Heritage 2007 + Biosphere Reserve 2002 + National Park 1970"
-    },
-    "/itineraryStops/6/highlights/1": {
-      "source_en": "**Eoseungsaengak 1,169 m** — a Hallasan-side oreum (parasitic cone)"
-    },
-    "/itineraryStops/6/highlights/2": {
-      "source_en": "**1.3 km one-way / about 200 m gain** — wide steps + wooden decking, sneakers are enough"
-    },
-    "/itineraryStops/6/highlights/3": {
-      "source_en": "Views of **Hallasan's slopes, the oreum field, and the northern sea** from the deck observation point"
-    },
-    "/itineraryStops/6/highlights/4": {
-      "source_en": "**1945 Imperial Japanese tochika (pillbox)** at the summit — a rare high-altitude relic"
-    },
-    "/itineraryStops/6/highlights/5": {
-      "source_en": "**Free admission** + free parking; no summit reservation needed (the Baengnokdam course is capped at 1,000/day)"
-    },
-    "/itineraryStops/6/highlights/6": {
-      "source_en": "Round-trip about **60–75 min** — on the route back over Hallasan to Jeju City via Route 1100"
-    },
-    "/itineraryStops/6/highlights/7": {
-      "source_en": "High-altitude weather changes fast — bringing a layer recommended"
-    },
-    "/itineraryStops/6/smartNotes/tip": {
-      "source_en": "A focused scenic walk rather than a leisurely stroll; high-altitude weather changes fast — check Route 1100 and the weather before setting off"
-    },
-    "/itineraryStops/6/smartNotes/facilities": {
-      "source_en": "Facilities concentrated at the Eorimok entrance; none along the route"
+      "source_en": "Well provided throughout the museum",
+      "tm": "Bien pourvus dans tout le musée"
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/6/name": {
-      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    "/itineraryStops/3/galleryItems/0/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
     },
-    "/itineraryStops/6/category": {
-      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    "/itineraryStops/3/galleryItems/0/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/0/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/1/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/1/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/1/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/2/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/2/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/2/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/3/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/3/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/itineraryStops/3/galleryItems/3/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
     }
   },
-  "tmHits": 0
+  "tmHits": 45
 }

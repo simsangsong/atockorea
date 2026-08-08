@@ -7,125 +7,162 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it."
+      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it.",
+      "tm": "Autista-guida locale abilitato, verificato tramite la rete di partner di AtoC Korea a Busan — non un’auto a noleggio con conducente con sopra l’etichetta «tour»."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local driver-guide"
+      "source_en": "Licensed local driver-guide",
+      "tm": "Autista-guida locale abilitato"
     },
     "/bookingTrustItems/0/detail": {
-      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network."
+      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network.",
+      "tm": "Ogni autista è abilitato professionalmente, assicurato, di lingua inglese e verificato tramite la rete di partner di AtoC Korea a Busan."
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it."
+      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it.",
+      "tm": "Un prezzo unico qualunque sia l’itinerario: il totale dipende dalle ore prenotate e dal numero di veicoli, e modificare le tappe non lo cambia."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "One price, whatever the route"
+      "source_en": "One price, whatever the route",
+      "tm": "Un prezzo unico, qualunque sia l’itinerario"
     },
     "/bookingTrustItems/1/detail": {
-      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay."
+      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay.",
+      "tm": "La tariffa è per veicolo e per ora: aggiungere, togliere o riordinare le tappe non cambia mai quanto paga."
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off."
+      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima del prelievo — un aspetto importante per una giornata in una città costiera che la pioggia può rovinare."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Free cancellation up to 24 hours"
+      "source_en": "Free cancellation up to 24 hours",
+      "tm": "Cancellazione gratuita fino a 24 ore prima"
     },
     "/bookingTrustItems/2/detail": {
-      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather."
+      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather.",
+      "tm": "Cancelli senza spese fino a 24 ore prima del prelievo — utile quando una giornata a Busan dipende dal meteo."
     },
     "/seasonalVariations/0/swaps": {
-      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2."
+      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2.",
+      "tm": "Nella settimana dei ciliegi in fiore chieda un passaggio per la collina di Dalmaji e una tappa in più a Gwangalli: entrambe distano pochi minuti dagli itinerari 1 e 2."
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Primavera (mar.–mag.)"
     },
     "/seasonalVariations/0/summary": {
       "source_en": "Cherry blossoms peak around late March to early April at Dalmaji Hill, ⟦G0⟧, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "tm": "I ciliegi raggiungono il picco fra fine marzo e inizio aprile sulla collina di Dalmaji, a ⟦G0⟧ e sulla spiaggia di Gwangalli. Temperature gradevoli fra 12 e 22 °C; abbigliamento a strati leggero.",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
     },
     "/seasonalVariations/1/swaps": {
-      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day."
+      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day.",
+      "tm": "Nei pomeriggi caldi sposti Gamcheon al mattino e dedichi le ore centrali allo Sky Capsule climatizzato o ai mercati coperti."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer (Jun–Aug)",
       "tm": "Estate (giu–ago)"
     },
     "/seasonalVariations/1/summary": {
-      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well."
+      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "tm": "Caldo e umido, fra 25 e 32 °C, con possibili acquazzoni monsonici fra giugno e luglio. Il tramonto è tardi: una tappa costiera in più a fine giornata funziona bene."
     },
     "/seasonalVariations/2/swaps": {
-      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours."
+      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours.",
+      "tm": "L’autunno si addice a tutti e tre gli itinerari così come sono; se prenota 9 ore vale la pena aggiungere il tempio di Beomeosa per il foliage."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Autunno (set.–nov.)"
     },
     "/seasonalVariations/2/summary": {
-      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here."
+      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "tm": "Il clima migliore dell’anno per viaggiare in Corea — fra 15 e 25 °C, poca umidità, luce dorata. È qui che la stagione delle crociere raggiunge il culmine."
     },
     "/seasonalVariations/3/swaps": {
-      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover."
+      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover.",
+      "tm": "D’inverno la luce cala presto: metta prima i punti panoramici all’aperto e concluda al coperto, fra mercati, torre e gallerie."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Inverno (dic.–feb.)"
     },
     "/seasonalVariations/3/summary": {
-      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful."
+      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "tm": "Fresco e ventoso, fra 0 e 10 °C, ma il traffico crocieristico prosegue. Le tappe costiere sono spoglie e bellissime."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Reserve online"
+      "source_en": "Reserve online",
+      "tm": "Prenoti online"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Pick a date and the number of hours. Reserve now and pay later."
+      "source_en": "Pick a date and the number of hours. Reserve now and pay later.",
+      "tm": "Scelga una data e il numero di ore. Prenoti ora e paghi dopo."
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Reserve online and choose your date and duration; confirmation is instant."
+      "source_en": "Reserve online and choose your date and duration; confirmation is instant.",
+      "tm": "Prenoti online scegliendo data e durata; la conferma è immediata."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Tell us where you are staying"
+      "source_en": "Tell us where you are staying",
+      "tm": "Ci dica dove alloggia"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours."
+      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours.",
+      "tm": "Ci invii il nome dell’hotel e l’orario di partenza preferito: confermiamo il prelievo entro 24 ore."
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed."
+      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed.",
+      "tm": "Ci comunichi il Suo alloggio e l’orario di partenza preferito, così da poter confermare luogo e ora del prelievo."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Choose or build your route"
+      "source_en": "Choose or build your route",
+      "tm": "Scelga o componga il Suo itinerario"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before."
+      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before.",
+      "tm": "Prenda uno dei tre itinerari, oppure ci invii il Suo elenco — fino a 24 ore prima."
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours."
+      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours.",
+      "tm": "Scelga uno dei tre itinerari consigliati o ci invii il Suo elenco di tappe; le confermiamo che cosa rientra nelle ore prenotate."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Receive driver details"
+      "source_en": "Receive driver details",
+      "tm": "Riceva i dati dell’autista"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Driver name, vehicle plate and contact number, sent the evening before."
+      "source_en": "Driver name, vehicle plate and contact number, sent the evening before.",
+      "tm": "Nome dell’autista, targa del veicolo e numero di telefono, inviati la sera prima."
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter."
+      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter.",
+      "tm": "Il nome dell’autista, la targa del veicolo e un recapito telefonico vengono inviati la sera prima del noleggio."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Meet at your hotel"
+      "source_en": "Meet at your hotel",
+      "tm": "Si incontrino nel Suo hotel"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time."
+      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time.",
+      "tm": "Il Suo autista-guida L’attende nella hall o all’ingresso all’ora concordata."
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin."
+      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin.",
+      "tm": "Il Suo autista-guida La incontra presso l’alloggio all’ora confermata e da lì decorrono le ore prenotate."
     },
     "/practicalWeatherStatic/advice": {
       "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
+      "tm": "Abbigliamento a strati in primavera e autunno; protezione solare e giacca antipioggia leggera d’estate; cappotto caldo e guanti d’inverno per le scogliere di ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/practicalWeatherStatic/summary": {
-      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy."
+      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
+      "tm": "Busan ha un clima subtropicale umido con quattro stagioni ben distinte. La stagione delle crociere si concentra in primavera (mar.–mag.) e in autunno (set.–nov.), entrambe gradevoli fra 12 e 25 °C e poco piovose. L’estate (giu.–ago.) porta caldo umido e acquazzoni monsonici occasionali. L’inverno (dic.–feb.) è fresco e ventoso."
     }
   },
   "glossaryTokens": {
@@ -136,5 +173,5 @@
       "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 1
+  "tmHits": 38
 }

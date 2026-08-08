@@ -12,7 +12,11 @@
 // These only fire for low-stakes intents (unknown / poi); recommendation,
 // policy, quote, and booking questions keep their richer existing paths.
 
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   resolveTourWeatherAnchorBySlug,
   localizedAreaLabel,
@@ -43,7 +47,7 @@ function weatherKeyForCode(code: number): WeatherKey {
   return "mixed";
 }
 
-const WEATHER_LABELS: Record<WeatherKey, Record<TourProductPageLocale, string>> = {
+const WEATHER_LABELS: Record<WeatherKey, Record<TourProductBaseLocale, string>> = {
   clear: { en: "Clear", ko: "맑음", ja: "晴れ", zh: "晴", "zh-TW": "晴", es: "Despejado" },
   mostly_clear: { en: "Mostly clear", ko: "대체로 맑음", ja: "概ね晴れ", zh: "大致晴朗", "zh-TW": "大致晴朗", es: "Mayormente despejado" },
   partly_cloudy: { en: "Partly cloudy", ko: "부분적으로 흐림", ja: "晴れ時々曇り", zh: "局部多云", "zh-TW": "局部多雲", es: "Parcialmente nublado" },
@@ -60,10 +64,10 @@ const WEATHER_LABELS: Record<WeatherKey, Record<TourProductPageLocale, string>> 
 
 function localizedWeatherLabel(code: number, locale: TourProductPageLocale): string {
   const row = WEATHER_LABELS[weatherKeyForCode(code)];
-  return row[locale] ?? row.en;
+  return row[toTourProductBaseLocale(locale)] ?? row.en;
 }
 
-const RAIN_LABEL: Record<TourProductPageLocale, (p: number) => string> = {
+const RAIN_LABEL: Record<TourProductBaseLocale, (p: number) => string> = {
   en: (p) => ` · rain ${p}%`,
   ko: (p) => ` · 강수확률 ${p}%`,
   ja: (p) => ` · 降水確率 ${p}%`,
@@ -80,7 +84,7 @@ export type InstantAnswer = {
   chips: string[];
 };
 
-type L = TourProductPageLocale;
+type L = TourProductBaseLocale;
 
 // ── W6.7 haenyeo show ────────────────────────────────────────────────────────
 
@@ -181,7 +185,7 @@ function forecastLine(daily: DailyForecast, idx: number, locale: L): string | nu
   }
   const label = localizedWeatherLabel(code, locale);
   const rainPart =
-    typeof rain === "number" ? (RAIN_LABEL[locale] ?? RAIN_LABEL.en)(Math.round(rain)) : "";
+    typeof rain === "number" ? (RAIN_LABEL[toTourProductBaseLocale(locale)] ?? RAIN_LABEL.en)(Math.round(rain)) : "";
   return `**${date}**: ${label}, ${Math.round(min)}–${Math.round(max)}°C${rainPart}`;
 }
 

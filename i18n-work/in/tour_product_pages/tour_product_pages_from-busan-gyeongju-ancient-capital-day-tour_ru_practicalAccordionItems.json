@@ -7,19 +7,23 @@
   "tier": "A1",
   "segments": {
     "/practicalAccordionItems/0/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Что включено"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking."
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking.",
+      "tm": "Транспорт на минивэне из Пусана и обратно, сертифицированный гид со знанием английского и китайского, топливо, дорожные сборы и парковка."
     },
     "/practicalAccordionItems/0/content/1": {
       "source_en": "Not included: lunch (≈₩15,000–₩25,000), ⟦G0⟧ admission (₩5,000, paid on site), Cheonmachong interior (adult ₩3,000, optional), Donggung & Wolji admission on winter departures (adult ₩3,000), tips.",
+      "tm": "Не включено: обед (≈₩15 000–₩25 000), вход в ⟦G0⟧ (₩5 000, оплата на месте), вход внутрь Чхонмачхона (взрослый ₩3 000, по желанию), вход в Тонгун и Вольджи на зимних выездах (взрослый ₩3 000), чаевые.",
       "glossary": [
         "⟦G0⟧ = Бамбуковый лес Ахопсан"
       ]
     },
     "/practicalAccordionItems/0/content/2": {
       "source_en": "All other site admissions are free: Bulguksa (free since May 2023), ⟦G0⟧ permanent exhibitions (free since 2008), ⟦G1⟧ and the Choi Family House, ⟦G2⟧, the Daereungwon park grounds, Hwangnidan-gil.",
+      "tm": "Вход на все остальные объекты бесплатный: Пульгукса (бесплатно с мая 2023 года), постоянные экспозиции ⟦G0⟧ (бесплатно с 2008 года), ⟦G1⟧ и Дом семьи Чхве, ⟦G2⟧, территория парка Тэрынвон, Хваннидан-гиль.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу",
         "⟦G1⟧ = Деревня ханок Кёчхон",
@@ -27,82 +31,105 @@
       ]
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide,…"
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide,…",
+      "tm": "Транспорт на минивэне из Пусана и обратно, сертифицированный гид со знанием английского и китайского,…"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Посадка и высадка"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4 (Line 1) at 08:10, Seomyeon Station Exit 4 (Lines 1 & 2) at 08:30, Haeundae Station Exit 5 (Line 2) at 09:10."
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4 (Line 1) at 08:10, Seomyeon Station Exit 4 (Lines 1 & 2) at 08:30, Haeundae Station Exit 5 (Line 2) at 09:10.",
+      "tm": "Посадка идёт последовательно на трёх станциях метро в центре Пусана: станция Пусан, выход 4 (линия 1) в 08:10, станция Сомён, выход 4 (линии 1 и 2) в 08:30, станция Хэундэ, выход 5 (линия 2) в 09:10."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle."
+      "source_en": "Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle.",
+      "tm": "Станция Пусан — это выход 4 станции метро линии 1, а не железнодорожный терминал KTX. Если вы будете ждать в вестибюле вокзала или на площади, вы не увидите машину."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Drop-off is in reverse order, at the same exits you boarded at: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50."
+      "source_en": "Drop-off is in reverse order, at the same exits you boarded at: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50.",
+      "tm": "Высадка идёт в обратном порядке, у тех же выходов, где вы садились: станция Хэундэ ≈19:15, станция Сомён ≈19:35, станция Пусан ≈19:50."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Provide a WhatsApp or KakaoTalk number at booking; the guide will message vehicle details the day before."
+      "source_en": "Provide a WhatsApp or KakaoTalk number at booking; the guide will message vehicle details the day before.",
+      "tm": "Укажите при бронировании номер WhatsApp или KakaoTalk; накануне гид пришлёт данные автомобиля."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4…"
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4…",
+      "tm": "Посадка идёт последовательно на трёх станциях метро в центре Пусана: станция Пусан, выход 4…"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Пешие участки и рельеф"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Moderate."
+      "source_en": "Moderate.",
+      "tm": "Средняя сложность."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Total walking distance across the day is ≈5–5.5 km — more than the previous course, because the two afternoon blocks (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) are linked on foot."
+      "source_en": "Total walking distance across the day is ≈5–5.5 km — more than the previous course, because the two afternoon blocks (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) are linked on foot.",
+      "tm": "Общее расстояние пешком за день ≈5–5,5 км — больше, чем в прежнем маршруте, потому что два дневных квартала (Кёчхон ↔ Вольджонгё, Тэрынвон ↔ Хваннидан-гиль) связаны пешком."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Bulguksa has stone steps between terraces. Gyochon, Woljeonggyo, Daereungwon and Hwangnidan-gil are all flat, and Daereungwon's grass paths are comfortable for strollers and older guests."
+      "source_en": "Bulguksa has stone steps between terraces. Gyochon, Woljeonggyo, Daereungwon and Hwangnidan-gil are all flat, and Daereungwon's grass paths are comfortable for strollers and older guests.",
+      "tm": "В Пульгукса между террасами каменные ступени. Кёчхон, Вольджонгё, Тэрынвон и Хваннидан-гиль ровные, а травяные дорожки Тэрынвона удобны для детских колясок и пожилых гостей."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Climbing the tomb mounds is prohibited (fines apply). Comfortable closed-toe shoes essential — Bulguksa stone is uneven."
+      "source_en": "Climbing the tomb mounds is prohibited (fines apply). Comfortable closed-toe shoes essential — Bulguksa stone is uneven.",
+      "tm": "Забираться на курганы запрещено (предусмотрены штрафы). Обязательна удобная закрытая обувь — камень в Пульгукса неровный."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Moderate."
+      "source_en": "Moderate.",
+      "tm": "Средняя сложность."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "Cancellation"
+      "source_en": "Cancellation",
+      "tm": "Отмена"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Same-day cancellations and no-shows are non-refundable."
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "If the tour is cancelled because of force majeure, severe weather, or road closure, full refund applies."
+      "source_en": "If the tour is cancelled because of force majeure, severe weather, or road closure, full refund applies.",
+      "tm": "Если тур отменён из-за форс-мажора, непогоды или перекрытия дороги, возврат производится полностью."
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Seasonal route notes"
+      "source_en": "Seasonal route notes",
+      "tm": "Сезонные заметки по маршруту"
     },
     "/practicalAccordionItems/4/content/0": {
       "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): ⟦G0⟧ is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. The cherry blossoms on Daereungwon's stone-wall lane peak in early April.",
+      "tm": "Сезон цветения сакуры (с середины марта до середины апреля; точные даты меняются год от года): ⟦G0⟧ заменяется холмом Тальмаджи в Хэундэ — прибрежной дорогой Пусана с вишнёвым тоннелем. Сакура в переулке вдоль каменной стены Тэрынвона цветёт в пик в начале апреля.",
       "glossary": [
         "⟦G0⟧ = Бамбуковый лес Ахопсан"
       ]
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Winter (November–February): because sunset falls at 17:15–17:30, the last stop is swapped from ⟦G0⟧ to the Donggung & Wolji night view (admission adult ₩3,000, paid on site). It is the hour that runs from dusk to the lights coming on.",
+      "tm": "Зима (ноябрь–февраль): поскольку закат приходится на 17:15–17:30, последняя остановка меняется с ⟦G0⟧ на ночной вид Тонгуна и Вольджи (вход взрослый ₩3 000, оплата на месте). Это тот самый час — от сумерек до включения подсветки.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/practicalAccordionItems/4/content/2": {
       "source_en": "In summer (June–August) sunset is around 19:30, so a night-view stop does not work and the last stop stays fixed as ⟦G0⟧.",
+      "tm": "Летом (июнь–август) закат около 19:30, поэтому остановка на ночной вид не работает и последней остановкой остаётся ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…"
+      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…",
+      "tm": "Сезон цветения сакуры (с середины марта до середины апреля; точные даты меняются год от года): Ахопсан…"
     }
   },
   "glossaryTokens": {
@@ -124,5 +151,5 @@
       "⟦G0⟧": "Национальный музей Кёнджу"
     }
   },
-  "tmHits": 0
+  "tmHits": 27
 }

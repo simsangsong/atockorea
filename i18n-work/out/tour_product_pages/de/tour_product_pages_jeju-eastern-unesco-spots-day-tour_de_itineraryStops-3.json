@@ -45,7 +45,7 @@
     "/itineraryStops/4/galleryItems/4/alt": "⟦G0⟧ (UNESCO Sunrise Peak) — Galeriebild 5",
     "/itineraryStops/4/galleryItems/4/caption": "⟦G0⟧ (UNESCO Sunrise Peak) — Foto 5",
     "/itineraryStops/4/galleryItems/4/location": "⟦G0⟧ (UNESCO Sunrise Peak)",
-    "/itineraryStops/4/liveStatusWidget": "",
+    "/itineraryStops/4/liveStatusWidget": "haenyeo",
     "/itineraryStops/5/name": "Haenyeo-Tauchvorführung (bei Absage der Vorführung das Haenyeo-Museum)",
     "/itineraryStops/5/category": "Immaterielles UNESCO-Kulturerbe der Menschheit — Kultur der Haenyeo von Jeju (2016), live",
     "/itineraryStops/5/duration": "50 Min.",
@@ -58,8 +58,5 @@
     "/itineraryStops/5/highlights/1": "Sehen Sie aktive Haenyeo tatsächlich **im Meer unterhalb des ⟦G0⟧** freitauchen",
     "/itineraryStops/5/highlights/2": "Keine Sauerstoffflasche, nur ein einziger *Tewak* — die Sanggun tauchen **mit einem Atemzug mehr als 10 m tief**",
     "/itineraryStops/5/highlights/3": "Hören Sie den charakteristischen **Sumbisori**-Atemlaut am Ende jedes Tauchgangs mit eigenen Ohren"
-  },
-  "notes": {
-    "/itineraryStops/4/liveStatusWidget": "\"haenyeo\" 는 산문이 아니라 위젯 식별자(enum 키)다. 라이브 9개 로케일 전부 같은 값이라 번역하면 위젯 매칭이 깨진다. 규칙 6 — 빈 문자열로 두어 영어 폴백(=동일 값)이 적용되게 했다."
   }
 }

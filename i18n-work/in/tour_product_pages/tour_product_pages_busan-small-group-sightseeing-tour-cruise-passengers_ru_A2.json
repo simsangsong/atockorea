@@ -7,54 +7,68 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Cruise passengers with a 9+ hour port call in Busan"
+      "source_en": "Cruise passengers with a 9+ hour port call in Busan",
+      "tm": "Круизных пассажиров со стоянкой в Пусане от 9 часов"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "First-time visitors who want a single-day Busan overview"
+      "source_en": "First-time visitors who want a single-day Busan overview",
+      "tm": "Тех, кто впервые в городе и хочет обзор Пусана за один день"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Couples and adult families"
+      "source_en": "Couples and adult families",
+      "tm": "Пары и взрослые семьи"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Travelers prioritizing coast + culture + market in one route"
+      "source_en": "Travelers prioritizing coast + culture + market in one route",
+      "tm": "Тех, кому важно совместить побережье, культуру и рынок в одном маршруте"
     },
     "/whyTourWorks/lessIdealFor/0": {
       "source_en": "Travelers who want minimal walking",
       "tm": "Путешественники, которые хотят ходить как можно меньше"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Travelers with limited mobility (Gamcheon hillside)"
+      "source_en": "Travelers with limited mobility (Gamcheon hillside)",
+      "tm": "Гостей с ограниченной мобильностью (подъём в Камчхоне)"
     },
     "/whyTourWorks/lessIdealFor/2": {
       "source_en": "Stroller-heavy groups",
       "tm": "Группы с детскими колясками"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Cruisers with a port call shorter than ≈8 hours"
+      "source_en": "Cruisers with a port call shorter than ≈8 hours",
+      "tm": "Круизных гостей со стоянкой короче ≈8 часов"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "All nine stops, with a return buffer"
+      "source_en": "All nine stops, with a return buffer",
+      "tm": "Все девять остановок и запас на возвращение"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus the whole Nampo-dong market cluster walked end to end, Songdo, and Yongdusan — and still lands back at the terminal by about 17:00, ahead of the all-aboard times most Busan port calls use. The eight-hour day is built around real Busan traffic, not a brochure-ideal schedule."
+      "source_en": "Many cruise day tours skip either the UN Cemetery (too sober for a beach day) or Gamcheon (too far from the port). This route includes both, plus the whole Nampo-dong market cluster walked end to end, Songdo, and Yongdusan — and still lands back at the terminal by about 17:00, ahead of the all-aboard times most Busan port calls use. The eight-hour day is built around real Busan traffic, not a brochure-ideal schedule.",
+      "tm": "Многие круизные экскурсии пропускают либо кладбище ООН (слишком строгая нота для пляжного дня), либо Камчхон (слишком далеко от порта). В этот маршрут входит и то, и другое, а вдобавок весь рыночный узел Нампходона, пройденный пешком из конца в конец, Сондо и Йондусан — и при этом возвращение к терминалу примерно к 17:00, раньше обычного времени посадки на борт при стоянках в Пусане. Восьмичасовой день построен на реальном пусанском трафике, а не на идеальном расписании из буклета."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Built around cruise timing"
+      "source_en": "Built around cruise timing",
+      "tm": "Построено вокруг круизного расписания"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "Pickup is planned to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time."
+      "source_en": "Pickup is planned to your ship's actual arrival, not a fixed start. Ships that arrive before 07:00 trigger an early-bird option (₩10,000/person surcharge) so you don't waste time at the terminal. Drop-off is timed to leave at least a 60-minute buffer before your stated all-aboard time.",
+      "tm": "Сбор планируется под фактическое прибытие вашего судна, а не под фиксированный старт. Для судов, приходящих раньше 07:00, включается ранний вариант (доплата ₩10 000 с человека), чтобы вы не теряли время в терминале. Высадка рассчитана так, чтобы оставить минимум 60 минут запаса до указанного вами времени посадки на борт."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Certified bilingual guide, no shopping detours"
+      "source_en": "Certified bilingual guide, no shopping detours",
+      "tm": "Сертифицированный двуязычный гид, без заездов за покупками"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Guides are licensed by the Korea Tourism Organization and fluent in English and Chinese. There are no ginseng shops, duty-free stops, or commissioned souvenir detours — every minute of the day is at attractions or in transit. This is rarer than it sounds for cruise group tours."
+      "source_en": "Guides are licensed by the Korea Tourism Organization and fluent in English and Chinese. There are no ginseng shops, duty-free stops, or commissioned souvenir detours — every minute of the day is at attractions or in transit. This is rarer than it sounds for cruise group tours.",
+      "tm": "Гиды имеют лицензию Корейской туристической организации и свободно говорят по-английски и по-китайски. Никаких магазинов женьшеня, остановок в duty-free и заездов в сувенирные лавки за комиссию — каждая минута дня проходит на достопримечательностях или в дороге. Для групповых круизных экскурсий это встречается реже, чем кажется."
     },
     "/whyTourWorks/routeLogicSections/0/items/3/label": {
-      "source_en": "Shared-van price between coach and private tour"
+      "source_en": "Shared-van price between coach and private tour",
+      "tm": "Цена общего минивэна между автобусом и частной экскурсией"
     },
     "/whyTourWorks/routeLogicSections/0/items/3/detail": {
-      "source_en": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to 12 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable."
+      "source_en": "Private Busan cruise excursions run $300–500+ per group. Coach tours run 40+ passengers at a low per-person price. This shared-van version sits between, with up to 12 passengers per departure — accessible for solo cruisers, couples, and small groups who don't need a private vehicle. Trade-off: fixed circuit, not customizable.",
+      "tm": "Частные круизные экскурсии по Пусану стоят $300–500 и более за группу. Автобусные возят 40 и более пассажиров по низкой цене с человека. Версия с общим минивэном занимает середину: до 12 пассажиров на выезд, что подходит тем, кто путешествует один, парам и небольшим компаниям, которым не нужен отдельный автомобиль. Компромисс: маршрут фиксированный и не меняется."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
       "source_en": "Why this route is built this way",
@@ -70,6 +84,7 @@
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "Cruise terminal pickup at 09:00; northeast to ⟦G1⟧ first, while the cliff is still quiet; back across the city for the ⟦G0⟧ and lunch at your own expense; then Nampo-dong walked end to end as three separate stops (Jagalchi, ⟦G4⟧, ⟦G3⟧); Gamcheon's painted hillside; Songdo for the Cloud Trails skywalk and, if you take the cable car, Sky Park across the bay; ⟦G2⟧ last, and back at your terminal by 17:00.",
+      "tm": "Сбор у круизного терминала в 09:00; сначала на северо-восток к ⟦G1⟧, пока на скале ещё тихо; затем обратно через город к ⟦G0⟧ и обед за свой счёт; после этого Нампходон пешком из конца в конец, тремя отдельными остановками (Чагальчхи, ⟦G4⟧, ⟦G3⟧); расписанный склон Камчхона; Сондо со скайвоком Cloud Trails и, если возьмёте канатную дорогу, Sky Park на другой стороне залива; последним ⟦G2⟧ — и возвращение к вашему терминалу к 17:00.",
       "glossary": [
         "⟦G0⟧ = Мемориальное кладбище ООН",
         "⟦G1⟧ = Хэдон Йонгунса",
@@ -88,5 +103,5 @@
       "⟦G4⟧": "Площадь BIFF"
     }
   },
-  "tmHits": 5
+  "tmHits": 20
 }

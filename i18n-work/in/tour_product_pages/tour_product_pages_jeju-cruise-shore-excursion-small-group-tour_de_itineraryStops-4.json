@@ -6,48 +6,6 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
-    "/itineraryStops/4/galleryItems/4/alt": {
-      "source_en": "⟦G0⟧ — gallery image 6",
-      "tm": "⟦G0⟧ — Galeriebild 6",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/4/caption": {
-      "source_en": "⟦G0⟧ — photo 6",
-      "tm": "⟦G0⟧ — Foto 6",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/4/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Folkloredorf Seongeup"
-      ]
-    },
-    "/itineraryStops/5/name": {
-      "source_en": "Return to Jeju Cruise Terminal (Jeju Port — north)"
-    },
-    "/itineraryStops/5/time": {
-      "source_en": "≈ 15:30 → arrive port ≈ 16:45"
-    },
-    "/itineraryStops/5/category": {
-      "source_en": "Cruise Return & All-Aboard"
-    },
-    "/itineraryStops/5/duration": {
-      "source_en": "75 min drive + 60 min buffer"
-    },
-    "/itineraryStops/5/highlights/0": {
-      "source_en": "**Drop-off 60+ min before all-aboard time** — standard cruise embarkation buffer"
-    },
-    "/itineraryStops/5/highlights/1": {
-      "source_en": "~70–80 min from East Jeju via Highway 1132 + Route 16 with one comfort stop"
-    },
-    "/itineraryStops/5/highlights/2": {
-      "source_en": "Driver/guide assist with luggage at terminal entrance"
-    },
     "/itineraryStops/5/highlights/3": {
       "source_en": "Bus #100 connects terminal directly to **Jeju International Airport** (for late flights)"
     },
@@ -85,16 +43,6 @@
       "source_en": "N/A"
     }
   },
-  "glossaryTokens": {
-    "/itineraryStops/4/galleryItems/4/alt": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
-    },
-    "/itineraryStops/4/galleryItems/4/caption": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
-    },
-    "/itineraryStops/4/galleryItems/4/location": {
-      "⟦G0⟧": "Folkloredorf Seongeup"
-    }
-  },
-  "tmHits": 3
+  "glossaryTokens": {},
+  "tmHits": 0
 }

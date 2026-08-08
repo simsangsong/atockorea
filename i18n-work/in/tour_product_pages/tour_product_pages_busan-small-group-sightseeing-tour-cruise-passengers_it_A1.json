@@ -7,16 +7,20 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Busan Small-Group Cruise Shore Excursion | AtoC Korea"
+      "source_en": "Busan Small-Group Cruise Shore Excursion | AtoC Korea",
+      "tm": "Escursione a terra per crocieristi a Busan, in piccolo gruppo | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Busan Cruise Shore Excursion: Small-Group Day Tour | AtoC Korea"
+      "source_en": "Busan Cruise Shore Excursion: Small-Group Day Tour | AtoC Korea",
+      "tm": "Escursione a terra a Busan per crocieristi: giornata in piccolo gruppo | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule."
+      "source_en": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule.",
+      "tm": "Escursione a terra a Busan in piccolo gruppo per crocieristi, con prelievo al porto, guida locale, i luoghi simbolo della città e rientro calibrato sugli orari della Sua nave."
     },
     "/seo/metaDescription": {
       "source_en": "8-hour small-group shore excursion from your Busan cruise terminal: ⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G6⟧, ⟦G5⟧, ⟦G0⟧, Songdo Cloud Trails and ⟦G4⟧. Van capped at 12.",
+      "tm": "Escursione a terra di 8 ore in piccolo gruppo dal Suo terminal crociere di Busan: ⟦G2⟧, il ⟦G1⟧, il ⟦G3⟧, la ⟦G6⟧, il ⟦G5⟧, il ⟦G0⟧, la passerella Songdo Cloud Trails e il ⟦G4⟧. Van con massimo 12 posti.",
       "glossary": [
         "⟦G0⟧ = Villaggio culturale di Gamcheon",
         "⟦G1⟧ = Cimitero commemorativo delle Nazioni Unite",
@@ -28,10 +32,12 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Busan cruise day tour"
+      "source_en": "Busan cruise day tour",
+      "tm": "escursione di un giorno a Busan per crocieristi"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Busan small group sightseeing"
+      "source_en": "Busan small group sightseeing",
+      "tm": "visita di Busan in piccolo gruppo"
     },
     "/seo/primaryKeywords/2": {
       "source_en": "⟦G0⟧ tour",
@@ -41,7 +47,8 @@
       ]
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Songdo cable car cruise tour"
+      "source_en": "Songdo cable car cruise tour",
+      "tm": "escursione per crocieristi con funivia di Songdo"
     },
     "/seo/primaryKeywords/4": {
       "source_en": "⟦G0⟧ tour",
@@ -51,35 +58,44 @@
       ]
     },
     "/hero/meta/stops": {
-      "source_en": "9 stops"
+      "source_en": "9 stops",
+      "tm": "9 tappe"
     },
     "/hero/meta/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 8 hours, planned to your cruise's port-call period"
+      "source_en": "≈ 8 hours, planned to your cruise's port-call period",
+      "tm": "≈ 8 ore, calibrate sulla sosta in porto della Sua crociera"
     },
     "/hero/pills/0": {
       "source_en": "Small group",
       "tm": "Piccolo gruppo"
     },
     "/hero/pills/1": {
-      "source_en": "Cruise"
+      "source_en": "Cruise",
+      "tm": "Crociera"
     },
     "/hero/pills/2": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/hero/tagline": {
-      "source_en": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers"
+      "source_en": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers",
+      "tm": "Cinque luoghi simbolo di Busan coordinati con gli orari della Sua nave, su un van condiviso con altri crocieristi"
     },
     "/sectionUi/pickupTrustFooter": {
-      "source_en": "Cruise terminal pickup included · No extra charge"
+      "source_en": "Cruise terminal pickup included · No extra charge",
+      "tm": "Prelievo al terminal crociere compreso · Senza costi aggiuntivi"
     },
     "/sectionUi/pickupCategoryLabel": {
-      "source_en": "Cruise terminal pickup"
+      "source_en": "Cruise terminal pickup",
+      "tm": "Prelievo al terminal crociere"
     },
     "/sectionUi/pickupDropoffSubtitle": {
-      "source_en": "Cruise terminal pickup included. Tap any location for details."
+      "source_en": "Cruise terminal pickup included. Tap any location for details.",
+      "tm": "Prelievo al terminal crociere compreso. Tocchi un luogo per i dettagli."
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Potential",
@@ -102,7 +118,8 @@
       "tm": "Camminata"
     },
     "/glanceItems/2/value": {
-      "source_en": "Challenging"
+      "source_en": "Challenging",
+      "tm": "Impegnativo"
     },
     "/glanceItems/3/label": {
       "source_en": "Rain Suitability",
@@ -153,43 +170,56 @@
       "tm": "Piccolo gruppo"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Escursione da crociera"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Cruise pickup"
+      "source_en": "Cruise pickup",
+      "tm": "Prelievo per crocieristi"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Shared van"
+      "source_en": "Shared van",
+      "tm": "Van condiviso"
     },
     "/catalog_card/title": {
-      "source_en": "Busan Cruise Shore: Small-Group Tour"
+      "source_en": "Busan Cruise Shore: Small-Group Tour",
+      "tm": "Busan a terra da crociera: tour in piccolo gruppo"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Escursione da crociera"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Small shared van"
+      "source_en": "Small shared van",
+      "tm": "Piccolo van condiviso"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Pickup at port"
+      "source_en": "Pickup at port",
+      "tm": "Prelievo al porto"
     },
     "/catalog_card/badges/3": {
-      "source_en": "8-hour shore day"
+      "source_en": "8-hour shore day",
+      "tm": "Giornata a terra di 8 ore"
     },
     "/catalog_card/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 ore"
     },
     "/catalog_card/subtitle": {
-      "source_en": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time."
+      "source_en": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
+      "tm": "Un itinerario di Busan in piccolo gruppo pensato per le crociere, con prelievo al porto, i luoghi simbolo della città e rientro calibrato sull’orario di partenza della Sua nave."
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: ⟦G2⟧, the ⟦G1⟧, lunch at your own expense, then ⟦G3⟧, ⟦G6⟧ and ⟦G5⟧ on foot, ⟦G0⟧, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and ⟦G4⟧. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard.",
+      "tm": "Un’escursione a terra a Busan in piccolo gruppo per crocieristi, su un van con massimo 12 posti. Nove tappe in una giornata di otto ore: ⟦G2⟧, il ⟦G1⟧, il pranzo a Suo carico, poi il ⟦G3⟧, la ⟦G6⟧ e il ⟦G5⟧ a piedi, il ⟦G0⟧, la passerella Songdo Cloud Trails con la funivia per lo Sky Park come scelta sul posto, e il ⟦G4⟧. Il prelievo avviene al terminal crociere in cui attracca la Sua nave, e il rientro è calibrato sull’orario di rientro a bordo.",
       "glossary": [
         "⟦G0⟧ = Villaggio culturale di Gamcheon",
         "⟦G1⟧ = Cimitero commemorativo delle Nazioni Unite",
@@ -201,37 +231,48 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan Cruise Shore"
+      "source_en": "Busan Cruise Shore",
+      "tm": "Busan a terra da crociera"
     },
     "/headlineLine2": {
-      "source_en": "Small-Group Tour"
+      "source_en": "Small-Group Tour",
+      "tm": "Tour in piccolo gruppo"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product."
+      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product.",
+      "tm": "Al momento della prenotazione indichi il nome della nave, la data della sosta in porto, l’orario previsto di sbarco e l’orario di rientro a bordo. Il terminal di prelievo (terminal crociere di Yeongdo o terminal passeggeri di Choryang) dipende da dove attracca la Sua nave. Il van è condiviso con altri crocieristi; il rientro puntuale è il cuore di questo servizio."
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항)",
+      "tm": "Terminal crociere internazionale di Busan (영도 크루즈항)"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Busan Port International Passenger Terminal (Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (Choryang)",
+      "tm": "Terminal passeggeri internazionale del porto di Busan (Choryang)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "tm": "Terminal crociere internazionale di Busan (영도 크루즈항 — Dongsam, Yeongdo)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Le navi da crociera a Busan attraccano all’uno o all’altro terminal: quello che La riguarda dipende da dove ormeggia la Sua nave e viene confermato in fase di prenotazione. Trovi la guida nella sala arrivi."
     },
     "/pickup_dropoff/departure/0/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Confermato in fase di prenotazione (≈30 min dopo l’ormeggio della nave)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+      "tm": "Terminal passeggeri internazionale del porto di Busan (부산항국제여객터미널 — Choryang)"
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Le navi da crociera a Busan attraccano all’uno o all’altro terminal: quello che La riguarda dipende da dove ormeggia la Sua nave e viene confermato in fase di prenotazione. Trovi la guida nella sala arrivi."
     },
     "/pickup_dropoff/departure/1/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Confermato in fase di prenotazione (≈30 min dopo l’ormeggio della nave)"
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -268,5 +309,5 @@
       "⟦G6⟧": "Piazza BIFF"
     }
   },
-  "tmHits": 22
+  "tmHits": 63
 }

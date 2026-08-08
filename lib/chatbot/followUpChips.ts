@@ -7,9 +7,13 @@
 // routing regexes in quoteFlow (looksLikeAffirmation / looksLikeDecline /
 // emailConfirmOutcome) — change them together or the tap dead-ends.
 
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 
-type ChipMap = Record<TourProductPageLocale, string[]>;
+type ChipMap = Record<TourProductBaseLocale, string[]>;
 
 const RECOMMEND_CHIPS: ChipMap = {
   en: ["What's included in these tours?", "Where does pickup start?", "Get a private tour quote"],
@@ -65,23 +69,23 @@ const AVAILABILITY_CHIPS: ChipMap = {
 };
 
 export function availabilityChips(locale: TourProductPageLocale): string[] {
-  return AVAILABILITY_CHIPS[locale] ?? AVAILABILITY_CHIPS.en;
+  return AVAILABILITY_CHIPS[toTourProductBaseLocale(locale)] ?? AVAILABILITY_CHIPS.en;
 }
 
 export function recommendationChips(locale: TourProductPageLocale): string[] {
-  return RECOMMEND_CHIPS[locale] ?? RECOMMEND_CHIPS.en;
+  return RECOMMEND_CHIPS[toTourProductBaseLocale(locale)] ?? RECOMMEND_CHIPS.en;
 }
 
 export function priceChips(locale: TourProductPageLocale): string[] {
-  return PRICE_CHIPS[locale] ?? PRICE_CHIPS.en;
+  return PRICE_CHIPS[toTourProductBaseLocale(locale)] ?? PRICE_CHIPS.en;
 }
 
 export function quoteConfirmChips(locale: TourProductPageLocale): string[] {
-  return QUOTE_CONFIRM_CHIPS[locale] ?? QUOTE_CONFIRM_CHIPS.en;
+  return QUOTE_CONFIRM_CHIPS[toTourProductBaseLocale(locale)] ?? QUOTE_CONFIRM_CHIPS.en;
 }
 
 export function emailConfirmChips(locale: TourProductPageLocale): string[] {
-  return EMAIL_CONFIRM_CHIPS[locale] ?? EMAIL_CONFIRM_CHIPS.en;
+  return EMAIL_CONFIRM_CHIPS[toTourProductBaseLocale(locale)] ?? EMAIL_CONFIRM_CHIPS.en;
 }
 
 /**

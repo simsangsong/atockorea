@@ -1,0 +1,254 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:ru:A2",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "ru",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Cruise passengers wanting a full Busan day in 8 hours, with return timing planned around the ship schedule"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Couples and families who prefer a private, customizable day over a fixed group itinerary"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Multi-generational groups including seniors (private vehicle = no walking between transfers)"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "First-time Busan visitors who want the iconic stops without group-tour pacing"
+    },
+    "/whyTourWorks/bestFor/4": {
+      "source_en": "Travelers with mobility, dietary, or pace requirements that group tours can't accommodate"
+    },
+    "/whyTourWorks/sourcing": {
+      "source_en": "Designed as a private Busan shore day for cruise guests using Busan’s main cruise terminals, with route timing planned around port pickup and return."
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Solo or budget travelers — private pricing is per vehicle, not per person"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers who want to mix with other guests for a social, group-tour atmosphere"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Cruise passengers whose port call is too short for a full 8-hour day ashore"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Anyone wanting a fixed, pre-set route rather than planning the day with the guide"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Return timing comes first"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Group tours run on a shared clock. A private tour lets the guide plan around your ship's all-aboard time and adjust the last stop if traffic gets heavy."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Busan is geographically spread out"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "Busan is spread out, with bridges, coastal roads, hills, and one-way downtown streets. A private vehicle reduces waiting time and keeps the day realistic."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Customize without re-quoting"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Swap Jagalchi for ⟦G0⟧ Temple, skip the Tower observatory, add the Sky Capsule, or extend lunch — the price is per vehicle, not per change.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Why a private charter wins for cruise shore days"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Included"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Private vehicle and driver for your group only, English- and Chinese-speaking guide, all tolls and parking. Pickup and drop-off are at the cruise terminal your ship berths at — this is a shore-excursion charter, so hotel and KTX pickup are not offered on it."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "Pay direct"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "Lunch (10,000–20,000 KRW p/p), Danubi Train at ⟦G0⟧ (₩4,000), Busan Tower observatory (₩12,000), Sky Capsule if added. All admissions are reasonable — there is no hidden surcharge from us.",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Add-ons available"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Gimhae Airport pickup or drop-off as a separate paid service; overtime at 30,000 KRW per hour cash to driver."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "What's included vs. pay-direct"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Full refund if your ship can't dock"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "If your ship cannot dock in Busan because of weather or port conditions, the tour is eligible for a full refund."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Driver tracks your ship's departure time"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "We confirm your ship's arrival and all-aboard time, then pace the day against the real port-call schedule."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Vehicle plate number shared in advance"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "You know exactly which car you're looking for at the terminal arrival hall — no scrambling among the crowds of cruise meet-and-greets."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "Cruise-specific safeguards"
+    },
+    "/routeShapeIntro/body": {
+      "source_en": "The default 5-stop itinerary is shaped for cruise passengers: a quiet, easy-walking start at ⟦G0⟧, a dramatic East Sea moment at ⟦G2⟧, colorful hillside views at Gamcheon, a downtown panorama at Yongdusan, and a lively market finish at Jagalchi. The route can be adjusted at booking with options such as ⟦G1⟧ Temple, the Sky Capsule area, or Beomeosa Temple when time allows.",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН",
+        "⟦G1⟧ = Хэдон Йонгунса",
+        "⟦G2⟧ = Тхэджондэ"
+      ]
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "Cruise-day rhythm: memorial → cliffs → village → tower → market"
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Sedan or SUV for 1–3 passengers; mid-size van for 4–7 passengers. Larger groups please contact us for a tailored quote."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "How many people can the private vehicle take?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "If your ship cannot dock at Busan due to weather or port conditions, you receive a full refund. If the ship is simply delayed, the driver waits and adjusts the itinerary; the 8-hour period starts from actual pickup time."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "What if my cruise ship is delayed or cannot dock?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "Yes — fully. Send your preferred stops at booking and we'll confirm a workable order. The default 5-stop cruise itinerary is a starting point, not a fixed plan. Common substitutions include ⟦G0⟧ Temple, Sky Capsule, and Beomeosa Temple.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Can I customize the stops?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "No — Gimhae Airport pickup or drop-off is a separate paid add-on (not part of the standard cruise-shore period), since the airport is on the western edge of the metropolitan area. Please request at booking and we'll quote the add-on price."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "Is Gimhae Airport pickup or drop-off included?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "If your cruise ship cannot dock due to weather or port conditions, contact us as soon as possible and we will support the refund process."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Refund support if your ship can't dock"
+    },
+    "/bookingTrustItems/0/detail": {
+      "source_en": "Eligible for full refund when the cruise port call is cancelled because of weather or port conditions."
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "On-time return planned: we build a 60-minute buffer before your all-aboard time into every private cruise itinerary."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "On-time return planned"
+    },
+    "/bookingTrustItems/1/detail": {
+      "source_en": "We confirm your ship's departure time and pace the day to return with planned extra time."
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "Licensed local driver-guide with cruise-specific experience — experienced with Busan cruise terminal pickup procedures at both Dongsam and Choryang terminals."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "Licensed local driver-guide",
+      "tm": "Лицензированный местный водитель-гид"
+    },
+    "/bookingTrustItems/2/detail": {
+      "source_en": "All drivers are professionally licensed, English-speaking, and verified by AtoC Korea's Busan partner network."
+    },
+    "/seasonalVariations/0/swaps": {
+      "source_en": "Add a Dalmaji Hill cherry blossom drive-by between ⟦G0⟧ and Gamcheon during peak bloom week.",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)",
+      "tm": "Весна (март–май)"
+    },
+    "/seasonalVariations/0/summary": {
+      "source_en": "Cherry blossoms peak around late March to early April at Dalmaji Hill, ⟦G0⟧, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "tm": "Сакура цветёт сильнее всего с конца марта до начала апреля на холме Тальмаджи, в ⟦G0⟧ и на пляже Кванналли. Приятные 12–22°C; лёгкая одежда слоями.",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/seasonalVariations/1/swaps": {
+      "source_en": "Swap the Tower observatory for the Haeundae Sky Capsule (covered, air-conditioned) or add Songdo Skywalk for a sea breeze."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Лето (июнь–август)"
+    },
+    "/seasonalVariations/1/summary": {
+      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "tm": "Тепло и влажно, 25–32°C, в июне и июле возможны муссонные дожди. Закат поздний, поэтому дополнительная остановка на побережье в конце дня работает хорошо."
+    },
+    "/seasonalVariations/2/swaps": {
+      "source_en": "All default stops shine in autumn; consider adding Beomeosa Temple for autumn foliage."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Осень (сентябрь–ноябрь)"
+    },
+    "/seasonalVariations/2/summary": {
+      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "tm": "Лучшая погода для поездок в Корее — 15–25°C, низкая влажность, золотистый свет. На этот период приходится пик круизного сезона."
+    },
+    "/seasonalVariations/3/swaps": {
+      "source_en": "Limit outdoor time at ⟦G0⟧ lighthouse stairs; add a longer Jagalchi stop where indoor 2F restaurants and hot soup are easy options.",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Зима (декабрь–февраль)"
+    },
+    "/seasonalVariations/3/summary": {
+      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "tm": "Прохладно и ветрено, 0–10°C, но круизы продолжают приходить. Остановки на побережье в это время суровы и красивы."
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "⟦G0⟧": "Тхэджондэ"
+    },
+    "/routeShapeIntro/body": {
+      "⟦G0⟧": "Мемориальное кладбище ООН",
+      "⟦G1⟧": "Хэдон Йонгунса",
+      "⟦G2⟧": "Тхэджондэ"
+    },
+    "/staticQuestions/2/answer": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/seasonalVariations/0/swaps": {
+      "⟦G0⟧": "Тхэджондэ"
+    },
+    "/seasonalVariations/0/summary": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/seasonalVariations/3/swaps": {
+      "⟦G0⟧": "Тхэджондэ"
+    }
+  },
+  "tmHits": 9
+}

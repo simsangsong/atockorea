@@ -95,6 +95,7 @@
     "i18n:glossary": "npx tsx scripts/i18n/build-glossary.ts",
     "i18n:apply": "node --env-file=.env.local --import tsx scripts/i18n/apply.ts",
     "i18n:status": "npx tsx scripts/i18n/status.ts",
+    "i18n:charset": "node scripts/i18n/charset-scan.mjs",
     "video:guide": "node scripts/video-guide/run.mjs",
     "tour:days": "node --env-file=.env.local --import tsx scripts/tours/set-departure-days.ts",
     "tours:apply-2026-08-04": "node --env-file=.env.local scripts/apply-tour-catalog-2026-08-04.mjs",

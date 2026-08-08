@@ -7,241 +7,448 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seogwipo coast morning"
+      "source_en": "Seogwipo coast morning",
+      "tm": "Matinée sur la côte de Seogwipo"
     },
     "/routePhases/0/duration": {
-      "source_en": "≈ 2 hours"
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 heures"
     },
     "/routePhases/0/description": {
       "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) and the Oedolgae & Olle Route 7 coastal walk.",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) ainsi qu'Oedolgae et la promenade côtière de l'Olle Route 7.",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "Temple + lunch"
+      "source_en": "Temple + lunch",
+      "tm": "Temple + déjeuner"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 1 hour 40 min"
+      "source_en": "≈ 1 hour 40 min",
+      "tm": "≈ 1 heure 40 min"
     },
     "/routePhases/1/description": {
-      "source_en": "East Asia's largest temple, Yakcheonsa, followed by a local south Jeju lunch."
+      "source_en": "East Asia's largest temple, Yakcheonsa, followed by a local south Jeju lunch.",
+      "tm": "Le plus grand temple d'Asie de l'Est, Yakcheonsa, suivi d'un déjeuner local du sud de Jeju."
     },
     "/routePhases/2/phase": {
-      "source_en": "Tea finale"
+      "source_en": "Tea finale",
+      "tm": "Final autour du thé"
     },
     "/routePhases/2/duration": {
-      "source_en": "≈ 1 hour"
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 heure"
     },
     "/routePhases/2/description": {
-      "source_en": "O'sulloc Tea Museum and Korea's largest Seogwang Dawon tea field."
+      "source_en": "O'sulloc Tea Museum and Korea's largest Seogwang Dawon tea field.",
+      "tm": "Le musée du thé O'sulloc et Seogwang Dawon, la plus grande plantation de thé de Corée."
     },
     "/routePhases/3/phase": {
-      "source_en": "Hallasan finale"
+      "source_en": "Hallasan finale",
+      "tm": "Final au Hallasan"
     },
     "/routePhases/3/duration": {
-      "source_en": "≈ 1 hour 15 min"
+      "source_en": "≈ 1 hour 15 min",
+      "tm": "≈ 1 heure 15 min"
     },
     "/routePhases/3/description": {
-      "source_en": "The Eoseungsaengak Trail (UNESCO) while crossing Hallasan via Route 1100."
+      "source_en": "The Eoseungsaengak Trail (UNESCO) while crossing Hallasan via Route 1100.",
+      "tm": "Le sentier d'Eoseungsaengak (UNESCO) lors de la traversée du Hallasan par la Route 1100."
     },
     "/routePhases/4/phase": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Retour"
     },
     "/routePhases/4/duration": {
-      "source_en": "≈ 40 min"
+      "source_en": "≈ 40 min",
+      "tm": "≈ 40 min"
     },
     "/routePhases/4/description": {
-      "source_en": "Route 1100 → Jeju City via 5 drop-off points."
+      "source_en": "Route 1100 → Jeju City via 5 drop-off points.",
+      "tm": "Route 1100 → Jeju City via 5 points de dépose."
     },
     "/galleryItems/0/alt": {
-      "source_en": "⟦G0⟧ — gallery image 1",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 1",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — image de galerie 1",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/0/caption": {
-      "source_en": "⟦G0⟧ — photo 1",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 1",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — photo 1",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/0/location": {
-      "source_en": "⟦G0⟧",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan)",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/1/alt": {
-      "source_en": "⟦G0⟧ — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Temple Yakcheonsa"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1"
     },
     "/galleryItems/1/caption": {
-      "source_en": "⟦G0⟧ — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Temple Yakcheonsa"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 1"
     },
     "/galleryItems/1/location": {
-      "source_en": "⟦G0⟧",
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae et promenade côtière du sentier Olle 7"
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 1",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est) — image 1 de la galerie",
       "glossary": [
         "⟦G0⟧ = Temple Yakcheonsa"
       ]
     },
-    "/galleryItems/2/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3"
-    },
     "/galleryItems/2/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 3"
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 1",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est) — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
     },
     "/galleryItems/2/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
     },
     "/galleryItems/3/alt": {
-      "source_en": "⟦G0⟧ Trail — gallery image 4",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — image de galerie 1"
     },
     "/galleryItems/3/caption": {
-      "source_en": "⟦G0⟧ Trail — photo 4",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — photo 1"
     },
     "/galleryItems/3/location": {
-      "source_en": "⟦G0⟧ Trail",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
     },
     "/galleryItems/4/alt": {
-      "source_en": "⟦G0⟧ — gallery image 5",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 1",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — image de galerie 1",
       "glossary": [
-        "⟦G0⟧ = Cascade de Jeongbang"
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/4/caption": {
-      "source_en": "⟦G0⟧ — photo 5",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 1",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — photo 1",
       "glossary": [
-        "⟦G0⟧ = Cascade de Jeongbang"
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/4/location": {
-      "source_en": "⟦G0⟧",
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (patrimoine naturel mondial de l'UNESCO)",
       "glossary": [
-        "⟦G0⟧ = Cascade de Jeongbang"
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ — gallery image 6",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 2",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — image de galerie 2",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ — photo 6",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 2",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — photo 2",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/5/location": {
-      "source_en": "⟦G0⟧",
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan)",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/galleryItems/6/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 3",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — image de galerie 3",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/6/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 7"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 3",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/6/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan)",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 8"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/7/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 8"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/7/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan)",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/8/alt": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 9"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/8/caption": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 9"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/8/location": {
-      "source_en": "O'sulloc Tea Museum + Green Tea Fields"
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (seule cascade d'Asie se jetant dans l'océan)",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Jeongbang"
+      ]
     },
     "/galleryItems/9/alt": {
-      "source_en": "⟦G0⟧ Trail — gallery image 10",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2"
     },
     "/galleryItems/9/caption": {
-      "source_en": "⟦G0⟧ Trail — photo 10",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 2"
     },
     "/galleryItems/9/location": {
-      "source_en": "⟦G0⟧ Trail",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae et promenade côtière du sentier Olle 7"
     },
     "/galleryItems/10/alt": {
-      "source_en": "⟦G0⟧ Trail — gallery image 11",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3"
     },
     "/galleryItems/10/caption": {
-      "source_en": "⟦G0⟧ Trail — photo 11",
-      "glossary": [
-        "⟦G0⟧ = Hallasan Eoseungsaengak"
-      ]
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 3"
     },
     "/galleryItems/10/location": {
-      "source_en": "⟦G0⟧ Trail",
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae et promenade côtière du sentier Olle 7"
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4"
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 4"
+    },
+    "/galleryItems/11/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae et promenade côtière du sentier Olle 7"
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/12/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/13/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/13/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/13/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/14/alt": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/14/caption": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/14/location": {
+      "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (le plus grand temple d'Asie de l'Est)",
+      "glossary": [
+        "⟦G0⟧ = Temple Yakcheonsa"
+      ]
+    },
+    "/galleryItems/15/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — image de galerie 2"
+    },
+    "/galleryItems/15/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — photo 2"
+    },
+    "/galleryItems/15/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/16/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3",
+      "tm": "O'sulloc Tea Museum + champs de thé vert — image de galerie 3"
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
+      "tm": "O'sulloc Tea Museum + champs de thé vert — photo 3"
+    },
+    "/galleryItems/16/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — image de galerie 4"
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
+      "tm": "Musée du thé O'sulloc + champs de thé vert — photo 4"
+    },
+    "/galleryItems/17/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+    },
+    "/galleryItems/18/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 5"
+    },
+    "/galleryItems/18/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/19/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+    },
+    "/galleryItems/19/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 6"
+    },
+    "/galleryItems/19/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/20/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7",
+      "tm": "O'sulloc Tea Museum + champs de thé vert — image de galerie 7"
+    },
+    "/galleryItems/20/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+      "tm": "O'sulloc Tea Museum + champs de thé vert — photo 7"
+    },
+    "/galleryItems/20/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "O'sulloc Tea Museum + champs de thé vert"
+    },
+    "/galleryItems/21/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 2",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — image de galerie 2",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
-    "/galleryItems/11/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 12"
+    "/galleryItems/21/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 2",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/11/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 12"
+    "/galleryItems/21/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (patrimoine naturel mondial de l'UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/11/location": {
-      "source_en": "Hallasan 1100 Highland"
+    "/galleryItems/22/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 3",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — image de galerie 3",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/12/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 13"
+    "/galleryItems/22/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 3",
+      "tm": "⟦G0⟧ (patrimoine mondial naturel de l'UNESCO) — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/12/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 13"
+    "/galleryItems/22/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (patrimoine naturel mondial de l'UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/12/location": {
-      "source_en": "Hallasan 1100 Highland"
+    "/galleryItems/23/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/13/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 14"
+    "/galleryItems/23/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     },
-    "/galleryItems/13/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 14"
-    },
-    "/galleryItems/13/location": {
-      "source_en": "Hallasan 1100 Highland"
+    "/galleryItems/23/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (patrimoine naturel mondial de l'UNESCO)",
+      "glossary": [
+        "⟦G0⟧ = Hallasan Eoseungsaengak"
+      ]
     }
   },
   "glossaryTokens": {
@@ -257,32 +464,23 @@
     "/galleryItems/0/location": {
       "⟦G0⟧": "Cascade de Jeongbang"
     },
-    "/galleryItems/1/alt": {
+    "/galleryItems/2/alt": {
       "⟦G0⟧": "Temple Yakcheonsa"
     },
-    "/galleryItems/1/caption": {
+    "/galleryItems/2/caption": {
       "⟦G0⟧": "Temple Yakcheonsa"
     },
-    "/galleryItems/1/location": {
+    "/galleryItems/2/location": {
       "⟦G0⟧": "Temple Yakcheonsa"
-    },
-    "/galleryItems/3/alt": {
-      "⟦G0⟧": "Hallasan Eoseungsaengak"
-    },
-    "/galleryItems/3/caption": {
-      "⟦G0⟧": "Hallasan Eoseungsaengak"
-    },
-    "/galleryItems/3/location": {
-      "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
     "/galleryItems/4/alt": {
-      "⟦G0⟧": "Cascade de Jeongbang"
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
     "/galleryItems/4/caption": {
-      "⟦G0⟧": "Cascade de Jeongbang"
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
     "/galleryItems/4/location": {
-      "⟦G0⟧": "Cascade de Jeongbang"
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
     "/galleryItems/5/alt": {
       "⟦G0⟧": "Cascade de Jeongbang"
@@ -293,24 +491,87 @@
     "/galleryItems/5/location": {
       "⟦G0⟧": "Cascade de Jeongbang"
     },
-    "/galleryItems/9/alt": {
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Cascade de Jeongbang"
+    },
+    "/galleryItems/12/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/12/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/12/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/13/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/13/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/13/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/14/alt": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/14/caption": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/14/location": {
+      "⟦G0⟧": "Temple Yakcheonsa"
+    },
+    "/galleryItems/21/alt": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
-    "/galleryItems/9/caption": {
+    "/galleryItems/21/caption": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
-    "/galleryItems/9/location": {
+    "/galleryItems/21/location": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
-    "/galleryItems/10/alt": {
+    "/galleryItems/22/alt": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
-    "/galleryItems/10/caption": {
+    "/galleryItems/22/caption": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     },
-    "/galleryItems/10/location": {
+    "/galleryItems/22/location": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/23/alt": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/23/caption": {
+      "⟦G0⟧": "Hallasan Eoseungsaengak"
+    },
+    "/galleryItems/23/location": {
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     }
   },
-  "tmHits": 0
+  "tmHits": 63
 }

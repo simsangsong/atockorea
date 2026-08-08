@@ -40,22 +40,25 @@
       "source_en": "Yes, age 6 and up. Yonggungsa stairs and Gamcheon hillside are the main physical considerations; both have skip / shortcut options. Kids tend to like the Beach Train at Cheongsapo (if booked) and the live-fish floor at Jagalchi."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Is this suitable for children?"
+      "source_en": "Is this suitable for children?",
+      "tm": "Ist das für Kinder geeignet?"
     },
     "/staticQuestions/6/answer": {
       "source_en": "Considerably challenging due to Yonggungsa's stairs and Gamcheon's hillside. Active seniors are fine and the Beach Train option simplifies Cheongsapo; mobility-limited travelers should consider a private Busan tour with route adjustments."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this OK for seniors?"
+      "source_en": "Is this OK for seniors?",
+      "tm": "Ist die Tour für ältere Gäste geeignet?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead for Chinese. The guide handles all menu translation and stall interactions during the day."
     },
     "/staticQuestions/7/question": {
-      "source_en": "What languages does the guide speak?"
+      "source_en": "What languages does the guide speak?",
+      "tm": "Welche Sprachen spricht die Reiseleitung?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Three central-Busan stations: Seomyeon Station Exit 4 (08:30), Busan Station Exit 4 — not the KTX gate (08:50), Haeundae Station Exit 5 (09:30). Choose the exit closest to your hotel at booking."
+      "source_en": "Three central-Busan stations: Busan Station Exit 4 — not the KTX gate (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10). Choose the exit closest to your hotel at booking."
     },
     "/staticQuestions/8/question": {
       "source_en": "Where do you pick up?"
@@ -91,19 +94,22 @@
       "source_en": "≈4–5 km plus the 108 stairs at Yonggungsa (skippable) and the Gamcheon hillside. UN Cemetery and Jagalchi are flat. Comfortable walking shoes with grip are essential."
     },
     "/staticQuestions/13/question": {
-      "source_en": "How much walking is there?"
+      "source_en": "How much walking is there?",
+      "tm": "Wie viel wird gelaufen?"
     },
     "/staticQuestions/14/answer": {
       "source_en": "Yes for school-age children (6+) who can manage stairs. Younger children may struggle at Yonggungsa and Gamcheon. The Beach Train at Cheongsapo and the live-fish floor at Jagalchi are reliable kid-pleasers."
     },
     "/staticQuestions/14/question": {
-      "source_en": "Is this suitable for families?"
+      "source_en": "Is this suitable for families?",
+      "tm": "Ist das für Familien geeignet?"
     },
     "/staticQuestions/15/answer": {
       "source_en": "Light rain: tour runs as scheduled. Heavy rain: Yonggungsa's lower temple area becomes slippery, Gamcheon's stairs unsafe — the guide may shorten outdoor time and extend the indoor stops (Jagalchi). Typhoon-level: rebooking or full refund."
     },
     "/staticQuestions/15/question": {
-      "source_en": "What if it rains?"
+      "source_en": "What if it rains?",
+      "tm": "Was passiert bei Regen?"
     },
     "/bookingTrustItems/0/body": {
       "source_en": "Licensed local provider running Busan city tours regularly, with certified English-speaking guides, vehicle insurance, and route timing planned to avoid the busiest temple hours when possible."
@@ -112,7 +118,8 @@
       "source_en": "Licensed local"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
       "source_en": "Busan-licensed guiding"
@@ -121,10 +128,12 @@
       "source_en": "Small-group mini-van (max ~12) ensures Gamcheon's narrow alleys and Yonggungsa's 108-stair path stay comfortable — very different from 40-person bus tours."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-pink-50/80"
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
     },
     "/bookingTrustItems/1/description": {
       "source_en": "≈12 guests max"
@@ -136,31 +145,36 @@
       "source_en": "All-inclusive entry"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/2/description": {
       "source_en": "Major admissions covered"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Frühling (März–Mai)"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Cherry blossoms at Cheongsapo coast and along the Haeundae Blue Line Park path in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun–Aug)"
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Sommer (Juni–August)"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Long daylight; coastal stops stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Herbst (September–November)"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo coastal walk most comfortable."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Winter (Dezember–Februar)"
     },
     "/seasonalVariations/3/description": {
       "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event — book early."
@@ -171,5 +185,5 @@
       "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 0
+  "tmHits": 14
 }

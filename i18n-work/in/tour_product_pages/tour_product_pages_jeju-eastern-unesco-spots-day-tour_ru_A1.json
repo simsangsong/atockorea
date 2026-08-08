@@ -7,13 +7,16 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Jeju East UNESCO Day Tour · All Admissions Included | AtoC"
+      "source_en": "Jeju East UNESCO Day Tour · All Admissions Included | AtoC",
+      "tm": "Восточный Чеджу: дневной тур по объектам ЮНЕСКО · все входные билеты включены | AtoC"
     },
     "/seo/pageTitle": {
-      "source_en": "Jeju Eastern UNESCO Spots Small-Group Day Tour | AtoC Korea"
+      "source_en": "Jeju Eastern UNESCO Spots Small-Group Day Tour | AtoC Korea",
+      "tm": "Дневной тур в малой группе по объектам ЮНЕСКО на востоке Чеджу | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "9-hour East Jeju small-group day tour: Manjanggul (UNESCO) → ⟦G0⟧ → lunch → ⟦G1⟧ (UNESCO) → haenyeo diving performance → Hamdeok Beach. All admissions included, certified guide.",
+      "tm": "9-часовой дневной тур в малой группе по востоку Чеджу: Манджангуль (ЮНЕСКО) → ⟦G0⟧ → обед → ⟦G1⟧ (ЮНЕСКО) → шоу ныряния хэнё → пляж Хамдок. Все входные билеты включены, сертифицированный гид.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон"
@@ -21,148 +24,193 @@
     },
     "/seo/metaDescription": {
       "source_en": "9-hour East Jeju small-group loop: Manjanggul (UNESCO) at opening time, ⟦G0⟧ (Joseon folk heritage), ⟦G1⟧ (UNESCO), a haenyeo diving performance, and a Hamdeok Beach finale. All admissions included.",
+      "tm": "9-часовое кольцо в малой группе по востоку Чеджу: Манджангуль (ЮНЕСКО) в час открытия, ⟦G0⟧ (народное наследие эпохи Чосон), ⟦G1⟧ (ЮНЕСКО), шоу ныряния хэнё и финал на пляже Хамдок. Все входные билеты включены.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Jeju east UNESCO tour"
+      "source_en": "Jeju east UNESCO tour",
+      "tm": "тур по объектам ЮНЕСКО на востоке Чеджу"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/seo/primaryKeywords/2": {
       "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "haenyeo diving performance"
+      "source_en": "haenyeo diving performance",
+      "tm": "шоу ныряния хэнё"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Jeju Sunrise Peak day tour"
+      "source_en": "Jeju Sunrise Peak day tour",
+      "tm": "дневной тур на пик Восхода Солнца на Чеджу"
     },
     "/hero/meta/stops": {
-      "source_en": "8 stops"
+      "source_en": "8 stops",
+      "tm": "8 остановок"
     },
     "/hero/meta/region": {
-      "source_en": "Eastern Jeju"
+      "source_en": "Eastern Jeju",
+      "tm": "Восток Чеджу"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 9 hours (08:30 first pickup, ≈ 18:00 drop-off)"
+      "source_en": "≈ 9 hours (08:30 first pickup, ≈ 18:00 drop-off)",
+      "tm": "≈ 9 часов (первая посадка 08:30, высадка ≈ 18:00)"
     },
     "/hero/pills/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/hero/pills/1": {
-      "source_en": "Jeju"
+      "source_en": "Jeju",
+      "tm": "Чеджу"
     },
     "/hero/tagline": {
-      "source_en": "Eastern Jeju's UNESCO and signature stops in a single small-group day, with all admissions included"
+      "source_en": "Eastern Jeju's UNESCO and signature stops in a single small-group day, with all admissions included",
+      "tm": "Объекты ЮНЕСКО и фирменные остановки востока Чеджу за один день в малой группе, все входные билеты включены"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Насыщенность пейзажами"
     },
     "/glanceItems/1/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
     },
     "/glanceItems/2/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
     },
     "/glanceItems/4/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Темп"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Обзор"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Детали"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Отзывы"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Jeju"
+      "source_en": "Jeju",
+      "tm": "Чеджу"
     },
     "/catalog_card/tags/2": {
-      "source_en": "East Jeju"
+      "source_en": "East Jeju",
+      "tm": "Восток Чеджу"
     },
     "/catalog_card/tags/3": {
-      "source_en": "UNESCO"
+      "source_en": "UNESCO",
+      "tm": "ЮНЕСКО"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Good value"
+      "source_en": "Good value",
+      "tm": "Выгодная цена"
     },
     "/catalog_card/tags/5": {
-      "source_en": "All admissions included"
+      "source_en": "All admissions included",
+      "tm": "Все входные билеты включены"
     },
     "/catalog_card/title": {
-      "source_en": "Jeju East UNESCO Day Tour"
+      "source_en": "Jeju East UNESCO Day Tour",
+      "tm": "Восточный Чеджу: дневной тур по объектам ЮНЕСКО"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Jeju"
+      "source_en": "Jeju",
+      "tm": "Чеджу"
     },
     "/catalog_card/badges/2": {
-      "source_en": "East Jeju"
+      "source_en": "East Jeju",
+      "tm": "Восток Чеджу"
     },
     "/catalog_card/badges/3": {
-      "source_en": "UNESCO"
+      "source_en": "UNESCO",
+      "tm": "ЮНЕСКО"
     },
     "/catalog_card/badges/4": {
-      "source_en": "Value priced"
+      "source_en": "Value priced",
+      "tm": "Выгодная цена"
     },
     "/catalog_card/badges/5": {
-      "source_en": "All admissions included"
+      "source_en": "All admissions included",
+      "tm": "Все входные билеты включены"
     },
     "/catalog_card/region": {
-      "source_en": "Eastern Jeju"
+      "source_en": "Eastern Jeju",
+      "tm": "Восток Чеджу"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 часов"
     },
     "/catalog_card/subtitle": {
       "source_en": "Small-group minibus with English/Chinese guide — Manjanggul (UNESCO) in its quiet opening hour, ⟦G0⟧, ⟦G1⟧ (UNESCO), the haenyeo diving performance, and a Hamdeok Beach finale in a 9-hour eastern route.",
+      "tm": "Мини-автобус в малой группе с гидом со знанием английского и китайского — Манджангуль (ЮНЕСКО) в тихий час открытия, ⟦G0⟧, ⟦G1⟧ (ЮНЕСКО), шоу ныряния хэнё и финал на пляже Хамдок в 9-часовом маршруте по востоку острова.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон"
@@ -170,6 +218,7 @@
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "Loop eastern Jeju's UNESCO sights in a 9-hour small group — now routed cave-first: Manjanggul right after opening (the quietest hour in the lava tube), ⟦G1⟧, ⟦G2⟧ and the haenyeo diving performance (Haenyeo Museum if canceled), then a late-afternoon finale at ⟦G0⟧. Two UNESCO World Natural Heritage sites inscribed together in 2007, all admissions included, certified English/Chinese-speaking guide.",
+      "tm": "Кольцевой маршрут по объектам ЮНЕСКО на востоке Чеджу за 9 часов в малой группе — теперь пещера идёт первой: Манджангуль сразу после открытия (самый тихий час в лавовой трубке), ⟦G1⟧, ⟦G2⟧ и шоу ныряния хэнё (Музей хэнё, если шоу отменят), затем финал ближе к вечеру на ⟦G0⟧. Два объекта Всемирного природного наследия ЮНЕСКО, внесённые в список вместе в 2007 году, все входные билеты включены, сертифицированный гид со знанием английского и китайского.",
       "glossary": [
         "⟦G0⟧ = Пляж Хамдок Соубон",
         "⟦G1⟧ = Фольклорная деревня Сонъып",
@@ -177,176 +226,229 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Jeju East UNESCO"
+      "source_en": "Jeju East UNESCO",
+      "tm": "ЮНЕСКО на востоке Чеджу"
     },
     "/headlineLine2": {
-      "source_en": "Day Tour"
+      "source_en": "Day Tour",
+      "tm": "фирменный дневной тур"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Return usually runs around 18:00–18:30."
+      "source_en": "Return usually runs around 18:00–18:30.",
+      "tm": "Возвращение обычно происходит около 18:00–18:30."
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Ocean Suites Jeju Hotel"
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "отель Ocean Suites Jeju"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Jeju International Airport (3F, Gate 3)"
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Международный аэропорт Чеджу (3-й этаж, выход 3)"
     },
     "/pickup_dropoff/return/2/name": {
-      "source_en": "LOTTE City Hotel Jeju"
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "отель LOTTE City Hotel Jeju"
     },
     "/pickup_dropoff/return/3/name": {
-      "source_en": "Shilla Duty Free (Jeju Store)"
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (магазин на Чеджу)"
     },
     "/pickup_dropoff/return/4/name": {
-      "source_en": "Dongmun Traditional Market"
+      "source_en": "Dongmun Traditional Market",
+      "tm": "Традиционный рынок Тонмун"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Ocean Suites Jeju Hotel"
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "отель Ocean Suites Jeju"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Meet in the hotel lobby — guide holds an AtoCKorea sign."
+      "source_en": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
+      "tm": "Встреча в лобби отеля — гид держит табличку AtoCKorea."
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Jeju International Airport (3F, Gate 3)"
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Международный аэропорт Чеджу (3-й этаж, выход 3)"
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "3rd floor departures area. Follow signs to Gate 3."
+      "source_en": "3rd floor departures area. Follow signs to Gate 3.",
+      "tm": "Зона вылета на 3-м этаже. Следуйте указателям к выходу 3."
     },
     "/pickup_dropoff/departure/2/name": {
-      "source_en": "LOTTE City Hotel Jeju"
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "отель LOTTE City Hotel Jeju"
     },
     "/pickup_dropoff/departure/2/note": {
-      "source_en": "Wait in the main lobby — guide will call you by name."
+      "source_en": "Wait in the main lobby — guide will call you by name.",
+      "tm": "Ждите в главном лобби — гид назовёт вас по имени."
     },
     "/pickup_dropoff/departure/3/name": {
-      "source_en": "Shilla Duty Free (Jeju Store)"
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (магазин на Чеджу)"
     },
     "/pickup_dropoff/departure/3/note": {
-      "source_en": "Meet outside the main entrance of Shilla Duty Free, Jeju branch."
+      "source_en": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
+      "tm": "Встреча снаружи у главного входа Shilla Duty Free, филиал на Чеджу."
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "человек"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Что включено"
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction admissions (⟦G1⟧ ₩5,000, ⟦G0⟧ free, Ilchul Land/Micheon Cave ₩12,000, Haenyeo Museum ₩1,100, Hamdeok Beach free), fuel/tolls/parking.",
+      "tm": "Мини-автобус с кондиционером, сертифицированный гид со знанием английского и китайского, ВСЕ входные билеты (⟦G1⟧ ₩5 000, ⟦G0⟧ бесплатно, Ilchul Land / пещера Мичхонгуль ₩12 000, Музей хэнё ₩1 100, пляж Хамдок бесплатно), топливо, дорожные сборы и парковка.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Not included: lunch (≈ ₩15,000), drinks, tips."
+      "source_en": "Not included: lunch (≈ ₩15,000), drinks, tips.",
+      "tm": "Не включено: обед (≈ ₩15 000), напитки, чаевые."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction…"
+      "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction…",
+      "tm": "Мини-автобус с кондиционером, сертифицированный гид со знанием английского и китайского, ВСЕ входные билеты…"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Посадка и высадка"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: different gate from operator's Southern tour), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05)."
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: different gate from operator's Southern tour), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05).",
+      "tm": "Последовательная посадка в четырёх точках: Ocean Suites Jeju (08:30), аэропорт Чеджу, выход 1, 1-й этаж внутренних прилётов (08:45 — обратите внимание: выход отличается от южного тура оператора), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free на Чеджу (09:05)."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Choose the closest at booking."
+      "source_en": "Choose the closest at booking.",
+      "tm": "Выберите ближайшую при бронировании."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Day-before WhatsApp confirmation."
+      "source_en": "Day-before WhatsApp confirmation.",
+      "tm": "Подтверждение накануне в WhatsApp."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F…"
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F…",
+      "tm": "Последовательная посадка в четырёх точках: Ocean Suites Jeju (08:30), аэропорт Чеджу, выход 1, 1-й этаж…"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Пешие участки и рельеф"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Moderate difficulty."
+      "source_en": "Moderate difficulty.",
+      "tm": "Средняя сложность."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Manjanggul is about a 1 km flat round trip, with stairs at the cave entrance and a somewhat uneven, damp floor inside (11–13°C year-round, jacket recommended)."
+      "source_en": "Manjanggul is about a 1 km flat round trip, with stairs at the cave entrance and a somewhat uneven, damp floor inside (11–13°C year-round, jacket recommended).",
+      "tm": "Манджангуль — примерно 1 км ровного пути туда и обратно, с лестницей у входа в пещеру и слегка неровным влажным полом внутри (11–13 °C круглый год, рекомендуется куртка)."
     },
     "/practicalAccordionItems/2/content/2": {
       "source_en": "⟦G0⟧ has dirt paths and stone walls.",
+      "tm": "В ⟦G0⟧ грунтовые дорожки и каменные ограды.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып"
       ]
     },
     "/practicalAccordionItems/2/content/3": {
       "source_en": "The ⟦G0⟧ crater-rim climb is about 30 min of steep stone steps (can be skipped).",
+      "tm": "Подъём на кромку кратера ⟦G0⟧ — около 30 мин. по крутым каменным ступеням (можно пропустить).",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "The haenyeo diving performance is viewed from the flat shore."
+      "source_en": "The haenyeo diving performance is viewed from the flat shore.",
+      "tm": "Шоу ныряния хэнё смотрят с ровного берега."
     },
     "/practicalAccordionItems/2/content/5": {
-      "source_en": "Hamdeok Beach is flat sand."
+      "source_en": "Hamdeok Beach is flat sand.",
+      "tm": "Пляж Хамдок — ровный песок."
     },
     "/practicalAccordionItems/2/content/6": {
-      "source_en": "Closed-toe shoes required."
+      "source_en": "Closed-toe shoes required.",
+      "tm": "Обязательна закрытая обувь."
     },
     "/practicalAccordionItems/2/content/7": {
-      "source_en": "Total walking about 4–5 km."
+      "source_en": "Total walking about 4–5 km.",
+      "tm": "Всего пешком около 4–5 км."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Moderate difficulty."
+      "source_en": "Moderate difficulty.",
+      "tm": "Средняя сложность."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "Cancellation"
+      "source_en": "Cancellation",
+      "tm": "Отмена"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Same-day cancellations and no-shows non-refundable."
+      "source_en": "Same-day cancellations and no-shows non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Heavy weather may shorten the Seongsan climb but does not cancel the day."
+      "source_en": "Heavy weather may shorten the Seongsan climb but does not cancel the day.",
+      "tm": "Из-за сильной непогоды подъём на Сонсан может быть сокращён, но тур не отменяется."
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Cave information (Manjanggul)"
+      "source_en": "Cave information (Manjanggul)",
+      "tm": "Информация о пещере (Манджангуль)"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube inscribed in 2007 and is included in this route."
+      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube inscribed in 2007 and is included in this route.",
+      "tm": "Манджангуль — лавовая трубка, внесённая в список Всемирного природного наследия ЮНЕСКО в 2007 году, и она включена в этот маршрут."
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "The open section is about a 1 km round trip (about 30–45 min), with the world's largest lava column at 7.6 m high at the end."
+      "source_en": "The open section is about a 1 km round trip (about 30–45 min), with the world's largest lava column at 7.6 m high at the end.",
+      "tm": "Открытый для посещения участок — около 1 км туда и обратно (примерно 30–45 мин.), в конце находится крупнейшая в мире лавовая колонна высотой 7,6 м."
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "The interior is a cool 11–13°C year-round, so a jacket is recommended."
+      "source_en": "The interior is a cool 11–13°C year-round, so a jacket is recommended.",
+      "tm": "Внутри круглый год прохладно, 11–13 °C, поэтому рекомендуется куртка."
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "If closed for maintenance or weather, it may be substituted with a nearby lava tube (Micheon Cave at Ilchul Land) — confirm when booking."
+      "source_en": "If closed for maintenance or weather, it may be substituted with a nearby lava tube (Micheon Cave at Ilchul Land) — confirm when booking.",
+      "tm": "Если пещера закрыта на обслуживание или из-за погоды, её могут заменить на соседнюю лавовую трубку (пещера Мичхонгуль в Ilchul Land) — уточните при бронировании."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube included in the route."
+      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube included in the route.",
+      "tm": "Манджангуль — лавовая трубка Всемирного природного наследия ЮНЕСКО, включённая в маршрут."
     },
     "/practicalAccordionItems/5/title": {
-      "source_en": "Children & accessibility"
+      "source_en": "Children & accessibility",
+      "tm": "Дети и доступность"
     },
     "/practicalAccordionItems/5/content/0": {
       "source_en": "Recommended for ages 10+ due to the ⟦G0⟧ rim climb (≈ 600 stairs, optional but the day's centerpiece) and a 9-hour pace.",
+      "tm": "Рекомендуется детям от 10 лет из-за подъёма на кромку ⟦G0⟧ (≈ 600 ступеней, по желанию, но это главное событие дня) и 9-часового темпа.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Younger children can join, but the climb may be too much; consider our year-round Cherry Blossom or Cruise Bus tours which skip the summit."
+      "source_en": "Younger children can join, but the climb may be too much; consider our year-round Cherry Blossom or Cruise Bus tours which skip the summit.",
+      "tm": "Дети младше могут поехать, но подъём может оказаться слишком тяжёлым; рассмотрите наши круглогодичные туры «Цветение сакуры» или «Круизный автобус» без подъёма на вершину."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Strollers are not recommended on Seongsan stairs or Seongeup village paths."
+      "source_en": "Strollers are not recommended on Seongsan stairs or Seongeup village paths.",
+      "tm": "Детские коляски не рекомендуются на ступенях Сонсана и на дорожках деревни Сонъып."
     },
     "/practicalAccordionItems/5/preview": {
       "source_en": "Recommended for ages 10+ due to the ⟦G0⟧ rim climb (≈ 600 stairs, optional…",
+      "tm": "Рекомендуется детям от 10 лет из-за подъёма на кромку ⟦G0⟧ (≈ 600 ступеней, по желанию…",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
@@ -393,5 +495,5 @@
       "⟦G0⟧": "Сонсан Ильчхульбон"
     }
   },
-  "tmHits": 0
+  "tmHits": 102
 }

@@ -7,10 +7,12 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Hwaseong"
+      "source_en": "Hwaseong",
+      "tm": "Hwaseong"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "UNESCO Past"
+      "source_en": "UNESCO Past",
+      "tm": "Passato UNESCO"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
@@ -20,13 +22,16 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Heritage Palace"
+      "source_en": "Heritage Palace",
+      "tm": "Palazzo storico"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Starfield Library"
+      "source_en": "Starfield Library",
+      "tm": "Biblioteca Starfield"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Modern Korea"
+      "source_en": "Modern Korea",
+      "tm": "Corea contemporanea"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch",
@@ -37,10 +42,12 @@
       "tm": "Pausa"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Waujeongsa"
+      "source_en": "Waujeongsa",
+      "tm": "Waujeongsa"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Spiritual Close"
+      "source_en": "Spiritual Close",
+      "tm": "Chiusura spirituale"
     }
   },
   "glossaryTokens": {
@@ -48,5 +55,5 @@
       "⟦G0⟧": "Palazzo di Hwaseong Haenggung"
     }
   },
-  "tmHits": 3
+  "tmHits": 10
 }

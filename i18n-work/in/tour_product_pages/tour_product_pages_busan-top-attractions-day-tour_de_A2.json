@@ -10,7 +10,8 @@
       "source_en": "First-time Busan visitors"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Adult families and couples"
+      "source_en": "Adult families and couples",
+      "tm": "Familien mit Erwachsenen und Paare"
     },
     "/whyTourWorks/bestFor/2": {
       "source_en": "Travelers with one full day in Busan"
@@ -49,10 +50,12 @@
       ]
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Pacing & geography"
+      "source_en": "Pacing & geography",
+      "tm": "Tempo & Geografie"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
       "source_en": "Six substantive stops + lunch"
@@ -70,13 +73,14 @@
       "source_en": "Three pickup locations"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Pickup at Seomyeon, Busan Station, or Haeundae — accessible from most central-Busan accommodations. Choose the exit closest to your hotel; tour duration adjusts ±30 min based on pickup point."
+      "source_en": "Pickup at Busan Station, Seomyeon, or Haeundae — accessible from most central-Busan accommodations. Choose the exit closest to your hotel; your effective tour length varies by about 15 minutes depending on which one you pick."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
       "source_en": "Why this works in 10.5 hours"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-pink-50/80"
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
       "source_en": "Yonggungsa has 108 stairs (skippable)"
@@ -91,16 +95,18 @@
       "source_en": "Wear shoes with grip and pace yourself uphill. The main photo zone is reachable on a relatively gentle path; deeper exploration requires the steepest stairs."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "Trade-offs honestly"
+      "source_en": "Trade-offs honestly",
+      "tm": "Die Abwägungen, ehrlich benannt"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
       "source_en": "How this Busan day moves"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "Northeast coastal temple first, blue line park, UN memorial mid-day, Gamcheon village with lunch, then close at ⟦G0⟧ in central Busan. 08:30 to 18:00.",
+      "source_en": "Northeast coastal temple first, blue line park, UN memorial mid-day, Gamcheon village with lunch, then close at ⟦G0⟧ in central Busan. 08:10 to 18:00.",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt"
       ]
@@ -114,5 +120,5 @@
       "⟦G0⟧": "Jagalchi-Markt"
     }
   },
-  "tmHits": 0
+  "tmHits": 6
 }

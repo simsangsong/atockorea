@@ -7,25 +7,29 @@
   "tier": "A1",
   "segments": {
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Abholung & Rückfahrt"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Direct cruise terminal pickup at Busan Port International Cruise Terminal arrival hall — look for the AtoC Korea sign at the meeting point."
+      "source_en": "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
+      "tm": "Ihre Gruppe trifft sich in der Ankunftshalle jenes Busaner Kreuzfahrtterminals, an dem Ihr Schiff anlegt — dem Busan International Cruise Terminal (Yeongdo) oder dem Internationalen Passagierterminal des Hafens Busan (Choryang). Das Terminal wird bei der Buchung bestätigt."
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Coach boarding at 08:25 for an 08:30 departure; please allow time for cruise disembarkation queues."
+      "source_en": "Coach boarding at 08:50 for an 09:00 departure; please allow time for cruise disembarkation queues."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Return to the same cruise terminal coach lot at approximately 19:15–19:30."
+      "source_en": "Return to the same cruise terminal coach lot at approximately 16:45–17:00."
     },
     "/practicalAccordionItems/0/content/3": {
       "source_en": "The guide will confirm your specific cruise ship sail-away time at morning pickup and adjust the day's running order if needed."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Direct cruise terminal pickup at Busan Port International Cruise Terminal arrival hall…"
+      "source_en": "Your group meets in the arrival hall of whichever Busan cruise terminal your ship berths at — the Busan International Cruise Terminal (Yeongdo) or the Busan Port International Passenger Terminal (Choryang). The terminal is confirmed at booking.",
+      "tm": "Ihre Gruppe trifft sich in der Ankunftshalle jenes Busaner Kreuzfahrtterminals, an dem Ihr Schiff anlegt — dem Busan International Cruise Terminal (Yeongdo) oder dem Internationalen Passagierterminal des Hafens Busan (Choryang). Das Terminal wird bei der Buchung bestätigt."
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Was anziehen & mitbringen"
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Comfortable walking shoes with grip — Gamcheon's hillside alleys and Yonggungsa's 108 stairs both need traction."
@@ -50,7 +54,8 @@
       "source_en": "Comfortable walking shoes with grip — Gamcheon's hillside alleys and Yonggungsa's 108 stairs…"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Weather policy"
+      "source_en": "Weather policy",
+      "tm": "Wetterregelung"
     },
     "/practicalAccordionItems/2/content/0": {
       "source_en": "Year-round operation, port-call dependent."
@@ -68,62 +73,67 @@
       "source_en": "Year-round operation, port-call dependent."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Inbegriffene Leistungen"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Cruise terminal pickup and drop-off, air-conditioned large coach (28–45 seats), licensed English-speaking guide."
+      "source_en": "Included: Entrance fees for the tour's stops · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee",
+      "tm": "Inklusive: Eintritte für die Stopps der Tour · englisch- und chinesischsprachige Reiseleitung · Hin- und Rückfahrt von und zu Ihrem Kreuzfahrtterminal · Maut, Parkgebühren und Kraftstoff · Buchungsgebühr"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "All site admissions on the main route are free: Yonggungsa, UN Cemetery, Jagalchi, ⟦G1⟧, Gukje, Gamcheon village, Songdo Cloud Trails, ⟦G0⟧.",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park",
-        "⟦G1⟧ = BIFF-Platz"
-      ]
-    },
-    "/practicalAccordionItems/3/content/2": {
-      "source_en": "NOT included: lunch (₩8,000–₩12,000 own expense — and the lunch stop is itself optional), Songdo Marine Cable Car (₩17,000+ if you want to ride; not feasible in the 30-min stop), Busan Diamond Tower observatory (₩12,000 if you want the ticketed deck)."
-    },
-    "/practicalAccordionItems/3/content/3": {
-      "source_en": "Tips, personal shopping, and snacks not included."
+      "source_en": "Not included: Meals and drinks · Personal expenses · Gratuities · Travel insurance · Busan Diamond Tower observation deck (on-site choice) · Sky Capsule and Haeundae Beach Train (on-site choice) · Songdo Marine Cable Car (on-site choice)",
+      "tm": "Nicht inklusive: Mahlzeiten und Getränke · persönliche Ausgaben · Trinkgelder · Reiseversicherung · Aussichtsplattform des Busan Diamond Tower (Wahl vor Ort) · Sky Capsule und Haeundae Beach Train (Wahl vor Ort) · Songdo Marine Cable Car (Wahl vor Ort)"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Cruise terminal pickup, air-conditioned large coach, licensed English-speaking guide…"
+      "source_en": "Included: Entrance fees for the tour's stops · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee",
+      "tm": "Inklusive: Eintritte für die Stopps der Tour · englisch- und chinesischsprachige Reiseleitung · Hin- und Rückfahrt von und zu Ihrem Kreuzfahrtterminal · Maut, Parkgebühren und Kraftstoff · Buchungsgebühr"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Language"
+      "source_en": "Language",
+      "tm": "Sprache"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead."
+      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead.",
+      "tm": "Chinesischsprachige Reiseleitung auf Anfrage — mindestens 3 Tage im Voraus buchen."
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Korean spoken throughout the day for menus, signage, and stall interactions; the guide handles translation."
+      "source_en": "Korean spoken throughout the day for menus, signage, and stall interactions; the guide handles translation.",
+      "tm": "Vor Ort wird den ganzen Tag Koreanisch gesprochen — auf Speisekarten, Schildern und an den Ständen; die Reiseleitung übersetzt."
     },
     "/practicalAccordionItems/4/content/3": {
       "source_en": "Multi-language printed itinerary card distributed at pickup."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/5/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Gehstrecken & Gelände"
     },
     "/practicalAccordionItems/5/content/0": {
-      "source_en": "Challenging."
+      "source_en": "Challenging.",
+      "tm": "Anspruchsvoll."
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Yonggungsa has 108 stone steps down to the temple (skippable — upper viewing platforms exist)."
+      "source_en": "Yonggungsa has 108 stone steps down to the temple (skippable — upper viewing platforms exist).",
+      "tm": "Zum Yonggungsa führen 108 Steinstufen hinab (kann ausgelassen werden — oben gibt es Aussichtsplattformen)."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Gamcheon is a hillside village with steep alleys and stairs throughout the photo route — traction shoes essential."
+      "source_en": "Gamcheon is a hillside village with steep alleys and stairs throughout the photo route — traction shoes essential.",
+      "tm": "Gamcheon ist ein Hangdorf mit steilen Gassen und Treppen auf der ganzen Fotoroute — griffige Schuhe sind unerlässlich."
     },
     "/practicalAccordionItems/5/content/3": {
-      "source_en": "Yongdusan ascent is covered by escalator from Gwangbok-ro; descent is by stairs."
+      "source_en": "Yongdusan ascent is covered by escalator from Gwangbok-ro; descent is by stairs.",
+      "tm": "Den Yongdusan erreicht man mit einer Rolltreppe von der Gwangbok-ro; der Abstieg erfolgt über Treppen."
     },
     "/practicalAccordionItems/5/content/4": {
       "source_en": "Jagalchi, ⟦G2⟧, ⟦G0⟧, and ⟦G1⟧ are flat and walkable.",
+      "tm": "Jagalchi, ⟦G2⟧, ⟦G0⟧ und ⟦G1⟧ sind eben und gut zu Fuß zu erkunden.",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = Songdo-Strand",
@@ -131,16 +141,18 @@
       ]
     },
     "/practicalAccordionItems/5/content/5": {
-      "source_en": "Total walking ≈5–6 km plus stairs across the full day."
+      "source_en": "Total walking ≈5–6 km plus stairs across the full day.",
+      "tm": "Insgesamt ≈5–6 km zu Fuß plus Treppen über den ganzen Tag."
     },
     "/practicalAccordionItems/5/preview": {
-      "source_en": "Challenging."
+      "source_en": "Challenging.",
+      "tm": "Anspruchsvoll."
     },
     "/practicalAccordionItems/6/title": {
       "source_en": "Cruise sail-away timing"
     },
     "/practicalAccordionItems/6/content/0": {
-      "source_en": "Return is guaranteed by 19:30 for ships with a 19:30+ sail-away — typical buffer 30–60 minutes for reboarding."
+      "source_en": "Return is guaranteed by 17:00 for ships with a 17:00+ sail-away — typical buffer 30–60 minutes for reboarding."
     },
     "/practicalAccordionItems/6/content/1": {
       "source_en": "For ships with an earlier 18:00–19:00 sail-away, notify at booking — the route will be shortened by abbreviating Songdo and Yongdusan to fit."
@@ -152,13 +164,15 @@
       "source_en": "AtoC Korea has not missed a sail-away on this route in 4 seasons of operation."
     },
     "/practicalAccordionItems/6/preview": {
-      "source_en": "Return is guaranteed by 19:30 for ships with a 19:30+ sail-away…"
+      "source_en": "Return is guaranteed by 17:00 for ships with a 17:00+ sail-away…"
     },
     "/practicalAccordionItems/7/title": {
-      "source_en": "Cancellation"
+      "source_en": "Cancellation",
+      "tm": "Stornierung"
     },
     "/practicalAccordionItems/7/content/0": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     },
     "/practicalAccordionItems/7/content/1": {
       "source_en": "Inside 24 hours: 50% refund (the coach and guide have been allocated for your day)."
@@ -170,16 +184,41 @@
       "source_en": "Cruise itinerary change (port skipped): full refund regardless of timing."
     },
     "/practicalAccordionItems/7/preview": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
+    },
+    "/practicalAccordionItems/8/title": {
+      "source_en": "Surcharges, cancellation and who this tour is for",
+      "tm": "Zuschläge, Stornierung und für wen diese Tour gedacht ist"
+    },
+    "/practicalAccordionItems/8/content/0": {
+      "source_en": "Out-of-hours surcharge: if your ship requires a pickup before 08:00, or the tour finishes after 20:00, a surcharge of ₩10,000 per person applies and is paid on the day.",
+      "tm": "Zuschlag außerhalb der Regelzeiten: Erfordert Ihr Schiff eine Abholung vor 08:00 Uhr oder endet die Tour nach 20:00 Uhr, fällt ein Zuschlag von ₩10.000 pro Person an, zahlbar am Tag selbst."
+    },
+    "/practicalAccordionItems/8/content/1": {
+      "source_en": "Cancellation: free up to 24 hours before the tour starts. Inside 24 hours the booking is non-refundable.",
+      "tm": "Stornierung: kostenlos bis 24 Stunden vor Beginn der Tour. Innerhalb von 24 Stunden ist die Buchung nicht erstattungsfähig."
+    },
+    "/practicalAccordionItems/8/content/2": {
+      "source_en": "Minimum age: guests must be 4 years or older.",
+      "tm": "Mindestalter: Gäste müssen 4 Jahre oder älter sein."
+    },
+    "/practicalAccordionItems/8/content/3": {
+      "source_en": "Cruise passengers only: this tour is sold to guests arriving on a cruise ship calling at Busan. Bookings from travellers without a Busan port call are declined and refunded.",
+      "tm": "Nur für Kreuzfahrtgäste: Diese Tour wird an Gäste verkauft, die mit einem in Busan anlegenden Kreuzfahrtschiff ankommen. Buchungen von Reisenden ohne Hafenaufenthalt in Busan werden abgelehnt und erstattet."
+    },
+    "/practicalAccordionItems/8/content/4": {
+      "source_en": "Return timing: the day is built around your ship's all-aboard time, and the drop-off is scheduled ahead of it.",
+      "tm": "Rückkehrzeit: Der Tag ist um die All-aboard-Zeit Ihres Schiffes herum gebaut, und der Ausstieg ist davor eingeplant."
+    },
+    "/practicalAccordionItems/8/preview": {
+      "source_en": "Pickup before 08:00 or finish after 20:00 adds ₩10,000 per person. Free cancellation up to 24 hours ahead. Age 4 and up. Cruise passengers only.",
+      "tm": "Abholung vor 08:00 Uhr oder Ende nach 20:00 Uhr kosten ₩10.000 pro Person zusätzlich. Kostenlose Stornierung bis 24 Stunden vorher. Ab 4 Jahren. Nur für Kreuzfahrtgäste."
     }
   },
   "glossaryTokens": {
     "/practicalAccordionItems/1/content/3": {
       "⟦G0⟧": "Gukje-Markt",
-      "⟦G1⟧": "BIFF-Platz"
-    },
-    "/practicalAccordionItems/3/content/1": {
-      "⟦G0⟧": "Yongdusan-Park",
       "⟦G1⟧": "BIFF-Platz"
     },
     "/practicalAccordionItems/5/content/4": {
@@ -188,5 +227,5 @@
       "⟦G2⟧": "BIFF-Platz"
     }
   },
-  "tmHits": 0
+  "tmHits": 32
 }

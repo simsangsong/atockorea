@@ -7,33 +7,40 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "UNESCO Heritage"
+      "source_en": "UNESCO Heritage",
+      "tm": "UNESCO-Erbe"
     },
     "/routePhases/0/duration": {
       "source_en": "Stops 1",
       "tm": "Stopp 1"
     },
     "/routePhases/0/description": {
-      "source_en": "Morning: UNESCO Heritage"
+      "source_en": "Morning: UNESCO Heritage",
+      "tm": "Vormittag: UNESCO-Kulturerbe"
     },
     "/routePhases/1/phase": {
-      "source_en": "Library & Lunch"
+      "source_en": "Library & Lunch",
+      "tm": "Bibliothek & Mittagessen"
     },
     "/routePhases/1/duration": {
-      "source_en": "Stops 2–3"
+      "source_en": "Stops 2–3",
+      "tm": "Stopps 2–3"
     },
     "/routePhases/1/description": {
-      "source_en": "Midday: Library & Lunch"
+      "source_en": "Midday: Library & Lunch",
+      "tm": "Tagesmitte: Bibliothek & Mittagessen"
     },
     "/routePhases/2/phase": {
-      "source_en": "Mountain Temple Finish"
+      "source_en": "Mountain Temple Finish",
+      "tm": "Abschluss im Bergtempel"
     },
     "/routePhases/2/duration": {
       "source_en": "Stops 4",
       "tm": "Stopps 4"
     },
     "/routePhases/2/description": {
-      "source_en": "Afternoon: Mountain Temple Finish"
+      "source_en": "Afternoon: Mountain Temple Finish",
+      "tm": "Nachmittag: Abschluss im Bergtempel"
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -278,5 +285,5 @@
       "⟦G0⟧": "Waujeongsa-Tempel"
     }
   },
-  "tmHits": 26
+  "tmHits": 33
 }

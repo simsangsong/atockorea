@@ -8,21 +8,26 @@
   "segments": {
     "/itineraryStops/3/description": {
       "source_en": "Lunch is at a coach-friendly local restaurant en route from Haeundae back across central Busan toward ⟦G0⟧ in Nam-gu. Two typical options depending on coach routing and group preference: (1) **Dwaeji Gukbap (돼지국밥)** — Busan's signature pork-bone broth rice soup, the city's working-class comfort food since the Korean War refugee era, served with kkakdugi radish kimchi, saeujeot shrimp paste, buchu chives, and rice (~9,000-12,000 KRW per bowl); recommended in the Seomyeon or Daeyeon-dong neighborhoods, or (2) **Milmyeon (밀면)** — Busan's wheat-flour cold noodles, an adaptation of North Korean Pyongyang naengmyeon by refugees who couldn't find buckwheat in wartime Busan, served in chilled beef-broth or in spicy bibim style (~8,000-11,000 KRW). \n\nBoth are **regional specialties unique to Busan and not commonly found in Seoul**. Lunch is at the guest's own expense; vegetarian and halal-friendly options are limited at most dwaeji-gukbap restaurants — please notify the guide at booking if dietary accommodations are needed and a separate restaurant (typically a bibimbap or hansik buffet) will be substituted. \n\nTotal time ~60 min including parking + ordering + eating + restroom + boarding the coach.",
+      "tm": "Il pranzo si consuma in un ristorante locale accessibile ai pullman, lungo il percorso da Haeundae attraverso il centro di Busan verso il ⟦G0⟧, nel distretto di Nam-gu. Due opzioni tipiche, a seconda del percorso e delle preferenze del gruppo: (1) il **dwaeji gukbap (돼지국밥)** — la zuppa di riso in brodo di ossa di maiale simbolo di Busan, il piatto di conforto popolare della città dai tempi dei profughi della guerra di Corea, servita con kimchi di ravanello kkakdugi, pasta di gamberi saeujeot, erba cipollina buchu e riso (~9.000-12.000 KRW per porzione); consigliato nei quartieri di Seomyeon o Daeyeon-dong; oppure (2) il **milmyeon (밀면)** — i noodle freddi di farina di grano di Busan, un adattamento del naengmyeon di Pyongyang creato dai profughi che nella Busan di guerra non trovavano grano saraceno, serviti in brodo di manzo freddo o nella versione piccante bibim (~8.000-11.000 KRW). \n\nEntrambi sono **specialità regionali tipiche solo di Busan, poco diffuse a Seoul**. Il pranzo è a carico dell’ospite; nella maggior parte dei locali di dwaeji-gukbap le opzioni vegetariane e halal sono limitate: se Le servono adattamenti alimentari, lo segnali alla guida in fase di prenotazione e verrà scelto un ristorante diverso (di norma un bibimbap o un buffet hansik). \n\nTempo complessivo ~60 min, fra parcheggio, ordinazione, pasto, servizi e risalita sul pullman.",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
     },
     "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Restaurant-dependent (typical 11:30–14:30 lunch service)"
+      "source_en": "Restaurant-dependent (typical 11:30–14:30 lunch service)",
+      "tm": "Dipende dal ristorante (servizio pranzo tipico 11:30–14:30)"
     },
     "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Varies by venue; driver confirms availability"
+      "source_en": "Varies by venue; driver confirms availability",
+      "tm": "Varia in base al locale; l’autista conferma la disponibilità"
     },
     "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Minimal — restaurant within 5 min walk of vehicle drop-off"
+      "source_en": "Minimal — restaurant within 5 min walk of vehicle drop-off",
+      "tm": "Minimo — il ristorante è a meno di 5 min a piedi dal punto di discesa"
     },
     "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "Pay direct, ~₩10,000–25,000 per person; lunch is NOT included in tour price"
+      "source_en": "Pay direct, ~₩10,000–25,000 per person; lunch is NOT included in tour price",
+      "tm": "Si paga sul posto, ~₩10.000–25.000 a persona; il pranzo NON è compreso nel prezzo del tour"
     },
     "/itineraryStops/4/name": {
       "source_en": "⟦G0⟧",
@@ -32,84 +37,106 @@
       ]
     },
     "/itineraryStops/4/category": {
-      "source_en": "Fish Market / Local Culture"
+      "source_en": "Fish Market / Local Culture",
+      "tm": "Mercato del pesce / cultura locale"
     },
     "/itineraryStops/4/duration": {
       "source_en": "30 min",
       "tm": "30 min"
     },
     "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Van drop-off + walk to main building (~5 min)"
+      "source_en": "Van drop-off + walk to main building (~5 min)",
+      "tm": "Discesa dal van + cammino fino all’edificio principale (~5 min)"
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "1F live-seafood walk-through with guide commentary (~20 min)"
+      "source_en": "1F live-seafood walk-through with guide commentary (~20 min)",
+      "tm": "Percorso fra il pesce vivo al 1F, con i commenti della guida (~20 min)"
     },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Outdoor pier + dried-seafood lanes (~10 min)"
+      "source_en": "Outdoor pier + dried-seafood lanes (~10 min)",
+      "tm": "Banchina all’aperto + corsie del pesce essiccato (~10 min)"
     },
     "/itineraryStops/4/timeUsed/3": {
       "source_en": "Reassemble + short walk to ⟦G0⟧ (~5 min)",
+      "tm": "Ritrovo del gruppo + breve cammino fino alla ⟦G0⟧ (~5 min)",
       "glossary": [
         "⟦G0⟧ = Piazza BIFF"
       ]
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "**Korea's largest seafood market** — covers 66,000 m² with ~400 vendors"
+      "source_en": "**Korea's largest seafood market** — covers 66,000 m² with ~400 vendors",
+      "tm": "**Il più grande mercato del pesce della Corea**: 66.000 m² con ~400 banchi"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "**'Jagalchi'** = 'gravel' (자갈) for the original pebbly shoreline"
+      "source_en": "**'Jagalchi'** = 'gravel' (자갈) for the original pebbly shoreline",
+      "tm": "**«Jagalchi»** = «ghiaia» (자갈), dal litorale sassoso di un tempo"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "**'Jagalchi Ajumma'** = post-Korean War widowed/displaced women fish vendors — Busan's icon"
+      "source_en": "**'Jagalchi Ajumma'** = post-Korean War widowed/displaced women fish vendors — Busan's icon",
+      "tm": "Le **«Jagalchi Ajumma»**: pescivendole vedove o sfollate del dopoguerra coreano, icona di Busan"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "**Buy fish 1F → cook upstairs 2F** with small cooking fee = the local way"
+      "source_en": "**Buy fish 1F → cook upstairs 2F** with small cooking fee = the local way",
+      "tm": "**Si compra il pesce al 1F → lo si fa cucinare al 2F** con un piccolo supplemento: è il modo locale"
     },
     "/itineraryStops/4/highlights/4": {
-      "source_en": "**Modern seagull-shaped building reopened 2006**"
+      "source_en": "**Modern seagull-shaped building reopened 2006**",
+      "tm": "**Il moderno edificio a forma di gabbiano ha riaperto nel 2006**"
     },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "Outdoor pier and Sky Park (5F when open) for waterfront photos"
+      "source_en": "Outdoor pier and Sky Park (5F when open) for waterfront photos",
+      "tm": "Banchina all’aperto e Sky Park (al 5F, quando è aperto) per le foto sull’acqua"
     },
     "/itineraryStops/4/highlights/6": {
-      "source_en": "Hours daily 05:00–22:00; **CLOSED 1st & 3rd Tuesdays** of each month"
+      "source_en": "Hours daily 05:00–22:00; **CLOSED 1st & 3rd Tuesdays** of each month",
+      "tm": "Orari 05:00–22:00 ogni giorno; **CHIUSO il 1º e il 3º martedì** di ogni mese"
     },
     "/itineraryStops/4/smartNotes/tip": {
-      "source_en": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu; floor is wet — closed-toe shoes recommended; cash works better than cards at smaller stalls"
+      "source_en": "Buy the fish on 1F, then bring it upstairs to a 2F restaurant and pay a small cooking fee — that's the local way; address 52 Jagalchihaean-ro, Jung-gu; floor is wet — closed-toe shoes recommended; cash works better than cards at smaller stalls",
+      "tm": "Compri il pesce al 1F, poi lo porti al piano di sopra in un ristorante del 2F e paghi un piccolo supplemento per la cottura: è il modo locale. Indirizzo: 52 Jagalchihaean-ro, Jung-gu. Il pavimento è bagnato, quindi si consigliano scarpe chiuse; ai banchi più piccoli i contanti funzionano meglio delle carte."
     },
     "/itineraryStops/4/smartNotes/facilities": {
-      "source_en": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open)"
+      "source_en": "1F live seafood, 2F sashimi & restaurants, dried-fish section, rooftop Sky Park (when open)",
+      "tm": "Pesce vivo al 1F, sashimi e ristoranti al 2F, reparto del pesce essiccato, Sky Park sul tetto (quando è aperto)"
     },
     "/itineraryStops/4/whyOnRoute": {
       "source_en": "Busan's identity is built on seafood the way Seoul's is built on royal Joseon palace cuisine, and Jagalchi is the single most essential expression of it. It also sits at the entrance to the Nampo-dong cluster, which is why the middle of the day pivots here: Jagalchi, ⟦G1⟧ and ⟦G0⟧ are three separate stops inside a 600 m walking radius, done on foot rather than by road.",
+      "tm": "L’identità di Busan si fonda sul pesce come quella di Seoul si fonda sulla cucina di corte Joseon, e Jagalchi ne è l’espressione più essenziale. Si trova inoltre all’ingresso del polo di Nampo-dong, ed è per questo che la parte centrale della giornata ruota qui: Jagalchi, la ⟦G1⟧ e il ⟦G0⟧ sono tre tappe distinte entro un raggio di 600 m, percorse a piedi anziché su strada.",
       "glossary": [
         "⟦G0⟧ = Mercato Gukje",
         "⟦G1⟧ = Piazza BIFF"
       ]
     },
     "/itineraryStops/4/convenience/parking": {
-      "source_en": "Basement lot at the main building (₩700 / 10 min); van drops off and waits in Jagalchi public lot"
+      "source_en": "Basement lot at the main building (₩700 / 10 min); van drops off and waits in Jagalchi public lot",
+      "tm": "Parcheggio interrato dell’edificio principale (₩700 ogni 10 min); il van fa scendere il gruppo e attende nel parcheggio pubblico di Jagalchi"
     },
     "/itineraryStops/4/convenience/restroom": {
-      "source_en": "Available inside the main building on each floor"
+      "source_en": "Available inside the main building on each floor",
+      "tm": "Disponibili all’interno dell’edificio principale, a ogni piano"
     },
     "/itineraryStops/4/description": {
       "source_en": "**⟦G0⟧ (자갈치시장)** — **Korea's largest seafood market** and one of Busan's ten landmarks — sits on the Nampo Port waterfront in Jung-gu, a 7-minute walk from Jagalchi Station (Line 1) or Nampo Station. \n\nThe name **'Jagalchi'** comes from **'jagal' (자갈, gravel)**, after the pebbly shoreline that once lined the area. The market's modern character was forged after the **Korean War (1950–1953)**: when many men were away fighting or had been lost in combat, **widowed and displaced women — the legendary 'Jagalchi Ajumma' (자갈치 아주머니)** — became their families' breadwinners by selling fish on wooden boxes along the pierside. \n\nThe ajumma have been the **economic and cultural soul of Busan ever since**, embodying both the city's post-war recovery story and Korea's '**jeong (정)**' culture of long-term personal trust between vendor and customer. \n\nThe current modern **seagull-shaped main building reopened in 2006** and houses ~400 vendors across 66,000 m² gross floor area: **1F** is the live-seafood market (octopus, snow crab, abalone, sea squirt, live hagfish, mackerel, sea cucumbers, hoe-grade flounders) where guests can **buy fresh seafood by weight then take it upstairs to a 2F restaurant for a small cooking fee** — the local way to eat at Jagalchi. \n\n**2F** is the sashimi-and-restaurant level. The dried-seafood section (anchovies, sea laver, kelp, dried squid) extends along the outdoor pier and is the most photogenic for travel snapshots. \n\n**Hours 05:00–22:00 daily; CLOSED 1st & 3rd Tuesdays of each month**. **Annual Jagalchi Cultural Tourism Festival** every October. On this small-group tour the visit is a brisk 40-min walk-through with guide commentary; guests who want to linger or eat a sashimi meal upstairs should consider our small-group product, which gives ~75 min at Jagalchi.",
+      "tm": "Il **⟦G0⟧ (자갈치시장)** — **il più grande mercato del pesce della Corea** e uno dei dieci luoghi simbolo di Busan — si affaccia sul porto di Nampo, nel distretto di Jung-gu, a 7 minuti a piedi dalla stazione Jagalchi (linea 1) o dalla stazione Nampo. \n\nIl nome **«Jagalchi»** viene da **«jagal» (자갈, ghiaia)**, dal litorale sassoso che un tempo bordava la zona. Il carattere moderno del mercato si forgiò dopo la **guerra di Corea (1950–1953)**: quando molti uomini erano al fronte o vi erano caduti, furono le **donne vedove e sfollate — le leggendarie «Jagalchi Ajumma» (자갈치 아주머니)** — a mantenere le famiglie vendendo pesce su casse di legno lungo la banchina. \n\nDa allora le ajumma sono l’**anima economica e culturale di Busan**, e incarnano sia la storia della ripresa del dopoguerra sia la cultura coreana del «**jeong (정)**», la fiducia personale che lega venditore e cliente nel tempo. \n\nL’attuale **edificio principale a forma di gabbiano ha riaperto nel 2006** e ospita ~400 banchi su 66.000 m² di superficie lorda: al **1F** c’è il mercato del pesce vivo (polpo, granchio delle nevi, abalone, ascidie, missine vive, sgombro, cetrioli di mare, passere da hoe), dove si può **comprare il pesce fresco a peso e poi portarlo di sopra, in un ristorante del 2F, pagando un piccolo supplemento per la cottura**: è il modo locale di mangiare a Jagalchi. \n\nIl **2F** è il piano del sashimi e dei ristoranti. Il reparto del pesce essiccato (acciughe, alghe laver, kelp, calamari secchi) si estende lungo la banchina all’aperto ed è il più fotogenico per gli scatti di viaggio. \n\n**Orari 05:00–22:00 ogni giorno; CHIUSO il 1º e il 3º martedì di ogni mese**. Ogni ottobre si tiene il **festival culturale e turistico di Jagalchi**. In questo tour in piccolo gruppo la visita è un percorso rapido di 40 min con i commenti della guida; chi desidera fermarsi più a lungo o mangiare un sashimi al piano di sopra dovrebbe considerare il nostro prodotto in piccolo gruppo, che dedica ~75 min a Jagalchi.",
       "glossary": [
         "⟦G0⟧ = Mercato Jagalchi"
       ]
     },
     "/itineraryStops/4/visitBasics/hours": {
-      "source_en": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)"
+      "source_en": "Daily 05:00–22:00 (vendor hours vary; live-fish section officially 06:00–22:00)",
+      "tm": "Ogni giorno 05:00–22:00 (gli orari dei banchi variano; il reparto del pesce vivo ufficialmente 06:00–22:00)"
     },
     "/itineraryStops/4/visitBasics/closed": {
-      "source_en": "1st and 3rd Tuesdays of every month"
+      "source_en": "1st and 3rd Tuesdays of every month",
+      "tm": "Il 1º e il 3º martedì di ogni mese"
     },
     "/itineraryStops/4/visitBasics/walking": {
-      "source_en": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level"
+      "source_en": "Moderate — ground floor flat (wet, can be slippery); stairs to 2F sashimi/restaurant level",
+      "tm": "Moderata — piano terra in piano (bagnato, può essere scivoloso); scale per il 2F, il livello del sashimi e dei ristoranti"
     },
     "/itineraryStops/4/visitBasics/admission": {
-      "source_en": "Free entry; pay-as-you-go for seafood and 2F cooking-fee"
+      "source_en": "Free entry; pay-as-you-go for seafood and 2F cooking-fee",
+      "tm": "Ingresso libero; si paga il pesce e il supplemento di cottura al 2F"
     },
     "/itineraryStops/4/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -480,5 +507,5 @@
       "⟦G0⟧": "Mercato Jagalchi"
     }
   },
-  "tmHits": 37
+  "tmHits": 64
 }

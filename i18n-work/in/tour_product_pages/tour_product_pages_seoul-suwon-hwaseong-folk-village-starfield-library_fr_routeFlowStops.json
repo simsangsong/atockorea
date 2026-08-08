@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Seoul"
+      "source_en": "Seoul",
+      "tm": "Séoul"
     },
     "/routeFlowStops/0/theme": {
       "source_en": "Departure",
@@ -21,7 +22,8 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "UNESCO Fortress"
+      "source_en": "UNESCO Fortress",
+      "tm": "Forteresse UNESCO"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -31,7 +33,8 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Heritage Palace"
+      "source_en": "Heritage Palace",
+      "tm": "Palais patrimonial"
     },
     "/routeFlowStops/3/name": {
       "source_en": "⟦G0⟧",
@@ -41,16 +44,20 @@
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Heritage Village"
+      "source_en": "Heritage Village",
+      "tm": "Village patrimonial"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Bibliothèque Starfield de Suwon"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Modern Korea"
+      "source_en": "Modern Korea",
+      "tm": "Corée contemporaine"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "Seoul"
+      "source_en": "Seoul",
+      "tm": "Séoul"
     },
     "/routeFlowStops/5/theme": {
       "source_en": "Return",
@@ -68,5 +75,5 @@
       "⟦G0⟧": "Village folklorique coréen (Yongin)"
     }
   },
-  "tmHits": 5
+  "tmHits": 12
 }

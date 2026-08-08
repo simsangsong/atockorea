@@ -6,21 +6,6 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
-    "/itineraryStops/2/highlights/7": {
-      "source_en": "**Red Zone entry restriction 17:00–10:00 enforced** — village is a LIVING residential community (not a museum); cultural respect protocol critical (no flash photography in alleys, voices down, no drones)"
-    },
-    "/itineraryStops/2/highlights/8": {
-      "source_en": "**Integrated Palace Ticket ₩6,000 adult** covers the 4 main palaces + Jongmyo Shrine for 6 months; Changdeokgung Secret Garden is a separate ticket."
-    },
-    "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "Visit Bukchon before noon when residents are out + lanes are quietest. ⟦G0⟧ best on weekends when pedestrian-only. Best souvenirs: hanji paper crafts, traditional ink stamps (dojang), small ceramics, traditional tea sampler boxes. If interested in hanbok rental — shops cluster at Bukchon's southwestern edge, ~15,000-20,000 KRW for 4 hr.",
-      "glossary": [
-        "⟦G0⟧ = Insadong"
-      ]
-    },
-    "/itineraryStops/2/smartNotes/facilities": {
-      "source_en": "Tourist Information Centers, traditional teahouses, hanji workshops, ceramic galleries, multiple cafes throughout. Balwoo Gongyang (Michelin temple cuisine) at Jogyesa nearby."
-    },
     "/itineraryStops/2/whyOnRoute": {
       "source_en": "Pairing Bukchon and ⟦G0⟧ in a single 75-min stop reflects the private-tour flexibility — your driver-guide drops at Bukchon's north end and picks up at ⟦G0⟧'s south end, eliminating backtracking. Picked over the Namsangol Hanok Village curated open-air museum because Bukchon's living-village authenticity plus ⟦G0⟧'s craft-shopping commercial appeal cover both 'traditional residential' and 'traditional crafts' narratives in one walk. The private-charter format means the driver-guide can drop at Bukchon's north end (Bukchongil Road) and pick up at the south end near ⟦G0⟧, eliminating backtracking and saving ~10 min vs the bus-tour drop-and-return pattern.",
       "glossary": [
@@ -82,27 +67,6 @@
         "⟦G1⟧ = Insadong"
       ]
     },
-    "/itineraryStops/2/galleryItems/1/alt": {
-      "source_en": "⟦G0⟧ + ⟦G1⟧ — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Hanok-Dorf Bukchon",
-        "⟦G1⟧ = Insadong"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/1/caption": {
-      "source_en": "⟦G0⟧ + ⟦G1⟧ — photo 3",
-      "glossary": [
-        "⟦G0⟧ = Hanok-Dorf Bukchon",
-        "⟦G1⟧ = Insadong"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/1/location": {
-      "source_en": "⟦G0⟧ + ⟦G1⟧",
-      "glossary": [
-        "⟦G0⟧ = Hanok-Dorf Bukchon",
-        "⟦G1⟧ = Insadong"
-      ]
-    },
     "/itineraryStops/3/name": {
       "source_en": "Lunch (your choice)"
     },
@@ -110,7 +74,8 @@
       "source_en": "Meal — Customizable"
     },
     "/itineraryStops/3/duration": {
-      "source_en": "60 min"
+      "source_en": "60 min",
+      "tm": "60 Min."
     },
     "/itineraryStops/3/timeUsed/0": {
       "source_en": "Driver-guide drop-off at chosen venue"
@@ -119,7 +84,8 @@
       "source_en": "Meal (~45-50 min)"
     },
     "/itineraryStops/3/timeUsed/2": {
-      "source_en": "Reassembly at vehicle"
+      "source_en": "Reassembly at vehicle",
+      "tm": "Sammeln am Fahrzeug"
     },
     "/itineraryStops/3/highlights/0": {
       "source_en": "Lunch venue YOUR choice — 4 vetted options (street food, traditional, institution, royal court)"
@@ -162,12 +128,59 @@
     },
     "/itineraryStops/3/convenience/restroom": {
       "source_en": "Restaurant restrooms"
+    },
+    "/itineraryStops/3/description": {
+      "source_en": "Lunch is YOUR choice and timed flexibly around the day's pace — your driver-guide offers three vetted options matched to your group's preferences: **(1) ⟦G0⟧ food alley** — the working-class streetfood experience opened 1905 (Korea's first permanent traditional market), made world-famous by Anthony Bourdain's 'Parts Unknown.' \n\nBindaetteok mung-bean pancakes (5,000-7,000 KRW), mayak gimbap, yukhoe raw beef tartare. CASH-ONLY at most stalls. **(2) ⟦G2⟧ traditional restaurant** — sit-down Korean cuisine in a hanok setting; hansik prix-fixe sets featuring banchan (side dishes), bibimbap, kimchi-jjigae stew. \n\nMid-tier 15,000-25,000 KRW per person. **(3) ⟦G1⟧ Kyoja or Hadongkwan** — Korean institutions: ⟦G1⟧ Kyoja for handmade kalguksu (knife-cut noodles) and mandu since 1966; Hadongkwan for Seolleongtang (oxbone soup) since the 1930s. Mid-tier 12,000-20,000 KRW. \n\n**(4) Royal court cuisine at Korea House** — premium hanjeongsik (table d'hôte royal cuisine) in a hanok complex (recognized with three ribbons in the 2025 Blue Ribbon Survey); 60,000-120,000 KRW per person, requires 60-min commitment. Communicate dietary needs (vegetarian, halal, no spicy) at booking — driver-guide adjusts accordingly.",
+      "glossary": [
+        "⟦G0⟧ = Gwangjang-Markt",
+        "⟦G1⟧ = Myeongdong",
+        "⟦G2⟧ = Insadong"
+      ]
+    },
+    "/itineraryStops/3/visitBasics/hours": {
+      "source_en": "Most options 11:00-15:00 lunch service"
+    },
+    "/itineraryStops/3/visitBasics/closed": {
+      "source_en": "Varies by venue",
+      "tm": "Variiert je nach Lokal"
+    },
+    "/itineraryStops/3/visitBasics/walking": {
+      "source_en": "Easy — venue-dependent"
+    },
+    "/itineraryStops/3/visitBasics/admission": {
+      "source_en": "Pay-as-you-go (12,000 — 120,000 KRW range depending on choice)"
+    },
+    "/itineraryStops/4/name": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/itineraryStops/4/category": {
+      "source_en": "Iconic Tower (Viewpoint)"
+    },
+    "/itineraryStops/4/duration": {
+      "source_en": "60 min",
+      "tm": "60 Min."
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "source_en": "Driver-guide drop-off at Namsan Cable Car base or shuttle bus stop (~5 min)"
+    },
+    "/itineraryStops/4/timeUsed/1": {
+      "source_en": "Cable car ride up (~3 min) OR shuttle bus (~5 min)"
+    },
+    "/itineraryStops/4/timeUsed/2": {
+      "source_en": "Observation deck or panoramic concourse views (~30-35 min)"
+    },
+    "/itineraryStops/4/timeUsed/3": {
+      "source_en": "Locks of Love photo + cafe stop (~10-15 min)"
+    },
+    "/itineraryStops/4/timeUsed/4": {
+      "source_en": "Cable car / shuttle down + return to vehicle"
+    },
+    "/itineraryStops/4/highlights/0": {
+      "source_en": "Seoul's most iconic landmark — 236.7 m tower atop Namsan (479.7 m above sea level)"
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/2/smartNotes/tip": {
-      "⟦G0⟧": "Insadong"
-    },
     "/itineraryStops/2/whyOnRoute": {
       "⟦G0⟧": "Insadong"
     },
@@ -196,18 +209,6 @@
       "⟦G0⟧": "Hanok-Dorf Bukchon",
       "⟦G1⟧": "Insadong"
     },
-    "/itineraryStops/2/galleryItems/1/alt": {
-      "⟦G0⟧": "Hanok-Dorf Bukchon",
-      "⟦G1⟧": "Insadong"
-    },
-    "/itineraryStops/2/galleryItems/1/caption": {
-      "⟦G0⟧": "Hanok-Dorf Bukchon",
-      "⟦G1⟧": "Insadong"
-    },
-    "/itineraryStops/2/galleryItems/1/location": {
-      "⟦G0⟧": "Hanok-Dorf Bukchon",
-      "⟦G1⟧": "Insadong"
-    },
     "/itineraryStops/3/highlights/1": {
       "⟦G0⟧": "Gwangjang-Markt"
     },
@@ -219,7 +220,12 @@
     },
     "/itineraryStops/3/smartNotes/tip": {
       "⟦G0⟧": "Gwangjang-Markt"
+    },
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Gwangjang-Markt",
+      "⟦G1⟧": "Myeongdong",
+      "⟦G2⟧": "Insadong"
     }
   },
-  "tmHits": 0
+  "tmHits": 5
 }

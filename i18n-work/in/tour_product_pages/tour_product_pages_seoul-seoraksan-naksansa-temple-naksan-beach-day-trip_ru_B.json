@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seoul → Seoraksan"
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Сеул → Сораксан"
     },
     "/routePhases/0/duration": {
       "source_en": "≈ 2.5 hours",
@@ -15,6 +16,7 @@
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at 07:00 Hongik / 07:30 ⟦G0⟧, then a ~2.5-hour drive northeast via the Seoul-Yangyang Expressway and the 11 km Inje-Yangyang Tunnel to arrive at Seoraksan around 10:00.",
+      "tm": "Сбор в 07:00 у Hongik / в 07:30 в ⟦G0⟧, затем ~2,5 часа пути на северо-восток по автомагистрали Сеул–Янъян и через тоннель Индже–Янъян длиной 11 км — прибытие в Сораксан около 10:00.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -31,20 +33,24 @@
       "tm": "≈ 2 часа"
     },
     "/routePhases/1/description": {
-      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and the optional cable car to Gwongeumseong or a short Biseondae streamside walk."
+      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and the optional cable car to Gwongeumseong or a short Biseondae streamside walk.",
+      "tm": "Вход Согонвон: Тхонъильдэбуль, храм Синхынса и — по желанию — канатная дорога до Квонгымсона или короткая прогулка вдоль ручья к Писондэ."
     },
     "/routePhases/2/phase": {
-      "source_en": "Seoraksan → Naksansa (incl. lunch)"
+      "source_en": "Seoraksan → Naksansa (incl. lunch)",
+      "tm": "Сораксан → Наксанса (с обедом)"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 1.5 hours",
       "tm": "≈ 1,5 часа"
     },
     "/routePhases/2/description": {
-      "source_en": "Roughly a 40-minute drive toward the Yangyang coast, with a lunch stop en route at a local restaurant (own expense)."
+      "source_en": "Roughly a 40-minute drive toward the Yangyang coast, with a lunch stop en route at a local restaurant (own expense).",
+      "tm": "Примерно 40 минут пути к побережью Янъяна, с остановкой на обед по дороге в местном ресторане (за свой счёт)."
     },
     "/routePhases/3/phase": {
       "source_en": "⟦G0⟧ & ⟦G1⟧",
+      "tm": "⟦G0⟧ и ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса",
         "⟦G1⟧ = Пляж Наксан"
@@ -56,13 +62,15 @@
     },
     "/routePhases/3/description": {
       "source_en": "75 minutes at the cliffside ⟦G0⟧, then a short transfer down to ⟦G1⟧ for an hour on the sand and pine paths.",
+      "tm": "75 минут в ⟦G0⟧ на скале над морем, затем короткий переезд вниз к ⟦G1⟧ — час на песке и сосновых дорожках.",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса",
         "⟦G1⟧ = Пляж Наксан"
       ]
     },
     "/routePhases/4/phase": {
-      "source_en": "Return to Seoul"
+      "source_en": "Return to Seoul",
+      "tm": "Возвращение в Сеул"
     },
     "/routePhases/4/duration": {
       "source_en": "≈ 2.5 hours",
@@ -70,6 +78,7 @@
     },
     "/routePhases/4/description": {
       "source_en": "Depart ⟦G0⟧ around 16:10 and drive back to Seoul via the Seoul-Yangyang Expressway — ⟦G1⟧ ~18:45, Hongik ~19:15.",
+      "tm": "Отправление с ⟦G0⟧ около 16:10 и обратный путь в Сеул по автомагистрали Сеул–Янъян — ⟦G1⟧ ~18:45, Hongik ~19:15.",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан",
         "⟦G1⟧ = Мёндон"
@@ -98,6 +107,7 @@
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса"
       ]
@@ -118,6 +128,7 @@
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
@@ -222,6 +233,7 @@
     },
     "/galleryItems/7/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса"
       ]
@@ -242,6 +254,7 @@
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
       "glossary": [
         "⟦G0⟧ = Храм Наксанса"
       ]
@@ -262,6 +275,7 @@
     },
     "/galleryItems/9/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
       "glossary": [
         "⟦G0⟧ = Пляж Наксан"
       ]
@@ -391,5 +405,5 @@
       "⟦G0⟧": "Пляж Наксан"
     }
   },
-  "tmHits": 31
+  "tmHits": 45
 }

@@ -1,0 +1,107 @@
+{
+  "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-5",
+  "surface": "tour_product_pages",
+  "slug": "jeju-southern-top-unesco-spots-tour",
+  "locale": "ru",
+  "chunk": "itineraryStops-5",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/6/galleryItems/2/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/6/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/7/name": {
+      "source_en": "Drop-off (5 points across Jeju City)",
+      "tm": "Высадка (5 точек по городу Чеджу)"
+    },
+    "/itineraryStops/7/category": {
+      "source_en": "Drop-off — Jeju City Hub Sequence",
+      "tm": "Высадка — последовательность узлов в городе Чеджу"
+    },
+    "/itineraryStops/7/duration": {
+      "source_en": "40 min",
+      "tm": "40 мин"
+    },
+    "/itineraryStops/7/timeUsed/0": {
+      "source_en": "Eoseungsaengak → Route 1100 → Dongmun — ~40 min",
+      "tm": "Осынсэнъак → дорога 1100 → Тонмун — ~40 мин"
+    },
+    "/itineraryStops/7/timeUsed/1": {
+      "source_en": "Dongmun drop — 5 min",
+      "tm": "Высадка у Тонмуна — 5 мин"
+    },
+    "/itineraryStops/7/timeUsed/2": {
+      "source_en": "→ City Hall — 10 min, drop — 5 min",
+      "tm": "→ мэрия Чеджу — 10 мин, высадка — 5 мин"
+    },
+    "/itineraryStops/7/timeUsed/3": {
+      "source_en": "→ Yeon-dong → Hagwi → Airport — sequenced",
+      "tm": "→ Ён-дон → Хагви → аэропорт — по очереди"
+    },
+    "/itineraryStops/7/highlights/0": {
+      "source_en": "**5 drop-off points** — Dongmun, City Hall, Yeon-dong/Nohyeong, Hagwi, Airport",
+      "tm": "**5 точек высадки** — Тонмун, мэрия Чеджу, Ён-дон/Нохён, Хагви, аэропорт"
+    },
+    "/itineraryStops/7/highlights/1": {
+      "source_en": "**Dongmun Traditional Market** — optional dinner + tangerine product shopping",
+      "tm": "**Традиционный рынок Тонмун** — по желанию ужин и покупка мандариновых продуктов"
+    },
+    "/itineraryStops/7/highlights/2": {
+      "source_en": "Estimated arrival: Dongmun ~18:30 → Airport ~19:05",
+      "tm": "Расчётное прибытие: Тонмун ~18:30 → аэропорт ~19:05"
+    },
+    "/itineraryStops/7/highlights/3": {
+      "source_en": "**Same-day evening flights from Jeju International Airport** generally viable (last departure ~21:30)",
+      "tm": "**Вечерние рейсы из международного аэропорта Чеджу в тот же день** обычно выполнимы (последний вылет ~21:30)"
+    },
+    "/itineraryStops/7/highlights/4": {
+      "source_en": "Coach Wi-Fi + flexible driver coordination for hotel/shop adjustments",
+      "tm": "Wi-Fi в автобусе и гибкая координация с водителем для корректировок по отелям и магазинам"
+    },
+    "/itineraryStops/7/whyOnRoute": {
+      "source_en": "Drop-off follows the return road down off Hallasan via Route 1100 back into Jeju City. Guests with evening flights should tell the guide in advance so the final stop time can be coordinated smoothly.",
+      "tm": "Высадка идёт по обратной дороге вниз с Халласана по дороге 1100 в город Чеджу. Гостям с вечерними рейсами стоит заранее сказать об этом гиду, чтобы время последней остановки было согласовано без спешки."
+    },
+    "/itineraryStops/7/description": {
+      "source_en": "**Drop-off follows the same order as the morning pickup, with one added option**: Dongmun Traditional Market → Jeju City Hall → Hagwi-dong → Jeju International Airport, with an optional stop for the Yeon-dong/Nohyeong hotel zone before City Hall (a 5th drop point). From Eoseungsaengak the coach **takes Route 1100 down off Hallasan and back to Jeju City**. Estimated arrival: Dongmun ~18:30, City Hall ~18:40, Yeon-dong ~18:45, Hagwi ~18:55, Airport ~19:05. \n\n**Same-day evening flights from Jeju International Airport** are generally viable (last departure ~21:30). Coach Wi-Fi is available throughout, and the driver coordinates any guest-requested shop/hotel adjustments.",
+      "tm": "**Высадка идёт в том же порядке, что и утренняя посадка, с одним дополнительным вариантом**: традиционный рынок Тонмун → мэрия Чеджу → Хагви-дон → международный аэропорт Чеджу, с возможной остановкой в гостиничной зоне Ён-дон/Нохён перед мэрией (5-я точка высадки). От Осынсэнъака автобус **спускается с Халласана по дороге 1100 обратно в город Чеджу**. Расчётное прибытие: Тонмун ~18:30, мэрия ~18:40, Ён-дон ~18:45, Хагви ~18:55, аэропорт ~19:05. \n\n**Вечерние рейсы из международного аэропорта Чеджу в тот же день** обычно выполнимы (последний вылет ~21:30). Wi-Fi в автобусе доступен на всём маршруте, а водитель согласует любые запрошенные гостями корректировки по магазинам и отелям."
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/6/galleryItems/2/location": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
+    "/itineraryStops/6/galleryItems/3/alt": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
+    "/itineraryStops/6/galleryItems/3/caption": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
+    "/itineraryStops/6/galleryItems/3/location": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    }
+  },
+  "tmHits": 16
+}

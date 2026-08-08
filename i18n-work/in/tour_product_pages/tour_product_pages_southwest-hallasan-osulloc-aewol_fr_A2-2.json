@@ -7,84 +7,110 @@
   "tier": "A2",
   "segments": {
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant confirmation"
+      "source_en": "Instant confirmation",
+      "tm": "Confirmation instantanée"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "You receive a booking confirmation with a summary of the day."
+      "source_en": "You receive a booking confirmation with a summary of the day.",
+      "tm": "Vous recevez une confirmation de réservation accompagnée d'un récapitulatif de la journée."
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Right after booking"
+      "source_en": "Right after booking",
+      "tm": "Juste après la réservation"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside)."
+      "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside).",
+      "tm": "Confirmation instantanée avec les détails de la prise en charge à l'hôtel à Jeju City (gratuite dans la ville ; +₩70 000 en dehors)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-hour reminder"
+      "source_en": "12-hour reminder",
+      "tm": "Rappel 12 heures avant"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather notes and route adjustments are shared in advance."
+      "source_en": "Weather notes and route adjustments are shared in advance.",
+      "tm": "Les informations météo et les ajustements d'itinéraire sont communiqués à l'avance."
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 heures avant"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Pre-tour note on 1100 Road current conditions (summer fog, autumn foliage, winter snow probability) and Aewol cafe recommendations."
+      "source_en": "Pre-tour note on 1100 Road current conditions (summer fog, autumn foliage, winter snow probability) and Aewol cafe recommendations.",
+      "tm": "Note avant l'excursion sur les conditions actuelles de 1100 Road (brouillard en été, feuillage d'automne, probabilité de neige en hiver) et recommandations de cafés à Aewol."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final pickup notice"
+      "source_en": "Final pickup notice",
+      "tm": "Avis final de prise en charge"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Your exact pickup time and driver contact details are shared."
+      "source_en": "Your exact pickup time and driver contact details are shared.",
+      "tm": "Votre heure exacte de prise en charge et les coordonnées du chauffeur vous sont communiquées."
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "The night before"
+      "source_en": "The night before",
+      "tm": "La veille au soir"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Final pickup time confirmed the evening before."
+      "source_en": "Final pickup time confirmed the evening before.",
+      "tm": "Heure de prise en charge définitive confirmée la veille au soir."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of route note"
+      "source_en": "Day-of route note",
+      "tm": "Note d'itinéraire du jour même"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "A short morning briefing is given based on live on-site conditions."
+      "source_en": "A short morning briefing is given based on live on-site conditions.",
+      "tm": "Un bref briefing matinal est donné en fonction des conditions réelles sur place."
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of the tour"
+      "source_en": "Morning of the tour",
+      "tm": "Le matin de l'excursion"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Morning message with weather and any 1100 Road closure note."
+      "source_en": "Morning message with weather and any 1100 Road closure note.",
+      "tm": "Message matinal avec la météo et toute information sur une fermeture de 1100 Road."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Live stop-by-stop guidance"
+      "source_en": "Live stop-by-stop guidance",
+      "tm": "Accompagnement en direct à chaque étape"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "You receive the information you need at each stop."
+      "source_en": "You receive the information you need at each stop.",
+      "tm": "Vous recevez les informations dont vous avez besoin à chaque étape."
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During the tour"
+      "source_en": "During the tour",
+      "tm": "Pendant l'excursion"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide narrates Hallasan's shield-volcano geology, UNESCO Geopark context of Jusangjeolli, the Seven Nymph waterfall legend, and Osulloc's 1979 Amorepacific founding story."
+      "source_en": "Guide narrates Hallasan's shield-volcano geology, UNESCO Geopark context of Jusangjeolli, the Seven Nymph waterfall legend, and Osulloc's 1979 Amorepacific founding story.",
+      "tm": "Le guide raconte la géologie du volcan bouclier de Hallasan, le contexte de Géoparc UNESCO de Jusangjeolli, la légende de la cascade des Sept Nymphes et l'histoire de la fondation d'Osulloc par Amorepacific en 1979."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour support"
+      "source_en": "Post-tour support",
+      "tm": "Assistance après l'excursion"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Additional guidance and recommendations can be shared afterward."
+      "source_en": "Additional guidance and recommendations can be shared afterward.",
+      "tm": "Des conseils et des recommandations supplémentaires peuvent être partagés par la suite."
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After the tour"
+      "source_en": "After the tour",
+      "tm": "Après l'excursion"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after drop-off."
+      "source_en": "Post-tour feedback request sent after drop-off.",
+      "tm": "Demande d'avis envoyée après la dépose."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "Live weather integration"
+      "source_en": "Live weather integration",
+      "tm": "Intégration météo en direct"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "Updated daily"
+      "source_en": "Updated daily",
+      "tm": "Mis à jour quotidiennement"
     }
   },
   "glossaryTokens": {},
-  "tmHits": 0
+  "tmHits": 26
 }

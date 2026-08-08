@@ -7,37 +7,46 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Hotel Pickup"
+      "source_en": "Hotel Pickup",
+      "tm": "Abholung am Hotel"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Start"
+      "source_en": "Start",
+      "tm": "Start"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Choose Route"
+      "source_en": "Choose Route",
+      "tm": "Route wählen"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "East/West/South"
+      "source_en": "East/West/South",
+      "tm": "Ost/West/Süd"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Lunch Break"
+      "source_en": "Lunch Break",
+      "tm": "Mittagspause"
     },
     "/routeFlowStops/2/theme": {
       "source_en": "Reset",
       "tm": "Pause"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Afternoon Stops"
+      "source_en": "Afternoon Stops",
+      "tm": "Stopps am Nachmittag"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Continue"
+      "source_en": "Continue",
+      "tm": "Weiter"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Hotel Dropoff"
+      "source_en": "Hotel Dropoff",
+      "tm": "Rückfahrt zum Hotel"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "End"
+      "source_en": "End",
+      "tm": "Ende"
     }
   },
   "glossaryTokens": {},
-  "tmHits": 1
+  "tmHits": 10
 }

@@ -7,48 +7,59 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seoul → Seoraksan"
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Séoul → Seoraksan"
     },
     "/routePhases/0/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 heures"
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at 06:00 Hongik / 06:30 ⟦G0⟧, then ~2.5-hour drive northeast via Seoul-Yangyang Expressway to arrive Seoraksan by 10:00.",
+      "tm": "Prise en charge à 06h00 à Hongik / 06h30 à ⟦G0⟧, puis ~2,5 heures de route vers le nord-est par l'autoroute Séoul-Yangyang, pour arriver au Seoraksan vers 10h00.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "Seoraksan"
+      "source_en": "Seoraksan",
+      "tm": "Seoraksan"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 heures"
     },
     "/routePhases/1/description": {
-      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and optional cable car to Gwongeumseong or Biseondae streamside walk."
+      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and optional cable car to Gwongeumseong or Biseondae streamside walk.",
+      "tm": "Entrée de Sogongwon : le Tongildaebul, le temple Sinheungsa, et au choix le téléphérique jusqu’à Gwongeumseong ou la promenade au bord du torrent vers Biseondae."
     },
     "/routePhases/2/phase": {
-      "source_en": "Seoraksan → Nami (incl. lunch)"
+      "source_en": "Seoraksan → Nami (incl. lunch)",
+      "tm": "Seoraksan → Nami (déjeuner compris)"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 2.5 hours",
       "tm": "≈ 2,5 heures"
     },
     "/routePhases/2/description": {
-      "source_en": "Drive south via Inje-Hongcheon-Chuncheon corridor; lunch stop at a local Gangwon restaurant en route (own expense)."
+      "source_en": "Drive south via Inje-Hongcheon-Chuncheon corridor; lunch stop at a local Gangwon restaurant en route (own expense).",
+      "tm": "Route vers le sud par le couloir Inje-Hongcheon-Chuncheon ; pause déjeuner en chemin dans un restaurant local du Gangwon (à votre charge)."
     },
     "/routePhases/3/phase": {
-      "source_en": "Nami Island"
+      "source_en": "Nami Island",
+      "tm": "Île de Nami"
     },
     "/routePhases/3/duration": {
       "source_en": "≈ 2 hours",
       "tm": "≈ 2 heures"
     },
     "/routePhases/3/description": {
-      "source_en": "Ferry round-trip and Metasequoia / Ginkgo / Korean Pine avenues walking circuit on Naminara Republic."
+      "source_en": "Ferry round-trip and Metasequoia / Ginkgo / Korean Pine avenues walking circuit on Naminara Republic.",
+      "tm": "Ferry aller-retour et circuit à pied par les allées de métaséquoias, de ginkgos et de pins de Corée, sur la République de Naminara."
     },
     "/routePhases/4/phase": {
-      "source_en": "Morning Calm & return"
+      "source_en": "Morning Calm & return",
+      "tm": "Jardin du matin calme et retour"
     },
     "/routePhases/4/duration": {
       "source_en": "≈ 2 hours",
@@ -56,6 +67,7 @@
     },
     "/routePhases/4/description": {
       "source_en": "30-min drive south to the ⟦G0⟧ (70-min visit), then 1-hour return to Seoul via Seoul-Yangyang Expressway.",
+      "tm": "30 min de route vers le sud jusqu’au ⟦G0⟧ (visite de 70 min), puis 1 heure de retour vers Séoul par l’autoroute Séoul-Yangyang.",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
@@ -104,18 +116,21 @@
     },
     "/galleryItems/2/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 1",
+      "tm": "Le ⟦G0⟧ — image de galerie 1",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/2/caption": {
       "source_en": "The ⟦G0⟧ — photo 1",
+      "tm": "Le ⟦G0⟧ — photo 1",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/2/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Le ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
@@ -269,54 +284,63 @@
     },
     "/galleryItems/10/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 2",
+      "tm": "Le ⟦G0⟧ — image de galerie 2",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/10/caption": {
       "source_en": "The ⟦G0⟧ — photo 2",
+      "tm": "Le ⟦G0⟧ — photo 2",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/10/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Le ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/11/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 3",
+      "tm": "Le ⟦G0⟧ — image de galerie 3",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/11/caption": {
       "source_en": "The ⟦G0⟧ — photo 3",
+      "tm": "Le ⟦G0⟧ — photo 3",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/11/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Le ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/12/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 4",
+      "tm": "Le ⟦G0⟧ — image de galerie 4",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/12/caption": {
       "source_en": "The ⟦G0⟧ — photo 4",
+      "tm": "Le ⟦G0⟧ — photo 4",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/galleryItems/12/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Le ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
@@ -447,5 +471,5 @@
       "⟦G0⟧": "Jardin du matin calme"
     }
   },
-  "tmHits": 30
+  "tmHits": 54
 }

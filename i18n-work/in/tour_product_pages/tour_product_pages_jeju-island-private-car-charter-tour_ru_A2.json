@@ -7,296 +7,389 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Families with children, including very young kids"
+      "source_en": "Families with children, including very young kids",
+      "tm": "Семьи с детьми, в том числе с самыми маленькими"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Multi-generational groups including seniors"
+      "source_en": "Multi-generational groups including seniors",
+      "tm": "Группы из нескольких поколений, включая пожилых гостей"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Couples and honeymooners wanting a relaxed K-drama day"
+      "source_en": "Couples and honeymooners wanting a relaxed K-drama day",
+      "tm": "Пары и молодожёны, которым нужен спокойный день по местам корейских дорам"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Repeat Jeju visitors who want a tailored route"
+      "source_en": "Repeat Jeju visitors who want a tailored route",
+      "tm": "Те, кто приезжает на Чеджу повторно и хочет маршрут под себя"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)"
+      "source_en": "Photographers chasing specific seasonal scenes (canola, hydrangeas, pink muhly)",
+      "tm": "Фотографы в поисках конкретных сезонных видов (рапс, гортензии, розовая мюленбергия)"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Solo budget travelers (private pricing is per vehicle)"
+      "source_en": "Solo budget travelers (private pricing is per vehicle)",
+      "tm": "Одиночные путешественники с ограниченным бюджетом (цена индивидуального тура — за автомобиль)"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Travelers wanting to mix with other guests for a social experience"
+      "source_en": "Travelers wanting to mix with other guests for a social experience",
+      "tm": "Путешественники, которые хотят общаться с другими гостями"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)"
+      "source_en": "Anyone needing a fully narrated certified-guide tour (driver-guide is licensed but not full guide-grade narration)",
+      "tm": "Те, кому нужен тур с полным сопровождением сертифицированного гида (водитель-гид лицензирован, но не ведёт экскурсию на уровне полноценного гида)"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Travelers wanting fully included admission and meals"
+      "source_en": "Travelers wanting fully included admission and meals",
+      "tm": "Путешественники, которым нужны включённые входные билеты и питание"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Jeju is genuinely large"
+      "source_en": "Jeju is genuinely large",
+      "tm": "Чеджу действительно большой"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead."
+      "source_en": "The island spans about 73 km east-to-west. Group bus tours waste hours waiting at each stop; a private charter cuts that overhead.",
+      "tm": "Остров тянется примерно на 73 км с востока на запад. Групповые автобусные туры теряют часы на ожидание на каждой остановке; индивидуальный чартер убирает эти издержки."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Weather changes fast"
+      "source_en": "Weather changes fast",
+      "tm": "Погода меняется быстро"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
       "source_en": "Jeju microclimates shift hourly. A driver-guide can swap an outdoor stop for an indoor one (⟦G0⟧ caves, O'sulloc, Yakcheonsa) without ruining the day.",
+      "tm": "Микроклимат на Чеджу меняется каждый час. Водитель-гид может заменить остановку под открытым небом на крытую (пещеры ⟦G0⟧, Osulloc, Якчхонса), не срывая весь день.",
       "glossary": [
         "⟦G0⟧ = Парк Халлим"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Door-to-door comfort"
+      "source_en": "Door-to-door comfort",
+      "tm": "Комфорт от двери до двери"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers."
+      "source_en": "Hotel pickup means no airport-area shuttle, no late-evening bus stress, and no walking with luggage between transfers.",
+      "tm": "Посадка у отеля означает, что не нужны шаттлы в районе аэропорта, не будет вечерней нервотрёпки с автобусами и не придётся идти с багажом между пересадками."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why a private charter wins on Jeju"
+      "source_en": "Why a private charter wins on Jeju",
+      "tm": "Почему на Чеджу выигрывает индивидуальный чартер"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "East for first-time landmark coverage"
+      "source_en": "East for first-time landmark coverage",
+      "tm": "Восток — для первого знакомства с главными достопримечательностями"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
       "source_en": "⟦G0⟧ and Manjanggul are Jeju's two strongest UNESCO names; the East route delivers maximum recognition value.",
+      "tm": "⟦G0⟧ и Манджангуль — два самых сильных объекта ЮНЕСКО на Чеджу; восточный маршрут даёт максимум узнаваемых мест.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "West for relaxed scenery and photos"
+      "source_en": "West for relaxed scenery and photos",
+      "tm": "Запад — для спокойных пейзажей и фотографий"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "⟦G0⟧, ⟦G1⟧, O'sulloc, and Aewol form a softer, more couple-friendly day with strong photo payoff and a sunset finish.",
+      "tm": "⟦G0⟧, ⟦G1⟧, Osulloc и Эволь складываются в более мягкий день, который лучше подходит парам, даёт отличные кадры и завершается закатом.",
       "glossary": [
         "⟦G0⟧ = Пляж Хёпчэ",
         "⟦G1⟧ = Парк Халлим"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "South for geological drama"
+      "source_en": "South for geological drama",
+      "tm": "Юг — для геологической драмы"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative."
+      "source_en": "Waterfalls, basalt cliffs, a volcanic dome, and a temple in one day give this route Jeju's strongest 'volcanic island' narrative.",
+      "tm": "Водопады, базальтовые утёсы, вулканический купол и храм в один день делают этот маршрут самым выразительным рассказом о Чеджу как о вулканическом острове."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "How to choose between East, West, and South"
+      "source_en": "How to choose between East, West, and South",
+      "tm": "Как выбрать между востоком, западом и югом"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Weather adjustments"
+      "source_en": "Weather adjustments",
+      "tm": "Корректировки из-за погоды"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol)."
+      "source_en": "Light rain rarely affects the route; strong wind usually shortens coastal stops (Seongsan, Jusangjeolli, Aewol).",
+      "tm": "Небольшой дождь редко влияет на маршрут; при сильном ветре обычно сокращаются прибрежные остановки (Сонсан, Чусанджолли, Эволь)."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Udo ferry on the East route"
+      "source_en": "Udo ferry on the East route",
+      "tm": "Паром на Удо на восточном маршруте"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow."
+      "source_en": "Udo Island requires a separate ferry. Vehicles can be shipped (extra cost) or left at the wharf. Ferry timing affects your overall day flow.",
+      "tm": "На остров Удо нужен отдельный паром. Автомобиль можно перевезти (за отдельную плату) или оставить на причале. Расписание парома влияет на ход всего дня."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Overtime is possible"
+      "source_en": "Overtime is possible",
+      "tm": "Переработка возможна"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability."
+      "source_en": "If you need more than 9 hours, an extra hour is 25,000 KRW paid in cash to the driver, subject to driver availability.",
+      "tm": "Если вам нужно больше 9 часов, каждый дополнительный час стоит 25 000 KRW наличными водителю и зависит от его доступности."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "What changes on the day"
+      "source_en": "What changes on the day",
+      "tm": "Что может измениться в день тура"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
-      "source_en": "bg-slate-50/80"
+      "source_en": "bg-slate-50/80",
+      "tm": "bg-slate-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this private day moves"
+      "source_en": "How this private day moves",
+      "tm": "Как строится этот индивидуальный день"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00."
+      "source_en": "Pickup at your Jeju hotel between 08:00 and 09:00, then a fully flexible 9-hour day around the East, West, or South route—or your own custom plan. Driver-guide adjusts pacing based on weather and traffic. Return drop-off around 17:00 to 18:00.",
+      "tm": "Посадка у вашего отеля на Чеджу между 08:00 и 09:00, затем полностью гибкий 9-часовой день по восточному, западному или южному маршруту — либо по вашему собственному плану. Водитель-гид подстраивает темп под погоду и дорожную обстановку. Высадка на обратном пути примерно с 17:00 до 18:00."
     },
     "/staticQuestions/0/answer": {
-      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day.",
+      "tm": "Да — он охватывает самые характерные остановки региона за один сбалансированный день."
     },
     "/staticQuestions/0/question": {
-      "source_en": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?"
+      "source_en": "Is this a good choice for first-time visitors to Jeju (East, West, or South)?",
+      "tm": "Подойдёт ли этот тур тем, кто впервые на Чеджу (восток, запад или юг)?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Moderate walking with some active sections."
+      "source_en": "Moderate walking with some active sections.",
+      "tm": "Умеренная ходьба с несколькими активными участками."
     },
     "/staticQuestions/1/question": {
-      "source_en": "Is the walking difficult?"
+      "source_en": "Is the walking difficult?",
+      "tm": "Насколько сложны пешие участки?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Yes — comfortable for most families."
+      "source_en": "Yes — comfortable for most families.",
+      "tm": "Да — комфортно для большинства семей."
     },
     "/staticQuestions/2/question": {
-      "source_en": "Is this tour suitable for families?"
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Подходит ли этот тур для семей?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes — pacing and walking are comfortable for active seniors."
+      "source_en": "Yes — pacing and walking are comfortable for active seniors.",
+      "tm": "Да — темп и пешие участки комфортны для активных пожилых гостей."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Can older adults join comfortably?"
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Смогут ли комфортно участвовать гости старшего возраста?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local driver-guide with full Jeju island knowledge — east, west, and south route expertise so the day isn't constrained to a single corridor."
+      "source_en": "Licensed local driver-guide with full Jeju island knowledge — east, west, and south route expertise so the day isn't constrained to a single corridor.",
+      "tm": "Лицензированный местный водитель-гид, который знает весь остров Чеджу — восточный, западный и южный маршруты, так что день не ограничен одним направлением."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Лицензированный местный оператор"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour operator with full insurance"
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Официальный корейский туроператор с полной страховкой"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "Fully private vehicle: no other passengers, no fixed departure times — the guide meets you at your hotel and the day runs entirely around your group's pace."
+      "source_en": "Fully private vehicle: no other passengers, no fixed departure times — the guide meets you at your hotel and the day runs entirely around your group's pace.",
+      "tm": "Полностью индивидуальный автомобиль: никаких других пассажиров и фиксированного времени отправления — гид встречает вас у отеля, и весь день выстроен вокруг темпа вашей группы."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Специалисты по маршрутам"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Маршрут, настроенный вручную, а не типовое кольцо"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Hotel pickup included island-wide; outside Jeju City areas with an additional pickup fee disclosed at booking."
+      "source_en": "Hotel pickup included island-wide; outside Jeju City areas with an additional pickup fee disclosed at booking.",
+      "tm": "Посадка у отеля включена по всему острову; за пределами города Чеджу возможна дополнительная плата за подачу, о которой сообщается при бронировании."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Комфортный размер группы"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Подобран под маршрут"
     },
     "/seasonalVariations/0/title": {
-      "source_en": "Canola season"
+      "source_en": "Canola season",
+      "tm": "Сезон рапса"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Весна"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season."
+      "source_en": "Canola flowers blanket the East coast in late March-April; cherry blossoms peak in early April. Mild temperatures and clear skies make this the most balanced season.",
+      "tm": "В конце марта — апреле рапс покрывает восточное побережье; пик цветения сакуры приходится на начало апреля. Мягкая температура и ясное небо делают этот сезон самым сбалансированным."
     },
     "/seasonalVariations/1/title": {
-      "source_en": "Beach season"
+      "source_en": "Beach season",
+      "tm": "Пляжный сезон"
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Лето"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August."
+      "source_en": "Peak beach season with Hyeopjae and Hamdeok at their strongest; June hydrangeas color the West coast. Expect humidity and possible typhoon weather in August.",
+      "tm": "Разгар пляжного сезона: Хёпчэ и Хамдок в лучшей форме; в июне гортензии раскрашивают западное побережье. Ожидайте влажность и возможную тайфунную погоду в августе."
     },
     "/seasonalVariations/2/title": {
-      "source_en": "Best photo season"
+      "source_en": "Best photo season",
+      "tm": "Лучший сезон для фотографий"
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Осень"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Pink muhly fields usually peak from mid-October to early November, and autumn often brings clear views toward Hallasan and Seongsan. It is one of Jeju's best photo seasons."
+      "source_en": "Pink muhly fields usually peak from mid-October to early November, and autumn often brings clear views toward Hallasan and Seongsan. It is one of Jeju's best photo seasons.",
+      "tm": "Поля розовой мюленбергии обычно достигают пика с середины октября до начала ноября, а осенью часто открываются ясные виды на Халласан и Сонсан. Это один из лучших фотосезонов на Чеджу."
     },
     "/seasonalVariations/3/title": {
-      "source_en": "Camellia & snow"
+      "source_en": "Camellia & snow",
+      "tm": "Камелии и снег"
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Зима"
     },
     "/seasonalVariations/3/description": {
       "source_en": "⟦G0⟧ blooms December to February; Hallasan can carry snow on its summit. Cold but visually rewarding, with fewer crowds at all major stops.",
+      "tm": "⟦G0⟧ цветёт с декабря по февраль; на вершине Халласана может лежать снег. Холодно, но визуально впечатляюще, и на всех главных остановках меньше людей.",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Сразу"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with region/route preference intake and hotel pickup details."
+      "source_en": "Instant confirmation with region/route preference intake and hotel pickup details.",
+      "tm": "Мгновенное подтверждение с уточнением предпочтений по региону и маршруту и данными о посадке у отеля."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Напоминание за 12 часов"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Обновление по погоде и корректировки маршрута"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "За 12 часов"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Route finalized 24 hours before based on weather forecast and your priorities."
+      "source_en": "Route finalized 24 hours before based on weather forecast and your priorities.",
+      "tm": "Маршрут финализируется за 24 часа с учётом прогноза погоды и ваших приоритетов."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Финальная информация о посадке"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Точное время посадки и контакт водителя"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Накануне вечером"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Driver-guide details (name, vehicle plate) sent the evening before."
+      "source_en": "Driver-guide details (name, vehicle plate) sent the evening before.",
+      "tm": "Данные водителя-гида (имя, номер автомобиля) отправляются накануне вечером."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Заметки по маршруту в день тура"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Утренний брифинг с учётом текущих условий"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Утром в день тура"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver at your hotel lobby at the agreed time with name placard."
+      "source_en": "Driver at your hotel lobby at the agreed time with name placard.",
+      "tm": "Водитель ждёт в лобби вашего отеля в согласованное время с табличкой с именем."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Подсказки на каждой остановке"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Сопровождение в реальном времени на каждой локации"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Во время тура"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "On-the-day adjustments via direct message — extend at a spot you love, add a cafe stop, skip what isn't interesting."
+      "source_en": "On-the-day adjustments via direct message — extend at a spot you love, add a cafe stop, skip what isn't interesting.",
+      "tm": "Корректировки в течение дня через сообщения — задержаться там, где понравилось, добавить остановку в кафе, пропустить неинтересное."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Поддержка после тура"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Обратная связь и рекомендации"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "После тура"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after drop-off."
+      "source_en": "Post-tour feedback request sent after drop-off.",
+      "tm": "После высадки отправляется запрос на отзыв о туре."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "Live weather integration"
+      "source_en": "Live weather integration",
+      "tm": "Интеграция с актуальным прогнозом погоды"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "Updated daily"
+      "source_en": "Updated daily",
+      "tm": "Обновляется ежедневно"
     }
   },
   "glossaryTokens": {
@@ -314,5 +407,5 @@
       "⟦G0⟧": "Camellia Hill"
     }
   },
-  "tmHits": 0
+  "tmHits": 93
 }

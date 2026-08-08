@@ -1,0 +1,55 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/label": {
+      "source_en": "Cruise Port"
+    },
+    "/routeFlowStops/1/label": {
+      "source_en": "UN Cemetery"
+    },
+    "/routeFlowStops/2/label": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/routeFlowStops/3/label": {
+      "source_en": "Gamcheon Village"
+    },
+    "/routeFlowStops/4/label": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/routeFlowStops/5/label": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/routeFlowStops/6/label": {
+      "source_en": "Cruise Port"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/2/label": {
+      "⟦G0⟧": "Тхэджондэ"
+    },
+    "/routeFlowStops/4/label": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/routeFlowStops/5/label": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    }
+  },
+  "tmHits": 3
+}

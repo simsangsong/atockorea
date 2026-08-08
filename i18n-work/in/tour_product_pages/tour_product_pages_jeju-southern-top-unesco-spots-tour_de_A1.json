@@ -7,13 +7,16 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour · Almost All Stops Free Admission | AtoC"
+      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour · Almost All Stops Free Admission | AtoC",
+      "tm": "Signature-Tagestour Süd-Jeju (Seogwipo) · Fast alle Stopps mit freiem Eintritt | AtoC"
     },
     "/seo/pageTitle": {
-      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour | AtoC Korea"
+      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour | AtoC Korea",
+      "tm": "Signature-Tagestour Süd-Jeju (Seogwipo) | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "South Jeju (Seogwipo) small-group day tour: ⟦G2⟧ → Oedolgae & Olle Route 7 → ⟦G1⟧ → lunch → O'sulloc Tea Museum → ⟦G0⟧. Almost all stops free admission, small group.",
+      "tm": "Kleingruppen-Tagestour durch Süd-Jeju (Seogwipo): ⟦G2⟧ → Oedolgae & Olle-Route 7 → ⟦G1⟧ → Mittagessen → O'sulloc Tea Museum → ⟦G0⟧. Fast alle Stopps mit freiem Eintritt, Kleingruppe.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Yakcheonsa-Tempel",
@@ -22,6 +25,7 @@
     },
     "/seo/metaDescription": {
       "source_en": "9-hour southern Jeju small-group day tour: ⟦G2⟧ (Asia's only ocean-falling waterfall), Oedolgae & Olle Route 7, ⟦G1⟧, O'sulloc Tea Museum, ⟦G0⟧.",
+      "tm": "9-stündige Kleingruppen-Tagestour durch den Süden Jejus: ⟦G2⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall), Oedolgae & Olle-Route 7, ⟦G1⟧, O'sulloc Tea Museum, ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Yakcheonsa-Tempel",
@@ -29,7 +33,8 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Jeju southern day tour"
+      "source_en": "Jeju southern day tour",
+      "tm": "Tagestour Süd-Jeju"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ tour",
@@ -39,7 +44,8 @@
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Oedolgae Olle Route 7"
+      "source_en": "Oedolgae Olle Route 7",
+      "tm": "Oedolgae Olle-Route 7"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "⟦G0⟧ tour",
@@ -49,7 +55,8 @@
       ]
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "O'sulloc Tea Museum tour"
+      "source_en": "O'sulloc Tea Museum tour",
+      "tm": "O'sulloc Tea Museum Tour"
     },
     "/seo/primaryKeywords/5": {
       "source_en": "⟦G0⟧",
@@ -59,13 +66,16 @@
       ]
     },
     "/hero/meta/stops": {
-      "source_en": "8 stops"
+      "source_en": "8 stops",
+      "tm": "8 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "South Jeju"
+      "source_en": "South Jeju",
+      "tm": "Süd-Jeju"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 9 hours (08:30 first pickup, ≈18:00 drop-off)"
+      "source_en": "≈ 9 hours (08:30 first pickup, ≈18:00 drop-off)",
+      "tm": "ca. 9 Stunden (08:30 Uhr erste Abholung, ca. 18:00 Uhr Rückfahrt)"
     },
     "/hero/pills/0": {
       "source_en": "Small group",
@@ -77,6 +87,7 @@
     },
     "/hero/tagline": {
       "source_en": "South Jeju Seogwipo's signature coastal stops in one day — ⟦G1⟧, Oedolgae Olle Trail, ⟦G0⟧, O'sulloc, Hallasan. Free admission at almost every stop.",
+      "tm": "Die Signature-Küstenstopps von Seogwipo im Süden Jejus an einem Tag — ⟦G1⟧, Oedolgae Olle-Trail, ⟦G0⟧, O'sulloc, Hallasan. Freier Eintritt an fast jedem Stopp.",
       "glossary": [
         "⟦G0⟧ = Yakcheonsa-Tempel",
         "⟦G1⟧ = Jeongbang-Wasserfall"
@@ -111,7 +122,8 @@
       "tm": "Regentauglichkeit"
     },
     "/glanceItems/3/value": {
-      "source_en": "Limited"
+      "source_en": "Limited",
+      "tm": "Eingeschränkt"
     },
     "/glanceItems/4/label": {
       "source_en": "Family Suitability",
@@ -126,7 +138,8 @@
       "tm": "Tempo"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Ausgewogen"
     },
     "/subnavItems/0/label": {
       "source_en": "Overview",
@@ -157,19 +170,24 @@
       "tm": "Jeju"
     },
     "/catalog_card/tags/2": {
-      "source_en": "South Jeju"
+      "source_en": "South Jeju",
+      "tm": "Süd-Jeju"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Seogwipo"
+      "source_en": "Seogwipo",
+      "tm": "Seogwipo"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Good value"
+      "source_en": "Good value",
+      "tm": "Gutes Preis-Leistungs-Verhältnis"
     },
     "/catalog_card/tags/5": {
-      "source_en": "No shopping stops"
+      "source_en": "No shopping stops",
+      "tm": "Keine Shopping-Stopps"
     },
     "/catalog_card/title": {
-      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour"
+      "source_en": "Jeju Southern (Seogwipo) Signature Day Tour",
+      "tm": "Signature-Tagestour Süd-Jeju (Seogwipo)"
     },
     "/catalog_card/badges/0": {
       "source_en": "Small group",
@@ -180,25 +198,32 @@
       "tm": "Jeju"
     },
     "/catalog_card/badges/2": {
-      "source_en": "South Jeju"
+      "source_en": "South Jeju",
+      "tm": "Süd-Jeju"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Seogwipo"
+      "source_en": "Seogwipo",
+      "tm": "Seogwipo"
     },
     "/catalog_card/badges/4": {
-      "source_en": "Value priced"
+      "source_en": "Value priced",
+      "tm": "Preiswert"
     },
     "/catalog_card/badges/5": {
-      "source_en": "No shopping"
+      "source_en": "No shopping",
+      "tm": "Kein Shopping"
     },
     "/catalog_card/region": {
-      "source_en": "Southern Jeju"
+      "source_en": "Southern Jeju",
+      "tm": "Süden Jejus"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 Stunden"
     },
     "/catalog_card/subtitle": {
       "source_en": "South Jeju Seogwipo coastal loop — ⟦G1⟧, Oedolgae Olle Trail, ⟦G0⟧, Hallasan.",
+      "tm": "Küstenrunde durch Seogwipo im Süden Jejus — ⟦G1⟧, Oedolgae Olle-Trail, ⟦G0⟧, Hallasan.",
       "glossary": [
         "⟦G0⟧ = Yakcheonsa-Tempel",
         "⟦G1⟧ = Jeongbang-Wasserfall"
@@ -206,16 +231,19 @@
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group day tour through southern Jeju's signature Seogwipo stops — ⟦G1⟧, Asia's only waterfall that drops directly into the sea, the Oedolgae rock pinnacle with a coastal walk on Olle Route 7, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the ⟦G0⟧ Trail. Four pickup points across Jeju City and the airport, certified English/Chinese-speaking guide, free admission at almost every stop except ⟦G1⟧, no shopping pressure.",
+      "tm": "Eine Kleingruppen-Tagestour zu den Signature-Stopps von Seogwipo im Süden Jejus — ⟦G1⟧, Asiens einziger Wasserfall, der direkt ins Meer stürzt, die Felsnadel Oedolgae mit einem Küstenspaziergang auf der Olle-Route 7, Ostasiens größter Tempel Yakcheonsa, das O'sulloc Tea Museum und der ⟦G0⟧-Trail. Vier Abholpunkte in Jeju City und am Flughafen, zertifizierter englisch-/chinesischsprachiger Guide, freier Eintritt an fast jedem Stopp außer ⟦G1⟧, kein Shopping-Druck.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Jeju Southern (Seogwipo) Signature"
+      "source_en": "Jeju Southern (Seogwipo) Signature",
+      "tm": "Süd-Jeju (Seogwipo) Signature"
     },
     "/headlineLine2": {
-      "source_en": "Day Tour"
+      "source_en": "Day Tour",
+      "tm": "Tagestour"
     },
     "/pickup_dropoff/notes/0": {
       "source_en": "Return usually runs around 17:30–18:00.",
@@ -287,24 +315,29 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking interpreter guide, ⟦G0⟧ admission, fuel/tolls/parking.",
+      "tm": "Klimatisierter Minibus, zertifizierter englisch-/chinesischsprachiger Dolmetscher-Guide, Eintritt ⟦G0⟧, Kraftstoff/Maut/Parkgebühren.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
       "source_en": "Oedolgae & Olle Route 7, Yakcheonsa, O'sulloc, and ⟦G0⟧ are all free admission.",
+      "tm": "Oedolgae & Olle-Route 7, Yakcheonsa, O'sulloc und ⟦G0⟧ sind alle eintrittsfrei.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Not included: lunch (~₩15,000), drinks, tips."
+      "source_en": "Not included: lunch (~₩15,000), drinks, tips.",
+      "tm": "Nicht inbegriffen: Mittagessen (ca. ₩15.000), Getränke, Trinkgelder."
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "The only real extra cost on the day is lunch — almost every stop is free admission."
+      "source_en": "The only real extra cost on the day is lunch — almost every stop is free admission.",
+      "tm": "Der einzige echte Zusatzkostenpunkt an diesem Tag ist das Mittagessen — fast jeder Stopp ist eintrittsfrei."
     },
     "/practicalAccordionItems/0/preview": {
       "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ⟦G0⟧ admission…",
+      "tm": "Klimatisierter Minibus, zertifizierter englisch-/chinesischsprachiger Guide, Eintritt ⟦G0⟧…",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
@@ -314,56 +347,70 @@
       "tm": "Abholung & Rückfahrt"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F Domestic Departures (08:45) → LOTTE City Hotel Jeju (08:55) → Shilla Duty-Free Jeju Store (09:05)."
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F Domestic Departures (08:45) → LOTTE City Hotel Jeju (08:55) → Shilla Duty-Free Jeju Store (09:05).",
+      "tm": "Abholung nacheinander an vier Punkten: Ocean Suites Jeju (08:30 Uhr) → Jeju Airport Gate 3, Inlandsabflüge im 3. Stock (08:45 Uhr) → LOTTE City Hotel Jeju (08:55 Uhr) → Shilla Duty-Free Filiale Jeju (09:05 Uhr)."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Choose the closest at booking."
+      "source_en": "Choose the closest at booking.",
+      "tm": "Wählen Sie bei der Buchung den nächstgelegenen Punkt."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Arrive 10 minutes early; 10+ minute no-shows are non-refundable."
+      "source_en": "Arrive 10 minutes early; 10+ minute no-shows are non-refundable.",
+      "tm": "Bitte 10 Minuten früher da sein; bei Nichterscheinen von mehr als 10 Minuten erfolgt keine Erstattung."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Day-before WhatsApp confirmation."
+      "source_en": "Day-before WhatsApp confirmation.",
+      "tm": "Bestätigung per WhatsApp am Vortag."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F…"
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30) → Jeju Airport Gate 3, 3F…",
+      "tm": "Abholung nacheinander an vier Punkten: Ocean Suites Jeju (08:30 Uhr) → Jeju Airport Gate 3, 3. Stock…"
     },
     "/practicalAccordionItems/2/title": {
       "source_en": "Walking & terrain",
       "tm": "Gehstrecken & Gelände"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Moderate difficulty."
+      "source_en": "Moderate difficulty.",
+      "tm": "Mittlerer Schwierigkeitsgrad."
     },
     "/practicalAccordionItems/2/content/1": {
       "source_en": "At ⟦G0⟧ you go down and back up about 130 steps to the foot of the falls (mind slipping on the rocky shelf).",
+      "tm": "Am ⟦G0⟧ steigen Sie rund 130 Stufen hinab zum Fuß des Wasserfalls und wieder hinauf (Achtung: Rutschgefahr auf dem Felsvorsprung).",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Oedolgae & Olle Route 7 is a mostly flat coastal path with some natural-rock sections."
+      "source_en": "Oedolgae & Olle Route 7 is a mostly flat coastal path with some natural-rock sections.",
+      "tm": "Oedolgae & Olle-Route 7 ist ein überwiegend flacher Küstenweg mit einigen Abschnitten über Naturfels."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Yakcheonsa has flat grounds, with some steps entering the main hall."
+      "source_en": "Yakcheonsa has flat grounds, with some steps entering the main hall.",
+      "tm": "Yakcheonsa hat ein ebenes Gelände, zum Eingang der Haupthalle führen einige Stufen."
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "O'sulloc is flat terrain and stroller-accessible."
+      "source_en": "O'sulloc is flat terrain and stroller-accessible.",
+      "tm": "O'sulloc liegt in flachem Gelände und ist mit Kinderwagen zugänglich."
     },
     "/practicalAccordionItems/2/content/5": {
       "source_en": "⟦G0⟧ is a 1.3 km one-way wooden-stair climb, about 60–75 min round-trip.",
+      "tm": "⟦G0⟧ ist ein 1,3 km langer Aufstieg über Holztreppen (einfache Strecke), Hin- und Rückweg etwa 60–75 Min.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/practicalAccordionItems/2/content/6": {
-      "source_en": "Total walking about 4 km."
+      "source_en": "Total walking about 4 km.",
+      "tm": "Gesamte Gehstrecke etwa 4 km."
     },
     "/practicalAccordionItems/2/content/7": {
-      "source_en": "Comfortable closed-toe shoes essential; non-slip trekking shoes recommended."
+      "source_en": "Comfortable closed-toe shoes essential; non-slip trekking shoes recommended.",
+      "tm": "Bequeme geschlossene Schuhe sind unerlässlich; rutschfeste Trekkingschuhe werden empfohlen."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Moderate difficulty."
+      "source_en": "Moderate difficulty.",
+      "tm": "Mittlerer Schwierigkeitsgrad."
     },
     "/practicalAccordionItems/3/title": {
       "source_en": "Cancellation",
@@ -379,6 +426,7 @@
     },
     "/practicalAccordionItems/3/content/2": {
       "source_en": "In heavy snow or when the trail or Route 1100 is closed, ⟦G0⟧ may be substituted for a lower-elevation Hallasan alternate (Mysterious Road or Jeju National Museum).",
+      "tm": "Bei starkem Schneefall oder wenn der Wanderweg oder die Route 1100 gesperrt ist, kann ⟦G0⟧ durch eine tiefer gelegene Hallasan-Alternative ersetzt werden (Mysterious Road oder Jeju National Museum).",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
@@ -388,47 +436,59 @@
       "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Drop-off options"
+      "source_en": "Drop-off options",
+      "tm": "Optionen für die Rückfahrt"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport (≈17:40), Ocean Suites (≈17:45), Dongmun Traditional Market (≈18:00)."
+      "source_en": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport (≈17:40), Ocean Suites (≈17:45), Dongmun Traditional Market (≈18:00).",
+      "tm": "Fünf Ausstiegspunkte: Shilla Duty-Free (ca. 17:30 Uhr), LOTTE City Hotel (ca. 17:35 Uhr), Jeju Airport (ca. 17:40 Uhr), Ocean Suites (ca. 17:45 Uhr), Traditioneller Dongmun-Markt (ca. 18:00 Uhr)."
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Dongmun is drop-only — the operator does not accompany you into the market."
+      "source_en": "Dongmun is drop-only — the operator does not accompany you into the market.",
+      "tm": "Dongmun ist nur Ausstiegspunkt — der Veranstalter begleitet Sie nicht in den Markt."
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Black Pork Street is a 5-minute walk from Dongmun Market."
+      "source_en": "Black Pork Street is a 5-minute walk from Dongmun Market.",
+      "tm": "Die Black Pork Street ist 5 Gehminuten vom Dongmun-Markt entfernt."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport…"
+      "source_en": "Five drop-off points: Shilla Duty-Free (≈17:30), LOTTE City Hotel (≈17:35), Jeju Airport…",
+      "tm": "Fünf Ausstiegspunkte: Shilla Duty-Free (ca. 17:30 Uhr), LOTTE City Hotel (ca. 17:35 Uhr), Jeju Airport…"
     },
     "/practicalAccordionItems/5/title": {
-      "source_en": "Children & accessibility"
+      "source_en": "Children & accessibility",
+      "tm": "Kinder & Barrierefreiheit"
     },
     "/practicalAccordionItems/5/content/0": {
-      "source_en": "Children of all ages welcome."
+      "source_en": "Children of all ages welcome.",
+      "tm": "Kinder jeden Alters sind willkommen."
     },
     "/practicalAccordionItems/5/content/1": {
       "source_en": "⟦G1⟧ (steps) and ⟦G0⟧ (continuous wooden stairs) are not stroller-accessible.",
+      "tm": "⟦G1⟧ (Stufen) und ⟦G0⟧ (durchgehende Holztreppen) sind nicht mit Kinderwagen zugänglich.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Oedolgae & the Olle Trail, Yakcheonsa, and O'sulloc are mostly accessible."
+      "source_en": "Oedolgae & the Olle Trail, Yakcheonsa, and O'sulloc are mostly accessible.",
+      "tm": "Oedolgae & der Olle-Trail, Yakcheonsa und O'sulloc sind größtenteils zugänglich."
     },
     "/practicalAccordionItems/5/content/3": {
       "source_en": "⟦G0⟧ and Eoseungsaengak have limited wheelchair access due to stairs; Yakcheonsa and O'sulloc are mostly OK.",
+      "tm": "⟦G0⟧ und Eoseungsaengak sind wegen der Treppen nur eingeschränkt mit dem Rollstuhl zugänglich; Yakcheonsa und O'sulloc sind größtenteils in Ordnung.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/practicalAccordionItems/5/content/4": {
-      "source_en": "Please advise any mobility needs at booking."
+      "source_en": "Please advise any mobility needs at booking.",
+      "tm": "Bitte teilen Sie uns eventuelle Mobilitätsbedürfnisse bei der Buchung mit."
     },
     "/practicalAccordionItems/5/preview": {
-      "source_en": "Children of all ages welcome."
+      "source_en": "Children of all ages welcome.",
+      "tm": "Kinder jeden Alters sind willkommen."
     }
   },
   "glossaryTokens": {
@@ -489,5 +549,5 @@
       "⟦G0⟧": "Jeongbang-Wasserfall"
     }
   },
-  "tmHits": 47
+  "tmHits": 107
 }

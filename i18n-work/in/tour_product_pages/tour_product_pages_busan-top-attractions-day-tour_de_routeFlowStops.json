@@ -10,16 +10,19 @@
       "source_en": "Pickup (3 central Busan stations)"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Seaside temple"
+      "source_en": "Seaside temple",
+      "tm": "Tempel am Meer"
     },
     "/routeFlowStops/2/name": {
       "source_en": "Cheongsapo & Blue Line Park"
@@ -28,10 +31,12 @@
       "source_en": "Coast & beach train"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch (local Busan restaurant)"
+      "source_en": "Lunch (local Busan restaurant)",
+      "tm": "Mittagessen (lokales Restaurant in Busan)"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧",
@@ -41,7 +46,8 @@
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Memorial"
+      "source_en": "Memorial",
+      "tm": "Gedenkstätte"
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧",
@@ -54,7 +60,8 @@
       "source_en": "Art village"
     },
     "/routeFlowStops/6/name": {
-      "source_en": "Jagalchi Fish Market"
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
     "/routeFlowStops/6/theme": {
       "source_en": "Seafood market"
@@ -71,5 +78,5 @@
       "⟦G0⟧": "Kulturdorf Gamcheon"
     }
   },
-  "tmHits": 2
+  "tmHits": 9
 }

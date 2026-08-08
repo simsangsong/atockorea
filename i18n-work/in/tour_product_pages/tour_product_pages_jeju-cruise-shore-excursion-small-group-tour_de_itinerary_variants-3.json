@@ -58,7 +58,8 @@
       "source_en": "Jeju Port (Northern Terminal)"
     },
     "/itinerary_variants/0/routePhases/0/label": {
-      "source_en": "Morning"
+      "source_en": "Morning",
+      "tm": "Vormittag"
     },
     "/itinerary_variants/0/routePhases/0/theme": {
       "source_en": "UNESCO volcano + coast"
@@ -95,13 +96,15 @@
       "source_en": "Cruise Terminal"
     },
     "/itinerary_variants/0/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/itinerary_variants/0/routeFlowStops/1/name": {
       "source_en": "Sunrise Peak"
     },
     "/itinerary_variants/0/routeFlowStops/1/theme": {
-      "source_en": "Volcano"
+      "source_en": "Volcano",
+      "tm": "Vulkan"
     },
     "/itinerary_variants/0/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -111,17 +114,20 @@
       ]
     },
     "/itinerary_variants/0/routeFlowStops/2/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Küste"
     },
     "/itinerary_variants/0/routeFlowStops/3/name": {
       "source_en": "Lunch",
       "tm": "Mittagessen"
     },
     "/itinerary_variants/0/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
     },
     "/itinerary_variants/0/routeFlowStops/4/name": {
-      "source_en": "Folk Village"
+      "source_en": "Folk Village",
+      "tm": "Folkloredorf"
     },
     "/itinerary_variants/0/routeFlowStops/4/theme": {
       "source_en": "Culture",
@@ -131,7 +137,8 @@
       "source_en": "Cruise Terminal"
     },
     "/itinerary_variants/0/routeFlowStops/5/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Rückfahrt"
     },
     "/itinerary_variants/0/port_label_short": {
       "source_en": "Jeju Port"
@@ -150,7 +157,8 @@
       "source_en": "coast"
     },
     "/itinerary_variants/0/theme_tags_in_variant/2": {
-      "source_en": "culture"
+      "source_en": "culture",
+      "tm": "Kultur"
     },
     "/itinerary_variants/1/stops/0/name": {
       "source_en": "Gangjeong Cruise Terminal Pickup (Seogwipo — south)"
@@ -162,7 +170,8 @@
       "source_en": "Pickup & Cruise Logistics"
     },
     "/itinerary_variants/1/stops/0/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itinerary_variants/1/stops/0/highlights/0": {
       "source_en": "**Two berths × 220,000-ton capacity** — handles 2 cruise ships concurrently"
@@ -206,22 +215,28 @@
       ]
     },
     "/itinerary_variants/1/stops/1/category": {
-      "source_en": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage"
+      "source_en": "Alpine Wetland — Ramsar Site + within Hallasan UNESCO World Heritage",
+      "tm": "Alpines Feuchtgebiet — Ramsar-Gebiet + innerhalb des UNESCO-Welterbes Hallasan"
     },
     "/itinerary_variants/1/stops/1/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itinerary_variants/1/stops/1/timeUsed/0": {
-      "source_en": "Coach arrival + parking at 1100 Rest Area — ~5 min"
+      "source_en": "Coach arrival + parking at 1100 Rest Area — ~5 min",
+      "tm": "Ankunft des Busses + Parken an der 1100 Rest Area — ca. 5 Min."
     },
     "/itinerary_variants/1/stops/1/timeUsed/1": {
-      "source_en": "Boardwalk loop + observation decks — ~25 min"
+      "source_en": "Boardwalk loop + observation decks — ~25 min",
+      "tm": "Rundweg auf dem Holzsteg + Aussichtsplattformen — ca. 25 Min."
     },
     "/itinerary_variants/1/stops/1/timeUsed/2": {
-      "source_en": "Interpretive signage + natural-history exhibit — ~10 min"
+      "source_en": "Interpretive signage + natural-history exhibit — ~10 min",
+      "tm": "Informationstafeln + naturkundliche Ausstellung — ca. 10 Min."
     },
     "/itinerary_variants/1/stops/1/timeUsed/3": {
-      "source_en": "Buffer / cafe restroom — ~5 min"
+      "source_en": "Buffer / cafe restroom — ~5 min",
+      "tm": "Puffer / Toilette im Café — ca. 5 Min."
     }
   },
   "glossaryTokens": {
@@ -248,5 +263,5 @@
       "⟦G0⟧": "Hochlagen-Feuchtgebiet Hallasan 1100"
     }
   },
-  "tmHits": 6
+  "tmHits": 21
 }

@@ -1,0 +1,135 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "ru",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "Cruise passengers with a single Busan port-call day"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "First-time Busan visitors on a budget"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Adult families and couples comfortable on a 8-hour day"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Travelers who prefer guided pacing over independent transit"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want minimal walking or no stairs"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Stroller-heavy groups (Gamcheon hillside, Yongdusan stairs)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Cruise passengers with confirmed sail-away earlier than 17:00 — see our small-group product instead"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Guests who want long unscheduled time at any one stop (Gamcheon caps at 90 min)"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Return guaranteed before sail-away"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "The route is built around a 17:00 return to the terminal you were collected from — eight hours after a 09:00 pickup, which leaves a comfortable buffer before the all-aboard times most Busan port calls use. If your ship sails unusually early, the guide adjusts the running order on the day."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Direct cruise-terminal pickup"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "No subway transfers, no city-hotel transfers — you are collected at the cruise terminal arrival hall at 09:00 and dropped back at the same point at about 17:00. Which of the two Busan cruise terminals applies to you depends on where your ship berths, and is confirmed at booking."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Cruise-day timing"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Nampo-dong cluster keeps it walkable"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Jagalchi → ⟦G1⟧ → ⟦G0⟧ sit within 600 m of each other in Nampo-dong; the bus tour walks the cluster end-to-end (only the coach repositions for pickup), saving 30+ min of would-be coach time and giving the day three substantive stops where a less-efficient route would fit only one.",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче",
+        "⟦G1⟧ = Площадь BIFF"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "Gamcheon at golden hour by design"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "Gamcheon gets 45 minutes in the early afternoon, once the morning tour groups have cleared the observation deck. Placing it after the Nampo-dong markets means the walk runs downhill through the painted lanes rather than up them."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Yongdusan as twilight close"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Yongdusan is the day's closing stop because it sits directly above the Nampo-dong streets you walked earlier — the last twenty minutes reframe the whole afternoon from above, and the terminal is a short drive from the same pickup point."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Nine stops in one day"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Large coach (28–45 seats) — not small-group"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "This is the budget product. The coach is shared with other cruise passengers from multiple ships; pickup/drop is at the terminal coach lot, not directly at your ship's gangway. Guests wanting a small-van experience (≈12 max), longer stop times at each attraction, and possible itinerary tweaks should book our small-group Busan cruise tour at the higher price point."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Stops are timed, not flexible"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "The 20–50 minute stop windows are fixed across the group. You can choose what to do inside a stop — ride the Songdo cable car up to Sky Park or walk the free skywalk instead, go up the Busan Diamond Tower or stay at park level — but you cannot lengthen a stop or drop one. Guests who want the day reshaped around them should take the private charter."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/label": {
+      "source_en": "Cable car and tower observatory not included"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/2/detail": {
+      "source_en": "Songdo Marine Cable Car (₩17,000 adult round-trip) and the Busan Diamond Tower observatory (₩12,000) are not in the tour price. The cable car is an on-site choice at the Songdo stop: ride it up to Sky Park, or stay at sea level and walk the free Cloud Trails skywalk instead."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "Bus-tour trade-offs honestly"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this cruise day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Cruise terminal pickup at 09:00; northeast to ⟦G1⟧ first, while the cliff is still quiet; back across the city for the ⟦G0⟧ and lunch at your own expense; then Nampo-dong walked end to end as three separate stops (Jagalchi, ⟦G4⟧, ⟦G3⟧); Gamcheon's painted hillside; Songdo for the Cloud Trails skywalk and, if you take the cable car, Sky Park across the bay; ⟦G2⟧ last, and back at your terminal by 17:00.",
+      "tm": "Сбор у круизного терминала в 09:00; сначала на северо-восток к ⟦G1⟧, пока на скале ещё тихо; затем обратно через город к ⟦G0⟧ и обед за свой счёт; после этого Нампходон пешком из конца в конец, тремя отдельными остановками (Чагальчхи, ⟦G4⟧, ⟦G3⟧); расписанный склон Камчхона; Сондо со скайвоком Cloud Trails и, если возьмёте канатную дорогу, Sky Park на другой стороне залива; последним ⟦G2⟧ — и возвращение к вашему терминалу к 17:00.",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН",
+        "⟦G1⟧ = Хэдон Йонгунса",
+        "⟦G2⟧ = Парк Йондусан",
+        "⟦G3⟧ = Рынок Кукче",
+        "⟦G4⟧ = Площадь BIFF"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "⟦G0⟧": "Рынок Кукче",
+      "⟦G1⟧": "Площадь BIFF"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Мемориальное кладбище ООН",
+      "⟦G1⟧": "Хэдон Йонгунса",
+      "⟦G2⟧": "Парк Йондусан",
+      "⟦G3⟧": "Рынок Кукче",
+      "⟦G4⟧": "Площадь BIFF"
+    }
+  },
+  "tmHits": 4
+}

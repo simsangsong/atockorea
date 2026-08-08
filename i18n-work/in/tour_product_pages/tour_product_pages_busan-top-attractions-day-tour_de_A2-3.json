@@ -7,25 +7,30 @@
   "tier": "A2",
   "segments": {
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Sofort"
     },
     "/bookingSupportSteps/0/description": {
       "source_en": "Instant booking confirmation with pickup point instructions (Busan Station / Seomyeon / Haeundae)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Pickup Details"
+      "source_en": "Pickup Details",
+      "tm": "Details zur Abholung"
     },
     "/bookingSupportSteps/1/detail": {
       "source_en": "Exact pickup location and vehicle info via WhatsApp"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "Day before"
+      "source_en": "Day before",
+      "tm": "Am Vortag"
     },
     "/bookingSupportSteps/1/description": {
       "source_en": "Weather check and any route note (Danubi Train tip for ⟦G0⟧, tide timing at Yonggungsa) sent the day before.",
@@ -34,25 +39,29 @@
       ]
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Pickup Confirmation"
+      "source_en": "Pickup Confirmation",
+      "tm": "Bestätigung der Abholung"
     },
     "/bookingSupportSteps/2/detail": {
       "source_en": "Driver checks in 10 minutes before arrival"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Morning of"
+      "source_en": "Morning of",
+      "tm": "Am Morgen des Tourtages"
     },
     "/bookingSupportSteps/2/description": {
       "source_en": "Van plate and guide contact confirmed the evening before."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "On-tour Support"
+      "source_en": "On-tour Support",
+      "tm": "Betreuung während der Tour"
     },
     "/bookingSupportSteps/3/detail": {
       "source_en": "Direct line to operations"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Während der Tour"
     },
     "/bookingSupportSteps/3/description": {
       "source_en": "Morning message confirms your pickup station and any real-time traffic."
@@ -64,7 +73,8 @@
       "source_en": "Choose drop-off at Nampo-dong, Busan Station, Seomyeon, or Haeundae"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "End of day"
+      "source_en": "End of day",
+      "tm": "Am Ende des Tages"
     },
     "/bookingSupportSteps/4/description": {
       "source_en": "Guide provides on-site narration at each stop — Yonggungsa's 1376 founding, UNMCK's 22-nation story, Gamcheon's 1955 refugee-settlement origin."
@@ -76,16 +86,19 @@
       "source_en": "Optional review and follow-up"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
       "source_en": "Post-tour feedback request sent; questions about Busan restaurant recommendations answered same day."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     }
   },
   "glossaryTokens": {
@@ -93,5 +106,5 @@
       "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 0
+  "tmHits": 13
 }

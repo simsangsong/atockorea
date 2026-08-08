@@ -8,12 +8,14 @@
   "segments": {
     "/routeFlowStops/0/name": {
       "source_en": "Pickup (Hongik / ⟦G0⟧)",
+      "tm": "Ritrovo (Hongik / ⟦G0⟧)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Seoul pickup"
+      "source_en": "Seoul pickup",
+      "tm": "Ritrovo a Seoul"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
@@ -23,25 +25,31 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Mountain & temple"
+      "source_en": "Mountain & temple",
+      "tm": "Montagna e tempio"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Nami Island"
+      "source_en": "Nami Island",
+      "tm": "Isola di Nami"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "K-drama island"
+      "source_en": "K-drama island",
+      "tm": "Isola dei K-drama"
     },
     "/routeFlowStops/3/name": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Il ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Themed garden"
+      "source_en": "Themed garden",
+      "tm": "Giardino tematico"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Return to Seoul"
+      "source_en": "Return to Seoul",
+      "tm": "Rientro a Seoul"
     }
   },
   "glossaryTokens": {
@@ -55,5 +63,5 @@
       "⟦G0⟧": "Giardino della quiete mattutina"
     }
   },
-  "tmHits": 1
+  "tmHits": 9
 }

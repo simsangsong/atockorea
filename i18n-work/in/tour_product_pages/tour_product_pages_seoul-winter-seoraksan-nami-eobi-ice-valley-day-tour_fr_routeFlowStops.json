@@ -1,0 +1,64 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:fr:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "fr",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Pickup (Hongik / ⟦G0⟧)",
+      "tm": "Prise en charge (Hongik / ⟦G0⟧)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Seoul pickup",
+      "tm": "Prise en charge à Séoul"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Winter mountain"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Lunch near Sokcho"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Lunch break"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Nami Island",
+      "tm": "Île de Nami"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "K-drama island",
+      "tm": "Île des K-dramas"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Eobi Valley Ice Wall"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Ice wall"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Return to Seoul",
+      "tm": "Retour à Séoul"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/0/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    }
+  },
+  "tmHits": 6
+}

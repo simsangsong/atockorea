@@ -7,10 +7,12 @@
   "tier": "A2",
   "segments": {
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Primavera (mar.–mag.)"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa."
+      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa.",
+      "tm": "Ciliegi in fiore lungo la costa di Songdo e sulla via d’accesso al villaggio di Gamcheon fra fine marzo e i primi di aprile. A Busan la fioritura arriva 7–10 giorni prima che a Seoul. Il compleanno di Buddha (maggio) porta a Yonggungsa il festival delle lanterne Yeondunhoe."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer (Jun–Aug)",
@@ -18,21 +20,26 @@
     },
     "/seasonalVariations/1/description": {
       "source_en": "Long daylight; coastal stops (Yonggungsa, Songdo, Gamcheon) stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat. ⟦G0⟧ Festival runs June–August with sand-sculpture displays.",
+      "tm": "Giornate lunghe; le tappe costiere (Yonggungsa, Songdo, Gamcheon) restano più fresche dell’interno. Le piogge monsoniche di luglio possono accorciare il tempo all’aperto. La visita mattutina a Yonggungsa evita il caldo. Il festival della ⟦G0⟧ si tiene da giugno ad agosto, con sculture di sabbia.",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Songdo"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Autunno (set.–nov.)"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event."
+      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event.",
+      "tm": "Visibilità più nitida e mare più caldo: la stagione migliore in assoluto. Foliage a fine ottobre. L’ora d’oro a Cheongsapo e a Gamcheon è la più piacevole. L’11 novembre la cerimonia «Turn Toward Busan» al cimitero delle Nazioni Unite è un evento culturale di rilievo."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Inverno (dic.–feb.)"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve."
+      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve.",
+      "tm": "Meno folla, vedute sul mare limpide e un clima mite per la Corea (a Busan le minime invernali sono di 5–10 °C). L’alba del primo giorno dell’anno a Yonggungsa è un grande evento. La campana dei cittadini di Yongdusan suona 33 volte la notte di Capodanno."
     },
     "/bookingSupportSteps/0/title": {
       "source_en": "Instant Confirmation",
@@ -47,7 +54,8 @@
       "tm": "Immediatamente"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Book online; instant confirmation with the cruise terminal meeting point and name-placard instructions."
+      "source_en": "Book online; instant confirmation with the cruise terminal meeting point and name-placard instructions.",
+      "tm": "Prenoti online; conferma immediata con il punto d’incontro al terminal crociere e le indicazioni sul cartello con il nome."
     },
     "/bookingSupportSteps/1/title": {
       "source_en": "12-Hour Reminder",
@@ -62,7 +70,8 @@
       "tm": "12 ore prima"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Send your ship name, port date, and all-aboard time so we can adjust the start."
+      "source_en": "Send your ship name, port date, and all-aboard time so we can adjust the start.",
+      "tm": "Ci invii il nome della nave, la data della sosta in porto e l’orario di rientro a bordo, così da poter adattare la partenza."
     },
     "/bookingSupportSteps/2/title": {
       "source_en": "Final Pickup Info",
@@ -77,7 +86,8 @@
       "tm": "La sera prima"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Drop-off timing confirmed 48 hours before departure based on your vessel's schedule."
+      "source_en": "Drop-off timing confirmed 48 hours before departure based on your vessel's schedule.",
+      "tm": "L’orario di rientro viene confermato 48 ore prima della partenza, in base agli orari della Sua nave."
     },
     "/bookingSupportSteps/3/title": {
       "source_en": "Day-of Route Notes",
@@ -92,7 +102,8 @@
       "tm": "Mattina del tour"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Van plate and guide contact sent the evening before your tour."
+      "source_en": "Van plate and guide contact sent the evening before your tour.",
+      "tm": "Targa del van e contatto della guida inviati la sera prima del tour."
     },
     "/bookingSupportSteps/4/title": {
       "source_en": "Stop-by-Stop Tips",
@@ -107,7 +118,8 @@
       "tm": "Durante il tour"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide meets your group at the terminal arrival hall with an 'AtoC Korea' name placard."
+      "source_en": "Guide meets your group at the terminal arrival hall with an 'AtoC Korea' name placard.",
+      "tm": "La guida accoglie il gruppo nella sala arrivi del terminal con un cartello «AtoC Korea»."
     },
     "/bookingSupportSteps/5/title": {
       "source_en": "Post-tour Support",
@@ -122,7 +134,8 @@
       "tm": "Dopo il tour"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Drop-off at the same terminal 60+ minutes before all-aboard; brief review request sent after."
+      "source_en": "Drop-off at the same terminal 60+ minutes before all-aboard; brief review request sent after.",
+      "tm": "Rientro allo stesso terminal con 60 minuti o più di margine sull’orario di rientro a bordo; a seguire, una breve richiesta di recensione."
     },
     "/practicalWeatherStatic/today/label": {
       "source_en": "See seasonal notes",
@@ -138,5 +151,5 @@
       "⟦G0⟧": "Spiaggia di Songdo"
     }
   },
-  "tmHits": 21
+  "tmHits": 34
 }

@@ -6,201 +6,233 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
+    "/itineraryStops/3/description": {
+      "source_en": "About a 60-minute lunch break between ⟦G0⟧ and ⟦G1⟧. At restaurants around Seongsan-eup harbor you can explore eastern Jeju local fare such as black pig, abalone hot pot, and cutlassfish. Lunch is not included (about ₩15,000).",
+      "tm": "Обеденный перерыв примерно на 60 минут между ⟦G0⟧ и ⟦G1⟧. В ресторанах у гавани Сонсан-ыпа можно попробовать местные блюда востока Чеджу — чёрную свинину, горячий котелок с морским ушком и рыбу-саблю. Обед не включён (около ₩15 000).",
+      "glossary": [
+        "⟦G0⟧ = Фольклорная деревня Сонъып",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/itineraryStops/4/name": {
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/itineraryStops/4/category": {
+      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "tm": "Туфовый конус ЮНЕСКО — пик Восхода Солнца (тройной статус ЮНЕСКО)"
+    },
+    "/itineraryStops/4/duration": {
+      "source_en": "90 min",
+      "tm": "90 мин."
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "source_en": "Parking + ticket + base brief — ~10 min",
+      "tm": "Парковка, билет и вводный рассказ у подножия — ~10 мин."
+    },
+    "/itineraryStops/4/timeUsed/1": {
+      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+      "tm": "Подъём на смотровую площадку вершины (0,8 км / набор 140 м) — ~30 мин."
+    },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Summit views + crater rim photos — ~20 min"
+      "source_en": "Summit views + crater rim photos — ~20 min",
+      "tm": "Виды с вершины и фото кромки кратера — ~20 мин."
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Descent — ~20 min"
+      "source_en": "Descent — ~20 min",
+      "tm": "Спуск — ~20 мин"
     },
     "/itineraryStops/4/timeUsed/4": {
-      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
+      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min",
+      "tm": "По желанию — просмотр выступления хэнё у подножия (показ в 14:00; может быть отменён в непогоду) — ~10 мин."
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10"
+      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+      "tm": "**Тройной статус ЮНЕСКО**: всемирное наследие 2007-07-02 + биосферный резерват 2002 + глобальный геопарк 2010-10"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth"
+      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+      "tm": "**Возраст 5 000 лет** — гидровулканическое извержение сюртсейского типа, рождение в паровом взрыве при встрече магмы с морской водой"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')"
+      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+      "tm": "Кратер **600 м в ширину × 90 м в глубину**, окружённый **99 зубчатыми скалами по кромке** («каменная корона»)"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail"
+      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+      "tm": "**182 м над уровнем моря** — 0,8 км / набор ~140 м, 60 мин. туда и обратно по тропе с каменными ступенями"
     },
     "/itineraryStops/4/highlights/4": {
-      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters"
+      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+      "tm": "**18 пещер японской императорской армии времён Второй мировой войны** у подножия — укрытия для катеров-камикадзе, 1945"
     },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016"
+      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
+      "tm": "**Выступление хэнё раз в день в 14:00 (может быть отменено в непогоду)** в бухте у моря — нематериальное наследие ЮНЕСКО, 2016"
     },
     "/itineraryStops/4/highlights/6": {
-      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65"
+      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+      "tm": "**Цены обновлены в апреле 2025**: взрослый ₩5 000 / молодёжь ₩2 500 / БЕСПЛАТНО до 7 и старше 65"
     },
     "/itineraryStops/4/highlights/7": {
-      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)"
+      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+      "tm": "Часы весной и осенью **05:00–19:00** (последний вход 18:20)"
     },
     "/itineraryStops/4/highlights/8": {
-      "source_en": "**Closes for first Monday of each month** (occasional rest day)"
+      "source_en": "**Closes for first Monday of each month** (occasional rest day)",
+      "tm": "**Закрыт в первый понедельник каждого месяца** (иногда выходной день)"
     },
     "/itineraryStops/4/smartNotes/tip": {
-      "source_en": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+      "source_en": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
+      "tm": "Сплошные ступени, но в хорошем состоянии — можно подняться в повседневной одежде; подходит семьям, есть места для отдыха; популярны визиты на рассвете, но толпы собираются ещё до восхода"
     },
     "/itineraryStops/4/smartNotes/facilities": {
-      "source_en": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
+      "source_en": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+      "tm": "Кафе (в Fritz Coffee в 1,3 км отсюда лучший вид на пик снаружи); паром на остров Удо из порта Сонсан (1,5 км / 15 мин. пешком)"
     },
     "/itineraryStops/4/whyOnRoute": {
       "source_en": "**The second of the day's two World Natural Heritage sites — the one that completes the inscription.** After lunch you climb ⟦G1⟧ (optional climb, about 30 min round trip) to see the tuff cone that rose from an underwater eruption about 5,000 years ago. Together with the ⟦G0⟧ you walked in the morning — part of the same single 2007 property — it closes the 'Volcanic Island and Lava Tubes' narrative, and the climb leads straight into the haenyeo diving performance held in the sea of the same area.",
+      "tm": "**Второй из двух объектов Всемирного природного наследия за день — тот, что завершает номинацию.** После обеда вы поднимаетесь на ⟦G1⟧ (подъём по желанию, около 30 мин. туда и обратно), чтобы увидеть туфовый конус, поднявшийся из подводного извержения около 5 000 лет назад. Вместе с ⟦G0⟧, по которой вы прошли утром — частью того же единого объекта 2007 года, — он замыкает рассказ о «Вулканическом острове и лавовых трубках», а сразу после подъёма начинается шоу ныряния хэнё в море того же района.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль",
         "⟦G1⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/convenience/parking": {
-      "source_en": "Large free parking lot"
+      "source_en": "Large free parking lot",
+      "tm": "Большая бесплатная парковка"
     },
     "/itineraryStops/4/convenience/restroom": {
-      "source_en": "Available at entrance and base"
+      "source_en": "Available at entrance and base",
+      "tm": "Есть у входа и у подножия"
     },
     "/itineraryStops/4/description": {
       "source_en": "**⟦G0⟧ (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. \n\nThe result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. \n\n**18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. \n\n**Haenyeo (해녀) demonstrations** run once daily at 14:00 (1 show/day) at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. \n\nAdmission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. \n\n**Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
+      "tm": "**⟦G0⟧ (성산일출봉, «Sunrise Peak»)** — это **туфовый конус сюртсейского типа возрастом 5 000 лет**, редкая форма рельефа: подводное базальтовое извержение пробило поверхность моря, магма встретилась с морской водой, и возникший пароэксплозивный пепел построил не типичный лавовый конус, а **кратерный вал высотой 182 м в форме крепости**. \n\nВ итоге получилось то, что ЮНЕСКО официально называет **«исключительным примером надводного вулканического сооружения сюртсейского типа»**. Кратер имеет **600 м в ширину × 90 м в глубину** и окружён **99 зубчатыми скалами по кромке**, которые местное предание сравнивает с каменной короной. У Сонсана **тройной статус ЮНЕСКО**: **Всемирное природное наследие (внесено 2007-07-02)** в составе объекта **«Вулканический остров Чеджу и лавовые трубки»**, **биосферный резерват (2002)** и **глобальный геопарк (2010-10)** — такое сочетание среди корейских объектов есть только у самого Халласана. \n\nВ обращённое к морю подножие прорыты **18 пещер японской императорской армии времён Второй мировой войны** (укрытия для катеров-камикадзе, 1945). Тропа: **0,8 км в одну сторону, набор ~140 м, 60 мин. туда и обратно** по широким каменным ступеням. \n\n**Выступления хэнё (해녀)** проходят раз в день в 14:00 (1 показ в день) в скалистой бухте под конусом — чеджуские женщины-ныряльщицы (нематериальное культурное наследие ЮНЕСКО, 2016) погружаются без акваланга. \n\nЦены обновлены в **апреле 2025**: **взрослый ₩5 000 / молодёжь и дети ₩2 500 / групповой взрослый ₩1 600**, бесплатно детям до 7 лет и старше 65. Смотровая площадка на вершине входит также в **канон Ёнджусипкён (10 живописных чудес Чеджу)** и остаётся главным в Корее местом **ежегодного новогоднего паломничества к восходу солнца** — 1 января до рассвета сюда поднимаются более 50 000 человек, а городская программа фестиваля восхода проводится с 1995 года. \n\n**Остров Удо (우도, «Cow Island»)** — крупнейший вторичный вулканический остров Кореи — хорошо виден с вершины в 4 км от берега; добраться можно **15-минутным паромом из порта Сонсан** (₩10 500 туда и обратно) — для гостей, у которых есть дополнительное время в другом маршруте.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/visitBasics/hours": {
-      "source_en": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)"
+      "source_en": "Mar–Apr & Sep–Oct: 05:00–19:00; May–Aug: 04:30–20:00; Nov–Feb: 06:00–18:00 (last ticketing 1 hour before closing)",
+      "tm": "Март–апрель и сентябрь–октябрь: 05:00–19:00; май–август: 04:30–20:00; ноябрь–февраль: 06:00–18:00 (продажа билетов заканчивается за 1 час до закрытия)"
     },
     "/itineraryStops/4/visitBasics/closed": {
-      "source_en": "Open year-round (weather closures possible)"
+      "source_en": "Open year-round (weather closures possible)",
+      "tm": "Открыто круглый год (возможны закрытия из-за погоды)"
     },
     "/itineraryStops/4/visitBasics/walking": {
-      "source_en": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest"
+      "source_en": "Moderate — 20–30 min steady stair climb (≈ 600 stairs); benches every few minutes for rest",
+      "tm": "Средне — 20–30 мин. ровного подъёма по ступеням (≈ 600 ступеней); скамейки для отдыха каждые несколько минут"
     },
     "/itineraryStops/4/visitBasics/admission": {
-      "source_en": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)"
+      "source_en": "Adult 5,000 KRW / Youth & Child 2,500 KRW (VisitKorea reference)",
+      "tm": "Взрослый 5 000 KRW / молодёжь и дети 2 500 KRW (по данным VisitKorea)"
     },
     "/itineraryStops/4/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 1",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 1",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 1",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 1",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 2",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 2",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 2",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 3",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 3",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 3",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 3",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/2/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 4",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 4",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 4",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 4",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/3/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 5",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — изображение галереи 5",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/4/caption": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 5",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО) — фото 5",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/4/galleryItems/4/location": {
       "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 6",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 6",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/5/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 12",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 12",
-      "glossary": [
-        "⟦G0⟧ = Сонсан Ильчхульбон"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "tm": "⟦G0⟧ (пик Восхода Солнца, ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
@@ -209,52 +241,68 @@
       "source_en": "haenyeo"
     },
     "/itineraryStops/5/name": {
-      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)"
+      "source_en": "Haenyeo Diving Performance (Haenyeo Museum if the performance is canceled)",
+      "tm": "Шоу ныряния хэнё (Музей хэнё, если выступление отменено)"
     },
     "/itineraryStops/5/category": {
-      "source_en": "UNESCO Intangible Cultural Heritage of Humanity — Culture of Jeju Haenyeo (2016), live"
+      "source_en": "UNESCO Intangible Cultural Heritage of Humanity — Culture of Jeju Haenyeo (2016), live",
+      "tm": "Нематериальное культурное наследие человечества ЮНЕСКО — культура чеджуских хэнё (2016), вживую"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "50 min"
+      "source_en": "50 min",
+      "tm": "50 мин"
     },
     "/itineraryStops/5/timeUsed/0": {
       "source_en": "Transfer from ⟦G0⟧ to the performance site — about 5 min",
+      "tm": "Переезд от ⟦G0⟧ к месту выступления — около 5 мин.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Performance briefing + taking a spot — about 5 min"
+      "source_en": "Performance briefing + taking a spot — about 5 min",
+      "tm": "Пояснения о выступлении и выбор места — около 5 мин."
     },
     "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Watching the haenyeo diving performance — about 30 min"
+      "source_en": "Watching the haenyeo diving performance — about 30 min",
+      "tm": "Просмотр шоу ныряния хэнё — около 30 мин."
     },
     "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Photos + questions — about 5 min"
+      "source_en": "Photos + questions — about 5 min",
+      "tm": "Фото и вопросы — около 5 мин."
     },
     "/itineraryStops/5/timeUsed/4": {
-      "source_en": "Regroup + transit buffer — about 5 min"
+      "source_en": "Regroup + transit buffer — about 5 min",
+      "tm": "Сбор группы и запас на переезд — около 5 мин."
     },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**UNESCO Intangible Cultural Heritage of Humanity (2016)** as a **live diving performance**, not a museum"
+      "source_en": "**UNESCO Intangible Cultural Heritage of Humanity (2016)** as a **live diving performance**, not a museum",
+      "tm": "**Нематериальное культурное наследие человечества ЮНЕСКО (2016)** как **живое шоу ныряния**, а не музей"
     },
     "/itineraryStops/5/highlights/1": {
       "source_en": "Watch active haenyeo actually free-dive **in the sea below ⟦G0⟧**",
+      "tm": "Смотрите, как действующие хэнё по-настоящему ныряют на задержке дыхания **в море под ⟦G0⟧**",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "No oxygen tank, just a single *tewak* — the sanggun dive **more than 10 m on one breath**"
+      "source_en": "No oxygen tank, just a single *tewak* — the sanggun dive **more than 10 m on one breath**",
+      "tm": "Без кислородного баллона, только один *тэвак* — сангун ныряют **более чем на 10 м на одном вдохе**"
     },
     "/itineraryStops/5/highlights/3": {
-      "source_en": "Hear the distinctive **sumbisori** breath at the end of each dive in person"
-    },
-    "/itineraryStops/5/highlights/4": {
-      "source_en": "Performance usually **once a day (around 14:00)**, **free viewing**, subject to weather and sea conditions"
+      "source_en": "Hear the distinctive **sumbisori** breath at the end of each dive in person",
+      "tm": "Услышьте вживую характерный выдох **сумбисори** в конце каждого погружения"
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Фольклорная деревня Сонъып",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/itineraryStops/4/name": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
     "/itineraryStops/4/whyOnRoute": {
       "⟦G0⟧": "Лавовая трубка Манджангуль",
       "⟦G1⟧": "Сонсан Ильчхульбон"
@@ -307,24 +355,6 @@
     "/itineraryStops/4/galleryItems/4/location": {
       "⟦G0⟧": "Сонсан Ильчхульбон"
     },
-    "/itineraryStops/4/galleryItems/5/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
-    "/itineraryStops/4/galleryItems/5/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
-    "/itineraryStops/4/galleryItems/5/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
-    "/itineraryStops/4/galleryItems/6/alt": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
-    "/itineraryStops/4/galleryItems/6/caption": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
-    "/itineraryStops/4/galleryItems/6/location": {
-      "⟦G0⟧": "Сонсан Ильчхульбон"
-    },
     "/itineraryStops/5/timeUsed/0": {
       "⟦G0⟧": "Сонсан Ильчхульбон"
     },
@@ -332,5 +362,5 @@
       "⟦G0⟧": "Сонсан Ильчхульбон"
     }
   },
-  "tmHits": 0
+  "tmHits": 55
 }

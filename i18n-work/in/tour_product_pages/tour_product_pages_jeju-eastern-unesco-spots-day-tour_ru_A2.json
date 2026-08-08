@@ -7,79 +7,101 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "First-time visitors to the area"
+      "source_en": "First-time visitors to the area",
+      "tm": "Те, кто впервые в этом регионе"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples"
+      "source_en": "Couples",
+      "tm": "Пары"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Adult families"
+      "source_en": "Adult families",
+      "tm": "Взрослые семьи"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Active travelers comfortable with full days"
+      "source_en": "Active travelers comfortable with full days",
+      "tm": "Активные путешественники, которым комфортны насыщенные дни"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Travelers who want UNESCO World Heritage stops"
+      "source_en": "Travelers who want UNESCO World Heritage stops",
+      "tm": "Те, кто хочет увидеть объекты Всемирного наследия ЮНЕСКО"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who want minimal walking"
+      "source_en": "Travelers who want minimal walking",
+      "tm": "Путешественники, которые хотят ходить как можно меньше"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Stroller-heavy groups"
+      "source_en": "Stroller-heavy groups",
+      "tm": "Группы с детскими колясками"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Travelers needing a tight same-day flight buffer"
+      "source_en": "Travelers needing a tight same-day flight buffer",
+      "tm": "Путешественники с плотным запасом времени до вылета в тот же день"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Two UNESCO World Natural Heritage sites + intangible heritage in one day"
+      "source_en": "Two UNESCO World Natural Heritage sites + intangible heritage in one day",
+      "tm": "Два объекта Всемирного природного наследия ЮНЕСКО и нематериальное наследие за один день"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "source_en": "⟦G0⟧ and Manjanggul are World Natural Heritage sites inscribed together in 2007 as 'Jeju Volcanic Island and Lava Tubes'. Add the haenyeo diving performance, a 2016 Intangible Cultural Heritage of Humanity, and you see three layers of UNESCO heritage in a single day.",
+      "tm": "⟦G0⟧ и Манджангуль — объекты Всемирного природного наследия, внесённые в список вместе в 2007 году как «Вулканический остров Чеджу и лавовые трубки». Добавьте шоу ныряния хэнё, нематериальное культурное наследие человечества с 2016 года, — и за один день вы увидите три слоя наследия ЮНЕСКО.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Cave first, beach last — the order is the point"
+      "source_en": "Cave first, beach last — the order is the point",
+      "tm": "Сначала пещера, в конце пляж — весь смысл в порядке"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "Manjanggul opens at 09:00 and is emptiest in its first hour, so the route goes there directly from pickup — you walk the lava tube before the midday tour-bus wave, while the 11–13°C cool is a refreshment rather than a chill. The day then builds through Seongeup and Seongsan to the haenyeo performance, and closes at Hamdeok Beach in the soft late-afternoon light — the closest stop to Jeju City, which keeps the final transfer the shortest of the day."
+      "source_en": "Manjanggul opens at 09:00 and is emptiest in its first hour, so the route goes there directly from pickup — you walk the lava tube before the midday tour-bus wave, while the 11–13°C cool is a refreshment rather than a chill. The day then builds through Seongeup and Seongsan to the haenyeo performance, and closes at Hamdeok Beach in the soft late-afternoon light — the closest stop to Jeju City, which keeps the final transfer the shortest of the day.",
+      "tm": "Манджангуль открывается в 09:00 и наиболее пуст в первый час, поэтому маршрут ведёт туда прямо от места посадки — вы проходите лавовую трубку до полуденной волны экскурсионных автобусов, и прохлада 11–13 °C воспринимается как освежение, а не как холод. Дальше день нарастает через Сонъып и Сонсан к шоу хэнё и завершается на пляже Хамдок в мягком свете позднего дня — это ближайшая к городу Чеджу остановка, поэтому финальный трансфер самый короткий за день."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "The real Manjanggul — the original UNESCO lava tube, no longer a substitute"
+      "source_en": "The real Manjanggul — the original UNESCO lava tube, no longer a substitute",
+      "tm": "Настоящий Манджангуль — та самая лавовая трубка ЮНЕСКО, а не замена"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "In the past we substituted Micheon Cave during closures, but now you explore Manjanggul itself — one of the world's largest lava tubes, home to the world's largest lava column at 7.6 m high."
+      "source_en": "In the past we substituted Micheon Cave during closures, but now you explore Manjanggul itself — one of the world's largest lava tubes, home to the world's largest lava column at 7.6 m high.",
+      "tm": "Раньше при закрытии мы заменяли его пещерой Мичхонгуль, но теперь вы исследуете сам Манджангуль — одну из крупнейших лавовых трубок мира, где находится самая высокая в мире лавовая колонна высотой 7,6 м."
     },
     "/whyTourWorks/routeLogicSections/0/items/3/label": {
-      "source_en": "All admissions included — the value at this price"
+      "source_en": "All admissions included — the value at this price",
+      "tm": "Все входные билеты включены — в этом ценность за такую цену"
     },
     "/whyTourWorks/routeLogicSections/0/items/3/detail": {
       "source_en": "⟦G0⟧ ₩5,000 + Manjanggul ₩4,000 (Seongeup free, haenyeo diving performance free) — two World Natural Heritage sites are covered by just ₩9,000 in admissions.",
+      "tm": "⟦G0⟧ ₩5 000 + Манджангуль ₩4 000 (Сонъып бесплатно, шоу ныряния хэнё бесплатно) — два объекта Всемирного природного наследия покрываются входными билетами всего на ₩9 000.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/4/label": {
       "source_en": "⟦G0⟧ is an optional climb",
+      "tm": "Подъём на ⟦G0⟧ — по желанию",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/4/detail": {
-      "source_en": "The roughly 30-minute round-trip climb to the crater rim is steep and not right for everyone. There is also a coastal loop path with a similar view and no stairs, so you can choose according to your fitness."
+      "source_en": "The roughly 30-minute round-trip climb to the crater rim is steep and not right for everyone. There is also a coastal loop path with a similar view and no stairs, so you can choose according to your fitness.",
+      "tm": "Подъём на кромку кратера туда и обратно занимает около 30 минут, он крутой и подходит не всем. Есть также прибрежная кольцевая тропа с похожим видом и без ступеней, так что вы можете выбрать по своим силам."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why this route is built this way"
+      "source_en": "Why this route is built this way",
+      "tm": "Почему маршрут построен именно так"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this day flows"
+      "source_en": "How this day flows",
+      "tm": "Как проходит этот день"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "An East Jeju loop that runs the island's two UNESCO World Natural Heritage sites in a single day — entering the ⟦G1⟧ right after opening, ahead of the crowds, and completing the same 2007 inscription at ⟦G2⟧ in the afternoon. Between them sits the Joseon-era ⟦G0⟧; after them, the haenyeo diving performance (a UNESCO intangible heritage) and a golden-hour finish at Hamdeok Beach, the closest stop to Jeju City.",
+      "tm": "Кольцо по востоку Чеджу, которое за один день охватывает два островных объекта Всемирного природного наследия ЮНЕСКО: вход в ⟦G1⟧ сразу после открытия, раньше толп, и завершение той же номинации 2007 года на ⟦G2⟧ во второй половине дня. Между ними — ⟦G0⟧ эпохи Чосон; после них шоу ныряния хэнё (нематериальное наследие ЮНЕСКО) и финал в золотой час на пляже Хамдок, ближайшей к городу Чеджу остановке.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Лавовая трубка Манджангуль",
@@ -88,24 +110,29 @@
     },
     "/staticQuestions/0/answer": {
       "source_en": "Yes. Watching the haenyeo diving performance held in the sea near ⟦G0⟧ is part of the route (usually in the afternoon, free). It can be canceled depending on sea and weather conditions, and if canceled we substitute the indoor Haenyeo Museum in Hado-ri to guarantee the haenyeo heritage experience.",
+      "tm": "Да. Просмотр шоу ныряния хэнё, которое проходит в море рядом с ⟦G0⟧, входит в маршрут (обычно во второй половине дня, бесплатно). Оно может быть отменено из-за состояния моря и погоды; в этом случае мы заменяем его крытым Музеем хэнё в Хадо-ри, чтобы знакомство с наследием хэнё состоялось в любом случае.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "Can I actually watch a haenyeo diving performance?"
+      "source_en": "Can I actually watch a haenyeo diving performance?",
+      "tm": "Действительно ли можно увидеть шоу ныряния хэнё?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Yes. There is a coastal loop path that offers a similar photo angle without stairs. The crater climb (about 0.8 km round trip, about 30 min) is optional, so you can decide according to your fitness."
+      "source_en": "Yes. There is a coastal loop path that offers a similar photo angle without stairs. The crater climb (about 0.8 km round trip, about 30 min) is optional, so you can decide according to your fitness.",
+      "tm": "Да. Есть прибрежная кольцевая тропа с похожим ракурсом для фото и без ступеней. Подъём к кратеру (около 0,8 км туда и обратно, примерно 30 мин.) — по желанию, так что вы можете решить по своим силам."
     },
     "/staticQuestions/1/question": {
       "source_en": "Can I skip the ⟦G0⟧ crater climb?",
+      "tm": "Можно ли пропустить подъём к кратеру ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/staticQuestions/2/answer": {
       "source_en": "It is a tour by the same operator. The southern tour includes a Hallasan oreum, ⟦G3⟧, ⟦G2⟧, the columnar joints, and the Osulloc tea fields. The eastern tour focuses on ⟦G1⟧, ⟦G0⟧, Manjanggul, and the haenyeo diving performance.",
+      "tm": "Это тур того же оператора. Южный тур включает орым на Халласане, ⟦G3⟧, ⟦G2⟧, столбчатые отдельности и чайные поля Osulloc. Восточный тур сосредоточен на ⟦G1⟧, ⟦G0⟧, Манджангуле и шоу ныряния хэнё.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон",
@@ -114,164 +141,215 @@
       ]
     },
     "/staticQuestions/2/question": {
-      "source_en": "What is the difference from the southern Jeju UNESCO tour?"
+      "source_en": "What is the difference from the southern Jeju UNESCO tour?",
+      "tm": "Чем он отличается от тура по объектам ЮНЕСКО на юге Чеджу?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube included in the route. However, on days it is closed for maintenance or weather (heavy rain, etc.), we substitute a nearby cave such as Micheon Cave at Ilchul Land, part of the same lava-tube system, to keep the cave experience."
+      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube included in the route. However, on days it is closed for maintenance or weather (heavy rain, etc.), we substitute a nearby cave such as Micheon Cave at Ilchul Land, part of the same lava-tube system, to keep the cave experience.",
+      "tm": "Манджангуль — лавовая трубка Всемирного природного наследия ЮНЕСКО, включённая в маршрут. Однако в дни, когда она закрыта на обслуживание или из-за погоды (сильный дождь и т. п.), мы заменяем её ближайшей пещерой — например, Мичхонгуль в Ilchul Land, частью той же системы лавовых трубок, — чтобы посещение пещеры состоялось."
     },
     "/staticQuestions/3/question": {
-      "source_en": "What happens on days when Manjanggul is closed?"
+      "source_en": "What happens on days when Manjanggul is closed?",
+      "tm": "Что происходит в дни, когда Манджангуль закрыт?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "It is not included. Lunch is separate (about ₩15,000), and the guide will recommend a good local spot."
+      "source_en": "It is not included. Lunch is separate (about ₩15,000), and the guide will recommend a good local spot.",
+      "tm": "Не включён. Обед оплачивается отдельно (около ₩15 000), и гид порекомендует хорошее местное заведение."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is lunch included?"
+      "source_en": "Is lunch included?",
+      "tm": "Включён ли обед?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed Korean tour operator with full insurance and KTO-certified English/Chinese-speaking guides — no shopping detours, every minute on the route."
+      "source_en": "Licensed Korean tour operator with full insurance and KTO-certified English/Chinese-speaking guides — no shopping detours, every minute on the route.",
+      "tm": "Лицензированный корейский туроператор с полной страховкой и гидами со знанием английского и китайского, сертифицированными KTO, — без заездов по магазинам, каждая минута на маршруте."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Лицензированный местный оператор"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour operator with full insurance"
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Официальный корейский туроператор с полной страховкой"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "All admissions included in the tour fee: ⟦G1⟧ (₩5,000), Manjanggul (₩4,000), ⟦G0⟧ (free), haenyeo diving performance (free) — nothing extra to pay on site.",
+      "tm": "Все входные билеты включены в стоимость тура: ⟦G1⟧ (₩5 000), Манджангуль (₩4 000), ⟦G0⟧ (бесплатно), шоу ныряния хэнё (бесплатно) — на месте доплачивать ничего не нужно.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Специалисты по маршрутам"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Маршрут, настроенный вручную, а не типовое кольцо"
     },
     "/bookingTrustItems/2/body": {
       "source_en": "A small-group minibus (max 14) lets you explore Seongeup's alleys, the ⟦G0⟧, and the haenyeo diving performance at a relaxed pace.",
+      "tm": "Мини-автобус для малой группы (максимум 14 человек) позволяет в спокойном темпе осмотреть переулки Сонъыпа, ⟦G0⟧ и шоу ныряния хэнё.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Комфортный размер группы"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Подобран под маршрут"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Весна"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Rapeseed (canola) flowers on Hamdeok's Seoubong cone slopes — striking yellow against emerald sea."
+      "source_en": "Rapeseed (canola) flowers on Hamdeok's Seoubong cone slopes — striking yellow against emerald sea.",
+      "tm": "Цветение рапса на склонах конуса Соубон у Хамдока — яркий жёлтый на фоне изумрудного моря."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Лето"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Best sea colors at Hamdeok Beach; long daylight for Seongsan visit."
+      "source_en": "Best sea colors at Hamdeok Beach; long daylight for Seongsan visit.",
+      "tm": "Лучшие оттенки моря на пляже Хамдок; длинный световой день для посещения Сонсана."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Осень"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Clearest visibility for Seongsan rim panoramas; Seongeup village stays photogenic year-round."
+      "source_en": "Clearest visibility for Seongsan rim panoramas; Seongeup village stays photogenic year-round.",
+      "tm": "Самая чистая видимость для панорам с кромки Сонсана; деревня Сонъып фотогенична круглый год."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Зима"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather."
+      "source_en": "Quietest crowds; Haenyeo Museum particularly valuable in cold weather.",
+      "tm": "Меньше всего людей; Музей хэнё особенно ценен в холодную погоду."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Сразу"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside city)."
+      "source_en": "Instant confirmation with Jeju City hotel pickup details (free within city; +₩70,000 outside city).",
+      "tm": "Мгновенное подтверждение с деталями посадки у отелей в городе Чеджу (бесплатно в черте города; +₩70 000 за пределами города)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Напоминание за 12 часов"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Обновление по погоде и корректировки маршрута"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "За 12 часов"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Pre-tour note on haenyeo demonstration schedule (14:00 at Seongsan) so you know which timing to target."
+      "source_en": "Pre-tour note on haenyeo demonstration schedule (14:00 at Seongsan) so you know which timing to target.",
+      "tm": "Заметка перед туром о расписании выступления хэнё (14:00 у Сонсана), чтобы вы знали, на какое время ориентироваться."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Финальная информация о посадке"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Точное время посадки и контакт водителя"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Накануне вечером"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Final pickup time confirmed the evening before."
+      "source_en": "Final pickup time confirmed the evening before.",
+      "tm": "Окончательное время посадки подтверждается накануне вечером."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Заметки по маршруту в день тура"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Утренний брифинг с учётом текущих условий"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Утром в день тура"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Morning message with any weather note or Seongsan rim status (closes in high wind)."
+      "source_en": "Morning message with any weather note or Seongsan rim status (closes in high wind).",
+      "tm": "Утреннее сообщение с заметкой о погоде или статусом кромки Сонсана (закрывается при сильном ветре)."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Подсказки на каждой остановке"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Сопровождение в реальном времени на каждой локации"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Во время тура"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide provides depth at every stop: haenyeo UNESCO 2016 inscription, Seongeup's 500-year administrative history, lava-tube geology, Seongsan's triple UNESCO designation."
+      "source_en": "Guide provides depth at every stop: haenyeo UNESCO 2016 inscription, Seongeup's 500-year administrative history, lava-tube geology, Seongsan's triple UNESCO designation.",
+      "tm": "Гид даёт подробности на каждой остановке: включение хэнё в список ЮНЕСКО в 2016 году, 500-летняя административная история Сонъыпа, геология лавовых трубок, тройной статус ЮНЕСКО у Сонсана."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Поддержка после тура"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Обратная связь и рекомендации"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "После тура"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request; Jeju travel questions answered same day."
+      "source_en": "Post-tour feedback request; Jeju travel questions answered same day.",
+      "tm": "Запрос отзыва после тура; ответы на вопросы о поездке по Чеджу в тот же день."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     }
   },
   "glossaryTokens": {
@@ -309,5 +387,5 @@
       "⟦G0⟧": "Лавовая трубка Манджангуль"
     }
   },
-  "tmHits": 0
+  "tmHits": 78
 }

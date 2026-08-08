@@ -19,7 +19,8 @@
       "source_en": "Travelers with very low mobility (Seongsan rim and Hallasan 1100 require some walking)"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Stroller-heavy groups"
+      "source_en": "Stroller-heavy groups",
+      "tm": "Gruppen mit vielen Kinderwagen"
     },
     "/whyTourWorks/lessIdealFor/2": {
       "source_en": "Travelers wanting unhurried pacing — cruise schedule is fixed"
@@ -54,7 +55,8 @@
       "source_en": "Why two port routes"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
       "source_en": "Mini-coach small group"
@@ -66,10 +68,12 @@
       "source_en": "Small Group Tour specifics"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this day flows"
+      "source_en": "How this day flows",
+      "tm": "Wie dieser Tag verläuft"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market."
@@ -93,34 +97,42 @@
       "source_en": "What if my cruise call port changes?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day.",
+      "tm": "Ja — sie deckt die markantesten Stopps der Region an einem einzigen, ausgewogenen Tag ab."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Is this a good choice for first-time visitors to Jeju?"
+      "source_en": "Is this a good choice for first-time visitors to Jeju?",
+      "tm": "Ist das eine gute Wahl für Jeju-Erstbesucher?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Moderate walking with some active sections."
+      "source_en": "Moderate walking with some active sections.",
+      "tm": "Mäßige Fußwege mit einigen aktiveren Abschnitten."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is the walking difficult?"
+      "source_en": "Is the walking difficult?",
+      "tm": "Sind die Fußwege anstrengend?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes — comfortable for most families."
+      "source_en": "Yes — comfortable for most families.",
+      "tm": "Ja — für die meisten Familien angenehm."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Is this tour suitable for families?"
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Ist diese Tour für Familien geeignet?"
     },
     "/staticQuestions/6/answer": {
       "source_en": "Yes for active seniors; less ideal for low-mobility travelers."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Can older adults join comfortably?"
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Können ältere Gäste bequem teilnehmen?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
     },
     "/staticQuestions/7/question": {
-      "source_en": "What's the recommended minimum age?"
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Was ist das empfohlene Mindestalter?"
     },
     "/staticQuestions/8/answer": {
       "source_en": "Several stops are exposed; very wet weather may shorten or substitute stops."
@@ -132,7 +144,8 @@
       "source_en": "A lunch break is built into the route. Whether the meal itself is included depends on the booked rate — check the inclusions list."
     },
     "/staticQuestions/9/question": {
-      "source_en": "Is lunch included?"
+      "source_en": "Is lunch included?",
+      "tm": "Ist das Mittagessen inbegriffen?"
     },
     "/staticQuestions/10/answer": {
       "source_en": "At the cruise terminal arrival hall — Jeju Port (north) or Gangjeong Port (south) depending on where your ship docks. Your guide waits at the gangway-side arrival hall with an AtoC Korea sign and your name. Exact pickup time is confirmed the evening before, based on your ship's posted arrival."
@@ -144,25 +157,31 @@
       "source_en": "Licensed local operator with the same port-based routing as the large-coach version but in a mini-van of max 10 — better for narrow Seongeup village lanes and smaller group dynamics."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Lizenzierter lokaler Veranstalter"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour operator with full insurance"
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Zugelassener koreanischer Tourveranstalter mit vollem Versicherungsschutz"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "All admissions to stops on the assigned route are covered in the tour price."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Routenspezialisten"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Handfein abgestimmter Reiseverlauf, keine Standardrunde"
     },
     "/bookingTrustItems/2/body": {
       "source_en": "Ship-return timing: return drop-off to your original terminal 60+ minutes before all-aboard."
@@ -171,10 +190,12 @@
       "source_en": "Carefully managed group size"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Passend zur Route dimensioniert"
     },
     "/seasonalVariations/0/title": {
       "source_en": "Cruise season opens"
@@ -214,22 +235,27 @@
       "source_en": "Fewer cruise calls; Hallasan 1100 may have snow"
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Sofort"
     },
     "/bookingSupportSteps/0/description": {
       "source_en": "Instant confirmation; send ship name, port (Jeju Port or Gangjeong Port), all-aboard time."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Erinnerung 12 Stunden vorher"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Wetter-Update und etwaige Routenanpassungen"
     },
     "/bookingSupportSteps/1/timing": {
       "source_en": "12 hours before",
@@ -239,58 +265,72 @@
       "source_en": "Route confirmed (east or south) 24 hours before based on port."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Endgültige Abholinformationen"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Genaue Abholzeit und Kontakt zum Fahrer"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Am Abend zuvor"
     },
     "/bookingSupportSteps/2/description": {
       "source_en": "Van plate and guide contact sent the evening before."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Routenhinweise am Tourtag"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Morgendliches Briefing auf Basis der aktuellen Bedingungen"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Am Morgen der Tour"
     },
     "/bookingSupportSteps/3/description": {
       "source_en": "Guide meets your group at the cruise terminal with a name placard."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Tipps zu jedem Stopp"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Begleitung in Echtzeit an jedem Ort"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Während der Tour"
     },
     "/bookingSupportSteps/4/description": {
       "source_en": "On-time return drop-off; brief review request sent after."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Betreuung nach der Tour"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Nachfassen und Empfehlungen"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
       "source_en": "Post-tour feedback survey sent; any follow-up travel questions answered same day."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     }
   },
   "glossaryTokens": {
@@ -303,5 +343,5 @@
       "⟦G0⟧": "Cheonjiyeon-Wasserfall"
     }
   },
-  "tmHits": 5
+  "tmHits": 45
 }

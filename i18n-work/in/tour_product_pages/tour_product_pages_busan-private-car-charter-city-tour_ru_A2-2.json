@@ -7,125 +7,162 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it."
+      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it.",
+      "tm": "Лицензированный местный водитель-гид, проверенный через партнёрскую сеть AtoC Korea в Пусане, — а не машина такси с наклейкой «экскурсия»."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local driver-guide"
+      "source_en": "Licensed local driver-guide",
+      "tm": "Лицензированный местный водитель-гид"
     },
     "/bookingTrustItems/0/detail": {
-      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network."
+      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network.",
+      "tm": "У каждого водителя есть профессиональная лицензия и страховка, он говорит по-английски и проверен через партнёрскую сеть AtoC Korea в Пусане."
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it."
+      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it.",
+      "tm": "Единая цена при любом маршруте: итог зависит от числа забронированных часов и количества автомобилей, а замена остановок его не меняет."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "One price, whatever the route"
+      "source_en": "One price, whatever the route",
+      "tm": "Единая цена при любом маршруте"
     },
     "/bookingTrustItems/1/detail": {
-      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay."
+      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay.",
+      "tm": "Оплата идёт за автомобиль и за час, поэтому добавление, отмена или перестановка остановок никогда не меняет сумму."
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off."
+      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки — это важно для дня в приморском городе, который может испортить дождь."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Free cancellation up to 24 hours"
+      "source_en": "Free cancellation up to 24 hours",
+      "tm": "Бесплатная отмена за 24 часа"
     },
     "/bookingTrustItems/2/detail": {
-      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather."
+      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather.",
+      "tm": "Отмена без оплаты не позднее чем за 24 часа до посадки — удобно, когда день в Пусане зависит от погоды."
     },
     "/seasonalVariations/0/swaps": {
-      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2."
+      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2.",
+      "tm": "В неделю цветения сакуры попросите проехать по холму Тальмаджи и добавить остановку на Кванналли — и то, и другое в нескольких минутах от маршрутов 1 и 2."
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Весна (март–май)"
     },
     "/seasonalVariations/0/summary": {
       "source_en": "Cherry blossoms peak around late March to early April at Dalmaji Hill, ⟦G0⟧, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "tm": "Сакура цветёт сильнее всего с конца марта до начала апреля на холме Тальмаджи, в ⟦G0⟧ и на пляже Кванналли. Приятные 12–22°C; лёгкая одежда слоями.",
       "glossary": [
         "⟦G0⟧ = Парк Йондусан"
       ]
     },
     "/seasonalVariations/1/swaps": {
-      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day."
+      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day.",
+      "tm": "В жаркие дни перенесите Камчхон на утро, а в середине дня используйте Sky Capsule с кондиционером или закрытые рынки."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer (Jun–Aug)",
       "tm": "Лето (июнь–август)"
     },
     "/seasonalVariations/1/summary": {
-      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well."
+      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "tm": "Тепло и влажно, 25–32°C, в июне и июле возможны муссонные дожди. Закат поздний, поэтому дополнительная остановка на побережье в конце дня работает хорошо."
     },
     "/seasonalVariations/2/swaps": {
-      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours."
+      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours.",
+      "tm": "Осень подходит всем трём маршрутам без изменений; при бронировании 9 часов стоит добавить храм Помоса ради осенней листвы."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Осень (сентябрь–ноябрь)"
     },
     "/seasonalVariations/2/summary": {
-      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here."
+      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "tm": "Лучшая погода для поездок в Корее — 15–25°C, низкая влажность, золотистый свет. На этот период приходится пик круизного сезона."
     },
     "/seasonalVariations/3/swaps": {
-      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover."
+      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover.",
+      "tm": "Зимой светло недолго, поэтому поставьте смотровые площадки под открытым небом в начало дня, а закончите рынками, башней или крытыми пассажами."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Зима (декабрь–февраль)"
     },
     "/seasonalVariations/3/summary": {
-      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful."
+      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "tm": "Прохладно и ветрено, 0–10°C, но круизы продолжают приходить. Остановки на побережье в это время суровы и красивы."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Reserve online"
+      "source_en": "Reserve online",
+      "tm": "Забронируйте онлайн"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Pick a date and the number of hours. Reserve now and pay later."
+      "source_en": "Pick a date and the number of hours. Reserve now and pay later.",
+      "tm": "Выберите дату и число часов. Бронирование сейчас, оплата позже."
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Reserve online and choose your date and duration; confirmation is instant."
+      "source_en": "Reserve online and choose your date and duration; confirmation is instant.",
+      "tm": "Забронируйте онлайн и выберите дату и продолжительность; подтверждение приходит сразу."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Tell us where you are staying"
+      "source_en": "Tell us where you are staying",
+      "tm": "Сообщите, где вы остановились"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours."
+      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours.",
+      "tm": "Пришлите название отеля и желаемое время начала — мы подтвердим посадку в течение 24 часов."
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed."
+      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed.",
+      "tm": "Пришлите адрес жилья и желаемое время начала, чтобы мы подтвердили место и время посадки."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Choose or build your route"
+      "source_en": "Choose or build your route",
+      "tm": "Выберите или составьте маршрут"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before."
+      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before.",
+      "tm": "Возьмите один из трёх маршрутов или пришлите свой список — не позднее чем за 24 часа."
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours."
+      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours.",
+      "tm": "Выберите один из трёх рекомендованных маршрутов или пришлите свой список остановок; мы подтвердим, что укладывается в забронированные часы."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Receive driver details"
+      "source_en": "Receive driver details",
+      "tm": "Получите данные водителя"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Driver name, vehicle plate and contact number, sent the evening before."
+      "source_en": "Driver name, vehicle plate and contact number, sent the evening before.",
+      "tm": "Имя водителя, номер автомобиля и телефон для связи — присылаем вечером накануне."
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter."
+      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter.",
+      "tm": "Имя водителя, номер автомобиля и телефон для связи присылаем вечером накануне поездки."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Meet at your hotel"
+      "source_en": "Meet at your hotel",
+      "tm": "Встреча у отеля"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time."
+      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time.",
+      "tm": "Водитель-гид ждёт в лобби или у входа в согласованное время."
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin."
+      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin.",
+      "tm": "Водитель-гид встречает вас у жилья в подтверждённое время, и с этого момента начинается отсчёт забронированных часов."
     },
     "/practicalWeatherStatic/advice": {
       "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
+      "tm": "Весной и осенью — одежда слоями; летом — защита от солнца и лёгкая дождевая куртка; зимой — тёплое пальто и перчатки для прибрежных утёсов в ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Тхэджондэ"
       ]
     },
     "/practicalWeatherStatic/summary": {
-      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy."
+      "source_en": "Busan has a humid subtropical climate with four distinct seasons. Cruise season concentrates in spring (Mar–May) and autumn (Sep–Nov), both pleasant 12–25°C with low rainfall. Summer (Jun–Aug) brings warm humid weather and occasional monsoon showers. Winter (Dec–Feb) is cool and windy.",
+      "tm": "В Пусане влажный субтропический климат с четырьмя ярко выраженными сезонами. Круизный сезон приходится на весну (март–май) и осень (сентябрь–ноябрь): приятные 12–25°C и мало осадков. Лето (июнь–август) приносит тепло, влажность и отдельные муссонные дожди. Зима (декабрь–февраль) прохладная и ветреная."
     }
   },
   "glossaryTokens": {
@@ -136,5 +173,5 @@
       "⟦G0⟧": "Тхэджондэ"
     }
   },
-  "tmHits": 1
+  "tmHits": 38
 }

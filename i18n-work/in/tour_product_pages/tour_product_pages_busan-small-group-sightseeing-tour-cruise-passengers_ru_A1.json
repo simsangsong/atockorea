@@ -7,16 +7,20 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Busan Small-Group Cruise Shore Excursion | AtoC Korea"
+      "source_en": "Busan Small-Group Cruise Shore Excursion | AtoC Korea",
+      "tm": "Береговая экскурсия по Пусану малой группой для круизных гостей | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Busan Cruise Shore Excursion: Small-Group Day Tour | AtoC Korea"
+      "source_en": "Busan Cruise Shore Excursion: Small-Group Day Tour | AtoC Korea",
+      "tm": "Береговая экскурсия по Пусану для круизных гостей: день малой группой | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule."
+      "source_en": "Small-group Busan shore excursion for cruise guests with port pickup, local guide, Busan highlights, and return planned around your ship schedule.",
+      "tm": "Береговая экскурсия по Пусану малой группой для круизных гостей: сбор в порту, местный гид, главные достопримечательности города и возвращение, рассчитанное под расписание вашего судна."
     },
     "/seo/metaDescription": {
       "source_en": "8-hour small-group shore excursion from your Busan cruise terminal: ⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G6⟧, ⟦G5⟧, ⟦G0⟧, Songdo Cloud Trails and ⟦G4⟧. Van capped at 12.",
+      "tm": "Береговая экскурсия на 8 часов малой группой от вашего круизного терминала в Пусане: ⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G6⟧, ⟦G5⟧, ⟦G0⟧, скайвок Songdo Cloud Trails и ⟦G4⟧. В минивэне не более 12 человек.",
       "glossary": [
         "⟦G0⟧ = Деревня культуры Камчхон",
         "⟦G1⟧ = Мемориальное кладбище ООН",
@@ -28,10 +32,12 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Busan cruise day tour"
+      "source_en": "Busan cruise day tour",
+      "tm": "однодневная экскурсия по Пусану для круизных гостей"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Busan small group sightseeing"
+      "source_en": "Busan small group sightseeing",
+      "tm": "осмотр Пусана малой группой"
     },
     "/seo/primaryKeywords/2": {
       "source_en": "⟦G0⟧ tour",
@@ -41,7 +47,8 @@
       ]
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Songdo cable car cruise tour"
+      "source_en": "Songdo cable car cruise tour",
+      "tm": "круизная экскурсия с канатной дорогой Сондо"
     },
     "/seo/primaryKeywords/4": {
       "source_en": "⟦G0⟧ tour",
@@ -51,35 +58,44 @@
       ]
     },
     "/hero/meta/stops": {
-      "source_en": "9 stops"
+      "source_en": "9 stops",
+      "tm": "9 остановок"
     },
     "/hero/meta/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Пусан"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 8 hours, planned to your cruise's port-call period"
+      "source_en": "≈ 8 hours, planned to your cruise's port-call period",
+      "tm": "≈ 8 часов, рассчитанных на стоянку вашего судна в порту"
     },
     "/hero/pills/0": {
       "source_en": "Small group",
       "tm": "Малая группа"
     },
     "/hero/pills/1": {
-      "source_en": "Cruise"
+      "source_en": "Cruise",
+      "tm": "Круиз"
     },
     "/hero/pills/2": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Пусан"
     },
     "/hero/tagline": {
-      "source_en": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers"
+      "source_en": "Five Busan signatures coordinated with your ship's schedule, on a shared van with other cruisers",
+      "tm": "Пять визитных карточек Пусана, согласованных с расписанием вашего судна, в общем минивэне с другими круизными гостями"
     },
     "/sectionUi/pickupTrustFooter": {
-      "source_en": "Cruise terminal pickup included · No extra charge"
+      "source_en": "Cruise terminal pickup included · No extra charge",
+      "tm": "Сбор у круизного терминала включён · Без доплаты"
     },
     "/sectionUi/pickupCategoryLabel": {
-      "source_en": "Cruise terminal pickup"
+      "source_en": "Cruise terminal pickup",
+      "tm": "Сбор у круизного терминала"
     },
     "/sectionUi/pickupDropoffSubtitle": {
-      "source_en": "Cruise terminal pickup included. Tap any location for details."
+      "source_en": "Cruise terminal pickup included. Tap any location for details.",
+      "tm": "Сбор у круизного терминала включён. Нажмите на любое место, чтобы увидеть подробности."
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Potential",
@@ -102,7 +118,8 @@
       "tm": "Сложность пеших участков"
     },
     "/glanceItems/2/value": {
-      "source_en": "Challenging"
+      "source_en": "Challenging",
+      "tm": "Высокая нагрузка"
     },
     "/glanceItems/3/label": {
       "source_en": "Rain Suitability",
@@ -153,46 +170,56 @@
       "tm": "Малая группа"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Пусан"
     },
     "/catalog_card/tags/2": {
       "source_en": "Cruise excursion",
       "tm": "Круизная экскурсия"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Cruise pickup"
+      "source_en": "Cruise pickup",
+      "tm": "Сбор для круизных гостей"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Shared van"
+      "source_en": "Shared van",
+      "tm": "Общий минивэн"
     },
     "/catalog_card/title": {
-      "source_en": "Busan Cruise Shore: Small-Group Tour"
+      "source_en": "Busan Cruise Shore: Small-Group Tour",
+      "tm": "Берег Пусана для круизных гостей: экскурсия малой группой"
     },
     "/catalog_card/badges/0": {
       "source_en": "Cruise excursion",
       "tm": "Круизная экскурсия"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Small shared van"
+      "source_en": "Small shared van",
+      "tm": "Небольшой общий минивэн"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Pickup at port"
+      "source_en": "Pickup at port",
+      "tm": "Сбор в порту"
     },
     "/catalog_card/badges/3": {
-      "source_en": "8-hour shore day"
+      "source_en": "8-hour shore day",
+      "tm": "День на берегу, 8 часов"
     },
     "/catalog_card/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Пусан"
     },
     "/catalog_card/duration": {
       "source_en": "8 hours",
       "tm": "8 часов"
     },
     "/catalog_card/subtitle": {
-      "source_en": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time."
+      "source_en": "A cruise-aligned small-group Busan route with port pickup, local highlights, and return planned around your ship’s departure time.",
+      "tm": "Маршрут по Пусану малой группой, подстроенный под круиз: сбор в порту, главные достопримечательности и возвращение, рассчитанное под время отхода вашего судна."
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group Busan shore excursion for cruise passengers, in a van capped at 12. Nine stops in an eight-hour day: ⟦G2⟧, the ⟦G1⟧, lunch at your own expense, then ⟦G3⟧, ⟦G6⟧ and ⟦G5⟧ on foot, ⟦G0⟧, the Songdo Cloud Trails skywalk with the cable car up to Sky Park as an on-site choice, and ⟦G4⟧. Pickup is at whichever cruise terminal your ship berths at, and the return is timed to your all-aboard.",
+      "tm": "Береговая экскурсия по Пусану малой группой для круизных пассажиров, в минивэне не более чем на 12 человек. Девять остановок за восьмичасовой день: ⟦G2⟧, ⟦G1⟧, обед за свой счёт, затем ⟦G3⟧, ⟦G6⟧ и ⟦G5⟧ пешком, ⟦G0⟧, скайвок Songdo Cloud Trails с канатной дорогой до Sky Park на ваш выбор на месте и ⟦G4⟧. Сбор проходит у того круизного терминала, к которому пришвартовано ваше судно, а возвращение рассчитано под время посадки на борт.",
       "glossary": [
         "⟦G0⟧ = Деревня культуры Камчхон",
         "⟦G1⟧ = Мемориальное кладбище ООН",
@@ -204,36 +231,44 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan Cruise Shore"
+      "source_en": "Busan Cruise Shore",
+      "tm": "Берег Пусана для круизных гостей"
     },
     "/headlineLine2": {
       "source_en": "Small-Group Tour",
       "tm": "тур в малой группе"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product."
+      "source_en": "Provide ship name, port-call date, expected disembarkation time, and all-aboard time at booking. Pickup terminal (Yeongdo Cruise Terminal or Choryang Passenger Terminal) is set by where your ship docks. Shared van with other cruise passengers; on-time return is the product.",
+      "tm": "При бронировании укажите название судна, дату стоянки, ожидаемое время схода на берег и время посадки на борт. Терминал сбора (круизный терминал Йондо или пассажирский терминал Чорян) определяется тем, где швартуется ваше судно. Минивэн общий, с другими круизными пассажирами; своевременное возвращение — суть этой услуги."
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항)",
+      "tm": "Международный круизный терминал Пусана (영도 크루즈항)"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Busan Port International Passenger Terminal (Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (Choryang)",
+      "tm": "Международный пассажирский терминал порта Пусан (Чорян)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "tm": "Международный круизный терминал Пусана (영도 크루즈항 — Тонсам, Йондо)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Круизные суда в Пусане швартуются к одному из двух терминалов — какой именно ваш, зависит от места стоянки судна и подтверждается при бронировании. Гид встречает вас в зале прибытия."
     },
     "/pickup_dropoff/departure/0/time": {
       "source_en": "Confirmed at booking (≈30 min after ship docking)",
       "tm": "Подтверждается при бронировании (≈30 мин. после швартовки судна)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+      "tm": "Международный пассажирский терминал порта Пусан (부산항국제여객터미널 — Чорян)"
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Круизные суда в Пусане швартуются к одному из двух терминалов — какой именно ваш, зависит от места стоянки судна и подтверждается при бронировании. Гид встречает вас в зале прибытия."
     },
     "/pickup_dropoff/departure/1/time": {
       "source_en": "Confirmed at booking (≈30 min after ship docking)",
@@ -274,5 +309,5 @@
       "⟦G6⟧": "Площадь BIFF"
     }
   },
-  "tmHits": 28
+  "tmHits": 63
 }

@@ -8,75 +8,92 @@
   "segments": {
     "/itineraryStops/1/description": {
       "source_en": "The most historically heavy route, pairing a half-day on **Korea's Demilitarized Zone** with an afternoon at Korea's largest premium-outlet mall. \n\nThe DMZ portion typically covers **Imjingak Peace Park** (the Freedom Bridge and the rusting Bridge of Freedom), the **3rd Infiltration Tunnel** (a **1,635 m North-Korean-built tunnel discovered 1978**), **⟦G0⟧** (high-zoom views into North Korea's Kaesong region), and **Dorasan Station** (the unused 'last station to North' on the would-be inter-Korean rail). \n\nSome sub-itineraries swap in the Paju Suspension Bridge or Camp Greaves history park. **Paju Premium Outlets, opened in 2011** and at the time of opening Korea's largest premium outlet mall, hosts **230+ brands** across two adjacent properties (Premium Outlets + Lotte Premium Outlets) with US/EU brand discounts of typically 25-50%. \n\n**Heyri Art Valley** — a 100,000 m² artist-village of galleries, cafés, and museums — is a frequent third stop if your group prefers art over shopping. \n\nNote: foreign passport holders must present passports at DMZ entry points; some sub-areas (Dorasan Station platform) are subject to military operational closures.",
+      "tm": "L’itinerario più denso di storia, che abbina mezza giornata nella **zona demilitarizzata coreana** a un pomeriggio nel più grande centro outlet di lusso della Corea. \n\nLa parte DMZ comprende di norma il **parco della Pace di Imjingak** (il ponte della Libertà e la passerella arrugginita), il **3° tunnel di infiltrazione** (un **tunnel di 1.635 m scavato dalla Corea del Nord e scoperto nel 1978**), l’**⟦G0⟧** (vista con forte zoom sulla regione nordcoreana di Kaesong) e la **stazione di Dorasan** (l’inutilizzata «ultima stazione verso il Nord» della futura linea intercoreana). \n\nAlcune varianti sostituiscono queste tappe con il ponte sospeso di Paju o con il parco storico di Camp Greaves. **Paju Premium Outlets, inaugurato nel 2011** e all’epoca il più grande centro outlet di lusso della Corea, riunisce **oltre 230 marchi** su due complessi adiacenti (Premium Outlets + Lotte Premium Outlets), con sconti sui marchi statunitensi ed europei di norma fra il 25 e il 50%. \n\n**Heyri Art Valley** — un villaggio di artisti di 100.000 m² fra gallerie, caffè e musei — è spesso una terza tappa se il Suo gruppo preferisce l’arte allo shopping. \n\nNota: chi possiede un passaporto straniero deve esibirlo ai punti d’ingresso della DMZ; alcune aree (la banchina della stazione di Dorasan) possono essere chiuse per esigenze operative militari.",
       "glossary": [
         "⟦G0⟧ = Osservatorio di Dora"
       ]
     },
     "/itineraryStops/1/visitBasics/hours": {
-      "source_en": "DMZ stops 09:00-17:00 (last entry 15:30 most stops); Paju Premium Outlets 10:30-21:00 daily"
+      "source_en": "DMZ stops 09:00-17:00 (last entry 15:30 most stops); Paju Premium Outlets 10:30-21:00 daily",
+      "tm": "Tappe della DMZ 09:00-17:00 (ultimo ingresso 15:30 nella maggior parte dei siti); Paju Premium Outlets 10:30-21:00 ogni giorno"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "DMZ tour areas closed Mondays + when military operations require; Paju Outlets open year-round"
+      "source_en": "DMZ tour areas closed Mondays + when military operations require; Paju Outlets open year-round",
+      "tm": "Le aree di visita della DMZ sono chiuse il lunedì e quando lo richiedono le operazioni militari; gli outlet di Paju sono aperti tutto l’anno"
     },
     "/itineraryStops/1/visitBasics/walking": {
-      "source_en": "Moderate — 3rd Tunnel descent is the most physically demanding section (steep 73 m ramp; monorail option ~9,000 KRW return); Paju Outlets are flat outdoor walking shopping center"
+      "source_en": "Moderate — 3rd Tunnel descent is the most physically demanding section (steep 73 m ramp; monorail option ~9,000 KRW return); Paju Outlets are flat outdoor walking shopping center",
+      "tm": "Moderata — la discesa nel 3° tunnel è la parte fisicamente più impegnativa (rampa ripida di 73 m; opzione monorotaia ~9.000 KRW andata e ritorno); gli outlet di Paju sono un centro commerciale a cielo aperto e in piano"
     },
     "/itineraryStops/1/visitBasics/admission": {
       "source_en": "DMZ Combined Ticket ~12,000 KRW (3rd Tunnel + ⟦G0⟧ + Dorasan Station); Paju Outlets free entry. Passport required at DMZ entry — driver-guide assists.",
+      "tm": "Biglietto cumulativo DMZ ~12.000 KRW (3° tunnel + ⟦G0⟧ + stazione di Dorasan); ingresso libero agli outlet di Paju. Passaporto obbligatorio all’ingresso della DMZ: l’autista-guida assiste.",
       "glossary": [
         "⟦G0⟧ = Osservatorio di Dora"
       ]
     },
     "/itineraryStops/2/name": {
       "source_en": "Route 3: ⟦G0⟧ + Korean Folk Village",
+      "tm": "Itinerario 3: ⟦G0⟧ + villaggio folcloristico coreano",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/category": {
-      "source_en": "Theme Park + Heritage Village"
+      "source_en": "Theme Park + Heritage Village",
+      "tm": "Parco a tema + villaggio storico"
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "Seoul hotel pickup ~08:30, ~50-70 min transfer to Yongin"
+      "source_en": "Seoul hotel pickup ~08:30, ~50-70 min transfer to Yongin",
+      "tm": "Prelievo in hotel a Seoul verso le 08:30, ~50-70 min di trasferimento a Yongin"
     },
     "/itineraryStops/2/timeUsed/1": {
       "source_en": "Option A — ⟦G0⟧-only: full day at the park (9-10 hours typical for a complete visit)",
+      "tm": "Opzione A — solo ⟦G0⟧: giornata intera al parco (9-10 ore, tempo tipico per una visita completa)",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Option B — Folk Village-only: 4-5 hours including 2-3 performances, then return to Seoul"
+      "source_en": "Option B — Folk Village-only: 4-5 hours including 2-3 performances, then return to Seoul",
+      "tm": "Opzione B — solo villaggio folcloristico: 4-5 ore, compresi 2-3 spettacoli, poi rientro a Seoul"
     },
     "/itineraryStops/2/timeUsed/3": {
       "source_en": "Option C — Hybrid (rare): Folk Village morning (3-4 hours) + ⟦G0⟧ afternoon (4-5 hours) — only feasible if skipping Caribbean Bay water park and most of Zootopia",
+      "tm": "Opzione C — mista (rara): villaggio folcloristico la mattina (3-4 ore) + ⟦G0⟧ il pomeriggio (4-5 ore) — praticabile soltanto rinunciando al parco acquatico Caribbean Bay e a buona parte di Zootopia",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/timeUsed/4": {
-      "source_en": "Return to Seoul by ~18:30-19:30"
+      "source_en": "Return to Seoul by ~18:30-19:30",
+      "tm": "Rientro a Seoul verso le 18:30-19:30"
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "⟦G0⟧ — T Express: Korea's first wooden roller coaster, 1.64 km / 46 m drop at 77° / 104 km/h, opened 2008",
+      "tm": "⟦G0⟧ — T Express: le prime montagne russe in legno della Corea, 1,64 km / salto di 46 m a 77° / 104 km/h, inaugurate nel 2008",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/highlights/1": {
       "source_en": "⟦G0⟧ — Zootopia + Panda World: ~2,000 animals incl. the Aibao-Fubao-Ruibao-Huibao panda family; Lost Valley amphibious-vehicle ecological safari",
+      "tm": "⟦G0⟧ — Zootopia + Panda World: ~2.000 animali, compresa la famiglia di panda Aibao-Fubao-Ruibao-Huibao; safari ecologico di Lost Valley su veicolo anfibio",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "Korean Folk Village — 260+ Joseon-era houses on 991,735 m² (245 acres); first open-air museum in Korea"
+      "source_en": "Korean Folk Village — 260+ Joseon-era houses on 991,735 m² (245 acres); first open-air museum in Korea",
+      "tm": "Villaggio folcloristico coreano — oltre 260 case dell’epoca Joseon su 991.735 m² (245 acri); primo museo all’aperto della Corea"
     },
     "/itineraryStops/2/highlights/3": {
-      "source_en": "Korean Folk Village — daily performances: UNESCO Jultagi tightrope, Nong-ak farmers' percussion, horseback martial arts, traditional Joseon wedding"
+      "source_en": "Korean Folk Village — daily performances: UNESCO Jultagi tightrope, Nong-ak farmers' percussion, horseback martial arts, traditional Joseon wedding",
+      "tm": "Villaggio folcloristico coreano — spettacoli quotidiani: funambolismo jultagi riconosciuto dall’UNESCO, percussioni contadine nong-ak, arti marziali a cavallo, matrimonio tradizionale Joseon"
     },
     "/itineraryStops/2/smartNotes/tip": {
       "source_en": "Pick ONE primary destination — ⟦G1⟧ or Folk Village — at booking; trying to do both leaves both feeling rushed. Pair Folk Village with ⟦G0⟧ (UNESCO, 15-20 min) for a coherent Joseon-themed half-day if you take Option B. For ⟦G1⟧, mid-week visits during peak season have materially shorter queues.",
+      "tm": "Scelga UNA destinazione principale — ⟦G1⟧ o il villaggio folcloristico — al momento della prenotazione; tentare di farle entrambe dà la sensazione di aver corso in tutte e due. Se opta per l’opzione B, abbini il villaggio folcloristico alla ⟦G0⟧ (UNESCO, 15-20 min) per una mezza giornata coerente a tema Joseon. Per ⟦G1⟧, in alta stagione le visite a metà settimana hanno code decisamente più brevi.",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong",
         "⟦G1⟧ = Everland"
@@ -84,54 +101,65 @@
     },
     "/itineraryStops/2/smartNotes/facilities": {
       "source_en": "⟦G0⟧: Smart Queue (free, in-app reservation system) is essential before 14:00 for T Express, Lost Valley, Safari World, Panda World — register the moment you enter the park. Folk Village: traditional street market food is the on-site option (Imsil cheese pizza, railroad hot dogs).",
+      "tm": "⟦G0⟧: lo Smart Queue (sistema di prenotazione gratuito nell’app) è indispensabile prima delle 14:00 per T Express, Lost Valley, Safari World e Panda World — si registri appena entra nel parco. Villaggio folcloristico: il cibo di strada del mercato tradizionale è l’opzione sul posto (pizza al formaggio di Imsil, hot dog «railroad»).",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/whyOnRoute": {
       "source_en": "The strongest route for families with kids 6-15, theme-park enthusiasts, and travelers wanting a single-location-deep day rather than multi-stop sightseeing. ⟦G0⟧ alone is normally an 8-10 hour day — the private charter advantage is hotel-to-gate transit (~50-70 min each way) avoiding the bus-transfer chain. Folk Village alone fits comfortably in a half-day with strong cultural depth; combining both is realistic only for groups happy to sample rather than fully explore.",
+      "tm": "L’itinerario migliore per famiglie con bambini dai 6 ai 15 anni, per gli appassionati di parchi a tema e per chi preferisce approfondire un solo luogo anziché moltiplicare le tappe. ⟦G0⟧ da solo richiede di norma una giornata di 8-10 ore: il vantaggio del noleggio privato è il collegamento diretto dall’hotel all’ingresso (~50-70 min per tratta), che evita la catena di cambi in autobus. Il villaggio folcloristico da solo entra comodamente in mezza giornata, con una notevole profondità culturale; combinarli entrambi è realistico soltanto per i gruppi disposti ad assaggiare anziché esplorare a fondo.",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "Driver-guide handles all parking; both have dedicated paid lots (Folk Village 2,000 KRW car / 3,000 SUV)"
+      "source_en": "Driver-guide handles all parking; both have dedicated paid lots (Folk Village 2,000 KRW car / 3,000 SUV)",
+      "tm": "L’autista-guida si occupa di tutti i parcheggi; entrambi i siti dispongono di aree a pagamento dedicate (villaggio folcloristico 2.000 KRW per auto / 3.000 per SUV)"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "Multiple at both — well signposted"
+      "source_en": "Multiple at both — well signposted",
+      "tm": "Diversi in entrambi i siti — bene segnalati"
     },
     "/itineraryStops/2/description": {
       "source_en": "The most family-oriented route, pairing **South Korea's largest theme park** with Korea's first open-air folk-culture museum — both in Yongin, ~36 km south of Seoul. **⟦G0⟧, opened in 1976 and operated by Samsung C&T**, draws **5.85-6.6 million visitors annually** (ranked 19th globally for amusement-park attendance in 2018) across five themed zones (Global Fair, American Adventure, Magic Land, Zootopia, European Adventure). \n\nThe signature ride is **T Express** — **Korea's first wooden roller coaster**, opened March 2008 — with 1.64 km of track, a 46 m drop at 77° (one of the steepest wooden coasters in the world), and a **104 km/h top speed**. Zootopia hosts ~2,000 animals across 200 species including the Aibao + Lebao panda family (Fubao, born 2020, was the first giant panda born in South Korea; her twin sisters Ruibao and Huibao followed in 2023). \n\n**Korean Folk Village**, just 20 minutes away on the same Yongin road, is a **991,735 m² (245-acre) site** with **260+ traditional Joseon-era houses** representing different regions and social classes. Daily performances include UNESCO-listed Jultagi tightrope walking, Nong-ak farmers' percussion music, mounted-acrobatic horseback martial arts, and reenacted Joseon weddings. \n\nMany K-dramas (Jewel in the Palace, Sungkyunkwan Scandal, etc.) have filmed sageuk scenes here. Because ⟦G0⟧ alone fills a full day, the typical 10-hour charter does ONE of the two thoroughly rather than both — the driver-guide flags this at booking.",
+      "tm": "L’itinerario più orientato alle famiglie, che abbina il **più grande parco a tema della Corea del Sud** al primo museo all’aperto di cultura popolare del Paese — entrambi a Yongin, ~36 km a sud di Seoul. **⟦G0⟧, inaugurato nel 1976 e gestito da Samsung C&T**, richiama **da 5,85 a 6,6 milioni di visitatori l’anno** (19° posto a livello mondiale per affluenza nei parchi di divertimento nel 2018) distribuiti su cinque aree tematiche (Global Fair, American Adventure, Magic Land, Zootopia, European Adventure). \n\nL’attrazione simbolo è **T Express** — **le prime montagne russe in legno della Corea**, inaugurate a marzo 2008 — con 1,64 km di tracciato, un salto di 46 m a 77° (fra i più ripidi al mondo per un ottovolante in legno) e una **velocità massima di 104 km/h**. Zootopia ospita ~2.000 animali di 200 specie, compresa la famiglia di panda Aibao + Lebao (Fubao, nata nel 2020, è stata il primo panda gigante nato in Corea del Sud; le sorelle gemelle Ruibao e Huibao sono arrivate nel 2023). \n\nIl **villaggio folcloristico coreano**, a soli 20 minuti sulla stessa strada di Yongin, è un **sito di 991.735 m² (245 acri)** con **oltre 260 case tradizionali dell’epoca Joseon** che rappresentano regioni e classi sociali diverse. Gli spettacoli quotidiani comprendono il funambolismo jultagi iscritto all’UNESCO, la musica a percussione contadina nong-ak, le arti marziali acrobatiche a cavallo e matrimoni Joseon ricostruiti. \n\nMolti K-drama (Jewel in the Palace, Sungkyunkwan Scandal e altri) hanno girato qui scene di sageuk. Poiché ⟦G0⟧ da solo occupa un’intera giornata, il noleggio tipico di 10 ore approfondisce UNO dei due anziché entrambi: l’autista-guida lo segnala al momento della prenotazione.",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/visitBasics/hours": {
       "source_en": "⟦G0⟧: 10:00-22:00 weekdays, 09:30-22:00 weekends/holidays (varies seasonally); Korean Folk Village: Mon-Thu 10:00-18:00, Fri-Sun 10:00-22:00",
+      "tm": "⟦G0⟧: 10:00-22:00 nei giorni infrasettimanali, 09:30-22:00 nei fine settimana e nei festivi (variabile secondo la stagione); villaggio folcloristico coreano: da lunedì a giovedì 10:00-18:00, da venerdì a domenica 10:00-22:00",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/visitBasics/closed": {
-      "source_en": "Both open year-round"
+      "source_en": "Both open year-round",
+      "tm": "Entrambi aperti tutto l’anno"
     },
     "/itineraryStops/2/visitBasics/walking": {
       "source_en": "High at ⟦G0⟧ (5-10 km easily — large hilly park) — Korean Folk Village is high too (5-7 km on flat dirt/gravel paths)",
+      "tm": "Elevata a ⟦G0⟧ (facilmente 5-10 km — parco ampio e collinare) — elevata anche al villaggio folcloristico coreano (5-7 km su sentieri pianeggianti in terra e ghiaia)",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/2/visitBasics/admission": {
       "source_en": "⟦G0⟧ adult 1-day 54,000-64,000 KRW (20% foreigner discount at gate; discounts often available); Korean Folk Village adult 37,000 KRW (Visit Korea official). Driver-guide assists with ticket purchase.",
+      "tm": "⟦G0⟧ adulti, biglietto di 1 giorno 54.000-64.000 KRW (20% di sconto per stranieri all’ingresso; sono spesso disponibili riduzioni); villaggio folcloristico coreano adulti 37.000 KRW (fonte ufficiale Visit Korea). L’autista-guida assiste nell’acquisto dei biglietti.",
       "glossary": [
         "⟦G0⟧ = Everland"
       ]
     },
     "/itineraryStops/3/name": {
-      "source_en": "Route 4: Custom Itinerary Option"
+      "source_en": "Route 4: Custom Itinerary Option",
+      "tm": "Itinerario 4: opzione con programma su misura"
     },
     "/itineraryStops/3/category": {
-      "source_en": "Send Us Your Own Plan"
+      "source_en": "Send Us Your Own Plan",
+      "tm": "Ci invii il Suo programma"
     }
   },
   "glossaryTokens": {
@@ -179,5 +207,5 @@
       "⟦G0⟧": "Everland"
     }
   },
-  "tmHits": 0
+  "tmHits": 28
 }

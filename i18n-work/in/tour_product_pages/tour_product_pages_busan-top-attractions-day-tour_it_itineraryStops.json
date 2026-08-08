@@ -1,0 +1,189 @@
+{
+  "unitId": "tour_product_pages:busan-top-attractions-day-tour:it:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-top-attractions-day-tour",
+  "locale": "it",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Pickup (3 central Busan stations)"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Transit / Pickup",
+      "tm": "Trasferimento / prelievo"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "65 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Busan Station pickup (~08:10, ~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Drive to Seomyeon Station (~15 min)"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "Seomyeon pickup (~08:30, ~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Drive to Haeundae Station (~35 min)"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "Haeundae pickup (~09:10, ~5 min)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "Three pickup options across central Busan (Busan Station, Seomyeon, Haeundae)"
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "Coach is small-group (max ~14 pax)"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "Total transit to first stop: ~30-40 min"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Printed Korean-English itinerary card distributed at pickup"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Three pickup points cover Busan's three main hotel zones (KTX/Nampo, Seomyeon mid-city, Haeundae beachfront) without forcing guests to transit across the city in the morning. Sequencing west→east minimizes coach distance and lands the group at ⟦G0⟧ around 09:50 — early enough to beat the busiest tour-bus arrivals.",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup is consolidated at three central Busan transit hubs to keep the day manageable without crisscrossing the city: **Busan Station (Line 1)** for guests staying near the KTX terminal or in the Choryang/Nampo-dong area; **Seomyeon Station (Lines 1 & 2)** — Busan's busiest subway interchange, central for guests in mid-city hotels around Lotte Hotel Busan or the Seomyeon Medical Street; and **Haeundae Station (Line 2)** for guests in the beachfront resort district near Westin Josun, Park Hyatt, or Signiel Busan. \n\nThe coach picks up at all three in sequence (Busan Station Exit 4 at 08:10, Seomyeon Station Exit 4 at 08:30, Haeundae Station Exit 5 at 09:10) and then heads northeast along the coastal Gwangan Bridge route toward Gijang-gun for the day's first stop. \n\nTotal transit from final pickup to ⟦G1⟧: ~30-40 minutes depending on traffic. Driver will share a printed Korean-English itinerary card with timings; please be at your pickup point 5 minutes before the scheduled time to keep the day on track for the later ⟦G0⟧ and Gamcheon stops, which have stricter operating windows.",
+      "glossary": [
+        "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite",
+        "⟦G1⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Buddhist Temple / Coastal",
+      "tm": "Tempio buddhista / costa"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "75 min",
+      "tm": "75 min"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Coach drop-off + walk through vendor lane to entry plaza (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Twelve Zodiac Generals + No-Accident Pagoda (~10 min)",
+      "tm": "I dodici generali dello zodiaco + la pagoda «senza incidenti» (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "108 stairs descent + Daeungjeon main hall + seaside terraces (~30 min)",
+      "tm": "Discesa delle 108 scale + sala principale Daeungjeon + terrazze sul mare (~30 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Haesu Gwaneum statue viewpoint + photo time (~15 min)",
+      "tm": "Punto panoramico della statua Haesu Gwaneum + tempo per le foto (~15 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Walk back up + reassemble at coach (~10 min)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "**Founded 1376** by Buddhist master Naong Hyegeun (originally 'Bomunsa')",
+      "tm": "**Fondato nel 1376** dal maestro buddhista Naong Hyegeun (in origine «Bomunsa»)"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "One of very few major Korean temples set on the seaside (most are in mountains)",
+      "tm": "Uno dei pochissimi grandi templi coreani in riva al mare (quasi tutti sono in montagna)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Renamed **⟦G0⟧ in 1974** after Monk Jeong-am's dragon-Goddess vision",
+      "tm": "Ribattezzato **⟦G0⟧ nel 1974** dopo la visione del monaco Jeong-am, con la dea sul drago",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "**108 stone stairs** = Buddhism's 108 delusions of the mind",
+      "tm": "Le **108 scale di pietra** = le 108 illusioni della mente nel buddhismo"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "**12 Sibiji-shin (Zodiac Generals)** at entry; '**No-Accident Pagoda**' coin shrine",
+      "tm": "I **12 Sibiji-shin (generali dello zodiaco)** all’ingresso; il santuario delle monete della «**pagoda senza incidenti**»"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "**Haesu Gwaneum Daebul** (Sea Goddess of Mercy) — most photographed cliff view",
+      "tm": "**Haesu Gwaneum Daebul** (la dea marina della misericordia): la veduta sulla scogliera più fotografata"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "Daeungjeon main hall restored in 1970 with attention to original colors",
+      "tm": "Sala principale Daeungjeon restaurata nel 1970, con attenzione ai colori originali"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "Hours daily 04:30-19:20, FREE admission; Buddha's Birthday (May) lantern festival"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "**Stone-pillar Buddhist 12 Sibiji-shin Zodiac Generals lineup at the temple gate** — unique among Korean coastal temples"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Side doors for entering halls (front door reserved for monks); Buddha's Birthday (Apr–May) brings the lantern display; arrive before 10:30 to avoid the worst tour-bus crowds"
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Souvenir/snack stalls and small cafe at upper plaza; coastal trail leads further along the rocks",
+      "tm": "Banchi di souvenir e spuntini e un piccolo caffè nella piazza superiore; il sentiero costiero prosegue lungo le rocce"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "The route's iconic anchor — the most-photographed temple in Busan, with a 650-year history and a rare Korean seaside Buddhist setting. Picking the 10:00 arrival window lands before the major tour-bus surge (typically 11:00 onward) so the 108-stair descent and the Haesu Gwaneum viewpoint are still walkable without queuing. The northeast-coast location also pairs naturally with ⟦G0⟧ immediately south — together forming the day's east-coast cluster before the coach swings back across the city for ⟦G1⟧, Gamcheon, and Jagalchi.",
+      "glossary": [
+        "⟦G0⟧ = Cheongsapo Blue Line Park",
+        "⟦G1⟧ = Cimitero commemorativo delle Nazioni Unite"
+      ]
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "⟦G0⟧ Parking Lot (paid, per Visit Busan official)",
+      "tm": "Parcheggio di ⟦G0⟧ (a pagamento, secondo il sito ufficiale Visit Busan)",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "Available near main entrance and inside complex",
+      "tm": "Disponibili vicino all’ingresso principale e all’interno del complesso"
+    },
+    "/itineraryStops/1/description": {
+      "source_en": "**⟦G0⟧ (해동 용궁사) — Korea's most famous seaside Buddhist temple** — perches on the rocky cliffs of Gijang-gun on Busan's northeastern coast, one of the very few major Korean temples NOT set in the mountains. Originally founded in **1376 during the Goryeo Dynasty by the great Buddhist teacher Naong Hyegeun (나옹 혜근, 1320-1376)** — a royal consultant and master who would help shape Korean Buddhism into the early Joseon era. \n\nPer legend, Naong was practicing asceticism at Bunhwangsa Temple in Gyeongju during a national drought; the East Sea god appeared to him in a dream and told him that building a temple on Bongrae Mountain (the original name of this seaside cliff) would restore the kingdom's prosperity. \n\nNaong founded the temple and named it **Bomunsa**, dedicated to Gwanseum-bosal (관세음보살, the Bodhisattva of Compassion). The temple was destroyed in the **Japanese Imjin Invasion of 1592** and lay in ruins for over 300 years until **Monk Ungang of ⟦G1⟧ began reconstruction in the early 1930s**. \n\nThe current name, **⟦G0⟧ (Korean Dragon Palace Temple)**, dates only to **1974** — when Head Monk Jeong-am, during a 100-day prayer (jeong-geon kido), had a vision of the Goddess of Mercy descending on the back of a dragon, emanating multicolor light. \n\nThe temple was renamed to honor this vision. The visit follows the temple's signature processional path: through the row of **12 Sibiji-shin (Twelve Zodiac Generals)** at the entry plaza, past the **7-story 'No-Accident Pagoda'** (where drivers leave coin offerings under a stone wheel-shrine), down the famous **108 stone stairs** (representing the 108 delusions of the Buddhist mind) through a small bamboo grove, and out onto the seaside terraces and Daeungjeon main hall. \n\nThe **Haesu Gwaneum Daebul** (Sea-Goddess of Mercy statue) on the upper cliff is the most photographed view, framing both the temple rooftops and the East Sea. \n\nHours **04:30-19:20 daily, last entry 18:50, FREE admission**. **Buddha's Birthday (May)** brings Yeondunhoe lantern festival displays.",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa",
+        "⟦G1⟧ = Tempio di Tongdosa"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/whyOnRoute": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Cimitero commemorativo delle Nazioni Unite",
+      "⟦G1⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "⟦G0⟧": "Cheongsapo Blue Line Park",
+      "⟦G1⟧": "Cimitero commemorativo delle Nazioni Unite"
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/itineraryStops/1/description": {
+      "⟦G0⟧": "Haedong Yonggungsa",
+      "⟦G1⟧": "Tempio di Tongdosa"
+    }
+  },
+  "tmHits": 17
+}

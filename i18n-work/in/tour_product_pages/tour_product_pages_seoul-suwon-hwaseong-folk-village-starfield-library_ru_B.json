@@ -7,43 +7,52 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Outbound"
+      "source_en": "Outbound",
+      "tm": "Дорога туда"
     },
     "/routePhases/0/duration": {
       "source_en": "≈ 1 hour",
       "tm": "≈ 1 час"
     },
     "/routePhases/0/description": {
-      "source_en": "Seoul → Suwon city via Gyeongbu Expressway."
+      "source_en": "Seoul → Suwon city via Gyeongbu Expressway.",
+      "tm": "Сеул → город Сувон по автомагистрали Кёнбу."
     },
     "/routePhases/1/phase": {
-      "source_en": "Heritage half"
+      "source_en": "Heritage half",
+      "tm": "Половина дня о наследии"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 часа"
     },
     "/routePhases/1/description": {
-      "source_en": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other."
+      "source_en": "Suwon Hwaseong walls and Haenggung palace, all walking distance from each other.",
+      "tm": "Стены Хвасона в Сувоне и дворец Хэнгун — всё в пешей доступности друг от друга."
     },
     "/routePhases/2/phase": {
-      "source_en": "Folk village"
+      "source_en": "Folk village",
+      "tm": "Фольклорная деревня"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 2.5 hours",
       "tm": "≈ 2,5 часа"
     },
     "/routePhases/2/description": {
-      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park."
+      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park.",
+      "tm": "30 минут пути до Корейской фольклорной деревни в Йонъине, затем прогулка по парку под открытым небом."
     },
     "/routePhases/3/phase": {
-      "source_en": "Modern coda"
+      "source_en": "Modern coda",
+      "tm": "Современная кода"
     },
     "/routePhases/3/duration": {
       "source_en": "≈ 1.5 hours",
       "tm": "≈ 1,5 часа"
     },
     "/routePhases/3/description": {
-      "source_en": "Drive back to Suwon for Starfield Library and mall food hall."
+      "source_en": "Drive back to Suwon for Starfield Library and mall food hall.",
+      "tm": "Возвращение в Сувон — библиотека Starfield и фуд-холл торгового центра."
     },
     "/routePhases/4/phase": {
       "source_en": "Return",
@@ -54,7 +63,8 @@
       "tm": "≈ 1 час"
     },
     "/routePhases/4/description": {
-      "source_en": "Suwon → Seoul."
+      "source_en": "Suwon → Seoul.",
+      "tm": "Сувон → Сеул."
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -99,13 +109,16 @@
       ]
     },
     "/galleryItems/2/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 1"
+      "source_en": "Starfield Library Suwon — gallery image 1",
+      "tm": "Библиотека Starfield в Сувоне — изображение галереи 1"
     },
     "/galleryItems/2/caption": {
-      "source_en": "Starfield Library Suwon — photo 1"
+      "source_en": "Starfield Library Suwon — photo 1",
+      "tm": "Библиотека Starfield в Сувоне — фото 1"
     },
     "/galleryItems/2/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
@@ -192,31 +205,40 @@
       ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 2"
+      "source_en": "Starfield Library Suwon — gallery image 2",
+      "tm": "Библиотека Starfield в Сувоне — изображение галереи 2"
     },
     "/galleryItems/7/caption": {
-      "source_en": "Starfield Library Suwon — photo 2"
+      "source_en": "Starfield Library Suwon — photo 2",
+      "tm": "Библиотека Starfield в Сувоне — фото 2"
     },
     "/galleryItems/7/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     },
     "/galleryItems/8/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 3"
+      "source_en": "Starfield Library Suwon — gallery image 3",
+      "tm": "Библиотека Starfield в Сувоне — изображение галереи 3"
     },
     "/galleryItems/8/caption": {
-      "source_en": "Starfield Library Suwon — photo 3"
+      "source_en": "Starfield Library Suwon — photo 3",
+      "tm": "Библиотека Starfield в Сувоне — фото 3"
     },
     "/galleryItems/8/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     },
     "/galleryItems/9/alt": {
-      "source_en": "Starfield Library Suwon — gallery image 4"
+      "source_en": "Starfield Library Suwon — gallery image 4",
+      "tm": "Библиотека Starfield в Сувоне — изображение галереи 4"
     },
     "/galleryItems/9/caption": {
-      "source_en": "Starfield Library Suwon — photo 4"
+      "source_en": "Starfield Library Suwon — photo 4",
+      "tm": "Библиотека Starfield в Сувоне — фото 4"
     },
     "/galleryItems/9/location": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     }
   },
   "glossaryTokens": {
@@ -275,5 +297,5 @@
       "⟦G0⟧": "Корейская фольклорная деревня (Йонъин)"
     }
   },
-  "tmHits": 23
+  "tmHits": 45
 }

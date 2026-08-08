@@ -7,280 +7,384 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9-Hour Small Group"
+      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc + Aewol + Iho Tewoo Tour · 9-Hour Small Group",
+      "tm": "Юго-запад Чеджу: Высокогорье Халласан 1100 + O'Sulloc + Эволь + Ихо Тхэу · 9 часов в малой группе"
     },
     "/seo/pageTitle": {
-      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc Tour | AtoC Korea"
+      "source_en": "Southwest Jeju Hallasan 1100 Highland + O'Sulloc Tour | AtoC Korea",
+      "tm": "Юго-запад Чеджу: Высокогорье Халласан 1100 и O'Sulloc | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "Southwest Jeju small-group year-round day tour: Hallasan 1100 Highland Ramsar wetland (flat boardwalk) → ⟦G0⟧ (UNESCO Geopark) → Cheonjeyeon Waterfall → lunch → O'Sulloc Tea Museum + green tea fields → Aewol Handam coastal cafe trail → Iho Tewoo Beach sunset (horse lighthouses). 9 hours, 7 stops, all admissions included.",
+      "tm": "Круглогодичный дневной тур в малой группе по юго-западу Чеджу: Рамсарское болото на Высокогорье Халласан 1100 (ровный настил) → ⟦G0⟧ (геопарк ЮНЕСКО) → водопад Чхонджеён → обед → Чайный музей O'Sulloc и плантации зелёного чая → прибрежная тропа кафе Хандам в Эволе → закат на пляже Ихо Тхэу (маяки-кони). 9 часов, 7 остановок, все входные билеты включены.",
       "glossary": [
         "⟦G0⟧ = Утёс Тэпхо Чусанджолли"
       ]
     },
     "/seo/metaDescription": {
       "source_en": "Small-group southwest Jeju tour: Hallasan 1100 Highland Ramsar wetland, Daepo Jusangjeolli, Cheonjeyeon Waterfall, O'Sulloc tea fields, ⟦G0⟧, Iho Tewoo sunset.",
+      "tm": "Тур по юго-западу Чеджу в малой группе: Рамсарское болото на Высокогорье Халласан 1100, Тэпхо Чусанджолли, водопад Чхонджеён, чайные поля O'Sulloc, ⟦G0⟧, закат в Ихо Тхэу.",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Southwest Jeju small group tour"
+      "source_en": "Southwest Jeju small group tour",
+      "tm": "тур по юго-западу Чеджу в малой группе"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Hallasan 1100 Highland tour"
+      "source_en": "Hallasan 1100 Highland tour",
+      "tm": "тур на Высокогорье Халласан 1100"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "O'Sulloc Tea Museum tour"
+      "source_en": "O'Sulloc Tea Museum tour",
+      "tm": "тур в Чайный музей O'Sulloc"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Iho Tewoo sunset tour"
+      "source_en": "Iho Tewoo sunset tour",
+      "tm": "тур на закат в Ихо Тхэу"
     },
     "/hero/meta/stops": {
-      "source_en": "7 stops"
+      "source_en": "7 stops",
+      "tm": "7 остановок"
     },
     "/hero/meta/region": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Юго-запад Чеджу"
     },
     "/hero/meta/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 часов"
     },
     "/hero/pills/0": {
-      "source_en": "Great for First-Time Jeju Visitors"
+      "source_en": "Great for First-Time Jeju Visitors",
+      "tm": "Отлично для первого визита на Чеджу"
     },
     "/hero/pills/1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Юго-запад Чеджу"
     },
     "/hero/tagline": {
-      "source_en": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish"
+      "source_en": "A 1100 Highland wetland trek, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
+      "tm": "Прогулка по болоту на Высокогорье 1100, вулканические утёсы, тропа у водопада, чайные поля и завершение закатом в Эволе и Ихо Тхэу"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery Density"
+      "source_en": "Scenery Density",
+      "tm": "Насыщенность пейзажами"
     },
     "/glanceItems/1/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking Difficulty"
+      "source_en": "Walking Difficulty",
+      "tm": "Сложность пеших участков"
     },
     "/glanceItems/2/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
     },
     "/glanceItems/4/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Темп"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Обзор"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Детали"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Отзывы"
     },
     "/catalog_card/tags/1": {
-      "source_en": "제주"
+      "source_en": "제주",
+      "tm": "Чеджу"
     },
     "/catalog_card/tags/3": {
-      "source_en": "자연"
+      "source_en": "자연",
+      "tm": "Природа"
     },
     "/catalog_card/tags/4": {
-      "source_en": "카페"
+      "source_en": "카페",
+      "tm": "Кафе"
     },
     "/catalog_card/tags/5": {
-      "source_en": "일몰"
+      "source_en": "일몰",
+      "tm": "Закат"
     },
     "/catalog_card/title": {
-      "source_en": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo"
+      "source_en": "Southwest Jeju: Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+      "tm": "Юго-запад Чеджу: Халласан, O'Sulloc, Эволь и Ихо Тхэу"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Great for First-Time Jeju Visitors"
+      "source_en": "Great for First-Time Jeju Visitors",
+      "tm": "Отлично для первого визита на Чеджу"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Юго-запад Чеджу"
     },
     "/catalog_card/region": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Юго-запад Чеджу"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 часов"
     },
     "/catalog_card/subtitle": {
-      "source_en": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish"
+      "source_en": "The 1100 Highland wetland boardwalk, volcanic cliffs, a waterfall trail, tea fields, and an Aewol–Iho Tewoo sunset finish",
+      "tm": "Настил по болоту на Высокогорье 1100, вулканические утёсы, тропа у водопада, чайные поля и завершение закатом в Эволе и Ихо Тхэу"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A well-balanced Jeju southwest day route linking the Hallasan 1100 Highland wetland, volcanic coastline, Cheonjeyeon Waterfall, O'Sulloc tea fields, ⟦G0⟧, and the Iho Tewoo sunset.",
+      "tm": "Хорошо сбалансированный дневной маршрут по юго-западу Чеджу, связывающий болото на Высокогорье Халласан 1100, вулканическое побережье, водопад Чхонджеён, чайные поля O'Sulloc, ⟦G0⟧ и закат в Ихо Тхэу.",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Jeju Southwest"
+      "source_en": "Jeju Southwest",
+      "tm": "Юго-запад Чеджу"
     },
     "/headlineLine2": {
-      "source_en": "Hallasan, O'Sulloc, Aewol & Iho Tewoo"
+      "source_en": "Hallasan, O'Sulloc, Aewol & Iho Tewoo",
+      "tm": "Халласан, O'Sulloc, Эволь и Ихо Тхэу"
     },
     "/pickup_dropoff/notes": {
-      "source_en": "Pickup time 08:30–09:00 a.m., based on hotel lobbies within Jeju City; the final time is confirmed the evening before. Return is after the Iho Tewoo sunset, and depending on circumstances airport pickup/drop-off may also be possible."
+      "source_en": "Pickup time 08:30–09:00 a.m., based on hotel lobbies within Jeju City; the final time is confirmed the evening before. Return is after the Iho Tewoo sunset, and depending on circumstances airport pickup/drop-off may also be possible.",
+      "tm": "Время посадки 08:30–09:00, у лобби отелей в городе Чеджу; окончательное время подтверждается накануне вечером. Возвращение — после заката в Ихо Тхэу, и в зависимости от обстоятельств возможны посадка и высадка в аэропорту."
     },
     "/pickup_dropoff/dropoff_points/0/name": {
-      "source_en": "Jeju City hotels (return)"
+      "source_en": "Jeju City hotels (return)",
+      "tm": "Отели города Чеджу (возвращение)"
     },
     "/pickup_dropoff/meeting_points/0/name": {
-      "source_en": "Jeju City hotel lobbies"
+      "source_en": "Jeju City hotel lobbies",
+      "tm": "Лобби отелей города Чеджу"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "человек"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup and Return"
+      "source_en": "Pickup and Return",
+      "tm": "Посадка и возвращение"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Pickup takes place at your hotel lobby between 8:20 and 8:50 a.m."
+      "source_en": "Pickup takes place at your hotel lobby between 8:20 and 8:50 a.m.",
+      "tm": "Посадка происходит в лобби вашего отеля между 8:20 и 8:50 утра."
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Return is scheduled between 6:30 and 7:00 p.m., after the Iho Tewoo sunset."
+      "source_en": "Return is scheduled between 6:30 and 7:00 p.m., after the Iho Tewoo sunset.",
+      "tm": "Возвращение запланировано между 18:30 и 19:00, после заката в Ихо Тхэу."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Airport pickup/drop-off may be possible on request."
+      "source_en": "Airport pickup/drop-off may be possible on request.",
+      "tm": "Посадка и высадка в аэропорту возможны по запросу."
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Your exact pickup time is confirmed the night before."
+      "source_en": "Your exact pickup time is confirmed the night before.",
+      "tm": "Точное время посадки подтверждается накануне вечером."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Hotel-lobby pickup in the Jeju City area"
+      "source_en": "Hotel-lobby pickup in the Jeju City area",
+      "tm": "Посадка у лобби отеля в районе города Чеджу"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Walking and Terrain"
+      "source_en": "Walking and Terrain",
+      "tm": "Пешие участки и рельеф"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Total walking across the day is usually around 3.5–4.5 km."
+      "source_en": "Total walking across the day is usually around 3.5–4.5 km.",
+      "tm": "Всего за день обычно набирается около 3,5–4,5 км пешком."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "1100 Highland: about 1 km of flat boardwalk (around 20 min), the easiest section."
+      "source_en": "1100 Highland: about 1 km of flat boardwalk (around 20 min), the easiest section.",
+      "tm": "Высокогорье 1100: около 1 км ровного настила (примерно 20 мин), самый лёгкий участок."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Jusangjeolli: an easy coastal walking path."
+      "source_en": "Jusangjeolli: an easy coastal walking path.",
+      "tm": "Чусанджолли: несложная прибрежная пешеходная дорожка."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Cheonjeyeon: forest path, stairs, and occasionally slippery sections."
+      "source_en": "Cheonjeyeon: forest path, stairs, and occasionally slippery sections.",
+      "tm": "Чхонджеён: лесная тропа, лестницы и местами скользкие участки."
     },
     "/practicalAccordionItems/1/content/4": {
-      "source_en": "O'Sulloc, Aewol, Iho Tewoo: comfortable stops where you can take it easy."
+      "source_en": "O'Sulloc, Aewol, Iho Tewoo: comfortable stops where you can take it easy.",
+      "tm": "O'Sulloc, Эволь, Ихо Тхэу: комфортные остановки, где можно не спешить."
     },
     "/practicalAccordionItems/1/content/5": {
-      "source_en": "Walking shoes with good grip are recommended."
+      "source_en": "Walking shoes with good grip are recommended.",
+      "tm": "Рекомендуется обувь для ходьбы с хорошим сцеплением."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Moderate overall, and manageable for most guests"
+      "source_en": "Moderate overall, and manageable for most guests",
+      "tm": "В целом средняя нагрузка, посильная для большинства гостей"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Weather and Closure Adjustments"
+      "source_en": "Weather and Closure Adjustments",
+      "tm": "Корректировки из-за погоды и закрытий"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Light rain: the tour usually runs as planned."
+      "source_en": "Light rain: the tour usually runs as planned.",
+      "tm": "Небольшой дождь: тур обычно проходит по плану."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "If Road 1100 is closed due to heavy snow, heavy rain, or icing: 1100 Highland may be adjusted to an indoor alternative (e.g., the Jeju National Museum)."
+      "source_en": "If Road 1100 is closed due to heavy snow, heavy rain, or icing: 1100 Highland may be adjusted to an indoor alternative (e.g., the Jeju National Museum).",
+      "tm": "Если дорога 1100 закрыта из-за сильного снегопада, ливня или гололёда: Высокогорье 1100 может быть заменено на вариант под крышей (например, Национальный музей Чеджу)."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "In strong wind: time at Jusangjeolli, Aewol, or Iho Tewoo may be shortened."
+      "source_en": "In strong wind: time at Jusangjeolli, Aewol, or Iho Tewoo may be shortened.",
+      "tm": "При сильном ветре: время в Чусанджолли, Эволе или Ихо Тхэу может быть сокращено."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "If the weather worsens in the afternoon: a larger share of the afternoon may be spent at O'Sulloc."
+      "source_en": "If the weather worsens in the afternoon: a larger share of the afternoon may be spent at O'Sulloc.",
+      "tm": "Если погода ухудшается во второй половине дня: большая часть послеобеденного времени может пройти в O'Sulloc."
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "If a particular stop is closed: an alternative stop may be used."
+      "source_en": "If a particular stop is closed: an alternative stop may be used.",
+      "tm": "Если конкретная остановка закрыта: может быть использована альтернативная остановка."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "The tour usually runs, with changes if needed"
+      "source_en": "The tour usually runs, with changes if needed",
+      "tm": "Тур обычно проходит, при необходимости с изменениями"
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to Wear and Bring"
+      "source_en": "What to Wear and Bring",
+      "tm": "Что надеть и взять с собой"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Shoes with good grip"
+      "source_en": "Shoes with good grip",
+      "tm": "Обувь с хорошим сцеплением"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Layered clothing for mountain and coastal temperature differences"
+      "source_en": "Layered clothing for mountain and coastal temperature differences",
+      "tm": "Одежда слоями из-за разницы температур в горах и на побережье"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "A light windbreaker"
+      "source_en": "A light windbreaker",
+      "tm": "Лёгкая ветровка"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Hat and sunscreen"
+      "source_en": "Hat and sunscreen",
+      "tm": "Головной убор и солнцезащитный крем"
     },
     "/practicalAccordionItems/3/content/4": {
-      "source_en": "Water bottle"
+      "source_en": "Water bottle",
+      "tm": "Бутылка воды"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Good shoes, layers, and a light jacket"
+      "source_en": "Good shoes, layers, and a light jacket",
+      "tm": "Хорошая обувь, одежда слоями и лёгкая куртка"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "What’s Included / Not Included"
+      "source_en": "What’s Included / Not Included",
+      "tm": "Что включено и что не включено"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "English-speaking guide"
+      "source_en": "English-speaking guide",
+      "tm": "Англоговорящий гид"
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Small-group vehicle"
+      "source_en": "Small-group vehicle",
+      "tm": "Транспорт для малой группы"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Jeju City area hotel pickup and drop-off"
+      "source_en": "Jeju City area hotel pickup and drop-off",
+      "tm": "Посадка и высадка у отелей в районе города Чеджу"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "All admission tickets"
+      "source_en": "All admission tickets",
+      "tm": "Все входные билеты"
     },
     "/practicalAccordionItems/4/content/4": {
-      "source_en": "Bottled water"
+      "source_en": "Bottled water",
+      "tm": "Бутилированная вода"
     },
     "/practicalAccordionItems/4/content/5": {
-      "source_en": "Lunch (pay on site)"
+      "source_en": "Lunch (pay on site)",
+      "tm": "Обед (оплата на месте)"
     },
     "/practicalAccordionItems/4/content/6": {
-      "source_en": "Personal shopping expenses"
+      "source_en": "Personal shopping expenses",
+      "tm": "Личные расходы на покупки"
     },
     "/practicalAccordionItems/4/content/7": {
-      "source_en": "Guide gratuities"
+      "source_en": "Guide gratuities",
+      "tm": "Чаевые гиду"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Guide, vehicle, pickup, and admission included"
+      "source_en": "Guide, vehicle, pickup, and admission included",
+      "tm": "Гид, транспорт, посадка и входные билеты включены"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Cancellation",
+      "tm": "Отмена"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     }
   },
   "glossaryTokens": {
@@ -297,5 +401,5 @@
       "⟦G0⟧": "Улица кафе Эволь"
     }
   },
-  "tmHits": 0
+  "tmHits": 92
 }

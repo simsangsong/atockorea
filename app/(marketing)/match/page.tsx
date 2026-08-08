@@ -11,6 +11,7 @@
  * plan (P3 — p3-positioning).
  */
 
+import { toTourProductBaseLocale } from "@/lib/tour-product/tourProductPageLocale";
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -193,7 +194,7 @@ export default function MatchPage() {
 
   const winner = result?.winner ?? null;
   const winnerProduct = useMemo(
-    () => (winner ? getStaticTourProductBySlug(winner.product_id, toTourProductPageLocale(locale)) : undefined),
+    () => (winner ? getStaticTourProductBySlug(winner.product_id, toTourProductBaseLocale(locale)) : undefined),
     [winner, locale],
   );
   const winnerMediaSlugs = useMemo(

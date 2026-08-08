@@ -1,0 +1,248 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A1",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "ru",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Busan Cruise Shore Excursion · Coastal Bus Tour | AtoC Korea"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Busan Cruise Shore Excursion: Coastal Bus Tour | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Large-coach Busan coastal day tour for cruise passengers: 9 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
+    },
+    "/seo/metaDescription": {
+      "source_en": "8-hour Busan coastal bus tour for cruise passengers from Busan Port Cruise Terminal: Yonggungsa, UN Memorial, Jagalchi/BIFF/Gukje, Gamcheon, Songdo, Yongdusan — return guaranteed before sail-away."
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Busan cruise shore excursion"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Busan bus tour cruise"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Busan cruise day tour",
+      "tm": "однодневная экскурсия по Пусану для круизных гостей"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Gamcheon cruise tour"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Yonggungsa cruise tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "9 stops",
+      "tm": "9 остановок"
+    },
+    "/hero/meta/region": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 8 hours, timed to your cruise's port-call window"
+    },
+    "/hero/pills/0": {
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
+    },
+    "/hero/pills/1": {
+      "source_en": "Coastal route"
+    },
+    "/hero/pills/2": {
+      "source_en": "Bus tour"
+    },
+    "/hero/tagline": {
+      "source_en": "Eight Busan signatures on a large coach — picked up at your cruise terminal and returned with comfortable buffer before sail-away"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Duration",
+      "tm": "Продолжительность"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "8 hours",
+      "tm": "8 часов"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Very High",
+      "tm": "Очень высокая"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Scenery",
+      "tm": "Насыщенность пейзажами"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Good",
+      "tm": "Хорошая"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Challenging",
+      "tm": "Высокая нагрузка"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Moderate",
+      "tm": "Средняя"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Moderate",
+      "tm": "Средняя"
+    },
+    "/glanceItems/6/label": {
+      "source_en": "Pace",
+      "tm": "Темп"
+    },
+    "/glanceItems/6/value": {
+      "source_en": "Brisk"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Обзор"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Детали"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Отзывы"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Bus tour"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "Cruise pickup",
+      "tm": "Сбор для круизных гостей"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Return guaranteed"
+    },
+    "/catalog_card/title": {
+      "source_en": "Busan Cruise Shore: Coastal Bus Tour"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Large coach",
+      "tm": "Большой автобус"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Pickup at port",
+      "tm": "Сбор в порту"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "Return guaranteed"
+    },
+    "/catalog_card/region": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/catalog_card/duration": {
+      "source_en": "8 hours",
+      "tm": "8 часов"
+    },
+    "/catalog_card/imageAlt": {
+      "source_en": "AtoC Korea white tour coach waiting at Busan International Cruise Terminal with a moored cruise liner and a guide welcoming a four-guest party arriving from the ship"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away."
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G7⟧, ⟦G5⟧, ⟦G0⟧, ⟦G6⟧, ⟦G4⟧), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Мемориальное кладбище ООН",
+        "⟦G2⟧ = Хэдон Йонгунса",
+        "⟦G3⟧ = Рынок Чагальчхи",
+        "⟦G4⟧ = Парк Йондусан",
+        "⟦G5⟧ = Рынок Кукче",
+        "⟦G6⟧ = Пляж Сондо",
+        "⟦G7⟧ = Площадь BIFF"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Busan Cruise Shore",
+      "tm": "Берег Пусана для круизных гостей"
+    },
+    "/headlineLine2": {
+      "source_en": "Coastal Bus Tour"
+    },
+    "/pickup_dropoff/primary/name": {
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "tm": "Международный круизный терминал Пусана (영도 크루즈항 — Тонсам, Йондо)"
+    },
+    "/pickup_dropoff/primary/time": {
+      "source_en": "Confirmed at booking (≈30 min after ship docking) / Return ≈90 min before sail-away"
+    },
+    "/pickup_dropoff/primary/address": {
+      "source_en": "Dongsam-dong, Yeongdo-gu, Busan"
+    },
+    "/pickup_dropoff/primary/instructions": {
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Круизные суда в Пусане швартуются к одному из двух терминалов — какой именно ваш, зависит от места стоянки судна и подтверждается при бронировании. Гид встречает вас в зале прибытия."
+    },
+    "/pickup_dropoff/alternates/0/name": {
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+      "tm": "Международный пассажирский терминал порта Пусан (부산항국제여객터미널 — Чорян)"
+    },
+    "/pickup_dropoff/alternates/0/time": {
+      "source_en": "Alternate pickup for ships docking at Choryang"
+    },
+    "/pickup_dropoff/alternates/0/address": {
+      "source_en": "Chungjang-daero 206, Jung-gu, Busan"
+    },
+    "/pickup_dropoff/alternates/0/instructions": {
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Круизные суда в Пусане швартуются к одному из двух терминалов — какой именно ваш, зависит от места стоянки судна и подтверждается при бронировании. Гид встречает вас в зале прибытия."
+    }
+  },
+  "glossaryTokens": {
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Мемориальное кладбище ООН",
+      "⟦G2⟧": "Хэдон Йонгунса",
+      "⟦G3⟧": "Рынок Чагальчхи",
+      "⟦G4⟧": "Парк Йондусан",
+      "⟦G5⟧": "Рынок Кукче",
+      "⟦G6⟧": "Пляж Сондо",
+      "⟦G7⟧": "Площадь BIFF"
+    }
+  },
+  "tmHits": 35
+}

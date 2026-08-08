@@ -1,0 +1,1145 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:B",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "ru",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Terminal to the coast",
+      "tm": "От терминала к побережью"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 1 hr 35 min",
+      "tm": "≈ 1 час 35 мин"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Cruise terminal pickup at 09:00 with a disembarkation buffer, then northeast along the coast to ⟦G0⟧ for a 09:45 arrival — ahead of the tour-bus surge that builds from mid-morning.",
+      "tm": "Сбор у круизного терминала в 09:00 с запасом на сход с судна, затем на северо-восток вдоль побережья к ⟦G0⟧ с прибытием в 09:45 — до наплыва экскурсионных автобусов, который нарастает ближе к середине утра.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Memorial and lunch",
+      "tm": "Мемориал и обед"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 1 hr 40 min",
+      "tm": "≈ 1 час 40 мин"
+    },
+    "/routePhases/1/description": {
+      "source_en": "⟦G0⟧ (30 min) for Korean War context, then a Busan-specific lunch — dwaeji-gukbap or milmyeon — at your own expense.",
+      "tm": "⟦G0⟧ (30 мин) ради контекста Корейской войны, затем типично пусанский обед — тведжи-кукпап или мильмён — за свой счёт.",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Nampo-dong on foot",
+      "tm": "Нампходон пешком"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 1 hr 25 min",
+      "tm": "≈ 1 час 25 мин"
+    },
+    "/routePhases/2/description": {
+      "source_en": "⟦G0⟧, ⟦G2⟧ and ⟦G1⟧ are three separate stops within about 600 m of each other, so the middle of the day is walked rather than driven.",
+      "tm": "⟦G0⟧, ⟦G2⟧ и ⟦G1⟧ — три отдельные остановки в пределах примерно 600 м друг от друга, поэтому середина дня проходит пешком, а не на колёсах.",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи",
+        "⟦G1⟧ = Рынок Кукче",
+        "⟦G2⟧ = Площадь BIFF"
+      ]
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Gamcheon hillside",
+      "tm": "Склон Камчхона"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 1 hr 5 min",
+      "tm": "≈ 1 час 5 мин"
+    },
+    "/routePhases/3/description": {
+      "source_en": "⟦G0⟧ (45 min) for the painted-house panorama, reached by a short transfer from Nampo-dong.",
+      "tm": "⟦G0⟧ (45 мин) ради панорамы расписанных домов, куда ведёт короткий переезд из Нампходона.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/routePhases/4/phase": {
+      "source_en": "Songdo and the return",
+      "tm": "Сондо и возвращение"
+    },
+    "/routePhases/4/duration": {
+      "source_en": "≈ 1 hr 35 min",
+      "tm": "≈ 1 час 35 мин"
+    },
+    "/routePhases/4/description": {
+      "source_en": "Songdo Cloud Trails skywalk, then Sky Park across the bay if you choose the cable car, and ⟦G0⟧ before the drive back — at the terminal by 17:00, and always timed to your ship's all-aboard.",
+      "tm": "Скайвок Songdo Cloud Trails, затем Sky Park на другой стороне залива, если выберете канатную дорогу, и ⟦G0⟧ перед обратной дорогой — к терминалу к 17:00 и всегда с расчётом на время посадки на ваше судно.",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Храм ⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 1",
+      "tm": "⟦G0⟧ в Корее — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 1",
+      "tm": "⟦G0⟧ в Корее — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ в Корее",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 1",
+      "tm": "Скайвок Songdo Cloud Trails — изображение галереи 1"
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "Songdo Cloud Trails Skywalk — photo 1",
+      "tm": "Скайвок Songdo Cloud Trails — фото 1"
+    },
+    "/galleryItems/6/location": {
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Скайвок Songdo Cloud Trails"
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "Songdo Sky Park (Amnam Park) — on-route photo",
+      "tm": "Songdo Sky Park (парк Амнам) — фото по пути"
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (парк Амнам)"
+    },
+    "/galleryItems/7/location": {
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (парк Амнам)"
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 1",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — изображение галереи 1",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 1",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — фото 1",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ и Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Храм ⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Храм ⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/10/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Храм ⟦G0⟧ — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/11/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Храм ⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/12/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/13/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Храм ⟦G0⟧ — изображение галереи 6",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/13/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Храм ⟦G0⟧ — фото 6",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/13/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/galleryItems/14/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 2",
+      "tm": "⟦G0⟧ в Корее — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/14/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 2",
+      "tm": "⟦G0⟧ в Корее — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/14/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ в Корее",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/15/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "tm": "⟦G0⟧ в Корее — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/15/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 3",
+      "tm": "⟦G0⟧ в Корее — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/15/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ в Корее",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/galleryItems/16/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/16/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/17/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/18/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/18/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/19/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — изображение галереи 5",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/19/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — фото 5",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/19/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/20/alt": {
+      "source_en": "⟦G0⟧ — gallery image 6",
+      "tm": "⟦G0⟧ — изображение галереи 6",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/20/caption": {
+      "source_en": "⟦G0⟧ — photo 6",
+      "tm": "⟦G0⟧ — фото 6",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/20/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/21/alt": {
+      "source_en": "⟦G0⟧ — gallery image 7",
+      "tm": "⟦G0⟧ — изображение галереи 7",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/21/caption": {
+      "source_en": "⟦G0⟧ — photo 7",
+      "tm": "⟦G0⟧ — фото 7",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/21/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/22/alt": {
+      "source_en": "⟦G0⟧ — gallery image 8",
+      "tm": "⟦G0⟧ — изображение галереи 8",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/22/caption": {
+      "source_en": "⟦G0⟧ — photo 8",
+      "tm": "⟦G0⟧ — фото 8",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/22/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/23/alt": {
+      "source_en": "⟦G0⟧ — gallery image 9",
+      "tm": "⟦G0⟧ — изображение галереи 9",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/23/caption": {
+      "source_en": "⟦G0⟧ — photo 9",
+      "tm": "⟦G0⟧ — фото 9",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/23/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/24/alt": {
+      "source_en": "⟦G0⟧ — gallery image 10",
+      "tm": "⟦G0⟧ — изображение галереи 10",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/24/caption": {
+      "source_en": "⟦G0⟧ — photo 10",
+      "tm": "⟦G0⟧ — фото 10",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/24/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/25/alt": {
+      "source_en": "⟦G0⟧ — gallery image 11",
+      "tm": "⟦G0⟧ — изображение галереи 11",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/25/caption": {
+      "source_en": "⟦G0⟧ — photo 11",
+      "tm": "⟦G0⟧ — фото 11",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/25/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/26/alt": {
+      "source_en": "⟦G0⟧ — gallery image 12",
+      "tm": "⟦G0⟧ — изображение галереи 12",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/26/caption": {
+      "source_en": "⟦G0⟧ — photo 12",
+      "tm": "⟦G0⟧ — фото 12",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/26/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/galleryItems/27/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/27/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/27/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/28/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/28/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/28/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/29/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — изображение галереи 4",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/29/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — фото 4",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/29/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Площадь BIFF"
+      ]
+    },
+    "/galleryItems/30/alt": {
+      "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — фото по пути",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/30/caption": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/30/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Рынок Кукче"
+      ]
+    },
+    "/galleryItems/31/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/31/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/31/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/32/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/32/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/32/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/galleryItems/33/alt": {
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 2",
+      "tm": "Скайвок Songdo Cloud Trails — изображение галереи 2"
+    },
+    "/galleryItems/33/caption": {
+      "source_en": "Songdo Cloud Trails Skywalk — photo 2",
+      "tm": "Скайвок Songdo Cloud Trails — фото 2"
+    },
+    "/galleryItems/33/location": {
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Скайвок Songdo Cloud Trails"
+    },
+    "/galleryItems/34/alt": {
+      "source_en": "Songdo Sky Park (Amnam Park) — on-route photo",
+      "tm": "Songdo Sky Park (парк Амнам) — фото по пути"
+    },
+    "/galleryItems/34/caption": {
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (парк Амнам)"
+    },
+    "/galleryItems/34/location": {
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (парк Амнам)"
+    },
+    "/galleryItems/35/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 2",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — изображение галереи 2",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/35/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 2",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — фото 2",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/35/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ и Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/36/alt": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 3",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — изображение галереи 3",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/36/caption": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 3",
+      "tm": "⟦G0⟧ и Busan Diamond Tower — фото 3",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    },
+    "/galleryItems/36/location": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ и Busan Diamond Tower",
+      "glossary": [
+        "⟦G0⟧ = Парк Йондусан"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/routePhases/1/description": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/routePhases/2/description": {
+      "⟦G0⟧": "Рынок Чагальчхи",
+      "⟦G1⟧": "Рынок Кукче",
+      "⟦G2⟧": "Площадь BIFF"
+    },
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/routePhases/4/description": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/10/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/10/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/10/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/11/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/11/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/11/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/12/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/12/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/12/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/13/alt": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/13/caption": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/13/location": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/galleryItems/14/alt": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/14/caption": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/14/location": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/15/alt": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/15/caption": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/15/location": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/galleryItems/16/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/16/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/16/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/17/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/17/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/17/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/18/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/18/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/18/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/19/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/19/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/19/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/20/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/20/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/20/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/21/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/21/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/21/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/22/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/22/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/22/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/23/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/23/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/23/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/24/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/24/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/24/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/25/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/25/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/25/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/26/alt": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/26/caption": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/26/location": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/galleryItems/27/alt": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/27/caption": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/27/location": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/28/alt": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/28/caption": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/28/location": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/29/alt": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/29/caption": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/29/location": {
+      "⟦G0⟧": "Площадь BIFF"
+    },
+    "/galleryItems/30/alt": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/30/caption": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/30/location": {
+      "⟦G0⟧": "Рынок Кукче"
+    },
+    "/galleryItems/31/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/31/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/31/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/32/alt": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/32/caption": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/32/location": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/galleryItems/35/alt": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/35/caption": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/35/location": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/36/alt": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/36/caption": {
+      "⟦G0⟧": "Парк Йондусан"
+    },
+    "/galleryItems/36/location": {
+      "⟦G0⟧": "Парк Йондусан"
+    }
+  },
+  "tmHits": 126
+}

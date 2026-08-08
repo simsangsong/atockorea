@@ -2,7 +2,8 @@ import { cookies } from "next/headers";
 import { TOUR_PRODUCT_PAGE_LOCALES, type TourProductPageLocale } from "./tourProductPageLocale";
 
 export type { TourProductPageLocale };
-export { toTourProductPageLocale } from "./tourProductPageLocale";
+export type { TourProductBaseLocale } from "./tourProductPageLocale";
+export { toTourProductPageLocale, toTourProductBaseLocale } from "./tourProductPageLocale";
 
 const ALLOWED = TOUR_PRODUCT_PAGE_LOCALES;
 

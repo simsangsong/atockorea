@@ -7,31 +7,39 @@
   "tier": "A2",
   "segments": {
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar-May)"
+      "source_en": "Spring (Mar-May)",
+      "tm": "Primavera (mar.-mag.)"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Seoraksan azaleas and forsythia bloom late April; the East Sea coast is fresh and uncrowded. The most comfortable temperatures for the long coach day."
+      "source_en": "Seoraksan azaleas and forsythia bloom late April; the East Sea coast is fresh and uncrowded. The most comfortable temperatures for the long coach day.",
+      "tm": "Le azalee e le forsizie del Seoraksan fioriscono a fine aprile; la costa del mare dell’Est è fresca e poco affollata. Sono le temperature più comode per questa lunga giornata in pullman."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun-Aug)"
+      "source_en": "Summer (Jun-Aug)",
+      "tm": "Estate (giu.-ago.)"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Lush green Seoraksan trails and Naksansa's pine-shaded paths; ⟦G0⟧ is in full swimming season (though this tour is a walking stop). July monsoon rain may shorten Seoraksan time.",
+      "tm": "Sentieri del Seoraksan di un verde rigoglioso e viali ombreggiati dai pini a Naksansa; la ⟦G0⟧ è in piena stagione di balneazione (anche se in questo tour è una tappa di passeggiata). Le piogge monsoniche di luglio possono accorciare il tempo al Seoraksan.",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Naksan"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep-Nov)"
+      "source_en": "Autumn (Sep-Nov)",
+      "tm": "Autunno (set.-nov.)"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Korea's signature season — Seoraksan's mid-October to early-November foliage is world-famous, and the clear autumn light is ideal for Naksansa above the sea. Highest demand; book 2+ weeks ahead."
+      "source_en": "Korea's signature season — Seoraksan's mid-October to early-November foliage is world-famous, and the clear autumn light is ideal for Naksansa above the sea. Highest demand; book 2+ weeks ahead.",
+      "tm": "La grande stagione coreana: il foliage del Seoraksan, dalla metà di ottobre ai primi di novembre, è famoso nel mondo, e la luce limpida dell’autunno è ideale per Naksansa sopra il mare. È il periodo più richiesto; prenoti 2 settimane o più in anticipo."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec-Feb)"
+      "source_en": "Winter (Dec-Feb)",
+      "tm": "Inverno (dic.-feb.)"
     },
     "/seasonalVariations/3/description": {
       "source_en": "Snow on Seoraksan's granite peaks and a quiet, dramatic East Sea coast. ⟦G0⟧ is a famous New Year sunrise spot — the Yangyang Sunrise Festival pairs a bell-tolling ceremony at Naksansa with fireworks on the beach. Dress warmly.",
+      "tm": "Neve sulle cime di granito del Seoraksan e una costa del mare dell’Est silenziosa e suggestiva. La ⟦G0⟧ è un luogo celebre per la prima alba dell’anno: il festival dell’alba di Yangyang abbina una cerimonia di suono della campana a Naksansa a uno spettacolo di fuochi d’artificio sulla spiaggia. Si vesta in modo caldo.",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Naksan"
       ]
@@ -41,7 +49,8 @@
       "tm": "Conferma immediata"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with pickup point selection"
+      "source_en": "Booking confirmation with pickup point selection",
+      "tm": "Conferma di prenotazione con scelta del punto di ritrovo"
     },
     "/bookingSupportSteps/0/timing": {
       "source_en": "Immediately",
@@ -49,77 +58,96 @@
     },
     "/bookingSupportSteps/0/description": {
       "source_en": "Instant booking confirmation with Hongik/⟦G0⟧ pickup point selection. Please confirm your Monday or Thursday departure date.",
+      "tm": "Conferma di prenotazione immediata, con scelta del punto di ritrovo fra Hongik e ⟦G0⟧. La preghiamo di confermare la data di partenza, un lunedì o un giovedì.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Pickup Details"
+      "source_en": "Pickup Details",
+      "tm": "Dettagli del ritrovo"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Exact pickup location and vehicle info via WhatsApp/SMS"
+      "source_en": "Exact pickup location and vehicle info via WhatsApp/SMS",
+      "tm": "Luogo esatto del ritrovo e informazioni sul veicolo via WhatsApp o SMS"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "Day before"
+      "source_en": "Day before",
+      "tm": "Il giorno prima"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Weather check, coach plate number, and any seasonal route notes (Seoraksan foliage peak, winter conditions) sent the day before."
+      "source_en": "Weather check, coach plate number, and any seasonal route notes (Seoraksan foliage peak, winter conditions) sent the day before.",
+      "tm": "Verifica meteo, targa del pullman ed eventuali note stagionali sull’itinerario (culmine del foliage al Seoraksan, condizioni invernali) inviate il giorno prima."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Pickup Confirmation"
+      "source_en": "Pickup Confirmation",
+      "tm": "Conferma del ritrovo"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Guide identification at pickup point ahead of departure"
+      "source_en": "Guide identification at pickup point ahead of departure",
+      "tm": "Identificazione della guida al punto di ritrovo prima della partenza"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Morning of"
+      "source_en": "Morning of",
+      "tm": "La mattina stessa"
     },
     "/bookingSupportSteps/2/description": {
       "source_en": "The guide waits at Starbucks Hongik Exit 8 from ~06:50 and at ⟦G0⟧ Exit 2 (NorthFace) from ~07:20.",
+      "tm": "La guida attende allo Starbucks di Hongik uscita 8 dalle ~06:50 e a ⟦G0⟧ uscita 2 (NorthFace) dalle ~07:20.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "On-tour Support"
+      "source_en": "On-tour Support",
+      "tm": "Assistenza durante il tour"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Guide narration at each stop + ops support"
+      "source_en": "Guide narration at each stop + ops support",
+      "tm": "Commenti della guida a ogni tappa + assistenza operativa"
     },
     "/bookingSupportSteps/3/timing": {
       "source_en": "During tour",
       "tm": "Durante il tour"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Guide commentary on Seoraksan's Silla-era Sinheungsa Temple, Naksansa's 671 CE founding and 2005 reconstruction, and the Yangyang coast's sunrise tradition."
+      "source_en": "Guide commentary on Seoraksan's Silla-era Sinheungsa Temple, Naksansa's 671 CE founding and 2005 reconstruction, and the Yangyang coast's sunrise tradition.",
+      "tm": "Commenti della guida sul tempio Sinheungsa del Seoraksan, di epoca Silla, sulla fondazione di Naksansa nel 671 d.C. e sulla sua ricostruzione del 2005, e sulla tradizione dell’alba sulla costa di Yangyang."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Two Drop-off Points"
+      "source_en": "Two Drop-off Points",
+      "tm": "Due punti di rientro"
     },
     "/bookingSupportSteps/4/detail": {
       "source_en": "⟦G0⟧ ~18:45 / Hongik ~19:15",
+      "tm": "⟦G0⟧ ~18:45 / Hongik ~19:15",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "End of day"
+      "source_en": "End of day",
+      "tm": "Fine giornata"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "The coach drops at both pickup points in reverse order on return."
+      "source_en": "The coach drops at both pickup points in reverse order on return.",
+      "tm": "Al rientro il pullman serve entrambi i punti di ritrovo, in ordine inverso."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Review & Follow-up"
+      "source_en": "Review & Follow-up",
+      "tm": "Recensione e seguito"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Optional post-tour review"
+      "source_en": "Optional post-tour review",
+      "tm": "Recensione facoltativa dopo il tour"
     },
     "/bookingSupportSteps/5/timing": {
       "source_en": "After tour",
       "tm": "Dopo il tour"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your stay answered same day."
+      "source_en": "Post-tour feedback request sent; restaurant or attraction recommendations for the rest of your stay answered same day.",
+      "tm": "Dopo il tour Le viene inviata una richiesta di riscontro; le richieste di consigli su ristoranti o luoghi da visitare per il resto del soggiorno ricevono risposta lo stesso giorno."
     },
     "/practicalWeatherStatic/today/label": {
       "source_en": "See seasonal notes",
@@ -147,5 +175,5 @@
       "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 6
+  "tmHits": 34
 }

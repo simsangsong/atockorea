@@ -1,0 +1,265 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:ru:A1",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "ru",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Busan Sea Temple, Sky Capsule & Culture Villages Small-Group Tour | AtoC"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Busan Small-Group Tour: Yonggungsa, Sky Capsule, Gamcheon | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Busan small-group day tour: ⟦G1⟧ → Cheongsapo Daritdol Observatory → Blueline Park Sky Capsule (ticket included/excluded — your choice) → lunch → ⟦G0⟧ → Dakbatgol Mural Village & wish-stairs monorail.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "9-hour Busan small-group day tour, hotel pickup: ⟦G1⟧ Temple, Cheongsapo Daritdol glass skywalk, Blueline Sky Capsule (ticket optional), ⟦G0⟧, Dakbatgol mural village & monorail.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Busan small group tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Blueline Park Sky Capsule"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Cheongsapo Daritdol Observatory"
+    },
+    "/hero/meta/stops": {
+      "source_en": "9 stops",
+      "tm": "9 остановок"
+    },
+    "/hero/meta/region": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 9 hours (09:00 hotel pickup, ≈ 17:50 last central drop)"
+    },
+    "/hero/pills/0": {
+      "source_en": "Small group",
+      "tm": "Малая группа"
+    },
+    "/hero/pills/1": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/hero/pills/2": {
+      "source_en": "First-time friendly"
+    },
+    "/hero/tagline": {
+      "source_en": "Busan's seaside temple at its quiet hour, a glass skywalk over the sea, a pastel capsule ride down the coast, and two hillside villages — one famous, one still local"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High",
+      "tm": "Высокий"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery",
+      "tm": "Насыщенность пейзажами"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Good",
+      "tm": "Хорошая"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Challenging",
+      "tm": "Высокая нагрузка"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Средняя"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Good",
+      "tm": "Хорошая"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Темп"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Обзор"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Practical"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "Reviews",
+      "tm": "Отзывы"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Booking"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Small group",
+      "tm": "Малая группа"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "Sky Capsule"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "Coastal"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Culture villages"
+    },
+    "/catalog_card/tags/5": {
+      "source_en": "First-time friendly"
+    },
+    "/catalog_card/title": {
+      "source_en": "Busan Small-Group: Sea Temple, Sky Capsule & Culture Villages"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Small group",
+      "tm": "Малая группа"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Sky Capsule"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "Coastal"
+    },
+    "/catalog_card/badges/4": {
+      "source_en": "Culture villages"
+    },
+    "/catalog_card/region": {
+      "source_en": "Busan",
+      "tm": "Пусан"
+    },
+    "/catalog_card/duration": {
+      "source_en": "≈ 9 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Small-group day tour of Busan's coastal icons and hillside villages — ⟦G1⟧ seaside temple, the Cheongsapo Daritdol glass skywalk, the Blueline Park Sky Capsule ride (ticket optional at booking), ⟦G0⟧, and the quiet Dakbatgol mural village with its wish-stairs monorail.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A small-group Busan day built around the coast and the hillside villages: ⟦G1⟧ seaside temple in its quiet morning window, the free glass-floor Daritdol Observatory at Cheongsapo, the Blueline Park Sky Capsule ride from Cheongsapo to Mipo (ticket included or excluded — choose at booking), lunch, ⟦G0⟧, and the little-known Dakbatgol mural village where a free monorail glides up the 'wish stairs'. Every anchor except the optional capsule is free admission.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Sea Temple, Sky Capsule"
+    },
+    "/headlineLine2": {
+      "source_en": "& Culture Villages"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Pickup is door-to-door at your central Busan hotel between 09:00 and 10:00; the exact time is confirmed the evening before. Drop-offs are at four central points in sequence (Nampo-dong → Busan Station → Seomyeon → Haeundae, ≈ 17:10–18:20) — tell the guide during the afternoon which one you want."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Nampo-dong / Jagalchi area"
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Busan Station (Exit 4)"
+    },
+    "/pickup_dropoff/return/2/name": {
+      "source_en": "Seomyeon Station (Exit 4)"
+    },
+    "/pickup_dropoff/return/3/name": {
+      "source_en": "Haeundae Station (Exit 5)"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Your downtown Busan hotel (door-to-door)"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Door-to-door pickup at hotels in central Busan — Seomyeon, Nampo-dong / Busan Station, Haeundae / Marine City. Your exact time is confirmed the evening before."
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "человек"
+    }
+  },
+  "glossaryTokens": {
+    "/seo/description": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Хэдон Йонгунса"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Хэдон Йонгунса"
+    },
+    "/seo/primaryKeywords/1": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/seo/primaryKeywords/3": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/catalog_card/subtitle": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Хэдон Йонгунса"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Хэдон Йонгунса"
+    }
+  },
+  "tmHits": 28
+}

@@ -1,0 +1,306 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:fr:B",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "fr",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Séoul → Seoraksan"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 3.5 hours"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Pickup at 06:00 Hongik / 06:30 ⟦G0⟧, then a ~3-hour drive northeast on the Seoul-Yangyang Expressway with one comfort stop, arriving at the Sogongwon entrance around 09:30.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Seoraksan",
+      "tm": "Seoraksan"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 heures"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Self-guided time at the Sogongwon entrance: the Tongildaebul bronze Buddha, Sinheungsa Temple, and the lower valley paths under snow. The cable car is not included and runs only when wind and ice allow."
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Lunch → Nami Island"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 heures"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Lunch near Sokcho (own expense), then the ~2-hour drive back west to Gapyeong Wharf and the five-minute ferry to Nami Island for two hours among the frosted metasequoia avenues."
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Eobi Valley → Seoul"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 2.5 hours",
+      "tm": "≈ 2,5 heures"
+    },
+    "/routePhases/3/description": {
+      "source_en": "Forty minutes south to Eobi Valley for the ice wall in late-afternoon light, then the ~1.5-hour run into Seoul — ⟦G0⟧ around 19:00, Hongik around 19:30.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — image de galerie 1",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — image de galerie 1",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — image de galerie 2",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/2/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — image de galerie 3",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — image de galerie 4",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — image de galerie 2",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — image de galerie 3",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ — gallery image 4",
+      "tm": "⟦G0⟧ — image de galerie 4",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ — photo 4",
+      "tm": "⟦G0⟧ — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Île de Nami (Namiseom)"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/2/alt": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/2/caption": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/2/location": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Île de Nami (Namiseom)"
+    }
+  },
+  "tmHits": 29
+}
