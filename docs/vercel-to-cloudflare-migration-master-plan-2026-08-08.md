@@ -307,12 +307,28 @@ export default defineCloudflareConfig({
 | `STRIPE_WEBHOOK_SECRET` | webhook 서명 검증 | — (Stripe 대시보드에서 언제든 reveal) | 같은 엔드포인트 URL 유지 = 같은 시크릿. 재조회 (b) |
 | `IP_HASH_SALT` | 분석용 IP 해시 | 해시 연속성만 끊김(치명 아님) | 로컬 값 사용 |
 
+### F-5 Vercel 실명단 대사 완료 (✅ 2026-08-08 — 사장님 스크린샷 3장 × 코드 × 로컬 3방향, F-4 뒤에 이어 읽어라)
+
+스크린샷 기준 Vercel 등록 43키(마지막 화면이 목록 끝 — System Env 체크박스 확인. 첫 장 위쪽이 잘렸다면 한 장 추가 필요). **전 키의 회수 경로가 확정됐고, 최후 수단(F-1 ③e)은 불필요해졌다.**
+
+| 그룹 | 키 | 회수 경로 |
+|---|---|---|
+| **평문·열람 가능 17** (눈 아이콘, All Environments) | STRIPE_SECRET_KEY · STRIPE_WEBHOOK_SECRET · SUPABASE_SERVICE_ROLE_KEY · RESEND_API_KEY · RESEND_WEBHOOK_SECRET · RESEND_FROM_EMAIL · ANTHROPIC_API_KEY · GEMINI_API_KEY · LINE_CHANNEL_ID · LINE_CHANNEL_SECRET · GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_SUPABASE_URL · NEXT_PUBLIC_SUPABASE_ANON_KEY · NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY · NEXT_PUBLIC_APP_URL · MAPS_API_KEY | **사장님이 대시보드에서 지금도 reveal 가능** → CF 주입 시 직접 복사(채팅·문서에 값 옮기지 않는다). 로컬 49키와의 동일성 최종 판정은 F-4 기능 테스트. ⚠ "Needs Attention" 뱃지 7개는 Vercel 이 평문 저장된 고가치 시크릿에 다는 권고 표시로 보임(⚠추정) — 이사와 무관 |
+| **sensitive 이지만 로컬 보유** | GROQ · KAKAO_REST · OPENAI · OPS_INBOUND_WEBHOOK_SECRET · CHAT_AUDIT_LOG · IP_HASH_SALT · ADMIN_SUPPORT_API_TOKEN · TELEGRAM 2종 · SLACK_QUOTE_WEBHOOK_URL · WEB_PUSH_CONTACT · CRON_SECRET · NEXT_PUBLIC_TOUR_MODE_V1 · 🔴 OPS_GUIDE_PII_ENC_KEY | `.env.local` 값 사용. PII 키만 F-4 복호화 테스트로 프로덕션 동일성 **필수 판정**. CRON_SECRET 은 어차피 신규 발급(F-1 ③c) |
+| **sensitive + 로컬 없음, 그러나 공개값** | NEXT_PUBLIC_TOUR_OPS_PHONE · NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID · NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY | NEXT_PUBLIC 은 라이브 클라이언트 번들에 그대로 인라인 — **라이브 사이트 JS 에서 그대로 복구 가능**(sensitive 잠금이 무의미한 부류) |
+| **sensitive + 로컬 없음, 운영값** | OPS_ALERT_EMAIL · ADMIN_BOOKING_NOTIFICATION_EMAILS · OPS_INBOUND_ADDRESSES · CHAT_STREAMING | 사장님이 아는 값(메일 주소 3개) + CHAT_STREAMING 은 킬스위치 `"1"`(✅ 코드 확인 — 설정돼 있다는 것 자체가 프로덕션 스트리밍 ON 이라는 뜻 → CF 에도 `1`) |
+| **회수 불가 → 신규 발급으로 확정 2** | TOUR_ROOM_TOKEN_SECRET · WEB_PUSH_VAPID_PRIVATE_KEY | 백업 부재 실측: 문서(2026-07-15)가 말한 `.env.vapid-production.local` 은 **4개 경로 전수 검색에서 부재**(대청소 때 소실 추정). 파급 실측: ① 룸 장문 토큰 — 실발송 0 + 입장은 DB 원장 코드(PR #814)라 죽는 링크 없음 ② 푸시 구독 — **DB 전체 3건**(✅ 라이브 쿼리, 전부 테스트 성격) → 재구독 3기기. **둘 다 신규 발급이 최저비용** — 최후 수단 라우트 불필요 |
+| **죽은 키 2 — 이식 제외** | EB_PUSH_CONTACT(WEB_ 오타 중복 추정 — 코드 참조 0 ✅) · ALLOW_SIM_SEED(서버 코드가 안 읽음 — `scripts/k4-seed.ts` 등 로컬 스크립트 전용 ✅) | — |
+
+추가 확정 2건: **Upstash Redis 미설정**(숨은 인프라 없음 — 프로덕션 레이트리밋은 인스턴스 메모리, 현상 유지) · `OPS_GUIDE_SCHEDULE_TOKEN_SECRET`/`AGENT_QUOTE_SECRET` **프로덕션에도 미설정**(dev 폴백으로 동작 중 — CF 에서도 미설정이 동작 보존. 진짜 시크릿 승격은 이사 후 별도 티켓).
+로컬에만 있고 Vercel 에 없는 나머지(사진 소싱 키 8종·KAKAO_MOBILITY·JEJU_UPSERT 등)는 **스크립트 전용** — 워커에 넣지 않는다.
+
 ### F-4 검증 — 값을 눈으로 비교하지 않고 판정하는 법
 
 - 🔴 **PII 키:** 라이브 DB 의 암호화된 가이드 PII 1행을 **로컬 키로 복호화하는 스크립트** → 성공=로컬 값이 프로덕션과 동일 확정 / 실패=불일치 조기 발견(조용한 데이터 손실을 이사 전에 잡는다)
-- **VAPID:** 라이브 사이트 번들 안의 공개키 문자열 vs 로컬 `NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY` 대조(공개값이라 안전)
+- ~~**VAPID:** 라이브 번들 공개키 vs 로컬 대조~~ → **F-5 로 종결** — 프로덕션 키쌍은 로컬과 다른 별도 생성본이었고(2026-07-15 문서) 백업 파일 소실 → **신규 발급 확정**(구독 3건 재등록)
 - **Stripe/Supabase/Resend 등:** 스테이징 워커에서 기능 호출 1건씩(PI 목록 조회·서비스롤 쿼리·테스트 발송) — §I 스모크가 곧 키 검증
-- **토큰 시크릿:** 라이브에서 발급된 룸 토큰 1개를 스테이징 워커가 검증 성공하는지(성공=값 동일)
+- ~~**토큰 시크릿:** 라이브 토큰 검증 대조~~ → **F-5 로 종결** — 신규 발급 확정(죽는 링크 없음)
 
 ## §G DNS·존 설정
 
