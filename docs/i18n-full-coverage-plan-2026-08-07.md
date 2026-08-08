@@ -571,12 +571,16 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 전세 2종(358+313) · 수원 2종(390+415) · 설악 2종(387+417) · 부산 소그룹(698) = **7슬러그 발행**
 (+ 앞 세션의 gwangmyeong). 전부 커버리지 100% · fail 0 · 문자혼입 0.
 
-🔶 **it 진행 중 — 3/8 발행(2026-08-08).** 부산 전세(358) · 서울근교 10hr(313) · 수원 광명동굴(430).
-전부 커버리지 100% · fail 0 · 문자혼입 0. 🔴 **남은 5슬러그(DB 로 잰 값):**
-`seoul-suwon-hwaseong-waujeongsa-starfield`(390 세그 · **in/ 재추출 완료**) →
-`seoul-suwon-hwaseong-folk-village-starfield-library` → `seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` →
-`seoul-seoraksan-nami-island-morning-calm-day-tour` → `busan-small-group-sightseeing-tour-cruise-passengers`(698).
-**수원 와우정사부터 재개하라** — 입력이 이미 `in/` 에 있고 TM 181/390 이 채워져 있다.
+🔶 **it 진행 중 — 5/8 발행(2026-08-08).** 부산 전세(358) · 서울근교 10hr(313) · 수원 광명동굴(430) ·
+수원 와우정사(390) · 수원 민속촌(415). 전부 커버리지 100% · fail 0 · 문자혼입 0.
+**수원 3종이 끝났으니 다음은 설악 2종 → 부산 크루즈다.** 🔴 **남은 3슬러그:**
+`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip`(387 세그) →
+`seoul-seoraksan-nami-island-morning-calm-day-tour`(417) →
+`busan-small-group-sightseeing-tour-cruise-passengers`(698 · 가장 큼, 마지막에).
+🔴 **설악 2종은 형제다** — 낙산사를 먼저 하고 남이섬을 재추출하면 TM 이 크게 붙는다(fr 실측 193/417).
+
+✅ **수원 민속촌이 슬러그군 배치의 값을 재확인했다 — TM 279/415(67%), fr 과 같은 수치.**
+같은 이득이 로케일을 바꿔도 재현된다. 크기순으로 갔으면 흩어졌을 값이다.
 
 ### 🔴 이탈리아어 관례 (2026-08-08, S17 3슬러그에서 확정)
 
@@ -601,8 +605,14 @@ tempio sul mare · villaggio dei murales · mercato del pesce · crocierista · 
 
 🔴 **it 에서 fail 이 난 것은 전부 「숫자를 낱말로 풀어쓴」 자리다 — 3슬러그 연속.**
 `each hour past 9`→`oltre la nona` (3건) · `adult 1-day`→`biglietto giornaliero` ·
-`60th-birthday`→`sessantesimo compleanno` (2건). 해법은 서수를 숫자로:
-**`oltre le 9 ore` · `biglietto di 1 giorno` · `60° compleanno` · `2ª generazione` · `3° tunnel` · `19° posto`.**
+`60th-birthday`→`sessantesimo compleanno` (2건) · `Tour 3`→`terzo tour` (2건) ·
+`1 km`→`il chilometro` (2건). 해법은 서수·수량을 숫자로:
+**`oltre le 9 ore` · `biglietto di 1 giorno` · `60° compleanno` · `2ª generazione` · `3° tunnel` ·
+`19° posto` · `tour 3` · `il tratto di 1 km`.**
+⚠ **반대로 세기 서수는 안전하다** — `20th-century`→`del XX secolo`, `21st-century`→`del XXI secolo` 는
+게이트가 로마 숫자로 흡수한다. **맨 서수만 숫자를 지켜라.**
+🔴 **`1 km` 두 건은 fr 이 같은 슬러그에서 실패한 것과 같은 문장이다**(민속촌 `whyOnRoute`·`staticQuestions/10`).
+**원문 한 문장이 로망스어 둘을 같은 자리에서 넘어뜨린다 — ru 도 같은 자리를 의심하라.**
 ⚠ **원문이 낱말이면 낱말로 옮겨도 된다** — `'second-generation'`(따옴표 낱말) → `«seconda generazione»`,
 `2nd-generation`(숫자) → `2ª generazione`. **같은 페이지에 둘 다 있다.**
 
@@ -627,7 +637,7 @@ ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만
 |---|---|---|---|---|
 | **de** | **21/21** | **0** | — | — (+ 구행 7건은 사장님 결정 대기) |
 | **fr** | **21/21** | **0** | — | — |
-| **it** | **16/21** | 5 | 55 | ≈192,000 (3슬러그 발행 완료) |
+| **it** | **18/21** | 3 | 36 | ≈122,000 (5슬러그 발행 완료) |
 | **ru** | 13/21 | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
 
 슬러그별(fr 실측 · it/ru 도 ±1% 안):
