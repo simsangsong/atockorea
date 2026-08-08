@@ -41,7 +41,8 @@
       "source_en": "Seoul & Suburbs"
     },
     "/hero/meta/duration": {
-      "source_en": "10 hours"
+      "source_en": "10 hours",
+      "tm": "10 Stunden"
     },
     "/hero/pills/0": {
       "source_en": "Private Vehicle",
@@ -133,7 +134,8 @@
       "tm": "Private Tour"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Fully Customizable"
+      "source_en": "Fully Customizable",
+      "tm": "Frei gestaltbar"
     },
     "/catalog_card/badges/2": {
       "source_en": "Free Seoul Hotel Pickup"
@@ -142,7 +144,8 @@
       "source_en": "Seoul & Suburbs"
     },
     "/catalog_card/duration": {
-      "source_en": "10 hours"
+      "source_en": "10 hours",
+      "tm": "10 Stunden"
     },
     "/catalog_card/subtitle": {
       "source_en": "Design your own day around Seoul or its suburbs with a private licensed driver-guide."
@@ -380,5 +383,5 @@
       "⟦G1⟧": "Insadong"
     }
   },
-  "tmHits": 52
+  "tmHits": 55
 }

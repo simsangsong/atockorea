@@ -7,10 +7,12 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seoul → Seoraksan"
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Seoul → Seoraksan"
     },
     "/routePhases/0/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 Stunden"
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at 06:00 Hongik / 06:30 ⟦G0⟧, then ~2.5-hour drive northeast via Seoul-Yangyang Expressway to arrive Seoraksan by 10:00.",
@@ -22,7 +24,8 @@
       "source_en": "Seoraksan"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 Stunden"
     },
     "/routePhases/1/description": {
       "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and optional cable car to Gwongeumseong or Biseondae streamside walk."
@@ -447,5 +450,5 @@
       "⟦G0⟧": "Garten der Morgenstille"
     }
   },
-  "tmHits": 30
+  "tmHits": 33
 }

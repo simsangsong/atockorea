@@ -15,12 +15,14 @@
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Seaside temple"
+      "source_en": "Seaside temple",
+      "tm": "Tempel am Meer"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧ in Korea",
@@ -33,7 +35,8 @@
       "source_en": "History / Memorial"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch at a local Busan restaurant (own expense)"
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Mittagessen in einem lokalen Restaurant in Busan (auf eigene Kosten)"
     },
     "/routeFlowStops/3/theme": {
       "source_en": "Meal",
@@ -80,19 +83,22 @@
       "source_en": "Culture village / Photo stop"
     },
     "/routeFlowStops/8/name": {
-      "source_en": "Songdo Cloud Trails Skywalk"
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Songdo Cloud Trails Skywalk"
     },
     "/routeFlowStops/8/theme": {
       "source_en": "Coastal skywalk"
     },
     "/routeFlowStops/9/name": {
-      "source_en": "Songdo Sky Park (Amnam Park)"
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (Amnam-Park)"
     },
     "/routeFlowStops/9/theme": {
       "source_en": "Headland park / optional cable car"
     },
     "/routeFlowStops/10/name": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ & Busan Diamond Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
@@ -131,5 +137,5 @@
       "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 8
+  "tmHits": 14
 }

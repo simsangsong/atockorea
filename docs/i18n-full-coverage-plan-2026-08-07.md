@@ -360,6 +360,36 @@ TM 41% 가 그걸 보여줬다. 한 세션에 3종을 **같은 로케일로 묶�
 node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync('i18n-work/manifest.json','utf8'));for(const u of m.units){const f=u.id.replace(/[^\w.-]+/g,'_');if(fs.existsSync('i18n-work/out/tour_product_pages/'+u.locale+'/'+f+'.json'))continue;console.log(u.locale+' '+u.slug+' '+u.chunk+' — 세그먼트 '+u.segments)}"
 ```
 
+🔴 **위 명령은 「번역이 남은 unit」을 센다 — 「발행 가능한 슬러그」가 아니다.** 둘은 다르다(§7 S15c).
+발행 가능 여부는 DB 에만 있으니 착수 전에 이걸 돌려라:
+
+```bash
+# 로케일별로 (매니페스트 슬러그 ∩ 라이브 행) 을 갈라 본다 — 행이 있으면 apply 가 건너뛴다
+cat > .probe.mjs <<'EOF'
+import fs from 'fs';
+import { createClient } from '@supabase/supabase-js';
+// ⚠ 이 워크트리 .env.local 은 SUPABASE_URL 이 없을 수 있다 — 둘 다 받아라(안 그러면 supabaseUrl is required)
+const sb = createClient(process.env.SUPABASE_URL || process.env.NEXT_PUBLIC_SUPABASE_URL, process.env.SUPABASE_SERVICE_ROLE_KEY);
+const IND = 'i18n-work/in/tour_product_pages', per = {};
+for (const f of fs.readdirSync(IND)) {
+  const m = f.match(/^tour_product_pages_(.+)_(de|fr|it|ru)_[^_]+\.json$/);
+  if (m) (per[m[2]] ||= new Set()).add(m[1]);
+}
+for (const loc of ['de','fr','it','ru']) {
+  const slugs = [...(per[loc]||[])].sort(); if (!slugs.length) continue;
+  const { data } = await sb.from('tour_product_pages').select('slug,created_at,detail_payload').eq('locale',loc).in('slug',slugs);
+  const by = new Map((data||[]).map(r=>[r.slug,r]));
+  const none = slugs.filter(s=>!by.has(s));
+  console.log(`${loc}: 발행가능 ${none.length} / 구행 ${slugs.length-none.length}`);
+  console.log('  ', none.join(', ') || '-');
+  for (const s of slugs) { const r = by.get(s); if (!r) continue;
+    const en = (JSON.stringify(r.detail_payload||{}).match(/\b(the|and|with|for|you|your|from|this)\b/g)||[]).length;
+    console.log(`   [행있음] ${s} · created ${r.created_at.slice(0,10)} · 영어마커 ${en}`); }
+}
+EOF
+node --env-file=.env.local ./node_modules/tsx/dist/cli.mjs .probe.mjs; rm -f .probe.mjs
+```
+
 ```bash
 # A messages — 영어와 값이 같은 키(고유명사 오탐 포함, 눈으로 거르기)
 node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.entries(o)){const K=p?p+'.'+k:k;typeof v==='string'?t[K]=v:v&&typeof v==='object'&&F(v,K,t)}return t};const en=F(JSON.parse(fs.readFileSync('messages/en.json','utf8')));for(const L of ['ko','ja','zh','zh-TW','es','fr','de','it','ru']){const m=F(JSON.parse(fs.readFileSync('messages/'+L+'.json','utf8')));const g=Object.keys(en).filter(k=>m[k]===en[k]&&/\p{L}/u.test(en[k])&&en[k].trim().split(/\s+/).length>=3);console.log(L+': '+g.length)}"
@@ -370,6 +400,15 @@ node -e "const fs=require('fs');const F=(o,p='',t={})=>{for(const[k,v]of Object.
 1. **워크트리엔 `.env.local` 도 `node_modules` 도 없다.** 본체에서 복사 + 정션. `ERR_MODULE_NOT_FOUND` 는 크레딧 문제가 아니다.
 2. **포인터 집합만 맞으면 통과한다 — 내용 완결성은 별개다.** `findTruncatedSegments` 가 잡지만, 직접 번역할 땐 **끝까지 옮겼는지 스스로 확인**하라.
 3. **독일어 숫자 서식은 안전하다** — `numberMultiset` 은 숫자 런으로 쪼개므로 `5,5` 와 `5.5` 가 같다. 천단위 `1.000` 도 정규화된다.
+   🔴 **하지만 「서식」이 안전한 것이지 「숙어」가 안전한 게 아니다.** 이 트랙에서 G3 로 잡힌 게
+   **세 언어 합쳐 23건**이고 뿌리는 하나다 — **원문에 숫자가 있는데 번역에서 낱말이 됐다.**
+   `Top-3`→`Один из трёх лучших` · `24/7`→`круглосуточный` · `1-hour`→`Einstündige` ·
+   `10-volume`→`zehnbändigen` · `2nd-largest`→`zweitgrößte` · `open 24h`→`rund um die Uhr` ·
+   `7-story`→`siebenstöckig` · `7-minute walk`→`sieben Gehminuten` · `adult 1-day`→`Tagesticket`.
+   **규칙: 원문에 아라비아 숫자가 있으면 번역에도 아라비아 숫자로 남긴다.**
+   낱말·서수부사·복합명사에 삼키지 마라(`24 Stunden` · `7-stöckig` · `1-Tages-Ticket` · `Топ-3`).
+   🔴 **층수는 특히 위험하다** — `1F/2F/5F` 를 `Erdgeschoss/1. Stock/4. Stock` 으로 옮기면
+   숫자가 사라지는 데다 **한국식 1F 는 지상층**이라 전 층이 한 칸씩 밀린다. `1./2./5. Etage` 로 둬라.
 4. **`**강조**` 개수를 맞춰라**(G6). 긴 설명문은 20~25쌍이 흔하다.
 5. **`⟦G숫자⟧` 토큰은 그대로.** 번역·공백 삽입 금지(G2 즉시 실패).
 6. **갤러리 캡션처럼 고유명사뿐인 문자열은 원문과 같아도 정상**이다(G9 flag, 발행됨).
@@ -524,16 +563,93 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 ✅ **S13 도 끝났다(2026-08-07)** — 8슬러그 × 4로케일 추출 완료, 입력이 전부 `i18n-work/in/` 에 있다.
 **남은 건 순수 번역이다: 328 unit · 1,181,476자**(§6-3′ 에 슬러그별 실측표).
 
-✅ **S14a~c 도 끝났다 — de 수원 3종 전부 발행**(430 + 415 + 389 세그먼트, 전부 fail 0).
+✅ **S14 · S15 도 끝났다 — 🔴 독일어는 발행 가능한 슬러그가 0개다(2026-08-07).**
+수원 3종(430+415+389) · 설악 2종(387+417) · 전세 2종(358+313) · 부산 소그룹(698) = **8슬러그 발행**,
+전부 fail 0 · 문자혼입 0. 매니페스트의 나머지 de 슬러그는 아래 「구행 7건」이라 INSERT 가 거부된다.
 
-🔴 **다음은 de 설악 2종이다** — `seoul-seoraksan-nami-island-morning-calm-day-tour`(10 unit) ·
-`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip`(11 unit). 수원과 같은 형제 관계라
-같은 이득이 난다. 그다음 부산 소그룹(15 unit) → 서울근교 10hr + 부산 전세.
+🔴 **다음은 fr 이다 — 그리고 대상 8슬러그가 방금 끝낸 de 8슬러그와 정확히 같다.**
+`seoul-suwon-hwaseong-{gwangmyeong-cave,folk-village,waujeongsa}-starfield*` ·
+`seoul-seoraksan-{nami-island-morning-calm,naksansa-temple-naksan-beach}*` ·
+`{busan-private-car-charter-city-tour,seoul-suburbs-private-chartered-car-10hr}` ·
+`busan-small-group-sightseeing-tour-cruise-passengers`.
+**원문이 같으니 de 생성기의 `NEW` 맵 키를 그대로 재사용하고 값만 프랑스어로 바꾸면 된다.**
+it · ru 도 같은 8슬러그다(ru 는 여기에 은퇴 상품 1건이 더 붙지만 범위 밖).
+
+### 🔴 잔여 실측 (2026-08-08, DB 조인으로 잰 것 — 매니페스트 아님)
+
+| 로케일 | 발행가능 | unit | 손번역 글자 |
+|---|---|---|---|
+| **de** | **0** | — | — (8슬러그 발행 완료 + 구행 7건은 결정 대기) |
+| **fr** | 7 | 73 | 238,365 |
+| **it** | 8 | 82 | 271,234 |
+| **ru** | 8 | 82 | 270,610 (은퇴 `jeju-cruise-shore-excursion-bus-tour` 14u/48,131자 제외) |
+| | **23슬러그** | **237** | **≈780,000** |
+
+슬러그별(fr 기준 · it/ru 도 ±1% 안):
+`busan-private-car-charter-city-tour` 8u/22,166 → `seoul-suburbs-private-chartered-car-10hr` 8u/24,743 →
+`seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library` 9u/32,869(fr ✅) →
+`seoul-suwon-hwaseong-waujeongsa-starfield` 11u/34,079 →
+`seoul-seoraksan-naksansa-temple-naksan-beach-day-trip` 11u/34,132 →
+`seoul-seoraksan-nami-island-morning-calm-day-tour` 10u/34,677 →
+`seoul-suwon-hwaseong-folk-village-starfield-library` 10u/35,577 →
+`busan-small-group-sightseeing-tour-cruise-passengers` 15u/52,991.
+**작은 것부터** 잡으면 세션당 1~2슬러그가 현실적이다.
 
 배치는 **슬러그군 × 한 로케일**로 잡아라(§6-3′ 에 실측표). 권장 순서:
-**① 수원 3종(de) ✅ → ② 설악 2종(de) → ③ 부산 소그룹(de) → ④ 서울근교+부산전세(de) → fr·it·ru 반복.**
+**① de 8슬러그 ✅ → ② fr 나머지 7 → ③ it 8 → ④ ru 8.**
 ⚠ 🔴 **한 슬러그를 끝낼 때마다 `verify` 를 돌리고 다음 슬러그를 재추출하라.**
 수원 3번째에서 이 한 번의 재추출이 **손번역을 31,596 → 22,707자로 줄였다**(§6-3′ 표).
+⚠ **다만 재추출 이득은 「같은 상품군」일 때만 난다** — 전세 2종은 둘 다 프라이빗 차터인데도
+공유 세그먼트가 **2개뿐**이었다(설악 2종은 78개). 갈림선은 카테고리가 아니라 **상품군**이다.
+
+### 🔴 한 슬러그를 처리하는 레시피 (2026-08-08 에 9슬러그를 이대로 돌렸다 — 그대로 따라라)
+
+1. **재추출** — `node --env-file=.env.local --import tsx scripts/i18n/extract.ts --locale=<loc> --slugs=<slug>`
+2. **미해결 원문 덤프** — 아래 한 줄. `[GAL]` 로 갈라 두면 갤러리 템플릿은 눈으로 안 봐도 된다.
+   ```bash
+   node -e "const fs=require('fs');const D='i18n-work/in/tour_product_pages';const seen=new Set();for(const f of fs.readdirSync(D).filter(x=>x.includes('<slug>_<loc>_')).sort()){const j=JSON.parse(fs.readFileSync(D+'/'+f,'utf8'));console.log('### '+j.chunk);for(const[p,s]of Object.entries(j.segments)){if(s.tm!=null)continue;if(seen.has(s.source_en))continue;seen.add(s.source_en);console.log(/galleryItems\//.test(p)?'[GAL] '+JSON.stringify(s.source_en):p+'\t'+JSON.stringify(s.source_en));}}"
+   ```
+3. **생성기를 스크래치패드에 쓰고**(`NEW` 맵 = 영문 원문 → 번역 · `SUB` = 갤러리 치환 · `RULE6` = 기계 키)
+   레포 루트에 **점파일로 복사해 실행**(스크래치패드에선 `@supabase/supabase-js` 가 안 잡힌다), 끝나면 지운다.
+   🔴 **미해결이 하나라도 있으면 아무 파일도 쓰지 말고 exit 1** — 이 가드가 이번에만 76·63·3·2·1건을 잡았다.
+   🔴 **heredoc 으로 만들지 마라** — 복합 명령 안에서 `<<'EOF'` 가 깨진다. Write 도구를 써라.
+4. **verify** — `npx tsx scripts/i18n/verify.ts --locale=<loc>` → **fail 0 이 될 때까지** 생성기를 고쳐 재실행.
+   fail 이 「그 외 N건」에 숨으면 리포트에서 직접 꺼내라:
+   ```bash
+   node -e "const r=require('fs').readFileSync('i18n-work/reports/verify-<loc>/verify.json','utf8');for(const u of JSON.parse(r).reports){if(!String(u.unitId).includes('<slug>'))continue;for(const f of u.findings||[])if(f.severity==='fail')console.log(u.unitId,JSON.stringify(f))}"
+   ```
+5. **문자 혼입 스캔**(§7-7) — `i18n:verify` 가 못 잡는다. 매번 돌려라.
+6. **발행** — `node --env-file=.env.local ./node_modules/tsx/dist/cli.mjs scripts/i18n/apply.ts --locale=<loc> --slugs=<slug> --apply`
+   (⚠ 맨 `npx tsx` 는 env 를 못 읽어 죽는다. `--partial` 금지.)
+7. **커밋** — `i18n-work/out/... in/... tm/<loc>.json` 경로 명시(⚠ `git add -A` 금지, 워크트리 경합).
+
+### 🔴 S15c 의 발견 — **매니페스트로 남은 일을 세면 틀린다. 판정은 DB 다.**
+
+`jeju-eastern-unesco-spots-day-tour` 를 de 로 다 번역하고 나서야 `apply` 가 거부했다:
+**행이 이미 있다.** 조사해 보니 「남았다」고 세고 있던 de 8슬러그 중 **7건이 이미 라이브 행을 갖고 있다** —
+전부 `created_at = 2026-07-26`, 즉 최초 독일어 Tier1 배치의 산물이다.
+
+| 슬러그 | detail_payload 안 영어 마커 | 비고 |
+|---|---|---|
+| `busan-cruise-shore-excursion-bus-tour` | 50 | |
+| `incheon-seoul-private-car-shore-excursion-cruise` | 305 | |
+| `from-incheon-seoul-day-tour-cruise-guests` | 313 | |
+| `jeju-cruise-shore-excursion-small-group-tour` | 388 | |
+| `jeju-cruise-shore-excursion-bus-tour` | 400 | 은퇴 상품 |
+| `busan-top-attractions-day-tour` | 424 | |
+| `jeju-eastern-unesco-spots-day-tour` | 576 | 🔴 **낡았다** |
+
+🔴 **`jeju-eastern` 은 부분 영어인 데다 내용이 낡았다** — subtitle 이 아직 **함덕 먼저** 코스를 말한다.
+2026-08-04 제주 동부 재편이 **만장굴 먼저**로 바꾼 그 코스다. 즉 이 행은 손님에게
+**틀린 순서를 독일어로** 말하고 있다(오픈 게이트가 닫혀 있어 지금은 안 보인다).
+
+**고칠 수 없다 — UPDATE 는 이 트랙의 금지 사항이다**(CLAUDE.md: `apply.ts` 는 INSERT-only,
+기존 로케일 행 UPDATE 금지). 번역 파일은 커밋해 뒀으니 **UPDATE 경로가 열리면 비용 0**이다.
+→ **사장님 결정 대기 항목:** ① 구행 7건을 새 번역으로 갱신할 것인가 ②
+갱신한다면 `apply.ts` 에 UPDATE 경로를 열 것인가, 아니면 행을 지우고 INSERT 할 것인가.
+
+⚠ **세는 법을 바꿔라.** `i18n-work/in/` 에 입력이 있고 `out/` 에 출력이 없다 = **번역이 남았다**는 뜻일 뿐,
+**발행 가능하다는 뜻이 아니다.** 발행 가능 여부는 DB 에만 있다 — §6-4 에 조회 명령을 넣어 뒀다.
 
 🔴 **`jeju-cruise-shore-excursion-bus-tour`(14 unit · 712 세그먼트)는 매니페스트에 남아 있지만 범위 밖이다** —
 은퇴 상품이다(§6-5-14). `npm run i18n:verify -- --locale=ru` 의 「미번역 14 unit」이 정확히 이것이고,
@@ -541,6 +657,31 @@ New-Item -ItemType Junction -Path .\node_modules -Target C:\Users\sangsong\atock
 
 용어는 **지어내지 말고 이미 발행된 ru 행에서 가져와라**(§6-5 아래 「ru 착수 메모」).
 슬러그 하나가 100% 되면 그 자리에서 발행하라(`--partial` 금지).
+
+### 🔴 fr·de 관례 기록 (2026-08-08) — **지어내지 말고 여기서 가져다 써라**
+
+용어는 **이미 발행된 행에서 뽑았다.** 새 슬러그에서 같은 개념을 만나면 아래를 쓴다.
+
+**공통 서식**
+| | de | fr |
+|---|---|---|
+| 천단위 | `₩8.000` (점) | `₩8 000` (공백 — 기존 fr 행 4개가 이미 이 형태, G3 통과 확인) |
+| 소수 | `7,4 km` | `7,4 km` |
+| 시각 | `09:00–18:00 Uhr` | `09h00–18h00` |
+| 갤러리 | `— Galeriebild N` / `— Foto N` | `— image de galerie N` / `— photo N` |
+| UNESCO 세계유산 | `UNESCO-Weltnaturerbe` / `-Welterbe` | `patrimoine mondial de l'UNESCO` |
+
+**독일어 고정 어휘** — Fahrer-Guide(driver-guide) · Privater Autocharter · Limousine oder SUV ·
+Van der Mittelklasse · Flughafen Gimhae/Incheon · Kreuzfahrtterminal · Ankunftshalle · Ausschiffung ·
+All-aboard-Zeit · Landausflug · Jagalchi-Fischmarkt · Lavaröhre · Haenyeo-Tauchvorführung ·
+Garten der Morgenstille · Nami-Insel · Reiseleitung(guide, 기사 아님).
+
+**프랑스어 고정 어휘** — autocar(coach) · guide · forteresse · palais détaché(haenggung) ·
+grotte(cave) · petit groupe · Mémoire du monde · relève de la garde royale · rayonnages(bookshelves) ·
+food hall · niveau B1 / 4e étage(층은 **숫자를 살려서**).
+
+🔴 **fr 은 `2nd-generation`→`deuxième`, de 는 `1F/2F`→`Erdgeschoss/1. Stock` 에서 G3 로 죽었다.**
+로마 세기(`18th-century`→`XVIIIe siècle`)는 흡수되지만 **서수를 낱말로 풀면 안 된다.**
 
 ### 🔴 ru 트랙 종료 기록 (2026-08-07, S3d~S3f) — de/fr/it 를 할 때 그대로 쓴다
 

@@ -6,6 +6,96 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
+    "/itineraryStops/3/description": {
+      "source_en": "About a 60-minute lunch break between ⟦G0⟧ and ⟦G1⟧. At restaurants around Seongsan-eup harbor you can explore eastern Jeju local fare such as black pig, abalone hot pot, and cutlassfish. Lunch is not included (about ₩15,000).",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/itineraryStops/4/name": {
+      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/itineraryStops/4/category": {
+      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "tm": "UNESCO-Tuffkegel — Sunrise Peak (dreifache UNESCO-Auszeichnung)"
+    },
+    "/itineraryStops/4/duration": {
+      "source_en": "90 min",
+      "tm": "90 Min."
+    },
+    "/itineraryStops/4/timeUsed/0": {
+      "source_en": "Parking + ticket + base brief — ~10 min",
+      "tm": "Parken + Ticket + Briefing am Fuß — ~10 Min."
+    },
+    "/itineraryStops/4/timeUsed/1": {
+      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+      "tm": "Aufstieg zur Gipfelplattform (0,8 km / 140 m Anstieg) — ~30 Min."
+    },
+    "/itineraryStops/4/timeUsed/2": {
+      "source_en": "Summit views + crater rim photos — ~20 min",
+      "tm": "Gipfelblicke + Fotos am Kraterrand — ~20 Min."
+    },
+    "/itineraryStops/4/timeUsed/3": {
+      "source_en": "Descent — ~20 min",
+      "tm": "Abstieg — ~20 Min."
+    },
+    "/itineraryStops/4/timeUsed/4": {
+      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min",
+      "tm": "Optionale Haenyeo-Vorführung am Fuß (Show um 14:00 Uhr; kann bei schlechtem Wetter ausfallen) — ~10 Min."
+    },
+    "/itineraryStops/4/highlights/0": {
+      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+      "tm": "**Dreifach UNESCO**: Welterbe 02.07.2007 + Biosphärenreservat 2002 + Global Geopark 10/2010"
+    },
+    "/itineraryStops/4/highlights/1": {
+      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+      "tm": "**5.000 Jahre alt** — hydrovulkanischer Ausbruch vom Surtseyanischen Typ, dampfexplosive Entstehung, als Magma auf Meerwasser traf"
+    },
+    "/itineraryStops/4/highlights/2": {
+      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+      "tm": "Krater **600 m breit × 90 m tief**, umringt von **99 zackigen Felsen am Kraterrand** (die „Steinkrone“)"
+    },
+    "/itineraryStops/4/highlights/3": {
+      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+      "tm": "**182 m über dem Meeresspiegel** — 0,8 km / ~140 m Anstieg, 60 Min. Hin- und Rückweg auf einem Pfad mit Steinstufen"
+    },
+    "/itineraryStops/4/highlights/4": {
+      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+      "tm": "**18 kaiserlich-japanische Höhlen aus dem 2. Weltkrieg** am Fuß — 1945 Unterstände für Kamikaze-Selbstmordboote"
+    },
+    "/itineraryStops/4/highlights/5": {
+      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
+      "tm": "**Haenyeo-Vorführung einmal täglich um 14:00 Uhr (Ausfall bei schlechtem Wetter möglich)** in der Bucht am Meer — immaterielles UNESCO-Erbe 2016"
+    },
+    "/itineraryStops/4/highlights/6": {
+      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+      "tm": "**Eintritt aktualisiert im April 2025**: Erwachsene ₩5.000 / Jugendliche ₩2.500 / KOSTENLOS unter 7 + über 65"
+    },
+    "/itineraryStops/4/highlights/7": {
+      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+      "tm": "Öffnungszeiten Frühling/Herbst **05:00–19:00 Uhr** (letzter Einlass 18:20 Uhr)"
+    },
+    "/itineraryStops/4/highlights/8": {
+      "source_en": "**Closes for first Monday of each month** (occasional rest day)",
+      "tm": "**Geschlossen am ersten Montag jedes Monats** (gelegentlicher Ruhetag)"
+    },
+    "/itineraryStops/4/smartNotes/tip": {
+      "source_en": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+    },
+    "/itineraryStops/4/smartNotes/facilities": {
+      "source_en": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
+    },
+    "/itineraryStops/4/whyOnRoute": {
+      "source_en": "**The second of the day's two World Natural Heritage sites — the one that completes the inscription.** After lunch you climb ⟦G1⟧ (optional climb, about 30 min round trip) to see the tuff cone that rose from an underwater eruption about 5,000 years ago. Together with the ⟦G0⟧ you walked in the morning — part of the same single 2007 property — it closes the 'Volcanic Island and Lava Tubes' narrative, and the climb leads straight into the haenyeo diving performance held in the sea of the same area.",
+      "glossary": [
+        "⟦G0⟧ = Manjanggul-Lavaröhre",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
     "/itineraryStops/4/convenience/parking": {
       "source_en": "Large free parking lot"
     },
@@ -14,6 +104,7 @@
     },
     "/itineraryStops/4/description": {
       "source_en": "**⟦G0⟧ (성산일출봉, 'Sunrise Peak')** is a **5,000-year-old Surtseyan-type hydrovolcanic tuff cone** — a rare landform created when an underwater basalt eruption broke the sea surface, the magma met seawater, and the resulting steam-explosive ash built a **182 m fortress-shaped crater** rim instead of a typical lava cone. \n\nThe result is what UNESCO formally calls **'an exceptional example of an emergent Surtseyan-type volcanic edifice'**. The crater is **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** that local lore likens to a stone crown. Seongsan carries the **Triple UNESCO designation**: **World Natural Heritage (inscribed 2007-07-02)** as part of the **'Jeju Volcanic Island and Lava Tubes' property**, **Biosphere Reserve (2002)**, and **Global Geopark (2010-10)** — a stack matched only by Hallasan itself among Korean sites. \n\n**18 Imperial Japanese WWII caves** (kamikaze suicide-boat shelters, 1945) are tunneled into the seaward base. Trail: **0.8 km one-way, ~140 m elevation gain, 60 min round trip** on wide stone steps. \n\n**Haenyeo (해녀) demonstrations** run once daily at 14:00 (1 show/day) at the rocky cove below the cone — Jeju women divers (UNESCO Intangible Cultural Heritage 2016) descend without scuba gear. \n\nAdmission updated **April 2025**: **Adult ₩5,000 / Youth+Child ₩2,500 / Group adult ₩1,600**, free under 7 and over 65. The summit deck is also part of the **Yeongjusipgyeong (Jeju 10 Scenic Wonders) canon**, and remains Korea's premier **annual New Year sunrise pilgrimage** destination — 50,000+ visitors ascend before dawn on January 1, with municipal sunrise-festival programming since 1995. \n\n**Udo Island (우도, 'Cow Island')** — Korea's largest secondary volcanic island — is clearly visible 4 km offshore from the summit, accessible by **15-min ferry from Seongsan Port** (₩10,500 round-trip) for guests with extra time on a different itinerary.",
+      "tm": "**⟦G0⟧ (성산일출봉, „Sonnenaufgangsgipfel“)** ist ein **5.000 Jahre alter hydrovulkanischer Tuffkegel vom Surtsey-Typ** — eine seltene Landform, die entstand, als ein untermeerischer Basaltausbruch die Meeresoberfläche durchbrach, das Magma auf Meerwasser traf und die dabei entstandene dampfexplosive Asche statt eines typischen Lavakegels einen **182 m hohen, festungsförmigen Krater**rand aufbaute. \n\nDas Ergebnis ist das, was die UNESCO offiziell **„ein außergewöhnliches Beispiel eines aufgetauchten vulkanischen Bauwerks vom Surtsey-Typ“** nennt. Der Krater ist **600 m breit × 90 m tief** und von **99 zerklüfteten Randfelsen** umgeben, die die lokale Überlieferung mit einer steinernen Krone vergleicht. Seongsan trägt die **dreifache UNESCO-Auszeichnung**: **Weltnaturerbe (eingeschrieben am 02.07.2007)** als Teil **der Stätte „Vulkaninsel Jeju und Lavaröhren“**, **Biosphärenreservat (2002)** und **Global Geopark (10.2010)** — eine Kombination, die unter den koreanischen Stätten nur Hallasan selbst erreicht. \n\n**18 kaiserlich-japanische Höhlen aus dem Zweiten Weltkrieg** (Unterstände für Kamikaze-Selbstmordboote, 1945) sind in den meerseitigen Sockel getrieben. Weg: **0,8 km einfach, ca. 140 m Höhengewinn, 60 Min. hin und zurück** über breite Steinstufen. \n\n**Vorführungen der Haenyeo (해녀)** finden einmal täglich um 14:00 Uhr (1 Vorführung/Tag) in der Felsbucht unterhalb des Kegels statt — die Taucherinnen von Jeju (UNESCO Immaterielles Kulturerbe 2016) tauchen ohne Tauchgerät ab. \n\nEintritt aktualisiert **April 2025**: **Erwachsene ₩5.000 / Jugendliche+Kinder ₩2.500 / Gruppen-Erwachsene ₩1.600**, kostenlos unter 7 und über 65 Jahren. Die Aussichtsplattform am Gipfel gehört außerdem zum **Kanon der Yeongjusipgyeong (die 10 landschaftlichen Wunder von Jeju)** und bleibt Koreas führendes Ziel der **alljährlichen Neujahrs-Sonnenaufgangswallfahrt** — über 50.000 Besucher steigen am 1. Januar vor Tagesanbruch hinauf, mit einem städtischen Sonnenaufgangsfest-Programm seit 1995. \n\n**Die Insel Udo (우도, „Kuhinsel“)** — Koreas größte sekundäre Vulkaninsel — ist vom Gipfel aus 4 km vor der Küste gut sichtbar und für Gäste mit zusätzlicher Zeit auf einer anderen Reiseroute mit der **15-minütigen Fähre vom Hafen Seongsan** (₩10.500 hin und zurück) erreichbar.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
@@ -120,42 +211,6 @@
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
-    "/itineraryStops/4/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 6",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 6",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/5/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/alt": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — gallery image 12",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/caption": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak) — photo 12",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/4/galleryItems/6/location": {
-      "source_en": "⟦G0⟧ (UNESCO Sunrise Peak)",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
     "/itineraryStops/4/liveStatusWidget": {
       "source_en": "haenyeo"
     },
@@ -166,7 +221,8 @@
       "source_en": "UNESCO Intangible Cultural Heritage of Humanity — Culture of Jeju Haenyeo (2016), live"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "50 min"
+      "source_en": "50 min",
+      "tm": "50 Min."
     },
     "/itineraryStops/5/timeUsed/0": {
       "source_en": "Transfer from ⟦G0⟧ to the performance site — about 5 min",
@@ -200,42 +256,20 @@
     },
     "/itineraryStops/5/highlights/3": {
       "source_en": "Hear the distinctive **sumbisori** breath at the end of each dive in person"
-    },
-    "/itineraryStops/5/highlights/4": {
-      "source_en": "Performance usually **twice a day (around 13:30 and 15:00)**, **free viewing**, subject to weather and sea conditions"
-    },
-    "/itineraryStops/5/highlights/5": {
-      "source_en": "Fewer than **4,000 active haenyeo, most over 70** — a vanishing heritage"
-    },
-    "/itineraryStops/5/highlights/6": {
-      "source_en": "**Haenyeo Museum substitute if the performance is canceled** (₩1,100 adult, 80% indoors, three exhibition halls)"
-    },
-    "/itineraryStops/5/highlights/7": {
-      "source_en": "**5 min by foot or vehicle** from ⟦G0⟧ — a natural link with no loss of route time",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/5/smartNotes/tip": {
-      "source_en": "Performance times vary with the day's sea conditions, so the guide will advise on site. A hat and sunglasses for sun protection are recommended."
-    },
-    "/itineraryStops/5/smartNotes/facilities": {
-      "source_en": "Restrooms and parking near the performance site / when canceled, use the Haenyeo Museum's café, gift shop, and English-language information."
-    },
-    "/itineraryStops/5/whyOnRoute": {
-      "source_en": "**The climax where you meet UNESCO intangible heritage as a 'live event' rather than an 'exhibit'.** Right after climbing and viewing ⟦G0⟧, the route flows naturally into the haenyeo diving performance held in the sea of the same area (5-min transfer). Seeing the tuff cone's volcanic geology (World Natural Heritage), then immediately seeing the intangible heritage (2016) of the haenyeo who have lived from that sea, completes the eastern route's distinctive 'volcano + people' narrative. The performance is free and usually held in the afternoon, fitting the route well. **However, it can be canceled depending on the sea and weather**, so on such days we substitute the indoor Haenyeo Museum in Hado-ri to **guarantee the haenyeo heritage experience in any weather**.",
-      "glossary": [
-        "⟦G0⟧ = Seongsan Ilchulbong"
-      ]
-    },
-    "/itineraryStops/5/convenience/parking": {
-      "source_en": "Free parking at both the performance site and the museum"
-    },
-    "/itineraryStops/5/convenience/restroom": {
-      "source_en": "Near the performance site / many inside the museum"
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/3/description": {
+      "⟦G0⟧": "Folkloredorf Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/4/name": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/itineraryStops/4/whyOnRoute": {
+      "⟦G0⟧": "Manjanggul-Lavaröhre",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
     "/itineraryStops/4/description": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
@@ -284,36 +318,12 @@
     "/itineraryStops/4/galleryItems/4/location": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
-    "/itineraryStops/4/galleryItems/5/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/4/galleryItems/5/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/4/galleryItems/5/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/4/galleryItems/6/alt": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/4/galleryItems/6/caption": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/4/galleryItems/6/location": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
     "/itineraryStops/5/timeUsed/0": {
       "⟦G0⟧": "Seongsan Ilchulbong"
     },
     "/itineraryStops/5/highlights/1": {
       "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/5/highlights/7": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
-    },
-    "/itineraryStops/5/whyOnRoute": {
-      "⟦G0⟧": "Seongsan Ilchulbong"
     }
   },
-  "tmHits": 0
+  "tmHits": 18
 }
