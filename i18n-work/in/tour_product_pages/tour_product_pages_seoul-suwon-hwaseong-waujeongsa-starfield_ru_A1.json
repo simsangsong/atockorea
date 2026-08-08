@@ -32,7 +32,8 @@
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon"
+      "source_en": "Starfield Library Suwon",
+      "tm": "Библиотека Starfield в Сувоне"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "Seoul Suwon heritage tour"
@@ -102,7 +103,8 @@
       "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Баланс"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -163,37 +165,45 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "День наследия в Сувоне"
     },
     "/headlineLine2": {
       "source_en": "Hwaseong, Waujeongsa & Starfield"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Фиксированные точки сбора — посадка у отеля не предусмотрена. Опоздавших ждать не могут, и оплата им не возвращается."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Станция ⟦G0⟧ (выход 2)",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Станция Hongik Univ. (выход 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Станция Hongik Univ. (выход 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Пожалуйста, приходите за 10 минут до времени выезда."
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Станция ⟦G0⟧ (выход 2)",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "Пожалуйста, приходите за 10 минут до времени выезда."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -377,5 +387,5 @@
       "⟦G0⟧": "Дворец Хвасон Хэнгун"
     }
   },
-  "tmHits": 28
+  "tmHits": 38
 }

@@ -1,0 +1,26 @@
+{
+  "unitId": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:A2-3",
+  "locale": "ru",
+  "segments": {
+    "/bookingSupportSteps/0/title": "Мгновенное подтверждение",
+    "/bookingSupportSteps/0/detail": "Подтверждение бронирования с кратким описанием маршрута",
+    "/bookingSupportSteps/0/timing": "Сразу",
+    "/bookingSupportSteps/1/title": "Напоминание за 12 часов",
+    "/bookingSupportSteps/1/detail": "Обновление по погоде и корректировки маршрута",
+    "/bookingSupportSteps/1/timing": "За 12 часов",
+    "/bookingSupportSteps/2/title": "Финальная информация о посадке",
+    "/bookingSupportSteps/2/detail": "Точное время посадки и контакт водителя",
+    "/bookingSupportSteps/2/timing": "Накануне вечером",
+    "/bookingSupportSteps/3/title": "Заметки по маршруту в день тура",
+    "/bookingSupportSteps/3/detail": "Утренний брифинг с учётом текущих условий",
+    "/bookingSupportSteps/3/timing": "Утром в день тура",
+    "/bookingSupportSteps/4/title": "Подсказки на каждой остановке",
+    "/bookingSupportSteps/4/detail": "Сопровождение в реальном времени на каждой локации",
+    "/bookingSupportSteps/4/timing": "Во время тура",
+    "/bookingSupportSteps/5/title": "Поддержка после тура",
+    "/bookingSupportSteps/5/detail": "Обратная связь и рекомендации",
+    "/bookingSupportSteps/5/timing": "После тура",
+    "/practicalWeatherStatic/today/label": "Интеграция с актуальным прогнозом погоды",
+    "/practicalWeatherStatic/tomorrow/label": "Обновляется ежедневно"
+  }
+}

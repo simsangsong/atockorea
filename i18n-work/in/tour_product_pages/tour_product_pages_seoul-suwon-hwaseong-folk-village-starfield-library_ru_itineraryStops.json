@@ -7,19 +7,24 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Seoul departure"
+      "source_en": "Seoul departure",
+      "tm": "Выезд из Сеула"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup & departure"
+      "source_en": "Pickup & departure",
+      "tm": "Сбор и выезд"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "10 min"
+      "source_en": "10 min",
+      "tm": "10 мин"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)"
+      "source_en": "Meet at designated Seoul pickup point (~5 min for boarding)",
+      "tm": "Встреча в назначенной точке сбора в Сеуле (~5 мин на посадку)"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)"
+      "source_en": "1-hour coach drive to Suwon (~60 min in light traffic)",
+      "tm": "1 час на автобусе до Сувона (~60 мин при свободных дорогах)"
     },
     "/itineraryStops/0/highlights/0": {
       "source_en": "Pickup from Hongik University (Line 2) or ⟦G0⟧ (Line 4) ~08:00",
@@ -28,10 +33,12 @@
       ]
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway"
+      "source_en": "1-hour coach south to Suwon via Gyeongbu Expressway",
+      "tm": "1 час на автобусе на юг, в Сувон, по автомагистрали Кёнбу"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Coach with air conditioning + USB charging"
+      "source_en": "Coach with air conditioning + USB charging",
+      "tm": "Автобус с кондиционером и USB-зарядкой"
     },
     "/itineraryStops/0/highlights/3": {
       "source_en": "Designed for early arrival at Hwaseong Fortress before tour-group rush"
@@ -56,68 +63,87 @@
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "UNESCO Fortress"
+      "source_en": "UNESCO Fortress",
+      "tm": "Крепость из списка ЮНЕСКО"
     },
     "/itineraryStops/1/duration": {
       "source_en": "75 min",
       "tm": "75 мин"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Coach drop-off near Janganmun (~5 min)"
+      "source_en": "Coach drop-off near Janganmun (~5 min)",
+      "tm": "Высадка из автобуса рядом с Чанганмуном (~5 мин)"
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Brief group orientation at Janganmun (~5 min)"
+      "source_en": "Brief group orientation at Janganmun (~5 min)",
+      "tm": "Короткое вступление для группы у Чанганмуна (~5 мин)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~25-30 min)"
+      "source_en": "Walk Janganmun → Hwaseomun via Hwaseo Janggak (~25-30 min)",
+      "tm": "Прогулка от Чанганмуна до Хвасомуна через Хвасо Чангак (~25–30 мин)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Photo time + reassembly at vehicle (~10 min)"
+      "source_en": "Photo time + reassembly at vehicle (~10 min)",
+      "tm": "Время на фото и сбор у автобуса (~10 мин)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)"
+      "source_en": "Optional Hwaseong Yeolcha sightseeing trolley Yeonmudae↔Paldalmun (~30 min one-way; ₩4,000 adult)",
+      "tm": "По желанию — экскурсионный поезд Хвасон Ёльча от Ёнмудэ до Пальдальмуна и обратно (~30 мин в одну сторону; ₩4 000 для взрослого)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records"
+      "source_en": "**UNESCO World Heritage Site since 1997** — Korea's only walled fortress city with original construction records",
+      "tm": "**Объект Всемирного наследия ЮНЕСКО с 1997 года** — единственный в Корее город-крепость с сохранившимися первоначальными строительными записями"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo (22nd Joseon king)"
+      "source_en": "Built 1794-1796 in 2 years 9 months under King Jeongjo (22nd Joseon king)",
+      "tm": "Построен в 1794-1796 годах за 2 года и 9 месяцев при короле Чонджо (22-м короле Чосона)"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science"
+      "source_en": "Designed by Jeong Yak-yong using Korean + Chinese + Western fortification science",
+      "tm": "Спроектирован Чон Як Ёном на основе корейской, китайской и западной фортификационной науки"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Hwaseong Seongyeok Uigwe construction record — UNESCO Memory of the World 2007"
+      "source_en": "Hwaseong Seongyeok Uigwe construction record — UNESCO Memory of the World 2007",
+      "tm": "Строительные записи Хвасон Сонъёк Ыйгве — «Память мира» ЮНЕСКО, 2007 год"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "5.74 km circumference, 41 strategic military structures"
+      "source_en": "5.74 km circumference, 41 strategic military structures",
+      "tm": "Периметр 5,74 км, 41 военное сооружение стратегического значения"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**"
+      "source_en": "Janganmun north gate — **largest existing royal gate in Korea**",
+      "tm": "Северные ворота Чанганмун — **крупнейшие сохранившиеся королевские ворота в Корее**"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)"
+      "source_en": "1.2 km guided walk Janganmun → Hwaseomun (highest photo-density section)",
+      "tm": "Прогулка с гидом на 1,2 км от Чанганмуна до Хвасомуна (самый насыщенный кадрами участок)"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure"
+      "source_en": "Hwahongmun 7-arch sluice gate — most photographed structure",
+      "tm": "Шлюзовые ворота Хвахонмун с 7 арками — самое фотографируемое сооружение"
     },
     "/itineraryStops/1/highlights/8": {
-      "source_en": "FREE for hanbok-wearers + last Wed of month + seniors 65+"
+      "source_en": "FREE for hanbok-wearers + last Wed of month + seniors 65+",
+      "tm": "БЕСПЛАТНО для гостей в ханбоке, в последнюю среду месяца и для пожилых от 65 лет"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Wear comfortable shoes — wall stones are uneven. Hanbok rental shops at Haenggung Square give FREE fortress + palace admission. **Avoid full 5.74 km loop unless allowing 2.5+ hours** — the Janganmun → Hwaseomun section gives the highest per-meter heritage density."
+      "source_en": "Wear comfortable shoes — wall stones are uneven. Hanbok rental shops at Haenggung Square give FREE fortress + palace admission. **Avoid full 5.74 km loop unless allowing 2.5+ hours** — the Janganmun → Hwaseomun section gives the highest per-meter heritage density.",
+      "tm": "Наденьте удобную обувь — камни стены неровные. Пункты проката ханбока на площади Хэнгун дают БЕСПЛАТНЫЙ вход в крепость и дворец. **Не берите полный круг в 5,74 км, если не готовы выделить 2,5 часа и больше**: участок от Чанганмуна до Хвасомуна даёт наибольшую плотность наследия на метр пути."
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Visitor Information Center at Janganmun + Paldalmun + Hwaseong Haenggung Square. English-Korean signage throughout. Hwaseong audio guide rental at Janganmun."
+      "source_en": "Visitor Information Center at Janganmun + Paldalmun + Hwaseong Haenggung Square. English-Korean signage throughout. Hwaseong audio guide rental at Janganmun.",
+      "tm": "Информационные центры для посетителей у Чанганмуна, Пальдальмуна и на площади Хвасон Хэнгун. Указатели на английском и корейском по всему маршруту. Прокат аудиогида по Хвасону у Чанганмуна."
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk (~1.2 km) gives the highest density of preserved military structures + the iconic Hwahongmun 7-arch sluice gate in a 75-min stop. Picked over the full 5.74 km loop because the route covers the most photographed and historically rich section while preserving time for the day's three other heritage stops. Hwaseong is also the **mandatory anchor of any Suwon day-trip** because it physically encloses the Haenggung palace and overlooks Nammun Market — meaning a single 4-5-hour Suwon block can deliver UNESCO World Heritage credentials, Joseon royal-residence interiority, and authentic traditional-market street-food without re-positioning the vehicle. The 1.2 km Janganmun → Hwaseomun wall section via Hwaseo Janggak is the highest-density preserved-military-architecture stretch in Korea (4 main gates + 5 secret gates + 4 sluices + Geojunggi-built ramparts coexist within 25-30 minutes walking time)."
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae"
+      "source_en": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae",
+      "tm": "Высадка из автобуса на стоянке Чанганмун; отдельная автобусная парковка у Ёнмудэ"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "At Janganmun, Hwaseomun, Paldalmun, and Yeonmudae"
+      "source_en": "At Janganmun, Hwaseomun, Paldalmun, and Yeonmudae",
+      "tm": "У Чанганмуна, Хвасомуна, Пальдальмуна и Ёнмудэ"
     }
   },
   "glossaryTokens": {
@@ -131,5 +157,5 @@
       "⟦G0⟧": "Крепость Хвасон в Сувоне"
     }
   },
-  "tmHits": 2
+  "tmHits": 28
 }
