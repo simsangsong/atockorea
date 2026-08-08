@@ -19,7 +19,8 @@
       "source_en": "Travelers comfortable with a 13-hour day for maximum coverage from a Seoul base"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who want a slow-paced single-stop experience"
+      "source_en": "Travelers who want a slow-paced single-stop experience",
+      "tm": "Les voyageurs qui recherchent une expérience lente, sur un seul site"
     },
     "/whyTourWorks/lessIdealFor/1": {
       "source_en": "Guests who don't want to commit to a 13-hour day from a 06:00 start"
@@ -49,7 +50,8 @@
       "source_en": "From December 5 - March 15, the Morning Calm 17:00 arrival catches the daytime garden plus the Lighting Festival ignition — 200,000+ LEDs across the 330,000 m² grounds, a single-ticket value most independent travelers can't time as cleanly."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Pacing & geography"
+      "source_en": "Pacing & geography",
+      "tm": "Rythme et géographie"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
       "source_en": "bg-amber-50/80",
@@ -62,7 +64,8 @@
       "source_en": "Nami Island ferry (₩19,000) and Morning Calm garden (₩11,000) are bundled into the tour price — no per-stop tickets needed. Only the optional Seorak Cable Car (₩16,000 round-trip) is on-site own-expense."
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "Two pickup points across Seoul"
+      "source_en": "Two pickup points across Seoul",
+      "tm": "Deux points de prise en charge dans Séoul"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "Hongik (Mapo-gu) at 06:00 and ⟦G0⟧ (Jung-gu) at 06:30 cover Seoul's two main accommodation clusters — guests choose the exit closest to their hotel.",
@@ -80,10 +83,12 @@
       "source_en": "Why this works in 13 hours"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-pink-50/80"
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Seoraksan has stairs (cable car is optional)"
+      "source_en": "Seoraksan has stairs (cable car is optional)",
+      "tm": "Le Seoraksan comporte des escaliers (le téléphérique est facultatif)"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
       "source_en": "The Sinheungsa Temple level and the optional Heundeulbawi loop both have stairs. The Tongildaebul + Sinheungsa walk is flat and accessible; the cable car ascent is by chair lift (no stairs in cable car itself), but Gwongeumseong platform has rocky steps at the top."
@@ -101,14 +106,16 @@
       "source_en": "This is a coach group tour — 13 hours total including ~4.5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider our private chartered car day trip (door-of-hotel pickup, customizable timing)."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "Trade-offs honestly"
+      "source_en": "Trade-offs honestly",
+      "tm": "Les compromis, en toute franchise"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-sky-50/80",
       "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this Seoul day moves"
+      "source_en": "How this Seoul day moves",
+      "tm": "Comment se déroule cette journée au départ de Séoul"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "Early Hongik/⟦G0⟧ pickup at 06:00/06:30; ~2.5 hr northeast drive to Seoraksan for the day's mountain anchor; back through the Inje-Chuncheon corridor for Nami Island's tree-lined ferry circuit; 30-min south to Morning Calm for the day's gentlest closing chapter (lighting-festival ignition in winter); return to Seoul by 19:00-19:30.",
@@ -125,5 +132,5 @@
       "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 2
+  "tmHits": 9
 }
