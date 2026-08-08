@@ -1,7 +1,624 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-07T07:33:27.025Z",
+  "generatedAt": "2026-08-08T11:07:15.064Z",
   "reports": [
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A1",
+      "status": "flagged",
+      "segments": 53,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/primaryKeywords/2",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/notes/1",
+          "message": "길이비 1.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/pickup_dropoff/meeting_points/0/time",
+          "message": "길이비 1.55 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/note",
+          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A2",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/2/detail",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/title",
+          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/1/label",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/6/question",
+          "message": "길이비 0.79 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A2-2",
+      "status": "flagged",
+      "segments": 38,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/body",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/0/swaps",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/0/summary",
+          "message": "길이비 1.51 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/1/swaps",
+          "message": "길이비 0.91 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seasonalVariations/2/summary",
+          "message": "길이비 1.67 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/0/description",
+          "message": "길이비 0.88 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:B",
+      "status": "flagged",
+      "segments": 48,
+      "fails": 0,
+      "flags": 27,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:itineraryStops",
+      "status": "flagged",
+      "segments": 95,
+      "fails": 0,
+      "flags": 30,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/name",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/timeUsed/4",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/0/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/1/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/2/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/3/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/3/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/3/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/4/alt",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/4/caption",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/galleryItems/4/location",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/5",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/6",
+          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/6",
+          "message": "길이비 1.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/name",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/3",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/4",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/5",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/6",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/0/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/1/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:itineraryStops-2",
+      "status": "flagged",
+      "segments": 25,
+      "fails": 0,
+      "flags": 9,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/2/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/3/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/4/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/alt",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/location",
+          "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/0",
+          "message": "길이비 1.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/3",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:practicalAccordionItems",
+      "status": "flagged",
+      "segments": 42,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/title",
+          "message": "길이비 0.85 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/3",
+          "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/1",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/3",
+          "message": "길이비 1.54 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/3",
+          "message": "길이비 0.90 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/content/2",
+          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 9,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:A1",
       "status": "flagged",
