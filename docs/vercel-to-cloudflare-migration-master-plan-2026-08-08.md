@@ -250,6 +250,7 @@ export default defineCloudflareConfig({
 | CT-10 | 컷오버 날: vercel.json crons 블록 제거 커밋(파일 잔여는 무해) | vercel.json | 소 |
 | CT-11 | (선택, 재발 방지 게이트) `__tests__/audit/workersRuntimeCompat.test.ts` — app/lib 런타임 경로에 sharp import·`readFileSync(process.cwd()` 신규 유입 금지 래칫 | 신규 테스트 | 소 |
 | CT-12 | CF2 판정에 따라 stripe webhook `constructEvent`→`constructEventAsync` | webhook route | 소 |
+| CT-13 | **env 자동 주입(사장님 지시 2026-08-08: "이관 시점에 로컬 env 에서 전부 옮겨 나 대신 입력") — 수작업 0.** `scripts/cf/push-secrets.mjs`: ① 매니페스트(키→[워커 시크릿/빌드 var/제외] 분류)를 §F-5 대사표에서 생성 ② `.env.local` 을 읽어 `wrangler secret bulk`(임시 JSON, 쓰고 즉시 삭제) ③ 신규 발급 4키(CRON_SECRET·TOUR_ROOM_TOKEN_SECRET·VAPID 쌍)는 스크립트가 생성해 같이 주입 + **`.env.cf-production.local` 백업 파일 기록**(git 제외 — VAPID 백업 소실 재발 방지로 **사장님 비밀번호 관리자에도 사본** 안내) ④ 출력은 **키 이름·설정 여부·값 지문(sha256 앞 6자)만** — 값은 채팅·화면·git 어디에도 안 나온다 ⑤ NEXT_PUBLIC 9종은 `.env.production` 으로 레포 커밋(어차피 번들에 노출되는 공개값 — 빌드 env 수작업도 제거) | 신규 스크립트 | 중 |
 
 ## §F 환경변수 이식 — "복사"가 아니라 "원본 재수집"이다
 
@@ -286,8 +287,10 @@ export default defineCloudflareConfig({
      몇 개만** 사장님 화면에 표시 → 읽고 → 즉시 revert. Vercel 대시보드가 해 주던 일을 우리 손으로
      하는 것뿐이지만, 진짜 필요할 때만 쓴다.
 4. **특별 관리 키 검증 — 값 비교가 아니라 기능으로 (F-4)**
-5. **CF 주입:** NEXT_PUBLIC 9종=Workers Builds 빌드 env(번들에 구워짐), 나머지=`wrangler secret put`
-   일괄 스크립트(.env.local 을 읽어 키별 put, 값은 화면에 안 찍음) + 키 존재 대조 스크립트.
+5. **CF 주입 = 전부 자동(CT-13, 사장님 지시 — 수작업 입력 0):** 시크릿은 `push-secrets.mjs` 가
+   `.env.local`→`wrangler secret bulk`, NEXT_PUBLIC 9종은 `.env.production` 레포 커밋(공개값).
+   사장님 몫은 값 입력이 아니라 **재료 3가지 제공뿐**: CF API 토큰(CF0) · 운영 메일 3개 값 ·
+   신규 발급 키 백업의 비밀번호 관리자 보관.
 
 ### F-2 이식 표 (✅ `.env.local` 실측 — 값 아닌 키만)
 
@@ -313,7 +316,7 @@ export default defineCloudflareConfig({
 
 | 그룹 | 키 | 회수 경로 |
 |---|---|---|
-| **평문·열람 가능 17** (눈 아이콘, All Environments) | STRIPE_SECRET_KEY · STRIPE_WEBHOOK_SECRET · SUPABASE_SERVICE_ROLE_KEY · RESEND_API_KEY · RESEND_WEBHOOK_SECRET · RESEND_FROM_EMAIL · ANTHROPIC_API_KEY · GEMINI_API_KEY · LINE_CHANNEL_ID · LINE_CHANNEL_SECRET · GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_SUPABASE_URL · NEXT_PUBLIC_SUPABASE_ANON_KEY · NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY · NEXT_PUBLIC_APP_URL · MAPS_API_KEY | **사장님이 대시보드에서 지금도 reveal 가능** → CF 주입 시 직접 복사(채팅·문서에 값 옮기지 않는다). 로컬 49키와의 동일성 최종 판정은 F-4 기능 테스트. ⚠ "Needs Attention" 뱃지 7개는 Vercel 이 평문 저장된 고가치 시크릿에 다는 권고 표시로 보임(⚠추정) — 이사와 무관 |
+| **평문·열람 가능 17** (눈 아이콘, All Environments — Sensitive 뱃지 없음) | STRIPE_SECRET_KEY · STRIPE_WEBHOOK_SECRET · SUPABASE_SERVICE_ROLE_KEY · RESEND_API_KEY · RESEND_WEBHOOK_SECRET · RESEND_FROM_EMAIL · ANTHROPIC_API_KEY · GEMINI_API_KEY · LINE_CHANNEL_ID · LINE_CHANNEL_SECRET · GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_GOOGLE_MAPS_API_KEY · NEXT_PUBLIC_SUPABASE_URL · NEXT_PUBLIC_SUPABASE_ANON_KEY · NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY · NEXT_PUBLIC_APP_URL · MAPS_API_KEY | **16/17 이 `.env.local` 에 이미 있다** → 로컬 값으로 주입, **대시보드 열람은 필수 아님**(눈 비교 검증을 원할 때만 쓰는 선택지 — 이 그룹만 눈 아이콘 클릭 시 보인다). 나머지 1개 MAPS_API_KEY 는 코드 미참조 죽은 키. 동일성 최종 판정은 F-4 기능 테스트. ⚠ "Needs Attention" 뱃지 7개는 Vercel 이 평문 저장된 고가치 시크릿에 다는 권고 표시로 보임(⚠추정) — 이사와 무관 |
 | **sensitive 이지만 로컬 보유** | GROQ · KAKAO_REST · OPENAI · OPS_INBOUND_WEBHOOK_SECRET · CHAT_AUDIT_LOG · IP_HASH_SALT · ADMIN_SUPPORT_API_TOKEN · TELEGRAM 2종 · SLACK_QUOTE_WEBHOOK_URL · WEB_PUSH_CONTACT · CRON_SECRET · NEXT_PUBLIC_TOUR_MODE_V1 · 🔴 OPS_GUIDE_PII_ENC_KEY | `.env.local` 값 사용. PII 키만 F-4 복호화 테스트로 프로덕션 동일성 **필수 판정**. CRON_SECRET 은 어차피 신규 발급(F-1 ③c) |
 | **sensitive + 로컬 없음, 그러나 공개값** | NEXT_PUBLIC_TOUR_OPS_PHONE · NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID · NEXT_PUBLIC_WEB_PUSH_VAPID_PUBLIC_KEY | NEXT_PUBLIC 은 라이브 클라이언트 번들에 그대로 인라인 — **라이브 사이트 JS 에서 그대로 복구 가능**(sensitive 잠금이 무의미한 부류) |
 | **sensitive + 로컬 없음, 운영값** | OPS_ALERT_EMAIL · ADMIN_BOOKING_NOTIFICATION_EMAILS · OPS_INBOUND_ADDRESSES · CHAT_STREAMING | 사장님이 아는 값(메일 주소 3개) + CHAT_STREAMING 은 킬스위치 `"1"`(✅ 코드 확인 — 설정돼 있다는 것 자체가 프로덕션 스트리밍 ON 이라는 뜻 → CF 에도 `1`) |
