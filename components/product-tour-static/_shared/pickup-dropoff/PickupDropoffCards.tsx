@@ -5,6 +5,7 @@ import { ChevronRight, MapPin } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import type { TourProductSectionUiV1 } from "@/lib/tour-product/tourProductSectionUi";
+import { isClockTime } from "@/components/product-tour-static/_shared/pickupDropoffTypes";
 import type {
   PickupDropoffPoint,
   PickupDropoffSection,
@@ -123,8 +124,10 @@ export function PickupOnlyCards({ pickupDropoff, sectionUi }: PickupDropoffCards
           ) : null}
           <span className="min-w-0 flex-1">
             <span className="flex items-center gap-2 text-xs text-muted-foreground">
-              {first?.time ? <span className="font-semibold text-foreground">{first.time}</span> : null}
-              {first?.time ? <span className="text-border">·</span> : null}
+              {/* Cruise rows carry a descriptive sentence here, not a clock
+                  time — the summary chip only has room for the latter. */}
+              {isClockTime(first?.time) ? <span className="font-semibold text-foreground">{first.time}</span> : null}
+              {isClockTime(first?.time) ? <span className="text-border">·</span> : null}
               <span className="truncate">
                 {formatTemplate(sectionUi.pickupPointsTemplate ?? "{count} pickup points", pickupPoints.length)}
               </span>
@@ -146,6 +149,10 @@ export function DropoffOnlyCard({ pickupDropoff, sectionUi }: PickupDropoffCards
   const dropoffPoints = pickupDropoff.return ?? [];
   if (dropoffPoints.length === 0) return null;
   const returnBand = inferReturnBand(pickupDropoff.notes);
+  const lastDropoffTime = dropoffPoints[dropoffPoints.length - 1]?.time;
+  // No fabricated "17:30" fallback — cruise products have no fixed return
+  // clock time (the promise is "back before sail-away"), so show nothing.
+  const returnTime = returnBand ?? (isClockTime(lastDropoffTime) ? lastDropoffTime : null);
 
   return (
     <div className="relative pl-12">
@@ -162,11 +169,13 @@ export function DropoffOnlyCard({ pickupDropoff, sectionUi }: PickupDropoffCards
           )}
         >
           <span className="min-w-0 flex-1">
-            <span className="flex items-center gap-2 text-xs text-white/70">
-              <span className="font-semibold text-white">~{returnBand ?? "17:30"}</span>
-              <span>·</span>
-              <span>{sectionUi.dropoffApproxLabel ?? "approx."}</span>
-            </span>
+            {returnTime ? (
+              <span className="flex items-center gap-2 text-xs text-white/70">
+                <span className="font-semibold text-white">~{returnTime}</span>
+                <span>·</span>
+                <span>{sectionUi.dropoffApproxLabel ?? "approx."}</span>
+              </span>
+            ) : null}
             <span className="mt-1 block text-base font-semibold tracking-tight text-white">
               {sectionUi.dropoffCardTitle ?? "Drop-off"}
             </span>
