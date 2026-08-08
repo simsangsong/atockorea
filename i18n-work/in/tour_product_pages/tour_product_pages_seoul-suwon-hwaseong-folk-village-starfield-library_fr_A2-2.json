@@ -8,6 +8,7 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "Yes — ⟦G1⟧, ⟦G0⟧, and Korean Folk Village admission are all included. Starfield Library is free for everyone. Hanbok rental, archery, or other optional folk-village add-ons are at your own cost.",
+      "tm": "Oui — les entrées à ⟦G1⟧, au ⟦G0⟧ et au village folklorique coréen sont toutes incluses. La bibliothèque Starfield est gratuite pour tous. La location de hanbok, le tir à l'arc et les autres activités facultatives du village folklorique restent à votre charge.",
       "glossary": [
         "⟦G0⟧ = Palais de Hwaseong Haenggung",
         "⟦G1⟧ = Forteresse Hwaseong de Suwon"
@@ -18,65 +19,80 @@
       "tm": "Les entrées sont-elles incluses ?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken)."
+      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken).",
+      "tm": "Non. Le déjeuner se prend généralement pendant le temps libre, au food hall du Starfield de Suwon (grand choix, ₩10 000 à ₩20 000) ou dans un petit restaurant de Suwon près de la forteresse (galbi ou poulet à la façon de Suwon)."
     },
     "/staticQuestions/1/question": {
       "source_en": "Is lunch included?",
       "tm": "Le déjeuner est-il inclus ?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "About 1 km of the 5.7 km loop, typically the section between Janganmun and Hwaseomun, including some bastions and a beacon mound. The full loop takes 3+ hours and isn't covered in this itinerary."
+      "source_en": "About 1 km of the 5.7 km loop, typically the section between Janganmun and Hwaseomun, including some bastions and a beacon mound. The full loop takes 3+ hours and isn't covered in this itinerary.",
+      "tm": "Environ 1 km de la boucle de 5,7 km, généralement la section entre Janganmun et Hwaseomun, avec quelques bastions et une tour à signaux. La boucle complète demande plus de 3 heures et n'est pas couverte par ce programme."
     },
     "/staticQuestions/2/question": {
-      "source_en": "How much of the fortress wall do we walk?"
+      "source_en": "How much of the fortress wall do we walk?",
+      "tm": "Quelle portion du rempart parcourt-on à pied ?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes for first-time visitors — it's an architectural draw on its own. Free time is also for late lunch, coffee, or browsing the Starfield Suwon mall (Korea's flagship 2nd-generation Starfield, opened January 2024)."
+      "source_en": "Yes for first-time visitors — it's an architectural draw on its own. Free time is also for late lunch, coffee, or browsing the Starfield Suwon mall (Korea's flagship 2nd-generation Starfield, opened January 2024).",
+      "tm": "Oui pour une première visite — c'est un site architectural à part entière. Le temps libre sert aussi à un déjeuner tardif, à un café ou à flâner dans le centre commercial Starfield de Suwon (le Starfield de 2e génération, vaisseau amiral de Corée, ouvert en janvier 2024)."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Is Starfield Library worth a full hour?"
+      "source_en": "Is Starfield Library worth a full hour?",
+      "tm": "La bibliothèque Starfield mérite-t-elle une heure entière ?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Yes, hanbok rental is available on-site for an extra fee (typically ₩10,000–₩20,000 for 1–2 hours). Wearing hanbok also gets you discounts on traditional-experience activities. The guide can point you to the rental booth."
+      "source_en": "Yes, hanbok rental is available on-site for an extra fee (typically ₩10,000–₩20,000 for 1–2 hours). Wearing hanbok also gets you discounts on traditional-experience activities. The guide can point you to the rental booth.",
+      "tm": "Oui, la location de hanbok est proposée sur place moyennant un supplément (généralement ₩10 000 à ₩20 000 pour 1 à 2 heures). Porter le hanbok donne aussi droit à des réductions sur les activités traditionnelles. Le guide peut vous indiquer le comptoir de location."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Can I rent a hanbok at the Folk Village?"
+      "source_en": "Can I rent a hanbok at the Folk Village?",
+      "tm": "Puis-je louer un hanbok au village folklorique ?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes. This tour adds the Korean Folk Village (a major heritage site) and uses Starfield Library as the modern stop. The Waujeongsa version drops the Folk Village and replaces it with the giant-Buddha temple in Yongin. Choose this one if heritage depth matters more; the Waujeongsa version if Buddhist sculpture matters more."
+      "source_en": "Yes. This tour adds the Korean Folk Village (a major heritage site) and uses Starfield Library as the modern stop. The Waujeongsa version drops the Folk Village and replaces it with the giant-Buddha temple in Yongin. Choose this one if heritage depth matters more; the Waujeongsa version if Buddhist sculpture matters more.",
+      "tm": "Oui. Ce circuit ajoute le village folklorique coréen (un site patrimonial majeur) et retient la bibliothèque Starfield comme étape contemporaine. La version Waujeongsa renonce au village folklorique et le remplace par le temple au Bouddha géant de Yongin. Choisissez celle-ci si la profondeur patrimoniale compte davantage ; la version Waujeongsa si c'est la sculpture bouddhique qui vous attire."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Is there a difference from the Suwon + Waujeongsa tour?"
+      "source_en": "Is there a difference from the Suwon + Waujeongsa tour?",
+      "tm": "Y a-t-il une différence avec le circuit Suwon + Waujeongsa ?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Yes — strong first-time pick for travelers wanting one UNESCO site (Hwaseong Fortress), one heritage village (Korean Folk Village), one Joseon palace (Haenggung), and one contemporary photo space (Starfield Library) in a single day. The format covers four contrasting sides of Korean culture without retreading central Seoul palaces. Geographically the route stays in the Suwon-Yongin corridor."
+      "source_en": "Yes — strong first-time pick for travelers wanting one UNESCO site (Hwaseong Fortress), one heritage village (Korean Folk Village), one Joseon palace (Haenggung), and one contemporary photo space (Starfield Library) in a single day. The format covers four contrasting sides of Korean culture without retreading central Seoul palaces. Geographically the route stays in the Suwon-Yongin corridor.",
+      "tm": "Oui — un excellent choix pour une première visite si vous voulez un site UNESCO (la forteresse de Hwaseong), un village patrimonial (le village folklorique coréen), un palais Joseon (le Haenggung) et un lieu contemporain photogénique (la bibliothèque Starfield) en une seule journée. La formule couvre quatre facettes contrastées de la culture coréenne sans repasser par les palais du centre de Séoul. Géographiquement, l'itinéraire reste dans le couloir Suwon-Yongin."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this a good choice for first-time visitors to Suwon & Yongin?"
+      "source_en": "Is this a good choice for first-time visitors to Suwon & Yongin?",
+      "tm": "Est-ce un bon choix pour une première visite de Suwon et Yongin ?"
     },
     "/staticQuestions/7/answer": {
-      "source_en": "Active walking day, ≈4-5 km total. Hwaseong wall is the hardest section: 1 km walked between Janganmun and Hwaseomun, with steep gradients, stairs at gates, and uneven historic surfaces. Korean Folk Village adds ≈2 hours of walking on flat-to-gently-sloping paths (270+ houses spread out). Haenggung Palace and Starfield Library are easy indoor/courtyard surfaces. Comfortable shoes essential."
+      "source_en": "Active walking day, ≈4-5 km total. Hwaseong wall is the hardest section: 1 km walked between Janganmun and Hwaseomun, with steep gradients, stairs at gates, and uneven historic surfaces. Korean Folk Village adds ≈2 hours of walking on flat-to-gently-sloping paths (270+ houses spread out). Haenggung Palace and Starfield Library are easy indoor/courtyard surfaces. Comfortable shoes essential.",
+      "tm": "Journée de marche active, ≈4-5 km au total. Le rempart de Hwaseong est la section la plus difficile : 1 km parcouru entre Janganmun et Hwaseomun, avec de fortes pentes, des escaliers aux portes et des sols historiques irréguliers. Le village folklorique coréen ajoute ≈2 heures de marche sur des allées plates à légèrement pentues (plus de 270 maisons dispersées). Le palais Haenggung et la bibliothèque Starfield offrent des surfaces faciles, en intérieur ou en cour. Des chaussures confortables sont indispensables."
     },
     "/staticQuestions/7/question": {
       "source_en": "Is the walking difficult?",
       "tm": "La marche est-elle difficile ?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Yes for families whose kids can handle a 10-hour day with several walking-heavy stops. The Folk Village is the family highlight — 270+ traditional houses, equestrian shows, K-drama filming locations, traditional weddings on weekends. Hanbok rental at Haenggung Palace is a fun photo moment (and gets free fortress admission for hanbok wearers). Strollers difficult on the wall, fine at Starfield and Folk Village."
+      "source_en": "Yes for families whose kids can handle a 10-hour day with several walking-heavy stops. The Folk Village is the family highlight — 270+ traditional houses, equestrian shows, K-drama filming locations, traditional weddings on weekends. Hanbok rental at Haenggung Palace is a fun photo moment (and gets free fortress admission for hanbok wearers). Strollers difficult on the wall, fine at Starfield and Folk Village.",
+      "tm": "Oui pour les familles dont les enfants supportent une journée de 10 heures avec plusieurs étapes très marchées. Le village folklorique est le temps fort familial — plus de 270 maisons traditionnelles, spectacles équestres, lieux de tournage de K-dramas, mariages traditionnels le week-end. La location de hanbok au palais Haenggung est un moment photo amusant (et donne droit à l'entrée gratuite dans la forteresse pour ceux qui le portent). La poussette est difficile sur le rempart, sans problème au Starfield et au village folklorique."
     },
     "/staticQuestions/8/question": {
       "source_en": "Is this tour suitable for families?",
       "tm": "Cette visite convient-elle aux familles ?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "Recommended only for active seniors comfortable with stairs and uneven ground. The fortress wall is the hardest section — steep gradients and stairs make some stretches wheelchair-difficult. Seniors can walk easier wall segments and skip command posts. Folk Village paths are flat to gently sloping, walkable for most. Haenggung is mostly flat. Starfield is fully escalator/elevator-accessible."
+      "source_en": "Recommended only for active seniors comfortable with stairs and uneven ground. The fortress wall is the hardest section — steep gradients and stairs make some stretches wheelchair-difficult. Seniors can walk easier wall segments and skip command posts. Folk Village paths are flat to gently sloping, walkable for most. Haenggung is mostly flat. Starfield is fully escalator/elevator-accessible.",
+      "tm": "Recommandé uniquement aux seniors actifs à l'aise avec les escaliers et les sols irréguliers. Le rempart est la section la plus difficile — de fortes pentes et des escaliers rendent certains tronçons difficiles en fauteuil roulant. Les seniors peuvent parcourir les portions les plus faciles et renoncer aux postes de commandement. Les allées du village folklorique sont plates à légèrement pentues, praticables pour la plupart. Le Haenggung est en grande partie plat. Le Starfield est entièrement accessible par escaliers mécaniques et ascenseurs."
     },
     "/staticQuestions/9/question": {
       "source_en": "Can older adults join comfortably?",
       "tm": "Les personnes âgées peuvent-elles participer confortablement ?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Best fit is around age 10 and up — the day involves significant walking on the fortress wall (uneven surfaces), an active Folk Village exploration, and a long day overall. Younger children can join with carriers but the 1 km wall walk plus the 2-hour Folk Village can tire 6-9 year-olds. Equestrian shows and traditional performances at the Folk Village are crowd-pleasers for older kids."
+      "source_en": "Best fit is around age 10 and up — the day involves significant walking on the fortress wall (uneven surfaces), an active Folk Village exploration, and a long day overall. Younger children can join with carriers but the 1 km wall walk plus the 2-hour Folk Village can tire 6-9 year-olds. Equestrian shows and traditional performances at the Folk Village are crowd-pleasers for older kids.",
+      "tm": "L'âge le plus adapté est environ 10 ans et plus — la journée comporte une marche importante sur le rempart (sols irréguliers), une exploration active du village folklorique et une durée globale longue. Les plus jeunes peuvent venir en porte-bébé, mais la marche de 1 km sur le rempart et les 2 heures au village folklorique fatiguent les 6-9 ans. Les spectacles équestres et les représentations traditionnelles du village folklorique font l'unanimité chez les enfants plus grands."
     },
     "/staticQuestions/10/question": {
       "source_en": "What's the recommended minimum age?",
@@ -107,7 +123,8 @@
       "tm": "Itinéraire réglé à la main, pas une boucle générique"
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Curated group size"
+      "source_en": "Curated group size",
+      "tm": "Taille de groupe maîtrisée"
     },
     "/bookingTrustItems/2/iconBg": {
       "source_en": "bg-amber-50/80",
@@ -122,28 +139,32 @@
       "tm": "Printemps"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms along the Hwaseong wall and at the folk village; major Suwon Hwaseong Cultural Festival in early autumn."
+      "source_en": "Cherry blossoms along the Hwaseong wall and at the folk village; major Suwon Hwaseong Cultural Festival in early autumn.",
+      "tm": "Cerisiers en fleur le long du rempart de Hwaseong et au village folklorique ; grand festival culturel de Hwaseong de Suwon au début de l’automne."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer",
       "tm": "Été"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Folk-village water festival; evening lighting at Haenggung on selected nights."
+      "source_en": "Folk-village water festival; evening lighting at Haenggung on selected nights.",
+      "tm": "Festival de l’eau au village folklorique ; illuminations en soirée au Haenggung certains soirs."
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn",
       "tm": "Automne"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Maple foliage along the fortress wall, peak Korean Folk Village season for traditional weddings and harvest demos."
+      "source_en": "Maple foliage along the fortress wall, peak Korean Folk Village season for traditional weddings and harvest demos.",
+      "tm": "Feuillages d’érable le long du rempart, pleine saison au village folklorique coréen pour les mariages traditionnels et les démonstrations de moisson."
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter",
       "tm": "Hiver"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Snow on the fortress wall is one of Korea's classic photographs; folk village hosts winter customs (kimjang, ondol fires)."
+      "source_en": "Snow on the fortress wall is one of Korea's classic photographs; folk village hosts winter customs (kimjang, ondol fires).",
+      "tm": "La neige sur le rempart est l’une des photographies classiques de Corée ; le village folklorique met en scène les coutumes d’hiver (kimjang, feux d’ondol)."
     },
     "/bookingSupportSteps/0/title": {
       "source_en": "Instant Confirmation",
@@ -232,5 +253,5 @@
       "⟦G1⟧": "Forteresse Hwaseong de Suwon"
     }
   },
-  "tmHits": 38
+  "tmHits": 59
 }
