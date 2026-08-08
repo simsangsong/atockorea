@@ -2,7 +2,7 @@
   "version": 1,
   "pipelineVersion": "1",
   "createdAt": "2026-07-25T15:20:31.123Z",
-  "updatedAt": "2026-08-08T14:33:56.200Z",
+  "updatedAt": "2026-08-08T14:50:04.248Z",
   "units": [
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A1",
@@ -11,10 +11,12 @@
       "locale": "de",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 60,
-      "sourceChars": 2474
+      "sourceChars": 2474,
+      "fails": 0,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A2",
@@ -23,10 +25,12 @@
       "locale": "de",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 32,
-      "sourceChars": 3672
+      "sourceChars": 3672,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:A2-2",
@@ -35,10 +39,12 @@
       "locale": "de",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 45,
-      "sourceChars": 2941
+      "sourceChars": 2941,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:B",
@@ -47,10 +53,12 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 126,
-      "sourceChars": 4276
+      "sourceChars": 4276,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops",
@@ -59,10 +67,12 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 50,
-      "sourceChars": 5975
+      "sourceChars": 5975,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-2",
@@ -71,10 +81,12 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 49,
-      "sourceChars": 5516
+      "sourceChars": 5516,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-3",
@@ -83,10 +95,12 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 67,
-      "sourceChars": 5992
+      "sourceChars": 5992,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-4",
@@ -95,10 +109,12 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 46,
-      "sourceChars": 5759
+      "sourceChars": 5759,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-5",
@@ -107,10 +123,12 @@
       "locale": "de",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 29,
-      "sourceChars": 5081
+      "sourceChars": 5081,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-6",
@@ -119,10 +137,12 @@
       "locale": "de",
       "chunk": "itineraryStops-6",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-7",
@@ -131,10 +151,12 @@
       "locale": "de",
       "chunk": "itineraryStops-7",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 38,
-      "sourceChars": 5973
+      "sourceChars": 5973,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:itineraryStops-8",
@@ -143,10 +165,12 @@
       "locale": "de",
       "chunk": "itineraryStops-8",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 12,
-      "sourceChars": 1212
+      "sourceChars": 1212,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:practicalAccordionItems",
@@ -155,10 +179,12 @@
       "locale": "de",
       "chunk": "practicalAccordionItems",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 56,
-      "sourceChars": 5002
+      "sourceChars": 5002,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:routeFlowStops",
@@ -167,10 +193,12 @@
       "locale": "de",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 24,
-      "sourceChars": 604
+      "sourceChars": 604,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:de:staticQuestions",
@@ -179,10 +207,12 @@
       "locale": "de",
       "chunk": "staticQuestions",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 32,
-      "sourceChars": 5775
+      "sourceChars": 5775,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A1",
@@ -191,10 +221,12 @@
       "locale": "fr",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 60,
-      "sourceChars": 2474
+      "sourceChars": 2474,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A2",
@@ -203,10 +235,12 @@
       "locale": "fr",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 32,
-      "sourceChars": 3672
+      "sourceChars": 3672,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:A2-2",
@@ -215,10 +249,12 @@
       "locale": "fr",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 45,
-      "sourceChars": 2941
+      "sourceChars": 2941,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:B",
@@ -227,10 +263,12 @@
       "locale": "fr",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 126,
-      "sourceChars": 4276
+      "sourceChars": 4276,
+      "fails": 0,
+      "flags": 19
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops",
@@ -239,10 +277,12 @@
       "locale": "fr",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 50,
-      "sourceChars": 5975
+      "sourceChars": 5975,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-2",
@@ -251,10 +291,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 49,
-      "sourceChars": 5516
+      "sourceChars": 5516,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-3",
@@ -263,10 +305,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 67,
-      "sourceChars": 5992
+      "sourceChars": 5992,
+      "fails": 0,
+      "flags": 25
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-4",
@@ -275,10 +319,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 46,
-      "sourceChars": 5759
+      "sourceChars": 5759,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-5",
@@ -287,10 +333,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 29,
-      "sourceChars": 5081
+      "sourceChars": 5081,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-6",
@@ -299,10 +347,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-6",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-7",
@@ -311,10 +361,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-7",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 38,
-      "sourceChars": 5973
+      "sourceChars": 5973,
+      "fails": 0,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:itineraryStops-8",
@@ -323,10 +375,12 @@
       "locale": "fr",
       "chunk": "itineraryStops-8",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 12,
-      "sourceChars": 1212
+      "sourceChars": 1212,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:practicalAccordionItems",
@@ -335,10 +389,12 @@
       "locale": "fr",
       "chunk": "practicalAccordionItems",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 56,
-      "sourceChars": 5002
+      "sourceChars": 5002,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:routeFlowStops",
@@ -347,10 +403,12 @@
       "locale": "fr",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 24,
-      "sourceChars": 604
+      "sourceChars": 604,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:fr:staticQuestions",
@@ -359,10 +417,12 @@
       "locale": "fr",
       "chunk": "staticQuestions",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 32,
-      "sourceChars": 5775
+      "sourceChars": 5775,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:A1",
@@ -371,10 +431,12 @@
       "locale": "it",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 60,
-      "sourceChars": 2474
+      "sourceChars": 2474,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:A2",
@@ -383,10 +445,12 @@
       "locale": "it",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 32,
-      "sourceChars": 3672
+      "sourceChars": 3672,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:A2-2",
@@ -395,10 +459,12 @@
       "locale": "it",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 45,
-      "sourceChars": 2941
+      "sourceChars": 2941,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:B",
@@ -407,10 +473,12 @@
       "locale": "it",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 126,
-      "sourceChars": 4276
+      "sourceChars": 4276,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops",
@@ -419,10 +487,12 @@
       "locale": "it",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 50,
-      "sourceChars": 5975
+      "sourceChars": 5975,
+      "fails": 0,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-2",
@@ -431,10 +501,12 @@
       "locale": "it",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 49,
-      "sourceChars": 5516
+      "sourceChars": 5516,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-3",
@@ -443,10 +515,12 @@
       "locale": "it",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 67,
-      "sourceChars": 5992
+      "sourceChars": 5992,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-4",
@@ -455,10 +529,12 @@
       "locale": "it",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 46,
-      "sourceChars": 5759
+      "sourceChars": 5759,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-5",
@@ -467,10 +543,12 @@
       "locale": "it",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 29,
-      "sourceChars": 5081
+      "sourceChars": 5081,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-6",
@@ -479,10 +557,12 @@
       "locale": "it",
       "chunk": "itineraryStops-6",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-7",
@@ -491,10 +571,12 @@
       "locale": "it",
       "chunk": "itineraryStops-7",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 38,
-      "sourceChars": 5973
+      "sourceChars": 5973,
+      "fails": 0,
+      "flags": 12
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:itineraryStops-8",
@@ -503,10 +585,12 @@
       "locale": "it",
       "chunk": "itineraryStops-8",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 12,
-      "sourceChars": 1212
+      "sourceChars": 1212,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:practicalAccordionItems",
@@ -515,10 +599,12 @@
       "locale": "it",
       "chunk": "practicalAccordionItems",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 56,
-      "sourceChars": 5002
+      "sourceChars": 5002,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:routeFlowStops",
@@ -527,10 +613,12 @@
       "locale": "it",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 2,
       "segments": 24,
-      "sourceChars": 604
+      "sourceChars": 604,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:it:staticQuestions",
@@ -539,10 +627,12 @@
       "locale": "it",
       "chunk": "staticQuestions",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 2,
       "segments": 32,
-      "sourceChars": 5775
+      "sourceChars": 5775,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A1",
@@ -551,10 +641,12 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 60,
-      "sourceChars": 2474
+      "sourceChars": 2474,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2",
@@ -563,10 +655,12 @@
       "locale": "ru",
       "chunk": "A2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 32,
-      "sourceChars": 3672
+      "sourceChars": 3672,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2-2",
@@ -575,10 +669,12 @@
       "locale": "ru",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 45,
-      "sourceChars": 2941
+      "sourceChars": 2941,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:B",
@@ -587,10 +683,12 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 126,
-      "sourceChars": 4276
+      "sourceChars": 4276,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops",
@@ -599,10 +697,12 @@
       "locale": "ru",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 50,
-      "sourceChars": 5975
+      "sourceChars": 5975,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-2",
@@ -611,10 +711,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 49,
-      "sourceChars": 5516
+      "sourceChars": 5516,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-3",
@@ -623,10 +725,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 67,
-      "sourceChars": 5992
+      "sourceChars": 5992,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-4",
@@ -635,10 +739,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 46,
-      "sourceChars": 5759
+      "sourceChars": 5759,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-5",
@@ -647,10 +753,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 29,
-      "sourceChars": 5081
+      "sourceChars": 5081,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-6",
@@ -659,10 +767,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-6",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-7",
@@ -671,10 +781,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-7",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 38,
-      "sourceChars": 5973
+      "sourceChars": 5973,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:itineraryStops-8",
@@ -683,10 +795,12 @@
       "locale": "ru",
       "chunk": "itineraryStops-8",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 12,
-      "sourceChars": 1212
+      "sourceChars": 1212,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:practicalAccordionItems",
@@ -695,10 +809,12 @@
       "locale": "ru",
       "chunk": "practicalAccordionItems",
       "tier": "A1",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 56,
-      "sourceChars": 5002
+      "sourceChars": 5002,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:routeFlowStops",
@@ -707,10 +823,12 @@
       "locale": "ru",
       "chunk": "routeFlowStops",
       "tier": "B",
-      "status": "pending",
-      "attempts": 0,
+      "status": "auto_pass",
+      "attempts": 3,
       "segments": 24,
-      "sourceChars": 604
+      "sourceChars": 604,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:staticQuestions",
@@ -719,10 +837,12 @@
       "locale": "ru",
       "chunk": "staticQuestions",
       "tier": "A2",
-      "status": "pending",
-      "attempts": 0,
+      "status": "flagged",
+      "attempts": 3,
       "segments": 32,
-      "sourceChars": 5775
+      "sourceChars": 5775,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:A1",
@@ -732,9 +852,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 53,
-      "sourceChars": 2489
+      "sourceChars": 2489,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:A2",
@@ -744,9 +866,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 48,
-      "sourceChars": 5282
+      "sourceChars": 5282,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:A2-2",
@@ -756,9 +880,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 38,
-      "sourceChars": 3187
+      "sourceChars": 3187,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:B",
@@ -768,9 +894,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 48,
-      "sourceChars": 2311
+      "sourceChars": 2311,
+      "fails": 0,
+      "flags": 18
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:itineraryStops",
@@ -780,9 +908,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 95,
-      "sourceChars": 5967
+      "sourceChars": 5967,
+      "fails": 0,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:itineraryStops-2",
@@ -792,9 +922,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 25,
-      "sourceChars": 1887
+      "sourceChars": 1887,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:practicalAccordionItems",
@@ -804,9 +936,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 42,
-      "sourceChars": 5051
+      "sourceChars": 5051,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:de:routeFlowStops",
@@ -816,9 +950,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 9,
-      "sourceChars": 78
+      "sourceChars": 78,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:fr:A1",
@@ -828,7 +964,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 53,
       "sourceChars": 2489,
       "fails": 0,
@@ -842,7 +978,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 48,
       "sourceChars": 5282,
       "fails": 0,
@@ -856,7 +992,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 38,
       "sourceChars": 3187,
       "fails": 0,
@@ -870,7 +1006,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 48,
       "sourceChars": 2311,
       "fails": 0,
@@ -884,7 +1020,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 95,
       "sourceChars": 5967,
       "fails": 0,
@@ -898,7 +1034,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 25,
       "sourceChars": 1887,
       "fails": 0,
@@ -912,7 +1048,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 42,
       "sourceChars": 5051,
       "fails": 0,
@@ -926,7 +1062,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 9,
       "sourceChars": 78,
       "fails": 0,
@@ -940,7 +1076,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 53,
       "sourceChars": 2489,
       "fails": 0,
@@ -954,7 +1090,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 48,
       "sourceChars": 5282,
       "fails": 0,
@@ -968,7 +1104,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 38,
       "sourceChars": 3187,
       "fails": 0,
@@ -982,7 +1118,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 48,
       "sourceChars": 2311,
       "fails": 0,
@@ -996,7 +1132,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 95,
       "sourceChars": 5967,
       "fails": 0,
@@ -1010,7 +1146,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 25,
       "sourceChars": 1887,
       "fails": 0,
@@ -1024,7 +1160,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 42,
       "sourceChars": 5051,
       "fails": 0,
@@ -1038,7 +1174,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 18,
+      "attempts": 20,
       "segments": 9,
       "sourceChars": 78,
       "fails": 0,
@@ -1052,9 +1188,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 53,
-      "sourceChars": 2489
+      "sourceChars": 2489,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:A2",
@@ -1064,9 +1202,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 48,
-      "sourceChars": 5282
+      "sourceChars": 5282,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:A2-2",
@@ -1076,9 +1216,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 38,
-      "sourceChars": 3187
+      "sourceChars": 3187,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:B",
@@ -1088,9 +1230,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 48,
-      "sourceChars": 2311
+      "sourceChars": 2311,
+      "fails": 0,
+      "flags": 15
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:itineraryStops",
@@ -1100,9 +1244,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 95,
-      "sourceChars": 5967
+      "sourceChars": 5967,
+      "fails": 0,
+      "flags": 16
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:itineraryStops-2",
@@ -1112,9 +1258,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 25,
-      "sourceChars": 1887
+      "sourceChars": 1887,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:practicalAccordionItems",
@@ -1124,9 +1272,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 42,
-      "sourceChars": 5051
+      "sourceChars": 5051,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-city-tour:ru:routeFlowStops",
@@ -1136,9 +1286,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 14,
+      "attempts": 17,
       "segments": 9,
-      "sourceChars": 78
+      "sourceChars": 78,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A1",
@@ -1147,10 +1299,13 @@
       "locale": "de",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 42,
+      "status": "blocked",
+      "attempts": 45,
       "segments": 59,
-      "sourceChars": 2860
+      "sourceChars": 2860,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 30,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2",
@@ -1159,10 +1314,13 @@
       "locale": "de",
       "chunk": "A2",
       "tier": "A2",
-      "status": "flagged",
-      "attempts": 43,
+      "status": "blocked",
+      "attempts": 46,
       "segments": 62,
-      "sourceChars": 5855
+      "sourceChars": 5855,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:A2-2",
@@ -1171,10 +1329,13 @@
       "locale": "de",
       "chunk": "A2-2",
       "tier": "A2",
-      "status": "flagged",
-      "attempts": 43,
+      "status": "blocked",
+      "attempts": 46,
       "segments": 20,
-      "sourceChars": 1642
+      "sourceChars": 1642,
+      "lastError": "숫자 소실 — 원문의 [60] 이 번역에 없다 (원문 [60] vs 번역 [90])",
+      "fails": 1,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:B",
@@ -1183,10 +1344,13 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 43,
+      "status": "blocked",
+      "attempts": 46,
       "segments": 72,
-      "sourceChars": 3094
+      "sourceChars": 3094,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 37,
+      "flags": 38
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops",
@@ -1195,10 +1359,13 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 42,
+      "status": "blocked",
+      "attempts": 45,
       "segments": 100,
-      "sourceChars": 5962
+      "sourceChars": 5962,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 5,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-2",
@@ -1207,10 +1374,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 42,
+      "status": "blocked",
+      "attempts": 45,
       "segments": 55,
-      "sourceChars": 5974
+      "sourceChars": 5974,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 5,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-3",
@@ -1219,10 +1389,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 42,
+      "status": "blocked",
+      "attempts": 45,
       "segments": 70,
-      "sourceChars": 5973
+      "sourceChars": 5973,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 13,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:itineraryStops-4",
@@ -1231,10 +1404,13 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 43,
+      "status": "blocked",
+      "attempts": 46,
       "segments": 4,
-      "sourceChars": 940
+      "sourceChars": 940,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 4,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:de:practicalAccordionItems",
@@ -1256,9 +1432,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 43,
+      "attempts": 46,
       "segments": 7,
-      "sourceChars": 88
+      "sourceChars": 88,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-private-car-charter-cruise-shore:fr:A1",
@@ -1628,9 +1806,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 63,
-      "sourceChars": 2932
+      "sourceChars": 2932,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2",
@@ -1640,9 +1820,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 20,
-      "sourceChars": 2334
+      "sourceChars": 2334,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2-2",
@@ -1652,9 +1834,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 42,
-      "sourceChars": 5421
+      "sourceChars": 5421,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:A2-3",
@@ -1664,9 +1848,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 34,
-      "sourceChars": 1877
+      "sourceChars": 1877,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:B",
@@ -1676,9 +1862,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 123,
-      "sourceChars": 4175
+      "sourceChars": 4175,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops",
@@ -1688,9 +1876,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 51,
-      "sourceChars": 5959
+      "sourceChars": 5959,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-2",
@@ -1700,9 +1890,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 49,
-      "sourceChars": 5190
+      "sourceChars": 5190,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-3",
@@ -1712,9 +1904,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 64,
-      "sourceChars": 5989
+      "sourceChars": 5989,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-4",
@@ -1724,9 +1918,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 53,
-      "sourceChars": 5958
+      "sourceChars": 5958,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-5",
@@ -1736,9 +1932,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 29,
-      "sourceChars": 5077
+      "sourceChars": 5077,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-6",
@@ -1748,9 +1946,11 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-7",
@@ -1760,9 +1960,11 @@
       "chunk": "itineraryStops-7",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 38,
-      "sourceChars": 5967
+      "sourceChars": 5967,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:itineraryStops-8",
@@ -1772,9 +1974,11 @@
       "chunk": "itineraryStops-8",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 12,
-      "sourceChars": 1061
+      "sourceChars": 1061,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:practicalAccordionItems",
@@ -1784,9 +1988,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 41,
-      "sourceChars": 3787
+      "sourceChars": 3787,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:de:routeFlowStops",
@@ -1796,9 +2002,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 24,
-      "sourceChars": 565
+      "sourceChars": 565,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:fr:A1",
@@ -1808,7 +2016,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 63,
       "sourceChars": 2932,
       "fails": 0,
@@ -1822,7 +2030,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 20,
       "sourceChars": 2334,
       "fails": 0,
@@ -1836,7 +2044,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 42,
       "sourceChars": 5421,
       "fails": 0,
@@ -1850,7 +2058,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 34,
       "sourceChars": 1877,
       "fails": 0,
@@ -1864,7 +2072,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 123,
       "sourceChars": 4175,
       "fails": 0,
@@ -1878,7 +2086,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 51,
       "sourceChars": 5959,
       "fails": 0,
@@ -1892,7 +2100,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 49,
       "sourceChars": 5190,
       "fails": 0,
@@ -1906,7 +2114,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 64,
       "sourceChars": 5989,
       "fails": 0,
@@ -1920,7 +2128,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 53,
       "sourceChars": 5958,
       "fails": 0,
@@ -1934,7 +2142,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 29,
       "sourceChars": 5077,
       "fails": 0,
@@ -1948,7 +2156,7 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 55,
       "sourceChars": 5704,
       "fails": 0,
@@ -1962,7 +2170,7 @@
       "chunk": "itineraryStops-7",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 38,
       "sourceChars": 5967,
       "fails": 0,
@@ -1976,7 +2184,7 @@
       "chunk": "itineraryStops-8",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 12,
       "sourceChars": 1061,
       "fails": 0,
@@ -1990,7 +2198,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 41,
       "sourceChars": 3787,
       "fails": 0,
@@ -2004,7 +2212,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 6,
       "segments": 24,
       "sourceChars": 565,
       "fails": 0,
@@ -2018,7 +2226,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 63,
       "sourceChars": 2932,
       "fails": 0,
@@ -2032,7 +2240,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 20,
       "sourceChars": 2334,
       "fails": 0,
@@ -2046,7 +2254,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 42,
       "sourceChars": 5421,
       "fails": 0,
@@ -2060,7 +2268,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 34,
       "sourceChars": 1877,
       "fails": 0,
@@ -2074,7 +2282,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 123,
       "sourceChars": 4175,
       "fails": 0,
@@ -2088,7 +2296,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 51,
       "sourceChars": 5959,
       "fails": 0,
@@ -2102,7 +2310,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 49,
       "sourceChars": 5190,
       "fails": 0,
@@ -2116,7 +2324,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 64,
       "sourceChars": 5989,
       "fails": 0,
@@ -2130,7 +2338,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 53,
       "sourceChars": 5958,
       "fails": 0,
@@ -2144,7 +2352,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 29,
       "sourceChars": 5077,
       "fails": 0,
@@ -2158,7 +2366,7 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 55,
       "sourceChars": 5704,
       "fails": 0,
@@ -2172,7 +2380,7 @@
       "chunk": "itineraryStops-7",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 38,
       "sourceChars": 5967,
       "fails": 0,
@@ -2186,7 +2394,7 @@
       "chunk": "itineraryStops-8",
       "tier": "B",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 12,
       "sourceChars": 1061,
       "fails": 0,
@@ -2200,7 +2408,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 41,
       "sourceChars": 3787,
       "fails": 0,
@@ -2214,7 +2422,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 3,
+      "attempts": 5,
       "segments": 24,
       "sourceChars": 565,
       "fails": 0,
@@ -2228,9 +2436,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 63,
-      "sourceChars": 2932
+      "sourceChars": 2932,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:A2",
@@ -2240,9 +2450,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 20,
-      "sourceChars": 2334
+      "sourceChars": 2334,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:A2-2",
@@ -2252,9 +2464,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 42,
-      "sourceChars": 5421
+      "sourceChars": 5421,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:A2-3",
@@ -2264,9 +2478,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 34,
-      "sourceChars": 1877
+      "sourceChars": 1877,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:B",
@@ -2276,9 +2492,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 123,
-      "sourceChars": 4175
+      "sourceChars": 4175,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops",
@@ -2288,9 +2506,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 51,
-      "sourceChars": 5959
+      "sourceChars": 5959,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-2",
@@ -2300,9 +2520,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 49,
-      "sourceChars": 5190
+      "sourceChars": 5190,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-3",
@@ -2312,9 +2534,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 64,
-      "sourceChars": 5989
+      "sourceChars": 5989,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-4",
@@ -2324,9 +2548,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 53,
-      "sourceChars": 5958
+      "sourceChars": 5958,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-5",
@@ -2336,9 +2562,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 29,
-      "sourceChars": 5077
+      "sourceChars": 5077,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-6",
@@ -2348,9 +2576,11 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 55,
-      "sourceChars": 5704
+      "sourceChars": 5704,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-7",
@@ -2360,9 +2590,11 @@
       "chunk": "itineraryStops-7",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 38,
-      "sourceChars": 5967
+      "sourceChars": 5967,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:itineraryStops-8",
@@ -2372,9 +2604,11 @@
       "chunk": "itineraryStops-8",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 12,
-      "sourceChars": 1061
+      "sourceChars": 1061,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:practicalAccordionItems",
@@ -2384,9 +2618,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 41,
-      "sourceChars": 3787
+      "sourceChars": 3787,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:busan-small-group-sightseeing-tour-cruise-passengers:ru:routeFlowStops",
@@ -2396,9 +2632,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 2,
+      "attempts": 5,
       "segments": 24,
-      "sourceChars": 565
+      "sourceChars": 565,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:de:A1",
@@ -3464,9 +3702,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 39,
+      "attempts": 42,
       "segments": 58,
-      "sourceChars": 3305
+      "sourceChars": 3305,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:A2",
@@ -3476,9 +3716,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 39,
+      "attempts": 42,
       "segments": 23,
-      "sourceChars": 3477
+      "sourceChars": 3477,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:A2-2",
@@ -3488,9 +3730,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 39,
+      "attempts": 42,
       "segments": 46,
-      "sourceChars": 2787
+      "sourceChars": 2787,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:B",
@@ -3499,10 +3743,13 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 39,
+      "status": "blocked",
+      "attempts": 42,
       "segments": 60,
-      "sourceChars": 3156
+      "sourceChars": 3156,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 95,
+      "flags": 49
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops",
@@ -3512,9 +3759,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 39,
+      "attempts": 42,
       "segments": 38,
-      "sourceChars": 6000
+      "sourceChars": 6000,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-2",
@@ -3523,10 +3772,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 65,
-      "sourceChars": 5985
+      "sourceChars": 5985,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 11,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-3",
@@ -3535,10 +3787,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 34,
-      "sourceChars": 4229
+      "sourceChars": 4229,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-4",
@@ -3547,10 +3802,13 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 45,
-      "sourceChars": 5806
+      "sourceChars": 5806,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 72,
+      "flags": 23
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-5",
@@ -3559,10 +3817,13 @@
       "locale": "de",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 31,
+      "status": "blocked",
+      "attempts": 34,
       "segments": 39,
-      "sourceChars": 5604
+      "sourceChars": 5604,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 5,
+      "flags": 14
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:itineraryStops-6",
@@ -3571,10 +3832,12 @@
       "locale": "de",
       "chunk": "itineraryStops-6",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 38,
+      "status": "flagged",
+      "attempts": 41,
       "segments": 27,
-      "sourceChars": 5155
+      "sourceChars": 5155,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:practicalAccordionItems",
@@ -3584,9 +3847,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "auto_pass",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 27,
-      "sourceChars": 2927
+      "sourceChars": 2927,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:routeFlowStops",
@@ -3596,9 +3861,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 16,
-      "sourceChars": 487
+      "sourceChars": 487,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:staticQuestions",
@@ -3608,9 +3875,11 @@
       "chunk": "staticQuestions",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 24,
-      "sourceChars": 5955
+      "sourceChars": 5955,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:de:staticQuestions-2",
@@ -3620,9 +3889,11 @@
       "chunk": "staticQuestions-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 36,
+      "attempts": 39,
       "segments": 8,
-      "sourceChars": 2035
+      "sourceChars": 2035,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:fr:A1",
@@ -3632,7 +3903,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 58,
       "sourceChars": 3305,
       "fails": 0,
@@ -3646,7 +3917,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 23,
       "sourceChars": 3477,
       "fails": 0,
@@ -3660,7 +3931,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 46,
       "sourceChars": 2787,
       "fails": 0,
@@ -3674,7 +3945,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 60,
       "sourceChars": 3156,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3689,7 +3960,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 38,
       "sourceChars": 6000,
       "fails": 0,
@@ -3703,7 +3974,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 65,
       "sourceChars": 5985,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -3718,7 +3989,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 34,
       "sourceChars": 4229,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -3733,7 +4004,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 45,
       "sourceChars": 5806,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3748,7 +4019,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 39,
       "sourceChars": 5604,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3763,7 +4034,7 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 27,
       "sourceChars": 5155,
       "fails": 0,
@@ -3777,7 +4048,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "auto_pass",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 27,
       "sourceChars": 2927,
       "fails": 0,
@@ -3791,7 +4062,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 16,
       "sourceChars": 487,
       "fails": 0,
@@ -3805,7 +4076,7 @@
       "chunk": "staticQuestions",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 24,
       "sourceChars": 5955,
       "fails": 0,
@@ -3819,7 +4090,7 @@
       "chunk": "staticQuestions-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 8,
       "sourceChars": 2035,
       "fails": 0,
@@ -3833,7 +4104,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 58,
       "sourceChars": 3305,
       "fails": 0,
@@ -3847,7 +4118,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 23,
       "sourceChars": 3477,
       "fails": 0,
@@ -3861,7 +4132,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 46,
       "sourceChars": 2787,
       "fails": 0,
@@ -3875,7 +4146,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 60,
       "sourceChars": 3156,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3890,7 +4161,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 38,
       "sourceChars": 6000,
       "fails": 0,
@@ -3904,7 +4175,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 65,
       "sourceChars": 5985,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -3919,7 +4190,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 34,
       "sourceChars": 4229,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -3934,7 +4205,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 45,
       "sourceChars": 5806,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3949,7 +4220,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 39,
       "sourceChars": 5604,
       "lastError": "포인터 추가 — 입력에 없는 포인터",
@@ -3964,7 +4235,7 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 27,
       "sourceChars": 5155,
       "fails": 0,
@@ -3978,7 +4249,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 27,
       "sourceChars": 2927,
       "fails": 0,
@@ -3992,7 +4263,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 16,
       "sourceChars": 487,
       "fails": 0,
@@ -4006,7 +4277,7 @@
       "chunk": "staticQuestions",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 24,
       "sourceChars": 5955,
       "fails": 0,
@@ -4020,7 +4291,7 @@
       "chunk": "staticQuestions-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 8,
       "sourceChars": 2035,
       "fails": 0,
@@ -4034,9 +4305,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 58,
-      "sourceChars": 3305
+      "sourceChars": 3305,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:A2",
@@ -4046,9 +4319,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 23,
-      "sourceChars": 3477
+      "sourceChars": 3477,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:A2-2",
@@ -4058,9 +4333,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 46,
-      "sourceChars": 2787
+      "sourceChars": 2787,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:B",
@@ -4069,10 +4346,13 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 18,
+      "status": "blocked",
+      "attempts": 21,
       "segments": 60,
-      "sourceChars": 3156
+      "sourceChars": 3156,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 95,
+      "flags": 44
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops",
@@ -4082,9 +4362,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 21,
       "segments": 38,
-      "sourceChars": 6000
+      "sourceChars": 6000,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops-2",
@@ -4093,10 +4375,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 17,
+      "status": "blocked",
+      "attempts": 20,
       "segments": 65,
-      "sourceChars": 5985
+      "sourceChars": 5985,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 11,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops-3",
@@ -4105,10 +4390,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 17,
+      "status": "blocked",
+      "attempts": 20,
       "segments": 34,
-      "sourceChars": 4229
+      "sourceChars": 4229,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops-4",
@@ -4117,10 +4405,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 17,
+      "status": "blocked",
+      "attempts": 20,
       "segments": 45,
-      "sourceChars": 5806
+      "sourceChars": 5806,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 72,
+      "flags": 21
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops-5",
@@ -4129,10 +4420,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 17,
+      "status": "blocked",
+      "attempts": 20,
       "segments": 39,
-      "sourceChars": 5604
+      "sourceChars": 5604,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 5,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:itineraryStops-6",
@@ -4142,9 +4436,11 @@
       "chunk": "itineraryStops-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 17,
+      "attempts": 20,
       "segments": 27,
-      "sourceChars": 5155
+      "sourceChars": 5155,
+      "fails": 0,
+      "flags": 12
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:practicalAccordionItems",
@@ -4154,9 +4450,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 18,
+      "attempts": 21,
       "segments": 27,
-      "sourceChars": 2927
+      "sourceChars": 2927,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:routeFlowStops",
@@ -4166,9 +4464,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 18,
+      "attempts": 21,
       "segments": 16,
-      "sourceChars": 487
+      "sourceChars": 487,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:staticQuestions",
@@ -4178,9 +4478,11 @@
       "chunk": "staticQuestions",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 24,
-      "sourceChars": 5955
+      "sourceChars": 5955,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:ru:staticQuestions-2",
@@ -4190,9 +4492,11 @@
       "chunk": "staticQuestions-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 8,
-      "sourceChars": 2035
+      "sourceChars": 2035,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:from-incheon-seoul-day-tour-cruise-guests:de:A1",
@@ -5617,10 +5921,13 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 16,
+      "status": "blocked",
+      "attempts": 19,
       "segments": 99,
-      "sourceChars": 4220
+      "sourceChars": 4220,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:A2",
@@ -5630,9 +5937,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 91,
-      "sourceChars": 4466
+      "sourceChars": 4466,
+      "fails": 0,
+      "flags": 12
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:B",
@@ -5641,10 +5950,13 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 16,
+      "status": "blocked",
+      "attempts": 19,
       "segments": 54,
-      "sourceChars": 1499
+      "sourceChars": 1499,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 28,
+      "flags": 18
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants",
@@ -5654,9 +5966,11 @@
       "chunk": "itinerary_variants",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 34,
-      "sourceChars": 5989
+      "sourceChars": 5989,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants-2",
@@ -5666,9 +5980,11 @@
       "chunk": "itinerary_variants-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 45,
-      "sourceChars": 5568
+      "sourceChars": 5568,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants-3",
@@ -5678,9 +5994,11 @@
       "chunk": "itinerary_variants-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 63,
-      "sourceChars": 5922
+      "sourceChars": 5922,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants-4",
@@ -5690,9 +6008,11 @@
       "chunk": "itinerary_variants-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 40,
-      "sourceChars": 5651
+      "sourceChars": 5651,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants-5",
@@ -5702,9 +6022,11 @@
       "chunk": "itinerary_variants-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 40,
-      "sourceChars": 5924
+      "sourceChars": 5924,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itinerary_variants-6",
@@ -5714,9 +6036,11 @@
       "chunk": "itinerary_variants-6",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 34,
-      "sourceChars": 917
+      "sourceChars": 917,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itineraryStops",
@@ -5726,9 +6050,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 38,
-      "sourceChars": 4496
+      "sourceChars": 4496,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itineraryStops-2",
@@ -5737,10 +6063,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 16,
+      "status": "blocked",
+      "attempts": 19,
       "segments": 69,
-      "sourceChars": 5988
+      "sourceChars": 5988,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 12,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itineraryStops-3",
@@ -5749,10 +6078,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 16,
+      "status": "blocked",
+      "attempts": 19,
       "segments": 62,
-      "sourceChars": 5954
+      "sourceChars": 5954,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 22,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:itineraryStops-4",
@@ -5761,10 +6093,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 16,
+      "status": "blocked",
+      "attempts": 19,
       "segments": 12,
-      "sourceChars": 2135
+      "sourceChars": 2135,
+      "lastError": "포인터 추가 — 입력에 없는 포인터",
+      "fails": 10,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:ru:routeFlowStops",
@@ -5774,9 +6109,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 16,
+      "attempts": 19,
       "segments": 12,
-      "sourceChars": 107
+      "sourceChars": 107,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:A1",
@@ -5786,9 +6123,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 102,
-      "sourceChars": 5013
+      "sourceChars": 5013,
+      "fails": 0,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:A2",
@@ -5798,9 +6137,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 78,
-      "sourceChars": 5816
+      "sourceChars": 5816,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:B",
@@ -5810,9 +6151,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 90,
-      "sourceChars": 5634
+      "sourceChars": 5634,
+      "fails": 0,
+      "flags": 35
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops",
@@ -5822,9 +6165,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 46,
-      "sourceChars": 5959
+      "sourceChars": 5959,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-2",
@@ -5834,9 +6179,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 67,
-      "sourceChars": 5979
+      "sourceChars": 5979,
+      "fails": 0,
+      "flags": 31
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-3",
@@ -5846,9 +6193,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 56,
-      "sourceChars": 5988
+      "sourceChars": 5988,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-4",
@@ -5858,9 +6207,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 48,
-      "sourceChars": 5565
+      "sourceChars": 5565,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:itineraryStops-5",
@@ -5870,9 +6221,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 39,
-      "sourceChars": 3714
+      "sourceChars": 3714,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:de:routeFlowStops",
@@ -5882,9 +6235,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 16,
-      "sourceChars": 262
+      "sourceChars": 262,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:fr:A1",
@@ -5894,7 +6249,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 102,
       "sourceChars": 5013,
       "fails": 0,
@@ -5908,7 +6263,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 78,
       "sourceChars": 5816,
       "fails": 0,
@@ -5922,7 +6277,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 90,
       "sourceChars": 5634,
       "fails": 0,
@@ -5936,7 +6291,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 46,
       "sourceChars": 5959,
       "fails": 0,
@@ -5950,7 +6305,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 67,
       "sourceChars": 5979,
       "fails": 0,
@@ -5964,7 +6319,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 56,
       "sourceChars": 5988,
       "fails": 0,
@@ -5978,7 +6333,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 48,
       "sourceChars": 5565,
       "fails": 0,
@@ -5992,7 +6347,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 39,
       "sourceChars": 3714,
       "fails": 0,
@@ -6006,7 +6361,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 2,
+      "attempts": 4,
       "segments": 16,
       "sourceChars": 262,
       "fails": 0,
@@ -6020,7 +6375,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 102,
       "sourceChars": 5013,
       "fails": 0,
@@ -6034,7 +6389,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 78,
       "sourceChars": 5816,
       "fails": 0,
@@ -6048,7 +6403,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 90,
       "sourceChars": 5634,
       "fails": 0,
@@ -6062,7 +6417,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 46,
       "sourceChars": 5959,
       "fails": 0,
@@ -6076,7 +6431,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 67,
       "sourceChars": 5979,
       "fails": 0,
@@ -6090,7 +6445,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 56,
       "sourceChars": 5988,
       "fails": 0,
@@ -6104,7 +6459,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 48,
       "sourceChars": 5565,
       "fails": 0,
@@ -6118,7 +6473,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 39,
       "sourceChars": 3714,
       "fails": 0,
@@ -6132,7 +6487,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 1,
+      "attempts": 3,
       "segments": 16,
       "sourceChars": 262,
       "fails": 0,
@@ -6146,9 +6501,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 25,
       "segments": 102,
-      "sourceChars": 5013
+      "sourceChars": 5013,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:A2",
@@ -6158,9 +6515,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 25,
       "segments": 78,
-      "sourceChars": 5816
+      "sourceChars": 5816,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:B",
@@ -6169,10 +6528,13 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 21,
+      "status": "blocked",
+      "attempts": 24,
       "segments": 90,
-      "sourceChars": 5634
+      "sourceChars": 5634,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 47,
+      "flags": 64
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops",
@@ -6182,9 +6544,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 46,
-      "sourceChars": 5959
+      "sourceChars": 5959,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops-2",
@@ -6193,10 +6557,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 21,
+      "status": "blocked",
+      "attempts": 24,
       "segments": 67,
-      "sourceChars": 5979
+      "sourceChars": 5979,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 14,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops-3",
@@ -6205,10 +6572,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 21,
+      "status": "blocked",
+      "attempts": 24,
       "segments": 56,
-      "sourceChars": 5988
+      "sourceChars": 5988,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 13,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops-4",
@@ -6217,10 +6587,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 21,
+      "status": "blocked",
+      "attempts": 24,
       "segments": 48,
-      "sourceChars": 5565
+      "sourceChars": 5565,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:itineraryStops-5",
@@ -6229,10 +6602,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 21,
+      "status": "blocked",
+      "attempts": 24,
       "segments": 39,
-      "sourceChars": 3714
+      "sourceChars": 3714,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 6,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:ru:routeFlowStops",
@@ -6242,9 +6618,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 22,
+      "attempts": 25,
       "segments": 16,
-      "sourceChars": 262
+      "sourceChars": 262,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:A1",
@@ -6254,9 +6632,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 45,
+      "attempts": 48,
       "segments": 111,
-      "sourceChars": 4718
+      "sourceChars": 4718,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:A2",
@@ -6266,9 +6646,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 46,
+      "attempts": 49,
       "segments": 68,
-      "sourceChars": 5136
+      "sourceChars": 5136,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:A2-2",
@@ -6278,9 +6660,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 46,
+      "attempts": 49,
       "segments": 26,
-      "sourceChars": 1026
+      "sourceChars": 1026,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:B",
@@ -6289,10 +6673,13 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 46,
+      "status": "blocked",
+      "attempts": 49,
       "segments": 87,
-      "sourceChars": 3032
+      "sourceChars": 3032,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 100,
+      "flags": 47
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops",
@@ -6302,9 +6689,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 46,
+      "attempts": 49,
       "segments": 57,
-      "sourceChars": 5509
+      "sourceChars": 5509,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-2",
@@ -6313,10 +6702,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 46,
+      "status": "blocked",
+      "attempts": 49,
       "segments": 78,
-      "sourceChars": 5875
+      "sourceChars": 5875,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 6,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-3",
@@ -6325,10 +6717,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 46,
+      "status": "blocked",
+      "attempts": 49,
       "segments": 66,
-      "sourceChars": 5508
+      "sourceChars": 5508,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 15,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:itineraryStops-4",
@@ -6337,10 +6732,13 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 45,
+      "status": "blocked",
+      "attempts": 48,
       "segments": 57,
-      "sourceChars": 5549
+      "sourceChars": 5549,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 21,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:de:routeFlowStops",
@@ -6350,9 +6748,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 46,
+      "attempts": 49,
       "segments": 14,
-      "sourceChars": 119
+      "sourceChars": 119,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-grand-highlights-loop:fr:A1",
@@ -6685,10 +7085,13 @@
       "locale": "de",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 40,
+      "status": "blocked",
+      "attempts": 43,
       "segments": 103,
-      "sourceChars": 5152
+      "sourceChars": 5152,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 5,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:A2",
@@ -6698,9 +7101,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 93,
-      "sourceChars": 5000
+      "sourceChars": 5000,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:B",
@@ -6710,9 +7115,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 36,
-      "sourceChars": 1315
+      "sourceChars": 1315,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:itineraryStops",
@@ -6721,10 +7128,13 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 32,
-      "sourceChars": 5736
+      "sourceChars": 5736,
+      "lastError": "숫자 소실 — 원문의 [2023 31] 이 번역에 없다 (원문 [0 1 1 15 182 2 2003 2007 2023 2026 3 31 4 5000 6 7 7 8900] vs 번역 [0 1 1 15 182 2 2003 2007 2026 3 30 4 5 5000 6 7 7 8900])",
+      "fails": 1,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:itineraryStops-2",
@@ -6734,9 +7144,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 29,
-      "sourceChars": 5994
+      "sourceChars": 5994,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:itineraryStops-3",
@@ -6746,9 +7158,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 18,
-      "sourceChars": 2742
+      "sourceChars": 2742,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:de:routeFlowStops",
@@ -6758,9 +7172,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 10,
-      "sourceChars": 99
+      "sourceChars": 99,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:fr:A1",
@@ -6770,7 +7186,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 103,
       "sourceChars": 5152,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -6785,7 +7201,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 93,
       "sourceChars": 5000,
       "fails": 0,
@@ -6799,7 +7215,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 36,
       "sourceChars": 1315,
       "fails": 0,
@@ -6813,7 +7229,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 32,
       "sourceChars": 5736,
       "lastError": "숫자 소실 — 원문의 [2023 31] 이 번역에 없다 (원문 [0 1 1 15 182 2 2003 2007 2023 2026 3 31 4 5000 6 7 7 8900] vs 번역 [0 1 1 15 182 2 2003 2007 2026 3 30 4 5000 6 7 7 8900])",
@@ -6828,7 +7244,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 29,
       "sourceChars": 5994,
       "fails": 0,
@@ -6842,7 +7258,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 18,
       "sourceChars": 2742,
       "fails": 0,
@@ -6856,7 +7272,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 10,
       "sourceChars": 99,
       "fails": 0,
@@ -6870,7 +7286,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 103,
       "sourceChars": 5152,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -6885,7 +7301,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 93,
       "sourceChars": 5000,
       "fails": 0,
@@ -6899,7 +7315,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 36,
       "sourceChars": 1315,
       "fails": 0,
@@ -6913,7 +7329,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 32,
       "sourceChars": 5736,
       "lastError": "숫자 소실 — 원문의 [2023 31] 이 번역에 없다 (원문 [0 1 1 15 182 2 2003 2007 2023 2026 3 31 4 5000 6 7 7 8900] vs 번역 [0 1 1 15 182 2 2003 2007 2026 3 30 4 5000 6 7 7 8900])",
@@ -6928,7 +7344,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 29,
       "sourceChars": 5994,
       "fails": 0,
@@ -6942,7 +7358,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 18,
       "sourceChars": 2742,
       "fails": 0,
@@ -6956,7 +7372,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 10,
       "sourceChars": 99,
       "fails": 0,
@@ -6969,10 +7385,13 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 37,
+      "status": "blocked",
+      "attempts": 40,
       "segments": 103,
-      "sourceChars": 5152
+      "sourceChars": 5152,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 5,
+      "flags": 12
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:A2",
@@ -6982,9 +7401,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 35,
+      "attempts": 38,
       "segments": 93,
-      "sourceChars": 5000
+      "sourceChars": 5000,
+      "fails": 0,
+      "flags": 15
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:B",
@@ -6994,9 +7415,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 35,
+      "attempts": 38,
       "segments": 36,
-      "sourceChars": 1315
+      "sourceChars": 1315,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops",
@@ -7005,10 +7428,13 @@
       "locale": "ru",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 35,
+      "status": "blocked",
+      "attempts": 38,
       "segments": 32,
-      "sourceChars": 5736
+      "sourceChars": 5736,
+      "lastError": "숫자 소실 — 원문의 [2023 31] 이 번역에 없다 (원문 [0 1 1 15 182 2 2003 2007 2023 2026 3 31 4 5000 6 7 7 8900] vs 번역 [0 1 1 15 182 2 2003 2007 2026 3 30 4 5000 6 7 7 8900])",
+      "fails": 1,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-2",
@@ -7018,9 +7444,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 35,
+      "attempts": 38,
       "segments": 29,
-      "sourceChars": 5994
+      "sourceChars": 5994,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:itineraryStops-3",
@@ -7030,9 +7458,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 35,
+      "attempts": 38,
       "segments": 18,
-      "sourceChars": 2742
+      "sourceChars": 2742,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-island-private-car-charter-tour:ru:routeFlowStops",
@@ -7042,9 +7472,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 35,
+      "attempts": 38,
       "segments": 10,
-      "sourceChars": 99
+      "sourceChars": 99,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:A1",
@@ -7054,9 +7486,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 107,
-      "sourceChars": 5088
+      "sourceChars": 5088,
+      "fails": 0,
+      "flags": 15
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:A2",
@@ -7066,9 +7500,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 54,
-      "sourceChars": 5505
+      "sourceChars": 5505,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:A2-2",
@@ -7078,9 +7514,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 34,
-      "sourceChars": 1674
+      "sourceChars": 1674,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:B",
@@ -7089,10 +7527,13 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 87,
-      "sourceChars": 4390
+      "sourceChars": 4390,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 96,
+      "flags": 72
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops",
@@ -7101,10 +7542,13 @@
       "locale": "de",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 32,
+      "status": "blocked",
+      "attempts": 35,
       "segments": 52,
-      "sourceChars": 5951
+      "sourceChars": 5951,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 6,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-2",
@@ -7113,10 +7557,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 60,
-      "sourceChars": 4956
+      "sourceChars": 4956,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 39,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-3",
@@ -7125,10 +7572,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 51,
-      "sourceChars": 5049
+      "sourceChars": 5049,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 63,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-4",
@@ -7137,10 +7587,13 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 60,
-      "sourceChars": 5990
+      "sourceChars": 5990,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 59,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:de:itineraryStops-5",
@@ -7162,9 +7615,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 16,
-      "sourceChars": 220
+      "sourceChars": 220,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:fr:A1",
@@ -7174,7 +7629,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 107,
       "sourceChars": 5088,
       "fails": 0,
@@ -7188,7 +7643,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 54,
       "sourceChars": 5505,
       "fails": 0,
@@ -7202,7 +7657,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 34,
       "sourceChars": 1674,
       "fails": 0,
@@ -7216,7 +7671,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 87,
       "sourceChars": 4390,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7231,7 +7686,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 52,
       "sourceChars": 5951,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7246,7 +7701,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 60,
       "sourceChars": 4956,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7261,7 +7716,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 51,
       "sourceChars": 5049,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7276,7 +7731,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 60,
       "sourceChars": 5990,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7303,7 +7758,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 16,
       "sourceChars": 220,
       "fails": 0,
@@ -7317,7 +7772,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 107,
       "sourceChars": 5088,
       "fails": 0,
@@ -7331,7 +7786,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 54,
       "sourceChars": 5505,
       "fails": 0,
@@ -7345,7 +7800,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 34,
       "sourceChars": 1674,
       "fails": 0,
@@ -7359,7 +7814,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 87,
       "sourceChars": 4390,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7374,7 +7829,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 52,
       "sourceChars": 5951,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7389,7 +7844,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 60,
       "sourceChars": 4956,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7404,7 +7859,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 51,
       "sourceChars": 5049,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7419,7 +7874,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 60,
       "sourceChars": 5990,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -7446,7 +7901,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 16,
       "sourceChars": 220,
       "fails": 0,
@@ -7460,9 +7915,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 33,
+      "attempts": 36,
       "segments": 107,
-      "sourceChars": 5088
+      "sourceChars": 5088,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:A2",
@@ -7472,9 +7929,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 31,
+      "attempts": 34,
       "segments": 54,
-      "sourceChars": 5505
+      "sourceChars": 5505,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:A2-2",
@@ -7484,9 +7943,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 31,
+      "attempts": 34,
       "segments": 34,
-      "sourceChars": 1674
+      "sourceChars": 1674,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:B",
@@ -7495,10 +7956,13 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 30,
+      "status": "blocked",
+      "attempts": 33,
       "segments": 87,
-      "sourceChars": 4390
+      "sourceChars": 4390,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 96,
+      "flags": 62
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops",
@@ -7507,10 +7971,13 @@
       "locale": "ru",
       "chunk": "itineraryStops",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 30,
+      "status": "blocked",
+      "attempts": 33,
       "segments": 52,
-      "sourceChars": 5951
+      "sourceChars": 5951,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 6,
+      "flags": 15
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-2",
@@ -7519,10 +7986,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 29,
+      "status": "blocked",
+      "attempts": 32,
       "segments": 60,
-      "sourceChars": 4956
+      "sourceChars": 4956,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 39,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-3",
@@ -7531,10 +8001,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 29,
+      "status": "blocked",
+      "attempts": 32,
       "segments": 51,
-      "sourceChars": 5049
+      "sourceChars": 5049,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 63,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-4",
@@ -7543,10 +8016,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 30,
+      "status": "blocked",
+      "attempts": 33,
       "segments": 60,
-      "sourceChars": 5990
+      "sourceChars": 5990,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 59,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:jeju-southern-top-unesco-spots-tour:ru:itineraryStops-5",
@@ -7568,9 +8044,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 31,
+      "attempts": 34,
       "segments": 16,
-      "sourceChars": 220
+      "sourceChars": 220,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-dmz-private-3rd-tunnel-suspension-bridge:de:A1",
@@ -7580,7 +8058,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 108,
       "sourceChars": 5554,
       "fails": 0,
@@ -7594,7 +8072,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 36,
       "sourceChars": 2473,
       "fails": 0,
@@ -7608,7 +8086,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 62,
       "sourceChars": 5687,
       "fails": 0,
@@ -7622,7 +8100,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 36,
       "sourceChars": 1271,
       "fails": 0,
@@ -7636,7 +8114,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 40,
       "sourceChars": 5990,
       "fails": 0,
@@ -7650,7 +8128,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 39,
       "sourceChars": 5990,
       "fails": 0,
@@ -7664,7 +8142,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 44,
       "sourceChars": 5955,
       "fails": 0,
@@ -7678,7 +8156,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 30,
       "sourceChars": 4773,
       "fails": 0,
@@ -7692,7 +8170,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 41,
+      "attempts": 44,
       "segments": 8,
       "sourceChars": 89,
       "fails": 0,
@@ -7706,9 +8184,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 60,
-      "sourceChars": 2442
+      "sourceChars": 2442,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2",
@@ -7718,9 +8198,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 34,
-      "sourceChars": 2953
+      "sourceChars": 2953,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2-2",
@@ -7730,9 +8212,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 42,
-      "sourceChars": 5502
+      "sourceChars": 5502,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:A2-3",
@@ -7742,9 +8226,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 34,
-      "sourceChars": 1990
+      "sourceChars": 1990,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:B",
@@ -7754,9 +8240,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 45,
-      "sourceChars": 1633
+      "sourceChars": 1633,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops",
@@ -7766,9 +8254,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 31,
-      "sourceChars": 5012
+      "sourceChars": 5012,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-2",
@@ -7778,9 +8268,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 42,
-      "sourceChars": 5549
+      "sourceChars": 5549,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-3",
@@ -7790,9 +8282,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 27,
-      "sourceChars": 5995
+      "sourceChars": 5995,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:itineraryStops-4",
@@ -7802,9 +8296,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 11,
-      "sourceChars": 1587
+      "sourceChars": 1587,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:practicalAccordionItems",
@@ -7814,9 +8310,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "auto_pass",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 52,
-      "sourceChars": 4252
+      "sourceChars": 4252,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:de:routeFlowStops",
@@ -7826,9 +8324,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 20,
+      "attempts": 23,
       "segments": 9,
-      "sourceChars": 150
+      "sourceChars": 150,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:fr:A1",
@@ -7838,7 +8338,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 60,
       "sourceChars": 2442,
       "fails": 0,
@@ -7852,7 +8352,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 34,
       "sourceChars": 2953,
       "fails": 0,
@@ -7866,7 +8366,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 42,
       "sourceChars": 5502,
       "fails": 0,
@@ -7880,7 +8380,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 34,
       "sourceChars": 1990,
       "fails": 0,
@@ -7894,7 +8394,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 45,
       "sourceChars": 1633,
       "fails": 0,
@@ -7908,7 +8408,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 31,
       "sourceChars": 5012,
       "fails": 0,
@@ -7922,7 +8422,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 42,
       "sourceChars": 5549,
       "fails": 0,
@@ -7936,7 +8436,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 27,
       "sourceChars": 5995,
       "fails": 0,
@@ -7950,7 +8450,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 11,
       "sourceChars": 1587,
       "fails": 0,
@@ -7964,7 +8464,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 52,
       "sourceChars": 4252,
       "fails": 0,
@@ -7978,7 +8478,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 9,
       "sourceChars": 150,
       "fails": 0,
@@ -7992,7 +8492,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 60,
       "sourceChars": 2442,
       "fails": 0,
@@ -8006,7 +8506,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 34,
       "sourceChars": 2953,
       "fails": 0,
@@ -8020,7 +8520,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 42,
       "sourceChars": 5502,
       "fails": 0,
@@ -8034,7 +8534,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 34,
       "sourceChars": 1990,
       "fails": 0,
@@ -8048,7 +8548,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 45,
       "sourceChars": 1633,
       "fails": 0,
@@ -8062,7 +8562,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 31,
       "sourceChars": 5012,
       "fails": 0,
@@ -8076,7 +8576,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 42,
       "sourceChars": 5549,
       "fails": 0,
@@ -8090,7 +8590,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 27,
       "sourceChars": 5995,
       "fails": 0,
@@ -8104,7 +8604,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 11,
       "sourceChars": 1587,
       "fails": 0,
@@ -8118,7 +8618,7 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 52,
       "sourceChars": 4252,
       "fails": 0,
@@ -8132,7 +8632,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 8,
+      "attempts": 10,
       "segments": 9,
       "sourceChars": 150,
       "fails": 0,
@@ -8146,9 +8646,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 60,
-      "sourceChars": 2442
+      "sourceChars": 2442,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:A2",
@@ -8158,9 +8660,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 34,
-      "sourceChars": 2953
+      "sourceChars": 2953,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:A2-2",
@@ -8170,9 +8674,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 42,
-      "sourceChars": 5502
+      "sourceChars": 5502,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:A2-3",
@@ -8182,9 +8688,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 34,
-      "sourceChars": 1990
+      "sourceChars": 1990,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:B",
@@ -8194,9 +8702,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 45,
-      "sourceChars": 1633
+      "sourceChars": 1633,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:itineraryStops",
@@ -8206,9 +8716,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 31,
-      "sourceChars": 5012
+      "sourceChars": 5012,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:itineraryStops-2",
@@ -8218,9 +8730,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 42,
-      "sourceChars": 5549
+      "sourceChars": 5549,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:itineraryStops-3",
@@ -8230,9 +8744,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 27,
-      "sourceChars": 5995
+      "sourceChars": 5995,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:itineraryStops-4",
@@ -8242,9 +8758,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 11,
-      "sourceChars": 1587
+      "sourceChars": 1587,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:practicalAccordionItems",
@@ -8254,9 +8772,11 @@
       "chunk": "practicalAccordionItems",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 52,
-      "sourceChars": 4252
+      "sourceChars": 4252,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-naksansa-temple-naksan-beach-day-trip:ru:routeFlowStops",
@@ -8266,9 +8786,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 9,
       "segments": 9,
-      "sourceChars": 150
+      "sourceChars": 150,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A1",
@@ -8278,9 +8800,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 109,
-      "sourceChars": 5972
+      "sourceChars": 5972,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2",
@@ -8290,9 +8814,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 34,
-      "sourceChars": 3308
+      "sourceChars": 3308,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2-2",
@@ -8302,9 +8828,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 42,
-      "sourceChars": 5868
+      "sourceChars": 5868,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:A2-3",
@@ -8314,9 +8842,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 34,
-      "sourceChars": 2249
+      "sourceChars": 2249,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:B",
@@ -8326,9 +8856,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 54,
-      "sourceChars": 2014
+      "sourceChars": 2014,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops",
@@ -8338,9 +8870,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 31,
-      "sourceChars": 4895
+      "sourceChars": 4895,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-2",
@@ -8350,9 +8884,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 40,
-      "sourceChars": 5174
+      "sourceChars": 5174,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-3",
@@ -8362,9 +8898,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 38,
-      "sourceChars": 4946
+      "sourceChars": 4946,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:itineraryStops-4",
@@ -8374,9 +8912,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 26,
-      "sourceChars": 3927
+      "sourceChars": 3927,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:de:routeFlowStops",
@@ -8386,9 +8926,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 19,
+      "attempts": 22,
       "segments": 9,
-      "sourceChars": 159
+      "sourceChars": 159,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:fr:A1",
@@ -8398,7 +8940,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 109,
       "sourceChars": 5972,
       "fails": 0,
@@ -8412,7 +8954,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 34,
       "sourceChars": 3308,
       "fails": 0,
@@ -8426,7 +8968,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 42,
       "sourceChars": 5868,
       "fails": 0,
@@ -8440,7 +8982,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 34,
       "sourceChars": 2249,
       "fails": 0,
@@ -8454,7 +8996,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 54,
       "sourceChars": 2014,
       "fails": 0,
@@ -8468,7 +9010,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 31,
       "sourceChars": 4895,
       "fails": 0,
@@ -8482,7 +9024,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 40,
       "sourceChars": 5174,
       "fails": 0,
@@ -8496,7 +9038,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 38,
       "sourceChars": 4946,
       "fails": 0,
@@ -8510,7 +9052,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 26,
       "sourceChars": 3927,
       "fails": 0,
@@ -8524,7 +9066,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 5,
+      "attempts": 7,
       "segments": 9,
       "sourceChars": 159,
       "fails": 0,
@@ -8538,7 +9080,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 109,
       "sourceChars": 5972,
       "fails": 0,
@@ -8552,7 +9094,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 34,
       "sourceChars": 3308,
       "fails": 0,
@@ -8566,7 +9108,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 42,
       "sourceChars": 5868,
       "fails": 0,
@@ -8580,7 +9122,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 34,
       "sourceChars": 2249,
       "fails": 0,
@@ -8594,7 +9136,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 54,
       "sourceChars": 2014,
       "fails": 0,
@@ -8608,7 +9150,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 31,
       "sourceChars": 4895,
       "fails": 0,
@@ -8622,7 +9164,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 40,
       "sourceChars": 5174,
       "fails": 0,
@@ -8636,7 +9178,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 38,
       "sourceChars": 4946,
       "fails": 0,
@@ -8650,7 +9192,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 26,
       "sourceChars": 3927,
       "fails": 0,
@@ -8664,7 +9206,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 6,
+      "attempts": 8,
       "segments": 9,
       "sourceChars": 159,
       "fails": 0,
@@ -8678,9 +9220,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 109,
-      "sourceChars": 5972
+      "sourceChars": 5972,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:A2",
@@ -8690,9 +9234,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 34,
-      "sourceChars": 3308
+      "sourceChars": 3308,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:A2-2",
@@ -8702,9 +9248,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 42,
-      "sourceChars": 5868
+      "sourceChars": 5868,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:A2-3",
@@ -8714,9 +9262,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 34,
-      "sourceChars": 2249
+      "sourceChars": 2249,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:B",
@@ -8726,9 +9276,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 54,
-      "sourceChars": 2014
+      "sourceChars": 2014,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:itineraryStops",
@@ -8738,9 +9290,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 31,
-      "sourceChars": 4895
+      "sourceChars": 4895,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:itineraryStops-2",
@@ -8750,9 +9304,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 40,
-      "sourceChars": 5174
+      "sourceChars": 5174,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:itineraryStops-3",
@@ -8762,9 +9318,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 38,
-      "sourceChars": 4946
+      "sourceChars": 4946,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:itineraryStops-4",
@@ -8774,9 +9332,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 26,
-      "sourceChars": 3927
+      "sourceChars": 3927,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-seoraksan-nami-island-morning-calm-day-tour:ru:routeFlowStops",
@@ -8786,9 +9346,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 4,
+      "attempts": 7,
       "segments": 9,
-      "sourceChars": 159
+      "sourceChars": 159,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A1",
@@ -8798,9 +9360,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 99,
-      "sourceChars": 4903
+      "sourceChars": 4903,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A2",
@@ -8810,9 +9374,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 35,
-      "sourceChars": 2269
+      "sourceChars": 2269,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:A2-2",
@@ -8822,9 +9388,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 63,
-      "sourceChars": 5749
+      "sourceChars": 5749,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:B",
@@ -8834,9 +9402,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 24,
-      "sourceChars": 811
+      "sourceChars": 811,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops",
@@ -8846,9 +9416,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 37,
-      "sourceChars": 5922
+      "sourceChars": 5922,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops-2",
@@ -8858,9 +9430,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 28,
-      "sourceChars": 5971
+      "sourceChars": 5971,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:itineraryStops-3",
@@ -8870,9 +9444,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 17,
-      "sourceChars": 2947
+      "sourceChars": 2947,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:de:routeFlowStops",
@@ -8882,9 +9458,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 10,
-      "sourceChars": 90
+      "sourceChars": 90,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:A1",
@@ -8894,7 +9472,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 99,
       "sourceChars": 4903,
       "fails": 0,
@@ -8908,7 +9486,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 35,
       "sourceChars": 2269,
       "fails": 0,
@@ -8922,7 +9500,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 63,
       "sourceChars": 5749,
       "fails": 0,
@@ -8936,7 +9514,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 24,
       "sourceChars": 811,
       "fails": 0,
@@ -8950,7 +9528,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 37,
       "sourceChars": 5922,
       "fails": 0,
@@ -8964,7 +9542,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 28,
       "sourceChars": 5971,
       "fails": 0,
@@ -8978,7 +9556,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 17,
       "sourceChars": 2947,
       "fails": 0,
@@ -8992,7 +9570,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 10,
       "sourceChars": 90,
       "fails": 0,
@@ -9006,7 +9584,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 99,
       "sourceChars": 4903,
       "fails": 0,
@@ -9020,7 +9598,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 35,
       "sourceChars": 2269,
       "fails": 0,
@@ -9034,7 +9612,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 63,
       "sourceChars": 5749,
       "fails": 0,
@@ -9048,7 +9626,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 24,
       "sourceChars": 811,
       "fails": 0,
@@ -9062,7 +9640,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 37,
       "sourceChars": 5922,
       "fails": 0,
@@ -9076,7 +9654,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 28,
       "sourceChars": 5971,
       "fails": 0,
@@ -9090,7 +9668,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 17,
       "sourceChars": 2947,
       "fails": 0,
@@ -9104,7 +9682,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 16,
+      "attempts": 18,
       "segments": 10,
       "sourceChars": 90,
       "fails": 0,
@@ -9118,9 +9696,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 99,
-      "sourceChars": 4903
+      "sourceChars": 4903,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:A2",
@@ -9130,9 +9710,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 35,
-      "sourceChars": 2269
+      "sourceChars": 2269,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:A2-2",
@@ -9142,9 +9724,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 63,
-      "sourceChars": 5749
+      "sourceChars": 5749,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:B",
@@ -9154,9 +9738,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 24,
-      "sourceChars": 811
+      "sourceChars": 811,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:itineraryStops",
@@ -9166,9 +9752,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 37,
-      "sourceChars": 5922
+      "sourceChars": 5922,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:itineraryStops-2",
@@ -9178,9 +9766,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 28,
-      "sourceChars": 5971
+      "sourceChars": 5971,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:itineraryStops-3",
@@ -9190,9 +9780,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 17,
-      "sourceChars": 2947
+      "sourceChars": 2947,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:routeFlowStops",
@@ -9202,9 +9794,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 13,
+      "attempts": 16,
       "segments": 10,
-      "sourceChars": 90
+      "sourceChars": 90,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:A1",
@@ -9214,9 +9808,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 91,
-      "sourceChars": 3893
+      "sourceChars": 3893,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:A2",
@@ -9226,9 +9822,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 38,
-      "sourceChars": 3724
+      "sourceChars": 3724,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:A2-2",
@@ -9238,9 +9836,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 59,
-      "sourceChars": 4879
+      "sourceChars": 4879,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:B",
@@ -9250,9 +9850,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 45,
-      "sourceChars": 1391
+      "sourceChars": 1391,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:itineraryStops",
@@ -9262,9 +9864,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 34,
-      "sourceChars": 4122
+      "sourceChars": 4122,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:itineraryStops-2",
@@ -9274,9 +9878,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 33,
-      "sourceChars": 4867
+      "sourceChars": 4867,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:itineraryStops-3",
@@ -9286,9 +9892,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 35,
-      "sourceChars": 5991
+      "sourceChars": 5991,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:itineraryStops-4",
@@ -9298,9 +9906,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 37,
-      "sourceChars": 5741
+      "sourceChars": 5741,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:itineraryStops-5",
@@ -9310,9 +9920,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 31,
-      "sourceChars": 4914
+      "sourceChars": 4914,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:de:routeFlowStops",
@@ -9322,9 +9934,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 12,
-      "sourceChars": 182
+      "sourceChars": 182,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:fr:A1",
@@ -9334,7 +9948,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 91,
       "sourceChars": 3893,
       "fails": 0,
@@ -9348,7 +9962,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 38,
       "sourceChars": 3724,
       "fails": 0,
@@ -9362,7 +9976,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 59,
       "sourceChars": 4879,
       "fails": 0,
@@ -9376,7 +9990,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 45,
       "sourceChars": 1391,
       "fails": 0,
@@ -9390,7 +10004,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 34,
       "sourceChars": 4122,
       "fails": 0,
@@ -9404,7 +10018,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 33,
       "sourceChars": 4867,
       "fails": 0,
@@ -9418,7 +10032,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 35,
       "sourceChars": 5991,
       "fails": 0,
@@ -9432,7 +10046,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 37,
       "sourceChars": 5741,
       "fails": 0,
@@ -9446,7 +10060,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 31,
       "sourceChars": 4914,
       "fails": 0,
@@ -9460,7 +10074,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 9,
+      "attempts": 11,
       "segments": 12,
       "sourceChars": 182,
       "fails": 0,
@@ -9474,7 +10088,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 91,
       "sourceChars": 3893,
       "fails": 0,
@@ -9488,7 +10102,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 38,
       "sourceChars": 3724,
       "fails": 0,
@@ -9502,7 +10116,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 59,
       "sourceChars": 4879,
       "fails": 0,
@@ -9516,7 +10130,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 45,
       "sourceChars": 1391,
       "fails": 0,
@@ -9530,7 +10144,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 34,
       "sourceChars": 4122,
       "fails": 0,
@@ -9544,7 +10158,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 33,
       "sourceChars": 4867,
       "fails": 0,
@@ -9558,7 +10172,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 35,
       "sourceChars": 5991,
       "fails": 0,
@@ -9572,7 +10186,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 37,
       "sourceChars": 5741,
       "fails": 0,
@@ -9586,7 +10200,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 31,
       "sourceChars": 4914,
       "fails": 0,
@@ -9600,7 +10214,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 12,
       "segments": 12,
       "sourceChars": 182,
       "fails": 0,
@@ -9614,9 +10228,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 91,
-      "sourceChars": 3893
+      "sourceChars": 3893,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:A2",
@@ -9626,9 +10242,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 38,
-      "sourceChars": 3724
+      "sourceChars": 3724,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:A2-2",
@@ -9638,9 +10256,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 59,
-      "sourceChars": 4879
+      "sourceChars": 4879,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:B",
@@ -9650,9 +10270,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 45,
-      "sourceChars": 1391
+      "sourceChars": 1391,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops",
@@ -9662,9 +10284,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 34,
-      "sourceChars": 4122
+      "sourceChars": 4122,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops-2",
@@ -9674,9 +10298,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 33,
-      "sourceChars": 4867
+      "sourceChars": 4867,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops-3",
@@ -9686,9 +10312,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 35,
-      "sourceChars": 5991
+      "sourceChars": 5991,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops-4",
@@ -9698,9 +10326,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 37,
-      "sourceChars": 5741
+      "sourceChars": 5741,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:itineraryStops-5",
@@ -9710,9 +10340,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 31,
-      "sourceChars": 4914
+      "sourceChars": 4914,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-folk-village-starfield-library:ru:routeFlowStops",
@@ -9722,9 +10354,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 8,
+      "attempts": 11,
       "segments": 12,
-      "sourceChars": 182
+      "sourceChars": 182,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A1",
@@ -9734,9 +10368,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 92,
-      "sourceChars": 3923
+      "sourceChars": 3923,
+      "fails": 0,
+      "flags": 7
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2",
@@ -9746,9 +10382,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 38,
-      "sourceChars": 3367
+      "sourceChars": 3367,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:A2-2",
@@ -9758,9 +10396,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 59,
-      "sourceChars": 4874
+      "sourceChars": 4874,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:B",
@@ -9770,9 +10410,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 51,
-      "sourceChars": 1471
+      "sourceChars": 1471,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops",
@@ -9782,9 +10424,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 53,
-      "sourceChars": 5987
+      "sourceChars": 5987,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-2",
@@ -9794,9 +10438,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 44,
-      "sourceChars": 5953
+      "sourceChars": 5953,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-3",
@@ -9806,9 +10452,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 45,
-      "sourceChars": 5795
+      "sourceChars": 5795,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:itineraryStops-4",
@@ -9818,9 +10466,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 36,
-      "sourceChars": 5971
+      "sourceChars": 5971,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:de:routeFlowStops",
@@ -9830,9 +10480,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 28,
       "segments": 12,
-      "sourceChars": 158
+      "sourceChars": 158,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:fr:A1",
@@ -9842,7 +10494,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 92,
       "sourceChars": 3923,
       "fails": 0,
@@ -9856,7 +10508,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 38,
       "sourceChars": 3367,
       "fails": 0,
@@ -9870,7 +10522,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 59,
       "sourceChars": 4874,
       "fails": 0,
@@ -9884,7 +10536,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 51,
       "sourceChars": 1471,
       "fails": 0,
@@ -9898,7 +10550,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 53,
       "sourceChars": 5987,
       "fails": 0,
@@ -9912,7 +10564,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 44,
       "sourceChars": 5953,
       "fails": 0,
@@ -9926,7 +10578,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 45,
       "sourceChars": 5795,
       "fails": 0,
@@ -9940,7 +10592,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 36,
       "sourceChars": 5971,
       "fails": 0,
@@ -9954,7 +10606,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 22,
+      "attempts": 24,
       "segments": 12,
       "sourceChars": 158,
       "fails": 0,
@@ -9968,7 +10620,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 92,
       "sourceChars": 3923,
       "fails": 0,
@@ -9982,7 +10634,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 38,
       "sourceChars": 3367,
       "fails": 0,
@@ -9996,7 +10648,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 59,
       "sourceChars": 4874,
       "fails": 0,
@@ -10010,7 +10662,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 51,
       "sourceChars": 1471,
       "fails": 0,
@@ -10024,7 +10676,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 53,
       "sourceChars": 5987,
       "fails": 0,
@@ -10038,7 +10690,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 44,
       "sourceChars": 5953,
       "fails": 0,
@@ -10052,7 +10704,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 45,
       "sourceChars": 5795,
       "fails": 0,
@@ -10066,7 +10718,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 36,
       "sourceChars": 5971,
       "fails": 0,
@@ -10080,7 +10732,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 14,
+      "attempts": 16,
       "segments": 12,
       "sourceChars": 158,
       "fails": 0,
@@ -10094,9 +10746,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 92,
-      "sourceChars": 3923
+      "sourceChars": 3923,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A2",
@@ -10106,9 +10760,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 38,
-      "sourceChars": 3367
+      "sourceChars": 3367,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A2-2",
@@ -10118,9 +10774,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 59,
-      "sourceChars": 4874
+      "sourceChars": 4874,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:B",
@@ -10130,9 +10788,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 51,
-      "sourceChars": 1471
+      "sourceChars": 1471,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops",
@@ -10142,9 +10802,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 53,
-      "sourceChars": 5987
+      "sourceChars": 5987,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-2",
@@ -10154,9 +10816,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 44,
-      "sourceChars": 5953
+      "sourceChars": 5953,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-3",
@@ -10166,9 +10830,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 45,
-      "sourceChars": 5795
+      "sourceChars": 5795,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-4",
@@ -10178,9 +10844,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 36,
-      "sourceChars": 5971
+      "sourceChars": 5971,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:routeFlowStops",
@@ -10190,9 +10858,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 12,
+      "attempts": 15,
       "segments": 12,
-      "sourceChars": 158
+      "sourceChars": 158,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:A1",
@@ -10202,9 +10872,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 94,
-      "sourceChars": 4185
+      "sourceChars": 4185,
+      "fails": 0,
+      "flags": 9
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:A2",
@@ -10214,9 +10886,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 35,
-      "sourceChars": 2340
+      "sourceChars": 2340,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:A2-2",
@@ -10226,9 +10900,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 43,
-      "sourceChars": 5600
+      "sourceChars": 5600,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:A2-3",
@@ -10238,9 +10914,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 20,
-      "sourceChars": 442
+      "sourceChars": 442,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:B",
@@ -10250,9 +10928,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 33,
-      "sourceChars": 841
+      "sourceChars": 841,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:itineraryStops",
@@ -10262,9 +10942,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 45,
-      "sourceChars": 5998
+      "sourceChars": 5998,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:itineraryStops-2",
@@ -10274,9 +10956,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 33,
-      "sourceChars": 5950
+      "sourceChars": 5950,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:itineraryStops-3",
@@ -10286,9 +10970,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 42,
-      "sourceChars": 5962
+      "sourceChars": 5962,
+      "fails": 0,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:itineraryStops-4",
@@ -10298,9 +10984,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 19,
-      "sourceChars": 5933
+      "sourceChars": 5933,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:itineraryStops-5",
@@ -10310,9 +10998,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 16,
-      "sourceChars": 465
+      "sourceChars": 465,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:de:routeFlowStops",
@@ -10322,9 +11012,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 24,
       "segments": 10,
-      "sourceChars": 123
+      "sourceChars": 123,
+      "fails": 0,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:fr:A1",
@@ -10334,7 +11026,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 94,
       "sourceChars": 4185,
       "fails": 0,
@@ -10348,7 +11040,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 35,
       "sourceChars": 2340,
       "fails": 0,
@@ -10362,7 +11054,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 43,
       "sourceChars": 5600,
       "fails": 0,
@@ -10376,7 +11068,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 20,
       "sourceChars": 442,
       "fails": 0,
@@ -10390,7 +11082,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 33,
       "sourceChars": 841,
       "fails": 0,
@@ -10404,7 +11096,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 45,
       "sourceChars": 5998,
       "fails": 0,
@@ -10418,7 +11110,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 33,
       "sourceChars": 5950,
       "fails": 0,
@@ -10432,7 +11124,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 42,
       "sourceChars": 5962,
       "fails": 0,
@@ -10446,7 +11138,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 19,
       "sourceChars": 5933,
       "fails": 0,
@@ -10460,7 +11152,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 16,
       "sourceChars": 465,
       "fails": 0,
@@ -10474,7 +11166,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 11,
+      "attempts": 13,
       "segments": 10,
       "sourceChars": 123,
       "fails": 0,
@@ -10488,7 +11180,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 94,
       "sourceChars": 4185,
       "fails": 0,
@@ -10502,7 +11194,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 35,
       "sourceChars": 2340,
       "fails": 0,
@@ -10516,7 +11208,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 43,
       "sourceChars": 5600,
       "fails": 0,
@@ -10530,7 +11222,7 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 20,
       "sourceChars": 442,
       "fails": 0,
@@ -10544,7 +11236,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 33,
       "sourceChars": 841,
       "fails": 0,
@@ -10558,7 +11250,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 45,
       "sourceChars": 5998,
       "fails": 0,
@@ -10572,7 +11264,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 33,
       "sourceChars": 5950,
       "fails": 0,
@@ -10586,7 +11278,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 42,
       "sourceChars": 5962,
       "fails": 0,
@@ -10600,7 +11292,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 19,
       "sourceChars": 5933,
       "fails": 0,
@@ -10614,7 +11306,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 16,
       "sourceChars": 465,
       "fails": 0,
@@ -10628,7 +11320,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 12,
+      "attempts": 14,
       "segments": 10,
       "sourceChars": 123,
       "fails": 0,
@@ -10642,9 +11334,11 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 94,
-      "sourceChars": 4185
+      "sourceChars": 4185,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:A2",
@@ -10654,9 +11348,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 35,
-      "sourceChars": 2340
+      "sourceChars": 2340,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:A2-2",
@@ -10666,9 +11362,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 43,
-      "sourceChars": 5600
+      "sourceChars": 5600,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:A2-3",
@@ -10678,9 +11376,11 @@
       "chunk": "A2-3",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 20,
-      "sourceChars": 442
+      "sourceChars": 442,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:B",
@@ -10690,9 +11390,11 @@
       "chunk": "B",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 33,
-      "sourceChars": 841
+      "sourceChars": 841,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:itineraryStops",
@@ -10702,9 +11404,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 45,
-      "sourceChars": 5998
+      "sourceChars": 5998,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:itineraryStops-2",
@@ -10714,9 +11418,11 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 33,
-      "sourceChars": 5950
+      "sourceChars": 5950,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:itineraryStops-3",
@@ -10726,9 +11432,11 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 42,
-      "sourceChars": 5962
+      "sourceChars": 5962,
+      "fails": 0,
+      "flags": 13
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:itineraryStops-4",
@@ -10738,9 +11446,11 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 19,
-      "sourceChars": 5933
+      "sourceChars": 5933,
+      "fails": 0,
+      "flags": 4
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:itineraryStops-5",
@@ -10750,9 +11460,11 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "flagged",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 16,
-      "sourceChars": 465
+      "sourceChars": 465,
+      "fails": 0,
+      "flags": 1
     },
     {
       "id": "tour_product_pages:seoul-suwon-hwaseong-waujeongsa-starfield:ru:routeFlowStops",
@@ -10762,9 +11474,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 10,
+      "attempts": 13,
       "segments": 10,
-      "sourceChars": 123
+      "sourceChars": 123,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:de:A1",
@@ -11301,10 +12015,13 @@
       "locale": "de",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 92,
-      "sourceChars": 3865
+      "sourceChars": 3865,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:A2",
@@ -11314,9 +12031,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 75,
-      "sourceChars": 5583
+      "sourceChars": 5583,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:A2-2",
@@ -11326,9 +12045,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 26,
-      "sourceChars": 1161
+      "sourceChars": 1161,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:B",
@@ -11337,10 +12058,13 @@
       "locale": "de",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 93,
-      "sourceChars": 3385
+      "sourceChars": 3385,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 81,
+      "flags": 56
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops",
@@ -11350,9 +12074,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 50,
-      "sourceChars": 6000
+      "sourceChars": 6000,
+      "fails": 0,
+      "flags": 5
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-2",
@@ -11361,10 +12087,13 @@
       "locale": "de",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "auto_pass",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 76,
-      "sourceChars": 5984
+      "sourceChars": 5984,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-3",
@@ -11373,10 +12102,13 @@
       "locale": "de",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 52,
-      "sourceChars": 5969
+      "sourceChars": 5969,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 6
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-4",
@@ -11385,10 +12117,13 @@
       "locale": "de",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 30,
+      "status": "blocked",
+      "attempts": 33,
       "segments": 65,
-      "sourceChars": 5958
+      "sourceChars": 5958,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 15,
+      "flags": 10
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:itineraryStops-5",
@@ -11397,10 +12132,13 @@
       "locale": "de",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 38,
+      "status": "blocked",
+      "attempts": 41,
       "segments": 28,
-      "sourceChars": 3413
+      "sourceChars": 3413,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 12,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:de:routeFlowStops",
@@ -11410,9 +12148,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 38,
+      "attempts": 41,
       "segments": 14,
-      "sourceChars": 110
+      "sourceChars": 110,
+      "fails": 0,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:fr:A1",
@@ -11422,7 +12162,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 92,
       "sourceChars": 3865,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11437,7 +12177,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 75,
       "sourceChars": 5583,
       "fails": 0,
@@ -11451,7 +12191,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 26,
       "sourceChars": 1161,
       "fails": 0,
@@ -11465,7 +12205,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 93,
       "sourceChars": 3385,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11480,7 +12220,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 50,
       "sourceChars": 6000,
       "fails": 0,
@@ -11494,7 +12234,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 76,
       "sourceChars": 5984,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11509,7 +12249,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 52,
       "sourceChars": 5969,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11524,7 +12264,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 65,
       "sourceChars": 5958,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11539,7 +12279,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "blocked",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 28,
       "sourceChars": 3413,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11554,7 +12294,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 26,
+      "attempts": 28,
       "segments": 14,
       "sourceChars": 110,
       "fails": 0,
@@ -11568,7 +12308,7 @@
       "chunk": "A1",
       "tier": "A1",
       "status": "blocked",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 92,
       "sourceChars": 3865,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11583,7 +12323,7 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 75,
       "sourceChars": 5583,
       "fails": 0,
@@ -11597,7 +12337,7 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 25,
+      "attempts": 27,
       "segments": 26,
       "sourceChars": 1161,
       "fails": 0,
@@ -11611,7 +12351,7 @@
       "chunk": "B",
       "tier": "B",
       "status": "blocked",
-      "attempts": 21,
+      "attempts": 23,
       "segments": 93,
       "sourceChars": 3385,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11626,7 +12366,7 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 20,
+      "attempts": 22,
       "segments": 50,
       "sourceChars": 6000,
       "fails": 0,
@@ -11640,7 +12380,7 @@
       "chunk": "itineraryStops-2",
       "tier": "B",
       "status": "blocked",
-      "attempts": 20,
+      "attempts": 22,
       "segments": 76,
       "sourceChars": 5984,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11655,7 +12395,7 @@
       "chunk": "itineraryStops-3",
       "tier": "B",
       "status": "blocked",
-      "attempts": 20,
+      "attempts": 22,
       "segments": 52,
       "sourceChars": 5969,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11670,7 +12410,7 @@
       "chunk": "itineraryStops-4",
       "tier": "B",
       "status": "blocked",
-      "attempts": 20,
+      "attempts": 22,
       "segments": 65,
       "sourceChars": 5958,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11685,7 +12425,7 @@
       "chunk": "itineraryStops-5",
       "tier": "B",
       "status": "blocked",
-      "attempts": 21,
+      "attempts": 23,
       "segments": 28,
       "sourceChars": 3413,
       "lastError": "포인터 누락 — 번역 출력에 없음",
@@ -11700,7 +12440,7 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 21,
+      "attempts": 23,
       "segments": 14,
       "sourceChars": 110,
       "fails": 0,
@@ -11713,10 +12453,13 @@
       "locale": "ru",
       "chunk": "A1",
       "tier": "A1",
-      "status": "flagged",
-      "attempts": 23,
+      "status": "blocked",
+      "attempts": 26,
       "segments": 92,
-      "sourceChars": 3865
+      "sourceChars": 3865,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2",
@@ -11726,9 +12469,11 @@
       "chunk": "A2",
       "tier": "A2",
       "status": "flagged",
-      "attempts": 23,
+      "attempts": 26,
       "segments": 75,
-      "sourceChars": 5583
+      "sourceChars": 5583,
+      "fails": 0,
+      "flags": 11
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:A2-2",
@@ -11738,9 +12483,11 @@
       "chunk": "A2-2",
       "tier": "A2",
       "status": "auto_pass",
-      "attempts": 27,
+      "attempts": 30,
       "segments": 26,
-      "sourceChars": 1161
+      "sourceChars": 1161,
+      "fails": 0,
+      "flags": 0
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:B",
@@ -11749,10 +12496,13 @@
       "locale": "ru",
       "chunk": "B",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 28,
+      "status": "blocked",
+      "attempts": 31,
       "segments": 93,
-      "sourceChars": 3385
+      "sourceChars": 3385,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 81,
+      "flags": 54
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops",
@@ -11762,9 +12512,11 @@
       "chunk": "itineraryStops",
       "tier": "B",
       "status": "flagged",
-      "attempts": 27,
+      "attempts": 30,
       "segments": 50,
-      "sourceChars": 6000
+      "sourceChars": 6000,
+      "fails": 0,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-2",
@@ -11773,10 +12525,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-2",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 26,
+      "status": "blocked",
+      "attempts": 29,
       "segments": 76,
-      "sourceChars": 5984
+      "sourceChars": 5984,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-3",
@@ -11785,10 +12540,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-3",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 25,
+      "status": "blocked",
+      "attempts": 28,
       "segments": 52,
-      "sourceChars": 5969
+      "sourceChars": 5969,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 4,
+      "flags": 3
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-4",
@@ -11797,10 +12555,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-4",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 25,
+      "status": "blocked",
+      "attempts": 28,
       "segments": 65,
-      "sourceChars": 5958
+      "sourceChars": 5958,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 15,
+      "flags": 2
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:itineraryStops-5",
@@ -11809,10 +12570,13 @@
       "locale": "ru",
       "chunk": "itineraryStops-5",
       "tier": "B",
-      "status": "flagged",
-      "attempts": 27,
+      "status": "blocked",
+      "attempts": 30,
       "segments": 28,
-      "sourceChars": 3413
+      "sourceChars": 3413,
+      "lastError": "포인터 누락 — 번역 출력에 없음",
+      "fails": 12,
+      "flags": 8
     },
     {
       "id": "tour_product_pages:southwest-hallasan-osulloc-aewol:ru:routeFlowStops",
@@ -11822,9 +12586,11 @@
       "chunk": "routeFlowStops",
       "tier": "B",
       "status": "auto_pass",
-      "attempts": 28,
+      "attempts": 31,
       "segments": 14,
-      "sourceChars": 110
+      "sourceChars": 110,
+      "fails": 0,
+      "flags": 0
     }
   ]
 }
