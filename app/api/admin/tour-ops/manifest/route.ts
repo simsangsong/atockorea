@@ -28,6 +28,7 @@ interface BookingRow {
   status: string | null;
   source: string | null;
   external_booking_id: string | null;
+  booking_reference: string | null;
   special_requests: string | null;
   ota_raw_meta: Record<string, unknown> | null;
   pickup_points: { name?: string | null; pickup_time?: string | null } | Array<{ name?: string | null; pickup_time?: string | null }> | null;
@@ -72,7 +73,7 @@ export async function GET(req: NextRequest) {
       supabase
         .from('bookings')
         .select(
-          'id, contact_name, contact_phone, contact_email, number_of_guests, preferred_language, status, source, external_booking_id, special_requests, ota_raw_meta, pickup_points ( name, pickup_time )',
+          'id, contact_name, contact_phone, contact_email, number_of_guests, preferred_language, status, source, external_booking_id, booking_reference, special_requests, ota_raw_meta, pickup_points ( name, pickup_time )',
         )
         .eq('tour_id', tourId)
         .eq('tour_date', date)
@@ -143,6 +144,7 @@ export async function GET(req: NextRequest) {
         status: row.status,
         source: row.source,
         externalBookingId: row.external_booking_id,
+        bookingReference: row.booking_reference,
         pickupName: pickupName ?? null,
         pickupTime: pickupTime ?? null,
         specialRequests: row.special_requests,

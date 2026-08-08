@@ -4,6 +4,7 @@ import { createServerClient } from '@/lib/supabase';
 import { requireAdmin } from '@/lib/auth';
 import { ensureRoom, type RoomDbClient } from '@/lib/tour-room/access';
 import { hashToken, signCustomerRoomToken, signDriverRoomToken, signGuideRoomToken } from '@/lib/tour-room/token';
+import { ensureBookingReference, generateInviteShortCode, shortLinkUrl } from '@/lib/tour-room/entryCode';
 
 export const dynamic = 'force-dynamic';
 
@@ -90,16 +91,16 @@ export async function POST(req: NextRequest) {
     }
     ledger.token_hash = hashToken(token);
     ledger.expires_at = expiresAt;
+    // entry-code plan §C-2 — 복사되는 것은 345자 토큰 URL 이 아니라 짧은 별칭이다.
+    // 별칭은 이 원장 행에 붙어 산다(행 revoke = 링크 죽음). 클릭 시 토큰 재발급은
+    // /api/tour-mode/entry 가 role 을 보고 각자의 콘솔로 보낸다.
+    const shortCode = generateInviteShortCode();
+    ledger.short_code = shortCode;
 
     const { error: ledgerError } = await supabase.from('tour_room_invites').insert(ledger);
     if (ledgerError) throw ledgerError;
 
-    const url =
-      role === 'driver'
-        ? `${appUrl()}/tour-mode/driver?rt=${encodeURIComponent(token)}`
-        : role === 'guide'
-          ? `${appUrl()}/tour-mode/guide?rt=${encodeURIComponent(token)}`
-          : `${appUrl()}/tour-mode/room/${booking.id}?rt=${encodeURIComponent(token)}`;
+    const url = shortLinkUrl(appUrl(), shortCode);
     let qrDataUrl: string | null = null;
     try {
       qrDataUrl = await QRCode.toDataURL(url, { width: 360, margin: 1 });
@@ -107,7 +108,14 @@ export async function POST(req: NextRequest) {
       qrDataUrl = null; // QR is a nice-to-have; the link is the deliverable
     }
 
-    return NextResponse.json({ role, url, expires_at: expiresAt, qr_data_url: qrDataUrl }, { status: 201 });
+    // 고객 링크에는 상설 코드(A2C-…)도 함께 준다 — 왓츠앱 문구의 {entry_code}
+    // 치환과 "전화로 코드만 불러주기" 운영에 쓰인다.
+    const entryCode = role === 'customer' ? await ensureBookingReference(supabase, booking.id) : null;
+
+    return NextResponse.json(
+      { role, url, entry_code: entryCode, expires_at: expiresAt, qr_data_url: qrDataUrl },
+      { status: 201 },
+    );
   } catch (error: unknown) {
     if (error instanceof Error && (error.message === 'Unauthorized' || error.message.includes('Forbidden'))) {
       return NextResponse.json({ error: 'Admin access required' }, { status: 403 });

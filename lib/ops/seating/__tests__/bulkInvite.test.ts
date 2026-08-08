@@ -77,8 +77,8 @@ describe('buildBulkInvite', () => {
     expect(send.calls.sort()).toEqual(['m@example.com', 'tanaka@example.jp']);
   });
 
-  it('B0.3 — each guest gets their OWN room URL, not the shared claim link', async () => {
-    const { db } = makeDb();
+  it('B0.3 — each guest gets their OWN short link, not the shared claim link', async () => {
+    const { db, log } = makeDb();
     const sent: Array<{ to: string; text: string }> = [];
     const send: InviteSend = async (msg) => {
       sent.push({ to: msg.to, text: `${msg.html} ${msg.text ?? ''}` });
@@ -90,16 +90,30 @@ describe('buildBulkInvite', () => {
 
     expect(sent).toHaveLength(2);
     for (const msg of sent) {
-      // 개인 링크: /tour-mode/room/<bookingId>?rt=<token>
-      expect(msg.text).toMatch(/\/tour-mode\/room\/(b1|b3)\?rt=/);
+      // entry-code plan §C-2: 개인 링크 = /r/{별칭}. 345자 토큰 URL 은 더 이상
+      // 메일에 실리지 않는다(별칭은 그 발송의 원장 행에 붙어 산다).
+      expect(msg.text).toMatch(/\/r\/[A-Z2-9]{10}/);
+      expect(msg.text).not.toContain('?rt=');
       // 🔴 claim 링크가 손님에게 가면 B0.3이 실패한 것이다.
       expect(msg.text).not.toContain('/tour-mode/join/');
     }
     // 게스트마다 서로 다른 링크여야 한다 — 같으면 개인 링크가 아니다.
     const b1 = sent.find((m) => m.to === 'm@example.com')!;
     const b3 = sent.find((m) => m.to === 'tanaka@example.jp')!;
-    expect(b1.text).toContain('/tour-mode/room/b1?rt=');
-    expect(b3.text).toContain('/tour-mode/room/b3?rt=');
+    const codeOf = (text: string) => /\/r\/([A-Z2-9]{10})/.exec(text)![1];
+    expect(codeOf(b1.text)).not.toBe(codeOf(b3.text));
+    // 별칭은 각 게스트의 원장 행(short_code)과 일치해야 한다 — /r/ 문이 이걸로 되찾는다.
+    const inserts = queriesFor(log, 'tour_room_invites', 'insert').filter(
+      (q) => (q.payload as { role: string }).role === 'customer',
+    );
+    const codeByBooking = new Map(
+      inserts.map((q) => [
+        (q.payload as { booking_id: string }).booking_id,
+        (q.payload as { short_code: string }).short_code,
+      ]),
+    );
+    expect(codeOf(b1.text)).toBe(codeByBooking.get('b1'));
+    expect(codeOf(b3.text)).toBe(codeByBooking.get('b3'));
   });
 
   it('B0-D2 — the claim link is still minted as a fallback, but never sent', async () => {
@@ -179,12 +193,16 @@ describe('buildBulkInvite', () => {
     expect(outcome.result.sent).toBe(1);
     expect(outcome.result.skippedNoEmail).toBe(1);
 
-    // 실패한 게스트는 마커가 남지 않는다 — 성공한 b3만.
+    // entry-code 이후 원장이 발송보다 먼저다(짧은 별칭은 원장 행이 있어야
+    // 열리므로). 그래서 실패한 게스트도 insert 는 남고, 대신 즉시 revoke 되어
+    // "발송 기록" 이 거짓이 되지 않는다.
     const markers = queriesFor(log, 'tour_room_invites', 'insert').filter(
       (q) => (q.payload as { role: string }).role === 'customer',
     );
-    expect(markers).toHaveLength(1);
-    expect((markers[0].payload as { booking_id: string }).booking_id).toBe('b3');
+    expect(markers).toHaveLength(2);
+    // 폐기: 사전 폐기 2회(b1·b3) + 실패 롤백 1회(b1) = 3회.
+    const revokes = queriesFor(log, 'tour_room_invites', 'update');
+    expect(revokes).toHaveLength(3);
   });
 
   it('returns 409 when no room exists for the tour scope (no sends, no ledger)', async () => {

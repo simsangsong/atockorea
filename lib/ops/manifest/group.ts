@@ -16,6 +16,12 @@ export interface ManifestBooking {
   status: string | null
   source: string | null
   externalBookingId: string | null
+  /**
+   * entry-code plan §C — 예약 상설 코드(A2C-…). 손님이 atockorea.com/room 에
+   * 입력해 들어오는 값이라, 전화로 불러줄 수 있게 명단 행에 노출한다.
+   * (OTA 손님은 externalBookingId 로도 입장 가능 — 이미 바우처에 있다.)
+   */
+  bookingReference?: string | null
   /** pickup_points.name (자체 주문) 또는 ota_raw_meta.pickup_* (OTA). */
   pickupName: string | null
   pickupTime: string | null

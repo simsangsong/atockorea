@@ -245,7 +245,13 @@ export default function OpsManifestView({
       const localeKey = waLocaleKey(booking.preferredLanguage);
       const body = resolvedBodies[localeKey] ?? presetBodyForLocale(preset, booking.preferredLanguage);
       let roomLink = '';
-      if (body.includes('{room_link}') || body.includes('{pass_link}') || body.includes('{pass_url}')) {
+      let entryCode = '';
+      if (
+        body.includes('{room_link}') ||
+        body.includes('{pass_link}') ||
+        body.includes('{pass_url}') ||
+        body.includes('{entry_code}')
+      ) {
         try {
           const token = await getOpsToken();
           const res = await fetch('/api/admin/tour-ops/links', {
@@ -256,6 +262,7 @@ export default function OpsManifestView({
           });
           const json = await res.json();
           if (res.ok && typeof json.url === 'string') roomLink = json.url;
+          if (res.ok && typeof json.entry_code === 'string') entryCode = json.entry_code;
         } catch {
           /* 링크 없이도 발송은 가능 — 변수는 빈 값 */
         }
@@ -272,6 +279,7 @@ export default function OpsManifestView({
         pickupTime: booking.pickupTime,
         roomLink: roomLink || null,
         passLink: roomLink || null,
+        entryCode: entryCode || null,
         operatorName: 'AtoC Korea',
         weather,
         clothing,
@@ -590,6 +598,16 @@ export default function OpsManifestView({
                             <span className="ml-1 tr-meta text-[var(--tr-ink-3)]">
                               {booking.preferredLanguage ?? 'en'}
                             </span>
+                            {/* entry-code plan §C — 전화·현장에서 불러줄 입장 코드.
+                                손님이 atockorea.com/room 에 이걸 치면 들어온다. */}
+                            {booking.bookingReference && (
+                              <span
+                                className="ml-1.5 rounded bg-[var(--tr-accent-soft)] px-1 py-0.5 font-mono tr-meta font-semibold text-[var(--tr-accent-deep)]"
+                                data-testid={`manifest-entry-code-${booking.id}`}
+                              >
+                                {booking.bookingReference}
+                              </span>
+                            )}
                           </p>
                           {highlights.length > 0 && (
                             <p className="mt-0.5 flex flex-wrap gap-1">

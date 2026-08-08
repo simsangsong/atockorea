@@ -145,6 +145,12 @@ export function collectK4Pairs(root: string): K4Pair[] {
 export const K4_DECLARATIONS: Record<string, K4Declaration> = {
   // ── the door ───────────────────────────────────────────────────────────────
   'POST /api/tour-rooms/[bookingId]/join': { actor: 'guest', tier: 'free' },
+  /**
+   * 입장 코드 문(entry-code plan §C-2) — 코드 자체가 자격이라 무크레덴셜(public).
+   * 시뮬 예약에는 booking_reference 가 없어 해피패스는 라우트 유닛 테스트 +
+   * 실렌더 QA 가 증명하고, K4 는 "문이 존재하고 일관되게 응답한다"를 잰다.
+   */
+  'POST /api/tour-mode/entry': { actor: 'public', tier: 'free' },
 
   // ── chat core ──────────────────────────────────────────────────────────────
   'GET /api/tour-rooms/[bookingId]/messages': { actor: 'guest', tier: 'free' },

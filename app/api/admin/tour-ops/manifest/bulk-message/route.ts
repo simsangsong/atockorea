@@ -4,6 +4,11 @@ import { requireAdmin, AdminAuthFailure, adminAuthJsonResponse } from '@/lib/aut
 import { sendEmail } from '@/lib/email';
 import { ensureRoom, type RoomDbClient } from '@/lib/tour-room/access';
 import { hashToken, signCustomerRoomToken, verifyRoomToken } from '@/lib/tour-room/token';
+import {
+  ensureBookingReference,
+  generateInviteShortCode,
+  shortLinkUrl,
+} from '@/lib/tour-room/entryCode';
 import { OPS_TENANT_ID } from '@/lib/ops/tenant';
 import { WA_PRESET_KEYS, type WaPresetKey } from '@/lib/ops/whatsapp/presets';
 import {
@@ -79,13 +84,19 @@ function pickupOf(row: BookingRow): { name: string | null; time: string | null }
 /**
  * 예약별 개인 링크를 발급한다(§K B0.3). 실패는 null — 상위가 발송에서 뺀다.
  * 링크 없는 안내 메일은 안 보낸 것보다 나쁘다(손님은 받았다고 생각하고 기다린다).
+ *
+ * entry-code plan §C-2 이후 반환되는 것은 짧은 별칭(/r/{code})과 예약 상설
+ * 코드다 — 345자 토큰 URL 은 더 이상 문구에 실리지 않는다.
+ * ⚠ sent_via='ops-bulk-message' 는 2026-08-08 까지 라이브 CHECK 에 없어서
+ * 이 insert 가 조용히 실패했고, {room_link} 를 쓰는 발송에서 수신자 전원이
+ * skip 되던 실사고였다(마이그레이션 20260808090000 이 수복).
  */
 async function mintRoomLink(
   supabase: ReturnType<typeof createServerClient>,
   booking: { id: string; tour_id: string | null; tour_date: string; contact_name: string | null },
   /** admin.id, 또는 가이드 토큰 경로에서는 null (driver/link 라우트 선례). */
   adminId: string | null,
-): Promise<string | null> {
+): Promise<{ url: string; entryCode: string | null } | null> {
   try {
     await ensureRoom(supabase as unknown as RoomDbClient, {
       id: booking.id,
@@ -97,6 +108,7 @@ async function mintRoomLink(
       displayName: booking.contact_name || 'Guest',
       tourDate: booking.tour_date,
     });
+    const shortCode = generateInviteShortCode();
     const { error } = await supabase.from('tour_room_invites').insert({
       booking_id: booking.id,
       tour_id: booking.tour_id,
@@ -104,12 +116,14 @@ async function mintRoomLink(
       role: 'customer',
       display_name: booking.contact_name || 'Guest',
       token_hash: hashToken(minted.token),
+      short_code: shortCode,
       sent_via: 'ops-bulk-message',
       expires_at: new Date(minted.payload.exp * 1000).toISOString(),
       created_by: adminId,
     });
     if (error) return null;
-    return `${appUrl()}/tour-mode/room/${booking.id}?rt=${minted.token}`;
+    const entryCode = await ensureBookingReference(supabase as unknown as RoomDbClient, booking.id);
+    return { url: shortLinkUrl(appUrl(), shortCode), entryCode };
   } catch {
     return null;
   }
@@ -223,8 +237,9 @@ export async function GET(req: NextRequest) {
     // 미리보기는 기본적으로 링크를 발급하지 않는다 — 확인만 하려고 토큰을
     // 20개 찍어내면 실제로 보내지 않은 링크가 원장에 남는다. 단 `mint=1`
     // (wa.me/mailto 프리필로 바로 보내는 가이드 흐름)은 실링크가 필수다.
-    const previewLink = `${appUrl()}/tour-mode/room/…`;
-    const linkByBooking = new Map<string, string | null>();
+    const previewLink = `${appUrl()}/r/…`;
+    const previewCode = 'A2C-…';
+    const linkByBooking = new Map<string, { url: string; entryCode: string | null } | null>();
     if (mint) {
       for (const row of rows) {
         linkByBooking.set(
@@ -253,7 +268,7 @@ export async function GET(req: NextRequest) {
       templateSource = tpl.source;
       const pickup = pickupOf(row);
       const realLink = mint ? linkByBooking.get(row.id) ?? null : null;
-      const link = mint ? realLink : previewLink;
+      const link = mint ? realLink?.url ?? null : previewLink;
       const input: RecipientInput = {
         bookingId: row.id,
         guestName: row.contact_name ?? 'Guest',
@@ -265,6 +280,7 @@ export async function GET(req: NextRequest) {
         pickupTime: pickup.time,
         roomLink: link,
         passLink: link,
+        entryCode: mint ? realLink?.entryCode ?? null : previewCode,
       };
       const composed = composeForRecipient(
         { body: tpl.body, subject: tpl.subject ?? defaultEmailSubject(preset, tour?.title ?? null) },
@@ -361,7 +377,7 @@ export async function POST(req: NextRequest) {
     const recipients: RecipientInput[] = [];
     for (const row of targets) {
       const pickup = pickupOf(row);
-      const roomLink = await mintRoomLink(
+      const minted = await mintRoomLink(
         supabase,
         { id: row.id, tour_id: tourId, tour_date: date, contact_name: row.contact_name },
         admin.id,
@@ -374,8 +390,9 @@ export async function POST(req: NextRequest) {
         locale: row.preferred_language ?? 'en',
         pickupPoint: pickup.name,
         pickupTime: pickup.time,
-        roomLink,
-        passLink: roomLink,
+        roomLink: minted?.url ?? null,
+        passLink: minted?.url ?? null,
+        entryCode: minted?.entryCode ?? null,
       });
     }
 

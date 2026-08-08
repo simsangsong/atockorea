@@ -84,9 +84,11 @@ export interface RecipientInput {
   locale?: string | null;
   pickupPoint?: string | null;
   pickupTime?: string | null;
-  /** 이 손님의 **개인** 투어룸 링크 (§K B0.3). */
+  /** 이 손님의 **개인** 투어룸 링크 (§K B0.3; entry-code 이후 짧은 별칭). */
   roomLink?: string | null;
   passLink?: string | null;
+  /** 예약 상설 코드(A2C-…) — {entry_code} 토큰용 (entry-code plan §C-2). */
+  entryCode?: string | null;
 }
 
 export interface ComposeContext {
@@ -134,6 +136,7 @@ export function composeForRecipient(
     pickupTime: recipient.pickupTime ?? null,
     roomLink: recipient.roomLink ?? null,
     passLink: recipient.passLink ?? null,
+    entryCode: recipient.entryCode ?? null,
     operatorName: ctx.operatorName ?? null,
     weather,
     clothing,
