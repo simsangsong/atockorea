@@ -1,6 +1,6 @@
 {
   "locale": "fr",
-  "generatedAt": "2026-08-08T08:00:33.638Z",
+  "generatedAt": "2026-08-08T08:08:20.645Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-city-tour:fr:A1",
@@ -2398,6 +2398,395 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:A1",
+      "status": "flagged",
+      "segments": 99,
+      "fails": 0,
+      "flags": 16,
+      "findings": [
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/glanceItems/3/value",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/glanceItems/4/value",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/glanceItems/5/value",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/sticky_booking_bar/note",
+          "message": "길이비 1.54 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/5",
+          "message": "길이비 0.96 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/preview",
+          "message": "길이비 1.67 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/0",
+          "message": "길이비 0.91 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/1/content/3",
+          "message": "길이비 1.50 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/0",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/1",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/content/3",
+          "message": "길이비 1.59 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/2/preview",
+          "message": "길이비 1.68 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/3/content/3",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/1",
+          "message": "길이비 0.84 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/2",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/4",
+          "message": "길이비 1.46 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:A2",
+      "status": "flagged",
+      "segments": 35,
+      "fails": 0,
+      "flags": 10,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/0",
+          "message": "길이비 0.98 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/2",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.49 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/lessIdealFor/3",
+          "message": "길이비 1.52 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/0/label",
+          "message": "길이비 1.97 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/1/label",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/items/2/label",
+          "message": "길이비 2.10 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:A2-2",
+      "status": "flagged",
+      "segments": 63,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/5/question",
+          "message": "길이비 1.67 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/9/question",
+          "message": "길이비 1.82 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/description",
+          "message": "길이비 0.88 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/2/detail",
+          "message": "길이비 1.53 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:B",
+      "status": "flagged",
+      "segments": 24,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "길이비 0.97 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "길이비 0.89 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/location",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:itineraryStops",
+      "status": "flagged",
+      "segments": 37,
+      "fails": 0,
+      "flags": 7,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/convenience/parking",
+          "message": "길이비 1.69 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/name",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/0",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/1",
+          "message": "길이비 0.99 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/facilities",
+          "message": "길이비 1.51 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/parking",
+          "message": "길이비 1.48 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/convenience/restroom",
+          "message": "길이비 1.64 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:itineraryStops-2",
+      "status": "flagged",
+      "segments": 28,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/0",
+          "message": "길이비 1.45 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/smartNotes/tip",
+          "message": "길이비 1.40 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/convenience/parking",
+          "message": "길이비 1.62 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/hours",
+          "message": "길이비 1.41 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:itineraryStops-3",
+      "status": "flagged",
+      "segments": 17,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/1",
+          "message": "길이비 1.44 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/3",
+          "message": "길이비 0.90 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/smartNotes/facilities",
+          "message": "길이비 1.42 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.69 가 fr 허용범위 1–1.4 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/admission",
+          "message": "길이비 1.64 가 fr 허용범위 1–1.4 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:fr:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 10,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
     },
     {
       "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:fr:A1",

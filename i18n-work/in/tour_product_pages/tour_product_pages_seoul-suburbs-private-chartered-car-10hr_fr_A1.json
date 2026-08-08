@@ -58,14 +58,16 @@
       "source_en": "Build your own Seoul-area day at your own pace, with a licensed driver-guide and a private vehicle for up to 10 hours."
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Potentiel photo"
     },
     "/glanceItems/0/value": {
       "source_en": "Good",
       "tm": "Bons"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Paysages"
     },
     "/glanceItems/1/value": {
       "source_en": "Good",
@@ -80,21 +82,24 @@
       "tm": "Modéré"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Résistance à la pluie"
     },
     "/glanceItems/3/value": {
       "source_en": "Excellent",
       "tm": "Excellent"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Adapté aux familles"
     },
     "/glanceItems/4/value": {
       "source_en": "Excellent",
       "tm": "Excellent"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Équilibre"
     },
     "/glanceItems/5/value": {
       "source_en": "Flexible",
@@ -128,7 +133,8 @@
       "tm": "Circuit privé"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Fully Customizable"
+      "source_en": "Fully Customizable",
+      "tm": "Entièrement personnalisable"
     },
     "/catalog_card/badges/2": {
       "source_en": "Free Seoul Hotel Pickup"
@@ -372,5 +378,5 @@
       "⟦G1⟧": "Insadong"
     }
   },
-  "tmHits": 44
+  "tmHits": 50
 }
