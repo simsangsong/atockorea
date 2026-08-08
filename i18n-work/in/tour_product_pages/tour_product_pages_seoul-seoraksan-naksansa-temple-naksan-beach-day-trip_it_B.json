@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Seoul → Seoraksan"
+      "source_en": "Seoul → Seoraksan",
+      "tm": "Seoul → Seoraksan"
     },
     "/routePhases/0/duration": {
       "source_en": "≈ 2.5 hours",
@@ -15,6 +16,7 @@
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at 07:00 Hongik / 07:30 ⟦G0⟧, then a ~2.5-hour drive northeast via the Seoul-Yangyang Expressway and the 11 km Inje-Yangyang Tunnel to arrive at Seoraksan around 10:00.",
+      "tm": "Ritrovo alle 07:00 a Hongik / alle 07:30 a ⟦G0⟧, poi ~2,5 ore di strada verso nord-est lungo la Seoul-Yangyang Expressway e il tunnel di Inje-Yangyang, lungo 11 km, per arrivare al Seoraksan verso le 10:00.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -31,20 +33,24 @@
       "tm": "≈ 2 ore"
     },
     "/routePhases/1/description": {
-      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and the optional cable car to Gwongeumseong or a short Biseondae streamside walk."
+      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and the optional cable car to Gwongeumseong or a short Biseondae streamside walk.",
+      "tm": "Ingresso di Sogongwon: il Tongildaebul, il tempio Sinheungsa e, a scelta, la funivia per Gwongeumseong o una breve passeggiata lungo il torrente verso Biseondae."
     },
     "/routePhases/2/phase": {
-      "source_en": "Seoraksan → Naksansa (incl. lunch)"
+      "source_en": "Seoraksan → Naksansa (incl. lunch)",
+      "tm": "Seoraksan → Naksansa (pranzo compreso)"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 1.5 hours",
       "tm": "≈ 1,5 ore"
     },
     "/routePhases/2/description": {
-      "source_en": "Roughly a 40-minute drive toward the Yangyang coast, with a lunch stop en route at a local restaurant (own expense)."
+      "source_en": "Roughly a 40-minute drive toward the Yangyang coast, with a lunch stop en route at a local restaurant (own expense).",
+      "tm": "Circa 40 minuti di strada verso la costa di Yangyang, con sosta pranzo lungo il percorso in un ristorante locale (a Suo carico)."
     },
     "/routePhases/3/phase": {
       "source_en": "⟦G0⟧ & ⟦G1⟧",
+      "tm": "⟦G0⟧ e ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Tempio di Naksansa",
         "⟦G1⟧ = Spiaggia di Naksan"
@@ -56,6 +62,7 @@
     },
     "/routePhases/3/description": {
       "source_en": "75 minutes at the cliffside ⟦G0⟧, then a short transfer down to ⟦G1⟧ for an hour on the sand and pine paths.",
+      "tm": "75 minuti al ⟦G0⟧, a strapiombo sul mare, poi un breve trasferimento in basso fino alla ⟦G1⟧ per un’ora sulla sabbia e nei sentieri dei pini.",
       "glossary": [
         "⟦G0⟧ = Tempio di Naksansa",
         "⟦G1⟧ = Spiaggia di Naksan"
@@ -71,6 +78,7 @@
     },
     "/routePhases/4/description": {
       "source_en": "Depart ⟦G0⟧ around 16:10 and drive back to Seoul via the Seoul-Yangyang Expressway — ⟦G1⟧ ~18:45, Hongik ~19:15.",
+      "tm": "Partenza dalla ⟦G0⟧ verso le 16:10 e rientro a Seoul lungo la Seoul-Yangyang Expressway — ⟦G1⟧ ~18:45, Hongik ~19:15.",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Naksan",
         "⟦G1⟧ = Myeongdong"
@@ -99,6 +107,7 @@
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — foto lungo il percorso",
       "glossary": [
         "⟦G0⟧ = Tempio di Naksansa"
       ]
@@ -119,6 +128,7 @@
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — foto lungo il percorso",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Naksan"
       ]
@@ -223,6 +233,7 @@
     },
     "/galleryItems/7/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — foto lungo il percorso",
       "glossary": [
         "⟦G0⟧ = Tempio di Naksansa"
       ]
@@ -243,6 +254,7 @@
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — foto lungo il percorso",
       "glossary": [
         "⟦G0⟧ = Tempio di Naksansa"
       ]
@@ -263,6 +275,7 @@
     },
     "/galleryItems/9/alt": {
       "source_en": "⟦G0⟧ — on-route photo",
+      "tm": "⟦G0⟧ — foto lungo il percorso",
       "glossary": [
         "⟦G0⟧ = Spiaggia di Naksan"
       ]
@@ -392,5 +405,5 @@
       "⟦G0⟧": "Spiaggia di Naksan"
     }
   },
-  "tmHits": 32
+  "tmHits": 45
 }

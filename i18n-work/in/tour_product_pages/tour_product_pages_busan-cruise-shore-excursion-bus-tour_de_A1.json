@@ -13,19 +13,21 @@
       "source_en": "Busan Cruise Shore Excursion: Coastal Bus Tour | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Large-coach Busan coastal day tour for cruise passengers: 8 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
+      "source_en": "Large-coach Busan coastal day tour for cruise passengers: 9 signature stops with cruise-terminal pickup and a return-before-sail-away guarantee."
     },
     "/seo/metaDescription": {
-      "source_en": "9-hour Busan coastal bus tour for cruise passengers from Busan Port Cruise Terminal: Yonggungsa, UN Memorial, Jagalchi/BIFF/Gukje, Gamcheon, Songdo, Yongdusan — return guaranteed before sail-away."
+      "source_en": "8-hour Busan coastal bus tour for cruise passengers from Busan Port Cruise Terminal: Yonggungsa, UN Memorial, Jagalchi/BIFF/Gukje, Gamcheon, Songdo, Yongdusan — return guaranteed before sail-away."
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Busan cruise shore excursion"
+      "source_en": "Busan cruise shore excursion",
+      "tm": "Busan Kreuzfahrt-Landausflug"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "Busan bus tour cruise"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Busan cruise day tour"
+      "source_en": "Busan cruise day tour",
+      "tm": "Kreuzfahrt-Tagestour Busan"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "Gamcheon cruise tour"
@@ -34,16 +36,19 @@
       "source_en": "Yonggungsa cruise tour"
     },
     "/hero/meta/stops": {
-      "source_en": "8 stops"
+      "source_en": "9 stops",
+      "tm": "9 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 9 hours, timed to your cruise's port-call window"
+      "source_en": "≈ 8 hours, timed to your cruise's port-call window"
     },
     "/hero/pills/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/hero/pills/1": {
       "source_en": "Coastal route"
@@ -55,73 +60,94 @@
       "source_en": "Eight Busan signatures on a large coach — picked up at your cruise terminal and returned with comfortable buffer before sail-away"
     },
     "/glanceItems/0/label": {
-      "source_en": "Duration"
+      "source_en": "Duration",
+      "tm": "Dauer"
     },
     "/glanceItems/0/value": {
-      "source_en": "9 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/glanceItems/1/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Fotopotenzial"
     },
     "/glanceItems/1/value": {
-      "source_en": "Very High"
+      "source_en": "Very High",
+      "tm": "Sehr hoch"
     },
     "/glanceItems/2/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Landschaft"
     },
     "/glanceItems/2/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Gut"
     },
     "/glanceItems/3/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Gehstrecke"
     },
     "/glanceItems/3/value": {
-      "source_en": "Challenging"
+      "source_en": "Challenging",
+      "tm": "Anspruchsvoll"
     },
     "/glanceItems/4/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Regentauglichkeit"
     },
     "/glanceItems/4/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/5/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Familientauglichkeit"
     },
     "/glanceItems/5/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/6/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Tempo"
     },
     "/glanceItems/6/value": {
       "source_en": "Brisk"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Überblick"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Reiseverlauf"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Details"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Bewertungen"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/catalog_card/tags/1": {
       "source_en": "Bus tour"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Cruise pickup"
+      "source_en": "Cruise pickup",
+      "tm": "Abholung für Kreuzfahrtgäste"
     },
     "/catalog_card/tags/4": {
       "source_en": "Return guaranteed"
@@ -130,22 +156,27 @@
       "source_en": "Busan Cruise Shore: Coastal Bus Tour"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Kreuzfahrtausflug"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Large coach"
+      "source_en": "Large coach",
+      "tm": "Großer Reisebus"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Pickup at port"
+      "source_en": "Pickup at port",
+      "tm": "Abholung am Hafen"
     },
     "/catalog_card/badges/3": {
       "source_en": "Return guaranteed"
     },
     "/catalog_card/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "8 hours",
+      "tm": "8 Stunden"
     },
     "/catalog_card/imageAlt": {
       "source_en": "AtoC Korea white tour coach waiting at Busan International Cruise Terminal with a moored cruise liner and a guide welcoming a four-guest party arriving from the ship"
@@ -153,11 +184,8 @@
     "/catalog_card/subtitle": {
       "source_en": "8-stop Busan coastal circuit on a large coach, with cruise-terminal pickup and return planned around your ship's sail-away."
     },
-    "/catalog_card/priceLabel": {
-      "source_en": "From US$49 per person (was $55, 11% off)"
-    },
     "/catalog_card/shortCardDescription": {
-      "source_en": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 8 signature stops (⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G7⟧, ⟦G5⟧, ⟦G0⟧, ⟦G6⟧, ⟦G4⟧), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
+      "source_en": "A large-coach Busan coastal day tour built for cruise passengers: cruise terminal pickup, 9 signature stops (⟦G2⟧, ⟦G1⟧, ⟦G3⟧, ⟦G7⟧, ⟦G5⟧, ⟦G0⟧, ⟦G6⟧, ⟦G4⟧), and a return-before-sail-away guarantee. Budget tier — same circuit as the small-group product, larger coach.",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon",
         "⟦G1⟧ = UN-Gedenkfriedhof",
@@ -170,13 +198,15 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan Cruise Shore"
+      "source_en": "Busan Cruise Shore",
+      "tm": "Busan Kreuzfahrt-Landausflug"
     },
     "/headlineLine2": {
       "source_en": "Coastal Bus Tour"
     },
     "/pickup_dropoff/primary/name": {
-      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
+      "source_en": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)",
+      "tm": "Busan International Cruise Terminal (영도 크루즈항 — Dongsam, Yeongdo)"
     },
     "/pickup_dropoff/primary/time": {
       "source_en": "Confirmed at booking (≈30 min after ship docking) / Return ≈90 min before sail-away"
@@ -185,10 +215,12 @@
       "source_en": "Dongsam-dong, Yeongdo-gu, Busan"
     },
     "/pickup_dropoff/primary/instructions": {
-      "source_en": "For large cruise ships. Meet the guide at the terminal arrival hall — look for the 'AtoC Korea' sign. Coach parked in the terminal coach lot."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Kreuzfahrtschiffe in Busan legen an einem der beiden Terminals an — welches für Sie gilt, hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt. Ihre Reiseleitung treffen Sie in der Ankunftshalle."
     },
     "/pickup_dropoff/alternates/0/name": {
-      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
+      "source_en": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)",
+      "tm": "Busan Port International Passenger Terminal (부산항국제여객터미널 — Choryang)"
     },
     "/pickup_dropoff/alternates/0/time": {
       "source_en": "Alternate pickup for ships docking at Choryang"
@@ -197,7 +229,8 @@
       "source_en": "Chungjang-daero 206, Jung-gu, Busan"
     },
     "/pickup_dropoff/alternates/0/instructions": {
-      "source_en": "If your cruise line docks at the Choryang International Passenger Terminal rather than the Yeongdo Cruise Terminal, notify at booking — the coach will pick up at the Choryang terminal arrival hall instead."
+      "source_en": "Busan cruise ships berth at either terminal — which one applies to you depends on where your ship docks, and is confirmed at booking. Meet your guide in the arrival hall.",
+      "tm": "Kreuzfahrtschiffe in Busan legen an einem der beiden Terminals an — welches für Sie gilt, hängt davon ab, wo Ihr Schiff festmacht, und wird bei der Buchung bestätigt. Ihre Reiseleitung treffen Sie in der Ankunftshalle."
     }
   },
   "glossaryTokens": {
@@ -212,5 +245,5 @@
       "⟦G7⟧": "BIFF-Platz"
     }
   },
-  "tmHits": 0
+  "tmHits": 36
 }

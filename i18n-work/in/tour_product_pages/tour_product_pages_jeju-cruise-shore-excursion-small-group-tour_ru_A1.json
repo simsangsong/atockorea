@@ -7,298 +7,409 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Jeju Cruise Shore Excursion · Small Group | AtoC Korea"
+      "source_en": "Jeju Cruise Shore Excursion · Small Group | AtoC Korea",
+      "tm": "Круизная экскурсия по Чеджу · малая группа | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Jeju Cruise Shore Excursion: Small Group Tour | AtoC Korea"
+      "source_en": "Jeju Cruise Shore Excursion: Small Group Tour | AtoC Korea",
+      "tm": "Круизная экскурсия по Чеджу: тур в малой группе | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Jeju cruise shore small-group mini-van tour: Jeju Port → east UNESCO route; Gangjeong Port → south route. Max 10 passengers, all admissions included, certified guide, planned on-time return."
+      "source_en": "Jeju cruise shore small-group mini-van tour: Jeju Port → east UNESCO route; Gangjeong Port → south route. Max 10 passengers, all admissions included, certified guide, planned on-time return.",
+      "tm": "Круизная экскурсия по Чеджу на минивэне в малой группе: порт Чеджу → восточный маршрут ЮНЕСКО; порт Канджон → южный маршрут. Максимум 10 пассажиров, все входные билеты включены, сертифицированный гид, своевременное возвращение по плану."
     },
     "/seo/metaDescription": {
-      "source_en": "8-hour Jeju cruise shore excursion in a small-group mini-coach with port-based routing: Jeju Port runs east UNESCO route, Gangjeong Port runs Hallasan route."
+      "source_en": "8-hour Jeju cruise shore excursion in a small-group mini-coach with port-based routing: Jeju Port runs east UNESCO route, Gangjeong Port runs Hallasan route.",
+      "tm": "8-часовая круизная экскурсия по Чеджу на мини-автобусе в малой группе с маршрутом по порту захода: из порта Чеджу — восточный маршрут ЮНЕСКО, из порта Канджон — маршрут по Халласану."
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Jeju shore excursion small group"
+      "source_en": "Jeju shore excursion small group",
+      "tm": "круизная экскурсия по Чеджу в малой группе"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Jeju cruise day trip"
+      "source_en": "Jeju cruise day trip",
+      "tm": "однодневная круизная поездка по Чеджу"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Jeju small group tour from cruise"
+      "source_en": "Jeju small group tour from cruise",
+      "tm": "тур по Чеджу в малой группе с круиза"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Jeju mini coach shore tour"
+      "source_en": "Jeju mini coach shore tour",
+      "tm": "береговая экскурсия по Чеджу на мини-автобусе"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Jeju private cruise tour"
+      "source_en": "Jeju private cruise tour",
+      "tm": "индивидуальный круизный тур по Чеджу"
     },
     "/hero/meta/stops": {
-      "source_en": "6-7 stops"
+      "source_en": "6-7 stops",
+      "tm": "6–7 остановок"
     },
     "/hero/meta/region": {
-      "source_en": "Jeju (port-dependent)"
+      "source_en": "Jeju (port-dependent)",
+      "tm": "Чеджу (зависит от порта)"
     },
     "/hero/meta/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 часов"
     },
     "/hero/pills/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
     },
     "/hero/pills/1": {
-      "source_en": "Port-based route"
+      "source_en": "Port-based route",
+      "tm": "Маршрут по порту захода"
     },
     "/hero/pills/2": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/hero/tagline": {
-      "source_en": "Pick your cruise port: Jeju Port runs the east UNESCO route, Gangjeong Port runs the Hallasan + Olle Market route. Both 8-hour routes run on a small-group mini-coach."
+      "source_en": "Pick your cruise port: Jeju Port runs the east UNESCO route, Gangjeong Port runs the Hallasan + Olle Market route. Both 8-hour routes run on a small-group mini-coach.",
+      "tm": "Выберите свой круизный порт: из порта Чеджу идёт восточный маршрут ЮНЕСКО, из порта Канджон — маршрут по Халласану и рынку Олле. Оба 8-часовых маршрута проходят на мини-автобусе в малой группе."
     },
     "/glanceItems/0/label": {
-      "source_en": "Duration"
+      "source_en": "Duration",
+      "tm": "Продолжительность"
     },
     "/glanceItems/0/value": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 часов"
     },
     "/glanceItems/1/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Фотопотенциал"
     },
     "/glanceItems/1/value": {
-      "source_en": "Very High"
+      "source_en": "Very High",
+      "tm": "Очень высокая"
     },
     "/glanceItems/2/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Насыщенность пейзажами"
     },
     "/glanceItems/2/value": {
-      "source_en": "Very High"
+      "source_en": "Very High",
+      "tm": "Очень высокая"
     },
     "/glanceItems/3/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/4/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Пригодность в дождь"
     },
     "/glanceItems/4/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/5/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Пригодность для семей"
     },
     "/glanceItems/5/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/6/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Темп"
     },
     "/glanceItems/6/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Обзор"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Детали"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Отзывы"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Port-based route"
+      "source_en": "Port-based route",
+      "tm": "Маршрут по порту захода"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Premium cruise"
+      "source_en": "Premium cruise",
+      "tm": "Премиальный круиз"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/title": {
-      "source_en": "Jeju Cruise Shore: Small-Group Tour"
+      "source_en": "Jeju Cruise Shore: Small-Group Tour",
+      "tm": "Круизный берег Чеджу: тур в малой группе"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Cruise excursion"
+      "source_en": "Cruise excursion",
+      "tm": "Круизная экскурсия"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Port-based routing"
+      "source_en": "Port-based routing",
+      "tm": "Маршрут по порту захода"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Premium cruise"
+      "source_en": "Premium cruise",
+      "tm": "Премиальный круиз"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/region": {
-      "source_en": "Jeju (port-dependent)"
+      "source_en": "Jeju (port-dependent)",
+      "tm": "Чеджу (зависит от порта)"
     },
     "/catalog_card/duration": {
-      "source_en": "8 hours"
+      "source_en": "8 hours",
+      "tm": "8 часов"
     },
     "/catalog_card/imageAlt": {
-      "source_en": "Black Kia Carnival waiting at Gangjeong International Cruise Terminal in Jeju with a private driver-guide holding a personalized welcome sign as four guests arrive with luggage"
+      "source_en": "Black Kia Carnival waiting at Gangjeong International Cruise Terminal in Jeju with a private driver-guide holding a personalized welcome sign as four guests arrive with luggage",
+      "tm": "Чёрный Kia Carnival ждёт у международного круизного терминала Канджон на Чеджу; частный водитель-гид держит именную приветственную табличку, а четверо гостей подходят с багажом"
     },
     "/catalog_card/subtitle": {
-      "source_en": "Port-based cruise day tour with Jeju and Gangjeong route options"
+      "source_en": "Port-based cruise day tour with Jeju and Gangjeong route options",
+      "tm": "Круизный дневной тур с маршрутом по порту захода: варианты через Чеджу и Канджон"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small group tour cruise shore excursion that adapts the route to your cruise port. Jeju Port (north) runs an east-coast UNESCO route via ⟦G0⟧; Gangjeong Port (south) runs a Hallasan 1100 + south-coast geology + Olle Market route. Both return to the cruise terminal with comfortable buffer.",
+      "tm": "Круизная береговая экскурсия в малой группе, маршрут которой подстраивается под ваш круизный порт. Из порта Чеджу (север) идёт маршрут ЮНЕСКО по восточному побережью через ⟦G0⟧; из порта Канджон (юг) — маршрут по высокогорью Халласан 1100, геологии южного побережья и рынку Олле. Оба возвращаются к круизному терминалу с комфортным запасом времени.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Jeju Cruise Shore"
+      "source_en": "Jeju Cruise Shore",
+      "tm": "Круизный берег Чеджу"
     },
     "/headlineLine2": {
-      "source_en": "Small-Group Tour"
+      "source_en": "Small-Group Tour",
+      "tm": "тур в малой группе"
     },
     "/pickup_dropoff/notes": {
-      "source_en": "Return is to the same cruise terminal your tour started from, with comfortable buffer before sail-away. We have never missed a sail-away — on-time return is the core of the cruise shore-excursion product."
+      "source_en": "Return is to the same cruise terminal your tour started from, with comfortable buffer before sail-away. We have never missed a sail-away — on-time return is the core of the cruise shore-excursion product.",
+      "tm": "Возвращение — к тому же круизному терминалу, с которого начался тур, с комфортным запасом времени до отхода судна. Мы ни разу не опоздали к отходу судна: своевременное возвращение — основа круизной береговой экскурсии."
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Jeju International Passenger Terminal (제주항)"
+      "source_en": "Jeju International Passenger Terminal (제주항)",
+      "tm": "Международный пассажирский терминал Чеджу (제주항)"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Gangjeong Civil-Military Cruise Terminal (강정항)"
+      "source_en": "Gangjeong Civil-Military Cruise Terminal (강정항)",
+      "tm": "Гражданско-военный круизный терминал Канджон (강정항)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Jeju International Passenger Terminal (제주항 — north Jeju)"
+      "source_en": "Jeju International Passenger Terminal (제주항 — north Jeju)",
+      "tm": "Международный пассажирский терминал Чеджу (제주항 — север Чеджу)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "For ships docking at Jeju Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name."
+      "source_en": "For ships docking at Jeju Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name.",
+      "tm": "Для судов, швартующихся в порту Чеджу. Встреча с гидом в зале прибытия круизного терминала — гид держит табличку AtoC Korea с вашим именем."
     },
     "/pickup_dropoff/departure/0/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Подтверждается при бронировании (≈30 мин. после швартовки судна)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Gangjeong Civil-Military Cruise Terminal (강정항 — south Jeju, Seogwipo)"
+      "source_en": "Gangjeong Civil-Military Cruise Terminal (강정항 — south Jeju, Seogwipo)",
+      "tm": "Гражданско-военный круизный терминал Канджон (강정항 — юг Чеджу, Согвипхо)"
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "For ships docking at Gangjeong Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name."
+      "source_en": "For ships docking at Gangjeong Port. Meet your guide at the cruise terminal arrival hall — guide holds an AtoC Korea sign with your name.",
+      "tm": "Для судов, швартующихся в порту Канджон. Встреча с гидом в зале прибытия круизного терминала — гид держит табличку AtoC Korea с вашим именем."
     },
     "/pickup_dropoff/departure/1/time": {
-      "source_en": "Confirmed at booking (≈30 min after ship docking)"
+      "source_en": "Confirmed at booking (≈30 min after ship docking)",
+      "tm": "Подтверждается при бронировании (≈30 мин. после швартовки судна)"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your cruise port, travel date, and group size to check availability and complete your booking."
+      "source_en": "Select your cruise port, travel date, and group size to check availability and complete your booking.",
+      "tm": "Выберите круизный порт, дату поездки и размер группы, чтобы проверить доступность и завершить бронирование."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "человек"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Посадка и высадка"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Jeju Port pickup: Jeju cruise terminal (north Jeju)"
+      "source_en": "Jeju Port pickup: Jeju cruise terminal (north Jeju)",
+      "tm": "Посадка в порту Чеджу: круизный терминал Чеджу (север Чеджу)"
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Gangjeong Port pickup: Gangjeong cruise terminal (Seogwipo, south Jeju)"
+      "source_en": "Gangjeong Port pickup: Gangjeong cruise terminal (Seogwipo, south Jeju)",
+      "tm": "Посадка в порту Канджон: круизный терминал Канджон (Согвипхо, юг Чеджу)"
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Pickup time confirmed per cruise schedule"
+      "source_en": "Pickup time confirmed per cruise schedule",
+      "tm": "Время посадки подтверждается по расписанию круиза"
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Return to same cruise terminal with buffer before sailaway"
+      "source_en": "Return to same cruise terminal with buffer before sailaway",
+      "tm": "Возвращение к тому же круизному терминалу с запасом времени до отхода судна"
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Cruise terminal pickup — route option by port"
+      "source_en": "Cruise terminal pickup — route option by port",
+      "tm": "Посадка у круизного терминала — вариант маршрута по порту"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Пешие участки и рельеф"
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Jeju port: ⟦G0⟧ rim climb is steepest (optional)",
+      "tm": "Порт Чеджу: подъём на кромку ⟦G0⟧ — самый крутой участок (по желанию)",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Gangjeong port: Hallasan 1100 is easy boardwalk; Cheonjiyeon path is short"
+      "source_en": "Gangjeong port: Hallasan 1100 is easy boardwalk; Cheonjiyeon path is short",
+      "tm": "Порт Канджон: на Халласане 1100 лёгкий деревянный настил; тропа к Чхонджиёну короткая"
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Bring layered clothing — Hallasan 1100 is cooler than coast (Gangjeong)"
+      "source_en": "Bring layered clothing — Hallasan 1100 is cooler than coast (Gangjeong)",
+      "tm": "Одевайтесь слоями — на Халласане 1100 прохладнее, чем на побережье (Канджон)"
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Moderate; varies by port route option"
+      "source_en": "Moderate; varies by port route option",
+      "tm": "Средняя; зависит от варианта маршрута по порту"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Weather policy"
+      "source_en": "Weather policy",
+      "tm": "Правила по погоде"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Heavy rain: Seongsan rim climb may be skipped (Jeju port route option)"
+      "source_en": "Heavy rain: Seongsan rim climb may be skipped (Jeju port route option)",
+      "tm": "Сильный дождь: подъём на кромку Сонсана может быть пропущен (вариант маршрута из порта Чеджу)"
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Hallasan weather: 1100 highland may be substituted with lower-elevation stop (Gangjeong port route option)"
+      "source_en": "Hallasan weather: 1100 highland may be substituted with lower-elevation stop (Gangjeong port route option)",
+      "tm": "Погода на Халласане: высокогорье 1100 может быть заменено остановкой на меньшей высоте (вариант маршрута из порта Канджон)"
     },
     "/practicalAccordionItems/2/content/2": {
       "source_en": "Strong wind: coastal exposure shortens at Jusangjeolli and ⟦G0⟧",
+      "tm": "Сильный ветер: время на открытом побережье сокращается у Чусанджолли и ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сопчикходжи"
       ]
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Cruise return is non-negotiable — route adjusts, schedule does not"
+      "source_en": "Cruise return is non-negotiable — route adjusts, schedule does not",
+      "tm": "Возвращение к круизу не обсуждается — подстраивается маршрут, а не расписание"
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Cruise schedule is fixed — route adjusts"
+      "source_en": "Cruise schedule is fixed — route adjusts",
+      "tm": "Расписание круиза фиксировано — подстраивается маршрут"
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Что надеть и взять с собой"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Comfortable walking shoes"
+      "source_en": "Comfortable walking shoes",
+      "tm": "Удобная обувь для ходьбы"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Light jacket (especially Hallasan 1100 / Gangjeong route option)"
+      "source_en": "Light jacket (especially Hallasan 1100 / Gangjeong route option)",
+      "tm": "Лёгкая куртка (особенно для варианта Халласан 1100 / Канджон)"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Hat and sunscreen"
+      "source_en": "Hat and sunscreen",
+      "tm": "Головной убор и солнцезащитный крем"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Cruise ID + passport for terminal re-entry"
+      "source_en": "Cruise ID + passport for terminal re-entry",
+      "tm": "Круизная карта и паспорт для возврата в терминал"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Comfortable walking shoes + layers + passport for cruise re-entry"
+      "source_en": "Comfortable walking shoes + layers + passport for cruise re-entry",
+      "tm": "Удобная обувь, одежда слоями и паспорт для возврата на судно"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Included / Not included"
+      "source_en": "Included / Not included",
+      "tm": "Включено / не включено"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "English-speaking guide"
+      "source_en": "English-speaking guide",
+      "tm": "Англоговорящий гид"
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Mini-coach transport"
+      "source_en": "Mini-coach transport",
+      "tm": "Транспорт — мини-автобус"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Cruise terminal pickup/drop-off"
+      "source_en": "Cruise terminal pickup/drop-off",
+      "tm": "Посадка и высадка у круизного терминала"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "All site admissions"
+      "source_en": "All site admissions",
+      "tm": "Все входные билеты на объекты"
     },
     "/practicalAccordionItems/4/content/4": {
-      "source_en": "Bottled water"
+      "source_en": "Bottled water",
+      "tm": "Бутилированная вода"
     },
     "/practicalAccordionItems/4/content/5": {
-      "source_en": "Lunch break — own expense at local restaurant (₩10–15k)"
+      "source_en": "Lunch break — own expense at local restaurant (₩10–15k)",
+      "tm": "Обеденный перерыв — за свой счёт в местном ресторане (₩10–15 тыс.)"
     },
     "/practicalAccordionItems/4/content/6": {
-      "source_en": "Personal shopping"
+      "source_en": "Personal shopping",
+      "tm": "Личные покупки"
     },
     "/practicalAccordionItems/4/content/7": {
-      "source_en": "Gratuities"
+      "source_en": "Gratuities",
+      "tm": "Чаевые"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Guide, vehicle, pickup, admissions — lunch / shopping / tips own expense"
+      "source_en": "Guide, vehicle, pickup, admissions — lunch / shopping / tips own expense",
+      "tm": "Гид, транспорт, посадка, входные билеты — обед, покупки и чаевые за свой счёт"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Cancellation",
+      "tm": "Отмена"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
     }
   },
   "glossaryTokens": {
@@ -312,5 +423,5 @@
       "⟦G0⟧": "Сопчикходжи"
     }
   },
-  "tmHits": 0
+  "tmHits": 99
 }

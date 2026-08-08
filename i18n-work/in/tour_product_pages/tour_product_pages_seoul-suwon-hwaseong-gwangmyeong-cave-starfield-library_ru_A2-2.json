@@ -8,15 +8,18 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "⟦G0⟧ is closed on Mondays for maintenance. Since the cave is one of the four core stops, the tour doesn't operate on Mondays. If you want to visit on a Monday, consider the Suwon-only itineraries (Hwaseong + Folk Village or Hwaseong + Waujeongsa).",
+      "tm": "⟦G0⟧ закрыта по понедельникам на техническое обслуживание. Поскольку пещера — одна из четырёх главных остановок, по понедельникам экскурсия не проводится. Если вы хотите поехать именно в понедельник, посмотрите маршруты только по Сувону (Хвасон и Фольклорная деревня либо Хвасон и Ваучжонса).",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "Why isn't the tour available on Mondays?"
+      "source_en": "Why isn't the tour available on Mondays?",
+      "tm": "Почему по понедельникам экскурсии нет?"
     },
     "/staticQuestions/1/answer": {
       "source_en": "Yes — ⟦G1⟧, ⟦G0⟧, and ⟦G2⟧ admissions are all included. Starfield Library is free for everyone. Optional cave-winery tasting and any folk-village extras are at your own cost.",
+      "tm": "Да: входные билеты в ⟦G1⟧, в ⟦G0⟧ и в ⟦G2⟧ включены. Библиотека Starfield бесплатна для всех. Дегустация в подземной винотеке по желанию и любые дополнения в фольклорной деревне — за ваш счёт.",
       "glossary": [
         "⟦G0⟧ = Дворец Хвасон Хэнгун",
         "⟦G1⟧ = Крепость Хвасон в Сувоне",
@@ -28,47 +31,57 @@
       "tm": "Включены ли входные билеты?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken)."
+      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken).",
+      "tm": "Нет. Обед обычно приходится на свободное время в фуд-холле Starfield в Сувоне (большой выбор, ₩10 000–₩20 000) или в небольшом сувонском заведении рядом с крепостью (сувонские кальби или курица)."
     },
     "/staticQuestions/2/question": {
       "source_en": "Is lunch included?",
       "tm": "Включён ли обед?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level."
+      "source_en": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level.",
+      "tm": "Примерно 180 ступеней вниз к главным местам нижнего уровня (Wine Cave, Золотой водопад, Aqua World) и столько же обратно. Лифта нет. Гости с трудностями при ходьбе или боязнью замкнутых пространств обычно остаются на верхнем уровне."
     },
     "/staticQuestions/3/question": {
       "source_en": "How many stairs are in ⟦G0⟧?",
+      "tm": "Сколько ступеней в ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop."
+      "source_en": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop.",
+      "tm": "Прохладно. В пещере круглый год постоянные 12°C (54°F). Летом это спасение, зимой лучше не снимать верхнюю одежду. Летом многие берут лёгкую куртку специально для этой остановки."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is the cave warm or cold?"
+      "source_en": "Is the cave warm or cold?",
+      "tm": "В пещере тепло или холодно?"
     },
     "/staticQuestions/5/answer": {
       "source_en": "Both visit the fortress, palace, and Starfield Library. This version pairs them with ⟦G0⟧ (an underground LED-lit theme park). The Folk Village version drops the cave and adds the Korean Folk Village in Yongin (a 270-house open-air heritage park). Choose this one for variety and indoor weather; the Folk Village version for deeper Joseon-era heritage.",
+      "tm": "В обеих есть крепость, дворец и библиотека Starfield. В этой версии к ним добавляется ⟦G0⟧ — подземный тематический парк с подсветкой. В версии с фольклорной деревней пещеры нет, зато есть Корейская фольклорная деревня в Йонъине (парк-музей под открытым небом из 270 домов). Выбирайте эту версию ради разнообразия и остановок под крышей, а версию с деревней — ради более глубокого погружения в эпоху Чосон.",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
     },
     "/staticQuestions/5/question": {
-      "source_en": "How is this different from the Suwon + Folk Village tour?"
+      "source_en": "How is this different from the Suwon + Folk Village tour?",
+      "tm": "Чем это отличается от экскурсии «Сувон и Фольклорная деревня»?"
     },
     "/staticQuestions/6/answer": {
       "source_en": "Yes — strong first-time pick for travelers who want one UNESCO site (Hwaseong Fortress), one Joseon palace (Haenggung), one underground themed attraction (⟦G0⟧), and one contemporary photo space (Starfield Library) in a single day. The format gives four very different cultural angles. Note: the tour doesn't operate on Mondays (⟦G0⟧ maintenance day).",
+      "tm": "Да, это хороший выбор для первого раза, если вы хотите за один день увидеть один объект ЮНЕСКО (крепость Хвасон), один дворец эпохи Чосон (Хэнгун), одну подземную тематическую достопримечательность (⟦G0⟧) и одно современное пространство для фотографий (библиотеку Starfield). Такой формат даёт четыре совершенно разных культурных взгляда. Обратите внимание: по понедельникам экскурсия не проводится (в ⟦G0⟧ технический день).",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?"
+      "source_en": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?",
+      "tm": "Подойдёт ли это тем, кто впервые едет в Сувон и Кванмён?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "Active walking day with one heavy stair section. Hwaseong wall has steep sections and stairs (≈1 km walked). ⟦G0⟧'s lower-level highlights require ≈180 stairs down and the same back up — no elevator. Haenggung Palace is mostly flat with some courtyard steps. Starfield Library is fully escalator/elevator-accessible. Total walking ≈4 km. Comfortable shoes essential, especially for the cave stairs.",
+      "tm": "Активный день с ходьбой и одним тяжёлым участком со ступенями. На стене Хвасона есть крутые отрезки и ступени (проходим ≈1 км). Чтобы увидеть главное на нижнем уровне ⟦G0⟧, нужно преодолеть ≈180 ступеней вниз и столько же обратно, лифта нет. Дворец Хэнгун в основном ровный, есть несколько ступеней между внутренними дворами. В библиотеке Starfield всё доступно на эскалаторах и лифтах. Всего ходьбы ≈4 км. Удобная обувь обязательна, особенно для ступеней в пещере.",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
@@ -78,21 +91,24 @@
       "tm": "Насколько сложны пешие участки?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Year-round 12°C inside the cave makes it a relief stop."
+      "source_en": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Year-round 12°C inside the cave makes it a relief stop.",
+      "tm": "Да, для семей, чьи дети выдержат прогулку по стене и ступени в Кванмёне. Пещера — детский фаворит: подсвеченные сцены, аквариум Aqua World, скульптура дракона 41 м, подземная винотека (только для взрослых) и Золотой водопад. Коляска не подойдёт ни на стене, ни на участках со ступенями в пещере. Постоянные 12°C внутри делают пещеру спасительной остановкой."
     },
     "/staticQuestions/8/question": {
       "source_en": "Is this tour suitable for families?",
       "tm": "Подходит ли этот тур для семей?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer."
+      "source_en": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer.",
+      "tm": "Рекомендуется только активным пожилым гостям, спокойно относящимся к ступеням и замкнутым пространствам. У 180 ступеней на нижних уровнях Кванмёна нет альтернативы в виде лифта — если ступени не подходят, доступен верхний уровень (примерно на 40 минут осмотра). На крепостной стене есть крутые отрезки, но более лёгкие ровные участки вполне проходимы. Хэнгун и Starfield доступны полностью. Для пещеры возьмите что-нибудь тёплое даже летом."
     },
     "/staticQuestions/9/question": {
       "source_en": "Can older adults join comfortably?",
       "tm": "Смогут ли комфортно участвовать гости старшего возраста?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages."
+      "source_en": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages.",
+      "tm": "Лучше всего подходит примерно с 10 лет. На крепостной стене неровная поверхность, в пещере по 180 ступеней в каждую сторону, а день длинный — 9 часов. Дети помладше справятся, если спокойно относятся к ступеням и замкнутым пространствам (нижние тоннели пещеры узкие). Подземные достопримечательности пещеры детям обычно очень нравятся — скульптура дракона, Aqua World, Wine Cave (только посмотреть). Рынок уличной еды в Сувоне подходит любому возрасту."
     },
     "/staticQuestions/10/question": {
       "source_en": "What's the recommended minimum age?",
@@ -139,28 +155,32 @@
       "tm": "Весна"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations."
+      "source_en": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations.",
+      "tm": "Сакура вдоль стены Хвасона; в пещере открываются световые инсталляции на весеннюю тему."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer",
       "tm": "Лето"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer."
+      "source_en": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer.",
+      "tm": "12°C внутри пещеры — популярное спасение от сеульской влажности; летом проходит Культурный фестиваль Хвасона в Сувоне."
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn",
       "tm": "Осень"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October."
+      "source_en": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October.",
+      "tm": "Клёны вдоль крепостной стены; в октябре — большой Культурный фестиваль Хвасона в Сувоне."
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter",
       "tm": "Зима"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather."
+      "source_en": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather.",
+      "tm": "Снег на крепостной стене — классический кадр; в пещере круглый год работают световые сцены, которым погода не мешает."
     },
     "/bookingSupportSteps/0/title": {
       "source_en": "Instant Confirmation",
@@ -265,5 +285,5 @@
       "⟦G0⟧": "Пещера Кванмён"
     }
   },
-  "tmHits": 39
+  "tmHits": 59
 }

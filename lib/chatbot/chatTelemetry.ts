@@ -4,7 +4,11 @@
 // outage was invisible precisely because cost_usd was never recorded), and
 // every failure should leave a typed error row instead of a silent 502.
 
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 
 export type ChatUsage = {
   inputTokens: number;
@@ -84,7 +88,7 @@ export function isRetryableGenError(code: GenErrorCode): boolean {
  * NEVER a bare 502 (which the widget renders as a dead bot).
  */
 export function assistantOutageReply(locale: TourProductPageLocale): string {
-  const m: Record<TourProductPageLocale, string> = {
+  const m: Record<TourProductBaseLocale, string> = {
     en: "I'm having a temporary technical problem generating answers right now. Your question was not lost — would you like me to connect you with our team in this chat? You can also try again in a moment.",
     ko: "지금 답변 생성에 일시적인 문제가 있어요. 질문이 사라진 건 아니니 잠시 후 다시 시도하시거나, 이 채팅에서 바로 담당자에게 연결해 드릴까요?",
     ja: "現在、回答の生成に一時的な問題が発生しています。少し後にもう一度お試しいただくか、このチャットで担当者におつなぎしましょうか？",
@@ -92,7 +96,7 @@ export function assistantOutageReply(locale: TourProductPageLocale): string {
     "zh-TW": "目前生成回答遇到臨時問題。你的問題沒有遺失——可以稍後再試，或者我在此聊天中為你連接工作人員？",
     es: "Tengo un problema técnico temporal para generar respuestas. Tu pregunta no se perdió: ¿quieres que te conecte con nuestro equipo en este chat? También puedes intentarlo de nuevo en un momento.",
   };
-  return m[locale] ?? m.en;
+  return m[toTourProductBaseLocale(locale)] ?? m.en;
 }
 
 export const sleep = (ms: number) => new Promise<void>((resolve) => setTimeout(resolve, ms));

@@ -13,19 +13,19 @@
       "source_en": "Where exactly is the cruise terminal pickup?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Yes — the route is built around a 19:15–19:30 return to the cruise terminal, giving a 30–60 minute reboarding buffer for the typical 19:30–21:00 Busan sail-away window. AtoC Korea has not missed a sail-away on this route in 4 seasons of operation. If your ship departs earlier than 19:30, notify at booking and the route will be shortened by abbreviating Songdo and Yongdusan."
+      "source_en": "Yes — the route is built around a 16:45–17:00 return to the cruise terminal, giving a 30–60 minute reboarding buffer for the typical 17:00–21:00 Busan sail-away window. AtoC Korea has not missed a sail-away on this route in 4 seasons of operation. If your ship departs earlier than 17:00, notify at booking and the route will be shortened by abbreviating Songdo and Yongdusan."
     },
     "/staticQuestions/1/question": {
       "source_en": "Will I make it back in time for my ship?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Same eight stops, different format. This bus tour uses a large coach (28–45 seats) shared with cruise passengers from multiple ships at a budget-tier $49 price point with fixed 30–90 min stop times. The small-group cruise tour uses a ~12-pax shared van at ~$79, with longer stops at each attraction and slight route flexibility. Choose the bus tour for budget and convenience; choose the small-group for comfort, pacing, and the option to linger at Jagalchi for a sashimi meal."
+      "source_en": "Same nine stops, same 8-hour day, different vehicle. This tour runs on a large coach shared with cruise passengers from several ships, at US$58.79 per person. The small-group tour runs the identical route in a van capped at 12 guests, at US$68.95 per person. Choose the coach on price; choose the van for a quieter group and a little more flexibility in how long each stop actually runs."
     },
     "/staticQuestions/2/question": {
       "source_en": "How is the bus tour different from the small-group cruise tour?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Private cruise tours run only for your group with door-of-ship pickup, custom itinerary, and unlimited stop time — typically $300–$500+ per group. This bus tour runs at $49 per person on a fixed circuit. Choose this for budget and standardized timing; choose private if you want flexibility, accessibility, or to skip the standard stops in favor of (e.g.) ⟦G1⟧ or ⟦G0⟧.",
+      "source_en": "Private cruise tours run only for your group with door-of-ship pickup, custom itinerary, and unlimited stop time — typically $300–$500+ per group. This bus tour runs at $58.79 per person on a fixed circuit. Choose this for budget and standardized timing; choose private if you want flexibility, accessibility, or to skip the standard stops in favor of (e.g.) ⟦G1⟧ or ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Cheongsapo Blue Line Park",
         "⟦G1⟧ = Taejongdae"
@@ -53,10 +53,12 @@
       "source_en": "Is lunch included? Is it skippable?"
     },
     "/staticQuestions/7/answer": {
-      "source_en": "Not within this tour's 30-min Songdo stop. The cable car round-trip plus typical queue is 45–60 min and would push the day's return past the 19:30 buffer. If the cable car is essential to you, choose our private cruise charter (which can absorb the extra time) or visit Songdo independently on a multi-day Busan trip. The Songdo Cloud Trails skywalk and the cable-car station viewpoint are visited within the 30-min slot."
+      "source_en": "Yes — it is the Songdo Sky Park stop, and it is your choice on the day. The cable car is not included in the tour price: you buy at the base station, ₩17,000 adult round-trip or ₩25,000 for the glass-floored Crystal cabin. If you would rather not ride, spend the stop on the free Cloud Trails skywalk and the beach promenade instead; the vehicle waits either way.",
+      "tm": "Ja — das ist der Stopp am Songdo Sky Park, und Sie entscheiden am Tag selbst. Die Seilbahn ist nicht im Tourpreis enthalten: Sie kaufen an der Talstation, ₩17.000 für Erwachsene hin und zurück oder ₩25.000 für die Crystal-Kabine mit Glasboden. Wenn Sie lieber nicht fahren, verbringen Sie den Stopp auf dem kostenlosen Skywalk Cloud Trails und der Strandpromenade; das Fahrzeug wartet in beiden Fällen."
     },
     "/staticQuestions/7/question": {
-      "source_en": "Can I ride the Songdo Marine Cable Car?"
+      "source_en": "Can I ride the Songdo Marine Cable Car?",
+      "tm": "Kann ich mit der Songdo Marine Cable Car fahren?"
     },
     "/staticQuestions/8/answer": {
       "source_en": "No — the observatory ticket (₩12,000 adult / ₩9,000 child/senior) is NOT included. The 30-min Yongdusan stop covers the park plaza, Citizens' Bell, Yi Sun-sin statue, and the panorama from the park-level (already 69 m above sea level). Guests wanting the 189-m observatory deck would need to skip the park-level photo time and queue at the tower; we discourage it within a single 30-min slot."
@@ -66,34 +68,41 @@
     },
     "/staticQuestions/9/answer": {
       "source_en": "Yes, age 6 and up. Yonggungsa stairs, Gamcheon hillside, and Yongdusan stair descent are the main physical considerations. Kids tend to like the live-fish floor at Jagalchi, the ssiat-hotteok at ⟦G0⟧, and the Cloud Trails skywalk at Songdo. Strollers are not viable at Gamcheon or Yongdusan.",
+      "tm": "Ja, ab 6 Jahren. Körperlich ins Gewicht fallen vor allem die Treppen am Yonggungsa, der Hang von Gamcheon und der Treppenabstieg am Yongdusan. Kindern gefallen meist die Etage mit den lebenden Fischen in Jagalchi, das Ssiat-Hotteok am ⟦G0⟧ und der Skywalk Cloud Trails in Songdo. In Gamcheon und am Yongdusan sind Kinderwagen nicht praktikabel.",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/staticQuestions/9/question": {
-      "source_en": "Is this suitable for children?"
+      "source_en": "Is this suitable for children?",
+      "tm": "Ist das für Kinder geeignet?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Challenging due to Yonggungsa stairs and Gamcheon hillside. Active seniors are fine; mobility-limited travelers should consider our private cruise charter where the route can be modified to skip the steepest stops."
+      "source_en": "Challenging due to Yonggungsa stairs and Gamcheon hillside. Active seniors are fine; mobility-limited travelers should consider our private cruise charter where the route can be modified to skip the steepest stops.",
+      "tm": "Anspruchsvoll wegen der Treppen am Yonggungsa und des Hangs von Gamcheon. Für rüstige Seniorinnen und Senioren ist das kein Problem; Reisende mit eingeschränkter Mobilität sollten unseren privaten Kreuzfahrtcharter in Betracht ziehen, bei dem sich die Route so ändern lässt, dass die steilsten Stopps entfallen."
     },
     "/staticQuestions/10/question": {
-      "source_en": "Is this OK for seniors?"
+      "source_en": "Is this OK for seniors?",
+      "tm": "Ist die Tour für ältere Gäste geeignet?"
     },
     "/staticQuestions/11/answer": {
       "source_en": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead for Chinese. The guide handles all menu translation and stall interactions during the day. Multi-language printed itinerary card distributed at pickup."
     },
     "/staticQuestions/11/question": {
-      "source_en": "What languages does the guide speak?"
+      "source_en": "What languages does the guide speak?",
+      "tm": "Welche Sprachen spricht die Reiseleitung?"
     },
     "/staticQuestions/12/answer": {
       "source_en": "Light rain: tour runs as scheduled. Heavy rain: Yonggungsa's lower temple area becomes slippery, Gamcheon's stairs unsafe, Songdo Cloud Trails closed in storms — the guide will shorten outdoor time and extend indoor stops (Jagalchi, ⟦G1⟧, ⟦G0⟧). Typhoon-level weather or port closure: full refund or cruise-line rebooking arranged.",
+      "tm": "Leichter Regen: Die Tour findet wie geplant statt. Starker Regen: Der untere Tempelbereich am Yonggungsa wird rutschig, die Treppen in Gamcheon unsicher, die Songdo Cloud Trails sind bei Sturm gesperrt — die Reiseleitung kürzt dann die Zeit im Freien und verlängert die Stopps im Inneren (Jagalchi, ⟦G1⟧, ⟦G0⟧). Bei Taifunwetter oder Hafensperrung: volle Erstattung oder Umbuchung über die Reederei.",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = BIFF-Platz"
       ]
     },
     "/staticQuestions/12/question": {
-      "source_en": "What if it rains?"
+      "source_en": "What if it rains?",
+      "tm": "Was passiert bei Regen?"
     },
     "/staticQuestions/13/answer": {
       "source_en": "Brief shopping time at Jagalchi (dried seafood), ⟦G1⟧ (ssiat-hotteok and street snacks), and ⟦G0⟧ (clothing, kitchenware, cosmetics). The cluster's combined 95 min is the day's most shopping-friendly window. Yongdusan and Gamcheon have small souvenir shops as well.",
@@ -107,6 +116,7 @@
     },
     "/staticQuestions/14/answer": {
       "source_en": "≈5–6 km total plus the 108 stairs at Yonggungsa (skippable), the Gamcheon hillside, and the Yongdusan stair descent. UN Cemetery, Jagalchi, ⟦G2⟧, ⟦G0⟧, and ⟦G1⟧ are flat. Comfortable walking shoes with grip are essential.",
+      "tm": "Insgesamt ≈5–6 km, dazu die 108 Stufen am Yonggungsa (kann ausgelassen werden), der Hang von Gamcheon und der Treppenabstieg am Yongdusan. Der UN-Friedhof, Jagalchi, ⟦G2⟧, ⟦G0⟧ und ⟦G1⟧ sind eben. Bequeme, griffige Schuhe sind unerlässlich.",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = Songdo-Strand",
@@ -114,7 +124,8 @@
       ]
     },
     "/staticQuestions/14/question": {
-      "source_en": "How much walking is there?"
+      "source_en": "How much walking is there?",
+      "tm": "Wie viel wird gelaufen?"
     },
     "/staticQuestions/15/answer": {
       "source_en": "Not expected (tipping is not standard practice in Korea) but appreciated for the guide and driver — typical guest tip $5–10 USD per person if you wish to. Not built into the tour price."
@@ -145,5 +156,5 @@
       "⟦G2⟧": "BIFF-Platz"
     }
   },
-  "tmHits": 0
+  "tmHits": 11
 }

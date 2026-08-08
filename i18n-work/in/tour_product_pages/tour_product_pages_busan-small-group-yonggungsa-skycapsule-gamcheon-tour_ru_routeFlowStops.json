@@ -1,0 +1,91 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Pickup (your downtown Busan hotel)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure",
+      "tm": "Отправление"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Seaside temple",
+      "tm": "Храм у моря"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Смотровая площадка Таритдоль в Чхонсапхо (стеклянный скайвок)"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Glass Skywalk"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule в парке Haeundae Blueline (Чхонсапхо → Мипхо)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Sky Capsule"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Lunch (local Busan restaurant)",
+      "tm": "Обед (местный ресторан в Пусане)"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Meal",
+      "tm": "Питание"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Haeundae Beach",
+      "tm": "Пляж Хэундэ"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Beach",
+      "tm": "Пляж"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Art village"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "Dakbatgol Mural Village & Wish-Stairs Monorail",
+      "tm": "Деревня муралов Такпатколь и монорельс у Лестницы желаний"
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Mural Village"
+    },
+    "/routeFlowStops/8/name": {
+      "source_en": "Drop-off (4 points across central Busan)"
+    },
+    "/routeFlowStops/8/theme": {
+      "source_en": "Return",
+      "tm": "Возвращение"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    }
+  },
+  "tmHits": 12
+}

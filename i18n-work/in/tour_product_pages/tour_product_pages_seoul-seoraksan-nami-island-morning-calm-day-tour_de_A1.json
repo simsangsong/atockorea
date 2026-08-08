@@ -7,19 +7,23 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Seoul Day Tour · Seoraksan + Nami + Morning Calm | AtoC Korea"
+      "source_en": "Seoul Day Tour · Seoraksan + Nami + Morning Calm | AtoC Korea",
+      "tm": "Tagestour ab Seoul · Seoraksan + Nami + Morgenstille | AtoC Korea"
     },
     "/seo/pageTitle": {
       "source_en": "Seoul Day Tour: Mt. Seoraksan, Nami Island & ⟦G0⟧ | AtoC Korea",
+      "tm": "Tagestour ab Seoul: Seoraksan, Nami-Insel & ⟦G0⟧ | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Garten der Morgenstille"
       ]
     },
     "/seo/description": {
-      "source_en": "Coach day tour from Seoul to Korea's most-celebrated mountain (Seoraksan), most-photographed island (Nami), and signature private garden (Morning Calm), all in a single 13-hour day."
+      "source_en": "Coach day tour from Seoul to Korea's most-celebrated mountain (Seoraksan), most-photographed island (Nami), and signature private garden (Morning Calm), all in a single 13-hour day.",
+      "tm": "Bustagestour ab Seoul zu Koreas gefeiertstem Berg (Seoraksan), zur meistfotografierten Insel (Nami) und zum bekanntesten Privatgarten des Landes (Morgenstille) — alles an einem einzigen 13-Stunden-Tag."
     },
     "/seo/metaDescription": {
       "source_en": "13-hour coach day tour from Seoul: ⟦G0⟧ (UNESCO Biosphere Reserve), Nami Island (Winter Sonata), and ⟦G1⟧ — all admissions included.",
+      "tm": "13-stündige Bustagestour ab Seoul: ⟦G0⟧ (UNESCO-Biosphärenreservat), Nami-Insel (Winter Sonata) und ⟦G1⟧ — alle Eintritte inklusive.",
       "glossary": [
         "⟦G0⟧ = Nationalpark Seoraksan",
         "⟦G1⟧ = Garten der Morgenstille"
@@ -30,7 +34,8 @@
       "tm": "Seoraksan-Tagestour ab Seoul"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Nami Island day trip"
+      "source_en": "Nami Island day trip",
+      "tm": "Tagesausflug zur Nami-Insel"
     },
     "/seo/primaryKeywords/2": {
       "source_en": "⟦G0⟧ tour",
@@ -40,27 +45,32 @@
       ]
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Seoul day tour Seoraksan"
+      "source_en": "Seoul day tour Seoraksan",
+      "tm": "Tagestour ab Seoul zum Seoraksan"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Seoraksan Nami one-day tour"
+      "source_en": "Seoraksan Nami one-day tour",
+      "tm": "Eintagestour Seoraksan und Nami"
     },
     "/hero/meta/stops": {
       "source_en": "3 stops",
       "tm": "3 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "Seoul → Gangwon-do → Gyeonggi-do"
+      "source_en": "Seoul → Gangwon-do → Gyeonggi-do",
+      "tm": "Seoul → Gangwon-do → Gyeonggi-do"
     },
     "/hero/meta/duration": {
-      "source_en": "13 hours"
+      "source_en": "13 hours",
+      "tm": "13 Stunden"
     },
     "/hero/pills/0": {
       "source_en": "Day trip from Seoul",
       "tm": "Tagesausflug ab Seoul"
     },
     "/hero/pills/1": {
-      "source_en": "Nature + Hallyu + Gardens"
+      "source_en": "Nature + Hallyu + Gardens",
+      "tm": "Natur + Hallyu + Gärten"
     },
     "/hero/pills/2": {
       "source_en": "Coach tour",
@@ -68,6 +78,7 @@
     },
     "/hero/tagline": {
       "source_en": "Korea's three most-photographed day-trip stops in one 13-hour coach day from Seoul: Seoraksan mountain, Nami Island's tree-lined lanes, and the ⟦G0⟧",
+      "tm": "Koreas drei meistfotografierte Tagesausflugsziele an einem 13-stündigen Bustag ab Seoul: der Seoraksan, die baumgesäumten Alleen der Nami-Insel und der ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Garten der Morgenstille"
       ]
@@ -77,7 +88,8 @@
       "tm": "Dauer"
     },
     "/glanceItems/0/value": {
-      "source_en": "13 hours"
+      "source_en": "13 hours",
+      "tm": "13 Stunden"
     },
     "/glanceItems/1/label": {
       "source_en": "Photo Potential",
@@ -156,44 +168,56 @@
       "tm": "Bustour"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Nature & gardens"
+      "source_en": "Nature & gardens",
+      "tm": "Natur & Gärten"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Korean Wave landmark"
+      "source_en": "Korean Wave landmark",
+      "tm": "Wahrzeichen der koreanischen Welle"
     },
     "/catalog_card/tags/4": {
-      "source_en": "All admissions included"
+      "source_en": "All admissions included",
+      "tm": "Alle Eintritte inklusive"
     },
     "/catalog_card/title": {
-      "source_en": "Seoul: Seoraksan + Nami + Morning Calm"
+      "source_en": "Seoul: Seoraksan + Nami + Morning Calm",
+      "tm": "Seoul: Seoraksan + Nami + Morgenstille"
     },
     "/catalog_card/badges/0": {
       "source_en": "Day trip from Seoul",
       "tm": "Tagesausflug ab Seoul"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Large coach"
+      "source_en": "Large coach",
+      "tm": "Großer Reisebus"
     },
     "/catalog_card/badges/2": {
-      "source_en": "All admissions included"
+      "source_en": "All admissions included",
+      "tm": "Alle Eintritte inklusive"
     },
     "/catalog_card/badges/3": {
-      "source_en": "13-hour day"
+      "source_en": "13-hour day",
+      "tm": "13-Stunden-Tag"
     },
     "/catalog_card/region": {
-      "source_en": "Seoul → Gangwon → Gyeonggi"
+      "source_en": "Seoul → Gangwon → Gyeonggi",
+      "tm": "Seoul → Gangwon → Gyeonggi"
     },
     "/catalog_card/duration": {
-      "source_en": "13 hours"
+      "source_en": "13 hours",
+      "tm": "13 Stunden"
     },
     "/catalog_card/subtitle": {
-      "source_en": "Seoraksan mountain, Nami's tree-lined island, and Morning Calm's themed garden in a single 13-hour Seoul day trip."
+      "source_en": "Seoraksan mountain, Nami's tree-lined island, and Morning Calm's themed garden in a single 13-hour Seoul day trip.",
+      "tm": "Der Seoraksan, die baumgesäumte Insel Nami und der Themengarten der Morgenstille in einem einzigen 13-stündigen Tagesausflug ab Seoul."
     },
     "/catalog_card/priceLabel": {
-      "source_en": "US$79 per person"
+      "source_en": "US$79 per person",
+      "tm": "US$79 pro Person"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A 13-hour coach day tour from Seoul covering Korea's three most-photographed day-trip stops: ⟦G0⟧ (Korea's first UNESCO Biosphere Reserve), Nami Island (Winter Sonata's Metasequoia Lane), and the ⟦G1⟧ (Korea's signature private arboretum with 5,000 plant species). All admissions included; English-speaking guide; pickup at Hongik University Station or ⟦G2⟧ Station.",
+      "tm": "Eine 13-stündige Bustagestour ab Seoul zu Koreas drei meistfotografierten Tagesausflugszielen: ⟦G0⟧ (Koreas erstes UNESCO-Biosphärenreservat), die Nami-Insel (die Metasequoien-Allee aus Winter Sonata) und der ⟦G1⟧ (Koreas bekanntestes privates Arboretum mit 5.000 Pflanzenarten). Alle Eintritte inklusive; englischsprachige Reiseleitung; Abholung an der Station Hongik University oder der Station ⟦G2⟧.",
       "glossary": [
         "⟦G0⟧ = Nationalpark Seoraksan",
         "⟦G1⟧ = Garten der Morgenstille",
@@ -201,24 +225,28 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Seoul Day Tour"
+      "source_en": "Seoul Day Tour",
+      "tm": "Tagestour ab Seoul"
     },
     "/headlineLine2": {
-      "source_en": "Seoraksan + Nami + Morning Calm"
+      "source_en": "Seoraksan + Nami + Morning Calm",
+      "tm": "Seoraksan + Nami + Morgenstille"
     },
     "/pickup_dropoff/primary/name": {
       "source_en": "Starbucks Hongik University Station Exit 8",
       "tm": "Starbucks an der Station Hongik University, Ausgang 8"
     },
     "/pickup_dropoff/primary/time": {
-      "source_en": "06:00 pickup / 19:30 drop-off"
+      "source_en": "06:00 pickup / 19:30 drop-off",
+      "tm": "Abholung 06:00 Uhr / Ausstieg 19:30 Uhr"
     },
     "/pickup_dropoff/primary/address": {
       "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)",
       "tm": "Yanghwa-ro, Mapo-gu, Seoul (vor dem Starbucks an der Station Hongik University, Ausgang 8)"
     },
     "/pickup_dropoff/primary/instructions": {
-      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the large coach in the pickup queue."
+      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the large coach in the pickup queue.",
+      "tm": "Treffen Sie die Reiseleitung direkt am Starbucks über dem Ausgang 8 der Station Hongik University. Achten Sie auf das Schild von AtoC Korea und den großen Reisebus in der Abholreihe."
     },
     "/pickup_dropoff/alternates/0/name": {
       "source_en": "⟦G0⟧ Station Exit 2 (NorthFace flagship)",
@@ -228,7 +256,8 @@
       ]
     },
     "/pickup_dropoff/alternates/0/time": {
-      "source_en": "06:30 pickup / 19:00 drop-off"
+      "source_en": "06:30 pickup / 19:00 drop-off",
+      "tm": "Abholung 06:30 Uhr / Ausstieg 19:00 Uhr"
     },
     "/pickup_dropoff/alternates/0/address": {
       "source_en": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at ⟦G0⟧ Station Exit 2)",
@@ -250,46 +279,57 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Two Seoul pickup points: **Starbucks Hongik University Station Exit 8 at 06:00** (Mapo-gu), and **⟦G0⟧ Station Exit 2 (NorthFace flagship) at 06:30** (Jung-gu).",
+      "tm": "Zwei Abholpunkte in Seoul: **Starbucks an der Station Hongik University, Ausgang 8, um 06:00 Uhr** (Mapo-gu) und **Station ⟦G0⟧, Ausgang 2 (NorthFace-Flagshipstore), um 06:30 Uhr** (Jung-gu).",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Both pickups share the same coach; please be at your chosen point 5 minutes early."
+      "source_en": "Both pickups share the same coach; please be at your chosen point 5 minutes early.",
+      "tm": "Beide Abholungen teilen sich denselben Bus; bitte seien Sie 5 Minuten früher an Ihrem gewählten Punkt."
     },
     "/practicalAccordionItems/0/content/2": {
       "source_en": "Return drop-offs in reverse order: **⟦G0⟧ ~19:00, Hongik ~19:30**.",
+      "tm": "Die Ausstiege bei der Rückkehr in umgekehrter Reihenfolge: **⟦G0⟧ ~19:00 Uhr, Hongik ~19:30 Uhr**.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Friday/Sunday evenings may run 30 min later due to expressway traffic — notify the guide if you have a hard schedule."
+      "source_en": "Friday/Sunday evenings may run 30 min later due to expressway traffic — notify the guide if you have a hard schedule.",
+      "tm": "Freitag- und Sonntagabend kann es wegen des Autobahnverkehrs 30 Min. später werden — sagen Sie der Reiseleitung Bescheid, wenn Sie einen festen Zeitplan haben."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Two Seoul pickup points: Starbucks Hongik University Station Exit 8 at 06:00…"
+      "source_en": "Two Seoul pickup points: Starbucks Hongik University Station Exit 8 at 06:00…",
+      "tm": "Zwei Abholpunkte in Seoul: Starbucks an der Station Hongik University, Ausgang 8, um 06:00 Uhr…"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "What to wear & bring",
       "tm": "Was anziehen & mitbringen"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Comfortable closed-toe walking shoes for Seoraksan paths (rocky in places)."
+      "source_en": "Comfortable closed-toe walking shoes for Seoraksan paths (rocky in places).",
+      "tm": "Bequeme, geschlossene Schuhe für die Wege im Seoraksan (stellenweise felsig)."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Warm layers October-March; Seoraksan altitude is 5-7°C colder than Seoul."
+      "source_en": "Warm layers October-March; Seoraksan altitude is 5-7°C colder than Seoul.",
+      "tm": "Warme Schichten von Oktober bis März; auf der Höhe des Seoraksan ist es 5–7 °C kälter als in Seoul."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Camera or smartphone (Nami Metasequoia avenue and Morning Calm are the photo highlights)."
+      "source_en": "Camera or smartphone (Nami Metasequoia avenue and Morning Calm are the photo highlights).",
+      "tm": "Kamera oder Smartphone (die Metasequoien-Allee auf Nami und die Morgenstille sind die Fotohöhepunkte)."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Cash and card for lunch (~₩10,000-15,000) and optional Seorak Cable Car (₩16,000) if you plan to ride."
+      "source_en": "Cash and card for lunch (~₩10,000-15,000) and optional Seorak Cable Car (₩16,000) if you plan to ride.",
+      "tm": "Bargeld und Karte für das Mittagessen (~₩10.000–15.000) und für die optionale Seorak-Seilbahn (₩16.000), falls Sie fahren möchten."
     },
     "/practicalAccordionItems/1/content/4": {
-      "source_en": "Light snacks if you start without breakfast — first food stop is around 13:00-13:30 en route to Nami."
+      "source_en": "Light snacks if you start without breakfast — first food stop is around 13:00-13:30 en route to Nami.",
+      "tm": "Kleine Snacks, falls Sie ohne Frühstück starten — der erste Essensstopp liegt gegen 13:00–13:30 Uhr auf dem Weg nach Nami."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Comfortable closed-toe walking shoes for Seoraksan paths (rocky in places)…"
+      "source_en": "Comfortable closed-toe walking shoes for Seoraksan paths (rocky in places)…",
+      "tm": "Bequeme, geschlossene Schuhe für die Wege im Seoraksan (stellenweise felsig)…"
     },
     "/practicalAccordionItems/2/title": {
       "source_en": "Weather policy",
@@ -300,10 +340,12 @@
       "tm": "Ganzjähriger Betrieb."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Light rain: tour runs as scheduled — Nami and Morning Calm both have charm in rain; Seoraksan's lower paths remain walkable with grip shoes."
+      "source_en": "Light rain: tour runs as scheduled — Nami and Morning Calm both have charm in rain; Seoraksan's lower paths remain walkable with grip shoes.",
+      "tm": "Leichter Regen: Die Tour findet wie geplant statt — Nami und die Morgenstille haben im Regen beide ihren Reiz, und die unteren Wege im Seoraksan bleiben mit griffigem Schuhwerk begehbar."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Heavy rain: Seorak Cable Car typically suspended in storm conditions (refunded if pre-paid); the guide will steer guests to the Biseondae walk or extended Sinheungsa visit instead."
+      "source_en": "Heavy rain: Seorak Cable Car typically suspended in storm conditions (refunded if pre-paid); the guide will steer guests to the Biseondae walk or extended Sinheungsa visit instead.",
+      "tm": "Starker Regen: Die Seorak-Seilbahn steht bei Sturm in der Regel still (bei Vorauszahlung wird erstattet); die Reiseleitung führt die Gäste stattdessen zum Weg an der Biseondae oder zu einem längeren Besuch in Sinheungsa."
     },
     "/practicalAccordionItems/2/content/3": {
       "source_en": "Typhoon-level weather or expressway closure: full refund or rebooking offered.",
@@ -318,44 +360,54 @@
       "tm": "Inbegriffene Leistungen"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Two Seoul pickup points and same drop-off points, air-conditioned large coach, licensed English-speaking guide."
+      "source_en": "Two Seoul pickup points and same drop-off points, air-conditioned large coach, licensed English-speaking guide.",
+      "tm": "Zwei Abholpunkte in Seoul und dieselben Ausstiegspunkte, klimatisierter großer Reisebus, lizenzierte englischsprachige Reiseleitung."
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "**Nami Island ferry round-trip + Naminara Republic VISA Fee (₩19,000) — INCLUDED**."
+      "source_en": "**Nami Island ferry round-trip + Naminara Republic VISA Fee (₩19,000) — INCLUDED**.",
+      "tm": "**Fähre zur Nami-Insel hin und zurück plus VISA-Gebühr der Republik Naminara (₩19.000) — ENTHALTEN**."
     },
     "/practicalAccordionItems/3/content/2": {
       "source_en": "**The ⟦G0⟧ admission (₩11,000) — INCLUDED**.",
+      "tm": "**Eintritt ⟦G0⟧ (₩11.000) — ENTHALTEN**.",
       "glossary": [
         "⟦G0⟧ = Garten der Morgenstille"
       ]
     },
     "/practicalAccordionItems/3/content/3": {
       "source_en": "**⟦G0⟧ entrance — FREE (abolished May 2023)**.",
+      "tm": "**Eintritt ⟦G0⟧ — KOSTENLOS (im Mai 2023 abgeschafft)**.",
       "glossary": [
         "⟦G0⟧ = Nationalpark Seoraksan"
       ]
     },
     "/practicalAccordionItems/3/content/4": {
-      "source_en": "**NOT included**: lunch en route (~₩10,000-15,000), optional Seorak Cable Car (₩16,000 round-trip, on-site ticketing only)."
+      "source_en": "**NOT included**: lunch en route (~₩10,000-15,000), optional Seorak Cable Car (₩16,000 round-trip, on-site ticketing only).",
+      "tm": "**NICHT enthalten**: Mittagessen unterwegs (~₩10.000–15.000), optionale Seorak-Seilbahn (₩16.000 hin und zurück, Tickets nur vor Ort)."
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Two Seoul pickups, large coach, English-speaking guide, Nami and Morning Calm admissions…"
+      "source_en": "Two Seoul pickups, large coach, English-speaking guide, Nami and Morning Calm admissions…",
+      "tm": "Zwei Abholungen in Seoul, großer Reisebus, englischsprachige Reiseleitung, Eintritte für Nami und die Morgenstille…"
     },
     "/practicalAccordionItems/4/title": {
       "source_en": "Language",
       "tm": "Sprache"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead."
+      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead.",
+      "tm": "Chinesischsprachige Reiseleitung auf Anfrage — mindestens 3 Tage im Voraus buchen."
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Korean spoken throughout the day for menus, signage, and stall interactions; the guide handles translation."
+      "source_en": "Korean spoken throughout the day for menus, signage, and stall interactions; the guide handles translation.",
+      "tm": "Vor Ort wird den ganzen Tag Koreanisch gesprochen — auf Speisekarten, Schildern und an den Ständen; die Reiseleitung übersetzt."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/5/title": {
       "source_en": "Walking & terrain",
@@ -366,19 +418,24 @@
       "tm": "Mittel."
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Seoraksan: easy at Sinheungsa Temple base; moderate on the Biseondae walk; challenging if you choose Heundeulbawi or Ulsanbawi (stairs)."
+      "source_en": "Seoraksan: easy at Sinheungsa Temple base; moderate on the Biseondae walk; challenging if you choose Heundeulbawi or Ulsanbawi (stairs).",
+      "tm": "Seoraksan: leicht im Talbereich am Sinheungsa-Tempel; mittel auf dem Weg zur Biseondae; anspruchsvoll, wenn Sie Heundeulbawi oder Ulsanbawi wählen (Treppen)."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Nami Island: flat, paved tree-lined avenues; ~3 km in 2 hours is the typical pace."
+      "source_en": "Nami Island: flat, paved tree-lined avenues; ~3 km in 2 hours is the typical pace.",
+      "tm": "Nami-Insel: ebene, befestigte, baumgesäumte Alleen; ~3 km in 2 Stunden sind das übliche Tempo."
     },
     "/practicalAccordionItems/5/content/3": {
-      "source_en": "Morning Calm: rolling terrain, mostly paved garden paths."
+      "source_en": "Morning Calm: rolling terrain, mostly paved garden paths.",
+      "tm": "Morgenstille: welliges Gelände, überwiegend befestigte Gartenwege."
     },
     "/practicalAccordionItems/5/content/4": {
-      "source_en": "Total walking ≈4-5 km plus the optional Seoraksan stairs."
+      "source_en": "Total walking ≈4-5 km plus the optional Seoraksan stairs.",
+      "tm": "Insgesamt ≈4–5 km zu Fuß, dazu die optionalen Treppen im Seoraksan."
     },
     "/practicalAccordionItems/5/content/5": {
-      "source_en": "Strollers viable at Nami and partially at Morning Calm; not at Seoraksan upper trails."
+      "source_en": "Strollers viable at Nami and partially at Morning Calm; not at Seoraksan upper trails.",
+      "tm": "Kinderwagen sind auf Nami sinnvoll und in der Morgenstille teilweise; auf den oberen Wegen im Seoraksan nicht."
     },
     "/practicalAccordionItems/5/preview": {
       "source_en": "Moderate.",
@@ -389,16 +446,20 @@
       "tm": "Mittagessen (auf eigene Kosten)"
     },
     "/practicalAccordionItems/6/content/0": {
-      "source_en": "Lunch is taken en route from Seoraksan to Nami, around 13:30 at a local restaurant in the Inje-Chuncheon corridor."
+      "source_en": "Lunch is taken en route from Seoraksan to Nami, around 13:30 at a local restaurant in the Inje-Chuncheon corridor.",
+      "tm": "Das Mittagessen findet unterwegs vom Seoraksan nach Nami gegen 13:30 Uhr in einem lokalen Restaurant im Korridor Inje–Chuncheon statt."
     },
     "/practicalAccordionItems/6/content/1": {
-      "source_en": "Typical choices: Chuncheon dakgalbi (the region's most-famous dish — sweet-spicy stir-fried chicken with cabbage and rice cakes), kalguksu (knife-cut noodle soup), or bibimbap (~₩10,000-15,000)."
+      "source_en": "Typical choices: Chuncheon dakgalbi (the region's most-famous dish — sweet-spicy stir-fried chicken with cabbage and rice cakes), kalguksu (knife-cut noodle soup), or bibimbap (~₩10,000-15,000).",
+      "tm": "Typische Optionen: Chuncheon-Dakgalbi (das bekannteste Gericht der Region — süß-scharf gebratenes Hähnchen mit Kohl und Reiskuchen), Kalguksu (handgeschnittene Nudelsuppe) oder Bibimbap (~₩10.000–15.000)."
     },
     "/practicalAccordionItems/6/content/2": {
-      "source_en": "Vegetarian and halal-friendly options possible with advance notice — please notify at booking."
+      "source_en": "Vegetarian and halal-friendly options possible with advance notice — please notify at booking.",
+      "tm": "Vegetarische und halal-freundliche Optionen sind bei rechtzeitiger Ankündigung möglich — bitte bei der Buchung angeben."
     },
     "/practicalAccordionItems/6/preview": {
-      "source_en": "Lunch is taken en route from Seoraksan to Nami, around 13:30…"
+      "source_en": "Lunch is taken en route from Seoraksan to Nami, around 13:30…",
+      "tm": "Das Mittagessen findet unterwegs vom Seoraksan nach Nami gegen 13:30 Uhr statt…"
     },
     "/practicalAccordionItems/7/title": {
       "source_en": "Cancellation",
@@ -462,5 +523,5 @@
       "⟦G0⟧": "Nationalpark Seoraksan"
     }
   },
-  "tmHits": 48
+  "tmHits": 109
 }

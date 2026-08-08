@@ -8,15 +8,18 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "⟦G0⟧ is closed on Mondays for maintenance. Since the cave is one of the four core stops, the tour doesn't operate on Mondays. If you want to visit on a Monday, consider the Suwon-only itineraries (Hwaseong + Folk Village or Hwaseong + Waujeongsa).",
+      "tm": "La ⟦G0⟧ è chiusa il lunedì per manutenzione. Poiché la grotta è una delle quattro tappe principali, il tour non opera il lunedì. Se desidera visitare in un lunedì, consideri gli itinerari limitati a Suwon (Hwaseong + villaggio folcloristico oppure Hwaseong + Waujeongsa).",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "Why isn't the tour available on Mondays?"
+      "source_en": "Why isn't the tour available on Mondays?",
+      "tm": "Perché il tour non è disponibile il lunedì?"
     },
     "/staticQuestions/1/answer": {
       "source_en": "Yes — ⟦G1⟧, ⟦G0⟧, and ⟦G2⟧ admissions are all included. Starfield Library is free for everyone. Optional cave-winery tasting and any folk-village extras are at your own cost.",
+      "tm": "Sì: gli ingressi alla ⟦G1⟧, al ⟦G0⟧ e alla ⟦G2⟧ sono tutti compresi. La biblioteca Starfield è gratuita per tutti. La degustazione facoltativa nella cantina in grotta e gli eventuali extra al villaggio folcloristico sono a Suo carico.",
       "glossary": [
         "⟦G0⟧ = Palazzo di Hwaseong Haenggung",
         "⟦G1⟧ = Fortezza di Suwon Hwaseong",
@@ -28,47 +31,57 @@
       "tm": "Gli ingressi sono inclusi?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken)."
+      "source_en": "No. Lunch is typically eaten during free time at Starfield Suwon's food hall (large variety, ₩10,000–₩20,000) or at a small Suwon eatery near the fortress (Suwon-style galbi or chicken).",
+      "tm": "No. Il pranzo si consuma di norma durante il tempo libero, nella food hall dello Starfield di Suwon (grande scelta, ₩10.000–₩20.000) oppure in una piccola trattoria di Suwon vicino alla fortezza (galbi o pollo alla maniera di Suwon)."
     },
     "/staticQuestions/2/question": {
       "source_en": "Is lunch included?",
       "tm": "Il pranzo è incluso?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level."
+      "source_en": "Approximately 180 steps down to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back up. There is no elevator. Visitors with mobility issues or fear of confined spaces typically stay on the upper level.",
+      "tm": "Circa 180 gradini per scendere alle attrazioni dei livelli inferiori (Wine Cave, Golden Waterfall, Aqua World) e altrettanti per risalire. Non vi è ascensore. Chi ha difficoltà motorie o teme gli spazi chiusi resta di norma al livello superiore."
     },
     "/staticQuestions/3/question": {
       "source_en": "How many stairs are in ⟦G0⟧?",
+      "tm": "Quanti gradini ci sono nella ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop."
+      "source_en": "Cool. The cave is a constant 12°C (54°F) year-round. In summer that's a relief; in winter, you'll want to keep a layer on. Summer visitors often bring a light jacket just for this stop.",
+      "tm": "Fresca. Nella grotta ci sono costantemente 12 °C (54 °F) tutto l’anno. D’estate è un sollievo; d’inverno conviene tenere addosso un capo in più. Chi viene in estate porta spesso una giacca leggera proprio per questa tappa."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is the cave warm or cold?"
+      "source_en": "Is the cave warm or cold?",
+      "tm": "La grotta è calda o fredda?"
     },
     "/staticQuestions/5/answer": {
       "source_en": "Both visit the fortress, palace, and Starfield Library. This version pairs them with ⟦G0⟧ (an underground LED-lit theme park). The Folk Village version drops the cave and adds the Korean Folk Village in Yongin (a 270-house open-air heritage park). Choose this one for variety and indoor weather; the Folk Village version for deeper Joseon-era heritage.",
+      "tm": "Entrambi visitano la fortezza, il palazzo e la biblioteca Starfield. Questa versione li abbina alla ⟦G0⟧ (un parco tematico sotterraneo illuminato a LED). La versione con il villaggio folcloristico rinuncia alla grotta e aggiunge il villaggio folcloristico coreano di Yongin (un parco storico all’aperto con 270 case). Scelga questa per la varietà e per avere tappe al coperto; l’altra per approfondire il patrimonio dell’epoca Joseon.",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/staticQuestions/5/question": {
-      "source_en": "How is this different from the Suwon + Folk Village tour?"
+      "source_en": "How is this different from the Suwon + Folk Village tour?",
+      "tm": "In che cosa si differenzia dal tour Suwon + villaggio folcloristico?"
     },
     "/staticQuestions/6/answer": {
       "source_en": "Yes — strong first-time pick for travelers who want one UNESCO site (Hwaseong Fortress), one Joseon palace (Haenggung), one underground themed attraction (⟦G0⟧), and one contemporary photo space (Starfield Library) in a single day. The format gives four very different cultural angles. Note: the tour doesn't operate on Mondays (⟦G0⟧ maintenance day).",
+      "tm": "Sì: un’ottima scelta per la prima visita se desidera un sito UNESCO (la fortezza di Hwaseong), un palazzo Joseon (il Haenggung), un’attrazione tematica sotterranea (la ⟦G0⟧) e un luogo contemporaneo fotogenico (la biblioteca Starfield) in una sola giornata. La formula offre quattro prospettive culturali molto diverse. Nota: il tour non opera il lunedì (giorno di manutenzione della ⟦G0⟧).",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?"
+      "source_en": "Is this a good choice for first-time visitors to Suwon & Gwangmyeong?",
+      "tm": "È una buona scelta per chi visita Suwon e Gwangmyeong per la prima volta?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "Active walking day with one heavy stair section. Hwaseong wall has steep sections and stairs (≈1 km walked). ⟦G0⟧'s lower-level highlights require ≈180 stairs down and the same back up — no elevator. Haenggung Palace is mostly flat with some courtyard steps. Starfield Library is fully escalator/elevator-accessible. Total walking ≈4 km. Comfortable shoes essential, especially for the cave stairs.",
+      "tm": "Giornata di cammino attivo con una sezione di scale impegnativa. Le mura di Hwaseong presentano tratti ripidi e scale (≈1 km percorso). Le attrazioni dei livelli inferiori della ⟦G0⟧ richiedono ≈180 gradini in discesa e altrettanti in risalita, senza ascensore. Il palazzo Haenggung è in gran parte pianeggiante, con qualche gradino fra i cortili. La biblioteca Starfield è del tutto accessibile con scale mobili e ascensori. Cammino totale ≈4 km. Scarpe comode indispensabili, soprattutto per le scale della grotta.",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
@@ -78,21 +91,24 @@
       "tm": "La camminata è impegnativa?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Year-round 12°C inside the cave makes it a relief stop."
+      "source_en": "Yes for families whose kids can handle the wall walk and Gwangmyeong's stairs. The cave is a kid favorite — LED-lit tableaux, Aqua World aquarium, the 41 m dragon sculpture, the underground winery (parents only) and Golden Waterfall. Strollers don't work on the wall or in the cave's stair sections. Year-round 12°C inside the cave makes it a relief stop.",
+      "tm": "Sì per le famiglie i cui bambini se la cavano sulle mura e sulle scale di Gwangmyeong. La grotta è una delle preferite dai piccoli: quadri illuminati a LED, l’acquario di Aqua World, la scultura del drago di 41 m, la cantina sotterranea (per i soli adulti) e la Golden Waterfall. Il passeggino non passa né sulle mura né nei tratti con scale della grotta. I 12 °C costanti all’interno la rendono una tappa di sollievo."
     },
     "/staticQuestions/8/question": {
       "source_en": "Is this tour suitable for families?",
       "tm": "Questo tour è adatto alle famiglie?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer."
+      "source_en": "Recommended only for active seniors comfortable with stairs and confined spaces. The 180 stairs at Gwangmyeong's lower levels have no elevator alternative — the upper level (≈40 min of content) is accessible if stairs aren't possible. The fortress wall has steep sections; easier flat segments are walkable. Haenggung and Starfield are fully accessible. Bring a light layer for the cave even in summer.",
+      "tm": "Consigliato soltanto alle persone anziane attive, a proprio agio con le scale e gli spazi chiusi. Per i 180 gradini dei livelli inferiori di Gwangmyeong non esiste alternativa con ascensore: se le scale non sono praticabili, resta accessibile il livello superiore (≈40 min di contenuti). Le mura della fortezza hanno tratti ripidi; i segmenti pianeggianti più agevoli sono percorribili. Il Haenggung e lo Starfield sono del tutto accessibili. Porti un capo leggero per la grotta anche d’estate."
     },
     "/staticQuestions/9/question": {
       "source_en": "Can older adults join comfortably?",
       "tm": "Le persone più anziane possono partecipare comodamente?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages."
+      "source_en": "Best fit is around age 10 and up. The fortress wall has uneven surfaces, the cave has 180 stairs each way, and the day is long (9 hours). Younger kids can manage if comfortable on stairs and with confined spaces (the cave's lower tunnels are narrow). Kids often love the cave's underground attractions — dragon sculpture, Aqua World, Wine Cave (visual only). The Suwon street-food market works for all ages.",
+      "tm": "L’età più adatta è intorno ai 10 anni e oltre. Le mura della fortezza hanno superfici irregolari, la grotta comporta 180 gradini per tratta e la giornata è lunga (9 ore). I bambini più piccoli se la cavano se sono a proprio agio sulle scale e negli spazi chiusi (i tunnel inferiori della grotta sono stretti). Le attrazioni sotterranee piacciono spesso molto ai bambini: la scultura del drago, Aqua World, la Wine Cave (solo da guardare). Il mercato di cibo di strada di Suwon va bene per tutte le età."
     },
     "/staticQuestions/10/question": {
       "source_en": "What's the recommended minimum age?",
@@ -139,28 +155,32 @@
       "tm": "Primavera"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations."
+      "source_en": "Cherry blossoms along the Hwaseong wall; cave opens spring-themed light installations.",
+      "tm": "Ciliegi in fiore lungo le mura di Hwaseong; nella grotta aprono le installazioni luminose a tema primaverile."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer",
       "tm": "Estate"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer."
+      "source_en": "Cave's 12°C interior is a popular escape from Seoul's humidity; Suwon Hwaseong Cultural Festival in summer.",
+      "tm": "I 12 °C interni della grotta sono un rifugio apprezzato dall’umidità di Seoul; d’estate si tiene il festival culturale di Suwon Hwaseong."
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn",
       "tm": "Autunno"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October."
+      "source_en": "Maple foliage along the fortress wall; major Suwon Hwaseong Cultural Festival in October.",
+      "tm": "Foliage degli aceri lungo le mura della fortezza; a ottobre il grande festival culturale di Suwon Hwaseong."
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter",
       "tm": "Inverno"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather."
+      "source_en": "Snow on the fortress wall is a classic photo; cave hosts year-round LED tableaux undisturbed by weather.",
+      "tm": "La neve sulle mura della fortezza è una foto classica; la grotta ospita quadri a LED tutto l’anno, indifferenti al meteo."
     },
     "/bookingSupportSteps/0/title": {
       "source_en": "Instant Confirmation",
@@ -265,5 +285,5 @@
       "⟦G0⟧": "Grotta di Gwangmyeong"
     }
   },
-  "tmHits": 39
+  "tmHits": 59
 }

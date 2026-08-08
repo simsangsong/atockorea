@@ -6,108 +6,113 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
+    "/itineraryStops/5/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ & Busan Tower",
+      "tm": "⟦G0⟧ & Busan Tower",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/itineraryStops/5/galleryItems/2/alt": {
+      "source_en": "⟦G0⟧ & Busan Tower — gallery image 3",
+      "tm": "⟦G0⟧ & Busan Tower — Galeriebild 3",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
+    "/itineraryStops/5/galleryItems/2/caption": {
+      "source_en": "⟦G0⟧ & Busan Tower — photo 3",
+      "tm": "⟦G0⟧ & Busan Tower — Foto 3",
+      "glossary": [
+        "⟦G0⟧ = Yongdusan-Park"
+      ]
+    },
     "/itineraryStops/5/galleryItems/2/location": {
       "source_en": "⟦G0⟧ & Busan Tower",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/3/alt": {
-      "source_en": "⟦G0⟧ & Busan Tower — gallery image 7",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/3/caption": {
-      "source_en": "⟦G0⟧ & Busan Tower — photo 7",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/3/location": {
-      "source_en": "⟦G0⟧ & Busan Tower",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/4/alt": {
-      "source_en": "⟦G0⟧ & Busan Tower — gallery image 8",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/4/caption": {
-      "source_en": "⟦G0⟧ & Busan Tower — photo 8",
-      "glossary": [
-        "⟦G0⟧ = Yongdusan-Park"
-      ]
-    },
-    "/itineraryStops/5/galleryItems/4/location": {
-      "source_en": "⟦G0⟧ & Busan Tower",
+      "tm": "⟦G0⟧ & Busan Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/6/name": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/category": {
-      "source_en": "Market & Streetfood"
+      "source_en": "Market & Streetfood",
+      "tm": "Markt & Streetfood"
     },
     "/itineraryStops/6/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 Min."
     },
     "/itineraryStops/6/timeUsed/0": {
-      "source_en": "Walk from Yongdusan / drop-off near Jagalchi (~5 min)"
+      "source_en": "Walk from Yongdusan / drop-off near Jagalchi (~5 min)",
+      "tm": "Fußweg vom Yongdusan / Absetzen nahe Jagalchi (ca. 5 Min.)"
     },
     "/itineraryStops/6/timeUsed/1": {
-      "source_en": "Ground floor live-tank walkthrough (~15 min)"
+      "source_en": "Ground floor live-tank walkthrough (~15 min)",
+      "tm": "Rundgang durch die Lebendbecken im Erdgeschoss (ca. 15 Min.)"
     },
     "/itineraryStops/6/timeUsed/2": {
-      "source_en": "Second-floor hoe restaurant peek + Nampo-dong street photos (~15 min)"
+      "source_en": "Second-floor hoe restaurant peek + Nampo-dong street photos (~15 min)",
+      "tm": "Blick in ein Hoe-Restaurant im 2. Stock + Straßenfotos in Nampo-dong (ca. 15 Min.)"
     },
     "/itineraryStops/6/timeUsed/3": {
-      "source_en": "Optional snack purchase + Gwangbok-ro stroll (~10 min)"
+      "source_en": "Optional snack purchase + Gwangbok-ro stroll (~10 min)",
+      "tm": "Optionaler Snack-Einkauf + Bummel über die Gwangbok-ro (ca. 10 Min.)"
     },
     "/itineraryStops/6/timeUsed/4": {
-      "source_en": "Stamp + souvenir purchase from Jagalchi Ajumma stalls (~5 min)"
+      "source_en": "Stamp + souvenir purchase from Jagalchi Ajumma stalls (~5 min)",
+      "tm": "Stempel + Souvenirkauf an den Ständen der Jagalchi Ajumma (ca. 5 Min.)"
     },
     "/itineraryStops/6/highlights/0": {
-      "source_en": "**Korea's largest seafood market** — ~400 vendors / 66,000 m²"
+      "source_en": "**Korea's largest seafood market** — ~400 vendors / 66,000 m²",
+      "tm": "**Koreas größter Fischmarkt** — ca. 400 Händler / 66.000 m²"
     },
     "/itineraryStops/6/highlights/1": {
-      "source_en": "Name = **'jagal' (gravel)** + **Jagalchi Ajumma** post-war women vendors"
+      "source_en": "Name = **'jagal' (gravel)** + **Jagalchi Ajumma** post-war women vendors",
+      "tm": "Name = **„jagal“ (Kies)** + **Jagalchi Ajumma**, Händlerinnen der Nachkriegszeit"
     },
     "/itineraryStops/6/highlights/2": {
-      "source_en": "**Modern seagull-shaped building reopened 2006** (designed by Hyunjun Mihn)"
+      "source_en": "**Modern seagull-shaped building reopened 2006** (designed by Hyunjun Mihn)",
+      "tm": "**Modernes Gebäude in Möwenform, 2006 wiedereröffnet** (entworfen von Hyunjun Mihn)"
     },
     "/itineraryStops/6/highlights/3": {
-      "source_en": "**Hours 05:00–22:00 daily**; **CLOSED 1st & 3rd Tuesdays**"
+      "source_en": "**Hours 05:00–22:00 daily**; **CLOSED 1st & 3rd Tuesdays**",
+      "tm": "**Öffnungszeiten täglich 05:00–22:00 Uhr**; **GESCHLOSSEN am 1. & 3. Dienstag**"
     },
     "/itineraryStops/6/highlights/4": {
-      "source_en": "**Buy-downstairs / eat-upstairs hoe (raw-fish) flow**"
+      "source_en": "**Buy-downstairs / eat-upstairs hoe (raw-fish) flow**",
+      "tm": "**Unten kaufen / oben essen — der Hoe-Ablauf (roher Fisch)**"
     },
     "/itineraryStops/6/highlights/5": {
       "source_en": "Adjacent: **⟦G1⟧** (Busan Film Festival), **⟦G0⟧**, **Gwangbok-ro**",
+      "tm": "In direkter Nähe: **⟦G1⟧** (Busan Film Festival), **⟦G0⟧**, **Gwangbok-ro**",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/6/highlights/6": {
-      "source_en": "October **Jagalchi Cultural Tourism Festival**"
+      "source_en": "October **Jagalchi Cultural Tourism Festival**",
+      "tm": "Im Oktober das **Jagalchi Cultural Tourism Festival**"
     },
     "/itineraryStops/6/highlights/7": {
-      "source_en": "Address: **52 Jagalchihaean-ro, Jung-gu**"
+      "source_en": "Address: **52 Jagalchihaean-ro, Jung-gu**",
+      "tm": "Adresse: **52 Jagalchihaean-ro, Jung-gu**"
     },
     "/itineraryStops/6/highlights/8": {
-      "source_en": "**Sannakji (live cut octopus) is Busan's culinary signature** — small octopus cut into still-moving pieces, served with sesame oil and salt; the source of *Old Boy* (2003)'s famous octopus scene that introduced the dish to international audiences"
+      "source_en": "**Sannakji (live cut octopus) is Busan's culinary signature** — small octopus cut into still-moving pieces, served with sesame oil and salt; the source of *Old Boy* (2003)'s famous octopus scene that introduced the dish to international audiences",
+      "tm": "**Sannakji (frisch geschnittener lebender Oktopus) ist Busans kulinarisches Markenzeichen** — kleiner Oktopus, in sich noch bewegende Stücke geschnitten, serviert mit Sesamöl und Salz; Ursprung der berühmten Oktopus-Szene aus *Old Boy* (2003), die das Gericht einem internationalen Publikum bekannt machte"
     },
     "/itineraryStops/6/smartNotes/tip": {
-      "source_en": "**Buy-downstairs / eat-upstairs hoe flow**: pick fresh seafood on the ground floor, have it filleted at a 2nd-floor restaurant (chogochujang + soju standard). **Sannakji (live cut octopus)** is Busan's culinary signature — the dish from *Old Boy* (2003)."
+      "source_en": "**Buy-downstairs / eat-upstairs hoe flow**: pick fresh seafood on the ground floor, have it filleted at a 2nd-floor restaurant (chogochujang + soju standard). **Sannakji (live cut octopus)** is Busan's culinary signature — the dish from *Old Boy* (2003).",
+      "tm": "**Unten kaufen / oben essen — der Hoe-Ablauf**: Wählen Sie im Erdgeschoss frische Meeresfrüchte aus und lassen Sie sie in einem Restaurant im 2. Stock filetieren (Chogochujang + Soju sind Standard). **Sannakji (frisch geschnittener lebender Oktopus)** ist Busans kulinarisches Markenzeichen — das Gericht aus *Old Boy* (2003)."
     },
     "/itineraryStops/6/whyOnRoute": {
       "source_en": "Jagalchi is **the most authentic 'Busan flavor' on a single-day tour** — and pairing it with Nampo-dong's ⟦G1⟧ + ⟦G0⟧ creates a complete ground-level urban contrast to Yongdusan's elevated overview from minutes earlier. The 45-minute stop is short by design: after Yongdusan it's about photo + atmospheric experience, not a full meal (which would conflict with cruise re-board timing). For cruise guests this is the most authentic 'Busan flavor' photo opportunity in 45 minutes — live tanks + ajumma vendor culture + seagull-roof architecture in a walk-through that ends close to the ship's reboarding zone.",
+      "tm": "Jagalchi ist **der authentischste „Busan-Geschmack“ auf einer Tagestour** — und in Kombination mit ⟦G1⟧ + ⟦G0⟧ in Nampo-dong entsteht ein vollständiger urbaner Kontrast auf Straßenniveau zum erhöhten Überblick vom Yongdusan wenige Minuten zuvor. Der 45-minütige Stopp ist bewusst kurz gehalten: Nach dem Yongdusan geht es um Fotos + Atmosphäre, nicht um eine vollständige Mahlzeit (die mit dem Zeitplan für das Wiedereinschiffen kollidieren würde). Für Kreuzfahrtgäste ist dies die authentischste Fotogelegenheit für „Busan-Geschmack“ in 45 Minuten — Lebendbecken + Ajumma-Händlerinnenkultur + Möwendach-Architektur in einem Rundgang, der nahe der Wiedereinschiffungszone des Schiffes endet.",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = BIFF-Platz"
@@ -115,18 +120,21 @@
     },
     "/itineraryStops/6/convenience/parking": {
       "source_en": "Use Lotte Department Store or ⟦G0⟧ public lots; market itself has no on-site parking",
+      "tm": "Nutzen Sie die öffentlichen Parkplätze des Lotte Department Store oder am ⟦G0⟧; der Markt selbst hat keine eigenen Parkplätze",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/6/convenience/restroom": {
       "source_en": "Public restrooms at ⟦G0⟧ and inside Jagalchi",
+      "tm": "Öffentliche Toiletten am ⟦G0⟧ und im Inneren von Jagalchi",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/6/description": {
       "source_en": "**⟦G0⟧ (자갈치시장) — Korea's largest seafood market** — anchors **Nampo-dong**, Busan's downtown shopping-and-dining district. The name 'Jagalchi' derives from **'jagal' (gravel)**, a reference to the pebbled shoreline where the market originated. \n\nAfter the 1876 opening of Busan to international trade and the post-Korean-War boom, **'Jagalchi Ajumma' women vendors** (war widows and refugees) built the market's identity as a tough, women-led seafood economy. \n\nThe current **seagull-shaped modern building** (designed by Hyunjun Mihn) **reopened 2006** and houses **~400 vendors across 66,000 m²** — ground floor for live tanks (octopus, abalone, sea cucumber, halibut), second floor for raw-fish (hoe) restaurants where you can buy fish downstairs and have it filleted upstairs (chogochujang dipping sauce + soju standard). \n\nMarket hours **05:00–22:00 daily**; **closed 1st and 3rd Tuesdays of each month** (verify before visiting). The annual **Jagalchi Cultural Tourism Festival** in October is the single biggest event. Surrounding **Nampo-dong** offers the **⟦G2⟧** (Busan International Film Festival origin, with handprints of Korean stars in the pavement — Park Chan-wook, Bong Joon-ho, etc.), **⟦G1⟧** (Korean War refugee market, still 1,500+ stalls), and **Gwangbok-ro Fashion Street**. \n\nAddress: **52 Jagalchihaean-ro, Jung-gu**. Photo etiquette: **always ask before photographing live tanks or vendors**; Jagalchi Ajumma can be famously direct about cameras. \n\nAdjacent live-fish auctions begin at **04:00 daily** at the seafood traders' wholesale market that supplies the public market upstairs (advance booking required for tourist viewing of auctions).",
+      "tm": "**⟦G0⟧ (자갈치시장) — Koreas größter Fischmarkt** — bildet den Mittelpunkt von **Nampo-dong**, Busans Einkaufs- und Gastronomieviertel in der Innenstadt. Der Name „Jagalchi“ leitet sich von **„jagal“ (Kies)** ab und verweist auf die kiesige Uferlinie, an der der Markt entstand. \n\nNach der Öffnung Busans für den internationalen Handel im Jahr 1876 und dem Boom nach dem Koreakrieg prägten die **Händlerinnen „Jagalchi Ajumma“** (Kriegswitwen und Geflüchtete) die Identität des Marktes als robuste, von Frauen geführte Fischwirtschaft. \n\nDas heutige **moderne Gebäude in Möwenform** (entworfen von Hyunjun Mihn) wurde **2006 wiedereröffnet** und beherbergt **ca. 400 Händler auf 66.000 m²** — im Erdgeschoss die Lebendbecken (Oktopus, Abalone, Seegurke, Heilbutt), im 2. Stock die Hoe-Restaurants (roher Fisch), wo Sie den Fisch unten kaufen und ihn oben filetieren lassen können (Chogochujang-Dip + Soju sind Standard). \n\nÖffnungszeiten des Marktes **täglich 05:00–22:00 Uhr**; **am 1. und 3. Dienstag jedes Monats geschlossen** (bitte vor dem Besuch prüfen). Das jährliche **Jagalchi Cultural Tourism Festival** im Oktober ist die mit Abstand größte Veranstaltung. Das umliegende **Nampo-dong** bietet den **⟦G2⟧** (Ursprung des Busan International Film Festival, mit Handabdrücken koreanischer Stars im Pflaster — Park Chan-wook, Bong Joon-ho usw.), den **⟦G1⟧** (Flüchtlingsmarkt aus dem Koreakrieg, noch immer über 1.500 Stände) und die **Gwangbok-ro Fashion Street**. \n\nAdresse: **52 Jagalchihaean-ro, Jung-gu**. Foto-Etikette: **Fragen Sie immer, bevor Sie Lebendbecken oder Händlerinnen fotografieren**; die Jagalchi Ajumma sind bekanntermaßen sehr direkt, was Kameras angeht. \n\nDie benachbarten Lebendfisch-Auktionen beginnen **täglich um 04:00 Uhr** auf dem Großmarkt der Fischhändler, der den darüberliegenden öffentlichen Markt beliefert (für die Besichtigung der Auktionen durch Touristen ist eine Voranmeldung erforderlich).",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt",
         "⟦G1⟧ = Gukje-Markt",
@@ -135,148 +143,195 @@
     },
     "/itineraryStops/6/visitBasics/hours": {
       "source_en": "**⟦G0⟧ 05:00–22:00 daily**; live-fish auctions begin 04:00 (advance booking for tourist viewing); Nampo-dong shopping streets 10:30–22:00",
+      "tm": "**⟦G0⟧ täglich 05:00–22:00 Uhr**; Lebendfisch-Auktionen ab 04:00 Uhr (Voranmeldung für die Besichtigung durch Touristen); Einkaufsstraßen in Nampo-dong 10:30–22:00 Uhr",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt"
       ]
     },
     "/itineraryStops/6/visitBasics/closed": {
-      "source_en": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round"
+      "source_en": "**Jagalchi: 1st and 3rd Tuesdays of each month**; Nampo-dong open year-round",
+      "tm": "**Jagalchi: 1. und 3. Dienstag jedes Monats**; Nampo-dong ganzjährig geöffnet"
     },
     "/itineraryStops/6/visitBasics/walking": {
-      "source_en": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb"
+      "source_en": "Flat shopping street + market floor — easy; **2nd-floor hoe restaurants** require a short stair climb",
+      "tm": "Ebene Einkaufsstraße + Marktebene — leicht; zu den **Hoe-Restaurants im 2. Stock** führt eine kurze Treppe"
     },
     "/itineraryStops/6/visitBasics/admission": {
-      "source_en": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)"
+      "source_en": "FREE access; **2nd-floor hoe restaurants ~₩30,000+ set menus** (price varies by fish)",
+      "tm": "Zutritt KOSTENLOS; **Hoe-Restaurants im 2. Stock ca. ₩30.000+ für Set-Menüs** (Preis je nach Fisch)"
     },
     "/itineraryStops/6/galleryItems/0/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 1"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 1",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 1"
     },
     "/itineraryStops/6/galleryItems/0/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 1"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 1",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 1"
     },
     "/itineraryStops/6/galleryItems/0/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/1/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 2"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 2",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 2"
     },
     "/itineraryStops/6/galleryItems/1/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 2"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 2",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 2"
     },
     "/itineraryStops/6/galleryItems/1/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/2/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 3"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 3",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 3"
     },
     "/itineraryStops/6/galleryItems/2/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 3"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 3",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 3"
     },
     "/itineraryStops/6/galleryItems/2/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/3/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 4"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 4",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 4"
     },
     "/itineraryStops/6/galleryItems/3/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 4"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 4",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 4"
     },
     "/itineraryStops/6/galleryItems/3/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/4/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 5"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 5",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 5"
     },
     "/itineraryStops/6/galleryItems/4/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 5"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 5",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 5"
     },
     "/itineraryStops/6/galleryItems/4/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/5/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 6"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 6",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 6"
     },
     "/itineraryStops/6/galleryItems/5/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 6"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 6",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 6"
     },
     "/itineraryStops/6/galleryItems/5/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/6/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 7"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 7",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 7"
     },
     "/itineraryStops/6/galleryItems/6/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 7"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 7",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 7"
     },
     "/itineraryStops/6/galleryItems/6/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/7/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 8"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 8",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 8"
     },
     "/itineraryStops/6/galleryItems/7/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 8"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 8",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 8"
     },
     "/itineraryStops/6/galleryItems/7/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/8/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 9"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 9",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 9"
     },
     "/itineraryStops/6/galleryItems/8/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 9"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 9",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 9"
     },
     "/itineraryStops/6/galleryItems/8/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/9/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 10"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 10",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 10"
     },
     "/itineraryStops/6/galleryItems/9/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 10"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 10",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 10"
     },
     "/itineraryStops/6/galleryItems/9/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/10/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 11"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 11",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 11"
     },
     "/itineraryStops/6/galleryItems/10/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 11"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 11",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 11"
     },
     "/itineraryStops/6/galleryItems/10/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
     },
     "/itineraryStops/6/galleryItems/11/alt": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 12"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — gallery image 12",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Galeriebild 12"
     },
     "/itineraryStops/6/galleryItems/11/caption": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 12"
+      "source_en": "Nampo-dong & Jagalchi Fish Market — photo 12",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt — Foto 12"
     },
     "/itineraryStops/6/galleryItems/11/location": {
-      "source_en": "Nampo-dong & Jagalchi Fish Market"
+      "source_en": "Nampo-dong & Jagalchi Fish Market",
+      "tm": "Nampo-dong & Jagalchi-Fischmarkt"
+    },
+    "/itineraryStops/7/name": {
+      "source_en": "Return to Busan Cruise Terminal",
+      "tm": "Rückfahrt zum Kreuzfahrtterminal Busan"
+    },
+    "/itineraryStops/7/category": {
+      "source_en": "Return",
+      "tm": "Rückfahrt"
+    },
+    "/itineraryStops/7/duration": {
+      "source_en": "30 min",
+      "tm": "30 Min."
+    },
+    "/itineraryStops/7/highlights/0": {
+      "source_en": "Direct return to original cruise terminal (Dongsam or Choryang)",
+      "tm": "Direkte Rückfahrt zum ursprünglichen Kreuzfahrtterminal (Dongsam oder Choryang)"
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/5/galleryItems/1/location": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/2/alt": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
+    "/itineraryStops/5/galleryItems/2/caption": {
+      "⟦G0⟧": "Yongdusan-Park"
+    },
     "/itineraryStops/5/galleryItems/2/location": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/3/alt": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/3/caption": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/3/location": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/4/alt": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/4/caption": {
-      "⟦G0⟧": "Yongdusan-Park"
-    },
-    "/itineraryStops/5/galleryItems/4/location": {
       "⟦G0⟧": "Yongdusan-Park"
     },
     "/itineraryStops/6/highlights/5": {
@@ -302,5 +357,5 @@
       "⟦G0⟧": "Jagalchi-Markt"
     }
   },
-  "tmHits": 0
+  "tmHits": 70
 }

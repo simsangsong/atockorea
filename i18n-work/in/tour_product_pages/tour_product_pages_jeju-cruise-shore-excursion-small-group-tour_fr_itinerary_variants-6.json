@@ -1,0 +1,132 @@
+{
+  "unitId": "tour_product_pages:jeju-cruise-shore-excursion-small-group-tour:fr:itinerary_variants-6",
+  "surface": "tour_product_pages",
+  "slug": "jeju-cruise-shore-excursion-small-group-tour",
+  "locale": "fr",
+  "chunk": "itinerary_variants-6",
+  "tier": "B",
+  "segments": {
+    "/itinerary_variants/1/stops/6/description": {
+      "source_en": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit around ⟦G1⟧, ⟦G0⟧, and downtown Seogwipo, the drive is usually short, often around 10–15 minutes by local roads. The schedule is planned to bring guests back well before the ship's all-aboard time, with extra room for traffic, restroom use, and boarding procedures. Your guide confirms the ship schedule during the day and adjusts the pace if road or weather conditions require it.",
+      "glossary": [
+        "⟦G0⟧ = Cascade de Cheonjiyeon",
+        "⟦G1⟧ = Marché Olle Maeil"
+      ]
+    },
+    "/itinerary_variants/1/port_label": {
+      "source_en": "Gangjeong Port (Seogwipo Terminal)"
+    },
+    "/itinerary_variants/1/routePhases/0/label": {
+      "source_en": "Morning"
+    },
+    "/itinerary_variants/1/routePhases/0/theme": {
+      "source_en": "Alpine to coastal geology"
+    },
+    "/itinerary_variants/1/routePhases/0/bgClass": {
+      "source_en": "bg-violet-50/70"
+    },
+    "/itinerary_variants/1/routePhases/1/label": {
+      "source_en": "Midday"
+    },
+    "/itinerary_variants/1/routePhases/1/theme": {
+      "source_en": "Lunch",
+      "tm": "Déjeuner"
+    },
+    "/itinerary_variants/1/routePhases/1/bgClass": {
+      "source_en": "bg-amber-50/70"
+    },
+    "/itinerary_variants/1/routePhases/2/label": {
+      "source_en": "Afternoon"
+    },
+    "/itinerary_variants/1/routePhases/2/theme": {
+      "source_en": "Waterfall + market + return"
+    },
+    "/itinerary_variants/1/routePhases/2/bgClass": {
+      "source_en": "bg-emerald-50/70"
+    },
+    "/itinerary_variants/1/route_focus": {
+      "source_en": "Hallasan alpine + southwest coast geology + market"
+    },
+    "/itinerary_variants/1/duration_band": {
+      "source_en": "8h"
+    },
+    "/itinerary_variants/1/routeFlowStops/0/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/itinerary_variants/1/routeFlowStops/0/theme": {
+      "source_en": "Departure",
+      "tm": "Départ"
+    },
+    "/itinerary_variants/1/routeFlowStops/1/name": {
+      "source_en": "1100 Highland",
+      "tm": "1100 Highland"
+    },
+    "/itinerary_variants/1/routeFlowStops/1/theme": {
+      "source_en": "Alpine"
+    },
+    "/itinerary_variants/1/routeFlowStops/2/name": {
+      "source_en": "Jusangjeolli",
+      "tm": "Jusangjeolli"
+    },
+    "/itinerary_variants/1/routeFlowStops/2/theme": {
+      "source_en": "Geology"
+    },
+    "/itinerary_variants/1/routeFlowStops/3/name": {
+      "source_en": "Lunch",
+      "tm": "Déjeuner"
+    },
+    "/itinerary_variants/1/routeFlowStops/3/theme": {
+      "source_en": "Meal",
+      "tm": "Repas"
+    },
+    "/itinerary_variants/1/routeFlowStops/4/name": {
+      "source_en": "Cheonjiyeon"
+    },
+    "/itinerary_variants/1/routeFlowStops/4/theme": {
+      "source_en": "Waterfall",
+      "tm": "Cascade"
+    },
+    "/itinerary_variants/1/routeFlowStops/5/name": {
+      "source_en": "Olle Market"
+    },
+    "/itinerary_variants/1/routeFlowStops/5/theme": {
+      "source_en": "Market"
+    },
+    "/itinerary_variants/1/routeFlowStops/6/name": {
+      "source_en": "Cruise Terminal"
+    },
+    "/itinerary_variants/1/routeFlowStops/6/theme": {
+      "source_en": "Return",
+      "tm": "Retour"
+    },
+    "/itinerary_variants/1/port_label_short": {
+      "source_en": "Gangjeong Port"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/0": {
+      "source_en": "volcano"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/1": {
+      "source_en": "alpine"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/2": {
+      "source_en": "geology"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/3": {
+      "source_en": "waterfall"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/4": {
+      "source_en": "market"
+    },
+    "/itinerary_variants/1/theme_tags_in_variant/5": {
+      "source_en": "shopping",
+      "tm": "shopping"
+    }
+  },
+  "glossaryTokens": {
+    "/itinerary_variants/1/stops/6/description": {
+      "⟦G0⟧": "Cascade de Cheonjiyeon",
+      "⟦G1⟧": "Marché Olle Maeil"
+    }
+  },
+  "tmHits": 9
+}

@@ -1,3 +1,4 @@
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
@@ -35,22 +36,36 @@ import { isTourSlugBlockedFromConsumerSurfaces } from "@/lib/tour-consumer-visib
  */
 
 /** URL prefixes served by `app/[locale]/tour-product/[slug]` (en lives at the bare path). */
-export const TOUR_PRODUCT_URL_LOCALES = ["ko", "ja", "es", "zh-CN", "zh-TW"] as const;
+export const TOUR_PRODUCT_URL_LOCALES = [
+  "ko",
+  "ja",
+  "es",
+  "zh-CN",
+  "zh-TW",
+  "fr",
+  "de",
+  "it",
+  "ru",
+] as const;
 
 /**
  * P1-7 — locales the SITE routes but this page has no content for.
  *
- * middleware.ts SUPPORTED_LOCALES grew to 10 (fr/de/it/ru were added with their
- * messages/*.json), while tour_product_pages holds rows for only en/ko/ja/es/
- * zh/zh-TW. `/fr/tour-product/<slug>` therefore passed the middleware, reached
- * this page, resolved to a null db locale and 404'd.
+ * 🔴 EMPTY since 2026-08-08. fr/de/it/ru sat here from the day middleware
+ * SUPPORTED_LOCALES grew to 10 until `tour_product_pages` actually had their
+ * rows: routing them with no content would have rendered an empty page, so
+ * they 308'd to the canonical English path instead.
  *
- * Adding them to TOUR_PRODUCT_URL_LOCALES would be worse than the 404 — it
- * would render an empty page. Until the content exists these fall back to the
- * canonical English URL, which is what `/en/...` already does. Fallback rule:
- * supported-but-untranslated → 308 to the bare EN path, never a 404.
+ * The i18n tour-content track finished on 2026-08-08 — all 21 live slugs now
+ * have de/fr/it/ru rows (verified by DB join, not by the work manifest), so
+ * the four moved into TOUR_PRODUCT_URL_LOCALES above and the language toggle
+ * serves real translated pages.
+ *
+ * Keep the list and the rule: a locale the site routes but this page has no
+ * content for belongs HERE, not in TOUR_PRODUCT_URL_LOCALES. Fallback rule
+ * stays — supported-but-untranslated → 308 to the bare EN path, never a 404.
  */
-export const TOUR_PRODUCT_FALLBACK_URL_LOCALES = ["fr", "de", "it", "ru"] as const;
+export const TOUR_PRODUCT_FALLBACK_URL_LOCALES = [] as const;
 
 /** Does this URL locale have product content, or must it fall back to EN? */
 export function tourProductLocaleNeedsEnglishFallback(urlLocale: string): boolean {
@@ -196,7 +211,7 @@ export async function TourProductPageBody({
   // tiebreak and a per-region diversity cap. Replaces the prior "same region
   // first, slice(0,6)" heuristic that always returned the same 6 cards.
   // Unpriced items are dropped so off-season products don't render as $0 cards.
-  const allCatalog = listStaticTourProducts(locale);
+  const allCatalog = listStaticTourProducts(toTourProductBaseLocale(locale));
   const anchor = allCatalog.find((p) => p.slug === slug);
   const recommendations: readonly StaticTourProductRegistration[] = anchor
     ? pickTourRecommendations(anchor, allCatalog, { k: 6 })
@@ -216,7 +231,7 @@ export async function TourProductPageBody({
         checkout={checkout}
         tourProductSlug={slug}
         recommendations={recommendations}
-        locale={locale}
+        locale={toTourProductBaseLocale(locale)}
         externalReviews={externalReviews}
       />
     </>

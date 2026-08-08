@@ -1,0 +1,160 @@
+{
+  "unitId": "tour_product_pages:incheon-seoul-private-car-shore-excursion-cruise:ru:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+  "locale": "ru",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Cruise terminal gangway pickup"
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Departure",
+      "tm": "Отправление"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "30 min",
+      "tm": "30 мин"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Disembark cruise ship and clear Korean immigration (~30 min)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Meet driver-guide at terminal curbside with name placard"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "Begin private 60-90 min drive to first Seoul stop"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Pre-departure check: K-ETA / e-Arrival Card status verification (~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/4": {
+      "source_en": "Optional Songdo Central Park weather-fallback detour (~15 min if applicable)"
+    },
+    "/itineraryStops/0/highlights/0": {
+      "source_en": "Private gangway pickup at Incheon Cruise Terminal"
+    },
+    "/itineraryStops/0/highlights/1": {
+      "source_en": "English-speaking driver-guide; private sedan or SUV (your group only)"
+    },
+    "/itineraryStops/0/highlights/2": {
+      "source_en": "60-90 min drive to central Seoul via Yeongjong Bridge + Incheon-Seoul Expressway"
+    },
+    "/itineraryStops/0/highlights/3": {
+      "source_en": "Flexible start time built around your ship's specific arrival/disembarkation"
+    },
+    "/itineraryStops/0/highlights/4": {
+      "source_en": "**South Korea's largest cruise terminal** — 2-story 7,364 m² building (1F arrivals / 2F departures); USD 580M total project investment; opened **April 25, 2019**"
+    },
+    "/itineraryStops/0/highlights/5": {
+      "source_en": "**Berths Royal Caribbean Oasis-Class** ships (228,000 GT, 6,370 passengers + 2,400 crew) — also handles MSC Bellissima, Diamond Princess, Spectrum of the Seas (2026/27 season)"
+    },
+    "/itineraryStops/0/highlights/6": {
+      "source_en": "**Private gangway pickup**: driver-guide commits to your group only — no shared-passenger waits at gangway, departure timed to your group's disembarkation pace"
+    },
+    "/itineraryStops/0/highlights/7": {
+      "source_en": "**200-vehicle parking lot** including 156 large-bus capacity; private charter typically uses sedan / minivan / SUV slots near terminal exit"
+    },
+    "/itineraryStops/0/highlights/8": {
+      "source_en": "**Mandatory digital e-Arrival Card since January 1, 2026** for visitors without K-ETA exemption — recommend K-ETA registration before sailing (USD 8, 3-year validity)"
+    },
+    "/itineraryStops/0/smartNotes/tip": {
+      "source_en": "Provide ship name + scheduled arrival + all-aboard time at booking. The driver-guide will arrive 30-60 min after your scheduled docking to allow immigration clearance. Cruise terminal Korean address: 인천항 크루즈터미널 (연수구 국제항만대로 438)."
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Private gangway pickup is the day's foundational guarantee — the driver-guide is committed to your group only, the ship all-aboard time is built into the schedule, and the language-barrier challenge of taxis and public transit is eliminated. For cruise guests prioritizing flexibility over cost, private charter eliminates the shared-van waiting window at the gangway, the fixed-departure pickup time, and the inflexibility of itinerary changes mid-day. The driver-guide can add or remove stops based on real-time interest (e.g. swap ⟦G0⟧ for Hongdae if your group leans young-traveler) and the all-aboard time is built into a 90-minute reboarding buffer.",
+      "glossary": [
+        "⟦G0⟧ = Мёндон"
+      ]
+    },
+    "/itineraryStops/0/convenience/parking": {
+      "source_en": "Tour bus and taxi stands outside the terminal; driver-guide meets at the assigned curbside point."
+    },
+    "/itineraryStops/0/convenience/restroom": {
+      "source_en": "Inside the terminal arrival/departure halls."
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Private gangway pickup at Incheon Cruise Terminal — your English-speaking driver-guide meets you at the terminal entrance with a name placard, and your private vehicle (sedan or SUV) is reserved exclusively for your group with no other passengers. \n\nAfter clearing Korean immigration (~30 min budget), the day's start time is FLEXIBLE around your specific ship arrival/disembarkation timing — communicate ship details to the operator at booking, and the driver-guide adjusts the entire 8-hour window accordingly, including a guaranteed return buffer before your ship's all-aboard time. \n\nThe 60-90 min drive to central Seoul travels via the Yeongjong Bridge and Incheon-Seoul Expressway. Beyond the cruise terminal itself, the Songdo International Business District (opened 2003 as Korea's first Free Economic Zone) is a fully-planned 'smart city' with **Songdo Central Park** (a saltwater canal park 5 minutes by car) as a viable weather-fallback short-detour option for guests whose Seoul time gets compressed by delayed disembarkation. \n\nThe private charter format gives the driver-guide flexibility to add or skip Songdo Central Park based on real-time gangway timing. **As of January 1, 2026**, South Korea requires a **mandatory digital e-Arrival Card** for visitors without K-ETA exemption — completing K-ETA registration before sailing (USD 8, 3-year validity) eliminates the form-fill step at the gangway. \n\nThe terminal is **7 km from the nearest Incheon Subway Line 1 station** ('International Business District Station') — not walkable, so private charter eliminates the only practical alternative (₩10,000 taxi to metro + ₩90-minute Subway Line 1 + Seoul Subway transfer)."
+    },
+    "/itineraryStops/0/visitBasics/hours": {
+      "source_en": "Cruise-call dependent; pickup is after immigration clearance at the terminal."
+    },
+    "/itineraryStops/0/visitBasics/closed": {
+      "source_en": "Available only when the cruise ship calls at Incheon."
+    },
+    "/itineraryStops/0/visitBasics/walking": {
+      "source_en": "Easy - short walk from gangway/arrival hall to curbside pickup."
+    },
+    "/itineraryStops/0/visitBasics/admission": {
+      "source_en": "No attraction admission; terminal access follows port and cruise security rules."
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Дворец Кёнбоккун"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "Joseon Royal Palace"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "75 min",
+      "tm": "75 мин"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Driver-guide drop-off at Gwanghwamun Square (~5 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Royal Guard Changing Ceremony if 10:00 timing (~20 min)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Throne Halls + Gyeonghoeru + Hyangwonjeong walk (~35-40 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Photo time + reassembly at vehicle"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Optional National Folk Museum or National Palace Museum extension (within grounds, free) (~15 min if interested)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "Joseon Dynasty's main palace — built 1395 as the heart of new Seoul"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Geunjeongjeon Throne Hall — largest wooden building in Korea"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Gyeonghoeru Pavilion — 48-pillar banquet pavilion on lotus pond"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Hyangwonjeong Pavilion — Korea's most photographed garden scene"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "Royal Guard Changing Ceremony at Heungnyemun Gate (10:00 + 14:00 daily)"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "**Closed Tuesdays** — substitute Changdeokgung Palace (UNESCO World Heritage 1997)"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "FREE admission for hanbok-wearers"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "**Royal Guard Changing Ceremony re-enacted since 1996** based on Cultural Heritage Administration historical research — went on hiatus after 2008 Sungnyemun arson incident, resumed 2016 (with the 70+ performer authentic-armor format used today)"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "**3 additional ceremonies between main 10:00 + 14:00 changes**: Gwanghwamun Gate Guard Ceremony at 11:00 + 13:00; Public Training of Royal Guard Soldiers at 09:35 + 13:35 — total 6 daily reenactments (except Tuesdays)"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Time arrival for 10:00 Changing of the Guard. Skip Tuesday — Changdeokgung substitute. If your group is interested in palace architecture beyond surface-level photos, ask the driver-guide for a 30-min walking commentary on Joseon hierarchy and royal etiquette."
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/whyOnRoute": {
+      "⟦G0⟧": "Мёндон"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Дворец Кёнбоккун"
+    }
+  },
+  "tmHits": 3
+}

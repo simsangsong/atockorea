@@ -7,89 +7,112 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "First-time visitors to the area"
+      "source_en": "First-time visitors to the area",
+      "tm": "Chi visita la zona per la prima volta"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples & honeymooners"
+      "source_en": "Couples & honeymooners",
+      "tm": "Coppie e sposi in luna di miele"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Adult families"
+      "source_en": "Adult families",
+      "tm": "Famiglie di soli adulti"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Active travelers who enjoy coastal walks and the Olle Trail"
+      "source_en": "Active travelers who enjoy coastal walks and the Olle Trail",
+      "tm": "Viaggiatori attivi che amano le passeggiate lungo la costa e l'Olle Trail"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Travelers interested in Korean culture such as temples and tea"
+      "source_en": "Travelers interested in Korean culture such as temples and tea",
+      "tm": "Viaggiatori interessati alla cultura coreana, come templi e tè"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers who want minimal walking"
+      "source_en": "Travelers who want minimal walking",
+      "tm": "Viaggiatori che desiderano camminare il meno possibile"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Groups with strollers"
+      "source_en": "Groups with strollers",
+      "tm": "Gruppi con passeggini"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Travelers with a tight same-day flight buffer"
+      "source_en": "Travelers with a tight same-day flight buffer",
+      "tm": "Viaggiatori con un volo in giornata e poco margine di tempo"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
       "source_en": "Free admission at almost every stop — only ⟦G0⟧ is ₩2,000",
+      "tm": "Ingresso gratuito in quasi tutte le tappe — solo ⟦G0⟧ costa ₩2.000",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "source_en": "Oedolgae & Olle Route 7, Yakcheonsa, O'sulloc, and ⟦G0⟧ are all free, and only the ⟦G1⟧ admission (adult ₩2,000) is included in the base price. Unlike most Jeju group tours, which charge ₩15,000–₩20,000 per person in separate admissions, the only real extra cost on the day is lunch (~₩15,000).",
+      "tm": "Oedolgae e l'Olle Route 7, Yakcheonsa, O'sulloc e ⟦G0⟧ sono tutti gratuiti, e nel prezzo base è incluso solo l'ingresso a ⟦G1⟧ (adulti ₩2.000). A differenza della maggior parte dei tour di gruppo a Jeju, che applicano ₩15.000–₩20.000 a persona di ingressi separati, l'unico vero costo aggiuntivo della giornata è il pranzo (~₩15.000).",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Explicit 'no shopping' policy"
+      "source_en": "Explicit 'no shopping' policy",
+      "tm": "Politica esplicita di \"no shopping\""
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "The operator publishes an explicit no-shopping clause — there are no ginseng shops, cosmetic-mall detours, or commission lunch stops. Every stop on the route is an actual attraction. The Dongmun Market drop-off is self-guided after the tour ends, not a forced stop."
+      "source_en": "The operator publishes an explicit no-shopping clause — there are no ginseng shops, cosmetic-mall detours, or commission lunch stops. Every stop on the route is an actual attraction. The Dongmun Market drop-off is self-guided after the tour ends, not a forced stop.",
+      "tm": "L'operatore pubblica una clausola esplicita di no shopping: non ci sono negozi di ginseng, deviazioni nei centri commerciali di cosmetici né sosta pranzo a provvigione. Ogni tappa del percorso è un'attrazione reale. La discesa al Dongmun Market avviene in autonomia al termine del tour, non è una sosta obbligata."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "A route that starts on the coast and finishes on Hallasan"
+      "source_en": "A route that starts on the coast and finishes on Hallasan",
+      "tm": "Un itinerario che inizia sulla costa e termina sull'Hallasan"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
       "source_en": "See the Seogwipo coast (⟦G0⟧, Oedolgae) early in the morning before the tour buses arrive, pass through the temple, lunch and tea field, then cross Hallasan via Route 1100 at the end of the day back to Jeju City. A counter-clockwise loop that never retraces the same road.",
+      "tm": "Vedrà la costa di Seogwipo (⟦G0⟧, Oedolgae) la mattina presto, prima dell'arrivo dei bus turistici, poi passerà dal tempio, dal pranzo e dalla piantagione di tè, e infine attraverserà l'Hallasan lungo la Route 1100 al termine della giornata per rientrare a Jeju City. Un anello in senso antiorario che non ripercorre mai la stessa strada.",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/3/label": {
-      "source_en": "Mini-coach format, not a 40-person bus"
+      "source_en": "Mini-coach format, not a 40-person bus",
+      "tm": "Formato mini-coach, non un bus da 40 persone"
     },
     "/whyTourWorks/routeLogicSections/0/items/3/detail": {
-      "source_en": "The shared mini-coach format keeps groups small enough for personal guide attention on the Oedolgae Olle trail and within the Yakcheonsa grounds. Unlike large commission-bus tours (30–40 people), this runs closer to 12–18 — the sweet spot for ample attention without paying private-tour rates."
+      "source_en": "The shared mini-coach format keeps groups small enough for personal guide attention on the Oedolgae Olle trail and within the Yakcheonsa grounds. Unlike large commission-bus tours (30–40 people), this runs closer to 12–18 — the sweet spot for ample attention without paying private-tour rates.",
+      "tm": "Il formato condiviso in mini-coach mantiene i gruppi abbastanza piccoli perché la guida possa dedicare attenzione personale sull'Olle trail di Oedolgae e all'interno del complesso di Yakcheonsa. A differenza dei grandi tour in bus a provvigione (30–40 persone), qui si viaggia in circa 12–18 persone — il punto ideale per avere ampia attenzione senza pagare le tariffe di un tour privato."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why this route is built this way"
+      "source_en": "Why this route is built this way",
+      "tm": "Perché questo itinerario è costruito così"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this day flows"
+      "source_en": "How this day flows",
+      "tm": "Come scorre questa giornata"
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "A counter-clockwise route that descends in the morning to the southern Seogwipo coast for ⟦G0⟧ and Oedolgae & the Olle Trail, passes East Asia's largest temple Yakcheonsa and lunch and the O'sulloc Tea Museum, then crosses Hallasan via Route 1100 at the end of the day to finish on the Eoseungsaengak Trail. A day designed to take in waterfall, coast, temple, tea field, and volcano all at once.",
+      "tm": "Un itinerario in senso antiorario che al mattino scende verso la costa meridionale di Seogwipo per ⟦G0⟧ e Oedolgae e l'Olle Trail, passa dal tempio più grande dell'Asia orientale, Yakcheonsa, dal pranzo e dal Museo del tè O'sulloc, e poi attraversa l'Hallasan lungo la Route 1100 al termine della giornata per concludersi sull'Eoseungsaengak Trail. Una giornata pensata per raccogliere cascata, costa, tempio, piantagione di tè e vulcano tutto in una volta.",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/0/answer": {
       "source_en": "Yes. This route runs every day of the year. The atmosphere of the Seogwipo coast and the Hallasan views change with the season, but the day's pacing stays the same. In winter snow, ⟦G0⟧ may be substituted for a lower-elevation alternate.",
+      "tm": "Sì. Questo itinerario opera tutti i giorni dell'anno. L'atmosfera della costa di Seogwipo e i panorami dell'Hallasan cambiano con la stagione, ma il ritmo della giornata resta lo stesso. In caso di neve invernale, ⟦G0⟧ può essere sostituito con un'alternativa a quota più bassa.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/staticQuestions/0/question": {
-      "source_en": "Is this tour available year-round?"
+      "source_en": "Is this tour available year-round?",
+      "tm": "Questo tour è disponibile tutto l'anno?"
     },
     "/staticQuestions/1/answer": {
       "source_en": "At ⟦G1⟧ you go down and back up about 130 steps to the foot of the falls, and ⟦G0⟧ is a 1.3 km one-way wooden-stair climb (about 60–75 min round-trip). Comfortable closed-toe sneakers are enough — no technical hiking gear required. This route does not include the Hallasan summit (Baengnokdam) climb.",
+      "tm": "A ⟦G1⟧ si scendono e si risalgono circa 130 gradini fino ai piedi della cascata, e ⟦G0⟧ è una salita di 1,3 km solo andata su scale di legno (circa 60–75 min andata e ritorno). Bastano scarpe da ginnastica chiuse e comode: non serve attrezzatura tecnica da trekking. Questo itinerario non include la salita alla vetta dell'Hallasan (Baengnokdam).",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
@@ -97,121 +120,152 @@
     },
     "/staticQuestions/1/question": {
       "source_en": "Is the walking at ⟦G0⟧ and Hallasan difficult?",
+      "tm": "Le camminate a ⟦G0⟧ e sull'Hallasan sono impegnative?",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/2/answer": {
       "source_en": "You take in ⟦G1⟧ (Asia's only ocean-falling waterfall), the Oedolgae and Olle Route 7 coastal walk, East Asia's largest temple Yakcheonsa, the O'sulloc Tea Museum, and the ⟦G0⟧ Trail. It is a south Jeju signature route that starts on the Seogwipo coast and finishes on Hallasan.",
+      "tm": "Vedrà ⟦G1⟧ (l'unica cascata dell'Asia che si getta direttamente nell'oceano), la passeggiata costiera di Oedolgae e dell'Olle Route 7, il tempio più grande dell'Asia orientale Yakcheonsa, il Museo del tè O'sulloc e il ⟦G0⟧ Trail. È un itinerario simbolo del sud di Jeju che inizia sulla costa di Seogwipo e termina sull'Hallasan.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/2/question": {
-      "source_en": "Which sights are included on this route?"
+      "source_en": "Which sights are included on this route?",
+      "tm": "Quali attrazioni sono incluse in questo itinerario?"
     },
     "/staticQuestions/3/answer": {
       "source_en": "Yes. The ⟦G1⟧ admission (adult ₩2,000) is included in the base price. Oedolgae & Olle Route 7, Yakcheonsa, O'sulloc, and ⟦G0⟧ are all free admission. The only real extra cost on the day is lunch (~₩15,000).",
+      "tm": "Sì. L'ingresso a ⟦G1⟧ (adulti ₩2.000) è incluso nel prezzo base. Oedolgae e l'Olle Route 7, Yakcheonsa, O'sulloc e ⟦G0⟧ hanno tutti ingresso gratuito. L'unico vero costo aggiuntivo della giornata è il pranzo (~₩15.000).",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/3/question": {
-      "source_en": "Are admissions included?"
+      "source_en": "Are admissions included?",
+      "tm": "Gli ingressi sono inclusi?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "No — lunch is at your own expense (~₩15,000). The guide will recommend a local restaurant, and if you advise at booking we can support vegetarian, vegan, halal, or allergy-related dietary needs."
+      "source_en": "No — lunch is at your own expense (~₩15,000). The guide will recommend a local restaurant, and if you advise at booking we can support vegetarian, vegan, halal, or allergy-related dietary needs.",
+      "tm": "No — il pranzo è a Suo carico (~₩15.000). La guida Le consiglierà un ristorante locale e, se ce lo segnala al momento della prenotazione, possiamo supportare esigenze alimentari vegetariane, vegane, halal o legate ad allergie."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is lunch included?"
+      "source_en": "Is lunch included?",
+      "tm": "Il pranzo è incluso?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes. Please notify the operator of your luggage volume in advance. The mini-coach has dedicated luggage space, and travelers arriving on early-morning flights can join the tour directly with their bags."
+      "source_en": "Yes. Please notify the operator of your luggage volume in advance. The mini-coach has dedicated luggage space, and travelers arriving on early-morning flights can join the tour directly with their bags.",
+      "tm": "Sì. La preghiamo di comunicare in anticipo all'operatore il volume dei Suoi bagagli. Il mini-coach dispone di uno spazio dedicato ai bagagli e i viaggiatori che arrivano con voli di primo mattino possono unirsi al tour direttamente con le valigie."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Can I bring luggage on the airport pickup?"
+      "source_en": "Can I bring luggage on the airport pickup?",
+      "tm": "Posso portare i bagagli al pickup in aeroporto?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Yes — in a single day you get a balanced look at the area's most distinctive sights, from the Seogwipo coast to the temple, tea field, and Hallasan."
+      "source_en": "Yes — in a single day you get a balanced look at the area's most distinctive sights, from the Seogwipo coast to the temple, tea field, and Hallasan.",
+      "tm": "Sì — in un solo giorno avrà una visione equilibrata delle attrazioni più caratteristiche della zona, dalla costa di Seogwipo al tempio, alla piantagione di tè e all'Hallasan."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this a good choice for first-time visitors to southern Jeju?"
+      "source_en": "Is this a good choice for first-time visitors to southern Jeju?",
+      "tm": "È una buona scelta per chi visita il sud di Jeju per la prima volta?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "It is an active day with the ⟦G1⟧ stairs and the ⟦G0⟧ climb, but the Oedolgae Olle trail and Yakcheonsa and O'sulloc are relatively flat.",
+      "tm": "È una giornata attiva, con le scale di ⟦G1⟧ e la salita di ⟦G0⟧, ma l'Olle trail di Oedolgae, Yakcheonsa e O'sulloc sono relativamente pianeggianti.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/7/question": {
-      "source_en": "Is the walking difficult?"
+      "source_en": "Is the walking difficult?",
+      "tm": "La camminata è impegnativa?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "It suits families with children who can handle a full day of moving around. The coastal walks and the temple and tea field are easy for kids to enjoy too."
+      "source_en": "It suits families with children who can handle a full day of moving around. The coastal walks and the temple and tea field are easy for kids to enjoy too.",
+      "tm": "È adatto alle famiglie con bambini in grado di affrontare un'intera giornata di spostamenti. Anche le passeggiate lungo la costa, il tempio e la piantagione di tè sono facili da apprezzare per i bambini."
     },
     "/staticQuestions/8/question": {
-      "source_en": "Is this tour suitable for families?"
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Questo tour è adatto alle famiglie?"
     },
     "/staticQuestions/9/answer": {
       "source_en": "Recommended for active seniors comfortable with the ⟦G0⟧ stairs and the Eoseungsaengak climb. Oedolgae, Yakcheonsa, and O'sulloc are relatively comfortable.",
+      "tm": "Consigliato a senior attivi a proprio agio con le scale di ⟦G0⟧ e la salita dell'Eoseungsaengak. Oedolgae, Yakcheonsa e O'sulloc sono relativamente comodi.",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/staticQuestions/9/question": {
-      "source_en": "Can older adults join comfortably?"
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Le persone più anziane possono partecipare comodamente?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Best fit is around age 10 and up — children who can handle a full-day itinerary and the walking notes above."
+      "source_en": "Best fit is around age 10 and up — children who can handle a full-day itinerary and the walking notes above.",
+      "tm": "L'età più adatta è intorno ai 10 anni e oltre — bambini in grado di affrontare un itinerario di un'intera giornata e le camminate indicate sopra."
     },
     "/staticQuestions/10/question": {
-      "source_en": "What's the recommended minimum age?"
+      "source_en": "What's the recommended minimum age?",
+      "tm": "Qual è l'età minima consigliata?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local operator — a great-value route taking in southern Seogwipo's signature coastal stops in a small group."
+      "source_en": "Licensed local operator — a great-value route taking in southern Seogwipo's signature coastal stops in a small group.",
+      "tm": "Operatore locale autorizzato — un itinerario di grande valore che raccoglie in un piccolo gruppo le tappe costiere simbolo del sud di Seogwipo."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Operatore locale autorizzato"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Fully insured, authorized Korean tour operator"
+      "source_en": "Fully insured, authorized Korean tour operator",
+      "tm": "Operatore turistico coreano autorizzato e completamente assicurato"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "Free admission at almost every stop: Oedolgae & Olle Route 7 (free), Yakcheonsa (free), O'sulloc (free), ⟦G0⟧ (free) — only ⟦G1⟧ (₩2,000) included in the base.",
+      "tm": "Ingresso gratuito in quasi tutte le tappe: Oedolgae e Olle Route 7 (gratuito), Yakcheonsa (gratuito), O'sulloc (gratuito), ⟦G0⟧ (gratuito) — solo ⟦G1⟧ (₩2.000) incluso nel prezzo base.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak",
         "⟦G1⟧ = Cascata di Jeongbang"
       ]
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Specialisti dell'itinerario"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "A hand-designed custom itinerary, not a generic loop"
+      "source_en": "A hand-designed custom itinerary, not a generic loop",
+      "tm": "Un itinerario personalizzato progettato a mano, non un giro generico"
     },
     "/bookingTrustItems/2/body": {
       "source_en": "Run as a small-group minicoach, so you can enjoy the Oedolgae Olle trail, the Yakcheonsa grounds, and the ⟦G0⟧ stairs in comfort — clearly different from a large bus tour.",
+      "tm": "Realizzato come minicoach in piccolo gruppo, così potrà godersi con comodità l'Olle trail di Oedolgae, il complesso di Yakcheonsa e le scale di ⟦G0⟧ — chiaramente diverso da un tour in bus di grandi dimensioni.",
       "glossary": [
         "⟦G0⟧ = Cascata di Jeongbang"
       ]
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Dimensione del gruppo confortevole"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Della dimensione giusta per l'itinerario"
     }
   },
   "glossaryTokens": {
@@ -261,5 +315,5 @@
       "⟦G0⟧": "Cascata di Jeongbang"
     }
   },
-  "tmHits": 0
+  "tmHits": 54
 }

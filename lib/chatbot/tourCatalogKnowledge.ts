@@ -1,3 +1,4 @@
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { expandQueryForTourCatalogue } from "@/lib/chatbot/queryIntent";
 import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
@@ -187,7 +188,7 @@ export function buildTourCatalogContextText({
   limit?: number;
   maxChars?: number;
 }): string {
-  const tours = listStaticTourProducts(locale);
+  const tours = listStaticTourProducts(toTourProductBaseLocale(locale));
   const expandedQuery = expandQueryForTourCatalogue(query);
   const ranked = tours
     .map((tour) => ({ tour, score: scoreTour(tour, expandedQuery) }))

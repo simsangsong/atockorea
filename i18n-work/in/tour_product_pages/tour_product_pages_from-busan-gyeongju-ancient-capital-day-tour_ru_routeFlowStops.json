@@ -7,68 +7,84 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Busan subway pickup (3 stations)"
+      "source_en": "Busan subway pickup (3 stations)",
+      "tm": "Посадка у метро в Пусане (3 станции)"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Отправление"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ (or Haeundae Dalmaji Hill in cherry season)",
+      "tm": "⟦G0⟧ (или холм Тальмаджи в Хэундэ в сезон сакуры)",
       "glossary": [
         "⟦G0⟧ = Бамбуковый лес Ахопсан"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Forest / Coastal road (seasonal)"
+      "source_en": "Forest / Coastal road (seasonal)",
+      "tm": "Лес / прибрежная дорога (сезонно)"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧ (UNESCO)",
+      "tm": "⟦G0⟧ (ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Храм Пульгукса"
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "UNESCO heritage"
+      "source_en": "UNESCO heritage",
+      "tm": "Наследие ЮНЕСКО"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch (Gyeongju ssambap)"
+      "source_en": "Lunch (Gyeongju ssambap)",
+      "tm": "Обед (кёнджуский ссамбап)"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Питание"
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧ & Choi Family House & ⟦G1⟧",
+      "tm": "⟦G0⟧, Дом семьи Чхве и ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Деревня ханок Кёчхон",
         "⟦G1⟧ = Мост Вольджонгё"
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Head-family hanok + Silla bridge"
+      "source_en": "Head-family hanok + Silla bridge",
+      "tm": "Ханок главной семьи и мост эпохи Силла"
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧ & Hwangnidan-gil",
+      "tm": "⟦G0⟧ и Хваннидан-гиль",
       "glossary": [
         "⟦G0⟧ = Комплекс курганов Тэрынвон"
       ]
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Royal tombs + cafe street"
+      "source_en": "Royal tombs + cafe street",
+      "tm": "Королевские курганы и улица кафе"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧ (winter: Donggung & Wolji by night)",
+      "tm": "⟦G0⟧ (зимой — Тонгун и Вольджи ночью)",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Silla artifacts / winter night view"
+      "source_en": "Silla artifacts / winter night view",
+      "tm": "Артефакты Силла / зимний ночной вид"
     },
     "/routeFlowStops/7/name": {
-      "source_en": "Busan subway drop-off"
+      "source_en": "Busan subway drop-off",
+      "tm": "Высадка у метро в Пусане"
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Возвращение"
     }
   },
   "glossaryTokens": {
@@ -89,5 +105,5 @@
       "⟦G0⟧": "Национальный музей Кёнджу"
     }
   },
-  "tmHits": 0
+  "tmHits": 16
 }

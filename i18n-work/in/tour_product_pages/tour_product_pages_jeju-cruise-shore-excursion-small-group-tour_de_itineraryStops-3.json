@@ -6,61 +6,6 @@
   "chunk": "itineraryStops-3",
   "tier": "B",
   "segments": {
-    "/itineraryStops/2/galleryItems/5/alt": {
-      "source_en": "⟦G0⟧ (East Cape) — gallery image 6",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/5/caption": {
-      "source_en": "⟦G0⟧ (East Cape) — photo 6",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/5/location": {
-      "source_en": "⟦G0⟧ (East Cape)",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/6/alt": {
-      "source_en": "⟦G0⟧ (East Cape) — gallery image 13",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/6/caption": {
-      "source_en": "⟦G0⟧ (East Cape) — photo 13",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/2/galleryItems/6/location": {
-      "source_en": "⟦G0⟧ (East Cape)",
-      "glossary": [
-        "⟦G0⟧ = Seopjikoji"
-      ]
-    },
-    "/itineraryStops/3/name": {
-      "source_en": "Lunch (East Jeju — local seafood or black pork)"
-    },
-    "/itineraryStops/3/category": {
-      "source_en": "Lunch",
-      "tm": "Mittagessen"
-    },
-    "/itineraryStops/3/duration": {
-      "source_en": "75 min"
-    },
-    "/itineraryStops/3/highlights/0": {
-      "source_en": "Guide-vetted East Jeju restaurant — Seongsan / Seongeup / Pyoseon area"
-    },
-    "/itineraryStops/3/highlights/1": {
-      "source_en": "**Jeju Black Pork BBQ** (Natural Monument 2015) or **Galchi Jorim** (braised hairtail)"
-    },
-    "/itineraryStops/3/highlights/2": {
-      "source_en": "~60 min duration — fits cruise day-trip timeline"
-    },
     "/itineraryStops/3/highlights/3": {
       "source_en": "Bilingual photo menus (English/Chinese), card + cash accepted"
     },
@@ -105,61 +50,80 @@
       ]
     },
     "/itineraryStops/4/category": {
-      "source_en": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)"
+      "source_en": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
+      "tm": "Ummauerte Stadt der Joseon-Zeit — bedeutendes Volkskulturerbe (gegründet 1423)"
     },
     "/itineraryStops/4/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Parking + welcome brief by village docent — ~10 min"
+      "source_en": "Parking + welcome brief by village docent — ~10 min",
+      "tm": "Parken + Begrüßung durch eine Dorfführerin oder einen Dorfführer — ~10 Min."
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Walk to ancient trees + village center — ~10 min"
+      "source_en": "Walk to ancient trees + village center — ~10 min",
+      "tm": "Fußweg zu den alten Bäumen + Dorfmitte — ~10 Min."
     },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Hanok interior visits (2–3 representative homes) — ~15 min"
+      "source_en": "Hanok interior visits (2–3 representative homes) — ~15 min",
+      "tm": "Besichtigung von Hanok-Innenräumen (2–3 repräsentative Häuser) — ~15 Min."
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Omegisul brewery free tasting — ~10 min"
+      "source_en": "Omegisul brewery free tasting — ~10 min",
+      "tm": "Kostenlose Verkostung in der Omegisul-Brennerei — ~10 Min."
     },
     "/itineraryStops/4/timeUsed/4": {
-      "source_en": "Olle alley walk + photography — ~10 min"
+      "source_en": "Olle alley walk + photography — ~10 min",
+      "tm": "Spaziergang durch die Olle-Gassen + Fotografieren — ~10 Min."
     },
     "/itineraryStops/4/timeUsed/5": {
-      "source_en": "Buffer — ~5 min"
+      "source_en": "Buffer — ~5 min",
+      "tm": "Puffer — ca. 5 Min."
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**"
+      "source_en": "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
+      "tm": "**1423 gegründet** von Sejong dem Großen — Verwaltungssitz bis **1914 (~500 Jahre)**"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "**110 traditional structures** within original eupseong walled-town footprint"
+      "source_en": "**110 traditional structures** within original eupseong walled-town footprint",
+      "tm": "**110 traditionelle Bauten** innerhalb des ursprünglichen Umrisses der Eupseong-Stadtmauer"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)"
+      "source_en": "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)",
+      "tm": "**Bedeutendes Volkskulturerbe Südkoreas** (das ganze Dorf + mehrere Gebäude)"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**"
+      "source_en": "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**",
+      "tm": "**Zwei rund 600 Jahre alte Bäume** in der Dorfmitte: Japanische Zelkove + Zürgelbaum — **Naturdenkmäler**"
     },
     "/itineraryStops/4/highlights/4": {
-      "source_en": "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan"
+      "source_en": "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan",
+      "tm": "Angelegt nach **koreanischen Feng-Shui-Prinzipien der Joseon-Zeit** — typischer Grundriss einer Kreisstadt"
     },
     "/itineraryStops/4/highlights/5": {
-      "source_en": "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit"
+      "source_en": "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit",
+      "tm": "Drehort von **„Dae Jang Geum“ (MBC 2003–2004)** — einem international erfolgreichen K-Drama"
     },
     "/itineraryStops/4/highlights/6": {
-      "source_en": "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)"
+      "source_en": "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)",
+      "tm": "**Omegisul (오메기술)** — ein Reisbrand von Jeju, seit Generationen von einer einzigen Familie gebrannt (kostenlose Verkostung)"
     },
     "/itineraryStops/4/highlights/7": {
-      "source_en": "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage"
+      "source_en": "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage",
+      "tm": "Historische Narben: Ein **Brand von 1826** zerstörte ~80 Gebäude; Schäden durch den **Jeju-Aufstand von 1948**"
     },
     "/itineraryStops/4/highlights/8": {
-      "source_en": "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
+      "source_en": "**FREE admission** — village still inhabited by ~250 families maintaining traditions",
+      "tm": "**Eintritt KOSTENLOS** — im Dorf leben noch ~250 Familien, die die Traditionen pflegen"
     },
     "/itineraryStops/4/smartNotes/tip": {
-      "source_en": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited"
+      "source_en": "Hire a free volunteer guide at the entrance for cultural context; respect that residents actually live here — don't enter homes uninvited",
+      "tm": "Am Eingang können Sie kostenlos eine ehrenamtliche Führung für den kulturellen Hintergrund bekommen; bedenken Sie, dass hier tatsächlich Menschen wohnen — betreten Sie Häuser nicht ungebeten"
     },
     "/itineraryStops/4/smartNotes/facilities": {
-      "source_en": "Visitor information center at entrance; English maps available"
+      "source_en": "Visitor information center at entrance; English maps available",
+      "tm": "Besucherinformationszentrum am Eingang; englische Karten erhältlich"
     },
     "/itineraryStops/4/whyOnRoute": {
       "source_en": "**⟦G0⟧ is the main cultural stop of the east route.** In a small group, the guide can explain Jeju stone houses, old village lanes, local household customs, and the role this area played in Joseon-era administration at a more personal pace. Access to private homes or resident-led explanations depends on local conditions, so the visit is presented as a respectful village walk rather than a promised home-entry program.",
@@ -168,10 +132,12 @@
       ]
     },
     "/itineraryStops/4/convenience/parking": {
-      "source_en": "Free parking near entrance"
+      "source_en": "Free parking near entrance",
+      "tm": "Kostenloses Parken nahe dem Eingang"
     },
     "/itineraryStops/4/convenience/restroom": {
-      "source_en": "Public restrooms at village entrance"
+      "source_en": "Public restrooms at village entrance",
+      "tm": "Öffentliche Toiletten am Dorfeingang"
     },
     "/itineraryStops/4/description": {
       "source_en": "**⟦G0⟧ (성읍민속마을)** is an inhabited Joseon-era village that preserves old Jeju stone walls, thatched-roof houses, narrow alleys, and traditional household layouts. Historically, the village served as the administrative center of Jeongui-hyeon, one of the main local districts of Joseon-era Jeju, and its heritage value is recognized as an Important Folklore Cultural Heritage site. \n\nUnlike a staged folk park, people still live here, so the visit must be respectful and quiet around private homes. The village is also known for its old zelkova and hackberry trees near the center, traditional Jeju household culture, stone grandfather statues, and local stories connected to village life.",
@@ -180,25 +146,31 @@
       ]
     },
     "/itineraryStops/4/visitBasics/hours": {
-      "source_en": "Open 24 hours (outdoor village); shops typically 09:00–17:00"
+      "source_en": "Open 24 hours (outdoor village); shops typically 09:00–17:00",
+      "tm": "Rund um die Uhr geöffnet (Dorf im Freien); die Läden üblicherweise 09:00–17:00 Uhr"
     },
     "/itineraryStops/4/visitBasics/closed": {
-      "source_en": "Open year-round"
+      "source_en": "Open year-round",
+      "tm": "Ganzjährig geöffnet"
     },
     "/itineraryStops/4/visitBasics/walking": {
-      "source_en": "Easy — flat dirt and stone paths through the village"
+      "source_en": "Easy — flat dirt and stone paths through the village",
+      "tm": "Leicht — ebene Erd- und Steinwege durch das Dorf"
     },
     "/itineraryStops/4/visitBasics/admission": {
-      "source_en": "Free for general village; some private homes charge for guided visits"
+      "source_en": "Free for general village; some private homes charge for guided visits",
+      "tm": "Das Dorf allgemein ist kostenlos; einzelne Privathäuser verlangen Eintritt für Führungen"
     },
     "/itineraryStops/4/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
     "/itineraryStops/4/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — Foto 1",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -212,12 +184,14 @@
     },
     "/itineraryStops/4/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
     "/itineraryStops/4/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — Foto 2",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -231,12 +205,14 @@
     },
     "/itineraryStops/4/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
     },
     "/itineraryStops/4/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
@@ -268,27 +244,51 @@
       "glossary": [
         "⟦G0⟧ = Folkloredorf Seongeup"
       ]
+    },
+    "/itineraryStops/4/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 5",
+      "tm": "⟦G0⟧ — Galeriebild 5",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/itineraryStops/4/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 5",
+      "tm": "⟦G0⟧ — Foto 5",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/itineraryStops/4/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Folkloredorf Seongeup"
+      ]
+    },
+    "/itineraryStops/5/name": {
+      "source_en": "Return to Jeju Cruise Terminal (Jeju Port — north)"
+    },
+    "/itineraryStops/5/time": {
+      "source_en": "≈ 15:30 → arrive port ≈ 16:45"
+    },
+    "/itineraryStops/5/category": {
+      "source_en": "Cruise Return & All-Aboard"
+    },
+    "/itineraryStops/5/duration": {
+      "source_en": "75 min drive + 60 min buffer"
+    },
+    "/itineraryStops/5/highlights/0": {
+      "source_en": "**Drop-off 60+ min before all-aboard time** — standard cruise embarkation buffer"
+    },
+    "/itineraryStops/5/highlights/1": {
+      "source_en": "~70–80 min from East Jeju via Highway 1132 + Route 16 with one comfort stop"
+    },
+    "/itineraryStops/5/highlights/2": {
+      "source_en": "Driver/guide assist with luggage at terminal entrance"
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/2/galleryItems/5/alt": {
-      "⟦G0⟧": "Seopjikoji"
-    },
-    "/itineraryStops/2/galleryItems/5/caption": {
-      "⟦G0⟧": "Seopjikoji"
-    },
-    "/itineraryStops/2/galleryItems/5/location": {
-      "⟦G0⟧": "Seopjikoji"
-    },
-    "/itineraryStops/2/galleryItems/6/alt": {
-      "⟦G0⟧": "Seopjikoji"
-    },
-    "/itineraryStops/2/galleryItems/6/caption": {
-      "⟦G0⟧": "Seopjikoji"
-    },
-    "/itineraryStops/2/galleryItems/6/location": {
-      "⟦G0⟧": "Seopjikoji"
-    },
     "/itineraryStops/4/name": {
       "⟦G0⟧": "Folkloredorf Seongeup"
     },
@@ -333,7 +333,16 @@
     },
     "/itineraryStops/4/galleryItems/3/location": {
       "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itineraryStops/4/galleryItems/4/alt": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itineraryStops/4/galleryItems/4/caption": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
+    },
+    "/itineraryStops/4/galleryItems/4/location": {
+      "⟦G0⟧": "Folkloredorf Seongeup"
     }
   },
-  "tmHits": 8
+  "tmHits": 41
 }

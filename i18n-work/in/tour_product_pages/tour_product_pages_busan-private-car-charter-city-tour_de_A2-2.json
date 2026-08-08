@@ -7,35 +7,44 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it."
+      "source_en": "Licensed local driver-guide, verified through AtoC Korea's Busan partner network — not a ride-hailing car with a tour label on it.",
+      "tm": "Lizenzierter einheimischer Fahrer-Guide, geprüft über das Busan-Partnernetz von AtoC Korea — kein Fahrdienstwagen mit einem Tour-Etikett darauf."
     },
     "/bookingTrustItems/0/title": {
       "source_en": "Licensed local driver-guide",
       "tm": "Lizenzierter einheimischer Fahrer-Guide"
     },
     "/bookingTrustItems/0/detail": {
-      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network."
+      "source_en": "Every driver is professionally licensed, insured, English-speaking and verified through AtoC Korea's Busan partner network.",
+      "tm": "Jede Fahrerin und jeder Fahrer ist berufslizenziert, versichert, englischsprachig und über das Busan-Partnernetz von AtoC Korea geprüft."
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it."
+      "source_en": "One price whatever the route: your total is set by the hours booked and the number of vehicles, and stop changes do not alter it.",
+      "tm": "Ein Preis, egal welche Route: Ihr Gesamtpreis richtet sich nach den gebuchten Stunden und der Zahl der Fahrzeuge; Änderungen an den Stopps ändern ihn nicht."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "One price, whatever the route"
+      "source_en": "One price, whatever the route",
+      "tm": "Ein Preis, egal welche Route"
     },
     "/bookingTrustItems/1/detail": {
-      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay."
+      "source_en": "The charge is per vehicle and per hour, so adding, dropping or reordering stops never changes what you pay.",
+      "tm": "Abgerechnet wird pro Fahrzeug und pro Stunde — Stopps hinzuzufügen, zu streichen oder umzustellen ändert also nie, was Sie zahlen."
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off."
+      "source_en": "Free cancellation up to 24 hours before pickup, which matters on a coastal city day that can be rained off.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung — wichtig an einem Tag in einer Küstenstadt, den der Regen kippen kann."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Free cancellation up to 24 hours"
+      "source_en": "Free cancellation up to 24 hours",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vorher"
     },
     "/bookingTrustItems/2/detail": {
-      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather."
+      "source_en": "Cancel free of charge up to 24 hours before pickup — useful when a Busan day depends on the weather.",
+      "tm": "Kostenfrei stornieren bis 24 Stunden vor der Abholung — praktisch, wenn ein Busan-Tag vom Wetter abhängt."
     },
     "/seasonalVariations/0/swaps": {
-      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2."
+      "source_en": "In cherry-blossom week, ask for a Dalmaji Hill drive and an extra stop at Gwangalli — both are minutes off Routes 1 and 2.",
+      "tm": "Fragen Sie in der Kirschblütenwoche nach einer Fahrt über den Dalmaji Hill und einem zusätzlichen Stopp in Gwangalli — beide liegen nur Minuten neben den Routen 1 und 2."
     },
     "/seasonalVariations/0/season": {
       "source_en": "Spring (Mar–May)",
@@ -49,7 +58,8 @@
       ]
     },
     "/seasonalVariations/1/swaps": {
-      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day."
+      "source_en": "On hot afternoons, move Gamcheon to the morning and use the air-conditioned Sky Capsule or the covered markets in the middle of the day.",
+      "tm": "Verlegen Sie an heißen Nachmittagen Gamcheon in den Vormittag und nutzen Sie mittags die klimatisierte Sky Capsule oder die überdachten Märkte."
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer (Jun–Aug)",
@@ -60,7 +70,8 @@
       "tm": "Warm und feucht, 25–32 °C, mit möglichen Monsunschauern von Juni bis Juli. Der Sonnenuntergang ist spät, daher bietet sich am Ende des Tages ein zusätzlicher Stopp an der Küste gut an."
     },
     "/seasonalVariations/2/swaps": {
-      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours."
+      "source_en": "Autumn suits all three routes as they stand; Beomeosa Temple is worth adding for foliage if you book 9 hours.",
+      "tm": "Der Herbst passt zu allen drei Routen, so wie sie sind; für die Laubfärbung lohnt sich der Beomeosa-Tempel als Ergänzung, wenn Sie 9 Stunden buchen."
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn (Sep–Nov)",
@@ -71,7 +82,8 @@
       "tm": "Koreas bestes Reisewetter — 15–25 °C, niedrige Luftfeuchtigkeit, goldenes Licht. Die Kreuzfahrtsaison erreicht hier ihren Höhepunkt."
     },
     "/seasonalVariations/3/swaps": {
-      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover."
+      "source_en": "In winter the light goes early, so put the outdoor viewpoints first and finish with markets, the tower or the arcades under cover.",
+      "tm": "Im Winter wird es früh dunkel — stellen Sie deshalb die Aussichtspunkte im Freien nach vorn und schließen Sie mit den Märkten, dem Turm oder den überdachten Passagen ab."
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter (Dec–Feb)",
@@ -86,47 +98,60 @@
       "tm": "Online reservieren"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Pick a date and the number of hours. Reserve now and pay later."
+      "source_en": "Pick a date and the number of hours. Reserve now and pay later.",
+      "tm": "Wählen Sie ein Datum und die Stundenzahl. Jetzt reservieren, später zahlen."
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Reserve online and choose your date and duration; confirmation is instant."
+      "source_en": "Reserve online and choose your date and duration; confirmation is instant.",
+      "tm": "Reservieren Sie online und wählen Sie Datum und Dauer; die Bestätigung erfolgt sofort."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "Tell us where you are staying"
+      "source_en": "Tell us where you are staying",
+      "tm": "Sagen Sie uns, wo Sie wohnen"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours."
+      "source_en": "Send your hotel and preferred start time — we confirm the pickup within 24 hours.",
+      "tm": "Schicken Sie uns Ihr Hotel und die gewünschte Startzeit — wir bestätigen die Abholung innerhalb von 24 Stunden."
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed."
+      "source_en": "Send your accommodation and preferred start time so the pickup point and time can be confirmed.",
+      "tm": "Schicken Sie uns Ihre Unterkunft und die gewünschte Startzeit, damit Abholort und Abholzeit bestätigt werden können."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Choose or build your route"
+      "source_en": "Choose or build your route",
+      "tm": "Route wählen oder selbst bauen"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before."
+      "source_en": "Take one of the three routes, or send your own list — up to 24 hours before.",
+      "tm": "Nehmen Sie eine der drei Routen oder schicken Sie Ihre eigene Liste — bis 24 Stunden vorher."
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours."
+      "source_en": "Pick one of the three recommended routes or send your own stop list; we confirm what fits your booked hours.",
+      "tm": "Wählen Sie eine der drei empfohlenen Routen oder schicken Sie Ihre eigene Stoppliste; wir bestätigen, was in Ihre gebuchten Stunden passt."
     },
     "/bookingSupportSteps/3/title": {
       "source_en": "Receive driver details",
       "tm": "Fahrerdaten erhalten"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Driver name, vehicle plate and contact number, sent the evening before."
+      "source_en": "Driver name, vehicle plate and contact number, sent the evening before.",
+      "tm": "Name des Fahrers, Kennzeichen und Kontaktnummer werden am Vorabend zugesendet."
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter."
+      "source_en": "Driver name, vehicle plate number and a contact phone are sent the evening before the charter.",
+      "tm": "Name des Fahrers, Kennzeichen des Fahrzeugs und eine Kontakttelefonnummer werden am Vorabend des Charters zugesendet."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Meet at your hotel"
+      "source_en": "Meet at your hotel",
+      "tm": "Treffpunkt an Ihrem Hotel"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time."
+      "source_en": "Your driver-guide waits in the lobby or at the entrance at the agreed time.",
+      "tm": "Ihr Fahrer-Guide wartet zur vereinbarten Zeit in der Lobby oder am Eingang."
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin."
+      "source_en": "Your driver-guide meets you at your accommodation at the confirmed time and the booked hours begin.",
+      "tm": "Ihr Fahrer-Guide holt Sie zur bestätigten Zeit an Ihrer Unterkunft ab, und die gebuchten Stunden beginnen."
     },
     "/practicalWeatherStatic/advice": {
       "source_en": "Layered clothing in spring/autumn; sun protection and light rain shell in summer; warm coat and gloves in winter for the coastal cliffs at ⟦G0⟧.",
@@ -148,5 +173,5 @@
       "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 13
+  "tmHits": 38
 }

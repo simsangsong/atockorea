@@ -3,17 +3,26 @@
  *
  * 플랜: docs/i18n-expansion-plan-v2-2026-07-25.md (v3.1) §6 불변 규칙
  *
- *   npm run i18n:apply -- --locale=de                 # 드라이런 (기본)
- *   npm run i18n:apply -- --locale=de --apply         # 실제 쓰기
+ *   npm run i18n:apply -- --locale=de                            # 드라이런 (기본)
+ *   npm run i18n:apply -- --locale=de --apply                    # 신규 행 INSERT
+ *   npm run i18n:apply -- --locale=de --apply --overwrite        # 기존 행 갱신
  *   npm run i18n:apply -- --locale=de --apply --partial
  *
- * 🔴 이 스크립트가 지키는 불변식 (플랜 v3 §6):
- *   1. **INSERT만.** 기존 로케일 행(en/ko/ja/es/zh/zh-TW)을 SELECT 이상으로 건드리지 않는다.
- *      대상 (slug, locale) 행이 이미 있으면 건너뛴다 — UPDATE 경로가 존재하지 않는다.
- *   2. **오픈 게이트를 건드리지 않는다.** `TOUR_PRODUCT_URL_LOCALES` 수정은 사람 결정이다.
- *      de/fr/it/ru은 `TOUR_PRODUCT_FALLBACK_URL_LOCALES`에 있으므로 이 INSERT는 고객에게
- *      보이지 않는다 — 그래서 야간 무인 실행이 안전하다.
+ * 🔴 이 스크립트가 지키는 불변식:
+ *   1. **기본은 INSERT-only.** 대상 (slug, locale) 행이 이미 있으면 실패하고 건너뛴다.
+ *      `--overwrite` 를 명시해야만 upsert 로 바뀐다 — 사장님 지시(2026-08-08)로
+ *      추가됐다. 영어 원문이 바뀌었는데 번역 행이 옛 코스를 들고 있는 경우가 실제로
+ *      있었고(제주 동부 de/fr/it 는 함덕이 첫 스톱, 부산 크루즈는 스톱 12→11),
+ *      그때는 갱신이 정답이지 방치가 정답이 아니다.
+ *   2. **커버리지 100% 게이트는 두 경로 모두에 걸린다.** `--partial` 없이는 반쪽
+ *      번역이 기존 행을 덮을 수 없다.
  *   3. 번역이 없는 포인터는 영어 원문을 유지한다(영어 폴백).
+ *   4. payload 는 **라이브 EN 행을 통째로 복사**한 뒤 번역 포인터만 덮어쓴다. 그래서
+ *      재적용은 코스·이미지·구조를 자동으로 라이브 기준으로 되돌린다.
+ *
+ * ⚠ 2026-08-08 이전 헤더는 "오픈 게이트를 건드리지 않으니 고객에게 안 보인다"고 적어
+ *   두었는데, 그 전제는 끝났다 — de/fr/it/ru 는 이제 실제로 서빙된다. 이 스크립트의
+ *   쓰기는 곧바로 손님 화면에 반영된다.
  */
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
 import { existsSync, readFileSync } from 'node:fs';
@@ -50,6 +59,17 @@ function flag(name: string): string | undefined {
 const LOCALE = flag('locale');
 const DO_APPLY = argv.includes('--apply');
 const ALLOW_PARTIAL = argv.includes('--partial');
+/**
+ * 🔴 기존 (slug, locale) 행을 덮어쓴다. 기본값은 여전히 INSERT-only다.
+ *
+ * 이 플래그가 필요한 이유는 하나뿐이다: **영어 원문이 바뀌었는데 번역 행이 옛 코스를
+ * 그대로 들고 있는 경우.** payload 는 아래에서 라이브 EN 행을 통째로 복사한 뒤 번역
+ * 포인터만 덮어쓰므로, 재적용하면 코스·이미지·구조가 전부 라이브 기준으로 재생성된다.
+ *
+ * 커버리지 게이트(100%)는 그대로 걸린다 — `--partial` 없이는 반쪽 번역으로 기존 행을
+ * 망가뜨릴 수 없다.
+ */
+const OVERWRITE = argv.includes('--overwrite');
 const ONLY_SLUGS = flag('slugs')?.split(',').map((s) => s.trim()).filter(Boolean);
 
 if (!LOCALE || !['de', 'fr', 'it', 'ru'].includes(LOCALE)) {
@@ -149,8 +169,10 @@ async function main(): Promise<void> {
       skipped += 1;
       continue;
     }
-    if (existing.has(slug)) {
-      console.log(`- ${slug} — ${locale} 행이 이미 존재. 건너뜀 (UPDATE 경로 없음)`);
+    if (existing.has(slug) && !OVERWRITE) {
+      console.log(
+        `- ${slug} — ${locale} 행이 이미 존재. 건너뜀 (덮어쓰려면 --overwrite)`,
+      );
       skipped += 1;
       continue;
     }
@@ -255,9 +277,11 @@ async function main(): Promise<void> {
 
     if (!DO_APPLY) continue;
 
-    const { error: insErr } = await client.from(SURFACE).insert(row);
+    const { error: insErr } = OVERWRITE
+      ? await client.from(SURFACE).upsert(row, { onConflict: 'slug,locale' })
+      : await client.from(SURFACE).insert(row);
     if (insErr) {
-      console.log(`    ✗ INSERT 실패: ${insErr.message}`);
+      console.log(`    ✗ ${OVERWRITE ? 'UPSERT' : 'INSERT'} 실패: ${insErr.message}`);
       skipped += 1;
       continue;
     }
@@ -265,11 +289,11 @@ async function main(): Promise<void> {
   }
 
   console.log(
-    `\n${DO_APPLY ? '발행' : '드라이런'} — INSERT ${inserted} · 건너뜀 ${skipped}`,
+    `\n${DO_APPLY ? '발행' : '드라이런'} — ${OVERWRITE ? 'UPSERT' : 'INSERT'} ${inserted} · 건너뜀 ${skipped}`,
   );
   if (!DO_APPLY) console.log('실제 쓰기: --apply 를 붙여라.');
   console.log(
-    `\n오픈 게이트는 건드리지 않았다 — ${locale} 는 여전히 TOUR_PRODUCT_FALLBACK_URL_LOCALES 에 있어 고객에게는 영어가 보인다.`,
+    `\n🔴 ${locale} 는 2026-08-08 부터 실제로 서빙된다 — 이 쓰기는 곧바로 손님 화면에 반영된다.`,
   );
 }
 

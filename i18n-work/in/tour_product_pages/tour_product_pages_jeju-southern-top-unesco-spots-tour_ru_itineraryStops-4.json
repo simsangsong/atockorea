@@ -6,128 +6,280 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
+    "/itineraryStops/5/description": {
+      "source_en": "**O'sulloc Tea Museum (O'Sulloc, 'meeting snow + green')** is the tea-culture flagship of **Amorepacific**, Korea's largest beauty company. Founder **Chairman Suh Sung-whan personally pioneered the project in 1979**, reclaiming the volcanic-ash farmland of Jeju's Seogwang plateau into tea fields. Today the **Seogwang Dawon** is **Korea's largest green-tea field**, producing **~700 tonnes a year** across Amorepacific's three Jeju estates. \n\nThe museum building **opened in 2001** in the heart of the plantation, and its minimalist design earned it a place among **designboom's Top 10 art museums in the world**. **Free admission**, open daily, with about **2 million visitors a year**. The visit splits into three parts: **(1) Museum interior** — the tea-making process, an antique tea-ware collection, and a rooftop observation deck; **(2) Tea House cafe** — the signature **green tea rolling cake** and **green tea ice cream**; **(3) Plantation walking paths** — gravel paths between the tea bushes (a sunset photo spot). \n\n**Innisfree Jeju House** (Amorepacific's natural-cosmetics brand) is a 5-minute walk away, with free admission and an optional tangerine soap DIY workshop (₩15,000).",
+      "tm": "**Чайный музей Osulloc (O'Sulloc, «встреча снега и зелени»)** — флагман чайной культуры **Amorepacific**, крупнейшей косметической компании Кореи. Основатель, **председатель Со Сонхван, лично начал проект в 1979 году**, превратив вулканические пепельные земли плато Согван на Чеджу в чайные поля. Сегодня **Seogwang Dawon** — **крупнейшая в Корее плантация зелёного чая** с производством **~700 тонн в год** на трёх владениях Amorepacific на Чеджу. \n\nЗдание музея **открылось в 2001 году** в самом сердце плантации, а его минималистичный дизайн принёс ему место в **Top 10 художественных музеев мира по версии designboom**. **Вход свободный**, открыто ежедневно, около **2 миллионов посетителей в год**. Визит делится на три части: **(1) Интерьеры музея** — процесс производства чая, коллекция старинной чайной утвари и смотровая площадка на крыше; **(2) Кафе Tea House** — фирменные **рулет с зелёным чаем** и **мороженое с зелёным чаем**; **(3) Тропы по плантации** — гравийные дорожки между чайными кустами (место для закатных фото). \n\n**Innisfree Jeju House** (бренд натуральной косметики Amorepacific) находится в 5 минутах ходьбы, вход свободный, по желанию — мастер-класс по мандариновому мылу (₩15 000)."
+    },
+    "/itineraryStops/5/visitBasics/hours": {
+      "source_en": "Summer (Apr–Oct) 09:00–19:00 / Winter (Nov–Mar) 09:00–18:00",
+      "tm": "Лето (апр–окт) 09:00–19:00 / зима (ноя–мар) 09:00–18:00"
+    },
+    "/itineraryStops/5/visitBasics/closed": {
+      "source_en": "Open year-round (may vary temporarily in bad weather)",
+      "tm": "Открыто круглый год (возможны временные изменения в непогоду)"
+    },
+    "/itineraryStops/5/visitBasics/walking": {
+      "source_en": "Easy — flat paved paths, stroller- and wheelchair-accessible",
+      "tm": "Легко — ровные мощёные дорожки, доступно с детской коляской и на кресле-коляске"
+    },
+    "/itineraryStops/5/visitBasics/admission": {
+      "source_en": "Museum and tea field free; cafe drinks, desserts and classes charged separately",
+      "tm": "Музей и чайное поле бесплатно; напитки, десерты и мастер-классы в кафе оплачиваются отдельно"
+    },
+    "/itineraryStops/5/galleryItems/0/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 1",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — изображение галереи 1"
+    },
+    "/itineraryStops/5/galleryItems/0/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 1",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — фото 1"
+    },
+    "/itineraryStops/5/galleryItems/0/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/1/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 2",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — изображение галереи 2"
+    },
+    "/itineraryStops/5/galleryItems/1/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 2",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — фото 2"
+    },
+    "/itineraryStops/5/galleryItems/1/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/2/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 3",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — изображение галереи 3"
+    },
+    "/itineraryStops/5/galleryItems/2/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 3",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — фото 3"
+    },
+    "/itineraryStops/5/galleryItems/2/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/3/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 4",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — изображение галереи 4"
+    },
+    "/itineraryStops/5/galleryItems/3/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 4",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — фото 4"
+    },
+    "/itineraryStops/5/galleryItems/3/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/4/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 5"
+    },
+    "/itineraryStops/5/galleryItems/4/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 5"
+    },
+    "/itineraryStops/5/galleryItems/4/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/5/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 6"
+    },
+    "/itineraryStops/5/galleryItems/5/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 6"
+    },
+    "/itineraryStops/5/galleryItems/5/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/5/galleryItems/6/alt": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — gallery image 7",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — изображение галереи 7"
+    },
+    "/itineraryStops/5/galleryItems/6/caption": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields — photo 7",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая — фото 7"
+    },
+    "/itineraryStops/5/galleryItems/6/location": {
+      "source_en": "O'sulloc Tea Museum + Green Tea Fields",
+      "tm": "Чайный музей Osulloc и плантации зелёного чая"
+    },
+    "/itineraryStops/6/name": {
+      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО)",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/6/category": {
+      "source_en": "UNESCO Volcanic Geology — ⟦G0⟧ Trail (triple natural designation)",
+      "tm": "Вулканическая геология ЮНЕСКО — тропа ⟦G0⟧ (тройной природный статус)",
+      "glossary": [
+        "⟦G0⟧ = Халласан Осынсэнъак"
+      ]
+    },
+    "/itineraryStops/6/duration": {
+      "source_en": "75 min",
+      "tm": "75 мин"
+    },
+    "/itineraryStops/6/timeUsed/0": {
+      "source_en": "Eorimok parking + restroom + trail briefing — ~10 min",
+      "tm": "Парковка Оримок, туалет и инструктаж перед тропой — ~10 мин"
+    },
+    "/itineraryStops/6/timeUsed/1": {
+      "source_en": "1.3 km decking ascent one-way — ~25 min",
+      "tm": "Подъём 1,3 км по настилу в одну сторону — ~25 мин"
+    },
+    "/itineraryStops/6/timeUsed/2": {
+      "source_en": "Summit deck + photos + tochika viewing — ~15 min",
+      "tm": "Смотровая площадка на вершине, фото и осмотр дота — ~15 мин"
+    },
+    "/itineraryStops/6/timeUsed/3": {
+      "source_en": "Descent — ~20 min",
+      "tm": "Спуск — ~20 мин"
+    },
+    "/itineraryStops/6/timeUsed/4": {
+      "source_en": "Buffer / regroup — ~5 min",
+      "tm": "Запас времени и сбор группы — ~5 мин"
+    },
+    "/itineraryStops/6/highlights/0": {
+      "source_en": "**Hallasan = triple natural designation**: UNESCO World Heritage 2007 + Biosphere Reserve 2002 + National Park 1970",
+      "tm": "**Халласан = тройной природный статус**: Всемирное наследие ЮНЕСКО 2007 + биосферный заповедник 2002 + национальный парк 1970"
+    },
+    "/itineraryStops/6/highlights/1": {
+      "source_en": "**Eoseungsaengak 1,169 m** — a Hallasan-side oreum (parasitic cone)",
+      "tm": "**Осынсэнъак 1 169 м** — орым (паразитический конус) на склоне Халласана"
+    },
+    "/itineraryStops/6/highlights/2": {
+      "source_en": "**1.3 km one-way / about 200 m gain** — wide steps + wooden decking, sneakers are enough",
+      "tm": "**1,3 км в одну сторону, набор высоты около 200 м** — широкие ступени и деревянный настил, достаточно кроссовок"
+    },
+    "/itineraryStops/6/highlights/3": {
+      "source_en": "Views of **Hallasan's slopes, the oreum field, and the northern sea** from the deck observation point",
+      "tm": "Виды на **склоны Халласана, поле орымов и северное море** со смотровой площадки на настиле"
+    },
+    "/itineraryStops/6/highlights/4": {
+      "source_en": "**1945 Imperial Japanese tochika (pillbox)** at the summit — a rare high-altitude relic",
+      "tm": "**Японский дот 1945 года** на вершине — редкий высокогорный памятник"
+    },
+    "/itineraryStops/6/highlights/5": {
+      "source_en": "**Free admission** + free parking; no summit reservation needed (the Baengnokdam course is capped at 1,000/day)",
+      "tm": "**Вход свободный** и бесплатная парковка; бронирование для восхождения не требуется (на маршрут к Пэннокдаму лимит 1 000 человек в день)"
+    },
+    "/itineraryStops/6/highlights/6": {
+      "source_en": "Round-trip about **60–75 min** — on the route back over Hallasan to Jeju City via Route 1100",
+      "tm": "Туда и обратно около **60–75 мин** — на обратном пути через Халласан в город Чеджу по дороге 1100"
+    },
+    "/itineraryStops/6/highlights/7": {
+      "source_en": "High-altitude weather changes fast — bringing a layer recommended",
+      "tm": "Погода на высоте меняется быстро — рекомендуется взять дополнительный слой одежды"
+    },
+    "/itineraryStops/6/smartNotes/tip": {
+      "source_en": "A focused scenic walk rather than a leisurely stroll; high-altitude weather changes fast — check Route 1100 and the weather before setting off",
+      "tm": "Это скорее сосредоточенная прогулка ради видов, чем неспешный променад; погода на высоте меняется быстро — перед выходом проверьте дорогу 1100 и прогноз"
+    },
+    "/itineraryStops/6/smartNotes/facilities": {
+      "source_en": "Facilities concentrated at the Eorimok entrance; none along the route",
+      "tm": "Удобства сосредоточены у входа Оримок; на самом маршруте их нет"
+    },
     "/itineraryStops/6/whyOnRoute": {
-      "source_en": "**The Hallasan finale of the south-Jeju route.** Eoseungsaengak offers a genuine mountain experience at a scale suited to a day tour, and it sits naturally on the way back from O'sulloc over Hallasan to Jeju City via Route 1100. A day that began on the coast finishes with UNESCO volcanic scenery. If Route 1100 is closed by winter snow, it may switch to a lower-elevation alternate."
+      "source_en": "**The Hallasan finale of the south-Jeju route.** Eoseungsaengak offers a genuine mountain experience at a scale suited to a day tour, and it sits naturally on the way back from O'sulloc over Hallasan to Jeju City via Route 1100. A day that began on the coast finishes with UNESCO volcanic scenery. If Route 1100 is closed by winter snow, it may switch to a lower-elevation alternate.",
+      "tm": "**Финал на Халласане в маршруте по югу Чеджу.** Осынсэнъак даёт настоящий горный опыт в масштабе, подходящем для дневного тура, и естественно вписывается в обратный путь от Osulloc через Халласан в город Чеджу по дороге 1100. День, начавшийся на побережье, завершается вулканическими пейзажами ЮНЕСКО. Если зимой дорога 1100 закрыта из-за снега, возможна замена на альтернативу на меньшей высоте."
     },
     "/itineraryStops/6/convenience/parking": {
-      "source_en": "Available at Eorimok parking (free)"
+      "source_en": "Available at Eorimok parking (free)",
+      "tm": "Есть на парковке Оримок (бесплатно)"
     },
     "/itineraryStops/6/convenience/restroom": {
-      "source_en": "Available at the Eorimok entrance area"
+      "source_en": "Available at the Eorimok entrance area",
+      "tm": "Есть у входной зоны Оримок"
     },
     "/itineraryStops/6/description": {
-      "source_en": "**Eoseungsaengak (1,169 m)** is a short Hallasan-side volcanic cone (oreum) trail starting near the Eorimok Visitor Center. Hallasan is Korea's highest peak and a **UNESCO World Natural Heritage site (2007) and Biosphere Reserve (2002)**, and this trail is a manageable way to experience the mountain without attempting the summit climb. \n\nToday's route places Eoseungsaengak on the way **back over Hallasan to Jeju City from O'sulloc, taking Route 1100 (Jeju's highest-altitude national road)**. The trail is far shorter than the Seongpanak or Gwaneumsa summit courses, **does not require the summit reservation system**, and consists of wide steps and wooden decking — sneakers are enough (1.3 km one-way / about 200 m elevation gain). \n\nOn clear days the upper deck observation point looks out over **Hallasan's high-altitude slopes, Jeju's oreum field, and the northern sea**, and a **1945 Imperial Japanese tochika (pillbox)** remains at the summit. Mountain weather changes quickly, so bringing a layer is recommended. **Free admission**, and the cool mountain air makes an impressive finale to close the day."
+      "source_en": "**Eoseungsaengak (1,169 m)** is a short Hallasan-side volcanic cone (oreum) trail starting near the Eorimok Visitor Center. Hallasan is Korea's highest peak and a **UNESCO World Natural Heritage site (2007) and Biosphere Reserve (2002)**, and this trail is a manageable way to experience the mountain without attempting the summit climb. \n\nToday's route places Eoseungsaengak on the way **back over Hallasan to Jeju City from O'sulloc, taking Route 1100 (Jeju's highest-altitude national road)**. The trail is far shorter than the Seongpanak or Gwaneumsa summit courses, **does not require the summit reservation system**, and consists of wide steps and wooden decking — sneakers are enough (1.3 km one-way / about 200 m elevation gain). \n\nOn clear days the upper deck observation point looks out over **Hallasan's high-altitude slopes, Jeju's oreum field, and the northern sea**, and a **1945 Imperial Japanese tochika (pillbox)** remains at the summit. Mountain weather changes quickly, so bringing a layer is recommended. **Free admission**, and the cool mountain air makes an impressive finale to close the day.",
+      "tm": "**Осынсэнъак (1 169 м)** — короткая тропа по вулканическому конусу (орым) на склоне Халласана, начинающаяся рядом с визит-центром Оримок. Халласан — высочайшая вершина Кореи, **объект Всемирного природного наследия ЮНЕСКО (2007) и биосферный заповедник (2002)**, и эта тропа — посильный способ почувствовать гору, не поднимаясь на вершину. \n\nСегодняшний маршрут ставит Осынсэнъак на **обратном пути через Халласан из Osulloc в город Чеджу по дороге 1100 (самая высокогорная национальная дорога Чеджу)**. Тропа гораздо короче вершинных маршрутов Сонпханак и Кванымса, **не требует системы бронирования для восхождения** и состоит из широких ступеней и деревянного настила — достаточно кроссовок (1,3 км в одну сторону, набор высоты около 200 м). \n\nВ ясные дни со смотровой площадки наверху открывается вид на **высокогорные склоны Халласана, поле орымов Чеджу и северное море**, а на вершине сохранился **японский дот (точка) 1945 года**. Погода в горах меняется быстро, поэтому рекомендуется взять дополнительный слой одежды. **Вход свободный**, и прохладный горный воздух становится впечатляющим завершением дня."
     },
     "/itineraryStops/6/visitBasics/hours": {
-      "source_en": "Trail entry from 05:00 (seasonal variation, extended in summer)"
+      "source_en": "Trail entry from 05:00 (seasonal variation, extended in summer)",
+      "tm": "Вход на тропу с 05:00 (сезонные изменения, летом дольше)"
     },
     "/itineraryStops/6/visitBasics/closed": {
-      "source_en": "Weather-dependent (snow, fog, high-wind closures common Nov–Mar)"
+      "source_en": "Weather-dependent (snow, fog, high-wind closures common Nov–Mar)",
+      "tm": "Зависит от погоды (закрытия из-за снега, тумана и сильного ветра часты с ноября по март)"
     },
     "/itineraryStops/6/visitBasics/walking": {
-      "source_en": "Moderate — short distance but with stairs and uphill sections"
+      "source_en": "Moderate — short distance but with stairs and uphill sections",
+      "tm": "Средняя — расстояние небольшое, но есть лестницы и подъёмы"
     },
     "/itineraryStops/6/visitBasics/admission": {
-      "source_en": "Free"
+      "source_en": "Free",
+      "tm": "Бесплатно"
     },
     "/itineraryStops/6/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — изображение галереи 1",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — фото 1",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 2",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 2",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — фото 2",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — gallery image 3",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — изображение галереи 3",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/itineraryStops/6/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage) — photo 3",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО) — фото 3",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
-    },
-    "/itineraryStops/6/galleryItems/2/location": {
-      "source_en": "⟦G0⟧ (UNESCO World Natural Heritage)",
-      "glossary": [
-        "⟦G0⟧ = Халласан Осынсэнъак"
-      ]
-    },
-    "/itineraryStops/7/name": {
-      "source_en": "Drop-off (5 points across Jeju City)"
-    },
-    "/itineraryStops/7/category": {
-      "source_en": "Drop-off — Jeju City Hub Sequence"
-    },
-    "/itineraryStops/7/duration": {
-      "source_en": "40 min"
-    },
-    "/itineraryStops/7/timeUsed/0": {
-      "source_en": "Eoseungsaengak → Route 1100 → Dongmun — ~40 min"
-    },
-    "/itineraryStops/7/timeUsed/1": {
-      "source_en": "Dongmun drop — 5 min"
-    },
-    "/itineraryStops/7/timeUsed/2": {
-      "source_en": "→ City Hall — 10 min, drop — 5 min"
-    },
-    "/itineraryStops/7/timeUsed/3": {
-      "source_en": "→ Yeon-dong → Hagwi → Airport — sequenced"
-    },
-    "/itineraryStops/7/highlights/0": {
-      "source_en": "**5 drop-off points** — Dongmun, City Hall, Yeon-dong/Nohyeong, Hagwi, Airport"
-    },
-    "/itineraryStops/7/highlights/1": {
-      "source_en": "**Dongmun Traditional Market** — optional dinner + tangerine product shopping"
-    },
-    "/itineraryStops/7/highlights/2": {
-      "source_en": "Estimated arrival: Dongmun ~18:30 → Airport ~19:05"
-    },
-    "/itineraryStops/7/highlights/3": {
-      "source_en": "**Same-day evening flights from Jeju International Airport** generally viable (last departure ~21:30)"
-    },
-    "/itineraryStops/7/highlights/4": {
-      "source_en": "Coach Wi-Fi + flexible driver coordination for hotel/shop adjustments"
-    },
-    "/itineraryStops/7/whyOnRoute": {
-      "source_en": "Drop-off follows the return road down off Hallasan via Route 1100 back into Jeju City. Guests with evening flights should tell the guide in advance so the final stop time can be coordinated smoothly."
-    },
-    "/itineraryStops/7/description": {
-      "source_en": "**Drop-off follows the same order as the morning pickup, with one added option**: Dongmun Traditional Market → Jeju City Hall → Hagwi-dong → Jeju International Airport, with an optional stop for the Yeon-dong/Nohyeong hotel zone before City Hall (a 5th drop point). From Eoseungsaengak the coach **takes Route 1100 down off Hallasan and back to Jeju City**. Estimated arrival: Dongmun ~18:30, City Hall ~18:40, Yeon-dong ~18:45, Hagwi ~18:55, Airport ~19:05. \n\n**Same-day evening flights from Jeju International Airport** are generally viable (last departure ~21:30). Coach Wi-Fi is available throughout, and the driver coordinates any guest-requested shop/hotel adjustments."
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/6/name": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
+    "/itineraryStops/6/category": {
+      "⟦G0⟧": "Халласан Осынсэнъак"
+    },
     "/itineraryStops/6/galleryItems/0/alt": {
       "⟦G0⟧": "Халласан Осынсэнъак"
     },
@@ -151,10 +303,7 @@
     },
     "/itineraryStops/6/galleryItems/2/caption": {
       "⟦G0⟧": "Халласан Осынсэнъак"
-    },
-    "/itineraryStops/6/galleryItems/2/location": {
-      "⟦G0⟧": "Халласан Осынсэнъак"
     }
   },
-  "tmHits": 0
+  "tmHits": 56
 }

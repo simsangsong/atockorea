@@ -8,58 +8,68 @@
   "segments": {
     "/seo/title": {
       "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Library Day Tour from Seoul | AtoC Korea",
+      "tm": "Suwon Hwaseong, ⟦G0⟧ e biblioteca Starfield: escursione da Seoul | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/seo/pageTitle": {
       "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Tour | AtoC Korea",
+      "tm": "Suwon Hwaseong, ⟦G0⟧ e Starfield | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/seo/metaDescription": {
       "source_en": "9-hour small-group day tour from Seoul: UNESCO ⟦G0⟧, Hwaseong Haenggung, Starfield Library, LED-lit ⟦G1⟧.",
+      "tm": "Escursione di 9 ore in piccolo gruppo da Seoul: la ⟦G0⟧ patrimonio UNESCO, il Haenggung di Hwaseong, la biblioteca Starfield e la ⟦G1⟧ illuminata a LED.",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong",
         "⟦G1⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Suwon Hwaseong tour from Seoul"
+      "source_en": "Suwon Hwaseong tour from Seoul",
+      "tm": "tour di Suwon Hwaseong da Seoul"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ day trip",
+      "tm": "escursione alla ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Starfield Library Suwon tour"
+      "source_en": "Starfield Library Suwon tour",
+      "tm": "visita alla biblioteca Starfield di Suwon"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "UNESCO Korea day tour"
+      "source_en": "UNESCO Korea day tour",
+      "tm": "escursione UNESCO in Corea"
     },
     "/hero/meta/stops": {
       "source_en": "6 stops",
       "tm": "6 tappe"
     },
     "/hero/meta/region": {
-      "source_en": "Suwon & Gwangmyeong"
+      "source_en": "Suwon & Gwangmyeong",
+      "tm": "Suwon e Gwangmyeong"
     },
     "/hero/meta/duration": {
       "source_en": "9 hours",
       "tm": "9 ore"
     },
     "/hero/pills/0": {
-      "source_en": "Small Group"
+      "source_en": "Small Group",
+      "tm": "Piccolo gruppo"
     },
     "/hero/pills/1": {
       "source_en": "Culture",
       "tm": "Cultura"
     },
     "/hero/tagline": {
-      "source_en": "Korea's only walled fortress city built with its original Uigwe records, a former gold mine reborn as art, and the country's most-photographed library"
+      "source_en": "Korea's only walled fortress city built with its original Uigwe records, a former gold mine reborn as art, and the country's most-photographed library",
+      "tm": "L’unica città-fortezza cinta da mura della Corea costruita con i suoi registri Uigwe originali, un’ex miniera d’oro rinata come arte e la biblioteca più fotografata del Paese"
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Value",
@@ -130,50 +140,63 @@
       "tm": "Recensioni"
     },
     "/catalog_card/tags/1": {
-      "source_en": "culture"
+      "source_en": "culture",
+      "tm": "cultura"
     },
     "/catalog_card/tags/2": {
-      "source_en": "unesco"
+      "source_en": "unesco",
+      "tm": "unesco"
     },
     "/catalog_card/tags/3": {
-      "source_en": "cave"
+      "source_en": "cave",
+      "tm": "grotta"
     },
     "/catalog_card/tags/4": {
-      "source_en": "library"
+      "source_en": "library",
+      "tm": "biblioteca"
     },
     "/catalog_card/tags/5": {
-      "source_en": "shopping"
+      "source_en": "shopping",
+      "tm": "shopping"
     },
     "/catalog_card/title": {
       "source_en": "Suwon: Hwaseong, ⟦G0⟧ & Starfield",
+      "tm": "Suwon: Hwaseong, ⟦G0⟧ e Starfield",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small Group"
+      "source_en": "Small Group",
+      "tm": "Piccolo gruppo"
     },
     "/catalog_card/badges/1": {
       "source_en": "Culture",
       "tm": "Cultura"
     },
     "/catalog_card/badges/2": {
-      "source_en": "UNESCO"
+      "source_en": "UNESCO",
+      "tm": "UNESCO"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Cave"
+      "source_en": "Cave",
+      "tm": "Grotta"
     },
     "/catalog_card/badges/4": {
-      "source_en": "Library"
+      "source_en": "Library",
+      "tm": "Biblioteca"
     },
     "/catalog_card/badges/5": {
-      "source_en": "Shopping"
+      "source_en": "Shopping",
+      "tm": "Shopping"
     },
     "/catalog_card/badges/6": {
-      "source_en": "Day Trip"
+      "source_en": "Day Trip",
+      "tm": "Escursione di un giorno"
     },
     "/catalog_card/region": {
-      "source_en": "Suwon & Gwangmyeong"
+      "source_en": "Suwon & Gwangmyeong",
+      "tm": "Suwon e Gwangmyeong"
     },
     "/catalog_card/duration": {
       "source_en": "9 hours",
@@ -181,55 +204,67 @@
     },
     "/catalog_card/subtitle": {
       "source_en": "A small-group cultural day-trip from Seoul covering four contrasting sides of Gyeonggi Province: the UNESCO-listed ⟦G0⟧ with its…",
+      "tm": "Un’escursione culturale di un giorno in piccolo gruppo da Seoul, che attraversa quattro volti contrastanti della provincia di Gyeonggi: la ⟦G0⟧ iscritta all’UNESCO con le sue…",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong"
       ]
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$53 per person (was $59, 10% off)"
+      "source_en": "From US$53 per person (was $59, 10% off)",
+      "tm": "Da 53 US$ a persona (invece di 59 $, 10% di sconto)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group cultural day-trip from Seoul covering three contrasting sides of Gyeonggi Province: the UNESCO-listed ⟦G0⟧ with its 18th-century walls and Haenggung Palace, the dramatic LED-lit underground theme park inside ⟦G1⟧ (a former Japanese-era gold mine), the four-floor Starfield Library Suwon. 9 hours with included transport and admissions.",
+      "tm": "Un’escursione culturale di un giorno in piccolo gruppo da Seoul, che attraversa tre volti contrastanti della provincia di Gyeonggi: la ⟦G0⟧ iscritta all’UNESCO con le sue mura del XVIII secolo e il palazzo Haenggung, lo spettacolare parco tematico sotterraneo illuminato a LED all’interno della ⟦G1⟧ (un’ex miniera d’oro di epoca giapponese) e la biblioteca Starfield di Suwon su quattro piani. 9 ore, trasporto e ingressi compresi.",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong",
         "⟦G1⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Suwon Heritage Day"
+      "source_en": "Suwon Heritage Day",
+      "tm": "Giornata del patrimonio di Suwon"
     },
     "/headlineLine2": {
       "source_en": "Hwaseong, ⟦G0⟧ & Starfield",
+      "tm": "Hwaseong, ⟦G0⟧ e Starfield",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "Punti di ritrovo fissi: non è previsto il prelievo in hotel. I ritardatari non possono essere attesi e non hanno diritto al rimborso."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Hongik Univ. Station (Exit 8)"
+      "source_en": "Hongik Univ. Station (Exit 8)",
+      "tm": "Stazione Hongik Univ. (uscita 8)"
     },
     "/pickup_dropoff/departure/0/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/pickup_dropoff/departure/1/name": {
       "source_en": "⟦G0⟧ Station (Exit 2)",
+      "tm": "Stazione ⟦G0⟧ (uscita 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/departure/1/note": {
-      "source_en": "Please arrive 10 minutes before the departure time."
+      "source_en": "Please arrive 10 minutes before the departure time.",
+      "tm": "La preghiamo di arrivare 10 minuti prima dell’orario di partenza."
     },
     "/sticky_booking_bar/note": {
       "source_en": "Select your date and group size to check live availability and complete your booking.",
@@ -245,6 +280,7 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, ⟦G1⟧ admission, ⟦G0⟧ admission, ⟦G2⟧ admission.",
+      "tm": "Trasporto in pullman andata e ritorno da Seoul, guida di lingua inglese, ingresso alla ⟦G1⟧, ingresso al ⟦G0⟧, ingresso alla ⟦G2⟧.",
       "glossary": [
         "⟦G0⟧ = Palazzo di Hwaseong Haenggung",
         "⟦G1⟧ = Fortezza di Suwon Hwaseong",
@@ -252,13 +288,16 @@
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Not included: meals, drinks, optional cave-winery tasting, tips."
+      "source_en": "Not included: meals, drinks, optional cave-winery tasting, tips.",
+      "tm": "Non incluso: pasti, bevande, degustazione facoltativa nella cantina in grotta, mance."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Starfield Library entry is free."
+      "source_en": "Starfield Library entry is free.",
+      "tm": "L’ingresso alla biblioteca Starfield è gratuito."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…"
+      "source_en": "Round-trip coach transport from Seoul, English-speaking tour guide, Suwon Hwaseong…",
+      "tm": "Trasporto in pullman andata e ritorno da Seoul, guida di lingua inglese, Suwon Hwaseong…"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "Pickup & drop-off",
@@ -266,21 +305,26 @@
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "tm": "Stazione Hongik University (uscita 8) alle ≈08:00 oppure stazione ⟦G0⟧ (uscita 2 o 4) alle ≈08:30.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Arrive 10 minutes early."
+      "source_en": "Arrive 10 minutes early.",
+      "tm": "Arrivi 10 minuti in anticipo."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "There is no hotel pickup; meeting points only."
+      "source_en": "There is no hotel pickup; meeting points only.",
+      "tm": "Non è previsto il prelievo in hotel: soltanto punti di ritrovo."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Latecomers cannot be accommodated and are non-refundable."
+      "source_en": "Latecomers cannot be accommodated and are non-refundable.",
+      "tm": "I ritardatari non possono essere attesi e non hanno diritto al rimborso."
     },
     "/practicalAccordionItems/1/preview": {
       "source_en": "Hongik University Station (Exit 8) at ≈08:00 or ⟦G0⟧ Station (Exit 2 or 4) at ≈08:30.",
+      "tm": "Stazione Hongik University (uscita 8) alle ≈08:00 oppure stazione ⟦G0⟧ (uscita 2 o 4) alle ≈08:30.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -294,41 +338,50 @@
       "tm": "Moderato."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "The fortress wall walk involves uphill stone steps."
+      "source_en": "The fortress wall walk involves uphill stone steps.",
+      "tm": "Il percorso sulle mura della fortezza comporta gradini di pietra in salita."
     },
     "/practicalAccordionItems/2/content/2": {
       "source_en": "⟦G0⟧ has approximately 180 steps down to the lower levels and back up — there is no elevator.",
+      "tm": "La ⟦G0⟧ presenta circa 180 gradini per scendere ai livelli inferiori e altrettanti per risalire: non vi è ascensore.",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Comfortable closed-toe walking shoes are essential."
+      "source_en": "Comfortable closed-toe walking shoes are essential.",
+      "tm": "Scarpe da camminata comode e chiuse sono indispensabili."
     },
     "/practicalAccordionItems/2/content/4": {
-      "source_en": "Not recommended if you have significant mobility limitations."
+      "source_en": "Not recommended if you have significant mobility limitations.",
+      "tm": "Non consigliato in presenza di limitazioni motorie significative."
     },
     "/practicalAccordionItems/2/preview": {
       "source_en": "Moderate.",
       "tm": "Moderato."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Come vestirsi e cosa portare"
     },
     "/practicalAccordionItems/3/content/0": {
       "source_en": "Comfortable walking shoes (sneakers or hiking shoes), a light jacket — ⟦G0⟧ is 12°C year-round, so even in summer it's chilly.",
+      "tm": "Scarpe da camminata comode (sneaker o scarpe da trekking) e una giacca leggera: nella ⟦G0⟧ ci sono 12 °C tutto l’anno, quindi anche d’estate fa freschino.",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "In winter, bring a warm coat for the fortress wall and a lighter layer for the cave."
+      "source_en": "In winter, bring a warm coat for the fortress wall and a lighter layer for the cave.",
+      "tm": "D’inverno porti un cappotto caldo per le mura della fortezza e un capo più leggero per la grotta."
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Camera, water, cash for lunch and street food (₩10,000–₩20,000 budget)."
+      "source_en": "Camera, water, cash for lunch and street food (₩10,000–₩20,000 budget).",
+      "tm": "Macchina fotografica, acqua e contanti per il pranzo e il cibo di strada (budget ₩10.000–₩20.000)."
     },
     "/practicalAccordionItems/3/preview": {
       "source_en": "Comfortable walking shoes (sneakers or hiking shoes), a light jacket — ⟦G0⟧…",
+      "tm": "Scarpe da camminata comode (sneaker o scarpe da trekking) e una giacca leggera: la ⟦G0⟧…",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
@@ -338,7 +391,8 @@
       "tm": "Cancellazione"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Free cancellation up to 24 hours before the tour starts."
+      "source_en": "Free cancellation up to 24 hours before the tour starts.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima dell’inizio del tour."
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Same-day cancellations and no-shows are non-refundable.",
@@ -346,28 +400,34 @@
     },
     "/practicalAccordionItems/4/content/2": {
       "source_en": "Tour does not operate on Mondays (⟦G0⟧ closed).",
+      "tm": "Il tour non opera il lunedì (la ⟦G0⟧ è chiusa).",
       "glossary": [
         "⟦G0⟧ = Grotta di Gwangmyeong"
       ]
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Free cancellation up to 24 hours before the tour starts."
+      "source_en": "Free cancellation up to 24 hours before the tour starts.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima dell’inizio del tour."
     },
     "/practicalAccordionItems/5/title": {
       "source_en": "Children & accessibility",
       "tm": "Bambini e accessibilità"
     },
     "/practicalAccordionItems/5/content/0": {
-      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World are popular with families."
+      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World are popular with families.",
+      "tm": "I bambini di solito apprezzano questo tour: le luci della grotta, la scultura del drago e Aqua World piacciono molto alle famiglie."
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "The fortress walk has stairs and uneven surfaces."
+      "source_en": "The fortress walk has stairs and uneven surfaces.",
+      "tm": "Il percorso nella fortezza presenta scale e superfici irregolari."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "The cave's 180+ stairs make it unsuitable for guests with mobility issues, strollers, or fear of confined spaces."
+      "source_en": "The cave's 180+ stairs make it unsuitable for guests with mobility issues, strollers, or fear of confined spaces.",
+      "tm": "Gli oltre 180 gradini della grotta la rendono inadatta a chi ha difficoltà motorie, a chi ha il passeggino e a chi teme gli spazi chiusi."
     },
     "/practicalAccordionItems/5/preview": {
-      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World…"
+      "source_en": "Children typically enjoy this tour — the cave's lights, dragon sculpture, and Aqua World…",
+      "tm": "I bambini di solito apprezzano questo tour: le luci della grotta, la scultura del drago e Aqua World…"
     }
   },
   "glossaryTokens": {
@@ -427,5 +487,5 @@
       "⟦G0⟧": "Grotta di Gwangmyeong"
     }
   },
-  "tmHits": 32
+  "tmHits": 92
 }

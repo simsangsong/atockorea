@@ -8,6 +8,7 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "13 hours door-to-door from a 06:00 Hongik or 06:30 ⟦G0⟧ pickup. Returns to Seoul between 19:00 (⟦G0⟧) and 19:30 (Hongik).",
+      "tm": "13 часов от двери до двери, со сбором в 06:00 у Hongik или в 06:30 в ⟦G0⟧. Возвращение в Сеул между 19:00 (⟦G0⟧) и 19:30 (Hongik).",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -18,6 +19,7 @@
     },
     "/staticQuestions/1/answer": {
       "source_en": "Two pickup points: (1) **Starbucks Hongik University Station Exit 8** (Mapo-gu) at 06:00 — the Starbucks at the top of the exit; or (2) **⟦G0⟧ Station Exit 2** (Jung-gu) at 06:30 — the NorthFace flagship store at the top of the exit. Choose the one closest to your hotel at booking.",
+      "tm": "Две точки сбора: (1) **Starbucks у выхода 8 станции Hongik University** (Мапхо-гу) в 06:00 — Starbucks наверху выхода; или (2) **станция ⟦G0⟧, выход 2** (Чун-гу) в 06:30 — флагманский магазин NorthFace наверху выхода. При бронировании выберите ту, что ближе к вашему отелю.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -28,6 +30,7 @@
     },
     "/staticQuestions/2/answer": {
       "source_en": "Drop-off is at the same two locations in reverse order: ⟦G0⟧ Exit 2 first at approximately 19:00, then Hongik University Exit 8 at approximately 19:30. Friday/Sunday evenings may run 30 minutes later due to expressway traffic.",
+      "tm": "Высадка — в тех же двух местах, но в обратном порядке: сначала ⟦G0⟧, выход 2, примерно в 19:00, затем Hongik University, выход 8, примерно в 19:30. По пятницам и воскресеньям вечером возможна задержка на 30 минут из-за пробок на автомагистрали.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -38,6 +41,7 @@
     },
     "/staticQuestions/3/answer": {
       "source_en": "Yes for the two stops with paid entry: **Nami Island ferry round-trip (₩19,000) and ⟦G1⟧ admission (₩11,000) are INCLUDED**. **⟦G0⟧ entrance is FREE** (the historical 3,500 KRW fee was abolished in May 2023). The **only paid optional item is the Seorak Cable Car** (₩16,000 round-trip) which is on-site ticketing only — own expense.",
+      "tm": "Да, для двух остановок с платным входом: **паром на остров Нами туда и обратно (₩19 000) и вход в ⟦G1⟧ (₩11 000) ВКЛЮЧЕНЫ**. **Вход в ⟦G0⟧ БЕСПЛАТНЫЙ** (исторический сбор в 3 500 KRW отменили в мае 2023 года). **Единственное платное дополнение по желанию — канатная дорога Сорак** (₩16 000 туда и обратно): билеты продают только на месте, за свой счёт.",
       "glossary": [
         "⟦G0⟧ = Национальный парк Сораксан",
         "⟦G1⟧ = Сад утреннего спокойствия"
@@ -48,61 +52,72 @@
       "tm": "Включены ли входные билеты?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during October autumn-foliage peak. If skies are foggy, skip it (no view). The recommended alternative is the **Biseondae streamside walk** (1.5 km paved, ~90 min round trip from the entrance) which fits the same 3-hour Seoraksan budget."
+      "source_en": "It's a fantastic ridge view if the weather is clear, but tickets are NOT bookable in advance and on-site queues can exceed 1-2 hours during October autumn-foliage peak. If skies are foggy, skip it (no view). The recommended alternative is the **Biseondae streamside walk** (1.5 km paved, ~90 min round trip from the entrance) which fits the same 3-hour Seoraksan budget.",
+      "tm": "В ясную погоду вид на хребет великолепный, но билеты НЕЛЬЗЯ забронировать заранее, а очередь на месте в октябрьский пик осенней листвы может превышать 1–2 часа. Если небо в тумане, лучше отказаться (вида не будет). Рекомендуемая альтернатива — **прогулка вдоль ручья к Писондэ** (1,5 км по мощёной дорожке, ~90 мин туда и обратно от входа), которая укладывается в те же 3 часа, отведённые на Сораксан."
     },
     "/staticQuestions/4/question": {
       "source_en": "Should I ride the Seorak Cable Car?",
       "tm": "Стоит ли подниматься на канатной дороге Сорак?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes — Nami Island's Metasequoia tree-lined avenue is the signature filming location for the 2002 KBS drama 'Winter Sonata' starring Bae Yong-joon and Choi Ji-woo. The avenue is photogenic in any season, but autumn (golden October-November) and winter (snow-covered) are the most evocative."
+      "source_en": "Yes — Nami Island's Metasequoia tree-lined avenue is the signature filming location for the 2002 KBS drama 'Winter Sonata' starring Bae Yong-joon and Choi Ji-woo. The avenue is photogenic in any season, but autumn (golden October-November) and winter (snow-covered) are the most evocative.",
+      "tm": "Да: аллея метасеквой на острове Нами — главная съёмочная площадка драмы KBS «Зимняя соната» 2002 года с Пэ Ён Джуном и Чхве Джи У. Аллея фотогенична в любой сезон, но сильнее всего впечатляют осень (золотые октябрь и ноябрь) и зима (под снегом)."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Is Nami the Winter Sonata filming location?"
+      "source_en": "Is Nami the Winter Sonata filming location?",
+      "tm": "Нами — то самое место съёмок «Зимней сонаты»?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Yes if you book between **December 5 - March 15** — the tour's 17:00 Morning Calm arrival catches the daytime garden plus the illumination ignition. Outside the festival period (April-November), Morning Calm is the day's most relaxed botanical chapter with seasonal blooms (cherry blossoms April, hydrangeas June, foliage October)."
+      "source_en": "Yes if you book between **December 5 - March 15** — the tour's 17:00 Morning Calm arrival catches the daytime garden plus the illumination ignition. Outside the festival period (April-November), Morning Calm is the day's most relaxed botanical chapter with seasonal blooms (cherry blossoms April, hydrangeas June, foliage October).",
+      "tm": "Да, если бронируете с **5 декабря по 15 марта**: прибытие в Сад утреннего спокойствия в 17:00 позволяет увидеть и дневной сад, и момент включения подсветки. Вне фестивального периода (с апреля по ноябрь) сад остаётся самой спокойной ботанической главой дня с сезонными цветениями (сакура в апреле, гортензии в июне, листва в октябре)."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Will I see the Morning Calm Lighting Festival?"
+      "source_en": "Will I see the Morning Calm Lighting Festival?",
+      "tm": "Увижу ли я фестиваль огней в Саду утреннего спокойствия?"
     },
     "/staticQuestions/7/answer": {
-      "source_en": "Yes, age 6 and up. The 13-hour day with a 06:00 start is long for younger children — please consider age 8+ for comfort. Kids tend to enjoy Nami Island's peacocks and the Sequoia Bridge, plus Morning Calm's lighting festival in winter. Seoraksan paths have rocky sections but Sinheungsa Temple and the cable car are kid-friendly."
+      "source_en": "Yes, age 6 and up. The 13-hour day with a 06:00 start is long for younger children — please consider age 8+ for comfort. Kids tend to enjoy Nami Island's peacocks and the Sequoia Bridge, plus Morning Calm's lighting festival in winter. Seoraksan paths have rocky sections but Sinheungsa Temple and the cable car are kid-friendly.",
+      "tm": "Да, с 6 лет. День на 13 часов со стартом в 06:00 долгий для малышей — для комфорта лучше ориентироваться на 8 лет и старше. Детям обычно нравятся павлины острова Нами и мост Секвойя, а зимой — фестиваль огней в Саду утреннего спокойствия. На дорожках Сораксана есть каменистые участки, но храм Синхынса и канатная дорога вполне подходят детям."
     },
     "/staticQuestions/7/question": {
       "source_en": "Is this tour suitable for children?",
       "tm": "Подходит ли экскурсия для детей?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Active seniors are fine — the day's main physical demands are the 2-3 km walking circuits at Nami and Morning Calm (both flat or rolling). At Seoraksan, the Sinheungsa Temple level is easily accessible; the Heundeulbawi 'rocking rock' loop requires stairs and is skippable. Mobility-limited travelers should consider our private chartered car day trip instead."
+      "source_en": "Active seniors are fine — the day's main physical demands are the 2-3 km walking circuits at Nami and Morning Calm (both flat or rolling). At Seoraksan, the Sinheungsa Temple level is easily accessible; the Heundeulbawi 'rocking rock' loop requires stairs and is skippable. Mobility-limited travelers should consider our private chartered car day trip instead.",
+      "tm": "Активным пожилым гостям всё по силам: основная нагрузка дня — круги по 2–3 км на Нами и в Саду утреннего спокойствия (ровные или слегка холмистые). В Сораксане уровень храма Синхынса легко доступен, а круг к «качающейся скале» Хындыльбави требует ступеней и его можно пропустить. Тем, кому тяжело ходить, лучше рассмотреть нашу однодневную поездку на частном автомобиле с водителем."
     },
     "/staticQuestions/8/question": {
       "source_en": "Is this OK for seniors?",
       "tm": "Подходит ли это пожилым гостям?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local Gangwon-do restaurant en route from Seoraksan to Nami around 13:30. Typical local choices: **Chuncheon dakgalbi** (sweet-spicy stir-fried chicken with cabbage and rice cakes), **kalguksu** (knife-cut noodle soup), or bibimbap. Vegetarian and halal-friendly options possible with advance notice."
+      "source_en": "No — lunch is paid by the guest (~₩10,000-15,000 per person). The coach stops at a local Gangwon-do restaurant en route from Seoraksan to Nami around 13:30. Typical local choices: **Chuncheon dakgalbi** (sweet-spicy stir-fried chicken with cabbage and rice cakes), **kalguksu** (knife-cut noodle soup), or bibimbap. Vegetarian and halal-friendly options possible with advance notice.",
+      "tm": "Нет, обед оплачивает гость (~₩10 000–15 000 с человека). Автобус останавливается в местном ресторане в Канвондо по дороге от Сораксана к Нами около 13:30. Типичный местный выбор: **таккальби по-чхунчхонски** (сладко-острая курица, обжаренная с капустой и рисовыми хлебцами), **кальгуксу** (суп с лапшой, нарезанной ножом) или пибимпап. Вегетарианские и халяльные варианты возможны при заблаговременном предупреждении."
     },
     "/staticQuestions/9/question": {
       "source_en": "Is lunch included?",
       "tm": "Включён ли обед?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead. The guide handles all menu translation and stall interactions during the day."
+      "source_en": "English primarily. Chinese-speaking guide available on request — book 3+ days ahead. The guide handles all menu translation and stall interactions during the day.",
+      "tm": "В основном английский. Гид со знанием китайского доступен по запросу — бронируйте за 3 дня и более. В течение дня гид переводит меню и помогает общаться с продавцами."
     },
     "/staticQuestions/10/question": {
       "source_en": "What languages does the guide speak?",
       "tm": "На каких языках говорит гид?"
     },
     "/staticQuestions/11/answer": {
-      "source_en": "**Autumn (mid-October to early November)** is Korea's signature foliage season — Seoraksan foliage is world-famous and Nami's ginkgo + maple lanes are peak gold. **Winter (December-March)** is the 'Winter Wonder' season with Seoraksan snow, Nami's Winter Sonata atmosphere, and Morning Calm's Lighting Festival. **Spring (April)** brings cherry blossoms at Nami and Morning Calm. Book 2+ weeks ahead for October."
+      "source_en": "**Autumn (mid-October to early November)** is Korea's signature foliage season — Seoraksan foliage is world-famous and Nami's ginkgo + maple lanes are peak gold. **Winter (December-March)** is the 'Winter Wonder' season with Seoraksan snow, Nami's Winter Sonata atmosphere, and Morning Calm's Lighting Festival. **Spring (April)** brings cherry blossoms at Nami and Morning Calm. Book 2+ weeks ahead for October.",
+      "tm": "**Осень (с середины октября до начала ноября)** — главный сезон листвы в Корее: листва Сораксана известна на весь мир, а аллеи гинкго и клёнов на Нами в это время особенно золотые. **Зима (с декабря по март)** — сезон «зимнего чуда»: снег в Сораксане, атмосфера «Зимней сонаты» на Нами и фестиваль огней в Саду утреннего спокойствия. **Весна (апрель)** приносит цветение сакуры на Нами и в саду. На октябрь бронируйте за 2 недели и более."
     },
     "/staticQuestions/11/question": {
       "source_en": "What's the best season for this tour?",
       "tm": "Какой сезон лучше всего для этой экскурсии?"
     },
     "/staticQuestions/12/answer": {
-      "source_en": "Light rain: tour runs as scheduled — all three stops are walkable in rain with the right footwear. Heavy rain: Seorak Cable Car typically suspended (the guide pivots to Biseondae walk); Nami and Morning Calm still operate normally. Typhoon-level weather or expressway closure: full refund or rebooking offered."
+      "source_en": "Light rain: tour runs as scheduled — all three stops are walkable in rain with the right footwear. Heavy rain: Seorak Cable Car typically suspended (the guide pivots to Biseondae walk); Nami and Morning Calm still operate normally. Typhoon-level weather or expressway closure: full refund or rebooking offered.",
+      "tm": "Лёгкий дождь: экскурсия идёт по расписанию — все три остановки проходимы в дождь при подходящей обуви. Сильный дождь: канатную дорогу Сорак обычно закрывают (гид переключается на прогулку к Писондэ), Нами и Сад утреннего спокойствия работают как обычно. Погода уровня тайфуна или закрытие автомагистрали: полный возврат или перенос брони."
     },
     "/staticQuestions/12/question": {
       "source_en": "What if it rains?",
@@ -110,6 +125,7 @@
     },
     "/staticQuestions/13/answer": {
       "source_en": "This is a coach group tour at the budget price point ($79/person). Our **private chartered car day trip** option provides door-of-hotel pickup, flexible timing, customizable route (e.g. add ⟦G0⟧ or drop Seoraksan), and private vehicle for typically $300-450 per group of 4 — comparable per-person at 5+ pax. Choose the coach tour for budget, choose private for flexibility and comfort.",
+      "tm": "Это групповая автобусная экскурсия с невысокой ценой ($79 с человека). Наша **однодневная поездка на частном автомобиле с водителем** даёт сбор у дверей отеля, свободный график, маршрут под вас (например, добавить ⟦G0⟧ или убрать Сораксан) и отдельный автомобиль — обычно $300–450 за группу из 4 человек, что при 5 и более участниках сопоставимо в расчёте на человека. Автобусная экскурсия — ради цены, частная — ради свободы и комфорта.",
       "glossary": [
         "⟦G0⟧ = Petite France"
       ]
@@ -119,7 +135,8 @@
       "tm": "Чем это отличается от частной поездки с водителем?"
     },
     "/staticQuestions/14/answer": {
-      "source_en": "Approximately 4-5 km total across the three stops, plus the optional Seoraksan cable car platform stairs if you choose that route. Sturdy closed-toe shoes recommended (Seoraksan paths can be damp or rocky in places)."
+      "source_en": "Approximately 4-5 km total across the three stops, plus the optional Seoraksan cable car platform stairs if you choose that route. Sturdy closed-toe shoes recommended (Seoraksan paths can be damp or rocky in places).",
+      "tm": "Примерно 4–5 км в сумме на трёх остановках, плюс ступени у площадки канатной дороги в Сораксане, если выберете этот вариант. Рекомендуется прочная закрытая обувь (дорожки Сораксана местами влажные и каменистые)."
     },
     "/staticQuestions/14/question": {
       "source_en": "How much walking is there?",
@@ -127,6 +144,7 @@
     },
     "/bookingTrustItems/0/body": {
       "source_en": "Nami Island ferry (₩19,000) and ⟦G0⟧ (₩11,000) admissions are pre-paid into the tour price — no per-stop ticket queues. Seoraksan entrance is FREE (abolished May 2023). Total admission savings: ~₩30,000.",
+      "tm": "Паром на остров Нами (₩19 000) и вход в ⟦G0⟧ (₩11 000) уже оплачены в стоимости экскурсии — очередей за билетами на остановках нет. Вход в Сораксан БЕСПЛАТНЫЙ (плату отменили в мае 2023 года). Общая экономия на входных билетах: ~₩30 000.",
       "glossary": [
         "⟦G0⟧ = Сад утреннего спокойствия"
       ]
@@ -140,23 +158,28 @@
       "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Nami ferry + Morning Calm bundled"
+      "source_en": "Nami ferry + Morning Calm bundled",
+      "tm": "Паром на Нами и Сад утреннего спокойствия в одном пакете"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "Korea Tourism Organization-licensed guide with English fluency; Chinese-speaking guide available on advance request. Guide narration covers Seoraksan's Silla-era temple history, Nami's Winter Sonata legacy, and Morning Calm's founder story."
+      "source_en": "Korea Tourism Organization-licensed guide with English fluency; Chinese-speaking guide available on advance request. Guide narration covers Seoraksan's Silla-era temple history, Nami's Winter Sonata legacy, and Morning Calm's founder story.",
+      "tm": "Гид с лицензией Корейской туристической организации и свободным английским; гид со знанием китайского доступен по предварительному запросу. Рассказ охватывает историю храма эпохи Силла в Сораксане, наследие «Зимней сонаты» на Нами и историю основателя Сада утреннего спокойствия."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Licensed English-speaking guide"
+      "source_en": "Licensed English-speaking guide",
+      "tm": "Лицензированный англоговорящий гид"
     },
     "/bookingTrustItems/1/iconBg": {
       "source_en": "bg-pink-50/80",
       "tm": "bg-pink-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Korea-licensed tour guide"
+      "source_en": "Korea-licensed tour guide",
+      "tm": "Гид с корейской лицензией"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 13-hour day is at an attraction or in transit — what you book is what you experience."
+      "source_en": "No ginseng shops, no duty-free, no commissioned souvenir detours. Every minute of the 13-hour day is at an attraction or in transit — what you book is what you experience.",
+      "tm": "Никаких магазинов женьшеня, duty-free и заездов в сувенирные лавки за комиссию. Каждая минута этого 13-часового дня проходит на достопримечательности или в дороге: вы получаете ровно то, что забронировали."
     },
     "/bookingTrustItems/2/title": {
       "source_en": "Transparent pricing",
@@ -192,5 +215,5 @@
       "⟦G0⟧": "Сад утреннего спокойствия"
     }
   },
-  "tmHits": 19
+  "tmHits": 42
 }

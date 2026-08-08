@@ -1,0 +1,124 @@
+{
+  "unitId": "tour_product_pages:busan-top-attractions-day-tour:ru:A2",
+  "surface": "tour_product_pages",
+  "slug": "busan-top-attractions-day-tour",
+  "locale": "ru",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time Busan visitors"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Adult families and couples",
+      "tm": "Взрослые семьи и пары"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Travelers with one full day in Busan"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Cultural and food-curious travelers"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want minimal walking / minimal stairs"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Stroller-heavy groups (Gamcheon hillside)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Travelers needing tight evening flight buffer (return up to 19:00)"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "Northeast first while energy is fresh"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "Yonggungsa is in Gijang-gun, the northeast extremity of the route, and is scheduled first because the 108 stairs and the cliff path are the day's most active stop. Doing it before lunch keeps the rest of the day on flatter ground and lower-energy attractions."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "Coast then memorial then village"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "The route trades scenery for context for color: bright coastal openers, a quiet memorial mid-day, then Gamcheon's painted hillside as the visual peak. Each section is photo-distinct."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Central-Busan close"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "⟦G0⟧ is in central Busan — guests staying near Nampo-dong can disembark at the final stop and continue exploring; others ride back to their pickup station along the standard return route.",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Pacing & geography",
+      "tm": "Темп и география"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/label": {
+      "source_en": "Six substantive stops + lunch"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/0/detail": {
+      "source_en": "Two coastal sites, one memorial, one village (extended), one market, plus lunch — each block long enough to feel real, none rushed. Compares favorably to 5-stop tours that drop either Yonggungsa (too far) or Cheongsapo (too new) to fit."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/label": {
+      "source_en": "Mostly outdoor, market closes indoor"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/1/detail": {
+      "source_en": "≈80% outdoor across the day; Jagalchi is the only fully indoor block. Works in most weather conditions; the market gives a covered finish in a late-afternoon shower."
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/label": {
+      "source_en": "Three pickup locations"
+    },
+    "/whyTourWorks/routeLogicSections/1/items/2/detail": {
+      "source_en": "Pickup at Busan Station, Seomyeon, or Haeundae — accessible from most central-Busan accommodations. Choose the exit closest to your hotel; your effective tour length varies by about 15 minutes depending on which one you pick."
+    },
+    "/whyTourWorks/routeLogicSections/1/title": {
+      "source_en": "Why this works in 10.5 hours"
+    },
+    "/whyTourWorks/routeLogicSections/1/iconBg": {
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/label": {
+      "source_en": "Yonggungsa has 108 stairs (skippable)"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/0/detail": {
+      "source_en": "The 108 steps go down to the temple platform. Upper viewing areas are accessible without descending. If the climb back up is a concern, the viewpoint above the temple is the recommended turnaround."
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/label": {
+      "source_en": "Gamcheon's alleys are steep — slippery in rain"
+    },
+    "/whyTourWorks/routeLogicSections/2/items/1/detail": {
+      "source_en": "Wear shoes with grip and pace yourself uphill. The main photo zone is reachable on a relatively gentle path; deeper exploration requires the steepest stairs."
+    },
+    "/whyTourWorks/routeLogicSections/2/title": {
+      "source_en": "Trade-offs honestly",
+      "tm": "Честно о компромиссах"
+    },
+    "/whyTourWorks/routeLogicSections/2/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this Busan day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "Northeast coastal temple first, blue line park, UN memorial mid-day, Gamcheon village with lunch, then close at ⟦G0⟧ in central Busan. 08:10 to 18:00.",
+      "glossary": [
+        "⟦G0⟧ = Рынок Чагальчхи"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    },
+    "/routeShapeIntro/subtitle": {
+      "⟦G0⟧": "Рынок Чагальчхи"
+    }
+  },
+  "tmHits": 6
+}

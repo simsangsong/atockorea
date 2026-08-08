@@ -80,7 +80,11 @@ import {
   type MatcherResult,
 } from "@/lib/chatbot/tourMatchRecommend";
 import { buildTourProductAssistantContextText } from "@/lib/tour-product/tourProductAssistantContext";
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 import { logChatTurn, type ChatLogContext } from "@/lib/support/chat-logger";
 import {
   type ChatUsage,
@@ -238,7 +242,7 @@ function buildCatalogueRecommendationReply(context: string, locale: TourProductP
   // i18n-05 (pressure-test): this deterministic recommendation fallback used to
   // reply in English for ja/zh/zh-TW/es visitors. Localize all six.
   const L: Record<
-    TourProductPageLocale,
+    TourProductBaseLocale,
     { lead: string; region: string; duration: string; price: string; foot: string }
   > = {
     en: {
@@ -284,7 +288,7 @@ function buildCatalogueRecommendationReply(context: string, locale: TourProductP
       foot: "Si necesitas una confirmación del equipo sobre movilidad, horarios o recogida, puedo conectarte con soporte en este chat.",
     },
   };
-  const t = L[locale] ?? L.en;
+  const t = L[toTourProductBaseLocale(locale)] ?? L.en;
   return [
     t.lead,
     ...entries.map((entry, index) =>
@@ -1183,7 +1187,7 @@ export async function POST(req: NextRequest) {
     try {
       const instant = await buildInstantAnswer({
         message: latestUserMessage,
-        locale: instantLocale,
+        locale: toTourProductBaseLocale(instantLocale),
         tourSlug: isSiteAssistant ? null : tourProductSlug,
         todayISO: kstTodayISO(),
         intent: detectedIntent.intent,
@@ -1364,7 +1368,7 @@ export async function POST(req: NextRequest) {
       // kill switch) used to silently re-show the SAME quote, trapping the
       // customer in a "yes → same quote → yes" loop with no error and no human
       // path. Tell them plainly and force a support hand-off.
-      const bookingFailed: Record<TourProductPageLocale, string> = {
+      const bookingFailed: Record<TourProductBaseLocale, string> = {
         en: "I couldn't finalize the reservation just now. Let me connect you with our team in this chat to complete your booking.",
         ko: "지금 예약을 최종 처리하지 못했어요. 이 채팅에서 담당자에게 연결해 예약을 마무리해 드릴게요.",
         ja: "ただ今ご予約を確定できませんでした。このチャットで担当者におつなぎし、ご予約を完了いたします。",
@@ -1372,7 +1376,7 @@ export async function POST(req: NextRequest) {
         "zh-TW": "剛才未能完成預訂。我在此聊天中為你聯絡客服來完成預訂。",
         es: "No pude finalizar la reserva en este momento. Te conecto con nuestro equipo en este chat para completarla.",
       };
-      return respond(bookingFailed[quoteLocale] ?? bookingFailed.en, { handoff_offered: true });
+      return respond(bookingFailed[toTourProductBaseLocale(quoteLocale)] ?? bookingFailed.en, { handoff_offered: true });
     }
 
     // Quote shown; not yet booking (or debug mode) → ask to confirm, with

@@ -11,68 +11,84 @@
       "tm": "Visiteurs découvrant la région pour la première fois"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples"
+      "source_en": "Couples",
+      "tm": "Les couples"
     },
     "/whyTourWorks/bestFor/2": {
       "source_en": "Adult families",
       "tm": "Familles d'adultes"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Active travelers comfortable with full days"
+      "source_en": "Active travelers comfortable with full days",
+      "tm": "Les voyageurs actifs à l’aise avec des journées bien remplies"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Travelers who want UNESCO World Heritage stops"
+      "source_en": "Travelers who want UNESCO World Heritage stops",
+      "tm": "Les voyageurs qui veulent des étapes inscrites au patrimoine mondial de l’UNESCO"
     },
     "/whyTourWorks/lessIdealFor/0": {
       "source_en": "Travelers with claustrophobia or fear of confined spaces (⟦G0⟧'s lower levels are narrow with low ceilings)",
+      "tm": "Les voyageurs claustrophobes ou qui craignent les espaces confinés (les niveaux inférieurs de ⟦G0⟧ sont étroits et bas de plafond)",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Anyone unable to handle ≈180 stairs down/up at Gwangmyeong's lower-level highlights (no elevator)"
+      "source_en": "Anyone unable to handle ≈180 stairs down/up at Gwangmyeong's lower-level highlights (no elevator)",
+      "tm": "Toute personne incapable d’affronter les ≈180 marches en descente et en montée vers les temps forts des niveaux inférieurs de Gwangmyeong (sans ascenseur)"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Travelers with limited mobility on the fortress wall — steep sections and stairs at gates"
+      "source_en": "Travelers with limited mobility on the fortress wall — steep sections and stairs at gates",
+      "tm": "Les voyageurs à mobilité réduite sur les remparts — passages raides et escaliers aux portes"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Visitors who want to see Seoul's central palaces — this trip stays entirely in Gyeonggi"
+      "source_en": "Visitors who want to see Seoul's central palaces — this trip stays entirely in Gyeonggi",
+      "tm": "Les visiteurs qui veulent voir les palais du centre de Séoul — cette excursion reste entièrement en Gyeonggi"
     },
     "/whyTourWorks/lessIdealFor/4": {
       "source_en": "Travelers who must visit on a Monday — ⟦G0⟧ is closed for maintenance",
+      "tm": "Les voyageurs qui doivent partir un lundi — ⟦G0⟧ est fermé pour entretien",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "More variety than the standard Suwon tour"
+      "source_en": "More variety than the standard Suwon tour",
+      "tm": "Plus de variété que l’excursion classique à Suwon"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "source_en": "Most Suwon day tours combine the fortress, palace, and Starfield Library — three stops within ten minutes of each other. This version adds ⟦G0⟧, a completely different landscape (underground, art-themed, year-round 12°C) that you can't easily reach from Suwon by public transit.",
+      "tm": "La plupart des excursions à Suwon associent la forteresse, le palais et la bibliothèque Starfield — trois arrêts distants de dix minutes les uns des autres. Cette version y ajoute ⟦G0⟧, un paysage tout autre (souterrain, dédié à l’art, à 12 °C toute l’année) difficile d’accès depuis Suwon en transports en commun.",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Indoor-friendly fallback for any weather"
+      "source_en": "Indoor-friendly fallback for any weather",
+      "tm": "Une solution de repli en intérieur, par tous les temps"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
       "source_en": "Two of the four major stops — Starfield Library and ⟦G0⟧ — are fully indoors and climate-controlled. The fortress walks are short enough to handle rain or summer heat. A reliable choice when the weather is dramatic.",
+      "tm": "Deux des quatre arrêts principaux — la bibliothèque Starfield et ⟦G0⟧ — sont entièrement à l’intérieur et climatisés. Les marches sur les remparts sont assez courtes pour supporter la pluie ou la chaleur estivale. Un choix fiable quand le temps se déchaîne.",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Free admission, paid context"
+      "source_en": "Free admission, paid context",
+      "tm": "Entrée gratuite, contexte payant"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers."
+      "source_en": "Starfield Library is free to enter on your own — but it's much more rewarding with a guide who can explain why a mall built it (Shinsegae's MZ-generation strategy), how it differs from the COEX original, and where the best photo angles are without disturbing readers.",
+      "tm": "La bibliothèque Starfield est gratuite si vous y allez seul — mais elle est bien plus intéressante avec un guide capable d’expliquer pourquoi un centre commercial l’a construite (la stratégie de Shinsegae envers la génération MZ), en quoi elle diffère de l’originale du COEX et où se placer pour les meilleures photos sans déranger les lecteurs."
     },
     "/whyTourWorks/routeLogicSections/0/items/3/label": {
-      "source_en": "Cooler than a single-format day"
+      "source_en": "Cooler than a single-format day",
+      "tm": "Plus stimulant qu’une journée à format unique"
     },
     "/whyTourWorks/routeLogicSections/0/items/3/detail": {
-      "source_en": "Heritage tours can feel relentless. Library-and-mall tours can feel light. This itinerary deliberately shifts gears — UNESCO walls, market food, modern library, then an LED-lit underground theme park — so the day doesn't fall into a single rhythm."
+      "source_en": "Heritage tours can feel relentless. Library-and-mall tours can feel light. This itinerary deliberately shifts gears — UNESCO walls, market food, modern library, then an LED-lit underground theme park — so the day doesn't fall into a single rhythm.",
+      "tm": "Les circuits patrimoniaux peuvent devenir écrasants. Les visites de bibliothèque et de centre commercial peuvent paraître légères. Cet itinéraire change délibérément de registre — remparts UNESCO, cuisine de marché, bibliothèque contemporaine, puis parc à thème souterrain illuminé aux LED — pour que la journée ne s’enferme pas dans un seul rythme."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
       "source_en": "Why this route is built this way",
@@ -83,56 +99,70 @@
       "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "Fortress wall: hardest section"
+      "source_en": "Fortress wall: hardest section",
+      "tm": "Remparts : la section la plus difficile"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
-      "source_en": "≈1 km walked with steep gradients and stairs at gates. Comfortable shoes essential. Sweeping views reward the climb but it isn't wheelchair-friendly."
+      "source_en": "≈1 km walked with steep gradients and stairs at gates. Comfortable shoes essential. Sweeping views reward the climb but it isn't wheelchair-friendly.",
+      "tm": "≈1 km de marche, avec des pentes raides et des escaliers aux portes. Des chaussures confortables sont indispensables. Les vues panoramiques récompensent la montée, mais le parcours n’est pas adapté aux fauteuils roulants."
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
       "source_en": "⟦G0⟧: ≈180 stairs each way",
+      "tm": "⟦G0⟧ : ≈180 marches dans chaque sens",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
-      "source_en": "Stairs to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back. No elevator. Visitors with mobility limits stay on the upper level — still ≈40 min of content there."
+      "source_en": "Stairs to the lower-level highlights (Wine Cave, Golden Waterfall, Aqua World) and the same back. No elevator. Visitors with mobility limits stay on the upper level — still ≈40 min of content there.",
+      "tm": "Des marches pour rejoindre les temps forts des niveaux inférieurs (Wine Cave, cascade dorée, Aqua World), puis autant au retour. Pas d’ascenseur. Les visiteurs à mobilité réduite restent au niveau supérieur — où il y a tout de même ≈40 min de contenu."
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Haenggung and Starfield: easy"
+      "source_en": "Haenggung and Starfield: easy",
+      "tm": "Haenggung et Starfield : faciles"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Palace and Starfield are flat and accessible, giving the route an easy stretch between the fortress walls and the cave stairs."
+      "source_en": "Palace and Starfield are flat and accessible, giving the route an easy stretch between the fortress walls and the cave stairs.",
+      "tm": "Le palais et Starfield sont plats et accessibles, offrant à l’itinéraire une portion facile entre les remparts et les escaliers de la grotte."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "How the walking load actually feels"
+      "source_en": "How the walking load actually feels",
+      "tm": "Ce que représente réellement la marche"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-emerald-50/80",
       "tm": "bg-emerald-50/80"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Summer heat: Gwangmyeong is the relief"
+      "source_en": "Summer heat: Gwangmyeong is the relief",
+      "tm": "Chaleur estivale : Gwangmyeong est le refuge"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "12°C constant inside the cave makes it the refuge stop on hot days. The wall walk lengthens shade breaks; market lunch shifts indoors at Starfield."
+      "source_en": "12°C constant inside the cave makes it the refuge stop on hot days. The wall walk lengthens shade breaks; market lunch shifts indoors at Starfield.",
+      "tm": "Les 12 °C constants de la grotte en font l’arrêt refuge des journées chaudes. La marche sur les remparts s’accompagne de pauses à l’ombre plus longues ; le déjeuner de marché se replie à l’intérieur, chez Starfield."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Winter cold: layer for the cave"
+      "source_en": "Winter cold: layer for the cave",
+      "tm": "Froid hivernal : couvrez-vous pour la grotte"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "12°C is cool when outside is colder. Bring a light jacket inside Gwangmyeong even in summer; in winter, expect to keep your outdoor layer on."
+      "source_en": "12°C is cool when outside is colder. Bring a light jacket inside Gwangmyeong even in summer; in winter, expect to keep your outdoor layer on.",
+      "tm": "12 °C, c’est frais quand il fait plus froid dehors. Emportez une veste légère dans Gwangmyeong même en été ; en hiver, prévoyez de garder votre manteau."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Mondays are not available"
+      "source_en": "Mondays are not available",
+      "tm": "Le lundi n’est pas disponible"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
       "source_en": "⟦G0⟧ closes Mondays for maintenance. Tour doesn't operate. Pick the Folk Village or Waujeongsa version for Monday travel.",
+      "tm": "⟦G0⟧ ferme le lundi pour entretien. L’excursion n’a pas lieu. Choisissez la version « village folklorique » ou « Waujeongsa » pour partir un lundi.",
       "glossary": [
         "⟦G0⟧ = Grotte de Gwangmyeong"
       ]
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "When weather and seasons shift"
+      "source_en": "When weather and seasons shift",
+      "tm": "Quand le temps et les saisons changent"
     },
     "/whyTourWorks/routeLogicSections/2/iconBg": {
       "source_en": "bg-amber-50/80",
@@ -143,7 +173,8 @@
       "tm": "Le déroulé de cette journée"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "A triangular Gyeonggi loop south and southwest of Seoul: Suwon's UNESCO fortress city for the morning, Suwon's flagship modern mall for early afternoon, and Gwangmyeong's transformed gold mine for the late-afternoon finale. Three different kinds of public space — military, commercial, industrial — across 250 years, in a single coach loop."
+      "source_en": "A triangular Gyeonggi loop south and southwest of Seoul: Suwon's UNESCO fortress city for the morning, Suwon's flagship modern mall for early afternoon, and Gwangmyeong's transformed gold mine for the late-afternoon finale. Three different kinds of public space — military, commercial, industrial — across 250 years, in a single coach loop.",
+      "tm": "Une boucle triangulaire en Gyeonggi, au sud et au sud-ouest de Séoul : la cité fortifiée UNESCO de Suwon le matin, le centre commercial phare de Suwon en début d’après-midi et l’ancienne mine d’or transformée de Gwangmyeong en apothéose de fin de journée. Trois types d’espace public — militaire, commercial, industriel — sur 250 ans, en une seule boucle en autocar."
     }
   },
   "glossaryTokens": {
@@ -166,5 +197,5 @@
       "⟦G0⟧": "Grotte de Gwangmyeong"
     }
   },
-  "tmHits": 7
+  "tmHits": 38
 }

@@ -8,21 +8,26 @@
   "segments": {
     "/itineraryStops/7/description": {
       "source_en": "**⟦G0⟧ (감천문화마을)** — nicknamed both **'Korea's Machu Picchu'** and **'Korea's Santorini'** — is a hillside neighborhood in Saha-gu, west Busan, whose pastel-painted houses cascade down in stepped rows over the slope. \n\nThe settlement began in the **1920s–1930s** when the Busan administration relocated working-class residents away from the port. The village's character was set in **1955** when **~800 families (about 4,000 people) of the Taegeukdo religious community** — a uniquely Korean syncretic religion blending Buddhist, Confucian, and yin-yang elements, founded by **Jo Cheol-je** during the Japanese colonial period — settled here as Korean War refugees fleeing the North. \n\nThe Taegeukdo philosophy of '**allowing others to prosper**' directly shaped the village's most distinctive feature: houses are intentionally tiered so that **no roof blocks the view of the house behind it**, with the entire community visible to the sky and the sea. Gamcheon remained one of Busan's poorest neighborhoods until **2009**, when the Korean Ministry of Culture launched the **'Dreaming of Machu Picchu in Busan'** public-art revitalization project, followed by the **'Miro Miro' (maze) project in 2010** — adding 22+ commissioned murals, sculptures, and art installations including the iconic **'Little Prince and Fox' bench** at the Sky Garden viewpoint. \n\nGamcheon won the **2012 UN-HABITAT Asian Townscape Award** and now welcomes **~1.4 million visitors annually**. The visit follows the village's signature stamp-map walking route: from the entrance at the **Tourist Information Center**, up to **Sky Garden viewpoint** for the panoramic rainbow-roof shot, then down through the labyrinthine alleys past murals, hanbok rental shops, craft workshops, and small cafes. \n\n**The village is a living residential community** — quiet voices required, no drones, no flash photography into homes, and rubbish carried out. \n\nHours **09:00–18:00 Mar–Oct / 09:00–17:00 Nov–Feb (info center)**; **village itself open 24h, FREE entry**.",
+      "tm": "**⟦G0⟧ (감천문화마을)** — surnommé à la fois **« le Machu Picchu coréen »** et **« la Santorin coréenne »** — est un quartier à flanc de colline de Saha-gu, dans l'ouest de Busan, dont les maisons peintes de teintes pastel dévalent la pente en rangées étagées. \n\nLe peuplement a commencé dans les **années 1920-1930**, quand l'administration de Busan a éloigné du port ses habitants les plus modestes. Le caractère du village s'est fixé en **1955**, lorsque **~800 familles (environ 4 000 personnes) de la communauté religieuse Taegeukdo** — une religion syncrétique proprement coréenne, mêlant éléments bouddhiques, confucéens et yin-yang, fondée par **Jo Cheol-je** pendant la période coloniale japonaise — s'y sont installées comme réfugiés de la guerre de Corée fuyant le Nord. \n\nLa philosophie Taegeukdo du « **laisser prospérer autrui** » a directement façonné la particularité la plus frappante du village : les maisons sont volontairement étagées de sorte qu'**aucun toit ne masque la vue de la maison située derrière**, toute la communauté restant ouverte sur le ciel et sur la mer. Gamcheon est demeuré l'un des quartiers les plus pauvres de Busan jusqu'en **2009**, quand le ministère coréen de la Culture a lancé le projet de revitalisation par l'art public **« Dreaming of Machu Picchu in Busan »**, suivi du projet **« Miro Miro » (le labyrinthe) en 2010** — ajoutant plus de 22 fresques, sculptures et installations commandées, dont l'emblématique **banc « du Petit Prince et du Renard »** au point de vue du Sky Garden. \n\nGamcheon a reçu le **prix ONU-Habitat du paysage urbain asiatique en 2012** et accueille désormais **~1,4 million de visiteurs par an**. La visite suit le parcours emblématique de la carte à tampons : depuis l'entrée, à l'**office de tourisme**, on monte au **point de vue du Sky Garden** pour la photo panoramique des toits arc-en-ciel, puis on redescend par les ruelles labyrinthiques, devant les fresques, les boutiques de location de hanbok, les ateliers d'artisanat et les petits cafés. \n\n**Le village est un quartier réellement habité** — voix basses de rigueur, pas de drones, pas de photos au flash vers les habitations, et déchets remportés. \n\nHoraires **09h00-18h00 de mars à octobre / 09h00-17h00 de novembre à février (office de tourisme)** ; **le village lui-même est ouvert 24 h sur 24, entrée GRATUITE**.",
       "glossary": [
         "⟦G0⟧ = Village culturel de Gamcheon"
       ]
     },
     "/itineraryStops/7/visitBasics/hours": {
-      "source_en": "Daily 09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); some shops/cafes keep their own hours"
+      "source_en": "Daily 09:00–18:00 (Mar–Oct) / 09:00–17:00 (Nov–Feb); some shops/cafes keep their own hours",
+      "tm": "Tous les jours 09h00-18h00 (mars-octobre) / 09h00-17h00 (novembre-février) ; certaines boutiques et certains cafés ont leurs propres horaires"
     },
     "/itineraryStops/7/visitBasics/closed": {
-      "source_en": "Open year-round (a living residential community)"
+      "source_en": "Open year-round (a living residential community)",
+      "tm": "Ouvert toute l’année (un quartier réellement habité)"
     },
     "/itineraryStops/7/visitBasics/walking": {
-      "source_en": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections"
+      "source_en": "Strenuous — very steep alleys and stairs; not stroller- or wheelchair-friendly in many sections",
+      "tm": "Éprouvante — ruelles et escaliers très raides ; nombreuses sections impraticables en poussette ou en fauteuil roulant"
     },
     "/itineraryStops/7/visitBasics/admission": {
-      "source_en": "Free village entry; optional Stamp Map ≈ 2,000 KRW"
+      "source_en": "Free village entry; optional Stamp Map ≈ 2,000 KRW",
+      "tm": "Entrée du village gratuite ; carte à tampons en option ≈ 2 000 KRW"
     },
     "/itineraryStops/7/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -92,84 +97,107 @@
       "tm": "Passerelle Songdo Cloud Trails"
     },
     "/itineraryStops/8/category": {
-      "source_en": "Coastal skywalk"
+      "source_en": "Coastal skywalk",
+      "tm": "Passerelle côtière"
     },
     "/itineraryStops/8/duration": {
-      "source_en": "20 min"
+      "source_en": "20 min",
+      "tm": "20 min"
     },
     "/itineraryStops/8/timeUsed/0": {
-      "source_en": "Drop-off at Songdo Marine Park and walk to the skywalk entrance (~4 min)"
+      "source_en": "Drop-off at Songdo Marine Park and walk to the skywalk entrance (~4 min)",
+      "tm": "Dépose au parc maritime de Songdo et marche jusqu’à l’entrée de la passerelle (~4 min)"
     },
     "/itineraryStops/8/timeUsed/1": {
-      "source_en": "Out along the 365 m deck to the island platform and back (~12 min)"
+      "source_en": "Out along the 365 m deck to the island platform and back (~12 min)",
+      "tm": "Aller-retour sur les 365 m de plate-forme jusqu’à l’îlot d’observation (~12 min)"
     },
     "/itineraryStops/8/timeUsed/2": {
-      "source_en": "Beach promenade photos (~4 min)"
+      "source_en": "Beach promenade photos (~4 min)",
+      "tm": "Photos sur la promenade de la plage (~4 min)"
     },
     "/itineraryStops/8/highlights/0": {
-      "source_en": "**365 m curved skywalk over the sea**, opened 2016 — replaced the older Songdo Skywalk"
+      "source_en": "**365 m curved skywalk over the sea**, opened 2016 — replaced the older Songdo Skywalk",
+      "tm": "**Passerelle incurvée de 365 m au-dessus de la mer**, ouverte en 2016 — elle a remplacé l’ancienne Songdo Skywalk"
     },
     "/itineraryStops/8/highlights/1": {
-      "source_en": "Glass floor panels along part of the deck; ends at a small island viewing platform"
+      "source_en": "Glass floor panels along part of the deck; ends at a small island viewing platform",
+      "tm": "Dalles de verre sur une partie du platelage ; elle se termine sur un petit îlot d’observation"
     },
     "/itineraryStops/8/highlights/2": {
-      "source_en": "**Free, open 24 hours** — no ticket, no queue"
+      "source_en": "**Free, open 24 hours** — no ticket, no queue",
+      "tm": "**Gratuite, ouverte 24 heures sur 24** — sans billet ni file d’attente"
     },
     "/itineraryStops/8/highlights/3": {
-      "source_en": "Starts from **Korea's first modern public beach** (opened **1913**), 800 m x 50 m of fine sand"
+      "source_en": "Starts from **Korea's first modern public beach** (opened **1913**), 800 m x 50 m of fine sand",
+      "tm": "Elle part de la **première plage publique moderne de Corée** (ouverte en **1913**), 800 m sur 50 m de sable fin"
     },
     "/itineraryStops/8/highlights/4": {
-      "source_en": "The Songdo Yonggung Suspension Bridge and the Amnam Park coastal trail continue from the western end"
+      "source_en": "The Songdo Yonggung Suspension Bridge and the Amnam Park coastal trail continue from the western end",
+      "tm": "Le pont suspendu de Songdo Yonggung et le sentier côtier du parc d’Amnam prolongent l’extrémité ouest"
     },
     "/itineraryStops/8/smartNotes/tip": {
-      "source_en": "The deck is exposed, so it can be windy and closes in severe weather — the guide swaps in the beach promenade when that happens."
+      "source_en": "The deck is exposed, so it can be windy and closes in severe weather — the guide swaps in the beach promenade when that happens.",
+      "tm": "La plate-forme est exposée : elle peut être venteuse et ferme par gros temps — le guide bascule alors sur la promenade de la plage."
     },
     "/itineraryStops/8/smartNotes/facilities": {
-      "source_en": "Public restrooms at Songdo Marine Park visitor centre; convenience stores along Songdohaebyeon-ro."
+      "source_en": "Public restrooms at Songdo Marine Park visitor centre; convenience stores along Songdohaebyeon-ro.",
+      "tm": "Toilettes publiques au centre d’accueil du parc maritime de Songdo ; supérettes le long de Songdohaebyeon-ro."
     },
     "/itineraryStops/8/whyOnRoute": {
-      "source_en": "After the dense Nampo-dong cluster and Gamcheon's hillside stairs, Songdo is the day's coastal reset. The Cloud Trails deck is **free, flat and about twenty minutes end to end**, which makes it the one Songdo experience every guest can do inside the stop window — whether or not they go on to take the cable car."
+      "source_en": "After the dense Nampo-dong cluster and Gamcheon's hillside stairs, Songdo is the day's coastal reset. The Cloud Trails deck is **free, flat and about twenty minutes end to end**, which makes it the one Songdo experience every guest can do inside the stop window — whether or not they go on to take the cable car.",
+      "tm": "Après la densité de Nampo-dong et les escaliers à flanc de colline de Gamcheon, Songdo est la respiration côtière de la journée. La plate-forme des Cloud Trails est **gratuite, plate et longue d'une vingtaine de minutes aller-retour**, ce qui en fait la seule expérience de Songdo que tout le monde peut faire dans le temps de l'étape — que l'on prenne ensuite le téléphérique ou non."
     },
     "/itineraryStops/8/convenience/parking": {
-      "source_en": "Songdo Marine Park public lot"
+      "source_en": "Songdo Marine Park public lot",
+      "tm": "Parking public du parc maritime de Songdo"
     },
     "/itineraryStops/8/convenience/restroom": {
-      "source_en": "Songdo Marine Park visitor centre and convenience stores along Songdohaebyeon-ro"
+      "source_en": "Songdo Marine Park visitor centre and convenience stores along Songdohaebyeon-ro",
+      "tm": "Centre d’accueil du parc maritime de Songdo et supérettes le long de Songdohaebyeon-ro"
     },
     "/itineraryStops/8/description": {
       "source_en": "**Songdo Cloud Trails (송도구름산책로)** is a 365-metre curved skywalk that runs out over the sea from the eastern end of ⟦G0⟧. Opened in **2016**, it replaced the older Songdo Skywalk with a longer, gently serpentine deck ending in a small island viewing platform, and it is **free and open around the clock**.\n\nThe beach it starts from is **Korea's first modern public beach**, opened in **1913** — an 800 m by 50 m crescent of fine sand on Busan's southwest coast in Seo-gu. Sections of the walkway have glass floor panels, so you can watch the water move directly beneath you.",
+      "tm": "**Songdo Cloud Trails (송도구름산책로)** est une passerelle incurvée de 365 mètres qui s'avance au-dessus de la mer depuis l'extrémité est de ⟦G0⟧. Ouverte en **2016**, elle a remplacé l'ancienne Songdo Skywalk par un platelage plus long, doucement sinueux, qui se termine sur un petit îlot d'observation ; elle est **gratuite et ouverte en permanence**.\n\nLa plage d'où elle part est la **première plage publique moderne de Corée**, ouverte en **1913** — un croissant de sable fin de 800 m sur 50 m, sur la côte sud-ouest de Busan, à Seo-gu. Certaines sections du cheminement sont dotées de dalles de verre : on voit l'eau bouger directement sous ses pieds.",
       "glossary": [
         "⟦G0⟧ = Plage de Songdo"
       ]
     },
     "/itineraryStops/8/visitBasics/hours": {
-      "source_en": "Open 24 hours"
+      "source_en": "Open 24 hours",
+      "tm": "Ouverte 24 heures sur 24"
     },
     "/itineraryStops/8/visitBasics/closed": {
-      "source_en": "Closed in high wind or severe weather"
+      "source_en": "Closed in high wind or severe weather",
+      "tm": "Fermée par vent fort ou gros temps"
     },
     "/itineraryStops/8/visitBasics/walking": {
-      "source_en": "Easy — flat deck, no stairs"
+      "source_en": "Easy — flat deck, no stairs",
+      "tm": "Facile — plate-forme plate, sans escalier"
     },
     "/itineraryStops/8/visitBasics/admission": {
       "source_en": "Free",
       "tm": "Gratuit"
     },
     "/itineraryStops/8/galleryItems/0/alt": {
-      "source_en": "Songdo Cloud Trails Skywalk — gallery image 1"
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 1",
+      "tm": "Passerelle Songdo Cloud Trails — image de galerie 1"
     },
     "/itineraryStops/8/galleryItems/0/caption": {
-      "source_en": "Songdo Cloud Trails Skywalk — photo 1"
+      "source_en": "Songdo Cloud Trails Skywalk — photo 1",
+      "tm": "Passerelle Songdo Cloud Trails — photo 1"
     },
     "/itineraryStops/8/galleryItems/0/location": {
       "source_en": "Songdo Cloud Trails Skywalk",
       "tm": "Passerelle Songdo Cloud Trails"
     },
     "/itineraryStops/8/galleryItems/1/alt": {
-      "source_en": "Songdo Cloud Trails Skywalk — gallery image 2"
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 2",
+      "tm": "Passerelle Songdo Cloud Trails — image de galerie 2"
     },
     "/itineraryStops/8/galleryItems/1/caption": {
-      "source_en": "Songdo Cloud Trails Skywalk — photo 2"
+      "source_en": "Songdo Cloud Trails Skywalk — photo 2",
+      "tm": "Passerelle Songdo Cloud Trails — photo 2"
     },
     "/itineraryStops/8/galleryItems/1/location": {
       "source_en": "Songdo Cloud Trails Skywalk",
@@ -180,43 +208,56 @@
       "tm": "Songdo Sky Park (parc d’Amnam)"
     },
     "/itineraryStops/9/category": {
-      "source_en": "Headland park / optional cable car"
+      "source_en": "Headland park / optional cable car",
+      "tm": "Parc du promontoire / téléphérique en option"
     },
     "/itineraryStops/9/duration": {
-      "source_en": "25 min"
+      "source_en": "25 min",
+      "tm": "25 min"
     },
     "/itineraryStops/9/timeUsed/0": {
-      "source_en": "Ticket queue at the Songdo base station (~5 min)"
+      "source_en": "Ticket queue at the Songdo base station (~5 min)",
+      "tm": "File d’attente aux billets à la station de départ de Songdo (~5 min)"
     },
     "/itineraryStops/9/timeUsed/1": {
-      "source_en": "Cable car crossing to the Amnam Park station (~7 min each way)"
+      "source_en": "Cable car crossing to the Amnam Park station (~7 min each way)",
+      "tm": "Traversée en téléphérique jusqu’à la station du parc d’Amnam (~7 min dans chaque sens)"
     },
     "/itineraryStops/9/timeUsed/2": {
-      "source_en": "Sky Park viewing decks (~10 min)"
+      "source_en": "Sky Park viewing decks (~10 min)",
+      "tm": "Terrasses panoramiques du Sky Park (~10 min)"
     },
     "/itineraryStops/9/highlights/0": {
-      "source_en": "**Songdo Marine Cable Car (Busan Air Cruise)** — 1.62 km round trip, up to **86 m** above the bay"
+      "source_en": "**Songdo Marine Cable Car (Busan Air Cruise)** — 1.62 km round trip, up to **86 m** above the bay",
+      "tm": "**Téléphérique maritime de Songdo (Busan Air Cruise)** — 1,62 km aller-retour, jusqu’à **86 m** au-dessus de la baie"
     },
     "/itineraryStops/9/highlights/1": {
-      "source_en": "Line originally opened 1964, closed 1988, **reopened June 2017**"
+      "source_en": "Line originally opened 1964, closed 1988, **reopened June 2017**",
+      "tm": "Ligne ouverte à l’origine en 1964, fermée en 1988, **rouverte en juin 2017**"
     },
     "/itineraryStops/9/highlights/2": {
-      "source_en": "**Crystal cabin** option has a glass floor"
+      "source_en": "**Crystal cabin** option has a glass floor",
+      "tm": "L’option **cabine Crystal** dispose d’un plancher de verre"
     },
     "/itineraryStops/9/highlights/3": {
-      "source_en": "Sea-view decks on the Amnam Park headland looking back across the bay"
+      "source_en": "Sea-view decks on the Amnam Park headland looking back across the bay",
+      "tm": "Terrasses avec vue sur la mer, sur le promontoire du parc d’Amnam, en regard de la baie"
     },
     "/itineraryStops/9/highlights/4": {
-      "source_en": "Dinosaur-themed park section; coastal trail continues into Amnam Park"
+      "source_en": "Dinosaur-themed park section; coastal trail continues into Amnam Park",
+      "tm": "Section du parc sur le thème des dinosaures ; le sentier côtier se prolonge dans le parc d’Amnam"
     },
     "/itineraryStops/9/highlights/5": {
-      "source_en": "**Cable car is an on-site paid choice — ₩17,000 adult round-trip, ₩25,000 Crystal cabin**"
+      "source_en": "**Cable car is an on-site paid choice — ₩17,000 adult round-trip, ₩25,000 Crystal cabin**",
+      "tm": "**Le téléphérique est une option payante sur place — ₩17 000 aller-retour adulte, ₩25 000 en cabine Crystal**"
     },
     "/itineraryStops/9/smartNotes/tip": {
-      "source_en": "Buy at the base station; the Crystal cabin queue is usually longer than the standard one. If your ship's all-aboard is early, ride first and photograph from the top rather than lingering at the base."
+      "source_en": "Buy at the base station; the Crystal cabin queue is usually longer than the standard one. If your ship's all-aboard is early, ride first and photograph from the top rather than lingering at the base.",
+      "tm": "Achetez à la station de départ ; la file de la cabine Crystal est généralement plus longue que la file standard. Si l'embarquement final de votre navire est précoce, montez d'abord et photographiez depuis le sommet plutôt que de vous attarder en bas."
     },
     "/itineraryStops/9/smartNotes/facilities": {
-      "source_en": "Cafe and Korean War memorial exhibit at the lower station; restrooms at both stations."
+      "source_en": "Cafe and Korean War memorial exhibit at the lower station; restrooms at both stations.",
+      "tm": "Café et exposition mémorielle sur la guerre de Corée à la station basse ; toilettes aux deux stations."
     }
   },
   "glossaryTokens": {
@@ -254,5 +295,5 @@
       "⟦G0⟧": "Plage de Songdo"
     }
   },
-  "tmHits": 14
+  "tmHits": 55
 }

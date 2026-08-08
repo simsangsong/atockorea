@@ -8,7 +8,11 @@ import {
   listStaticTourProducts,
   type StaticTourProductRegistration,
 } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 import { tourCardForSlug, type TourCardPayload } from "@/lib/chatbot/tourCards";
 import { recommendationChips } from "@/lib/chatbot/followUpChips";
 
@@ -51,7 +55,7 @@ export function matchToursInText(
     if (!prev || score > prev.score) scored.set(p.slug, { p, score });
   };
   for (const p of listStaticTourProducts("en")) consider(p);
-  if (locale !== "en") for (const p of listStaticTourProducts(locale)) consider(p);
+  if (locale !== "en") for (const p of listStaticTourProducts(toTourProductBaseLocale(locale))) consider(p);
   const ranked = Array.from(scored.values())
     .filter((s) => s.score >= 2)
     .sort((a, b) => b.score - a.score);
@@ -82,7 +86,7 @@ function compareBlock(p: StaticTourProductRegistration, locale: TourProductPageL
   ].join("\n");
 }
 
-const OUTRO: Record<TourProductPageLocale, string> = {
+const OUTRO: Record<TourProductBaseLocale, string> = {
   en: "Both are private with hotel pickup included. Want me to price one of them for your dates?",
   ko: "둘 다 호텔 픽업 포함 프라이빗 투어예요. 원하시는 날짜로 견적 내드릴까요?",
   ja: "どちらもホテル送迎付きのプライベートツアーです。ご希望の日程でお見積もりしましょうか？",
@@ -99,11 +103,11 @@ export function buildComparisonAnswer(
   const matched = matchToursInText(message, locale);
   if (matched.length < 2) return null;
   const localized = matched.map(
-    (p) => listStaticTourProducts(locale).find((x) => x.slug === p.slug) ?? p,
+    (p) => listStaticTourProducts(toTourProductBaseLocale(locale)).find((x) => x.slug === p.slug) ?? p,
   );
   const reply = [
     ...localized.map((p) => compareBlock(p, locale)),
-    OUTRO[locale] ?? OUTRO.en,
+    OUTRO[toTourProductBaseLocale(locale)] ?? OUTRO.en,
   ].join("\n\n");
   const cards = localized
     .map((p) => tourCardForSlug(p.slug, locale))

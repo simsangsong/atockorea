@@ -7,68 +7,84 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Busan subway pickup (3 stations)"
+      "source_en": "Busan subway pickup (3 stations)",
+      "tm": "Pickup presso la metro di Busan (3 stazioni)"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Partenza"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ (or Haeundae Dalmaji Hill in cherry season)",
+      "tm": "⟦G0⟧ (oppure Haeundae Dalmaji Hill nella stagione dei ciliegi in fiore)",
       "glossary": [
         "⟦G0⟧ = Foresta di bambù di Ahopsan"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Forest / Coastal road (seasonal)"
+      "source_en": "Forest / Coastal road (seasonal)",
+      "tm": "Foresta / Strada costiera (stagionale)"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧ (UNESCO)",
+      "tm": "⟦G0⟧ (UNESCO)",
       "glossary": [
         "⟦G0⟧ = Tempio di Bulguksa"
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "UNESCO heritage"
+      "source_en": "UNESCO heritage",
+      "tm": "Patrimonio UNESCO"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch (Gyeongju ssambap)"
+      "source_en": "Lunch (Gyeongju ssambap)",
+      "tm": "Pranzo (ssambap di Gyeongju)"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Pasto"
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧ & Choi Family House & ⟦G1⟧",
+      "tm": "⟦G0⟧ e Choi Family House e ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Villaggio hanok di Gyochon",
         "⟦G1⟧ = Ponte di Woljeonggyo"
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Head-family hanok + Silla bridge"
+      "source_en": "Head-family hanok + Silla bridge",
+      "tm": "Hanok della famiglia principale + ponte di Silla"
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧ & Hwangnidan-gil",
+      "tm": "⟦G0⟧ e Hwangnidan-gil",
       "glossary": [
         "⟦G0⟧ = Complesso tombale di Daereungwon"
       ]
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Royal tombs + cafe street"
+      "source_en": "Royal tombs + cafe street",
+      "tm": "Tombe reali + via dei caffè"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧ (winter: Donggung & Wolji by night)",
+      "tm": "⟦G0⟧ (inverno: Donggung e Wolji in notturna)",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Silla artifacts / winter night view"
+      "source_en": "Silla artifacts / winter night view",
+      "tm": "Reperti di Silla / vista notturna invernale"
     },
     "/routeFlowStops/7/name": {
-      "source_en": "Busan subway drop-off"
+      "source_en": "Busan subway drop-off",
+      "tm": "Rientro alla metropolitana di Busan"
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Ritorno"
     }
   },
   "glossaryTokens": {
@@ -89,5 +105,5 @@
       "⟦G0⟧": "Museo nazionale di Gyeongju"
     }
   },
-  "tmHits": 0
+  "tmHits": 16
 }

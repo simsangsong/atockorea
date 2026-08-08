@@ -6,7 +6,11 @@
 // Deterministic — labels come from source_type / chunk titles, never the model.
 
 import type { RetrievedChunk } from "@/lib/rag/retrieve";
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 
 export type AnswerSource = {
   type: string;
@@ -14,7 +18,7 @@ export type AnswerSource = {
   href: string | null;
 };
 
-const TYPE_LABELS: Record<string, Record<TourProductPageLocale, string>> = {
+const TYPE_LABELS: Record<string, Record<TourProductBaseLocale, string>> = {
   policy: {
     en: "Site policy", ko: "사이트 정책", ja: "サイトポリシー",
     zh: "网站政策", "zh-TW": "網站政策", es: "Política del sitio",
@@ -62,7 +66,7 @@ export function buildAnswerSources(
     const label =
       chunk.source_type === "tour_product" && chunk.title
         ? chunk.title
-        : (typeMap?.[locale] ?? typeMap?.en ?? chunk.source_type);
+        : (typeMap?.[toTourProductBaseLocale(locale)] ?? typeMap?.en ?? chunk.source_type);
     const key = `${chunk.source_type}:${label}`;
     if (seen.has(key)) continue;
     seen.add(key);

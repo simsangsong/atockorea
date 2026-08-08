@@ -1,0 +1,166 @@
+{
+  "unitId": "tour_product_pages:busan-private-car-charter-cruise-shore:ru:practicalAccordionItems",
+  "surface": "tour_product_pages",
+  "slug": "busan-private-car-charter-cruise-shore",
+  "locale": "ru",
+  "chunk": "practicalAccordionItems",
+  "tier": "A1",
+  "segments": {
+    "/practicalAccordionItems/0/title": {
+      "source_en": "Pickup, drop-off, and the 8-hour period"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Pickup at Busan Port International Cruise Terminal (Dongsam-dong) for large ships, or International Passenger Terminal (Choryang) for smaller vessels — whichever terminal your ship uses."
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "The 8-hour service time is planned around your specific all-aboard time, not a fixed clock."
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "Return drop-off at the same terminal, minimum 60 minutes before your all-aboard time."
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Pickup at Busan Port cruise terminal; return 60 min before all-aboard"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "What's included vs. pay-direct"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "Included: Private vehicle and driver for your group only · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee"
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Not included: Entrance fees at every stop · Meals and drinks · Personal expenses · Gratuities · Travel insurance"
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Included: Private vehicle and driver for your group only · English- and Chinese-speaking guide · Round-trip transfer from and to your cruise terminal · Tolls, parking and fuel · Booking fee"
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Customization and stop swaps"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "The default route covers ⟦G1⟧, ⟦G4⟧, ⟦G0⟧, ⟦G3⟧, and ⟦G2⟧.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон",
+        "⟦G1⟧ = Мемориальное кладбище ООН",
+        "⟦G2⟧ = Рынок Чагальчхи",
+        "⟦G3⟧ = Парк Йондусан",
+        "⟦G4⟧ = Тхэджондэ"
+      ]
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "You can swap or add stops (e.g., ⟦G0⟧ Temple, Haeundae Beach) up to 24 hours before, subject to time availability.",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "Guide can also adjust timing within the day to spend more time at your preferred stop."
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Route can be adjusted up to 24 hours before departure"
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "Vehicle, driver, and capacity"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Sedan (up to 3 guests), SUV/MPV (up to 5), or van (up to 8–10) — vehicle type assigned based on group size at booking."
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "No other passengers share the vehicle; the day runs entirely around your group's schedule."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "All vehicles are air-conditioned with USB charging."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Fully private vehicle — no other passengers"
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Weather and ship cancellation policy"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "If your ship diverts or cancels the Busan port call, notify us immediately for a full refund."
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Light rain: tour operates as normal. Typhoon-force weather: full refund or reschedule."
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "⟦G0⟧ cliff trail closes in heavy rain; the Danubi Train continues operating.",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Free cancellation if your ship can't dock; light rain operates as normal"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Languages and accessibility"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Driver-guide speaks fluent English; Korean-English bilingual service available on request."
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "⟦G0⟧'s hillside alleys are not wheelchair-accessible and stroller-difficult.",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "⟦G0⟧ Danubi Train (₩4,000) is a good alternative to the cliff walk for mobility-limited guests.",
+      "glossary": [
+        "⟦G0⟧ = Тхэджондэ"
+      ]
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "English-speaking driver-guide; some stops not wheelchair-accessible"
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Surcharges, cancellation and who this charter is for",
+      "tm": "Доплаты, отмена и для кого эта поездка"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Out-of-hours surcharge: if your charter starts before 07:00, or finishes after 20:00, a surcharge of ₩50,000 per hour applies and is paid on the day."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "Outside Busan: destinations beyond the Busan city boundary add ₩130,000 to the charter."
+    },
+    "/practicalAccordionItems/6/content/2": {
+      "source_en": "Cancellation: free up to 24 hours before the charter starts. Inside 24 hours the booking is non-refundable.",
+      "tm": "Отмена: бесплатно не позднее чем за 24 часа до начала поездки. В пределах 24 часов бронирование не подлежит возврату."
+    },
+    "/practicalAccordionItems/6/content/3": {
+      "source_en": "Minimum age: guests must be 4 years or older.",
+      "tm": "Минимальный возраст: гостям должно быть 4 года или больше."
+    },
+    "/practicalAccordionItems/6/content/4": {
+      "source_en": "Cruise passengers only: this charter is sold to guests arriving on a cruise ship calling at Busan. Bookings from travellers without a Busan port call are declined and refunded."
+    },
+    "/practicalAccordionItems/6/content/5": {
+      "source_en": "Return timing: the day is built around your ship's all-aboard time, and the drop-off is scheduled ahead of it.",
+      "tm": "Время возвращения: день выстроен вокруг времени посадки на ваше судно, и высадка планируется заранее относительно него."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Start before 07:00 or finish after 20:00 adds ₩50,000 per hour, and destinations outside Busan add ₩130,000. Free cancellation up to 24 hours ahead. Age 4 and up. Cruise passengers only."
+    }
+  },
+  "glossaryTokens": {
+    "/practicalAccordionItems/2/content/0": {
+      "⟦G0⟧": "Деревня культуры Камчхон",
+      "⟦G1⟧": "Мемориальное кладбище ООН",
+      "⟦G2⟧": "Рынок Чагальчхи",
+      "⟦G3⟧": "Парк Йондусан",
+      "⟦G4⟧": "Тхэджондэ"
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "⟦G0⟧": "Тхэджондэ"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "⟦G0⟧": "Тхэджондэ"
+    }
+  },
+  "tmHits": 4
+}

@@ -28,6 +28,7 @@
     },
     "/itineraryStops/0/highlights/0": {
       "source_en": "Pickup from Hongik University (Line 2) or ⟦G0⟧ (Line 4) ~08:00",
+      "tm": "Сбор у Hongik University (линия 2) или в ⟦G0⟧ (линия 4) ~08:00",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -41,16 +42,20 @@
       "tm": "Автобус с кондиционером и USB-зарядкой"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Designed for early arrival at Hwaseong Fortress before tour-group rush"
+      "source_en": "Designed for early arrival at Hwaseong Fortress before tour-group rush",
+      "tm": "Рассчитано на ранний приезд в крепость Хвасон, до наплыва экскурсионных групп"
     },
     "/itineraryStops/0/smartNotes/tip": {
-      "source_en": "Confirm exact pickup time and meeting point at booking — Seoul morning rush hour (07:00-09:00) makes punctuality critical. Bring water, sunscreen, and comfortable shoes for the fortress wall walking."
+      "source_en": "Confirm exact pickup time and meeting point at booking — Seoul morning rush hour (07:00-09:00) makes punctuality critical. Bring water, sunscreen, and comfortable shoes for the fortress wall walking.",
+      "tm": "Уточните точное время и место сбора при бронировании — из-за утреннего часа пик в Сеуле (07:00-09:00) пунктуальность здесь особенно важна. Возьмите воду, солнцезащитный крем и удобную обувь для прогулки по крепостной стене."
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "An 09:00 Seoul departure puts the group at Hwaseong Fortress before midday crowds and aligns with Korean Folk Village's afternoon performance schedule (Hanbok wedding ceremony reenactment, equestrian show, Nong-ak farmers' percussion)."
+      "source_en": "An 09:00 Seoul departure puts the group at Hwaseong Fortress before midday crowds and aligns with Korean Folk Village's afternoon performance schedule (Hanbok wedding ceremony reenactment, equestrian show, Nong-ak farmers' percussion).",
+      "tm": "Выезд из Сеула в 09:00 приводит группу в крепость Хвасон до полуденного наплыва посетителей и совпадает с расписанием послеобеденных представлений в Корейской фольклорной деревне (реконструкция свадебной церемонии в ханбоках, конное шоу, крестьянская перкуссия нонак)."
     },
     "/itineraryStops/0/description": {
       "source_en": "Pickup from one of two central Seoul meeting points: **Hongik University Station Exit 8** (Hongdae area, Seoul Subway Line 2/Airport Express) or **⟦G0⟧ Station Exit 2 or 4** (Seoul Subway Line 4). Confirm exact pickup time and location at booking — the schedule is built around an early start to reach Hwaseong Fortress before the late-morning Korean tour-group rush. \n\nAbout **1 hour by coach south to Suwon** via the Gyeongbu Expressway — the historical fortress city of Joseon's King Jeongjo, who built Hwaseong (1794-1796) to honor and protect the tomb of his executed father Crown Prince Sado. Light traffic Mon-Fri morning; weekend traffic adds 15-20 min cushion. Coach is air-conditioned and equipped with USB charging at most seats.",
+      "tm": "Сбор в одной из двух точек в центре Сеула: **станция Hongik University, выход 8** (район Хондэ, линия 2 сеульского метро и Airport Express) или **станция ⟦G0⟧, выход 2 или 4** (линия 4 сеульского метро). Уточните точное время и место сбора при бронировании — расписание построено вокруг раннего старта, чтобы попасть в крепость Хвасон до наплыва корейских экскурсионных групп в конце утра. \n\nОколо **1 часа на автобусе на юг, в Сувон**, по автомагистрали Кёнбу — в исторический город-крепость короля Чонджо, построившего Хвасон (1794-1796), чтобы почтить и защитить усыпальницу своего казнённого отца, наследного принца Садо. С понедельника по пятницу утром дороги свободные; в выходные стоит добавить 15–20 мин запаса. Автобус с кондиционером, у большинства мест есть USB-зарядка.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -135,7 +140,8 @@
       "tm": "Информационные центры для посетителей у Чанганмуна, Пальдальмуна и на площади Хвасон Хэнгун. Указатели на английском и корейском по всему маршруту. Прокат аудиогида по Хвасону у Чанганмуна."
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk (~1.2 km) gives the highest density of preserved military structures + the iconic Hwahongmun 7-arch sluice gate in a 75-min stop. Picked over the full 5.74 km loop because the route covers the most photographed and historically rich section while preserving time for the day's three other heritage stops. Hwaseong is also the **mandatory anchor of any Suwon day-trip** because it physically encloses the Haenggung palace and overlooks Nammun Market — meaning a single 4-5-hour Suwon block can deliver UNESCO World Heritage credentials, Joseon royal-residence interiority, and authentic traditional-market street-food without re-positioning the vehicle. The 1.2 km Janganmun → Hwaseomun wall section via Hwaseo Janggak is the highest-density preserved-military-architecture stretch in Korea (4 main gates + 5 secret gates + 4 sluices + Geojunggi-built ramparts coexist within 25-30 minutes walking time)."
+      "source_en": "The route's UNESCO anchor — Korea's only remaining walled fortress city, built 1794-1796 under King Jeongjo. The Janganmun → Hwaseomun walk (~1.2 km) gives the highest density of preserved military structures + the iconic Hwahongmun 7-arch sluice gate in a 75-min stop. Picked over the full 5.74 km loop because the route covers the most photographed and historically rich section while preserving time for the day's three other heritage stops. Hwaseong is also the **mandatory anchor of any Suwon day-trip** because it physically encloses the Haenggung palace and overlooks Nammun Market — meaning a single 4-5-hour Suwon block can deliver UNESCO World Heritage credentials, Joseon royal-residence interiority, and authentic traditional-market street-food without re-positioning the vehicle. The 1.2 km Janganmun → Hwaseomun wall section via Hwaseo Janggak is the highest-density preserved-military-architecture stretch in Korea (4 main gates + 5 secret gates + 4 sluices + Geojunggi-built ramparts coexist within 25-30 minutes walking time).",
+      "tm": "Главная точка маршрута из списка ЮНЕСКО — единственный сохранившийся в Корее город-крепость, построенный в 1794-1796 годах при короле Чонджо. Прогулка от Чанганмуна до Хвасомуна (~1,2 км) за остановку в 75 мин даёт наибольшую плотность сохранившихся военных сооружений и знаменитые шлюзовые ворота Хвахонмун с 7 арками. Этот вариант выбран вместо полного круга в 5,74 км потому, что маршрут охватывает самый фотографируемый и исторически насыщенный участок и при этом оставляет время на три других исторических остановки дня. Хвасон к тому же **обязательная опора любой поездки в Сувон**: он физически окружает дворец Хэнгун и возвышается над рынком Наммун, поэтому один сувонский блок на 4–5 часов даёт и статус Всемирного наследия ЮНЕСКО, и внутреннее пространство королевской резиденции Чосона, и настоящую уличную еду традиционного рынка — без переездов автобуса. Участок стены длиной 1,2 км от Чанганмуна до Хвасомуна через Хвасо Чангак — самый насыщенный сохранившейся военной архитектурой отрезок в Корее (4 главных ворот, 5 тайных ворот, 4 шлюза и валы, построенные с помощью кочунги, укладываются в 25–30 минут ходьбы)."
     },
     "/itineraryStops/1/convenience/parking": {
       "source_en": "Coach drop-off at Janganmun lot; designated coach parking at Yeonmudae",
@@ -157,5 +163,5 @@
       "⟦G0⟧": "Крепость Хвасон в Сувоне"
     }
   },
-  "tmHits": 28
+  "tmHits": 34
 }

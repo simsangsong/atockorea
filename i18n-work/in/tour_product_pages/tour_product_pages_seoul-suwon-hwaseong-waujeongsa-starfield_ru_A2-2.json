@@ -8,6 +8,7 @@
   "segments": {
     "/staticQuestions/0/answer": {
       "source_en": "All three share ⟦G1⟧ + ⟦G0⟧ + Starfield Library. This version adds ⟦G2⟧ in Yongin (Buddhist, 3,000+ statues, world's largest wooden reclining Buddha). The Folk Village version adds Korean Folk Village (270+ traditional houses, K-drama filming). The Gwangmyeong version adds the underground LED-lit cave park. Pick this one if Buddhist sculpture interests you most; the Folk Village version for deepest heritage; Gwangmyeong for variety and indoor weather.",
+      "tm": "Во всех трёх есть ⟦G1⟧, ⟦G0⟧ и библиотека Starfield. В этой версии добавляется ⟦G2⟧ в Йонъине (буддийский храм, более 3 000 статуй, крупнейший в мире деревянный лежащий Будда). В версии с фольклорной деревней добавляется Корейская фольклорная деревня (более 270 традиционных домов, съёмки K-драм). В версии с Кванмёном — подземный пещерный парк с подсветкой. Выбирайте эту, если вам больше всего интересна буддийская скульптура; версию с деревней — ради самого глубокого погружения в наследие; Кванмён — ради разнообразия и остановок под крышей.",
       "glossary": [
         "⟦G0⟧ = Дворец Хвасон Хэнгун",
         "⟦G1⟧ = Крепость Хвасон в Сувоне",
@@ -16,12 +17,14 @@
     },
     "/staticQuestions/0/question": {
       "source_en": "How is this different from the Suwon + Folk Village or Suwon + ⟦G0⟧ tours?",
+      "tm": "Чем это отличается от экскурсий «Сувон и Фольклорная деревня» или «Сувон и ⟦G0⟧»?",
       "glossary": [
         "⟦G0⟧ = Пещера Кванмён"
       ]
     },
     "/staticQuestions/1/answer": {
       "source_en": "Yes — all three paid stops are included: ⟦G1⟧ (1,000 KRW adult), ⟦G0⟧ (1,500 KRW adult), and ⟦G2⟧ (free admission). Starfield Library is also free for everyone. Optional café drinks, mall food hall meals, and any souvenir purchases are at your own cost.",
+      "tm": "Да: все три платные остановки включены — ⟦G1⟧ (1 000 KRW для взрослого), ⟦G0⟧ (1 500 KRW для взрослого) и ⟦G2⟧ (вход бесплатный). Библиотека Starfield тоже бесплатна для всех. Напитки в кафе, еда в фуд-холле торгового центра и любые сувениры — за ваш счёт.",
       "glossary": [
         "⟦G0⟧ = Дворец Хвасон Хэнгун",
         "⟦G1⟧ = Крепость Хвасон в Сувоне",
@@ -33,44 +36,54 @@
       "tm": "Включены ли входные билеты?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "No. Lunch is during free time at Starfield Suwon's mall food hall — large variety, casual seating, typically 10,000-20,000 KRW per person. The library and mall are stop #2 (≈13:30 arrival) so the timing works as a natural break between Hwaseong in the morning and Waujeongsa in the afternoon."
+      "source_en": "No. Lunch is during free time at Starfield Suwon's mall food hall — large variety, casual seating, typically 10,000-20,000 KRW per person. The library and mall are stop #2 (≈13:30 arrival) so the timing works as a natural break between Hwaseong in the morning and Waujeongsa in the afternoon.",
+      "tm": "Нет. Обед приходится на свободное время в фуд-холле торгового центра Starfield в Сувоне: большой выбор, свободная посадка, обычно 10 000–20 000 KRW с человека. Библиотека и торговый центр — остановка № 2 (прибытие ≈13:30), поэтому это естественная пауза между Хвасоном утром и Вауджонса во второй половине дня."
     },
     "/staticQuestions/2/question": {
       "source_en": "Is lunch included?",
       "tm": "Включён ли обед?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "It's a non-traditional temple: founded in 1970 by Monk Kim Hae-Geun (a North Korean refugee) and built around a single founder's collection of 3,000+ Buddha statues from across Asia. The headline pieces are the Buldu — an 8-meter wooden Buddha head registered in the Guinness Book of Records as the world's largest — and the Wabul, a 3m × 12m wooden reclining Buddha carved from an Indonesian juniper. The 12-ton Bell of Unification was rung at the start of the 1988 Seoul Olympics. Free admission, ≈75 minutes recommended."
+      "source_en": "It's a non-traditional temple: founded in 1970 by Monk Kim Hae-Geun (a North Korean refugee) and built around a single founder's collection of 3,000+ Buddha statues from across Asia. The headline pieces are the Buldu — an 8-meter wooden Buddha head registered in the Guinness Book of Records as the world's largest — and the Wabul, a 3m × 12m wooden reclining Buddha carved from an Indonesian juniper. The 12-ton Bell of Unification was rung at the start of the 1988 Seoul Olympics. Free admission, ≈75 minutes recommended.",
+      "tm": "Это нетрадиционный храм: он основан в 1970 году монахом Ким Хэ Гыном, беженцем из Северной Кореи, и вырос вокруг собранной им коллекции из более чем 3 000 статуй Будды со всей Азии. Главные экспонаты — Пульду, деревянная голова Будды высотой 8 метров, занесённая в Книгу рекордов Гиннесса как самая большая в мире, и Вабуль, деревянный лежащий Будда 3 м × 12 м, вырезанный из индонезийского можжевельника. Колокол объединения весом 12 тонн прозвучал на открытии Олимпиады 1988 года в Сеуле. Вход бесплатный, рекомендуемое время ≈75 минут."
     },
     "/staticQuestions/3/question": {
       "source_en": "What's distinctive about ⟦G0⟧?",
+      "tm": "Чем особенен ⟦G0⟧?",
       "glossary": [
         "⟦G0⟧ = Храм Вауджонса"
       ]
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Covered shoulders are recommended at Waujeongsa — bring a light layer if wearing a sleeveless top in summer. Hats are typically removed inside the main halls. No strict dress code is enforced for outdoor temple grounds, but modest clothing is appreciated as a sign of respect. Comfortable walking shoes with grip help with the temple's stairs and inclines."
+      "source_en": "Covered shoulders are recommended at Waujeongsa — bring a light layer if wearing a sleeveless top in summer. Hats are typically removed inside the main halls. No strict dress code is enforced for outdoor temple grounds, but modest clothing is appreciated as a sign of respect. Comfortable walking shoes with grip help with the temple's stairs and inclines.",
+      "tm": "В Вауджонса плечи желательно закрыть: если летом вы в майке, возьмите что-нибудь накинуть. В главных залах обычно снимают головные уборы. На открытой территории храма строгого дресс-кода нет, но скромная одежда воспринимается как знак уважения. Удобная обувь с нескользящей подошвой пригодится на ступенях и подъёмах храма."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Do I need to dress modestly for the temple?"
+      "source_en": "Do I need to dress modestly for the temple?",
+      "tm": "Нужно ли одеваться скромно для посещения храма?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Three different walking styles: Hwaseong Fortress wall has the hardest section (steep gradients, stairs at gates, ≈1 km walked); Starfield Library is fully indoor with escalators; Waujeongsa has stairs and inclines on temple grounds (moderate). Total walking ≈3-4 km across the day. Comfortable shoes essential, especially for the wall walk and temple paths."
+      "source_en": "Three different walking styles: Hwaseong Fortress wall has the hardest section (steep gradients, stairs at gates, ≈1 km walked); Starfield Library is fully indoor with escalators; Waujeongsa has stairs and inclines on temple grounds (moderate). Total walking ≈3-4 km across the day. Comfortable shoes essential, especially for the wall walk and temple paths.",
+      "tm": "Три разных типа ходьбы: самый тяжёлый участок — стена крепости Хвасон (крутые подъёмы, ступени у ворот, проходим ≈1 км); библиотека Starfield полностью внутри, с эскалаторами; в Вауджонса на территории храма есть ступени и подъёмы (умеренно). Всего за день ≈3–4 км. Удобная обувь обязательна, особенно для прогулки по стене и храмовых дорожек."
     },
     "/staticQuestions/5/question": {
-      "source_en": "How is the walking load distributed across the day?"
+      "source_en": "How is the walking load distributed across the day?",
+      "tm": "Как нагрузка от ходьбы распределяется по дню?"
     },
     "/staticQuestions/6/answer": {
       "source_en": "Yes — this is one of the strongest first-time picks for travelers who want one UNESCO heritage site, one contemporary photo space, and one distinctive Buddhist temple in a single guided day. The format keeps things balanced rather than active, with all stops geographically close (Suwon-Yongin corridor, ≈30 min apart). Free hotel pickup from Hongdae or ⟦G0⟧ simplifies the morning logistics.",
+      "tm": "Да, это один из лучших вариантов для первого раза, если вы хотите за один день с гидом увидеть один объект наследия ЮНЕСКО, одно современное пространство для фотографий и один необычный буддийский храм. Формат скорее уравновешенный, чем активный, а все остановки расположены близко (коридор Сувон–Йонъин, ≈30 мин друг от друга). Бесплатный сбор в Хондэ или в ⟦G0⟧ упрощает утреннюю логистику.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/staticQuestions/6/question": {
-      "source_en": "Is this a good choice for first-time visitors to Suwon & Yongin?"
+      "source_en": "Is this a good choice for first-time visitors to Suwon & Yongin?",
+      "tm": "Подойдёт ли это тем, кто впервые едет в Сувон и Йонъин?"
     },
     "/staticQuestions/7/answer": {
       "source_en": "Moderate active walking. The hardest section is Hwaseong Fortress: ≈1 km of stone wall walk with steep gradients, stairs at gates, and uneven historic surfaces — comfortable shoes with grip essential. Starfield Library is easy indoor walking on flat floors. ⟦G0⟧ has some uphill paths and stairs (moderate). Total walking ≈3-4 km across the day. Strollers difficult on the wall and temple, fine at Starfield.",
+      "tm": "Умеренная активная ходьба. Самый тяжёлый участок — крепость Хвасон: ≈1 км по каменной стене с крутыми подъёмами, ступенями у ворот и неровной исторической поверхностью, поэтому удобная обувь с нескользящей подошвой обязательна. В библиотеке Starfield ходьба лёгкая, внутри и по ровным полам. В ⟦G0⟧ есть подъёмы и ступени (умеренно). Всего за день ≈3–4 км. С коляской тяжело на стене и в храме, зато удобно в Starfield.",
       "glossary": [
         "⟦G0⟧ = Храм Вауджонса"
       ]
@@ -81,6 +94,7 @@
     },
     "/staticQuestions/8/answer": {
       "source_en": "Yes — comfortable for most families with children age 6+. Strollers are challenging on the Hwaseong wall and at Waujeongsa, but Starfield is fully stroller-friendly with escalators and elevators. Kids often respond strongly to Waujeongsa's giant Buddha head and the 3,000+ statue collection. Hanbok rental at ⟦G0⟧ is a popular family photo moment (and gets free fortress admission).",
+      "tm": "Да, большинству семей с детьми от 6 лет будет комфортно. С коляской тяжело на стене Хвасона и в Вауджонса, зато в Starfield с ней удобно — есть эскалаторы и лифты. Детей обычно очень впечатляют огромная голова Будды в Вауджонса и коллекция из более чем 3 000 статуй. Прокат ханбока в ⟦G0⟧ — популярный повод для семейного фото (и он же даёт бесплатный вход в крепость).",
       "glossary": [
         "⟦G0⟧ = Дворец Хвасон Хэнгун"
       ]
@@ -90,14 +104,16 @@
       "tm": "Подходит ли этот тур для семей?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "Yes for active seniors comfortable with stairs and uneven ground; more limited for low-mobility travelers. The Hwaseong wall walk has the hardest sections (steep gradients, stone steps); seniors can walk the easier flat segments and skip the climb to command posts. Waujeongsa has temple-ground stairs but the main statue collection is on accessible levels. Starfield is fully escalator/elevator-accessible — the recovery stop."
+      "source_en": "Yes for active seniors comfortable with stairs and uneven ground; more limited for low-mobility travelers. The Hwaseong wall walk has the hardest sections (steep gradients, stone steps); seniors can walk the easier flat segments and skip the climb to command posts. Waujeongsa has temple-ground stairs but the main statue collection is on accessible levels. Starfield is fully escalator/elevator-accessible — the recovery stop.",
+      "tm": "Да — активным пожилым гостям, которых не смущают ступени и неровная поверхность; для тех, кому тяжело ходить, вариант ограниченный. Самые сложные участки — на стене Хвасона (крутые подъёмы, каменные ступени); пожилые гости могут пройти более лёгкие ровные отрезки и отказаться от подъёма к командным постам. В Вауджонса есть ступени на территории храма, но основная коллекция статуй находится на доступных уровнях. В Starfield всё доступно на эскалаторах и лифтах — это остановка для передышки."
     },
     "/staticQuestions/9/question": {
       "source_en": "Can older adults join comfortably?",
       "tm": "Смогут ли комфортно участвовать гости старшего возраста?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "Best fit is around age 6 and up. The fortress wall has stairs and uneven historic surfaces, and Waujeongsa's temple grounds have inclines that tire very young children. Older kids do well — the giant Buddha head and the Bell of Unification have a 'wow' factor and Starfield's library is accessible. Strollers manage well at Starfield but not on the wall."
+      "source_en": "Best fit is around age 6 and up. The fortress wall has stairs and uneven historic surfaces, and Waujeongsa's temple grounds have inclines that tire very young children. Older kids do well — the giant Buddha head and the Bell of Unification have a 'wow' factor and Starfield's library is accessible. Strollers manage well at Starfield but not on the wall.",
+      "tm": "Лучше всего подходит примерно с 6 лет. На крепостной стене есть ступени и неровная историческая поверхность, а на территории Вауджонса подъёмы, которые утомляют совсем маленьких детей. Детям постарше здесь хорошо: огромная голова Будды и Колокол объединения действительно впечатляют, а библиотека Starfield доступна всем. С коляской в Starfield удобно, а на стене — нет."
     },
     "/staticQuestions/10/question": {
       "source_en": "What's the recommended minimum age?",
@@ -140,44 +156,52 @@
       "tm": "Подобран под маршрут"
     },
     "/seasonalVariations/0/title": {
-      "source_en": "Cherry blossom season"
+      "source_en": "Cherry blossom season",
+      "tm": "Сезон цветения сакуры"
     },
     "/seasonalVariations/0/season": {
       "source_en": "Spring",
       "tm": "Весна"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms line the Hwaseong wall in early April, making this one of the best photo seasons for the route."
+      "source_en": "Cherry blossoms line the Hwaseong wall in early April, making this one of the best photo seasons for the route.",
+      "tm": "В начале апреля вдоль стены Хвасона цветёт сакура, и это один из лучших сезонов для съёмок на этом маршруте."
     },
     "/seasonalVariations/1/title": {
-      "source_en": "Lush but humid"
+      "source_en": "Lush but humid",
+      "tm": "Пышно, но влажно"
     },
     "/seasonalVariations/1/season": {
       "source_en": "Summer",
       "tm": "Лето"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Lush green temple grounds and longer daylight, but humidity and exposed-wall heat make the morning section feel more demanding."
+      "source_en": "Lush green temple grounds and longer daylight, but humidity and exposed-wall heat make the morning section feel more demanding.",
+      "tm": "Пышная зелень на территории храма и долгий световой день, но из-за влажности и жары на открытой стене утренняя часть даётся тяжелее."
     },
     "/seasonalVariations/2/title": {
-      "source_en": "Best all-round season"
+      "source_en": "Best all-round season",
+      "tm": "Лучший сезон в целом"
     },
     "/seasonalVariations/2/season": {
       "source_en": "Autumn",
       "tm": "Осень"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Crisp visibility and foliage along the Hwaseong wall and Yeonhwasan; one of the strongest all-round seasons for the route."
+      "source_en": "Crisp visibility and foliage along the Hwaseong wall and Yeonhwasan; one of the strongest all-round seasons for the route.",
+      "tm": "Чистый воздух и осенняя листва вдоль стены Хвасона и на Ёнхвасане; один из лучших сезонов для этого маршрута."
     },
     "/seasonalVariations/3/title": {
-      "source_en": "Quiet and dramatic"
+      "source_en": "Quiet and dramatic",
+      "tm": "Тихо и внушительно"
     },
     "/seasonalVariations/3/season": {
       "source_en": "Winter",
       "tm": "Зима"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Quiet temple grounds and dramatic fortress walls; cold but visually rewarding. Bundle up because the wall walk is exposed."
+      "source_en": "Quiet temple grounds and dramatic fortress walls; cold but visually rewarding. Bundle up because the wall walk is exposed.",
+      "tm": "Тихая территория храма и внушительные крепостные стены: холодно, но зрелищно. Оденьтесь теплее — стена открыта всем ветрам."
     }
   },
   "glossaryTokens": {
@@ -207,5 +231,5 @@
       "⟦G0⟧": "Дворец Хвасон Хэнгун"
     }
   },
-  "tmHits": 19
+  "tmHits": 43
 }

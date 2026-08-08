@@ -7,31 +7,39 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/9/whyOnRoute": {
-      "source_en": "This is the one stop on the day where the experience is the guest's to choose. Sky Park sits across the bay and the cable car is the way up to it, so the stop window is sized for the round trip. Guests who skip the ride are not left waiting anywhere awkward — the base station is on the beach the group has just walked."
+      "source_en": "This is the one stop on the day where the experience is the guest's to choose. Sky Park sits across the bay and the cable car is the way up to it, so the stop window is sized for the round trip. Guests who skip the ride are not left waiting anywhere awkward — the base station is on the beach the group has just walked.",
+      "tm": "C'est la seule étape de la journée où l'expérience appartient au voyageur. Le Sky Park se trouve de l'autre côté de la baie et le téléphérique est le moyen d'y monter : la durée de l'étape est donc calculée pour l'aller-retour. Ceux qui renoncent à la montée ne se retrouvent pas à attendre dans un endroit incommode — la station de départ est sur la plage que le groupe vient de parcourir."
     },
     "/itineraryStops/9/convenience/parking": {
-      "source_en": "Songdo Marine Park public lot (base station)"
+      "source_en": "Songdo Marine Park public lot (base station)",
+      "tm": "Parking public du parc maritime de Songdo (station de départ)"
     },
     "/itineraryStops/9/convenience/restroom": {
-      "source_en": "Both cable-car stations"
+      "source_en": "Both cable-car stations",
+      "tm": "Les deux stations du téléphérique"
     },
     "/itineraryStops/9/description": {
       "source_en": "**Songdo Sky Park** sits on the Amnam Park headland at the far end of the **Songdo Marine Cable Car (Busan Air Cruise)** — a **1.62 km** round-trip line that crosses the bay at up to **86 m** above the water. The line first ran in 1964, closed in 1988, and **reopened in June 2017**.\n\nThe park at the top has sea-view decks looking back across the bay to ⟦G0⟧, landscaped walks, and a dinosaur-themed section that children tend to make straight for. From the decks the coastal trail continues down into Amnam Park proper.\n\n**The cable car is not included in this tour.** It is an on-site choice paid at the station: **₩17,000 adult round-trip**, or **₩25,000** for the glass-floored Crystal cabin. Guests who would rather stay at sea level spend the stop on the beach promenade instead — the vehicle waits either way.",
+      "tm": "**Le Songdo Sky Park** occupe le promontoire du parc d'Amnam, à l'extrémité du **téléphérique maritime de Songdo (Busan Air Cruise)** — une ligne de **1,62 km** aller-retour qui franchit la baie jusqu'à **86 m** au-dessus de l'eau. La ligne a d'abord circulé en 1964, a fermé en 1988, et a **rouvert en juin 2017**.\n\nLe parc, au sommet, offre des terrasses avec vue sur la mer, en regard de la baie et de ⟦G0⟧, des promenades paysagées et une section sur le thème des dinosaures vers laquelle les enfants filent généralement tout droit. Depuis les terrasses, le sentier côtier redescend dans le parc d'Amnam proprement dit.\n\n**Le téléphérique n'est pas compris dans ce circuit.** C'est un choix à faire sur place, payé à la station : **₩17 000 aller-retour pour un adulte**, ou **₩25 000** pour la cabine Crystal à plancher de verre. Ceux qui préfèrent rester au niveau de la mer passent l'étape sur la promenade de la plage — le véhicule attend dans les deux cas.",
       "glossary": [
         "⟦G0⟧ = Plage de Songdo"
       ]
     },
     "/itineraryStops/9/visitBasics/hours": {
-      "source_en": "Cable car 09:00-21:00 (seasonal); Amnam Park headland open daily"
+      "source_en": "Cable car 09:00-21:00 (seasonal); Amnam Park headland open daily",
+      "tm": "Téléphérique 09h00-21h00 (selon la saison) ; le promontoire du parc d’Amnam est ouvert tous les jours"
     },
     "/itineraryStops/9/visitBasics/closed": {
-      "source_en": "Cable car suspended in high wind or severe weather"
+      "source_en": "Cable car suspended in high wind or severe weather",
+      "tm": "Téléphérique suspendu par vent fort ou gros temps"
     },
     "/itineraryStops/9/visitBasics/walking": {
-      "source_en": "Easy — station lifts and level decks"
+      "source_en": "Easy — station lifts and level decks",
+      "tm": "Facile — ascenseurs en station et terrasses de plain-pied"
     },
     "/itineraryStops/9/visitBasics/admission": {
-      "source_en": "Cable car not included — ₩17,000 adult round-trip, ₩25,000 Crystal cabin, paid on site. Amnam Park itself is free."
+      "source_en": "Cable car not included — ₩17,000 adult round-trip, ₩25,000 Crystal cabin, paid on site. Amnam Park itself is free.",
+      "tm": "Téléphérique non compris — ₩17 000 aller-retour adulte, ₩25 000 en cabine Crystal, à régler sur place. Le parc d’Amnam lui-même est gratuit."
     },
     "/itineraryStops/10/name": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower",
@@ -41,64 +49,84 @@
       ]
     },
     "/itineraryStops/10/category": {
-      "source_en": "City Viewpoint / Civic Park"
+      "source_en": "City Viewpoint / Civic Park",
+      "tm": "Point de vue urbain / parc municipal"
     },
     "/itineraryStops/10/duration": {
-      "source_en": "20 min"
+      "source_en": "20 min",
+      "tm": "20 min"
     },
     "/itineraryStops/10/timeUsed/0": {
-      "source_en": "Van drop-off near Gwangbok-ro Fashion Street (~5 min)"
+      "source_en": "Van drop-off near Gwangbok-ro Fashion Street (~5 min)",
+      "tm": "Dépose du van près de la Gwangbok-ro Fashion Street (~5 min)"
     },
     "/itineraryStops/10/timeUsed/1": {
-      "source_en": "Escalator ascent to park plaza (~5 min)"
+      "source_en": "Escalator ascent to park plaza (~5 min)",
+      "tm": "Montée en escalier mécanique jusqu’à l’esplanade du parc (~5 min)"
     },
     "/itineraryStops/10/timeUsed/2": {
-      "source_en": "Flower clock + Admiral Yi Sun-sin statue + Citizens' Bell photos (~10 min)"
+      "source_en": "Flower clock + Admiral Yi Sun-sin statue + Citizens' Bell photos (~10 min)",
+      "tm": "Horloge florale + statue de l’amiral Yi Sun-sin + photos de la cloche des citoyens (~10 min)"
     },
     "/itineraryStops/10/timeUsed/3": {
-      "source_en": "Tower observatory exterior + 360° park view (no ticket included) (~10 min)"
+      "source_en": "Tower observatory exterior + 360° park view (no ticket included) (~10 min)",
+      "tm": "Extérieur de l’observatoire de la tour + vue à 360° depuis le parc (billet non compris) (~10 min)"
     },
     "/itineraryStops/10/highlights/0": {
-      "source_en": "**'Dragon Head Mountain'** — historically a protective barrier against wokou (Japanese pirates)"
+      "source_en": "**'Dragon Head Mountain'** — historically a protective barrier against wokou (Japanese pirates)",
+      "tm": "**« La montagne de la Tête du dragon »** — historiquement un rempart contre les wokou (pirates japonais)"
     },
     "/itineraryStops/10/highlights/1": {
-      "source_en": "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown"
+      "source_en": "Site of **Joseon-era waegwan (Japanese trade enclave 1678–1878)** + **Ryūtōsan Shrine** + Korean War shantytown",
+      "tm": "Emplacement d’un **waegwan de l’époque Joseon (enclave commerciale japonaise, 1678-1878)**, du **sanctuaire Ryūtōsan** et d’un bidonville de la guerre de Corée"
     },
     "/itineraryStops/10/highlights/2": {
-      "source_en": "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment"
+      "source_en": "**Busan Tower 1973** → rebranded **Busan Diamond Tower 2021** after redevelopment",
+      "tm": "**Busan Tower en 1973** → rebaptisée **Busan Diamond Tower en 2021** après réaménagement"
     },
     "/itineraryStops/10/highlights/3": {
-      "source_en": "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation"
+      "source_en": "**Tower top modeled after Bulguksa Dabotap baldaquin** (NT 20, Gyeongju) — Silla heritage quotation",
+      "tm": "**Sommet de la tour inspiré du baldaquin de la pagode Dabotap de Bulguksa** (Trésor national n° 20, Gyeongju) — une citation du patrimoine de Silla"
     },
     "/itineraryStops/10/highlights/4": {
-      "source_en": "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship"
+      "source_en": "**Statue of Admiral Yi Sun-sin** (1545–1598) — Imjin War turtle-ship hero who never lost a ship",
+      "tm": "**Statue de l’amiral Yi Sun-sin** (1545-1598) — le héros aux bateaux-tortues de la guerre d’Imjin, qui ne perdit jamais un navire"
     },
     "/itineraryStops/10/highlights/5": {
-      "source_en": "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1 (Independence Movement Day)"
+      "source_en": "**Citizens' Bell** — 100,000 donors; struck 33× on New Year's Eve + March 1 (Independence Movement Day)",
+      "tm": "**La cloche des citoyens** — 100 000 donateurs ; frappée 33 fois le soir du réveillon et le 1er mars (jour du Mouvement pour l’indépendance)"
     },
     "/itineraryStops/10/highlights/6": {
-      "source_en": "Tower observatory ₩12,000 adult; park free 24h"
+      "source_en": "Tower observatory ₩12,000 adult; park free 24h",
+      "tm": "Observatoire de la tour ₩12 000 adulte ; parc gratuit 24 h sur 24"
     },
     "/itineraryStops/10/highlights/7": {
-      "source_en": "**Covered escalator from Gwangbok-ro Fashion Street** — no return escalator"
+      "source_en": "**Covered escalator from Gwangbok-ro Fashion Street** — no return escalator",
+      "tm": "**Escalier mécanique couvert depuis la Gwangbok-ro Fashion Street** — pas d’escalier mécanique pour le retour"
     },
     "/itineraryStops/10/smartNotes/tip": {
-      "source_en": "Tower observatory ticket (₩12,000) is **NOT included** in this tour — guests who want to ride the observatory should plan to skip the park-level photo time and queue at the tower (~25 min round-trip ascent); most cruise guests on the bus-tour prefer the park-level photo experience plus the panorama from the park plaza itself, which is already 69 m above sea level"
+      "source_en": "Tower observatory ticket (₩12,000) is **NOT included** in this tour — guests who want to ride the observatory should plan to skip the park-level photo time and queue at the tower (~25 min round-trip ascent); most cruise guests on the bus-tour prefer the park-level photo experience plus the panorama from the park plaza itself, which is already 69 m above sea level",
+      "tm": "Le billet de l'observatoire de la tour (₩12 000) n'est **PAS compris** dans ce circuit — ceux qui souhaitent y monter devront renoncer au temps photo au niveau du parc et faire la queue à la tour (~25 min pour l'aller-retour) ; la plupart des croisiéristes en circuit préfèrent les photos au niveau du parc et le panorama depuis l'esplanade elle-même, déjà à 69 m au-dessus du niveau de la mer"
     },
     "/itineraryStops/10/smartNotes/facilities": {
-      "source_en": "Public restrooms at the park plaza and inside Busan Diamond Tower lobby; small souvenir shop and cafe at park-level"
+      "source_en": "Public restrooms at the park plaza and inside Busan Diamond Tower lobby; small souvenir shop and cafe at park-level",
+      "tm": "Toilettes publiques sur l’esplanade du parc et dans le hall de la Busan Diamond Tower ; petite boutique de souvenirs et café au niveau du parc"
     },
     "/itineraryStops/10/whyOnRoute": {
-      "source_en": "Yongdusan gives you Busan's most recognised 360-degree panorama and closes the loop on foot: the park sits directly above the Nampo-dong streets the group walked earlier, so the last stop reframes the day from above before the short drive back to the ship."
+      "source_en": "Yongdusan gives you Busan's most recognised 360-degree panorama and closes the loop on foot: the park sits directly above the Nampo-dong streets the group walked earlier, so the last stop reframes the day from above before the short drive back to the ship.",
+      "tm": "Yongdusan offre le panorama à 360 degrés le plus reconnaissable de Busan et referme la boucle à pied : le parc surplombe directement les rues de Nampo-dong parcourues plus tôt, si bien que la dernière étape recadre la journée depuis les hauteurs, avant le court trajet de retour vers le navire."
     },
     "/itineraryStops/10/convenience/parking": {
-      "source_en": "No on-site van parking — van drops off at Gwangbok-ro Fashion Street and waits at the Daecheong-ro pickup point"
+      "source_en": "No on-site van parking — van drops off at Gwangbok-ro Fashion Street and waits at the Daecheong-ro pickup point",
+      "tm": "Aucun stationnement sur place pour le van — il dépose le groupe à la Gwangbok-ro Fashion Street et attend au point de reprise de Daecheong-ro"
     },
     "/itineraryStops/10/convenience/restroom": {
-      "source_en": "At the park plaza and inside Busan Diamond Tower"
+      "source_en": "At the park plaza and inside Busan Diamond Tower",
+      "tm": "Sur l’esplanade du parc et dans la Busan Diamond Tower"
     },
     "/itineraryStops/10/description": {
       "source_en": "**⟦G2⟧ (용두산공원, 'Dragon Head Mountain Park')** — a **69,000 m²** civic park at the heart of Nampo-dong with **70 tree species** — is a layered historical site: it was once a **Joseon-era waegwan** (Choryang Wakan, the **Japanese trade-and-diplomacy enclave from 1678 to 1878**), then a Japanese **Ryūtōsan Shrine (17th–early 20th century)**, then a **Korean War refugee shantytown** (most destroyed by 1950s fires), and finally redeveloped as the modern park. \n\nThe **120-meter-tall Busan Tower** (originally **opened 1973**, **rebranded 'Busan Diamond Tower' after a 2021 redevelopment**) is the park's centerpiece — its **observation deck top is modeled after the baldaquin (canopy) of Dabotap Pagoda (NT 20) at ⟦G0⟧ in Gyeongju**, an explicit architectural quotation linking Busan's modern landmark to Silla heritage. \n\nThe tower stands at **69m above sea level + 120m height = 189m total summit elevation**, offering **360° panoramas** to Busan Port, Yeongdo Bridge, Tsushima Island (clear days), and ⟦G1⟧ below. Other park monuments: the **bronze statue of Admiral Yi Sun-sin (1545–1598)** (Busan's hometown naval hero who defeated Japanese forces in the 1592–1598 Imjin War, famously **never lost a single ship**), the **Citizens' Bell** donated by **100,000 Busan citizens** (struck **33 times on New Year's Eve and March 1 Independence Movement Day** — the 33 strikes commemorate the 33 Korean signatories of the 1919 Declaration of Independence read at Tapgol Park in Seoul; ties Busan's civic identity to national independence narrative), the **flower clock** at the entrance, and a **bronze dragon sculpture** symbolic of the mountain's name. \n\nAccess is via a **covered escalator from Gwangbok-ro Fashion Street** (no return escalator — descend by stairs). **Park free 24h**; **Busan Diamond Tower observatory ₩12,000 adult / ₩9,000 senior 65+ or child 3–12, hours 10:00–22:00 (last admission 21:30) — observatory ticket NOT included in this tour**.",
+      "tm": "**⟦G2⟧ (용두산공원, « parc de la montagne de la Tête du dragon »)** — un parc municipal de **69 000 m²** au cœur de Nampo-dong, planté de **70 essences d'arbres** — est un site aux strates historiques multiples : ce fut d'abord un **waegwan de l'époque Joseon** (le Choryang Wakan, **enclave japonaise de commerce et de diplomatie de 1678 à 1878**), puis un **sanctuaire japonais Ryūtōsan (du XVIIe au début du XXe siècle)**, puis un **bidonville de réfugiés de la guerre de Corée** (en grande partie détruit par les incendies des années 1950), avant d'être réaménagé en parc moderne. \n\nLa **Busan Tower, haute de 120 mètres** (**ouverte en 1973** à l'origine, **rebaptisée « Busan Diamond Tower » après un réaménagement en 2021**), en est la pièce maîtresse — le sommet de sa **plate-forme d'observation s'inspire du baldaquin (dais) de la pagode Dabotap (Trésor national n° 20) de ⟦G0⟧, à Gyeongju**, une citation architecturale explicite reliant ce repère moderne de Busan au patrimoine de Silla. \n\nLa tour culmine à **69 m d'altitude + 120 m de hauteur = 189 m au total**, offrant des **panoramas à 360°** sur le port de Busan, le pont de Yeongdo, l'île de Tsushima (par temps clair) et ⟦G1⟧ en contrebas. Autres monuments du parc : la **statue de bronze de l'amiral Yi Sun-sin (1545-1598)** (le héros naval originaire de la région, qui défit les forces japonaises lors de la guerre d'Imjin de 1592-1598 et **ne perdit jamais un seul navire**), la **cloche des citoyens** offerte par **100 000 habitants de Busan** (frappée **33 fois le soir du réveillon et le 1er mars, jour du Mouvement pour l'indépendance** — les 33 coups commémorent les 33 signataires coréens de la Déclaration d'indépendance de 1919, lue au parc Tapgol à Séoul, et rattachent l'identité civique de Busan au récit national de l'indépendance), l'**horloge florale** à l'entrée, et une **sculpture de dragon en bronze**, en écho au nom de la colline. \n\nL'accès se fait par un **escalier mécanique couvert depuis la Gwangbok-ro Fashion Street** (sans escalier mécanique pour le retour — la descente se fait par les marches). **Parc gratuit 24 h sur 24** ; **observatoire de la Busan Diamond Tower ₩12 000 adulte / ₩9 000 senior de 65 ans et plus ou enfant de 3 à 12 ans, horaires 10h00-22h00 (dernière admission 21h30) — billet de l'observatoire NON compris dans ce circuit**.",
       "glossary": [
         "⟦G0⟧ = Temple Bulguksa",
         "⟦G1⟧ = Marché Jagalchi",
@@ -106,25 +134,31 @@
       ]
     },
     "/itineraryStops/10/visitBasics/hours": {
-      "source_en": "Park open 24h; Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)"
+      "source_en": "Park open 24h; Busan Diamond Tower observatory 10:00–22:00 (last admission 21:30)",
+      "tm": "Parc ouvert 24 h sur 24 ; observatoire de la Busan Diamond Tower 10h00-22h00 (dernière admission 21h30)"
     },
     "/itineraryStops/10/visitBasics/closed": {
-      "source_en": "Tower open year-round (occasional safety closures in extreme wind)"
+      "source_en": "Tower open year-round (occasional safety closures in extreme wind)",
+      "tm": "Tour ouverte toute l’année (fermetures ponctuelles de sécurité par vent extrême)"
     },
     "/itineraryStops/10/visitBasics/walking": {
-      "source_en": "Covered escalator from Gwangbok-ro Fashion Street for ascent (no return escalator — descend by stairs)"
+      "source_en": "Covered escalator from Gwangbok-ro Fashion Street for ascent (no return escalator — descend by stairs)",
+      "tm": "Escalier mécanique couvert depuis la Gwangbok-ro Fashion Street pour la montée (pas d’escalier mécanique au retour — descente par les marches)"
     },
     "/itineraryStops/10/visitBasics/admission": {
-      "source_en": "Park FREE; Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12 (NOT included in this tour)"
+      "source_en": "Park FREE; Busan Diamond Tower ₩12,000 adult / ₩9,000 senior 65+ or child 3–12 (NOT included in this tour)",
+      "tm": "Parc GRATUIT ; Busan Diamond Tower ₩12 000 adulte / ₩9 000 senior de 65 ans et plus ou enfant de 3 à 12 ans (NON compris dans ce circuit)"
     },
     "/itineraryStops/10/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 1",
+      "tm": "⟦G0⟧ et Busan Diamond Tower — image de galerie 1",
       "glossary": [
         "⟦G0⟧ = Parc Yongdusan"
       ]
     },
     "/itineraryStops/10/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 1",
+      "tm": "⟦G0⟧ et Busan Diamond Tower — photo 1",
       "glossary": [
         "⟦G0⟧ = Parc Yongdusan"
       ]
@@ -138,12 +172,14 @@
     },
     "/itineraryStops/10/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 2",
+      "tm": "⟦G0⟧ et Busan Diamond Tower — image de galerie 2",
       "glossary": [
         "⟦G0⟧ = Parc Yongdusan"
       ]
     },
     "/itineraryStops/10/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 2",
+      "tm": "⟦G0⟧ et Busan Diamond Tower — photo 2",
       "glossary": [
         "⟦G0⟧ = Parc Yongdusan"
       ]
@@ -177,5 +213,5 @@
       "⟦G0⟧": "Parc Yongdusan"
     }
   },
-  "tmHits": 2
+  "tmHits": 38
 }

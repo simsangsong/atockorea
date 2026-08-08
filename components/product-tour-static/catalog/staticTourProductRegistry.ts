@@ -11,7 +11,10 @@
  * preview, /match page, sitemap, featured-join card.
  */
 
-import type { TourProductPageLocale as Locale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale as Locale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 
 import busanGyeongjuUnescoLegacyEn from "../busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.en.json";
 import busanGyeongjuUnescoLegacyKo from "../busan-gyeongju-unesco-legacy-tour-national-museum/busan-gyeongju-unesco-legacy-tour-national-museum.ko.json";
@@ -609,7 +612,7 @@ function parseListPriceUsd(page: PageJsonShape): number {
 
 function buildRegistration(slug: string, locale: Locale): StaticTourProductRegistration {
   const enMap = RAW_PAGES_BY_LOCALE.en as Record<string, PageJsonShape>;
-  const localeMap = (RAW_PAGES_BY_LOCALE[locale] ?? RAW_PAGES_BY_LOCALE.en) as Record<string, PageJsonShape>;
+  const localeMap = (RAW_PAGES_BY_LOCALE[toTourProductBaseLocale(locale)] ?? RAW_PAGES_BY_LOCALE.en) as Record<string, PageJsonShape>;
   const localePage = localeMap[slug] ?? enMap[slug];
   const enPage = enMap[slug];
   const cc = localePage.catalog_card;

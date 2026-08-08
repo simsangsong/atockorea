@@ -31,24 +31,28 @@
       "tm": "Le mura di Suwon Hwaseong e il palazzo Haenggung, tutti a distanza di cammino l’uno dall’altro."
     },
     "/routePhases/2/phase": {
-      "source_en": "Folk village"
+      "source_en": "Folk village",
+      "tm": "Villaggio folcloristico"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 2.5 hours",
       "tm": "≈ 2,5 ore"
     },
     "/routePhases/2/description": {
-      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park."
+      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park.",
+      "tm": "30 minuti di strada fino al villaggio folcloristico coreano di Yongin, poi visita del parco all’aperto."
     },
     "/routePhases/3/phase": {
-      "source_en": "Modern coda"
+      "source_en": "Modern coda",
+      "tm": "Coda contemporanea"
     },
     "/routePhases/3/duration": {
       "source_en": "≈ 1.5 hours",
       "tm": "≈ 1,5 ore"
     },
     "/routePhases/3/description": {
-      "source_en": "Drive back to Suwon for Starfield Library and mall food hall."
+      "source_en": "Drive back to Suwon for Starfield Library and mall food hall.",
+      "tm": "Rientro a Suwon per la biblioteca Starfield e la food hall del centro commerciale."
     },
     "/routePhases/4/phase": {
       "source_en": "Return",
@@ -59,7 +63,8 @@
       "tm": "≈ 1 ora"
     },
     "/routePhases/4/description": {
-      "source_en": "Suwon → Seoul."
+      "source_en": "Suwon → Seoul.",
+      "tm": "Suwon → Seoul."
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -292,5 +297,5 @@
       "⟦G0⟧": "Villaggio folcloristico coreano (Yongin)"
     }
   },
-  "tmHits": 40
+  "tmHits": 45
 }

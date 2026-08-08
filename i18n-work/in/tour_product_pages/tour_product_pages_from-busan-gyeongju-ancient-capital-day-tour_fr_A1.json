@@ -7,13 +7,16 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Gyeongju Ancient Capital Day Tour from Busan | AtoC Korea"
+      "source_en": "Gyeongju Ancient Capital Day Tour from Busan | AtoC Korea",
+      "tm": "Excursion d'une journée à Gyeongju, capitale antique, au départ de Busan | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "From Busan: Gyeongju Ancient Capital Day Tour | AtoC Korea"
+      "source_en": "From Busan: Gyeongju Ancient Capital Day Tour | AtoC Korea",
+      "tm": "Au départ de Busan : excursion d'une journée à Gyeongju, capitale antique | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "A small-group mini-van day tour from Busan to Gyeongju. The day opens on the bamboo paths of ⟦G1⟧, takes UNESCO World Heritage ⟦G4⟧ at an unhurried pace, and then spends the afternoon on two blocks covered entirely on foot — ⟦G2⟧ and the Choi Family House across to ⟦G3⟧, and the Daereungwon royal tombs across to the Hwangnidan-gil cafe street. It finishes at ⟦G0⟧ (Cheonmachong Gold Crown, Emille Bell), which in winter (Nov–Feb) is replaced at the same hour by the Donggung & Wolji night view. Pickup and drop-off are Busan Station Exit 4, Seomyeon Station Exit 4 and Haeundae Station Exit 5 — all subway stations.",
+      "tm": "Une excursion d'une journée en mini-van et en petit groupe de Busan à Gyeongju. La journée s'ouvre sur les sentiers de bambous d'⟦G1⟧, aborde ⟦G4⟧, inscrit au patrimoine mondial de l'UNESCO, sans se presser, puis consacre l'après-midi à deux quartiers parcourus entièrement à pied — ⟦G2⟧ et la maison de la famille Choi jusqu'à ⟦G3⟧, et les tombes royales de Daereungwon jusqu'à la rue des cafés Hwangnidan-gil. Elle se termine à ⟦G0⟧ (couronne d'or de Cheonmachong, cloche d'Emille), remplacé en hiver (nov.–févr.) à la même heure par la vue nocturne de Donggung & Wolji. La prise en charge et le retour se font à la sortie 4 de la station Busan, à la sortie 4 de la station Seomyeon et à la sortie 5 de la station Haeundae — toutes des stations de métro.",
       "glossary": [
         "⟦G0⟧ = Musée national de Gyeongju",
         "⟦G1⟧ = Forêt de bambous d'Ahopsan",
@@ -24,6 +27,7 @@
     },
     "/seo/metaDescription": {
       "source_en": "Small-group day tour from Busan to Gyeongju: ⟦G1⟧ · Bulguksa (UNESCO) · lunch · ⟦G2⟧ + Choi Family House + Woljeonggyo · Daereungwon + Hwangnidan-gil · ⟦G0⟧ (Donggung & Wolji night view in winter). Pickup at Busan, Seomyeon and Haeundae subway exits.",
+      "tm": "Excursion d'une journée en petit groupe de Busan à Gyeongju : ⟦G1⟧ · Bulguksa (UNESCO) · déjeuner · ⟦G2⟧ + maison de la famille Choi + Woljeonggyo · Daereungwon + Hwangnidan-gil · ⟦G0⟧ (vue nocturne de Donggung & Wolji en hiver). Prise en charge aux sorties de métro de Busan, Seomyeon et Haeundae.",
       "glossary": [
         "⟦G0⟧ = Musée national de Gyeongju",
         "⟦G1⟧ = Forêt de bambous d'Ahopsan",
@@ -31,127 +35,168 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Gyeongju ancient capital tour"
+      "source_en": "Gyeongju ancient capital tour",
+      "tm": "visite de la capitale antique de Gyeongju"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Gyeongju from Busan day trip"
+      "source_en": "Gyeongju from Busan day trip",
+      "tm": "excursion d'une journée à Gyeongju depuis Busan"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Bulguksa from Busan"
+      "source_en": "Bulguksa from Busan",
+      "tm": "Bulguksa depuis Busan"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Silla Kingdom heritage tour"
+      "source_en": "Silla Kingdom heritage tour",
+      "tm": "visite du patrimoine du royaume de Silla"
     },
     "/hero/meta/stops": {
-      "source_en": "8 stops"
+      "source_en": "8 stops",
+      "tm": "8 étapes"
     },
     "/hero/meta/region": {
-      "source_en": "Gyeongju (from Busan)"
+      "source_en": "Gyeongju (from Busan)",
+      "tm": "Gyeongju (au départ de Busan)"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 11.5 hours (08:10 first pickup, ≈ 19:50 last drop)"
+      "source_en": "≈ 11.5 hours (08:10 first pickup, ≈ 19:50 last drop)",
+      "tm": "≈ 11,5 heures (première prise en charge à 8 h 10, dernier dépôt vers 19 h 50)"
     },
     "/hero/pills/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Petit groupe"
     },
     "/hero/pills/1": {
-      "source_en": "Gyeongju"
+      "source_en": "Gyeongju",
+      "tm": "Gyeongju"
     },
     "/hero/pills/2": {
-      "source_en": "Ancient capital"
+      "source_en": "Ancient capital",
+      "tm": "Capitale antique"
     },
     "/hero/tagline": {
-      "source_en": "Choi House to Woljeonggyo, Daereungwon to Hwangnidan-gil — the afternoon is walked, not driven"
+      "source_en": "Choi House to Woljeonggyo, Daereungwon to Hwangnidan-gil — the afternoon is walked, not driven",
+      "tm": "De la maison Choi à Woljeonggyo, de Daereungwon à Hwangnidan-gil — l'après-midi se parcourt à pied, pas en van"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Potentiel photo"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Élevé"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Paysages"
     },
     "/glanceItems/1/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Bons"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Marche"
     },
     "/glanceItems/2/value": {
-      "source_en": "Fairly High"
+      "source_en": "Fairly High",
+      "tm": "Assez élevée"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Adapté à la pluie"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Modéré"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Adapté aux familles"
     },
     "/glanceItems/4/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Bons"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Rythme"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Équilibré"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Aperçu"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Itinéraire"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Détails"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Avis"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Petit groupe"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Gyeongju"
+      "source_en": "Gyeongju",
+      "tm": "Gyeongju"
     },
     "/catalog_card/tags/2": {
-      "source_en": "From Busan"
+      "source_en": "From Busan",
+      "tm": "Au départ de Busan"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Silla Kingdom"
+      "source_en": "Silla Kingdom",
+      "tm": "Royaume de Silla"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Ancient capital"
+      "source_en": "Ancient capital",
+      "tm": "Capitale antique"
     },
     "/catalog_card/title": {
-      "source_en": "Busan to Gyeongju: Ancient Capital"
+      "source_en": "Busan to Gyeongju: Ancient Capital",
+      "tm": "De Busan à Gyeongju : la capitale antique"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Petit groupe"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Calmer pace"
+      "source_en": "Calmer pace",
+      "tm": "Rythme plus calme"
     },
     "/catalog_card/badges/2": {
-      "source_en": "From Busan"
+      "source_en": "From Busan",
+      "tm": "Au départ de Busan"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Winter night view"
+      "source_en": "Winter night view",
+      "tm": "Vue nocturne en hiver"
     },
     "/catalog_card/region": {
-      "source_en": "Gyeongju (from Busan)"
+      "source_en": "Gyeongju (from Busan)",
+      "tm": "Gyeongju (au départ de Busan)"
     },
     "/catalog_card/duration": {
-      "source_en": "11.5 hours"
+      "source_en": "11.5 hours",
+      "tm": "11,5 heures"
     },
     "/catalog_card/subtitle": {
       "source_en": "Small-group mini-van · English-speaking guide — ⟦G1⟧, Bulguksa (UNESCO), ⟦G2⟧ + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and ⟦G0⟧ (Donggung & Wolji night view in winter), all in one day.",
+      "tm": "Mini-van en petit groupe · guide anglophone — ⟦G1⟧, Bulguksa (UNESCO), ⟦G2⟧ + maison de la famille Choi + Woljeonggyo, Daereungwon + Hwangnidan-gil, et ⟦G0⟧ (vue nocturne de Donggung & Wolji en hiver), le tout en une journée.",
       "glossary": [
         "⟦G0⟧ = Musée national de Gyeongju",
         "⟦G1⟧ = Forêt de bambous d'Ahopsan",
@@ -159,50 +204,63 @@
       ]
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$39 per person (was $50, 22% off)"
+      "source_en": "From US$39 per person (was $50, 22% off)",
+      "tm": "À partir de 39 US$ par personne (au lieu de 50 $, 22 % de réduction)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at ⟦G0⟧, or at the Donggung & Wolji night view in winter.",
+      "tm": "Une excursion d'une journée à Gyeongju en petit groupe au départ de trois stations de métro de Busan. L'après-midi se parcourt à pied, le van étant garé — de la maison de la famille Choi à Woljeonggyo, de Daereungwon à Hwangnidan-gil. Elle se termine à ⟦G0⟧, ou à la vue nocturne de Donggung & Wolji en hiver.",
       "glossary": [
         "⟦G0⟧ = Musée national de Gyeongju"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan to Gyeongju"
+      "source_en": "Busan to Gyeongju",
+      "tm": "De Busan à Gyeongju"
     },
     "/headlineLine2": {
-      "source_en": "Ancient Capital"
+      "source_en": "Ancient Capital",
+      "tm": "Capitale antique"
     },
     "/pickup_dropoff/notes/0": {
       "source_en": "All three pickup and drop-off points are subway station exits — Busan Station Exit 4 (Line 1), Seomyeon Station Exit 4 (Lines 1 & 2), Haeundae Station Exit 5 (Line 2). At Busan Station we meet at the subway exit in front of the building, NOT inside the KTX railway terminal. Choose the exit closest to your hotel when you book. The tour runs year-round; in cherry blossom season (mid-March to mid-April) ⟦G1⟧ is replaced by Haeundae Dalmaji Hill, and in winter (Nov–Feb) the last stop changes from ⟦G0⟧ to the Donggung & Wolji night view.",
+      "tm": "Les trois points de prise en charge et de dépôt sont des sorties de station de métro — sortie 4 de la station Busan (ligne 1), sortie 4 de la station Seomyeon (lignes 1 et 2), sortie 5 de la station Haeundae (ligne 2). À la station Busan, le rendez-vous a lieu à la sortie du métro devant le bâtiment, et NON à l'intérieur du terminal ferroviaire KTX. Choisissez la sortie la plus proche de votre hôtel lors de la réservation. L'excursion a lieu toute l'année ; pendant la saison des cerisiers en fleurs (de mi-mars à mi-avril), ⟦G1⟧ est remplacée par la colline Dalmaji de Haeundae, et en hiver (nov.–févr.), la dernière étape passe de ⟦G0⟧ à la vue nocturne de Donggung & Wolji.",
       "glossary": [
         "⟦G0⟧ = Musée national de Gyeongju",
         "⟦G1⟧ = Forêt de bambous d'Ahopsan"
       ]
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)",
+      "tm": "Station Haeundae, sortie 5 (métro ligne 2)"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)",
+      "tm": "Station Seomyeon, sortie 4 (métro lignes 1 et 2)"
     },
     "/pickup_dropoff/return/2/name": {
-      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)",
+      "tm": "Station Busan, sortie 4 (métro ligne 1 — PAS la gare ferroviaire KTX)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)",
+      "tm": "Station Busan, sortie 4 (métro ligne 1 — PAS la gare ferroviaire KTX)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)",
+      "tm": "Station Seomyeon, sortie 4 (métro lignes 1 et 2)"
     },
     "/pickup_dropoff/departure/2/name": {
-      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)",
+      "tm": "Station Haeundae, sortie 5 (métro ligne 2)"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en temps réel et finaliser votre réservation."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "personne"
     }
   },
   "glossaryTokens": {
@@ -231,5 +289,5 @@
       "⟦G1⟧": "Forêt de bambous d'Ahopsan"
     }
   },
-  "tmHits": 0
+  "tmHits": 58
 }

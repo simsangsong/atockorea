@@ -16,7 +16,8 @@
       "source_en": "Pickup & Cruise Logistics"
     },
     "/itinerary_variants/0/stops/0/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itinerary_variants/0/stops/0/highlights/0": {
       "source_en": "**Pickup 30 min after ship clearance** — buffer absorbs immigration delays"
@@ -50,52 +51,68 @@
       ]
     },
     "/itinerary_variants/0/stops/1/category": {
-      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)"
+      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "tm": "UNESCO-Tuffkegel — Sunrise Peak (dreifache UNESCO-Auszeichnung)"
     },
     "/itinerary_variants/0/stops/1/duration": {
-      "source_en": "90 min"
+      "source_en": "90 min",
+      "tm": "90 Min."
     },
     "/itinerary_variants/0/stops/1/timeUsed/0": {
-      "source_en": "Parking + ticket + base brief — ~10 min"
+      "source_en": "Parking + ticket + base brief — ~10 min",
+      "tm": "Parken + Ticket + Briefing am Fuß — ~10 Min."
     },
     "/itinerary_variants/0/stops/1/timeUsed/1": {
-      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min"
+      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+      "tm": "Aufstieg zur Gipfelplattform (0,8 km / 140 m Anstieg) — ~30 Min."
     },
     "/itinerary_variants/0/stops/1/timeUsed/2": {
-      "source_en": "Summit views + crater rim photos — ~20 min"
+      "source_en": "Summit views + crater rim photos — ~20 min",
+      "tm": "Gipfelblicke + Fotos am Kraterrand — ~20 Min."
     },
     "/itinerary_variants/0/stops/1/timeUsed/3": {
-      "source_en": "Descent — ~20 min"
+      "source_en": "Descent — ~20 min",
+      "tm": "Abstieg — ~20 Min."
     },
     "/itinerary_variants/0/stops/1/timeUsed/4": {
-      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
+      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min",
+      "tm": "Optionale Haenyeo-Vorführung am Fuß (Show um 14:00 Uhr; kann bei schlechtem Wetter ausfallen) — ~10 Min."
     },
     "/itinerary_variants/0/stops/1/highlights/0": {
-      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10"
+      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+      "tm": "**Dreifach UNESCO**: Welterbe 02.07.2007 + Biosphärenreservat 2002 + Global Geopark 10/2010"
     },
     "/itinerary_variants/0/stops/1/highlights/1": {
-      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth"
+      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+      "tm": "**5.000 Jahre alt** — hydrovulkanischer Ausbruch vom Surtseyanischen Typ, dampfexplosive Entstehung, als Magma auf Meerwasser traf"
     },
     "/itinerary_variants/0/stops/1/highlights/2": {
-      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')"
+      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+      "tm": "Krater **600 m breit × 90 m tief**, umringt von **99 zackigen Felsen am Kraterrand** (die „Steinkrone“)"
     },
     "/itinerary_variants/0/stops/1/highlights/3": {
-      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail"
+      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+      "tm": "**182 m über dem Meeresspiegel** — 0,8 km / ~140 m Anstieg, 60 Min. Hin- und Rückweg auf einem Pfad mit Steinstufen"
     },
     "/itinerary_variants/0/stops/1/highlights/4": {
-      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters"
+      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+      "tm": "**18 kaiserlich-japanische Höhlen aus dem 2. Weltkrieg** am Fuß — 1945 Unterstände für Kamikaze-Selbstmordboote"
     },
     "/itinerary_variants/0/stops/1/highlights/5": {
-      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016"
+      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
+      "tm": "**Haenyeo-Vorführung einmal täglich um 14:00 Uhr (Ausfall bei schlechtem Wetter möglich)** in der Bucht am Meer — immaterielles UNESCO-Erbe 2016"
     },
     "/itinerary_variants/0/stops/1/highlights/6": {
-      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65"
+      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+      "tm": "**Eintritt aktualisiert im April 2025**: Erwachsene ₩5.000 / Jugendliche ₩2.500 / KOSTENLOS unter 7 + über 65"
     },
     "/itinerary_variants/0/stops/1/highlights/7": {
-      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)"
+      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+      "tm": "Öffnungszeiten Frühling/Herbst **05:00–19:00 Uhr** (letzter Einlass 18:20 Uhr)"
     },
     "/itinerary_variants/0/stops/1/highlights/8": {
-      "source_en": "**Closes for first Monday of each month** (occasional rest day)"
+      "source_en": "**Closes for first Monday of each month** (occasional rest day)",
+      "tm": "**Geschlossen am ersten Montag jedes Monats** (gelegentlicher Ruhetag)"
     },
     "/itinerary_variants/0/stops/1/whyOnRoute": {
       "source_en": "**⟦G0⟧ is the main natural highlight of the east route.** The small-group format gives guests more time for photos, questions, and pace adjustments on the crater trail. The guide can explain the 5,000-year-old volcanic formation, the sea views, and the haenyeo culture around the base without rushing the group. If conditions or guest mobility make the full climb unsuitable, the visit can still work well from the lower viewing areas.",
@@ -119,7 +136,8 @@
       "source_en": "Volcanic Cape — Tadao Ando Architecture + Bangdupo Lighthouse + Drama Filming"
     },
     "/itinerary_variants/0/stops/2/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     }
   },
   "glossaryTokens": {
@@ -136,5 +154,5 @@
       "⟦G0⟧": "Seopjikoji"
     }
   },
-  "tmHits": 1
+  "tmHits": 19
 }

@@ -1,0 +1,458 @@
+{
+  "unitId": "tour_product_pages:jeju-eastern-unesco-spots-day-tour:fr:A1",
+  "surface": "tour_product_pages",
+  "slug": "jeju-eastern-unesco-spots-day-tour",
+  "locale": "fr",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Jeju East UNESCO Day Tour · All Admissions Included | AtoC"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Jeju Eastern UNESCO Spots Small-Group Day Tour | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "9-hour East Jeju small-group day tour: Manjanggul (UNESCO) → ⟦G0⟧ → lunch → ⟦G1⟧ (UNESCO) → haenyeo diving performance → Hamdeok Beach. All admissions included, certified guide.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "9-hour East Jeju small-group loop: Manjanggul (UNESCO) at opening time, ⟦G0⟧ (Joseon folk heritage), ⟦G1⟧ (UNESCO), a haenyeo diving performance, and a Hamdeok Beach finale. All admissions included.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Jeju east UNESCO tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "circuit ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "circuit ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Tunnel de lave de Manjanggul"
+      ]
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "haenyeo diving performance"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Jeju Sunrise Peak day tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "8 stops",
+      "tm": "8 étapes"
+    },
+    "/hero/meta/region": {
+      "source_en": "Eastern Jeju"
+    },
+    "/hero/meta/duration": {
+      "source_en": "≈ 9 hours (08:30 first pickup, ≈ 18:00 drop-off)"
+    },
+    "/hero/pills/0": {
+      "source_en": "Small group",
+      "tm": "Petit groupe"
+    },
+    "/hero/pills/1": {
+      "source_en": "Jeju",
+      "tm": "Jeju"
+    },
+    "/hero/tagline": {
+      "source_en": "Eastern Jeju's UNESCO and signature stops in a single small-group day, with all admissions included"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Potentiel photo"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High",
+      "tm": "Élevé"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery",
+      "tm": "Paysages"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "High",
+      "tm": "Élevé"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking",
+      "tm": "Marche"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Moderate",
+      "tm": "Modéré"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Adapté à la pluie"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Modéré"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Adapté aux familles"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Good",
+      "tm": "Bons"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Rythme"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Balanced",
+      "tm": "Équilibré"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Aperçu"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinéraire"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Détails"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Avis"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Small group",
+      "tm": "Petit groupe"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Jeju",
+      "tm": "Jeju"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "East Jeju"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "UNESCO",
+      "tm": "UNESCO"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Good value",
+      "tm": "Bon rapport qualité-prix"
+    },
+    "/catalog_card/tags/5": {
+      "source_en": "All admissions included",
+      "tm": "Toutes les entrées comprises"
+    },
+    "/catalog_card/title": {
+      "source_en": "Jeju East UNESCO Day Tour"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Small group",
+      "tm": "Petit groupe"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Jeju",
+      "tm": "Jeju"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "East Jeju"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "UNESCO",
+      "tm": "UNESCO"
+    },
+    "/catalog_card/badges/4": {
+      "source_en": "Value priced",
+      "tm": "Prix abordable"
+    },
+    "/catalog_card/badges/5": {
+      "source_en": "All admissions included",
+      "tm": "Toutes les entrées comprises"
+    },
+    "/catalog_card/region": {
+      "source_en": "Eastern Jeju"
+    },
+    "/catalog_card/duration": {
+      "source_en": "9 hours",
+      "tm": "9 heures"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Small-group minibus with English/Chinese guide — Manjanggul (UNESCO) in its quiet opening hour, ⟦G0⟧, ⟦G1⟧ (UNESCO), the haenyeo diving performance, and a Hamdeok Beach finale in a 9-hour eastern route.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "Loop eastern Jeju's UNESCO sights in a 9-hour small group — now routed cave-first: Manjanggul right after opening (the quietest hour in the lava tube), ⟦G1⟧, ⟦G2⟧ and the haenyeo diving performance (Haenyeo Museum if canceled), then a late-afternoon finale at ⟦G0⟧. Two UNESCO World Natural Heritage sites inscribed together in 2007, all admissions included, certified English/Chinese-speaking guide.",
+      "glossary": [
+        "⟦G0⟧ = Plage de Hamdeok Seoubong",
+        "⟦G1⟧ = Village folklorique de Seongeup",
+        "⟦G2⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Jeju East UNESCO"
+    },
+    "/headlineLine2": {
+      "source_en": "Day Tour",
+      "tm": "Circuit d'une journée"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Return usually runs around 18:00–18:30."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "Ocean Suites Jeju Hotel"
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Aéroport international de Jeju (3e étage, porte 3)"
+    },
+    "/pickup_dropoff/return/2/name": {
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "LOTTE City Hotel Jeju"
+    },
+    "/pickup_dropoff/return/3/name": {
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (boutique de Jeju)"
+    },
+    "/pickup_dropoff/return/4/name": {
+      "source_en": "Dongmun Traditional Market",
+      "tm": "Marché traditionnel de Dongmun"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "Ocean Suites Jeju Hotel"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
+      "tm": "Rendez-vous dans le hall de l'hôtel — le guide tient une pancarte AtoCKorea."
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Aéroport international de Jeju (3e étage, porte 3)"
+    },
+    "/pickup_dropoff/departure/1/note": {
+      "source_en": "3rd floor departures area. Follow signs to Gate 3.",
+      "tm": "Zone des départs au 3e étage. Suivez les panneaux vers la porte 3."
+    },
+    "/pickup_dropoff/departure/2/name": {
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "LOTTE City Hotel Jeju"
+    },
+    "/pickup_dropoff/departure/2/note": {
+      "source_en": "Wait in the main lobby — guide will call you by name.",
+      "tm": "Attendez dans le hall principal — le guide vous appellera par votre nom."
+    },
+    "/pickup_dropoff/departure/3/name": {
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (boutique de Jeju)"
+    },
+    "/pickup_dropoff/departure/3/note": {
+      "source_en": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
+      "tm": "Rendez-vous devant l'entrée principale du Shilla Duty Free, succursale de Jeju."
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en temps réel et finaliser votre réservation."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "personne"
+    },
+    "/practicalAccordionItems/0/title": {
+      "source_en": "What's included",
+      "tm": "Ce qui est inclus"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction admissions (⟦G1⟧ ₩5,000, ⟦G0⟧ free, Ilchul Land/Micheon Cave ₩12,000, Haenyeo Museum ₩1,100, Hamdeok Beach free), fuel/tolls/parking.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup",
+        "⟦G1⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Not included: lunch (≈ ₩15,000), drinks, tips."
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Air-conditioned mini-coach, certified English/Chinese-speaking guide, ALL attraction…"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Pickup & drop-off",
+      "tm": "Prise en charge et dépose"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F Domestic Arrivals (08:45 — note: different gate from operator's Southern tour), LOTTE City Hotel Jeju (08:55), Shilla Duty-Free Jeju Store (09:05)."
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Choose the closest at booking.",
+      "tm": "Choisissez le plus proche au moment de la réservation."
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "Day-before WhatsApp confirmation.",
+      "tm": "Confirmation par WhatsApp la veille."
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Sequential pickup at four points: Ocean Suites Jeju (08:30), Jeju Airport Gate 1, 1F…"
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Walking & terrain",
+      "tm": "Marche et terrain"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "Moderate difficulty.",
+      "tm": "Difficulté modérée."
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "Manjanggul is about a 1 km flat round trip, with stairs at the cave entrance and a somewhat uneven, damp floor inside (11–13°C year-round, jacket recommended)."
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "⟦G0⟧ has dirt paths and stone walls.",
+      "glossary": [
+        "⟦G0⟧ = Village folklorique de Seongeup"
+      ]
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "The ⟦G0⟧ crater-rim climb is about 30 min of steep stone steps (can be skipped).",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/practicalAccordionItems/2/content/4": {
+      "source_en": "The haenyeo diving performance is viewed from the flat shore."
+    },
+    "/practicalAccordionItems/2/content/5": {
+      "source_en": "Hamdeok Beach is flat sand."
+    },
+    "/practicalAccordionItems/2/content/6": {
+      "source_en": "Closed-toe shoes required."
+    },
+    "/practicalAccordionItems/2/content/7": {
+      "source_en": "Total walking about 4–5 km."
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Moderate difficulty.",
+      "tm": "Difficulté modérée."
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "Cancellation",
+      "tm": "Annulation"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Annulation gratuite jusqu'à 24 heures avant la prise en charge."
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "Same-day cancellations and no-shows non-refundable.",
+      "tm": "Les annulations le jour même et les absences ne sont pas remboursées."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "Heavy weather may shorten the Seongsan climb but does not cancel the day."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Annulation gratuite jusqu'à 24 heures avant la prise en charge."
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "Cave information (Manjanggul)"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube inscribed in 2007 and is included in this route."
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "The open section is about a 1 km round trip (about 30–45 min), with the world's largest lava column at 7.6 m high at the end."
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "The interior is a cool 11–13°C year-round, so a jacket is recommended."
+    },
+    "/practicalAccordionItems/4/content/3": {
+      "source_en": "If closed for maintenance or weather, it may be substituted with a nearby lava tube (Micheon Cave at Ilchul Land) — confirm when booking."
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Manjanggul is a UNESCO World Natural Heritage lava tube included in the route."
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "Children & accessibility",
+      "tm": "Enfants et accessibilité"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Recommended for ages 10+ due to the ⟦G0⟧ rim climb (≈ 600 stairs, optional but the day's centerpiece) and a 9-hour pace.",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Younger children can join, but the climb may be too much; consider our year-round Cherry Blossom or Cruise Bus tours which skip the summit."
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "Strollers are not recommended on Seongsan stairs or Seongeup village paths."
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Recommended for ages 10+ due to the ⟦G0⟧ rim climb (≈ 600 stairs, optional…",
+      "glossary": [
+        "⟦G0⟧ = Seongsan Ilchulbong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/seo/description": {
+      "⟦G0⟧": "Village folklorique de Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Village folklorique de Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/seo/primaryKeywords/1": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/seo/primaryKeywords/2": {
+      "⟦G0⟧": "Tunnel de lave de Manjanggul"
+    },
+    "/catalog_card/subtitle": {
+      "⟦G0⟧": "Village folklorique de Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Plage de Hamdeok Seoubong",
+      "⟦G1⟧": "Village folklorique de Seongeup",
+      "⟦G2⟧": "Seongsan Ilchulbong"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "⟦G0⟧": "Village folklorique de Seongeup",
+      "⟦G1⟧": "Seongsan Ilchulbong"
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "⟦G0⟧": "Village folklorique de Seongeup"
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    },
+    "/practicalAccordionItems/5/preview": {
+      "⟦G0⟧": "Seongsan Ilchulbong"
+    }
+  },
+  "tmHits": 61
+}

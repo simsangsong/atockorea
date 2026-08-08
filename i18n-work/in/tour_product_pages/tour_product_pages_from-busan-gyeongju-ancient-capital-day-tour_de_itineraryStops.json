@@ -7,128 +7,165 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Busan subway pickup (3 stations)"
+      "source_en": "Busan subway pickup (3 stations)",
+      "tm": "Abholung an der Busan U-Bahn (3 Stationen)"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup — three central Busan SUBWAY stations (not the railway station)"
+      "source_en": "Pickup — three central Busan SUBWAY stations (not the railway station)",
+      "tm": "Abholung — drei zentrale U-BAHN-Stationen in Busan (nicht der Bahnhof)"
     },
     "/itineraryStops/0/duration": {
       "source_en": "30 min",
       "tm": "30 Min."
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Busan Station Exit 4 (08:10) — 5 min"
+      "source_en": "Busan Station Exit 4 (08:10) — 5 min",
+      "tm": "Busan Station Ausgang 4 (08:10) — 5 Min."
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Seomyeon Station Exit 4 (08:30) — 5 min"
+      "source_en": "Seomyeon Station Exit 4 (08:30) — 5 min",
+      "tm": "Seomyeon Station Ausgang 4 (08:30) — 5 Min."
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "Haeundae Station Exit 5 (09:10) — 5 min"
+      "source_en": "Haeundae Station Exit 5 (09:10) — 5 min",
+      "tm": "Haeundae Station Ausgang 5 (09:10) — 5 Min."
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Northbound expressway drive — ≈30 min"
+      "source_en": "Northbound expressway drive — ≈30 min",
+      "tm": "Fahrt auf der Autobahn Richtung Norden — ca. 30 Min."
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**All three points are subway station exits** — Busan Station Exit 4 · Seomyeon Station Exit 4 · Haeundae Station Exit 5"
+      "source_en": "**All three points are subway station exits** — Busan Station Exit 4 · Seomyeon Station Exit 4 · Haeundae Station Exit 5",
+      "tm": "**Alle drei Punkte sind U-Bahn-Stationsausgänge** — Busan Station Ausgang 4 · Seomyeon Station Ausgang 4 · Haeundae Station Ausgang 5"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "**Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal**"
+      "source_en": "**Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal**",
+      "tm": "**Busan Station bedeutet Ausgang 4 der U-Bahn-Station der Linie 1, nicht das KTX-Bahnhofsterminal**"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Busan Station 08:10 → Seomyeon Station 08:30 → Haeundae Station 09:10 (west→east)"
+      "source_en": "Busan Station 08:10 → Seomyeon Station 08:30 → Haeundae Station 09:10 (west→east)",
+      "tm": "Busan Station 08:10 → Seomyeon Station 08:30 → Haeundae Station 09:10 (West→Ost)"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Small-group mini-van (max ~14 pax)"
+      "source_en": "Small-group mini-van (max ~14 pax)",
+      "tm": "Minivan für Kleingruppen (max. ca. 14 Personen)"
     },
     "/itineraryStops/0/highlights/4": {
       "source_en": "About 30 minutes from the Haeundae pickup to ⟦G0⟧",
+      "tm": "Etwa 30 Minuten von der Abholung in Haeundae bis zum ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Bambuswald Ahopsan"
       ]
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "Printed bilingual (Korean/English) itinerary card distributed on boarding"
+      "source_en": "Printed bilingual (Korean/English) itinerary card distributed on boarding",
+      "tm": "Gedruckte zweisprachige Reiseroutenkarte (Koreanisch/Englisch), die beim Einsteigen verteilt wird"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "The three pickup points cover Busan's main hotel clusters (Busan Station/Choryang, mid-city Seomyeon, and the Haeundae beachfront) evenly across Subway Lines 1 and 2, so guests never have to cross the city early in the morning. The reason all three are stated as **subway exits** is simple: the Busan Station plaza mixes trains, buses and taxis and makes a vehicle hard to identify, while a subway exit number is something anyone finds in one go. Running west→east minimizes coach distance and lands the group at Ahopsan around 09:40 — early enough that the bamboo forest is at its quietest and most photogenic."
+      "source_en": "The three pickup points cover Busan's main hotel clusters (Busan Station/Choryang, mid-city Seomyeon, and the Haeundae beachfront) evenly across Subway Lines 1 and 2, so guests never have to cross the city early in the morning. The reason all three are stated as **subway exits** is simple: the Busan Station plaza mixes trains, buses and taxis and makes a vehicle hard to identify, while a subway exit number is something anyone finds in one go. Running west→east minimizes coach distance and lands the group at Ahopsan around 09:40 — early enough that the bamboo forest is at its quietest and most photogenic.",
+      "tm": "Die drei Abholpunkte decken die wichtigsten Hotelviertel Busans (Busan Station/Choryang, das zentrale Seomyeon und die Strandpromenade von Haeundae) gleichmäßig entlang der U-Bahn-Linien 1 und 2 ab, sodass Gäste am frühen Morgen nie die Stadt durchqueren müssen. Der Grund, warum alle drei als **U-Bahn-Ausgänge** angegeben sind, ist einfach: Auf dem Vorplatz der Busan Station mischen sich Züge, Busse und Taxis, was das Erkennen eines Fahrzeugs erschwert, während eine U-Bahn-Ausgangsnummer für jeden auf Anhieb zu finden ist. Die Reihenfolge West→Ost minimiert die Fahrstrecke und bringt die Gruppe gegen 09:40 Uhr nach Ahopsan — früh genug, dass der Bambuswald am ruhigsten und fotogensten ist."
     },
     "/itineraryStops/0/description": {
       "source_en": "Pickup runs in sequence at **three subway stations** in central Busan: **Busan Station Exit 4 (Subway Line 1) — 08:10**, **Seomyeon Station Exit 4 (Subway Lines 1 & 2) — 08:30**, **Haeundae Station Exit 5 (Subway Line 2) — 09:10**. \n\n**All three points are subway station exits.** At Busan Station in particular we meet you at **Exit 4 of the Line 1 subway station in front of the building — NOT inside the KTX railway terminal**: if you wait in the train station concourse you will not see the vehicle. Please remember the subway exit numbers exactly as written (Busan Station Exit 4 · Seomyeon Station Exit 4 · Haeundae Station Exit 5). \n\nPickup runs west→east, and after the final Haeundae stop we head north on the **Gyeongbu Expressway** toward Gyeongju, the ancient capital of **Silla (57 BCE – 935 CE)** — the longest-ruling dynasty in Korean history. The first destination, ⟦G0⟧ in Gijang-gun, is about 30 minutes from Haeundae.",
+      "tm": "Die Abholung erfolgt nacheinander an **drei U-Bahn-Stationen** im Zentrum von Busan: **Busan Station Ausgang 4 (U-Bahn-Linie 1) — 08:10**, **Seomyeon Station Ausgang 4 (U-Bahn-Linien 1 & 2) — 08:30**, **Haeundae Station Ausgang 5 (U-Bahn-Linie 2) — 09:10**. \n\n**Alle drei Punkte sind U-Bahn-Stationsausgänge.** Insbesondere an der Busan Station treffen wir Sie an **Ausgang 4 der U-Bahn-Station der Linie 1 vor dem Gebäude — NICHT im KTX-Bahnhofsterminal**: Wenn Sie in der Bahnhofshalle warten, werden Sie das Fahrzeug nicht sehen. Bitte merken Sie sich die U-Bahn-Ausgangsnummern genau so, wie sie angegeben sind (Busan Station Ausgang 4 · Seomyeon Station Ausgang 4 · Haeundae Station Ausgang 5). \n\nDie Abholung verläuft von West nach Ost, und nach dem letzten Halt in Haeundae fahren wir auf der **Gyeongbu-Autobahn** nach Norden Richtung Gyeongju, der alten Hauptstadt von **Silla (57 v. Chr. – 935 n. Chr.)** — der am längsten regierenden Dynastie der koreanischen Geschichte. Das erste Ziel, der ⟦G0⟧ in Gijang-gun, liegt etwa 30 Minuten von Haeundae entfernt.",
       "glossary": [
         "⟦G0⟧ = Bambuswald Ahopsan"
       ]
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧ (아홉산숲)",
+      "tm": "⟦G0⟧ (아홉산숲)",
       "glossary": [
         "⟦G0⟧ = Bambuswald Ahopsan"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "Private bamboo forest — K-drama filming site"
+      "source_en": "Private bamboo forest — K-drama filming site",
+      "tm": "Privater Bambuswald — K-Drama-Drehort"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "60 min"
+      "source_en": "60 min",
+      "tm": "60 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Coach park + entrance ticketing (~10 min)"
+      "source_en": "Coach park + entrance ticketing (~10 min)",
+      "tm": "Busparkplatz + Ticketkauf am Eingang (ca. 10 Min.)"
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Walk to Spot 9 Maengjongjuk bamboo corridor (~15 min)"
+      "source_en": "Walk to Spot 9 Maengjongjuk bamboo corridor (~15 min)",
+      "tm": "Weg zum Maengjongjuk-Bambuskorridor an Spot 9 (ca. 15 Min.)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Photo time + slow walk through bamboo (~25 min)"
+      "source_en": "Photo time + slow walk through bamboo (~25 min)",
+      "tm": "Fotozeit + gemächlicher Spaziergang durch den Bambus (ca. 25 Min.)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Return loop past 400-year-old Korean pines (~15 min)"
+      "source_en": "Return loop past 400-year-old Korean pines (~15 min)",
+      "tm": "Rückweg vorbei an 400 Jahre alten Koreakiefern (ca. 15 Min.)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Reassemble at coach (~10 min)"
+      "source_en": "Reassemble at coach (~10 min)",
+      "tm": "Sammeln am Bus (ca. 10 Min.)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**520,000 m² private forest**, managed by Nampyeong Moon clan **400 years / 9 generations**"
+      "source_en": "**520,000 m² private forest**, managed by Nampyeong Moon clan **400 years / 9 generations**",
+      "tm": "**520.000 m² privater Wald**, seit **400 Jahren / 9 Generationen** vom Nampyeong-Moon-Klan verwaltet"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "**Opened to the public 2016** — relatively new on the Jeju/Busan tour circuit"
+      "source_en": "**Opened to the public 2016** — relatively new on the Jeju/Busan tour circuit",
+      "tm": "**2016 für die Öffentlichkeit geöffnet** — relativ neu im Tour-Angebot von Jeju/Busan"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "**Maengjongjuk bamboo corridor at Spot 9** — towering 15–20 m culms"
+      "source_en": "**Maengjongjuk bamboo corridor at Spot 9** — towering 15–20 m culms",
+      "tm": "**Maengjongjuk-Bambuskorridor an Spot 9** — aufragende Halme von 15–20 m"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "**The King: Eternal Monarch (2020) + Moon Lovers (2016) + 100 Days My Prince (2018)** filming site"
+      "source_en": "**The King: Eternal Monarch (2020) + Moon Lovers (2016) + 100 Days My Prince (2018)** filming site",
+      "tm": "Drehort von **The King: Eternal Monarch (2020) + Moon Lovers (2016) + 100 Days My Prince (2018)**"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**116 protected Korean pine trees over 400 years old** (Joseon-era plantings)"
+      "source_en": "**116 protected Korean pine trees over 400 years old** (Joseon-era plantings)",
+      "tm": "**116 geschützte Koreakiefern, über 400 Jahre alt** (Anpflanzungen aus der Joseon-Zeit)"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "Admission: Adult ₩8,000 / Child ₩5,000"
+      "source_en": "Admission: Adult ₩8,000 / Child ₩5,000",
+      "tm": "Eintritt: Erwachsene ₩8.000 / Kinder ₩5.000"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Hours 09:00–18:00, **closed Mondays** (route avoids Mondays)"
+      "source_en": "Hours 09:00–18:00, **closed Mondays** (route avoids Mondays)",
+      "tm": "Öffnungszeiten 09:00–18:00 Uhr, **montags geschlossen** (die Route meidet Montage)"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Calm-pace 75-min dwell lets guests walk the numbered-spot loop without rushing"
+      "source_en": "Calm-pace 75-min dwell lets guests walk the numbered-spot loop without rushing",
+      "tm": "Der ruhige Aufenthalt von 75 Min. erlaubt es den Gästen, den Rundweg mit den nummerierten Spots ohne Hetze zu gehen"
     },
     "/itineraryStops/1/highlights/8": {
-      "source_en": "**Sustainable working bamboo forest** — Nampyeong Moon clan still harvests bamboo for traditional Korean crafts (zithers, baskets, fishing rods); commercial filming requires advance written permission; **Spot 9 + Gutteo Grove + second pine forest** comprise the full numbered loop"
+      "source_en": "**Sustainable working bamboo forest** — Nampyeong Moon clan still harvests bamboo for traditional Korean crafts (zithers, baskets, fishing rods); commercial filming requires advance written permission; **Spot 9 + Gutteo Grove + second pine forest** comprise the full numbered loop",
+      "tm": "**Nachhaltig bewirtschafteter Bambuswald** — der Nampyeong-Moon-Klan erntet noch immer Bambus für traditionelles koreanisches Kunsthandwerk (Zithern, Körbe, Angelruten); kommerzielle Dreharbeiten erfordern eine vorherige schriftliche Genehmigung; **Spot 9 + Gutteo-Hain + zweiter Kiefernwald** bilden den vollständigen nummerierten Rundweg"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited"
+      "source_en": "Wear darker tops for stronger photo contrast against the bright bamboo; do not step off the marked path (active forest restoration); drone use is prohibited",
+      "tm": "Tragen Sie dunklere Oberteile für stärkeren Fotokontrast vor dem hellen Bambus; verlassen Sie den markierten Weg nicht (laufende Waldrenaturierung); der Einsatz von Drohnen ist verboten"
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest"
+      "source_en": "Small farm-stand at the entrance (seasonal local produce, simple drinks); no full café inside the forest",
+      "tm": "Kleiner Hofladen am Eingang (saisonale regionale Erzeugnisse, einfache Getränke); kein vollwertiges Café im Wald"
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "Ahopsan opens the day with the calmest, most contemplative stop — a meditative bamboo walk before the more architectural Bulguksa midday segment. Selected over the more-famous Damyang Juknokwon (Jeolla province, 4+ hr from Busan) because Ahopsan is **35 min from Busan vs. 4 hr** while delivering a comparable bamboo-forest experience PLUS K-drama filming heritage. **The 9-spot loop pairs naturally with the calm-pace framing** of this tour — guests can take photos at every spot without feeling rushed."
+      "source_en": "Ahopsan opens the day with the calmest, most contemplative stop — a meditative bamboo walk before the more architectural Bulguksa midday segment. Selected over the more-famous Damyang Juknokwon (Jeolla province, 4+ hr from Busan) because Ahopsan is **35 min from Busan vs. 4 hr** while delivering a comparable bamboo-forest experience PLUS K-drama filming heritage. **The 9-spot loop pairs naturally with the calm-pace framing** of this tour — guests can take photos at every spot without feeling rushed.",
+      "tm": "Ahopsan eröffnet den Tag mit dem ruhigsten, besinnlichsten Stopp — ein meditativer Bambusspaziergang vor dem eher architektonischen Mittagsabschnitt in Bulguksa. Ausgewählt anstelle des bekannteren Damyang Juknokwon (Provinz Jeolla, über 4 Std. von Busan entfernt), weil Ahopsan **35 Min. von Busan entfernt liegt statt 4 Std.** und dabei ein vergleichbares Bambuswald-Erlebnis PLUS K-Drama-Drehortgeschichte bietet. **Der Rundweg mit 9 Spots passt natürlich zum ruhigen Tempo** dieser Tour — Gäste können an jedem Spot fotografieren, ohne sich gehetzt zu fühlen."
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "On-site coach and car parking (free)"
+      "source_en": "On-site coach and car parking (free)",
+      "tm": "Bus- und Pkw-Parkplätze vor Ort (kostenlos)"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Restrooms at the entrance gate and midway near the ancestral hall"
+      "source_en": "Restrooms at the entrance gate and midway near the ancestral hall",
+      "tm": "Toiletten am Eingangstor und auf halbem Weg in der Nähe der Ahnenhalle"
     },
     "/itineraryStops/1/description": {
       "source_en": "**⟦G0⟧** ('Nine Mountain Forest', 아홉산숲) is a **520,000 m² private forest** in Gijang-gun, **managed by the Nampyeong Moon clan for ~400 years across 9 generations** — the family settled here after the **Imjin War (1592–1598)** and has continuously stewarded the land since. \n\nThe forest **opened to the public for the first time in 2016** and has rapidly become one of Korea's most filmed natural locations. The signature path is the **Maengjongjuk bamboo corridor at Spot 9** — towering culms 15–20 m tall, swaying with the kind of dense whispering rustle that has earned the spot comparison to Kyoto's Arashiyama. \n\n**Filming credits include**: **The King: Eternal Monarch (2020, SBS)**, **Moon Lovers: Scarlet Heart Ryeo (2016, SBS)**, **100 Days My Prince (2018, tvN)**, **Memories of the Sword (2015)**, and **Kundo: Age of the Rampant (2014)**. \n\nThe forest also protects **116 designated Korean pine trees over 400 years old** — Joseon-era plantings that survived the war and subsequent industrialization. \n\nAdmission: **Adult ₩8,000 / Child ₩5,000**. Hours: **09:00–18:00, closed Mondays**. The 75-minute dwell allows guests to walk the full numbered-spot loop (1→9) without rushing through the photogenic bamboo corridor. \n\nThe Nampyeong Moon clan continues to manage the site as a **sustainable working forest** rather than a pure tourist attraction — bamboo is still harvested for traditional Korean crafts including **zithers (gayageum bodies), baskets, and fishing rods**, and **commercial filming requires advance written permission**. \n\nBeyond Spot 9 the path winds into **Gutteo Grove and a second pine forest**, less photographed but equally serene.",
+      "tm": "Der **⟦G0⟧** („Wald der neun Berge\", 아홉산숲) ist ein **520.000 m² großer Privatwald** in Gijang-gun, der **seit rund 400 Jahren über 9 Generationen vom Nampyeong-Moon-Klan verwaltet wird** — die Familie ließ sich nach dem **Imjin-Krieg (1592–1598)** hier nieder und betreut das Land seither ununterbrochen. \n\nDer Wald **wurde 2016 erstmals für die Öffentlichkeit geöffnet** und hat sich rasch zu einem der am häufigsten gefilmten Naturschauplätze Koreas entwickelt. Der markanteste Weg ist der **Maengjongjuk-Bambuskorridor an Spot 9** — aufragende Halme von 15–20 m Höhe, die mit jenem dichten, flüsternden Rauschen schwanken, das dem Ort Vergleiche mit Kyotos Arashiyama eingebracht hat. \n\n**Zu den Drehproduktionen zählen**: **The King: Eternal Monarch (2020, SBS)**, **Moon Lovers: Scarlet Heart Ryeo (2016, SBS)**, **100 Days My Prince (2018, tvN)**, **Memories of the Sword (2015)** und **Kundo: Age of the Rampant (2014)**. \n\nDer Wald schützt zudem **116 ausgewiesene Koreakiefern, die über 400 Jahre alt sind** — Anpflanzungen aus der Joseon-Zeit, die den Krieg und die spätere Industrialisierung überstanden haben. \n\nEintritt: **Erwachsene ₩8.000 / Kinder ₩5.000**. Öffnungszeiten: **09:00–18:00 Uhr, montags geschlossen**. Der 75-minütige Aufenthalt erlaubt es den Gästen, den kompletten Rundweg mit den nummerierten Spots (1→9) zu gehen, ohne durch den fotogenen Bambuskorridor hetzen zu müssen. \n\nDer Nampyeong-Moon-Klan bewirtschaftet das Gelände weiterhin als **nachhaltig genutzten Wald** und nicht als reine Touristenattraktion — Bambus wird nach wie vor für traditionelles koreanisches Kunsthandwerk geerntet, darunter **Zithern (Korpusse für Gayageum), Körbe und Angelruten**, und **kommerzielle Dreharbeiten erfordern eine vorherige schriftliche Genehmigung**. \n\nHinter Spot 9 führt der Weg weiter in den **Gutteo-Hain und einen zweiten Kiefernwald**, weniger fotografiert, aber ebenso beschaulich.",
       "glossary": [
         "⟦G0⟧ = Bambuswald Ahopsan"
       ]
@@ -148,5 +185,5 @@
       "⟦G0⟧": "Bambuswald Ahopsan"
     }
   },
-  "tmHits": 1
+  "tmHits": 38
 }

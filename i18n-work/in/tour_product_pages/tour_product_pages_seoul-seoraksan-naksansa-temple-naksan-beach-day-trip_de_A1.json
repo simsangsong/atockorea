@@ -8,6 +8,7 @@
   "segments": {
     "/seo/title": {
       "source_en": "Gangwon-do Day Tour from Seoul · Seoraksan + ⟦G0⟧ + ⟦G1⟧ | AtoC Korea",
+      "tm": "Tagestour nach Gangwon-do ab Seoul · Seoraksan + ⟦G0⟧ + ⟦G1⟧ | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Naksansa-Tempel",
         "⟦G1⟧ = Naksan-Strand"
@@ -15,18 +16,21 @@
     },
     "/seo/pageTitle": {
       "source_en": "Gangwon-do Day Tour from Seoul: Seoraksan & ⟦G0⟧ | AtoC Korea",
+      "tm": "Tagestour nach Gangwon-do ab Seoul: Seoraksan & ⟦G0⟧ | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Naksansa-Tempel"
       ]
     },
     "/seo/description": {
       "source_en": "Coach day tour from Seoul to Korea's most iconic national park (Seoraksan), a thousand-year cliffside temple above the sea (Naksansa), and the pine-backed sands of ⟦G0⟧ — a mountain-to-ocean day on the East Sea coast.",
+      "tm": "Bustagestour ab Seoul zu Koreas bekanntestem Nationalpark (Seoraksan), zu einem tausendjährigen Klippentempel über dem Meer (Naksansa) und zum kiefernbestandenen Sand von ⟦G0⟧ — ein Tag vom Berg zum Ozean an der Küste des Ostmeers.",
       "glossary": [
         "⟦G0⟧ = Naksan-Strand"
       ]
     },
     "/seo/metaDescription": {
       "source_en": "12-hour coach day trip from Seoul to the East Sea coast: ⟦G0⟧, cliffside ⟦G1⟧, and ⟦G2⟧. Guided, transfers included.",
+      "tm": "12-stündiger Bustagesausflug ab Seoul an die Küste des Ostmeers: ⟦G0⟧, der Klippentempel ⟦G1⟧ und ⟦G2⟧. Mit Reiseleitung, Transfers inklusive.",
       "glossary": [
         "⟦G0⟧ = Nationalpark Seoraksan",
         "⟦G1⟧ = Naksansa-Tempel",
@@ -34,7 +38,8 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Seoul Seoraksan day tour"
+      "source_en": "Seoul Seoraksan day tour",
+      "tm": "Seoraksan-Tagestour ab Seoul"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ tour",
@@ -44,7 +49,8 @@
       ]
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Seoraksan day trip from Seoul"
+      "source_en": "Seoraksan day trip from Seoul",
+      "tm": "Seoraksan-Tagesausflug ab Seoul"
     },
     "/seo/primaryKeywords/3": {
       "source_en": "⟦G0⟧ tour",
@@ -54,34 +60,44 @@
       ]
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Seoraksan Naksansa one-day tour"
+      "source_en": "Seoraksan Naksansa one-day tour",
+      "tm": "Eintagestour Seoraksan und Naksansa"
     },
     "/hero/meta/stops": {
-      "source_en": "3 stops"
+      "source_en": "3 stops",
+      "tm": "3 Stopps"
     },
     "/hero/meta/region": {
-      "source_en": "Seoul → Gangwon-do (Seoraksan & Yangyang)"
+      "source_en": "Seoul → Gangwon-do (Seoraksan & Yangyang)",
+      "tm": "Seoul → Gangwon-do (Seoraksan & Yangyang)"
     },
     "/hero/meta/duration": {
-      "source_en": "12 hours"
+      "source_en": "12 hours",
+      "tm": "12 Stunden"
     },
     "/hero/pills/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/hero/pills/1": {
-      "source_en": "Mountain + Temple + Coast"
+      "source_en": "Mountain + Temple + Coast",
+      "tm": "Berg + Tempel + Küste"
     },
     "/hero/pills/2": {
-      "source_en": "Coach tour"
+      "source_en": "Coach tour",
+      "tm": "Bustour"
     },
     "/hero/tagline": {
-      "source_en": "Korea's most iconic mountain, a thousand-year temple above the sea, and a pine-backed beach — one 12-hour coach day from Seoul to the East Sea coast"
+      "source_en": "Korea's most iconic mountain, a thousand-year temple above the sea, and a pine-backed beach — one 12-hour coach day from Seoul to the East Sea coast",
+      "tm": "Koreas bekanntester Berg, ein tausendjähriger Tempel über dem Meer und ein kiefernbestandener Strand — ein 12-stündiger Bustag von Seoul an die Küste des Ostmeers"
     },
     "/glanceItems/0/label": {
-      "source_en": "Duration"
+      "source_en": "Duration",
+      "tm": "Dauer"
     },
     "/glanceItems/0/value": {
-      "source_en": "12 hours"
+      "source_en": "12 hours",
+      "tm": "12 Stunden"
     },
     "/glanceItems/1/label": {
       "source_en": "Photo Potential",
@@ -152,53 +168,68 @@
       "tm": "Bewertungen"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Coach tour"
+      "source_en": "Coach tour",
+      "tm": "Bustour"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Nature & temples"
+      "source_en": "Nature & temples",
+      "tm": "Natur & Tempel"
     },
     "/catalog_card/tags/3": {
-      "source_en": "East Sea coast"
+      "source_en": "East Sea coast",
+      "tm": "Küste des Ostmeers"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Autumn foliage"
+      "source_en": "Autumn foliage",
+      "tm": "Herbstlaub"
     },
     "/catalog_card/title": {
       "source_en": "Gangwon-do Day Tour from Seoul: Seoraksan + ⟦G0⟧ + ⟦G1⟧",
+      "tm": "Tagestour nach Gangwon-do ab Seoul: Seoraksan + ⟦G0⟧ + ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Naksansa-Tempel",
         "⟦G1⟧ = Naksan-Strand"
       ]
     },
     "/catalog_card/badges/0": {
-      "source_en": "Day trip from Seoul"
+      "source_en": "Day trip from Seoul",
+      "tm": "Tagesausflug ab Seoul"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Air-conditioned coach"
+      "source_en": "Air-conditioned coach",
+      "tm": "Klimatisierter Reisebus"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Mondays & Thursdays"
+      "source_en": "Mondays & Thursdays",
+      "tm": "Montags & donnerstags"
     },
     "/catalog_card/badges/3": {
-      "source_en": "12-hour day"
+      "source_en": "12-hour day",
+      "tm": "12-Stunden-Tag"
     },
     "/catalog_card/region": {
-      "source_en": "Seoul → Gangwon (Seoraksan & Yangyang)"
+      "source_en": "Seoul → Gangwon (Seoraksan & Yangyang)",
+      "tm": "Seoul → Gangwon (Seoraksan & Yangyang)"
     },
     "/catalog_card/duration": {
-      "source_en": "12 hours"
+      "source_en": "12 hours",
+      "tm": "12 Stunden"
     },
     "/catalog_card/subtitle": {
-      "source_en": "Seoraksan's granite peaks, a thousand-year seaside temple, and a pine-backed East Sea beach in a single 12-hour Seoul day trip."
+      "source_en": "Seoraksan's granite peaks, a thousand-year seaside temple, and a pine-backed East Sea beach in a single 12-hour Seoul day trip.",
+      "tm": "Die Granitgipfel des Seoraksan, ein tausendjähriger Tempel am Meer und ein kiefernbestandener Strand am Ostmeer in einem einzigen 12-stündigen Tagesausflug ab Seoul."
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$56 per person (was $61, 8% off)"
+      "source_en": "From US$56 per person (was $61, 8% off)",
+      "tm": "Ab US$56 pro Person (statt $61, 8 % Rabatt)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A 12-hour coach day trip from Seoul to the East Sea coast: hike ⟦G0⟧, visit the cliffside ⟦G1⟧, and walk pine-backed ⟦G2⟧. Departs Mondays and Thursdays with an English-speaking guide and round-trip transfers from Hongik or ⟦G3⟧.",
+      "tm": "Ein 12-stündiger Bustagesausflug ab Seoul an die Küste des Ostmeers: Wandern im ⟦G0⟧, Besuch des Klippentempels ⟦G1⟧ und ein Spaziergang am kiefernbestandenen ⟦G2⟧. Abfahrt montags und donnerstags, mit englischsprachiger Reiseleitung und Hin- und Rücktransfer ab Hongik oder ⟦G3⟧.",
       "glossary": [
         "⟦G0⟧ = Nationalpark Seoraksan",
         "⟦G1⟧ = Naksansa-Tempel",
@@ -207,44 +238,54 @@
       ]
     },
     "/headlineLine1": {
-      "source_en": "Gangwon-do Day Tour from Seoul"
+      "source_en": "Gangwon-do Day Tour from Seoul",
+      "tm": "Tagestour nach Gangwon-do ab Seoul"
     },
     "/headlineLine2": {
       "source_en": "Seoraksan + ⟦G0⟧ + ⟦G1⟧",
+      "tm": "Seoraksan + ⟦G0⟧ + ⟦G1⟧",
       "glossary": [
         "⟦G0⟧ = Naksansa-Tempel",
         "⟦G1⟧ = Naksan-Strand"
       ]
     },
     "/pickup_dropoff/primary/name": {
-      "source_en": "Starbucks Hongik University Station Exit 8"
+      "source_en": "Starbucks Hongik University Station Exit 8",
+      "tm": "Starbucks an der Station Hongik University, Ausgang 8"
     },
     "/pickup_dropoff/primary/time": {
-      "source_en": "07:00 pickup / 19:15 drop-off"
+      "source_en": "07:00 pickup / 19:15 drop-off",
+      "tm": "Abholung 07:00 Uhr / Ausstieg 19:15 Uhr"
     },
     "/pickup_dropoff/primary/address": {
-      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)"
+      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)",
+      "tm": "Yanghwa-ro, Mapo-gu, Seoul (vor dem Starbucks an der Station Hongik University, Ausgang 8)"
     },
     "/pickup_dropoff/primary/instructions": {
-      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the air-conditioned coach in the pickup queue."
+      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the air-conditioned coach in the pickup queue.",
+      "tm": "Treffen Sie die Reiseleitung direkt am Starbucks über dem Ausgang 8 der Station Hongik University. Achten Sie auf das Schild von AtoC Korea und den klimatisierten Reisebus in der Abholreihe."
     },
     "/pickup_dropoff/alternates/0/name": {
       "source_en": "⟦G0⟧ Station Exit 2 (NorthFace flagship)",
+      "tm": "Station ⟦G0⟧, Ausgang 2 (NorthFace-Flagshipstore)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/alternates/0/time": {
-      "source_en": "07:30 pickup / 18:45 drop-off"
+      "source_en": "07:30 pickup / 18:45 drop-off",
+      "tm": "Abholung 07:30 Uhr / Ausstieg 18:45 Uhr"
     },
     "/pickup_dropoff/alternates/0/address": {
       "source_en": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at ⟦G0⟧ Station Exit 2)",
+      "tm": "Toegye-ro, Jung-gu, Seoul (NorthFace-Flagshipstore an der Station ⟦G0⟧, Ausgang 2)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/pickup_dropoff/alternates/0/instructions": {
       "source_en": "Meet the guide in front of the NorthFace flagship store at the top of ⟦G0⟧ Station Exit 2.",
+      "tm": "Treffen Sie die Reiseleitung vor dem NorthFace-Flagshipstore oben am Ausgang 2 der Station ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -296,5 +337,5 @@
       "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 19
+  "tmHits": 60
 }

@@ -142,23 +142,28 @@
       ]
     },
     "/itineraryStops/2/name": {
-      "source_en": "Starfield Suwon Library & Mall"
+      "source_en": "Starfield Suwon Library & Mall",
+      "tm": "Starfield Suwon Library & Mall"
     },
     "/itineraryStops/2/category": {
-      "source_en": "Modern Cultural Landmark + Lunch"
+      "source_en": "Modern Cultural Landmark + Lunch",
+      "tm": "Modernes Kulturwahrzeichen + Mittagessen"
     },
     "/itineraryStops/2/duration": {
       "source_en": "90 min",
       "tm": "90 Min."
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "30-min coach drive from Hwaseong Fortress to Starfield Suwon"
+      "source_en": "30-min coach drive from Hwaseong Fortress to Starfield Suwon",
+      "tm": "30 Min. Busfahrt von der Festung Hwaseong nach Starfield Suwon"
     },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "Lunch at Eatopia food hall (~30-45 min)"
+      "source_en": "Lunch at Eatopia food hall (~30-45 min)",
+      "tm": "Mittagessen in der Food Hall Eatopia (~30–45 Min.)"
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Library + atrium walking + photo time (~30-40 min)"
+      "source_en": "Library + atrium walking + photo time (~30-40 min)",
+      "tm": "Bibliothek, Atrium und Zeit für Fotos (~30–40 Min.)"
     }
   },
   "glossaryTokens": {
@@ -190,5 +195,5 @@
       "⟦G0⟧": "Hwaseong-Haenggung-Palast"
     }
   },
-  "tmHits": 28
+  "tmHits": 33
 }

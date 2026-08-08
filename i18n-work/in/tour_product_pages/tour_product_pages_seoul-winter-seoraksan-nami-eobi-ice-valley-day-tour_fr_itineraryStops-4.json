@@ -1,0 +1,80 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:fr:itineraryStops-4",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "fr",
+  "chunk": "itineraryStops-4",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/4/description": {
+      "source_en": "Eobi Valley — 어비계곡, from the characters for 'flying fish', after water that once ran fast enough to make fish look airborne — is a three-kilometre valley in Seorak-myeon, southern Gapyeong. In summer it is a swimming and trout stream. In winter it becomes something the rest of the year gives no hint of.\n\n**The ice wall here is made, not found.** Since the winter of 2023 the residents of Garil 2-ri have sprayed water down the valley's rock face through the coldest weeks and let the cold do the rest, building it up into a sheet reported at around **25 metres** high. It is run by the village's own residents' association — roughly thirty people — as an off-season income project for a valley that previously had almost no winter visitors. You will see this described elsewhere, including on some official tourism pages, as a natural frozen waterfall. It is not, and it is more impressive for that.\n\nViewing is from a **wooden deck path** along the valley, part of a Gyeonggi Province restoration project that also added the night lighting. **The ground directly beneath the wall is closed off** after visitors were injured slipping there, so photographs are taken from the designated viewing area rather than from underneath. Alongside the wall the village runs an ice-sledding slope, a spinning snow sled, an igloo photo zone and a small heated greenhouse garden.\n\nWe arrive late in the afternoon, close to the end of the hours the village publishes for the festival ground. In deep winter that means the last of the daylight on the ice — good for photographs, and cold. The village does light the deck path in peak season, but the lighting comes on around the time it closes, so this itinerary does not promise it. Small fees are charged on site by the village for the viewing area and the sled activities; these are set locally and change year to year."
+    },
+    "/itineraryStops/4/visitBasics/hours": {
+      "source_en": "Village-run and seasonal. The village publishes 10:00-17:00 for the festival ground (Eobi Valley Village, 031-585-3551). This itinerary arrives near the end of that window, so the paid activities may already be closing; the valley and its deck path are open ground rather than a gated site. Hours are set locally each year"
+    },
+    "/itineraryStops/4/visitBasics/closed": {
+      "source_en": "Winter only — provisionally mid-December to mid-February. The village sets the dates each year, so this is a guide rather than a published schedule: the 2025-26 season ran 20 December to 19 February, and the 2026-27 dates are not yet announced. The wall only appears once the cold holds; January and early February are the most reliable weeks"
+    },
+    "/itineraryStops/4/visitBasics/walking": {
+      "source_en": "Short but genuinely icy. A mostly flat wooden deck path leads to the viewing area; the approach and surroundings are slippery and non-slip footwear is essential. The ground directly beneath the ice wall is closed to visitors. Not suitable for wheelchairs or strollers"
+    },
+    "/itineraryStops/4/visitBasics/admission": {
+      "source_en": "Not included. The village charges about ₩1,000 per person for the ice-wall viewing area; sled and activity passes run roughly ₩5,000-30,000 on top. Parking at the village-entrance lot is free, and it is about a 500 m walk along the valley deck path to the festival ground. Fees are set locally and change year to year; the guide confirms the day's charges on the coach"
+    },
+    "/itineraryStops/5/name": {
+      "source_en": "Return to Seoul (⟦G0⟧ or Hongik University Station)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/category": {
+      "source_en": "Return drop-off",
+      "tm": "Dépose au retour"
+    },
+    "/itineraryStops/5/duration": {
+      "source_en": "≈ 1.5 hour drive"
+    },
+    "/itineraryStops/5/timeUsed/0": {
+      "source_en": "Depart Eobi Valley (~17:30)"
+    },
+    "/itineraryStops/5/timeUsed/1": {
+      "source_en": "Motorway drive into Seoul (~1.5 hours, longer in snow or weekend traffic)"
+    },
+    "/itineraryStops/5/timeUsed/2": {
+      "source_en": "⟦G0⟧ Station drop-off (~19:00)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/timeUsed/3": {
+      "source_en": "Hongik University Station drop-off (~19:30)"
+    },
+    "/itineraryStops/5/whyOnRoute": {
+      "source_en": "Ending at Eobi is what keeps the return short: the valley is already the closest stop to Seoul on this route, so the coach is pointed home from the moment it leaves. Reversing the drop-off order means ⟦G0⟧ guests, who boarded last, get out first.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/description": {
+      "source_en": "Departure from Eobi Valley is around 17:30 for the ~1.5-hour run into Seoul. Drop-offs are in reverse pickup order: **⟦G0⟧ Station around 19:00**, then **Hongik University Station around 19:30**.\n\nBoth are subway interchanges. Winter conditions are the main variable on this leg — snow on the Gapyeong roads or Friday and Sunday evening traffic can add 30-60 minutes, and the guide will give the coach's live estimate on the way in. It is a long day; most guests sleep through this stretch.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/5/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/timeUsed/2": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/whyOnRoute": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/description": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 1
+}

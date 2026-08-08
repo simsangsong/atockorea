@@ -6,54 +6,51 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
-    "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Walk from Jagalchi to ⟦G0⟧ (~5 min)",
-      "glossary": [
-        "⟦G0⟧ = BIFF-Platz"
-      ]
-    },
-    "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Director handprints along Star Street (~10 min)"
-    },
-    "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Optional ssiat-hotteok or street-food snack (~10 min)"
-    },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**Designated 1996** to commemorate the **Busan International Film Festival (BIFF)** — Asia's largest film festival, first held September 1996"
+      "source_en": "**Designated 1996** to commemorate the **Busan International Film Festival (BIFF)** — Asia's largest film festival, first held September 1996",
+      "tm": "**1996 ausgewiesen** zum Gedenken an das **Busan International Film Festival (BIFF)** — Asiens größtes Filmfestival, erstmals im September 1996 ausgerichtet"
     },
     "/itineraryStops/5/highlights/1": {
-      "source_en": "**428-meter Star Street** corridor through Nampo-dong's old cinema district"
+      "source_en": "**428-meter Star Street** corridor through Nampo-dong's old cinema district",
+      "tm": "Die **428 Meter lange Star Street** führt durch das alte Kinoviertel von Nampo-dong"
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "**Director and actor handprints** embedded in the pavement (Park Chan-wook, Bong Joon-ho, Kim Ki-duk, Im Kwon-taek, and international guests since 1996)"
+      "source_en": "**Director and actor handprints** embedded in the pavement (Park Chan-wook, Bong Joon-ho, Kim Ki-duk, Im Kwon-taek, and international guests since 1996)",
+      "tm": "**Handabdrücke von Regisseuren und Schauspielern** im Pflaster (Park Chan-wook, Bong Joon-ho, Kim Ki-duk, Im Kwon-taek und internationale Gäste seit 1996)"
     },
     "/itineraryStops/5/highlights/3": {
       "source_en": "**Ssiat Hotteok (씨앗호떡)** — ⟦G0⟧'s signature sweet pancake stuffed with seeds (sunflower, sesame, pumpkin); originated here",
+      "tm": "**Ssiat Hotteok (씨앗호떡)** — der süße Pfannkuchen des ⟦G0⟧, gefüllt mit Kernen (Sonnenblume, Sesam, Kürbis); hier entstanden",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/5/highlights/4": {
-      "source_en": "**Korea's oldest cinema street** — Bumin Theater (1924) and Joongan Theater (1927) opened the district"
+      "source_en": "**Korea's oldest cinema street** — Bumin Theater (1924) and Joongan Theater (1927) opened the district",
+      "tm": "**Koreas älteste Kinostraße** — das Bumin-Theater (1924) und das Joongan-Theater (1927) begründeten das Viertel"
     },
     "/itineraryStops/5/highlights/5": {
       "source_en": "Adjacent to ⟦G0⟧ (3-min walk) and ⟦G1⟧ (2-min walk)",
+      "tm": "Angrenzend an ⟦G0⟧ (3 Gehminuten) und ⟦G1⟧ (2 Gehminuten)",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt",
         "⟦G1⟧ = Gukje-Markt"
       ]
     },
     "/itineraryStops/5/highlights/6": {
-      "source_en": "Open-air pedestrian street, free entry, 24h public area"
+      "source_en": "Open-air pedestrian street, free entry, 24h public area",
+      "tm": "Fußgängerstraße unter freiem Himmel, Eintritt frei, 24 Stunden öffentlich zugänglich"
     },
     "/itineraryStops/5/smartNotes/tip": {
       "source_en": "Try the **ssiat-hotteok** at the cart marked '시아갓호떡' — the original ⟦G0⟧ cart, ₩2,000–3,000 each; eat carefully as the seed-and-sugar filling stays very hot inside the dough pocket",
+      "tm": "Probieren Sie das **Ssiat-Hotteok** am Wagen mit der Aufschrift „시아갓호떡“ — dem ursprünglichen Wagen am ⟦G0⟧, ₩2.000–3.000 pro Stück; essen Sie vorsichtig, denn die Kern-Zucker-Füllung bleibt in der Teigtasche sehr heiß",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/5/smartNotes/facilities": {
       "source_en": "Public restrooms inside the adjacent Lotte Department Store and the CGV ⟦G0⟧ cinema lobby; ATMs on Gwangbok-ro",
+      "tm": "Öffentliche Toiletten im benachbarten Lotte-Kaufhaus und im Foyer des Kinos CGV ⟦G0⟧; Geldautomaten an der Gwangbok-ro",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -74,6 +71,7 @@
     },
     "/itineraryStops/5/convenience/restroom": {
       "source_en": "Lotte Department Store Gwangbok-ro Branch (free public restrooms) and CGV ⟦G0⟧ cinema lobby",
+      "tm": "Lotte-Kaufhaus, Filiale Gwangbok-ro (kostenlose öffentliche Toiletten) und das Foyer des Kinos CGV ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -86,25 +84,31 @@
       ]
     },
     "/itineraryStops/5/visitBasics/hours": {
-      "source_en": "Pedestrian street open 24h; ssiat-hotteok carts typically 10:00–22:00"
+      "source_en": "Pedestrian street open 24h; ssiat-hotteok carts typically 10:00–22:00",
+      "tm": "Die Fußgängerstraße ist 24 Stunden geöffnet; die Ssiat-Hotteok-Wagen üblicherweise 10:00–22:00 Uhr"
     },
     "/itineraryStops/5/visitBasics/closed": {
-      "source_en": "Open year-round; busiest during BIFF festival (October)"
+      "source_en": "Open year-round; busiest during BIFF festival (October)",
+      "tm": "Ganzjährig geöffnet; am vollsten während des BIFF-Festivals (Oktober)"
     },
     "/itineraryStops/5/visitBasics/walking": {
-      "source_en": "Easy — flat paved pedestrian street"
+      "source_en": "Easy — flat paved pedestrian street",
+      "tm": "Leicht — ebene, gepflasterte Fußgängerstraße"
     },
     "/itineraryStops/5/visitBasics/admission": {
-      "source_en": "Free"
+      "source_en": "Free",
+      "tm": "Kostenlos"
     },
     "/itineraryStops/5/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/5/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — Foto 1",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -118,12 +122,14 @@
     },
     "/itineraryStops/5/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/5/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — Foto 2",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -137,12 +143,14 @@
     },
     "/itineraryStops/5/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/5/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
@@ -183,65 +191,77 @@
       ]
     },
     "/itineraryStops/6/category": {
-      "source_en": "Traditional Market / Korean War Heritage"
+      "source_en": "Traditional Market / Korean War Heritage",
+      "tm": "Traditioneller Markt / Erbe des Koreakriegs"
     },
     "/itineraryStops/6/duration": {
-      "source_en": "30 min"
+      "source_en": "25 min",
+      "tm": "25 Min."
     },
     "/itineraryStops/6/timeUsed/0": {
       "source_en": "Walk from ⟦G1⟧ to ⟦G0⟧ entrance (~2 min)",
+      "tm": "Fußweg vom ⟦G1⟧ zum Eingang des ⟦G0⟧ (~2 Min.)",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt",
         "⟦G1⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/6/timeUsed/1": {
-      "source_en": "Arirang Street + Cosmetics lane (~10 min)"
+      "source_en": "Arirang Street + Cosmetics lane (~10 min)",
+      "tm": "Arirang Street + Kosmetikgasse (~10 Min.)"
     },
     "/itineraryStops/6/timeUsed/2": {
-      "source_en": "Gongguk Street + kitchenware lanes (~10 min)"
+      "source_en": "Gongguk Street + kitchenware lanes (~10 min)",
+      "tm": "Gongguk Street + Gassen mit Küchenwaren (~10 Min.)"
     },
     "/itineraryStops/6/timeUsed/3": {
-      "source_en": "Bupyeong Kkangtong Market peek (~5 min)"
+      "source_en": "Bupyeong Kkangtong Market peek (~5 min)",
+      "tm": "Kurzer Blick in den Bupyeong-Kkangtong-Markt (~5 Min.)"
     },
     "/itineraryStops/6/timeUsed/4": {
       "source_en": "Walk to coach pickup point on Daecheong-ro (~3 min)"
     },
     "/itineraryStops/6/highlights/0": {
-      "source_en": "**Established 1945–1950** by post-liberation traders and **Korean War refugees** who fled south from North Korea"
+      "source_en": "**Established 1945–1950** by post-liberation traders and **Korean War refugees** who fled south from North Korea",
+      "tm": "**1945–1950 entstanden** durch Händler nach der Befreiung und **Flüchtlinge des Koreakriegs**, die aus Nordkorea nach Süden flohen"
     },
     "/itineraryStops/6/highlights/1": {
-      "source_en": "**Name 'Gukje (국제) = International'** — reflects the post-war black-market era when goods came from US troop PXs and worldwide aid imports"
+      "source_en": "**Name 'Gukje (국제) = International'** — reflects the post-war black-market era when goods came from US troop PXs and worldwide aid imports",
+      "tm": "**Der Name „Gukje (국제) = International“** spiegelt die Schwarzmarktzeit der Nachkriegsjahre, als Waren aus den PX-Läden der US-Truppen und aus Hilfslieferungen aus aller Welt kamen"
     },
     "/itineraryStops/6/highlights/2": {
-      "source_en": "**~600 m × 100 m grid of 1,500+ stalls** — one of Korea's largest traditional markets"
+      "source_en": "**~600 m × 100 m grid of 1,500+ stalls** — one of Korea's largest traditional markets",
+      "tm": "**Ein Raster von ~600 m × 100 m mit über 1.500 Ständen** — einer der größten traditionellen Märkte Koreas"
     },
     "/itineraryStops/6/highlights/3": {
-      "source_en": "**Six themed alleys**: Arirang Street (clothing), Gongguk Street (kitchenware), Wood Street (lumber), Cosmetics Street, Hardware Street, and Food Alley"
+      "source_en": "**Six themed alleys**: Arirang Street (clothing), Gongguk Street (kitchenware), Wood Street (lumber), Cosmetics Street, Hardware Street, and Food Alley",
+      "tm": "**Sechs Themengassen**: Arirang Street (Kleidung), Gongguk Street (Küchenwaren), Wood Street (Holz), Cosmetics Street, Hardware Street und die Food Alley"
     },
     "/itineraryStops/6/highlights/4": {
-      "source_en": "Adjacent **Bupyeong Kkangtong Market** ('Tin Can Market') — Korea's first night market, popular for street food after sunset"
+      "source_en": "Adjacent **Bupyeong Kkangtong Market** ('Tin Can Market') — Korea's first night market, popular for street food after sunset",
+      "tm": "Der angrenzende **Bupyeong-Kkangtong-Markt** („Blechdosenmarkt“) — Koreas erster Nachtmarkt, nach Sonnenuntergang beliebt für Straßenküche"
     },
     "/itineraryStops/6/highlights/5": {
       "source_en": "Setting of the 2014 Korean film **'Ode to My Father' (⟦G0⟧)** — 14M ticket sales, anchored Korean War family-memory cinema",
+      "tm": "Schauplatz des koreanischen Films **„Ode to My Father“ (⟦G0⟧)** von 2014 — 14 Mio. verkaufte Tickets, ein Eckpfeiler des Kinos über Familienerinnerung an den Koreakrieg",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt"
       ]
     },
     "/itineraryStops/6/highlights/6": {
-      "source_en": "Hours typically 09:30–19:30 daily; many shops close **1st & 3rd Sundays** (varies by section)"
+      "source_en": "Hours typically 09:30–19:30 daily; many shops close **1st & 3rd Sundays** (varies by section)",
+      "tm": "Üblicherweise täglich 09:30–19:30 Uhr; viele Läden schließen **am 1. und 3. Sonntag** (je nach Bereich unterschiedlich)"
     },
     "/itineraryStops/6/smartNotes/tip": {
-      "source_en": "Bring **cash in small denominations** (₩1,000 and ₩5,000 notes) — most stalls don't take cards and prefer not to break ₩50,000 notes; light bargaining is normal at clothing and accessory stalls but not at food alleys; carry your own bag — disposable bags incur a fee"
+      "source_en": "Bring **cash in small denominations** (₩1,000 and ₩5,000 notes) — most stalls don't take cards and prefer not to break ₩50,000 notes; light bargaining is normal at clothing and accessory stalls but not at food alleys; carry your own bag — disposable bags incur a fee",
+      "tm": "Bringen Sie **Bargeld in kleinen Scheinen** mit (₩1.000- und ₩5.000-Noten) — die meisten Stände nehmen keine Karten und wechseln ungern ₩50.000-Scheine; leichtes Handeln ist an Kleidungs- und Accessoire-Ständen üblich, in den Essensgassen aber nicht; nehmen Sie eine eigene Tasche mit — Einwegtüten kosten extra"
     },
     "/itineraryStops/6/smartNotes/facilities": {
-      "source_en": "Public restrooms inside the adjacent Bupyeong Kkangtong building; ATMs along Daecheong-ro"
+      "source_en": "Public restrooms inside the adjacent Bupyeong Kkangtong building; ATMs along Daecheong-ro",
+      "tm": "Öffentliche Toiletten im benachbarten Bupyeong-Kkangtong-Gebäude; Geldautomaten entlang der Daecheong-ro"
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/5/timeUsed/0": {
-      "⟦G0⟧": "BIFF-Platz"
-    },
     "/itineraryStops/5/highlights/3": {
       "⟦G0⟧": "BIFF-Platz"
     },
@@ -317,5 +337,5 @@
       "⟦G0⟧": "Gukje-Markt"
     }
   },
-  "tmHits": 7
+  "tmHits": 42
 }

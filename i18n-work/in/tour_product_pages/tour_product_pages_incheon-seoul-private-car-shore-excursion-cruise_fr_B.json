@@ -1,0 +1,320 @@
+{
+  "unitId": "tour_product_pages:incheon-seoul-private-car-shore-excursion-cruise:fr:B",
+  "surface": "tour_product_pages",
+  "slug": "incheon-seoul-private-car-shore-excursion-cruise",
+  "locale": "fr",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Outbound transfer"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 heure"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Incheon Cruise Terminal → central Seoul via expressway."
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Heritage core"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 heures"
+    },
+    "/routePhases/1/description": {
+      "source_en": "Gyeongbokgung (75 min), short transfer, ⟦G0⟧ + ⟦G1⟧ (75 min) — all walkable cluster.",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Lunch + viewpoint"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 heures"
+    },
+    "/routePhases/2/description": {
+      "source_en": "Local restaurant + N Seoul Tower or quick city stop."
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Last Seoul stop"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 heure"
+    },
+    "/routePhases/3/description": {
+      "source_en": "⟦G1⟧ shopping/street food OR ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Temple Jogyesa",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/routePhases/4/phase": {
+      "source_en": "Return transfer"
+    },
+    "/routePhases/4/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 heure"
+    },
+    "/routePhases/4/description": {
+      "source_en": "Seoul → Incheon Cruise Terminal with 60-minute buffer before all-aboard."
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "⟦G0⟧ + ⟦G1⟧ — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "⟦G0⟧ + ⟦G1⟧ — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/galleryItems/1/location": {
+      "source_en": "⟦G0⟧ + ⟦G1⟧",
+      "glossary": [
+        "⟦G0⟧ = Village hanok de Bukchon",
+        "⟦G1⟧ = Insadong"
+      ]
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 1"
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 1"
+    },
+    "/galleryItems/2/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "⟦G1⟧ OR ⟦G0⟧ (your choice) — gallery image 1",
+      "glossary": [
+        "⟦G0⟧ = Temple Jogyesa",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "⟦G1⟧ OR ⟦G0⟧ (your choice) — photo 1",
+      "glossary": [
+        "⟦G0⟧ = Temple Jogyesa",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/galleryItems/3/location": {
+      "source_en": "⟦G1⟧ OR ⟦G0⟧ (your choice)",
+      "glossary": [
+        "⟦G0⟧ = Temple Jogyesa",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — gallery image 2",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — photo 2",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — gallery image 3",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — photo 3",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — gallery image 4",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — photo 4",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧ + Royal Guard ceremony",
+      "glossary": [
+        "⟦G0⟧ = Palais de Gyeongbokgung"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 2"
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 2"
+    },
+    "/galleryItems/8/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 3"
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 3"
+    },
+    "/galleryItems/9/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 4"
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 4"
+    },
+    "/galleryItems/10/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/1/description": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Insadong"
+    },
+    "/routePhases/3/description": {
+      "⟦G0⟧": "Temple Jogyesa",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/1/alt": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Insadong"
+    },
+    "/galleryItems/1/caption": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Insadong"
+    },
+    "/galleryItems/1/location": {
+      "⟦G0⟧": "Village hanok de Bukchon",
+      "⟦G1⟧": "Insadong"
+    },
+    "/galleryItems/3/alt": {
+      "⟦G0⟧": "Temple Jogyesa",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/galleryItems/3/caption": {
+      "⟦G0⟧": "Temple Jogyesa",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/galleryItems/3/location": {
+      "⟦G0⟧": "Temple Jogyesa",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Palais de Gyeongbokgung"
+    }
+  },
+  "tmHits": 9
+}

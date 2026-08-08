@@ -7,170 +7,216 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Pickup (4 points across Jeju City)"
+      "source_en": "Pickup (4 points across Jeju City)",
+      "tm": "Посадка (4 точки по городу Чеджу)"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup — Jeju City Hotel/Hub Sequence"
+      "source_en": "Pickup — Jeju City Hotel/Hub Sequence",
+      "tm": "Посадка — последовательность отелей и узлов в городе Чеджу"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 мин"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Hagwi pickup ~09:00 — 5 min"
+      "source_en": "Hagwi pickup ~09:00 — 5 min",
+      "tm": "Посадка в Хагви ~09:00 — 5 мин"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Airport pickup ~09:10 — 5 min"
+      "source_en": "Airport pickup ~09:10 — 5 min",
+      "tm": "Посадка в аэропорту ~09:10 — 5 мин"
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "City Hall pickup ~09:20 — 5 min"
+      "source_en": "City Hall pickup ~09:20 — 5 min",
+      "tm": "Посадка у мэрии ~09:20 — 5 мин"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Dongmun pickup ~09:30 — 5 min"
+      "source_en": "Dongmun pickup ~09:30 — 5 min",
+      "tm": "Посадка у Тонмуна ~09:30 — 5 мин"
     },
     "/itineraryStops/0/timeUsed/4": {
-      "source_en": "Eastbound Route 1132 to Hamdeok — ~30 min"
+      "source_en": "Eastbound Route 1132 to Hamdeok — ~30 min",
+      "tm": "По трассе 1132 на восток до Хамдока — ~30 мин."
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**4 pickup points** across Jeju City — Airport, City Hall, Hagwi, Dongmun"
+      "source_en": "**4 pickup points** across Jeju City — Airport, City Hall, Hagwi, Dongmun",
+      "tm": "**4 точки посадки** по городу Чеджу — аэропорт, мэрия, Хагви, Тонмун"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "Sequence west→east minimizes morning coach distance"
+      "source_en": "Sequence west→east minimizes morning coach distance",
+      "tm": "Последовательность запад→восток сокращает утренний пробег автобуса"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "**Small-group minicoach (max 14 pax)** with English guide"
+      "source_en": "**Small-group minicoach (max 14 pax)** with English guide",
+      "tm": "**Мини-автобус в малой группе (до 14 человек)** с англоговорящим гидом"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Bilingual itinerary card + weather brief at first stop"
+      "source_en": "Bilingual itinerary card + weather brief at first stop",
+      "tm": "Двуязычная карточка маршрута и краткая сводка о погоде на первой остановке"
     },
     "/itineraryStops/0/highlights/4": {
-      "source_en": "Total morning transit Jeju City → Hamdeok: ~40 min"
+      "source_en": "Total morning transit Jeju City → Hamdeok: ~40 min",
+      "tm": "Всего утренний переезд город Чеджу → Хамдок: ~40 мин."
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "Drop-off mirrors pickup with optional Dongmun Market end-of-day stop"
+      "source_en": "Drop-off mirrors pickup with optional Dongmun Market end-of-day stop",
+      "tm": "Высадка повторяет посадку, в конце дня возможна остановка у рынка Тонмун"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "Four pickup points cover Jeju City's main hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Manjanggul right after its 09:00 opening — inside the lava tube ahead of the midday tour-bus wave."
+      "source_en": "Four pickup points cover Jeju City's main hotel + transport zones (airport, mid-city, old town, market district) without forcing guests across the city. Sequencing west→east lands the coach at Manjanggul right after its 09:00 opening — inside the lava tube ahead of the midday tour-bus wave.",
+      "tm": "Четыре точки посадки покрывают основные гостиничные и транспортные зоны города Чеджу (аэропорт, центр, старый город, рыночный квартал), и гостям не нужно ехать через весь город. Порядок с запада на восток приводит автобус к Манджангулю сразу после открытия в 09:00 — внутрь лавовой трубки раньше полуденной волны экскурсионных автобусов."
     },
     "/itineraryStops/0/description": {
       "source_en": "**Pickup is consolidated at four central Jeju City points** to minimize morning crisscrossing: **Jeju International Airport (제주공항)** for guests with same-day arrivals or hotels near the airport corridor; **Jeju City Hall (제주시청)** for guests in the Yeon-dong / Nohyeong / Old Town hotel cluster; **Hagwi-dong (하귀동)** as the westernmost pickup before heading east; and **Dongmun Traditional Market (동문시장)** as the optional eastern Jeju City pickup near Tapdong waterfront. \n\nSequence is Hagwi → Airport → City Hall → Dongmun → eastward toward Gimnyeong and the ⟦G0⟧. The minicoach is **small-group (max ~14 pax)** with English-speaking guide. \n\n**Bilingual printed itinerary card** distributed at pickup, weather brief at first stop.",
+      "tm": "**Посадка объединена в четырёх центральных точках города Чеджу**, чтобы утром не пересекать город лишний раз: **Международный аэропорт Чеджу (제주공항)** — для гостей, прилетающих в тот же день, или тех, чьи отели рядом с аэропортовым коридором; **мэрия города Чеджу (제주시청)** — для гостей из гостиничного кластера Ёндон / Нохён / Старый город; **Хагви-дон (하귀동)** — самая западная точка посадки перед выездом на восток; и **Традиционный рынок Тонмун (동문시장)** — дополнительная восточная точка посадки в городе Чеджу рядом с набережной Тхаптон. \n\nПорядок: Хагви → аэропорт → мэрия → Тонмун → далее на восток к Кимнёну и ⟦G0⟧. Мини-автобус рассчитан на **малую группу (максимум ~14 человек)**, гид говорит по-английски. \n\n**Двуязычная печатная карточка маршрута** выдаётся при посадке, краткая сводка погоды — на первой остановке.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "UNESCO World Natural Heritage — Geomunoreum Lava-Tube System (inscribed 2007)"
+      "source_en": "UNESCO World Natural Heritage — Geomunoreum Lava-Tube System (inscribed 2007)",
+      "tm": "Всемирное природное наследие ЮНЕСКО — система лавовых трубок Комунорым (внесена в список в 2007 году)"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "55 min"
+      "source_en": "55 min",
+      "tm": "55 мин"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Parking + ticketing + entry — about 5 min"
+      "source_en": "Parking + ticketing + entry — about 5 min",
+      "tm": "Парковка, билеты и вход — около 5 мин."
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Descent into the second entrance + entering the cave — about 5 min"
+      "source_en": "Descent into the second entrance + entering the cave — about 5 min",
+      "tm": "Спуск ко второму входу и вход в пещеру — около 5 мин."
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "1 km open-section round trip (to the lava column) — about 30 min"
+      "source_en": "1 km open-section round trip (to the lava column) — about 30 min",
+      "tm": "Открытый участок 1 км туда и обратно (до лавовой колонны) — около 30 мин."
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Lava-tube formation talk at the information center — about 10 min"
+      "source_en": "Lava-tube formation talk at the information center — about 10 min",
+      "tm": "Рассказ об образовании лавовой трубки в информационном центре — около 10 мин."
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Regroup + transit buffer — about 5 min"
+      "source_en": "Regroup + transit buffer — about 5 min",
+      "tm": "Сбор группы и запас на переезд — около 5 мин."
     },
     "/itineraryStops/1/highlights/0": {
       "source_en": "**UNESCO World Natural Heritage 2007** — inscribed under 'Jeju Volcanic Island and Lava Tubes' alongside ⟦G0⟧",
+      "tm": "**Всемирное природное наследие ЮНЕСКО, 2007** — внесён в список как «Вулканический остров Чеджу и лавовые трубки» вместе с ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/highlights/1": {
       "source_en": "**Two World Natural Heritage sites in one day** — ⟦G0⟧ + Manjanggul",
+      "tm": "**Два объекта Всемирного природного наследия за один день** — ⟦G0⟧ и Манджангуль",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Total length about **7.4 km**, open section about **1 km** (about 30–45 min round trip)"
+      "source_en": "Total length about **7.4 km**, open section about **1 km** (about 30–45 min round trip)",
+      "tm": "Общая длина около **7,4 км**, открытый участок около **1 км** (около 30–45 мин. туда и обратно)"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "**World's largest lava column, 7.6 m high**, at the end of the open section"
+      "source_en": "**World's largest lava column, 7.6 m high**, at the end of the open section",
+      "tm": "**Самая высокая в мире лавовая колонна высотой 7,6 м** — в конце открытого участка"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "Main passage **18 m wide · 23–25 m high** — one of the world's largest lava tubes"
+      "source_en": "Main passage **18 m wide · 23–25 m high** — one of the world's largest lava tubes",
+      "tm": "Главный ход **шириной 18 м · высотой 23–25 м** — одна из крупнейших лавовых трубок мира"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "**Geomunoreum Lava-Tube System** — formed about 8,000 years ago, a National Natural Monument"
+      "source_en": "**Geomunoreum Lava-Tube System** — formed about 8,000 years ago, a National Natural Monument",
+      "tm": "**Система лавовых трубок Комунорым** — образовалась около 8 000 лет назад, национальный памятник природы"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Interior **11–13°C year-round** — a summer cool-down, jacket recommended"
+      "source_en": "Interior **11–13°C year-round** — a summer cool-down, jacket recommended",
+      "tm": "Внутри **11–13 °C круглый год** — летом прохладно, рекомендуется куртка"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Admission **₩4,000 adult / ₩2,000 teens and children**, hours **09:00–18:00 (last entry 17:10)**"
+      "source_en": "Admission **₩4,000 adult / ₩2,000 teens and children**, hours **09:00–18:00 (last entry 17:10)**",
+      "tm": "Вход **₩4 000 взрослый / ₩2 000 подростки и дети**, часы работы **09:00–18:00 (последний вход 17:10)**"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Bring a jacket even in summer (interior 11–13°C). The floor is damp and dark, so non-slip shoes are best. The cave can close for maintenance, so check whether it is operating on your visit date in advance."
+      "source_en": "Bring a jacket even in summer (interior 11–13°C). The floor is damp and dark, so non-slip shoes are best. The cave can close for maintenance, so check whether it is operating on your visit date in advance.",
+      "tm": "Возьмите куртку даже летом (внутри 11–13 °C). Пол влажный и тёмный, поэтому лучше нескользящая обувь. Пещера может закрываться на обслуживание, поэтому заранее уточните, работает ли она в день вашего визита."
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "The information center beside the entrance parking lot explains how the lava tube formed — we recommend a 10-minute look before entering. There is no shop inside the cave."
+      "source_en": "The information center beside the entrance parking lot explains how the lava tube formed — we recommend a 10-minute look before entering. There is no shop inside the cave.",
+      "tm": "В информационном центре у парковки при входе объясняют, как образовалась лавовая трубка, — рекомендуем заглянуть туда на 10 минут перед входом. Внутри пещеры магазина нет."
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "**The day's opening act — and its first UNESCO World Natural Heritage site.** Leaving Jeju City right after pickup puts the coach at Manjanggul close to its 09:00 opening, when the lava tube is at its quietest: you walk the 1 km passage ahead of the midday tour-bus crowds, in the cave's constant 11–13°C coolness while legs are freshest. It also opens the day's UNESCO storyline — the 'Jeju Volcanic Island and Lava Tubes' property you enter here is completed in the afternoon at ⟦G0⟧, part of the same single 2007 inscription. Should Manjanggul be closed for maintenance or weather, we substitute **Micheon Cave at Ilchul Land**, part of the same lava-tube system, to preserve the cave experience.",
+      "tm": "**Открытие дня — и первый объект Всемирного природного наследия ЮНЕСКО на маршруте.** Выезд из города Чеджу сразу после посадки приводит автобус к Манджангулю близко к открытию в 09:00, когда в лавовой трубке тише всего: вы проходите участок в 1 км раньше полуденных толп с экскурсионных автобусов, в постоянной прохладе 11–13 °C и на свежих ногах. Здесь же начинается сюжет дня о ЮНЕСКО: объект «Вулканический остров Чеджу и лавовые трубки», в который вы входите тут, завершается во второй половине дня на ⟦G0⟧ — это одна и та же номинация 2007 года. Если Манджангуль закрыт на обслуживание или из-за погоды, мы заменяем его на **пещеру Мичхонгуль в Ilchul Land**, часть той же системы лавовых трубок, чтобы посещение пещеры состоялось.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Free parking lot at the entrance"
+      "source_en": "Free parking lot at the entrance",
+      "tm": "Бесплатная парковка у входа"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Restrooms at the entrance information center"
+      "source_en": "Restrooms at the entrance information center",
+      "tm": "Туалеты в информационном центре у входа"
     },
     "/itineraryStops/1/description": {
       "source_en": "**⟦G0⟧ (⟦G0⟧)** is a lava tube formed by **lava that erupted roughly 8,000 years ago from Geomunoreum, a parasitic volcano on the flank of Hallasan**, and in **2007 it was inscribed on the UNESCO World Natural Heritage list together with ⟦G1⟧ and Hallasan under the name 'Jeju Volcanic Island and Lava Tubes'**. Because it belongs to the **same single inscribed property** as ⟦G1⟧, this tour packs **two World Natural Heritage sites** into a single day. \n\nWith a total length of about **7.4 km** (13–15 km including connected sections), it is one of the largest lava tubes in the world, and its main passage reaches **18 m wide and 23–25 m high**. Of the three entrances created by ceiling collapse, **only about a 1 km stretch from the second entrance is open to the public**, making it an **out-and-back course of about 30–45 min** in which you return the way you came. At the end of the open section stands the **world's tallest lava column at 7.6 m high**, Manjanggul's iconic photo spot. \n\nThe inside of the cave stays at **11–13°C year-round**, cool in summer and mild in winter, but the floor is dark and somewhat damp, so we recommend **a jacket and non-slip shoes**. It is also designated a **National Natural Monument**. Admission is **₩4,000 for adults (₩3,000 for groups) / ₩2,000 for teens and children**, hours are **09:00–18:00 (last entry 17:10)**, closed the first Wednesday of every month.",
+      "tm": "**⟦G0⟧ (⟦G0⟧)** — лавовая трубка, образованная **лавой, извергшейся примерно 8 000 лет назад из Комунорыма, паразитического вулкана на склоне Халласана**, и в **2007 году она была внесена в список Всемирного природного наследия ЮНЕСКО вместе с ⟦G1⟧ и Халласаном под названием «Вулканический остров Чеджу и лавовые трубки»**. Поскольку она входит в **тот же единый объект списка**, что и ⟦G1⟧, этот тур вмещает **два объекта Всемирного природного наследия** в один день. \n\nПри общей длине около **7,4 км** (13–15 км вместе с соединёнными участками) это одна из крупнейших лавовых трубок мира, а её главный ход достигает **18 м в ширину и 23–25 м в высоту**. Из трёх входов, образовавшихся при обрушении свода, **для посещения открыт лишь участок около 1 км от второго входа**, поэтому это **маршрут туда и обратно примерно на 30–45 мин.**, по которому вы возвращаетесь тем же путём. В конце открытого участка стоит **самая высокая в мире лавовая колонна высотой 7,6 м** — визитная карточка Манджангуля для фото. \n\nВнутри пещеры **11–13 °C круглый год**: летом прохладно, зимой мягко, но пол тёмный и слегка влажный, поэтому рекомендуем **куртку и нескользящую обувь**. Она также имеет статус **национального памятника природы**. Вход — **₩4 000 для взрослых (₩3 000 для групп) / ₩2 000 для подростков и детей**, часы работы — **09:00–18:00 (последний вход 17:10)**, закрыта в первую среду каждого месяца.",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль",
         "⟦G1⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/visitBasics/hours": {
-      "source_en": "09:00–18:00 (last entry 17:10)"
+      "source_en": "09:00–18:00 (last entry 17:10)",
+      "tm": "09:00–18:00 (последний вход 17:10)"
     },
     "/itineraryStops/1/visitBasics/closed": {
-      "source_en": "First Wednesday of every month / temporary closure during heavy rain"
+      "source_en": "First Wednesday of every month / temporary closure during heavy rain",
+      "tm": "Первая среда каждого месяца / временное закрытие при сильном дожде"
     },
     "/itineraryStops/1/visitBasics/walking": {
-      "source_en": "Moderate — flat 1 km round trip, stair descent at the cave entrance, somewhat uneven and damp floor"
+      "source_en": "Moderate — flat 1 km round trip, stair descent at the cave entrance, somewhat uneven and damp floor",
+      "tm": "Средне — ровный путь 1 км туда и обратно, спуск по лестнице у входа в пещеру, слегка неровный и влажный пол"
     },
     "/itineraryStops/1/visitBasics/admission": {
-      "source_en": "Adult ₩4,000 (group ₩3,000) / teens and children ₩2,000 (group ₩1,500)"
+      "source_en": "Adult ₩4,000 (group ₩3,000) / teens and children ₩2,000 (group ₩1,500)",
+      "tm": "Взрослый ₩4 000 (группа ₩3 000) / подростки и дети ₩2 000 (группа ₩1 500)"
     },
     "/itineraryStops/1/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — изображение галереи 1",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/itineraryStops/1/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — photo 1",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — фото 1",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/itineraryStops/1/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube)",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка)",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
     },
     "/itineraryStops/1/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (UNESCO World Natural Heritage · Lava Tube) — gallery image 2",
+      "tm": "⟦G0⟧ (Всемирное природное наследие ЮНЕСКО · лавовая трубка) — изображение галереи 2",
       "glossary": [
         "⟦G0⟧ = Лавовая трубка Манджангуль"
       ]
@@ -209,5 +255,5 @@
       "⟦G0⟧": "Лавовая трубка Манджангуль"
     }
   },
-  "tmHits": 0
+  "tmHits": 46
 }

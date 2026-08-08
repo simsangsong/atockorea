@@ -7,94 +7,133 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Cruise passengers wanting a full Busan day in 8 hours, with return timing planned around the ship schedule"
+      "source_en": "Cruise passengers wanting a full Busan day in 8 hours, with return timing planned around the ship schedule",
+      "tm": "Kreuzfahrtgäste, die einen kompletten Busan-Tag in 8 Stunden erleben möchten, mit einer Rückkehrzeit, die auf den Schiffsfahrplan abgestimmt ist"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples and families who prefer a private, customizable day over a fixed group itinerary"
+      "source_en": "Couples and families who prefer a private, customizable day over a fixed group itinerary",
+      "tm": "Paare und Familien, die einen privaten, individuell anpassbaren Tag einer festen Gruppenroute vorziehen"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Multi-generational groups including seniors (private vehicle = no walking between transfers)"
+      "source_en": "Multi-generational groups including seniors (private vehicle = no walking between transfers)",
+      "tm": "Gruppen mit mehreren Generationen, auch mit Senioren (privates Fahrzeug = keine Fußwege zwischen den Transfers)"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "First-time Busan visitors who want the iconic stops without group-tour pacing"
+      "source_en": "First-time Busan visitors who want the iconic stops without group-tour pacing",
+      "tm": "Erstbesucher von Busan, die die ikonischen Stopps ohne das Tempo einer Gruppentour sehen möchten"
     },
     "/whyTourWorks/bestFor/4": {
-      "source_en": "Travelers with mobility, dietary, or pace requirements that group tours can't accommodate"
+      "source_en": "Travelers with mobility, dietary, or pace requirements that group tours can't accommodate",
+      "tm": "Reisende mit Anforderungen an Mobilität, Ernährung oder Tempo, die Gruppentouren nicht erfüllen können"
     },
     "/whyTourWorks/sourcing": {
-      "source_en": "Designed as a private Busan shore day for cruise guests using Busan’s main cruise terminals, with route timing planned around port pickup and return."
+      "source_en": "Designed as a private Busan shore day for cruise guests using Busan’s main cruise terminals, with route timing planned around port pickup and return.",
+      "tm": "Konzipiert als privater Landgang-Tag in Busan für Kreuzfahrtgäste, die die wichtigsten Kreuzfahrtterminals Busans nutzen, mit einer Routenplanung, die auf Abholung und Rückkehr am Hafen abgestimmt ist."
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Solo or budget travelers — private pricing is per vehicle, not per person"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Travelers who want to mix with other guests for a social, group-tour atmosphere"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Cruise passengers whose port call is too short for a full 8-hour day ashore"
+    },
+    "/whyTourWorks/lessIdealFor/3": {
+      "source_en": "Anyone wanting a fixed, pre-set route rather than planning the day with the guide"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Return timing comes first"
+      "source_en": "Return timing comes first",
+      "tm": "Die Rückkehrzeit hat Vorrang"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "Group tours run on a shared clock. A private tour lets the guide plan around your ship's all-aboard time and adjust the last stop if traffic gets heavy."
+      "source_en": "Group tours run on a shared clock. A private tour lets the guide plan around your ship's all-aboard time and adjust the last stop if traffic gets heavy.",
+      "tm": "Gruppentouren folgen einem gemeinsamen Zeitplan. Bei einer privaten Tour kann der Guide die Planung an die letzte Einschiffungszeit Ihres Schiffes anpassen und den letzten Stopp ändern, wenn der Verkehr dicht wird."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Busan is geographically spread out"
+      "source_en": "Busan is geographically spread out",
+      "tm": "Busan ist geografisch weitläufig"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "Busan is spread out, with bridges, coastal roads, hills, and one-way downtown streets. A private vehicle reduces waiting time and keeps the day realistic."
+      "source_en": "Busan is spread out, with bridges, coastal roads, hills, and one-way downtown streets. A private vehicle reduces waiting time and keeps the day realistic.",
+      "tm": "Busan ist weitläufig, mit Brücken, Küstenstraßen, Hügeln und Einbahnstraßen in der Innenstadt. Ein privates Fahrzeug reduziert die Wartezeit und hält den Tagesablauf realistisch."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Customize without re-quoting"
+      "source_en": "Customize without re-quoting",
+      "tm": "Anpassen ohne neues Angebot"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
       "source_en": "Swap Jagalchi for ⟦G0⟧ Temple, skip the Tower observatory, add the Sky Capsule, or extend lunch — the price is per vehicle, not per change.",
+      "tm": "Tauschen Sie Jagalchi gegen den ⟦G0⟧ Tempel, lassen Sie die Aussichtsplattform des Towers aus, ergänzen Sie die Sky Capsule oder verlängern Sie das Mittagessen — der Preis gilt pro Fahrzeug, nicht pro Änderung.",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why a private charter wins for cruise shore days"
+      "source_en": "Why a private charter wins for cruise shore days",
+      "tm": "Warum ein privater Charter bei Kreuzfahrt-Landgängen die bessere Wahl ist"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "Included"
+      "source_en": "Included",
+      "tm": "Inbegriffen"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
-      "source_en": "Private vehicle, English-speaking driver-guide, all toll fees and parking charges. Pickup at cruise terminal / KTX / central Busan hotel."
+      "source_en": "Private vehicle and driver for your group only, English- and Chinese-speaking guide, all tolls and parking. Pickup and drop-off are at the cruise terminal your ship berths at — this is a shore-excursion charter, so hotel and KTX pickup are not offered on it."
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
-      "source_en": "Pay direct"
+      "source_en": "Pay direct",
+      "tm": "Direkt zu zahlen"
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "Lunch (10,000–20,000 KRW p/p), Danubi Train at ⟦G0⟧ (₩4,000), Busan Tower observatory (₩12,000), Sky Capsule if added. All admissions are reasonable — there is no hidden surcharge from us.",
+      "tm": "Mittagessen (10.000–20.000 KRW p. P.), Danubi Train in ⟦G0⟧ (₩4.000), Aussichtsplattform des Busan Tower (₩12.000), Sky Capsule, falls hinzugebucht. Alle Eintrittspreise sind moderat — von uns kommt kein versteckter Aufschlag.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Add-ons available"
+      "source_en": "Add-ons available",
+      "tm": "Zusatzleistungen verfügbar"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "Gimhae Airport pickup or drop-off as a separate paid service; overtime at 30,000 KRW per hour cash to driver."
+      "source_en": "Gimhae Airport pickup or drop-off as a separate paid service; overtime at 30,000 KRW per hour cash to driver.",
+      "tm": "Abholung oder Absetzen am Flughafen Gimhae als separate kostenpflichtige Leistung; Überstunden zu 30.000 KRW pro Stunde in bar an den Fahrer."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "What's included vs. pay-direct"
+      "source_en": "What's included vs. pay-direct",
+      "tm": "Inbegriffen vs. direkt zu zahlen"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/label": {
-      "source_en": "Full refund if your ship can't dock"
+      "source_en": "Full refund if your ship can't dock",
+      "tm": "Volle Rückerstattung, wenn Ihr Schiff nicht anlegen kann"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "If your ship cannot dock in Busan because of weather or port conditions, the tour is eligible for a full refund."
+      "source_en": "If your ship cannot dock in Busan because of weather or port conditions, the tour is eligible for a full refund.",
+      "tm": "Wenn Ihr Schiff wegen des Wetters oder der Hafenbedingungen nicht in Busan anlegen kann, ist die Tour für eine volle Rückerstattung berechtigt."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Driver tracks your ship's departure time"
+      "source_en": "Driver tracks your ship's departure time",
+      "tm": "Der Fahrer behält die Abfahrtszeit Ihres Schiffes im Blick"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "We confirm your ship's arrival and all-aboard time, then pace the day against the real port-call schedule."
+      "source_en": "We confirm your ship's arrival and all-aboard time, then pace the day against the real port-call schedule.",
+      "tm": "Wir bestätigen die Ankunftszeit und die letzte Einschiffungszeit Ihres Schiffes und richten den Tagesablauf dann nach dem tatsächlichen Zeitplan des Hafenaufenthalts aus."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Vehicle plate number shared in advance"
+      "source_en": "Vehicle plate number shared in advance",
+      "tm": "Kennzeichen des Fahrzeugs wird im Voraus mitgeteilt"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "You know exactly which car you're looking for at the terminal arrival hall — no scrambling among the crowds of cruise meet-and-greets."
+      "source_en": "You know exactly which car you're looking for at the terminal arrival hall — no scrambling among the crowds of cruise meet-and-greets.",
+      "tm": "Sie wissen genau, nach welchem Auto Sie in der Ankunftshalle des Terminals suchen müssen — kein hektisches Suchen im Gedränge der vielen Kreuzfahrt-Abholungen."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
-      "source_en": "Cruise-specific safeguards"
+      "source_en": "Cruise-specific safeguards",
+      "tm": "Absicherungen speziell für Kreuzfahrten"
     },
     "/routeShapeIntro/body": {
       "source_en": "The default 5-stop itinerary is shaped for cruise passengers: a quiet, easy-walking start at ⟦G0⟧, a dramatic East Sea moment at ⟦G2⟧, colorful hillside views at Gamcheon, a downtown panorama at Yongdusan, and a lively market finish at Jagalchi. The route can be adjusted at booking with options such as ⟦G1⟧ Temple, the Sky Capsule area, or Beomeosa Temple when time allows.",
+      "tm": "Die Standardroute mit 5 Stopps ist auf Kreuzfahrtgäste zugeschnitten: ein ruhiger Auftakt mit leichten Fußwegen am ⟦G0⟧, ein eindrucksvoller Moment am Ostmeer in ⟦G2⟧, farbenfrohe Ausblicke am Hang in Gamcheon, ein Panorama über die Innenstadt am Yongdusan und ein lebhafter Abschluss auf dem Markt in Jagalchi. Die Route kann bei der Buchung angepasst werden, mit Optionen wie dem ⟦G1⟧ Tempel, dem Bereich der Sky Capsule oder dem Beomeosa Tempel, sofern es die Zeit erlaubt.",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof",
         "⟦G1⟧ = Haedong Yonggungsa",
@@ -102,106 +141,136 @@
       ]
     },
     "/routeShapeIntro/title": {
-      "source_en": "Cruise-day rhythm: memorial → cliffs → village → tower → market"
+      "source_en": "Cruise-day rhythm: memorial → cliffs → village → tower → market",
+      "tm": "Rhythmus des Kreuzfahrttages: Gedenkstätte → Klippen → Dorf → Turm → Markt"
     },
     "/staticQuestions/0/answer": {
-      "source_en": "Sedan or SUV for 1–3 passengers; mid-size van for 4–7 passengers. Larger groups please contact us for a tailored quote."
+      "source_en": "Sedan or SUV for 1–3 passengers; mid-size van for 4–7 passengers. Larger groups please contact us for a tailored quote.",
+      "tm": "Limousine oder SUV für 1–3 Passagiere; Van der Mittelklasse für 4–7 Passagiere. Größere Gruppen kontaktieren uns bitte für ein individuelles Angebot."
     },
     "/staticQuestions/0/question": {
-      "source_en": "How many people can the private vehicle take?"
+      "source_en": "How many people can the private vehicle take?",
+      "tm": "Wie viele Personen finden im privaten Fahrzeug Platz?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "If your ship cannot dock at Busan due to weather or port conditions, you receive a full refund. If the ship is simply delayed, the driver waits and adjusts the itinerary; the 8-hour period starts from actual pickup time."
+      "source_en": "If your ship cannot dock at Busan due to weather or port conditions, you receive a full refund. If the ship is simply delayed, the driver waits and adjusts the itinerary; the 8-hour period starts from actual pickup time.",
+      "tm": "Wenn Ihr Schiff wegen des Wetters oder der Hafenbedingungen nicht in Busan anlegen kann, erhalten Sie eine volle Rückerstattung. Ist das Schiff lediglich verspätet, wartet der Fahrer und passt die Route an; der Zeitraum von 8 Stunden beginnt ab der tatsächlichen Abholzeit."
     },
     "/staticQuestions/1/question": {
-      "source_en": "What if my cruise ship is delayed or cannot dock?"
+      "source_en": "What if my cruise ship is delayed or cannot dock?",
+      "tm": "Was passiert, wenn mein Kreuzfahrtschiff Verspätung hat oder nicht anlegen kann?"
     },
     "/staticQuestions/2/answer": {
       "source_en": "Yes — fully. Send your preferred stops at booking and we'll confirm a workable order. The default 5-stop cruise itinerary is a starting point, not a fixed plan. Common substitutions include ⟦G0⟧ Temple, Sky Capsule, and Beomeosa Temple.",
+      "tm": "Ja — vollständig. Senden Sie uns bei der Buchung Ihre Wunschstopps, und wir bestätigen eine machbare Reihenfolge. Die Standardroute mit 5 Stopps für Kreuzfahrtgäste ist ein Ausgangspunkt, kein fester Plan. Häufige Alternativen sind der ⟦G0⟧ Tempel, die Sky Capsule und der Beomeosa Tempel.",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/staticQuestions/2/question": {
-      "source_en": "Can I customize the stops?"
+      "source_en": "Can I customize the stops?",
+      "tm": "Kann ich die Stopps anpassen?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "No — Gimhae Airport pickup or drop-off is a separate paid add-on (not part of the standard cruise-shore period), since the airport is on the western edge of the metropolitan area. Please request at booking and we'll quote the add-on price."
+      "source_en": "No — Gimhae Airport pickup or drop-off is a separate paid add-on (not part of the standard cruise-shore period), since the airport is on the western edge of the metropolitan area. Please request at booking and we'll quote the add-on price.",
+      "tm": "Nein — die Abholung oder das Absetzen am Flughafen Gimhae ist eine separate kostenpflichtige Zusatzleistung (nicht Teil des Standardzeitraums für den Landgang), da der Flughafen am westlichen Rand des Ballungsraums liegt. Bitte fragen Sie bei der Buchung an, und wir nennen Ihnen den Preis für die Zusatzleistung."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Is Gimhae Airport pickup or drop-off included?"
+      "source_en": "Is Gimhae Airport pickup or drop-off included?",
+      "tm": "Ist die Abholung oder das Absetzen am Flughafen Gimhae inbegriffen?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "If your cruise ship cannot dock due to weather or port conditions, contact us as soon as possible and we will support the refund process."
+      "source_en": "If your cruise ship cannot dock due to weather or port conditions, contact us as soon as possible and we will support the refund process.",
+      "tm": "Wenn Ihr Kreuzfahrtschiff wegen des Wetters oder der Hafenbedingungen nicht anlegen kann, kontaktieren Sie uns bitte so bald wie möglich, und wir unterstützen Sie beim Rückerstattungsprozess."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Refund support if your ship can't dock"
+      "source_en": "Refund support if your ship can't dock",
+      "tm": "Unterstützung bei der Rückerstattung, wenn Ihr Schiff nicht anlegen kann"
     },
     "/bookingTrustItems/0/detail": {
-      "source_en": "Eligible for full refund when the cruise port call is cancelled because of weather or port conditions."
+      "source_en": "Eligible for full refund when the cruise port call is cancelled because of weather or port conditions.",
+      "tm": "Anspruch auf volle Rückerstattung, wenn der Hafenaufenthalt der Kreuzfahrt wegen des Wetters oder der Hafenbedingungen abgesagt wird."
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "On-time return planned: we build a 60-minute buffer before your all-aboard time into every private cruise itinerary."
+      "source_en": "On-time return planned: we build a 60-minute buffer before your all-aboard time into every private cruise itinerary.",
+      "tm": "Pünktliche Rückkehr eingeplant: In jede private Kreuzfahrtroute bauen wir einen Puffer von 60 Minuten vor Ihrer letzten Einschiffungszeit ein."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "On-time return planned"
+      "source_en": "On-time return planned",
+      "tm": "Pünktliche Rückkehr eingeplant"
     },
     "/bookingTrustItems/1/detail": {
-      "source_en": "We confirm your ship's departure time and pace the day to return with planned extra time."
+      "source_en": "We confirm your ship's departure time and pace the day to return with planned extra time.",
+      "tm": "Wir bestätigen die Abfahrtszeit Ihres Schiffes und planen den Tag so, dass Sie mit eingeplanter Zeitreserve zurückkehren."
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Licensed local driver-guide with cruise-specific experience — experienced with Busan cruise terminal pickup procedures at both Dongsam and Choryang terminals."
+      "source_en": "Licensed local driver-guide with cruise-specific experience — experienced with Busan cruise terminal pickup procedures at both Dongsam and Choryang terminals.",
+      "tm": "Lizenzierter einheimischer Fahrer-Guide mit Erfahrung im Kreuzfahrtbereich — vertraut mit den Abholabläufen an den Kreuzfahrtterminals in Busan, sowohl in Dongsam als auch in Choryang."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Licensed local driver-guide"
+      "source_en": "Licensed local driver-guide",
+      "tm": "Lizenzierter einheimischer Fahrer-Guide"
     },
     "/bookingTrustItems/2/detail": {
-      "source_en": "All drivers are professionally licensed, English-speaking, and verified by AtoC Korea's Busan partner network."
+      "source_en": "All drivers are professionally licensed, English-speaking, and verified by AtoC Korea's Busan partner network.",
+      "tm": "Alle Fahrer sind professionell lizenziert, englischsprachig und vom Busan-Partnernetzwerk von AtoC Korea geprüft."
     },
     "/seasonalVariations/0/swaps": {
       "source_en": "Add a Dalmaji Hill cherry blossom drive-by between ⟦G0⟧ and Gamcheon during peak bloom week.",
+      "tm": "Ergänzen Sie während der Hauptblütewoche zwischen ⟦G0⟧ und Gamcheon eine Vorbeifahrt an den Kirschblüten am Dalmaji Hill.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Frühling (März–Mai)"
     },
     "/seasonalVariations/0/summary": {
       "source_en": "Cherry blossoms peak around late March to early April at Dalmaji Hill, ⟦G0⟧, and Gwangalli Beach. Pleasant 12–22°C; light layers.",
+      "tm": "Die Kirschblüte erreicht ihren Höhepunkt etwa von Ende März bis Anfang April am Dalmaji Hill, im ⟦G0⟧ und am Gwangalli Beach. Angenehme 12–22 °C; leichte Kleidung in Schichten.",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/seasonalVariations/1/swaps": {
-      "source_en": "Swap the Tower observatory for the Haeundae Sky Capsule (covered, air-conditioned) or add Songdo Skywalk for a sea breeze."
+      "source_en": "Swap the Tower observatory for the Haeundae Sky Capsule (covered, air-conditioned) or add Songdo Skywalk for a sea breeze.",
+      "tm": "Tauschen Sie die Aussichtsplattform des Towers gegen die Haeundae Sky Capsule (überdacht, klimatisiert) oder ergänzen Sie den Songdo Skywalk für eine Meeresbrise."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun–Aug)"
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Sommer (Juni–August)"
     },
     "/seasonalVariations/1/summary": {
-      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well."
+      "source_en": "Warm and humid, 25–32°C, with monsoon showers possible Jun–Jul. Sunset is late, so an extra coastal stop at the end of the day works well.",
+      "tm": "Warm und feucht, 25–32 °C, mit möglichen Monsunschauern von Juni bis Juli. Der Sonnenuntergang ist spät, daher bietet sich am Ende des Tages ein zusätzlicher Stopp an der Küste gut an."
     },
     "/seasonalVariations/2/swaps": {
-      "source_en": "All default stops shine in autumn; consider adding Beomeosa Temple for autumn foliage."
+      "source_en": "All default stops shine in autumn; consider adding Beomeosa Temple for autumn foliage.",
+      "tm": "Alle Standardstopps kommen im Herbst besonders gut zur Geltung; für das Herbstlaub bietet sich zusätzlich der Beomeosa Tempel an."
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Herbst (September–November)"
     },
     "/seasonalVariations/2/summary": {
-      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here."
+      "source_en": "Korea's best travel weather — 15–25°C, low humidity, golden light. Cruise season peaks here.",
+      "tm": "Koreas bestes Reisewetter — 15–25 °C, niedrige Luftfeuchtigkeit, goldenes Licht. Die Kreuzfahrtsaison erreicht hier ihren Höhepunkt."
     },
     "/seasonalVariations/3/swaps": {
       "source_en": "Limit outdoor time at ⟦G0⟧ lighthouse stairs; add a longer Jagalchi stop where indoor 2F restaurants and hot soup are easy options.",
+      "tm": "Begrenzen Sie die Zeit im Freien an den Leuchtturmtreppen von ⟦G0⟧; planen Sie einen längeren Stopp in Jagalchi ein, wo Restaurants im Innenbereich der 2. Etage und heiße Suppe naheliegende Optionen sind.",
       "glossary": [
         "⟦G0⟧ = Taejongdae"
       ]
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Winter (Dezember–Februar)"
     },
     "/seasonalVariations/3/summary": {
-      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful."
+      "source_en": "Cool and windy, 0–10°C, but cruise traffic continues. Coastal stops are stark and beautiful.",
+      "tm": "Kühl und windig, 0–10 °C, doch der Kreuzfahrtverkehr geht weiter. Die Stopps an der Küste sind karg und schön."
     }
   },
   "glossaryTokens": {
@@ -229,5 +298,5 @@
       "⟦G0⟧": "Taejongdae"
     }
   },
-  "tmHits": 0
+  "tmHits": 57
 }

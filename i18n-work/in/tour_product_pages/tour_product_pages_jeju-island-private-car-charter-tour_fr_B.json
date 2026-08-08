@@ -7,172 +7,208 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Pickup at Jeju Hotel"
+      "source_en": "Pickup at Jeju Hotel",
+      "tm": "Prise en charge à votre hôtel de Jeju"
     },
     "/routePhases/0/duration": {
-      "source_en": "Stops 1"
+      "source_en": "Stops 1",
+      "tm": "Arrêt 1"
     },
     "/routePhases/0/description": {
-      "source_en": "Start: Pickup at Jeju Hotel"
+      "source_en": "Start: Pickup at Jeju Hotel",
+      "tm": "Départ : prise en charge à votre hôtel de Jeju"
     },
     "/routePhases/1/phase": {
-      "source_en": "Choose Your Route"
+      "source_en": "Choose Your Route",
+      "tm": "Choisissez votre itinéraire"
     },
     "/routePhases/1/duration": {
-      "source_en": "Stops 2–4"
+      "source_en": "Stops 2–4",
+      "tm": "Arrêts 2 à 4"
     },
     "/routePhases/1/description": {
-      "source_en": "Day Out: Choose Your Route"
+      "source_en": "Day Out: Choose Your Route",
+      "tm": "Journée sur place : choisissez votre itinéraire"
     },
     "/routePhases/2/phase": {
-      "source_en": "Return to Hotel"
+      "source_en": "Return to Hotel",
+      "tm": "Retour à l'hôtel"
     },
     "/routePhases/2/duration": {
-      "source_en": "Stops 5"
+      "source_en": "Stops 5",
+      "tm": "Arrêt 5"
     },
     "/routePhases/2/description": {
-      "source_en": "Finish: Return to Hotel"
+      "source_en": "Finish: Return to Hotel",
+      "tm": "Fin : retour à l'hôtel"
     },
     "/galleryItems/0/alt": {
-      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond",
+      "tm": "Tour privé de Jeju — votre famille au bord de la côte, le Hallasan en arrière-plan"
     },
     "/galleryItems/0/caption": {
-      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond",
+      "tm": "Tour privé de Jeju — votre famille au bord de la côte, le Hallasan en arrière-plan"
     },
     "/galleryItems/0/location": {
-      "source_en": "Jeju Private Tour"
+      "source_en": "Jeju Private Tour",
+      "tm": "Tour privé de Jeju"
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "tm": "⟦G0⟧ — pic du lever de soleil classé à l'UNESCO, sur la côte est",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "tm": "⟦G0⟧ — pic du lever de soleil classé à l'UNESCO, sur la côte est",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/galleryItems/1/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "tm": "⟦G0⟧ — promontoire fleuri de fleurs sauvages au-dessus de la mer",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
     },
     "/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "tm": "⟦G0⟧ — promontoire fleuri de fleurs sauvages au-dessus de la mer",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
     },
     "/galleryItems/2/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seopjikoji"
       ]
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "tm": "⟦G0⟧ — montée douce vers un cratère panoramique",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "tm": "⟦G0⟧ — montée douce vers un cratère panoramique",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/3/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "tm": "⟦G0⟧ — cascade à trois niveaux et légende des fées",
       "glossary": [
         "⟦G0⟧ = Cascade de Cheonjeyeon"
       ]
     },
     "/galleryItems/4/caption": {
       "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "tm": "⟦G0⟧ — cascade à trois niveaux et légende des fées",
       "glossary": [
         "⟦G0⟧ = Cascade de Cheonjeyeon"
       ]
     },
     "/galleryItems/4/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Cascade de Cheonjeyeon"
       ]
     },
     "/galleryItems/5/alt": {
       "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "tm": "⟦G0⟧ — le plus grand jardin de camélias d'Asie",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/5/caption": {
       "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "tm": "⟦G0⟧ — le plus grand jardin de camélias d'Asie",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/5/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/6/alt": {
       "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "tm": "⟦G0⟧ — eau turquoise et sable blanc de coquillages",
       "glossary": [
         "⟦G0⟧ = Plage de Hyeopjae"
       ]
     },
     "/galleryItems/6/caption": {
       "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "tm": "⟦G0⟧ — eau turquoise et sable blanc de coquillages",
       "glossary": [
         "⟦G0⟧ = Plage de Hyeopjae"
       ]
     },
     "/galleryItems/6/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Plage de Hyeopjae"
       ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast",
+      "tm": "Jusangjeolli — falaises d'orgues basaltiques de la côte de Daepo"
     },
     "/galleryItems/7/caption": {
-      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast",
+      "tm": "Jusangjeolli — falaises d'orgues basaltiques de la côte de Daepo"
     },
     "/galleryItems/7/location": {
-      "source_en": "Jusangjeolli Cliff"
+      "source_en": "Jusangjeolli Cliff",
+      "tm": "Falaise de Jusangjeolli"
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "tm": "⟦G0⟧ — cafés modernes en bord de mer avec vue sur l'océan",
       "glossary": [
         "⟦G0⟧ = Rue des cafés d'Aewol"
       ]
     },
     "/galleryItems/8/caption": {
       "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "tm": "⟦G0⟧ — cafés modernes en bord de mer avec vue sur l'océan",
       "glossary": [
         "⟦G0⟧ = Rue des cafés d'Aewol"
       ]
     },
     "/galleryItems/8/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Rue des cafés d'Aewol"
       ]
@@ -243,5 +279,5 @@
       "⟦G0⟧": "Rue des cafés d'Aewol"
     }
   },
-  "tmHits": 0
+  "tmHits": 36
 }

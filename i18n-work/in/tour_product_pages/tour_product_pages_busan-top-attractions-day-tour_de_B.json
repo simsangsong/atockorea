@@ -10,7 +10,8 @@
       "source_en": "Coastal morning"
     },
     "/routePhases/0/duration": {
-      "source_en": "≈ 3 hours"
+      "source_en": "≈ 3 hours",
+      "tm": "≈ 3 Stunden"
     },
     "/routePhases/0/description": {
       "source_en": "Pickup (60 min period) and drive to Yonggungsa Temple, then south to ⟦G0⟧.",
@@ -22,7 +23,8 @@
       "source_en": "Lunch break"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 1 hour"
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 Stunde"
     },
     "/routePhases/1/description": {
       "source_en": "Mid-day at a local Busan restaurant (dwaeji-gukbap, milmyeon, or seafood pancake)."
@@ -44,7 +46,8 @@
       "source_en": "Market close"
     },
     "/routePhases/3/duration": {
-      "source_en": "≈ 1.5 hours"
+      "source_en": "≈ 1.5 hours",
+      "tm": "≈ 1,5 Stunden"
     },
     "/routePhases/3/description": {
       "source_en": "⟦G0⟧ browse and streetfood (75 min); central-Busan drop-offs follow.",
@@ -54,18 +57,21 @@
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Tempel ⟦G0⟧ — Foto 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/0/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -77,34 +83,40 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 1"
     },
     "/galleryItems/1/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 1",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 1",
+      "tm": "⟦G0⟧ in Korea — Foto 1",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/galleryItems/2/location": {
       "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — Foto 1",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -123,94 +135,110 @@
       "source_en": "Jagalchi Fish Market — photo 1"
     },
     "/galleryItems/4/location": {
-      "source_en": "Jagalchi Fish Market"
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
     "/galleryItems/5/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/5/caption": {
       "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Tempel ⟦G0⟧ — Foto 2",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/5/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/6/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/6/caption": {
       "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Tempel ⟦G0⟧ — Foto 3",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/6/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/7/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 4",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/7/caption": {
       "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Tempel ⟦G0⟧ — Foto 4",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/7/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 5",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/8/caption": {
       "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Tempel ⟦G0⟧ — Foto 5",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/8/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/9/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Tempel ⟦G0⟧ — Galeriebild 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/9/caption": {
       "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Tempel ⟦G0⟧ — Foto 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/9/location": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -222,7 +250,8 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 2"
     },
     "/galleryItems/10/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/11/alt": {
       "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 3"
@@ -231,7 +260,8 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 3"
     },
     "/galleryItems/11/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/12/alt": {
       "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 4"
@@ -240,7 +270,8 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 4"
     },
     "/galleryItems/12/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/13/alt": {
       "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 5"
@@ -249,7 +280,8 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 5"
     },
     "/galleryItems/13/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/14/alt": {
       "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 6"
@@ -258,7 +290,8 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 6"
     },
     "/galleryItems/14/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/15/alt": {
       "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 7"
@@ -267,241 +300,202 @@
       "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 7"
     },
     "/galleryItems/15/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/galleryItems/16/alt": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 8"
-    },
-    "/galleryItems/16/caption": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 8"
-    },
-    "/galleryItems/16/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
-    },
-    "/galleryItems/17/alt": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park — gallery image 15"
-    },
-    "/galleryItems/17/caption": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park — photo 15"
-    },
-    "/galleryItems/17/location": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
-    },
-    "/galleryItems/18/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 2",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 2",
+      "tm": "⟦G0⟧ in Korea — Foto 2",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/16/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 3",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "⟦G0⟧ in Korea — photo 3",
+      "tm": "⟦G0⟧ in Korea — Foto 3",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/17/location": {
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof"
+      ]
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — Galeriebild 2",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/18/caption": {
-      "source_en": "⟦G0⟧ in Korea — photo 2",
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — Foto 2",
       "glossary": [
-        "⟦G0⟧ = UN-Gedenkfriedhof"
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/18/location": {
-      "source_en": "⟦G0⟧ in Korea",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = UN-Gedenkfriedhof"
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/19/alt": {
-      "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — Galeriebild 3",
       "glossary": [
-        "⟦G0⟧ = UN-Gedenkfriedhof"
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/19/caption": {
-      "source_en": "⟦G0⟧ in Korea — photo 3",
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — Foto 3",
       "glossary": [
-        "⟦G0⟧ = UN-Gedenkfriedhof"
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/19/location": {
-      "source_en": "⟦G0⟧ in Korea",
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
-        "⟦G0⟧ = UN-Gedenkfriedhof"
+        "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/galleryItems/20/alt": {
-      "source_en": "⟦G0⟧ — gallery image 2",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market — gallery image 2"
     },
     "/galleryItems/20/caption": {
-      "source_en": "⟦G0⟧ — photo 2",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market — photo 2"
     },
     "/galleryItems/20/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
     "/galleryItems/21/alt": {
-      "source_en": "⟦G0⟧ — gallery image 3",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market — gallery image 3"
     },
     "/galleryItems/21/caption": {
-      "source_en": "⟦G0⟧ — photo 3",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market — photo 3"
     },
     "/galleryItems/21/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
     "/galleryItems/22/alt": {
-      "source_en": "⟦G0⟧ — gallery image 5",
-      "tm": "⟦G0⟧ — Galeriebild 5",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/22/caption": {
-      "source_en": "⟦G0⟧ — photo 5",
-      "tm": "⟦G0⟧ — Foto 5",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/22/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/23/alt": {
-      "source_en": "⟦G0⟧ — gallery image 6",
-      "tm": "⟦G0⟧ — Galeriebild 6",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/23/caption": {
-      "source_en": "⟦G0⟧ — photo 6",
-      "tm": "⟦G0⟧ — Foto 6",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/23/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/24/alt": {
-      "source_en": "⟦G0⟧ — gallery image 8",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/24/caption": {
-      "source_en": "⟦G0⟧ — photo 8",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/24/location": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Kulturdorf Gamcheon"
-      ]
-    },
-    "/galleryItems/25/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 4"
     },
-    "/galleryItems/25/caption": {
+    "/galleryItems/22/caption": {
       "source_en": "Jagalchi Fish Market — photo 4"
     },
-    "/galleryItems/25/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/22/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/26/alt": {
+    "/galleryItems/23/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 5"
     },
-    "/galleryItems/26/caption": {
+    "/galleryItems/23/caption": {
       "source_en": "Jagalchi Fish Market — photo 5"
     },
-    "/galleryItems/26/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/23/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/27/alt": {
+    "/galleryItems/24/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 6"
     },
-    "/galleryItems/27/caption": {
+    "/galleryItems/24/caption": {
       "source_en": "Jagalchi Fish Market — photo 6"
     },
-    "/galleryItems/27/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/24/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/28/alt": {
+    "/galleryItems/25/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 7"
     },
-    "/galleryItems/28/caption": {
+    "/galleryItems/25/caption": {
       "source_en": "Jagalchi Fish Market — photo 7"
     },
-    "/galleryItems/28/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/25/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/29/alt": {
+    "/galleryItems/26/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 8"
     },
-    "/galleryItems/29/caption": {
+    "/galleryItems/26/caption": {
       "source_en": "Jagalchi Fish Market — photo 8"
     },
-    "/galleryItems/29/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/26/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/30/alt": {
+    "/galleryItems/27/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 9"
     },
-    "/galleryItems/30/caption": {
+    "/galleryItems/27/caption": {
       "source_en": "Jagalchi Fish Market — photo 9"
     },
-    "/galleryItems/30/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/27/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/31/alt": {
+    "/galleryItems/28/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 10"
     },
-    "/galleryItems/31/caption": {
+    "/galleryItems/28/caption": {
       "source_en": "Jagalchi Fish Market — photo 10"
     },
-    "/galleryItems/31/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/28/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/32/alt": {
+    "/galleryItems/29/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 11"
     },
-    "/galleryItems/32/caption": {
+    "/galleryItems/29/caption": {
       "source_en": "Jagalchi Fish Market — photo 11"
     },
-    "/galleryItems/32/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/29/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
-    "/galleryItems/33/alt": {
+    "/galleryItems/30/alt": {
       "source_en": "Jagalchi Fish Market — gallery image 12"
     },
-    "/galleryItems/33/caption": {
+    "/galleryItems/30/caption": {
       "source_en": "Jagalchi Fish Market — photo 12"
     },
-    "/galleryItems/33/location": {
-      "source_en": "Jagalchi Fish Market"
+    "/galleryItems/30/location": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     }
   },
   "glossaryTokens": {
@@ -587,69 +581,42 @@
     "/galleryItems/9/location": {
       "⟦G0⟧": "Haedong Yonggungsa"
     },
-    "/galleryItems/18/alt": {
+    "/galleryItems/16/alt": {
       "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/16/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/16/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/17/alt": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/17/caption": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/17/location": {
+      "⟦G0⟧": "UN-Gedenkfriedhof"
+    },
+    "/galleryItems/18/alt": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
     },
     "/galleryItems/18/caption": {
-      "⟦G0⟧": "UN-Gedenkfriedhof"
+      "⟦G0⟧": "Kulturdorf Gamcheon"
     },
     "/galleryItems/18/location": {
-      "⟦G0⟧": "UN-Gedenkfriedhof"
+      "⟦G0⟧": "Kulturdorf Gamcheon"
     },
     "/galleryItems/19/alt": {
-      "⟦G0⟧": "UN-Gedenkfriedhof"
+      "⟦G0⟧": "Kulturdorf Gamcheon"
     },
     "/galleryItems/19/caption": {
-      "⟦G0⟧": "UN-Gedenkfriedhof"
+      "⟦G0⟧": "Kulturdorf Gamcheon"
     },
     "/galleryItems/19/location": {
-      "⟦G0⟧": "UN-Gedenkfriedhof"
-    },
-    "/galleryItems/20/alt": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/20/caption": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/20/location": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/21/alt": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/21/caption": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/21/location": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/22/alt": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/22/caption": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/22/location": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/23/alt": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/23/caption": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/23/location": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/24/alt": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/24/caption": {
-      "⟦G0⟧": "Kulturdorf Gamcheon"
-    },
-    "/galleryItems/24/location": {
       "⟦G0⟧": "Kulturdorf Gamcheon"
     }
   },
-  "tmHits": 10
+  "tmHits": 58
 }

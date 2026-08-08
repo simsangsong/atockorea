@@ -15,10 +15,12 @@
       "tm": "Abfahrt"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Manjanggul (UNESCO)"
+      "source_en": "Manjanggul (UNESCO)",
+      "tm": "Manjanggul (UNESCO)"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "UNESCO Lava Tube"
+      "source_en": "UNESCO Lava Tube",
+      "tm": "UNESCO-Lavaröhre"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -47,13 +49,16 @@
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "UNESCO Volcano"
+      "source_en": "UNESCO Volcano",
+      "tm": "UNESCO-Vulkan"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "Haenyeo Diving Performance"
+      "source_en": "Haenyeo Diving Performance",
+      "tm": "Haenyeo-Tauchvorführung"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Haenyeo Intangible Heritage"
+      "source_en": "Haenyeo Intangible Heritage",
+      "tm": "Immaterielles Haenyeo-Erbe"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧",
@@ -63,10 +68,12 @@
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Beach"
+      "source_en": "Beach",
+      "tm": "Strand"
     },
     "/routeFlowStops/7/name": {
-      "source_en": "Jeju City drop-off"
+      "source_en": "Jeju City drop-off",
+      "tm": "Ausstieg in Jeju City"
     },
     "/routeFlowStops/7/theme": {
       "source_en": "Return",
@@ -84,5 +91,5 @@
       "⟦G0⟧": "Hamdeok-Seoubong-Strand"
     }
   },
-  "tmHits": 9
+  "tmHits": 16
 }

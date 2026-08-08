@@ -7,157 +7,203 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local tour provider running an unhurried Gyeongju circuit, with drop-off back in Busan around 19:50."
+      "source_en": "Licensed local tour provider running an unhurried Gyeongju circuit, with drop-off back in Busan around 19:50.",
+      "tm": "Лицензированный местный туроператор с неспешным маршрутом по Кёнджу и высадкой обратно в Пусане около 19:50."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local tour provider"
+      "source_en": "Licensed local tour provider",
+      "tm": "Лицензированный местный туроператор"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour provider with insurance"
+      "source_en": "Authorized Korean tour provider with insurance",
+      "tm": "Официальный корейский туроператор со страховкой"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "Route specialists who have refined the Busan-Gyeongju loop over hundreds of runs — ⟦G0⟧ opens the day before midday tour-bus crowds arrive.",
+      "tm": "Специалисты по маршрутам, отточившие кольцо Пусан — Кёнджу за сотни выездов: ⟦G0⟧ открывает день до того, как приедут полуденные толпы с экскурсионных автобусов.",
       "glossary": [
         "⟦G0⟧ = Бамбуковый лес Ахопсан"
       ]
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Специалисты по маршрутам"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Маршрут, настроенный вручную, а не типовое кольцо"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Small-group mini-van (max ~10) keeps Bulguksa's six National Treasures and the National Museum galleries comfortable and unhurried."
+      "source_en": "Small-group mini-van (max ~10) keeps Bulguksa's six National Treasures and the National Museum galleries comfortable and unhurried.",
+      "tm": "Минивэн для малой группы (максимум ~10 человек) позволяет осмотреть шесть национальных сокровищ Пульгукса и залы Национального музея спокойно и не спеша."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Комфортный размер группы"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Подобран под маршрут"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (mid-Mar to mid-Apr, cherry blossom season)"
+      "source_en": "Spring (mid-Mar to mid-Apr, cherry blossom season)",
+      "tm": "Весна (с середины марта до середины апреля, сезон цветения сакуры)"
     },
     "/seasonalVariations/0/description": {
       "source_en": "The Ahopsan opener swaps for the Haeundae Dalmaji Hill cherry-blossom road. Daereungwon's stone-wall lane is one of Gyeongju's finest cherry tunnels (with a festival in early April every year), and Gyochon village blossoms in early April too. The last stop is ⟦G0⟧.",
+      "tm": "Открытие в Ахопсане меняется на дорогу цветущей сакуры на холме Тальмаджи в Хэундэ. Переулок вдоль каменной стены Тэрынвона — один из лучших вишнёвых тоннелей Кёнджу (каждый год в начале апреля здесь фестиваль), и деревня Кёчхон тоже цветёт в начале апреля. Последняя остановка — ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun–Aug)"
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Лето (июнь–август)"
     },
     "/seasonalVariations/1/description": {
       "source_en": "The bamboo forest stays cool and the museum is air-conditioned. Both afternoon walking blocks have shade and cafes to rest in. Sunset is around 19:30, so a night view does not fit the route and the last stop stays ⟦G0⟧.",
+      "tm": "В бамбуковом лесу прохладно, а в музее есть кондиционер. В обоих пеших кварталах второй половины дня есть тень и кафе, где можно отдохнуть. Закат около 19:30, поэтому ночной вид в маршрут не помещается и последней остановкой остаётся ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (late Sep to late Oct)"
+      "source_en": "Autumn (late Sep to late Oct)",
+      "tm": "Осень (с конца сентября до конца октября)"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Gyochon's ginkgos peak in late October, and the grass mounds of Daereungwon make the easiest walking of the day. The last stop is ⟦G0⟧, which from March to October stays open until 20:00 on Saturdays.",
+      "tm": "Гинкго в Кёчхоне достигают пика в конце октября, а травяные курганы Тэрынвона дают самую лёгкую прогулку за день. Последняя остановка — ⟦G0⟧, который с марта по октябрь по субботам открыт до 20:00.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Nov–Feb)"
+      "source_en": "Winter (Nov–Feb)",
+      "tm": "Зима (ноябрь–февраль)"
     },
     "/seasonalVariations/3/description": {
       "source_en": "The quietest season of the year. Because sunset falls at 17:15–17:30, the last stop is swapped from ⟦G0⟧ to the Donggung & Wolji night view — you watch it from dusk through to the lights coming on, and this is the only season it is possible. Woljeonggyo also catches the sunset light on winter afternoons.",
+      "tm": "Самый тихий сезон года. Поскольку закат приходится на 17:15–17:30, последняя остановка меняется с ⟦G0⟧ на ночной вид Тонгуна и Вольджи — вы смотрите от сумерек до включения подсветки, и это возможно только в этот сезон. Вольджонгё зимними днями тоже ловит закатный свет.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Сразу"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with pickup station choice (Busan Station / Seomyeon / Haeundae) and the day's schedule."
+      "source_en": "Instant confirmation with pickup station choice (Busan Station / Seomyeon / Haeundae) and the day's schedule.",
+      "tm": "Мгновенное подтверждение с выбором станции посадки (станция Пусан / Сомён / Хэундэ) и расписанием дня."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Напоминание за 12 часов"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Обновление по погоде и корректировки маршрута"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "За 12 часов"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Seasonal note (cherry blossom alt route in mid-March to mid-April; winter bridge lighting period) sent the day before."
+      "source_en": "Seasonal note (cherry blossom alt route in mid-March to mid-April; winter bridge lighting period) sent the day before.",
+      "tm": "Сезонная заметка (альтернативный маршрут в сезон сакуры с середины марта до середины апреля; зимний период подсветки моста) отправляется накануне."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Финальная информация о посадке"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Точное время посадки и контакт водителя"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Накануне вечером"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Driver and van details confirmed the evening before departure."
+      "source_en": "Driver and van details confirmed the evening before departure.",
+      "tm": "Данные водителя и минивэна подтверждаются накануне вечером."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Заметки по маршруту в день тура"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Утренний брифинг с учётом текущих условий"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Утром в день тура"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Morning pickup confirmation message sent to your phone."
+      "source_en": "Morning pickup confirmation message sent to your phone.",
+      "tm": "Утреннее сообщение с подтверждением посадки приходит на ваш телефон."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Подсказки на каждой остановке"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Сопровождение в реальном времени на каждой локации"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Во время тура"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide provides full narration — bamboo forest clan history, Silla-era temple art, National Museum gold crown, Choi family ethics, Woljeonggyo's 760 CE origins."
+      "source_en": "Guide provides full narration — bamboo forest clan history, Silla-era temple art, National Museum gold crown, Choi family ethics, Woljeonggyo's 760 CE origins.",
+      "tm": "Гид ведёт полный рассказ: история клана в бамбуковом лесу, храмовое искусство эпохи Силла, золотая корона Национального музея, этика семьи Чхве, происхождение Вольджонгё в 760 году н. э."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Поддержка после тура"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Обратная связь и рекомендации"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "После тура"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after drop-off."
+      "source_en": "Post-tour feedback request sent after drop-off.",
+      "tm": "После высадки отправляется запрос на отзыв о туре."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     }
   },
   "glossaryTokens": {
@@ -177,5 +223,5 @@
       "⟦G0⟧": "Национальный музей Кёнджу"
     }
   },
-  "tmHits": 0
+  "tmHits": 46
 }

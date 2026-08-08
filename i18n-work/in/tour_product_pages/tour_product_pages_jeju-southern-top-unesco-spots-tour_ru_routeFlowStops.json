@@ -7,61 +7,77 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Jeju City + airport pickup"
+      "source_en": "Jeju City + airport pickup",
+      "tm": "Посадка в городе Чеджу и аэропорту"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Отправление"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Водопад Чонбан"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Waterfall"
+      "source_en": "Waterfall",
+      "tm": "Водопад"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Oedolgae & Olle Route 7"
+      "source_en": "Oedolgae & Olle Route 7",
+      "tm": "Oedolgae и тропа Олле №7"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Побережье"
     },
     "/routeFlowStops/3/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Храм Якчхонса"
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Temple"
+      "source_en": "Temple",
+      "tm": "Храм"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Обед"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Питание"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "O'sulloc Tea Museum"
+      "source_en": "O'sulloc Tea Museum",
+      "tm": "Чайный музей Osulloc"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Культура"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧ (UNESCO)",
+      "tm": "⟦G0⟧ (ЮНЕСКО)",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Volcano"
+      "source_en": "Volcano",
+      "tm": "Вулкан"
     },
     "/routeFlowStops/7/name": {
-      "source_en": "Jeju City drop-off (5 options)"
+      "source_en": "Jeju City drop-off (5 options)",
+      "tm": "Высадка в городе Чеджу (5 вариантов)"
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Возвращение"
     }
   },
   "glossaryTokens": {
@@ -75,5 +91,5 @@
       "⟦G0⟧": "Халласан Осынсэнъак"
     }
   },
-  "tmHits": 0
+  "tmHits": 16
 }

@@ -7,47 +7,60 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "First-time visitors to Korea wanting Korea's three signature day-trip stops in one day"
+      "source_en": "First-time visitors to Korea wanting Korea's three signature day-trip stops in one day",
+      "tm": "Les primo-visiteurs en Corée qui veulent les trois étapes d’excursion emblématiques du pays en une journée"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "Couples and Hallyu fans visiting for the Winter Sonata Metasequoia avenue"
+      "source_en": "Couples and Hallyu fans visiting for the Winter Sonata Metasequoia avenue",
+      "tm": "Les couples et les fans de Hallyu venus pour l’allée des métaséquoias de Winter Sonata"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Photography enthusiasts wanting the mountain + island + garden trifecta"
+      "source_en": "Photography enthusiasts wanting the mountain + island + garden trifecta",
+      "tm": "Les passionnés de photographie qui veulent le trio montagne + île + jardin"
     },
     "/whyTourWorks/bestFor/3": {
-      "source_en": "Travelers comfortable with a 13-hour day for maximum coverage from a Seoul base"
+      "source_en": "Travelers comfortable with a 13-hour day for maximum coverage from a Seoul base",
+      "tm": "Les voyageurs prêts à assumer une journée de 13 heures pour voir un maximum au départ de Séoul"
     },
     "/whyTourWorks/lessIdealFor/0": {
       "source_en": "Travelers who want a slow-paced single-stop experience",
       "tm": "Les voyageurs qui recherchent une expérience lente, sur un seul site"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Guests who don't want to commit to a 13-hour day from a 06:00 start"
+      "source_en": "Guests who don't want to commit to a 13-hour day from a 06:00 start",
+      "tm": "Les voyageurs qui ne veulent pas s’engager dans une journée de 13 heures démarrant à 06h00"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Young children (under 6) who may struggle with the long coach time"
+      "source_en": "Young children (under 6) who may struggle with the long coach time",
+      "tm": "Les jeunes enfants (moins de 6 ans), que la longueur du trajet en autocar peut éprouver"
     },
     "/whyTourWorks/lessIdealFor/3": {
-      "source_en": "Mobility-limited travelers — Seoraksan paths have stairs and rocky sections"
+      "source_en": "Mobility-limited travelers — Seoraksan paths have stairs and rocky sections",
+      "tm": "Les voyageurs à mobilité réduite — les sentiers du Seoraksan comportent des escaliers et des sections rocailleuses"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Northeast first, west on return"
+      "source_en": "Northeast first, west on return",
+      "tm": "Le nord-est d’abord, l’ouest au retour"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
-      "source_en": "Seoraksan is the farthest stop (2.5 hr drive each way) so it's visited first while energy is freshest, with Nami and Morning Calm sequenced on the natural return route through the Chuncheon-Gapyeong corridor — no backtracking."
+      "source_en": "Seoraksan is the farthest stop (2.5 hr drive each way) so it's visited first while energy is freshest, with Nami and Morning Calm sequenced on the natural return route through the Chuncheon-Gapyeong corridor — no backtracking.",
+      "tm": "Le Seoraksan est l'étape la plus éloignée (2,5 h de route dans chaque sens) : on la visite donc en premier, quand l'énergie est intacte, Nami et le Jardin du matin calme venant ensuite sur la route naturelle du retour, par le couloir Chuncheon-Gapyeong — aucun retour en arrière."
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Mountain → island → garden"
+      "source_en": "Mountain → island → garden",
+      "tm": "Montagne → île → jardin"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
-      "source_en": "The day moves from highest energy (Seoraksan stairs and optional cable car) to medium (Nami's flat walking circuit) to lowest (Morning Calm's relaxed garden stroll). Photo style progresses from granite ridge → tree-lined lanes → curated botanical compositions."
+      "source_en": "The day moves from highest energy (Seoraksan stairs and optional cable car) to medium (Nami's flat walking circuit) to lowest (Morning Calm's relaxed garden stroll). Photo style progresses from granite ridge → tree-lined lanes → curated botanical compositions.",
+      "tm": "La journée passe du plus intense (les escaliers du Seoraksan et le téléphérique en option) au moyen (le circuit à pied et de plain-pied de Nami) au plus doux (la flânerie tranquille au Jardin du matin calme). Le registre photographique évolue de la crête de granit aux allées bordées d'arbres, puis aux compositions botaniques soignées."
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Winter wonder bonus"
+      "source_en": "Winter wonder bonus",
+      "tm": "Le bonus « Winter Wonder »"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "From December 5 - March 15, the Morning Calm 17:00 arrival catches the daytime garden plus the Lighting Festival ignition — 200,000+ LEDs across the 330,000 m² grounds, a single-ticket value most independent travelers can't time as cleanly."
+      "source_en": "From December 5 - March 15, the Morning Calm 17:00 arrival catches the daytime garden plus the Lighting Festival ignition — 200,000+ LEDs across the 330,000 m² grounds, a single-ticket value most independent travelers can't time as cleanly.",
+      "tm": "Du 5 décembre au 15 mars, l'arrivée au Jardin du matin calme à 17h00 permet de voir le jardin de jour puis l'allumage du festival des lumières — plus de 200 000 LED sur 330 000 m², une valeur en un seul billet que peu de voyageurs indépendants parviennent à caler aussi bien."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
       "source_en": "Pacing & geography",
@@ -58,10 +71,12 @@
       "tm": "bg-amber-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "All admissions included"
+      "source_en": "All admissions included",
+      "tm": "Toutes les entrées comprises"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
-      "source_en": "Nami Island ferry (₩19,000) and Morning Calm garden (₩11,000) are bundled into the tour price — no per-stop tickets needed. Only the optional Seorak Cable Car (₩16,000 round-trip) is on-site own-expense."
+      "source_en": "Nami Island ferry (₩19,000) and Morning Calm garden (₩11,000) are bundled into the tour price — no per-stop tickets needed. Only the optional Seorak Cable Car (₩16,000 round-trip) is on-site own-expense.",
+      "tm": "Le ferry de l'île de Nami (₩19 000) et le Jardin du matin calme (₩11 000) sont compris dans le prix du circuit — aucun billet à acheter à chaque étape. Seul le téléphérique du Seorak en option (₩16 000 aller-retour) se paie sur place, à votre charge."
     },
     "/whyTourWorks/routeLogicSections/1/items/1/label": {
       "source_en": "Two pickup points across Seoul",
@@ -69,18 +84,22 @@
     },
     "/whyTourWorks/routeLogicSections/1/items/1/detail": {
       "source_en": "Hongik (Mapo-gu) at 06:00 and ⟦G0⟧ (Jung-gu) at 06:30 cover Seoul's two main accommodation clusters — guests choose the exit closest to their hotel.",
+      "tm": "Hongik (Mapo-gu) à 06h00 et ⟦G0⟧ (Jung-gu) à 06h30 couvrent les deux principaux pôles d'hébergement de Séoul — les voyageurs choisissent la sortie la plus proche de leur hôtel.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/whyTourWorks/routeLogicSections/1/items/2/label": {
-      "source_en": "Mostly outdoor stops"
+      "source_en": "Mostly outdoor stops",
+      "tm": "Des étapes essentiellement en extérieur"
     },
     "/whyTourWorks/routeLogicSections/1/items/2/detail": {
-      "source_en": "All three stops are predominantly outdoor; the coach is the only indoor segment. Works well in moderate weather; heavy rain shifts cable car off the menu but everything else remains visitable."
+      "source_en": "All three stops are predominantly outdoor; the coach is the only indoor segment. Works well in moderate weather; heavy rain shifts cable car off the menu but everything else remains visitable.",
+      "tm": "Les trois étapes se déroulent principalement en extérieur ; l'autocar est le seul segment couvert. Cela fonctionne bien par temps modéré ; de fortes pluies retirent le téléphérique du programme, mais tout le reste reste visitable."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "Why this works in 13 hours"
+      "source_en": "Why this works in 13 hours",
+      "tm": "Pourquoi cela tient en 13 heures"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
       "source_en": "bg-pink-50/80",
@@ -91,19 +110,24 @@
       "tm": "Le Seoraksan comporte des escaliers (le téléphérique est facultatif)"
     },
     "/whyTourWorks/routeLogicSections/2/items/0/detail": {
-      "source_en": "The Sinheungsa Temple level and the optional Heundeulbawi loop both have stairs. The Tongildaebul + Sinheungsa walk is flat and accessible; the cable car ascent is by chair lift (no stairs in cable car itself), but Gwongeumseong platform has rocky steps at the top."
+      "source_en": "The Sinheungsa Temple level and the optional Heundeulbawi loop both have stairs. The Tongildaebul + Sinheungsa walk is flat and accessible; the cable car ascent is by chair lift (no stairs in cable car itself), but Gwongeumseong platform has rocky steps at the top.",
+      "tm": "Le niveau du temple Sinheungsa et la boucle facultative du Heundeulbawi comportent tous deux des escaliers. La promenade Tongildaebul + Sinheungsa est plate et accessible ; la montée en téléphérique se fait en cabine (aucun escalier dans le téléphérique lui-même), mais la plate-forme de Gwongeumseong comporte des marches rocailleuses au sommet."
     },
     "/whyTourWorks/routeLogicSections/2/items/1/label": {
-      "source_en": "Cable car is not bookable in advance"
+      "source_en": "Cable car is not bookable in advance",
+      "tm": "Le téléphérique n’est pas réservable à l’avance"
     },
     "/whyTourWorks/routeLogicSections/2/items/1/detail": {
-      "source_en": "Seorak Cable Car tickets are on-site only and can queue 1-2 hours in October peak. If skies are foggy or queues are long, the recommended alternative is the Biseondae streamside walk (flat, paved, ~90 min round trip) which fits the same 3-hour budget."
+      "source_en": "Seorak Cable Car tickets are on-site only and can queue 1-2 hours in October peak. If skies are foggy or queues are long, the recommended alternative is the Biseondae streamside walk (flat, paved, ~90 min round trip) which fits the same 3-hour budget.",
+      "tm": "Les billets du téléphérique du Seorak se vendent uniquement sur place et la file peut atteindre 1 à 2 heures au pic d'octobre. Si le ciel est brumeux ou la file trop longue, l'alternative recommandée est la promenade au bord du torrent vers Biseondae (plate, goudronnée, ~90 min aller-retour), qui tient dans la même enveloppe de 3 heures."
     },
     "/whyTourWorks/routeLogicSections/2/items/2/label": {
-      "source_en": "Long day from a 06:00 start"
+      "source_en": "Long day from a 06:00 start",
+      "tm": "Une longue journée, à partir de 06h00"
     },
     "/whyTourWorks/routeLogicSections/2/items/2/detail": {
-      "source_en": "This is a coach group tour — 13 hours total including ~4.5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider our private chartered car day trip (door-of-hotel pickup, customizable timing)."
+      "source_en": "This is a coach group tour — 13 hours total including ~4.5 hours of coach time. Guests wanting fewer hours or unlimited stop time should consider our private chartered car day trip (door-of-hotel pickup, customizable timing).",
+      "tm": "Il s'agit d'un circuit de groupe en autocar — 13 heures au total, dont ~4,5 heures de route. Les voyageurs qui souhaitent une journée plus courte ou un temps libre illimité aux étapes devraient envisager notre excursion en voiture privée avec chauffeur (prise en charge à la porte de l'hôtel, horaires personnalisables)."
     },
     "/whyTourWorks/routeLogicSections/2/title": {
       "source_en": "Trade-offs honestly",
@@ -119,6 +143,7 @@
     },
     "/routeShapeIntro/subtitle": {
       "source_en": "Early Hongik/⟦G0⟧ pickup at 06:00/06:30; ~2.5 hr northeast drive to Seoraksan for the day's mountain anchor; back through the Inje-Chuncheon corridor for Nami Island's tree-lined ferry circuit; 30-min south to Morning Calm for the day's gentlest closing chapter (lighting-festival ignition in winter); return to Seoul by 19:00-19:30.",
+      "tm": "Prise en charge matinale à Hongik ou ⟦G0⟧ à 06h00/06h30 ; ~2,5 h de route vers le nord-est jusqu'au Seoraksan, l'ancrage montagnard de la journée ; retour par le couloir Inje-Chuncheon pour le circuit en ferry de l'île de Nami et ses allées bordées d'arbres ; 30 min vers le sud jusqu'au Jardin du matin calme pour le chapitre de clôture le plus doux (allumage du festival des lumières en hiver) ; retour à Séoul entre 19h00 et 19h30.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -132,5 +157,5 @@
       "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 9
+  "tmHits": 34
 }

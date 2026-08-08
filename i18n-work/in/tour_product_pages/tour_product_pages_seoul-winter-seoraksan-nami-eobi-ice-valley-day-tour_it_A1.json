@@ -1,0 +1,264 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:it:A1",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "it",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Winter Day Tour from Seoul — Seoraksan, Nami Island & Eobi Valley Ice Wall"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Winter Day Tour from Seoul — Seoraksan, Nami Island & Eobi Valley Ice Wall | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "A winter-only day trip from Seoul combining ⟦G0⟧ under snow, Nami Island, and Gapyeong's village-built Eobi Valley ice wall.",
+      "glossary": [
+        "⟦G0⟧ = Parco nazionale di Seoraksan"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "Winter-season coach day tour from Seoul: snow-covered ⟦G0⟧, Nami Island's frosted tree avenues, and the Eobi Valley ice wall in Gapyeong. Hongik University or ⟦G1⟧ pickup, park entry and Nami ferry included.",
+      "glossary": [
+        "⟦G0⟧ = Parco nazionale di Seoraksan",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Seoul winter day tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Eobi Valley ice wall tour"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Seoraksan winter tour from Seoul"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "Nami Island winter tour"
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "Gapyeong ice wall day trip"
+    },
+    "/hero/meta/stops": {
+      "source_en": "3 stops",
+      "tm": "3 tappe"
+    },
+    "/hero/meta/region": {
+      "source_en": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)"
+    },
+    "/hero/meta/duration": {
+      "source_en": "13.5 hours"
+    },
+    "/hero/pills/0": {
+      "source_en": "Winter season only"
+    },
+    "/hero/pills/1": {
+      "source_en": "Snow + ice wall"
+    },
+    "/hero/pills/2": {
+      "source_en": "Coach day trip"
+    },
+    "/hero/tagline": {
+      "source_en": "A winter-season coach day from Seoul: Korea's best-known national park under snow, Nami Island's frosted avenues, and a 25-metre ice wall that a Gapyeong village builds by hand every January"
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Duration",
+      "tm": "Durata"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "13.5 hours"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Photo Potential",
+      "tm": "Potenziale fotografico"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Very High",
+      "tm": "Molto elevato"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Scenery",
+      "tm": "Paesaggio"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Very High",
+      "tm": "Molto elevato"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Walking",
+      "tm": "Camminata"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Weather Sensitivity"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "High",
+      "tm": "Alto"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Family Suitability",
+      "tm": "Adatto alle famiglie"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Moderate",
+      "tm": "Moderato"
+    },
+    "/glanceItems/6/label": {
+      "source_en": "Pace",
+      "tm": "Ritmo"
+    },
+    "/glanceItems/6/value": {
+      "source_en": "Full"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Panoramica"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Itinerario"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Dettagli"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Recensioni"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Winter only"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Seasonal"
+    },
+    "/catalog_card/tags/2": {
+      "source_en": "Day trip from Seoul",
+      "tm": "Escursione da Seoul"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "Seoraksan",
+      "tm": "Seoraksan"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Nami Island",
+      "tm": "Isola di Nami"
+    },
+    "/catalog_card/tags/5": {
+      "source_en": "Ice wall"
+    },
+    "/catalog_card/title": {
+      "source_en": "Winter Special from Seoul: Seoraksan, Nami Island & Eobi Valley Ice Wall"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Winter only"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "Seasonal"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Day trip from Seoul",
+      "tm": "Escursione da Seoul"
+    },
+    "/catalog_card/badges/3": {
+      "source_en": "Seoraksan",
+      "tm": "Seoraksan"
+    },
+    "/catalog_card/badges/4": {
+      "source_en": "Ice wall"
+    },
+    "/catalog_card/region": {
+      "source_en": "Seoul → Gangwon-do → Gyeonggi-do (Gapyeong)"
+    },
+    "/catalog_card/duration": {
+      "source_en": "13.5 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "A winter-only coach day — snow on Korea's most famous peak, Nami under frost, and a village-built ice wall"
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "Runs in deep winter only: Seoraksan under snow, Nami Island's frosted tree avenues, and the 25-metre ice wall that Gapyeong villagers grow on a valley rock face each January."
+    },
+    "/headlineLine1": {
+      "source_en": "Seoul Winter Day Tour"
+    },
+    "/headlineLine2": {
+      "source_en": "Seoraksan, Nami & the Eobi Ice Wall"
+    },
+    "/pickup_dropoff/primary/name": {
+      "source_en": "Starbucks Hongik University Station Exit 8",
+      "tm": "Starbucks della stazione Hongik University, uscita 8"
+    },
+    "/pickup_dropoff/primary/time": {
+      "source_en": "06:00 pickup / 19:30 drop-off",
+      "tm": "Ritrovo 06:00 / rientro 19:30"
+    },
+    "/pickup_dropoff/primary/address": {
+      "source_en": "Yanghwa-ro, Mapo-gu, Seoul (in front of the Starbucks at Hongik University Station Exit 8)",
+      "tm": "Yanghwa-ro, Mapo-gu, Seoul (davanti allo Starbucks dell’uscita 8 della stazione Hongik University)"
+    },
+    "/pickup_dropoff/primary/instructions": {
+      "source_en": "Meet the guide at the Starbucks storefront immediately above Hongik University Station Exit 8. Look for the AtoC Korea sign and the coach in the pickup queue."
+    },
+    "/pickup_dropoff/alternates/0/name": {
+      "source_en": "⟦G0⟧ Station Exit 2 (NorthFace flagship)",
+      "tm": "Stazione ⟦G0⟧, uscita 2 (negozio principale NorthFace)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/pickup_dropoff/alternates/0/time": {
+      "source_en": "06:30 pickup / 19:00 drop-off",
+      "tm": "Ritrovo 06:30 / rientro 19:00"
+    },
+    "/pickup_dropoff/alternates/0/address": {
+      "source_en": "Toegye-ro, Jung-gu, Seoul (NorthFace flagship store at ⟦G0⟧ Station Exit 2)",
+      "tm": "Toegye-ro, Jung-gu, Seoul (negozio principale NorthFace all’uscita 2 della stazione ⟦G0⟧)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/pickup_dropoff/alternates/0/instructions": {
+      "source_en": "Meet the guide in front of the NorthFace flagship store at the top of ⟦G0⟧ Station Exit 2.",
+      "tm": "Trovi la guida davanti al negozio principale NorthFace, in cima all’uscita 2 della stazione ⟦G0⟧.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Winter season only — select your date to check whether the ice wall is running and complete your booking."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "persona"
+    }
+  },
+  "glossaryTokens": {
+    "/seo/description": {
+      "⟦G0⟧": "Parco nazionale di Seoraksan"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Parco nazionale di Seoraksan",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/pickup_dropoff/alternates/0/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/pickup_dropoff/alternates/0/address": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/pickup_dropoff/alternates/0/instructions": {
+      "⟦G0⟧": "Myeongdong"
+    }
+  },
+  "tmHits": 30
+}

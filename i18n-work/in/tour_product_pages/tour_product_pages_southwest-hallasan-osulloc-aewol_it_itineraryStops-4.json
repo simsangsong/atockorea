@@ -6,224 +6,308 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
+    "/itineraryStops/4/galleryItems/3/alt": {
+      "source_en": "O'Sulloc Tea Museum — gallery image 4"
+    },
+    "/itineraryStops/4/galleryItems/3/caption": {
+      "source_en": "O'Sulloc Tea Museum — photo 4"
+    },
+    "/itineraryStops/4/galleryItems/3/location": {
+      "source_en": "O'Sulloc Tea Museum",
+      "tm": "Museo del tè Osulloc"
+    },
+    "/itineraryStops/4/galleryItems/4/alt": {
+      "source_en": "O'Sulloc Tea Museum — gallery image 5"
+    },
+    "/itineraryStops/4/galleryItems/4/caption": {
+      "source_en": "O'Sulloc Tea Museum — photo 5"
+    },
+    "/itineraryStops/4/galleryItems/4/location": {
+      "source_en": "O'Sulloc Tea Museum",
+      "tm": "Museo del tè Osulloc"
+    },
+    "/itineraryStops/4/galleryItems/5/alt": {
+      "source_en": "O'Sulloc Tea Museum — gallery image 6"
+    },
+    "/itineraryStops/4/galleryItems/5/caption": {
+      "source_en": "O'Sulloc Tea Museum — photo 6"
+    },
+    "/itineraryStops/4/galleryItems/5/location": {
+      "source_en": "O'Sulloc Tea Museum",
+      "tm": "Museo del tè Osulloc"
+    },
+    "/itineraryStops/4/galleryItems/6/alt": {
+      "source_en": "O'Sulloc Tea Museum — gallery image 7"
+    },
+    "/itineraryStops/4/galleryItems/6/caption": {
+      "source_en": "O'Sulloc Tea Museum — photo 7"
+    },
+    "/itineraryStops/4/galleryItems/6/location": {
+      "source_en": "O'Sulloc Tea Museum",
+      "tm": "Museo del tè Osulloc"
+    },
     "/itineraryStops/5/name": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/category": {
-      "source_en": "Coastal Cafe Strip — Afternoon Café + Olle Trail 15A Segment"
+      "source_en": "Coastal Cafe Strip — Afternoon Café + Olle Trail 15A Segment",
+      "tm": "Zona di caffè sulla costa — caffè pomeridiano + tratto del sentiero Olle 15A"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "55 min"
+      "source_en": "55 min",
+      "tm": "55 min"
     },
     "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Coach arrival + Handam parking — ~5 min"
+      "source_en": "Coach arrival + Handam parking — ~5 min",
+      "tm": "Arrivo del pullman + parcheggio di Handam — ~5 min"
     },
     "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Coastal trail walk (Handam → mid-section) — ~20 min"
+      "source_en": "Coastal trail walk (Handam → mid-section) — ~20 min",
+      "tm": "Passeggiata sul sentiero costiero (Handam → tratto centrale) — ~20 min"
     },
     "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Selected cafe stop (drink + dessert) — ~30 min"
+      "source_en": "Selected cafe stop (drink + dessert) — ~30 min",
+      "tm": "Sosta nel caffè selezionato (bevanda + dolce) — ~30 min"
     },
     "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Sunset photography at clifftop — ~15 min"
+      "source_en": "Sunset photography at clifftop — ~15 min",
+      "tm": "Fotografie al tramonto in cima alla scogliera — ~15 min"
     },
     "/itineraryStops/5/timeUsed/4": {
-      "source_en": "Walk back to coach — ~5 min"
+      "source_en": "Walk back to coach — ~5 min",
+      "tm": "Rientro a piedi al pullman — ~5 min"
     },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row"
+      "source_en": "**5 km coastal cafe strip** between Handam and Gwakji beaches — Korea's densest sea-view cafe row",
+      "tm": "**5 km di caffè lungo la costa** tra le spiagge di Handam e Gwakji — la fila di caffè con vista mare più fitta della Corea"
     },
     "/itineraryStops/5/highlights/1": {
-      "source_en": "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir"
+      "source_en": "**Jang Han Chul Promenade** — named for Jeju-born Joseon scholar (1744–?) author of **'Pyohaerok'** survival memoir",
+      "tm": "**Passeggiata Jang Han Chul** — intitolata allo studioso di epoca Joseon nato a Jeju (1744–?), autore del memoriale di sopravvivenza **'Pyohaerok'**"
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "**Olle Trail 15A** segment (Hallim → Gonae) — 30-min one-way coastal walk"
+      "source_en": "**Olle Trail 15A** segment (Hallim → Gonae) — 30-min one-way coastal walk",
+      "tm": "Tratto del **sentiero Olle 15A** (Hallim → Gonae) — 30 min di camminata costiera in sola andata"
     },
     "/itineraryStops/5/highlights/3": {
-      "source_en": "**Bomnal Cafe (봄날 카페)** = **'You Who Came From the Stars' (2014, SBS)** filming site"
+      "source_en": "**Bomnal Cafe (봄날 카페)** = **'You Who Came From the Stars' (2014, SBS)** filming site",
+      "tm": "**Bomnal Cafe (봄날 카페)** = set delle riprese di **'You Who Came From the Stars' (2014, SBS)**"
     },
     "/itineraryStops/5/highlights/4": {
-      "source_en": "Rotating signature cafes: **Randy's Donuts**, **Cafe Knotted**, **Haejigae Cafe**, **Aewol the Sunset**"
+      "source_en": "Rotating signature cafes: **Randy's Donuts**, **Cafe Knotted**, **Haejigae Cafe**, **Aewol the Sunset**",
+      "tm": "Caffè di punta a rotazione: **Randy's Donuts**, **Cafe Knotted**, **Haejigae Cafe**, **Aewol the Sunset**"
     },
     "/itineraryStops/5/highlights/5": {
-      "source_en": "**West-facing horizon** = unobstructed sunset viewing — **17:30–18:30 in spring/autumn**"
+      "source_en": "**West-facing horizon** = unobstructed sunset viewing — **17:30–18:30 in spring/autumn**",
+      "tm": "**Orizzonte esposto a ovest** = tramonto visibile senza ostacoli — **17:30–18:30 in primavera e autunno**"
     },
     "/itineraryStops/5/highlights/6": {
-      "source_en": "**Hexagonal jointing visible** at Handam clifftops — same geology as Daepo, smaller scale"
+      "source_en": "**Hexagonal jointing visible** at Handam clifftops — same geology as Daepo, smaller scale",
+      "tm": "**Giunti esagonali visibili** in cima alle scogliere di Handam — stessa geologia di Daepo, su scala minore"
     },
     "/itineraryStops/5/highlights/7": {
-      "source_en": "Coastal trail + beaches **FREE**; cafes ~₩6,000–12,000 per drink + dessert"
+      "source_en": "Coastal trail + beaches **FREE**; cafes ~₩6,000–12,000 per drink + dessert",
+      "tm": "Sentiero costiero e spiagge **GRATUITI**; nei caffè ~₩6.000–12.000 per bevanda + dolce"
     },
     "/itineraryStops/5/highlights/8": {
-      "source_en": "**40-min coach drive from Jeju International Airport** — last viable stop before evening flights"
+      "source_en": "**40-min coach drive from Jeju International Airport** — last viable stop before evening flights",
+      "tm": "**40 min di pullman dall'aeroporto internazionale di Jeju** — ultima tappa praticabile prima dei voli serali"
     },
     "/itineraryStops/5/smartNotes/tip": {
-      "source_en": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly."
+      "source_en": "This stop usually scores higher when guests are allowed a freer rhythm rather than being guided too tightly.",
+      "tm": "Questa tappa di solito è apprezzata di più quando agli ospiti è concesso un ritmo più libero, anziché essere guidati in modo troppo rigido."
     },
     "/itineraryStops/5/smartNotes/facilities": {
-      "source_en": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly."
+      "source_en": "Comfort depends on which cafe is chosen, so flexible operation works better than fixing one venue too rigidly.",
+      "tm": "Il comfort dipende dal caffè scelto, quindi una gestione flessibile funziona meglio che fissare un solo locale in modo troppo rigido."
     },
     "/itineraryStops/5/whyOnRoute": {
-      "source_en": "**Sunset-focused finale.** Aewol works well as the last stop because it faces west, has a comfortable coastal trail, and offers many sea-view cafés if guests want to rest indoors. It is also a practical final stop before returning toward Jeju City or the airport, so the day can end with a relaxed seaside atmosphere instead of a long detour."
+      "source_en": "**Sunset-focused finale.** Aewol works well as the last stop because it faces west, has a comfortable coastal trail, and offers many sea-view cafés if guests want to rest indoors. It is also a practical final stop before returning toward Jeju City or the airport, so the day can end with a relaxed seaside atmosphere instead of a long detour.",
+      "tm": "**Un finale dedicato al tramonto.** Aewol funziona bene come ultima tappa perché è esposta a ovest, ha un comodo sentiero costiero e offre molti caffè con vista mare per chi desidera riposare al chiuso. È inoltre una tappa finale pratica prima del rientro verso Jeju City o l'aeroporto, così la giornata può concludersi con un'atmosfera rilassata sul mare invece che con una lunga deviazione."
     },
     "/itineraryStops/5/convenience/parking": {
-      "source_en": "Parking available in the area"
+      "source_en": "Parking available in the area",
+      "tm": "Parcheggio disponibile in zona"
     },
     "/itineraryStops/5/convenience/restroom": {
-      "source_en": "Depends on the cafe you use"
+      "source_en": "Depends on the cafe you use",
+      "tm": "Dipende dal caffè che si utilizza"
     },
     "/itineraryStops/5/description": {
       "source_en": "**⟦G0⟧ (애월 카페거리)** is the **5 km coastal stretch of Aewol-eup along the Handam Coastal Trail (한담해안산책로)** on Jeju's northwest coast — Korea's most concentrated **'sea-view cafe' destination**, with 30+ design-forward cafes packed into the cliff-edge strip between Handam Beach and Gwakji Beach. \n\nThe promenade itself is officially named **Jang Han Chul Promenade (장한철산책로)** after **Jang Han Chul (장한철, 1744–?)** — a Jeju-born Joseon-era scholar whose **'Pyohaerok (표해록)'** is one of the earliest Korean accounts of survival at sea, written after his Pacific drift in 1771. \n\nThe walking path is a **30-minute one-way coastal segment of Jeju Olle Trail 15A (Hallim → Gonae)** — black basalt clifftops, tide pools, hexagonal jointing on a smaller scale than Daepo, and unobstructed west-facing horizon = Jeju's premier sunset viewing strip. \n\n**Signature cafes in rotation by season**: **Bomnal Cafe (봄날 카페)** — appeared in the **2014 K-drama 'You Who Came From the Stars (별에서 온 그대)'** and made Aewol a celebrity-pilgrimage destination overnight; **Randy's Donuts** (LA brand, Korean franchise — large rooftop deck); **Cafe Knotted** (signature cream donut + sea-view); **Haejigae Cafe** (literally 'sunset cafe', dedicated to evening light service); **Aewol the Sunset** (rooftop terrace, premium pricing). \n\nFREE admission to the trail and beaches; cafes pricing typical ₩6,000–12,000 per drink + dessert. **Jang Han Chul's 'Pyohaerok (표해록)'** — the eponymous source of the promenade's name — is considered one of the foundational texts of **Korean maritime literature**, recording his 29-day Pacific drift after a Jeju-bound ship was blown off course in **December 1770**. \n\nRescued by Ryukyu (modern Okinawa) fishermen and eventually returned home via Nagasaki, his account predates similar Western survival memoirs by decades and informs modern Korean ocean-history scholarship. \n\nThe promenade's signage along the cliff path quotes passages from the work in Korean + English — a rare in-situ literary heritage marker. Note for **photography enthusiasts**: drone use along the Aewol coast is permitted **outside the 9 km Jeju International Airport approach corridor** — confirm exact perimeter via Korea Drone Map app before flying. \n\nThe **Olle Trail 15A segment** officially runs Hallim Port → Aewol → Gonae Port over 13 km; today's tour walks the central 1.5 km between Handam and Gwakji.",
+      "tm": "**⟦G0⟧ (애월 카페거리)** è il **tratto costiero di 5 km di Aewol-eup lungo il sentiero costiero di Handam (한담해안산책로)** sulla costa nord-occidentale di Jeju — la destinazione coreana con la maggiore concentrazione di **caffè con vista mare**, con oltre 30 locali dal design ricercato addensati nella striscia a picco tra la spiaggia di Handam e quella di Gwakji. \n\nLa passeggiata si chiama ufficialmente **Passeggiata Jang Han Chul (장한철산책로)**, dal nome di **Jang Han Chul (장한철, 1744–?)** — uno studioso di epoca Joseon nato a Jeju il cui **'Pyohaerok (표해록)'** è uno dei primi resoconti coreani di sopravvivenza in mare, scritto dopo la sua deriva nel Pacifico del 1771. \n\nIl percorso pedonale è un **tratto costiero di 30 minuti in sola andata del sentiero Jeju Olle 15A (Hallim → Gonae)** — scogliere di basalto nero, pozze di marea, giunti esagonali su scala minore rispetto a Daepo e un orizzonte a ovest senza ostacoli = la principale striscia di Jeju per ammirare il tramonto. \n\n**Caffè di punta a rotazione secondo la stagione**: **Bomnal Cafe (봄날 카페)** — apparso nel **K-drama del 2014 'You Who Came From the Stars (별에서 온 그대)'**, che ha reso Aewol una meta di pellegrinaggio per i fan dall'oggi al domani; **Randy's Donuts** (marchio di Los Angeles, franchising coreano — ampia terrazza sul tetto); **Cafe Knotted** (il celebre bombolone alla crema + vista mare); **Haejigae Cafe** (letteralmente 'caffè del tramonto', dedicato al servizio nella luce serale); **Aewol the Sunset** (terrazza sul tetto, prezzi premium). \n\nIngresso GRATUITO al sentiero e alle spiagge; nei caffè i prezzi tipici sono ₩6.000–12.000 per bevanda + dolce. Il **'Pyohaerok (표해록)' di Jang Han Chul** — la fonte eponima del nome della passeggiata — è considerato uno dei testi fondativi della **letteratura marinara coreana** e registra i suoi 29 giorni di deriva nel Pacifico dopo che una nave diretta a Jeju fu sospinta fuori rotta nel **dicembre 1770**. \n\nSoccorso da pescatori delle Ryukyu (l'odierna Okinawa) e infine rimpatriato via Nagasaki, il suo resoconto precede di decenni analoghi memoriali di sopravvivenza occidentali e alimenta gli studi moderni di storia marittima coreana. \n\nLa segnaletica lungo il sentiero a picco sul mare riporta passi dell'opera in coreano e in inglese — un raro segnale di patrimonio letterario in situ. Nota per gli **appassionati di fotografia**: l'uso dei droni lungo la costa di Aewol è consentito **al di fuori del corridoio di avvicinamento di 9 km dell'aeroporto internazionale di Jeju** — verifichi il perimetro esatto con l'app Korea Drone Map prima di volare. \n\nIl **tratto del sentiero Olle 15A** va ufficialmente dal porto di Hallim ad Aewol fino al porto di Gonae per 13 km; il tour di oggi ne percorre gli 1,5 km centrali tra Handam e Gwakji.",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/visitBasics/hours": {
-      "source_en": "The area itself is open all day; each cafe has its own hours"
+      "source_en": "The area itself is open all day; each cafe has its own hours",
+      "tm": "La zona è accessibile tutto il giorno; ogni caffè ha i propri orari"
     },
     "/itineraryStops/5/visitBasics/closed": {
-      "source_en": "No closure day for the area as a whole"
+      "source_en": "No closure day for the area as a whole",
+      "tm": "Nessun giorno di chiusura per la zona nel suo complesso"
     },
     "/itineraryStops/5/visitBasics/walking": {
-      "source_en": "Easy"
+      "source_en": "Easy",
+      "tm": "Facile"
     },
     "/itineraryStops/5/visitBasics/admission": {
-      "source_en": "Free"
+      "source_en": "Free",
+      "tm": "Gratuito"
     },
     "/itineraryStops/5/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — gallery image 1",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — immagine della galleria 1",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — photo 1",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — foto 1",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/0/location": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — gallery image 2",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — immagine della galleria 2",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — photo 2",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — foto 2",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/1/location": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — gallery image 3",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — immagine della galleria 3",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — photo 3",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — foto 3",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/2/location": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — gallery image 4",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — immagine della galleria 4",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — photo 4",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — foto 4",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/3/location": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — gallery image 5",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — immagine della galleria 5",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/4/caption": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail) — photo 5",
+      "tm": "⟦G0⟧ (Handam Coastal Trail) — foto 5",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/5/galleryItems/4/location": {
       "source_en": "⟦G0⟧ (Handam Coastal Trail)",
+      "tm": "⟦G0⟧ (Handam Coastal Trail)",
       "glossary": [
         "⟦G0⟧ = Strada dei caffè di Aewol"
       ]
     },
     "/itineraryStops/6/name": {
-      "source_en": "Iho Tewoo Beach (Horse Lighthouses · Sunset)"
+      "source_en": "Iho Tewoo Beach (Horse Lighthouses · Sunset)",
+      "tm": "Spiaggia di Iho Tewoo (fari a cavallo · tramonto)"
     },
     "/itineraryStops/6/category": {
-      "source_en": "Jeju City Beach — Jeju Pony Lighthouses + Sunset Finale"
+      "source_en": "Jeju City Beach — Jeju Pony Lighthouses + Sunset Finale",
+      "tm": "Spiaggia di Jeju City — fari a forma di pony di Jeju + finale al tramonto"
     },
     "/itineraryStops/6/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 min"
     },
     "/itineraryStops/6/timeUsed/0": {
-      "source_en": "Beach parking + walk in — ~5 min"
+      "source_en": "Beach parking + walk in — ~5 min",
+      "tm": "Parcheggio della spiaggia + accesso a piedi — ~5 min"
     },
     "/itineraryStops/6/timeUsed/1": {
-      "source_en": "Pony lighthouse / breakwater walk + photos — ~20 min"
+      "source_en": "Pony lighthouse / breakwater walk + photos — ~20 min",
+      "tm": "Fari a forma di pony / passeggiata sul frangiflutti + foto — ~20 min"
     },
     "/itineraryStops/6/timeUsed/2": {
-      "source_en": "Sunset viewing on the sands / Rainbow Coastal Road — ~15 min"
+      "source_en": "Sunset viewing on the sands / Rainbow Coastal Road — ~15 min",
+      "tm": "Tramonto sulla sabbia / Rainbow Coastal Road — ~15 min"
     },
     "/itineraryStops/6/timeUsed/3": {
-      "source_en": "Regroup — ~5 min"
+      "source_en": "Regroup — ~5 min",
+      "tm": "Ritrovo del gruppo — ~5 min"
     },
     "/itineraryStops/6/highlights/0": {
-      "source_en": "**The closest beach to downtown Jeju and the airport** — sunset finale + easy airport transfer"
+      "source_en": "**The closest beach to downtown Jeju and the airport** — sunset finale + easy airport transfer",
+      "tm": "**La spiaggia più vicina al centro di Jeju e all'aeroporto** — finale al tramonto + trasferimento comodo all'aeroporto"
     },
     "/itineraryStops/6/highlights/1": {
-      "source_en": "Iconic **Jeju pony lighthouses (horse lighthouses)** — a red and a white one, about 12 m tall, a signature photo spot"
+      "source_en": "Iconic **Jeju pony lighthouses (horse lighthouses)** — a red and a white one, about 12 m tall, a signature photo spot",
+      "tm": "Gli iconici **fari a forma di pony di Jeju (fari a cavallo)** — uno rosso e uno bianco, alti circa 12 m, un punto fotografico simbolo"
     },
     "/itineraryStops/6/highlights/2": {
-      "source_en": "**Fine silvery sand** mixed with shell fragments + gentle slope — a family-friendly beach"
+      "source_en": "**Fine silvery sand** mixed with shell fragments + gentle slope — a family-friendly beach",
+      "tm": "**Sabbia fine e argentata** mista a frammenti di conchiglie + pendenza dolce — una spiaggia adatta alle famiglie"
     },
     "/itineraryStops/6/highlights/3": {
-      "source_en": "**Pine forest** shade and walking paths behind the beach"
-    },
-    "/itineraryStops/6/highlights/4": {
-      "source_en": "**Wondam (Iho Mosalwon)**, a traditional Jeju fishing structure revealed at low tide"
-    },
-    "/itineraryStops/6/highlights/5": {
-      "source_en": "Right alongside, the **Dodu-dong Rainbow Coastal Road** coastal drive"
-    },
-    "/itineraryStops/6/highlights/6": {
-      "source_en": "**Free admission** — golden light at the sunset hour"
+      "source_en": "**Pine forest** shade and walking paths behind the beach",
+      "tm": "L'ombra della **pineta** e i sentieri alle spalle della spiaggia"
     }
   },
   "glossaryTokens": {
@@ -279,5 +363,5 @@
       "⟦G0⟧": "Strada dei caffè di Aewol"
     }
   },
-  "tmHits": 0
+  "tmHits": 57
 }

@@ -7,28 +7,36 @@
   "tier": "A2",
   "segments": {
     "/whyTourWorks/bestFor/0": {
-      "source_en": "Cruise passengers needing a same-day round-trip from the cruise terminal"
+      "source_en": "Cruise passengers needing a same-day round-trip from the cruise terminal",
+      "tm": "Круизные пассажиры, которым нужна поездка туда и обратно от круизного терминала в тот же день"
     },
     "/whyTourWorks/bestFor/1": {
-      "source_en": "First-time Jeju visitors who want UNESCO highlights in one day"
+      "source_en": "First-time Jeju visitors who want UNESCO highlights in one day",
+      "tm": "Те, кто впервые на Чеджу и хочет увидеть главное из наследия ЮНЕСКО за один день"
     },
     "/whyTourWorks/bestFor/2": {
-      "source_en": "Travelers who want a guided format-appropriate route with smaller group attention"
+      "source_en": "Travelers who want a guided format-appropriate route with smaller group attention",
+      "tm": "Те, кому нужен маршрут с гидом под формат поездки и внимание в малой группе"
     },
     "/whyTourWorks/lessIdealFor/0": {
-      "source_en": "Travelers with very low mobility (Seongsan rim and Hallasan 1100 require some walking)"
+      "source_en": "Travelers with very low mobility (Seongsan rim and Hallasan 1100 require some walking)",
+      "tm": "Путешественники с сильно ограниченной подвижностью (кромка Сонсана и Халласан 1100 требуют некоторой ходьбы)"
     },
     "/whyTourWorks/lessIdealFor/1": {
-      "source_en": "Stroller-heavy groups"
+      "source_en": "Stroller-heavy groups",
+      "tm": "Группы с детскими колясками"
     },
     "/whyTourWorks/lessIdealFor/2": {
-      "source_en": "Travelers wanting unhurried pacing — cruise schedule is fixed"
+      "source_en": "Travelers wanting unhurried pacing — cruise schedule is fixed",
+      "tm": "Те, кто хочет неспешный темп — расписание круиза фиксировано"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/label": {
-      "source_en": "Jeju Port = north terminal"
+      "source_en": "Jeju Port = north terminal",
+      "tm": "Порт Чеджу = северный терминал"
     },
     "/whyTourWorks/routeLogicSections/0/items/0/detail": {
       "source_en": "East-coast UNESCO loop with ⟦G1⟧, ⟦G2⟧, and ⟦G0⟧.",
+      "tm": "Кольцо ЮНЕСКО по восточному побережью с ⟦G1⟧, ⟦G2⟧ и ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Фольклорная деревня Сонъып",
         "⟦G1⟧ = Сонсан Ильчхульбон",
@@ -36,256 +44,339 @@
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/1/label": {
-      "source_en": "Gangjeong Port = south (Seogwipo) terminal"
+      "source_en": "Gangjeong Port = south (Seogwipo) terminal",
+      "tm": "Порт Канджон = южный терминал (Согвипхо)"
     },
     "/whyTourWorks/routeLogicSections/0/items/1/detail": {
       "source_en": "Hallasan 1100 alpine + Jusangjeolli + ⟦G0⟧ + Olle Market.",
+      "tm": "Высокогорье Халласан 1100, Чусанджолли, ⟦G0⟧ и рынок Олле.",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджиён"
       ]
     },
     "/whyTourWorks/routeLogicSections/0/items/2/label": {
-      "source_en": "Same 8-hour structure both ports"
+      "source_en": "Same 8-hour structure both ports",
+      "tm": "Одинаковая 8-часовая структура для обоих портов"
     },
     "/whyTourWorks/routeLogicSections/0/items/2/detail": {
-      "source_en": "Cruise return-time limit is the same; the route adapts to minimize transit waste."
+      "source_en": "Cruise return-time limit is the same; the route adapts to minimize transit waste.",
+      "tm": "Предельное время возвращения к круизу одинаково; маршрут подстраивается, чтобы меньше времени уходило на переезды."
     },
     "/whyTourWorks/routeLogicSections/0/title": {
-      "source_en": "Why two port routes"
+      "source_en": "Why two port routes",
+      "tm": "Почему два маршрута по портам"
     },
     "/whyTourWorks/routeLogicSections/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/label": {
-      "source_en": "Mini-coach small group"
+      "source_en": "Mini-coach small group",
+      "tm": "Мини-автобус, малая группа"
     },
     "/whyTourWorks/routeLogicSections/1/items/0/detail": {
-      "source_en": "Smaller group, more guide attention, faster pace through stops."
+      "source_en": "Smaller group, more guide attention, faster pace through stops.",
+      "tm": "Меньше группа, больше внимания гида, быстрее проход по остановкам."
     },
     "/whyTourWorks/routeLogicSections/1/title": {
-      "source_en": "Small Group Tour specifics"
+      "source_en": "Small Group Tour specifics",
+      "tm": "Особенности тура в малой группе"
     },
     "/whyTourWorks/routeLogicSections/1/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/routeShapeIntro/title": {
-      "source_en": "How this day flows"
+      "source_en": "How this day flows",
+      "tm": "Как проходит этот день"
     },
     "/routeShapeIntro/subtitle": {
-      "source_en": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market."
+      "source_en": "Route depends on your cruise port. Jeju Port (north) runs east UNESCO; Gangjeong Port (south) runs Hallasan alpine + Olle Market.",
+      "tm": "Маршрут зависит от вашего круизного порта. Из порта Чеджу (север) идёт восточный маршрут ЮНЕСКО; из порта Канджон (юг) — высокогорье Халласан и рынок Олле."
     },
     "/staticQuestions/0/answer": {
-      "source_en": "Your cruise booking confirmation lists the Jeju port. We confirm the port with you at booking and route the day accordingly. Most major cruise lines call at Jeju Port (north terminal); some Seogwipo-area calls use Gangjeong Port."
+      "source_en": "Your cruise booking confirmation lists the Jeju port. We confirm the port with you at booking and route the day accordingly. Most major cruise lines call at Jeju Port (north terminal); some Seogwipo-area calls use Gangjeong Port.",
+      "tm": "Порт захода на Чеджу указан в подтверждении вашего круизного бронирования. Мы уточняем порт при бронировании и строим день соответственно. Большинство крупных круизных линий заходят в порт Чеджу (северный терминал); часть заходов в районе Согвипхо приходится на порт Канджон."
     },
     "/staticQuestions/0/question": {
-      "source_en": "How do I know which port my cruise calls at?"
+      "source_en": "How do I know which port my cruise calls at?",
+      "tm": "Как узнать, в какой порт заходит мой круиз?"
     },
     "/staticQuestions/1/answer": {
-      "source_en": "Yes. Both route options return to the cruise terminal between 16:30-17:00, with buffer for any traffic delay. We track your sailaway time and adjust pace if conditions change."
+      "source_en": "Yes. Both route options return to the cruise terminal between 16:30-17:00, with buffer for any traffic delay. We track your sailaway time and adjust pace if conditions change.",
+      "tm": "Да. Оба варианта маршрута возвращаются к круизному терминалу между 16:30 и 17:00, с запасом на задержки в пути. Мы отслеживаем время отхода вашего судна и корректируем темп, если условия меняются."
     },
     "/staticQuestions/1/question": {
-      "source_en": "Will I be back to the ship in time?"
+      "source_en": "Will I be back to the ship in time?",
+      "tm": "Успею ли я вернуться на судно вовремя?"
     },
     "/staticQuestions/2/answer": {
-      "source_en": "Notify us as soon as you know — we switch the route option to match. Port-routing is the whole reason this tour has two route options instead of one."
+      "source_en": "Notify us as soon as you know — we switch the route option to match. Port-routing is the whole reason this tour has two route options instead of one.",
+      "tm": "Сообщите нам, как только узнаете, — мы переключим вариант маршрута. Привязка к порту и есть причина, по которой у этого тура два варианта маршрута, а не один."
     },
     "/staticQuestions/2/question": {
-      "source_en": "What if my cruise call port changes?"
+      "source_en": "What if my cruise call port changes?",
+      "tm": "Что если порт захода моего круиза изменится?"
     },
     "/staticQuestions/3/answer": {
-      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day."
+      "source_en": "Yes — it covers the most distinctive stops in the area in a single balanced day.",
+      "tm": "Да — он охватывает самые характерные остановки региона за один сбалансированный день."
     },
     "/staticQuestions/3/question": {
-      "source_en": "Is this a good choice for first-time visitors to Jeju?"
+      "source_en": "Is this a good choice for first-time visitors to Jeju?",
+      "tm": "Подойдёт ли этот тур тем, кто впервые на Чеджу?"
     },
     "/staticQuestions/4/answer": {
-      "source_en": "Moderate walking with some active sections."
+      "source_en": "Moderate walking with some active sections.",
+      "tm": "Умеренная ходьба с несколькими активными участками."
     },
     "/staticQuestions/4/question": {
-      "source_en": "Is the walking difficult?"
+      "source_en": "Is the walking difficult?",
+      "tm": "Насколько сложны пешие участки?"
     },
     "/staticQuestions/5/answer": {
-      "source_en": "Yes — comfortable for most families."
+      "source_en": "Yes — comfortable for most families.",
+      "tm": "Да — комфортно для большинства семей."
     },
     "/staticQuestions/5/question": {
-      "source_en": "Is this tour suitable for families?"
+      "source_en": "Is this tour suitable for families?",
+      "tm": "Подходит ли этот тур для семей?"
     },
     "/staticQuestions/6/answer": {
-      "source_en": "Yes for active seniors; less ideal for low-mobility travelers."
+      "source_en": "Yes for active seniors; less ideal for low-mobility travelers.",
+      "tm": "Да для активных гостей старшего возраста; хуже подходит тем, у кого ограничена подвижность."
     },
     "/staticQuestions/6/question": {
-      "source_en": "Can older adults join comfortably?"
+      "source_en": "Can older adults join comfortably?",
+      "tm": "Смогут ли комфортно участвовать гости старшего возраста?"
     },
     "/staticQuestions/7/answer": {
-      "source_en": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above."
+      "source_en": "Best fit is around age 6 and up — children comfortable with a full-day rhythm and the walking notes above.",
+      "tm": "Лучше всего подходит примерно с 6 лет — детям, которым по силам ритм полного дня и указанные выше пешие участки."
     },
     "/staticQuestions/7/question": {
-      "source_en": "What's the recommended minimum age?"
+      "source_en": "What's the recommended minimum age?",
+      "tm": "С какого возраста рекомендуется?"
     },
     "/staticQuestions/8/answer": {
-      "source_en": "Several stops are exposed; very wet weather may shorten or substitute stops."
+      "source_en": "Several stops are exposed; very wet weather may shorten or substitute stops.",
+      "tm": "Несколько остановок открыты всем ветрам; в очень дождливую погоду они могут быть сокращены или заменены."
     },
     "/staticQuestions/8/question": {
-      "source_en": "Can the tour run in rainy weather?"
+      "source_en": "Can the tour run in rainy weather?",
+      "tm": "Проходит ли тур в дождливую погоду?"
     },
     "/staticQuestions/9/answer": {
-      "source_en": "A lunch break is built into the route. Whether the meal itself is included depends on the booked rate — check the inclusions list."
+      "source_en": "A lunch break is built into the route. Whether the meal itself is included depends on the booked rate — check the inclusions list.",
+      "tm": "Обеденный перерыв встроен в маршрут. Входит ли сама еда в стоимость, зависит от выбранного тарифа — смотрите список включённого."
     },
     "/staticQuestions/9/question": {
-      "source_en": "Is lunch included?"
+      "source_en": "Is lunch included?",
+      "tm": "Включён ли обед?"
     },
     "/staticQuestions/10/answer": {
-      "source_en": "At the cruise terminal arrival hall — Jeju Port (north) or Gangjeong Port (south) depending on where your ship docks. Your guide waits at the gangway-side arrival hall with an AtoC Korea sign and your name. Exact pickup time is confirmed the evening before, based on your ship's posted arrival."
+      "source_en": "At the cruise terminal arrival hall — Jeju Port (north) or Gangjeong Port (south) depending on where your ship docks. Your guide waits at the gangway-side arrival hall with an AtoC Korea sign and your name. Exact pickup time is confirmed the evening before, based on your ship's posted arrival.",
+      "tm": "В зале прибытия круизного терминала — порт Чеджу (север) или порт Канджон (юг) в зависимости от того, где швартуется ваше судно. Гид ждёт в зале прибытия со стороны трапа с табличкой AtoC Korea и вашим именем. Точное время посадки подтверждается накануне вечером, исходя из заявленного времени прибытия судна."
     },
     "/staticQuestions/10/question": {
-      "source_en": "Where do I get picked up?"
+      "source_en": "Where do I get picked up?",
+      "tm": "Где меня забирают?"
     },
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local operator with the same port-based routing as the large-coach version but in a mini-van of max 10 — better for narrow Seongeup village lanes and smaller group dynamics."
+      "source_en": "Licensed local operator with the same port-based routing as the large-coach version but in a mini-van of max 10 — better for narrow Seongeup village lanes and smaller group dynamics.",
+      "tm": "Лицензированный местный оператор с той же привязкой маршрута к порту, что и в автобусной версии, но на минивэне максимум на 10 человек — удобнее для узких переулков деревни Сонъып и для динамики малой группы."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local operator"
+      "source_en": "Licensed local operator",
+      "tm": "Лицензированный местный оператор"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour operator with full insurance"
+      "source_en": "Authorized Korean tour operator with full insurance",
+      "tm": "Официальный корейский туроператор с полной страховкой"
     },
     "/bookingTrustItems/1/body": {
-      "source_en": "All admissions to stops on the assigned route are covered in the tour price."
+      "source_en": "All admissions to stops on the assigned route are covered in the tour price.",
+      "tm": "Все входные билеты на остановки назначенного маршрута включены в стоимость тура."
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Специалисты по маршрутам"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Маршрут, настроенный вручную, а не типовое кольцо"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Ship-return timing: return drop-off to your original terminal 60+ minutes before all-aboard."
+      "source_en": "Ship-return timing: return drop-off to your original terminal 60+ minutes before all-aboard.",
+      "tm": "Время возвращения на судно: высадка у вашего исходного терминала более чем за 60 минут до окончания посадки."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Carefully managed group size"
+      "source_en": "Carefully managed group size",
+      "tm": "Тщательно выверенный размер группы"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Подобран под маршрут"
     },
     "/seasonalVariations/0/title": {
-      "source_en": "Cruise season opens"
+      "source_en": "Cruise season opens",
+      "tm": "Открытие круизного сезона"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Весна"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Mild and clear; best visibility for cruise excursions"
+      "source_en": "Mild and clear; best visibility for cruise excursions",
+      "tm": "Мягко и ясно; лучшая видимость для круизных экскурсий"
     },
     "/seasonalVariations/1/title": {
-      "source_en": "Peak cruise calls"
+      "source_en": "Peak cruise calls",
+      "tm": "Пик круизных заходов"
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Лето"
     },
     "/seasonalVariations/1/description": {
-      "source_en": "Hot but breezy on coast; Hallasan 1100 cool refuge"
+      "source_en": "Hot but breezy on coast; Hallasan 1100 cool refuge",
+      "tm": "Жарко, но на побережье ветрено; Халласан 1100 — прохладное убежище"
     },
     "/seasonalVariations/2/title": {
-      "source_en": "Best clarity"
+      "source_en": "Best clarity",
+      "tm": "Лучшая прозрачность воздуха"
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Осень"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Sharpest visibility for both port routes"
+      "source_en": "Sharpest visibility for both port routes",
+      "tm": "Самая чёткая видимость на обоих портовых маршрутах"
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Зима"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Fewer cruise calls; Hallasan 1100 may have snow"
+      "source_en": "Fewer cruise calls; Hallasan 1100 may have snow",
+      "tm": "Меньше круизных заходов; на Халласане 1100 возможен снег"
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Сразу"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation; send ship name, port (Jeju Port or Gangjeong Port), all-aboard time."
+      "source_en": "Instant confirmation; send ship name, port (Jeju Port or Gangjeong Port), all-aboard time.",
+      "tm": "Мгновенное подтверждение; пришлите название судна, порт (Чеджу или Канджон) и время окончания посадки."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Напоминание за 12 часов"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Обновление по погоде и корректировки маршрута"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "За 12 часов"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Route confirmed (east or south) 24 hours before based on port."
+      "source_en": "Route confirmed (east or south) 24 hours before based on port.",
+      "tm": "Маршрут (восточный или южный) подтверждается за 24 часа, исходя из порта."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Финальная информация о посадке"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Точное время посадки и контакт водителя"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "Накануне вечером"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Van plate and guide contact sent the evening before."
+      "source_en": "Van plate and guide contact sent the evening before.",
+      "tm": "Номер минивэна и контакт гида отправляются накануне вечером."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Заметки по маршруту в день тура"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Утренний брифинг с учётом текущих условий"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Утром в день тура"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Guide meets your group at the cruise terminal with a name placard."
+      "source_en": "Guide meets your group at the cruise terminal with a name placard.",
+      "tm": "Гид встречает вашу группу у круизного терминала с именной табличкой."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Подсказки на каждой остановке"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Сопровождение в реальном времени на каждой локации"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Во время тура"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "On-time return drop-off; brief review request sent after."
+      "source_en": "On-time return drop-off; brief review request sent after.",
+      "tm": "Своевременная высадка при возвращении; после тура приходит короткая просьба об отзыве."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Поддержка после тура"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Обратная связь и рекомендации"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "После тура"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback survey sent; any follow-up travel questions answered same day."
+      "source_en": "Post-tour feedback survey sent; any follow-up travel questions answered same day.",
+      "tm": "После тура отправляется анкета обратной связи; на дальнейшие вопросы о поездке отвечаем в тот же день."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
     }
   },
   "glossaryTokens": {
@@ -298,5 +389,5 @@
       "⟦G0⟧": "Водопад Чхонджиён"
     }
   },
-  "tmHits": 0
+  "tmHits": 91
 }

@@ -6,6 +6,7 @@
 // thumbnail, price, rating — never model-invented) and strips the raw URL
 // text out of the reply so the widget renders cards instead of link spam.
 
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   getStaticTourProductBySlug,
   hrefStaticTourProductDetail,
@@ -80,7 +81,7 @@ export function tourCardForSlug(
   slug: string,
   locale: TourProductPageLocale,
 ): TourCardPayload | null {
-  const p = getStaticTourProductBySlug(slug, locale);
+  const p = getStaticTourProductBySlug(slug, toTourProductBaseLocale(locale));
   if (!p) return null;
   return {
     slug: p.slug,

@@ -10,7 +10,8 @@
       "source_en": "Incheon Cruise Terminal"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
@@ -20,7 +21,8 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Heritage Palace"
+      "source_en": "Heritage Palace",
+      "tm": "Kulturerbe-Palast"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧ + ⟦G1⟧",
@@ -30,7 +32,8 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Heritage Village"
+      "source_en": "Heritage Village",
+      "tm": "Historisches Dorf"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch (⟦G0⟧ / Tosokchon / BBQ)",
@@ -39,10 +42,12 @@
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "N Seoul Tower (Namsan)"
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
     },
     "/routeFlowStops/4/theme": {
       "source_en": "City View"
@@ -55,13 +60,15 @@
       ]
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Temple"
+      "source_en": "Temple",
+      "tm": "Tempel"
     },
     "/routeFlowStops/6/name": {
       "source_en": "Incheon Cruise Terminal"
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Rückfahrt"
     }
   },
   "glossaryTokens": {
@@ -80,5 +87,5 @@
       "⟦G1⟧": "Myeongdong"
     }
   },
-  "tmHits": 1
+  "tmHits": 8
 }

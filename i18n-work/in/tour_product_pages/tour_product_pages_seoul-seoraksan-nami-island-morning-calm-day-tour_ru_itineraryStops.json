@@ -22,25 +22,31 @@
       "tm": "Окно в 30 мин"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Arrive at your chosen pickup point 5 min before scheduled time (~5 min)"
+      "source_en": "Arrive at your chosen pickup point 5 min before scheduled time (~5 min)",
+      "tm": "Придите в выбранную точку сбора за 5 мин до назначенного времени (~5 мин)"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Identify the AtoC Korea coach at the marked Starbucks/NorthFace front (~5 min)"
+      "source_en": "Identify the AtoC Korea coach at the marked Starbucks/NorthFace front (~5 min)",
+      "tm": "Найдите автобус AtoC Korea у обозначенного Starbucks или NorthFace (~5 мин)"
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "Board large coach in pickup queue (~10 min)"
+      "source_en": "Board large coach in pickup queue (~10 min)",
+      "tm": "Посадка в большой автобус в очереди (~10 мин)"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Printed Korean-English itinerary card distributed at boarding"
+      "source_en": "Printed Korean-English itinerary card distributed at boarding",
+      "tm": "При посадке раздают печатную карточку маршрута на корейском и английском"
     },
     "/itineraryStops/0/whyOnRoute": {
       "source_en": "Two early pickup points cover Seoul's two major hotel/hostel clusters: Hongik University area (Mapo-gu, popular with younger travelers and short-stay guests) and ⟦G0⟧ (Jung-gu, the legacy tourist district near the Lotte/Shilla/Westin hotels). Departure at 06:00 from Hongik or 06:30 from ⟦G0⟧ is the earliest practical pickup that still respects Seoul subway operating hours (Line 2 starts ~05:30) — and is the only way to arrive at Seoraksan before 10:00 for a meaningful 3-hour park visit. Hongik first, ⟦G0⟧ second is the natural northeast-bound route via Olympic Expressway → Seoul-Yangyang Expressway.",
+      "tm": "Две ранние точки сбора покрывают два главных гостиничных района Сеула: окрестности Hongik University (Мапхо-гу, популярны у молодых путешественников и тех, кто приезжает ненадолго) и ⟦G0⟧ (Чун-гу, исторический туристический квартал рядом с отелями Lotte, Shilla и Westin). Отправление в 06:00 от Hongik или в 06:30 от ⟦G0⟧ — самый ранний реальный сбор, который ещё укладывается в часы работы сеульского метро (линия 2 открывается около 05:30), и единственный способ приехать в Сораксан до 10:00, чтобы осмотр парка за 3 часа имел смысл. Сначала Hongik, потом ⟦G0⟧ — естественный порядок на пути к северо-востоку через Олимпийскую автомагистраль и далее Сеул–Янъян.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
     },
     "/itineraryStops/0/description": {
       "source_en": "Pickup is at one of two Seoul meeting points: **(1) Starbucks Hongik University Station Exit 8 (Mapo-gu)** at 06:00 — the Starbucks storefront is immediately at the top of Exit 8 with seating until 22:00 the night before if you need shelter from cold weather; OR **(2) ⟦G0⟧ Station Exit 2 (Jung-gu)** at 06:30 — the NorthFace flagship store is the visible landmark adjacent to the exit. \n\nBoth pickup points share the same large coach, and Hongik passengers board first. Please be at your chosen pickup point **5 minutes before scheduled time** for the on-time departure — the 13-hour itinerary depends on arriving at Seoraksan before 10:00. Driver-guide distributes a printed Korean-English itinerary card at boarding and confirms the day's running order, restroom stops, and the typical 19:00 return time. \n\nFrom ⟦G0⟧ (final pickup point), the coach takes the Olympic Expressway east, then transitions to the Seoul-Yangyang Expressway for the ~2.5-hour drive to Seoraksan.",
+      "tm": "Сбор проходит в одной из двух точек в Сеуле: **(1) Starbucks у выхода 8 станции Hongik University (Мапхо-гу)** в 06:00 — витрина Starbucks находится сразу наверху выхода 8, и накануне там можно посидеть до 22:00, если нужно укрыться от холода; ИЛИ **(2) станция ⟦G0⟧, выход 2 (Чун-гу)** в 06:30 — заметный ориентир рядом с выходом — флагманский магазин NorthFace. \n\nОбе точки обслуживает один и тот же большой автобус, и пассажиры от Hongik садятся первыми. Пожалуйста, будьте в выбранной точке **за 5 минут до назначенного времени**, чтобы выехать вовремя: маршрут на 13 часов рассчитан на прибытие в Сораксан до 10:00. При посадке гид раздаёт печатную карточку маршрута на корейском и английском и подтверждает порядок дня, остановки у уборных и обычное время возвращения — около 19:00. \n\nОт ⟦G0⟧ (последней точки сбора) автобус идёт на восток по Олимпийской автомагистрали, затем переходит на автомагистраль Сеул–Янъян — примерно 2,5 часа до Сораксана.",
       "glossary": [
         "⟦G0⟧ = Мёндон"
       ]
@@ -57,7 +63,8 @@
       "tm": "Национальный парк (горы)"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "180 min (3 hours)"
+      "source_en": "180 min (3 hours)",
+      "tm": "180 мин (3 часа)"
     },
     "/itineraryStops/1/timeUsed/0": {
       "source_en": "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
@@ -68,7 +75,8 @@
       "tm": "Прогулка к Тхонъильдэбуль и храму Синхынса (~15–20 мин от главной парковки)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)"
+      "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)",
+      "tm": "По желанию — канатная дорога до Квонгымсона (~30–45 мин с учётом очереди) ЛИБО прогулка к Писондэ (~90 мин)"
     },
     "/itineraryStops/1/timeUsed/3": {
       "source_en": "Photo time + reassembly at vehicle (~15 min)",
@@ -115,14 +123,16 @@
       "tm": "**Ключевое место охраны амурского горала**: устойчивая популяция около 260 особей (уязвимый вид в Красном списке МСОП) — в парке выделено 10 зон особой охраны общей площадью 39 км² (10 % всей территории парка) для видов под угрозой"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
+      "source_en": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places.",
+      "tm": "Билеты на канатную дорогу НЕЛЬЗЯ забронировать заранее: в октябре очередь может превышать 1–2 часа. Если небо в тумане, от канатной дороги лучше отказаться совсем (вида не будет). Лучший расклад на 3 часа: Тхонъильдэбуль + Синхынса + прогулка вдоль ручья к Писондэ. Наденьте прочную закрытую обувь — дорожки местами каменистые и влажные."
     },
     "/itineraryStops/1/smartNotes/facilities": {
       "source_en": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
       "tm": "У входа Сорактон есть центр для посетителей, кафе (Dahyang Cafe), рестораны и сувенирные лавки. Бесплатный прокат снаряжения для походов с 9:00 до 14:00 (вернуть до 16:00). Рядом со входом — статуя гималайского медведя, местный талисман."
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's first UNESCO Biosphere Reserve (1982) — combined with the Korea's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Placing Seoraksan first uses the freshest morning energy on the day's most physically active stop, with Nami and Morning Calm afterward as flatter walking-and-photography stops. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day trip earn its 5-hour round-trip drive cost for first-time-Korea travelers seeking a single mountain anchor."
+      "source_en": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's first UNESCO Biosphere Reserve (1982) — combined with the Korea's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Placing Seoraksan first uses the freshest morning energy on the day's most physically active stop, with Nami and Morning Calm afterward as flatter walking-and-photography stops. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day trip earn its 5-hour round-trip drive cost for first-time-Korea travelers seeking a single mountain anchor.",
+      "tm": "2,5 часа пути в каждую сторону оправданы только главным пунктом: это 5-й национальный парк Кореи (1970) и первый в стране биосферный заповедник ЮНЕСКО (1982), а вместе с ним — крупнейший сидящий бронзовый Будда Кореи и старейший дзен-буддийский храм в мире, и всё это в 15 минутах ходьбы от входа Согонвон. Сораксан идёт первым, чтобы самая физически активная остановка дня пришлась на свежие утренние силы, а Нами и Сад утреннего спокойствия следуют за ним как более ровные остановки для прогулок и фотографий. Сочетание Зелёного списка МСОП, статуса биосферного заповедника ЮНЕСКО и предварительного списка Всемирного наследия делает Сораксан **самым признанным парком природного наследия Кореи** — а это как раз то, что оправдывает 5 часов дороги туда и обратно для тех, кто приехал в Корею впервые и ищет одну большую горную опору."
     },
     "/itineraryStops/1/convenience/parking": {
       "source_en": "Available at Sogongwon main entrance (paid)",
@@ -147,5 +157,5 @@
       "⟦G0⟧": "Национальный парк Сораксан"
     }
   },
-  "tmHits": 21
+  "tmHits": 31
 }

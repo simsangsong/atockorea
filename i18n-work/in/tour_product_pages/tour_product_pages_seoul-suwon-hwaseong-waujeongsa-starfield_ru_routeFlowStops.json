@@ -7,10 +7,12 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Hwaseong"
+      "source_en": "Hwaseong",
+      "tm": "Хвасон"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "UNESCO Past"
+      "source_en": "UNESCO Past",
+      "tm": "Прошлое из списка ЮНЕСКО"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
@@ -24,7 +26,8 @@
       "tm": "Исторический дворец"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Starfield Library"
+      "source_en": "Starfield Library",
+      "tm": "Библиотека Starfield"
     },
     "/routeFlowStops/2/theme": {
       "source_en": "Modern Korea",
@@ -39,10 +42,12 @@
       "tm": "Пауза"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Waujeongsa"
+      "source_en": "Waujeongsa",
+      "tm": "Вауджонса"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Spiritual Close"
+      "source_en": "Spiritual Close",
+      "tm": "Духовный финал"
     }
   },
   "glossaryTokens": {
@@ -50,5 +55,5 @@
       "⟦G0⟧": "Дворец Хвасон Хэнгун"
     }
   },
-  "tmHits": 5
+  "tmHits": 10
 }

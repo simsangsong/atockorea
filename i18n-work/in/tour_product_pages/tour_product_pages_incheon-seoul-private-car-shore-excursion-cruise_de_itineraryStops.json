@@ -10,10 +10,12 @@
       "source_en": "Cruise terminal gangway pickup"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itineraryStops/0/timeUsed/0": {
       "source_en": "Disembark cruise ship and clear Korean immigration (~30 min)"
@@ -97,7 +99,8 @@
       "source_en": "Joseon Royal Palace"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
       "source_en": "Driver-guide drop-off at Gwanghwamun Square (~5 min)"
@@ -153,5 +156,5 @@
       "⟦G0⟧": "Gyeongbokgung-Palast"
     }
   },
-  "tmHits": 0
+  "tmHits": 3
 }

@@ -7,13 +7,16 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Gyeongju Ancient Capital Day Tour from Busan | AtoC Korea"
+      "source_en": "Gyeongju Ancient Capital Day Tour from Busan | AtoC Korea",
+      "tm": "Дневной тур в древнюю столицу Кёнджу из Пусана | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "From Busan: Gyeongju Ancient Capital Day Tour | AtoC Korea"
+      "source_en": "From Busan: Gyeongju Ancient Capital Day Tour | AtoC Korea",
+      "tm": "Из Пусана: дневной тур в древнюю столицу Кёнджу | AtoC Korea"
     },
     "/seo/description": {
       "source_en": "A small-group mini-van day tour from Busan to Gyeongju. The day opens on the bamboo paths of ⟦G1⟧, takes UNESCO World Heritage ⟦G4⟧ at an unhurried pace, and then spends the afternoon on two blocks covered entirely on foot — ⟦G2⟧ and the Choi Family House across to ⟦G3⟧, and the Daereungwon royal tombs across to the Hwangnidan-gil cafe street. It finishes at ⟦G0⟧ (Cheonmachong Gold Crown, Emille Bell), which in winter (Nov–Feb) is replaced at the same hour by the Donggung & Wolji night view. Pickup and drop-off are Busan Station Exit 4, Seomyeon Station Exit 4 and Haeundae Station Exit 5 — all subway stations.",
+      "tm": "Дневной тур в малой группе на минивэне из Пусана в Кёнджу. День начинается на бамбуковых тропах ⟦G1⟧, продолжается неспешным осмотром ⟦G4⟧ — объекта Всемирного наследия ЮНЕСКО, — а вторая половина дня проходит в двух кварталах, которые обходят целиком пешком: ⟦G2⟧ и Дом семьи Чхве, а оттуда к ⟦G3⟧, и королевские курганы Тэрынвон, а оттуда на улицу кафе Хваннидан-гиль. Финал — ⟦G0⟧ (золотая корона из Чхонмачхона, колокол Эмилле), который зимой (ноябрь–февраль) в тот же час заменяется ночным видом Тонгуна и Вольджи. Посадка и высадка — станция Пусан, выход 4, станция Сомён, выход 4, и станция Хэундэ, выход 5; все они станции метро.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу",
         "⟦G1⟧ = Бамбуковый лес Ахопсан",
@@ -24,6 +27,7 @@
     },
     "/seo/metaDescription": {
       "source_en": "Small-group day tour from Busan to Gyeongju: ⟦G1⟧ · Bulguksa (UNESCO) · lunch · ⟦G2⟧ + Choi Family House + Woljeonggyo · Daereungwon + Hwangnidan-gil · ⟦G0⟧ (Donggung & Wolji night view in winter). Pickup at Busan, Seomyeon and Haeundae subway exits.",
+      "tm": "Дневной тур в малой группе из Пусана в Кёнджу: ⟦G1⟧ · Пульгукса (ЮНЕСКО) · обед · ⟦G2⟧ + Дом семьи Чхве + Вольджонгё · Тэрынвон + Хваннидан-гиль · ⟦G0⟧ (зимой — ночной вид Тонгуна и Вольджи). Посадка у выходов метро в Пусане, Сомёне и Хэундэ.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу",
         "⟦G1⟧ = Бамбуковый лес Ахопсан",
@@ -31,127 +35,168 @@
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Gyeongju ancient capital tour"
+      "source_en": "Gyeongju ancient capital tour",
+      "tm": "тур в древнюю столицу Кёнджу"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Gyeongju from Busan day trip"
+      "source_en": "Gyeongju from Busan day trip",
+      "tm": "однодневная поездка в Кёнджу из Пусана"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Bulguksa from Busan"
+      "source_en": "Bulguksa from Busan",
+      "tm": "Пульгукса из Пусана"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Silla Kingdom heritage tour"
+      "source_en": "Silla Kingdom heritage tour",
+      "tm": "тур по наследию королевства Силла"
     },
     "/hero/meta/stops": {
-      "source_en": "8 stops"
+      "source_en": "8 stops",
+      "tm": "8 остановок"
     },
     "/hero/meta/region": {
-      "source_en": "Gyeongju (from Busan)"
+      "source_en": "Gyeongju (from Busan)",
+      "tm": "Кёнджу (из Пусана)"
     },
     "/hero/meta/duration": {
-      "source_en": "≈ 11.5 hours (08:10 first pickup, ≈ 19:50 last drop)"
+      "source_en": "≈ 11.5 hours (08:10 first pickup, ≈ 19:50 last drop)",
+      "tm": "≈ 11,5 часа (первая посадка 08:10, последняя высадка ≈ 19:50)"
     },
     "/hero/pills/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/hero/pills/1": {
-      "source_en": "Gyeongju"
+      "source_en": "Gyeongju",
+      "tm": "Кёнджу"
     },
     "/hero/pills/2": {
-      "source_en": "Ancient capital"
+      "source_en": "Ancient capital",
+      "tm": "Древняя столица"
     },
     "/hero/tagline": {
-      "source_en": "Choi House to Woljeonggyo, Daereungwon to Hwangnidan-gil — the afternoon is walked, not driven"
+      "source_en": "Choi House to Woljeonggyo, Daereungwon to Hwangnidan-gil — the afternoon is walked, not driven",
+      "tm": "От Дома семьи Чхве до Вольджонгё, от Тэрынвона до Хваннидан-гиля — вторую половину дня проходят пешком, а не проезжают"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Высокий"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Насыщенность пейзажами"
     },
     "/glanceItems/1/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Хорошая"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Сложность пеших участков"
     },
     "/glanceItems/2/value": {
-      "source_en": "Fairly High"
+      "source_en": "Fairly High",
+      "tm": "Довольно высокая"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Средняя"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
     },
     "/glanceItems/4/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Темп"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Сбалансированный"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Обзор"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Детали"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Отзывы"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Gyeongju"
+      "source_en": "Gyeongju",
+      "tm": "Кёнджу"
     },
     "/catalog_card/tags/2": {
-      "source_en": "From Busan"
+      "source_en": "From Busan",
+      "tm": "Из Пусана"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Silla Kingdom"
+      "source_en": "Silla Kingdom",
+      "tm": "Королевство Силла"
     },
     "/catalog_card/tags/4": {
-      "source_en": "Ancient capital"
+      "source_en": "Ancient capital",
+      "tm": "Древняя столица"
     },
     "/catalog_card/title": {
-      "source_en": "Busan to Gyeongju: Ancient Capital"
+      "source_en": "Busan to Gyeongju: Ancient Capital",
+      "tm": "Из Пусана в Кёнджу: древняя столица"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Малая группа"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Calmer pace"
+      "source_en": "Calmer pace",
+      "tm": "Спокойный темп"
     },
     "/catalog_card/badges/2": {
-      "source_en": "From Busan"
+      "source_en": "From Busan",
+      "tm": "Из Пусана"
     },
     "/catalog_card/badges/3": {
-      "source_en": "Winter night view"
+      "source_en": "Winter night view",
+      "tm": "Зимний ночной вид"
     },
     "/catalog_card/region": {
-      "source_en": "Gyeongju (from Busan)"
+      "source_en": "Gyeongju (from Busan)",
+      "tm": "Кёнджу (из Пусана)"
     },
     "/catalog_card/duration": {
-      "source_en": "11.5 hours"
+      "source_en": "11.5 hours",
+      "tm": "11,5 часа"
     },
     "/catalog_card/subtitle": {
       "source_en": "Small-group mini-van · English-speaking guide — ⟦G1⟧, Bulguksa (UNESCO), ⟦G2⟧ + Choi Family House + Woljeonggyo, Daereungwon + Hwangnidan-gil, and ⟦G0⟧ (Donggung & Wolji night view in winter), all in one day.",
+      "tm": "Минивэн для малой группы · англоговорящий гид — ⟦G1⟧, Пульгукса (ЮНЕСКО), ⟦G2⟧ + Дом семьи Чхве + Вольджонгё, Тэрынвон + Хваннидан-гиль и ⟦G0⟧ (зимой — ночной вид Тонгуна и Вольджи), всё за один день.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу",
         "⟦G1⟧ = Бамбуковый лес Ахопсан",
@@ -159,50 +204,63 @@
       ]
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$39 per person (was $50, 22% off)"
+      "source_en": "From US$39 per person (was $50, 22% off)",
+      "tm": "От US$39 с человека (было $50, скидка 22 %)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group Gyeongju day tour leaving from three Busan subway stations. The afternoon is walked with the van parked — Choi Family House to Woljeonggyo, Daereungwon to Hwangnidan-gil. It ends at ⟦G0⟧, or at the Donggung & Wolji night view in winter.",
+      "tm": "Дневной тур в Кёнджу в малой группе с отправлением от трёх станций метро в Пусане. Вторую половину дня проходят пешком, оставив минивэн на парковке: от Дома семьи Чхве до Вольджонгё, от Тэрынвона до Хваннидан-гиля. Финал — ⟦G0⟧, а зимой — ночной вид Тонгуна и Вольджи.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу"
       ]
     },
     "/headlineLine1": {
-      "source_en": "Busan to Gyeongju"
+      "source_en": "Busan to Gyeongju",
+      "tm": "Из Пусана в Кёнджу"
     },
     "/headlineLine2": {
-      "source_en": "Ancient Capital"
+      "source_en": "Ancient Capital",
+      "tm": "древняя столица"
     },
     "/pickup_dropoff/notes/0": {
       "source_en": "All three pickup and drop-off points are subway station exits — Busan Station Exit 4 (Line 1), Seomyeon Station Exit 4 (Lines 1 & 2), Haeundae Station Exit 5 (Line 2). At Busan Station we meet at the subway exit in front of the building, NOT inside the KTX railway terminal. Choose the exit closest to your hotel when you book. The tour runs year-round; in cherry blossom season (mid-March to mid-April) ⟦G1⟧ is replaced by Haeundae Dalmaji Hill, and in winter (Nov–Feb) the last stop changes from ⟦G0⟧ to the Donggung & Wolji night view.",
+      "tm": "Все три точки посадки и высадки — выходы станций метро: станция Пусан, выход 4 (линия 1), станция Сомён, выход 4 (линии 1 и 2), станция Хэундэ, выход 5 (линия 2). На станции Пусан мы встречаемся у выхода из метро перед зданием, а НЕ внутри железнодорожного терминала KTX. При бронировании выберите выход, ближайший к вашему отелю. Тур работает круглый год; в сезон цветения сакуры (с середины марта до середины апреля) ⟦G1⟧ заменяется холмом Тальмаджи в Хэундэ, а зимой (ноябрь–февраль) последняя остановка меняется с ⟦G0⟧ на ночной вид Тонгуна и Вольджи.",
       "glossary": [
         "⟦G0⟧ = Национальный музей Кёнджу",
         "⟦G1⟧ = Бамбуковый лес Ахопсан"
       ]
     },
     "/pickup_dropoff/return/0/name": {
-      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)",
+      "tm": "Станция Хэундэ, выход 5 (линия метро 2)"
     },
     "/pickup_dropoff/return/1/name": {
-      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)",
+      "tm": "Станция Сомён, выход 4 (линии метро 1 и 2)"
     },
     "/pickup_dropoff/return/2/name": {
-      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)",
+      "tm": "Станция Пусан, выход 4 (линия метро 1 — НЕ железнодорожный вокзал KTX)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)"
+      "source_en": "Busan Station Exit 4 (Subway Line 1 — NOT the KTX railway station)",
+      "tm": "Станция Пусан, выход 4 (линия метро 1 — НЕ железнодорожный вокзал KTX)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)"
+      "source_en": "Seomyeon Station Exit 4 (Subway Lines 1 & 2)",
+      "tm": "Станция Сомён, выход 4 (линии метро 1 и 2)"
     },
     "/pickup_dropoff/departure/2/name": {
-      "source_en": "Haeundae Station Exit 5 (Subway Line 2)"
+      "source_en": "Haeundae Station Exit 5 (Subway Line 2)",
+      "tm": "Станция Хэундэ, выход 5 (линия метро 2)"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "человек"
     }
   },
   "glossaryTokens": {
@@ -231,5 +289,5 @@
       "⟦G1⟧": "Бамбуковый лес Ахопсан"
     }
   },
-  "tmHits": 0
+  "tmHits": 58
 }

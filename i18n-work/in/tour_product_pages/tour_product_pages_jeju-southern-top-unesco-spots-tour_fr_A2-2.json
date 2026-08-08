@@ -7,122 +7,156 @@
   "tier": "A2",
   "segments": {
     "/seasonalVariations/0/season": {
-      "source_en": "Spring"
+      "source_en": "Spring",
+      "tm": "Printemps"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Cherry blossoms and canola flowers bloom along the Seogwipo coast and across the route, and it is the best season for the ⟦G0⟧ walk.",
+      "tm": "Les cerisiers en fleurs et les fleurs de colza s'épanouissent le long de la côte de Seogwipo et tout au long de l'itinéraire ; c'est la meilleure saison pour la marche du ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer"
+      "source_en": "Summer",
+      "tm": "Été"
     },
     "/seasonalVariations/1/description": {
       "source_en": "The ⟦G0⟧ and Oedolgae coast are popular summer retreats thanks to the cool sea breeze. Afternoon showers are common, so bring a rain jacket.",
+      "tm": "La ⟦G0⟧ et la côte d'Oedolgae sont des refuges estivaux prisés grâce à la brise marine rafraîchissante. Les averses de l'après-midi sont fréquentes, prévoyez donc un imperméable.",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn"
+      "source_en": "Autumn",
+      "tm": "Automne"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Clear and crisp — the best season for photography. The Oedolgae coast and the Hallasan views are at their sharpest."
+      "source_en": "Clear and crisp — the best season for photography. The Oedolgae coast and the Hallasan views are at their sharpest.",
+      "tm": "Un temps clair et vif — la meilleure saison pour la photographie. La côte d'Oedolgae et les vues sur le Hallasan sont d'une netteté maximale."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter"
+      "source_en": "Winter",
+      "tm": "Hiver"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "The coast stays mild, but snow can fall on Hallasan's high slopes. When it snows, Route 1100 and Eoseungsaengak may be closed."
+      "source_en": "The coast stays mild, but snow can fall on Hallasan's high slopes. When it snows, Route 1100 and Eoseungsaengak may be closed.",
+      "tm": "La côte reste douce, mais la neige peut tomber sur les hauteurs du Hallasan. En cas de neige, la Route 1100 et Eoseungsaengak peuvent être fermés."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Confirmation instantanée"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation sent with an itinerary summary"
+      "source_en": "Booking confirmation sent with an itinerary summary",
+      "tm": "Confirmation de réservation envoyée avec un résumé de l'itinéraire"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Immédiatement"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation including Jeju City hotel pickup details (free within the city; +₩70,000 outside)."
+      "source_en": "Instant confirmation including Jeju City hotel pickup details (free within the city; +₩70,000 outside).",
+      "tm": "Confirmation instantanée comprenant les détails de la prise en charge à l'hôtel à Jeju City (gratuite dans la ville ; +₩70 000 en dehors)."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Rappel 12 heures avant"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Point météo et éventuels ajustements d'itinéraire"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 heures avant"
     },
     "/bookingSupportSteps/1/description": {
       "source_en": "Advance note on ⟦G0⟧ / Oedolgae coastal conditions and the Hallasan Route 1100 status.",
+      "tm": "Information anticipée sur les conditions côtières de la ⟦G0⟧ / d'Oedolgae et sur l'état de la Route 1100 du Hallasan.",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Informations finales de prise en charge"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact confirmed"
+      "source_en": "Exact pickup time and driver contact confirmed",
+      "tm": "Heure exacte de prise en charge et contact du chauffeur confirmés"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "La veille au soir"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Final pickup time confirmed the evening before."
+      "source_en": "Final pickup time confirmed the evening before.",
+      "tm": "Heure de prise en charge définitive confirmée la veille au soir."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Notes d'itinéraire du jour"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Briefing du matin selon les conditions du moment"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Le matin de la visite"
     },
     "/bookingSupportSteps/3/description": {
       "source_en": "Morning weather note and an update on the ⟦G0⟧ / Route 1100 status.",
+      "tm": "Note météo matinale et mise à jour sur l'état du ⟦G0⟧ / de la Route 1100.",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Conseils arrêt par arrêt"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Accompagnement en temps réel à chaque site"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Pendant la visite"
     },
     "/bookingSupportSteps/4/description": {
       "source_en": "The guide explains the ⟦G1⟧ 'Seobulgwacha' place-name legend, the formation of Oedolgae and its 'Dae Jang Geum' filming, East Asia's largest ⟦G0⟧, the 1979 founding of Amorepacific's O'sulloc, and Hallasan's shield-volcano character.",
+      "tm": "Le guide explique la légende du toponyme « Seobulgwacha » de la ⟦G1⟧, la formation d'Oedolgae et son tournage de « Dae Jang Geum », le plus grand ⟦G0⟧ d'Asie de l'Est, la fondation en 1979 d'O'sulloc par Amorepacific, ainsi que le caractère de volcan bouclier du Hallasan.",
       "glossary": [
         "⟦G0⟧ = Temple Yakcheonsa",
         "⟦G1⟧ = Cascade de Jeongbang"
       ]
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Assistance après la visite"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Suivi et recommandations"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Après la visite"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "A tour satisfaction survey request is sent after drop-off."
+      "source_en": "A tour satisfaction survey request is sent after drop-off.",
+      "tm": "Une demande de participation à une enquête de satisfaction est envoyée après la dépose."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Voir les notes saisonnières"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Voir les notes saisonnières"
     }
   },
   "glossaryTokens": {
@@ -143,5 +177,5 @@
       "⟦G1⟧": "Cascade de Jeongbang"
     }
   },
-  "tmHits": 0
+  "tmHits": 34
 }

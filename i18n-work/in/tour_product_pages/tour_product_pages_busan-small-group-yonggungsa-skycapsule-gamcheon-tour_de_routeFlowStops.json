@@ -1,0 +1,91 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:de:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "de",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Pickup (your downtown Busan hotel)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure",
+      "tm": "Abfahrt"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Seaside temple",
+      "tm": "Tempel am Meer"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Aussichtsplattform Cheongsapo Daritdol (gläserner Skywalk)"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Glass Skywalk"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule im Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Sky Capsule"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "Lunch (local Busan restaurant)",
+      "tm": "Mittagessen (lokales Restaurant in Busan)"
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "Haeundae Beach",
+      "tm": "Strand von Haeundae"
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Beach",
+      "tm": "Strand"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Kulturdorf Gamcheon"
+      ]
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Art village"
+    },
+    "/routeFlowStops/7/name": {
+      "source_en": "Dakbatgol Mural Village & Wish-Stairs Monorail",
+      "tm": "Wandbilddorf Dakbatgol & Monorail an der Wunschtreppe"
+    },
+    "/routeFlowStops/7/theme": {
+      "source_en": "Mural Village"
+    },
+    "/routeFlowStops/8/name": {
+      "source_en": "Drop-off (4 points across central Busan)"
+    },
+    "/routeFlowStops/8/theme": {
+      "source_en": "Return",
+      "tm": "Rückfahrt"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routeFlowStops/6/name": {
+      "⟦G0⟧": "Kulturdorf Gamcheon"
+    }
+  },
+  "tmHits": 12
+}

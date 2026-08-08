@@ -6,213 +6,277 @@
   "chunk": "itineraryStops-2",
   "tier": "B",
   "segments": {
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (Asiens einziger direkt ins Meer stürzender Wasserfall)",
+      "glossary": [
+        "⟦G0⟧ = Jeongbang-Wasserfall"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae & Küstenwanderung auf dem Olle-Weg 7"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite",
+      "tm": "Küstenfelsnadel + Olle-Weg — Geosite des Jeju Global Geopark"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "50 min",
+      "tm": "50 Min."
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "Parking + entry onto the Olle trail — ~5 min",
+      "tm": "Parken + Einstieg auf den Olle-Weg — ~5 Min."
+    },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "Olle Route 7 coastal path — ~25 min"
+      "source_en": "Olle Route 7 coastal path — ~25 min",
+      "tm": "Küstenpfad des Olle-Weges 7 — ca. 25 Min."
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Oedolgae viewpoint + photography — ~15 min"
+      "source_en": "Oedolgae viewpoint + photography — ~15 min",
+      "tm": "Aussichtspunkt Oedolgae + Fotografieren — ca. 15 Min."
     },
     "/itineraryStops/2/timeUsed/3": {
-      "source_en": "Return to coach — ~5 min"
+      "source_en": "Return to coach — ~5 min",
+      "tm": "Rückkehr zum Bus — ca. 5 Min."
     },
     "/itineraryStops/2/highlights/0": {
-      "source_en": "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')"
+      "source_en": "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')",
+      "tm": "**Oedolgae** — eine rund 20 m hohe Felsnadel an der Küste, vor etwa 1,5 Millionen Jahren entstanden („General Rock\")"
     },
     "/itineraryStops/2/highlights/1": {
-      "source_en": "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**"
+      "source_en": "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**",
+      "tm": "Küstenlandschaft von Seogwipo, bekannt als **Drehort von „Dae Jang Geum\"**"
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "**Jeju Global Geopark (UNESCO Global Geopark) geosite**"
+      "source_en": "**Jeju Global Geopark (UNESCO Global Geopark) geosite**",
+      "tm": "**Geosite des Jeju Global Geopark (UNESCO Global Geopark)**"
     },
     "/itineraryStops/2/highlights/3": {
-      "source_en": "On **Olle Route 7** — the much-loved 'Subong-ro' coastal section"
+      "source_en": "On **Olle Route 7** — the much-loved 'Subong-ro' coastal section",
+      "tm": "Am **Olle-Weg 7** — der beliebte Küstenabschnitt „Subong-ro\""
     },
     "/itineraryStops/2/highlights/4": {
-      "source_en": "Views of **Oedolgae + Seopseom/Munseom + the southern sea** from the pine-forest path"
+      "source_en": "Views of **Oedolgae + Seopseom/Munseom + the southern sea** from the pine-forest path",
+      "tm": "Blick auf **Oedolgae + Seopseom/Munseom + das südliche Meer** vom Kiefernwaldpfad aus"
     },
     "/itineraryStops/2/highlights/5": {
       "source_en": "**Free admission**, open year-round — about a 15-min drive from ⟦G0⟧",
+      "tm": "**Freier Eintritt**, ganzjährig geöffnet — etwa 15 Min. Fahrt von ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/2/highlights/6": {
-      "source_en": "Path mostly flat, with some natural-rock sections — comfortable shoes recommended"
+      "source_en": "Path mostly flat, with some natural-rock sections — comfortable shoes recommended",
+      "tm": "Der Weg ist überwiegend eben, mit einigen Naturfelsabschnitten — bequeme Schuhe empfohlen"
     },
     "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "Windy days are common, so bring a layer; mind slipping on the natural-rock sections"
+      "source_en": "Windy days are common, so bring a layer; mind slipping on the natural-rock sections",
+      "tm": "Windige Tage sind häufig, nehmen Sie daher eine zusätzliche Schicht mit; achten Sie auf Rutschgefahr auf den Naturfelsabschnitten"
     },
     "/itineraryStops/2/smartNotes/facilities": {
-      "source_en": "Restrooms at the entrance parking lot; few facilities along the coastal path"
+      "source_en": "Restrooms at the entrance parking lot; few facilities along the coastal path",
+      "tm": "Toiletten am Parkplatz beim Eingang; entlang des Küstenpfades gibt es kaum Einrichtungen"
     },
     "/itineraryStops/2/whyOnRoute": {
       "source_en": "**The second Seogwipo-coast highlight and an Olle Trail experience.** A 15-minute drive from ⟦G0⟧ makes the routing natural, and the scenery shifts from the vertical view of the falls to the wide-open coastal panorama of Oedolgae. The short Olle Route 7 walk lets you taste the essence of 'Jeju on foot' without overexertion.",
+      "tm": "**Das zweite Highlight der Küste von Seogwipo und ein Erlebnis auf dem Olle-Trail.** Die 15-minütige Fahrt von ⟦G0⟧ macht die Routenführung natürlich, und die Szenerie wechselt vom senkrechten Blick auf den Wasserfall zum weiten Küstenpanorama von Oedolgae. Der kurze Spaziergang auf dem Olle-Weg 7 lässt Sie die Essenz von „Jeju zu Fuß\" kosten, ohne sich zu überanstrengen.",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "Available at the Oedolgae public parking lot"
+      "source_en": "Available at the Oedolgae public parking lot",
+      "tm": "Am öffentlichen Parkplatz Oedolgae vorhanden"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "Available at the Oedolgae parking area"
+      "source_en": "Available at the Oedolgae parking area",
+      "tm": "Am Parkplatzbereich Oedolgae vorhanden"
     },
     "/itineraryStops/2/description": {
-      "source_en": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections."
+      "source_en": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections.",
+      "tm": "**Oedolgae (외돌개) ist eine rund 20 m hohe Felsnadel an der Küste, die vor etwa 1,5 Millionen Jahren durch einen Vulkanausbruch entstand** und allein im offenen Meer steht — daher der Name „oe (allein) dol (Fels) gae\". Auch „General Rock\" oder „Großmutterfels\" genannt, ist sie weithin bekannt als **Drehort des K-Dramas „Dae Jang Geum\"**. Oedolgae und die geschichteten Meeresklippen von Seogwipo gehören zu den **offiziellen Geosites des Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae liegt am **Jeju Olle-Weg 7** — einem rund 17,6 km langen Küsten-Olle, der vom Jeju Olle Travelers Center über den Hafen Beophwan bis nach Wolpyeong führt, wobei der beliebte Abschnitt „Subong-ro\" nahe an Oedolgae vorbeiführt. \n\nAn dieser Station genießen Sie den Aussichtspunkt Oedolgae und **gehen ein kurzes Stück des Küstenpfades des Olle-Weges 7.** Der Pfad durch den Kiefernwald bietet Blick auf Oedolgae, Seopseom und Munseom sowie das endlose südliche Meer und eröffnet ein weites Küstenpanorama, das sich deutlich von der Wasserfalllandschaft in Jeongbang unterscheidet. **Freier Eintritt**; der Weg ist überwiegend eben, mit einigen Naturfelsabschnitten."
     },
     "/itineraryStops/2/visitBasics/hours": {
-      "source_en": "Open at all times (coastal path)"
+      "source_en": "Open at all times (coastal path)",
+      "tm": "Jederzeit zugänglich (Küstenpfad)"
     },
     "/itineraryStops/2/visitBasics/closed": {
-      "source_en": "Open year-round (some sections may close in strong wind or high swell)"
+      "source_en": "Open year-round (some sections may close in strong wind or high swell)",
+      "tm": "Ganzjährig geöffnet (einzelne Abschnitte können bei starkem Wind oder hohem Seegang gesperrt sein)"
     },
     "/itineraryStops/2/visitBasics/walking": {
-      "source_en": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections"
+      "source_en": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections",
+      "tm": "Leicht bis mittel — Küstenpfad überwiegend eben, mit einigen Naturfels- und Treppenabschnitten"
     },
     "/itineraryStops/2/visitBasics/admission": {
       "source_en": "Free",
       "tm": "Kostenlos"
     },
+    "/itineraryStops/2/galleryItems/0/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1"
+    },
+    "/itineraryStops/2/galleryItems/0/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 1"
+    },
+    "/itineraryStops/2/galleryItems/0/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae & Küstenwanderung auf dem Olle-Weg 7"
+    },
+    "/itineraryStops/2/galleryItems/1/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2"
+    },
+    "/itineraryStops/2/galleryItems/1/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 2"
+    },
+    "/itineraryStops/2/galleryItems/1/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae & Küstenwanderung auf dem Olle-Weg 7"
+    },
+    "/itineraryStops/2/galleryItems/2/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3"
+    },
+    "/itineraryStops/2/galleryItems/2/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 3"
+    },
+    "/itineraryStops/2/galleryItems/2/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae & Küstenwanderung auf dem Olle-Weg 7"
+    },
+    "/itineraryStops/2/galleryItems/3/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4"
+    },
+    "/itineraryStops/2/galleryItems/3/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 4"
+    },
+    "/itineraryStops/2/galleryItems/3/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae & Küstenwanderung auf dem Olle-Weg 7"
+    },
     "/itineraryStops/3/name": {
       "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (größter Tempel Ostasiens)",
       "glossary": [
         "⟦G0⟧ = Yakcheonsa-Tempel"
       ]
     },
     "/itineraryStops/3/category": {
-      "source_en": "Temple — East Asia's largest Daejeokgwangjeon hall"
+      "source_en": "Temple — East Asia's largest Daejeokgwangjeon hall",
+      "tm": "Tempel — größte Daejeokgwangjeon-Halle Ostasiens"
     },
     "/itineraryStops/3/duration": {
       "source_en": "40 min",
       "tm": "40 Min."
     },
     "/itineraryStops/3/timeUsed/0": {
-      "source_en": "Parking + entry through the Iljumun gate — ~5 min"
+      "source_en": "Parking + entry through the Iljumun gate — ~5 min",
+      "tm": "Parken + Eintritt durch das Iljumun-Tor — ca. 5 Min."
     },
     "/itineraryStops/3/timeUsed/1": {
-      "source_en": "Daejeokgwangjeon + Vairocana Buddha + gilded Buddhas — ~20 min"
+      "source_en": "Daejeokgwangjeon + Vairocana Buddha + gilded Buddhas — ~20 min",
+      "tm": "Daejeokgwangjeon + Vairocana-Buddha + vergoldete Buddhas — ca. 20 Min."
     },
     "/itineraryStops/3/timeUsed/2": {
-      "source_en": "Temple bell + grounds walk + spring water — ~12 min"
+      "source_en": "Temple bell + grounds walk + spring water — ~12 min",
+      "tm": "Tempelglocke + Rundgang über das Gelände + Quellwasser — ca. 12 Min."
     },
     "/itineraryStops/3/timeUsed/3": {
-      "source_en": "Return to coach — ~3 min"
+      "source_en": "Return to coach — ~3 min",
+      "tm": "Rückkehr zum Bus — ca. 3 Min."
     },
     "/itineraryStops/3/highlights/0": {
-      "source_en": "**One of East Asia's largest temples** — grounds of about 122,100 ㎡"
+      "source_en": "**One of East Asia's largest temples** — grounds of about 122,100 ㎡",
+      "tm": "**Einer der größten Tempel Ostasiens** — Gelände von etwa 122.100 ㎡"
     },
     "/itineraryStops/3/highlights/1": {
-      "source_en": "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls"
+      "source_en": "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls",
+      "tm": "**Daejeokgwangjeon** etwa 30 m hoch / etwa 3.305 ㎡ Grundfläche — eine der größten Einzelhallen des Ostens"
     },
     "/itineraryStops/3/highlights/2": {
-      "source_en": "**5 m-tall Vairocana Buddha** — Korea's largest wooden seated Buddha (on a 4 m pedestal)"
+      "source_en": "**5 m-tall Vairocana Buddha** — Korea's largest wooden seated Buddha (on a 4 m pedestal)",
+      "tm": "**5 m hoher Vairocana-Buddha** — Koreas größter sitzender Buddha aus Holz (auf einem 4 m hohen Sockel)"
     },
     "/itineraryStops/3/highlights/3": {
-      "source_en": "**Tens of thousands of gilded Buddhas** filling the multi-tiered walls + an **18-tonne bell** before the hall"
+      "source_en": "**Tens of thousands of gilded Buddhas** filling the multi-tiered walls + an **18-tonne bell** before the hall",
+      "tm": "**Zehntausende vergoldete Buddhas**, die die mehrstufigen Wände füllen + eine **18 Tonnen schwere Glocke** vor der Halle"
     },
     "/itineraryStops/3/highlights/4": {
-      "source_en": "**Monk Hyein broke ground in 1981 → completed 1996**; on the 'Yaksuam' site (a rising spring)"
+      "source_en": "**Monk Hyein broke ground in 1981 → completed 1996**; on the 'Yaksuam' site (a rising spring)",
+      "tm": "**Mönch Hyein legte 1981 den Grundstein → 1996 fertiggestellt**; auf dem Gelände von „Yaksuam\" (einer aufsteigenden Quelle)"
     },
     "/itineraryStops/3/highlights/5": {
-      "source_en": "At the junction of **Olle Route 7's end point + Route 8's start point**"
+      "source_en": "At the junction of **Olle Route 7's end point + Route 8's start point**",
+      "tm": "An der Kreuzung von **Endpunkt des Olle-Weges 7 + Startpunkt des Weges 8**"
     },
     "/itineraryStops/3/highlights/6": {
-      "source_en": "**Templestay since 2006**"
+      "source_en": "**Templestay since 2006**",
+      "tm": "**Templestay seit 2006**"
     },
     "/itineraryStops/3/highlights/7": {
       "source_en": "**Free admission**, flat grounds — about a 15-min drive from the ⟦G0⟧ area",
+      "tm": "**Freier Eintritt**, ebenes Gelände — etwa 15 Min. Fahrt vom Gebiet ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/3/smartNotes/tip": {
-      "source_en": "Keep quiet inside the hall, remove hats and observe etiquette; please avoid revealing clothing"
+      "source_en": "Keep quiet inside the hall, remove hats and observe etiquette; please avoid revealing clothing",
+      "tm": "Bitte verhalten Sie sich in der Halle leise, nehmen Sie Kopfbedeckungen ab und beachten Sie die Etikette; bitte vermeiden Sie freizügige Kleidung"
     },
     "/itineraryStops/3/smartNotes/facilities": {
-      "source_en": "Restrooms and parking on the grounds; spring water available to drink"
+      "source_en": "Restrooms and parking on the grounds; spring water available to drink",
+      "tm": "Toiletten und Parkplätze auf dem Gelände; Quellwasser steht zum Trinken bereit"
     },
     "/itineraryStops/3/whyOnRoute": {
       "source_en": "**A cultural highlight just before lunch.** After the coastal scenery of ⟦G0⟧ and Oedolgae, the overwhelming interior of Yakcheonsa's Daejeokgwangjeon adds a different texture to the day. It is close to Oedolgae and near the lunch restaurant, so the routing is efficient, and free admission keeps it easy on the wallet. The guide briefs temple etiquette (quiet, dress).",
+      "tm": "**Ein kulturelles Highlight kurz vor dem Mittagessen.** Nach der Küstenlandschaft von ⟦G0⟧ und Oedolgae verleiht das überwältigende Innere der Daejeokgwangjeon-Halle von Yakcheonsa dem Tag eine ganz andere Textur. Der Tempel liegt nahe bei Oedolgae und in der Nähe des Mittagsrestaurants, sodass die Routenführung effizient ist, und der freie Eintritt schont den Geldbeutel. Der Guide erläutert die Tempeletikette (Ruhe, Kleidung).",
       "glossary": [
         "⟦G0⟧ = Jeongbang-Wasserfall"
       ]
     },
     "/itineraryStops/3/convenience/parking": {
-      "source_en": "Free temple parking available"
+      "source_en": "Free temple parking available",
+      "tm": "Kostenlose Tempelparkplätze vorhanden"
     },
     "/itineraryStops/3/convenience/restroom": {
-      "source_en": "Available on the temple grounds"
-    },
-    "/itineraryStops/3/description": {
-      "source_en": "**Yakcheonsa (약천사, 藥泉寺), at 122,100 ㎡, is counted among the largest temples in East Asia** — a vast temple in Daepo-dong, Seogwipo. Its name means 'the temple where medicinal spring water flows', as it was built on the site of the old 'Yaksuam' hermitage, where a year-round spring of healing water rises. **Monk Hyein broke ground in 1981 and completed it in 1996.** \n\nThe main hall, the **Daejeokgwangjeon (大寂光殿), reaches about 30 m in height with a total floor area of about 3,305 ㎡** — one of the largest single Buddhist halls in the East, built in the early-Joseon temple-architecture style. Inside, a **5 m-tall Vairocana Buddha (Korea's largest wooden seated Buddha)** is enshrined on a 4 m pedestal, and tens of thousands of small gilded Buddha statues filling the multi-tiered walls create an overwhelming sight. In front of the hall stands an **18-tonne temple bell**. \n\nYakcheonsa sits at the **junction where Jeju Olle Route 7 (its end point) meets Route 8 (its start point)**, drawing both Olle walkers and tourists, and it has run a **templestay since 2006**. **Free admission**, and the flat grounds are relatively easy to explore."
-    },
-    "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Sunrise–sunset (main hall open at all times)"
-    },
-    "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Open year-round",
-      "tm": "Ganzjährig geöffnet"
-    },
-    "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Easy — flat grounds; some steps when entering the main hall"
-    },
-    "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "Free",
-      "tm": "Kostenlos"
-    },
-    "/itineraryStops/3/galleryItems/0/alt": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 1",
-      "glossary": [
-        "⟦G0⟧ = Yakcheonsa-Tempel"
-      ]
-    },
-    "/itineraryStops/3/galleryItems/0/caption": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 1",
-      "glossary": [
-        "⟦G0⟧ = Yakcheonsa-Tempel"
-      ]
-    },
-    "/itineraryStops/3/galleryItems/0/location": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple)",
-      "glossary": [
-        "⟦G0⟧ = Yakcheonsa-Tempel"
-      ]
-    },
-    "/itineraryStops/4/name": {
-      "source_en": "Lunch — South Jeju Local Meal"
-    },
-    "/itineraryStops/4/category": {
-      "source_en": "Midday Reset — Seogwipo / Daepo Local Cuisine"
-    },
-    "/itineraryStops/4/duration": {
-      "source_en": "60 min"
-    },
-    "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Coach to lunch venue — ~10 min"
-    },
-    "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Order + meal — ~45 min"
-    },
-    "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Coach to O'sulloc — ~25 min"
-    },
-    "/itineraryStops/4/highlights/0": {
-      "source_en": "**South Jeju seafood corridor** — Seogwipo/Daepo coastal restaurants"
-    },
-    "/itineraryStops/4/highlights/1": {
-      "source_en": "**Galchi-jorim** — Jeju is Korea's largest cutlassfish source"
-    },
-    "/itineraryStops/4/highlights/2": {
-      "source_en": "**Mulhoe** in summer; **heuk-doeji (black pig)** year-round option"
-    },
-    "/itineraryStops/4/highlights/3": {
-      "source_en": "Black pig is a **Cultural Heritage Material No. 5 (2015)** breed"
-    },
-    "/itineraryStops/4/highlights/4": {
-      "source_en": "**Vegetarian + halal-friendly** options on request (please disclose at pickup)"
+      "source_en": "Available on the temple grounds",
+      "tm": "Auf dem Tempelgelände vorhanden"
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/1/galleryItems/3/location": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "⟦G0⟧": "Jeongbang-Wasserfall"
+    },
     "/itineraryStops/2/highlights/5": {
       "⟦G0⟧": "Jeongbang-Wasserfall"
     },
@@ -227,16 +291,7 @@
     },
     "/itineraryStops/3/whyOnRoute": {
       "⟦G0⟧": "Jeongbang-Wasserfall"
-    },
-    "/itineraryStops/3/galleryItems/0/alt": {
-      "⟦G0⟧": "Yakcheonsa-Tempel"
-    },
-    "/itineraryStops/3/galleryItems/0/caption": {
-      "⟦G0⟧": "Yakcheonsa-Tempel"
-    },
-    "/itineraryStops/3/galleryItems/0/location": {
-      "⟦G0⟧": "Yakcheonsa-Tempel"
     }
   },
-  "tmHits": 4
+  "tmHits": 50
 }

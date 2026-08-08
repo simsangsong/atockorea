@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Busan Port pickup (cruise terminal)"
+      "source_en": "Busan Port pickup (cruise terminal)",
+      "tm": "Abholung am Hafen Busan (Kreuzfahrtterminal)"
     },
     "/routeFlowStops/0/theme": {
       "source_en": "Transit / Pickup",
@@ -32,7 +33,8 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "History / Memorial"
+      "source_en": "History / Memorial",
+      "tm": "Geschichte / Gedenkstätte"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch at a local Busan restaurant (own expense)",
@@ -50,7 +52,8 @@
       ]
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Fish Market / Local Culture"
+      "source_en": "Fish Market / Local Culture",
+      "tm": "Fischmarkt / lokale Kultur"
     },
     "/routeFlowStops/5/name": {
       "source_en": "⟦G0⟧",
@@ -60,7 +63,8 @@
       ]
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Film District / Street Food"
+      "source_en": "Film District / Street Food",
+      "tm": "Filmviertel / Straßenküche"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧",
@@ -70,7 +74,8 @@
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Traditional Market / Korean War Heritage"
+      "source_en": "Traditional Market / Korean War Heritage",
+      "tm": "Traditioneller Markt / Erbe des Koreakriegs"
     },
     "/routeFlowStops/7/name": {
       "source_en": "⟦G0⟧",
@@ -80,21 +85,24 @@
       ]
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Culture village / Photo stop"
+      "source_en": "Culture village / Photo stop",
+      "tm": "Kulturdorf / Fotostopp"
     },
     "/routeFlowStops/8/name": {
       "source_en": "Songdo Cloud Trails Skywalk",
       "tm": "Songdo Cloud Trails Skywalk"
     },
     "/routeFlowStops/8/theme": {
-      "source_en": "Coastal skywalk"
+      "source_en": "Coastal skywalk",
+      "tm": "Skywalk an der Küste"
     },
     "/routeFlowStops/9/name": {
       "source_en": "Songdo Sky Park (Amnam Park)",
       "tm": "Songdo Sky Park (Amnam-Park)"
     },
     "/routeFlowStops/9/theme": {
-      "source_en": "Headland park / optional cable car"
+      "source_en": "Headland park / optional cable car",
+      "tm": "Park auf der Landzunge / optionale Seilbahn"
     },
     "/routeFlowStops/10/name": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower",
@@ -104,10 +112,12 @@
       ]
     },
     "/routeFlowStops/10/theme": {
-      "source_en": "City Viewpoint / Civic Park"
+      "source_en": "City Viewpoint / Civic Park",
+      "tm": "Aussichtspunkt über die Stadt / Stadtpark"
     },
     "/routeFlowStops/11/name": {
-      "source_en": "Return to Busan Port"
+      "source_en": "Return to Busan Port",
+      "tm": "Rückfahrt zum Hafen Busan"
     },
     "/routeFlowStops/11/theme": {
       "source_en": "Return",
@@ -137,5 +147,5 @@
       "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 14
+  "tmHits": 24
 }

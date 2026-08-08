@@ -8,25 +8,30 @@
   "segments": {
     "/seo/title": {
       "source_en": "Suwon Hwaseong, ⟦G0⟧ & Starfield Library Heritage Day Tour | AtoC Korea",
+      "tm": "Suwon Hwaseong, ⟦G0⟧ e biblioteca Starfield: giornata del patrimonio | AtoC Korea",
       "glossary": [
         "⟦G0⟧ = Tempio di Waujeongsa"
       ]
     },
     "/seo/pageTitle": {
-      "source_en": "Suwon Hwaseong, Waujeongsa & Starfield Day Tour | AtoC Korea"
+      "source_en": "Suwon Hwaseong, Waujeongsa & Starfield Day Tour | AtoC Korea",
+      "tm": "Suwon Hwaseong, Waujeongsa e Starfield: escursione di un giorno | AtoC Korea"
     },
     "/seo/metaDescription": {
       "source_en": "9–10-hour day trip from Seoul: UNESCO ⟦G0⟧, Starfield Suwon Library, and ⟦G1⟧ with its giant outdoor Buddha. EN guide, transfers.",
+      "tm": "Escursione di 9-10 ore da Seoul: la ⟦G0⟧ patrimonio UNESCO, la biblioteca Starfield di Suwon e il ⟦G1⟧ con il suo Buddha gigante all’aperto. Guida di lingua inglese, trasferimenti compresi.",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong",
         "⟦G1⟧ = Tempio di Waujeongsa"
       ]
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Suwon Hwaseong day tour"
+      "source_en": "Suwon Hwaseong day tour",
+      "tm": "escursione di un giorno a Suwon Hwaseong"
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ Yongin",
+      "tm": "⟦G0⟧ Yongin",
       "glossary": [
         "⟦G0⟧ = Tempio di Waujeongsa"
       ]
@@ -36,31 +41,40 @@
       "tm": "Biblioteca Starfield di Suwon"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Seoul Suwon heritage tour"
+      "source_en": "Seoul Suwon heritage tour",
+      "tm": "tour del patrimonio Seoul-Suwon"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Hwaseong Fortress UNESCO tour"
+      "source_en": "Hwaseong Fortress UNESCO tour",
+      "tm": "tour UNESCO della fortezza di Hwaseong"
     },
     "/hero/meta/stops": {
-      "source_en": "4 stops"
+      "source_en": "4 stops",
+      "tm": "4 tappe"
     },
     "/hero/meta/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon e Yongin"
     },
     "/hero/meta/duration": {
-      "source_en": "9–10 hours"
+      "source_en": "9–10 hours",
+      "tm": "9–10 ore"
     },
     "/hero/pills/0": {
-      "source_en": "UNESCO Site"
+      "source_en": "UNESCO Site",
+      "tm": "Sito UNESCO"
     },
     "/hero/pills/1": {
-      "source_en": "Admission Included"
+      "source_en": "Admission Included",
+      "tm": "Ingressi compresi"
     },
     "/hero/pills/2": {
-      "source_en": "Round-Trip Seoul Transfers"
+      "source_en": "Round-Trip Seoul Transfers",
+      "tm": "Trasferimenti andata e ritorno da Seoul"
     },
     "/hero/tagline": {
-      "source_en": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day."
+      "source_en": "From an 18th-century UNESCO fortress to one of Korea's most photographed contemporary libraries to a peaceful mountain Buddhist temple—three sides of Korea in one balanced day.",
+      "tm": "Da una fortezza UNESCO del XVIII secolo a una delle biblioteche contemporanee più fotografate della Corea, fino a un tranquillo tempio buddhista di montagna: tre volti della Corea in una giornata equilibrata."
     },
     "/glanceItems/0/label": {
       "source_en": "Photo Value",
@@ -131,34 +145,44 @@
       "tm": "Recensioni"
     },
     "/catalog_card/tags/1": {
-      "source_en": "heritage__modern_day_trip"
+      "source_en": "heritage__modern_day_trip",
+      "tm": "heritage__modern_day_trip"
     },
     "/catalog_card/title": {
-      "source_en": "Suwon: Hwaseong, Waujeongsa & Starfield"
+      "source_en": "Suwon: Hwaseong, Waujeongsa & Starfield",
+      "tm": "Suwon: Hwaseong, Waujeongsa e Starfield"
     },
     "/catalog_card/badges/0": {
-      "source_en": "UNESCO Heritage"
+      "source_en": "UNESCO Heritage",
+      "tm": "Patrimonio UNESCO"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Heritage + Modern Day Trip"
+      "source_en": "Heritage + Modern Day Trip",
+      "tm": "Escursione fra patrimonio e modernità"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Admission Included"
+      "source_en": "Admission Included",
+      "tm": "Ingressi compresi"
     },
     "/catalog_card/region": {
-      "source_en": "Suwon & Yongin"
+      "source_en": "Suwon & Yongin",
+      "tm": "Suwon e Yongin"
     },
     "/catalog_card/duration": {
-      "source_en": "9–10 hours"
+      "source_en": "9–10 hours",
+      "tm": "9–10 ore"
     },
     "/catalog_card/subtitle": {
-      "source_en": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip."
+      "source_en": "UNESCO fortress, mountain temple, and viral library—Korea's past, spirit, and present in one Seoul day-trip.",
+      "tm": "Fortezza UNESCO, tempio di montagna e biblioteca virale: il passato, l’anima e il presente della Corea in un’escursione da Seoul."
     },
     "/catalog_card/priceLabel": {
-      "source_en": "From US$51 per person (was $54, 6% off)"
+      "source_en": "From US$51 per person (was $54, 6% off)",
+      "tm": "Da 51 US$ a persona (invece di 54 $, 6% di sconto)"
     },
     "/catalog_card/shortCardDescription": {
       "source_en": "A small-group day-trip from Seoul covering three contrasting sides of Korea: the UNESCO-listed ⟦G0⟧ (18th-century military architecture), the photogenic Starfield Suwon Library (contemporary cultural icon), and ⟦G1⟧ in Yongin (giant outdoor Buddha and stone bell). Strong heritage value with included transport and admission.",
+      "tm": "Un’escursione di un giorno in piccolo gruppo da Seoul, che attraversa tre volti contrastanti della Corea: la ⟦G0⟧ iscritta all’UNESCO (architettura militare del XVIII secolo), la fotogenica biblioteca Starfield di Suwon (icona culturale contemporanea) e il ⟦G1⟧ a Yongin (Buddha gigante all’aperto e campana di pietra). Grande valore patrimoniale, trasporto e ingressi compresi.",
       "glossary": [
         "⟦G0⟧ = Fortezza di Suwon Hwaseong",
         "⟦G1⟧ = Tempio di Waujeongsa"
@@ -169,7 +193,8 @@
       "tm": "Giornata del patrimonio di Suwon"
     },
     "/headlineLine2": {
-      "source_en": "Hwaseong, Waujeongsa & Starfield"
+      "source_en": "Hwaseong, Waujeongsa & Starfield",
+      "tm": "Hwaseong, Waujeongsa e Starfield"
     },
     "/pickup_dropoff/notes/0": {
       "source_en": "Fixed meeting points — hotel pickup is not offered. Latecomers cannot be accommodated and are non-refundable.",
@@ -219,125 +244,156 @@
     },
     "/practicalAccordionItems/0/content/0": {
       "source_en": "Pickup typically from Hongik University Station (Exit 4) and ⟦G0⟧ Station",
+      "tm": "Ritrovo di norma alla stazione Hongik University (uscita 4) e alla stazione ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Departure typically around 08:30 to 09:00 from the first meeting point"
+      "source_en": "Departure typically around 08:30 to 09:00 from the first meeting point",
+      "tm": "Partenza di norma fra le 08:30 e le 09:00 dal primo punto di ritrovo"
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Please arrive at least 10 minutes early at your selected meeting point"
+      "source_en": "Please arrive at least 10 minutes early at your selected meeting point",
+      "tm": "La preghiamo di arrivare almeno 10 minuti in anticipo al punto di ritrovo scelto"
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Drop-off at the same Seoul meeting points"
+      "source_en": "Drop-off at the same Seoul meeting points",
+      "tm": "Rientro agli stessi punti di ritrovo a Seoul"
     },
     "/practicalAccordionItems/0/content/4": {
-      "source_en": "Expected return between 18:00 and 19:00 depending on traffic and Sunday delays"
+      "source_en": "Expected return between 18:00 and 19:00 depending on traffic and Sunday delays",
+      "tm": "Rientro previsto fra le 18:00 e le 19:00, in base al traffico e ai rallentamenti della domenica"
     },
     "/practicalAccordionItems/0/content/5": {
-      "source_en": "This is a fixed-route group format, not hotel pickup; travelers must reach the meeting point themselves"
+      "source_en": "This is a fixed-route group format, not hotel pickup; travelers must reach the meeting point themselves",
+      "tm": "Si tratta di una formula di gruppo a itinerario fisso, senza prelievo in hotel: i viaggiatori devono raggiungere da sé il punto di ritrovo"
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Two Seoul meeting points; ≈09:00 departure"
+      "source_en": "Two Seoul meeting points; ≈09:00 departure",
+      "tm": "Due punti di ritrovo a Seoul; partenza ≈09:00"
     },
     "/practicalAccordionItems/1/title": {
       "source_en": "Walking & terrain",
       "tm": "Camminata e terreno"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Hwaseong Fortress: stone steps along the wall walk and at the main gates; uneven historic surfaces"
+      "source_en": "Hwaseong Fortress: stone steps along the wall walk and at the main gates; uneven historic surfaces",
+      "tm": "Fortezza di Hwaseong: gradini di pietra lungo il camminamento e alle porte principali; superfici storiche irregolari"
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Starfield Library and Mall: easy indoor walking on flat floors"
+      "source_en": "Starfield Library and Mall: easy indoor walking on flat floors",
+      "tm": "Biblioteca e centro commerciale Starfield: cammino facile al coperto, su pavimenti in piano"
     },
     "/practicalAccordionItems/1/content/2": {
       "source_en": "⟦G0⟧: moderate with some uphill paths and stairs",
+      "tm": "⟦G0⟧: moderato, con alcuni sentieri in salita e scale",
       "glossary": [
         "⟦G0⟧ = Tempio di Waujeongsa"
       ]
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Comfortable walking shoes with grip are recommended"
+      "source_en": "Comfortable walking shoes with grip are recommended",
+      "tm": "Si consigliano scarpe da camminata comode e con buona aderenza"
     },
     "/practicalAccordionItems/1/content/4": {
-      "source_en": "Stroller use is possible at Starfield only; Hwaseong walls and Waujeongsa are not stroller-friendly"
+      "source_en": "Stroller use is possible at Starfield only; Hwaseong walls and Waujeongsa are not stroller-friendly",
+      "tm": "Il passeggino è utilizzabile soltanto allo Starfield; le mura di Hwaseong e Waujeongsa non vi si prestano"
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Moderate; the Hwaseong wall is the main physical section"
+      "source_en": "Moderate; the Hwaseong wall is the main physical section",
+      "tm": "Moderata; le mura di Hwaseong sono la principale sezione impegnativa"
     },
     "/practicalAccordionItems/2/title": {
       "source_en": "Weather policy",
       "tm": "Politica in caso di maltempo"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Light rain: tour usually proceeds with normal adjustments"
+      "source_en": "Light rain: tour usually proceeds with normal adjustments",
+      "tm": "Pioggia leggera: il tour si svolge di norma con i consueti aggiustamenti"
     },
     "/practicalAccordionItems/2/content/1": {
       "source_en": "Heavy rain or snow: the Hwaseong wall walk may be shortened in favor of ⟦G0⟧",
+      "tm": "Pioggia intensa o neve: il percorso sulle mura di Hwaseong può essere accorciato a favore del ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Palazzo di Hwaseong Haenggung"
       ]
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Starfield is a fully indoor stop and works as a wet-weather anchor"
+      "source_en": "Starfield is a fully indoor stop and works as a wet-weather anchor",
+      "tm": "Lo Starfield è una tappa interamente al coperto e funziona come punto d’appoggio in caso di pioggia"
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Waujeongsa is partially exposed; temple operations continue in light rain"
+      "source_en": "Waujeongsa is partially exposed; temple operations continue in light rain",
+      "tm": "Waujeongsa è in parte esposto; con pioggia leggera il tempio resta aperto"
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Light rain workable; heavy rain reduces the fortress walk"
+      "source_en": "Light rain workable; heavy rain reduces the fortress walk",
+      "tm": "Con pioggia leggera è praticabile; la pioggia intensa riduce il percorso nella fortezza"
     },
     "/practicalAccordionItems/3/title": {
       "source_en": "What to wear & bring",
       "tm": "Come vestirsi e cosa portare"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)"
+      "source_en": "Comfortable walking shoes with grip (essential for Hwaseong and Waujeongsa)",
+      "tm": "Scarpe da camminata comode e con buona aderenza (indispensabili per Hwaseong e Waujeongsa)"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Modest clothing for the temple visit (covered shoulders recommended)"
+      "source_en": "Modest clothing for the temple visit (covered shoulders recommended)",
+      "tm": "Abbigliamento sobrio per la visita al tempio (si consigliano spalle coperte)"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Light layers for changing temperatures between exposed walls and indoor spaces"
+      "source_en": "Light layers for changing temperatures between exposed walls and indoor spaces",
+      "tm": "Abbigliamento a strati leggero per gli sbalzi di temperatura fra le mura esposte e gli ambienti interni"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Sun protection and water in summer"
+      "source_en": "Sun protection and water in summer",
+      "tm": "Protezione solare e acqua in estate"
     },
     "/practicalAccordionItems/3/content/4": {
-      "source_en": "Camera or phone with wide-angle for Starfield Library shots"
+      "source_en": "Camera or phone with wide-angle for Starfield Library shots",
+      "tm": "Macchina fotografica o telefono con grandangolo per le foto della biblioteca Starfield"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Walking shoes, modest temple clothing, layers"
+      "source_en": "Walking shoes, modest temple clothing, layers",
+      "tm": "Scarpe da camminata, abbigliamento sobrio per il tempio, vestirsi a strati"
     },
     "/practicalAccordionItems/4/title": {
       "source_en": "What's included",
       "tm": "Cosa è incluso"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Professional English-speaking guide"
+      "source_en": "Professional English-speaking guide",
+      "tm": "Guida professionale di lingua inglese"
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Round-trip transport from Seoul (small-group vehicle)"
+      "source_en": "Round-trip transport from Seoul (small-group vehicle)",
+      "tm": "Trasporto andata e ritorno da Seoul (veicolo da piccolo gruppo)"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "All admission fees (Hwaseong, Hwaseong Haenggung, Starfield is free, Waujeongsa)"
+      "source_en": "All admission fees (Hwaseong, Hwaseong Haenggung, Starfield is free, Waujeongsa)",
+      "tm": "Tutti i biglietti d’ingresso (Hwaseong, il Haenggung di Hwaseong, lo Starfield è gratuito, Waujeongsa)"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "Lunch is not included; pay directly at Starfield mall restaurants"
+      "source_en": "Lunch is not included; pay directly at Starfield mall restaurants",
+      "tm": "Il pranzo non è incluso; si paga direttamente nei ristoranti del centro commerciale Starfield"
     },
     "/practicalAccordionItems/4/content/4": {
       "source_en": "Personal shopping is not included",
       "tm": "Gli acquisti personali non sono inclusi"
     },
     "/practicalAccordionItems/4/content/5": {
-      "source_en": "Optional cafe purchases are not included"
+      "source_en": "Optional cafe purchases are not included",
+      "tm": "Le consumazioni facoltative al caffè non sono incluse"
     },
     "/practicalAccordionItems/4/content/6": {
-      "source_en": "Guide gratuities are optional"
+      "source_en": "Guide gratuities are optional",
+      "tm": "Le mance alla guida sono facoltative"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Guide, transport, and admission included; lunch pay direct"
+      "source_en": "Guide, transport, and admission included; lunch pay direct",
+      "tm": "Guida, trasporto e ingressi compresi; pranzo a pagamento diretto"
     },
     "/practicalAccordionItems/5/title": {
       "source_en": "Cancellation",
@@ -387,5 +443,5 @@
       "⟦G0⟧": "Palazzo di Hwaseong Haenggung"
     }
   },
-  "tmHits": 38
+  "tmHits": 94
 }

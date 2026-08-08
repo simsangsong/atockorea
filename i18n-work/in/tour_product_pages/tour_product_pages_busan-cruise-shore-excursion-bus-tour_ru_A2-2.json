@@ -1,0 +1,178 @@
+{
+  "unitId": "tour_product_pages:busan-cruise-shore-excursion-bus-tour:ru:A2-2",
+  "surface": "tour_product_pages",
+  "slug": "busan-cruise-shore-excursion-bus-tour",
+  "locale": "ru",
+  "chunk": "A2-2",
+  "tier": "A2",
+  "segments": {
+    "/bookingTrustItems/0/body": {
+      "source_en": "Built around the Busan cruise port-call clock — 09:00 pickup at the cruise terminal, 16:45 return with a 30–60 min reboarding buffer for the standard 17:00+ sail-away. Not missed a sail-away in 4 seasons of operation."
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Return-by guarantee"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "Licensed Busan tour provider with certified English-speaking guides, vehicle insurance, and route timing tested against the busiest cruise-port-call days of the year (peak season Apr–May and Sep–Nov)."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Licensed local"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "Busan-licensed guiding"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "All eight main-stop admissions are included in the tour price (free attractions). Optional add-ons (cable car, tower observatory) are clearly listed and never bundled into the headline price."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "All-inclusive entry"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Main admissions covered"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)",
+      "tm": "Весна (март–май)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa.",
+      "tm": "Сакура вдоль побережья Сондо и на подходе к деревне Камчхон в конце марта и начале апреля. В Пусане цветение начинается на 7–10 дней раньше, чем в Сеуле. В день рождения Будды (май) в Йонгунса проходит фестиваль фонарей Ёндынхве."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Лето (июнь–август)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight; coastal stops (Yonggungsa, Songdo, Gamcheon) stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat. ⟦G0⟧ Festival runs June–August with sand-sculpture displays.",
+      "tm": "Долгий световой день; на прибрежных остановках (Йонгунса, Сондо, Камчхон) прохладнее, чем вглубь материка. Июльский муссон может сократить время на улице. Утренний визит в Йонгунса помогает избежать жары. Фестиваль ⟦G0⟧ проходит с июня по август, с песчаными скульптурами.",
+      "glossary": [
+        "⟦G0⟧ = Пляж Сондо"
+      ]
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Осень (сентябрь–ноябрь)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event.",
+      "tm": "Самая ясная видимость и самое тёплое море — лучший сезон в целом. Листва в конце октября. Золотой час в Чхонсапхо и Камчхоне особенно приятен. Церемония «Turn Toward Busan» на кладбище ООН 11 ноября — заметное культурное событие."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Зима (декабрь–февраль)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve.",
+      "tm": "Меньше людей, чистые морские виды, мягко по корейским меркам (зимние минимумы в Пусане 5–10 °C). Встреча рассвета 1 января в Йонгунса — большое событие. Колокол горожан на Йондусане в новогоднюю ночь бьёт 33 раза."
+    },
+    "/bookingSupportSteps/0/title": {
+      "source_en": "Instant Confirmation",
+      "tm": "Мгновенное подтверждение"
+    },
+    "/bookingSupportSteps/0/detail": {
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Подтверждение бронирования с кратким описанием маршрута"
+    },
+    "/bookingSupportSteps/0/timing": {
+      "source_en": "Immediately",
+      "tm": "Сразу"
+    },
+    "/bookingSupportSteps/0/description": {
+      "source_en": "Instant booking confirmation with cruise-terminal pickup instructions and the full day's itinerary."
+    },
+    "/bookingSupportSteps/1/title": {
+      "source_en": "Pre-Cruise Confirmation"
+    },
+    "/bookingSupportSteps/1/detail": {
+      "source_en": "Cruise ship name and sail-away time confirmed via WhatsApp"
+    },
+    "/bookingSupportSteps/1/timing": {
+      "source_en": "Day before",
+      "tm": "Накануне"
+    },
+    "/bookingSupportSteps/1/description": {
+      "source_en": "We reconfirm your specific ship's sail-away time and any route adjustments needed for an earlier-than-typical departure."
+    },
+    "/bookingSupportSteps/2/title": {
+      "source_en": "Pickup Confirmation",
+      "tm": "Подтверждение сбора"
+    },
+    "/bookingSupportSteps/2/detail": {
+      "source_en": "Guide at terminal arrival hall 15 min before pickup"
+    },
+    "/bookingSupportSteps/2/timing": {
+      "source_en": "Morning of",
+      "tm": "Утром в день выезда"
+    },
+    "/bookingSupportSteps/2/description": {
+      "source_en": "Coach plate, guide name, and meeting-point photo sent 30 min before the 09:00 pickup so you know exactly who to find when you disembark."
+    },
+    "/bookingSupportSteps/3/title": {
+      "source_en": "On-tour Support",
+      "tm": "Поддержка во время экскурсии"
+    },
+    "/bookingSupportSteps/3/detail": {
+      "source_en": "Guide narration at each stop + ops support",
+      "tm": "Рассказ гида на каждой остановке и поддержка службы сопровождения"
+    },
+    "/bookingSupportSteps/3/timing": {
+      "source_en": "During tour",
+      "tm": "Во время тура"
+    },
+    "/bookingSupportSteps/3/description": {
+      "source_en": "Guide provides on-site narration on Yonggungsa's 1376 founding, UNMCK's 22-nation story, Gamcheon's 1955 refugee settlement, Songdo's 1913 opening, and Yongdusan's Dabotap heritage."
+    },
+    "/bookingSupportSteps/4/title": {
+      "source_en": "Cruise-side drop-off"
+    },
+    "/bookingSupportSteps/4/detail": {
+      "source_en": "Direct return to cruise terminal coach lot"
+    },
+    "/bookingSupportSteps/4/timing": {
+      "source_en": "End of day",
+      "tm": "Конец дня"
+    },
+    "/bookingSupportSteps/4/description": {
+      "source_en": "Coach returns guests to the cruise terminal coach lot by approximately 16:45–17:00 with a 30–60 min reboarding buffer."
+    },
+    "/bookingSupportSteps/5/title": {
+      "source_en": "Review & Followup"
+    },
+    "/bookingSupportSteps/5/detail": {
+      "source_en": "Post-cruise review request"
+    },
+    "/bookingSupportSteps/5/timing": {
+      "source_en": "After tour",
+      "tm": "После тура"
+    },
+    "/bookingSupportSteps/5/description": {
+      "source_en": "Post-tour feedback request sent; questions about Korean recipes or Busan attractions answered for guests heading on to other Korea ports."
+    },
+    "/practicalWeatherStatic/today/label": {
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
+    },
+    "/practicalWeatherStatic/tomorrow/label": {
+      "source_en": "See seasonal notes",
+      "tm": "См. сезонные заметки"
+    }
+  },
+  "glossaryTokens": {
+    "/seasonalVariations/1/description": {
+      "⟦G0⟧": "Пляж Сондо"
+    }
+  },
+  "tmHits": 24
+}

@@ -1,0 +1,464 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:it:B",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "it",
+  "chunk": "B",
+  "tier": "B",
+  "segments": {
+    "/routePhases/0/phase": {
+      "source_en": "Coastal morning"
+    },
+    "/routePhases/0/duration": {
+      "source_en": "≈ 3.5 hours"
+    },
+    "/routePhases/0/description": {
+      "source_en": "Door-to-door hotel pickup across central Busan (09:00–10:00), then ⟦G0⟧ Temple before the tour-bus surge, and on to Cheongsapo's Daritdol glass skywalk.",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/routePhases/1/phase": {
+      "source_en": "Sky Capsule, lunch & beach"
+    },
+    "/routePhases/1/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 ore"
+    },
+    "/routePhases/1/description": {
+      "source_en": "The pastel Sky Capsule ride from Cheongsapo to Mipo (ticket optional — non-riders take the coach or walk the Green Railway boardwalk), lunch near Haeundae, then twenty minutes on Haeundae Beach itself."
+    },
+    "/routePhases/2/phase": {
+      "source_en": "Two hillside villages"
+    },
+    "/routePhases/2/duration": {
+      "source_en": "≈ 2 hours",
+      "tm": "≈ 2 ore"
+    },
+    "/routePhases/2/description": {
+      "source_en": "⟦G0⟧'s photo loop (60 min), then the quiet Dakbatgol mural village and its free wish-stairs monorail (30 min).",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/routePhases/3/phase": {
+      "source_en": "Central close"
+    },
+    "/routePhases/3/duration": {
+      "source_en": "≈ 1 hour",
+      "tm": "≈ 1 ora"
+    },
+    "/routePhases/3/description": {
+      "source_en": "Sequential drop-offs: Nampo-dong, Busan Station, Seomyeon, then Haeundae."
+    },
+    "/galleryItems/0/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/0/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Tempio ⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/0/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/1/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 1"
+    },
+    "/galleryItems/1/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 1"
+    },
+    "/galleryItems/1/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)"
+    },
+    "/galleryItems/2/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 1"
+    },
+    "/galleryItems/2/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 1"
+    },
+    "/galleryItems/2/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/3/alt": {
+      "source_en": "Haeundae Beach — gallery image 1"
+    },
+    "/galleryItems/3/caption": {
+      "source_en": "Haeundae Beach — photo 1"
+    },
+    "/galleryItems/3/location": {
+      "source_en": "Haeundae Beach",
+      "tm": "Spiaggia di Haeundae"
+    },
+    "/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ — gallery image 1",
+      "tm": "⟦G0⟧ — immagine della galleria 1",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ — photo 1",
+      "tm": "⟦G0⟧ — foto 1",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/4/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/5/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/5/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Tempio ⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/5/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/6/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/6/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Tempio ⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/6/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/7/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/7/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Tempio ⟦G0⟧ — foto 4",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/7/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/8/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/8/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Tempio ⟦G0⟧ — foto 5",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/8/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/alt": {
+      "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 6",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/caption": {
+      "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Tempio ⟦G0⟧ — foto 6",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/9/location": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempio ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/galleryItems/10/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 2"
+    },
+    "/galleryItems/10/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 2"
+    },
+    "/galleryItems/10/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)"
+    },
+    "/galleryItems/11/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 3"
+    },
+    "/galleryItems/11/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 3"
+    },
+    "/galleryItems/11/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)"
+    },
+    "/galleryItems/12/alt": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — gallery image 4"
+    },
+    "/galleryItems/12/caption": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk) — photo 4"
+    },
+    "/galleryItems/12/location": {
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Osservatorio Daritdol di Cheongsapo (passerella di vetro)"
+    },
+    "/galleryItems/13/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 2"
+    },
+    "/galleryItems/13/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 2"
+    },
+    "/galleryItems/13/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/14/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 3"
+    },
+    "/galleryItems/14/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 3"
+    },
+    "/galleryItems/14/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/15/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 4"
+    },
+    "/galleryItems/15/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 4"
+    },
+    "/galleryItems/15/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/16/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 5"
+    },
+    "/galleryItems/16/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 5"
+    },
+    "/galleryItems/16/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/17/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 6"
+    },
+    "/galleryItems/17/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 6"
+    },
+    "/galleryItems/17/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/18/alt": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — gallery image 7"
+    },
+    "/galleryItems/18/caption": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) — photo 7"
+    },
+    "/galleryItems/18/location": {
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule dell’Haeundae Blueline Park (Cheongsapo → Mipo)"
+    },
+    "/galleryItems/19/alt": {
+      "source_en": "Haeundae Beach — gallery image 2"
+    },
+    "/galleryItems/19/caption": {
+      "source_en": "Haeundae Beach — photo 2"
+    },
+    "/galleryItems/19/location": {
+      "source_en": "Haeundae Beach",
+      "tm": "Spiaggia di Haeundae"
+    },
+    "/galleryItems/20/alt": {
+      "source_en": "⟦G0⟧ — gallery image 2",
+      "tm": "⟦G0⟧ — immagine della galleria 2",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/20/caption": {
+      "source_en": "⟦G0⟧ — photo 2",
+      "tm": "⟦G0⟧ — foto 2",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/20/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/21/alt": {
+      "source_en": "⟦G0⟧ — gallery image 3",
+      "tm": "⟦G0⟧ — immagine della galleria 3",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/21/caption": {
+      "source_en": "⟦G0⟧ — photo 3",
+      "tm": "⟦G0⟧ — foto 3",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    },
+    "/galleryItems/21/location": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Villaggio culturale di Gamcheon"
+      ]
+    }
+  },
+  "glossaryTokens": {
+    "/routePhases/0/description": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/routePhases/2/description": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/0/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/0/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/0/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/4/alt": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/4/caption": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/4/location": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/5/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/5/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/5/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/6/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/7/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/8/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/alt": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/caption": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/9/location": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/galleryItems/20/alt": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/20/caption": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/20/location": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/21/alt": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/21/caption": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    },
+    "/galleryItems/21/location": {
+      "⟦G0⟧": "Villaggio culturale di Gamcheon"
+    }
+  },
+  "tmHits": 43
+}

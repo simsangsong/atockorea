@@ -7,172 +7,208 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Pickup at Jeju Hotel"
+      "source_en": "Pickup at Jeju Hotel",
+      "tm": "Посадка у отеля на Чеджу"
     },
     "/routePhases/0/duration": {
-      "source_en": "Stops 1"
+      "source_en": "Stops 1",
+      "tm": "Остановка 1"
     },
     "/routePhases/0/description": {
-      "source_en": "Start: Pickup at Jeju Hotel"
+      "source_en": "Start: Pickup at Jeju Hotel",
+      "tm": "Начало: посадка у отеля на Чеджу"
     },
     "/routePhases/1/phase": {
-      "source_en": "Choose Your Route"
+      "source_en": "Choose Your Route",
+      "tm": "Выберите маршрут"
     },
     "/routePhases/1/duration": {
-      "source_en": "Stops 2–4"
+      "source_en": "Stops 2–4",
+      "tm": "Остановки 2–4"
     },
     "/routePhases/1/description": {
-      "source_en": "Day Out: Choose Your Route"
+      "source_en": "Day Out: Choose Your Route",
+      "tm": "День в пути: выберите маршрут"
     },
     "/routePhases/2/phase": {
-      "source_en": "Return to Hotel"
+      "source_en": "Return to Hotel",
+      "tm": "Возвращение в отель"
     },
     "/routePhases/2/duration": {
-      "source_en": "Stops 5"
+      "source_en": "Stops 5",
+      "tm": "Остановка 5"
     },
     "/routePhases/2/description": {
-      "source_en": "Finish: Return to Hotel"
+      "source_en": "Finish: Return to Hotel",
+      "tm": "Завершение: возвращение в отель"
     },
     "/galleryItems/0/alt": {
-      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond",
+      "tm": "Индивидуальный тур по Чеджу — ваша семья на побережье, а вдали Халласан"
     },
     "/galleryItems/0/caption": {
-      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond"
+      "source_en": "Private Jeju tour — your family by the coast with Hallasan beyond",
+      "tm": "Индивидуальный тур по Чеджу — ваша семья на побережье, а вдали Халласан"
     },
     "/galleryItems/0/location": {
-      "source_en": "Jeju Private Tour"
+      "source_en": "Jeju Private Tour",
+      "tm": "Индивидуальный тур по Чеджу"
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "tm": "⟦G0⟧ — пик восхода из списка ЮНЕСКО на восточном побережье",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ — UNESCO sunrise peak on the east coast",
+      "tm": "⟦G0⟧ — пик восхода из списка ЮНЕСКО на восточном побережье",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/1/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "tm": "⟦G0⟧ — мыс с полевыми цветами над морем",
       "glossary": [
         "⟦G0⟧ = Сопчикходжи"
       ]
     },
     "/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ — wildflower headland over the sea",
+      "tm": "⟦G0⟧ — мыс с полевыми цветами над морем",
       "glossary": [
         "⟦G0⟧ = Сопчикходжи"
       ]
     },
     "/galleryItems/2/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сопчикходжи"
       ]
     },
     "/galleryItems/3/alt": {
       "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "tm": "⟦G0⟧ — пологий подъём к кратеру с панорамным видом",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/galleryItems/3/caption": {
       "source_en": "⟦G0⟧ — gentle ascent to a panoramic crater",
+      "tm": "⟦G0⟧ — пологий подъём к кратеру с панорамным видом",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/galleryItems/3/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Халласан Осынсэнъак"
       ]
     },
     "/galleryItems/4/alt": {
       "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "tm": "⟦G0⟧ — трёхкаскадный водопад и легенда о небесных девах",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджеён"
       ]
     },
     "/galleryItems/4/caption": {
       "source_en": "⟦G0⟧ — three-tier waterfall and the legend of fairies",
+      "tm": "⟦G0⟧ — трёхкаскадный водопад и легенда о небесных девах",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджеён"
       ]
     },
     "/galleryItems/4/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджеён"
       ]
     },
     "/galleryItems/5/alt": {
       "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "tm": "⟦G0⟧ — крупнейший сад камелий в Азии",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/5/caption": {
       "source_en": "⟦G0⟧ — Asia’s largest camellia garden",
+      "tm": "⟦G0⟧ — крупнейший сад камелий в Азии",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/5/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Camellia Hill"
       ]
     },
     "/galleryItems/6/alt": {
       "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "tm": "⟦G0⟧ — бирюзовая вода и белый ракушечный песок",
       "glossary": [
         "⟦G0⟧ = Пляж Хёпчэ"
       ]
     },
     "/galleryItems/6/caption": {
       "source_en": "⟦G0⟧ — turquoise water and white shell sand",
+      "tm": "⟦G0⟧ — бирюзовая вода и белый ракушечный песок",
       "glossary": [
         "⟦G0⟧ = Пляж Хёпчэ"
       ]
     },
     "/galleryItems/6/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Пляж Хёпчэ"
       ]
     },
     "/galleryItems/7/alt": {
-      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast",
+      "tm": "Чусанджолли — базальтовые столбчатые утёсы побережья Тэпхо"
     },
     "/galleryItems/7/caption": {
-      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast"
+      "source_en": "Jusangjeolli — basalt columnar cliffs of the Daepo coast",
+      "tm": "Чусанджолли — базальтовые столбчатые утёсы побережья Тэпхо"
     },
     "/galleryItems/7/location": {
-      "source_en": "Jusangjeolli Cliff"
+      "source_en": "Jusangjeolli Cliff",
+      "tm": "Утёс Чусанджолли"
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "tm": "⟦G0⟧ — современные прибрежные кафе с видом на океан",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
     },
     "/galleryItems/8/caption": {
       "source_en": "⟦G0⟧ — modern coastal cafes with ocean views",
+      "tm": "⟦G0⟧ — современные прибрежные кафе с видом на океан",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
     },
     "/galleryItems/8/location": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Улица кафе Эволь"
       ]
@@ -243,5 +279,5 @@
       "⟦G0⟧": "Улица кафе Эволь"
     }
   },
-  "tmHits": 0
+  "tmHits": 36
 }

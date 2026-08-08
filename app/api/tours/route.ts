@@ -1,3 +1,4 @@
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { NextRequest, NextResponse } from 'next/server';
 import { createServerClient } from '@/lib/supabase';
 import { getKrwPerUsd } from '@/lib/exchange/usdBasedRates.server';
@@ -387,7 +388,7 @@ export const GET = withErrorHandler(async (req: NextRequest) => {
       );
 
       const slugStr = typeof tour.slug === 'string' ? tour.slug.trim() : '';
-      const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, localeForCards) : undefined;
+      const staticCard = slugStr ? getStaticTourProductBySlug(slugStr, toTourProductBaseLocale(localeForCards)) : undefined;
       const productPageMedia = slugStr ? productPageMediaBySlug[slugStr] : undefined;
 
       // Compact mode pulls only the first gallery URL via

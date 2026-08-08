@@ -10,13 +10,15 @@
       "source_en": "Cruise Terminal"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Abfahrt"
     },
     "/routeFlowStops/1/name": {
       "source_en": "Sunrise Peak"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Volcano"
+      "source_en": "Volcano",
+      "tm": "Vulkan"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -26,17 +28,20 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Küste"
     },
     "/routeFlowStops/3/name": {
       "source_en": "Lunch",
       "tm": "Mittagessen"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Mahlzeit"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Folk Village"
+      "source_en": "Folk Village",
+      "tm": "Folkloredorf"
     },
     "/routeFlowStops/4/theme": {
       "source_en": "Culture",
@@ -46,7 +51,8 @@
       "source_en": "Cruise Terminal"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Rückfahrt"
     }
   },
   "glossaryTokens": {
@@ -54,5 +60,5 @@
       "⟦G0⟧": "Seopjikoji"
     }
   },
-  "tmHits": 3
+  "tmHits": 9
 }

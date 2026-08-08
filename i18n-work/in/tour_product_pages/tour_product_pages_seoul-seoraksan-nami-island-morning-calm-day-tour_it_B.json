@@ -16,42 +16,50 @@
     },
     "/routePhases/0/description": {
       "source_en": "Pickup at 06:00 Hongik / 06:30 ⟦G0⟧, then ~2.5-hour drive northeast via Seoul-Yangyang Expressway to arrive Seoraksan by 10:00.",
+      "tm": "Ritrovo alle 06:00 a Hongik / alle 06:30 a ⟦G0⟧, poi ~2,5 ore di strada verso nord-est lungo la Seoul-Yangyang Expressway per arrivare al Seoraksan entro le 10:00.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "Seoraksan"
+      "source_en": "Seoraksan",
+      "tm": "Seoraksan"
     },
     "/routePhases/1/duration": {
       "source_en": "≈ 3 hours",
       "tm": "≈ 3 ore"
     },
     "/routePhases/1/description": {
-      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and optional cable car to Gwongeumseong or Biseondae streamside walk."
+      "source_en": "Sogongwon entrance: Tongildaebul, Sinheungsa Temple, and optional cable car to Gwongeumseong or Biseondae streamside walk.",
+      "tm": "Ingresso di Sogongwon: il Tongildaebul, il tempio Sinheungsa e, a scelta, la funivia per Gwongeumseong o la passeggiata lungo il torrente verso Biseondae."
     },
     "/routePhases/2/phase": {
-      "source_en": "Seoraksan → Nami (incl. lunch)"
+      "source_en": "Seoraksan → Nami (incl. lunch)",
+      "tm": "Seoraksan → Nami (pranzo compreso)"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 2.5 hours",
       "tm": "≈ 2,5 ore"
     },
     "/routePhases/2/description": {
-      "source_en": "Drive south via Inje-Hongcheon-Chuncheon corridor; lunch stop at a local Gangwon restaurant en route (own expense)."
+      "source_en": "Drive south via Inje-Hongcheon-Chuncheon corridor; lunch stop at a local Gangwon restaurant en route (own expense).",
+      "tm": "Viaggio verso sud lungo il corridoio Inje-Hongcheon-Chuncheon; sosta pranzo lungo il percorso in un ristorante locale del Gangwon (a Suo carico)."
     },
     "/routePhases/3/phase": {
-      "source_en": "Nami Island"
+      "source_en": "Nami Island",
+      "tm": "Isola di Nami"
     },
     "/routePhases/3/duration": {
       "source_en": "≈ 2 hours",
       "tm": "≈ 2 ore"
     },
     "/routePhases/3/description": {
-      "source_en": "Ferry round-trip and Metasequoia / Ginkgo / Korean Pine avenues walking circuit on Naminara Republic."
+      "source_en": "Ferry round-trip and Metasequoia / Ginkgo / Korean Pine avenues walking circuit on Naminara Republic.",
+      "tm": "Traghetto andata e ritorno e giro a piedi fra i viali delle metasequoie, dei ginkgo e dei pini coreani nella Repubblica di Naminara."
     },
     "/routePhases/4/phase": {
-      "source_en": "Morning Calm & return"
+      "source_en": "Morning Calm & return",
+      "tm": "Quiete mattutina e rientro"
     },
     "/routePhases/4/duration": {
       "source_en": "≈ 2 hours",
@@ -59,6 +67,7 @@
     },
     "/routePhases/4/description": {
       "source_en": "30-min drive south to the ⟦G0⟧ (70-min visit), then 1-hour return to Seoul via Seoul-Yangyang Expressway.",
+      "tm": "30 min di strada verso sud fino al ⟦G0⟧ (visita di 70 min), poi 1 ora di rientro a Seoul lungo la Seoul-Yangyang Expressway.",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
@@ -107,18 +116,21 @@
     },
     "/galleryItems/2/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 1",
+      "tm": "Il ⟦G0⟧ — immagine della galleria 1",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/2/caption": {
       "source_en": "The ⟦G0⟧ — photo 1",
+      "tm": "Il ⟦G0⟧ — foto 1",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/2/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Il ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
@@ -272,54 +284,63 @@
     },
     "/galleryItems/10/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 2",
+      "tm": "Il ⟦G0⟧ — immagine della galleria 2",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/10/caption": {
       "source_en": "The ⟦G0⟧ — photo 2",
+      "tm": "Il ⟦G0⟧ — foto 2",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/10/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Il ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/11/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 3",
+      "tm": "Il ⟦G0⟧ — immagine della galleria 3",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/11/caption": {
       "source_en": "The ⟦G0⟧ — photo 3",
+      "tm": "Il ⟦G0⟧ — foto 3",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/11/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Il ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/12/alt": {
       "source_en": "The ⟦G0⟧ — gallery image 4",
+      "tm": "Il ⟦G0⟧ — immagine della galleria 4",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/12/caption": {
       "source_en": "The ⟦G0⟧ — photo 4",
+      "tm": "Il ⟦G0⟧ — foto 4",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
     },
     "/galleryItems/12/location": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Il ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Giardino della quiete mattutina"
       ]
@@ -450,5 +471,5 @@
       "⟦G0⟧": "Giardino della quiete mattutina"
     }
   },
-  "tmHits": 33
+  "tmHits": 54
 }

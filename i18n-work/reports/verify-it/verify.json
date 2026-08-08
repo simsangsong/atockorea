@@ -1,6 +1,6 @@
 {
   "locale": "it",
-  "generatedAt": "2026-08-08T12:38:46.870Z",
+  "generatedAt": "2026-08-08T14:14:44.311Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-city-tour:it:A1",
@@ -1507,11 +1507,389 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:B",
-      "status": "flagged",
-      "segments": 123,
-      "fails": 0,
-      "flags": 4,
+      "status": "blocked",
+      "segments": 60,
+      "fails": 95,
+      "flags": 43,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/30/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/30/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/30/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/31/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/31/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/31/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/32/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/32/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/32/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/33/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/33/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/33/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/34/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/34/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/34/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G9",
           "severity": "flag",
@@ -1519,22 +1897,448 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         },
         {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/galleryItems/1/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 2])"
         },
         {
-          "gate": "G9",
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "길이비 0.85 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/alt",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "길이비 0.53 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/caption",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/location",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/alt",
+          "message": "길이비 0.64 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/alt",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "길이비 0.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/caption",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G8",
           "severity": "flag",
           "pointer": "/galleryItems/2/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "message": "길이비 0.26 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G10",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/location",
+          "message": "CJK 문자가 원문 0자 → 번역 4자로 증가 — 로케일 교차 오염"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G9",
           "severity": "flag",
           "pointer": "/galleryItems/3/location",
           "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/4/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/4/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/caption",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [0 5] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [0 5] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [0 5] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 0.70 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [0 5] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "길이비 0.34 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [0 6] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "길이비 0.70 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [0 6] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "길이비 0.34 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "길이비 0.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/location",
+          "message": "길이비 0.09 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "길이비 0.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "길이비 0.09 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },
@@ -1585,11 +2389,53 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-2",
-      "status": "flagged",
-      "segments": 66,
-      "fails": 0,
-      "flags": 9,
+      "status": "blocked",
+      "segments": 65,
+      "fails": 11,
+      "flags": 12,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/category",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/timeUsed/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/timeUsed/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -1613,6 +2459,30 @@
           "severity": "flag",
           "pointer": "/itineraryStops/1/galleryItems/2/location",
           "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/3/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/alt",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/3/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/galleryItems/3/caption",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G9",
@@ -1639,20 +2509,62 @@
           "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
         },
         {
-          "gate": "G9",
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/5/alt",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [0 6] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
-          "pointer": "/itineraryStops/3/duration",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "pointer": "/itineraryStops/2/galleryItems/5/alt",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/5/caption",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [0 6] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/galleryItems/5/caption",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
         }
       ]
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-3",
-      "status": "flagged",
-      "segments": 30,
-      "fails": 0,
+      "status": "blocked",
+      "segments": 34,
+      "fails": 4,
       "flags": 7,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/category",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/duration",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/timeUsed/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/timeUsed/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
         {
           "gate": "G3",
           "severity": "flag",
@@ -1699,16 +2611,574 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-4",
-      "status": "flagged",
-      "segments": 75,
-      "fails": 0,
-      "flags": 3,
+      "status": "blocked",
+      "segments": 45,
+      "fails": 72,
+      "flags": 24,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/7/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/7/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/7/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/8/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/8/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/8/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/9/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/9/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/9/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/10/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/10/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/10/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/11/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/11/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/11/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/12/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/12/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/12/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/13/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/13/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/13/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/14/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/14/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/14/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/15/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/15/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/15/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/16/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/16/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/16/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/4/visitBasics/admission",
           "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 1] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/0/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 1] vs 번역 [0 1])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/0/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/0/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/0/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 2] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/1/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 2] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/1/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/1/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/1/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 3] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/2/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 3] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/2/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/2/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/2/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 4] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/3/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 4] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 5] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/4/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 5] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/4/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/4/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 6] vs 번역 [0 6])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/5/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 6] vs 번역 [0 6])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/5/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/5/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 7] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/6/alt",
+          "message": "길이비 0.65 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1 7] vs 번역 [0 7])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/6/caption",
+          "message": "길이비 0.32 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧ ⟦G1⟧] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/location",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/galleryItems/6/location",
+          "message": "길이비 0.13 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G8",
@@ -1726,11 +3196,29 @@
     },
     {
       "unitId": "tour_product_pages:from-busan-gyeongju-ancient-capital-day-tour:it:itineraryStops-5",
-      "status": "flagged",
-      "segments": 42,
-      "fails": 0,
-      "flags": 4,
+      "status": "blocked",
+      "segments": 39,
+      "fails": 5,
+      "flags": 14,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -1742,6 +3230,78 @@
           "severity": "flag",
           "pointer": "/itineraryStops/5/convenience/restroom",
           "message": "길이비 1.37 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "길이비 0.64 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "길이비 0.81 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "길이비 0.64 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "길이비 0.81 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "길이비 0.64 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "길이비 0.81 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 12])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "숫자 추가 — 번역에만 [12] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "길이비 0.85 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 12])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "숫자 추가 — 번역에만 [12] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "길이비 0.45 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G9",
@@ -1762,13 +3322,67 @@
       "status": "flagged",
       "segments": 27,
       "fails": 0,
-      "flags": 2,
+      "flags": 11,
       "findings": [
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/6/visitBasics/walking",
           "message": "길이비 1.71 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/alt",
+          "message": "길이비 0.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/location",
+          "message": "길이비 0.09 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/alt",
+          "message": "길이비 0.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/location",
+          "message": "길이비 0.09 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/2/alt",
+          "message": "길이비 0.52 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/2/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/2/location",
+          "message": "길이비 0.09 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G9",
@@ -1906,11 +3520,41 @@
     },
     {
       "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:it:A1",
-      "status": "flagged",
-      "segments": 100,
-      "fails": 0,
-      "flags": 10,
+      "status": "blocked",
+      "segments": 103,
+      "fails": 5,
+      "flags": 11,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/6/title",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/6/content/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/6/content/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/6/preview",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/catalog_card/priceLabel",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -1964,6 +3608,12 @@
           "severity": "flag",
           "pointer": "/practicalAccordionItems/4/content/0",
           "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/5/content/3",
+          "message": "길이비 1.78 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G8",
@@ -2131,10 +3781,10 @@
     },
     {
       "unitId": "tour_product_pages:jeju-island-private-car-charter-tour:it:itineraryStops",
-      "status": "flagged",
+      "status": "blocked",
       "segments": 32,
-      "fails": 0,
-      "flags": 7,
+      "fails": 1,
+      "flags": 12,
       "findings": [
         {
           "gate": "G9",
@@ -2149,10 +3799,46 @@
           "message": "길이비 1.35 가 it 허용범위 0.95–1.35 밖"
         },
         {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/2",
+          "message": "숫자 추가 — 번역에만 [30] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/highlights/2",
+          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/0/smartNotes/facilities",
           "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/itineraryStops/0/description",
+          "message": "숫자 소실 — 원문의 [2023 31] 이 번역에 없다 (원문 [0 1 1 15 182 2 2003 2007 2023 2026 3 31 4 5000 6 7 7 8900] vs 번역 [0 1 1 15 182 2 2003 2007 2026 3 30 4 5000 6 7 7 8900])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/description",
+          "message": "숫자 추가 — 번역에만 [30] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/closed",
+          "message": "숫자 추가 — 번역에만 [30] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/0/visitBasics/closed",
+          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G9",
@@ -2499,11 +4185,191 @@
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:B",
-      "status": "flagged",
-      "segments": 57,
-      "fails": 0,
-      "flags": 6,
+      "status": "blocked",
+      "segments": 87,
+      "fails": 96,
+      "flags": 70,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -2523,32 +4389,848 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         },
         {
-          "gate": "G9",
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/alt",
+          "message": "길이비 0.53 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/0/location",
+          "message": "길이비 0.10 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/alt",
+          "message": "숫자 소실 — 원문의 [1 7] 이 번역에 없다 (원문 [1 7] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/alt",
+          "message": "길이비 0.59 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/caption",
+          "message": "숫자 소실 — 원문의 [1 7] 이 번역에 없다 (원문 [1 7] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/caption",
+          "message": "길이비 0.28 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/1/location",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [0])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/1/location",
+          "message": "길이비 0.11 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/alt",
+          "message": "숫자 소실 — 원문의 [0 1] 이 번역에 없다 (원문 [0 1] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/caption",
+          "message": "숫자 소실 — 원문의 [0 1] 이 번역에 없다 (원문 [0 1] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/2/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/2/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [1] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "숫자 추가 — 번역에만 [0 4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/alt",
+          "message": "길이비 0.73 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [1] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "숫자 추가 — 번역에만 [0 4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/caption",
+          "message": "길이비 0.46 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/3/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/3/location",
+          "message": "길이비 0.34 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/4/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/alt",
+          "message": "길이비 0.59 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/4/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [0 1] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/caption",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/caption",
+          "message": "길이비 0.28 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/4/location",
+          "message": "길이비 0.11 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 6])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 추가 — 번역에만 [6] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "길이비 0.53 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 6])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 추가 — 번역에만 [6] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "길이비 0.25 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/location",
+          "message": "길이비 0.10 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 소실 — 원문의 [0 3] 이 번역에 없다 (원문 [0 3] vs 번역 [7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 소실 — 원문의 [0 3] 이 번역에 없다 (원문 [0 3] vs 번역 [7])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 추가 — 번역에만 [7] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "길이비 0.92 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/location",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 소실 — 원문의 [0 4] 이 번역에 없다 (원문 [0 4] vs 번역 [8])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 추가 — 번역에만 [8] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 소실 — 원문의 [0 4] 이 번역에 없다 (원문 [0 4] vs 번역 [8])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 추가 — 번역에만 [8] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "길이비 0.92 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/location",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 소실 — 원문의 [0 5] 이 번역에 없다 (원문 [0 5] vs 번역 [9])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 추가 — 번역에만 [9] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 소실 — 원문의 [0 5] 이 번역에 없다 (원문 [0 5] vs 번역 [9])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 추가 — 번역에만 [9] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "길이비 0.92 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/location",
+          "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 소실 — 원문의 [2 7] 이 번역에 없다 (원문 [2 7] vs 번역 [0 10])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 추가 — 번역에만 [0 10] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "길이비 0.78 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 소실 — 원문의 [2 7] 이 번역에 없다 (원문 [2 7] vs 번역 [0 10])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 추가 — 번역에만 [0 10] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "길이비 0.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/location",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [0])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/location",
+          "message": "길이비 0.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 소실 — 원문의 [3 7] 이 번역에 없다 (원문 [3 7] vs 번역 [0 11])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 추가 — 번역에만 [0 11] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "길이비 0.78 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 소실 — 원문의 [3 7] 이 번역에 없다 (원문 [3 7] vs 번역 [0 11])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 추가 — 번역에만 [0 11] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "길이비 0.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/location",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [0])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/location",
+          "message": "길이비 0.36 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 소실 — 원문의 [4 7] 이 번역에 없다 (원문 [4 7] vs 번역 [1100 12])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 추가 — 번역에만 [1100 12] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "길이비 0.94 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 소실 — 원문의 [4 7] 이 번역에 없다 (원문 [4 7] vs 번역 [1100 12])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 추가 — 번역에만 [1100 12] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "길이비 0.70 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/location",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [1100])"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
           "pointer": "/galleryItems/11/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "message": "숫자 추가 — 번역에만 [1100] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
-          "gate": "G9",
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/location",
+          "message": "길이비 0.61 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 소실 — 원문의 [0 2] 이 번역에 없다 (원문 [0 2] vs 번역 [1100 13])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 추가 — 번역에만 [1100 13] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 소실 — 원문의 [0 2] 이 번역에 없다 (원문 [0 2] vs 번역 [1100 13])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 추가 — 번역에만 [1100 13] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "길이비 0.74 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [1100])"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
           "pointer": "/galleryItems/12/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "message": "숫자 추가 — 번역에만 [1100] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
-          "gate": "G9",
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/location",
+          "message": "길이비 0.67 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 소실 — 원문의 [0 3] 이 번역에 없다 (원문 [0 3] vs 번역 [1100 14])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 추가 — 번역에만 [1100 14] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 소실 — 원문의 [0 3] 이 번역에 없다 (원문 [0 3] vs 번역 [1100 14])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 추가 — 번역에만 [1100 14] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "길이비 0.74 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [1100])"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
           "pointer": "/galleryItems/13/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "message": "숫자 추가 — 번역에만 [1100] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/location",
+          "message": "길이비 0.67 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:itineraryStops",
-      "status": "flagged",
-      "segments": 54,
-      "fails": 0,
-      "flags": 18,
+      "status": "blocked",
+      "segments": 52,
+      "fails": 6,
+      "flags": 16,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/name",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/category",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/timeUsed/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G9",
           "severity": "flag",
@@ -2644,28 +5326,250 @@
           "severity": "flag",
           "pointer": "/itineraryStops/1/galleryItems/2/location",
           "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/2/name",
-          "message": "길이비 1.50 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/2/duration",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
         }
       ]
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:itineraryStops-2",
-      "status": "flagged",
-      "segments": 59,
-      "fails": 0,
-      "flags": 12,
+      "status": "blocked",
+      "segments": 60,
+      "fails": 39,
+      "flags": 7,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/1/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/name",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/category",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/duration",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/timeUsed/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/0/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/0/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/0/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/1/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/1/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/1/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/2/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/2/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/2/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/description",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/hours",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/closed",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/walking",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/admission",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/name",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/category",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/4",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -2707,46 +5611,394 @@
           "severity": "flag",
           "pointer": "/itineraryStops/3/smartNotes/tip",
           "message": "길이비 1.44 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/3/visitBasics/hours",
-          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/3/galleryItems/0/alt",
-          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/3/galleryItems/0/location",
-          "message": "길이비 1.42 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/4/duration",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/4/timeUsed/0",
-          "message": "길이비 1.43 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:itineraryStops-3",
-      "status": "flagged",
-      "segments": 58,
-      "fails": 0,
-      "flags": 12,
+      "status": "blocked",
+      "segments": 51,
+      "fails": 63,
+      "flags": 5,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/description",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/hours",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/closed",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/walking",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/visitBasics/admission",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/0/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/1/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/1/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/1/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/2/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/2/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/2/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/name",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/category",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/duration",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/timeUsed/2",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/2",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/3",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/highlights/4",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/description",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/hours",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/closed",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/walking",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/admission",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/name",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/category",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/duration",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/3",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/4",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/3",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/4",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/5",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/6",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/7",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/smartNotes/tip",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/smartNotes/facilities",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -2776,58 +6028,370 @@
           "severity": "flag",
           "pointer": "/itineraryStops/5/convenience/restroom",
           "message": "길이비 0.94 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/visitBasics/closed",
-          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/5/visitBasics/walking",
-          "message": "길이비 1.47 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/6/duration",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/6/timeUsed/0",
-          "message": "길이비 1.40 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/6/timeUsed/1",
-          "message": "길이비 1.59 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/6/highlights/2",
-          "message": "길이비 1.36 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/6/highlights/5",
-          "message": "길이비 1.41 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },
     {
       "unitId": "tour_product_pages:jeju-southern-top-unesco-spots-tour:it:itineraryStops-4",
-      "status": "flagged",
-      "segments": 31,
-      "fails": 0,
-      "flags": 6,
+      "status": "blocked",
+      "segments": 60,
+      "fails": 59,
+      "flags": 3,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/description",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/hours",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/closed",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/walking",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/visitBasics/admission",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/0/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/1/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/2/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/5/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/5/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/5/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/6/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/6/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/5/galleryItems/6/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/name",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/category",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/duration",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/2",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/3",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/timeUsed/4",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/2",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/3",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/4",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/5",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/6",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/7",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/smartNotes/tip",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/smartNotes/facilities",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/2/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/name",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/category",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/duration",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/timeUsed/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/timeUsed/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/timeUsed/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/timeUsed/3",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/highlights/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/highlights/1",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/highlights/2",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/highlights/3",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/highlights/4",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/whyOnRoute",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/7/description",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -2845,24 +6409,6 @@
           "severity": "flag",
           "pointer": "/itineraryStops/6/visitBasics/walking",
           "message": "길이비 0.93 가 it 허용범위 0.95–1.35 밖"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/7/duration",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G9",
-          "severity": "flag",
-          "pointer": "/itineraryStops/7/timeUsed/0",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
-        },
-        {
-          "gate": "G8",
-          "severity": "flag",
-          "pointer": "/itineraryStops/7/highlights/4",
-          "message": "길이비 1.45 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },
@@ -5413,11 +8959,35 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:A1",
-      "status": "flagged",
-      "segments": 88,
-      "fails": 0,
+      "status": "blocked",
+      "segments": 92,
+      "fails": 4,
       "flags": 11,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/5/title",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/5/content/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/5/content/1",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/practicalAccordionItems/5/preview",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -5578,11 +9148,137 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:B",
-      "status": "flagged",
-      "segments": 72,
-      "fails": 0,
-      "flags": 10,
+      "status": "blocked",
+      "segments": 93,
+      "fails": 81,
+      "flags": 55,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/23/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/24/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/25/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/26/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/27/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/28/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/galleryItems/29/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
         {
           "gate": "G9",
           "severity": "flag",
@@ -5596,10 +9292,76 @@
           "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
         },
         {
-          "gate": "G9",
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [1] vs 번역 [1100 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "숫자 추가 — 번역에만 [1100 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/alt",
+          "message": "길이비 0.81 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 소실 — 원문의 [1] 이 번역에 없다 (원문 [1] vs 번역 [1100 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "숫자 추가 — 번역에만 [1100 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/caption",
+          "message": "길이비 0.57 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
           "pointer": "/galleryItems/5/location",
-          "message": "미번역 잔존 — 번역이 원문과 동일"
+          "message": "숫자 추가 — 번역에만 [1100] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/5/location",
+          "message": "길이비 0.50 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [1100 2] vs 번역 [1100 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [1100 2] vs 번역 [1100 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/6/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G9",
@@ -5608,40 +9370,604 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         },
         {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 소실 — 원문의 [1100 3] 이 번역에 없다 (원문 [1100 3] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/alt",
+          "message": "길이비 0.80 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 소실 — 원문의 [1100 3] 이 번역에 없다 (원문 [1100 3] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/caption",
+          "message": "길이비 0.41 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/7/location",
+          "message": "숫자 소실 — 원문의 [1100] 이 번역에 없다 (원문 [1100] vs 번역 [0])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/7/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [0 2] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/8/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/alt",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [0 3] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/9/caption",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/alt",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [0 4] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/10/caption",
+          "message": "숫자 추가 — 번역에만 [5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 소실 — 원문의 [0 5] 이 번역에 없다 (원문 [0 5] vs 번역 [2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/alt",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 소실 — 원문의 [0 5] 이 번역에 없다 (원문 [0 5] vs 번역 [2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/11/caption",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/11/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [2] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [2] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/12/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [3] vs 번역 [4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/alt",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [3] vs 번역 [4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/13/caption",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [4] vs 번역 [2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/alt",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/14/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [4] vs 번역 [2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/caption",
+          "message": "숫자 추가 — 번역에만 [2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/14/caption",
+          "message": "길이비 0.94 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/alt",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [5] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/alt",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/15/caption",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [5] vs 번역 [3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/caption",
+          "message": "숫자 추가 — 번역에만 [3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/galleryItems/15/caption",
+          "message": "길이비 0.94 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/alt",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [2] vs 번역 [4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/16/alt",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/16/caption",
+          "message": "숫자 소실 — 원문의 [2] 이 번역에 없다 (원문 [2] vs 번역 [4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/16/caption",
+          "message": "숫자 추가 — 번역에만 [4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/alt",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [3] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/17/alt",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/galleryItems/17/alt",
-          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 1.68 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/caption",
+          "message": "숫자 소실 — 원문의 [3] 이 번역에 없다 (원문 [3] vs 번역 [0 2])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/17/caption",
+          "message": "숫자 추가 — 번역에만 [0 2] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/17/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/17/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/alt",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [4] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/18/alt",
+          "message": "숫자 추가 — 번역에만 [0 3] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/galleryItems/18/alt",
-          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 1.68 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/caption",
+          "message": "숫자 소실 — 원문의 [4] 이 번역에 없다 (원문 [4] vs 번역 [0 3])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/18/caption",
+          "message": "숫자 추가 — 번역에만 [0 3] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/18/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/18/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/alt",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [5] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/19/alt",
+          "message": "숫자 추가 — 번역에만 [0 4] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/galleryItems/19/alt",
-          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 1.68 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/caption",
+          "message": "숫자 소실 — 원문의 [5] 이 번역에 없다 (원문 [5] vs 번역 [0 4])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/19/caption",
+          "message": "숫자 추가 — 번역에만 [0 4] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/19/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/19/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/alt",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [6] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/20/alt",
+          "message": "숫자 추가 — 번역에만 [0 5] 이 있다 (날짜 서식 변환이면 정상)"
         },
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/galleryItems/20/alt",
-          "message": "길이비 1.38 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 1.68 가 it 허용범위 0.95–1.35 밖"
         },
         {
-          "gate": "G8",
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/caption",
+          "message": "숫자 소실 — 원문의 [6] 이 번역에 없다 (원문 [6] vs 번역 [0 5])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/20/caption",
+          "message": "숫자 추가 — 번역에만 [0 5] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/20/location",
+          "message": "글로서리 토큰 불일치 — 원문 [] vs 번역 [⟦G0⟧]"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/20/location",
+          "message": "숫자 추가 — 번역에만 [0] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/alt",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [1])"
+        },
+        {
+          "gate": "G3",
           "severity": "flag",
           "pointer": "/galleryItems/21/alt",
-          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/21/caption",
+          "message": "숫자 소실 — 원문의 [7] 이 번역에 없다 (원문 [7] vs 번역 [1])"
+        },
+        {
+          "gate": "G3",
+          "severity": "flag",
+          "pointer": "/galleryItems/21/caption",
+          "message": "숫자 추가 — 번역에만 [1] 이 있다 (날짜 서식 변환이면 정상)"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/alt",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/alt",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0 2] vs 번역 [2])"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/caption",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/caption",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0 2] vs 번역 [2])"
         },
         {
           "gate": "G8",
           "severity": "flag",
-          "pointer": "/galleryItems/22/alt",
-          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+          "pointer": "/galleryItems/22/caption",
+          "message": "길이비 0.81 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G2",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/location",
+          "message": "글로서리 토큰 불일치 — 원문 [⟦G0⟧] vs 번역 []"
+        },
+        {
+          "gate": "G3",
+          "severity": "fail",
+          "pointer": "/galleryItems/22/location",
+          "message": "숫자 소실 — 원문의 [0] 이 번역에 없다 (원문 [0] vs 번역 [])"
         }
       ]
     },
@@ -5758,11 +10084,35 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-2",
-      "status": "flagged",
-      "segments": 74,
-      "fails": 0,
+      "status": "blocked",
+      "segments": 76,
+      "fails": 4,
       "flags": 3,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/2/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/highlights/0",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G9",
           "severity": "flag",
@@ -5785,11 +10135,35 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-3",
-      "status": "flagged",
-      "segments": 54,
-      "fails": 0,
+      "status": "blocked",
+      "segments": 52,
+      "fails": 4,
       "flags": 7,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/3/highlights/0",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/alt",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -5836,11 +10210,101 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-4",
-      "status": "flagged",
-      "segments": 56,
-      "fails": 0,
+      "status": "blocked",
+      "segments": 65,
+      "fails": 15,
       "flags": 12,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/5/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/4/galleryItems/6/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/4",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/5",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/6",
+          "message": "포인터 추가 — 입력에 없는 포인터"
+        },
         {
           "gate": "G9",
           "severity": "flag",
@@ -5917,11 +10381,83 @@
     },
     {
       "unitId": "tour_product_pages:southwest-hallasan-osulloc-aewol:it:itineraryStops-5",
-      "status": "flagged",
-      "segments": 16,
-      "fails": 0,
-      "flags": 6,
+      "status": "blocked",
+      "segments": 28,
+      "fails": 12,
+      "flags": 10,
       "findings": [
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/4",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/5",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/highlights/6",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/2/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/2/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/2/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/3/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/3/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/3/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/4/alt",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/4/caption",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
+        {
+          "gate": "G1",
+          "severity": "fail",
+          "pointer": "/itineraryStops/6/galleryItems/4/location",
+          "message": "포인터 누락 — 번역 출력에 없음"
+        },
         {
           "gate": "G8",
           "severity": "flag",
@@ -5950,13 +10486,37 @@
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/6/galleryItems/0/alt",
-          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 0.79 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/caption",
+          "message": "길이비 0.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/0/location",
+          "message": "길이비 0.48 가 it 허용범위 0.95–1.35 밖"
         },
         {
           "gate": "G8",
           "severity": "flag",
           "pointer": "/itineraryStops/6/galleryItems/1/alt",
-          "message": "길이비 1.48 가 it 허용범위 0.95–1.35 밖"
+          "message": "길이비 0.79 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/caption",
+          "message": "길이비 0.56 가 it 허용범위 0.95–1.35 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/6/galleryItems/1/location",
+          "message": "길이비 0.48 가 it 허용범위 0.95–1.35 밖"
         }
       ]
     },

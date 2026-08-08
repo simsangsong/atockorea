@@ -7,178 +7,226 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Pickup at Busan Cruise Port"
+      "source_en": "Pickup at Busan Cruise Port",
+      "tm": "Abholung am Kreuzfahrthafen Busan"
     },
     "/itineraryStops/0/time": {
-      "source_en": "Ship arrival"
+      "source_en": "Ship arrival",
+      "tm": "Schiffsankunft"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Transit / Pickup"
+      "source_en": "Transit / Pickup",
+      "tm": "Transfer / Abholung"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "15–30 min"
+      "source_en": "15–30 min",
+      "tm": "15–30 Min."
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "Cruise terminal pickup"
+      "source_en": "Cruise terminal pickup",
+      "tm": "Abholung am Kreuzfahrtterminal"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "Meeting time adjusted to ship arrival"
+      "source_en": "Meeting time adjusted to ship arrival",
+      "tm": "Treffpunktzeit an die Schiffsankunft angepasst"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Guide contact confirmed before the tour"
+      "source_en": "Guide contact confirmed before the tour",
+      "tm": "Kontaktdaten des Guides vor der Tour bestätigt"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "Pickup buffered 30 min after ship clearance time"
+      "source_en": "Pickup buffered 30 min after ship clearance time",
+      "tm": "Abholung mit 30 Min. Puffer nach der Freigabezeit des Schiffes"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "Direct port pickup avoids taxi confusion and protects your limited shore time."
+      "source_en": "Direct port pickup avoids taxi confusion and protects your limited shore time.",
+      "tm": "Die direkte Abholung am Hafen vermeidet Verwirrung bei der Taxisuche und schützt Ihre begrenzte Zeit an Land."
     },
     "/itineraryStops/0/description": {
-      "source_en": "After disembarkation, meet your guide at the cruise terminal arrival area. The pickup time is adjusted to your ship schedule, and the guide will confirm meeting details before the tour."
+      "source_en": "After disembarkation, meet your guide at the cruise terminal arrival area. The pickup time is adjusted to your ship schedule, and the guide will confirm meeting details before the tour.",
+      "tm": "Nach dem Verlassen des Schiffes treffen Sie Ihren Guide im Ankunftsbereich des Kreuzfahrtterminals. Die Abholzeit wird an Ihren Schiffsfahrplan angepasst, und der Guide bestätigt die Details zum Treffpunkt vor der Tour."
     },
     "/itineraryStops/1/name": {
-      "source_en": "Route planning with your guide"
+      "source_en": "Route planning with your guide",
+      "tm": "Routenplanung mit Ihrem Guide"
     },
     "/itineraryStops/1/time": {
-      "source_en": "Morning"
+      "source_en": "Morning",
+      "tm": "Vormittag"
     },
     "/itineraryStops/1/category": {
-      "source_en": "Route planning"
+      "source_en": "Route planning",
+      "tm": "Routenplanung"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 Min."
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Memorial Service Hall + 12-min English documentary (~15 min)"
+      "source_en": "Memorial Service Hall + 12-min English documentary (~15 min)",
+      "tm": "Memorial Service Hall + 12-minütige englische Dokumentation (ca. 15 Min.)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Wall of Remembrance + Memorabilia Hall (~20 min)"
+      "source_en": "Wall of Remembrance + Memorabilia Hall (~20 min)",
+      "tm": "Wall of Remembrance + Memorabilia Hall (ca. 20 Min.)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Reflection time + photographs (~10 min)"
+      "source_en": "Reflection time + photographs (~10 min)",
+      "tm": "Zeit zum Innehalten + Fotos (ca. 10 Min.)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Walk back to vehicle (~5 min)"
+      "source_en": "Walk back to vehicle (~5 min)",
+      "tm": "Rückweg zum Fahrzeug (ca. 5 Min.)"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "Fully private route"
+      "source_en": "Fully private route",
+      "tm": "Vollständig private Route"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "Pace adjusted to your group"
+      "source_en": "Pace adjusted to your group",
+      "tm": "Tempo an Ihre Gruppe angepasst"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Return buffer built into the plan"
+      "source_en": "Return buffer built into the plan",
+      "tm": "Zeitpuffer für die Rückkehr fest eingeplant"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Main Gate by Korean architect **Kim Joong-up (1966)**"
+      "source_en": "Main Gate by Korean architect **Kim Joong-up (1966)**",
+      "tm": "Haupttor des koreanischen Architekten **Kim Joong-up (1966)**"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**'Turn Toward Busan' ceremony** Nov 11 at 11:00 AM (synchronized worldwide)"
+      "source_en": "**'Turn Toward Busan' ceremony** Nov 11 at 11:00 AM (synchronized worldwide)",
+      "tm": "**Zeremonie „Turn Toward Busan“** am 11. November um 11:00 Uhr (weltweit synchronisiert)"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "**Free admission**, 100% wheelchair-accessible"
+      "source_en": "**Free admission**, 100% wheelchair-accessible",
+      "tm": "**Freier Eintritt**, zu 100 % rollstuhlgerecht"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "**Frank Gaylord US Korean War Monument (2013, dedicated by American Battle Monuments Commission)** — by the same sculptor as the National Mall Korean War Veterans Memorial 'The Column' in Washington DC (1995)"
+      "source_en": "**Frank Gaylord US Korean War Monument (2013, dedicated by American Battle Monuments Commission)** — by the same sculptor as the National Mall Korean War Veterans Memorial 'The Column' in Washington DC (1995)",
+      "tm": "**Frank Gaylord US Korean War Monument (2013, eingeweiht von der American Battle Monuments Commission)** — vom selben Bildhauer wie „The Column“ des Korean War Veterans Memorial auf der National Mall in Washington DC (1995)"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "**Adjacent UN Sculpture Park** — 34 sculptures donated by sculptors from 21 nations who fought in the Korean War; opened October 24, 2001 as 50th-anniversary commemoration"
+      "source_en": "**Adjacent UN Sculpture Park** — 34 sculptures donated by sculptors from 21 nations who fought in the Korean War; opened October 24, 2001 as 50th-anniversary commemoration",
+      "tm": "**Angrenzender UN Sculpture Park** — 34 Skulpturen, gestiftet von Bildhauern aus 21 Nationen, die im Koreakrieg kämpften; eröffnet am 24. Oktober 2001 zum Gedenken an den 50. Jahrestag"
     },
     "/itineraryStops/1/highlights/8": {
       "source_en": "**UN General Assembly Resolution 977(X) of December 15, 1955** officially established UNMCK as UN-administered protected territory under international ⟦G0⟧ Commission",
+      "tm": "**Die Resolution 977(X) der UN-Generalversammlung vom 15. Dezember 1955** machte den UNMCK offiziell zu einem von den UN verwalteten Schutzgebiet unter der internationalen ⟦G0⟧-Kommission",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "Private routing is the main advantage of this product: less waiting, more control, and a schedule planned around your cruise time."
+      "source_en": "Private routing is the main advantage of this product: less waiting, more control, and a schedule planned around your cruise time.",
+      "tm": "Die private Routenführung ist der größte Vorteil dieses Angebots: weniger Wartezeit, mehr Kontrolle und ein Zeitplan, der sich nach Ihrer Kreuzfahrtzeit richtet."
     },
     "/itineraryStops/1/description": {
-      "source_en": "This is a private tour, so the day can be shaped around your interests, pace, weather, and all-aboard time. The guide helps choose a realistic route rather than overloading the day with too many distant stops."
+      "source_en": "This is a private tour, so the day can be shaped around your interests, pace, weather, and all-aboard time. The guide helps choose a realistic route rather than overloading the day with too many distant stops.",
+      "tm": "Dies ist eine private Tour, daher lässt sich der Tag nach Ihren Interessen, Ihrem Tempo, dem Wetter und der All-aboard-Zeit gestalten. Der Guide hilft Ihnen, eine realistische Route zu wählen, statt den Tag mit zu vielen weit entfernten Stopps zu überladen."
     },
     "/itineraryStops/1/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 1",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 1",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 1",
+      "tm": "⟦G0⟧ in Korea — Foto 1",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/0/location": {
       "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 2",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 2",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 2",
+      "tm": "⟦G0⟧ in Korea — Foto 2",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/1/location": {
       "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "tm": "⟦G0⟧ in Korea — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 3",
+      "tm": "⟦G0⟧ in Korea — Foto 3",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/1/galleryItems/2/location": {
       "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/2/name": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/time": {
-      "source_en": "Flexible"
+      "source_en": "Flexible",
+      "tm": "Flexibel"
     },
     "/itineraryStops/2/category": {
-      "source_en": "Coastal / Temple / View"
+      "source_en": "Coastal / Temple / View",
+      "tm": "Küste / Tempel / Aussicht"
     },
     "/itineraryStops/2/duration": {
-      "source_en": "2–3 hours"
+      "source_en": "2–3 hours",
+      "tm": "2–3 Std."
     },
     "/itineraryStops/2/timeUsed/0": {
-      "source_en": "2–3 hours"
+      "source_en": "2–3 hours",
+      "tm": "2–3 Std."
     },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "Train to Observatory + 3-floor panorama (~20 min)"
+      "source_en": "Train to Observatory + 3-floor panorama (~20 min)",
+      "tm": "Bahn zum Observatory + Panorama auf 3 Etagen (ca. 20 Min.)"
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Walk to Yeongdo Lighthouse + 'Light Beyond Limitation' sculpture (~15 min)"
+      "source_en": "Walk to Yeongdo Lighthouse + 'Light Beyond Limitation' sculpture (~15 min)",
+      "tm": "Spaziergang zum Yeongdo-Leuchtturm + Skulptur „Light Beyond Limitation“ (ca. 15 Min.)"
     },
     "/itineraryStops/2/timeUsed/3": {
-      "source_en": "Cliff-edge views toward Mangbuseok Rock + Sinseon Rock area (~20 min)"
+      "source_en": "Cliff-edge views toward Mangbuseok Rock + Sinseon Rock area (~20 min)",
+      "tm": "Blick von der Klippenkante auf den Mangbuseok-Felsen + Bereich Sinseon-Felsen (ca. 20 Min.)"
     },
     "/itineraryStops/2/timeUsed/4": {
-      "source_en": "Train back to entrance + reassemble (~10 min)"
+      "source_en": "Train back to entrance + reassemble (~10 min)",
+      "tm": "Bahn zurück zum Eingang + wieder sammeln (ca. 10 Min.)"
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "⟦G0⟧",
@@ -188,124 +236,173 @@
       ]
     },
     "/itineraryStops/2/highlights/1": {
-      "source_en": "Cheongsapo / Blue Line Park"
+      "source_en": "Cheongsapo / Blue Line Park",
+      "tm": "Cheongsapo / Blue Line Park"
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "Haeundae or Gwangalli coast"
+      "source_en": "Haeundae or Gwangalli coast",
+      "tm": "Küste von Haeundae oder Gwangalli"
     },
     "/itineraryStops/2/highlights/3": {
-      "source_en": "**3-story Observatory** with views to **Tsushima Island (Japan, 50 km)** on clear days"
+      "source_en": "**3-story Observatory** with views to **Tsushima Island (Japan, 50 km)** on clear days",
+      "tm": "**Observatory mit 3 Etagen** und Blick auf die **Insel Tsushima (Japan, 50 km)** bei klarem Wetter"
     },
     "/itineraryStops/2/highlights/4": {
-      "source_en": "**Danubi Train** ~₩4,000 RT — 5 stops along 4.3 km coastal loop"
+      "source_en": "**Danubi Train** ~₩4,000 RT — 5 stops along 4.3 km coastal loop",
+      "tm": "**Danubi Train** ca. ₩4.000 Hin- und Rückfahrt — 5 Haltestellen auf einer 4,3 km langen Küstenrunde"
     },
     "/itineraryStops/2/highlights/5": {
-      "source_en": "**Mangbuseok Rock** legend + **'Light Beyond Limitation' sculpture** (Ji Sul Won Kyung-Lee)"
+      "source_en": "**Mangbuseok Rock** legend + **'Light Beyond Limitation' sculpture** (Ji Sul Won Kyung-Lee)",
+      "tm": "Legende vom **Mangbuseok-Felsen** + **Skulptur „Light Beyond Limitation“** (Ji Sul Won Kyung-Lee)"
     },
     "/itineraryStops/2/highlights/6": {
-      "source_en": "Park free; trails strenuous (lighthouse area = many steep stairs)"
+      "source_en": "Park free; trails strenuous (lighthouse area = many steep stairs)",
+      "tm": "Park kostenlos; Wege anstrengend (Bereich um den Leuchtturm = viele steile Treppen)"
     },
     "/itineraryStops/2/highlights/7": {
-      "source_en": "**Designated Busan National Geopark site (2013) + State-Designated Cultural Property Scenic Site No. 17 (2005)** — dual heritage status protecting the Cretaceous-era sedimentary cliffs, wave-cut terraces, orbicular hornfels, and slumping structures"
+      "source_en": "**Designated Busan National Geopark site (2013) + State-Designated Cultural Property Scenic Site No. 17 (2005)** — dual heritage status protecting the Cretaceous-era sedimentary cliffs, wave-cut terraces, orbicular hornfels, and slumping structures",
+      "tm": "**Ausgewiesener Standort des Busan National Geopark (2013) + staatlich ausgewiesenes Kulturgut, Landschaftsdenkmal Nr. 17 (2005)** — doppelter Schutzstatus für die Sedimentklippen aus der Kreidezeit, die Brandungsterrassen, den orbikularen Hornfels und die Rutschungsstrukturen"
     },
     "/itineraryStops/2/highlights/8": {
-      "source_en": "**Annual Hydrangea Culture Festival** at Taejongsa Temple (late June – early July) draws 100,000+ visitors to the bigleaf-hydrangea flower carpet inside the park grounds"
+      "source_en": "**Annual Hydrangea Culture Festival** at Taejongsa Temple (late June – early July) draws 100,000+ visitors to the bigleaf-hydrangea flower carpet inside the park grounds",
+      "tm": "**Jährliches Hortensien-Kulturfestival** am Taejongsa-Tempel (Ende Juni – Anfang Juli) zieht 100.000+ Besucher zum Blütenteppich aus Bauernhortensien auf dem Parkgelände"
     },
     "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "Skip the strenuous 4.3 km hike — board the **Danubi Train** for the 5-stop loop. **Taejongsa Temple's Hydrangea Festival** runs late June to early July. Lighthouse area has many steep stairs — not stroller-friendly."
+      "source_en": "Skip the strenuous 4.3 km hike — board the **Danubi Train** for the 5-stop loop. **Taejongsa Temple's Hydrangea Festival** runs late June to early July. Lighthouse area has many steep stairs — not stroller-friendly.",
+      "tm": "Sparen Sie sich die anstrengende Wanderung über 4,3 km — steigen Sie in den **Danubi Train** für die Runde mit 5 Haltestellen. Das **Hortensienfestival am Taejongsa-Tempel** läuft von Ende Juni bis Anfang Juli. Im Bereich des Leuchtturms gibt es viele steile Treppen — nicht kinderwagenfreundlich."
     },
     "/itineraryStops/2/whyOnRoute": {
-      "source_en": "The east coast option is scenic and highly recognizable for first-time visitors."
+      "source_en": "The east coast option is scenic and highly recognizable for first-time visitors.",
+      "tm": "Die Ostküsten-Option ist landschaftlich reizvoll und für Erstbesucher sehr wiedererkennbar."
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "Large free parking lot at the entrance plaza"
+      "source_en": "Large free parking lot at the entrance plaza",
+      "tm": "Großer kostenloser Parkplatz am Eingangsplatz"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "At the entrance plaza, Observatory, and Yeongdo Lighthouse area"
+      "source_en": "At the entrance plaza, Observatory, and Yeongdo Lighthouse area",
+      "tm": "Am Eingangsplatz, am Observatory und im Bereich des Yeongdo-Leuchtturms"
     },
     "/itineraryStops/2/description": {
       "source_en": "Popular east-side choices include ⟦G0⟧ Temple, Cheongsapo, Haeundae Blue Line Park or Sky Capsule area, Haeundae Beach, and Gwangalli Beach. \n\nThis route is best for guests who want coastal views and Busan’s seaside atmosphere.",
+      "tm": "Beliebte Ziele im Osten sind der ⟦G0⟧-Tempel, Cheongsapo, der Haeundae Blue Line Park oder der Bereich Sky Capsule, der Haeundae-Strand und der Gwangalli-Strand. \n\nDiese Route eignet sich am besten für Gäste, die Küstenblicke und Busans Atmosphäre am Meer erleben möchten.",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/2/visitBasics/hours": {
-      "source_en": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); Danubi Train 09:00–sunset"
+      "source_en": "Park 04:00–24:00 (Mar–Oct) / 05:00–24:00 (Nov–Feb); Danubi Train 09:00–sunset",
+      "tm": "Park 04:00–24:00 Uhr (März–Okt.) / 05:00–24:00 Uhr (Nov.–Feb.); Danubi Train 09:00 Uhr bis Sonnenuntergang"
     },
     "/itineraryStops/2/visitBasics/closed": {
-      "source_en": "Open year-round (Danubi Train suspends in heavy rain or strong wind)"
+      "source_en": "Open year-round (Danubi Train suspends in heavy rain or strong wind)",
+      "tm": "Ganzjährig geöffnet (Danubi Train fährt bei starkem Regen oder starkem Wind nicht)"
     },
     "/itineraryStops/2/visitBasics/walking": {
-      "source_en": "Full 4.3 km coastal loop is strenuous; **Danubi Train** stops at Pebble Beach → Gumyeongsa → Observatory → Yeongdo Lighthouse → Taejongsa Temple"
+      "source_en": "Full 4.3 km coastal loop is strenuous; **Danubi Train** stops at Pebble Beach → Gumyeongsa → Observatory → Yeongdo Lighthouse → Taejongsa Temple",
+      "tm": "Die komplette Küstenrunde über 4,3 km ist anstrengend; der **Danubi Train** hält an Pebble Beach → Gumyeongsa → Observatory → Yeongdo-Leuchtturm → Taejongsa-Tempel"
     },
     "/itineraryStops/2/visitBasics/admission": {
-      "source_en": "FREE park entry; **Danubi Train ~₩4,000 round-trip adult**, ~₩2,000 child"
+      "source_en": "FREE park entry; **Danubi Train ~₩4,000 round-trip adult**, ~₩2,000 child",
+      "tm": "KOSTENLOSER Parkeintritt; **Danubi Train ca. ₩4.000 Hin- und Rückfahrt für Erwachsene**, ca. ₩2.000 für Kinder"
     },
     "/itineraryStops/2/galleryItems/0/alt": {
-      "source_en": "East coast highlights option — gallery image 1"
+      "source_en": "East coast highlights option — gallery image 1",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 1"
     },
     "/itineraryStops/2/galleryItems/0/caption": {
-      "source_en": "East coast highlights option — photo 1"
+      "source_en": "East coast highlights option — photo 1",
+      "tm": "Option Ostküsten-Highlights — Foto 1"
     },
     "/itineraryStops/2/galleryItems/0/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/galleryItems/1/alt": {
-      "source_en": "East coast highlights option — gallery image 2"
+      "source_en": "East coast highlights option — gallery image 2",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 2"
     },
     "/itineraryStops/2/galleryItems/1/caption": {
-      "source_en": "East coast highlights option — photo 2"
+      "source_en": "East coast highlights option — photo 2",
+      "tm": "Option Ostküsten-Highlights — Foto 2"
     },
     "/itineraryStops/2/galleryItems/1/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/galleryItems/2/alt": {
-      "source_en": "East coast highlights option — gallery image 3"
+      "source_en": "East coast highlights option — gallery image 3",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 3"
     },
     "/itineraryStops/2/galleryItems/2/caption": {
-      "source_en": "East coast highlights option — photo 3"
+      "source_en": "East coast highlights option — photo 3",
+      "tm": "Option Ostküsten-Highlights — Foto 3"
     },
     "/itineraryStops/2/galleryItems/2/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/galleryItems/3/alt": {
-      "source_en": "East coast highlights option — gallery image 4"
+      "source_en": "East coast highlights option — gallery image 4",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 4"
     },
     "/itineraryStops/2/galleryItems/3/caption": {
-      "source_en": "East coast highlights option — photo 4"
+      "source_en": "East coast highlights option — photo 4",
+      "tm": "Option Ostküsten-Highlights — Foto 4"
     },
     "/itineraryStops/2/galleryItems/3/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/galleryItems/4/alt": {
-      "source_en": "East coast highlights option — gallery image 5"
+      "source_en": "East coast highlights option — gallery image 5",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 5"
     },
     "/itineraryStops/2/galleryItems/4/caption": {
-      "source_en": "East coast highlights option — photo 5"
+      "source_en": "East coast highlights option — photo 5",
+      "tm": "Option Ostküsten-Highlights — Foto 5"
     },
     "/itineraryStops/2/galleryItems/4/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/2/galleryItems/5/alt": {
-      "source_en": "East coast highlights option — gallery image 6"
+      "source_en": "East coast highlights option — gallery image 6",
+      "tm": "Option Ostküsten-Highlights — Galeriebild 6"
     },
     "/itineraryStops/2/galleryItems/5/caption": {
-      "source_en": "East coast highlights option — photo 6"
+      "source_en": "East coast highlights option — photo 6",
+      "tm": "Option Ostküsten-Highlights — Foto 6"
     },
     "/itineraryStops/2/galleryItems/5/location": {
-      "source_en": "East coast highlights option"
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
+    },
+    "/itineraryStops/2/galleryItems/6/alt": {
+      "source_en": "East coast highlights option — gallery image 7"
+    },
+    "/itineraryStops/2/galleryItems/6/caption": {
+      "source_en": "East coast highlights option — photo 7"
+    },
+    "/itineraryStops/2/galleryItems/6/location": {
+      "source_en": "East coast highlights option",
+      "tm": "Option Ostküsten-Highlights"
     },
     "/itineraryStops/3/name": {
-      "source_en": "History, village and downtown option"
+      "source_en": "History, village and downtown option",
+      "tm": "Option: Geschichte, Dorf und Innenstadt"
     },
     "/itineraryStops/3/time": {
-      "source_en": "Flexible"
+      "source_en": "Flexible",
+      "tm": "Flexibel"
     },
     "/itineraryStops/3/category": {
-      "source_en": "Culture / Market / Local area"
+      "source_en": "Culture / Market / Local area",
+      "tm": "Kultur / Markt / Lokales Viertel"
     },
     "/itineraryStops/3/duration": {
-      "source_en": "2–3 hours"
+      "source_en": "2–3 hours",
+      "tm": "2–3 Std."
     },
     "/itineraryStops/3/highlights/0": {
       "source_en": "⟦G0⟧",
@@ -323,27 +420,34 @@
     },
     "/itineraryStops/3/highlights/2": {
       "source_en": "Nampo-dong / Jagalchi / ⟦G0⟧",
+      "tm": "Nampo-dong / Jagalchi / ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt"
       ]
     },
     "/itineraryStops/3/highlights/3": {
-      "source_en": "Dietary requests accommodated with 24h notice"
+      "source_en": "Dietary requests accommodated with 24h notice",
+      "tm": "Ernährungswünsche werden mit 24 Std. Vorankündigung berücksichtigt"
     },
     "/itineraryStops/3/smartNotes/tip": {
-      "source_en": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup."
+      "source_en": "**Vegetarian / halal / allergen requests need 24h advance notice**. Driver recommends per party preference (Korean / seafood / international); ride the recommendation or request a specific cuisine at morning pickup.",
+      "tm": "**Wünsche nach vegetarischer Kost, Halal oder allergenfreien Gerichten benötigen 24 Std. Vorankündigung**. Der Fahrer empfiehlt je nach Vorliebe der Gruppe (koreanisch / Meeresfrüchte / international); folgen Sie der Empfehlung oder nennen Sie bei der Abholung am Morgen eine bestimmte Küche."
     },
     "/itineraryStops/3/whyOnRoute": {
-      "source_en": "This option works well when guests want a stronger mix of history, local streets, and market atmosphere."
+      "source_en": "This option works well when guests want a stronger mix of history, local streets, and market atmosphere.",
+      "tm": "Diese Option eignet sich gut, wenn Gäste eine stärkere Mischung aus Geschichte, lokalen Straßen und Marktatmosphäre wünschen."
     },
     "/itineraryStops/3/convenience/parking": {
-      "source_en": "Driver drops off and waits at nearest legal stand"
+      "source_en": "Driver drops off and waits at nearest legal stand",
+      "tm": "Der Fahrer setzt Sie ab und wartet am nächstgelegenen zulässigen Halteplatz"
     },
     "/itineraryStops/3/convenience/restroom": {
-      "source_en": "Inside the restaurant"
+      "source_en": "Inside the restaurant",
+      "tm": "Im Inneren des Restaurants"
     },
     "/itineraryStops/3/description": {
       "source_en": "Popular culture and downtown choices include ⟦G1⟧, ⟦G7⟧, Huinnyeoul Culture Village, ⟦G0⟧, ⟦G5⟧ and Cable Car area, ⟦G3⟧, Nampo-dong, ⟦G6⟧, ⟦G2⟧, Bupyeong Market, and ⟦G4⟧.",
+      "tm": "Beliebte Ziele in Kultur und Innenstadt sind ⟦G1⟧, ⟦G7⟧, das Kulturdorf Huinnyeoul, ⟦G0⟧, ⟦G5⟧ und der Bereich der Seilbahn, ⟦G3⟧, Nampo-dong, ⟦G6⟧, ⟦G2⟧, der Bupyeong-Markt und ⟦G4⟧.",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon",
         "⟦G1⟧ = UN-Gedenkfriedhof",
@@ -354,12 +458,6 @@
         "⟦G6⟧ = BIFF-Platz",
         "⟦G7⟧ = Taejongdae"
       ]
-    },
-    "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Restaurant-dependent (typical 11:30–14:30 lunch service)"
-    },
-    "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Varies by venue; driver confirms availability"
     }
   },
   "glossaryTokens": {
@@ -419,5 +517,5 @@
       "⟦G7⟧": "Taejongdae"
     }
   },
-  "tmHits": 3
+  "tmHits": 98
 }

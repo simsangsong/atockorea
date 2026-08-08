@@ -7,33 +7,40 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "UNESCO Heritage"
+      "source_en": "UNESCO Heritage",
+      "tm": "Наследие ЮНЕСКО"
     },
     "/routePhases/0/duration": {
       "source_en": "Stops 1",
       "tm": "Остановка 1"
     },
     "/routePhases/0/description": {
-      "source_en": "Morning: UNESCO Heritage"
+      "source_en": "Morning: UNESCO Heritage",
+      "tm": "Утро: наследие ЮНЕСКО"
     },
     "/routePhases/1/phase": {
-      "source_en": "Library & Lunch"
+      "source_en": "Library & Lunch",
+      "tm": "Библиотека и обед"
     },
     "/routePhases/1/duration": {
-      "source_en": "Stops 2–3"
+      "source_en": "Stops 2–3",
+      "tm": "Остановки 2–3"
     },
     "/routePhases/1/description": {
-      "source_en": "Midday: Library & Lunch"
+      "source_en": "Midday: Library & Lunch",
+      "tm": "Середина дня: библиотека и обед"
     },
     "/routePhases/2/phase": {
-      "source_en": "Mountain Temple Finish"
+      "source_en": "Mountain Temple Finish",
+      "tm": "Финал в горном храме"
     },
     "/routePhases/2/duration": {
       "source_en": "Stops 4",
       "tm": "Остановка 4"
     },
     "/routePhases/2/description": {
-      "source_en": "Afternoon: Mountain Temple Finish"
+      "source_en": "Afternoon: Mountain Temple Finish",
+      "tm": "Вторая половина дня: финал в горном храме"
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -278,5 +285,5 @@
       "⟦G0⟧": "Храм Вауджонса"
     }
   },
-  "tmHits": 26
+  "tmHits": 33
 }

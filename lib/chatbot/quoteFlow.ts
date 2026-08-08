@@ -10,7 +10,11 @@
 
 import type { GoogleGenerativeAI } from "@google/generative-ai";
 import type { SupabaseClient } from "@supabase/supabase-js";
-import type { TourProductPageLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale,
+  type TourProductPageLocale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   quote,
   tierForLocale,
@@ -38,14 +42,14 @@ function formatKrw(amount: number, locale: string): string {
 
 // i18n-06 (pressure-test): the quote summary used to inline the raw English
 // region enum ("jeju"/"busan"/"seoul") into localized sentences. Localize it.
-const REGION_LABEL: Record<string, Record<TourProductPageLocale, string>> = {
+const REGION_LABEL: Record<string, Record<TourProductBaseLocale, string>> = {
   busan: { en: "Busan", ko: "부산", ja: "釜山", zh: "釜山", "zh-TW": "釜山", es: "Busan" },
   jeju: { en: "Jeju", ko: "제주", ja: "済州", zh: "济州", "zh-TW": "濟州", es: "Jeju" },
   seoul: { en: "Seoul", ko: "서울", ja: "ソウル", zh: "首尔", "zh-TW": "首爾", es: "Seúl" },
 };
 export function localizedRegion(region: string, locale: TourProductPageLocale): string {
   const r = region.toLowerCase();
-  return REGION_LABEL[r]?.[locale] ?? r.charAt(0).toUpperCase() + r.slice(1);
+  return REGION_LABEL[r]?.[toTourProductBaseLocale(locale)] ?? r.charAt(0).toUpperCase() + r.slice(1);
 }
 
 export type QuoteDraft = {
@@ -215,7 +219,7 @@ export function missingQuoteSlots(d: QuoteDraft): string[] {
  * prepended to the slot re-prompt so the customer knows what to fix.
  */
 function dateIssueNote(issue: "past" | "far_future", locale: TourProductPageLocale): string {
-  const past: Record<TourProductPageLocale, string> = {
+  const past: Record<TourProductBaseLocale, string> = {
     en: "That date has already passed.",
     ko: "말씀하신 날짜는 이미 지난 날짜예요.",
     ja: "その日付はすでに過ぎています。",
@@ -223,7 +227,7 @@ function dateIssueNote(issue: "past" | "far_future", locale: TourProductPageLoca
     "zh-TW": "該日期已經過去了。",
     es: "Esa fecha ya pasó.",
   };
-  const far: Record<TourProductPageLocale, string> = {
+  const far: Record<TourProductBaseLocale, string> = {
     en: "That date is further out than we can confirm (about 2 years ahead).",
     ko: "그 날짜는 아직 확정해 드리기 어려운 먼 미래예요(약 2년 이내만 가능).",
     ja: "その日付は確定できる範囲（約2年先まで）を超えています。",
@@ -232,7 +236,7 @@ function dateIssueNote(issue: "past" | "far_future", locale: TourProductPageLoca
     es: "Esa fecha está más allá de lo que podemos confirmar (unos 2 años).",
   };
   const map = issue === "past" ? past : far;
-  return map[locale] ?? map.en;
+  return map[toTourProductBaseLocale(locale)] ?? map.en;
 }
 
 /** Localized prompt asking only for the slots that are still missing. */
@@ -241,7 +245,7 @@ export function quoteSlotPrompt(
   locale: TourProductPageLocale,
   dateIssue?: "past" | "far_future" | null,
 ): string {
-  const labels: Record<TourProductPageLocale, Record<string, string>> = {
+  const labels: Record<TourProductBaseLocale, Record<string, string>> = {
     en: { region: "destination (Busan / Jeju / Seoul)", date: "date", party: "number of people", duration: "hours (4–10)", pickup: "your Jeju hotel area (or downtown)", cruise_port: "docking port (Jeju Port or Gangjeong/Seogwipo)" },
     ko: { region: "여행지(부산/제주/서울)", date: "날짜", party: "인원수", duration: "시간(4–10시간)", pickup: "제주 호텔 지역(또는 시내)", cruise_port: "기항 항구(제주항 또는 강정항)" },
     ja: { region: "目的地（釜山/済州/ソウル）", date: "日付", party: "人数", duration: "時間（4〜10時間）", pickup: "済州のホテルエリア（または市内）", cruise_port: "寄港地（済州港または江汀港）" },
@@ -249,9 +253,9 @@ export function quoteSlotPrompt(
     "zh-TW": { region: "目的地（釜山/濟州/首爾）", date: "日期", party: "人數", duration: "時長（4–10小時）", pickup: "濟州飯店區域（或市區）", cruise_port: "停靠港口（濟州港或江汀港）" },
     es: { region: "destino (Busan / Jeju / Seúl)", date: "fecha", party: "número de personas", duration: "horas (4–10)", pickup: "zona de tu hotel en Jeju (o centro)", cruise_port: "puerto de atraque (Puerto de Jeju o Gangjeong/Seogwipo)" },
   };
-  const L = labels[locale] ?? labels.en;
+  const L = labels[toTourProductBaseLocale(locale)] ?? labels.en;
   const items = missing.map((m) => L[m] ?? m).join(", ");
-  const lead: Record<TourProductPageLocale, (x: string) => string> = {
+  const lead: Record<TourProductBaseLocale, (x: string) => string> = {
     en: (x) => `Happy to price a private tour for you. Could you share: ${x}?`,
     ko: (x) => `프라이빗 투어 견적을 내드릴게요. ${x}만 알려주시겠어요?`,
     ja: (x) => `プライベートツアーのお見積もりをします。${x}を教えていただけますか？`,
@@ -259,7 +263,7 @@ export function quoteSlotPrompt(
     "zh-TW": (x) => `我來為你估算私人包車價格。請告訴我：${x}？`,
     es: (x) => `Con gusto te doy un precio para un tour privado. ¿Me dices: ${x}?`,
   };
-  const prompt = (lead[locale] ?? lead.en)(items);
+  const prompt = (lead[toTourProductBaseLocale(locale)] ?? lead.en)(items);
   return dateIssue ? `${dateIssueNote(dateIssue, locale)} ${prompt}` : prompt;
 }
 
@@ -394,7 +398,7 @@ export function isQuoteFlowFollowUp(input: {
 
 /** Ask the customer to confirm the email before the booking is created. */
 export function quoteEmailConfirmPrompt(email: string, locale: TourProductPageLocale): string {
-  const m: Record<TourProductPageLocale, string> = {
+  const m: Record<TourProductBaseLocale, string> = {
     en: `Quick check — I have **${email}**. Is this the right email for your booking?`,
     ko: `확인 한 번 할게요 — **${email}** 이 이메일로 예약을 진행하면 될까요?`,
     ja: `確認です — **${email}**。このメールアドレスで予約を進めてよろしいですか？`,
@@ -402,7 +406,7 @@ export function quoteEmailConfirmPrompt(email: string, locale: TourProductPageLo
     "zh-TW": `確認一下 — **${email}**，用這個電子郵件進行預訂可以嗎？`,
     es: `Una comprobación — tengo **${email}**. ¿Es el correo correcto para tu reserva?`,
   };
-  return m[locale] ?? m.en;
+  return m[toTourProductBaseLocale(locale)] ?? m.en;
 }
 
 // Deep-audit 2026-07-05: word boundaries on the Latin alternatives. Without
@@ -486,7 +490,7 @@ export function buildQuoteReply(
   });
 
   if (!price.autoQuotable) {
-    const handoff: Record<TourProductPageLocale, string> = {
+    const handoff: Record<TourProductBaseLocale, string> = {
       en: "For that group size I'll have a coordinator prepare a custom quote — I can connect you in this chat.",
       ko: "그 인원 규모는 담당자가 맞춤 견적을 준비해 드려요. 이 채팅에서 바로 연결해 드릴게요.",
       ja: "その人数は担当者が個別にお見積もりします。このチャットでおつなぎします。",
@@ -494,7 +498,7 @@ export function buildQuoteReply(
       "zh-TW": "該人數我們由專員單獨報價。我可以在此聊天中幫你聯絡。",
       es: "Para ese tamaño de grupo, un coordinador preparará un precio personalizado; puedo conectarte en este chat.",
     };
-    return { reply: handoff[locale] ?? handoff.en, autoQuotable: false, totalKrw: price.total };
+    return { reply: handoff[toTourProductBaseLocale(locale)] ?? handoff.en, autoQuotable: false, totalKrw: price.total };
   }
 
   const amount = formatKrw(price.total, locale);
@@ -502,7 +506,7 @@ export function buildQuoteReply(
   // The tour date is stated in the quote on purpose (2026-07-04 incident): a
   // wrongly-resolved date must be visible to the customer BEFORE they confirm.
   const when = d.requestedDate ?? "";
-  const summary: Record<TourProductPageLocale, string> = {
+  const summary: Record<TourProductBaseLocale, string> = {
     en: `Estimated quote: ${amount} — ${pricedHours}h private tour in ${regionLabel} for ${d.party} on ${when}. Book now, pay on tour day, 100% refund up to 24h before. Want me to set up checkout?`,
     ko: `예상 견적: ${amount} — ${regionLabel} ${pricedHours}시간 프라이빗 투어, ${d.party}명 · ${when}. 예약 먼저, 결제는 투어 당일, 24시간 전 100% 환불. 결제 진행해 드릴까요?`,
     ja: `お見積もり：${amount} — ${regionLabel}の${pricedHours}時間プライベートツアー、${d.party}名（${when}）。予約は今、支払いは当日、24時間前まで全額返金。決済に進みますか？`,
@@ -510,7 +514,7 @@ export function buildQuoteReply(
     "zh-TW": `預估報價：${amount} — ${regionLabel}${pricedHours}小時私人包車，${d.party}人（${when}）。先預約，當天付款，提前24小時全額退款。要我幫你進入結帳嗎？`,
     es: `Precio estimado: ${amount} — tour privado de ${pricedHours}h en ${regionLabel} para ${d.party} el ${when}. Reserva ahora, paga el día del tour, reembolso 100% hasta 24h antes. ¿Preparo el pago?`,
   };
-  const minNote: Record<TourProductPageLocale, string> = {
+  const minNote: Record<TourProductBaseLocale, string> = {
     en: `Our private tours start at ${MIN_TOUR_HOURS} hours, so I priced ${MIN_TOUR_HOURS} hours.`,
     ko: `프라이빗 투어는 최소 ${MIN_TOUR_HOURS}시간부터라 ${MIN_TOUR_HOURS}시간 기준으로 계산했어요.`,
     ja: `プライベートツアーは最低${MIN_TOUR_HOURS}時間からのため、${MIN_TOUR_HOURS}時間で計算しました。`,
@@ -518,8 +522,8 @@ export function buildQuoteReply(
     "zh-TW": `私人包車最少${MIN_TOUR_HOURS}小時起訂，因此按${MIN_TOUR_HOURS}小時計算。`,
     es: `Nuestros tours privados empiezan en ${MIN_TOUR_HOURS} horas, así que calculé ${MIN_TOUR_HOURS} horas.`,
   };
-  const base = summary[locale] ?? summary.en;
-  const reply = clampedUp ? `${minNote[locale] ?? minNote.en} ${base}` : base;
+  const base = summary[toTourProductBaseLocale(locale)] ?? summary.en;
+  const reply = clampedUp ? `${minNote[toTourProductBaseLocale(locale)] ?? minNote.en} ${base}` : base;
   return { reply, autoQuotable: true, totalKrw: price.total };
 }
 
@@ -594,7 +598,7 @@ export async function extractQuoteDraft(
 
 /** Ask for the email needed to create the booking (Q3). */
 export function quoteEmailPrompt(locale: TourProductPageLocale): string {
-  const m: Record<TourProductPageLocale, string> = {
+  const m: Record<TourProductBaseLocale, string> = {
     en: "Great! What email should I put on the booking? I'll then give you a secure checkout link.",
     ko: "좋아요! 예약에 사용할 이메일을 알려주시면 안전한 결제 링크를 드릴게요.",
     ja: "ありがとうございます！ご予約に使うメールアドレスを教えてください。安全な決済リンクをお送りします。",
@@ -602,7 +606,7 @@ export function quoteEmailPrompt(locale: TourProductPageLocale): string {
     "zh-TW": "好的！請告訴我預訂使用的電子郵件，我會給你一個安全的結帳連結。",
     es: "¡Genial! ¿Qué correo pongo en la reserva? Te daré un enlace de pago seguro.",
   };
-  return m[locale] ?? m.en;
+  return m[toTourProductBaseLocale(locale)] ?? m.en;
 }
 
 /**
@@ -616,7 +620,7 @@ export function checkoutReadyReply(
   locale: TourProductPageLocale,
   bookingReference?: string | null,
 ): string {
-  const m: Record<TourProductPageLocale, string> = {
+  const m: Record<TourProductBaseLocale, string> = {
     en: `All set — your booking is reserved. Open checkout to save your card (no charge now; you're charged on tour day, 100% refund up to 24h before): ${checkoutPath}`,
     ko: `예약이 준비됐어요. 아래 링크에서 카드만 등록하면 끝이에요 (지금 결제 아님 · 투어 당일 청구 · 24시간 전 100% 환불): ${checkoutPath}`,
     ja: `ご予約が確保できました。下のリンクでカードを登録するだけです（今は課金されません・当日課金・24時間前まで全額返金）：${checkoutPath}`,
@@ -624,7 +628,7 @@ export function checkoutReadyReply(
     "zh-TW": `預訂已為你保留。點擊下面的連結登記信用卡即可（現在不扣款 · 當天扣款 · 提前24小時全額退款）：${checkoutPath}`,
     es: `Listo — tu reserva está apartada. Abre el pago para guardar tu tarjeta (sin cargo ahora; se cobra el día del tour, reembolso 100% hasta 24h antes): ${checkoutPath}`,
   };
-  const ref: Record<TourProductPageLocale, (r: string) => string> = {
+  const ref: Record<TourProductBaseLocale, (r: string) => string> = {
     en: (r) => `Your booking reference is **${r}** — with this and your email you can look up your booking anytime right here in this chat.`,
     ko: (r) => `예약번호는 **${r}** 예요 — 이 번호와 이메일만 있으면 언제든 이 채팅에서 예약을 조회할 수 있어요.`,
     ja: (r) => `ご予約番号は **${r}** です — この番号とメールアドレスで、いつでもこのチャットからご予約を確認できます。`,
@@ -632,8 +636,8 @@ export function checkoutReadyReply(
     "zh-TW": (r) => `你的預訂編號是 **${r}** — 憑此編號和電子郵件，隨時可以在本聊天中查詢預訂。`,
     es: (r) => `Tu número de reserva es **${r}** — con él y tu correo puedes consultar tu reserva en este chat cuando quieras.`,
   };
-  const base = m[locale] ?? m.en;
-  return bookingReference ? `${base}\n\n${(ref[locale] ?? ref.en)(bookingReference)}` : base;
+  const base = m[toTourProductBaseLocale(locale)] ?? m.en;
+  return bookingReference ? `${base}\n\n${(ref[toTourProductBaseLocale(locale)] ?? ref.en)(bookingReference)}` : base;
 }
 
 export type CreateQuoteBookingResult =

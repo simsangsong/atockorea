@@ -1,0 +1,203 @@
+{
+  "unitId": "tour_product_pages:busan-small-group-yonggungsa-skycapsule-gamcheon-tour:de:A2",
+  "surface": "tour_product_pages",
+  "slug": "busan-small-group-yonggungsa-skycapsule-gamcheon-tour",
+  "locale": "de",
+  "chunk": "A2",
+  "tier": "A2",
+  "segments": {
+    "/whyTourWorks/bestFor/0": {
+      "source_en": "First-time Busan visitors"
+    },
+    "/whyTourWorks/bestFor/1": {
+      "source_en": "Couples and photo-focused travelers"
+    },
+    "/whyTourWorks/bestFor/2": {
+      "source_en": "Adult families and friends groups"
+    },
+    "/whyTourWorks/bestFor/3": {
+      "source_en": "Travelers who want the coast AND the villages in one day"
+    },
+    "/whyTourWorks/lessIdealFor/0": {
+      "source_en": "Travelers who want minimal walking or no slopes"
+    },
+    "/whyTourWorks/lessIdealFor/1": {
+      "source_en": "Stroller-heavy groups (village lanes and stairs)"
+    },
+    "/whyTourWorks/lessIdealFor/2": {
+      "source_en": "Night-view seekers — this is a daytime route"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/label": {
+      "source_en": "The temple at its quiet window"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "source_en": "⟦G0⟧ is Busan's most-photographed temple and its tour-bus surge starts around 11:00. Arriving at about 10:20 keeps the 108-stair descent and the Haesu Gwaneum viewpoint walkable without queuing.",
+      "glossary": [
+        "⟦G0⟧ = Haedong Yonggungsa"
+      ]
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/label": {
+      "source_en": "The capsule ride IS the transfer"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/1/detail": {
+      "source_en": "From Cheongsapo the pastel Sky Capsule glides 2.3 km down the coast to Mipo — so the ride replaces a coach hop instead of adding a detour. Guests who skip the ticket ride the coach to Mipo or walk the free Green Railway boardwalk along the same coastline."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/label": {
+      "source_en": "Two hillside villages, two moods"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/2/detail": {
+      "source_en": "Gamcheon is Busan's world-famous pastel amphitheater; Dakbatgol, ten minutes away, is its quiet local counterpart — mural lanes with almost no crowds, where a free incline monorail built for village elders carries you up the 'wish stairs'."
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/label": {
+      "source_en": "Free-admission anchors, one optional ticket"
+    },
+    "/whyTourWorks/routeLogicSections/0/items/3/detail": {
+      "source_en": "Yonggungsa, the Daritdol skywalk, Gamcheon, and Dakbatgol (monorail included) are all free. The only paid attraction of the day is the Sky Capsule — and it is your choice at booking: ticket included, or excluded if you'd rather walk the boardwalk."
+    },
+    "/whyTourWorks/routeLogicSections/0/title": {
+      "source_en": "Pacing & geography",
+      "tm": "Tempo & Geografie"
+    },
+    "/whyTourWorks/routeLogicSections/0/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/routeShapeIntro/title": {
+      "source_en": "How this Busan day moves"
+    },
+    "/routeShapeIntro/subtitle": {
+      "source_en": "East coast first: the seaside temple in its quiet morning window, then the Cheongsapo cluster — glass skywalk, twin lighthouses — where the Sky Capsule ride itself becomes the transfer down the coast to Mipo. After lunch and a short stop on Haeundae Beach the day crosses to Busan's west hillsides for two villages in two moods: Gamcheon's world-famous color, then Dakbatgol's quiet murals, where a free monorail glides up the 'wish stairs'. Central drop-offs close the loop, 09:00 to about 18:20."
+    },
+    "/staticQuestions/0/answer": {
+      "source_en": "Your choice at booking. Book the ticket-included option and we reserve capsules for your group in advance (per-capsule pricing: about ₩30,000 for 2 / ₩39,000 for 3 / ₩44,000 for 4, one-way — the included option is priced on a 2-per-capsule basis). Book the base option and you can instead walk the free Green Railway boardwalk or ride the coach to Mipo while others take the capsule."
+    },
+    "/staticQuestions/0/question": {
+      "source_en": "Is the Sky Capsule ticket included?"
+    },
+    "/staticQuestions/1/answer": {
+      "source_en": "Sunset and weekend slots sell out 1–2 weeks ahead. If you choose the ticket-included option we handle the reservation for your group when the booking is confirmed. Same-day kiosk tickets are possible on quiet weekdays but not guaranteed."
+    },
+    "/staticQuestions/1/question": {
+      "source_en": "Do I need to reserve the Sky Capsule in advance?"
+    },
+    "/staticQuestions/2/answer": {
+      "source_en": "No — lunch is separate (about ₩10,000–15,000). The guide recommends local options near Haeundae/Mipo such as dwaeji-gukbap (Busan's signature pork-rice soup), milmyeon cold noodles, or a seafood place."
+    },
+    "/staticQuestions/2/question": {
+      "source_en": "Is lunch included?",
+      "tm": "Ist das Mittagessen inbegriffen?"
+    },
+    "/staticQuestions/3/answer": {
+      "source_en": "Moderate-to-challenging in short bursts: 108 stairs down and up at Yonggungsa, flat glass skywalk at Daritdol, mostly flat at the capsule stations, hillside lanes at Gamcheon, and stairs at Dakbatgol — where the free monorail does the climbing for you. Total on-foot distance is about 4–5 km."
+    },
+    "/staticQuestions/3/question": {
+      "source_en": "How much walking and how steep is it?"
+    },
+    "/staticQuestions/4/answer": {
+      "source_en": "Yes for most active travelers. Kids love the glass floor and the capsule; the Dakbatgol monorail spares the steepest climb. The Yonggungsa stairs and Gamcheon slopes are the two demanding sections — take them slowly and skip side alleys as needed."
+    },
+    "/staticQuestions/4/question": {
+      "source_en": "Is this suitable for children or seniors?"
+    },
+    "/staticQuestions/5/answer": {
+      "source_en": "Same operator, different focus. Top Attractions covers the classic city sweep (⟦G0⟧, ⟦G1⟧). This small-group route doubles down on the coast and the villages: a dedicated Daritdol skywalk stop, the Sky Capsule ride with an included-ticket option, and the quiet Dakbatgol mural village that big buses skip.",
+      "glossary": [
+        "⟦G0⟧ = UN-Gedenkfriedhof",
+        "⟦G1⟧ = Jagalchi-Markt"
+      ]
+    },
+    "/staticQuestions/5/question": {
+      "source_en": "How is this different from the Busan Top Attractions day tour?"
+    },
+    "/staticQuestions/6/answer": {
+      "source_en": "Pickup is door-to-door at your hotel in central Busan between 09:00 and 10:00 — the exact time is confirmed by WhatsApp the evening before. Drop-offs run in sequence: Nampo-dong ≈17:10, Busan Station ≈17:30, Seomyeon ≈17:50, Haeundae ≈18:20."
+    },
+    "/staticQuestions/6/question": {
+      "source_en": "Where do you pick up and drop off?"
+    },
+    "/staticQuestions/7/answer": {
+      "source_en": "The day runs rain or shine. The capsule and monorail operate in normal rain (they pause only in high wind), the skywalk provides shoe covers, and village lanes stay walkable with an umbrella. Heavy weather may shorten outdoor time at the temple terraces."
+    },
+    "/staticQuestions/7/question": {
+      "source_en": "What happens if it rains?"
+    },
+    "/bookingTrustItems/0/body": {
+      "source_en": "Licensed local provider running Busan city tours regularly, with certified English-speaking guides, vehicle insurance, and route timing planned to avoid the busiest temple hours when possible."
+    },
+    "/bookingTrustItems/0/title": {
+      "source_en": "Licensed local"
+    },
+    "/bookingTrustItems/0/iconBg": {
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
+    },
+    "/bookingTrustItems/0/description": {
+      "source_en": "Busan-licensed guiding"
+    },
+    "/bookingTrustItems/1/body": {
+      "source_en": "Small-group mini-van (max ~12) ensures Gamcheon's narrow alleys and Yonggungsa's 108-stair path stay comfortable — very different from 40-person bus tours."
+    },
+    "/bookingTrustItems/1/title": {
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
+    },
+    "/bookingTrustItems/1/iconBg": {
+      "source_en": "bg-pink-50/80",
+      "tm": "bg-pink-50/80"
+    },
+    "/bookingTrustItems/1/description": {
+      "source_en": "≈12 guests max"
+    },
+    "/bookingTrustItems/2/body": {
+      "source_en": "All seven main stops have free admission, so there are no hidden per-site costs for the core route on the day."
+    },
+    "/bookingTrustItems/2/title": {
+      "source_en": "All-inclusive entry"
+    },
+    "/bookingTrustItems/2/iconBg": {
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
+    },
+    "/bookingTrustItems/2/description": {
+      "source_en": "Major admissions covered"
+    },
+    "/seasonalVariations/0/season": {
+      "source_en": "Spring (Mar–May)",
+      "tm": "Frühling (März–Mai)"
+    },
+    "/seasonalVariations/0/description": {
+      "source_en": "Cherry blossoms line the Blueline coast in late March–early April — the capsule ride at blossom time is the year's best. Clear temple mornings."
+    },
+    "/seasonalVariations/1/season": {
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Sommer (Juni–August)"
+    },
+    "/seasonalVariations/1/description": {
+      "source_en": "Long daylight and the coast stays cooler than downtown; July monsoon may shorten skywalk time. Capsule hours extend into the evening."
+    },
+    "/seasonalVariations/2/season": {
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Herbst (September–November)"
+    },
+    "/seasonalVariations/2/description": {
+      "source_en": "The clearest skies of the year — best visibility from the Daritdol glass floor and the sharpest color at Gamcheon's viewpoints."
+    },
+    "/seasonalVariations/3/season": {
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Winter (Dezember–Februar)"
+    },
+    "/seasonalVariations/3/description": {
+      "source_en": "Quietest crowds at every stop; crisp light for photos. The capsule is heated; dress warm for the temple terraces and village lanes."
+    }
+  },
+  "glossaryTokens": {
+    "/whyTourWorks/routeLogicSections/0/items/0/detail": {
+      "⟦G0⟧": "Haedong Yonggungsa"
+    },
+    "/staticQuestions/5/answer": {
+      "⟦G0⟧": "UN-Gedenkfriedhof",
+      "⟦G1⟧": "Jagalchi-Markt"
+    }
+  },
+  "tmHits": 11
+}

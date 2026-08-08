@@ -7,157 +7,203 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Licensed local tour provider running an unhurried Gyeongju circuit, with drop-off back in Busan around 19:50."
+      "source_en": "Licensed local tour provider running an unhurried Gyeongju circuit, with drop-off back in Busan around 19:50.",
+      "tm": "Operatore turistico locale autorizzato che propone un circuito di Gyeongju senza fretta, con rientro a Busan verso le ore 19:50."
     },
     "/bookingTrustItems/0/title": {
-      "source_en": "Licensed local tour provider"
+      "source_en": "Licensed local tour provider",
+      "tm": "Operatore turistico locale autorizzato"
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/0/description": {
-      "source_en": "Authorized Korean tour provider with insurance"
+      "source_en": "Authorized Korean tour provider with insurance",
+      "tm": "Operatore turistico coreano autorizzato e assicurato"
     },
     "/bookingTrustItems/1/body": {
       "source_en": "Route specialists who have refined the Busan-Gyeongju loop over hundreds of runs — ⟦G0⟧ opens the day before midday tour-bus crowds arrive.",
+      "tm": "Specialisti dell'itinerario che hanno perfezionato il circuito Busan-Gyeongju nel corso di centinaia di partenze: ⟦G0⟧ apre la giornata prima che a mezzogiorno arrivi la folla dei bus turistici.",
       "glossary": [
         "⟦G0⟧ = Foresta di bambù di Ahopsan"
       ]
     },
     "/bookingTrustItems/1/title": {
-      "source_en": "Route specialists"
+      "source_en": "Route specialists",
+      "tm": "Specialisti dell'itinerario"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/1/description": {
-      "source_en": "Hand-tuned itinerary, not a generic loop"
+      "source_en": "Hand-tuned itinerary, not a generic loop",
+      "tm": "Itinerario calibrato a mano, non un giro generico"
     },
     "/bookingTrustItems/2/body": {
-      "source_en": "Small-group mini-van (max ~10) keeps Bulguksa's six National Treasures and the National Museum galleries comfortable and unhurried."
+      "source_en": "Small-group mini-van (max ~10) keeps Bulguksa's six National Treasures and the National Museum galleries comfortable and unhurried.",
+      "tm": "Il mini-van per piccoli gruppi (max ~10) rende la visita ai sei tesori nazionali di Bulguksa e alle sale del Museo nazionale comoda e senza fretta."
     },
     "/bookingTrustItems/2/title": {
-      "source_en": "Comfortable group size"
+      "source_en": "Comfortable group size",
+      "tm": "Dimensione del gruppo confortevole"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
-      "source_en": "Right-sized for the route"
+      "source_en": "Right-sized for the route",
+      "tm": "Della dimensione giusta per l'itinerario"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (mid-Mar to mid-Apr, cherry blossom season)"
+      "source_en": "Spring (mid-Mar to mid-Apr, cherry blossom season)",
+      "tm": "Primavera (da metà marzo a metà aprile, stagione dei ciliegi in fiore)"
     },
     "/seasonalVariations/0/description": {
       "source_en": "The Ahopsan opener swaps for the Haeundae Dalmaji Hill cherry-blossom road. Daereungwon's stone-wall lane is one of Gyeongju's finest cherry tunnels (with a festival in early April every year), and Gyochon village blossoms in early April too. The last stop is ⟦G0⟧.",
+      "tm": "L'apertura ad Ahopsan viene sostituita dalla strada dei ciliegi in fiore di Haeundae Dalmaji Hill. Il vicolo dal muro di pietra di Daereungwon è uno dei più bei tunnel di ciliegi di Gyeongju (con un festival all'inizio di aprile ogni anno), e anche il villaggio di Gyochon fiorisce all'inizio di aprile. L'ultima tappa è ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun–Aug)"
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Estate (giu–ago)"
     },
     "/seasonalVariations/1/description": {
       "source_en": "The bamboo forest stays cool and the museum is air-conditioned. Both afternoon walking blocks have shade and cafes to rest in. Sunset is around 19:30, so a night view does not fit the route and the last stop stays ⟦G0⟧.",
+      "tm": "La foresta di bambù resta fresca e il museo è climatizzato. Entrambi i blocchi di visita a piedi del pomeriggio offrono ombra e caffè in cui riposare. Il tramonto è verso le ore 19:30, quindi una vista notturna non rientra nell'itinerario e l'ultima tappa resta ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (late Sep to late Oct)"
+      "source_en": "Autumn (late Sep to late Oct)",
+      "tm": "Autunno (da fine settembre a fine ottobre)"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Gyochon's ginkgos peak in late October, and the grass mounds of Daereungwon make the easiest walking of the day. The last stop is ⟦G0⟧, which from March to October stays open until 20:00 on Saturdays.",
+      "tm": "I ginkgo di Gyochon raggiungono il picco a fine ottobre e i tumuli erbosi di Daereungwon costituiscono la camminata più facile della giornata. L'ultima tappa è ⟦G0⟧, che da marzo a ottobre resta aperto fino alle ore 20:00 il sabato.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Nov–Feb)"
+      "source_en": "Winter (Nov–Feb)",
+      "tm": "Inverno (nov–feb)"
     },
     "/seasonalVariations/3/description": {
       "source_en": "The quietest season of the year. Because sunset falls at 17:15–17:30, the last stop is swapped from ⟦G0⟧ to the Donggung & Wolji night view — you watch it from dusk through to the lights coming on, and this is the only season it is possible. Woljeonggyo also catches the sunset light on winter afternoons.",
+      "tm": "La stagione più tranquilla dell'anno. Poiché il tramonto cade tra le ore 17:15 e le 17:30, l'ultima tappa viene sostituita da ⟦G0⟧ con la vista notturna di Donggung e Wolji: la si osserva dal crepuscolo fino all'accensione delle luci, e questa è l'unica stagione in cui è possibile. Anche Woljeonggyo cattura la luce del tramonto nei pomeriggi invernali.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Conferma immediata"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Conferma di prenotazione con riepilogo dell'itinerario"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Immediatamente"
     },
     "/bookingSupportSteps/0/description": {
-      "source_en": "Instant confirmation with pickup station choice (Busan Station / Seomyeon / Haeundae) and the day's schedule."
+      "source_en": "Instant confirmation with pickup station choice (Busan Station / Seomyeon / Haeundae) and the day's schedule.",
+      "tm": "Conferma immediata con scelta della stazione di prelievo (Busan Station / Seomyeon / Haeundae) e il programma della giornata."
     },
     "/bookingSupportSteps/1/title": {
-      "source_en": "12-Hour Reminder"
+      "source_en": "12-Hour Reminder",
+      "tm": "Promemoria 12 ore prima"
     },
     "/bookingSupportSteps/1/detail": {
-      "source_en": "Weather update and any route adjustments"
+      "source_en": "Weather update and any route adjustments",
+      "tm": "Aggiornamento meteo ed eventuali modifiche del percorso"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "12 hours before"
+      "source_en": "12 hours before",
+      "tm": "12 ore prima"
     },
     "/bookingSupportSteps/1/description": {
-      "source_en": "Seasonal note (cherry blossom alt route in mid-March to mid-April; winter bridge lighting period) sent the day before."
+      "source_en": "Seasonal note (cherry blossom alt route in mid-March to mid-April; winter bridge lighting period) sent the day before.",
+      "tm": "Nota stagionale (percorso alternativo dei ciliegi in fiore da metà marzo a metà aprile; periodo di illuminazione invernale del ponte) inviata il giorno prima."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Final Pickup Info"
+      "source_en": "Final Pickup Info",
+      "tm": "Informazioni finali sul prelievo"
     },
     "/bookingSupportSteps/2/detail": {
-      "source_en": "Exact pickup time and driver contact"
+      "source_en": "Exact pickup time and driver contact",
+      "tm": "Orario esatto di prelievo e contatto dell'autista"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Evening before"
+      "source_en": "Evening before",
+      "tm": "La sera prima"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Driver and van details confirmed the evening before departure."
+      "source_en": "Driver and van details confirmed the evening before departure.",
+      "tm": "Dettagli dell'autista e del van confermati la sera prima della partenza."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "Day-of Route Notes"
+      "source_en": "Day-of Route Notes",
+      "tm": "Note sul percorso nel giorno del tour"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Morning briefing based on live conditions"
+      "source_en": "Morning briefing based on live conditions",
+      "tm": "Briefing mattutino basato sulle condizioni in tempo reale"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "Morning of tour"
+      "source_en": "Morning of tour",
+      "tm": "Mattina del tour"
     },
     "/bookingSupportSteps/3/description": {
-      "source_en": "Morning pickup confirmation message sent to your phone."
+      "source_en": "Morning pickup confirmation message sent to your phone.",
+      "tm": "Messaggio di conferma del prelievo mattutino inviato al Suo telefono."
     },
     "/bookingSupportSteps/4/title": {
-      "source_en": "Stop-by-Stop Tips"
+      "source_en": "Stop-by-Stop Tips",
+      "tm": "Consigli tappa per tappa"
     },
     "/bookingSupportSteps/4/detail": {
-      "source_en": "Real-time guidance at each location"
+      "source_en": "Real-time guidance at each location",
+      "tm": "Guida in tempo reale in ogni località"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Durante il tour"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Guide provides full narration — bamboo forest clan history, Silla-era temple art, National Museum gold crown, Choi family ethics, Woljeonggyo's 760 CE origins."
+      "source_en": "Guide provides full narration — bamboo forest clan history, Silla-era temple art, National Museum gold crown, Choi family ethics, Woljeonggyo's 760 CE origins.",
+      "tm": "La guida offre una narrazione completa: storia del clan della foresta di bambù, arte dei templi dell'epoca Silla, corona d'oro del Museo nazionale, etica della famiglia Choi, origini di Woljeonggyo nel 760 d.C."
     },
     "/bookingSupportSteps/5/title": {
-      "source_en": "Post-tour Support"
+      "source_en": "Post-tour Support",
+      "tm": "Assistenza dopo il tour"
     },
     "/bookingSupportSteps/5/detail": {
-      "source_en": "Follow-up and recommendations"
+      "source_en": "Follow-up and recommendations",
+      "tm": "Follow-up e consigli"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Dopo il tour"
     },
     "/bookingSupportSteps/5/description": {
-      "source_en": "Post-tour feedback request sent after drop-off."
+      "source_en": "Post-tour feedback request sent after drop-off.",
+      "tm": "Richiesta di feedback inviata dopo il rientro."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Consulti le note stagionali"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Consulti le note stagionali"
     }
   },
   "glossaryTokens": {
@@ -177,5 +223,5 @@
       "⟦G0⟧": "Museo nazionale di Gyeongju"
     }
   },
-  "tmHits": 0
+  "tmHits": 46
 }

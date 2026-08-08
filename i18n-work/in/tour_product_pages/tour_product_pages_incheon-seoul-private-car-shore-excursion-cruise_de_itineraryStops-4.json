@@ -6,53 +6,6 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
-    "/itineraryStops/3/description": {
-      "source_en": "Lunch is YOUR choice and timed flexibly around the day's pace — your driver-guide offers three vetted options matched to your group's preferences: **(1) ⟦G0⟧ food alley** — the working-class streetfood experience opened 1905 (Korea's first permanent traditional market), made world-famous by Anthony Bourdain's 'Parts Unknown.' \n\nBindaetteok mung-bean pancakes (5,000-7,000 KRW), mayak gimbap, yukhoe raw beef tartare. CASH-ONLY at most stalls. **(2) ⟦G2⟧ traditional restaurant** — sit-down Korean cuisine in a hanok setting; hansik prix-fixe sets featuring banchan (side dishes), bibimbap, kimchi-jjigae stew. \n\nMid-tier 15,000-25,000 KRW per person. **(3) ⟦G1⟧ Kyoja or Hadongkwan** — Korean institutions: ⟦G1⟧ Kyoja for handmade kalguksu (knife-cut noodles) and mandu since 1966; Hadongkwan for Seolleongtang (oxbone soup) since the 1930s. Mid-tier 12,000-20,000 KRW. \n\n**(4) Royal court cuisine at Korea House** — premium hanjeongsik (table d'hôte royal cuisine) in a hanok complex (recognized with three ribbons in the 2025 Blue Ribbon Survey); 60,000-120,000 KRW per person, requires 60-min commitment. Communicate dietary needs (vegetarian, halal, no spicy) at booking — driver-guide adjusts accordingly.",
-      "glossary": [
-        "⟦G0⟧ = Gwangjang-Markt",
-        "⟦G1⟧ = Myeongdong",
-        "⟦G2⟧ = Insadong"
-      ]
-    },
-    "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Most options 11:00-15:00 lunch service"
-    },
-    "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Varies by venue"
-    },
-    "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Easy — venue-dependent"
-    },
-    "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "Pay-as-you-go (12,000 — 120,000 KRW range depending on choice)"
-    },
-    "/itineraryStops/4/name": {
-      "source_en": "N Seoul Tower (Namsan)"
-    },
-    "/itineraryStops/4/category": {
-      "source_en": "Iconic Tower (Viewpoint)"
-    },
-    "/itineraryStops/4/duration": {
-      "source_en": "60 min"
-    },
-    "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Driver-guide drop-off at Namsan Cable Car base or shuttle bus stop (~5 min)"
-    },
-    "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Cable car ride up (~3 min) OR shuttle bus (~5 min)"
-    },
-    "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Observation deck or panoramic concourse views (~30-35 min)"
-    },
-    "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Locks of Love photo + cafe stop (~10-15 min)"
-    },
-    "/itineraryStops/4/timeUsed/4": {
-      "source_en": "Cable car / shuttle down + return to vehicle"
-    },
-    "/itineraryStops/4/highlights/0": {
-      "source_en": "Seoul's most iconic landmark — 236.7 m tower atop Namsan (479.7 m above sea level)"
-    },
     "/itineraryStops/4/highlights/1": {
       "source_en": "Constructed 1969-1971, opened 1980, rebranded N Seoul Tower 2005"
     },
@@ -117,21 +70,141 @@
       "source_en": "N Seoul Tower (Namsan) — photo 1"
     },
     "/itineraryStops/4/galleryItems/0/location": {
-      "source_en": "N Seoul Tower (Namsan)"
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
     },
     "/itineraryStops/4/galleryItems/1/alt": {
       "source_en": "N Seoul Tower (Namsan) — gallery image 2"
+    },
+    "/itineraryStops/4/galleryItems/1/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 2"
+    },
+    "/itineraryStops/4/galleryItems/1/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/itineraryStops/4/galleryItems/2/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 3"
+    },
+    "/itineraryStops/4/galleryItems/2/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 3"
+    },
+    "/itineraryStops/4/galleryItems/2/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/itineraryStops/4/galleryItems/3/alt": {
+      "source_en": "N Seoul Tower (Namsan) — gallery image 4"
+    },
+    "/itineraryStops/4/galleryItems/3/caption": {
+      "source_en": "N Seoul Tower (Namsan) — photo 4"
+    },
+    "/itineraryStops/4/galleryItems/3/location": {
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
+    },
+    "/itineraryStops/5/name": {
+      "source_en": "⟦G1⟧ OR ⟦G0⟧ (your choice)",
+      "glossary": [
+        "⟦G0⟧ = Jogyesa-Tempel",
+        "⟦G1⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/category": {
+      "source_en": "Shopping & Local Culture — Customizable"
+    },
+    "/itineraryStops/5/duration": {
+      "source_en": "60 min",
+      "tm": "60 Min."
+    },
+    "/itineraryStops/5/timeUsed/0": {
+      "source_en": "Driver-guide drop-off at chosen venue (~5 min)"
+    },
+    "/itineraryStops/5/timeUsed/1": {
+      "source_en": "Self-paced exploration (~50 min)"
+    },
+    "/itineraryStops/5/timeUsed/2": {
+      "source_en": "Reassembly at vehicle",
+      "tm": "Sammeln am Fahrzeug"
+    },
+    "/itineraryStops/5/timeUsed/3": {
+      "source_en": "Optional ⟦G0⟧ Cathedral interior visit (5-min walk from main shopping street, FREE) (~10 min)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/timeUsed/4": {
+      "source_en": "Optional Lotte Department Store rooftop garden + tax-refund counter (~15 min)"
+    },
+    "/itineraryStops/5/highlights/0": {
+      "source_en": "**⟦G0⟧ (Option A)**: Seoul's #1 shopping/K-beauty district + 1898 ⟦G0⟧ Cathedral",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/highlights/1": {
+      "source_en": "Major K-beauty flagships (Innisfree, Olive Young, etc.) with generous free samples"
+    },
+    "/itineraryStops/5/highlights/2": {
+      "source_en": "⟦G0⟧ street food: tornado potatoes, hotteok, cheesy corn dogs, tanghulu",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/highlights/3": {
+      "source_en": "**⟦G0⟧ (Option B)**: Head temple of Jogye Order (Korea's largest Buddhist Order)",
+      "glossary": [
+        "⟦G0⟧ = Jogyesa-Tempel"
+      ]
+    },
+    "/itineraryStops/5/highlights/4": {
+      "source_en": "Daeungjeon = largest temple building in Seoul; 500-year-old Baeksong (Natural Monument No. 9)"
+    },
+    "/itineraryStops/5/highlights/5": {
+      "source_en": "Jogyesa FREE admission; Seoul's only major traditional temple in city center"
+    },
+    "/itineraryStops/5/highlights/6": {
+      "source_en": "Driver-guide adjusts based on your group's interest"
+    },
+    "/itineraryStops/5/highlights/7": {
+      "source_en": "**⟦G0⟧ Cathedral (1898)** — Korea's first brick Gothic Catholic church; **historically significant role in 1980s democratization movement** as a sanctuary for protesters during military rule (1987 June Democratic Struggle key gathering point)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/5/highlights/8": {
+      "source_en": "**Lotte Department Store ⟦G0⟧ main branch** — Korea's flagship department store with **rooftop garden + observation deck** (free); largest tax-refund counter in Korea for tourist purchases over ₩30,000",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
     }
   },
   "glossaryTokens": {
-    "/itineraryStops/3/description": {
-      "⟦G0⟧": "Gwangjang-Markt",
-      "⟦G1⟧": "Myeongdong",
-      "⟦G2⟧": "Insadong"
-    },
     "/itineraryStops/4/description": {
       "⟦G0⟧": "N Seoul Tower (Namsan Seoul Tower)"
+    },
+    "/itineraryStops/5/name": {
+      "⟦G0⟧": "Jogyesa-Tempel",
+      "⟦G1⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/timeUsed/3": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/0": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/2": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/3": {
+      "⟦G0⟧": "Jogyesa-Tempel"
+    },
+    "/itineraryStops/5/highlights/7": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/5/highlights/8": {
+      "⟦G0⟧": "Myeongdong"
     }
   },
-  "tmHits": 0
+  "tmHits": 6
 }

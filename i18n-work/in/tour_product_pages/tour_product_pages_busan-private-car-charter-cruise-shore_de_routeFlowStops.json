@@ -7,10 +7,12 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/label": {
-      "source_en": "Cruise Port"
+      "source_en": "Cruise Port",
+      "tm": "Kreuzfahrthafen"
     },
     "/routeFlowStops/1/label": {
-      "source_en": "UN Cemetery"
+      "source_en": "UN Cemetery",
+      "tm": "UN-Friedhof"
     },
     "/routeFlowStops/2/label": {
       "source_en": "⟦G0⟧",
@@ -20,7 +22,8 @@
       ]
     },
     "/routeFlowStops/3/label": {
-      "source_en": "Gamcheon Village"
+      "source_en": "Gamcheon Village",
+      "tm": "Gamcheon-Dorf"
     },
     "/routeFlowStops/4/label": {
       "source_en": "⟦G0⟧",
@@ -37,7 +40,8 @@
       ]
     },
     "/routeFlowStops/6/label": {
-      "source_en": "Cruise Port"
+      "source_en": "Cruise Port",
+      "tm": "Kreuzfahrthafen"
     }
   },
   "glossaryTokens": {
@@ -51,5 +55,5 @@
       "⟦G0⟧": "Jagalchi-Markt"
     }
   },
-  "tmHits": 3
+  "tmHits": 7
 }

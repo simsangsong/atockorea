@@ -1,0 +1,153 @@
+{
+  "unitId": "tour_product_pages:seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour:fr:itineraryStops",
+  "surface": "tour_product_pages",
+  "slug": "seoul-winter-seoraksan-nami-eobi-ice-valley-day-tour",
+  "locale": "fr",
+  "chunk": "itineraryStops",
+  "tier": "B",
+  "segments": {
+    "/itineraryStops/0/name": {
+      "source_en": "Pickup (Hongik University Station or ⟦G0⟧ Station)",
+      "tm": "Prise en charge (station Hongik University ou station ⟦G0⟧)",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/0/category": {
+      "source_en": "Coach pickup",
+      "tm": "Prise en charge en autocar"
+    },
+    "/itineraryStops/0/duration": {
+      "source_en": "30 min window",
+      "tm": "Créneau de 30 min"
+    },
+    "/itineraryStops/0/timeUsed/0": {
+      "source_en": "Arrive at your chosen pickup point 5 minutes before the scheduled time (~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/1": {
+      "source_en": "Identify the AtoC Korea coach at the marked Starbucks / NorthFace frontage (~5 min)"
+    },
+    "/itineraryStops/0/timeUsed/2": {
+      "source_en": "Board in the pickup queue (~10 min)"
+    },
+    "/itineraryStops/0/timeUsed/3": {
+      "source_en": "Printed Korean-English itinerary card distributed at boarding",
+      "tm": "Une fiche d’itinéraire imprimée en coréen et en anglais est distribuée à l’embarquement"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "source_en": "Two pickup points cover Seoul's two main visitor clusters — the Hongik University area in Mapo-gu and ⟦G0⟧ in Jung-gu — and Hongik first is the natural order for a northeast-bound run. The 06:00 start is not padding: Seoraksan is roughly three hours away and the value of going there in winter is being on the valley floor while the light is still on the snow. A later departure would put the park visit into the afternoon flatness and push the last stop past dark.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/0/description": {
+      "source_en": "Pickup is at one of two Seoul meeting points: **(1) Starbucks Hongik University Station Exit 8 (Mapo-gu)** at 06:00 — the Starbucks storefront sits immediately at the top of Exit 8; OR **(2) ⟦G0⟧ Station Exit 2 (Jung-gu)** at 06:30 — the NorthFace flagship store is the visible landmark next to the exit.\n\nBoth pickup points share the same heated coach and Hongik passengers board first. Please be at your chosen point **5 minutes before the scheduled time** — this is an early start on a cold morning and the day only works if the coach reaches Seoraksan by 09:30.\n\nDress for the whole day at boarding, not for the walk to the subway: you will be outdoors at −5 °C or colder at two of the three stops, and the last one is on ice. The guide distributes a printed Korean-English itinerary card and confirms the day's plan, including whether the Seoraksan cable car is running and what the village is charging at Eobi.",
+      "glossary": [
+        "⟦G0⟧ = Myeongdong"
+      ]
+    },
+    "/itineraryStops/1/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Parc national du Seoraksan"
+      ]
+    },
+    "/itineraryStops/1/category": {
+      "source_en": "National Park (Mountain)",
+      "tm": "Parc national (montagne)"
+    },
+    "/itineraryStops/1/duration": {
+      "source_en": "120 min (2 hours)",
+      "tm": "120 min (2 heures)"
+    },
+    "/itineraryStops/1/timeUsed/0": {
+      "source_en": "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
+      "tm": "Arrivée à l’entrée de Seorakdong + présentation par le chauffeur-guide (~10 min)"
+    },
+    "/itineraryStops/1/timeUsed/1": {
+      "source_en": "Walk to Tongildaebul + Sinheungsa Temple (~15-20 min from main parking)",
+      "tm": "Marche jusqu’au Tongildaebul et au temple Sinheungsa (~15-20 min depuis le parking principal)"
+    },
+    "/itineraryStops/1/timeUsed/2": {
+      "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)",
+      "tm": "Au choix : téléphérique jusqu’à Gwongeumseong (~30-45 min, file comprise) OU promenade de Biseondae (~90 min)"
+    },
+    "/itineraryStops/1/timeUsed/3": {
+      "source_en": "Photo time + reassembly at vehicle (~15 min)",
+      "tm": "Temps photo + regroupement au véhicule (~15 min)"
+    },
+    "/itineraryStops/1/timeUsed/4": {
+      "source_en": "Optional 800-year-old Pine Tree photo stop near Sinheungsa (~5 min)",
+      "tm": "Arrêt photo facultatif au pin de 800 ans, près de Sinheungsa (~5 min)"
+    },
+    "/itineraryStops/1/highlights/0": {
+      "source_en": "Korea's 5th national park (1970) and first UNESCO Biosphere Reserve (Aug 1982)",
+      "tm": "5e parc national de Corée (1970) et première réserve de biosphère de l’UNESCO du pays (août 1982)"
+    },
+    "/itineraryStops/1/highlights/1": {
+      "source_en": "Tongildaebul: 14.6 m / 108 tons bronze — Korea's largest seated bronze Buddha (1997)",
+      "tm": "Tongildaebul : 14,6 m / 108 tonnes de bronze — le plus grand Bouddha assis en bronze de Corée (1997)"
+    },
+    "/itineraryStops/1/highlights/2": {
+      "source_en": "Sinheungsa Temple (652 CE Silla) — one of Korea's oldest active Buddhist temples and a Jogye Order monastery",
+      "tm": "Temple Sinheungsa (652 apr. J.-C., époque Silla) — l’un des plus anciens temples bouddhiques encore en activité de Corée et un monastère de l’ordre Jogye"
+    },
+    "/itineraryStops/1/highlights/3": {
+      "source_en": "Optional Seorak Cable Car 1,132 m to Gwongeumseong Fortress platform (700 m, 1253 legend)",
+      "tm": "Téléphérique du Seorak en option, 1 132 m jusqu’à la plate-forme de la forteresse de Gwongeumseong (700 m, légende de 1253)"
+    },
+    "/itineraryStops/1/highlights/4": {
+      "source_en": "30 peaks, 2,000+ animal species, 1,400-1,562 plant species; rare wildlife (musk deer, goral, Asian black bear)",
+      "tm": "30 sommets, plus de 2 000 espèces animales, 1 400 à 1 562 espèces végétales ; faune rare (porte-musc, goral, ours noir d’Asie)"
+    },
+    "/itineraryStops/1/highlights/5": {
+      "source_en": "Park entrance FREE since May 2023 (was 3,500 KRW); cable car still paid",
+      "tm": "Entrée du parc GRATUITE depuis mai 2023 (auparavant 3 500 KRW) ; le téléphérique reste payant"
+    },
+    "/itineraryStops/1/highlights/6": {
+      "source_en": "**IUCN Category II (National Park) since 2005 + IUCN Green List of Protected Areas since 2014** — Korea's first national park to enter the Green List during the Pilot Phase, alongside Odaesan and Jirisan",
+      "tm": "**Catégorie II de l'UICN (parc national) depuis 2005 + Liste verte des aires protégées de l'UICN depuis 2014** — le premier parc national coréen à intégrer la Liste verte lors de la phase pilote, aux côtés de l'Odaesan et du Jirisan"
+    },
+    "/itineraryStops/1/highlights/7": {
+      "source_en": "**Korea's first UNESCO Biosphere Reserve since August 1982** + **listed as UNESCO World Heritage tentative site** — combined recognition unmatched by any other Korean national park",
+      "tm": "**Première réserve de biosphère de l'UNESCO de Corée depuis août 1982** + **inscrit sur la liste indicative du patrimoine mondial de l'UNESCO** — une reconnaissance combinée qu'aucun autre parc national coréen n'égale"
+    },
+    "/itineraryStops/1/highlights/8": {
+      "source_en": "**Long-tailed goral conservation centerpiece**: stable population of ~260 individuals (vulnerable on IUCN Red List) — the park manages 10 Special Protection Zones covering 39 km² (10% of total park area) for endangered species",
+      "tm": "**Haut lieu de la conservation du goral à longue queue** : une population stable de ~260 individus (classée vulnérable sur la Liste rouge de l'UICN) — le parc gère 10 zones de protection spéciale couvrant 39 km² (10 % de sa superficie totale) pour les espèces menacées"
+    },
+    "/itineraryStops/1/smartNotes/tip": {
+      "source_en": "Do not plan around the cable car. Winter hours shift daily and it closes on wind and ice more often than in other seasons; queues can also run long on clear days. Treat it as a bonus, not a fixture. Dress for −5 °C to +5 °C at the base with a strong wind chill."
+    },
+    "/itineraryStops/1/smartNotes/facilities": {
+      "source_en": "Visitor centre, cafes, restaurants and gift shops at the Sogongwon entrance. Indoor warm-up space is limited on busy winter days."
+    },
+    "/itineraryStops/1/whyOnRoute": {
+      "source_en": "Seoraksan opens the day because it is both the furthest stop and the most light-dependent one. At 09:30 the snow on the granite ridges is still clean and the valley has not yet clouded over, which is the whole reason to drive three hours for it. Two hours at the Sogongwon entrance is enough for the Tongildaebul bronze Buddha, Sinheungsa Temple and the lower valley paths at a winter pace — not enough for a summit attempt, which is deliberate. Going first also gets the day's longest drive done before anyone is tired or cold."
+    },
+    "/itineraryStops/1/convenience/parking": {
+      "source_en": "Available at Sogongwon main entrance (paid)",
+      "tm": "Disponible à l’entrée principale de Sogongwon (payant)"
+    },
+    "/itineraryStops/1/convenience/restroom": {
+      "source_en": "At main entrance area, cable car station, Sinheungsa Temple grounds, along major trails",
+      "tm": "Dans le secteur de l’entrée principale, à la gare du téléphérique, sur le site du temple Sinheungsa et le long des principaux sentiers"
+    }
+  },
+  "glossaryTokens": {
+    "/itineraryStops/0/name": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/0/whyOnRoute": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/0/description": {
+      "⟦G0⟧": "Myeongdong"
+    },
+    "/itineraryStops/1/name": {
+      "⟦G0⟧": "Parc national du Seoraksan"
+    }
+  },
+  "tmHits": 23
+}

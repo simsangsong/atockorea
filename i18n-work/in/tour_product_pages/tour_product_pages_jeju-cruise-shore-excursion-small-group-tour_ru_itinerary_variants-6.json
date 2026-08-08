@@ -8,91 +8,119 @@
   "segments": {
     "/itinerary_variants/1/stops/6/description": {
       "source_en": "Return drive to the **Gangjeong Port Cruise Terminal** in Seogwipo's Gangjeong Village. From the southern circuit around ⟦G1⟧, ⟦G0⟧, and downtown Seogwipo, the drive is usually short, often around 10–15 minutes by local roads. The schedule is planned to bring guests back well before the ship's all-aboard time, with extra room for traffic, restroom use, and boarding procedures. Your guide confirms the ship schedule during the day and adjusts the pace if road or weather conditions require it.",
+      "tm": "Обратная дорога к **круизному терминалу порта Канджон** в деревне Канджон в Согвипхо. С южного круга вокруг ⟦G1⟧, ⟦G0⟧ и центра Согвипхо дорога обычно короткая, часто около 10–15 минут по местным дорогам. График рассчитан так, чтобы вернуть гостей задолго до окончания посадки на судно, с дополнительным запасом на трафик, посещение туалета и процедуры посадки. Гид уточняет расписание судна в течение дня и корректирует темп, если этого требуют дорожные или погодные условия.",
       "glossary": [
         "⟦G0⟧ = Водопад Чхонджиён",
         "⟦G1⟧ = Рынок Олле Мэиль"
       ]
     },
     "/itinerary_variants/1/port_label": {
-      "source_en": "Gangjeong Port (Seogwipo Terminal)"
+      "source_en": "Gangjeong Port (Seogwipo Terminal)",
+      "tm": "Порт Канджон (терминал Согвипхо)"
     },
     "/itinerary_variants/1/routePhases/0/label": {
-      "source_en": "Morning"
+      "source_en": "Morning",
+      "tm": "Утро"
     },
     "/itinerary_variants/1/routePhases/0/theme": {
-      "source_en": "Alpine to coastal geology"
+      "source_en": "Alpine to coastal geology",
+      "tm": "От высокогорья к прибрежной геологии"
     },
     "/itinerary_variants/1/routePhases/0/bgClass": {
-      "source_en": "bg-violet-50/70"
+      "source_en": "bg-violet-50/70",
+      "tm": "bg-violet-50/70"
     },
     "/itinerary_variants/1/routePhases/1/label": {
-      "source_en": "Midday"
+      "source_en": "Midday",
+      "tm": "Полдень"
     },
     "/itinerary_variants/1/routePhases/1/theme": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Обед"
     },
     "/itinerary_variants/1/routePhases/1/bgClass": {
-      "source_en": "bg-amber-50/70"
+      "source_en": "bg-amber-50/70",
+      "tm": "bg-amber-50/70"
     },
     "/itinerary_variants/1/routePhases/2/label": {
-      "source_en": "Afternoon"
+      "source_en": "Afternoon",
+      "tm": "Вторая половина дня"
     },
     "/itinerary_variants/1/routePhases/2/theme": {
-      "source_en": "Waterfall + market + return"
+      "source_en": "Waterfall + market + return",
+      "tm": "Водопад, рынок и возвращение"
     },
     "/itinerary_variants/1/routePhases/2/bgClass": {
-      "source_en": "bg-emerald-50/70"
+      "source_en": "bg-emerald-50/70",
+      "tm": "bg-emerald-50/70"
     },
     "/itinerary_variants/1/route_focus": {
-      "source_en": "Hallasan alpine + southwest coast geology + market"
+      "source_en": "Hallasan alpine + southwest coast geology + market",
+      "tm": "Высокогорье Халласан, геология юго-западного побережья и рынок"
     },
     "/itinerary_variants/1/duration_band": {
-      "source_en": "8h"
+      "source_en": "8h",
+      "tm": "8 ч"
     },
     "/itinerary_variants/1/routeFlowStops/0/name": {
-      "source_en": "Cruise Terminal"
+      "source_en": "Cruise Terminal",
+      "tm": "Круизный терминал"
     },
     "/itinerary_variants/1/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Отправление"
     },
     "/itinerary_variants/1/routeFlowStops/1/name": {
-      "source_en": "1100 Highland"
+      "source_en": "1100 Highland",
+      "tm": "Высокогорье 1100"
     },
     "/itinerary_variants/1/routeFlowStops/1/theme": {
-      "source_en": "Alpine"
+      "source_en": "Alpine",
+      "tm": "Высокогорье"
     },
     "/itinerary_variants/1/routeFlowStops/2/name": {
-      "source_en": "Jusangjeolli"
+      "source_en": "Jusangjeolli",
+      "tm": "Чусанджолли"
     },
     "/itinerary_variants/1/routeFlowStops/2/theme": {
-      "source_en": "Geology"
+      "source_en": "Geology",
+      "tm": "Геология"
     },
     "/itinerary_variants/1/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Обед"
     },
     "/itinerary_variants/1/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Питание"
     },
     "/itinerary_variants/1/routeFlowStops/4/name": {
-      "source_en": "Cheonjiyeon"
+      "source_en": "Cheonjiyeon",
+      "tm": "Чхонджиён"
     },
     "/itinerary_variants/1/routeFlowStops/4/theme": {
-      "source_en": "Waterfall"
+      "source_en": "Waterfall",
+      "tm": "Водопад"
     },
     "/itinerary_variants/1/routeFlowStops/5/name": {
-      "source_en": "Olle Market"
+      "source_en": "Olle Market",
+      "tm": "Рынок Олле"
     },
     "/itinerary_variants/1/routeFlowStops/5/theme": {
-      "source_en": "Market"
+      "source_en": "Market",
+      "tm": "Рынок"
     },
     "/itinerary_variants/1/routeFlowStops/6/name": {
-      "source_en": "Cruise Terminal"
+      "source_en": "Cruise Terminal",
+      "tm": "Круизный терминал"
     },
     "/itinerary_variants/1/routeFlowStops/6/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Возвращение"
     },
     "/itinerary_variants/1/port_label_short": {
-      "source_en": "Gangjeong Port"
+      "source_en": "Gangjeong Port",
+      "tm": "Порт Канджон"
     },
     "/itinerary_variants/1/theme_tags_in_variant/0": {
       "source_en": "volcano"
@@ -110,7 +138,8 @@
       "source_en": "market"
     },
     "/itinerary_variants/1/theme_tags_in_variant/5": {
-      "source_en": "shopping"
+      "source_en": "shopping",
+      "tm": "шопинг"
     }
   },
   "glossaryTokens": {
@@ -119,5 +148,5 @@
       "⟦G1⟧": "Рынок Олле Мэиль"
     }
   },
-  "tmHits": 0
+  "tmHits": 29
 }

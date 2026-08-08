@@ -7,14 +7,16 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Pickup at Seoul Hotel"
+      "source_en": "Pickup at Seoul Hotel",
+      "tm": "Prelievo all’hotel di Seoul"
     },
     "/routePhases/0/duration": {
       "source_en": "Stops 1",
       "tm": "Tappa 1"
     },
     "/routePhases/0/description": {
-      "source_en": "Start: Pickup at Seoul Hotel"
+      "source_en": "Start: Pickup at Seoul Hotel",
+      "tm": "Inizio: prelievo all’hotel di Seoul"
     },
     "/routePhases/1/phase": {
       "source_en": "Choose Your Route",
@@ -41,22 +43,27 @@
       "tm": "Conclusione: rientro in hotel"
     },
     "/galleryItems/0/alt": {
-      "source_en": "Private KIA Carnival by the Han River with N Seoul Tower at night"
+      "source_en": "Private KIA Carnival by the Han River with N Seoul Tower at night",
+      "tm": "KIA Carnival privata lungo il fiume Han, con la N Seoul Tower di notte"
     },
     "/galleryItems/0/caption": {
-      "source_en": "Private KIA Carnival at the Han River — N Seoul Tower at night"
+      "source_en": "Private KIA Carnival at the Han River — N Seoul Tower at night",
+      "tm": "KIA Carnival privata al fiume Han — la N Seoul Tower di notte"
     },
     "/galleryItems/0/location": {
-      "source_en": "Seoul Private Charter"
+      "source_en": "Seoul Private Charter",
+      "tm": "Noleggio privato a Seoul"
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ seen from your private car at golden hour",
+      "tm": "Il ⟦G0⟧ visto dalla Sua auto privata nell’ora dorata",
       "glossary": [
         "⟦G0⟧ = Palazzo di Gyeongbokgung"
       ]
     },
     "/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ from your private car at golden hour",
+      "tm": "Il ⟦G0⟧ dalla Sua auto privata nell’ora dorata",
       "glossary": [
         "⟦G0⟧ = Palazzo di Gyeongbokgung"
       ]
@@ -70,12 +77,14 @@
     },
     "/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ — Heungnyemun gate with hanbok visitors",
+      "tm": "Il ⟦G0⟧ — la porta Heungnyemun con visitatori in hanbok",
       "glossary": [
         "⟦G0⟧ = Palazzo di Gyeongbokgung"
       ]
     },
     "/galleryItems/2/caption": {
-      "source_en": "Gyeongbokgung — Heungnyemun gate with hanbok visitors"
+      "source_en": "Gyeongbokgung — Heungnyemun gate with hanbok visitors",
+      "tm": "Gyeongbokgung — la porta Heungnyemun con visitatori in hanbok"
     },
     "/galleryItems/2/location": {
       "source_en": "⟦G0⟧",
@@ -85,22 +94,28 @@
       ]
     },
     "/galleryItems/3/alt": {
-      "source_en": "N Seoul Tower with a sweet treat in hand"
+      "source_en": "N Seoul Tower with a sweet treat in hand",
+      "tm": "La N Seoul Tower con un dolce in mano"
     },
     "/galleryItems/3/caption": {
-      "source_en": "N Seoul Tower — sweet treats at the foot of the tower"
+      "source_en": "N Seoul Tower — sweet treats at the foot of the tower",
+      "tm": "N Seoul Tower — dolci ai piedi della torre"
     },
     "/galleryItems/3/location": {
-      "source_en": "N Seoul Tower (Namsan)"
+      "source_en": "N Seoul Tower (Namsan)",
+      "tm": "N Seoul Tower (Namsan)"
     },
     "/galleryItems/4/alt": {
-      "source_en": "Lotte World Tower towering over Seoul neighborhoods"
+      "source_en": "Lotte World Tower towering over Seoul neighborhoods",
+      "tm": "La Lotte World Tower che domina i quartieri di Seoul"
     },
     "/galleryItems/4/caption": {
-      "source_en": "Lotte World Tower towering over Songpa streets"
+      "source_en": "Lotte World Tower towering over Songpa streets",
+      "tm": "La Lotte World Tower che domina le strade di Songpa"
     },
     "/galleryItems/4/location": {
-      "source_en": "Lotte World Tower (Songpa)"
+      "source_en": "Lotte World Tower (Songpa)",
+      "tm": "Lotte World Tower (Songpa)"
     }
   },
   "glossaryTokens": {
@@ -120,5 +135,5 @@
       "⟦G0⟧": "Palazzo di Gyeongbokgung"
     }
   },
-  "tmHits": 9
+  "tmHits": 24
 }

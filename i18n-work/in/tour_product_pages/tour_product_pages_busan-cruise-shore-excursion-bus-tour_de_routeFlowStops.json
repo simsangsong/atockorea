@@ -7,35 +7,40 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Busan Port pickup (cruise terminal)"
+      "source_en": "Busan Port pickup (International Cruise Terminal)"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Cruise pickup"
+      "source_en": "Cruise terminal pickup",
+      "tm": "Abholung am Kreuzfahrtterminal"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Seaside temple"
+      "source_en": "Seaside temple",
+      "tm": "Tempel am Meer"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
+      "source_en": "⟦G0⟧ in Korea",
+      "tm": "⟦G0⟧ in Korea",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Memorial"
+      "source_en": "Memorial / War History",
+      "tm": "Gedenkstätte / Kriegsgeschichte"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch (optional)"
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Mittagessen in einem lokalen Restaurant in Busan (auf eigene Kosten)"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Meal"
+      "source_en": "Lunch / Local Cuisine — optional"
     },
     "/routeFlowStops/4/name": {
       "source_en": "⟦G0⟧",
@@ -78,30 +83,37 @@
       "source_en": "Art village"
     },
     "/routeFlowStops/8/name": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
-      "glossary": [
-        "⟦G0⟧ = Songdo-Strand"
-      ]
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Songdo Cloud Trails Skywalk"
     },
     "/routeFlowStops/8/theme": {
-      "source_en": "Coastal park"
+      "source_en": "Coastal skywalk",
+      "tm": "Skywalk an der Küste"
     },
     "/routeFlowStops/9/name": {
-      "source_en": "⟦G0⟧",
-      "tm": "⟦G0⟧",
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (Amnam-Park)"
+    },
+    "/routeFlowStops/9/theme": {
+      "source_en": "Headland park / optional cable car",
+      "tm": "Park auf der Landzunge / optionale Seilbahn"
+    },
+    "/routeFlowStops/10/name": {
+      "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ & Busan Diamond Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
-    "/routeFlowStops/9/theme": {
-      "source_en": "City viewpoint"
-    },
-    "/routeFlowStops/10/name": {
-      "source_en": "Return to Busan Port"
-    },
     "/routeFlowStops/10/theme": {
-      "source_en": "Cruise return"
+      "source_en": "City Viewpoint / Civic Park",
+      "tm": "Aussichtspunkt über die Stadt / Stadtpark"
+    },
+    "/routeFlowStops/11/name": {
+      "source_en": "Return to Busan Port (International Cruise Terminal)"
+    },
+    "/routeFlowStops/11/theme": {
+      "source_en": "Cruise terminal return"
     }
   },
   "glossaryTokens": {
@@ -123,12 +135,9 @@
     "/routeFlowStops/7/name": {
       "⟦G0⟧": "Kulturdorf Gamcheon"
     },
-    "/routeFlowStops/8/name": {
-      "⟦G0⟧": "Songdo-Strand"
-    },
-    "/routeFlowStops/9/name": {
+    "/routeFlowStops/10/name": {
       "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 7
+  "tmHits": 16
 }

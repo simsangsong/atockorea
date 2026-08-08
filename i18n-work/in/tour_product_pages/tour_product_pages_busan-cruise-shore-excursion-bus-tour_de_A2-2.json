@@ -7,10 +7,11 @@
   "tier": "A2",
   "segments": {
     "/bookingTrustItems/0/body": {
-      "source_en": "Built around the Busan cruise port-call clock — 08:30 pickup at the cruise terminal, 19:15 return with a 30–60 min reboarding buffer for the standard 19:30+ sail-away. Not missed a sail-away in 4 seasons of operation."
+      "source_en": "Built around the Busan cruise port-call clock — 09:00 pickup at the cruise terminal, 16:45 return with a 30–60 min reboarding buffer for the standard 17:00+ sail-away. Not missed a sail-away in 4 seasons of operation."
     },
     "/bookingTrustItems/0/iconBg": {
-      "source_en": "bg-sky-50/80"
+      "source_en": "bg-sky-50/80",
+      "tm": "bg-sky-50/80"
     },
     "/bookingTrustItems/0/description": {
       "source_en": "Return-by guarantee"
@@ -22,7 +23,8 @@
       "source_en": "Licensed local"
     },
     "/bookingTrustItems/1/iconBg": {
-      "source_en": "bg-emerald-50/80"
+      "source_en": "bg-emerald-50/80",
+      "tm": "bg-emerald-50/80"
     },
     "/bookingTrustItems/1/description": {
       "source_en": "Busan-licensed guiding"
@@ -34,46 +36,58 @@
       "source_en": "All-inclusive entry"
     },
     "/bookingTrustItems/2/iconBg": {
-      "source_en": "bg-amber-50/80"
+      "source_en": "bg-amber-50/80",
+      "tm": "bg-amber-50/80"
     },
     "/bookingTrustItems/2/description": {
       "source_en": "Main admissions covered"
     },
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Frühling (März–Mai)"
     },
     "/seasonalVariations/0/description": {
-      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa."
+      "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa.",
+      "tm": "Kirschblüte entlang der Küste von Songdo und am Zugang zum Dorf Gamcheon Ende März bis Anfang April. In Busan blüht es 7–10 Tage früher als in Seoul. Zu Buddhas Geburtstag (Mai) findet am Yonggungsa das Laternenfest Yeondunhoe statt."
     },
     "/seasonalVariations/1/season": {
-      "source_en": "Summer (Jun–Aug)"
+      "source_en": "Summer (Jun–Aug)",
+      "tm": "Sommer (Juni–August)"
     },
     "/seasonalVariations/1/description": {
       "source_en": "Long daylight; coastal stops (Yonggungsa, Songdo, Gamcheon) stay cooler than inland. July monsoon may shorten outdoor time. Yonggungsa morning visit avoids heat. ⟦G0⟧ Festival runs June–August with sand-sculpture displays.",
+      "tm": "Lange Tage; die Stopps an der Küste (Yonggungsa, Songdo, Gamcheon) bleiben kühler als das Landesinnere. Der Monsun im Juli kann die Zeit im Freien verkürzen. Der Besuch am Yonggungsa am Vormittag umgeht die Hitze. Das ⟦G0⟧-Festival läuft von Juni bis August mit Sandskulpturen.",
       "glossary": [
         "⟦G0⟧ = Songdo-Strand"
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Herbst (September–November)"
     },
     "/seasonalVariations/2/description": {
-      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event."
+      "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event.",
+      "tm": "Klarste Sicht, wärmstes Meer — insgesamt die beste Jahreszeit. Laubfärbung Ende Oktober. Die goldene Stunde in Cheongsapo und Gamcheon ist am angenehmsten. Die Zeremonie „Turn Toward Busan“ am 11. November auf dem UN-Friedhof ist ein bemerkenswertes kulturelles Ereignis."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Winter (Dezember–Februar)"
     },
     "/seasonalVariations/3/description": {
-      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve."
+      "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve.",
+      "tm": "Weniger Andrang; klare Blicke aufs Meer; für koreanische Verhältnisse mild (Tiefstwerte im Busaner Winter 5–10 °C). Der Sonnenaufgang am Neujahrstag am Yonggungsa ist ein Großereignis. Die Bürgerglocke am Yongdusan schlägt in der Silvesternacht 33 Mal."
     },
     "/bookingSupportSteps/0/title": {
-      "source_en": "Instant Confirmation"
+      "source_en": "Instant Confirmation",
+      "tm": "Sofortige Bestätigung"
     },
     "/bookingSupportSteps/0/detail": {
-      "source_en": "Booking confirmation with itinerary summary"
+      "source_en": "Booking confirmation with itinerary summary",
+      "tm": "Buchungsbestätigung mit Zusammenfassung des Reiseverlaufs"
     },
     "/bookingSupportSteps/0/timing": {
-      "source_en": "Immediately"
+      "source_en": "Immediately",
+      "tm": "Sofort"
     },
     "/bookingSupportSteps/0/description": {
       "source_en": "Instant booking confirmation with cruise-terminal pickup instructions and the full day's itinerary."
@@ -85,31 +99,37 @@
       "source_en": "Cruise ship name and sail-away time confirmed via WhatsApp"
     },
     "/bookingSupportSteps/1/timing": {
-      "source_en": "Day before"
+      "source_en": "Day before",
+      "tm": "Am Vortag"
     },
     "/bookingSupportSteps/1/description": {
       "source_en": "We reconfirm your specific ship's sail-away time and any route adjustments needed for an earlier-than-typical departure."
     },
     "/bookingSupportSteps/2/title": {
-      "source_en": "Pickup Confirmation"
+      "source_en": "Pickup Confirmation",
+      "tm": "Bestätigung der Abholung"
     },
     "/bookingSupportSteps/2/detail": {
       "source_en": "Guide at terminal arrival hall 15 min before pickup"
     },
     "/bookingSupportSteps/2/timing": {
-      "source_en": "Morning of"
+      "source_en": "Morning of",
+      "tm": "Am Morgen des Tourtages"
     },
     "/bookingSupportSteps/2/description": {
-      "source_en": "Coach plate, guide name, and meeting-point photo sent 30 min before the 08:30 pickup so you know exactly who to find when you disembark."
+      "source_en": "Coach plate, guide name, and meeting-point photo sent 30 min before the 09:00 pickup so you know exactly who to find when you disembark."
     },
     "/bookingSupportSteps/3/title": {
-      "source_en": "On-tour Support"
+      "source_en": "On-tour Support",
+      "tm": "Betreuung während der Tour"
     },
     "/bookingSupportSteps/3/detail": {
-      "source_en": "Guide narration at each stop + ops support"
+      "source_en": "Guide narration at each stop + ops support",
+      "tm": "Erläuterungen der Reiseleitung an jedem Stopp und Unterstützung durch die Einsatzleitung"
     },
     "/bookingSupportSteps/3/timing": {
-      "source_en": "During tour"
+      "source_en": "During tour",
+      "tm": "Während der Tour"
     },
     "/bookingSupportSteps/3/description": {
       "source_en": "Guide provides on-site narration on Yonggungsa's 1376 founding, UNMCK's 22-nation story, Gamcheon's 1955 refugee settlement, Songdo's 1913 opening, and Yongdusan's Dabotap heritage."
@@ -121,10 +141,11 @@
       "source_en": "Direct return to cruise terminal coach lot"
     },
     "/bookingSupportSteps/4/timing": {
-      "source_en": "End of day"
+      "source_en": "End of day",
+      "tm": "Am Ende des Tages"
     },
     "/bookingSupportSteps/4/description": {
-      "source_en": "Coach returns guests to the cruise terminal coach lot by approximately 19:15–19:30 with a 30–60 min reboarding buffer."
+      "source_en": "Coach returns guests to the cruise terminal coach lot by approximately 16:45–17:00 with a 30–60 min reboarding buffer."
     },
     "/bookingSupportSteps/5/title": {
       "source_en": "Review & Followup"
@@ -133,16 +154,19 @@
       "source_en": "Post-cruise review request"
     },
     "/bookingSupportSteps/5/timing": {
-      "source_en": "After tour"
+      "source_en": "After tour",
+      "tm": "Nach der Tour"
     },
     "/bookingSupportSteps/5/description": {
       "source_en": "Post-tour feedback request sent; questions about Korean recipes or Busan attractions answered for guests heading on to other Korea ports."
     },
     "/practicalWeatherStatic/today/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     },
     "/practicalWeatherStatic/tomorrow/label": {
-      "source_en": "See seasonal notes"
+      "source_en": "See seasonal notes",
+      "tm": "Siehe saisonale Hinweise"
     }
   },
   "glossaryTokens": {
@@ -150,5 +174,5 @@
       "⟦G0⟧": "Songdo-Strand"
     }
   },
-  "tmHits": 0
+  "tmHits": 24
 }

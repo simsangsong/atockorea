@@ -7,124 +7,162 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Jeju Cruise Terminal Pickup (Jeju Port — north)"
+      "source_en": "Jeju Cruise Terminal Pickup (Jeju Port — north)",
+      "tm": "Посадка у круизного терминала Чеджу (порт Чеджу — север)"
     },
     "/itineraryStops/0/time": {
-      "source_en": "Cruise arrival + 30 min"
+      "source_en": "Cruise arrival + 30 min",
+      "tm": "Прибытие круиза + 30 мин."
     },
     "/itineraryStops/0/category": {
-      "source_en": "Pickup & Cruise Logistics"
+      "source_en": "Pickup & Cruise Logistics",
+      "tm": "Посадка и круизная логистика"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "30 min"
+      "source_en": "30 min",
+      "tm": "30 мин"
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**Pickup 30 min after ship clearance** — buffer absorbs immigration delays"
+      "source_en": "**Pickup 30 min after ship clearance** — buffer absorbs immigration delays",
+      "tm": "**Посадка через 30 мин. после оформления судна** — запас поглощает задержки на паспортном контроле"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "Driver + English-speaking guide meet at arrival hall with name placard"
+      "source_en": "Driver + English-speaking guide meet at arrival hall with name placard",
+      "tm": "Водитель и англоговорящий гид встречают в зале прибытия с именной табличкой"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "**Main Berth 360 m × 12 m / 140,000-ton capacity** (single concurrent ship)"
+      "source_en": "**Main Berth 360 m × 12 m / 140,000-ton capacity** (single concurrent ship)",
+      "tm": "**Главный причал 360 м × 12 м / вместимость 140 000 тонн** (одно судно одновременно)"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "**100-bus parking** capacity adjacent to terminal — fast vehicle boarding"
+      "source_en": "**100-bus parking** capacity adjacent to terminal — fast vehicle boarding",
+      "tm": "**Парковка на 100 автобусов** рядом с терминалом — быстрая посадка в транспорт"
     },
     "/itineraryStops/0/highlights/4": {
-      "source_en": "Tourist info center, Jeju Bank currency exchange, ATMs, free Wi-Fi on-site"
+      "source_en": "Tourist info center, Jeju Bank currency exchange, ATMs, free Wi-Fi on-site",
+      "tm": "На месте: туристический информационный центр, обмен валюты Jeju Bank, банкоматы, бесплатный Wi-Fi"
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "Itinerary card with Korean-script addresses provided as emergency-taxi backup"
+      "source_en": "Itinerary card with Korean-script addresses provided as emergency-taxi backup",
+      "tm": "Карточка маршрута с адресами на корейском выдаётся на случай экстренной поездки на такси"
     },
     "/itineraryStops/0/smartNotes/tip": {
-      "source_en": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours"
+      "source_en": "Arrive 5–10 minutes before scheduled pickup; bring photo ID for cruise/DMZ tours",
+      "tm": "Приходите за 5–10 минут до назначенного времени посадки; для круизных туров и туров в DMZ возьмите удостоверение с фото"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "**Small-group cruise pickup** at the Jeju International Passenger Terminal arrival hall gives the guide time to confirm guest names, walking comfort, photo priorities, and any key requests before departure. The smaller vehicle and group size make boarding simpler than a large coach and give the route more flexibility if ship clearance or weather changes. The 30-minute post-clearance buffer is kept so the group can start calmly without putting the ship-return timing at risk."
+      "source_en": "**Small-group cruise pickup** at the Jeju International Passenger Terminal arrival hall gives the guide time to confirm guest names, walking comfort, photo priorities, and any key requests before departure. The smaller vehicle and group size make boarding simpler than a large coach and give the route more flexibility if ship clearance or weather changes. The 30-minute post-clearance buffer is kept so the group can start calmly without putting the ship-return timing at risk.",
+      "tm": "**Посадка малой группы с круиза** в зале прибытия Международного пассажирского терминала Чеджу даёт гиду время уточнить имена гостей, комфортный темп ходьбы, приоритеты по фото и любые важные пожелания до выезда. Меньший транспорт и меньшая группа упрощают посадку по сравнению с большим автобусом и делают маршрут гибче, если меняются сроки оформления судна или погода. Запас в 30 минут после оформления сохраняется, чтобы группа начала день спокойно и без риска для времени возвращения на судно."
     },
     "/itineraryStops/0/convenience/parking": {
-      "source_en": "N/A for guests — vehicle-side pickup"
+      "source_en": "N/A for guests — vehicle-side pickup",
+      "tm": "Для гостей не требуется — посадка у транспорта"
     },
     "/itineraryStops/0/convenience/restroom": {
-      "source_en": "At meeting point (subway station / hotel lobby / port terminal)"
+      "source_en": "At meeting point (subway station / hotel lobby / port terminal)",
+      "tm": "В точке встречи (станция метро / лобби отеля / портовый терминал)"
     },
     "/itineraryStops/0/description": {
-      "source_en": "Your driver and English-speaking guide meet your party at the **Jeju International Passenger Terminal** (제주항 국제여객터미널, address: 191 Imhang-ro, Jeju-si — UN/LOCODE **KRCHA**), the northern coast cruise port that opened in **2015** to receive international cruise vessels. \n\nThe terminal has two berths — the **Main Berth (360 m, 12 m water depth, 140,000-ton capacity)** and an **Emergency Berth (306 m, 11.5 m water depth, 85,000-ton capacity)** — handling **one cruise ship at a time**. Pickup is timed for **30 minutes after your ship's posted clearance**, absorbing immigration variance during multi-ship arrivals. \n\nThe driver carries an English/Korean name placard, a printed itinerary card (with all stop times and Korean-script addresses for emergency taxi use), and the operator's 24/7 contact number. Vehicle is parked in the **100-bus parking capacity lot** adjacent to the arrival hall. \n\nBefore boarding, the guide reviews the day's flow, all-aboard time, weather, and any port-day adjustments. If your guests need currency exchange (Jeju Bank), a SIM/Wi-Fi rental, or use of the multilingual tourist information center, the guide accompanies — these are all on-site within the terminal. \n\nPer **South Korea's Ministry of Culture, Sports & Tourism**, **810,000 cruise tourists arrived on 414 ships in 2024** — nearly tripling the prior year — so terminal congestion is realistic on multi-ship days."
+      "source_en": "Your driver and English-speaking guide meet your party at the **Jeju International Passenger Terminal** (제주항 국제여객터미널, address: 191 Imhang-ro, Jeju-si — UN/LOCODE **KRCHA**), the northern coast cruise port that opened in **2015** to receive international cruise vessels. \n\nThe terminal has two berths — the **Main Berth (360 m, 12 m water depth, 140,000-ton capacity)** and an **Emergency Berth (306 m, 11.5 m water depth, 85,000-ton capacity)** — handling **one cruise ship at a time**. Pickup is timed for **30 minutes after your ship's posted clearance**, absorbing immigration variance during multi-ship arrivals. \n\nThe driver carries an English/Korean name placard, a printed itinerary card (with all stop times and Korean-script addresses for emergency taxi use), and the operator's 24/7 contact number. Vehicle is parked in the **100-bus parking capacity lot** adjacent to the arrival hall. \n\nBefore boarding, the guide reviews the day's flow, all-aboard time, weather, and any port-day adjustments. If your guests need currency exchange (Jeju Bank), a SIM/Wi-Fi rental, or use of the multilingual tourist information center, the guide accompanies — these are all on-site within the terminal. \n\nPer **South Korea's Ministry of Culture, Sports & Tourism**, **810,000 cruise tourists arrived on 414 ships in 2024** — nearly tripling the prior year — so terminal congestion is realistic on multi-ship days.",
+      "tm": "Ваш водитель и англоговорящий гид встречают вашу группу в **Международном пассажирском терминале Чеджу** (제주항 국제여객터미널, адрес: Имханно, 191, город Чеджу — код UN/LOCODE **KRCHA**), круизном порту северного побережья, открытом в **2015** году для приёма международных круизных судов. \n\nУ терминала два причала — **главный (360 м, глубина 12 м, вместимость 140 000 тонн)** и **резервный (306 м, глубина 11,5 м, вместимость 85 000 тонн)**, — обслуживающие **одно круизное судно одновременно**. Посадка назначается **через 30 минут после заявленного оформления вашего судна**, что поглощает разброс на паспортном контроле при заходе нескольких судов. \n\nУ водителя именная табличка на английском и корейском, печатная карточка маршрута (со временем всех остановок и адресами на корейском для экстренной поездки на такси) и контактный номер оператора 24/7. Транспорт стоит на **парковке вместимостью 100 автобусов** рядом с залом прибытия. \n\nПеред выездом гид проговаривает ход дня, время окончания посадки на судно, погоду и любые корректировки на день захода. Если гостям нужен обмен валюты (Jeju Bank), аренда SIM или Wi-Fi либо многоязычный туристический информационный центр, гид сопровождает — всё это находится внутри терминала. \n\nПо данным **Министерства культуры, спорта и туризма Республики Корея**, **в 2024 году на 414 судах прибыли 810 000 круизных туристов** — почти втрое больше, чем годом ранее, — поэтому в дни нескольких заходов терминал реально бывает загружен."
     },
     "/itineraryStops/0/visitBasics/walking": {
-      "source_en": "Minimal"
+      "source_en": "Minimal",
+      "tm": "Минимальная"
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)"
+      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "tm": "Туфовый конус ЮНЕСКО — пик Восхода Солнца (тройной статус ЮНЕСКО)"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "90 min"
+      "source_en": "90 min",
+      "tm": "90 мин."
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Parking + ticket + base brief — ~10 min"
+      "source_en": "Parking + ticket + base brief — ~10 min",
+      "tm": "Парковка, билет и вводный рассказ у подножия — ~10 мин."
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min"
+      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+      "tm": "Подъём на смотровую площадку вершины (0,8 км / набор 140 м) — ~30 мин."
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Summit views + crater rim photos — ~20 min"
+      "source_en": "Summit views + crater rim photos — ~20 min",
+      "tm": "Виды с вершины и фото кромки кратера — ~20 мин."
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Descent — ~20 min"
+      "source_en": "Descent — ~20 min",
+      "tm": "Спуск — ~20 мин"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
+      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min",
+      "tm": "По желанию — просмотр выступления хэнё у подножия (показ в 14:00; может быть отменён в непогоду) — ~10 мин."
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10"
+      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+      "tm": "**Тройной статус ЮНЕСКО**: всемирное наследие 2007-07-02 + биосферный резерват 2002 + глобальный геопарк 2010-10"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth"
+      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+      "tm": "**Возраст 5 000 лет** — гидровулканическое извержение сюртсейского типа, рождение в паровом взрыве при встрече магмы с морской водой"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')"
+      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+      "tm": "Кратер **600 м в ширину × 90 м в глубину**, окружённый **99 зубчатыми скалами по кромке** («каменная корона»)"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail"
+      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+      "tm": "**182 м над уровнем моря** — 0,8 км / набор ~140 м, 60 мин. туда и обратно по тропе с каменными ступенями"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters"
+      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+      "tm": "**18 пещер японской императорской армии времён Второй мировой войны** у подножия — укрытия для катеров-камикадзе, 1945"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016"
+      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
+      "tm": "**Выступление хэнё раз в день в 14:00 (может быть отменено в непогоду)** в бухте у моря — нематериальное наследие ЮНЕСКО, 2016"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65"
+      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+      "tm": "**Цены обновлены в апреле 2025**: взрослый ₩5 000 / молодёжь ₩2 500 / БЕСПЛАТНО до 7 и старше 65"
     },
     "/itineraryStops/1/highlights/7": {
-      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)"
+      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+      "tm": "Часы весной и осенью **05:00–19:00** (последний вход 18:20)"
     },
     "/itineraryStops/1/highlights/8": {
-      "source_en": "**Closes for first Monday of each month** (occasional rest day)"
+      "source_en": "**Closes for first Monday of each month** (occasional rest day)",
+      "tm": "**Закрыт в первый понедельник каждого месяца** (иногда выходной день)"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn"
+      "source_en": "All stairs but well-maintained — manageable in casual clothes; family-friendly with rest stops; sunrise visits popular but crowds gather pre-dawn",
+      "tm": "Сплошные ступени, но в хорошем состоянии — можно подняться в повседневной одежде; подходит семьям, есть места для отдыха; популярны визиты на рассвете, но толпы собираются ещё до восхода"
     },
     "/itineraryStops/1/smartNotes/facilities": {
-      "source_en": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)"
+      "source_en": "Café (Fritz Coffee 1.3km away has best exterior views of the peak); ferry to Udo Island from Seongsan Port (1.5km/15 min walk)",
+      "tm": "Кафе (в Fritz Coffee в 1,3 км отсюда лучший вид на пик снаружи); паром на остров Удо из порта Сонсан (1,5 км / 15 мин. пешком)"
     },
     "/itineraryStops/1/whyOnRoute": {
       "source_en": "**⟦G0⟧ is the main natural highlight of the east route.** The small-group format gives guests more time for photos, questions, and pace adjustments on the crater trail. The guide can explain the 5,000-year-old volcanic formation, the sea views, and the haenyeo culture around the base without rushing the group. If conditions or guest mobility make the full climb unsuitable, the visit can still work well from the lower viewing areas.",
+      "tm": "**⟦G0⟧ — главная природная доминанта восточного маршрута.** Формат малой группы даёт больше времени на фото, вопросы и подстройку темпа на тропе к кратеру. Гид может рассказать о вулканическом образовании возрастом 5 000 лет, о морских видах и о культуре хэнё у подножия, не подгоняя группу. Если условия или подвижность гостей делают полный подъём неподходящим, визит хорошо работает и с нижних смотровых площадок.",
       "glossary": [
         "⟦G0⟧ = Сонсан Ильчхульбон"
       ]
     },
     "/itineraryStops/1/convenience/parking": {
-      "source_en": "Large free parking lot"
+      "source_en": "Large free parking lot",
+      "tm": "Большая бесплатная парковка"
     },
     "/itineraryStops/1/convenience/restroom": {
-      "source_en": "Available at entrance and base"
+      "source_en": "Available at entrance and base",
+      "tm": "Есть у входа и у подножия"
     }
   },
   "glossaryTokens": {
@@ -135,5 +173,5 @@
       "⟦G0⟧": "Сонсан Ильчхульбон"
     }
   },
-  "tmHits": 0
+  "tmHits": 38
 }

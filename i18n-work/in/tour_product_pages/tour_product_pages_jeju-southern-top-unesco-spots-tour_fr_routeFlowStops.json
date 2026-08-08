@@ -7,61 +7,77 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "Jeju City + airport pickup"
+      "source_en": "Jeju City + airport pickup",
+      "tm": "Jeju City + prise en charge à l'aéroport"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Departure"
+      "source_en": "Departure",
+      "tm": "Départ"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Cascade de Jeongbang"
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Waterfall"
+      "source_en": "Waterfall",
+      "tm": "Cascade"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Oedolgae & Olle Route 7"
+      "source_en": "Oedolgae & Olle Route 7",
+      "tm": "Oedolgae et Olle Route 7"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Côte"
     },
     "/routeFlowStops/3/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Temple Yakcheonsa"
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Temple"
+      "source_en": "Temple",
+      "tm": "Temple"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Déjeuner"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Meal"
+      "source_en": "Meal",
+      "tm": "Repas"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "O'sulloc Tea Museum"
+      "source_en": "O'sulloc Tea Museum",
+      "tm": "O'sulloc Tea Museum"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Culture"
+      "source_en": "Culture",
+      "tm": "Culture"
     },
     "/routeFlowStops/6/name": {
       "source_en": "⟦G0⟧ (UNESCO)",
+      "tm": "⟦G0⟧ (UNESCO)",
       "glossary": [
         "⟦G0⟧ = Hallasan Eoseungsaengak"
       ]
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Volcano"
+      "source_en": "Volcano",
+      "tm": "Volcan"
     },
     "/routeFlowStops/7/name": {
-      "source_en": "Jeju City drop-off (5 options)"
+      "source_en": "Jeju City drop-off (5 options)",
+      "tm": "Dépose à Jeju City (5 options)"
     },
     "/routeFlowStops/7/theme": {
-      "source_en": "Return"
+      "source_en": "Return",
+      "tm": "Retour"
     }
   },
   "glossaryTokens": {
@@ -75,5 +91,5 @@
       "⟦G0⟧": "Hallasan Eoseungsaengak"
     }
   },
-  "tmHits": 0
+  "tmHits": 16
 }

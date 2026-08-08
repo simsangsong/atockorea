@@ -22,25 +22,31 @@
       "tm": "30-Min.-Fenster"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Arrive at your chosen pickup point 5 min before scheduled time (~5 min)"
+      "source_en": "Arrive at your chosen pickup point 5 min before scheduled time (~5 min)",
+      "tm": "Seien Sie 5 Min. vor der planmäßigen Zeit an Ihrem gewählten Abholpunkt (~5 Min.)"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "Identify the AtoC Korea coach at the marked Starbucks/NorthFace front (~5 min)"
+      "source_en": "Identify the AtoC Korea coach at the marked Starbucks/NorthFace front (~5 min)",
+      "tm": "Den AtoC-Korea-Bus vor dem markierten Starbucks bzw. NorthFace finden (~5 Min.)"
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "Board large coach in pickup queue (~10 min)"
+      "source_en": "Board large coach in pickup queue (~10 min)",
+      "tm": "Einsteigen in den großen Reisebus in der Abholreihe (~10 Min.)"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Printed Korean-English itinerary card distributed at boarding"
+      "source_en": "Printed Korean-English itinerary card distributed at boarding",
+      "tm": "Beim Einsteigen wird eine gedruckte koreanisch-englische Routenkarte ausgeteilt"
     },
     "/itineraryStops/0/whyOnRoute": {
       "source_en": "Two early pickup points cover Seoul's two major hotel/hostel clusters: Hongik University area (Mapo-gu, popular with younger travelers and short-stay guests) and ⟦G0⟧ (Jung-gu, the legacy tourist district near the Lotte/Shilla/Westin hotels). Departure at 06:00 from Hongik or 06:30 from ⟦G0⟧ is the earliest practical pickup that still respects Seoul subway operating hours (Line 2 starts ~05:30) — and is the only way to arrive at Seoraksan before 10:00 for a meaningful 3-hour park visit. Hongik first, ⟦G0⟧ second is the natural northeast-bound route via Olympic Expressway → Seoul-Yangyang Expressway.",
+      "tm": "Zwei frühe Abholpunkte decken Seouls zwei wichtigste Hotel- und Hostelviertel ab: die Gegend um die Hongik University (Mapo-gu, beliebt bei jüngeren Reisenden und Kurzaufenthalten) und ⟦G0⟧ (Jung-gu, das traditionsreiche Touristenviertel bei den Hotels Lotte, Shilla und Westin). Die Abfahrt um 06:00 Uhr in Hongik bzw. 06:30 Uhr an ⟦G0⟧ ist die früheste praktikable Abholung, die noch zu den Betriebszeiten der Seouler U-Bahn passt (Linie 2 startet gegen 05:30 Uhr) — und der einzige Weg, vor 10:00 Uhr am Seoraksan zu sein und dort sinnvolle 3 Stunden zu verbringen. Erst Hongik, dann ⟦G0⟧ ist die natürliche Reihenfolge nach Nordosten über die Olympic-Autobahn und weiter auf die Seoul-Yangyang-Autobahn.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/itineraryStops/0/description": {
       "source_en": "Pickup is at one of two Seoul meeting points: **(1) Starbucks Hongik University Station Exit 8 (Mapo-gu)** at 06:00 — the Starbucks storefront is immediately at the top of Exit 8 with seating until 22:00 the night before if you need shelter from cold weather; OR **(2) ⟦G0⟧ Station Exit 2 (Jung-gu)** at 06:30 — the NorthFace flagship store is the visible landmark adjacent to the exit. \n\nBoth pickup points share the same large coach, and Hongik passengers board first. Please be at your chosen pickup point **5 minutes before scheduled time** for the on-time departure — the 13-hour itinerary depends on arriving at Seoraksan before 10:00. Driver-guide distributes a printed Korean-English itinerary card at boarding and confirms the day's running order, restroom stops, and the typical 19:00 return time. \n\nFrom ⟦G0⟧ (final pickup point), the coach takes the Olympic Expressway east, then transitions to the Seoul-Yangyang Expressway for the ~2.5-hour drive to Seoraksan.",
+      "tm": "Die Abholung erfolgt an einem von zwei Treffpunkten in Seoul: **(1) Starbucks an der Station Hongik University, Ausgang 8 (Mapo-gu)** um 06:00 Uhr — das Starbucks liegt direkt oben am Ausgang 8 und hat am Vorabend bis 22:00 Uhr Sitzplätze, falls Sie Schutz vor der Kälte brauchen; ODER **(2) Station ⟦G0⟧, Ausgang 2 (Jung-gu)** um 06:30 Uhr — der NorthFace-Flagshipstore ist das sichtbare Erkennungszeichen neben dem Ausgang. \n\nBeide Abholpunkte teilen sich denselben großen Reisebus, und die Fahrgäste aus Hongik steigen zuerst ein. Bitte seien Sie **5 Minuten vor der planmäßigen Zeit** an Ihrem gewählten Abholpunkt, damit pünktlich abgefahren werden kann — der 13-Stunden-Ablauf hängt daran, vor 10:00 Uhr am Seoraksan zu sein. Die Fahrerin bzw. der Fahrer mit Reiseleitungsfunktion verteilt beim Einsteigen eine gedruckte koreanisch-englische Routenkarte und bestätigt den Ablauf des Tages, die Pausenstopps und die übliche Rückkehr um 19:00 Uhr. \n\nAb ⟦G0⟧ (dem letzten Abholpunkt) nimmt der Bus die Olympic-Autobahn nach Osten und wechselt dann auf die Seoul-Yangyang-Autobahn für die ~2,5-stündige Fahrt zum Seoraksan.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
@@ -57,7 +63,8 @@
       "tm": "Nationalpark (Gebirge)"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "180 min (3 hours)"
+      "source_en": "180 min (3 hours)",
+      "tm": "180 Min. (3 Stunden)"
     },
     "/itineraryStops/1/timeUsed/0": {
       "source_en": "Arrival at Seorakdong Entrance + driver-guide orientation (~10 min)",
@@ -68,7 +75,8 @@
       "tm": "Weg zu Tongildaebul und zum Sinheungsa-Tempel (~15–20 Min. vom Hauptparkplatz)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)"
+      "source_en": "Optional cable car to Gwongeumseong (~30-45 min including queue) OR Biseondae walk (~90 min)",
+      "tm": "Optional die Seilbahn nach Gwongeumseong (~30–45 Min. inkl. Warteschlange) ODER der Weg zur Biseondae (~90 Min.)"
     },
     "/itineraryStops/1/timeUsed/3": {
       "source_en": "Photo time + reassembly at vehicle (~15 min)",
@@ -115,14 +123,16 @@
       "tm": "**Zentrum des Schutzes für den Langschwanzgoral**: stabile Population von ~260 Tieren (auf der Roten Liste der IUCN als gefährdet geführt) — der Park unterhält 10 Sonderschutzzonen auf 39 km² (10 % der Gesamtfläche) für bedrohte Arten"
     },
     "/itineraryStops/1/smartNotes/tip": {
-      "source_en": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places."
+      "source_en": "Cable car tickets ARE NOT bookable in advance — queues can exceed 1-2 hours in October. If skies are foggy, skip the cable car entirely (no view). Best 3-hour budget: Tongildaebul + Sinheungsa + Biseondae streamside walk. Wear sturdy closed-toe shoes — paths are rocky and damp in places.",
+      "tm": "Seilbahntickets sind NICHT vorab buchbar — im Oktober können die Warteschlangen 1–2 Stunden überschreiten. Bei Nebel lassen Sie die Seilbahn ganz weg (kein Ausblick). Beste Aufteilung für 3 Stunden: Tongildaebul, Sinheungsa und der Uferweg an der Biseondae. Tragen Sie festes, geschlossenes Schuhwerk — die Wege sind stellenweise felsig und feucht."
     },
     "/itineraryStops/1/smartNotes/facilities": {
       "source_en": "Visitor center, cafes (Dahyang Cafe), restaurants, gift shops at Seorakdong Entrance. Free hiking equipment rental 9:00-14:00 (return by 16:00). Asiatic Black Bear Statue mascot near entrance.",
       "tm": "Besucherzentrum, Cafés (Dahyang Cafe), Restaurants und Souvenirläden am Eingang Seorakdong. Kostenloser Verleih von Wanderausrüstung 9:00–14:00 Uhr (Rückgabe bis 16:00 Uhr). Die Kragenbär-Statue als Maskottchen steht nahe dem Eingang."
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's first UNESCO Biosphere Reserve (1982) — combined with the Korea's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Placing Seoraksan first uses the freshest morning energy on the day's most physically active stop, with Nami and Morning Calm afterward as flatter walking-and-photography stops. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day trip earn its 5-hour round-trip drive cost for first-time-Korea travelers seeking a single mountain anchor."
+      "source_en": "The 2.5-hour drive each way is justified only by the centerpiece: Korea's 5th national park (1970) and the country's first UNESCO Biosphere Reserve (1982) — combined with the Korea's largest seated bronze Buddha and the world's oldest Zen Buddhist temple, all within a 15-minute walk of the Sogongwon entrance. Placing Seoraksan first uses the freshest morning energy on the day's most physically active stop, with Nami and Morning Calm afterward as flatter walking-and-photography stops. Seoraksan's combined IUCN Green List + UNESCO Biosphere Reserve + tentative World Heritage status makes it **Korea's most-recognized natural-heritage park** — a credential that helps the day trip earn its 5-hour round-trip drive cost for first-time-Korea travelers seeking a single mountain anchor.",
+      "tm": "Die 2,5-stündige Fahrt je Richtung rechtfertigt sich allein durch das Herzstück: Koreas 5. Nationalpark (1970) und das erste UNESCO-Biosphärenreservat des Landes (1982) — dazu Koreas größter sitzender Bronze-Buddha und der älteste Zen-buddhistische Tempel der Welt, alles innerhalb von 15 Gehminuten vom Eingang Sogongwon. Seoraksan zuerst zu setzen bedeutet, die frischeste Morgenkraft für den körperlich aktivsten Stopp zu nutzen; Nami und die Morgenstille folgen danach als flachere Spazier- und Fotostopps. Die Kombination aus IUCN Green List, UNESCO-Biosphärenreservat und Tentativliste des Welterbes macht Seoraksan zum **am breitesten ausgezeichneten Naturerbe-Park Koreas** — eine Auszeichnung, die diesem Tagesausflug seine 5 Stunden Fahrt hin und zurück wert macht, wenn Erstbesuchende Koreas einen einzigen Berganker suchen."
     },
     "/itineraryStops/1/convenience/parking": {
       "source_en": "Available at Sogongwon main entrance (paid)",
@@ -147,5 +157,5 @@
       "⟦G0⟧": "Nationalpark Seoraksan"
     }
   },
-  "tmHits": 21
+  "tmHits": 31
 }

@@ -7,308 +7,420 @@
   "tier": "A1",
   "segments": {
     "/seo/title": {
-      "source_en": "Jeju Private Car Charter · Custom 9-Hour Day | AtoC Korea"
+      "source_en": "Jeju Private Car Charter · Custom 9-Hour Day | AtoC Korea",
+      "tm": "Location de voiture privée à Jeju · journée sur mesure de 9 heures | AtoC Korea"
     },
     "/seo/pageTitle": {
-      "source_en": "Jeju Island Private Car Charter Tour (9hr) | AtoC Korea"
+      "source_en": "Jeju Island Private Car Charter Tour (9hr) | AtoC Korea",
+      "tm": "Circuit en voiture privée sur l'île de Jeju (9 h) | AtoC Korea"
     },
     "/seo/description": {
-      "source_en": "Jeju private car charter: choose east (UNESCO), west (beaches + tea), or south (waterfalls + cliffs) — or build a custom route. 9 hours, licensed English guide-driver, hotel pickup, no other passengers."
+      "source_en": "Jeju private car charter: choose east (UNESCO), west (beaches + tea), or south (waterfalls + cliffs) — or build a custom route. 9 hours, licensed English guide-driver, hotel pickup, no other passengers.",
+      "tm": "Location de voiture privée à Jeju : choisissez l'est (UNESCO), l'ouest (plages + thé) ou le sud (cascades + falaises) — ou composez un itinéraire sur mesure. 9 heures, chauffeur-guide anglophone agréé, prise en charge à l'hôtel, aucun autre passager."
     },
     "/seo/metaDescription": {
-      "source_en": "9-hour fully customizable Jeju private car charter with licensed EN-speaking driver-guide. Pick East (Seongsan, Manjanggul), West (Hyeopjae), or South route."
+      "source_en": "9-hour fully customizable Jeju private car charter with licensed EN-speaking driver-guide. Pick East (Seongsan, Manjanggul), West (Hyeopjae), or South route.",
+      "tm": "Location de voiture privée à Jeju de 9 heures entièrement personnalisable avec un chauffeur-guide anglophone agréé. Choisissez l'itinéraire Est (Seongsan, Manjanggul), Ouest (Hyeopjae) ou Sud."
     },
     "/seo/primaryKeywords/0": {
-      "source_en": "Jeju private car charter"
+      "source_en": "Jeju private car charter",
+      "tm": "location de voiture privée à Jeju"
     },
     "/seo/primaryKeywords/1": {
-      "source_en": "Jeju private day tour"
+      "source_en": "Jeju private day tour",
+      "tm": "excursion privée d'une journée à Jeju"
     },
     "/seo/primaryKeywords/2": {
-      "source_en": "Jeju custom itinerary tour"
+      "source_en": "Jeju custom itinerary tour",
+      "tm": "circuit sur mesure à Jeju"
     },
     "/seo/primaryKeywords/3": {
-      "source_en": "Jeju English-speaking driver"
+      "source_en": "Jeju English-speaking driver",
+      "tm": "chauffeur anglophone à Jeju"
     },
     "/seo/primaryKeywords/4": {
-      "source_en": "Jeju 8-hour private tour"
+      "source_en": "Jeju 8-hour private tour",
+      "tm": "circuit privé de 8 heures à Jeju"
     },
     "/hero/meta/stops": {
-      "source_en": "Custom"
+      "source_en": "Custom",
+      "tm": "Sur mesure"
     },
     "/hero/meta/region": {
-      "source_en": "All of Jeju"
+      "source_en": "All of Jeju",
+      "tm": "Toute l'île de Jeju"
     },
     "/hero/meta/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 heures"
     },
     "/hero/pills/0": {
-      "source_en": "Private Vehicle"
+      "source_en": "Private Vehicle",
+      "tm": "Véhicule privé"
     },
     "/hero/pills/1": {
-      "source_en": "Licensed Driver-Guide"
+      "source_en": "Licensed Driver-Guide",
+      "tm": "Chauffeur-guide agréé"
     },
     "/hero/pills/2": {
-      "source_en": "East / West / South Routes"
+      "source_en": "East / West / South Routes",
+      "tm": "Itinéraires est / ouest / sud"
     },
     "/hero/tagline": {
       "source_en": "From Seongsan Sunrise Peak to ⟦G1⟧ to ⟦G0⟧—nine private hours, your route, your pace, with a licensed driver-guide.",
+      "tm": "De Seongsan Ilchulbong à ⟦G1⟧ jusqu'à ⟦G0⟧ — neuf heures en privé, votre itinéraire, votre rythme, avec un chauffeur-guide agréé.",
       "glossary": [
         "⟦G0⟧ = Cascade de Cheonjiyeon",
         "⟦G1⟧ = Plage de Hyeopjae"
       ]
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Potentiel photo"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Élevé"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Paysages"
     },
     "/glanceItems/1/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Élevé"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Marche"
     },
     "/glanceItems/2/value": {
-      "source_en": "Light"
+      "source_en": "Light",
+      "tm": "Légère"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Adapté à la pluie"
     },
     "/glanceItems/3/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Bons"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Adapté aux familles"
     },
     "/glanceItems/4/value": {
-      "source_en": "Excellent"
+      "source_en": "Excellent",
+      "tm": "Excellent"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Rythme"
     },
     "/glanceItems/5/value": {
-      "source_en": "Flexible"
+      "source_en": "Flexible",
+      "tm": "Flexible"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Aperçu"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Itinéraire"
     },
     "/subnavItems/2/label": {
-      "source_en": "Details"
+      "source_en": "Details",
+      "tm": "Détails"
     },
     "/subnavItems/3/label": {
-      "source_en": "FAQ"
+      "source_en": "FAQ",
+      "tm": "FAQ"
     },
     "/subnavItems/4/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Avis"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Private tour"
+      "source_en": "Private tour",
+      "tm": "Circuit privé"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Customizable route"
+      "source_en": "Customizable route",
+      "tm": "Itinéraire personnalisable"
     },
     "/catalog_card/tags/2": {
-      "source_en": "Hotel pickup included"
+      "source_en": "Hotel pickup included",
+      "tm": "Prise en charge à l'hôtel incluse"
     },
     "/catalog_card/title": {
-      "source_en": "Jeju Private Car Charter"
+      "source_en": "Jeju Private Car Charter",
+      "tm": "Location de voiture privée à Jeju"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Private Tour"
+      "source_en": "Private Tour",
+      "tm": "Circuit privé"
     },
     "/catalog_card/badges/1": {
-      "source_en": "Customizable Route"
+      "source_en": "Customizable Route",
+      "tm": "Itinéraire personnalisable"
     },
     "/catalog_card/badges/2": {
-      "source_en": "Hotel Pickup Included"
+      "source_en": "Hotel Pickup Included",
+      "tm": "Prise en charge à l'hôtel incluse"
     },
     "/catalog_card/region": {
-      "source_en": "Jeju (East, West, or South)"
+      "source_en": "Jeju (East, West, or South)",
+      "tm": "Jeju (est, ouest ou sud)"
     },
     "/catalog_card/duration": {
-      "source_en": "9 hours"
+      "source_en": "9 hours",
+      "tm": "9 heures"
     },
     "/catalog_card/subtitle": {
-      "source_en": "Design your own Jeju day with a licensed driver-guide and an air-conditioned private vehicle."
-    },
-    "/catalog_card/priceLabel": {
-      "source_en": "Per-vehicle pricing — confirm at booking"
+      "source_en": "Design your own Jeju day with a licensed driver-guide and an air-conditioned private vehicle.",
+      "tm": "Composez votre propre journée à Jeju avec un chauffeur-guide agréé et un véhicule privé climatisé."
     },
     "/catalog_card/shortCardDescription": {
-      "source_en": "A 9-hour private car charter for Jeju with a licensed driver-guide. Three recommended routes (East, West, South) cover the island's most-loved sights, or build your own from UNESCO landmarks, K-drama spots, beaches, tea fields, and traditional markets. Hotel pickup is included anywhere on the island."
+      "source_en": "A 9-hour private car charter for Jeju with a licensed driver-guide. Three recommended routes (East, West, South) cover the island's most-loved sights, or build your own from UNESCO landmarks, K-drama spots, beaches, tea fields, and traditional markets. Hotel pickup is included anywhere on the island.",
+      "tm": "Une location de voiture privée de 9 heures à Jeju avec un chauffeur-guide agréé. Trois itinéraires recommandés (est, ouest, sud) couvrent les sites les plus appréciés de l'île, ou composez le vôtre à partir de sites classés à l'UNESCO, de lieux de tournage de K-dramas, de plages, de champs de thé et de marchés traditionnels. La prise en charge à l'hôtel est incluse partout sur l'île."
     },
     "/headlineLine1": {
-      "source_en": "Jeju Private Car"
+      "source_en": "Jeju Private Car",
+      "tm": "Voiture privée à Jeju"
     },
     "/headlineLine2": {
-      "source_en": "Charter Tour"
+      "source_en": "Charter Tour",
+      "tm": "Circuit avec chauffeur"
     },
     "/pickup_dropoff/notes": {
-      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 9-hour service time starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 25,000 KRW per hour, paid in cash to the driver, subject to driver availability."
+      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time. The 9-hour service time starts from your pickup time. Reschedule requests should be made at least 2 days before the original reservation date. Overtime is charged at 25,000 KRW per hour, paid in cash to the driver, subject to driver availability.",
+      "tm": "Merci de patienter dans le hall de l'hôtel 10 minutes avant l'heure de départ convenue. Les 9 heures de service commencent à votre heure de prise en charge. Les demandes de report doivent être faites au moins 2 jours avant la date de réservation initiale. Les heures supplémentaires sont facturées 25 000 KRW par heure, payées en espèces au chauffeur, sous réserve de sa disponibilité."
     },
     "/pickup_dropoff/dropoff_points/0/name": {
-      "source_en": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)"
+      "source_en": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)",
+      "tm": "Tout hôtel de l'île de Jeju (Jeju City, Seogwipo, Jungmun)"
     },
     "/pickup_dropoff/dropoff_points/0/note": {
-      "source_en": "Drop-off at the same hotel or any address within the supported area."
+      "source_en": "Drop-off at the same hotel or any address within the supported area.",
+      "tm": "Dépose au même hôtel ou à toute adresse située dans la zone desservie."
     },
     "/pickup_dropoff/dropoff_points/1/name": {
-      "source_en": "Jeju Airport"
+      "source_en": "Jeju Airport",
+      "tm": "Aéroport de Jeju"
     },
     "/pickup_dropoff/dropoff_points/1/note": {
-      "source_en": "Same-day departure drop-off is available and counts within the service time."
+      "source_en": "Same-day departure drop-off is available and counts within the service time.",
+      "tm": "La dépose le jour même du départ est possible et est comptée dans la durée du service."
     },
     "/pickup_dropoff/meeting_points/0/name": {
-      "source_en": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)"
+      "source_en": "Any Jeju-island hotel (Jeju City, Seogwipo, Jungmun)",
+      "tm": "Tout hôtel de l'île de Jeju (Jeju City, Seogwipo, Jungmun)"
     },
     "/pickup_dropoff/meeting_points/0/note": {
-      "source_en": "Door-to-door pickup at any hotel within the supported area."
+      "source_en": "Door-to-door pickup at any hotel within the supported area.",
+      "tm": "Prise en charge en porte-à-porte dans tout hôtel situé dans la zone desservie."
     },
     "/pickup_dropoff/meeting_points/1/name": {
-      "source_en": "Jeju Airport"
+      "source_en": "Jeju Airport",
+      "tm": "Aéroport de Jeju"
     },
     "/pickup_dropoff/meeting_points/1/note": {
-      "source_en": "Jeju Airport pickup is also available and counts within the 9-hour service time."
+      "source_en": "Jeju Airport pickup is also available and counts within the 9-hour service time.",
+      "tm": "La prise en charge à l'aéroport de Jeju est également possible et est comptée dans les 9 heures de service."
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Sélectionnez votre date et la taille de votre groupe pour vérifier les disponibilités en temps réel et finaliser votre réservation."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "vehicle"
+      "source_en": "vehicle",
+      "tm": "véhicule"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Prise en charge et dépose"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Hotel pickup is included anywhere on Jeju Island (Jeju City, Seogwipo, Jungmun, etc.)"
+      "source_en": "Hotel pickup is included anywhere on Jeju Island (Jeju City, Seogwipo, Jungmun, etc.)",
+      "tm": "La prise en charge à l'hôtel est incluse partout sur l'île de Jeju (Jeju City, Seogwipo, Jungmun, etc.)"
     },
     "/practicalAccordionItems/0/content/1": {
-      "source_en": "Pickup is typically arranged between 08:00 and 09:00"
+      "source_en": "Pickup is typically arranged between 08:00 and 09:00",
+      "tm": "La prise en charge est généralement prévue entre 8 h 00 et 9 h 00"
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time"
+      "source_en": "Please wait at the hotel lobby 10 minutes before the agreed departure time",
+      "tm": "Merci de patienter dans le hall de l'hôtel 10 minutes avant l'heure de départ convenue"
     },
     "/practicalAccordionItems/0/content/3": {
-      "source_en": "Drop-off at your Jeju hotel or any Jeju-island location of your choice (e.g., a dinner restaurant or the airport)"
+      "source_en": "Drop-off at your Jeju hotel or any Jeju-island location of your choice (e.g., a dinner restaurant or the airport)",
+      "tm": "Dépose à votre hôtel de Jeju ou à tout autre lieu de l'île de votre choix (par exemple un restaurant pour le dîner ou l'aéroport)"
     },
     "/practicalAccordionItems/0/content/4": {
-      "source_en": "Return is typically between 17:00 and 18:00 within the 9-hour service time"
+      "source_en": "Return is typically between 17:00 and 18:00 within the 9-hour service time",
+      "tm": "Le retour a généralement lieu entre 17 h 00 et 18 h 00, dans la limite des 9 heures de service"
     },
     "/practicalAccordionItems/0/content/5": {
-      "source_en": "If you need to reschedule, please contact the local team at least 2 days before the original reservation date"
+      "source_en": "If you need to reschedule, please contact the local team at least 2 days before the original reservation date",
+      "tm": "Si vous devez reporter votre réservation, veuillez contacter l'équipe locale au moins 2 jours avant la date de réservation initiale"
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Hotel pickup anywhere on Jeju; lobby meeting 10 minutes early"
+      "source_en": "Hotel pickup anywhere on Jeju; lobby meeting 10 minutes early",
+      "tm": "Prise en charge à l'hôtel partout à Jeju ; rendez-vous dans le hall 10 minutes à l'avance"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Vehicle and Group Size"
+      "source_en": "Vehicle and Group Size",
+      "tm": "Véhicule et taille du groupe"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "The vehicle type is matched to the exact number of passengers and luggage pieces"
+      "source_en": "The vehicle type is matched to the exact number of passengers and luggage pieces",
+      "tm": "Le type de véhicule est adapté au nombre exact de passagers et de bagages"
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Please fill in the exact passenger count and luggage count when booking"
+      "source_en": "Please fill in the exact passenger count and luggage count when booking",
+      "tm": "Merci d'indiquer le nombre exact de passagers et de bagages lors de la réservation"
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests"
+      "source_en": "Typical vehicles include sedans for 1 to 3 guests, mid-size SUVs for 4 to 5 guests, and Staria or Carnival vans for 6 to 9 guests",
+      "tm": "Les véhicules habituels comprennent des berlines pour 1 à 3 personnes, des SUV de taille moyenne pour 4 à 5 personnes et des vans Staria ou Carnival pour 6 à 9 personnes"
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Larger groups may be split across multiple vehicles or quoted separately"
+      "source_en": "Larger groups may be split across multiple vehicles or quoted separately",
+      "tm": "Les groupes plus importants peuvent être répartis sur plusieurs véhicules ou faire l'objet d'un devis séparé"
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Vehicle assigned by group size and luggage volume"
+      "source_en": "Vehicle assigned by group size and luggage volume",
+      "tm": "Véhicule attribué selon la taille du groupe et le volume des bagages"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "9-Hour Service and Overtime"
+      "source_en": "9-Hour Service and Overtime",
+      "tm": "Service de 9 heures et heures supplémentaires"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "The 9-hour service time starts from your hotel pickup time"
+      "source_en": "The 9-hour service time starts from your hotel pickup time",
+      "tm": "Les 9 heures de service commencent à l'heure de votre prise en charge à l'hôtel"
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver"
+      "source_en": "Overtime is charged at 25,000 KRW per additional hour, paid in cash directly to the driver",
+      "tm": "Les heures supplémentaires sont facturées 25 000 KRW par heure supplémentaire, payées en espèces directement au chauffeur"
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Overtime is subject to driver availability and applicable hours of service rules"
+      "source_en": "Overtime is subject to driver availability and applicable hours of service rules",
+      "tm": "Les heures supplémentaires dépendent de la disponibilité du chauffeur et des règles applicables en matière de temps de conduite"
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Udo Island ferry crossings count within the 9-hour service time unless otherwise agreed"
+      "source_en": "Udo Island ferry crossings count within the 9-hour service time unless otherwise agreed",
+      "tm": "Les traversées en ferry vers l'île d'Udo sont comptées dans les 9 heures de service, sauf accord contraire"
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Strict 9-hour service time from pickup"
+      "source_en": "Strict 9-hour service time from pickup",
+      "tm": "Durée de service stricte de 9 heures à partir de la prise en charge"
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "Extra Fees You Should Know About"
+      "source_en": "Extra Fees You Should Know About",
+      "tm": "Frais supplémentaires à connaître"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Udo Island vehicle ferry: extra cost (varies by vehicle size); foot-passenger ferry from ≈10,500 KRW round-trip per person"
+      "source_en": "Udo Island vehicle ferry: extra cost (varies by vehicle size); foot-passenger ferry from ≈10,500 KRW round-trip per person",
+      "tm": "Ferry véhicule vers l'île d'Udo : coût supplémentaire (variable selon la taille du véhicule) ; ferry passagers à pied à partir d'environ 10 500 KRW aller-retour par personne"
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "All admission fees are paid directly at each venue"
+      "source_en": "All admission fees are paid directly at each venue",
+      "tm": "Tous les droits d'entrée se règlent directement sur place, à chaque site"
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "Meals are paid directly; the driver-guide can recommend local specialties (heuk dwaeji black pork, gogi guksu, abalone porridge)"
+      "source_en": "Meals are paid directly; the driver-guide can recommend local specialties (heuk dwaeji black pork, gogi guksu, abalone porridge)",
+      "tm": "Les repas se règlent directement ; le chauffeur-guide peut vous recommander des spécialités locales (heuk dwaeji, porc noir, gogi guksu, porridge d'ormeau)"
     },
     "/practicalAccordionItems/3/content/3": {
-      "source_en": "Optional driver gratuities are appreciated but not required"
+      "source_en": "Optional driver gratuities are appreciated but not required",
+      "tm": "Les pourboires au chauffeur sont facultatifs et appréciés, mais ne sont pas obligatoires"
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Udo ferry, admission costs, and meals"
+      "source_en": "Udo ferry, admission costs, and meals",
+      "tm": "Ferry d'Udo, droits d'entrée et repas"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Weather policy"
+      "source_en": "Weather policy",
+      "tm": "Politique en cas d'intempéries"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Light rain: most stops still operate; the driver-guide can shift toward indoor stops"
+      "source_en": "Light rain: most stops still operate; the driver-guide can shift toward indoor stops",
+      "tm": "Pluie légère : la plupart des étapes sont maintenues ; le chauffeur-guide peut privilégier les visites en intérieur"
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Strong wind: coastal exposure at Seongsan, Jusangjeolli, and Aewol may be shortened"
+      "source_en": "Strong wind: coastal exposure at Seongsan, Jusangjeolli, and Aewol may be shortened",
+      "tm": "Vent fort : l'exposition côtière à Seongsan, Jusangjeolli et Aewol peut être écourtée"
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Typhoon-warning days: the local team will contact you to reschedule"
+      "source_en": "Typhoon-warning days: the local team will contact you to reschedule",
+      "tm": "Jours d'alerte typhon : l'équipe locale vous contactera pour reprogrammer la sortie"
     },
     "/practicalAccordionItems/4/content/3": {
-      "source_en": "Snow on Hallasan can close the 1100 Highland road; the driver-guide will substitute alternative inland stops"
+      "source_en": "Snow on Hallasan can close the 1100 Highland road; the driver-guide will substitute alternative inland stops",
+      "tm": "La neige sur le Hallasan peut entraîner la fermeture de la route du 1100 Highland ; le chauffeur-guide proposera d'autres étapes à l'intérieur des terres"
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Private format adapts well to changing Jeju conditions"
+      "source_en": "Private format adapts well to changing Jeju conditions",
+      "tm": "Le format privé s'adapte bien aux conditions changeantes de Jeju"
     },
     "/practicalAccordionItems/5/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Ce qui est inclus"
     },
     "/practicalAccordionItems/5/content/0": {
-      "source_en": "Private vehicle (sedan, SUV, or van based on group size)"
+      "source_en": "Private vehicle (sedan, SUV, or van based on group size)",
+      "tm": "Véhicule privé (berline, SUV ou van selon la taille du groupe)"
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Licensed English-speaking driver-guide"
+      "source_en": "Licensed English-speaking driver-guide",
+      "tm": "Chauffeur-guide anglophone agréé"
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Hotel pickup and drop-off anywhere on Jeju"
+      "source_en": "Hotel pickup and drop-off anywhere on Jeju",
+      "tm": "Prise en charge et dépose à l'hôtel partout à Jeju"
     },
     "/practicalAccordionItems/5/content/3": {
-      "source_en": "Fuel, tolls and parking fees for the standard route"
+      "source_en": "Fuel and tolls for the standard route",
+      "tm": "Carburant et péages pour l'itinéraire standard"
     },
     "/practicalAccordionItems/5/content/4": {
-      "source_en": "All admission fees are not included; pay directly at each venue"
+      "source_en": "All admission fees are not included; pay directly at each venue",
+      "tm": "Les droits d'entrée ne sont pas inclus ; ils se règlent directement sur place, à chaque site"
     },
     "/practicalAccordionItems/5/content/5": {
-      "source_en": "Meals are not included"
+      "source_en": "Meals are not included",
+      "tm": "Les repas ne sont pas inclus"
     },
     "/practicalAccordionItems/5/content/6": {
-      "source_en": "Personal shopping is not included"
+      "source_en": "Personal shopping is not included",
+      "tm": "Les achats personnels ne sont pas inclus"
     },
     "/practicalAccordionItems/5/content/7": {
-      "source_en": "Driver gratuities are not included"
+      "source_en": "Driver gratuities are not included",
+      "tm": "Les pourboires au chauffeur ne sont pas inclus"
     },
     "/practicalAccordionItems/5/preview": {
-      "source_en": "Vehicle and licensed driver-guide; admission and meals pay direct"
+      "source_en": "Vehicle and licensed driver-guide; admission and meals pay direct",
+      "tm": "Véhicule et chauffeur-guide agréé ; droits d'entrée et repas à régler directement"
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Cancellation",
+      "tm": "Annulation"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Annulation gratuite jusqu'à 24 heures avant la prise en charge."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Les annulations le jour même et les absences ne sont pas remboursables."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Annulation gratuite jusqu'à 24 heures avant la prise en charge."
     }
   },
   "glossaryTokens": {
@@ -317,5 +429,5 @@
       "⟦G1⟧": "Plage de Hyeopjae"
     }
   },
-  "tmHits": 0
+  "tmHits": 103
 }

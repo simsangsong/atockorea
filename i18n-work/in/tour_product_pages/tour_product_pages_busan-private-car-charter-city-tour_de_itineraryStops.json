@@ -7,13 +7,16 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/0/time": {
-      "source_en": "Best in 8–9 hours"
+      "source_en": "Best in 8–9 hours",
+      "tm": "Am besten in 8–9 Stunden"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Sea temple, coastal park, memorial, painted village, fish market"
+      "source_en": "Sea temple, coastal park, memorial, painted village, fish market",
+      "tm": "Meerestempel, Küstenpark, Gedenkstätte, bemaltes Dorf, Fischmarkt"
     },
     "/itineraryStops/0/duration": {
       "source_en": "6 stops",
@@ -21,42 +24,51 @@
     },
     "/itineraryStops/0/timeUsed/0": {
       "source_en": "≈ 10:00 · ⟦G0⟧ Temple (75 min)",
+      "tm": "≈ 10:00 Uhr · Tempel ⟦G0⟧ (75 Min.)",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "≈ 11:30 · Cheongsapo & Haeundae Blue Line Park (75 min)"
+      "source_en": "≈ 11:30 · Cheongsapo & Haeundae Blue Line Park (75 min)",
+      "tm": "≈ 11:30 Uhr · Cheongsapo & Haeundae Blue Line Park (75 Min.)"
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "≈ 13:00 · Lunch (local Busan restaurant) (60 min)"
+      "source_en": "≈ 13:00 · Lunch (local Busan restaurant) (60 min)",
+      "tm": "≈ 13:00 Uhr · Mittagessen (lokales Restaurant in Busan) (60 Min.)"
     },
     "/itineraryStops/0/timeUsed/3": {
       "source_en": "≈ 14:15 · ⟦G0⟧ in Korea (60 min)",
+      "tm": "≈ 14:15 Uhr · ⟦G0⟧ in Korea (60 Min.)",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/0/timeUsed/4": {
       "source_en": "≈ 15:30 · ⟦G0⟧ (75 min)",
+      "tm": "≈ 15:30 Uhr · ⟦G0⟧ (75 Min.)",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/itineraryStops/0/timeUsed/5": {
-      "source_en": "≈ 17:15 · Jagalchi Fish Market (60 min)"
+      "source_en": "≈ 17:15 · Jagalchi Fish Market (60 min)",
+      "tm": "≈ 17:15 Uhr · Jagalchi-Fischmarkt (60 Min.)"
     },
     "/itineraryStops/0/highlights/0": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "Cheongsapo & Haeundae Blue Line Park"
+      "source_en": "Cheongsapo & Haeundae Blue Line Park",
+      "tm": "Cheongsapo & Haeundae Blue Line Park"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "Lunch (local Busan restaurant)"
+      "source_en": "Lunch (local Busan restaurant)",
+      "tm": "Mittagessen (lokales Restaurant in Busan)"
     },
     "/itineraryStops/0/highlights/3": {
       "source_en": "⟦G0⟧ in Korea",
@@ -73,70 +85,91 @@
       ]
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "Jagalchi Fish Market"
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Jagalchi-Fischmarkt"
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "The strongest choice if it is your first day in Busan and you want the images you came for, in an order that flows without backtracking. Low walking except at Gamcheon, and every stop works in any season."
+      "source_en": "The strongest choice if it is your first day in Busan and you want the images you came for, in an order that flows without backtracking. Low walking except at Gamcheon, and every stop works in any season.",
+      "tm": "Die stärkste Wahl, wenn es Ihr erster Tag in Busan ist und Sie die Bilder wollen, für die Sie gekommen sind — in einer Reihenfolge, die ohne Umwege fließt. Wenig zu Fuß außer in Gamcheon, und jeder Stopp funktioniert zu jeder Jahreszeit."
     },
     "/itineraryStops/0/description": {
       "source_en": "The classic first-visit Busan day, taken from our **Busan Top Attractions Day Tour**. It runs east to west across the city: the cliffside sea temple in the morning, the coastal park and Blue Line Park stretch before lunch, then the quiet of the ⟦G0⟧, the painted hillside of Gamcheon, and Jagalchi's working fish market to finish. \n\nAs a charter, it loses the join-in tour's station-meeting chain, so the same stops fit comfortably with time left over — that spare time usually goes to Gamcheon, which people always want longer at.",
+      "tm": "Der klassische erste Busan-Tag, übernommen aus unserer **Tagestour zu Busans Top-Sehenswürdigkeiten**. Sie führt von Ost nach West durch die Stadt: am Vormittag der Meerestempel an der Klippe, vor dem Mittagessen der Küstenpark und der Abschnitt des Blue Line Park, danach die Ruhe des ⟦G0⟧, der bemalte Hang von Gamcheon und zum Abschluss der arbeitende Fischmarkt von Jagalchi. \n\nAls Charter entfällt die Kette der Treffpunkte an Bahnhöfen, die eine Gruppentour mit sich bringt — dieselben Stopps passen also bequem und es bleibt Zeit übrig. Diese Zeit geht meist an Gamcheon, wo alle länger bleiben wollen.",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/0/galleryItems/0/alt": {
-      "source_en": "Route 1: Busan Top Attractions — gallery image 1"
+      "source_en": "Route 1: Busan Top Attractions — gallery image 1",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — Galeriebild 1"
     },
     "/itineraryStops/0/galleryItems/0/caption": {
-      "source_en": "Route 1: Busan Top Attractions — 1"
+      "source_en": "Route 1: Busan Top Attractions — 1",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — 1"
     },
     "/itineraryStops/0/galleryItems/0/location": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/0/galleryItems/1/alt": {
-      "source_en": "Route 1: Busan Top Attractions — gallery image 2"
+      "source_en": "Route 1: Busan Top Attractions — gallery image 2",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — Galeriebild 2"
     },
     "/itineraryStops/0/galleryItems/1/caption": {
-      "source_en": "Route 1: Busan Top Attractions — 2"
+      "source_en": "Route 1: Busan Top Attractions — 2",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — 2"
     },
     "/itineraryStops/0/galleryItems/1/location": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/0/galleryItems/2/alt": {
-      "source_en": "Route 1: Busan Top Attractions — gallery image 3"
+      "source_en": "Route 1: Busan Top Attractions — gallery image 3",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — Galeriebild 3"
     },
     "/itineraryStops/0/galleryItems/2/caption": {
-      "source_en": "Route 1: Busan Top Attractions — 3"
+      "source_en": "Route 1: Busan Top Attractions — 3",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — 3"
     },
     "/itineraryStops/0/galleryItems/2/location": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/0/galleryItems/3/alt": {
-      "source_en": "Route 1: Busan Top Attractions — gallery image 4"
+      "source_en": "Route 1: Busan Top Attractions — gallery image 4",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — Galeriebild 4"
     },
     "/itineraryStops/0/galleryItems/3/caption": {
-      "source_en": "Route 1: Busan Top Attractions — 4"
+      "source_en": "Route 1: Busan Top Attractions — 4",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — 4"
     },
     "/itineraryStops/0/galleryItems/3/location": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/0/galleryItems/4/alt": {
-      "source_en": "Route 1: Busan Top Attractions — gallery image 5"
+      "source_en": "Route 1: Busan Top Attractions — gallery image 5",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — Galeriebild 5"
     },
     "/itineraryStops/0/galleryItems/4/caption": {
-      "source_en": "Route 1: Busan Top Attractions — 5"
+      "source_en": "Route 1: Busan Top Attractions — 5",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten — 5"
     },
     "/itineraryStops/0/galleryItems/4/location": {
-      "source_en": "Route 1: Busan Top Attractions"
+      "source_en": "Route 1: Busan Top Attractions",
+      "tm": "Route 1: Busans Top-Sehenswürdigkeiten"
     },
     "/itineraryStops/1/name": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer"
     },
     "/itineraryStops/1/time": {
-      "source_en": "Best in 8 hours"
+      "source_en": "Best in 8 hours",
+      "tm": "Am besten in 8 Stunden"
     },
     "/itineraryStops/1/category": {
-      "source_en": "Sea temple, glass skywalk, Sky Capsule, beach, two mural villages"
+      "source_en": "Sea temple, glass skywalk, Sky Capsule, beach, two mural villages",
+      "tm": "Meerestempel, gläserner Skywalk, Sky Capsule, Strand, zwei Wandbilddörfer"
     },
     "/itineraryStops/1/duration": {
       "source_en": "7 stops",
@@ -144,48 +177,60 @@
     },
     "/itineraryStops/1/timeUsed/0": {
       "source_en": "≈ 10:20 · ⟦G0⟧ Temple (60 min)",
+      "tm": "≈ 10:20 Uhr · Tempel ⟦G0⟧ (60 Min.)",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "≈ 11:40 · Cheongsapo Daritdol Observatory (glass skywalk) (40 min)"
+      "source_en": "≈ 11:40 · Cheongsapo Daritdol Observatory (glass skywalk) (40 min)",
+      "tm": "≈ 11:40 Uhr · Aussichtsplattform Cheongsapo Daritdol (gläserner Skywalk) (40 Min.)"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "≈ 12:30 · Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) (50 min)"
+      "source_en": "≈ 12:30 · Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo) (50 min)",
+      "tm": "≈ 12:30 Uhr · Sky Capsule im Haeundae Blueline Park (Cheongsapo → Mipo) (50 Min.)"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "≈ 13:25 · Lunch (local restaurant near Haeundae/Mipo) (45 min)"
+      "source_en": "≈ 13:25 · Lunch (local restaurant near Haeundae/Mipo) (45 min)",
+      "tm": "≈ 13:25 Uhr · Mittagessen (lokales Restaurant bei Haeundae/Mipo) (45 Min.)"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "≈ 14:10 · Haeundae Beach (20 min)"
+      "source_en": "≈ 14:10 · Haeundae Beach (20 min)",
+      "tm": "≈ 14:10 Uhr · Strand von Haeundae (20 Min.)"
     },
     "/itineraryStops/1/timeUsed/5": {
       "source_en": "≈ 15:10 · ⟦G0⟧ (60 min)",
+      "tm": "≈ 15:10 Uhr · ⟦G0⟧ (60 Min.)",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/itineraryStops/1/timeUsed/6": {
-      "source_en": "≈ 16:30 · Dakbatgol Mural Village & Wish-Stairs Monorail (30 min)"
+      "source_en": "≈ 16:30 · Dakbatgol Mural Village & Wish-Stairs Monorail (30 min)",
+      "tm": "≈ 16:30 Uhr · Wandbilddorf Dakbatgol & Monorail an der Wunschtreppe (30 Min.)"
     },
     "/itineraryStops/1/highlights/0": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)"
+      "source_en": "Cheongsapo Daritdol Observatory (glass skywalk)",
+      "tm": "Aussichtsplattform Cheongsapo Daritdol (gläserner Skywalk)"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)"
+      "source_en": "Haeundae Blueline Park Sky Capsule (Cheongsapo → Mipo)",
+      "tm": "Sky Capsule im Haeundae Blueline Park (Cheongsapo → Mipo)"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "Lunch (local restaurant near Haeundae/Mipo)"
+      "source_en": "Lunch (local restaurant near Haeundae/Mipo)",
+      "tm": "Mittagessen (lokales Restaurant bei Haeundae/Mipo)"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "Haeundae Beach"
+      "source_en": "Haeundae Beach",
+      "tm": "Strand von Haeundae"
     },
     "/itineraryStops/1/highlights/5": {
       "source_en": "⟦G0⟧",
@@ -195,106 +240,133 @@
       ]
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Dakbatgol Mural Village & Wish-Stairs Monorail"
+      "source_en": "Dakbatgol Mural Village & Wish-Stairs Monorail",
+      "tm": "Wandbilddorf Dakbatgol & Monorail an der Wunschtreppe"
     },
     "/itineraryStops/1/whyOnRoute": {
-      "source_en": "The best route for couples and photographers, and for anyone who would rather have four strong places than eight quick ones. It is also the gentlest on walking apart from Gamcheon's slopes."
+      "source_en": "The best route for couples and photographers, and for anyone who would rather have four strong places than eight quick ones. It is also the gentlest on walking apart from Gamcheon's slopes.",
+      "tm": "Die beste Route für Paare und Fotografierende und für alle, denen vier starke Orte lieber sind als acht schnelle. Sie ist außerdem die fußfreundlichste — abgesehen von den Steigungen in Gamcheon."
     },
     "/itineraryStops/1/description": {
-      "source_en": "Taken from our **Small-Group Sea Temple, Sky Capsule & Culture Villages tour** — the photo-led version of a Busan day. The morning stays on the eastern coast: the sea temple, the glass-floored Daritdol observatory over the water at Cheongsapo, and the Sky Capsule ride along the old railway line to Mipo. \n\nThe afternoon crosses to the two painted hill villages, Gamcheon and the smaller, quieter Dakbatgol with its wish-stairs monorail. \n\nThe Sky Capsule ticket is bought on the day and is not part of the charter price — the driver-guide helps with the queue, which is the part that catches people out."
+      "source_en": "Taken from our **Small-Group Sea Temple, Sky Capsule & Culture Villages tour** — the photo-led version of a Busan day. The morning stays on the eastern coast: the sea temple, the glass-floored Daritdol observatory over the water at Cheongsapo, and the Sky Capsule ride along the old railway line to Mipo. \n\nThe afternoon crosses to the two painted hill villages, Gamcheon and the smaller, quieter Dakbatgol with its wish-stairs monorail. \n\nThe Sky Capsule ticket is bought on the day and is not part of the charter price — the driver-guide helps with the queue, which is the part that catches people out.",
+      "tm": "Übernommen aus unserer **Kleingruppentour zu Meerestempel, Sky Capsule & Kulturdörfern** — der fotografisch geprägten Fassung eines Busan-Tages. Der Vormittag bleibt an der Ostküste: der Meerestempel, die Aussichtsplattform Daritdol mit Glasboden über dem Wasser bei Cheongsapo und die Fahrt mit der Sky Capsule entlang der alten Bahnlinie nach Mipo. \n\nDer Nachmittag wechselt zu den beiden bemalten Hügeldörfern: Gamcheon und das kleinere, ruhigere Dakbatgol mit seiner Monorail an der Wunschtreppe. \n\nDas Ticket für die Sky Capsule wird am Tag selbst gekauft und ist nicht Teil des Charterpreises — der Fahrer-Guide hilft bei der Warteschlange, und genau die unterschätzen die meisten."
     },
     "/itineraryStops/1/galleryItems/0/alt": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 1"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 1",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — Galeriebild 1"
     },
     "/itineraryStops/1/galleryItems/0/caption": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 1"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 1",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — 1"
     },
     "/itineraryStops/1/galleryItems/0/location": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer"
     },
     "/itineraryStops/1/galleryItems/1/alt": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 2"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 2",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — Galeriebild 2"
     },
     "/itineraryStops/1/galleryItems/1/caption": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 2"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 2",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — 2"
     },
     "/itineraryStops/1/galleryItems/1/location": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer"
     },
     "/itineraryStops/1/galleryItems/2/alt": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 3"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — gallery image 3",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — Galeriebild 3"
     },
     "/itineraryStops/1/galleryItems/2/caption": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 3"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages — 3",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer — 3"
     },
     "/itineraryStops/1/galleryItems/2/location": {
-      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages"
+      "source_en": "Route 2: Sea Temple, Sky Capsule & Culture Villages",
+      "tm": "Route 2: Meerestempel, Sky Capsule & Kulturdörfer"
     },
     "/itineraryStops/2/name": {
-      "source_en": "Route 3: Coast and Old Downtown"
+      "source_en": "Route 3: Coast and Old Downtown",
+      "tm": "Route 3: Küste und Altstadt"
     },
     "/itineraryStops/2/time": {
-      "source_en": "Best in 8–9 hours"
+      "source_en": "Best in 8–9 hours",
+      "tm": "Am besten in 8–9 Stunden"
     },
     "/itineraryStops/2/category": {
-      "source_en": "Sea temple, memorial, three markets, painted village, two Songdo viewpoints, city tower"
+      "source_en": "Sea temple, memorial, three markets, painted village, two Songdo viewpoints, city tower",
+      "tm": "Meerestempel, Gedenkstätte, drei Märkte, bemaltes Dorf, zwei Aussichtspunkte in Songdo, Stadtturm"
     },
     "/itineraryStops/2/duration": {
-      "source_en": "10 stops"
+      "source_en": "10 stops",
+      "tm": "10 Stopps"
     },
     "/itineraryStops/2/timeUsed/0": {
       "source_en": "≈ 09:45 · ⟦G0⟧ Temple (50 min)",
+      "tm": "≈ 09:45 Uhr · Tempel ⟦G0⟧ (50 Min.)",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/itineraryStops/2/timeUsed/1": {
       "source_en": "≈ 11:05 · ⟦G0⟧ in Korea (30 min)",
+      "tm": "≈ 11:05 Uhr · ⟦G0⟧ in Korea (30 Min.)",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof"
       ]
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "≈ 11:50 · Lunch at a local Busan restaurant (own expense) (40 min)"
+      "source_en": "≈ 11:50 · Lunch at a local Busan restaurant (own expense) (40 min)",
+      "tm": "≈ 11:50 Uhr · Mittagessen in einem lokalen Restaurant in Busan (auf eigene Kosten) (40 Min.)"
     },
     "/itineraryStops/2/timeUsed/3": {
       "source_en": "≈ 12:45 · ⟦G0⟧ (30 min)",
+      "tm": "≈ 12:45 Uhr · ⟦G0⟧ (30 Min.)",
       "glossary": [
         "⟦G0⟧ = Jagalchi-Markt"
       ]
     },
     "/itineraryStops/2/timeUsed/4": {
       "source_en": "≈ 13:15 · ⟦G0⟧ (20 min)",
+      "tm": "≈ 13:15 Uhr · ⟦G0⟧ (20 Min.)",
       "glossary": [
         "⟦G0⟧ = BIFF-Platz"
       ]
     },
     "/itineraryStops/2/timeUsed/5": {
       "source_en": "≈ 13:35 · ⟦G0⟧ (25 min)",
+      "tm": "≈ 13:35 Uhr · ⟦G0⟧ (25 Min.)",
       "glossary": [
         "⟦G0⟧ = Gukje-Markt"
       ]
     },
     "/itineraryStops/2/timeUsed/6": {
       "source_en": "≈ 14:20 · ⟦G0⟧ (45 min)",
+      "tm": "≈ 14:20 Uhr · ⟦G0⟧ (45 Min.)",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
     },
     "/itineraryStops/2/timeUsed/7": {
-      "source_en": "≈ 15:25 · Songdo Cloud Trails Skywalk (20 min)"
+      "source_en": "≈ 15:25 · Songdo Cloud Trails Skywalk (20 min)",
+      "tm": "≈ 15:25 Uhr · Songdo Cloud Trails Skywalk (20 Min.)"
     },
     "/itineraryStops/2/timeUsed/8": {
-      "source_en": "≈ 15:45 · Songdo Sky Park (Amnam Park) (25 min)"
+      "source_en": "≈ 15:45 · Songdo Sky Park (Amnam Park) (25 min)",
+      "tm": "≈ 15:45 Uhr · Songdo Sky Park (Amnam-Park) (25 Min.)"
     },
     "/itineraryStops/2/timeUsed/9": {
       "source_en": "≈ 16:25 · ⟦G0⟧ & Busan Diamond Tower (20 min)",
+      "tm": "≈ 16:25 Uhr · ⟦G0⟧ & Busan Diamond Tower (20 Min.)",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/2/highlights/0": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -307,7 +379,8 @@
       ]
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "Lunch at a local Busan restaurant (own expense)"
+      "source_en": "Lunch at a local Busan restaurant (own expense)",
+      "tm": "Mittagessen in einem lokalen Restaurant in Busan (auf eigene Kosten)"
     },
     "/itineraryStops/2/highlights/3": {
       "source_en": "⟦G0⟧",
@@ -338,22 +411,27 @@
       ]
     },
     "/itineraryStops/2/highlights/7": {
-      "source_en": "Songdo Cloud Trails Skywalk"
+      "source_en": "Songdo Cloud Trails Skywalk",
+      "tm": "Songdo Cloud Trails Skywalk"
     },
     "/itineraryStops/2/highlights/8": {
-      "source_en": "Songdo Sky Park (Amnam Park)"
+      "source_en": "Songdo Sky Park (Amnam Park)",
+      "tm": "Songdo Sky Park (Amnam-Park)"
     },
     "/itineraryStops/2/highlights/9": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower",
+      "tm": "⟦G0⟧ & Busan Diamond Tower",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/2/whyOnRoute": {
-      "source_en": "The right route when Busan is a single day of a longer trip and you would rather see the whole shape of the city than three places properly. Also the best rain-day route: markets, the tower and the arcades are all covered."
+      "source_en": "The right route when Busan is a single day of a longer trip and you would rather see the whole shape of the city than three places properly. Also the best rain-day route: markets, the tower and the arcades are all covered.",
+      "tm": "Die richtige Route, wenn Busan ein einzelner Tag einer längeren Reise ist und Sie lieber die ganze Gestalt der Stadt sehen als drei Orte richtig. Außerdem die beste Route für Regentage: Märkte, Turm und Passagen sind alle überdacht."
     },
     "/itineraryStops/2/description": {
       "source_en": "The densest of the three, taken from our **Busan Cruise Shore Coastal Bus Tour** — built originally to show a whole city inside one ship's port call, which makes it the right shape for anyone who has only one day. \n\nIt runs the sea temple and the ⟦G0⟧ in the morning, then works through old downtown on foot-sized hops: Jagalchi, ⟦G3⟧, ⟦G2⟧, then Gamcheon, the Songdo Cloud Trails skywalk out over the water, Songdo Sky Park on the headland, and ⟦G1⟧ with the Busan Diamond Tower to close. \n\nStops here are deliberately short — 20 to 45 minutes each. If your group prefers to linger, take this list and cut it in half.",
+      "tm": "Die dichteste der drei, übernommen aus unserer **Küstenbustour für Kreuzfahrtgäste in Busan** — ursprünglich dafür gebaut, eine ganze Stadt innerhalb eines Hafenaufenthalts zu zeigen, was sie zur richtigen Form für alle macht, die nur einen Tag haben. \n\nAm Vormittag stehen der Meerestempel und der ⟦G0⟧ an, danach geht es in kurzen Sprüngen durch die Altstadt: Jagalchi, ⟦G3⟧, ⟦G2⟧, dann Gamcheon, der Skywalk Songdo Cloud Trails hinaus über das Wasser, der Songdo Sky Park auf der Landzunge und zum Schluss ⟦G1⟧ mit dem Busan Diamond Tower. \n\nDie Stopps sind hier bewusst kurz — jeweils 20 bis 45 Minuten. Wenn Ihre Gruppe lieber verweilt, nehmen Sie diese Liste und streichen Sie die Hälfte.",
       "glossary": [
         "⟦G0⟧ = UN-Gedenkfriedhof",
         "⟦G1⟧ = Yongdusan-Park",
@@ -362,25 +440,32 @@
       ]
     },
     "/itineraryStops/2/galleryItems/0/alt": {
-      "source_en": "Route 3: Coast and Old Downtown — gallery image 1"
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 1",
+      "tm": "Route 3: Küste und Altstadt — Galeriebild 1"
     },
     "/itineraryStops/2/galleryItems/0/caption": {
-      "source_en": "Route 3: Coast and Old Downtown — 1"
+      "source_en": "Route 3: Coast and Old Downtown — 1",
+      "tm": "Route 3: Küste und Altstadt — 1"
     },
     "/itineraryStops/2/galleryItems/0/location": {
-      "source_en": "Route 3: Coast and Old Downtown"
+      "source_en": "Route 3: Coast and Old Downtown",
+      "tm": "Route 3: Küste und Altstadt"
     },
     "/itineraryStops/2/galleryItems/1/alt": {
-      "source_en": "Route 3: Coast and Old Downtown — gallery image 2"
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 2",
+      "tm": "Route 3: Küste und Altstadt — Galeriebild 2"
     },
     "/itineraryStops/2/galleryItems/1/caption": {
-      "source_en": "Route 3: Coast and Old Downtown — 2"
+      "source_en": "Route 3: Coast and Old Downtown — 2",
+      "tm": "Route 3: Küste und Altstadt — 2"
     },
     "/itineraryStops/2/galleryItems/1/location": {
-      "source_en": "Route 3: Coast and Old Downtown"
+      "source_en": "Route 3: Coast and Old Downtown",
+      "tm": "Route 3: Küste und Altstadt"
     },
     "/itineraryStops/2/galleryItems/2/alt": {
-      "source_en": "Route 3: Coast and Old Downtown — gallery image 3"
+      "source_en": "Route 3: Coast and Old Downtown — gallery image 3",
+      "tm": "Route 3: Küste und Altstadt — Galeriebild 3"
     }
   },
   "glossaryTokens": {
@@ -466,5 +551,5 @@
       "⟦G3⟧": "BIFF-Platz"
     }
   },
-  "tmHits": 10
+  "tmHits": 95
 }

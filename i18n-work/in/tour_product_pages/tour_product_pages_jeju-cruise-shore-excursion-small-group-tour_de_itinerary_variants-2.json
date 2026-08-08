@@ -7,7 +7,8 @@
   "tier": "B",
   "segments": {
     "/itinerary_variants/0/stops/2/timeUsed/0": {
-      "source_en": "Parking + entrance — ~5 min"
+      "source_en": "Parking + entrance — ~5 min",
+      "tm": "Parken + Eingang — ~5 Min."
     },
     "/itinerary_variants/0/stops/2/timeUsed/1": {
       "source_en": "Cape trail walk — ~25 min"
@@ -73,7 +74,8 @@
       "tm": "Mittagessen"
     },
     "/itinerary_variants/0/stops/3/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itinerary_variants/0/stops/3/highlights/0": {
       "source_en": "Guide-vetted East Jeju restaurant — Seongsan / Seongeup / Pyoseon area"
@@ -107,55 +109,72 @@
       ]
     },
     "/itinerary_variants/0/stops/4/category": {
-      "source_en": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)"
+      "source_en": "Joseon-era Walled Town — Important Folklore Cultural Heritage (1423 founding)",
+      "tm": "Ummauerte Stadt der Joseon-Zeit — bedeutendes Volkskulturerbe (gegründet 1423)"
     },
     "/itinerary_variants/0/stops/4/duration": {
-      "source_en": "75 min"
+      "source_en": "75 min",
+      "tm": "75 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/0": {
-      "source_en": "Parking + welcome brief by village docent — ~10 min"
+      "source_en": "Parking + welcome brief by village docent — ~10 min",
+      "tm": "Parken + Begrüßung durch eine Dorfführerin oder einen Dorfführer — ~10 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/1": {
-      "source_en": "Walk to ancient trees + village center — ~10 min"
+      "source_en": "Walk to ancient trees + village center — ~10 min",
+      "tm": "Fußweg zu den alten Bäumen + Dorfmitte — ~10 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/2": {
-      "source_en": "Hanok interior visits (2–3 representative homes) — ~15 min"
+      "source_en": "Hanok interior visits (2–3 representative homes) — ~15 min",
+      "tm": "Besichtigung von Hanok-Innenräumen (2–3 repräsentative Häuser) — ~15 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/3": {
-      "source_en": "Omegisul brewery free tasting — ~10 min"
+      "source_en": "Omegisul brewery free tasting — ~10 min",
+      "tm": "Kostenlose Verkostung in der Omegisul-Brennerei — ~10 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/4": {
-      "source_en": "Olle alley walk + photography — ~10 min"
+      "source_en": "Olle alley walk + photography — ~10 min",
+      "tm": "Spaziergang durch die Olle-Gassen + Fotografieren — ~10 Min."
     },
     "/itinerary_variants/0/stops/4/timeUsed/5": {
-      "source_en": "Buffer — ~5 min"
+      "source_en": "Buffer — ~5 min",
+      "tm": "Puffer — ca. 5 Min."
     },
     "/itinerary_variants/0/stops/4/highlights/0": {
-      "source_en": "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**"
+      "source_en": "**Founded 1423** by Sejong the Great — administrative center until **1914 (~500 years)**",
+      "tm": "**1423 gegründet** von Sejong dem Großen — Verwaltungssitz bis **1914 (~500 Jahre)**"
     },
     "/itinerary_variants/0/stops/4/highlights/1": {
-      "source_en": "**110 traditional structures** within original eupseong walled-town footprint"
+      "source_en": "**110 traditional structures** within original eupseong walled-town footprint",
+      "tm": "**110 traditionelle Bauten** innerhalb des ursprünglichen Umrisses der Eupseong-Stadtmauer"
     },
     "/itinerary_variants/0/stops/4/highlights/2": {
-      "source_en": "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)"
+      "source_en": "**Important Folklore Cultural Heritage of South Korea** (entire village + multiple buildings)",
+      "tm": "**Bedeutendes Volkskulturerbe Südkoreas** (das ganze Dorf + mehrere Gebäude)"
     },
     "/itinerary_variants/0/stops/4/highlights/3": {
-      "source_en": "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**"
+      "source_en": "**Two ~600-year-old trees** at center: Saw-leaf Zelkova + Japanese Hackberry — **Natural Monuments**",
+      "tm": "**Zwei rund 600 Jahre alte Bäume** in der Dorfmitte: Japanische Zelkove + Zürgelbaum — **Naturdenkmäler**"
     },
     "/itinerary_variants/0/stops/4/highlights/4": {
-      "source_en": "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan"
+      "source_en": "Designed on **Joseon Korean feng shui (geomancy) principles** — typical county-capital plan",
+      "tm": "Angelegt nach **koreanischen Feng-Shui-Prinzipien der Joseon-Zeit** — typischer Grundriss einer Kreisstadt"
     },
     "/itinerary_variants/0/stops/4/highlights/5": {
-      "source_en": "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit"
+      "source_en": "**'Dae Jang Geum' (MBC 2003–2004)** filming location — international K-drama hit",
+      "tm": "Drehort von **„Dae Jang Geum“ (MBC 2003–2004)** — einem international erfolgreichen K-Drama"
     },
     "/itinerary_variants/0/stops/4/highlights/6": {
-      "source_en": "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)"
+      "source_en": "**Omegisul (오메기술)** — rice-based Jeju liquor brewed by single family for generations (free tasting)",
+      "tm": "**Omegisul (오메기술)** — ein Reisbrand von Jeju, seit Generationen von einer einzigen Familie gebrannt (kostenlose Verkostung)"
     },
     "/itinerary_variants/0/stops/4/highlights/7": {
-      "source_en": "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage"
+      "source_en": "Historical scars: **1826 fire** destroyed ~80 buildings; **1948 Jeju Uprising** damage",
+      "tm": "Historische Narben: Ein **Brand von 1826** zerstörte ~80 Gebäude; Schäden durch den **Jeju-Aufstand von 1948**"
     },
     "/itinerary_variants/0/stops/4/highlights/8": {
-      "source_en": "**FREE admission** — village still inhabited by ~250 families maintaining traditions"
+      "source_en": "**FREE admission** — village still inhabited by ~250 families maintaining traditions",
+      "tm": "**Eintritt KOSTENLOS** — im Dorf leben noch ~250 Familien, die die Traditionen pflegen"
     }
   },
   "glossaryTokens": {
@@ -174,5 +193,5 @@
       "⟦G0⟧": "Folkloredorf Seongeup"
     }
   },
-  "tmHits": 2
+  "tmHits": 21
 }

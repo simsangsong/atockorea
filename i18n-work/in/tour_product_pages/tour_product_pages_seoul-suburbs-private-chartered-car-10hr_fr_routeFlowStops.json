@@ -15,7 +15,8 @@
       "tm": "Départ"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Custom Route"
+      "source_en": "Custom Route",
+      "tm": "Itinéraire sur mesure"
     },
     "/routeFlowStops/1/theme": {
       "source_en": "Choose",
@@ -47,5 +48,5 @@
     }
   },
   "glossaryTokens": {},
-  "tmHits": 9
+  "tmHits": 10
 }

@@ -21,7 +21,10 @@
  * `catalogRegistrationBuilder.ts` — shared by both paths, never duplicated.
  */
 
-import type { TourProductPageLocale as Locale } from "@/lib/tour-product/resolveTourProductDbLocale";
+import {
+  toTourProductBaseLocale,
+  type TourProductBaseLocale as Locale,
+} from "@/lib/tour-product/resolveTourProductDbLocale";
 import {
   SLIM_CATALOG_PAGES_BY_LOCALE,
   SLIM_CATALOG_SLUG_ORDER,

@@ -7,19 +7,23 @@
   "tier": "A1",
   "segments": {
     "/practicalAccordionItems/0/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Cosa è incluso"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking."
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide, fuel/tolls/parking.",
+      "tm": "Trasporto in minivan da Busan andata e ritorno, guida certificata di lingua inglese/cinese, carburante/pedaggi/parcheggi."
     },
     "/practicalAccordionItems/0/content/1": {
       "source_en": "Not included: lunch (≈₩15,000–₩25,000), ⟦G0⟧ admission (₩5,000, paid on site), Cheonmachong interior (adult ₩3,000, optional), Donggung & Wolji admission on winter departures (adult ₩3,000), tips.",
+      "tm": "Non incluso: pranzo (≈₩15.000–₩25.000), ingresso a ⟦G0⟧ (₩5.000, da pagare sul posto), interno di Cheonmachong (adulti ₩3.000, opzionale), ingresso a Donggung & Wolji nelle partenze invernali (adulti ₩3.000), mance.",
       "glossary": [
         "⟦G0⟧ = Foresta di bambù di Ahopsan"
       ]
     },
     "/practicalAccordionItems/0/content/2": {
       "source_en": "All other site admissions are free: Bulguksa (free since May 2023), ⟦G0⟧ permanent exhibitions (free since 2008), ⟦G1⟧ and the Choi Family House, ⟦G2⟧, the Daereungwon park grounds, Hwangnidan-gil.",
+      "tm": "Tutti gli altri ingressi ai siti sono gratuiti: Bulguksa (gratuito da maggio 2023), esposizioni permanenti del ⟦G0⟧ (gratuite dal 2008), ⟦G1⟧ e la Casa della famiglia Choi, ⟦G2⟧, il parco di Daereungwon, Hwangnidan-gil.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju",
         "⟦G1⟧ = Villaggio hanok di Gyochon",
@@ -27,82 +31,105 @@
       ]
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide,…"
+      "source_en": "Round-trip mini-van transport from Busan, certified English/Chinese-speaking guide,…",
+      "tm": "Trasporto in minivan da Busan andata e ritorno, guida certificata di lingua inglese/cinese,…"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Prelievo e rientro"
     },
     "/practicalAccordionItems/1/content/0": {
-      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4 (Line 1) at 08:10, Seomyeon Station Exit 4 (Lines 1 & 2) at 08:30, Haeundae Station Exit 5 (Line 2) at 09:10."
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4 (Line 1) at 08:10, Seomyeon Station Exit 4 (Lines 1 & 2) at 08:30, Haeundae Station Exit 5 (Line 2) at 09:10.",
+      "tm": "Il prelievo avviene in sequenza a tre stazioni della metropolitana nel centro di Busan: Busan Station uscita 4 (linea 1) alle ore 8:10, Seomyeon Station uscita 4 (linee 1 e 2) alle ore 8:30, Haeundae Station uscita 5 (linea 2) alle ore 9:10."
     },
     "/practicalAccordionItems/1/content/1": {
-      "source_en": "Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle."
+      "source_en": "Busan Station means Exit 4 of the Line 1 subway station, not the KTX railway terminal. If you wait in the train station concourse or on the plaza you will not see the vehicle.",
+      "tm": "Con Busan Station si intende l'uscita 4 della stazione della metropolitana della linea 1, non il terminal ferroviario KTX. Se attende nell'atrio della stazione ferroviaria o sul piazzale, non vedrà il veicolo."
     },
     "/practicalAccordionItems/1/content/2": {
-      "source_en": "Drop-off is in reverse order, at the same exits you boarded at: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50."
+      "source_en": "Drop-off is in reverse order, at the same exits you boarded at: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50.",
+      "tm": "Il rientro avviene in ordine inverso, alle stesse uscite in cui è salito: Haeundae Station ≈19:15, Seomyeon Station ≈19:35, Busan Station ≈19:50."
     },
     "/practicalAccordionItems/1/content/3": {
-      "source_en": "Provide a WhatsApp or KakaoTalk number at booking; the guide will message vehicle details the day before."
+      "source_en": "Provide a WhatsApp or KakaoTalk number at booking; the guide will message vehicle details the day before.",
+      "tm": "Indichi un numero WhatsApp o KakaoTalk al momento della prenotazione; la guida invierà i dettagli del veicolo il giorno precedente."
     },
     "/practicalAccordionItems/1/preview": {
-      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4…"
+      "source_en": "Pickup runs in sequence at three subway stations in central Busan: Busan Station Exit 4…",
+      "tm": "Il prelievo avviene in sequenza a tre stazioni della metropolitana nel centro di Busan: Busan Station uscita 4…"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Camminata e terreno"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Moderate."
+      "source_en": "Moderate.",
+      "tm": "Moderato."
     },
     "/practicalAccordionItems/2/content/1": {
-      "source_en": "Total walking distance across the day is ≈5–5.5 km — more than the previous course, because the two afternoon blocks (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) are linked on foot."
+      "source_en": "Total walking distance across the day is ≈5–5.5 km — more than the previous course, because the two afternoon blocks (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) are linked on foot.",
+      "tm": "La distanza totale a piedi nell'arco della giornata è di ≈5–5,5 km — più del percorso precedente, perché i due blocchi del pomeriggio (Gyochon ↔ Woljeonggyo, Daereungwon ↔ Hwangnidan-gil) sono collegati a piedi."
     },
     "/practicalAccordionItems/2/content/2": {
-      "source_en": "Bulguksa has stone steps between terraces. Gyochon, Woljeonggyo, Daereungwon and Hwangnidan-gil are all flat, and Daereungwon's grass paths are comfortable for strollers and older guests."
+      "source_en": "Bulguksa has stone steps between terraces. Gyochon, Woljeonggyo, Daereungwon and Hwangnidan-gil are all flat, and Daereungwon's grass paths are comfortable for strollers and older guests.",
+      "tm": "Bulguksa presenta gradini in pietra tra le terrazze. Gyochon, Woljeonggyo, Daereungwon e Hwangnidan-gil sono tutti pianeggianti, e i sentieri erbosi di Daereungwon sono comodi per passeggini e ospiti anziani."
     },
     "/practicalAccordionItems/2/content/3": {
-      "source_en": "Climbing the tomb mounds is prohibited (fines apply). Comfortable closed-toe shoes essential — Bulguksa stone is uneven."
+      "source_en": "Climbing the tomb mounds is prohibited (fines apply). Comfortable closed-toe shoes essential — Bulguksa stone is uneven.",
+      "tm": "È vietato salire sui tumuli funerari (sono previste sanzioni). Sono indispensabili scarpe chiuse e comode — la pietra di Bulguksa è irregolare."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Moderate."
+      "source_en": "Moderate.",
+      "tm": "Moderato."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "Cancellation"
+      "source_en": "Cancellation",
+      "tm": "Cancellazione"
     },
     "/practicalAccordionItems/3/content/0": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima del prelievo."
     },
     "/practicalAccordionItems/3/content/1": {
-      "source_en": "Same-day cancellations and no-shows are non-refundable."
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Le cancellazioni in giornata e le mancate presentazioni non sono rimborsabili."
     },
     "/practicalAccordionItems/3/content/2": {
-      "source_en": "If the tour is cancelled because of force majeure, severe weather, or road closure, full refund applies."
+      "source_en": "If the tour is cancelled because of force majeure, severe weather, or road closure, full refund applies.",
+      "tm": "Se il tour viene annullato per causa di forza maggiore, condizioni meteorologiche avverse o chiusura della strada, è previsto il rimborso completo."
     },
     "/practicalAccordionItems/3/preview": {
-      "source_en": "Free cancellation up to 24 hours before pickup."
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Cancellazione gratuita fino a 24 ore prima del prelievo."
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Seasonal route notes"
+      "source_en": "Seasonal route notes",
+      "tm": "Note stagionali sull'itinerario"
     },
     "/practicalAccordionItems/4/content/0": {
       "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): ⟦G0⟧ is replaced by Haeundae Dalmaji Hill, Busan's coastal cherry-tunnel road. The cherry blossoms on Daereungwon's stone-wall lane peak in early April.",
+      "tm": "Stagione dei fiori di ciliegio (da metà marzo a metà aprile; le date esatte variano di anno in anno): ⟦G0⟧ è sostituita da Haeundae Dalmaji Hill, la strada costiera di Busan con il tunnel di ciliegi. I fiori di ciliegio del vicolo dal muro in pietra di Daereungwon raggiungono il picco all'inizio di aprile.",
       "glossary": [
         "⟦G0⟧ = Foresta di bambù di Ahopsan"
       ]
     },
     "/practicalAccordionItems/4/content/1": {
       "source_en": "Winter (November–February): because sunset falls at 17:15–17:30, the last stop is swapped from ⟦G0⟧ to the Donggung & Wolji night view (admission adult ₩3,000, paid on site). It is the hour that runs from dusk to the lights coming on.",
+      "tm": "Inverno (novembre–febbraio): poiché il tramonto cade tra le 17:15 e le 17:30, l'ultima tappa passa dal ⟦G0⟧ alla vista notturna di Donggung & Wolji (ingresso adulti ₩3.000, da pagare sul posto). È l'ora che va dal crepuscolo all'accensione delle luci.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/practicalAccordionItems/4/content/2": {
       "source_en": "In summer (June–August) sunset is around 19:30, so a night-view stop does not work and the last stop stays fixed as ⟦G0⟧.",
+      "tm": "In estate (giugno–agosto) il tramonto è intorno alle 19:30, quindi una tappa con vista notturna non funziona e l'ultima tappa resta fissata al ⟦G0⟧.",
       "glossary": [
         "⟦G0⟧ = Museo nazionale di Gyeongju"
       ]
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…"
+      "source_en": "Cherry blossom season (mid-March to mid-April; exact dates vary year-to-year): Ahopsan…",
+      "tm": "Stagione dei fiori di ciliegio (da metà marzo a metà aprile; le date esatte variano di anno in anno): Ahopsan…"
     }
   },
   "glossaryTokens": {
@@ -124,5 +151,5 @@
       "⟦G0⟧": "Museo nazionale di Gyeongju"
     }
   },
-  "tmHits": 0
+  "tmHits": 27
 }

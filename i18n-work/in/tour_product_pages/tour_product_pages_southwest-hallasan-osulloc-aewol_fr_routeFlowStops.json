@@ -7,48 +7,62 @@
   "tier": "B",
   "segments": {
     "/routeFlowStops/0/name": {
-      "source_en": "1100 Highland"
+      "source_en": "1100 Highland",
+      "tm": "1100 Highland"
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Hallasan"
+      "source_en": "Hallasan",
+      "tm": "Hallasan"
     },
     "/routeFlowStops/1/name": {
-      "source_en": "Jusangjeolli"
+      "source_en": "Jusangjeolli",
+      "tm": "Jusangjeolli"
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Coast"
+      "source_en": "Coast",
+      "tm": "Côte"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Cheonjeyeon"
+      "source_en": "Cheonjeyeon",
+      "tm": "Cheonjeyeon"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Waterfall"
+      "source_en": "Waterfall",
+      "tm": "Cascade"
     },
     "/routeFlowStops/3/name": {
-      "source_en": "Lunch"
+      "source_en": "Lunch",
+      "tm": "Déjeuner"
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Reset"
+      "source_en": "Reset",
+      "tm": "Pause"
     },
     "/routeFlowStops/4/name": {
-      "source_en": "O'Sulloc"
+      "source_en": "O'Sulloc",
+      "tm": "O'Sulloc"
     },
     "/routeFlowStops/4/theme": {
-      "source_en": "Tea Fields"
+      "source_en": "Tea Fields",
+      "tm": "Champs de thé"
     },
     "/routeFlowStops/5/name": {
-      "source_en": "Aewol"
+      "source_en": "Aewol",
+      "tm": "Aewol"
     },
     "/routeFlowStops/5/theme": {
-      "source_en": "Café"
+      "source_en": "Café",
+      "tm": "Café"
     },
     "/routeFlowStops/6/name": {
-      "source_en": "Iho Tewoo"
+      "source_en": "Iho Tewoo",
+      "tm": "Iho Tewoo"
     },
     "/routeFlowStops/6/theme": {
-      "source_en": "Sunset"
+      "source_en": "Sunset",
+      "tm": "Coucher de soleil"
     }
   },
   "glossaryTokens": {},
-  "tmHits": 0
+  "tmHits": 14
 }

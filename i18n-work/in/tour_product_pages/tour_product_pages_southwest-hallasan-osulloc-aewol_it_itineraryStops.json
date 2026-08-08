@@ -7,157 +7,207 @@
   "tier": "B",
   "segments": {
     "/itineraryStops/0/name": {
-      "source_en": "Hallasan 1100 Highland"
+      "source_en": "Hallasan 1100 Highland",
+      "tm": "Hallasan 1100 Highland"
     },
     "/itineraryStops/0/category": {
-      "source_en": "Alpine Ramsar Wetland Boardwalk — A Taste of UNESCO Hallasan"
+      "source_en": "Alpine Ramsar Wetland Boardwalk — A Taste of UNESCO Hallasan",
+      "tm": "Passerella nella zona umida Ramsar d'alta quota — un assaggio dell'Hallasan UNESCO"
     },
     "/itineraryStops/0/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 min"
     },
     "/itineraryStops/0/timeUsed/0": {
-      "source_en": "Parking + restroom at the 1100 Highland Rest Area — ~5 min"
+      "source_en": "Parking + restroom at the 1100 Highland Rest Area — ~5 min",
+      "tm": "Parcheggio + servizi igienici all'area di sosta 1100 Highland — ~5 min"
     },
     "/itineraryStops/0/timeUsed/1": {
-      "source_en": "One loop of the boardwalk wetland trail — ~20 min"
+      "source_en": "One loop of the boardwalk wetland trail — ~20 min",
+      "tm": "Un giro completo della passerella nella zona umida — ~20 min"
     },
     "/itineraryStops/0/timeUsed/2": {
-      "source_en": "Observation deck + White Deer statue photos — ~10 min"
+      "source_en": "Observation deck + White Deer statue photos — ~10 min",
+      "tm": "Terrazza panoramica + foto alla statua del Cervo Bianco — ~10 min"
     },
     "/itineraryStops/0/timeUsed/3": {
-      "source_en": "Rest / drinks at the rest area — ~10 min"
+      "source_en": "Rest / drinks at the rest area — ~10 min",
+      "tm": "Sosta / bevande all'area di sosta — ~10 min"
     },
     "/itineraryStops/0/highlights/0": {
-      "source_en": "**Ramsar Wetland of International Importance No. 1893** (registered 2009) — within the boundary of Hallasan's UNESCO World Heritage + Biosphere Reserve"
+      "source_en": "**Ramsar Wetland of International Importance No. 1893** (registered 2009) — within the boundary of Hallasan's UNESCO World Heritage + Biosphere Reserve",
+      "tm": "**Zona umida Ramsar di importanza internazionale n. 1893** (registrata nel 2009) — entro i confini del Patrimonio mondiale UNESCO e della Riserva della biosfera dell'Hallasan"
     },
     "/itineraryStops/0/highlights/1": {
-      "source_en": "**Alpine wetland at 1,100 m** — more than 16 freshwater marshes and ponds across the plateau"
+      "source_en": "**Alpine wetland at 1,100 m** — more than 16 freshwater marshes and ponds across the plateau",
+      "tm": "**Zona umida d'alta quota a 1.100 m** — oltre 16 paludi e stagni d'acqua dolce sull'altopiano"
     },
     "/itineraryStops/0/highlights/2": {
-      "source_en": "**About 1 km of flat wooden boardwalk** (around 20 min) — relatively easy even for strollers and those with limited mobility"
+      "source_en": "**About 1 km of flat wooden boardwalk** (around 20 min) — relatively easy even for strollers and those with limited mobility",
+      "tm": "**Circa 1 km di passerella in legno pianeggiante** (circa 20 min) — relativamente agevole anche con passeggini e per chi ha mobilità ridotta"
     },
     "/itineraryStops/0/highlights/3": {
-      "source_en": "**Road 1100** — opened 1973, 36.6 km, the highest national road in Korea"
+      "source_en": "**Road 1100** — opened 1973, 36.6 km, the highest national road in Korea",
+      "tm": "**Strada 1100** — aperta nel 1973, 36,6 km, la strada nazionale più alta della Corea"
     },
     "/itineraryStops/0/highlights/4": {
-      "source_en": "Home to **Jeju's native ecology**, including three endangered bird species + one threatened plant species"
+      "source_en": "Home to **Jeju's native ecology**, including three endangered bird species + one threatened plant species",
+      "tm": "Ospita l'**ecosistema autoctono di Jeju**, con tre specie di uccelli in via di estinzione + una specie vegetale minacciata"
     },
     "/itineraryStops/0/highlights/5": {
-      "source_en": "**1100 Highland Rest Area** across the road — White Deer statue, Go Sang-don park, convenience store, café, observation deck"
+      "source_en": "**1100 Highland Rest Area** across the road — White Deer statue, Go Sang-don park, convenience store, café, observation deck",
+      "tm": "**Area di sosta 1100 Highland** dall'altro lato della strada — statua del Cervo Bianco, parco dedicato a Go Sang-don, minimarket, caffè, terrazza panoramica"
     },
     "/itineraryStops/0/highlights/6": {
-      "source_en": "**7–10°C cooler than the coast** — a layer recommended even in midsummer"
+      "source_en": "**7–10°C cooler than the coast** — a layer recommended even in midsummer",
+      "tm": "**7–10 °C più fresco rispetto alla costa** — consigliato un capo in più anche in piena estate"
     },
     "/itineraryStops/0/highlights/7": {
-      "source_en": "Winter **snowscape spot** (but during heavy snow Road 1100 is closed → indoor alternative)"
+      "source_en": "Winter **snowscape spot** (but during heavy snow Road 1100 is closed → indoor alternative)",
+      "tm": "In inverno **punto panoramico sulla neve** (ma con forti nevicate la Strada 1100 viene chiusa → alternativa al coperto)"
     },
     "/itineraryStops/0/highlights/8": {
-      "source_en": "**Free admission + free parking**, no reservation needed"
+      "source_en": "**Free admission + free parking**, no reservation needed",
+      "tm": "**Ingresso e parcheggio gratuiti**, senza prenotazione"
     },
     "/itineraryStops/0/smartNotes/tip": {
-      "source_en": "Even in midsummer the 1,100 m highland is 7–10°C cooler than the coast, so pack a light layer. In winter Road 1100 is the first to be closed, so check road conditions; if closed, an indoor attraction is used instead."
+      "source_en": "Even in midsummer the 1,100 m highland is 7–10°C cooler than the coast, so pack a light layer. In winter Road 1100 is the first to be closed, so check road conditions; if closed, an indoor attraction is used instead.",
+      "tm": "Anche in piena estate l'altopiano a 1.100 m è 7–10 °C più fresco della costa, quindi conviene portare un capo leggero in più. In inverno la Strada 1100 è la prima a essere chiusa, quindi verifichi le condizioni stradali; se è chiusa, viene inserita in alternativa un'attrazione al coperto."
     },
     "/itineraryStops/0/smartNotes/facilities": {
-      "source_en": "The 1100 Highland Rest Area across the road brings together a convenience store, café, observation deck, and restrooms."
+      "source_en": "The 1100 Highland Rest Area across the road brings together a convenience store, café, observation deck, and restrooms.",
+      "tm": "L'area di sosta 1100 Highland, dall'altro lato della strada, riunisce minimarket, caffè, terrazza panoramica e servizi igienici."
     },
     "/itineraryStops/0/whyOnRoute": {
-      "source_en": "**The starting point of the southwest loop.** From Jeju City you climb Road 1100 up to the highlands, lightly experiencing Hallasan's scale and alpine ecology, before descending to the southern Jungmun coast that leads on to Jusangjeolli and Cheonjeyeon. Unlike a summit climb or steep uphill trails, this is a **flat boardwalk stroll** with almost no physical demand, and it lets you sample a **Ramsar wetland + UNESCO Hallasan** at once, for free and without reservation. The flow from mountain down to coast keeps the route natural, and the early hour means Road 1100 is relatively quiet — in winter, when the road is closed, an indoor attraction is used instead."
+      "source_en": "**The starting point of the southwest loop.** From Jeju City you climb Road 1100 up to the highlands, lightly experiencing Hallasan's scale and alpine ecology, before descending to the southern Jungmun coast that leads on to Jusangjeolli and Cheonjeyeon. Unlike a summit climb or steep uphill trails, this is a **flat boardwalk stroll** with almost no physical demand, and it lets you sample a **Ramsar wetland + UNESCO Hallasan** at once, for free and without reservation. The flow from mountain down to coast keeps the route natural, and the early hour means Road 1100 is relatively quiet — in winter, when the road is closed, an indoor attraction is used instead.",
+      "tm": "**Il punto di partenza dell'anello sud-occidentale.** Da Jeju City si sale lungo la Strada 1100 fino all'altopiano, sperimentando in modo leggero la scala e l'ecologia d'alta quota dell'Hallasan, prima di scendere verso la costa meridionale di Jungmun che porta a Jusangjeolli e Cheonjeyeon. A differenza di una salita in vetta o di sentieri ripidi, qui si tratta di una **passeggiata su passerella pianeggiante** che non richiede quasi alcuno sforzo fisico, e permette di assaggiare in una sola volta una **zona umida Ramsar + l'Hallasan UNESCO**, gratuitamente e senza prenotazione. Il passaggio dalla montagna alla costa rende il percorso naturale, e l'ora mattutina fa sì che la Strada 1100 sia relativamente tranquilla; in inverno, quando la strada è chiusa, viene inserita in alternativa un'attrazione al coperto."
     },
     "/itineraryStops/0/convenience/parking": {
-      "source_en": "Free parking at the rest area (can be busy on snowy weekends)"
+      "source_en": "Free parking at the rest area (can be busy on snowy weekends)",
+      "tm": "Parcheggio gratuito all'area di sosta (può essere affollato nei fine settimana con neve)"
     },
     "/itineraryStops/0/convenience/restroom": {
-      "source_en": "Restrooms at the 1100 Highland Rest Area across the road"
+      "source_en": "Restrooms at the 1100 Highland Rest Area across the road",
+      "tm": "Servizi igienici all'area di sosta 1100 Highland, dall'altro lato della strada"
     },
     "/itineraryStops/0/description": {
-      "source_en": "**The Hallasan 1100 Highland Wetland (한라산 1100고지 습지)** is an alpine wetland on the western flank of Hallasan at **1,100 m above sea level**, registered on **12 October 2009 as a Ramsar Convention Wetland of International Importance (Site No. 1893)**. Covering about **13 ha**, it sits within the boundary of Hallasan's **UNESCO World Natural Heritage and Biosphere Reserve** — meaning you can lightly experience Hallasan's UNESCO value without climbing all the way to the Baengnokdam summit. \n\nThe wetland is made up of **more than 16 freshwater marshes and ponds** scattered across the plateau, and you can loop around it on a **flat wooden boardwalk of about 1 km (around 20 minutes)**. The boardwalk is almost level, so it is relatively easy even for strollers or those with limited mobility. It is home to three endangered bird species and one nationally designated threatened plant species, along with Jeju's native mammals, reptiles, and insects, and interpretive panels along the boardwalk explain the wetland ecology. \n\n**Road 1100 (opened 1973, 36.6 km long)**, which leads to the wetland, is **the highest national road in Korea**, linking Jeju City and Seogwipo's Jungmun district from north to south. Across the road, the **1100 Highland Rest Area** has a convenience store (GS25), a café serving warm drinks and ramen, an observation deck, and a park honoring the **White Deer (Baekrok, 白鹿) statue** (a Jeju legend in which an immortal rode a white deer up Hallasan) and **Go Sang-don, the first Korean to summit Everest** — a good spot for a 10–15 minute break. \n\nAt 1,100 m, the temperature is **7–10°C lower** than at the coast, so even in midsummer a light layer is needed. In winter, the snow-covered boardwalk and frozen wetland become one of Jeju's most prized snowscape photo spots, but **Road 1100 is also the first road to be closed during heavy snow, heavy rain, or icing** — in which case the itinerary is replaced with an indoor Jeju City attraction (e.g., the Jeju National Museum). \n\nBoth admission and parking are **free**, and no reservation is required."
+      "source_en": "**The Hallasan 1100 Highland Wetland (한라산 1100고지 습지)** is an alpine wetland on the western flank of Hallasan at **1,100 m above sea level**, registered on **12 October 2009 as a Ramsar Convention Wetland of International Importance (Site No. 1893)**. Covering about **13 ha**, it sits within the boundary of Hallasan's **UNESCO World Natural Heritage and Biosphere Reserve** — meaning you can lightly experience Hallasan's UNESCO value without climbing all the way to the Baengnokdam summit. \n\nThe wetland is made up of **more than 16 freshwater marshes and ponds** scattered across the plateau, and you can loop around it on a **flat wooden boardwalk of about 1 km (around 20 minutes)**. The boardwalk is almost level, so it is relatively easy even for strollers or those with limited mobility. It is home to three endangered bird species and one nationally designated threatened plant species, along with Jeju's native mammals, reptiles, and insects, and interpretive panels along the boardwalk explain the wetland ecology. \n\n**Road 1100 (opened 1973, 36.6 km long)**, which leads to the wetland, is **the highest national road in Korea**, linking Jeju City and Seogwipo's Jungmun district from north to south. Across the road, the **1100 Highland Rest Area** has a convenience store (GS25), a café serving warm drinks and ramen, an observation deck, and a park honoring the **White Deer (Baekrok, 白鹿) statue** (a Jeju legend in which an immortal rode a white deer up Hallasan) and **Go Sang-don, the first Korean to summit Everest** — a good spot for a 10–15 minute break. \n\nAt 1,100 m, the temperature is **7–10°C lower** than at the coast, so even in midsummer a light layer is needed. In winter, the snow-covered boardwalk and frozen wetland become one of Jeju's most prized snowscape photo spots, but **Road 1100 is also the first road to be closed during heavy snow, heavy rain, or icing** — in which case the itinerary is replaced with an indoor Jeju City attraction (e.g., the Jeju National Museum). \n\nBoth admission and parking are **free**, and no reservation is required.",
+      "tm": "**La zona umida dell'Hallasan 1100 Highland (한라산 1100고지 습지)** è una zona umida d'alta quota sul versante occidentale dell'Hallasan, a **1.100 m sul livello del mare**, registrata il **12 ottobre 2009 come zona umida di importanza internazionale della Convenzione di Ramsar (sito n. 1893)**. Con una superficie di circa **13 ha**, si trova entro i confini del **Patrimonio naturale mondiale UNESCO e della Riserva della biosfera dell'Hallasan**: significa che si può sperimentare in modo leggero il valore UNESCO dell'Hallasan senza salire fino alla vetta del Baengnokdam. \n\nLa zona umida è formata da **oltre 16 paludi e stagni d'acqua dolce** sparsi sull'altopiano, e la si può percorrere ad anello su una **passerella in legno pianeggiante di circa 1 km (circa 20 minuti)**. La passerella è quasi in piano, quindi risulta relativamente agevole anche con passeggini o per chi ha mobilità ridotta. Ospita tre specie di uccelli in via di estinzione e una specie vegetale minacciata di interesse nazionale, insieme a mammiferi, rettili e insetti autoctoni di Jeju, e i pannelli informativi lungo la passerella illustrano l'ecologia della zona umida. \n\nLa **Strada 1100 (aperta nel 1973, lunga 36,6 km)**, che conduce alla zona umida, è **la strada nazionale più alta della Corea** e collega da nord a sud Jeju City e il distretto di Jungmun a Seogwipo. Dall'altro lato della strada, l'**area di sosta 1100 Highland** dispone di un minimarket (GS25), di un caffè che serve bevande calde e ramen, di una terrazza panoramica e di un parco dedicato alla **statua del Cervo Bianco (Baekrok, 白鹿)** (una leggenda di Jeju in cui un immortale saliva sull'Hallasan in groppa a un cervo bianco) e a **Go Sang-don, il primo coreano a raggiungere la vetta dell'Everest** — un buon punto per una pausa di 10–15 minuti. \n\nA 1.100 m la temperatura è di **7–10 °C più bassa** rispetto alla costa, quindi anche in piena estate serve un capo leggero in più. In inverno la passerella innevata e la zona umida ghiacciata diventano uno dei punti fotografici più amati di Jeju, ma **la Strada 1100 è anche la prima a essere chiusa in caso di forti nevicate, piogge intense o gelo** — in quel caso l'itinerario viene sostituito con un'attrazione al coperto di Jeju City (ad esempio il Museo nazionale di Jeju). \n\nSia l'ingresso sia il parcheggio sono **gratuiti**, e non è richiesta alcuna prenotazione."
     },
     "/itineraryStops/0/visitBasics/hours": {
-      "source_en": "Wetland boardwalk open 24 hours (free); 1100 Highland Rest Area café and store about 09:00–17:00"
+      "source_en": "Wetland boardwalk open 24 hours (free); 1100 Highland Rest Area café and store about 09:00–17:00",
+      "tm": "Passerella della zona umida aperta 24 ore su 24 (gratuita); caffè e negozio dell'area di sosta 1100 Highland all'incirca 09:00–17:00"
     },
     "/itineraryStops/0/visitBasics/closed": {
-      "source_en": "Open year-round, but Road 1100 may be closed during heavy snow or rain — check road conditions before a winter visit"
+      "source_en": "Open year-round, but Road 1100 may be closed during heavy snow or rain — check road conditions before a winter visit",
+      "tm": "Aperto tutto l'anno, ma la Strada 1100 può essere chiusa in caso di forti nevicate o piogge — verifichi le condizioni stradali prima di una visita invernale"
     },
     "/itineraryStops/0/visitBasics/walking": {
-      "source_en": "Very easy — one loop of about 1 km on flat wooden boardwalk, 15–20 min; manageable for most mobility levels, including strollers"
+      "source_en": "Very easy — one loop of about 1 km on flat wooden boardwalk, 15–20 min; manageable for most mobility levels, including strollers",
+      "tm": "Molto facile — un anello di circa 1 km su passerella in legno pianeggiante, 15–20 min; adatto alla maggior parte dei livelli di mobilità, passeggini compresi"
     },
     "/itineraryStops/0/visitBasics/admission": {
-      "source_en": "Free (Ramsar wetland, no admission or parking fee)"
+      "source_en": "Free (Ramsar wetland, no admission or parking fee)",
+      "tm": "Gratuito (zona umida Ramsar, nessun biglietto d'ingresso né costo di parcheggio)"
     },
     "/itineraryStops/0/galleryItems/0/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 1"
+      "source_en": "Hallasan 1100 Highland — gallery image 1",
+      "tm": "Hallasan 1100 Highland — immagine della galleria 1"
     },
     "/itineraryStops/0/galleryItems/0/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 1"
+      "source_en": "Hallasan 1100 Highland — photo 1",
+      "tm": "Hallasan 1100 Highland — foto 1"
     },
     "/itineraryStops/0/galleryItems/0/location": {
-      "source_en": "Hallasan 1100 Highland"
+      "source_en": "Hallasan 1100 Highland",
+      "tm": "Hallasan 1100 Highland"
     },
     "/itineraryStops/0/galleryItems/1/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 2"
+      "source_en": "Hallasan 1100 Highland — gallery image 2",
+      "tm": "Hallasan 1100 Highland — immagine della galleria 2"
     },
     "/itineraryStops/0/galleryItems/1/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 2"
+      "source_en": "Hallasan 1100 Highland — photo 2",
+      "tm": "Hallasan 1100 Highland — foto 2"
     },
     "/itineraryStops/0/galleryItems/1/location": {
-      "source_en": "Hallasan 1100 Highland"
+      "source_en": "Hallasan 1100 Highland",
+      "tm": "Hallasan 1100 Highland"
     },
     "/itineraryStops/0/galleryItems/2/alt": {
-      "source_en": "Hallasan 1100 Highland — gallery image 3"
+      "source_en": "Hallasan 1100 Highland — gallery image 3",
+      "tm": "Hallasan 1100 Highland — immagine della galleria 3"
     },
     "/itineraryStops/0/galleryItems/2/caption": {
-      "source_en": "Hallasan 1100 Highland — photo 3"
+      "source_en": "Hallasan 1100 Highland — photo 3",
+      "tm": "Hallasan 1100 Highland — foto 3"
     },
     "/itineraryStops/0/galleryItems/2/location": {
-      "source_en": "Hallasan 1100 Highland"
+      "source_en": "Hallasan 1100 Highland",
+      "tm": "Hallasan 1100 Highland"
     },
     "/itineraryStops/1/name": {
       "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Scogliera di Daepo Jusangjeolli"
       ]
     },
     "/itineraryStops/1/category": {
-      "source_en": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava"
+      "source_en": "Volcanic Coastline — Hexagonal Columnar-Jointed Lava",
+      "tm": "Costa vulcanica — lava a giunti colonnari esagonali"
     },
     "/itineraryStops/1/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 min"
     },
     "/itineraryStops/1/timeUsed/0": {
-      "source_en": "Parking + ticket purchase + entrance — ~5 min"
+      "source_en": "Parking + ticket purchase + entrance — ~5 min",
+      "tm": "Parcheggio + acquisto del biglietto + ingresso — ~5 min"
     },
     "/itineraryStops/1/timeUsed/1": {
-      "source_en": "Walk to first viewing platform — ~5 min"
+      "source_en": "Walk to first viewing platform — ~5 min",
+      "tm": "Camminata fino alla prima piattaforma panoramica — ~5 min"
     },
     "/itineraryStops/1/timeUsed/2": {
-      "source_en": "Cliff-edge column viewing + photos — ~15 min"
+      "source_en": "Cliff-edge column viewing + photos — ~15 min",
+      "tm": "Osservazione delle colonne dal bordo della scogliera + foto — ~15 min"
     },
     "/itineraryStops/1/timeUsed/3": {
-      "source_en": "Continue boardwalk loop — ~10 min"
+      "source_en": "Continue boardwalk loop — ~10 min",
+      "tm": "Prosecuzione dell'anello sulla passerella — ~10 min"
     },
     "/itineraryStops/1/timeUsed/4": {
-      "source_en": "Return to coach — ~10 min"
+      "source_en": "Return to coach — ~10 min",
+      "tm": "Rientro al pullman — ~10 min"
     },
     "/itineraryStops/1/highlights/0": {
-      "source_en": "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM"
+      "source_en": "**Natural Monument No. 443** — designated **2005-01-06**, the most recent Jeju coastal NM",
+      "tm": "**Monumento naturale n. 443** — designato il **2005-01-06**, il più recente monumento naturale costiero di Jeju"
     },
     "/itineraryStops/1/highlights/1": {
-      "source_en": "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline"
+      "source_en": "Columns rise **30–40 m**, packed in **5- to 7-sided polygons** (mostly hexagons) along **1 km** of coastline",
+      "tm": "Le colonne si innalzano per **30–40 m**, serrate in **poligoni da 5 a 7 lati** (per lo più esagoni) lungo **1 km** di costa"
     },
     "/itineraryStops/1/highlights/2": {
-      "source_en": "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face"
+      "source_en": "Formation: **Hallasan flank lava cooled in the sea ~250,000–140,000 years ago**, contracting perpendicular to cooling face",
+      "tm": "Formazione: **la lava del versante dell'Hallasan si raffreddò in mare circa 250.000–140.000 anni fa**, contraendosi perpendicolarmente alla superficie di raffreddamento"
     },
     "/itineraryStops/1/highlights/3": {
-      "source_en": "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave"
+      "source_en": "**East Asia's premier columnar-jointing site** — peer to Giant's Causeway, Devils Postpile, Fingal's Cave",
+      "tm": "**Il principale sito di giunti colonnari dell'Asia orientale** — al pari di Giant's Causeway, Devils Postpile e Fingal's Cave"
     },
     "/itineraryStops/1/highlights/4": {
-      "source_en": "**Strong wave spray on some high-tide days** — dramatic coastal photos when conditions are safe"
+      "source_en": "**Strong wave spray on some high-tide days** — dramatic coastal photos when conditions are safe",
+      "tm": "**Forti spruzzi d'onda in alcuni giorni di alta marea** — foto costiere spettacolari quando le condizioni sono sicure"
     },
     "/itineraryStops/1/highlights/5": {
-      "source_en": "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible"
+      "source_en": "**0.8 km boardwalk loop**, ~15 min walk — barrier-free deck, wheelchair/stroller accessible",
+      "tm": "**Anello su passerella di 0,8 km**, ~15 min di cammino — piattaforma senza barriere, accessibile a sedie a rotelle e passeggini"
     },
     "/itineraryStops/1/highlights/6": {
-      "source_en": "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites"
+      "source_en": "Part of **Jeju Global Geopark (UNESCO 2010-10)** — 13 island-wide geosites",
+      "tm": "Parte del **Jeju Global Geopark (UNESCO 2010-10)** — 13 geositi in tutta l'isola"
     }
   },
   "glossaryTokens": {
@@ -165,5 +215,5 @@
       "⟦G0⟧": "Scogliera di Daepo Jusangjeolli"
     }
   },
-  "tmHits": 0
+  "tmHits": 50
 }

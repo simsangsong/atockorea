@@ -8,51 +8,62 @@
   "segments": {
     "/itineraryStops/3/visitBasics/walking": {
       "source_en": "Easy — flat, soft sand and level pine-forest paths; a short signed footpath connects the beach up to ⟦G0⟧",
+      "tm": "Leicht — ebener, weicher Sand und flache Kiefernwaldwege; ein kurzer ausgeschilderter Fußweg verbindet den Strand hinauf mit ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Naksansa-Tempel"
       ]
     },
     "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "FREE — no admission fee for the beach"
+      "source_en": "FREE — no admission fee for the beach",
+      "tm": "KOSTENLOS — für den Strand fällt kein Eintritt an"
     },
     "/itineraryStops/4/name": {
       "source_en": "Return to Seoul (⟦G0⟧ Station or Hongik University Station)",
+      "tm": "Rückfahrt nach Seoul (Station ⟦G0⟧ oder Station Hongik University)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/itineraryStops/4/category": {
-      "source_en": "Return drop-off"
+      "source_en": "Return drop-off",
+      "tm": "Ausstieg bei der Rückkehr"
     },
     "/itineraryStops/4/duration": {
-      "source_en": "≈ 2.5 hour drive"
+      "source_en": "≈ 2.5 hour drive",
+      "tm": "≈ 2,5 Stunden Fahrt"
     },
     "/itineraryStops/4/timeUsed/0": {
       "source_en": "Coach departs ⟦G0⟧ (~16:10)",
+      "tm": "Abfahrt des Busses von ⟦G0⟧ (~16:10 Uhr)",
       "glossary": [
         "⟦G0⟧ = Naksan-Strand"
       ]
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Drive to Seoul via the Seoul-Yangyang Expressway and Inje-Yangyang Tunnel (~2.5 hours depending on traffic)"
+      "source_en": "Drive to Seoul via the Seoul-Yangyang Expressway and Inje-Yangyang Tunnel (~2.5 hours depending on traffic)",
+      "tm": "Fahrt nach Seoul über die Seoul-Yangyang-Autobahn und den Inje-Yangyang-Tunnel (~2,5 Stunden, je nach Verkehr)"
     },
     "/itineraryStops/4/timeUsed/2": {
       "source_en": "Drop-off at ⟦G0⟧ Station Exit 2 (~18:45)",
+      "tm": "Ausstieg an der Station ⟦G0⟧, Ausgang 2 (~18:45 Uhr)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Drop-off at Hongik University Station Exit 8 (~19:15)"
+      "source_en": "Drop-off at Hongik University Station Exit 8 (~19:15)",
+      "tm": "Ausstieg an der Station Hongik University, Ausgang 8 (~19:15 Uhr)"
     },
     "/itineraryStops/4/whyOnRoute": {
       "source_en": "The return runs in reverse-pickup order: **⟦G0⟧ drop-off first** (~18:45), then **Hongik University Station** (~19:15). The 12-hour tour length is calibrated around this timing — guests with evening dinner reservations should book for 20:00 or later to allow a safety buffer for traffic. Friday and Sunday evenings run heavier on the expressway, but this tour departs only Mondays and Thursdays, so traffic on the return leg is usually moderate; still, notify the driver-guide if you have a flight or hard appointment.",
+      "tm": "Die Rückfahrt folgt der umgekehrten Abholreihenfolge: **zuerst der Ausstieg an ⟦G0⟧** (~18:45 Uhr), dann an der **Station Hongik University** (~19:15 Uhr). Die Tourdauer von 12 Stunden ist auf dieses Timing abgestimmt — wer abends einen Tisch reserviert hat, sollte für 20:00 Uhr oder später buchen, um einen Puffer für den Verkehr zu haben. Freitag- und Sonntagabende sind auf der Autobahn voller, doch diese Tour fährt nur montags und donnerstags, sodass der Verkehr auf der Rückfahrt meist moderat ist; sagen Sie der Reiseleitung dennoch Bescheid, wenn Sie einen Flug oder einen festen Termin haben.",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/itineraryStops/4/description": {
       "source_en": "After ⟦G0⟧, the coach takes the **Seoul-Yangyang Expressway** westbound back into Seoul, passing again through the Inje-Yangyang Tunnel. Drop-offs are sequenced in reverse-pickup order: **⟦G1⟧ Station Exit 2 first at approximately 18:45**, then **Hongik University Station Exit 8 at approximately 19:15**. \n\nBoth drop-off points are at the same locations as the morning pickup. Guests connecting to evening plans in Hongdae or ⟦G1⟧ should allow a comfortable buffer for traffic. Exact arrival times depend on East Sea coast and Seoul traffic on the day.",
+      "tm": "Nach ⟦G0⟧ nimmt der Bus die **Seoul-Yangyang-Autobahn** westwärts zurück nach Seoul und durchfährt erneut den Inje-Yangyang-Tunnel. Die Ausstiege folgen der umgekehrten Abholreihenfolge: **zuerst Station ⟦G1⟧, Ausgang 2, gegen 18:45 Uhr**, dann **Station Hongik University, Ausgang 8, gegen 19:15 Uhr**. \n\nBeide Ausstiegspunkte liegen an denselben Orten wie die Abholung am Morgen. Wer am Abend noch etwas in Hongdae oder ⟦G1⟧ vorhat, sollte einen komfortablen Puffer für den Verkehr einplanen. Die genauen Ankunftszeiten hängen vom Verkehr an der Ostmeerküste und in Seoul am jeweiligen Tag ab.",
       "glossary": [
         "⟦G0⟧ = Naksan-Strand",
         "⟦G1⟧ = Myeongdong"
@@ -80,5 +91,5 @@
       "⟦G1⟧": "Myeongdong"
     }
   },
-  "tmHits": 0
+  "tmHits": 11
 }

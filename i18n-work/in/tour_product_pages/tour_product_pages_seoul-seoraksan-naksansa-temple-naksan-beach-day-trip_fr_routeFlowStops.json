@@ -8,12 +8,14 @@
   "segments": {
     "/routeFlowStops/0/name": {
       "source_en": "Pickup (Hongik / ⟦G0⟧)",
+      "tm": "Prise en charge (Hongik / ⟦G0⟧)",
       "glossary": [
         "⟦G0⟧ = Myeongdong"
       ]
     },
     "/routeFlowStops/0/theme": {
-      "source_en": "Seoul pickup"
+      "source_en": "Seoul pickup",
+      "tm": "Prise en charge à Séoul"
     },
     "/routeFlowStops/1/name": {
       "source_en": "⟦G0⟧",
@@ -23,7 +25,8 @@
       ]
     },
     "/routeFlowStops/1/theme": {
-      "source_en": "Mountain & temple"
+      "source_en": "Mountain & temple",
+      "tm": "Montagne et temple"
     },
     "/routeFlowStops/2/name": {
       "source_en": "⟦G0⟧",
@@ -33,7 +36,8 @@
       ]
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "Seaside temple"
+      "source_en": "Seaside temple",
+      "tm": "Temple en bord de mer"
     },
     "/routeFlowStops/3/name": {
       "source_en": "⟦G0⟧",
@@ -43,7 +47,8 @@
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "East Sea beach"
+      "source_en": "East Sea beach",
+      "tm": "Plage de la mer de l’Est"
     },
     "/routeFlowStops/4/name": {
       "source_en": "Return to Seoul",
@@ -64,5 +69,5 @@
       "⟦G0⟧": "Plage de Naksan"
     }
   },
-  "tmHits": 4
+  "tmHits": 9
 }

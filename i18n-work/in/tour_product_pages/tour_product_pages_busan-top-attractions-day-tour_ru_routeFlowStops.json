@@ -1,0 +1,81 @@
+{
+  "unitId": "tour_product_pages:busan-top-attractions-day-tour:ru:routeFlowStops",
+  "surface": "tour_product_pages",
+  "slug": "busan-top-attractions-day-tour",
+  "locale": "ru",
+  "chunk": "routeFlowStops",
+  "tier": "B",
+  "segments": {
+    "/routeFlowStops/0/name": {
+      "source_en": "Pickup (3 central Busan stations)"
+    },
+    "/routeFlowStops/0/theme": {
+      "source_en": "Departure",
+      "tm": "Отправление"
+    },
+    "/routeFlowStops/1/name": {
+      "source_en": "⟦G0⟧ Temple",
+      "tm": "Храм ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Хэдон Йонгунса"
+      ]
+    },
+    "/routeFlowStops/1/theme": {
+      "source_en": "Seaside temple",
+      "tm": "Храм у моря"
+    },
+    "/routeFlowStops/2/name": {
+      "source_en": "Cheongsapo & Blue Line Park"
+    },
+    "/routeFlowStops/2/theme": {
+      "source_en": "Coast & beach train"
+    },
+    "/routeFlowStops/3/name": {
+      "source_en": "Lunch (local Busan restaurant)",
+      "tm": "Обед (местный ресторан в Пусане)"
+    },
+    "/routeFlowStops/3/theme": {
+      "source_en": "Meal",
+      "tm": "Питание"
+    },
+    "/routeFlowStops/4/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Мемориальное кладбище ООН"
+      ]
+    },
+    "/routeFlowStops/4/theme": {
+      "source_en": "Memorial"
+    },
+    "/routeFlowStops/5/name": {
+      "source_en": "⟦G0⟧",
+      "tm": "⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Деревня культуры Камчхон"
+      ]
+    },
+    "/routeFlowStops/5/theme": {
+      "source_en": "Art village"
+    },
+    "/routeFlowStops/6/name": {
+      "source_en": "Jagalchi Fish Market",
+      "tm": "Рыбный рынок Чагальчхи"
+    },
+    "/routeFlowStops/6/theme": {
+      "source_en": "Seafood market"
+    }
+  },
+  "glossaryTokens": {
+    "/routeFlowStops/1/name": {
+      "⟦G0⟧": "Хэдон Йонгунса"
+    },
+    "/routeFlowStops/4/name": {
+      "⟦G0⟧": "Мемориальное кладбище ООН"
+    },
+    "/routeFlowStops/5/name": {
+      "⟦G0⟧": "Деревня культуры Камчхон"
+    }
+  },
+  "tmHits": 8
+}

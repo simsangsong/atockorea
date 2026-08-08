@@ -8,103 +8,181 @@
   "segments": {
     "/itineraryStops/3/description": {
       "source_en": "**50-minute reset in Seongsan-ri (성산리)** — the harbor village at the foot of ⟦G0⟧, where the whole afternoon unfolds. Village kitchens cook what the surrounding waters supply: **jeonbok-ttukbaegi (전복뚝배기, abalone hot-pot)** and **jeonbok-dolsot-bap (전복돌솥밥, abalone stone-pot rice)** year-round, **galchi-jorim (갈치조림, braised cutlassfish stew)** in season (Sep–Feb), or **heuk-doeji gui (흑돼지구이, Jeju black pig BBQ)** for guests preferring grilled meat.\n\nBlack pig (***Sus scrofa* domesticus, Jeju black variety**) was designated **Cultural Heritage Material No. 5 (2015)** and remains a Jeju protected breed. Vegetarian alternative on request: **bibim-guksu (비빔국수, cold spicy noodles)** with seasonal vegetables.\n\nThe lunch spot is **a few minutes on foot from the 14:00 haenyeo show cove** — eat, walk over, and take your seat without boarding the coach again.",
+      "tm": "**50-minütige Pause in Seongsan-ri (성산리)** — dem Hafendorf am Fuße von ⟦G0⟧, wo sich der ganze Nachmittag abspielt. Die Küchen des Dorfes kochen, was die umliegenden Gewässer liefern: ganzjährig **jeonbok-ttukbaegi (전복뚝배기, Abalone-Eintopf im Tontopf)** und **jeonbok-dolsot-bap (전복돌솥밥, Abalone-Reis im Steintopf)**, in der Saison (Sep.–Feb.) **galchi-jorim (갈치조림, geschmorter Degenfisch-Eintopf)** oder **heuk-doeji gui (흑돼지구이, BBQ vom Jeju-Schwarzschwein)** für Gäste, die gegrilltes Fleisch bevorzugen.\n\nDas Schwarzschwein (***Sus scrofa* domesticus, schwarze Jeju-Varietät**) wurde als **Kulturgut-Material Nr. 5 (2015)** ausgewiesen und bleibt eine geschützte Rasse Jejus. Vegetarische Alternative auf Anfrage: **bibim-guksu (비빔국수, kalte, scharfe Nudeln)** mit Gemüse der Saison.\n\nDas Mittagslokal liegt **wenige Gehminuten von der Bucht der Haenyeo-Show um 14:00 Uhr entfernt** — essen, hinübergehen und Platz nehmen, ohne erneut in den Reisebus zu steigen.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Depends on restaurant operating hours"
+      "source_en": "Depends on restaurant operating hours",
+      "tm": "Abhängig von den Öffnungszeiten des Restaurants"
     },
     "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Varies by venue"
+      "source_en": "Varies by venue",
+      "tm": "Variiert je nach Lokal"
     },
     "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Minimal"
+      "source_en": "Minimal",
+      "tm": "Minimal"
     },
     "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "Meal is paid on site unless otherwise specified"
+      "source_en": "Meal is paid on site unless otherwise specified",
+      "tm": "Das Essen wird vor Ort bezahlt, sofern nicht anders angegeben"
     },
     "/itineraryStops/4/name": {
       "source_en": "Seongsan Haenyeo Free-Diving Show",
       "tm": "Seongsan Haenyeo Freitauch-Show"
     },
     "/itineraryStops/4/category": {
-      "source_en": "UNESCO Intangible Heritage — Women Divers' Live Performance"
+      "source_en": "UNESCO Intangible Heritage — Women Divers' Live Performance",
+      "tm": "Immaterielles UNESCO-Erbe — Live-Vorführung der Taucherinnen"
     },
     "/itineraryStops/4/duration": {
-      "source_en": "45 min"
+      "source_en": "45 min",
+      "tm": "45 Min."
     },
     "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Walk down to the haenyeo cove — ~5 min"
+      "source_en": "Walk down to the haenyeo cove — ~5 min",
+      "tm": "Abstieg zur Haenyeo-Bucht — ~5 Min."
     },
     "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Free-diving demonstration + diving songs — ~25 min"
+      "source_en": "Free-diving demonstration + diving songs — ~25 min",
+      "tm": "Freitauch-Vorführung + Taucherlieder — ~25 Min."
     },
     "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Fresh catch / sashimi by the water — ~10 min"
+      "source_en": "Fresh catch / sashimi by the water — ~10 min",
+      "tm": "Frischer Fang / Sashimi am Wasser — ~10 Min."
     },
     "/itineraryStops/4/timeUsed/3": {
-      "source_en": "Return to the vehicle — ~5 min"
+      "source_en": "Return to the vehicle — ~5 min",
+      "tm": "Rückkehr zum Fahrzeug — ~5 Min."
     },
     "/itineraryStops/4/alternate/name": {
-      "source_en": "Haenyeo Museum (Hado)"
+      "source_en": "Haenyeo Museum (Hado)",
+      "tm": "Haenyeo-Museum (Hado)"
     },
     "/itineraryStops/4/alternate/note": {
-      "source_en": "the same story indoors — dive gear, history and film"
+      "source_en": "the same story indoors — dive gear, history and film",
+      "tm": "dieselbe Geschichte in Innenräumen — Tauchausrüstung, Historie und Film"
     },
     "/itineraryStops/4/alternate/label": {
-      "source_en": "If the show is cancelled"
+      "source_en": "If the show is cancelled",
+      "tm": "Falls die Show ausfällt"
     },
     "/itineraryStops/4/highlights/0": {
-      "source_en": "UNESCO Intangible Cultural Heritage (2016) — Jeju's women divers"
+      "source_en": "UNESCO Intangible Cultural Heritage (2016) — Jeju's women divers",
+      "tm": "Immaterielles UNESCO-Kulturerbe (2016) — die Taucherinnen von Jeju"
     },
     "/itineraryStops/4/highlights/1": {
-      "source_en": "Live free-diving demonstration at the Seongsan cove (once daily, around 14:00)"
+      "source_en": "Live free-diving demonstration at the Seongsan cove (once daily, around 14:00)",
+      "tm": "Live-Freitauchvorführung in der Bucht von Seongsan (einmal täglich, gegen 14:00 Uhr)"
     },
     "/itineraryStops/4/highlights/2": {
-      "source_en": "Traditional diving songs and the signature 'sumbi-sori' breath"
+      "source_en": "Traditional diving songs and the signature 'sumbi-sori' breath",
+      "tm": "Traditionelle Taucherlieder und der typische Atemlaut „sumbi-sori“"
     },
     "/itineraryStops/4/highlights/3": {
-      "source_en": "Cancellation alternate: the indoor Haenyeo Museum tells the same story"
+      "source_en": "Cancellation alternate: the indoor Haenyeo Museum tells the same story",
+      "tm": "Alternative bei Ausfall: Das Haenyeo-Museum erzählt dieselbe Geschichte in Innenräumen"
     },
     "/itineraryStops/4/smartNotes/tip": {
-      "source_en": "Show timing shifts with the sea and the season — the guide confirms on the day. If it is cancelled you will visit the Haenyeo Museum instead."
+      "source_en": "Show timing shifts with the sea and the season — the guide confirms on the day. If it is cancelled you will visit the Haenyeo Museum instead.",
+      "tm": "Die Zeit der Vorführung verschiebt sich mit dem Meer und der Jahreszeit — der Guide bestätigt sie am Tag selbst. Bei Ausfall besuchen Sie stattdessen das Haenyeo-Museum."
     },
     "/itineraryStops/4/smartNotes/facilities": {
-      "source_en": "The divers' stalls sell fresh sea urchin, conch and abalone sashimi straight from the dive"
+      "source_en": "The divers' stalls sell fresh sea urchin, conch and abalone sashimi straight from the dive",
+      "tm": "Die Stände der Taucherinnen verkaufen frischen Seeigel, Meeresschnecken und Abalone-Sashimi direkt aus dem Tauchgang"
     },
     "/itineraryStops/4/whyOnRoute": {
-      "source_en": "The haenyeo show adds the human, cultural layer to a day of volcanic landforms — and because it sits right at the foot of Seongsan, it costs no extra driving before the climb."
+      "source_en": "The haenyeo show adds the human, cultural layer to a day of volcanic landforms — and because it sits right at the foot of Seongsan, it costs no extra driving before the climb.",
+      "tm": "Die Haenyeo-Show fügt einem Tag voller vulkanischer Landformen die menschliche, kulturelle Ebene hinzu — und da sie direkt am Fuße von Seongsan liegt, kostet sie vor dem Aufstieg keine zusätzliche Anfahrt."
     },
     "/itineraryStops/4/convenience/parking": {
       "source_en": "Shared with the ⟦G0⟧ parking lot",
+      "tm": "Gemeinsam mit dem Parkplatz von ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/itineraryStops/4/convenience/restroom": {
       "source_en": "Available at the ⟦G0⟧ entrance plaza",
+      "tm": "Vorhanden am Eingangsplatz von ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/itineraryStops/4/description": {
       "source_en": "The haenyeo (women divers) of Jeju are recognized as a UNESCO Intangible Cultural Heritage of Humanity (2016). At the cove on the south side of ⟦G0⟧, veteran divers — many in their 60s to 80s — give a free-diving demonstration once daily, typically around 14:00. They open with the traditional work songs, then dive 5–10 m with no breathing apparatus to gather conch, sea urchin and abalone, surfacing with the signature 'sumbi-sori' whistle-breath that lets them release air after a long dive. After the show the divers sell their fresh catch sliced as sashimi right by the water. It is a rare, living encounter with a 400-year matrifocal diving culture that is gradually disappearing as the remaining divers grow older. The demonstration is held in the open air and depends on sea conditions; on days it is cancelled, the route visits the Haenyeo Museum in nearby Hado instead, which tells the same story indoors through dive gear, history and film.",
+      "tm": "Die haenyeo (Taucherinnen) von Jeju sind als immaterielles UNESCO-Kulturerbe der Menschheit (2016) anerkannt. In der Bucht an der Südseite von ⟦G0⟧ geben erfahrene Taucherinnen — viele von ihnen in ihren 60ern bis 80ern — einmal täglich eine Freitauchvorführung, üblicherweise gegen 14:00 Uhr. Sie beginnen mit den traditionellen Arbeitsliedern, tauchen dann ohne Atemgerät 5–10 m tief, um Meeresschnecken, Seeigel und Abalone zu sammeln, und tauchen mit dem typischen Pfeifatem „sumbi-sori“ auf, der ihnen nach einem langen Tauchgang das Ausatmen ermöglicht. Nach der Vorführung verkaufen die Taucherinnen ihren frischen Fang direkt am Wasser als Sashimi aufgeschnitten. Es ist eine seltene, lebendige Begegnung mit einer 400 Jahre alten matrifokalen Tauchkultur, die allmählich verschwindet, da die verbliebenen Taucherinnen älter werden. Die Vorführung findet unter freiem Himmel statt und hängt vom Seegang ab; an Tagen, an denen sie ausfällt, führt die Route stattdessen zum Haenyeo-Museum im nahe gelegenen Hado, das dieselbe Geschichte in Innenräumen durch Tauchausrüstung, Historie und Film erzählt.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/itineraryStops/4/visitBasics/hours": {
-      "source_en": "Open-air demonstration usually once daily around 14:00 (seasonal and weather dependent)"
+      "source_en": "Open-air demonstration usually once daily around 14:00 (seasonal and weather dependent)",
+      "tm": "Vorführung unter freiem Himmel meist einmal täglich gegen 14:00 Uhr (saison- und wetterabhängig)"
     },
     "/itineraryStops/4/visitBasics/closed": {
-      "source_en": "Cancelled in high seas or rough weather; Haenyeo Museum closed Mondays"
+      "source_en": "Cancelled in high seas or rough weather; Haenyeo Museum closed Mondays",
+      "tm": "Ausfall bei hohem Seegang oder rauem Wetter; Haenyeo-Museum montags geschlossen"
     },
     "/itineraryStops/4/visitBasics/walking": {
-      "source_en": "Minimal — a short flat path down to the cove"
+      "source_en": "Minimal — a short flat path down to the cove",
+      "tm": "Minimal — ein kurzer, ebener Weg hinunter zur Bucht"
     },
     "/itineraryStops/4/visitBasics/admission": {
-      "source_en": "Free to watch the demonstration; Haenyeo Museum (alternate) about ₩1,100 adult"
+      "source_en": "Free to watch the demonstration; Haenyeo Museum (alternate) about ₩1,100 adult",
+      "tm": "Die Vorführung ist kostenlos; Haenyeo-Museum (Alternative) ca. ₩1.100 für Erwachsene"
+    },
+    "/itineraryStops/4/galleryItems/0/alt": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — gallery image 1"
+    },
+    "/itineraryStops/4/galleryItems/0/caption": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — photo 1"
+    },
+    "/itineraryStops/4/galleryItems/0/location": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
+    },
+    "/itineraryStops/4/galleryItems/1/alt": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — gallery image 2"
+    },
+    "/itineraryStops/4/galleryItems/1/caption": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — photo 2"
+    },
+    "/itineraryStops/4/galleryItems/1/location": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
+    },
+    "/itineraryStops/4/galleryItems/2/alt": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — gallery image 3"
+    },
+    "/itineraryStops/4/galleryItems/2/caption": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — photo 3"
+    },
+    "/itineraryStops/4/galleryItems/2/location": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
+    },
+    "/itineraryStops/4/galleryItems/3/alt": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — gallery image 4"
+    },
+    "/itineraryStops/4/galleryItems/3/caption": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — photo 4"
+    },
+    "/itineraryStops/4/galleryItems/3/location": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
+    },
+    "/itineraryStops/4/galleryItems/4/alt": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — gallery image 5"
+    },
+    "/itineraryStops/4/galleryItems/4/caption": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show — photo 5"
+    },
+    "/itineraryStops/4/galleryItems/4/location": {
+      "source_en": "Seongsan Haenyeo Free-Diving Show",
+      "tm": "Seongsan Haenyeo Freitauch-Show"
     },
     "/itineraryStops/5/name": {
       "source_en": "⟦G0⟧",
@@ -114,70 +192,91 @@
       ]
     },
     "/itineraryStops/5/category": {
-      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)"
+      "source_en": "UNESCO Tuff Cone — Sunrise Peak (Triple UNESCO Designation)",
+      "tm": "UNESCO-Tuffkegel — Sunrise Peak (dreifache UNESCO-Auszeichnung)"
     },
     "/itineraryStops/5/duration": {
-      "source_en": "85 min"
+      "source_en": "85 min",
+      "tm": "85 Min."
     },
     "/itineraryStops/5/timeUsed/0": {
-      "source_en": "Parking + ticket + base brief — ~10 min"
+      "source_en": "Parking + ticket + base brief — ~10 min",
+      "tm": "Parken + Ticket + Briefing am Fuß — ~10 Min."
     },
     "/itineraryStops/5/timeUsed/1": {
-      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min"
+      "source_en": "Ascent to summit deck (0.8 km / 140 m gain) — ~30 min",
+      "tm": "Aufstieg zur Gipfelplattform (0,8 km / 140 m Anstieg) — ~30 Min."
     },
     "/itineraryStops/5/timeUsed/2": {
-      "source_en": "Summit views + crater rim photos — ~20 min"
+      "source_en": "Summit views + crater rim photos — ~20 min",
+      "tm": "Gipfelblicke + Fotos am Kraterrand — ~20 Min."
     },
     "/itineraryStops/5/timeUsed/3": {
-      "source_en": "Descent — ~20 min"
+      "source_en": "Descent — ~20 min",
+      "tm": "Abstieg — ~20 Min."
     },
     "/itineraryStops/5/timeUsed/4": {
-      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min"
+      "source_en": "Optional haenyeo viewing at base (14:00 show; may be canceled in bad weather) — ~10 min",
+      "tm": "Optionale Haenyeo-Vorführung am Fuß (Show um 14:00 Uhr; kann bei schlechtem Wetter ausfallen) — ~10 Min."
     },
     "/itineraryStops/5/highlights/0": {
-      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10"
+      "source_en": "**Triple UNESCO**: World Heritage 2007-07-02 + Biosphere Reserve 2002 + Global Geopark 2010-10",
+      "tm": "**Dreifach UNESCO**: Welterbe 02.07.2007 + Biosphärenreservat 2002 + Global Geopark 10/2010"
     },
     "/itineraryStops/5/highlights/1": {
-      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth"
+      "source_en": "**5,000 years old** — Surtseyan-type hydrovolcanic eruption, magma-meets-seawater steam-explosive birth",
+      "tm": "**5.000 Jahre alt** — hydrovulkanischer Ausbruch vom Surtseyanischen Typ, dampfexplosive Entstehung, als Magma auf Meerwasser traf"
     },
     "/itineraryStops/5/highlights/2": {
-      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')"
+      "source_en": "Crater **600 m wide × 90 m deep**, ringed by **99 jagged rim rocks** (the 'stone crown')",
+      "tm": "Krater **600 m breit × 90 m tief**, umringt von **99 zackigen Felsen am Kraterrand** (die „Steinkrone“)"
     },
     "/itineraryStops/5/highlights/3": {
-      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail"
+      "source_en": "**182 m above sea level** — 0.8 km / ~140 m gain, 60-min round trip on stone-step trail",
+      "tm": "**182 m über dem Meeresspiegel** — 0,8 km / ~140 m Anstieg, 60 Min. Hin- und Rückweg auf einem Pfad mit Steinstufen"
     },
     "/itineraryStops/5/highlights/4": {
-      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters"
+      "source_en": "**18 Imperial Japanese WWII caves** at base — 1945 kamikaze suicide-boat shelters",
+      "tm": "**18 kaiserlich-japanische Höhlen aus dem 2. Weltkrieg** am Fuß — 1945 Unterstände für Kamikaze-Selbstmordboote"
     },
     "/itineraryStops/5/highlights/5": {
-      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016"
+      "source_en": "**Haenyeo demonstration once daily at 14:00 (subject to bad-weather cancellation)** at the seaside cove — UNESCO Intangible 2016",
+      "tm": "**Haenyeo-Vorführung einmal täglich um 14:00 Uhr (Ausfall bei schlechtem Wetter möglich)** in der Bucht am Meer — immaterielles UNESCO-Erbe 2016"
     },
     "/itineraryStops/5/highlights/6": {
-      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65"
+      "source_en": "**Admission updated April 2025**: Adult ₩5,000 / Youth ₩2,500 / FREE under 7 + over 65",
+      "tm": "**Eintritt aktualisiert im April 2025**: Erwachsene ₩5.000 / Jugendliche ₩2.500 / KOSTENLOS unter 7 + über 65"
     },
     "/itineraryStops/5/highlights/7": {
-      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)"
+      "source_en": "Spring/autumn hours **05:00–19:00** (last entry 18:20)",
+      "tm": "Öffnungszeiten Frühling/Herbst **05:00–19:00 Uhr** (letzter Einlass 18:20 Uhr)"
     },
     "/itineraryStops/5/highlights/8": {
-      "source_en": "**Closes for first Monday of each month** (occasional rest day)"
+      "source_en": "**Closes for first Monday of each month** (occasional rest day)",
+      "tm": "**Geschlossen am ersten Montag jedes Monats** (gelegentlicher Ruhetag)"
     },
     "/itineraryStops/5/smartNotes/tip": {
-      "source_en": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels."
+      "source_en": "Crowds, weather, and group fitness level can all affect how demanding and satisfying the summit experience feels.",
+      "tm": "Andrang, Wetter und das Fitnessniveau der Gruppe können alle beeinflussen, wie anstrengend und lohnend sich das Gipfelerlebnis anfühlt."
     },
     "/itineraryStops/5/smartNotes/facilities": {
-      "source_en": "Facilities at the base area are well developed."
+      "source_en": "Facilities at the base area are well developed.",
+      "tm": "Die Einrichtungen im Bereich am Fuß sind gut ausgebaut."
     },
     "/itineraryStops/5/whyOnRoute": {
       "source_en": "⟦G0⟧ is the day's signature climb — a Triple-UNESCO tuff cone right beside the haenyeo cove, so the group can watch the divers and then climb without any extra driving.",
+      "tm": "⟦G0⟧ ist der prägende Aufstieg des Tages — ein Tuffkegel mit dreifacher UNESCO-Auszeichnung direkt neben der Haenyeo-Bucht, sodass die Gruppe den Taucherinnen zusehen und anschließend ohne zusätzliche Anfahrt aufsteigen kann.",
       "glossary": [
         "⟦G0⟧ = Seongsan Ilchulbong"
       ]
     },
     "/itineraryStops/5/convenience/parking": {
-      "source_en": "Large parking lot available"
+      "source_en": "Large parking lot available",
+      "tm": "Großer Parkplatz vorhanden"
     },
     "/itineraryStops/5/convenience/restroom": {
-      "source_en": "Lower area and surrounding facilities"
+      "source_en": "Lower area and surrounding facilities",
+      "tm": "Unterer Bereich und umliegende Einrichtungen"
     }
   },
   "glossaryTokens": {
@@ -200,5 +299,5 @@
       "⟦G0⟧": "Seongsan Ilchulbong"
     }
   },
-  "tmHits": 2
+  "tmHits": 56
 }

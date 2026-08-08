@@ -1,0 +1,454 @@
+{
+  "unitId": "tour_product_pages:jeju-grand-highlights-loop:ru:A1",
+  "surface": "tour_product_pages",
+  "slug": "jeju-grand-highlights-loop",
+  "locale": "ru",
+  "chunk": "A1",
+  "tier": "A1",
+  "segments": {
+    "/seo/title": {
+      "source_en": "Jeju Grand Highlights Loop · 3 UNESCO Sites + Haenyeo + Cliffs | AtoC"
+    },
+    "/seo/pageTitle": {
+      "source_en": "Jeju Grand Highlights Loop — 3 UNESCO Sites + Haenyeo | AtoC Korea"
+    },
+    "/seo/description": {
+      "source_en": "Jeju full-island highlights small-group day tour: Hallasan 1100 highland → Jusangjeolli cliff → Jeongbang Waterfall → haenyeo free-diving show → ⟦G1⟧ → ⟦G0⟧. Three UNESCO World Heritage sites in one 10.5-hour day.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/seo/metaDescription": {
+      "source_en": "Small-group 10.5-hour Jeju loop: Hallasan 1100 highland, Jusangjeolli cliffs, Jeongbang waterfall, a live haenyeo free-diving show, ⟦G1⟧ and ⟦G0⟧ — three UNESCO sites in one day.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/seo/primaryKeywords/0": {
+      "source_en": "Jeju highlights small group tour"
+    },
+    "/seo/primaryKeywords/1": {
+      "source_en": "Jeju one day full island tour"
+    },
+    "/seo/primaryKeywords/2": {
+      "source_en": "Jeju UNESCO day tour"
+    },
+    "/seo/primaryKeywords/3": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/seo/primaryKeywords/4": {
+      "source_en": "⟦G0⟧ tour",
+      "tm": "тур ⟦G0⟧",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль"
+      ]
+    },
+    "/seo/primaryKeywords/5": {
+      "source_en": "Jeju haenyeo show tour"
+    },
+    "/hero/meta/stops": {
+      "source_en": "7 stops",
+      "tm": "7 остановок"
+    },
+    "/hero/meta/region": {
+      "source_en": "Jeju Full-Island Route"
+    },
+    "/hero/meta/duration": {
+      "source_en": "10–10.5 hours"
+    },
+    "/hero/pills/0": {
+      "source_en": "3 UNESCO Sites"
+    },
+    "/hero/pills/1": {
+      "source_en": "Haenyeo Culture"
+    },
+    "/hero/pills/2": {
+      "source_en": "Small Group Day Tour"
+    },
+    "/hero/tagline": {
+      "source_en": "One high-intensity day across the whole island — a Hallasan alpine wetland, columnar sea-cliffs, an ocean-falling waterfall, a living haenyeo free-diving show, the ⟦G1⟧ tuff cone and the ⟦G0⟧. Three UNESCO World Heritage sites plus Jeju's two most-loved natural landmarks.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/glanceItems/0/label": {
+      "source_en": "Photo Potential",
+      "tm": "Фотопотенциал"
+    },
+    "/glanceItems/0/value": {
+      "source_en": "High",
+      "tm": "Высокий"
+    },
+    "/glanceItems/1/label": {
+      "source_en": "Scenery Density",
+      "tm": "Насыщенность пейзажами"
+    },
+    "/glanceItems/1/value": {
+      "source_en": "Very High",
+      "tm": "Очень высокая"
+    },
+    "/glanceItems/2/label": {
+      "source_en": "Walking Difficulty",
+      "tm": "Сложность пеших участков"
+    },
+    "/glanceItems/2/value": {
+      "source_en": "Moderate to High"
+    },
+    "/glanceItems/3/label": {
+      "source_en": "Rain Suitability",
+      "tm": "Пригодность в дождь"
+    },
+    "/glanceItems/3/value": {
+      "source_en": "Moderate",
+      "tm": "Средняя"
+    },
+    "/glanceItems/4/label": {
+      "source_en": "Family Suitability",
+      "tm": "Пригодность для семей"
+    },
+    "/glanceItems/4/value": {
+      "source_en": "Moderate",
+      "tm": "Средняя"
+    },
+    "/glanceItems/5/label": {
+      "source_en": "Pace",
+      "tm": "Темп"
+    },
+    "/glanceItems/5/value": {
+      "source_en": "Fast"
+    },
+    "/subnavItems/0/label": {
+      "source_en": "Overview",
+      "tm": "Обзор"
+    },
+    "/subnavItems/1/label": {
+      "source_en": "Itinerary",
+      "tm": "Маршрут"
+    },
+    "/subnavItems/2/label": {
+      "source_en": "Details",
+      "tm": "Детали"
+    },
+    "/subnavItems/3/label": {
+      "source_en": "FAQ",
+      "tm": "FAQ"
+    },
+    "/subnavItems/4/label": {
+      "source_en": "Reviews",
+      "tm": "Отзывы"
+    },
+    "/catalog_card/tags/0": {
+      "source_en": "Small group",
+      "tm": "Малая группа"
+    },
+    "/catalog_card/tags/1": {
+      "source_en": "Jeju",
+      "tm": "Чеджу"
+    },
+    "/catalog_card/tags/3": {
+      "source_en": "UNESCO",
+      "tm": "ЮНЕСКО"
+    },
+    "/catalog_card/tags/4": {
+      "source_en": "Haenyeo culture"
+    },
+    "/catalog_card/tags/5": {
+      "source_en": "highlights"
+    },
+    "/catalog_card/title": {
+      "source_en": "Jeju Grand Highlights Loop"
+    },
+    "/catalog_card/badges/0": {
+      "source_en": "Small group",
+      "tm": "Малая группа"
+    },
+    "/catalog_card/badges/1": {
+      "source_en": "3 UNESCO Sites"
+    },
+    "/catalog_card/badges/2": {
+      "source_en": "Best for One-Day Visitors"
+    },
+    "/catalog_card/region": {
+      "source_en": "Jeju Full-Island Route"
+    },
+    "/catalog_card/duration": {
+      "source_en": "10–10.5 hours"
+    },
+    "/catalog_card/subtitle": {
+      "source_en": "Jeju's three UNESCO sites, a live haenyeo show, sea-cliffs and an ocean waterfall — the island's absolute best in one day."
+    },
+    "/catalog_card/shortCardDescription": {
+      "source_en": "A high-intensity full-island route linking three UNESCO World Heritage sites — Hallasan, ⟦G1⟧ and ⟦G0⟧ — with a living haenyeo free-diving show, the Jusangjeolli columnar cliffs and the ocean-falling Jeongbang Waterfall. Jeju's signature highlights, concentrated into a single day.",
+      "glossary": [
+        "⟦G0⟧ = Лавовая трубка Манджангуль",
+        "⟦G1⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/headlineLine1": {
+      "source_en": "Jeju Grand Highlights Loop"
+    },
+    "/headlineLine2": {
+      "source_en": "Small Group Day Tour"
+    },
+    "/pickup_dropoff/notes/0": {
+      "source_en": "Return usually runs around 17:30–18:00.",
+      "tm": "Возвращение обычно происходит около 17:30–18:00."
+    },
+    "/pickup_dropoff/return/0/name": {
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "отель Ocean Suites Jeju"
+    },
+    "/pickup_dropoff/return/1/name": {
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Международный аэропорт Чеджу (3-й этаж, выход 3)"
+    },
+    "/pickup_dropoff/return/2/name": {
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "отель LOTTE City Hotel Jeju"
+    },
+    "/pickup_dropoff/return/3/name": {
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (магазин на Чеджу)"
+    },
+    "/pickup_dropoff/return/4/name": {
+      "source_en": "Dongmun Traditional Market",
+      "tm": "Традиционный рынок Тонмун"
+    },
+    "/pickup_dropoff/departure/0/name": {
+      "source_en": "Ocean Suites Jeju Hotel",
+      "tm": "отель Ocean Suites Jeju"
+    },
+    "/pickup_dropoff/departure/0/note": {
+      "source_en": "Meet in the hotel lobby — guide holds an AtoCKorea sign.",
+      "tm": "Встреча в лобби отеля — гид держит табличку AtoCKorea."
+    },
+    "/pickup_dropoff/departure/1/name": {
+      "source_en": "Jeju International Airport (3F, Gate 3)",
+      "tm": "Международный аэропорт Чеджу (3-й этаж, выход 3)"
+    },
+    "/pickup_dropoff/departure/1/note": {
+      "source_en": "3rd floor departures area. Follow signs to Gate 3.",
+      "tm": "Зона вылета на 3-м этаже. Следуйте указателям к выходу 3."
+    },
+    "/pickup_dropoff/departure/2/name": {
+      "source_en": "LOTTE City Hotel Jeju",
+      "tm": "отель LOTTE City Hotel Jeju"
+    },
+    "/pickup_dropoff/departure/2/note": {
+      "source_en": "Wait in the main lobby — guide will call you by name.",
+      "tm": "Ждите в главном лобби — гид назовёт вас по имени."
+    },
+    "/pickup_dropoff/departure/3/name": {
+      "source_en": "Shilla Duty Free (Jeju Store)",
+      "tm": "Shilla Duty Free (магазин на Чеджу)"
+    },
+    "/pickup_dropoff/departure/3/note": {
+      "source_en": "Meet outside the main entrance of Shilla Duty Free, Jeju branch.",
+      "tm": "Встреча снаружи у главного входа Shilla Duty Free, филиал на Чеджу."
+    },
+    "/sticky_booking_bar/note": {
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Выберите дату и размер группы, чтобы проверить актуальную доступность и завершить бронирование."
+    },
+    "/sticky_booking_bar/price/per": {
+      "source_en": "person",
+      "tm": "человек"
+    },
+    "/practicalAccordionItems/0/title": {
+      "source_en": "Pickup and Return Times"
+    },
+    "/practicalAccordionItems/0/content/0": {
+      "source_en": "Pickup in Jeju City between 08:00 and 08:35"
+    },
+    "/practicalAccordionItems/0/content/1": {
+      "source_en": "Return to Jeju City around 18:00–18:30"
+    },
+    "/practicalAccordionItems/0/content/2": {
+      "source_en": "Airport pickup can be arranged depending on circumstances"
+    },
+    "/practicalAccordionItems/0/content/3": {
+      "source_en": "Final meeting time is confirmed the night before"
+    },
+    "/practicalAccordionItems/0/preview": {
+      "source_en": "Early start, return to Jeju City in the evening"
+    },
+    "/practicalAccordionItems/1/title": {
+      "source_en": "Walking and Terrain",
+      "tm": "Пешие участки и рельеф"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "source_en": "⟦G0⟧ is an easy 1 km boardwalk loop.",
+      "glossary": [
+        "⟦G0⟧ = Водно-болотные угодья Халласан 1100"
+      ]
+    },
+    "/practicalAccordionItems/1/content/1": {
+      "source_en": "Jeongbang Waterfall includes stairs and a rocky walking path."
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "source_en": "⟦G0⟧ is a stair climb if the group chooses to summit.",
+      "glossary": [
+        "⟦G0⟧ = Сонсан Ильчхульбон"
+      ]
+    },
+    "/practicalAccordionItems/1/content/3": {
+      "source_en": "Manjanggul is about 1 km round trip on uneven, damp, dimly lit cave floor."
+    },
+    "/practicalAccordionItems/1/content/4": {
+      "source_en": "Comfortable shoes with good grip are strongly recommended."
+    },
+    "/practicalAccordionItems/1/preview": {
+      "source_en": "Active route with stairs, a climb and a cave"
+    },
+    "/practicalAccordionItems/2/title": {
+      "source_en": "Weather and Closure Adjustments",
+      "tm": "Корректировки из-за погоды и закрытий"
+    },
+    "/practicalAccordionItems/2/content/0": {
+      "source_en": "Light rain: the tour usually runs as normal — the cave is a natural shelter"
+    },
+    "/practicalAccordionItems/2/content/1": {
+      "source_en": "High seas: the haenyeo free-diving show may be replaced by the Haenyeo Museum"
+    },
+    "/practicalAccordionItems/2/content/2": {
+      "source_en": "Manjanggul closure: the nearby Ilchul Land Micheon Cave lava tube is used instead"
+    },
+    "/practicalAccordionItems/2/content/3": {
+      "source_en": "Winter: the Hallasan 1100 highland can be snowy or icy — the route may adjust stay times"
+    },
+    "/practicalAccordionItems/2/preview": {
+      "source_en": "Usually runs as planned, with built-in alternates"
+    },
+    "/practicalAccordionItems/3/title": {
+      "source_en": "If You Arrive in or Leave Jeju the Same Day"
+    },
+    "/practicalAccordionItems/3/content/0": {
+      "source_en": "This is a high-density route covering Jeju's signature highlights in one day."
+    },
+    "/practicalAccordionItems/3/content/1": {
+      "source_en": "Same-day arrival or departure can work, but only if you leave enough evening buffer."
+    },
+    "/practicalAccordionItems/3/content/2": {
+      "source_en": "A late flight is strongly recommended."
+    },
+    "/practicalAccordionItems/3/content/3": {
+      "source_en": "Please factor in traffic, walking pace and on-site conditions when judging timing risk."
+    },
+    "/practicalAccordionItems/3/preview": {
+      "source_en": "You need a generous evening buffer"
+    },
+    "/practicalAccordionItems/4/title": {
+      "source_en": "What to Wear and Bring",
+      "tm": "Что надеть и взять с собой"
+    },
+    "/practicalAccordionItems/4/content/0": {
+      "source_en": "Walking shoes with good grip"
+    },
+    "/practicalAccordionItems/4/content/1": {
+      "source_en": "Layered clothing for mountain, coast and cave temperature differences"
+    },
+    "/practicalAccordionItems/4/content/2": {
+      "source_en": "A light jacket — Manjanggul stays cool year-round"
+    },
+    "/practicalAccordionItems/4/content/3": {
+      "source_en": "Hat and sun protection"
+    },
+    "/practicalAccordionItems/4/content/4": {
+      "source_en": "Water bottle",
+      "tm": "Бутылка воды"
+    },
+    "/practicalAccordionItems/4/preview": {
+      "source_en": "Walking shoes, layers and a light jacket for the cave"
+    },
+    "/practicalAccordionItems/5/title": {
+      "source_en": "What's Included / Not Included"
+    },
+    "/practicalAccordionItems/5/content/0": {
+      "source_en": "Professional English-speaking guide",
+      "tm": "Профессиональный англоговорящий гид"
+    },
+    "/practicalAccordionItems/5/content/1": {
+      "source_en": "Small-group vehicle",
+      "tm": "Транспорт для малой группы"
+    },
+    "/practicalAccordionItems/5/content/2": {
+      "source_en": "Jeju City hotel pickup and drop-off"
+    },
+    "/practicalAccordionItems/5/content/3": {
+      "source_en": "All admission tickets (Hallasan 1100, Jusangjeolli, Jeongbang, Seongsan, Manjanggul / Haenyeo Museum on alternate days)"
+    },
+    "/practicalAccordionItems/5/content/4": {
+      "source_en": "Bottled water",
+      "tm": "Бутилированная вода"
+    },
+    "/practicalAccordionItems/5/content/5": {
+      "source_en": "Lunch (pay on site)",
+      "tm": "Обед (оплата на месте)"
+    },
+    "/practicalAccordionItems/5/content/6": {
+      "source_en": "Personal shopping expenses",
+      "tm": "Личные расходы на покупки"
+    },
+    "/practicalAccordionItems/5/content/7": {
+      "source_en": "Guide gratuities",
+      "tm": "Чаевые гиду"
+    },
+    "/practicalAccordionItems/5/preview": {
+      "source_en": "Guide, vehicle, pickup and all admissions included"
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Cancellation",
+      "tm": "Отмена"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Отмена в день тура и неявка не возвращаются."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Бесплатная отмена не позднее чем за 24 часа до посадки."
+    }
+  },
+  "glossaryTokens": {
+    "/seo/description": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/seo/metaDescription": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/seo/primaryKeywords/3": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    },
+    "/seo/primaryKeywords/4": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль"
+    },
+    "/hero/tagline": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/catalog_card/shortCardDescription": {
+      "⟦G0⟧": "Лавовая трубка Манджангуль",
+      "⟦G1⟧": "Сонсан Ильчхульбон"
+    },
+    "/practicalAccordionItems/1/content/0": {
+      "⟦G0⟧": "Водно-болотные угодья Халласан 1100"
+    },
+    "/practicalAccordionItems/1/content/2": {
+      "⟦G0⟧": "Сонсан Ильчхульбон"
+    }
+  },
+  "tmHits": 52
+}

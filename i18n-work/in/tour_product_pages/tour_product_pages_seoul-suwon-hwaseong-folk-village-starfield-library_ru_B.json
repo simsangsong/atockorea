@@ -31,24 +31,28 @@
       "tm": "Стены Хвасона в Сувоне и дворец Хэнгун — всё в пешей доступности друг от друга."
     },
     "/routePhases/2/phase": {
-      "source_en": "Folk village"
+      "source_en": "Folk village",
+      "tm": "Фольклорная деревня"
     },
     "/routePhases/2/duration": {
       "source_en": "≈ 2.5 hours",
       "tm": "≈ 2,5 часа"
     },
     "/routePhases/2/description": {
-      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park."
+      "source_en": "Drive 30 minutes to Yongin's Korean Folk Village, then explore the open-air park.",
+      "tm": "30 минут пути до Корейской фольклорной деревни в Йонъине, затем прогулка по парку под открытым небом."
     },
     "/routePhases/3/phase": {
-      "source_en": "Modern coda"
+      "source_en": "Modern coda",
+      "tm": "Современная кода"
     },
     "/routePhases/3/duration": {
       "source_en": "≈ 1.5 hours",
       "tm": "≈ 1,5 часа"
     },
     "/routePhases/3/description": {
-      "source_en": "Drive back to Suwon for Starfield Library and mall food hall."
+      "source_en": "Drive back to Suwon for Starfield Library and mall food hall.",
+      "tm": "Возвращение в Сувон — библиотека Starfield и фуд-холл торгового центра."
     },
     "/routePhases/4/phase": {
       "source_en": "Return",
@@ -59,7 +63,8 @@
       "tm": "≈ 1 час"
     },
     "/routePhases/4/description": {
-      "source_en": "Suwon → Seoul."
+      "source_en": "Suwon → Seoul.",
+      "tm": "Сувон → Сеул."
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ — gallery image 1",
@@ -292,5 +297,5 @@
       "⟦G0⟧": "Корейская фольклорная деревня (Йонъин)"
     }
   },
-  "tmHits": 40
+  "tmHits": 45
 }

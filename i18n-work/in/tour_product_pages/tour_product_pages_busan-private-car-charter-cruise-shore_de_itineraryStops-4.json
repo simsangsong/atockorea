@@ -6,31 +6,23 @@
   "chunk": "itineraryStops-4",
   "tier": "B",
   "segments": {
-    "/itineraryStops/7/name": {
-      "source_en": "Return to Busan Cruise Terminal"
-    },
-    "/itineraryStops/7/category": {
-      "source_en": "Return"
-    },
-    "/itineraryStops/7/duration": {
-      "source_en": "30 min"
-    },
-    "/itineraryStops/7/highlights/0": {
-      "source_en": "Direct return to original cruise terminal (Dongsam or Choryang)"
-    },
     "/itineraryStops/7/highlights/1": {
-      "source_en": "**60–90 min buffer before all-aboard**"
+      "source_en": "**60–90 min buffer before all-aboard**",
+      "tm": "**60–90 Min. Puffer vor der All-Aboard-Zeit**"
     },
     "/itineraryStops/7/highlights/2": {
-      "source_en": "Real-time dispatch coordination if mid-day timing shifts"
+      "source_en": "Real-time dispatch coordination if mid-day timing shifts",
+      "tm": "Echtzeit-Abstimmung mit der Einsatzzentrale, falls sich die Zeitplanung im Tagesverlauf verschiebt"
     },
     "/itineraryStops/7/whyOnRoute": {
-      "source_en": "Direct return without intermediate stops protects the all-aboard buffer. 30 minutes covers worst-case rush-hour transit from Nampo-dong back to either terminal; lighter traffic = earlier delivery (drop-off can be planned for your preferred arrival time)."
+      "source_en": "Direct return without intermediate stops protects the all-aboard buffer. 30 minutes covers worst-case rush-hour transit from Nampo-dong back to either terminal; lighter traffic = earlier delivery (drop-off can be planned for your preferred arrival time).",
+      "tm": "Die direkte Rückfahrt ohne Zwischenstopps schützt den Puffer bis zur All-Aboard-Zeit. 30 Minuten decken im ungünstigsten Fall die Fahrt im Berufsverkehr von Nampo-dong zurück zu einem der beiden Terminals ab; weniger Verkehr = frühere Ankunft (das Absetzen kann auf Ihre bevorzugte Ankunftszeit geplant werden)."
     },
     "/itineraryStops/7/description": {
-      "source_en": "Private vehicle returns directly to your departure point — **Busan Port International Cruise Terminal** in Dongsam-dong (Yeongdo) for large-ship cruises, or **Busan Port International Passenger Terminal** in Choryang for medium cruises and ferries — buffered to **deliver you 60–90 minutes before your ship's all-aboard time**. \n\nDriver coordinates with your morning departure point; if your itinerary changed mid-day (e.g., late lunch), the driver alerts dispatch to adjust the buffer. Drop-off is at the terminal arrival hall, where the cruise line's own gangway shuttle typically operates."
+      "source_en": "Private vehicle returns directly to your departure point — **Busan Port International Cruise Terminal** in Dongsam-dong (Yeongdo) for large-ship cruises, or **Busan Port International Passenger Terminal** in Choryang for medium cruises and ferries — buffered to **deliver you 60–90 minutes before your ship's all-aboard time**. \n\nDriver coordinates with your morning departure point; if your itinerary changed mid-day (e.g., late lunch), the driver alerts dispatch to adjust the buffer. Drop-off is at the terminal arrival hall, where the cruise line's own gangway shuttle typically operates.",
+      "tm": "Das private Fahrzeug bringt Sie direkt zu Ihrem Ausgangspunkt zurück — **Busan Port International Cruise Terminal** in Dongsam-dong (Yeongdo) für Kreuzfahrten mit großen Schiffen oder **Busan Port International Passenger Terminal** in Choryang für mittelgroße Kreuzfahrtschiffe und Fähren — mit Puffer, damit Sie **60–90 Minuten vor der All-Aboard-Zeit Ihres Schiffes** eintreffen. \n\nDer Fahrer stimmt sich mit Ihrem morgendlichen Ausgangspunkt ab; wenn sich Ihr Ablauf im Tagesverlauf geändert hat (z. B. spätes Mittagessen), informiert der Fahrer die Einsatzzentrale, um den Puffer anzupassen. Das Absetzen erfolgt in der Ankunftshalle des Terminals, wo in der Regel der Gangway-Shuttle der Kreuzfahrtgesellschaft verkehrt."
     }
   },
   "glossaryTokens": {},
-  "tmHits": 0
+  "tmHits": 4
 }

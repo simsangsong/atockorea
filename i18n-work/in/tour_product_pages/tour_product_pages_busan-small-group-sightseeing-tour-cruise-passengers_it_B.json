@@ -7,37 +7,46 @@
   "tier": "B",
   "segments": {
     "/routePhases/0/phase": {
-      "source_en": "Terminal to the coast"
+      "source_en": "Terminal to the coast",
+      "tm": "Dal terminal alla costa"
     },
     "/routePhases/0/duration": {
-      "source_en": "≈ 1 hr 35 min"
+      "source_en": "≈ 1 hr 35 min",
+      "tm": "≈ 1 ora e 35 min"
     },
     "/routePhases/0/description": {
       "source_en": "Cruise terminal pickup at 09:00 with a disembarkation buffer, then northeast along the coast to ⟦G0⟧ for a 09:45 arrival — ahead of the tour-bus surge that builds from mid-morning.",
+      "tm": "Prelievo al terminal crociere alle 09:00, con un margine per lo sbarco, poi verso nord-est lungo la costa fino a ⟦G0⟧, con arrivo alle 09:45 — prima dell’ondata di pullman turistici che cresce da metà mattina.",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/routePhases/1/phase": {
-      "source_en": "Memorial and lunch"
+      "source_en": "Memorial and lunch",
+      "tm": "Memoriale e pranzo"
     },
     "/routePhases/1/duration": {
-      "source_en": "≈ 1 hr 40 min"
+      "source_en": "≈ 1 hr 40 min",
+      "tm": "≈ 1 ora e 40 min"
     },
     "/routePhases/1/description": {
       "source_en": "⟦G0⟧ (30 min) for Korean War context, then a Busan-specific lunch — dwaeji-gukbap or milmyeon — at your own expense.",
+      "tm": "Il ⟦G0⟧ (30 min) per il contesto della guerra di Corea, poi un pranzo tipico di Busan — dwaeji-gukbap o milmyeon — a Suo carico.",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
     },
     "/routePhases/2/phase": {
-      "source_en": "Nampo-dong on foot"
+      "source_en": "Nampo-dong on foot",
+      "tm": "Nampo-dong a piedi"
     },
     "/routePhases/2/duration": {
-      "source_en": "≈ 1 hr 25 min"
+      "source_en": "≈ 1 hr 25 min",
+      "tm": "≈ 1 ora e 25 min"
     },
     "/routePhases/2/description": {
       "source_en": "⟦G0⟧, ⟦G2⟧ and ⟦G1⟧ are three separate stops within about 600 m of each other, so the middle of the day is walked rather than driven.",
+      "tm": "Il ⟦G0⟧, la ⟦G2⟧ e il ⟦G1⟧ sono tre tappe distinte entro circa 600 m l’una dall’altra: la parte centrale della giornata si percorre quindi a piedi, non in van.",
       "glossary": [
         "⟦G0⟧ = Mercato Jagalchi",
         "⟦G1⟧ = Mercato Gukje",
@@ -45,37 +54,45 @@
       ]
     },
     "/routePhases/3/phase": {
-      "source_en": "Gamcheon hillside"
+      "source_en": "Gamcheon hillside",
+      "tm": "La collina di Gamcheon"
     },
     "/routePhases/3/duration": {
-      "source_en": "≈ 1 hr 5 min"
+      "source_en": "≈ 1 hr 5 min",
+      "tm": "≈ 1 ora e 5 min"
     },
     "/routePhases/3/description": {
       "source_en": "⟦G0⟧ (45 min) for the painted-house panorama, reached by a short transfer from Nampo-dong.",
+      "tm": "Il ⟦G0⟧ (45 min) per il panorama delle case dipinte, raggiunto con un breve trasferimento da Nampo-dong.",
       "glossary": [
         "⟦G0⟧ = Villaggio culturale di Gamcheon"
       ]
     },
     "/routePhases/4/phase": {
-      "source_en": "Songdo and the return"
+      "source_en": "Songdo and the return",
+      "tm": "Songdo e il rientro"
     },
     "/routePhases/4/duration": {
-      "source_en": "≈ 1 hr 35 min"
+      "source_en": "≈ 1 hr 35 min",
+      "tm": "≈ 1 ora e 35 min"
     },
     "/routePhases/4/description": {
       "source_en": "Songdo Cloud Trails skywalk, then Sky Park across the bay if you choose the cable car, and ⟦G0⟧ before the drive back — at the terminal by 17:00, and always timed to your ship's all-aboard.",
+      "tm": "La passerella Songdo Cloud Trails, poi lo Sky Park dall’altra parte della baia se sceglie la funivia, e il ⟦G0⟧ prima del viaggio di ritorno — al terminal entro le 17:00, e sempre calibrato sull’orario di rientro a bordo della Sua nave.",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
     },
     "/galleryItems/0/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 1",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/0/caption": {
       "source_en": "⟦G0⟧ Temple — photo 1",
+      "tm": "Tempio ⟦G0⟧ — foto 1",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -89,12 +106,14 @@
     },
     "/galleryItems/1/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 1",
+      "tm": "⟦G0⟧ in Corea — immagine della galleria 1",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
     },
     "/galleryItems/1/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 1",
+      "tm": "⟦G0⟧ in Corea — foto 1",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
@@ -191,10 +210,12 @@
       ]
     },
     "/galleryItems/6/alt": {
-      "source_en": "Songdo Cloud Trails Skywalk — gallery image 1"
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 1",
+      "tm": "Passerella Songdo Cloud Trails — immagine della galleria 1"
     },
     "/galleryItems/6/caption": {
-      "source_en": "Songdo Cloud Trails Skywalk — photo 1"
+      "source_en": "Songdo Cloud Trails Skywalk — photo 1",
+      "tm": "Passerella Songdo Cloud Trails — foto 1"
     },
     "/galleryItems/6/location": {
       "source_en": "Songdo Cloud Trails Skywalk",
@@ -202,12 +223,14 @@
     },
     "/galleryItems/7/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 1",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — immagine della galleria 1",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
     },
     "/galleryItems/7/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 1",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — foto 1",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
@@ -221,12 +244,14 @@
     },
     "/galleryItems/8/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 2",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 2",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/8/caption": {
       "source_en": "⟦G0⟧ Temple — photo 2",
+      "tm": "Tempio ⟦G0⟧ — foto 2",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -240,12 +265,14 @@
     },
     "/galleryItems/9/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 3",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 3",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/9/caption": {
       "source_en": "⟦G0⟧ Temple — photo 3",
+      "tm": "Tempio ⟦G0⟧ — foto 3",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -259,12 +286,14 @@
     },
     "/galleryItems/10/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 4",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 4",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/10/caption": {
       "source_en": "⟦G0⟧ Temple — photo 4",
+      "tm": "Tempio ⟦G0⟧ — foto 4",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -278,12 +307,14 @@
     },
     "/galleryItems/11/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 5",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 5",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/11/caption": {
       "source_en": "⟦G0⟧ Temple — photo 5",
+      "tm": "Tempio ⟦G0⟧ — foto 5",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -297,12 +328,14 @@
     },
     "/galleryItems/12/alt": {
       "source_en": "⟦G0⟧ Temple — gallery image 6",
+      "tm": "Tempio ⟦G0⟧ — immagine della galleria 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/galleryItems/12/caption": {
       "source_en": "⟦G0⟧ Temple — photo 6",
+      "tm": "Tempio ⟦G0⟧ — foto 6",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
@@ -316,12 +349,14 @@
     },
     "/galleryItems/13/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 2",
+      "tm": "⟦G0⟧ in Corea — immagine della galleria 2",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
     },
     "/galleryItems/13/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 2",
+      "tm": "⟦G0⟧ in Corea — foto 2",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
@@ -335,12 +370,14 @@
     },
     "/galleryItems/14/alt": {
       "source_en": "⟦G0⟧ in Korea — gallery image 3",
+      "tm": "⟦G0⟧ in Corea — immagine della galleria 3",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
     },
     "/galleryItems/14/caption": {
       "source_en": "⟦G0⟧ in Korea — photo 3",
+      "tm": "⟦G0⟧ in Corea — foto 3",
       "glossary": [
         "⟦G0⟧ = Cimitero commemorativo delle Nazioni Unite"
       ]
@@ -710,17 +747,20 @@
       ]
     },
     "/galleryItems/32/alt": {
-      "source_en": "Songdo Cloud Trails Skywalk — gallery image 2"
+      "source_en": "Songdo Cloud Trails Skywalk — gallery image 2",
+      "tm": "Passerella Songdo Cloud Trails — immagine della galleria 2"
     },
     "/galleryItems/32/caption": {
-      "source_en": "Songdo Cloud Trails Skywalk — photo 2"
+      "source_en": "Songdo Cloud Trails Skywalk — photo 2",
+      "tm": "Passerella Songdo Cloud Trails — foto 2"
     },
     "/galleryItems/32/location": {
       "source_en": "Songdo Cloud Trails Skywalk",
       "tm": "Passerella Songdo Cloud Trails"
     },
     "/galleryItems/33/alt": {
-      "source_en": "Songdo Sky Park (Amnam Park) — on-route photo"
+      "source_en": "Songdo Sky Park (Amnam Park) — on-route photo",
+      "tm": "Songdo Sky Park (parco di Amnam) — foto lungo il percorso"
     },
     "/galleryItems/33/caption": {
       "source_en": "Songdo Sky Park (Amnam Park)",
@@ -732,12 +772,14 @@
     },
     "/galleryItems/34/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 2",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — immagine della galleria 2",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
     },
     "/galleryItems/34/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 2",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — foto 2",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
@@ -751,12 +793,14 @@
     },
     "/galleryItems/35/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 3",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — immagine della galleria 3",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
     },
     "/galleryItems/35/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 3",
+      "tm": "⟦G0⟧ e Busan Diamond Tower — foto 3",
       "glossary": [
         "⟦G0⟧ = Parco di Yongdusan"
       ]
@@ -1085,5 +1129,5 @@
       "⟦G0⟧": "Parco di Yongdusan"
     }
   },
-  "tmHits": 79
+  "tmHits": 123
 }

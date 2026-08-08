@@ -6,209 +6,277 @@
   "chunk": "itineraryStops-2",
   "tier": "B",
   "segments": {
+    "/itineraryStops/1/galleryItems/3/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (единственный в Азии водопад, падающий прямо в море)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — gallery image 5",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall) — photo 5",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "source_en": "⟦G0⟧ (Asia's only ocean-falling waterfall)",
+      "tm": "⟦G0⟧ (единственный в Азии водопад, падающий прямо в море)",
+      "glossary": [
+        "⟦G0⟧ = Водопад Чонбан"
+      ]
+    },
+    "/itineraryStops/2/name": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae и прибрежная прогулка по тропе Олле №7"
+    },
+    "/itineraryStops/2/category": {
+      "source_en": "Coastal Rock Pinnacle + Olle Trail — Jeju Global Geopark geosite",
+      "tm": "Прибрежная скала-останец и тропа Олле — геосайт Всемирного геопарка Чеджу"
+    },
+    "/itineraryStops/2/duration": {
+      "source_en": "50 min",
+      "tm": "50 мин"
+    },
+    "/itineraryStops/2/timeUsed/0": {
+      "source_en": "Parking + entry onto the Olle trail — ~5 min",
+      "tm": "Парковка и выход на тропу Олле — ~5 мин"
+    },
     "/itineraryStops/2/timeUsed/1": {
-      "source_en": "Olle Route 7 coastal path — ~25 min"
+      "source_en": "Olle Route 7 coastal path — ~25 min",
+      "tm": "Прибрежная тропа Олле №7 — ~25 мин"
     },
     "/itineraryStops/2/timeUsed/2": {
-      "source_en": "Oedolgae viewpoint + photography — ~15 min"
+      "source_en": "Oedolgae viewpoint + photography — ~15 min",
+      "tm": "Смотровая площадка у Oedolgae и фотографии — ~15 мин"
     },
     "/itineraryStops/2/timeUsed/3": {
-      "source_en": "Return to coach — ~5 min"
+      "source_en": "Return to coach — ~5 min",
+      "tm": "Возвращение к автобусу — ~5 мин"
     },
     "/itineraryStops/2/highlights/0": {
-      "source_en": "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')"
+      "source_en": "**Oedolgae** — a roughly 20 m-high coastal rock pillar formed about 1.5 million years ago ('General Rock')",
+      "tm": "**Oedolgae** — прибрежная скала-столб высотой около 20 м, образовавшаяся примерно 1,5 миллиона лет назад («Скала-генерал»)"
     },
     "/itineraryStops/2/highlights/1": {
-      "source_en": "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**"
+      "source_en": "Seogwipo coastal scenery famous as a **'Dae Jang Geum' filming location**",
+      "tm": "Прибрежные пейзажи Согвипхо, известные как **место съёмок «Dae Jang Geum»**"
     },
     "/itineraryStops/2/highlights/2": {
-      "source_en": "**Jeju Global Geopark (UNESCO Global Geopark) geosite**"
+      "source_en": "**Jeju Global Geopark (UNESCO Global Geopark) geosite**",
+      "tm": "**Геосайт Всемирного геопарка Чеджу (Global Geopark ЮНЕСКО)**"
     },
     "/itineraryStops/2/highlights/3": {
-      "source_en": "On **Olle Route 7** — the much-loved 'Subong-ro' coastal section"
+      "source_en": "On **Olle Route 7** — the much-loved 'Subong-ro' coastal section",
+      "tm": "На **тропе Олле №7** — всеми любимый прибрежный участок «Субон-ро»"
     },
     "/itineraryStops/2/highlights/4": {
-      "source_en": "Views of **Oedolgae + Seopseom/Munseom + the southern sea** from the pine-forest path"
+      "source_en": "Views of **Oedolgae + Seopseom/Munseom + the southern sea** from the pine-forest path",
+      "tm": "Виды на **Oedolgae, острова Сопсом и Мунсом и южное море** с тропы через сосновый лес"
     },
     "/itineraryStops/2/highlights/5": {
       "source_en": "**Free admission**, open year-round — about a 15-min drive from ⟦G0⟧",
+      "tm": "**Вход свободный**, открыто круглый год — около 15 мин езды от ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Водопад Чонбан"
       ]
     },
     "/itineraryStops/2/highlights/6": {
-      "source_en": "Path mostly flat, with some natural-rock sections — comfortable shoes recommended"
+      "source_en": "Path mostly flat, with some natural-rock sections — comfortable shoes recommended",
+      "tm": "Тропа в основном ровная, местами по природному камню — рекомендуется удобная обувь"
     },
     "/itineraryStops/2/smartNotes/tip": {
-      "source_en": "Windy days are common, so bring a layer; mind slipping on the natural-rock sections"
+      "source_en": "Windy days are common, so bring a layer; mind slipping on the natural-rock sections",
+      "tm": "Здесь часто ветрено, поэтому возьмите дополнительный слой одежды; на участках по природному камню осторожно, скользко"
     },
     "/itineraryStops/2/smartNotes/facilities": {
-      "source_en": "Restrooms at the entrance parking lot; few facilities along the coastal path"
+      "source_en": "Restrooms at the entrance parking lot; few facilities along the coastal path",
+      "tm": "Туалеты на парковке у входа; вдоль прибрежной тропы удобств почти нет"
     },
     "/itineraryStops/2/whyOnRoute": {
       "source_en": "**The second Seogwipo-coast highlight and an Olle Trail experience.** A 15-minute drive from ⟦G0⟧ makes the routing natural, and the scenery shifts from the vertical view of the falls to the wide-open coastal panorama of Oedolgae. The short Olle Route 7 walk lets you taste the essence of 'Jeju on foot' without overexertion.",
+      "tm": "**Вторая жемчужина побережья Согвипхо и знакомство с тропой Олле.** 15 минут езды от ⟦G0⟧ делают маршрут естественным, а пейзаж меняется с вертикального вида водопада на широкую прибрежную панораму у Oedolgae. Короткая прогулка по тропе Олле №7 позволяет почувствовать суть «Чеджу пешком» без лишних усилий.",
       "glossary": [
         "⟦G0⟧ = Водопад Чонбан"
       ]
     },
     "/itineraryStops/2/convenience/parking": {
-      "source_en": "Available at the Oedolgae public parking lot"
+      "source_en": "Available at the Oedolgae public parking lot",
+      "tm": "Есть на общественной парковке у Oedolgae"
     },
     "/itineraryStops/2/convenience/restroom": {
-      "source_en": "Available at the Oedolgae parking area"
+      "source_en": "Available at the Oedolgae parking area",
+      "tm": "Есть на парковке у Oedolgae"
     },
     "/itineraryStops/2/description": {
-      "source_en": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections."
+      "source_en": "**Oedolgae (외돌개) is a roughly 20 m-high coastal rock pillar formed by a volcanic eruption about 1.5 million years ago**, standing alone in the open sea — hence the name 'oe (alone) dol (rock) gae'. Also called 'General Rock' or 'Grandmother Rock', it is widely known as a **filming location for the K-drama 'Dae Jang Geum'**. Oedolgae and the layered Seogwipo sea cliffs are one of the **official geosites of the Jeju Global Geopark (UNESCO Global Geopark)**. \n\nOedolgae sits on **Jeju Olle Route 7** — a roughly 17.6 km signature coastal Olle running from the Jeju Olle Travelers Center past Beophwan Port to Wolpyeong, with the much-loved 'Subong-ro' section passing near Oedolgae. \n\nOn this stop you take in the Oedolgae viewpoint and **walk a short part of the Olle Route 7 coastal path.** The trail through the pine forest looks out over Oedolgae, Seopseom and Munseom, and the endless southern sea, offering a wide-open coastal panorama quite different from the waterfall scenery at Jeongbang. **Free admission**; the path is mostly flat with some natural-rock sections.",
+      "tm": "**Oedolgae (외돌개) — прибрежная скала-столб высотой около 20 м, образовавшаяся при вулканическом извержении примерно 1,5 миллиона лет назад** и стоящая в одиночестве в открытом море: отсюда и название «ве (одиноко) доль (скала) ке». Её также называют «Скалой-генералом» или «Скалой-бабушкой», и она широко известна как **место съёмок корейской дорамы «Dae Jang Geum»**. Oedolgae и слоистые морские утёсы Согвипхо — один из **официальных геосайтов Всемирного геопарка Чеджу (Global Geopark ЮНЕСКО)**. \n\nOedolgae находится на **тропе Jeju Olle №7** — фирменном прибрежном маршруте протяжённостью около 17,6 км от Центра путешественников Jeju Olle мимо порта Пофван до Вольпхёна, а всеми любимый участок «Субон-ро» проходит рядом с Oedolgae. \n\nНа этой остановке вы осматриваете смотровую площадку у Oedolgae и **проходите небольшой участок прибрежной тропы Олле №7.** С тропы через сосновый лес открываются виды на Oedolgae, острова Сопсом и Мунсом и бескрайнее южное море — широкая прибрежная панорама, совсем не похожая на пейзаж водопада в Чонбане. **Вход свободный**; тропа в основном ровная, местами по природному камню."
     },
     "/itineraryStops/2/visitBasics/hours": {
-      "source_en": "Open at all times (coastal path)"
+      "source_en": "Open at all times (coastal path)",
+      "tm": "Открыто в любое время (прибрежная тропа)"
     },
     "/itineraryStops/2/visitBasics/closed": {
-      "source_en": "Open year-round (some sections may close in strong wind or high swell)"
+      "source_en": "Open year-round (some sections may close in strong wind or high swell)",
+      "tm": "Открыто круглый год (отдельные участки могут закрываться при сильном ветре или высокой волне)"
     },
     "/itineraryStops/2/visitBasics/walking": {
-      "source_en": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections"
+      "source_en": "Easy to moderate — coastal path mostly flat, with some natural-rock and stair sections",
+      "tm": "От лёгкой до средней — прибрежная тропа в основном ровная, местами природный камень и ступени"
     },
     "/itineraryStops/2/visitBasics/admission": {
-      "source_en": "Free"
+      "source_en": "Free",
+      "tm": "Бесплатно"
+    },
+    "/itineraryStops/2/galleryItems/0/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 1"
+    },
+    "/itineraryStops/2/galleryItems/0/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 1"
+    },
+    "/itineraryStops/2/galleryItems/0/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae и прибрежная прогулка по тропе Олле №7"
+    },
+    "/itineraryStops/2/galleryItems/1/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 2"
+    },
+    "/itineraryStops/2/galleryItems/1/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 2"
+    },
+    "/itineraryStops/2/galleryItems/1/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae и прибрежная прогулка по тропе Олле №7"
+    },
+    "/itineraryStops/2/galleryItems/2/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 3"
+    },
+    "/itineraryStops/2/galleryItems/2/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 3"
+    },
+    "/itineraryStops/2/galleryItems/2/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae и прибрежная прогулка по тропе Олле №7"
+    },
+    "/itineraryStops/2/galleryItems/3/alt": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — gallery image 4"
+    },
+    "/itineraryStops/2/galleryItems/3/caption": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk — photo 4"
+    },
+    "/itineraryStops/2/galleryItems/3/location": {
+      "source_en": "Oedolgae & Olle Route 7 Coastal Walk",
+      "tm": "Oedolgae и прибрежная прогулка по тропе Олле №7"
     },
     "/itineraryStops/3/name": {
       "source_en": "⟦G0⟧ (East Asia's largest temple)",
+      "tm": "⟦G0⟧ (крупнейший храм Восточной Азии)",
       "glossary": [
         "⟦G0⟧ = Храм Якчхонса"
       ]
     },
     "/itineraryStops/3/category": {
-      "source_en": "Temple — East Asia's largest Daejeokgwangjeon hall"
+      "source_en": "Temple — East Asia's largest Daejeokgwangjeon hall",
+      "tm": "Храм — крупнейший в Восточной Азии зал Тэджоккванджон"
     },
     "/itineraryStops/3/duration": {
-      "source_en": "40 min"
+      "source_en": "40 min",
+      "tm": "40 мин"
     },
     "/itineraryStops/3/timeUsed/0": {
-      "source_en": "Parking + entry through the Iljumun gate — ~5 min"
+      "source_en": "Parking + entry through the Iljumun gate — ~5 min",
+      "tm": "Парковка и вход через ворота Ильджумун — ~5 мин"
     },
     "/itineraryStops/3/timeUsed/1": {
-      "source_en": "Daejeokgwangjeon + Vairocana Buddha + gilded Buddhas — ~20 min"
+      "source_en": "Daejeokgwangjeon + Vairocana Buddha + gilded Buddhas — ~20 min",
+      "tm": "Тэджоккванджон, Будда Вайрочана и позолоченные будды — ~20 мин"
     },
     "/itineraryStops/3/timeUsed/2": {
-      "source_en": "Temple bell + grounds walk + spring water — ~12 min"
+      "source_en": "Temple bell + grounds walk + spring water — ~12 min",
+      "tm": "Храмовый колокол, прогулка по территории и родниковая вода — ~12 мин"
     },
     "/itineraryStops/3/timeUsed/3": {
-      "source_en": "Return to coach — ~3 min"
+      "source_en": "Return to coach — ~3 min",
+      "tm": "Возвращение к автобусу — ~3 мин"
     },
     "/itineraryStops/3/highlights/0": {
-      "source_en": "**One of East Asia's largest temples** — grounds of about 122,100 ㎡"
+      "source_en": "**One of East Asia's largest temples** — grounds of about 122,100 ㎡",
+      "tm": "**Один из крупнейших храмов Восточной Азии** — территория около 122 100 ㎡"
     },
     "/itineraryStops/3/highlights/1": {
-      "source_en": "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls"
+      "source_en": "**Daejeokgwangjeon** about 30 m high / about 3,305 ㎡ floor area — one of the East's largest single halls",
+      "tm": "**Тэджоккванджон** высотой около 30 м и площадью около 3 305 ㎡ — один из крупнейших одиночных залов Востока"
     },
     "/itineraryStops/3/highlights/2": {
-      "source_en": "**5 m-tall Vairocana Buddha** — Korea's largest wooden seated Buddha (on a 4 m pedestal)"
+      "source_en": "**5 m-tall Vairocana Buddha** — Korea's largest wooden seated Buddha (on a 4 m pedestal)",
+      "tm": "**Будда Вайрочана высотой 5 м** — крупнейший в Корее деревянный сидящий Будда (на пьедестале 4 м)"
     },
     "/itineraryStops/3/highlights/3": {
-      "source_en": "**Tens of thousands of gilded Buddhas** filling the multi-tiered walls + an **18-tonne bell** before the hall"
+      "source_en": "**Tens of thousands of gilded Buddhas** filling the multi-tiered walls + an **18-tonne bell** before the hall",
+      "tm": "**Десятки тысяч позолоченных будд**, заполняющих многоярусные стены, и **колокол весом 18 тонн** перед залом"
     },
     "/itineraryStops/3/highlights/4": {
-      "source_en": "**Monk Hyein broke ground in 1981 → completed 1996**; on the 'Yaksuam' site (a rising spring)"
+      "source_en": "**Monk Hyein broke ground in 1981 → completed 1996**; on the 'Yaksuam' site (a rising spring)",
+      "tm": "**Монах Хеин заложил храм в 1981 году → завершён в 1996**; на месте «Яксуам» (бьющий родник)"
     },
     "/itineraryStops/3/highlights/5": {
-      "source_en": "At the junction of **Olle Route 7's end point + Route 8's start point**"
+      "source_en": "At the junction of **Olle Route 7's end point + Route 8's start point**",
+      "tm": "На стыке **конечной точки тропы Олле №7 и начальной точки тропы №8**"
     },
     "/itineraryStops/3/highlights/6": {
-      "source_en": "**Templestay since 2006**"
+      "source_en": "**Templestay since 2006**",
+      "tm": "**Темплстей с 2006 года**"
     },
     "/itineraryStops/3/highlights/7": {
       "source_en": "**Free admission**, flat grounds — about a 15-min drive from the ⟦G0⟧ area",
+      "tm": "**Вход свободный**, ровная территория — около 15 мин езды от района ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Водопад Чонбан"
       ]
     },
     "/itineraryStops/3/smartNotes/tip": {
-      "source_en": "Keep quiet inside the hall, remove hats and observe etiquette; please avoid revealing clothing"
+      "source_en": "Keep quiet inside the hall, remove hats and observe etiquette; please avoid revealing clothing",
+      "tm": "Внутри зала соблюдайте тишину, снимайте головные уборы и следуйте этикету; пожалуйста, избегайте открытой одежды"
     },
     "/itineraryStops/3/smartNotes/facilities": {
-      "source_en": "Restrooms and parking on the grounds; spring water available to drink"
+      "source_en": "Restrooms and parking on the grounds; spring water available to drink",
+      "tm": "На территории есть туалеты и парковка; родниковую воду можно пить"
     },
     "/itineraryStops/3/whyOnRoute": {
       "source_en": "**A cultural highlight just before lunch.** After the coastal scenery of ⟦G0⟧ and Oedolgae, the overwhelming interior of Yakcheonsa's Daejeokgwangjeon adds a different texture to the day. It is close to Oedolgae and near the lunch restaurant, so the routing is efficient, and free admission keeps it easy on the wallet. The guide briefs temple etiquette (quiet, dress).",
+      "tm": "**Культурная жемчужина прямо перед обедом.** После прибрежных пейзажей ⟦G0⟧ и Oedolgae поражающий интерьер зала Тэджоккванджон в Якчхонса добавляет дню совсем иную фактуру. Храм расположен близко к Oedolgae и рядом с рестораном для обеда, поэтому маршрут получается эффективным, а свободный вход не бьёт по кошельку. Гид рассказывает о храмовом этикете (тишина, одежда).",
       "glossary": [
         "⟦G0⟧ = Водопад Чонбан"
       ]
     },
     "/itineraryStops/3/convenience/parking": {
-      "source_en": "Free temple parking available"
+      "source_en": "Free temple parking available",
+      "tm": "Есть бесплатная храмовая парковка"
     },
     "/itineraryStops/3/convenience/restroom": {
-      "source_en": "Available on the temple grounds"
-    },
-    "/itineraryStops/3/description": {
-      "source_en": "**Yakcheonsa (약천사, 藥泉寺), at 122,100 ㎡, is counted among the largest temples in East Asia** — a vast temple in Daepo-dong, Seogwipo. Its name means 'the temple where medicinal spring water flows', as it was built on the site of the old 'Yaksuam' hermitage, where a year-round spring of healing water rises. **Monk Hyein broke ground in 1981 and completed it in 1996.** \n\nThe main hall, the **Daejeokgwangjeon (大寂光殿), reaches about 30 m in height with a total floor area of about 3,305 ㎡** — one of the largest single Buddhist halls in the East, built in the early-Joseon temple-architecture style. Inside, a **5 m-tall Vairocana Buddha (Korea's largest wooden seated Buddha)** is enshrined on a 4 m pedestal, and tens of thousands of small gilded Buddha statues filling the multi-tiered walls create an overwhelming sight. In front of the hall stands an **18-tonne temple bell**. \n\nYakcheonsa sits at the **junction where Jeju Olle Route 7 (its end point) meets Route 8 (its start point)**, drawing both Olle walkers and tourists, and it has run a **templestay since 2006**. **Free admission**, and the flat grounds are relatively easy to explore."
-    },
-    "/itineraryStops/3/visitBasics/hours": {
-      "source_en": "Sunrise–sunset (main hall open at all times)"
-    },
-    "/itineraryStops/3/visitBasics/closed": {
-      "source_en": "Open year-round"
-    },
-    "/itineraryStops/3/visitBasics/walking": {
-      "source_en": "Easy — flat grounds; some steps when entering the main hall"
-    },
-    "/itineraryStops/3/visitBasics/admission": {
-      "source_en": "Free"
-    },
-    "/itineraryStops/3/galleryItems/0/alt": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple) — gallery image 1",
-      "glossary": [
-        "⟦G0⟧ = Храм Якчхонса"
-      ]
-    },
-    "/itineraryStops/3/galleryItems/0/caption": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple) — photo 1",
-      "glossary": [
-        "⟦G0⟧ = Храм Якчхонса"
-      ]
-    },
-    "/itineraryStops/3/galleryItems/0/location": {
-      "source_en": "⟦G0⟧ (East Asia's largest temple)",
-      "glossary": [
-        "⟦G0⟧ = Храм Якчхонса"
-      ]
-    },
-    "/itineraryStops/4/name": {
-      "source_en": "Lunch — South Jeju Local Meal"
-    },
-    "/itineraryStops/4/category": {
-      "source_en": "Midday Reset — Seogwipo / Daepo Local Cuisine"
-    },
-    "/itineraryStops/4/duration": {
-      "source_en": "60 min"
-    },
-    "/itineraryStops/4/timeUsed/0": {
-      "source_en": "Coach to lunch venue — ~10 min"
-    },
-    "/itineraryStops/4/timeUsed/1": {
-      "source_en": "Order + meal — ~45 min"
-    },
-    "/itineraryStops/4/timeUsed/2": {
-      "source_en": "Coach to O'sulloc — ~25 min"
-    },
-    "/itineraryStops/4/highlights/0": {
-      "source_en": "**South Jeju seafood corridor** — Seogwipo/Daepo coastal restaurants"
-    },
-    "/itineraryStops/4/highlights/1": {
-      "source_en": "**Galchi-jorim** — Jeju is Korea's largest cutlassfish source"
-    },
-    "/itineraryStops/4/highlights/2": {
-      "source_en": "**Mulhoe** in summer; **heuk-doeji (black pig)** year-round option"
-    },
-    "/itineraryStops/4/highlights/3": {
-      "source_en": "Black pig is a **Cultural Heritage Material No. 5 (2015)** breed"
-    },
-    "/itineraryStops/4/highlights/4": {
-      "source_en": "**Vegetarian + halal-friendly** options on request (please disclose at pickup)"
+      "source_en": "Available on the temple grounds",
+      "tm": "Есть на территории храма"
     }
   },
   "glossaryTokens": {
+    "/itineraryStops/1/galleryItems/3/location": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/4/alt": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/4/caption": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
+    "/itineraryStops/1/galleryItems/4/location": {
+      "⟦G0⟧": "Водопад Чонбан"
+    },
     "/itineraryStops/2/highlights/5": {
       "⟦G0⟧": "Водопад Чонбан"
     },
@@ -223,16 +291,7 @@
     },
     "/itineraryStops/3/whyOnRoute": {
       "⟦G0⟧": "Водопад Чонбан"
-    },
-    "/itineraryStops/3/galleryItems/0/alt": {
-      "⟦G0⟧": "Храм Якчхонса"
-    },
-    "/itineraryStops/3/galleryItems/0/caption": {
-      "⟦G0⟧": "Храм Якчхонса"
-    },
-    "/itineraryStops/3/galleryItems/0/location": {
-      "⟦G0⟧": "Храм Якчхонса"
     }
   },
-  "tmHits": 0
+  "tmHits": 50
 }

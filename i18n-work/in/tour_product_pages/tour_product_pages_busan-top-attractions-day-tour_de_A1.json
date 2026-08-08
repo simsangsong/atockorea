@@ -34,12 +34,14 @@
     },
     "/seo/primaryKeywords/1": {
       "source_en": "⟦G0⟧ Temple",
+      "tm": "Tempel ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Haedong Yonggungsa"
       ]
     },
     "/seo/primaryKeywords/2": {
       "source_en": "⟦G0⟧ tour",
+      "tm": "⟦G0⟧ Tour",
       "glossary": [
         "⟦G0⟧ = Kulturdorf Gamcheon"
       ]
@@ -58,16 +60,19 @@
       "source_en": "5 stops"
     },
     "/hero/meta/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/hero/meta/duration": {
-      "source_en": "10.5 hours (08:30 first pickup, ≈ 19:00 last drop)"
+      "source_en": "10.5 hours (08:10 first pickup, ≈ 19:00 last drop)"
     },
     "/hero/pills/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/hero/pills/1": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/hero/pills/2": {
       "source_en": "First-time friendly"
@@ -76,73 +81,92 @@
       "source_en": "Busan's most-asked-for seven stops in a single small-group day"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Potential"
+      "source_en": "Photo Potential",
+      "tm": "Fotopotenzial"
     },
     "/glanceItems/0/value": {
-      "source_en": "High"
+      "source_en": "High",
+      "tm": "Hoch"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenery"
+      "source_en": "Scenery",
+      "tm": "Landschaft"
     },
     "/glanceItems/1/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Gut"
     },
     "/glanceItems/2/label": {
-      "source_en": "Walking"
+      "source_en": "Walking",
+      "tm": "Gehstrecke"
     },
     "/glanceItems/2/value": {
-      "source_en": "Challenging"
+      "source_en": "Challenging",
+      "tm": "Anspruchsvoll"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Suitability"
+      "source_en": "Rain Suitability",
+      "tm": "Regentauglichkeit"
     },
     "/glanceItems/3/value": {
-      "source_en": "Moderate"
+      "source_en": "Moderate",
+      "tm": "Mittel"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Suitability"
+      "source_en": "Family Suitability",
+      "tm": "Familientauglichkeit"
     },
     "/glanceItems/4/value": {
-      "source_en": "Good"
+      "source_en": "Good",
+      "tm": "Gut"
     },
     "/glanceItems/5/label": {
-      "source_en": "Pace"
+      "source_en": "Pace",
+      "tm": "Tempo"
     },
     "/glanceItems/5/value": {
-      "source_en": "Balanced"
+      "source_en": "Balanced",
+      "tm": "Ausgewogen"
     },
     "/subnavItems/0/label": {
-      "source_en": "Overview"
+      "source_en": "Overview",
+      "tm": "Überblick"
     },
     "/subnavItems/1/label": {
-      "source_en": "Itinerary"
+      "source_en": "Itinerary",
+      "tm": "Reiseverlauf"
     },
     "/subnavItems/2/label": {
       "source_en": "Practical"
     },
     "/subnavItems/3/label": {
-      "source_en": "Reviews"
+      "source_en": "Reviews",
+      "tm": "Bewertungen"
     },
     "/subnavItems/4/label": {
       "source_en": "Booking"
     },
     "/catalog_card/tags/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/catalog_card/tags/1": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/tags/2": {
       "source_en": "First-time friendly"
     },
     "/catalog_card/tags/3": {
-      "source_en": "Good value"
+      "source_en": "Good value",
+      "tm": "Gutes Preis-Leistungs-Verhältnis"
     },
     "/catalog_card/title": {
       "source_en": "Busan Top Attractions Day Tour"
     },
     "/catalog_card/badges/0": {
-      "source_en": "Small group"
+      "source_en": "Small group",
+      "tm": "Kleingruppe"
     },
     "/catalog_card/badges/1": {
       "source_en": "First-time friendly"
@@ -151,7 +175,8 @@
       "source_en": "Busan classic"
     },
     "/catalog_card/region": {
-      "source_en": "Busan"
+      "source_en": "Busan",
+      "tm": "Busan"
     },
     "/catalog_card/duration": {
       "source_en": "10.5 hours"
@@ -165,9 +190,6 @@
         "⟦G3⟧ = Jagalchi-Markt"
       ]
     },
-    "/catalog_card/priceLabel": {
-      "source_en": "From US$29 per person (was $41, 29% off)"
-    },
     "/catalog_card/shortCardDescription": {
       "source_en": "A balanced Busan city tour for first-time visitors: seaside temple, Cheongsapo coastal viewpoint, optional Blue Line Park/Sky Capsule area, Korean War memorial history, colorful ⟦G0⟧, and a market-area finish near Jagalchi/Nampo-dong.",
       "glossary": [
@@ -178,10 +200,11 @@
       "source_en": "Busan Top Attractions"
     },
     "/headlineLine2": {
-      "source_en": "Day Tour"
+      "source_en": "Day Tour",
+      "tm": "Tagestour"
     },
     "/pickup_dropoff/notes/0": {
-      "source_en": "Choose the pickup exit closest to your hotel at booking. Drop-offs are sequential along the return route; passengers boarding at Seomyeon (08:30) experience the longest day (≈10 hours), Haeundae passengers the shortest (≈9.5 hours)."
+      "source_en": "Choose the pickup exit closest to your hotel at booking. Drop-offs are sequential along the return route; passengers boarding at Busan Station (08:10) or Seomyeon (08:30) have the longest day (≈10 hours), Haeundae passengers the shortest (just under 10 hours)."
     },
     "/pickup_dropoff/return/0/name": {
       "source_en": "Nampo-dong / Jagalchi area"
@@ -196,37 +219,41 @@
       "source_en": "Haeundae Station (Exit 5)"
     },
     "/pickup_dropoff/departure/0/name": {
-      "source_en": "Seomyeon Station (Exit 4)"
+      "source_en": "Busan Station Exit 4 (not the KTX gate)"
     },
     "/pickup_dropoff/departure/1/name": {
-      "source_en": "Busan Station Exit 4 (not the KTX gate)"
+      "source_en": "Seomyeon Station (Exit 4)"
     },
     "/pickup_dropoff/departure/2/name": {
       "source_en": "Haeundae Station (Exit 5)"
     },
     "/sticky_booking_bar/note": {
-      "source_en": "Select your date and group size to check live availability and complete your booking."
+      "source_en": "Select your date and group size to check live availability and complete your booking.",
+      "tm": "Wählen Sie Ihr Datum und Ihre Gruppengröße, um die Verfügbarkeit in Echtzeit zu prüfen und Ihre Buchung abzuschließen."
     },
     "/sticky_booking_bar/price/per": {
-      "source_en": "person"
+      "source_en": "person",
+      "tm": "Person"
     },
     "/practicalAccordionItems/0/title": {
-      "source_en": "Pickup & drop-off"
+      "source_en": "Pickup & drop-off",
+      "tm": "Abholung & Rückfahrt"
     },
     "/practicalAccordionItems/0/content/0": {
-      "source_en": "Three pickup points along Busan Subway: Seomyeon Station Exit 4 (08:30), Busan Station Exit 4 — not the KTX gate (08:50), Haeundae Station Exit 5 (09:30)."
+      "source_en": "Three pickup points along Busan Subway: Busan Station Exit 4 — not the KTX gate (08:10), Seomyeon Station Exit 4 (08:30), Haeundae Station Exit 5 (09:10)."
     },
     "/practicalAccordionItems/0/content/1": {
       "source_en": "Drop-offs in sequence: Nampo-dong/Jagalchi ≈17:50, Busan Station ≈18:10, Seomyeon ≈18:30, Haeundae ≈19:00."
     },
     "/practicalAccordionItems/0/content/2": {
-      "source_en": "Your effective tour duration depends on pickup point: Seomyeon ≈10 h, Haeundae ≈9.5 h."
+      "source_en": "Your effective tour duration depends on pickup point: Busan Station and Seomyeon ≈10 h, Haeundae just under 10 h."
     },
     "/practicalAccordionItems/0/preview": {
-      "source_en": "Three pickup points along Busan Subway: Seomyeon Station Exit 4 (08:30), Busan Station…"
+      "source_en": "Three pickup points along Busan Subway: Busan Station Exit 4 (08:10), Seomyeon Station…"
     },
     "/practicalAccordionItems/1/title": {
-      "source_en": "What to wear & bring"
+      "source_en": "What to wear & bring",
+      "tm": "Was anziehen & mitbringen"
     },
     "/practicalAccordionItems/1/content/0": {
       "source_en": "Comfortable walking shoes with grip — Gamcheon's hillside alleys and Yonggungsa's 108 stairs both need traction."
@@ -244,10 +271,12 @@
       "source_en": "Comfortable walking shoes with grip — Gamcheon's hillside alleys and Yonggungsa's 108…"
     },
     "/practicalAccordionItems/2/title": {
-      "source_en": "Weather policy"
+      "source_en": "Weather policy",
+      "tm": "Wetterregelung"
     },
     "/practicalAccordionItems/2/content/0": {
-      "source_en": "Year-round operation."
+      "source_en": "Year-round operation.",
+      "tm": "Ganzjähriger Betrieb."
     },
     "/practicalAccordionItems/2/content/1": {
       "source_en": "Light rain: tour runs as scheduled — Yonggungsa under rain has its own atmosphere, and Gamcheon's alleys remain navigable."
@@ -259,10 +288,12 @@
       "source_en": "Typhoon-level weather: full refund or rebooking is offered."
     },
     "/practicalAccordionItems/2/preview": {
-      "source_en": "Year-round operation."
+      "source_en": "Year-round operation.",
+      "tm": "Ganzjähriger Betrieb."
     },
     "/practicalAccordionItems/3/title": {
-      "source_en": "What's included"
+      "source_en": "What's included",
+      "tm": "Inbegriffene Leistungen"
     },
     "/practicalAccordionItems/3/content/0": {
       "source_en": "Pickup and drop-off at three Busan stations, air-conditioned mini-coach transport, licensed English-speaking guide."
@@ -280,31 +311,39 @@
       "source_en": "Pickup and drop-off at three Busan stations, air-conditioned mini-coach transport,…"
     },
     "/practicalAccordionItems/4/title": {
-      "source_en": "Language"
+      "source_en": "Language",
+      "tm": "Sprache"
     },
     "/practicalAccordionItems/4/content/0": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/4/content/1": {
-      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead."
+      "source_en": "Chinese-speaking guide available on request — book 3+ days ahead.",
+      "tm": "Chinesischsprachige Reiseleitung auf Anfrage — mindestens 3 Tage im Voraus buchen."
     },
     "/practicalAccordionItems/4/content/2": {
-      "source_en": "Korean is spoken throughout the day for menus, signage, and stall interactions; the guide handles translation."
+      "source_en": "Korean is spoken throughout the day for menus, signage, and stall interactions; the guide handles translation.",
+      "tm": "Vor Ort wird den ganzen Tag Koreanisch gesprochen — auf Speisekarten, Schildern und an den Ständen; die Reiseleitung übersetzt."
     },
     "/practicalAccordionItems/4/preview": {
-      "source_en": "Primary tour language: English."
+      "source_en": "Primary tour language: English.",
+      "tm": "Hauptsprache der Tour: Englisch."
     },
     "/practicalAccordionItems/5/title": {
-      "source_en": "Walking & terrain"
+      "source_en": "Walking & terrain",
+      "tm": "Gehstrecken & Gelände"
     },
     "/practicalAccordionItems/5/content/0": {
       "source_en": "Moderate–challenging."
     },
     "/practicalAccordionItems/5/content/1": {
-      "source_en": "Yonggungsa has 108 stone steps down to the temple (skippable — upper viewing platforms exist)."
+      "source_en": "Yonggungsa has 108 stone steps down to the temple (skippable — upper viewing platforms exist).",
+      "tm": "Zum Yonggungsa führen 108 Steinstufen hinab (kann ausgelassen werden — oben gibt es Aussichtsplattformen)."
     },
     "/practicalAccordionItems/5/content/2": {
-      "source_en": "Gamcheon is a hillside village with steep alleys and stairs throughout the photo route — traction shoes essential."
+      "source_en": "Gamcheon is a hillside village with steep alleys and stairs throughout the photo route — traction shoes essential.",
+      "tm": "Gamcheon ist ein Hangdorf mit steilen Gassen und Treppen auf der ganzen Fotoroute — griffige Schuhe sind unerlässlich."
     },
     "/practicalAccordionItems/5/content/3": {
       "source_en": "UN Cemetery is flat."
@@ -317,6 +356,22 @@
     },
     "/practicalAccordionItems/5/preview": {
       "source_en": "Moderate–challenging."
+    },
+    "/practicalAccordionItems/6/title": {
+      "source_en": "Cancellation",
+      "tm": "Stornierung"
+    },
+    "/practicalAccordionItems/6/content/0": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
+    },
+    "/practicalAccordionItems/6/content/1": {
+      "source_en": "Same-day cancellations and no-shows are non-refundable.",
+      "tm": "Stornierungen am selben Tag und Nichterscheinen werden nicht erstattet."
+    },
+    "/practicalAccordionItems/6/preview": {
+      "source_en": "Free cancellation up to 24 hours before pickup.",
+      "tm": "Kostenlose Stornierung bis 24 Stunden vor der Abholung."
     }
   },
   "glossaryTokens": {
@@ -353,5 +408,5 @@
       "⟦G0⟧": "Jagalchi-Markt"
     }
   },
-  "tmHits": 1
+  "tmHits": 47
 }

@@ -10,6 +10,7 @@
  * on approval in Phase 2, one row at a time, so they appear immediately.
  */
 
+import { toTourProductBaseLocale } from "@/lib/tour-product/resolveTourProductDbLocale";
 import { getSiteKnowledgeChunks } from "@/lib/chatbot/siteKnowledge";
 import { listStaticTourProducts } from "@/components/product-tour-static/catalog/staticTourCatalogCards";
 import { getStaticTourProductFullPageJson } from "@/components/product-tour-static/_shared/tourProductBundleRegistry";
@@ -131,7 +132,7 @@ async function collectTourRecords(): Promise<KnowledgeRecord[]> {
   const slugs = Array.from(new Set(listStaticTourProducts("en").map((t) => t.slug)));
 
   for (const locale of RAG_LOCALES) {
-    const cards = new Map(listStaticTourProducts(locale).map((t) => [t.slug, t]));
+    const cards = new Map(listStaticTourProducts(toTourProductBaseLocale(locale)).map((t) => [t.slug, t]));
     for (const slug of slugs) {
       const card = cards.get(slug);
       const url = `/tour-product/${slug}`;

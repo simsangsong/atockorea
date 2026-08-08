@@ -1,6 +1,6 @@
 {
   "locale": "de",
-  "generatedAt": "2026-08-07T15:49:45.628Z",
+  "generatedAt": "2026-08-08T14:10:17.761Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-city-tour:de:A1",
@@ -2341,10 +2341,10 @@
           "message": "미번역 잔존 — 번역이 원문과 동일"
         },
         {
-          "gate": "G1",
+          "gate": "G9",
           "severity": "flag",
           "pointer": "/itineraryStops/4/liveStatusWidget",
-          "message": "빈 번역 — 규칙 6에 따른 미번역. 이 포인터는 발행에서 제외(영어 폴백)"
+          "message": "미번역 잔존 — 번역이 원문과 동일"
         },
         {
           "gate": "G8",

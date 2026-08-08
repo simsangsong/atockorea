@@ -15,12 +15,14 @@
     },
     "/itineraryStops/10/galleryItems/2/alt": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — gallery image 3",
+      "tm": "⟦G0⟧ & Busan Diamond Tower — Galeriebild 3",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
     },
     "/itineraryStops/10/galleryItems/2/caption": {
       "source_en": "⟦G0⟧ & Busan Diamond Tower — photo 3",
+      "tm": "⟦G0⟧ & Busan Diamond Tower — Foto 3",
       "glossary": [
         "⟦G0⟧ = Yongdusan-Park"
       ]
@@ -33,30 +35,36 @@
       ]
     },
     "/itineraryStops/11/name": {
-      "source_en": "Return to Busan Port"
+      "source_en": "Return to Busan Port",
+      "tm": "Rückfahrt zum Hafen Busan"
     },
     "/itineraryStops/11/category": {
       "source_en": "Return",
       "tm": "Rückfahrt"
     },
     "/itineraryStops/11/duration": {
-      "source_en": "15 min drive"
+      "source_en": "15 min drive",
+      "tm": "15 Min. Fahrt"
     },
     "/itineraryStops/11/highlights/0": {
       "source_en": "Return buffer before ship departure",
       "tm": "Zeitpuffer für die Rückfahrt vor dem Auslaufen des Schiffs"
     },
     "/itineraryStops/11/highlights/1": {
-      "source_en": "Drop-off at cruise terminal"
+      "source_en": "Drop-off at cruise terminal",
+      "tm": "Ausstieg am Kreuzfahrtterminal"
     },
     "/itineraryStops/11/highlights/2": {
-      "source_en": "Route may adjust for traffic"
+      "source_en": "Route may adjust for traffic",
+      "tm": "Die Route kann sich verkehrsbedingt ändern"
     },
     "/itineraryStops/11/whyOnRoute": {
-      "source_en": "The cruise-terminal return is the day's hard constraint. Dropping off at about 17:00 — eight hours after pickup — leaves a real buffer before the all-aboard times most Busan port calls use, and the guide adjusts the running order on the day if your ship sails unusually early."
+      "source_en": "The cruise-terminal return is the day's hard constraint. Dropping off at about 17:00 — eight hours after pickup — leaves a real buffer before the all-aboard times most Busan port calls use, and the guide adjusts the running order on the day if your ship sails unusually early.",
+      "tm": "Die Rückkehr zum Kreuzfahrtterminal ist die harte Randbedingung des Tages. Der Ausstieg gegen 17:00 Uhr — acht Stunden nach der Abholung — lässt einen echten Puffer vor den All-aboard-Zeiten, die bei den meisten Hafenaufenthalten in Busan gelten, und die Reiseleitung passt die Reihenfolge am Tag selbst an, falls Ihr Schiff ungewöhnlich früh ausläuft."
     },
     "/itineraryStops/11/description": {
-      "source_en": "The vehicle leaves the Yongdusan / Gwangbok-ro pickup point at about **16:45** and drives back through central Busan to **the same terminal you were collected from**, arriving at roughly **17:00** — about **8 hours** after pickup.\n\nThat leaves a comfortable buffer before the all-aboard times most Busan cruise calls use. If your ship sails unusually early, tell the guide at morning pickup: the running order is adjusted on the day, usually by trimming the Songdo and Yongdusan stops."
+      "source_en": "The vehicle leaves the Yongdusan / Gwangbok-ro pickup point at about **16:45** and drives back through central Busan to **the same terminal you were collected from**, arriving at roughly **17:00** — about **8 hours** after pickup.\n\nThat leaves a comfortable buffer before the all-aboard times most Busan cruise calls use. If your ship sails unusually early, tell the guide at morning pickup: the running order is adjusted on the day, usually by trimming the Songdo and Yongdusan stops.",
+      "tm": "Das Fahrzeug verlässt den Abholpunkt Yongdusan / Gwangbok-ro gegen **16:45 Uhr** und fährt durch das Zentrum Busans zurück zu **demselben Terminal, an dem Sie abgeholt wurden**, mit Ankunft gegen **17:00 Uhr** — etwa **8 Stunden** nach der Abholung.\n\nDas lässt einen bequemen Puffer vor den All-aboard-Zeiten, die bei den meisten Kreuzfahrtaufenthalten in Busan gelten. Läuft Ihr Schiff ungewöhnlich früh aus, sagen Sie es der Reiseleitung bei der Abholung am Morgen: Die Reihenfolge wird am Tag selbst angepasst, in der Regel indem die Stopps in Songdo und am Yongdusan gekürzt werden."
     }
   },
   "glossaryTokens": {
@@ -73,5 +81,5 @@
       "⟦G0⟧": "Yongdusan-Park"
     }
   },
-  "tmHits": 4
+  "tmHits": 12
 }

@@ -29,19 +29,23 @@
       "tm": "Montagne et temple"
     },
     "/routeFlowStops/2/name": {
-      "source_en": "Nami Island"
+      "source_en": "Nami Island",
+      "tm": "Île de Nami"
     },
     "/routeFlowStops/2/theme": {
-      "source_en": "K-drama island"
+      "source_en": "K-drama island",
+      "tm": "Île des K-dramas"
     },
     "/routeFlowStops/3/name": {
       "source_en": "The ⟦G0⟧",
+      "tm": "Le ⟦G0⟧",
       "glossary": [
         "⟦G0⟧ = Jardin du matin calme"
       ]
     },
     "/routeFlowStops/3/theme": {
-      "source_en": "Themed garden"
+      "source_en": "Themed garden",
+      "tm": "Jardin thématique"
     },
     "/routeFlowStops/4/name": {
       "source_en": "Return to Seoul",
@@ -59,5 +63,5 @@
       "⟦G0⟧": "Jardin du matin calme"
     }
   },
-  "tmHits": 5
+  "tmHits": 9
 }
