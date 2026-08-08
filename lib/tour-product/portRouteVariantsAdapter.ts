@@ -54,6 +54,7 @@ function mapStop(raw: unknown, fallbackIndex: number): PortVariantStop | null {
   if (!isRec(raw)) return null;
   const name = takeString(raw.name);
   if (!name) return null;
+  const images = takeStringArray(raw.images);
   return {
     number: typeof raw.number === "number" && raw.number > 0 ? raw.number : fallbackIndex + 1,
     name,
@@ -62,6 +63,8 @@ function mapStop(raw: unknown, fallbackIndex: number): PortVariantStop | null {
     description: takeString(raw.description) ?? "",
     highlights: takeStringArray(raw.highlights),
     time: takeString(raw.time),
+    image: takeString(raw.image),
+    images: images.length > 0 ? images : undefined,
     whyOnRoute: takeString(raw.whyOnRoute),
     visitBasics: takeVisitBasics(raw.visitBasics),
   };

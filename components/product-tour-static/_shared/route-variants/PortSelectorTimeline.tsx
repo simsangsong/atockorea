@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Anchor, ChevronRight, Clock, MapPin, Ship } from "lucide-react";
 
 import { cn } from "@/lib/utils";
@@ -28,6 +29,11 @@ function VariantStopCard({
   totalStops: number;
   onClick: () => void;
 }) {
+  const photos = stop.images && stop.images.length > 0
+    ? stop.images
+    : stop.image
+      ? [stop.image]
+      : [];
   return (
     <div className="relative pl-12">
       {stop.number < totalStops && (
@@ -51,13 +57,42 @@ function VariantStopCard({
           type="button"
           onClick={onClick}
           className={cn(
-            "group relative w-full text-left rounded-2xl p-3.5 transition-all duration-300 ease-out",
+            "group relative w-full text-left rounded-2xl overflow-hidden transition-all duration-300 ease-out",
             "bg-white ring-1 ring-slate-900/[0.07]",
             "shadow-[0_1px_2px_rgba(15,23,42,0.04),0_4px_10px_-2px_rgba(15,23,42,0.06),0_18px_36px_-14px_rgba(15,23,42,0.16)]",
             "hover:-translate-y-[1px] hover:ring-slate-900/[0.11]",
             "hover:shadow-[0_2px_4px_rgba(15,23,42,0.05),0_6px_14px_-2px_rgba(15,23,42,0.09),0_24px_48px_-14px_rgba(15,23,42,0.22)]",
           )}
         >
+          {/* Stop photo strip — mirrors the standard timeline StopCard.
+              🔴 No `RailArrows` here: the strip lives inside the stop `<button>`,
+              and a button may not contain another button (invalid HTML — the
+              arrow click would also fire the card). The slim rail-scrollbar is
+              the desktop affordance. */}
+          {photos.length > 0 && (
+            <div className="relative flex gap-1.5 px-3.5 pt-3.5 pb-1.5 overflow-x-auto rail-scrollbar">
+              {photos.map((src, i) => (
+                <div
+                  key={`${src}-${i}`}
+                  className="tour-itinerary-preview-thumb relative flex-shrink-0 w-20 h-14 rounded-md overflow-hidden bg-slate-100 ring-1 ring-slate-900/5"
+                  onContextMenu={(e) => e.preventDefault()}
+                >
+                  <Image
+                    src={src}
+                    alt=""
+                    width={80}
+                    height={56}
+                    sizes="80px"
+                    loading="lazy"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover tour-photo-grade tour-photo-protected"
+                  />
+                </div>
+              ))}
+            </div>
+          )}
+          <div className={cn("p-3.5", photos.length > 0 && "pt-2")}>
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-1.5 text-[11px] text-slate-500">
@@ -78,6 +113,7 @@ function VariantStopCard({
               )}
             </div>
             <ChevronRight className="h-4 w-4 mt-0.5 flex-shrink-0 text-slate-400 group-hover:text-slate-600 transition-colors" />
+          </div>
           </div>
         </button>
       </div>
