@@ -41,7 +41,8 @@
       "source_en": "UNESCO Korea day tour"
     },
     "/hero/meta/stops": {
-      "source_en": "6 stops"
+      "source_en": "6 stops",
+      "tm": "6 остановок"
     },
     "/hero/meta/region": {
       "source_en": "Suwon & Gwangmyeong"
@@ -101,7 +102,8 @@
       "tm": "Хорошая"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Баланс"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -427,5 +429,5 @@
       "⟦G0⟧": "Пещера Кванмён"
     }
   },
-  "tmHits": 32
+  "tmHits": 34
 }

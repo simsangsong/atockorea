@@ -1,6 +1,6 @@
 {
   "locale": "ru",
-  "generatedAt": "2026-08-08T12:53:35.199Z",
+  "generatedAt": "2026-08-08T13:01:49.608Z",
   "reports": [
     {
       "unitId": "tour_product_pages:busan-private-car-charter-city-tour:ru:A1",
@@ -2525,6 +2525,349 @@
       "unitId": "tour_product_pages:seoul-suburbs-private-chartered-car-10hr:ru:routeFlowStops",
       "status": "auto_pass",
       "segments": 10,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A1",
+      "status": "flagged",
+      "segments": 92,
+      "fails": 0,
+      "flags": 4,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/seo/metaDescription",
+          "message": "길이비 1.36 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/content/0",
+          "message": "길이비 0.76 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/0/preview",
+          "message": "길이비 0.77 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/practicalAccordionItems/4/content/1",
+          "message": "길이비 0.80 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A2",
+      "status": "flagged",
+      "segments": 38,
+      "fails": 0,
+      "flags": 8,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/bestFor/3",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/items/0/label",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/title",
+          "message": "길이비 1.43 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/0/label",
+          "message": "길이비 0.74 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/items/2/detail",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/whyTourWorks/routeLogicSections/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:A2-2",
+      "status": "flagged",
+      "segments": 59,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/6/question",
+          "message": "길이비 0.81 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/staticQuestions/9/question",
+          "message": "길이비 1.65 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/0/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/1/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G9",
+          "severity": "flag",
+          "pointer": "/bookingTrustItems/2/iconBg",
+          "message": "미번역 잔존 — 번역이 원문과 동일"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/bookingSupportSteps/4/detail",
+          "message": "길이비 1.43 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:B",
+      "status": "auto_pass",
+      "segments": 51,
+      "fails": 0,
+      "flags": 0,
+      "findings": []
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops",
+      "status": "flagged",
+      "segments": 53,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/timeUsed/4",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/5",
+          "message": "길이비 1.32 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/highlights/8",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/smartNotes/facilities",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/1/visitBasics/closed",
+          "message": "길이비 1.57 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/timeUsed/1",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-2",
+      "status": "flagged",
+      "segments": 44,
+      "fails": 0,
+      "flags": 6,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/3",
+          "message": "길이비 1.36 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/5",
+          "message": "길이비 0.85 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/highlights/6",
+          "message": "길이비 1.46 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/2/visitBasics/walking",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/timeUsed/1",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/highlights/2",
+          "message": "길이비 1.41 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-3",
+      "status": "flagged",
+      "segments": 45,
+      "fails": 0,
+      "flags": 9,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/convenience/parking",
+          "message": "길이비 1.39 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/3/visitBasics/admission",
+          "message": "길이비 1.34 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/category",
+          "message": "길이비 1.35 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/2",
+          "message": "길이비 1.40 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/timeUsed/3",
+          "message": "길이비 1.55 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/1",
+          "message": "길이비 1.56 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/7",
+          "message": "길이비 1.51 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/9",
+          "message": "길이비 1.73 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/highlights/10",
+          "message": "길이비 1.37 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:itineraryStops-4",
+      "status": "flagged",
+      "segments": 36,
+      "fails": 0,
+      "flags": 5,
+      "findings": [
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/convenience/restroom",
+          "message": "길이비 1.33 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/hours",
+          "message": "길이비 1.44 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/closed",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/4/visitBasics/walking",
+          "message": "길이비 1.38 가 ru 허용범위 0.85–1.3 밖"
+        },
+        {
+          "gate": "G8",
+          "severity": "flag",
+          "pointer": "/itineraryStops/5/timeUsed/0",
+          "message": "길이비 0.77 가 ru 허용범위 0.85–1.3 밖"
+        }
+      ]
+    },
+    {
+      "unitId": "tour_product_pages:seoul-suwon-hwaseong-gwangmyeong-cave-starfield-library:ru:routeFlowStops",
+      "status": "auto_pass",
+      "segments": 12,
       "fails": 0,
       "flags": 0,
       "findings": []
