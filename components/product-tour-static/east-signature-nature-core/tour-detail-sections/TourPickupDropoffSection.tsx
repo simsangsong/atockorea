@@ -9,13 +9,17 @@ import {
   ChevronDown,
   Navigation,
   Plane,
+  Ship,
   ShoppingBag,
   Store,
   TrainFront,
   MapPin,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { isClockTime } from "@/components/product-tour-static/_shared/pickupDropoffTypes";
+import {
+  inferReturnBand,
+  isClockTime,
+} from "@/components/product-tour-static/_shared/pickupDropoffTypes";
 import type {
   PickupDropoffPoint,
   PickupDropoffSection,
@@ -31,17 +35,8 @@ function pointTypeIcon(type: string | undefined): LucideIcon {
   if (t === "shopping") return ShoppingBag;
   if (t === "market") return Store;
   if (t === "station") return TrainFront;
+  if (t === "port" || t === "cruise_terminal") return Ship;
   return MapPin;
-}
-
-function inferReturnBand(notes: string[] | string | undefined): string | null {
-  if (!notes?.length) return null;
-  // Tolerate `notes` arriving as a single string (some cruise tour rows) —
-  // same latent SSR crash as PickupDropoffCards.inferReturnBand.
-  const joined = Array.isArray(notes) ? notes.join(" ") : String(notes);
-  const match =
-    joined.match(/around\s+([0-9]{1,2}:[0-9]{2}\s*[–-]\s*[0-9]{1,2}:[0-9]{2})/i) ?? null;
-  return match?.[1] ?? null;
 }
 
 function buildStaticMapUrl(
@@ -135,11 +130,27 @@ export function TourPickupDropoffSection({
       ? pickup_dropoff.notes.join(" ")
       : String(pickup_dropoff.notes)
     : "";
+  // Cruise pages (every return point is a terminal) have no return clock time;
+  // their notes END with the return promise ("on-time return is the product"),
+  // while the leading sentences are booking/pickup guidance — so take the LAST
+  // sentence, not the first. Non-cruise notes lead with pickup guidance that
+  // has no business under "Drop-off", so they get no notes-derived caption.
+  const cruiseShaped =
+    dropoffPoints.length > 0 &&
+    dropoffPoints.every((p) => {
+      const t = (p.type ?? "").toLowerCase();
+      return t === "port" || t === "cruise_terminal";
+    });
+  const notesLastSentence =
+    notesText
+      .split(/[.。!！?？]/)
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .pop() ?? null;
   const dropoffSubtitle =
     lastDropoff?.note?.split(".")[0] ??
-    (!returnTime && notesText ? notesText.split(".")[0] : null) ??
-    sectionUi.pickupApproximateLabel ??
-    "Approximate";
+    (returnTime ? (sectionUi.pickupApproximateLabel ?? "Approximate") : null) ??
+    (cruiseShaped ? notesLastSentence : null);
 
   const routeDepartsText =
     !charterChoiceMode && isClockTime(lastTime)
@@ -383,9 +394,11 @@ export function TourPickupDropoffSection({
                   <p className="text-[13px] font-semibold tracking-tight text-white">
                     {sectionUi.dropoffCardTitle ?? "Drop-off"}
                   </p>
-                  <p className="text-[10.5px] text-white/55">
-                    {dropoffSubtitle}
-                  </p>
+                  {dropoffSubtitle ? (
+                    <p className="text-[10.5px] text-white/55">
+                      {dropoffSubtitle}
+                    </p>
+                  ) : null}
                 </div>
               </div>
               {returnTime ? (
