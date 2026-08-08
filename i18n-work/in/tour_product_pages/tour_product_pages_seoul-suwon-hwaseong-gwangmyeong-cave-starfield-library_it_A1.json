@@ -41,7 +41,8 @@
       "source_en": "UNESCO Korea day tour"
     },
     "/hero/meta/stops": {
-      "source_en": "6 stops"
+      "source_en": "6 stops",
+      "tm": "6 tappe"
     },
     "/hero/meta/region": {
       "source_en": "Suwon & Gwangmyeong"
@@ -61,14 +62,16 @@
       "source_en": "Korea's only walled fortress city built with its original Uigwe records, a former gold mine reborn as art, and the country's most-photographed library"
     },
     "/glanceItems/0/label": {
-      "source_en": "Photo Value"
+      "source_en": "Photo Value",
+      "tm": "Valore fotografico"
     },
     "/glanceItems/0/value": {
       "source_en": "Excellent",
       "tm": "Eccellente"
     },
     "/glanceItems/1/label": {
-      "source_en": "Scenic"
+      "source_en": "Scenic",
+      "tm": "Panorami"
     },
     "/glanceItems/1/value": {
       "source_en": "Good",
@@ -83,21 +86,24 @@
       "tm": "Alto"
     },
     "/glanceItems/3/label": {
-      "source_en": "Rain Safety"
+      "source_en": "Rain Safety",
+      "tm": "Sicurezza con la pioggia"
     },
     "/glanceItems/3/value": {
       "source_en": "Excellent",
       "tm": "Eccellente"
     },
     "/glanceItems/4/label": {
-      "source_en": "Family Fit"
+      "source_en": "Family Fit",
+      "tm": "Adatto alle famiglie"
     },
     "/glanceItems/4/value": {
       "source_en": "Good",
       "tm": "Buono"
     },
     "/glanceItems/5/label": {
-      "source_en": "Balance"
+      "source_en": "Balance",
+      "tm": "Equilibrio"
     },
     "/glanceItems/5/value": {
       "source_en": "Balanced",
@@ -421,5 +427,5 @@
       "⟦G0⟧": "Grotta di Gwangmyeong"
     }
   },
-  "tmHits": 26
+  "tmHits": 32
 }
