@@ -7,7 +7,8 @@
   "tier": "A2",
   "segments": {
     "/seasonalVariations/0/season": {
-      "source_en": "Spring (Mar–May)"
+      "source_en": "Spring (Mar–May)",
+      "tm": "Весна (март–май)"
     },
     "/seasonalVariations/0/description": {
       "source_en": "Cherry blossoms along the Songdo coast and the Gamcheon village approach in late March / early April. Busan's blossom timing is 7–10 days ahead of Seoul. Buddha's Birthday (May) brings the Yeondunhoe lantern festival at Yonggungsa."
@@ -23,13 +24,15 @@
       ]
     },
     "/seasonalVariations/2/season": {
-      "source_en": "Autumn (Sep–Nov)"
+      "source_en": "Autumn (Sep–Nov)",
+      "tm": "Осень (сентябрь–ноябрь)"
     },
     "/seasonalVariations/2/description": {
       "source_en": "Clearest visibility, warmest sea — best season overall. Foliage in late October. Cheongsapo / Gamcheon golden hour most comfortable. November 11 'Turn Toward Busan' ceremony at UN Cemetery is a notable cultural event."
     },
     "/seasonalVariations/3/season": {
-      "source_en": "Winter (Dec–Feb)"
+      "source_en": "Winter (Dec–Feb)",
+      "tm": "Зима (декабрь–февраль)"
     },
     "/seasonalVariations/3/description": {
       "source_en": "Fewer crowds; clear sea views; mild for Korea (Busan winter lows 5–10 °C). Yonggungsa New Year's Day sunrise is a major event. Yongdusan Citizens' Bell strikes 33 times on New Year's Eve."
@@ -138,5 +141,5 @@
       "⟦G0⟧": "Пляж Сондо"
     }
   },
-  "tmHits": 21
+  "tmHits": 24
 }
