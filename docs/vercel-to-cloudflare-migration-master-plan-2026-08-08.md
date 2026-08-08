@@ -218,7 +218,9 @@ export default defineCloudflareConfig({
 - [ ] **T+5m** 스모크 15(§I-3): 홈/상품/목록/체크아웃 세션 생성/로그인/마이페이지/투어룸 SSE/챗봇 스트림/이미지 변환/robots/sitemap/PWA sw 로드/ko·ja 로케일/어드민/업로드
 - [ ] **T+15m** Stripe webhook 테스트 이벤트 → 200 · Resend 발신 1통 · 인바운드 1통 (메일은 DNS 무변경이라 영향 없어야 정상 — 확인만)
 - [ ] **T+30m** **크론 전환(§H 순서):** ① vercel.json 에서 crons 제거 커밋→머지(=Vercel 크론 정지. 🔴 Vercel 크론은 *.vercel.app 배포 URL 을 직접 때리므로 DNS 와 무관하게 계속 돈다 — 반드시 명시적으로 꺼야 함) ② 디스패처 워커 배포(크론 활성)
-- [ ] **T+60m~24h** 관찰: Workers 대시보드 에러율 · `wrangler tail` · Supabase 로그 · 첫 ISR 재검증 히트 · 다음 크론 시각 실행 로그
+- [ ] **T+당일 04:15 KST** 재승인 크론 첫 실행 로그 확인(`wrangler tail` 디스패처) — 놓쳤으면 다음날 자동 회복(§H-1)이지만 확인은 한다
+- [ ] **T+당일 10:15 KST** 💰 **캡처 크론 실행 확인** — 응답 summary(`captured`/`alreadyCaptured`/`failed`) 확인. 미실행/실패 시 §H-1 보충 커맨드로 즉시 수동 캡처(멱등이라 재실행 안전). **이 항목 전까지 컷오버는 끝난 게 아니다**
+- [ ] **T+60m~24h** 관찰: Workers 대시보드 에러율 · `wrangler tail` · Supabase 로그 · 첫 ISR 재검증 히트 · 나머지 크론 실행 로그
 - **롤백 트리거(즉시 원복):** 5xx 급증 · 결제/체크아웃 실패 · webhook 실패 · SSE 불통. **원복 절차 = www 레코드를 기존 Vercel CNAME 으로 되돌리고(회색), apex Redirect Rule 끄고 기존 A 복원 — 5분.** vercel.json 크론을 아직 안 지웠다면 크론도 자동 원상.
 
 ### CF7 — 안정화·관측·철거
@@ -281,7 +283,30 @@ export default defineCloudflareConfig({
 | /api/cron/rag-harvest | `30 15 * * 1` | 월 00:30 | 하베스트(300s) | 무해 |
 | /api/cron/tour-room-flywheel | `0 16 * * 1` | 월 01:00 | 플라이휠 | 무해(멱등 설계) |
 
-디스패처 크론 표현식 8개(`0 9`,`0 19`,`0 1`,`0 17`,`0 18`,`30 16` 매일 + `30 15`,`0 16` 월요일), `controller.cron`+요일로 경로 매핑. **전환 순서: vercel.json 크론 제거 머지 → 다음 크론 시각 전에 디스패처 배포.** 💰 2종은 하루 공백이 나도 재시도 설계(재승인 크론은 다음날 다시 집는다)로 흡수 — 중복 실행(이중 캡처 시도)이 훨씬 위험하다.
+디스패처 크론 표현식 8개(`0 9`,`0 19`,`0 1`,`0 17`,`0 18`,`30 16` 매일 + `30 15`,`0 16` 월요일), `controller.cron`+요일로 경로 매핑. **전환 순서: vercel.json 크론 제거 머지 → 다음 크론 시각 전에 디스패처 배포.**
+
+### H-1 카드 홀드·당일 결제는 이사와 무관하다 (✅ 코드 실측, 2026-08-08 — 사장님 질문에 대한 답)
+
+**홀드는 Vercel 이 아니라 Stripe 계정에 있다.** 예약 시 저장된 카드(SetupIntent)·승인된 홀드
+(PaymentIntent `requires_capture`)·고객 객체는 전부 Stripe 서버의 상태고, 우리 쪽에는 그 ID 만
+Supabase `bookings` 에 있다(`payment_intent_id` 등). 둘 다 이사 대상이 아니다. 당일 결제(캡처)는
+"같은 `STRIPE_SECRET_KEY` 로 `paymentIntents.capture(id)` 를 호출"하는 것뿐이라 **호출하는 서버가
+Vercel 이든 Cloudflare 든 결과가 동일하다.** 기존 홀드 → CF 크론이 캡처: 아무 문제 없음.
+
+**유일한 위험은 전환 당일 크론의 공백/중복인데, 두 라우트를 실측하니 방어가 이미 코드에 있다:**
+
+| | 캡처(`capture-tour-day-payments`, 10:00 KST) | 재승인(`recapture-holds`, 04:00 KST) |
+|---|---|---|
+| **중복 실행 시** | **안전** — 멱등키 `tour-day-auto-capture-{booking}-{date}` + PI 상태 검사(`succeeded`→alreadyCaptured, `requires_capture` 만 캡처). 이중 청구 불가 | **같은 날은 안전** — 멱등키 `reauth-{booking}-{today}` + `payment_intent_id IS NULL` 필터 |
+| **하루 공백 시** | 🔴 **자동 회복 없음** — 당일(`tour_date = 오늘`) 조회 전용이라 놓친 날짜는 다음날 크론이 안 집는다. **단 수동 보충 경로가 이미 있다**: `?date=YYYY-MM-DD&force=1` | **자동 회복** — 조회 창이 [오늘, +6일] 이라 다음날 실행이 같은 예약을 다시 집는다 |
+| **홀드 유효기간 여유** | 홀드는 투어 5~6일 전 재승인이라 7일 유효 내 — 하루 늦은 보충 캡처도 유효기간 안 | — |
+
+**보충 커맨드(컷오버 런북 CF6에 포함):**
+```bash
+curl -H "Authorization: Bearer $CRON_SECRET" "https://www.atockorea.com/api/cron/capture-tour-day-payments?date=$(date +%F)&force=1"
+```
+→ 결론: **공백>중복 원칙은 운영 원칙으로 유지하되, 실제로는 어느 쪽이 나도 사고가 아니다**
+(중복=멱등, 공백=재승인 자동/캡처 수동 1커맨드). 컷오버 당일 확인 항목은 CF6 T+당일 10:15 참조.
 
 ## §I QA 매트릭스
 
